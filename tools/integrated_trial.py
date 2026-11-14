@@ -112,11 +112,11 @@ def scene(out,c):
     ET.indent(root);ET.ElementTree(root).write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
     return dict(radius=r,area=A,inertia=I,height=h,total_mass=mass,fixed=fixed,total_beam_nodes=L*n)
 
-def analyze(out,c,g,process,log):
+def analyze(out,c,g,process,log,rest_reference=None):
     steps=c.validate();raw=read_states(out/'state.txt');nodes=c.layers*c.nodes+(c.object_shape>=0)
     if process['exit_code']!=0 or process['process_status']!='exited' or '[ERROR]' in log or f'{steps} iterations done' not in log:raise ValueError('SOFA exit/error/completion failure')
     if len(raw)!=steps//c.stride+1:raise ValueError('incomplete sampled raw states')
-    initial=raw[0]['X'];rows=[];maxrot=0;maxslip=0
+    initial=raw[0]['X'] if rest_reference is None else rest_reference;rows=[];maxrot=0;maxslip=0
     F=max(abs(c.load),abs(c.moment)/c.length,c.cable_tension*abs(c.cable_offset)/c.length,c.cable_k*c.shortening*abs(c.cable_offset)/c.length,*(map(abs,c.load_values) or [0]),1e-6)
     free=[i for i in range(nodes) if i not in g['fixed']]
     for step,r in enumerate(raw):

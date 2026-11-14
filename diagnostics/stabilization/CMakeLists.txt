@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripStabilizationMemory LANGUAGES CXX)
+find_package(Sofa.SimpleApi REQUIRED)
+find_package(Sofa.Simulation.Graph REQUIRED)
+add_executable(memory_lifetime MemoryLifetime.cpp)
+target_compile_features(memory_lifetime PRIVATE cxx_std_17)
+target_compile_options(memory_lifetime PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(memory_lifetime PRIVATE Sofa.SimpleApi Sofa.Simulation.Graph dl)

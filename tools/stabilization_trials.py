@@ -7,22 +7,24 @@ from integrated_trial import Config,scene,analyze,force_reference
 from stabilization_common import ROOT,SOFA,OUT,BUILD,PLUGIN,write_json,sha,provenance
 from run_trial import execute_process
 
-def run(name,c,static=False,linear='EigenSparseLU',steps=None,initial=None):
+def run(name,c,static=False,linear='EigenSparseLU',steps=None,initial=None,newton_fraction=5e-4):
+    if not 0<newton_fraction<=1e-3:raise ValueError('Newton stopping may not exceed physical force criterion')
     c.validate();out=OUT/name;out.mkdir(parents=True,exist_ok=False);g=scene(out,c);tree=ET.parse(out/'scene.scn');root=tree.getroot()
     ode=root.find('EulerImplicitSolver');ode.set('computeResidual','true')
     if static:
         ode.tag='StaticSolver';ode.attrib.clear();ode.set('newtonSolver','@newton')
-        ET.SubElement(root,'NewtonRaphsonSolver',name='newton',maxNbIterationsNewton='40',relativeSuccessiveStoppingThreshold='0',relativeInitialStoppingThreshold='0',absoluteResidualStoppingThreshold=str(force_reference(c)/c.layers*5e-4),relativeEstimateDifferenceThreshold='0',absoluteEstimateDifferenceThreshold='0',maxNbIterationsLineSearch='10',lineSearchCoefficient='.5',warnWhenLineSearchFails='true')
+        ET.SubElement(root,'NewtonRaphsonSolver',name='newton',maxNbIterationsNewton='40',relativeSuccessiveStoppingThreshold='0',relativeInitialStoppingThreshold='0',absoluteResidualStoppingThreshold=str(force_reference(c)/c.layers*newton_fraction),relativeEstimateDifferenceThreshold='0',absoluteEstimateDifferenceThreshold='0',maxNbIterationsLineSearch='10',lineSearchCoefficient='.5',warnWhenLineSearchFails='true')
     solver=root.find('EigenSparseLU');solver.tag=linear
     if linear=='SparseLDLSolver':solver.set('template','CompressedRowSparseMatrixd')
     if linear=='CGLinearSolver':solver.set('iterations','2000');solver.set('tolerance','1e-16');solver.set('threshold','1e-30')
-    if linear=='CGLinearSolver':ET.SubElement(root,'RequiredPlugin',name='iterative_plugin',pluginName='Sofa.Component.LinearSolver.Iterative')
+    if linear=='CGLinearSolver':root.insert(0,ET.Element('RequiredPlugin',name='iterative_plugin',pluginName='Sofa.Component.LinearSolver.Iterative'))
+    if linear=='SparseLUSolver':root.insert(0,ET.Element('RequiredPlugin',name='csparse_plugin',pluginName='CSparseSolvers'))
     body=root.find('Node');ET.SubElement(body,'ForceAudit',filename=str(out/'forces.txt'),after=str(max(0,c.duration-.1)),stride=str(c.stride))
     if initial:
         from trial_validation import read_states
         obj=body.find('MechanicalObject');obj.set('rest_position',obj.get('position'));obj.set('position',' '.join(map(str,read_states(initial)[-1]['X'])))
     tree.write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
-    settings=dict(**asdict(c),static_solver=static,linear_solver=linear,initial=str(initial) if initial else 'cold')
+    settings=dict(**asdict(c),static_solver=static,linear_solver=linear,newton_fraction=newton_fraction,initial=str(initial) if initial else 'cold')
     command=[str(SOFA/'bin/runSofa-26.06.00'),'--noautoload','--tmp','-g','batch','-a','-n',str(steps or round(c.duration/c.dt)),'--hideProgressBar','-l',str(PLUGIN),str(out/'scene.scn')]
     write_json(out/'config.json',settings);write_json(out/'command.json',command)
     r=dict(config=settings,provenance=provenance(),binary_sha256=sha(PLUGIN));p=execute_process(command,out,180);r['process']=p

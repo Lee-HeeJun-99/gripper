@@ -1,3 +1,5 @@
+# gripper
+
 # ReGrip — Ubuntu SOFA 개발 및 검증
 
 SOFA v26.06.00에서 V1.0.9 FREE의 동일 물리 XML 이식본과 C++ 전단 ForceField를 실행했다.
@@ -80,3 +82,12 @@ PYTHONPATH="$PWD/.python-deps" /home/ubuntu/miniconda3/envs/robot_ws/bin/python 
 Optuna 미설치 차단 동작은 확인했다. 실제 sampler/study/trial 경로는 아직 실행 검증하지 못했다.
 Python 3.12 설치를 해결하면 원본 SofaPython3 scene도 별도로 재현해야 한다.
 상세 설치 장애와 원본 보존 검증은 환경·검증 보고서에 기록했다.
+
+## GitHub 업로드 상태
+
+원격 초기 README는 이 문서 맨 위와 `docs/origin-main-README.md`에 보존했다.
+로컬 master의 기존 커밋과 캐시된 origin/main을 삭제 없이 merge했다.
+시계열 CSV 25개(1 MiB 초과 22개)는 현재 트리에서 추적을 해제하고 로컬 파일은 보존했다.
+기존 커밋의 CSV blob은 이력에 남는다. 이력 삭제/재작성은 수행하지 않았다.
+사용자가 CSV 이력 전송을 원하지 않아 push를 보류했다.
+상세 점검은 `reports/GIT_PUBLISH_AUDIT.json`, `reports/GIT_UPLOAD_STATUS.md` 참조.

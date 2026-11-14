@@ -32,3 +32,12 @@
 4. 향후 별도 모델에서 사각 단면 축강성과 정확한 회전 운동학을 검증하고 기존 원형 FREE 기준은 보존.
 
 검증 프로토콜과 실제 수치는 VALIDATION.md 및 results/physics_validation/gate.json 참조.
+
+## GitHub 통합 작업
+
+- master의 기존 커밋 68e5acc 및 519bd5e를 보존했다.
+- 캐시된 origin/main(c82d764)과 독립 이력을 main에서 merge하고 README 양쪽 내용을 보존했다.
+- 시계열 CSV 25개는 로컬 파일을 보존하면서 최신 트리에서 추적을 해제했다.
+- 과거 CSV가 커밋 이력에 남으므로 사용자 선택에 따라 push를 보류했다.
+- 원격 최신 상태는 fetch DNS 오류 및 GitHub 앱 404로 확인하지 못했다.
+- 상세 내용은 reports/GIT_UPLOAD_STATUS.md 및 감사 JSON 참조.

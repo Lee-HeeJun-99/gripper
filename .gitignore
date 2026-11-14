@@ -5,3 +5,16 @@ __pycache__/
 .python-deps/
 results/**/rigid.txt
 results/**/interface.txt
+# Reproducible per-step CSV outputs stay local; summaries and golden data remain tracked.
+results/**/timeseries.csv
+# Never publish local credentials or authentication material.
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+*.pyc

@@ -5,12 +5,13 @@
 namespace regrip_integrated {
 using namespace regrip3d;
 inline Jet compose(const Jet&a,double v,double first,double second){Jet r(v);for(int i=0;i<N;++i){r.g[i]=first*a.g[i];for(int j=0;j<N;++j)r.h[N*i+j]=first*a.h[N*i+j]+second*a.g[i]*a.g[j];}return r;}
-inline Jet root(const Jet&a){if(a.v<=1e-20)throw std::invalid_argument("singular distance");double r=std::sqrt(a.v);return compose(a,r,.5/r,-.25/(a.v*r));}
+inline Jet root(const Jet&a){if(!std::isfinite(a.v)||a.v<=1e-20)throw std::invalid_argument("singular/nonfinite distance");double r=std::sqrt(a.v);return compose(a,r,.5/r,-.25/(a.v*r));}
 inline Vec<Jet> displacement(const Pose&a,const Pose&b){Vec<Jet>d;for(int i=0;i<3;++i)d[i]=Jet(b.p[i]-a.p[i])+Jet::variable(i+6)-Jet::variable(i);return d;}
 inline Jet cable_segment(const Pose&a,const Pose&b,const V&offset){
  validate(a);validate(b);auto d=displacement(a,b);d=add(d,sub(lifted(rotate(b.q,offset),9),lifted(rotate(a.q,offset),3)));return root(dot(d,d));}
 inline Jet contact_energy(const Pose&point,const Pose&object,int shape,const V&dimensions,const V&attachment,double pointRadius,double stiffness){
- validate(point);validate(object);if(shape<0||shape>2||stiffness<0||pointRadius<0||!std::isfinite(stiffness))throw std::invalid_argument("contact parameters");
+ validate(point);validate(object);if(shape<0||shape>2||stiffness<0||pointRadius<0||!std::isfinite(stiffness)||!std::isfinite(pointRadius))throw std::invalid_argument("contact parameters");
+ for(double d:attachment)if(!std::isfinite(d))throw std::invalid_argument("nonfinite attachment");
  for(double d:dimensions)if(!std::isfinite(d)||d<=0)throw std::invalid_argument("shape dimensions");
  // Point-first local chart, object-second; body orientation axes are convected.
  Vec<Jet> delta;for(int i=0;i<3;++i)delta[i]=Jet(point.p[i]-object.p[i])+Jet::variable(i)-Jet::variable(i+6);

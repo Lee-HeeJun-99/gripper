@@ -10,7 +10,7 @@ public:
  void init()override{
   BaseComponent::init();state=dynamic_cast<sofa::core::behavior::MechanicalState<Types>*>(getContext()->getMechanicalState());
   if(!state||stride.getValue()==0){msg_error()<<"Invalid recorder state/stride";return;}
-  std::ifstream existing(filename.getValue());if(existing){msg_error()<<"Refusing existing state output";return;}
+  std::ifstream existing(filename.getValue()),existingMetrics(filename.getValue()+".csv");if(existing||existingMetrics){msg_error()<<"Refusing existing state/metrics output";return;}
   raw.open(filename.getValue());metrics.open(filename.getValue()+".csv");raw<<std::setprecision(17);metrics<<std::setprecision(17);
   metrics<<"time,component_energy,friction_dissipation,max_connector_slip,cable_length,cable_tension,contact_count,contact_force\n";
   if(!raw||!metrics){msg_error()<<"Cannot open recorder outputs";return;}
@@ -28,5 +28,5 @@ public:
    catch(const std::exception&e){msg_error()<<e.what();}}
   metrics<<getContext()->getTime()<<','<<energy<<','<<diss<<','<<slip<<','<<len<<','<<T<<','<<count<<','<<F<<'\n';raw.flush();metrics.flush();
  }
- void handleEvent(sofa::core::objectmodel::Event*event)override{if(dynamic_cast<sofa::simulation::AnimateEndEvent*>(event)&&++steps%stride.getValue()==0)write();}
+ void handleEvent(sofa::core::objectmodel::Event*event)override{const auto interval=stride.getValue();if(!interval)return;if(dynamic_cast<sofa::simulation::AnimateEndEvent*>(event)&&++steps%interval==0)write();}
 };

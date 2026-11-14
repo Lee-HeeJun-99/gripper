@@ -10,7 +10,7 @@ from tools.integrated_integrity import verify_trial
 class IntegratedPython(unittest.TestCase):
     def test_configuration_bounds(self):
         self.assertEqual(Config().validate(),24000)
-        for values in [dict(layers=3),dict(nodes=2),dict(k=-1),dict(pressure=-1),dict(dt=float('nan')),dict(duration=.0007),dict(stride=0),dict(connectors=(1,1)),dict(pressure_times=(1,0),pressure_values=(0,1))]:
+        for values in [dict(layers=3),dict(nodes=2),dict(k=-1),dict(pressure=-1),dict(dt=float('nan')),dict(duration=.0007),dict(stride=0),dict(connectors=(1,1)),dict(pressure_times=(1,0),pressure_values=(0,1)),dict(mode=True),dict(k='1'),dict(object_fixed=1),dict(mode=2,normal_k=.1)]:
             with self.assertRaises(ValueError):Config(**values).validate()
     def test_hermite_interior_not_nodal(self):
         x=[]
@@ -28,6 +28,8 @@ class IntegratedPython(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'corrupt experiment'):verify_trial(p)
     def test_non_equilibrium_objective_rejected(self):
         p=Path('results/integrated_20261115/multilayer/L8_mesh')
-        with self.assertRaisesRegex(ValueError,'non-equilibrium'):verify_trial(p)
+        # Historical v1 output must be rejected after guard-hardening changes the binary,
+        # even before its independently failed equilibrium gate is considered.
+        with self.assertRaisesRegex(ValueError,'non-equilibrium|binary'):verify_trial(p)
 
 if __name__=='__main__':unittest.main()

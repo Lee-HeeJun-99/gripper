@@ -56,6 +56,12 @@ class Config:
     kind:str='equilibrium'
 
     def validate(self):
+        data=asdict(self)
+        for key,field in self.__dataclass_fields__.items():
+            value=data[key]
+            if field.type is float and (type(value) not in (int,float) or not math.isfinite(value)):raise ValueError('invalid numeric '+key)
+            if field.type is bool and type(value) is not bool:raise ValueError('invalid boolean '+key)
+        if type(self.mode) is not int or type(self.object_shape) is not int:raise ValueError('invalid integer mode/shape')
         if type(self.layers) is not int or self.layers not in (2,4,8) or type(self.nodes) is not int or not 3<=self.nodes<=41:raise ValueError('layer/node resource bound')
         if type(self.stride) is not int or self.stride<1 or self.mode not in (0,1,2) or self.object_shape not in (-1,0,1,2) or self.kind not in ('equilibrium','transient'):raise ValueError('invalid mode/kind/stride')
         for key,value in asdict(self).items():
@@ -66,6 +72,7 @@ class Config:
         if steps<1 or steps>120000 or self.duration>60 or abs(steps*self.dt-self.duration)>1e-10 or steps%self.stride:raise ValueError('bounded integral sample steps required')
         if self.connectors and (len(set(self.connectors))!=len(self.connectors) or any(type(i) is not int or not 1<=i<self.nodes for i in self.connectors)):raise ValueError('connector selection')
         if self.mode==1 and self.k<=0:raise ValueError('slider requires positive elastic stiffness')
+        if self.mode==2 and self.normal_k>0:raise ValueError('finite rotation cannot use planar confinement')
         for times,values in [(self.load_times,self.load_values),(self.pressure_times,self.pressure_values),(self.cable_times,self.cable_values)]:
             if len(times)!=len(values) or any(not math.isfinite(v) for v in (*times,*values)) or any(b<=a for a,b in zip(times,times[1:])):raise ValueError('invalid schedule')
         return steps

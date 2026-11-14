@@ -60,6 +60,8 @@ public:
  Assembly assemble(const VecCoord&x)const override{
   const unsigned n=nodes.getValue(),L=layers.getValue(),offset=start.getValue();double k=stiffness.getValue(),h=height.getValue(),kn=normalStiffness.getValue(),p=currentPressure();
   if(n<3||L<2||L>8||n>41||offset+size_t(n)*L>x.size()||!std::isfinite(k)||k<0||!std::isfinite(h)||h<=0||!std::isfinite(kn)||kn<0||!std::isfinite(p)||p<0||!std::isfinite(mu.getValue())||mu.getValue()<0||!std::isfinite(width.getValue())||width.getValue()<=0||!std::isfinite(length.getValue())||length.getValue()<=0||mode.getValue()>2||(mode.getValue()==1&&k==0))throw std::invalid_argument("layer parameters");
+  if(mode.getValue()==2&&kn>0)throw std::invalid_argument("finite rotation cannot use nonobjective planar confinement");
+  if(mode.getValue()!=2)for(unsigned j=offset;j<offset+n*L;++j){auto q=pose(x[j]).q;if(std::abs(q[0])>1e-8||std::abs(q[2])>1e-8||q[3]<=0||2*std::atan2(std::abs(q[1]),q[3])>=.005)throw std::invalid_argument("outside small planar layer domain");}
   auto selected=ids();Assembly a(x.size());size_t count=0;
   if(mode.getValue()==1&&plastic.size()!=(L-1)*selected.size())throw std::invalid_argument("uninitialized friction history");
   for(unsigned layer=0;layer<L-1;++layer)for(size_t j=0;j<selected.size();++j){unsigned i=selected[j],l=offset+layer*n+i,u=l+n;Pose pl=pose(x[l]),pu=pose(x[u]);

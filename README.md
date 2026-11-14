@@ -2,6 +2,13 @@
 
 # ReGrip — Ubuntu SOFA 개발 및 검증
 
+다음 단계 개발: [FINAL_DEVELOPMENT_REPORT.md](reports/FINAL_DEVELOPMENT_REPORT.md),
+[현재 상태](reports/CURRENT_STATUS.md), [재개 명령](reports/NEXT_TASKS.md).
+기존 검증 모델은 보존하고 별도 3D 접선 컴포넌트·100 mm 연구 장면·다층 정적 FEM을 추가했다.
+100 mm SOFA 수치 수렴은 확인했지만 실물 PET/와이어/접촉/진공 성능 인증은 아니다.
+Optuna와 SofaPython3는 여전히 의존성 차단이며, 새 장시간 검사에서 RSS 증가가 발견돼 무제한 실행은 보류한다.
+신규 통합 JSON 실행: `experiments/run.py`; 모든 신규 출력은 독립 폴더에 기록한다.
+
 최신 독립 재검증: [최종 통합 보고서](reports/FINAL_VERIFICATION_REPORT.md).
 회전 좌표 미분·무효 입력·중단/출력 무결성·C++ 소스와 바이너리 결합 검사를 보강했다.
 새로 실행한 45개 물리 gate, 20개 자동화 검사 및 11개 최적화 guard는 통과했다.

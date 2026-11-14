@@ -11,8 +11,9 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from verification_common import ROOT,sha,write_json,provenance
 from research_trial import run,model_hashes
 from models.multilayer.beam import Design,solve,friction_path
+from next_common import NEXT
 
-OUT=ROOT/'results/next_phase'
+OUT=NEXT
 
 def static():
     directory=OUT/'static';directory.mkdir(parents=True,exist_ok=False)

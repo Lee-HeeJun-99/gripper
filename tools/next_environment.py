@@ -6,9 +6,10 @@ from pathlib import Path
 import socket
 import subprocess
 import sys
+from next_common import NEXT
 from verification_common import ROOT, SOFA, sha, write_json, provenance, assert_build_current
 
-OUT=ROOT/'results/next_phase/environment'
+OUT=NEXT/'environment'
 
 def run(name, cmd, timeout=35, env=None):
     try:

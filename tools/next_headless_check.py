@@ -7,6 +7,7 @@ from native_scene import generate
 from run_trial import execute_process
 from trial_validation import analyze
 from verification_common import ROOT,SOFA,BUILD,write_json,sha,provenance,assert_build_current
+from next_common import NEXT
 
 def measured(out,cmd):
     out.mkdir(parents=True,exist_ok=False);samples=[];stop=threading.Event();started=time.monotonic()
@@ -23,8 +24,8 @@ def measured(out,cmd):
     return dict(process=result,samples=samples,growth_kib=samples[-1]['rss_kib']-samples[0]['rss_kib'] if samples else None)
 
 def main():
-    assert_build_current();root=ROOT/'results/next_phase/headless';root.mkdir(parents=True,exist_ok=False)
-    binary=ROOT/'build/next_headless/regrip_headless';scene=ROOT/'results/next_phase/memory_controls/engine_free/scene.scn'
+    assert_build_current();root=NEXT/'headless';root.mkdir(parents=True,exist_ok=False)
+    binary=ROOT/'build/next_headless/regrip_headless';scene=NEXT/'memory_controls/engine_free/scene.scn'
     cases={}
     for clear in (0,1000):
         out=root/f'clear_{clear}';r=measured(out,[str(binary),str(SOFA),str(scene),'60000',str(clear)])

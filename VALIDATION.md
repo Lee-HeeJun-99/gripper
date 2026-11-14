@@ -1,5 +1,9 @@
 # ReGrip 검증 보고서 — 2026-11-14
 
+다음 단계의 별도 연구 모델과 장시간 RSS 증가 진단은
+[FINAL_DEVELOPMENT_REPORT.md](reports/FINAL_DEVELOPMENT_REPORT.md)를 따른다.
+기존 45 gate는 새 3D/100mm/다층/실물 모델의 인증으로 확장하지 않는다.
+
 이 문서는 첫 검증의 역사적 기록이다. 최신 코드의 회전 미분 수정과 독립 재실행 결과는
 [FINAL_VERIFICATION_REPORT.md](reports/FINAL_VERIFICATION_REPORT.md)를 참조한다.
 

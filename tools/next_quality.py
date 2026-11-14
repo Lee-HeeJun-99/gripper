@@ -7,9 +7,10 @@ import subprocess
 import sys
 from verification_common import ROOT,sha,write_json,assert_build_current
 from optimize import validate_gate
+from next_common import NEXT
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=ROOT/'results/next_phase/final_quality');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=NEXT/'final_quality');a=p.parse_args()
     out=a.out;out.mkdir(parents=True,exist_ok=False)
     results=[]
     for pattern in ('test_research_models.py','test_experiment_contract.py','test_research_runner.py'):

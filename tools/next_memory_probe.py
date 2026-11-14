@@ -10,9 +10,10 @@ from next_stability import snapshot
 from native_scene import generate
 from run_trial import execute_process
 from verification_common import ROOT,SOFA,BUILD,write_json,provenance,sha,assert_build_current
+from next_common import NEXT
 
 def main():
-    assert_build_current();root=ROOT/'results/next_phase/memory_controls';root.mkdir(parents=True,exist_ok=False);records=[]
+    assert_build_current();root=NEXT/'memory_controls';root.mkdir(parents=True,exist_ok=False);records=[]
     for name,writer,residual,k in [('engine_free',False,False,None),('engine_coupled',False,False,1),
         ('writer_no_residual',True,False,1),('writer_residual',True,True,1)]:
         out=root/name;out.mkdir();generate(out/'scene.scn',k=k)

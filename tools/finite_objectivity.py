@@ -7,6 +7,7 @@ from research_trial import scene,FINITE
 from trial_validation import read_states
 from run_trial import execute_process
 from verification_common import ROOT,SOFA,BUILD,sha,write_json,provenance,assert_build_current
+from next_common import NEXT
 
 def cross(a,b):return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 def rotate(q,v):
@@ -15,7 +16,7 @@ def multiply(a,b):
     c=cross(a[:3],b[:3]);return [a[3]*b[i]+b[3]*a[i]+c[i] for i in range(3)]+[a[3]*b[3]-sum(a[i]*b[i] for i in range(3))]
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=ROOT/'results/next_phase/finite_objectivity');p.add_argument('--reference',type=Path,default=ROOT/'results/next_phase/sofa/finite_L30');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=NEXT/'finite_objectivity');p.add_argument('--reference',type=Path,default=NEXT/'sofa/finite_L30');a=p.parse_args()
     assert_build_current();out=a.out;out.mkdir(parents=True,exist_ok=False)
     manifest=__import__('json').loads((FINITE.parent/'manifest.json').read_text())
     if sha(FINITE)!=manifest['binary']:raise RuntimeError('binary mismatch')

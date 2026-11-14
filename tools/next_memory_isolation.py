@@ -5,9 +5,10 @@ from pathlib import Path
 from native_scene import generate
 from next_headless_check import measured
 from verification_common import ROOT,SOFA,write_json
+from next_common import NEXT
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=ROOT/'results/next_phase/memory_isolation');a=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=NEXT/'memory_isolation');a=parser.parse_args()
     root=a.out;root.mkdir(parents=True,exist_ok=False);cases={}
     for name in ('empty','mass_implicit','beam_explicit'):
         scene_dir=root/(name+'_scene');scene_dir.mkdir();generate(scene_dir/'scene.scn')

@@ -56,3 +56,12 @@
 - Python 3.12 오프라인/온라인 설치와 원본 Python 장면 실행을 재시도했으나 여전히 BLOCKED다.
 - reports/01~10 및 FINAL_VERIFICATION_REPORT.md에 PASS/FAIL/BLOCKED/NOT RUN 범위를 구분했다.
 - 원본/골든은 보존했으며 대용량 raw와 시계열 CSV는 Git에서 제외했다.
+
+## 다음 단계 자율 개발
+
+- development/regrip-next-phase에서 기존 물리 코드/45 gate 원본을 보존하고 무결성을 재확인했다.
+- 별도 finite-rotation C++ 컴포넌트, 정확한 SO(3) 공간 Jacobian, 60상태/API/ASan·UBSan 및 SOFA 좌표 객관성·수렴 검사.
+- 100mm 별도 SOFA 수렴 실험, 독립 다층 EB/Timoshenko/이상적wire/contact/prescribed-pressure friction 및 제한된 설계 열거.
+- 장시간 기계적 SOFA 장면에서 RSS 증가를 새로 발견했다. 원인 분리 대조를 수행했으나 아직 해결하지 못했다.
+- Optuna0trial 및 Python3.12 차단은 유지. 신규 연구를 실제 그리퍼/진공 성능 인증으로 표시하지 않는다.
+- 최종 상태/실제 수치/재개 명령은 reports/FINAL_DEVELOPMENT_REPORT.md와 CURRENT_STATUS.md/NEXT_TASKS.md.

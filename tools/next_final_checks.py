@@ -3,9 +3,10 @@ import subprocess
 import sys
 from research_trial import run
 from verification_common import ROOT,write_json,sha
+from next_common import NEXT
 
 def main():
-    out=ROOT/'results/next_phase/final_finite';out.mkdir(parents=True,exist_ok=False);records={}
+    out=NEXT/'final_finite';out.mkdir(parents=True,exist_ok=False);records={}
     for name,kw in [('base',{}),('halfdt',dict(dt=.00025)),('mesh',dict(n=21,connectors=list(range(2,21,2))))]:
         records[name]=run(out/name,length=30,k=1,load=1e-4,duration=3,finite=True,**kw)
     cmd=[sys.executable,str(ROOT/'tools/finite_objectivity.py'),'--out',str(out/'objectivity'),'--reference',str(out/'base')]

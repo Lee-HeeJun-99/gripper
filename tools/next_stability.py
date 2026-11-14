@@ -8,8 +8,9 @@ import time
 from run_trial import run_trial
 from trial_validation import verify_artifacts,TrialError
 from verification_common import ROOT,write_json,provenance
+from next_common import NEXT
 
-OUT=ROOT/'results/next_phase/stability'
+OUT=NEXT/'stability'
 
 def snapshot(pid):
     try:

@@ -1,0 +1,1075 @@
+{
+  "provenance": {
+    "git_commit": "ba8e0e515bd9c06c75e764dfe1dc09670e614c77",
+    "working_tree_dirty": true,
+    "source_sha256": {
+      "diagnostics/CMakeLists.txt": "06ea0719b8cc472cad4bc471edcfac364d3b7b43bc885cb215f396a97c85dce9",
+      "diagnostics/PrecisionStateWriter.cpp": "dd1ef85f928e983c1d0b8f083eaf7dfe87e53aaade8d9fb1fc994a953a3d1cbe",
+      "diagnostics/headless/CMakeLists.txt": "87ae3fca43cbf1a93592a4146ad0057224ff8609d2bc3c66dbba6defffb4d10e",
+      "diagnostics/headless/main.cpp": "6d47d74e167fda2261c3daf37bae26935d59308459db0d7cafc09b13e9f17c15",
+      "diagnostics/integrated/AllocationProbe.cpp": "f6aba342b21571e2cdc097fb14aa4826a082cb3446e7dbcdb3fbfc7b780da81d",
+      "diagnostics/integrated/CMakeLists.txt": "481d7267d32718508634afeab99a08e2270907e6cdd9ae6e3b2702e664f5fc25",
+      "diagnostics/integrated/Driver.cpp": "7d4935e5a128b6e88ee812d15df2ce4157120a2f192437f9762c53fe0f07ab00",
+      "plugin/CMakeLists.txt": "c9a2e6e58add9ba79b95bbe9859fbcf7aa6fda9d128acac0dd7d87d81c8b979b",
+      "plugin/src/TangentialRigidForceField.cpp": "d6d5ba8eb4673c3523666a47aa65d98fa090c584d7351ac0b643b1ecb775efb2",
+      "reference_fem/planar.py": "5c1c8f63992ff1c0bb4ac96774d2cf0e440f187eb2a5d62b5dd817e11258890d",
+      "scenes/environment_smoke.scn": "d26e7dc2b9700aa6d67eabf929e01fd317806498d5ee756ce4a024fae9a9f978",
+      "scenes/python_smoke.py": "0fb3204decd5b1a938045e135e8758f20439724ec7be585d08052d5955e9d5fc",
+      "tests/probe_forcefield.cpp": "caaf835448a5c32660ea4adf485c9e4668c5ee7f9fb237e132493a094dd87816",
+      "tests/test_automation.py": "d9c13d36540da0f573f3d49ab473ce4850967ca4993fdd482cbb198899502999",
+      "tests/test_experiment_contract.py": "13f6228fc4104f01d44b44eafb8163d2f34597f27a1b4f6857f64d3b9e306233",
+      "tests/test_finite_rotation.cpp": "765c7ec11cf1f9203f380f769c032f5a22c761827465daefa8ddb65e804c9241",
+      "tests/test_forcefield.cpp": "57dbaebce272471c177f0bfd7927eacb997d7e76107a22caf809d0dfc460aece",
+      "tests/test_optimization_guards.py": "c81ea5cafdfe1584cc707354fc0d76de5fa1fde192540d730c42b8d38ba7bf5d",
+      "tests/test_research_models.py": "060d49d609a309885c5ca3809c88e7bf64b6f3ad1276c3edc6305611657f90cb",
+      "tests/test_research_runner.py": "16a7e81c2d6b0137513740adfeefa8aa85c69338a4d53817373fea6479b2ec96",
+      "tools/audit_publish.py": "ab6489a80aecf47bb42cfdb183e1a8b94dbd6ece560da4e7f2f5c76be7a5d39b",
+      "tools/baseline_regression.py": "967d9a1a9e84d49a394f0eda8a170711e129045a87b02a1bb1d495e92daa7075",
+      "tools/build.py": "5deb7b975723e3e3c5c3ea0215b89f754fb2564fcb65bc77ee2394504ce7d35b",
+      "tools/check_environment.py": "cfd0c34c5361a925c3a27cfb2345f7d6bfd84e7d2d2c5a194d9330712a3d57c2",
+      "tools/check_staged_artifacts.py": "8cdd52dc6ec440ac11b704058ff4e840c4fc44435f480f327af03e871a4b2653",
+      "tools/finite_objectivity.py": "dd8f6510317384ce4c671e887a3480bdb1f64d5ef7faf3c52b0f17bc517a1933",
+      "tools/generate_next_reports.py": "ee9e7c80a7e9b560733e36dabe49ca2eb75ba7ee242196fb66ae305b9e12f420",
+      "tools/generate_revalidation_reports.py": "ce08b8656c384b6f640baf00469064bfb50cdd7d8f10ac1f85790fa2c3ee037c",
+      "tools/integrated_common.py": "66e5001e5b26557d99e3bd3470414cd7f4b98b11ea850adfd56699abbffd34ba",
+      "tools/integrated_memory.py": "cf422e651437f98c4f63e51c167400ff054106cb6a50f3e99fb61d0638a191d9",
+      "tools/integrated_start.py": "4095cfbad2edf96fd6102c50752b6dd46633685adf5e60290f5f51fafe0cd729",
+      "tools/make_plots.py": "af1930ee947ae48700ab4351f87c61b241dcb033cc06b5f75c166d404c5cf450",
+      "tools/native_scene.py": "11f08fb9799a97b6f22ab8546b6fc418f9d48758971f71c985bee5a22c47bd89",
+      "tools/next_build.py": "73b803d0e2baeeb7be309470ad8d358c03c0ce5febca4f40199f07167415ec10",
+      "tools/next_common.py": "539a672bbe98d9d1f34b9c259b439a74be84843faef6b008630af8fef88b516f",
+      "tools/next_environment.py": "5d1930ad40c9dac1f3ebec40b84066e17fcf9015509c813a33db3fc306473e1e",
+      "tools/next_experiments.py": "89ef7192720b5c5d64b987fb5545ab97d3483df3f580857c73ced99244a2a80f",
+      "tools/next_final_checks.py": "8a4bf2b2ac63f72c1f81da34e6c7194ae25330408e955977db5a783b618b4a01",
+      "tools/next_headless_check.py": "211586edcc57442d83c76b978b23574fb04d5644cb2385d5b306e86ef1b170a5",
+      "tools/next_limit_check.py": "9db4a32b5d4cd4490d27be58f4097d867a7fb3bc1a6d9d449ad2056a6aa6fafb",
+      "tools/next_memory_isolation.py": "6759f39f7941f97a8fe86d2aaffff787da0883b719253c5b7aff2a45b134929a",
+      "tools/next_memory_probe.py": "8461396923625ae0a1f3cb527ed2d2a0808fd38f864c045cbcc23cbe39a6486e",
+      "tools/next_quality.py": "c68edc91f805ed5a9a1fbfa0fc0a9f7c69a46d1f1b5bba7a5e08b27352bebec5",
+      "tools/next_stability.py": "58bbe41d56e19be8153a8c6d96d3a05134ac8884900fb223c4bca071d34b8f9b",
+      "tools/optimize.py": "145871194ab4a7cc75e623b7cba7f068a98688eaebe0d1044bf93a7818b3ef57",
+      "tools/record_handover.py": "13e023e57867da2abd0e69487c87236aeb63ecf7c4fa833e35c350c6c34e6537",
+      "tools/refresh_evidence_manifest.py": "967811dbe323b36d5082bcad1faf670ed19a87832f4a451019cd21f62ad62a79",
+      "tools/report_environment.py": "33ef82c9c399f2c2effdc5a6567f1deb97ce584230b234e0e2bbf17feb9dd545",
+      "tools/research_trial.py": "58cf0fe57ac5f47ee9a19eea63b110ea19e2a84aebfeedc4c44f37a2546cfe33",
+      "tools/revalidate_environment.py": "ece29b29c4fd37a0b55693dc9bdd602667161778233b875687f2b8d4a58467f7",
+      "tools/revalidate_python.py": "dea64b548c46778cc8640e73250c65e48e3a02426307081afa9156e7a81f18d9",
+      "tools/revalidate_quality.py": "5a3688fb549399e2c6d36e602729027a3dea04211eff4b9f8c0ad32642907c44",
+      "tools/revalidate_source.py": "fd3368454ab50dd4bda6f4a79a1ad156ac88863eb3a82e3d34db19e9994224d7",
+      "tools/run_trial.py": "266816820f8808649dcdb54b0a2af556e450d46e2083aecd7265340d005f2909",
+      "tools/summarize_candidate.py": "dc40a7677e30f2fd2c06a0ad78ad537ad4d2e4767269e4b00547c975cc86b55b",
+      "tools/trial_validation.py": "21649f92b7bdad567575aa7043e89d03fe7b737d48dec5fee28a932088796ea6",
+      "tools/validate_physics.py": "3d0fe3dedde3ef5797483d0afde26f00744f01179d4de729062ea31022b692e7",
+      "tools/verification_common.py": "b0b8fa18a8df4c313a6aa8c32f1ca2a187d27ea1456639d57d45270fc786a8ea"
+    },
+    "python": "/home/ubuntu/miniconda3/envs/robot_ws/bin/python"
+  },
+  "cases": {
+    "allocator_default": {
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 20.464897835976444,
+        "pid": 5
+      },
+      "command": [
+        "/home/ubuntu/LHJ/ReGrip/build/integrated_20261115/diagnostics/integrated_driver",
+        "/home/ubuntu/SOFA/v26.06.00",
+        "/home/ubuntu/LHJ/ReGrip/results/next_phase/memory_controls/engine_free/scene.scn",
+        "60000",
+        "0"
+      ],
+      "mallinfo": [
+        {
+          "step": 0,
+          "rss": 66854912,
+          "live_heap": 1210064,
+          "free_heap": 31024,
+          "mmap": 0
+        },
+        {
+          "step": 1000,
+          "rss": 71462912,
+          "live_heap": 4696912,
+          "free_heap": 107696,
+          "mmap": 0
+        },
+        {
+          "step": 2000,
+          "rss": 74694656,
+          "live_heap": 7928912,
+          "free_heap": 119728,
+          "mmap": 0
+        },
+        {
+          "step": 3000,
+          "rss": 77926400,
+          "live_heap": 11160912,
+          "free_heap": 131760,
+          "mmap": 0
+        },
+        {
+          "step": 4000,
+          "rss": 81158144,
+          "live_heap": 14392912,
+          "free_heap": 8624,
+          "mmap": 0
+        },
+        {
+          "step": 5000,
+          "rss": 84393984,
+          "live_heap": 17624912,
+          "free_heap": 20656,
+          "mmap": 0
+        },
+        {
+          "step": 6000,
+          "rss": 87625728,
+          "live_heap": 20856912,
+          "free_heap": 32688,
+          "mmap": 0
+        },
+        {
+          "step": 7000,
+          "rss": 90857472,
+          "live_heap": 24088912,
+          "free_heap": 44720,
+          "mmap": 0
+        },
+        {
+          "step": 8000,
+          "rss": 94089216,
+          "live_heap": 27320912,
+          "free_heap": 56752,
+          "mmap": 0
+        },
+        {
+          "step": 9000,
+          "rss": 97320960,
+          "live_heap": 30552912,
+          "free_heap": 68784,
+          "mmap": 0
+        },
+        {
+          "step": 10000,
+          "rss": 100552704,
+          "live_heap": 33784912,
+          "free_heap": 80816,
+          "mmap": 0
+        },
+        {
+          "step": 11000,
+          "rss": 103784448,
+          "live_heap": 37016912,
+          "free_heap": 92848,
+          "mmap": 0
+        },
+        {
+          "step": 12000,
+          "rss": 107016192,
+          "live_heap": 40248912,
+          "free_heap": 104880,
+          "mmap": 0
+        },
+        {
+          "step": 13000,
+          "rss": 110247936,
+          "live_heap": 43480912,
+          "free_heap": 116912,
+          "mmap": 0
+        },
+        {
+          "step": 14000,
+          "rss": 113479680,
+          "live_heap": 46712912,
+          "free_heap": 128944,
+          "mmap": 0
+        },
+        {
+          "step": 15000,
+          "rss": 116711424,
+          "live_heap": 49944912,
+          "free_heap": 5808,
+          "mmap": 0
+        },
+        {
+          "step": 16000,
+          "rss": 119943168,
+          "live_heap": 53176912,
+          "free_heap": 9648,
+          "mmap": 0
+        },
+        {
+          "step": 17000,
+          "rss": 123174912,
+          "live_heap": 56408912,
+          "free_heap": 21680,
+          "mmap": 0
+        },
+        {
+          "step": 18000,
+          "rss": 126406656,
+          "live_heap": 59640912,
+          "free_heap": 33712,
+          "mmap": 0
+        },
+        {
+          "step": 19000,
+          "rss": 129638400,
+          "live_heap": 62872912,
+          "free_heap": 45744,
+          "mmap": 0
+        },
+        {
+          "step": 20000,
+          "rss": 132870144,
+          "live_heap": 66104912,
+          "free_heap": 57776,
+          "mmap": 0
+        },
+        {
+          "step": 21000,
+          "rss": 136105984,
+          "live_heap": 69336912,
+          "free_heap": 69808,
+          "mmap": 0
+        },
+        {
+          "step": 22000,
+          "rss": 139337728,
+          "live_heap": 72568912,
+          "free_heap": 81840,
+          "mmap": 0
+        },
+        {
+          "step": 23000,
+          "rss": 142569472,
+          "live_heap": 75800912,
+          "free_heap": 93872,
+          "mmap": 0
+        },
+        {
+          "step": 24000,
+          "rss": 145801216,
+          "live_heap": 79032912,
+          "free_heap": 105904,
+          "mmap": 0
+        },
+        {
+          "step": 25000,
+          "rss": 149032960,
+          "live_heap": 82264912,
+          "free_heap": 117936,
+          "mmap": 0
+        },
+        {
+          "step": 26000,
+          "rss": 152264704,
+          "live_heap": 85496912,
+          "free_heap": 129968,
+          "mmap": 0
+        },
+        {
+          "step": 27000,
+          "rss": 155496448,
+          "live_heap": 88728912,
+          "free_heap": 6832,
+          "mmap": 0
+        },
+        {
+          "step": 28000,
+          "rss": 158728192,
+          "live_heap": 91960912,
+          "free_heap": 10672,
+          "mmap": 0
+        },
+        {
+          "step": 29000,
+          "rss": 161959936,
+          "live_heap": 95192912,
+          "free_heap": 22704,
+          "mmap": 0
+        },
+        {
+          "step": 30000,
+          "rss": 165191680,
+          "live_heap": 98424912,
+          "free_heap": 34736,
+          "mmap": 0
+        },
+        {
+          "step": 31000,
+          "rss": 168423424,
+          "live_heap": 101656912,
+          "free_heap": 46768,
+          "mmap": 0
+        },
+        {
+          "step": 32000,
+          "rss": 171655168,
+          "live_heap": 104888912,
+          "free_heap": 58800,
+          "mmap": 0
+        },
+        {
+          "step": 33000,
+          "rss": 174886912,
+          "live_heap": 108120912,
+          "free_heap": 70832,
+          "mmap": 0
+        },
+        {
+          "step": 34000,
+          "rss": 178118656,
+          "live_heap": 111352912,
+          "free_heap": 82864,
+          "mmap": 0
+        },
+        {
+          "step": 35000,
+          "rss": 181350400,
+          "live_heap": 114584912,
+          "free_heap": 94896,
+          "mmap": 0
+        },
+        {
+          "step": 36000,
+          "rss": 184582144,
+          "live_heap": 117816912,
+          "free_heap": 106928,
+          "mmap": 0
+        },
+        {
+          "step": 37000,
+          "rss": 187817984,
+          "live_heap": 121048912,
+          "free_heap": 118960,
+          "mmap": 0
+        },
+        {
+          "step": 38000,
+          "rss": 191049728,
+          "live_heap": 124280912,
+          "free_heap": 130992,
+          "mmap": 0
+        },
+        {
+          "step": 39000,
+          "rss": 194281472,
+          "live_heap": 127512912,
+          "free_heap": 7856,
+          "mmap": 0
+        },
+        {
+          "step": 40000,
+          "rss": 197513216,
+          "live_heap": 130744912,
+          "free_heap": 11696,
+          "mmap": 0
+        },
+        {
+          "step": 41000,
+          "rss": 200744960,
+          "live_heap": 133976912,
+          "free_heap": 23728,
+          "mmap": 0
+        },
+        {
+          "step": 42000,
+          "rss": 203976704,
+          "live_heap": 137208912,
+          "free_heap": 35760,
+          "mmap": 0
+        },
+        {
+          "step": 43000,
+          "rss": 207208448,
+          "live_heap": 140440912,
+          "free_heap": 47792,
+          "mmap": 0
+        },
+        {
+          "step": 44000,
+          "rss": 210440192,
+          "live_heap": 143672912,
+          "free_heap": 59824,
+          "mmap": 0
+        },
+        {
+          "step": 45000,
+          "rss": 213671936,
+          "live_heap": 146904912,
+          "free_heap": 71856,
+          "mmap": 0
+        },
+        {
+          "step": 46000,
+          "rss": 216903680,
+          "live_heap": 150136912,
+          "free_heap": 83888,
+          "mmap": 0
+        },
+        {
+          "step": 47000,
+          "rss": 220135424,
+          "live_heap": 153368912,
+          "free_heap": 95920,
+          "mmap": 0
+        },
+        {
+          "step": 48000,
+          "rss": 223367168,
+          "live_heap": 156600912,
+          "free_heap": 107952,
+          "mmap": 0
+        },
+        {
+          "step": 49000,
+          "rss": 226598912,
+          "live_heap": 159832912,
+          "free_heap": 119984,
+          "mmap": 0
+        },
+        {
+          "step": 50000,
+          "rss": 229830656,
+          "live_heap": 163064912,
+          "free_heap": 132016,
+          "mmap": 0
+        },
+        {
+          "step": 51000,
+          "rss": 233062400,
+          "live_heap": 166296912,
+          "free_heap": 8880,
+          "mmap": 0
+        },
+        {
+          "step": 52000,
+          "rss": 236294144,
+          "live_heap": 169528912,
+          "free_heap": 20912,
+          "mmap": 0
+        },
+        {
+          "step": 53000,
+          "rss": 239529984,
+          "live_heap": 172760912,
+          "free_heap": 32944,
+          "mmap": 0
+        },
+        {
+          "step": 54000,
+          "rss": 242761728,
+          "live_heap": 175992912,
+          "free_heap": 44976,
+          "mmap": 0
+        },
+        {
+          "step": 55000,
+          "rss": 245993472,
+          "live_heap": 179224912,
+          "free_heap": 57008,
+          "mmap": 0
+        },
+        {
+          "step": 56000,
+          "rss": 249225216,
+          "live_heap": 182456912,
+          "free_heap": 69040,
+          "mmap": 0
+        },
+        {
+          "step": 57000,
+          "rss": 252456960,
+          "live_heap": 185688912,
+          "free_heap": 81072,
+          "mmap": 0
+        },
+        {
+          "step": 58000,
+          "rss": 255688704,
+          "live_heap": 188920912,
+          "free_heap": 93104,
+          "mmap": 0
+        },
+        {
+          "step": 59000,
+          "rss": 258920448,
+          "live_heap": 192152912,
+          "free_heap": 105136,
+          "mmap": 0
+        },
+        {
+          "step": 60000,
+          "rss": 262152192,
+          "live_heap": 195384912,
+          "free_heap": 117168,
+          "mmap": 0
+        },
+        {
+          "step": -1,
+          "rss": 262258688,
+          "live_heap": 194904800,
+          "free_heap": 597280,
+          "mmap": 0
+        },
+        {
+          "step": -2,
+          "rss": 262258688,
+          "live_heap": 194904800,
+          "free_heap": 597280,
+          "mmap": 0
+        }
+      ],
+      "completed": true
+    },
+    "allocator_trim": {
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 20.364452485984657,
+        "pid": 9
+      },
+      "command": [
+        "/home/ubuntu/LHJ/ReGrip/build/integrated_20261115/diagnostics/integrated_driver",
+        "/home/ubuntu/SOFA/v26.06.00",
+        "/home/ubuntu/LHJ/ReGrip/results/next_phase/memory_controls/engine_free/scene.scn",
+        "60000",
+        "1"
+      ],
+      "mallinfo": [
+        {
+          "step": 0,
+          "rss": 66879488,
+          "live_heap": 1210064,
+          "free_heap": 31024,
+          "mmap": 0
+        },
+        {
+          "step": 1000,
+          "rss": 71475200,
+          "live_heap": 4696912,
+          "free_heap": 1200,
+          "mmap": 0
+        },
+        {
+          "step": 2000,
+          "rss": 74706944,
+          "live_heap": 7928912,
+          "free_heap": 944,
+          "mmap": 0
+        },
+        {
+          "step": 3000,
+          "rss": 77938688,
+          "live_heap": 11160912,
+          "free_heap": 688,
+          "mmap": 0
+        },
+        {
+          "step": 4000,
+          "rss": 81170432,
+          "live_heap": 14392912,
+          "free_heap": 432,
+          "mmap": 0
+        },
+        {
+          "step": 5000,
+          "rss": 84406272,
+          "live_heap": 17624912,
+          "free_heap": 4272,
+          "mmap": 0
+        },
+        {
+          "step": 6000,
+          "rss": 87638016,
+          "live_heap": 20856912,
+          "free_heap": 4016,
+          "mmap": 0
+        },
+        {
+          "step": 7000,
+          "rss": 90869760,
+          "live_heap": 24088912,
+          "free_heap": 3760,
+          "mmap": 0
+        },
+        {
+          "step": 8000,
+          "rss": 94101504,
+          "live_heap": 27320912,
+          "free_heap": 3504,
+          "mmap": 0
+        },
+        {
+          "step": 9000,
+          "rss": 97333248,
+          "live_heap": 30552912,
+          "free_heap": 3248,
+          "mmap": 0
+        },
+        {
+          "step": 10000,
+          "rss": 100564992,
+          "live_heap": 33784912,
+          "free_heap": 2992,
+          "mmap": 0
+        },
+        {
+          "step": 11000,
+          "rss": 103796736,
+          "live_heap": 37016912,
+          "free_heap": 2736,
+          "mmap": 0
+        },
+        {
+          "step": 12000,
+          "rss": 107028480,
+          "live_heap": 40248912,
+          "free_heap": 2480,
+          "mmap": 0
+        },
+        {
+          "step": 13000,
+          "rss": 110260224,
+          "live_heap": 43480912,
+          "free_heap": 2224,
+          "mmap": 0
+        },
+        {
+          "step": 14000,
+          "rss": 113491968,
+          "live_heap": 46712912,
+          "free_heap": 1968,
+          "mmap": 0
+        },
+        {
+          "step": 15000,
+          "rss": 116723712,
+          "live_heap": 49944912,
+          "free_heap": 1712,
+          "mmap": 0
+        },
+        {
+          "step": 16000,
+          "rss": 119955456,
+          "live_heap": 53176912,
+          "free_heap": 1456,
+          "mmap": 0
+        },
+        {
+          "step": 17000,
+          "rss": 123187200,
+          "live_heap": 56408912,
+          "free_heap": 1200,
+          "mmap": 0
+        },
+        {
+          "step": 18000,
+          "rss": 126418944,
+          "live_heap": 59640912,
+          "free_heap": 944,
+          "mmap": 0
+        },
+        {
+          "step": 19000,
+          "rss": 129650688,
+          "live_heap": 62872912,
+          "free_heap": 688,
+          "mmap": 0
+        },
+        {
+          "step": 20000,
+          "rss": 132882432,
+          "live_heap": 66104912,
+          "free_heap": 432,
+          "mmap": 0
+        },
+        {
+          "step": 21000,
+          "rss": 136118272,
+          "live_heap": 69336912,
+          "free_heap": 4272,
+          "mmap": 0
+        },
+        {
+          "step": 22000,
+          "rss": 139350016,
+          "live_heap": 72568912,
+          "free_heap": 4016,
+          "mmap": 0
+        },
+        {
+          "step": 23000,
+          "rss": 142581760,
+          "live_heap": 75800912,
+          "free_heap": 3760,
+          "mmap": 0
+        },
+        {
+          "step": 24000,
+          "rss": 145813504,
+          "live_heap": 79032912,
+          "free_heap": 3504,
+          "mmap": 0
+        },
+        {
+          "step": 25000,
+          "rss": 149045248,
+          "live_heap": 82264912,
+          "free_heap": 3248,
+          "mmap": 0
+        },
+        {
+          "step": 26000,
+          "rss": 152276992,
+          "live_heap": 85496912,
+          "free_heap": 2992,
+          "mmap": 0
+        },
+        {
+          "step": 27000,
+          "rss": 155508736,
+          "live_heap": 88728912,
+          "free_heap": 2736,
+          "mmap": 0
+        },
+        {
+          "step": 28000,
+          "rss": 158740480,
+          "live_heap": 91960912,
+          "free_heap": 2480,
+          "mmap": 0
+        },
+        {
+          "step": 29000,
+          "rss": 161972224,
+          "live_heap": 95192912,
+          "free_heap": 2224,
+          "mmap": 0
+        },
+        {
+          "step": 30000,
+          "rss": 165203968,
+          "live_heap": 98424912,
+          "free_heap": 1968,
+          "mmap": 0
+        },
+        {
+          "step": 31000,
+          "rss": 168435712,
+          "live_heap": 101656912,
+          "free_heap": 1712,
+          "mmap": 0
+        },
+        {
+          "step": 32000,
+          "rss": 171667456,
+          "live_heap": 104888912,
+          "free_heap": 1456,
+          "mmap": 0
+        },
+        {
+          "step": 33000,
+          "rss": 174899200,
+          "live_heap": 108120912,
+          "free_heap": 1200,
+          "mmap": 0
+        },
+        {
+          "step": 34000,
+          "rss": 178130944,
+          "live_heap": 111352912,
+          "free_heap": 944,
+          "mmap": 0
+        },
+        {
+          "step": 35000,
+          "rss": 181362688,
+          "live_heap": 114584912,
+          "free_heap": 688,
+          "mmap": 0
+        },
+        {
+          "step": 36000,
+          "rss": 184594432,
+          "live_heap": 117816912,
+          "free_heap": 432,
+          "mmap": 0
+        },
+        {
+          "step": 37000,
+          "rss": 187830272,
+          "live_heap": 121048912,
+          "free_heap": 4272,
+          "mmap": 0
+        },
+        {
+          "step": 38000,
+          "rss": 191062016,
+          "live_heap": 124280912,
+          "free_heap": 4016,
+          "mmap": 0
+        },
+        {
+          "step": 39000,
+          "rss": 194293760,
+          "live_heap": 127512912,
+          "free_heap": 3760,
+          "mmap": 0
+        },
+        {
+          "step": 40000,
+          "rss": 197525504,
+          "live_heap": 130744912,
+          "free_heap": 3504,
+          "mmap": 0
+        },
+        {
+          "step": 41000,
+          "rss": 200757248,
+          "live_heap": 133976912,
+          "free_heap": 3248,
+          "mmap": 0
+        },
+        {
+          "step": 42000,
+          "rss": 203988992,
+          "live_heap": 137208912,
+          "free_heap": 2992,
+          "mmap": 0
+        },
+        {
+          "step": 43000,
+          "rss": 207220736,
+          "live_heap": 140440912,
+          "free_heap": 2736,
+          "mmap": 0
+        },
+        {
+          "step": 44000,
+          "rss": 210452480,
+          "live_heap": 143672912,
+          "free_heap": 2480,
+          "mmap": 0
+        },
+        {
+          "step": 45000,
+          "rss": 213684224,
+          "live_heap": 146904912,
+          "free_heap": 2224,
+          "mmap": 0
+        },
+        {
+          "step": 46000,
+          "rss": 216915968,
+          "live_heap": 150136912,
+          "free_heap": 1968,
+          "mmap": 0
+        },
+        {
+          "step": 47000,
+          "rss": 220147712,
+          "live_heap": 153368912,
+          "free_heap": 1712,
+          "mmap": 0
+        },
+        {
+          "step": 48000,
+          "rss": 223379456,
+          "live_heap": 156600912,
+          "free_heap": 1456,
+          "mmap": 0
+        },
+        {
+          "step": 49000,
+          "rss": 226611200,
+          "live_heap": 159832912,
+          "free_heap": 1200,
+          "mmap": 0
+        },
+        {
+          "step": 50000,
+          "rss": 229842944,
+          "live_heap": 163064912,
+          "free_heap": 944,
+          "mmap": 0
+        },
+        {
+          "step": 51000,
+          "rss": 233074688,
+          "live_heap": 166296912,
+          "free_heap": 688,
+          "mmap": 0
+        },
+        {
+          "step": 52000,
+          "rss": 236306432,
+          "live_heap": 169528912,
+          "free_heap": 432,
+          "mmap": 0
+        },
+        {
+          "step": 53000,
+          "rss": 239542272,
+          "live_heap": 172760912,
+          "free_heap": 4272,
+          "mmap": 0
+        },
+        {
+          "step": 54000,
+          "rss": 242774016,
+          "live_heap": 175992912,
+          "free_heap": 4016,
+          "mmap": 0
+        },
+        {
+          "step": 55000,
+          "rss": 246005760,
+          "live_heap": 179224912,
+          "free_heap": 3760,
+          "mmap": 0
+        },
+        {
+          "step": 56000,
+          "rss": 249237504,
+          "live_heap": 182456912,
+          "free_heap": 3504,
+          "mmap": 0
+        },
+        {
+          "step": 57000,
+          "rss": 252469248,
+          "live_heap": 185688912,
+          "free_heap": 3248,
+          "mmap": 0
+        },
+        {
+          "step": 58000,
+          "rss": 255700992,
+          "live_heap": 188920912,
+          "free_heap": 2992,
+          "mmap": 0
+        },
+        {
+          "step": 59000,
+          "rss": 258932736,
+          "live_heap": 192152912,
+          "free_heap": 2736,
+          "mmap": 0
+        },
+        {
+          "step": 60000,
+          "rss": 262164480,
+          "live_heap": 195384912,
+          "free_heap": 2480,
+          "mmap": 0
+        },
+        {
+          "step": -1,
+          "rss": 262270976,
+          "live_heap": 194904800,
+          "free_heap": 613664,
+          "mmap": 0
+        },
+        {
+          "step": -2,
+          "rss": 262041600,
+          "live_heap": 194904800,
+          "free_heap": 482592,
+          "mmap": 0
+        }
+      ],
+      "completed": true
+    },
+    "allocation_stacks": {
+      "process": {
+        "exit_code": -9,
+        "process_status": "timeout",
+        "runtime_s": 150.01073224598076,
+        "pid": 13
+      },
+      "command": [
+        "/home/ubuntu/LHJ/ReGrip/build/integrated_20261115/diagnostics/integrated_driver",
+        "/home/ubuntu/SOFA/v26.06.00",
+        "/home/ubuntu/LHJ/ReGrip/results/next_phase/memory_controls/engine_free/scene.scn",
+        "10000",
+        "0"
+      ],
+      "mallinfo": [
+        {
+          "step": 0,
+          "rss": 84238336,
+          "live_heap": 1209664,
+          "free_heap": 31424,
+          "mmap": 0
+        },
+        {
+          "step": 1000,
+          "rss": 89747456,
+          "live_heap": 4696512,
+          "free_heap": 104000,
+          "mmap": 0
+        },
+        {
+          "step": 2000,
+          "rss": 92979200,
+          "live_heap": 7928512,
+          "free_heap": 116032,
+          "mmap": 0
+        },
+        {
+          "step": 3000,
+          "rss": 96210944,
+          "live_heap": 11160512,
+          "free_heap": 128064,
+          "mmap": 0
+        },
+        {
+          "step": 4000,
+          "rss": 99442688,
+          "live_heap": 14392512,
+          "free_heap": 4928,
+          "mmap": 0
+        },
+        {
+          "step": 5000,
+          "rss": 102674432,
+          "live_heap": 17624512,
+          "free_heap": 8768,
+          "mmap": 0
+        },
+        {
+          "step": 6000,
+          "rss": 105906176,
+          "live_heap": 20856512,
+          "free_heap": 20800,
+          "mmap": 0
+        },
+        {
+          "step": 7000,
+          "rss": 109142016,
+          "live_heap": 24088512,
+          "free_heap": 32832,
+          "mmap": 0
+        },
+        {
+          "step": 8000,
+          "rss": 112373760,
+          "live_heap": 27320512,
+          "free_heap": 44864,
+          "mmap": 0
+        },
+        {
+          "step": 9000,
+          "rss": 115605504,
+          "live_heap": 30552512,
+          "free_heap": 56896,
+          "mmap": 0
+        }
+      ],
+      "completed": false
+    }
+  }
+}

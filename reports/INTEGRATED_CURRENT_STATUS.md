@@ -1,0 +1,39 @@
+# ReGrip 통합 개발 최종 실행 보고
+
+기준 commit `ba8e0e515bd9c06c75e764dfe1dc09670e614c77`.
+브랜치 `development/regrip-integrated-system`; 보고서 생성 시 code commit `67be4ac37e26db94f4a4b0bc361e4a14fcad4cd4`.
+문서/manifest commit SHA는 `git log -1 --format=%H`로 확인(자기참조 hash는 넣지 않음).
+원격 push/이력 재작성 없음. 이전 검증 branch/main/골든 보존.
+
+## 결과
+
+|대상|판정|새 실행 근거|
+|---|---|---|
+|이전 NEXT manifest 무결성|PASS|불일치0, start.json|
+|기존600시점 FREE 회귀|PASS|독립2회; 처짐 max error1.38778e-16, 속도1.41553e-14, 원래 tolerance1e-10+1e-6abs(golden)|
+|기존 C++/finite kernel|PASS|600상태/60상태 실제 실행|
+|기존45 gate|이전 PASS 유지|무결성 확인; 이번 전체45개 재실행 아님|
+|기존 automation/guard|PASS|20/11개 새 실행|
+|신규 Python 계약 검사|PASS|8개 실제 실행, skip0|
+|메모리 원인 재현|PASS|MappingGraph ownership cycle, 최소장면4/4 retained|
+|동일 process plateau|FAIL|live heap 증가 지속; 엔진 미수정|
+|C++ 신규 수학/API|PASS|120상태+전체 cable FD+ASan/UBSan, LSan제외|
+|100mm2/4층|PASS(선언 범위)|동일 조건 SOFA/EB 비교 및 후보 수렴|
+|8층 수렴|FAIL|coarse실행과 달리 halfdt/mesh/18s 잔차 미달|
+|와이어/압력 마찰|EXPERIMENTAL / 일부 FAIL|nonzero load 잔차 강화 후 tiny tension/length/wire-pressure 평형 미달|
+|고정 물체 접촉|PASS(선언 범위)|3형상 검출/응답|
+|자유 물체 파지|FAIL|1.440985mm 이동 >.001mm hold gate|
+|Optuna/SofaPython3|BLOCKED|DNS/캐시부재, libpython3.12없음; Optuna0 trial|
+|결정론적 grid|PASS|30완료/주입실패1, workflow7/7|
+|SOFA Pareto 후보|6/6 승인|원래 위치/halfdt/mesh/repeat/+6s|
+|전체 파지 설계 최적화|BLOCKED|grasp gate 미달, 조작한 성능값 없음|
+
+인수인계 archive member56개도 실제 byte-for-byte 재검사 PASS(originals.json).
+수정 전 guard 실패와 수정 후 ASan/UBSan 및 실제 SOFA3장면 회귀 PASS.
+별도 유한 회전 slip 후처리 식 수정은 C++ recorder 전시점 대조로 검증했다.
+tiny cable load 잔차의1e-6 하한도 제거했다. 초기18/18,20/20 선언 검사 결과를
+최종 물리 인증으로 그대로 재사용하지 않으며 residual_audit가 우선한다.
+
+
+진행 상태/실패 목록은 INTEGRATED_FINAL_REPORT 및 INTEGRATED_01..09 참조.
+raw 출력은 덮어쓰지 않는다. 작업 종료 후 잔류 SOFA child가 없는지 확인한다.

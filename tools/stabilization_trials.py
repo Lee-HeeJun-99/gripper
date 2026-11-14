@@ -16,6 +16,7 @@ def run(name,c,static=False,linear='EigenSparseLU',steps=None,initial=None):
     solver=root.find('EigenSparseLU');solver.tag=linear
     if linear=='SparseLDLSolver':solver.set('template','CompressedRowSparseMatrixd')
     if linear=='CGLinearSolver':solver.set('iterations','2000');solver.set('tolerance','1e-16');solver.set('threshold','1e-30')
+    if linear=='CGLinearSolver':ET.SubElement(root,'RequiredPlugin',name='iterative_plugin',pluginName='Sofa.Component.LinearSolver.Iterative')
     body=root.find('Node');ET.SubElement(body,'ForceAudit',filename=str(out/'forces.txt'),after=str(max(0,c.duration-.1)),stride=str(c.stride))
     if initial:
         from trial_validation import read_states

@@ -34,6 +34,10 @@ def main():
         if p.exists():target=E/name.replace('/','__');target.write_bytes(p.read_bytes());raw_map[str(target.relative_to(ROOT))]=dict(raw=str(p),sha256=sha(p))
     for p in OUT.glob('compensated_*.log'):
         target=E/p.name;target.write_bytes(p.read_bytes());raw_map[str(target.relative_to(ROOT))]=dict(raw=str(p),sha256=sha(p))
+    for name in ('solver_matrix/static/solver.tsv','solver_matrix/dynamic_steady_short/solver.tsv','resolution_probe/standard_correct_reference/compensation.csv','resolution_probe/compensated_correct_reference/compensation.csv'):
+        p=OUT/name
+        if p.exists():
+            target=E/name.replace('/','__');target.write_bytes(p.read_bytes());raw_map[str(target.relative_to(ROOT))]=dict(raw=str(p),sha256=sha(p))
     with (E/'trials.csv').open('w') as stream:
         writer=csv.DictWriter(stream,fieldnames=trial_rows[0]);writer.writeheader();writer.writerows(trial_rows)
     common='''

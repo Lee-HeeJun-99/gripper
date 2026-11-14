@@ -258,6 +258,10 @@ DiagonalMass의 실제 두-template/explicit links, event-time sample window의 
 
 8층 static k100 ON/OFF≈6.47221548, Hermite slip≈8.98388108e-8mm.
 이는 재료량이 증가한8층 static spring model이며 실제 진공 성능값이 아니다.
+보상 합산 cold8층 처짐.00060356765483mm, 잔차1.64997286e-5.
+halfdt/21node/18s 잔차2.15210501e-5/1.98673897e-5/1.45721222e-5,
+반복 tip 차이0;2/4층 기존 tip와 차이 각각3.61e-16/4.23e-16mm.
+모든 힘/모멘트 기준은 유지하며 sub-ULP 증분 보상은 자유 물체에는 사용하지 않았다.
 기본 free-object +X 이동6.54322072e-6mm, mu0 약.0178247mm,
 overload 약.012645mm. 후자의 이동이.05mm보다 작아도 force/velocity에서 FAIL.
 기본±Z는 transient FAIL, 연장/α=2 damping 연구 조건은 별도 평가한다.
@@ -303,6 +307,7 @@ $PY tools/stabilization_trials.py static
 $PY tools/stabilization_static_extras.py
 $PY tools/stabilization_trials.py regression
 $PY tools/stabilization_compensated_suite.py
+$PY tools/stabilization_compensated_followup.py
 $PY tools/stabilization_compensated_checks.py
 $PY tools/stabilization_audit.py
 $PY tools/stabilization_eight_search.py
@@ -310,12 +315,17 @@ $PY tools/stabilization_grasp.py sphere_x_valid
 $PY tools/stabilization_grasp_suite.py
 $PY tools/stabilization_grasp_refine.py
 $PY tools/stabilization_grasp_fine.py
+$PY tools/stabilization_fast_fine.py
 $PY tools/stabilization_grasp_gate.py
 $PY tools/stabilization_energy.py
 $PY -m unittest discover -s tests -p test_stabilization.py
 ```
 
 Memory/probe CMake는 diagnostics/stabilization, 실제 process 명령은 저장된command.json/result.json을 따른다.
+추가 바이너리는 같은 CMake source를 별도 build/stabilization_20261115/compensated,
+telemetry, contact_fast 디렉터리에 configure 후 각각 ReGripCompensated/test_compensated,
+ReGripTelemetry, ReGripDistributed/test_stabilization_contact target으로 빌드한다.
+fast 실행 시 REGRIP_CONTACT_PLUGIN=$PWD/build/stabilization_20261115/contact_fast/libReGripDistributed.so를 설정한다.
 위 명령은 현재 소스의 새 실행이며 수정 전 실패 로그를 덮어쓰지 않는다.
 외부 의존성과 원본 실행의 BLOCKED가 해소되기 전 성공으로 기록하지 않는다.
 ''')

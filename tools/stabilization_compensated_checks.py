@@ -7,6 +7,8 @@ def main():
     cold={p.parent.name:json.loads(p.read_text()) for p in (OUT/'compensated_cold').glob('*/metrics.json')}
     follow={p.parent.name:json.loads(p.read_text()) for p in (OUT/'compensated_followup').glob('*/metrics.json')}
     base=cold['L8_base'];checks={}
+    checks['required_cold_records']=set(cold)=={'L8_base','L8_halfdt','L8_mesh','L8_extended','small','length','wire_pressure','L2_regression','L4_regression'}
+    checks['required_followup_records']=set(follow)=={'free','k1','k10','repeat','quarterdt'}
     for name,r in {**cold,**{'follow_'+k:v for k,v in follow.items()}}.items():
         checks[name+'_equilibrium']=r['status']=='PASS' and r['relative_residual']<1e-3
     comparisons={}

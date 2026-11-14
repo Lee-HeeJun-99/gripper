@@ -18,11 +18,12 @@ import numpy as np
 from models.multilayer.beam import Design,solve,assemble
 from integrated_common import OUT,ROOT,sha,write_json,provenance
 from integrated_integrity import verify_trial
+from integrated_slip import interior_slip
 
 def digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True,allow_nan=False).encode()).hexdigest()
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,default=OUT/'deterministic_search');p.add_argument('--limit',type=int,default=90);p.add_argument('--inject-failure',action='store_true');p.add_argument('--delay-after-running',type=float,default=0,help='bounded fault-injection hook, seconds');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,default=OUT/'deterministic_search');p.add_argument('--limit',type=int,default=90);p.add_argument('--metric',choices=['nodal','hermite'],default='nodal',help='separate research metric variant; never mix studies');p.add_argument('--inject-failure',action='store_true');p.add_argument('--delay-after-running',type=float,default=0,help='bounded fault-injection hook, seconds');a=p.parse_args()
     if a.limit<1:raise ValueError('positive bounded limit required')
     if not 0<=a.delay_after_running<=2:raise ValueError('fault delay resource bound')
     gate=json.loads((OUT/'multilayer/summary.json').read_text());eligible=[]
@@ -42,7 +43,7 @@ def main():
     # Equal-material proxies require their own corresponding SOFA family gate.
     grid=[c for c in grid if not c['equal_material'] or c['layers']==2 or all(gate['checks'].get(f'equal_material_L{c["layers"]}_k{k}_equilibrium') and gate['checks'].get(f'equal_material_L{c["layers"]}_k{k}_FEM') for k in (0,100))]
     random.Random(11).shuffle(grid)
-    identity=dict(method='deterministic_static_FEM_grid_NOT_OPTUNA',seed=11,source=sha(__file__),fem_source=sha(ROOT/'models/multilayer/beam.py'),grid_sha256=digest(grid),
+    identity=dict(method='deterministic_static_FEM_grid_NOT_OPTUNA',metric=a.metric,metric_source=sha(ROOT/'tools/integrated_slip.py'),seed=11,source=sha(__file__),fem_source=sha(ROOT/'models/multilayer/beam.py'),grid_sha256=digest(grid),
         reference_binary_sha256=gate['records']['L2_k100']['binary_sha256'])
     a.out.mkdir(parents=True,exist_ok=True);db=sqlite3.connect(a.out/'research_grid.sqlite3',timeout=10)
     db.execute('CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY,value TEXT NOT NULL)')
@@ -67,7 +68,12 @@ def main():
             on=solve(d);off=solve(replace(d,coupling=0))
             if not on['small_rotation_validated'] or on['normalized_residual']>=1e-6:raise ValueError('invalid static physics')
             K,f,B,free,tips=assemble(d);K+=d.coupling*B.T@B
-            result=dict(stiffness_ratio=off['deflection_mm']/on['deflection_mm'],max_interface_slip_mm=on['max_interface_slip_mm'],
+            pose=[]
+            for i in range(L*d.nodes):
+                phi=on['displacement'][3*i+2];pose.extend([d.length*(i%d.nodes)/(d.nodes-1)+on['displacement'][3*i],0,(i//d.nodes-(L-1)/2)*d.thickness+on['displacement'][3*i+1],0,math.sin(-phi/2),0,math.cos(-phi/2)])
+            continuous=interior_slip(pose,L,d.nodes,d.length,d.thickness)['max_reconstructed_slip_mm']
+            result=dict(stiffness_ratio=off['deflection_mm']/on['deflection_mm'],max_interface_slip_mm=continuous if a.metric=='hermite' else on['max_interface_slip_mm'],
+                max_nodal_slip_mm=on['max_interface_slip_mm'],max_reconstructed_slip_mm=continuous,
                 complexity=(L-1)*len(d.connectors),material_volume_mm3=L*A*d.length,
                 off_tip_mm=off['deflection_mm'],on_tip_mm=on['deflection_mm'],normalized_residual=on['normalized_residual'],
                 condition_number_raw_mm_rad=float(np.linalg.cond(K[np.ix_(free,free)])),

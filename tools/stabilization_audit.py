@@ -27,7 +27,7 @@ def audit(directory):
 
 def main():
     results={}
-    for phase in ('newton','static','regression'):
+    for phase in ('newton','static','regression','compensated_cold','compensated_followup'):
         for p in sorted((OUT/phase).glob('*/forces.txt')):
             try:results[str(p.parent.relative_to(OUT))]=audit(p.parent)
             except (ValueError,KeyError) as e:results[str(p.parent.relative_to(OUT))]=dict(status='FAIL',reason=str(e))

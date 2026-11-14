@@ -29,6 +29,9 @@ int main(){try{
   auto rotated=ff->compute(xr,vr);for(int i=0;i<3;++i)for(int offset:{0,3}){auto forceR=rotate(q,V{b.a.f[6*i+offset],b.a.f[6*i+offset+1],b.a.f[6*i+offset+2]});for(int j=0;j<3;++j)require(std::abs(forceR[j]-rotated.a.f[6*i+offset+j])<1e-12,"distributed contact objectivity");}
  }
  require(maxX<1e-7&&maxV<1e-7&&maxMoment<1e-12,"distributed full-component derivative/moment consistency");
+ ff->speed.setValue(1e-5);auto tiny=v;for(auto&d:tiny)for(int j=0;j<6;++j)d[j]*=1e-4;auto actual=ff->compute(x,tiny);double actualB[18][18]{};for(auto&t:actual.B)actualB[t.r][t.c]+=t.v;
+ for(int i=0;i<18;++i){auto vp=tiny,vm=tiny;vp[i/6][i%6]+=1e-10;vm[i/6][i%6]-=1e-10;auto p=ff->compute(x,vp),m=ff->compute(x,vm);for(int j=0;j<18;++j)maxV=std::max(maxV,std::abs((p.a.f[j]-m.a.f[j])/2e-10-actualB[j][i]));}
+ require(maxV<1e-7,"velocity derivative at actual1e-5 regularization and creep-scale velocities");
  Inherit::DataVecDeriv invalidF,invalidX;ff->buildDampingMatrix(nullptr);ff->addDForce(nullptr,invalidF,invalidX);
  std::cout<<"PASS distributed contact full18DOF Jx="<<maxX<<" Jv="<<maxV<<" net_moment="<<maxMoment<<" dissipation>=0; 3 shapes; SOFA K/B, kFactor/bFactor, objectivity, invalid null APIs\n";
 }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}return 0;}

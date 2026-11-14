@@ -15,6 +15,23 @@ dynamic trajectories. Static time/dt continuation checks are NOT dynamic timeste
 certification. Friction history depends on the loading path. The original failed
 dynamic experiments remain immutable.
 
+## Compensated structural Euler accumulation
+
+The native linear Ax-b residual can be near machine precision while absolute
+positions lose v*dt increments smaller than one ULP. CompensatedEulerPositions
+carries this rounding remainder in long double; it does not read force, target
+position or equilibrium criteria. Rotations and excluded fixed roots are unchanged.
+It is valid only for these unconstrained structural Euler scenes. The trial helper
+rejects static-solver and object/contact configurations. It is NEVER used to hold
+the free grasp object. Original standard-Euler failures remain separate evidence.
+Cold-start 8-layer/dt/mesh/18s and small-tension/length/pressure regressions were
+executed with unchanged physical thresholds. SolverTelemetry independently records
+native residual data and public linear-system Ax-b, distinct from physical force.
+
+The fast contact build removes unused second derivatives from friction's first
+Jacobian calculation, retaining the normal-energy Hessian. Baseline X/V/R matches
+the former build bit-for-bit; this is not a change to contact physics.
+
 ## DistributedContact
 
 For each beam segment, trapezoidal line quadrature uses reference-length weights.

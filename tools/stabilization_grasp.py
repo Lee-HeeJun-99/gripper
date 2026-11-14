@@ -8,6 +8,8 @@ import csv
 from dataclasses import asdict
 import json
 import math
+import os
+from pathlib import Path
 import xml.etree.ElementTree as ET
 import numpy as np
 from integrated_trial import Config,scene,sequence
@@ -46,7 +48,7 @@ def run(name,shape=0,axis=0,load=1e-6,dt=.0005,duration=12,nodes=11,samples=8,mu
     ET.SubElement(body,'IntegratedRecorder',filename=str(out/'state.txt'),stride='20')
     ET.SubElement(body,'ContactHistory',filename=str(out/'contact.csv'),stride='20')
     root.set('dt',str(dt));tree.write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
-    plugin=BUILD/'contact_v2/libReGripDistributed.so';command=[str(SOFA/'bin/runSofa-26.06.00'),'--noautoload','--tmp','-g','batch','-a','-n',str(round(duration/dt)),'--hideProgressBar','-l',str(plugin),str(out/'scene.scn')]
+    plugin=Path(os.environ.get('REGRIP_CONTACT_PLUGIN',str(BUILD/'contact_v2/libReGripDistributed.so')));command=[str(SOFA/'bin/runSofa-26.06.00'),'--noautoload','--tmp','-g','batch','-a','-n',str(round(duration/dt)),'--hideProgressBar','-l',str(plugin),str(out/'scene.scn')]
     config=dict(shape=shape,axis=axis,load=load,dt=dt,duration=duration,nodes=nodes,samples=samples,mu=mu,fingers=2,layers=2,length=100,base_z=[5.305,-5.305],object_index=obj,object_mass=.0001,object_inertia_per_mass=inertia,
         object_constraints=[],finger_guided_planar=True,friction='smooth kinetic Coulomb; NO exact static stick',hold_limit_mm=.05,hold_limit_rationale='1% of 5mm research-object radius; not original negative-control .001mm benchmark; velocity/force gates also mandatory',tension_per_layer=.001,pressure_on=.001,hold_until=hold_until,rayleigh_mass=rayleigh_mass,pressure_off=hold_until+1,tendon_off=hold_until+2)
     write_json(out/'config.json',config);write_json(out/'command.json',command);p=execute_process(command,out,180)

@@ -7,7 +7,7 @@ from integrated_trial import Config,scene,analyze,force_reference
 from stabilization_common import ROOT,SOFA,OUT,BUILD,PLUGIN,write_json,sha,provenance
 from run_trial import execute_process
 
-def run(name,c,static=False,linear='EigenSparseLU',steps=None,initial=None,newton_fraction=5e-4):
+def run(name,c,static=False,linear='EigenSparseLU',steps=None,initial=None,newton_fraction=5e-4,telemetry=False,compensated=False):
     if not 0<newton_fraction<=1e-3:raise ValueError('Newton stopping may not exceed physical force criterion')
     c.validate();out=OUT/name;out.mkdir(parents=True,exist_ok=False);g=scene(out,c);tree=ET.parse(out/'scene.scn');root=tree.getroot()
     ode=root.find('EulerImplicitSolver');ode.set('computeResidual','true')
@@ -20,15 +20,22 @@ def run(name,c,static=False,linear='EigenSparseLU',steps=None,initial=None,newto
     if linear=='CGLinearSolver':root.insert(0,ET.Element('RequiredPlugin',name='iterative_plugin',pluginName='Sofa.Component.LinearSolver.Iterative'))
     if linear=='SparseLUSolver':root.insert(0,ET.Element('RequiredPlugin',name='csparse_plugin',pluginName='CSparseSolvers'))
     body=root.find('Node');ET.SubElement(body,'ForceAudit',filename=str(out/'forces.txt'),after=str(max(0,c.duration-.1)),stride=str(c.stride))
+    if compensated:
+        if static or c.object_shape>=0:raise ValueError('compensated Euler is structural-only; no object position correction')
+        body.insert(0,ET.Element('CompensatedEulerPositions',excludedIndices=' '.join(map(str,g['fixed'])),filename=str(out/'compensation.csv')))
+    if telemetry:ET.SubElement(root,'SolverTelemetry',filename=str(out/'solver.tsv'),stride=str(c.stride),matrixAfter=str(max(0,c.duration-.1)))
+    rest_reference=None
     if initial:
         from trial_validation import read_states
-        obj=body.find('MechanicalObject');obj.set('rest_position',obj.get('position'));obj.set('position',' '.join(map(str,read_states(initial)[-1]['X'])))
+        obj=body.find('MechanicalObject');rest_reference=list(map(float,obj.get('position').split()));obj.set('rest_position',obj.get('position'));obj.set('position',' '.join(map(str,read_states(initial)[-1]['X'])))
     tree.write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
-    settings=dict(**asdict(c),static_solver=static,linear_solver=linear,newton_fraction=newton_fraction,initial=str(initial) if initial else 'cold')
+    settings=dict(**asdict(c),static_solver=static,linear_solver=linear,newton_fraction=newton_fraction,compensated=compensated,initial=str(initial) if initial else 'cold')
     command=[str(SOFA/'bin/runSofa-26.06.00'),'--noautoload','--tmp','-g','batch','-a','-n',str(steps or round(c.duration/c.dt)),'--hideProgressBar','-l',str(PLUGIN),str(out/'scene.scn')]
+    if telemetry:command[-1:-1]=['-l',str(BUILD/'telemetry/libReGripTelemetry.so')]
+    if compensated:command[-1:-1]=['-l',str(BUILD/'compensated/libReGripCompensated.so')]
     write_json(out/'config.json',settings);write_json(out/'command.json',command)
     r=dict(config=settings,provenance=provenance(),binary_sha256=sha(PLUGIN));p=execute_process(command,out,180);r['process']=p
-    try:r.update(analyze(out,c,g,p,(out/'stdout.log').read_text()+(out/'stderr.log').read_text()))
+    try:r.update(analyze(out,c,g,p,(out/'stdout.log').read_text()+(out/'stderr.log').read_text(),rest_reference=rest_reference))
     except (ValueError,OSError,KeyError) as e:r.update(status='FAIL',reason=str(e))
     r['artifacts']={f.name:sha(f) for f in out.iterdir() if f.is_file() and f.name!='metrics.json'};write_json(out/'metrics.json',r)
     print(name,r['status'],r.get('relative_residual'),flush=True);return r

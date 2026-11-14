@@ -32,7 +32,7 @@ def measured_table(records,final_status=None):
         status=r.get('status','NOT RUN')
         if final_status and final_status.get(name,status)!=status:status+=' → '+final_status[name]+' (strict)'
         lines.append('|'+ '|'.join([name,status]+[f'{r[k]:.10g}' if isinstance(r.get(k),(int,float)) else '—' for k in ('tip_deflection_mm','relative_residual','final_velocity','max_rotation_rad')])+'|')
-    return '\n'.join(lines)
+    return '\n\n'+'\n'.join(lines)+'\n\n'
 
 def main():
     EVIDENCE.mkdir(exist_ok=True)
@@ -318,6 +318,7 @@ E변화3.28137..3.28393, k변화3.28123..3.28381이다.
 |기존 C++/finite kernel|PASS|600상태/60상태 실제 실행|
 |기존45 gate|이전 PASS 유지|무결성 확인; 이번 전체45개 재실행 아님|
 |기존 automation/guard|PASS|20/11개 새 실행|
+|신규 Python 계약 검사|PASS|8개 실제 실행, skip0|
 |메모리 원인 재현|PASS|MappingGraph ownership cycle, 최소장면4/4 retained|
 |동일 process plateau|FAIL|live heap 증가 지속; 엔진 미수정|
 |C++ 신규 수학/API|PASS|120상태+전체 cable FD+ASan/UBSan, LSan제외|

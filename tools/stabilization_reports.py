@@ -43,6 +43,8 @@ def main():
     common='''
 ## 공통 증거/범위
 
+환경: Ubuntu22.04.5, kernel6.8.0-138-generic, GCC11.4, CMake3.22.1,
+Python3.10.20(robot_ws), SOFA v26.06.00(`/home/ubuntu/SOFA/v26.06.00`).
 실물 측정값0건. 연구 단위 F/mm/s와 기존 E=250, A≈.732233mm², I=.0426667mm⁴를 사용한다.
 기존 plugin/integrated/finite_rotation/multilayer 원본과 골든 파일을 변경하지 않았다.
 raw: `results/stabilization_20261115/`; 작은 증거: `reports/stabilization_evidence/`.
@@ -283,6 +285,10 @@ coarse mesh/quad 실패 및 fine timeout을 숨기지 않았다. 고해상도 ho
 이번 실행은 worker≤2, child4GiB/180s, 신규 출력 고유 경로로 제한했다.
 fine-grid full sequence timeout 후 제한을 늘리지 않고 hold-only 범위를 별도 검증했다.
 추가 미검증 파지 최적화는 실행하지 않고 차단했다. 재개 명령은 NEXT_TASKS.
+
+실제 시계열 그래프: [object motion](stabilization_evidence/object_motion.png).
+설정별 작은 CSV: [trials](stabilization_evidence/trials.csv).
+소스/빌드/결과 전체 재검사: `PYTHONPATH=.:tools python tools/stabilization_verify_evidence.py --raw`.
 '''
     write('STABILIZATION_FINAL_REPORT.md',final+common)
     write('STABILIZATION_CURRENT_STATUS.md',final.split('## 핵심 수치/범위')[0]+'\n최신 수치와 미검증 범위는 FINAL 및01..09 보고서를 참조한다.\n')

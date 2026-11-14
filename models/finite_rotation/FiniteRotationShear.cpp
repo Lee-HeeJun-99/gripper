@@ -33,7 +33,11 @@ public:
   try{auto results=values(x.getValue());if(f.getValue().size()!=x.getValue().size())throw std::invalid_argument("force size");auto*out=f.beginEdit();for(auto&pair:results)for(int a=0;a<12;++a)(*out)[pair.first+(a/6)*nodes.getValue()][a%6]+=pair.second.force[a];f.endEdit();}catch(const std::exception&e){invalid(e.what());}}
  void addDForce(const sofa::core::MechanicalParams*mp,DataVecDeriv&df,const DataVecDeriv&dx)override{
   try{if(!mp||!mstate||!std::isfinite(mp->kFactor()))throw std::invalid_argument("invalid parameters/state");auto results=values(mstate->read(sofa::core::vec_id::read_access::position)->getValue());if(df.getValue().size()!=2*size_t(nodes.getValue())||dx.getValue().size()!=df.getValue().size())throw std::invalid_argument("dforce size");
-   auto*out=df.beginEdit();for(auto&pair:results)for(int a=0;a<12;++a){double v=0;for(int b=0;b<12;++b)v+=pair.second.jacobian[12*a+b]*dx.getValue()[pair.first+(b/6)*nodes.getValue()][b%6];(*out)[pair.first+(a/6)*nodes.getValue()][a%6]+=mp->kFactor()*v;}df.endEdit();}catch(const std::exception&e){invalid(e.what());}}
+   for(const auto&v:dx.getValue())for(int a=0;a<6;++a)if(!std::isfinite(v[a]))throw std::invalid_argument("nonfinite differential input");
+   VecDeriv increment(df.getValue().size());
+   for(auto&pair:results)for(int a=0;a<12;++a){double v=0;for(int b=0;b<12;++b)v+=pair.second.jacobian[12*a+b]*dx.getValue()[pair.first+(b/6)*nodes.getValue()][b%6];increment[pair.first+(a/6)*nodes.getValue()][a%6]+=mp->kFactor()*v;}
+   for(size_t i=0;i<increment.size();++i)for(int a=0;a<6;++a)if(!std::isfinite(increment[i][a]+df.getValue()[i][a]))throw std::overflow_error("dforce overflow");
+   auto*out=df.beginEdit();for(size_t i=0;i<increment.size();++i)for(int a=0;a<6;++a)(*out)[i][a]+=increment[i][a];df.endEdit();}catch(const std::exception&e){invalid(e.what());}}
  void buildStiffnessMatrix(sofa::core::behavior::StiffnessMatrix*matrix)override{
   try{if(!matrix||!mstate)throw std::invalid_argument("missing matrix/state");auto results=values(mstate->read(sofa::core::vec_id::read_access::position)->getValue());auto acc=matrix->getForceDerivativeIn(mstate.get()).withRespectToPositionsIn(mstate.get());if(!acc)throw std::invalid_argument("missing accumulator");
    for(auto&pair:results)for(int a=0;a<12;++a)for(int b=0;b<12;++b)acc(6*(pair.first+(a/6)*nodes.getValue())+a%6,6*(pair.first+(b/6)*nodes.getValue())+b%6)+=pair.second.jacobian[12*a+b];}catch(const std::exception&e){invalid(e.what());}}

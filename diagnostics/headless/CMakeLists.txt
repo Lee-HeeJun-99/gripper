@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripHeadless LANGUAGES CXX)
+find_package(Sofa.SimpleApi REQUIRED)
+find_package(Sofa.Simulation.Graph REQUIRED)
+add_executable(regrip_headless main.cpp)
+target_compile_features(regrip_headless PRIVATE cxx_std_17)
+target_compile_options(regrip_headless PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(regrip_headless PRIVATE Sofa.SimpleApi Sofa.Simulation.Graph)

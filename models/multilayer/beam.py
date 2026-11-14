@@ -5,6 +5,8 @@ Wire actuation is an ideal eccentric tip moment T*e, not a tendon routing solver
 """
 from dataclasses import dataclass, asdict, replace
 import math
+import hashlib
+import json
 import numpy as np
 
 @dataclass(frozen=True)
@@ -30,8 +32,10 @@ class Design:
     def validate(self):
         if type(self.layers) is not int or type(self.nodes) is not int or not 1<=self.layers<=16 or not 3<=self.nodes<=101:
             raise ValueError('research resource bound: 1..16 layers, 3..101 nodes')
-        scalars=[v for v in asdict(self).values() if type(v) is float]
-        if not all(math.isfinite(v) for v in scalars):raise ValueError('nonfinite design')
+        scalar_names=('length','thickness','young','area','inertia','poisson','shear_correction','load','coupling','wire_tension','wire_eccentricity','contact_stiffness')
+        scalars=[getattr(self,key) for key in scalar_names]+([] if self.contact_gap is None else [self.contact_gap])
+        if not all(type(v) in (int,float) and math.isfinite(v) for v in scalars):raise ValueError('nonfinite/nonnumeric design')
+        if type(self.timoshenko) is not bool or not isinstance(self.connectors,(list,tuple)):raise ValueError('invalid flag/connector container')
         if min(self.length,self.thickness,self.young,self.area,self.inertia,self.shear_correction,self.contact_stiffness)<=0 or min(self.coupling,self.load,self.wire_tension)<0:
             raise ValueError('invalid physical parameter')
         if not -1<self.poisson<.5 or (self.contact_gap is not None and self.contact_gap<0):raise ValueError('invalid Poisson ratio/contact gap')
@@ -100,15 +104,22 @@ def spring_slider(slip,plastic,k,capacity):
     return dict(traction=force,plastic=new,tangent=k if abs(trial)<capacity else 0.,
         elastic_energy=.5*force*force/k,dissipation=capacity*abs(new-plastic))
 
-def friction_path(d,loads,pressure,mu,width):
+def friction_path(d,loads,pressure,mu,width,checkpoint=None,return_checkpoint=False):
     """Incremental quasi-static return mapping coupled to the independent FEM."""
     if min(pressure,mu)<0 or width<=0 or not all(math.isfinite(v) for v in (pressure,mu,width)) or d.coupling<=0:raise ValueError('invalid friction inputs')
     if d.contact_gap is not None or d.wire_tension:raise ValueError('friction+contact/wire integration not yet validated')
     K,f,B,free,tips=assemble(d);plastic=np.zeros(len(B));q=np.zeros(len(f));records=[]
+    identity=hashlib.sha256(json.dumps([asdict(d),pressure,mu,width],sort_keys=True).encode()).hexdigest()
     # Voronoi tributary area covers span excluding clamp cell; tip gets half cell.
     positions=sorted(d.connectors);bounds=[0.]+[(a+b)*d.length/(2*(d.nodes-1)) for a,b in zip(positions,positions[1:])]+[d.length]
     areas=np.diff(bounds)*width if positions else np.array([])
     capacity=np.tile(mu*pressure*areas,d.layers-1);diss=0.
+    if checkpoint is not None:
+        payload={k:v for k,v in checkpoint.items() if k!='sha256'}
+        if checkpoint.get('sha256')!=hashlib.sha256(json.dumps(payload,sort_keys=True,allow_nan=False).encode()).hexdigest():raise ValueError('checkpoint hash mismatch')
+        if checkpoint.get('identity')!=identity:raise ValueError('checkpoint belongs to another physical model')
+        q=np.array(checkpoint['q'],dtype=float);plastic=np.array(checkpoint['plastic'],dtype=float);diss=checkpoint['dissipation']
+        if q.shape!=f.shape or plastic.shape!=(len(B),) or not np.all(np.isfinite(q)) or not np.all(np.isfinite(plastic)) or not math.isfinite(diss) or diss<0:raise ValueError('invalid checkpoint state')
     for load in loads:
         if not math.isfinite(load):raise ValueError('nonfinite load')
         external=f.copy()
@@ -124,8 +135,13 @@ def friction_path(d,loads,pressure,mu,width):
         else:raise RuntimeError('friction equilibrium not converged')
         new=slip-traction/d.coupling;incremental=float(np.sum(capacity*abs(new-plastic)));plastic=new;diss+=incremental
         records.append(dict(load=load,deflection_mm=-float(np.mean(q[tips])),max_slip_mm=float(max(abs(slip),default=0)),
+            max_rotation_rad=float(max(abs(q[2::3]))),small_rotation_validated=bool(max(abs(q[2::3]))<.005),
             residual=float(max(abs(residual[free]))),dissipation=incremental,cumulative_dissipation=diss,
             stored_energy=float(.5*q@K@q+.5*np.sum(traction**2/d.coupling)),
             max_traction=float(max(abs(traction),default=0)),max_capacity=float(max(capacity,default=0)),
             yielded=int(sum(abs(trial)>=capacity)),iterations=iteration+1))
+    if return_checkpoint:
+        state=dict(identity=identity,q=q.tolist(),plastic=plastic.tolist(),dissipation=diss)
+        state['sha256']=hashlib.sha256(json.dumps(state,sort_keys=True,allow_nan=False).encode()).hexdigest()
+        return dict(records=records,checkpoint=state)
     return records

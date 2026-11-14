@@ -1,5 +1,6 @@
 """Analytical/independent reference checks; not SOFA or real-gripper validation."""
 import math
+import json
 from dataclasses import replace
 import unittest
 from models.multilayer.beam import Design, solve, spring_slider, friction_path
@@ -49,5 +50,22 @@ class Research(unittest.TestCase):
         for d in (Design(young=-1),Design(nodes=1),Design(connectors=(1,1)),Design(load=float('nan'))):
             with self.assertRaises(ValueError):solve(d)
         with self.assertRaises(ValueError):spring_slider(0,0,0,1)
+    def test_slider_closed_cycle_work_balance(self):
+        path=[i*.01 for i in range(21)]+[i*.01 for i in range(19,-21,-1)]+[i*.01 for i in range(-19,1)]
+        plastic=0.;previous_s=0.;previous_t=0.;work=0.;diss=0.;energy=0.
+        for slip in path:
+            r=spring_slider(slip,plastic,10.,1.);work+=.5*(previous_t+r['traction'])*(slip-previous_s)
+            diss+=r['dissipation'];energy=r['elastic_energy'];plastic=r['plastic'];previous_s=slip;previous_t=r['traction']
+        self.assertAlmostEqual(work,energy+diss,places=12)
+    def test_friction_checkpoint_json_restart(self):
+        d=Design();loads=[0.,1e-6,2e-6,0.,-1e-6,0.]
+        whole=friction_path(d,loads,1e-9,.3,8)
+        first=friction_path(d,loads[:3],1e-9,.3,8,return_checkpoint=True)
+        state=json.loads(json.dumps(first['checkpoint']))
+        rest=friction_path(d,loads[3:],1e-9,.3,8,checkpoint=state)
+        self.assertEqual(whole,first['records']+rest)
+        with self.assertRaises(ValueError):friction_path(d,loads,2e-9,.3,8,checkpoint=state)
+        state['q'][1]+=.1
+        with self.assertRaisesRegex(ValueError,'hash mismatch'):friction_path(d,loads,1e-9,.3,8,checkpoint=state)
 
 if __name__=='__main__':unittest.main()

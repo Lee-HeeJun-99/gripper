@@ -30,5 +30,9 @@ int main(){try{
  Base::VecDeriv delta(4);delta[3][0]=.01;dx.setValue(delta);df.setValue(Base::VecDeriv(4));sofa::core::MechanicalParams mp;mp.setKFactor(2.5);ff->addDForce(&mp,df,dx);require(std::abs(df.getValue()[3][0]+.025)<1e-14,"SOFA addDForce/kFactor");
  Accumulator acc;sofa::core::behavior::StiffnessMatrix matrix;matrix.setMatrixAccumulator(&acc,state.get());ff->buildStiffnessMatrix(&matrix);auto expected=evaluate(ff->pose(x[1]),ff->pose(x[3]),1,.4);
  for(int a=0;a<12;++a)for(int b=0;b<12;++b)require(std::abs(acc.data[6*(1+2*(a/6))+a%6][6*(1+2*(b/6))+b%6]-expected.jacobian[12*a+b])<1e-14,"SOFA stiffness assembly/6DOF");
+ delta[3][0]=std::numeric_limits<double>::quiet_NaN();dx.setValue(delta);df.setValue(Base::VecDeriv(4));ff->addDForce(&mp,df,dx);
+ require(ff->d_componentState.getValue()==sofa::core::objectmodel::ComponentState::Invalid,"nonfinite differential rejection");
+ require(df.getValue()[3][0]==0,"invalid differential mutated output");
+ ff->buildStiffnessMatrix(nullptr);
  std::cout<<"PASS states=60 energy_fd="<<eg<<" spatial_jacobian_fd="<<jg<<" objectivity="<<obj<<" net_moment="<<balance<<"\n";return 0;
  }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<"\n";return 1;}}

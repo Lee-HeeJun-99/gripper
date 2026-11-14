@@ -19,7 +19,8 @@ def main():
         (a.out/(name+'.log')).write_text(r.stdout+r.stderr);write_json(a.out/(name+'.command.json'),cmd)
         if r.returncode:raise RuntimeError(name+' failed; inspect '+str(a.out))
     if before!={str(p.relative_to(ROOT)):sha(p) for p in sources}:raise RuntimeError('sources changed during build')
-    write_json(build/'manifest.json',dict(sources=before,binary=sha(build/'libReGripFiniteRotation.so'),sanitized=a.sanitize,logs=str(a.out)))
+    manifest=dict(sources=before,binary=sha(build/'libReGripFiniteRotation.so'),sanitized=a.sanitize,logs=str(a.out))
+    write_json(build/'manifest.json',manifest);write_json(a.out/'build_manifest.json',manifest)
     print((a.out/'unit.log').read_text())
 
 if __name__=='__main__':main()

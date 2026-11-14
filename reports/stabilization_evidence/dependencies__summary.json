@@ -1,0 +1,62 @@
+{
+  "pypi.org": "[Errno -2] Name or service not known",
+  "files.pythonhosted.org": "[Errno -2] Name or service not known",
+  "repo.anaconda.com": "[Errno -2] Name or service not known",
+  "settings_present": {
+    "HTTP_PROXY": false,
+    "HTTPS_PROXY": false,
+    "PIP_INDEX_URL": false,
+    "PIP_EXTRA_INDEX_URL": false
+  },
+  "pip": {
+    "command": [
+      "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--isolated",
+      "--retries",
+      "0",
+      "--timeout",
+      "8",
+      "--target",
+      "/home/ubuntu/LHJ/ReGrip/.python-deps/stabilization",
+      "optuna>=3.6,<5"
+    ],
+    "exit_code": 1
+  },
+  "cache": {
+    "command": [
+      "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+      "-m",
+      "pip",
+      "cache",
+      "list",
+      "optuna"
+    ],
+    "exit_code": 1
+  },
+  "abi": {
+    "command": [
+      "ldd",
+      "/home/ubuntu/SOFA/v26.06.00/plugins/SofaPython3/lib/libSofaPython3.so"
+    ],
+    "exit_code": 0
+  },
+  "python312_offline": {
+    "command": [
+      "/home/ubuntu/miniconda3/bin/conda",
+      "create",
+      "--prefix",
+      "/home/ubuntu/LHJ/ReGrip/.venv-sofa-stabilization",
+      "--offline",
+      "--solver",
+      "classic",
+      "--yes",
+      "python=3.12",
+      "numpy"
+    ],
+    "exit_code": 1
+  },
+  "optuna_available": false
+}

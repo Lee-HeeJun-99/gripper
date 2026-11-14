@@ -1,0 +1,804 @@
+{
+  "baseline_commit": "830fd3d00186fd9e772be802c27de7ca2100ecde",
+  "code_commit": "825a5d007dc990e65bcc77b1387da13cf911e781",
+  "source_sha256": {
+    "models/stabilization/Audit.cpp": "30e929e1ce047479cf90cf109187402d5321871df8a68723e5f4d9bcb8a4dda8",
+    "models/stabilization/CMakeLists.txt": "655bafb4b5b1cb44d2dfaa78ba70feb63cb0edbf0e8fa5da4f384055b9844200",
+    "models/stabilization/Telemetry.cpp": "4eb1eb4bc968adbf72d3338dbcd52ce8349691b4adbb24844184af0c67f6e6e4",
+    "models/stabilization/Distributed.cpp": "5fcd03f47c582eeea3b48bca19c294380aa069fa590bde04be90944e545ff273",
+    "models/stabilization/ContactKernel.h": "dfb8f7742159a7d0f01f5c0bbb1029cc9b1eff9bf5e504fed0b3d5fbceaa339b",
+    "models/stabilization/Compensated.cpp": "7e105d5a3f547a3b88dd2a10fedf9a6aa449f0381a30081e5cecbb983d1416ab",
+    "models/stabilization/README.md": "e5f46ac585dbbc921f69267f05517b4d9d3fcd7c2629d637408d8a81e85dd3ad",
+    "models/stabilization/Compensated.h": "95761e07939f547ba9ade0ff87721e98fab45d0271b8d20f66a97d06142dfde4",
+    "diagnostics/stabilization/CMakeLists.txt": "a3d24ebeabce4742bacab557e8ffd26a2ef8d34554f2c17161b73bd7d0f245bf",
+    "diagnostics/stabilization/MemoryLifetime.cpp": "057957734a4b73a715f2c7fb335a333799cb9eb08e430328d2263dc325900098",
+    "diagnostics/stabilization/MassEnergyProbe.cpp": "028d95d96b3df45af4900353c7bbe8f72b05ea2f6868537944b0cdd0c442b4a2",
+    "tools/stabilization_grasp_fine.py": "085fddbe7e00a75adbffebd2b395a4a813ae213bf457b763f1250b182b35cc53",
+    "tools/stabilization_verify_evidence.py": "e85689b82ef321e34eec233b8485d5ba46162632807d43217e8dce729f9e3394",
+    "tools/stabilization_common.py": "1d06e4de3092ca3d39899a482ae94bc45c16c6a9de64c058f0d5a3ae688f80cb",
+    "tools/stabilization_fast_fine.py": "5d384711d0f28443a0954aeb412c6b8b4dbe39b9eeadbb5d82bd30818c2332f6",
+    "tools/stabilization_dependencies.py": "9b7cda8aae6b88198a5ea75f0822f728772e6f28040c7423c40f9686714b0c2a",
+    "tools/stabilization_grasp_refine.py": "32fc7534af6e87898fce713402a57f85b7dbe441f157e7eb484bb8d67df03c09",
+    "tools/stabilization_eight_search.py": "e921f4d167a6ea30e772f80dd1bb597336c5ad7e9e3f304019c7723533a13c5e",
+    "tools/stabilization_trials.py": "797ed1186a043b2e0d60de38b3fcc67561a49b3c385b91e901be2935f2bfc591",
+    "tools/stabilization_compensated_checks.py": "73f99b64760617bf2b2a8cc887e86aeaea48e2f579aa6cf042e90a57b2285287",
+    "tools/stabilization_mass_energy.py": "e7a766585a93317ee49e1d36cabacf0bd10181af624c4a089b7f306adc35e516",
+    "tools/stabilization_audit.py": "bf16132ecfdb7c1a06e32a2db359e7017a159123694bb91d32935fc1914d9631",
+    "tools/stabilization_grasp_gate.py": "c0074d2b3d5016ea45e7f3478cb2b9877e7690028d3f636305c9a0e480a6fd75",
+    "tools/stabilization_grasp.py": "13536ad51830f79de012df07093e93df5fd332230f6186f9adf2141610aa1fdc",
+    "tools/stabilization_compensated_suite.py": "6bad8291cc8054a9af7eaaf042c70c49dcb5980c3d641b2f0456102b6cf139f2",
+    "tools/stabilization_grasp_suite.py": "56173864b1693c877468181362784bff5155170e1873576b70ae1294bcf52b80",
+    "tools/stabilization_compensated_followup.py": "94221a257978392e64547438d1c9fbe21c4f8010aba1457f2b9f09ca0ff17437",
+    "tools/stabilization_energy.py": "7ef6664033f230a1b440f6bdba899043ad5122e7a71da1be98d1662209a884d7",
+    "tools/stabilization_static_extras.py": "8f7336cc3acfae4c5e502e2b37f6c6514592581e987ad1a3e69cedaf71f3adc3",
+    "tools/stabilization_reports.py": "47ff5b9b91c51a4ff93097b64fd256506d00ea18054591bd7339f8ad02e98b44",
+    "tests/test_stabilization.py": "9300448267ff4454f226ea32a68ea3422f01b5ac8fc82bc5aa53c3f084207370",
+    "tests/test_stabilization_contact.cpp": "81a7ebadc5c0c1da6b6ab8b944469916361136e2b636a9464fca07ceaf7488b0",
+    "tests/test_compensated.cpp": "7ebf0bf129886e578bc0fe30c8ee72a54896a80b90e6305438d9b4bcde31f1bf",
+    "models/integrated/Components.cpp": "7404ad56e0ed59848b288ed7333d359c24daa9a8e4ef3d2e13420273a9b920b7",
+    "models/integrated/Recorder.inc": "00f5e70f59e6ef92ec263810871ebde055e2668160b7617ef43d2238d5fa7dd2",
+    "models/integrated/CMakeLists.txt": "f7edf6e2de14ddad6ae99ca8f4bc2a10672f98e5c528176ab0d77e138c19fc03",
+    "models/integrated/Kernels.h": "f211132d8698066fc19ae197436930802841176456820d33734d2f8ffc37caa5",
+    "models/integrated/README.md": "dd4bce257a3d41096af151cf0a10136acb56e3e75bdc344373b3c52700be2258"
+  },
+  "binary_sha256": {
+    "build/stabilization_20261115/plugin/libReGripStabilization.so": "f6b3c8e381567e89387ac393e1e4b720c57449eccbd2292f35713be5cd524f46",
+    "build/stabilization_20261115/audit_stage.so": "f6b3c8e381567e89387ac393e1e4b720c57449eccbd2292f35713be5cd524f46",
+    "build/stabilization_20261115/contact_v1.so": "860a5682efaf77e1512c76ca49c16a199ed102ecb88fa89f388560565ac512b7",
+    "build/stabilization_20261115/contact_v2/libReGripDistributed.so": "84c198e90e7f75358aa91db780355323b316b79b778d3f0ade8c9f690cfccb52",
+    "build/stabilization_20261115/contact_v2/test_stabilization_contact": "6e2fa332f6e210fc8d3c86adbf553f7d8b7225a96f7e4e0ee04b8459aa498f9b",
+    "build/stabilization_20261115/contact_fast/libReGripDistributed.so": "089d52f64c57f3c423e97488e92ce7f2f962affe5871d2c01e7724d27d9e18a8",
+    "build/stabilization_20261115/contact_fast/test_stabilization_contact": "5fd5524d1a8fce3e7ee45462fe5a9700a7989a655aa2b01adf55a88174895f46",
+    "build/stabilization_20261115/sanitized/test_stabilization_contact": "4915bf95d8afa9d939f4cadbc53d83f77f89265552e36946d1f84736b6fada93",
+    "build/stabilization_20261115/sanitized_fast/test_stabilization_contact": "e3cc34aa5673e7a2c8d1a940f3ac3064455c62293ebd03aa81a2fa3c586d80ad",
+    "build/stabilization_20261115/memory/memory_lifetime": "d8d29c61ba435894521a2546bd551f6a0472cc6c4c217eafa3f47d7ec6799b63",
+    "build/stabilization_20261115/memory/mass_energy_probe": "4274d754d1812e13c485b2b4f638a692c1a5331c093c36c376f374f68782e718",
+    "build/stabilization_20261115/compensated/libReGripCompensated.so": "690616c3b213221e4c1cb39f4deafc05ba5a6504f5cfb0dd830d2e52c3397474",
+    "build/stabilization_20261115/compensated/test_compensated": "fc559727e8207e8547d445f91c2aa8d1abcc5053cadf7679d629dd9304362dbc",
+    "build/stabilization_20261115/telemetry/libReGripTelemetry.so": "41f199adba24a219bfcdb91497289e376765a4d6bf79d62245c8cb5b6fa0a61b",
+    "build/stabilization_20261115/telemetry_v1.so": "26ac0895ee07cacb35d49008ea04c3d36e68c877479fad689a4e4c5c256e9d4d"
+  },
+  "report_sha256": {
+    "reports/STABILIZATION_08_SOFAPYTHON3.md": "097a5afa07b8a58d51a4940be256ec895a27ea72e96ff853674659adb36ca034",
+    "reports/STABILIZATION_07_OPTIMIZATION.md": "6b5f2119e81f50edfab7c1af10baf15433e4807ae36423fed1bf4f25c64c8ea6",
+    "reports/STABILIZATION_03_MULTILAYER.md": "c72ef8d064e1dd49670cda7e3096b280cfd72302d3b730fdbda53de7a779a460",
+    "reports/STABILIZATION_01_RESIDUAL_SOLVER.md": "be72d52e46075acdc9194a2fe008d1a8ea02774850b9ee3edf5d83d05ad7ff0b",
+    "reports/STABILIZATION_05_GRASPING.md": "56ba2dc724a568785081d6c0b84a255f43b5302021497a73925cfd12643fcf6b",
+    "reports/STABILIZATION_02_MEMORY.md": "22b64a7387c86206644435f61c3941dbcb7cf776325b428c380e7a1daabc6b19",
+    "reports/STABILIZATION_FINAL_REPORT.md": "2eddbd1246709e35b74713cac55a742f1a131e6212770606e31e237b5dc1dbde",
+    "reports/STABILIZATION_04_TENDON_JAMMING.md": "51017bc928793e49081639f635db5005059d11c62e6dc8f27f93cfaa67e4c24b",
+    "reports/STABILIZATION_PROGRESS.md": "df8d5ef83ffeaba295f4c9d327af9f888a72a60c8f5143804cd95e36fd1745ad",
+    "reports/STABILIZATION_CURRENT_STATUS.md": "12aaf3ebdbff5594f8f7f69e4ee3ac36e0c4d728057fe353d7ef72a94dd90ef2",
+    "reports/STABILIZATION_NEXT_TASKS.md": "a0180fc01f9e1e473e622cad2cf7aef46c83a15f2416f1d2bb059283da80b539",
+    "reports/STABILIZATION_09_FULL_VALIDATION.md": "2ff2a6d245a4da706d801cde8bbc4188a3fc89c94c22ccbfac282a78bff6ddce",
+    "reports/STABILIZATION_06_ENERGY_AUDIT.md": "dd1a7d8821283863559436fdd05a703aeeb181895010cb275661e5f0f952143c"
+  },
+  "evidence_sha256": {
+    "reports/stabilization_evidence/dependencies__pip.log": "2fd95685f251c0aa4f7d204558aefe84a99fe4a7cb1813f8ebb49cc6e7782ab1",
+    "reports/stabilization_evidence/eight_search__808c2e8e46__halfdt__metrics.json": "8e38a96d9c89e8247d0a4b68cc284b673f86e8c16e556346d6d6044fa1cb0494",
+    "reports/stabilization_evidence/solver_telemetry__dynamic_warm__metrics.json": "3cf8914a47db1b74e97351f4ba01c8eacbb630c31239306fb4079d4681e2e325",
+    "reports/stabilization_evidence/static__wire_pressure__metrics.json": "0cb2e88a31a70116332c84ddaa1de053da832a1315d8b1ea91e1439da7e48966",
+    "reports/stabilization_evidence/position_resolution.json": "f6346224dca6e0a1e13fb715ce58180e6d3de2cefffc3838b8f8f866030940fa",
+    "reports/stabilization_evidence/static__L8_k1__metrics.json": "e589e5bbde60be9ca8b5d046ccba1c18ad55c8e65c73df50a762aceb5d2f8e9f",
+    "reports/stabilization_evidence/fast_asan_test.log": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840",
+    "reports/stabilization_evidence/static__L8_k10__metrics.json": "f0fb0e1d770890cb36ef2a55ee2a0bdb864530ee437e1f1d55e214822dfb0e68",
+    "reports/stabilization_evidence/solver_matrix__dynamic_steady_short__metrics.json": "fcceb28c0b866cb944826ad6251fde5571a628d98b04084ac702036d170474e0",
+    "reports/stabilization_evidence/static_controls__SparseLU__metrics.json": "5a7739ef410eed3d27e8539229a676c035c18f2e8bef59341948995662a06f9a",
+    "reports/stabilization_evidence/static__L8_quarterdt__metrics.json": "8aabc3ad128ef92aea2c76bc855824a4023ca393fa5f822f5bcb9f2cf4093fac",
+    "reports/stabilization_evidence/static_controls__summary.json": "cd57186a137518e5261e3ff70faeca1f32ab06377a016b2117ad1960a086cf75",
+    "reports/stabilization_evidence/static__L8_base__metrics.json": "8e72aabe524eda890603c1e094a0d21bfc8261c16f4e7646f10d6fce20ec56a9",
+    "reports/stabilization_evidence/grasp__sphere_z_long_damped__metrics.json": "57bd7d48d4764c1007878c93a3f8488b49881dfb2956b638e1110fb79bc29404",
+    "reports/stabilization_evidence/eight_search__702ceca5b9__base__metrics.json": "ab4903d67fd0e3da248f249e2b24710c1baf0c34a5ae70d98fdefdbbebb3a370",
+    "reports/stabilization_evidence/grasp__sphere_z_positive__metrics.json": "f218122aeeefc6e06465cdd7fb3839d80691683e943a52229c12155b654bba35",
+    "reports/stabilization_evidence/grasp__suite_summary.json": "7ed735da42c540688f3e6730630335975db5044cb5cc3a2adee5caa967286469",
+    "reports/stabilization_evidence/contact_actual_speed_test.log": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840",
+    "reports/stabilization_evidence/grasp__sphere_x_valid__metrics.json": "3801a01ca0ed9a70e2d88157f6020988e4aac0625cadb503ef4e16f35249ade0",
+    "reports/stabilization_evidence/static_controls__SparseLU_registered__metrics.json": "01b7bfc1f175e047f3406d5d9701bdf0d6a4f2db48f7c4e4cffc27b11d3d0410",
+    "reports/stabilization_evidence/dependencies__python_smoke__stdout.log": "914bc2780a115a7d6dfe56f2623c9df231211c5dfd001b5b706f01eacc5a9df2",
+    "reports/stabilization_evidence/grasp__sphere_mesh41_q16_holdonly__metrics.json": "8d286d512c12ca811e1815035fe8bafcc5a239e98e60096a1df0766554e3b082",
+    "reports/stabilization_evidence/dependencies__python312_offline.log": "470b602ceb468a18ec45c5d500c496a37a6a1f88b400a4aa31c5b7d3ebcbd893",
+    "reports/stabilization_evidence/eight_search__702ceca5b9__repeat__metrics.json": "624d54d189638c0d1d966ad66a98c5df18c464d973282cd0ae3fef29958e6e12",
+    "reports/stabilization_evidence/contact_v1_build_identity.json": "cf8265c6bcf43b56bcee92d706505c04919a49fbeb131df9f5b4b18034a489e3",
+    "reports/stabilization_evidence/resolution_probe__compensated_correct_reference__metrics.json": "9664aab97e9a89ed73f8d96ff68b67fc45e945a06fde88c3b1292936521310bc",
+    "reports/stabilization_evidence/compensated_followup__summary.json": "56ad123fa2dae4d5e927301c97f56c010413e1d9e823df79cbe3257b2eae10ca",
+    "reports/stabilization_evidence/solver_matrix__static__solver.tsv": "f8194544959bb054ef91f405867f7cdb796005e8dff144b6badafbd4f2d51fad",
+    "reports/stabilization_evidence/static_extras__CG__metrics.json": "46903a85956647a4af2c1feed098448ba7cad8601dd4ddc8b0a939cca8fecc6b",
+    "reports/stabilization_evidence/compensated_cold__L8_base__metrics.json": "2cc3f08878e453540a960962d0fd054026adf38ee1e0c8ec1c26b330717ebf1a",
+    "reports/stabilization_evidence/fast_asan_build.log": "8c8ab980fc5ca7b9a7cc03efb88bf1f981a00fd4847b4a54c21a985497f13b98",
+    "reports/stabilization_evidence/static__L8_halfdt__metrics.json": "7d1c495800c5d08425350625cb59561b3211e550eafa2bc44c51dd72edfd3d5f",
+    "reports/stabilization_evidence/static__L8_free__metrics.json": "d2d92e27447acf98fe5f9f90d02be2c54d799bac63f093a6233800cd7efd782c",
+    "reports/stabilization_evidence/grasp__sphere_repeat__metrics.json": "bb32226cde4d87f5eb7fbe66f4298fb96eda6b8d8cad8387acece1f1d6c0c57a",
+    "reports/stabilization_evidence/dependencies__summary.json": "72a9c35294f0bd838e7c181a2fd63672a808c71369ef99fd2490e356c6729d53",
+    "reports/stabilization_evidence/grasp__sphere_fast_mesh21_full__metrics.json": "5d293b03160e92ac463f7d94415d7ca040cc387e4dfae5d00d3074d902f7cd17",
+    "reports/stabilization_evidence/static_extras__LDL__metrics.json": "911302d1351fd51354a5d37119fefe323bb8c3050c93c8c2b7c73058ac07b9a3",
+    "reports/stabilization_evidence/grasp__gate.json": "f6c40dd9f6006fe12bc4d166e563f78c9b403487a86f47a7f03115de462d5070",
+    "reports/stabilization_evidence/grasp__refinement_summary.json": "1a771717fda7b41f8798479b7c076d3bbb07fd63f3057414031e4773f0ffd868",
+    "reports/stabilization_evidence/grasp__mass_smoke__metrics.json": "53882f16cc60be1fcbfd6fb3cae00971a599938cacac11cef9ffead77d6bd7f1",
+    "reports/stabilization_evidence/mass_energy_probe__stdout.log": "b32c54b2f6498a04cf86576001fefa2bef28ab8c375c819bc6a6559b97e8433a",
+    "reports/stabilization_evidence/compensated_build.log": "efe7d0024275923bd7f387ac281c91cfced403b8781d2376a173ca9350b6dff9",
+    "reports/stabilization_evidence/dependencies__python_smoke__stderr.log": "5c21f283d34cf1a45ff826aed61ced5aafe93d36b4a2bff4e5466283757875bb",
+    "reports/stabilization_evidence/grasp__fine_summary.json": "1e03cc139021f504914890d7ccd7e57c402b083965e0eedf855f48960217625b",
+    "reports/stabilization_evidence/compensated_followup__k1__metrics.json": "4575aa0b321da5e6122461be055b43d425877504e323a72d74da3630c41e7695",
+    "reports/stabilization_evidence/compensated_cold__L2_regression__metrics.json": "c1eeefd03f4182b05b2def961dd7f407748b02c04318787ac90897975800892b",
+    "reports/stabilization_evidence/regression__L4__metrics.json": "d76562427552fac128cf7f34948abc3f3f0cf3ab535f58386a3f0f7a3d73731a",
+    "reports/stabilization_evidence/mass_energy_probe__stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/stabilization_evidence/compensated_followup__free__metrics.json": "170c5ca9fac98ff28563482d211160ee1148e2f674879f39d65c641c28b3ee62",
+    "reports/stabilization_evidence/grasp__sphere_fast_regression__metrics.json": "8b21914e840936c4ec9465cde4361237a0018fc23cdeb934e74297ea263aed9f",
+    "reports/stabilization_evidence/static__small__metrics.json": "e4d8339cea72c1a4c7b676ba9067cc0d54d5b836d79a3c75a21717c4921786a7",
+    "reports/stabilization_evidence/fast_regression.json": "85004a43505bb9f9b2af7b4888634b982bb41a0611fb22f587ae0427c97d8882",
+    "reports/stabilization_evidence/static__length__metrics.json": "3ed5d98d7c83cd99c1a18f346054e30110492d830cf2a4441f4c10922b2ea9b8",
+    "reports/stabilization_evidence/static__L8_mesh__metrics.json": "384b692fb4d23b4ee79c871927a3a7f8e89b88883a8aab896b249d2d9cc0aabd",
+    "reports/stabilization_evidence/grasp__sphere_mesh21_q32__metrics.json": "616715b01f1b3188163fc1cef8e84d2d0a52a4db649a51b605498ac191e2ae5f",
+    "reports/stabilization_evidence/grasp__cylinder_x__metrics.json": "c37b95ebfc95eebfd258be0d72cbc67dbab260a73d7b61c53b41fc9a4146e503",
+    "reports/stabilization_evidence/grasp__sphere_y_negative__metrics.json": "ac859ce9977427577251d9ec62d937ae8a162334e135a48dbc7e7577f995cedb",
+    "reports/stabilization_evidence/newton__length__metrics.json": "4812d6727f2a0bb1417d26535bef39eb532bff09158fec16deadbc0e405c5b47",
+    "reports/stabilization_evidence/grasp__fast_fine_summary.json": "738c09f32b14bc78ee8c3044cc111f6fe7268db1d6cf298980ec0c3f74aacc95",
+    "reports/stabilization_evidence/regression__L2__metrics.json": "ad4614e3277dc340a80778b352bc93846e35ba20df53a836117e7c88e572ed7f",
+    "reports/stabilization_evidence/newton__wire_pressure__metrics.json": "9508e94819a022cf1ad10a15b0105ae41a7aa55abccd67d3b305fa5671c6ea64",
+    "reports/stabilization_evidence/grasp__sphere_quadrature__metrics.json": "db903e649744974765d18741286cff1edc7df023ca9132ba777b7e36708195b6",
+    "reports/stabilization_evidence/contact_v2_build_final.log": "5362c84f3512be7cf0195a6d5b2ee3d4c21e999b3d071365d84778fd1376d80a",
+    "reports/stabilization_evidence/compensated_cold__small__metrics.json": "af6aeb2646cdff1d26cea40de05b1bdd07ce399707eaeccb7ae153db4c3aa705",
+    "reports/stabilization_evidence/eight_search__validation.json": "d9755f1cb2669c9390b13f6fbcfd93f9e8b375b8f0645b422add208f000afaef",
+    "reports/stabilization_evidence/grasp__sphere_x_masscorrect__metrics.json": "3efbe58bbaf4d4bbc495d533cf86ac6b1063306f72cd48afb23626e145433f11",
+    "reports/stabilization_evidence/contact_v2_test_final.log": "0ae421e2ab79af35099e63fec6047bcc04feedd89f9712ae79c5646d14e31530",
+    "reports/stabilization_evidence/originals.json": "1347ab4565350266dd912813c98b12d0fc1f6ef309f2d16a5f67f940ad88b700",
+    "reports/stabilization_evidence/grasp__sphere_z_negative__metrics.json": "c54dbadc3ffa58d5c7c8c81d662242b317204365a8d490b3516b97a95e8c6901",
+    "reports/stabilization_evidence/grasp__sphere_y_positive__metrics.json": "3ea1005c3ffac9884ca98e65409e4ddcf5ad9735e112eec4fef84f17b3025f12",
+    "reports/stabilization_evidence/solver_matrix__static__metrics.json": "b5ae0e40d21d28654fc03d01cceb23eb18162bed955c9127c2cbb60df7e536f7",
+    "reports/stabilization_evidence/memory__result.json": "f0b0225ade738cb778f572941852caa074c8132f7a393712d510d0f0c1a54e08",
+    "reports/stabilization_evidence/compensated_cold__L4_regression__metrics.json": "0b0b832622f6f204cad4d5f72b2066f89592b0c578d05ca008248a2b6d3ae9f3",
+    "reports/stabilization_evidence/binary_source_versions.json": "371276df878d2120ca108698135acb889170fce590c15009e19eed0762142d9b",
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__repeat__metrics.json": "a217491ec335e8539dcb374656d7df223441b99ee7c41350537d22498bf36ef3",
+    "reports/stabilization_evidence/lsan_result.json": "0152dbf4372177878c91306ecd106836a14b91cbb4b6da338d0a0d48b66003fc",
+    "reports/stabilization_evidence/static__summary.json": "9f51b85dbb85f8498551917c4b88a3bf1ddab8f2df301cdab29eee2c836c4eb1",
+    "reports/stabilization_evidence/grasp__gate_v1_sampling.json": "e8594a9a355c3eca94812009087ad31ef02dd42d5cfe77f68e78e6c50f9564e1",
+    "reports/stabilization_evidence/object_motion.png": "08cddd6e97feb78df97a200f911724fee2ceafe940dd7c2da3ecb3b5f98baee7",
+    "reports/stabilization_evidence/eight_search__702ceca5b9__extended__metrics.json": "3e2bf735828e299ed8e21dfd9a94a9a3e5451a9e104628b56cd56116ffc6e340",
+    "reports/stabilization_evidence/probe_build_retry.log": "e603e9b82af650e5b9ea706dcc6aea37e1a5aae968e24875a8acc69073a8ebaf",
+    "reports/stabilization_evidence/inherited_python_tests.log": "2e492bc0517b1e562c7602b89d070621f9207b69d8f9ad3683cdd82864596912",
+    "reports/stabilization_evidence/static_extras__summary.json": "635df1c07d33ca5ff7f6819550b0ee6bbb2b78466f2096f04b8b875eb94a3554",
+    "reports/stabilization_evidence/compensated_cold__L8_extended__metrics.json": "3d5ba83b32dad13961e1ae6617193ae3f87b2302cce1733ce3d435184952716f",
+    "reports/stabilization_evidence/sanitized_actual_speed_test.log": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840",
+    "reports/stabilization_evidence/static_controls__length_inf_sufficient_stop__metrics.json": "00f6cfff9573265fd1f3fca9276716aa73d47fb04e757ec759b419b2804a85b3",
+    "reports/stabilization_evidence/grasp__sphere_halfdt__metrics.json": "a2189371614fa7202c976967d50878271c5fc29a30a80190ee253f3622f860cf",
+    "reports/stabilization_evidence/eight_search__proxy_summary.json": "9756475a06a7fdb066cd6d690e0896a8f3bc34fe2bf2cdc974c711588d6028e1",
+    "reports/stabilization_evidence/compensated_cold__L8_halfdt__metrics.json": "b05f9feb6e066488aba3778c18b8feede77e51626109fc403bd5e9ffcd151f59",
+    "reports/stabilization_evidence/dependencies__python_smoke__result.json": "b2d72817ce56aeb0783c5aa3addb328b6ca80ab4d3fe2313e7689ac9bbb28cfe",
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__base__metrics.json": "f189abb431a350c11997e6f08776cdb39be47891cdc65ec9adc7cbe8592a170a",
+    "reports/stabilization_evidence/newton__small__metrics.json": "2804fd9fde40571c9258037670e0b73800e49951c192ca09f12b6b61ddbec275",
+    "reports/stabilization_evidence/grasp__sphere_mu_zero__metrics.json": "29fd88a3d2b37e66031ae5c734688171982b816a3ca92238af60edf63662396a",
+    "reports/stabilization_evidence/memory__stdout.log": "1f058e1f547be4053cd1daf153890c81eb30e908c245969237cd7dbe772569b2",
+    "reports/stabilization_evidence/grasp__sphere_quad32__metrics.json": "cbac29b0c8e017609bdd862f4376060789e2891fe2116ced99e3f590a1f0e036",
+    "reports/stabilization_evidence/static__L8_repeat__metrics.json": "f553d02d131143efb3340c866e58c0d2124b85a15a1dfe8e11240cb0589455c2",
+    "reports/stabilization_evidence/lsan_test.log": "dd2e641fafb5c59ab42a850972c4127f3a242fbf295348dfc880b5d8ae72e753",
+    "reports/stabilization_evidence/trials.csv": "10c6780500c512626e8e9b586aecece01c9cd76c89eb77ac433e04207c2c7abe",
+    "reports/stabilization_evidence/compensated__steady_short__metrics.json": "05f195dede7ac003091ccc80626b77e2229d75d6b07a6f5eec4154986b557b41",
+    "reports/stabilization_evidence/eight_search__808c2e8e46__extended__metrics.json": "915cc3e9cae6fcb3481acd39f6ee0feb945458c5779c128edc137ba6e2dfdc53",
+    "reports/stabilization_evidence/compensated_followup__repeat__metrics.json": "7f0ca4e360785f86c745f53657f1378c4d372659cc02371c5e803ec816811e31",
+    "reports/stabilization_evidence/fast_build.log": "4f5548b3d8e9029002c93777bc68e673e9c470c4b0fdbc1f63efff0512744417",
+    "reports/stabilization_evidence/solver_telemetry__static__metrics.json": "0c201541bee517cb279d695113aac768c08c7a7c74b3ae8a342521a6fd4e850e",
+    "reports/stabilization_evidence/grasp__sphere_mesh21_q32_holdonly__metrics.json": "89984f038ed316b3f19967b151690228729ee835dd4cb0e32d6a0fe847653273",
+    "reports/stabilization_evidence/compensated_followup__k10__metrics.json": "71955c02f87e283928e1ded5e2e788ccfc7877e3ce350f8aff97817deac7f7b4",
+    "reports/stabilization_evidence/compensated_cold__summary.json": "b2c45c4ba0de6a5d77e00a1bbae5b6c18e6da4fad7a796b6e1db22ecd379662c",
+    "reports/stabilization_evidence/compensated_cold__wire_pressure__metrics.json": "ff806ad85a226ca1bd2e052c46b4d5e8e998dc3e4823e945b9ffba892eaa631c",
+    "reports/stabilization_evidence/dependencies__abi.log": "fed0f441c1b97751f0a59f7565906fff6c7d2aaf9b071e3813f4e2f790457aad",
+    "reports/stabilization_evidence/grasp__sphere_x_negative__metrics.json": "58f2aa6af1b13f713f5b9bcb20d4efe46a29bf8e2c65e59c50ae5b44ff367a9c",
+    "reports/stabilization_evidence/grasp__sphere_x__metrics.json": "53cbf5628256494bbd08b1ff50a7267259b4116cf4b002a7398183b0ff7335dd",
+    "reports/stabilization_evidence/grasp__box_x__metrics.json": "15cf50723517b905abb50212191adba7aef043828add418cc9ec86de2c55a5d1",
+    "reports/stabilization_evidence/resolution_probe__standard_correct_reference__metrics.json": "cc6e4ef2c6864abd55d5493165c3e95cd47dfa1a7109d309ab48ed12088c7765",
+    "reports/stabilization_evidence/mass_energy_probe__result.json": "e2fc2a92b0a35460511f27c623bdf23eb5f755061262ed861c033302ee225068",
+    "reports/stabilization_evidence/compensated_cold__L8_mesh__metrics.json": "157ae9cc55c76d57fa53776f2092ac3d17849dd5d82405c3061105f14a069a16",
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__halfdt__metrics.json": "d5ef52e696898fb64130616f170c6243a0941e6274e3ab47cb0a71b214bbce0d",
+    "reports/stabilization_evidence/python_tests.log": "6d69ec640e630d870fffbaccb8b46a5f9109a58b3053857a7f34f1b6a5dadb68",
+    "reports/stabilization_evidence/grasp__sphere_fast_mesh41_holdonly__metrics.json": "b2b16ebcd99853d66813474c9254d13b76eef4ec68e1973a5324811e71a9d9c7",
+    "reports/stabilization_evidence/regression__summary.json": "be619231e6ca9225c39ebfee73fe7c8591662c3178682f54ff55960a3b8f9235",
+    "reports/stabilization_evidence/grasp__sphere_mesh21_q16__metrics.json": "93457aa9bddcbab12e4a6c0a3b7ad9da177fb3c22ddacb15e82ff0c07b0b68a7",
+    "reports/stabilization_evidence/eight_search__808c2e8e46__base__metrics.json": "91e79fa9725c2e5fac6cafa565b2e9ff6b87a1cbabc22528a5863c87633f946e",
+    "reports/stabilization_evidence/eight_search__808c2e8e46__repeat__metrics.json": "f00c3657e45283886e814e74f2ada94e89e26a98a0ae36a6cce15ffb669b7d3a",
+    "reports/stabilization_evidence/solver_matrix__dynamic_steady_short__solver.tsv": "ac3b65e83c11dbe7d5fb38bee6a19c05fd6cec19120bc0b367ecb8796f95664a",
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__mesh__metrics.json": "eba2c228c941dc7ba79a65f8647195609ac09342e70a1fda14f47acf1bfce4ab",
+    "reports/stabilization_evidence/build_retry.log": "b772df0870b8ee63d10dc39d3b6936eef41111e21606da4c13f787b3c7cade70",
+    "reports/stabilization_evidence/grasp__sphere_mesh__metrics.json": "ee4819573393df876ba262dcdd47efd4cdf485f30188ecc6212781f8601b86b3",
+    "reports/stabilization_evidence/static_extras__extended18__metrics.json": "8d888f27d0d5fb435554006be50161acee8e664efcee162e99913dceba4cce7a",
+    "reports/stabilization_evidence/compensated_test.log": "2ff3a97a9526c2e6b66633a0ebb9fda283fb3650cea9706ac6dad79e633aacd6",
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__extended__metrics.json": "7c462b2ac52ebb5e404385f3666558b704a4f2b3017a7337dcaef4f21b1ecfe8",
+    "reports/stabilization_evidence/probe_build.log": "1de7475a7b80b8b8e497a4bc15e7770cdf2372e030c5e4d2ab7485054f8aecb4",
+    "reports/stabilization_evidence/compensated_cold__length__metrics.json": "d0b690a36de8d9cff41a5fa4e78c619c5283edd81028736fdc88c48381d59f69",
+    "reports/stabilization_evidence/resolution_probe__compensated_correct_reference__compensation.csv": "793c2b6712a5f0da72d2832bb8df9206f8ff48837774ba8e297e9cb88e284d81",
+    "reports/stabilization_evidence/eight_search__808c2e8e46__mesh__metrics.json": "00ca35f49bdef457c665a9fcc5ce11dcdfeef892c091234d0210e40a77cbaefd",
+    "reports/stabilization_evidence/fast_test.log": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840",
+    "reports/stabilization_evidence/eight_search__702ceca5b9__mesh__metrics.json": "aa79cdc478c2d917de7acf6104f3715722b1097be2a929c0a9e2bd8e81751b0a",
+    "reports/stabilization_evidence/compensated_followup__quarterdt__metrics.json": "c46c5f382ea2902857082ab035122c36188187df146c673aef49a3d1d3540e39",
+    "reports/stabilization_evidence/grasp__sphere_z_negative_long_damped__metrics.json": "c23eb376633869ce5f48c3ebee9347b866a14c205aaca08de959d127bed0087f",
+    "reports/stabilization_evidence/build.log": "fb5c5b327f2f8ff80dccb2601f60ae0e31761b7a4880dad231cda1c94a0c4e9e",
+    "reports/stabilization_evidence/force_audit.json": "81f0b7ac50a1b17b806ea8869818bd20496fe23e05dc48ff49dd10f4a06fd5b2",
+    "reports/stabilization_evidence/compensated_configure.log": "af119cc03b41f17a22878a9c9d05b1608388f8db760257172da6a37a5e26705e",
+    "reports/stabilization_evidence/energy_audit.json": "7fa23e584fd0ec1d773a0b27407e5cf2c2f47a09422aac13c6541af046a34e6d",
+    "reports/stabilization_evidence/newton__summary.json": "941eaf33a3990a98eed296437dc6a350415d1619f581654542401d1617435762",
+    "reports/stabilization_evidence/eight_search__702ceca5b9__halfdt__metrics.json": "20d47ba5c26850a0a52d9cfbfb496dbd03954884f7bbfa778e06249017502dfb",
+    "reports/stabilization_evidence/grasp__sphere_overload__metrics.json": "a0508034fe762b87ae82980b03aa90235ca0c7d5a45e2d4bdcebea9469c991cc",
+    "reports/stabilization_evidence/static_controls__CG_registered__metrics.json": "3bbd009188ede08423491a176676580664dd0792b210fa3287f9edd12cbb20de",
+    "reports/stabilization_evidence/newton__L8__metrics.json": "5aeebcbdb272440443f37e9d283727cc793227f64cced4703144a4ba067a27d5",
+    "reports/stabilization_evidence/compensated_checks.json": "0697641fa8d264c01b5a0091ec5014ca080c0f9efa546789c622426ece752066"
+  },
+  "raw_evidence": {
+    "reports/stabilization_evidence/originals.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/originals.json",
+      "sha256": "1347ab4565350266dd912813c98b12d0fc1f6ef309f2d16a5f67f940ad88b700"
+    },
+    "reports/stabilization_evidence/force_audit.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/force_audit.json",
+      "sha256": "81f0b7ac50a1b17b806ea8869818bd20496fe23e05dc48ff49dd10f4a06fd5b2"
+    },
+    "reports/stabilization_evidence/lsan_result.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/lsan_result.json",
+      "sha256": "0152dbf4372177878c91306ecd106836a14b91cbb4b6da338d0a0d48b66003fc"
+    },
+    "reports/stabilization_evidence/dependencies__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/summary.json",
+      "sha256": "72a9c35294f0bd838e7c181a2fd63672a808c71369ef99fd2490e356c6729d53"
+    },
+    "reports/stabilization_evidence/dependencies__python_smoke__result.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/python_smoke/result.json",
+      "sha256": "b2d72817ce56aeb0783c5aa3addb328b6ca80ab4d3fe2313e7689ac9bbb28cfe"
+    },
+    "reports/stabilization_evidence/memory__result.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/memory/result.json",
+      "sha256": "f0b0225ade738cb778f572941852caa074c8132f7a393712d510d0f0c1a54e08"
+    },
+    "reports/stabilization_evidence/mass_energy_probe__result.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/mass_energy_probe/result.json",
+      "sha256": "e2fc2a92b0a35460511f27c623bdf23eb5f755061262ed861c033302ee225068"
+    },
+    "reports/stabilization_evidence/newton__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/newton/summary.json",
+      "sha256": "941eaf33a3990a98eed296437dc6a350415d1619f581654542401d1617435762"
+    },
+    "reports/stabilization_evidence/static__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/summary.json",
+      "sha256": "9f51b85dbb85f8498551917c4b88a3bf1ddab8f2df301cdab29eee2c836c4eb1"
+    },
+    "reports/stabilization_evidence/static_extras__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_extras/summary.json",
+      "sha256": "635df1c07d33ca5ff7f6819550b0ee6bbb2b78466f2096f04b8b875eb94a3554"
+    },
+    "reports/stabilization_evidence/static_controls__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_controls/summary.json",
+      "sha256": "cd57186a137518e5261e3ff70faeca1f32ab06377a016b2117ad1960a086cf75"
+    },
+    "reports/stabilization_evidence/regression__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/regression/summary.json",
+      "sha256": "be619231e6ca9225c39ebfee73fe7c8591662c3178682f54ff55960a3b8f9235"
+    },
+    "reports/stabilization_evidence/eight_search__proxy_summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/proxy_summary.json",
+      "sha256": "9756475a06a7fdb066cd6d690e0896a8f3bc34fe2bf2cdc974c711588d6028e1"
+    },
+    "reports/stabilization_evidence/eight_search__validation.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/validation.json",
+      "sha256": "d9755f1cb2669c9390b13f6fbcfd93f9e8b375b8f0645b422add208f000afaef"
+    },
+    "reports/stabilization_evidence/grasp__gate_v1_sampling.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/gate_v1_sampling.json",
+      "sha256": "e8594a9a355c3eca94812009087ad31ef02dd42d5cfe77f68e78e6c50f9564e1"
+    },
+    "reports/stabilization_evidence/grasp__gate.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/gate.json",
+      "sha256": "f6c40dd9f6006fe12bc4d166e563f78c9b403487a86f47a7f03115de462d5070"
+    },
+    "reports/stabilization_evidence/grasp__suite_summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/suite_summary.json",
+      "sha256": "7ed735da42c540688f3e6730630335975db5044cb5cc3a2adee5caa967286469"
+    },
+    "reports/stabilization_evidence/grasp__refinement_summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/refinement_summary.json",
+      "sha256": "1a771717fda7b41f8798479b7c076d3bbb07fd63f3057414031e4773f0ffd868"
+    },
+    "reports/stabilization_evidence/grasp__fine_summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/fine_summary.json",
+      "sha256": "1e03cc139021f504914890d7ccd7e57c402b083965e0eedf855f48960217625b"
+    },
+    "reports/stabilization_evidence/grasp__fast_fine_summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/fast_fine_summary.json",
+      "sha256": "738c09f32b14bc78ee8c3044cc111f6fe7268db1d6cf298980ec0c3f74aacc95"
+    },
+    "reports/stabilization_evidence/energy_audit.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/energy_audit.json",
+      "sha256": "7fa23e584fd0ec1d773a0b27407e5cf2c2f47a09422aac13c6541af046a34e6d"
+    },
+    "reports/stabilization_evidence/contact_v1_build_identity.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/contact_v1_build_identity.json",
+      "sha256": "cf8265c6bcf43b56bcee92d706505c04919a49fbeb131df9f5b4b18034a489e3"
+    },
+    "reports/stabilization_evidence/fast_regression.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/fast_regression.json",
+      "sha256": "85004a43505bb9f9b2af7b4888634b982bb41a0611fb22f587ae0427c97d8882"
+    },
+    "reports/stabilization_evidence/compensated_cold__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/summary.json",
+      "sha256": "b2c45c4ba0de6a5d77e00a1bbae5b6c18e6da4fad7a796b6e1db22ecd379662c"
+    },
+    "reports/stabilization_evidence/compensated_followup__summary.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_followup/summary.json",
+      "sha256": "56ad123fa2dae4d5e927301c97f56c010413e1d9e823df79cbe3257b2eae10ca"
+    },
+    "reports/stabilization_evidence/compensated_checks.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_checks.json",
+      "sha256": "0697641fa8d264c01b5a0091ec5014ca080c0f9efa546789c622426ece752066"
+    },
+    "reports/stabilization_evidence/position_resolution.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/position_resolution.json",
+      "sha256": "f6346224dca6e0a1e13fb715ce58180e6d3de2cefffc3838b8f8f866030940fa"
+    },
+    "reports/stabilization_evidence/binary_source_versions.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/binary_source_versions.json",
+      "sha256": "371276df878d2120ca108698135acb889170fce590c15009e19eed0762142d9b"
+    },
+    "reports/stabilization_evidence/compensated__steady_short__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated/steady_short/metrics.json",
+      "sha256": "05f195dede7ac003091ccc80626b77e2229d75d6b07a6f5eec4154986b557b41"
+    },
+    "reports/stabilization_evidence/compensated_cold__L2_regression__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/L2_regression/metrics.json",
+      "sha256": "c1eeefd03f4182b05b2def961dd7f407748b02c04318787ac90897975800892b"
+    },
+    "reports/stabilization_evidence/compensated_cold__L4_regression__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/L4_regression/metrics.json",
+      "sha256": "0b0b832622f6f204cad4d5f72b2066f89592b0c578d05ca008248a2b6d3ae9f3"
+    },
+    "reports/stabilization_evidence/compensated_cold__L8_base__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/L8_base/metrics.json",
+      "sha256": "2cc3f08878e453540a960962d0fd054026adf38ee1e0c8ec1c26b330717ebf1a"
+    },
+    "reports/stabilization_evidence/compensated_cold__L8_extended__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/L8_extended/metrics.json",
+      "sha256": "3d5ba83b32dad13961e1ae6617193ae3f87b2302cce1733ce3d435184952716f"
+    },
+    "reports/stabilization_evidence/compensated_cold__L8_halfdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/L8_halfdt/metrics.json",
+      "sha256": "b05f9feb6e066488aba3778c18b8feede77e51626109fc403bd5e9ffcd151f59"
+    },
+    "reports/stabilization_evidence/compensated_cold__L8_mesh__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/L8_mesh/metrics.json",
+      "sha256": "157ae9cc55c76d57fa53776f2092ac3d17849dd5d82405c3061105f14a069a16"
+    },
+    "reports/stabilization_evidence/compensated_cold__length__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/length/metrics.json",
+      "sha256": "d0b690a36de8d9cff41a5fa4e78c619c5283edd81028736fdc88c48381d59f69"
+    },
+    "reports/stabilization_evidence/compensated_cold__small__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/small/metrics.json",
+      "sha256": "af6aeb2646cdff1d26cea40de05b1bdd07ce399707eaeccb7ae153db4c3aa705"
+    },
+    "reports/stabilization_evidence/compensated_cold__wire_pressure__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_cold/wire_pressure/metrics.json",
+      "sha256": "ff806ad85a226ca1bd2e052c46b4d5e8e998dc3e4823e945b9ffba892eaa631c"
+    },
+    "reports/stabilization_evidence/compensated_followup__free__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_followup/free/metrics.json",
+      "sha256": "170c5ca9fac98ff28563482d211160ee1148e2f674879f39d65c641c28b3ee62"
+    },
+    "reports/stabilization_evidence/compensated_followup__k1__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_followup/k1/metrics.json",
+      "sha256": "4575aa0b321da5e6122461be055b43d425877504e323a72d74da3630c41e7695"
+    },
+    "reports/stabilization_evidence/compensated_followup__k10__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_followup/k10/metrics.json",
+      "sha256": "71955c02f87e283928e1ded5e2e788ccfc7877e3ce350f8aff97817deac7f7b4"
+    },
+    "reports/stabilization_evidence/compensated_followup__quarterdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_followup/quarterdt/metrics.json",
+      "sha256": "c46c5f382ea2902857082ab035122c36188187df146c673aef49a3d1d3540e39"
+    },
+    "reports/stabilization_evidence/compensated_followup__repeat__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_followup/repeat/metrics.json",
+      "sha256": "7f0ca4e360785f86c745f53657f1378c4d372659cc02371c5e803ec816811e31"
+    },
+    "reports/stabilization_evidence/eight_search__702ceca5b9__base__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/702ceca5b9/base/metrics.json",
+      "sha256": "ab4903d67fd0e3da248f249e2b24710c1baf0c34a5ae70d98fdefdbbebb3a370"
+    },
+    "reports/stabilization_evidence/eight_search__702ceca5b9__extended__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/702ceca5b9/extended/metrics.json",
+      "sha256": "3e2bf735828e299ed8e21dfd9a94a9a3e5451a9e104628b56cd56116ffc6e340"
+    },
+    "reports/stabilization_evidence/eight_search__702ceca5b9__halfdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/702ceca5b9/halfdt/metrics.json",
+      "sha256": "20d47ba5c26850a0a52d9cfbfb496dbd03954884f7bbfa778e06249017502dfb"
+    },
+    "reports/stabilization_evidence/eight_search__702ceca5b9__mesh__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/702ceca5b9/mesh/metrics.json",
+      "sha256": "aa79cdc478c2d917de7acf6104f3715722b1097be2a929c0a9e2bd8e81751b0a"
+    },
+    "reports/stabilization_evidence/eight_search__702ceca5b9__repeat__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/702ceca5b9/repeat/metrics.json",
+      "sha256": "624d54d189638c0d1d966ad66a98c5df18c464d973282cd0ae3fef29958e6e12"
+    },
+    "reports/stabilization_evidence/eight_search__808c2e8e46__base__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/808c2e8e46/base/metrics.json",
+      "sha256": "91e79fa9725c2e5fac6cafa565b2e9ff6b87a1cbabc22528a5863c87633f946e"
+    },
+    "reports/stabilization_evidence/eight_search__808c2e8e46__extended__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/808c2e8e46/extended/metrics.json",
+      "sha256": "915cc3e9cae6fcb3481acd39f6ee0feb945458c5779c128edc137ba6e2dfdc53"
+    },
+    "reports/stabilization_evidence/eight_search__808c2e8e46__halfdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/808c2e8e46/halfdt/metrics.json",
+      "sha256": "8e38a96d9c89e8247d0a4b68cc284b673f86e8c16e556346d6d6044fa1cb0494"
+    },
+    "reports/stabilization_evidence/eight_search__808c2e8e46__mesh__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/808c2e8e46/mesh/metrics.json",
+      "sha256": "00ca35f49bdef457c665a9fcc5ce11dcdfeef892c091234d0210e40a77cbaefd"
+    },
+    "reports/stabilization_evidence/eight_search__808c2e8e46__repeat__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/808c2e8e46/repeat/metrics.json",
+      "sha256": "f00c3657e45283886e814e74f2ada94e89e26a98a0ae36a6cce15ffb669b7d3a"
+    },
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__base__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/f29b93d2e7/base/metrics.json",
+      "sha256": "f189abb431a350c11997e6f08776cdb39be47891cdc65ec9adc7cbe8592a170a"
+    },
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__extended__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/f29b93d2e7/extended/metrics.json",
+      "sha256": "7c462b2ac52ebb5e404385f3666558b704a4f2b3017a7337dcaef4f21b1ecfe8"
+    },
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__halfdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/f29b93d2e7/halfdt/metrics.json",
+      "sha256": "d5ef52e696898fb64130616f170c6243a0941e6274e3ab47cb0a71b214bbce0d"
+    },
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__mesh__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/f29b93d2e7/mesh/metrics.json",
+      "sha256": "eba2c228c941dc7ba79a65f8647195609ac09342e70a1fda14f47acf1bfce4ab"
+    },
+    "reports/stabilization_evidence/eight_search__f29b93d2e7__repeat__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/eight_search/f29b93d2e7/repeat/metrics.json",
+      "sha256": "a217491ec335e8539dcb374656d7df223441b99ee7c41350537d22498bf36ef3"
+    },
+    "reports/stabilization_evidence/grasp__box_x__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/box_x/metrics.json",
+      "sha256": "15cf50723517b905abb50212191adba7aef043828add418cc9ec86de2c55a5d1"
+    },
+    "reports/stabilization_evidence/grasp__cylinder_x__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/cylinder_x/metrics.json",
+      "sha256": "c37b95ebfc95eebfd258be0d72cbc67dbab260a73d7b61c53b41fc9a4146e503"
+    },
+    "reports/stabilization_evidence/grasp__mass_smoke__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/mass_smoke/metrics.json",
+      "sha256": "53882f16cc60be1fcbfd6fb3cae00971a599938cacac11cef9ffead77d6bd7f1"
+    },
+    "reports/stabilization_evidence/grasp__sphere_fast_mesh21_full__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_fast_mesh21_full/metrics.json",
+      "sha256": "5d293b03160e92ac463f7d94415d7ca040cc387e4dfae5d00d3074d902f7cd17"
+    },
+    "reports/stabilization_evidence/grasp__sphere_fast_mesh41_holdonly__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_fast_mesh41_holdonly/metrics.json",
+      "sha256": "b2b16ebcd99853d66813474c9254d13b76eef4ec68e1973a5324811e71a9d9c7"
+    },
+    "reports/stabilization_evidence/grasp__sphere_fast_regression__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_fast_regression/metrics.json",
+      "sha256": "8b21914e840936c4ec9465cde4361237a0018fc23cdeb934e74297ea263aed9f"
+    },
+    "reports/stabilization_evidence/grasp__sphere_halfdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_halfdt/metrics.json",
+      "sha256": "a2189371614fa7202c976967d50878271c5fc29a30a80190ee253f3622f860cf"
+    },
+    "reports/stabilization_evidence/grasp__sphere_mesh__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_mesh/metrics.json",
+      "sha256": "ee4819573393df876ba262dcdd47efd4cdf485f30188ecc6212781f8601b86b3"
+    },
+    "reports/stabilization_evidence/grasp__sphere_mesh21_q16__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_mesh21_q16/metrics.json",
+      "sha256": "93457aa9bddcbab12e4a6c0a3b7ad9da177fb3c22ddacb15e82ff0c07b0b68a7"
+    },
+    "reports/stabilization_evidence/grasp__sphere_mesh21_q32__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_mesh21_q32/metrics.json",
+      "sha256": "616715b01f1b3188163fc1cef8e84d2d0a52a4db649a51b605498ac191e2ae5f"
+    },
+    "reports/stabilization_evidence/grasp__sphere_mesh21_q32_holdonly__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_mesh21_q32_holdonly/metrics.json",
+      "sha256": "89984f038ed316b3f19967b151690228729ee835dd4cb0e32d6a0fe847653273"
+    },
+    "reports/stabilization_evidence/grasp__sphere_mesh41_q16_holdonly__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_mesh41_q16_holdonly/metrics.json",
+      "sha256": "8d286d512c12ca811e1815035fe8bafcc5a239e98e60096a1df0766554e3b082"
+    },
+    "reports/stabilization_evidence/grasp__sphere_mu_zero__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_mu_zero/metrics.json",
+      "sha256": "29fd88a3d2b37e66031ae5c734688171982b816a3ca92238af60edf63662396a"
+    },
+    "reports/stabilization_evidence/grasp__sphere_overload__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_overload/metrics.json",
+      "sha256": "a0508034fe762b87ae82980b03aa90235ca0c7d5a45e2d4bdcebea9469c991cc"
+    },
+    "reports/stabilization_evidence/grasp__sphere_quad32__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_quad32/metrics.json",
+      "sha256": "cbac29b0c8e017609bdd862f4376060789e2891fe2116ced99e3f590a1f0e036"
+    },
+    "reports/stabilization_evidence/grasp__sphere_quadrature__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_quadrature/metrics.json",
+      "sha256": "db903e649744974765d18741286cff1edc7df023ca9132ba777b7e36708195b6"
+    },
+    "reports/stabilization_evidence/grasp__sphere_repeat__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_repeat/metrics.json",
+      "sha256": "bb32226cde4d87f5eb7fbe66f4298fb96eda6b8d8cad8387acece1f1d6c0c57a"
+    },
+    "reports/stabilization_evidence/grasp__sphere_x__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_x/metrics.json",
+      "sha256": "53cbf5628256494bbd08b1ff50a7267259b4116cf4b002a7398183b0ff7335dd"
+    },
+    "reports/stabilization_evidence/grasp__sphere_x_masscorrect__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_x_masscorrect/metrics.json",
+      "sha256": "3efbe58bbaf4d4bbc495d533cf86ac6b1063306f72cd48afb23626e145433f11"
+    },
+    "reports/stabilization_evidence/grasp__sphere_x_negative__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_x_negative/metrics.json",
+      "sha256": "58f2aa6af1b13f713f5b9bcb20d4efe46a29bf8e2c65e59c50ae5b44ff367a9c"
+    },
+    "reports/stabilization_evidence/grasp__sphere_x_valid__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_x_valid/metrics.json",
+      "sha256": "3801a01ca0ed9a70e2d88157f6020988e4aac0625cadb503ef4e16f35249ade0"
+    },
+    "reports/stabilization_evidence/grasp__sphere_y_negative__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_y_negative/metrics.json",
+      "sha256": "ac859ce9977427577251d9ec62d937ae8a162334e135a48dbc7e7577f995cedb"
+    },
+    "reports/stabilization_evidence/grasp__sphere_y_positive__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_y_positive/metrics.json",
+      "sha256": "3ea1005c3ffac9884ca98e65409e4ddcf5ad9735e112eec4fef84f17b3025f12"
+    },
+    "reports/stabilization_evidence/grasp__sphere_z_long_damped__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_z_long_damped/metrics.json",
+      "sha256": "57bd7d48d4764c1007878c93a3f8488b49881dfb2956b638e1110fb79bc29404"
+    },
+    "reports/stabilization_evidence/grasp__sphere_z_negative__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_z_negative/metrics.json",
+      "sha256": "c54dbadc3ffa58d5c7c8c81d662242b317204365a8d490b3516b97a95e8c6901"
+    },
+    "reports/stabilization_evidence/grasp__sphere_z_negative_long_damped__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_z_negative_long_damped/metrics.json",
+      "sha256": "c23eb376633869ce5f48c3ebee9347b866a14c205aaca08de959d127bed0087f"
+    },
+    "reports/stabilization_evidence/grasp__sphere_z_positive__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/grasp/sphere_z_positive/metrics.json",
+      "sha256": "f218122aeeefc6e06465cdd7fb3839d80691683e943a52229c12155b654bba35"
+    },
+    "reports/stabilization_evidence/newton__L8__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/newton/L8/metrics.json",
+      "sha256": "5aeebcbdb272440443f37e9d283727cc793227f64cced4703144a4ba067a27d5"
+    },
+    "reports/stabilization_evidence/newton__length__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/newton/length/metrics.json",
+      "sha256": "4812d6727f2a0bb1417d26535bef39eb532bff09158fec16deadbc0e405c5b47"
+    },
+    "reports/stabilization_evidence/newton__small__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/newton/small/metrics.json",
+      "sha256": "2804fd9fde40571c9258037670e0b73800e49951c192ca09f12b6b61ddbec275"
+    },
+    "reports/stabilization_evidence/newton__wire_pressure__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/newton/wire_pressure/metrics.json",
+      "sha256": "9508e94819a022cf1ad10a15b0105ae41a7aa55abccd67d3b305fa5671c6ea64"
+    },
+    "reports/stabilization_evidence/regression__L2__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/regression/L2/metrics.json",
+      "sha256": "ad4614e3277dc340a80778b352bc93846e35ba20df53a836117e7c88e572ed7f"
+    },
+    "reports/stabilization_evidence/regression__L4__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/regression/L4/metrics.json",
+      "sha256": "d76562427552fac128cf7f34948abc3f3f0cf3ab535f58386a3f0f7a3d73731a"
+    },
+    "reports/stabilization_evidence/resolution_probe__compensated_correct_reference__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/resolution_probe/compensated_correct_reference/metrics.json",
+      "sha256": "9664aab97e9a89ed73f8d96ff68b67fc45e945a06fde88c3b1292936521310bc"
+    },
+    "reports/stabilization_evidence/resolution_probe__standard_correct_reference__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/resolution_probe/standard_correct_reference/metrics.json",
+      "sha256": "cc6e4ef2c6864abd55d5493165c3e95cd47dfa1a7109d309ab48ed12088c7765"
+    },
+    "reports/stabilization_evidence/solver_matrix__dynamic_steady_short__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/solver_matrix/dynamic_steady_short/metrics.json",
+      "sha256": "fcceb28c0b866cb944826ad6251fde5571a628d98b04084ac702036d170474e0"
+    },
+    "reports/stabilization_evidence/solver_matrix__static__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/solver_matrix/static/metrics.json",
+      "sha256": "b5ae0e40d21d28654fc03d01cceb23eb18162bed955c9127c2cbb60df7e536f7"
+    },
+    "reports/stabilization_evidence/solver_telemetry__dynamic_warm__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/solver_telemetry/dynamic_warm/metrics.json",
+      "sha256": "3cf8914a47db1b74e97351f4ba01c8eacbb630c31239306fb4079d4681e2e325"
+    },
+    "reports/stabilization_evidence/solver_telemetry__static__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/solver_telemetry/static/metrics.json",
+      "sha256": "0c201541bee517cb279d695113aac768c08c7a7c74b3ae8a342521a6fd4e850e"
+    },
+    "reports/stabilization_evidence/static__L8_base__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_base/metrics.json",
+      "sha256": "8e72aabe524eda890603c1e094a0d21bfc8261c16f4e7646f10d6fce20ec56a9"
+    },
+    "reports/stabilization_evidence/static__L8_free__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_free/metrics.json",
+      "sha256": "d2d92e27447acf98fe5f9f90d02be2c54d799bac63f093a6233800cd7efd782c"
+    },
+    "reports/stabilization_evidence/static__L8_halfdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_halfdt/metrics.json",
+      "sha256": "7d1c495800c5d08425350625cb59561b3211e550eafa2bc44c51dd72edfd3d5f"
+    },
+    "reports/stabilization_evidence/static__L8_k1__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_k1/metrics.json",
+      "sha256": "e589e5bbde60be9ca8b5d046ccba1c18ad55c8e65c73df50a762aceb5d2f8e9f"
+    },
+    "reports/stabilization_evidence/static__L8_k10__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_k10/metrics.json",
+      "sha256": "f0fb0e1d770890cb36ef2a55ee2a0bdb864530ee437e1f1d55e214822dfb0e68"
+    },
+    "reports/stabilization_evidence/static__L8_mesh__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_mesh/metrics.json",
+      "sha256": "384b692fb4d23b4ee79c871927a3a7f8e89b88883a8aab896b249d2d9cc0aabd"
+    },
+    "reports/stabilization_evidence/static__L8_quarterdt__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_quarterdt/metrics.json",
+      "sha256": "8aabc3ad128ef92aea2c76bc855824a4023ca393fa5f822f5bcb9f2cf4093fac"
+    },
+    "reports/stabilization_evidence/static__L8_repeat__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/L8_repeat/metrics.json",
+      "sha256": "f553d02d131143efb3340c866e58c0d2124b85a15a1dfe8e11240cb0589455c2"
+    },
+    "reports/stabilization_evidence/static__length__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/length/metrics.json",
+      "sha256": "3ed5d98d7c83cd99c1a18f346054e30110492d830cf2a4441f4c10922b2ea9b8"
+    },
+    "reports/stabilization_evidence/static__small__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/small/metrics.json",
+      "sha256": "e4d8339cea72c1a4c7b676ba9067cc0d54d5b836d79a3c75a21717c4921786a7"
+    },
+    "reports/stabilization_evidence/static__wire_pressure__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static/wire_pressure/metrics.json",
+      "sha256": "0cb2e88a31a70116332c84ddaa1de053da832a1315d8b1ea91e1439da7e48966"
+    },
+    "reports/stabilization_evidence/static_controls__CG_registered__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_controls/CG_registered/metrics.json",
+      "sha256": "3bbd009188ede08423491a176676580664dd0792b210fa3287f9edd12cbb20de"
+    },
+    "reports/stabilization_evidence/static_controls__SparseLU__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_controls/SparseLU/metrics.json",
+      "sha256": "5a7739ef410eed3d27e8539229a676c035c18f2e8bef59341948995662a06f9a"
+    },
+    "reports/stabilization_evidence/static_controls__SparseLU_registered__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_controls/SparseLU_registered/metrics.json",
+      "sha256": "01b7bfc1f175e047f3406d5d9701bdf0d6a4f2db48f7c4e4cffc27b11d3d0410"
+    },
+    "reports/stabilization_evidence/static_controls__length_inf_sufficient_stop__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_controls/length_inf_sufficient_stop/metrics.json",
+      "sha256": "00f6cfff9573265fd1f3fca9276716aa73d47fb04e757ec759b419b2804a85b3"
+    },
+    "reports/stabilization_evidence/static_extras__CG__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_extras/CG/metrics.json",
+      "sha256": "46903a85956647a4af2c1feed098448ba7cad8601dd4ddc8b0a939cca8fecc6b"
+    },
+    "reports/stabilization_evidence/static_extras__LDL__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_extras/LDL/metrics.json",
+      "sha256": "911302d1351fd51354a5d37119fefe323bb8c3050c93c8c2b7c73058ac07b9a3"
+    },
+    "reports/stabilization_evidence/static_extras__extended18__metrics.json": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/static_extras/extended18/metrics.json",
+      "sha256": "8d888f27d0d5fb435554006be50161acee8e664efcee162e99913dceba4cce7a"
+    },
+    "reports/stabilization_evidence/contact_actual_speed_test.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/contact_actual_speed_test.log",
+      "sha256": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840"
+    },
+    "reports/stabilization_evidence/sanitized_actual_speed_test.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/sanitized_actual_speed_test.log",
+      "sha256": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840"
+    },
+    "reports/stabilization_evidence/contact_v2_test_final.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/contact_v2_test_final.log",
+      "sha256": "0ae421e2ab79af35099e63fec6047bcc04feedd89f9712ae79c5646d14e31530"
+    },
+    "reports/stabilization_evidence/fast_test.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/fast_test.log",
+      "sha256": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840"
+    },
+    "reports/stabilization_evidence/fast_asan_test.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/fast_asan_test.log",
+      "sha256": "1d63902b648a385be6a3bccb3592fa4d8e0a39a813d6cd0e1eeaa145f6365840"
+    },
+    "reports/stabilization_evidence/lsan_test.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/lsan_test.log",
+      "sha256": "dd2e641fafb5c59ab42a850972c4127f3a242fbf295348dfc880b5d8ae72e753"
+    },
+    "reports/stabilization_evidence/python_tests.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/python_tests.log",
+      "sha256": "6d69ec640e630d870fffbaccb8b46a5f9109a58b3053857a7f34f1b6a5dadb68"
+    },
+    "reports/stabilization_evidence/inherited_python_tests.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/inherited_python_tests.log",
+      "sha256": "2e492bc0517b1e562c7602b89d070621f9207b69d8f9ad3683cdd82864596912"
+    },
+    "reports/stabilization_evidence/memory__stdout.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/memory/stdout.log",
+      "sha256": "1f058e1f547be4053cd1daf153890c81eb30e908c245969237cd7dbe772569b2"
+    },
+    "reports/stabilization_evidence/mass_energy_probe__stdout.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/mass_energy_probe/stdout.log",
+      "sha256": "b32c54b2f6498a04cf86576001fefa2bef28ab8c375c819bc6a6559b97e8433a"
+    },
+    "reports/stabilization_evidence/mass_energy_probe__stderr.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/mass_energy_probe/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "reports/stabilization_evidence/dependencies__abi.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/abi.log",
+      "sha256": "fed0f441c1b97751f0a59f7565906fff6c7d2aaf9b071e3813f4e2f790457aad"
+    },
+    "reports/stabilization_evidence/dependencies__pip.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/pip.log",
+      "sha256": "2fd95685f251c0aa4f7d204558aefe84a99fe4a7cb1813f8ebb49cc6e7782ab1"
+    },
+    "reports/stabilization_evidence/dependencies__python312_offline.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/python312_offline.log",
+      "sha256": "470b602ceb468a18ec45c5d500c496a37a6a1f88b400a4aa31c5b7d3ebcbd893"
+    },
+    "reports/stabilization_evidence/dependencies__python_smoke__stdout.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/python_smoke/stdout.log",
+      "sha256": "914bc2780a115a7d6dfe56f2623c9df231211c5dfd001b5b706f01eacc5a9df2"
+    },
+    "reports/stabilization_evidence/dependencies__python_smoke__stderr.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/dependencies/python_smoke/stderr.log",
+      "sha256": "5c21f283d34cf1a45ff826aed61ced5aafe93d36b4a2bff4e5466283757875bb"
+    },
+    "reports/stabilization_evidence/build.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/build.log",
+      "sha256": "fb5c5b327f2f8ff80dccb2601f60ae0e31761b7a4880dad231cda1c94a0c4e9e"
+    },
+    "reports/stabilization_evidence/build_retry.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/build_retry.log",
+      "sha256": "b772df0870b8ee63d10dc39d3b6936eef41111e21606da4c13f787b3c7cade70"
+    },
+    "reports/stabilization_evidence/contact_v2_build_final.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/contact_v2_build_final.log",
+      "sha256": "5362c84f3512be7cf0195a6d5b2ee3d4c21e999b3d071365d84778fd1376d80a"
+    },
+    "reports/stabilization_evidence/probe_build.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/probe_build.log",
+      "sha256": "1de7475a7b80b8b8e497a4bc15e7770cdf2372e030c5e4d2ab7485054f8aecb4"
+    },
+    "reports/stabilization_evidence/probe_build_retry.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/probe_build_retry.log",
+      "sha256": "e603e9b82af650e5b9ea706dcc6aea37e1a5aae968e24875a8acc69073a8ebaf"
+    },
+    "reports/stabilization_evidence/fast_build.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/fast_build.log",
+      "sha256": "4f5548b3d8e9029002c93777bc68e673e9c470c4b0fdbc1f63efff0512744417"
+    },
+    "reports/stabilization_evidence/fast_asan_build.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/fast_asan_build.log",
+      "sha256": "8c8ab980fc5ca7b9a7cc03efb88bf1f981a00fd4847b4a54c21a985497f13b98"
+    },
+    "reports/stabilization_evidence/compensated_build.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_build.log",
+      "sha256": "efe7d0024275923bd7f387ac281c91cfced403b8781d2376a173ca9350b6dff9"
+    },
+    "reports/stabilization_evidence/compensated_test.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_test.log",
+      "sha256": "2ff3a97a9526c2e6b66633a0ebb9fda283fb3650cea9706ac6dad79e633aacd6"
+    },
+    "reports/stabilization_evidence/compensated_configure.log": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/compensated_configure.log",
+      "sha256": "af119cc03b41f17a22878a9c9d05b1608388f8db760257172da6a37a5e26705e"
+    },
+    "reports/stabilization_evidence/solver_matrix__static__solver.tsv": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/solver_matrix/static/solver.tsv",
+      "sha256": "f8194544959bb054ef91f405867f7cdb796005e8dff144b6badafbd4f2d51fad"
+    },
+    "reports/stabilization_evidence/solver_matrix__dynamic_steady_short__solver.tsv": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/solver_matrix/dynamic_steady_short/solver.tsv",
+      "sha256": "ac3b65e83c11dbe7d5fb38bee6a19c05fd6cec19120bc0b367ecb8796f95664a"
+    },
+    "reports/stabilization_evidence/resolution_probe__compensated_correct_reference__compensation.csv": {
+      "raw": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115/resolution_probe/compensated_correct_reference/compensation.csv",
+      "sha256": "793c2b6712a5f0da72d2832bb8df9206f8ff48837774ba8e297e9cb88e284d81"
+    }
+  },
+  "raw_root": "/home/ubuntu/LHJ/ReGrip/results/stabilization_20261115",
+  "scope": "per-trial statuses retain historical failures; canonical grasp gate supersedes weak translation-only claims"
+}

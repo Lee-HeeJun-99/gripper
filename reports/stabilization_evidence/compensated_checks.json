@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "required_cold_records": true,
+    "required_followup_records": true,
+    "length_equilibrium": true,
+    "L8_extended_equilibrium": true,
+    "L8_halfdt_equilibrium": true,
+    "L2_regression_equilibrium": true,
+    "L8_mesh_equilibrium": true,
+    "L8_base_equilibrium": true,
+    "wire_pressure_equilibrium": true,
+    "L4_regression_equilibrium": true,
+    "small_equilibrium": true,
+    "follow_k1_equilibrium": true,
+    "follow_quarterdt_equilibrium": false,
+    "follow_repeat_equilibrium": true,
+    "follow_k10_equilibrium": true,
+    "follow_free_equilibrium": true,
+    "halfdt_tip": true,
+    "mesh_tip": true,
+    "extended_tip": true,
+    "repeat_tip": true,
+    "quarterdt_tip": false,
+    "L2_regression_tip": true,
+    "L4_regression_tip": true
+  },
+  "comparisons": {
+    "halfdt": {
+      "base": 0.0006035676548299951,
+      "value": 0.0006035680703937243,
+      "absolute_difference": 4.155637292613257e-10,
+      "relative_tolerance": 0.001
+    },
+    "mesh": {
+      "base": 0.0006035676548299951,
+      "value": 0.0006035539470759625,
+      "absolute_difference": 1.3707754032560304e-08,
+      "relative_tolerance": 0.01
+    },
+    "extended": {
+      "base": 0.0006035676548299951,
+      "value": 0.0006035439162010332,
+      "absolute_difference": 2.3738628961850194e-08,
+      "relative_tolerance": 0.001
+    },
+    "repeat": {
+      "base": 0.0006035676548299951,
+      "value": 0.0006035676548299951,
+      "absolute_difference": 0.0,
+      "relative_tolerance": 1e-10
+    },
+    "quarterdt": {
+      "status": "FAIL",
+      "reason": "SOFA exit/error/completion failure"
+    },
+    "L2_regression": {
+      "original": 0.009291734813866068,
+      "compensated": 0.009291734813866429,
+      "absolute_difference": 3.608224830031759e-16
+    },
+    "L4_regression": {
+      "original": 0.002379967382446127,
+      "compensated": 0.0023799673824457038,
+      "absolute_difference": 4.2327252813834093e-16
+    }
+  },
+  "all_pass": false,
+  "scope": "cold-start structural Euler; no free objects; original force/velocity/rotation gates unchanged"
+}

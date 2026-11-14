@@ -1,0 +1,8 @@
+[ 50%] Building CXX object CMakeFiles/ReGripStabilization.dir/Audit.cpp.o
+/home/ubuntu/LHJ/ReGrip/models/stabilization/Audit.cpp: In function ‘void registerObjects(sofa::core::ObjectFactory*)’:
+/home/ubuntu/LHJ/ReGrip/models/stabilization/Audit.cpp:32:122: error: ‘class sofa::core::ObjectFactory’ has no member named ‘registerObjects’
+   32 | __attribute__((visibility("default"))) void registerObjects(sofa::core::ObjectFactory*f){registerIntegratedObjects(f);f->registerObjects(sofa::core::ObjectRegistrationData("Independent per-field static residual audit").add<regrip_integrated::ForceAudit>());}
+      |                                                                                                                          ^~~~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/ReGripStabilization.dir/build.make:76: CMakeFiles/ReGripStabilization.dir/Audit.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/ReGripStabilization.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

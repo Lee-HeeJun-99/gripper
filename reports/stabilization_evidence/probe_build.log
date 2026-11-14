@@ -1,0 +1,19 @@
+Consolidate compiler generated dependencies of target memory_lifetime
+[ 25%] Building CXX object CMakeFiles/mass_energy_probe.dir/MassEnergyProbe.cpp.o
+[ 75%] Built target memory_lifetime
+/home/ubuntu/LHJ/ReGrip/diagnostics/stabilization/MassEnergyProbe.cpp: In function ‘int main(int, char**)’:
+/home/ubuntu/LHJ/ReGrip/diagnostics/stabilization/MassEnergyProbe.cpp:11:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   11 |  if(!sofa::simpleapi::importPlugin(argv[3]))throw std::runtime_error("probe plugin load");auto root=sofa::simulation::node::load(argv[2]);if(!root)throw std::runtime_error("probe scene load");sofa::simulation::node::initRoot(root.get());auto body=root->getChild("Multilayer");if(!body||!body->getMass())throw std::runtime_error("probe missing mass");
+      |  ^~
+/home/ubuntu/LHJ/ReGrip/diagnostics/stabilization/MassEnergyProbe.cpp:11:91: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   11 |  if(!sofa::simpleapi::importPlugin(argv[3]))throw std::runtime_error("probe plugin load");auto root=sofa::simulation::node::load(argv[2]);if(!root)throw std::runtime_error("probe scene load");sofa::simulation::node::initRoot(root.get());auto body=root->getChild("Multilayer");if(!body||!body->getMass())throw std::runtime_error("probe missing mass");
+      |                                                                                           ^~~~
+/home/ubuntu/LHJ/ReGrip/diagnostics/stabilization/MassEnergyProbe.cpp:14:31: error: aggregate ‘sofa::core::MechanicalParams params’ has incomplete type and cannot be defined
+   14 |  sofa::core::MechanicalParams params;for(auto*ff:body->getObjects<sofa::core::behavior::ForceField<Types>>(sofa::core::objectmodel::BaseContext::Local)){std::cout<<"ENERGY_API "<<ff->getClassName()<<' '<<std::flush;std::cout<<ff->getPotentialEnergy(&params,*state->read(sofa::core::vec_id::read_access::position))<<std::endl;}
+      |                               ^~~~~~
+/home/ubuntu/LHJ/ReGrip/diagnostics/stabilization/MassEnergyProbe.cpp:14:105: error: expected primary-expression before ‘>’ token
+   14 |  sofa::core::MechanicalParams params;for(auto*ff:body->getObjects<sofa::core::behavior::ForceField<Types>>(sofa::core::objectmodel::BaseContext::Local)){std::cout<<"ENERGY_API "<<ff->getClassName()<<' '<<std::flush;std::cout<<ff->getPotentialEnergy(&params,*state->read(sofa::core::vec_id::read_access::position))<<std::endl;}
+      |                                                                                                         ^~
+gmake[2]: *** [CMakeFiles/mass_energy_probe.dir/build.make:76: CMakeFiles/mass_energy_probe.dir/MassEnergyProbe.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:111: CMakeFiles/mass_energy_probe.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

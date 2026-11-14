@@ -1,0 +1,77 @@
+{
+  "status": "BLOCKED",
+  "offline": {
+    "command": [
+      "/home/ubuntu/miniconda3/bin/conda",
+      "create",
+      "--prefix",
+      "/home/ubuntu/LHJ/ReGrip/.venv-sofa-revalidation",
+      "--offline",
+      "--solver",
+      "classic",
+      "--yes",
+      "python=3.12",
+      "numpy"
+    ],
+    "exit_code": 1,
+    "runtime_s": 1.7707009199657477,
+    "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/python312_offline.log"
+  },
+  "online": {
+    "command": [
+      "/home/ubuntu/miniconda3/bin/conda",
+      "create",
+      "--prefix",
+      "/home/ubuntu/LHJ/ReGrip/.venv-sofa-revalidation",
+      "--solver",
+      "classic",
+      "--yes",
+      "python=3.12",
+      "numpy"
+    ],
+    "exit_code": 1,
+    "runtime_s": 7.941784039023332,
+    "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/python312_online.log"
+  },
+  "original_free": {
+    "command": [
+      "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+      "--noautoload",
+      "--tmp",
+      "-g",
+      "batch",
+      "-a",
+      "-n",
+      "600",
+      "--hideProgressBar",
+      "-l",
+      "SofaPython3",
+      "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/python_original_scene/00_FREE_LDL.py"
+    ],
+    "exit_code": 0,
+    "runtime_s": 0.11601963499560952,
+    "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/original_python_free.log"
+  },
+  "original_shear": {
+    "command": [
+      "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+      "--noautoload",
+      "--tmp",
+      "-g",
+      "batch",
+      "-a",
+      "-n",
+      "600",
+      "--hideProgressBar",
+      "-l",
+      "SofaPython3",
+      "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/python_original_scene/01_TAN_K001_LDL.py"
+    ],
+    "exit_code": 0,
+    "runtime_s": 0.11536416702438146,
+    "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/original_python_shear.log"
+  },
+  "original_scene_loaded": false,
+  "reason": "SofaPython3 loader cannot find libpython3.12.so.1.0; runtime installation unavailable",
+  "note": "A zero SOFA exit status does not establish scene loading. Sources were copied; handover originals were not modified."
+}

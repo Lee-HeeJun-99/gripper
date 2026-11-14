@@ -1,0 +1,250 @@
+{
+  "provenance": {
+    "git_commit": "8ee78f0c84d042812537655583cb98ed037f310e",
+    "working_tree_dirty": true,
+    "source_sha256": {
+      "diagnostics/CMakeLists.txt": "06ea0719b8cc472cad4bc471edcfac364d3b7b43bc885cb215f396a97c85dce9",
+      "diagnostics/PrecisionStateWriter.cpp": "4b5ccfd42ed379da904c5677cbbc6c8744fe1df7eb7e1131ebba41852bc3f533",
+      "plugin/CMakeLists.txt": "6503bf42c61ccf91495b7a2bfe0e565e87d63fda573e7064c8bba8a5dcedaa48",
+      "plugin/src/TangentialRigidForceField.cpp": "b5377879f860b875a473ee712e26fe875691be902115882afcb84b58eaddc4ad",
+      "reference_fem/planar.py": "5c1c8f63992ff1c0bb4ac96774d2cf0e440f187eb2a5d62b5dd817e11258890d",
+      "scenes/environment_smoke.scn": "d26e7dc2b9700aa6d67eabf929e01fd317806498d5ee756ce4a024fae9a9f978",
+      "scenes/python_smoke.py": "0fb3204decd5b1a938045e135e8758f20439724ec7be585d08052d5955e9d5fc",
+      "tests/test_forcefield.cpp": "260055d0dc2fe7bf086d60c11485bbe8aa28de51f6400e85e8b28cdc45f06242",
+      "tools/audit_publish.py": "ab6489a80aecf47bb42cfdb183e1a8b94dbd6ece560da4e7f2f5c76be7a5d39b",
+      "tools/baseline_regression.py": "1bece7040a0a75cfe708719604055851c6096962306403300b02766555cc038e",
+      "tools/build.py": "dca8331f3850934566ff2268d1545498dfb16267cdae87fc68d8ebad1418190f",
+      "tools/check_environment.py": "cfd0c34c5361a925c3a27cfb2345f7d6bfd84e7d2d2c5a194d9330712a3d57c2",
+      "tools/make_plots.py": "4643264f3eeab8b3268013c7abfb0b02838f1c89f11ec461cf8ee61c16806b1d",
+      "tools/native_scene.py": "7e35c3e9aef7d7279d8c03288cd5269939f8da01533f91b86c6dead2210c66dd",
+      "tools/optimize.py": "419602ed77626725faafb66d5ac2b6405b7f151068af9910b2fbed5326af0790",
+      "tools/record_handover.py": "1b9f3ee00649c272a3f11dc86445643575330cbb83ce35bb0fb38833234ef5e1",
+      "tools/report_environment.py": "9bdf9960019add87dee75204dc7a9424ee5ee15c5e0647040c179ee54b201c60",
+      "tools/revalidate_environment.py": "ece29b29c4fd37a0b55693dc9bdd602667161778233b875687f2b8d4a58467f7",
+      "tools/run_trial.py": "4354341c41e39c02c36aafe8f774948914f26aa321b0389b1df397f6a26dae0f",
+      "tools/summarize_candidate.py": "d8ecf1edc7adaf59f6363f1b51f73c26921bffa94680dd076cde2a4d075042ee",
+      "tools/validate_physics.py": "30e1f09edfd5ad527bf59da7dfd0c72a5296801b5cd561f1eb520bc94ef88f09",
+      "tools/verification_common.py": "77b10f5412a03346bd0a89af269f3c4a23adb250fcc33bd633ddba50ea9fea5a"
+    },
+    "python": "/home/ubuntu/miniconda3/envs/robot_ws/bin/python"
+  },
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.9",
+    "optuna": null,
+    "ruff": null,
+    "pytest": "6.2.5"
+  },
+  "probes": {
+    "os": {
+      "command": [
+        "cat",
+        "/etc/os-release"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.0014716250007040799,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_os.log"
+    },
+    "kernel": {
+      "command": [
+        "uname",
+        "-a"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.001400039007421583,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_kernel.log"
+    },
+    "gcc": {
+      "command": [
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.0013102670200169086,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_gcc.log"
+    },
+    "gxx": {
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.00132493901764974,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_gxx.log"
+    },
+    "cmake": {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.007443976996000856,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_cmake.log"
+    },
+    "disk": {
+      "command": [
+        "df",
+        "-h",
+        "/home/ubuntu/LHJ/ReGrip"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.0013679279945790768,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_disk.log"
+    },
+    "memory": {
+      "command": [
+        "free",
+        "-h"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.0034291180199943483,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_memory.log"
+    },
+    "cpu": {
+      "command": [
+        "nproc"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.0013599080266430974,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_cpu.log"
+    },
+    "runsofa_help": {
+      "command": [
+        "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+        "--help"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.06381307996343821,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_runsofa_help.log"
+    },
+    "sofa_ldd": {
+      "command": [
+        "ldd",
+        "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.11463589599588886,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_sofa_ldd.log"
+    },
+    "python_plugin_ldd": {
+      "command": [
+        "ldd",
+        "/home/ubuntu/SOFA/v26.06.00/plugins/SofaPython3/lib/libSofaPython3.so"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.11410924000665545,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_python_plugin_ldd.log"
+    },
+    "python_plugin_cmake": {
+      "command": [
+        "cat",
+        "/home/ubuntu/SOFA/v26.06.00/plugins/SofaPython3/lib/cmake/SofaPython3/SofaPython3Config.cmake"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.007948526996187866,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_python_plugin_cmake.log"
+    },
+    "default_python": {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.00348137499531731,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_default_python.log"
+    },
+    "system_python": {
+      "command": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.003368386998772621,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_system_python.log"
+    },
+    "dns": {
+      "command": [
+        "getent",
+        "hosts",
+        "pypi.org",
+        "repo.anaconda.com"
+      ],
+      "exit_code": 2,
+      "runtime_s": 0.0013543299864977598,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_dns.log"
+    },
+    "network": {
+      "command": [
+        "curl",
+        "--head",
+        "--max-time",
+        "10",
+        "https://pypi.org/simple/optuna/"
+      ],
+      "exit_code": 6,
+      "runtime_s": 0.015576977981254458,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_network.log"
+    },
+    "offline_wheels": {
+      "command": [
+        "find",
+        "/home/ubuntu",
+        "/tmp",
+        "-maxdepth",
+        "8",
+        "-type",
+        "f",
+        "(",
+        "-iname",
+        "*.whl",
+        "-o",
+        "-iname",
+        "*optuna*.conda",
+        "-o",
+        "-iname",
+        "python-3.12*.conda",
+        ")"
+      ],
+      "exit_code": 1,
+      "runtime_s": 1.1164219350321218,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_offline_wheels.log"
+    },
+    "python312_search": {
+      "command": [
+        "find",
+        "/home/ubuntu/miniconda3",
+        "/opt",
+        "/usr/local",
+        "-name",
+        "libpython3.12.so*"
+      ],
+      "exit_code": 0,
+      "runtime_s": 0.8656740779988468,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/env_python312_search.log"
+    },
+    "optuna_install": {
+      "command": [
+        "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--target",
+        "/home/ubuntu/LHJ/ReGrip/.python-deps",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--no-cache-dir",
+        "--retries",
+        "0",
+        "--timeout",
+        "10",
+        "optuna>=3.6,<5"
+      ],
+      "exit_code": 1,
+      "runtime_s": 0.6178795419982634,
+      "log": "/home/ubuntu/LHJ/ReGrip/results/revalidation_20261114T132734Z/commands/optuna_install.log"
+    },
+    "python312_install_status": "BLOCKED: DNS unavailable; no cached Python 3.12 runtime found"
+  }
+}

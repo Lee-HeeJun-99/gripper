@@ -27,8 +27,8 @@ def main():
         result=subprocess.run(command,capture_output=True,text=True)
         (out/(name+'.log')).write_text(result.stdout+result.stderr)
         report['commands'][name]=dict(command=command,exit_code=result.returncode)
-    report['python312_install_attempt']='conda create failed: repo.anaconda.com DNS resolution'
-    report['optuna_install_attempt']='pip target install failed: no matching distribution available in this execution environment'
+    report['python312_install_attempt']='NOT RUN by this script; use revalidate_python.py for actual installation evidence'
+    report['optuna_install_attempt']='NOT RUN by this script; use revalidate_environment.py for actual installation evidence'
     (out/'environment.json').write_text(json.dumps(report,indent=2))
     print(json.dumps(report,indent=2))
 

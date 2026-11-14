@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "adapter": "XML of V109 combined FREE, native full-precision recorder",
+  "original_python_scene_executed": false,
+  "samples": 600,
+  "dt": 0.0005,
+  "rtol": 1e-06,
+  "atol": 1e-10,
+  "errors": {
+    "time_s": {
+      "max_abs_error": 2.220446049250313e-16,
+      "final_actual": 0.3000000000000002,
+      "final_golden": 0.3,
+      "passed": true
+    },
+    "tip_deflection_mm": {
+      "max_abs_error": 1.3877787807814457e-16,
+      "final_actual": 0.04121379160634628,
+      "final_golden": 0.04121379160634629,
+      "passed": true
+    },
+    "tip_velocity_z_mm_s": {
+      "max_abs_error": 1.4155343563970746e-14,
+      "final_actual": -0.014380704053554549,
+      "final_golden": -0.014380704053554308,
+      "passed": true
+    },
+    "max_mapped_movement_mm": {
+      "max_abs_error": 2.255140518769849e-16,
+      "final_actual": 0.04121594904306211,
+      "final_golden": 0.04121594904306211,
+      "passed": true
+    },
+    "max_rigid_movement_mm": {
+      "max_abs_error": 2.255140518769849e-16,
+      "final_actual": 0.04121380506284915,
+      "final_golden": 0.041213805062849176,
+      "passed": true
+    },
+    "mean_abs_rotation_quat_xyz": {
+      "max_abs_error": 3.577867169202165e-18,
+      "final_actual": 0.0006696352824443399,
+      "final_golden": 0.0006696352824443401,
+      "passed": true
+    },
+    "max_x_slip_mm": {
+      "max_abs_error": 0.0,
+      "final_actual": 0.0008228072034270895,
+      "final_golden": 0.0008228072034270895,
+      "passed": true
+    },
+    "max_y_rel_mm": {
+      "max_abs_error": 0.0,
+      "final_actual": 0.0,
+      "final_golden": 0.0,
+      "passed": true
+    },
+    "max_z_rel_mm": {
+      "max_abs_error": 2.220446049250313e-16,
+      "final_actual": 8.462655127217111e-07,
+      "final_golden": 8.462655126939556e-07,
+      "passed": true
+    }
+  },
+  "runtime_s": 0.6736935320077464,
+  "diagnostics_sha256": "99140ef4358690ed76b98e7d2944f46a20fc17d2d91690f7ade89c620e78f0f3",
+  "equilibrium_validated": false,
+  "provenance": {
+    "git_commit": "8ee78f0c84d042812537655583cb98ed037f310e",
+    "working_tree_dirty": true,
+    "source_sha256": {
+      "diagnostics/CMakeLists.txt": "06ea0719b8cc472cad4bc471edcfac364d3b7b43bc885cb215f396a97c85dce9",
+      "diagnostics/PrecisionStateWriter.cpp": "dd1ef85f928e983c1d0b8f083eaf7dfe87e53aaade8d9fb1fc994a953a3d1cbe",
+      "plugin/CMakeLists.txt": "c9a2e6e58add9ba79b95bbe9859fbcf7aa6fda9d128acac0dd7d87d81c8b979b",
+      "plugin/src/TangentialRigidForceField.cpp": "d6d5ba8eb4673c3523666a47aa65d98fa090c584d7351ac0b643b1ecb775efb2",
+      "reference_fem/planar.py": "5c1c8f63992ff1c0bb4ac96774d2cf0e440f187eb2a5d62b5dd817e11258890d",
+      "scenes/environment_smoke.scn": "d26e7dc2b9700aa6d67eabf929e01fd317806498d5ee756ce4a024fae9a9f978",
+      "scenes/python_smoke.py": "0fb3204decd5b1a938045e135e8758f20439724ec7be585d08052d5955e9d5fc",
+      "tests/probe_forcefield.cpp": "caaf835448a5c32660ea4adf485c9e4668c5ee7f9fb237e132493a094dd87816",
+      "tests/test_automation.py": "d9c13d36540da0f573f3d49ab473ce4850967ca4993fdd482cbb198899502999",
+      "tests/test_forcefield.cpp": "57dbaebce272471c177f0bfd7927eacb997d7e76107a22caf809d0dfc460aece",
+      "tests/test_optimization_guards.py": "00cbba0cccbd7a0041378a8fbd71b86c21b82b8dcbe8244c7ed6e9362939e32d",
+      "tools/audit_publish.py": "ab6489a80aecf47bb42cfdb183e1a8b94dbd6ece560da4e7f2f5c76be7a5d39b",
+      "tools/baseline_regression.py": "967d9a1a9e84d49a394f0eda8a170711e129045a87b02a1bb1d495e92daa7075",
+      "tools/build.py": "5deb7b975723e3e3c5c3ea0215b89f754fb2564fcb65bc77ee2394504ce7d35b",
+      "tools/check_environment.py": "cfd0c34c5361a925c3a27cfb2345f7d6bfd84e7d2d2c5a194d9330712a3d57c2",
+      "tools/generate_revalidation_reports.py": "cda1a61a0831a7d5399d1baaca2983c5d88d3b63ac65bb0b99374cdb3ed356f3",
+      "tools/make_plots.py": "af1930ee947ae48700ab4351f87c61b241dcb033cc06b5f75c166d404c5cf450",
+      "tools/native_scene.py": "11f08fb9799a97b6f22ab8546b6fc418f9d48758971f71c985bee5a22c47bd89",
+      "tools/optimize.py": "145871194ab4a7cc75e623b7cba7f068a98688eaebe0d1044bf93a7818b3ef57",
+      "tools/record_handover.py": "1b9f3ee00649c272a3f11dc86445643575330cbb83ce35bb0fb38833234ef5e1",
+      "tools/report_environment.py": "9bdf9960019add87dee75204dc7a9424ee5ee15c5e0647040c179ee54b201c60",
+      "tools/revalidate_environment.py": "ece29b29c4fd37a0b55693dc9bdd602667161778233b875687f2b8d4a58467f7",
+      "tools/revalidate_python.py": "dea64b548c46778cc8640e73250c65e48e3a02426307081afa9156e7a81f18d9",
+      "tools/revalidate_quality.py": "5a3688fb549399e2c6d36e602729027a3dea04211eff4b9f8c0ad32642907c44",
+      "tools/revalidate_source.py": "fd3368454ab50dd4bda6f4a79a1ad156ac88863eb3a82e3d34db19e9994224d7",
+      "tools/run_trial.py": "266816820f8808649dcdb54b0a2af556e450d46e2083aecd7265340d005f2909",
+      "tools/summarize_candidate.py": "dc40a7677e30f2fd2c06a0ad78ad537ad4d2e4767269e4b00547c975cc86b55b",
+      "tools/trial_validation.py": "21649f92b7bdad567575aa7043e89d03fe7b737d48dec5fee28a932088796ea6",
+      "tools/validate_physics.py": "3d0fe3dedde3ef5797483d0afde26f00744f01179d4de729062ea31022b692e7",
+      "tools/verification_common.py": "b0b8fa18a8df4c313a6aa8c32f1ca2a187d27ea1456639d57d45270fc786a8ea"
+    },
+    "python": "/home/ubuntu/miniconda3/envs/robot_ws/bin/python"
+  },
+  "artifact_sha256": {
+    "scene.scn": "5a2ca8a13f44945d9d02d9f8431a100d3b2fa84273f08890cf7e91071aec1d14",
+    "rigid.txt": "e99994356d58c48f27ad46b81b2b8f73bd3243f2665bbad06cba27f274ca51fd",
+    "interface.txt": "f0b1473db7c9fa7c38b06d842cc5f2cbd739d855224f8ec6e63e01f5202d0c8b",
+    "sofa.log": "d85c0b113ce92aeb573f83eedecf6adf9cd302edc929cbc53160c1561c5d7ae6",
+    "baseline_free.csv": "f6d737a925805925cbb7a46373defe8c0e349189e0fe99211e2b10a7e6020b0b",
+    "command.json": "c2d46eb349b6f3f25830b9afa7463a3f2569c6c6a33f11f5242665b11a3482ac"
+  }
+}

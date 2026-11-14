@@ -15,6 +15,8 @@ PLUGINS = ['AnimationLoop', 'Constraint.Projective', 'LinearSolver.Direct',
 
 
 def generate(destination, dt=0.0005, load=0.0001, k=None, connectors=None, n=11):
+    from trial_validation import validate_config
+    validate_config(k,connectors,dt,dt,load,n,60)
     destination = Path(destination).resolve()
     destination.parent.mkdir(parents=True, exist_ok=True)
     root = ET.Element('Node', name='V109_NATIVE_FREE', dt=str(dt), gravity='0 0 0')

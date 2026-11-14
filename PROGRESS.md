@@ -41,3 +41,18 @@
 - 과거 CSV가 커밋 이력에 남으므로 사용자 선택에 따라 push를 보류했다.
 - 원격 최신 상태는 fetch DNS 오류 및 GitHub 앱 404로 확인하지 못했다.
 - 상세 내용은 reports/GIT_UPLOAD_STATUS.md 및 감사 JSON 참조.
+
+## 독립 전체 재검증
+
+- 브랜치: verification/full-revalidation-20261114. 시작 8ee78f0, 원격 push 없음.
+- 초기 k=100 에너지 FD 실패, NaN 힘 전파, null matrix SIGSEGV를 재현하고 작업 C++에서 수정했다.
+- 원래 선형 각도 전단식을 유지하며 quaternion→평면각 변환을 2*atan2(qy,qw)로 바로잡았다.
+- 별도 clean build, k=0..100의 600개 실제 C++ 검사 및 무효 입력 probe를 통과했다.
+- ASan/UBSan 단위 검사는 통과했으나 LeakSanitizer는 ptrace 제약으로 BLOCKED다.
+- 소스-바이너리 build manifest, 출력의 원자적 소유권, 취소/timeout 자식 정리와 artifact 해시를 추가했다.
+- 보강 후 기존 45 gate와 추가 균형 검사, 두 번의 600시점 FREE 회귀, 20개 자동화, 11개 최적화 guard를 새로 통과했다.
+- 새 고정 sweep k=100 강성비 1.67607706943, X slip 0.00000306235645 mm. Optuna 결과가 아니다.
+- 실제 Optuna 실행은 패키지 부재로 0회. 3/24-trial 진입 명령은 의존성 검사에서 차단됐다.
+- Python 3.12 오프라인/온라인 설치와 원본 Python 장면 실행을 재시도했으나 여전히 BLOCKED다.
+- reports/01~10 및 FINAL_VERIFICATION_REPORT.md에 PASS/FAIL/BLOCKED/NOT RUN 범위를 구분했다.
+- 원본/골든은 보존했으며 대용량 raw와 시계열 CSV는 Git에서 제외했다.

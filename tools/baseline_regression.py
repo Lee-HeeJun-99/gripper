@@ -9,22 +9,15 @@ import subprocess
 import sys
 import time
 from native_scene import generate
+from verification_common import BUILD, provenance, sha,assert_build_current
+from trial_validation import read_states
 
 ROOT = Path(__file__).resolve().parents[1]
 SOFA = Path(os.environ.get('SOFA_ROOT', '/home/ubuntu/SOFA/v26.06.00'))
 
 
 def states(path):
-    records = []
-    for line in Path(path).read_text().splitlines():
-        if '=' not in line:
-            continue
-        key, value = (x.strip() for x in line.split('=', 1))
-        if key == 'T':
-            records.append({'time': float(value)})
-        elif key in ('X', 'V', 'R'):
-            records[-1][key] = list(map(float, value.split()))
-    return records
+    return read_states(path)
 
 
 def metrics(rigid, points):
@@ -43,6 +36,10 @@ def metrics(rigid, points):
         tip = -0.5*((x[10*7+2]-initial[10*7+2])+(x[21*7+2]-initial[21*7+2]))
         row = dict(time_s=body['time'], tip_deflection_mm=tip,
                    tip_velocity_z_mm_s=0.5*(v[10*6+2]+v[21*6+2]))
+        initial_points=points[0]['X']
+        row['max_mapped_movement_mm']=max(math.sqrt(sum((p[3*i+j]-initial_points[3*i+j])**2 for j in range(3))) for i in range(22))
+        row['max_rigid_movement_mm']=max(math.sqrt(sum((x[7*i+j]-initial[7*i+j])**2 for j in range(3))) for i in range(22))
+        row['mean_abs_rotation_quat_xyz']=sum(math.sqrt(sum(x[7*i+j]**2 for j in (3,4,5))) for i in range(22))/22
         for axis, name in enumerate(('max_x_slip_mm', 'max_y_rel_mm', 'max_z_rel_mm')):
             row[name] = max(abs(p[(11+i)*3+axis]-p[i*3+axis]) for i in range(1, 11))
         result.append(row)
@@ -50,11 +47,12 @@ def metrics(rigid, points):
 
 
 def run(out):
+    assert_build_current()
     out = Path(out).resolve()
     if out.exists():
         raise FileExistsError('use a new run directory to avoid stale artifacts: ' + str(out))
     generate(out/'scene.scn')
-    diag = ROOT/'build/diagnostics/libReGripDiagnostics.so'
+    diag = BUILD/'diagnostics/libReGripDiagnostics.so'
     command = [str(SOFA/'bin/runSofa-26.06.00'), '--noautoload', '--tmp',
                '-l', str(diag), '-g', 'batch', '-a', '-n', '600', '--hideProgressBar', str(out/'scene.scn')]
     (out/'command.json').write_text(json.dumps(command, indent=2))
@@ -90,6 +88,8 @@ def run(out):
                   rtol=rtol, atol=atol, errors=errors, runtime_s=time.monotonic()-start,
                   diagnostics_sha256=hashlib.sha256(diag.read_bytes()).hexdigest(),
                   equilibrium_validated=False)
+    report['provenance']=provenance()
+    report['artifact_sha256']={name:sha(out/name) for name in ('scene.scn','rigid.txt','interface.txt','sofa.log','baseline_free.csv','command.json')}
     (out/'comparison.json').write_text(json.dumps(report, indent=2))
     print(json.dumps(report, indent=2))
     return passed

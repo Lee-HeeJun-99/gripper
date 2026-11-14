@@ -3,6 +3,7 @@ import csv
 import json
 from pathlib import Path
 import sys
+import argparse
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -14,8 +15,14 @@ def read(path):
 
 
 def main():
-    out=ROOT/'reports';out.mkdir(exist_ok=True)
-    actual=read(ROOT/'results/physics_validation/baseline/baseline_free.csv')
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--results',type=Path,default=ROOT/'results/physics_validation')
+    parser.add_argument('--out',type=Path,default=ROOT/'reports')
+    args=parser.parse_args()
+    out=args.out
+    if any((out/name).exists() for name in ('baseline_comparison.png','equilibrium_sweep.png')):raise FileExistsError('refusing existing figures')
+    out.mkdir(parents=True,exist_ok=True)
+    actual=read(args.results/'baseline/baseline_free.csv')
     golden=read(ROOT/'handover/20261114/result_V109_00_FREE_LDL.csv')
     fig,axes=plt.subplots(1,2,figsize=(10,3.5))
     for ax,key,label in zip(axes,['tip_deflection_mm','max_x_slip_mm'],['Tip deflection (mm)','Interface X slip (mm)']):
@@ -23,10 +30,10 @@ def main():
         ax.plot([float(r['time_s']) for r in actual],[float(r[key]) for r in actual],'--',label='Ubuntu native adapter')
         ax.set(xlabel='Time (s)',ylabel=label);ax.grid(alpha=.3);ax.legend()
     fig.tight_layout();fig.savefig(out/'baseline_comparison.png',dpi=180);plt.close(fig)
-    summary=read(ROOT/'results/physics_validation/summary.csv')
+    summary=read(args.results/'summary.csv')
     ks=['k001','k01','k1','k10','k100'];data=[next(r for r in summary if r['case']==case) for case in ks]
     fig,axes=plt.subplots(1,2,figsize=(10,3.5))
-    refs=read(ROOT/'results/physics_validation/reference_comparison.csv')
+    refs=read(args.results/'reference_comparison.csv')
     free=float(next(r for r in refs if float(r['k'])==0)['rectangular_tip'])
     for key,label in [('rectangular_tip','V106 rectangular reference'),('circular_tip','Equivalent circular reference')]:
         pos=[r for r in refs if float(r['k'])>0]

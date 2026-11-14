@@ -2,6 +2,12 @@
 
 # ReGrip — Ubuntu SOFA 개발 및 검증
 
+최신 독립 재검증: [최종 통합 보고서](reports/FINAL_VERIFICATION_REPORT.md).
+회전 좌표 미분·무효 입력·중단/출력 무결성·C++ 소스와 바이너리 결합 검사를 보강했다.
+새로 실행한 45개 물리 gate, 20개 자동화 검사 및 11개 최적화 guard는 통과했다.
+Optuna 실제 3/24-trial 탐색과 SofaPython3 원본 실행은 의존성 차단 상태다.
+아래 기존 결과 설명과 VALIDATION.md는 첫 검증의 이력이며 최신 수치는 통합 보고서를 따른다.
+
 SOFA v26.06.00에서 V1.0.9 FREE의 동일 물리 XML 이식본과 C++ 전단 ForceField를 실행했다.
 Windows 600개 시점 회귀 및 45개 물리·수치 검증을 통과했다.
 **Optuna 최적화는 의존성 부재로 미실행이며 최적값은 없다.**
@@ -10,7 +16,8 @@ Windows 600개 시점 회귀 및 45개 물리·수치 검증을 통과했다.
 
 ```bash
 cd /home/ubuntu/LHJ/ReGrip
-/usr/bin/python3 tools/build.py
+export REGRIP_BUILD_ROOT="$PWD/build/revalidation_new"
+/usr/bin/python3 tools/build.py --build-root "$REGRIP_BUILD_ROOT" --logs results/revalidation_new/build
 /usr/bin/python3 tools/baseline_regression.py results/baseline_new
 /usr/bin/python3 tools/run_trial.py results/custom_k1 --k 1 --duration 3
 ```
@@ -19,13 +26,15 @@ cd /home/ubuntu/LHJ/ReGrip
 이 Python이 별도 프로세스로 네이티브 SOFA를 실행한다.
 
 ```bash
-/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/validate_physics.py --resume
-MPLCONFIGDIR=/tmp/regrip-matplotlib /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/make_plots.py
-/usr/bin/python3 tools/summarize_candidate.py
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/validate_physics.py --out results/revalidation_new/physics
+MPLCONFIGDIR=/tmp/regrip-matplotlib /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/make_plots.py --results results/revalidation_new/physics --out reports/figures_new
+/usr/bin/python3 tools/summarize_candidate.py --results results/revalidation_new/physics --out reports/candidate_new.json
 ```
 
-새 검증은 `results/physics_validation`이 없는 별도 프로젝트 복사본에서
-`validate_physics.py`를 실행한다. 기존 실행은 `--resume`으로 바이너리 해시·설정을 확인하고 재사용한다.
+새 검증은 `--out`으로 새 결과 디렉터리를 지정한다. 같은 셸에서 REGRIP_BUILD_ROOT를 유지한다.
+실행기는 build_manifest.json으로 C++ 소스와 실제 바이너리가 일치하는지 먼저 검사한다.
+기존 실행은 `--resume --out <경로>`로 artifact/설정/바이너리 해시를 확인하고 재사용할 수 있지만,
+이번 전체 재검증은 과거 성공 결과를 재사용하지 않고 새로 실행했다.
 개별 trial은 기존 출력 폴더를 덮어쓰지 않으므로 새 경로를 지정한다.
 독립 CMake 프로젝트는 `diagnostics/CMakeLists.txt`, `plugin/CMakeLists.txt`이며
 `build.py`가 두 프로젝트를 configure/build/test하고 로그를 보존한다.
@@ -76,7 +85,7 @@ SQLite study와 trial 파일로 재개할 수 있다. 전역 최적성을 주장
 
 ```bash
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python -m pip install --target .python-deps 'optuna>=3.6,<5'
-PYTHONPATH="$PWD/.python-deps" /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/optimize.py --trials 24
+PYTHONPATH="$PWD/.python-deps" /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/optimize.py --gate results/revalidation_new/physics/gate.json --out results/revalidation_new/optimization --trials 24
 ```
 
 Optuna 미설치 차단 동작은 확인했다. 실제 sampler/study/trial 경로는 아직 실행 검증하지 못했다.

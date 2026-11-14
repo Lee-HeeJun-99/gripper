@@ -1,0 +1,134 @@
+{
+  "static_python": {
+    "tools/optimize.py": "PASS",
+    "tools/generate_revalidation_reports.py": "PASS",
+    "tools/native_scene.py": "PASS",
+    "tools/revalidate_quality.py": "PASS",
+    "tools/make_plots.py": "PASS",
+    "tools/revalidate_python.py": "PASS",
+    "tools/baseline_regression.py": "PASS",
+    "tools/trial_validation.py": "PASS",
+    "tools/revalidate_environment.py": "PASS",
+    "tools/audit_publish.py": "PASS",
+    "tools/verification_common.py": "PASS",
+    "tools/report_environment.py": "PASS",
+    "tools/check_environment.py": "PASS",
+    "tools/run_trial.py": "PASS",
+    "tools/validate_physics.py": "PASS",
+    "tools/summarize_candidate.py": "PASS",
+    "tools/revalidate_source.py": "PASS",
+    "tools/record_handover.py": "PASS",
+    "tools/build.py": "PASS",
+    "tests/test_optimization_guards.py": "PASS",
+    "tests/test_automation.py": "PASS",
+    "reference_fem/planar.py": "PASS",
+    "scenes/python_smoke.py": "PASS"
+  },
+  "structural_model_checks": {
+    "dt": true,
+    "gravity": true,
+    "initial_positions": true,
+    "topology": true,
+    "mass": true,
+    "young_modulus": true,
+    "poisson_ratio": true,
+    "radius": true,
+    "force": true,
+    "fixed_roots": true,
+    "force_nodes": true,
+    "integrator": true,
+    "solver": true,
+    "mapping": true
+  },
+  "artifact_validation": {
+    "free": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "free_dt_half": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k0": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k001": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k01": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k10": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k100": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k100_dt_double": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k100_dt_half": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k100_refine": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1_dt_double": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1_dt_half": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1_extend": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1_half_load": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1_refine": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "k1_repeat": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "sparse_mid": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "sparse_tip": {
+      "status": "complete",
+      "artifact_integrity": "PASS"
+    },
+    "timeout_probe": {
+      "status": "timeout",
+      "artifact_integrity": "PASS"
+    }
+  },
+  "compiler_abi": [
+    "#define _GLIBCXX_USE_CXX11_ABI 1"
+  ],
+  "source_scene_sha256": "0772f4016bad62e2e7753c880469562b074ce513a18e7fc5dc3985e38e1cb5ae",
+  "golden_sha256": "40b4874b1daf80293c1c5bfa99e90c6829400f32f897937e51e1ad08e466367d",
+  "source_code_audit": "No measured-response literals or golden-data reads in the execution/generation path. Golden reads are confined to regression/reference comparisons; plot scripts explicitly select a result directory.",
+  "full_vector_golden_available": false,
+  "full_vector_comparison_status": "NOT RUN: Windows CSV stores derived metrics, not all 22 rigid states",
+  "status": "PASS"
+}

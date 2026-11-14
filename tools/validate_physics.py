@@ -9,6 +9,8 @@ import subprocess
 import sys
 from baseline_regression import run as baseline_run
 from run_trial import ROOT, run_trial, sha
+from verification_common import BUILD, provenance, write_json
+from trial_validation import verify_artifacts
 
 sys.path.insert(0,str(ROOT/'reference_fem'))
 from planar import solve
@@ -17,20 +19,22 @@ from planar import solve
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--resume',action='store_true',help='Reuse completed runs only after checking binary hashes and configurations')
+    parser.add_argument('--out',type=Path,default=ROOT/'results/physics_validation')
     args=parser.parse_args()
-    out=ROOT/'results/physics_validation'
+    out=args.out.resolve()
+    out.parent.mkdir(parents=True,exist_ok=True)
     out.mkdir(exist_ok=args.resume)
     def trial(name,**config):
         saved=out/name/'metrics.json'
         if args.resume and saved.exists():
-            report=json.loads(saved.read_text())
+            report=verify_artifacts(out/name)
             expected=dict(k=None,connectors=None,dt=.0005,duration=3.,load=.0001,n=11,timeout=60)
             expected.update(config)
             if any(report['config'][key]!=value for key,value in expected.items()):
                 raise RuntimeError('cached configuration mismatch: '+name)
-            if report['diagnostics_sha256']!=sha(ROOT/'build/diagnostics/libReGripDiagnostics.so'):
+            if report['diagnostics_sha256']!=sha(BUILD/'diagnostics/libReGripDiagnostics.so'):
                 raise RuntimeError('cached diagnostics mismatch: '+name)
-            if config.get('k') is not None and report['plugin_sha256']!=sha(ROOT/'build/plugin/bin/libSofaTangentialV110.so'):
+            if config.get('k') is not None and report['plugin_sha256']!=sha(BUILD/'plugin/bin/libSofaTangentialV110.so'):
                 raise RuntimeError('cached plugin mismatch: '+name)
             return report
         return run_trial(out/name,**config)
@@ -38,14 +42,18 @@ def main():
     cached=out/'baseline/comparison.json'
     if args.resume and cached.exists():
         b=json.loads(cached.read_text())
-        checks['baseline']=b['passed'] and b['diagnostics_sha256']==sha(ROOT/'build/diagnostics/libReGripDiagnostics.so')
+        checks['baseline']=b['passed'] and b['diagnostics_sha256']==sha(BUILD/'diagnostics/libReGripDiagnostics.so')
     else:
         checks['baseline']=baseline_run(out/'baseline')
-    test=subprocess.run([str(ROOT/'build/plugin/test_forcefield')],capture_output=True,text=True)
+    test=subprocess.run([str(BUILD/'plugin/test_forcefield')],capture_output=True,text=True)
     (out/'native_test.log').write_text(test.stdout+test.stderr)
     checks['native_force_matrix']=test.returncode==0
     if not all(checks.values()):
         raise RuntimeError('baseline or native API test failed')
+    if not args.resume:
+        second=baseline_run(out/'baseline_repeat')
+        write_json(out/'baseline_repeat_check.json',dict(passed=second,
+            identical_csv=sha(out/'baseline/baseline_free.csv')==sha(out/'baseline_repeat/baseline_free.csv')))
     spec=importlib.util.spec_from_file_location('v106_original',ROOT/'handover/20261114/SOFA_V106_Tangential_Coupling/tangential_fem_v106.py')
     original=importlib.util.module_from_spec(spec);spec.loader.exec_module(original)
     refs=[]
@@ -114,15 +122,22 @@ def main():
         writer=csv.DictWriter(stream,fieldnames=list(summary[0]));writer.writeheader();writer.writerows(summary)
     checks={key:bool(value) for key,value in checks.items()}
     gate=dict(passed=all(checks.values()),checks=checks,
-              plugin_sha256=sha(ROOT/'build/plugin/bin/libSofaTangentialV110.so'),
-              diagnostics_sha256=sha(ROOT/'build/diagnostics/libReGripDiagnostics.so'),
+              plugin_sha256=sha(BUILD/'plugin/bin/libSofaTangentialV110.so'),
+              diagnostics_sha256=sha(BUILD/'diagnostics/libReGripDiagnostics.so'),
               scope='30 mm bilayer, small planar rotations <0.005 rad, model force units, connector k up to 100',
               excludes=['finite rotation consistency','real vacuum friction','physical pressure calibration','100 mm gripper'])
     gate['source_sha256']={path:sha(ROOT/path) for path in [
         'tools/native_scene.py','tools/run_trial.py','tools/baseline_regression.py',
         'reference_fem/planar.py','plugin/src/TangentialRigidForceField.cpp',
-        'diagnostics/PrecisionStateWriter.cpp','tests/test_forcefield.cpp']}
-    (out/'gate.json').write_text(json.dumps(gate,indent=2))
+        'diagnostics/PrecisionStateWriter.cpp','tests/test_forcefield.cpp','tools/trial_validation.py',
+        'tools/verification_common.py','plugin/CMakeLists.txt','diagnostics/CMakeLists.txt']}
+    gate['provenance']=provenance()
+    gate['extended_checks']=dict(baseline_repeat=json.loads((out/'baseline_repeat_check.json').read_text())['passed'],
+        force_balance=all(r.get('reaction_force_balance',1)<1e-3 for r in results.values()),
+        moment_balance=all(r.get('reaction_moment_balance',1)<1e-3 for r in results.values()))
+    gate['passed']=gate['passed'] and all(gate['extended_checks'].values())
+    gate['run_metrics_sha256']={name:sha(out/name/'metrics.json') for name in results}
+    write_json(out/'gate.json',gate)
     print(json.dumps(gate,indent=2))
     return 0 if gate['passed'] else 1
 

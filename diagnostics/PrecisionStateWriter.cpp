@@ -9,23 +9,27 @@
 #include <sofa/simulation/AnimateEndEvent.h>
 #include <fstream>
 #include <iomanip>
+#include <filesystem>
 
 class PrecisionStateWriter final : public sofa::core::objectmodel::BaseComponent {
 public:
     SOFA_CLASS(PrecisionStateWriter, sofa::core::objectmodel::BaseComponent);
     sofa::core::objectmodel::Data<std::string> d_filename;
+    sofa::core::objectmodel::Data<bool> d_residual;
     std::ofstream stream;
     sofa::core::behavior::BaseMechanicalState* state = nullptr;
-    PrecisionStateWriter(): d_filename(initData(&d_filename, std::string("state.txt"), "filename", "Output file")) {
+    PrecisionStateWriter(): d_filename(initData(&d_filename, std::string("state.txt"), "filename", "Output file")),
+        d_residual(initData(&d_residual,true,"writeResidual","Recompute static force balance in a scratch vector")) {
         f_listening.setValue(true);
     }
     void init() override {
         BaseComponent::init();
         state = getContext()->getMechanicalState();
+        if(std::filesystem::exists(d_filename.getValue())) {msg_error()<<"Refusing existing output file";return;}
         stream.open(d_filename.getValue());
         stream << std::setprecision(17);
         if (!state || !stream) { msg_error() << "State or output unavailable"; return; }
-        write(0.0);
+        write(getContext()->getTime());
     }
     void write(double time) {
         stream << "T= " << time << "\nX= ";
@@ -43,7 +47,7 @@ public:
                 using T=sofa::defaulttype::Rigid3Types;
                 using Field=sofa::core::behavior::ForceField<T>;
                 auto* rigid=dynamic_cast<sofa::core::behavior::MechanicalState<T>*>(state);
-                if(rigid) {
+                if(rigid && d_residual.getValue()) {
                     Field::DataVecDeriv residual;
                     residual.setValue(T::VecDeriv(rigid->getSize()));
                     sofa::core::MechanicalParams params;

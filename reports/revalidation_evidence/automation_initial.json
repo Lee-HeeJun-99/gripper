@@ -1,0 +1,15 @@
+{
+  "tests": 19,
+  "failures": [
+    [
+      "test_invalid_physics (__main__.Automation)",
+      "Traceback (most recent call last):\n  File \"/home/ubuntu/LHJ/ReGrip/tests/test_automation.py\", line 69, in test_invalid_physics\n    self.classify(self.fixture(mutate),'invalid_physics','rotation domain')\n  File \"/home/ubuntu/LHJ/ReGrip/tests/test_automation.py\", line 44, in classify\n    self.assertIn(reason,str(caught.exception))\nAssertionError: 'rotation domain' not found in 'outside validated small-angle planar domain'\n"
+    ],
+    [
+      "test_nan (__main__.Automation)",
+      "Traceback (most recent call last):\n  File \"/home/ubuntu/LHJ/ReGrip/tests/test_automation.py\", line 48, in test_nan\n    self.classify(self.fixture(lambda s:s.replace('X= ','X= nan ',1)),'crash','dimensions')\n  File \"/home/ubuntu/LHJ/ReGrip/tests/test_automation.py\", line 44, in classify\n    self.assertIn(reason,str(caught.exception))\nAssertionError: 'dimensions' not found in 'invalid initial mechanical state'\n"
+    ]
+  ],
+  "errors": [],
+  "passed": false
+}

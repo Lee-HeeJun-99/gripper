@@ -1,5 +1,8 @@
 # ReGrip 검증 보고서 — 2026-11-14
 
+이 문서는 첫 검증의 역사적 기록이다. 최신 코드의 회전 미분 수정과 독립 재실행 결과는
+[FINAL_VERIFICATION_REPORT.md](reports/FINAL_VERIFICATION_REPORT.md)를 참조한다.
+
 ## 판정
 
 동일 물리 구성의 V1.0.9 FREE XML 이식본 회귀와 작은 평면 회전 전단 모델의

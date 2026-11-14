@@ -54,9 +54,17 @@ int main() {
     auto energy=[&](const double q[4]) {
         FF::DataVecCoord x;x.setValue(position(q));return ff->getPotentialEnergy(nullptr,x);
     };
-    for(int trial=0;trial<100;++trial) {
+    for(double stiffness:{0.,.01,.1,1.,10.,100.}) for(int trial=0;trial<100;++trial) {
+        ff->d_stiffness.setValue(stiffness);
         double q[4]; for(double& v:q)v=dist(rng);
+        state->write(sofa::core::vec_id::write_access::position)->setValue(position(q));
         auto force=forces(q);
+        Accumulator current;
+        sofa::core::behavior::StiffnessMatrix currentMatrix;
+        currentMatrix.setMatrixAccumulator(&current,state.get());
+        ff->buildStiffnessMatrix(&currentMatrix);
+        for(int r=0;r<24;++r)for(int c=0;c<24;++c)
+            check(std::abs(current.a[r][c]-current.a[c][r])<1e-14,"Jacobian is not symmetric");
         check(std::abs(force[1][0]+force[3][0])<1e-15,"pair forces do not cancel");
         for(int node=0;node<4;++node) for(int axis:{1,2,3,5})
             check(force[node][axis]==0,"unexpected normal force/torque");
@@ -70,8 +78,8 @@ int main() {
             auto fp=forces(qp),fm=forces(qm);
             for(int i=0;i<4;++i) {
                 double fd=(fp[ids[i]/6][ids[i]%6]-fm[ids[i]/6][ids[i]%6])/2e-7;
-                maxTangentError=std::max(maxTangentError,std::abs(fd-acc.a[ids[i]][ids[j]]));
-                check(std::abs(fd-acc.a[ids[i]][ids[j]])<1e-7,"SOFA rotation tangent mismatch");
+                maxTangentError=std::max(maxTangentError,std::abs(fd-current.a[ids[i]][ids[j]]));
+                check(std::abs(fd-current.a[ids[i]][ids[j]])<1e-7,"SOFA rotation tangent mismatch");
             }
         }
         FF::VecDeriv u(4);for(auto& d:u)for(int i=0;i<6;++i)d[i]=dist(rng);
@@ -81,7 +89,7 @@ int main() {
             ff->addDForce(&mp,df,dx);
             double quadratic=0;
             for(int r=0;r<24;++r) {
-                double expected=0;for(int c=0;c<24;++c)expected+=acc.a[r][c]*u[c/6][c%6];
+                double expected=0;for(int c=0;c<24;++c)expected+=current.a[r][c]*u[c/6][c%6];
                 check(std::abs(df.getValue()[r/6][r%6]-factor*expected)<1e-14,"addDForce/kFactor mismatch");
                 quadratic+=u[r/6][r%6]*expected;
             }
@@ -89,6 +97,7 @@ int main() {
         }
     }
     // Positive X slip must restore X and generate positive y moments.
+    ff->d_stiffness.setValue(.1);
     double q[4]={0,0,.001,0};auto f=forces(q);
     check(f[1][0]>0 && f[3][0]<0 && f[1][4]>0 && f[3][4]>0,"restoring force or torque sign");
     state->resize(6);ff->d_nodesPerLayer.setValue(3);
@@ -105,7 +114,7 @@ int main() {
     Accumulator subset;sofa::core::behavior::StiffnessMatrix subsetMatrix;
     subsetMatrix.setMatrixAccumulator(&subset,state.get());ff->buildStiffnessMatrix(&subsetMatrix);
     check(subset.a[6][6]==0 && std::abs(subset.a[12][12]+.1)<1e-15,"connector subset matrix mismatch");
-    std::cout<<"PASS actual addForce/addDForce/buildStiffnessMatrix, 100 random small-angle checks; "
+    std::cout<<"PASS actual addForce/addDForce/buildStiffnessMatrix, 600 random small-angle checks across k=0..100; "
              <<"max energy-gradient error="<<maxEnergyError<<", max tangent error="<<maxTangentError<<"\n";
     return 0;
  } catch(const std::exception& e) { std::cerr<<"FAIL "<<e.what()<<"\n";return 1; }

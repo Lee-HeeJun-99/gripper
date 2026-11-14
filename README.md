@@ -1,29 +1,82 @@
-# ReGrip Ubuntu 개발 준비
+# ReGrip — Ubuntu SOFA 개발 및 검증
 
-현재 상태: 환경 점검 일부 완료. 인수인계 패키지 부재와 Python 3.12 런타임 부재로 기준 모델 검증 대기.
+SOFA v26.06.00에서 V1.0.9 FREE의 동일 물리 XML 이식본과 C++ 전단 ForceField를 실행했다.
+Windows 600개 시점 회귀 및 45개 물리·수치 검증을 통과했다.
+**Optuna 최적화는 의존성 부재로 미실행이며 최적값은 없다.**
+
+## 실행
 
 ```bash
 cd /home/ubuntu/LHJ/ReGrip
-/usr/bin/python3 tools/check_environment.py
+/usr/bin/python3 tools/build.py
+/usr/bin/python3 tools/baseline_regression.py results/baseline_new
+/usr/bin/python3 tools/run_trial.py results/custom_k1 --k 1 --duration 3
 ```
 
-결과는 `results/<UTC 실행시각>/environment.csv` 및 개별 로그와 명령 JSON으로 보존된다.
-현재 Python 관련 점검 실패로 명령 종료 코드 1이 예상된다.
-`SOFA_ROOT`로 설치 경로를 변경할 수 있다. 실행 파일명은 현재 설치 버전에 맞춘다.
-`scenes/`의 두 파일은 환경 점검용 빈 scene이며 ReGrip FEM 모델이 아니다.
-
-필요한 입력: V0.8~V1.1.0 소스, 인수인계 MD, mesh/설정/실행 명령, Windows 원본 결과.
-실제 모델과 플러그인 소스 수령 후 기준 검증을 먼저 수행한다.
-현재 C++ 빌드 시스템, 물리 실험 자동화, Optuna, 비교 그래프 및 최적 파라미터는 미구현이다.
-
-Python 설치 재시도 예시(네트워크가 가능한 사용자 터미널):
+현재 분석용 NumPy/Matplotlib는 기존 환경에 있다. SOFA에 Python을 내장하지 않고,
+이 Python이 별도 프로세스로 네이티브 SOFA를 실행한다.
 
 ```bash
-CONDA_PKGS_DIRS=/home/ubuntu/LHJ/ReGrip/.conda-pkgs conda create --prefix /home/ubuntu/LHJ/ReGrip/.venv-sofa python=3.12 numpy --yes
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/validate_physics.py --resume
+MPLCONFIGDIR=/tmp/regrip-matplotlib /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/make_plots.py
+/usr/bin/python3 tools/summarize_candidate.py
 ```
 
-설치 후에는 해당 환경의 `bin`을 PATH에, `lib`를 LD_LIBRARY_PATH에 추가하고
-외부 ROS 등의 PYTHONPATH/PYTHONHOME 간섭을 제거한 별도 프로세스에서 재검증해야 한다.
-Python 3.10/3.14 라이브러리를 3.12 이름으로 심볼릭 링크하지 않는다.
+새 검증은 `results/physics_validation`이 없는 별도 프로젝트 복사본에서
+`validate_physics.py`를 실행한다. 기존 실행은 `--resume`으로 바이너리 해시·설정을 확인하고 재사용한다.
+개별 trial은 기존 출력 폴더를 덮어쓰지 않으므로 새 경로를 지정한다.
+독립 CMake 프로젝트는 `diagnostics/CMakeLists.txt`, `plugin/CMakeLists.txt`이며
+`build.py`가 두 프로젝트를 configure/build/test하고 로그를 보존한다.
+현재 빌드는 Unix Makefiles를 사용하므로 Ninja 설치가 필요 없다.
+다른 SOFA 설치는 `SOFA_ROOT`로 지정하되, ABI 및 회귀·물리 검증을 다시 수행해야 한다.
 
-자세한 증거와 미완료 항목은 `VALIDATION.md`, `PROGRESS.md`에 기록했다.
+## 결과와 범위
+
+- 0.3초 FREE 처짐: 0.04121379160634628 mm, X 미끄럼: 0.0008228072034270895 mm.
+- 3초 FREE 평형 처짐: 0.042187419375712826 mm.
+- 고정 sweep 후보: k=100, 연결점 10개, x=3,6,…,30 mm.
+- 후보의 평형 강성비: 1.676077, X 미끄럼: 0.00000306237049 mm.
+- 원본 Python scene 직접 실행은 미완료다. SofaPython3에 필요한 Python 3.12 공유 라이브러리가 없다.
+- 전단 모델은 작은 평면 회전 범위의 선형 근사다. 실제 진공 마찰, 압력, 100 mm 그리퍼 결과가 아니다.
+
+[검증 보고서](VALIDATION.md), [환경 보고서](ENV_REPORT.md), [진행 현황](PROGRESS.md),
+[실험 요약 CSV](results/physics_validation/summary.csv),
+[검증 gate](results/physics_validation/gate.json),
+[기준 비교 그래프](reports/baseline_comparison.png),
+[평형 강성·미끄럼 그래프](reports/equilibrium_sweep.png),
+[검증된 sweep 후보](reports/best_tested_candidate.json).
+
+## 자동 실험 계약
+
+`run_trial.py`는 조건 JSON, 실행 명령, Git revision/dirty 상태, .so 및 scene 해시,
+SOFA 로그, 시계열 CSV, 지표 JSON을 실행별로 남긴다.
+timeout은 프로세스 그룹을 종료하고, 프로세스 주소 공간은 4 GiB로 제한한다.
+종료 코드뿐 아니라 오류 로그, 실행 횟수, 상태 크기, 시간, 유한값,
+변위·속도 한계, 작은 회전 범위, 정적 잔차를 검사한다.
+출력 상태는 `complete`, `not_converged`, `timeout`, `crash`, `diverged`, `invalid_physics`다.
+평형 미달은 유효 강성으로 변환하지 않는다.
+일부 상한 검사는 실행 후 수행되며 모든 발산을 즉시 조기 종료하는 시스템은 아니다.
+raw 상태 TXT는 디스크에 보존하되 Git에서 제외했다. 현재 전체 실험 raw 파일은 약 1.2 GiB다.
+회귀 CSV·실험 CSV·로그·설정과 보고서는 Git으로 관리한다.
+
+## 최적화 재개
+
+`tools/optimize.py`는 물리 gate와 현재 바이너리·소스 해시를 먼저 확인한다.
+k, 연결점 수, 연결 위치를 탐색하고 dt는 탐색하지 않는다.
+연결 위치는 현재 11노드의 3 mm 간격 격자에서 선택한다.
+두 목적은 평형 강성비 최대화 및 전체 계면 최대 X 미끄럼 최소화이며,
+실패·미수렴 trial은 성능값 없이 prune한다.
+각 후보는 dt 절반·6초 연장, Pareto 후보는 동일 연결 위치의 21노드 메시로 검증한다.
+SQLite study와 trial 파일로 재개할 수 있다. 전역 최적성을 주장하지 않는다.
+
+현재 Optuna가 설치되지 않았다. 이 실행 환경에서 pip 설치는 배포본을 받지 못해 실패했다.
+패키지 설치가 가능한 터미널에서 프로젝트 내부 의존성을 설치한 후 실행한다.
+
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m pip install --target .python-deps 'optuna>=3.6,<5'
+PYTHONPATH="$PWD/.python-deps" /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/optimize.py --trials 24
+```
+
+Optuna 미설치 차단 동작은 확인했다. 실제 sampler/study/trial 경로는 아직 실행 검증하지 못했다.
+Python 3.12 설치를 해결하면 원본 SofaPython3 scene도 별도로 재현해야 한다.
+상세 설치 장애와 원본 보존 검증은 환경·검증 보고서에 기록했다.

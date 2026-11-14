@@ -1,0 +1,72 @@
+{
+  "python_executable": "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+  "python_version": "3.10.20",
+  "packages": {
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.9",
+    "optuna": null
+  },
+  "commands": {
+    "kernel": {
+      "command": [
+        "uname",
+        "-a"
+      ],
+      "exit_code": 0
+    },
+    "compiler": {
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    "cmake": {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    "make": {
+      "command": [
+        "make",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    "plugin_dependencies": {
+      "command": [
+        "ldd",
+        "/home/ubuntu/LHJ/ReGrip/build/plugin/bin/libSofaTangentialV110.so"
+      ],
+      "exit_code": 0
+    },
+    "diagnostics_dependencies": {
+      "command": [
+        "ldd",
+        "/home/ubuntu/LHJ/ReGrip/build/diagnostics/libReGripDiagnostics.so"
+      ],
+      "exit_code": 0
+    },
+    "sofa_python_dependencies": {
+      "command": [
+        "ldd",
+        "/home/ubuntu/SOFA/v26.06.00/plugins/SofaPython3/lib/libSofaPython3.so"
+      ],
+      "exit_code": 0
+    },
+    "original_build": {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/ubuntu/LHJ/ReGrip/build/v110_original",
+        "-j",
+        "2"
+      ],
+      "exit_code": 2
+    }
+  },
+  "python312_install_attempt": "conda create failed: repo.anaconda.com DNS resolution",
+  "optuna_install_attempt": "pip target install failed: no matching distribution available in this execution environment"
+}

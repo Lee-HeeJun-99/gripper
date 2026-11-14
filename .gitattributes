@@ -1,0 +1,6 @@
+# Preserve supplied archive members byte-for-byte, including Windows line endings.
+handover/** -text -diff
+# Python csv.writer deliberately emits standard CSV CRLF endings.
+*.csv -text whitespace=cr-at-eol
+# Keep raw process output, including the whitespace emitted by SOFA.
+*.log -text -diff

@@ -22,6 +22,7 @@ def audit(directory):
     return dict(sum_vs_original_recorder_max_abs=float(abs(total-R).max()),force_denominator=scale,moment_denominator=scale*c.length,
         absolute_force_residual=float(abs(f).max()),absolute_moment_residual=float(abs(m).max()),relative_force=float(abs(f).max()/scale),relative_moment=float(abs(m).max()/(scale*c.length)),
         worst_force_node=node,worst_force_axis=axis,components=components,boundary_reaction=(-total[fixed]).sum(axis=0).tolist(),
+        boundary_reaction_world_moment=(-(total[fixed,3:]+np.cross(states[fixed,:3],total[fixed,:3])).sum(axis=0)).tolist(),
         free_net_force=total[free,:3].sum(axis=0).tolist(),free_net_moment=(total[free,3:]+np.cross(states[free,:3],total[free,:3])).sum(axis=0).tolist(),
         note='gravity zero; no contact/constraint cable in these scenes. Fixed roots excluded. Constraint reaction is inferred from root balance, not mixed into free residual.')
 

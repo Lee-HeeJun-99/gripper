@@ -215,6 +215,7 @@ isolated dependency 경로를 사용했으며 system Python/가짜 ABI symlink�
     write('STABILIZATION_09_FULL_VALIDATION.md','''# 회귀/전체 검증
 
 - 이전 전체 증거: 작업 전1061개 hash 검사 불일치0. 인수인계56개도 새 byte-for-byte PASS.
+- 작업 후 이전 manifest 재검사는 .gitignore의 의도된 신규 raw 제외 규칙1건만 다르다. 물리 source/binary 변경은 없다.
 - 기존30mm/600시점/45gate 및 finite kernel은 소스·바이너리 불변의 이전 검증을 승계한다.
 - 새 isolated audit plugin으로2/4층 실행 회귀 PASS. 기존 모델/골든 수정 없음.
 - C++ release clean build, actual18DOF Jx/Jv/K/B/kFactor/bFactor/objectivity PASS.
@@ -266,6 +267,7 @@ DiagonalMass의 실제 두-template/explicit links, event-time sample window의 
 halfdt/21node/18s 잔차2.15210501e-5/1.98673897e-5/1.45721222e-5,
 반복 tip 차이0;2/4층 기존 tip와 차이 각각3.61e-16/4.23e-16mm.
 모든 힘/모멘트 기준은 유지하며 sub-ULP 증분 보상은 자유 물체에는 사용하지 않았다.
+추가 dt1/4 cold-start는180s timeout FAIL이며 평형/수렴 미검증이다. dt절반 PASS와 구분한다.
 기본 free-object +X 이동6.54322072e-6mm, mu0 약.0178247mm,
 overload 약.012645mm. 후자의 이동이.05mm보다 작아도 force/velocity에서 FAIL.
 기본±Z는 transient FAIL, 연장/α=2 damping 연구 조건은 별도 평가한다.

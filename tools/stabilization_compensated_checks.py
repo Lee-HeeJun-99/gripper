@@ -14,6 +14,10 @@ def main():
     comparisons={}
     for name,r,tol in [('halfdt',cold['L8_halfdt'],.001),('mesh',cold['L8_mesh'],.01),('extended',cold['L8_extended'],.001),('repeat',follow.get('repeat'),1e-10),('quarterdt',follow.get('quarterdt'),.001)]:
         if r is None:continue
+        if r.get('status')!='PASS':
+            comparisons[name]=dict(status=r.get('status'),reason=r.get('reason',r.get('failure_reason','trial did not pass')))
+            checks[name+'_tip']=False
+            continue
         a,b=base['tip_deflection_mm'],r['tip_deflection_mm'];comparisons[name]=dict(base=a,value=b,absolute_difference=abs(a-b),relative_tolerance=tol)
         checks[name+'_tip']=abs(a-b)<=1e-10+tol*abs(a)
     for layer in (2,4):

@@ -107,3 +107,14 @@ Python 3.12 설치를 해결하면 원본 SofaPython3 scene도 별도로 재현�
 기존 커밋의 CSV blob은 이력에 남는다. 이력 삭제/재작성은 수행하지 않았다.
 사용자가 CSV 이력 전송을 원하지 않아 push를 보류했다.
 상세 점검은 `reports/GIT_PUBLISH_AUDIT.json`, `reports/GIT_UPLOAD_STATUS.md` 참조.
+
+## 2026-11-15 통합 연구 개발
+
+이전 업로드 상태와 위 검증 기록은 과거 기록이다. 이번 작업은 원격 push 없이
+`development/regrip-integrated-system`에서 진행했다.
+신규 연구 컴포넌트는 [models/integrated](models/integrated/README.md)에 분리했다.
+실제 SOFA 100mm 다층·케이블·압력 slider·고정 물체 접촉 및 결정론적 Pareto 후보 검증을 수행했다.
+8층 수렴과 자유 물체 파지는 FAIL, Optuna/SofaPython3는 BLOCKED이며 실물 인증은 아니다.
+[통합 보고서](reports/INTEGRATED_FINAL_REPORT.md),
+[재개/재현 명령](reports/INTEGRATED_NEXT_TASKS.md),
+[증거 manifest](reports/INTEGRATED_EVIDENCE_MANIFEST.json)를 우선 참조한다.

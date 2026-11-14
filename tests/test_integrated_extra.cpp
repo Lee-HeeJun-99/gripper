@@ -23,5 +23,14 @@ int main(){try{
  sofa::simulation::AnimateEndEvent event(.0005);layer->handleEvent(&event);require(layer->plastic[1]>0&&layer->dissipated>0,"friction history not committed at step end");auto third=layer->assemble(x);require(std::abs(third.f[30]-first.f[30])<1e-14,"return mapping traction consistency");
  auto diss=layer->dissipated;layer->pressure.setValue(0);layer->handleEvent(&event);auto off=layer->assemble(x);require(off.f[30]==0&&layer->dissipated>=diss,"pressure OFF and nonnegative dissipation");
  for(int shape=0;shape<3;++shape){auto e=contact_energy(Pose{{6,0,0},Q{0,0,0,1}},Pose{},shape,V{5,5,5},V{},.1,.01);require(e.v==0,"contact detection false positive");auto r=energy_result(contact_energy(Pose{{4.9,0,0},Q{0,0,0,1}},Pose{},shape,V{5,5,5},V{},.1,.01));require(r.force[0]>0&&r.force[6]<0,"contact response/action reaction");}
+ // Nonzero material attachment: all point/object rotations must enter derivatives.
+ for(int shape=0;shape<3;++shape){Pose a{{4.7,.2,.1},exp(V{.1,-.2,.3})},b{};V offset{.03,.04,-.02};
+  auto energy=[&](const Pose&p,const Pose&o){return contact_energy(p,o,shape,V{5,4,3},offset,.1,.01);};auto r=energy_result(energy(a,b));
+  for(int i=0;i<12;++i){auto ap=a,am=a,bp=b,bm=b;if(i<6){ap=increment(a,i,1e-6);am=increment(a,i,-1e-6);}else{bp=increment(b,i-6,1e-6);bm=increment(b,i-6,-1e-6);}auto p=energy_result(energy(ap,bp)),m=energy_result(energy(am,bm));
+   maxE=std::max(maxE,std::abs((p.energy-m.energy)/2e-6+r.force[i]));for(int j=0;j<12;++j)maxJ=std::max(maxJ,std::abs((p.force[j]-m.force[j])/2e-6-r.jacobian[12*j+i]));}
+  auto q=exp(V{.7,-.4,.2});V t{1,2,-3};Pose ar{add(rotate(q,a.p),t),multiply(q,a.q)},br{add(rotate(q,b.p),t),multiply(q,b.q)};
+  require(std::abs(energy(a,b).v-energy(ar,br).v)<1e-13,"attachment contact objectivity");
+ }
+ require(maxE<1e-8&&maxJ<1e-7,"nonzero attachment contact FD");
  std::cout<<"PASS actual full routed-cable energy/tangent FD; max_energy="<<maxE<<" max_J="<<maxJ<<"; friction no-Newton-side-effects/commit/ON-OFF; separate collision detection and response\n";return 0;
 }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

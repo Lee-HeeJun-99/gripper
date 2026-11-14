@@ -16,7 +16,8 @@ Entry pointers[P];Group groups[G];pthread_mutex_t lock=PTHREAD_MUTEX_INITIALIZER
 thread_local bool active=false;size_t skipped=0;
 size_t mix(size_t x){x^=x>>23;x*=0x2127599bf4325c37ULL;x^=x>>47;return x;}
 void insert(void*p,size_t n){
- if(active||!p)return;active=true;void*stack[S]{};backtrace(stack,S);
+ if(active||!p)return;
+ active=true;void*stack[S]{};backtrace(stack,S);
  size_t hash=0;for(auto a:stack)hash=mix(hash^reinterpret_cast<uintptr_t>(a));
  pthread_mutex_lock(&lock);size_t g=hash&(G-1),gtries=0;
  while(groups[g].used&&std::memcmp(groups[g].stack,stack,sizeof(stack))&&++gtries<G)g=(g+1)&(G-1);
@@ -28,7 +29,8 @@ void insert(void*p,size_t n){
  pthread_mutex_unlock(&lock);active=false;
 }
 void erase(void*p){
- if(active||!p)return;active=true;pthread_mutex_lock(&lock);
+ if(active||!p)return;
+ active=true;pthread_mutex_lock(&lock);
  size_t at=mix(reinterpret_cast<uintptr_t>(p))&(P-1),tries=0;
  while(pointers[at].p&&pointers[at].p!=p&&++tries<P)at=(at+1)&(P-1);
  if(pointers[at].p==p){groups[pointers[at].group].live-=pointers[at].size;pointers[at].p=reinterpret_cast<void*>(1);}

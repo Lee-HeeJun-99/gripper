@@ -25,11 +25,13 @@ def compact(value):
 def text_report(name,body):
     (REPORTS/name).write_text(body.strip()+'\n')
 
-def measured_table(records):
+def measured_table(records,final_status=None):
     lines=['|실험|판정|처짐 mm|상대 잔차|최종 속도 mm/s|최대 회전 rad|',
            '|---|---|---:|---:|---:|---:|']
     for name,r in records.items():
-        lines.append('|'+ '|'.join([name,r.get('status','NOT RUN')]+[f'{r[k]:.10g}' if isinstance(r.get(k),(int,float)) else '—' for k in ('tip_deflection_mm','relative_residual','final_velocity','max_rotation_rad')])+'|')
+        status=r.get('status','NOT RUN')
+        if final_status and final_status.get(name,status)!=status:status+=' → '+final_status[name]+' (strict)'
+        lines.append('|'+ '|'.join([name,status]+[f'{r[k]:.10g}' if isinstance(r.get(k),(int,float)) else '—' for k in ('tip_deflection_mm','relative_residual','final_velocity','max_rotation_rad')])+'|')
     return '\n'.join(lines)
 
 def main():
@@ -39,8 +41,13 @@ def main():
     multi=load('multilayer/summary.json');tendon=load('tendon/summary.json');friction=load('friction/summary.json');contact=load('contact/summary.json')
     candidates=load('candidate_validation/summary.json');study=load('search_hermite/summary.json');warm=load('warmstart/summary.json')
     dependency=load('dependencies/environment/summary.json');finite=load('finite_beam/summary.json')
-    paths=['start.json','dependencies/environment/summary.json','memory/summary.json','minimal_engine/result.json',
-           'legacy_baseline/comparison.json','multilayer/summary.json','tendon/summary.json','friction/summary.json',
+    audit=load('residual_audit/summary.json')['records']
+    strict_retry=load('strict_residual_retry/summary.json')
+    strict={group:{k.split('/')[1]:v['strict_status'] for k,v in audit.items() if k.startswith(group+'/')} for group in ('tendon','friction','contact')}
+    paths=['start.json','originals.json','dependencies/environment/summary.json','memory/summary.json','minimal_engine/result.json','diagnostic_hardening/minimal_engine/result.json',
+           'legacy_baseline/comparison.json','legacy_baseline_repeat/comparison.json','sensitivity/summary.json',
+           'finite_metric_correction/summary.json','finite_metric_correction_rerun/summary.json','residual_audit/summary.json','strict_residual_retry/summary.json',
+           'multilayer/summary.json','tendon/summary.json','friction/summary.json',
            'contact/summary.json','grasp_gate.json','finite_beam/summary.json','objective_connector/summary.json',
            'solver_retry/summary.json','warmstart/summary.json','additional_convergence/summary.json',
            'search_hermite/summary.json','search_checks/summary.json','candidate_validation/summary.json',
@@ -61,14 +68,15 @@ def main():
                      'build_v1/test.log','build_v1/manifest.json','build_v1_asan/test.log','extra_test.log','extra_asan_test.log',
                      'previous_finite_cpp.log','legacy_cpp.log','python_tests.log','python_tests_final.log',
                      'build_v2/test.log','build_v2/manifest.json','build_v2_asan/test.log',
-                     'extra_v2.log','extra_asan_v2.log','dependencies/environment/python_abi_0.log','dependencies/environment/python_scene.log']:
+                     'extra_v2.log','extra_asan_v2.log','diagnostic_build_final.log','diagnostic_hardening/minimal_engine/stdout.log',
+                     'dependencies/environment/python_abi_0.log','dependencies/environment/python_scene.log']:
         p=OUT/relative
         if not p.exists():continue
         target=EVIDENCE/relative.replace('/','__');target.write_bytes(p.read_bytes())
         evidence_map[str(target.relative_to(ROOT))]=dict(sha256=sha(target),raw=str(p),raw_sha256=sha(p))
     allrows=[]
     for group,data in [('multilayer',multi['records']),('tendon',tendon['records']),('friction',friction['records']),('contact',contact['records']),('finite_beam',finite),('warmstart',warm)]:
-        for name,r in data.items():allrows.append(dict(group=group,name=name,**{k:r.get(k) for k in ('status','tip_deflection_mm','relative_residual','final_velocity','max_rotation_rad','max_interface_slip_mm','object_displacement_mm','binary_sha256')}))
+        for name,r in data.items():allrows.append(dict(group=group,name=name,final_strict_status=strict.get(group,{}).get(name,r.get('status')),**{k:r.get(k) for k in ('status','tip_deflection_mm','relative_residual','final_velocity','max_rotation_rad','max_interface_slip_mm','object_displacement_mm','binary_sha256')}))
     with (EVIDENCE/'trial_metrics.csv').open('w') as stream:
         writer=csv.DictWriter(stream,fieldnames=allrows[0].keys());writer.writeheader();writer.writerows(allrows)
     # A standard scientific figure, not an artistic or fabricated bitmap.
@@ -95,6 +103,8 @@ def main():
 신규 평형 판정은 sampled static residual <1e-3, 최종 병진/각속도 <1e-5,
 tail relative drift <1e-4이다. 실패를 숨기기 위해 하중·재료·허용오차를 바꾸지 않았다.
 평면 slider/선형 연결은 회전 <.005 rad 및 |qx|,|qz|<1e-8만 인정한다.
+초기 v1의 nonzero-load residual floor 때문에 일부 tiny-cable PASS는 강화 감사에서 FAIL로 바뀌었다.
+최종 판정은 residual_audit/strict_residual_retry가 우선하며 과거 raw의 상태를 수정하지 않는다.
 Raw 위치: `results/integrated_20261115/`; 작은 증거: `reports/integrated_evidence/`.
 `metrics.json`은 소스/바이너리 해시, 설정, 명령, 로그, 원시 상태 파일 해시를 포함한다.
 PASS는 명시된 검사만 의미하며 EXPERIMENTAL transient의 프로그램 종료는 평형 PASS가 아니다.
@@ -174,6 +184,10 @@ objectivity4.85723e-17, net moment4.16334e-17. invalid-input 의도적ERROR와 �
 신규120상태 contact/cable kernel 및 실제 API kFactor/6DOF 검사 PASS,
 전체 routed cable18DOF FD도 energy1.51464e-11/J9.49002e-11로 PASS.
 원래 작은 회전 `s=du-h*(theta_l+theta_u)/2` 극한과 좌표 정의는 유지한다.
+EB에서는 phi=dw/dx, SOFA y회전은 R_y(theta)e_x=(cos(theta),0,-sin(theta))라
+theta=-phi이다. 따라서 EB식 du+h*(phi_l+phi_u)/2와 같은 에너지다.
+노드별 변환 T=diag(1,1,-1)에 대해 f_SOFA=T^T f_EB, K_SOFA=T^T K_EB T이며
+회전 부호만 달라졌다는 설명을 실제 `beam.py`의 B행렬 및 quaternion 복원과 대조했다.
 
 SOFA pure-end-moment **uncoupled BeamFEM**를 독립 circular-arc elastica와 비교했다.
 theta=.004/.1/.5 rad, large21node 및 halfdt 모두 선언1% 오차 이내 PASS.
@@ -182,6 +196,10 @@ halfdt24.4931894390mm. 이 검사는 큰 회전 전단/필름/접촉 전체의 �
 별도 objective_connector/summary.json은 실제 유한 회전 연결의 로딩·적분·평형 결과를 기록한다.
 작은 회전 coupled tip.009290642533mm, moderate tip4.475530251109mm,
 halfdt4.475530251202mm 모두 평형 PASS. 이는 특정 연구 하중의2층 연결 검증이다.
+최종 검토에서 postprocessor가 mode2에도 평면 slip 식을 쓰던 문제를 발견했다.
+역사 raw/metrics는 보존하고 정확한 `t_lower dot (p_u+R_u*a_u-p_l-R_l*a_l)`로 별도 재분석했다.
+moderate 최종 exact slip.003496672754612mm, C++ recorder와 전시점 최대 차이1.04e-17mm.
+평형·처짐 판정은 이 지표 수정으로 바뀌지 않는다. 이전 finite raw의 평면 slip 숫자는 성능에서 제외한다.
 유한 회전 마찰은 구현하지 않았으며 planar slider에 큰 회전 결과를 섞지 않았다.
 직접적인 공간회전 변환 검사는 kernel에서 수행했으며 전체 고정중력/경계 장면의 임의 회전은 NOT RUN.
 '''+measured_table(finite)+scope)
@@ -211,7 +229,13 @@ equal-total-material은 원형 bar 단면 합 일정의 별도 연구(반지름 
 '''+measured_table(multi['records'])+'\n\n## 별도 정적 seed 실행\n\n'+measured_table(warm)+scope)
     text_report('INTEGRATED_06_TENDON.md','''# SOFA routed tendon
 
-**연구용 구현/선언된 검사18/18 PASS, 실제 와이어 성능 EXPERIMENTAL.**
+**연구용 구현/초기 선언 검사18/18 PASS; 강화 잔차 감사에서 일부 FAIL, 실제 와이어 성능 EXPERIMENTAL.**
+초기 F_ref에1e-6 하한이 있어 tiny cable load의 상대 잔차를 과소평가했다.
+최종 분석기는 nonzero-load floor를 제거했다(하중/tolerance 완화 아님).
+small T1e-6 tail residual.00871474 및 length control.00585318로1e-3 기준 FAIL.
+T1e-5 tail.000842208, T1e-4 .000142102는 강화 기준 PASS.
+과거 표의 PASS는 당시 정의이며 최종 물리 승인에는 residual_audit/strict_residual_retry가 우선한다.
+18s 독립 재실행도 별도 기록하며 초기 결과/CSV를 덮어쓰지 않는다.
 SoftRobots 플러그인 로딩은 실제 성공했지만 CableConstraint는 Vec3/Vec2 계열이므로
 Rigid3 재료 guide에 맞는 독립 RoutedCable을 구현했다. SoftRobots 케이블 결과로 주장하지 않는다.
 `a_i=p_i+R_i*(0,0,offsetZ)`, `ell=sum norm(a_(i+1)-a_i)`.
@@ -220,10 +244,12 @@ prescribed tension E=T*ell, 수축 E=.5kc max(ell-rest+shortening,0)².
 T0, 증가, small-moment EB limit, 길이 제어, 해제 복원을 실제 실행했다.
 guide offset−.2mm는 연구 가정. 접촉면 와이어 마찰/실제 actuator stroke/motor energy는 NOT RUN.
 release는 transient EXPERIMENTAL이며 강성비에 사용하지 않는다.
-'''+measured_table(tendon['records'])+scope)
+'''+measured_table(tendon['records'],strict['tendon'])+'\n\n## 강화 잔차 및18s 재실행\n\n'+measured_table(strict_retry)+scope)
     text_report('INTEGRATED_07_JAMMING.md','''# Prescribed pressure 마찰 연구
 
-**독립 slider·SOFA 선언된20/20 검사 PASS, 실제 진공 재밍 EXPERIMENTAL.**
+**독립 slider·초기 SOFA 선언 검사20/20 PASS; wire_jamming 강화 잔차 FAIL, 실제 진공 재밍 EXPERIMENTAL.**
+순수 pressure/force 실험은 강화 잔차도 PASS. wire_jamming은 작은 구동력 정규화의
+floor를 제거하면 tail residual.001457>1e-3로 FAIL이며 성능값으로 승인하지 않는다.
 N_i=p*A_i, Fcap=mu*N_i, elastic-perfectly-plastic return mapping.
 tributary area는 연결점 사이를 분할한 width8mm × length100mm의 가정이다.
 정지/운동 mu동일, solver force/tangent 조회는 history를 바꾸지 않고 AnimateEnd에만 commit한다.
@@ -234,7 +260,8 @@ component energy는 전체 BeamFEM 에너지/구동 일/감쇠를 포함하지 �
 전체 closed-system energy audit, 분리된 정지/동마찰계수, 접촉 opening/법선압력 solve,
 실제 PET mu·vacuum leakage·손상·실측 이력은 NOT RUN이다.
 normal_k는 별도 작은 평면 bilateral confinement이지 vacuum solver가 아니다.
-'''+measured_table(friction['records'])+scope)
+현재 cap=mu*p*A라서 마찰 제한만 관측하면 mu와 p를 독립 식별할 수 없다(수학적 모델 한계).
+'''+measured_table(friction['records'],strict['friction'])+scope)
     text_report('INTEGRATED_08_GRASPING.md','''# 접촉 및 파지 gate
 
 **접촉 kernel/고정 물체 응답 PASS; 자유 물체 hold FAIL; 안정 파지 NOT RUN.**
@@ -263,6 +290,12 @@ Sphere/infinite local-y cylinder/box signed-distance penalty 에너지와 힘·�
 k100은 이 grid 상한이며 k포화의 전역 증거는 아니다. 저k와10→100 차이는 study전체표에 남는다.
 조건수는 혼합 mm/rad 좌표의 raw 행렬값으로 차원독립 안정성 인증에 사용하지 않는다.
 
+별도 independent EB FEM +/-10% OAT15개 민감도 연구(실측 불확실성 분포 아님):
+4층k100의 h(centroid gap) 변화에 강성비2.95890..3.60769,
+A변화3.11745..3.43991, I변화3.13171..3.45842,
+E변화3.28137..3.28393, k변화3.28123..3.28381이다.
+고k 부근 k보다 geometry/EA/EI에 민감하며 독립 A/I 변경은 실제 단면 형상의 제조가능성 보장이 아니다.
+
 '''+ '\n'.join(candidate_lines)+'''
 
 물성/압력/레이어두께/와이어경로/파지외력을 동시에 최적화하는 단계는 BLOCKED:
@@ -281,7 +314,7 @@ k100은 이 grid 상한이며 k포화의 전역 증거는 아니다. 저k와10�
 |대상|판정|새 실행 근거|
 |---|---|---|
 |이전 NEXT manifest 무결성|PASS|불일치0, start.json|
-|기존600시점 FREE 회귀|PASS|max error1.38778e-16, 원래 tolerance1e-10+1e-6abs(golden)|
+|기존600시점 FREE 회귀|PASS|독립2회; 처짐 max error1.38778e-16, 속도1.41553e-14, 원래 tolerance1e-10+1e-6abs(golden)|
 |기존 C++/finite kernel|PASS|600상태/60상태 실제 실행|
 |기존45 gate|이전 PASS 유지|무결성 확인; 이번 전체45개 재실행 아님|
 |기존 automation/guard|PASS|20/11개 새 실행|
@@ -290,13 +323,19 @@ k100은 이 grid 상한이며 k포화의 전역 증거는 아니다. 저k와10�
 |C++ 신규 수학/API|PASS|120상태+전체 cable FD+ASan/UBSan, LSan제외|
 |100mm2/4층|PASS(선언 범위)|동일 조건 SOFA/EB 비교 및 후보 수렴|
 |8층 수렴|FAIL|coarse실행과 달리 halfdt/mesh/18s 잔차 미달|
-|와이어/압력 마찰|EXPERIMENTAL|실제SOFA+독립 kernel; 실물 아님|
+|와이어/압력 마찰|EXPERIMENTAL / 일부 FAIL|nonzero load 잔차 강화 후 tiny tension/length/wire-pressure 평형 미달|
 |고정 물체 접촉|PASS(선언 범위)|3형상 검출/응답|
 |자유 물체 파지|FAIL|1.440985mm 이동 >.001mm hold gate|
 |Optuna/SofaPython3|BLOCKED|DNS/캐시부재, libpython3.12없음; Optuna0 trial|
 |결정론적 grid|PASS|30완료/주입실패1, workflow7/7|
 |SOFA Pareto 후보|{approved}/{len(candidates['candidates'])} 승인|원래 위치/halfdt/mesh/repeat/+6s|
 |전체 파지 설계 최적화|BLOCKED|grasp gate 미달, 조작한 성능값 없음|
+
+인수인계 archive member56개도 실제 byte-for-byte 재검사 PASS(originals.json).
+수정 전 guard 실패와 수정 후 ASan/UBSan 및 실제 SOFA3장면 회귀 PASS.
+별도 유한 회전 slip 후처리 식 수정은 C++ recorder 전시점 대조로 검증했다.
+tiny cable load 잔차의1e-6 하한도 제거했다. 초기18/18,20/20 선언 검사 결과를
+최종 물리 인증으로 그대로 재사용하지 않으며 residual_audit가 우선한다.
 
 ## 측정과 한계
 
@@ -370,6 +409,10 @@ $PY tools/integrated_suites.py contact
 $PY tools/integrated_grasp_gate.py
 $PY tools/integrated_finite.py
 $PY tools/integrated_objective.py
+$PY tools/integrated_finite_metrics.py
+$PY tools/integrated_residual_audit.py
+$PY tools/integrated_residual_retry.py
+$PY tools/integrated_sensitivity.py
 $PY tools/integrated_additional.py
 $PY tools/integrated_search.py --out "$REGRIP_INTEGRATED_OUT/search_hermite" --metric hermite --limit 3 --inject-failure
 $PY tools/integrated_search.py --out "$REGRIP_INTEGRATED_OUT/search_hermite" --metric hermite --limit 30 --inject-failure
@@ -388,10 +431,13 @@ search CLI의 --metric hermite와 새 SQLite 경로를 사용한다. v1 결과�
     sources={str(p.relative_to(ROOT)):sha(p) for folder in ['models/integrated','diagnostics/integrated','diagnostics/integrated_extra'] for p in (ROOT/folder).rglob('*') if p.is_file()}
     for pattern in ['tools/integrated_*.py','tests/test_integrated*']:
         sources.update({str(p.relative_to(ROOT)):sha(p) for p in ROOT.glob(pattern) if p.is_file()})
+    for path in ['README.md','.gitignore','scenes/integrated/minimal_mapping_graph.scn','models/finite_rotation/Kernel.h','plugin/src/TangentialRigidForceField.cpp']:
+        sources[path]=sha(ROOT/path)
+    binaries={str(p.relative_to(ROOT)):sha(p) for p in [BUILD/'plugin/libReGripIntegrated.so',BUILD/'archive_v1/libReGripIntegrated.so',BUILD/'diagnostics/integrated_driver',BUILD/'extra/test_integrated_extra',BUILD/'extra/test_integrated_invalid'] if p.is_file()}
     reports={str(p.relative_to(ROOT)):sha(p) for p in REPORTS.glob('INTEGRATED_*.md')}
     small={str(p.relative_to(ROOT)):sha(p) for p in EVIDENCE.iterdir() if p.is_file()}
     write_json(REPORTS/'INTEGRATED_EVIDENCE_MANIFEST.json',dict(start_commit='ba8e0e515bd9c06c75e764dfe1dc09670e614c77',code_commit=current,
-        branch='development/regrip-integrated-system',source_sha256=sources,evidence_sha256=small,report_sha256=reports,
+        branch='development/regrip-integrated-system',source_sha256=sources,binary_sha256=binaries,evidence_sha256=small,report_sha256=reports,
         raw_evidence=evidence_map,raw_root=str(OUT),binary_manifests=['reports/integrated_evidence/build_v1__manifest.json','reports/integrated_evidence/build_v2__manifest.json'],
         scope='historical v1 trial artifacts remain separately bound; report generation does not reclassify failures'))
     print('Reports generated; approved',approved,'/',len(candidates['candidates']))

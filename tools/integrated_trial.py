@@ -79,6 +79,25 @@ class Config:
 
 def sequence(values):return ' '.join(map(str,values))
 
+def force_reference(c):
+    value=max(abs(c.load),abs(c.moment)/c.length,c.cable_tension*abs(c.cable_offset)/c.length,c.cable_k*c.shortening*abs(c.cable_offset)/c.length,*(map(abs,c.load_values) or [0]))
+    return value if value else 1e-6 # absolute check only for genuinely zero applied load
+
+def interface_slips(x,c,height):
+    def rotate(q,v):
+        def cross(a,b):return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
+        a=cross(q[:3],v);b=cross(q[:3],a)
+        return [v[j]+2*(q[3]*a[j]+b[j]) for j in range(3)]
+    slips=[]
+    for layer in range(c.layers-1):
+        for i in range(1,c.nodes):
+            l=7*(layer*c.nodes+i);u=l+7*c.nodes;ql=x[l+3:l+7];qu=x[u+3:u+7]
+            if c.mode==2:
+                t=rotate(ql,(1,0,0));a=rotate(ql,(0,0,height/2));b=rotate(qu,(0,0,-height/2))
+                slips.append(sum(t[j]*(x[u+j]-x[l+j]+b[j]-a[j]) for j in range(3)))
+            else:slips.append(x[u]-x[l]-height*(math.atan2(ql[1],ql[3])+math.atan2(qu[1],qu[3])))
+    return slips
+
 def geometry(c):
     I=8*.4**3/12;r=(4*I/math.pi)**.25;h=c.height
     if c.equal_total_material:r*=math.sqrt(2/c.layers);I=math.pi*r**4/4;h*=math.sqrt(2/c.layers)
@@ -124,7 +143,7 @@ def analyze(out,c,g,process,log,rest_reference=None):
     if process['exit_code']!=0 or process['process_status']!='exited' or '[ERROR]' in log or f'{steps} iterations done' not in log:raise ValueError('SOFA exit/error/completion failure')
     if len(raw)!=steps//c.stride+1:raise ValueError('incomplete sampled raw states')
     initial=raw[0]['X'] if rest_reference is None else rest_reference;rows=[];maxrot=0;maxslip=0
-    F=max(abs(c.load),abs(c.moment)/c.length,c.cable_tension*abs(c.cable_offset)/c.length,c.cable_k*c.shortening*abs(c.cable_offset)/c.length,*(map(abs,c.load_values) or [0]),1e-6)
+    F=force_reference(c)
     free=[i for i in range(nodes) if i not in g['fixed']]
     for step,r in enumerate(raw):
         x,v,R=r.get('X',[]),r.get('V',[]),r.get('R',[])
@@ -136,7 +155,7 @@ def analyze(out,c,g,process,log,rest_reference=None):
             if abs(sum(a*a for a in q)-1)>1e-8:raise ValueError('quaternion norm')
             if i<g['total_beam_nodes'] and c.mode!=2 and (angle>=.005 or max(abs(q[0]),abs(q[2]))>1e-8):raise ValueError('small planar domain exceeded')
         tips=[-(x[7*((l+1)*c.nodes-1)+2]-initial[7*((l+1)*c.nodes-1)+2]) for l in range(c.layers)]
-        slips=[x[7*((l+1)*c.nodes+i)]-x[7*(l*c.nodes+i)]-g['height']*(math.atan2(x[7*(l*c.nodes+i)+4],x[7*(l*c.nodes+i)+6])+math.atan2(x[7*((l+1)*c.nodes+i)+4],x[7*((l+1)*c.nodes+i)+6])) for l in range(c.layers-1) for i in range(1,c.nodes)]
+        slips=interface_slips(x,c,g['height'])
         maxslip=max(maxslip,max(map(abs,slips),default=0))
         rf=max(abs(R[6*i+j]) for i in free for j in range(3));rt=max(abs(R[6*i+j]) for i in free for j in range(3,6))
         rows.append(dict(time=r['time'],tip=sum(tips)/c.layers,layer_tips=tips,slip=max(map(abs,slips),default=0),
@@ -153,7 +172,7 @@ def analyze(out,c,g,process,log,rest_reference=None):
         execution_completed=True,equilibrium_validated=equilibrium,tip_deflection_mm=last['tip'],layer_tip_mm=last['layer_tips'],
         max_interface_slip_mm=last['slip'],peak_interface_slip_mm=maxslip,max_rotation_rad=maxrot,relative_residual=last['residual'],
         final_velocity=last['velocity'],drift=drift,object_displacement_mm=last['object_displacement'],reaction_z=last['reaction_z'],reaction_y=last['reaction_y'],
-        effective_stiffness=c.load/last['tip'] if equilibrium and last['tip']>0 and c.load>0 and not c.load_times else None,samples=len(rows))
+        effective_stiffness=c.load/last['tip'] if equilibrium and last['tip']>0 and c.load>0 and not c.load_times and not c.cable_tension and not c.cable_k and not c.moment and c.object_shape<0 else None,samples=len(rows))
 
 def run(out,c):
     c.validate();manifest=json.loads((BUILD/'plugin/manifest.json').read_text());plugin=BUILD/'plugin/libReGripIntegrated.so'

@@ -1,0 +1,2555 @@
+{
+  "provenance": {
+    "git_commit": "702c5a71c23ba6f10eefdd8ccc528607ac84ce18",
+    "working_tree_dirty": true,
+    "source_sha256": {
+      "diagnostics/CMakeLists.txt": "06ea0719b8cc472cad4bc471edcfac364d3b7b43bc885cb215f396a97c85dce9",
+      "diagnostics/PrecisionStateWriter.cpp": "dd1ef85f928e983c1d0b8f083eaf7dfe87e53aaade8d9fb1fc994a953a3d1cbe",
+      "diagnostics/headless/CMakeLists.txt": "87ae3fca43cbf1a93592a4146ad0057224ff8609d2bc3c66dbba6defffb4d10e",
+      "diagnostics/headless/main.cpp": "6d47d74e167fda2261c3daf37bae26935d59308459db0d7cafc09b13e9f17c15",
+      "plugin/CMakeLists.txt": "c9a2e6e58add9ba79b95bbe9859fbcf7aa6fda9d128acac0dd7d87d81c8b979b",
+      "plugin/src/TangentialRigidForceField.cpp": "d6d5ba8eb4673c3523666a47aa65d98fa090c584d7351ac0b643b1ecb775efb2",
+      "reference_fem/planar.py": "5c1c8f63992ff1c0bb4ac96774d2cf0e440f187eb2a5d62b5dd817e11258890d",
+      "scenes/environment_smoke.scn": "d26e7dc2b9700aa6d67eabf929e01fd317806498d5ee756ce4a024fae9a9f978",
+      "scenes/python_smoke.py": "0fb3204decd5b1a938045e135e8758f20439724ec7be585d08052d5955e9d5fc",
+      "tests/probe_forcefield.cpp": "caaf835448a5c32660ea4adf485c9e4668c5ee7f9fb237e132493a094dd87816",
+      "tests/test_automation.py": "d9c13d36540da0f573f3d49ab473ce4850967ca4993fdd482cbb198899502999",
+      "tests/test_experiment_contract.py": "13f6228fc4104f01d44b44eafb8163d2f34597f27a1b4f6857f64d3b9e306233",
+      "tests/test_finite_rotation.cpp": "765c7ec11cf1f9203f380f769c032f5a22c761827465daefa8ddb65e804c9241",
+      "tests/test_forcefield.cpp": "57dbaebce272471c177f0bfd7927eacb997d7e76107a22caf809d0dfc460aece",
+      "tests/test_optimization_guards.py": "c81ea5cafdfe1584cc707354fc0d76de5fa1fde192540d730c42b8d38ba7bf5d",
+      "tests/test_research_models.py": "57c69198f3fd140f327bdbabc6f9adde4cd48889d71d356b6a96078bc8f83a97",
+      "tools/audit_publish.py": "ab6489a80aecf47bb42cfdb183e1a8b94dbd6ece560da4e7f2f5c76be7a5d39b",
+      "tools/baseline_regression.py": "967d9a1a9e84d49a394f0eda8a170711e129045a87b02a1bb1d495e92daa7075",
+      "tools/build.py": "5deb7b975723e3e3c5c3ea0215b89f754fb2564fcb65bc77ee2394504ce7d35b",
+      "tools/check_environment.py": "cfd0c34c5361a925c3a27cfb2345f7d6bfd84e7d2d2c5a194d9330712a3d57c2",
+      "tools/check_staged_artifacts.py": "8cdd52dc6ec440ac11b704058ff4e840c4fc44435f480f327af03e871a4b2653",
+      "tools/finite_objectivity.py": "64343dfce33d8e3410300073d93b436fd2f02488d6f7a64d5ef91efb5137025d",
+      "tools/generate_revalidation_reports.py": "ce08b8656c384b6f640baf00469064bfb50cdd7d8f10ac1f85790fa2c3ee037c",
+      "tools/make_plots.py": "af1930ee947ae48700ab4351f87c61b241dcb033cc06b5f75c166d404c5cf450",
+      "tools/native_scene.py": "11f08fb9799a97b6f22ab8546b6fc418f9d48758971f71c985bee5a22c47bd89",
+      "tools/next_build.py": "7c02f0fbbbc3385d9a15a3f75c1c407db110dc3f490962c5fee04aa6cbd08de3",
+      "tools/next_environment.py": "27d9f1f7336f7f3cbe58cfa9dc65cdda2e41212a451e6c06421d749e22c948dd",
+      "tools/next_experiments.py": "02bf6994a26309c804a9d215703ffdf8a92e4110348df8861af1c34a3519a2a1",
+      "tools/next_headless_check.py": "9739b9e3efe2e797d496cb91f215ad991aba8a173effde52cf2854239f676634",
+      "tools/next_limit_check.py": "5f35d1079b8b63bf17c7c0ae3aa9aad777df9e91f7b1823307484ef586025567",
+      "tools/next_memory_probe.py": "6fef9c4f6f10872f13d5b277ec69d8ce96906c6424aba0b5511d90c8a9e8c6a7",
+      "tools/next_stability.py": "e737f667aa10f8850a301ebef9be9cde1795ff8eace8011ff48b69ce8fdabbf9",
+      "tools/optimize.py": "145871194ab4a7cc75e623b7cba7f068a98688eaebe0d1044bf93a7818b3ef57",
+      "tools/record_handover.py": "13e023e57867da2abd0e69487c87236aeb63ecf7c4fa833e35c350c6c34e6537",
+      "tools/refresh_evidence_manifest.py": "967811dbe323b36d5082bcad1faf670ed19a87832f4a451019cd21f62ad62a79",
+      "tools/report_environment.py": "33ef82c9c399f2c2effdc5a6567f1deb97ce584230b234e0e2bbf17feb9dd545",
+      "tools/research_trial.py": "eeda4ec84f865a848519ddc0d37f58a7207d49d3b03865872ef13ce2361d6acc",
+      "tools/revalidate_environment.py": "ece29b29c4fd37a0b55693dc9bdd602667161778233b875687f2b8d4a58467f7",
+      "tools/revalidate_python.py": "dea64b548c46778cc8640e73250c65e48e3a02426307081afa9156e7a81f18d9",
+      "tools/revalidate_quality.py": "5a3688fb549399e2c6d36e602729027a3dea04211eff4b9f8c0ad32642907c44",
+      "tools/revalidate_source.py": "fd3368454ab50dd4bda6f4a79a1ad156ac88863eb3a82e3d34db19e9994224d7",
+      "tools/run_trial.py": "266816820f8808649dcdb54b0a2af556e450d46e2083aecd7265340d005f2909",
+      "tools/summarize_candidate.py": "dc40a7677e30f2fd2c06a0ad78ad537ad4d2e4767269e4b00547c975cc86b55b",
+      "tools/trial_validation.py": "21649f92b7bdad567575aa7043e89d03fe7b737d48dec5fee28a932088796ea6",
+      "tools/validate_physics.py": "3d0fe3dedde3ef5797483d0afde26f00744f01179d4de729062ea31022b692e7",
+      "tools/verification_common.py": "b0b8fa18a8df4c313a6aa8c32f1ca2a187d27ea1456639d57d45270fc786a8ea"
+    },
+    "python": "/home/ubuntu/miniconda3/envs/robot_ws/bin/python"
+  },
+  "cases": {
+    "0": {
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 20.531560738978442,
+        "pid": 28
+      },
+      "samples": [
+        {
+          "time": 0.10107760096434504,
+          "rss_kib": 66648,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.20160590094747022,
+          "rss_kib": 67552,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.3021805899916217,
+          "rss_kib": 68456,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.40264553198358044,
+          "rss_kib": 69388,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.5031124049564824,
+          "rss_kib": 70292,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.6036969319684431,
+          "rss_kib": 71200,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.7042580209672451,
+          "rss_kib": 72092,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.8047187489573844,
+          "rss_kib": 72900,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.9052204879699275,
+          "rss_kib": 73816,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.005701040965505,
+          "rss_kib": 74712,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.1061831699917093,
+          "rss_kib": 75628,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.206688497972209,
+          "rss_kib": 76548,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.307180564966984,
+          "rss_kib": 77472,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.4076681379810907,
+          "rss_kib": 78388,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.5090369919780642,
+          "rss_kib": 79308,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.609505291969981,
+          "rss_kib": 80220,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.7100432919687591,
+          "rss_kib": 81152,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.8105807259562425,
+          "rss_kib": 82072,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.9111378579982556,
+          "rss_kib": 82984,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.011490340984892,
+          "rss_kib": 83896,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.111960698966868,
+          "rss_kib": 84844,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.2140889479778707,
+          "rss_kib": 85772,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.3144389339722693,
+          "rss_kib": 86684,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.4147715509752743,
+          "rss_kib": 87632,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.516150170995388,
+          "rss_kib": 88592,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.6166335459565744,
+          "rss_kib": 89532,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.7169872289523482,
+          "rss_kib": 90472,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.817332770966459,
+          "rss_kib": 91412,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.9178022089763544,
+          "rss_kib": 92424,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.018165086978115,
+          "rss_kib": 93372,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.1185581639874727,
+          "rss_kib": 94280,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.2190592409460805,
+          "rss_kib": 95288,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.319418548955582,
+          "rss_kib": 96200,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.4197543729678728,
+          "rss_kib": 97220,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.5205754209891893,
+          "rss_kib": 98272,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.620993443997577,
+          "rss_kib": 99188,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.721323230944108,
+          "rss_kib": 100180,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.821631549973972,
+          "rss_kib": 101140,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.921999017999042,
+          "rss_kib": 102072,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.022351904946845,
+          "rss_kib": 102988,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.122868665959686,
+          "rss_kib": 103900,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.223394721979275,
+          "rss_kib": 104820,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.323749255971052,
+          "rss_kib": 105740,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.4240802839631215,
+          "rss_kib": 106700,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.524451782985125,
+          "rss_kib": 107632,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.624939846980851,
+          "rss_kib": 108592,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.725502476969268,
+          "rss_kib": 109508,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.825888313993346,
+          "rss_kib": 110424,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.926240176951978,
+          "rss_kib": 111460,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.026681307994295,
+          "rss_kib": 112392,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.127182790951338,
+          "rss_kib": 113324,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.227703603974078,
+          "rss_kib": 114232,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.328164295991883,
+          "rss_kib": 115136,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.428630999987945,
+          "rss_kib": 116040,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.529233236971777,
+          "rss_kib": 116940,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.629734755959362,
+          "rss_kib": 117836,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.730213006958365,
+          "rss_kib": 118728,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.830802658980247,
+          "rss_kib": 119628,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.931320618954487,
+          "rss_kib": 120488,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.034654011949897,
+          "rss_kib": 121464,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.135163439961616,
+          "rss_kib": 122384,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.237268455966841,
+          "rss_kib": 123300,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.3376262949896045,
+          "rss_kib": 124220,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.438038730993867,
+          "rss_kib": 125132,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.538375064963475,
+          "rss_kib": 126036,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.6387307529803365,
+          "rss_kib": 126944,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.739071717951447,
+          "rss_kib": 127848,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.839469057973474,
+          "rss_kib": 128752,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.939871198963374,
+          "rss_kib": 129688,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.040205207944382,
+          "rss_kib": 130652,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.140541611996014,
+          "rss_kib": 131596,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.241871050966438,
+          "rss_kib": 132544,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.343231509963516,
+          "rss_kib": 133484,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.443558017956093,
+          "rss_kib": 134432,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.543931805994362,
+          "rss_kib": 135404,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.645109097997192,
+          "rss_kib": 136400,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.745624680945184,
+          "rss_kib": 137456,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.8460670950007625,
+          "rss_kib": 138440,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.9464386069448665,
+          "rss_kib": 139360,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.046788536943495,
+          "rss_kib": 140272,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.14711450098548,
+          "rss_kib": 141184,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.24745871394407,
+          "rss_kib": 142092,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.347808659949806,
+          "rss_kib": 143004,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.44813150196569,
+          "rss_kib": 143936,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.548450027999934,
+          "rss_kib": 144880,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.648764361976646,
+          "rss_kib": 145824,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.749085760966409,
+          "rss_kib": 146784,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.849438400997315,
+          "rss_kib": 147728,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.949754651985131,
+          "rss_kib": 148720,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.050089871976525,
+          "rss_kib": 149668,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.150457890995312,
+          "rss_kib": 150588,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.25078407395631,
+          "rss_kib": 151500,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.351240788993891,
+          "rss_kib": 152412,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.45170298195444,
+          "rss_kib": 153416,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.552178525947966,
+          "rss_kib": 154356,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.65269839100074,
+          "rss_kib": 155268,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.753154110978357,
+          "rss_kib": 156180,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.85368102695793,
+          "rss_kib": 157084,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.954172321944498,
+          "rss_kib": 157996,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.054633488995023,
+          "rss_kib": 158912,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.155122901953291,
+          "rss_kib": 159828,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.255605184996966,
+          "rss_kib": 160752,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.356079224962741,
+          "rss_kib": 161664,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.456441570946481,
+          "rss_kib": 162608,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.556767376954667,
+          "rss_kib": 163584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.657236520957667,
+          "rss_kib": 164556,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.757725779956672,
+          "rss_kib": 165520,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.858127293991856,
+          "rss_kib": 166468,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.958457076980267,
+          "rss_kib": 167416,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.058969551988412,
+          "rss_kib": 168372,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.159443014999852,
+          "rss_kib": 169324,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.259915701986756,
+          "rss_kib": 170244,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.360260658955667,
+          "rss_kib": 171180,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.460607971996069,
+          "rss_kib": 172112,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.561077163962182,
+          "rss_kib": 173068,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.661439473973587,
+          "rss_kib": 173976,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.761770224955399,
+          "rss_kib": 174940,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.862210069957655,
+          "rss_kib": 175760,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.962710920954123,
+          "rss_kib": 176568,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.063149050984066,
+          "rss_kib": 177480,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.163624529959634,
+          "rss_kib": 178392,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.264084420981817,
+          "rss_kib": 179304,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.364448178966995,
+          "rss_kib": 180216,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.464893341995776,
+          "rss_kib": 181152,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.565337711945176,
+          "rss_kib": 182104,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.666036448965315,
+          "rss_kib": 183092,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.76685378595721,
+          "rss_kib": 184036,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.867690678976942,
+          "rss_kib": 185008,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.968282966990955,
+          "rss_kib": 185976,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.068718298978638,
+          "rss_kib": 186868,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.169213439978193,
+          "rss_kib": 187708,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.269675622985233,
+          "rss_kib": 188628,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.37101497699041,
+          "rss_kib": 189512,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.471498118946329,
+          "rss_kib": 190424,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.571923813957255,
+          "rss_kib": 191352,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.672371522989124,
+          "rss_kib": 192276,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.772968364995904,
+          "rss_kib": 193192,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.873491610982455,
+          "rss_kib": 194112,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.973896341980435,
+          "rss_kib": 195032,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.074240283982363,
+          "rss_kib": 195980,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.174584725988097,
+          "rss_kib": 196904,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.274924282974098,
+          "rss_kib": 197812,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.37535123899579,
+          "rss_kib": 198780,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.475849582988303,
+          "rss_kib": 199728,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.576362702995539,
+          "rss_kib": 200664,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.676712211978156,
+          "rss_kib": 201584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.777034677972551,
+          "rss_kib": 202596,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.877317984995898,
+          "rss_kib": 203580,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.977668092993554,
+          "rss_kib": 204564,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.07800524396589,
+          "rss_kib": 205556,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.178342378989328,
+          "rss_kib": 206468,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.278661511954851,
+          "rss_kib": 207376,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.378937151981518,
+          "rss_kib": 208488,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.479304361972027,
+          "rss_kib": 209444,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.57962607598165,
+          "rss_kib": 210432,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.679958153981715,
+          "rss_kib": 211380,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.780289193964563,
+          "rss_kib": 212372,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.880642512987833,
+          "rss_kib": 213312,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.981179033988155,
+          "rss_kib": 214172,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.081568214984145,
+          "rss_kib": 215068,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.181928384001367,
+          "rss_kib": 215976,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.282248848991003,
+          "rss_kib": 216892,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.383696904988028,
+          "rss_kib": 217864,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.484030048944987,
+          "rss_kib": 218788,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.58437147998484,
+          "rss_kib": 219724,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.684720332967117,
+          "rss_kib": 220664,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.785060803988017,
+          "rss_kib": 221604,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.885374303965364,
+          "rss_kib": 222468,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.985703215992544,
+          "rss_kib": 223400,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.086164255975746,
+          "rss_kib": 224320,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.186651437950786,
+          "rss_kib": 225236,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.287132840952836,
+          "rss_kib": 226152,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.38763106596889,
+          "rss_kib": 227084,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.48810408898862,
+          "rss_kib": 227996,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.588652045000345,
+          "rss_kib": 228904,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.68913768196944,
+          "rss_kib": 229816,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.78960980294505,
+          "rss_kib": 230720,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.890095812967047,
+          "rss_kib": 231632,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.99058745399816,
+          "rss_kib": 232536,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.09110372699797,
+          "rss_kib": 233432,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.19157050794456,
+          "rss_kib": 234340,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.292045614973176,
+          "rss_kib": 235248,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.39239044795977,
+          "rss_kib": 236152,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.49274415394757,
+          "rss_kib": 237108,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.593205450975802,
+          "rss_kib": 238012,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.69358793995343,
+          "rss_kib": 238916,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.7940883069532,
+          "rss_kib": 239808,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.894557457999326,
+          "rss_kib": 240836,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.994960791955236,
+          "rss_kib": 241684,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.095533188956324,
+          "rss_kib": 242696,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.19602308497997,
+          "rss_kib": 243620,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.296515212976374,
+          "rss_kib": 244532,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.397036368958652,
+          "rss_kib": 245524,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.497541555960197,
+          "rss_kib": 246492,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.598191314958967,
+          "rss_kib": 247444,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.698947182972915,
+          "rss_kib": 248392,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.799721203977242,
+          "rss_kib": 249332,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.900244958989788,
+          "rss_kib": 250280,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.00070703495294,
+          "rss_kib": 251204,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.10117855196586,
+          "rss_kib": 252120,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.20264104794478,
+          "rss_kib": 253088,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.303242304944433,
+          "rss_kib": 254004,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.403541332983878,
+          "rss_kib": 255064,
+          "fds": 3,
+          "threads": 1
+        }
+      ],
+      "growth_kib": 188416,
+      "completed": true
+    },
+    "1000": {
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 20.618566778022796,
+        "pid": 30
+      },
+      "samples": [
+        {
+          "time": 0.10054169100476429,
+          "rss_kib": 66720,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.2009886940359138,
+          "rss_kib": 67652,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.3013263670145534,
+          "rss_kib": 68672,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.4016933150123805,
+          "rss_kib": 69600,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.5022659410024062,
+          "rss_kib": 70632,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.6028722419869155,
+          "rss_kib": 71532,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.7034101950121112,
+          "rss_kib": 72420,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.8041180539876223,
+          "rss_kib": 73320,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 0.904678410035558,
+          "rss_kib": 74220,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.0050954830367118,
+          "rss_kib": 75116,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.1054436580161564,
+          "rss_kib": 76020,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.2057914740289561,
+          "rss_kib": 76916,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.3061528709949926,
+          "rss_kib": 77820,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.4065295440377668,
+          "rss_kib": 78672,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.506883158988785,
+          "rss_kib": 79568,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.6072143699857406,
+          "rss_kib": 80464,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.7075730770011432,
+          "rss_kib": 81364,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.807916497986298,
+          "rss_kib": 82260,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 1.9082458700286224,
+          "rss_kib": 83156,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.008609349024482,
+          "rss_kib": 84072,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.1089394619921222,
+          "rss_kib": 85032,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.209305714990478,
+          "rss_kib": 85968,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.309642707987223,
+          "rss_kib": 86904,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.4099845599848777,
+          "rss_kib": 87836,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.510343488014769,
+          "rss_kib": 88772,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.6107090720324777,
+          "rss_kib": 89716,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.711276217014529,
+          "rss_kib": 90680,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.811693144030869,
+          "rss_kib": 91600,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 2.912046077020932,
+          "rss_kib": 92540,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.0123978719930165,
+          "rss_kib": 93568,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.1128136449842714,
+          "rss_kib": 94508,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.213155867997557,
+          "rss_kib": 95420,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.3135878610191867,
+          "rss_kib": 96388,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.414007540035527,
+          "rss_kib": 97364,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.5144995939917862,
+          "rss_kib": 98416,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.6148792920284905,
+          "rss_kib": 99332,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.7152163370046765,
+          "rss_kib": 100356,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.815598952001892,
+          "rss_kib": 101264,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 3.915946717024781,
+          "rss_kib": 102168,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.0163535220199265,
+          "rss_kib": 103076,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.116867320029996,
+          "rss_kib": 103980,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.217395664018113,
+          "rss_kib": 104880,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.317782389989588,
+          "rss_kib": 105776,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.418132606020663,
+          "rss_kib": 106708,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.518710519012529,
+          "rss_kib": 107656,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.6192573250154965,
+          "rss_kib": 108584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.7197795219835825,
+          "rss_kib": 109492,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.820333259995095,
+          "rss_kib": 110396,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 4.920867996988818,
+          "rss_kib": 111300,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.021423850033898,
+          "rss_kib": 112204,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.121942303027026,
+          "rss_kib": 113108,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.222483786987141,
+          "rss_kib": 114012,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.3230551480082795,
+          "rss_kib": 114916,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.423552852997091,
+          "rss_kib": 115812,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.524030072032474,
+          "rss_kib": 116716,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.624585914018098,
+          "rss_kib": 117632,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.725094538007397,
+          "rss_kib": 118544,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.825634910026565,
+          "rss_kib": 119456,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 5.925963405985385,
+          "rss_kib": 120388,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.026270062022377,
+          "rss_kib": 121356,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.126780904014595,
+          "rss_kib": 122300,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.227258085040376,
+          "rss_kib": 123240,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.3277586930198595,
+          "rss_kib": 124184,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.428104418038856,
+          "rss_kib": 125124,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.52857695199782,
+          "rss_kib": 126068,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.629104188992642,
+          "rss_kib": 127000,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.729607726039831,
+          "rss_kib": 127772,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.830028238007799,
+          "rss_kib": 128672,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 6.930383789993357,
+          "rss_kib": 129600,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.031028697034344,
+          "rss_kib": 130584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.131743681035005,
+          "rss_kib": 131484,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.232109359989408,
+          "rss_kib": 132444,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.332749281020369,
+          "rss_kib": 133444,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.434314496989828,
+          "rss_kib": 134376,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.535062966984697,
+          "rss_kib": 135280,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.635690330993384,
+          "rss_kib": 136184,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.736144819005858,
+          "rss_kib": 137084,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.836659230000805,
+          "rss_kib": 138012,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 7.937288867018651,
+          "rss_kib": 138944,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.037721445027273,
+          "rss_kib": 139908,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.138054954004474,
+          "rss_kib": 140856,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.238491430995055,
+          "rss_kib": 141816,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.338889873004518,
+          "rss_kib": 142752,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.439365189988166,
+          "rss_kib": 143716,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.539845413994044,
+          "rss_kib": 144644,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.640200610039756,
+          "rss_kib": 145548,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.740547895024065,
+          "rss_kib": 146560,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.840943671995774,
+          "rss_kib": 147460,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 8.941277839010581,
+          "rss_kib": 148348,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.041620861040428,
+          "rss_kib": 149252,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.14195846801158,
+          "rss_kib": 150160,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.24229381402256,
+          "rss_kib": 151068,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.34266603301512,
+          "rss_kib": 151972,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.443013626034372,
+          "rss_kib": 152880,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.54334865999408,
+          "rss_kib": 153784,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.643689415999688,
+          "rss_kib": 154684,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.74402328801807,
+          "rss_kib": 155584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.844360610994045,
+          "rss_kib": 156484,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 9.944662147026975,
+          "rss_kib": 157464,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.044993280025665,
+          "rss_kib": 158412,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.145393641025294,
+          "rss_kib": 159380,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.24570324801607,
+          "rss_kib": 160296,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.34623221802758,
+          "rss_kib": 161268,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.446684172027744,
+          "rss_kib": 162220,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.547027839988004,
+          "rss_kib": 163160,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.64735159999691,
+          "rss_kib": 164120,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.747848551021889,
+          "rss_kib": 165036,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.848165398987476,
+          "rss_kib": 166008,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 10.948493409028742,
+          "rss_kib": 167048,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.048962189001031,
+          "rss_kib": 167984,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.149265651998576,
+          "rss_kib": 169016,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.249572260014247,
+          "rss_kib": 170012,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.349913928017486,
+          "rss_kib": 170952,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.45040611299919,
+          "rss_kib": 171884,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.550930646015331,
+          "rss_kib": 172792,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.651295787014533,
+          "rss_kib": 173684,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.75163627701113,
+          "rss_kib": 174592,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.851961542037316,
+          "rss_kib": 175532,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 11.952316565031651,
+          "rss_kib": 176460,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.052664229995571,
+          "rss_kib": 177400,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.152990357019007,
+          "rss_kib": 178344,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.253314578032587,
+          "rss_kib": 179308,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.353792012028862,
+          "rss_kib": 180256,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.454282400023658,
+          "rss_kib": 181188,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.554646862030495,
+          "rss_kib": 182116,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.655139178037643,
+          "rss_kib": 183084,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.755652066029143,
+          "rss_kib": 183984,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.856139148003422,
+          "rss_kib": 184876,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 12.956613151996862,
+          "rss_kib": 185780,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.057103505998384,
+          "rss_kib": 186684,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.157693121989723,
+          "rss_kib": 187536,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.258246579032857,
+          "rss_kib": 188444,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.358911490009632,
+          "rss_kib": 189304,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.459401934989728,
+          "rss_kib": 190208,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.559902610024437,
+          "rss_kib": 191116,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.660388463991694,
+          "rss_kib": 192024,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.760811899031978,
+          "rss_kib": 192928,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.861379072011914,
+          "rss_kib": 193840,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 13.961735805030912,
+          "rss_kib": 194804,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.062218933016993,
+          "rss_kib": 195748,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.16276903101243,
+          "rss_kib": 196688,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.26323979103472,
+          "rss_kib": 197632,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.363640300987754,
+          "rss_kib": 198596,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.463996262988076,
+          "rss_kib": 199528,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.564526243018918,
+          "rss_kib": 200488,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.665002250985708,
+          "rss_kib": 201420,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.765341499005444,
+          "rss_kib": 202308,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.865692607010715,
+          "rss_kib": 203184,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 14.967256581992842,
+          "rss_kib": 204060,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.070396120019723,
+          "rss_kib": 204996,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.170972077001352,
+          "rss_kib": 206008,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.271506733028218,
+          "rss_kib": 206992,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.371868596004788,
+          "rss_kib": 207952,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.472209744038992,
+          "rss_kib": 208840,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.572557859995868,
+          "rss_kib": 209720,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.67296726803761,
+          "rss_kib": 210584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.773574310005642,
+          "rss_kib": 211436,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.874073062033858,
+          "rss_kib": 212320,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 15.974453845003154,
+          "rss_kib": 213248,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.074947755027097,
+          "rss_kib": 214228,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.175454834999982,
+          "rss_kib": 215172,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.275838929985184,
+          "rss_kib": 216084,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.37619448499754,
+          "rss_kib": 217012,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.476535091002006,
+          "rss_kib": 217940,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.576886702037882,
+          "rss_kib": 218932,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.677241684985347,
+          "rss_kib": 219804,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.777596328000072,
+          "rss_kib": 220692,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.877985391998664,
+          "rss_kib": 221584,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 16.978338924993295,
+          "rss_kib": 222496,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.078697980032302,
+          "rss_kib": 223400,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.17907276999904,
+          "rss_kib": 224304,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.279427186003886,
+          "rss_kib": 225208,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.379781157011166,
+          "rss_kib": 226100,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.48013176303357,
+          "rss_kib": 226992,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.58049988601124,
+          "rss_kib": 227900,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.68087265000213,
+          "rss_kib": 228900,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.781251584005076,
+          "rss_kib": 229808,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.881588187010493,
+          "rss_kib": 230740,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 17.981875093013514,
+          "rss_kib": 231712,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.08221855200827,
+          "rss_kib": 232636,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.18260158301564,
+          "rss_kib": 233572,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.283994324039668,
+          "rss_kib": 234524,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.384584256040398,
+          "rss_kib": 235536,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.484965716022998,
+          "rss_kib": 236456,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.58530703902943,
+          "rss_kib": 237428,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.6856904940214,
+          "rss_kib": 238368,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.786050235037692,
+          "rss_kib": 239232,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.886427885037847,
+          "rss_kib": 240164,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 18.986778834019788,
+          "rss_kib": 241096,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.087119937001262,
+          "rss_kib": 242056,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.187461683992296,
+          "rss_kib": 242992,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.287811223010067,
+          "rss_kib": 243944,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.388255527010188,
+          "rss_kib": 244884,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.488625655998476,
+          "rss_kib": 245792,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.588996923004743,
+          "rss_kib": 246704,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.689483752008528,
+          "rss_kib": 247804,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.78996232402278,
+          "rss_kib": 248740,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.89031332702143,
+          "rss_kib": 249656,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 19.99074306699913,
+          "rss_kib": 250580,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.091100747988094,
+          "rss_kib": 251504,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.191480132983997,
+          "rss_kib": 252524,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.291819848003797,
+          "rss_kib": 253452,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.392184348020237,
+          "rss_kib": 254436,
+          "fds": 3,
+          "threads": 1
+        },
+        {
+          "time": 20.492660748015624,
+          "rss_kib": 255388,
+          "fds": 3,
+          "threads": 1
+        }
+      ],
+      "growth_kib": 188668,
+      "completed": true
+    }
+  },
+  "native_physics": {
+    "time_s": 3.000000000000169,
+    "tip_deflection_mm": 0.025170333837966546,
+    "tip_velocity_z_mm_s": -2.505461793392019e-14,
+    "max_x_slip_mm": 3.0623564519771662e-06,
+    "max_connector_shear_mm": 3.0624123405435105e-06,
+    "shear_energy": 4.155338757239992e-09,
+    "max_velocity": 3.338338313157079e-12,
+    "max_angular_velocity": 2.16762055044082e-16,
+    "residual_force": 7.09350653303048e-11,
+    "residual_torque": 1.3197091097878755e-11,
+    "relative_residual": 1.418701306606096e-06,
+    "max_rotation_rad": 0.0012897454874583106,
+    "mapping_error": 1.4899106254295802e-15,
+    "reaction_force_balance": 2.6311242139025193e-10,
+    "reaction_moment_balance": 0.0005034620183835536,
+    "status": "complete",
+    "equilibrium_validated": true,
+    "samples": 6000,
+    "tail_relative_drift": 0.0,
+    "execution_completed": true,
+    "failure_reason": "",
+    "effective_stiffness": 0.003972931016479469
+  },
+  "reference_tip_difference_mm": 0.0,
+  "reference_passed": true,
+  "binary_sha256": "7ed64a291c31ef00587df08f12acb307ac8222ec64889763bc99f3badd8c619b",
+  "source_sha256": {
+    "diagnostics/headless/CMakeLists.txt": "87ae3fca43cbf1a93592a4146ad0057224ff8609d2bc3c66dbba6defffb4d10e",
+    "diagnostics/headless/main.cpp": "6d47d74e167fda2261c3daf37bae26935d59308459db0d7cafc09b13e9f17c15"
+  },
+  "scope": "Diagnostic alternate driver only; does not replace certified batch path or extend physics certificate"
+}

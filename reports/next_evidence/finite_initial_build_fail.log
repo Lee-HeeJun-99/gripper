@@ -1,0 +1,76 @@
+[ 50%] Building CXX object CMakeFiles/ReGripFiniteRotation.dir/FiniteRotationShear.cpp.o
+[ 50%] Building CXX object CMakeFiles/test_finite_rotation.dir/home/ubuntu/LHJ/ReGrip/tests/test_finite_rotation.cpp.o
+In file included from /home/ubuntu/LHJ/ReGrip/models/finite_rotation/FiniteRotationShear.cpp:1:
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/Kernel.h: In function ‘regrip3d::Result regrip3d::evaluate(const regrip3d::Pose&, const regrip3d::Pose&, double, double)’:
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/Kernel.h:46:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   46 |  if(!std::isfinite(r.energy))throw std::overflow_error("energy overflow");return r;
+      |  ^~
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/Kernel.h:46:75: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   46 |  if(!std::isfinite(r.energy))throw std::overflow_error("energy overflow");return r;
+      |                                                                           ^~~~~~
+In file included from /home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/FiniteRotationShear.cpp:1,
+                 from /home/ubuntu/LHJ/ReGrip/tests/test_finite_rotation.cpp:1:
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/Kernel.h: In function ‘regrip3d::Result regrip3d::evaluate(const regrip3d::Pose&, const regrip3d::Pose&, double, double)’:
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/Kernel.h:46:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   46 |  if(!std::isfinite(r.energy))throw std::overflow_error("energy overflow");return r;
+      |  ^~
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/Kernel.h:46:75: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   46 |  if(!std::isfinite(r.energy))throw std::overflow_error("energy overflow");return r;
+      |                                                                           ^~~~~~
+In file included from /home/ubuntu/LHJ/ReGrip/tests/test_finite_rotation.cpp:1:
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/FiniteRotationShear.cpp: In constructor ‘regrip3d::FiniteRotationShear::FiniteRotationShear(sofa::core::behavior::MechanicalState<sofa::defaulttype::StdRigidTypes<3, double> >*)’:
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/FiniteRotationShear.cpp:19:145: error: no matching function for call to ‘sofa::core::objectmodel::Base::Base(sofa::core::behavior::MechanicalState<sofa::defaulttype::StdRigidTypes<3, double> >*&)’
+   19 |  nodes(initData(&nodes,11u,"nodesPerLayer","Nodes per layer")),connectors(initData(&connectors,"connectorIndices","Non-root indices; empty=all")){if(state)mstate.set(state);}
+      |                                                                                                                                                 ^
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/behavior/StateAccessor.h:26,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/behavior/BaseForceField.h:26,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/behavior/ForceField.h:25,
+                 from /home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/FiniteRotationShear.cpp:2,
+                 from /home/ubuntu/LHJ/ReGrip/tests/test_finite_rotation.cpp:1:
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:86:5: note: candidate: ‘sofa::core::objectmodel::Base::Base(const sofa::core::objectmodel::Base&)’
+   86 |     Base(const Base& b);
+      |     ^~~~
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:86:22: note:   no known conversion for argument 1 from ‘sofa::core::behavior::MechanicalState<sofa::defaulttype::StdRigidTypes<3, double> >*’ to ‘const sofa::core::objectmodel::Base&’
+   86 |     Base(const Base& b);
+      |          ~~~~~~~~~~~~^
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:76:5: note: candidate: ‘sofa::core::objectmodel::Base::Base()’
+   76 |     Base();
+      |     ^~~~
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:76:5: note:   candidate expects 0 arguments, 1 provided
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/FiniteRotationShear.cpp: In constructor ‘regrip3d::FiniteRotationShear::FiniteRotationShear(sofa::core::behavior::MechanicalState<sofa::defaulttype::StdRigidTypes<3, double> >*)’:
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/FiniteRotationShear.cpp:19:145: error: no matching function for call to ‘sofa::core::objectmodel::Base::Base(sofa::core::behavior::MechanicalState<sofa::defaulttype::StdRigidTypes<3, double> >*&)’
+   19 |  nodes(initData(&nodes,11u,"nodesPerLayer","Nodes per layer")),connectors(initData(&connectors,"connectorIndices","Non-root indices; empty=all")){if(state)mstate.set(state);}
+      |                                                                                                                                                 ^
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/behavior/StateAccessor.h:26,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/behavior/BaseForceField.h:26,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/behavior/ForceField.h:25,
+                 from /home/ubuntu/LHJ/ReGrip/models/finite_rotation/FiniteRotationShear.cpp:2:
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:86:5: note: candidate: ‘sofa::core::objectmodel::Base::Base(const sofa::core::objectmodel::Base&)’
+   86 |     Base(const Base& b);
+      |     ^~~~
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:86:22: note:   no known conversion for argument 1 from ‘sofa::core::behavior::MechanicalState<sofa::defaulttype::StdRigidTypes<3, double> >*’ to ‘const sofa::core::objectmodel::Base&’
+   86 |     Base(const Base& b);
+      |          ~~~~~~~~~~~~^
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:76:5: note: candidate: ‘sofa::core::objectmodel::Base::Base()’
+   76 |     Base();
+      |     ^~~~
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:76:5: note:   candidate expects 0 arguments, 1 provided
+In file included from /home/ubuntu/LHJ/ReGrip/tests/test_finite_rotation.cpp:1:
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/FiniteRotationShear.cpp: In member function ‘virtual void regrip3d::FiniteRotationShear::init()’:
+/home/ubuntu/LHJ/ReGrip/tests/../models/finite_rotation/FiniteRotationShear.cpp:28:28: error: ‘init’ is not a member of ‘sofa::core::objectmodel::Base’
+   28 |  void init()override{Base::init();try{if(!mstate)throw std::invalid_argument("missing state");auto&x=mstate->read(sofa::core::vec_id::read_access::position)->getValue();check(x);evaluate(pose(x[0]),pose(x[nodes.getValue()]),stiffness.getValue(),height.getValue());}catch(const std::exception&e){invalid(e.what());}}
+      |                            ^~~~
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/FiniteRotationShear.cpp: In member function ‘virtual void regrip3d::FiniteRotationShear::init()’:
+/home/ubuntu/LHJ/ReGrip/models/finite_rotation/FiniteRotationShear.cpp:28:28: error: ‘init’ is not a member of ‘sofa::core::objectmodel::Base’
+   28 |  void init()override{Base::init();try{if(!mstate)throw std::invalid_argument("missing state");auto&x=mstate->read(sofa::core::vec_id::read_access::position)->getValue();check(x);evaluate(pose(x[0]),pose(x[nodes.getValue()]),stiffness.getValue(),height.getValue());}catch(const std::exception&e){invalid(e.what());}}
+      |                            ^~~~
+gmake[2]: *** [CMakeFiles/ReGripFiniteRotation.dir/build.make:76: CMakeFiles/ReGripFiniteRotation.dir/FiniteRotationShear.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:85: CMakeFiles/ReGripFiniteRotation.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/test_finite_rotation.dir/build.make:76: CMakeFiles/test_finite_rotation.dir/home/ubuntu/LHJ/ReGrip/tests/test_finite_rotation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:111: CMakeFiles/test_finite_rotation.dir/all] Error 2
+gmake: *** [Makefile:101: all] Error 2

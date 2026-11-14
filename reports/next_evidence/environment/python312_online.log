@@ -1,0 +1,315 @@
+Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='repo.anaconda.com', port=443): Failed to resolve 'repo.anaconda.com' ([Errno -2] Name or service not known)")': /pkgs/main/terms.json
+
+Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='repo.anaconda.com', port=443): Failed to resolve 'repo.anaconda.com' ([Errno -2] Name or service not known)")': /pkgs/main/terms.json
+
+Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='repo.anaconda.com', port=443): Failed to resolve 'repo.anaconda.com' ([Errno -2] Name or service not known)")': /pkgs/main/terms.json
+
+
+# >>>>>>>>>>>>>>>>>>>>>> ERROR REPORT <<<<<<<<<<<<<<<<<<<<<<
+
+    Traceback (most recent call last):
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+        sock = connection.create_connection(
+            (self._dns_host, self.port),
+        ...<2 lines>...
+            socket_options=self.socket_options,
+        )
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/socket.py", line 987, in getaddrinfo
+        for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    socket.gaierror: [Errno -2] Name or service not known
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+        response = self._make_request(
+            conn,
+        ...<10 lines>...
+            **response_kw,
+        )
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+        raise new_e
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+        self._validate_conn(conn)
+        ~~~~~~~~~~~~~~~~~~~^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+        conn.connect()
+        ~~~~~~~~~~~~^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+        self.sock = sock = self._new_conn()
+                           ~~~~~~~~~~~~~~^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+        raise NameResolutionError(self.host, self, e) from e
+    urllib3.exceptions.NameResolutionError: HTTPSConnection(host='repo.anaconda.com', port=443): Failed to resolve 'repo.anaconda.com' ([Errno -2] Name or service not known)
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+        resp = conn.urlopen(
+            method=request.method,
+        ...<9 lines>...
+            chunked=chunked,
+        )
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+        return self.urlopen(
+               ~~~~~~~~~~~~^
+            method,
+            ^^^^^^^
+        ...<13 lines>...
+            **response_kw,
+            ^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+        return self.urlopen(
+               ~~~~~~~~~~~~^
+            method,
+            ^^^^^^^
+        ...<13 lines>...
+            **response_kw,
+            ^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+        return self.urlopen(
+               ~~~~~~~~~~~~^
+            method,
+            ^^^^^^^
+        ...<13 lines>...
+            **response_kw,
+            ^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+        retries = retries.increment(
+            method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+        )
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+        raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='repo.anaconda.com', port=443): Max retries exceeded with url: /pkgs/main/terms.json (Caused by NameResolutionError("HTTPSConnection(host='repo.anaconda.com', port=443): Failed to resolve 'repo.anaconda.com' ([Errno -2] Name or service not known)"))
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/remote.py", line 54, in get_endpoint
+        response = session.get(
+            url,
+        ...<4 lines>...
+            ),
+        )
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+        return self.request("GET", url, params=params, **kwargs)
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+        resp = self.send(prep, **send_kwargs)
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+        r = adapter.send(request, **kwargs)
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+        raise ConnectionError(e, request=request)
+    requests.exceptions.ConnectionError: HTTPSConnectionPool(host='repo.anaconda.com', port=443): Max retries exceeded with url: /pkgs/main/terms.json (Caused by NameResolutionError("HTTPSConnection(host='repo.anaconda.com', port=443): Failed to resolve 'repo.anaconda.com' ([Errno -2] Name or service not known)"))
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/remote.py", line 158, in get_remote_metadata
+        metadata = RemoteToSMetadata(**get_endpoint(channel).json())
+                                       ~~~~~~~~~~~~^^^^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/remote.py", line 65, in get_endpoint
+        raise CondaToSMissingError(channel) from exc
+    conda_anaconda_tos.exceptions.CondaToSMissingError: No Terms of Service for https://repo.anaconda.com/pkgs/main.
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda/exception_handler.py", line 30, in __call__
+        return func(*args, **kwargs)
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda/cli/main.py", line 53, in main_subshell
+        exit_code = do_call(args, parser)
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda/cli/conda_argparse.py", line 189, in do_call
+        context.plugin_manager.invoke_pre_commands(command)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda/plugins/manager.py", line 491, in invoke_pre_commands
+        hook.action(command)
+        ~~~~~~~~~~~^^^^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/plugin.py", line 340, in _pre_command_check_tos
+        render_interactive(
+        ~~~~~~~~~~~~~~~~~~^
+            *context.channels,
+            ^^^^^^^^^^^^^^^^^^
+        ...<6 lines>...
+            json_printer=noop_printer,  # no JSON output even if --json
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/console/render.py", line 82, in wrapper
+        return func(
+            *args,
+        ...<4 lines>...
+            json_printer=json_printer,
+        )
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/console/render.py", line 408, in render_interactive
+        accepted, rejected, channel_pairs = _gather_tos(
+                                            ~~~~~~~~~~~^
+            *channels,
+            ^^^^^^^^^^
+            tos_root=tos_root,
+            ^^^^^^^^^^^^^^^^^^
+            cache_timeout=cache_timeout,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/console/render.py", line 289, in _gather_tos
+        pair = get_one_tos(channel, tos_root=tos_root, cache_timeout=cache_timeout)
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/api.py", line 190, in get_one_tos
+        remote_metadata = get_remote_metadata(channel, cache_timeout=cache_timeout)
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/remote.py", line 162, in get_remote_metadata
+        write_cached_endpoint(channel, None)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/site-packages/conda_anaconda_tos/remote.py", line 116, in write_cached_endpoint
+        path.touch()
+        ~~~~~~~~~~^^
+      File "/home/ubuntu/miniconda3/lib/python3.14/pathlib/__init__.py", line 1003, in touch
+        fd = os.open(self, flags, mode)
+    OSError: [Errno 30] Read-only file system: '/home/ubuntu/.cache/conda-anaconda-tos/3c9d068aa053e2a1c4313fe3391b7a8ee57c4fbd09c4e8aeae49ef333a740150.cache'
+
+`$ /home/ubuntu/miniconda3/bin/conda create --prefix /home/ubuntu/LHJ/ReGrip/.venv-sofa-next --solver classic --yes python=3.12 numpy`
+
+  environment variables:
+        AMENT_PREFIX_PATH=/home/ubuntu/robot_ws/install/zed_ros2:/home/ubuntu/robot_ws/install/z
+                          ed_wrapper:/home/ubuntu/robot_ws/install/zed_debug:/home/ubuntu/robot_
+                          ws/install/zed_components:/home/ubuntu/robot_ws/install/vla_data_colle
+                          ctor:/home/ubuntu/robot_ws/install/openvla_doosan_runtime_async:/home/
+                          ubuntu/robot_ws/install/openvla_doosan_runtime:/home/ubuntu/robot_ws/i
+                          nstall/dsr_visualservoing:/home/ubuntu/robot_ws/install/dsr_tests:/hom
+                          e/ubuntu/robot_ws/install/dsr_realtime_control:/home/ubuntu/robot_ws/i
+                          nstall/dsr_mujoco:/home/ubuntu/robot_ws/install/dsr_controller2:/home/
+                          ubuntu/robot_ws/install/dsr_bringup2:/home/ubuntu/robot_ws/install/dsr
+                          _msgs2:/home/ubuntu/robot_ws/install/dsr_moveit_config_p3020:/home/ubu
+                          ntu/robot_ws/install/dsr_moveit_config_m1509:/home/ubuntu/robot_ws/ins
+                          tall/dsr_moveit_config_m1013:/home/ubuntu/robot_ws/install/dsr_moveit_
+                          config_m0617:/home/ubuntu/robot_ws/install/dsr_moveit_config_m0609:/ho
+                          me/ubuntu/robot_ws/install/dsr_moveit_config_h2515:/home/ubuntu/robot_
+                          ws/install/dsr_moveit_config_h2017:/home/ubuntu/robot_ws/install/dsr_m
+                          oveit_config_e0509:/home/ubuntu/robot_ws/install/dsr_moveit_config_a09
+                          12:/home/ubuntu/robot_ws/install/dsr_moveit_config_a0509:/home/ubuntu/
+                          robot_ws/install/dsr_hardware2:/home/ubuntu/robot_ws/install/dsr_gazeb
+                          o2:/home/ubuntu/robot_ws/install/dsr_example:/home/ubuntu/robot_ws/ins
+                          tall/dsr_description2:/home/ubuntu/robot_ws/install/dsr_common2:/opt/r
+                          os/humble
+                 CIO_TEST=<not set>
+        CMAKE_PREFIX_PATH=/home/ubuntu/robot_ws/install/zed_ros2:/home/ubuntu/robot_ws/install/z
+                          ed_wrapper:/home/ubuntu/robot_ws/install/zed_debug:/home/ubuntu/robot_
+                          ws/install/zed_components:/home/ubuntu/robot_ws/install/dsr_realtime_c
+                          ontrol:/home/ubuntu/robot_ws/install/dsr_mujoco:/home/ubuntu/robot_ws/
+                          install/dsr_controller2:/home/ubuntu/robot_ws/install/dsr_msgs2:/home/
+                          ubuntu/robot_ws/install/dsr_moveit_config_p3020:/home/ubuntu/robot_ws/
+                          install/dsr_moveit_config_m1509:/home/ubuntu/robot_ws/install/dsr_move
+                          it_config_m1013:/home/ubuntu/robot_ws/install/dsr_moveit_config_m0617:
+                          /home/ubuntu/robot_ws/install/dsr_moveit_config_m0609:/home/ubuntu/rob
+                          ot_ws/install/dsr_moveit_config_h2515:/home/ubuntu/robot_ws/install/ds
+                          r_moveit_config_h2017:/home/ubuntu/robot_ws/install/dsr_moveit_config_
+                          e0509:/home/ubuntu/robot_ws/install/dsr_moveit_config_a0912:/home/ubun
+                          tu/robot_ws/install/dsr_moveit_config_a0509:/home/ubuntu/robot_ws/inst
+                          all/dsr_hardware2:/home/ubuntu/robot_ws/install/dsr_gazebo2:/home/ubun
+                          tu/robot_ws/install/dsr_description2:/home/ubuntu/robot_ws/install/dsr
+                          _common2
+       COLCON_PREFIX_PATH=/home/ubuntu/robot_ws/install
+        CONDA_DEFAULT_ENV=base
+                CONDA_EXE=/home/ubuntu/miniconda3/bin/conda
+          CONDA_PKGS_DIRS=/home/ubuntu/LHJ/ReGrip/.conda-pkgs
+             CONDA_PREFIX=/home/ubuntu/miniconda3
+    CONDA_PROMPT_MODIFIER=(base)
+         CONDA_PYTHON_EXE=/home/ubuntu/miniconda3/bin/python
+               CONDA_ROOT=/home/ubuntu/miniconda3
+              CONDA_SHLVL=1
+           CURL_CA_BUNDLE=<not set>
+        GAZEBO_MODEL_PATH=/home/ubuntu/robot_ws/install/dsr_description2/share:/home/ubuntu/robo
+                          t_ws/install/dsr_description2/share/dsr_description2/
+     GZ_SIM_RESOURCE_PATH=/home/ubuntu/robot_ws/install/dsr_description2/share/:/home/ubuntu/rob
+                          ot_ws/install/dsr_description2/share/dsr_description2/
+GZ_SIM_SYSTEM_PLUGIN_PATH=/home/ubuntu/robot_ws/install/dsr_description2/lib
+ IGN_GAZEBO_RESOURCE_PATH=/home/ubuntu/robot_ws/install/dsr_description2/share/:/home/ubuntu/rob
+                          ot_ws/install/dsr_description2/share/dsr_description2/
+IGN_GAZEBO_SYSTEM_PLUGIN_PATH=/home/ubuntu/robot_ws/install/dsr_description2/lib
+          LD_LIBRARY_PATH=/home/ubuntu/robot_ws/install/zed_components/lib:/home/ubuntu/robot_ws
+                          /install/dsr_controller2/lib:/home/ubuntu/robot_ws/install/dsr_msgs2/l
+                          ib:/home/ubuntu/robot_ws/install/dsr_hardware2/lib:/usr/lib/x86_64-
+                          linux-gnu/gazebo-
+                          11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/li
+                          b/x86_64-linux-gnu:/opt/ros/humble/lib
+               LD_PRELOAD=<not set>
+                     PATH=/home/ubuntu/.local/bin:/usr/lib/node_modules/@openai/codex/node_modul
+                          es/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-
+                          path:/home/ubuntu/.codex/tmp/arg0/codex-arg01VPOXq:/home/ubuntu/minico
+                          nda3/bin:/home/ubuntu/miniconda3/condabin:/opt/ros/humble/bin:/home/ub
+                          untu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbi
+                          n:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+               PYTHONPATH=/home/ubuntu/robot_ws/install/vla_data_collector/lib/python3.10/site-p
+                          ackages:/home/ubuntu/robot_ws/build/openvla_doosan_runtime_async:/home
+                          /ubuntu/robot_ws/install/openvla_doosan_runtime_async/lib/python3.10/s
+                          ite-packages:/home/ubuntu/robot_ws/install/openvla_doosan_runtime/lib/
+                          python3.10/site-packages:/home/ubuntu/robot_ws/install/dsr_visualservo
+                          ing/lib/python3.10/site-
+                          packages:/home/ubuntu/robot_ws/install/dsr_tests/lib/python3.10/site-p
+                          ackages:/home/ubuntu/robot_ws/install/dsr_mujoco/local/lib/python3.10/
+                          dist-packages:/home/ubuntu/robot_ws/install/dsr_bringup2/lib/python3.1
+                          0/site-packages:/home/ubuntu/robot_ws/install/dsr_msgs2/local/lib/pyth
+                          on3.10/dist-packages:/home/ubuntu/robot_ws/install/dsr_example/lib/pyt
+                          hon3.10/site-packages:/home/ubuntu/robot_ws/install/dsr_common2/lib/py
+                          thon3.10/site-packages:/opt/ros/humble/lib/python3.10/site-
+                          packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+       REQUESTS_CA_BUNDLE=<not set>
+            SSL_CERT_FILE=<not set>
+     TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2
+               WINDOWPATH=2
+
+     active environment : base
+    active env location : /home/ubuntu/miniconda3
+            shell level : 1
+       user config file : /home/ubuntu/.condarc
+ populated config files : /home/ubuntu/miniconda3/.condarc
+                          /home/ubuntu/miniconda3/condarc.d/anaconda-auth.yml
+          conda version : 26.5.3
+    conda-build version : not installed
+         python version : 3.14.6.final.0
+                 solver : classic
+       virtual packages : __archspec=1=skylake
+                          __conda=26.5.3=0
+                          __glibc=2.35=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/ubuntu/miniconda3  (read only)
+      conda av data dir : /home/ubuntu/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/ubuntu/LHJ/ReGrip/.conda-pkgs
+       envs directories : /home/ubuntu/.conda/envs
+                          /home/ubuntu/miniconda3/envs
+    temporary directory : /tmp
+               platform : linux-64
+             user-agent : conda/26.5.3 requests/2.34.2 CPython/3.14.6 Linux/6.8.0-138-generic ubuntu/22.04.5 glibc/2.35 aau/0.8.1 s/. e/.
+                UID:GID : 1000:1000
+             netrc file : /home/ubuntu/.netrc
+           offline mode : False
+
+
+An unexpected error has occurred. Conda has prepared the above report.
+If you suspect this error is being caused by a malfunctioning plugin,
+consider using the --no-plugins option to turn off plugins.
+
+Example: conda --no-plugins install <package>
+
+Alternatively, you can set the CONDA_NO_PLUGINS environment variable on
+the command line to run the command without plugins enabled.
+
+Example: CONDA_NO_PLUGINS=true conda install <package>
+

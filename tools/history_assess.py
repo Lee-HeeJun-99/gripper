@@ -10,11 +10,12 @@ def comparison(a,b,limit):
         x,y=a[key],b[key];absolute[key]=abs(x-y);differences[key]=abs(x-y)/abs(y) if y else (0. if x==0 else float('inf'))
     return dict(status='PASS' if all(v<=limit for v in differences.values()) else 'FAIL',limit=limit,relative_difference=differences,absolute_difference=absolute,denominator='absolute fine value, unchanged criterion')
 def main():
-    results={};memory={};sources={}
+    results={};memory={};sources={};attempts={}
     for d in sorted((OUT/'grasp').iterdir()):
         file=d/'metrics.json' if (d/'metrics.json').exists() else d/'recovered_metrics.json'
         if not file.exists():continue
         r=json.loads(file.read_text());sources[d.name]=str(file.relative_to(ROOT))
+        if not r.get('config',{}).get('profile_only'):attempts[d.name]=r
         if not r.get('config',{}).get('profile_only') and 'hold_displacement_mm'in r:results[d.name]=r
         log=d/'stdout.log';mem=[]
         for line in log.read_text().splitlines():
@@ -26,7 +27,9 @@ def main():
             memory[d.name]=dict(steps=max(m['step'] for m in run),peak_rss=max(m['rss'] for m in run),last_unload=last[-1] if last else None,post_warmup_live_heap_bytes_range=[min(m['live_heap']+m['mmap'] for m in tail),max(m['live_heap']+m['mmap'] for m in tail)] if tail else None,hold_proxy_slope_bytes_per_step=slope,scope='mallinfo2 arena-live+mmap proxy, not complete allocation trace; RSS is not leak proof; FD/PSS NOT RUN',dt=dt)
     checks={}
     for name,a,b,limit in COMPARISONS:
-        if a not in results or b not in results:checks[name]=dict(status='NOT RUN',coarse=a,fine=b);continue
+        if a not in results or b not in results:
+            failed={n:attempts[n].get('failure_reason','physical metrics unavailable') for n in (a,b) if n in attempts and n not in results}
+            checks[name]=dict(status='FAIL' if failed else 'NOT RUN',coarse=a,fine=b,failed_attempts=failed);continue
         ra,rb=results[a],results[b]
         if ra['identity']['history_build']!=rb['identity']['history_build']:raise ValueError('compiled model mismatch')
         immutable=['shape','axis','load','mu','normal_k','tangent_k','tension','pressure','rayleigh_mass','beam_material']

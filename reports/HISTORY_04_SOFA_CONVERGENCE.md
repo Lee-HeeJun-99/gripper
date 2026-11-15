@@ -29,3 +29,6 @@ Default process limits4GiB/480s/max4 physics children. One41node profile measure
 153.794s (prediction692.073s). Each has ONE documented900s/4GiB exception,
 `n41_exception.json` / `dt_quarter_exception.json`, not unlimited retries.
 18s trials cover the same6..14s hold window but do NOT certify24s full recovery.
+41nodes completed775.519s;21→41 translation.782441%,rotation.0436982% PASS.
+Quarterdt failed900.005s (timeout,-9,last logged138000/144000steps);no final
+performance or convergence value is accepted. The failed attempt is retained.

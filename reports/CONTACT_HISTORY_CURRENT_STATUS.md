@@ -15,6 +15,8 @@ regression;own-kernel ASan/UBSan;measured-state headless replay.
 FAIL: history .005→.0025mm and11→21node refinement;time refinement has not met
 the original0.1% condition. Exact final finer-case results are in
 `history_evidence/convergence.json`,not hidden by the summary.
+21→41nodes passes1%;quarterdt18s timed out at900s and is FAIL with no performance
+value. Its last memory marker is138000 of144000 planned steps.
 
 EXPERIMENTAL: new crossing-aware birth increment,independently tested with
 implicit-root derivative,NOT yet used by production SOFA. Partial energy

@@ -37,6 +37,21 @@ Final numerical finer-case decisions,including41nodes andquarterdt,are in
 `history_evidence/convergence.json` and CSV. They are not overridden by prose.
 The41node run completed775.519s;21→41 translation difference.782441% and
 rotation difference.0436982% pass the1% diagnostic,without erasing11→21 FAIL.
+Quarterdt failed the bounded900s limit (OS-9,timeout,last logged138000 of144000
+steps). No completed-run displacement/convergence value is assigned to it.
+The attempt and partial raw data are preserved;it is FAIL,not NOT RUN or PASS.
+
+|Comparison|Translation difference|Rotation difference|Unchanged criterion|
+|---|---:|---:|---|
+|History .01→.005mm|.953616%|.0299063%|1%,PASS|
+|History .005→.0025mm|1.340327%|.0083465%|1%,FAIL|
+|Beam11→21nodes|3.482749%|.145036%|1%,FAIL|
+|Beam21→41nodes|.782441%|.0436982%|1%,PASS|
+|dt .0005→.00025s|.359009%|.0085758%|.1%,FAIL|
+|Same-condition repeat|0|0|1e-6relative,PASS|
+
+Normal q8→16→32 and tangent cell2→4 differences are below7e-9relative for
+translation in this case;they do not waive independent history/mesh/time FAIL.
 
 ## Implementation and evidence
 

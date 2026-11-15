@@ -70,5 +70,8 @@ unload/reload separately from minimal/released-scene evidence.
 Default480s/4GiB,max4 physics children. Profile before exceptional limits.
 Campaign contains one900s41node and one900squarterdt exception,not general
 unlimited permission. All raw/build/env stay on the external drive.
+41nodes completed775.519s;quarterdt timed out900.005s near138000/144000steps.
+Do NOT rerun the same timeout blindly. Profile the expensive phases and correct
+birth/history first;only then justify a new bounded trial or improved solver.
 For optional replay use `tools/history_replay.py` in a NEW output campaign after
 selecting a real trial,or existing `replay/gui_command.json`+environment.json.

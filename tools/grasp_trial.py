@@ -30,7 +30,7 @@ class Config:
     stride:int=20
 
     def validate(self):
-        if self.shape not in (0,1,2) or self.axis not in (0,1,2) or type(self.nodes) is not int or not 3<=self.nodes<=41 or type(self.samples) is not int or not 1<=self.samples<=32:raise ValueError('shape/axis/mesh bound')
+        if type(self.shape) is not int or type(self.axis) is not int or self.shape not in (0,1,2) or self.axis not in (0,1,2) or type(self.nodes) is not int or not 3<=self.nodes<=41 or type(self.samples) is not int or not 1<=self.samples<=32 or type(self.stride) is not int:raise ValueError('shape/axis/mesh/sample type or bound')
         if any(type(v) not in (int,float) or not math.isfinite(v) for v in asdict(self).values()):raise ValueError('invalid numeric value')
         if min(self.dt,self.normal_k,self.tangent_k,self.base_z,self.object_radius)<=0 or min(self.mu,self.tension,self.pressure)<0 or not 8<=self.duration<=24 or not 8<=self.hold_until<=self.duration-4 or not 0<=self.rayleigh_mass<=5:raise ValueError('physical/schedule bound')
         steps=round(self.duration/self.dt)
@@ -38,6 +38,8 @@ class Config:
         return steps
 
 def run(name,c=Config(),wall=240):
+    if not isinstance(name,str) or not name or name in ('.','..') or any(ch not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for ch in name):raise ValueError('trial name must be one safe path component')
+    if type(wall) not in (int,float) or not math.isfinite(wall) or not 0<wall<=480:raise ValueError('wall cap must be in (0,480] seconds')
     steps=c.validate();out=OUT/'trials'/name;out.mkdir(parents=True,exist_ok=False)
     scene(out,BaseConfig(nodes=c.nodes,load=0,duration=c.duration,dt=c.dt,stride=c.stride));tree=ET.parse(out/'scene.scn');root=tree.getroot();root.find('EulerImplicitSolver').set('rayleighMass',str(c.rayleigh_mass));body=root.find('Node')
     for element in list(body):body.remove(element)

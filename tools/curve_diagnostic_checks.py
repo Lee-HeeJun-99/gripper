@@ -5,7 +5,7 @@ from closure_validation_suite import logged
 
 
 def main():
-    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a06'
+    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a07'
     out.mkdir(exist_ok=False)
     sources = [ROOT / 'tests/test_checkpoint_guards.py', ROOT / 'tests/test_curved_guards.py',
                ROOT / 'tests/test_return_energy.cpp', ROOT / 'models/contact_energy/ReturnAudit.h',
@@ -15,7 +15,9 @@ def main():
                ROOT / 'models/stabilization/Compensated.h',
                ROOT / 'tests/test_energy_source_scope.py',
                ROOT / 'tests/test_contact_rayleigh.cpp',ROOT/'tests/test_fixed_clock.cpp',
-               ROOT / 'models/fixed_step_clock/Clock.h']
+               ROOT / 'models/fixed_step_clock/Clock.h',
+               ROOT / 'models/event_step_clock/Schedule.h',ROOT/'tests/test_event_clock.cpp',
+               ROOT / 'tests/test_damping_inference.py',ROOT/'tests/test_contact_work_remainder.cpp']
     write_json(out / 'sources.json', {str(p.relative_to(ROOT)): sha(p) for p in sources})
     results = {}
     commands = [
@@ -43,6 +45,13 @@ def main():
         ('clock_build', ['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',
                         'tests/test_fixed_clock.cpp','-o',out/'clock.bin']),
         ('clock_unit',[out/'clock.bin']),
+        ('event_clock_build',['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',
+                              'tests/test_event_clock.cpp','-o',out/'event_clock.bin']),
+        ('event_clock_unit',[out/'event_clock.bin']),
+        ('mapped_work_build',['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',
+                              'tests/test_contact_work_remainder.cpp','-o',out/'mapped_work.bin']),
+        ('mapped_work_unit',[out/'mapped_work.bin']),
+        ('damping_inference',[sys.executable,'-m','unittest','discover','-s','tests','-p','test_damping_inference.py','-v']),
         ('python_compile', [sys.executable, '-m', 'py_compile'] +
          sorted((ROOT / 'tools').glob('curve_*.py')))]
     for name, command in commands:

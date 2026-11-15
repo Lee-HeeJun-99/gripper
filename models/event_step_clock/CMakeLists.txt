@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripEventStepClock LANGUAGES CXX)
+find_package(Sofa.Simulation.Core REQUIRED)
+add_library(ReGripEventStepClock SHARED EventStepClock.cpp)
+target_compile_features(ReGripEventStepClock PRIVATE cxx_std_17)
+target_compile_options(ReGripEventStepClock PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(ReGripEventStepClock PRIVATE Sofa.Simulation.Core)

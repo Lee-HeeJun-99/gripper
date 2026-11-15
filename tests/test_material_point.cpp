@@ -1,0 +1,20 @@
+#include "../models/material_point_contact/MaterialPointContact.cpp"
+#include <sofa/component/statecontainer/MechanicalObject.h>
+using namespace regrip_integrated;
+void require(bool x,const char*why){if(!x)throw std::runtime_error(why);}
+template<class Parent>struct Accumulator:Parent{double a[18][18]{};void add(sofa::SignedIndex r,sofa::SignedIndex c,double v)override{a[r][c]+=v;}void add(sofa::SignedIndex r,sofa::SignedIndex c,float v)override{add(r,c,double(v));}};
+int main(){try{
+ using State=sofa::component::statecontainer::MechanicalObject<Types>;auto state=sofa::core::objectmodel::New<State>();state->resize(3);Inherit::VecCoord x(3);x[0].getCenter()={-.5,1.01,0};x[1].getCenter()={.5,1.01,0};for(auto&p:x)p.getOrientation()={0,0,0,1};
+ state->write(sofa::core::vec_id::write_access::position)->setValue(x);state->write(sofa::core::vec_id::write_access::restPosition)->setValue(x);
+ auto field=sofa::core::objectmodel::New<MaterialPointContact>(state.get());field->segments.setValue({0,1});field->objectIndex.setValue(2);field->shape.setValue(2);field->radius.setValue(1.);field->pointRadius.setValue(.02);field->mu.setValue(.3);field->lineStiffness.setValue(1.);field->tangentLineStiffness.setValue(1.);field->historySpacing.setValue(.02);field->prepare(x);
+ double D=0,error=0;
+ for(int step=1;step<=20;++step){x[0].getCenter()[2]=x[1].getCenter()[2]=step*.001;double beforeQuery=field->committedPlastic;auto r=field->compute(x);auto scalar=field->computeValue(x);for(int j=0;j<18;++j)error=std::max(error,std::abs(r.a.f[j]-scalar.a.f[j]));require(field->compute(x).a.f==r.a.f,"repeat pure query");require(field->committedPlastic==beforeQuery,"query never commits");double prior=field->committedPlastic;field->commit(x);D+=r.D;require(std::abs(field->committedPlastic-prior-r.D)<1e-16,"observed and actual point plastic same");}
+ require(std::abs(D-.003*(.020-.003))<1e-14,"uniform plane analytic Coulomb dissipation");require(error<1e-13,"AD and scalar wrench same");std::cout<<std::setprecision(17)<<"PASS plane D="<<D<<" scalar_error="<<error<<'\n';
+ // Frozen history, smooth stick branch: actual assembly finite differences.
+ x[0].getCenter()[2]-=.0001;x[1].getCenter()[2]-=.0001;auto a=field->assemble(x);double fd=0;
+ for(int k=0;k<18;++k){auto plus=x,minus=x;auto p=increment(field->pose(x[k/6]),k%6,1e-7),m=increment(field->pose(x[k/6]),k%6,-1e-7);for(int j=0;j<3;++j){plus[k/6].getCenter()[j]=p.p[j];minus[k/6].getCenter()[j]=m.p[j];}for(int j=0;j<4;++j){plus[k/6].getOrientation()[j]=p.q[j];minus[k/6].getOrientation()[j]=m.q[j];}auto ap=field->assemble(plus),am=field->assemble(minus);double J[18]{};for(auto&t:a.J)if(t.c==unsigned(k))J[t.r]+=t.v;for(int j=0;j<18;++j)fd=std::max(fd,std::abs((ap.f[j]-am.f[j])/2e-7-J[j]));}
+ require(fd<1e-7,"actual field force Jacobian FD");state->write(sofa::core::vec_id::write_access::position)->setValue(x);Inherit::DataVecDeriv dx,df,force,velocity;Inherit::DataVecCoord pos;pos.setValue(x);Inherit::VecDeriv delta(3);for(auto&v:delta)for(int j=0;j<6;++j)v[j]=.001*(j+1);dx.setValue(delta);velocity.setValue(Inherit::VecDeriv(3));force.setValue(Inherit::VecDeriv(3));sofa::core::MechanicalParams mp;field->addForce(&mp,force,pos,velocity);for(int j=0;j<18;++j)require(std::abs(force.getValue()[j/6][j%6]-a.f[j])<1e-13,"addForce");
+ for(double f:{0.,2.5,-.25}){mp.setKFactor(f);df.setValue(Inherit::VecDeriv(3));field->addDForce(&mp,df,dx);double expected[18]{};for(auto&t:a.J)expected[t.r]+=f*t.v*delta[t.c/6][t.c%6];for(int j=0;j<18;++j)require(std::abs(df.getValue()[j/6][j%6]-expected[j])<1e-13,"addDForce factor");}
+ Accumulator<sofa::core::behavior::StiffnessMatrixAccumulator>acc;sofa::core::behavior::StiffnessMatrix matrix;matrix.setMatrixAccumulator(&acc,state.get());field->buildStiffnessMatrix(&matrix);double J[18][18]{};for(auto&t:a.J)J[t.r][t.c]+=t.v;for(int i=0;i<18;++i)for(int j=0;j<18;++j)require(std::abs(J[i][j]-acc.a[i][j])<1e-13,"matrix accumulator");
+ std::cout<<"PASS actual API FD="<<fd<<" force/dforce/matrix/query/commit\n";return 0;
+ }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

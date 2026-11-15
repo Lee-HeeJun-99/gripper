@@ -33,7 +33,7 @@ public:
  }
  Pose point(const VecCoord&x,unsigned edge,double s)const{Pose p;unsigned a=segments.getValue()[2*edge],b=segments.getValue()[2*edge+1];p.p=add(scale(pose(x[a]).p,1-s),scale(pose(x[b]).p,s));return p;}
  regrip_history::History old(unsigned edge,double s)const{
-  const auto&g=grids[edge];auto range=interval(previous,edge);regrip_history::History h;if(s<=range.lo||s>=range.hi)return h;
+  const auto&g=grids[edge];auto range=interval(previous,edge);regrip_history::History h;if(!range.active()||s<range.lo||s>range.hi)return h;
   double t=s*g.count;unsigned a=std::min(unsigned(t),g.count-1);
   double l=std::max(double(a)/g.count,range.lo),u=std::min(double(a+1)/g.count,range.hi),alpha=(s-l)/(u-l);
   auto p=point(previous,edge,s),o=pose(previous[objectIndex.getValue()]);auto local=rotate(Q{-o.q[0],-o.q[1],-o.q[2],o.q[3]},sub(p.p,o.p));
@@ -54,8 +54,10 @@ public:
     out.a.energy+=weight*r.wrench.energy;
     if(tangential){out.D+=weight*r.plasticDissipation;out.elastic+=weight*r.elasticEnergy;out.capacity+=weight*r.capacity;if(r.next.sliding)out.slips++;else out.sticks++;double traction=tangentLineStiffness.getValue()*std::sqrt(dot(r.next.elastic,r.next.elastic));if(r.capacity>0)out.ratio=std::max(out.ratio,traction/r.capacity);}
     else{out.a.contactForce+=weight*r.normalForce;out.a.contacts++;out.points.push_back({edge,s,weight,pp,r});}
-    auto map=[&](int i){std::vector<std::pair<unsigned,double>>m;if(i<3){m.push_back({unsigned(i),1-s});m.push_back({6+unsigned(i),s});}else if(i>=6)m.push_back({12+unsigned(i-6),1});return m;};
-    for(int i=0;i<12;++i)for(auto[row,wi]:map(i)){forces[row]+=weight*wi*r.wrench.force[i];for(int k=0;k<12;++k)for(auto[col,wk]:map(k))block[row][col]+=weight*wi*wk*r.wrench.jacobian[12*i+k];}
+    struct Map{unsigned count=0,row[2]{};double w[2]{};};Map map[12];
+    for(unsigned i=0;i<12;++i){if(i<3)map[i]={2,{i,6+i},{1-s,s}};else if(i>=6)map[i]={1,{12+i-6,0},{1,0}};}
+    for(unsigned i=0;i<12;++i){for(unsigned a=0;a<map[i].count;++a)forces[map[i].row[a]]+=weight*map[i].w[a]*r.wrench.force[i];
+     for(unsigned k=0;k<12;++k)if(r.wrench.jacobian[12*i+k]!=0)for(unsigned a=0;a<map[i].count;++a)for(unsigned b=0;b<map[k].count;++b)block[map[i].row[a]][map[k].row[b]]+=weight*map[i].w[a]*map[k].w[b]*r.wrench.jacobian[12*i+k];}
    };
    for(auto[node,w]:rule)sample((range.lo+range.hi)/2+(range.hi-range.lo)/2*node,grids[edge].length*(range.hi-range.lo)/2*w,false);
    unsigned first=std::min(unsigned(range.lo*grids[edge].count),grids[edge].count-1),last=std::min(unsigned(range.hi*grids[edge].count),grids[edge].count-1);
@@ -81,8 +83,15 @@ public:
   for(unsigned e=0;e<grids.size();++e){auto range=interval(x,e);if(!range.active())continue;const auto&g=grids[e];unsigned lo=unsigned(std::ceil(range.lo*g.count)),hi=std::min(g.count,unsigned(std::floor(range.hi*g.count)));
    for(unsigned i=lo;i<=hi;++i){double s=double(i)/g.count;auto r=regrip_history::value(point(x,e,s),pose(x[objectIndex.getValue()]),old(e,s),shape.getValue(),radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),lineStiffness.getValue(),tangentLineStiffness.getValue(),mu.getValue());next[e].push_back({i,r.next});}
   }
-  // Release estimate on fixed material history cells, separate from plastic D.
-  for(unsigned e=0;e<grids.size();++e){auto&g=grids[e];for(auto i:g.active){auto p=point(x,e,double(i)/g.count),o=pose(x[objectIndex.getValue()]);auto local=rotate(Q{-o.q[0],-o.q[1],-o.q[2],o.q[3]},sub(p.p,o.p));if(regrip_closure::sdf(local,shape.getValue(),radius.getValue(),halfHeight.getValue())>=pointRadius.getValue())released+=.5*tangentLineStiffness.getValue()*dot(g.state[i].elastic,g.state[i].elastic)*g.length/g.count;g.state[i]={};}g.active.clear();for(auto&item:next[e]){g.state[item.first]=item.second;g.active.push_back(item.first);}}
+  // Integrate stored energy on the LOST material domain, not nodal counts.
+  // No dissipation is added on pure queries. This is detachment loss only.
+  auto quadrature=regrip_closure::gauss(cellOrder.getValue());
+  for(unsigned e=0;e<grids.size();++e){auto&g=grids[e];auto before=interval(previous,e),after=interval(x,e);
+   if(before.active())for(unsigned i=0;i<g.count;++i){double l=std::max(before.lo,double(i)/g.count),u=std::min(before.hi,double(i+1)/g.count);if(u<=l)continue;
+    std::vector<std::pair<double,double>>lost;if(!after.active())lost.push_back({l,u});else{if(l<after.lo)lost.push_back({l,std::min(u,after.lo)});if(u>after.hi)lost.push_back({std::max(l,after.hi),u});}
+    for(auto[a,b]:lost)if(b>a)for(auto[node,w]:quadrature){auto h=old(e,(a+b)/2+(b-a)/2*node);released+=.5*tangentLineStiffness.getValue()*dot(h.elastic,h.elastic)*g.length*(b-a)/2*w;}}
+   for(auto i:g.active){g.state[i]={};}
+   g.active.clear();for(auto&item:next[e]){g.state[item.first]=item.second;g.active.push_back(item.first);}}
   previous=x;cachedEpoch=~0u;
  }
  void init()override{EnergyField::init();try{if(!mstate)throw std::invalid_argument("adaptive state");prepare(mstate->read(sofa::core::vec_id::read_access::position)->getValue());std::ifstream exists(filename.getValue()),p(filename.getValue()+".patch.csv");if(exists||p)throw std::invalid_argument("refusing old adaptive output");file.open(filename.getValue());patch.open(filename.getValue()+".patch.csv");if(!file||!patch)throw std::runtime_error("adaptive output open");file<<std::setprecision(17)<<"time,normal_force,friction_dissipation,release_dissipation,elastic_energy,contacts,stick,slip,capacity,max_ratio,Fx,Fy,Fz,Mx,My,Mz,active_length\n";patch<<std::setprecision(17)<<"time,edge,s,weight,px,py,pz,nx,ny,nz,Fn,Fx,Fy,Fz,Mx,My,Mz,sliding\n";}catch(const std::exception&e){fail(e.what());}}

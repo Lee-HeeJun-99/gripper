@@ -6,10 +6,10 @@
 #include <random>
 using namespace regrip_integrated;
 void require(bool b,const char*s){if(!b)throw std::runtime_error(s);}
-template<class F>auto setup(unsigned q,double h){
+template<class F>auto setup(unsigned q,double h,double radius=1){
  typename sofa::component::statecontainer::MechanicalObject<Types>::SPtr state=sofa::core::objectmodel::New<sofa::component::statecontainer::MechanicalObject<Types>>();state->resize(3);Inherit::VecCoord x(3);x[0].getCenter()={-.6,.99,0};x[1].getCenter()={.6,.99,0};for(auto&v:x)v.getOrientation()={0,0,0,1};state->write(sofa::core::vec_id::write_access::position)->setValue(x);state->write(sofa::core::vec_id::write_access::restPosition)->setValue(x);
- typename F::SPtr f=sofa::core::objectmodel::New<F>(state.get());f->segments.setValue({0,1});f->objectIndex.setValue(2);f->radius.setValue(1);f->pointRadius.setValue(.02);f->samples.setValue(q);f->historySpacing.setValue(h);f->lineStiffness.setValue(1);f->tangentLineStiffness.setValue(1);f->prepare(x);
- for(unsigned i=0;i<=f->grids[0].count;++i){double s=double(i)/f->grids[0].count;auto p=f->point(x,0,s);auto g=regrip_stick::geometry(regrip_stick::constantV<regrip_stick::First>(p.p),0,1,5);auto&v=f->grids[0].state[i];v.active=g.distance.v<.02;v.local=p.p;for(int j=0;j<3;++j)v.normal[j]=g.normal[j].v;v.elastic={0,0,1e-4*std::max(0.,1-std::abs(1.2*s-.6)/.06)};}
+ typename F::SPtr f=sofa::core::objectmodel::New<F>(state.get());f->segments.setValue({0,1});f->objectIndex.setValue(2);f->radius.setValue(radius);f->pointRadius.setValue(.02);f->samples.setValue(q);f->historySpacing.setValue(h);f->lineStiffness.setValue(1);f->tangentLineStiffness.setValue(1);f->prepare(x);
+ for(unsigned i=0;i<=f->grids[0].count;++i){double s=double(i)/f->grids[0].count;auto p=f->point(x,0,s);auto g=regrip_stick::geometry(regrip_stick::constantV<regrip_stick::First>(p.p),0,radius,5);auto&v=f->grids[0].state[i];v.active=g.distance.v<.02;v.local=p.p;for(int j=0;j<3;++j)v.normal[j]=g.normal[j].v;v.elastic={0,0,1e-4*std::max(0.,1-std::abs(1.2*s-.6)/.06)};}
  return std::make_pair(state,f);
 }
 int main(){try{
@@ -21,4 +21,8 @@ int main(){try{
   auto m=add(add(V{a.wrench.force[3],a.wrench.force[4],a.wrench.force[5]},V{a.wrench.force[9],a.wrench.force[10],a.wrench.force[11]}),cross(sub(p.p,o.p),V{a.wrench.force[0],a.wrench.force[1],a.wrench.force[2]}));for(double x:m)moment=std::max(moment,std::abs(x));
  }
  require(valueError<1e-12&&fdError<1e-7&&moment<1e-12,"return map value/Jacobian/moment");bool guarded=false;try{regrip_history::transport(e,n,regrip_history::scale(n,-1.));}catch(const std::invalid_argument&){guarded=true;}require(guarded,"antipodal guard");std::cout<<"PASS60 value="<<valueError<<" J="<<fdError<<" moment="<<moment<<'\n';
+ auto pair=setup<MaterialHistoryContact>(8,.02,2);auto x=pair.first->read(sofa::core::vec_id::read_access::position)->getValue();auto field=pair.second;auto copy=field->grids[0].state;auto a=field->assemble(x);auto b=field->assemble(x);require(a.f==b.f&&field->steps==0&&field->plastic==0,"pure repeated force queries");for(size_t i=0;i<copy.size();++i)require(copy[i].elastic==field->grids[0].state[i].elastic,"query mutation");
+ x[0].getCenter()[2]+=.001;x[1].getCenter()[2]+=.001;field->commit(x);double first=field->grids[0].state[0].elastic[2];x[0].getCenter()[2]+=.001;x[1].getCenter()[2]+=.001;field->commit(x);require(first>.0005&&field->grids[0].state[0].elastic[2]>first,"history at internal segment endpoint");
+ x[0].getCenter()[1]=3;x[1].getCenter()[1]=3;field->commit(x);for(auto&h:field->grids[0].state)require(!h.active,"detach clears material history");require(field->released>0,"detachment loss recorded");x[0].getCenter()[1]=.99;x[1].getCenter()[1]=.99;field->commit(x);for(auto&h:field->grids[0].state)require(dot(h.elastic,h.elastic)==0,"fresh recontact no stale history");
+ bool immutable=false;field->mu.setValue(.2);try{field->assemble(x);}catch(const std::invalid_argument&){immutable=true;}require(immutable,"parameter cache guard");std::cout<<"PASS query/endpoint/detach/recontact/cache guards\n";
 }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

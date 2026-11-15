@@ -7,8 +7,9 @@ from run_trial import execute_process
 from trial_validation import read_states
 from closure_frame_evaluate import relative_angles
 def analyze(out,config,p):
-    record=dict(status='FAIL',config=config,identity=identity(),process=p,full_grasp_certified=False)
+    record=dict(status='FAIL',config=config,identity=json.loads((out/'identity.json').read_text()),analysis_source_sha256=sha(ROOT/'tools/history_trial.py'),process=p,full_grasp_certified=False)
     n=config['nodes'];obj=config['object_index'];duration=config['duration'];axis=config['axis'];load=config['load'];tension=config['tension'];angles=config['reference_angles']
+    steps=round(duration/config['dt'])
     try:
         log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text()
         if p['exit_code'] or '[ERROR]' in log or f'{steps} iterations done' not in log:raise ValueError('SOFA error/timeout/incomplete')
@@ -36,7 +37,7 @@ def run(name,nodes=11,samples=8,dt=.0005,duration=24.,history=.01,cell_order=2,p
     write_json(out/'config.json',c);steps=round(c['duration']/dt);cmd=[str(SDK/'bin/graph_probe'),str(SDK),str(out/'scene.scn'),str(steps),'0',str(FRAME),str(BEAM),str(PLUGIN)]
     write_json(out/'command.json',cmd);write_json(out/'identity.json',identity())
     if prepare_only:return out
-    p=execute_process(cmd,out,wall)
+    p=execute_process(cmd,out,wall);write_json(out/'execution_result.json',p)
     if profile:
         log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text();r=dict(status='EXPERIMENTAL' if p['exit_code']==0 and '[ERROR]' not in log and f'{steps} iterations done' in log else 'FAIL',config=c,process=p,scope='8000step profile, NOT hold/equilibrium qualification',predicted_18s_wall=p['runtime_s']*4.5,identity=identity())
     else:r=analyze(out,c,p)

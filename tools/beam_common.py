@@ -20,4 +20,6 @@ def identity():
     if manifest['plugin_sha256']!=sha(PLUGIN):raise ValueError('beam binary differs from frozen build')
     for name,digest in manifest['compiled_source_sha256'].items():
         if sha(ROOT/name)!=digest:raise ValueError('beam compiled source differs from working tree: '+name)
+    for name,digest in manifest.get('dependency_sha256',{}).items():
+        if sha(ROOT/name)!=digest:raise ValueError('beam compiled dependency differs from working tree: '+name)
     return dict(source_sha256={str(p.relative_to(ROOT)):sha(p) for p in files},compiled_source_sha256=manifest['compiled_source_sha256'],build_manifest_sha256=sha(manifest_path),plugin_sha256=sha(PLUGIN),frame_sha256=sha(FRAME),sdk_root=str(SDK),sdk_driver_sha256=sha(SDK/'bin/graph_probe'),model='objective_midpoint_so3_rod_v2_equivalent',material=material(),provenance=provenance())

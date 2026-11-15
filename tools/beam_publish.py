@@ -3,7 +3,7 @@
 No result is regenerated from old numerical values. Raw files stay on external
 disk; source, binaries, failed runs and historical-metadata deltas stay explicit.
 """
-import csv,json,hashlib,subprocess,platform
+import csv,json,hashlib,subprocess,platform,re
 from pathlib import Path
 from beam_common import ROOT,OUT,BUILD,PLUGIN,identity,write_json
 def digest(path):
@@ -21,6 +21,7 @@ def main():
     selected += ['native_physical'+str(lat)+'/'+name for lat in (12,24) for name in ('result.json','balance.json')]
     selected += ['packaging_check.json']
     selected += ['native_surface_comparison.json']
+    selected += ['fair_reference.json']
     for name in selected:
         p=OUT/name
         if not p.is_file():raise FileNotFoundError(p)
@@ -32,6 +33,10 @@ def main():
     with (evidence/'actual_sofa_trials.csv').open('x',newline='') as f:
         w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(records)
     for folder in ('prototype','v2'):write_json(evidence/(folder+'_compiled_manifest.json'),json.loads((BUILD/folder/'build_manifest.json').read_text()))
+    pairs=[('two_fixed_layer_section','L2_k0','L2_k100'),('four_fixed_layer_section','L4_k0','L4_k100'),('eight_same_compensated_scheme','L8_free_compensated','L8_k100_compensated'),('four_equal_total_material','L4_equal_total_free','L4_equal_total')];ratios={}
+    for label,off,on in pairs:
+        a=json.loads((OUT/'multilayer'/off/'metrics.json').read_text());b=json.loads((OUT/'multilayer'/on/'metrics.json').read_text());ok=a['status']=='PASS' and b['status']=='PASS';ratios[label]=dict(status='PASS' if ok else 'FAIL',ratio=a['tip_deflection_mm']/b['tip_deflection_mm'] if ok else None,off=off,on=on,origin='arithmetic of matched actual SOFA equilibrium values, elastic coupling not vacuum grasp benefit')
+    write_json(evidence/'matched_structural_ratios.json',ratios)
     # Historical strict verifier must identify metadata changes instead of
     # rewriting its manifest to pretend all current sources still match.
     previous=json.loads((ROOT/'reports/CLOSURE_EVIDENCE_MANIFEST.json').read_text());checks=0;errors=[];expected=[]
@@ -54,5 +59,13 @@ def main():
     reports=[p for pattern in ('BEAM_*.md','CONSERVATIVE_BEAM_*.md') for p in (ROOT/'reports').glob(pattern)];binaries=[PLUGIN,BUILD/'prototype/libReGripConservativeBeam.so',BUILD/'clean_final/libReGripConservativeBeam.so',BUILD/'native_beam/libReGripConservativeBeam.so',BUILD/'native_frame/libReGripFrameClosure.so',ROOT/'build/closure_20261115/frame/libReGripFrameClosure.so',ROOT/'build/grasp_20261115/sofa_patched/bin/graph_probe']
     raw={str(p.relative_to(ROOT)):dict(bytes=p.stat().st_size,sha256=digest(p)) for p in sorted(OUT.rglob('*')) if p.is_file()}
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();manifest=dict(baseline_commit='b468346f3277369d92f25cd2f5d5044c29124737',verified_code_commit=commit,branch='development/regrip-conservative-beam-grasp',git_dirty_at_publication=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True)),source_sha256={str(p.relative_to(ROOT)):digest(p) for p in sorted(set(code))},report_sha256={str(p.relative_to(ROOT)):digest(p) for p in sorted(reports)},binary_sha256={str(p.relative_to(ROOT)):digest(p) for p in binaries},evidence_sha256={str(p.relative_to(ROOT)):digest(p) for p in evidence.iterdir() if p.is_file()},raw_files=raw,physical_qualification='FAIL',grasp_optimization='BLOCKED',origins=['actual SOFA','independent linear FEM','mathematical kernel analysis','assumed research parameters'],real_measurements=0,environment=dict(kernel=platform.platform(),python=platform.python_version(),workspace=str(ROOT)),provenance_caveat='queued prototype trials may contain v2 working-tree snapshots; git4d19774 anchored prototype binary/compiled manifest is authoritative; no mixed-version study qualification')
-    write_json(ROOT/'reports/CONSERVATIVE_BEAM_EVIDENCE_MANIFEST.json',manifest);print(dict(raw_files=len(raw),raw_bytes=sum(x['bytes'] for x in raw.values()),trial_records=len(records),historical_errors=errors))
+    runtime=dict(previous['runtime_sha256'])
+    for p in OUT.rglob('stdout.log'):
+        if 'ldd' not in str(p.relative_to(OUT)).lower():continue
+        for line in p.read_text(errors='replace').splitlines():
+            match=re.search(r'=> (/[^ ]+)',line)
+            if match and Path(match[1]).is_file():runtime[match[1]]=digest(match[1])
+    for relative in ('.runtime/sofa-source/Sofa/framework/Simulation/Core/src/sofa/simulation/MappingGraph.h','.runtime/sofa-source/Sofa/framework/Simulation/Core/src/sofa/simulation/MappingGraph.cpp'):
+        runtime[relative]=digest(ROOT/relative)
+    manifest['runtime_sha256']=runtime;manifest['sdk_source_origin']='archive matched to installed git-info7c18e95d5c5f2839079892c69e7d89a313c79603, official weak-parent patch; source archive is not a separate Git checkout';write_json(ROOT/'reports/CONSERVATIVE_BEAM_EVIDENCE_MANIFEST.json',manifest);print(dict(raw_files=len(raw),raw_bytes=sum(x['bytes'] for x in raw.values()),trial_records=len(records),historical_errors=errors))
 if __name__=='__main__':main()

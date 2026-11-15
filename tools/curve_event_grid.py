@@ -20,6 +20,11 @@ def build():
     for p in SOURCES:
         target=out/'sources'/p.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
     hashes={str(p.relative_to(ROOT)):sha(p)for p in SOURCES};write_json(out/'sources.json',hashes)
+    if(BUILD/'build_manifest.json').exists():
+        old=json.loads((BUILD/'build_manifest.json').read_text())
+        if old['sources']!=hashes or old['binary']!=sha(PLUGIN):raise ValueError('immutable event build changed;new build version required')
+        write_json(out/'summary.json',dict(status='PASS',reused_immutable_build=True,**old));return
+    if PLUGIN.exists():raise ValueError('unmanifested existing binary;do not overwrite it')
     for stage,command in[('unit_build',['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',SOURCES[-1],'-o',out/'unit.bin']),('unit',[out/'unit.bin']),('configure',['cmake','-S','models/event_step_clock','-B',BUILD,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(PREFIX)]),('build',['cmake','--build',BUILD,'-j2']),('ldd',['ldd',PLUGIN])]:
         r=logged(command,out/stage,180)
         if r['exit_code']:write_json(out/'summary.json',dict(status='FAIL',stage=stage,process=r));return

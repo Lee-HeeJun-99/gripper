@@ -14,22 +14,36 @@ is retained as history, not the current curved-contact status.
 - Strict-FP native compilation of unchanged kernels: actual path equivalence
   PASS. One runtime pair at21nodes: history .0025→.00125 motion/loss PASS1%;
   repeat/recovery PASS. Half-dt motion PASS .1%,plastic loss .160535% FAIL .1%.
-- Quarter-dt full18s: RUNNING as one recorded,profile-justified1320s exception
-  (4GiB retained), after original900s decision blocked the1164s prediction.
-  Never classify its result before actual completion/analysis.
+- Quarter-dt full18s: ACTUALLY COMPLETED1101.416s under the one recorded1320s
+  exception(4GiB retained). FAIL:global moment relative residual .001031812
+  exceeds .001. Half→quarter motion/loss differences pass,but the underlying
+  physical failure forbids qualification. Base→quarter loss .196644% also FAILS.
 - Checkpoint v2/v3: FAIL trajectory equivalence despite exactly restored force
-  and Jacobian. Not used for qualification. Public MBK/RHS/solution isolation
-  experiment is running; no private engine-state modification.
+  and Jacobian. Public first-step MBK/RHS/solution errors1.735e-18/0/1.098e-25
+  support assembly roundoff amplification. Not used for physics qualification.
 - Actual synchronized8s journal:48000stage rows,X/V/R exactly unchanged;
   kinetic algorithmic residual ≤1.4751e-20. NOT global stored-energy closure.
 - New discrete radial-return energy identity:2000independent states PASS;
-  read-only actual SOFA pre-Commit journal integration is being tested.
+  actual16000step pre-Commit identity residual2.63344e-26,X/V/R exactly unchanged.
+- Independent structural-only compensated summation contrast is now running:
+  actual5000step scope test PASS(object,all rotations,roots,velocities exactly
+  untouched). Actual18s hold at base/half/quarter dt PASS;global moment relative
+  1.99483e-5/3.22488e-5/6.21926e-5 versus1e-3. Actual24s repeat/recovery PASS.
+  Base-dt loss still FAILS time convergence;half→quarter motion/loss PASS.
+  This is a21node half-dt candidate,not full-grasp certification.
+- Its own same-half-dt11/21/41and fine-history revalidation is active.
+- Energy observer has been moved AFTER live structural summation and BEFORE
+  history Commit using public scene APIs. Actual1s/8s X/V/R differences0.
+  Same-run Beam/normal/layer projections,algorithmic cable work and contact
+  return accounting reduce8s derived residual to4.51719e-13;remaining after
+  explicit potential remainders -6.22707e-14. Not yet global qualification.
+  New Frame pressure-return audit passes actual1s;full24s journal is RUNNING.
 - Full12wrench certification,global energy,100mm grasp Optuna remain BLOCKED.
 
 Current raw: `results/autonomous_20261116_curve_a01`,
 `results/autonomous_20261116_full_native_a01`,
 `results/autonomous_20261116_checkpoint_a01` (plus explicit native/scalar controls).
-Last committed source checkpoint: `1d480c5`;additional diagnostic work is active.
+Last committed source checkpoint: `0c6cb77`;additional energy/integrator work is active.
 
 ## Historical checkpoint 2026-11-15 (not current model certification)
 

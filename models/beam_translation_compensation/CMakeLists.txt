@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripBeamTranslationCompensation LANGUAGES CXX)
+find_package(Sofa.Simulation.Core REQUIRED)
+find_package(Sofa.DefaultType REQUIRED)
+add_library(ReGripBeamTranslationCompensation SHARED CompensatedBeamTranslations.cpp)
+target_compile_features(ReGripBeamTranslationCompensation PRIVATE cxx_std_17)
+target_compile_options(ReGripBeamTranslationCompensation PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(ReGripBeamTranslationCompensation PRIVATE Sofa.Simulation.Core Sofa.DefaultType)

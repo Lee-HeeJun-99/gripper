@@ -243,3 +243,68 @@ of production loss or grounds to relabel the actual .160535% dt FAIL. Actual hol
 loss is constant13.9–14in both runs,excluding mean-window sampling bias here.
 Failed build v1(log-file collision),v2(protected accessor),v3(missing includes)
 of the energy diagnostic are preserved;v4uses public API and passes actual run.
+
+### Quarter-step actual failure selects structural summation experiment
+
+The one-off uninterrupted18s run actually finished1101.4157s,exit0,no timeout.
+It FAILS the original physical hold gate:global moment relative .0010318117
+versus .001. All other local hold checks pass. Motion-only half→quarter and
+loss .0361667% pass.1%,but this does NOT override the underlying physical FAIL.
+Base→quarter loss .196644% also FAILS. No full-grasp approval or Optuna trial.
+
+Hypothesis selected from the new evidence:the fine-dt global equilibrium floor
+may involve lost structural position increments. Implemented an independent
+CompensatedBeamTranslations component using the unchanged,previously tested
+Compensated.h kernel. ONLY structural free global X/Z translations are included;
+object,all quaternions,roots and guided Y are excluded. Non-roundoff discrepancy
+or >2ULP change is rejected. This is numerical accumulation,not force/target
+correction. Actual5000step SOFA scope test:object/root/rotation/velocity changes
+EXACTLY0;structural analytical accumulated position recovered exactly,ordinary
+Euler misses1.25056e-12mm. Actual coupled4s profile56.37s PASS;max adjustment
+2.84217e-14mm. A bounded base/half/quarter contrast now runs. New helper means
+new integrator identity:old motion/history/space gates are NOT transferred.
+
+Energy diagnosis continued rather than ending at the quarter campaign:
+read-only actual Beam,Frame and normal-contact Jacobian projections are measured
+at BEGIN and potentials at END.8s v5 journal X/V/R EXACTLY matches baseline.
+Beam quadratic projection5.00869e-9,layer1.12941e-11,normal2.52608e-10 explain
+most of the raw -5.42552e-9 mismatch;their nonlinear remainders stay explicit.
+Remaining1.52549e-10 suggests omitted algorithmic cable work because implicit
+Euler uses f0+hJv,not just f0. A v6 actual journal now measures that term from
+the cable's own Jacobian. No residual is relabelled heat;global energy remains
+BLOCKED pending this independent calculation and full phase/time validation.
+
+### Actual structural arithmetic and synchronized energy results
+
+The independent compensated structural run has now ACTUALLY completed all
+base/half/quarter18s holds:286.225/578.165/1164.952s,all physical checks pass.
+Global moment relative1.99483e-5/3.22488e-5/6.21926e-5 is below unchanged1e-3.
+No object/quaternion/root correction is applied. The standard quarter FAIL
+is not overwritten.24srepeat353.111s passes recovery and identical hold metrics.
+The new arithmetic model's half→quarter motion/loss comparison PASS;base
+time-loss comparisons still FAIL. Independent same-half-dt11/21/41and finer
+history runs are active,not inherited from the old numerical integrator.
+
+Actual v6standard-Euler journal measures algorithmic cable work from its own
+Jacobian.8sbegin-force active work4.2426349333e-6 versus Euler active work
+4.2424824468e-6 differs1.52486561e-10,explaining the prior remaining mismatch.
+With separately derived potential/velocity/return projections,the balance is
+4.83156e-13;after explicit signed potential remainders,-6.21490e-14. None of
+these remainders is assigned to heat. This does not certify full energy yet.
+
+Added a validated observer stage AFTER the same live structural accumulator
+but BEFORE every ForceField history Commit,using public remove/add scene APIs
+while retaining forcefield order. Actual1s and8s paths match the independent
+compensated baseline EXACTLY. v8same-run8s journal records material return and
+Frame loss directly:derived balance4.51719e-13,explicit potential remainder
+5.13990e-13,remaining-6.22707e-14,max contact return residual2.15350e-26.
+
+New independent pressure-cap test separates U(s,z)=.5k(s-z)^2 from the returned
+candidate energy. At fixed s,capacity2→1 releases.15=.10plastic+.05endpoint
+projection;capacity1→.1 releases.0495=.009plastic+.0405projection. This is not
+external mechanical pressure work at fixed stored state,and is not vacuum
+thermodynamics. It motivates a read-only Frame-return bridge,not a new force.
+Actual v9one-second Frame-return residual0,X/V/R unchanged. Full24s v9 journal
+is now running under a900s allowance qualified by actual8s271.54s profile.
+Null pressure/global closure fields are preserved until scope/phase/dt
+qualification is finished. Original894artifact SHA verification still PASS.

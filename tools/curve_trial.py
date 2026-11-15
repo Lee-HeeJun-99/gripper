@@ -4,7 +4,7 @@ from history_trial import analyze
 from birth_monitor import Monitor
 from run_trial import execute_process
 from curve_common import OUT,SDK,FRAME,BEAM,PLUGIN,identity,sha,write_json
-def run(name,history=.0025,nodes=11,dt=.0005,duration=18,profile=False,wall=480,fixed_layout=False,fixed_connectors=False,fixed_cables=False,tributary_mass=False,scalar_solver=False):
+def run(name,history=.0025,nodes=11,dt=.0005,duration=18,profile=False,wall=480,fixed_layout=False,fixed_connectors=False,fixed_cables=False,tributary_mass=False,scalar_solver=False,prepare_only=False):
     ident=identity();base.OUT=OUT;out=base.run(name,nodes=nodes,history=history,dt=dt,duration=24 if profile else duration,prepare_only=True);tree=ET.parse(out/'scene.scn');contact=tree.getroot().find('Node').find('ActiveIntervalContact');contact.tag='CurvedMaterialContact';tree.write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
     if fixed_layout or fixed_connectors or fixed_cables:
         factor=(nodes-1)//10;body=tree.getroot().find('Node')
@@ -27,7 +27,9 @@ def run(name,history=.0025,nodes=11,dt=.0005,duration=18,profile=False,wall=480,
     config=json.loads((out/'config.json').read_text());config.update(duration=4 if profile else duration,profile_only=profile,contact_model='director_Hermite_spatial_virtual_work',tangent_quadrature='immutable material midpoints',normal_quadrature='same immutable material midpoints',history_model='fixed material points no remapping',samples=8,layout_policy=policy)
     config['mass_quadrature']='reference_length_tributary_trapezoid'if tributary_mass else'inherited_equal_mass_per_node'
     config['solver_template']='CompressedRowSparseMatrixd'if scalar_solver else'inherited_Mat3x3_default'
-    steps=round(config['duration']/dt);command=list(map(str,[SDK/'bin/graph_probe',SDK,out/'scene.scn',steps,0,FRAME,BEAM,PLUGIN]));write_json(out/'command.json',command);write_json(out/'config.json',config);write_json(out/'identity.json',ident);monitor=Monitor(out);monitor.thread.start()
+    steps=round(config['duration']/dt);command=list(map(str,[SDK/'bin/graph_probe',SDK,out/'scene.scn',steps,0,FRAME,BEAM,PLUGIN]));write_json(out/'command.json',command);write_json(out/'config.json',config);write_json(out/'identity.json',ident)
+    if prepare_only:return out
+    monitor=Monitor(out);monitor.thread.start()
     try:process=execute_process(command,out,wall)
     finally:monitor.finish()
     write_json(out/'execution_result.json',process)

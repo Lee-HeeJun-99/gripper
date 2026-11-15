@@ -18,22 +18,45 @@ export REGRIP_CURVE_OUT=results/autonomous_20261116_full_native_a01
 $PY tools/curve_qualification.py
 ```
 
-Already launched,do not duplicate or overwrite:
-`curve_quarter_exception.py`→grasp/quarterdt_exception (one1320s profile-qualified
-exception);`curve_return_journal.py`→return_journal_v4;
-`curve_checkpoint_solver_probe.py`→checkpoint_a01/solver_probe_v4.
-These are active bounded children,NOT an automatic future-session restart.
+Completed,do not duplicate or overwrite:
+`curve_quarter_exception.py`→grasp/quarterdt_exception (1101.416s,global moment
+FAIL.001031812);`curve_return_journal.py`→return_journal_v4(PASSlocalidentity);
+`curve_checkpoint_solver_probe.py`→checkpoint_a01/solver_probe_v4(EXPERIMENTAL).
+Completed continuation:transaction_journal_8s_v6 and the independent
+`curve_compensation_campaign.py` under results/autonomous_20261116_beam_compensation_a01.
+Current bounded children:`curve_compensation_refine.py`(same-half-dt mesh/history)
+and `curve_compensation_energy.py --steps 48000`(full24s synchronized journal,v9).
+These are real active processes,NOT an automatic future-session restart.
 Check actual process/results before any resumption;tools refuse existing names.
 The original900s blocked decision and failed checkpoint equivalence remain.
-After quarter completion compare base/half/quarter motion AND plastic loss at
-the same hold window;do not overwrite canonical_completed's original decision.
-Use a separate assessment entry for the profiled exception.
+Actual quarter assessment is separate:quarterdt_actual_assessment.json. Half
+versus quarter motion/loss pass but physical moment failure remains. Original
+canonical_completed's900sblocked decision is not overwritten.
 
 Next meaningful alternatives if loss still fails: separate endpoint-return
 integration error from transport/global virtual work using the new actual
 pre-Commit audit;compare public assembled solver systems before blaming missing
 physical history. No arbitrary damping or friction changes to force PASS.
 Keep grasp optimization blocked pending required convergence/energy gates.
+
+The new observed fine-dt moment floor selected a more immediate test:use the
+preserved Compensated.h arithmetic ONLY on structural free X/Z translations,
+never object/quaternion/root. New component rejects non-roundoff discrepancies
+or >2ULP adjustments. Actual scope test and profile are prerequisites;higher
+resolution full contrasts launch only after base hold and their own profiles.
+Its base/half/quarter hold tests and24srecovery have now actually passed.
+Half→quarter time motion/loss PASS;base time loss FAIL is preserved.
+Do not reuse standard-Euler spatial/history qualification as certification of
+this new integration-arithmetic contrast. Its same-half-dt mesh/history cases
+are running. Use `curve_compensation_assess.py --checkpoint UNIQUE_NAME` after
+actual completion;existing qualification_v1.json is an immutable partial view.
+
+After the full24s journal finishes,inspect all phases and the independently
+derived Frame-return projection. Its first1sactual API/query-purity test PASS.
+Cap-dependent RETURN energy is not fixed-state stored energy:the independent
+pressure test shows released energy must include plastic and projection terms.
+Do not infer vacuum-source work from finite differences of a clipped trial
+potential. Physical vacuum work remains outside this prescribed-cap model.
 
 ## Historical plan (retained; Hermite implementation tasks now performed)
 

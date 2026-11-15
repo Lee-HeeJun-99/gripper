@@ -1,0 +1,77 @@
+{
+  "build/revalidation_20261114_final/plugin/test_forcefield": {
+    "status": "PASS",
+    "process": {
+      "exit_code": 0,
+      "process_status": "exited",
+      "runtime_s": 0.03262577304849401,
+      "pid": 4
+    },
+    "binary_sha256": "cb84dd485d0fe2bbd1fed69ade75d947e55271c065393c79689d1a1a7713a98c",
+    "expected_fault_injection_errors": [],
+    "observed_errors": [],
+    "scope": "unit-only exact expected-error assertions; SOFA scene error policy unchanged"
+  },
+  "build/next_finite_rotation/test_finite_rotation": {
+    "status": "PASS",
+    "process": {
+      "exit_code": 0,
+      "process_status": "exited",
+      "runtime_s": 0.03266527905361727,
+      "pid": 5
+    },
+    "binary_sha256": "fd30c3c631037805a44668afb526e4660b963a2d8c5896610d3ed0757fb63334",
+    "expected_fault_injection_errors": [
+      "[ERROR]   [FiniteRotationShear(unnamed)] nonfinite differential input",
+      "[ERROR]   [FiniteRotationShear(unnamed)] missing matrix/state"
+    ],
+    "observed_errors": [
+      "[ERROR]   [FiniteRotationShear(unnamed)] nonfinite differential input",
+      "[ERROR]   [FiniteRotationShear(unnamed)] missing matrix/state"
+    ],
+    "scope": "unit-only exact expected-error assertions; SOFA scene error policy unchanged"
+  },
+  "build/integrated_20261115/plugin/test_integrated": {
+    "status": "PASS",
+    "process": {
+      "exit_code": 0,
+      "process_status": "exited",
+      "runtime_s": 0.06475380598567426,
+      "pid": 6
+    },
+    "binary_sha256": "5aa9188a467979096b2ecca27dff184a3c2fb04f9d464b82d1f2d99f1f1516e8",
+    "expected_fault_injection_errors": [],
+    "observed_errors": [],
+    "scope": "unit-only exact expected-error assertions; SOFA scene error policy unchanged"
+  },
+  "build/stabilization_20261115/contact_fast/test_stabilization_contact": {
+    "status": "PASS",
+    "process": {
+      "exit_code": 0,
+      "process_status": "exited",
+      "runtime_s": 0.06473543297033757,
+      "pid": 7
+    },
+    "binary_sha256": "5fd5524d1a8fce3e7ee45462fe5a9700a7989a655aa2b01adf55a88174895f46",
+    "expected_fault_injection_errors": [
+      "[ERROR]   [DistributedContact(unnamed)] contact damping matrix/state"
+    ],
+    "observed_errors": [
+      "[ERROR]   [DistributedContact(unnamed)] contact damping matrix/state"
+    ],
+    "scope": "unit-only exact expected-error assertions; SOFA scene error policy unchanged"
+  },
+  "build/stabilization_20261115/compensated/test_compensated": {
+    "status": "PASS",
+    "process": {
+      "exit_code": 0,
+      "process_status": "exited",
+      "runtime_s": 0.002576980972662568,
+      "pid": 8
+    },
+    "binary_sha256": "fc559727e8207e8547d445f91c2aa8d1abcc5053cadf7679d629dd9304362dbc",
+    "expected_fault_injection_errors": [],
+    "observed_errors": [],
+    "scope": "unit-only exact expected-error assertions; SOFA scene error policy unchanged"
+  }
+}

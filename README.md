@@ -138,3 +138,27 @@ PYTHONPATH=.:tools /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/grasp_
 ```
 
 기존45gate와 신규 파지gate는 별도다. 실험 디렉터리 재사용/기존 study 변경으로 증거를 덮지 않는다.
+
+## 보존적 Beam 후속 개발 — 2026-11-15
+
+최신 결과: [최종 보고서](reports/CONSERVATIVE_BEAM_FINAL_REPORT.md),
+[현재 상태](reports/CONSERVATIVE_BEAM_CURRENT_STATUS.md),
+[정확한 재개 명령](reports/CONSERVATIVE_BEAM_NEXT_TASKS.md).
+브랜치 `development/regrip-conservative-beam-grasp`. 기존 브랜치/원본/골든 보존,원격push없음.
+
+별도 SO(3) 에너지 기반 Beam을 C++로 구현하고 힘·접선·객관성·닫힌 경로 일,
+실제 SOFA 캔틸레버/다층/3핑거 전역 모멘트 평형을 검증했다.
+접촉·마찰이력 수렴은 여전히 FAIL,전체 파지 에너지 수지는 미완료이므로
+완전6DOF파지와100mm 파지 최적화는 인증하지 않는다.
+실제24COMPLETE Optuna는 별도100mm 작은평면 LINEAR FEM 구조 연구이며,
+SOFA 후보 메시 검증 FAIL을 보존했다. 실제 PET/진공/제작 최적 성능이 아니다.
+
+```bash
+cmake -S models/conservative_beam -B build/beam_local \
+  -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$PWD/.runtime/closure_sdk"
+cmake --build build/beam_local -j2
+ctest --test-dir build/beam_local --output-on-failure
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/beam_verify_evidence.py --raw
+```
+
+새 raw/build/격리환경은 외장디스크 내부에 유지한다. 기존 실험 이름은 재사용하지 않는다.

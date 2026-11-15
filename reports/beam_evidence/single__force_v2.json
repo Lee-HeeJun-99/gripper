@@ -1,0 +1,64 @@
+{
+  "config": {
+    "nodes": 11,
+    "dt": 0.0005,
+    "duration": 12.0,
+    "axis": 2,
+    "load": -1e-06,
+    "rotation": 0.0,
+    "length": 100.0,
+    "mass": 1e-05,
+    "rayleigh_mass": 2.0,
+    "rayleigh_stiffness": 0.1,
+    "material": {
+      "EA": 183.05824657275383,
+      "GAy": 57.78353742826824,
+      "GAz": 57.78353742826824,
+      "GJ": 8.080808080808083,
+      "EIy": 10.66666666666667,
+      "EIz": 10.66666666666667
+    },
+    "section": "unchanged circular A and equal circular Iy=Iz=8*.4^3/12; GJ=2GI; effective shear5/6 is explicit research assumption",
+    "solver": "EigenSparseLU nonsymmetric",
+    "inherited": false
+  },
+  "status": "PASS",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 9.87824140000157,
+    "pid": 32
+  },
+  "execution_completed": true,
+  "equilibrium": true,
+  "tip_displacement": [
+    -5.823177545494218e-06,
+    0.0,
+    -0.031173602444951164
+  ],
+  "tip_angle_rad": 0.00046874996192832125,
+  "force_residual": 1.1018158543535536e-05,
+  "moment_residual": 6.762799142304848e-11,
+  "global_balance": 1.242089827316688e-06,
+  "speed": 5.64657036307543e-10,
+  "drift": 4.773134318347694e-11,
+  "final_reaction": [
+    1.242089827316688e-12,
+    -0.0,
+    9.999999980476002e-07,
+    -0.0,
+    -9.999999403092363e-05,
+    -0.0
+  ],
+  "full_grasp_certified": false,
+  "raw_path": "results/beam_20261115/single/force_v2",
+  "record_kind": "model_trial_attempt",
+  "metrics_sha256": "0e4b6a0e1f0db81418b5821e9b1e337069a253d10915a4166593c5641d2154ed",
+  "compiled_binary_sha256": "52263d3d0a2e8e49a166ec17077c9c58d2d80f46dd51f304b6547681df146b6f",
+  "compiled_source_sha256": {
+    "models/conservative_beam/AutoDiff.h": "d835303ffe21af05db3b4379428b952c407818002e620d587b98dbab3fc344bf",
+    "models/conservative_beam/ConservativeBeam.cpp": "bfb6964e25db456bec24c066294915c0d09d4a81d2bdb162f8c1560051e18812",
+    "models/conservative_beam/EnergyKernel.h": "4590118dcb74d4c3f76a68737382c59775675e4dc9d51778db5f964ce1dca838",
+    "models/conservative_beam/CMakeLists.txt": "730afde350be968445384e832fd91e425d20ec181d6e2f4ab5cc3ffdcd571fca"
+  }
+}

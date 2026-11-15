@@ -1,0 +1,179 @@
+{
+  "status": "FAIL",
+  "comparisons": [
+    {
+      "name": "repeat",
+      "coarse": "Tz_fixedinit",
+      "fine": "Tz_repeat",
+      "limit": 1e-06,
+      "relative_errors": {
+        "hold_displacement_mm": 0.0,
+        "hold_rotation_increment_rad": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature_8_16",
+      "coarse": "Tz_fixedinit",
+      "fine": "Tz_q16",
+      "limit": 0.01,
+      "relative_errors": {
+        "hold_displacement_mm": 0.02560452919526064,
+        "hold_rotation_increment_rad": 0.010253407461083833
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "quadrature_16_32",
+      "coarse": "Tz_q16",
+      "fine": "Tz_q32",
+      "limit": 0.01,
+      "relative_errors": {
+        "hold_displacement_mm": 0.02546130228400279,
+        "hold_rotation_increment_rad": 0.0016432609741686493
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "mesh_11_21",
+      "coarse": "Tz_q32",
+      "fine": "Tz_n21q32",
+      "limit": 0.01,
+      "relative_errors": {
+        "hold_displacement_mm": 0.03767730503900675,
+        "hold_rotation_increment_rad": 0.001299582365130276
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "mesh_21_41",
+      "coarse": "Tz_n21q32",
+      "fine": "Tz_n41q32_profiled",
+      "limit": 0.01,
+      "relative_errors": {
+        "hold_displacement_mm": 0.0005067877865100305,
+        "hold_rotation_increment_rad": 0.0003906388470042003
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "dt_half",
+      "coarse": "Tz_fixedinit",
+      "fine": "Tz_halfdt",
+      "limit": 0.001,
+      "relative_errors": {
+        "hold_displacement_mm": 0.004499473019088294,
+        "hold_rotation_increment_rad": 4.958848570411e-05
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "history_half",
+      "coarse": "Tz_fixedinit",
+      "fine": "Tz_historyhalf",
+      "limit": 0.01,
+      "relative_errors": {
+        "hold_displacement_mm": 0.027573849295686223,
+        "hold_rotation_increment_rad": 0.00020430551068810428
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "v1_v2_actual",
+      "coarse": "Tz_fixedinit",
+      "fine": "Tz_v2",
+      "limit": 1e-12,
+      "relative_errors": {
+        "hold_displacement_mm": 0.0,
+        "hold_rotation_increment_rad": 0.0
+      },
+      "status": "PASS"
+    }
+  ],
+  "metrics": {
+    "Tz_fixedinit": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.463042678598848e-06,
+      "hold_rotation_increment_rad": 0.00020813380464781585,
+      "global_force_residual": 1.9418932499341842e-05,
+      "global_moment_residual": 3.074262280291714e-06,
+      "bounded_hold_pass": true,
+      "recovery_pass": true
+    },
+    "Tz_repeat": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.463042678598848e-06,
+      "hold_rotation_increment_rad": 0.00020813380464781585,
+      "global_force_residual": 1.9418932499341842e-05,
+      "global_moment_residual": 3.074262280291714e-06,
+      "bounded_hold_pass": true,
+      "recovery_pass": true
+    },
+    "Tz_q16": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.351621459882563e-06,
+      "hold_rotation_increment_rad": 0.00021028999363757058,
+      "global_force_residual": 2.1001700812456333e-05,
+      "global_moment_residual": 9.225208882934242e-05,
+      "bounded_hold_pass": true,
+      "recovery_pass": false
+    },
+    "Tz_q32": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.243574526108617e-06,
+      "hold_rotation_increment_rad": 0.00020994499921364094,
+      "global_force_residual": 2.088533588694846e-05,
+      "global_moment_residual": 6.866087847476157e-05,
+      "bounded_hold_pass": true,
+      "recovery_pass": false
+    },
+    "Tz_n21q32": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.4097209265969e-06,
+      "hold_rotation_increment_rad": 0.00021021819507278705,
+      "global_force_residual": 2.2750245264047116e-05,
+      "global_moment_residual": 0.00025686092689131997,
+      "bounded_hold_pass": true,
+      "recovery_pass": false
+    },
+    "Tz_halfdt": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.483214782551718e-06,
+      "hold_rotation_increment_rad": 0.0002081441261998423,
+      "global_force_residual": 9.25833001843429e-05,
+      "global_moment_residual": 1.814043561632755e-05,
+      "bounded_hold_pass": true,
+      "recovery_pass": false
+    },
+    "Tz_historyhalf": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.589595493052437e-06,
+      "hold_rotation_increment_rad": 0.00020809129045045062,
+      "global_force_residual": 1.6920125565401952e-05,
+      "global_moment_residual": 2.7234488698523593e-06,
+      "bounded_hold_pass": true,
+      "recovery_pass": false
+    },
+    "Tz_v2": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.463042678598848e-06,
+      "hold_rotation_increment_rad": 0.00020813380464781585,
+      "global_force_residual": 1.9418932499341842e-05,
+      "global_moment_residual": 3.074262280291714e-06,
+      "bounded_hold_pass": true,
+      "recovery_pass": true
+    },
+    "Tz_n41q32_profiled": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.411956852444328e-06,
+      "hold_rotation_increment_rad": 0.00021013610774594323,
+      "global_force_residual": 5.408774903653545e-05,
+      "global_moment_residual": 0.0005253161845623909,
+      "bounded_hold_pass": true,
+      "recovery_pass": false
+    }
+  },
+  "source_caveat": "prototype v1 binary frozen; some queued v1 records captured v2 working-tree snapshots. Compiled prototype manifest anchored to git4d19774 is authoritative. v2 compiled-source guard is strict; 100-state E/F/J equivalence and same-configuration actual v1-v2 are separate equivalence evidence, not mixed-study qualification.",
+  "full_grasp_gate": false,
+  "grasp_optimization_status": "BLOCKED"
+}

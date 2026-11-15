@@ -1,0 +1,59 @@
+{
+  "config": {
+    "nodes": 11,
+    "dt": 0.0005,
+    "duration": 12.0,
+    "axis": 2,
+    "load": -1e-06,
+    "rotation": 0.0,
+    "length": 100.0,
+    "mass": 1e-05,
+    "rayleigh_mass": 2.0,
+    "rayleigh_stiffness": 0.1,
+    "material": {
+      "EA": 183.05824657275383,
+      "GAy": 57.78353742826824,
+      "GAz": 57.78353742826824,
+      "GJ": 8.080808080808083,
+      "EIy": 10.66666666666667,
+      "EIz": 10.66666666666667
+    },
+    "section": "unchanged circular A and equal circular Iy=Iz=8*.4^3/12; GJ=2GI; effective shear5/6 is explicit research assumption",
+    "solver": "EigenSparseLU nonsymmetric",
+    "inherited": false
+  },
+  "status": "PASS",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 14.756936772959307,
+    "pid": 44
+  },
+  "execution_completed": true,
+  "equilibrium": true,
+  "tip_displacement": [
+    -5.823177545494218e-06,
+    0.0,
+    -0.031173602444951164
+  ],
+  "tip_angle_rad": 0.00046874996192832125,
+  "force_residual": 1.1018158543535536e-05,
+  "moment_residual": 6.762799142304848e-11,
+  "global_balance": 1.242089827316688e-06,
+  "speed": 5.64657036307543e-10,
+  "drift": 4.773134318347694e-11,
+  "final_reaction": [
+    1.242089827316688e-12,
+    -0.0,
+    9.999999980476002e-07,
+    -0.0,
+    -9.999999403092363e-05,
+    -0.0
+  ],
+  "full_grasp_certified": false,
+  "raw_path": "results/beam_20261115/single/force_repeat",
+  "record_kind": "model_trial_attempt",
+  "metrics_sha256": "bce9b274e155f9ba536252cada32f2cad4930de7962e01e77d88e991ee3b0714",
+  "compiled_binary_sha256": "d4c648a1befab5bba931b8df435c29dcc148c5d745f30ba6fa19e7970797201f",
+  "compiled_source_sha256": {}
+}

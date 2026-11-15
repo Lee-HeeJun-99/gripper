@@ -494,3 +494,40 @@ its own measured rate controls whether an8.2s cold-start follow-up is safe.
 The8.2s prefix was selected from observed loss ending around8.12s,not as a
 replacement for full24s hold/release certification. No checkpoint restart,
 load/friction/damping reduction,object correction or relaxed criterion used.
+
+### Independent immutable element refinement — actual implementation
+
+Implemented a NEW `PatchRefinedContact` in models/patch_refined_contact,
+preserving original curved/history components and binaries. Explicit immutable
+per-reference-element spacings change only prepare-time material counts.
+The same one-million-total-state and per-element allocation guards remain.
+An empty vector reproduces the original global-spacing path. The entire
+spacing vector joins the frozen signature,so mid-trial changes are rejected.
+This is numerical resolution,not a new friction law or a moving remapper.
+
+Five declared source transforms are reversed independently;the ENTIRE frozen
+parent generated source is restored byte-for-byte. Force/Jacobian/return/
+transport/Commit bodies are unchanged. Actual SDK API on explicit refinement
+PASS,FD6.75082e-10,analytic plane loss5.1e-5,query/Commit/matrix/factor tests
+and invalid/mutated-grid rejection PASS. Actual4s empty-vector path matches
+parent X/V/R exactly,137.117s. This is not just a compile-only claim.
+
+Predeclared local region90--100mm on all6layers keeps immutable sites for the
+whole trial,including detached states. Background .00125mm,local625/312.5nm
+uses528000/624000states,below the original million-site memory cap. It does
+NOT silently remove the original component's global .001mm guard. Arbitrary
+future contact may leave this predeclared region;no universal qualification
+is inferred. Actual4s local profiles are running before bounded8.2s cold starts.
+
+The original component's .001mm prefix completed302.340s.7–8.2s loss is
+4.39536177605e-14Fmm versus4.40497175516e-14 at.00125,relative.218639%PASS1%.
+All observed prefix phase-loss contrasts PASS1%;late pressure/release are
+NOT covered. Its own measured rate justified one finite1320s full24s run,
+currently active. Independent new-grid normal reference at actual13.99s
+PASS,relative errors3.6854e-6/3.6854e-6/3.1156e-6/4.6566e-7(coarse/timefine/
+mesh41/historyfine),separately demonstrating small normal quadrature error.
+
+v15 new-grid fine8s completed489.679s,PASS,X/V/R0,explicit discrete residual
+-3.06377e-19. Fine24s measured forecast1733.038s exceeds1320s policy,attempts0,
+BLOCKED;not an observed server/session timeout. Research moved to the local
+refinement component rather than declaring the final objective complete.

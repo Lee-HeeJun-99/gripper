@@ -11,7 +11,7 @@ from run_trial import execute_process
 from trial_validation import read_states
 from closure_frame_evaluate import relative_angles
 TEMPLATE=ROOT/'results/closure_20261115/threefinger/trials/wrenches_Tzplus'
-def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.01,pressure=.001,tension=.001,mu=.3,shape=0):
+def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.01,pressure=.001,tension=.001,mu=.3,shape=0,prepare_only=False):
     if not name.replace('_','').isalnum() or nodes not in (11,21,41) or samples not in (8,16,32) or axis not in range(6) or shape not in (0,1,2) or not .001<=history<=.02 or not .000125<=dt<=.001 or duration not in (18.,24.):raise ValueError('bounded grasp configuration')
     if not all(math.isfinite(v) for v in (load,pressure,tension,mu)) or min(pressure,tension,mu)<0:raise ValueError('physical inputs')
     out=OUT/'grasp'/name;out.mkdir(parents=True,exist_ok=False);tree=ET.parse(TEMPLATE/'scene.scn');root=tree.getroot();root.set('dt',str(dt));body=root.find('Node');config=json.loads((TEMPLATE/'config.json').read_text());seq=lambda v:' '.join(map(str,v));n=nodes;obj=6*n;angles=(0,2*math.pi/3,-2*math.pi/3);poses=[]
@@ -20,12 +20,18 @@ def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.
         for layer in (0,1):
             for i in range(n):poses.append([*(origin+100*i/(n-1)*ex+(layer-.5)*.4*ez),0,math.sin(angle/2),0,math.cos(angle/2)])
     poses.append([95,0,0,0,0,0,1]);edges=[j for layer in range(6) for i in range(n-1) for j in (layer*n+i,layer*n+i+1)];body.find('MechanicalObject').set('position',seq(v for p in poses for v in p));body.find('MeshTopology').set('lines',seq(edges));inertia=[10,10,10] if shape==0 else ([25/4+100/12,12.5,25/4+100/12] if shape==1 else [50/3]*3);masses=[[.00006/obj,1,1,0,0,0,1,0,0,0,1] for _ in range(obj)]+[[.0001,1,inertia[0],0,0,0,inertia[1],0,0,0,inertia[2]]];body.find('DiagonalMass').set('vertexMass',seq(v for row in masses for v in row));old=body.find('BeamFEMForceField');body.remove(old);ET.SubElement(body,'ConservativeBeam',name='new_beam',edges=seq(edges),**{k:str(v) for k,v in material().items()});body.find('FixedProjectiveConstraint').set('indices',seq(i*n for i in range(6)));body.find('PartialFixedProjectiveConstraint').set('indices',seq(range(obj)))
+    # Recorder.init queries all fields. Put the beam BEFORE observers so its
+    # reference edges exist at the first observer query; initial failure retained.
+    newbeam=body.find('ConservativeBeam');body.remove(newbeam);body.insert(3,newbeam)
     for f,e in enumerate(body.findall('FrameLayerNetwork')):e.set('nodesPerLayer',str(n));e.set('startIndex',str(2*f*n));e.set('pressureValues',seq([0,pressure,0]));e.set('filename',str(out/f'layer{f}.csv'))
     for layer,e in enumerate(body.findall('RoutedCable')):e.set('route',seq(range(layer*n,(layer+1)*n)));e.set('commandValues',seq([0,tension,0]))
     contact=body.find('ActiveIntervalContact')
     for k,v in dict(segments=seq(edges),objectIndex=obj,samples=samples,historySpacing=history,mu=mu,shape=shape,filename=out/'contact.csv').items():contact.set(k,str(v))
     e=body.find('SpatialLoad');e.set('index',str(obj));e.set('axis',str(axis));e.set('values',seq([0,load,0]));body.find('IntegratedRecorder').set('filename',str(out/'state.txt'));tree.write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
-    config.update(nodes=n,samples=samples,dt=dt,duration=duration,axis=axis,load=load,history_spacing=history,pressure=pressure,tension=tension,mu=mu,shape=shape,object_index=obj,object_inertia_per_mass=inertia,model_version='conservative_midpoint_rod_guided3finger_v1',beam_material=material(),template_config_sha256=sha(TEMPLATE/'config.json'),template_scene_sha256=sha(TEMPLATE/'scene.scn'));write_json(out/'config.json',config);steps=round(duration/dt);command=[str(SDK/'bin/graph_probe'),str(SDK),str(out/'scene.scn'),str(steps),'0',str(FRAME),str(PLUGIN)];write_json(out/'command.json',command);record=dict(status='FAIL',config=config,identity=identity(),full_grasp_certified=False);p=execute_process(command,out,480);record['process']=p
+    config.update(nodes=n,samples=samples,dt=dt,duration=duration,axis=axis,load=load,history_spacing=history,pressure=pressure,tension=tension,mu=mu,shape=shape,object_index=obj,object_inertia_per_mass=inertia,model_version='conservative_midpoint_rod_guided3finger_v1',beam_material=material(),template_config_sha256=sha(TEMPLATE/'config.json'),template_scene_sha256=sha(TEMPLATE/'scene.scn'));write_json(out/'config.json',config);steps=round(duration/dt);command=[str(SDK/'bin/graph_probe'),str(SDK),str(out/'scene.scn'),str(steps),'0',str(FRAME),str(PLUGIN)];write_json(out/'command.json',command);record=dict(status='FAIL',config=config,identity=identity(),full_grasp_certified=False)
+    if prepare_only:
+        write_json(out/'prepared_only.json',dict(status='NOT RUN',config=config,identity=identity(),scope='configuration only, not an executed or successful physics trial'));return out
+    p=execute_process(command,out,480);record['process']=p
     try:
         log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text()
         if p['exit_code'] or '[ERROR]' in log or f'{steps} iterations done' not in log:raise ValueError('SOFA error/timeout/incomplete')
@@ -35,7 +41,7 @@ def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.
             local=relative_angles(np.broadcast_to(np.array([0,math.sin(angle/2),0,math.cos(angle/2)]),x[:,2*finger*n:2*(finger+1)*n,3:].shape),x[:,2*finger*n:2*(finger+1)*n,3:])
             if local.max()>=.005 or abs(x[:,:obj,[3,5]]).max()>1e-8:raise ValueError('unchanged small-planar layer domain exceeded')
         scale=abs(load)/(5 if axis>=3 else 1) if load else 1e-6;fr=float(abs(R[tail,obj,:3]).max()/scale);mr=float(abs(R[tail,obj,3:]).max()/(scale*5));disp=float(np.linalg.norm(x[hold,obj,:3]-x[before,obj,:3],axis=1).max());ang=float((2*np.arctan2(np.linalg.norm(x[:,obj,3:6],axis=1),abs(x[:,obj,6]))).max());rotincrement=float(relative_angles(np.broadcast_to(x[before,obj,3:],x[tail,obj,3:].shape),x[tail,obj,3:]).max());speed=float(abs(v[tail,obj,:3]).max());omega=float(abs(v[tail,obj,3:]).max());support=np.zeros_like(R[tail]);support[:,:obj: n,:]=-R[tail,:obj:n,:]
-        for i in free:support[:,i,[1,3,5]]=-R[tail,i,[1,3,5]]
+        for i in free:support[:,i,[1,3,5]]=-R[tail][:,i][:,[1,3,5]]
         arm=x[tail,:,:3]-x[tail,obj:obj+1,:3];resultF=support[:,:,:3].sum(axis=1);resultM=(support[:,:,3:]+np.cross(arm,support[:,:,:3])).sum(axis=1)
         if axis<3:resultF[:,axis]+=load
         else:resultM[:,axis-3]+=load

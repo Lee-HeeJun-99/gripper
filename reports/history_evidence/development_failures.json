@@ -1,0 +1,21 @@
+{
+  "scope": "Observed development failures; original tool output retained in session, not fabricated file logs",
+  "failures": [
+    {
+      "command": "cmake -S tests/contact_history_extra -B build/history_20261115/extra -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=.runtime/closure_sdk",
+      "observation": "Sofa.CoreConfig.cmake not found with relative prefix",
+      "correction": "rerun with absolute external-disk prefix; configuration succeeded"
+    },
+    {
+      "command": "build/history_20261115/extra/history_prescribed",
+      "observation": "FAIL fixed patch stick",
+      "cause": "test mistakenly treated Sphere normal as constant under tangential displacement",
+      "correction": "use Box face for the stated flat-normal analytic reference, not looser tolerance; separate Sphere circular-normal test retained"
+    },
+    {
+      "observation": "first campaign_v3 postprocessing NameError: steps undefined",
+      "original_evidence": "results/history_20261115/campaign_v3.json",
+      "correction": "fix analyzer; preserve raw and original FAIL; separate recovered_metrics.json with logically inferred exit0 and unknown wall time; direct repeated run records OS result"
+    }
+  ]
+}

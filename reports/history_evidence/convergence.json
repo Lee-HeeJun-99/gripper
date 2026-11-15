@@ -1,0 +1,269 @@
+{
+  "status": "FAIL",
+  "comparisons": {
+    "normal_8_16": {
+      "status": "PASS",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 3.7198428768416645e-10,
+        "hold_rotation_increment_rad": 1.563938758319667e-12
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 1.5799697094804992e-15,
+        "hold_rotation_increment_rad": 3.281066824484258e-16
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "normal_q16"
+    },
+    "normal_16_32": {
+      "status": "PASS",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 4.1870839518342935e-10,
+        "hold_rotation_increment_rad": 3.2114684605887747e-12
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 1.7784261408903927e-15,
+        "hold_rotation_increment_rad": 6.737503350368046e-16
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "normal_q16",
+      "fine": "normal_q32"
+    },
+    "tangent_cell_2_4": {
+      "status": "PASS",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 6.889567058175461e-09,
+        "hold_rotation_increment_rad": 1.0142023339801596e-13
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 2.926281484109342e-14,
+        "hold_rotation_increment_rad": 2.1277467635028025e-17
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "cell_order4"
+    },
+    "history_01_005": {
+      "status": "PASS",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.009536155869452967,
+        "hold_rotation_increment_rad": 0.000299062844781016
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 4.0121358365559535e-08,
+        "hold_rotation_increment_rad": 6.276068771783995e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "history_half"
+    },
+    "history_005_0025": {
+      "status": "FAIL",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.013403268505258855,
+        "hold_rotation_increment_rad": 8.346530574293608e-05
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 5.7157514169536925e-08,
+        "hold_rotation_increment_rad": 1.751731228594091e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "history_half",
+      "fine": "history_quarter"
+    },
+    "mesh_11_21": {
+      "status": "FAIL",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.03482748992331648,
+        "hold_rotation_increment_rad": 0.0014503597772811835
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 1.5326443766207858e-07,
+        "hold_rotation_increment_rad": 3.0472032328066685e-07
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "n21"
+    },
+    "mesh_21_41": {
+      "status": "PASS",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.007824408485209615,
+        "hold_rotation_increment_rad": 0.00043698229617492837
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 3.470421278144157e-08,
+        "hold_rotation_increment_rad": 9.176979852757155e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "n21",
+      "fine": "n41"
+    },
+    "time_half": {
+      "status": "FAIL",
+      "limit": 0.001,
+      "relative_difference": {
+        "hold_displacement_mm": 0.003590087346793831,
+        "hold_rotation_increment_rad": 8.575786773777477e-05
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 1.5303513127862187e-08,
+        "hold_rotation_increment_rad": 1.7993123174541532e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "dt_half"
+    },
+    "time_quarter": {
+      "status": "FAIL",
+      "coarse": "dt_half",
+      "fine": "dt_quarter",
+      "failed_attempts": {
+        "dt_quarter": "SOFA error/timeout/incomplete"
+      }
+    },
+    "repeat": {
+      "status": "PASS",
+      "limit": 1e-06,
+      "relative_difference": {
+        "hold_displacement_mm": 0.0,
+        "hold_rotation_increment_rad": 0.0
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 0.0,
+        "hold_rotation_increment_rad": 0.0
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "repeated"
+    }
+  },
+  "grasp_optimization": "BLOCKED",
+  "reason": "all contact/history/space/time and needed energy prerequisites must pass; no grasp objectives executed",
+  "cases": {
+    "base": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.247409799830711e-06,
+      "hold_rotation_increment_rad": 0.0002097950963248959,
+      "global_force_residual": 2.1340144603677887e-05,
+      "global_moment_residual": 7.03918306564806e-05,
+      "recovery_pass": true,
+      "friction_dissipation": 2.944371020268246e-11
+    },
+    "cell_order4": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.247409829093526e-06,
+      "hold_rotation_increment_rad": 0.00020979509632487462,
+      "global_force_residual": 2.1273617633113525e-05,
+      "global_moment_residual": 7.364084227937279e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 3.269353696243763e-11
+    },
+    "dt_half": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.2627133129585735e-06,
+      "hold_rotation_increment_rad": 0.00020981308944807044,
+      "global_force_residual": 7.97345793990961e-05,
+      "global_moment_residual": 8.470863563001492e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 1.792174885047485e-11
+    },
+    "history_half": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.207288441465152e-06,
+      "hold_rotation_increment_rad": 0.00020985785701261374,
+      "global_force_residual": 2.1396295976291998e-05,
+      "global_moment_residual": 7.337745846591573e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 6.653464273971304e-11
+    },
+    "history_quarter": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.264445955634689e-06,
+      "hold_rotation_increment_rad": 0.00020987537432489968,
+      "global_force_residual": 1.9963767184522082e-05,
+      "global_moment_residual": 5.9935281943642574e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 8.585844900507818e-11
+    },
+    "n21": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.40067423749279e-06,
+      "hold_rotation_increment_rad": 0.00021009981664817657,
+      "global_force_residual": 2.4153106164409573e-05,
+      "global_moment_residual": 0.00024036786060903712,
+      "recovery_pass": false,
+      "friction_dissipation": 3.0273167436699124e-11
+    },
+    "n41": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.4353784502742315e-06,
+      "hold_rotation_increment_rad": 0.000210008046849649,
+      "global_force_residual": 5.3617923252355364e-05,
+      "global_moment_residual": 0.000509162530421079,
+      "recovery_pass": false,
+      "friction_dissipation": 3.033740906066857e-11
+    },
+    "normal_q16": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.247409801410681e-06,
+      "hold_rotation_increment_rad": 0.000209795096325224,
+      "global_force_residual": 2.1140569004575446e-05,
+      "global_moment_residual": 7.396722898891579e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 2.9443710203090095e-11
+    },
+    "normal_q32": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.247409799632255e-06,
+      "hold_rotation_increment_rad": 0.00020979509632589776,
+      "global_force_residual": 2.0974033165636893e-05,
+      "global_moment_residual": 7.615812204508388e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 2.944371020253939e-11
+    },
+    "repeated": {
+      "status": "EXPERIMENTAL",
+      "bounded_hold_pass": true,
+      "hold_displacement_mm": 4.247409799830711e-06,
+      "hold_rotation_increment_rad": 0.0002097950963248959,
+      "global_force_residual": 2.1340144603677887e-05,
+      "global_moment_residual": 7.03918306564806e-05,
+      "recovery_pass": true,
+      "friction_dissipation": 2.944371020268246e-11
+    }
+  },
+  "sources": {
+    "base": "results/history_20261115/grasp/base/recovered_metrics.json",
+    "cell_order4": "results/history_20261115/grasp/cell_order4/metrics.json",
+    "dt_half": "results/history_20261115/grasp/dt_half/recovered_metrics.json",
+    "dt_quarter": "results/history_20261115/grasp/dt_quarter/metrics.json",
+    "dt_quarter_profile": "results/history_20261115/grasp/dt_quarter_profile/metrics.json",
+    "history_half": "results/history_20261115/grasp/history_half/recovered_metrics.json",
+    "history_quarter": "results/history_20261115/grasp/history_quarter/metrics.json",
+    "n21": "results/history_20261115/grasp/n21/metrics.json",
+    "n41": "results/history_20261115/grasp/n41/metrics.json",
+    "n41_profile": "results/history_20261115/grasp/n41_profile/metrics.json",
+    "normal_q16": "results/history_20261115/grasp/normal_q16/metrics.json",
+    "normal_q32": "results/history_20261115/grasp/normal_q32/recovered_metrics.json",
+    "profile_v1": "results/history_20261115/grasp/profile_v1/metrics.json",
+    "quarter_profile": "results/history_20261115/grasp/quarter_profile/metrics.json",
+    "repeated": "results/history_20261115/grasp/repeated/metrics.json"
+  }
+}

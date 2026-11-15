@@ -37,7 +37,7 @@ def main():
 This is the IFT for a frozen previous state and a local straight chord, not full SE(3) continuous dynamics. Root value uses double geometry; its AD derivative uses the same SDF normal. The transported post-birth increment is used in both scalar Commit and AD Force/Jacobian. A grazing denominator is explicitly rejected relative to chord length; no epsilon denominator is substituted. Full-step resolved birth/death chords are rejected and require actual substeps. ULP-scale unresolvable negative signed gaps are counted explicitly, not reported as resolved CCD.
 
 60 smooth Sphere/Cylinder/Box birth force/Jacobian cases have max normalized FD error 1.3005749602279515e-9. Boundary branches are tested separately; no differentiability is asserted at contact, slip, endcap or corner transitions. The original .01-mm missing increment is recovered. See build unit stdout and independent math_events logs.'''),
-      '02_SOFA_INTEGRATION':('PASS API scope; EXPERIMENTAL full model',r'''Independent `BirthAwareContact` is generated at configure time from the preserved production contact source plus new `BirthLaw.h`, `Crossing.h`, `HistoryCommit.inc`, `Journal.inc`. Old MaterialHistoryContact/Beam/golden/binaries are not replaced. Generated code and all transitive source hashes are checked before every run.
+      '02_SOFA_INTEGRATION':('PASS API scope; EXPERIMENTAL full model',r'''Independent `BirthAwareContact` is generated at configure time from the preserved production contact source plus new `BirthLaw.h`, `Crossing.h`, `HistoryCommit.inc`, `Journal.inc`. Old MaterialHistoryContact/Beam/golden/binaries are not replaced. Generated code and all transitive source hashes are checked before every run. Earlier failed v1..v4 prototypes preserve raw/binary/generated-code/hash manifests, but not every historical header snapshot was versioned before subsequent fixes; full clean source reconstruction of each failed prototype is a limitation. Approved current v8_clean sources and successful v7 core are versioned separately.
 
 Actual addForce/addDForce/buildStiffnessMatrix accumulator tests include kFactor 0,2.5,-.25, finite differences, action/reaction and torque. Scalar Commit and AD next-state agree to 2.01e-17; scalar observer wrench versus AD agrees to 5.64e-18. Duplicate AnimateEnd at one time cannot Commit twice. Force/Jacobian/energy/record queries are pure. Pre-step implicit force evaluation still precedes end-state birth Commit: endpoint correction does NOT itself split the ODE event.'''),
       '03_GRID_BOUNDARY':('PASS unit scope; history convergence not implied',r'''Collapsed clipped intervals return the mathematically defined zero-capacity contact-boundary limit rather than dividing by u-l or replacing that denominator by epsilon. Exact and adjacent grid boundary cases, inactive state, recontact and finite derivatives are tested.
@@ -92,11 +92,13 @@ New24-COMPLETE independent linear-structure Optuna study has two Pareto candidat
 ```bash
 PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
 $PY tools/birth_assess.py
-$PY -m unittest discover -s tests -p 'test_*.py'
 $PY tools/birth_verify.py --raw
+mkdir -p results/birth_recheck_01
+REGRIP_CLOSURE_OUT=results/birth_recheck_01 $PY tools/closure_validation_suite.py unit --suffix _isolated
+REGRIP_CLOSURE_OUT=results/birth_recheck_01 $PY tools/closure_validation_suite.py golden --suffix _isolated
 ```
 
-New experiments require NEW OUT/build paths; see NEXT_TASKS. Per-case command/config/identity/stdout/stderr/state/metrics/resource samples are under campaign/grasp. Compiled source/binary/generated hashes are in build_manifest and this manifest. Reports distinguish actual SOFA, independent FEM, independent math and assumptions; there are no new material measurements.
+Choose a fresh recheck name on repeated invocations; the launcher refuses overwrite. Do NOT run the historical Python suite without its isolated environment. New experiments require NEW OUT/build paths; see NEXT_TASKS. Per-case command/config/identity/stdout/stderr/state/metrics/resource samples are under campaign/grasp. Compiled source/binary/generated hashes are in build_manifest and this manifest. Reports distinguish actual SOFA, independent FEM, independent math and assumptions; there are no new material measurements.
 '''
     (ROOT/'reports/BIRTH_ENERGY_FINAL_REPORT.md').write_text(final)
     (ROOT/'reports/BIRTH_ENERGY_CURRENT_STATUS.md').write_text(final+'\nDetailed next steps: BIRTH_ENERGY_NEXT_TASKS.md.\n')

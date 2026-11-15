@@ -29,7 +29,12 @@ def createScene(root):
     root.addObject('FreeMotionAnimationLoop')
     solver=root.addObject('BlockGaussSeidelConstraintSolver',name='constraints',tolerance=1e-10,maxIterations=1000,computeConstraintForces=True)
     root.addObject('CollisionPipeline',depth=10,verbose=0,draw=0);root.addObject('BruteForceBroadPhase');root.addObject('BVHNarrowPhase')
-    root.addObject('MinProximityIntersection',alarmDistance=.01,contactDistance=0)
+    # This detector uses unsigned triangle-point distance. Zero contactDistance
+    # cannot retain a contact after a zero-thickness surface crosses the point.
+    # Positive offset is an explicit numerical skin, requiring its own study.
+    buffer=float(os.environ.get('REGRIP_CONTACT_BUFFER','.001'))
+    if not 0<buffer<.01:raise ValueError('native contact buffer outside research range')
+    root.addObject('MinProximityIntersection',alarmDistance=.01,contactDistance=buffer,useSurfaceNormals=True)
     root.addObject('CollisionResponse',response='FrictionContactConstraint',responseParams='mu='+str(c['mu']))
     body=root.addChild('Multilayer')
     for element in xml.find('Node'):

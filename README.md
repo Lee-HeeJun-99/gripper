@@ -2,6 +2,11 @@
 
 # ReGrip — Ubuntu SOFA 개발 및 검증
 
+최신 접촉/렌치 연구(2026-11-15): [CLOSURE 상태](reports/CLOSURE_CURRENT_STATUS.md),
+[검증 보고서](reports/CLOSURE_FINAL_REPORT.md), [정확한 재개 명령](reports/CLOSURE_NEXT_TASKS.md).
+기존 검증 모델과 새 guided three-finger/SDF/native surface 연구 모델을 구분한다.
+100mm 파지 최적화는 필수 물리 gate 통과 전까지 BLOCKED이며 실물 인증은 아니다.
+
 다음 단계 개발: [FINAL_DEVELOPMENT_REPORT.md](reports/FINAL_DEVELOPMENT_REPORT.md),
 [현재 상태](reports/CURRENT_STATUS.md), [재개 명령](reports/NEXT_TASKS.md).
 기존 검증 모델은 보존하고 별도 3D 접선 컴포넌트·100 mm 연구 장면·다층 정적 FEM을 추가했다.

@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "checks": {
+    "exit_clean": true,
+    "complete_two_cycles": true,
+    "loaded_fd_stable": true,
+    "unloaded_fd_stable": true,
+    "two_contact_streams_closed": true,
+    "live_plateau": true
+  },
+  "original_classifier_status": "FAIL",
+  "original_result_sha256": "6176a0e0a3234b72c26a9454fdaeafca87bb7c506cded59440f2a267b171c426",
+  "original_reason": "original max(all FDs)==min(all FDs) incorrectly compared loaded scene against unloaded scene; two contact streams are intentionally open only while loaded. No physical tolerance changed.",
+  "live_growth_last60000": [
+    64,
+    -128
+  ],
+  "boundaries": [
+    {
+      "name": "loaded",
+      "rss_kib": 71632,
+      "pss_kib": 67686,
+      "private_dirty_kib": 13456,
+      "fds": 7
+    },
+    {
+      "name": "animated",
+      "rss_kib": 74836,
+      "pss_kib": 70854,
+      "private_dirty_kib": 14836,
+      "fds": 7
+    },
+    {
+      "name": "animated",
+      "rss_kib": 74836,
+      "pss_kib": 70879,
+      "private_dirty_kib": 14836,
+      "fds": 7
+    },
+    {
+      "name": "unloaded",
+      "rss_kib": 70360,
+      "pss_kib": 66403,
+      "private_dirty_kib": 10104,
+      "fds": 5
+    },
+    {
+      "name": "loaded",
+      "rss_kib": 73776,
+      "pss_kib": 69819,
+      "private_dirty_kib": 13520,
+      "fds": 7
+    },
+    {
+      "name": "animated",
+      "rss_kib": 75476,
+      "pss_kib": 71573,
+      "private_dirty_kib": 15220,
+      "fds": 7
+    },
+    {
+      "name": "animated",
+      "rss_kib": 75476,
+      "pss_kib": 71492,
+      "private_dirty_kib": 15220,
+      "fds": 7
+    },
+    {
+      "name": "unloaded",
+      "rss_kib": 70376,
+      "pss_kib": 66392,
+      "private_dirty_kib": 10120,
+      "fds": 5
+    }
+  ],
+  "scope": "2x120000 latest structural/cable/pressure/adaptive-contact/free-body steps; full hold only first24s, later released; NOT hours or native triangle pipeline"
+}

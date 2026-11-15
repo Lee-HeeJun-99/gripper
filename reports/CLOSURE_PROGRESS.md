@@ -31,3 +31,20 @@ Native접촉은구현/API/질량/topology실패를보존하며원인분리중. �
 장시간시간적분4 child상한(각pool2),짧은독립진단1개/컴파일2job 별도상한.
 물리child4GiB/최대480s/core dump0/timeout kill-reap. 기존DB/raw덮어쓰기없음.
 전체campaign은고유실험유한리스트,무한재시도금지. 실물측정0건.
+
+## 유한 campaign 종료 시점 추가 기록 (이전 기록 보존)
+
+- 실제76개 물리trial metrics와별도diagnostics 수행. 실패대조군·초기실패·timeout도보존.
+- 2핑거11개 접촉수렴 비교 PASS;41노드q16↔32차.053853%,mesh11↔41차.5973045%,dt차.02602475%.
+- 2핑거±Tz FAIL을physical3finger배치로비교. 3핑거12국소유지/해제복원 PASS,
+  그러나전체moment FAIL/공간history수렴FAIL. q41고차2회+독립retry1회각480s한계,추가무한재시도안함.
+- 고정반력까지재구성한3핑거Y모멘트2.26294929813e-5,live27960step fieldaudit로Beam원인분리.
+  Layer토크합≈1.94e-12,cable각≤6.1e-18,contact≈3.96e-20. 가상보정torque추가안함.
+- Native0buffer실패후명시적.001/.0005mm buffer둘다지속반력. impulse/dt검증,차.00712443%.
+- Beam프레임회전닫힌일의비보존순환확인,전체에너지BLOCKED. 완화/임의potential/미구현0대입없음.
+- Python73,C++신규3/기존5,신규커널ASan/UBSan/LSan PASS. 이전실패LSan sandbox로그도보존.
+- matchedSDK600시점골든2회 PASS,원본Python600FREE/전단과XML비교 PASS(과도응답,정적평형아님).
+- matchedSDK2×120000step/2unload memory bounded PASS,FD판정오류는별도audit에서수정근거기록.
+- 3finger실측2401frame 재생 PASS. Headless원칙유지,실제GUI/실물측정없음.
+- 100mm Optuna 신규0trial,BLOCKED를기록. 이전30mm24COMPLETE/3PRUNED를새결과로표시하지않음.
+- 코드d3a343d까지기능단위로컬커밋. 최종보고/해시/재개명령보존후문서커밋,원격push없음.

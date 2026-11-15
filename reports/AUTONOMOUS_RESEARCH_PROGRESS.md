@@ -549,3 +549,50 @@ exit0 or requested XML. Old v1binary/source/raw/incorrect original assessment
 remain intact. New v2build/API/actual uniform/local contrasts are separate.
 No physical threshold was relaxed. This is a project implementation fix,
 not evidence of an engine or physical-law defect.
+
+### Applied v2 results,real timeout and a distinct recording alternative
+
+V2actual90SDKstates PASS:objectivity3.0531e-16,internal force2.7756e-17,
+moment7.1665e-18,Jacobian covariance8.8818e-16,query/Commit0. Actual immutable
+local625nm4s287.302s and8.2s478.444s completed. Parent1250->local625prefix
+phase loss contrasts PASS1%;this does not cover late pressure/release.
+
+Local312.5nm/default recording ACTUALLY TIMED OUT480.011s,exit-9,last complete
+state3.945s. Its identical longer prefix is BLOCKED,attempts0. A different
+pure-recording contrast(200instead20) at625nm completed250.088s versus
+287.302s:observed~13%gain,not an isolated benchmark or proof of dominant I/O.
+Full4s X/V/R and every common contact CSV value match EXACTLY. Finer312.5nm
+record2004s completed404.776s with exact state/contact agreement through the
+ACTUAL old timeout prefix3.945s;the reference is explicitly not complete4s.
+This retains every force evaluation/Commit and changes only recorded cadence.
+It is NOT used to approve undersampled full-cycle contact/energy gates.
+
+New312.5nm8.2s/record200 started with measured forecast801.457s,finite900s and
+4GiB. Planning allowance10%is backed by two actual same-grid profile/prefix
+rate ratios1.039555/.925167,not a changed physical tolerance. The old timeout
+and old blocked decision remain. Current finer prefix is a real child,not an
+automatic future restart.
+
+Original-component1000nm full24s completed827.740s,hold/recoveryPASS;global
+force/moment relative1.61582e-6/1.72270e-5. Peak movement4.91751578307e-6mm,
+rotation.000210707781458rad. Whole loss1.062965101515e-10Fmm. Nevertheless
+1250->1000late15–16s loss1.085017% FAIL1%(absolute5.6300e-16Fmm). Full
+contrast remains FAIL;the1.25refinement factor is not a factor-two certificate.
+
+### Stateful exact scalar yield-front reference,not a3D SOFA replacement
+
+Dense point refinement is expensive and can still miss thin yield bands.
+Implemented an independent piecewise-quadratic MATERIAL HISTORY FUNCTION
+for a fixed1Ddomain/normal,prescribed parabolic Coulomb capacity and quadratic
+increment. Each trial splits exact quadratic yield roots,returns branchwise,
+and integrates force/energy/loss with Gauss3(exact degree4in exact arithmetic).
+No interpolation of already-clipped point states or moving quadrature history.
+Trial queries are pure;stale/double Commit is rejected;piece count bounded8192.
+
+Actual independent C++120step load-reversal/cap-change test PASS,max10pieces.
+Virgin loss versus separate closed reference relative7.02389e-14;endpoint
+energy identity residual3.93814e-30;incremental potential derivative error
+2.08155e-12. Projection is an explicitly derived ENDPOINT algorithmic term,
+not heat or a fitted residual. This model has NO3D normal transport,contact
+birth/death,moving patch,SOFA API or full-grasp certification. Those remain
+NOT RUN;its purpose is a rigorous stateful reference for the next algorithm.

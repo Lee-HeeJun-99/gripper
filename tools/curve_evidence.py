@@ -45,6 +45,8 @@ def main():
         phase=ROOT/'results/autonomous_20261116_phase_grid_a01'
         for case in ('slip_front/coarse24','slip_front/history24','energy_v15_coarse_4s','energy_v15_fine_4s','energy_v15_fine_8s','energy_v15_fine_24s','history1000nm_prefix82_v1','history1000nm_full24_v1','patch_refinement_v2/uniform_profile4','patch_refinement_v2/local625_profile4','patch_refinement_v2/local312_profile4','patch_refinement_v2/local625_prefix82','patch_refinement_v2/local312_prefix82','patch_refinement_v2/invariants'):
             if not(phase/case/'summary.json').is_file():raise ValueError('continuation still active '+case)
+        for case in('patch_refinement_v2/local625_profile4_record200','patch_refinement_v2/local312_profile4_record200','patch_refinement_v2/local312_prefix82_record200','patch_refinement_v2/checks_v2'):
+            if not(phase/case/'summary.json').is_file():raise ValueError('refinement still active '+case)
     for name in cohorts:
         if not(ROOT/'results'/name).is_dir():raise ValueError('missing evidence cohort '+name)
     dest=ROOT/'reports/curved_evidence'/args.version;dest.mkdir(parents=True,exist_ok=False)

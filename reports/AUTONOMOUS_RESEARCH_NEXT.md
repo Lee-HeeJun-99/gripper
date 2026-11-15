@@ -1,5 +1,41 @@
 # Next research checkpoint
 
+## NEWEST — independent element-refined contact v2 is running
+
+Do NOT accept v1local625/local312 runner PASSs as refinement:SOFA ignored
+their unregistered edgeSpacing attribute. Original stdout/raw/assessments are
+preserved;reports/curved_evidence/PATCH_V1_INVALIDATION.json overrides that
+interpretation. V1direct-field API tests were insufficient for XML registration.
+
+Independent v2 fixes Data construction. Actual SDKAPI now checks findData and
+string parsing;FD6.75082e-10 PASS. Six reversible source transforms restore
+the ENTIRE frozen parent source exactly. Actual v2uniform4s142.441s matches
+parent X/V/R exactly and logs480000states/120elements. Runtime ldd resolves
+all6SOFA libraries to Matching SDK. Actual local profiles now log528000/
+624000states,so refinement is genuinely active. They are currently running,
+along with original-component1000nm full24s. Inspect their actual summaries
+before any command. No automatic restart is installed.
+
+```bash
+# Same PY/environment exports below;from external-drive ReGrip root.
+# Only if own profile PASS and exact prefix path is ABSENT:
+$PY tools/curve_patch_trial.py --spacing .000625 --prefix
+$PY tools/curve_patch_trial.py --spacing .0003125 --prefix
+# Separate new evidence filename;never overwrite preliminary judgments:
+$PY tools/curve_patch_assess.py --version completed
+```
+
+Both profiles preserve4GiB/480s. Prefix8.2s requires an actual measured own
+forecast <=900s,else BLOCKED with attempts0. Local resolution is immutable
+on reference90--100mm,not moving-patch remapping or uniform full-interface
+refinement. Early prefix success cannot certify late pressure/release,
+full energy,mesh/dt or12wrench grasp. Inspect original1000nm full24metrics
+for original hold/recovery and late-phase loss once complete.
+
+v15actual NEW-grid fine8s489.679s PASS,X/V/R0,residual-3.06377e-19. Fine24
+forecast1733.038s exceeds1320s policy,attempts0. This is a recorded POLICY
+block,NOT observed environment/session exhaustion or research completion.
+
 ## Newest checkpoint — phase-resolved slip-front investigation
 
 Prior Hermite implementation,11/21/41 runs,new-grid24s dynamics,repeat,

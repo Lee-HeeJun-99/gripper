@@ -14,6 +14,12 @@ from trial_validation import read_states
 from birth_monitor import Monitor
 
 
+def grid_log_check(log,total,elements):
+    records=[json.loads(line[len('PATCH_GRID '):])for line in log.splitlines()if line.startswith('PATCH_GRID ')]
+    valid=bool(records)and'Unused Attribute'not in log and all(g['states']==total and g['elements']==elements for g in records)
+    return valid,records
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--spacing',type=float,default=.00125,choices=(.00125,.000625,.0003125));p.add_argument('--prefix',action='store_true');a=p.parse_args()
     duration=8.2 if a.prefix else 4;label={.00125:'uniform',.000625:'local625',.0003125:'local312'}[a.spacing]
@@ -47,8 +53,7 @@ def main():
     try:process=execute_process(command,out,wall)
     finally:monitor.finish()
     log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text();passed=process['exit_code']==0 and'[ERROR]'not in log and'Unused Attribute'not in log and f'{steps} iterations done'in log;differences={};phases={}
-    actual_grids=[json.loads(line[len('PATCH_GRID '):])for line in log.splitlines()if line.startswith('PATCH_GRID ')]
-    passed&=bool(actual_grids)and all(g['states']==total and g['elements']==len(spacings)for g in actual_grids)
+    grid_valid,actual_grids=grid_log_check(log,total,len(spacings));passed&=grid_valid
     if passed:
         if a.spacing==.00125:
             first=[r for r in read_states(parent/'state.txt')if r['time']<=duration+1e-8];second=read_states(out/'state.txt')

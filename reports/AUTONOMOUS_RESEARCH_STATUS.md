@@ -1,5 +1,13 @@
 # Autonomous research status — active continuation 2026-11-16
 
+LATEST IMPLEMENTATION:independent PatchRefinedContact v2,actual registered
+SOFA Data/API/FD PASS,empty-vector4s parent X/V/Rexact. V1local profiles are
+INVALIDATED (Unused Attribute);their original raw remains. V2actual grids
+528000/624000states confirmed;local4s profiles are running before bounded
+prefix contrasts. Original1000nm full24s also running. See TOP of NEXT for
+the current processes/paths rather than old "running" chronology below.
+Global goal is NOT complete;physical thresholds/old failures remain intact.
+
 NEWEST:actual Hermite implementation and11/21/41dynamics are completed.
 New phase-grid21→41spacePASS;full-cycle time loss.0682459%PASS.1%,history
 loss.06299997%PASS1%,repeatX/V/R0. Additional small-phase time/history FAILs

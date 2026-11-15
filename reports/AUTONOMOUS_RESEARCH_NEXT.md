@@ -1,5 +1,42 @@
 # Next research checkpoint
 
+## Active continuation 2026-11-16 — implementation is no longer pending
+
+The tested Hermite map is now integrated in `models/curved_contact`,with actual
+11/21/41-node SOFA runs and original spatial limits. Do NOT repeat the old
+"implement Hermite" task below. Current priority is full time/loss qualification
+of the fixed-hardware,tributary-mass21node candidate,then synchronized energy.
+11→21 still FAILS;21→41PASSES. Do not relabel the coarse model as qualified.
+
+Current commands (external-drive project root):
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+export REGRIP_BEAM_PLUGIN=build/autonomous_20261116_full_native_a01/beam/libReGripConservativeBeam.so
+export REGRIP_CURVE_BUILD=build/autonomous_20261116_curve_native_a01/v1
+export REGRIP_CURVE_OUT=results/autonomous_20261116_full_native_a01
+$PY tools/curve_qualification.py
+```
+
+Already launched,do not duplicate or overwrite:
+`curve_quarter_exception.py`→grasp/quarterdt_exception (one1320s profile-qualified
+exception);`curve_return_journal.py`→return_journal_v4;
+`curve_checkpoint_solver_probe.py`→checkpoint_a01/solver_probe_v4.
+These are active bounded children,NOT an automatic future-session restart.
+Check actual process/results before any resumption;tools refuse existing names.
+The original900s blocked decision and failed checkpoint equivalence remain.
+After quarter completion compare base/half/quarter motion AND plastic loss at
+the same hold window;do not overwrite canonical_completed's original decision.
+Use a separate assessment entry for the profiled exception.
+
+Next meaningful alternatives if loss still fails: separate endpoint-return
+integration error from transport/global virtual work using the new actual
+pre-Commit audit;compare public assembled solver systems before blaming missing
+physical history. No arbitrary damping or friction changes to force PASS.
+Keep grasp optimization blocked pending required convergence/energy gates.
+
+## Historical plan (retained; Hermite implementation tasks now performed)
+
 Read FINAL_REPORT,STATUS,assessment.json and manifest first. Do not rerun the
 immutable a01campaign in-place. Work inside external-drive ReGrip directory.
 

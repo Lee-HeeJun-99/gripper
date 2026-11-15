@@ -1,4 +1,37 @@
-# Autonomous research status — checkpoint 2026-11-15
+# Autonomous research status — active continuation 2026-11-16
+
+The prior stop was an agent-selected campaign checkpoint, NOT an observed
+session timeout or exhausted system resource. It did not complete the user's
+research objective. Development has resumed; the historical checkpoint below
+is retained as history, not the current curved-contact status.
+
+- Actual new `CurvedMaterialContact` SOFA integration: implemented, clean-built,
+  dense-map/API/FD/objectivity/action-reaction tested; ConservativeBeam unchanged.
+- Actual 11/21/41-node dynamics completed. Inherited all-node connectors/cable
+  routing changed physical hardware with mesh; separate controls expose this.
+- Fixed hardware plus derived uniform-density tributary masses: 11→21 motion
+  1.597823% FAIL;21→41 .423918% PASS against unchanged1% criterion.
+- Strict-FP native compilation of unchanged kernels: actual path equivalence
+  PASS. One runtime pair at21nodes: history .0025→.00125 motion/loss PASS1%;
+  repeat/recovery PASS. Half-dt motion PASS .1%,plastic loss .160535% FAIL .1%.
+- Quarter-dt full18s: RUNNING as one recorded,profile-justified1320s exception
+  (4GiB retained), after original900s decision blocked the1164s prediction.
+  Never classify its result before actual completion/analysis.
+- Checkpoint v2/v3: FAIL trajectory equivalence despite exactly restored force
+  and Jacobian. Not used for qualification. Public MBK/RHS/solution isolation
+  experiment is running; no private engine-state modification.
+- Actual synchronized8s journal:48000stage rows,X/V/R exactly unchanged;
+  kinetic algorithmic residual ≤1.4751e-20. NOT global stored-energy closure.
+- New discrete radial-return energy identity:2000independent states PASS;
+  read-only actual SOFA pre-Commit journal integration is being tested.
+- Full12wrench certification,global energy,100mm grasp Optuna remain BLOCKED.
+
+Current raw: `results/autonomous_20261116_curve_a01`,
+`results/autonomous_20261116_full_native_a01`,
+`results/autonomous_20261116_checkpoint_a01` (plus explicit native/scalar controls).
+Last committed source checkpoint: `1d480c5`;additional diagnostic work is active.
+
+## Historical checkpoint 2026-11-15 (not current model certification)
 
 Branch `development/regrip-autonomous-research`; baseline63970172ad196e0add3ad42a67ccaee4c7a8975e.
 Raw campaign `results/autonomous_20261115_a01`,compiled physical component

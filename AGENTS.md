@@ -64,3 +64,12 @@
 - models/contact_kinematics/HermiteMap.h is a mathematical candidate,not integrated SOFA contact. Curved geometry requires correct torque/virtual-work pullback and conservative curved-contact bounds,not just changing sampled positions.
 - Restored historical tools/research_trial.py is NOT the new runner. Use tools/autonomous_trial.py. New build/output names are mandatory;record source and generated hashes before compilation.
 - Global energy and100mm grasp optimization remain blocked. Committed plastic agreement or scalar energy identities do not certify global energy/force closure/real PET performance.
+
+## CURVED CONTACT active continuation (2026-11-16)
+
+- Hermite contact is now actually SOFA-integrated in models/curved_contact;the prior mathematical-only statement above is historical. Preserve its original material-point source/binary and manifest.
+- Pure mesh tests must preserve physical connector/cable positions. Derived tributary masses preserve total mass;record this independent mass-quadrature contrast,not a fitted material change. Coarse11→21 still fails1%;fine21→41passes.
+- Same-runtime half-dt motion passes but friction-loss .160535% fails.1%. Do not certify time/energy from movement alone.
+- Checkpoint q/v/time/contact/layer/cable restore has force/Jacobian error0 but subsequent path FAILS equivalence. Do not qualify chunked quarter-step output from it.
+- One explicitly recorded1320s quarter-dt exception follows actual1164s profile;4GiB and ≤4long children retained. Previous900s blocked result remains immutable. No unbounded retries or automatic session restart.
+- Endpoint-return energy projection is derived separately from Coulomb loss and detachment. A local identity or kinetic-step residual is not global stored-energy closure.

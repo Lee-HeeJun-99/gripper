@@ -195,3 +195,51 @@ process exceeding480/900s. This is not yet implemented or certified,and is NOT
 an automatic session restart. q/v,time,contact history,layer plastic state,
 cable rest lengths and counters must round-trip and match uninterrupted SOFA
 before any chunked physics result is accepted. No existing physics is changed.
+
+### Continued actual experiments: restart,return energy and bounded quarter dt
+
+Checkpoint v2/v3 were actually implemented and FAILED the8s path equivalence
+test. All q/v/time,reference geometry,contact material state,layer plastic state,
+cable rest lengths and counters are serialized with hashes. Restored total force
+AND public assembled force Jacobian agree EXACTLY. Nevertheless max8s X/V/R
+differences are1.41068e-8/2.06759e-7/3.39792e-10. These are failed diagnostic
+results,not approved restart physics. A v4 public actual linear-system comparison
+isolates the first resumed step:MBK differs1.73472e-18,RHS0,solution1.09759e-25.
+This supports roundoff/assembly-history amplification at nonsmooth friction,
+without establishing that every possible state omission is excluded. No engine
+private state is touched;symbol-hidden bridges only read/write public OWN model
+state. Uninterrupted quarter-step dynamics are used instead.
+
+An explicit one-attempt1320s exception was recorded BEFORE execution from the
+actual258.7566s4s quarter-step profile(1164.4s predicted18s).4GiB/≤4children
+remain. Original900s blocked decision is preserved. This is a bounded
+profile-supported exception under the user's exception policy,not an observed
+environment timeout,physical threshold change or automatic session restart.
+Full18s quarter run is active;no result is assumed before completion.
+
+Actual root-level synchronized journal now covers8s(cable/pressure/torque):
+16000transactions,48000rows,X/V/R exactly unchanged,max kinetic algorithmic
+residual1.47501e-20. Global stored-energy closure is still BLOCKED.
+
+Derived an independent identity of the EXISTING tangent radial return:
+U1-U0=kt e1·d-cap|p|-.5kt|e1-T e0|². The endpoint projection is mathematically
+derived and separately labelled,not fitted heat.2000independent states PASS.
+Actual read-only pre-Commit SOFA journal:16000steps,852births/39deaths;
+plastic4.82067560e-11,endpoint projection9.30527841e-13,detachment6.02313505e-18,
+max weighted identity residual2.63344e-26,X/V/R exactly unchanged. This local
+material-frame identity is NOT equivalence to global nodal work.
+
+Matched actual8s energy journals expose -5.42552e-9 unexplained balance before
+unmeasured pressure/geometry/nonlinear terms. It is not assigned to dissipation.
+A global-J quadratic proxy predicts5.34978e-9 but cannot be labelled conservative
+energy because friction J is nonconservative. Therefore a new actual Beam-ONLY
+quadratic-projection journal is running;the nonlinear remainder is explicit.
+
+Independent1Dmonotone slider experiment shows the inherited endpoint-capacity
+plastic-loss formula is first-order in time even with exact final plastic state:
+relative error.883584%→.442184%→.221483%→.111133%→.055664%→.027857%.
+An event-integrated reference matches the analytic work;this is NOT a replacement
+of production loss or grounds to relabel the actual .160535% dt FAIL. Actual hold
+loss is constant13.9–14in both runs,excluding mean-window sampling bias here.
+Failed build v1(log-file collision),v2(protected accessor),v3(missing includes)
+of the energy diagnostic are preserved;v4uses public API and passes actual run.

@@ -39,7 +39,13 @@ public:
  void inventory(const char*stage){
   sofa::core::MechanicalParams mp;auto*x=state->read(sofa::core::vec_id::read_access::position);auto*v=state->read(sofa::core::vec_id::read_access::velocity);double beam=0,layer=0,contact=0,wire=0,K=0,layerPlastic=0;
   for(auto*f:fields)if(f->getClassName()=="FrameLayerNetwork"){auto*d=f->findData("dissipatedEnergy");if(!d)throw std::runtime_error("layer own dissipation Data absent");layerPlastic+=std::stod(d->getValueString());}
-  for(auto*f:fields){auto name=f->getClassName();if(name=="ConservativeBeam")beam+=f->getPotentialEnergy(&mp,*x);else if(name=="FrameLayerNetwork")layer+=f->getPotentialEnergy(&mp,*x);else if(name=="CurvedMaterialContact")contact+=f->getPotentialEnergy(&mp,*x);else if(name=="RoutedCable")wire+=f->getPotentialEnergy(&mp,*x);else if(dynamic_cast<sofa::core::behavior::Mass<Types>*>(f)){if(root->getGravity().norm()!=0)throw std::runtime_error("nonzero gravity energy unsupported");}else if(name!="SpatialLoad")throw std::runtime_error("unidentified forcefield energy scope: "+std::string(name));}
+  for(auto*f:fields){auto name=f->getClassName();if(name=="ConservativeBeam")beam+=f->getPotentialEnergy(&mp,*x);else if(name=="FrameLayerNetwork")layer+=f->getPotentialEnergy(&mp,*x);else if(name=="CurvedMaterialContact"){
+#ifdef REGRIP_VALUE_ENERGY
+   contact+=curveReturnedEnergy(f);
+#else
+   contact+=f->getPotentialEnergy(&mp,*x);
+#endif
+  }else if(name=="RoutedCable")wire+=f->getPotentialEnergy(&mp,*x);else if(dynamic_cast<sofa::core::behavior::Mass<Types>*>(f)){if(root->getGravity().norm()!=0)throw std::runtime_error("nonzero gravity energy unsupported");}else if(name!="SpatialLoad")throw std::runtime_error("unidentified forcefield energy scope: "+std::string(name));}
   for(auto*m:masses)K+=m->getKineticEnergy(&mp,*v);for(double value:{beam,layer,contact,wire,K,extWork,actWork})if(!std::isfinite(value))throw std::runtime_error("nonfinite transaction inventory");
   if(std::string(stage)=="pre_commit"){preContact=contact;preLayer=layer;}
   if(std::string(stage)=="post_commit"){maxCommitContact=std::max(maxCommitContact,std::abs(contact-preContact));maxCommitLayer=std::max(maxCommitLayer,std::abs(layer-preLayer));}
@@ -80,7 +86,7 @@ public:
  void post(){if(posts+1!=ends)throw std::runtime_error("post-commit ordering");++posts;inventory("post_commit");out.flush();}
 };
 int main(int argc,char**argv){try{
- if(argc!=8&&argc!=9)throw std::invalid_argument("SDK SCENE STEPS OUTPUT FRAME BEAM CONTACT [after_structural_compensation]");if(argc==9&&std::string(argv[8])!="after_structural_compensation")throw std::invalid_argument("unknown observation stage");int steps=std::stoi(argv[3]);if(steps<1||steps>48000)throw std::invalid_argument("bounded transaction steps");std::ifstream exists(argv[4]);if(exists)throw std::runtime_error("refuse old journal");
+ if(argc!=8&&argc!=9)throw std::invalid_argument("SDK SCENE STEPS OUTPUT FRAME BEAM CONTACT [after_structural_compensation]");if(argc==9&&std::string(argv[8])!="after_structural_compensation")throw std::invalid_argument("unknown observation stage");int steps=std::stoi(argv[3]);if(steps<1||steps>96000)throw std::invalid_argument("bounded transaction steps");std::ifstream exists(argv[4]);if(exists)throw std::runtime_error("refuse old journal");
  sofa::simulation::graph::init();sofa::simpleapi::init();sofa::helper::system::PluginRepository.addFirstPath(std::string(argv[1])+"/lib");sofa::simulation::Simulation::theSimulation=sofa::simpleapi::createSimulation("DAG");for(int i=5;i<8;++i)if(!sofa::simpleapi::importPlugin(argv[i]))throw std::runtime_error("plugin");auto root=sofa::simulation::node::load(argv[2]);if(!root)throw std::runtime_error("scene");sofa::simulation::node::initRoot(root.get());auto*body=root->getChild("Multilayer");if(!body)throw std::runtime_error("body");auto journal=sofa::core::objectmodel::New<Journal>();journal->root=root.get();journal->state=dynamic_cast<State*>(body->getMechanicalState());if(!journal->state)throw std::runtime_error("rigid state");auto*ctx=static_cast<sofa::core::objectmodel::BaseContext*>(body);
  for(auto*f:ctx->getObjects<FF>(sofa::core::objectmodel::BaseContext::Local))journal->fields.push_back(f);for(auto*m:ctx->getObjects<sofa::core::behavior::Mass<Types>>(sofa::core::objectmodel::BaseContext::Local))journal->masses.push_back(m);
 #ifndef REGRIP_NORMAL_AUDIT

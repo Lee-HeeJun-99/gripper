@@ -18,3 +18,5 @@ extern "C" __attribute__((visibility("default"))) NormalInventory curveNormalSna
  sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*);
 extern "C" __attribute__((visibility("default"))) double curveNormalEnergy(
  sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*);
+extern "C" __attribute__((visibility("default"))) double curveReturnedEnergy(
+ sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*);

@@ -25,6 +25,9 @@ extern "C" double curveNormalEnergy(sofa::core::behavior::ForceField<sofa::defau
  for(unsigned e=0;e<c->grids.size();++e){const auto&g=c->grids[e];auto range=c->bounds(c->interval(x,e),g.count);for(int i=range.first;i<=range.last;++i){auto p=c->point(x,e,(i+.5)/g.count);auto r=regrip_history::value(p,o,{},c->shape.getValue(),c->radius.getValue(),c->halfHeight.getValue(),c->pointRadius.getValue(),c->lineStiffness.getValue(),c->tangentLineStiffness.getValue(),0);energy+=g.length/g.count*r.wrench.energy;}}
  return energy;
 }
+extern "C" double curveReturnedEnergy(sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*f){
+ auto*c=checkedContact(f);return c->computeValue(c->getMState()->read(sofa::core::vec_id::read_access::position)->getValue()).a.energy;
+}
 extern "C" ReturnInventory auditCurveReturn(sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*f){
  using Contact=regrip_integrated::CurvedMaterialContact;
  if(f->getClassName()!="CurvedMaterialContact")throw std::runtime_error("audit contact class");

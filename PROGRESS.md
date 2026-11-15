@@ -65,3 +65,11 @@
 - 장시간 기계적 SOFA 장면에서 RSS 증가를 새로 발견했다. 원인 분리 대조를 수행했으나 아직 해결하지 못했다.
 - Optuna0trial 및 Python3.12 차단은 유지. 신규 연구를 실제 그리퍼/진공 성능 인증으로 표시하지 않는다.
 - 최종 상태/실제 수치/재개 명령은 reports/FINAL_DEVELOPMENT_REPORT.md와 CURRENT_STATUS.md/NEXT_TASKS.md.
+
+## GRASP 최신 후속 실행
+
+과거 Optuna0/Python차단 기록은 당시상태로 보존한다. 이번에는 실제 Optuna24COMPLETE,
+원본Python600회귀,8층quarterdt,elastic stick/slip와6방향24s 유지·해제·복원,
+별도SOFA메모리패치 최소시험을 실행했다. 접촉공간수렴FAIL/rank5/전체에너지BLOCKED은 남아있다.
+상세/정확 재현명령: reports/GRASP_FINAL_VERIFICATION_REPORT.md,GRASP_NEXT_TASKS.md.
+전체파지목표는 미완료,원격push없음,실물측정0건.

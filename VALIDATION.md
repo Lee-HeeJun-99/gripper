@@ -148,3 +148,12 @@ sampler, SQLite study, Pareto 검증 경로는 실행하지 못했다.
 기본 OFF 유연성 유지와 ON 강성 증가·슬립 감소는 현재 모형에서 확인했으나,
 실제 PET의 질량/힘 단위·방향별 물성, 마찰, 압력, 필름 손상, 큰 회전,
 챔버, tendon 및 100 mm 실물의 성능은 확인하지 않았다.
+
+## GRASP 최신 추가 검증
+
+위 Optuna미실행 등의 문단은 과거기록이다. 새 실제 실행은 reports/GRASP_10_FULL_VALIDATION.md와
+GRASP_FINAL_VERIFICATION_REPORT.md에 분리했다. Optuna27시도/24완료,원본Python/골든600,
+elastic stick/API/67Python/8층quarterdt/최소SDK메모리시험은 신규PASS범위다.
+6방향 구형물체 hold/복원 하위gate PASS와 완전파지 인증을 구분한다.
+접촉공간수렴 FAIL,rank5 한계,전체에너지 BLOCKED로 일반자유파지 및 파지최적화는 미완료.
+실물성능은 여전히 NOT RUN. 기존45gate를 신규3D접촉의 인증으로 합산하지 않는다.

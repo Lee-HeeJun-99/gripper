@@ -118,3 +118,18 @@ Python 3.12 설치를 해결하면 원본 SofaPython3 scene도 별도로 재현�
 [통합 보고서](reports/INTEGRATED_FINAL_REPORT.md),
 [재개/재현 명령](reports/INTEGRATED_NEXT_TASKS.md),
 [증거 manifest](reports/INTEGRATED_EVIDENCE_MANIFEST.json)를 우선 참조한다.
+
+## 2026-11-15 GRASP 후속 실행 (현재)
+
+이전 문단은 당시 기록이며 최신 상태는 [GRASP 보고서](reports/GRASP_FINAL_VERIFICATION_REPORT.md)와
+[재개 명령](reports/GRASP_NEXT_TASKS.md)이다. 개발 브랜치는 `development/regrip-validated-grasp`,원격push없음.
+elastic stick/slip,동일조건 sphere6방향 유지·24s해제/복원 하위gate,8층quarterdt,
+실제 Optuna24완료,원본 SofaPython3/600golden,별도 MappingGraph 수정 최소엔진을 실제검증했다.
+접촉 공간수렴 FAIL/rank5/전체에너지 BLOCKED이므로 완전6DOF파지·실물성능·파지최적화는 미완료다.
+설치SOFA/시스템Python은 덮어쓰지 않았다. 새 raw/build/격리환경은 외장디스크 안에 유지한다.
+
+```bash
+PYTHONPATH=.:tools /home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/grasp_verify_evidence.py --raw
+```
+
+기존45gate와 신규 파지gate는 별도다. 실험 디렉터리 재사용/기존 study 변경으로 증거를 덮지 않는다.

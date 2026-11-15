@@ -1,0 +1,80 @@
+--- a/Sofa/framework/Simulation/Core/src/sofa/simulation/MappingGraph.cpp
++++ b/Sofa/framework/Simulation/Core/src/sofa/simulation/MappingGraph.cpp
+@@ -91,11 +91,14 @@
+                 current->accept(visitor);
+             }
+ 
+-            for (auto& parent : current->m_parents)
++            for (auto& weakParent : current->m_parents)
+             {
+-                if (parent->m_pendingCount == 0)
++                if (const auto parent = weakParent.lock())
+                 {
+-                    nodes.push(parent.get());
++                    if (parent->m_pendingCount == 0)
++                    {
++                        nodes.push(parent.get());
++                    }
+                 }
+             }
+         }
+@@ -230,11 +233,14 @@
+ 
+             current->accept(visitor);
+ 
+-            for (auto& parent : current->m_parents)
++            for (auto& weakParent : current->m_parents)
+             {
+-                if (parent->m_pendingCount == 0)
++                if (const auto parent = weakParent.lock())
+                 {
+-                    nodes.push(parent.get());
++                    if (parent->m_pendingCount == 0)
++                    {
++                        nodes.push(parent.get());
++                    }
+                 }
+             }
+         }
+@@ -402,7 +408,7 @@
+ void MappingGraph::addEdge(BaseMappingGraphNode* from, BaseMappingGraphNode* to)
+ {
+     from->m_children.push_back(to->shared_from_this());
+-    to->m_parents.push_back(from->shared_from_this());
++    to->m_parents.push_back(from->weak_from_this());
+ }
+ 
+ }  // namespace sofa::simulation
+--- a/Sofa/framework/Simulation/Core/src/sofa/simulation/mappinggraph/BaseMappingGraphNode.h
++++ b/Sofa/framework/Simulation/Core/src/sofa/simulation/mappinggraph/BaseMappingGraphNode.h
+@@ -70,11 +70,13 @@
+      */
+     bool isMapped() const;
+ 
+-    const sofa::type::vector<SPtr>& getParents() const { return m_parents; }
++    const sofa::type::vector<std::weak_ptr<BaseMappingGraphNode>>& getParents() const { return m_parents; }
+     const sofa::type::vector<SPtr>& getChildren() const { return m_children; }
+ 
+ private:
+-    sofa::type::vector<SPtr> m_parents;   ///< prerequisite nodes (nodes pointing to this one)
++    /// Weak back-reference avoids an owning parent/child cycle. Ownership stays
++    /// in MappingGraph::m_allNodes and each parent's owning m_children.
++    sofa::type::vector<std::weak_ptr<BaseMappingGraphNode>> m_parents;
+     sofa::type::vector<SPtr> m_children;  ///< dependent nodes (nodes pointed from this one)
+ 
+     // Mutable counter used during traversal (reset before each traversal).
+--- a/Sofa/framework/Simulation/Core/src/sofa/simulation/mappinggraph/BaseMappingGraphNode.cpp
++++ b/Sofa/framework/Simulation/Core/src/sofa/simulation/mappinggraph/BaseMappingGraphNode.cpp
+@@ -31,9 +31,10 @@
+         return m_isMapped.value();
+     }
+ 
+-    const auto isMapped = std::any_of(m_parents.begin(), m_parents.end(), [](const SPtr& node)
++    const auto isMapped = std::any_of(m_parents.begin(), m_parents.end(), [](const std::weak_ptr<BaseMappingGraphNode>& weakNode)
+     {
+-        return node->getType() == NodeType::Mapping || node->isMapped();
++        const auto node = weakNode.lock();
++        return node && (node->getType() == NodeType::Mapping || node->isMapped());
+     });
+ 
+     m_isMapped = isMapped;

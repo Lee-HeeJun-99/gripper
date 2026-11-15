@@ -7,3 +7,11 @@
 - dt는 수치 수렴성 변수로 관리한다. 동일 하중과 정적 평형이 확인된 실험만 강성비를 계산한다.
 - 실패, timeout, NaN/Inf, 발산 및 평형 미달 실험에 성능 보상을 부여하지 않는다.
 - 변경은 이 저장소 Git으로 관리한다. 검증되지 않은 결과를 성공으로 기록하지 않는다.
+
+## GRASP 후속 연구
+
+- 최신 재개 지점은 reports/GRASP_CURRENT_STATUS.md와 GRASP_NEXT_TASKS.md다.
+- elastic penalty stick을 정확한 무슬립 Lagrange constraint로,6방향 힘시험을6DOF wrench closure로 부르지 않는다.
+- 공간 접촉수렴/전체에너지/자유파지 gate 미통과 시 파지 목적 최적화를 차단한다.
+- MappingGraph 패치는 별도 matched-source SDK에만 적용한다. 헤더만 교체하거나 설치 엔진과 ABI를 혼합하지 않는다.
+- historical raw/SQLite/binary는 불변. 새 trial/out 이름을 사용하고 build/raw/env는 외장디스크 내부에 둔다.

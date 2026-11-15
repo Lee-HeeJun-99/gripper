@@ -6,8 +6,8 @@
 namespace regrip_slip_band {
 struct Integral{long double force=0,elastic=0,plastic=0,tangent=0,band=0;};
 inline Integral reference(long double a,long double C,long double k,long double displacement){
- if(a<=0||C<0||k<=0||!std::isfinite(displacement))throw std::invalid_argument("slip-band reference parameters");
- Integral r;if(C==0)return r;long double d=std::abs(displacement),ratio=k*d/C;
+ if(!std::isfinite(a)||!std::isfinite(C)||!std::isfinite(k)||a<=0||C<0||k<=0||!std::isfinite(displacement))throw std::invalid_argument("slip-band reference parameters");
+ Integral r;if(C==0){r.band=displacement==0?0:a;return r;}long double d=std::abs(displacement),ratio=k*d/C;
  if(ratio>=1){r.force=4*a*C/3;r.elastic=8*a*C*C/(15*k);r.plastic=d*r.force-2*r.elastic;r.band=a;return r;}
  long double root=std::sqrt(1-ratio),y=ratio/(1+root),b=a*root;
  long double first=y*y-y*y*y/3,second=4*y*y*y/3-y*y*y*y+y*y*y*y*y/5;

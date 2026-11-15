@@ -19,7 +19,7 @@ def git(*args):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--version',default='v1');p.add_argument('--verify',action='store_true');p.add_argument('--include-compensation',action='store_true');args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--version',default='v1');p.add_argument('--verify',action='store_true');p.add_argument('--include-compensation',action='store_true');p.add_argument('--include-continuation',action='store_true');args=p.parse_args()
     if not args.version.isalnum():raise ValueError('simple immutable version name required')
     manifest=ROOT/'reports'/('CURVED_RESEARCH_EVIDENCE_MANIFEST_'+args.version.upper()+'.json')
     if args.verify:
@@ -39,10 +39,16 @@ def main():
         status=json.loads((comp/'refinement_status.json').read_text())
         if any('full_'+n not in status for n in('mesh41_half','history_fine_half','mesh11_half'))or not(comp/'energy_after_arithmetic_48000_v9/summary.json').exists():raise ValueError('cohort still active;do not hash writing files')
         cohorts.append(comp.name)
+    if args.include_continuation:
+        cohorts += ['autonomous_20261116_fixed_clock_a01', 'autonomous_20261116_event_clock_a01', 'autonomous_20261116_phase_grid_a01']
+        cohorts += ['autonomous_20261116_diagnostics_checks_a0'+str(i) for i in (6,7,8,9)]
+        phase=ROOT/'results/autonomous_20261116_phase_grid_a01'
+        for case in ('slip_front/coarse24','slip_front/history24','energy_v15_coarse_4s','energy_v15_fine_4s','history1000nm_prefix82_v1'):
+            if not(phase/case/'summary.json').is_file():raise ValueError('continuation still active '+case)
     for name in cohorts:
         if not(ROOT/'results'/name).is_dir():raise ValueError('missing evidence cohort '+name)
     dest=ROOT/'reports/curved_evidence'/args.version;dest.mkdir(parents=True,exist_ok=False)
-    source_paths=git('ls-files','models/curved_contact','models/beam_translation_compensation','models/contact_energy','diagnostics/curved_contact','diagnostics/physics_checkpoint','diagnostics/contact_return_energy','diagnostics/transaction_energy','tools/curve_*.py','tests/test_curved*','tests/test_checkpoint_guards.py','tests/test_energy_source_scope.py','tests/test_return*','tests/test_pressure_return_energy.cpp','tests/test_beam_translation_compensation.cpp').decode().splitlines()
+    source_paths=git('ls-files','models/curved_contact','models/beam_translation_compensation','models/contact_energy','models/fixed_step_clock','models/event_step_clock','diagnostics/curved_contact','diagnostics/physics_checkpoint','diagnostics/contact_return_energy','diagnostics/transaction_energy','diagnostics/damping_matrix','diagnostics/slip_front','tools/curve_*.py','tests/test_curved*','tests/test_checkpoint_guards.py','tests/test_energy_source_scope.py','tests/test_return*','tests/test_pressure_return_energy.cpp','tests/test_beam_translation_compensation.cpp','tests/test_phase*','tests/test_local_history_guards.py','tests/test_slip_band.cpp','tests/test_contact_work*','tests/test_damping_inference.py','tests/test_event_clock.cpp','tests/test_fixed_clock.cpp','tests/test_contact_rayleigh.cpp').decode().splitlines()
     changed=git('diff','HEAD','--name-only','--',*source_paths).decode().splitlines()
     if changed:raise ValueError('commit source before sealing '+repr(changed))
     commit=git('rev-parse','HEAD').decode().strip()
@@ -60,7 +66,7 @@ def main():
     # Index actual selected executables/generated sources/manifests,not caches.
     for folder in(ROOT/'build').glob('autonomous_20261116*'):
         for path in folder.rglob('*'):
-            if path.is_file()and(path.suffix in('.so','.inc')or path.name.endswith('manifest.json')or(path.suffix==''and path.name in('physics_checkpoint','transaction_journal','contact_return_journal','curved_api','curved_invariants'))):files.append(path)
+            if path.is_file()and(path.suffix in('.so','.inc')or path.name.endswith('manifest.json')or(path.suffix==''and path.name in('physics_checkpoint','transaction_journal','contact_return_journal','curved_api','curved_invariants','slip_front_probe','damping_matrix_probe'))):files.append(path)
     files.append(dest/'actual_trials.json')
     hashes={str(path.relative_to(ROOT)):sha(path)for path in sorted(set(files))}
     write_json(manifest,dict(schema=1,source_checkpoint=commit,branch=git('branch','--show-current').decode().strip(),cohorts=cohorts,files=hashes,committed_source_blobs=blobs,scope='Immutable raw/source/build integrity cohort;current working-tree evolution does not rewrite historical Git blobs;NO physics success inferred;future added files are outside this cohort',physics_status='FAIL/EXPERIMENTAL;see individual unchanged gates',raw_bytes=sum((ROOT/n).stat().st_size for n in hashes if n.startswith('results/'))))

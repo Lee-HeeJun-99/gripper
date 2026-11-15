@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripPatchRefinedContact LANGUAGES CXX)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+find_package(Sofa.Component.StateContainer REQUIRED)
+if(NOT EXISTS "${FROZEN_CURVE_BUILD}/CurvedGenerated.inc")
+ message(FATAL_ERROR "An immutable curved source build is required")
+endif()
+set(generated "${CMAKE_CURRENT_BINARY_DIR}/PatchGenerated.inc")
+add_custom_command(OUTPUT "${generated}"
+ COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/generate.py" "${FROZEN_CURVE_BUILD}/CurvedGenerated.inc" "${generated}"
+ DEPENDS generate.py "${FROZEN_CURVE_BUILD}/CurvedGenerated.inc" VERBATIM)
+add_library(ReGripPatchRefinedContact SHARED RefinedContact.cpp "${generated}")
+target_include_directories(ReGripPatchRefinedContact PRIVATE "${CMAKE_CURRENT_BINARY_DIR}" "${FROZEN_CURVE_BUILD}/material_template/birth_template/legacy" "${CMAKE_CURRENT_SOURCE_DIR}/../integrated")
+target_compile_features(ReGripPatchRefinedContact PRIVATE cxx_std_17)
+target_compile_options(ReGripPatchRefinedContact PRIVATE -O3 -march=native -ffp-contract=off -Wall -Wextra -Wpedantic)
+target_link_libraries(ReGripPatchRefinedContact PRIVATE Sofa.Core Sofa.DefaultType Sofa.Helper Sofa.Simulation.Core Sofa.Component.StateContainer)

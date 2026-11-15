@@ -2,7 +2,10 @@
 #include "../models/integrated/Kernels.h"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 int main(){try{
+ for(unsigned index=0;index<4;++index){long double values[4]={1,1,1,.1};values[index]=std::numeric_limits<long double>::quiet_NaN();bool rejected=false;try{regrip_slip_band::reference(values[0],values[1],values[2],values[3]);}catch(const std::invalid_argument&){rejected=true;}if(!rejected)throw std::runtime_error("nonfinite reference input accepted");}
+ auto frictionless=regrip_slip_band::reference(1,0,1,.1);if(frictionless.plastic!=0||frictionless.force!=0||frictionless.band!=1)throw std::runtime_error("frictionless reference limit");
  constexpr double a=.3192,C=3e-6,k=.001;std::cout<<std::setprecision(17)<<"displacement,h,grid_shift,point_D,reference_D,relative_D,relative_force,active_band_mm\n";
  for(double d:{1e-4,1e-6}){
   auto ref=regrip_slip_band::reference(a,C,k,d),gauss=regrip_slip_band::splitGauss3(a,C,k,d);

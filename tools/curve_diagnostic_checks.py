@@ -5,7 +5,7 @@ from closure_validation_suite import logged
 
 
 def main():
-    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a08'
+    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a09'
     out.mkdir(exist_ok=False)
     sources = [ROOT / 'tests/test_checkpoint_guards.py', ROOT / 'tests/test_curved_guards.py',
                ROOT / 'tests/test_return_energy.cpp', ROOT / 'models/contact_energy/ReturnAudit.h',
@@ -21,6 +21,7 @@ def main():
                ROOT / 'tests/test_contact_work_grouping.cpp',ROOT/'tests/test_phase_grid.py',
                ROOT / 'tests/test_phase_assessment_guards.py',ROOT/'tests/test_slip_band.cpp',
                ROOT / 'models/contact_energy/SlipBandReference.h']
+    sources.append(ROOT/'tests/test_local_history_guards.py')
     write_json(out / 'sources.json', {str(p.relative_to(ROOT)): sha(p) for p in sources})
     results = {}
     commands = [
@@ -63,6 +64,7 @@ def main():
         ('slip_band_build',['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',
                            'tests/test_slip_band.cpp','-o',out/'slip_band.bin']),
         ('slip_band_reference',[out/'slip_band.bin']),
+        ('local_history_guards',[sys.executable,'-m','unittest','discover','-s','tests','-p','test_local_history_guards.py','-v']),
         ('python_compile', [sys.executable, '-m', 'py_compile'] +
          sorted((ROOT / 'tools').glob('curve_*.py')))]
     for name, command in commands:

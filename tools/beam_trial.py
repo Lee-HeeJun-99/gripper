@@ -12,13 +12,13 @@ def run(name,nodes=11,dt=.0005,duration=3.,axis=2,load=-1e-6,rotation=0.,inherit
     if steps>120000 or steps%20 or abs(steps*dt-duration)>1e-10:raise ValueError('steps')
     out=OUT/'single'/name;out.mkdir(parents=True,exist_ok=False);root=ET.Element('Node',name='ConservativeBeamResearch',dt=str(dt),gravity='0 0 0')
     for i,p in enumerate(PLUGINS):ET.SubElement(root,'RequiredPlugin',name='p'+str(i),pluginName='Sofa.Component.'+p)
-    ET.SubElement(root,'DefaultAnimationLoop');ET.SubElement(root,'EulerImplicitSolver',rayleighMass='.2',rayleighStiffness='.1');ET.SubElement(root,'EigenSparseLU',name='solver',template='CompressedRowSparseMatrixMat3x3d');body=ET.SubElement(root,'Node',name='Multilayer');n=nodes;co,si=math.cos(rotation),math.sin(rotation)
+    ET.SubElement(root,'DefaultAnimationLoop');ET.SubElement(root,'EulerImplicitSolver',rayleighMass='2',rayleighStiffness='.1');ET.SubElement(root,'EigenSparseLU',name='solver',template='CompressedRowSparseMatrixMat3x3d');body=ET.SubElement(root,'Node',name='Multilayer');n=nodes;co,si=math.cos(rotation),math.sin(rotation)
     poses=[[100*i/(n-1)*co,100*i/(n-1)*si,0,0,0,math.sin(rotation/2),math.cos(rotation/2)] for i in range(n)];seq=lambda vals:' '.join(map(str,vals));edges=[j for i in range(n-1) for j in (i,i+1)]
     ET.SubElement(body,'MechanicalObject',name='dofs',template='Rigid3d',position=seq(v for p in poses for v in p));ET.SubElement(body,'MeshTopology',name='edges',lines=seq(edges));ET.SubElement(body,'UniformMass',totalMass='1e-5');m=material()
     if inherited:ET.SubElement(body,'BeamFEMForceField',radius=str((4*(8*.4**3/12)/math.pi)**.25),youngModulus='250',poissonRatio='.32')
     else:ET.SubElement(body,'ConservativeBeam',edges=seq(edges),**{k:str(v) for k,v in m.items()})
     ET.SubElement(body,'FixedProjectiveConstraint',indices='0');f=[0.]*6;f[axis]=load;ET.SubElement(body,'ConstantForceField',indices=str(n-1),forces=seq(f));ET.SubElement(body,'IntegratedRecorder',filename=str(out/'state.txt'),stride='20');ET.ElementTree(root).write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
-    config=dict(nodes=n,dt=dt,duration=duration,axis=axis,load=load,rotation=rotation,length=100.,mass=1e-5,material=m,section='unchanged circular A and equal circular Iy=Iz=8*.4^3/12; GJ=2GI; effective shear5/6 is explicit research assumption',solver='EigenSparseLU nonsymmetric',inherited=inherited)
+    config=dict(nodes=n,dt=dt,duration=duration,axis=axis,load=load,rotation=rotation,length=100.,mass=1e-5,rayleigh_mass=2.,rayleigh_stiffness=.1,material=m,section='unchanged circular A and equal circular Iy=Iz=8*.4^3/12; GJ=2GI; effective shear5/6 is explicit research assumption',solver='EigenSparseLU nonsymmetric',inherited=inherited)
     command=[str(SDK/'bin/graph_probe'),str(SDK),str(out/'scene.scn'),str(steps),'0',str(FRAME),str(PLUGIN)];write_json(out/'config.json',config);write_json(out/'command.json',command);record=dict(config=config,identity=identity(),status='FAIL');process=execute_process(command,out,480);record['process']=process
     try:
         log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text()

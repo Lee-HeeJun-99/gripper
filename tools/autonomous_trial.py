@@ -1,0 +1,19 @@
+import argparse,json,xml.etree.ElementTree as ET
+import beam_grasp_trial as base
+from history_trial import analyze
+from birth_monitor import Monitor
+from run_trial import execute_process
+from research_common import ROOT,OUT,SDK,FRAME,BEAM,PLUGIN,identity,sha,write_json
+def run(name,history=.01,nodes=11,dt=.0005,duration=18,profile=False,wall=480):
+    ident=identity();base.OUT=OUT;out=base.run(name,nodes=nodes,history=history,dt=dt,duration=24 if profile else duration,prepare_only=True);tree=ET.parse(out/'scene.scn');contact=tree.getroot().find('Node').find('ActiveIntervalContact');contact.tag='MaterialPointContact';tree.write(out/'scene.scn',encoding='utf-8',xml_declaration=True)
+    config=json.loads((out/'config.json').read_text());config.update(duration=4 if profile else duration,profile_only=profile,contact_model='fixed_material_midpoint_same_return_and_commit',tangent_quadrature='immutable material midpoints, no interpolation',history_model='physical edge/material-coordinate ID; no zero anchors',samples=8)
+    steps=round(config['duration']/dt);command=[str(SDK/'bin/graph_probe'),str(SDK),str(out/'scene.scn'),str(steps),'0',str(FRAME),str(BEAM),str(PLUGIN)];write_json(out/'command.json',command);write_json(out/'config.json',config);write_json(out/'identity.json',ident);monitor=Monitor(out);monitor.thread.start()
+    try:process=execute_process(command,out,wall)
+    finally:monitor.finish()
+    write_json(out/'execution_result.json',process)
+    if profile:
+        log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text();result=dict(status='EXPERIMENTAL'if process['exit_code']==0 and'[ERROR]'not in log and f'{steps} iterations done'in log else'FAIL',process=process,config=config,identity=ident,scope='4s runtime profile only')
+    else:result=analyze(out,config,process)
+    result['artifacts']={p.name:sha(p)for p in out.iterdir()if p.is_file()};write_json(out/'metrics.json',result);print(name,result['status'],process['runtime_s'],result.get('hold_displacement_mm'),flush=True);return result
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('name');p.add_argument('--history',type=float,default=.01);p.add_argument('--nodes',type=int,default=11);p.add_argument('--dt',type=float,default=.0005);p.add_argument('--duration',type=float,default=18);p.add_argument('--profile',action='store_true');a=p.parse_args();run(a.name,history=a.history,nodes=a.nodes,dt=a.dt,duration=a.duration,profile=a.profile)

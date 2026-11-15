@@ -5,14 +5,15 @@ from closure_validation_suite import logged
 
 
 def main():
-    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a04'
+    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a05'
     out.mkdir(exist_ok=False)
     sources = [ROOT / 'tests/test_checkpoint_guards.py', ROOT / 'tests/test_curved_guards.py',
                ROOT / 'tests/test_return_energy.cpp', ROOT / 'models/contact_energy/ReturnAudit.h',
                ROOT / 'tests/test_return_time.cpp', ROOT / 'models/integrated/Kernels.h',
                ROOT / 'tests/test_pressure_return_energy.cpp',
                ROOT / 'tests/test_beam_translation_compensation.cpp',
-               ROOT / 'models/stabilization/Compensated.h']
+               ROOT / 'models/stabilization/Compensated.h',
+               ROOT / 'tests/test_energy_source_scope.py']
     write_json(out / 'sources.json', {str(p.relative_to(ROOT)): sha(p) for p in sources})
     results = {}
     commands = [
@@ -20,6 +21,8 @@ def main():
                                '-p', 'test_checkpoint_guards.py', '-v']),
         ('curved_guards', [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests',
                            '-p', 'test_curved_guards.py', '-v']),
+        ('energy_source_guards', [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests',
+                                  '-p', 'test_energy_source_scope.py', '-v']),
         ('return_build', ['g++', '-std=c++17', '-O2', '-Wall', '-Wextra', '-pedantic',
                           'tests/test_return_energy.cpp', '-o', out / 'return_unit.bin']),
         ('return_unit', [out / 'return_unit.bin']),

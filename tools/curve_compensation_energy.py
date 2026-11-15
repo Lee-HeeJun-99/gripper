@@ -11,6 +11,13 @@ from run_trial import execute_process
 from trial_validation import read_states
 
 
+def compiled_only(hashes):
+    # Keep original documentation snapshots,but documentation is not a C++
+    # compilation input. Every header,generated include and CMake/source stays
+    # strict. This does not permit any physical-source/binary mismatch.
+    return {p:h for p,h in hashes.items()if not p.endswith('.md')}
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--steps',type=int,default=2000);args=parser.parse_args();steps=args.steps
     if steps not in(2000,16000,48000):raise ValueError('bounded one/eight/twenty-four-second validation stages')
@@ -26,7 +33,7 @@ def main():
     hashes={str(p.relative_to(ROOT)):sha(p)for p in paths if p.is_file()};binary=build/'transaction_journal';manifest=build/'journal_manifest.json'
     if manifest.exists():
         old=json.loads(manifest.read_text())
-        if old['sources']!=hashes or old['binary']!=sha(binary)or old['bridge']!=sha(build/'normal_bridge/libContactReturnBridge.so')or old['frame_bridge']!=sha(build/'normal_bridge/libFrameReturnBridge.so'):raise ValueError('refuse mixed/rebuilt journal identity')
+        if compiled_only(old['sources'])!=compiled_only(hashes) or old['binary']!=sha(binary)or old['bridge']!=sha(build/'normal_bridge/libContactReturnBridge.so')or old['frame_bridge']!=sha(build/'normal_bridge/libFrameReturnBridge.so'):raise ValueError('refuse mixed/rebuilt journal identity')
     else:
         for name,command in[('configure',['cmake','-S','diagnostics/transaction_energy','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(PREFIX),'-DREGRIP_NORMAL_AUDIT=ON','-DFROZEN_CURVE_BUILD='+str(BUILD),'-DFROZEN_FRAME_BUILD='+str(FRAME.parent)]),('build',['cmake','--build',build,'-j2'])]:
             r=logged(command,out/name,180)

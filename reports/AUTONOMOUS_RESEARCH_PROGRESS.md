@@ -531,3 +531,21 @@ v15 new-grid fine8s completed489.679s,PASS,X/V/R0,explicit discrete residual
 -3.06377e-19. Fine24s measured forecast1733.038s exceeds1320s policy,attempts0,
 BLOCKED;not an observed server/session timeout. Research moved to the local
 refinement component rather than declaring the final objective complete.
+
+### v1 XML registration failure found and preserved,not accepted as convergence
+
+Actual local625/312profile losses were suspiciously identical to uniform.
+Inspection found SOFA `Unused Attribute: edgeSpacing` warnings and unchanged
+patch weights. Therefore both v1local profile runner PASS values are
+INVALIDATED for refinement;see PATCH_V1_INVALIDATION.json. Kernel tests using
+direct C++ setters genuinely passed but missed XML Data registration.
+Calling initData in the constructor body did not register the member.
+
+The independent v2 constructs Data in the member initializer list. Its new
+API test requires findData pointer identity and SOFA string parsing before
+checking actual grid counts. New dynamics reject Unused Attribute warnings
+and require actual prepare-time PATCH_GRID totals/element counts,not just
+exit0 or requested XML. Old v1binary/source/raw/incorrect original assessment
+remain intact. New v2build/API/actual uniform/local contrasts are separate.
+No physical threshold was relaxed. This is a project implementation fix,
+not evidence of an engine or physical-law defect.

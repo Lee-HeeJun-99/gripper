@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parents[2]
 source=(root/'tests/test_curved_contact.cpp').read_text()
 source=source.replace('#include "../models/curved_contact/CurvedContact.cpp"','#include "'+str(root/'models/patch_refined_contact/RefinedContact.cpp')+'"').replace('CurvedMaterialContact','PatchRefinedContact')
 old='field->historySpacing.setValue(.02);field->prepare(x);'
-new='field->historySpacing.setValue(.02);field->edgeSpacing.setValue({.01});field->prepare(x);require(field->grids.at(0).count==100,"explicit immutable element resolution");'
+new='field->historySpacing.setValue(.02);require(field->findData("edgeSpacing")==&field->edgeSpacing,"SOFA Data must actually be registered");require(field->findData("edgeSpacing")->read("0.01"),"SOFA string Data parsing");field->prepare(x);require(field->grids.at(0).count==100,"explicit immutable element resolution");'
 if source.count(old)!=1:raise ValueError('expected preserved API test source')
 source=source.replace(old,new)
 marker=' std::cout<<"PASS actual API FD="'

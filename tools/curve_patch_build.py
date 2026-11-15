@@ -4,12 +4,12 @@ import shutil
 from curve_common import ROOT, OUT, BUILD, PREFIX, identity, sha, write_json
 from closure_validation_suite import logged
 
-PATCH_BUILD=ROOT/'build/autonomous_20261116_patch_refinement_a01/v1'
+PATCH_BUILD=ROOT/'build/autonomous_20261116_patch_refinement_a01/v2'
 PATCH_PLUGIN=PATCH_BUILD/'libReGripPatchRefinedContact.so'
 
 
 def main():
-    out=OUT/'patch_refinement/build_v1';out.mkdir(parents=True,exist_ok=False)
+    out=OUT/'patch_refinement_v2/build';out.mkdir(parents=True,exist_ok=False)
     if PATCH_BUILD.exists():raise ValueError('immutable patch build exists')
     runtime=identity();paths=list((ROOT/'models/patch_refined_contact').glob('*'))+[BUILD/'CurvedGenerated.inc']
     hashes={str(p.relative_to(ROOT)):sha(p)for p in paths if p.is_file()}

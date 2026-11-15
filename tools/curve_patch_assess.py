@@ -21,9 +21,9 @@ def normalized(path):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--version',default='v1');a=p.parse_args()
     if not a.version.isalnum():raise ValueError('simple evidence version')
-    target=OUT/'patch_refinement'/('prefix_assessment_'+a.version+'.json')
+    target=OUT/'patch_refinement_v2'/('prefix_assessment_'+a.version+'.json')
     if target.exists():raise ValueError('immutable evidence exists')
-    parent=OUT/'full_coarse_history1250nm';paths={'uniform1250nm':parent,'uniform1000nm':OUT/'history1000nm_prefix82_v1','local625nm':OUT/'patch_refinement/local625_prefix82','local312nm':OUT/'patch_refinement/local312_prefix82'}
+    parent=OUT/'full_coarse_history1250nm';paths={'uniform1250nm':parent,'uniform1000nm':OUT/'history1000nm_prefix82_v1','local625nm':OUT/'patch_refinement_v2/local625_prefix82','local312nm':OUT/'patch_refinement_v2/local312_prefix82'}
     losses={};missing={};hashes={};times=(0,.5,2,3,4,6,7,8.2)
     for name,path in paths.items():
         summary=path/'summary.json'

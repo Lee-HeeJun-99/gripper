@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "scope": "XML-driven local refinement in independent PatchRefinedContact v1",
+  "affected_actual_results": [
+    "results/autonomous_20261116_phase_grid_a01/patch_refinement/local625_profile4",
+    "results/autonomous_20261116_phase_grid_a01/patch_refinement/local312_profile4"
+  ],
+  "evidence": "Both actual SOFA stdout logs contain Unused Attribute: edgeSpacing. Contact patch CSV weights remain0.00125mm,not the requested local spacing. Equal losses exposed the issue.",
+  "root_cause": "initData called in the constructor body did not construct/register the Data field. Direct C++ Data setters worked,so the original direct-field API test did not detect XML registration failure.",
+  "original_results_preserved": true,
+  "original_runner_PASS_not_accepted_as_refinement": true,
+  "still_valid_limited_evidence": "Original v1 direct-field kernel/FD tests and empty-vector parent trajectory equality are limited measurements,not XML refinement certification.",
+  "v2_fix": "Construct edgeSpacing using initData in the member initializer list;test findData identity and string parsing;reject Unused Attribute warnings;require actual prepare-time grid counts to equal requested counts. New build/raw namespace,old binaries untouched."
+}

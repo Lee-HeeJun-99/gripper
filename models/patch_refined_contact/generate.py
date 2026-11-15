@@ -18,7 +18,7 @@ def once(old, new):
 
 
 once('public:\n SOFA_CLASS', 'public:\n sofa::core::objectmodel::Data<sofa::type::vector<double>> edgeSpacing;\n SOFA_CLASS')
-once('{f_listening.setValue(true);}', '{initData(&edgeSpacing,"edgeSpacing","Immutable per-element reference spacing mm;empty preserves original uniform grid");f_listening.setValue(true);}')
+once(':EnergyField(s),\n segments', ':EnergyField(s),edgeSpacing(initData(&edgeSpacing,"edgeSpacing","Immutable per-element reference spacing mm;empty preserves original uniform grid")),\n segments')
 once('for(auto i:segments.getValue())s.push_back(i);return s;', 'for(auto i:segments.getValue())s.push_back(i);for(double h:edgeSpacing.getValue())s.push_back(h);return s;')
 once(' void prepare(const VecCoord&x){', '''
  double spacingForEdge(unsigned e)const{
@@ -29,5 +29,6 @@ once(' void prepare(const VecCoord&x){', '''
  }
  void prepare(const VecCoord&x){''')
 once('g.count=regrip_birth::materialCells(L,historySpacing.getValue());', 'g.count=regrip_birth::materialCells(L,spacingForEdge(i/2));')
+once('  previous=x;rule=', '  std::cout<<"PATCH_GRID {\\"states\\":"<<total<<",\\"elements\\":"<<grids.size()<<"}\\n";\n  previous=x;rule=')
 source = source.replace('CurvedMaterialContact', 'PatchRefinedContact').replace('ReGripCurvedContact', 'ReGripPatchRefinedContact')
 Path(sys.argv[2]).write_text(source)

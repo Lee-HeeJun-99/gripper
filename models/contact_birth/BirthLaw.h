@@ -43,4 +43,11 @@ inline ContactResult value(const Pose&p,const Pose&o,const History&h,const V&bef
  if(regrip_closure::sdf(before,shape,radius,height)<skin)return regrip_history::value(p,o,h,shape,radius,height,skin,kn,kt,mu);
  auto e=regrip_birthfast::incrementValue(before,x,shape,radius,height,skin);auto trial=e;ContactResult r;r.normalForce=-kn*gap;r.capacity=mu*r.normalForce;double norm=std::sqrt(dot(e,e));r.next.active=true;r.next.sliding=kt*norm>r.capacity;if(r.capacity==0)e={};else if(r.next.sliding)e=scale(e,r.capacity/(kt*norm));r.next.elastic=e;r.next.local=x;r.next.normal=regrip_birthfast::normal(x,shape,radius,height);auto plastic=sub(trial,e);r.elasticEnergy=.5*kt*dot(e,e);r.plasticDissipation=r.capacity*std::sqrt(dot(plastic,plastic));r.wrench.energy=.5*kn*gap*gap+r.elasticEnergy;return r;
 }
+inline ContactResult valueWrench(const Pose&p,const Pose&o,const History&h,const V&before,unsigned shape,double radius,double height,double skin,double kn,double kt,double mu,bool tangentOnly){
+ ContactResult r=tangentOnly?value(p,o,h,before,shape,radius,height,skin,kn,kt,mu):ContactResult(regrip_history::value(p,o,{},shape,radius,height,skin,kn,kt,0));
+ if(tangentOnly)r.wrench.energy=r.elasticEnergy;
+ if(!r.next.active)return r;
+ auto localForce=scale(r.next.elastic,-kt);if(!tangentOnly)localForce=add(localForce,scale(r.next.normal,r.normalForce));auto force=rotate(o.q,localForce),moment=cross(sub(p.p,o.p),force);
+ for(int j=0;j<3;++j){r.wrench.force[j]=force[j];r.wrench.force[j+6]=-force[j];r.wrench.force[j+9]=-moment[j];}return r;
+}
 }

@@ -20,9 +20,11 @@
   return regrip_birthlaw::evaluate(p,o,old(edge,s),beforeLocal(edge,s),shape.getValue(),radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),lineStiffness.getValue(),tangentLineStiffness.getValue(),mu.getValue(),true);
  }
  regrip_birthlaw::ContactResult commitValue(const VecCoord&x,unsigned e,double s)const{return regrip_birthlaw::value(point(x,e,s),pose(x[objectIndex.getValue()]),old(e,s),beforeLocal(e,s),shape.getValue(),radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),lineStiffness.getValue(),tangentLineStiffness.getValue(),mu.getValue());}
+ regrip_birthlaw::ContactResult queryValue(const VecCoord&x,unsigned e,double s,bool tangent)const{return regrip_birthlaw::valueWrench(point(x,e,s),pose(x[objectIndex.getValue()]),tangent?old(e,s):regrip_history::History{},beforeLocal(e,s),shape.getValue(),radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),lineStiffness.getValue(),tangentLineStiffness.getValue(),tangent?mu.getValue():0.,tangent);}
  double lastEventTime=-std::numeric_limits<double>::infinity();
- unsigned unresolvedEvents=0;double maximumUnresolvedDepth=0;
- ~BirthAwareContact()override{std::cout<<std::setprecision(17)<<"BIRTH_EVENT_STATS {\"commits\":"<<steps<<",\"unresolved_samples\":"<<unresolvedEvents<<",\"maximum_unresolved_depth_mm\":"<<maximumUnresolvedDepth<<"}\n";}
+ unsigned unresolvedEvents=0;double maximumUnresolvedDepth=0;unsigned bornNodes=0,deadNodes=0;
+ void countTransitions(const Grid&g,const std::vector<std::pair<unsigned,regrip_history::History>>&next){size_t a=0,b=0;while(a<g.active.size()&&b<next.size()){if(g.active[a]==next[b].first){++a;++b;}else if(g.active[a]<next[b].first){++deadNodes;++a;}else{++bornNodes;++b;}}deadNodes+=g.active.size()-a;bornNodes+=next.size()-b;}
+ ~BirthAwareContact()override{std::cout<<std::setprecision(17)<<"BIRTH_EVENT_STATS {\"commits\":"<<steps<<",\"born_material_nodes\":"<<bornNodes<<",\"dead_material_nodes\":"<<deadNodes<<",\"unresolved_samples\":"<<unresolvedEvents<<",\"maximum_unresolved_depth_mm\":"<<maximumUnresolvedDepth<<"}\n";}
  // Conservative per-material-node broadphase for the DEFINED relative chord.
  // No claim of exact surface CCD between these material samples.
  void checkTemporal(const VecCoord&x)const{

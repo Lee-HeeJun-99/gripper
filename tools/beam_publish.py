@@ -3,7 +3,7 @@
 No result is regenerated from old numerical values. Raw files stay on external
 disk; source, binaries, failed runs and historical-metadata deltas stay explicit.
 """
-import csv,json,hashlib,subprocess,platform,re
+import csv,json,hashlib,subprocess,platform,re,os
 from pathlib import Path
 from beam_common import ROOT,OUT,BUILD,PLUGIN,identity,write_json
 def digest(path):
@@ -28,10 +28,11 @@ def main():
         write_json(evidence/name.replace('/','__'),compact(json.loads(p.read_text())))
     records=[]
     for p in sorted(OUT.rglob('metrics.json')):
-        r=json.loads(p.read_text());small=compact(r);small['raw_path']=str(p.parent.relative_to(ROOT));small['metrics_sha256']=digest(p);small['compiled_binary_sha256']=r.get('identity',{}).get('plugin_sha256');small['compiled_source_sha256']=r.get('identity',{}).get('compiled_source_sha256',{});write_json(evidence/(str(p.parent.relative_to(OUT)).replace('/','__')+'.json'),small);records.append(small)
-    fields=['raw_path','status','equilibrium_validated','tip_deflection_mm','max_interface_slip_mm','relative_residual','hold_displacement_mm','hold_rotation_increment_rad','global_force_residual','global_moment_residual','bounded_hold_pass','recovery_pass','failure_reason','compiled_binary_sha256','metrics_sha256']
-    with (evidence/'actual_sofa_trials.csv').open('x',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(records)
+        r=json.loads(p.read_text());small=compact(r);small['raw_path']=str(p.parent.relative_to(ROOT));small['record_kind']='model_trial_attempt' if p.relative_to(OUT).parts[0] in ('single','multilayer','grasp') else 'automation_fault_injection_not_physics_qualification';small['metrics_sha256']=digest(p);small['compiled_binary_sha256']=r.get('identity',{}).get('plugin_sha256');small['compiled_source_sha256']=r.get('identity',{}).get('compiled_source_sha256',{});write_json(evidence/(str(p.parent.relative_to(OUT)).replace('/','__')+'.json'),small);records.append(small)
+    fields=['raw_path','record_kind','status','equilibrium_validated','tip_deflection_mm','max_interface_slip_mm','relative_residual','hold_displacement_mm','hold_rotation_increment_rad','global_force_residual','global_moment_residual','bounded_hold_pass','recovery_pass','failure_reason','compiled_binary_sha256','metrics_sha256']
+    for filename,kind in [('actual_sofa_trials.csv','model_trial_attempt'),('automation_trial_records.csv','automation_fault_injection_not_physics_qualification')]:
+        with (evidence/filename).open('x',newline='') as f:
+            w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(r for r in records if r['record_kind']==kind)
     for folder in ('prototype','v2'):write_json(evidence/(folder+'_compiled_manifest.json'),json.loads((BUILD/folder/'build_manifest.json').read_text()))
     pairs=[('two_fixed_layer_section','L2_k0','L2_k100'),('four_fixed_layer_section','L4_k0','L4_k100'),('eight_same_compensated_scheme','L8_free_compensated','L8_k100_compensated'),('four_equal_total_material','L4_equal_total_free','L4_equal_total')];ratios={}
     for label,off,on in pairs:
@@ -49,6 +50,7 @@ def main():
         p=Path(previous['raw_root'])/name;checks+=1
         if not p.is_file() or p.stat().st_size!=r['bytes'] or digest(p)!=r['sha256']:errors.append('raw:'+name)
     write_json(evidence/'historical_preservation.json',dict(status='PASS' if not errors else 'FAIL',checked=checks,unexpected_errors=errors,expected_metadata_deltas=expected,strict_previous_manifest_current_tree_status='FAIL' if expected or errors else 'PASS',scope='historical source/binary/runtime/report/evidence/raw integrity; metadata deltas do not certify new physics'))
+    os.environ.setdefault('MPLCONFIGDIR',str(OUT/'matplotlib_cache'))
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt

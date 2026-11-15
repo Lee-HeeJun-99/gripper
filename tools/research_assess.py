@@ -5,6 +5,7 @@ from history_assess import comparison
 from birth_assess import same_physics,observables
 PAIRS=[('history_01_005','base','h_half',.01),('history_005_0025','h_half','h_quarter',.01),('history_0025_00125','h_quarter','h_eighth',.01),('fine_mesh11_21','h_quarter','fine_n21',.01),('fine_mesh21_41','fine_n21','fine_n41',.01),('fine_time_half','h_quarter','fine_halfdt',.001),('fine_repeat','h_quarter','fine_repeat',1e-6)]
 PAIRS.append(('fine_time_quarter','fine_halfdt','fine_quarterdt',.001))
+PAIRS.append(('fine_time_base_to_quarter','h_quarter','fine_quarterdt',.001))
 def main():
     records={};observed={};checks={};transactions={}
     for p in sorted((OUT/'grasp').glob('*/metrics.json')):

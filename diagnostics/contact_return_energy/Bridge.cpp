@@ -34,7 +34,7 @@ extern "C" ReturnInventory auditCurveReturn(sofa::core::behavior::ForceField<sof
  auto*c=static_cast<Contact*>(f);
  if(f->findData("historySpacing")!=&c->historySpacing||f->findData("objectIndex")!=&c->objectIndex||f->findData("filename")!=&c->filename)throw std::runtime_error("audit compiled project ABI");
  const auto&x=c->getMState()->read(sofa::core::vec_id::read_access::position)->getValue();
- auto snapshot=c->computeValue(x);ReturnInventory total;std::set<std::pair<unsigned,unsigned>>present;
+ auto snapshot=c->computeValue(x);ReturnInventory total;total.totalPotentialEnergy=snapshot.a.energy;std::set<std::pair<unsigned,unsigned>>present;
  auto add=[&](const regrip_return_audit::Balance&b,double w){
   total.oldEnergy+=w*b.oldEnergy;total.newEnergy+=w*b.newEnergy;total.endpointWork+=w*b.endpointWork;total.plastic+=w*b.plastic;total.projection+=w*b.projection;total.detachment+=w*b.detachment;total.residual+=w*b.residual;total.maxPointResidual=std::max(total.maxPointResidual,std::abs(b.residual));
  };

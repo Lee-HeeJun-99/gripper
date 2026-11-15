@@ -3,6 +3,7 @@
 #include <sofa/core/behavior/ForceField.h>
 #include <vector>
 struct ReturnInventory{
+ double totalPotentialEnergy=0;
  double oldEnergy=0,newEnergy=0,endpointWork=0,plastic=0,projection=0,detachment=0,residual=0,maxPointResidual=0;
  unsigned active=0,born=0,dead=0,sliding=0;
 };

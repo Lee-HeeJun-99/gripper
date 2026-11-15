@@ -6,3 +6,13 @@ struct FrameReturnInventory{
 extern "C" __attribute__((visibility("default"))) FrameReturnInventory auditFrameReturn(
  sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*,
  const sofa::defaulttype::Rigid3Types::VecCoord&);
+// Exact public assembly of the UNCHANGED frozen FrameLayerNetwork,not an
+// alternative constitutive implementation or a different dynamic class.
+using FrameAssemblySnapshot=NormalInventory;
+extern "C" __attribute__((visibility("default"))) FrameAssemblySnapshot snapshotFrameAssembly(
+ sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*,
+ const sofa::defaulttype::Rigid3Types::VecCoord&);
+using CableAssemblySnapshot=NormalInventory;
+extern "C" __attribute__((visibility("default"))) CableAssemblySnapshot snapshotCableAssembly(
+ sofa::core::behavior::ForceField<sofa::defaulttype::Rigid3Types>*,
+ const sofa::defaulttype::Rigid3Types::VecCoord&);

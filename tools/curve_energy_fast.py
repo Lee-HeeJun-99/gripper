@@ -78,6 +78,9 @@ def main():
         work=float(last['derived_actuator_Euler_work'])+float(last['derived_external_Euler_work']);balance=stored(last)-stored(first)-work+sum(float(last[k])for k in loss_keys)
         remainder=sum(float(last[k])for k in('beam_nonlinear_remainder','layer_nonlinear_or_return_remainder','normal_nonlinear_remainder','frame_return_plastic','frame_return_projection'))
         energy=dict(derived_balance=balance,explicit_remainders=remainder,remaining=balance-remainder,algorithmic_active_work=work,max_material_return_residual=float(last['max_material_return_residual']),max_frame_return_residual=float(last['max_frame_return_residual']),unknown_pressure_work=last['unknown_pressure_work'])
+        if'tangent_mapped_endpoint_remainder'in last:
+            energy['independent_tangent_mapped_remainder']=float(last['tangent_mapped_endpoint_remainder'])
+            energy['remaining_after_mapped_remainder']=balance-remainder-energy['independent_tangent_mapped_remainder']
         passed&=energy['max_material_return_residual']<1e-18 and energy['max_frame_return_residual']<1e-18
     write_json(out/'summary.json',dict(status='PASS'if passed else'FAIL',process=process,transactions=markers,dt=a.dt,duration=a.duration,instrumentation_state_difference=errors,maximum_energy_column_difference_vs_full_AD_observer=energy_difference,energy_diagnostic=energy,global_energy='BLOCKED until full time/parameter scope qualification',scope='value-only query optimization;force/Jacobian/Commit unchanged;actual baseline and full-AD observer comparisons are separate gates'))
     print(passed,process['runtime_s'],errors,energy_difference,energy)

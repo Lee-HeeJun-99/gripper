@@ -70,3 +70,18 @@ source thermodynamics are not represented by this prescribed-cap law.
 Energy units are model-force times mm;they are not certified PET/vacuum
 measurements. Full-phase and time qualification remain separate from the
 query-purity/API and bounded algebraic-identity checks.
+# Continued mapped-friction work audit (v11)
+
+The contact material endpoint spring work is NOT the BEGIN-stage nodal
+Euler work. Independently evaluate the signed remainder
+
+`R_t = W_material_endpoint + h f_t(q0,H0)·v1 + h² v1ᵀJ_t(q0,H0)v1`.
+
+`f_t,J_t` are obtained by subtracting independently evaluated normal,beam,
+layer,cable and external terms from actual total BEGIN force/Jacobian in the
+restricted zero-gravity/B=0 scope. This is not a total-energy residual fitted
+to zero,and is never classified as heat or positive numerical dissipation.
+The same local return identity and conservative Taylor remainders then imply
+the corresponding global discrete identity up to kinetic/roundoff errors.
+Testing this identity is not proof of time convergence or physical energy
+accuracy;the signed remainder itself must be resolved and reported.

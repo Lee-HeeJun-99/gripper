@@ -33,6 +33,7 @@ public:
  Collector actuatorTangent;double actuatorEulerWork=0,externalEulerWork=0;
  double contactPlastic=0,contactProjection=0,contactDetachment=0,materialSpringWork=0,maxReturnResidual=0;
  double frameReturnPlastic=0,frameReturnProjection=0,frameMaterialWork=0,maxFrameReturnResidual=0;
+ double tangentBeginForceWork=0,tangentEulerJacobianWork=0,tangentMappedRemainder=0;
 #ifdef REGRIP_NORMAL_AUDIT
  FF*normalOwner=nullptr;NormalInventory normalBegin;
 #endif
@@ -52,7 +53,7 @@ public:
 #ifdef REGRIP_FRAME_RETURN_AUDIT
   if(std::string(stage)=="post_commit"&&std::abs(layerPlastic-frameReturnPlastic)>1e-18)throw std::runtime_error("frame return audit differs from actual committed loss");
 #endif
-  out<<root->getTime()<<','<<begins<<','<<stage<<','<<beam<<','<<layer<<','<<contact<<','<<wire<<','<<K<<','<<extWork<<','<<actWork<<','<<massDamping<<','<<stiffnessDamping<<','<<velocityProjection<<','<<kineticResidual<<','<<beamQuadraticProjection<<','<<beamNonlinearRemainder<<','<<layerQuadraticProjection<<','<<layerNonlinearRemainder<<','<<normalQuadraticProjection<<','<<normalNonlinearRemainder<<','<<actuatorEulerWork<<','<<externalEulerWork<<','<<contactPlastic<<','<<contactProjection<<','<<contactDetachment<<','<<materialSpringWork<<','<<maxReturnResidual<<','<<layerPlastic<<','<<frameReturnPlastic<<','<<frameReturnProjection<<','<<frameMaterialWork<<','<<maxFrameReturnResidual<<",null,null\n";
+  out<<root->getTime()<<','<<begins<<','<<stage<<','<<beam<<','<<layer<<','<<contact<<','<<wire<<','<<K<<','<<extWork<<','<<actWork<<','<<massDamping<<','<<stiffnessDamping<<','<<velocityProjection<<','<<kineticResidual<<','<<beamQuadraticProjection<<','<<beamNonlinearRemainder<<','<<layerQuadraticProjection<<','<<layerNonlinearRemainder<<','<<normalQuadraticProjection<<','<<normalNonlinearRemainder<<','<<actuatorEulerWork<<','<<externalEulerWork<<','<<contactPlastic<<','<<contactProjection<<','<<contactDetachment<<','<<materialSpringWork<<','<<maxReturnResidual<<','<<layerPlastic<<','<<frameReturnPlastic<<','<<frameReturnProjection<<','<<frameMaterialWork<<','<<maxFrameReturnResidual<<','<<tangentBeginForceWork<<','<<tangentEulerJacobianWork<<','<<tangentMappedRemainder<<",null,null\n";
  }
  void handleEvent(sofa::core::objectmodel::Event*event)override{
   if(dynamic_cast<sofa::simulation::AnimateBeginEvent*>(event)){
@@ -76,6 +77,13 @@ public:
 #ifdef REGRIP_NORMAL_AUDIT
    double vJnormalv=0;for(const auto&t:normalBegin.jacobian)vJnormalv+=v1[t.r/6][t.r%6]*t.value*v1[t.c/6][t.c%6];normalQuadraticProjection-=.5*h*h*vJnormalv;normalNonlinearRemainder+=curveNormalEnergy(normalOwner)-normalBegin.energy+h*inner(normalBegin.force,v1)+.5*h*h*vJnormalv;
    auto contactReturn=auditCurveReturn(normalOwner);contactPlastic+=contactReturn.plastic;contactProjection+=contactReturn.projection;contactDetachment+=contactReturn.detachment;materialSpringWork+=contactReturn.endpointWork;maxReturnResidual=std::max(maxReturnResidual,std::abs(contactReturn.residual));
+   // Independently compare actual mapped BEGIN force/Jacobian work with
+   // material endpoint spring work. This is a signed discretization/transport
+   // remainder,NOT invented heat or a residual of the total energy ledger.
+   double ftWork=h*(inner(totalForce,v1)-inner(beamForce,v1)-inner(layerForce,v1)-inner(actuator,v1)-inner(external,v1)-inner(normalBegin.force,v1));
+   double jtWork=h*h*(vJv-vJbeamv-vJlayerv-vJactuatorv-vJnormalv);
+   tangentBeginForceWork+=ftWork;tangentEulerJacobianWork+=jtWork;
+   tangentMappedRemainder+=contactReturn.endpointWork+ftWork+jtWork;
 #endif
 #ifdef REGRIP_FRAME_RETURN_AUDIT
    for(auto*f:fields)if(f->getClassName()=="FrameLayerNetwork"){auto r=auditFrameReturn(f,x0);frameReturnPlastic+=r.plastic;frameReturnProjection+=r.projection;frameMaterialWork+=r.endpointWork;maxFrameReturnResidual=std::max(maxFrameReturnResidual,std::abs(r.residual));}
@@ -93,7 +101,7 @@ int main(int argc,char**argv){try{
  for(auto*f:journal->fields)if(f->getClassName()=="CurvedMaterialContact")throw std::runtime_error("v8 curved energy journal requires compiled normal/return audit;missing terms are not zero");
 #endif
  bool odeFound=false;for(auto*object:ctx->getObjects<sofa::core::objectmodel::BaseObject>(sofa::core::objectmodel::BaseContext::SearchUp))if(object->getClassName()=="EulerImplicitSolver"){odeFound=true;for(auto name:{"firstOrder","trapezoidalScheme","solveConstraint","vdamping"}){auto*d=object->findData(name);if(!d||(d->getValueString()!="0"&&d->getValueString()!="false"))throw std::runtime_error("unsupported Euler option");}journal->alpha=std::stod(object->findData("rayleighMass")->getValueString());journal->beta=std::stod(object->findData("rayleighStiffness")->getValueString());}if(!odeFound)throw std::runtime_error("Euler scope");
- journal->out.open(argv[4]);if(!journal->out)throw std::runtime_error("journal output");journal->out<<std::setprecision(17)<<"time,step,stage,beam_U,layer_U,contact_U,wire_virtual_not_storage,K,external_begin_force_work,actuator_begin_force_work,Rayleigh_mass_work,Rayleigh_stiffness_work,derived_velocity_projection_loss,kinetic_algorithmic_step_residual,derived_beam_quadratic_projection,beam_nonlinear_remainder,layer_quadratic_projection,layer_nonlinear_or_return_remainder,normal_quadratic_projection,normal_nonlinear_remainder,derived_actuator_Euler_work,derived_external_Euler_work,contact_plastic,contact_endpoint_projection,contact_detachment,material_spring_endpoint_work,max_material_return_residual,layer_plastic,frame_return_plastic,frame_return_projection,frame_material_endpoint_work,max_frame_return_residual,unknown_pressure_work,unknown_total_closure\n";
+ journal->out.open(argv[4]);if(!journal->out)throw std::runtime_error("journal output");journal->out<<std::setprecision(17)<<"time,step,stage,beam_U,layer_U,contact_U,wire_virtual_not_storage,K,external_begin_force_work,actuator_begin_force_work,Rayleigh_mass_work,Rayleigh_stiffness_work,derived_velocity_projection_loss,kinetic_algorithmic_step_residual,derived_beam_quadratic_projection,beam_nonlinear_remainder,layer_quadratic_projection,layer_nonlinear_or_return_remainder,normal_quadratic_projection,normal_nonlinear_remainder,derived_actuator_Euler_work,derived_external_Euler_work,contact_plastic,contact_endpoint_projection,contact_detachment,material_spring_endpoint_work,max_material_return_residual,layer_plastic,frame_return_plastic,frame_return_projection,frame_material_endpoint_work,max_frame_return_residual,tangent_begin_force_work,tangent_Euler_J_work,tangent_mapped_endpoint_remainder,unknown_pressure_work,unknown_total_closure\n";
  if(argc==9){
   sofa::core::objectmodel::BaseComponent::SPtr compensation;for(auto obj:body->object)if(obj->getClassName()=="CompensatedBeamTranslations"){if(compensation)throw std::runtime_error("multiple structural arithmetic owners");compensation=obj;}
   if(!compensation)throw std::runtime_error("structural arithmetic stage missing");

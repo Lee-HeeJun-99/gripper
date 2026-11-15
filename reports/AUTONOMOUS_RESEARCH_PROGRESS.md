@@ -362,3 +362,27 @@ tests the identified release temporal error within bounded cost;it is NOT a
 replacement for failed uniform-grid evidence. Dyadic clock math/build passed;
 actual4s prefix equivalence is running before any full launch. Forcefields,
 friction,loads,damping,all original physical thresholds remain unchanged.
+
+### Falsified damping hypothesis and localized energy work discrepancy
+
+Actual17.1s public-MBK probe completed523.994s with exact X/V/R equality to
+the independent fixed-clock reference. All14sampled free-system minima are
+positive(about1.49e-6to5.23e-6 after length congruence);projected mass is exactly
+constant. These samples do not prove PSD everywhere,but do not support negative
+coupled damping as the root cause. No physical damping change is justified by
+this experiment. The independent normal-only counterexample remains valid,
+and is not conflated with the actual coupled matrix result.
+
+All48000 matched Post-Commit→next Begin inventories have EXACT zero gap in
+Beam/layer/contact/K. The potential-jump hypothesis is falsified for this run.
+The remaining energy term instead compares material endpoint spring work
+with mapped BEGIN contact force/Jacobian work. Independently derived
+R_t=W_material+h*f_t0·v1+h²*v1ᵀJ_t0*v1 is signed,NOT heat or a fitted global
+energy residual. Independent planar stick/slip identity max1.36e-20 PASS.
+Actual v11one-second journal X/V/Rexact,remaining1.30771e-15 versus independent
+R_t1.30755e-15;remaining after that term1.61947e-19.8s/half-dt validation follows;
+this discrete identity does not certify physical/time accuracy or full energy.
+
+Event-grid actual4s112.748s profile PASS,all X/V/R differences0. Two full18s
+release refinements are ACTUALLY running;predicted1.2-margin costs<900s,4GiB,
+three/four bounded children at most. Existing uniform-grid failures remain.

@@ -120,3 +120,38 @@ both FAIL.1%. Added the nonadjacent cross-check instead of presenting adjacent
 PASS as full base-dt qualification. Hence time remains incompletely qualified
 alongside the independently unresolved spatial error. Quarter-step detachment
 inventory relative differences also remain large;no global energy claim.
+
+## 2026-11-16 actual continuation,not a completed research objective
+
+Termination audit:the previous turn had no recorded session/resource failure;
+all children had exited normally. Ending at the campaign checkpoint was the
+agent's own premature decision,not a forced stop or achieved final objective.
+
+Implemented independent models/curved_contact with the verified Hermite
+virtual-work map,physical nodal torques,consistent spatial Jacobian and a
+conservative4/27director sag envelope. Both normal and tangent use immutable
+material midpoints;the prior models/builds/raw remain unchanged. API FD6.27e-10,
+90actual ForceField covariance/force/moment/Jacobian checks pass. Independent
+curved normal integration reference converges. Initial CMake dependency and
+namespace compile failures are snapshotted in new campaign build_v1/v2;v3passes.
+The copied v3unit test has a nonphysical multi-character-newline warning;
+it is not claimed warning-free. No physical threshold was changed.
+
+Actual18s11/21/41runs completed252.37/394.69/722.51wall seconds. Keeping the
+inherited all-node layout gives6.0498%/2.6847% translation differences,FAIL1%.
+Hold local force/moment gates pass. Half-dt motion.077264% and loss.073839%
+pass the adjacent.1%line,not a complete temporal certificate.
+
+New cause found in source/XML audit:LayerNetwork stiffness is explicitly a
+POINT stiffness,while empty connectorIndices creates all nonroot nodes.
+Refinement changes10→20→40connectors at unchanged k=1 and kn=.001;total
+elastic couplings double. Cable guides also change11→21→41. These old
+comparisons are therefore not pure Beam refinement at fixed physical layout.
+Their numerical FAILs are retained,not rewritten. Added fixed10mm connector/
+cable-guide controls and separate one-factor ablations,now actually running.
+No stiffness scaling or fabricated compensating force is used.
+
+Also testing strict-FP native ISA build(no fast-math,reassociation or FMA
+contraction)against actual generic raw states before any cost-qualified
+quarter-step run. At most4long physics children;each4GiB/default480s or
+profile-qualified single900s attempt. No automatic restart is installed.

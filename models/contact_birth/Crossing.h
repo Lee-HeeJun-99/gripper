@@ -5,7 +5,10 @@ namespace regrip_birthfast {
 using namespace regrip_history;
 inline double root(const V&a,const V&b,unsigned shape,double radius,double height,double skin){
  if(regrip_closure::sdf(a,shape,radius,height)<skin||regrip_closure::sdf(b,shape,radius,height)>=skin)throw std::invalid_argument("birth root outside-to-inside required");
- if(shape==0){auto d=sub(b,a);double norm=std::sqrt(dot(a,a)),A=dot(d,d),B=dot(a,d),gap=(norm-radius)-skin,C=gap*(norm+radius+skin),D=B*B-A*C;if(A==0||D<=0)throw std::invalid_argument("degenerate/grazing sphere birth");double alpha=C/(-B+std::sqrt(D));if(alpha<0||alpha>1)throw std::invalid_argument("sphere birth outside step");return alpha;}
+ if(shape==0){auto d=sub(b,a);double norm=std::sqrt(dot(a,a)),A=dot(d,d),B=dot(a,d),gap=(norm-radius)-skin,C=gap*(norm+radius+skin),D=B*B-A*C;if(A==0)throw std::invalid_argument("zero-displacement sphere birth");if(D>0){double alpha=C/(-B+std::sqrt(D));if(alpha>=0&&alpha<=1)return alpha;}
+  // In a near-ULP crossing the algebraic root can fall outside the bracket.
+  // Solve the SAME signed-distance bracket instead of clamping alpha.
+ }
  double l=0,u=1;for(int i=0;i<60;++i){double alpha=(l+u)/2;auto x=add(scale(a,1-alpha),scale(b,alpha));if(regrip_closure::sdf(x,shape,radius,height)>=skin)l=alpha;else u=alpha;}return (l+u)/2;
 }
 inline V normal(const V&v,unsigned shape,double radius,double height){auto g=geometry(constantV<First>(v),shape,radius,height);V n;for(int j=0;j<3;++j)n[j]=g.normal[j].v;return n;}

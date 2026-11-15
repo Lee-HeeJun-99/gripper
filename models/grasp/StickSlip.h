@@ -33,7 +33,7 @@ struct History{bool active=false,sliding=false;V local{},normal{},elastic{};};
 struct ContactResult{Result wrench;History next;double normalForce=0,elasticEnergy=0,plasticDissipation=0,releaseDissipation=0,capacity=0;};
 // All state is in the object's material frame. Minimal normal transport is
 // objective, with a guarded antipodal singularity rather than arbitrary axes.
-inline ContactResult evaluateContact(const Pose&p,const Pose&o,const History&old,unsigned shape,double radius,double halfHeight,double skin,double kn,double kt,double mu){
+inline ContactResult evaluateContact(const Pose&p,const Pose&o,const History&old,unsigned shape,double radius,double halfHeight,double skin,double kn,double kt,double mu,bool referenceNormal=false){
  validate(p);validate(o);for(double a:{radius,halfHeight,skin,kn,kt,mu})if(!std::isfinite(a)||a<0)throw std::invalid_argument("contact scalar");
  if(radius==0||halfHeight==0||kt==0)throw std::invalid_argument("positive radius/halfHeight/kt required");
  for(const auto&v:{old.local,old.normal,old.elastic})for(double a:v)if(!std::isfinite(a))throw std::invalid_argument("nonfinite contact history");
@@ -51,12 +51,23 @@ inline ContactResult evaluateContact(const Pose&p,const Pose&o,const History&old
   auto delta=sub(local,constantV<First>(old.local));elastic=add(elastic,sub(delta,scale(n,dot(n,delta))));
  }
  auto trial=elastic;double trialNorm=std::sqrt(dot(elastic,elastic).v);bool sliding=kt*trialNorm>result.capacity;
- if(sliding&&trialNorm>0){auto cap=First(mu*kn)*(First(skin)-geo.distance);elastic=scale(elastic,cap*invAD(First(kt)*sqrtAD(dot(elastic,elastic))));}
+ if(result.capacity==0)elastic={First(0),First(0),First(0)};
+ else if(sliding&&trialNorm>0){auto cap=First(mu*kn)*(First(skin)-geo.distance);auto squared=dot(elastic,elastic);First norm(std::sqrt(squared.v));for(int j=0;j<12;++j)norm.g[j]=.5*squared.g[j]/norm.v;elastic=scale(elastic,cap*invAD(First(kt)*norm));}
  // Normal energy differentiated independently with AD2, physical wrench
  // differentiated with AD1. Do not mistake this spatial Jacobian for Hessian.
- Vec<Jet>dj{},lj{};for(int j=0;j<3;++j)dj[j]=Jet(p.p[j]-o.p[j])+Jet::variable(j)-Jet::variable(j+6);
- for(int j=0;j<3;++j){V a{};a[j]=1;lj[j]=dot(lifted(rotate(o.q,a),9),dj);}
- auto gap=geometry(lj,shape,radius,halfHeight).distance-Jet(skin);auto nr=energy_result(Jet(.5*kn)*gap*gap);result.wrench=nr;
+ if(referenceNormal){
+  Vec<Jet>dj{},lj{};for(int j=0;j<3;++j)dj[j]=Jet(p.p[j]-o.p[j])+Jet::variable(j)-Jet::variable(j+6);
+  for(int j=0;j<3;++j){V a{};a[j]=1;lj[j]=dot(lifted(rotate(o.q,a),9),dj);}
+  auto gap=geometry(lj,shape,radius,halfHeight).distance-Jet(skin);result.wrench=energy_result(Jet(.5*kn)*gap*gap);
+ }else{
+  // Equivalent physical normal wrench differentiated once, rather than a
+  //12x12 energy Hessian followed by a rotational connection conversion.
+  Vec<First>normal{};for(int j=0;j<3;++j)for(int k=0;k<3;++k)normal[k]=normal[k]+axes[j][k]*n[j];
+  auto f=scale(normal,First(kn)*(First(skin)-geo.distance));auto torque=cross(d,f);std::array<First,12>w{};
+  for(int j=0;j<3;++j){w[j]=f[j];w[j+6]=First(-1)*f[j];w[j+9]=First(-1)*torque[j];}
+  for(int i=0;i<12;++i){result.wrench.force[i]=w[i].v;for(int j=0;j<12;++j)result.wrench.jacobian[12*i+j]=w[i].g[j];}
+  result.wrench.energy=.5*kn*(geo.distance.v-skin)*(geo.distance.v-skin);
+ }
  Vec<First>force{};for(int j=0;j<3;++j)for(int k=0;k<3;++k)force[k]=force[k]-First(kt)*axes[j][k]*elastic[j];
  auto torque=cross(d,force);std::array<First,12>wrench{};for(int j=0;j<3;++j){wrench[j]=force[j];wrench[j+6]=First(-1)*force[j];wrench[j+9]=First(-1)*torque[j];}
  for(int i=0;i<12;++i){result.wrench.force[i]+=wrench[i].v;for(int j=0;j<12;++j)result.wrench.jacobian[12*i+j]+=wrench[i].g[j];}

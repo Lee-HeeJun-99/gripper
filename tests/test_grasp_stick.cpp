@@ -8,6 +8,7 @@ template<class Parent>struct Acc:Parent{double a[18][18]{};void add(sofa::Signed
 int main(){try{
  Pose p{{0,0,4.99}},o;regrip_stick::History h;auto eval=[&](Pose x,const regrip_stick::History&s,unsigned shape=0){return evaluateContact(x,o,s,shape,5,5,.1,.01,.02,.3);};
  auto initial=eval(p,h);h=initial.next;require(initial.next.active&&!initial.next.sliding,"stationary contact");
+ Pose tiny=p;tiny.p[0]+=1e-13;auto frictionless=evaluateContact(tiny,o,h,0,5,5,.1,.01,.02,0);require(dot(frictionless.next.elastic,frictionless.next.elastic)==0&&frictionless.plasticDissipation==0,"mu0 / sub-ULP tangential increment has no norm singularity");
  Pose sep=p;sep.p[2]=6;require(!eval(sep,{}).next.active,"no contact");
  p.p[0]=.001;auto stick=eval(p,h);require(!stick.next.sliding&&std::abs(stick.wrench.force[0])>1e-7,"static traction at zero velocity");
  auto repeated=eval(p,h);require(repeated.wrench.force==stick.wrench.force&&h.elastic==initial.next.elastic,"query must not mutate history");
@@ -20,6 +21,7 @@ int main(){try{
  for(unsigned shape=0;shape<3;++shape)for(bool sliding:{false,true}){
   Pose a{{.12,.17,4.98}},b;auto old=evaluateContact(a,b,{},shape,5,5,.1,.01,.02,.3).next;a.p[0]+=sliding?.1:.001;
   auto r=evaluateContact(a,b,old,shape,5,5,.1,.01,.02,.3);
+  auto reference=evaluateContact(a,b,old,shape,5,5,.1,.01,.02,.3,true);for(int i=0;i<12;++i){require(std::abs(reference.wrench.force[i]-r.wrench.force[i])<1e-14,"AD1 normal vs AD2 energy force");for(int j=0;j<12;++j)require(std::abs(reference.wrench.jacobian[12*i+j]-r.wrench.jacobian[12*i+j])<1e-14,"AD1 normal vs AD2 energy spatial tangent");}
   for(int c=0;c<12;++c){auto ap=a,am=a,bp=b,bm=b;if(c<6){ap=increment(a,c,1e-6);am=increment(a,c,-1e-6);}else{bp=increment(b,c-6,1e-6);bm=increment(b,c-6,-1e-6);}
    auto plus=evaluateContact(ap,bp,old,shape,5,5,.1,.01,.02,.3),minus=evaluateContact(am,bm,old,shape,5,5,.1,.01,.02,.3);for(int row=0;row<12;++row)maxJ=std::max(maxJ,std::abs((plus.wrench.force[row]-minus.wrench.force[row])/2e-6-r.wrench.jacobian[12*row+c]));}
   V fa{r.wrench.force[0],r.wrench.force[1],r.wrench.force[2]},fb{r.wrench.force[6],r.wrench.force[7],r.wrench.force[8]},torque{r.wrench.force[9],r.wrench.force[10],r.wrench.force[11]};for(double v:add(fa,fb))require(std::abs(v)<1e-14,"action reaction");for(double v:add(cross(sub(a.p,b.p),fa),torque))maxMoment=std::max(maxMoment,std::abs(v));

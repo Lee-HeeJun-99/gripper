@@ -25,8 +25,11 @@ public:
    for(unsigned j=0;j<=samples.getValue();++j,++index){double s=double(j)/samples.getValue(),weight=length/samples.getValue()*((j==0||j==samples.getValue())?.5:1.);Pose pp;for(int k=0;k<3;++k)pp.p[k]=(1-s)*x[a].getCenter()[k]+s*x[b].getCenter()[k];
     // Separated samples need no AD2/AD1 calculation; history is released once
     // by commit, never on residual/solver queries.
-    auto local=rotate(Q{-po.q[0],-po.q[1],-po.q[2],po.q[3]},sub(pp.p,po.p));auto geo=regrip_stick::geometry(regrip_stick::constantV<regrip_stick::First>(local),shape.getValue(),radius.getValue(),halfHeight.getValue());
-    if(geo.distance.v>=pointRadius.getValue()){out.next.emplace_back();out.release+=.5*weight*tangentLineStiffness.getValue()*dot(history[index].elastic,history[index].elastic);continue;}
+    auto local=rotate(Q{-po.q[0],-po.q[1],-po.q[2],po.q[3]},sub(pp.p,po.p));double distance=0,radiusValue=radius.getValue();
+    if(shape.getValue()==0)distance=std::sqrt(dot(local,local))-radiusValue;
+    else if(shape.getValue()==1){double a=std::sqrt(local[0]*local[0]+local[2]*local[2])-radiusValue,b=std::abs(local[1])-halfHeight.getValue();distance=std::sqrt(std::max(a,0.)*std::max(a,0.)+std::max(b,0.)*std::max(b,0.))+std::min(0.,std::max(a,b));}
+    else{double outside=0,inside=-std::numeric_limits<double>::infinity();for(double v:local){double q=std::abs(v)-radiusValue;outside+=std::max(q,0.)*std::max(q,0.);inside=std::max(inside,q);}distance=std::sqrt(outside)+std::min(0.,inside);}
+    if(distance>=pointRadius.getValue()){out.next.emplace_back();out.release+=.5*weight*tangentLineStiffness.getValue()*dot(history[index].elastic,history[index].elastic);continue;}
     auto r=regrip_stick::evaluateContact(pp,po,history[index],shape.getValue(),radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),weight*lineStiffness.getValue(),weight*tangentLineStiffness.getValue(),mu.getValue());
     out.next.push_back(r.next);out.a.energy+=r.wrench.energy;out.a.contacts++;out.a.contactForce+=r.normalForce;out.plastic+=r.plasticDissipation;out.release+=r.releaseDissipation;out.elastic+=r.elasticEnergy;out.capacity+=r.capacity;if(r.next.sliding)out.slips++;else out.sticks++;
     double traction=weight*tangentLineStiffness.getValue()*std::sqrt(dot(r.next.elastic,r.next.elastic));if(r.capacity>0)out.maxRatio=std::max(out.maxRatio,traction/r.capacity);else if(traction>1e-20)throw std::runtime_error("nonzero traction at zero capacity");

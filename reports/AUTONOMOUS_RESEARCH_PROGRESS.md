@@ -386,3 +386,111 @@ this discrete identity does not certify physical/time accuracy or full energy.
 Event-grid actual4s112.748s profile PASS,all X/V/R differences0. Two full18s
 release refinements are ACTUALLY running;predicted1.2-margin costs<900s,4GiB,
 three/four bounded children at most. Existing uniform-grid failures remain.
+
+### Actual release experiments and next nonuniform-grid qualification
+
+Release-only div2/div4 full18s completed654.148/736.912s. Both original hold
+gates pass,all X/V/R before16s are EXACTLY identical to the uniform half-dt
+reference. Full-cycle D=1.05993038306e-10/1.06132387621e-10 F·mm;difference
+.1312976% FAIL unchanged.1%. Last recorded active contact16.320/16.32125s.
+This identifies localized temporal cost without relabelling a failure.
+
+The next independently declared grid uses coarse quiet steps and refined
+known actuation/load transients:events0,.5,2,3,4,6,7,14,16,16.5;divisors
+1,2,1,2,1,2,1,2,16,1. Its ALL-step factor-two refinement is the test,not
+release-only refinement with an unresolved identical prefix. Coarse base h
+.0005 gives74000steps/24s;fine base.00025 gives148000. Physical fields/materials/
+loads/damping and original thresholds are unchanged. These are NOT uniform-dt
+trials. Pilot actual4s99.799/201.723s supports finite900/1320s limits,4GiB.
+Actual coarse24s492.806s PASSES original hold AND recovery;global moment
+2.40950e-5 versus1e-3. Birth/Death852/852,unresolved0,Commit/observer plastic
+EXACT agreement. Fine24s is running;do not certify time convergence yet.
+New-grid41nodes/finer material sampling have their own4sprofiles running.
+
+Full v11split energy24s actually completed684.570s,X/V/Rexact,old columns agree
+with independent full-AD reference within5.53e-21. After independently derived
+mapped-friction remainder,the final unexplained discrete residual9.82387e-18
+F·mm;8shalf-dt residual-1.05002e-18. The remaining signed remainder is not heat.
+No unknown pressure/global field was replaced with0,and this old-grid journal
+is not certification of the new phase grid.
+
+For future affordable new-grid energy tests,an ALGEBRAICALLY EQUIVALENT grouped
+observer avoids the extra normal Jacobian:Rc=DeltaUn+W_material+h*fc0.v+h²v.Jc0.v
+=Rn-Pn+Rt. Independent600shape/separation tests PASS,max1.6941e-20. Actual
+v12one-second group difference versus independent split8.760e-20,X/V/Rexact;
+actual8s222.913s difference2.914e-18,remaining8.770e-20. No production force,
+Jacobian or history change. Unused split columns remain NULL,not fake zeros.
+Further v13 reuses the ACTUAL return snapshot energy for pre-Commit and prior
+post-Commit energy ONLY at an identical pose/transaction in the frozen one-owner
+scene. Actual direct-query checks every1000steps must match BITWISE or fail.
+Its1stest passed;8stest is running. This is diagnostic-query optimization,
+not a revised constitutive law or a proven whole-model speedup.
+
+### New-grid actual results and preserved finer diagnostics
+
+New-grid fine24s completed1074.824s. Coarse/fine both original hold/recovery
+PASS;global moment relative2.40950e-5/3.71272e-5. Full-cycle D difference
+.0682459% PASSES original.1%;movement/rotation differences also pass.
+This is NOT an all-phases energy/grasp certification. Additional small-phase
+loss checks still FAIL:wire transient.294329%,7–14s.490155%,14–15s.107132%,
+15–16s.360739%. Absolute differences are retained in qualification_v1.json.
+
+Actual new-grid41nodes849.013s and finer material sampling741.837s both
+hold/recoveryPASS;space comparisonsPASS1%. The initial profile/full prefix
+comparators wrongly compared h=.0005 against old h=.00025. Original FAIL JSON
+is retained. Actual .5s SAME-grid fixed-clock controls6.281/3.974s match X/V/R
+EXACTLY;new metrics_same_grid_v2.json reanalyzes existing actual raw data with
+the proper comparator and unchanged physical criteria,without an expensive
+physics rerun. Repetition565.855s gives actual whole24s X/V/R differences0.
+Material-sampling full-cycle loss.06299997% PASS1%,but7–14/15–16increments
+6.41528%/5.46712% FAIL1%. These are not erased by the aggregate PASS.
+
+Actual bin localization falsifies the assumption of continuous quiet creep:
+plastic increments cease around8.12s and remain constant through14s. Most
+unresolved7–14s loss is a decaying transient7–7.43s,not proof of an ongoing
+object-coordinate roundoff floor. No object-pose correction/accumulator was
+implemented on the basis of that unconfirmed hypothesis.
+
+Independent prescribed parabolic-capacity/virgin scalar benchmark reproduces
+the scale separation:at h=.0025,traction error.0209004% but plastic loss error
+9.22198%. Boundary-split Gauss3 agrees with an independent closed integral and
+local energy/work derivative. Narrower virgin slip bands are entirely missed
+by all tested point grids although force errors stay below1%. This is a
+mathematical reference,not a SOFA or real-material measurement and not yet a
+replacement history model. Actual per-point SOFA trace4s query-purity tests
+pass X/V/Rexact;two24s traces are collecting production-kernel return fields
+before Commit to test whether the real residual is similarly localized.
+
+New-grid actual v14coarse24s journal840.463s,X/V/Rexact,unexplained discrete
+residual-1.55243e-19 after separately derived signed terms. Fine8s561.341s
+gives-3.06377e-19;fine24s forecast1986.658s exceeds1320s policy,attempts0:
+BLOCKED by recorded finite policy,NOT an observed server/session failure.
+Research continued instead of declaring completion. Profiling/source audit
+found repeated unchanged cable AD assemblies,including an optional T*L gauge
+that is NOT stored energy. New public-assembly reuse preserves actual F/J/work
+and explicitly omits that unused gauge as NULL,not0. Frozen EnergyField/Cable
+class definitions are byte-identical across the physical/diagnostic sources;
+generated-source proof passes.100SDK API states and actual1s exact F/J/cache/
+X/V/R checks pass;runtime15.750s versus prior20.064s is an observed comparison,
+not an isolated benchmark.8sverification completed160.047s,PASS,actualX/V/R0,
+all96cable snapshot checks exact. New-grid4scoarse passed133.897s;fine4s
+is being measured before longer runs. No force/Jacobian/Commit code changed.
+
+### Actual narrow-slip-front observation and bounded follow-up
+
+Both24s read-only point traces completed551.234/708.429s,20snapshots each,
+query-history changes0,X/V/R differences0. At7.2s coarse has813active points,
+8positive-loss points (7carry95%loss);fine has1623active points,12positive-loss
+points (10carry95%). Actual per-step loss1.03570542e-16/7.78752490e-17Fmm.
+These are instantaneous samples,NOT cycle-integrated losses or a full cause
+proof. The scalar thin-band reference and this actual localization support
+testing a yield-front-resolved state/integration representation next.
+
+A .000625mm cold-start initialization ACTUALLY FAILED the unchanged .001mm
+minimum guard,with exactstderr retained in history625nm_profile4_v2. A prior
+runner KeyError occurred before physics;its empty directory is not a physics
+trial. No guard was removed. An independent .001mm/4s profile is running;
+its own measured rate controls whether an8.2s cold-start follow-up is safe.
+The8.2s prefix was selected from observed loss ending around8.12s,not as a
+replacement for full24s hold/release certification. No checkpoint restart,
+load/friction/damping reduction,object correction or relaxed criterion used.

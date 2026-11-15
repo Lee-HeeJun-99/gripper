@@ -1,5 +1,14 @@
 # Autonomous research status — active continuation 2026-11-16
 
+NEWEST:actual Hermite implementation and11/21/41dynamics are completed.
+New phase-grid21→41spacePASS;full-cycle time loss.0682459%PASS.1%,history
+loss.06299997%PASS1%,repeatX/V/R0. Additional small-phase time/history FAILs
+remain;full grasp/energy qualification and100mm graspOptuna remain BLOCKED.
+Actual read-only24s point traces both PASS,showing narrowly localized yielding;
+at7.2s only8/813coarse and12/1623fine active points carry plastic loss.
+v15observer8s160.047s PASS,physicalX/V/R0. Latest live-work/restart details
+are at TOP of NEXT;historical running statements below are retained chronology.
+
 The prior stop was an agent-selected campaign checkpoint, NOT an observed
 session timeout or exhausted system resource. It did not complete the user's
 research objective. Development has resumed; the historical checkpoint below
@@ -64,6 +73,29 @@ Last committed source checkpoint: `0c6cb77`;additional energy/integrator work is
   results/autonomous_20261116_event_clock_a01,in addition to prior campaigns.
 - No automatic restart is installed or assumed. Check actual results before
   resuming;existing output names are deliberately refused.
+
+## Latest measured results (supersedes earlier active-process statements)
+
+- New nonuniform grid actual24s coarse/fine,41nodes,finer material sampling,
+  repeat all completed and pass original physical hold/recovery. Full-cycle
+  time loss.0682459% PASS.1%;fine space comparisons/repeat PASS.
+- Additional phase-resolved time/history loss still FAILS;all flags and tiny
+  absolute errors are retained. No global grasp/optimization approval.
+- Initial variant comparator used different dt;old FAILs preserved. Actual
+  SAME-grid .5s controls show exact X/V/R equality;v2physical reanalysis of
+  existing full raw passes without rerunning or loosening limits.
+- Actual new-grid coarse24s energy journal840.463s,X/V/Rexact,remaining
+  -1.55243e-19 after separately derived signed terms. NOT full physical energy
+  certification. Fine24s BLOCKED by1986.658s profile forecast versus1320s policy,
+  attempts0;this is not a server-forced failure. Unknown pressure fields NULL.
+- Research continues:read-only per-point24s SOFA traces and exact cable-query
+  reuse. Frozen100state API plus1s actual path tests pass;8s test RUNNING.
+- Mathematical slip-band reference shows why small force error need not imply
+  small loss error;it is NOT a completed 3D adaptive history implementation.
+- No object-pose correction was introduced;plasticity bins show a decaying
+  transient rather than a proved permanent roundoff-creep floor.
+- Final goal remains incomplete;12wrench certification and100mm grasp Optuna
+  stay BLOCKED/NOT RUN rather than inferred from this single +Tz research case.
 
 ## Historical checkpoint 2026-11-15 (not current model certification)
 

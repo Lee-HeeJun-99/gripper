@@ -1,5 +1,79 @@
 # Next research checkpoint
 
+## Newest checkpoint — phase-resolved slip-front investigation
+
+Prior Hermite implementation,11/21/41 runs,new-grid24s dynamics,repeat,
+mesh41and material1250nm runs have COMPLETED. Historical "running" entries
+below are not live process claims. The full objective is NOT complete.
+Actual per-point24s traces PASS query purity (X/V/R differences0),
+coarse551.234s/finer708.429s. `slip_front/localization_v1.json` shows at7.2s
+8of813/12of1623active material points carry plastic loss. Narrow yield-band
+sampling is supported as a hypothesis,not yet a proven replacement model.
+
+Current work:public cable snapshot observer v15 actual8s160.047s PASS;
+new-grid coarse4s133.897s PASS,fine4s and minimum-spacing1000nm4s underway.
+Inspect actual summary/logs first. No automatic restart is installed.
+625nm was ACTUALLY REJECTED by the preserved .001mm minimum guard;do not lower
+the guard silently. A prior runner KeyError happened BEFORE physics and
+is distinct from that actual initialization failure.
+
+```bash
+# Same PY and three external-drive environment exports as below.
+# Only after own4s summary PASS,and if exact output path is absent:
+$PY tools/curve_local_history.py
+$PY tools/curve_phase_energy.py --version v15 --duration 8
+$PY tools/curve_phase_energy.py --version v15 --duration 8 --fine
+# 24s requires own8s forecast <=1320s;otherwise policy BLOCKED.
+$PY tools/curve_phase_energy.py --version v15 --duration 24 --fine
+```
+
+Priority:compare actual7–8.2s loss at .0025/.00125/.001mm using identical
+cold-start phase grids;do not use failed checkpoint trajectory equivalence.
+Then test a yield-front-resolved material history representation. Scalar
+parabolic-capacity exact reference shows low force error with large loss
+error,but does NOT certify the real3D model. Keep phase FAILs/Optuna blocked.
+
+## Latest active work — do not repeat completed Hermite or clock campaigns
+
+The requested Hermite SOFA implementation and11/21/41runs are DONE,not pending.
+Fine21→41passes1%,coarse11→21still fails,with observed motion order1.958.
+Uniform-time full-cycle loss remains FAIL despite hold checks passing.
+Release-only refinement also actually FAILS.1%(.1312976%);do not rerun it as
+if merely unexecuted. No observed session/environment limit caused the earlier
+stop,and this work is not declared a completed research objective.
+
+CURRENT actual children:phase-grid fine24s,phase-grid41node/finer-history4s
+profiles,and grouped/reused energy observer8s. Check their JSON/logs FIRST;
+no automatic restart is installed or assumed. Default4GiB/480s/max4long;
+900/1320exceptions have actual own profiles and finite decisions in raw.
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+export REGRIP_BEAM_PLUGIN=build/autonomous_20261116_full_native_a01/beam/libReGripConservativeBeam.so
+export REGRIP_CURVE_BUILD=build/autonomous_20261116_curve_native_a01/v1
+export REGRIP_CURVE_OUT=results/autonomous_20261116_phase_grid_a01
+# Execute ONLY if its own profile JSON passed and this exact full path is absent:
+$PY tools/curve_phase_grid.py full_coarse --nodes 41
+$PY tools/curve_phase_grid.py full_coarse --history .00125
+$PY tools/curve_phase_grid.py full_coarse --tag repeat1
+```
+
+Next:assess actual coarse/fine FULL cycle and phase loss with unchanged.1%,
+new-grid space/history1%,original equilibrium/recovery criteria. Do not inherit
+old uniform-grid certification. New material sampling jointly refines its
+normal/tangent midpoint integrals AND stored material points;it is not an
+independent legacy Gauss8/16/32knob. Independent normal reference remains separate.
+
+Actual old-grid split journal v11completed24s,remaining9.824e-18 after separately
+derived mapped friction work. Whole physical/time energy certification is NOT
+inferred from this discrete bookkeeping identity. New v12grouping and v13pure
+energy-query reuse must pass independent split/actual-state comparisons before
+new-grid use. Frozen old v9/v10/v11/v12binaries/source snapshots remain;
+current-source rebuild guards deliberately reject mixed versions.
+
+Keep12wrench certification/new100mm grasp Optuna blocked until required new-grid
+convergence/energy/repetition passes. No fabricated candidates or real PET claim.
+
 ## Active continuation 2026-11-16 — implementation is no longer pending
 
 The tested Hermite map is now integrated in `models/curved_contact`,with actual

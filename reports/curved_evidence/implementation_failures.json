@@ -1,0 +1,9 @@
+{
+  "scope": "Observed tool transcript failures reconstructed here;not fabricated original stderr files or physics trials. Earlier campaign failure JSON/logs remain in their original raw directories.",
+  "observed": [
+    {"command": "cmake -S diagnostics/damping_matrix -B build/autonomous_20261116_damping_a01/v1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=.runtime/closure_sdk", "status": "FAIL", "exit_code": 1, "error": "Sofa.SimpleApiConfig.cmake not found with relative prefix", "resolution": "Use absolute matching SDK prefix;no SDK installation or ABI change."},
+    {"command": "cmake --build build/autonomous_20261116_damping_a01/v1 -j2", "status": "FAIL", "exit_code": 2, "error": "sofa::core::MechanicalParams has incomplete type", "warnings": ["signed/unsigned matrix dimensions", "misleading indentation"], "resolution": "Include MechanicalParams.h;explicit dimension casts and split assignment;subsequent actual build/probe passed."},
+    {"command": "python tools/curve_event_grid.py build", "status": "FAIL", "exit_code": 1, "error": "SyntaxError at end=4 if profile else16", "physics_child_launched": false, "resolution": "Correct token separation;subsequent syntax/unit/build and actual profile/full trials passed."},
+    {"stage": "event-clock initial compile", "status": "EXPERIMENTAL", "warning": "Schedule.h misleading indentation after zero-step rejection", "resolution": "Split return onto separate line before archived final math/build validation."}
+  ]
+}

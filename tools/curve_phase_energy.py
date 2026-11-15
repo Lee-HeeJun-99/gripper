@@ -14,17 +14,19 @@ from birth_monitor import Monitor
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--fine',action='store_true');p.add_argument('--duration',type=int,default=4,choices=(4,8,24));a=p.parse_args();label='fine'if a.fine else'coarse';out=OUT/f'energy_v14_{label}_{a.duration}s';out.mkdir(exist_ok=False)
+    p=argparse.ArgumentParser();p.add_argument('--fine',action='store_true');p.add_argument('--version',choices=('v14','v15'),default='v15');p.add_argument('--duration',type=int,default=4,choices=(4,8,24));a=p.parse_args();label='fine'if a.fine else'coarse';out=OUT/f'energy_{a.version}_{label}_{a.duration}s';out.mkdir(exist_ok=False)
     source=OUT/('full_'+label);baseline=json.loads((source/'metrics.json').read_text())
     if not baseline['bounded_hold_pass']or not baseline['recovery_pass']:raise ValueError('actual new-grid physical hold/recovery prerequisite')
-    proof=ROOT/'results/autonomous_20261116_beam_compensation_a01/energy_fast_v14_dt500_s8/summary.json'
+    proof=ROOT/f'results/autonomous_20261116_beam_compensation_a01/energy_fast_{a.version}_dt500_s8/summary.json'
     if json.loads(proof.read_text())['status']!='PASS':raise ValueError('actual independent uniform8s observer equivalence prerequisite')
-    build=ROOT/'build/autonomous_20261116_curve_a01/transaction_fast_v14';manifest=json.loads((build/'journal_manifest.json').read_text());binary=build/'transaction_journal';binaries=[binary]+[build/'normal_bridge'/n for n in('libContactReturnBridge.so','libFrameReturnBridge.so')]
+    build=ROOT/f'build/autonomous_20261116_curve_a01/transaction_fast_{a.version}';manifest=json.loads((build/'journal_manifest.json').read_text());binary=build/'transaction_journal';binaries=[binary]+[build/'normal_bridge'/n for n in('libContactReturnBridge.so','libFrameReturnBridge.so')]
     if manifest['binaries']!={p.name:sha(p)for p in binaries}or any(sha(ROOT/n)!=v for n,v in compiled_only(manifest['sources']).items()):raise ValueError('immutable observer source/binary changed;do not mix versions')
-    if manifest['configuration']!=dict(value_only=True,grouped_contact=True,reuse_energy=True,reuse_frame=True):raise ValueError('observer configuration differs')
+    expected=dict(value_only=True,grouped_contact=True,reuse_energy=True,reuse_frame=True)
+    if a.version=='v15':expected['reuse_cable']=True
+    if manifest['configuration']!=expected:raise ValueError('observer configuration differs')
     h=baseline['config']['dt'];steps=count(a.duration,h);wall=480;prediction=None
     if a.duration!=4:
-        prior=OUT/f'energy_v14_{label}_{4 if a.duration==8 else 8}s/summary.json';own=json.loads(prior.read_text())
+        prior=OUT/f'energy_{a.version}_{label}_{4 if a.duration==8 else 8}s/summary.json';own=json.loads(prior.read_text())
         if own['status']!='PASS':raise ValueError('own actual shorter phase-grid energy profile prerequisite')
         prediction=own['process']['runtime_s']*steps/own['actual_steps']*1.1;wall=480 if prediction<=480 else 900 if prediction<=900 else 1320
         if prediction>1320:write_json(out/'summary.json',dict(status='BLOCKED',reason='actual own profile exceeds1320s finite policy;not observed environment exhaustion',prediction=prediction,attempts=0));return
@@ -40,6 +42,7 @@ def main():
     write_json(out/'execution_result.json',process);log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text();markers=[json.loads(s[len('TRANSACTIONS '):])for s in log.splitlines()if s.startswith('TRANSACTIONS ')];passed=not process['exit_code']and'[ERROR]'not in log and bool(markers);errors={};energy=None
     if passed:
         m=markers[-1];passed=m['begins']==steps and m['pre_commits']==steps and m['post_commits']==steps and m['same_state_energy_reuse_checks']==2*(steps//1000)and m['max_same_state_energy_reuse_error']==0 and m['frame_snapshot_equivalence_checks']==3*(steps//1000)and m['max_frame_snapshot_error']==0
+        if a.version=='v15':passed&=m['cable_snapshot_equivalence_checks']==6*(steps//1000)and m['max_cable_snapshot_error']==0
         before=[r for r in read_states(source/'state.txt')if r['time']<=a.duration+1e-8];after=read_states(out/'state.txt');passed&=len(before)==len(after)
         if len(before)==len(after):errors={k:float(np.max(np.abs(np.array([r[k]for r in before])-np.array([r[k]for r in after]))))for k in('X','V','R')};passed&=not any(errors.values())
         with(out/'energy.csv').open()as f:rows=list(csv.DictReader(f))

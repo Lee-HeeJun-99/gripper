@@ -83,3 +83,11 @@ history 세분화와dt 기준은 여전히 FAIL,전체 energy/파지 Optuna는 B
 birth-time 증분의 독립 실험 커널은 아직 SOFA에 통합하지 않았다.
 상세 수치/최종 finer-case 판정: reports/CONTACT_HISTORY_FINAL_REPORT.md 및 history_evidence/convergence.json.
 외장디스크의 results/history_20261115를 사용했고 원격push/실물측정은 수행하지 않았다.
+
+## 2026-11-15 — Birth-aware 접촉 후속 개발
+
+독립 BirthAwareContact를 실제 SOFA에 통합하고 root IFT/힘/Jacobian/Commit 및 Grid 경계 검사를 추가했다.
+새 빌드의84 Python 검사와 기존 C++ 회귀가 통과했다. 새 결과는 results/birth_20261115에 분리했다.
+기존 실패 prototype과 v7/canonical_v8 결과를 보존하며 서로 다른 바이너리 결과를 합산하지 않는다.
+전체 접촉·이력·시간 수렴 및 energy 폐합은 BIRTH_ENERGY_FINAL_REPORT.md의 실제 판정을 따른다.
+독립100mm 구조 Optuna24완료와 SOFA 후보 검사를 파지 최적화로 표시하지 않는다. 원격push 없음.

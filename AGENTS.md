@@ -45,3 +45,13 @@
 - 접촉 시작 스텝의 누락 증분과 정확한 material-grid 경계의 보간 특이 조건을 해결하기 전 일반 이력 전달 PASS를 주장하지 않는다.
 - history .005→.0025 FAIL,시간 기준 미달,전체 energy 미폐합은 파지 Optuna의 차단 조건이다. 부분 energy journal의 null을0으로 대체하지 않는다.
 - contact.csv.patch.csv는 새 모델에서 법선 적분점만 담는다. 이를 전체 접선 Wrench 분포로 해석하지 않는다.
+
+## CONTACT BIRTH 후속 연구
+
+- 최신 상태는 reports/BIRTH_ENERGY_CURRENT_STATUS.md와 BIRTH_ENERGY_NEXT_TASKS.md. 과거 history 결과/manifest는 보존한다.
+- models/contact_birth/BirthAwareContact는 독립 SOFA 컴포넌트다. 기존 MaterialHistoryContact/ConservativeBeam 구현은 변경하지 않는다.
+- 접촉 시작 root의 IFT 미분과 value-only Commit은 같은 chord 모델을 사용한다. 끝점 보정은 실제 ODE 이벤트 분할이 아니다.
+- resolved 한 스텝 내 birth/death와 grazing은 명시적으로 거부한다. ULP 범위 미해결 이벤트 수를 숨기지 않으며, material-node chord 검사를 완전한 표면 CCD라 부르지 않는다.
+- v7과 canonical_v8의 compiled identity를 섞어 수렴 판정하지 않는다. near-integer Grid ID 정규화는 물리 허용오차 완화가 아니다.
+- contact-owner begin/force-query/pre/post Commit journal은 전체 Solver/FrameLayer transaction journal이 아니다. null 에너지 항목을0으로 대체하지 않는다.
+- 24 COMPLETE 독립 구조 Optuna와 실제 SOFA 구조 후보검사를 파지 Optuna로 세지 않는다. 파지 최적화 차단 Gate는 유지한다.

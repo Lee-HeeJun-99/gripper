@@ -1,0 +1,263 @@
+{
+  "status": "FAIL",
+  "comparisons": {
+    "history_half": {
+      "status": "FAIL",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.011201790608498387,
+        "hold_rotation_increment_rad": 0.0002947099346135646
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 4.7333694751841685e-08,
+        "hold_rotation_increment_rad": 6.184789394072577e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "history_half"
+    },
+    "history_quarter": {
+      "status": "FAIL",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.011573644850518486,
+        "hold_rotation_increment_rad": 8.482398985246402e-05
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 4.947761878461004e-08,
+        "hold_rotation_increment_rad": 1.7802691907919986e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "history_half",
+      "fine": "history_quarter"
+    },
+    "mesh11_21": {
+      "status": "FAIL",
+      "limit": 0.01,
+      "relative_difference": {
+        "hold_displacement_mm": 0.032811562531183704,
+        "hold_rotation_increment_rad": 0.0014487440421708253
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 1.4495613541461596e-07,
+        "hold_rotation_increment_rad": 3.0438512873284893e-07
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "n21"
+    },
+    "mesh21_41": {
+      "status": "NOT RUN"
+    },
+    "normal8_16": {
+      "status": "NOT RUN"
+    },
+    "normal16_32": {
+      "status": "NOT RUN"
+    },
+    "tangent2_4": {
+      "status": "NOT RUN"
+    },
+    "time_half": {
+      "status": "PASS",
+      "limit": 0.001,
+      "relative_difference": {
+        "hold_displacement_mm": 6.05843170527428e-05,
+        "hold_rotation_increment_rad": 7.619264462286627e-05
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 2.5885388734869666e-10,
+        "hold_rotation_increment_rad": 1.5986311423314388e-08
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "base",
+      "fine": "dt_half"
+    },
+    "time_quarter": {
+      "status": "PASS",
+      "limit": 0.001,
+      "relative_difference": {
+        "hold_displacement_mm": 3.111346361049012e-05,
+        "hold_rotation_increment_rad": 3.8181815398049346e-05
+      },
+      "absolute_difference": {
+        "hold_displacement_mm": 1.3293193389229133e-10,
+        "hold_rotation_increment_rad": 8.011399279188964e-09
+      },
+      "denominator": "absolute fine value, unchanged criterion",
+      "coarse": "dt_half",
+      "fine": "dt_quarter"
+    },
+    "repeat": {
+      "status": "NOT RUN"
+    }
+  },
+  "event_commit_audit": {
+    "dt_half": {
+      "status": "PASS",
+      "counts": {
+        "commits": 72000,
+        "born_material_nodes": 216,
+        "dead_material_nodes": 216,
+        "unresolved_samples": 16,
+        "maximum_unresolved_depth_mm": 3.913536161803677e-15
+      },
+      "scope": "actual engine commit count; unresolved samples remain explicit"
+    },
+    "history_quarter": {
+      "status": "PASS",
+      "counts": {
+        "commits": 36000,
+        "born_material_nodes": 862,
+        "dead_material_nodes": 862,
+        "unresolved_samples": 22,
+        "maximum_unresolved_depth_mm": 2.167710455580618e-14
+      },
+      "scope": "actual engine commit count; unresolved samples remain explicit"
+    },
+    "n21": {
+      "status": "PASS",
+      "counts": {
+        "commits": 36000,
+        "born_material_nodes": 216,
+        "dead_material_nodes": 216,
+        "unresolved_samples": 20,
+        "maximum_unresolved_depth_mm": 2.6117996654306808e-14
+      },
+      "scope": "actual engine commit count; unresolved samples remain explicit"
+    },
+    "dt_quarter": {
+      "status": "PASS",
+      "counts": {
+        "commits": 144000,
+        "born_material_nodes": 216,
+        "dead_material_nodes": 216,
+        "unresolved_samples": 17,
+        "maximum_unresolved_depth_mm": 1.2490009027033011e-15
+      },
+      "scope": "actual engine commit count; unresolved samples remain explicit"
+    },
+    "history_half": {
+      "status": "PASS",
+      "counts": {
+        "commits": 36000,
+        "born_material_nodes": 432,
+        "dead_material_nodes": 432,
+        "unresolved_samples": 7,
+        "maximum_unresolved_depth_mm": 1.2490009027033011e-15
+      },
+      "scope": "actual engine commit count; unresolved samples remain explicit"
+    },
+    "base": {
+      "status": "PASS",
+      "counts": {
+        "commits": 48000,
+        "born_material_nodes": 216,
+        "dead_material_nodes": 216,
+        "unresolved_samples": 29,
+        "maximum_unresolved_depth_mm": 1.7236212457305555e-14
+      },
+      "scope": "actual engine commit count; unresolved samples remain explicit"
+    }
+  },
+  "grasp_optimization": "BLOCKED",
+  "full_grasp_certified": false,
+  "cases": {
+    "dt_half": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.27262202400246e-06,
+      "hold_rotation_increment_rad": 0.00020981436597249594,
+      "global_force_residual": 8.077279145014825e-05,
+      "global_moment_residual": 8.088247076764274e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 1.7932091364199047e-11,
+      "failure_reason": null,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 345.72981346800225,
+        "pid": 39
+      }
+    },
+    "history_quarter": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.275024801922577e-06,
+      "hold_rotation_increment_rad": 0.00020987803024692127,
+      "global_force_residual": 1.9647944512687917e-05,
+      "global_moment_residual": 7.309023028197018e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 8.593577606685645e-11,
+      "failure_reason": null,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 291.29836346697994,
+        "pid": 39
+      }
+    },
+    "n21": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.417837013304424e-06,
+      "hold_rotation_increment_rad": 0.00021010276478980548,
+      "global_force_residual": 2.4091980363807882e-05,
+      "global_moment_residual": 0.00023785609471610453,
+      "recovery_pass": false,
+      "friction_dissipation": 3.0300229541797095e-11,
+      "failure_reason": null,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 300.3588502800558,
+        "pid": 40
+      }
+    },
+    "dt_quarter": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.272489092068567e-06,
+      "hold_rotation_increment_rad": 0.00020982237737177513,
+      "global_force_residual": 5.195798435594922e-05,
+      "global_moment_residual": 0.00050656102173704,
+      "recovery_pass": false,
+      "friction_dissipation": 1.2710750990013653e-11,
+      "failure_reason": null,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 771.3665732160443,
+        "pid": 40
+      }
+    },
+    "history_half": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.225547183137967e-06,
+      "hold_rotation_increment_rad": 0.00020986022755501335,
+      "global_force_residual": 2.1156325389487526e-05,
+      "global_moment_residual": 7.732598372917932e-05,
+      "recovery_pass": false,
+      "friction_dissipation": 6.659295914699666e-11,
+      "failure_reason": null,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 226.6730349509744,
+        "pid": 39
+      }
+    },
+    "base": {
+      "status": "EXPERIMENTAL",
+      "hold_displacement_mm": 4.272880877889808e-06,
+      "hold_rotation_increment_rad": 0.00020979837966107263,
+      "global_force_residual": 2.063768058356563e-05,
+      "global_moment_residual": 7.428634174813652e-05,
+      "recovery_pass": true,
+      "friction_dissipation": 2.945341775141673e-11,
+      "failure_reason": null,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 238.8772732919897,
+        "pid": 39
+      }
+    }
+  }
+}

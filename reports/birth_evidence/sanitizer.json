@@ -1,0 +1,23 @@
+{
+  "results": {
+    "asan_ubsan": {
+      "status": "PASS",
+      "exit_code": 0,
+      "runtime": 0.018997956009116024,
+      "environment": {
+        "ASAN_OPTIONS": "detect_leaks=0:soft_rss_limit_mb=1024:hard_rss_limit_mb=2048"
+      }
+    },
+    "lsan": {
+      "status": "BLOCKED",
+      "exit_code": 1,
+      "runtime": 0.019569260999560356,
+      "environment": {
+        "ASAN_OPTIONS": "detect_leaks=1:soft_rss_limit_mb=1024:hard_rss_limit_mb=2048"
+      }
+    }
+  },
+  "binary_sha256": "3189969ea7dd009200706579ecf7807597297d12e30640dc2a965a8fb498c8c6",
+  "source_sha256": "ed5cffb8daf18e8e69ca22f00e1b43aa93665ebee520692af8cf21607d62416e",
+  "scope": "own mathematical birth kernel only, NOT sanitizer-built SOFA engine; hard2GiB RSS and60s"
+}

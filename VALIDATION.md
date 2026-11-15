@@ -167,3 +167,11 @@ elastic stick/API/67Python/8층quarterdt/최소SDK메모리시험은 신규PASS�
 신규 birth-root kernel은 독립 시험 단계이며 생산 SOFA v3 결과에 섞지 않았다.
 reports/CONTACT_HISTORY_EVIDENCE_MANIFEST.json이 새로운 raw/source/binary 증거를 식별한다.
 기존 manifest는 문서/ignore 메타데이터 차이를 숨기기 위해 갱신하지 않는다.
+
+## 2026-11-15 — Contact birth 검증 범위
+
+BirthAwareContact의 독립 root/IFT/Force/Jacobian/API/Commit 검사는 실제 실행했다.
+새600시점 FREE2회 회귀와 격리된84 Python/기존 C++ 검사 로그를 보존했다.
+직접 Python 실행의 잘못된 기존 출력 namespace 오류도 보존하고 정식 격리 실행기로 재검증했다.
+수렴 실패와 부분 energy/null 항목은 BIRTH_01~14 및 BIRTH_ENERGY_FINAL_REPORT.md에 별도 기록한다.
+단위/API PASS는 전체 자유파지/12-wrench/실물 성능 인증이 아니며 파지 최적화 Gate를 우회하지 않는다.

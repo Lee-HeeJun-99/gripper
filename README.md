@@ -178,3 +178,15 @@ ctest --test-dir build/beam_local --output-on-failure
 ```
 
 기존 campaign 이름은 덮어쓰지 않는다. 새 빌드/실험 경로와 정확한 명령은 위 재개 문서를 따른다.
+
+### Contact Birth 후속 개발
+
+최신 결과·재개 명령은 `reports/BIRTH_ENERGY_FINAL_REPORT.md`와
+`reports/BIRTH_ENERGY_NEXT_TASKS.md`에 있다. 독립 BirthAwareContact의 root 미분/API/Commit
+검증과 실제 SOFA 수렴 실험을 기존 MaterialHistoryContact와 분리했다.
+전체 에너지·파지 검증 미완료 상태에서 파지 Optuna를 실행하지 않는다.
+
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/birth_assess.py
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/birth_verify.py --raw
+```

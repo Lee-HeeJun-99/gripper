@@ -79,6 +79,16 @@ Publication-parent commit `{head}`; the documentation commit is obtained with `g
 
 Independent birth/IFT/Jacobian and actual SOFA API integration PASS in tested scopes. Missing post-birth extension is restored. Exact-grid degeneracy and rigid-frame-dependent cell counts are handled without denominator regularization. Existing kernels/golden/Studies are preserved. Full history/space/time/energy approval is NOT inferred from kernel tests.
 
+## Changed implementation
+
+- Independent `models/contact_birth/`: birth law/root/commit/grid/journal/CMake/plugin (old prototype BirthIncrement.h preserved).
+- `tests/test_birth.cpp`, event math and source/binary/physics guard tests.
+- `tools/birth_*`: isolated build/trial/finite campaign, diagnostics, replay and evidence verification.
+- `models/structural_interface/refined.py` and structure Study/candidate tools: entire-interface objective, separate from grasp.
+- New BIRTH reports/small JSON/CSV/figures; append-only guidance in README/AGENTS/PROGRESS/VALIDATION.
+
+Full repository path inventory: `reports/birth_evidence/changed_files.json`. No old physics/golden/raw/SQLite was replaced; build/raw/env remain ignored.
+
 {convergence}
 
 Full coupled energy, qualified12-wrench grasp and100-mm grasp Optuna remain BLOCKED. Native/other-shape full grasp and GUI are NOT RUN in this campaign. See BIRTH01..14 for measured scopes and limitations. Earlier failed prototypes and v7 diagnostics are retained, not replaced by v8 results.
@@ -102,6 +112,9 @@ Choose a fresh recheck name on repeated invocations; the launcher refuses overwr
 '''
     (ROOT/'reports/BIRTH_ENERGY_FINAL_REPORT.md').write_text(final)
     (ROOT/'reports/BIRTH_ENERGY_CURRENT_STATUS.md').write_text(final+'\nDetailed next steps: BIRTH_ENERGY_NEXT_TASKS.md.\n')
+    changed=subprocess.check_output(['git','diff','--name-only','651a02ed24a11a9fce00fe3b437f188ded27266e'],cwd=ROOT,text=True).splitlines()
+    changed+=subprocess.check_output(['git','ls-files','--others','--exclude-standard'],cwd=ROOT,text=True).splitlines()
+    write_json(evidence/'changed_files.json',dict(baseline='651a02ed24a11a9fce00fe3b437f188ded27266e',paths=sorted(set(changed))))
     entries={}
     # Include all completed raw files, never partial running case output.
     for folder in (legacy,BUILD):

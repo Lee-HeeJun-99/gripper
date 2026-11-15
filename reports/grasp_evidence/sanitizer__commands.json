@@ -1,0 +1,43 @@
+{
+  "configure": {
+    "command": [
+      "cmake",
+      "-S",
+      "models/grasp",
+      "-B",
+      "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/build/grasp_20261115/asan_v4",
+      "-DCMAKE_PREFIX_PATH=/home/ubuntu/SOFA/v26.06.00",
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DCMAKE_CXX_FLAGS=-fsanitize=address,undefined -fno-omit-frame-pointer",
+      "-DCMAKE_EXE_LINKER_FLAGS=-fsanitize=address,undefined"
+    ],
+    "exit_code": 0,
+    "runtime_s": 0.36656694003613666
+  },
+  "build": {
+    "command": [
+      "cmake",
+      "--build",
+      "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/build/grasp_20261115/asan_v4",
+      "--target",
+      "test_grasp_stick",
+      "-j2"
+    ],
+    "exit_code": 0,
+    "runtime_s": 12.963414422993083
+  },
+  "asan_ubsan": {
+    "command": [
+      "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/build/grasp_20261115/asan_v4/test_grasp_stick"
+    ],
+    "exit_code": 0,
+    "runtime_s": 0.10880142101086676
+  },
+  "lsan": {
+    "command": [
+      "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/build/grasp_20261115/asan_v4/test_grasp_stick"
+    ],
+    "exit_code": 0,
+    "runtime_s": 0.11581246799323708
+  }
+}

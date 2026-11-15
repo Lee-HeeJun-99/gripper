@@ -1,0 +1,274 @@
+FEEEEE.E.EEEEEEEEEEE....................EE......E..................
+======================================================================
+ERROR: test_corrupt_csv_manifest (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 92, in test_corrupt_csv_manifest
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_corrupt_csv_manifest'
+
+======================================================================
+ERROR: test_crash_process (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 129, in test_crash_process
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_crash_process'
+
+======================================================================
+ERROR: test_divergence (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 62, in test_divergence
+    self.classify(self.fixture(mutate),'diverged','displacement')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_divergence'
+
+======================================================================
+ERROR: test_duplicate_state_field (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 83, in test_duplicate_state_field
+    path=self.folder()/'bad.txt';path.write_text('T= 0\nX= 0\nX= 1\n')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_duplicate_state_field'
+
+======================================================================
+ERROR: test_inf (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 55, in test_inf
+    self.classify(self.fixture(lambda s:s.replace('X= 0 ','X= inf ',1)),'diverged','nonfinite')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_inf'
+
+======================================================================
+ERROR: test_interrupt_cleanup (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 123, in test_interrupt_cleanup
+    try:report=run_trial(OUT/self._testMethodName,k=1,duration=60)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tools/run_trial.py", line 47, in run_trial
+    out.mkdir(parents=True,exist_ok=False)  # Atomic ownership; never reuse partial output.
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_interrupt_cleanup'
+
+======================================================================
+ERROR: test_invalid_physics (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 69, in test_invalid_physics
+    self.classify(self.fixture(mutate),'invalid_physics','planar domain')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_invalid_physics'
+
+======================================================================
+ERROR: test_launcher_fd_and_process_leaks (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 154, in test_launcher_fd_and_process_leaks
+    before=len(list(Path('/proc/self/fd').iterdir()));root=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_launcher_fd_and_process_leaks'
+
+======================================================================
+ERROR: test_log_error_zero_exit_live (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 135, in test_log_error_zero_exit_live
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_log_error_zero_exit_live'
+
+======================================================================
+ERROR: test_missing_artifact (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 101, in test_missing_artifact
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_missing_artifact'
+
+======================================================================
+ERROR: test_nan (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 48, in test_nan
+    self.classify(self.fixture(lambda s:s.replace('X= ','X= nan ',1)),'crash','initial mechanical state')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_nan'
+
+======================================================================
+ERROR: test_nonmonotonic_middle_time (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 77, in test_nonmonotonic_middle_time
+    self.classify(self.fixture(lambda s:s.replace('T= 0.00050000000000000001','T= 0.002',1)),'crash','sample times')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_nonmonotonic_middle_time'
+
+======================================================================
+ERROR: test_not_converged_live (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 113, in test_not_converged_live
+    report=run_trial(out,k=1,duration=.01)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tools/run_trial.py", line 47, in run_trial
+    out.mkdir(parents=True,exist_ok=False)  # Atomic ownership; never reuse partial output.
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_not_converged_live'
+
+======================================================================
+ERROR: test_partial_directory_refused (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 107, in test_partial_directory_refused
+    out=self.folder();(out/'metrics.json').write_text('{"status":"incomplete"}')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_partial_directory_refused'
+
+======================================================================
+ERROR: test_partial_output (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 80, in test_partial_output
+    self.classify(self.fixture(lambda s:s[:s.rfind('T= ')]),'crash','incomplete')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_partial_output'
+
+======================================================================
+ERROR: test_timeout_live (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 117, in test_timeout_live
+    report=run_trial(OUT/self._testMethodName,k=1,timeout=.001)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tools/run_trial.py", line 47, in run_trial
+    out.mkdir(parents=True,exist_ok=False)  # Atomic ownership; never reuse partial output.
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_timeout_live'
+
+======================================================================
+ERROR: test_well_shaped_nan (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 52, in test_well_shaped_nan
+    self.classify(self.fixture(lambda s:s.replace('X= 0 ','X= nan ',1)),'diverged','nonfinite')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 30, in fixture
+    out=self.folder()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 27, in folder
+    path=OUT/(self._testMethodName+suffix);path.mkdir(parents=True,exist_ok=False);return path
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/automation/test_well_shaped_nan'
+
+======================================================================
+ERROR: test_build_manifest_binary_mismatch (test_optimization_guards.Guards)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_optimization_guards.py", line 50, in test_build_manifest_binary_mismatch
+    directory=OUT/self._testMethodName;directory.mkdir();(directory/'marker').write_bytes(b'changed')
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/optimization_guards_release/test_build_manifest_binary_mismatch'
+
+======================================================================
+ERROR: test_build_manifest_source_mismatch (test_optimization_guards.Guards)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_optimization_guards.py", line 44, in test_build_manifest_source_mismatch
+    directory=OUT/self._testMethodName;directory.mkdir()
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/revalidation_20261114T132734Z/optimization_guards_release/test_build_manifest_source_mismatch'
+
+======================================================================
+ERROR: test_real_gate_and_real_objective (test_optimization_guards.Guards)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_optimization_guards.py", line 32, in test_real_gate_and_real_objective
+    validate_gate(PHY/'gate.json')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tools/optimize.py", line 15, in validate_gate
+    assert_build_current()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tools/verification_common.py", line 46, in assert_build_current
+    if not manifest.is_file():raise RuntimeError('missing build manifest; run tools/build.py for this build root')
+RuntimeError: missing build manifest; run tools/build.py for this build root
+
+======================================================================
+FAIL: test_concurrent_duplicate_execution (test_automation.Automation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/tests/test_automation.py", line 149, in test_concurrent_duplicate_execution
+    self.assertEqual(sorted([a.returncode,b.returncode]),[1,2])
+AssertionError: Lists differ: [2, 2] != [1, 2]
+
+First differing element 0:
+2
+1
+
+- [2, 2]
+?  ^
+
++ [1, 2]
+?  ^
+
+
+----------------------------------------------------------------------
+Ran 67 tests in 3.038s
+
+FAILED (failures=1, errors=20)

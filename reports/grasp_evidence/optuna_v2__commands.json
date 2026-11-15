@@ -1,0 +1,34 @@
+[
+  {
+    "stage": "smoke",
+    "command": [
+      "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+      "tools/optimize.py",
+      "--gate",
+      "results/revalidation_20261114T132734Z/physics_release/gate.json",
+      "--out",
+      "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/grasp_20261115/optuna_v2/actual",
+      "--study",
+      "validated_planar_20261115",
+      "--trials",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "stage": "main",
+    "command": [
+      "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+      "tools/optimize.py",
+      "--gate",
+      "results/revalidation_20261114T132734Z/physics_release/gate.json",
+      "--out",
+      "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/results/grasp_20261115/optuna_v2/actual",
+      "--study",
+      "validated_planar_20261115",
+      "--trials",
+      "24"
+    ],
+    "exit_code": 0
+  }
+]

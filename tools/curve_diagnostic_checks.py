@@ -5,7 +5,7 @@ from closure_validation_suite import logged
 
 
 def main():
-    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a05'
+    out = ROOT / 'results/autonomous_20261116_diagnostics_checks_a06'
     out.mkdir(exist_ok=False)
     sources = [ROOT / 'tests/test_checkpoint_guards.py', ROOT / 'tests/test_curved_guards.py',
                ROOT / 'tests/test_return_energy.cpp', ROOT / 'models/contact_energy/ReturnAudit.h',
@@ -13,7 +13,9 @@ def main():
                ROOT / 'tests/test_pressure_return_energy.cpp',
                ROOT / 'tests/test_beam_translation_compensation.cpp',
                ROOT / 'models/stabilization/Compensated.h',
-               ROOT / 'tests/test_energy_source_scope.py']
+               ROOT / 'tests/test_energy_source_scope.py',
+               ROOT / 'tests/test_contact_rayleigh.cpp',ROOT/'tests/test_fixed_clock.cpp',
+               ROOT / 'models/fixed_step_clock/Clock.h']
     write_json(out / 'sources.json', {str(p.relative_to(ROOT)): sha(p) for p in sources})
     results = {}
     commands = [
@@ -35,6 +37,12 @@ def main():
         ('compensation_build', ['g++', '-std=c++17', '-O2', '-Wall', '-Wextra', '-pedantic',
                                 'tests/test_beam_translation_compensation.cpp', '-o', out / 'compensation.bin']),
         ('compensation_unit', [out / 'compensation.bin']),
+        ('rayleigh_build', ['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',
+                           'tests/test_contact_rayleigh.cpp','-o',out/'rayleigh.bin']),
+        ('rayleigh_counterexamples',[out/'rayleigh.bin']),
+        ('clock_build', ['g++','-std=c++17','-O2','-Wall','-Wextra','-pedantic',
+                        'tests/test_fixed_clock.cpp','-o',out/'clock.bin']),
+        ('clock_unit',[out/'clock.bin']),
         ('python_compile', [sys.executable, '-m', 'py_compile'] +
          sorted((ROOT / 'tools').glob('curve_*.py')))]
     for name, command in commands:

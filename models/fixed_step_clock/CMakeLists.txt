@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripFixedStepClock LANGUAGES CXX)
+find_package(Sofa.Simulation.Core REQUIRED)
+add_library(ReGripFixedStepClock SHARED FixedStepClock.cpp)
+target_compile_features(ReGripFixedStepClock PRIVATE cxx_std_17)
+target_compile_options(ReGripFixedStepClock PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(ReGripFixedStepClock PRIVATE Sofa.Simulation.Core)

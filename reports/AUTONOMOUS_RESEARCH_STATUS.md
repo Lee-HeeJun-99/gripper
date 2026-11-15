@@ -45,6 +45,26 @@ Current raw: `results/autonomous_20261116_curve_a01`,
 `results/autonomous_20261116_checkpoint_a01` (plus explicit native/scalar controls).
 Last committed source checkpoint: `0c6cb77`;additional energy/integrator work is active.
 
+## Latest actual checkpoint (supersedes RUNNING lines above)
+
+- Same-half-dt fine21→41mesh and fine history PASS1%;coarse11→21FAIL1%.
+- Full24s synchronized journal completed;X/V/R unchanged,remaining signed
+  residual-1.45037e-13;global energy still BLOCKED,not a success certificate.
+- Whole contact-cycle loss time convergence FAIL even when hold loss passes.
+- Integer-index clock implemented/tested. Actual base24/half24/quarter18
+  completed;all original hold gates PASS,base/half recoveryPASS. Fixed clock
+  does NOT resolve full-cycle loss(half→quarter.441979% FAIL.1%).
+- Actual public solved-MBK probe4s PASS query purity,initial sampled damping
+  minima positive.17.1srelease probe RUNNING;coupled negative-damping hypothesis
+  not established. No physical damping modification.
+- Event-aligned release-only time refinement is a NEW integration-grid
+  experiment. Unit/clean buildPASS;4sactual prefix testRUNNING. No inherited
+  full time certification. Native3D/12wrench/energy/grasp Optuna remain blocked.
+- Actual raw:results/autonomous_20261116_fixed_clock_a01 and
+  results/autonomous_20261116_event_clock_a01,in addition to prior campaigns.
+- No automatic restart is installed or assumed. Check actual results before
+  resuming;existing output names are deliberately refused.
+
 ## Historical checkpoint 2026-11-15 (not current model certification)
 
 Branch `development/regrip-autonomous-research`; baseline63970172ad196e0add3ad42a67ccaee4c7a8975e.

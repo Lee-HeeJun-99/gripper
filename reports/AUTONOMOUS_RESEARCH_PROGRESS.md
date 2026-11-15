@@ -308,3 +308,57 @@ Actual v9one-second Frame-return residual0,X/V/R unchanged. Full24s v9 journal
 is now running under a900s allowance qualified by actual8s271.54s profile.
 Null pressure/global closure fields are preserved until scope/phase/dt
 qualification is finished. Original894artifact SHA verification still PASS.
+
+### Continued actual execution: fine references,full-cycle loss and clock audit
+
+The prior stopping reason remains an agent-selected checkpoint,not an observed
+environment/session resource failure. This continuation has not declared the
+ultimate project complete. The requested actual Hermite SOFA implementation
+and11/21/41experiments are done;failures selected new research rather than a stop.
+
+Structural-summation same-half-dt21→41motion.4162894%,rotation.0199916%,loss
+.0654006% PASS1%;history.0025→.00125motion.1337257%,rotation.0085701%,loss
+.0233980% PASS1%. Coarse11→21motion1.6242346% FAIL1%. Actual mesh41/historyfine/
+mesh11wall906.907/841.724/420.194s;all original physical hold gates pass.
+Own profiles qualified the recorded1080/900s bounded exceptions;4GiB retained.
+
+Full24s energy v9 completed734.112s:48000steps/144000stage rows,actual X/V/R
+exactly unchanged. Derived residual4.10813e-13;after independently computed
+signed potential/return remainders,-1.45037e-13. Material/frame return maxima
+5.9329e-26/3.9249e-33. Unknown/global terms remain NULL/BLOCKED,not zero or heat.
+Value-only energy API versus AD600frozen-class states PASS(maxrelative3.700e-15),
+but8s timings266.362s versus271.54s are not an isolated speedup benchmark.
+Actual half-dt8s read-only journal495.893s,X/V/Rexact,remaining-3.16172e-14.
+
+Additional full0–18s loss audit FAILS time.1% even though final hold comparisons
+pass:base→half.734005%,half→quarter.269622%. Release16–18s contributes most of
+the absolute error. These remain distinct from13.9–14s hold diagnostics.
+
+Correction to loose earlier prose:actual frozen controllers are step schedules,
+NOT ramps. CableON/OFF.5/16s;pressureON/OFF3/15s;external torqueON/OFF6/14s.
+Every recorded clock bit-matches repeated SDK dt addition. Half-dt OFF events
+14/15/16s are one step late;quarter-dt torqueON6s is one step late relative to
+the unchanged controller1e-12 margin. This is input epoch roundoff,not a proof
+of the source of all friction error.
+
+Independent integer-index clock calls unmodified SDK mechanics and changes no
+q/v/force or schedule margin. Unit recovers all4misalignments. Actual4s and24s
+base paths X/V/Rexact versus old clock. Actual base24/half24/quarter18wall
+346.019/675.151/1093.497s;all hold gates pass;24sbase/half recoveryPASS,quarter24
+NOT RUN. Half→quarter motion/hold-loss PASS,but full-cycle loss.441979% FAIL.1%.
+Clock error was real,but was not the sole cause;do not merge old/new grid data.
+
+Independent normal-contact Rayleigh counterexample has positive stiffness
+damping work. It does NOT establish injection on the coupled trajectory.
+Actual public solved-MBK probe4s111.526s,X/V/Rexact;first4sampled free-system
+damping matrices have positive minima. Full release17.1s probe is running to
+falsify the hypothesis before any physical damping change. No damping change
+has been applied. First probe configure(relative prefix)and incomplete-type
+compile failed,then absolute matching prefix/header and warnings fixed.
+
+Next experiment is an explicitly independent nonuniform time-grid contrast:
+preserve half-dt until cableOFF16s,then halve/quarter only release steps. This
+tests the identified release temporal error within bounded cost;it is NOT a
+replacement for failed uniform-grid evidence. Dyadic clock math/build passed;
+actual4s prefix equivalence is running before any full launch. Forcefields,
+friction,loads,damping,all original physical thresholds remain unchanged.

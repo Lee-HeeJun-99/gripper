@@ -42,7 +42,7 @@ def build():
     print('compensation build/arithmetic PASS')
 
 
-def run(name, dt=.0005, profile=False, wall=480, duration=18, nodes=21, history=.0025):
+def run(name, dt=.0005, profile=False, wall=480, duration=18, nodes=21, history=.0025, prepare_only=False):
     manifest = json.loads((BUILD / 'build_manifest.json').read_text())
     if sha(PLUGIN) != manifest['binary'] or any(sha(ROOT/p) != h for p,h in manifest['sources'].items()):
         raise ValueError('compensation compiled source/binary changed')
@@ -63,6 +63,7 @@ def run(name, dt=.0005, profile=False, wall=480, duration=18, nodes=21, history=
     write_json(out/'config.json',config)
     ident=json.loads((out/'identity.json').read_text());ident['structural_compensation']=manifest
     write_json(out/'identity.json',ident);command=json.loads((out/'command.json').read_text())
+    if prepare_only:return out
     monitor=Monitor(out);monitor.thread.start()
     try:process=execute_process(command,out,wall)
     finally:monitor.finish()

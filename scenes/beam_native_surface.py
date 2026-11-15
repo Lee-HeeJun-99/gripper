@@ -47,5 +47,19 @@ def createScene(root):
         def onAnimateEndEvent(self,event):
             self.step+=1
             if self.step%20:return
-            state=body.dofs;lam=np.array(solver.constraintForces.value);J=state.constraint.value;impulse=(J.T@lam).reshape(-1).tolist() if J.shape[0]==len(lam) else None;self.stream.write(json.dumps(dict(time=float(root.time.value),X=state.position.value.tolist(),V=state.velocity.value.tolist(),lambda_impulse=lam.tolist(),generalized_impulse=impulse),allow_nan=False)+'\n');self.stream.flush()
+            state=body.dofs;lam=np.array(solver.constraintForces.value);J=state.constraint.value;impulse=(J.T@lam).reshape(-1).tolist() if J.shape[0]==len(lam) else None
+            # Parent constraint rows have projective DOFs removed. Preserve the
+            # ORIGINAL child contact Jacobians to recover physical reactions on
+            # blocked guide/root DOFs, not infer them by cancelling external load.
+            physical=np.zeros((obj+1,6));X=np.array(state.position.value);complete=True
+            for child,owners in ((film.points,indices),(sphere.points,[obj]*len(points))):
+                C=child.constraint.value
+                if C.shape[0]!=len(lam):complete=False;continue
+                # SOFA sparse child matrices omit unused trailing columns.
+                # Zero-pad those DOFs explicitly; they carry no contact impulse.
+                world=np.array(child.position.value);flat=np.array(C.T@lam).reshape(-1)
+                if len(flat)>3*len(world):raise ValueError('child contact columns exceed state')
+                forces=np.zeros_like(world);forces.reshape(-1)[:len(flat)]=flat
+                for i,owner in enumerate(owners):physical[owner,:3]+=forces[i];physical[owner,3:]+=np.cross(world[i]-X[owner,:3],forces[i])
+            self.stream.write(json.dumps(dict(time=float(root.time.value),X=state.position.value.tolist(),V=state.velocity.value.tolist(),lambda_impulse=lam.tolist(),generalized_impulse=impulse,unprojected_generalized_impulse=physical.reshape(-1).tolist() if complete else None),allow_nan=False)+'\n');self.stream.flush()
     root.addObject(Recorder());return root

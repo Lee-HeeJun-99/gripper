@@ -18,6 +18,9 @@ def compact(x):
 def main():
     evidence=ROOT/'reports/beam_evidence';evidence.mkdir(exist_ok=False);identity()
     selected=['inherited_audit/summary.json','inherited_live/summary.json','single_campaign.json','dynamic_energy/summary.json','multilayer_campaign.json','multilayer_followup.json','precision/result.json','contact_convergence_audit.json','high_resolution_resource_plan.json','memory/summary.json','wrench.json','structural_optuna/summary.json','structural_optuna/reference_gate.json','optuna_contracts/summary.json','candidate_result.json','native_lat12/recovered_result.json','native_lat12/balance.json','native_lat24/result.json','native_lat24/balance.json','replay/result.json','validation_golden/summary.json','validation_unit_dependency/summary.json','legacy_units/summary.json','clean/summary.json','extra_unit/summary.json','asan/summary.json','asan_unrestricted/summary.json','large_kernel_corrected/summary.json','profile/summary.json','v2_profile/profile/summary.json']
+    selected += ['native_physical'+str(lat)+'/'+name for lat in (12,24) for name in ('result.json','balance.json')]
+    selected += ['packaging_check.json']
+    selected += ['native_surface_comparison.json']
     for name in selected:
         p=OUT/name
         if not p.is_file():raise FileNotFoundError(p)

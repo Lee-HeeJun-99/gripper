@@ -7,7 +7,9 @@ from closure_validation_suite import logged
 from run_trial import execute_process
 from trial_validation import read_states
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--lat',type=int,choices=[12,24],default=12);args=p.parse_args();out=OUT/('native_lat'+str(args.lat));out.mkdir(exist_ok=False)
+    p=argparse.ArgumentParser();p.add_argument('--lat',type=int,choices=[12,24],default=12);p.add_argument('--name');args=p.parse_args();name=args.name or ('native_lat'+str(args.lat))
+    if not name.replace('_','').isalnum():raise ValueError('native output name')
+    out=OUT/name;out.mkdir(exist_ok=False)
     frame=BUILD/'native_frame/libReGripFrameClosure.so';beam=BUILD/'native_beam/libReGripConservativeBeam.so'
     for name,folder,directory,target in [('frame','models/closure_frame',frame.parent,'ReGripFrameClosure'),('beam','models/conservative_beam',beam.parent,'ReGripConservativeBeam')]:
         for stage,cmd in [('configure',['cmake','-S',folder,'-B',str(directory),'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SOFA)]),('build',['cmake','--build',str(directory),'--target',target,'-j2'])]:

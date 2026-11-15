@@ -14,7 +14,7 @@ def material():
     I=8*.4**3/12;r=(4*I/math.pi)**.25;A=math.pi*r*r;E=250.;G=E/(2*(1+.32));return dict(EA=E*A,GAy=G*A*5/6,GAz=G*A*5/6,GJ=G*2*I,EIy=E*I,EIz=E*I)
 def identity():
     import json
-    files=[p for folder in ('models/conservative_beam','diagnostics/conservative_beam') for p in (ROOT/folder).glob('*') if p.is_file()]
+    files=[p for folder in ('models/conservative_beam','diagnostics/conservative_beam') for p in (ROOT/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
     files+=list((ROOT/'tools').glob('beam_*.py'))+list((ROOT/'tests').glob('test_conservative_beam*'))
     manifest_path=PLUGIN.parent/'build_manifest.json';manifest=json.loads(manifest_path.read_text())
     if manifest['plugin_sha256']!=sha(PLUGIN):raise ValueError('beam binary differs from frozen build')

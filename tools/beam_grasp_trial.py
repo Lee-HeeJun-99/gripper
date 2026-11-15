@@ -10,7 +10,7 @@ from beam_common import ROOT,OUT,SDK,PLUGIN,FRAME,identity,material,sha,write_js
 from run_trial import execute_process
 from trial_validation import read_states
 from closure_frame_evaluate import relative_angles
-TEMPLATE=ROOT/'results/closure_20261115/threefinger/trials/wrenches_Tzplus'
+TEMPLATE=ROOT/'models/conservative_beam/templates'
 def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.01,pressure=.001,tension=.001,mu=.3,shape=0,prepare_only=False,wall=480):
     if not name.replace('_','').isalnum() or nodes not in (11,21,41) or samples not in (8,16,32) or axis not in range(6) or shape not in (0,1,2) or not .001<=history<=.02 or not .000125<=dt<=.001 or duration not in (18.,24.):raise ValueError('bounded grasp configuration')
     if not all(math.isfinite(v) for v in (load,pressure,tension,mu)) or min(pressure,tension,mu)<0:raise ValueError('physical inputs')

@@ -155,3 +155,43 @@ Also testing strict-FP native ISA build(no fast-math,reassociation or FMA
 contraction)against actual generic raw states before any cost-qualified
 quarter-step run. At most4long physics children;each4GiB/default480s or
 profile-qualified single900s attempt. No automatic restart is installed.
+
+### Continued measured diagnosis and21node candidate
+
+Fixed-layout ablations do not remove the coarse error:10connectors and11guides
+give6.596%/3.298% motion differences. A derived reference-length tributary mass
+quadrature,without changing total mass or per-mass inertia,gives actual peak
+motion4.84330750e-6/4.92195155e-6/4.94290540e-6mm at11/21/41nodes.11→21
+still FAILS1% at1.598%;21→41PASSES at.423918%. Thus21is a resolved candidate;
+11is not silently certified. A pre-recorded modal-mass proxy predicted the
+trend but is not a force correction or measured trajectory. Source/scene audit
+and one-factor connector/cable controls are preserved in the new raw campaign.
+
+Recompiled unchanged Beam and contact with strict-FP native ISA(no fast-math,
+no FMA contraction). Kernel/API/dense-reference and actual4s raw equivalence
+PASS exactly. New single-runtime-pair21node campaign actually confirms mesh,
+history(.0025→.00125),repeat and24srelease/recovery. Half-dt motion passes,
+but cumulative friction-loss difference.160535% FAILS.1%. Quarter-step profile
+predicts1164s before margin,so no full quarter-step single process was launched
+under the900s policy. ISA optimization and scalar EigenSparseLU storage were
+tested,not assumed;the storage contrast gives no measured speed improvement.
+
+A new root-level pre-child-Commit/post-all-Commit journal now executes in SOFA.
+2000steps produce6000stage rows with exact unchanged X/V/R. Actual contact
+Commit energy jump4.85e-27 and layer jump0. Derived Euler kinetic-work identity
+uses actual force/Jacobian/mass,Rayleigh terms and velocity projection,with max
+absolute residual3.44e-21 in the1s test. This is NOT stored-energy closure;
+pressure/friction accounting remains explicitly null. v2journal failed because
+the ODE lives on the parent node;v3uses SearchUp. Failed snapshots/logs retained.
+
+Independent actual-state normal integration(v2reference) has about3e-6to6e-6
+relative error,well below1%,separating normal quadrature from friction state
+error. v1reference is explicitly invalidated:a NumPy trimmed-polynomial
+broadcast bug was found and fixed without overwriting its source/results.
+
+Next executable research:validated full mechanical/history checkpoint between
+bounded children,so the SAME144000step quarter-dt problem can run without a
+process exceeding480/900s. This is not yet implemented or certified,and is NOT
+an automatic session restart. q/v,time,contact history,layer plastic state,
+cable rest lengths and counters must round-trip and match uninterrupted SOFA
+before any chunked physics result is accepted. No existing physics is changed.

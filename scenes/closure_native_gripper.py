@@ -24,6 +24,7 @@ def createScene(root):
         if element.tag in ('Node','DefaultAnimationLoop'):continue
         attrs=dict(element.attrib)
         if element.tag=='EulerImplicitSolver':attrs['name']='ode'
+        if element.tag=='EigenSparseLU':attrs['template']='CompressedRowSparseMatrixd'
         root.addObject(element.tag,**attrs)
     root.addObject('FreeMotionAnimationLoop')
     solver=root.addObject('BlockGaussSeidelConstraintSolver',name='constraints',tolerance=1e-10,maxIterations=1000,computeConstraintForces=True)

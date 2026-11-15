@@ -2,10 +2,11 @@
 // Objective two-node, midpoint/reduced-integration Simo-Reissner research rod.
 // Spatial chart: x'=x+u, Q'=Exp(w)Q. Exact derivatives through order two.
 #include "../finite_rotation/Kernel.h"
+#include "AutoDiff.h"
 #include <algorithm>
 namespace regrip_beam {
 using namespace regrip3d;
-inline Jet unary(const Jet&a,double f,double d,double dd){Jet r(f);for(int i=0;i<N;++i){r.g[i]=d*a.g[i];for(int j=0;j<N;++j)r.h[N*i+j]=d*a.h[N*i+j]+dd*a.g[i]*a.g[j];}return r;}
+inline Jet unary(const Jet&a,double f,double d,double dd){Jet r(f);r.constant=a.constant;if(a.constant)return r;for(int i=0;i<N;++i){r.g[i]=d*a.g[i];for(int j=0;j<N;++j)r.h[N*i+j]=d*a.h[N*i+j]+dd*a.g[i]*a.g[j];}return r;}
 inline Jet inverse(const Jet&a){if(a.v<=0)throw std::domain_error("positive inverse required");return unary(a,1/a.v,-1/(a.v*a.v),2/(a.v*a.v*a.v));}
 inline Jet root(const Jet&a){if(a.v<=0)throw std::domain_error("positive sqrt required");double s=std::sqrt(a.v);return unary(a,s,.5/s,-.25/(a.v*s));}
 inline Jet arcsin(const Jet&a){if(std::abs(a.v)>=1)throw std::domain_error("asin branch");double d=1/std::sqrt(1-a.v*a.v);return unary(a,std::asin(a.v),d,a.v*d*d*d);}
@@ -28,9 +29,11 @@ inline Strain strains(const Pose&a,const Pose&b,double L,bool lifted){
  Strain r;r.gamma=rotation(conjugate(mid),dx);for(int j=0;j<3;++j)r.kappa[j]=factor*vec[j]*Jet(1/L);return r;
 }
 struct Properties{double EA=1,GAy=1,GAz=1,GJ=1,EIy=1,EIz=1;std::array<double,6> values()const{return {EA,GAy,GAz,GJ,EIy,EIz};}void validate()const{for(double v:values())if(!std::isfinite(v)||v<=0)throw std::invalid_argument("positive finite beam stiffness required");}};
-inline Result evaluate(const Pose&a,const Pose&b,const Pose&a0,const Pose&b0,const Properties&material){
- material.validate();auto dp=sub(b0.p,a0.p);double L=std::sqrt(dot(dp,dp));auto rest=strains(a0,b0,L,false),current=strains(a,b,L,true);auto c=material.values();Jet e;
- for(int j=0;j<3;++j){auto g=current.gamma[j]-Jet(rest.gamma[j].v),k=current.kappa[j]-Jet(rest.kappa[j].v);e=e+Jet(.5*L*c[j])*g*g+Jet(.5*L*c[j+3])*k*k;}
+struct Reference{double length;V gamma,kappa;};
+inline Reference reference(const Pose&a0,const Pose&b0){auto dp=sub(b0.p,a0.p);Reference r;r.length=std::sqrt(dot(dp,dp));auto s=strains(a0,b0,r.length,false);for(int j=0;j<3;++j){r.gamma[j]=s.gamma[j].v;r.kappa[j]=s.kappa[j].v;}return r;}
+inline Result evaluate(const Pose&a,const Pose&b,const Reference&rest,const Properties&material){
+ material.validate();double L=rest.length;auto current=strains(a,b,L,true);auto c=material.values();Jet e;
+ for(int j=0;j<3;++j){auto g=current.gamma[j]-Jet(rest.gamma[j]),k=current.kappa[j]-Jet(rest.kappa[j]);e=e+Jet(.5*L*c[j])*g*g+Jet(.5*L*c[j+3])*k*k;}
  Result r;r.energy=e.v;r.chart_hessian=e.h;
  for(int i=0;i<N;++i){r.force[i]=-e.g[i];for(int j=0;j<N;++j)r.jacobian[N*i+j]=-e.h[N*i+j];}
  // Spatial torque derivative is not the symmetric local chart Hessian.
@@ -40,4 +43,5 @@ inline Result evaluate(const Pose&a,const Pose&b,const Pose&a0,const Pose&b0,con
  for(double v:r.jacobian)if(!std::isfinite(v))throw std::overflow_error("beam tangent overflow");
  return r;
 }
+inline Result evaluate(const Pose&a,const Pose&b,const Pose&a0,const Pose&b0,const Properties&material){return evaluate(a,b,reference(a0,b0),material);}
 }

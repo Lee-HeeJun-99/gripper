@@ -11,9 +11,10 @@ from run_trial import execute_process
 from trial_validation import read_states
 from closure_frame_evaluate import relative_angles
 TEMPLATE=ROOT/'results/closure_20261115/threefinger/trials/wrenches_Tzplus'
-def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.01,pressure=.001,tension=.001,mu=.3,shape=0,prepare_only=False):
+def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.01,pressure=.001,tension=.001,mu=.3,shape=0,prepare_only=False,wall=480):
     if not name.replace('_','').isalnum() or nodes not in (11,21,41) or samples not in (8,16,32) or axis not in range(6) or shape not in (0,1,2) or not .001<=history<=.02 or not .000125<=dt<=.001 or duration not in (18.,24.):raise ValueError('bounded grasp configuration')
     if not all(math.isfinite(v) for v in (load,pressure,tension,mu)) or min(pressure,tension,mu)<0:raise ValueError('physical inputs')
+    if wall!=480 and not (wall==900 and nodes==41 and samples==32 and duration==18.):raise ValueError('only one profile-justified900s high-resolution exception; otherwise480s')
     out=OUT/'grasp'/name;out.mkdir(parents=True,exist_ok=False);tree=ET.parse(TEMPLATE/'scene.scn');root=tree.getroot();root.set('dt',str(dt));body=root.find('Node');config=json.loads((TEMPLATE/'config.json').read_text());seq=lambda v:' '.join(map(str,v));n=nodes;obj=6*n;angles=(0,2*math.pi/3,-2*math.pi/3);poses=[]
     for angle in angles:
         ex=np.array([math.cos(angle),0,-math.sin(angle)]);ez=np.array([math.sin(angle),0,math.cos(angle)]);origin=np.array([95,0,0])-95*ex+5.305*ez
@@ -31,7 +32,7 @@ def run(name,nodes=11,samples=8,dt=.0005,duration=24.,axis=5,load=5e-6,history=.
     config.update(nodes=n,samples=samples,dt=dt,duration=duration,axis=axis,load=load,history_spacing=history,pressure=pressure,tension=tension,mu=mu,shape=shape,object_index=obj,object_inertia_per_mass=inertia,model_version='conservative_midpoint_rod_guided3finger_v1',beam_material=material(),template_config_sha256=sha(TEMPLATE/'config.json'),template_scene_sha256=sha(TEMPLATE/'scene.scn'));write_json(out/'config.json',config);steps=round(duration/dt);command=[str(SDK/'bin/graph_probe'),str(SDK),str(out/'scene.scn'),str(steps),'0',str(FRAME),str(PLUGIN)];write_json(out/'command.json',command);record=dict(status='FAIL',config=config,identity=identity(),full_grasp_certified=False)
     if prepare_only:
         write_json(out/'prepared_only.json',dict(status='NOT RUN',config=config,identity=identity(),scope='configuration only, not an executed or successful physics trial'));return out
-    p=execute_process(command,out,480);record['process']=p
+    p=execute_process(command,out,wall);record['process']=p
     try:
         log=(out/'stdout.log').read_text()+(out/'stderr.log').read_text()
         if p['exit_code'] or '[ERROR]' in log or f'{steps} iterations done' not in log:raise ValueError('SOFA error/timeout/incomplete')

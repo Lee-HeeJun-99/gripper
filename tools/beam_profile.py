@@ -5,7 +5,7 @@ from beam_grasp_trial import run
 from closure_validation_suite import logged
 from run_trial import execute_process
 def main():
-    out=OUT/'profile';out.mkdir(exist_ok=False);build=BUILD/'profile_diagnostics'
+    out=OUT/'profile';out.mkdir(parents=True,exist_ok=False);build=BUILD/'profile_diagnostics'
     for name,cmd in [('configure',['cmake','-S','diagnostics/conservative_beam','-B',str(build),'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(PREFIX)]),('build',['cmake','--build',str(build),'--target','beam_profile','-j2'])]:
         r=logged(cmd,out/name,180)
         if r['exit_code']:write_json(out/'summary.json',dict(status='BLOCKED',result=r));return

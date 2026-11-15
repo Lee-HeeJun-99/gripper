@@ -1,0 +1,3 @@
+#include "../models/conservative_beam/EnergyKernel.h"
+#include <iostream>
+int main(){using namespace regrip_beam;Pose a,b;b.p={10,0,0};Properties p{183,60,60,8,10.6666667,10.6666667};auto r=evaluate(a,b,a,b,p);int index[6]={0,2,4,6,8,10};double axial[6]={-1,0,0,1,0,0},shear[6]={0,-1,5,0,1,5},bend[6]={0,0,-1,0,0,1};double error=0;for(int i=0;i<6;++i)for(int j=0;j<6;++j){double expected=p.EA/10*axial[i]*axial[j]+p.GAz/10*shear[i]*shear[j]+p.EIy/10*bend[i]*bend[j];error=std::max(error,std::abs(expected-r.chart_hessian[12*index[i]+index[j]]));}std::cout<<"LINEAR_LIMIT "<<error<<'\n';return error<1e-12?0:1;}

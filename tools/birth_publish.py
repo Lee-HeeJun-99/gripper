@@ -18,7 +18,7 @@ def main():
     legacy=ROOT/'results/birth_20261115'
     evidence=ROOT/'reports/birth_evidence';evidence.mkdir(exist_ok=True)
     ident=identity();conv=read(OUT/'convergence.json')
-    for name,path in [('v7_convergence',legacy/'convergence.json'),('structure_candidates',legacy/'structure_candidate_decisions.json'),('event_math',legacy/'math_events/summary.json'),('sanitizer',legacy/'sanitizer/summary.json')]:
+    for name,path in [('v7_convergence',legacy/'convergence.json'),('structure_candidates',legacy/'structure_candidate_decisions.json'),('structural_study',legacy/'structure_refined/summary.json'),('optuna_workflow',legacy/'optuna_contracts/summary.json'),('event_math',legacy/'math_events/summary.json'),('sanitizer',legacy/'sanitizer/summary.json'),('energy_audit',OUT/'energy_audit.json'),('controlled_event_energy',OUT/'controlled_event_energy.json'),('memory_observations',OUT/'memory_observations.json')]:
         write_json(evidence/(name+'.json'),read(path))
     table=['| Diagnostic | Status | Translation relative | Rotation relative | Limit |','|---|---|---:|---:|---:|']
     for name,r in conv['comparisons'].items():
@@ -27,6 +27,8 @@ def main():
     convergence+='\n\n| History friction-loss comparison | Status | Relative difference | Limit |\n|---|---|---:|---:|\n'
     for name,r in conv.get('history_dissipation_convergence',{}).items():convergence+=f"| {name} | {r['status']} | {r['relative_difference']} | {r['limit']} |\n"
     header='New campaign: `results/birth_20261115/canonical_v8`; frozen build `build/birth_20261115/v8_clean`. All quantities are research simulation/mathematics, NOT measured PET or hardware data. Earlier v7 results remain separate.\n\n'
+    header+='Environment: Ubuntu22.04.5, Linux6.8.0-138-generic, GCC11.4, CMake3.22.1, Python3.10.20. Patched matched SOFA26.06 SDK aliases resolve to the same build, see environment/summary.json.\n\n'
+    header+=f"Birth plugin SHA256 `{ident['birth_build']['binary_sha256']}`; generated component SHA256 `{ident['birth_build']['generated_sha256']}`. Beam SHA256 `{ident['beam']['plugin_sha256']}`; SDK driver SHA256 `{ident['beam']['sdk_driver_sha256']}`.\n\n"
     chapters={
       '01_EVENT_DERIVATION':('PASS (smooth prescribed-event kernel); EXPERIMENTAL trajectory model',r'''For committed object-local material point a and current point b, define x(t)=a+t(b-a), g= SDF(x)-skin. Birth is the first transversal entering root alpha in [0,1]. End-state derivative is
 
@@ -59,6 +61,12 @@ Two Pareto candidates were independently run in actual conservative-Beam SOFA: r
       '13_VISUALIZATION':('EXPERIMENTAL prepared replay; NOT RUN GUI','Headless is default. birth_replay.py prepared2401 measured actual state frames and a SOFA GUI command/environment under canonical_v8/replay. Existing closure_replay scene is reused; contact markers denote normal quadrature only. No synthetic animation or new UI is used as physical evidence. Neither a new GUI execution nor headless replay execution is claimed.'),
       '14_FULL_VALIDATION':('Mixed PASS/FAIL/BLOCKED; NOT full system certification','Clean new plugin build/unit/API/independent math and intentional source/binary/generated/physical-input mismatch guards are separate from full model convergence. Fresh original FREE golden checks run twice across600 frames at1e-10+1e-6|golden|. A direct Python invocation without the documented verification namespace FAILED (existing output directories and absent default build manifest); its log remains canonical_v8/python_final. Re-execution using the existing isolated validation launcher passed84 Python tests plus3 existing C++ executables; after the physical-input guard was added the final suite passed85 tests, logs canonical_v8/validation_unit_birth_guards_final. No failing test was deleted or relaxed. Old45gate is NOT summed with new birth tests. Existing Beam implementation and old models/golden/raw/Studies are unchanged. See final evidence manifest for exact hashes and individual logs.')}
     for suffix,(status,body) in chapters.items():
+        if suffix=='12_NATIVE_MEMORY':
+            mem=read(OUT/'memory_observations.json');quarter=mem.get('results/birth_20261115/canonical_v8/grasp/dt_quarter',{})
+            body+='\n\nActual canonical quarter-dt memory observation:\n\n```json\n'+json.dumps(quarter,indent=2)+'\n```\nPSS depends on concurrent processes sharing engine pages; its range alone is not live-heap growth. A finite tail slope spanning contact/release is not a sustained-contact plateau certificate.'
+        if suffix=='06_COUPLED_ENERGY':
+            body+='\n\nActual24s contact-owner journal:194401rows,48000pre/post transactions, all known fields finite; contact normal+tangent split discrepancy<=1.23e-20. Journal ON/OFF state SHA256 both `330807bfd9237f66866620f400b55470dbf662421e6a5c0aa1e88a0bd00d1bc3`. Unknown columns remain null.'
+        if suffix=='14_FULL_VALIDATION':body+='\n\nPost-physics plotting import initially failed because of a missing space in a Python conditional. analysis_restart.json records the incident; analysis_final contains the corrected actual execution logs. No physics case was rerun or its raw results changed to hide that orchestration failure.'
         (ROOT/'reports'/('BIRTH_'+suffix+'.md')).write_text('# Birth validation '+suffix.replace('_',' ')+'\n\nStatus: '+status+'\n\n'+header+body+'\n')
     head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     final=f'''# Contact birth and energy — measured development report
@@ -100,7 +108,9 @@ New experiments require NEW OUT/build paths; see NEXT_TASKS. Per-case command/co
                 if any(parent.name=='grasp' and not(p.parents[i-1]/'metrics.json').exists() for i,parent in enumerate(p.parents) if i>0):continue
                 entries[str(p.relative_to(ROOT))]=dict(sha256=sha(p),bytes=p.stat().st_size)
     report_files=list(evidence.glob('*'))+list((ROOT/'reports').glob('BIRTH_*.md'))
-    for p in sorted(report_files):
+    source_files=list((ROOT/'tools').glob('birth_*.py'))+list((ROOT/'tests').glob('test_birth*'))+list((ROOT/'models/structural_interface').glob('*.py'))
+    for name in ident['birth_build']['source_sha256']:source_files.append(ROOT/name)
+    for p in sorted(report_files+source_files):
         if p.is_file():entries[str(p.relative_to(ROOT))]=dict(sha256=sha(p),bytes=p.stat().st_size)
     write_json(ROOT/'reports/BIRTH_ENERGY_EVIDENCE_MANIFEST.json',dict(baseline='651a02ed24a11a9fce00fe3b437f188ded27266e',publication_parent=head,identity=ident,files=entries,scope='new campaign only; historical manifests unchanged; NOT full grasp certificate'))
     print('published',len(entries),'hashed evidence files')

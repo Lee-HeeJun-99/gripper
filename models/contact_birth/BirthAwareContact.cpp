@@ -3,4 +3,5 @@
 #include <sofa/simulation/AnimateBeginEvent.h>
 #include <sofa/core/behavior/Mass.h>
 #include <iostream>
+#include "MaterialCells.h"
 #include "BirthGenerated.inc"

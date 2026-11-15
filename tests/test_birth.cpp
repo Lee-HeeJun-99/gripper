@@ -7,6 +7,7 @@ void require(bool value,const char*label){if(!value)throw std::runtime_error(lab
 template<class Parent>struct Accumulator:Parent{double a[18][18]{};void add(sofa::SignedIndex r,sofa::SignedIndex c,double v)override{a[r][c]+=v;}void add(sofa::SignedIndex r,sofa::SignedIndex c,float v)override{add(r,c,double(v));}};
 int main(){try{
  std::cout<<std::setprecision(17);Pose object,point;point.p={0,1.01,.02};V before{0,1.03,0};auto a=regrip_birthlaw::evaluate(point,object,{},before,2,1,5,.02,1,1,100);
+ for(int i=0;i<100;++i){auto q=exp(V{.01*i,-.007*i,.003*i});auto p=add(rotate(q,V{0,0,0}),V{95,0,50}),r=add(rotate(q,V{10,0,0}),V{95,0,50});double L=std::sqrt(dot(sub(r,p),sub(r,p)));require(regrip_birth::materialCells(L,.01)==1000,"material grid rigid-frame invariance");}require(regrip_birth::materialCells(10.0001,.01)==1001,"noninteger spacing ceiling retained");std::cout<<"PASS100 material grid coordinate invariance\n";
  require(std::abs(a.next.elastic[2]-.01)<1e-13,"partial first-contact displacement");std::cout<<"BIRTH_EXTENSION "<<a.next.elastic[2]<<'\n';double fd=0,valueError=0,momentError=0;
  for(unsigned shape:{0u,1u,2u})for(double mu:{.1,100.})for(int i=0;i<10;++i){point.p=shape==2?V{.01,1.01,.02+i*.0001}:V{1.01,.01,.02+i*.0001};before=shape==2?V{0,1.04,0}:V{1.04,0,0};auto result=regrip_birthlaw::evaluate(point,object,{},before,shape,1,5,.02,1,1,mu),value=regrip_birthlaw::value(point,object,{},before,shape,1,5,.02,1,1,mu);
   for(int j=0;j<3;++j)valueError=std::max(valueError,std::abs(value.next.elastic[j]-result.next.elastic[j]));

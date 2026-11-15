@@ -20,6 +20,7 @@ string(REPLACE "{f_listening.setValue(true);}" ",journalFilename(initData(&journ
 string(REPLACE "prepare(mstate->read(sofa::core::vec_id::read_access::position)->getValue());std::ifstream" "prepare(mstate->read(sofa::core::vec_id::read_access::position)->getValue());openJournal();std::ifstream" source "${source}")
 string(REPLACE "openJournal();std::ifstream" "bornNodes=deadNodes=0;openJournal();std::ifstream" source "${source}")
 string(REPLACE "for(auto i:g.active){g.state[i]={};}" "countTransitions(g,next[e]);for(auto i:g.active){g.state[i]={};}" source "${source}")
+string(REPLACE "unsigned(std::ceil(L/historySpacing.getValue()))" "regrip_birth::materialCells(L,historySpacing.getValue())" source "${source}")
 string(REPLACE "if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(event)" "if(dynamic_cast<sofa::simulation::AnimateBeginEvent*>(event)&&journal){journalStage(\"begin\",assemble(mstate->read(sofa::core::vec_id::read_access::position)->getValue()).energy);return;}if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(event)" source "${source}")
 string(REPLACE "auto r=compute(x);plastic+=r.D;commit(x);" "auto r=compute(x);if(journal)journalStage(\"pre_commit\",r.a.energy);plastic+=r.D;commit(x);if(journal)journalStage(\"post_commit\",compute(x).a.energy);" source "${source}")
 string(REPLACE "auto po=pose(x[obj]);auto cells" "auto cells" source "${source}")

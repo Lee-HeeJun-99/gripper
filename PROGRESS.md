@@ -73,3 +73,13 @@
 별도SOFA메모리패치 최소시험을 실행했다. 접촉공간수렴FAIL/rank5/전체에너지BLOCKED은 남아있다.
 상세/정확 재현명령: reports/GRASP_FINAL_VERIFICATION_REPORT.md,GRASP_NEXT_TASKS.md.
 전체파지목표는 미완료,원격push없음,실물측정0건.
+
+## 2026-11-15 — contact-history 후속 기록 (과거 결과 보존)
+
+새 branch development/regrip-contact-history-convergence에서 별도 MaterialHistoryContact를 구현했다.
+접촉 적분 aliasing/normal 재투영 손실을 독립 재현하고 actual SOFA q/cell 적분 검사를 수행했다.
+600시점 골든2회와81Python/기존C++회귀,local+Tz 유지·해제 반복이 통과했다.
+history 세분화와dt 기준은 여전히 FAIL,전체 energy/파지 Optuna는 BLOCKED다.
+birth-time 증분의 독립 실험 커널은 아직 SOFA에 통합하지 않았다.
+상세 수치/최종 finer-case 판정: reports/CONTACT_HISTORY_FINAL_REPORT.md 및 history_evidence/convergence.json.
+외장디스크의 results/history_20261115를 사용했고 원격push/실물측정은 수행하지 않았다.

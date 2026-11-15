@@ -36,3 +36,12 @@
 - contact/history/dt 수렴 FAIL와 전체 coupled-energy 미완료 때문에100mm 파지 최적화는 BLOCKED다. 독립 linear FEM 구조 Optuna를 실제 SOFA 파지 trial이라고 부르지 않는다.
 - Native 부모 constraint Jacobian은 projective DOF가 제거될 수 있다. 전체 guide 반력은 원래 자식 표면 Jacobian에서 물리 impulse를 복원해야 하며 외력을 임의 상쇄해 채우지 않는다.
 - 메모리120000steps/2reload PASS는240000연속/수시간/지속접촉 무누수 인증이 아니다. 구조 전용 compensated translation을 자유물체/회전에 무검증 적용하지 않는다.
+
+## CONTACT HISTORY 후속 연구
+
+- 최신 상태/재개는 reports/CONTACT_HISTORY_CURRENT_STATUS.md와 CONTACT_HISTORY_NEXT_TASKS.md다. 기존 보고서와 원본 manifest는 보존한다.
+- models/contact_history의 v3와 models/contact_birth의 독립 실험 커널을 구분한다. birth 커널은 아직 SOFA에 연결되지 않았다.
+- normal samples와 tangent cellOrder는 서로 다른 적분 변수다. history 간격·Beam 메시·dt도 각각 검증한다.
+- 접촉 시작 스텝의 누락 증분과 정확한 material-grid 경계의 보간 특이 조건을 해결하기 전 일반 이력 전달 PASS를 주장하지 않는다.
+- history .005→.0025 FAIL,시간 기준 미달,전체 energy 미폐합은 파지 Optuna의 차단 조건이다. 부분 energy journal의 null을0으로 대체하지 않는다.
+- contact.csv.patch.csv는 새 모델에서 법선 적분점만 담는다. 이를 전체 접선 Wrench 분포로 해석하지 않는다.

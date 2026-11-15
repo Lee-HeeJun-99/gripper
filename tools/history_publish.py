@@ -18,7 +18,7 @@ def old_audit():
 def main():
     ident=identity();evidence=ROOT/'reports/history_evidence';evidence.mkdir(exist_ok=True)
     auxiliary={}
-    for name in ('structural_interface','prescribed_reference_final','energy_partial','sanitizer_final','replay','validation_unit_history_final','validation_golden_history'):
+    for name in ('structural_interface','prescribed_reference_final','energy_partial','sanitizer_final','replay','wrench_geometry','validation_unit_history_final','validation_golden_history'):
         p=OUT/name;file=p/'metrics.json' if (p/'metrics.json').exists() else p/'summary.json'
         if file.exists():auxiliary[name]=json.loads(file.read_text())
     write_json(evidence/'auxiliary.json',auxiliary);write_json(evidence/'historical_integrity.json',old_audit())

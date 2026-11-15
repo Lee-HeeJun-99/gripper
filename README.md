@@ -162,3 +162,19 @@ ctest --test-dir build/beam_local --output-on-failure
 ```
 
 새 raw/build/격리환경은 외장디스크 내부에 유지한다. 기존 실험 이름은 재사용하지 않는다.
+
+## 접촉 이력 수렴 연구 (2026-11-15)
+
+최신 상태는 [CONTACT_HISTORY_CURRENT_STATUS.md](reports/CONTACT_HISTORY_CURRENT_STATUS.md),
+결과는 [CONTACT_HISTORY_FINAL_REPORT.md](reports/CONTACT_HISTORY_FINAL_REPORT.md),
+재개 명령은 [CONTACT_HISTORY_NEXT_TASKS.md](reports/CONTACT_HISTORY_NEXT_TASKS.md)에 있다.
+
+독립 MaterialHistoryContact를 실제 SOFA에 연결해 법선·접선 적분 민감도를 개선했다.
+그러나 이력/시간 수렴과 전체 에너지 수지가 미완료여서100mm 파지 Optuna는 BLOCKED다.
+기존 Beam/골든/Study는 보존하며 부분 유지·복원 PASS를 전체 파지 인증으로 보지 않는다.
+
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/history_verify.py --raw
+```
+
+기존 campaign 이름은 덮어쓰지 않는다. 새 빌드/실험 경로와 정확한 명령은 위 재개 문서를 따른다.

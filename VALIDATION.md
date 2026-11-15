@@ -157,3 +157,13 @@ elastic stick/API/67Python/8층quarterdt/최소SDK메모리시험은 신규PASS�
 6방향 구형물체 hold/복원 하위gate PASS와 완전파지 인증을 구분한다.
 접촉공간수렴 FAIL,rank5 한계,전체에너지 BLOCKED로 일반자유파지 및 파지최적화는 미완료.
 실물성능은 여전히 NOT RUN. 기존45gate를 신규3D접촉의 인증으로 합산하지 않는다.
+
+## 2026-11-15 — Material-history 연구 검증 (이전 판정과 별도)
+
+새 mathematical/contact/actual SOFA 검증은 reports/HISTORY_01_ROOT_CAUSE.md~HISTORY_14_FULL_VALIDATION.md에 기록했다.
+접촉 법선 q8/16/32 및 tangent cell2/4 수렴 검사 PASS,history .005→.0025 및 시간 기준 FAIL.
+두 차례600시점 기준회귀는 기존1e-10+1e-6|golden|을 유지했고 신규Python총81개가 통과했다.
+부분 energy inventory는 전체 closure가 아니며 새12방향 파지 승인/100mm grasp Optuna는 BLOCKED다.
+신규 birth-root kernel은 독립 시험 단계이며 생산 SOFA v3 결과에 섞지 않았다.
+reports/CONTACT_HISTORY_EVIDENCE_MANIFEST.json이 새로운 raw/source/binary 증거를 식별한다.
+기존 manifest는 문서/ignore 메타데이터 차이를 숨기기 위해 갱신하지 않는다.

@@ -32,6 +32,8 @@ def main():
         immutable=['shape','axis','load','mu','normal_k','tangent_k','tension','pressure','rayleigh_mass','beam_material']
         if any(ra['config'][key]!=rb['config'][key] for key in immutable):raise ValueError('different physical problem')
         checks[name]=dict(comparison(ra,rb,limit),coarse=a,fine=b)
+        if not (ra.get('bounded_hold_pass') and rb.get('bounded_hold_pass')):
+            checks[name].update(status='FAIL',failure_reason='underlying physical hold/equilibrium gate failed')
     summary=dict(status='FAIL' if any(c['status']=='FAIL' for c in checks.values()) else 'EXPERIMENTAL',comparisons=checks,grasp_optimization='BLOCKED',reason='all contact/history/space/time and needed energy prerequisites must pass; no grasp objectives executed',cases={name:{k:r.get(k) for k in ('status','bounded_hold_pass','hold_displacement_mm','hold_rotation_increment_rad','global_force_residual','global_moment_residual','recovery_pass','friction_dissipation')} for name,r in results.items()},sources=sources)
     write_json(OUT/'convergence.json',summary);write_json(OUT/'memory_observation.json',memory)
     target=ROOT/'reports/history_evidence';target.mkdir(exist_ok=True);write_json(target/'convergence.json',summary);write_json(target/'memory.json',memory)

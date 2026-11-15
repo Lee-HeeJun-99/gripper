@@ -55,3 +55,12 @@
 - v7과 canonical_v8의 compiled identity를 섞어 수렴 판정하지 않는다. near-integer Grid ID 정규화는 물리 허용오차 완화가 아니다.
 - contact-owner begin/force-query/pre/post Commit journal은 전체 Solver/FrameLayer transaction journal이 아니다. null 에너지 항목을0으로 대체하지 않는다.
 - 24 COMPLETE 독립 구조 Optuna와 실제 SOFA 구조 후보검사를 파지 Optuna로 세지 않는다. 파지 최적화 차단 Gate는 유지한다.
+
+## AUTONOMOUS RESEARCH checkpoint
+
+- Latest state/restart: reports/AUTONOMOUS_RESEARCH_STATUS.md and AUTONOMOUS_RESEARCH_NEXT.md. Preserve all earlier reports and immutable campaigns.
+- models/material_point_contact is an independent fixed-material-midpoint contrast. Force/return/Commit and measured plastic loss share points; normal Gauss remains separate. Do not describe legacy cellOrder as its tangent integration rule.
+- Fine-history loss improves,but coarse history motion and Beam mesh still fail. Adjacent dt pairs pass while base-to-quarter motion/loss fail. Do not hide accumulated error behind adjacent-only tests.
+- models/contact_kinematics/HermiteMap.h is a mathematical candidate,not integrated SOFA contact. Curved geometry requires correct torque/virtual-work pullback and conservative curved-contact bounds,not just changing sampled positions.
+- Restored historical tools/research_trial.py is NOT the new runner. Use tools/autonomous_trial.py. New build/output names are mandatory;record source and generated hashes before compilation.
+- Global energy and100mm grasp optimization remain blocked. Committed plastic agreement or scalar energy identities do not certify global energy/force closure/real PET performance.

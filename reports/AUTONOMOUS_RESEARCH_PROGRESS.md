@@ -42,3 +42,81 @@ does not by itself establish the full3finger cause or global energy closure.
 
 Actual4s profiles31.16s(coarse)and49.56s(finest) justify four bounded history
 runs,all4GiB/480s. Their full convergence results are still under evaluation.
+
+## Measured SOFA contrast and priority update
+
+All four history runs finished. Immutable material points make actual committed
+plastic return and recorded plastic return identical,including birth and death
+counts. Same-hold cumulative loss differences are .129703%,.279753%,.049621%
+for h=.01/.005/.0025/.00125,all below the original1% line. Motion differences
+are4.61737%,1.01697%,.0300247%;the first two remain FAIL. Thus the hypothesis
+is supported for the loss/state mismatch,not as a complete convergence cure.
+
+Repeated fine run has exactly identical hold motion and loss.11→21→41nodes
+still gives4.95984%,2.80102% translation differences,FAIL1%;rotation and loss
+differences are smaller. Local hold force/moment gates pass,not global grasp
+certification.24s base and fine-repeat recover/release;18s cases cannot certify
+the complete24s sequence even though their local hold gate passes.
+
+dt-half on the fine history has motion difference.0977366% and loss difference
+.0999735%,both narrowly under.1%. A4s quarter-dt profile151.79wall seconds
+predicts683.07seconds for18s. One bounded900s exception,4GiB,was selected to
+test whether that borderline result is robust.41node profile133.92seconds
+similarly justified a single900s run,which completed in635.76seconds. No
+unchanged failed high-resolution campaign was blindly relaunched.
+
+## Independent falsification and partial energy
+
+Prescribed geometry calls actual old/new ForceField APIs with no Beam/ODE.
+New maximum absolute pre/post Commit energy jump8.70e-20 vs old1.02e-6;
+new queried/committed D agree exactly. Both old and new loss converge below1%
+on this simpler path,so it does NOT prove every old full-model error has one
+cause. Endpoint work residual decreases with smaller dt but remains nonzero.
+It is not labeled friction or fitted numerical heat.
+
+A seeded10000step scalar spring-slider test verifies the DERIVED identity
+W_endpoint−ΔU−F1Δp=.5k(Δe)^2 with max residual1.02e-17. This scalar capacity
+model includes no vacuum-chamber work and cannot close global SOFA energy.
+Actual native-driver birth/no-contact scenes pass;resolved through-chord
+contact is explicitly rejected as expected,not accepted as physical success.
+
+## Next hypothesis: contact centerline interpolation
+
+Fixed cubic cantilever geometry gives linear-centerline normal-integral errors
+4.834%,1.468%,.1049% at11/21/41nodes against independent SciPy quadrature.
+The prescribed cubic Hermite representation reproduces that cubic. Offline
+reconstruction of actual SOFA states gives linear/director-Hermite normal
+integral differences3.085%,.1008%,.04865%;these are NOT re-solved equilibria.
+This motivates a kinematic investigation,not an attribution of all remaining
+Beam nodal-solution error to interpolation.
+
+Implemented a separate objective director-Hermite virtual-work pullback kernel,
+including nodal torques,geometric tangent and left-SO(3) connection.60states
+pass FD1.56e-9,normal-energy derivative3.47e-10,objectivity6.11e-16 and
+force/moment1.73e-17. Sparse analytic assembly agrees with dense AD2 reference
+within2.78e-17. It is NOT integrated into SOFA contact yet;linear current
+campaign remains unchanged. No production speedup is claimed without profiling.
+
+## Preservation correction and regression
+
+During tool addition an existing tools/research_trial.py name was accidentally
+reused. Restored its exact6397017content and moved new runner to
+tools/autonomous_trial.py. Hash-based preservation test passes. First campaign
+commands using the old path refer to the intermediate621266c source revision;
+reproduce via the new runner path. Historical physics/raw/golden were not edited.
+The restoration is retained in Git history,not concealed by rewriting commits.
+
+Python89tests and3existing C++ suites pass;new actual Beam61state and dense100
+equivalence checks pass. Two independent600step FREE golden runs pass all
+9recorded metrics with unchanged1e-10+1e-6|reference| tolerances. The original
+45physics gates are not rerun or expanded into new-contact certification.
+
+## Final temporal cross-check
+
+Quarter-step completes679.151s/144000steps,actual queried/committed D equal,
+local hold force/moment gate PASS. Half→quarter motion.015950% and loss.074528%
+pass.1%. However base→quarter accumulates.113702% motion and.174427% loss,
+both FAIL.1%. Added the nonadjacent cross-check instead of presenting adjacent
+PASS as full base-dt qualification. Hence time remains incompletely qualified
+alongside the independently unresolved spatial error. Quarter-step detachment
+inventory relative differences also remain large;no global energy claim.

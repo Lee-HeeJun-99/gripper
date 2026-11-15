@@ -15,7 +15,9 @@ template<class T> struct Geometry{T distance;Vec<T>normal;};
 template<class T> Geometry<T> geometry(const Vec<T>&x,unsigned shape,double radius,double halfHeight){
  Geometry<T>g{};
  if(shape==0){auto norm=sqrtAD(dot(x,x));g.distance=norm-T(radius);g.normal=scale(x,invAD(norm));}
- else if(shape==1){auto radial=sqrtAD(x[0]*x[0]+x[2]*x[2]);T q0=radial-T(radius),q1=T(x[1].v<0?-1:1)*x[1]-T(halfHeight);
+ else if(shape==1){T radialSquared=x[0]*x[0]+x[2]*x[2];T q1=T(x[1].v<0?-1:1)*x[1]-T(halfHeight);
+  if(radialSquared.v<=1e-20){if(q1.v<=-radius)throw std::invalid_argument("cylinder medial-axis normal not unique");g.distance=q1;g.normal={T(0),T(x[1].v<0?-1:1),T(0)};return g;}
+  auto radial=sqrtAD(radialSquared);T q0=radial-T(radius);
   T a=q0.v>0?q0:T(0),b=q1.v>0?q1:T(0);Vec<T>nr{x[0]*invAD(radial),T(0),x[2]*invAD(radial)};
   Vec<T>ny{T(0),T(x[1].v<0?-1:1),T(0)};
   if(a.v>0||b.v>0){auto norm=sqrtAD(a*a+b*b);g.distance=norm;g.normal=add(scale(nr,a*invAD(norm)),scale(ny,b*invAD(norm)));}

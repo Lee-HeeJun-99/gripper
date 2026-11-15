@@ -4,6 +4,7 @@
 using namespace regrip_integrated;
 using regrip_stick::evaluateContact;
 void require(bool b,const char*s){if(!b)throw std::runtime_error(s);}
+template<class Parent>struct Acc:Parent{double a[18][18]{};void add(sofa::SignedIndex r,sofa::SignedIndex c,double v)override{a[r][c]+=v;}void add(sofa::SignedIndex r,sofa::SignedIndex c,float v)override{add(r,c,double(v));}};
 int main(){try{
  Pose p{{0,0,4.99}},o;regrip_stick::History h;auto eval=[&](Pose x,const regrip_stick::History&s,unsigned shape=0){return evaluateContact(x,o,s,shape,5,5,.1,.01,.02,.3);};
  auto initial=eval(p,h);h=initial.next;require(initial.next.active&&!initial.next.sliding,"stationary contact");
@@ -26,6 +27,10 @@ int main(){try{
   for(int offset:{0,6,9}){auto rf=rotate(q,V{r.wrench.force[offset],r.wrench.force[offset+1],r.wrench.force[offset+2]});for(int j=0;j<3;++j)require(std::abs(rf[j]-rr.wrench.force[offset+j])<1e-12,"objective material history/wrench");}
  }
  require(maxJ<1e-7&&maxMoment<1e-12,"FD/moment check");
+ for(unsigned shape:{1u,2u}){
+  auto cap=evaluateContact(Pose{{0,4.99,0}},o,{},shape,5,5,.1,.01,.02,.3);require(cap.wrench.force[1]>0&&std::abs(cap.wrench.force[0])+std::abs(cap.wrench.force[2])<1e-14,"finite cap/face center");
+  auto corner=evaluateContact(Pose{{5.03,5.04,0}},o,{},shape,5,5,.1,.01,.02,.3);require(std::abs(corner.wrench.force[0]-.0003)<1e-12&&std::abs(corner.wrench.force[1]-.0004)<1e-12,"edge/corner SDF normal");
+ }
  // Flat box contact: backward-Euler elastic/plastic work identity. The
  // nonnegative algorithmic term is not physical Coulomb dissipation.
  regrip_stick::History flat;Pose a{{0,0,4.99}};flat=evaluateContact(a,o,{},2,5,5,.1,.01,.02,.3).next;double work=0,D=0,algorithmic=0,oldE=0;
@@ -35,5 +40,9 @@ int main(){try{
  auto state=sofa::core::objectmodel::New<sofa::component::statecontainer::MechanicalObject<Types>>();state->resize(3);auto ff=sofa::core::objectmodel::New<StickSlipContact>(state.get());ff->segments.setValue({0,1});ff->objectIndex.setValue(2);ff->samples.setValue(2);
  Inherit::VecCoord x(3);for(auto&c:x)c.getOrientation()=sofa::type::Quat<double>(0,0,0,1);x[0].getCenter()=sofa::type::Vec3d(-.2,0,4.99);x[1].getCenter()=sofa::type::Vec3d(.2,0,4.99);state->write(sofa::core::vec_id::write_access::restPosition)->setValue(x);ff->history.assign(3,{});ff->history=ff->compute(x).next;x[0].getCenter()[0]+=.001;x[1].getCenter()[0]+=.001;state->write(sofa::core::vec_id::write_access::position)->setValue(x);
  auto assembled=ff->compute(x).a;Inherit::DataVecDeriv dx,df;Inherit::VecDeriv v(3);for(auto&z:v)for(int j=0;j<6;++j)z[j]=.001*(j+1);dx.setValue(v);df.setValue(Inherit::VecDeriv(3));sofa::core::MechanicalParams mp;mp.setKFactor(2.5);ff->addDForce(&mp,df,dx);double expected[18]{};for(auto&t:assembled.J)expected[t.r]+=2.5*t.v*v[t.c/6][t.c%6];for(int j=0;j<18;++j)require(std::abs(expected[j]-df.getValue()[j/6][j%6])<1e-14,"SOFA addDForce kFactor");
+ Acc<sofa::core::behavior::StiffnessMatrixAccumulator> acc;sofa::core::behavior::StiffnessMatrix matrix;matrix.setMatrixAccumulator(&acc,state.get());ff->buildStiffnessMatrix(&matrix);double J[18][18]{};for(auto&t:assembled.J)J[t.r][t.c]+=t.v;for(int i=0;i<18;++i)for(int j=0;j<18;++j)require(std::abs(J[i][j]-acc.a[i][j])<1e-14,"actual stiffness matrix assembly");
+ for(unsigned c=0;c<18;++c){auto xp=x,xm=x;auto a=increment(EnergyField::pose(x[c/6]),c%6,1e-6),b=increment(EnergyField::pose(x[c/6]),c%6,-1e-6);for(int j=0;j<3;++j){xp[c/6].getCenter()[j]=a.p[j];xm[c/6].getCenter()[j]=b.p[j];}xp[c/6].getOrientation()=sofa::type::Quat<double>(a.q[0],a.q[1],a.q[2],a.q[3]);xm[c/6].getOrientation()=sofa::type::Quat<double>(b.q[0],b.q[1],b.q[2],b.q[3]);auto plus=ff->compute(xp).a,minus=ff->compute(xm).a;for(int row=0;row<18;++row)maxJ=std::max(maxJ,std::abs((plus.f[row]-minus.f[row])/2e-6-J[row][c]));}
+ require(maxJ<1e-7,"full18DOF component tangent");
+ ff->mu.setValue(-1);bool rejected=false;try{ff->compute(x);}catch(const std::invalid_argument&){rejected=true;}require(rejected,"negative runtime mu rejected");ff->mu.setValue(.3);
  std::cout<<"PASS stick/slip/no-contact/release/reentry/objectivity/FD/action-reaction/torque/energy/query-purity/API; maxJ="<<maxJ<<" maxMoment="<<maxMoment<<" work="<<work<<" D="<<D<<" algorithmic="<<algorithmic<<'\n';
 }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

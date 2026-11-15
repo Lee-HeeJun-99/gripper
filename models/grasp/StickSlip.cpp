@@ -15,6 +15,8 @@ public:
  radius(initData(&radius,5.,"radius","Research radius/box half width")),halfHeight(initData(&halfHeight,5.,"halfHeight","Finite cylinder half height")),pointRadius(initData(&pointRadius,.1,"pointRadius","Line skin")),lineStiffness(initData(&lineStiffness,.001,"lineStiffness","Normal F/mm^2")),tangentLineStiffness(initData(&tangentLineStiffness,.001,"tangentLineStiffness","Elastic tangential F/mm^2")),mu(initData(&mu,.3,"mu","Equal static/kinetic Coulomb coefficient")),filename(initData(&filename,std::string("stick.csv"),"filename","Fresh contact history")){f_listening.setValue(true);}
  Snapshot compute(const VecCoord&x)const{
   if(!mstate||objectIndex.getValue()>=x.size()||segments.getValue().empty()||segments.getValue().size()%2||!samples.getValue()||samples.getValue()>32||!stride.getValue())throw std::invalid_argument("stick state/indices/sampling");
+  for(double v:{radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),lineStiffness.getValue(),tangentLineStiffness.getValue(),mu.getValue()})if(!std::isfinite(v)||v<0)throw std::invalid_argument("stick invalid runtime parameter");
+  if(radius.getValue()==0||halfHeight.getValue()==0||tangentLineStiffness.getValue()==0||shape.getValue()>2)throw std::invalid_argument("stick dimensions/runtime shape");
   for(auto&p:x)pose(p);
   const auto&rest=mstate->read(sofa::core::vec_id::read_access::restPosition)->getValue();if(rest.size()!=x.size())throw std::invalid_argument("stick rest-state size");
   size_t count=segments.getValue().size()/2*(samples.getValue()+1);if(history.size()!=count)throw std::invalid_argument("stick history/topology changed");

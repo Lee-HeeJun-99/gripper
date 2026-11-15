@@ -4,7 +4,7 @@ from pathlib import Path
 from verification_common import ROOT,SOFA,sha,write_json,provenance
 OUT=Path(os.environ.get('REGRIP_GRASP_OUT',ROOT/'results/grasp_20261115')).resolve()
 BUILD=ROOT/'build/grasp_20261115'
-PLUGIN=BUILD/'stick/libReGripStickSlip.so'
+PLUGIN=Path(os.environ.get('REGRIP_STICK_PLUGIN',BUILD/'stick_v2/libReGripStickSlip.so')).resolve()
 PYTHON='/home/ubuntu/miniconda3/envs/robot_ws/bin/python'
 
 def identity():

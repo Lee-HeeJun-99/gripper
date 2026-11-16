@@ -1,5 +1,46 @@
 # Autonomous research log
 
+## Latest follow-up128–146 (completed, not RUNNING)
+
+Same-input local temporal refinement reduced post-1s attachment discrepancy to
+.0796%, but earlier/full phases remain FAIL. BDF2 local and full4s controls also
+FAIL; its numerical high-mode damping is not a sufficient fix. Derived BE/BDF2
+G-energy inventories close the partial accepted-state identities without fitted
+residual loss. Checked and rejected mapping increment-suppression hypothesis
+with actual1e-10→2e-10 setter/mapping unit144. Actual native1s film arches rather
+than wraps; this negative design observation is preserved. Next is passive
+element/cache profiling and one-factor mechanical-route assessment, not a false
+free-object/grasp certificate. No OS/disk/permission ceiling was observed; this
+is an unfinished response/context-budget checkpoint. Full evidence in the new
+v2 ledger and detailed contact report. No automatic restart is claimed.
+
+## 2026-11-16 continued implementation: contact, cost, coupled mechanics
+
+Later native119–125 tests separate impulse versus force error and contact versus
+no-contact BE error. Both fail .1%; onset timing alone rejected. Actual1s
+fixed-sphere actuation arches the middle skin away, not a certified wrap.
+Independent actual-state attachment-mode diagnostic127 identifies a652.58rad/s
+leading error mode. Same-input1s local refinement128/129 is the next actual
+test, without changing damping/stiffness or claiming any free-object success.
+
+Compared event timestamp, penalty mode, structural modes and observer error
+using actual stored states and independent clipped integration/modal probes.
+Found mapped-mass coefficient cache defect; independent public/protected API
+matrix system corrects it without modifying SDK. Actual runtime greatly reduced
+but original coarse time FAIL retained. Compile-time local AD/native-host
+optimization preserved derivatives and actual CSV; previous slower approach
+not repeated. Scoped coupon Trapezoidal time qualification and bitwise repeat
+PASS. Cubic-root spatial alternative physically worse, rejected/preserved.
+Implemented real skin/rails attachments and eccentric routed tendon with
+independent DOFs, actual SOFA API/matrix tests and8s low-load recovery. Original
+nominal folding diverged; bounded watchdog preserves failed partial states.
+Phase-refined nominal input completed2s without artificial damping/forces.
+High-resolution low-load time test still FAIL on attachment energy. Partial
+energy audit uses derived signed quadrature terms, not fitted dissipation.
+Native fixed-sphere development continues on separate ABI because patched SDK
+omits collision binaries. Detailed inputs/metrics/failures/reproduction:
+FILM_CONTACT_DYNAMICS_20261116.md. Final grasp/optimization remains unfinished.
+
 ## Profiling continuation and rejected optimization
 
 Actual profile28:150steps cost50.859s; force/damping39.406s, gradient/RHS9.862s,

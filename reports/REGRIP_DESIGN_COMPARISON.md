@@ -1,5 +1,20 @@
 # 구조 비교 — 정량 기하/해석 선별, 실제 파지 비교 미완료
 
+## 최신 실제 구현: 직사각형 동등 코어 체적 쿠폰
+
+추가 고정 구체 Native 접촉 및1초 실제 구동 실행: 접촉력은 발생하지만
+중간부가 위로 아치형 변형하여 의도한 감싸기를 아직 달성하지 못했다.
+동일 입력 무접촉 BE도 시간 Gate FAIL이다. 필름 후보가 Baseline보다
+우수하다고 결론 내릴 근거는 아직 없다. 임의 기구학으로 이를 보정하지 않았다.
+
+Film–Rails–Tendon의 독립 DOF·5개 부착점/레일·편심 와이어 가이드 힘 전달을
+실제 SOFA로 실행했다. 100×24×.05 mm Skin, 두 100×1.32233×.1 mm Rail이며
+코어 체적146.4466 mm³/핑거다. 기존 tapered equal_volume_v2와 다른 연구 형상이다.
+작은 장력에서 구동·해제·8초 복원 관측, 큰 장력은 세분 시간 격자에서2초 실행.
+물체 감싸기·자유 물체 유지·Baseline 대비 성능 우위는 아직 검증하지 않았다.
+부착부 에너지 시간 수렴 FAIL, 자가 충돌·제작 부착 강도 미검증이다.
+상세: FILM_CONTACT_DYNAMICS_20261116.md. 개념 도면과 실제 좌표 그림을 구분한다.
+
 ## Updated physical evidence — no baseline/grasp superiority certification
 
 Nonlinear coupon development now fixes tolerant force caching, trial tangent

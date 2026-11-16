@@ -1,5 +1,27 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Latest bounded result through146
+
+Actual Film–Rails–Tendon and fixed-sphere contact exist, but coupled time Gate
+still FAIL after two integrators and targeted time refinement. Partial BDF2
+energy audit and tiny-increment mapping tests PASS only within their stated
+scope. Actual1s deformation does not establish wrapping. No free-object grasp
+or grasp Optuna was run/approved. Response/context budget requires a recorded
+checkpoint; this is not research completion or a fabricated OS timeout.
+Newest status/NEXT and FILM_CONTACT_DYNAMICS_20261116.md supersede older text.
+
+## Newest actual-development result (2026-11-16, not project completion)
+
+See FILM_CONTACT_DYNAMICS_20261116.md. Corrected mapped-mass factor caching,
+qualified opt-in compiler/local AD acceleration, scoped coupon time PASS,
+and actual flexible Film–Rails–Tendon coupling are implemented and executed.
+Nominal2s bounded actuation executes, but coupled attachment-energy time FAIL
+persists; no completed free-object wrapping/grasp or grasp optimization is
+claimed. Global energy remains BLOCKED despite a partial discrete identity.
+Native collision development uses a separate installed ABI, never mixed into
+the patched engine. All old FAIL/Golden/raw retained. Reports below are history,
+not a current RUNNING-process claim or overall completion certificate.
+
 ## Profiling continuation and rejected optimization
 
 Actual profile28:150steps cost50.859s; force/damping39.406s, gradient/RHS9.862s,

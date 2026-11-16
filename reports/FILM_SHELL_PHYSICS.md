@@ -1,5 +1,26 @@
 # Film mechanics/contact implementation — actual results,unfinished
 
+## Latest coupled follow-up through146
+
+Actual tendon-driven skin/rail contact on a fixed sphere was executed, not just
+loaded as geometry. Native time FAIL and upward arching prevent wrapping/grasp
+approval. No-contact coupled Trapezoidal AND BDF2 full-cycle time also FAIL in
+attachment energy; local post-1s .0796% does not certify the earlier/full phases.
+Derived accepted-state BE/BDF2 G-energy inventories close partial energy only.
+Mapping setters preserve1e-10 increments (144); that suspected error was rejected.
+All processes complete. Detailed scoped results: FILM_CONTACT_DYNAMICS_20261116.md.
+
+## Newest continuation: qualified coupon time window and coupled prototype
+
+FILM_CONTACT_DYNAMICS_20261116.md documents actual factor-cache diagnosis,
+independent correction, all-pair Trapezoidal time qualification76 and repeat77.
+The coarse/old/BDF2 time FAIL and original11→41 spatial FAIL remain.
+Actual independent-DOF film/rails/tendon prototype exists, unlike the old OBJ
+concept. Kernel/API/mapping/mass/tangent checks PASS; no-object low-load recovery
+executes. Coupled time FAIL persists in attachment energy even at6400steps.
+Nominal2s execution with phase refinement is NOT convergence/grasp approval.
+Native fixed-sphere constraints and global energy remain separately assessed.
+
 ## Profiling continuation and rejected optimization
 
 Actual profile28:150steps cost50.859s; force/damping39.406s, gradient/RHS9.862s,

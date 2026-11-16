@@ -1,5 +1,42 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Final measured state of this response (through146; project incomplete)
+
+Actual coupled film/rails/tendon and fixed-sphere surface contact implemented.
+All launched processes complete. Partial coupon4-observable time PASS remains
+strictly scoped. Coupled Trapezoidal AND BDF2 attachment-energy time FAIL;
+full BDF2 coarse→fine .7455%, fine-pair .4853%. Pre-1s error also persists after
+local refinement. Three BDF2 partial discrete-energy audits PASS but global
+grasp energy BLOCKED. Sub-tolerance mapping suppression hypothesis rejected
+by source/API unit144. Actual1s geometry arches away, not a qualified wrap.
+Free6DOF/12-wrench/Sphere-Cylinder-Box grasp NOT RUN; grasp Optuna BLOCKED.
+Response/context budget checkpoint, not OS timeout/final goal completion.
+See newest NEXT and FILM_CONTACT_DYNAMICS_20261116.md; no background restart.
+
+## Latest continuation: actual coupled actuation, full grasp still unfinished
+
+Native follow-up110–118 is COMPLETE, not RUNNING: separate installed-ABI
+plugins and no-contact control PASS; actual tendon-driven skin contacts fixed
+R8 sphere atx95. Native100/200/400-step time FAIL (nonadjacent force25.423%,
+tip2.044%). Fixed reaction unobservable after projection: BLOCKED, never zero.
+All launched physics processes are complete; no background restart is claimed.
+
+See FILM_CONTACT_DYNAMICS_20261116.md (newest evidence, supersedes historical
+status below). Mapped-mass MBK cache defect corrected independently, no SDK
+edits. Coupon Trapezoidal3280/6560/13120 windowed time Gate PASS (.1%, all pairs,
+physical intervals and endpoints); bitwise repeat PASS. Old coarse/BDF2 FAIL
+retained. Fine static21→81 space PASS, old11→41 space FAIL retained.
+Actual Film+separate flexible Rails+routed eccentric Tendon implemented and
+API/mapping/force/tangent validated. Low-load8s recovery observed; nominal
+T=.001 runs to2s with profiled phase refinement without Newton failure.
+Coupled low-load1600/3200/6400 time FAIL due attachment-energy .8232% nonadjacent
+difference. This is not hidden by passing tip motion. Fixed-sphere Native
+integration is experimental; patched SDK lacks collision binaries, so any
+installed-SOFA experiment uses separate rebuilt plugins and explicit ABI audit.
+No free6DOF grasp, wrapping certification or grasp Optuna. Global energy BLOCKED;
+partial no-object discrete energy identity PASS only. Original friction-time
+FAIL unchanged. Research NOT completed; no automatic continuation claimed.
+
 ## Profiling continuation and rejected optimization
 
 Actual profile28:150steps cost50.859s; force/damping39.406s, gradient/RHS9.862s,

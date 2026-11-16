@@ -1,5 +1,85 @@
 # Next research checkpoint
 
+## Latest checkpoint through146 — first unfinished task
+
+Contact/time/actuation work was actually continued, not just planned. All launched
+processes are COMPLETE. Do NOT repeat25–146. Trapezoidal local128/129/131 and
+full BDF2 139/140/141 retain attachment-energy time FAIL. Local post-1s .0796%
+passes, but pre-1s/full intervals fail. BDF2 damping alone is not the solution.
+
+First next development: instrument FilmRailTendon force/Hessian/cache-hit/
+element-copy costs with a passive opt-in observer; compare identical actual CSV
+before/after instrumentation. Then test a compile-time/in-place element visitor
+or allocation reduction against archived95 derivative dump and alternating
+actual runtime. Do not repeat rejected gradient-only AD or tolerant caches.
+No further doubling is justified without a budget or cost improvement: measured
+full6400-step BDF2 is278.47s, so12800 nominally exceeds480s.
+
+In parallel, use actual125 geometry (middle arches upward) to test physical
+tendon guide routing/precurvature in a SEPARATE design, not fake pose correction.
+Keep core material volume, boundary and force inputs explicit; only the route
+changes in a one-factor experiment. No free-object certification/Optuna until
+time/space/contact/energy prerequisites are met. Native reaction before fixed
+projection and a consistent higher-order constrained integration remain open.
+
+Exact resume checks from repository root:
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+git status --short
+git log -10 --oneline
+$PY tools/film_contact_evidence.py --verify
+$PY tools/film_contact_evidence.py --audit-old
+```
+Then read FILM_CONTACT_DYNAMICS_20261116.md, summary142 and audits143/145/146.
+Current source/binary hashes and exact ledger source commit are in
+FILM_CONTACT_EVIDENCE_20261116_v2.json. Reusable immutable builds are95 (patched
+assembly),69/105 (patched integrator), and native installed110 (separate ABI).
+Code checkpoint before final documentation:c4b870e; later exact commits are in
+Git/the ledger. This response/context-budget handoff is NOT an OS resource
+failure or final completion. Further meaningful research is not declared
+externally blocked. There is no automatic background restart.
+
+The older NEXT entries below are historical and superseded.
+
+## Current executable checkpoint — do not repeat completed32–105
+
+Update:110–118 native integration is complete; do not rerun from scratch.
+No-contact loop consistency PASS, actual fixed-sphere contact executes, time
+convergence FAIL. First uncompleted investigation: split native onset impulse
+from sustained contact and compare cumulative J^Tlambda with pointwise force;
+inspect actual free/corrected states and fixed-reaction preprojection access.
+In parallel, localize coupled attachment high modes around1–1.2s (peak error
+at1.12875s). Same-input phase refinement versus smooth-input diagnostic must
+be separate experiments; altered control must never erase the old FAIL.
+Installed-ABI immutable core/assembly build:
+`build/film_native_installed_20261116_installed_control110/`.
+Reproduce a new short native trial only if needed:
+```
+$PY tools/film_rail_native_run.py --tag UNIQUE_NEXT --installed-sdk --reuse-installed 20261116_installed_control110 --free-motion --sphere --sphere-x 95 --steps 200 --duration .5 --tension .001
+```
+The older task list below is retained history, not instructions to repeat110–118.
+
+1. Finish separate installed-ABI Native fixed-sphere integration: run no-contact
+   Default/FreeMotion BE controls, compare accepted states before collision,
+   then fixed sphere and actual constraint impulses. Matching patched SDK
+   has no Collision binaries; do NOT load installed collision libs into it.
+   New runner: `tools/film_rail_native_run.py --help`. Native BE integration
+   factors/API are tested; constrained BDF2/Trapezoid histories are rejected.
+2. Coupled time FAIL persists despite1600/3200/6400 finite low-load runs.
+   Isolate attachment-energy temporal phase/nodal force balance versus endpoint
+   query alignment and roundoff; do not mask .8232% by its small absolute value.
+3. Nominal T=.001 completed2s in393.18s (101), not convergence-qualified. Use
+   validated contact controls before extending this no-object folding scene.
+   No self-collision is yet implemented. Never infer wrapping from tip motion.
+4. Whole energy/friction/space/12-wrench Gates still precede grasp Optuna.
+
+Reusable builds: film_shell_20261116_native_be_core105 (patched, BE/API),
+film_rail_20261116_rail_native95 (patched, native-opt), all archived hashes in
+their exclusive results directories. Native installed builds are distinct.
+Actual lower-load/recovery geometry is under film_rail_20261116_actual94.
+Use unique tags; preserve failed74/75/79–81/85/93/104/106/107/109. The prior
+checkpoint was not a final research completion or automatic restart promise.
+
 ## Profiling continuation and rejected optimization
 
 Actual profile28:150steps cost50.859s; force/damping39.406s, gradient/RHS9.862s,

@@ -1,5 +1,13 @@
 # 최종 설계 판정 — 선정 보류(EXPERIMENTAL)
 
+## 2026-11-16 실제 구현 갱신 — 선정 보류 유지
+
+단일 핑거 Film+flexible Rails+실제 경로 Tendon 힘 전달과 복원은 SOFA에서
+구현했다. 이는 50 mm 본체의 3핑거 조립/파지 검증이 아니다. 동등 코어 체적
+직사각형 쿠폰은 tapered 후보와 구분한다. 시간·자가 충돌·물체 접촉·강도 Gate가
+남아 최종 설계를 확정하지 않는다. 작은 장력 복원 결과를 실제 지급 액추에이터
+성능이나 PET 물성 검증으로 주장하지 않는다. 상세 FILM_CONTACT_DYNAMICS_20261116.md.
+
 ## Current qualification update — final design still deferred
 
 Actual SOFA film Newton defects were corrected and coupon endpoint balance

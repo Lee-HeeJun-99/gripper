@@ -1,3 +1,177 @@
+# ReGrip autonomous research — unfinished measured checkpoint
+
+## Latest continuation:actual Hermite SOFA development
+
+**Overall EXPERIMENTAL/FAIL/BLOCKED,not a completed100mm grasp system.**
+The prior stop was an agent-selected campaign checkpoint. No recorded host
+session/resource exhaustion justified that stop. It did not achieve the user's
+objective. This continuation implemented the pending SOFA work rather than
+merely producing another plan. No automatic future restart is installed.
+
+Resumed branch:`development/regrip-autonomous-research`,initial checkpoint
+`b9a3848`. Current validated source checkpoint:
+`a5703beff2839d0feea9f8174e862e645948871f`. Later documentation/evidence packaging
+commit is obtained with `git log -1`;it does not change the physics binaries.
+No push,history rewrite,golden/raw/SQLite overwrite or installed-SOFA change.
+All new build/raw data remains on the requested external drive.
+Replay tooling source is a543bc4c84896028e06e9896c1b4c05e1c14fcf4,with its own
+artifact/source index. Base integrity verification actually passed4945files/
+149blobs in189.932s;replay supplement34files/3blobs also passed. A sealed
+actual4s case was rerun into a fresh folder in199.861s,X/V/R differences0.
+The actual runner snapshot and current stricter path/role guards are explicitly
+separated in replay_supplement.json;this is not a new physical certification.
+
+### Actual implementation and decisions
+
+1. `models/curved_contact`:independent director-Hermite SOFA contact with
+   spatial virtual-work force/torque pullback,consistent geometric Jacobian
+   and a conservative curved-sag candidate envelope. ConservativeBeam stays
+   unchanged. Dense-map/API/FD and90state covariance/moment tests executed.
+2. Mesh audit found that inherited all-node connectors/cable guides changed
+   physical hardware during mesh refinement. New comparisons fix their
+  10mm material positions and use derived uniform-density tributary masses,
+   with conserved total mass,not tuned material constants. Old failures remain.
+3. Independent structural-only compensated translation update addresses
+   observed small-increment loss;object/all rotations/roots are untouched.
+   Integer-index/event-aligned clocks correct observed control-time rounding;
+   they do not replace step controls with ramps or relax a physical criterion.
+4. Actual point traces show narrowly localized plastic return,not sustained
+   quiet creep. At7.2s only8/813coarse and12/1623fine active sites carry loss.
+   No object-pose correction was introduced from the falsified creep hypothesis.
+5. `models/patch_refined_contact`:independent immutable per-element resolution.
+   V1XML Data registration FAILED(SOFA ignored edgeSpacing);original runner
+   PASSs are explicitly invalidated in `curved_evidence/PATCH_V1_INVALIDATION.json`.
+   V2fixes member construction;API string parsing and ACTUAL528000/624000site
+   counts are verified. Six source transforms reverse to the entire parent
+   constitutive source exactly. Empty-vector4s dynamics match X/V/R exactly.
+6. `models/yield_front_history`:new stateful piecewise-quadratic1Dreference
+   with yield-root integration. It is NOT a3D/SOFA replacement. Its own
+   zero-capacity tangent regression genuinely failed(4instead0),then passed
+   after fixing the exact zero operator. Nonunique whole-interval yield
+   derivatives are flagged/rejected as classical tangents,not regularized.
+
+### Measured results and unchanged criteria
+
+All SOFA values below are research-model force units F,mm,s,rad,not real
+PET/vacuum measurements. Prefix and full-cycle quantities are distinct.
+
+| Actual test | Measurement | Decision/scope |
+|---|---|---|
+|11→21nodes,same-half-dt numerical model|motion1.62423%|FAIL,1% unchanged|
+|21→41nodes,same-half-dt model|motion.416289%|PASS,1%;not coarse11node approval|
+|New phase-grid21→41|motion/full loss/small-phase checks|PASS1%,own actual849.013s run|
+|New-grid coarse/fine24s|whole-cycle loss.0682459%|PASS.1% for aggregate ONLY|
+|Same time contrast,7–14s loss|.490155%|FAIL.1%,not hidden by aggregate|
+|1250→1000nm full24s,15–16s loss|1.085017%;absolute5.6300e-16Fmm|FAIL1%|
+|Original component1000nm full24s|827.740s,hold/recoveryPASS|local+Tz scope,not12wrench|
+|That full-run peak motion/hold rotation|4.91751578307e-6mm/.000210707781458rad|actual SOFA|
+|That full-run global F/M relative residual|1.61582e-6/1.72270e-5|PASS1e-3 separately|
+|625→312.5nm local refinement,6–8.2s prefix|peak motion.0206302%,rotation.00721867%|PASS1%,NOT a full24s test|
+|Same prefix endpoint normal force/capacity|difference~.00000222%|PASS1%,not wrench closure|
+|Same prefix7–8.2s loss|.309961%|PASS1%|
+|Same prefix2–3s loss|0versus4.3650774e-19Fmm,relative100%|FAIL1%;absolute size does not override|
+|Actual24s repeated trajectory|X/V/R differences0|PASS for this model/config only|
+|V2contact actual SDK API FD|6.75082e-10|PASS;not full-grasp certification|
+|V2actual90state invariants|force2.78e-17,moment7.17e-18,Jcovariance8.88e-16|PASS in tested scope|
+
+Important raw judgments:
+`results/autonomous_20261116_phase_grid_a01/qualification_v1.json`,
+`history1000nm_full_assessment_v1.json`,
+`patch_refinement_v2/prefix_assessment_completed.json`,and
+`patch_refinement_v2/prefix_motion_v1.json`.
+Uniform1000nm is a factor1.25contrast,not a factor-two history certificate.
+Local625/312.5nm refinements are nested ONLY on material90–100mm,not a
+uniform full-interface refinement. Normal/tangent quadrature and stored sites
+are jointly refined. Legacy samples8/16/32 is NOT a Gauss knob in this model.
+
+### Energy,resources and failed alternatives
+
+Actual synchronized journal:coarse new-grid24s840.463s,physical X/V/R difference0,
+remaining discrete residual-1.55243e-19after separately derived signed terms.
+Fine8s489.679s similarly gives-3.06377e-19. These are discrete bookkeeping
+identities,NOT thermodynamic/global-energy certification. Pressure/device work
+and total physical closure remain NULL/BLOCKED,not invented zeros or fitted heat.
+Grouped/frame/cable query reuse is validated against actual public APIs and
+the unchanged physical trajectory. The spatial force Jacobian is not called
+a symmetric energy Hessian;endpoint projections are not called friction heat.
+
+Real resource events are distinguished from policy forecasts:
+
+- Default312.5nm/record20profile ACTUALLY timed out480.011s(exit-9),last complete
+  state3.945s. Its longer identical prefix was blocked,attempts0.
+- A DIFFERENT record200contrast retains every force evaluation/Commit.
+ 625nm4s matches all X/V/R and common contact CSV values EXACTLY;312.5nm matches
+ the actual old3.945s prefix,explicitly not a complete4s reference.
+- Its new8.2s run ACTUALLY completed781.959s under a recorded900s cap and4GiB.
+  Forecast801.457s used measured same-grid rate ratios1.039555/.925167 and
+  a10%planning margin. Physical thresholds and wall/memory caps did not change.
+- Fine24s energy forecast1733.038s exceeds the finite1320s exception policy,
+  attempts0. This is BLOCKED by recorded policy,not a claimed server timeout.
+- Actual memory data include148000steps in the earlier curved model and
+ 23400steps in each local prefix. Sampled FDs12;finest prefix peakRSS163948KiB.
+  RSS,live heap,mmap and post-unload retention are separate in
+  `memory_continuation_v1.json`. No LSan/240k/hours/no-leak certificate inferred.
+- Chunked checkpoint trajectory reproduction FAILED despite exact restored
+  force/Jacobian. It was NOT used to manufacture accepted long-run results.
+
+Independent scalar reference(v4),NOT actual SOFA:120stateful steps,max10pieces,
+virgin loss reference relative error7.02389e-14,energy identity residual
+3.93814e-30,3x3tangent absolute FD error3.15902e-17. Independent dense-slider
+loss error256→65536points decreases1.22710%→.0000158273%. The model has fixed
+domain/normal,prescribed capacity,no3D transport,birth/death or object dynamics.
+Before/after zero-capacity regression and all earlier versions are preserved.
+
+### Remaining approval gates
+
+FAIL:coarse11node spatial test,small-phase time/history loss and the finest
+prefix's tiny newly resolved loss. BLOCKED:qualified global energy and100mm
+grasp Optuna. NOT RUN:new-model12wrench/shapes/full-recovery qualification,
+3D SOFA integration of the new yield-front history function. Native surface
+contact remains a separate EXPERIMENTAL model. Old45gates are not added to
+these results or presented as new-model certification. Historical source/raw
+integrity was checked separately from newly executed physics.
+
+The3finger model retains planar finger guides/small local rotation limits,
+free6DOF object,and research root radius~95.15mm,NOT the50mm design target.
+Equivalent circular Beam sections,pressure,friction and wire geometry are
+assumptions;no actual PET/device properties or hardware grasp are certified.
+
+Next meaningful development is a vector/objective yield-front history model,
+first on a fixed contact patch,then moving birth/death with an independent
+energy/reference test,and only then a new SOFA component. Scalar componentwise
+clipping MUST NOT be mistaken for circular3D Coulomb friction. See the top of
+NEXT for exact safe commands and dependencies. The complete research objective
+is still unfinished;this file is an evidence checkpoint,not a completion claim.
+
+### Reproduction and evidence
+
+From the external-drive ReGrip root:
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+export REGRIP_BEAM_PLUGIN=build/autonomous_20261116_full_native_a01/beam/libReGripConservativeBeam.so
+export REGRIP_CURVE_BUILD=build/autonomous_20261116_curve_native_a01/v1
+export REGRIP_CURVE_OUT=results/autonomous_20261116_phase_grid_a01
+$PY tools/curve_evidence.py --version v2 --verify
+$PY tools/curve_evidence.py --version replay --verify
+# Only with an ABSENT output path:
+$PY tools/curve_replay.py \
+  --case results/autonomous_20261116_phase_grid_a01/patch_refinement_v2/uniform_profile4 \
+  --out results/autonomous_resume_replay_a02
+```
+
+Every completed physical run has its actual `command.json`,scene,source/binary
+identity,resource decision,stdout/stderr,state and metrics. Existing case names
+are deliberately refused;do not blindly rerun them. New campaign/build namespaces
+are required for a changed model. V1/V2raw manifests preserve old/failing results.
+`CURVED_RESEARCH_EVIDENCE_MANIFEST_V2.json` identifies the source checkpoint,
+actual artifacts and historical Git source blobs;integrity PASS is not physics
+PASS. No background auto-resume service was installed.
+
+---
+
+# Historical checkpoint below — not the current curved-contact verdict
+
 # ReGrip autonomous research — measured checkpoint
 
 ## 1. Outcome and provenance

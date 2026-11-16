@@ -628,3 +628,32 @@ are explicitly flagged nonunique;classicalTangent()rejects them,and loading/
 unloading directional derivatives are tested separately. No3D or SOFA
 integration of this scalar reference is claimed. All previous v1/v2/v3raw and
 failures remain;the deployed3Dcontact component is unchanged by these tests.
+
+### Evidence checkpoint and actual sealed-case replay
+
+Source checkpoint a5703be sealed4945actual artifacts/149historical Git source
+blobs. Actual independent verification completed189.932s,exit0,zero hash
+errors(4GiB/480s child limit). This is integrity,not a new physics PASS.
+
+Added a fresh-output replay CLI for sealed graph_probe cases. Its first
+preflight rejected the older Frame DLL because it is outside the autonomous
+build-file glob;NO physics had launched/output directory existed. Resolved
+that missing direct-index role by checking its exact frame_sha256 in the
+sealed inherited identity,not by accepting arbitrary hashes or ignoring it.
+SDK driver and other libraries retain explicit sealed hashes. Output paths
+are restricted to results;existing directories are refused. Two current
+role/path guard tests pass. Original source/control/grid/binary/step count
+remain unchanged;only output filenames differ.
+
+Actual sealed v2uniform4s replay completed199.861s,X/V/R differences0. The
+executed RunnerSource snapshot is indexed separately from the current
+stricter preflight guards. Replay supplement verification34files/3Git blobs
+PASS,zero errors. This supports a precise non-overwriting reproduction
+command,not a renewed physical certification. No pending physical children,
+automatic restart,remote push or golden/SQLite/raw overwrite remains.
+
+The COMPLETE research target remains unfinished. Current meaningful next
+development is the independently validated vector/objective extension of the
+stateful yield-front reference before any further3D SOFA rollout. Scalar
+kernel PASS is explicitly not used as full contact/grasp approval;all small-
+phase FAILs,global-energy uncertainty and grasp-optimization BLOCKED remain.

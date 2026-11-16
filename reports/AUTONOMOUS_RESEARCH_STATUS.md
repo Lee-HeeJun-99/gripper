@@ -1,5 +1,29 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Authoritative checkpoint — incomplete objective,not a completion declaration
+
+All physical runs/replay described in the latest PROGRESS/NEXT are completed;
+no pending physics child or automatic restart remains. Old "running" entries
+below are retained chronology. Prior premature stopping was the agent's own
+choice,not evidenced host exhaustion. Actual current trial/policy limits are
+documented separately and must not be described as a server/session failure.
+
+PASS in scope:actual Hermite SOFA integration/API/invariants,fine21→41spatial
+contrast,original1000nm24s hold/recovery,immutable local-prefix motion/normal
+force contrasts,point/recording query purity,source/raw integrity and exact
+sealed4s replay. Base index4945artifacts/149blobs;replay34artifacts/3blobs.
+FAIL:coarse11→21,small-phase time/history losses,including0vs4.365e-19Fmm
+newly resolved prefix loss. Old v1ignored-XML profile PASSs are INVALIDATED.
+BLOCKED:qualified total physical energy and100mm grasp Optuna. NOT RUN:new
+12wrench/shape/full-recovery qualification of the refined model and3D SOFA
+integration of the new stateful scalar history reference. Overall EXPERIMENTAL.
+
+Last validated physics/reference source:a5703beff2839d0feea9f8174e862e645948871f.
+Replay source:a543bc4c84896028e06e9896c1b4c05e1c14fcf4. Packaging commit is
+`git log -1`;source indices deliberately avoid self-referencing SHA claims.
+First unfinished development:objective vector yield-front/material-history
+function,not another rewrite of ConservativeBeam or the completed Hermite map.
+
 LATEST IMPLEMENTATION:independent PatchRefinedContact v2,actual registered
 SOFA Data/API/FD PASS,empty-vector4s parent X/V/Rexact. V1local profiles are
 INVALIDATED (Unused Attribute);their original raw remains. V2actual grids

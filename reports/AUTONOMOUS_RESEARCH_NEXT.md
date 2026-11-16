@@ -1,5 +1,84 @@
 # Next research checkpoint
 
+## Authoritative unfinished checkpoint — all listed physics children completed
+
+The earlier stop was agent-selected,not a recorded host/session exhaustion.
+The requested Hermite SOFA implementation and11/21/41actual convergence runs
+are complete. The FINAL PROJECT OBJECTIVE IS NOT COMPLETE. Do not use old
+"running" entries below as current process state. No automatic restart exists.
+
+Physics/reference source checkpoint:a5703beff2839d0feea9f8174e862e645948871f.
+Replay tooling checkpoint:a543bc4c84896028e06e9896c1b4c05e1c14fcf4.
+Base index V2 verified4945artifacts/149Git blobs,zero errors. Replay index
+verified34artifacts/3blobs. Actual sealed4s replay199.861s gives X/V/Rexact0.
+All source/raw/build/old failure data is preserved on the external drive.
+
+### First genuinely unfinished development task
+
+Implement an independent VECTOR material-history FUNCTION reference on a
+fixed-normal,fixed contact patch,using `models/yield_front_history/ScalarField.h`
+as a scalar regression/reference ONLY. It is NOT a3Dfriction implementation:
+do not clip vector components independently or drop normal-transport terms.
+Select a piecewise/adaptive state representation controlled by energy AND
+plastic-loss error,not force error alone. Resolve circular Coulomb yield
+fronts before quadrature and differentiate the consistent return. Compare
+against an independent dense/reference integral,including tiny newly resolved
+losses;keep1%FAILs instead of imposing an absolute loss cutoff.
+
+Then add objective tangent-frame transport and moving birth/death separately.
+Validate energy changes from representation/transfer explicitly,not as heat.
+Only after kernel/derivative/energy tests,integrate a NEW SOFA component with
+Hermite virtual-work pullback. Require actual XML Data registration/string
+parsing/grid counts,query purity and once-only Commit before dynamics.
+Do not rewrite ConservativeBeam or overwrite Curved/PatchRefined v1/v2.
+
+### Actual current failures and constraints
+
+- Same-half-dt11→21motion1.62423%FAIL;21→41.416289%PASS. New phase-grid fine
+  spatial contrast also passes,but does not certify every coarse mesh.
+- Aggregate full-cycle time loss.0682459%PASS.1%;small-phase time loss FAIL.
+- Actual625/312.5nm8.2s prefixes completed478.444/781.959s. Peak movement/
+  rotation/normal force and7–8.2s loss PASS1%;2–3s loss0vs4.365e-19Fmm
+  gives100%relative FAIL. Keep the absolute value AND original FAIL.
+- Original1000nm full24s827.740s hold/recoveryPASS,but1250→1000nm15–16s
+  loss1.085017%FAIL1%. A factor1.25contrast is not a factor-two certificate.
+- Default312.5nm4s ACTUALLY timed out480.011s. Original longer prefix remains
+  BLOCKED. Different sparse-recording contrast was proven state/common-CSV
+  exact before its measured900s prefix. It does not approve undersampled
+  full-cycle contact gates. No identical failed run was blindly retried.
+- Fine24s energy forecast1733.038s>1320s policy,attempts0,BLOCKED;NOT observed
+  host exhaustion. Whole physical energy,new12wrench and graspOptuna remain
+  BLOCKED/NOT RUN. Existing discrete residual identities are not certification.
+- Scalar reference v4PASS,including a preserved pre-fix zero-capacity tangent
+  FAIL4→correct0. Max10pieces/120steps,independent dense-slider convergence,
+ 3x3potential tangent FD and nonunique-event rejection. NO3D/SOFA integration.
+
+### Exact integrity/replay commands,not automatic execution
+
+```bash
+cd /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/curve_evidence.py --version v2 --verify
+$PY tools/curve_evidence.py --version replay --verify
+# Fresh output MUST be absent. Preserves sealed binaries,parameters,steps.
+$PY tools/curve_replay.py \
+  --case results/autonomous_20261116_phase_grid_a01/patch_refinement_v2/uniform_profile4 \
+  --out results/autonomous_resume_replay_a02
+```
+
+For an actual saved11/21/41case,choose its sealed `grasp/*` directory and a
+different fresh output;the replay launcher verifies role-specific binary
+hashes,all original scene/control values and exact trajectory equality.
+Existing output names are intentionally refused. A successful replay does
+not change that case's FAIL/limited physical verdict.
+
+All new research needs a unique build/campaign path,4GiB/default480s/max4long
+children. Exceptions require measured cost and finite decisions. No physical
+threshold changes,object correction,unapproved push or fake resumption.
+After vector history qualification:recheck late pressure/release,mesh/time,
+transaction-level fixed-state pressure/work accounting,then12wrench/shapes and
+100mm grasp optimization. Keep95.15mm research radius distinct from50mm target.
+
 ## NEWEST — independent element-refined contact v2 is running
 
 Do NOT accept v1local625/local312 runner PASSs as refinement:SOFA ignored

@@ -1,5 +1,36 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Additional checkpoint — contact event implementation did not close time Gate
+
+Separate sphere-chord birth/death model and actual matching-SDK SOFA adapter
+implemented after active-contact PASS. Unit/API/math PASS in limited scope.
+Actual time20→80at512internal substeps0.146423%FAIL;prescribed0.146397%FAIL.
+AdjacentpairsPASS are explicitly insufficient. No full3finger convergence,
+globalenergy,12direction grasp or qualified100mmgraspOptuna is claimed.
+See TEMPORAL_SPHERE_EVENT_RESEARCH.md and independent integrity ledger
+DESIGN_TEMPORAL_EVIDENCE_20261116_v1.json(853verified artifacts).
+New design drawings/geometry and kinematics are implemented concepts,not
+measured or simulated grasp improvements. Final design selection deferred.
+Current children completed,no automatic background continuation. The final
+objective is unfinished;this checkpoint does not assert resource exhaustion.
+
+## Latest dual-workstream result — actual new physics and concept geometry
+
+Added MovingReturn+MovingSphereBenchmark with intermediate-history AD,
+normal transport and changing capacity. Independent FD1.04e-10,local discrete
+energy identity1.80e-23,covariance2.17e-19PASS;actualSDKAPI9.54e-13and
+20/40/80phase-loss(.00177531%)PASS. This is an active-point/supported-sphere
+isolation model,NOT replacement evidence for old CurvedContact.8519%FAIL.
+Birth/Death,fullCurve/Owner integration,compression and global energy remain.
+
+Designed/generated50mm-body tapered-film and segmented-jamming candidates,
+with actualOBJ/XML loading,Synthetic prescribed-geometry SVG/PNG clearly labeled
+NOT SOFA deformation,mechanism/section/sequence drawings and4design tests.
+Performance improvements NOT established:material5.73588xbaseline,current
+prescribedpose still.306mmoutsideobject,unmeasured seal/friction/transverse
+film mechanics. REGRIP_FINAL_DESIGN explicitly postpones final selection and
+grasp Optuna. Cardboard manual mechanism plan is separate from vacuum evidence.
+
 ## Latest continuation — actual moving3D SOFA integration,not project completion
 
 Final added controls:explicit solid-sphereI=2mR²/5short20/40/80runs still

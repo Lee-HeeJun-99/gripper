@@ -1,5 +1,30 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Latest sphere-event result — further development, not completion
+
+New SphereEventReturn + separate actual SOFA adapter handle fixed-sphere chord
+Birth/Death and outside-to-outside transit. Unit FD/objectivity/discrete identity
+and actual API PASS. Time FAIL remains:512internal subdivisions give adjacent
+0.09758%/0.09756%PASS,but20→80is0.146423%FAIL. Solver-free reference gives
+0.146397%,isolating temporal return/loss quadrature in this experiment.
+No tolerance changes;oldCurved.8519%FAIL also remains. Manifest
+DESIGN_TEMPORAL_EVIDENCE_20261116_v1.json verifies853artifacts,not physics.
+Code commit1108fad. All launched physics children finished;no background job.
+
+## Newest physics/design checkpoint
+
+PASS(limited):Changing-normal active one-point path kernel+actual SOFA API and
+20/40/80dynamic phase-loss time test(.00177531%max). This NEW fixed-supported
+sphere benchmark is not the original curved/freeobject case;old.8519%FAIL stays.
+General moving CurvedContact integration/Birth/Death/event-exact law/adaptive
+spatial owner/global energy/longduration remain EXPERIMENTAL or BLOCKED.
+
+IMPLEMENTED:baseline source extraction;two tapered-film concept meshes,
+50mm body target,3zone circuits,OBJ/XML and SVG/PNG. Actual SOFA geometry
+loading+4geometry regression tests PASS;Shell mechanics and grasp comparison
+NOT RUN. Material5.74xbaseline is a design risk,not an improvement. Final design
+NOT SELECTED;grasp Optuna BLOCKED. No real material measurements or hardware run.
+
 ## Newest actual moving3D owner/adapter checkpoint — NOT final completion
 
 Latest completed regression:current03math6/6PASS;06repeat journals identical;

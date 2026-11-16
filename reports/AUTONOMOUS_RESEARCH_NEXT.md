@@ -1,5 +1,66 @@
 # Next research checkpoint
 
+## First unfinished task after sphere-event experiments
+
+Do NOT repeat the20/40/80 sphere event campaigns:all finished. Read
+TEMPORAL_SPHERE_EVENT_RESEARCH.md and raw event_guarded512. Internal refinement
+32/128/512reduces errors first-order but nonadjacent20→80stillFAIL. This falsifies
+any claim that adding exact Birth roots alone closes temporal loss convergence.
+Next derive event-aligned varying-capacity vector plastic work with changing
+normal/slip direction,including yield/re-stick. Reuse TemporalYield/MovingReturn
+and existing scalar variable-capacity analytic reference;do NOT create another
+scalar-only success or merely raise512cap. First independent prescribed path,
+then new actual SOFA version matching Force/Tangent/Commit,then CurvedOwner.
+Current fixed-sphere event law is independent;new original-geometry integration
+and adaptive128operator replacement are still required.
+Reproduce only for regression with fresh tags:
+`$PY tools/sphere_event_prescribed.py --tag UNIQUE --substeps 512`
+`$PY tools/sphere_event_run.py --tag UNIQUE --substeps 512`
+Design next:qualify film bending,not more concept images. Currentmaterial5.74x
+baseline requires equal-material comparison. See REGRIP_FINAL_DESIGN.md.
+No host resource exhaustion observed. This is an unfinished working-context
+checkpoint,not completed final research or an automatic restart promise.
+
+## New first work — transfer tested active temporal path and qualify film mechanics
+
+Do NOT reimplement MovingReturn.h or its actual MovingSphereBenchmark.
+Canonical04bounded SDK/API/dynamics and independent moving-return_a02 tests
+are completed. It supports already-active positive-capacity paths only:normal
+chord,affine capacity/material displacement,substepped backward circular return.
+Next NEW CurvedContact/Owner version must use EXACTLY this same state transition
+in Force/Jacobian and Commit. Old Owner still calls old return;changing only
+force is WRONG. Preserve Birth/Death and explicitly derive their temporal path,
+capacity0,slip/re-stick and representation inventory. Scalar TemporalYield is
+only a fixed-plane event prerequisite. Then repeat original short curved
+space/history/time tests before full3finger. ExactOwner128cap is still not solved.
+
+Design branch of work:Concept v2 meshes/loaders/drawings and geometric screen
+exist in designs/. Do not repeat initial CAD generation or claim actual contact.
+Next qualify a film Shell/membrane+bending ROM with transverse DOFs. Matching
+SDK lacks SolidMechanics.Spring bending library;TriangleFEM alone is not a
+bending shell. Build optional matching component independently or implement a
+validated independent film kernel;do not mix installed SDK ABI. Run plate
+patch/objectivity/bending-energy/mesh tests before comparative grasp.
+First redesign equal-material candidate:currentfilm5.73588xbaseline and8.717μm
+equal-volume thickness expose real tradeoffs. Pressure zones require sealed
+pouches/ports/shared3circuits and layer sliding,not just a stiffness parameter.
+
+Fresh reproducible commands:
+
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/moving_sphere_run.py --tag UNIQUE
+$PY tools/design_regrip.py --tag UNIQUE
+$PY tools/design_validate.py --version UNIQUE --tag UNIQUE
+$PY tools/design_kinematics.py --version UNIQUE
+$PY tools/design_render.py --version UNIQUE
+$PY -m unittest discover -s tests -p test_design_regrip.py -v
+```
+
+Canonical physics raw:results/vector_history_moving_path_20261116_canonical04;
+film loading:results/autonomous_design_20261116_v3. Old failure raw unchanged.
+No background automatic restart or finished final system is implied.
+
 ## New first unfinished work — general temporal return/work and adaptive STATE fit
 
 All launched tests currently have completion records. The final goal is NOT

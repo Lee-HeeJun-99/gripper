@@ -1,5 +1,56 @@
 # Autonomous research log
 
+## Additional actual development — sphere events and failed temporal alternative
+
+Implemented SphereEventReturn.h,SphereEventBenchmark,unit/API tests and bounded
+SOFA/prescribed runners. Exact chord sphere roots + implicit derivatives include
+birth/death/transit;grazing and undefined normals reject. Unit FD2.54823e-10,
+rotation/no-contact/grazing and discrete energy identity PASS. Source commit1108fad.
+Hypothesis:missing birth event dominates temporal loss. Actual32substepSOFA
+20→80error2.32535%;identical no-Solver2.32532%. Refinement128then512reduces it
+but512SOFA0.146423%stillFAIL. Adjacent pairsPASS do not approve fulltimeGate.
+Thus birth roots alone insufficient;next focus on evolving-capacity loss/work
+integration,not Solver tuning. Old results unchanged. Full derivation/caveats and
+commands:TEMPORAL_SPHERE_EVENT_RESEARCH.md. Immutable ledger853filesPASS.
+
+## 2026-11-16 — physics + differentiated design workstreams
+
+Resumed clean b3ed788,same branch;general_manifest_v1 1737artifacts integrity
+PASS. Original models/SDK/raw preserved. Implemented NEW MovingReturn.h:
+active-contact normalized-normal-chord/affine-capacity/affine-displacement path,
+substep circular return,all intermediate history AD propagated to endpoint.
+Independent FD1.03955e-10,discrete friction identity1.80041e-23,covariance
+2.1684e-19PASS. This is not event-exact CCD or a Birth/Death/patch owner.
+
+Actually compiled and loaded MovingSphereBenchmark into matching SOFA SDK.
+Canonical04API F/dF/matrix/purity FD9.54367e-13PASS;actual20/40/80step supported
+sphere/one-point dynamics completed. Maximum phase plastic relative difference
+1.77531e-5(.00177531%)PASS.1%. Different physical configuration from old free
+sphere/Hermite test:its.8519%FAIL is NOT reclassified. General Curved adapter,
+Birth/Death path and adaptive spatial history compression remain unfinished.
+Failures preserved:initial abstract/API build,missing initExternalModule plugin
+entry point,and inherited geometric sqrt guard wrongly rejecting tiny positive
+plastic norms. Robust hypot+its exact derivative fixes the last,no heat cutoff.
+
+Extracted baseline from existing source AST/coordinate formula:100mm,3fingers,
+2layers,root radius95.148mm,guides. Generated tapered24→12mm film candidates,
+8assumed.05mm layers,50mm body,dual edge tendons and3shared zone circuits.
+Actual OBJ315vertices/480triangles and matching inlineXML load into SOFA PASS;
+mesh loading is NOT shell/contact performance. Generated front/side/top/isoSVG,
+section/mechanismSVG,prescribedsequenceSVG and geometry-derivedPNG. Initial
+MeshOBJLoader failed because matching SDK lacks IO.Mesh;v2inline same geometry
+passes without ABI mixing. mplot3d namespace mismatch bypassed with pure2D
+projection of actual3D data,not a new geometry or fabricated SOFA state.
+
+Numerical design screen reveals material-volume5.73588xbaseline,so no fair
+performance advantage is claimed. Equal-volume thickness8.717μm may be hard to
+fabricate. Constant-widthEB assumedstiffening16 givesproximal30mm effective
+ratio2.60374,not pressure calibration or actual tapered-shell result. Prescribed
+curl.77stillhas.306284mmgap;firsttouch.776699rad/draw1.16505mmisgeometry-only.
+Four design regression tests PASS;all old full-grasp/energy/Optuna Gates retained.
+See REGRIP_DESIGN_RESEARCH/COMPARISON/PROTOTYPE_PLAN/FINAL_DESIGN for actual
+designs,prior-art overlap,manufacturing risks and still-unselected final design.
+
 ## Latest regression and inertia control
 
 Source-matched06repeat20step actual journals are identical(absolute differences0).

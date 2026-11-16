@@ -14,7 +14,7 @@ def main():
  for r in contact:
   t=float(r['time']);sample=groups.get(t,[]);force=np.array([np.array([float(s[k]) for k in ('force_x','force_y','force_z')]) for s in sample]).reshape(-1,3).sum(axis=0);expected=np.fromstring(r['body_force'],sep=' ');maximum_error=max(maximum_error,float(np.linalg.norm(force-expected)));scale=max(scale,float(np.linalg.norm(expected)))
   if not sample:continue
-  points=np.array([[float(s[k]) for k in ('begin_weighted_x','begin_weighted_y','begin_weighted_z')] for s in sample]);radial=points-center;
+  points=np.array([[float(s[k]) for k in (('force_point_x','force_point_y','force_point_z') if s.get('force_point_x') is not None else ('begin_weighted_x','begin_weighted_y','begin_weighted_z'))] for s in sample]);radial=points-center;
   if object_shape=='cylinderY':radial[:,1]=0
   unit=radial/np.linalg.norm(radial,axis=1)[:,None];span=float(np.degrees(np.arccos(np.clip((unit@unit.T).min(),-1,1))));angles=np.arctan2(radial[:,2],radial[:,0]);long_span=float(np.degrees(circular_span_radians(angles)));max_direction=max(max_direction,max(float(s['column_direction_error']) for s in sample));min_radial=min(min_radial,min(float(s['radial_cosine']) for s in sample));spans.append(dict(time=t,normal_rows=len(sample),spatial_normal_span_degrees=span,longitudinal_span_degrees=long_span))
  relative=maximum_error/scale if scale else (0 if maximum_error==0 else None);ok=relative is not None and relative<1e-10 and max_direction<1e-10 and (object_shape!='sphere' or min_radial>1-1e-10)

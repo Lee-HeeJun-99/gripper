@@ -7,7 +7,7 @@ namespace regrip_film_native {
 // Nonnegative multipliers on a finite set of frozen, scalar unilateral rows.
 // A direct nonnegative active set does not regularize duplicate contact rows.
 struct CoupledContactStep {
- struct Plane{std::vector<Point>J;double target,lambda;unsigned row;};
+ struct Plane{std::vector<Point>J;double target,lambda;unsigned row;std::vector<unsigned>support;};
  CoupledPlaneStep mechanics;std::vector<Plane>planes;Eigen::MatrixXd C;Eigen::VectorXd offset;bool potentialMerit=false,reuseAcceptedEvaluation=false;
  CoupledContactStep(Assembly model,std::vector<double>mass,double h,double damping,double T,
   std::vector<Point>q0,std::vector<Point>v0,std::vector<Plane>p,bool energyMerit=false,bool reuse=false):mechanics(model,mass,h,damping,T,q0,v0,std::vector<Point>(model.size()),0),planes(std::move(p)),potentialMerit(energyMerit),reuseAcceptedEvaluation(reuse){

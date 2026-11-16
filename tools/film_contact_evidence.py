@@ -2,10 +2,23 @@
 import argparse,hashlib,json,subprocess
 from curve_common import ROOT,sha,write_json
 def main():
- p=argparse.ArgumentParser();p.add_argument('--verify',action='store_true');p.add_argument('--audit-old',action='store_true');a=p.parse_args();target=ROOT/'reports/FILM_CONTACT_EVIDENCE_20261116_v2.json'
+ p=argparse.ArgumentParser();p.add_argument('--verify',action='store_true');p.add_argument('--verify-historical',action='store_true');p.add_argument('--audit-old',action='store_true');a=p.parse_args();target=ROOT/'reports/FILM_CONTACT_EVIDENCE_20261116_v2.json'
+ if a.verify_historical:
+  ledger=json.loads(target.read_text());evolved=[];bad=[];unchanged=0
+  for rel,digest in ledger['files'].items():
+   file=ROOT/rel
+   if file.is_file() and sha(file)==digest:unchanged+=1;continue
+   if rel.startswith(('results/','build/','designs/')):bad.append(rel);continue
+   found=False
+   for commit in (ledger['source_commit'],'7aa2199c6f107bd77bb955a23a8624ab5cb956c1'):
+    result=subprocess.run(['git','show',commit+':'+rel],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL)
+    if result.returncode==0 and hashlib.sha256(result.stdout).hexdigest()==digest:found=True;break
+   if found:evolved.append(rel)
+   else:bad.append(rel)
+  print(json.dumps(dict(status='FAIL' if bad else 'PASS',scope='immutable artifacts and historical source only;NOT current-source/binary identity',unchanged=unchanged,historical_source_evolution=evolved,unexpected=bad)));raise SystemExit(bool(bad))
  if a.verify:
   ledger=json.loads(target.read_text());bad=[key for key,value in ledger['files'].items() if not (ROOT/key).is_file() or sha(ROOT/key)!=value];print(json.dumps(dict(status='FAIL' if bad else 'PASS',files=len(ledger['files']),mismatches=bad)));raise SystemExit(bool(bad))
- if target.exists():raise RuntimeError('immutable evidence ledger already exists')
+ if target.exists() and not a.audit_old:raise RuntimeError('immutable evidence ledger already exists')
  old=json.loads((ROOT/'reports/FILM_NEWTON_EVIDENCE_20261116_v1.json').read_text());unchanged=0;evolved={};bad=[]
  for rel,digest in old['files'].items():
   file=ROOT/rel

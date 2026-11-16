@@ -3,8 +3,8 @@
 #include <sofa/component/statecontainer/MechanicalObject.h>
 #include <iostream>
 struct AssemblyAccumulator:sofa::core::behavior::StiffnessMatrixAccumulator{unsigned n;std::vector<double>a;explicit AssemblyAccumulator(unsigned size):n(size),a(size*size){}void add(sofa::SignedIndex r,sofa::SignedIndex c,double v)override{a[n*r+c]+=v;}void add(sofa::SignedIndex r,sofa::SignedIndex c,float v)override{add(r,c,double(v));}};
-int main(){try{
- using T=regrip_film_rail::FilmRailTendon;auto state=sofa::core::objectmodel::New<sofa::component::statecontainer::MechanicalObject<T::Types>>();regrip_film_rail::Assembly model(5);state->resize(model.size());auto field=sofa::core::objectmodel::New<T>(state.get());field->nx.setValue(5);field->stepT=.001;
+int main(int argc,char**){try{
+ using T=regrip_film_rail::FilmRailTendon;auto state=sofa::core::objectmodel::New<sofa::component::statecontainer::MechanicalObject<T::Types>>();regrip_film_rail::Assembly model(5);state->resize(model.size());auto field=sofa::core::objectmodel::New<T>(state.get());field->nx.setValue(5);field->stepT=.001;field->rootGuideSecondOrder.setValue(argc>1);
  T::VecCoord x(model.size());auto rest=model.rest();for(unsigned i=0;i<x.size();++i)x[i]={.00001*rest[i][0],0,.000001*rest[i][0]*rest[i][0]};state->write(sofa::core::vec_id::write_access::position)->setValue(x);
  T::DataVecCoord position;position.setValue(x);T::DataVecDeriv force,velocity,dx,df;force.setValue(T::VecDeriv(x.size()));velocity.setValue(T::VecDeriv(x.size()));sofa::core::MechanicalParams mp;field->addForce(&mp,force,position,velocity);
  auto stale=x;stale[7][2]=.3;state->write(sofa::core::vec_id::write_access::position)->setValue(stale);AssemblyAccumulator accumulator(3*x.size());sofa::core::behavior::StiffnessMatrix matrix;matrix.setMatrixAccumulator(&accumulator,state.get());field->buildStiffnessMatrix(&matrix);state->write(sofa::core::vec_id::write_access::position)->setValue(x);

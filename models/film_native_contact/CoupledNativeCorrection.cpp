@@ -1,5 +1,7 @@
 #include "CoupledBDFHistory.h"
 #include "../film_sphere_contact/SphereStep.h"
+#include "../film_sphere_contact/CandidateClosure.h"
+#include <sofa/core/topology/BaseMeshTopology.h>
 #include <sofa/core/objectmodel/BaseObject.h>
 #include <sofa/core/behavior/MechanicalState.h>
 #include <sofa/core/behavior/BaseMass.h>
@@ -23,6 +25,9 @@ class FilmNativeCoupledCorrection final:public sofa::core::objectmodel::BaseObje
 public:
  using State=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;using Solver=sofa::component::constraint::lagrangian::solver::GenericConstraintSolver;using BaseLink=sofa::core::objectmodel::BaseLink;
  SOFA_CLASS(FilmNativeCoupledCorrection,sofa::core::objectmodel::BaseObject);
+ sofa::core::objectmodel::Data<bool> candidateComplete{initData(&candidateComplete,false,"candidateComplete","Separate whole-triangle endpoint candidate closure;NOT swept CCD")};
+ sofa::core::objectmodel::Data<State::MatrixDeriv> ownedJacobian{initData(&ownedJacobian,State::MatrixDeriv{},"ownedJacobian","Independent accepted constraint rows;never Native predictor row IDs")};
+ std::ofstream ownedRows;
  sofa::core::objectmodel::SingleLink<FilmNativeCoupledCorrection,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>root,body;
  sofa::core::objectmodel::SingleLink<FilmNativeCoupledCorrection,Solver,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>solver;
  sofa::core::objectmodel::SingleLink<FilmNativeCoupledCorrection,sofa::core::objectmodel::BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>field;
@@ -44,7 +49,38 @@ public:
   if(currentSphereNormal.getValue()){
    auto*centerState=getContext()->get<State>(std::string("fixed/objectDOFs"));if(!centerState||centerState->getSize()!=1)throw std::runtime_error("one explicit fixed sphere center required");double radius=-1;
    for(auto*collision:getContext()->getObjects<sofa::core::CollisionModel>(sofa::core::objectmodel::BaseContext::SearchDown))if(collision->getContext()->getMechanicalState()==centerState&&collision->getClassName().find("Sphere")!=std::string::npos){auto*value=dynamic_cast<sofa::core::objectmodel::Data<SReal>*>(collision->findData("radius"));if(value)radius=value->getValue();auto*list=dynamic_cast<sofa::core::objectmodel::Data<sofa::type::vector<SReal>>*>(collision->findData("listRadius"));if(list&&!list->getValue().empty()){if(list->getValue().size()!=1)throw std::runtime_error("multi-sphere radius unsupported");radius=list->getValue()[0];}}
-   if(!(radius>0))throw std::runtime_error("actual sphere collision radius unavailable");const auto&center=centerState->read(sofa::core::vec_id::read_access::position)->getValue()[0];regrip_film_sphere::SphereStep exact(step,{center[0],center[1],center[2]},radius+contactDistance.getValue(),closestSpherePrimitive.getValue());exact.sqpMerit=sqpMerit.getValue();result=exact.solve(guess,&trace);std::vector<Point>normals,locations;Eigen::VectorXd physicalLambda=result.lambda/beta;auto impulses=exact.nodal(result.displacement,physicalLambda,normals,&locations);State::VecDeriv values(impulses.size()),directions(lambda.size()),contactPoints(lambda.size());for(unsigned i=0;i<impulses.size();++i)for(unsigned d=0;d<3;++d)values[i][d]=impulses[i][d];for(unsigned k=0;k<planes.size();++k)for(unsigned d=0;d<3;++d){directions[planes[k].row][d]=normals[k][d];contactPoints[planes[k].row][d]=locations[k][d];}nodalImpulses.setValue(values);rowNormals.setValue(directions);rowPoints.setValue(contactPoints);
+   if(!(radius>0))throw std::runtime_error("actual sphere collision radius unavailable");
+   const auto&center=centerState->read(sofa::core::vec_id::read_access::position)->getValue()[0];
+   Point c{center[0],center[1],center[2]};double buffered=radius+contactDistance.getValue();
+   std::vector<int> triangle;
+   if(candidateComplete.getValue()){
+    if(!closestSpherePrimitive.getValue())throw std::runtime_error("candidate closure requires exact closest primitive");
+    auto*topology=body->getContext()->getMeshTopology();if(!topology)throw std::runtime_error("whole-surface topology unavailable");
+    std::vector<regrip_film_sphere::CandidateClosure::Triangle> triangles;
+    for(const auto&t:topology->getTriangles())triangles.push_back({t[0],t[1],t[2]});
+    auto closed=regrip_film_sphere::CandidateClosure::solve(step,c,buffered,triangles,guess,sqpMerit.getValue(),&trace);
+    result=std::move(closed.mechanical);planes=std::move(closed.rows);triangle=std::move(closed.triangle);
+    lambda.resize(planes.size());for(auto&value:lambda)value=0;
+   }
+   CoupledContactStep finalStep(model,masses,beta*h,rayleighMass.getValue(),tension,effectiveQ,effectiveV,planes,potentialMerit.getValue(),reuseAcceptedEvaluation.getValue());
+   regrip_film_sphere::SphereStep exact(finalStep,c,buffered,closestSpherePrimitive.getValue());exact.sqpMerit=sqpMerit.getValue();
+   if(!candidateComplete.getValue())result=exact.solve(guess,&trace);
+   std::vector<Point>normals,locations;Eigen::VectorXd physicalLambda=result.lambda/beta;
+   auto impulses=exact.nodal(result.displacement,physicalLambda,normals,&locations);
+   State::VecDeriv values(impulses.size()),directions(lambda.size()),contactPoints(lambda.size());
+   for(unsigned i=0;i<impulses.size();++i)for(unsigned d=0;d<3;++d)values[i][d]=impulses[i][d];
+   for(unsigned k=0;k<planes.size();++k)for(unsigned d=0;d<3;++d){directions[planes[k].row][d]=normals[k][d];contactPoints[planes[k].row][d]=locations[k][d];}
+   if(candidateComplete.getValue()){
+    if(!ownedRows.is_open()){std::string path=filename.getValue()+".owned_rows.csv";if(std::ifstream(path))throw std::runtime_error("owned row journal exists");ownedRows.open(path);ownedRows<<std::setprecision(17)<<"time,owner_row,triangle,feature,gap,lambda_impulse,normal,point,support,jacobian\n";}
+    State::MatrixDeriv J;auto rest=model.rest();
+    for(unsigned k=0;k<planes.size();++k){std::vector<Point>p;for(unsigned node:planes[k].support)p.push_back(add(rest.at(node),result.displacement.at(node)));
+     auto e=regrip_film_sphere::ClosestPrimitive::evaluate(p,c,buffered);auto row=J.writeLine(k);
+     ownedRows<<time<<','<<k<<','<<triangle.at(k)<<','<<e.feature<<','<<e.gap.v<<','<<physicalLambda(k)<<",\""<<directions[k]<<"\",\""<<contactPoints[k]<<"\",\"";
+     for(unsigned node:planes[k].support)ownedRows<<node<<' ';ownedRows<<"\",\"";
+     for(unsigned a=0;a<p.size();++a){sofa::type::Vec3 g;for(unsigned d=0;d<3;++d){g[d]=e.gap.g[3*a+d];ownedRows<<g[d]<<' ';}row.addCol(planes[k].support[a],g);}ownedRows<<"\"\n";
+    }ownedRows.flush();ownedJacobian.setValue(J);
+   }
+   nodalImpulses.setValue(values);rowNormals.setValue(directions);rowPoints.setValue(contactPoints);
   }else result=step.solve(guess,&trace);
   auto x=root->read(sofa::core::vec_id::read_access::position)->getValue();auto v=root->read(sofa::core::vec_id::read_access::velocity)->getValue();for(unsigned i=0;i<model.size();++i)for(unsigned d=0;d<3;++d)if(step.mechanics.index[3*i+d]>=0&&step.mechanics.weight[3*i+d]==1){x[i][d]=result.displacement[i][d];v[i][d]=result.velocity[i][d];}root->write(sofa::core::vec_id::write_access::position)->setValue(x);root->write(sofa::core::vec_id::write_access::velocity)->setValue(v);sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);unsigned activeNew=0;for(unsigned k=0;k<planes.size();++k){lambda[planes[k].row]=result.lambda(k)/beta;activeNew+=result.lambda(k)>0;}constraintImpulses.setValue(lambda);
   sofa::simulation::common::VectorOperations vop(sofa::core::ExecParams::defaultInstance(),getContext());mop->setImplicit(true);mop.computeForce(sofa::core::vec_id::write_access::force,true,true);sofa::core::behavior::MultiVecDeriv damping(&vop);mop.addMBKv(damping,sofa::core::MatricesFactors::M(-rayleighMass.getValue()),sofa::core::MatricesFactors::B(0),sofa::core::MatricesFactors::K(0),true,true);sofa::core::behavior::MultiVecDeriv currentForce(&vop,sofa::core::vec_id::write_access::force);currentForce.peq(damping);mop.projectResponse(sofa::core::vec_id::write_access::force);

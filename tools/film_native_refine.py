@@ -10,17 +10,20 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);mode=p.add_mutually_exclusive_group();mode.add_argument('--extend-duration',action='store_true');mode.add_argument('--two-sided-contact',action='store_true');p.add_argument('--displacement-journal',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);mode=p.add_mutually_exclusive_group();mode.add_argument('--extend-cycle',action='store_true');mode.add_argument('--extend-duration',action='store_true');mode.add_argument('--two-sided-contact',action='store_true');p.add_argument('--displacement-journal',action='store_true');a=p.parse_args()
     if not a.tag.replace('_','').isalnum() or not a.case.replace('_','').isalnum():raise ValueError('campaign name')
     source=ROOT/'results'/('autonomous_film_'+a.case);reference=json.loads((source/'summary.json').read_text())
     if reference.get('status')!='PASS' or not reference.get('finite'):raise ValueError('complete finite source required')
     command=json.loads((source/'1/process/command.json').read_text());previous_steps=int(command[command.index('-n')+1]);steps=previous_steps if a.two_sided_contact else 2*previous_steps
-    margin=1.25 if a.extend_duration else 1.5
+    margin=2 if a.extend_cycle else 1.25 if a.extend_duration else 1.5
     estimate=reference['stages']['physics']['runtime_s']*(1 if a.two_sided_contact else 2)*margin
     if steps>1600 or estimate>480:raise ValueError('measured refinement projection exceeds bounded1600-step/480s policy')
     identity=json.loads((source/'identity.json').read_text());tree=ET.parse(source/'1/scene.scn');root=tree.getroot()
     if identity.get('accepted_integrator') not in ('BE','uniform BDF2 after BE startup') or root.find('FilmNativeCoupledCorrection') is None:raise ValueError('completed coupled BE/uniform-BDF2 source only')
     field=root.find("Node[@name='assembly']/FilmRailTendon")
+    if a.extend_cycle:
+        duration=previous_steps*float(root.get('dt'))
+        if identity['accepted_integrator']!='BE' or not identity.get('candidate_complete') or abs(duration-float(field.get('rampTime')))>1e-10 or abs(2*duration-float(field.get('releaseEnd')))>1e-10:raise ValueError('cycle extension needs candidate-complete measured closing profile through ramp;new duration exactly releaseEnd')
     if a.two_sided_contact and identity.get('object_shape')!='sphere':raise ValueError('two-sided thin-film contrast is sphere-only;do not change closed object-mesh sidedness')
     if a.extend_duration and (identity['accepted_integrator']!='BE' or previous_steps*float(root.get('dt'))<float(field.get('releaseEnd'))-1e-10):raise ValueError('extension needs a completed measured release window;BE only')
     if a.displacement_journal:
@@ -35,7 +38,7 @@ def main():
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);case=out/'1';case.mkdir();shutil.copytree(source/'sources',out/'sources')
     for node in root.iter():
         for key,value in list(node.attrib.items()):node.set(key,value.replace(str(source/'1'),str(case)))
-    if not a.extend_duration and not a.two_sided_contact:root.set('dt',str(float(root.get('dt'))/2))
+    if not a.extend_duration and not a.extend_cycle and not a.two_sided_contact:root.set('dt',str(float(root.get('dt'))/2))
     if a.two_sided_contact:
         if any(node.get('bothSide','0') not in ('0','false') for node in root.iter() if node.tag in ('TriangleCollisionModel','LineCollisionModel','PointCollisionModel')):raise ValueError('two-sided contrast requires a one-sided source')
         for node in root.iter():
@@ -62,7 +65,7 @@ def main():
     command[command.index('-n')+1]=str(steps);command[-1]=str(case/'scene.scn')
     identity.update(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),command=__import__('sys').argv,
         scene_sha256=sha(case/'scene.scn'),reuse_binary_source_case=a.case,reuse_identity_sha256=sha(source/'identity.json'),
-        same_binary_time_refinement=1 if a.extend_duration or a.two_sided_contact else 2,duration_extension=2 if a.extend_duration else 1,contact_surface_sides='two-sided' if a.two_sided_contact else identity.get('contact_surface_sides','one-sided'),local_displacement_journal=a.displacement_journal or identity.get('local_displacement_journal',False),compiled_source_note='Copied immutable source archive;NO new compilation',
+        same_binary_time_refinement=1 if a.extend_duration or a.extend_cycle or a.two_sided_contact else 2,duration_extension=2 if a.extend_duration or a.extend_cycle else 1,contact_surface_sides='two-sided' if a.two_sided_contact else identity.get('contact_surface_sides','one-sided'),local_displacement_journal=a.displacement_journal or identity.get('local_displacement_journal',False),compiled_source_note='Copied immutable source archive;NO new compilation',
         refinement_script_sha256=sha(__file__),coupled_budget=dict(projected_seconds=estimate,profile=a.case,margin=margin,hard_seconds=480))
     write_json(out/'identity.json',identity)
     if any(sha(Path(path))!=value for path,value in expected.items()):raise RuntimeError('prelaunch binary drift')
@@ -71,7 +74,7 @@ def main():
     finite=bool(rows) and all(math.isfinite(float(value)) for row in rows for key,value in row.items() if key!='x') and all(math.isfinite(float(value)) for row in rows for value in row['x'].split())
     log=(case/'process/stdout.log').read_text()+(case/'process/stderr.log').read_text()
     ok=process['exit_code']==0 and len(rows)==steps and finite and not any(s in log for s in ('[ERROR]','Unused Attribute','Newton-Raphson method failed to converge'))
-    variant='two-sided-contact physical contrast' if a.two_sided_contact else 'post-release observation extension' if a.extend_duration else 'half-dt refinement'
+    variant='closing-through-release extension' if a.extend_cycle else 'two-sided-contact physical contrast' if a.two_sided_contact else 'post-release observation extension' if a.extend_duration else 'half-dt refinement'
     result=dict(status='PASS' if ok else 'FAIL',scope='same-binary '+variant+' execution only;time/grasp certification NOT approved',finite=finite,stages=dict(physics=process),rows=len(rows),last={k:v for k,v in rows[-1].items() if k!='x'} if rows else None)
     write_json(out/'summary.json',result);print(json.dumps({k:result[k] for k in ('status','finite','rows')}))
 

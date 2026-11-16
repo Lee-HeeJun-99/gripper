@@ -2,13 +2,13 @@
 #include "CoupledPlaneStep.h"
 namespace regrip_film_native {
 // Nonnegative multipliers on a finite set of frozen, scalar unilateral rows.
-// Projected dual iterations do not regularize duplicate contact rows.
+// A direct nonnegative active set does not regularize duplicate contact rows.
 struct CoupledContactStep {
  struct Plane{std::vector<Point>J;double target,lambda;unsigned row;};
  CoupledPlaneStep mechanics;std::vector<Plane>planes;Eigen::MatrixXd C;Eigen::VectorXd offset;
  CoupledContactStep(Assembly model,std::vector<double>mass,double h,double damping,double T,
   std::vector<Point>q0,std::vector<Point>v0,std::vector<Plane>p):mechanics(model,mass,h,damping,T,q0,v0,std::vector<Point>(model.size()),0),planes(std::move(p)){
-  if(planes.empty()||planes.size()>256)throw std::invalid_argument("algorithmic contact row budget1..256,not OS exhaustion");C=Eigen::MatrixXd::Zero(mechanics.freeSize,planes.size());offset=Eigen::VectorXd::Zero(planes.size());auto rest=model.rest();
+  if(planes.size()>256)throw std::invalid_argument("algorithmic contact row budget0..256,not OS exhaustion");C=Eigen::MatrixXd::Zero(mechanics.freeSize,planes.size());offset=Eigen::VectorXd::Zero(planes.size());auto rest=model.rest();
   for(unsigned k=0;k<planes.size();++k){if(planes[k].J.size()!=model.size())throw std::invalid_argument("contact row size");offset(k)=-planes[k].target;for(unsigned a=0;a<3*model.size();++a){offset(k)+=planes[k].J[a/3][a%3]*(rest[a/3][a%3]+q0[a/3][a%3]);if(mechanics.index[a]>=0)C(mechanics.index[a],k)+=mechanics.weight[a]*planes[k].J[a/3][a%3];}}
  }
  static double gapError(const Eigen::VectorXd&w,const Eigen::VectorXd&lambda){double error=0;for(int k=0;k<w.size();++k)error=std::max(error,lambda(k)>0?std::abs(w(k)):std::max(-w(k),0.));return error;}

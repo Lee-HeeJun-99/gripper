@@ -7,6 +7,8 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);source=ROOT/'results'/('autonomous_film_'+a.case)/'1';tree=ET.parse(source/'scene.scn');field=tree.find("Node[@name='assembly']/FilmRailTendon");ode=tree.find('ReGripBDFSolver')
  summary=json.loads((source.parent/'summary.json').read_text())
  identity=json.loads((source.parent/'identity.json').read_text())
+ accepted=tree.find('FilmNativeCoupledCorrection')
+ if accepted is not None and accepted.get('integrationOrder','1')!='1':raise RuntimeError('BE identity is not a BDF2 identity;native BE predictor does not define accepted integration')
  if summary.get('status')!='PASS' or not summary.get('finite'):raise RuntimeError('completed finite execution required;partial states are not evidence')
  if ode.get('order')!='1' or ode.get('theta')!='1' or float(ode.get('rayleighStiffness'))!=0:raise RuntimeError('BE/mass-damping-only derivation')
  if field.get('rootGuideSecondOrder','0').lower() not in ('0','false'):raise RuntimeError('quadratic guide is not included in this reference')

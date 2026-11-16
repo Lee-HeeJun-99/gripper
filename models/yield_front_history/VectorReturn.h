@@ -13,17 +13,31 @@ inline R dot(V a,V b){R s=0;for(int i=0;i<3;++i)s+=a[i]*b[i];return s;}
 inline V add(V a,V b){for(int i=0;i<3;++i)a[i]+=b[i];return a;}
 inline V scale(V a,R s){for(auto&x:a)x*=s;return a;}
 inline R norm(V a){return std::sqrt(dot(a,a));}
+inline V cross(V a,V b){return {a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]};}
 inline void finite(V a){for(R x:a)if(!std::isfinite(x))throw std::invalid_argument("nonfinite vector");}
 struct Return {
- V elastic{},traction{},plastic{};
+ V elastic{},traction{},plastic{},before{};
  M tangent{};
  R oldEnergy=0,energy=0,loss=0,projection=0,work=0;
+ R trialLoad=0;
  bool slip=false,unique=true;
  const M& classicalTangent()const{
   if(!unique)throw std::domain_error("positive-capacity yield equality: directional derivative required");
   return tangent;
  }
 };
+// Minimal normal-frame rotation. It is an isometry,not a tangent projection.
+// Antipodal normals have no uniquely defined minimal rotation; reject the
+// ill-conditioned event,never invent a fallback axis or add epsilon to 1+c.
+inline V transport(V e,V before,V after){
+ finite(e);finite(before);finite(after);
+ constexpr R tol=128*__LDBL_EPSILON__;
+ if(std::abs(dot(before,before)-1)>tol||std::abs(dot(after,after)-1)>tol||std::abs(dot(e,before))>tol*norm(e))throw std::invalid_argument("normal transport inputs");
+ R c=dot(before,after);
+ if(1+c<=std::sqrt(__LDBL_EPSILON__))throw std::domain_error("unresolved near-antipodal normal transport: subdivide event");
+ V axis=cross(before,after);
+ return add(e,add(cross(axis,e),scale(cross(axis,cross(axis,e)),1/(1+c))));
+}
 inline Return radialReturn(V old,V increment,V normal,R k,R cap){
  finite(old);finite(increment);finite(normal);
  if(!std::isfinite(k)||k<=0||!std::isfinite(cap)||cap<0)throw std::invalid_argument("stiffness/capacity");
@@ -32,7 +46,9 @@ inline Return radialReturn(V old,V increment,V normal,R k,R cap){
  if(std::abs(dot(normal,normal)-1)>tol||std::abs(dot(old,normal))>tol*norm(old)||std::abs(dot(increment,normal))>tol*norm(increment))
   throw std::invalid_argument("unit normal and tangent history/increment required");
  Return r;V trial=add(old,increment);R length=norm(trial),load=k*length;
+ r.before=old;
  if(!std::isfinite(load))throw std::overflow_error("trial load");
+ r.trialLoad=load;
  r.oldEnergy=.5L*k*dot(old,old);
  r.slip=load>cap;r.unique=!(cap>0&&load==cap);
  if(cap==0){r.elastic={};r.plastic=trial;}

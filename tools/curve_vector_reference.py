@@ -25,6 +25,7 @@ def main():
         p = ROOT / optional
         if p.exists():
             paths.append(p)
+    paths.append(ROOT / 'models/yield_front_history/PolynomialFronts.h')
     write_json(out / 'identity.json', dict(
         commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         sources={str(p.relative_to(ROOT)): sha(p) for p in paths},

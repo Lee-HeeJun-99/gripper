@@ -51,6 +51,28 @@ int main(){try{
   require(std::abs((plus.integral.v[1]+plus.integral.v[2]-minus.integral.v[1]-minus.integral.v[2])/(2*h)-base.integral.v[5+j])<1e-11L,"field incremental potential gradient");
  }
  require(fieldFD<1e-8L,"field tangent FD");
+ Step unchanged;unchanged.capacity=steps.back().capacity;auto restQuery=field.evaluate(unchanged,1e-7L,1e-30L);
+ require(restQuery.integral.v[2]==0&&restQuery.integral.v[3]==0&&restQuery.integral.v[4]==0&&restQuery.integral.v[0]==restQuery.integral.v[1],"exact rest query must not rereturn/produce loss");
+ require(restQuery.integral.nonuniqueSamples>0,"rest generalized tangent must be explicit,not classical certification");
+ auto beforeRest=field.elasticAt(.314159L);auto depth=field.expressionDepth();auto beforeEpoch=field.epoch();field.commit(restQuery);
+ require(field.elasticAt(.314159L)==beforeRest&&field.expressionDepth()==depth&&field.epoch()==beforeEpoch+1,"identity Commit must not reround state or revive tokens");
+ VectorField off(a,k);Step capOff;auto offStep=off.evaluate(capOff);off.commit(offStep);auto offAgain=off.evaluate(capOff);
+ for(int j=8;j<17;++j)require(offAgain.integral.v[j]==0,"repeated friction-OFF query has zero tangent");
+ require(off.expressionDepth()==0&&off.epoch()==1,"exact zero-state expression pruning");
+ // A circular return at positive yield is directionally,not classically,
+ // differentiable. Check its integrated loading/unloading derivative against
+ // independent ONE-SIDED force queries;never use a centered FD at this event.
+ VectorField sided(a,k);Step preload;preload.capacity=C;preload.increment[0]={.002L,.001L,0};auto pre=sided.evaluate(preload);sided.commit(pre);
+ R sidedFD=0;
+ for(R sign:{-1.L,1.L}){V direction{sign*.2L,sign*.1L,0};Step rest;rest.capacity=C;
+  auto directional=sided.evaluate(rest,1e-8L,1e-30L,500000,direction);
+  Step shifted=rest;R h=1e-7L;shifted.increment[0]=scale(direction,h);auto perturbed=sided.evaluate(shifted,1e-8L,1e-30L);
+  for(int i=0;i<2;++i){R tangent=0;for(int j=0;j<2;++j)tangent+=directional.integral.v[8+3*i+j]*direction[j];sidedFD=std::max(sidedFD,std::abs((perturbed.integral.v[5+i]-directional.integral.v[5+i])/h-tangent));}
+ }
+ require(sidedFD<1e-8L,"direction-sided yield linearization");
+ std::cout<<std::setprecision(18)<<"DIRECTIONAL_FD "<<sidedFD<<'\n';
+ VectorField foreign(a,k);auto owned=foreign.evaluate(probe);bool foreignRejected=false;
+ try{field.commit(owned);}catch(const std::invalid_argument&){foreignRejected=true;}require(foreignRejected,"cross-field Commit");
  // Virgin boundary slip band so thin that fixed midpoint grids miss it.
  VectorField thin(a,k);Step tiny;tiny.capacity=C;tiny.increment[0]={1e-12L,2e-12L,0};
  auto t=thin.evaluate(tiny,1e-7L,1e-46L);

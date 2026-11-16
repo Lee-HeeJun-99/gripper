@@ -1,5 +1,61 @@
 # Independent vector function-history reference — EXPERIMENTAL
 
+## Actual SDK isolation continuation
+
+VectorPatchBenchmark.cpp is an independent Vec3 SOFA ForceField for one
+uniform material displacement against a FIXED,externally supported tangential
+patch. It is NOT a curved contact component,normal contact,birth/death or a
+free6DOF grasp. It verifies actual SDK Data/force/dforce/matrix/query/Commit
+paths before any proposed3D rollout. Every build has a fresh path and matching
+runtime library hashes. No old plugin/model is overwritten.
+
+Actual a01SDK compile FAIL:DerivativeElement exposes +=,not -=. a02API FAIL:
+overallocated local loss-error budget at a yield boundary. Switching to a
+GLOBAL summed unresolved-loss upper bound fixed that without relaxing its
+requested tolerance. a03actual dynamics FAIL after3commits:repeated floating
+return at zero increment produced inconsistent near-yield branch tangents.
+An exact admissibility/identity branch fixes this;positive yield has an
+explicit SELECTED generalized derivative,not a unique classical Jacobian.
+Identity/OFF expression storage is algebraically pruned with a monotone epoch;
+old Commit tokens never revive. Query,energy and Jacobian calls do not Commit.
+
+Actual a04dynamics100stepsPASS16.808s;cache-only contrast12.436s and energy
+journal15.351s have ALL common CSV values EXACTLY equal. API FD6.71741e-11.
+The force/energy-query cache key includes epoch,position and,where enabled,
+direction. This is observed runtime,not an isolated hardware benchmark.
+Implicit Euler actual100→200steps keeps force balance but FAILS original.1%
+time diagnostics:motion.364449%,loss1.140386%,stored energy.671829%.
+Noncollinear initial-velocity contrast also actually executed100steps;
+it is NEVER combined as an identical-condition time comparison.
+
+Actual constant-capacity Euler audit has relative discrete force residual
+5.40e-15,kinetic identity3.95e-25,local endpoint identity2.26e-27 Fmm.
+Pre/post inventory quadrature gap9.48e-20 and sequential residual2.15e-19
+are retained,not set to zero. The separately derived signed contact-force
+linearization remainder is NOT heat. This partial benchmark has no unknown
+pressure work;it does not solve the gripper's pressure/device energy question.
+
+Further independent failures exposed two issues before directed-SDK rollout:
+the global yield Lipschitz bound wasted500000samples during tiny unloading;
+and letting a selected tangent change the adaptive force mesh changed force
+at fixed pose. The new admissibility bound uses
+k²|e0+d|²-c² <= 2k²e0.d+k²|d|² for admissible old e0 and nondecreasing c.
+It cancels the old capacity derivative;its summed unresolved-loss inventory
+must still meet the SAME absolute integration budget. The selected sided
+matrix is integrated separately;forces,energy,loss and committed history are
+always from the identical direction-independent pass. Work budget is split,
+not doubled. Actual one-sided field FD2.94588e-9;directed SDK API matrix
+difference.00010045261 with force/history equality exact. Near a positive
+yield equality unloading uses the elastic member,loading the circular-slip
+member. An arbitrary central derivative is not asserted at that event.
+
+Newmark(gamma.5,beta.25) is actually present in the Matching SDK Backward
+library. It is tested as a DISTINCT integrator contrast;the failed Euler
+verdict remains. Euler's discrete energy identity is NOT applied to Newmark.
+Actual directed Newmark100step13.087s completed;its own200step contrast is
+in progress. Inspect actual summaries rather than treating this chronology
+as an indefinitely live process statement.
+
 Not a SOFA component,not moving-contact or full grasp qualification. Existing
 scalar/Beam/Curved/Patch implementations and binaries are unchanged.
 

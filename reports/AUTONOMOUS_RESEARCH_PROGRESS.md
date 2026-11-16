@@ -1,5 +1,32 @@
 # Autonomous research log
 
+## Continuation — actual vector-history SDK benchmark and failed time gate
+
+New fixed-normal VectorPatchBenchmark is a real separate SOFA ForceField,
+NOT3Dcollision/free-grasp approval. Data registration/parsing,actual F/dF/
+matrix,stored-energy query purity and5historyCommits pass;API FD6.71741e-11.
+Each matching-SDK build/raw has unique vector_history_sdk_20261116_* path.
+Compile/API/actual-dynamics failures a01/a02/a03 are retained. Actual a04
+100step16.808s has100Commits/state changes/nonnegative D. Cache and stage
+journal contrasts match every common CSV value EXACTLY. Local energy residual
+2.26e-27,actual force residual5.40e-15;inventory quadrature gap9.48e-20 is NOT0.
+Euler100→200steps ACTUALLY FAIL.1%:x.364449%,D1.140386%. Actual200step107.432s.
+Noncollinear initial-velocity contrast17.201s also executes100steps;assessor
+refuses mixing its initial conditions into a time comparison.
+
+Selected follow-up:distinguish temporal scheme/selected generalized tangent
+from material-history spatial error using SDK Newmark,not another uniform
+history-grid refinement. Two independent directed attempts FAILED first:
+500000sample unloading bound exhaustion,and direction-dependent quadrature
+force roundoff. Derived admissibility-square bound and separate directional-J
+integration remove those without changing the force law or threshold.
+One-sided mathematical FD2.94588e-9,SDK directed cache test passes exact F/D
+invariance. Positive-yield derivatives remain explicitly nonclassical.
+Actual directed Newmark100steps13.087s completed;200step same-condition child
+is currently being measured. This is only a fixed-patch isolation study,
+not the requested3finger model or a solution of moving contact/birth/death.
+ConservativeBeam/oldCurved/plugin binaries/golden/SQLite remain unchanged.
+
 ## Active continuation — vector function history,2026-11-16
 
 Resumed same branch at clean fb6a698,no existing physics child. Both inherited

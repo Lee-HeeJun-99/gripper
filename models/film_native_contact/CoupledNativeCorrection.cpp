@@ -27,6 +27,7 @@ public:
  using State=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;using Solver=sofa::component::constraint::lagrangian::solver::GenericConstraintSolver;using BaseLink=sofa::core::objectmodel::BaseLink;
  SOFA_CLASS(FilmNativeCoupledCorrection,sofa::core::objectmodel::BaseObject);
  sofa::core::objectmodel::Data<bool> candidateComplete{initData(&candidateComplete,false,"candidateComplete","Separate whole-triangle endpoint candidate closure;NOT swept CCD")};
+ sofa::core::objectmodel::Data<bool> candidateBroadPhase{initData(&candidateBroadPhase,false,"candidateBroadPhase","Opt-in outward-rounded AABB clearance proof before exact primitive AD;unchanged gates")};
  sofa::core::objectmodel::Data<State::MatrixDeriv> ownedJacobian{initData(&ownedJacobian,State::MatrixDeriv{},"ownedJacobian","Independent accepted constraint rows;never Native predictor row IDs")};
  std::ofstream ownedRows;
  sofa::core::objectmodel::SingleLink<FilmNativeCoupledCorrection,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>root,body;
@@ -59,7 +60,7 @@ public:
     auto*topology=body->getContext()->getMeshTopology();if(!topology)throw std::runtime_error("whole-surface topology unavailable");
     std::vector<regrip_film_sphere::CandidateClosure::Triangle> triangles;
     for(const auto&t:topology->getTriangles())triangles.push_back({t[0],t[1],t[2]});
-    auto closed=regrip_film_sphere::CandidateClosure::solve(step,c,buffered,triangles,guess,sqpMerit.getValue(),&trace);
+    auto closed=regrip_film_sphere::CandidateClosure::solve(step,c,buffered,triangles,guess,sqpMerit.getValue(),&trace,8,candidateBroadPhase.getValue());
     result=std::move(closed.mechanical);planes=std::move(closed.rows);triangle=std::move(closed.triangle);
     lambda.resize(planes.size());for(auto&value:lambda)value=0;
    }

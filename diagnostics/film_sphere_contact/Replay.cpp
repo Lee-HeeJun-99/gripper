@@ -37,6 +37,6 @@ int main(int argc,char**argv){try{
 #ifdef REGRIP_SQP_MERIT
  sphere.sqpMerit=true;
 #endif
- auto result=sphere.solve(initial,&std::cout);std::cout<<"SOLVED residual "<<result.residual<<" gap "<<result.gap<<" iterations "<<result.iterations<<'\n';}
+ double reference=argc>3?std::stod(argv[3]):-1;if(argc>3)std::cout<<"immutable_step_reference "<<reference<<'\n';auto result=sphere.solve(initial,&std::cout,argc>3?&reference:nullptr);std::cout<<"SOLVED residual "<<result.residual<<" gap "<<result.gap<<" iterations "<<result.iterations<<'\n';}
  return 0;
  }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

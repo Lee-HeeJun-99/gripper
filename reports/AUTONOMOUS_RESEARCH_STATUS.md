@@ -1,5 +1,21 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Profiling continuation and rejected optimization
+
+Actual profile28:150steps cost50.859s; force/damping39.406s, gradient/RHS9.862s,
+linear solve1.399s, mapped mass product.00724s. Nested residual timing includes
+force/mass: do not double-count it. Instrumentation preserved every CSV value.
+A runtime gradient-only AD experiment preserved exact state/force/energy, but
+cost94.966s (1.867x slower), shifting work into repeated Hessian evaluations.
+It is rejected as an optimization; default AD and FilmShell were restored and
+cleanly rebuilt/tested in final30. Failed code is retained in Git eebbb45,
+campaign29/sources and the archived test under reports/film_newton_experiments/.
+No original model/raw/Golden was removed. Full time/grasp Gate remains FAIL.
+Next cost research should first count accepted/rejected force evaluations or
+test element-local derivative dimensions/compile-time specialization, against
+both mathematical equivalence and actual runtime; do not repeat runtime flags.
+All launched runs are complete. There is no claimed background continuation.
+
 ## Newest completed experiment status
 
 Hard-boundary campaign25 and mapped reference26 are complete, not RUNNING.

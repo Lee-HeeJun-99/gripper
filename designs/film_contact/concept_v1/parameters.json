@@ -1,0 +1,50 @@
+{
+  "scope": "Concept Design + implemented mesh loading geometry;NOT validated shell/contact mechanics",
+  "length_mm": 100,
+  "body_radius_mm": 50,
+  "width_mm": {
+    "root": 24,
+    "tip": 12,
+    "taper_start": 50
+  },
+  "layers": 8,
+  "film_thickness_mm": 0.05,
+  "physical_measurements": null,
+  "angles_deg": [
+    0,
+    120,
+    -120
+  ],
+  "curl_rad": 0.77,
+  "tendon_offset_mm": 1.5,
+  "tendon_pull_mm": 1.155,
+  "edge_tendons_per_finger": 2,
+  "vacuum_zones_mm": [
+    [
+      0,
+      100
+    ]
+  ],
+  "vacuum_circuits": 3,
+  "independent_finger_zone_control": false,
+  "object": {
+    "shape": "sphere",
+    "radius_mm": 20,
+    "center_mm": [
+      0,
+      -75,
+      0
+    ]
+  },
+  "root_cartridge": "split clamp with serviceable film insert",
+  "seal": "full sleeve",
+  "open_issues": [
+    "transverse shell compliance",
+    "vacuum seal leakage",
+    "edge cable friction",
+    "hose routing",
+    "wear",
+    "layer-end sliding",
+    "post-jam load transfer"
+  ]
+}

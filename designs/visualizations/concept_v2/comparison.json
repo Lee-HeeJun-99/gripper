@@ -1,0 +1,50 @@
+{
+  "source": "geometry and analytical assumed constant-width EB screening;NO SOFA contact performance",
+  "baseline": "ab3bee013c04bbee9d4524b67f55b0de9e58c3bb13ffafc79d8a5038dd056f38",
+  "candidates": [
+    {
+      "candidate": "film_contact",
+      "nominal_surface_area_mm2": 6300.0,
+      "actual_contact_area_mm2": null,
+      "film_volume_mm3": 2520.0,
+      "baseline_equivalent_beam_volume_mm3": 439.3397917746089,
+      "material_volume_ratio": 5.735879260608418,
+      "equal_material_film_thickness_mm": 0.00871705936060732,
+      "sampled_width_clearance_mm": 11.148897195725745,
+      "clearance_scope": "same-material-station center separation minus width;not all-pairs collision proof",
+      "tendon_pull_mm": 1.155,
+      "grasp_force": null,
+      "pressure_distribution": null,
+      "hold_energy": null
+    },
+    {
+      "candidate": "selective_jamming",
+      "nominal_surface_area_mm2": 6300.0,
+      "actual_contact_area_mm2": null,
+      "film_volume_mm3": 2520.0,
+      "baseline_equivalent_beam_volume_mm3": 439.3397917746089,
+      "material_volume_ratio": 5.735879260608418,
+      "equal_material_film_thickness_mm": 0.00871705936060732,
+      "sampled_width_clearance_mm": 11.148897195725745,
+      "clearance_scope": "same-material-station center separation minus width;not all-pairs collision proof",
+      "tendon_pull_mm": 1.155,
+      "grasp_force": null,
+      "pressure_distribution": null,
+      "hold_energy": null
+    }
+  ],
+  "assumed_EI_multiplier": 16,
+  "compliance_per_tip_force": {
+    "OFF": 666666.6666666665,
+    "proximal30_ON": 256041.6666666666,
+    "all_ON": 41666.66666666666
+  },
+  "selective_stiffness_ratio": 2.6037428803905613,
+  "full_stiffness_ratio": 16.0,
+  "limitations": [
+    "EB screen uses uniform24mm width,not tapered mesh",
+    "mass,area and drive conditions are not yet matched for performance comparison",
+    "pressure-to-stiffness uncalibrated",
+    "unbonded vs perfectly bonded EI ratio N^2 is only a theoretical bound"
+  ]
+}

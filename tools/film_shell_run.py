@@ -3,7 +3,7 @@ import argparse,csv,json,shutil,subprocess
 from curve_common import ROOT,sha,write_json
 from closure_validation_suite import logged
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--steps',type=int,default=200);p.add_argument('--nodes',type=int,default=11,choices=[11,21,41]);p.add_argument('--solver',choices=['euler','static','bdf'],default='euler');p.add_argument('--plane',type=float);p.add_argument('--width',type=float,default=10);p.add_argument('--thickness',type=float,default=.2);p.add_argument('--load',type=float,default=1e-7);p.add_argument('--single',action='store_true');p.add_argument('--fixture',type=float,default=0);p.add_argument('--ramp',type=float,default=0);p.add_argument('--displacement',action='store_true');p.add_argument('--matrix-probe',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--steps',type=int,default=200);p.add_argument('--nodes',type=int,default=11,choices=[11,21,41]);p.add_argument('--solver',choices=['euler','static','bdf','regrip'],default='euler');p.add_argument('--plane',type=float);p.add_argument('--width',type=float,default=10);p.add_argument('--thickness',type=float,default=.2);p.add_argument('--load',type=float,default=1e-7);p.add_argument('--single',action='store_true');p.add_argument('--fixture',type=float,default=0);p.add_argument('--ramp',type=float,default=0);p.add_argument('--displacement',action='store_true');p.add_argument('--matrix-probe',action='store_true');p.add_argument('--duration',type=float,default=20);p.add_argument('--newton-tolerance',type=float,default=1e-10);a=p.parse_args()
  if not(a.width>0 and a.thickness>0 and a.load>0):raise ValueError('positive film/load')
  if not a.tag.replace('_','').isalnum()or not 1<=a.steps<=2000:raise ValueError('bounded campaign')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);build=ROOT/'build'/('film_shell_'+a.tag);sdk=ROOT/'build/grasp_20261115/sofa_patched'
@@ -19,14 +19,17 @@ def main():
  plugin=build/'libReGripFilmShell.so';write_json(out/'compiled.json',dict(sources=before,binary_sha256=sha(plugin)))
  rows={}
  for multiple in ([1]if a.single else[1,2,4]):
-  case=out/str(multiple);case.mkdir();steps=a.steps*multiple;dt=20/steps;ny=5;nx=a.nodes
+  case=out/str(multiple);case.mkdir();steps=a.steps*multiple;dt=a.duration/steps;ny=5;nx=a.nodes
   position=' '.join(f'{100*i/(nx-1)} {a.width*j/(ny-1)} 0'for i in range(nx)for j in range(ny))
   if a.displacement:position=' '.join(['0 0 0']*(nx*ny))
   solver='<EulerImplicitSolver rayleighMass="2" rayleighStiffness="0"/>'if a.solver=='euler'else'<NewtonRaphsonSolver name="newton" maxNbIterationsNewton="30" maxNbIterationsLineSearch="12" absoluteResidualStoppingThreshold="1e-10" relativeInitialStoppingThreshold="1e-7" relativeSuccessiveStoppingThreshold="0"/><StaticSolver newtonSolver="@newton"/>'
-  if a.solver=='bdf':solver=solver.replace('<StaticSolver newtonSolver="@newton"/>','<BDFOdeSolver order="1" newtonSolver="@newton" rayleighMass="2" rayleighStiffness="0"/>')
+  if a.solver in ('bdf','regrip'):solver=solver.replace('<StaticSolver newtonSolver="@newton"/>','<BDFOdeSolver order="1" newtonSolver="@newton" rayleighMass="2" rayleighStiffness="0"/>')
   contact=''if a.plane is None else f'plane="{a.plane}" contactStiffness=".00001"'
   scene=f'''<Node name="film_cantilever" dt="{dt}" gravity="0 0 0"><RequiredPlugin pluginName="Sofa.Component.AnimationLoop Sofa.Component.StateContainer Sofa.Component.Mass Sofa.Component.ODESolver.Backward Sofa.Component.LinearSolver.Direct Sofa.Component.Constraint.Projective Sofa.Component.MechanicalLoad"/><DefaultAnimationLoop/>{solver}<EigenSparseLU template="CompressedRowSparseMatrixd"/><MechanicalObject template="Vec3d" position="{position}"/><UniformMass totalMass=".000001"/><FilmShell nx="{nx}" ny="{ny}" length="100" width="{a.width}" young="250" poisson="0" thickness="{a.thickness}" observedTipForce="{a.load}" slopeFixture="{a.fixture}" displacementDofs="{int(a.displacement)}" matrixProbe="{int(a.matrix_probe)}" {contact} filename="{case/'journal.csv'}"/><FixedProjectiveConstraint indices="{' '.join(map(str,range((1 if a.fixture>0 else 2)*ny)))}"/><ConstantForceField indices="{' '.join(map(str,range((nx-1)*ny,nx*ny)))}" forces="{' '.join([f'0 0 {a.load/ny}']*ny)}"/></Node>'''
-  actual_solver={'euler':'EulerImplicitSolver','static':'StaticSolver','bdf':'BDFOdeSolver'}[a.solver]
+  if a.solver=='regrip':scene=scene.replace('<BDFOdeSolver ','<ReGripBDFSolver ')
+  solver_tolerance='absoluteResidualStoppingThreshold="1e-10"'
+  scene=scene.replace(solver_tolerance,f'absoluteResidualStoppingThreshold="{a.newton_tolerance}"')
+  actual_solver={'euler':'EulerImplicitSolver','static':'StaticSolver','bdf':'BDFOdeSolver','regrip':'ReGripBDFSolver'}[a.solver]
   if f'<{actual_solver} ' not in scene:raise RuntimeError('requested/actual ODE solver mismatch')
   write_json(case/'actual_solver.json',dict(requested=a.solver,xml_component=actual_solver))
   if a.ramp>0:

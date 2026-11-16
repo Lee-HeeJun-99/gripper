@@ -17,7 +17,7 @@ def main():
     estimate=reference['stages']['physics']['runtime_s']*2*1.5
     if steps>1600 or estimate>480:raise ValueError('measured refinement projection exceeds bounded1600-step/480s policy')
     identity=json.loads((source/'identity.json').read_text());tree=ET.parse(source/'1/scene.scn');root=tree.getroot()
-    if identity.get('accepted_integrator')!='BE' or root.find('FilmNativeCoupledCorrection') is None:raise ValueError('qualified coupled BE source only')
+    if identity.get('accepted_integrator') not in ('BE','uniform BDF2 after BE startup') or root.find('FilmNativeCoupledCorrection') is None:raise ValueError('completed coupled BE/uniform-BDF2 source only')
     expected={}
     for name,component in (('core','ReGripFilmShell'),('assembly','ReGripFilmRailTendon'),('observer','ReGripFilmNativeObserver')):
         matches=[Path(n.get('pluginName')) for n in root.findall('RequiredPlugin') if n.get('pluginName','').endswith('/lib'+component+'.so')]

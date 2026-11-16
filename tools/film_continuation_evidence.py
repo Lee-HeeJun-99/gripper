@@ -34,7 +34,7 @@ def main():
     # Repository-native implementations and reports, not an invented global
     # SDK certificate. Dynamic dependency logs remain part of every trial.
     for top in ('models/film_shell','models/film_rail_tendon','models/film_native_contact',
-                'diagnostics/film_rail_tendon'):
+                'models/film_sphere_contact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
     for pattern in ('tools/film_*.py','tests/test_film*','reports/*FILM*.md',
@@ -47,6 +47,7 @@ def main():
         summary=directory/'summary.json'
         state=json.loads(summary.read_text()) if summary.exists() else {}
         campaigns[directory.name]=dict(status=state.get('status',state.get('time_status',state.get('discrete_identity_status','NOT ASSESSED'))),
+            has_prebuild_source_guard=(directory/'launch_sources.json').is_file(),
             scope=state.get('scope'),has_source_snapshot=(directory/'sources').is_dir(),
             provenance_note='Use archived identity/sources for compiled identity;post-run hashes alone do not prove launch identity')
         for path in directory.rglob('*'):

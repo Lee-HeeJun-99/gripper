@@ -81,6 +81,16 @@ vanishes. Actual short301 and wide307 runs verify this LIMITED geometric law.
 
 ## Status and limitations
 
+Additional bounded uniform BDF2 comparison345/346/347 uses the existing
+two-step history transformation,beta=2/3,q*= (4qn-qold)/3,v* likewise.
+The kernel h is beta*dt and its multiplier is beta times dt*endpoint force.
+Independent physical BDF residual9.58e-17 and kinematic residual5.55e-17 pass;
+actual20/40/80-step runs and impulse/radial-law checks pass in scope. BUT
+time comparison351 FAILS0.1%,especially contact-force/attachment-energy.
+This mode is NOT selected as a qualified replacement for BE. The default
+remains BE. Endpoint force sums are not exact continuous impact integrals.
+BE-only energy analysis explicitly rejects the BDF2 mode.
+
 * Mathematical geometry/objectivity and true tangent FD: PASS (test executable).
 * Actual SOFA20-step301: finite/equation/radial-law checks PASS in scope.
 * Actual4s400-step307: completes; independent diagnostics are separately stored.

@@ -1,5 +1,63 @@
 # Next research checkpoint
 
+## New first unfinished work — general temporal return/work and adaptive STATE fit
+
+Newest additional prerequisite already implemented:TemporalYield.h and
+test_general_temporal_yield.cpp (256affine vector/fixed-plane roots+IFT).
+Do not reimplement that root. Extend it only after deriving the changing-normal
+path and coupled elastic/plastic evolution. An event fraction alone is not the
+whole3D return map;all intermediate history derivatives must reach endpoint
+force/Jacobian. Already-yielding/slip/re-stick and Birth/Death need explicit
+branches. Scalar event-work is only a diagnostic analytical reference.
+
+Latest self-contained math regression:
+`$PY tools/curve_general_reference_suite.py --tag UNIQUE_MATH`.
+Latest clean actual adapter build:build/vector_history_owner_20261116_verified06;
+its identity/compiled.json and raw snapshots pin actual compiled source.
+Use earlier05time/space cohort for comparisons;do not mix binaries/cohorts.
+
+DO NOT repeat the already implemented Owner/Curved adapter. New files are in
+models/general_vector_history. Owner is exact128operator replay;the adaptive
+material quadrature is NOT an adaptive state compressor. Source/raw manifests
+and bounded build/API tools now exist. Same branch;no new branch or push.
+
+The real moving sphere/Hermite integration-spacing test now passes including
+small-phase loss,while time FAIL remains. Prescribed no-Solver geometry matches
+the SOFA time defect,isolating return/time/capacity work rather than SparseLU.
+Next derive a GENERAL VECTOR event-aware temporal return and work rule with
+changing normal/capacity. The new scalar capacity-work analytic benchmark is
+only a reference;do NOT replace3D loss by its trapezoid formula without deriving
+the actual3D state transition and mechanical tangent. Compare old/new laws in
+independent prescribed geometry,then NEW component/build and actual short SOFA.
+Do not fix the phase FAIL by using only cumulative loss or deleting tiny losses.
+
+In parallel/after isolation,derive general adaptive state fitting around actual
+SphereHistoryChart. Resolve active-boundary one-sided gap/direction limits,
+yield-front state and prospective-loss error;unknown cap0normalized limits must
+be rejected,not guessed. Exact replay owner is now a bounded independent
+reference. A full48000step gripper cannot run under its128operator cap;do not
+merely increase the cap and claim production readiness. Fit/representation U
+must be inventoried separately from Coulomb heat. Test actual SOFA FD after
+adaptive partition changes. Then original3finger11/21/41and dt/history gates.
+
+Newest reproducible sources/commands:
+
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/curve_general_owner.py --tag UNIQUE_BUILD --adaptive
+$PY tools/curve_general_dynamic.py --tag UNIQUE_RUN --build build/vector_history_owner_UNIQUE_BUILD --speed .2
+$PY tools/curve_general_prescribed.py --tag UNIQUE_PRESCRIBED
+$PY tools/curve_general_assess.py --tag UNIQUE_ASSESS --kind time 20261116_adaptive5_20 20261116_adaptive5_40 20261116_adaptive5_80
+```
+
+Completed binary:build/vector_history_owner_20261116_adaptive05/
+libReGripGeneralVectorContact.so. Its compiled.json/source snapshot pins actual
+source hashes independently of a later packaging commit. Raw references:
+results/vector_history_compare_20261116_adaptive5_space/assessment.json and
+...adaptive5_time/assessment.json;prescribed_20261116_time02/summary.json;
+capacity_20261116_a01/test/stdout.log. Initial failures remain in time01,
+adaptive01..04,material_rule_a01,rule_geometry_a01 and moving adaptive3_20.
+
 ## Updated FIRST unfinished task — general-history owner and curved SOFA adapter
 
 SphereHistoryChart.h has now implemented the earlier plan's nonparabolic

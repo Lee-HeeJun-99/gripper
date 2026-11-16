@@ -10,13 +10,13 @@ def main():
  build=ROOT/'build'/('vector_history_owner_'+a.tag)
  if build.exists():raise ValueError('new build required')
  sources=[q for folder in ('models/general_vector_history','models/curved_contact','models/material_point_contact','models/contact_birth','models/contact_history','models/yield_front_history','models/conservative_beam','models/contact_kinematics','models/integrated','models/closure','models/stabilization','models/finite_rotation') for q in (ROOT/folder).rglob('*') if q.is_file()]
- sources += [ROOT/f for f in ('tests/test_general_curved.cpp','tests/test_general_history_owner.cpp','tests/test_curved_contact.cpp','tools/curve_general_owner.py')]
+ sources += [ROOT/f for f in ('tests/test_general_curved.cpp','tests/test_general_history_owner.cpp','tests/test_general_wrench.cpp','tests/test_curved_contact.cpp','tools/curve_general_owner.py')]
  before={str(q.relative_to(ROOT)):sha(q)for q in sources}
  write_json(out/'identity.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources=before,scope='exact finite-prefix general material history;fixed material quadrature;NOT adaptive general-history qualification'))
  for q in sources:
   dst=out/'sources'/q.relative_to(ROOT);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(q,dst)
  stages={}
- commands=[('configure',['cmake','-S',ROOT/'models/general_vector_history','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DGENERAL_HISTORY_GAUSS='+('ON'if a.gauss else'OFF'),'-DGENERAL_HISTORY_ADAPTIVE='+('ON'if a.adaptive else'OFF'),'-DCMAKE_PREFIX_PATH='+str(ROOT/'.runtime/closure_sdk')]),('build',['cmake','--build',build,'--target','ReGripGeneralVectorContact','test_general_curved','test_general_history_owner','-j2']),('owner',[build/'test_general_history_owner']),('api',[build/'test_general_curved']),('ldd',['ldd',build/'libReGripGeneralVectorContact.so'])]
+ commands=[('configure',['cmake','-S',ROOT/'models/general_vector_history','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DGENERAL_HISTORY_GAUSS='+('ON'if a.gauss else'OFF'),'-DGENERAL_HISTORY_ADAPTIVE='+('ON'if a.adaptive else'OFF'),'-DCMAKE_PREFIX_PATH='+str(ROOT/'.runtime/closure_sdk')]),('build',['cmake','--build',build,'--target','ReGripGeneralVectorContact','test_general_curved','test_general_history_owner','test_general_wrench','-j2']),('owner',[build/'test_general_history_owner']),('api',[build/'test_general_curved']),('wrench',[build/'test_general_wrench']),('ldd',['ldd',build/'libReGripGeneralVectorContact.so'])]
  for name,cmd in commands:
   stages[name]=logged(cmd,out/name,180)
   if stages[name]['exit_code']:break

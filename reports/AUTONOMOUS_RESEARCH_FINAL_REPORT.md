@@ -1,5 +1,52 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Latest continuation — actual moving3D SOFA integration,not project completion
+
+Further work after the first adapter PASS:implemented/verified affine vector
+first-yield event+IFT in a fixed tangent plane(256states,root4.24e-22,FD4.01e-9).
+This is explicitly not the whole changing-normal temporal friction law. Fresh06
+clean matching-SDK build,owner,API and sphere wrench tests PASS;the latest
+standalone six-test suite and exact-repeat short dynamics preserve reproducible
+checkpoints. No measured system resource failure or automatic restart is claimed.
+
+Resumed clean e151c278 on the same branch;local implementation commit4527906
+and subsequent functional fixes are recorded by git log. Added independent
+general_vector_history Owner/component,consistent Gauss and adaptive material
+integration,bounded compile/API/dynamic/assessment/evidence tools. Original
+models,Golden,SQLite and earlier raw/binaries remain preserved;no remote push.
+
+Actual results (research parameters,NO physical measurements):
+
+|Scope|Result|
+|---|---|
+|Exact moving history2910states,query/commit/death/recontact|PASS|
+|Moving-normal covariance/chart seed|PASS,2.1272e-16|
+|SOFA API force/dForce/matrix and smooth curved sphere FD|PASS,FD1.18994e-13|
+|Sphere/Hermite total internal wrench|PASS,8.61292e-22|
+|Short20/40/80step moving free sphere contact process|PASS|
+|Adaptive material integration.02/.01/.005mm,phase loss|PASS1%|
+|Short-contact temporal phase plastic loss|FAIL,.851919%>.1%|
+|No-Solver prescribed temporal phase loss|FAIL,.851935%>.1%|
+|Scalar event-capacity analytical work|PASS,relative<6.46e-15|
+|General3D event-aware temporal law/tangent|NOT RUN|
+|Qualified adaptive STATE compression/full3finger mesh|NOT RUN|
+|Full energy/12wrenches/shapes/grasp Optuna|BLOCKED/NOT RUN|
+
+The scalar work comparison supports an endpoint-capacity temporal-error
+hypothesis;it does not prove the entire sphere defect has that one cause.
+Force queries still use the original finite-step Birth/return mechanics.
+Zero-motion repeated projection is replaced by an EXACT identity only under
+unchanged local material configuration and unchanged physics,not a heat cutoff.
+
+Preserved failed attempts include compile wiring/fixture errors,cell-relative
+front refinement,roundoff radial-torque error estimation,componentwise nearzero
+force error scales and postcommit repeated rounded projection. Error-estimator
+changes do not add a compensating physical force/torque or relax physical Gates.
+Adaptive quadrature is an estimator,not a proof excluding unsampled fronts.
+The exact owner is limited128operators and cannot yet replace full-duration
+gripper history. Thus this is substantive partial implementation,not completion
+of the requested final gripper/optimization objective. See latest NEXT.
+
 ## Subsequent general-capacity work and honest stopping scope
 
 After fixed-patch qualification,implemented SphereHistoryChart for actual

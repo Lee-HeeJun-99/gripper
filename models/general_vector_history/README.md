@@ -42,3 +42,16 @@ $PY tools/curve_general_dynamic.py --tag UNIQUE --build build/vector_history_own
 
 Default per-child4GiB,compile/API180s,dynamics480s via bounded launcher.
 No system SDK overwrite,remote push or automatic restart is performed.
+
+`TemporalYield.h` is a further INDEPENDENT prerequisite:strict inside-to-outside
+first yield of an affine vector trial with affine capacity in a fixed tangent
+plane. Its quadratic root and IFT derivatives are tested. Already-yielding,
+no-event and ill-conditioned branches are explicitly rejected. It is NOT yet
+the changing-normal temporal contact law,and is not wired into SOFA forces.
+`test_general_capacity_work.cpp` separately verifies scalar event work against
+an analytical reference;do not apply that scalar trapezoid formula to3D slip.
+
+Current contact-observable integration contrast PASS does not override temporal
+phase-loss FAIL. The prescribed no-Solver fixture reproduces the temporal defect.
+History initialization matters:the first failed prescribed fixture omitted the
+initial contact-state transaction that SOFA prepare() actually performs.

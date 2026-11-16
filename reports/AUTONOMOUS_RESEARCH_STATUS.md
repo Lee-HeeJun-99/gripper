@@ -1,5 +1,44 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Newest actual moving3D owner/adapter checkpoint — NOT final completion
+
+Subsequent work also implemented TemporalYield fixed-plane vector event+IFT
+(256states),six-test mathematical regression,and a fresh clean06SDK/API/wrench
+build. This is a prerequisite,NOT yet a new changing-normal temporal return law.
+No whole3finger simulation/grasp optimum is claimed. No host resource exhaustion
+has been evidenced by these bounded experiments;the larger objective remains
+unfinished. Full-duration exact replay is algorithmically capped,not a reason
+to remove that cap or declare the project complete.
+
+IMPLEMENTED:independent exact-function GeneralVectorCurvedContact,with immutable
+material geometry,original Birth/circular return,once-commit tokens and optional
+SphereHistoryChart seed. This is128operator bounded replay,NOT a qualified
+general adaptive STATE fitter. Adaptive integration is a separate implemented
+feature;do not conflate it with adaptive history compression.
+
+PASS in limited scope:2910material states versus explicit point prefix;normal
+frame covariance2.1272e-16;actual matching-SDK API/FD;moving sphere global
+internal wrench8.61292e-22 and force FD1.18994e-13. Actual free sphere/Hermite
+20/40/80step dynamics completed. Adaptive.02/.01/.005mm integration contrasts
+PASS1%including aligned phase plastic loss(max~9.41e-9relative). New model's
+exact unchanged-configuration identity avoids repeated rounded yield projection;
+no positive physical loss threshold or force/torque correction is applied.
+
+FAIL:adaptive time comparison,maximum phase-loss difference.851919%>unchanged
+.1%. Final accumulated loss alone.0642703%would pass but does NOT override
+phase FAIL. Prescribed identical geometry(no Solver) reproduces.851935%,so
+the main measured error is not eliminated by changing the SOFA Solver.
+Independent variable-capacity scalar benchmark confirms endpoint-capacity loss
+is first order(.10899/.054957/.027594%error at20/40/80),while event-integrated
+capacity work matches analytical reference to6.46e-15relative. This scalar
+formula is NOT installed as a general3D friction/force/Jacobian replacement.
+
+BLOCKED/NOT RUN:qualified general adaptive history compression,full3finger
+11/21/41mesh/history/time,global energy,12wrenches/shapes and grasp Optuna.
+No existing full-gripper FAIL has been deleted or reclassified. Old vector and
+curved indices still PASS integrity. Current summaries,not old RUNNING entries,
+identify finished children. No automatic restart is installed.
+
 ## Newest prerequisite — general sphere chart PASS in mathematics ONLY
 
 SphereHistoryChart now supplies nonparabolic normal-force capacity,spatially

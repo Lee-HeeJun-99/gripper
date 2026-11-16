@@ -1,5 +1,40 @@
 # Autonomous research log
 
+## Newest measured continuation — adaptive integration isolates temporal defect
+
+Implemented consistent adaptive material quadrature in the NEW actual SOFA
+adapter,then continued beyond its first PASS. Verified05actual integration
+.02/.01/.005mm contrasts PASS including each aligned phase plastic increment;
+max phase relative difference9.40617e-9. Actual smooth sphere Force/Jacobian
+FD1.18994e-13,total internal wrench8.61292e-22. No compensating torque added.
+Initial radial-normal torque estimator and componentwise nearzero force-scale
+failures were isolated and preserved;vector force/moment budgets now remain
+separate from each energy/loss budget. Exact unchanged-configuration identity
+prevents repeated rounded projection at postcommit,no physical loss floor.
+
+Did NOT stop at this integration PASS:actual20/40/80step temporal contrast
+FAILS small-phase loss(max.851919%)despite cumulative.0642703%<.1%. Ran an
+independent prescribed-geometry control without SOFA/Solver. First fixture
+omitted initial active-contact transaction and FAILS;fixed SAME initialization
+as SOFA prepare(),time02COMPLETES and reproduces.851935%phase FAIL. This
+strongly narrows the dominant mechanism to temporal return/capacity treatment,
+not a Solver explanation alone. Physical Gate remains unchanged and FAIL.
+
+Then implemented/tests scalar variable-capacity event-work analytical reference:
+endpoint-capacity errors.108990/.054957/.027594%at20/40/80(first order);
+event-integrated capacity work<6.46e-15relative error. This is not inserted
+as an unjustified3D dissipation formula. Continued with TemporalYield.h:
+256vector fixed-plane affine first-yield roots and IFT derivatives,root
+4.24e-22andrelative FD4.01e-9PASS. Fixed-plane tangent projection is included
+in AD;already-yielding/no-event/ill-conditioned branches are explicit. Changing
+normal/full vector temporal integration is still unfinished,not certified.
+
+Fresh bounded clean build+owner+actual SOFA API+wrench PASS:
+results/vector_history_owner_20261116_verified06. Independent latest-six-test
+regression is results/vector_history_general_suite_20261116_current02. No prior
+long Hermite/11/21/41campaign rerun or grasp Optuna was launched. All outcomes
+are research assumptions/math or actual SOFA,not material measurements.
+
 ## 2026-11-16 — actual general moving-history continuation (not completion)
 
 Same branch resumed e151c278;clean tree confirmed. Old vector v1 integrity

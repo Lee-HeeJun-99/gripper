@@ -10,6 +10,24 @@ source = source[:a] + '''
   return owners.empty()?regrip_history::History{}:owners.at(edge).at(s);
  }
 ''' + source[b:]
+# Re-querying an already committed material configuration is the identity
+# transition. Do not call a second plastic projection on the rounded yield state.
+# This is exact equality under FROZEN component parameters,not a heat cutoff.
+a=source.index(' regrip_birthlaw::ContactResult commitValue(')
+b=source.index(' regrip_birthlaw::ContactResult queryValue(',a)
+source=source[:a]+'''
+ regrip_birthlaw::ContactResult commitValue(const VecCoord&x,unsigned e,double s)const{
+  auto p=point(x,e,s),o=pose(x[objectIndex.getValue()]);auto h=old(e,s);
+  auto r=regrip_birthlaw::value(p,o,h,beforeLocal(e,s),shape.getValue(),radius.getValue(),halfHeight.getValue(),pointRadius.getValue(),lineStiffness.getValue(),tangentLineStiffness.getValue(),mu.getValue());
+  auto local=rotate(Q{-o.q[0],-o.q[1],-o.q[2],o.q[3]},sub(p.p,o.p));
+  if(h.active&&local==h.local){
+   r.next=h;r.plasticDissipation=0;r.elasticEnergy=.5*tangentLineStiffness.getValue()*dot(h.elastic,h.elastic);
+   double gap=pointRadius.getValue()-regrip_closure::sdf(local,shape.getValue(),radius.getValue(),halfHeight.getValue());
+   r.wrench.energy=.5*lineStiffness.getValue()*gap*gap+r.elasticEnergy;
+  }
+  return r;
+ }
+''' + source[b:]
 # Freeze endpoint geometry by VALUE, never capture mutable field/x references.
 needle = '  committedPlastic+=increment;released+=detach;previous=x;cachedEpoch=~0u;'
 assert source.count(needle) == 1

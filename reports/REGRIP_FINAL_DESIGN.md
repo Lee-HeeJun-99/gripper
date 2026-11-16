@@ -1,5 +1,14 @@
 # 최종 설계 판정 — 선정 보류(EXPERIMENTAL)
 
+## Current qualification update — final design still deferred
+
+Actual SOFA film Newton defects were corrected and coupon endpoint balance
+recovered. Full dynamic convergence, coupled Film+Rails force transfer, wire
+wrapping and free-object tests are not qualified. Therefore the provisional
+common-wire/cartridge candidate remains a fabrication candidate, not a proven
+winning gripper. Neither new solver implementation nor endpoint force balance
+changes unknown actuator/material/rule constraints or proves a five-day build.
+
 ## 5일 제작용 잠정 기본 후보 — 성능 최종 선정 아님
 
 공통와이어 equalizer+교체 Skin/edge backing카트리지+탄성복원으로 기능을

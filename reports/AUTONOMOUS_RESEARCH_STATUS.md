@@ -1,5 +1,31 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Newest completed experiment status
+
+Hard-boundary campaign25 and mapped reference26 are complete, not RUNNING.
+Hard mapped short FEM/API/mass consistency PASS; full transient convergence FAIL
+despite zero Newton failures. Hard versus penalty waveform differences are far
+smaller than time-refinement errors; root penalty is not supported as the main
+remaining explanation. Phase27 localizes the largest discrepancy after contact.
+No long physics process or automatic restart is claimed at this checkpoint.
+Film+Rails/tendon, friction-time qualification, full energy,12-wrench grasp and
+grasp Optuna remain unfinished. No OS/session hard-timeout was observed here;
+individual runs stayed within480s. Further work is not declared completed.
+
+## Latest verified development checkpoint — nonlinear defects corrected, final goal unfinished
+
+Local feature commit bceda3a records Newton-stage tracing, exact cache keys,
+trial-state tangent and independent BDF line-search correction. Subsequent
+BDF2 and mapped-boundary work is identified by exclusive source snapshots.
+PASS limited: tiny-coordinate API regression; distinct main/trial matrix test;
+passive tracing purity; unloaded/no-contact SOFA; 11/21/41 final force balance;
+short BDF2 versus independent FEM (relative differences below 2.89e-10).
+FAIL: full transient tip/U/contact-area/normal-force convergence; nonadjacent
+11→41 energy 1.1486% and area 1.3360%; original friction temporal failures.
+Mapped hard-clamp testing is a separate boundary model, not a penalty-model
+PASS substitution. Full film/rail/tendon grasp, energy and Optuna stay blocked.
+See FILM_SHELL_PHYSICS.md and new raw campaigns; prior entries are historical.
+
 ## Latest film implementation checkpoint — final goal NOT complete
 
 Source commits38f3966(film mechanics/contact) andb86e305(equal-volume/competition).

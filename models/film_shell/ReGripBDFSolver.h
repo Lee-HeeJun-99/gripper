@@ -66,6 +66,7 @@ public:
         core::MultiVecDerivId vResult) final;
 
     Data<std::size_t> d_order;
+    Data<SReal> d_theta;
 
     Data<SReal> d_rayleighStiffness;
     Data<SReal> d_rayleighMass;
@@ -94,7 +95,14 @@ protected:
     sofa::type::vector<SReal> m_b_coef;
 
     // recompute coefficients a and b
-    void recomputeCoefficients(std::size_t order, SReal) { if(order!=1) throw std::invalid_argument("ReGripBDFSolver supports BDF1 only"); m_a_coef.resize(2);m_b_coef.resize(2);m_a_coef[0]=-1;m_a_coef[1]=1;m_b_coef[0]=0;m_b_coef[1]=1; }
+    void recomputeCoefficients(std::size_t order, SReal dt) {
+        const auto theta=d_theta.getValue();
+        if((order!=1&&order!=2)||(theta!=1&&theta!=.5)||(order==2&&theta!=1))throw std::invalid_argument("BDF1/trapezoidal or fixed-step BDF2 only");
+        if(m_currentSolve&&d_order.getValue()==2&&dt!=m_lastDt)throw std::invalid_argument("BDF2 requires unchanged dt");m_lastDt=dt;
+        m_a_coef.resize(order+1);m_b_coef.resize(order+1);
+        if(order==1){m_a_coef[0]=-1;m_a_coef[1]=1;m_b_coef[0]=1-theta;m_b_coef[1]=theta;}
+        else {m_a_coef[0]=.5;m_a_coef[1]=-2;m_a_coef[2]=1.5;m_b_coef[0]=m_b_coef[1]=0;m_b_coef[2]=1;}
+    }
 
 private:
 
@@ -105,6 +113,9 @@ private:
      * - The solution of the linear system (dv)
      */
     sofa::core::MultiVecDerivId m_r1, m_r2, m_rhs, m_dv;
+    sofa::core::MultiVecCoordId m_previousPosition;
+    sofa::core::MultiVecDerivId m_previousVelocity;
+    SReal m_lastDt=0;
 
     // depending on the order of the method, position must be stored from previous time steps
     sofa::type::vector<core::MultiVecCoordId> m_position;

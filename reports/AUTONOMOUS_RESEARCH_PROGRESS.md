@@ -1,5 +1,36 @@
 # Autonomous research log
 
+## Follow-up after the first corrections — alternative hypothesis tested
+
+Did not stop after fixing Newton. Implemented and actually tested hard slope
+mapping with conservative force/mass pullback, fixed mapped residual defects,
+then completed200/400/800-step dynamics. All Newton solves reported convergence,
+but the complete time Gate still FAILS. Independent mapped FEM agreement PASS;
+unmapped regression unchanged below8.7e-19mm. Hard/penalty waveform comparison
+argues against the large root penalty as dominant cause. Phase-resolved actual
+data instead show the largest discrepancy after first sampled contact1.41s.
+The common frictionless film problem and friction-history temporal problem are
+separate. Further brute-force refinement would exceed default per-child budget
+at1600steps with this mapped implementation; profiling/short diagnostic next.
+
+## 2026-11-16 — actual Newton-stage investigation and continued implementation
+
+First compared public SOFA residual/update code with actual force-stage
+RHS/solution/state data. The first RHS and linear solve were consistent, so a
+blanket stiffness rewrite was rejected. Found tolerant Vec equality in a
+force cache, old-position tangent assembly, and unscaled position increments
+during BDF line search. Added targeted regressions and independent BDF solver.
+Actual 20 s 11/21/41 scenes now remain finite with final relative force residuals
+3.62e-9/4.26e-7/1.76e-6. Did not stop at endpoint success: full trajectory
+assessment exposed large transient errors. Tested trapezoidal and BDF2;
+neither passed all trajectory metrics. BDF2 implementation itself matches
+independent FEM below 2.89e-10. Tested hard slope mapping as a separate boundary;
+its first SOFA failure isolated mapped-mass pruning and duplicated mapped
+force accumulation. Corrected independent residual products; short mapped
+Newton warnings decreased four→zero. Next hypothesis is stiff-boundary versus
+contact-event temporal error, not arbitrary damping/material tuning.
+Existing images/Golden/raw/SDK preserved. No physical grasp advantage claimed.
+
 ## New actual work — film energy/contact,source guards,and failed alternatives
 
 Implementedstructuredmembrane+curvature/twistROM,AD2,actualSOFAForceField,

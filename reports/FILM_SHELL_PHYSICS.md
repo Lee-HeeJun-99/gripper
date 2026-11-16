@@ -1,5 +1,92 @@
 # Film mechanics/contact implementation — actual results,unfinished
 
+## Completed hard-boundary follow-up
+
+Campaign hard_transient25 completed 200/400/800 steps (dt .01/.005/.0025)
+with zero Newton failures at absolute momentum tolerance1e-15; full time FAIL.
+Hard-versus-penalty fine-waveform differences are only .00110% tip, .01254% U,
+.03339% area and .03509% normal force. Newton tolerance also changed, so this
+is not a strict one-variable comparison, but does not support penalty-root
+dominance. Short mapped Reference26 PASS: tip/U/speed relative differences
+8.12e-7/2.04e-7/1.92e-6; unmapped regression changes tip below8.7e-19mm.
+
+Phase27: all meshes first record contact near1.41s (not an exact event-time
+certificate). In 1–1.3s, before contact, coarse→fine tip/U differences are
+.0180%/.0487%. In1.3–1.5s they rise to .3886%/5.2413%, with area12.3827%
+and force12.8766%; in1.5–2s force difference is31.2203%. The0–1s energy
+difference still fails0.1%, so even the entire pre-contact phase is not approved.
+This frictionless coupon error is independent of changing-normal friction law.
+
+Measured hard-boundary runtime is about71/137/275s for200/400/800 steps.
+A naive1600-step repeat is projected above480s: profile/optimize or shorten a
+hypothesis-isolating interval before further refinement. No exception is claimed.
+All these data remain research-assumption/actual-SOFA or independent-FEM data,
+not measured film/actuator properties or free-object grasp.
+
+## 2026-11-16 nonlinear continuation — new evidence, not completed grasp
+
+Three independently identified defects were corrected without changing material
+parameters or loosening physical gates: (1) SOFA Vec equality has a 1e-6
+coordinate tolerance and was incorrectly used as a force/Hessian cache key;
+the key now compares scalars exactly. (2) Matrix assembly used main positions
+instead of Newton trial positions; addDForce now reads MechanicalParams::readX,
+and assembly uses the force-stage position. (3) BDF line-search velocity was
+scaled by alpha but position was not. A separate LGPL-attributed
+ReGripBDFSolver corrects this; installed SOFA files are untouched.
+
+Actual force-stage CSVs record q/v, film/fixture/contact forces, constrained
+coordinates, preceding RHS/solution and matrix/linear-solve checks. They are
+not AnimateEnd-only observations. A force-call number is not falsely labelled
+a Newton iteration. Incoming aggregate external/damping force is null where
+not directly observed. Initial Newton RHS relative errors are about 1e-12 or
+less; first-correction kinematics are roundoff. During original BDF line search
+the kinematic defect reached 0.002992257 mm; corrected trials are about 1e-18 mm.
+Free matrix relative error is about 1e-16 and linear residual about 1e-21.
+Trace on/off CSVs are identical; unloaded and no-contact short scenes PASS.
+
+Actual 20 s penalty-film runs, dt=.1, same E250/nu0/W24/t.0610194155,
+L100/mass1e-6/kn1e-5/plane.1/fixture100/ramp10:
+
+| nx | tip z mm | U (F mm) | A0 mm2 | relative final force residual |
+|---|---:|---:|---:|---:|
+|11|.10372035335|3.085087802e-9|53.15746983|3.61665e-9|
+|21|.10375953998|3.109988155e-9|52.66022353|4.26203e-7|
+|41|.10377613809|3.120935252e-9|52.45666213|1.75923e-6|
+
+These endpoint force checks PASS, not complete dynamic qualification.
+Adjacent mesh energy/area comparisons pass 1%, but 11→41 energy is 1.1486%
+and area 1.3360%: FAIL retained. At 21 nodes dt=.2/.1/.05 final-tip agreement
+is excellent, yet whole trajectories FAIL; the coarsest run has two Newton
+failures. At dt=.01/.005/.0025 over contact-entry 0–2 s, BDF1, trapezoidal,
+and BDF2 all still fail full trajectory convergence. All four tip/U/area/normal
+force histories are evaluated, not just the endpoint. Partial RUNNING outputs
+are rejected by the assessor.
+
+BDF2 uses owned n/n-1 buffers, fixed-dt coefficients, BDF1 startup and explicit
+end-time load sampling. Short actual SOFA versus independent FEM agrees within
+2.89e-10 relative for tip/U/speed. This is implementation agreement, not time
+convergence. Trapezoidal and BDF2 are distinct experiments, not relabelled BDF1.
+
+An independent tangent spectrum at a recorded state gives transverse maximum
+omega=103491.8647 rad/s (omega*dt=258.73 at .0025 s). This motivates separating
+the stiff penalty root from a hard root, but proves neither modal participation
+nor the cause of every transient error. FilmSlopeMapping imposes the separate
+hard boundary u1z=u2z/4 and has virtual-work/J/mapped-mass unit tests. The first
+mapped scene exposed additional residual issues: addMdx prunes mappings, and
+adding MBK products to an already accumulated force can duplicate mapped
+forces. The independent solver now uses cleared product buffers and mapped
+mass pullback; short mapped Newton failures decreased from four to zero.
+The 2 s hard-boundary convergence campaign is a distinct experiment and is
+not used to erase failures of the original finite-penalty model.
+
+Raw namespace: results/autonomous_film_20261116_{stage*,exact*,bdf*,regrip*,
+trapezoid15,hard*,spectrum23}. Actual images:
+designs/visualizations/film_newton_20261116_v1/.
+These are homogeneous coupon states, not Film+Rails/wire or free-object grasp.
+Workstream B's general changing-normal friction, whole coupled energy, actual
+Film+Rails/tendon, 12-wrench grasp and Optuna remain FAIL/BLOCKED/NOT RUN.
+The historical sections below are preserved, not current RUNNING claims.
+
 ## Implemented and independently checked
 
 Independent `models/film_shell`,not changed Beam or Golden. Flat-reference

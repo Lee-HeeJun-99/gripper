@@ -1,5 +1,17 @@
 # 구조 비교 — 정량 기하/해석 선별, 실제 파지 비교 미완료
 
+## Updated physical evidence — no baseline/grasp superiority certification
+
+Nonlinear coupon development now fixes tolerant force caching, trial tangent
+selection and BDF line-search kinematics. Actual 11/21/41 final force residuals
+pass, but 11→41 energy/area and full transient convergence fail. This does not
+validate equal-volume Film+Rails, its attachments, tendon actuation or grasp.
+Homogeneous rectangular film coupon results cannot replace the three-finger
+baseline or demonstrate selective-jamming advantage. All previous volume,
+radius and concept-versus-simulation distinctions remain unchanged.
+Actual post-fix coupon states/curves are in
+designs/visualizations/film_newton_20261116_v1/.
+
 ## 추가 실제 결과 — 동일 체적 쿠폰,그리퍼 비교와 구분
 
 L100mm,E250,ν0,core146.4466mm³/핑거의 직사각 단일필름 두 개를 실제

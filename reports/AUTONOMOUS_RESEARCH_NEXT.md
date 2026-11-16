@@ -1,5 +1,59 @@
 # Next research checkpoint
 
+## Completed25/26/27 — first next research task is now contact-phase diagnosis
+
+Campaign25 finished; do NOT rerun it. Reference26 and phase27 are also complete.
+The hard-root alternative did not fix time convergence. First next task:
+profile mapped assembly/mass/Newton cost and isolate contact-phase dynamics
+against a small event-aware/reference problem before attempting1600+ steps.
+Use phase27/summary.json; preserve all old time/mesh failures. The command below
+is retained for reproducibility only, never as blind repetition.
+No background task or automatic restart remains running.
+
+## Latest continuation checkpoint — do not restart completed campaigns
+
+Completed source investigation: exact cache key, force-stage tangent,
+line-search position scaling, owned BDF2 history and mapped MBK residuals.
+Do not repeat the old matrix-getter failure or diagnose a blanket wrong H.
+Do not use final-tip agreement as full time convergence.
+
+1. Inspect results/autonomous_film_20261116_hard_transient25/summary.json and
+   each process/result.json before any execution. If no summary exists, check
+   the actual process first; partial trajectories are NOT convergence evidence.
+   The hard boundary is distinct from original fixture100 and cannot erase its
+   FAIL. Hard mapped short-reference26 and unmapped regression already PASS.
+2. For the remaining transient error, distinguish stiff boundary, true contact
+   event/fast modes, and time/measurement error. The coupon is frictionless:
+   its temporal failure is not evidence against the friction-history model.
+   Compare hard/penalty waveforms and event-aligned same-time samples, then
+   design a minimal prescribed-contact or frozen-tangent experiment.
+3. Only profile justified further refinement. The existing hard 200/400-step
+   runs cost about71/137 seconds, so 800 is expected about275 seconds. A naive
+   1600-step same implementation is predicted over480 seconds and must NOT
+   be launched unchanged under the default limit. First profile mapped mass
+   assembly/redundant work, or use a shorter hypothesis-separating interval.
+4. Preserve 11→41 energy1.1486%/area1.3360% FAIL; hard-boundary mesh is a new
+   qualification, not an original-model PASS. Verify mass and BC identity.
+5. General changing-normal friction still requires work beyond the special
+   great-circle reference. Then film/rail attachments, tendon, single-finger
+   wrapping, free-object12-wrench tests and fair baseline comparison.
+   Energy/grasp Optuna remain BLOCKED; do not run unqualified optimization.
+
+Reproduction, using a NEW unique tag (commands never overwrite old raw):
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_nonlinear_assess.py results/autonomous_film_20261116_exact_time13
+$PY tools/film_nonlinear_assess.py results/autonomous_film_20261116_bdf2_transient18
+$PY tools/film_slope_run.py --tag RESUME_UNIQUE --steps 200 --duration 2 --time --newton-tolerance 1e-15
+```
+
+The last command is only appropriate after checking campaign25, not a request
+to blindly replay it. Build/raw identities live in each campaign's
+identity.json/compiled.json and source snapshots. No automatic restart or
+post-session background continuation is implemented. Final goal is incomplete.
+Historical tasks below are superseded by this checkpoint.
+
 ## First unfinished work after film mechanics — actual nonlinear RHS audit
 
 DO NOT reimplement film_shell or rerun failedBDFblindly. ReadFILM_SHELL_PHYSICS.md.

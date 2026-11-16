@@ -1,5 +1,15 @@
 # 경진대회 기술 근거 — 연구 결과와 제작 목표 구분
 
+## New simulation evidence and application boundary
+
+Actual film coupon simulation now has diagnosed Newton-stage fixes and limited
+endpoint force-balance checks. Whole transient convergence and complete grasp
+are still unqualified. These are engineering development results, not measured
+grasp capacity, damage avoidance, success rate or superiority over baseline.
+Keep all quantitative gripper performance statements as targets. Actuator
+specifications, measured material data, team composition and organizer rules
+remain unconfirmed; no new hardware specification is inferred.
+
 2026-11-16. 지원서 답변은 별도 `REGRIP_COMPETITION_APPLICATION_DRAFT.md`.
 실제 주최 측 규정/지급품 명세/팀원 정보가 제공되지 않았다. 아래는 사용자
 제시 조건에 근거한 제작 후보와 검증 계획이며 본선 성능 달성 보고가 아니다.

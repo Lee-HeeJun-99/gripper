@@ -1,5 +1,33 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Final checkpoint of the executed continuation, not final ReGrip success
+
+Completed the additional hard-boundary800-step test and independent mapped
+reference rather than ending at the first solver fix. Newton/API/mapped-mass
+implementation checks PASS; complete time convergence still FAILS. Root penalty
+as dominant cause is not supported by the hard-versus-penalty comparison.
+Phase-resolved metrics and cost estimates are preserved in campaigns25–27.
+No final design, full grasp, complete energy or Optuna qualification is claimed.
+No system-enforced global session limit or OS resource failure was observed;
+this checkpoint must not be described as successful project completion.
+The finite response's handoff preserves actual completed runs and next analysis;
+it does not promise automatic continuation after the response.
+
+## Latest continuation results — this is not a completed project
+
+Actual implementation resumed rather than stopping at a plan. Corrected
+three nonlinear-stage defects and additional mapped-residual handling in an
+independent SOFA solver, with unchanged physical thresholds. Force-stage traces,
+query-purity regressions, actual 11/21/41 runs and independent BDF2 comparison
+are available. Final equilibrium is recovered in the reported coupon cases;
+full transient convergence and nonadjacent mesh energy/area still FAIL.
+Trapezoidal/BDF2 failed alternatives are retained, not silently promoted.
+The new exact slope mapping is separately labelled because it changes the
+boundary formulation. No Film+Rails wire/grasp, complete energy, friction-time
+qualification or final Optuna success is claimed. Current data and reproduction
+commands are in FILM_SHELL_PHYSICS.md and AUTONOMOUS_RESEARCH_NEXT.md.
+Older text below describes historical checkpoints, not live processes.
+
 ## Latest ongoing checkpoint — mechanics implemented,grasp unfinished
 
 New independent film has actual membrane/bending/twist deformation and finite

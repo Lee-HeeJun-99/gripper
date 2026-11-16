@@ -10,7 +10,9 @@ This is not a full-grasp qualification. Preserve prior binaries/results.
    addDForce reads MechanicalParams::readX. Energy queries do not select a new
    linearization state. The API test deliberately separates main/trial states.
 3. ReGripBDFSolver is an independent, LGPL-attributed adaptation of the matching
-   SOFA BaseLinearMultiStepMethod, restricted to BDF1. The installed SDK remains
+   SOFA BaseLinearMultiStepMethod. BDF1 is the default; separately labelled
+   trapezoidal and fixed-step BDF2 experiments are supported. BDF2 owns distinct
+   history buffers and uses BDF1 startup. The installed SDK remains
    unchanged. Only the line-search position increment is multiplied by the same
    alpha as the velocity increment. The full kinematic residual is eliminated:
    dx = alpha*dt*dv - r1. Public SOFA Newton and linear-system APIs are reused.
@@ -25,6 +27,16 @@ prior system is explicitly not labelled the current force query's system.
 The stage matrix check assumes the benchmark's total mass 1e-6, Rayleigh mass
 coefficient 2, stiffness damping 0 and BDF1/Euler dt scaling; it is not generic.
 Unknown incoming aggregate force is null, not a fabricated external/damping sum.
+
+Mapped scenes require additional care: the SDK addMdx visitor prunes mappings;
+the independent solver instead propagates the velocity combination and forms a
+cleared, accumulated MBK mass product. Damping and kinematic corrections use
+separate cleared product buffers, preventing a second pullback of pre-existing
+child forces. Short exact-slope mapped dynamics match independent reduced-mass
+FEM within 1.93e-6 relative; the unmapped result changes below 9e-19 mm.
+FilmSlopeMapping is an explicit different hard boundary, not a replacement of
+failed finite-penalty evidence. It maps force and mass by virtual work, and the
+redundant parent row1 z coordinate must be fixed in scene XML.
 
 Pre-fix BDF line-search trials violated q-q_old=dt*v by 0.002992257 mm. With
 independent corrected update the defect is at floating-point roundoff. After

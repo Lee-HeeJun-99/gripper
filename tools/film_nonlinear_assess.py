@@ -20,7 +20,13 @@ def compare(coarse,fine,threshold):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('campaign',type=Path);a=p.parse_args()
+    summary_path=a.campaign/'summary.json'
+    if not summary_path.exists():raise SystemExit('NOT READY: campaign has no final summary; partial trajectories cannot be assessed')
+    summary=json.loads(summary_path.read_text())
     cases={i:read(a.campaign/str(i)) for i in (1,2,4) if (a.campaign/str(i)/'journal.csv').exists()}
+    for i,data in cases.items():
+        expected=summary.get('rows',{}).get(str(i),{}).get('steps')
+        if expected is None or len(data['time'])!=expected:raise SystemExit('FAIL: incomplete/failed process cannot enter convergence comparison')
     pairs={f'{i}:{j}':compare(cases[i],cases[j],.001) for i,j in ((1,2),(1,4),(2,4)) if i in cases and j in cases}
     warnings={str(i):(a.campaign/str(i)/'process/stdout.log').read_text().count('Newton-Raphson method failed to converge') for i in cases}
     print(json.dumps(dict(source='Actual SOFA journals',time_threshold=.001,pairs=pairs,newton_failed_steps=warnings,

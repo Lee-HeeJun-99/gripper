@@ -27,6 +27,7 @@ namespace sofa::component::odesolver::backward
 
 ReGripBDFSolver::ReGripBDFSolver()
     : d_order(initData(&d_order, static_cast<std::size_t>(1), "order", "Order of the numerical method"))
+    , d_theta(initData(&d_theta, 1_sreal, "theta", "1=BDF1;0.5=trapezoidal;distinct integration experiments"))
     , d_rayleighStiffness(initData(&d_rayleighStiffness, 0_sreal, "rayleighStiffness",
                                    "Rayleigh damping coefficient related to stiffness, > 0"))
     , d_rayleighMass(initData(&d_rayleighMass, 0_sreal, "rayleighMass",
@@ -101,10 +102,13 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
             mop.computeForce(force[order], clearForcesBeforeComputingThem, applyBottomUpMappings);
 
             //Rayleigh damping
-            mop.addMBKv(force[order],
+            core::behavior::MultiVecDeriv damping(&vop);
+            mop.addMBKv(damping,
                 core::MatricesFactors::M(-rayleighMass),
                 core::MatricesFactors::B(0),
-                core::MatricesFactors::K(rayleighStiffness));
+                core::MatricesFactors::K(rayleighStiffness),true,true);
+            core::behavior::MultiVecDeriv currentForce(&vop,force[order]);
+            currentForce.peq(damping);
 
             mop.projectResponse(force[order]);
         }
@@ -138,7 +142,10 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
                 velocitySum.peq(velocity[i], a_coef[i]);
             }
         }
-        mop.addMdx(r2, velocitySum, core::MatricesFactors::M(1).get());
+        // addMdx prunes mechanical mappings in this SDK. Propagate and use a
+        // cleared MBK product so mapped mass contributes J^T M J exactly once.
+        mop.propagateDxAndResetDf(velocitySum,r2);
+        mop.addMBKdx(r2,core::MatricesFactors::M(1),core::MatricesFactors::B(0),core::MatricesFactors::K(0),false,true);
 
         for (unsigned int i = 0; i < order + 1; ++i)
         {
@@ -173,8 +180,11 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
         {
             const auto vBackup = mop.mparams.v();
             mop.mparams.setV(r1);
-            mop.addMBKv(rhs, core::MatricesFactors::M(0), core::MatricesFactors::B(0),
-                core::MatricesFactors::K(-dt * b_coef[order] / a_coef[order]));
+            mop.propagateDx(r1);
+            core::behavior::MultiVecDeriv correction(&vop);
+            mop.addMBKv(correction, core::MatricesFactors::M(0), core::MatricesFactors::B(0),
+                core::MatricesFactors::K(-dt * b_coef[order] / a_coef[order]),true,true);
+            rhsVec.peq(correction);
             mop.mparams.setV(vBackup);
         }
 
@@ -292,19 +302,19 @@ void ReGripBDFSolver::solve(
     m_velocity.resize(order + 1);
     m_force.resize(order + 1);
 
-    m_position[order-1] = xResult;
-    m_velocity[order-1] = vResult;
-    m_force[order-1] = sofa::core::vec_id::write_access::force;
-
     for (unsigned int i = 0; i < order + 1; ++i)
     {
-        if (i != order - 1)
-        {
             realloc(vop, m_position[i], "x+" + std::to_string(i));
             realloc(vop, m_velocity[i], "v+" + std::to_string(i));
             realloc(vop, m_force[i], "f+" + std::to_string(i));
-        }
     }
+    realloc(vop,m_previousPosition,"previous_position");
+    realloc(vop,m_previousVelocity,"previous_velocity");
+    // Keep owned history buffers: never alias both n and n-1 to main state.
+    vop.v_eq(m_position[order-1],xResult);
+    vop.v_eq(m_velocity[order-1],vResult);
+    vop.v_eq(m_force[order-1],sofa::core::vec_id::read_access::force);
+    if(order==2){vop.v_eq(m_position[0],m_previousPosition);vop.v_eq(m_velocity[0],m_previousVelocity);}
 
     realloc(vop, m_r1, "r1");
     realloc(vop, m_r2, "r2");
@@ -317,6 +327,11 @@ void ReGripBDFSolver::solve(
 
     //prediction using the previous velocity
     vop.v_peq(m_position[order], m_velocity[order], dt);
+    if(order==2){
+        vop.v_eq(m_position[2],m_position[1],2/1.5);
+        vop.v_peq(m_position[2],m_position[0],-.5/1.5);
+        vop.v_peq(m_position[2],m_velocity[2],dt/1.5);
+    }
 
     mop.propagateX(m_position[order]);
     mop.propagateV(m_velocity[order]);
@@ -340,13 +355,12 @@ void ReGripBDFSolver::solve(
 
     l_newtonSolver->solve(residualFunction);
 
-    //update state
-    for (unsigned int i = 0; i < order; ++i)
-    {
-        vop.v_eq(m_velocity[i], m_velocity[i+1]);
-        vop.v_eq(m_position[i], m_position[i+1]);
-        vop.v_eq(m_force[i], m_force[i+1]);
-    }
+    // Save n before publishing n+1. History remains distinct from main state.
+    vop.v_eq(m_previousPosition,m_position[order-1]);
+    vop.v_eq(m_previousVelocity,m_velocity[order-1]);
+    vop.v_eq(xResult,m_position[order]);
+    vop.v_eq(vResult,m_velocity[order]);
+    vop.v_eq(sofa::core::vec_id::write_access::force,m_force[order]);
 
     ++m_currentSolve;
 }
@@ -354,6 +368,5 @@ void ReGripBDFSolver::solve(
 }
 
 namespace sofa::component::odesolver::backward {
-void registerReGripBDFSolver(sofa::core::ObjectFactory* factory) { factory->registerObjects(sofa::core::ObjectRegistrationData("Independent BDF1 with kinematically consistent line-search position update; adapted from SOFA LGPL source").add<ReGripBDFSolver>()); }
+void registerReGripBDFSolver(sofa::core::ObjectFactory* factory) { factory->registerObjects(sofa::core::ObjectRegistrationData("Independent BDF1/fixed-step BDF2 or trapezoidal with consistent line search and mapped residuals; adapted from SOFA LGPL source").add<ReGripBDFSolver>()); }
 }
-

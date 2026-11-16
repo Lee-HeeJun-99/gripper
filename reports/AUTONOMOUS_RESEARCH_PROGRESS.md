@@ -596,3 +596,35 @@ energy identity residual3.93814e-30;incremental potential derivative error
 not heat or a fitted residual. This model has NO3D normal transport,contact
 birth/death,moving patch,SOFA API or full-grasp certification. Those remain
 NOT RUN;its purpose is a rigorous stateful reference for the next algorithm.
+
+### Completed high-resolution prefix and remaining FAILs
+
+Actual312.5nm/record2008.2s completed781.959s within its recorded900s cap.
+Both requested local grids were applied(528000/624000states).625->312.5nm:
+prefix peak movement.0206302%,rotation.00721867%,normal force/capacity
+~.00000222%,7–8.2s plastic loss.309961% differences PASS1%. BUT2–3s loss is
+0versus4.3650774e-19Fmm,relative100%FAIL1%. Prefix judgment therefore remains
+FAIL,not silently rescued by tiny absolute error or other passing phases.
+Local material refinement jointly changes normal/tangent integration and
+history sites;it is not an independent legacy Gauss-order convergence test.
+
+Actual memory measurements include148000steps in the earlier uniform-site
+new-grid model,and23400steps in each refined prefix. All sampled FDs12;
+refined312.5nm peakRSS163948KiB. Post-unload live allocation/allocator retention
+are distinct. These are bounded measurements,NOT LSan/240k/hours or full-model
+no-leak certification. First memory postprocessor assumed a full grid log;
+actual EventStepClock logs1000-step BEGIN samples. Corrected mapping uses
+the matching BEGIN epoch and actual final contact CSV/iteration marker.
+No physics rerun/raw modification was needed for that analysis error.
+
+The scalar stateful reference now includes3x3potential-gradient/Hessian tests
+and independent256--65536point plastic-slider histories. Loss error decreases
+1.22710%->.0000158273%. Generalized tangent absolute FD error3.15902e-17.
+A NEW regression exposed an actual zero-capacity tangent bug(4instead0);
+pre-fix exit1/source/stdout are preserved. Fixed the exact C=0return operator,
+not by epsilon capacity. Current v4reference passes the old sequence,dense
+reference and zero-capacity regression(0). Whole intervals exactly on yield
+are explicitly flagged nonunique;classicalTangent()rejects them,and loading/
+unloading directional derivatives are tested separately. No3D or SOFA
+integration of this scalar reference is claimed. All previous v1/v2/v3raw and
+failures remain;the deployed3Dcontact component is unchanged by these tests.

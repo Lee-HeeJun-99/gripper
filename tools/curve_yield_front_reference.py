@@ -7,12 +7,12 @@ from closure_validation_suite import logged
 
 
 def main():
-    out=OUT/'yield_front_history_v2';out.mkdir(exist_ok=False)
-    paths=[ROOT/'tests/test_yield_front_history.cpp',ROOT/'models/yield_front_history/ScalarField.h',ROOT/'models/contact_energy/SlipBandReference.h',ROOT/'tests/test_yield_front_dense.cpp',ROOT/'models/integrated/Kernels.h']
+    out=OUT/'yield_front_history_v4';out.mkdir(exist_ok=False)
+    paths=[ROOT/'tests/test_yield_front_history.cpp',ROOT/'models/yield_front_history/ScalarField.h',ROOT/'models/contact_energy/SlipBandReference.h',ROOT/'tests/test_yield_front_dense.cpp',ROOT/'models/integrated/Kernels.h',ROOT/'tests/test_yield_front_zero.cpp']
     write_json(out/'sources.json',{str(p.relative_to(ROOT)):sha(p)for p in paths})
     for p in paths:
         target=out/'sources'/p.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
-    for name,cmd in [('build',['g++','-std=c++17','-O2','-ffp-contract=off','-Wall','-Wextra','-Wpedantic',paths[0],'-o',out/'yield_front.bin']),('unit',[out/'yield_front.bin']),('dense_build',['g++','-std=c++17','-O2','-ffp-contract=off','-Wall','-Wextra','-Wpedantic',paths[3],'-o',out/'dense_reference.bin']),('dense_run',[out/'dense_reference.bin'])]:
+    for name,cmd in [('build',['g++','-std=c++17','-O2','-ffp-contract=off','-Wall','-Wextra','-Wpedantic',paths[0],'-o',out/'yield_front.bin']),('unit',[out/'yield_front.bin']),('dense_build',['g++','-std=c++17','-O2','-ffp-contract=off','-Wall','-Wextra','-Wpedantic',paths[3],'-o',out/'dense_reference.bin']),('dense_run',[out/'dense_reference.bin']),('zero_build',['g++','-std=c++17','-O2',paths[5],'-o',out/'zero_capacity.bin']),('zero_unit',[out/'zero_capacity.bin'])]:
         process=logged(cmd,out/name,180)
         if process['exit_code']:write_json(out/'summary.json',dict(status='FAIL',stage=name,process=process));return
     text=(out/'unit/stdout.log').read_text();markers=[json.loads(line[len('YIELD_FRONT '):])for line in text.splitlines()if line.startswith('YIELD_FRONT ')]

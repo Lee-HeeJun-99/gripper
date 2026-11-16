@@ -52,6 +52,7 @@ def main():
     dest=ROOT/'reports/curved_evidence'/args.version;dest.mkdir(parents=True,exist_ok=False)
     source_paths=git('ls-files','models/curved_contact','models/beam_translation_compensation','models/contact_energy','models/fixed_step_clock','models/event_step_clock','diagnostics/curved_contact','diagnostics/physics_checkpoint','diagnostics/contact_return_energy','diagnostics/transaction_energy','diagnostics/damping_matrix','diagnostics/slip_front','tools/curve_*.py','tests/test_curved*','tests/test_checkpoint_guards.py','tests/test_energy_source_scope.py','tests/test_return*','tests/test_pressure_return_energy.cpp','tests/test_beam_translation_compensation.cpp','tests/test_phase*','tests/test_local_history_guards.py','tests/test_slip_band.cpp','tests/test_contact_work*','tests/test_damping_inference.py','tests/test_event_clock.cpp','tests/test_fixed_clock.cpp','tests/test_contact_rayleigh.cpp').decode().splitlines()
     source_paths+=git('ls-files','models/patch_refined_contact','diagnostics/patch_refined_contact','diagnostics/patch_invariants','tests/test_patch_source_proof.py','tests/test_patch_log_guards.py').decode().splitlines()
+    source_paths+=git('ls-files','models/yield_front_history','tests/test_yield_front_*.cpp').decode().splitlines()
     changed=git('diff','HEAD','--name-only','--',*source_paths).decode().splitlines()
     if changed:raise ValueError('commit source before sealing '+repr(changed))
     commit=git('rev-parse','HEAD').decode().strip()

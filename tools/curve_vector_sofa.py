@@ -17,9 +17,13 @@ def main():
     parser.add_argument('--initial-vy',type=float,default=0.)
     parser.add_argument('--solver',choices=['euler','newmark'],default='euler')
     parser.add_argument('--directed',action='store_true')
+    parser.add_argument('--compression-every',type=int,default=0)
+    parser.add_argument('--snapshot-tolerance',type=float,default=1e-9)
+    parser.add_argument('--normalized',action='store_true')
     args=parser.parse_args()
+    if args.normalized and not args.compression_every:raise ValueError('normalized representation requires explicit compression')
     import math
-    if not args.tag.replace('_','').isalnum() or not 1<=args.steps<=1024 or not 0<args.dt<=.01 or not math.isfinite(args.initial_vy) or abs(args.initial_vy)>.01:
+    if not args.tag.replace('_','').isalnum() or not 1<=args.steps<=1024 or not 0<args.dt<=.01 or not math.isfinite(args.initial_vy) or abs(args.initial_vy)>.01 or not 0<=args.compression_every<=1024 or not 0<args.snapshot_tolerance<=1e-4:
         raise ValueError('fresh simple tag and bounded reference steps1..1024')
     out=ROOT/'results'/('vector_history_sdk_'+args.tag)
     build=ROOT/'build'/('vector_history_sdk_'+args.tag)
@@ -39,6 +43,8 @@ def main():
                  '-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(ROOT/'.runtime/closure_sdk')]),
               ('build',['cmake','--build',build,'-j2']),('api',[build/'test_vector_patch']),
               ('ldd',['ldd',build/'libReGripVectorPatchReference.so'])]
+    if args.compression_every:commands.insert(3,('api_compressed',[build/'test_vector_patch','compressed']))
+    if args.normalized:commands.insert(3,('api_normalized',[build/'test_vector_patch','normalized']))
     for name,cmd in commands:
         stages[name]=logged(cmd,out/name,180)
         if stages[name]['exit_code']:
@@ -67,17 +73,26 @@ def main():
  <MechanicalObject template="Vec3d" position="0 0 0" velocity="0 {args.initial_vy:.17g} 0"/>
  <UniformMass totalMass="0.001"/>
  <ConstantForceField template="Vec3d" indices="0" forces="0.000002 0.000001 0"/>
- <VectorPatchBenchmark halfLength="0.3192" stiffness="0.001" capacity="0.000003" velocityDirectedTangent="{int(args.directed)}" filename="{case/'journal.csv'}"/>
+ <VectorPatchBenchmark halfLength="0.3192" stiffness="0.001" capacity="0.000003" velocityDirectedTangent="{int(args.directed)}" normalizedRepresentation="{int(args.normalized)}" compressionEvery="{args.compression_every}" snapshotTolerance="{args.snapshot_tolerance:.17g}" filename="{case/'journal.csv'}"/>
 </Node>
 '''
     (case/'scene.scn').write_text(scene)
+    required={}
+    import xml.etree.ElementTree as ET
+    for name in ET.fromstring(scene).find('RequiredPlugin').attrib['pluginName'].split():
+        path=(sdk/'lib'/('lib'+name+'.so')).resolve()
+        if not path.is_file()or not path.is_relative_to(sdk.resolve()):raise ValueError('missing/mixed RequiredPlugin '+name)
+        required[name]=dict(path=str(path),sha256=sha(path))
+    write_json(out/'required_runtime.json',required)
     cmd=[sdk/'bin/graph_probe',sdk,case/'scene.scn',str(args.steps),'0',plugin]
     stages['dynamic']=logged(cmd,case/'process',480)
     logs=(case/'process/stdout.log').read_text()+(case/'process/stderr.log').read_text()
     result=dict(status='FAIL',stages=stages,scope='actual SDK fixed-patch benchmark ONLY',
                 grasp='NOT RUN',global_energy='BLOCKED',steps_requested=args.steps,dt=args.dt,initial_vy=args.initial_vy,solver=args.solver,
                 velocity_directed_tangent=args.directed,
-                nonsmooth_tangent='explicit elastic generalized derivative at zero increment/equal positive capacity;not unique classical tangent')
+                compression_every=args.compression_every,snapshot_tolerance=args.snapshot_tolerance,
+                normalized_representation=args.normalized,
+                nonsmooth_tangent=('explicit velocity-sided generalized derivative'if args.directed else'explicit elastic generalized derivative')+' at zero increment/equal positive capacity;not unique classical tangent')
     try:
         if stages['dynamic']['exit_code'] or '[ERROR]' in logs or 'Unused Attribute' in logs or f'{args.steps} iterations done' not in logs:
             raise ValueError('SOFA error/incomplete/unregistered Data')

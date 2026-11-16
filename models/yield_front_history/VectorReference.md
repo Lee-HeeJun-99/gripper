@@ -56,7 +56,9 @@ Actual directed Newmark100step13.087s completed;its own200step contrast is
 in progress. Inspect actual summaries rather than treating this chronology
 as an indefinitely live process statement.
 
-Not a SOFA component,not moving-contact or full grasp qualification. Existing
+The function reference is not a3Dcontact/grasp component;the separate fixed
+Vec3SDK benchmark above is real SOFA execution. Neither qualifies moving contact.
+Existing
 scalar/Beam/Curved/Patch implementations and binaries are unchanged.
 
 VectorReturn.h projects a tangent trial vector onto the circular Coulomb disk,

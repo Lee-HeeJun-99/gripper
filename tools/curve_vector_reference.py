@@ -11,6 +11,7 @@ from curve_common import ROOT, sha, write_json
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--tag', required=True)
+    parser.add_argument('--only',choices=['return','field','snapshot','conditioning','certificate','normalized'])
     args = parser.parse_args()
     if not args.tag.replace('_', '').isalnum():
         raise ValueError('simple unique campaign tag required')
@@ -21,21 +22,28 @@ def main():
     for optional in ['models/yield_front_history/VectorField.h',
                      'tests/test_vector_field.cpp',
                      'models/contact_energy/SlipBandReference.h',
-                     'models/yield_front_history/ScalarField.h']:
+                     'models/yield_front_history/ScalarField.h',
+                     'models/yield_front_history/AdaptiveSnapshot.h',
+                     'tests/test_vector_snapshot.cpp',
+                     'tests/test_vector_conditioning.cpp']:
         p = ROOT / optional
         if p.exists():
             paths.append(p)
+    for name in ('models/yield_front_history/ExactInterval.h','tests/test_vector_certificate.cpp','models/yield_front_history/NormalizedSnapshot.h','tests/test_vector_normalized.cpp'):
+        p=ROOT/name
+        if p.exists():paths.append(p)
     paths.append(ROOT / 'models/yield_front_history/PolynomialFronts.h')
+    before={str(p.relative_to(ROOT)): sha(p) for p in paths}
     write_json(out / 'identity.json', dict(
         commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-        sources={str(p.relative_to(ROOT)): sha(p) for p in paths},
+        sources=before,
         scope='independent fixed-patch vector reference; not SOFA/grasp certification'))
     for p in paths:
         target = out / 'sources' / p.relative_to(ROOT)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(p, target)
     stages = {}
-    for name in ['return', 'field']:
+    for name in ([args.only]if args.only else['return', 'field', 'snapshot']):
         source = ROOT / ('tests/test_vector_' + name + '.cpp')
         if not source.exists():
             continue
@@ -43,6 +51,9 @@ def main():
         stages[name + '_build'] = logged(['g++', '-std=c++17', '-O2', '-ffp-contract=off',
             '-Wall', '-Wextra', '-Wpedantic', '-Werror', source, '-o', binary], out / (name + '_build'), 120)
         if stages[name + '_build']['exit_code']:
+            break
+        if before!={str(p.relative_to(ROOT)):sha(p)for p in paths}:
+            stages['source_drift']=dict(exit_code=1,reason='source changed during compile;binary not accepted')
             break
         stages[name] = logged([binary], out / name, 180)
         stages[name]['binary_sha256'] = sha(binary)

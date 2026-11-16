@@ -7,17 +7,25 @@ using namespace regrip_vector_history;
 void require(bool b,const char*s){if(!b)throw std::runtime_error(s);}
 int main(){try{
  constexpr R a=.3192L,k=.001L,C=3e-6L;
- VectorField field(a,k);R D=0,energyError=0;std::size_t evaluations=0;
+ auto rotate=[](V v){R c=std::cos(.73L),s=std::sin(.73L);return V{c*v[0]-s*v[2],v[1],s*v[0]+c*v[2]};};
+ VectorField field(a,k),rotated(a,k,rotate(V{0,0,1}));R D=0,energyError=0,covariance=0,pointCovariance=0;std::size_t evaluations=0;
  std::vector<Step>steps;
  for(int i=0;i<12;++i){Step s;
   s.increment={V{.0012L*std::cos(.9L*i),.0009L*std::sin(.7L*i),0},V{.0001L, -.00013L,0},V{.00003L, .00002L,0}};
   s.capacity=i>=7&&i<9?.4L*C:C;steps.push_back(s);
   auto t=field.evaluate(s,1e-6L,1e-25L);auto again=field.evaluate(s,1e-6L,1e-25L);
+  Step rs=s;for(auto&v:rs.increment)v=rotate(v);auto rt=rotated.evaluate(rs,1e-6L,1e-25L);
+  V force{t.integral.v[5],t.integral.v[6],t.integral.v[7]},rf{rt.integral.v[5],rt.integral.v[6],rt.integral.v[7]};
+  covariance=std::max({covariance,norm(add(rf,scale(rotate(force),-1))),std::abs(rt.integral.v[2]-t.integral.v[2])});
   require(t.integral.v==again.integral.v&&field.epoch()==unsigned(i),"query purity");
   auto v=t.integral.v;energyError=std::max(energyError,std::abs(v[1]-v[0]-v[4]+v[2]+v[3]));
-  D+=v[2];evaluations+=t.integral.evaluations;field.commit(t);
+  D+=v[2];evaluations+=t.integral.evaluations;field.commit(t);rotated.commit(rt);
+  for(R x:{-.938L,-.314L,.0L,.375L,.975L}){auto cached=field.materialAt(x),uncached=field.uncachedMaterialAt(x);require(cached.elastic==uncached.elastic&&cached.onYield==uncached.onYield,"exact prefix memo vs independent full replay");}
+  for(R x:{-.938L,-.314L,.0L,.375L,.975L})pointCovariance=std::max(pointCovariance,norm(add(rotated.elasticAt(x),scale(rotate(field.elasticAt(x)),-1))));
   bool rejected=false;try{field.commit(t);}catch(const std::invalid_argument&){rejected=true;}require(rejected,"once-only Commit");
  }
+ require(covariance<1e-13L&&pointCovariance<1e-17L,"function history rigid-coordinate covariance");
+ std::cout<<std::setprecision(18)<<"FIELD_COVARIANCE "<<covariance<<" point="<<pointCovariance<<'\n';
  // Independently implemented dense plastic-vector slider: stores plastic
  // displacement z and accumulated displacement u,not returned elastic e.
  R first=0,last=0;

@@ -1,5 +1,39 @@
 # Autonomous research log
 
+## 2026-11-16 — actual general moving-history continuation (not completion)
+
+Same branch resumed e151c278;clean tree confirmed. Old vector v1 integrity
+4203artifacts/41blobs PASS;old curvedv2 4945/149 PASS. No old physics restarted.
+Implemented independent models/general_vector_history Owner and registered
+GeneralVectorCurvedContact. Exact functional history is independent of force
+quadrature;immutable geometry and original Birth/return law are reused. This is
+a finite128operator reference,NOT the still-missing adaptive general state fitter.
+
+Actual moving sphere owner2910states matches explicit material-point prefix
+exactly;death/recontact/query purity/stale commit controls PASS. Moving-normal
+common-frame covariance2.1272e-16,111slip states,chart seed/budget guard PASS.
+Actual SOFA API/FD force,dForce,matrix/query/commit PASS in midpoint/Gauss modes.
+Short free sphere/Hermite dynamics20/40/80steps COMPLETE;source-matched
+contact-observable dt→dt/4plastic difference.0551516%PASS.1% including aligned
+phase-loss checks. This is NOT full gripper motion/energy/time qualification.
+
+Independent integration contrast FAIL:midpoint.02→.01mm changes loss~4%;Gauss
+also leaves small-phase FAILs. Thus removing history interpolation did not solve
+contact integration alone. Added experimental adaptive material quadrature.
+Initial cell-local relative estimator FAILS a positive-part analytic front.
+Global measure-scaled width budgets resolve the same front to3.07278e-9relative
+even at1e-20amplitude,without a heat floor. Actual first sphere adaptive failure
+then isolated to roundoff normal-torque estimator(global~1.35e-23);sphere radial
+normal torque is analytically zero,so only the estimator uses that identity.
+Actual assembled force/torque remains untouched. All failed raw/builds preserved.
+
+Raw:results/vector_history_owner_20261116_moving01/02,gauss01,adaptive01/02/03;
+results/vector_history_moving_20261116_*;compare_20261116_*;frames_20261116_a01;
+material_rule_20261116_a01/02;rule_geometry_20261116_a01/02. Actual summaries,
+not historical RUNNING prose,determine current process/validation status.
+Full adaptive state fitting,3finger qualification and grasp optimization remain
+unfinished;continuation experiments are described in newer entries as they finish.
+
 ## Subsequent development — actual sphere capacity/material jet
 
 Did not stop at the vector-patch qualification:implemented SphereHistoryChart.h

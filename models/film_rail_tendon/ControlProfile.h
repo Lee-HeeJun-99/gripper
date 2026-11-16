@@ -18,9 +18,13 @@ struct ControlProfile {
   if(time>=ramp&&time<=release)return {maximum,0,0};
   bool closing=time<ramp;double duration=closing?ramp:end-release;
   double x=closing?time/ramp:(time-release)/duration;
-  double s=x*x*x*(10+x*(-15+6*x));
+  // S(1-x)=1-S(x). Evaluate the SMALL tail directly near either endpoint,
+  // not 1-(1+roundoff), which can create negative prescribed tension.
+  double tail=x<=.5?x:1-x;
+  double small=tail*tail*tail*(10+tail*(-15+6*tail));
+  double fraction=closing?(x<=.5?small:1-small):(x<=.5?1-small:small);
   double ds=30*x*x*(1-x)*(1-x),dds=60*x*(1-x)*(1-2*x);
-  return {maximum*(closing?s:1-s),(closing?1:-1)*maximum*ds/duration,(closing?1:-1)*maximum*dds/(duration*duration)};
+  return {maximum*fraction,(closing?1:-1)*maximum*ds/duration,(closing?1:-1)*maximum*dds/(duration*duration)};
  }
 };
 }

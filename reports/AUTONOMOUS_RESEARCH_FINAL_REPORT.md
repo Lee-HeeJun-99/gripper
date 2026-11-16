@@ -1,5 +1,22 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Subsequent general-capacity work and honest stopping scope
+
+After fixed-patch qualification,implemented SphereHistoryChart for actual
+previous Hermite/sphere geometry,nonparabolic normal-force capacity and
+material derivatives.129state mathematical/guard tests PASS after preserving
+and correcting a fixture failure and a strict covariance failure. The latter
+improved1.66533e-16→7.71952e-17 by relative-coordinate interpolation;no gate
+was loosened. General adaptive owner/Commit and curved SOFA integration are
+still NOT RUN. This does not certify the gripper or authorize grasp Optuna.
+
+This response saves a finite working-context checkpoint,not a completed
+research goal. No host OOM,disk exhaustion,permission barrier or automatic
+restart is claimed. All launched child processes completed. Exact first
+unfinished implementation and commands are at the TOP of NEXT. Code source
+checkpoints are the source_commit entries of vector evidence manifests;
+subsequent evidence-packaging commits are visible in git log.
+
 ## Authoritative newest result — actual development,unfinished final objective
 
 Same branch continued from fb6a698. Implemented normalized vector history,

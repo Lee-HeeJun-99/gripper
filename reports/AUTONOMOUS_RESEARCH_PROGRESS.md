@@ -1,5 +1,30 @@
 # Autonomous research log
 
+## Subsequent development — actual sphere capacity/material jet
+
+Did not stop at the vector-patch qualification:implemented SphereHistoryChart.h
+and bounded independent runner curve_general_reference.py. The immutable old
+Hermite geometry supplies a spatially varying sphere normal and
+capacity=mu*kn*(R+skin-|r(s)|). Tangential history is projected/normalized in
+that actual tangent plane;first/second material jets use existing unchanged
+Beam Taylor algebra. This removes the PARABOLIC assumption from this chart's
+derivation,but is NOT the complete moving-contact SOFA adapter.
+
+Two failures retained:manufactured active-fixture geometry was wrong once
+Hermite director sag was included;then strict covariance1.66533e-16failed
+1e-16. Computing relative Bezier controls before interpolation reduced that
+error to7.71952e-17 without relaxing the line.129active states PASS:elastic
+first FD9.29132e-12,second FD1.87758e-11,capacity first FD1.15255e-14,
+normal orthogonality1.19855e-19,Coulomb excess0. NaN,undefined tangent and
+exact contact-event rejection also PASS in sphere_chart04.
+
+All current children completed. Remaining work is the actual adaptive
+general-history owner/Commit and curved SOFA force/Jacobian integration,
+not another repeat of the now-tested chart or fixed patch. No host OOM,disk
+or permission failure occurred;27GiB available RAM and1.1TiB disk were
+observed. This response's finite working-context checkpoint is NOT a claim
+that the project is complete or externally BLOCKED. No automatic restart.
+
 ## Latest measured result — continued beyond first patch campaign
 
 The normalized cubic phase-boundary failure was reproduced and corrected by

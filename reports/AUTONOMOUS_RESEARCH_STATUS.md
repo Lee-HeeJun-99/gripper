@@ -1,5 +1,19 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Newest prerequisite — general sphere chart PASS in mathematics ONLY
+
+SphereHistoryChart now supplies nonparabolic normal-force capacity,spatially
+varying normals and material first/second jets for prescribed previous Hermite
+geometry.129states and event/invalid-input controls PASS in sphere_chart04.
+An actual covariance FAIL was corrected by relative-control interpolation;
+the1e-16criterion was not relaxed. No SOFA dynamics/Commit approval is claimed
+for this chart. The adaptive general-history owner and curved forcefield
+integration are still NOT RUN;full gripper/energy/graspOptuna remain unfinished.
+
+All launched children have completion/exit records. This is a finite response
+working-context checkpoint,not host exhaustion or project completion. Resume
+the first task at the top of NEXT;no background restart exists.
+
 ## Authoritative latest checkpoint — vector patch qualification,not gripper completion
 
 All physics/reference children of this vector cohort have actually finished.

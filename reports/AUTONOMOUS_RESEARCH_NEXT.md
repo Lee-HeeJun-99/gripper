@@ -1,5 +1,36 @@
 # Next research checkpoint
 
+## Updated FIRST unfinished task — general-history owner and curved SOFA adapter
+
+SphereHistoryChart.h has now implemented the earlier plan's nonparabolic
+capacity/normal/material-jet derivation for a sphere and immutable old Hermite
+geometry. Its129state math/guard tests PASS;do NOT redo that derivation.
+MaterialDerivative/materialLift and fast exact-equivalent vector integration
+also exist. These are prerequisites,not an actual3finger SOFA implementation.
+
+Next implement an INDEPENDENT general-history fitter/owner around this chart:
+preserve old material coordinate and previous geometry;store gap/direction
+independently of force quadrature;fit state plus prospective return/loss error;
+handle active interval boundaries,Birth/Death and empty-history charts;then
+connect its pure value/AD query and once-per-step Commit to a NEW CurvedContact
+component. Test the old(s(q)) material chain terms,normal transport and actual
+capacity derivatives. Reuse the correct original Hermite virtual-work map.
+First prescribe a moving patch/reference,then actual SOFA API/short3finger
+profile,then original Mesh/History/dt/energy gates. Do not treat this math
+chart as completed SOFA integration or start grasp optimization prematurely.
+
+Newest independent reproduction(fresh tag):
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/curve_general_reference.py --tag UNIQUE_SPHERE_CHART
+$PY tools/curve_vector_evidence.py --version v1 --verify
+```
+Source/raw/binary identities live in results/vector_history_general_20261116_
+sphere_chart01..04 and the new evidence index.01/02FAIL are preserved.
+No process remains to wait for. There was no host resource/permission error;
+this is a finite response working-context handoff,NOT final-goal completion.
+No automatic restart is installed;resume actual code work explicitly here.
+
 ## FIRST UNFINISHED DEVELOPMENT — general moving curved-contact history adapter
 
 The vector reference,actual normalized-patch SOFA implementation,100/200/400

@@ -1,0 +1,11 @@
+#include "../models/general_vector_history/MovingSphereBenchmark.cpp"
+#include <sofa/component/statecontainer/MechanicalObject.h>
+#include <iostream>
+template<class Parent>struct MovingAccumulator:Parent{double a[3][3]{};void add(sofa::SignedIndex r,sofa::SignedIndex c,double v)override{a[r][c]+=v;}void add(sofa::SignedIndex r,sofa::SignedIndex c,float v)override{add(r,c,double(v));}};
+int main(){try{using T=MovingSphereBenchmark;auto state=sofa::core::objectmodel::New<sofa::component::statecontainer::MechanicalObject<T::Types>>();state->resize(1);auto field=sofa::core::objectmodel::New<T>(state.get());T::VecCoord x(1);x[0]={0,1.01,0};field->prepare(x);x[0]={.004,1.00999,.001};auto r=field->query(x);double error=0;for(int j=0;j<3;++j){auto p=x,m=x;p[0][j]+=1e-7;m[0][j]-=1e-7;auto a=field->query(p),b=field->query(m);for(int i=0;i<3;++i)error=std::max(error,std::abs((a.force[i].v-b.force[i].v)/2e-7-r.force[i].g[j]));}if(error>1e-7||field->commits)throw std::runtime_error("force/tangent or query purity");
+ state->write(sofa::core::vec_id::write_access::position)->setValue(x);
+ T::DataVecCoord pos;pos.setValue(x);T::DataVecDeriv force,velocity,dx,df;T::VecDeriv delta(1);delta[0]={.001,.002,.003};dx.setValue(delta);velocity.setValue(T::VecDeriv(1));force.setValue(T::VecDeriv(1));sofa::core::MechanicalParams mp;
+ field->addForce(&mp,force,pos,velocity);for(int i=0;i<3;++i)if(std::abs(force.getValue()[0][i]-r.force[i].v)>1e-14)throw std::runtime_error("addForce");
+ for(double factor:{0.,2.5,-.25}){mp.setKFactor(factor);df.setValue(T::VecDeriv(1));field->addDForce(&mp,df,dx);for(int i=0;i<3;++i){double expected=0;for(int j=0;j<3;++j)expected+=factor*r.force[i].g[j]*delta[0][j];if(std::abs(df.getValue()[0][i]-expected)>1e-14)throw std::runtime_error("addDForce");}}
+ MovingAccumulator<sofa::core::behavior::StiffnessMatrixAccumulator>acc;sofa::core::behavior::StiffnessMatrix matrix;matrix.setMatrixAccumulator(&acc,state.get());field->buildStiffnessMatrix(&matrix);for(int i=0;i<3;++i)for(int j=0;j<3;++j)if(std::abs(acc.a[i][j]-r.force[i].g[j])>1e-14)throw std::runtime_error("matrix");
+ if(field->commits)throw std::runtime_error("query committed state");std::cout<<"PASS actual moving sphere API F/dF/matrix/purity FD="<<error<<'\n';return 0;}catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

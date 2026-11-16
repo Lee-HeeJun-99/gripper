@@ -5,17 +5,22 @@ from closure_validation_suite import logged
 from film_guarded_process import guarded
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--previous-guess',action='store_true');p.add_argument('--coupled-predictor',action='store_true');p.add_argument('--fresh-core',action='store_true');p.add_argument('--coupled-order',type=int,choices=(1,2),default=1);p.add_argument('--coupled-profile');p.add_argument('--general-coupled',action='store_true');p.add_argument('--coupled-correction',action='store_true');p.add_argument('--momentum-journal',action='store_true');p.add_argument('--cylinder-segments',type=int,choices=[32,64,128,256],default=64);p.add_argument('--object-shape',choices=['sphere','cylinder-mesh'],default='sphere');p.add_argument('--guide-intervals',type=int,choices=[4,10],default=4);p.add_argument('--state-jacobians',action='store_true');p.add_argument('--reuse-lift',action='store_true');p.add_argument('--contact-rows',action='store_true');p.add_argument('--assembly-case');p.add_argument('--slow-profile');p.add_argument('--ramp-time',type=float,default=1.);p.add_argument('--release-begin',type=float,default=1.);p.add_argument('--release-end',type=float,default=2.);p.add_argument('--fresh-assembly',action='store_true');p.add_argument('--guide-offset',type=float,default=.2);p.add_argument('--tag',required=True);p.add_argument('--steps',type=int,default=20);p.add_argument('--duration',type=float,default=.2);p.add_argument('--tension',type=float,default=.0001);p.add_argument('--free-motion',action='store_true');p.add_argument('--sphere',action='store_true');p.add_argument('--sphere-x',type=float,default=75);p.add_argument('--installed-sdk',action='store_true');p.add_argument('--reuse-installed',help='Exclusive installed-ABI build tag');a=p.parse_args()
+    launch_script=__import__('pathlib').Path(__file__).read_bytes()
+    source_hashes={str(path.relative_to(ROOT/'models')):sha(path) for component in ('film_shell','film_rail_tendon','film_native_contact') for path in (ROOT/'models'/component).rglob('*') if path.is_file() and (path.suffix in ('.h','.cpp','.inl') or path.name=='CMakeLists.txt')}
+    p=argparse.ArgumentParser();p.add_argument('--reuse-accepted',action='store_true');p.add_argument('--potential-merit',action='store_true');p.add_argument('--previous-guess',action='store_true');p.add_argument('--coupled-predictor',action='store_true');p.add_argument('--fresh-core',action='store_true');p.add_argument('--coupled-order',type=int,choices=(1,2),default=1);p.add_argument('--coupled-profile');p.add_argument('--general-coupled',action='store_true');p.add_argument('--coupled-correction',action='store_true');p.add_argument('--momentum-journal',action='store_true');p.add_argument('--cylinder-segments',type=int,choices=[32,64,128,256],default=64);p.add_argument('--object-shape',choices=['sphere','cylinder-mesh'],default='sphere');p.add_argument('--guide-intervals',type=int,choices=[4,10],default=4);p.add_argument('--state-jacobians',action='store_true');p.add_argument('--reuse-lift',action='store_true');p.add_argument('--contact-rows',action='store_true');p.add_argument('--assembly-case');p.add_argument('--slow-profile');p.add_argument('--ramp-time',type=float,default=1.);p.add_argument('--release-begin',type=float,default=1.);p.add_argument('--release-end',type=float,default=2.);p.add_argument('--fresh-assembly',action='store_true');p.add_argument('--guide-offset',type=float,default=.2);p.add_argument('--tag',required=True);p.add_argument('--steps',type=int,default=20);p.add_argument('--duration',type=float,default=.2);p.add_argument('--tension',type=float,default=.0001);p.add_argument('--free-motion',action='store_true');p.add_argument('--sphere',action='store_true');p.add_argument('--sphere-x',type=float,default=75);p.add_argument('--installed-sdk',action='store_true');p.add_argument('--reuse-installed',help='Exclusive installed-ABI build tag');a=p.parse_args()
     if a.general_coupled:a.coupled_correction=True
+    if a.reuse_accepted and not a.general_coupled:raise ValueError('accepted evaluation cache requires coupled kernel')
+    if a.potential_merit and not a.general_coupled:raise ValueError('potential merit requires coupled implicit kernel')
     if a.previous_guess and not a.general_coupled:raise ValueError('previous velocity guess requires coupled owner')
     if a.coupled_predictor and (not a.general_coupled or not a.fresh_core):raise ValueError('predictor-only requires fresh core and complete nonlinear accepted owner')
     if a.coupled_order==2 and (not a.general_coupled or a.steps>160 or a.duration>.2):raise ValueError("BDF2 accepted-stage prototype limited to160 steps/.2s until profiled")
-    if not a.tag.replace('_','').isalnum() or not 0<a.steps<=800 or not 0<a.duration<=8 or not 0<=a.tension<=.001 or a.sphere and not a.free_motion:raise ValueError('bounded fixed-object experiment')
+    maximum_steps,maximum_duration=(1600,16) if a.coupled_profile=='20261117_wrapping_cycle275' else (800,8)
+    if not a.tag.replace('_','').isalnum() or not 0<a.steps<=maximum_steps or not 0<a.duration<=maximum_duration or not 0<=a.tension<=.001 or a.sphere and not a.free_motion:raise ValueError('bounded fixed-object experiment')
     if not 0<a.ramp_time<=a.release_begin<a.release_end<=12:raise ValueError('bounded schedule')
-    if a.coupled_correction and ((not a.fresh_assembly and not a.assembly_case) or not a.free_motion or not a.sphere or (a.object_shape!='sphere' and not a.general_coupled) or a.steps>(800 if a.general_coupled else 160) or a.duration>(4 if a.general_coupled else .2)):raise ValueError('bounded source-compatible coupled fixed-object BE experiment')
+    if a.coupled_correction and ((not a.fresh_assembly and not a.assembly_case) or not a.free_motion or not a.sphere or (a.object_shape!='sphere' and not a.general_coupled) or a.steps>(maximum_steps if a.general_coupled else 160) or a.duration>((16 if a.coupled_profile=='20261117_wrapping_cycle275' else 8 if a.coupled_profile=='20261117_potential_capacity270' else 4) if a.general_coupled else .2)):raise ValueError('bounded source-compatible coupled fixed-object BE experiment')
     coupled_budget=None
     if a.general_coupled and (a.steps>160 or a.duration>.2):
-        if a.coupled_profile not in ('20261117_general_coupled218','20261117_coupled_cylinder235'):raise ValueError('coupled extension needs actual measured profile')
+        if a.coupled_profile not in ('20261117_general_coupled218','20261117_coupled_cylinder235','20261117_potential_capacity270','20261117_wrapping_cycle275','20261117_cache_reference276'):raise ValueError('coupled extension needs actual measured profile')
         prof=ROOT/'results'/('autonomous_film_'+a.coupled_profile);s=json.loads((prof/'summary.json').read_text())
         if s['status']!='PASS':raise ValueError('incomplete coupled profile')
         margin=3
@@ -24,13 +29,22 @@ def main():
             if a.tension==.0003:margin=2 # full same-physics window, not short onset extrapolation
             elif a.tension==.001 and a.steps<=400:margin=3 # bounded separate design-capacity probe;NOT same-physics convergence
             else:raise ValueError('unprofiled tension/step count for full-contact projection')
-        elif a.steps>400:raise ValueError('more than400 coupled steps requires the full-contact profile')
+        elif a.coupled_profile=='20261117_potential_capacity270':
+            if not (a.coupled_predictor and a.previous_guess and a.potential_merit) or (a.object_shape,a.sphere_x,a.guide_offset,a.guide_intervals,a.cylinder_segments,a.tension,a.ramp_time,a.release_begin,a.release_end)!=('cylinder-mesh',75,5,4,64,.001,4,6,8):raise ValueError('full-cycle profile requires matching completed potential-method geometry/control')
+            margin=2
+        elif a.coupled_profile=='20261117_wrapping_cycle275':
+            if not (a.coupled_predictor and a.previous_guess and a.potential_merit and a.reuse_accepted) or (a.object_shape,a.sphere_x,a.guide_offset,a.guide_intervals,a.cylinder_segments,a.tension,a.ramp_time,a.release_begin,a.release_end)!=('cylinder-mesh',75,5,4,64,.001,4,6,8):raise ValueError('settling extension requires same completed whole-cycle model and qualified accepted-trial cache')
+            margin=1.25 # whole-cycle185s profile includes hardest closing/hold/release;extra post8s has zero prescribed tension. No cache speed credit.
+        elif a.coupled_profile=='20261117_cache_reference276':
+            if not (a.coupled_predictor and a.previous_guess and a.potential_merit and a.reuse_accepted) or a.steps>400 or a.duration>4 or (a.object_shape,a.sphere_x,a.guide_offset,a.guide_intervals,a.tension,a.ramp_time,a.release_begin,a.release_end)!=('sphere',75,5,4,.001,4,6,8):raise ValueError('bounded sphere shape comparison requires qualified current mechanics')
+            margin=3 # measured sphere contact;larger arm/longer closing, no cache speed credit
+        elif a.steps>400:raise ValueError('more than400 coupled steps requires a full-contact profile')
         estimate=s['stages']['physics']['runtime_s']/s['rows']*a.steps*margin
         if estimate>480:raise ValueError('coupled projection exceeds480s')
         coupled_budget=dict(profile_sha256=sha(prof/'summary.json'),projected_seconds=estimate,active_fraction_margin=margin,hard_seconds=480)
     budget=None
     if a.steps>400 or a.duration>2:
-        design_capacity=a.general_coupled and a.coupled_profile=='20261117_coupled_cylinder235' and a.tension==.001 and a.steps<=400
+        design_capacity=a.general_coupled and a.tension==.001 and (a.coupled_profile=='20261117_coupled_cylinder235' and a.steps<=400 or a.coupled_profile in ('20261117_potential_capacity270','20261117_wrapping_cycle275','20261117_cache_reference276'))
         if a.slow_profile!='20261116_route_slowarm164' or (a.tension not in (.0001,.0003) and not design_capacity) or a.guide_offset not in (2,5) or (a.ramp_time,a.release_begin,a.release_end)!=(4,6,8):raise ValueError('long prototype trial requires measured slow-route profile and bounded variant')
         profile_root=ROOT/'results'/('autonomous_film_'+a.slow_profile);profile=json.loads((profile_root/'summary.json').read_text())
         if profile['status']!='PASS':raise ValueError('incomplete profile')
@@ -38,6 +52,9 @@ def main():
         if estimate>480:raise ValueError('projected contact trial exceeds480s')
         budget=dict(profile_sha256=sha(profile_root/'summary.json'),projected_seconds=estimate,contact_cost_margin=3,tension_variant=a.tension,guide_offset_variant=a.guide_offset,hard_seconds=480)
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);case=out/'1';case.mkdir()
+    for component in ('film_shell','film_rail_tendon','film_native_contact'):shutil.copytree(ROOT/'models'/component,out/'sources'/component)
+    (out/'sources/film_rail_native_run.py').write_bytes(launch_script)
+    write_json(out/'launch_sources.json',dict(model_sources=source_hashes,script_sha256=sha(out/'sources/film_rail_native_run.py'),commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()))
     core=ROOT/'build/film_shell_20261116_native_be_core105';assembly=ROOT/'build/film_rail_20261116_rail_native95/libReGripFilmRailTendon.so'
     identity=json.loads((ROOT/'results/autonomous_film_20261116_rail_native95/identity.json').read_text())
     if sha(assembly)!=identity['binary_sha256']:raise RuntimeError('archived assembly binary drift')
@@ -64,6 +81,9 @@ def main():
             archive=json.loads((ROOT/'results'/('autonomous_film_'+a.assembly_case)/'identity.json').read_text())
             if sha(assembly)!=archive['assembly_sha256']:raise ValueError('reused installed assembly drift')
             if a.coupled_correction and not archive.get('coupled_correction'):raise ValueError('coupled model requires a qualified source-compatible assembly campaign')
+            if a.coupled_correction:
+                for relative in ('film_rail_tendon/Kernel.h','film_shell/Kernel.h','film_shell/AD.h','film_shell/PlaneContact.h'):
+                    if sha(ROOT/'models'/relative)!=sha(ROOT/'results'/('autonomous_film_'+a.assembly_case)/'sources'/relative):raise RuntimeError('coupled versus archived force-kernel source mismatch:'+relative)
         stages['assembly_api']=logged([assembly.parent/'test_film_rail_tendon_api'],out/'assembly_api',30)
         if a.guide_intervals==10:stages['distributed_api']=logged([assembly.parent/'test_film_rail_tendon_api','distributed'],out/'distributed_api',30)
     stages['factor_api']=logged([core/'test_film_native_be'],out/'factor_api',30)
@@ -85,7 +105,7 @@ def main():
     scene=ET.parse(ROOT/'results/autonomous_film_20261116_rail_native95/1/scene.scn');root=scene.getroot();root.set('dt',str(a.duration/a.steps));root.insert(0,ET.Element('RequiredPlugin',pluginName=str(assembly)))
     for plugin in root.findall('RequiredPlugin'):
         if 'libReGripFilmShell.so' in plugin.get('pluginName',''):plugin.set('pluginName',str(core/'libReGripFilmShell.so'))
-    ode=root.find('ReGripBDFSolver');ode.set('name','ode');ode.set('nativeCoupledPredictor','1' if a.coupled_predictor else '0');ode.set('order','1');ode.set('theta','1');ode.set('nativeConstraintBE','1' if a.free_motion else '0');ode.set('profileFilename',str(case/'profile.csv'))
+    ode=root.find('ReGripBDFSolver');ode.set('name','ode');ode.attrib.update({'nativeCoupledPredictor':'1' if a.coupled_predictor else '0'} if a.fresh_core else {});ode.set('order','1');ode.set('theta','1');ode.set('nativeConstraintBE','1' if a.free_motion else '0');ode.set('profileFilename',str(case/'profile.csv'))
     root.find('EigenSparseLU').set('name','linear')
     field=root.find("Node[@name='assembly']/FilmRailTendon");field.set('filename',str(case/'journal.csv'));field.set('maximumTension',str(a.tension));field.set('guideOffset',str(a.guide_offset));
     if a.guide_intervals!=4:field.set('guideIntervals',str(a.guide_intervals))
@@ -117,16 +137,15 @@ def main():
         if a.general_coupled:root.find('FilmNativeObserver').set('impulseSource','@coupled')
         if a.general_coupled and a.object_shape=='sphere':attributes.update(sphereDiagnostic='1')
         if not a.general_coupled:attributes.update(sphere='@fixed/objectDOFs',radius='8',contactDistance='.01')
-        if a.general_coupled:attributes.update(previousVelocityGuess='1' if a.previous_guess else '0',integrationOrder=str(a.coupled_order),completeFreeStage='1' if a.coupled_predictor else '0')
+        if a.general_coupled:attributes.update(reuseAcceptedEvaluation='1' if a.reuse_accepted else '0',potentialMerit='1' if a.potential_merit else '0',previousVelocityGuess='1' if a.previous_guess else '0',integrationOrder=str(a.coupled_order),completeFreeStage='1' if a.coupled_predictor else '0')
         root.insert(2,ET.Element('FilmNativeCoupledCorrection' if a.general_coupled else 'FilmSphereCoupledCorrection',**attributes))
     if a.momentum_journal:root.find('FilmNativeObserver').set('momentumFilename',str(case/'momentum.csv'))
     if a.state_jacobians:root.find('FilmNativeObserver').set('stateJacobianFilename',str(case/'state_jacobians.csv'))
     if a.contact_rows:root.find('FilmNativeObserver').set('rowFilename',str(case/'contact_rows.csv'))
     scene.write(case/'scene.scn')
-    sdk=ROOT/'build/grasp_20261115/sofa_patched';write_json(out/'identity.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),command=__import__('sys').argv,sdk=str(prefix),scene_sha256=sha(case/'scene.scn'),core_sha256=sha(core/'libReGripFilmShell.so'),assembly_sha256=sha(assembly),observer_sha256=sha(build/'libReGripFilmNativeObserver.so'),cylinder_segments=a.cylinder_segments if a.object_shape=='cylinder-mesh' else None,constraint_impulse_source='coupled.constraintImpulses' if a.general_coupled else 'native_solver',previous_velocity_initial_guess=a.previous_guess,single_newton_predictor=a.coupled_predictor,fresh_core=a.fresh_core,accepted_integrator=('uniform BDF2 after BE startup' if a.coupled_order==2 else 'BE'),native_predictor_integrator='one Newton BE trial' if a.coupled_predictor else 'converged BE free solve',coupled_budget=coupled_budget,general_coupled=a.general_coupled,coupled_correction=a.coupled_correction,object_shape=a.object_shape,sphere_center=[a.sphere_x,12,-8.2],radius=8,cylinder_height=40 if a.object_shape=='cylinder-mesh' else None,budget=budget,assembly_source_case=a.assembly_case,core_source_case=a.tag if a.fresh_core else a.reuse_installed,scope='fixed sphere native constraint;mu=0;not SDF compliance,not free-object grasp'))
-    for component in ('film_shell','film_rail_tendon','film_native_contact'):
-        shutil.copytree(ROOT/'models'/component,out/'sources'/component)
-    shutil.copy2(__file__,out/'sources/film_rail_native_run.py')
+    sdk=ROOT/'build/grasp_20261115/sofa_patched';write_json(out/'identity.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),command=__import__('sys').argv,launch_source_identity_sha256=sha(out/'launch_sources.json'),launch_script_sha256=sha(out/'sources/film_rail_native_run.py'),sdk=str(prefix),scene_sha256=sha(case/'scene.scn'),core_sha256=sha(core/'libReGripFilmShell.so'),assembly_sha256=sha(assembly),observer_sha256=sha(build/'libReGripFilmNativeObserver.so'),cylinder_segments=a.cylinder_segments if a.object_shape=='cylinder-mesh' else None,constraint_impulse_source='coupled.constraintImpulses' if a.general_coupled else 'native_solver',reuse_accepted_evaluation=a.reuse_accepted,incremental_potential_globalization=a.potential_merit,previous_velocity_initial_guess=a.previous_guess,single_newton_predictor=a.coupled_predictor,fresh_core=a.fresh_core,accepted_integrator=('uniform BDF2 after BE startup' if a.coupled_order==2 else 'BE'),native_predictor_integrator='one Newton BE trial' if a.coupled_predictor else 'converged BE free solve',coupled_budget=coupled_budget,general_coupled=a.general_coupled,coupled_correction=a.coupled_correction,object_shape=a.object_shape,sphere_center=[a.sphere_x,12,-8.2],radius=8,cylinder_height=40 if a.object_shape=='cylinder-mesh' else None,budget=budget,assembly_source_case=a.assembly_case,core_source_case=a.tag if a.fresh_core else a.reuse_installed,scope='fixed sphere native constraint;mu=0;not SDF compliance,not free-object grasp'))
+    drift=[name for name,expected in source_hashes.items() if sha(ROOT/'models'/name)!=expected or sha(out/'sources'/name)!=expected]
+    if drift:write_json(out/'summary.json',dict(status='FAIL',stage='compiled_source_guard',changed=drift,stages=stages));return
     for name,binary in [('core',core/'libReGripFilmShell.so'),('assembly',assembly),('observer',build/'libReGripFilmNativeObserver.so')]:
         stages[name+'_ldd']=logged(['ldd',binary],out/(name+'_ldd'),30)
         paths=(out/(name+'_ldd')/'stdout.log').read_text()

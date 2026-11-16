@@ -1,13 +1,16 @@
 #pragma once
 #include "CoupledPlaneStep.h"
+#include <limits>
+#include <optional>
+#include <cstring>
 namespace regrip_film_native {
 // Nonnegative multipliers on a finite set of frozen, scalar unilateral rows.
 // A direct nonnegative active set does not regularize duplicate contact rows.
 struct CoupledContactStep {
  struct Plane{std::vector<Point>J;double target,lambda;unsigned row;};
- CoupledPlaneStep mechanics;std::vector<Plane>planes;Eigen::MatrixXd C;Eigen::VectorXd offset;
+ CoupledPlaneStep mechanics;std::vector<Plane>planes;Eigen::MatrixXd C;Eigen::VectorXd offset;bool potentialMerit=false,reuseAcceptedEvaluation=false;
  CoupledContactStep(Assembly model,std::vector<double>mass,double h,double damping,double T,
-  std::vector<Point>q0,std::vector<Point>v0,std::vector<Plane>p):mechanics(model,mass,h,damping,T,q0,v0,std::vector<Point>(model.size()),0),planes(std::move(p)){
+  std::vector<Point>q0,std::vector<Point>v0,std::vector<Plane>p,bool energyMerit=false,bool reuse=false):mechanics(model,mass,h,damping,T,q0,v0,std::vector<Point>(model.size()),0),planes(std::move(p)),potentialMerit(energyMerit),reuseAcceptedEvaluation(reuse){
   if(planes.size()>256)throw std::invalid_argument("algorithmic contact row budget0..256,not OS exhaustion");C=Eigen::MatrixXd::Zero(mechanics.freeSize,planes.size());offset=Eigen::VectorXd::Zero(planes.size());auto rest=model.rest();
   for(unsigned k=0;k<planes.size();++k){if(planes[k].J.size()!=model.size())throw std::invalid_argument("contact row size");offset(k)=-planes[k].target;for(unsigned a=0;a<3*model.size();++a){offset(k)+=planes[k].J[a/3][a%3]*(rest[a/3][a%3]+q0[a/3][a%3]);if(mechanics.index[a]>=0)C(mechanics.index[a],k)+=mechanics.weight[a]*planes[k].J[a/3][a%3];}}
  }
@@ -24,12 +27,12 @@ struct CoupledContactStep {
   }throw std::runtime_error("unilateral active-set iteration budget,not memory exhaustion");
  }
  double merit(const Eigen::VectorXd&gradient,const Eigen::VectorXd&gap,const Eigen::VectorXd&lambda,const Eigen::VectorXd&diagonal)const{double squared=(gradient-C*lambda).squaredNorm();for(int k=0;k<gap.size();++k){if(!(diagonal(k)>0)){if(gap(k)<-1e-10)throw std::runtime_error("fixed infeasible contact row");continue;}double complementarity=std::min(lambda(k),gap(k)/diagonal(k));squared+=complementarity*complementarity;}return std::sqrt(squared);}
- struct Result{std::vector<Point>velocity,displacement;Eigen::VectorXd lambda;double residual,gap;unsigned iterations;};
- Result solve(const std::vector<Point>&initial,std::ostream*trace=nullptr)const{auto y=mechanics.pack(initial);Eigen::VectorXd lambda(planes.size());for(unsigned k=0;k<planes.size();++k)lambda(k)=planes[k].lambda;double firstResidual=-1;
-  for(unsigned iteration=0;iteration<30;++iteration){auto e=mechanics.evaluate(y);Eigen::VectorXd gap=offset+mechanics.h*C.transpose()*y;double residual=(e.gradient-C*lambda).norm();if(firstResidual<0)firstResidual=residual;double primal=gapError(gap,lambda);if(trace)*trace<<"general_iteration "<<iteration<<" residual "<<residual<<" gap "<<primal<<'\n';
-   if(residual<=std::max(1e-15,firstResidual*1e-7)&&primal<=1e-10){Result result;result.velocity=mechanics.expand(y);result.displacement=mechanics.previous;for(unsigned i=0;i<result.velocity.size();++i)for(unsigned d=0;d<3;++d)result.displacement[i][d]+=mechanics.h*result.velocity[i][d];result.lambda=lambda;result.residual=residual;result.gap=primal;result.iterations=iteration;return result;}
+ struct Result{std::vector<Point>velocity,displacement;Eigen::VectorXd lambda;double residual,gap;unsigned iterations,evaluations=0,acceptedReuses=0;};
+ Result solve(const std::vector<Point>&initial,std::ostream*trace=nullptr)const{auto y=mechanics.pack(initial);Eigen::VectorXd lambda(planes.size());for(unsigned k=0;k<planes.size();++k)lambda(k)=planes[k].lambda;double firstResidual=-1;unsigned evaluations=0,reuses=0;std::optional<CoupledPlaneStep::Evaluation>saved;Eigen::VectorXd savedY;
+  for(unsigned iteration=0;iteration<30;++iteration){CoupledPlaneStep::Evaluation e;if(reuseAcceptedEvaluation&&saved&&savedY.size()==y.size()&&std::memcmp(savedY.data(),y.data(),sizeof(double)*y.size())==0){e=std::move(*saved);saved.reset();++reuses;}else{e=mechanics.evaluate(y);++evaluations;}Eigen::VectorXd gap=offset+mechanics.h*C.transpose()*y;double residual=(e.gradient-C*lambda).norm();if(firstResidual<0)firstResidual=residual;double primal=gapError(gap,lambda);if(trace)*trace<<"general_iteration "<<iteration<<" residual "<<residual<<" gap "<<primal<<'\n';
+   if(residual<=std::max(1e-15,firstResidual*1e-7)&&primal<=1e-10){Result result;result.velocity=mechanics.expand(y);result.displacement=mechanics.previous;for(unsigned i=0;i<result.velocity.size();++i)for(unsigned d=0;d<3;++d)result.displacement[i][d]+=mechanics.h*result.velocity[i][d];result.lambda=lambda;result.residual=residual;result.gap=primal;result.iterations=iteration;result.evaluations=evaluations;result.acceptedReuses=reuses;return result;}
    Eigen::LDLT<Eigen::MatrixXd>ldlt(e.tangent);if(ldlt.info()!=Eigen::Success||ldlt.vectorD().minCoeff()<=0)throw std::runtime_error("nonpositive mechanical Hessian;no regularization");Eigen::VectorXd inverseG=ldlt.solve(e.gradient);Eigen::MatrixXd inverseC=ldlt.solve(C),W=mechanics.h*C.transpose()*inverseC;Eigen::VectorXd d=gap-mechanics.h*C.transpose()*inverseG;auto next=dual(W,d,lambda);Eigen::VectorXd increment=-inverseG+inverseC*next;double currentMerit=merit(e.gradient,gap,lambda,W.diagonal());bool accepted=false;double alpha=1;
-   for(unsigned trial=0;trial<16;++trial){auto candidate=mechanics.evaluate(y+alpha*increment);Eigen::VectorXd candidateLambda=lambda+alpha*(next-lambda),candidateGap=offset+mechanics.h*C.transpose()*(y+alpha*increment);double value=merit(candidate.gradient,candidateGap,candidateLambda,W.diagonal());if(value<=(1-1e-4*alpha)*currentMerit){y+=alpha*increment;lambda=candidateLambda;accepted=true;break;}alpha*=.5;}if(!accepted)throw std::runtime_error("coupled unilateral residual line search failed");
+   for(unsigned trial=0;trial<16;++trial){Eigen::VectorXd candidateY=y+alpha*increment;auto candidate=mechanics.evaluate(candidateY);++evaluations;Eigen::VectorXd candidateLambda=lambda+alpha*(next-lambda),candidateGap=offset+mechanics.h*C.transpose()*(y+alpha*increment);double value=merit(candidate.gradient,candidateGap,candidateLambda,W.diagonal());bool residualImproves=value<=(1-1e-4*alpha)*currentMerit;double directional=alpha*e.gradient.dot(increment);double roundoff=64*std::numeric_limits<double>::epsilon()*std::max(std::abs(e.phi),std::abs(candidate.phi));bool feasible=(candidateGap.size()==0||candidateGap.minCoeff()>=-1e-10)&&(gap.size()==0||gap.minCoeff()>=-1e-10);bool energyImproves=potentialMerit&&feasible&&directional < -roundoff&&candidate.phi<=e.phi+1e-4*directional;if(residualImproves||energyImproves){if(trace)*trace<<"globalization "<<(residualImproves?"residual":"potential")<<" alpha "<<alpha<<" phi "<<candidate.phi<<'\n';if(reuseAcceptedEvaluation){y=std::move(candidateY);savedY=y;saved=std::move(candidate);}else y+=alpha*increment;lambda=candidateLambda;accepted=true;break;}alpha*=.5;}if(!accepted)throw std::runtime_error("coupled unilateral residual line search failed");
   }throw std::runtime_error("coupled unilateral Newton budget");
  }
 };

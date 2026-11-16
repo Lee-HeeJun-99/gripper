@@ -3,11 +3,14 @@
 #include <iostream>
 using namespace regrip_history;
 int main(){try{
- double rootError=0,derivativeError=0;unsigned count=0;
+ double rootError=0,derivativeError=0,covariance=0;unsigned count=0;
  for(unsigned i=0;i<256;++i){double angle=.013*i;V e{.0005*std::cos(angle),.0005*std::sin(angle),0};
   V d{.006*std::cos(angle+.3),.006*std::sin(angle+.3),0};double k=.001,c0=2e-6,c1=2.1e-6;
   Vec<First> increment;for(int j=0;j<3;++j)increment[j]=First(d[j])+First::variable(j);
   auto capacity=First(c1)+First::variable(3);auto a=regrip_general_history::firstYield(e,increment,k,c0,capacity);
+  auto rotation=regrip3d::exp({.3,-.6,.2});auto er=regrip3d::rotate(rotation,e),dr=regrip3d::rotate(rotation,d),nr=regrip3d::rotate(rotation,{0,0,1});
+  auto rotated=regrip_general_history::firstYield(er,constantV<First>(dr),k,c0,First(c1),nr);
+  covariance=std::max(covariance,std::abs(a.v-rotated.v));
   auto trial=add(e,scale(d,a.v));double c=c0+a.v*(c1-c0);
   rootError=std::max(rootError,std::abs(k*std::sqrt(dot(trial,trial))-c));
   for(int j=0;j<4;++j){double h=j==3?1e-11:1e-8;auto dp=d,dm=d;double cp=c1,cm=c1;
@@ -17,8 +20,8 @@ int main(){try{
    double fd=(p.v-m.v)/(2*h);derivativeError=std::max(derivativeError,std::abs(fd-a.g[j])/std::max(1.,std::abs(a.g[j])));
   }++count;
  }
- if(rootError>1e-18||derivativeError>1e-7)throw std::runtime_error("vector first-yield IFT/root mismatch");
+ if(rootError>1e-18||derivativeError>1e-7||covariance>1e-12)throw std::runtime_error("vector first-yield IFT/root/covariance mismatch");
  bool rejected=false;try{regrip_general_history::firstYield({0,0,0},constantV<First>({0,0,0}),.001,2e-6,First(2e-6));}catch(const std::domain_error&){rejected=true;}
  if(!rejected)throw std::runtime_error("no-event branch not rejected");
- std::cout<<std::setprecision(17)<<"PASS vector temporal first-yield states="<<count<<" root="<<rootError<<" IFT_relative="<<derivativeError<<'\n';return 0;
+ std::cout<<std::setprecision(17)<<"PASS vector temporal first-yield states="<<count<<" root="<<rootError<<" IFT_relative="<<derivativeError<<" covariance="<<covariance<<'\n';return 0;
 }catch(const std::exception&e){std::cerr<<"FAIL "<<e.what()<<'\n';return 1;}}

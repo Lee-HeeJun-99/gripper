@@ -5,7 +5,7 @@ from curve_common import ROOT,sha,write_json
 from closure_validation_suite import logged
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--build',required=True);p.add_argument('--steps',type=int,default=20);p.add_argument('--dt',type=float,default=.0005);p.add_argument('--spacing',type=float,default=.02);p.add_argument('--speed',type=float,default=.02);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--build',required=True);p.add_argument('--steps',type=int,default=20);p.add_argument('--dt',type=float,default=.0005);p.add_argument('--spacing',type=float,default=.02);p.add_argument('--speed',type=float,default=.02);p.add_argument('--solid-inertia',action='store_true');a=p.parse_args()
  if not a.tag.replace('_','').isalnum()or not 1<=a.steps<=128 or not 0<a.dt<=.001 or not .001<=a.spacing<=1 or not 0<a.speed<=.2:raise ValueError('bounded fresh smoke')
  out=ROOT/'results'/('vector_history_moving_'+a.tag);out.mkdir(exist_ok=False)
  build=Path(a.build).resolve();plugin=build/'libReGripGeneralVectorContact.so';sdk=ROOT/'build/grasp_20261115/sofa_patched'
@@ -20,7 +20,13 @@ def main():
    if not q.is_relative_to(sdk.resolve()):raise ValueError('mixed SDK')
    runtime[m[1]]=dict(path=str(q),sha256=sha(q))
  if not runtime:raise ValueError('no SOFA dependency')
- write_json(out/'identity.json',dict(binary_sha256=sha(plugin),generated_sha256=sha(build/'GeneralGenerated.inc'),runtime=runtime,dt=a.dt,steps=a.steps,spacing=a.spacing,speed=a.speed,driver_sha256=sha(sdk/'bin/graph_probe'),scope='free sphere and free Hermite endpoints;not structural gripper'))
+ mass_model='solid_sphere_R1_I_over_m_0.4'if a.solid_inertia else'legacy_normalized_identity_I_over_m_1'
+ import subprocess
+ compiled=ROOT/'results'/build.name/'compiled.json'
+ write_json(out/'identity.json',dict(binary_sha256=sha(plugin),generated_sha256=sha(build/'GeneralGenerated.inc'),runtime=runtime,dt=a.dt,steps=a.steps,spacing=a.spacing,speed=a.speed,mass_model=mass_model,driver_sha256=sha(sdk/'bin/graph_probe'),executor_sha256=sha(ROOT/'tools/curve_general_dynamic.py'),source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),compiled_source_manifest_sha256=sha(compiled)if compiled.is_file()else None,scope='free sphere and free Hermite endpoints;not structural gripper'))
+ # RigidMass format is mass,volume,normalized3x3inertia (actual I=mass*matrix).
+ # Endpoints use the same explicit research frame inertia;not a beam mass model.
+ mass='<UniformMass template="Rigid3d" vertexMass=".01 4.1887902047863905 .4 0 0 0 .4 0 0 0 .4"/>'if a.solid_inertia else'<UniformMass template="Rigid3d" totalMass=".03"/>'
  scene=f'''<?xml version="1.0"?>
 <Node name="GeneralHistoryMovingSphere" dt="{a.dt}" gravity="0 0 0">
  <RequiredPlugin pluginName="Sofa.Component.AnimationLoop Sofa.Component.StateContainer Sofa.Component.Mass Sofa.Component.ODESolver.Backward Sofa.Component.LinearSolver.Direct"/>
@@ -28,7 +34,7 @@ def main():
  <EulerImplicitSolver rayleighMass="0" rayleighStiffness="0"/>
  <EigenSparseLU/>
  <MechanicalObject template="Rigid3d" position="-.3 1.01 0 0 0 0 1 .3 1.01 0 0 0 0 1 0 0 0 0 0 0 1" velocity="0 -.01 {a.speed} 0 0 .01 0 -.01 {a.speed} 0 0 -.01 0 0 0 0 0 0"/>
- <UniformMass template="Rigid3d" totalMass=".03"/>
+ {mass}
  <GeneralVectorCurvedContact segments="0 1" objectIndex="2" shape="0" radius="1" pointRadius=".02" lineStiffness=".001" tangentLineStiffness=".001" mu=".3" historySpacing="{a.spacing}" stride="1" filename="{out/'contact.csv'}"/>
 </Node>'''
  # This generated experiment file is deliberately exclusive to this campaign.

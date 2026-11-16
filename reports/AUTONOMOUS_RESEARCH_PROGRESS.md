@@ -1,5 +1,25 @@
 # Autonomous research log
 
+## Latest regression and inertia control
+
+Source-matched06repeat20step actual journals are identical(absolute differences0).
+Current03six-test independent regression PASS,including vector temporal-event
+common-frame covariance1.11022e-16. API/build/wrench verification is pinned to
+verified06actual compiled.json/source copies,not inferred from later Git HEAD.
+
+Audited SDK RigidMass serialization and separated the initial defaultI/m=1
+numerical benchmark from explicit solid-sphereI/m=.4 atR=1. The latter ran actual
+20/40/80steps with noERROR;phase-loss time FAIL.851917%remains. Do not label
+the old default-inertia condition a physical solid sphere or mix these cohorts.
+Endpoint frames use declared research inertias,not a validated beam mass model.
+Neither condition is the100mm gripper. Assessment rejects mixed inertia models.
+
+All launched children have actual completion records. No host resource exhaustion
+was observed;this checkpoint is incomplete research,not final-goal achievement.
+The remaining changing-normal temporal law and adaptive state compressor are
+real unfinished implementations. No automatic restart/background continuation
+is installed or claimed. Follow latest NEXT and new immutable general manifest.
+
 ## Newest measured continuation — adaptive integration isolates temporal defect
 
 Implemented consistent adaptive material quadrature in the NEW actual SOFA

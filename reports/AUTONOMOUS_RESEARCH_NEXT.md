@@ -2,6 +2,15 @@
 
 ## New first unfinished work — general temporal return/work and adaptive STATE fit
 
+All launched tests currently have completion records. The final goal is NOT
+complete,and no host exhaustion or automatic continuation is asserted. Next
+work is actual temporal-law implementation,not another report-only campaign.
+For a physicalR=1solid-sphere inertia control add `--solid-inertia` to the
+short dynamic command;do not pool it with earlier default-inertia cases.
+The first full-duration3finger run must await the finite-prefix replacement
+and temporal/energy Gates;do not disguise the128operator limitation by truncating
+the physical sequence or approving a short smoke as a full grasp.
+
 Newest additional prerequisite already implemented:TemporalYield.h and
 test_general_temporal_yield.cpp (256affine vector/fixed-plane roots+IFT).
 Do not reimplement that root. Extend it only after deriving the changing-normal

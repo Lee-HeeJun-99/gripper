@@ -18,6 +18,7 @@ def main():
   if json.loads((q/'summary.json').read_text())['status']!='PASS':raise ValueError('failed source case')
   if len(r)!=d['steps']:raise ValueError('incomplete trace')
   if d['binary_sha256']!=identities[0]['binary_sha256']or d['speed']!=identities[0]['speed']:raise ValueError('different model/load')
+  if d.get('mass_model','legacy_normalized_identity_I_over_m_1')!=identities[0].get('mass_model','legacy_normalized_identity_I_over_m_1'):raise ValueError('different inertia model')
   if not math.isclose(d['dt']*d['steps'],identities[0]['dt']*identities[0]['steps'],rel_tol=1e-12):raise ValueError('different duration')
   for key in (['spacing']if a.kind=='time'else['dt','steps']):
    if d[key]!=identities[0][key]:raise ValueError('mixed experimental factors')

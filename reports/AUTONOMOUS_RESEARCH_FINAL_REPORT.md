@@ -2,6 +2,15 @@
 
 ## Latest continuation — actual moving3D SOFA integration,not project completion
 
+Final added controls:explicit solid-sphereI=2mR²/5short20/40/80runs still
+FAIL temporal phase loss(.851917%). Initial default rigid inertia cases were
+numerical isolation conditions,not physical solid spheres;they remain separate.
+Latest independent six-test regression PASS and same-binary06repeat contact
+journals are identical. No measurement/hardware/whole-gripper approval follows.
+All launched children finished;no background auto-resume is claimed. This is
+an incomplete implementation checkpoint,not evidenced host resource exhaustion
+or successful completion of the user's final objective.
+
 Further work after the first adapter PASS:implemented/verified affine vector
 first-yield event+IFT in a fixed tangent plane(256states,root4.24e-22,FD4.01e-9).
 This is explicitly not the whole changing-normal temporal friction law. Fresh06

@@ -2,6 +2,12 @@
 
 ## Newest actual moving3D owner/adapter checkpoint — NOT final completion
 
+Latest completed regression:current03math6/6PASS;06repeat journals identical;
+explicit solid-sphere inertia20/40/80contact processes complete,but temporal
+phase loss.851917%FAIL. Initial defaultI/m=1was a numerical isolation condition,
+not a certified solid sphere. Cases are separate and not pooled. All children
+have completion records;no ongoing RUNNING/background restart is implied.
+
 Subsequent work also implemented TemporalYield fixed-plane vector event+IFT
 (256states),six-test mathematical regression,and a fresh clean06SDK/API/wrench
 build. This is a prerequisite,NOT yet a new changing-normal temporal return law.

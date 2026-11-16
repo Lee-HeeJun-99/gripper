@@ -3,7 +3,7 @@
 #include <iostream>
 #include <memory>
 using namespace regrip_vector_history;
-int main() {
+int main(int argc, char **) {
   try {
     constexpr R a = .3192L, k = .001L, C = 3e-6L;
     VectorField truth(a, k);
@@ -49,7 +49,9 @@ int main() {
                             true);
     if (zero.at(0).elastic != V{} || zero.at(0).onYield)
       throw std::runtime_error("zero state must not invent a direction");
-    auto saved = std::make_shared<const NormalizedSnapshot>(snapshot);
+    auto mutableSaved = std::make_shared<NormalizedSnapshot>(snapshot);
+    mutableSaved->outwardPrefilter = argc == 2;
+    std::shared_ptr<const NormalizedSnapshot> saved = std::move(mutableSaved);
     for (unsigned j = 0; j < 257; ++j) {
       R lo = -1 + 2 * R(j) / 258, hi = lo + 1.L / 258;
       R brute = 0;

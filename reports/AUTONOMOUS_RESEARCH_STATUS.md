@@ -1,5 +1,79 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Authoritative latest checkpoint — vector patch qualification,not gripper completion
+
+All physics/reference children of this vector cohort have actually finished.
+No RUNNING process or automatic restart is implied by historical sections.
+Same branch development/regrip-autonomous-research. Model/metrics details are
+in reports/vector_history/QUALIFICATION_v1.json and immutable raw snapshots.
+
+PASS in FIXED-NORMAL PATCH scope:normalized vector phase/history,strict five
+prospective loss references(including1.056e-26Fmm),actual Matching SDK
+Force/Jacobian/API/query purity;100/200/400step Newmark time tests;1e-9→1e-10
+state-fit contrast;exact repeated journal;50step force reversal;771constant
+frame covariance states. Base→quarter movement x.00032505%,y.00103590%,
+plastic loss.01805761%PASS unchanged.1%line. Representation loss.00034348%
+PASS unchanged1%line. Actual dynamic force residual<=7.08e-14relative.
+
+Outward interval arithmetic is EXACT-RESULT equivalent to the rational
+predicate in actual20/100/400/reversal journals(all common values identical).
+400step runtime455.897s→6.7775s;100step115.056s→3.5717s. This is bounded
+arithmetic acceleration,not changed friction or a whole-gripper speed claim.
+Independent material-coordinate first/second derivatives and AD pullback now
+PASS;they are not yet connected to the moving curved-contact SOFA component.
+
+EXPERIMENTAL:source-matched fixed-patch discrete energy audit,with signed
+linearization,cached-acceleration and representation inventories separate.
+BLOCKED/NOT RUN:general moving3Dnormal/capacity/Birth/Death integration,
+qualified three-finger Mesh/History/dt/global energy,12wrench shapes and grasp
+Optuna. Original Beam/Curved/History/Birth sources and Golden unchanged.
+The entire ReGrip objective is NOT marked complete. Remaining work is real
+development,not merely documentation or another completed-Hermite rerun.
+
+## Newest scope correction — research NOT complete
+
+Actual fixed-patch projected-cubic100/200/400step runs and repeated200run are
+complete. Base→quarter x/y.0049881%,loss.0155430%PASS.1%;this is NOT moving3D
+grasp certification. Newmark cached acceleration was checked against actual
+SDK cpp;matrix residual<=9.23e-14,discrete energy residual<=5.18e-24Fmm.
+Full gripper energy/pressure work and100mm grasp Optuna remain BLOCKED.
+
+Noncollinear projected-cubic100steps:TIMEOUT480s,60commits,not PASS. The
+normalized gap/direction alternative passes independent phase/state and five
+strict loss references;linear version has an actual8192cell API-budget FAIL.
+Cubic version actual API PASS but first dynamics FAILS at step11. New bounded
+shape-preserving-gap implementation is being evaluated;no completed dynamic
+success should be inferred until its actual summary exists. Older statements
+below that snapshots were never deployed are HISTORICAL,not current facts.
+
+All three-finger Mesh/History/dt/full-cycle energy/12wrench/shape/graspOptuna
+qualification remains unfinished. No original physical tolerance changed.
+
+## Newest measured vector checkpoint — overall objective remains unfinished
+
+PASS in scope:600circular-return states;normal transport/isometry;12step
+noncollinear function history/dense plastic reference;function rigid covariance;
+one-sided material derivatives;actual Matching SDK F/dF/matrix/Data/query/API;
+actual fixed-patch100/200step dynamics and separate20step current-source smoke.
+Directed Newmark fixed-patch dt/2movement.000833938%,loss.00259944%PASS.1%.
+Euler fixed-patch time checks FAIL and remain preserved. dt/4 NOT RUN.
+
+Adaptive snapshot EXPERIMENTAL/FAIL,NOT deployed in SOFA:coarse/fine sample
+tests alone were insufficient. The independent withheld-state test exposed a
+4.6%target overshoot;stricter internal estimation corrects the withheld error
+without relaxing its budget. Strict loss integration still exhausts500000
+TOTAL evaluations;latest diagnostic identifies unresolved upper-bound
+accumulation,not a measured negative energy or physical engine crash.
+50digit point comparison FAILS4of72branch/loss cases near yield;absolute loss
+density error1.8261e-29F. No tiny-loss cutoff or fake PASS applied.
+
+No running child/automatic restart should be inferred from historical text.
+Current actual processes must be checked. All three-finger/full-shape/global
+energy/grasp optimization gates remain BLOCKED/NOT RUN;this fixed-patch model
+has no moving boundary,normal compliance,Birth/Death,rigid rotations or6DOF
+object. It cannot certify the gripper. New source/binary snapshots are in
+results/vector_history_*;old manifests/physical models remain unchanged.
+
 ## Newest actual continuation — vector reference,not SOFA approval
 
 Same branch resumed fb6a698,old indices PASS4945/149and34/3. No prior physical

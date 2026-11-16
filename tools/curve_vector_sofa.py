@@ -20,8 +20,11 @@ def main():
     parser.add_argument('--compression-every',type=int,default=0)
     parser.add_argument('--snapshot-tolerance',type=float,default=1e-9)
     parser.add_argument('--normalized',action='store_true')
+    parser.add_argument('--outward',action='store_true')
+    parser.add_argument('--load',choices=['constant','reverse'],default='constant')
     args=parser.parse_args()
     if args.normalized and not args.compression_every:raise ValueError('normalized representation requires explicit compression')
+    if args.outward and not args.normalized:raise ValueError('outward prefilter requires normalized representation')
     import math
     if not args.tag.replace('_','').isalnum() or not 1<=args.steps<=1024 or not 0<args.dt<=.01 or not math.isfinite(args.initial_vy) or abs(args.initial_vy)>.01 or not 0<=args.compression_every<=1024 or not 0<args.snapshot_tolerance<=1e-4:
         raise ValueError('fresh simple tag and bounded reference steps1..1024')
@@ -45,6 +48,7 @@ def main():
               ('ldd',['ldd',build/'libReGripVectorPatchReference.so'])]
     if args.compression_every:commands.insert(3,('api_compressed',[build/'test_vector_patch','compressed']))
     if args.normalized:commands.insert(3,('api_normalized',[build/'test_vector_patch','normalized']))
+    if args.outward:commands.insert(3,('api_outward',[build/'test_vector_patch','outward']))
     for name,cmd in commands:
         stages[name]=logged(cmd,out/name,180)
         if stages[name]['exit_code']:
@@ -64,6 +68,7 @@ def main():
     write_json(out/'compiled.json',dict(binary_sha256=sha(plugin),api_binary_sha256=sha(build/'test_vector_patch'),sources=before))
     case=out/'dynamic';case.mkdir()
     ode='<EulerImplicitSolver rayleighMass="0" rayleighStiffness="0"/>'if args.solver=='euler'else'<NewmarkImplicitSolver rayleighMass="0" rayleighStiffness="0" gamma="0.5" beta="0.25"/>'
+    load='<ConstantForceField template="Vec3d" indices="0" forces="0.000002 0.000001 0"/>'if args.load=='constant'else'<LinearForceField template="Vec3d" points="0" times="0 0.1 0.11 0.5" forces="0.000002 0.000001 0 0.000002 0.000001 0 -0.00002 -0.00002 0 -0.00002 -0.00002 0"/>'
     scene=f'''<?xml version="1.0"?>
 <Node name="VectorPatchIsolation" dt="{args.dt:.17g}" gravity="0 0 0">
  <RequiredPlugin pluginName="Sofa.Component.AnimationLoop Sofa.Component.StateContainer Sofa.Component.Mass Sofa.Component.ODESolver.Backward Sofa.Component.LinearSolver.Direct Sofa.Component.MechanicalLoad"/>
@@ -72,8 +77,8 @@ def main():
  <SparseLDLSolver/>
  <MechanicalObject template="Vec3d" position="0 0 0" velocity="0 {args.initial_vy:.17g} 0"/>
  <UniformMass totalMass="0.001"/>
- <ConstantForceField template="Vec3d" indices="0" forces="0.000002 0.000001 0"/>
- <VectorPatchBenchmark halfLength="0.3192" stiffness="0.001" capacity="0.000003" velocityDirectedTangent="{int(args.directed)}" normalizedRepresentation="{int(args.normalized)}" compressionEvery="{args.compression_every}" snapshotTolerance="{args.snapshot_tolerance:.17g}" filename="{case/'journal.csv'}"/>
+ {load}
+ <VectorPatchBenchmark halfLength="0.3192" stiffness="0.001" capacity="0.000003" velocityDirectedTangent="{int(args.directed)}" normalizedRepresentation="{int(args.normalized)}" outwardCertificates="{int(args.outward)}" compressionEvery="{args.compression_every}" snapshotTolerance="{args.snapshot_tolerance:.17g}" filename="{case/'journal.csv'}"/>
 </Node>
 '''
     (case/'scene.scn').write_text(scene)
@@ -92,6 +97,8 @@ def main():
                 velocity_directed_tangent=args.directed,
                 compression_every=args.compression_every,snapshot_tolerance=args.snapshot_tolerance,
                 normalized_representation=args.normalized,
+                outward_certificates=args.outward,
+                load_schedule=args.load,
                 nonsmooth_tangent=('explicit velocity-sided generalized derivative'if args.directed else'explicit elastic generalized derivative')+' at zero increment/equal positive capacity;not unique classical tangent')
     try:
         if stages['dynamic']['exit_code'] or '[ERROR]' in logs or 'Unused Attribute' in logs or f'{args.steps} iterations done' not in logs:
@@ -100,7 +107,8 @@ def main():
         if len(rows)!=args.steps or [int(r['commit'])for r in rows]!=list(range(1,args.steps+1)):
             raise ValueError('actual once-per-step Commit count')
         if any(not math.isfinite(float(v))for r in rows for v in r.values()):raise ValueError('NaN/Inf journal')
-        if float(rows[-1]['x'])<=0 or float(rows[-1]['y'])<=0:raise ValueError('no actual state change')
+        if args.load=='constant'and(float(rows[-1]['x'])<=0 or float(rows[-1]['y'])<=0):raise ValueError('no actual state change')
+        if args.load=='reverse'and args.steps*args.dt>=.5 and not(float(rows[-1]['vx'])<0 and float(rows[-1]['vy'])<0):raise ValueError('actual scheduled force did not reverse velocity')
         max_residual=max(abs(float(r['energy_residual']))for r in rows)
         if max_residual>1e-23:raise ValueError('local endpoint energy identity fails')
         if any(float(r['loss'])<0 for r in rows):raise ValueError('negative plastic loss')

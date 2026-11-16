@@ -27,6 +27,7 @@ public:
   sofa::core::objectmodel::Data<bool> velocityDirectedTangent;
   sofa::core::objectmodel::Data<unsigned> compressionEvery;
   sofa::core::objectmodel::Data<bool> normalizedRepresentation;
+  sofa::core::objectmodel::Data<bool> outwardCertificates;
   sofa::core::objectmodel::Data<double> snapshotTolerance;
   sofa::core::objectmodel::Data<std::string> filename;
   std::unique_ptr<regrip_vector_history::VectorField> field;
@@ -42,6 +43,7 @@ public:
   mutable std::array<double, 3> cachedV{};
   bool frozenDirected = false;
   bool frozenNormalized = false;
+  bool frozenOutward = false;
   std::array<double, 3> beginX{}, beginV{};
   std::array<long double, 17> beginMeasures{};
   explicit VectorPatchBenchmark(
@@ -62,6 +64,10 @@ public:
         normalizedRepresentation(initData(
             &normalizedRepresentation, false, "normalizedRepresentation",
             "Independent gap/direction representation;requires compression")),
+        outwardCertificates(
+            initData(&outwardCertificates, false, "outwardCertificates",
+                     "Optional outward interval prefilter;exact rational "
+                     "fallback unchanged")),
         snapshotTolerance(
             initData(&snapshotTolerance, 1e-9, "snapshotTolerance",
                      "Numerical state-fit target mm;not a physical parameter")),
@@ -83,6 +89,7 @@ public:
                                                                  frozen[1]);
     frozenDirected = velocityDirectedTangent.getValue();
     frozenNormalized = normalizedRepresentation.getValue();
+    frozenOutward = outwardCertificates.getValue();
     frozenCompression = compressionEvery.getValue();
     frozenTolerance = snapshotTolerance.getValue();
     commits = 0;
@@ -92,6 +99,9 @@ public:
     if (frozenNormalized && !frozenCompression)
       throw std::invalid_argument(
           "normalized representation requires explicit compression period");
+    if (frozenOutward && !frozenNormalized)
+      throw std::invalid_argument(
+          "outward prefilter requires normalized representation");
     cached.reset();
     regrip_vector_history::radialReturn({}, {}, {0, 0, 1}, frozen[1],
                                         frozen[2]);
@@ -149,6 +159,7 @@ public:
     if (!field || parameters() != frozen || x.size() != 1 ||
         velocityDirectedTangent.getValue() != frozenDirected ||
         normalizedRepresentation.getValue() != frozenNormalized ||
+        outwardCertificates.getValue() != frozenOutward ||
         compressionEvery.getValue() != frozenCompression ||
         snapshotTolerance.getValue() != frozenTolerance)
       throw std::invalid_argument("patch cache scope changed");
@@ -189,11 +200,14 @@ public:
                             {0, -1e-8L, 0},
                             {1e-5L, -2e-5L, 0}};
       if (frozenNormalized) {
-        auto snapshot = std::make_shared<const NormalizedSnapshot>(
+        auto mutableSnapshot = std::make_shared<NormalizedSnapshot>(
             [&](R s) { return field->materialAt(s); },
             [&](R s) { return field->lastIncrementAt(s); }, frozen[1],
             frozen[2], frozenTolerance, probes,
             frozenTolerance * frozen[2] * 1e-3L, field->isZeroState());
+        mutableSnapshot->outwardPrefilter = frozenOutward;
+        std::shared_ptr<const NormalizedSnapshot> snapshot =
+            std::move(mutableSnapshot);
         auto transfer = [&](unsigned count) {
           R value = 0;
           for (const auto &cell : snapshot->cells)

@@ -1,5 +1,6 @@
 #pragma once
 #include "ExactInterval.h"
+#include "OutwardPolynomial.h"
 #include "VectorField.h"
 namespace regrip_vector_history {
 // Independent phase-preserving contrast:gap=1-|ke|/c is stored separately
@@ -18,6 +19,7 @@ public:
     Node control1, control2;
   };
   R k, C;
+  V normal{0, 0, 1};
   std::vector<Cell> cells;
   R phaseUncertainWidth = 0;
   std::size_t queries = 0;
@@ -199,6 +201,62 @@ public:
   mutable bool certificateKeyValid = false;
   mutable V certificateIncrement{};
   mutable std::map<std::pair<R, R>, R> certificateMemo;
+  bool outwardPrefilter = false;
+  bool outwardStick(const Step &step, R lo, R hi) const {
+    if (!Outward::supported() || step.capacity != C ||
+        step.increment[1] != V{} || step.increment[2] != V{} || lo <= -1 ||
+        hi >= 1)
+      return false;
+    const auto &c = cellAt(lo);
+    if (hi > c.hi)
+      return false;
+    try {
+      Outward origin(c.lo), width = Outward(c.hi) - origin, kk(k), cc(C);
+      OP cap{cc * (Outward(1) - origin * origin),
+             Outward(-2) * cc * origin * width,
+             Outward(0) - cc * width * width};
+      OP rho = outwardPower(Outward(1) - Outward(c.left.gap),
+                            Outward(1) - Outward(c.control1.gap),
+                            Outward(1) - Outward(c.control2.gap),
+                            Outward(1) - Outward(c.right.gap)),
+         norm2(7), pd(4);
+      Outward du2;
+      for (int j = 0; j < 3; ++j) {
+        OP p = outwardPower(c.left.direction[j], c.control1.direction[j],
+                            c.control2.direction[j], c.right.direction[j]);
+        Outward d(step.increment[0][j]);
+        norm2 = outwardSum(norm2, outwardProduct(p, p), 1);
+        for (int z = 0; z < 4; ++z)
+          pd[z] = pd[z] + p[z] * d;
+        du2 = du2 + d * d;
+      }
+      OP rm = outwardProduct(rho, rho);
+      rm[0] = rm[0] - Outward(1);
+      OP A = outwardProduct(outwardProduct(cap, cap), rm);
+      A[0] = A[0] + kk * kk * du2;
+      OP B = outwardProduct(outwardProduct(cap, rho), pd);
+      for (auto &v : B)
+        v = Outward(2) * kk * v;
+      Outward l = (Outward(lo) - origin) / width,
+              r = (Outward(hi) - origin) / width;
+      bool an = outwardNegative(A, l, r), bn = outwardNegative(B, l, r);
+      if (an && bn)
+        return true;
+      if (bn && outwardPositive(A, l, r))
+        return outwardPositive(
+            outwardSum(outwardProduct(B, B),
+                       outwardProduct(outwardProduct(A, A), norm2), -1),
+            l, r);
+      if (an && outwardPositive(B, l, r))
+        return outwardPositive(
+            outwardSum(outwardProduct(outwardProduct(A, A), norm2),
+                       outwardProduct(B, B), -1),
+            l, r);
+      return false;
+    } catch (const std::exception &) {
+      return false;
+    }
+  }
   R uncachedStickRoundoffBound(const Step &step, R lo, R hi) const {
     if (step.capacity != C || step.increment[1] != V{} ||
         step.increment[2] != V{} || lo <= -1 || hi >= 1)
@@ -206,6 +264,12 @@ public:
     const auto &c = cellAt(lo);
     if (hi > c.hi)
       return -1;
+    if (outwardPrefilter && outwardStick(step, lo, hi)) {
+      R epsilon = std::numeric_limits<R>::epsilon(),
+        gamma = 65536 * epsilon / (1 - 65536 * epsilon),
+        capError = 64 * epsilon / (1 - 64 * epsilon) * C;
+      return (C + capError) * gamma * (C / k + norm(step.increment[0]));
+    }
     Q kq = binaryRational(k), Cq = binaryRational(C),
       origin = binaryRational(c.lo), width = binaryRational(c.hi) - origin;
     QP cap{Cq * (1 - origin * origin), -2 * Cq * origin * width,
@@ -265,9 +329,10 @@ public:
   NormalizedSnapshot(const std::function<VectorField::MaterialValue(R)> &source,
                      const std::function<V(R)> &endpointIncrement, R stiffness,
                      R capacity, R stateTolerance, const std::vector<V> &probes,
-                     R lossDensityTolerance, bool zeroState = false)
-      : k(stiffness), C(capacity) {
-    radialReturn({}, {}, {0, 0, 1}, k, C);
+                     R lossDensityTolerance, bool zeroState = false,
+                     V fixedNormal = {0, 0, 1})
+      : k(stiffness), C(capacity), normal(fixedNormal) {
+    radialReturn({}, {}, normal, k, C);
     if (C <= 0 || stateTolerance <= 0 || lossDensityTolerance <= 0)
       throw std::invalid_argument("normalized reference parameters");
     auto node = [&](R x) {
@@ -358,8 +423,8 @@ public:
           accept = false;
         for (V du : probes) {
           R cap = C * (1 - x * x);
-          auto a = radialReturn(actual, du, {0, 0, 1}, k, cap),
-               b = radialReturn(approx, du, {0, 0, 1}, k, cap);
+          auto a = radialReturn(actual, du, normal, k, cap),
+               b = radialReturn(approx, du, normal, k, cap);
           if (std::abs(a.loss - b.loss) > lossDensityTolerance)
             accept = false;
         }
@@ -385,6 +450,43 @@ public:
       self(self, mid, hi, depth + 1);
     };
     build(build, -1, 1, 0);
+  }
+  NormalizedSnapshot transformed(const M &Q) const {
+    for (R q : Q)
+      if (!std::isfinite(q))
+        throw std::invalid_argument("finite proper rotation");
+    auto multiply = [&](V v) {
+      V r{};
+      for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 3; ++j)
+          r[i] += Q[3 * i + j] * v[j];
+      return r;
+    };
+    for (int i = 0; i < 3; ++i)
+      for (int j = 0; j < 3; ++j) {
+        R q = 0;
+        for (int z = 0; z < 3; ++z)
+          q += Q[3 * z + i] * Q[3 * z + j];
+        if (std::abs(q - (i == j ? 1.L : 0.L)) >
+            128 * std::numeric_limits<R>::epsilon())
+          throw std::invalid_argument("orthonormal history frame required");
+      }
+    R determinant = Q[0] * (Q[4] * Q[8] - Q[5] * Q[7]) -
+                    Q[1] * (Q[3] * Q[8] - Q[5] * Q[6]) +
+                    Q[2] * (Q[3] * Q[7] - Q[4] * Q[6]);
+    if (determinant <= 0)
+      throw std::invalid_argument("history frame reflection forbidden");
+    auto result = *this;
+    result.normal = multiply(normal);
+    result.certificateMemo.clear();
+    result.certificateKeyValid = false;
+    for (auto &c : result.cells) {
+      c.left.direction = multiply(c.left.direction);
+      c.control1.direction = multiply(c.control1.direction);
+      c.control2.direction = multiply(c.control2.direction);
+      c.right.direction = multiply(c.right.direction);
+    }
+    return result;
   }
 };
 } // namespace regrip_vector_history

@@ -29,9 +29,9 @@ def closed_loss(a,C,k,d):
 
 def physical_signature(scene):
     signature=dict(gravity=scene.attrib['gravity'])
-    for name in ('UniformMass','ConstantForceField','MechanicalObject','VectorPatchBenchmark'):
+    for name in ('UniformMass','ConstantForceField','LinearForceField','MechanicalObject','VectorPatchBenchmark'):
         node=scene.find(name)
-        signature[name]=None if node is None else{k:v for k,v in node.attrib.items()if k not in ('filename','compressionEvery','snapshotTolerance','velocityDirectedTangent','normalizedRepresentation')}
+        signature[name]=None if node is None else{k:v for k,v in node.attrib.items()if k not in ('filename','compressionEvery','snapshotTolerance','velocityDirectedTangent','normalizedRepresentation','outwardCertificates')}
     return signature
 
 
@@ -45,12 +45,20 @@ def numerical_signature(scene):
 
 def representation(scene):
     attrs=scene.find('VectorPatchBenchmark').attrib;period=int(attrs.get('compressionEvery','0'))
-    return (period,float(attrs.get('snapshotTolerance','1e-9'))if period else None,int(attrs.get('normalizedRepresentation','0')))
+    return (period,float(attrs.get('snapshotTolerance','1e-9'))if period else None,int(attrs.get('normalizedRepresentation','0')),int(attrs.get('outwardCertificates','0')))
 
 
 def compiled_sources(path):
     sources=json.loads((path/'compiled.json').read_text())['sources']
     return {k:v for k,v in sources.items()if k.startswith('models/')and(k.endswith(('.h','.cpp'))or k.endswith('CMakeLists.txt'))}
+
+
+def applied_force(scene,time):
+    constant=scene.find('ConstantForceField')
+    if constant is not None:return np.array(list(map(float,constant.attrib['forces'].split())))
+    field=scene.find('LinearForceField');times=np.array(list(map(float,field.attrib['times'].split())));forces=np.array(list(map(float,field.attrib['forces'].split()))).reshape(-1,3)
+    if len(times)!=len(forces)or np.any(np.diff(times)<=0):raise ValueError('ordered force keys')
+    return np.array([np.interp(time,times,forces[:,j],left=0.)for j in range(3)])
 
 
 def newmark_audit(rows,scene,mass,external,h):
@@ -63,6 +71,7 @@ def newmark_audit(rows,scene,mass,external,h):
     sums=dict(external_work=0.,plastic=0.,signed_return_linearization_remainder=0.,paired_representation_change=0.,
               begin_inventory_quadrature_gap=0.,post_inventory_quadrature_gap=0.,cached_acceleration_work=0.)
     for row in rows:
+        external=applied_force(scene,row['time']-h)
         x=np.array([row[j]for j in 'xyz']);x0=np.array([row['begin_'+j]for j in 'xyz'])
         v=np.array([row['v'+j]for j in 'xyz']);v0=np.array([row['begin_v'+j]for j in 'xyz'])
         f=np.array([row['begin_f'+j]for j in 'xyz']);J=np.array([row['begin_J'+str(j)]for j in range(9)]).reshape(3,3)
@@ -72,7 +81,9 @@ def newmark_audit(rows,scene,mass,external,h):
         # Actual SDK source computes a0 only at cpt==0,then retains a1.
         # Reconstruct from the independent velocity recurrence and CHECK the
         # matrix equation;do not fit this term from a total-energy residual.
-        maxF=max(maxF,float(np.linalg.norm(mass*next_acceleration-external-f-J@dx)/np.linalg.norm(external)))
+        load_scale=float(np.linalg.norm(external))
+        if not load_scale:raise ValueError('zero load requires independently defined absolute-force audit;no denominator floor')
+        maxF=max(maxF,float(np.linalg.norm(mass*next_acceleration-external-f-J@dx)/load_scale))
         cache_work=.5*float((mass*cached_acceleration-external-f)@dx)
         maxKinematic=max(maxKinematic,float(np.linalg.norm(dx-.5*h*(v0+v))))
         work=float(external@dx);contact_work=float(midforce@dx);dk=.5*mass*float(v@v-v0@v0)
@@ -102,8 +113,8 @@ def analyze(tag):
     params=scene.find('VectorPatchBenchmark').attrib
     a,C,k=map(float,(params['halfLength'],params['capacity'],params['stiffness']))
     mass=float(scene.find('UniformMass').attrib['totalMass'])
-    external=np.array(list(map(float,scene.find('ConstantForceField').attrib['forces'].split())))
     h=float(scene.attrib['dt'])
+    external=applied_force(scene,rows[0]['time']-h)
     result=dict(case=str(path.relative_to(ROOT)),journal_sha256=sha(path/'dynamic/journal.csv'),
                 actual_runtime_s=summary['stages']['dynamic']['runtime_s'],steps=len(rows),dt=h,
                 final={key:rows[-1][key]for key in ('x','y','energy','cumulative_loss')},
@@ -129,8 +140,8 @@ def analyze(tag):
             plastic=next_plastic
         exact=rows[-1]['cumulative_loss']
         dense.append(dict(points=n,loss=D,relative_to_function=abs(D-exact)/abs(exact)if exact else None,
-            max_step_loss_relative=max_step_loss,max_step_loss_absolute=max_step_loss_absolute,
-            max_force_relative=max_force,max_force_absolute=max_force_absolute,max_energy_absolute=max_energy,
+            max_step_loss_relative=max_step_loss if math.isfinite(max_step_loss)else'INFINITE:zero dense reference/nonzero candidate',max_step_loss_absolute=max_step_loss_absolute,
+            max_force_relative=max_force if math.isfinite(max_force)else'INFINITE:zero dense reference/nonzero candidate',max_force_absolute=max_force_absolute,max_energy_absolute=max_energy,
             scope='independent finite-grid replay of SAME measured trajectory;not an exact tiny-event reference or dynamic rerun'))
     result['independent_dense_plastic_vectors']=dense
     if all(abs(r['x']-2*r['y'])<=1e-15*max(abs(r['x']),1e-300)for r in rows)and all(
@@ -151,7 +162,7 @@ def analyze(tag):
             max_inventory_difference=max(abs(r['post_inventory_difference'])for r in rows),
             max_cells=max(int(r['snapshot_cells'])for r in rows),
             scope='numeric representation+quadrature inventory,NOT heat or physical actuator work')
-    if 'begin_J0'in rows[0]and scene.find('EulerImplicitSolver')is not None and not representation(scene)[0]:
+    if 'begin_J0'in rows[0]and scene.find('EulerImplicitSolver')is not None and not representation(scene)[0]and scene.find('ConstantForceField')is not None:
         maxForce=0.;kineticResidual=0.;localEnergy=0.;sequenceResidual=0.;inventoryGap=0.
         sums=dict(external_work=0.,mapped_contact_work=0.,material_endpoint_work=0.,plastic=0.,
                   endpoint_projection=0.,velocity_projection=0.,signed_contact_linearization_remainder=0.)

@@ -1,0 +1,21 @@
+{
+  "scope": "Fixed-normal prescribed tangential patch isolation ONLY;not a moving 3D curved contact or free-object grasp",
+  "source_kind": "Independent mathematics and actual matching-SDK SOFA runs;no physical measurements",
+  "physical_parameters": {"half_length_mm":0.3192,"line_stiffness_F_per_mm2":0.001,"capacity_peak_F_per_mm":0.000003,"mass_model_units":0.001,"constant_external_force_F":[0.000002,0.000001,0],"initial_vy_mm_per_s":0.001},
+  "solver": "Newmark beta=0.25 gamma=0.5,no Rayleigh damping",
+  "time": {"status":"PASS","steps":[100,200,400],"dt_s":[0.01,0.005,0.0025],"unchanged_threshold_percent":0.1,"base_to_quarter_percent":{"x":0.0003250494085914341,"y":0.0010358968435881634,"plastic_loss":0.018057610033217204,"stored_energy":0.002454945205637793},"evidence":"results/vector_history_assessment_20261116_outward_nonadjacent01/assessment.json"},
+  "representation": {"status":"PASS","fit_tolerances_mm":[1e-9,1e-10],"unchanged_threshold_percent":1,"plastic_loss_difference_percent":0.00034348036067760286,"evidence":"results/vector_history_assessment_20261116_outward_history_repeat01/assessment.json"},
+  "repeat": {"status":"PASS","max_common_journal_difference":0},
+  "arithmetic_equivalence": {"status":"PASS","actual_full_journal_difference":0,"contrasts":["20steps","100steps","400steps","50step force reversal"],"timing_100_s":{"exact_rational":115.05625632900046,"outward_prefilter":3.571676721039694},"timing_400_s":{"exact_rational":455.897318472038,"outward_prefilter":6.777496031019837}},
+  "force_balance": {"status":"PASS","max_relative_linearized_dynamic_residual":7.071251120896947e-14,"unchanged_threshold":0.001,"not_static_equilibrium":true},
+  "discrete_patch_energy": {"status":"EXPERIMENTAL","max_source_matched_identity_residual_Fmm":4.1359030627651384e-24,"includes_separate_signed_linearization_cached_acceleration_and_representation_inventories":true,"not_full_gripper_energy":true},
+  "independent_exact_loss_probe": {"status":"PASS","small_reference_Fmm":1.05625927774703678e-26,"unchanged_relative_threshold":0.01,"evidence":"results/vector_history_20261116_outward_tinyloss01/normalized/stdout.log","no_small_loss_cutoff":true},
+  "constant_frame_covariance": {"status":"PASS","states":771,"max_state_error_mm":4.58135608318815911e-22,"not_moving_normal_qualification":true},
+  "full_moving_3D_contact": "NOT RUN",
+  "gripper_mesh_history_time_qualification": "FAIL:existing unqualified conditions remain unchanged",
+  "global_gripper_energy": "BLOCKED",
+  "twelve_wrench_grasp": "NOT RUN",
+  "100mm_grasp_optuna": "BLOCKED",
+  "actual_material_measurements": "NOT RUN",
+  "failures_preserved": ["Euler time convergence","initial tiny-loss aliasing","strict snapshot integration budgets","pointwise near-yield conditioning","projected-cubic noncollinear 480s timeout","linear normalized 8192cell API cap","first normalized cubic phase-boundary failure","assessment infinity serialization","first material-pullback compile error"]
+}

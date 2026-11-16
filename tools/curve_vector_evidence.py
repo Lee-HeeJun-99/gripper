@@ -30,6 +30,7 @@ def main():
     sources=[p for p in (ROOT/'models/yield_front_history').glob('*')if p.is_file()]
     sources+=list((ROOT/'tests').glob('test_vector_*.cpp'))+list((ROOT/'tools').glob('curve_vector_*.py'))
     sources += [ROOT/'models/contact_energy/SlipBandReference.h']
+    sources += [ROOT/name for name in ('models/conservative_beam/EnergyKernel.h','models/conservative_beam/AutoDiff.h','models/finite_rotation/Kernel.h')]
     sources += [ROOT/'tools'/n for n in ('run_trial.py','closure_validation_suite.py','curve_common.py','research_common.py','birth_common.py','history_common.py','beam_common.py','closure_common.py','verification_common.py')]
     source_hash={}
     for file in sources:
@@ -73,7 +74,10 @@ def main():
         if file.exists():add(file)
     add(Path('/usr/include/boost/version.hpp'))
     add(ROOT/'reports/vector_history/ROUNDING_MODEL.md')
+    add(ROOT/'reports/vector_history/QUALIFICATION_v1.json')
     add(ROOT/'.runtime/sofa-source/Sofa/Component/ODESolver/Backward/src/sofa/component/odesolver/backward/NewmarkImplicitSolver.cpp')
+    for name in ('LinearForceField.h','LinearForceField.cpp','LinearForceField.inl'):
+        add(ROOT/'.runtime/sofa-source/Sofa/Component/MechanicalLoad/src/sofa/component/mechanicalload'/name)
     data=dict(schema=1,source_commit=commit,git_source_sha256=source_hash,files=files,outcomes=outcomes,
         environment=dict(platform=platform.platform(),python=platform.python_version(),compiler=subprocess.check_output(['g++','--version'],text=True).splitlines()[0],cmake=subprocess.check_output(['cmake','--version'],text=True).splitlines()[0]),
         scope='immutable explicit cohort ONLY;future outputs excluded. PASS integrity is not PASS physics. Includes actual failed builds/API/limits/conditioning. Fixed-normal benchmark is NOT moving3Dcontact/grasp/Optuna certification.')

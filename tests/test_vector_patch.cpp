@@ -37,8 +37,11 @@ int main(int argc, char **argv) {
               "snapshot Data parsing");
     }
     f->prepare(x);
-    if (argc == 2 && std::string(argv[1]) == "normalized") {
+    if (argc == 2 && (std::string(argv[1]) == "normalized" ||
+                      std::string(argv[1]) == "outward")) {
       require(f->normalizedRepresentation.read("1"), "normalized Data parsing");
+      if (std::string(argv[1]) == "outward")
+        require(f->outwardCertificates.read("1"), "outward Data parsing");
       f->prepare(x);
     }
     for (int i = 0; i < 5; ++i) {

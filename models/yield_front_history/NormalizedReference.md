@@ -64,3 +64,27 @@ Moving normal fields,3D material transport,variable capacity,Birth/Death,
 coupled beam/rigid Jacobians,and global gripper pressure work are NOT approved
 by these tests. Existing gripper Mesh/History/dt/energy gates must still pass
 before12wrench approval or100mm grasp Optuna may begin.
+
+## Optional arithmetic prefilter and material pullback
+
+OutwardPolynomial expands every nearest-rounded finite binary primitive by
+one representable neighbour. It is disabled on non-IEC559/nonbinary or
+non-nearest platforms and under fast-math. No physical capacity/force floor
+is introduced. Polynomial Bernstein coefficients use these enclosures;only
+conclusive signs may bypass rational work. All inconclusive intervals use the
+unchanged exact-rational predicate. The returned NONZERO floating loss-bound
+formula is unchanged. This is arithmetic acceleration,not a new friction law.
+
+Actual independent tests enclose384exact rational Bernstein coefficients
+through degree26.257material-interval comparisons agree exactly with the
+rational predicate;245are resolved by the prefilter. Constant-frame covariance
+tests771states through3rad(rotation only,not moving-normal transport). Future
+compiler/platform changes require rerunning enclosure tests.
+
+MaterialDerivative supplies first/second spatial derivatives of the immutable
+normalized history INSIDE an explicitly selected material cell. If a force
+abscissa depends on mechanical q,e(s(q)) requires these chain terms. Partition
+boundaries deliberately reject an undeclared classical derivative. This is a
+prerequisite for a moving curved-contact pullback,NOT its implementation or
+SOFA qualification. The reference uses the original unchanged Beam Taylor
+algebra as an independent differentiation oracle;no Beam source is modified.

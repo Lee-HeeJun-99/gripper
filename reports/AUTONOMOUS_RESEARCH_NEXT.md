@@ -1,5 +1,148 @@
 # Next research checkpoint
 
+## FIRST UNFINISHED DEVELOPMENT — general moving curved-contact history adapter
+
+The vector reference,actual normalized-patch SOFA implementation,100/200/400
+time and history contrasts,reversal,arithmetic acceleration and first/second
+material-coordinate pullback are now IMPLEMENTED and exercised. Do not repeat
+the completed Hermite/11/21/41campaign or start the old vector-reference task.
+All vector-cohort children finished;no autonomous restart is installed.
+
+Continue SAME branch. First verify reports/vector_history/manifest_v1.json
+when present,and read QUALIFICATION_v1.json. Source commits are in git log;
+compiled.json/raw source snapshots identify actual binaries,including earlier
+versions. The whole gripper remains unqualified and grasp Optuna BLOCKED.
+
+Implement a NEW adapter for existing CurvedContact,NOT an overwrite:
+
+1. Replace the fixed patch's c=C(1-x²) assumption with the actual previous
+   curved geometry's mu*normalForce(s). Preserve the old MATERIAL coordinate
+   when patch bounds move;normal-force quadrature points are not history IDs.
+2. Store/transport the vector state in the documented object material frame.
+   Old local point/normal can be reconstructed from immutable previous geometry;
+   gap/direction must remain tangent to that normal. Constant-frame covariance
+   alone does NOT validate a spatially/time-varying frame field.
+3. Use MaterialDerivative/materialLift for old e(s(q)) chain terms when force
+   abscissae move. Current derivative is for a parabolic fixed-capacity seed;
+   general-capacity derivatives and contact Birth/Death boundaries still need
+   derivation. Do not freeze old(s(q)) as an AD constant or assume a derivative
+   exists at a material partition,contact event or shape seam.
+4. Independently validate prescribed moving-patch force/moment/loss and AD
+   against a dense/function reference BEFORE a short actual3finger profile.
+   Then same-physics Mesh/History/dt/full-cycle energy qualification. Retain
+   existing1%/0.1%/1e-3gates. No12wrench approval or graspOptuna until then.
+
+Fresh-tag smoke/reproduction commands(current fast model,NOT the future3Dadapter):
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/curve_vector_evidence.py --version v1 --verify
+$PY tools/curve_vector_reference.py --tag UNIQUE_SMALL --only outward
+$PY tools/curve_vector_reference.py --tag UNIQUE_CHAIN --only pullback
+$PY tools/curve_vector_reference.py --tag UNIQUE_TINY --only normalized --outward-normalized
+$PY tools/curve_vector_sofa.py --tag UNIQUE_PATCH --steps 100 --dt .01 --solver newmark --directed --compression-every 1 --normalized --outward --initial-vy .001
+```
+No host OOM,disk exhaustion or permission failure is claimed. A future session
+must resume actual adapter development rather than treating this checkpoint
+as final-system completion. Preserve failures/old SDK/Golden/SQLite/no Push.
+
+## Newest unfinished task — finish noncollinear function-history integration
+
+Do NOT repeat completed Hermite/11/21/41campaign or fixed-patch100/200/400
+collinear runs. Same branch development/regrip-autonomous-research.
+
+First read actual results/vector_history_sdk_20261116_normalized_cubic_turn20_a02
+summary/process logs. Its predecessor failed at step11 due to gap interpolation
+near yield. The projected-cubic alternative timed out480s after60/100steps;
+the exact range-cache20step profile still took72s. Do not blindly increase
+time or drop small dissipation. NormalizedSnapshot preserves yielded phase
+separately and now uses admissible Bezier controls,with a linear-gap fallback.
+Independent strict five-probe references PASS,including tiny loss1.056e-26.
+
+Continue with actual noncollinear dynamics,paired representation-energy
+inventory and independent function/dense references. Profile20steps BEFORE
+100steps. Retain1%representation,0.1%time,1e-3force/moment gates. Prove exact
+query-cache/range-lookup equivalence;test pure queries and one Commit. Then
+moving normals/material-coordinate Birth/Death and nonconstant capacity must
+be implemented before this fixed-plane benchmark can replace any3Dcontact.
+It is NOT a free-object grasp,even if all patch gates pass.
+
+Reproduction(new UNIQUE tags only):
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/curve_vector_reference.py --tag NEW_NORMALIZED --only normalized
+$PY tools/curve_vector_sofa.py --tag NEW_PATCH --steps 20 --dt .01 --solver newmark --directed --compression-every 1 --normalized --initial-vy .001
+$PY tools/curve_vector_assess.py --tag NEW_AUDIT CASE_TAG_1 CASE_TAG_2
+```
+After new source commit,seal NEW vector evidence version;never rewrite old
+indices. A campaign checkpoint is not final-goal completion. No automatic
+restart is installed or promised.
+
+## NEW authoritative checkpoint — vector reference/actual SDK isolation advanced
+
+The old "implement independent vector reference" task HAS NOW BEEN IMPLEMENTED
+and actually tested,including a separate fixed-normal Vec3SOFA ForceField.
+Do NOT rerun the completed Hermite/11/21/41or the new fixed-patch campaigns.
+The final100mm grasp objective is STILL INCOMPLETE. No automatic restart exists.
+
+The NEXT unfinished task is CELL-WISE STICK/SLIP CERTIFICATION for the
+piecewise-cubic projected VECTOR snapshot in `AdaptiveSnapshot.h`,not another
+blind sample-count increase. Actual candidate trials exhausted a TOTAL500000
+evaluation budget under three different bounded strategies(local bounds,
+integral-relative reintegration and degree6/10front-guided partition).
+The preserved last diagnostic reports quantity17(unresolved LOSS UPPER BOUND),
+not measured friction loss,at x~.9636128864. Resolved D~4.7357794e-18Fmm;
+accumulated unresolved bound1.5983134e-24 exceeds requested~4.74e-25.
+72independent50decimal-digit samples show4branch discrepancies,but max
+point LOSS-DENSITY discrepancy1.8261e-29F is not proof that floating precision
+alone causes that global bound problem. Do not conflate density F with Fmm.
+
+Candidate follow-up:exact/interval Bernstein signs of the local cubic/capacity
+polynomials to certify whole sticking intervals BEFORE quadrature. For equal
+capacity c,polynomial p and constant vector d:
+- unprojected:yield k²|p+d|²-c² (degree6);
+- projected:2*c*(p.d)/|p|+k|d|²,with squared polynomial
+  4*c²*(p.d)²-k²|d|⁴|p|² (degree10);keep the unsquared sign condition.
+Current floating derivative-isolation roots are NOT certified interval signs.
+Consider exact-rational representations of finite binary interpolation data
+or outward-rounded intervals. Whole-interval equality needs explicit sided
+derivatives,not denominator epsilons. Any ideal-function certificate must also
+separate implemented floating evaluation error;do not silently discard small D.
+
+Only after those tests:qualify an adaptive state Commit with representation
+energy tracked separately,then new curved/moving3Dcontact using preserved
+Hermite pullback and Birth kernels. The adaptive snapshot has NOT been put
+into the SOFA benchmark or three-finger scene because its strict gate FAILS.
+Current clean SDK/API+20step smoke is for UNCOMPRESSED function history ONLY.
+
+Actual fixed-patch results:Euler100→200 FAIL.1% (x.364449%,D1.140386%).
+Distinct directed Newmark100→200 PASS.1% (x.000833938%,D.00259944%);
+not a3finger/time/global-energy certificate.400step contrast NOT RUN:measured
+200step119.875s plus observed growth makes a default480s launch unjustified
+without a new profile/algorithm. Prefix memo preserves ALL CSV values exactly
+but119.563s vs119.875s gives no demonstrated speedup. Do not present the
+forecast as an actual timeout or host exhaustion. Old failures remain.
+
+Safe fresh-output reproductions from the external-drive project root:
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/curve_vector_reference.py --tag NEW_field --only field
+$PY tools/curve_vector_reference.py --tag NEW_snapshot --only snapshot
+# The latter CURRENTLY FAILS;preserve it. Independent50digit diagnostic alsoFAILS:
+$PY tools/curve_vector_reference.py --tag NEW_precision --only conditioning
+$PY tools/curve_vector_sofa.py --tag NEW_smoke --steps 20 --solver newmark --directed
+# Read-only old-data analysis into a NEW result directory:
+$PY tools/curve_vector_assess.py --tag NEW_assessment \
+  20261116_directed_newmark02 20261116_directed_newmark_half01
+```
+
+All outputs under results/vector_history_*,build/vector_history_sdk_* are
+exclusive/external-drive local files. No source/binary/raw/golden/SQLite from
+the earlier curved project was overwritten. Same branch,no remote push.
+500000is an actual local algorithmic resource cap,NOT host RAM/timeout/session
+exhaustion. Further mathematical development remains possible;this is not a
+completion declaration or an assertion of automatic future execution.
+
 ## Authoritative unfinished checkpoint — all listed physics children completed
 
 The earlier stop was agent-selected,not a recorded host/session exhaustion.

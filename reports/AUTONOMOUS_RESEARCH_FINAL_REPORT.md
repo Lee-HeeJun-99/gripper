@@ -1,5 +1,100 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Authoritative newest result — actual development,unfinished final objective
+
+Same branch continued from fb6a698. Implemented normalized vector history,
+actual Matching SDK forcefield,strict tiny-loss/reference tests,shape-preserving
+phase interpolation,equivalent outward arithmetic,and material-coordinate
+first/second derivative/AD lift. Detailed measured gates are in
+reports/vector_history/QUALIFICATION_v1.json. Existing original models were
+not rewritten;legacy45gates are not added to the new patch gates.
+
+Actual noncollinear patch100/200/400steps and reversal PASS in their limited
+scope;time and history comparisons pass unchanged lines;repeat is exact.
+Arithmetic prefilter preserves full actual journals,while400step runtime
+drops455.897→6.7775s. Tiny1.056e-26Fmm loss is retained and checked,not omitted.
+The fixed-patch source-matched Newmark energy audit explicitly includes cached
+acceleration work,signed linearization and representation inventory. None is
+invented friction heat. Global gripper/pressure-device energy is still BLOCKED.
+
+All cohort processes completed. The old premature stop was NOT established
+host exhaustion. This checkpoint is NOT project completion and does not
+certify3Dgrasp. First unfinished development is the general moving-curved
+material-history adapter documented at the TOP of NEXT,including nonparabolic
+capacity,varying normal frames,Birth/Death and spatial AD chain terms.
+Three-finger convergence/full energy/new12wrench/shapes/graspOptuna remain
+unapproved. No real PET/vacuum/material measurement or physical performance
+certification exists. No remote Push or automatic restart was performed.
+
+## Latest continuation is NOT a final-goal completion
+
+See newest PROGRESS/STATUS/NEXT for measured state. Actual fixed-patch
+100/200/400step compressed-history dynamics,repetition and base→quarter
+time checks now pass within this narrow scope. Actual noncollinear100step
+integration still hit480s after60commits;alternative normalized-state SOFA
+API passes,but first dynamic attempt failed at step11. Independent vector
+state/prospective-loss accuracy is not moving-contact/grasp qualification.
+Original three-finger/global-energy/graspOptuna gates remain unfinished.
+
+The corrected energy audit follows the actual SDK cached-acceleration cpp
+recurrence,not misleading header prose. The signed linearization,cached-work
+and representation inventories remain separate and are NOT invented heat.
+No physical pressure-source work or global-gripper energy PASS is claimed.
+All failures,including the first incorrect assessment,are preserved.
+
+## Newest continuation — vector history and actual SDK isolation,not completion
+
+Continued SAME branch from fb6a698. Existing4945artifact/149blob and34artifact/
+3blob evidence checks actually PASS;no prior physics child existed. Completed
+Hermite/11/21/41campaigns were not repeated. No push or original/golden/SQLite/
+SDK overwrite occurred. New raw/build remains on the external drive.
+
+Implemented circular vector return,objective normal transport,bounded
+function-valued material history,adaptive integration,foreign/stale Commit
+guards,and a separate real Matching-SDK Vec3ForceField isolation benchmark.
+This is NOT the requested curved moving3Dcontact/grasp component. Actual
+600state point FD1.55721e-12;normal transport4.36551e-22;function covariance
+2.96987e-25;one-sided material FD2.94588e-9;SDK API FD~6.71741e-11.
+All numbers are independent mathematical or actual SOFA research results,
+NOT real PET/vacuum/material measurements. No physical criterion was relaxed.
+
+Actual fixed-patch100step dynamics,noncollinear initial-velocity contrast,
+200step temporal contrast,query-cache/energy-observer equivalence executed.
+Cache/observer common CSV differences0. Euler dt/2x.364449%,D1.140386%FAIL.1%.
+Distinct velocity-sided Newmark100→200x.000833938%,D.00259944%PASS.1%.
+These are different integrator conditions,not pooled approvals.400stepsNOT RUN;
+measured200step119.875s and growth require a justified new cost plan. Prefix
+memo keeps exact results but119.563s does NOT demonstrate useful acceleration.
+
+For constant-capacity Euler ONLY,the actual discrete force residual5.40e-15,
+kinetic identity3.95e-25,local material energy2.26e-27Fmm are measured.
+Inventory quadrature gap9.48e-20/sequential residual2.15e-19remain visible.
+The signed contact linearization term is derived,NOT fitted heat. This is
+not pressure-device work/global gripper energy;Euler identities are not used
+to claim Newmark energy closure. Current-source SDK/API+20step smoke alsoPASS.
+
+New AdaptiveSnapshot is EXPERIMENTAL/FAIL. Cubic vector fields are projected
+onto the circular disk,not independently clipped. Stricter independent tests
+exposed a false-positive dense-only impression:471cells give withheld state
+5.16291e-10mm and dense prospective loss.05964%error,but strict adaptive loss
+certification still exhausts a TOTAL500000evaluation budget. Several distinct
+methods were actually tested(local bounds,integral-relative reintegration,
+degree6/10fronts);latest evidence identifies unresolved LOSS UPPER BOUND,
+not observed physical loss,as the dominant termination condition. See NEXT
+for exact diagnostic values and the selected polynomial-sign alternative.
+50decimal-digit comparison finds4of72near-yield branch/loss discrepancies,
+max density error1.82610e-29F;this is NOT sufficient to blame precision alone.
+The snapshot was NOT rolled into SOFA because it fails its strict gate.
+
+Actual termination of those TRIALS is a declared algorithmic resource cap,
+not host/session/RAM exhaustion. The overall research remains unfinished;
+further new mathematical development is possible. No automatic restart exists.
+Moving contact,Birth/Death of the new field,3finger mesh/history/time
+qualification,12wrench/shapes,global energy and100mm grasp Optuna remain
+BLOCKED/NOT RUN. Old independent structural studies are not grasp results.
+The95.15mm guided research layout still does not meet the50mm body target.
+Use TOP of NEXT/STATUS for fresh-output commands and the next unfinished task.
+
 ## Latest continuation:actual Hermite SOFA development
 
 **Overall EXPERIMENTAL/FAIL/BLOCKED,not a completed100mm grasp system.**

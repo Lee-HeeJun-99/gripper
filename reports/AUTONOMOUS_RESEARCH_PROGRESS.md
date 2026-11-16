@@ -1,5 +1,115 @@
 # Autonomous research log
 
+## Latest measured result — continued beyond first patch campaign
+
+The normalized cubic phase-boundary failure was reproduced and corrected by
+an admissible linear-gap fallback,without changing physical state thresholds.
+Actual noncollinear SOFA100/200/400steps completed115.056/227.369/455.897s;
+the quarter-step run was actually completed under480s,not extrapolated.
+Its costly rational predicate motivated a NEW equivalent arithmetic prefilter:
+each finite binary operation is enclosed by outward representable neighbours;
+only conclusive Bernstein signs bypass rational work.384exact coefficient
+checks and257material-interval exact-predicate checks PASS. No loss is clipped.
+
+Actual20/100/400step and50step reversal journals are ALL-VALUE identical with
+and without prefilter. Actual fast100/200/400times3.5717/5.8295/6.7775s.
+The finer-history100case took6.4769s. Repeated100journal is exactly equal.
+Base→quarter loss.01805761%,x.00032505%,y.00103590%PASS.1%;finer history
+loss.00034348%PASS1%. No qualified three-finger improvement is inferred.
+The updated dense reference exposed coarse-grid zero/nonzero small-loss cases;
+an initial assessor infinity serialization FAIL is preserved. New outputs
+explicitly report that diagnostic,not a fabricated zero or false PASS.
+
+Next selected research was the moving material-coordinate chain derivative:
+implemented MaterialDerivative.h and AD Taylor lift.257manufactured cell
+states agree with unchanged Beam Taylor algebra and finite differences;
+first derivative FD error3.855e-15,second chain FD6.748e-16. An initial C++
+vexing-parse compile FAIL was fixed and retained. Cell boundaries explicitly
+reject an undeclared classical derivative. This is a prerequisite,not an
+already integrated moving-curved-contact force law.
+
+Constant-frame vector-history covariance771states through3rad also PASS.
+All references/actual physics finished;none automatically restarts. The
+remaining integration requires nonparabolic normal-force capacity and varying
+contact frames/Birth/Death on the original material coordinate. The current
+parabolic fixed-patch helper cannot be silently substituted into the gripper.
+
+## 2026-11-16 continuing checkpoint — actual integration,not goal completion
+
+Same branch retained. The earlier premature campaign stop was an agent choice,
+not evidence of a host/session limit. This continuation has implemented and
+executed vector-history SOFA code. The full ReGrip objective remains unfinished.
+
+Actual fixed-patch Newmark projected-cubic runs completed100/200/400steps in
+23.559/45.998/91.128s. Base→quarter movement difference.0049881%,plastic loss
+.0155430%PASS the unchanged.1%time line. Independent analytic monotone-return
+loss and actual repeat200(all common CSV entries exactly equal) also PASS.
+This is a prescribed fixed-normal tangential patch,NOT a three-finger grasp.
+
+The first Newmark energy assessment incorrectly assumed fresh acceleration
+each step. The actual SDK cpp retains acceleration;its independently
+reconstructed recurrence satisfies the matrix equation to9.23e-14relative
+and the measured fixed-patch energy identity to5.18e-24Fmm. Cached-acceleration
+work and signed return/linearization terms are explicit,not relabelled heat.
+The previous incorrect assessment remains immutable beside its correction.
+SDK source-file SHA256:c08a2786b9cb38b1a02b6835cfb76a8be55c70e19b19ed7fd268acdd052457a4.
+
+The noncollinear projected-cubic100step attempt actually timed out480.004s
+after60completed steps. Exact-sign range caching was independently checked
+at257points but its20step profile still took72.023s. No unearned speedup or
+full-duration PASS was claimed. The fixed-time failure motivates a different
+representation,not a larger timeout or loss cutoff.
+
+Independent normalized gap/direction history:linear version passed five
+strict adaptive-reference loss probes(including1.0562593e-26Fmm) but required
+5620cells and exhausted8192cells in the1e-11mm SOFA API fit test. Cubic Bezier
+controls reduced the standalone case to481cells/11084source queries,withheld
+state error5.89444e-10mm,zero phase mismatches on131072withheld points. All five
+strict loss probes PASS1%;the tiny-loss relative error is4.25173e-9. These
+are independent mathematics,not grasp certification. Actual normalized cubic
+SOFA API tests PASS,including force/Jacobian/query purity. Its first dynamic
+attempt failed at step11 after10commits due to an inadmissible cubic gap
+control near a phase boundary. That failure is preserved. A shape-preserving
+linear-gap fallback(no clipping of physical state) and exact-query memoization
+are under bounded SOFA revalidation in a NEW output directory.
+
+Raw:results/vector_history_*;unchanged original models/golden/SQLite/SDK.
+No automatic background restart exists. Live status must be read from tools
+and completed summary.json,not inferred from historical RUNNING text below.
+
+## Latest — adaptive state attempt and explicit bounded failures
+
+Completed directed Newmark200steps119.875s:dt/2motion.000833938%,D.00259944%
+PASS.1%in this fixed-patch isolation ONLY. Exact prefix-operator memo gives
+bitwise same ALL CSV values but119.563s:the speedup hypothesis is NOT supported.
+Did not blindly run400steps with an unjustified default480s budget.
+
+Implemented independent AdaptiveSnapshot cubic vector FUNCTION plus circular
+admissibility projection,with energy inventory change and prospective return
+loss checks,not force-only fitting. Dense131072point tests exposed coarse
+58.14%/2.668%loss FAILs. Fine471cell withheld state5.16291e-10mm meets1e-9;
+observed representation energy change1.61591e-18Fmm,NOT friction heat.
+Dense prospective loss alone appears to pass(.05964%worst),but the stricter
+adaptive reference FAILS. This prevents a false SOFA rollout.
+
+Preserved distinct failures:seed01depth44;seed02depth60then500000budget;
+seed_local01local Lipschitz/partition;seed_relative01aggregate loss bound;
+seed_reintegrate01same TOTAL budget including discarded passes;
+seed_fronts02degree6/10front partition. No failed output overwritten.
+Latest seed_diagnostic01 pinpoints quantity17(unresolved-loss upper bound),
+last error6.32955e-28 vsallowed1.15620e-28 near x.9636128864;
+resolved D4.73578e-18,unresolved sum1.59831e-24Fmm. It is a conservative
+bound/representation certification blocker,not observed physical dissipation.
+
+Independent Boost50decimal conditioning probe72samples actually FAILS4branch/
+1%loss cases,max absolute loss DENSITY difference1.82610e-29F. This supports
+precision conditioning near yield,NOT a proof of sole root cause. All failed
+diagnostic source/binaries/logs are retained. Next distinct method selected:
+cell-wise polynomial sign certification with explicit equality/rounding handling,
+not another blind point budget increase. Adaptive snapshot is NOT connected
+to SOFA or approved for grasp. Actual current-source clean SDK/API/20step
+uncompressed Newmark smoke PASS;no3finger/global-energy/Optuna claim.
+
 ## Continuation — actual vector-history SDK benchmark and failed time gate
 
 New fixed-normal VectorPatchBenchmark is a real separate SOFA ForceField,

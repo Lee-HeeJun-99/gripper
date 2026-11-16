@@ -11,8 +11,10 @@ from curve_common import ROOT, sha, write_json
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--tag', required=True)
-    parser.add_argument('--only',choices=['return','field','snapshot','conditioning','certificate','normalized'])
+    parser.add_argument('--only',choices=['return','field','snapshot','conditioning','certificate','normalized','frame','outward','pullback'])
+    parser.add_argument('--outward-normalized',action='store_true')
     args = parser.parse_args()
+    if args.outward_normalized and args.only!='normalized':raise ValueError('explicit normalized reference scope required')
     if not args.tag.replace('_', '').isalnum():
         raise ValueError('simple unique campaign tag required')
     out = ROOT / 'results' / ('vector_history_' + args.tag)
@@ -33,6 +35,11 @@ def main():
         p=ROOT/name
         if p.exists():paths.append(p)
     paths.append(ROOT / 'models/yield_front_history/PolynomialFronts.h')
+    if (ROOT/'tests/test_vector_frame.cpp').exists():paths.append(ROOT/'tests/test_vector_frame.cpp')
+    for name in ('models/yield_front_history/OutwardPolynomial.h','tests/test_vector_outward.cpp'):
+        if (ROOT/name).exists():paths.append(ROOT/name)
+    for name in ('models/yield_front_history/MaterialDerivative.h','tests/test_vector_pullback.cpp','models/conservative_beam/EnergyKernel.h','models/conservative_beam/AutoDiff.h','models/finite_rotation/Kernel.h'):
+        if (ROOT/name).exists():paths.append(ROOT/name)
     before={str(p.relative_to(ROOT)): sha(p) for p in paths}
     write_json(out / 'identity.json', dict(
         commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
@@ -55,7 +62,7 @@ def main():
         if before!={str(p.relative_to(ROOT)):sha(p)for p in paths}:
             stages['source_drift']=dict(exit_code=1,reason='source changed during compile;binary not accepted')
             break
-        stages[name] = logged([binary], out / name, 180)
+        stages[name] = logged([binary]+(['outward']if args.outward_normalized else[]), out / name, 180)
         stages[name]['binary_sha256'] = sha(binary)
         if stages[name]['exit_code']:
             break

@@ -1,7 +1,8 @@
-"""Bounded same-binary time refinement of a COMPLETED native contact trial.
+"""Bounded same-binary variants of a COMPLETED native contact trial.
 
-Only dt and output locations change. This does not restore a partial checkpoint,
-alter the physical control law, rebuild a kernel,or approve convergence.
+Default:halve dt. --extend-duration:post-release observation at unchanged dt.
+--two-sided-contact:separate PHYSICAL collision-side contrast,not refinement.
+No partial checkpoint restore,kernel rebuild or convergence approval.
 """
 import argparse,csv,json,math,shutil,subprocess,xml.etree.ElementTree as ET
 from pathlib import Path
@@ -9,15 +10,23 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);mode=p.add_mutually_exclusive_group();mode.add_argument('--extend-duration',action='store_true');mode.add_argument('--two-sided-contact',action='store_true');p.add_argument('--displacement-journal',action='store_true');a=p.parse_args()
     if not a.tag.replace('_','').isalnum() or not a.case.replace('_','').isalnum():raise ValueError('campaign name')
     source=ROOT/'results'/('autonomous_film_'+a.case);reference=json.loads((source/'summary.json').read_text())
     if reference.get('status')!='PASS' or not reference.get('finite'):raise ValueError('complete finite source required')
-    command=json.loads((source/'1/process/command.json').read_text());previous_steps=int(command[command.index('-n')+1]);steps=2*previous_steps
-    estimate=reference['stages']['physics']['runtime_s']*2*1.5
+    command=json.loads((source/'1/process/command.json').read_text());previous_steps=int(command[command.index('-n')+1]);steps=previous_steps if a.two_sided_contact else 2*previous_steps
+    margin=1.25 if a.extend_duration else 1.5
+    estimate=reference['stages']['physics']['runtime_s']*(1 if a.two_sided_contact else 2)*margin
     if steps>1600 or estimate>480:raise ValueError('measured refinement projection exceeds bounded1600-step/480s policy')
     identity=json.loads((source/'identity.json').read_text());tree=ET.parse(source/'1/scene.scn');root=tree.getroot()
     if identity.get('accepted_integrator') not in ('BE','uniform BDF2 after BE startup') or root.find('FilmNativeCoupledCorrection') is None:raise ValueError('completed coupled BE/uniform-BDF2 source only')
+    field=root.find("Node[@name='assembly']/FilmRailTendon")
+    if a.two_sided_contact and identity.get('object_shape')!='sphere':raise ValueError('two-sided thin-film contrast is sphere-only;do not change closed object-mesh sidedness')
+    if a.extend_duration and (identity['accepted_integrator']!='BE' or previous_steps*float(root.get('dt'))<float(field.get('releaseEnd'))-1e-10):raise ValueError('extension needs a completed measured release window;BE only')
+    if a.displacement_journal:
+        declared=identity.get('assembly_source_case')
+        proof=ROOT/'results'/('autonomous_film_'+str(declared))
+        if declared!='20261117_local_probe293' or 'displacementFilename' not in (proof/'sources/film_rail_tendon/FilmRailTendon.cpp').read_text():raise ValueError('exact recorder requires the explicitly qualified293/296 assembly')
     expected={}
     for name,component in (('core','ReGripFilmShell'),('assembly','ReGripFilmRailTendon'),('observer','ReGripFilmNativeObserver')):
         matches=[Path(n.get('pluginName')) for n in root.findall('RequiredPlugin') if n.get('pluginName','').endswith('/lib'+component+'.so')]
@@ -26,19 +35,35 @@ def main():
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);case=out/'1';case.mkdir();shutil.copytree(source/'sources',out/'sources')
     for node in root.iter():
         for key,value in list(node.attrib.items()):node.set(key,value.replace(str(source/'1'),str(case)))
-    root.set('dt',str(float(root.get('dt'))/2));tree.write(case/'scene.scn')
+    if not a.extend_duration and not a.two_sided_contact:root.set('dt',str(float(root.get('dt'))/2))
+    if a.two_sided_contact:
+        if any(node.get('bothSide','0') not in ('0','false') for node in root.iter() if node.tag in ('TriangleCollisionModel','LineCollisionModel','PointCollisionModel')):raise ValueError('two-sided contrast requires a one-sided source')
+        for node in root.iter():
+            if node.tag in ('TriangleCollisionModel','LineCollisionModel','PointCollisionModel'):node.set('bothSide','1')
+    if a.displacement_journal:field.set('displacementFilename',str(case/'displacement.csv'))
+    tree.write(case/'scene.scn')
     # Verify the only physical/numerical scene change is dt. Output addresses
     # are normalized back before byte comparison of the parsed XML tree.
     check=ET.parse(case/'scene.scn')
     for node in check.getroot().iter():
         for key,value in list(node.attrib.items()):node.set(key,value.replace(str(case),str(source/'1')))
     check.getroot().set('dt',ET.parse(source/'1/scene.scn').getroot().get('dt'))
+    if a.displacement_journal:
+        previous_local=ET.parse(source/'1/scene.scn').find("Node[@name='assembly']/FilmRailTendon").get('displacementFilename')
+        if previous_local is None:check.find("Node[@name='assembly']/FilmRailTendon").attrib.pop('displacementFilename')
+        else:check.find("Node[@name='assembly']/FilmRailTendon").set('displacementFilename',previous_local)
+    if a.two_sided_contact:
+        original=list(ET.parse(source/'1/scene.scn').getroot().iter())
+        for node,old in zip(check.getroot().iter(),original):
+            if node.tag in ('TriangleCollisionModel','LineCollisionModel','PointCollisionModel'):
+                if 'bothSide' in old.attrib:node.set('bothSide',old.get('bothSide'))
+                else:node.attrib.pop('bothSide')
     if ET.tostring(check.getroot())!=ET.tostring(ET.parse(source/'1/scene.scn').getroot()):raise RuntimeError('unexpected scene change')
     command[command.index('-n')+1]=str(steps);command[-1]=str(case/'scene.scn')
     identity.update(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),command=__import__('sys').argv,
         scene_sha256=sha(case/'scene.scn'),reuse_binary_source_case=a.case,reuse_identity_sha256=sha(source/'identity.json'),
-        same_binary_time_refinement=2,compiled_source_note='Copied immutable source archive;NO new compilation',
-        refinement_script_sha256=sha(__file__),coupled_budget=dict(projected_seconds=estimate,profile=a.case,margin=1.5,hard_seconds=480))
+        same_binary_time_refinement=1 if a.extend_duration or a.two_sided_contact else 2,duration_extension=2 if a.extend_duration else 1,contact_surface_sides='two-sided' if a.two_sided_contact else identity.get('contact_surface_sides','one-sided'),local_displacement_journal=a.displacement_journal or identity.get('local_displacement_journal',False),compiled_source_note='Copied immutable source archive;NO new compilation',
+        refinement_script_sha256=sha(__file__),coupled_budget=dict(projected_seconds=estimate,profile=a.case,margin=margin,hard_seconds=480))
     write_json(out/'identity.json',identity)
     if any(sha(Path(path))!=value for path,value in expected.items()):raise RuntimeError('prelaunch binary drift')
     process=guarded(command,case/'process',480)
@@ -46,7 +71,8 @@ def main():
     finite=bool(rows) and all(math.isfinite(float(value)) for row in rows for key,value in row.items() if key!='x') and all(math.isfinite(float(value)) for row in rows for value in row['x'].split())
     log=(case/'process/stdout.log').read_text()+(case/'process/stderr.log').read_text()
     ok=process['exit_code']==0 and len(rows)==steps and finite and not any(s in log for s in ('[ERROR]','Unused Attribute','Newton-Raphson method failed to converge'))
-    result=dict(status='PASS' if ok else 'FAIL',scope='same-binary execution only;time convergence NOT approved',finite=finite,stages=dict(physics=process),rows=len(rows),last={k:v for k,v in rows[-1].items() if k!='x'} if rows else None)
+    variant='two-sided-contact physical contrast' if a.two_sided_contact else 'post-release observation extension' if a.extend_duration else 'half-dt refinement'
+    result=dict(status='PASS' if ok else 'FAIL',scope='same-binary '+variant+' execution only;time/grasp certification NOT approved',finite=finite,stages=dict(physics=process),rows=len(rows),last={k:v for k,v in rows[-1].items() if k!='x'} if rows else None)
     write_json(out/'summary.json',result);print(json.dumps({k:result[k] for k in ('status','finite','rows')}))
 
 if __name__=='__main__':main()

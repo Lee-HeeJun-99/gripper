@@ -1,5 +1,16 @@
 # 경진대회 지원서 초안 — 제출 전 실제 규정·팀 정보 보완 필요
 
+> 2026-11-17 research-only status:actual fixed-sphere16s release/near-rest
+> recovery366 is not free-object grasp or measured actuator capability.
+> Time and whole-surface buffer clearance remain FAIL;graspOptuna BLOCKED.
+> Existing application question bodies/character limits and unknown team/
+> supplied-actuator specifications are unchanged. Do not submit research
+> parameters as achieved hardware performance.
+
+
+개발 상태 추가(2026-11-17): 고정 구체·원통 접촉과 짧은 결합 운동량 검증을 수행했으나 시간·일부 메시 수렴과 자유 물체 파지는 미인증이다. 아래 문항 본문·글자 수와 목표 표현은 유지한다.
+
+
 개발 상태 갱신: 필름 쿠폰의 SOFA 비선형 반복 오류를 수정했으나, 전체 시간 수렴과 실제 파지 성능은 아직 미검증이다. 아래 지원서 문항의 성능 목표를 달성 실적으로 바꾸지 않았다. 문항별 본문과 글자 수는 유지한다.
 
 기술 근거는 REGRIP_COMPETITION_TECHNICAL_BASIS.md와 별도다. 모든 성능 수치는 미검증 목표로 작성했으며, 달성 실적으로 전환하지 않는다. 글자 수는 공백·문장부호 포함, 제목 제외 Unicode 문자 수다.
@@ -47,3 +58,4 @@
 ## 지원 요청 (185/300자)
 
 액추에이터·드라이버·전원·통신의 전체 명세와 개수, 추가 센서·구동부·진공원 허용 여부, 사용 가능한 재료·공구·가공 범위를 요청합니다. 평가 물체의 크기·질량 범위, 취성물 안전 기준, 유지시간·운반거리·재시도 규칙과 수동 보조 허용 여부도 확인이 필요합니다. 확인 전 토크·속도·스트로크나 자동 운반 성능을 확정하지 않겠습니다.
+> 2026-11-17 근거 갱신: 고정 구체·원통의 단일 핑거 굽힘/접촉 및 원통 해제·복원 연구 실행을 확보했다. 자유 물체 파지, 지지 하중·토크, Baseline 우위와 시간 수렴은 미인증이다. 아래 지원서 문항·분량과 미확정 팀/액추에이터 정보를 성과로 바꾸지 않는다.

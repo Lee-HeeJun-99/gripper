@@ -1,5 +1,147 @@
 # Autonomous research log
 
+## Latest 2026-11-17 checkpoint through372 (NOT project completion)
+
+Local source/tool commits through3181ce8. Actual fixed-sphere356 completes
+8s;366 completes16s/1600steps in268.204s. Final tip -0.00672mm,max speed
+0.00854mm/s,T=0,contact multipliers0. This is frictionless FIXED-object
+release/near-rest recovery,NOT free6DOF/3finger grasp or design superiority.
+Actual states: designs/visualizations/film_native_20261117_sphere_recovery_actual372/.
+Full-cycle buffer-clearance audit358 FAILS (-0.00013543mm at7.99s);the gap
+to the radius8 zero-thickness sphere remains positive0.00986457mm. BothSide
+contrast367 is REJECTED as a fix:all5 physical journals byte-identical in370.
+Time348/351 still FAIL0.1%;full energy/friction/free grasp/Optuna BLOCKED.
+Next REAL implementation is candidate-complete triangle contact with its own
+row-observer interface;independent temporal work is a shared C2 tendon
+profile. No candidate-complete or C2 implementation is claimed yet.
+See FILM_TEMPORAL_COUPLING_20261117.md and LONG_RUN_RESEARCH_CHECKPOINT.md.
+Historical activity notes below are not live process status.
+
+
+## 2026-11-17 actual continuation through343 — project NOT complete
+
+Local feature commit518208f adds current closest point/gradient/Hessian and
+SQP line-search globalization,without changing accepted forces or tolerance.
+Actual333 completes4s/400steps:70.0995s runtime;whole-triangle buffered gap
+defect2.21e-11mm versus0.000531mm in307. Radial moment and force pullback
+checks pass in limited scope. Discrete force-location covering arc73.208deg
+is NOT contact area/pressure/holding performance. Fixed-object,frictionless,
+single-finger only;NOT free6DOF or full-energy certification.
+Failed320/322 and rejected remedies325/328/329 are preserved. Same-binary
+short time comparison337 FAILS0.1%,including pre-contact motion/energy;
+the contact event alone cannot explain all time error. Full-window344 and
+subsequent development must be judged from their actual final result files.
+Details/reproduction: FILM_TEMPORAL_COUPLING_20261117.md and
+LONG_RUN_RESEARCH_CHECKPOINT.md. Grasp Optuna remains BLOCKED;no fabrication
+or actuator performance is claimed. Historical notes below are not live status.
+
+
+## 2026-11-17 continuation through319
+
+Actual current-normal sphere307 completes4s; however exact triangle audit312
+finds buffered gap -0.000531mm. A new closest-primitive AD contact model is
+now implemented and actually SOFA-tested:316 completes20 steps/.1s;317
+buffered gap -7.13e-14mm;318 radial moment defect3.18e-15;319 force pullback
+defect7.47e-16. These are limited checks,NOT full convergence certification.
+See FILM_TEMPORAL_COUPLING_20261117.md for definitions and prior failures.
+Whole-cycle292 time convergence remains FAIL;full energy and grasp Optuna
+remain BLOCKED. Actual free6DOF/3finger/multimaterial grasp is NOT RUN.
+Next executed tasks are wide closest-contact320 and tangent-failure321;
+their final result files,not this historical activity note,define status.
+
+
+## 2026-11-17 latest actual checkpoint through305
+
+Project NOT complete. Work continued beyond the old campaigns. Source feature
+commits through29ef7e4 are local only; current-sphere geometry is an additional
+experimental implementation, not a replacement certification.
+
+Actual fixed-cylinder270 closes over4s;275 completes8s closing/hold/release.
+282 completes16s including settling (1600steps,281.424s): final tip -0.007395mm,
+maximum speed0.009374mm/s, zero prescribed tension and no positive contact
+impulses. These are actual research-parameter results, NOT free-object grasp.
+The first800 rows of282 match275 bitwise (state/contact/momentum/coupled CSV).
+Sphere284 closes4s but supports locations over73.148deg versus Cylinder
+123.752deg. Discrete force-bearing location spans are NOT contact area,
+continuous wrapping angle, pressure or holding capacity.
+
+Whole-cycle275/288 time comparison292 remains FAIL at0.1%: tip2.3268%,
+normal force14.4819%,attachment energy1.1316%,kinetic energy8.3910%.
+Inherited failures remain. Same-binary cache benchmark281 has3 alternating
+pairs, all5 physical CSVs bitwise identical, median runtime ratio0.77813
+(22.19% reduction);704 mechanical evaluations become402, with302 exact reuses.
+This is scoped performance qualification, not physical convergence.
+
+Measurement issue isolated: main journal.x is WORLD, not displacement.
+Late world-minus-rest force reconstruction loses precision. Near-rest
+prescribed probe293 gives relative impulse residual0.00419962 in294 world
+reconstruction versus2.78543e-8 in295 direct local-displacement reconstruction.
+296 recorder ON/OFF physics CSVs match bitwise.291's earlier attempt wrongly
+interpreted main x as displacement and is INVALID postprocessing, not physics.
+Old whole-cycle raw lacks exact local coordinates: do not retro-certify it.
+
+New root cause298: frozen begin normals give accepted exact-sphere radial-law
+moment deviation0.6430% in the wide Sphere test. New SphereStep uses actual
+current radial gaps/normals and TRUE constraint geometric tangent. Independent
+FD relative error2.21e-15;actual30120-step test and302/303/304/305 partial
+equation checks pass their LIMITED scopes: accepted radial-law defect1.59e-15,
+force-row reconstruction4.97e-17, impulse residual3.49e-6,derived BE identity
+4.02e-10. This is a NEW fixed-support sphere model, not native-contact
+equivalence, friction, CCD, contact-area convergence or free6DOF certification.
+300 source-archive omission is preserved as prephysics FAIL;301 fixes it.
+
+Current actual extension306: inspect summary/result before interpreting its
+prefix. No tolerance relaxation, fake forces, SDK edits, hardware, remote push
+or paid service.299 rejects unsupported moving colliders before accepted rows.
+Three fingers/free6DOF/12-wrench/multimaterial, full energy, final structure
+superiority and grasp Optuna remain BLOCKED/NOT RUN.
+
+## 2026-11-17 actual continuation through264 — supersedes older status
+
+Project NOT complete. Functional commits: b8b9cc3 (profiling/routing),
+6172967 (cache recovery),9354793 (nonlinear contact),74175ca (BDF2 alternative),
+ed40987 (mandatory accepted-stage owner). Sources/builds/raw remain separate.
+
+Actual235/243 complete400/800-step fixed-cylinder closing;246 time FAIL:
+force9.27393%,tip0.163093%,attachment0.169901%,kinetic4.73995%.
+Independent240/241 confirm accepted impulse equations and the derived BE
+identity, NOT whole energy or global force/moment certification. BDF2 actual
+244/247/248 also FAIL250; do not adopt it as a qualified time fix.
+
+Actual251 higher-tension one-factor capacity probe fails free Newton at2.95s.
+Available2.94s state has73.122deg load-bearing location span, but partial-run
+diagnostic258 and plot259 are EXPERIMENTAL/PARTIAL FAILED, not wrapping/grasp
+approval.263 with single-Newton predictor gets past that stage to3.36s, then
+FAILS the coupled Newton30-iteration budget. This is algorithmic failure,
+NOT OS memory/runtime exhaustion. No tolerance/iteration inflation was used.
+Short260 accepted impulse/energy checks and actual negative-owner guard264
+pass their LIMITED scopes.265 tests previous accepted velocity initialization;
+inspect summary/result before using its data. No automatic restart is assumed.
+
+Read FILM_TEMPORAL_COUPLING_20261117.md and LONG_RUN_RESEARCH_CHECKPOINT.md.
+Remaining: robust complete closing/hold/release, mesh/history/dt, current-normal
+angular consistency, reactions, whole energy, self-contact, free6DOF/3finger/
+multimaterial/12-wrench grasp. Final-design superiority and grasp Optuna remain
+BLOCKED/NOT RUN. Research parameters are not measured PET/actuator properties.
+
+## 2026-11-17 actual continuation through224
+
+Verified6764 inherited files before edits; fixed audit-old CLI guard. Added
+passive cost counters and byte-identical ON/OFF checks. Rejected direct dispatch;
+qualified reusable lift. Ran actual one-factor routing/root/control studies;
+an independent modal reference reproduces transient arching. Added actual
+Sphere/Cylinder contact, accepted-state visuals and a retained mesh FAIL.
+
+Passive velocities/nodal impulses plus independent force/Hessian reconstruction
+identify native nonlinear compliance-splitting error. Implemented a constrained
+BE potential/Newton kernel AND an actual SOFA component.20/40-step mechanics
+checks pass their limited scope; time refinement FAIL remains. Preserved the
+energy-Armijo cancellation failure and fixed residual merit at SAME tolerances.
+Public dFree/W diagnostics isolate near-duplicate native LCP nonconvergence;
+active-set reference224 passes. Actual225/226 continue the development.
+No hardware, push, SDK modification or grasp optimization occurred.
+
+
 ## Latest follow-up128–146 (completed, not RUNNING)
 
 Same-input local temporal refinement reduced post-1s attachment discrepancy to

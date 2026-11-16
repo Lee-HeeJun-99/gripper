@@ -3,7 +3,7 @@ import argparse,csv,json,xml.etree.ElementTree as ET
 import numpy as np
 from curve_common import ROOT,sha,write_json
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);data={};info={};inputs={};config=None
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);p.add_argument('--contact-phases',action='store_true');a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);data={};info={};inputs={};config=None
  for tag in a.cases:
   directory=ROOT/'results'/('autonomous_film_'+tag);summary=json.loads((directory/'summary.json').read_text())
   if summary['status']!='PASS':raise RuntimeError('partial/failed physical trial')
@@ -25,6 +25,11 @@ def main():
   for other in a.cases[i+1:]:
    x,y=data[tag],data[other];phases={}
    end=min(x['time'][-1],y['time'][-1]);windows=[('all',0,end),('ramp',0,ramp),('hold',ramp,release),('release',release,end)] if end>.2+1e-10 else [('all',0,end),('pre_contact',0,.09),('onset',.09,.12),('sustained',.12,end)]
+   if a.contact_phases:
+    entries=[info[t]['first_load_time'] for t in (tag,other)]
+    if any(t is None for t in entries):raise ValueError('actual contact phases require positive accepted forces in BOTH complete cases')
+    step=max(x['time'][0],y['time'][0]);lo=max(0,min(entries)-step);hi=min(end,max(entries)+max(4*step,.005))
+    windows=[('all',0,end),('before_first_recorded_contact',0,lo),('entry_window',lo,hi),('after_entry_window',hi,end)]
    for label,lo,hi in windows:
     hi=min(hi,end)
     if hi<=lo:continue # A single boundary output is not a hold/release interval.

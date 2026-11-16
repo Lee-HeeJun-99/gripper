@@ -1,0 +1,4 @@
+#include "../models/film_shell/PlaneContact.h"
+#include <iostream>
+using namespace regrip_film;
+int main(){try{std::array<AD,3>g{AD::variable(1,0),AD::variable(-1,1),AD::variable(-1,2)};auto a=planeContact(g,2,3);if(std::abs(a.area.v-.5)>1e-14||std::abs(a.normalForce.v-.5)>1e-14||std::abs(a.energy.v-.125)>1e-14)throw std::runtime_error("clipped triangle reference");double error=0;for(int j=0;j<3;++j){auto p=g,m=g;p[j].v+=1e-6;m[j].v-=1e-6;auto b=planeContact(p,2,3),c=planeContact(m,2,3);error=std::max(error,std::abs((b.energy.v-c.energy.v)/2e-6-a.energy.g[j]));for(int i=0;i<3;++i)error=std::max(error,std::abs((b.energy.g[i]-c.energy.g[i])/2e-6-a.energy.h[N*i+j]));}if(error>1e-8)throw std::runtime_error("plane force/Hessian");std::cout<<"PASS clipped contact area/force/energy/Hessian FD="<<error<<'\n';return 0;}catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

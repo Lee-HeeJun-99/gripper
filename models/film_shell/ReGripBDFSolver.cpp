@@ -42,6 +42,7 @@ ReGripBDFSolver::ReGripBDFSolver()
     , d_theta(initData(&d_theta, 1_sreal, "theta", "1=BDF1;0.5=trapezoidal;distinct integration experiments"))
     , d_profileFilename(initData(&d_profileFilename,std::string(),"profileFilename","Passive per-step stage timings;exclusive campaign path"))
     , d_tangentProbeFilename(initData(&d_tangentProbeFilename,std::string(),"tangentProbeFilename","Passive first-Newton mapped matrix/trial export for first two steps only"))
+    , d_variableStep(initData(&d_variableStep,false,"variableStep","Explicit variable-step BDF2;fixed-step default preserved"))
     , d_rayleighStiffness(initData(&d_rayleighStiffness, 0_sreal, "rayleighStiffness",
                                    "Rayleigh damping coefficient related to stiffness, > 0"))
     , d_rayleighMass(initData(&d_rayleighMass, 0_sreal, "rayleighMass",
@@ -368,9 +369,9 @@ void ReGripBDFSolver::solve(
     //prediction using the previous velocity
     vop.v_peq(m_position[order], m_velocity[order], dt);
     if(order==2){
-        vop.v_eq(m_position[2],m_position[1],2/1.5);
-        vop.v_peq(m_position[2],m_position[0],-.5/1.5);
-        vop.v_peq(m_position[2],m_velocity[2],dt/1.5);
+        vop.v_eq(m_position[2],m_position[1],-m_a_coef[1]/m_a_coef[2]);
+        vop.v_peq(m_position[2],m_position[0],-m_a_coef[0]/m_a_coef[2]);
+        vop.v_peq(m_position[2],m_velocity[2],dt/m_a_coef[2]);
     }
 
     mop.propagateX(m_position[order]);

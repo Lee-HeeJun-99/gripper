@@ -10,6 +10,9 @@ def main():
     p.add_argument('--compact-membrane',action='store_true',help='Opt-in compile-time nine-DOF AD2;requires exact regression and wall-clock validation')
     p.add_argument('--tangent-probe',action='store_true',help='Public actual matrix and trial state, first two steps only')
     p.add_argument('--refresh-mapped-mass',action='store_true',help='Independent SDK linear-system adapter;refresh cached mapped mass MBK factor')
+    p.add_argument('--endpoint-ramp',action='store_true',help='Query continuous ramp at actual end time, including variable steps')
+    p.add_argument('--window',action='store_true',help='Explicit phase window at1.3s;fourfold dt refinement after epoch,not CCD')
+    p.add_argument('--native-opt',action='store_true',help='Opt-in native film-only vectorization;no fast-math')
     a=p.parse_args()
     if not a.tag.replace('_','').isalnum() or not 1<=a.steps<=2000 or not 0<a.duration<=20 or not __import__('math').isfinite(a.plane):raise ValueError('bounded campaign')
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);build=ROOT/'build'/('film_shell_'+a.tag);sdk=ROOT/'build/grasp_20261115/sofa_patched'
@@ -23,11 +26,24 @@ def main():
     identity=json.loads(identity_path.read_text());identity['physical_parameters']['plane']=a.plane
     identity['command']=__import__('sys').argv
     identity['compact_membrane']=a.compact_membrane
+    identity['native_opt']=a.native_opt
+    clock_plugin=ROOT/'build/autonomous_20261116_event_clock_a01/v1/libReGripEventStepClock.so'
+    if a.window:
+        if a.duration!=2 or not a.refresh_mapped_mass:raise ValueError('window requires2s and refreshed mapped mass')
+        benchmark=json.loads((ROOT/'results/autonomous_film_20261116_contact_6400_43/summary.json').read_text())
+        estimate=benchmark['process']['runtime_s']/6400*(1.3+4*.7)/(a.duration/(a.steps*(4 if a.time else 1)))
+        if benchmark['process_status']!='PASS' or estimate*1.05>480:raise ValueError('window run exceeds profiled480s budget')
+        identity['window']=dict(epoch=1.3,divisor=4,projected_max_seconds=estimate,clock_plugin_sha256=sha(clock_plugin),kind='predeclared phase refinement;not contact event detection')
     write_json(identity_path,identity)
     commands=[('configure',['cmake','-S',ROOT/'models/film_shell','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(ROOT/'.runtime/closure_sdk')]),('build',['cmake','--build',build,'-j2'])]+[(name,[build/exe]) for name,exe in [('kernel','test_film_shell'),('api','test_film_shell_api'),('plane','test_film_plane'),('mapping','test_film_slope_mapping')]]
     for name,command in commands:
+        if name=='configure':command.append('-DREGRIP_FILM_NATIVE_OPT='+('ON' if a.native_opt else 'OFF'))
         stages[name]=logged(command,out/name,180)
         if stages[name]['exit_code']:write_json(out/'summary.json',dict(status='FAIL',stage=name,stages=stages));return
+    stages['compact']=logged([build/'test_film_compact'],out/'compact',180)
+    if stages['compact']['exit_code']:write_json(out/'summary.json',dict(status='FAIL',stage='compact',stages=stages));return
+    stages['coefficients']=logged([build/'test_film_bdf_coefficients'],out/'coefficients',180)
+    if stages['coefficients']['exit_code']:raise RuntimeError('BDF coefficient unit failure')
     if hashes!={str(s.relative_to(ROOT)):sha(s) for s in sources if s.is_file()}:raise RuntimeError('source changed during build')
     plugin=build/'libReGripFilmShell.so';write_json(out/'compiled.json',dict(binary_sha256=sha(plugin),sources=hashes))
     rows={}
@@ -39,6 +55,13 @@ def main():
         scene=scene.replace('<FilmShell ',f'<FilmShell compactMembrane="{int(a.compact_membrane)}" ')
         if a.tangent_probe:scene=scene.replace('<ReGripBDFSolver ',f'<ReGripBDFSolver tangentProbeFilename="{case/"tangent"}" ')
         if a.refresh_mapped_mass:scene=scene.replace('<EigenSparseLU ', '<ReGripMatrixLinearSystem name="refreshedSystem"/><EigenSparseLU linearSystem="@refreshedSystem" ')
+        if a.endpoint_ramp or a.window:
+            scene=__import__('re').sub(r'<LinearForceField [^>]*/>','<FilmRampLoad ny="5" totalForce=".000001" rampTime="10"/>',scene)
+        if a.window:
+            if abs(1.3/dt-round(1.3/dt))>1e-8 or abs(.7/(dt/4)-round(.7/(dt/4)))>1e-8:raise ValueError('phase not on time lattice')
+            steps=round(1.3/dt)+round(.7/(dt/4))
+            scene=scene.replace('<DefaultAnimationLoop/>',f'<RequiredPlugin pluginName="{clock_plugin}"/><EventStepClockAnimationLoop filename="{case/"clock.csv"}" eventTimes="0 1.3" stepDivisors="1 4"/>')
+            scene=scene.replace('<ReGripBDFSolver ', '<ReGripBDFSolver variableStep="1" ')
         if f'plane="{a.plane:.17g}"' not in scene:raise RuntimeError('plane option not applied to actual XML')
         (case/'scene.scn').write_text(scene);stages[str(multiple)]=logged([sdk/'bin/graph_probe',sdk,case/'scene.scn',str(steps),'0',plugin],case/'process',480)
         log=(case/'process/stdout.log').read_text()+(case/'process/stderr.log').read_text()

@@ -1,4 +1,4 @@
-#include "../../models/film_shell/Kernel.h"
+#include "../../models/film_shell/PlaneContact.h"
 #include <Eigen/Dense>
 #include <fstream>
 #include <sstream>
@@ -7,7 +7,7 @@
 using namespace regrip_film;
 std::vector<double>numbers(std::string line){for(auto&c:line)if(c==',')c=' ';std::istringstream in(line);std::vector<double>r;double v;while(in>>v)r.push_back(v);return r;}
 int main(int argc,char**argv){try{
- if(argc!=2)throw std::invalid_argument("actual tangent prefix");std::string prefix=argv[1],line;
+ if(argc!=2&&argc!=3)throw std::invalid_argument("actual tangent prefix [plane]");std::string prefix=argv[1],line;double plane=argc==3?std::stod(argv[2]):.1;
  std::ifstream state(prefix+".state.csv"),matrix(prefix+".matrix.csv");if(!state||!matrix)throw std::runtime_error("missing actual probe");
  std::getline(state,line);std::getline(state,line);auto factors=numbers(line);if(factors.size()!=4)throw std::runtime_error("coefficients");std::getline(state,line);
  std::vector<Point>q;while(std::getline(state,line)){auto p=numbers(line);if(p.size()!=3)throw std::runtime_error("state row");q.push_back({p[0],p[1],p[2]});}
@@ -16,7 +16,9 @@ int main(int argc,char**argv){try{
  std::getline(matrix,line);while(std::getline(matrix,line)){auto row=numbers(line);if(row.size()!=3)throw std::runtime_error("matrix row");actual(int(row[0]),int(row[1]))=row[2];}
  std::vector<unsigned>index(nd);std::vector<double>weights(nd,1);for(unsigned i=0;i<nd;++i)index[i]=i;
  for(unsigned j=0;j<ny;++j){q[ny+j][2]=.25*q[2*ny+j][2];index[3*(ny+j)+2]=3*(2*ny+j)+2;weights[3*(ny+j)+2]=.25;}
- f.elements(q,[&](const auto&ids,const AD&e,bool){for(unsigned a=0;a<3*ids.size();++a)for(unsigned b=0;b<3*ids.size();++b){unsigned i=3*ids[a/3]+a%3,j=3*ids[b/3]+b%3;expected(index[i],index[j])+=-factors[3]*weights[i]*weights[j]*e.h[N*a+b];}},true);
+ auto append=[&](const std::vector<unsigned>&ids,const AD&e,bool){for(unsigned a=0;a<3*ids.size();++a)for(unsigned b=0;b<3*ids.size();++b){unsigned i=3*ids[a/3]+a%3,j=3*ids[b/3]+b%3;expected(index[i],index[j])+=-factors[3]*weights[i]*weights[j]*e.h[N*a+b];}};
+ f.elements(q,append,true);
+ for(unsigned i=0;i<f.nx-1;++i)for(unsigned j=0;j<f.ny-1;++j)for(unsigned side=0;side<2;++side){std::vector<unsigned>ids=side?std::vector<unsigned>{f.id(i+1,j+1),f.id(i,j+1),f.id(i+1,j)}:std::vector<unsigned>{f.id(i,j),f.id(i+1,j),f.id(i,j+1)};std::array<AD,3>gaps;for(int a=0;a<3;++a)gaps[a]=AD::variable(q[ids[a]][2]-plane,3*a+2);append(ids,planeContact(gaps,.5*f.L*f.W/((f.nx-1)*(f.ny-1)),1e-5).energy,false);}
  for(unsigned i=0;i<nd;++i)expected(index[i],index[i])+=factors[2]*1e-6/n*weights[i]*weights[i];
  auto fixed=[&](unsigned i){return i<3*ny||(i<6*ny&&i%3==2);};
  double error=0,norm=0,maxError=0;unsigned worstI=0,worstJ=0;

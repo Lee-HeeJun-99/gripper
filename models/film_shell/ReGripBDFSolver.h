@@ -28,6 +28,7 @@
 #include <sofa/simulation/MechanicalOperations.h>
 #include <sofa/simulation/VectorOperations.h>
 #include <sofa/helper/ScopedAdvancedTimer.h>
+#include "BDFCoefficients.h"
 
 namespace sofa::component::odesolver::backward
 {
@@ -69,6 +70,7 @@ public:
     Data<SReal> d_theta;
     Data<std::string> d_profileFilename;
     Data<std::string> d_tangentProbeFilename;
+    Data<bool> d_variableStep;
 
     Data<SReal> d_rayleighStiffness;
     Data<SReal> d_rayleighMass;
@@ -100,10 +102,11 @@ protected:
     void recomputeCoefficients(std::size_t order, SReal dt) {
         const auto theta=d_theta.getValue();
         if((order!=1&&order!=2)||(theta!=1&&theta!=.5)||(order==2&&theta!=1))throw std::invalid_argument("BDF1/trapezoidal or fixed-step BDF2 only");
-        if(m_currentSolve&&d_order.getValue()==2&&dt!=m_lastDt)throw std::invalid_argument("BDF2 requires unchanged dt");m_lastDt=dt;
+        const double previousDt=m_lastDt;
+        if(m_currentSolve&&d_order.getValue()==2&&dt!=m_lastDt&&!d_variableStep.getValue())throw std::invalid_argument("fixed-step BDF2 requires unchanged dt");m_lastDt=dt;
         m_a_coef.resize(order+1);m_b_coef.resize(order+1);
         if(order==1){m_a_coef[0]=-1;m_a_coef[1]=1;m_b_coef[0]=1-theta;m_b_coef[1]=theta;}
-        else {m_a_coef[0]=.5;m_a_coef[1]=-2;m_a_coef[2]=1.5;m_b_coef[0]=m_b_coef[1]=0;m_b_coef[2]=1;}
+        else {auto a=regrip_film::bdf2Coefficients(dt,previousDt);m_a_coef[0]=a[0];m_a_coef[1]=a[1];m_a_coef[2]=a[2];m_b_coef[0]=m_b_coef[1]=0;m_b_coef[2]=1;}
     }
 
 private:

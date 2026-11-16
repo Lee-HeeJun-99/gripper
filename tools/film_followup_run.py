@@ -12,10 +12,12 @@ def main():
     p.add_argument('--contact-stiffness',type=float,help='One-variable physical control, not same-model qualification')
     p.add_argument('--window',action='store_true',help='Predeclared1.3s epoch;dt/4 after epoch,steps specifies uniform base grid')
     p.add_argument('--no-tangent-probe',action='store_true',help='Explicit passive-export-off performance comparison')
+    p.add_argument('--nodes',type=int,choices=[11,21,41,81],help='Explicit mesh control;total mass/physical dimensions/load unchanged')
+    p.add_argument('--original-slope',action='store_true',help='Original 3-point root derivative control for cubic-boundary source')
     a=p.parse_args()
     for name in (a.tag,a.source):
         if not name.replace('_','').isalnum():raise ValueError('tag')
-    if not 1<=a.steps<=12800 or not 0<a.duration<=2:raise ValueError('bounded rest-start follow-up')
+    if not 1<=a.steps<=12800 or not 0<a.duration<=20:raise ValueError('bounded rest-start follow-up')
     source=ROOT/'results'/('autonomous_film_'+a.source);build=ROOT/'build'/('film_shell_'+a.source)
     compiled=json.loads((source/'compiled.json').read_text());plugin=build/'libReGripFilmShell.so'
     base_steps=a.steps;dt=a.duration/base_steps;steps=base_steps;budget=None
@@ -42,6 +44,14 @@ def main():
     scene=scene.replace(str(source/'1'),str(case));scene=re.sub(r' dt="[^"]+"',f' dt="{dt:.17g}"',scene,count=1)
     scene=re.sub(r'times="[^"]+"',f'times="{-dt:.17g} {10-dt:.17g} {20-dt:.17g}"',scene,count=1)
     if a.no_tangent_probe:scene=re.sub(r' tangentProbeFilename="[^"]+"','',scene)
+    if a.nodes:
+        scene,count=re.subn(r' position="[^"]+"',' position="'+' '.join(['0 0 0']*(a.nodes*5))+'"',scene)
+        if count!=2:raise RuntimeError('two displacement states required for mesh control')
+        scene,count=re.subn(r' nx="\d+"',f' nx="{a.nodes}"',scene,count=1)
+        if count!=1:raise RuntimeError('mesh override missing')
+    if a.original_slope:
+        if '<FilmCubicSlopeMapping ' not in scene:raise ValueError('original-slope control requires cubic source')
+        scene=scene.replace('<FilmCubicSlopeMapping ','<FilmSlopeMapping ').replace('cubicSlopeMapped="1"','cubicSlopeMapped="0"')
     clock_plugin=ROOT/'build/autonomous_20261116_event_clock_a01/v1/libReGripEventStepClock.so'
     if a.window:
         scene=scene.replace('<DefaultAnimationLoop/>',f'<RequiredPlugin pluginName="{clock_plugin}"/><EventStepClockAnimationLoop filename="{case/"clock.csv"}" eventTimes="0 1.3" stepDivisors="1 4"/>')
@@ -57,6 +67,7 @@ def main():
         source_identity=json.loads((source/'identity.json').read_text()),compiled=compiled,plugin=str(plugin),driver_sha256=sha(sdk/'bin/graph_probe'),
         scene_sha256=sha(case/'scene.scn'),tool_sha256=sha(__file__),steps=steps,base_steps=base_steps,dt=dt,command=__import__('sys').argv,
         window=dict(epoch=1.3,divisor=4,clock_plugin_sha256=sha(clock_plugin)) if a.window else None,
+        mesh_override=a.nodes,original_slope_control=a.original_slope,
         profile_budget=budget,contact_stiffness_override=a.contact_stiffness,
         scope='rest start; explicit contact-stiffness override changes physical model; shorter observation window is not a full-cycle gate'))
     process=logged([sdk/'bin/graph_probe',sdk,case/'scene.scn',str(steps),'0',plugin],case/'process',480)

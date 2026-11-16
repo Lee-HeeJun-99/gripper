@@ -1,0 +1,16 @@
+#include "../models/film_rail_tendon/FilmRailTendon.cpp"
+#include "../models/film_rail_tendon/RootMapping.cpp"
+#include <sofa/component/statecontainer/MechanicalObject.h>
+#include <iostream>
+struct AssemblyAccumulator:sofa::core::behavior::StiffnessMatrixAccumulator{unsigned n;std::vector<double>a;explicit AssemblyAccumulator(unsigned size):n(size),a(size*size){}void add(sofa::SignedIndex r,sofa::SignedIndex c,double v)override{a[n*r+c]+=v;}void add(sofa::SignedIndex r,sofa::SignedIndex c,float v)override{add(r,c,double(v));}};
+int main(){try{
+ using T=regrip_film_rail::FilmRailTendon;auto state=sofa::core::objectmodel::New<sofa::component::statecontainer::MechanicalObject<T::Types>>();regrip_film_rail::Assembly model(5);state->resize(model.size());auto field=sofa::core::objectmodel::New<T>(state.get());field->nx.setValue(5);field->stepT=.001;
+ T::VecCoord x(model.size());auto rest=model.rest();for(unsigned i=0;i<x.size();++i)x[i]={.00001*rest[i][0],0,.000001*rest[i][0]*rest[i][0]};state->write(sofa::core::vec_id::write_access::position)->setValue(x);
+ T::DataVecCoord position;position.setValue(x);T::DataVecDeriv force,velocity,dx,df;force.setValue(T::VecDeriv(x.size()));velocity.setValue(T::VecDeriv(x.size()));sofa::core::MechanicalParams mp;field->addForce(&mp,force,position,velocity);
+ auto stale=x;stale[7][2]=.3;state->write(sofa::core::vec_id::write_access::position)->setValue(stale);AssemblyAccumulator accumulator(3*x.size());sofa::core::behavior::StiffnessMatrix matrix;matrix.setMatrixAccumulator(&accumulator,state.get());field->buildStiffnessMatrix(&matrix);state->write(sofa::core::vec_id::write_access::position)->setValue(x);
+ T::VecDeriv delta(x.size());for(unsigned i=0;i<x.size();++i)delta[i]={.0001*i,-.0002*i,.0003*i};dx.setValue(delta);
+ for(double factor:{0.,1.5,-.3}){mp.setKFactor(factor);df.setValue(T::VecDeriv(x.size()));field->addDForce(&mp,df,dx);for(unsigned i=0;i<3*x.size();++i){double expected=0;for(unsigned j=0;j<3*x.size();++j)expected+=factor*accumulator.a[i*3*x.size()+j]*delta[j/3][j%3];if(std::abs(df.getValue()[i/3][i%3]-expected)>1e-10)throw std::runtime_error("assembly dforce/matrix");}}
+ unsigned column=3*model.id(1,2,0)+2;double h=1e-6;auto p=x,m=x;p[column/3][column%3]+=h;m[column/3][column%3]-=h;T::DataVecCoord plus,minus;plus.setValue(p);minus.setValue(m);T::DataVecDeriv fp,fm;fp.setValue(T::VecDeriv(x.size()));fm.setValue(T::VecDeriv(x.size()));field->addForce(&mp,fp,plus,velocity);field->addForce(&mp,fm,minus,velocity);double error=0;for(unsigned i=0;i<3*x.size();++i)error=std::max(error,std::abs((fp.getValue()[i/3][i%3]-fm.getValue()[i/3][i%3])/(2*h)-accumulator.a[i*3*x.size()+column]));if(error>1e-7)throw std::runtime_error("assembly actual API FD");
+ T::DataVecDeriv repeated;repeated.setValue(T::VecDeriv(x.size()));field->getPotentialEnergy(&mp,position);field->addForce(&mp,repeated,position,velocity);for(unsigned i=0;i<x.size();++i)for(unsigned j=0;j<3;++j)if(repeated.getValue()[i][j]!=force.getValue()[i][j])throw std::runtime_error("query purity");
+ std::cout<<"PASS actual SOFA assembly Force/dForce/tangent/query-purity,FD="<<error<<";not dynamic/grasp qualification\n";return 0;
+}catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

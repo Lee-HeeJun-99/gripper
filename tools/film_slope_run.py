@@ -13,6 +13,8 @@ def main():
     p.add_argument('--endpoint-ramp',action='store_true',help='Query continuous ramp at actual end time, including variable steps')
     p.add_argument('--window',action='store_true',help='Explicit phase window at1.3s;fourfold dt refinement after epoch,not CCD')
     p.add_argument('--native-opt',action='store_true',help='Opt-in native film-only vectorization;no fast-math')
+    p.add_argument('--cubic-slope',action='store_true',help='Independent cubic-exact derivative boundary;old mapping preserved')
+    p.add_argument('--scheme',choices=['bdf2','trapezoid'],default='bdf2',help='Distinct integration experiment;explicit runtime XML')
     a=p.parse_args()
     if not a.tag.replace('_','').isalnum() or not 1<=a.steps<=2000 or not 0<a.duration<=20 or not __import__('math').isfinite(a.plane):raise ValueError('bounded campaign')
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);build=ROOT/'build'/('film_shell_'+a.tag);sdk=ROOT/'build/grasp_20261115/sofa_patched'
@@ -27,6 +29,8 @@ def main():
     identity['command']=__import__('sys').argv
     identity['compact_membrane']=a.compact_membrane
     identity['native_opt']=a.native_opt
+    identity['cubic_slope']=a.cubic_slope
+    identity['scheme']=a.scheme
     clock_plugin=ROOT/'build/autonomous_20261116_event_clock_a01/v1/libReGripEventStepClock.so'
     if a.window:
         if a.duration!=2 or not a.refresh_mapped_mass:raise ValueError('window requires2s and refreshed mapped mass')
@@ -44,6 +48,8 @@ def main():
     if stages['compact']['exit_code']:write_json(out/'summary.json',dict(status='FAIL',stage='compact',stages=stages));return
     stages['coefficients']=logged([build/'test_film_bdf_coefficients'],out/'coefficients',180)
     if stages['coefficients']['exit_code']:raise RuntimeError('BDF coefficient unit failure')
+    stages['cubic_slope']=logged([build/'test_film_cubic_slope'],out/'cubic_slope',180)
+    if stages['cubic_slope']['exit_code']:raise RuntimeError('cubic slope unit failure')
     if hashes!={str(s.relative_to(ROOT)):sha(s) for s in sources if s.is_file()}:raise RuntimeError('source changed during build')
     plugin=build/'libReGripFilmShell.so';write_json(out/'compiled.json',dict(binary_sha256=sha(plugin),sources=hashes))
     rows={}
@@ -62,6 +68,10 @@ def main():
             steps=round(1.3/dt)+round(.7/(dt/4))
             scene=scene.replace('<DefaultAnimationLoop/>',f'<RequiredPlugin pluginName="{clock_plugin}"/><EventStepClockAnimationLoop filename="{case/"clock.csv"}" eventTimes="0 1.3" stepDivisors="1 4"/>')
             scene=scene.replace('<ReGripBDFSolver ', '<ReGripBDFSolver variableStep="1" ')
+        if a.cubic_slope:
+            if a.tangent_probe:raise ValueError('cubic mapped tangent diagnostic not yet generalized;do not use old diagonal-mass checker')
+            scene=scene.replace('<FilmSlopeMapping ', '<FilmCubicSlopeMapping ').replace('<FilmShell ', '<FilmShell cubicSlopeMapped="1" ')
+        if a.scheme=='trapezoid':scene=scene.replace('order="2" theta="1"','order="1" theta=".5"')
         if f'plane="{a.plane:.17g}"' not in scene:raise RuntimeError('plane option not applied to actual XML')
         (case/'scene.scn').write_text(scene);stages[str(multiple)]=logged([sdk/'bin/graph_probe',sdk,case/'scene.scn',str(steps),'0',plugin],case/'process',480)
         log=(case/'process/stdout.log').read_text()+(case/'process/stderr.log').read_text()

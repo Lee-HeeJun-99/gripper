@@ -1,10 +1,11 @@
 """New-state modal error projection;reuses,does not rerun old campaigns."""
-import argparse,csv,json,shutil,xml.etree.ElementTree as ET
+import argparse,csv,json,shutil,subprocess,xml.etree.ElementTree as ET
 import numpy as np
 from curve_common import ROOT,sha,write_json
 from closure_validation_suite import logged
 from film_guarded_process import guarded
 def main():
+    source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs=2,required=True);p.add_argument('--time',type=float,required=True);a=p.parse_args()
     roots=[ROOT/'results'/('autonomous_film_'+name) for name in a.cases];snapshots=[];fields=[];inputs={}
     for directory in roots:
@@ -30,6 +31,8 @@ def main():
     stages['reference']=guarded([out/'modes',state],out/'reference',60)
     if stages['reference']['exit_code']:raise RuntimeError('modal reference failed')
     records=[{k:float(v) for k,v in r.items()} for r in csv.DictReader((out/'reference/stdout.log').open())];ranked=sorted(records,key=lambda r:abs(r['quadratic_error_projection']),reverse=True)
-    result=dict(status='EXPERIMENTAL',scope='independent instantaneous FULL stored/generator tangent incl tendon;NOT modal dynamics or energy certification',time=a.time,cases=a.cases,negative_eigenvalues=sum(r['eigenvalue']<0 for r in records),dominant_error_modes=ranked[:12],inputs=inputs,source_sha256=sha(source),binary_sha256=sha(out/'modes'),stages=stages,coordinate_note='world snapshots minus rest;NOT near-rest force reconstruction',contact_tangent_included=False)
+    attachment_rank=sorted(records,key=lambda r:abs(r['attachment_linear_error']),reverse=True)
+    result=dict(status='EXPERIMENTAL',scope='independent instantaneous FULL stored/generator tangent incl tendon;NOT modal dynamics or energy certification',time=a.time,cases=a.cases,negative_eigenvalues=sum(r['eigenvalue']<0 for r in records),dominant_error_modes=ranked[:12],dominant_attachment_linear_modes=attachment_rank[:12],attachment_taylor=json.loads((out/'reference/stderr.log').read_text()),actual_snapshot_tensions=[s['T_per_rail'] for s in snapshots],inputs=inputs,source_sha256=sha(source),binary_sha256=sha(out/'modes'),stages=stages,coordinate_note='world snapshots minus rest;NOT near-rest force reconstruction',contact_tangent_included=False)
+    result['source_commit']=source_commit
     write_json(out/'summary.json',result);print(json.dumps(dict(negative_eigenvalues=result['negative_eigenvalues'],dominant_error_modes=ranked[:4])))
 if __name__=='__main__':main()

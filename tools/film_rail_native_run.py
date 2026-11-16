@@ -16,12 +16,12 @@ def main():
         if a.steps>20 or a.duration>.1:
             proof=ROOT/'results/autonomous_film_20261117_sqp_short334'
             short=json.loads((proof/'summary.json').read_text());identity=json.loads((proof/'identity.json').read_text())
-            if short['status']!='PASS' or identity['contact_geometry']!='current_sphere_closest_primitive' or a.coupled_profile!='20261117_sphere_wrapping284':raise ValueError('closest extension needs completed short/API trial and measured full-window profile')
+            if short['status']!='PASS' or identity['contact_geometry']!='current_sphere_closest_primitive' or a.coupled_profile not in ('20261117_sphere_wrapping284','20261117_sqp_wide333'):raise ValueError('closest extension needs completed short/API trial and measured full-window profile')
             for relative in ('film_sphere_contact/ClosestPrimitive.h','film_sphere_contact/SphereStep.h'):
                 if sha(ROOT/'models'/relative)!=sha(proof/'sources'/relative):raise ValueError('closest kernel differs from short qualified model')
             if short['stages']['physics']['runtime_s']/short['rows']*a.steps*3>480:raise ValueError('closest short-profile cost projection exceeds480s')
     if a.initial_case and (a.initial_time is None or a.tension!=0 or a.steps>20 or a.duration>.2):raise ValueError('bounded zero-tension prescribed near-rest diagnostic,NOT a restored continuation')
-    if a.current_sphere_normal and (not a.general_coupled or not a.coupled_predictor or a.object_shape!='sphere' or a.steps>(400 if a.coupled_profile=='20261117_sphere_wrapping284' else 100 if a.coupled_profile=='20261117_current_sphere301' else 20) or a.duration>(4 if a.coupled_profile=='20261117_sphere_wrapping284' else 1 if a.coupled_profile=='20261117_current_sphere301' else .1)):raise ValueError('current-sphere model requires bounded BE prescribed fixed-sphere qualification first')
+    if a.current_sphere_normal and (not a.general_coupled or not a.coupled_predictor or a.object_shape!='sphere' or a.steps>(800 if a.coupled_profile=='20261117_sqp_wide333' else 400 if a.coupled_profile=='20261117_sphere_wrapping284' else 100 if a.coupled_profile=='20261117_current_sphere301' else 20) or a.duration>(8 if a.coupled_profile=='20261117_sqp_wide333' else 4 if a.coupled_profile=='20261117_sphere_wrapping284' else 1 if a.coupled_profile=='20261117_current_sphere301' else .1)):raise ValueError('current-sphere model requires bounded BE prescribed fixed-sphere qualification first')
     if a.general_coupled:a.coupled_correction=True
     if a.reuse_accepted and not a.general_coupled:raise ValueError('accepted evaluation cache requires coupled kernel')
     if a.potential_merit and not a.general_coupled:raise ValueError('potential merit requires coupled implicit kernel')
@@ -31,10 +31,10 @@ def main():
     maximum_steps,maximum_duration=(1600,16) if a.coupled_profile=='20261117_wrapping_cycle275' else (800,8)
     if not a.tag.replace('_','').isalnum() or not 0<a.steps<=maximum_steps or not 0<a.duration<=maximum_duration or not 0<=a.tension<=.001 or a.sphere and not a.free_motion:raise ValueError('bounded fixed-object experiment')
     if not 0<a.ramp_time<=a.release_begin<a.release_end<=12:raise ValueError('bounded schedule')
-    if a.coupled_correction and ((not a.fresh_assembly and not a.assembly_case) or not a.free_motion or not a.sphere or (a.object_shape!='sphere' and not a.general_coupled) or a.steps>(maximum_steps if a.general_coupled else 160) or a.duration>((16 if a.coupled_profile=='20261117_wrapping_cycle275' else 8 if a.coupled_profile=='20261117_potential_capacity270' else 4) if a.general_coupled else .2)):raise ValueError('bounded source-compatible coupled fixed-object BE experiment')
+    if a.coupled_correction and ((not a.fresh_assembly and not a.assembly_case) or not a.free_motion or not a.sphere or (a.object_shape!='sphere' and not a.general_coupled) or a.steps>(maximum_steps if a.general_coupled else 160) or a.duration>((16 if a.coupled_profile=='20261117_wrapping_cycle275' else 8 if a.coupled_profile in ('20261117_potential_capacity270','20261117_sqp_wide333') else 4) if a.general_coupled else .2)):raise ValueError('bounded source-compatible coupled fixed-object BE experiment')
     coupled_budget=None
     if a.general_coupled and (a.steps>160 or a.duration>.2):
-        if a.coupled_profile not in ('20261117_general_coupled218','20261117_coupled_cylinder235','20261117_potential_capacity270','20261117_wrapping_cycle275','20261117_cache_reference276','20261117_current_sphere301','20261117_sphere_wrapping284'):raise ValueError('coupled extension needs actual measured profile')
+        if a.coupled_profile not in ('20261117_general_coupled218','20261117_coupled_cylinder235','20261117_potential_capacity270','20261117_wrapping_cycle275','20261117_cache_reference276','20261117_current_sphere301','20261117_sphere_wrapping284','20261117_sqp_wide333'):raise ValueError('coupled extension needs actual measured profile')
         prof=ROOT/'results'/('autonomous_film_'+a.coupled_profile);s=json.loads((prof/'summary.json').read_text())
         if s['status']!='PASS':raise ValueError('incomplete coupled profile')
         margin=3
@@ -58,13 +58,16 @@ def main():
         elif a.coupled_profile=='20261117_sphere_wrapping284':
             if not (a.current_sphere_normal and a.coupled_predictor and a.previous_guess and a.potential_merit and a.reuse_accepted) or a.steps>400 or a.duration>4 or (a.object_shape,a.sphere_x,a.guide_offset,a.guide_intervals,a.tension,a.ramp_time,a.release_begin,a.release_end)!=('sphere',75,5,4,.001,4,6,8):raise ValueError('current-normal versus frozen comparison uses identical completed wide-sphere input')
             margin=3
+        elif a.coupled_profile=='20261117_sqp_wide333':
+            if not (a.closest_sphere_primitive and a.current_sphere_normal and a.sqp_merit and a.coupled_predictor and a.previous_guess and a.reuse_accepted) or a.coupled_order!=1 or a.steps>800 or a.duration>8 or (a.object_shape,a.sphere_x,a.guide_offset,a.guide_intervals,a.tension,a.ramp_time,a.release_begin,a.release_end)!=('sphere',75,5,4,.001,4,6,8):raise ValueError('same actual completed sphere closing/control only;bounded hold/release extension')
+            margin=2 # Full4s closing measured70.1s;800 steps project280.4s. Hard480s remains.
         elif a.steps>400:raise ValueError('more than400 coupled steps requires a full-contact profile')
         estimate=s['stages']['physics']['runtime_s']/s['rows']*a.steps*margin
         if estimate>480:raise ValueError('coupled projection exceeds480s')
         coupled_budget=dict(profile_sha256=sha(prof/'summary.json'),projected_seconds=estimate,active_fraction_margin=margin,hard_seconds=480)
     budget=None
     if a.steps>400 or a.duration>2:
-        design_capacity=a.general_coupled and a.tension==.001 and (a.coupled_profile=='20261117_coupled_cylinder235' and a.steps<=400 or a.coupled_profile in ('20261117_potential_capacity270','20261117_wrapping_cycle275','20261117_cache_reference276','20261117_sphere_wrapping284'))
+        design_capacity=a.general_coupled and a.tension==.001 and (a.coupled_profile=='20261117_coupled_cylinder235' and a.steps<=400 or a.coupled_profile in ('20261117_potential_capacity270','20261117_wrapping_cycle275','20261117_cache_reference276','20261117_sphere_wrapping284','20261117_sqp_wide333'))
         if a.slow_profile!='20261116_route_slowarm164' or (a.tension not in (.0001,.0003) and not design_capacity) or a.guide_offset not in (2,5) or (a.ramp_time,a.release_begin,a.release_end)!=(4,6,8):raise ValueError('long prototype trial requires measured slow-route profile and bounded variant')
         profile_root=ROOT/'results'/('autonomous_film_'+a.slow_profile);profile=json.loads((profile_root/'summary.json').read_text())
         if profile['status']!='PASS':raise ValueError('incomplete profile')

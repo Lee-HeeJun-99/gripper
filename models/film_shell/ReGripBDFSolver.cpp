@@ -43,6 +43,7 @@ ReGripBDFSolver::ReGripBDFSolver()
     , d_profileFilename(initData(&d_profileFilename,std::string(),"profileFilename","Passive per-step stage timings;exclusive campaign path"))
     , d_tangentProbeFilename(initData(&d_tangentProbeFilename,std::string(),"tangentProbeFilename","Passive first-Newton mapped matrix/trial export for first two steps only"))
     , d_variableStep(initData(&d_variableStep,false,"variableStep","Explicit variable-step BDF2;fixed-step default preserved"))
+    , d_nativeConstraintBE(initData(&d_nativeConstraintBE,false,"nativeConstraintBE","Opt-in backward-Euler-only compliance factors and actual-state free-motion initialization"))
     , d_rayleighStiffness(initData(&d_rayleighStiffness, 0_sreal, "rayleighStiffness",
                                    "Rayleigh damping coefficient related to stiffness, > 0"))
     , d_rayleighMass(initData(&d_rayleighMass, 0_sreal, "rayleighMass",
@@ -352,8 +353,17 @@ void ReGripBDFSolver::solve(
     realloc(vop,m_previousPosition,"previous_position");
     realloc(vop,m_previousVelocity,"previous_velocity");
     // Keep owned history buffers: never alias both n and n-1 to main state.
-    vop.v_eq(m_position[order-1],xResult);
-    vop.v_eq(m_velocity[order-1],vResult);
+    if(d_nativeConstraintBE.getValue()){
+        requireNativeBE();
+        // FreeMotion's output vectors can still contain the preceding FREE
+        // state. Initialize from actual constraint-corrected main x/v, as the
+        // SDK EulerImplicitSolver does;never use stale free motion as history.
+        vop.v_eq(m_position[order-1],sofa::core::vec_id::read_access::position);
+        vop.v_eq(m_velocity[order-1],sofa::core::vec_id::read_access::velocity);
+    }else{
+        vop.v_eq(m_position[order-1],xResult);
+        vop.v_eq(m_velocity[order-1],vResult);
+    }
     vop.v_eq(m_force[order-1],sofa::core::vec_id::read_access::force);
     if(order==2){vop.v_eq(m_position[0],m_previousPosition);vop.v_eq(m_velocity[0],m_previousVelocity);}
 
@@ -398,6 +408,13 @@ void ReGripBDFSolver::solve(
     residualFunction.linearSolver = l_linearSolver.get();
 
     l_newtonSolver->solve(residualFunction);
+    if(d_nativeConstraintBE.getValue()){
+        const auto status=static_cast<std::size_t>(l_newtonSolver->d_status.getValue());
+        if(status==0||status==1||status==3||status==4)throw std::runtime_error("Native BE free-motion Newton solve failed;no constraint correction or state publication is allowed");
+        // Constraint compliance must use the converged FREE-state tangent,
+        // not the matrix from the preceding Newton correction. Pure query.
+        residualFunction.computeGradientFromCurrentGuess();
+    }
     if(residualFunction.profile){
         const auto&path=d_profileFilename.getValue();
         if(!m_currentSolve){std::ifstream previous(path);if(previous)throw std::runtime_error("profile already exists");}

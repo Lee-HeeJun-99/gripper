@@ -71,6 +71,11 @@ public:
     Data<std::string> d_profileFilename;
     Data<std::string> d_tangentProbeFilename;
     Data<bool> d_variableStep;
+    Data<bool> d_nativeConstraintBE;
+
+    void requireNativeBE()const{if(!d_nativeConstraintBE.getValue()||d_order.getValue()!=1||d_theta.getValue()!=1)throw std::logic_error("Constraint compliance interface is restricted to explicit backward-Euler mode;multistep contact history is not certified");}
+    SReal getIntegrationFactor(int input,int output)const override{requireNativeBE();if(input<0||output<0||input>2||output>2)return 0;double h=getContext()->getDt();const double factors[3][3]={{1,h,0},{0,1,0},{0,0,0}};return factors[output][input];}
+    SReal getSolutionIntegrationFactor(int output)const override{requireNativeBE();if(output<0||output>2)return 0;double h=getContext()->getDt();if(h<=0)throw std::invalid_argument("positive BE constraint dt");const double factors[3]={h,1,1/h};return factors[output];}
 
     Data<SReal> d_rayleighStiffness;
     Data<SReal> d_rayleighMass;

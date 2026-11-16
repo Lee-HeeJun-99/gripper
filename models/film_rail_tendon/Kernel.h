@@ -10,6 +10,7 @@ struct Element{std::vector<unsigned>ids;AD energy;unsigned kind;double area=0,no
 // All parts have independent Cartesian displacement DOFs. Rails are narrow
 // finite-width film strips, not rigid edges or a widened centerline beam.
 struct Assembly {
+ unsigned guideIntervals=4;
  unsigned nx;double L=100,W=24,skinT=.05,railT=.1,railW,E=250,nu=0;
  double bondK=1e-3,guideOffset=.2,plane=.1,kn=0;
  int contactSide=1;
@@ -45,6 +46,7 @@ struct Assembly {
 #else
  void elements(const std::vector<Point>&u,double tension,const Visitor&visit,const PassiveProfile*profile=nullptr)const{
 #endif
+  if(guideIntervals==0||(nx-1)%guideIntervals)throw std::invalid_argument("guide intervals must divide beam intervals");
   if(u.size()!=size()||!std::isfinite(tension+bondK+guideOffset+kn)||tension<0||bondK<0||kn<0)throw std::invalid_argument("assembly parameters");
   auto actual=rest();for(unsigned i=0;i<size();++i)actual[i]=add(actual[i],u[i]);
   PassiveProfile disabled;const auto&cost=profile?*profile:disabled;
@@ -66,14 +68,14 @@ struct Assembly {
   // Actual eccentric routed path: five normal-offset guides per rail.
   // T*d(length)/dq generates endpoint AND guide forces/virtual moments.
   // T*length is a force generator, not stored cable elastic energy.
-  {PassiveProfile::Scope timer(cost,"tendon_AD_and_dispatch");for(unsigned part:{1u,2u})for(unsigned k=0;k<4;++k){unsigned a=(nx-1)*k/4,b=(nx-1)*(k+1)/4;auto nodes=guideIds(part,a),next=guideIds(part,b);nodes.insert(nodes.end(),next.begin(),next.end());Local local(nodes,actual);
+  {PassiveProfile::Scope timer(cost,"tendon_AD_and_dispatch");for(unsigned part:{1u,2u})for(unsigned k=0;k<guideIntervals;++k){unsigned a=(nx-1)*k/guideIntervals,b=(nx-1)*(k+1)/guideIntervals;auto nodes=guideIds(part,a),next=guideIds(part,b);nodes.insert(nodes.end(),next.begin(),next.end());Local local(nodes,actual);
    auto d=sub(guide(local,part,b,-guideOffset),guide(local,part,a,-guideOffset));
-   visit({local.ids,AD(tension)*(root(dot(d,d))-AD(L/4)),2});
+   visit({local.ids,AD(tension)*(root(dot(d,d))-AD(L/guideIntervals)),2});
   }
   }
   PassiveProfile::Scope contactTimer(cost,"contact_AD_and_dispatch");if(kn>0)for(unsigned i=0;i<nx-1;++i)for(unsigned j=0;j<4;++j)for(unsigned side=0;side<2;++side){std::vector<unsigned>ids=side?std::vector<unsigned>{id(0,i+1,j+1),id(0,i,j+1),id(0,i+1,j)}:std::vector<unsigned>{id(0,i,j),id(0,i+1,j),id(0,i,j+1)};std::array<AD,3>gap;for(unsigned a=0;a<3;++a)gap[a]=AD::variable(actual[ids[a]][2]-plane,3*a+2);visit({ids,planeContact(gap,.5*L*W/((nx-1)*4),kn).energy,3});}
  }
  double energy(const std::vector<Point>&u,double tension)const{double value=0;elements(u,tension,[&](const Element&e){value+=e.energy.v;});return value;}
- double cableLength(const std::vector<Point>&u)const{auto actual=rest();for(unsigned i=0;i<size();++i)actual[i]=add(actual[i],u[i]);double length=0;for(unsigned part:{1u,2u})for(unsigned k=0;k<4;++k){unsigned a=(nx-1)*k/4,b=(nx-1)*(k+1)/4;auto ids=guideIds(part,a),next=guideIds(part,b);ids.insert(ids.end(),next.begin(),next.end());Local local(ids,actual);auto d=sub(guide(local,part,b,-guideOffset),guide(local,part,a,-guideOffset));length+=root(dot(d,d)).v;}return length;}
+ double cableLength(const std::vector<Point>&u)const{if(u.size()!=size()||guideIntervals==0||(nx-1)%guideIntervals)throw std::invalid_argument("cable state/guide intervals");auto actual=rest();for(unsigned i=0;i<size();++i)actual[i]=add(actual[i],u[i]);double length=0;for(unsigned part:{1u,2u})for(unsigned k=0;k<guideIntervals;++k){unsigned a=(nx-1)*k/guideIntervals,b=(nx-1)*(k+1)/guideIntervals;auto ids=guideIds(part,a),next=guideIds(part,b);ids.insert(ids.end(),next.begin(),next.end());Local local(ids,actual);auto d=sub(guide(local,part,b,-guideOffset),guide(local,part,a,-guideOffset));length+=root(dot(d,d)).v;}return length;}
 };
 }

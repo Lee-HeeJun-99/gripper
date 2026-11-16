@@ -1,8 +1,8 @@
 #include "../models/film_rail_tendon/Kernel.h"
 #include <iostream>
 using namespace regrip_film_rail;
-int main(int argc,char**){try{
- Assembly model;model.rootGuideSecondOrder=argc>1;std::vector<Point>u(model.size());auto rest=model.rest();double tension=.001;
+int main(int argc,char**argv){try{
+ Assembly model;model.rootGuideSecondOrder=argc>1&&std::string(argv[1])=="root";if(argc>1&&std::string(argv[1])=="distributed")model.guideIntervals=10;std::vector<Point>u(model.size());auto rest=model.rest();double tension=.001;
  if(std::abs(model.volume()-439.3397917746089/3)>1e-12||std::abs(model.energy(u,0))>1e-20)throw std::runtime_error("rest/volume");
  double mass=0;for(auto m:model.masses())mass+=m;if(std::abs(mass-1e-6)>1e-20)throw std::runtime_error("mass");
  for(unsigned i=0;i<u.size();++i){u[i]={.0001*rest[i][0],.00001*rest[i][1],.00001*rest[i][0]*rest[i][0]};}

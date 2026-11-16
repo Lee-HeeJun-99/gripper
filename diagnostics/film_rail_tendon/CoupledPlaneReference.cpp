@@ -1,0 +1,9 @@
+#include "../../models/film_native_contact/CoupledPlaneStep.h"
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+using namespace regrip_film_native;
+int main(int argc,char**argv){try{if(argc!=3)throw std::invalid_argument("input exclusive_output");std::ifstream input(argv[1]),old(argv[2]);if(!input||old)throw std::runtime_error("input missing/output exists");std::ofstream out(argv[2]);out<<std::setprecision(17)<<"time,lambda_native,lambda_coupled,iterations,absolute_impulse_residual,gap_mm,max_position_difference_mm\n";unsigned count;input>>count;
+ for(unsigned row=0;row<count;++row){double time,h,damping,T,lambda,target,offset,bond;unsigned nx,intervals;input>>time>>nx>>intervals>>offset>>bond>>h>>damping>>T>>lambda>>target;Assembly model(nx);model.guideIntervals=intervals;model.guideOffset=offset;model.bondK=bond;auto rest=model.rest();std::vector<double>mass(model.size());for(auto&m:mass)input>>m;std::vector<Point>previous(model.size()),v0(model.size()),initial(model.size()),J(model.size());for(auto*values:{&previous,&v0,&initial,&J})for(auto&p:*values)for(auto&x:p)input>>x;for(unsigned i=0;i<model.size();++i)previous[i]=sub(previous[i],rest[i]);if(!input)throw std::runtime_error("incomplete input");CoupledPlaneStep solver(model,mass,h,damping,T,previous,v0,J,target);auto result=solver.solve(initial,lambda);double difference=0;for(unsigned i=0;i<model.size();++i)for(unsigned d=0;d<3;++d)difference=std::max(difference,std::abs(h*(result.velocity[i][d]-initial[i][d])));out<<time<<','<<lambda<<','<<result.lambda<<','<<result.iterations<<','<<result.residual<<','<<result.gap<<','<<difference<<'\n';}
+ std::cout<<"PASS independent single-plane monolithic BE reference;not SOFA integration\n";return 0;
+}catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

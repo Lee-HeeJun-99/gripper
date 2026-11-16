@@ -1,0 +1,16 @@
+#include "../models/film_shell/PlaneContact.h"
+#include <iostream>
+using namespace regrip_film;
+int main(){try{
+ Film film(11,5,100,24,{250,.3,.0610194155});auto q=film.rest();for(auto&p:q){p[0]+=.0001*p[0]*p[1];p[2]=.00003*p[0]*p[0]+.00001*p[0]*p[1];}
+ std::vector<AD>full,first;film.elements(q,[&](const auto&,const AD&e,bool){full.push_back(e);});
+ {DerivativeOrderGuard order(false);film.elements(q,[&](const auto&,const AD&e,bool){first.push_back(e);});}
+ if(!filmHessianEnabled||full.size()!=first.size())throw std::runtime_error("derivative guard restore");
+ for(unsigned i=0;i<full.size();++i){if(full[i].v!=first[i].v||full[i].g!=first[i].g)throw std::runtime_error("gradient-only changed film energy/force");}
+ std::array<AD,3>gap{AD::variable(-.01,2),AD::variable(.02,5),AD::variable(.03,8)};auto plane=planeContact(gap,30,1e-5);PlaneResult light;
+ {DerivativeOrderGuard order(false);light=planeContact(gap,30,1e-5);}
+ if(plane.energy.v!=light.energy.v||plane.energy.g!=light.energy.g||plane.area.v!=light.area.v||plane.normalForce.v!=light.normalForce.v)throw std::runtime_error("gradient-only changed clipped contact");
+ try{DerivativeOrderGuard order(false);throw std::runtime_error("test unwind");}catch(const std::runtime_error&){}
+ if(!filmHessianEnabled)throw std::runtime_error("exception guard restore");
+ std::cout<<"PASS exact energy/gradient equivalence and guard restoration; Hessians still required for tangent\n";return 0;
+ }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

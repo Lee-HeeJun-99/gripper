@@ -21,13 +21,23 @@
 ******************************************************************************/
 #include "ReGripBDFSolver.h"
 #include <sofa/core/ObjectFactory.h>
+#include <chrono>
+#include <fstream>
+#include <iomanip>
 
 namespace sofa::component::odesolver::backward
 {
+struct FilmProfileScope {
+    double*total;
+    std::chrono::steady_clock::time_point start;
+    explicit FilmProfileScope(double*p):total(p){if(total)start=std::chrono::steady_clock::now();}
+    ~FilmProfileScope(){if(total)*total+=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();}
+};
 
 ReGripBDFSolver::ReGripBDFSolver()
     : d_order(initData(&d_order, static_cast<std::size_t>(1), "order", "Order of the numerical method"))
     , d_theta(initData(&d_theta, 1_sreal, "theta", "1=BDF1;0.5=trapezoidal;distinct integration experiments"))
+    , d_profileFilename(initData(&d_profileFilename,std::string(),"profileFilename","Passive per-step stage timings;exclusive campaign path"))
     , d_rayleighStiffness(initData(&d_rayleighStiffness, 0_sreal, "rayleighStiffness",
                                    "Rayleigh damping coefficient related to stiffness, > 0"))
     , d_rayleighMass(initData(&d_rayleighMass, 0_sreal, "rayleighMass",
@@ -90,9 +100,12 @@ void ReGripBDFSolver::reset()
  */
 struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 {
+    double*profile=nullptr;
     void evaluateCurrentGuess() override
     {
+        FilmProfileScope residualTimer(profile?profile+0:nullptr);
         {
+            FilmProfileScope forceTimer(profile?profile+1:nullptr);
             SCOPED_TIMER("ComputeForce");
             static constexpr bool clearForcesBeforeComputingThem = true;
             static constexpr bool applyBottomUpMappings = true;
@@ -144,8 +157,11 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
         }
         // addMdx prunes mechanical mappings in this SDK. Propagate and use a
         // cleared MBK product so mapped mass contributes J^T M J exactly once.
-        mop.propagateDxAndResetDf(velocitySum,r2);
-        mop.addMBKdx(r2,core::MatricesFactors::M(1),core::MatricesFactors::B(0),core::MatricesFactors::K(0),false,true);
+        {
+            FilmProfileScope massTimer(profile?profile+2:nullptr);
+            mop.propagateDxAndResetDf(velocitySum,r2);
+            mop.addMBKdx(r2,core::MatricesFactors::M(1),core::MatricesFactors::B(0),core::MatricesFactors::K(0),false,true);
+        }
 
         for (unsigned int i = 0; i < order + 1; ++i)
         {
@@ -167,6 +183,7 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 
     void computeGradientFromCurrentGuess() override
     {
+        FilmProfileScope gradientTimer(profile?profile+3:nullptr);
         const core::MatricesFactors::M m(a_coef[order] + dt * b_coef[order] * rayleighMass);
         const core::MatricesFactors::B b(-dt * b_coef[order]);
         const core::MatricesFactors::K k(-dt * b_coef[order] * (rayleighStiffness + dt * b_coef[order] / a_coef[order]));
@@ -193,6 +210,7 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 
     void updateGuessFromLinearSolution(SReal alpha) override
     {
+        FilmProfileScope updateTimer(profile?profile+5:nullptr);
         vop.v_peq(velocity[order], dv, alpha);
         computeDxFromDv(alpha);
         vop.v_peq(position[order], dx);
@@ -203,6 +221,7 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 
     void solveLinearEquation() override
     {
+        FilmProfileScope solveTimer(profile?profile+4:nullptr);
         vop.v_clear(dv);
 
         linearSolver->getLinearSystem()->setSystemSolution(dv);
@@ -337,6 +356,8 @@ void ReGripBDFSolver::solve(
     mop.propagateV(m_velocity[order]);
 
     ReGripResidualFunction residualFunction(mop, vop);
+    double profile[6]{};
+    if(!d_profileFilename.getValue().empty())residualFunction.profile=profile;
     residualFunction.order = order;
     residualFunction.a_coef = m_a_coef;
     residualFunction.b_coef = m_b_coef;
@@ -354,6 +375,14 @@ void ReGripBDFSolver::solve(
     residualFunction.linearSolver = l_linearSolver.get();
 
     l_newtonSolver->solve(residualFunction);
+    if(residualFunction.profile){
+        const auto&path=d_profileFilename.getValue();
+        if(!m_currentSolve){std::ifstream previous(path);if(previous)throw std::runtime_error("profile already exists");}
+        std::ofstream output(path,std::ios::app);
+        if(!m_currentSolve)output<<"time,residual_s,force_damping_s,mass_product_s,gradient_rhs_s,linear_s,update_mapping_s\n";
+        output<<std::setprecision(17)<<getContext()->getTime()+dt;
+        for(double value:profile)output<<','<<value;output<<'\n';
+    }
 
     // Save n before publishing n+1. History remains distinct from main state.
     vop.v_eq(m_previousPosition,m_position[order-1]);

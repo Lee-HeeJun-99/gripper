@@ -5,8 +5,13 @@ from closure_validation_suite import logged
 from film_nonlinear_assess import read,compare
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--nodes',type=int,choices=[11,21,41],default=21);p.add_argument('--steps',type=int,default=200);p.add_argument('--duration',type=float,default=20);p.add_argument('--time',action='store_true');p.add_argument('--newton-tolerance',type=float,default=1e-13);p.add_argument('--profile',action='store_true');a=p.parse_args()
-    if not a.tag.replace('_','').isalnum() or not 1<=a.steps<=2000 or not 0<a.duration<=20:raise ValueError('bounded campaign')
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--nodes',type=int,choices=[11,21,41],default=21);p.add_argument('--steps',type=int,default=200);p.add_argument('--duration',type=float,default=20);p.add_argument('--time',action='store_true');p.add_argument('--newton-tolerance',type=float,default=1e-13);p.add_argument('--profile',action='store_true')
+    p.add_argument('--plane',type=float,default=.1,help='Externally fixed stop z; moving it is a separate physical control')
+    p.add_argument('--compact-membrane',action='store_true',help='Opt-in compile-time nine-DOF AD2;requires exact regression and wall-clock validation')
+    p.add_argument('--tangent-probe',action='store_true',help='Public actual matrix and trial state, first two steps only')
+    p.add_argument('--refresh-mapped-mass',action='store_true',help='Independent SDK linear-system adapter;refresh cached mapped mass MBK factor')
+    a=p.parse_args()
+    if not a.tag.replace('_','').isalnum() or not 1<=a.steps<=2000 or not 0<a.duration<=20 or not __import__('math').isfinite(a.plane):raise ValueError('bounded campaign')
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);build=ROOT/'build'/('film_shell_'+a.tag);sdk=ROOT/'build/grasp_20261115/sofa_patched'
     sources=list((ROOT/'models/film_shell').glob('*'))+list((ROOT/'tests').glob('test_film*.cpp'))+[ROOT/'tools/film_slope_run.py']
     hashes={str(s.relative_to(ROOT)):sha(s) for s in sources if s.is_file()}
@@ -14,6 +19,11 @@ def main():
         if s.is_file():dest=out/'sources'/s.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(s,dest)
     write_json(out/'identity.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources=hashes,boundary='EXPERIMENTAL hard root slope;not K=100 penalty benchmark',total_mass=1e-6,physical_parameters=dict(E=250,nu=0,width=24,length=100,thickness=.0610194155,plane=.1,kn=1e-5,tip_force=1e-6,ramp=10,rayleigh_mass=2),driver_sha256=sha(sdk/'bin/graph_probe')))
     stages={}
+    identity_path=out/'identity.json'
+    identity=json.loads(identity_path.read_text());identity['physical_parameters']['plane']=a.plane
+    identity['command']=__import__('sys').argv
+    identity['compact_membrane']=a.compact_membrane
+    write_json(identity_path,identity)
     commands=[('configure',['cmake','-S',ROOT/'models/film_shell','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(ROOT/'.runtime/closure_sdk')]),('build',['cmake','--build',build,'-j2'])]+[(name,[build/exe]) for name,exe in [('kernel','test_film_shell'),('api','test_film_shell_api'),('plane','test_film_plane'),('mapping','test_film_slope_mapping')]]
     for name,command in commands:
         stages[name]=logged(command,out/name,180)
@@ -25,6 +35,11 @@ def main():
         case=out/str(multiple);case.mkdir();steps=a.steps*multiple;dt=a.duration/steps;n=a.nodes*5;zero=' '.join(['0 0 0']*n);tip=' '.join(map(str,range(n-5,n)))
         profile=f' profileFilename="{case/"profile.csv"}"' if a.profile else ''
         scene=f'''<Node name="exact_slope" dt="{dt}" gravity="0 0 0"><RequiredPlugin pluginName="Sofa.Component.AnimationLoop Sofa.Component.StateContainer Sofa.Component.Mass Sofa.Component.ODESolver.Backward Sofa.Component.LinearSolver.Direct Sofa.Component.Constraint.Projective Sofa.Component.MechanicalLoad"/><DefaultAnimationLoop/><NewtonRaphsonSolver name="newton" maxNbIterationsNewton="30" maxNbIterationsLineSearch="12" absoluteResidualStoppingThreshold="{a.newton_tolerance}" relativeInitialStoppingThreshold="1e-7" relativeSuccessiveStoppingThreshold="0"/><ReGripBDFSolver order="2" theta="1" newtonSolver="@newton" rayleighMass="2" rayleighStiffness="0"{profile}/><EigenSparseLU template="CompressedRowSparseMatrixd"/><MechanicalObject name="dofs" template="Vec3d" position="{zero}"/><FixedProjectiveConstraint indices="0 1 2 3 4"/><PartialFixedProjectiveConstraint indices="5 6 7 8 9" fixedDirections="0 0 1"/><Node name="film"><MechanicalObject name="surface" template="Vec3d" position="{zero}"/><UniformMass totalMass=".000001"/><FilmShell nx="{a.nodes}" ny="5" length="100" width="24" young="250" poisson="0" thickness=".0610194155" displacementDofs="1" slopeMapped="1" slopeFixture="0" observedTipForce=".000001" plane=".1" contactStiffness=".00001" filename="{case/'journal.csv'}"/><LinearForceField points="{tip}" times="{-dt} {10-dt} {20-dt}" forces="0 0 0 0 0 .0000002 0 0 .0000002"/><FilmSlopeMapping input="@../dofs" output="@surface" ny="5" mapMasses="1"/></Node></Node>'''
+        scene=scene.replace('plane=".1"',f'plane="{a.plane:.17g}"')
+        scene=scene.replace('<FilmShell ',f'<FilmShell compactMembrane="{int(a.compact_membrane)}" ')
+        if a.tangent_probe:scene=scene.replace('<ReGripBDFSolver ',f'<ReGripBDFSolver tangentProbeFilename="{case/"tangent"}" ')
+        if a.refresh_mapped_mass:scene=scene.replace('<EigenSparseLU ', '<ReGripMatrixLinearSystem name="refreshedSystem"/><EigenSparseLU linearSystem="@refreshedSystem" ')
+        if f'plane="{a.plane:.17g}"' not in scene:raise RuntimeError('plane option not applied to actual XML')
         (case/'scene.scn').write_text(scene);stages[str(multiple)]=logged([sdk/'bin/graph_probe',sdk,case/'scene.scn',str(steps),'0',plugin],case/'process',480)
         log=(case/'process/stdout.log').read_text()+(case/'process/stderr.log').read_text()
         if stages[str(multiple)]['exit_code'] or '[ERROR]' in log or 'Unused Attribute' in log:continue

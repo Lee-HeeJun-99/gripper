@@ -24,6 +24,9 @@
 #include <chrono>
 #include <fstream>
 #include <iomanip>
+#include <sofa/core/behavior/BaseMatrixLinearSystem.h>
+#include <sofa/defaulttype/VecTypes.h>
+#include <sofa/linearalgebra/BaseMatrix.h>
 
 namespace sofa::component::odesolver::backward
 {
@@ -38,6 +41,7 @@ ReGripBDFSolver::ReGripBDFSolver()
     : d_order(initData(&d_order, static_cast<std::size_t>(1), "order", "Order of the numerical method"))
     , d_theta(initData(&d_theta, 1_sreal, "theta", "1=BDF1;0.5=trapezoidal;distinct integration experiments"))
     , d_profileFilename(initData(&d_profileFilename,std::string(),"profileFilename","Passive per-step stage timings;exclusive campaign path"))
+    , d_tangentProbeFilename(initData(&d_tangentProbeFilename,std::string(),"tangentProbeFilename","Passive first-Newton mapped matrix/trial export for first two steps only"))
     , d_rayleighStiffness(initData(&d_rayleighStiffness, 0_sreal, "rayleighStiffness",
                                    "Rayleigh damping coefficient related to stiffness, > 0"))
     , d_rayleighMass(initData(&d_rayleighMass, 0_sreal, "rayleighMass",
@@ -101,8 +105,12 @@ void ReGripBDFSolver::reset()
 struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 {
     double*profile=nullptr;
+    std::string tangentProbeFilename;
+    unsigned residualEvaluations=0,gradientEvaluations=0,linearSolves=0,trialUpdates=0,newtonIterations=0;
+    void startNewtonIteration() override {++newtonIterations;}
     void evaluateCurrentGuess() override
     {
+        ++residualEvaluations;
         FilmProfileScope residualTimer(profile?profile+0:nullptr);
         {
             FilmProfileScope forceTimer(profile?profile+1:nullptr);
@@ -183,12 +191,23 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 
     void computeGradientFromCurrentGuess() override
     {
+        ++gradientEvaluations;
         FilmProfileScope gradientTimer(profile?profile+3:nullptr);
         const core::MatricesFactors::M m(a_coef[order] + dt * b_coef[order] * rayleighMass);
         const core::MatricesFactors::B b(-dt * b_coef[order]);
         const core::MatricesFactors::K k(-dt * b_coef[order] * (rayleighStiffness + dt * b_coef[order] / a_coef[order]));
 
         mop.setSystemMBKMatrix(m, b, k, linearSolver);
+        if(!tangentProbeFilename.empty()&&gradientEvaluations==1){
+            auto*system=linearSolver->getLinearSystem();auto*matrix=system->getSystemBaseMatrix();
+            auto*state=dynamic_cast<core::behavior::MechanicalState<defaulttype::Vec3Types>*>(mop.ctx->getMechanicalState());
+            if(!matrix||!state)throw std::runtime_error("Vec3 tangent probe unavailable");
+            std::ifstream previous(tangentProbeFilename+".matrix.csv");if(previous)throw std::runtime_error("tangent probe already exists");
+            std::ofstream out(tangentProbeFilename+".matrix.csv");out<<std::setprecision(17)<<"row,col,value\n";
+            for(int i=0;i<matrix->rowSize();++i)for(int j=0;j<matrix->colSize();++j)if(matrix->element(i,j))out<<i<<','<<j<<','<<matrix->element(i,j)<<'\n';
+            std::ofstream positionOut(tangentProbeFilename+".state.csv");positionOut<<std::setprecision(17)<<"dt,a2,mfactor,kfactor\n"<<dt<<','<<a_coef[order]<<','<<m.get()<<','<<k.get()<<"\nx,y,z\n";
+            for(const auto&q:mop.mparams.readX(state)->getValue())positionOut<<q[0]<<','<<q[1]<<','<<q[2]<<'\n';
+        }
 
         core::behavior::MultiVecDeriv rhsVec(&vop, rhs);
         rhsVec.eq(r2, -1);
@@ -210,6 +229,7 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 
     void updateGuessFromLinearSolution(SReal alpha) override
     {
+        ++trialUpdates;
         FilmProfileScope updateTimer(profile?profile+5:nullptr);
         vop.v_peq(velocity[order], dv, alpha);
         computeDxFromDv(alpha);
@@ -221,6 +241,7 @@ struct ReGripResidualFunction : newton_raphson::BaseNonLinearFunction
 
     void solveLinearEquation() override
     {
+        ++linearSolves;
         FilmProfileScope solveTimer(profile?profile+4:nullptr);
         vop.v_clear(dv);
 
@@ -356,6 +377,7 @@ void ReGripBDFSolver::solve(
     mop.propagateV(m_velocity[order]);
 
     ReGripResidualFunction residualFunction(mop, vop);
+    if(!d_tangentProbeFilename.getValue().empty()&&m_currentSolve<2)residualFunction.tangentProbeFilename=d_tangentProbeFilename.getValue()+"."+std::to_string(m_currentSolve);
     double profile[6]{};
     if(!d_profileFilename.getValue().empty())residualFunction.profile=profile;
     residualFunction.order = order;
@@ -379,9 +401,15 @@ void ReGripBDFSolver::solve(
         const auto&path=d_profileFilename.getValue();
         if(!m_currentSolve){std::ifstream previous(path);if(previous)throw std::runtime_error("profile already exists");}
         std::ofstream output(path,std::ios::app);
-        if(!m_currentSolve)output<<"time,residual_s,force_damping_s,mass_product_s,gradient_rhs_s,linear_s,update_mapping_s\n";
+        if(!m_currentSolve)output<<"time,residual_s,force_damping_s,mass_product_s,gradient_rhs_s,linear_s,update_mapping_s,residual_evaluations,gradient_evaluations,linear_solves,newton_iterations,trial_updates,extra_line_search_trials,momentum_residual_norm\n";
         output<<std::setprecision(17)<<getContext()->getTime()+dt;
-        for(double value:profile)output<<','<<value;output<<'\n';
+        for(double value:profile)output<<','<<value;
+        // A successful Newton iteration has one accepted line-search trial;
+        // extras are rejected trials only when the runtime reports no failure.
+        output<<','<<residualFunction.residualEvaluations<<','<<residualFunction.gradientEvaluations
+              <<','<<residualFunction.linearSolves<<','<<residualFunction.newtonIterations
+              <<','<<residualFunction.trialUpdates<<','<<(residualFunction.trialUpdates-residualFunction.newtonIterations)
+              <<','<<std::sqrt(residualFunction.squaredNormLastEvaluation())<<'\n';
     }
 
     // Save n before publishing n+1. History remains distinct from main state.

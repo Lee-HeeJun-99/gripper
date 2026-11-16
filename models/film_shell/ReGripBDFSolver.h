@@ -68,6 +68,7 @@ public:
     Data<std::size_t> d_order;
     Data<SReal> d_theta;
     Data<std::string> d_profileFilename;
+    Data<std::string> d_tangentProbeFilename;
 
     Data<SReal> d_rayleighStiffness;
     Data<SReal> d_rayleighMass;

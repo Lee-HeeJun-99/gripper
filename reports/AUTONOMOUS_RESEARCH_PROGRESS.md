@@ -1,5 +1,30 @@
 # Autonomous research log
 
+## Active continuation — vector function history,2026-11-16
+
+Resumed same branch at clean fb6a698,no existing physics child. Both inherited
+indices actually verify4945/149and34/3,zero errors. Completed Hermite/mesh
+campaigns were not rerun. No host exhaustion was observed at startup.
+
+Implemented independent VectorReturn.h/VectorField.h and bounded fresh-output
+curve_vector_reference.py. Fixed-normal circular vector return,exact
+function-valued return composition,query purity and epoch Commit;not yet SOFA.
+Actual return600statesPASS(FD1.55721e-12). First field a02/a03/a04FAIL unresolved
+yield front. Diagnostic a04localized zero initially sampled OFF-DIAGONAL
+tangent scale;global embedded budgets update from newly observed components.
+a05passed the weak positive-tiny-loss test,but a NEW analytic test genuinely
+FAILed:17.1718423%relative loss. Tightening tolerances alone FAILED identically.
+Exact virgin constant-vector yield-root domain split corrected that case:
+2.62427e-9relative error,loss1.98264694562e-37Fmm. No tiny-loss cutoff used.
+Actual validation01PASS independently compares65536plastic-vector points,
+20exact scalar-history steps,field tangent FD1.98887e-11 and endpoint balance.
+Raw snapshots/failed logs preserved in results/vector_history_20261116_*.
+
+Next selected work:objective vector transport,function-field covariance and
+general stateful yield-front error control;then bound/profile expression-history
+cost before any SOFA deployment. Reference4096step cap is NOT production
+qualification. Scalar/old3Dmodels,all physics thresholds and Optuna gate remain.
+
 Baseline63970172ad196e0add3ad42a67ccaee4c7a8975e,clean worktree; requested branch
 created. Actual environment remains Ubuntu22.04.5/GCC11.4/CMake3.22.1/Python3.10.20.
 Existing birth assessment reproduced and1845raw/source/binary hashes passed.

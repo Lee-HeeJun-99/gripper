@@ -1,5 +1,17 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Newest actual continuation — vector reference,not SOFA approval
+
+Same branch resumed fb6a698,old indices PASS4945/149and34/3. No prior physical
+child remained. Independent circular vector-return600states and stateful
+function-history tests actually PASS in validation01. Preserved new failures
+include unresolved quadrature and a tiny loss17.17%error,corrected only after
+analytic virgin yield-front splitting (tolerance tightening alone did not work).
+This is fixed-normal/fixed-patch mathematical scope,NOT3D/SOFA/grasp PASS.
+Current work is objective transport/general stateful front accuracy and bounded
+cost,not a repeat of completed Hermite/mesh runs. All earlier physical FAILs,
+global-energy BLOCKED and100mm grasp Optuna BLOCKED remain unchanged.
+
 ## Authoritative checkpoint — incomplete objective,not a completion declaration
 
 All physical runs/replay described in the latest PROGRESS/NEXT are completed;

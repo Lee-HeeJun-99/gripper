@@ -3,8 +3,10 @@ import argparse,csv,json,subprocess,xml.etree.ElementTree as ET
 from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fine',action='store_true');a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);case=out/'1';case.mkdir();steps=4160 if a.fine else 2080;dt=.000625 if a.fine else .00125
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fine',action='store_true');p.add_argument('--level',type=int,choices=[0,1,2],default=0);a=p.parse_args();level=max(a.level,int(a.fine));out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);case=out/'1';case.mkdir();steps=2080*2**level;dt=.00125/2**level
  profile=ROOT/'results/autonomous_film_20261116_rail_low6400_100/summary.json';r=json.loads(profile.read_text());estimate=r['stages']['physics']['runtime_s']/r['rows']*steps*1.3
+ if level==2:
+  profile=ROOT/'results/autonomous_film_20261116_attachment_window129/summary.json';r=json.loads(profile.read_text());estimate=r['process']['runtime_s']/r['rows']*steps*1.15
  if r['status']!='PASS' or estimate>480:raise RuntimeError('profile budget')
  source=ROOT/'results/autonomous_film_20261116_rail_low3200_99/1/scene.scn';tree=ET.parse(source);root=tree.getroot();root.set('dt',str(dt));root.remove(root.find('DefaultAnimationLoop'));clock=ROOT/'build/autonomous_20261116_event_clock_a01/v1/libReGripEventStepClock.so';root.insert(0,ET.Element('RequiredPlugin',pluginName=str(clock)));root.insert(1,ET.Element('EventStepClockAnimationLoop',eventTimes='0 1 1.2',stepDivisors='1 8 8',filename=str(case/'clock.csv')))
  ode=root.find('ReGripBDFSolver');ode.set('profileFilename',str(case/'profile.csv'));root.find("Node[@name='assembly']/FilmRailTendon").set('filename',str(case/'journal.csv'));tree.write(case/'scene.scn')

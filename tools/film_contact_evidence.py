@@ -25,7 +25,7 @@ def main():
   paths.update(f for f in directory.rglob('*') if f.is_file() and '__pycache__' not in str(f))
  for pattern in ('models/film_shell/*','models/film_rail_tendon/*','models/film_native_contact/*','diagnostics/film_shell/*','diagnostics/film_rail_tendon/*','tests/test_film*','tools/film_*.py','reports/AUTONOMOUS_RESEARCH_*.md','reports/FILM_CONTACT_DYNAMICS_20261116.md','reports/FILM_SHELL_PHYSICS.md','reports/REGRIP_*.md','build/film_shell_20261116_*/libReGripFilmShell.so','build/film_rail_20261116_*/libReGripFilmRailTendon.so','build/film_native_20261116_*/libReGripFilmNativeObserver.so','build/film_native_installed_20261116_*/*/*.so'):
   paths.update(f for f in ROOT.glob(pattern) if f.is_file())
- for directory in ('contact_dynamics_20261116_actual56','film_rail_20261116_actual94','film_native_20261116_actual120'):
+ for directory in ('contact_dynamics_20261116_actual56','film_rail_20261116_actual94','film_native_20261116_actual120','film_native_20261116_actual133'):
   paths.update(f for f in (ROOT/'designs/visualizations'/directory).glob('*') if f.is_file())
  statuses={}
  for directory in sorted((ROOT/'results').glob('autonomous_film_20261116_*')):

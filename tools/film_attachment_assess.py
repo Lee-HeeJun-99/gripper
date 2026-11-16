@@ -3,7 +3,7 @@ import argparse,csv,json
 import numpy as np
 from curve_common import ROOT,sha,write_json
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);names=['rail_low6400_100','attachment_window128','attachment_window129'];data={};inputs={}
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--coarse',default='attachment_window128');p.add_argument('--fine',default='attachment_window129');a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);names=['rail_low6400_100',a.coarse,a.fine];data={};inputs={}
  for name in names:
   directory=ROOT/'results'/('autonomous_film_20261116_'+name)
   if json.loads((directory/'summary.json').read_text())['status']!='PASS':raise RuntimeError('incomplete execution')

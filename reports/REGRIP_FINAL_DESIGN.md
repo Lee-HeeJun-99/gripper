@@ -1,5 +1,20 @@
 # 최종 설계 판정 — 선정 보류(EXPERIMENTAL)
 
+## 5일 제작용 잠정 기본 후보 — 성능 최종 선정 아님
+
+공통와이어 equalizer+교체 Skin/edge backing카트리지+탄성복원으로 기능을
+단순화한 기본안을 우선 제작 검토한다. equal_volume_v2도면은0.05mm Skin,
+0.10mm×2.07233mm backing두개로439.33979mm³ core를맞췄다. 공급재료/구동부/
+규정/팀역량확인 전 제작 확정은 BLOCKED다. 목표 본체R50mm는계속설계제약이다.
+선택적 근위 기계압착은옵션,3구간진공은 기본기능성공후연구안으로둔다.
+동일체적 쿠폰의 넓은 접촉 가설은 실제 SOFA에서 일부 관측했지만 전체공간/
+동역학/파지 Gate실패가남아 최종성능우위/Optuna최적후보를선정하지않았다.
+
+[동일체적 단면](../designs/film_contact/equal_volume_v2/section.svg),
+[실제 SOFA 쿠폰 상태](../designs/visualizations/film_actual_v1/actual_coupon.png),
+REGRIP_COMPETITION_TECHNICAL_BASIS.md 및 별도 APPLICATION_DRAFT.md 참조.
+지원서의 성능숫자는목표이며실제파지달성실적으로사용하지않는다.
+
 최종 제작 설계나 최적 설계는 아직 선정하지 않았다. baseline을 최종안으로
 확정하지 않고,Concept v2의 **tapered film cartridge + 선택 재밍 sleeve**를
 후속 비교 후보로 유지한다. 넓은면적은장점가설,5.74배재료량/밀봉/배관/

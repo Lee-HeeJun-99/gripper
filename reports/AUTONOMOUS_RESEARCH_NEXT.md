@@ -1,5 +1,34 @@
 # Next research checkpoint
 
+## First unfinished work after film mechanics — actual nonlinear RHS audit
+
+DO NOT reimplement film_shell or rerun failedBDFblindly. ReadFILM_SHELL_PHYSICS.md.
+Actual firstfreeM+dtC+dt²H agrees5.58e-17. Next compare SOFA nonlinear residual,
+velocity/position update,rayleigh force andfixed-root projection against
+ImplicitReference.cpp at firstnonzero-ramp step. Export currenttrial/oldstate/RHS
+at Newton stage,not justendStep. Independent200/400stepsfinish;100failsNewton30.
+An initial unsupported-directLinearSolvermatrixgetterwasnotused:SDK requires
+BaseMatrixLinearSystem. Probe raw includes15rootSCALARDOFs;film_matrix_assess
+correctly filters15. Do not call the unfiltered29%boundary difference a defect.
+
+Then robust nonlinear integration and fullmesh/history/time/energy gates before
+layer/rail coupling,tendon andfree6DOFfilmgrasp. DisplacementDOFspreservegeometry
+x=rest+u;NativeCollisionrequirescorrectmapping/pullback,notusingu asgeometry.
+New equal_volume_v2isCONCEPT,not8layerjamming. Pressure/friction data remainnull.
+ActualActuator/team/rulesdataareexternalBLOCKED;do notinventthem.
+
+Fresh regression commands(PYsameConda):
+$PY tools/film_shell_run.py --tag UNIQUE --steps 30 --solver static --plane .1 --width 24 --thickness .06101941552425123 --load .000001 --nodes 21 --single --fixture 100 --ramp 10 --displacement
+$PY tools/film_implicit_reference.py --tag UNIQUE
+$PY tools/sphere_temporal_reference.py --tag UNIQUE
+$PY -m unittest discover -s tests -p test_film_design.py -v
+
+Temporal next:use exactchanging-normalgreat-circleplastic-workreference toderive
+GENERAL evolving-normal vector law+off-planeendpointtangent. Scalar branch
+exactnessisnotSOFAEnginePASS. No largerinternalgrid-only fix orOptunaGatebypass.
+This unfinished working-context checkpoint is not host-resource exhaustion;
+no background automatic continuation exists. Commands use fresh bounded paths.
+
 ## First unfinished task after sphere-event experiments
 
 Do NOT repeat the20/40/80 sphere event campaigns:all finished. Read

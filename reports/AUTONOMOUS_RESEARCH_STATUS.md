@@ -1,5 +1,21 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Latest film implementation checkpoint — final goal NOT complete
+
+Source commits38f3966(film mechanics/contact) andb86e305(equal-volume/competition).
+PASS limited:independent membrane/plate/cantilever patch,objectivity,force/Hessian,
+actual SOFA API4modes;actual finite-width fixed-plane deformation/contact exists.
+Equal-volume skin/rail concept439.33979mm³ and5daytechnical/application drafts
+implemented. Baseline/grasp advantage,layer friction and hardware NOT certified.
+
+FAIL:actualfilmEuler dynamic force residuals,BDFnonfinite,base-dtindependentNewton,
+coarse→fine contact/energy. Rootfixture continuation achieves21nodestaticendpoint
+residual6.35e-6 only. Actual first free M/C/K matrix matches5.58e-17;nonlinear
+RHS/correction remains unverified. Independent200/400Newtoncompletes,NOTSOFA.
+Temporal exactgreat-circle referencePASS butgeneralendpointtangent NOTimplemented;
+originalSphereEvent0.146423%andCurved0.8519%FAILstay. Fullenergy/graspOptunaBLOCKED.
+All children finished;no ongoing process or automaticrestart is claimed.
+
 ## Latest sphere-event result — further development, not completion
 
 New SphereEventReturn + separate actual SOFA adapter handle fixed-sphere chord

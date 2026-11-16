@@ -1,5 +1,26 @@
 # Autonomous research log
 
+## New actual work — film energy/contact,source guards,and failed alternatives
+
+Implementedstructuredmembrane+curvature/twistROM,AD2,actualSOFAForceField,
+clippedplanearea/pressureinventory,rootfixtureanddisplacementDOFs. Unit/APIand
+independentplate/cantilever PASS. Actualsame-volumecouponcontactimplemented;
+notbaseline3fingergrasp. Discoveredandfixedrequested/actualSolverXMLbug,retained
+allpriorrawandrelabeledscope. Nonlinear/dynamicfailuresretained,notjusttipPASS.
+
+Comparedsudden/rampedload,rootboundary,Newtonstopping,stableGreenstrainand
+absolute/displacementDOFs. ThesealternativesdidnotcloseactualdynamicsGate.
+IndependentfullNewton200/400finishwith~1e-13residual;100failsNewtonlimit.
+FirstactualfreeglobalmatrixmatchesAD+mass/damping5.58e-17,sofirstassembly
+mismatchhypothesisrefuted;nextactualnonlinearRHS/stateauditselected.
+New exactgreat-circlefrictionwork70digitreference narrowslossquadrature but
+isnotgeneralSOFAlaw. Source38f3966,b86e305;detailsFILM_SHELL_PHYSICS.md.
+
+Same-corevolumeskin+railgeometry,backingoffsetv2,3Pythonchecks,4existingdesign
+regressionsPASS. Competitiontechnicalbasisand11separatesupportdraftsections
+fitusercharacterlimits;unknownactuator/team/hardwareperformanceexplicit.
+NoSOFAgraspOptuna,hardwareorremotepush. NoOSresourceexhaustionobserved.
+
 ## Additional actual development — sphere events and failed temporal alternative
 
 Implemented SphereEventReturn.h,SphereEventBenchmark,unit/API tests and bounded

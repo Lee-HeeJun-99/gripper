@@ -1,5 +1,22 @@
 # ReGrip 구조 연구 — Concept v2, 제작 확정 아님
 
+## 2026-11-16 실제 필름 물리 구현 추가 — 이전 로딩 단계와 구분
+
+독립 models/film_shell에 막 인장+곡률/비틀림 에너지,폭 방향 xyz DOF,
+AD힘/Hessian,실제 SOFA plugin,고정 평면의 삼각형 접촉 경계 분리 적분을
+구현했다. 새 모드는 기준 형상에 대한 변위DOF도 지원한다. 이 필름은 아직
+직사각 단일층 ROM이며 기존 테이퍼8층 설계/와이어/재밍/자유물체 구현이 아니다.
+필름 API/객관성/패치 시험은 PASS,전체 동역학·공간에너지·파지는 FAIL/BLOCKED.
+세부: FILM_SHELL_PHYSICS.md. 실제 저장 상태 그림은
+../designs/visualizations/film_actual_v1/actual_coupon.png (z50배 표시).
+
+동일 core 체적 새 후보 equal_volume_v2:0.05mm skin+0.10mm backing두개,
+각 폭2.07233mm,체적439.33979mm³. 밀도가 같아야 동일 질량이며 외피/체결/
+가이드 질량은 별도다. v1 backing 중간면은 skin과 겹쳤으므로개념 이력으로
+보존하고,v2는정상적인0.075mm 중간면 offset을 둔다. 실제 적층접촉은미실시.
+완전 미끄럼/완전 접착 EB 상한비교에서 full3.9165,prox1.9437,dist1.0233,
+prox+mid3.4389를계산했다. 실제 압력ON/OFF 파지 성능비가 아니다.
+
 ## 근거와 기존 구조
 
 `tools/design_regrip.py`가 기존 `closure_frame_trial.py`의 Config를 AST로 읽고

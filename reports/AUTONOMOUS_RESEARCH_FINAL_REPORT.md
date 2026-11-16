@@ -1,5 +1,20 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Latest ongoing checkpoint — mechanics implemented,grasp unfinished
+
+New independent film has actual membrane/bending/twist deformation and finite
+reference-area fixed-planecontact in SOFA,not justmeshloading. Actualstored
+states/drawingsandkernel/APIpatchchecksavailable. SeeFILM_SHELL_PHYSICS.md.
+No fullfilmgrasp performance orfinalphysicscertification:dynamicresidual,
+coarsemesh/energy,time/return andglobalenergy gaps remainFAIL/BLOCKED.
+
+PreservedequivalentBaselines;newcore-volume439.33979mm³skin+railconcept,
+provisional5daycommoncablearchitecture,andcompetitiontechnicalbasis/character-
+checkedapplicationdraft. Actualactuator,team,material,loadcapabilityunknown.
+38f3966andb86e305arefeaturecommits,notwholegrippervalidationcommits.
+Nohostresourceexhaustionorautomaticrestartisasserted;thisisunfinishedworking-
+contextcheckpoint. NextactualnonlinearRHSauditattopofNEXT,notreport-onlywork.
+
 ## Additional checkpoint — contact event implementation did not close time Gate
 
 Separate sphere-chord birth/death model and actual matching-SDK SOFA adapter

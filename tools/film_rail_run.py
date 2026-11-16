@@ -25,10 +25,14 @@ def main():
         for rel,digest in previous_identity['sources'].items():
             if rel.startswith('models/') and sha(previous/'sources'/rel)!=digest:raise RuntimeError('archived assembly model drift')
     if a.steps>1000:
-        if not a.reuse or not previous_identity.get('native_opt') or a.tension!=.0001 or a.duration!=4 or a.scheme!='trapezoid':raise ValueError('high-resolution authorization limited to profiled low-load family')
+        if not a.reuse or not previous_identity.get('native_opt') or a.tension!=.0001 or a.duration!=4:raise ValueError('high-resolution authorization limited to profiled low-load family')
         benchmark_root=ROOT/'results/autonomous_film_20261116_rail_native_benchmark96';benchmark=json.loads((benchmark_root/'summary.json').read_text());profile_root=ROOT/'results/autonomous_film_20261116_rail_low84';profile=json.loads((profile_root/'summary.json').read_text())
         if benchmark['status']!='PASS' or profile['status']!='PASS':raise ValueError('missing compiler/physics profile evidence')
         estimate=profile['stages']['physics']['runtime_s']/profile['rows']*a.steps*benchmark['median_native_over_base']
+        if a.scheme=='bdf2':
+            profile_root=ROOT/'results/autonomous_film_20261116_attachment_bdf136';profile=json.loads((profile_root/'summary.json').read_text())
+            if profile['status']!='PASS':raise ValueError('BDF2 full-window profile required')
+            estimate=profile['process']['runtime_s']/profile['rows']*a.steps*1.3
         if estimate*1.05>480:raise ValueError('high-resolution projection exceeds480s')
         high_resolution_budget=dict(profile_sha256=sha(profile_root/'summary.json'),compiler_qualification_sha256=sha(benchmark_root/'summary.json'),projected_seconds=estimate,hard_seconds=480)
     commands=[] if a.reuse else [('configure',['cmake','-S',ROOT/'models/film_rail_tendon','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(ROOT/'.runtime/closure_sdk')]),('build',['cmake','--build',build,'-j2']),('kernel',[build/'test_film_rail_tendon']),('api',[build/'test_film_rail_tendon_api']),('mappings',[build/'test_film_rail_mappings']),('ldd',['ldd',build/'libReGripFilmRailTendon.so'])]

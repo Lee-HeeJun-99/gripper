@@ -1,5 +1,12 @@
 # 경진대회 지원서 초안 — 제출 전 실제 규정·팀 정보 보완 필요
 
+> Latest research-only checkpoint:actual411 has16s endpoint buffer clearance;
+> corrected C2 input405 completes8s,but full time convergence427 still FAILS.
+> These are frictionless FIXED-object coupon results,NOT free-object grasp,
+> measured actuator/PET performance or a final competition design. Existing
+> question bodies/character limits/team/actuator unknowns are unchanged.
+> See FILM_CANDIDATE_CLOSURE_20261117.md;older metadata below is historical.
+
 > 2026-11-17 research-only status:actual fixed-sphere16s release/near-rest
 > recovery366 is not free-object grasp or measured actuator capability.
 > Time and whole-surface buffer clearance remain FAIL;graspOptuna BLOCKED.

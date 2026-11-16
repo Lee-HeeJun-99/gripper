@@ -1,5 +1,78 @@
 # Executable research checkpoint — 2026-11-17
 
+## Saved continuation state through443 — NOT goal completion
+
+Last functional commit e14f886; model-source byte checkpoint c4bba01 matches
+the qualified401 archive (actual launch HEAD/snapshots remain in each identity).
+No OS memory exhaustion,permission block or child480s timeout occurred.
+The response/context budget is this handoff boundary,NOT scientific completion
+or proof that all further research is externally blocked. All launched
+physics children have exited. No automatic/background restart is installed.
+
+Reusable installed-ABI owner/core builds:film_native_*395 and *401;
+assemblies film_native_assembly_20261117_local_probe293 and
+film_native_assembly_20261117_c2_bounded_short401. Never overwrite them.
+Raw:results/autonomous_film_20261117_closure_recovery411 (16s),
+...c2_bounded_cycle405/...c2_cycle_half418 (C2 full time FAIL),
+...c2_bdf_onset434/...c2_bdf_onset_half437 (entry isolation),
+...bdf_impact_velocity441/...impact_counterexample442 (actual/counterexample).
+Actual figures:designs/visualizations/film_native_20261117_closure_recovery_actual423/.
+PASS scopes and FAIL/BLOCKED tables: FILM_CANDIDATE_CLOSURE_20261117.md.
+
+FIRST UNIMPLEMENTED TASK:separate event-aware impact/velocity owner and
+consistent multistep restart,not another C2 tweak or blind dt doubling.
+Use existing SphereStep/ClosestPrimitive and projected mass;derive the
+birth path/root and explicit impact-law assumption,then validate impulse,
+energy and endpoint tangent independently BEFORE replacing any SOFA path.
+Keep current BE/BDF2 models and all old FAILs. Continuous birth time remains
+unmeasured;441 is a CURRENT-J velocity projection,not a CCD result.
+Do not launch3200step quarter:443 predicts687.093s and records attempts0.
+
+Exact read-only/scoped resume commands from project root:
+```
+git status --short
+git log -8 --oneline
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_contact_evidence.py --verify-historical
+$PY tools/film_contact_evidence.py --audit-old
+# Verify the newest immutable continuation ledger named by Git/reports.
+# Choose NEW tags;completed434/437 must NOT be re-run just to resume:
+$PY tools/film_contact_velocity.py --tag UNIQUE_DIAG --cases 20261117_c2_bdf_onset434 20261117_c2_bdf_onset_half437
+$PY tools/film_continuation_regression.py --tag UNIQUE_REGRESSION --case 20261117_c2_bounded_short401
+```
+Then implement the new event owner,unit/API test it and profile a NEW short
+trial. No command for an unimplemented component is presented as executable.
+3finger/free6DOF/friction/whole energy/Optuna remain unqualified;do not remove
+the fixed-body/additional-mass guards to bypass their missing equations.
+
+## Latest actual continuation — candidate closure/C2 (2026-11-17)
+
+Project NOT complete. New implementation and measured results are in
+[FILM_CANDIDATE_CLOSURE_20261117.md](FILM_CANDIDATE_CLOSURE_20261117.md).
+Actual411 completes16s/1600steps in263.082s with whole-triangle buffer
+gap >=-9.467e-11mm (unchanged1e-10 gate).392/411 use6 genuinely added-row
+records;owned Jacobian/impulse/barycentric audits pass limited checks.
+C2 tail-cancellation failure393 is preserved;fixed405 completes8s and
+all800 ForceField/owner applied tensions match exactly. Full C2 dt/2
+comparison427 still FAILS0.1% (force5.698%,tip3.753%,attachment .6038%).
+Pre-contact ONLY C2 BDF2 .1s160/320/640 passes .1% in435;no contact
+occurs there.434/437 complete1s/800/1600steps.438 passes ALL pre-entry
+metrics but entry force64.35%/impulse11.01% FAIL.441 actual accepted
+normal velocity flips -1.34057/+0.296019mm/s despite good endpoint gaps;
+442 independently demonstrates the position-level BDF2 impact issue.
+No whole-cycle BDF2 PASS.443 rejects unexecuted3200steps/687s by POLICY,
+not OS exhaustion. All launched physics children have exited.
+Selected NEW-binary regression433 PASS12 scoped groups,not45 global gates.
+Short same-binary cost431 gains3.721% median over3 alternating pairs;
+all5 physical CSVs match. No compounded/global speedup is claimed.
+Whole energy,friction,self-contact,3finger/free6DOF/12wrench/multimaterial,
+final-design superiority and graspOptuna remain BLOCKED/NOT RUN.
+Actual saved-state figures: designs/visualizations/film_native_20261117_closure_recovery_actual423/.
+No SDK edits,remote push,hardware,paid service or automatic restart.
+Older RUNNING/final-checkpoint notes below are historical,not live status.
+
+
+
 ## FINAL saved checkpoint for this response — latest372
 
 NOT final project completion. No OS resource exhaustion,permission block or

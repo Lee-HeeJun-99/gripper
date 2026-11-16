@@ -1,5 +1,33 @@
 # Contact dynamics and actual film–rail–tendon continuation
 
+## Latest actual continuation — candidate closure/C2 (2026-11-17)
+
+Project NOT complete. New implementation and measured results are in
+[FILM_CANDIDATE_CLOSURE_20261117.md](FILM_CANDIDATE_CLOSURE_20261117.md).
+Actual411 completes16s/1600steps in263.082s with whole-triangle buffer
+gap >=-9.467e-11mm (unchanged1e-10 gate).392/411 use6 genuinely added-row
+records;owned Jacobian/impulse/barycentric audits pass limited checks.
+C2 tail-cancellation failure393 is preserved;fixed405 completes8s and
+all800 ForceField/owner applied tensions match exactly. Full C2 dt/2
+comparison427 still FAILS0.1% (force5.698%,tip3.753%,attachment .6038%).
+Pre-contact ONLY C2 BDF2 .1s160/320/640 passes .1% in435;no contact
+occurs there.434/437 complete1s/800/1600steps.438 passes ALL pre-entry
+metrics but entry force64.35%/impulse11.01% FAIL.441 actual accepted
+normal velocity flips -1.34057/+0.296019mm/s despite good endpoint gaps;
+442 independently demonstrates the position-level BDF2 impact issue.
+No whole-cycle BDF2 PASS.443 rejects unexecuted3200steps/687s by POLICY,
+not OS exhaustion. All launched physics children have exited.
+Selected NEW-binary regression433 PASS12 scoped groups,not45 global gates.
+Short same-binary cost431 gains3.721% median over3 alternating pairs;
+all5 physical CSVs match. No compounded/global speedup is claimed.
+Whole energy,friction,self-contact,3finger/free6DOF/12wrench/multimaterial,
+final-design superiority and graspOptuna remain BLOCKED/NOT RUN.
+Actual saved-state figures: designs/visualizations/film_native_20261117_closure_recovery_actual423/.
+No SDK edits,remote push,hardware,paid service or automatic restart.
+Older RUNNING/final-checkpoint notes below are historical,not live status.
+
+
+
 ## Latest 2026-11-17 checkpoint through372 (NOT project completion)
 
 Local source/tool commits through3181ce8. Actual fixed-sphere356 completes

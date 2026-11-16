@@ -1,5 +1,56 @@
 # Next research checkpoint
 
+## First unimplemented task after the completed373–443 continuation
+
+Candidate closure/C2 are now actually implemented and16s endpoint-tested.
+Do NOT repeat them as pending. Actual1s BDF onset434/437 isolates a new
+priority:position complementarity passes while first-impact normal velocity
+changes from inward -1.34057 to rebound +0.296019mm/s. Pre-entry motion,
+energy and work all pass .1%;entry force/impulse do not. Counterexample442
+explains why position-level BDF history alone does not define an impact law.
+
+Implement an INDEPENDENT event-aware impact/velocity step with projected
+mass and explicit physical impact assumption,consistent event root/tangent,
+impulse/energy inventory and multistep restart. Reuse tested geometry;do not
+rewrite the film kernel or solve this by damping/tolerance inflation.
+Then independent reference ->actual short SOFA onset ->time/energy contrast
+with434/437 ->profiled full cycle. Preserve old model/FAILs and compare model
+versions explicitly. Do not call the pre-contact435 PASS a contact PASS.
+
+Full3finger owner still needs coordinate frames,multibody momentum,shared
+object reaction,friction and collision equations. Three separate fixed
+coupons are not a free-object grasp. Whole energy/pressure and finalOptuna
+remain blocked. Exact build/raw paths and resume commands are at the top
+of LONG_RUN_RESEARCH_CHECKPOINT.md. No post-session automatic work is promised.
+
+## Latest actual continuation — candidate closure/C2 (2026-11-17)
+
+Project NOT complete. New implementation and measured results are in
+[FILM_CANDIDATE_CLOSURE_20261117.md](FILM_CANDIDATE_CLOSURE_20261117.md).
+Actual411 completes16s/1600steps in263.082s with whole-triangle buffer
+gap >=-9.467e-11mm (unchanged1e-10 gate).392/411 use6 genuinely added-row
+records;owned Jacobian/impulse/barycentric audits pass limited checks.
+C2 tail-cancellation failure393 is preserved;fixed405 completes8s and
+all800 ForceField/owner applied tensions match exactly. Full C2 dt/2
+comparison427 still FAILS0.1% (force5.698%,tip3.753%,attachment .6038%).
+Pre-contact ONLY C2 BDF2 .1s160/320/640 passes .1% in435;no contact
+occurs there.434/437 complete1s/800/1600steps.438 passes ALL pre-entry
+metrics but entry force64.35%/impulse11.01% FAIL.441 actual accepted
+normal velocity flips -1.34057/+0.296019mm/s despite good endpoint gaps;
+442 independently demonstrates the position-level BDF2 impact issue.
+No whole-cycle BDF2 PASS.443 rejects unexecuted3200steps/687s by POLICY,
+not OS exhaustion. All launched physics children have exited.
+Selected NEW-binary regression433 PASS12 scoped groups,not45 global gates.
+Short same-binary cost431 gains3.721% median over3 alternating pairs;
+all5 physical CSVs match. No compounded/global speedup is claimed.
+Whole energy,friction,self-contact,3finger/free6DOF/12wrench/multimaterial,
+final-design superiority and graspOptuna remain BLOCKED/NOT RUN.
+Actual saved-state figures: designs/visualizations/film_native_20261117_closure_recovery_actual423/.
+No SDK edits,remote push,hardware,paid service or automatic restart.
+Older RUNNING/final-checkpoint notes below are historical,not live status.
+
+
+
 ## Latest 2026-11-17 checkpoint through372 (NOT project completion)
 
 Local source/tool commits through3181ce8. Actual fixed-sphere356 completes

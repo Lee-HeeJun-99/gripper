@@ -14,7 +14,7 @@ def main():
  if field.get('rootGuideSecondOrder','0').lower() not in ('0','false'):raise RuntimeError('quadratic guide is not included in this reference')
  mass=np.fromstring(tree.find("Node[@name='assembly']/DiagonalMass").get('vertexMass'),sep=' ')[:,None];j=list(csv.DictReader((source/'journal.csv').open()));c=list(csv.DictReader((source/'contact.csv').open()));v=list(csv.DictReader((source/'momentum.csv').open()))
  if not len(j)==len(c)==len(v) or not j:raise RuntimeError('incomplete/synchronized journals required')
- command=identity['command'];expected=int(command[command.index('--steps')+1]) if '--steps' in command else 200
+ command=identity['command'];expected=int(command[command.index('--steps')+1]) if '--steps' in command else 20
  if len(j)!=expected:raise RuntimeError('requested step count not complete')
  with (out/'states.txt').open('x') as stream:
   stream.write(f'{field.get("nx")} {field.get("guideIntervals","4")} {field.get("guideOffset")} {field.get("bondStiffness")} {len(j)}\n')

@@ -44,6 +44,7 @@ ReGripBDFSolver::ReGripBDFSolver()
     , d_tangentProbeFilename(initData(&d_tangentProbeFilename,std::string(),"tangentProbeFilename","Passive first-Newton mapped matrix/trial export for first two steps only"))
     , d_variableStep(initData(&d_variableStep,false,"variableStep","Explicit variable-step BDF2;fixed-step default preserved"))
     , d_nativeConstraintBE(initData(&d_nativeConstraintBE,false,"nativeConstraintBE","Opt-in backward-Euler-only compliance factors and actual-state free-motion initialization"))
+    , d_nativeCoupledPredictor(initData(&d_nativeCoupledPredictor,false,"nativeCoupledPredictor","Experimental single Newton predictor ONLY;requires explicit coupled owner solving every accepted step"))
     , d_rayleighStiffness(initData(&d_rayleighStiffness, 0_sreal, "rayleighStiffness",
                                    "Rayleigh damping coefficient related to stiffness, > 0"))
     , d_rayleighMass(initData(&d_rayleighMass, 0_sreal, "rayleighMass",
@@ -407,8 +408,24 @@ void ReGripBDFSolver::solve(
     residualFunction.rhs = m_rhs;
     residualFunction.linearSolver = l_linearSolver.get();
 
-    l_newtonSolver->solve(residualFunction);
-    if(d_nativeConstraintBE.getValue()){
+    if(d_nativeCoupledPredictor.getValue()){
+        requireNativeBE();
+        auto*owner=getContext()->get<sofa::core::objectmodel::BaseObject>(std::string("coupled"));
+        auto*complete=owner?dynamic_cast<Data<bool>*>(owner->findData("completeFreeStage")):nullptr;
+        if(!owner||owner->getClassName()!="FilmNativeCoupledCorrection"||!complete||!complete->getValue())throw std::runtime_error("predictor-only mode requires coupled.completeFreeStage=1;no unconverged accepted publication");
+        // This is explicitly NOT a converged free solution. The accepted
+        // constrained/non-contact solution must be computed by the linked
+        // owner at end-step, BEFORE recorders or the next physical step.
+        residualFunction.startNewtonIteration();
+        residualFunction.evaluateCurrentGuess();
+        residualFunction.computeGradientFromCurrentGuess();
+        residualFunction.solveLinearEquation();
+        residualFunction.updateGuessFromLinearSolution(1);
+        residualFunction.evaluateCurrentGuess();
+        residualFunction.computeGradientFromCurrentGuess();
+        if(!m_currentSolve)msg_info()<<"Single Newton collision predictor only;accepted nonlinear coupled solve is mandatory on EVERY step";
+    }else l_newtonSolver->solve(residualFunction);
+    if(d_nativeConstraintBE.getValue()&&!d_nativeCoupledPredictor.getValue()){
         const auto status=static_cast<std::size_t>(l_newtonSolver->d_status.getValue());
         if(status==0||status==1||status==3||status==4)throw std::runtime_error("Native BE free-motion Newton solve failed;no constraint correction or state publication is allowed");
         // Constraint compliance must use the converged FREE-state tangent,

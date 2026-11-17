@@ -37,7 +37,7 @@ def main():
                 'models/film_sphere_contact','models/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
-    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_*impact*.cpp','reports/*FILM*.md',
+    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',
                     'reports/AUTONOMOUS_RESEARCH_*.md','reports/REGRIP_*.md',
                     'reports/LONG_RUN_RESEARCH_CHECKPOINT.md'):
         for path in ROOT.glob(pattern):record(path)

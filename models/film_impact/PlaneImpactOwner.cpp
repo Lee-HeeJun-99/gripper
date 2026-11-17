@@ -15,6 +15,7 @@
 namespace regrip_film_impact {
 void registerFilmSuppliedEventImpulse(sofa::core::ObjectFactory*);
 void registerFilmIsolatedEventStep(sofa::core::ObjectFactory*);
+void registerFilmWholeSurfaceEventOwner(sofa::core::ObjectFactory*);
 class BallisticPlaneImpact final:public sofa::core::objectmodel::BaseObject {
 public:
  using State=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;
@@ -80,6 +81,7 @@ __attribute__((visibility("default")))const char*getModuleName(){return "ReGripI
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){
  regrip_film_impact::registerFilmSuppliedEventImpulse(f);
  regrip_film_impact::registerFilmIsolatedEventStep(f);
+ regrip_film_impact::registerFilmWholeSurfaceEventOwner(f);
  f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL exact force-free point-plane impact integrator;NOT film dynamics").add<regrip_film_impact::BallisticPlaneImpact>());
 }
 }

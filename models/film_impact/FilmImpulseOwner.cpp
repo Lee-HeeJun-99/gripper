@@ -1,10 +1,14 @@
 #include "FilmEventImpulse.h"
 #include "FilmRestartHistory.h"
 #include "IsolatedFilmImpactStep.h"
+#include "WholeSurfaceMidpoint.h"
+#include "SustainedSurface.h"
+#include <sofa/core/topology/BaseMeshTopology.h>
 #include <sofa/core/objectmodel/BaseObject.h>
 #include <sofa/core/behavior/MechanicalState.h>
 #include <sofa/core/behavior/BaseMass.h>
 #include <sofa/core/behavior/BaseForceField.h>
+#include <sofa/core/behavior/OdeSolver.h>
 #include <sofa/core/CollisionModel.h>
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/defaulttype/VecTypes.h>
@@ -162,4 +166,82 @@ public:
 };
 void registerFilmSuppliedEventImpulse(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Supplied zero-time film event impulse API reference;NOT contact birth/full dynamic solver").add<FilmSuppliedEventImpulse>());}
 void registerFilmIsolatedEventStep(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Isolated point event/impulse/remainder prototype;NOT whole-surface or full-cycle contact").add<FilmIsolatedEventStep>());}
+class FilmWholeSurfaceEventOwner final:public FilmSuppliedEventImpulse {
+public:
+ SOFA_CLASS(FilmWholeSurfaceEventOwner,FilmSuppliedEventImpulse);
+ sofa::core::objectmodel::Data<bool>completeFreeStage{initData(&completeFreeStage,true,"completeFreeStage","Every step uses the independent midpoint surface owner;unsupported contact rejects")};
+ sofa::core::objectmodel::Data<bool>sustainedBE{initData(&sustainedBE,false,"sustainedBE","Independent BE-position/unilateral velocity impulse split;projection inventory is NOT Coulomb heat")};
+ sofa::core::objectmodel::Data<bool>odeDriven{initData(&odeDriven,false,"odeDriven","Advance inside FilmSurfaceODESolver instead of end-event correction")};
+ std::vector<regrip_film_rail::Point>beginQ,beginV;
+ std::ofstream rows,states,constraints;double beginTime=0;unsigned stepCount=0,eventCount=0;bool pending=false;
+ std::optional<FilmRestartHistory>history;
+ void init()override{
+  FilmSuppliedEventImpulse::init();for(auto suffix:{".surface.csv",".states.csv",".constraints.csv"})if(std::ifstream(filename.getValue()+suffix))throw std::runtime_error("whole surface journal exists");
+  rows.open(filename.getValue()+".surface.csv");states.open(filename.getValue()+".states.csv");
+  rows<<std::setprecision(17)<<"event_time,clear_until,event_id,owner_row,triangle,feature,gap,pre_normal,post_normal,impulse,rank,momentum_residual,impact_loss,b0,b1,b2\n";
+  states<<std::setprecision(17)<<"time,force_time,tension,tension_rate,end_tension,minimum_gap,event_count,sustained,constraint_impulse,projection_impulse,projection_loss,position_residual,local_displacement,local_velocity\n";
+  constraints.open(filename.getValue()+".constraints.csv");constraints<<std::setprecision(17)<<"time,step_owner,row_owner,stage,triangle,feature,gap,impulse,normal_before,normal_after,nx,ny,nz,b0,b1,b2,reduced_jacobian\n";
+ }
+ void handleEvent(sofa::core::objectmodel::Event*event)override{
+  if(dynamic_cast<sofa::simulation::AnimateBeginEvent*>(event)){
+   if(stepCount>=1600||!completeFreeStage.getValue())throw std::runtime_error("whole-surface experimental owner bounded1600steps/every-step required");
+   sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
+   auto*local=dynamic_cast<State*>(field->getContext()->getMechanicalState());if(!local)throw std::runtime_error("surface local state missing");
+   const auto&q=local->read(sofa::core::vec_id::read_access::position)->getValue();const auto&v=local->read(sofa::core::vec_id::read_access::velocity)->getValue();beginQ.resize(q.size());beginV.resize(v.size());
+   for(unsigned i=0;i<q.size();++i)for(unsigned d=0;d<3;++d){beginQ[i][d]=q[i][d];beginV[i][d]=v[i][d];}beginTime=getContext()->getTime();pending=true;return;
+  }
+  if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(event))return;
+  if(!odeDriven.getValue())advance();
+ }
+ void advance(){
+  if(!pending)throw std::runtime_error("whole surface duplicate/missing step transaction");
+  const double acceptedTime=beginTime+getContext()->getDt();
+  regrip_film_native::Assembly model(parameter<unsigned>("nx"));model.guideIntervals=parameter<unsigned>("guideIntervals");model.guideOffset=parameter<double>("guideOffset");model.bondK=parameter<double>("bondStiffness");model.rootGuideSecondOrder=parameter<bool>("rootGuideSecondOrder");
+  auto*mass=field->getContext()->getMass();if(!mass)throw std::runtime_error("surface actual mass");std::vector<double>masses(model.size());for(unsigned i=0;i<masses.size();++i)masses[i]=mass->getElementMass(i);
+  auto*world=field->getContext()->get<State>(std::string("actual/world"));auto*topology=world?world->getContext()->getMeshTopology():nullptr;if(!topology)throw std::runtime_error("whole triangle topology unavailable");
+  std::vector<std::array<unsigned,3>>triangles;for(auto t:topology->getTriangles())triangles.push_back({t[0],t[1],t[2]});
+  auto*ode=getContext()->get<sofa::core::objectmodel::BaseObject>(std::string("ode"));auto*damping=ode?dynamic_cast<sofa::core::objectmodel::Data<double>*>(ode->findData("rayleighMass")):nullptr;if(!damping)throw std::runtime_error("surface actual mass damping");
+  EventControl control{parameter<double>("maximumTension"),parameter<double>("rampTime"),parameter<double>("releaseBegin"),parameter<double>("releaseEnd"),parameter<bool>("c2Control")};
+  regrip_film_native::CoupledPlaneStep mechanics(model,masses,getContext()->getDt(),damping->getValue(),control.sample(beginTime).tension,beginQ,beginV,std::vector<SurfacePoint>(model.size()),0);
+  auto c=center.getValue();auto result=sustainedBE.getValue()?wholeSurfaceContactStep(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control):wholeSurfaceMidpoint(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control);
+  if(!history)history.emplace(beginQ,beginV);
+  if(result.event){++eventCount;double eventTime=beginTime+getContext()->getDt()*result.event->fraction;
+   history->impact(result.eventPosition,result.preVelocity,result.postVelocity,eventTime);
+   Eigen::VectorXd pre=result.jacobian*mechanics.pack(result.preVelocity);
+   for(unsigned k=0;k<result.event->rows.size();++k){const auto&r=result.event->rows[k];const auto&i=*result.impact;
+    rows<<eventTime<<','<<beginTime+getContext()->getDt()*result.event->clearUntil<<','<<eventCount<<','<<r.owner<<','<<r.triangle<<','<<r.feature<<','<<r.gap<<','<<pre(k)<<','<<i.state.normalVelocity(k)<<','<<i.state.impulse(k)<<','<<i.rank<<','<<i.state.momentumResidual<<','<<i.state.energyLoss<<','<<r.barycentric[0]<<','<<r.barycentric[1]<<','<<r.barycentric[2]<<'\n';
+   }rows.flush();
+  }
+  // All geometry/impulse/remainder gates above precede the accepted state commit.
+  for(unsigned k=0;k<result.constraintRows.size();++k){const auto&r=result.constraintRows[k];
+   constraints<<acceptedTime<<','<<stepCount<<','<<k<<','<<r.stage<<','<<r.triangle<<','<<r.feature<<','<<r.gap<<','<<r.impulse<<','<<r.normalBefore<<','<<r.normalAfter;
+   for(double value:r.normal)constraints<<','<<value;for(double value:r.barycentric)constraints<<','<<value;
+   constraints<<",\"";for(int j=0;j<r.jacobian.size();++j)constraints<<r.jacobian(j)<<' ';constraints<<"\"\n";
+  }constraints.flush();
+  auto x=root->read(sofa::core::vec_id::read_access::position)->getValue();auto v=root->read(sofa::core::vec_id::read_access::velocity)->getValue();
+  for(unsigned a=0;a<mechanics.index.size();++a)if(mechanics.index[a]>=0&&mechanics.weight[a]==1){x[a/3][a%3]=result.position[a/3][a%3];v[a/3][a%3]=result.velocity[a/3][a%3];}
+  root->write(sofa::core::vec_id::write_access::position)->setValue(x);root->write(sofa::core::vec_id::write_access::velocity)->setValue(v);
+  sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
+  double smoothH=getContext()->getDt()*(result.event?1-result.event->fraction:1);if(smoothH>0)history->accept(result.position,result.velocity,smoothH);
+  states<<acceptedTime<<','<<result.forceTime<<','<<result.tension<<','<<result.tensionRate<<','<<control.sample(acceptedTime).tension<<','<<result.minimumGap<<','<<eventCount<<','<<result.sustained<<','<<result.constraintImpulse<<','<<result.projectionImpulse<<','<<result.projectionLoss<<','<<result.positionResidual<<",\"";
+  for(auto p:result.position)for(double value:p)states<<value<<' ';states<<"\",\"";for(auto p:result.velocity)for(double value:p)states<<value<<' ';states<<"\"\n";states.flush();++stepCount;pending=false;
+ }
+};
+// Public SOFA ODE entry point: the owner itself performs the entire nonlinear
+// step. No unconverged Native predictor is accepted and no SDK guard is removed.
+class FilmSurfaceODESolver final:public sofa::core::behavior::OdeSolver {
+public:
+ SOFA_CLASS(FilmSurfaceODESolver,sofa::core::behavior::OdeSolver);
+ sofa::core::objectmodel::Data<double>rayleighMass{initData(&rayleighMass,2.,"rayleighMass","Actual mass-proportional damping used by owner")};
+ void solve(const sofa::core::ExecParams*,SReal dt,sofa::core::MultiVecCoordId,sofa::core::MultiVecDerivId)override{
+  auto*owner=getContext()->get<FilmWholeSurfaceEventOwner>(std::string("surfaceOwner"));
+  if(!owner||!owner->odeDriven.getValue()||!owner->completeFreeStage.getValue()||dt!=getContext()->getDt())
+   throw std::runtime_error("surface ODE requires exclusive complete linked owner and matching dt");
+  owner->advance();
+ }
+};
+void registerFilmWholeSurfaceEventOwner(sofa::core::ObjectFactory*f){
+ f->registerObjects(sofa::core::ObjectRegistrationData("Experimental whole-triangle quadratic numerical-path impact;optional split sustained contact").add<FilmWholeSurfaceEventOwner>());
+ f->registerObjects(sofa::core::ObjectRegistrationData("Experimental sole ODE entry for whole-surface owner;NOT BDF2").add<FilmSurfaceODESolver>());
+}
 }

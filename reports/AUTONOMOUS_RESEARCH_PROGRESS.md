@@ -1,5 +1,19 @@
 # Autonomous research log
 
+## Latest continuation — actual stage work,through956 (2026-11-18)
+
+See THREE_FILM_STAGE_WORK_20261118.md and immutable941/947/948/949/954/955/956.
+Actual same-DLL16/32/64 already-touching10ms common C2 runs COMPLETE.
+Stage-consistent component time gate PASS at0.1%;legacy sampled-work-inclusive
+time gate STILL FAIL(16→64=.22975515%). No full-cycle/energy/grasp certification.
+Read-only actual stage observer preserves nine physical CSVs byte-exact and
+agrees with full AD work within2.71e-20Nmm. No force/state/tolerance changes.
+Next active implementation:three-film separated birth/shared impulse and
+remaining-step adapter,reusing existing single-film free midpoint and impulse.
+Historical RUNNING/next-task sections below are not current process claims.
+No OS exhaustion or automatic post-session continuation is claimed.
+
+
 ## 2026-11-18 through938 — actual C2,exact-input reference and measured cost
 
 6d78a24 implements actual shared C210ms3film;3fc9e9e records exact-rational

@@ -7,7 +7,7 @@ using namespace regrip_three_finger;
 int main(int argc,char**argv){unsigned completed=0;try{
  if(argc<5||argc>8)throw std::runtime_error("steps,horizon,maximum tension,output,[adaptive],[exact],[mass=FILE] required");bool adaptive=false,exact=false;std::string publicMass;for(int i=5;i<argc;++i){std::string option=argv[i];if(option=="adaptive")adaptive=true;else if(option=="exact")exact=true;else if(option.rfind("mass=",0)==0)publicMass=option.substr(5);else throw std::runtime_error("unknown driven mode");}
  unsigned steps=std::stoul(argv[1]);double duration=std::stod(argv[2]),maximum=std::stod(argv[3]);
- if((steps!=4&&steps!=8&&steps!=16&&steps!=32)||!(duration>0&&duration<=.01)||!(maximum>0&&maximum<=.0001))throw std::runtime_error("bounded independent driven research pilot only");
+ if((steps!=4&&steps!=8&&steps!=16&&steps!=32&&steps!=64)||!(duration>0&&duration<=.01)||!(maximum>0&&maximum<=.0001))throw std::runtime_error("bounded independent driven research pilot only");
  SharedFilmSystem system(Layout(),Eigen::Vector3d(0,0,-.001),true,true);
  system.exactUnresolved=exact;
  if(!publicMass.empty()){

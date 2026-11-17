@@ -4,11 +4,24 @@ import numpy as np
 from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
+def budget_owner_canonical(text):
+ replacements={'maxSteps.getValue()>(exactDistanceOrder()?64:32)':'maxSteps.getValue()>32','&&maxSteps.getValue()!=32&&maxSteps.getValue()!=64':'&&maxSteps.getValue()!=32'}
+ for new,old in replacements.items():
+  if text.count(new)!=1:raise ValueError('unreviewed budget source edit:'+new)
+  text=text.replace(new,old)
+ return text
+def budget_profile_identity(archive,prior,sources,old):
+ compiled=lambda d:{k:v for k,v in d.items() if k.endswith(('.h','.cpp')) or k.endswith('/CMakeLists.txt')}
+ left,right=compiled(sources),compiled(old);owner='models/film_three_finger/ThreeFilmOwner.cpp'
+ if left.keys()!=right.keys() or [k for k in left if left[k]!=right[k]]!=[owner]:raise ValueError('budget profiling requires ONLY the reviewed owner grid-cap edit;no binary reuse')
+ if budget_owner_canonical((archive/owner).read_text())!=(prior/'sources'/owner).read_text():raise ValueError('owner changed beyond exact two grid guards')
+ return dict(kind='profiling transfer ONLY,not binary reuse',changed_source=owner,before=right[owner],after=left[owner],reviewed_changes=['exact-driven upper grid32 to64','allow exact-driven grid64'],all_other_compiled_sources_exact=True)
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--reuse');p.add_argument('--profile');p.add_argument('--pilot-profile')
  p.add_argument('--field-profile',action='store_true',help='opt-in actual Field passive timers;does NOT measure custom-owner internals');p.add_argument('--owner-profile',action='store_true',help='passive owner force/Hessian/geometry inclusive timers')
  p.add_argument('--mass-journal',action='store_true',help='record public nodal mass and rigid mass/inertia without modifying solve')
  p.add_argument('--reuse-journal-rows',action='store_true',help='reuse exact same-query selected rows for observation only;default pure requery retained')
+ p.add_argument('--budget-profile',help='runtime forecast transfer across ONLY two reviewed grid-cap checks;never binary reuse')
  p.add_argument('--radius',type=float,default=30.01,help='actual XML Data;unsupported values must be rejected by runtime owner');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rs=json.loads((ref/'summary.json').read_text());uniform='completed_rows' in rs
  physics=rs;steps=1;duration=.0001;reference_file=ref/'state.csv'
  if uniform:
@@ -17,7 +30,7 @@ def main():
  driven='maximum_tension_N' in rs
  if driven:
   steps=rs['steps'];duration=rs['duration'];reference_file=ref/'states.csv'
-  if rs['status']!='PASS' or steps not in ((8,16,32) if rs.get('exact_order_fallback',False) else (8,)) or duration!=.01 or rs['maximum_tension_N']!=.0001 or rs.get('adaptive_gap_control',False):raise ValueError('completed supported uniform10ms common C2 pilot required')
+  if rs['status']!='PASS' or steps not in ((8,16,32,64) if rs.get('exact_order_fallback',False) else (8,)) or duration!=.01 or rs['maximum_tension_N']!=.0001 or rs.get('adaptive_gap_control',False):raise ValueError('completed supported uniform10ms common C2 pilot required')
  elif rs['status']!='PASS' or not physics.get('precise_ties') or physics['dt']!=.0001 or physics['external_force_N']!=[0,0,-.001] or not reference_file.exists():raise ValueError('completed independently precise3film,REST100us,-1mN reference required')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()}
  for name,digest in rs['sources'].items():
@@ -43,7 +56,12 @@ def main():
   if 'not found' in deps or any('libSofa.' in line and '=> /' in line and str(SDK) not in line for line in deps.splitlines()):raise ValueError('Installed SDK ABI mismatch')
   if driven:
    if a.pilot_profile:raise ValueError('driven pilot requires independent or actual same-DLL profile,not T0 pilot')
-   if a.profile:
+   if a.budget_profile:
+    if a.profile or a.reuse:raise ValueError('budget profiling cannot replace immutable same-binary reuse checks')
+    prior=ROOT/'results'/('autonomous_film_'+a.budget_profile);pm=json.loads((prior/'identity.json').read_text());ps=json.loads((prior/'summary.json').read_text());proof=budget_profile_identity(archive,prior,sources,pm['sources'])
+    if ps['status']!='PASS' or any(pm[k]!=identity[k] for k in ('duration','actual_solver','tension_per_rail_N','external_force_N','reuse_journal_rows')):raise ValueError('budget runtime physics/observer mode mismatch')
+    estimate=2*ps['process']['runtime_s']*steps/pm['steps'];identity.update(profile=a.budget_profile,profile_kind='two times measured runtime,ONLY verified grid-cap checks differ',budget_source_proof=proof)
+   elif a.profile:
     prior=ROOT/'results'/('autonomous_film_'+a.profile);pm=json.loads((prior/'identity.json').read_text());ps=json.loads((prior/'summary.json').read_text())
     if ps['status']!='PASS' or pm['binary_sha256']!=identity['binary_sha256'] or any(pm[k]!=identity[k] for k in ('duration','actual_solver','tension_per_rail_N','external_force_N')):raise ValueError('driven actual runtime profile must have identical DLL and physical input')
     estimate=2*ps['process']['runtime_s']*steps/pm['steps'];identity.update(profile=a.profile,profile_kind='two times measured same-DLL driven runtime per step')

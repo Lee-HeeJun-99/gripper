@@ -1,5 +1,18 @@
 # Autonomous research log
 
+## 2026-11-18 — actual shared C2 continuation and exact-order diagnosis
+
+6d78a24 implements common C2 ThreeFilmDrivenODE;actual887 plus888/889 audit
+PASS narrowly10ms/rest-touching,not grasp. Legacy890/891 physical CSVs exact.
+881/882 midpoint clearance FAIL caused local gap-controlled885 reintegration;
+no tolerance change/projection.8→16 independent899 listed motion/energy PASS.
+32-step893/898 stops on113/334bit rank disagreement. Saved raw coordinates,
+900 exact rational analysis givespositive2.595e-43mm² instead of uncertainzero.
+Optional exact fallback preserves all force/gap/AD formulas and independent901
+completes32steps with5fallbacks. Same-binary902/9038/16 also complete;pending
+triple time and actual refined qualification. New evidence does not certify
+all historical contact/friction/time failures or full physical energy.
+
 
 ## Latest measured checkpoint — actual three-film refinement,through868
 

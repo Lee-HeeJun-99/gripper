@@ -1,5 +1,28 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## 2026-11-18 continuation through930 — NOT final success
+
+Actual three-film/ONE free sphere common C210ms8/16/32 has executed. Public mass
+API observer917 and one-factor same-binary924 resolve independent API mismatch
+without changing actual dynamics or tolerances;old failures preserved. Actual
+time930 remains FAIL for endpoint force and legacy sampled tendon work. New
+same-stage routed-cable power inventory is explicit and passes its work-time
+comparison;it does not erase the old sampled-work FAIL or certify full energy.
+No wrapping/lifting/grasp/12wrench/Optuna claim. Detailed code/build/Raw/commands:
+THREE_FILM_C2_20261118.md and LONG_RUN_RESEARCH_CHECKPOINT.md.
+
+## 2026-11-18 continuation — NOT final project completion
+
+Actual shared3film/ONE FREE sphere now receives a common existing C2 tendon
+law(887,10ms already touching,8steps). Geometry/input audits888/889 pass;
+defaultT0 regression890/891 ninephysicalCSVsexact. This is not wrapping/lift.
+Four-step stage clearance remainsFAIL;independent local retry885 resolves that
+specific interval without projection. New distance-order failure893/898 was
+isolated to finite-precision ranking,exact rational fixture900 resolves it;
+optional exact-order901/902/903 independent32/8/16 complete. Triple time/energy
+and actual exact-order results must be assessed separately,not assumedPASS.
+Full-cycle/grasp/material/energy limitations remain as in latestSTATUS.
+
 
 ## Latest measured checkpoint — actual three-film refinement,through868
 

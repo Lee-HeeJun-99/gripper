@@ -4,7 +4,7 @@ import numpy as np
 from curve_common import ROOT,sha,write_json
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.case);meta=json.loads((src/'identity.json').read_text())
- if json.loads((src/'summary.json').read_text())['status']!='PASS' or not meta['actual_solver'].startswith('ThreeFilmDrivenODE'):raise ValueError('completed actual driven owner required')
+ if json.loads((src/'summary.json').read_text())['status']!='PASS' or not meta['actual_solver'].startswith('ThreeFilmDriven'):raise ValueError('completed actual driven owner required')
  ref=ROOT/'results'/('autonomous_film_'+meta['reference']);reference=list(csv.DictReader((ref/'states.csv').open()));states=list(csv.DictReader((src/'three.states.csv').open()));scene=ET.parse(src/'scene.scn');rest=np.fromstring(scene.find('.//TriangleSetTopologyContainer').get('position'),sep=' ').reshape(-1,3)
  error=0.;measurements=[];last_work=0.
  for f in range(3):

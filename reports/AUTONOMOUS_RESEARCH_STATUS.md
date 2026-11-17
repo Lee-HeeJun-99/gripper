@@ -1,4 +1,35 @@
-# Autonomous research status — active continuation 2026-11-16
+# Autonomous research status — active continuation 2026-11-18
+
+## Newest measured state — common C2 three-film/ONE FREE sphere, through903
+
+UPDATE through930:actual same-DLL driven8/16/32 completed.926/928 correct
+reference mass INPUT using passive public API917;all macro q/v EXACT. Original
+911/912 API FAIL are preserved. Same-binary causal test924 reproduces failure
+with default reconstructed mass and removes it with public mass;no tolerance
+change. Full listed time930 remains FAIL:endpoint force8→32=.1367496%,old
+sampled cable work=.8957352%,despite stage-power work=.0243102%PASS. Full energy,
+fullcycle wrapping/lift/grasp still BLOCKED/NOT RUN. Details:THREE_FILM_C2_20261118.
+
+Functional commit6d78a24. Actual8878-step10ms common C2 pilot COMPLETE;
+geometry888/input889 PASS,actual/independent v difference3.94e-13mm/s.
+Body dz=-.000496664mm,local tip z=.000654073mm:tiny already-touching motion,
+NOT wrapping/lifting/grasp. DefaultT0 regression890/891 nine physical CSV EXACT.
+Four-step881/882 FAIL preserved:midpoint gap-2.57e-10mm versus-1e-10 gate.
+Independent local gap-controlled885 rejects only final coarse interval and
+reintegrates halves;PASS without projection. Not yet actual adaptive owner.
+
+Independent C2 8→16 motion/separate energy899 PASS listed0.1% only;not full
+time certification.32-step893/898 FAIL due113/334bit distance order disagreement.
+Exact rational stored-double fixture900 resolves difference+2.595e-43mm²;
+opt-in rational fallback32-step901 COMPLETE,5 fallbacks. Same-binary8/16
+902/903 COMPLETE. Common-time triple and actual exact-order refinements are
+separate pending qualifications,not inferred PASS. Physical thresholds unchanged.
+
+General friction/self-collision/full shell thickness clearance/full energy,
+separated closing/impact/release,shared physical equalizer,wrap/lift/hold,
+12wrench/multimaterial/GraspOptuna remain NOT QUALIFIED/BLOCKED.
+Cost-cache878 rejected for lack of speedup;passive meters retainedc565ac9.
+No OS/session resource exhaustion observed. Older sections below are historical.
 
 
 ## Latest measured checkpoint — actual three-film refinement,through868

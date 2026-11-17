@@ -1,5 +1,14 @@
 # Coupled custom film/free-sphere research — 2026-11-17
 
+## 2026-11-18 — actual three-film common C2 pilot
+
+Actual887 combines three actual FilmRailTendon states and ONE FREE sphere with
+the same existing C2 law in all implicit stages and fields.10ms/ramp.01s,
+max.0001N PER RAIL is a NEW research input,not original4s closing.888 geometry
+and889 accepted-input audits PASS;vFEM discrepancy3.94e-13mm/s. Body dz-.000496664mm
+is not lifting/grasping. Full-time/force/work/friction certification is pending.
+Exact rank diagnosis900/opt-in901–903 is independent FEM,not automaticallySOFA.
+
 
 ## Latest measured checkpoint — actual three-film refinement,through868
 

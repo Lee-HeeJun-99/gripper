@@ -9,7 +9,7 @@ from film_coupled_audit import gaps
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.case);meta=json.loads((src/'identity.json').read_text());summary=json.loads((src/'summary.json').read_text())
  if summary['status']!='PASS':raise ValueError('completed actual three-film contact experiment required')
- driven=meta['actual_solver'].startswith('ThreeFilmDrivenODE');input_label='C2 10ms already-touching pilot' if driven else 'T=0,100us REST-contact IVP'
+ driven=meta['actual_solver'].startswith('ThreeFilmDriven');input_label='C2 10ms already-touching pilot' if driven else 'T=0,100us REST-contact IVP'
  scene=ET.parse(src/'scene.scn');layout=ROOT/'results/autonomous_film_20261117_three_finger_negative809';dims=next(csv.DictReader((layout/'geometry.csv.layout.csv').open()))
  if sha(layout/'sources/models/film_three_finger/FrameLayout.h')!=meta['sources']['models/film_three_finger/FrameLayout.h']:raise ValueError('compiled actual fixed-frame definition differs from independent layout')
  theta=float(dims['mount_angle']);frames=[]

@@ -12,8 +12,16 @@ struct SharedFilmSystem {
  Eigen::VectorXd initial;
  Eigen::Vector3d external;
  bool rescanClosest,preciseTies;
+ bool exactUnresolved=false;
+ mutable unsigned exactFallbackCalls=0;
  const regrip_film::PassiveProfile*meter=nullptr;
  const regrip_film::PassiveProfile&cost()const{static const regrip_film::PassiveProfile disabled;return meter?*meter:disabled;}
+ int order(const TriangleCoordinates&a,const TriangleCoordinates&b)const{
+  try{return preciseOrder(a,b);}catch(const UnresolvedDistanceOrder&){
+   if(!exactUnresolved)throw;
+   ++exactFallbackCalls;cost().count("rational_distance_fallback");return rationalOrder(a,b);
+  }
+ }
  // Optional passive failed-query observation;never changes the returned law.
  std::function<void(const Eigen::VectorXd&,unsigned,const Row&,const Row&)> ambiguityObserver;
  SharedFilmSystem(Layout geometry=Layout(),Eigen::Vector3d bodyForce={0,0,0},bool rescan=false,bool precise=false,const regrip_film::PassiveProfile*profile=nullptr)
@@ -31,11 +39,11 @@ struct SharedFilmSystem {
   std::vector<double>gaps(s.triangles.size());
   for(unsigned k=0;k<s.triangles.size();++k){cost().count("candidate_AD");gaps[k]=s.primitive(state,k).gap.v;if(gaps[k]<minimum){minimum=gaps[k];id=k;}}
   std::vector<TriangleCoordinates>exact;
-  if(preciseTies){auto rest=s.film.model.rest();exact.resize(s.triangles.size());for(unsigned k=0;k<exact.size();++k)for(unsigned a=0;a<3;++a){unsigned node=s.triangles[k][a];exact[k][a]=sub(add(rest[node],state.q[node]),point(state.body.center));}id=0;for(unsigned k=1;k<exact.size();++k)if(preciseOrder(exact[k],exact[id])<0)id=k;minimum=gaps[id];}
+  if(preciseTies){auto rest=s.film.model.rest();exact.resize(s.triangles.size());for(unsigned k=0;k<exact.size();++k)for(unsigned a=0;a<3;++a){unsigned node=s.triangles[k][a];exact[k][a]=sub(add(rest[node],state.q[node]),point(state.body.center));}id=0;for(unsigned k=1;k<exact.size();++k)if(order(exact[k],exact[id])<0)id=k;minimum=gaps[id];}
   auto row=s.geometry(state,id);
   // Shared-edge/vertex duplicates are allowed ONLY for the same generalized
   // normal. Independent tied supports need MORE rows,not an arbitrary winner.
-  for(unsigned k=0;k<gaps.size();++k)if(k!=id&&std::abs(gaps[k]-minimum)<=1e-12){auto other=s.geometry(state,k);if((other.gradient-row.gradient).norm()>1e-10&&(!preciseTies||preciseOrder(exact[k],exact[id])==0)){if(ambiguityObserver)ambiguityObserver(x,f,row,other);throw std::domain_error("ambiguous independent closest supports;three-row branch insufficient");}}
+  for(unsigned k=0;k<gaps.size();++k)if(k!=id&&std::abs(gaps[k]-minimum)<=1e-12){auto other=s.geometry(state,k);if((other.gradient-row.gradient).norm()>1e-10&&(!preciseTies||order(exact[k],exact[id])==0)){if(ambiguityObserver)ambiguityObserver(x,f,row,other);throw std::domain_error("ambiguous independent closest supports;three-row branch insufficient");}}
   return row;
  }
  State local(const Eigen::VectorXd&x,unsigned f)const{

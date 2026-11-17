@@ -1,9 +1,14 @@
 #pragma once
 #include <boost/multiprecision/cpp_bin_float.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
 #include <array>
 #include <stdexcept>
 namespace regrip_three_finger {
 using TriangleCoordinates=std::array<std::array<double,3>,3>;
+struct UnresolvedDistanceOrder:std::domain_error {
+ TriangleCoordinates a,b;
+ UnresolvedDistanceOrder(const TriangleCoordinates&left,const TriangleCoordinates&right):std::domain_error("distance ordering unresolved across113/334bits;no arbitrary winner"),a(left),b(right){}
+};
 // VALUE-ONLY ordering of exact stored binary-double relative coordinates.
 // No altered gap/force/tangent/normal or physical contact regularization.
 template<class S>S preciseSquaredDistance(const TriangleCoordinates&input){
@@ -19,6 +24,13 @@ inline int preciseOrder(const TriangleCoordinates&a,const TriangleCoordinates&b)
  using Q=boost::multiprecision::cpp_bin_float_quad;using H=boost::multiprecision::cpp_bin_float_100;
  auto sign=[](const auto&x){return x>0?1:x<0?-1:0;};
  Q low=preciseSquaredDistance<Q>(a)-preciseSquaredDistance<Q>(b);H high=preciseSquaredDistance<H>(a)-preciseSquaredDistance<H>(b);
- int l=sign(low),h=sign(high);if(l!=h)throw std::domain_error("distance ordering unresolved across113/334bits;no arbitrary winner");return h;
+ int l=sign(low),h=sign(high);if(l!=h)throw UnresolvedDistanceOrder(a,b);return h;
+}
+// Optional exact fallback,not a larger floating precision or gap perturbation.
+// cpp_rational(double) represents the stored binary double exactly.
+inline int rationalOrder(const TriangleCoordinates&a,const TriangleCoordinates&b){
+ using R=boost::multiprecision::cpp_rational;
+ R difference=preciseSquaredDistance<R>(a)-preciseSquaredDistance<R>(b);
+ return difference>0?1:difference<0?-1:0;
 }
 }

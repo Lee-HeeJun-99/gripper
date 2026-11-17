@@ -1,4 +1,23 @@
-# Executable research checkpoint — 2026-11-17
+# Executable research checkpoint — 2026-11-18
+
+## Newest actual state through930 (not project completion)
+
+Actual common C2 three-film10ms8/16/32 COMPLETE904/911/912;original16/32 API
+FAIL preserved. Public mass API917 and same-DLL passivity919 identify693 nodal
+mass ULP differences vs model reconstruction. Same-binary one-factor924:
+16-step public-mass reference exactly matches actual;default mass reproduces
+FAIL. Corrected-reference reassessments926/928 q/v EXACT with NO tolerance or
+actual dynamics changes. Actual all-pair time930 STILL FAIL:endpoint force
+8→32=.1367496%,legacy sampled work=.8957352%;stage-power work=.0243102%PASS.
+See THREE_FILM_C2_20261118.md for scoped evidence and nonzero energy inventories.
+
+Reusable actualDLL:build/three_film_20261118_three_film_public_mass917/
+libReGripThreeFilmContact.so (source identity must match runner before reuse).
+Current independent same-binary public-mass references920/921/923,control922.
+No process continues automatically after session;no OS exhaustion observed.
+Next implementation:reuse readonly selected rows already computed in journal
+geometry,then same-DLL exact physical CSV/runtime test before adoption.
+Do not raise runtime caps or0.1% gates to start64steps blindly.
 
 
 ## Latest measured checkpoint — actual three-film refinement,through868

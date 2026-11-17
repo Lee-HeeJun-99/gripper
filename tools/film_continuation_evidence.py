@@ -34,10 +34,10 @@ def main():
     # Repository-native implementations and reports, not an invented global
     # SDK certificate. Dynamic dependency logs remain part of every trial.
     for top in ('models/film_shell','models/film_rail_tendon','models/film_native_contact',
-                'models/film_sphere_contact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
+                'models/film_sphere_contact','models/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
-    for pattern in ('tools/film_*.py','tests/test_film*','reports/*FILM*.md',
+    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_*impact*.cpp','reports/*FILM*.md',
                     'reports/AUTONOMOUS_RESEARCH_*.md','reports/REGRIP_*.md',
                     'reports/LONG_RUN_RESEARCH_CHECKPOINT.md'):
         for path in ROOT.glob(pattern):record(path)
@@ -52,8 +52,7 @@ def main():
             provenance_note='Use archived identity/sources for compiled identity;post-run hashes alone do not prove launch identity')
         for path in directory.rglob('*'):
             if path.is_file() and '__pycache__' not in path.parts:record(path)
-        scene=directory/'1/scene.scn'
-        if scene.exists():
+        for scene in directory.rglob('scene.scn'):
             tree=ET.parse(scene)
             for node in tree.findall('RequiredPlugin'):
                 for plugin in node.get('pluginName','').split():

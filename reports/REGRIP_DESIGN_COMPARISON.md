@@ -1,5 +1,91 @@
 # 구조 비교 — 정량 기하/해석 선별, 실제 파지 비교 미완료
 
+## Current measured checkpoint — whole-surface and mixed-body continuation through566
+
+**Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.
+No physical child process is currently running at this checkpoint.**
+All numbers below are actual SOFA unless explicitly marked independent.
+
+- Whole-surface earliest numerical-path birth,simultaneous owned rows,common
+  original C2 control,impact,recontact and sustained midpoint are implemented.
+  This is NOT exact continuous FEM CCD or BDF2-resume certification.
+-531 fixes a demonstrated final-converged Newton trial rejected by merit;
+  tolerance unchanged.536/543 trace-on/off physical CSVs match exactly.
+-537 exposes catastrophic cancellation in direct kinetic subtraction for
+  tiny impulses.540 records positive impulse work separately from momentum
+  energy defect and subtraction residual;no heat/force correction is added.
+- Same-binary local4/8/16 grids550/551/546 COMPLETE to1s;553 time FAIL remains.
+  Local4->16 velocity1.615247%,attachment.206775%;8->16 velocity.356271%,
+  attachment.049632%. Event-time/impulse improvements do NOT certify time.
+  These are local grids,not uniform base/dt/quarter certification.
+- Actual free Rigid3 supplied-impact548/555 and shared film/body instantaneous
+  API552 PASS only their stated reference scopes. Custom event-owner moving
+  body guards are intact;no free-body whole-surface integration is claimed.
+- New independent ReGripRigidBE corrects real Rigid Coord/Deriv arithmetic
+  failure556.558 preserves failed typed Vec3 correction;559/560 demonstrate
+  actual mixed Film/Rigid3 dynamics with global GenericConstraintCorrection.
+ 563 checks BE spin and both-state impulse identities.565 Vec3-only old/new
+  regression PASS:maximum state difference5.96312e-18.
+-566 passive probe-only extension regression passes exact film state/energy
+  CSVs and all preexisting body columns across8/16/32steps;two binaries,
+  NOT a same-binary toggle. No diagnostic force/pose change is hidden.
+- Actual original C2 free-body Native control562 completes1s/400steps59.286s,
+  body z motion.000165366mm,but buffered gap -2.18155e-5mm FAILS.
+ 564 identity audit and saved actual OBJ/PNG are NOT clearance/grasp PASS.
+  Native and custom event laws remain separate physical models.
+- Full time/energy,changing-normal friction,self-collision,3finger free
+  grasp,12wrench and Optuna remain FAIL/BLOCKED/NOT RUN as applicable.
+  No final design superiority or measured-material performance is certified.
+
+Next priority: couple actual free-body mass/J to the custom accepted owner
+rather than removing its fixed-body guard;first validate shared multirow
+momentum and accepted whole-surface clearance in short tests. In parallel,
+isolate post-impact modal/restart/contact discretization error from553.
+Do NOT repeat completed long grids or relabel Native562 as successful grasp.
+Detailed sources,failures,commands and raw paths:
+[whole-surface research](REGRIP_WHOLE_SURFACE_EVENT_RESEARCH.md).
+
+
+## Latest verified continuation through521 / code534338e,tools2d5e21c
+
+Actual original-C2800step513 now completes first impact,sustained contact,
+separation and reimpact. At checkpoint534338e,the36 archived compiled files
+in510 matched that checkpoint,not all later source changes. Owner/actual ForceField displacements
+match exactly;514/516 owned-row audits pass. This is NOT full-cycle grasp.
+Time515 remains FAIL:400->800 attachment2.460337%,velocity7.975552%,event
+count1 versus2. Midpoint is an unapproved opt-in contrast,not a replacement
+for old BE.503/507 internal512-search-budget failures are preserved;508
+isolates real recontact and509/510 fix the loose global-speed search bound,
+without raising budgets or changing gap tolerances. No OS exhaustion occurred.
+Independent frozen-FEM518/519 support unresolved impact-excited temporal
+modes;they are NOT nonlinear SOFA validation. Existing EventStepClock is
+reused with a fresh Installed-SDK build;520 XML-order failure is preserved,
+521 local-grid clock/C2/time sampling passes. Selected regression524 passes10
+groups;not global physics certification. See REGRIP_WHOLE_SURFACE_EVENT_RESEARCH.md.
+Next priority: complete/analyze local-grid comparisons before any longer run;
+retain full time/energy/friction/free6DOF/3finger/12wrench/Optuna blocks. A
+fixed-sphere coupon or local-grid PASS must not be relabeled free-object grasp.
+
+
+
+## Latest whole-surface continuation — 2026-11-17
+
+Implementation checkpoint `b65db64`: new whole-triangle quadratic numerical-path
+birth search,many-row plastic impulse,shared C2 control and sole SOFA ODE owner.
+Actual original C2 Closing492 completes1s/400steps including first impact and
+10 sustained steps;this is limited fixed-object operation,NOT grasp/time PASS.
+Same-binary488/489/490 refinement491 FAILS:5->20 shell .213327%,attachment
+4.835848%;event time/impulse individually pass .1%. Historical471 .11165505%
+attachment FAIL remains.484 fails outer Newton;485 compressed-control contact
+tangent fails;both preserved. Selected regression494 passes10 groups.
+Full energy,friction,self-contact,free object,3finger,12wrench and optimization
+remain unqualified. No final design or performance superiority is certified.
+See [whole-surface research](REGRIP_WHOLE_SURFACE_EVENT_RESEARCH.md) for actual
+raw/build identities,methods,limitations and executable commands.
+Next: finish original-C2 refinement,partition event/restart versus structural
+energy errors;do NOT repeat completed old campaigns or bypass moving-body guards.
+
+
 ## Latest measured impact continuation 445–474 (2026-11-17)
 
 Project NOT complete. Independent projected impulse,event root/IFT,root-map

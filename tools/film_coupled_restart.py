@@ -5,9 +5,12 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--source',required=True);p.add_argument('--reuse');p.add_argument('--duration',type=float);p.add_argument('--steps',type=int,default=1);p.add_argument('--profile');p.add_argument('--pre-step',action='store_true');p.add_argument('--adaptive-profile');p.add_argument('--snapshot',help='explicit archived model sources for exact old-version replay');p.add_argument('--reintegrated-reference',help='PASS independent entering-bracket kernel before experimental actual owner');p.add_argument('--dense-event-control',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--source',required=True);p.add_argument('--reuse');p.add_argument('--duration',type=float);p.add_argument('--steps',type=int,default=1);p.add_argument('--profile');p.add_argument('--pre-step',action='store_true');p.add_argument('--adaptive-profile');p.add_argument('--snapshot',help='explicit archived model sources for exact old-version replay');p.add_argument('--reintegrated-reference',help='PASS independent entering-bracket kernel before experimental actual owner');p.add_argument('--dense-event-control',action='store_true');p.add_argument('--radau-reference',help='PASS independent actual-state shared adapter before persistent-only SOFA');a=p.parse_args()
+ # Separate persistent-only experiment;never silently replaces impact owner.
+ # Parsed below from its explicit independent shared-adapter reference.
  if a.dense_event_control and not a.reintegrated_reference:raise ValueError('dense control is a same-binary reintegrated-owner comparison only')
  if a.reintegrated_reference and (a.adaptive_profile or a.snapshot):raise ValueError('isolated reintegrated prototype is separate from old snapshot/adaptive owner')
+ if a.radau_reference and (a.pre_step or a.reintegrated_reference or a.snapshot or a.adaptive_profile):raise ValueError('Radau is a separate explicit POST-impact persistent-only experiment')
  if not 1<=a.steps<=1600:raise ValueError('step budget1600')
  source=ROOT/'results'/('autonomous_film_'+a.source);meta=json.loads((source/'identity.json').read_text());prior=json.loads((source/'summary.json').read_text())
  if prior['status']!='PASS' or meta.get('adaptive') or meta.get('frozen_grid'):raise ValueError('complete uniform actual source required')
@@ -18,10 +21,12 @@ def main():
   event=states[original_index-1];start=float(event['time'])
  duration=a.duration if a.duration is not None else meta['duration']/meta['steps'] if a.pre_step else float(original['time'])-start
  if not 0<duration<=.025:raise ValueError('short isolated post-impact window<=25ms')
+ if a.radau_reference and (duration>.000625 or duration/a.steps>1e-5):raise ValueError('persistent prototype horizon<=625us,step<=10us')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources'
  directories=['film_coupled_restart','film_coupled_contact','film_impact','film_shell','film_rail_tendon','film_native_contact','film_sphere_contact']
  if a.adaptive_profile:directories+=['film_coupled_adaptive','film_value_energy']
  if a.reintegrated_reference:directories+=['film_coupled_reintegrated']
+ if a.radau_reference:directories+=['film_coupled_collocation']
  model_source=ROOT/'results'/('autonomous_film_'+a.snapshot)/'sources/models' if a.snapshot else ROOT/'models'
  for directory in directories:
   target=archive/'models'/directory;target.mkdir(parents=True)
@@ -30,13 +35,20 @@ def main():
  sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()}
  for name,digest in meta['sources'].items():
   physical=name.startswith(('models/film_shell/','models/film_rail_tendon/','models/film_sphere_contact/')) or name=='models/film_native_contact/CoupledPlaneStep.h'
-  if name.endswith('.h') and name in sources and sources[name]!=digest and (not a.reintegrated_reference or physical):raise ValueError('restart physical source differs:'+name)
+  if name.endswith('.h') and name in sources and sources[name]!=digest and (not (a.reintegrated_reference or a.radau_reference) or physical):raise ValueError('restart physical source differs:'+name)
  if a.reintegrated_reference:
   referenceDir=ROOT/'results'/('autonomous_film_'+a.reintegrated_reference);rm=json.loads((referenceDir/'identity.json').read_text());rs=json.loads((referenceDir/'summary.json').read_text())
   if not a.pre_step or rs['status']!='PASS' or duration/a.steps>.001:raise ValueError('qualified independent isolated bracket and<=1ms steps required')
   for name,digest in rm['sources'].items():
    if name.endswith('.h') and name!='models/film_coupled_contact/CoupledOwnerClass.h' and sources.get(name)!=digest:raise ValueError('independent reintegrated kernel header drift:'+name)
- build=ROOT/'build'/('coupled_restart_'+a.tag);stages={};library='libReGripCoupledReintegrated.so' if a.reintegrated_reference else 'libReGripCoupledAdaptive.so' if a.adaptive_profile else 'libReGripCoupledRestart.so';module='film_coupled_reintegrated' if a.reintegrated_reference else 'film_coupled_adaptive' if a.adaptive_profile else 'film_coupled_restart'
+ if a.radau_reference:
+  rd=ROOT/'results'/('autonomous_film_'+a.radau_reference);reference=json.loads((rd/'summary.json').read_text())
+  if reference['status']!='PASS' or not (rd/'states.csv').is_file():raise ValueError('completed actual-state adapter reference required')
+  if duration>reference.get('horizon',.000009765625):raise ValueError('actual persistent duration exceeds independent qualified window')
+  unused={'models/film_coupled_contact/ReintegratedStep.h','models/film_coupled_contact/ReintegratedBirth.h'}
+  for name,digest in reference['sources'].items():
+   if name.endswith('.h') and name not in unused and sources.get(name)!=digest:raise ValueError('qualified persistent adapter source drift:'+name)
+ build=ROOT/'build'/('coupled_restart_'+a.tag);stages={};library='libReGripCoupledRadau.so' if a.radau_reference else 'libReGripCoupledReintegrated.so' if a.reintegrated_reference else 'libReGripCoupledAdaptive.so' if a.adaptive_profile else 'libReGripCoupledRestart.so';module='film_coupled_collocation' if a.radau_reference else 'film_coupled_reintegrated' if a.reintegrated_reference else 'film_coupled_adaptive' if a.adaptive_profile else 'film_coupled_restart'
  if a.reuse:
   reused=ROOT/'results'/('autonomous_film_'+a.reuse);old=json.loads((reused/'identity.json').read_text())
   if old['sources']!=sources:raise ValueError('restart compiled source drift')
@@ -50,6 +62,7 @@ def main():
  identity.update(initial_state_kind='pre-impact accepted macro state' if a.pre_step else 'post-impact event state',source_state_sha256=sha(source/'coupled.states.csv'))
  if a.reintegrated_reference:identity.update(reintegrated_reference=a.reintegrated_reference,actual_solver='IsolatedReintegratedSphereODE explicit C2 midpoint solve-to-event bracket prototype',strict_newton=True,force_residual=1e-17,gap_solve=1e-14,earliest_endpoint_family_certified=False,scope='actual ISOLATED entering-bracket prototype;NOT global earliest CCD/full cycle/grasp')
  if a.reintegrated_reference:identity.update(reintegrated_birth=not a.dense_event_control,event_state_policy='full-step dense interpolation' if a.dense_event_control else 'coupled midpoint reintegration to event')
+ if a.radau_reference:identity.update(radau_reference=a.radau_reference,persistent_radau=True,persistent_lobatto=reference.get('lobatto',False),actual_solver='SingleRowRadauSphereODE scheme='+('LobattoIIIA4' if reference.get('lobatto') else 'RadauIIA3')+' explicit already-touching branch,NOT general impact/release',reintegrated_birth=False,scope='actual isolated independently-qualified persistent window;NOT full time/grasp certification')
  if stages['build']['exit_code']==0:
   binary=build/library;identity['binary_sha256']=sha(binary);deps=subprocess.check_output(['ldd',binary],text=True);(out/'ldd.txt').write_text(deps)
   if 'not found' in deps or any('libSofa.' in line and '=> /' in line and str(SDK) not in line for line in deps.splitlines()):raise ValueError('SDK identity mismatch')
@@ -73,11 +86,13 @@ def main():
    limit=480
   tree=ET.parse(source/'scene.scn');scene=tree.getroot();scene.set('dt',format(duration/a.steps,'.17g'))
   for plugin in scene.findall('RequiredPlugin'):
-   if any(name in plugin.get('pluginName','') for name in ('libReGripCoupledSphere.so','libReGripCoupledRestart.so')):plugin.set('pluginName',str(binary))
+   if any(name in plugin.get('pluginName','') for name in ('libReGripCoupledSphere.so','libReGripCoupledRestart.so','libReGripCoupledReintegrated.so')):plugin.set('pluginName',str(binary))
   ode=scene.find('CoupledSphereODE')
   if ode is None:ode=scene.find('CoupledRestartODE')
+  if ode is None and a.radau_reference:ode=scene.find('IsolatedReintegratedSphereODE')
   if ode is None:raise ValueError('explicit supported sole source owner required')
-  ode.tag='IsolatedReintegratedSphereODE' if a.reintegrated_reference else 'AdaptiveCoupledSphereODE' if a.adaptive_profile else 'CoupledRestartODE';ode.set('startTime',format(start,'.17g'));ode.set('maxSteps',str(1600 if a.adaptive_profile else a.steps));ode.set('filename',str(out/'coupled'))
+  ode.tag='SingleRowRadauSphereODE' if a.radau_reference else 'IsolatedReintegratedSphereODE' if a.reintegrated_reference else 'AdaptiveCoupledSphereODE' if a.adaptive_profile else 'CoupledRestartODE';ode.set('startTime',format(start,'.17g'));ode.set('maxSteps',str(1600 if a.adaptive_profile else a.steps));ode.set('filename',str(out/'coupled'))
+  if a.radau_reference:ode.attrib.pop('reintegratedEvent',None);ode.set('lobatto',str(int(reference.get('lobatto',False))));ode.set('maximumDuration',format(duration,'.17g'))
   if a.reintegrated_reference:ode.set('strictNewton','1');ode.set('midpointContact','1');ode.set('reintegratedEvent',str(int(not a.dense_event_control)))
   if a.adaptive_profile:ode.set('maxMacroSteps',str(a.steps));ode.set('adaptiveTolerance','0.0001');ode.set('reuseCoarseTrial','1');ode.set('valueEnergyEstimator','0')
   dofs=scene.find("MechanicalObject[@name='dofs']");dofs.set('position',event['local_displacement']);dofs.set('velocity',event['local_velocity'])

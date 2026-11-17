@@ -1,5 +1,153 @@
 # Coupled custom film/free-sphere research — 2026-11-17
 
+## Actual higher-order persistent contact — through763
+
+See models/film_coupled_collocation/README.md for complete stage equations and
+true nonsymmetric Newton tangent. RadauIIA3 and LobattoIIIA4 are separate schemes
+using exactly the same shared mass/material/C2/damping/current geometry. Initial
+Lobatto force is acceleration-compatible;unknown stages constrain relative normal
+velocity. Stage forces are nonnegative,endpoint positions are never projected.
+Release,feature change,singular stage tangent or whole endpoint gap violation
+reject. This is ONE persistent branch,not a general active-set/impact law.
+
+Independent740:linear Radau errors(4/8/16 steps)1.15208e-7,1.40084e-8,1.72595e-9;
+Lobatto2.47840e-9,1.55008e-10,9.68972e-12. These are independent analytic test
+errors,not actual SOFA deflections. Changing-normal full-stage FD also passes.
+741/751 actual-state nonlinear FEM separately checks explicit-coordinate versus
+shared-System adapter without changing physical mass or force. Default Radau
+regression752 reproduces726/727 numerical results after adding Lobatto.
+
+Actual742/743/744 uses1/2/4 steps over9.765625us;all-pair0.1% time747 PASS.
+Actual753/754/755 extends SAME initial post-impact state to39.0625us over4/8/16
+steps.757 all-pair0.1% PASS:base-quarter velocity0.016544006%,common-window normal
+force0.050996245%,attachment0.000003428059%,endpoint-trapezoid tendon work
+0.000748632%. This is not whole energy closure. It contains no new birth or
+release;705/657 earlier/full-window time FAILs remain unchanged.
+
+Actual/independent748/756/758:position exact,velocity<=7.11e-15mm/s,end force
+exact. Actual owned stage pullback/force/impulse/time749/759/763 PASS;48 rows in
+the16-step case. Whole accepted triangle/FF audit762 PASS,min buffered gap about
+-3.38e-14mm. Audit762 records absent impact momentum values NULL,not invented0.
+No stage impulses are divided by an arbitrary dt and claimed as atomic force.
+Default stage-clock interface729/735 preserves five physical CSVs to596 exactly.
+
+Actual geometry/observable PNG and OBJ:.../coupled_lobatto_long_audit762/ under
+results/autonomous_film_20261117_ (join prefix);scale1,no pose manipulation.
+Actual short-coupon time comparison plot:.../coupled_collocation_plot761/
+actual_collocation_time.png and.svg. Concept and nonlinear actual-state labels
+remain explicit. All experiment identities include compiled sources/binaries/
+Installed SDK/actual XML/process records;old Raw and SDK stay unchanged.
+
+Reusable NEW long-window module:
+build/coupled_restart_20261117_coupled_lobatto_long753/libReGripCoupledRadau.so.
+Radau728 and Lobatto742 are older immutable builds;source guards must reject
+reusing them with changed live owner headers. Long753 uses an explicit qualified
+maximumDuration,default10us remains for the standalone component.
+
+Next actual integration must combine ReintegratedBirth with Lobatto persistent
+stages,including fractional remainder and stage journals. Current isolated owner
+does NOT execute Closing from rest or own Contact Release/Re-impact. Then extend
+time/geometry tests before3finger/free grasp. No valid reason exists to call the
+whole project complete from747/757. No OS exhaustion/automatic restart claim.
+
+## Latest implementation — reintegrated impact and persistent collocation
+
+Functional event implementation committed0d36cbe. All historical failures/raw
+remain. Project NOT COMPLETE;no full grasp,energy or material certification.
+
+### Coupled solve-to-event (independent mathematics + actual SOFA)
+
+ReintegratedBirth.h solves the SAME coupled implicit midpoint equations to each
+trial event time,using original C2 control including its time derivative. Root
+and state IFT are defined only for the isolated smooth unique-row branch.
+Ambiguous branches,transient endpoint-clear events,feature mismatch and physical
+nonapproaching velocity reject explicitly. No denominator regularization or
+artificial speed/pose correction. Dense surface CCD supplies a candidate only:
+globally earliest root of the nonlinear endpoint family is NOT certified.
+
+Independent695/696/714 PASS (root IFT error9.76e-11,velocity IFT3.48e-7 in the
+specified FD experiment;parent-bracket velocity spread2.28e-10mm/s). Actual
+SOFA697–704/715 bounded execution and whole-endpoint clearance PASS. Actual715
+uses the latest approaching-velocity guard;718 preserves five physical CSVs
+exactly to697;default706/707 remains exact. Independent actual M/J impulse699
+and whole accepted surface/FF/mapping audit719 PASS their limited scopes.
+
+Actual64/128/256 grids702/703/704 span the SAME625us C2 initial-value window.
+705 all-pair time FAIL:base-quarter film velocity0.171685%,same-window regular
+force1.486946%. Attachment0.00124556% alone passes. First impact time,impulse,
+loss and pre-normal velocity are identical across grids. No full-cycle claim.
+
+Controlled708/709 uses the SAME binary,physical parameters and initial state,
+changing only event evaluation policy. Independent actual-substate diagnostic
+710/711/713 measures partial midpoint momentum-equation residual:
+7.333215587e-12 versus2.337695976e-20 N s (force-equivalent1.33628e-5 versus
+4.25983e-14N). This confirms consistency of the NEW partial-step method;the old
+dense extension was not designed to solve that partial endpoint equation. It
+does NOT invalidate the old instantaneous impulse balance or certify global
+energy. New method26.897s versus21.284s is slower,not a runtime optimization.
+717 recompiles actual archived headers and reproduces711 despite live changes.
+
+### Persistent modal hypothesis (independent FEM,not nonlinear SOFA)
+
+716/720/721 freeze the actual post-impact geometry,force,tangent and one normal
+row. Elimination gives M_eff=M_f+m_body*j_f^T*j_f,not the old free-film mass.
+All649 film modes are retained. Five free rigid tangential/spin coordinates
+are uncoupled from the frozen normal row,not artificially constrained. Full
+shared KKT acceleration agrees3.23e-15 relative;modal reconstruction6.09e-15.
+Largest angular frequency634807.29/s. Constant tangent/force/normal,bilateral
+branch is an explicit limitation;it is NOT continuous nonlinear contact.
+
+Against independent modal matrix exponentials over625us at64 steps,normal
+reaction errors:midpoint1.15444%,Gauss2 0.0302485%,Radau2 0.223265%. At128
+steps Radau2 is0.0369651%. These support stage integration research,not direct
+transfer of a PASS to actual SOFA. Figure:results/autonomous_film_20261117_
+coupled_contact_kkt721/frozen_methods.png (join the wrapped path).
+
+### Nonlinear persistent collocation (new experimental work)
+
+SingleRowRadau.h implements the two coupled stage equations with actual M,
+U gradient/Hessian,current J/H_g,damping and common C2 control. Stage normal
+velocity is constrained,endpoint position is NOT projected. Negative stage
+reaction,initial release,feature transition or whole endpoint gap violation
+reject. All stage force/time/impulse ownership is explicit. This is one
+persistent branch,NOT production active-set contact/impact/release.
+
+722–724 unit-mass curved test FAIL at2.889e-17 N s residual floor;threshold
+1e-17 is NOT relaxed. Separate1e-6 N s²/mm research-mass problem725 passes
+curved-normal tangent FD and linear analytic third-order refinement. These
+different physical test scales are NOT the same failed trial relabeled PASS.
+726/727 independently integrate actual post-impact state on1/2/4substeps over
+9.765625us and verify the shared adapter against explicit coordinate assembly.
+
+Actual SOFA728/730/731 implements that SAME Radau adapter and original free
+Rigid3 mass/initial state.732/738 compares q/v/end reaction to independent727:
+position exact,velocity at most3.55e-15mm/s,end force exact.733/739 independently
+checks stage impulse/time/J/linear-angular pullback;736 checks actual FF and
+whole endpoint gap. Default729/735 preserves five original physical CSVs.
+
+737 all-pair time still FAILS:base-quarter same-window force0.245223%;velocity
+0.00848108%,attachment0.0000117105% pass in THIS9.765625us window only. No
+impact occurs inside this already-touching coupon. This is not a replacement
+for625us705 or full C2 failure. Fourth-order stiffly-accurate LobattoIIIA is
+being tested as a separate integration method,not a physical stiffness change.
+
+### Units,scope and evidence
+
+CLI --force-residual is historical naming:the underlying Newton gradient G
+has N s units,with force equivalent2*norm(G)/h in N. Initial research mass,
+modulus,frictionless sphere,zero gravity,root fixture and1mN-per-rail C2 remain
+unchanged. R8.01 is a midsurface buffer,not certified physical shell clearance.
+No measured PET/TPU,actuator,lift,holding force or3finger performance is claimed.
+694 preserves Eigen test lazy-expression failure;712 parser failure and734
+operator wrong-input-path failure are preserved separately from physics FAIL.
+
+Reproduction:each immutable case stores runner.py,source archive,scene,input,
+process logs,binary hashes and summary. Reusable actual persistent library:
+build/coupled_restart_20261117_coupled_radau_sofa728/libReGripCoupledRadau.so;
+reuse ONLY with archived source identities,not changed live collocation headers.
+Remaining:global earliest endpoint-family event,multicontact/release collocation,
+full C2/time/energy/mesh,friction/self-contact,3finger/free grasp/12wrench/Optuna.
+
 ## Latest continuation — measured through692 (earlier sections retained)
 
 ### Precise remaining blocker;do not certify adaptive C2

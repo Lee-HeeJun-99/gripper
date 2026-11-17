@@ -1,5 +1,51 @@
 # Executable research checkpoint — 2026-11-17
 
+## Latest checkpoint — actual persistent collocation through763
+
+Project NOT COMPLETE. Prior functional event commit0d36cbe;the functional commit
+owning this update adds collocation and measured actual validation. No OS-memory
+exhaustion or automatic background restart is claimed. Recorded completed jobs
+are complete;historical RUNNING labels are not authoritative.
+
+Implemented:two-stage RadauIIA and three-stage LobattoIIIA with known initial
+acceleration reaction,current nonlinear J/H,actual shared mass/free Rigid3,C2
+control,stage clocks/positive quadrature impulses,explicit branch rejection.
+Actual single-owner module and mapped commit/FF query path executed.
+PASS:740 math/FD;741/751 coordinate-vs-shared FEM;actual742/743/744 and753/754/755;
+7479.765625us and75739.0625us ALL-PAIR0.1% gates;748/756/758 independent q/v/F;
+749/759/763 used-row pullback;762 whole endpoint/mapping/actual FF;735 unchanged
+default five physical CSVs. Actual impact momenta absent in these persistent
+coupons are NULL,not measured0. Actual figures/OBJ762 and time plot761.
+
+FAIL preserved:722–724 unit-mass residual floor;737 Radau normal force0.245223%;
+705625us reintegrated-midpoint and657 original C2 time. BLOCKED:full energy,
+friction,self-contact,3finger/lift/12wrench/final Optuna. New persistent coupons
+do NOT contain event/release and are not full-cycle certification.
+
+Last reusable Installed-SDK module:
+build/coupled_restart_20261117_coupled_lobatto_long753/libReGripCoupledRadau.so.
+Sources/identity/binary/scene/raw in results/autonomous_film_20261117_
+coupled_lobatto_long753/ and related754/755. Default owner unchanged735.
+Never reuse753 after changing any archived compiled source.
+
+Exact inspection/reproduction commands:
+```bash
+cd /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+git status --short
+git log -5 --oneline
+$PY -m json.tool results/autonomous_film_20261117_coupled_lobatto_long_time757/summary.json
+$PY -m json.tool results/autonomous_film_20261117_contact_lobatto_long751/summary.json
+# Reproduction only,not a suggestion to repeat completed research:
+$PY tools/film_coupled_restart.py --tag 20261117_LOBATTO_REPLAY_NEW --source 20261117_coupled_reintegrated_ab709 --duration .0000390625 --steps 16 --radau-reference 20261117_contact_lobatto_long751 --reuse 20261117_coupled_lobatto_long753 --profile 20261117_coupled_lobatto_long753
+```
+
+NEXT actual development:reintegrated birth + Lobatto persistent/remainder in one
+independent owner,independent pre-impact C2 path then actual SOFA. Current753
+cannot do it and must NOT be portrayed as already integrated impact/full grasp.
+Full endpoint-family earliest proof,multicontact/release and energy remain.
+This checkpoint preserves continuation,not project completion.
+
 ## Current savepoint — actual reintegrated event and persistent modal isolation
 
 Latest prior committed functional state24209eb;new solve-to-event implementation

@@ -21,7 +21,7 @@ def main():
  source=ROOT/'results'/('autonomous_film_'+args.case);meta=json.loads((source/'identity.json').read_text());summary=json.loads((source/'summary.json').read_text())
  if summary['status']!='PASS' or meta.get('adaptive') or meta.get('frozen_grid'):raise ValueError('completed uniform owner trace required')
  scene=ET.parse(source/'scene.scn');topology=scene.find('.//TriangleSetTopologyContainer');rest=np.fromstring(topology.get('position'),sep=' ').reshape(-1,3);tri=np.fromstring(topology.get('triangles'),sep=' ',dtype=int).reshape(-1,3);nx=int(scene.find('.//FilmRailTendon').get('nx'))
- states=list(csv.DictReader((source/'coupled.states.csv').open()));events=list(csv.DictReader((source/'coupled.event_states.csv').open()));owned=list(csv.DictReader((source/'coupled.rows.csv').open()))
+ states=list(csv.DictReader((source/'coupled.states.csv').open()));events=list(csv.DictReader((source/'coupled.event_states.csv').open()));owned=list(csv.DictReader((source/'coupled.rows.csv').open()));stages=list(csv.DictReader((source/'coupled.stages.csv').open())) if meta.get('persistent_radau') else []
  index=np.full(rest.size,-1,dtype=int);weight=np.ones(rest.size);nf=0
  for offset,ny in ((0,5),(5*nx,3),(8*nx,3)):
   for i in range(1,nx):
@@ -36,11 +36,17 @@ def main():
   step=int(row['step']);end=states[step-1];q1,c1=state(end);q0,c0=state(states[step-2]) if step>1 else (initialQ,initialC)
   if row['stage']=='0':q,c=state(next(s for s in events if s['stage']=='pre' and s['time']==row['time']))
   elif row['stage']=='1':
-   if int(end['event']):
+   if stages:
+    stage=next(s for s in stages if s['stage_time']==row['time'] and s['triangle']==row['triangle'] and abs(float(s['macro_start'])-(meta['start_time']+(step-1)*meta['duration']/meta['steps']))<1e-12);packed=np.fromstring(stage['q'],sep=' ');q=np.zeros_like(rest)
+    for k,free in enumerate(index):
+     if free>=0:q.flat[k]=weight[k]*packed[free]
+    c=packed[nf:nf+3];dt=meta['duration']/meta['steps'];b=(1/6,2/3,1/6)[int(row['row'])] if meta.get('persistent_lobatto') else (.75 if int(row['row'])==0 else .25);expected_impulse=dt*b*float(stage['normal_force'])
+    if abs(expected_impulse-float(row['impulse']))>1e-18:raise ValueError('actual Radau stage impulse/time ownership differs')
+   elif int(end['event']):
     lower=float(states[step-2]['time']) if step>1 else 0.;candidates=[s for s in events if s['stage']=='post' and lower<float(s['time'])<=float(end['time'])]
     if len(candidates)!=1:raise ValueError('event remainder not uniquely observable')
     q0,c0=state(candidates[0])
-   q,c=(.5*(q0+q1),.5*(c0+c1)) if meta.get('midpoint_contact',False) else (q1,c1)
+   if not stages:q,c=(.5*(q0+q1),.5*(c0+c1)) if meta.get('midpoint_contact',False) else (q1,c1)
   elif row['stage']=='2':q,c=q1,c1
   else:raise ValueError('unknown owned row stage')
   ids=tri[int(row['triangle'])];x=(rest+q)[ids];p,bary,normal=closest(x,c);full=np.zeros_like(rest)

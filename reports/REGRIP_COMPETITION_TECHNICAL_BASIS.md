@@ -1,5 +1,13 @@
 # 경진대회 기술 근거 — 연구 결과와 제작 목표 구분
 
+## 최신 연구 근거 — through763,지원서 성능 과장 금지
+
+실제 단일 필름/자유 구체의 충돌 시각 재적분과 제한된39.0625μs 지속접촉의
+시간 수렴757를 검증했다. 이는3핑거 파지 성공률/들어올림/손상 방지 실측이
+아니다. 본선용 교체형 필름·보강 레일·공통 와이어는 여전히 제작 후보이며,
+지급 액추에이터 사양과 PET/TPU 물성·팀 구성은 임의로 확정하지 않는다.
+기존 지원서 문항·글자 수와 미검증 기능의 목표 표기를 유지한다.
+
 ## Latest measured impact continuation 445–474 (2026-11-17)
 
 Project NOT complete. Independent projected impulse,event root/IFT,root-map

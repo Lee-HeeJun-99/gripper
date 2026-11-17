@@ -23,6 +23,7 @@ struct Result {
  State state,eventState,preImpact,postImpact;
  std::optional<SurfaceEvent>event;std::optional<ManyRowImpact>impact;
  Eigen::MatrixXd eventJ;std::vector<Row>contactRows,projectionRows;Eigen::VectorXd constraintImpulse;
+ std::vector<double>contactTimes; // Optional actual stage clocks;empty preserves legacy endpoint journal.
  Eigen::RowVectorXd eventIncomingSensitivity;std::optional<double>absoluteEventStartSensitivity;
  std::optional<ManyRowImpact>projection;
  double minimumGap=0,residual=0,projectionLoss=0,projectionDefect=0;

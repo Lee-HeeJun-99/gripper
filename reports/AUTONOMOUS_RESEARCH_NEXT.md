@@ -1,5 +1,35 @@
 # Next research checkpoint
 
+## Current next implementation — combine birth and persistent collocation
+
+Completed:coupled solve-to-event0d36cbe;actual persistent LobattoIIIA742–755;
+all-pair short-window gates747/757 and independent actual state/row audits PASS.
+Do NOT reimplement these or repeat all historical campaigns.
+
+1. Integrate ReintegratedStep's physical event atom with singleRowRadauStep
+   (lobatto=true) in ONE separate owner. Replace its persistent/remainder branch,
+   not its already-validated shared impulse. Preserve old midpoint default.
+2. Propagate actual stage clocks and quadrature impulses through fractional
+   remainder. Initial acceleration-compatible Lobatto reaction is a force,not
+   another atomic impact. Preserve q/v continuity at the event and no pose fix.
+3. Independent actual pre-impact state test,common original C2 T/T',then actual
+   SOFA from that SAME state. Guard unknown event-family roots/feature changes/
+   release;global earliest endpoint-family proof still missing.
+4. Only after this passes:longer C2 through first contact,multicontact release/
+   reimpact,whole energy/mesh/time,friction/self-contact,3finger/free-object grasp.
+5. Current125–625us long experiments are NOT qualified by39us757. Profile first;
+   independent751:28 steps plus duplicate assembly took82.36s. Do not raise a
+   loop budget or bypass runner duration guards to manufacture certification.
+
+Read exact current evidence:
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY -m json.tool results/autonomous_film_20261117_coupled_lobatto_long_time757/summary.json
+$PY -m json.tool results/autonomous_film_20261117_coupled_lobatto_long_compare758/summary.json
+```
+Existing actual build753 supports its archived persistent source only. It does
+NOT already implement the combined event path. New code/build/campaign required.
+
 ## Latest priority — persistent higher-order contact, after721
 
 Event-state reintegration is IMPLEMENTED and actual SOFA-tested;do not re-do692.

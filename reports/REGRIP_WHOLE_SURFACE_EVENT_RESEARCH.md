@@ -1,5 +1,29 @@
 # Whole-surface event continuation — 2026-11-17
 
+## Latest measured continuation — persistent collocation through763
+
+Actual coupled single-branch LobattoIIIA is IMPLEMENTED and executed,not a plan.
+Independent740 analytic fourth-order/changing-normal FD PASS;actual-state741/751
+validates shared projected-M/J/U assembly. Actual742/743/744(1/2/4 steps,9.765625us)
+all-pair time747 PASS. Extended actual753/754/755(4/8/16 steps,39.0625us) all-pair
+time757 PASS at UNCHANGED0.1%:base-quarter velocity0.0165440%,same-window normal
+force0.0509962%,attachment0.00000342806%,tendon-work observable0.000748632%.
+These are ALREADY-TOUCHING persistent coupons,not new impact/full C2 certification.
+
+Actual-versus-independent FEM748/756/758 agrees (position exact,velocity<=7.11e-15
+mm/s,end reaction exact). Owned stage J/force/impulse/time audits749/759/763 PASS;
+whole accepted surface/actual FF audit762 PASS with absent impact quantities NULL.
+Each force is integrated with actual Lobatto weights(1/6,2/3,1/6),not hidden pose
+or speed correction. Earlier Radau actual737 FAIL0.245223% force remains,as do
+705/657 full/longer-window FAILs. Default729/735 five physical CSVs remain exact.
+
+Still NOT QUALIFIED:impact+new collocation in one path,global earliest endpoint-
+family event,release/reimpact/multiple-row collocation,full C2/time/mesh/energy,
+changing-normal friction,self-contact,3finger/free lift/12wrench/Grasp Optuna.
+No measured PET/TPU/actuator or final structure superiority is claimed.
+Detailed derivation/build/raw:REGRIP_COUPLED_FREE_BODY_RESEARCH.md and
+models/film_coupled_collocation/README.md. No automatic background restart.
+
 ## Reintegrated event scope — through721
 
 ReintegratedBirth solves the coupled midpoint endpoint family to an externally

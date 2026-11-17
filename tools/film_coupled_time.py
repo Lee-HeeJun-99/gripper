@@ -14,7 +14,7 @@ def main():
             original=cases[0][1]
             for key in ('binary_sha256','mode','duration','body_mass','inertia_per_mass','rayleigh_mass','initial_body_center','initial_body_velocity'):
                 if meta[key]!=original[key]:raise ValueError('physical/source binary mismatch:'+key)
-            for key,default in (('body_force_z',0.),('strict_newton',False),('midpoint_contact',False),('reintegrated_birth',False)):
+            for key,default in (('body_force_z',0.),('strict_newton',False),('midpoint_contact',False),('reintegrated_birth',False),('persistent_radau',False),('persistent_lobatto',False)):
                 if meta.get(key,default)!=original.get(key,default):raise ValueError('force/numerical accuracy input mismatch:'+key)
             for key in ('start_time','source_event_sha256','initial_displacement','initial_velocity','initial_body_quaternion'):
                 if meta.get(key)!=original.get(key):raise ValueError('isolated initial-value input mismatch:'+key)

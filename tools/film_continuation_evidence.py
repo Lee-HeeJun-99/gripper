@@ -35,10 +35,10 @@ def main():
     # Repository-native implementations and reports, not an invented global
     # SDK certificate. Dynamic dependency logs remain part of every trial.
     for top in ('models/film_shell','models/film_rail_tendon','models/film_native_contact',
-                'models/film_sphere_contact','models/film_impact','models/rigid_impact_reference','models/film_coupled_contact','models/film_coupled_adaptive','models/film_coupled_restart','models/film_coupled_reintegrated','models/film_value_energy','diagnostics/film_coupled_reintegrated','diagnostics/film_coupled_adaptive','diagnostics/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
+                'models/film_sphere_contact','models/film_impact','models/rigid_impact_reference','models/film_coupled_contact','models/film_coupled_adaptive','models/film_coupled_restart','models/film_coupled_reintegrated','models/film_coupled_collocation','models/film_value_energy','diagnostics/film_coupled_reintegrated','diagnostics/film_coupled_adaptive','diagnostics/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
-    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_coupled*.cpp','tests/test_sustained_birth*.cpp','tests/test_persistent_contact*.cpp','tests/test_event_budget.cpp','tests/test_modal_rational.py','tests/test_surface_roundoff.cpp','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',
+    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_contact_radau.cpp','tests/test_coupled*.cpp','tests/test_sustained_birth*.cpp','tests/test_persistent_contact*.cpp','tests/test_event_budget.cpp','tests/test_modal_rational.py','tests/test_surface_roundoff.cpp','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',
                     'reports/AUTONOMOUS_RESEARCH_*.md','reports/REGRIP_*.md',
                     'reports/LONG_RUN_RESEARCH_CHECKPOINT.md'):
         for path in ROOT.glob(pattern):record(path)

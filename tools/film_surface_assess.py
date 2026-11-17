@@ -63,8 +63,10 @@ def main():
     for name,identity,states,film,events in cases:
         time=[float(r['time']) for r in film]
         for ax,key in zip(axes.flat,('skin_tip_z','U_attachment','K','T_per_rail')):
-            ax.plot(time,[float(r[key]) for r in film],label=name[-3:]+' dt='+str(identity['duration']/identity['steps']));ax.set_title(key);ax.set_xlabel('time [s]');ax.grid()
+            base=identity['duration']/identity['steps'];label=name[-3:]+' dt='+str(base)
+            if identity.get('local_divisor',1)!=1:label+=' -> '+str(base/identity['local_divisor'])
+            ax.plot(time,[float(r[key]) for r in film],label=label);ax.set_title(key);ax.set_xlabel('time [s]');ax.grid()
     axes.flat[0].legend();fig.suptitle('Actual SOFA fixed-sphere coupon; NOT qualified grasp');fig.tight_layout();fig.savefig(out/'actual_time.png',dpi=160);plt.close(fig)
-    write_json(out/'summary.json',dict(status='PASS' if passed else 'FAIL',scope='same-binary limited coupon .1% relative time gate;NOT full-cycle/energy/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,metrics=metrics))
+    write_json(out/'summary.json',dict(status='PASS' if passed else 'FAIL',scope='same-binary limited coupon .1% relative time gate;NOT full-cycle/energy/grasp',grid_note='explicit local nonuniform grids;NOT uniform base-to-quarter convergence' if any(c[1].get('local_divisor',1)!=1 for c in cases) else 'uniform-step comparisons',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,metrics=metrics))
     print(json.dumps(dict(status='PASS' if passed else 'FAIL',path=str(out))))
 if __name__=='__main__':main()

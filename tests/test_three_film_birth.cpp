@@ -1,0 +1,28 @@
+#include "../models/film_three_finger_event/BracketedBirth.h"
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+using namespace regrip_three_event;
+int main(int argc,char**argv){try{
+ SharedFilmSystem s(Layout(),Eigen::Vector3d(0,0,-.001),true,true);s.exactUnresolved=true;
+ if(argc!=1&&argc!=3)throw std::invalid_argument("optional public mass file and exclusive reference CSV required");
+ if(argc==3){std::ifstream file(argv[1]);unsigned count;file>>count;if(count!=s.shared.films[0].film.mass.size())throw std::runtime_error("reference public mass count differs");s.shared.M.setZero();for(unsigned f=0;f<3;++f){auto&film=s.shared.films[f].film;for(unsigned i=0;i<count;++i){double m;file>>m;if(!(m>0)||std::abs(m-film.mass[i])>1e-13*film.mass[i])throw std::runtime_error("reference public mass fixture differs");film.mass[i]=m;for(unsigned d=0;d<3;++d){unsigned a=3*i+d;int k=film.index[a];if(k>=0)s.shared.M(f*s.shared.nf+k,f*s.shared.nf+k)+=m*film.weight[a]*film.weight[a];}}}double mass,inertia;file>>mass>>inertia;if(!file||mass!=.0001||std::abs(inertia-.036)>1e-16)throw std::runtime_error("reference rigid mass fixture differs");s.shared.M.bottomRightCorner<6,6>().diagonal().head<3>().setConstant(mass);s.shared.M.bottomRightCorner<6,6>().diagonal().tail<3>().setConstant(inertia);}
+ auto q=s.initial;unsigned nf=s.shared.nf,body=3*nf;Eigen::VectorXd v=Eigen::VectorXd::Zero(q.size());q(body+2)+=.0001;v(body+2)=-1;
+ EventControl control{.0001,.01,.02,.03,true};double initial=s.clearance(q);
+ auto event=bracketedBirth(s,q,v,0,.00005,.0002,control);
+ std::array<unsigned,3>counts{};for(const auto&r:event.rows){++counts[r.finger];if(r.normalAfter< -1e-10)throw std::runtime_error("post-impact penetration velocity");}
+ if(initial<=0||event.gap< -1e-12||event.impact.state.impulse.minCoeff()<0||event.impact.state.energyLoss<0||event.time<=.00005||event.time>=.0002||!counts[0]||!counts[1]||!counts[2])throw std::runtime_error("simultaneous three-film plastic impact gate");
+ // Explicit equal/opposite translational impulse in world coordinates.
+ Eigen::Vector3d filmImpulse=Eigen::Vector3d::Zero(),filmAngular=Eigen::Vector3d::Zero();auto dv=event.impact.state.velocity-event.before.v;
+ for(unsigned f=0;f<3;++f){const auto&film=s.shared.films[f].film;auto nodal=film.expand(dv.segment(f*nf,nf)),positions=film.expand(event.before.q.segment(f*nf,nf)),rest=film.model.rest();for(unsigned i=0;i<nodal.size();++i){Eigen::Vector3d local(nodal[i][0],nodal[i][1],nodal[i][2]),impulse=film.mass[i]*s.layout.mount[f].R*local;filmImpulse+=impulse;auto location=s.layout.world(f,add(rest[i],positions[i]));filmAngular+=location.cross(impulse);}}
+ Eigen::Vector3d objectImpulse=s.shared.M(body,body)*dv.segment<3>(body);double balance=(filmImpulse+objectImpulse).norm();
+ if(balance>1e-17)throw std::runtime_error("world linear impulse imbalance/root reaction must be handled,not filled");
+ double angular=(filmAngular+event.before.q.segment<3>(body).cross(objectImpulse)+s.shared.M(body+3,body+3)*dv.tail<3>()).norm();if(angular>1e-16)throw std::runtime_error("world angular impulse balance failed;no invented root reaction");
+ auto remainder=regrip_collocation::persistentRows(s.shared.M,2,event.before.q,event.impact.state.velocity,event.time,.0002-event.time,[&](const auto&x,double t){return s.force(x,control.sample(t).tension);},[&](const auto&x){return s.geometry(x);});
+ double remainingGap=s.clearance(remainder.q);for(const auto&stage:remainder.stages)remainingGap=std::min(remainingGap,s.clearance(stage.q));if(remainingGap< -1e-10)throw std::runtime_error("post-impact remaining-step whole-stage gap gate");
+ bool rejected=false;try{bracketedBirth(s,q,v,0,.00001,.00002,control);}catch(const std::domain_error&){rejected=true;}if(!rejected)throw std::runtime_error("unsigned bracket accepted");
+ std::cout<<std::setprecision(17)<<"time="<<event.time<<" gap="<<event.gap<<" rows="<<event.rows.size()<<" rank="<<event.impact.rank<<" momentum="<<event.momentumResidual<<" world_linear="<<balance<<" loss_Nmm="<<event.impact.state.energyLoss<<" min_vn="<<event.impact.state.normalVelocity.minCoeff()<<'\n';
+ std::cout<<"world_angular="<<angular<<" remaining_gap="<<remainingGap<<" remaining_momentum="<<remainder.momentumResidual<<" remaining_vn="<<remainder.velocityResidual<<'\n';
+ if(argc==3){if(std::ifstream(argv[2]))throw std::runtime_error("reference result already exists");std::ofstream out(argv[2]);out<<std::setprecision(17)<<"event_time,gap,rows,rank,momentum,energy_loss,minimum_vn,impulse,qminus,vminus,vplus,qend,vend\n"<<event.time<<','<<event.gap<<','<<event.rows.size()<<','<<event.impact.rank<<','<<event.momentumResidual<<','<<event.impact.state.energyLoss<<','<<event.impact.state.normalVelocity.minCoeff()<<',';auto vector=[&](const Eigen::VectorXd&x){for(int i=0;i<x.size();++i)out<<(i?" ":"")<<x(i);};vector(event.impact.state.impulse);out<<',';vector(event.before.q);out<<',';vector(event.before.v);out<<',';vector(event.impact.state.velocity);out<<',';vector(remainder.q);out<<',';vector(remainder.v);out<<'\n';}
+ std::cout<<"PASS independently bracketed three-film/ONE free sphere plastic impact and restricted compressive remainder;NOT global earliest CCD/SOFA/release/grasp\n";
+ }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

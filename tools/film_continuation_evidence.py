@@ -38,7 +38,9 @@ def main():
                 'models/film_sphere_contact','models/film_impact','models/rigid_impact_reference','models/film_coupled_contact','models/film_coupled_adaptive','models/film_coupled_restart','models/film_coupled_reintegrated','models/film_coupled_collocation','models/film_combined_contact','models/film_three_finger','models/film_value_energy','diagnostics/film_three_finger','diagnostics/film_coupled_reintegrated','diagnostics/film_coupled_adaptive','diagnostics/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
-    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_contact_radau.cpp','tests/test_coupled*.cpp','tests/test_sustained_birth*.cpp','tests/test_persistent*.cpp','tests/test_three_film*.cpp','tests/test_precise_distance_order.cpp','tests/test_event_budget.cpp','tests/test_modal_rational.py','tests/test_surface_roundoff.cpp','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',
+    for path in (ROOT/'models/film_three_finger_event').rglob('*'):
+        if path.is_file():record(path)
+    for pattern in ('tools/film_*.py','tests/test_film*','tests/test_contact_radau.cpp','tests/test_coupled*.cpp','tests/test_sustained_birth*.cpp','tests/test_persistent*.cpp','tests/test_three_film*.cpp','tests/test_gap_controlled_rows.cpp','tests/test_routed_cable_power.cpp','tests/test_precise_distance_order.cpp','tests/test_event_budget.cpp','tests/test_modal_rational.py','tests/test_surface_roundoff.cpp','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',
                     'reports/AUTONOMOUS_RESEARCH_*.md','reports/REGRIP_*.md',
                     'reports/LONG_RUN_RESEARCH_CHECKPOINT.md'):
         for path in ROOT.glob(pattern):record(path)

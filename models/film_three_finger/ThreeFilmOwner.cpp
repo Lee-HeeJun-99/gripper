@@ -80,6 +80,7 @@ public:
  bool exactDistanceOrder()const override{return true;}
 };
 }
+#ifndef REGRIP_THREE_FILM_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmContact";}
@@ -89,3 +90,4 @@ __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFac
  f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL shared C2 exact-rational unresolved distance order;NOT grasp").add<regrip_three_finger::ThreeFilmDrivenExactODE>());
 }
 }
+#endif

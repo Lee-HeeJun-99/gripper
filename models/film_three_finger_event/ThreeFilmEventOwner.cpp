@@ -1,0 +1,46 @@
+// Reuse guarded links/material/API initialization without changing the old
+// persistent owner. This separate research DLL registers ONLY its new owner.
+#define REGRIP_THREE_FILM_EMBEDDED
+#include "../film_three_finger/ThreeFilmOwner.cpp"
+#include "BracketedBirth.h"
+namespace regrip_three_event {
+class ThreeFilmBracketedEventODE:public regrip_three_finger::ThreeFilmDrivenODE {
+public:
+ SOFA_CLASS(ThreeFilmBracketedEventODE,regrip_three_finger::ThreeFilmDrivenODE);
+ bool exactDistanceOrder()const override{return true;}
+ void solve(const sofa::core::ExecParams*,SReal dt,sofa::core::MultiVecCoordId,sofa::core::MultiVecDerivId)override{
+  if(!ready){msg_error(this)<<"Event owner invalid;no commit";return;}
+  if(count++!=0||dt!=.0002||getContext()->getTime()!=0)throw std::runtime_error("isolated externally bracketed event coupon:ONE200us step only,NOT general closing");
+  for(auto suffix:{".event.csv",".impact_rows.csv"})if(std::ifstream(filename.getValue()+suffix))throw std::runtime_error("event output exists;use exclusive new output paths");
+  sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
+  SharedFilmSystem system(Layout(),Eigen::Vector3d(0,0,-.001),true,true);system.exactUnresolved=true;
+  unsigned nf=system.shared.nf,nb=3*nf;Eigen::VectorXd q=system.initial,v=Eigen::VectorXd::Zero(q.size());system.shared.M.setZero();
+  std::array<Film*,3>roots={root.get(),root1.get(),root2.get()},locals;
+  std::array<sofa::core::objectmodel::BaseObject*,3>fields={field.get(),field1.get(),field2.get()};
+  for(unsigned f=0;f<3;++f){auto&s=system.shared.films[f];locals[f]=dynamic_cast<Film*>(fields[f]->getContext()->getMechanicalState());auto*mass=fields[f]->getContext()->getMass();if(!locals[f]||!mass)throw std::runtime_error("event actual local mass/state missing");const auto&x=locals[f]->read(sofa::core::vec_id::read_access::position)->getValue();const auto&vel=locals[f]->read(sofa::core::vec_id::read_access::velocity)->getValue();if(x.size()!=s.film.model.size())throw std::runtime_error("event film size mismatch");std::vector<Point>xx(x.size()),vv(x.size());
+   for(unsigned i=0;i<x.size();++i){double m=mass->getElementMass(i);if(!(m>0)||std::abs(m-s.film.mass[i])>1e-13*s.film.mass[i])throw std::runtime_error("event public mass differs from research fixture");s.film.mass[i]=m;for(unsigned d=0;d<3;++d){xx[i][d]=x[i][d];vv[i][d]=vel[i][d];unsigned a=3*i+d;int k=s.film.index[a];if(k>=0)system.shared.M(f*nf+k,f*nf+k)+=m*s.film.weight[a]*s.film.weight[a];}}
+   q.segment(f*nf,nf)=s.film.pack(xx);v.segment(f*nf,nf)=s.film.pack(vv);if(xx!=s.before.q||v.segment(f*nf,nf).norm()!=0)throw std::runtime_error("event fixture must have initially unstrained stationary films");
+  }
+  auto bx=body->read(sofa::core::vec_id::read_access::position)->getValue();auto bv=body->read(sofa::core::vec_id::read_access::velocity)->getValue();sofa::linearalgebra::FullMatrix<double>mass(6,6);mass.clear();body->getContext()->getMass()->getElementMass(0,&mass);
+  for(unsigned i=0;i<6;++i)for(unsigned j=0;j<6;++j){double expected=i==j?(i<3?.0001:.036):0;if(std::abs(mass.element(i,j)-expected)>1e-14*std::max(1e-20,std::abs(expected)))throw std::runtime_error("event sphere public mass/inertia fixture differs");system.shared.M(nb+i,nb+j)=mass.element(i,j);}
+  for(unsigned d=0;d<3;++d){q(nb+d)=bx[0].getCenter()[d];v(nb+d)=bv[0].getVCenter()[d];v(nb+3+d)=bv[0].getVOrientation()[d];}
+  auto expected=system.initial;expected(nb+2)+=.0001;Eigen::VectorXd incoming=Eigen::VectorXd::Zero(q.size());incoming(nb+2)=-1;
+  if((q-expected).norm()>1e-14||(v-incoming).norm()!=0||externalForce.getValue()!=sofa::type::Vec3(0,0,-.001))throw std::runtime_error("separated prescribed initial velocity event fixture differs;NOT C2 closing from REST");
+  EventControl control{read<double>(field.get(),"maximumTension"),read<double>(field.get(),"rampTime"),read<double>(field.get(),"releaseBegin"),read<double>(field.get(),"releaseEnd"),read<bool>(field.get(),"c2Control")};
+  auto birth=bracketedBirth(system,q,v,0,.00005,.0002,control);auto result=regrip_collocation::persistentRows(system.shared.M,2,birth.before.q,birth.impact.state.velocity,birth.time,dt-birth.time,[&](const auto&x,double t){return system.force(x,control.sample(t).tension);},[&](const auto&x){return system.geometry(x);});double gap=system.clearance(result.q);for(const auto&s:result.stages)gap=std::min(gap,system.clearance(s.q));if(gap< -1e-10)throw std::runtime_error("event remaining-step whole-stage clearance failed");
+  for(unsigned f=0;f<3;++f){auto&s=system.shared.films[f];auto xx=s.film.expand(result.q.segment(f*nf,nf)),vv=s.film.expand(result.v.segment(f*nf,nf));auto x=roots[f]->read(sofa::core::vec_id::read_access::position)->getValue();auto vel=roots[f]->read(sofa::core::vec_id::read_access::velocity)->getValue();for(unsigned a=0;a<s.film.index.size();++a)if(s.film.index[a]>=0&&s.film.weight[a]==1){x[a/3][a%3]=xx[a/3][a%3];vel[a/3][a%3]=vv[a/3][a%3];}roots[f]->write(sofa::core::vec_id::write_access::position)->setValue(x);roots[f]->write(sofa::core::vec_id::write_access::velocity)->setValue(vel);}
+  for(unsigned d=0;d<3;++d){bx[0].getCenter()[d]=result.q(nb+d);bv[0].getVCenter()[d]=result.v(nb+d);bv[0].getVOrientation()[d]=result.v(nb+3+d);}Eigen::Vector3d angle=result.q.tail<3>();Eigen::Quaterniond orientation(bx[0].getOrientation()[3],bx[0].getOrientation()[0],bx[0].getOrientation()[1],bx[0].getOrientation()[2]);if(angle.norm()>0)orientation=Eigen::Quaterniond(Eigen::AngleAxisd(angle.norm(),angle/angle.norm()))*orientation;for(unsigned d=0;d<4;++d)bx[0].getOrientation()[d]=orientation.coeffs()(d);body->write(sofa::core::vec_id::write_access::position)->setValue(bx);body->write(sofa::core::vec_id::write_access::velocity)->setValue(bv);mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
+  for(unsigned f=0;f<3;++f){auto xx=system.shared.films[f].film.expand(result.q.segment(f*nf,nf)),vv=system.shared.films[f].film.expand(result.v.segment(f*nf,nf));const auto&ax=locals[f]->read(sofa::core::vec_id::read_access::position)->getValue();const auto&av=locals[f]->read(sofa::core::vec_id::read_access::velocity)->getValue();for(unsigned i=0;i<xx.size();++i)for(unsigned d=0;d<3;++d)if(ax[i][d]!=xx[i][d]||av[i][d]!=vv[i][d])throw std::runtime_error("event actual mapped q/v commit mismatch");}
+  const auto&actual=body->read(sofa::core::vec_id::read_access::position)->getValue()[0];const auto&actualV=body->read(sofa::core::vec_id::read_access::velocity)->getValue()[0];for(unsigned d=0;d<3;++d)if(actual.getCenter()[d]!=result.q(nb+d)||actualV.getVCenter()[d]!=result.v(nb+d)||actualV.getVOrientation()[d]!=result.v(nb+3+d))throw std::runtime_error("event actual FREE body commit mismatch");
+  std::ofstream journal(filename.getValue()+".event.csv");journal<<std::setprecision(17)<<"event_time,gap,rows,rank,momentum,energy_loss,minimum_vn,impulse,qminus,vminus,vplus,qend,vend\n"<<birth.time<<','<<birth.gap<<','<<birth.rows.size()<<','<<birth.impact.rank<<','<<birth.momentumResidual<<','<<birth.impact.state.energyLoss<<','<<birth.impact.state.normalVelocity.minCoeff()<<',';auto vector=[&](const Eigen::VectorXd&x){for(int i=0;i<x.size();++i)journal<<(i?" ":"")<<x(i);};vector(birth.impact.state.impulse);journal<<',';vector(birth.before.q);journal<<',';vector(birth.before.v);journal<<',';vector(birth.impact.state.velocity);journal<<',';vector(result.q);journal<<',';vector(result.v);journal<<'\n';journal.flush();
+  std::ofstream rows(filename.getValue()+".impact_rows.csv");rows<<std::setprecision(17)<<"time,owner,owner_finger,triangle,feature,gap,normal_before,normal_after,impulse_Ns,nx,ny,nz,px,py,pz,jacobian\n";
+  for(unsigned i=0;i<birth.rows.size();++i){const auto&r=birth.rows[i];auto row=system.shared.films[r.finger].geometry(system.local(birth.before.q,r.finger),r.triangle);Eigen::Vector3d normal=system.layout.mount[r.finger].R*row.normal,point=system.layout.mount[r.finger].origin+system.layout.mount[r.finger].R*row.contact;rows<<birth.time<<','<<i<<','<<r.finger<<','<<r.triangle<<','<<r.feature<<','<<r.gap<<','<<r.normalBefore<<','<<r.normalAfter<<','<<birth.impact.state.impulse(i);for(unsigned d=0;d<3;++d)rows<<','<<normal(d);for(unsigned d=0;d<3;++d)rows<<','<<point(d);rows<<',';for(int k=0;k<birth.J.cols();++k)rows<<(k?" ":"")<<birth.J(i,k);rows<<'\n';}rows.flush();
+  accepted<<dt<<','<<gap<<','<<result.momentumResidual<<','<<result.velocityResidual<<','<<result.iterations<<','<<result.evaluations<<',';auto state=[&](const auto&x){for(int i=0;i<x.size();++i)accepted<<(i?" ":"")<<x(i);};state(result.q);accepted<<',';state(result.v);accepted<<'\n';accepted.flush();
+ }
+};
+}
+extern "C" {
+__attribute__((visibility("default")))void initExternalModule(){}
+__attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmEvent";}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL externally isolated three-film/free sphere event and compressive remainder;NOT general CCD/grasp").add<regrip_three_event::ThreeFilmBracketedEventODE>());}
+}

@@ -182,8 +182,8 @@ public:
  void init()override{
   FilmSuppliedEventImpulse::init();for(auto suffix:{".surface.csv",".states.csv",".constraints.csv",".event_states.csv"})if(std::ifstream(filename.getValue()+suffix))throw std::runtime_error("whole surface journal exists");
   rows.open(filename.getValue()+".surface.csv");states.open(filename.getValue()+".states.csv");
-  rows<<std::setprecision(17)<<"event_time,clear_until,event_id,owner_row,triangle,feature,gap,pre_normal,post_normal,impulse,rank,momentum_residual,impact_loss,b0,b1,b2\n";
-  states<<std::setprecision(17)<<"time,force_time,tension,tension_rate,end_tension,minimum_gap,event_count,sustained,constraint_impulse,projection_impulse,projection_loss,position_residual,local_displacement,local_velocity\n";
+  rows<<std::setprecision(17)<<"event_time,clear_until,event_id,owner_row,triangle,feature,gap,pre_normal,post_normal,impulse,rank,momentum_residual,impact_loss,b0,b1,b2,momentum_energy_defect,kinetic_subtraction_residual\n";
+  states<<std::setprecision(17)<<"time,force_time,tension,tension_rate,end_tension,minimum_gap,event_count,sustained,constraint_impulse,projection_impulse,projection_loss,position_residual,projection_momentum_energy_defect,projection_subtraction_residual,local_displacement,local_velocity\n";
   constraints.open(filename.getValue()+".constraints.csv");constraints<<std::setprecision(17)<<"time,step_owner,row_owner,stage,triangle,feature,gap,impulse,normal_before,normal_after,nx,ny,nz,b0,b1,b2,reduced_jacobian\n";
   eventStates.open(filename.getValue()+".event_states.csv");eventStates<<std::setprecision(17)<<"event_time,event_id,event_tension,event_tension_rate,start_time_sensitivity,event_displacement,pre_velocity,post_velocity\n";
   if(!solverTraceFilename.getValue().empty()){if(std::ifstream(solverTraceFilename.getValue()))throw std::runtime_error("solver trace exists");solverTrace.open(solverTraceFilename.getValue());solverTrace<<std::setprecision(17);solverTrace.setf(std::ios::unitbuf);}
@@ -212,6 +212,8 @@ public:
   EventControl control{parameter<double>("maximumTension"),parameter<double>("rampTime"),parameter<double>("releaseBegin"),parameter<double>("releaseEnd"),parameter<bool>("c2Control")};
   regrip_film_native::CoupledPlaneStep mechanics(model,masses,getContext()->getDt(),damping->getValue(),control.sample(beginTime).tension,beginQ,beginV,std::vector<SurfacePoint>(model.size()),0);
   auto c=center.getValue();auto result=sustainedBE.getValue()?wholeSurfaceContactStep(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control,midpointContact.getValue(),solverTrace.is_open()?&solverTrace:nullptr):wholeSurfaceMidpoint(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control);
+  if(result.position.size()!=model.size()||result.velocity.size()!=model.size()||!std::isfinite(result.minimumGap))throw std::runtime_error("invalid surface accepted dimensions/gap");
+  for(const auto*values:{&result.position,&result.velocity})for(auto p:*values)for(double value:p)if(!std::isfinite(value))throw std::runtime_error("nonfinite surface state rejected BEFORE commit");
   if(!history)history.emplace(beginQ,beginV);
   if(result.event){++eventCount;double eventTime=beginTime+getContext()->getDt()*result.event->fraction;
    history->impact(result.eventPosition,result.preVelocity,result.postVelocity,eventTime);
@@ -220,7 +222,7 @@ public:
    for(const auto*values:{&result.eventPosition,&result.preVelocity,&result.postVelocity}){eventStates<<",\"";for(auto p:*values)for(double value:p)eventStates<<value<<' ';eventStates<<'"';}eventStates<<'\n';eventStates.flush();
    Eigen::VectorXd pre=result.jacobian*mechanics.pack(result.preVelocity);
    for(unsigned k=0;k<result.event->rows.size();++k){const auto&r=result.event->rows[k];const auto&i=*result.impact;
-    rows<<eventTime<<','<<beginTime+getContext()->getDt()*result.event->clearUntil<<','<<eventCount<<','<<r.owner<<','<<r.triangle<<','<<r.feature<<','<<r.gap<<','<<pre(k)<<','<<i.state.normalVelocity(k)<<','<<i.state.impulse(k)<<','<<i.rank<<','<<i.state.momentumResidual<<','<<i.state.energyLoss<<','<<r.barycentric[0]<<','<<r.barycentric[1]<<','<<r.barycentric[2]<<'\n';
+    rows<<eventTime<<','<<beginTime+getContext()->getDt()*result.event->clearUntil<<','<<eventCount<<','<<r.owner<<','<<r.triangle<<','<<r.feature<<','<<r.gap<<','<<pre(k)<<','<<i.state.normalVelocity(k)<<','<<i.state.impulse(k)<<','<<i.rank<<','<<i.state.momentumResidual<<','<<i.state.energyLoss<<','<<r.barycentric[0]<<','<<r.barycentric[1]<<','<<r.barycentric[2]<<','<<i.momentumEnergyDefect<<','<<i.subtractionResidual<<'\n';
    }rows.flush();
   }
   // All geometry/impulse/remainder gates above precede the accepted state commit.
@@ -234,7 +236,7 @@ public:
   root->write(sofa::core::vec_id::write_access::position)->setValue(x);root->write(sofa::core::vec_id::write_access::velocity)->setValue(v);
   sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
   double smoothH=getContext()->getDt()*(result.event?1-result.event->fraction:1);if(smoothH>0)history->accept(result.position,result.velocity,smoothH);
-  states<<acceptedTime<<','<<result.forceTime<<','<<result.tension<<','<<result.tensionRate<<','<<control.sample(acceptedTime).tension<<','<<result.minimumGap<<','<<eventCount<<','<<result.sustained<<','<<result.constraintImpulse<<','<<result.projectionImpulse<<','<<result.projectionLoss<<','<<result.positionResidual<<",\"";
+  states<<acceptedTime<<','<<result.forceTime<<','<<result.tension<<','<<result.tensionRate<<','<<control.sample(acceptedTime).tension<<','<<result.minimumGap<<','<<eventCount<<','<<result.sustained<<','<<result.constraintImpulse<<','<<result.projectionImpulse<<','<<result.projectionLoss<<','<<result.positionResidual<<','<<result.projectionMomentumEnergyDefect<<','<<result.projectionSubtractionResidual<<",\"";
   for(auto p:result.position)for(double value:p)states<<value<<' ';states<<"\",\"";for(auto p:result.velocity)for(double value:p)states<<value<<' ';states<<"\"\n";states.flush();++stepCount;pending=false;
  }
 };

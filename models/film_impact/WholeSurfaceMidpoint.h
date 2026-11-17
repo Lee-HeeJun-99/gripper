@@ -21,6 +21,7 @@ struct WholeSurfaceStep {
  double forceTime=0,tension=0,tensionRate=0,eventTension=0,minimumGap=0;
  bool remainderRequiresContact=false,sustained=false;
  double constraintImpulse=0,projectionImpulse=0,projectionLoss=0,positionResidual=0;
+ double projectionMomentumEnergyDefect=0,projectionSubtractionResidual=0;
  Eigen::RowVectorXd eventFractionIncomingDerivative;
  std::optional<double>absoluteEventStartTimeDerivative;
  std::vector<ConstraintInventoryRow>constraintRows;

@@ -2,7 +2,8 @@
 #include "../models/film_impact/ManyRowImpact.h"
 #include <iostream>
 using namespace regrip_film_impact;
-void check(bool b){if(!b)throw std::runtime_error("whole-surface reference mismatch");}
+void checked(bool b,int line){if(!b)throw std::runtime_error("whole-surface reference mismatch at line"+std::to_string(line));}
+#define check(value) checked((value),__LINE__)
 int main(){try{
  std::vector<std::array<unsigned,3>>triangles{{0,1,2}};
  for(auto points:{std::vector<SurfacePoint>{{2,-3,-3},{2,3,-3},{2,0,3}},
@@ -55,6 +56,11 @@ int main(){try{
  check((exact.velocity-many.state.velocity).norm()<1e-9&&many.state.momentumResidual<1e-12&&many.state.energyLoss>=0);
  Eigen::MatrixXd redundant(256,3);for(int i=0;i<256;++i)redundant.row(i)=J.row(i%3);
  auto large=manyRowImpact(M,redundant,incoming,1e-11);check((large.state.velocity-exact.velocity).norm()<1e-9&&large.rank==3);
+ // Analytic tiny normal loss in the presence of huge unrelated tangential
+ // kinetic energy. Direct kinetic subtraction loses this NONZERO loss.
+ Eigen::Matrix3d tinyMass=Eigen::Vector3d(2,3,4).asDiagonal();Eigen::MatrixXd tinyJ(1,3);tinyJ<<1,0,0;
+ auto tiny=manyRowImpact(tinyMass,tinyJ,Eigen::Vector3d(-1e-8,1e8,1e8),1e-12);
+ check(std::abs(tiny.state.energyLoss/1e-16-1)<1e-14&&tiny.subtractedKineticLoss==0&&std::abs(tiny.momentumEnergyDefect)<=8*std::numeric_limits<double>::epsilon()*1e-16);
  for(int trial=0;trial<20;++trial){
   Eigen::Matrix3d A;A<<2,.1*trial,.2,.3,1.5,.1,.2,.1,1;
   Eigen::Matrix3d mass=A.transpose()*A;

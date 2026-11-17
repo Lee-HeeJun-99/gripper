@@ -49,6 +49,7 @@ inline WholeSurfaceStep sustainedSurface(const regrip_film_native::CoupledPlaneS
   Eigen::MatrixXd J(rows.size(),m.freeSize);for(unsigned i=0;i<rows.size();++i)J.row(i)=rows[i];
   auto projected=manyRowImpact(filmMass(m),J,m.pack(out.velocity),1e-10);
   out.projectionImpulse=projected.state.impulse.sum();out.projectionLoss=projected.state.energyLoss;
+  out.projectionMomentumEnergyDefect=projected.momentumEnergyDefect;out.projectionSubtractionResidual=projected.subtractionResidual;
   out.velocity=m.expand(projected.state.velocity);
   for(unsigned k=0;k<projectionRows.size();++k){auto&row=projectionRows[k];row.impulse=projected.state.impulse(k);row.normalAfter=projected.state.normalVelocity(k);out.constraintRows.push_back(std::move(row));}
  }
@@ -68,6 +69,7 @@ inline WholeSurfaceStep wholeSurfaceContactStep(const regrip_film_native::Couple
   auto contact=sustainedSurface(after,triangles,center,radius,beginTime+elapsed,control,midpointContact,trace);
   out.position=std::move(contact.position);out.velocity=std::move(contact.velocity);out.minimumGap=contact.minimumGap;out.sustained=true;
   out.constraintImpulse=contact.constraintImpulse;out.projectionImpulse=contact.projectionImpulse;out.projectionLoss=contact.projectionLoss;out.positionResidual=contact.positionResidual;
+  out.projectionMomentumEnergyDefect=contact.projectionMomentumEnergyDefect;out.projectionSubtractionResidual=contact.projectionSubtractionResidual;
   out.constraintRows=std::move(contact.constraintRows);
   out.forceTime=contact.forceTime;out.tension=contact.tension;out.tensionRate=contact.tensionRate;
   out.remainderRequiresContact=false;

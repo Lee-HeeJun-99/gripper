@@ -37,7 +37,7 @@ inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePa
  const std::vector<std::array<unsigned,3>>&triangles,SurfacePoint center,double radius,
  double fractionTolerance=1e-10,double gapTolerance=1e-10,bool sweptPlaneExclusion=true){
  using namespace regrip_film_rail;using regrip_film_sphere::ClosestPrimitive;
- path.validate();if(triangles.empty()||!std::isfinite(radius)||radius<=0||fractionTolerance<=0||gapTolerance<=0)
+ path.validate();if(triangles.empty()||!std::isfinite(radius)||radius<=0||!std::isfinite(fractionTolerance)||!std::isfinite(gapTolerance)||fractionTolerance<=0||gapTolerance<=0)
   throw std::invalid_argument("surface event input");
  for(double v:center)if(!std::isfinite(v))throw std::invalid_argument("surface center");
  for(const auto&t:triangles)certifyTrianglePath(path,t);

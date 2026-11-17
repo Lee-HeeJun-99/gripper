@@ -2,8 +2,8 @@
 
 ## Latest checkpoint — actual persistent collocation through763
 
-Project NOT COMPLETE. Prior functional event commit0d36cbe;the functional commit
-owning this update adds collocation and measured actual validation. No OS-memory
+Project NOT COMPLETE. Last verified functional commit d6c2eb1 (collocation and
+actual validation);prior event commit0d36cbe. No OS-memory
 exhaustion or automatic background restart is claimed. Recorded completed jobs
 are complete;historical RUNNING labels are not authoritative.
 
@@ -16,6 +16,13 @@ PASS:740 math/FD;741/751 coordinate-vs-shared FEM;actual742/743/744 and753/754/7
 749/759/763 used-row pullback;762 whole endpoint/mapping/actual FF;735 unchanged
 default five physical CSVs. Actual impact momenta absent in these persistent
 coupons are NULL,not measured0. Actual figures/OBJ762 and time plot761.
+Guarded actual comparison plot764 independently checks identical physical inputs
+and selects the finest grid by actual step count. No displacement amplification.
+
+No experiments are left running at this savepoint;completed guarded process
+records,not a separate sandbox's process listing,determine this statement.
+Current remaining stop-relevant issue is NOT an OS limit:full combined event/
+persistent path is still unimplemented. Do not report this as project completion.
 
 FAIL preserved:722–724 unit-mass residual floor;737 Radau normal force0.245223%;
 705625us reintegrated-midpoint and657 original C2 time. BLOCKED:full energy,

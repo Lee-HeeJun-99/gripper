@@ -11,8 +11,10 @@
 #include <sofa/linearalgebra/FullMatrix.h>
 #include <fstream>
 #include <iomanip>
+namespace sofa::component::odesolver::backward {void registerReGripRigidBE(sofa::core::ObjectFactory*);}
 namespace regrip_rigid_reference {
 void registerFilmRigidImpulse(sofa::core::ObjectFactory*);
+void registerNativeFreeBodyProbe(sofa::core::ObjectFactory*);
 class RigidSuppliedPlaneFlight final:public sofa::core::behavior::OdeSolver {
 public:
  using Base=sofa::core::behavior::OdeSolver;
@@ -67,5 +69,5 @@ public:
 extern "C"{
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripRigidImpactReference";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Actual free isotropic Rigid3 supplied material-point impact plus isolated exact flight;NOT film coupling/whole-body CCD/grasp").add<regrip_rigid_reference::RigidSuppliedPlaneFlight>());regrip_rigid_reference::registerFilmRigidImpulse(f);}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Actual free isotropic Rigid3 supplied material-point impact plus isolated exact flight;NOT film coupling/whole-body CCD/grasp").add<regrip_rigid_reference::RigidSuppliedPlaneFlight>());regrip_rigid_reference::registerFilmRigidImpulse(f);regrip_rigid_reference::registerNativeFreeBodyProbe(f);sofa::component::odesolver::backward::registerReGripRigidBE(f);}
 }

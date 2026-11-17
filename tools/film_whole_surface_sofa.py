@@ -5,8 +5,17 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 SDK=Path('/home/ubuntu/SOFA/v26.06.00')
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--mode',choices=('impact','c2','touch','touch-cycle'),default='impact');p.add_argument('--steps',type=int,default=1);p.add_argument('--duration',type=float,default=.001);p.add_argument('--reuse');p.add_argument('--sustained-be',action='store_true');p.add_argument('--owner-ode',action='store_true');a=p.parse_args()
-    if a.steps<1 or a.steps>20 or not 0<a.duration<=.1:raise ValueError('new owner first requires bounded20step/.1s profile')
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--mode',choices=('impact','c2','touch','touch-cycle'),default='impact');p.add_argument('--steps',type=int,default=1);p.add_argument('--duration',type=float,default=.001);p.add_argument('--reuse');p.add_argument('--sustained-be',action='store_true');p.add_argument('--owner-ode',action='store_true');p.add_argument('--profile');p.add_argument('--midpoint-contact',action='store_true');p.add_argument('--restart-case');a=p.parse_args()
+    if a.midpoint_contact and not a.sustained_be:raise ValueError('midpoint contact requires explicit sustained branch')
+    runtime_limit=120;prediction=None
+    if a.steps<1 or not 0<a.duration:raise ValueError('positive step count and duration required')
+    if a.steps>20 or a.duration>.1:
+        if not a.profile or not a.reuse or not a.owner_ode or a.mode!='c2' or a.steps>1600 or a.duration>1:raise ValueError('extended original C2 onset requires measured same-binary owner profile;bounded1s/1600steps')
+        prior=ROOT/'results'/('autonomous_film_'+a.profile);measured=json.loads((prior/'summary.json').read_text());meta=json.loads((prior/'identity.json').read_text())
+        if measured['status']!='PASS' or not meta.get('owner_ode'):raise ValueError('completed owner profile required')
+        prediction=2*measured['process']['runtime_s']*a.steps/meta['steps']
+        if prediction>480:raise ValueError('profiled twofold-margin runtime exceeds480s policy')
+        runtime_limit=480
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py')
     build=ROOT/'build'/('film_whole_surface_'+a.tag);build.mkdir(exist_ok=False);archive=out/'sources'
     shutil.copytree(ROOT/'models/film_impact',archive/'models/film_impact')
@@ -14,12 +23,14 @@ def main():
         target=archive/'models'/name;target.mkdir()
         for s in (ROOT/'models'/name).glob('*.h'):shutil.copy2(s,target/s.name)
     identity=dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources={str(s.relative_to(archive)):sha(s) for s in archive.rglob('*') if s.is_file()},sdk=str(SDK),mode=a.mode,steps=a.steps,duration=a.duration,sustained_be=a.sustained_be,owner_ode=a.owner_ode,contact_law='fixed sphere plastic impact;quadratic midpoint path;optional independent BE-position/velocity-impulse split')
+    identity.update(profile=a.profile,predicted_seconds_with_margin=prediction,child_limit=runtime_limit,midpoint_contact=a.midpoint_contact)
     stages={};write_json(out/'identity.json',identity)
     if a.reuse:
         old=ROOT/'results'/('autonomous_film_'+a.reuse);prior=json.loads((old/'identity.json').read_text())
         if prior['sources']!=identity['sources']:raise ValueError('compiled source drift')
         build=ROOT/'build'/('film_whole_surface_'+a.reuse)
         if sha(build/'libReGripImpactReference.so')!=prior['binary_sha256']:raise ValueError('binary drift')
+        if a.profile and json.loads((ROOT/'results'/('autonomous_film_'+a.profile)/'identity.json').read_text())['binary_sha256']!=prior['binary_sha256']:raise ValueError('profile binary differs')
         stages['build']=dict(exit_code=0,reused=a.reuse)
     else:
         stages['configure']=guarded(['cmake','-S',archive/'models/film_impact','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120)
@@ -51,14 +62,24 @@ def main():
             field.set('rampTime','.02');field.set('releaseBegin','.04');field.set('releaseEnd','.06')
         field.set('filename',str(out/'film.csv'));field.set('displacementFilename',str(out/'displacement.csv'))
         center=scene.find("Node[@name='fixed']/MechanicalObject").get('position')
-        ET.SubElement(scene,'RequiredPlugin',pluginName=str(binary));ET.SubElement(scene,'FilmWholeSurfaceEventOwner',name='surfaceOwner',root='@dofs',field='@assembly/filmField',center=center,radius='8.01',sustainedBE=str(int(a.sustained_be)),odeDriven=str(int(a.owner_ode)),filename=str(out/'event.csv'))
+        start_time=0
+        if a.restart_case:
+            if a.mode!='c2' or not a.owner_ode:raise ValueError('replay requires actual C2 sole owner')
+            original=ROOT/'results'/('autonomous_film_'+a.restart_case);oldmeta=json.loads((original/'identity.json').read_text())
+            if oldmeta['mode']!='c2' or not oldmeta.get('owner_ode') or oldmeta.get('midpoint_contact',False)!=a.midpoint_contact:raise ValueError('replay mechanical/integration model differs')
+            for key,value in identity['sources'].items():
+                if key.startswith(('models/film_shell/','models/film_rail_tendon/')) and oldmeta['sources'].get(key)!=value:raise ValueError('replay underlying mechanical source differs')
+            saved=list(csv.DictReader((original/'event.csv.states.csv').open()))[-1];start_time=float(saved['time'])
+            root_dofs=scene.find("MechanicalObject[@name='dofs']");root_dofs.set('position',saved['local_displacement']);root_dofs.set('velocity',saved['local_velocity'])
+            identity['accepted_replay']=dict(source=a.restart_case,source_status=json.loads((original/'summary.json').read_text())['status'],state_file_sha256=sha(original/'event.csv.states.csv'),physical_start_time=start_time,note='last committed state from explicit accepted owner journal;NOT full trajectory convergence',legacy_ff_cumulative_work='INVALID across replay origin:legacy FF previousLength/previousT reset;do not use this replay for cumulative work/energy certification')
+        ET.SubElement(scene,'RequiredPlugin',pluginName=str(binary));ET.SubElement(scene,'FilmWholeSurfaceEventOwner',name='surfaceOwner',root='@dofs',field='@assembly/filmField',center=center,radius='8.01',sustainedBE=str(int(a.sustained_be)),midpointContact=str(int(a.midpoint_contact)),odeDriven=str(int(a.owner_ode)),replayStartTime=str(start_time),filename=str(out/'event.csv'))
         if a.owner_ode:
             for e in list(scene):
                 if e.tag in ('ReGripBDFSolver','NewtonRaphsonSolver','ReGripMatrixLinearSystem','EigenSparseLU','FreeMotionAnimationLoop','BlockGaussSeidelConstraintSolver','LinearSolverConstraintCorrection','CollisionPipeline','BruteForceBroadPhase','BVHNarrowPhase','MinProximityIntersection','CollisionResponse'):scene.remove(e)
             ET.SubElement(scene,'FilmSurfaceODESolver',name='ode',rayleighMass='2')
             ET.SubElement(scene,'DefaultAnimationLoop')
         path=out/'scene.scn';tree.write(path);write_json(out/'identity.json',identity)
-        process=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(a.steps),'--hideProgressBar',path],out/'process',120);result['process']=process
+        process=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(a.steps),'--hideProgressBar',path],out/'process',runtime_limit);result['process']=process
         try:
             log=(out/'process/stdout.log').read_text()+(out/'process/stderr.log').read_text()
             if process['exit_code'] or '[ERROR]' in log:raise ValueError('actual engine/owner failure')
@@ -69,7 +90,7 @@ def main():
                     numbers=value.split() if key in ('local_displacement','local_velocity') else [value]
                     if not numbers or not all(math.isfinite(float(v)) for v in numbers):raise ValueError('nonfinite/missing accepted '+key)
                 if float(s['minimum_gap']) < -1e-10:raise ValueError('whole endpoint gap gate failed')
-            if abs(float(states[-1]['time'])-a.duration)>1e-12:raise ValueError('wrong physical end time')
+            if abs(float(states[-1]['time'])-start_time-a.duration)>1e-12:raise ValueError('wrong physical end time')
             matched=all(float(s['end_tension'])==float(r['T_per_rail']) for s,r in zip(states,actual))
             if not matched:raise ValueError('FF and owner shared end-time C2 mismatch')
             if a.mode=='impact' and not rows:raise ValueError('impact expected but not observed')

@@ -34,7 +34,7 @@ def main():
     # Repository-native implementations and reports, not an invented global
     # SDK certificate. Dynamic dependency logs remain part of every trial.
     for top in ('models/film_shell','models/film_rail_tendon','models/film_native_contact',
-                'models/film_sphere_contact','models/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
+                'models/film_sphere_contact','models/film_impact','diagnostics/film_impact','diagnostics/film_sphere_contact','diagnostics/film_rail_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
     for pattern in ('tools/film_*.py','tests/test_film*','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',

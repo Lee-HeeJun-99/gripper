@@ -28,6 +28,18 @@ int main(){try{
  auto doubleHit=earliestSurfaceEvent(opposed,{{0,1,2},{3,4,5}},{0,0,0},1);
  check(doubleHit&&doubleHit->rows.size()==2&&std::abs(doubleHit->fraction-.25)<1e-9);
  check(doubleHit->rows[0].normal[0]*doubleHit->rows[1].normal[0]<-.99);
+ auto rotated=one;
+ auto rotation=[](SurfacePoint p){return SurfacePoint{-p[1],p[0],p[2]};};
+ for(auto&p:rotated.a0){p=rotation(p);p[0]+=7;p[1]-=2;p[2]+=3;}
+ for(auto&p:rotated.a1)p=rotation(p);for(auto&p:rotated.a2)p=rotation(p);
+ auto rigid=earliestSurfaceEvent(rotated,triangles,{7,-2,3},1);
+ check(rigid&&std::abs(rigid->fraction-.25)<1e-9&&std::abs(rigid->rows[0].normal[1]-1)<1e-12);
+ // Strictly separated high tangential motion: the old global-speed advance
+ // exhausts its finite budget, whereas a swept separating plane proves clear.
+ auto tangential=one;for(auto&p:tangential.a0)p[0]=1.0001;
+ tangential.a1.assign(3,{0,1000000,0});
+ check(!earliestSurfaceEvent(tangential,triangles,{0,0,0},1));
+ bool oldBudget=false;try{earliestSurfaceEvent(tangential,triangles,{0,0,0},1,1e-10,1e-10,false);}catch(const std::runtime_error&){oldBudget=true;}check(oldBudget);
  bool rejected=false;auto grazing=curved;grazing.a1.assign(3,{-4,0,0});grazing.a2.assign(3,{4,0,0});
  try{earliestSurfaceEvent(grazing,triangles,{0,0,0},1);}catch(const std::runtime_error&){rejected=true;}check(rejected);
  rejected=false;try{earliestSurfaceEvent(one,{{0,0,0}},{0,0,0},1);}catch(const std::runtime_error&){rejected=true;}check(rejected);

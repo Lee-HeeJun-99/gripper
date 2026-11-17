@@ -1,5 +1,6 @@
 #pragma once
 #include "../film_sphere_contact/ClosestPrimitive.h"
+#include "SweptPlane.h"
 #include <array>
 #include <optional>
 namespace regrip_film_impact {
@@ -22,29 +23,41 @@ struct QuadraticSurfacePath {
    speed=std::max(speed,std::sqrt(square));
   }return std::nextafter(static_cast<double>(speed),std::numeric_limits<double>::infinity());
  }
+ double triangleSpeedBound(const std::array<unsigned,3>&triangle,double begin)const{
+  long double speed=0;for(unsigned i:triangle)for(double a:{begin,1.}){
+   long double square=0;for(unsigned d=0;d<3;++d){long double v=static_cast<long double>(a1.at(i)[d])+2*static_cast<long double>(a)*a2.at(i)[d];square+=v*v;}
+   speed=std::max(speed,std::sqrt(square));
+  }return std::nextafter(static_cast<double>(speed),std::numeric_limits<double>::infinity());
+ }
 };
 struct SurfaceEventRow {unsigned owner,triangle,feature;double gap,rate;std::array<unsigned,3>support;std::array<double,3>barycentric;SurfacePoint normal;};
 struct SurfaceEvent {double fraction,clearUntil;unsigned evaluations;std::vector<SurfaceEventRow>rows;};
 inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePath&path,
  const std::vector<std::array<unsigned,3>>&triangles,SurfacePoint center,double radius,
- double fractionTolerance=1e-10,double gapTolerance=1e-10){
+ double fractionTolerance=1e-10,double gapTolerance=1e-10,bool sweptPlaneExclusion=true){
  using namespace regrip_film_rail;using regrip_film_sphere::ClosestPrimitive;
  path.validate();if(triangles.empty()||!std::isfinite(radius)||radius<=0||fractionTolerance<=0||gapTolerance<=0)
   throw std::invalid_argument("surface event input");
  for(double v:center)if(!std::isfinite(v))throw std::invalid_argument("surface center");
  unsigned evaluations=0;
- struct Sample{double gap,rate;};
- auto sample=[&](double a){auto x=path.position(a),v=path.derivative(a);Sample result{std::numeric_limits<double>::infinity(),0};
+ struct Sample{double gap,rate,advance;};
+ auto sample=[&](double a){auto x=path.position(a),v=path.derivative(a);Sample result{std::numeric_limits<double>::infinity(),0,std::numeric_limits<double>::infinity()};
   for(auto t:triangles){std::vector<Point>p;for(unsigned i:t)p.push_back(x.at(i));auto e=ClosestPrimitive::evaluate(p,center,radius);++evaluations;
+   Point direction{e.point[0].v-center[0],e.point[1].v-center[1],e.point[2].v-center[2]};
+   if(sweptPlaneExclusion&&sweptSupportingPlaneClear(path,t,center,radius,a,direction))continue;
+   // Every remaining triangle must remain clear, but distant fast nodes do
+   // not bound the motion of this material triangle. This retains the same
+   // Hausdorff-distance proof with a sharper per-triangle speed bound.
+   result.advance=std::min(result.advance,e.gap.v/path.triangleSpeedBound(t,a));
    double rate=0;for(unsigned j=0;j<9;++j)rate+=e.gap.g[j]*v[t[j/3]][j%3];
-   if(e.gap.v<result.gap)result={e.gap.v,rate};
+   if(e.gap.v<result.gap){result.gap=e.gap.v;result.rate=rate;}
   }return result;
  };
  double a=0,L=path.speedBound();auto current=sample(a);
  if(!(current.gap>0))throw std::domain_error("surface birth requires strictly separated initial surface;use sustained/release state");
  if(L==0)return std::nullopt;
  for(unsigned iteration=0;iteration<512;++iteration){
-  if(current.gap/L>1-a)return std::nullopt;
+  if(current.advance>1-a)return std::nullopt;
   double root=a;
   bool found=current.gap==0&&current.rate<0;
   if(!found&&current.gap<=gapTolerance&&current.rate<0){
@@ -70,7 +83,7 @@ inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePa
    }
    if(event.rows.empty())throw std::runtime_error("surface event has no owned entering rows");return event;
   }
-  double next=std::min(1.,a+current.gap/L);
+  double next=std::min(1.,a+current.advance);
   if(next<=a)throw std::runtime_error("unresolved surface grazing/roundoff;no epsilon denominator");
   a=next;current=sample(a);
   if(current.gap<0&&std::abs(current.gap)>gapTolerance)throw std::runtime_error("surface advance lost clearance bound");

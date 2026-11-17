@@ -14,6 +14,7 @@ def main():
     for name in a.cases:
         d=ROOT/'results'/('autonomous_film_'+name);identity=json.loads((d/'identity.json').read_text());summary=json.loads((d/'summary.json').read_text())
         if summary['status']!='PASS':raise ValueError('incomplete/failed input '+name)
+        if identity.get('accepted_replay'):raise ValueError('replay is not a complete time-refinement trajectory;FF work inventory resets')
         states=read(d/'event.csv.states.csv');film=read(d/'film.csv');events=read(d/'event.csv.surface.csv')
         if not identity.get('owner_ode'):raise ValueError('assessment requires ODE-stage committed states')
         cases.append((name,identity,states,film,events))
@@ -44,7 +45,15 @@ def main():
             if len(la)!=len(ra):result['event_count']=dict(status='FAIL',left=len(la),right=len(ra))
             elif la:
                 for k,key in enumerate(('event_time','total_impact_impulse','impact_loss')):result[key]=error([r[k] for r in la],[r[k] for r in ra])
-            pair=left[0]+'__'+right[0];metrics[pair]=dict(common_times=times,metrics=result)
+            phases={}
+            if la and ra:
+                entryLow=min(la[0][0],ra[0][0]);entryHigh=max(la[0][0],ra[0][0])
+                for phase,selected in (('pre_contact',[t for t in times if t<entryLow]),('entry',[t for t in times if entryLow<=t<=entryHigh]),('post_contact',[t for t in times if t>entryHigh])):
+                    if not selected:phases[phase]=dict(status='NOT SAMPLED',sample_count=0);continue
+                    phase_errors={key:error([float(lf[t][key]) for t in selected],[float(rf[t][key]) for t in selected]) for key in ('U_shell','U_attachment','K','tendon_work')}
+                    phases[phase]=dict(sample_count=len(selected),first_time=selected[0],last_time=selected[-1],metrics=phase_errors)
+                    passed &= all(v['status']=='PASS' for v in phase_errors.values())
+            pair=left[0]+'__'+right[0];metrics[pair]=dict(common_times=times,metrics=result,phases=phases)
             passed &= all(v['status']=='PASS' for v in result.values())
     os.environ.setdefault('MPLCONFIGDIR',str(out/'matplotlib_cache'))
     import matplotlib

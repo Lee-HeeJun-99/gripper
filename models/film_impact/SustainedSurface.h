@@ -1,6 +1,7 @@
 #pragma once
 #include "WholeSurfaceMidpoint.h"
 #include "../film_sphere_contact/CandidateClosure.h"
+#include "MidpointPosition.h"
 namespace regrip_film_impact {
 // Independent dissipative BE-position / mass-metric velocity-projection split.
 // Position uses existing variational mechanics/candidate closure. Velocity is
@@ -9,7 +10,7 @@ namespace regrip_film_impact {
 // NOT a new physical collision atom,Coulomb heat or viscous damping.
 inline WholeSurfaceStep sustainedSurface(const regrip_film_native::CoupledPlaneStep&m,
  const std::vector<std::array<unsigned,3>>&triangles,SurfacePoint center,double radius,
- double beginTime,const EventControl&control){
+ double beginTime,const EventControl&control,bool midpointContact=false){
  using namespace regrip_film_native;using namespace regrip_film_sphere;
  auto initialRest=m.model.rest();
  for(auto t:triangles){std::vector<Point>p;for(unsigned i:t)p.push_back(add(initialRest[i],m.previous[i]));auto e=ClosestPrimitive::evaluate(p,center,radius);
@@ -18,9 +19,10 @@ inline WholeSurfaceStep sustainedSurface(const regrip_film_native::CoupledPlaneS
  }
  auto endControl=control.sample(beginTime+m.h);
  CoupledContactStep mechanics(m.model,m.mass,m.h,m.damping,endControl.tension,m.previous,m.previousVelocity,{},true,true);
- auto accepted=CandidateClosure::solve(mechanics,center,radius,triangles,m.previousVelocity,true,nullptr,8,true);
+ auto accepted=midpointContact?midpointPosition(m,triangles,center,radius,control.sample(beginTime+m.h/2).tension):CandidateClosure::solve(mechanics,center,radius,triangles,m.previousVelocity,true,nullptr,8,true);
  WholeSurfaceStep out;out.position=accepted.mechanical.displacement;out.velocity=accepted.mechanical.velocity;
- out.sustained=true;out.forceTime=beginTime+m.h;out.tension=endControl.tension;out.tensionRate=endControl.rate;
+ auto applied=control.sample(beginTime+m.h*(midpointContact?.5:1));
+ out.sustained=true;out.forceTime=beginTime+m.h*(midpointContact?.5:1);out.tension=applied.tension;out.tensionRate=applied.rate;
  out.positionResidual=accepted.mechanical.residual;out.constraintImpulse=accepted.mechanical.lambda.sum();
  std::vector<Eigen::RowVectorXd>rows;auto rest=m.model.rest();out.minimumGap=std::numeric_limits<double>::infinity();
  auto inventory=[&](unsigned id,const auto&e,int stage,double impulse){
@@ -55,18 +57,19 @@ inline WholeSurfaceStep sustainedSurface(const regrip_film_native::CoupledPlaneS
 }
 inline WholeSurfaceStep wholeSurfaceContactStep(const regrip_film_native::CoupledPlaneStep&m,
  const std::vector<std::array<unsigned,3>>&triangles,SurfacePoint center,double radius,
- double beginTime,const EventControl&control){
+ double beginTime,const EventControl&control,bool midpointContact=false){
  using namespace regrip_film_native;auto rest=m.model.rest();double initialGap=std::numeric_limits<double>::infinity();
  for(auto t:triangles){std::vector<Point>p;for(unsigned i:t)p.push_back(add(rest[i],m.previous[i]));initialGap=std::min(initialGap,regrip_film_sphere::ClosestPrimitive::evaluate(p,center,radius).gap.v);}
  if(initialGap< -1e-10)throw std::domain_error("initial surface penetration outside declared gap gate");
- if(initialGap<=1e-10)return sustainedSurface(m,triangles,center,radius,beginTime,control);
+ if(initialGap<=1e-10)return sustainedSurface(m,triangles,center,radius,beginTime,control,midpointContact);
  auto out=wholeSurfaceMidpoint(m,triangles,center,radius,beginTime,control,true);
  if(out.remainderRequiresContact){double elapsed=m.h*out.event->fraction,remaining=m.h-elapsed;
   CoupledPlaneStep after(m.model,m.mass,remaining,m.damping,control.sample(beginTime+elapsed).tension,out.eventPosition,out.postVelocity,std::vector<Point>(rest.size()),0);
-  auto contact=sustainedSurface(after,triangles,center,radius,beginTime+elapsed,control);
+  auto contact=sustainedSurface(after,triangles,center,radius,beginTime+elapsed,control,midpointContact);
   out.position=std::move(contact.position);out.velocity=std::move(contact.velocity);out.minimumGap=contact.minimumGap;out.sustained=true;
   out.constraintImpulse=contact.constraintImpulse;out.projectionImpulse=contact.projectionImpulse;out.projectionLoss=contact.projectionLoss;out.positionResidual=contact.positionResidual;
   out.constraintRows=std::move(contact.constraintRows);
+  out.forceTime=contact.forceTime;out.tension=contact.tension;out.tensionRate=contact.tensionRate;
   out.remainderRequiresContact=false;
  }
  return out;

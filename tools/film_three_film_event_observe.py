@@ -8,7 +8,7 @@ def main():
  if meta['status']!='PASS':raise ValueError('completed actual event run required')
  for name,digest in meta['raw_hashes'].items():
   if sha(src/name)!=digest:raise ValueError('actual raw changed:'+name)
- scene=ET.parse(src/'scene.scn');top=scene.find('.//TriangleSetTopologyContainer');rest=np.fromstring(top.get('position'),sep=' ').reshape(-1,3);tri=np.fromstring(top.get('triangles'),sep=' ',dtype=int).reshape(-1,3);event=next(csv.DictReader((src/'three.event.csv').open()));rows=list(csv.DictReader((src/'three.impact_rows.csv').open()));end=next(csv.DictReader((src/'three.states.csv').open()));index=np.full(rest.size,-1,dtype=int);weight=np.ones(rest.size);nf=0
+ scene=ET.parse(src/'scene.scn');top=scene.find('.//TriangleSetTopologyContainer');rest=np.fromstring(top.get('position'),sep=' ').reshape(-1,3);tri=np.fromstring(top.get('triangles'),sep=' ',dtype=int).reshape(-1,3);event=next(csv.DictReader((src/'three.event.csv').open()));rows=list(csv.DictReader((src/'three.impact_rows.csv').open()));end=list(csv.DictReader((src/'three.states.csv').open()))[-1];index=np.full(rest.size,-1,dtype=int);weight=np.ones(rest.size);nf=0
  for offset,ny in ((0,5),(105,3),(168,3)):
   for i in range(1,21):
    for j in range(ny):
@@ -22,7 +22,7 @@ def main():
  theta=float(dims['mount_angle']);frames=[]
  for f in range(3):
   phi=2*np.pi*f/3;rad=np.array([np.cos(phi),np.sin(phi),0]);tan=np.array([-np.sin(phi),np.cos(phi),0]);R=np.column_stack((-np.sin(theta)*rad-np.cos(theta)*np.array([0,0,1]),tan,np.cos(theta)*rad-np.sin(theta)*np.array([0,0,1])));frames.append((R,50*rad-12*R[:,1]))
- q=np.fromstring(event['qminus'],sep=' ');vm=np.fromstring(event['vminus'],sep=' ');vp=np.fromstring(event['vplus'],sep=' ');qe=np.fromstring(event['qend'],sep=' ');ve=np.fromstring(event['vend'],sep=' ');impulse=np.fromstring(event['impulse'],sep=' ');J=np.array([np.fromstring(r['jacobian'],sep=' ') for r in rows]);mass_tokens=np.fromstring((src/'public_mass_reference.txt').read_text(),sep=' ');count=int(mass_tokens[0]);masses=mass_tokens[1:1+3*count].reshape(3,count);diagonal=np.zeros(len(q))
+ q=np.fromstring(event['qminus'],sep=' ');vm=np.fromstring(event['vminus'],sep=' ');vp=np.fromstring(event['vplus'],sep=' ');qe=np.fromstring(end['q'],sep=' ');ve=np.fromstring(end['v'],sep=' ');impulse=np.fromstring(event['impulse'],sep=' ');J=np.array([np.fromstring(r['jacobian'],sep=' ') for r in rows]);mass_tokens=np.fromstring((src/'public_mass_reference.txt').read_text(),sep=' ');count=int(mass_tokens[0]);masses=mass_tokens[1:1+3*count].reshape(3,count);diagonal=np.zeros(len(q))
  for f in range(3):
   for node in range(count):
    for d in range(3):
@@ -46,7 +46,7 @@ def main():
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');os.environ.setdefault('MPLCONFIGDIR',str(out/'matplotlib_cache'));import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  from matplotlib.collections import PolyCollection
  initial=q.copy();initial[:3*nf]=0;initial[-6:-3]=[float(x) for x in scene.find('Node[@name="free_object"]/MechanicalObject').get('position').split()[:3]]
- for label,state,time in (('initial',initial,0),('pre_impact',q,float(event['event_time'])),('post_impact',q,float(event['event_time'])),('remaining_step_end',qe,.0002)):
+ for label,state,time in (('initial',initial,0),('pre_impact',q,float(event['event_time'])),('post_impact',q,float(event['event_time'])),('accepted_end',qe,float(end['time']))):
   fig,axes=plt.subplots(1,3,figsize=(14,4));vertices=[];faces=[]
   for f,(R,origin) in enumerate(frames):
    world=(rest+expand(state,f))@R.T+origin;vertices.extend(world.tolist());faces.extend((tri+f*len(rest)+1).tolist())

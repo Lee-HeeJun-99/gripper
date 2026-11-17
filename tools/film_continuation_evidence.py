@@ -14,7 +14,7 @@ from curve_common import ROOT,sha,write_json
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--verify',action='store_true');p.add_argument('--min-campaign',type=int,default=147);a=p.parse_args()
-    if not 147<=a.min_campaign<=999:raise ValueError('continuation campaign range147..999')
+    if not 147<=a.min_campaign<=99999:raise ValueError('continuation campaign identifier range147..99999;not a runtime/physics budget')
     if not re.fullmatch(r'[A-Za-z0-9_]+',a.name):raise ValueError('ledger name')
     ledger=ROOT/'reports'/('FILM_CONTACT_EVIDENCE_'+a.name+'.json')
     if a.verify:
@@ -46,7 +46,7 @@ def main():
         for path in ROOT.glob(pattern):record(path)
     for directory in sorted((ROOT/'results').glob('autonomous_film_*')):
         match=re.search(r'(\d+)$',directory.name)
-        if not match or not a.min_campaign<=int(match.group())<=999:continue
+        if not match or not a.min_campaign<=int(match.group())<=99999:continue
         summary=directory/'summary.json'
         state=json.loads(summary.read_text()) if summary.exists() else {}
         campaigns[directory.name]=dict(status=state.get('status',state.get('time_status',state.get('discrete_identity_status','NOT ASSESSED'))),

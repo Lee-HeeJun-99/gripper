@@ -35,7 +35,7 @@ def main():
    result['status']='PASS' if all(v==0 for v in differences.values()) and result['minimum_gap_mm']>=-1e-10 and result['momentum_Ns']<=1e-17 and result['normal_velocity_mm_s']<=1e-10 else 'FAIL'
    if a.sustained:
     expected=list(csv.DictReader((out/'reference.csv.states.csv').open()));error={k:max(float(np.max(abs(np.fromstring(x[k],sep=' ')-np.fromstring(y[k],sep=' ')))) for x,y in zip(states,expected)) for k in ('q','v')};result['continued_reference_max_abs']=error;result['minimum_gap_mm']=min(float(x['minimum_gap']) for x in states)
-    if len(expected)!=8 or any(error[k]>1e-11 for k in error) or result['minimum_gap_mm']< -1e-10:result['status']='FAIL'
+    if len(expected)!=8 or any(error[k]>=1e-12 for k in error) or result['minimum_gap_mm']< -1e-10:result['status']='FAIL'
    result['raw_hashes']={f.name:sha(f) for f in out.glob('*.csv')}
  write_json(out/'summary.json',result);print(json.dumps({k:result[k] for k in ('status','scope','reference_max_abs','process','sofa_errors') if k in result}))
 if __name__=='__main__':main()

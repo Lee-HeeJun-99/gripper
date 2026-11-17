@@ -1,5 +1,24 @@
 # Autonomous research log
 
+## Latest checkpoint through1011 — NOT project completion
+
+See THREE_FILM_PEAK_AND_FIRST_ENERGY_20261118.md for actual versus independent
+evidence. Actual1002 completes50x200us to FIRST C2 peak10ms;not wrapping/lift.
+1006 catches an erroneous new-runner1e-11 API threshold and restores the
+original STRICT1e-12. Old1002 PASS must not be used unqualified. Same-binary
+clock counterfactual1008 identifies accumulated-versus-multiplied input time:
+1009 matched-clock reassessment q/v EXACT,strict1e-12 PASS;old FAIL preserved.
+1010 actual first-interval journal OFF/ON:eleven physical CSVs byte-identical.
+1011 actual-stage first200us inventory residual-1.38829e-17Nmm,NOT heat/full
+energy certificate. Root-reaction work still null.1005 observer-origin error
+preserved;1007 uses existing T*(length-2L),not a new force or energy correction.
+Overall time997 remains FAIL;generic release/friction/self-contact/mesh/full
+energy/wrapping/lift/holding/12wrench/Grasp Optuna remain unqualified.
+10ms is a diagnostic,not a complete adaptation cycle;1001 is a conditional
+independent Rayleigh trial,not an actual mode or measured material result.
+Lower RUNNING/next-task entries are historical,not current process claims.
+
+
 ## Latest implementation checkpoint — actual three-film event/continuation
 
 See THREE_FILM_EVENT_20261118.md and THREE_FILM_POST_CONTACT_20261118.md.

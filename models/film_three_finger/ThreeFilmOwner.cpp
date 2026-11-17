@@ -18,6 +18,10 @@ public:
  ThreeFilmPersistentODE(){radius.setValue(30.01);}
  virtual bool drivenPilot()const{return false;}
  virtual bool exactDistanceOrder()const{return false;}
+ // Explicit extension points:original owners retain identical REST/window checks.
+ // A separate checkpoint owner must validate its complete saved state instead.
+ virtual bool requiresRestStart()const{return true;}
+ virtual double physicalEndLimit()const{return drivenPilot()?.01:1e-4;}
  template<class T>static T read(sofa::core::objectmodel::BaseObject*f,const char*name){auto*d=dynamic_cast<sofa::core::objectmodel::Data<T>*>(f->findData(name));if(!d)throw std::runtime_error("actual three-film parameter missing");return d->getValue();}
  void init()override{
   try{
@@ -42,14 +46,14 @@ public:
  }
  void solveStep(SReal dt){
   if(!ready){msg_error(this)<<"Invalid three-film component: no integration or accepted commit";return;}
-  if(++count>maxSteps.getValue()||dt!=getContext()->getDt()||!(dt>0)||getContext()->getTime()<=last||getContext()->getTime()+dt>(drivenPilot()?.01:1e-4)+1e-14)throw std::runtime_error("three-film explicit profiled REST-initialized window only");last=getContext()->getTime();
+  if(++count>maxSteps.getValue()||dt!=getContext()->getDt()||!(dt>0)||getContext()->getTime()<=last||getContext()->getTime()+dt>physicalEndLimit()+1e-14)throw std::runtime_error("three-film explicit profiled integration window only");last=getContext()->getTime();
   sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
   auto system=[&]{regrip_film::PassiveProfile::Scope timer(ownerMeter,"shared_model_construction");return SharedFilmSystem(Layout(),Eigen::Vector3d(externalForce.getValue()[0],externalForce.getValue()[1],externalForce.getValue()[2]),true,true,ownerMeter.enabled?&ownerMeter:nullptr);}();system.exactUnresolved=exactDistanceOrder();const unsigned nf=system.shared.nf,nb=3*nf;Eigen::VectorXd q=system.initial,v=Eigen::VectorXd::Zero(q.size());
   std::array<Film*,3>roots={root.get(),root1.get(),root2.get()},locals;std::array<sofa::core::objectmodel::BaseObject*,3>fields={field.get(),field1.get(),field2.get()};
   system.shared.M.setZero();
   for(unsigned f=0;f<3;++f){auto&s=system.shared.films[f];locals[f]=dynamic_cast<Film*>(fields[f]->getContext()->getMechanicalState());auto*mass=fields[f]->getContext()->getMass();if(!locals[f]||!mass)throw std::runtime_error("actual three-film local state/mass missing");const auto&x=locals[f]->read(sofa::core::vec_id::read_access::position)->getValue();const auto&velocity=locals[f]->read(sofa::core::vec_id::read_access::velocity)->getValue();if(x.size()!=s.film.model.size())throw std::runtime_error("three-film size mismatch");std::vector<Point>xx(x.size()),vv(x.size());
    for(unsigned i=0;i<x.size();++i){double actualMass=mass->getElementMass(i);if(!(actualMass>0)||std::abs(actualMass-s.film.mass[i])>1e-13*s.film.mass[i])throw std::runtime_error("actual three-film mass differs from qualified reference");for(unsigned d=0;d<3;++d){xx[i][d]=x[i][d];vv[i][d]=velocity[i][d];unsigned a=3*i+d;if(s.film.index[a]>=0)system.shared.M(f*nf+s.film.index[a],f*nf+s.film.index[a])+=actualMass*s.film.weight[a]*s.film.weight[a];}}
-   q.segment(f*nf,nf)=s.film.pack(xx);v.segment(f*nf,nf)=s.film.pack(vv);if(count==1&&(xx!=s.before.q||s.film.pack(vv).norm()!=0))throw std::runtime_error("actual three-film coupon must START at REST,not an unqualified trajectory");
+   q.segment(f*nf,nf)=s.film.pack(xx);v.segment(f*nf,nf)=s.film.pack(vv);if(requiresRestStart()&&count==1&&(xx!=s.before.q||s.film.pack(vv).norm()!=0))throw std::runtime_error("actual three-film coupon must START at REST,not an unqualified trajectory");
   }
   auto bx=body->read(sofa::core::vec_id::read_access::position)->getValue();auto bv=body->read(sofa::core::vec_id::read_access::velocity)->getValue();sofa::linearalgebra::FullMatrix<double>Mb(6,6);Mb.clear();body->getContext()->getMass()->getElementMass(0,&Mb);
   for(unsigned i=0;i<6;++i)for(unsigned j=0;j<6;++j){double expected=i==j?(i<3?.0001:.036):0;if(std::abs(Mb.element(i,j)-expected)>1e-14*std::max(1e-20,std::abs(expected)))throw std::runtime_error("actual FREE sphere mass/isotropic inertia differs");system.shared.M(nb+i,nb+j)=Mb.element(i,j);}
@@ -57,7 +61,7 @@ public:
    std::ofstream out(publicMassFilename.getValue());if(!out)throw std::runtime_error("cannot open public mass journal");out<<std::setprecision(17)<<system.shared.films[0].film.model.size()<<'\n';
    for(unsigned f=0;f<3;++f){auto*mass=fields[f]->getContext()->getMass();for(unsigned i=0;i<system.shared.films[f].film.model.size();++i)out<<mass->getElementMass(i)<<' ';out<<'\n';}out<<Mb.element(0,0)<<' '<<Mb.element(3,3)<<'\n';
   }
-  for(unsigned d=0;d<3;++d){q(nb+d)=bx[0].getCenter()[d];v(nb+d)=bv[0].getVCenter()[d];v(nb+3+d)=bv[0].getVOrientation()[d];}if(count==1&&((q.segment<3>(nb)-system.layout.bodyCenter).norm()>1e-12||v.norm()!=0))throw std::runtime_error("actual three-film initial IVP differs");
+  for(unsigned d=0;d<3;++d){q(nb+d)=bx[0].getCenter()[d];v(nb+d)=bv[0].getVCenter()[d];v(nb+3+d)=bv[0].getVOrientation()[d];}if(requiresRestStart()&&count==1&&((q.segment<3>(nb)-system.layout.bodyCenter).norm()>1e-12||v.norm()!=0))throw std::runtime_error("actual three-film initial IVP differs");
   auto applied=[&](double t){return drivenPilot()?regrip_film_rail::ControlProfile::evaluate(t,read<double>(field.get(),"maximumTension"),read<double>(field.get(),"rampTime"),read<double>(field.get(),"releaseBegin"),read<double>(field.get(),"releaseEnd"),read<bool>(field.get(),"c2Control")).tension:0.;};
   auto result=[&]{regrip_film::PassiveProfile::Scope timer(ownerMeter,"implicit_stage_solve");return regrip_collocation::persistentRows(system.shared.M,rayleighMass.getValue(),q,v,last,dt,[&](const auto&x,double t){return system.force(x,applied(t));},[&](const auto&x){return system.geometry(x);});}();double gap=system.clearance(result.q);if(drivenPilot())for(const auto&s:result.stages)gap=std::min(gap,system.clearance(s.q));if(gap< -1e-10||!result.q.allFinite()||!result.v.allFinite())throw std::runtime_error("three-film accepted whole clearance/finite gate");
   for(unsigned f=0;f<3;++f){const auto&s=system.shared.films[f];auto xx=s.film.expand(result.q.segment(f*nf,nf)),vv=s.film.expand(result.v.segment(f*nf,nf));auto x=roots[f]->read(sofa::core::vec_id::read_access::position)->getValue();auto velocity=roots[f]->read(sofa::core::vec_id::read_access::velocity)->getValue();for(unsigned a=0;a<s.film.index.size();++a)if(s.film.index[a]>=0&&s.film.weight[a]==1){x[a/3][a%3]=xx[a/3][a%3];velocity[a/3][a%3]=vv[a/3][a%3];}roots[f]->write(sofa::core::vec_id::write_access::position)->setValue(x);roots[f]->write(sofa::core::vec_id::write_access::velocity)->setValue(velocity);}

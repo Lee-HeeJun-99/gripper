@@ -1,5 +1,22 @@
 # Autonomous research status — active continuation 2026-11-18
 
+## New persistent continuation checkpoint — through1017
+
+Separate checkpoint/resume owner implemented;actual1014 four-step transfer,
+1015 serialized retransfer and1016 through10ms match continuous1002 q/v/time
+and all used stage rows EXACT under original strict1e-12. Field control,
+geometry and stored energies exact in1014. No old REST counter spoofing.
+1017 actual10→16ms Hold COMPLETE,scoped EXPERIMENTAL;not wrapping/lift.
+1018 negative-test harness FAIL preserved;1019 read-only reassessment confirms
+five invalid checkpoint guards reject before accepted commit.1020 partial
+stage-work inventory PASS consistency;private legacy sampled-work is NOT
+restored or joined. Overall time997 FAIL and deformed-release999 FAIL remain.
+Full energy/root work/friction/self-contact/full-thickness/grasp unqualified.
+Details,Raw/build and commands:REGRIP_THREE_FINGER_GRASP_CONTINUATION.md.
+Next actual task:bounded Hold to20ms,then C2 Unload and genuine release analysis.
+Lower checkpoint/RUNNING entries are historical,not current process assertions.
+
+
 ## Latest checkpoint through1011 — NOT project completion
 
 See THREE_FILM_PEAK_AND_FIRST_ENERGY_20261118.md for actual versus independent

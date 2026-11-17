@@ -1,5 +1,26 @@
 # Autonomous research log
 
+## Continuation694–721 — actual coupled event reintegration
+
+Hypothesis692:full-step dense interior velocity is not the partial implicit
+midpoint solution. Implemented ReintegratedBirth/ReintegratedStep,root/velocity/
+C2-time IFT and separate SOFA IsolatedReintegratedSphereODE using real free body.
+Independent695/696/714 PASS;actual697–704/715 PASS bounded execution/clearance.
+694 preserves test Eigen lazy-expression bug;712 preserves postprocessor syntax
+failure;neither is hidden as successful physics.717 confirms archived-source replay.
+Same-binary708/709 and713 verify physical inputs differ only in event policy.
+710/711 partial momentum residual7.3332e-12→2.3377e-20 N s;new method is slower
+(26.897 vs21.284s),not a performance optimization. No correction force is added.
+
+Actual705 first atom invariance does not yield overall time PASS:velocity
+0.171685%,force1.486946% FAIL;attachment0.00124556% PASS. Keep0.1% gate.
+Next hypothesis:persistent high-frequency modal phase. Implemented frozen single-
+row shared-contact full FEM diagnostics716/720/721 (all649 modes,none removed);
+KKT acceleration agrees3.23e-15 relative. Midpoint64 force error1.15444%,Gauss2
+0.0302485%,Radau2 0.223265% versus independent matrix exponential. These are NOT
+actual nonlinear SOFA method results. Started single-row nonlinear Radau722;
+linear order passes but curved branch FAIL,so actual integration is not authorized.
+
 ## Continuation after647 — actual tests through692
 
 Completed actual midpoint C2 half-grid648:time still FAIL despite near-zero

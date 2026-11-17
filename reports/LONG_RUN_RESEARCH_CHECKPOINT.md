@@ -1,5 +1,40 @@
 # Executable research checkpoint — 2026-11-17
 
+## Current savepoint — actual reintegrated event and persistent modal isolation
+
+Latest prior committed functional state24209eb;new solve-to-event implementation
+and measured campaigns694–721 are working-tree continuation,not project completion.
+Actual guarded715 PASS (5.114s);718 exact five-CSV equivalence to697;719 independent
+whole-triangle/mapping/instant-momentum audit PASS. Guarded build:
+build/coupled_restart_20261117_coupled_reintegrated_guard_sofa715/
+libReGripCoupledReintegrated.so. Sources/binary/SDK/commands archived with each case.
+
+Raw:results/autonomous_film_20261117_coupled_reintegrated_{base702,half703,quarter704,
+time705}/ (brace notation expands individual paths). Actual time705 FAIL:
+film velocity0.171685%,common-window force1.486946%;attachment0.00124556% PASS.
+Actual used event atoms identical;this is not full trajectory/energy certification.
+Frozen full shared-contact FEM721 distinguishes modal integration from event-time
+error. Radau single-row prototype722 failed curved branch;diagnostic723 follows.
+Independent frozen comparison does NOT certify collocation in actual SOFA.
+
+Exact current evidence inspection:
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY -m json.tool results/autonomous_film_20261117_coupled_reintegrated_time705/summary.json
+$PY -m json.tool results/autonomous_film_20261117_coupled_contact_kkt721/summary.json
+$PY tools/film_contact_radau_reference.py --tag 20261117_RADAU_AFTER_FIX_NEW
+```
+Last command is only meaningful after diagnosing722/723 and preserving their FAIL.
+Do not silently reuse old compiled kernels after header changes. Exact old dense
+replay uses --snapshot;residual diagnostics now compile actual archived headers.
+CLI --force-residual is historically named but its kernel threshold has N s units;
+force-equivalent residual is2*norm(G)/h N,reported separately.
+
+Remaining:earliest-event proof,persistent/release/multicontact collocation,time/
+mesh/energy,friction,self-collision,3finger/free-object lift/12wrench/Optuna.
+No OS resource depletion or background restart is claimed. This savepoint itself
+does not stop development;current processes must be checked independently.
+
 ## Latest savepoint — custom coupled contact through692
 
 Project NOT COMPLETE. Latest earlier functional commit0d03132;the new commit

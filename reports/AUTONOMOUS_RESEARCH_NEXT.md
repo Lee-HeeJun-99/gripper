@@ -1,5 +1,27 @@
 # Next research checkpoint
 
+## Latest priority — persistent higher-order contact, after721
+
+Event-state reintegration is IMPLEMENTED and actual SOFA-tested;do not re-do692.
+1. Read705 all-pair time FAIL and721 full shared-contact frozen modal reference.
+   Identical impact atoms isolate remaining persistent response/force errors.
+2. Compare stage-consistent constrained collocation with existing midpoint.
+   Gauss/Radau frozen results are independent FEM,NOT actual nonlinear SOFA.
+   Preserve same M/E/attachment/control;never truncate modes or loosen gates.
+3. New single-row Radau prototype722 failed its changing-normal test after
+   passing linear refinement;diagnose true stage tangent/roundoff BEFORE SOFA.
+4. Require stage impulse/time/geometry journals,normal velocity,whole endpoint
+   clearance and no hidden position projection. Reject release/new rows until
+   their actual branch is implemented. Keep default owner independent.
+5. Reintegration still needs globally earliest endpoint-family search;isolated
+   dense-candidate feature matching does NOT prove that claim.
+6. Then true full C2/time/energy/friction/self-contact and3finger/free grasp.
+
+Guarded actual build715 is reusable only with its exact source hashes:
+build/coupled_restart_20261117_coupled_reintegrated_guard_sofa715/
+libReGripCoupledReintegrated.so. New isolated runs require --reintegrated-reference
+20261117_coupled_reintegrated_guard714 and new output names. No automatic restart.
+
 ## Latest executable priority — event-state subintegration after692
 
 1. Read692 event_defect trace:pre-impact velocity differs despite identical

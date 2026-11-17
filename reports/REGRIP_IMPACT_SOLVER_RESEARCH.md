@@ -1,5 +1,19 @@
 # Event-aware impact research — 2026-11-17, project incomplete
 
+## Actual C2 coupled event-state correction — through721
+
+New ReintegratedBirth preserves the existing plastic shared M/J impulse law.
+At each bracket trial it solves BOTH position and velocity to event time.
+Unique smooth row branch uses consistent IFT,ambiguous simultaneous branches
+have undefined sensitivities rather than denominator regularization. Root714,
+actual715,oracle699 and audit719 PASS their limited scopes;guard718 preserves
+old valid-case states exactly. No artificial speed-zero or pose correction.
+Same-binary residual710/711 measures partial midpoint equation consistency,
+not failure of the old instantaneous impulse momentum law. Impact atoms in705
+are invariant,while persistent velocity/force still fail. Remaining research:
+higher-order sustained dynamics,global event-family CCD,multicontact/release,
+full energy/friction/self-contact and actual3finger grasp.
+
 ## Latest coupled diagnostic692
 
 At the limiting refined event,the same triangle/J and event time produce

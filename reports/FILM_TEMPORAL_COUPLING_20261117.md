@@ -1,5 +1,17 @@
 # Film contact continuation: actual equations versus convergence
 
+## New coupled event family and remaining persistent error — through721
+
+Actual705 is a new isolated C2 window,not a replacement for old553/657 FAIL.
+64/128/256 first atoms are equal;velocity0.171685% and common-window force
+1.486946% still fail0.1%;attachment0.00124556% alone passes. Compare impulses
+over identical physical windows,not the last fine row with a coarse average.
+Frozen shared-contact721 retains649 film modes and body-normal effective mass,
+matches full KKT acceleration3.23e-15,then compares rational integration with
+independent matrix exponentials. It supports persistent phase-error research;
+it is neither nonlinear SOFA convergence nor real measured material behavior.
+New Radau prototype722 currently fails curved branch;do not promote it yet.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

@@ -48,6 +48,7 @@ public:
   rows<<"time,step,stage,row,triangle,feature,gap,impulse,nx,ny,nz,px,py,pz,jacobian\n";
  }
  template<class T>static void quote(std::ostream&out,const T&values){out<<",\"";for(auto value:values)out<<value<<' ';out<<'"';}
+ virtual Result advanceSystem(const System&system,double time,const EventControl&control){return system.advance(time,control);}
  void solve(const sofa::core::ExecParams*,SReal dt,sofa::core::MultiVecCoordId,sofa::core::MultiVecDerivId)override{
   if(++count>maxSteps.getValue()||dt!=getContext()->getDt()||getContext()->getTime()<=last)throw std::runtime_error("coupled once-per-step/explicit budget guard");last=getContext()->getTime();
   sofa::simulation::common::MechanicalOperations mop(sofa::core::ExecParams::defaultInstance(),getContext());mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
@@ -59,7 +60,7 @@ public:
   sofa::linearalgebra::FullMatrix<double>Mb(6,6);Mb.clear();bm->getElementMass(0,&Mb);b.mass=Mb.element(0,0);b.inertia=Mb.element(3,3);for(unsigned i=0;i<6;++i)for(unsigned j=0;j<6;++j)if(Mb.element(i,j)!=(i==j?(i<3?b.mass:b.inertia):0))throw std::runtime_error("coupled sphere requires isotropic actual inertia;not general rigid support");
   std::vector<std::array<unsigned,3>>triangles;for(auto t:topology->getTriangles())triangles.push_back({t[0],t[1],t[2]});EventControl control{parameter<double>("maximumTension"),parameter<double>("rampTime"),parameter<double>("releaseBegin"),parameter<double>("releaseEnd"),parameter<bool>("c2Control")};
   if(!workReady){previousLength=model.cableLength(q0);previousTension=control.sample(last).tension;workReady=true;}
-  CoupledPlaneStep mechanics(model,mass,dt,rayleighMass.getValue(),control.sample(last).tension,q0,v0,zero,0);System system(mechanics,triangles,b,radius.getValue(),strictNewton.getValue(),reuseAcceptedEvaluation.getValue(),midpointContact.getValue());auto result=system.advance(last,control);cost<<last+dt<<','<<result.evaluations<<','<<result.acceptedReuses<<'\n';cost.flush();
+  CoupledPlaneStep mechanics(model,mass,dt,rayleighMass.getValue(),control.sample(last).tension,q0,v0,zero,0);System system(mechanics,triangles,b,radius.getValue(),strictNewton.getValue(),reuseAcceptedEvaluation.getValue(),midpointContact.getValue());auto result=advanceSystem(system,last,control);cost<<last+dt<<','<<result.evaluations<<','<<result.acceptedReuses<<'\n';cost.flush();
   if(!system.pack(result.state).allFinite()||!result.state.body.center.allFinite()||!result.state.body.orientation.coeffs().allFinite()||!std::isfinite(result.minimumGap)||result.minimumGap< -1e-10)throw std::runtime_error("invalid coupled accepted state BEFORE commit");
   auto recordRow=[&](const Row&r,double p,unsigned stage,unsigned id,double time){rows<<time<<','<<count<<','<<stage<<','<<id<<','<<r.triangle<<','<<r.feature<<','<<r.gap<<','<<p;for(double value:r.normal)rows<<','<<value;for(double value:r.contact)rows<<','<<value;quote(rows,r.gradient);rows<<'\n';};
   if(result.event){Eigen::Vector3d rootImpulse=Eigen::Vector3d::Zero(),rootMoment=rootImpulse,total=rootImpulse,angular=rootImpulse;auto rest=model.rest();std::vector<Eigen::Vector3d>nodal(q.size(),Eigen::Vector3d::Zero());

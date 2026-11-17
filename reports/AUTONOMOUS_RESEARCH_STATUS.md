@@ -1,5 +1,21 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Latest measured continuation — reintegrated event, through721
+
+Project NOT COMPLETE. New isolated coupled C2 solve-to-event kernel/root IFT
+695/696/714 PASS;actual SOFA697–704 and guarded715 execute/clearance PASS.
+Default-hook706/707 and guard718 preserve five physical CSVs byte-exact.
+Independent actual used M/J oracle699 and accepted/FF audit719 PASS.
+Actual64/128/256 time705 FAIL:base-quarter film velocity0.171685%,common-window
+normal force1.486946%. First impact time/impulse/pre-normal are identical across
+these grids;attachment0.00124556% alone passes. Full C2/energy/grasp still blocked.
+Same-binary708/709 changes only event policy;partial midpoint defect decreases
+from7.3332e-12 to2.3377e-20 N s (710/711/713). NOT global momentum/energy proof.
+Frozen shared-contact FEM721 independently reproduces persistent modal error;
+higher-order stage integration is under investigation,not actual SOFA PASS.
+No globally earliest endpoint-family proof,friction/self-contact/3finger/lift/
+12wrench/final Optuna certification. Research materials/zero gravity unchanged.
+
 ## Latest measured status — continuation through692,project incomplete
 
 Actual custom single-film/free-sphere dynamics,original C2 closing,explicit

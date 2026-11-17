@@ -1,5 +1,17 @@
 # Whole-surface event continuation — 2026-11-17
 
+## Reintegrated event scope — through721
+
+ReintegratedBirth solves the coupled midpoint endpoint family to an externally
+isolated entering bracket. C2 T and T' participate in root/state IFT. Actual
+guarded715 commits consistent q/v then existing shared impulse and remainder.
+It reuses dense whole-surface candidate search and rejects feature mismatch,
+transient endpoint-clear cases and nonapproaching physical velocity. It does
+NOT prove earliest impact over the nonlinear endpoint family. Never transfer
+the old dense-path CCD guarantee to this new numerical path without proof.
+Actual705 first events agree across64/128/256;overall persistent time still FAIL.
+Independent frozen shared-contact721 is not new whole-surface nonlinear CCD.
+
 ## Latest coupled continuation through692
 
 Actual C2 midpoint-force trials643/648 complete but time657 FAIL remains.

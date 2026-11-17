@@ -1,5 +1,17 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Latest outcome through721 — unfinished,not a completion certificate
+
+Actual coupled C2 event reintegration is implemented and API/runtime-tested,
+including moving free sphere/shared impulse/owned rows. Root kernel714 and
+guarded SOFA715 PASS;physical CSV regression718 and independent audit719 PASS.
+The partial-method defect drops~3.14e8 in controlled actual-substate comparison713,
+but actual time705 still FAILS velocity0.171685% and force1.486946%. Attachment
+0.00124556% passes only that observable. Full energy and grasp are NOT certified.
+Frozen FEM721 selects persistent collocation research;not a new SOFA success.
+3finger,multimaterial,12wrench and final grasp optimization remain NOT RUN/BLOCKED.
+All materials/actuator parameters remain research assumptions,not measurements.
+
 ## Updated unfinished checkpoint through692
 
 Actual custom free-body C2 integration and exact saved-state replay completed,

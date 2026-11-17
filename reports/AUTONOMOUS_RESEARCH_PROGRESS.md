@@ -1,5 +1,26 @@
 # Autonomous research log
 
+## Latest measured continuation through820 — supersedes older NEXT/RUNNING claims
+
+Combined event + persistent Lobatto owner is now IMPLEMENTED in actual SOFA.
+Actual125us C2 PRE-state coupons811/812/813,all-pair time817 PASS at unchanged
+0.1%;independent actual force/state/stage audit818 and whole accepted triangle
+normal-velocity audit819 PASS. Independent1ms128/256/512 motion820 PASS only;
+actual1ms/force/energy convergence remains NOT RUN,not inferred from FEM.
+SparseLU is opt-in;actual parsed Data and passive observer810 PASS. Paired
+125us dense/sparse802 gives1.54094x,not a statistical/long-duration benchmark.
+Old strict reference782 FAIL is preserved;independently accumulated clocks796
+resolve its finite-precision C2 clock mismatch without relaxing tolerances.
+3finger804/809 is geometry/shared-impulse mathematics ONLY,not SOFA grasp.
+R8 straight-mount negative control intersects fingers;final design NOT selected.
+Full cycle,mesh,global CCD,multirow/release,friction,self-contact,lift,12wrench,
+whole energy and Optuna remain unqualified. No measured material claims.
+Details/build/raw/reproduction:REGRIP_COMBINED_CONTACT_CONTINUATION.md.
+Next actual work:profile-bounded1ms SOFA from the SAME PRE-state,then common-time
+force/energy audits;do not repeat completed125us runs or reimplement birth.
+No OS/session resource exhaustion or automatic restart is claimed here.
+
+
 ## Latest measured continuation — persistent collocation through763
 
 Actual coupled single-branch LobattoIIIA is IMPLEMENTED and executed,not a plan.

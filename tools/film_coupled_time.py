@@ -14,7 +14,7 @@ def main():
             original=cases[0][1]
             for key in ('binary_sha256','mode','duration','body_mass','inertia_per_mass','rayleigh_mass','initial_body_center','initial_body_velocity'):
                 if meta[key]!=original[key]:raise ValueError('physical/source binary mismatch:'+key)
-            for key,default in (('body_force_z',0.),('strict_newton',False),('midpoint_contact',False),('reintegrated_birth',False),('persistent_radau',False),('persistent_lobatto',False)):
+            for key,default in (('body_force_z',0.),('strict_newton',False),('midpoint_contact',False),('reintegrated_birth',False),('persistent_radau',False),('persistent_lobatto',False),('sparse_stage',False),('combined_contact',False)):
                 if meta.get(key,default)!=original.get(key,default):raise ValueError('force/numerical accuracy input mismatch:'+key)
             for key in ('start_time','source_event_sha256','initial_displacement','initial_velocity','initial_body_quaternion'):
                 if meta.get(key)!=original.get(key):raise ValueError('isolated initial-value input mismatch:'+key)
@@ -75,7 +75,7 @@ def main():
                 phases[phase]=dict(status='PASS' if all(v['status']=='PASS' for v in values.values()) else 'FAIL',errors=values,common_samples=int(mask.sum()))
         pairs[left[0]+'__'+right[0]]=dict(status='PASS' if all(v['status']=='PASS' for v in errors.values()) and all(v['status']=='PASS' for v in phases.values()) else 'FAIL',errors=errors,phases=phases,sampling_diagnostic=sampling_diagnostic,force_observable_note='regular body impulse integrated over identical coarse physical windows;NOT atomic impact force or instantaneous peak')
     status='PASS' if all(p['status']=='PASS' for p in pairs.values()) else 'FAIL'
-    evidence={c[0]:dict(identity=c[1],compared_state_file=c[1].get('comparison_state_file',c[1].get('state_file','coupled.states.csv')),state_sha256=sha(ROOT/'results'/('autonomous_film_'+c[0])/c[1].get('comparison_state_file',c[1].get('state_file','coupled.states.csv'))),journal_hashes={name:sha(ROOT/'results'/('autonomous_film_'+c[0])/name) for name in ('identity.json','coupled.rows.csv','coupled.events.csv')}) for c in cases}
+    evidence={c[0]:dict(identity=c[1],compared_state_file=c[1].get('comparison_state_file',c[1].get('state_file','coupled.states.csv')),state_sha256=sha(ROOT/'results'/('autonomous_film_'+c[0])/c[1].get('comparison_state_file',c[1].get('state_file','coupled.states.csv'))),journal_hashes={name:sha(ROOT/'results'/('autonomous_film_'+c[0])/name) for name in ('identity.json','coupled.rows.csv','coupled.events.csv','coupled.work.csv','coupled.stages.csv','coupled.event_states.csv','coupled.policy.csv') if (ROOT/'results'/('autonomous_film_'+c[0])/name).exists()}) for c in cases}
     write_json(out/'summary.json',dict(status=status,scope='limited interval coupled all-pair time gate;NOT full contact cycle/energy/grasp',relative_gate=.001,pairs=pairs,cases=evidence,not_qualified=['full cycle','history/mesh','tendon-work/damping energy balance','friction','3finger grasp']))
     print(json.dumps(dict(status=status,pairs={k:{name:v.get('relative_error',v['status']) for name,v in record['errors'].items()} for k,record in pairs.items()})))
 if __name__=='__main__':main()

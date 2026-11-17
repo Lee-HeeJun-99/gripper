@@ -1,5 +1,6 @@
 #pragma once
 #include <Eigen/Dense>
+#include <Eigen/SparseLU>
 #include <functional>
 #include <array>
 #include <stdexcept>
@@ -15,7 +16,7 @@ struct RadauResult {Eigen::VectorXd q,v;std::array<Stage,2>stages;unsigned evalu
 inline RadauResult singleRowRadau(const Eigen::MatrixXd&M,double damping,
  const Eigen::VectorXd&q0,const Eigen::VectorXd&v0,double time,double h,
  const std::function<Force(const Eigen::VectorXd&,double)>&force,
- const std::function<Geometry(const Eigen::VectorXd&)>&geometry,bool checkTangent=false,bool lobatto=false){
+ const std::function<Geometry(const Eigen::VectorXd&)>&geometry,bool checkTangent=false,bool lobatto=false,bool sparseStage=false){
  const int n=v0.size();if(n==0||M.rows()!=n||M.cols()!=n||q0.size()!=n||!(h>0)||damping<0)throw std::invalid_argument("single-row Radau inputs");
  Eigen::LDLT<Eigen::MatrixXd>mf(M);if(mf.info()!=Eigen::Success||mf.vectorD().minCoeff()<=0)throw std::domain_error("Radau mass not SPD");
  auto initial=geometry(q0);if(std::abs(initial.gap)>1e-10||std::abs(initial.J.dot(v0))>1e-10)throw std::domain_error("Radau requires tangent touching initial branch");
@@ -39,7 +40,12 @@ inline RadauResult singleRowRadau(const Eigen::MatrixXd&M,double damping,
  Evaluation e=evaluate(x);unsigned iteration=0;
  if(checkTangent){Eigen::MatrixXd fd(e.tangent.rows(),e.tangent.cols());for(int k=0;k<x.size();++k){double delta=1e-5*std::max(1.,std::abs(x(k)));Eigen::VectorXd plus=x,minus=x;plus(k)+=delta;minus(k)-=delta;fd.col(k)=(evaluate(plus).residual-evaluate(minus).residual)/(2*delta);}double error=(fd-e.tangent).norm()/e.tangent.norm();if(error>1e-8)throw std::runtime_error("Radau true stage tangent FD failed:"+std::to_string(error));}
  for(;iteration<20;++iteration){if(e.momentum<=1e-17&&e.velocity<=1e-10)break;
-  Eigen::FullPivLU<Eigen::MatrixXd>lu(e.tangent);if(!lu.isInvertible())throw std::domain_error("Radau true stage Jacobian singular;no regularization");Eigen::VectorXd correction=lu.solve(-e.residual);bool accepted=false;
+  Eigen::VectorXd correction;
+  if(sparseStage){
+   // Remove EXACT zeros only;no threshold pruning,shift or symmetrization.
+   Eigen::SparseMatrix<double>matrix=e.tangent.sparseView(0.,0.);Eigen::SparseLU<Eigen::SparseMatrix<double>,Eigen::COLAMDOrdering<int>>lu;lu.compute(matrix);if(lu.info()!=Eigen::Success)throw std::domain_error("true sparse stage factorization failed;no regularization");correction=lu.solve(-e.residual);if(lu.info()!=Eigen::Success)throw std::runtime_error("true sparse stage solve failed");
+  }else{Eigen::FullPivLU<Eigen::MatrixXd>lu(e.tangent);if(!lu.isInvertible())throw std::domain_error("Radau true stage Jacobian singular;no regularization");correction=lu.solve(-e.residual);}
+  bool accepted=false;
   for(unsigned back=0;back<16;++back){double alpha=std::ldexp(1.,-int(back));Eigen::VectorXd y=x+alpha*correction;auto next=evaluate(y);if(next.merit<=(1-1e-4*alpha)*e.merit||(next.momentum<=1e-17&&next.velocity<=1e-10)){x=std::move(y);e=std::move(next);accepted=true;break;}}
   if(!accepted){std::ostringstream message;message<<std::setprecision(17)<<"Radau stage line search rejected iteration="<<iteration<<" momentum="<<e.momentum<<" normal_velocity="<<e.velocity<<" merit="<<e.merit;throw std::runtime_error(message.str());}
  }

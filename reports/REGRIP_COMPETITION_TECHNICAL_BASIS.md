@@ -1,5 +1,26 @@
 # 경진대회 기술 근거 — 연구 결과와 제작 목표 구분
 
+## Latest measured continuation through820 — supersedes older NEXT/RUNNING claims
+
+Combined event + persistent Lobatto owner is now IMPLEMENTED in actual SOFA.
+Actual125us C2 PRE-state coupons811/812/813,all-pair time817 PASS at unchanged
+0.1%;independent actual force/state/stage audit818 and whole accepted triangle
+normal-velocity audit819 PASS. Independent1ms128/256/512 motion820 PASS only;
+actual1ms/force/energy convergence remains NOT RUN,not inferred from FEM.
+SparseLU is opt-in;actual parsed Data and passive observer810 PASS. Paired
+125us dense/sparse802 gives1.54094x,not a statistical/long-duration benchmark.
+Old strict reference782 FAIL is preserved;independently accumulated clocks796
+resolve its finite-precision C2 clock mismatch without relaxing tolerances.
+3finger804/809 is geometry/shared-impulse mathematics ONLY,not SOFA grasp.
+R8 straight-mount negative control intersects fingers;final design NOT selected.
+Full cycle,mesh,global CCD,multirow/release,friction,self-contact,lift,12wrench,
+whole energy and Optuna remain unqualified. No measured material claims.
+Details/build/raw/reproduction:REGRIP_COMBINED_CONTACT_CONTINUATION.md.
+Next actual work:profile-bounded1ms SOFA from the SAME PRE-state,then common-time
+force/energy audits;do not repeat completed125us runs or reimplement birth.
+No OS/session resource exhaustion or automatic restart is claimed here.
+
+
 ## 최신 연구 근거 — through763,지원서 성능 과장 금지
 
 실제 단일 필름/자유 구체의 충돌 시각 재적분과 제한된39.0625μs 지속접촉의

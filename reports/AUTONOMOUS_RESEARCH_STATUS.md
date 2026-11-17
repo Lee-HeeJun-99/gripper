@@ -918,3 +918,11 @@ Plastic-state consistency improved;it does not repair spatial kinematics or
 complete the synchronized global energy/work journal. No real material
 measurements or actual gripper performance are certified. Research fingers
 still have explicit planar guides and the~95.15mm base-radius assumption.
+## 2026-11-18 — passive owner profiling through880
+
+Actual same-DLL profile875: nine physical CSVs EXACT, nested owner geometry
+1.35145s/step and material force/Hessian0.550743s. Query-local precision-value
+reuse877/878 retained physical CSVs879 and audit880, but actual wall time
+4.89190s versus4.22901s: NOT adopted; original selector restored. Evidence and
+compile failure876 preserved. Functional commit c565ac9. See
+THREE_FILM_COST_20261118.md. No new wrapping/lift/full-energy PASS.

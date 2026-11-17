@@ -1331,3 +1331,19 @@ final documentation commit is visible in Git log.
 Last validated source checkpoint:456d83f2f36fb0e64deabac91341c636681af36d.
 New raw/source/build verifier passes894entries. All physics children in this
 campaign have completed;there is no pending quarter-step process to resume.
+## 2026-11-18 — after actual three-film C2 pilot887–890
+
+Continue driven time/energy qualification,not more concept geometry. Actual
+10ms already-touching commonC2 eight-step pilot887/geometry888/control889 PASS;
+NOT full closing/wrapping/lift/grasp. Four-step881/882 remains gap FAIL.
+Gap-controlled885 independently resolves ONLY offending final interval without
+projection;NOT yet integrated into actual owner. DefaultT0 actual890 remains
+PASS. Cost cache candidate878 rejected (slower),passive meters retainedc565ac9.
+
+Next:finish independent16-step driven892,then compare common times and separate
+energies8/16/32 with0.1% unchanged;actual refinement requires measured profile
+and explicit supported-grid guard update,not silent runtime cap removal.
+Exact current commands/tools:film_three_film_driven.py --tag UNIQUE --steps16
+--profile 20261118_three_film_driven_half883;physical input remains same10ms,
+.0001N/rail C2. DO NOT claim new pilot is original4s C2 or fresh impact.
+Actual build and Raw details:THREE_FILM_C2_20261118.md.

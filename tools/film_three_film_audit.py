@@ -9,6 +9,7 @@ from film_coupled_audit import gaps
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.case);meta=json.loads((src/'identity.json').read_text());summary=json.loads((src/'summary.json').read_text())
  if summary['status']!='PASS':raise ValueError('completed actual three-film contact experiment required')
+ driven=meta['actual_solver'].startswith('ThreeFilmDrivenODE');input_label='C2 10ms already-touching pilot' if driven else 'T=0,100us REST-contact IVP'
  scene=ET.parse(src/'scene.scn');layout=ROOT/'results/autonomous_film_20261117_three_finger_negative809';dims=next(csv.DictReader((layout/'geometry.csv.layout.csv').open()))
  if sha(layout/'sources/models/film_three_finger/FrameLayout.h')!=meta['sources']['models/film_three_finger/FrameLayout.h']:raise ValueError('compiled actual fixed-frame definition differs from independent layout')
  theta=float(dims['mount_angle']);frames=[]
@@ -57,7 +58,7 @@ def main():
    for ax,(d,e) in zip(axes,((0,1),(0,2),(1,2))):ax.add_collection(PolyCollection(x[tri][:,:,[d,e]],facecolor=('#66aabb','#eeaa66','#88bb77')[f],edgecolor='#445',linewidth=.15,alpha=.5))
   center=state[3*nf:3*nf+3]
   for ax,(d,e) in zip(axes,((0,1),(0,2),(1,2))):ax.add_patch(plt.Circle((center[d],center[e]),30,color='#aaa',alpha=.25));ax.autoscale();ax.set_aspect('equal');ax.set_xlabel('xyz'[d]+' [mm]');ax.set_ylabel('xyz'[e]+' [mm]');ax.grid()
-  fig.suptitle('ACTUAL SOFA '+name+';T=0,100us REST-contact IVP;scale1,NOT wrapping/grasp\n'+meta['source_commit'][:8]+' DLL '+meta['binary_sha256'][:12]);fig.tight_layout();fig.savefig(out/(name+'.png'),dpi=170);plt.close(fig)
+  fig.suptitle('ACTUAL SOFA '+name+';'+input_label+';scale1,NOT wrapping/grasp\n'+meta['source_commit'][:8]+' DLL '+meta['binary_sha256'][:12]);fig.tight_layout();fig.savefig(out/(name+'.png'),dpi=170);plt.close(fig)
   with (out/(name+'.obj')).open('w') as stream:
    stream.write('# Actual accepted SOFA state+explicit fixed owner frames;scale1;NOT grasp\n')
    for x in allworld:

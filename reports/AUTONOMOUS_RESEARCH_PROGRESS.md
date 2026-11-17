@@ -1570,3 +1570,12 @@ development is the independently validated vector/objective extension of the
 stateful yield-front reference before any further3D SOFA rollout. Scalar
 kernel PASS is explicitly not used as full contact/grasp approval;all small-
 phase FAILs,global-energy uncertainty and grasp-optimization BLOCKED remain.
+## 2026-11-18 — measured owner cost, rejected distance-cache candidate
+
+869/870 field and872/873/875 owner instrumentation preserve all nine physical
+CSVs. Candidate877/878 reuses immutable113/334-bit distance values only within
+a query;879 physical CSVs exact,880 actual used-row/whole-stage audit PASS.
+Nevertheless measured runtime worsened4.22901→4.89190s, so restored original
+algorithm, retaining passive instrumentation/tools (c565ac9). Failure876 is a
+compile duplicate declaration, not a physics failure. Next: integrate existing
+C2 input in independent shared three-film stages before changing SOFA guards.

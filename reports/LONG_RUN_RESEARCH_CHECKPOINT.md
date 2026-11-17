@@ -731,3 +731,16 @@ Priority: robust coupled contact, independent accepted-state/discrete energy,
 then bounded wrapping. Impact/event-time versus force-observable limitations
 remain hypotheses, not substitute PASS criteria. Existing1% spatial/history
 and.1% time gates remain unchanged.
+## 2026-11-18 — continuation through880
+
+Functional commit c565ac9: passive owner meters, same-DLL9CSV audit875 PASS.
+Actual geometry cost1.35145s versus material0.550743s, nested. Candidate distance
+reuse877/878 physical equality879/audit880 PASS, runtime improvement NOT shown;
+rejected and restored. Original results remain untouched, no SDK changes/push.
+Reusable unmodified-meter baseline:
+build/three_film_20261118_three_film_meter_control872/libReGripThreeFilmContact.so
+Rejected optimization archive:results/autonomous_film_20261118_three_film_distance_actual878.
+Live source is restored; do NOT reuse rejected878 as matching live binary.
+Next development: tools/film_three_film_driven.py --tag UNIQUE, independent
+three-film C2 stage input, followed by SOFA integration only if branch validates.
+No OS/session exhaustion observed; this checkpoint is NOT project completion.

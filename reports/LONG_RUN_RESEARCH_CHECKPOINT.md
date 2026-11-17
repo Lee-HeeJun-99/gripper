@@ -1,5 +1,29 @@
 # Executable research checkpoint — 2026-11-18
 
+## Latest implementation checkpoint — actual three-film event/continuation
+
+See THREE_FILM_EVENT_20261118.md and THREE_FILM_POST_CONTACT_20261118.md.
+960/964 actual separated three-film/ONE free sphere plastic event+remainder
+COMPLETE;965 independent used-row/mapped/end-surface audit PASS,actual PNG/OBJ.
+966 actual contact continues to1.6ms;reference q/v agreement5.42e-20/5.55e-16.
+973 independent post-contact8/16/32 listed0.1% gate PASS,NOT actual/global time.
+984 actual post-contact assessment FAIL:legacy sampled work,normal-work
+residual relative error,and first changed-dt ForceField control mismatch.
+Child-context NEXT-dt synchronization998 PASS,0 tension mismatch;no old
+failure is overwritten.985 unique-branch IFT and992 flat-reference release
+are independent mathematics only,NOT actual generic release or grasp.
+Current models still lack full cycle/full energy/friction/self-contact/
+full-thickness clearance/real equalizer/wrapping/lift/holding certification.
+All lower next-task/RUNNING entries are historical,not current process claims.
+
+Latest corrected actual assessment997 STILL FAIL:legacy sampled work
+.7214203%,normal-work residual relative83.0143%(absolute4.41847e-24Nmm).
+Actual motion/force/separate stored energy/stage-work subset passes0.1%;
+first impact remains fixed,not whole-event refinement.999 deformed release
+hypothesis FAIL:free acceleration remains inward,positive reactions required.
+No fictitious release impulse or pose correction was applied.
+
+
 ## Latest continuation — actual stage work,through956 (2026-11-18)
 
 See THREE_FILM_STAGE_WORK_20261118.md and immutable941/947/948/949/954/955/956.

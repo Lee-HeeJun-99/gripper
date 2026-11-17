@@ -3,6 +3,9 @@
 #define REGRIP_THREE_FILM_EMBEDDED
 #include "../film_three_finger/ThreeFilmOwner.cpp"
 #include "BracketedBirth.h"
+#include <sofa/simulation/AnimateEndEvent.h>
+#include <sofa/core/objectmodel/BaseNode.h>
+#include <set>
 namespace regrip_three_event {
 class ThreeFilmBracketedEventODE:public regrip_three_finger::ThreeFilmDrivenODE {
 public:
@@ -38,9 +41,46 @@ public:
   accepted<<dt<<','<<gap<<','<<result.momentumResidual<<','<<result.velocityResidual<<','<<result.iterations<<','<<result.evaluations<<',';auto state=[&](const auto&x){for(int i=0;i<x.size();++i)accepted<<(i?" ":"")<<x(i);};state(result.q);accepted<<',';state(result.v);accepted<<'\n';accepted.flush();
  }
 };
+// Keep the isolated-event owner intact. AFTER its accepted event/remainder,
+// reuse the existing actual public-mass persistent owner at the next real
+// SOFA clock. Its compressive-row/whole-stage guards remain unchanged.
+// This is NOT release/re-impact handling:those branches still reject.
+class ThreeFilmEventContinuationODE:public ThreeFilmBracketedEventODE {
+public:
+ SOFA_CLASS(ThreeFilmEventContinuationODE,ThreeFilmBracketedEventODE);
+ void solve(const sofa::core::ExecParams*p,SReal dt,sofa::core::MultiVecCoordId x,sofa::core::MultiVecDerivId v)override{
+  if(dt!=.0002||maxSteps.getValue()!=8)throw std::runtime_error("profiled eight200us macro contact continuation only");
+  if(count==0)ThreeFilmBracketedEventODE::solve(p,dt,x,v);
+  else regrip_three_finger::ThreeFilmPersistentODE::solve(p,dt,x,v);
+ }
+};
+class ThreeFilmVariableContinuationODE:public ThreeFilmBracketedEventODE {
+public:
+ SOFA_CLASS(ThreeFilmVariableContinuationODE,ThreeFilmBracketedEventODE);
+ void solve(const sofa::core::ExecParams*p,SReal dt,sofa::core::MultiVecCoordId x,sofa::core::MultiVecDerivId v)override{
+  if(maxSteps.getValue()!=32||(count==0?dt!=.0002:(dt!=.0002&&dt!=.0001&&dt!=.00005))||getContext()->getTime()+dt>.0016+1e-14)throw std::runtime_error("bounded200us COMMON impact then200/100/50us persistent refinement only");
+  if(count==0)ThreeFilmBracketedEventODE::solve(p,dt,x,v);
+  else regrip_three_finger::ThreeFilmPersistentODE::solve(p,dt,x,v);
+ }
+};
+// Public API scheduler,NOT a force/state observer:changes NEXT macro dt only
+// after the common impact step has ended. Records actual time and used dt.
+class ThreeFilmPostImpactClock:public sofa::core::objectmodel::BaseObject {
+public:
+ SOFA_CLASS(ThreeFilmPostImpactClock,sofa::core::objectmodel::BaseObject);
+ sofa::core::objectmodel::Data<unsigned>refinement{initData(&refinement,1u,"refinement","1/2/4 next-step refinement;first impact remains200us")};
+ sofa::core::objectmodel::Data<bool>synchronizeChildren{initData(&synchronizeChildren,false,"synchronizeChildren","Explicit new clock version:public NEXT dt on all child contexts before next AnimateBegin;old root-only mode retained")};
+ sofa::core::objectmodel::Data<std::string>filename{initData(&filename,std::string(),"filename","Exclusive actual dt schedule journal")};
+ std::ofstream out;double previous=0;unsigned calls=0;bool ready=false;
+ ThreeFilmPostImpactClock(){f_listening.setValue(true);}
+ void init()override{sofa::core::objectmodel::BaseObject::init();if((refinement.getValue()!=1&&refinement.getValue()!=2&&refinement.getValue()!=4)||filename.getValue().empty()||std::ifstream(filename.getValue())||getContext()->getDt()!=.0002){msg_error(this)<<"invalid explicit post-impact clock";return;}out.open(filename.getValue());out<<std::setprecision(17)<<"time,used_dt,next_dt,synchronized_contexts,minimum_next_dt,maximum_next_dt\n";ready=true;}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;if(!ready)throw std::runtime_error("invalid clock;no silent scheduling");double end=getContext()->getTime(),used=getContext()->getDt(),next=.0002/refinement.getValue();if(std::abs(end-previous-used)>1e-14||end>.0016+1e-14||++calls>1+7*refinement.getValue())throw std::runtime_error("actual post-impact macro clock mismatch");previous=end;getContext()->setDt(next);unsigned contexts=1;double minimum=getContext()->getDt(),maximum=minimum;
+  if(synchronizeChildren.getValue()){auto*root=dynamic_cast<sofa::core::objectmodel::BaseNode*>(getContext());if(!root)throw std::runtime_error("explicit scene node needed for child clock synchronization");std::set<sofa::core::objectmodel::BaseNode*>visited;std::function<void(sofa::core::objectmodel::BaseNode*)>apply=[&](auto*node){if(!visited.insert(node).second)return;node->getContext()->setDt(next);minimum=std::min(minimum,node->getContext()->getDt());maximum=std::max(maximum,node->getContext()->getDt());for(auto*child:node->getChildren())apply(child);};apply(root);contexts=visited.size();if(minimum!=next||maximum!=next)throw std::runtime_error("child context rejected explicit NEXT dt");}
+  out<<end<<','<<used<<','<<next<<','<<contexts<<','<<minimum<<','<<maximum<<'\n';out.flush();}
+};
 }
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmEvent";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL externally isolated three-film/free sphere event and compressive remainder;NOT general CCD/grasp").add<regrip_three_event::ThreeFilmBracketedEventODE>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL externally isolated three-film/free sphere event and compressive remainder;NOT general CCD/grasp").add<regrip_three_event::ThreeFilmBracketedEventODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL event followed by reused eight200us actual persistent steps;NOT release/re-impact/grasp").add<regrip_three_event::ThreeFilmEventContinuationODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL common impact and variable post-contact dt;NOT full event refinement").add<regrip_three_event::ThreeFilmVariableContinuationODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Public next-step post-impact dt scheduler;NO force/state writes").add<regrip_three_event::ThreeFilmPostImpactClock>());}
 }

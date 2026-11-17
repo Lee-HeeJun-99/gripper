@@ -1,5 +1,16 @@
 # Whole-surface event continuation — 2026-11-17
 
+## Latest coupled continuation through692
+
+Actual C2 midpoint-force trials643/648 complete but time657 FAIL remains.
+Actual initial-state replay659/672 is exact for its one-step scope. Isolated
+actual continuation677 also fails velocity/force despite energy improvements.
+692 isolates velocity defect BEFORE impulse at essentially identical event
+time/J. Consistent midpoint event subintegration is required;dense output
+root/IFT agreement alone does not qualify interior dynamic velocity accuracy.
+Tighter solve-gap685 and event-budget687 are independent failed alternatives,
+not production successes. Full details and commands:coupled research/checkpoint.
+
 ## Coupled continuation567 onward
 
 Whole-surface relative numerical-path event is now integrated with actual

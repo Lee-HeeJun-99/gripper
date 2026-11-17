@@ -1,5 +1,30 @@
 # Autonomous research log
 
+## Continuation after647 — actual tests through692
+
+Completed actual midpoint C2 half-grid648:time still FAIL despite near-zero
+discrete normal work. Reconstructed every used normal/J/impulse independently
+651/655;global contact pullback errors near machine precision. Implemented
+explicit saved-state clock/initial-state SOFA adapter659/672:exact original
+pre-impact step reproduction. Actual isolated128/256/512 trials fail velocity
+and regular force time gates677. Corrected own force-observation error:
+coarse/fine interval averages must use the SAME physical window,not lastfine.
+
+Reused frozen FEM spectrum and extended complete signed/nodal diagnostics.
+Independent Gauss2/Radau oscillator tests669 PASS;frozen response675 is NOT
+actual higher-order contact. Adaptive C2 forecast671 timeout120s preserved.
+673/676 show depth failure dominated by velocity,not body-position roundoff.
+678/679 strict force precision hits free-stage line-search floor. A tighter
+than-default1e-17 setting680 still fails. Accurate dual685 fixes tiny reaction
+omission but not limiting velocity;experimental event allocation687 also fails
+later numerical projection accuracy. No ignored energy/fake heat/new force.
+
+692 identifies pre-impact dense velocity as the local limiting defect:
+delta time5.36e-17s,delta J1.32e-16,delta v3.45e-6mm/s both before/after jump.
+Selected next task:consistent coupled midpoint reintegration to event time.
+Actual default689/690 and default adaptive mathematical691 regressions PASS.
+Source/raw/build/failure evidence retained;no SDK change or remote push.
+
 ## 2026-11-17 — coupled free-body implementation and continuation567–650
 
 Implemented custom actual SOFA free-sphere shared mass/J/impulse/commit,

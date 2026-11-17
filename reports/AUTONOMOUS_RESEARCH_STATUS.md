@@ -1,5 +1,26 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Latest measured status — continuation through692,project incomplete
+
+Actual custom single-film/free-sphere dynamics,original C2 closing,explicit
+saved-state continuation and independent used-row momentum audits implemented.
+Limited1ms/T=0 actual h/h2/h4 time640 PASS remains limited. Actual C2 midpoint
+643/648 time653/657 FAIL:attachment2.46263%,velocity6.48059%,1vs2events.
+Normal-work bias improves greatly but does NOT solve time convergence.
+Actual exact pre-step replay659/672 PASS;isolated actual128/256/512-step
+continuation677 FAIL (velocity base-quarter.598185%,common-window force3.11011%).
+Full energy/friction/self-contact/3finger/lift/12wrench/multimaterial/Optuna
+remain unqualified. No final structure selected or measured PET claimed.
+
+692 localizes an independent adaptive failure to PRE-impact dense velocity:
+event time difference5.36e-17s,J difference1.32e-16,same triangle,but velocity
+difference3.45e-6mm/s before and after impulse. Next numerical fix must address
+actual event subintegration,not replace already validated shared impulse.
+Accurate numerical gap solve685 and defect-budget687 experiments still FAIL
+adaptive completion;not production PASS. Default actual689/690 remains byte-
+exact in five physical CSVs. Detailed failure/resource distinctions and paths:
+REGRIP_COUPLED_FREE_BODY_RESEARCH.md,LONG_RUN_RESEARCH_CHECKPOINT.md.
+
 ## Latest 2026-11-17 — custom coupled free sphere, through647
 
 Supersedes historical fixed-owner-only statements below. Project NOT COMPLETE.

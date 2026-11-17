@@ -1,5 +1,35 @@
 # Next research checkpoint
 
+## Latest executable priority — event-state subintegration after692
+
+1. Read692 event_defect trace:pre-impact velocity differs despite identical
+   triangle/J/event time. Do not rerun whole400/800 C2 trials to rediscover it.
+2. Implement an INDEPENDENT coupled midpoint event-subintegrator. Reuse
+   BracketedFilmBirth's solve-to-event idea,not its BE/fixed-body/constant-T
+   formula. Solve actual q/v at event time using existing C2 ControlProfile.
+   Do not replace only velocity while leaving an inconsistent dense position.
+3. Derive endpoint-family root/IFT and distinguish isolated entering bracket
+   from globally earliest whole-surface CCD. Check momentum/energy/normal
+   velocity plus force residual before actual SOFA owner integration.
+4. Preserve default/experimental variants.685 tighter solve gap fixes missing
+   tiny reaction but not dense velocity;687 event allocation is NOT time PASS.
+   Do not relax0.1% or ignore tiny projection inventory to accept a trial.
+5. Actual saved-state659/672 is already exact one-step replay. Use archived
+   snapshot option when restoring its OLD numerical version;current source
+   guards correctly reject silently mixing changed kernels with old binaries.
+
+First fresh diagnostic command (new output name;expected current FAIL,not a
+suggestion to repeat it before code changes):
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_coupled_saved_reference.py --tag 20261117_EVENT_SUBINTEGRATION_NEW --source 20261117_coupled_fine_restart672 --duration .000625 --macros 1 --strict-newton --trial-budget 120 --force-residual 1e-17 --gap-solve 1e-14
+```
+
+After a valid new kernel:actual adapter,common-window impulse/force and all-pair
+time comparison;then full C2,recovery,friction,self-contact and3finger. Do not
+run Grasp Optuna or certify final holding performance before these gates.
+
 ## Current continuation — custom coupled contact, not a new project
 
 1. Inspect completed/pending643/648 actual C2 midpoint-J runs. Compare with

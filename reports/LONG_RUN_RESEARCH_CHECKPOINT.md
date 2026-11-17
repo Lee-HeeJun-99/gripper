@@ -1,5 +1,79 @@
 # Executable research checkpoint — 2026-11-17
 
+## Latest savepoint — custom coupled contact through692
+
+Project NOT COMPLETE. Latest earlier functional commit0d03132;the new commit
+owning this section records explicit replay,diagnostics and numerical variants.
+This is a reproducible savepoint,not an OS-memory/session-exhaustion claim.
+Do not interpret historical RUNNING labels below as current processes.
+
+### Implemented / actually executed
+
+- Custom single Film/Rails/Tendon + FREE isotropic sphere,shared projected
+  mass/J/impulse,actual accepted-state commit and whole endpoint gap tests.
+- Actual original C2 closing605/606 and midpoint-force contrast643/648.
+- Exact actual pre-impact saved-step reproduction659 and672;no artificial
+  position/velocity correction.658 post-event remainder bitwise FAIL retained.
+- Actual isolated128/256/512-step continuation661/662/663 from identical state.
+- Actual default689 and byte-equivalence690:five physical CSVs exact to596.
+- Independent closest barycentric row/pullback/linear-angular audits651/655.
+- Independent modal spectrum666/667,oscillator tests669 and full-nodal
+  frozen response675. These are NOT actual Gauss/Radau SOFA contact.
+
+### PASS / FAIL / BLOCKED
+
+- PASS limited actual1ms/T=0 impact640,all-pair h/h2/h4 (not full C2).
+- FAIL full C2 midpoint643/648 time657:attachment2.46263%,velocity6.48059%,
+  event count1vs2. Normal-work bias reduction does not solve this.
+- FAIL isolated actual continuation677:base-quarter velocity.598185%,
+  regular force on identical windows3.11011%;attachment.01997735% alone PASS.
+- FAIL independent adaptive671 own120s timeout;673/676 depth12;678/679 strict
+  Newton line search;680 same velocity depth failure;685 tighter gap still
+  depth failure;687 experimental event allocation later projection-error FAIL.
+- BLOCKED full energy/friction/self-contact/free grasp/3finger/12wrench/Optuna.
+  No OS resource depletion,SDK mutation,remote push or automatic restart.
+
+### Latest cause isolation692
+
+At h1.52587890625e-7s,same triangle124,J difference1.32e-16,event-time
+difference5.36e-17s. Velocity differs3.45327e-6mm/s BEFORE impact and remains
+the same after it. Next task is coupled midpoint solve-to-event/root/IFT,
+not replacing the shared impulse or blindly adding depth/substeps.
+BracketedFilmBirth is a reusable pattern,but its old BE/fixed-body formula
+is not a ready-made coupled C2 midpoint solution or earliest-surface proof.
+
+### Reusable builds and raw
+
+- Current default:build/coupled_sofa_20261117_coupled_current_default689/
+  libReGripCoupledSphere.so (Installed SDK,see archived identity/ldd).
+- Explicit saved-step version:build/coupled_restart_20261117_coupled_restart_remainder658/
+  libReGripCoupledRestart.so. Use its archived model snapshot for exact old
+  version replay;current guards must not be bypassed for changed headers.
+- Actual adaptive T=0:build/coupled_sofa_20261117_coupled_adaptive_sofa620/.
+- All raw under results/autonomous_film_20261117_*. Actual images/OBJ637,
+  649,656;stored C2 comparison664/contact_comparison.png and.svg. Scale1.
+- Failed692 includes full archived input/source and event_defect trace.
+
+### Exact commands (new unique output tags;do not overwrite completed cases)
+
+```bash
+cd /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+git status --short
+git log -5 --oneline
+$PY tools/film_continuation_evidence.py --name 20261117_coupled_v8 --verify
+$PY -m json.tool results/autonomous_film_20261117_coupled_event_defect692/summary.json
+# Exact old-version one-step replay,not a request to repeat the completed trial:
+$PY tools/film_coupled_restart.py --tag 20261117_REPLAY_NEW --source 20261117_coupled_midpoint_c2_643 --pre-step --snapshot 20261117_coupled_restart_remainder658 --reuse 20261117_coupled_restart_remainder658
+# After actually implementing the new event subintegrator:
+$PY tools/film_coupled_saved_reference.py --tag 20261117_EVENT_SUBINTEGRATION_NEW --source 20261117_coupled_fine_restart672 --duration .000625 --macros 1 --strict-newton --trial-budget 120 --force-residual 1e-17 --gap-solve 1e-14
+```
+
+Current last command without a model change is an EXPECTED FAIL. Existing
+0.1% time and1% mesh/history gates remain unchanged. Adaptive C2 actual adapter
+must not launch from failed reference profiles. Its saved-start/options code
+is not an executed new adaptive C2 success. No background automatic continuation.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

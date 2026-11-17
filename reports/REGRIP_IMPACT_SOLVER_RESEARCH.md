@@ -1,5 +1,14 @@
 # Event-aware impact research — 2026-11-17, project incomplete
 
+## Latest coupled diagnostic692
+
+At the limiting refined event,the same triangle/J and event time produce
+delta v3.45e-6mm/s BEFORE impulse,unchanged after impulse. The existing shared
+impact solve is not the source of this particular error. Next is coupled
+midpoint solve-to-event integration and its root tangent,not another impulse
+correction. Actual default689/690 is unchanged. All full C2 and adaptive
+failures remain in REGRIP_COUPLED_FREE_BODY_RESEARCH.md;no3finger claim.
+
 ## Coupled actual free-sphere continuation
 
 New custom film/Rigid3 owner uses actual shared projected mass and relative

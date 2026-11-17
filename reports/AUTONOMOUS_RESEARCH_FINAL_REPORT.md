@@ -1,5 +1,17 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Updated unfinished checkpoint through692
+
+Actual custom free-body C2 integration and exact saved-state replay completed,
+but actual C2 time653/657 and isolated time677 FAIL remain. Numerical work
+bias was fixed in an experiment without improving dominant time errors.
+692 isolates interior PRE-impact velocity interpolation error;the shared
+impulse is not its source. Consistent coupled event subintegration is next.
+Accurate-gap and adaptive-budget experiments are not full physics successes.
+No3finger/lift/hold/friction/self-contact/full energy/Optuna success is claimed.
+All scope distinctions,failed attempts,commands and source/binary identities
+are retained in REGRIP_COUPLED_FREE_BODY_RESEARCH.md and current checkpoint.
+
 ## Latest non-final checkpoint — coupled custom free sphere,2026-11-17
 
 This document is NOT a project completion declaration. Custom event dynamics

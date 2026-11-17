@@ -1,6 +1,122 @@
 # Coupled custom film/free-sphere research — 2026-11-17
 
-## Latest continuation — measured through647 (earlier sections retained)
+## Latest continuation — measured through692 (earlier sections retained)
+
+### Precise remaining blocker;do not certify adaptive C2
+
+679 pinpoints strict Newton rejection in a FREE stage (owned=0):h.00015625,
+residual2.302681e-18 versus threshold1.921390e-18. An explicitly experimental
+absolute residual1e-17 (still100x tighter than original1e-15) avoids that
+particular rejection but680/683 still fail the adaptive depth12 criterion.
+It is not a solution of the dominant event defect. No physical Gate relaxed.
+
+683 shows the limiting event-bearing interval had zero regular rows and
+buffered gap-1.10134e-13mm. Reusing1e-10 validation tolerance as internal row
+activation/stopping threshold hides this tiny reaction and defers it to a
+velocity projection. New independent `AccurateDual.h` and opt-in numerical
+solve gap1e-14 distinguish solve accuracy from unchanged1e-10 validation.
+686 scalar LCP/geometry/FD tests PASS.685 produces one true regular row and
+zero projection loss at that interval,but velocity error remains unchanged:
+this is NOT the sole adaptive/time failure. Original Native dual and custom
+default are preserved.689/690 actual default regression:five physical CSVs
+byte-identical to596.691 default adaptive mathematical regression PASS.
+
+687 experimental event/smooth defect allocation retains TOTAL1e-4 local
+budget,half distributed over smooth time and half over at most16 discrete
+event intervals.688 proves the bookkeeping inequality,not nonlinear stability.
+This gets beyond the first event but FAILS later:tiny numerical projection
+inventory (about1e-23) drives the unchanged criterion past depth12. No term is
+set to zero or relabeled as heat;no global time PASS follows. This option is
+independent experimental research,NOT wired as a qualified production owner.
+683's `projection_velocity_jumps` diagnostic was mistakenly after-minus-after
+and is NOT evidence of zero velocity change;later traces record actual impulse
+sums instead. Owned rows/gaps and all physical states in683 remain valid.
+
+692 isolates the event-state defect at h1.52587890625e-7s:
+
+- Coarse/fine event-time difference -5.36300366e-17s.
+- Same first triangle124;shared first-J difference1.32031241e-16.
+- Pre-impact velocity-vector difference3.45326779e-6mm/s.
+- Post-impact difference3.45326776e-6mm/s,essentially unchanged by impact.
+
+Thus this particular limiting velocity defect is already present BEFORE
+impact,not created by mass/J/impulse or endpoint contact projection. The
+quadratic dense path has internally linear velocity based on the FULL-step
+midpoint force. Endpoint midpoint accuracy does not certify that interior
+velocity. Next:reintegrate the coupled midpoint equations to a bracketed
+event time,with the SAME C2 schedule;reuse the approach of BracketedFilmBirth
+but do not mislabel its fixed-body BE formula as coupled C2 midpoint or global
+earliest-event proof. Endpoint-family root/IFT and all feature/clearance tests
+are required before an actual new owner can be qualified.
+
+No actual adaptive C2 run is approved by failed forecasts671/673/678/680/685/
+687/692. Explicit saved-state actual replay659/672 is qualified for its exact
+one-step scope only. Whole-cycle time/energy and3finger/free grasp remain
+unfinished. There was no OS RAM exhaustion or engine permission failure;
+671 was the runner's120s cap,others were numerical/algorithmic rejections.
+
+### Actual C2 and post-impact isolation: no overall time PASS
+
+648 completes the800-step C2 midpoint-J run in246.946s.653/657 overall
+time FAIL:attachment2.46262769%,film velocity6.48059361%,event count1vs2.
+Contact work654 is -5.36279e-15/-2.51319e-15,so removing endpoint normal-work
+bias did NOT solve the dominant time failure. Midpoint-J is not adopted as
+the final contact method.651/655 independently reconstruct every used row's
+closest barycentric point,normal,root-map gradient and opposite body impulse:
+max unit angular error1.47e-14;not a whole-step global energy certificate.
+
+657 isolates first-impact time9.64436e-7 relative,impulse1.82233e-5,
+impact loss3.30907e-5:all within0.1%. Preimpact390 common samples PASS.
+Persistent response/recontact,not just first-event accuracy,requires work.
+
+New explicit stateless `CoupledRestartODE` preserves actual initial q/v,body
+pose/velocities and physical C2 clock via public Context.659 restores the
+original preimpact step and reproduces ALL ten state/energy fields exactly.
+672 repeats exact reproduction from the finer663 trace.658 event-remainder
+bitwise comparison FAIL remains:velocity error4.33431e-12 after reconstructing
+fractional h by subtracting stored absolute times. Do NOT use658 as an exact
+resume certificate;the qualified pre-step route avoids that lost-bit h.
+
+661/662/663 re-integrate SAME659 pre-step initial state for2.5ms with128/256/
+512 steps (29.47/57.20/113.13s).665/677 time FAIL despite energy improvement:
+base-quarter attachment0.01997735%,film velocity0.59818474%,common-window
+regular body force3.11010999%,tendon quadrature work0.02482305%.
+Half-quarter velocity0.35800324% remains FAIL. This is an isolated declared
+initial-value experiment,not a new full1s trajectory or a warm-start shortcut
+to certify original400-step physics.
+
+The newly added step-average force diagnostic initially compared coarse
+impulse/dt with only the LAST fine impulse/dt:unequal averaging windows.
+677 corrects this observation bug by summing fine impulses over identical
+coarse physical windows. The previous mismatched-window error is retained
+as NOT COMPARABLE diagnostic;the0.1% Gate is unchanged and overall still FAIL.
+No instantaneous impact force is invented from impulse/dt.
+
+666/667 reuse the old frozen FEM modal diagnostic with ACTUAL coupled event
+state and the existing C2 function. No negative modes;max omega634807.294/s.
+Free-film spectrum is NOT a constrained film/body spectrum. Signed modal
+amplitudes and full-nodal Gram allow the same velocity norm as actual traces.
+669 oscillator local-order/energy/ballistic tests PASS;668 import failure is
+preserved.675 independent exact frozen modal response at9.765625e-6s has
+velocity error2.08502%(midpoint),0.03301%(Gauss2),0.39983%(Radau2). This
+supports higher-order phase-resolution research,NOT an actual SOFA higher-
+order contact implementation or convergence PASS. Numerical Radau damping
+is not reclassified as heat.670 earlier source-hash list omitted the Gram;
+675 includes its exact bytes;old670 is not edited.
+
+671 adaptive four-macro C2 pilot timed out at its own120s cap,not OS resource
+exhaustion.673/676 single collision-macro diagnosis fails fixed depth12:
+controller1.35372906e-4>1e-4 at h1.52587891e-7s.676 component trace identifies
+VELOCITY error as dominant;body-center difference is0 there. World-position
+cancellation hypothesis is therefore rejected for this failure;no compensated
+pose or ignored energy was introduced.678 tighter Newton experiment fails
+line search,not memory/trial exhaustion.679 adds passive rejection diagnostics
+to resolve the solver precision floor before further changes. There is NO
+actual adaptive C2 PASS from these failed independent forecasts.
+
+Actual result visualization664 contains saved C2 states without amplification;
+not concept geometry. Full energy/friction/self-contact/3finger/lift/12wrench/
+multimaterial/Optuna and final fabrication performance remain unqualified.
 
 Actual SOFA628/629/630 re-integrated the SAME initial film/free sphere on
 382/764/1528 accepted physical intervals. These are genuine h/h2/h4 grids,

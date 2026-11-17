@@ -504,3 +504,14 @@ full energy, reactions, self-contact and free6DOF remain unqualified. Three-
 finger/multimaterial/12-wrench grasp, final-design superiority and grasp
 Optuna remain BLOCKED/NOT RUN. Original changing-normal friction failures
 are separate and unchanged. The existing45 gates are not new certification.
+# Latest coupled continuation through692
+
+Actual moving sphere/C2 contact is integrated,but full time convergence remains
+FAIL.643/648 midpoint-force quadrature reduces discrete normal work without
+solving velocity/attachment convergence.659/672 actual pre-step replay is exact;
+661/662/663 isolated continuation677 fails velocity and reaction force time.
+692 identifies a PRE-impact dense velocity defect at matched event time/J;
+solve-to-event coupled midpoint integration is the next concrete change.
+Numerical gap/force precision and defect-budget alternatives are preserved as
+failed independent experiments. No tolerance relaxation,heat reassignment,
+SDK edit or claimed higher-order SOFA contact. See coupled report/checkpoint.

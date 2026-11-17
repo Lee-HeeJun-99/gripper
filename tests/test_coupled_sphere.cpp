@@ -35,5 +35,9 @@ int main(){try{
   auto rn=midpointSystem.geometry(midpointSystem.forceGeometry(midpointSystem.endpoint(yn)),8);
   midpointFD=std::max(midpointFD,((rp.gradient-rn.gradient)/2e-4-.5*hold.h*rmid.hessian.col(k)).norm());}
  check(midpointFD<1e-8,"midpoint geometry consistent tangent FD");
+ System tighter(hold,triangles,loadedBody,1,true,true,true,1e-17);check(tighter.residualThreshold(0)==1e-17,"explicit tighter absolute residual not applied");
+ bool looseRejected=false;try{System invalid(hold,triangles,loadedBody,1,false,true,false,1e-14);}catch(const std::invalid_argument&){looseRejected=true;}check(looseRejected,"new solver setting weakens original tolerance");
+ Eigen::MatrixXd tinyW=Eigen::MatrixXd::Identity(1,1);Eigen::VectorXd tinyD(1);tinyD(0)=-1e-12;auto oldTiny=CoupledContactStep::dual(tinyW,tinyD,Eigen::VectorXd::Zero(1)),tightTiny=accurateDual(tinyW,tinyD,Eigen::VectorXd::Zero(1),1e-14);
+ check(oldTiny(0)==0&&std::abs(tightTiny(0)-1e-12)<1e-25,"validation threshold used as solve stopping floor counterexample");
  std::cout<<"PASS experimental midpoint force chain-rule FD "<<midpointFD<<" momentum "<<rm.norm()<<";NOT time/energy qualified\n";
  }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

@@ -2,6 +2,7 @@
 #include "../film_impact/WholeSurfaceMidpoint.h"
 #include <Eigen/Geometry>
 #include <cstring>
+#include "AccurateDual.h"
 namespace regrip_coupled {
 using namespace regrip_film_impact;
 using namespace regrip_film_native;
@@ -31,11 +32,14 @@ struct Result {
 };
 struct System {
  CoupledPlaneStep film;std::vector<std::array<unsigned,3>>triangles;State before;double radius;
- unsigned nf,n;Eigen::MatrixXd M;bool strictNewton,reuseAccepted,midpointContact;
- System(CoupledPlaneStep m,std::vector<std::array<unsigned,3>>t,Body b,double r,bool strict=false,bool reuse=true,bool midpoint=false):film(std::move(m)),triangles(std::move(t)),before{film.previous,film.previousVelocity,b},radius(r),nf(film.freeSize),n(nf+6),strictNewton(strict),reuseAccepted(reuse),midpointContact(midpoint){
+ unsigned nf,n;Eigen::MatrixXd M;bool strictNewton,reuseAccepted,midpointContact;double absoluteNewtonResidual,contactSolveGap;
+ System(CoupledPlaneStep m,std::vector<std::array<unsigned,3>>t,Body b,double r,bool strict=false,bool reuse=true,bool midpoint=false,double forceResidual=0,double gapSolve=1e-10):film(std::move(m)),triangles(std::move(t)),before{film.previous,film.previousVelocity,b},radius(r),nf(film.freeSize),n(nf+6),strictNewton(strict),reuseAccepted(reuse),midpointContact(midpoint),absoluteNewtonResidual(forceResidual),contactSolveGap(gapSolve){
+  if(!std::isfinite(forceResidual)||forceResidual<0||forceResidual>1e-15)throw std::invalid_argument("optional Newton force residual can only tighten original1e-15 default");
+  if(!(gapSolve>0&&gapSolve<=1e-10)||!std::isfinite(gapSolve))throw std::invalid_argument("optional contact solve gap can only tighten original1e-10");
   if(!(b.mass>0&&b.inertia>0&&r>0)||!std::isfinite(b.mass+b.inertia+r)||!b.center.allFinite()||!b.linear.allFinite()||!b.angular.allFinite()||!b.force.allFinite()||!b.orientation.coeffs().allFinite()||std::abs(b.orientation.squaredNorm()-1)>1e-12||triangles.empty())throw std::invalid_argument("coupled sphere inputs");
   M=Eigen::MatrixXd::Zero(n,n);M.topLeftCorner(nf,nf)=filmMass(film);M.block<3,3>(nf,nf).diagonal().setConstant(b.mass);M.block<3,3>(nf+3,nf+3).diagonal().setConstant(b.inertia);
  }
+ double residualThreshold(double initial)const{return std::max(absoluteNewtonResidual>0?absoluteNewtonResidual:strictNewton?1e-18:1e-15,initial*(strictNewton?1e-10:1e-7));}
  Eigen::VectorXd pack(const State&s)const{Eigen::VectorXd y(n);y.head(nf)=film.pack(s.v);y.segment<3>(nf)=s.body.linear;y.tail<3>()=s.body.angular;return y;}
  void velocity(State&s,const Eigen::VectorXd&y)const{s.v=film.expand(y.head(nf));s.body.linear=y.segment<3>(nf);s.body.angular=y.tail<3>();}
  State endpoint(const Eigen::VectorXd&middle)const{
@@ -73,16 +77,16 @@ struct System {
   auto geo=[&](const Eigen::VectorXd&trial,const Eigen::VectorXd&l){auto state=endpoint(trial),forceState=forceGeometry(state);Geometry g;g.gap.resize(owned.size());g.C=Eigen::MatrixXd::Zero(n,owned.size());g.endC=Eigen::MatrixXd::Zero(n,owned.size());g.H=Eigen::MatrixXd::Zero(n,n);for(unsigned k=0;k<owned.size();++k){auto endRow=geometry(state,owned[k]);auto row=midpointContact?geometry(forceState,owned[k]):endRow;g.gap(k)=endRow.gap;g.C.col(k)=row.gradient;g.endC.col(k)=endRow.gradient;g.H+=film.h*(midpointContact?.5:1.)*l(k)*row.hessian;}return g;};
   for(unsigned sweep=0;sweep<8;++sweep){bool converged=false;
    for(unsigned iteration=0;iteration<30;++iteration){CoupledPlaneStep::Evaluation e;if(reuseAccepted&&cached&&cachedY.size()==y.size()&&std::memcmp(cachedY.data(),y.data(),sizeof(double)*y.size())==0){e=std::move(*cached);cached.reset();++out.acceptedReuses;}else{e=evaluate(y,out.tension);++out.evaluations;}auto g=geo(y,lambda);double r=(e.gradient-g.C*lambda).norm();if(initial<0)initial=r;
-    auto final=[&](double residual,const Geometry&gg,const Eigen::VectorXd&l){return residual<=std::max(strictNewton?1e-18:1e-15,initial*(strictNewton?1e-10:1e-7))&&CoupledContactStep::gapError(gg.gap,l)<=1e-10;};
+    auto final=[&](double residual,const Geometry&gg,const Eigen::VectorXd&l){return residual<=residualThreshold(initial)&&CoupledContactStep::gapError(gg.gap,l)<=contactSolveGap;};
     if(final(r,g,lambda)){converged=true;out.residual=2*r;break;}
     Eigen::LDLT<Eigen::MatrixXd>factor(e.tangent-g.H);if(factor.info()!=Eigen::Success||factor.vectorD().minCoeff()<=0)throw std::runtime_error("coupled sphere TRUE tangent not SPD;no regularization");
-    Eigen::VectorXd inverseG=factor.solve(e.gradient);Eigen::MatrixXd inverseC=factor.solve(g.C),W=film.h*g.endC.transpose()*inverseC;Eigen::VectorXd d=g.gap-film.h*g.endC.transpose()*inverseG,next=CoupledContactStep::dual(W,d,lambda),dy=-inverseG+inverseC*next;
+    Eigen::VectorXd inverseG=factor.solve(e.gradient);Eigen::MatrixXd inverseC=factor.solve(g.C),W=film.h*g.endC.transpose()*inverseC;Eigen::VectorXd d=g.gap-film.h*g.endC.transpose()*inverseG,next=contactSolveGap==1e-10?CoupledContactStep::dual(W,d,lambda):accurateDual(W,d,lambda,contactSolveGap),dy=-inverseG+inverseC*next;
     auto merit=[&](const auto&gradient,const Geometry&gg,const Eigen::VectorXd&l){double square=(gradient-gg.C*l).squaredNorm();for(int i=0;i<l.size();++i){if(!(W(i,i)>0))throw std::runtime_error("coupled sphere zero compliance");double c=std::min(l(i),gg.gap(i)/W(i,i));square+=c*c;}return std::sqrt(square);};
     double old=merit(e.gradient,g,lambda),alpha=1;bool accepted=false;for(unsigned back=0;back<16;++back){Eigen::VectorXd trial=y+alpha*dy,l=lambda+alpha*(next-lambda);auto value=evaluate(trial,out.tension);++out.evaluations;auto gg=geo(trial,l);if(final((value.gradient-gg.C*l).norm(),gg,l)||merit(value.gradient,gg,l)<=(1-1e-4*alpha)*old){y=trial;lambda=l;if(reuseAccepted){cachedY=y;cached=std::move(value);}accepted=true;break;}alpha*=.5;}
-    if(!accepted)throw std::runtime_error("coupled sphere contact line search rejected");
+    if(!accepted){std::ostringstream message;message<<std::setprecision(17)<<"coupled sphere contact line search rejected time="<<time<<" h="<<film.h<<" iteration="<<iteration<<" residual="<<r<<" threshold="<<residualThreshold(initial)<<" merit="<<old<<" gap_error="<<CoupledContactStep::gapError(g.gap,lambda)<<" owned="<<owned.size()<<" minimum_mass_diagonal="<<M.diagonal().minCoeff();throw std::runtime_error(message.str());}
    }
    if(!converged)throw std::runtime_error("coupled sphere Newton budget30");out.state=endpoint(y);out.minimumGap=clearance(out.state);out.closureSweeps=sweep+1;
-   unsigned added=0;if(constrained)for(unsigned id=0;id<triangles.size();++id)if(primitive(out.state,id).gap.v< -1e-10){if(std::find(owned.begin(),owned.end(),id)!=owned.end())throw std::runtime_error("owned coupled row violates clearance");if(owned.size()>=256)throw std::runtime_error("coupled row budget256");owned.push_back(id);++added;}
+   unsigned added=0;if(constrained)for(unsigned id=0;id<triangles.size();++id)if(primitive(out.state,id).gap.v< -contactSolveGap){if(std::find(owned.begin(),owned.end(),id)!=owned.end())throw std::runtime_error("owned coupled row violates solve gap");if(owned.size()>=256)throw std::runtime_error("coupled row budget256");owned.push_back(id);++added;}
    if(!added){for(unsigned id:owned)out.contactRows.push_back(geometry(forceGeometry(out.state),id));out.constraintImpulse=2*lambda;out.sustained=!owned.empty();return out;}
    unsigned old=lambda.size();lambda.conservativeResize(owned.size());lambda.tail(owned.size()-old).setZero();
   }throw std::runtime_error("coupled candidate closure budget8");
@@ -106,7 +110,7 @@ struct System {
   }
   out.impact=manyRowImpact(M,out.eventJ,pack(out.preImpact),1e-10);out.postImpact=out.preImpact;velocity(out.postImpact,out.impact->state.velocity);
   double remaining=film.h*(1-a);out.state=out.postImpact;
-  if(remaining>0){CoupledPlaneStep next(film.model,film.mass,remaining,film.damping,control.sample(time+a*film.h).tension,out.postImpact.q,out.postImpact.v,std::vector<Point>(before.q.size()),0);System remainder(next,triangles,out.postImpact.body,radius,strictNewton,reuseAccepted,midpointContact);auto contact=remainder.smooth(time+a*film.h,control,true);out.state=contact.state;out.contactRows=contact.contactRows;out.constraintImpulse=contact.constraintImpulse;out.residual=contact.residual;out.sustained=contact.sustained;out.forceTime=contact.forceTime;out.tension=contact.tension;out.evaluations+=contact.evaluations;out.acceptedReuses+=contact.acceptedReuses;project(out);}
+  if(remaining>0){CoupledPlaneStep next(film.model,film.mass,remaining,film.damping,control.sample(time+a*film.h).tension,out.postImpact.q,out.postImpact.v,std::vector<Point>(before.q.size()),0);System remainder(next,triangles,out.postImpact.body,radius,strictNewton,reuseAccepted,midpointContact,absoluteNewtonResidual,contactSolveGap);auto contact=remainder.smooth(time+a*film.h,control,true);out.state=contact.state;out.contactRows=contact.contactRows;out.constraintImpulse=contact.constraintImpulse;out.residual=contact.residual;out.sustained=contact.sustained;out.forceTime=contact.forceTime;out.tension=contact.tension;out.evaluations+=contact.evaluations;out.acceptedReuses+=contact.acceptedReuses;project(out);}
   out.minimumGap=clearance(out.state);if(out.minimumGap< -1e-10)throw std::runtime_error("coupled accepted whole-surface gap gate");return out;
  }
 };

@@ -1,5 +1,6 @@
 #include "../models/film_impact/ProjectedImpact.h"
 #include <iostream>
+#include <Eigen/Geometry>
 using namespace regrip_film_impact;
 void check(bool b){if(!b)throw std::runtime_error("impact reference mismatch");}
 int main(){try{
@@ -28,6 +29,23 @@ int main(){try{
  Eigen::Matrix3d Q;Q<<0,-1,0,1,0,0,0,0,1;
  auto a=solve(M,J,v,0,1e-12,1e-12),b=solve(Q*M*Q.transpose(),J*Q.transpose(),Q*v,0,1e-12,1e-12);
  check((b.velocity-Q*a.velocity).norm()<1e-12&&b.impulse==a.impulse);
+ // Independent shared deformable-point/free-rigid-body impulse. This does
+ // NOT remove any fixed-object guard in the SOFA film prototypes.
+ double mp=2,mb=5;Eigen::Vector3d inertia(3,4,6),arm(.5,.2,1),normal(0,0,1);
+ Eigen::MatrixXd sharedMass=Eigen::MatrixXd::Zero(9,9);
+ sharedMass.topLeftCorner(3,3)=mp*Eigen::Matrix3d::Identity();
+ sharedMass.block(3,3,3,3)=mb*Eigen::Matrix3d::Identity();sharedMass.bottomRightCorner(3,3)=inertia.asDiagonal();
+ Eigen::MatrixXd sharedJ(1,9);sharedJ<<normal.transpose(),-normal.transpose(),-arm.cross(normal).transpose();
+ Eigen::VectorXd incoming=Eigen::VectorXd::Zero(9);incoming(2)=-3;
+ auto coupled=solve(sharedMass,sharedJ,incoming,0,1e-12,1e-12);
+ Eigen::Vector3d linearBefore=mp*incoming.head<3>()+mb*incoming.segment<3>(3);
+ Eigen::Vector3d linearAfter=mp*coupled.velocity.head<3>()+mb*coupled.velocity.segment<3>(3);
+ Eigen::Vector3d angularBefore=arm.cross(mp*incoming.head<3>())+inertia.asDiagonal()*incoming.tail<3>();
+ Eigen::Vector3d angularAfter=arm.cross(mp*coupled.velocity.head<3>())+inertia.asDiagonal()*coupled.velocity.tail<3>();
+ double expectedImpulse=3/(1/mp+1/mb+arm.cross(normal).dot(inertia.cwiseInverse().asDiagonal()*arm.cross(normal)));
+ check((linearAfter-linearBefore).norm()<1e-12&&(angularAfter-angularBefore).norm()<1e-12);
+ check(std::abs(coupled.impulse(0)-expectedImpulse)<1e-12&&coupled.normalVelocity.norm()<1e-12&&coupled.energyLoss>=0);
+ std::cout<<"shared rigid/deformable impulse "<<coupled.impulse(0)<<" linear residual "<<(linearAfter-linearBefore).norm()<<" angular residual "<<(angularAfter-angularBefore).norm()<<";independent reference only,NOT free-object SOFA grasp\n";
  bool rejected=false;try{solve(-M,J,v,0,1e-12,1e-12);}catch(const std::runtime_error&){rejected=true;}check(rejected);
  std::cout<<"PASS independent projected impact: restitution, oblique, root mass, coupled/redundant rows, tangent, objectivity, rejection\n";
 }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

@@ -1,5 +1,25 @@
 # Three-finger shared-impact reference,not actual grasp
 
+## Actual narrow contact continuation through851
+
+ThreeFilmPersistentODE now executes actual3 FilmRailTendon/public film masses
+and ONE FREE Rigid3/public mass/inertia in one1953-DOF Lobatto solve. It supports
+only a REST/T0/Fz=-.001N/100us/R30.01 coupon,NOT closing/impact/grasp. Actual848
+versus independent842 q/v agrees<3.5e-19;stage/whole-surface/actual-field audit851
+PASS. Unsupported radius8.01 rejects before accepted commit847. Actual body
+and all three mapped states are read back after once-only commit.
+
+SharedFilmSystem.h pulls actual material energies/J/H to proper fixed world
+frames. PersistentRows.h handles fixed independent compressive rows only.
+PreciseDistanceOrder.h opt-in113/334-bit value-only ranking resolves recorded
+double0/0 ties840/841 without altering gaps/AD derivatives/tolerances;unresolved
+independent contacts still reject. Fixed-feature836/rescan838 failures remain.
+No3finger time/mesh/full energy/friction/self-contact/shared equalizer/lift/hold
+or final design certification. Midsurface buffer.01 is NOT full shell thickness.
+See reports/REGRIP_THREE_FILM_CONTACT_RESEARCH.md for exact scope/build/raw/commands.
+
+The original point-reference implementation below is preserved separately.
+
 FrameLayout.h constructs three proper120degree frames from the current
 rectangular100x24mm film/rails coupon,one common free isotropic sphere and a
 shared1953-DOF projected mass. Three selected vertex normal rows solve a

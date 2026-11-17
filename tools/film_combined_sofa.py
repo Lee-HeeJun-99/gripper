@@ -4,10 +4,15 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--steps',type=int,choices=(4,8,16,32,64),default=4);p.add_argument('--reuse');p.add_argument('--profile');p.add_argument('--pilot-profile',help='explicit changed-owner-budget pilot from measured identical kernel headers');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rs=json.loads((ref/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--steps',type=int,choices=(4,8,16,32,64,128,256,512),default=4);p.add_argument('--reuse');p.add_argument('--profile');p.add_argument('--pilot-profile',help='explicit changed-owner-budget pilot from measured identical kernel headers');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rs=json.loads((ref/'summary.json').read_text())
  if rs['status']!='PASS' or not (ref/'states.csv').is_file():raise ValueError('qualified independent COMBINED pre-state reference required')
+ uniform='completed_rows' in rs
+ if uniform:
+  parent=ROOT/'results'/('autonomous_film_'+rs['profile']);qualified=json.loads((parent/'summary.json').read_text());rows=list(csv.DictReader((ref/'states.csv').open()))
+  if qualified['status']!='PASS' or not qualified.get('sparse_stage') or rs['completed_rows']!=rs['steps'] or len(rows)!=rs['steps'] or rs['input_sha256']!=qualified['input_sha256'] or a.steps!=rs['steps']:raise ValueError('complete same-input same-grid independent uniform reference required')
+  rs={**rs,'actual_pre_source':qualified['actual_pre_source'],'sparse_stage':True}
  source=ROOT/'results'/('autonomous_film_'+rs['actual_pre_source']);meta=json.loads((source/'identity.json').read_text());ss=json.loads((source/'summary.json').read_text());duration=rs['duration']
- if ss['status']!='PASS' or duration>.000125 or duration/a.steps>1e-5 or meta.get('initial_state_kind')!='pre-impact accepted macro state':raise ValueError('real qualified actual pre-impact source and bounded125us window required')
+ if ss['status']!='PASS' or duration>(.001 if uniform else .000125) or duration/a.steps>1e-5 or meta.get('initial_state_kind')!='pre-impact accepted macro state':raise ValueError('qualified actual pre-impact source and profiled reference window required')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources'
  for directory in ('film_coupled_contact','film_coupled_collocation','film_combined_contact','film_impact','film_shell','film_rail_tendon','film_native_contact','film_sphere_contact'):
   target=archive/'models'/directory;target.mkdir(parents=True)
@@ -36,7 +41,7 @@ def main():
    if ps['status']!='PASS' or pm['source_case']!=identity['source_case'] or pm.get('sparse_stage',False)!=identity['sparse_stage']:raise ValueError('combined physical/backend profile differs')
    if a.profile and pm['binary_sha256']!=identity['binary_sha256']:raise ValueError('same-binary runtime profile differs')
    if a.pilot_profile:
-    if a.steps>16 or a.reuse:raise ValueError('changed-budget first pilot<=16steps only,not a substitute for subsequent same-binary profiling')
+    if a.steps>(128 if uniform else 16) or a.reuse:raise ValueError('changed-budget first pilot bounded by measured kernel profile;subsequent runs require same binary')
     for name,digest in pm['sources'].items():
      if name.endswith('.h') and sources.get(name)!=digest:raise ValueError('pilot profiled kernel differs:'+name)
    if estimate>480:write_json(out/'identity.json',identity);write_json(out/'summary.json',dict(status='BLOCKED',scope='measured runtime policy,NOT OS exhaustion',predicted_runtime_s=estimate));return

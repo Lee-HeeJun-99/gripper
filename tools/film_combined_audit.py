@@ -12,10 +12,16 @@ def main():
  if not meta.get('combined_contact'):raise ValueError('combined numerical policy identity missing')
  ref=ROOT/'results'/('autonomous_film_'+meta['reference']);rs=json.loads((ref/'summary.json').read_text())
  if rs['status']!='PASS':raise ValueError('complete independent combined reference required')
+ uniform='completed_rows' in rs
+ uniform_states=None
+ if uniform:
+  parent=ROOT/'results'/('autonomous_film_'+rs['profile']);pm=json.loads((parent/'summary.json').read_text());uniform_states=list(csv.DictReader((ref/'states.csv').open()))
+  if pm['status']!='PASS' or rs['input_sha256']!=pm['input_sha256'] or len(uniform_states)!=rs['steps'] or rs['steps']!=meta['steps']:raise ValueError('independent uniform provenance/count mismatch')
+  rs={**rs,'actual_pre_source':pm['actual_pre_source']}
  if meta['source_case']!=rs['actual_pre_source'] or meta['duration']!=rs['duration'] or meta['reference_input_sha256']!=rs['input_sha256']:raise ValueError('independent initial-state provenance/window mismatch')
  for name,digest in rs['sources'].items():
   if name.endswith('.h') and meta['sources'].get(name)!=digest:raise ValueError('compiled combined reference kernel drift:'+name)
- actual=list(csv.DictReader((src/'coupled.states.csv').open()));film=list(csv.DictReader((src/'film.csv').open()));stages=list(csv.DictReader((src/'coupled.stages.csv').open()));rows=list(csv.DictReader((src/'coupled.rows.csv').open()));snapshots=list(csv.DictReader((src/'coupled.event_states.csv').open()));events=list(csv.DictReader((src/'coupled.events.csv').open()));reference=next(r for r in csv.DictReader((ref/'states.csv').open()) if int(r['steps'])==meta['steps'])
+ actual=list(csv.DictReader((src/'coupled.states.csv').open()));film=list(csv.DictReader((src/'film.csv').open()));stages=list(csv.DictReader((src/'coupled.stages.csv').open()));rows=list(csv.DictReader((src/'coupled.rows.csv').open()));snapshots=list(csv.DictReader((src/'coupled.event_states.csv').open()));events=list(csv.DictReader((src/'coupled.events.csv').open()));reference=uniform_states[-1] if uniform else next(r for r in csv.DictReader((ref/'states.csv').open()) if int(r['steps'])==meta['steps'])
  if a.independent_clock_reference:
   clock=ROOT/'results'/('autonomous_film_'+a.independent_clock_reference);cm=json.loads((clock/'summary.json').read_text())
   if cm['status']!='PASS' or cm['case']!=a.case or not cm.get('accumulated_clock') or cm.get('formula_clock'):raise ValueError('completed INDEPENDENT accumulated clock reference required;observed clocks not substituted')
@@ -58,6 +64,9 @@ def main():
    if free>=0:expected[free]+=weight[k]*full.flat[k]
   expected[nf:nf+3]=-normal;error['row_J']=max(error['row_J'],float(np.max(abs(expected-np.fromstring(row['jacobian'],sep=' ')))));error['row_point']=max(error['row_point'],float(np.linalg.norm(point-np.array([float(row[k]) for k in ('px','py','pz')]))));error['row_normal']=max(error['row_normal'],float(np.linalg.norm(normal-np.array([float(row[k]) for k in ('nx','ny','nz')]))))
  last=actual[-1];fem_errors={k:float(np.max(abs(np.fromstring(last[k],sep=' ')-np.fromstring(reference[k],sep=' ')))) for k in ('local_displacement','local_velocity','body_center','body_velocity')};impacts={k:max(abs(float(r[k])) for r in events) if events else None for k in ('momentum_residual','linear_balance','angular_balance')}
+ if uniform:
+  if len(actual)!=len(uniform_states) or any(abs(float(s['time'])-float(r['time']))>1e-12 for s,r in zip(actual,uniform_states)):raise ValueError('independent uniform physical-time alignment mismatch')
+  fem_errors={k:max(float(np.max(abs(np.fromstring(s[k],sep=' ')-np.fromstring(r[k],sep=' ')))) for s,r in zip(actual,uniform_states)) for k in fem_errors}
  valid=len(actual)==len(film)==meta['steps'] and minimum>=-1e-10 and minimumStage>=-1e-10 and all(v<1e-10 for v in error.values()) and all(v<1e-12 for v in fem_errors.values()) and events and all(v is not None and v<1e-12 for v in impacts.values())
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');os.environ.setdefault('MPLCONFIGDIR',str(out/'matplotlib_cache'));import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  fig,axes=plt.subplots(1,3,figsize=(13,4));axes[0].plot([float(s['time']) for s in actual],[float(s['minimum_gap']) for s in actual],'.-');axes[0].set_ylabel('Whole accepted gap [mm]');axes[1].plot([float(s['stage_time']) for s in stages],[float(s['normal_force']) for s in stages],'.-');axes[1].set_ylabel('Continuous stage force [N]');axes[2].bar(['pre','post'],[float(events[0]['normal_before']),float(events[0]['normal_after'])]);axes[2].set_ylabel('Actual event normal velocity [mm/s]')

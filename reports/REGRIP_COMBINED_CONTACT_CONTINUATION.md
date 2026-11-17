@@ -1,5 +1,57 @@
 # Combined event/contact continuation through820 — project incomplete
 
+## Newest actual1ms evidence — through839,project NOT complete
+
+Actual821/822/823:128/256/512 steps,one DLL,original saved PRE-impact state and
+C2 control;measured57.9866/116.7787/223.4991s. Finest forecast463.893s<480s.
+Independent814–816 completed one physical grid each. Actual all-pair829 passes
+UNCHANGED0.1% time gate for this1ms IVP:
+
+| comparison | film velocity | common-window force | attachment energy |
+|---|---:|---:|---:|
+|128→256|0.0359993%|0.0263727%|0.000111447%|
+|128→512|0.0359818%|0.0280782%|0.000116237%|
+|256→512|0.0164801%|0.00173243%|0.0000493560%|
+
+Event atoms identical on these grids,not a general earliest-event proof.
+Actual/FEM every-macro-state824/830 q/v/body exact. Endpoint/stage audits PASS;
+minimum accepted gaps:-1.27898e-13/-1.50990e-13/-1.29674e-13mm. All-triangle
+normal velocity831 PASS,min touching vn=-1.60705e-14mm/s. Actual frames/OBJ825
+use scale1 saved states,NOT qualified wrapping/grasp. Partial energy826 matches
+actual FF within1.89735e-19Nmm;signed residual9.834419548e-17Nmm is NOT heat or
+full energy certification. Missing terms remain explicitly unmeasured.
+
+Reusable actual1ms build:
+build/combined_20261117_combined_sparse_1ms821/libReGripCombinedContact.so
+Its archived sources are canonical;live new headers legitimately differ.
+Do not bypass source/binary guards to force reuse. Functional base5a7879e.
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY -m json.tool results/autonomous_film_20261117_combined_1ms_time829/summary.json
+$PY tools/film_combined_audit.py --tag UNIQUE_1MS_AUDIT --case 20261117_combined_sparse_1ms_quarter823
+$PY tools/film_whole_velocity.py --tag UNIQUE_WHOLE_VELOCITY --case 20261117_combined_sparse_1ms_quarter823
+```
+
+Three-finger EXPERIMENTAL implementation:PersistentRows extends the same
+Lobatto equations to fixed independent compressive rows,true Hessian/mass
+Jacobian,strict1e-17Ns/1e-10mm/s/1e-10mm gates. Independent math833 PASS,
+fourth-order errors6.33439e-9/3.96261e-10/2.47720e-11;curved FD1.63e-16.
+SharedFilmSystem pulls three actual material-frame film forces and gaps into
+ONE free sphere,1953DOFs;it is NOT yet an actual SOFA adapter.
+
+834 +z load correctly RELEASES. Different -z1e-6N/1us835 limited PASS has zero
+Newton iterations and sub-ULP body displacement;not meaningful grasp evidence.
+Stronger -z.001N/100us836 FAILS a feature transition. Whole-Trial rescan838
+FAILS independent closest supports. Observer839 preserves the rejected state:
+triangle115 face6 and116 edge3 both double gap0,gradient difference4.25097e-9.
+827/832 compile failures and837 CLI-guard failure remain archived too.
+
+Next:high-precision diagnosis of the tied distance,then consistent stage
+ownership/complementarity. Do NOT erase a row/relax a gate to make3finger pass.
+Full cycle,mesh/friction,self-contact,actual3finger/lift/12wrench/Optuna remain
+unqualified. No OS exhaustion or automatic background continuation is claimed.
+
 ## Implemented physics,not a plan
 
 New models/film_combined_contact uses the validated coupled reintegrated event

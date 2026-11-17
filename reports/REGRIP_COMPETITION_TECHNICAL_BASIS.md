@@ -1,5 +1,52 @@
 # 경진대회 기술 근거 — 연구 결과와 제작 목표 구분
 
+
+## Latest actual checkpoint — three-film shared FREE body,through851
+
+ThreeFilmPersistentODE is now IMPLEMENTED and actually executed843/844/846/848,
+not three unrelated fixed coupons. Narrow REST/T0/Fz=-.001N/100us IVP only:
+three actual FilmRailTendon fields,three public film masses,ONE public FREE
+Rigid3 mass/inertia,shared1953-DOF solve,proper frame pullbacks and once-only
+mapped commit. Actual848 versus independent842:q<=2.83e-20mm,v<=3.48e-19mm/s.
+Independent used-row/whole-stage/actual-field audit851 PASS;scale1 actual PNG/OBJ
+are in that campaign. Body commit observer850 preserves nine physical CSVs.
+R30.01 runtime Data policy checked;unsupported8.01 trial847 is a preserved FAIL
+(configuration rejection,NOT OS exhaustion or a failed Newton solve).
+
+Earlier three-row ambiguity was NOT established as real multiple contact:
+840 Decimal80/120 resolves double0/0 into-4.24e-18/+9.75e-19mm. Value-only
+113/334-bit order841 PASS;opt-in selector842 resolves this precise fixture
+WITHOUT changing gap/force/Hessian/tolerances. Exact unresolved independent
+supports still reject. Original836/838/839 failures remain preserved.
+
+Actual3finger CLOSING/IMPACT/LIFT/GRASP remains NOT RUN. This is not a shared
+actuator/equalizer,self-contact/friction,3finger time/mesh or full energy PASS.
+R8.01/R30.01 buffer is a declared MIDSURFACE model,not full shell-thickness
+clearance. Root-centre50mm is not a certified50mm outer palm. Final design and
+Optuna remain BLOCKED. Exact build,commands,next priorities and scope:
+REGRIP_THREE_FILM_CONTACT_RESEARCH.md. Older sections are historical context.
+
+
+## Newest measured checkpoint — actual combined 1ms, campaigns821–831
+
+Actual SOFA coupled birth+impact+Lobatto128/256/512 steps COMPLETE;all-pair
+0.1% time gate829 PASS for THIS saved-state1ms IVP only. Base-quarter velocity
+0.0359818%,common-window normal force0.0280782% (see829 for exact pairs),
+attachment energy0.000116237%. Independent FEM versus actual states824/830
+are exact;whole endpoint/stage and actual-field audits PASS. Actual frame
+exports825 use saved states,scale1. Partial energy inventory826 is NOT full
+energy certification. New build821 and complete commands are documented in
+REGRIP_COMBINED_CONTACT_CONTINUATION.md. Earlier failure records unchanged.
+
+Three-finger nonlinear work is EXPERIMENTAL:two-row math833 PASS,three-film
+small1us835 limited PASS,but100us836 FAIL(feature transition),rescan838
+FAIL(independent ambiguous supports). Three-row branch is insufficient for
+this case;do not remove the guard or call this actual3finger grasp. Further
+accepted-state ownership/multicontact work is required. No final structure,
+full cycle,mesh,friction,self-collision,lift,12wrench or Grasp Optuna PASS.
+The following older checkpoint sections are preserved HISTORICAL context.
+
+
 ## Latest measured continuation through820 — supersedes older NEXT/RUNNING claims
 
 Combined event + persistent Lobatto owner is now IMPLEMENTED in actual SOFA.

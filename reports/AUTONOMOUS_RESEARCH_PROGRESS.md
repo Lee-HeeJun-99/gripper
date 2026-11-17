@@ -1,5 +1,24 @@
 # Autonomous research log
 
+## 2026-11-17 — coupled free-body implementation and continuation567–650
+
+Implemented custom actual SOFA free-sphere shared mass/J/impulse/commit,
+mathematical FD/IFT and independent impulse/momentum audits. Preserved old
+Native and fixed owner laws. Exact accepted cache improves measured runtime;
+later energy-only evaluator does not improve actual adaptive runtime646 and
+is not adopted as default. ULP event bracket failure614 fixed without changing
+physical tolerance;old failed runs remain. Actual adaptive620 and frozen
+628/629/630 prove bounded1ms all-pair time640 PASS. This is not full C2 PASS.
+
+Investigated full C2 time607 FAIL rather than scaling to3finger prematurely.
+Independent newborn-impact counterexample634 reproduced,then measured635
+falsified newborn rows as sole source of persistent discrete work. Independent
+rotating/sliding contact639 reproduces first-order endpoint-force work bias.
+Implemented opt-in midpoint force-J with endpoint gap and consistent h/2
+Hessian641;no force/torque/energy correction added. Default actual physical
+CSV regression647 exact.643 C2 closing completes;648 half-step is separately
+tracked. All assumptions/failures and scope in coupled research report.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

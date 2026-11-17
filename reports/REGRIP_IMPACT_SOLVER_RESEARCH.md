@@ -1,5 +1,17 @@
 # Event-aware impact research — 2026-11-17, project incomplete
 
+## Coupled actual free-sphere continuation
+
+New custom film/Rigid3 owner uses actual shared projected mass and relative
+triangle Jacobian.603/604/623 independently audit actual event velocities,
+impulse work and momentum,including light-body contrast.628/629/630 genuine
+actual impact time refinement640 PASS only1ms/T=0. Full C2 time607 FAIL.
+634 independent counterexample shows why endpoint position/momentum cannot
+certify newborn-impact law.639 separately exposes persistent normal-work
+quadrature bias. No new artificial force/heat or relaxed physical tolerance.
+The code is one-step midpoint/event,not validated BDF2 smooth resumption.
+New details/failures:REGRIP_COUPLED_FREE_BODY_RESEARCH.md.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

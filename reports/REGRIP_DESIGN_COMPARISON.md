@@ -1,5 +1,14 @@
 # 구조 비교 — 정량 기하/해석 선별, 실제 파지 비교 미완료
 
+## 2026-11-17 최신 물리 개발 범위
+
+실제 단일 Film/Rails/Tendon과 자유 구체를 Custom Owner로 결합했다.
+1ms 무장력 충돌의 실제 시간 세분화640은 제한 범위 PASS다. 기존 C2
+구동 시간 수렴607은 FAIL이며,신규 접촉 평가 방식643/648은 별도 시험이다.
+이 결과는3핑거 파지,들어올리기,재료 실측 또는 Baseline 대비 성능 우위를
+증명하지 않는다. 최종 구조·Optuna 선정 보류를 유지한다. 현재 직사각형
+쿠폰과 최종 테이퍼 카트리지/50mm 본체의 차이도 유지한다.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

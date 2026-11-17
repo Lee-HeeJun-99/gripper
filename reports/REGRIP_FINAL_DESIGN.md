@@ -1,5 +1,13 @@
 # 최종 설계 판정 — 선정 보류(EXPERIMENTAL)
 
+## 2026-11-17 최신 갱신
+
+Custom coupled free-sphere의 실제 충돌·accepted-state 접촉을 구현했으나
+전체 C2 시간·에너지·마찰·자가 충돌·3핑거 파지 Gate는 미완료다.
+640의1ms 무장력 충돌 시간 수렴 PASS를 최종 파지 성능으로 사용하지 않는다.
+선택적 midpointContact는 실험 버전이며 기존 endpoint 모델을 대체하지 않는다.
+5일 제작 후보 및 액추에이터/필름 물성 미확정 상태는 그대로다.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

@@ -1,5 +1,17 @@
 # Whole-surface event continuation — 2026-11-17
 
+## Coupled continuation567 onward
+
+Whole-surface relative numerical-path event is now integrated with actual
+free sphere state/shared mass in models/film_coupled_contact. Fixed sphere
+and Native implementations remain separate. Accepted moving-body triangle
+clearance and opposite impact momentum are measured,not inferred from old
+fixed-body tests.628/629/630 actual1ms grids pass limited time640;original
+C2 1s time607 FAIL remains. Sustained path still has endpoint-candidate
+closure,not a proof of swept clearance for every internally touching feature.
+See REGRIP_COUPLED_FREE_BODY_RESEARCH.md for these limitations and new
+experimental midpoint regular-force quadrature;no friction/grasp certificate.
+
 ## Latest implementation and evidence through566
 
 Functional commit59254b9 adds independent actual mixed Film/Rigid3 BE and

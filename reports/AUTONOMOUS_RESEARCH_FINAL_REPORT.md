@@ -1,5 +1,18 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Latest non-final checkpoint — coupled custom free sphere,2026-11-17
+
+This document is NOT a project completion declaration. Custom event dynamics
+and actual Rigid3 are now coupled,not just separate references. Limited actual
+1ms impact h/h2/h4 time gate640 PASS (attachment base-quarter0.00378159%).
+Actual C2 1s closing time607 still FAIL;full energy,friction,self-collision,
+3finger/free grasp/lift/12wrench/final design comparison and Optuna unfinished.
+New opt-in midpoint contact quadrature is being tested in643/648;not certified.
+The attempted value-only adaptive speedup failed the actual runtime criterion
+646 despite exact physical CSVs. No material measurements are claimed.
+See REGRIP_COUPLED_FREE_BODY_RESEARCH.md and current checkpoint before using
+any historical RUNNING,guard,or incomplete statements below as current status.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

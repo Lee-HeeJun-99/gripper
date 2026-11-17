@@ -1,5 +1,25 @@
 # Next research checkpoint
 
+## Current continuation — custom coupled contact, not a new project
+
+1. Inspect completed/pending643/648 actual C2 midpoint-J runs. Compare with
+   tools/film_coupled_time.py all-pair0.1%;do NOT rerun completed cases.
+2. Compare650 discrete regular contact work against605/606. Negative work is
+   NOT physical friction heat. Endpoint-J persistent quadrature639 is a
+   demonstrated bias,but not proof that every C2 time failure has one cause.
+3. Keep midpointContact opt-in until real C2 time/impulse/energy/clearance gates
+   improve;default remains old endpoint version,byte-regression647 PASS.
+4. If contact convergence still fails,isolate active row transitions and
+   sustained discretization;634 shows position/momentum alone can hide wrong
+   newborn-impact velocity. Initial inward zero-time contacts still reject.
+5. Full-cycle work inventory/friction/self-contact and 3finger follow only
+   under their real prerequisites. No final grasp Optuna or fictitious lift.
+
+628/629/630 actual1ms impact grids already COMPLETE;640 time gate PASS in
+that scope. Do not run them again.636 value-only optimization is exact but
+actual runtime did NOT improve646;it is not the default production backend.
+See LONG_RUN_RESEARCH_CHECKPOINT.md and new coupled report for exact commands.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

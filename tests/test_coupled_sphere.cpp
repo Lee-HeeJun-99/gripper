@@ -22,4 +22,18 @@ int main(){try{
  Body loadedBody=touching.body;loadedBody.linear.setZero();loadedBody.force.z()=.01;System loaded(hold,triangles,loadedBody,1);auto load=loaded.smooth(0,control,true);Eigen::VectorXd middle=(loaded.pack(load.state)+loaded.pack(loaded.before))/2;Eigen::VectorXd residual=2*loaded.evaluate(middle,load.tension).gradient;
  for(unsigned k=0;k<load.contactRows.size();++k)residual-=load.contactRows[k].gradient*load.constraintImpulse(k);check(load.minimumGap>=-1e-10&&load.sustained&&residual.norm()<1e-14,"coupled constrained physical momentum");
  std::cout<<"PASS moving whole-surface event fraction "<<result.event->fraction<<" rows "<<result.event->rows.size()<<" gap "<<result.minimumGap<<" geometryFD "<<dg<<' '<<dh<<" loadedResidual "<<residual.norm()<<" eventIFTerror "<<std::abs(eventFD-result.eventIncomingSensitivity(system.nf+2))<<" stageCalls "<<result.evaluations<<'/'<<uncached.evaluations<<";independent model,NOT SOFA/grasp\n";
+ System midpointSystem(hold,triangles,loadedBody,1,false,true,true);
+ auto midpointLoad=midpointSystem.smooth(0,control,true);check(midpointLoad.minimumGap>=-1e-10&&midpointLoad.sustained,"midpoint contact solve missing");
+ Eigen::VectorXd ym=(midpointSystem.pack(midpointLoad.state)+midpointSystem.pack(midpointSystem.before))/2;
+ Eigen::VectorXd rm=2*midpointSystem.evaluate(ym,midpointLoad.tension).gradient;
+ for(unsigned k=0;k<midpointLoad.contactRows.size();++k)rm-=midpointLoad.contactRows[k].gradient*midpointLoad.constraintImpulse(k);
+ check(rm.norm()<1e-14,"midpoint force/Jacobian ownership residual");
+ // Actual force-geometry chain rule dJ_mid/dy = h/2 H_mid,not h H_end.
+ auto gm=midpointSystem.forceGeometry(midpointLoad.state);auto rmid=midpointSystem.geometry(gm,8);double midpointFD=0;
+ for(unsigned k=0;k<midpointSystem.nf+3;++k){auto yp=ym,yn=ym;yp(k)+=1e-4;yn(k)-=1e-4;
+  auto rp=midpointSystem.geometry(midpointSystem.forceGeometry(midpointSystem.endpoint(yp)),8);
+  auto rn=midpointSystem.geometry(midpointSystem.forceGeometry(midpointSystem.endpoint(yn)),8);
+  midpointFD=std::max(midpointFD,((rp.gradient-rn.gradient)/2e-4-.5*hold.h*rmid.hessian.col(k)).norm());}
+ check(midpointFD<1e-8,"midpoint geometry consistent tangent FD");
+ std::cout<<"PASS experimental midpoint force chain-rule FD "<<midpointFD<<" momentum "<<rm.norm()<<";NOT time/energy qualified\n";
  }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

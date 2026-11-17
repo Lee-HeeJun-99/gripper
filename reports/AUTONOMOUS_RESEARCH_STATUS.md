@@ -1,5 +1,37 @@
 # Autonomous research status — active continuation 2026-11-16
 
+## Latest 2026-11-17 — custom coupled free sphere, through647
+
+Supersedes historical fixed-owner-only statements below. Project NOT COMPLETE.
+Actual shared film/Rigid3 custom midpoint/event owner is implemented and tested.
+Motion of BOTH bodies,shared projected mass/J,opposite impulse,whole triangle
+accepted clearance and actual mapped state commits are checked. Sphere only,
+frictionless,isotropic inertia,explicit root fixture,zero gravity;not3finger.
+
+- Actual original C2 closing605/606 (400/800 steps,1s):execute/clearance PASS,
+  overall time607 FAIL. Attachment2.456910%,film velocity6.473119%;1 versus2
+  impact events. Tighter Newton residual did not solve this.
+- Actual bounded adaptive impact620 and optimized opt-in636:382 accepted steps,
+  state/force/energy/row CSVs exactly identical.636268.266s versus620259.218s:
+  total speed improvement rejected646 despite independent evaluator speedup.
+- Genuine physical frozen h/h2/h4 runs628/629/630:382/764/1528 intervals,
+  original initial condition re-integrated.640 all-pair0.1% time PASS for
+  **1ms zero-tension seeded impact only**;base-quarter attachment0.00378159%.
+  Independent actual geometry/mapping/instant momentum audit637 PASS.
+-634/639 independent analytic counterexamples distinguish newborn-impact
+  velocity defect and persistent normal-work quadrature.635 measured C2 work
+  is on already-touching rows,not newborn rows;sole-birth hypothesis rejected.
+- Experimental midpoint-force/endpoint-gap path641 consistent tangent FD PASS;
+  actual loaded touch644 PASS;default CSV regression647 byte-exact to596.
+  C2 midpoint643 actual execution/clearance PASS. Half-grid648 comparison is
+  a separate pending experiment;inspect its summary,not this historical text.
+- Full-cycle time/mesh/energy,changing-normal friction,self-contact,3finger,
+  free-object lift/hold,12wrench,multimaterial and grasp Optuna remain FAIL /
+  BLOCKED / NOT RUN. No final structure or measured material performance claim.
+
+Detailed sources/commands/raw:REGRIP_COUPLED_FREE_BODY_RESEARCH.md. Original
+Native562 buffered gap failure and all old FAIL/raw/SDK remain unchanged.
+
 ## Current measured checkpoint — whole-surface and mixed-body continuation through566
 
 **Project NOT COMPLETE. Functional commit59254b9; whole-surface mechanics327e212.

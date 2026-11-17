@@ -1,0 +1,19 @@
+#pragma once
+#include <array>
+#include <cmath>
+#include <stdexcept>
+namespace regrip_value_film {
+// VALUE ONLY,distinct namespace/TU. NEVER used for forces or Hessians.
+struct AD {double v=0;AD(double value=0):v(value){}static AD variable(double value,int){return AD(value);}};
+inline AD operator+(AD a,AD b){return AD(a.v+b.v);}
+inline AD operator-(AD a,AD b){return AD(a.v-b.v);}
+inline AD operator*(AD a,AD b){return AD(a.v*b.v);}
+inline AD inverse(AD a){if(a.v==0)throw std::domain_error("zero inverse");return AD(1/a.v);}
+inline AD root(AD a){if(a.v<=0)throw std::domain_error("degenerate film normal");return AD(std::sqrt(a.v));}
+template<class T>using Vec=std::array<T,3>;
+template<class T>inline Vec<T>add(const Vec<T>&a,const Vec<T>&b){return {a[0]+b[0],a[1]+b[1],a[2]+b[2]};}
+template<class T>inline Vec<T>sub(const Vec<T>&a,const Vec<T>&b){return {a[0]-b[0],a[1]-b[1],a[2]-b[2]};}
+template<class T>inline Vec<T>scale(const Vec<T>&a,T c){return {a[0]*c,a[1]*c,a[2]*c};}
+template<class T>inline T dot(const Vec<T>&a,const Vec<T>&b){return a[0]*b[0]+a[1]*b[1]+a[2]*b[2];}
+template<class T>inline Vec<T>cross(const Vec<T>&a,const Vec<T>&b){return {a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]};}
+}

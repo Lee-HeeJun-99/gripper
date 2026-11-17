@@ -14,6 +14,8 @@ def main():
             original=cases[0][1]
             for key in ('binary_sha256','mode','duration','body_mass','inertia_per_mass','rayleigh_mass','initial_body_center','initial_body_velocity'):
                 if meta[key]!=original[key]:raise ValueError('physical/source binary mismatch:'+key)
+            for key,default in (('body_force_z',0.),('strict_newton',False)):
+                if meta.get(key,default)!=original.get(key,default):raise ValueError('force/numerical accuracy input mismatch:'+key)
         states=list(csv.DictReader((folder/'coupled.states.csv').open()));events=list(csv.DictReader((folder/'coupled.events.csv').open()));cases.append((name,meta,states,events))
     cases.sort(key=lambda c:c[1]['steps']);pairs={}
     for left,right in itertools.combinations(cases,2):

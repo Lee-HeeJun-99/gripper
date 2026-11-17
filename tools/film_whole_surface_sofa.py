@@ -5,7 +5,7 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 SDK=Path('/home/ubuntu/SOFA/v26.06.00')
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--mode',choices=('impact','c2','touch','touch-cycle'),default='impact');p.add_argument('--steps',type=int,default=1);p.add_argument('--duration',type=float,default=.001);p.add_argument('--reuse');p.add_argument('--sustained-be',action='store_true');p.add_argument('--owner-ode',action='store_true');p.add_argument('--profile');p.add_argument('--midpoint-contact',action='store_true');p.add_argument('--restart-case');p.add_argument('--local-divisor',type=int,choices=(1,2,4,8,16),default=1);p.add_argument('--refine-at',type=float,default=.975);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--mode',choices=('impact','c2','touch','touch-cycle'),default='impact');p.add_argument('--steps',type=int,default=1);p.add_argument('--duration',type=float,default=.001);p.add_argument('--reuse');p.add_argument('--sustained-be',action='store_true');p.add_argument('--owner-ode',action='store_true');p.add_argument('--profile');p.add_argument('--midpoint-contact',action='store_true');p.add_argument('--restart-case');p.add_argument('--local-divisor',type=int,choices=(1,2,4,8,16),default=1);p.add_argument('--refine-at',type=float,default=.975);p.add_argument('--trace-owner',action='store_true');a=p.parse_args()
     if a.midpoint_contact and not a.sustained_be:raise ValueError('midpoint contact requires explicit sustained branch')
     runtime_limit=120;prediction=None
     if a.steps<1 or not 0<a.duration:raise ValueError('positive step count and duration required')
@@ -81,6 +81,7 @@ def main():
             root_dofs=scene.find("MechanicalObject[@name='dofs']");root_dofs.set('position',saved['local_displacement']);root_dofs.set('velocity',saved['local_velocity'])
             identity['accepted_replay']=dict(source=a.restart_case,source_status=json.loads((original/'summary.json').read_text())['status'],state_file_sha256=sha(original/'event.csv.states.csv'),physical_start_time=start_time,note='last committed state from explicit accepted owner journal;NOT full trajectory convergence',legacy_ff_cumulative_work='INVALID across replay origin:legacy FF previousLength/previousT reset;do not use this replay for cumulative work/energy certification')
         ET.SubElement(scene,'RequiredPlugin',pluginName=str(binary));ET.SubElement(scene,'FilmWholeSurfaceEventOwner',name='surfaceOwner',root='@dofs',field='@assembly/filmField',center=center,radius='8.01',sustainedBE=str(int(a.sustained_be)),midpointContact=str(int(a.midpoint_contact)),odeDriven=str(int(a.owner_ode)),replayStartTime=str(start_time),filename=str(out/'event.csv'))
+        if a.trace_owner:scene.find('FilmWholeSurfaceEventOwner').set('solverTraceFilename',str(out/'solver_trace.log'))
         if a.owner_ode:
             for e in list(scene):
                 if e.tag in ('ReGripBDFSolver','NewtonRaphsonSolver','ReGripMatrixLinearSystem','EigenSparseLU','FreeMotionAnimationLoop','BlockGaussSeidelConstraintSolver','LinearSolverConstraintCorrection','CollisionPipeline','BruteForceBroadPhase','BVHNarrowPhase','MinProximityIntersection','CollisionResponse'):scene.remove(e)

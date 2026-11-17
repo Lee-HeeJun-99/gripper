@@ -4,7 +4,7 @@ from curve_common import ROOT,sha,write_json
 def rows(path):return list(csv.DictReader(path.open()))
 def vector(text):return list(map(float,text.split()))
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);p.add_argument('--require-exact',action='store_true');a=p.parse_args()
     out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');results={};hashes={}
     for name in a.cases:
         path=ROOT/'results'/('autonomous_film_'+name);summary=json.loads((path/'summary.json').read_text());identity=json.loads((path/'identity.json').read_text())
@@ -28,7 +28,15 @@ def main():
                 row_status &= maximum<=1e-20
         impact_status=all(float(r['impulse'])>=0 and float(r['post_normal'])>=-1e-10 and float(r['impact_loss'])>=0 for r in events)
         results[name]=dict(status='PASS' if exact and row_status and impact_status else 'FAIL',forcefield_displacement_exact=exact,owned_rows=len(constraints),unique_row_ids=len(seen),maximum_impulse_inventory_error=max_inventory_error,impact_rows=len(events),impact_conditions=impact_status,scope='recording/state ownership gates only;NOT energy or time qualification')
-        for file in ('identity.json','summary.json','event.csv.states.csv','event.csv.surface.csv','event.csv.constraints.csv','displacement.csv'):hashes[str((path/file).relative_to(ROOT))]=sha(path/file)
-    write_json(out/'summary.json',dict(status='PASS' if all(r['status']=='PASS' for r in results.values()) else 'FAIL',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),scope='limited actual state/row audit;NOT full physics/grasp',cases=results,source_hashes=hashes))
+        for file in ('identity.json','summary.json','event.csv.states.csv','event.csv.surface.csv','event.csv.constraints.csv','displacement.csv','film.csv'):hashes[str((path/file).relative_to(ROOT))]=sha(path/file)
+    exact_pairs={}
+    if a.require_exact:
+        first=ROOT/'results'/('autonomous_film_'+a.cases[0]);base=json.loads((first/'identity.json').read_text())
+        for name in a.cases[1:]:
+            other=ROOT/'results'/('autonomous_film_'+name);identity=json.loads((other/'identity.json').read_text())
+            if identity['binary_sha256']!=base['binary_sha256'] or identity.get('accepted_replay')!=base.get('accepted_replay'):raise ValueError('purity comparison requires same binary and initial replay')
+            exact_pairs[name]={f:sha(first/f)==sha(other/f) for f in ('film.csv','displacement.csv','event.csv.states.csv','event.csv.constraints.csv')}
+    passed=all(r['status']=='PASS' for r in results.values()) and all(all(pair.values()) for pair in exact_pairs.values())
+    write_json(out/'summary.json',dict(status='PASS' if passed else 'FAIL',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),scope='limited actual state/row audit;NOT full physics/grasp',cases=results,passive_trace_physical_journals_exact=exact_pairs,source_hashes=hashes))
     print(json.dumps(results))
 if __name__=='__main__':main()

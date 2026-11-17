@@ -40,6 +40,10 @@ int main(){try{
  tangential.a1.assign(3,{0,1000000,0});
  check(!earliestSurfaceEvent(tangential,triangles,{0,0,0},1));
  bool oldBudget=false;try{earliestSurfaceEvent(tangential,triangles,{0,0,0},1,1e-10,1e-10,false);}catch(const std::runtime_error&){oldBudget=true;}check(oldBudget);
+ // Collapse occurs only in the middle, far outside the sphere. A clear
+ // endpoint or swept separating plane must NOT hide invalid geometry.
+ QuadraticSurfacePath collapse{{{0,0,2},{1,0,2},{0,1,2}},{{0,0,0},{-2,0,0},{0,0,0}},std::vector<SurfacePoint>(3)};
+ bool invalidInterior=false;try{earliestSurfaceEvent(collapse,triangles,{0,0,0},1);}catch(const std::runtime_error&){invalidInterior=true;}check(invalidInterior);
  bool rejected=false;auto grazing=curved;grazing.a1.assign(3,{-4,0,0});grazing.a2.assign(3,{4,0,0});
  try{earliestSurfaceEvent(grazing,triangles,{0,0,0},1);}catch(const std::runtime_error&){rejected=true;}check(rejected);
  rejected=false;try{earliestSurfaceEvent(one,{{0,0,0}},{0,0,0},1);}catch(const std::runtime_error&){rejected=true;}check(rejected);

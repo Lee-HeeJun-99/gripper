@@ -1,5 +1,6 @@
 #pragma once
 #include "../film_sphere_contact/CandidateClosure.h"
+#include <ostream>
 namespace regrip_film_impact {
 // New constrained midpoint law, not a change to the preserved BE SphereStep.
 // Unknown y=v_mid; q1=q0+h*y, v1=2*y-v0.
@@ -8,7 +9,7 @@ namespace regrip_film_impact {
 inline regrip_film_sphere::CandidateClosure::Result midpointPosition(
  const regrip_film_native::CoupledPlaneStep&m,
  const std::vector<std::array<unsigned,3>>&triangles,
- regrip_film_rail::Point center,double radius,double tension){
+ regrip_film_rail::Point center,double radius,double tension,std::ostream*trace=nullptr){
  using namespace regrip_film_native;using namespace regrip_film_sphere;
  CoupledPlaneStep stage(m.model,m.mass,m.h/2,m.damping,tension,m.previous,m.previousVelocity,std::vector<Point>(m.previous.size()),0);
  auto rest=m.model.rest();Eigen::VectorXd y=m.pack(m.previousVelocity),lambda(0);std::vector<unsigned>owned;
@@ -24,6 +25,7 @@ inline regrip_film_sphere::CandidateClosure::Result midpointPosition(
  double first=-1;regrip_film_sphere::CandidateClosure::Result out;
  for(unsigned sweep=0;sweep<8;++sweep){bool converged=false;
   for(unsigned iteration=0;iteration<30;++iteration){auto e=stage.evaluate(y);auto g=geometry(y,lambda);double residual=(e.gradient-g.C*lambda).norm();if(first<0)first=residual;
+   if(trace)*trace<<"midpoint_iteration "<<sweep<<' '<<iteration<<" residual "<<residual<<" reference "<<first<<" gap_error "<<CoupledContactStep::gapError(g.gap,lambda)<<" phi "<<e.phi<<" rows "<<owned.size()<<'\n';
    if(residual<=std::max(1e-15,first*1e-7)&&CoupledContactStep::gapError(g.gap,lambda)<=1e-10){converged=true;out.mechanical.residual=2*residual;break;}
    Eigen::LDLT<Eigen::MatrixXd>factor(e.tangent-g.H);
    if(factor.info()!=Eigen::Success||factor.vectorD().minCoeff()<=0)throw std::runtime_error("midpoint TRUE contact tangent not positive;no regularization");
@@ -32,9 +34,15 @@ inline regrip_film_sphere::CandidateClosure::Result midpointPosition(
    auto merit=[&](const auto&gradient,const Geometry&geo,const Eigen::VectorXd&l){double norm=(gradient-geo.C*l).squaredNorm();for(int k=0;k<l.size();++k){if(!(W(k,k)>0))throw std::runtime_error("midpoint degenerate compliance");double c=std::min(l(k),geo.gap(k)/W(k,k));norm+=c*c;}return std::sqrt(norm);};
    double old=merit(e.gradient,g,lambda),alpha=1;bool accepted=false;
    for(unsigned backtrack=0;backtrack<16;++backtrack){Eigen::VectorXd trial=y+alpha*dy,l=lambda+alpha*(next-lambda);auto value=stage.evaluate(trial);auto geo=geometry(trial,l);
-    if(merit(value.gradient,geo,l)<=(1-1e-4*alpha)*old){y=std::move(trial);lambda=std::move(l);accepted=true;break;}alpha*=.5;
+    double trialResidual=(value.gradient-geo.C*l).norm(),trialGap=CoupledContactStep::gapError(geo.gap,l);
+    const bool alreadyConverged=trialResidual<=std::max(1e-15,first*1e-7)&&trialGap<=1e-10;
+    if(trace)*trace<<"midpoint_trial "<<backtrack<<" alpha "<<alpha<<" old_merit "<<old<<" trial_merit "<<merit(value.gradient,geo,l)<<" residual "<<trialResidual<<" gap_error "<<trialGap<<" phi "<<value.phi<<" final_gates "<<alreadyConverged<<'\n';
+    // A globalization merit must not reject a solution that ALREADY meets
+    // the unchanged final force/complementarity tolerances. Otherwise a
+    // harmless active-gap change within tolerance can prevent termination.
+    if(alreadyConverged||merit(value.gradient,geo,l)<=(1-1e-4*alpha)*old){y=std::move(trial);lambda=std::move(l);accepted=true;break;}alpha*=.5;
    }
-   if(!accepted)throw std::runtime_error("midpoint contact line search rejected");
+   if(!accepted){if(trace)*trace<<"REJECTED_MIDPOINT_STATE\ny "<<y.transpose()<<"\nlambda "<<lambda.transpose()<<"\ngap "<<g.gap.transpose()<<"\ngradient "<<e.gradient.transpose()<<"\nC\n"<<g.C<<"\nTRUE_TANGENT\n"<<(e.tangent-g.H)<<"\nEND_REJECTED_MIDPOINT\n";throw std::runtime_error("midpoint contact line search rejected");}
   }
   if(!converged)throw std::runtime_error("midpoint contact Newton budget");
   auto q=position(y);unsigned added=0;

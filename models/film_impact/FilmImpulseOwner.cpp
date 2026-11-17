@@ -175,8 +175,9 @@ public:
  sofa::core::objectmodel::Data<bool>odeDriven{initData(&odeDriven,false,"odeDriven","Advance inside FilmSurfaceODESolver instead of end-event correction")};
  sofa::core::objectmodel::Data<bool>midpointContact{initData(&midpointContact,false,"midpointContact","Separate constrained midpoint position law;physical step impulse is twice midpoint multiplier")};
  sofa::core::objectmodel::Data<double>replayStartTime{initData(&replayStartTime,0.,"replayStartTime","Explicit saved accepted-state replay clock;NOT a new trajectory from rest")};
+ sofa::core::objectmodel::Data<std::string>solverTraceFilename{initData(&solverTraceFilename,std::string(),"solverTraceFilename","Opt-in passive constrained-stage residual/trial/failure-matrix trace")};
  std::vector<regrip_film_rail::Point>beginQ,beginV;
- std::ofstream rows,states,constraints,eventStates;double beginTime=0;unsigned stepCount=0,eventCount=0;bool pending=false;
+ std::ofstream rows,states,constraints,eventStates,solverTrace;double beginTime=0;unsigned stepCount=0,eventCount=0;bool pending=false;
  std::optional<FilmRestartHistory>history;
  void init()override{
   FilmSuppliedEventImpulse::init();for(auto suffix:{".surface.csv",".states.csv",".constraints.csv",".event_states.csv"})if(std::ifstream(filename.getValue()+suffix))throw std::runtime_error("whole surface journal exists");
@@ -185,6 +186,7 @@ public:
   states<<std::setprecision(17)<<"time,force_time,tension,tension_rate,end_tension,minimum_gap,event_count,sustained,constraint_impulse,projection_impulse,projection_loss,position_residual,local_displacement,local_velocity\n";
   constraints.open(filename.getValue()+".constraints.csv");constraints<<std::setprecision(17)<<"time,step_owner,row_owner,stage,triangle,feature,gap,impulse,normal_before,normal_after,nx,ny,nz,b0,b1,b2,reduced_jacobian\n";
   eventStates.open(filename.getValue()+".event_states.csv");eventStates<<std::setprecision(17)<<"event_time,event_id,event_tension,event_tension_rate,start_time_sensitivity,event_displacement,pre_velocity,post_velocity\n";
+  if(!solverTraceFilename.getValue().empty()){if(std::ifstream(solverTraceFilename.getValue()))throw std::runtime_error("solver trace exists");solverTrace.open(solverTraceFilename.getValue());solverTrace<<std::setprecision(17);solverTrace.setf(std::ios::unitbuf);}
   if(!std::isfinite(replayStartTime.getValue())||replayStartTime.getValue()<0)throw std::runtime_error("invalid replay clock");
   if(replayStartTime.getValue()>0){auto*context=dynamic_cast<sofa::core::objectmodel::Context*>(getContext());if(!context||!odeDriven.getValue())throw std::runtime_error("saved-state replay requires sole ODE owner/public Context");context->setTime(replayStartTime.getValue());}
  }
@@ -209,7 +211,7 @@ public:
   auto*ode=getContext()->get<sofa::core::objectmodel::BaseObject>(std::string("ode"));auto*damping=ode?dynamic_cast<sofa::core::objectmodel::Data<double>*>(ode->findData("rayleighMass")):nullptr;if(!damping)throw std::runtime_error("surface actual mass damping");
   EventControl control{parameter<double>("maximumTension"),parameter<double>("rampTime"),parameter<double>("releaseBegin"),parameter<double>("releaseEnd"),parameter<bool>("c2Control")};
   regrip_film_native::CoupledPlaneStep mechanics(model,masses,getContext()->getDt(),damping->getValue(),control.sample(beginTime).tension,beginQ,beginV,std::vector<SurfacePoint>(model.size()),0);
-  auto c=center.getValue();auto result=sustainedBE.getValue()?wholeSurfaceContactStep(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control,midpointContact.getValue()):wholeSurfaceMidpoint(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control);
+  auto c=center.getValue();auto result=sustainedBE.getValue()?wholeSurfaceContactStep(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control,midpointContact.getValue(),solverTrace.is_open()?&solverTrace:nullptr):wholeSurfaceMidpoint(mechanics,triangles,{c[0],c[1],c[2]},radius.getValue(),beginTime,control);
   if(!history)history.emplace(beginQ,beginV);
   if(result.event){++eventCount;double eventTime=beginTime+getContext()->getDt()*result.event->fraction;
    history->impact(result.eventPosition,result.preVelocity,result.postVelocity,eventTime);

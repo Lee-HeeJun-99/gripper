@@ -1,6 +1,7 @@
 #pragma once
 #include "../film_sphere_contact/ClosestPrimitive.h"
 #include "SweptPlane.h"
+#include "PolynomialValidity.h"
 #include <array>
 #include <optional>
 namespace regrip_film_impact {
@@ -39,6 +40,7 @@ inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePa
  path.validate();if(triangles.empty()||!std::isfinite(radius)||radius<=0||fractionTolerance<=0||gapTolerance<=0)
   throw std::invalid_argument("surface event input");
  for(double v:center)if(!std::isfinite(v))throw std::invalid_argument("surface center");
+ for(const auto&t:triangles)certifyTrianglePath(path,t);
  unsigned evaluations=0;
  struct Sample{double gap,rate,advance;};
  auto sample=[&](double a){auto x=path.position(a),v=path.derivative(a);Sample result{std::numeric_limits<double>::infinity(),0,std::numeric_limits<double>::infinity()};

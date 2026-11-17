@@ -4,7 +4,7 @@ from curve_common import ROOT,sha,write_json
 def normalized(path):
  root=ET.parse(path).getroot()
  for node in root.iter():
-  for key in ('filename','displacementFilename','costProfileFilename','ownerCostFilename','publicMassFilename'):node.attrib.pop(key,None)
+  for key in ('filename','displacementFilename','costProfileFilename','ownerCostFilename','publicMassFilename','reuseJournalRows'):node.attrib.pop(key,None)
  return ET.tostring(root)
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--before',required=True);p.add_argument('--after',required=True);p.add_argument('--mode',choices=('field','owner','mass'),required=True);a=p.parse_args();before=ROOT/'results'/('autonomous_film_'+a.before);after=ROOT/'results'/('autonomous_film_'+a.after);bm=json.loads((before/'identity.json').read_text());am=json.loads((after/'identity.json').read_text());bs=json.loads((before/'summary.json').read_text());ass=json.loads((after/'summary.json').read_text())

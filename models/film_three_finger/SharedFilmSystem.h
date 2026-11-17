@@ -56,13 +56,14 @@ struct SharedFilmSystem {
    s.film.model.elements(state.q,tension,[&](const Element&e){cost().count("material_AD_dispatch");regrip_film::PassiveProfile::Scope pullback(cost(),"element_pullback");for(unsigned a=0;a<3*e.ids.size();++a){unsigned ga=3*e.ids[a/3]+a%3;int i=s.film.index[ga];if(i<0)continue;out.value(f*nf+i)-=s.film.weight[ga]*e.energy.g[a];for(unsigned b=0;b<3*e.ids.size();++b){unsigned gb=3*e.ids[b/3]+b%3;int j=s.film.index[gb];if(j>=0)out.negativeTangent(f*nf+i,f*nf+j)+=s.film.weight[ga]*s.film.weight[gb]*e.energy.h[N*a+b];}}},meter);
   }return out;
  }
- regrip_collocation::RowGeometry geometry(const Eigen::VectorXd&x)const{
+ regrip_collocation::RowGeometry geometry(const Eigen::VectorXd&x,std::array<Row,3>*snapshot=nullptr)const{
   regrip_film::PassiveProfile::Scope timer(cost(),"shared_geometry_and_pullback");
   const unsigned nf=shared.nf,n=shared.M.rows(),body=3*nf;regrip_collocation::RowGeometry out{Eigen::VectorXd(3),Eigen::MatrixXd::Zero(3,n),std::vector<Eigen::MatrixXd>(3,Eigen::MatrixXd::Zero(n,n))};
   for(unsigned f=0;f<3;++f){auto row=selected(x,f);
    // Isotropic spherical normal force has EXACT zero rotational block.
    if(row.gradient.tail<3>().norm()!=0||row.hessian.bottomRows(3).norm()!=0||row.hessian.rightCols(3).norm()!=0)throw std::domain_error("unexpected spherical rotational contact coupling");
    const auto&R=layout.mount[f].R;out.gap(f)=row.gap;out.J.block(f,f*nf,1,nf)=row.gradient.head(nf).transpose();out.J.block<1,3>(f,body)=row.gradient.segment<3>(nf).transpose()*R.transpose();auto&H=out.H[f];H.block(f*nf,f*nf,nf,nf)=row.hessian.topLeftCorner(nf,nf);H.block(f*nf,body,nf,3)=row.hessian.block(0,nf,nf,3)*R.transpose();H.block(body,f*nf,3,nf)=R*row.hessian.block(nf,0,3,nf);H.block<3,3>(body,body)=R*row.hessian.block<3,3>(nf,nf)*R.transpose();
+   if(snapshot)(*snapshot)[f]=std::move(row);
   }return out;
  }
  double clearance(const Eigen::VectorXd&x)const{double gap=std::numeric_limits<double>::infinity();for(unsigned f=0;f<3;++f){auto state=local(x,f);for(unsigned k=0;k<shared.films[f].triangles.size();++k)gap=std::min(gap,shared.films[f].primitive(state,k).gap.v);}return gap;}

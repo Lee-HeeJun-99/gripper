@@ -8,6 +8,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--reuse');p.add_argument('--profile');p.add_argument('--pilot-profile')
  p.add_argument('--field-profile',action='store_true',help='opt-in actual Field passive timers;does NOT measure custom-owner internals');p.add_argument('--owner-profile',action='store_true',help='passive owner force/Hessian/geometry inclusive timers')
  p.add_argument('--mass-journal',action='store_true',help='record public nodal mass and rigid mass/inertia without modifying solve')
+ p.add_argument('--reuse-journal-rows',action='store_true',help='reuse exact same-query selected rows for observation only;default pure requery retained')
  p.add_argument('--radius',type=float,default=30.01,help='actual XML Data;unsupported values must be rejected by runtime owner');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rs=json.loads((ref/'summary.json').read_text());uniform='completed_rows' in rs
  physics=rs;steps=1;duration=.0001;reference_file=ref/'state.csv'
  if uniform:
@@ -33,6 +34,7 @@ def main():
  identity['field_profile']=a.field_profile
  identity['owner_profile']=a.owner_profile
  identity['mass_journal']=a.mass_journal
+ identity['reuse_journal_rows']=a.reuse_journal_rows
  if driven:identity.update(actual_solver=('ThreeFilmDrivenExactODE' if rs.get('exact_order_fallback',False) else 'ThreeFilmDrivenODE')+' common C2 Lobatto persistent rows',exact_order_fallback=rs.get('exact_order_fallback',False),tension_per_rail_N=.0001,scope='actual three-film common C2 10ms already-touching pilot;NOT fresh impact,full closing,wrapping or grasp')
  if driven and rs.get('exact_order_fallback',False):identity.update(actual_solver='ThreeFilmDrivenExactODE common C2 exact unresolved-distance order',exact_order_fallback=True)
  result=dict(status='FAIL',scope=identity['scope'],configure=configure,compile=compile)
@@ -79,6 +81,7 @@ def main():
   body=copy.deepcopy(old.find('Node[@name="free_object"]'));body.find('MechanicalObject').set('position','0 0 -63.44761697652639 0 0 0 1');body.find('MechanicalObject').set('velocity','0 0 0 0 0 0');body.find('UniformMass').set('vertexMass','.0001 1 360 0 0 0 360 0 0 0 360');scene.append(body)
   ET.SubElement(scene,'ThreeFilmPersistentODE',dict(name='ode',root='@finger0/dofs',root1='@finger1/dofs',root2='@finger2/dofs',field='@finger0/assembly/filmField',field1='@finger1/assembly/filmField',field2='@finger2/assembly/filmField',body='@free_object/body',radius=str(a.radius),rayleighMass='2',maxSteps=str(steps),externalForce='0 0 -.001',filename=str(out/'three')));ET.ElementTree(scene).write(out/'scene.scn')
   if a.owner_profile:scene.find('ThreeFilmPersistentODE').set('ownerCostFilename',str(out/'owner_cost.csv'));ET.ElementTree(scene).write(out/'scene.scn')
+  if a.reuse_journal_rows:scene.find('ThreeFilmPersistentODE').set('reuseJournalRows','1');ET.ElementTree(scene).write(out/'scene.scn')
   if a.mass_journal:scene.find('ThreeFilmPersistentODE').set('publicMassFilename',str(out/'public_mass.txt'));ET.ElementTree(scene).write(out/'scene.scn')
   if driven:scene.find('ThreeFilmPersistentODE').tag='ThreeFilmDrivenExactODE' if rs.get('exact_order_fallback',False) else 'ThreeFilmDrivenODE';ET.ElementTree(scene).write(out/'scene.scn')
   identity['source_scene_sha256']=sha(original/'scene.scn');identity['sdk_library_paths']=[str(SDK)];identity['plugin_sha256']={node.get('pluginName'):sha(node.get('pluginName')) for node in scene.findall('RequiredPlugin') if node.get('pluginName','').startswith('/')};write_json(out/'identity.json',identity)

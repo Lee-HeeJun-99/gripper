@@ -1,5 +1,13 @@
 # 최종 설계 판정 — 선정 보류(EXPERIMENTAL)
 
+## 2026-11-18 갱신
+
+실제3필름/자유 구체 C210ms 구동과 폭 방향 변형 계측까지 진행했다.
+현재 실제 시간 Gate930는 끝점 접촉력과 기존 샘플 기반 와이어 일에서
+FAIL이며,감싸기·Lift·유지·해제 파지는 미검증이다. 필름 중앙 노드와 폭
+평균 변형도 다르므로 단일 Tip Motion을 감싸기 성공으로 쓰지 않는다.
+최종 구조 선정은 계속 보류한다. 제작 재료/액추에이터 실측값은 없다.
+
 
 ## Latest measured checkpoint — actual three-film refinement,through868
 

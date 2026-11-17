@@ -35,3 +35,15 @@ Actual evidence804/809:linear/angular momentum,opposite shared impulse,
 objectivity and stable impact energy pass independent mathematics. Generated
 PNG explicitly labels REST reference geometry. All parameters are research
 assumptions;no measured material/actuator data or final design is claimed.
+# 2026-11-18 continuation
+
+Separate ThreeFilmDrivenODE/ThreeFilmDrivenExactODE execute an already-touching
+10ms common C2 pilot,not full closing/grasp. The exact owner optionally resolves
+unresolved113/334-bit value ordering by exact rational stored-double geometry;
+no gap/force/Jacobian perturbation. Reference MUST use actual public mass doubles
+for strict equality. publicMassFilename is passive;919 nineCSV same-DLL proof.
+reuseJournalRows defaults false and only reuses rows already computed at the
+identical journal query.934 same-DLL8-step and93832-step nineCSV exact;runtime
+improvements scoped to measured coupons,not global benchmarks. Full listed time
+930 FAIL remains. Detailed Raw/build/scope:reports/THREE_FILM_C2_20261118.md and
+reports/THREE_FILM_COST_20261118.md. Older descriptions below are historical.

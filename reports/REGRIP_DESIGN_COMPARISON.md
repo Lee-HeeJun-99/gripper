@@ -1,5 +1,17 @@
 # 구조 비교 — 정량 기하/해석 선별, 실제 파지 비교 미완료
 
+## 2026-11-18 실제 3필름 C2 표면 관측936
+
+실제 SOFA10ms/32스텝 저장 좌표:필름 끝단 중앙 노드+0.00065335mm,
+폭 평균-0.0249671mm,좌우 레일 폭 평균약-0.10104mm. 서로 다른 관측량이며
+중앙 노드 이동만으로 전체 필름 굽힘 방향/감싸기를 판정할 수 없다.
+최대 필름 변위0.05179mm,레일0.10659mm,변위 확대 없음.
+실제 폭·길이 방향 그래프:
+results/autonomous_film_20261118_three_film_surface936/actual_width_profiles.png.
+접촉 면적은 NOT MEASURED(null);접촉 Row 개수/각도를 면적으로 바꾸지 않았다.
+이 빠른 램프의 작은 변형은 감싸기·Lift·Holding 또는 Baseline 우위를
+입증하지 않는다. 동일 재료량/구동 조건의 최종 파지 비교는 미완료다.
+
 
 ## Latest measured checkpoint — actual three-film refinement,through868
 

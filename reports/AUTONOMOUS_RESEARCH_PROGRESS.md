@@ -1,5 +1,19 @@
 # Autonomous research log
 
+## 2026-11-18 through938 — actual C2,exact-input reference and measured cost
+
+6d78a24 implements actual shared C210ms3film;3fc9e9e records exact-rational
+distance resolution and public-API-mass reference correction. Actual911/912
+old FAIL remain;one-factor924 and requalifications926/928 q/v EXACT,not a new
+SOFA run or tolerance change. Actual full listed time930 remains FAIL for
+endpoint force and legacy work. New stage-power inventory913/927/929 has an
+explicit routed cable virtual-work definition;residual NOT heat/full energy.
+Same-DLL row-snapshot8-step934 nine physical CSV EXACT and1.06960x runtime in
+one pair.32-step935/937/938 same physical CSVs exact versus previous actual32,
+newactual109.18855s vs122.22968s. Opt-in remains defaultOFF. Actual surface936
+shows centre-node/width-mean distinction,not wrapping. Next64-step profiling
+must use measured cost and preserve all force/work FAILs. No OS/session limit.
+
 ## 2026-11-18 — actual shared C2 continuation and exact-order diagnosis
 
 6d78a24 implements common C2 ThreeFilmDrivenODE;actual887 plus888/889 audit

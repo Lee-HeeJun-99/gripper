@@ -4,6 +4,8 @@
 #include "PolynomialValidity.h"
 #include <array>
 #include <optional>
+#include <sstream>
+#include <iomanip>
 namespace regrip_film_impact {
 using SurfacePoint=regrip_film_rail::Point;
 // q(a)=a0+a*a1+a*a*a2. For implicit midpoint dense output,
@@ -32,7 +34,7 @@ struct QuadraticSurfacePath {
  }
 };
 struct SurfaceEventRow {unsigned owner,triangle,feature;double gap,rate;std::array<unsigned,3>support;std::array<double,3>barycentric;SurfacePoint normal;};
-struct SurfaceEvent {double fraction,clearUntil;unsigned evaluations;std::vector<SurfaceEventRow>rows;};
+struct SurfaceEvent {double fraction,clearUntil;unsigned evaluations;std::vector<SurfaceEventRow>rows;bool bracketRecovered=false;};
 inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePath&path,
  const std::vector<std::array<unsigned,3>>&triangles,SurfacePoint center,double radius,
  double fractionTolerance=1e-10,double gapTolerance=1e-10,bool sweptPlaneExclusion=true){
@@ -55,13 +57,21 @@ inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePa
    if(e.gap.v<result.gap){result.gap=e.gap.v;result.rate=rate;}
   }return result;
  };
- double a=0,L=path.speedBound();auto current=sample(a);
+ double a=0,lastPositive=0,L=path.speedBound();auto current=sample(a);
  if(!(current.gap>0))throw std::domain_error("surface birth requires strictly separated initial surface;use sustained/release state");
  if(L==0)return std::nullopt;
  for(unsigned iteration=0;iteration<512;++iteration){
   if(current.advance>1-a)return std::nullopt;
-  double root=a;
+  double root=a,clearUntil=a;bool recovered=false;
   bool found=current.gap==0&&current.rate<0;
+  // A floating conservative advance can overshoot by an ULP of spatial
+  // gap. Reuse the ACTUAL preceding positive sample as a signed bracket;
+  // do not step backwards by a negative gap/speed or add an epsilon.
+  if(!found&&current.gap<0&&current.gap>=-gapTolerance&&current.rate<0&&lastPositive<a){double lo=lastPositive,hi=a;auto right=current;
+   if(!(sample(lo).gap>0))throw std::runtime_error("lost positive surface event bracket");
+   for(unsigned j=0;j<64;++j){double mid=(lo+hi)/2;if(mid==lo||mid==hi)break;auto s=sample(mid);if(s.gap>0)lo=mid;else{hi=mid;right=s;}}
+   root=hi;clearUntil=lo;recovered=true;found=hi-lo<=fractionTolerance&&std::abs(right.gap)<=gapTolerance&&right.rate<0;
+  }
   if(!found&&current.gap<=gapTolerance&&current.rate<0){
    double hi=std::min(1.,a+2*current.gap/(-current.rate));
    // All prior time is cleared by conservative advances. Do not allow a
@@ -73,7 +83,7 @@ inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePa
     }
    }
   }
-  if(found){SurfaceEvent event{root,a,evaluations,{}};auto x=path.position(root),v=path.derivative(root);
+  if(found){SurfaceEvent event{root,clearUntil,evaluations,{},recovered};auto x=path.position(root),v=path.derivative(root);
    for(unsigned id=0;id<triangles.size();++id){auto t=triangles[id];std::vector<Point>p;for(unsigned i:t)p.push_back(x.at(i));auto e=ClosestPrimitive::evaluate(p,center,radius);
     double rate=0;for(unsigned j=0;j<9;++j)rate+=e.gap.g[j]*v[t[j/3]][j%3];
     if(std::abs(e.gap.v)>gapTolerance||rate>=0)continue;
@@ -86,8 +96,8 @@ inline std::optional<SurfaceEvent> earliestSurfaceEvent(const QuadraticSurfacePa
    if(event.rows.empty())throw std::runtime_error("surface event has no owned entering rows");return event;
   }
   double next=std::min(1.,a+current.advance);
-  if(next<=a)throw std::runtime_error("unresolved surface grazing/roundoff;no epsilon denominator");
-  a=next;current=sample(a);
+  if(next<=a){std::ostringstream error;error<<std::setprecision(17)<<"unresolved surface grazing/roundoff;no epsilon denominator:a="<<a<<" gap="<<current.gap<<" rate="<<current.rate<<" advance="<<current.advance<<" next="<<next;throw std::runtime_error(error.str());}
+  if(current.gap>0)lastPositive=a;a=next;current=sample(a);
   if(current.gap<0&&std::abs(current.gap)>gapTolerance)throw std::runtime_error("surface advance lost clearance bound");
  }
  throw std::runtime_error("surface event budget512;not OS exhaustion");

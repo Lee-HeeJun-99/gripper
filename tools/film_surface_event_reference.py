@@ -8,12 +8,12 @@ def main():
     shutil.copy2(__file__,out/'runner.py');sources=[]
     for directory in ('film_impact','film_shell','film_rail_tendon','film_native_contact','film_sphere_contact'):
         sources+=list((ROOT/'models'/directory).glob('*.h'))
-    sources+=[ROOT/'tests/test_whole_surface_event.cpp',ROOT/'tests/test_whole_surface_midpoint.cpp']
+    sources+=[ROOT/'tests/test_whole_surface_event.cpp',ROOT/'tests/test_whole_surface_midpoint.cpp',ROOT/'tests/test_surface_roundoff.cpp']
     for s in sources:
         target=out/'sources'/s.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(s,target)
     write_json(out/'identity.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources={str(s.relative_to(ROOT)):sha(s) for s in sources},sdk=None,scope='independent quadratic dense numerical path and dual impact'))
     records={}
-    for name in ('whole_surface_event','whole_surface_midpoint'):
+    for name in ('whole_surface_event','whole_surface_midpoint','surface_roundoff'):
         binary=build/name;c=guarded(['g++','-O2','-std=c++17','-ffp-contract=off','-I/usr/include/eigen3',out/('sources/tests/test_'+name+'.cpp'),'-o',binary],out/(name+'_compile'),120)
         record=dict(status='FAIL',compile=c)
         if c['exit_code']==0:

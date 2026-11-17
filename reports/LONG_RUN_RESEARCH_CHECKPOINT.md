@@ -1,5 +1,63 @@
 # Executable research checkpoint — 2026-11-17
 
+## Latest measured impact continuation 445–474 (2026-11-17)
+
+Project NOT complete. Independent projected impulse,event root/IFT,root-map
+mass,pre/post velocity and multistep restart now exist in models/film_impact.
+Actual SOFA supplied-film and isolated-birth/remainder prototypes execute;
+this is NOT the whole-triangle C2 event owner required by434/437.
+See REGRIP_IMPACT_SOLVER_RESEARCH.md for equations,scope,failures and raw paths.
+Actual same-binary464/466 midpoint startup reduces20→80 attachment time
+error4.38155%→0.901492%,but remains FAIL0.1%. Finer47140/80/160 has
+adjacent PASSs but40→160 attachment0.11165505% FAIL. Do NOT certify time
+from the adjacent comparisons or replace the original C2-time FAILs.
+Independent469 root+impulse velocity tangent FD error1.66e-9. Actual470/472
+accepted whole-triangle clearance and actual FF/owner state-energy agreement
+pass LIMITED audits,not swept CCD or full physical energy. Actual474 rejects
+additional mass/moving colliders;12 physical journals match468/471 bitwise.
+Selected regression473 passes12 groups,not global45 gates. First feature
+commit1b2b18c;subsequent guard/evidence commit is recorded by Git.
+All launched children through474 have exited;no OS exhaustion/480s timeout.
+Whole energy,friction,self-contact,free6DOF/3finger/12wrench/multimaterial,
+design superiority and graspOptuna remain BLOCKED/NOT RUN. No SDK edits,
+remote push,hardware or automatic/background resumption.
+
+### First unfinished implementation (not another blind refinement)
+
+Resolve whole-surface EARLIEST birth with simultaneous owned rows and an
+integrator-defined trajectory;current bracket solver only resolves an
+externally isolated entering event. Incorporate the actual C2 tension(time)
+and its derivative,then sustained-contact/release velocity law and history.
+Do not remove the fixed-object/additional-mass guards. Do not call a zero-T,
+initial-velocity1ms coupon the original C2 onset434/437 or free-object grasp.
+Remaining time error must be analyzed with absolute AND unchanged relative
+metrics;the tiny attachment energy does not excuse0.111655%FAIL.
+
+Reusable installed binary/build:
+build/film_impact_sofa_20261117_impact_guarded_fine471/libReGripImpactReference.so
+Raw:results/autonomous_film_20261117_impact_guarded_fine471/
+Independent tangent:results/autonomous_film_20261117_impact_event_tangent469/
+Whole-surface endpoint/plot:results/autonomous_film_20261117_impact_fine_surface472/
+Guards/identity:results/autonomous_film_20261117_impact_guards474/
+Each archived identity and process command gives actual binary/source hashes.
+
+Exact read-only resumption and optional scoped reproductions (NEW tags):
+```
+git status --short
+git log -6 --oneline
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_contact_evidence.py --verify-historical
+$PY tools/film_contact_evidence.py --audit-old
+$PY tools/film_continuation_evidence.py --name 20261117_impact_v5 --verify
+$PY tools/film_projected_impact_reference.py --tag NEW_IMPACT_REFERENCE
+$PY tools/film_impact_assess.py --tag NEW_IMPACT_AUDIT --case 20261117_impact_guarded_fine471
+```
+Do not blindly rerun the completed471/3200-step cases. No executable command
+is invented for the unimplemented full C2/whole-surface event owner. This is
+an unfinished research checkpoint,NOT proof all independent work is externally
+blocked and NOT an assertion of post-session automatic continuation.
+
+
 ## Saved continuation state through443 — NOT goal completion
 
 Last functional commit e14f886; model-source byte checkpoint c4bba01 matches

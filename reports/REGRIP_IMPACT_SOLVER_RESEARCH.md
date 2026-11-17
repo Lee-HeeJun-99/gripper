@@ -1,0 +1,184 @@
+# Event-aware impact research — 2026-11-17, project incomplete
+
+## Provenance and previous stopping reason
+
+Started clean at22e8f2c on development/regrip-autonomous-research. First feature
+commit1b2b18c adds the independent impact references/components. Actual launch
+commits,dirty source hashes,archived source,build commands,installed SDK ldd,
+binary hashes,exit codes and raw journals are in each new campaign. Neither
+an existing physical owner nor its binaries were replaced. Installed SOFA
+v26.06 is used separately from the Matching SDK;no SDK files were changed.
+
+The prior checkpoint explicitly records a response/context handoff,not an
+OS memory exhaustion,permission denial or480s timeout.443 was an experiment
+POLICY refusal of an unlaunched3200-step687s forecast. It did not prove that
+all research was blocked. The project was not complete and development resumed.
+
+Read-only initial integrity:6738 historical artifacts,3233 older artifacts and
+11218 v4-ledger bytes unchanged. Current diagnostics446 reproduce actual
+434/437 accepted normal velocities -1.340569976/+0.296018680mm/s. These are
+CURRENT-J projections,not measured continuous pre-impact states. Old failures
+remain unchanged. Existing45 physics gates are not combined with new tests.
+
+## Independent physical assumption and formulation
+
+Frictionless perfectly inelastic impact,e=0,is a NEW research assumption.
+Restitution e=.5/1 is tested separately for one point/plane. With physical
+velocity B y,reduced mass Mr=BᵀMB and event Jacobian Jr=J B:
+
+```
+Mr(y+−y−)=Jrᵀp
+p≥0, Jr y+−target≥0, p·(Jr y+−target)=0
+target_i=−e min((Jr y−)_i,0)
+Dimpact=½ y−ᵀMr y−−½ y+ᵀMr y+
+```
+
+Mass:F s²/mm;velocity:mm/s;impulse:F s;energy:F mm. No step division is
+applied to an instantaneous impulse and called a converged pointwise force.
+Mr includes the actual quarter-root slave contributions,not merely the first
+nodal mass. Nodal impulse Jᵀp and root-projected momentum are separate from
+unmeasured fixture reactions. No denominator epsilon or mass regularization.
+
+The small reference enumerates independent active subsets up to16 rows.
+Redundant rows may have nonunique multipliers;deterministic sparse selection
+does not certify impulse uniqueness. Unsupported coupled restitution energy
+creation rejects. This is not the production256-row contact active-set solver.
+
+## Event state,derivatives and restart
+
+AffineBirth/PrimitiveBirth explicitly define affine point/edge/triangle nodal
+paths. They can detect an intermediate hit with separated endpoints,but are
+NOT the actual continuous film trajectory. Degenerate and unresolved grazing
+events reject. No stored-frame interpolation is called continuous dynamics.
+
+BracketedFilmBirth instead solves the existing nonlinear film mechanical
+kernel at EACH candidate event duration. For a constant-tension implicit
+Euler subintegration q(t)=q0+tBy(t),G(y,t)=0:
+
+```
+G_y=Mr(1+ct)+t² KU
+G_t=c Mr y+grad U+t KU y
+y_t=−G_y⁻¹G_t
+g_t=Jr(y+t y_t)
+dt/dy0=−t Jr G_y⁻¹ Mr / g_t
+```
+
+Only a supplied,isolated ENTERING bracket is resolved. Globally earliest
+whole-surface CCD,changing C2 tension and simultaneous-contact ownership are
+still unfinished. A singular event derivative is rejected,not regularized.
+
+EventTangent differentiates through event-time dependence,pre-impact state,
+changing sphere normal/effective mass and active plastic impulse. Independent
+469 has absolute velocity-tangent FD error1.6597e-9 on a smooth single-active
+branch. This does not certify nonsmooth feature transitions or a SOFA addDForce
+for a general event owner. Reference458 finds t≈0.000334797s,g≈−2.42684e-12mm
+and matching root IFT/FD≈0.000112504 on the5-node coupon.
+
+FilmRestartHistory retains the pre-impact inventory,removes the discontinuous
+BDF stencil,uses one-step startup on the remainder/changed step and resumes
+original BDF2 arithmetic after compatible smooth samples. Independent tests
+check no-contact reference equality. The isolated sequence has a persistent
+history;the supplied-event API test alone does NOT demonstrate BDF restart.
+
+## Actual SOFA execution,not whole-grasp qualification
+
+All values here are **actual SOFA execution**,except explicitly independent
+math above. Materials,masses,tension and geometry are **research assumptions**,
+not measured PET,actuator or vacuum data. No real hardware was driven.
+
+-447/451:force-free point-plane event/remaining-flight,20/40/80steps,e=0/.5/1.
+  Nine analytic-reference cases pass;maximum absolute observable error in455
+  is3.11e-15. Mappings,external ODE solvers and projective constraints reject.
+-453:film event applies correctly,but subsequent predictor-only solver rejects
+  the absent full accepted owner. Entire experiment is FAIL,not partial PASS.
+-455:supported standalone Newton mode preserves that guard and completes the
+  supplied t=0 mapped-film API. vn−=−3,vn+=0mm/s;p=2.3411752084e-8F s;
+  effective mass7.8039173614e-9F s²/mm;momentum residual3.30872e-24F s;
+  impact loss3.5117628126e-8F mm. Query repeat and actual mapped writeback agree.
+-460:actual isolated point birth/impulse/BE remainder on21-node Film+Rails:
+  t=0.00033631012775s;vn−=−2.9734459921,vn+≈2.49e-16mm/s;
+  p=2.3204526801e-8F s;loss3.4498703608e-8F mm. This is ONE1ms zero-tension
+  initial-velocity experiment,not C2 closing or complete triangle contact.
+-462:cold-start20/40/80steps of that1ms model execute,then overall time FAIL.
+  Its top-level PASS is EXECUTION ONLY (explicit execution_scope_only field);
+  sequence_time is FAIL. Later runner makes top-level FAIL reflect this too.
+-464/466:SAME binary midpoint-startup vs BE-startup contrasts. Same geometry,
+  mass,damping,initial velocity and zero tension. Both remain time FAIL.
+-468:profiled finer40/80/160steps completes;adjacent pairs pass ALL measured
+  0.1% metrics,but40→160 attachment energy0.11165505% FAIL. It is NOT a full
+  time PASS. The160-step child takes31.5731s;profile forecast73.2364s<120s.
+
+## Failure analysis and alternatives actually tested
+
+Position-level BDF alone still does not define an impact law. Explicit impact
+reduces that ambiguity in the isolated problem;it does not erase high-frequency
+attachment/startup errors. To distinguish restart discretization from impact
+root error,we derived a midpoint startup using the unchanged mechanical kernel:
+solve at h/2 for q_mid,v_mid,then q1=2q_mid−q0,v1=2v_mid−v0. Independent465
+checks midpoint momentum and kinematic equations. No physical damping changed.
+
+|Actual same-binary20→80,1ms coupon|BE restart466|Midpoint464|
+|---|---:|---:|
+|Event time relative difference|0.02243394%|0.00869264%|
+|Impulse relative difference|0.01694294%|0.00392125%|
+|Impact loss relative difference|0.0338830%|0.00784234%|
+|Shell energy relative difference|0.20689683%|0.04057836%|
+|Attachment energy relative difference|4.38155004%|0.90149161%|
+
+Midpoint improves this model but is NOT adopted as a qualified full contact
+fix. The finer nonadjacent FAIL is retained. Tiny attachment energies around
+1e-15F mm are not discarded to obtain a relative PASS. Absolute differences
+and phase-aligned event quantities remain in each summary.
+
+470 independently checks all320 FE triangle endpoint gaps,actual FF vs owner
+local q (exact0 difference),world positions(max1.39e-17mm) and stored/kinetic
+energy(max1.33e-23F mm). Minimum buffered triangle gap stays positive,down to
+4.75e-10mm on the80-step case. This is endpoint clearance,NOT swept CCD or
+contact area/pressure. Actual plot:results/autonomous_film_20261117_impact_endpoint_audit470/actual_impact.png.
+
+Preserved new failures456/457/467 are compile-stage errors,subsequently fixed
+and independently rerun. They are not OS exhaustion or physical failure.
+Canonical archived full mathematical suite463 passes four groups;469 adds
+root+impulse tangent. Selected old-binary regression454 passes12 groups.
+Neither is global energy/free-grasp certification.
+
+## Remaining required development — do not treat this report as completion
+
+Latest repeat471 uses a freshly compiled source-archived guarded owner and
+reproduces the same40→160 attachment0.11165505% FAIL.474 verifies additional
+mass/moving-collider rejection and ALL12 event/endpoint/FF/local journals
+are byte-identical between468 and471.472 accepted whole-triangle audit also
+passes on160steps(min gap4.76938e-10mm),not a swept/contact-cycle certificate.
+Fresh selected regression473 passes12 scoped groups. No launched child is
+still running;no host resource exhaustion or child480s timeout occurred.
+
+1. Couple event root to a whole-triangle temporal search with a justified dense
+   trajectory,earliest-event proof and simultaneous owned rows. An isolated
+   bracket is insufficient. Reuse existing closest primitives/candidate closure.
+2. Include actual C2(time) in subintegration and derivative. Constant/zero-T
+   coupon evidence cannot replace434/437 under their original physical input.
+3. Derive sustained-contact/release velocity law and its mechanical/energy
+   tangent. IsolatedFilmImpactStep REJECTS penetrating remainders/recontact;
+   do not bypass this by arbitrary velocity or pose projection.
+4. Resolve remaining nonadjacent attachment-energy time error,then actual C2
+   onset and profiled full-cycle comparison. Do not blindly repeat3200steps.
+5. Shared rigid/deformable mass,inertia,J,equal-opposite impulses/global moment
+   before removing moving-object guards;then3finger/free6DOF/friction/12wrench.
+
+Full physical energy,changing-normal friction,self-contact,free grasp,design
+superiority and grasp Optuna remain BLOCKED/NOT RUN. The existing beam and
+candidate-closure successes are retained,not counted as new impact PASSs.
+
+Reproduction (choose absent tags;no automatic/background resumption):
+
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_projected_impact_reference.py --tag NEW_IMPACT_MATH
+$PY tools/film_impact_sofa.py --tag NEW_IMPACT_API --midpoint-restart --fine-sequence
+$PY tools/film_impact_assess.py --tag NEW_IMPACT_AUDIT --case 20261117_impact_midpoint_fine468
+$PY tools/film_continuation_regression.py --tag NEW_REGRESSION --case 20261117_c2_bounded_short401
+```
+
+The second command is a bounded regression of a model still expected to FAIL
+the nonadjacent time Gate,not the next missing full-surface implementation.
+Read the checkpoint before launching more experiments.

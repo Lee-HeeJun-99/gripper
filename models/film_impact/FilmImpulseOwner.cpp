@@ -4,6 +4,8 @@
 #include <sofa/core/objectmodel/BaseObject.h>
 #include <sofa/core/behavior/MechanicalState.h>
 #include <sofa/core/behavior/BaseMass.h>
+#include <sofa/core/behavior/BaseForceField.h>
+#include <sofa/core/CollisionModel.h>
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/defaulttype/VecTypes.h>
 #include <sofa/simulation/AnimateBeginEvent.h>
@@ -40,6 +42,15 @@ public:
   BaseObject::init();if(!root||!field||field->getClassName()!="FilmRailTendon"||getContext()->getGravity().norm()!=0)
    throw std::runtime_error("supplied film event requires explicit actual film links and zero gravity");
   if(getContext()->getTime()!=0)throw std::runtime_error("supplied event reference starts at zero only");
+  auto*world=field->getContext()->get<State>(std::string("actual/world"));
+  if(!world)throw std::runtime_error("explicit mapped film world state required");
+  for(auto*collision:getContext()->getObjects<sofa::core::CollisionModel>(sofa::core::objectmodel::BaseContext::SearchDown))
+   if(collision->getContext()->getMechanicalState()!=world&&(collision->isMoving()||collision->isSimulated()))
+    throw std::runtime_error("event prototype rejects moving/dynamic other bodies;shared mass/J not implemented");
+  for(auto*m:getContext()->getObjects<sofa::core::behavior::BaseMass>(sofa::core::objectmodel::BaseContext::SearchDown))
+   if(m->getContext()!=field->getContext())throw std::runtime_error("event prototype rejects additional body mass");
+  for(auto*f:getContext()->getObjects<sofa::core::behavior::BaseForceField>(sofa::core::objectmodel::BaseContext::SearchDown))
+   if(f!=field.get()&&!dynamic_cast<sofa::core::behavior::BaseMass*>(f))throw std::runtime_error("event prototype rejects additional force fields");
   if(filename.getValue().empty()||std::ifstream(filename.getValue()))throw std::runtime_error("film event journal exists/empty");
   journal.open(filename.getValue());if(!journal)throw std::runtime_error("film event journal open");
   journal<<std::setprecision(17)<<"event_time,node,gap,pre_normal,post_normal,impulse,effective_mass,momentum_residual,impact_loss,history_beta,query_pure\n";

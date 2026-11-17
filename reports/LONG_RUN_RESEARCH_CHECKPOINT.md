@@ -1,5 +1,51 @@
 # Executable research checkpoint — 2026-11-18
 
+## Exact current handoff — b0c8201
+
+Last functional commit:b0c82019375e40d2eebebca197b602971fb38db5.
+1012:all172 archived compiled-model files match live bytes and actual1010
+DLL,GCC11.4.0,CMake3.22.1,one Installed SDK dependency prefix.
+All launched children through1012 have final results;no automatic background
+continuation is scheduled. No OS/RAM/480s exhaustion observed. This is an
+INCOMPLETE research checkpoint,not project success or a blocked-goal claim.
+
+Actual1002 reaches first C2 peak10ms;1009 correctly matched-clock strict API
+reassessment q/v/time EXACT. Old loose PASS and strict1006 FAIL preserved.
+1010 journal OFF/ON:eleven physical CSVs BYTE-EXACT.1011 first200us inventory
+residual-1.38829e-17Nmm,NOT heat/full energy.997 overall time FAIL;999 deformed
+immediate-release hypothesis FAIL. Friction/self-contact/mesh/physical thickness/
+full energy/wrapping/lift/holding/12wrench/Grasp Optuna remain unqualified.
+
+Reusable builds:
+
+- build/three_film_peak_20261118_three_film_first_peak_actual1002/libReGripThreeFilmEvent.so
+- build/three_film_first_journal_20261118_three_film_first_journal1010/libReGripThreeFilmEvent.so
+- results/autonomous_film_20261118_three_film_clock_reference1008/reference
+
+Actual Raw:results/autonomous_film_20261118_three_film_first_peak_actual1002/.
+Actual width PNG:results/autonomous_film_20261118_three_film_peak_surface1003/.
+Actual scale1 PNG/OBJ:results/autonomous_film_20261118_three_film_peak_audit1004/.
+First actual journal:results/autonomous_film_20261118_three_film_first_journal1010/on/.
+First inventory:results/autonomous_film_20261118_three_film_first_inventory1011/.
+
+```bash
+cd /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip
+git status --short
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY -m json.tool results/autonomous_film_20261118_three_film_post_sync_time997/summary.json
+$PY -m json.tool results/autonomous_film_20261118_three_film_deformed_release999/summary.json
+$PY tools/film_three_film_clock_qualify.py --tag NEW_UNIQUE_QUAL --proof 20261118_three_film_clock_reference1008
+$PY tools/film_three_film_first_inventory.py --tag NEW_UNIQUE_INV --case 20261118_three_film_first_journal1010
+```
+
+Next IMPLEMENTATION:separately guarded one-step persistent checkpoint/resume
+owner,exact public masses,q/v/quaternion/absolute accumulated clock and mapped
+API proof. Compare2–4 resumed steps with saved1002 before continuing C2 hold/
+unload. No count spoofing to bypass old REST guards. No assumption that old
+CurvedContact checkpoint failures disappeared. Private FF previousLength/T
+sampled-work history is NOT restored by q/v alone;stage-work origin must be
+explicit. Full next priority is in AUTONOMOUS_RESEARCH_NEXT.md.
+
 ## Latest checkpoint through1011 — NOT project completion
 
 See THREE_FILM_PEAK_AND_FIRST_ENERGY_20261118.md for actual versus independent

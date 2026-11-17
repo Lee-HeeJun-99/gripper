@@ -1,5 +1,38 @@
 # Next research checkpoint
 
+## Current implementation priority after b0c8201
+
+1. SEPARATE persistent-contact checkpoint/resume owner:reuse public mass,
+   root map,rigid commit and existing Lobatto equations. Validate source/model/
+   mass,q/v/quaternion and EXACT absolute accumulated clock on all child
+   contexts before AnimateBegin. Regression ONLY2–4 saved1002 steps,strict
+   original1e-12 API,whole-stage gap,momentum,actual FF input equality.
+   Do NOT fake count to skip old REST/fixed-object guards or assume old
+   CurvedContact checkpoint-history failures are fixed.
+2. Once transfer passes,follow actual C2 hold/unload in measured physical
+   windows within4GiB/480s. No automatic post-session process or unverified
+   chunking. Private legacy sampled-work previousLength/T are not restored
+   by q/v;prove stage-work ledger origin separately.
+3. Isolate genuine zero-reaction release on an independent signed bilateral
+   diagnostic branch;NEVER commit negative normal force. Switch active rows
+   only at a verified event and recheck every triangle/new birth.999 still
+   needs positive reaction under weak pull-away;do not invent release or
+   increase force to make that hypothesis pass. AllRowRelease only qualifies
+   flat-reference992,NOT actual deformed release/re-impact.
+4. Retain overall0.1% FAIL997,mesh/history1%,root/friction/self-contact/full
+   energy blockers. First interval measurement1010/1011 now EXISTS;do not
+   reimplement it. Numerical normal-work residual is not physical heat and
+   its relative failure must remain visible.
+5. Assess actual wrapping over a justified physical timescale,not10ms alone.
+   Conditional Rayleigh trial1001 is not an eigenmode or measured wrapping
+   time. Equal prescribed T is not a mechanical equalizer. No final design/
+   Grasp Optuna before actual validated grasp tests.
+
+Exact builds,Raw and safe commands:LONG_RUN_RESEARCH_CHECKPOINT.md.
+Do not repeat completed long campaigns unchanged.1009 qualifies SAME actual
+1002 with matching clock;fresh references default to accumulated clock.
+All lower next-task/RUNNING entries are historical.
+
 ## Latest checkpoint through1011 — NOT project completion
 
 See THREE_FILM_PEAK_AND_FIRST_ENERGY_20261118.md for actual versus independent

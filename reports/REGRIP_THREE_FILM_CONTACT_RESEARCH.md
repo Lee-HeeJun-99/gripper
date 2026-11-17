@@ -1,5 +1,71 @@
 # Three-film/shared FREE sphere — actual narrow contact,through851
 
+## Actual repeated contact and time gate — newest through868
+
+ThreeFilmPersistentODE now supports a guarded REST-initialized100us window,
+<=32 actual macro steps,not only ONE step. It reads and propagates actual mapped
+states/public masses each step;REST checks are applied only at the initial state.
+No hidden reset/clamp/velocity projection was added. Native/Event owners preserved.
+
+Independent4/8/16 grids852/853/854 COMPLETE but strict time855 FAIL:
+U_rails4→16 relative0.1442388023%,absolute3.84916725761e-37Nmm;reference
+2.66860733406e-34Nmm. The small energy is NOT ignored or rounded to zero.
+Observed coarse order3.91019. Frozen symmetric out-of-plane209-DOF reference856
+has a common free-body mass term m/(n_z^2)j*j^T and three-film stiffness/mass.
+It omits nonlinear geometry and is NOT a full nonlinear/SOFA reference. Modal
+constant-force and Lobatto solutions reproduce the rail trend(order3.88108),
+frozen-to-nonlinear energy differences1.78e-5/2.54e-5/2.78e-5 relative in858.
+This supports temporal rail dynamics,not contact-event timing,for this coupon.
+
+Measured16-grid64.4923325510s;the32-grid forecast257.969330204s was recorded
+by857 and stayed<480s,actual32-grid83.1384s. Only the allowed GRID count changed;
+Newton budgets/tolerances/materials/physical duration unchanged. Assessment859
+verifies model hashes and exact UniformContact.cpp equality after normalizing
+ONLY the known4/8/16→4/8/16/32 budget/error-string edit. All other edits reject.
+New independent8/16/32 PASS does not change old4/8/16 FAIL.
+
+Actual860/861/862 use ONE DLL and identical physical XML exceptdt/count/output
+paths. Public three-film/freely moving body masses are used,not three separate
+fixed-object tests. Runtimes32.3713/70.6831/127.0043s. Actual versus independent
+all-macro q/v discrepancies<6.5e-18. Actual partial-energy observers864–866
+evaluate actual accepted and stage states,checking FF totals<8e-31Nmm. They
+separate skin/rails/attachment/film and rigid kinetic energies,external/damping/
+contact work. Tendon work0 is a VERIFIED T0 input,not a missing term filled0.
+Root reaction work remains an ideal fixed-root assumption,not measured.
+Signed residuals≈3e-27 to9e-27Nmm are NOT physical heat/full energy certification.
+
+Actual867 passes all-pair0.1% time on listed observables:
+
+|actual grid comparison|separate rail energy relative difference|
+|---|---:|
+|8→16|0.00899563138%|
+|8→32|0.0101266755%|
+|16→32|0.00113094238%|
+
+Actual32-stage/used-J/FF/whole-surface audit868 PASS:minimum world-stage buffer
+gap-1.77636e-14mm;unit-row action/reaction2.29e-16,moment1.68e-14mm.
+Full3finger wrapping/grasp/torque/friction/thickness/energy certification is NOT
+claimed. Current rows are one unique closest patch per finger;true independent
+ties/release still reject. Fixed9-row-per-macro journal ordering/time is checked
+for this schema,not presented as general lifetime tracking.
+
+Reusable actual repeated build:
+build/three_film_20261117_three_film_actual8_860/libReGripThreeFilmContact.so
+Last prior functional commitc971225;this repeated-window unit follows it.
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY -m json.tool results/autonomous_film_20261117_three_film_actual_time867/summary.json
+$PY -m json.tool results/autonomous_film_20261117_three_film_actual32_audit868/summary.json
+$PY tools/film_three_film_audit.py --tag UNIQUE_REPEAT_AUDIT --case 20261117_three_film_actual32_862
+$PY tools/film_three_film_actual_time.py --tag UNIQUE_ACTUAL_TIME --cases 20261117_three_film_actual8_860 20261117_three_film_actual16_861 20261117_three_film_actual32_862 --energies 20261117_three_film_actual_energy864 20261117_three_film_actual_energy865 20261117_three_film_actual_energy866
+```
+
+Next actual cost instrumentation before actuation/longer trials. Three-field
+geometry currently reevaluates all AD candidates plus high-precision distances;
+mass factor/stage factor/material cost must be measured rather than guessed.
+No final design/performance/actuator/material measurement is claimed.
+
 Project NOT COMPLETE. No OS/session exhaustion occurred in these experiments.
 Actual contact IVP is implemented,not yet an actuated three-finger grasp.
 

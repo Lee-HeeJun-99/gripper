@@ -25,8 +25,15 @@ def main():
   x=np.zeros(rest.size);mask=index>=0;x[mask]=q[f*nf+index[mask]]*weight[mask];return x.reshape(-1,3)
  states=list(csv.DictReader((src/'three.states.csv').open()));rows=list(csv.DictReader((src/'three.rows.csv').open()));end=states[-1];q=np.fromstring(end['q'],sep=' ');v=np.fromstring(end['v'],sep=' ');errors=dict(world=0.,K_film=0.,linear=0.,angular=0.,normal=0.,point=0.,normal_velocity=0.,unowned_finger=0.);minimum=float('inf');forces=[];energies=[]
  for f in range(3):
-  ff=next(csv.DictReader((src/('film_'+str(f)+'.csv')).open()));mass=np.fromstring(scene.find('Node[@name="finger'+str(f)+'"]//DiagonalMass').get('vertexMass'),sep=' ');u=expand(q,f);vel=expand(v,f);actual=np.fromstring(ff['x'],sep=' ').reshape(-1,3);errors['world']=max(errors['world'],float(np.max(abs(rest+u-actual))));errors['K_film']=max(errors['K_film'],abs(float(ff['K'])-.5*np.sum(mass[:,None]*vel*vel)));energies.append({k:float(ff[k]) for k in ('U_shell','U_attachment','K','T_per_rail','cable_length','tendon_work')})
- for row in rows:
+  fields=list(csv.DictReader((src/('film_'+str(f)+'.csv')).open()));mass=np.fromstring(scene.find('Node[@name="finger'+str(f)+'"]//DiagonalMass').get('vertexMass'),sep=' ')
+  if len(fields)!=len(states):raise ValueError('incomplete actual field trace')
+  for state,ff in zip(states,fields):
+   x=np.fromstring(state['q'],sep=' ');velocity=np.fromstring(state['v'],sep=' ');u=expand(x,f);vel=expand(velocity,f);actual=np.fromstring(ff['x'],sep=' ').reshape(-1,3);errors['world']=max(errors['world'],float(np.max(abs(rest+u-actual))));errors['K_film']=max(errors['K_film'],abs(float(ff['K'])-.5*np.sum(mass[:,None]*vel*vel)))
+   if abs(float(state['time'])-float(ff['time']))>1e-12:raise ValueError('field/accepted physical clock mismatch')
+  energies.append({k:float(fields[-1][k]) for k in ('U_shell','U_attachment','K','T_per_rail','cable_length','tendon_work')})
+ for number,row in enumerate(rows):
+  macro,within=divmod(number,9);stage_id,finger_id=divmod(within,3);expected_time=(macro+(0,.5,1)[stage_id])*meta['dt']
+  if int(row['owner_finger'])!=finger_id or abs(float(row['time'])-expected_time)>1e-12:raise ValueError('fixed three-row stage ownership/order/clock differs;not a general lifetime inference')
   stage=np.fromstring(row['stage_q'],sep=' ');velocity=np.fromstring(row['stage_v'],sep=' ');f=int(row['owner_finger']);R,origin=frames[f];center=stage[3*nf:3*nf+3];normal=np.array([float(row[k]) for k in ('nx','ny','nz')]);point=np.array([float(row[k]) for k in ('px','py','pz')]);J=np.fromstring(row['jacobian'],sep=' ');points=(rest+expand(stage,f))@R.T+origin;ids=tri[int(row['triangle'])];full=np.zeros_like(rest)
   for node in ids:
    for d in range(3):
@@ -39,7 +46,7 @@ def main():
   for other in range(3):
    RR,oo=frames[other];worldPoints=(rest+expand(stage,other))@RR.T+oo;minimum=min(minimum,float(np.min(gaps(worldPoints[tri],center,30.01))))
   forces.append(dict(time=float(row['time']),finger=f,force=float(row['force']),normal_velocity=float(row['normal_velocity']),minimum_barycentric=float(bary.min())))
- valid=len(states)==1 and len(rows)==9 and minimum>=-1e-10 and all(x<=1e-12 for x in errors.values()) and all(r['force']>=0 and r['minimum_barycentric']>=-1e-12 for r in forces)
+ valid=len(states)==meta['steps'] and len(rows)==9*meta['steps'] and minimum>=-1e-10 and all(x<=1e-12 for x in errors.values()) and all(r['force']>=0 and r['minimum_barycentric']>=-1e-12 for r in forces)
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');os.environ.setdefault('MPLCONFIGDIR',str(out/'matplotlib_cache'));import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  from matplotlib.collections import PolyCollection
  finalWorld=[];initial=q.copy();initial[:3*nf]=0;initial[3*nf:3*nf+3]=[float(dims[k]) for k in ('body_x','body_y','body_z')]

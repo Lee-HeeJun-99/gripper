@@ -1,6 +1,32 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
 
+## Latest measured checkpoint — actual three-film refinement,through868
+
+Actual three-film/ONE FREE Rigid3 repeated contact860/861/862 COMPLETE8/16/32
+steps over100us,T0,constantFz=-.001N. Same DLL/public mass/kernel/physical XML.
+Actual time867 passes0.1% for listed common-time observables,INCLUDING the
+separate tiny rail energy:base8→quarter32 rail difference0.0101266755%.
+Independent actual-state energy observers864–866 and whole-stage/actual-field
+kinematic audit868 PASS;energy residuals remain diagnostics,NOT heat/full energy.
+
+Earlier independent4/8/16 time855 remains FAIL:rails0.1442388%,absolute error
+3.84917e-37Nmm against2.66861e-34Nmm. No tiny-energy exemption. Frozen symmetric
+modal856/858 reproduces≈fourth-order trend without events(order3.88 versus3.91),
+supporting time-discretization,not event-timing,for THIS constant-load coupon.
+The measured/profiler-justified32-step confirmation857 and independent859 pass
+8/16/32,not retroactively4/8/16. Runtimes actual32.37/70.68/127.00s<480s each.
+
+STILL NOT RUN/QUALIFIED:actual3finger C2 closing/impact/lift/holding/release,
+shared tendon equalizer,mesh/history,generic friction/self-contact/full energy,
+12wrench/multimaterial/Grasp Optuna. Current contact remains midsurface-buffer
+research,not full physical skin/rail thickness clearance or final fabrication.
+Next:measure actual3finger cost before extending duration/control;then preserve
+strict gates while integrating actuation/event/release. No OS/session exhaustion
+has been observed. Details/build/reproduction:REGRIP_THREE_FILM_CONTACT_RESEARCH.md.
+The older checkpoint sections below are historical,not current RUNNING claims.
+
+
 ## Latest actual checkpoint — three-film shared FREE body,through851
 
 ThreeFilmPersistentODE is now IMPLEMENTED and actually executed843/844/846/848,

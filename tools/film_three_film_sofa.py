@@ -5,7 +5,9 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--reuse');p.add_argument('--profile');p.add_argument('--pilot-profile');p.add_argument('--radius',type=float,default=30.01,help='actual XML Data;unsupported values must be rejected by runtime owner');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rs=json.loads((ref/'summary.json').read_text());uniform='completed_rows' in rs
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--reuse');p.add_argument('--profile');p.add_argument('--pilot-profile')
+ p.add_argument('--field-profile',action='store_true',help='opt-in actual Field passive timers;does NOT measure custom-owner internals');p.add_argument('--owner-profile',action='store_true',help='passive owner force/Hessian/geometry inclusive timers')
+ p.add_argument('--radius',type=float,default=30.01,help='actual XML Data;unsupported values must be rejected by runtime owner');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rs=json.loads((ref/'summary.json').read_text());uniform='completed_rows' in rs
  physics=rs;steps=1;duration=.0001;reference_file=ref/'state.csv'
  if uniform:
   physics=json.loads((ROOT/'results'/('autonomous_film_'+rs['profile'])/'summary.json').read_text());steps=rs['steps'];duration=rs['duration'];reference_file=ref/'states.csv'
@@ -23,6 +25,8 @@ def main():
  else:
   build.mkdir(exist_ok=False);configure=guarded(['cmake','-S',archive/'models/film_three_finger','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120);compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None
  identity=dict(source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources=sources,reference=a.reference,reference_state_sha256=sha(reference_file),actual_solver='ThreeFilmPersistentODE same three-row Lobatto,precision ranking;NOT impact/closing',steps=steps,dt=duration/steps,duration=duration,material_parameters='archived research rectangular Assembly default E250MPa nu0,not measured',geometry='3 proper120degree frames,root-centre50mm,100mm rectangular coupons,R30 sphere',external_force_N=[0,0,-.001],tension_per_rail_N=0,friction=False,gravity=[0,0,0],self_collision=False,initial_state='REST,already touching;NOT closing or fresh impact',scope='actual3film/oneFREEsphere100us contact IVP;NOT grasp,lift,fullcycle or mesh/time certificate')
+ identity['field_profile']=a.field_profile
+ identity['owner_profile']=a.owner_profile
  result=dict(status='FAIL',scope=identity['scope'],configure=configure,compile=compile)
  if compile and compile['exit_code']==0:
   binary=build/'libReGripThreeFilmContact.so';identity['binary_sha256']=sha(binary);deps=subprocess.check_output(['ldd',binary],text=True);(out/'ldd.txt').write_text(deps)
@@ -50,8 +54,11 @@ def main():
    for node in old:
     if node.tag in ('MechanicalObject','FixedProjectiveConstraint','PartialFixedProjectiveConstraint') or (node.tag=='Node' and node.get('name')=='assembly'):finger.append(copy.deepcopy(node))
    root=finger.find('MechanicalObject');zero=' '.join('0' for _ in root.get('position').split());root.set('position',zero);root.set('velocity',zero);surface=finger.find('.//MechanicalObject[@name="surface"]');surface.set('position',zero);surface.set('velocity',zero);field=finger.find('.//FilmRailTendon');field.set('maximumTension','0');field.set('guideOffset','5');field.set('guideIntervals','4');field.set('rootGuideSecondOrder','1');field.set('c2Control','1');field.set('filename',str(out/('film_'+str(f)+'.csv')));field.set('displacementFilename',str(out/('displacement_'+str(f)+'.csv')))
+  if a.field_profile:
+   for f,field in enumerate(scene.findall('.//FilmRailTendon')):field.set('costProfileFilename',str(out/('field_cost_'+str(f)+'.csv')))
   body=copy.deepcopy(old.find('Node[@name="free_object"]'));body.find('MechanicalObject').set('position','0 0 -63.44761697652639 0 0 0 1');body.find('MechanicalObject').set('velocity','0 0 0 0 0 0');body.find('UniformMass').set('vertexMass','.0001 1 360 0 0 0 360 0 0 0 360');scene.append(body)
   ET.SubElement(scene,'ThreeFilmPersistentODE',dict(name='ode',root='@finger0/dofs',root1='@finger1/dofs',root2='@finger2/dofs',field='@finger0/assembly/filmField',field1='@finger1/assembly/filmField',field2='@finger2/assembly/filmField',body='@free_object/body',radius=str(a.radius),rayleighMass='2',maxSteps=str(steps),externalForce='0 0 -.001',filename=str(out/'three')));ET.ElementTree(scene).write(out/'scene.scn')
+  if a.owner_profile:scene.find('ThreeFilmPersistentODE').set('ownerCostFilename',str(out/'owner_cost.csv'));ET.ElementTree(scene).write(out/'scene.scn')
   identity['source_scene_sha256']=sha(original/'scene.scn');identity['sdk_library_paths']=[str(SDK)];identity['plugin_sha256']={node.get('pluginName'):sha(node.get('pluginName')) for node in scene.findall('RequiredPlugin') if node.get('pluginName','').startswith('/')};write_json(out/'identity.json',identity)
   process=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(steps),'--hideProgressBar',out/'scene.scn'],out/'process',120 if steps==1 else 480);result['process']=process
   errors=sum((out/'process'/name).read_text(errors='replace').count('[ERROR]') for name in ('stdout.log','stderr.log'));result['sofa_error_count']=errors

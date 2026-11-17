@@ -16,7 +16,7 @@ def main():
                 if meta[key]!=original[key]:raise ValueError('physical/source binary mismatch:'+key)
             for key,default in (('body_force_z',0.),('strict_newton',False)):
                 if meta.get(key,default)!=original.get(key,default):raise ValueError('force/numerical accuracy input mismatch:'+key)
-        states=list(csv.DictReader((folder/'coupled.states.csv').open()));events=list(csv.DictReader((folder/'coupled.events.csv').open()));cases.append((name,meta,states,events))
+        states=list(csv.DictReader((folder/meta.get('state_file','coupled.states.csv')).open()));events=list(csv.DictReader((folder/'coupled.events.csv').open()));cases.append((name,meta,states,events))
     cases.sort(key=lambda c:c[1]['steps']);pairs={}
     for left,right in itertools.combinations(cases,2):
         ls,rs=left[2],right[2];fine=np.array([float(r['time']) for r in rs]);indices=[int(np.argmin(abs(fine-float(s['time'])))) for s in ls]
@@ -33,6 +33,6 @@ def main():
         if x and len(x)==len(y):
             for key in ('time','impulse','impact_loss','pre_normal'):errors['event_'+key]=metric(np.array([r[key] for r in x]),np.array([r[key] for r in y]))
         pairs[left[0]+'__'+right[0]]=dict(status='PASS' if all(v['status']=='PASS' for v in errors.values()) else 'FAIL',errors=errors)
-    status='PASS' if all(p['status']=='PASS' for p in pairs.values()) else 'FAIL';write_json(out/'summary.json',dict(status=status,scope='limited interval coupled all-pair time gate;NOT full contact cycle/energy/grasp',relative_gate=.001,pairs=pairs,cases={c[0]:dict(identity=c[1],state_sha256=sha(ROOT/'results'/('autonomous_film_'+c[0])/'coupled.states.csv')) for c in cases},not_qualified=['full cycle','history/mesh','tendon-work/damping energy balance','friction','3finger grasp']))
+    status='PASS' if all(p['status']=='PASS' for p in pairs.values()) else 'FAIL';write_json(out/'summary.json',dict(status=status,scope='limited interval coupled all-pair time gate;NOT full contact cycle/energy/grasp',relative_gate=.001,pairs=pairs,cases={c[0]:dict(identity=c[1],state_sha256=sha(ROOT/'results'/('autonomous_film_'+c[0])/c[1].get('state_file','coupled.states.csv'))) for c in cases},not_qualified=['full cycle','history/mesh','tendon-work/damping energy balance','friction','3finger grasp']))
     print(json.dumps(dict(status=status,pairs={k:{name:v.get('relative_error',v['status']) for name,v in record['errors'].items()} for k,record in pairs.items()})))
 if __name__=='__main__':main()

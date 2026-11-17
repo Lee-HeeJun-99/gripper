@@ -4,6 +4,11 @@
 
 Started clean at22e8f2c on development/regrip-autonomous-research. First feature
 commit1b2b18c adds the independent impact references/components. Actual launch
+The guard/evidence commit is e3307b5;the final shared-body reference test is
+55eb59b9f9afae0620f63706c0246a51e15beb18. Independent475 verifies a shared
+9-DOF point/free-rigid Jacobian with mass/inertia,equal-opposite linear and
+angular impulses:linear residual8.88e-16,angular residual6.28e-16. This is NOT
+an actual free-body SOFA implementation and does not remove any guard.
 commits,dirty source hashes,archived source,build commands,installed SDK ldd,
 binary hashes,exit codes and raw journals are in each new campaign. Neither
 an existing physical owner nor its binaries were replaced. Installed SOFA

@@ -1,5 +1,20 @@
 # Executable research checkpoint — 2026-11-17
 
+### Follow-on shared-body reference475 and verified source checkpoint
+
+Last functional/test commit:55eb59b9f9afae0620f63706c0246a51e15beb18
+(guard/API evidence commit:e3307b5;initial implementation:1b2b18c).
+Independent475 adds point/free-rigid shared mass,inertia and Jacobian with
+linear momentum residual8.88e-16 and angular momentum residual6.28e-16.
+This is independent mathematics,NOT free-body SOFA integration;the actual
+moving-object/additional-mass guards remain enforced. Actual471 archive
+matches all30 current model-source files exactly. Current physical gates
+remain FAIL/BLOCKED as stated below;project completion is NOT claimed.
+All launched jobs have exited. The handoff is an unfinished response-context
+checkpoint,not OS/RAM exhaustion,permission denial,480s timeout or proof all
+independent research is externally blocked. No unattended restart exists.
+
+
 ## Latest measured impact continuation 445–474 (2026-11-17)
 
 Project NOT complete. Independent projected impulse,event root/IFT,root-map
@@ -48,7 +63,7 @@ git log -6 --oneline
 PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
 $PY tools/film_contact_evidence.py --verify-historical
 $PY tools/film_contact_evidence.py --audit-old
-$PY tools/film_continuation_evidence.py --name 20261117_impact_v5 --verify
+$PY tools/film_continuation_evidence.py --name 20261117_impact_v6 --verify
 $PY tools/film_projected_impact_reference.py --tag NEW_IMPACT_REFERENCE
 $PY tools/film_impact_assess.py --tag NEW_IMPACT_AUDIT --case 20261117_impact_guarded_fine471
 ```

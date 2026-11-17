@@ -1,5 +1,20 @@
 # Autonomous research log
 
+### Follow-on shared-body reference475 and verified source checkpoint
+
+Last functional/test commit:55eb59b9f9afae0620f63706c0246a51e15beb18
+(guard/API evidence commit:e3307b5;initial implementation:1b2b18c).
+Independent475 adds point/free-rigid shared mass,inertia and Jacobian with
+linear momentum residual8.88e-16 and angular momentum residual6.28e-16.
+This is independent mathematics,NOT free-body SOFA integration;the actual
+moving-object/additional-mass guards remain enforced. Actual471 archive
+matches all30 current model-source files exactly. Current physical gates
+remain FAIL/BLOCKED as stated below;project completion is NOT claimed.
+All launched jobs have exited. The handoff is an unfinished response-context
+checkpoint,not OS/RAM exhaustion,permission denial,480s timeout or proof all
+independent research is externally blocked. No unattended restart exists.
+
+
 ## Latest measured impact continuation 445–474 (2026-11-17)
 
 Project NOT complete. Independent projected impulse,event root/IFT,root-map

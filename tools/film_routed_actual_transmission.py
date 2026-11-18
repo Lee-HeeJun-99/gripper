@@ -16,12 +16,12 @@ def main():
   if qm['status']!='PASS' or qm['actual_summary_sha256']!=sha(src/'summary.json'):raise ValueError('actual API qualification required')
  for f,d in m['raw_hashes'].items():
   if sha(src/f)!=d:raise ValueError('actual raw changed')
- tokens=(src/'input.checkpoint').read_text().split();lateral=tokens[0] in ('REGRIP_LATERAL_PERSISTENT_V1','REGRIP_LATERAL_CONTROLLED_V1','REGRIP_LATERAL_FREE_V1','REGRIP_LATERAL_REST_FREE_V1','REGRIP_STATIONARY_CONTACT_V1','REGRIP_STATIONARY_FREE_V1')
+ tokens=(src/'input.checkpoint').read_text().split();lateral=tokens[0] in ('REGRIP_LATERAL_PERSISTENT_V1','REGRIP_LATERAL_CONTROLLED_V1','REGRIP_LATERAL_FREE_V1','REGRIP_LATERAL_REST_FREE_V1','REGRIP_STATIONARY_CONTACT_V1','REGRIP_STATIONARY_FREE_V1','REGRIP_STATIONARY_GAUSS_FREE_V1')
  provider=src if lateral else ROOT/'results/autonomous_film_20261118_routed_resume1278';proof=json.loads((provider/'summary.json').read_text())
  for f,d in proof['source_hashes'].items():
   if sha(provider/'sources'/f)!=d:raise ValueError('physical source archive changed')
  P=mapping();n=3*P.shape[1]+6;tokens=(src/'input.checkpoint').read_text().split()
- if sha(src/'input.checkpoint')!=m['input_checkpoint_sha256'] or tokens[0] not in ('REGRIP_ROUTED_PERSISTENT_V1','REGRIP_LATERAL_PERSISTENT_V1','REGRIP_LATERAL_CONTROLLED_V1','REGRIP_LATERAL_FREE_V1','REGRIP_LATERAL_REST_FREE_V1','REGRIP_STATIONARY_CONTACT_V1','REGRIP_STATIONARY_FREE_V1'):raise ValueError('actual route-bound checkpoint required')
+ if sha(src/'input.checkpoint')!=m['input_checkpoint_sha256'] or tokens[0] not in ('REGRIP_ROUTED_PERSISTENT_V1','REGRIP_LATERAL_PERSISTENT_V1','REGRIP_LATERAL_CONTROLLED_V1','REGRIP_LATERAL_FREE_V1','REGRIP_LATERAL_REST_FREE_V1','REGRIP_STATIONARY_CONTACT_V1','REGRIP_STATIONARY_FREE_V1','REGRIP_STATIONARY_GAUSS_FREE_V1'):raise ValueError('actual route-bound checkpoint required')
  pos=5+2*n+4+693+36
  for f in range(3):
   pairs=np.array(tokens[pos:pos+1386],float).reshape(693,2);pos+=1386;R=np.zeros_like(P)
@@ -45,7 +45,7 @@ def main():
     snapshots=[cp for cp in src.glob('three.checkpoint_*.txt') if float(cp.read_text().split()[1])==t]
     if len(snapshots)!=1:raise ValueError('explicit accepted FREE checkpoint required')
     cp=snapshots[0];z=cp.read_text().split()
-    if sha(cp)!=m['raw_hashes'][cp.name] or z[0] not in ('REGRIP_LATERAL_FREE_V1','REGRIP_STATIONARY_FREE_V1') or z[z.index('FREE_ACTIVE_COUNT')+1]!='0' or not np.array_equal(np.array(z[5:5+n],float),q) or not np.array_equal(np.array(z[5+n:5+2*n],float),v):raise ValueError('accepted FREE ownership/state differs')
+    if sha(cp)!=m['raw_hashes'][cp.name] or z[0] not in ('REGRIP_LATERAL_FREE_V1','REGRIP_STATIONARY_FREE_V1','REGRIP_STATIONARY_GAUSS_FREE_V1') or z[z.index('FREE_ACTIVE_COUNT')+1]!='0' or not np.array_equal(np.array(z[5:5+n],float),q) or not np.array_equal(np.array(z[5+n:5+2*n],float),v):raise ValueError('accepted FREE ownership/state differs')
     normal=0.;kind='explicit empty accepted active set;NOT missing-data fill'
    metrics.append(dict(time_s=t,finger=f,endpoint_normal_force_N=normal,normal_force_evidence=kind,object_vz_mm_s=float(v[-4]),**shape(u)))
  if error>1e-12:raise ValueError('actual field reconstruction differs')

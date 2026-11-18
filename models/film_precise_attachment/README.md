@@ -24,6 +24,16 @@ for the contact owner. It emits all four actual stages in `.gauss4.csv`;
 the historical two-stage journal is deliberately empty. No object/contact,
 wrapping,holding,lift,full recovery or production checkpoint certification.
 
+The later separate `FilmPreciseWindowODE` is bounded to1ms and40/80/160
+steps,with1e-22Ns Newton stopping input (historical baseline1e-18 remains
+unchanged). The1e-24Ns1ms trial1698 failed line search and remains FAIL.
+The new1e-22 candidate passed independent1ms all-pair state/shape1700;
+actual40-step1702 matches reference STRICT1e-12. Actual finer-window status
+is recorded in1703/1704,not inferred from independent results. It uses the
+same C2 input,reference-exact attachment and existing Shell/route kernels.
+Neither candidate changes the0.1% time gate.1701 factory registration
+failure is preserved and is not a physics-solver failure.
+
 Reproduce from repository root:
 
 ```

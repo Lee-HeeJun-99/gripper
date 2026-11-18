@@ -30,13 +30,14 @@ Actual lateral3film/free Rigid3:1469 reaches23.2ms and1472 reaches23.4ms,
 all q/v,internal stage force/state/time EXACT to standalone reference.
 Those binaries predate the additional positive-active-stage guard;their
 actual stage gaps are small,not evidence that all future stages satisfy it.
-1480 is the separately source-bound stronger-guard replay;inspect its
-completed summary before claiming actual qualification.
+1480 separately source-bound stronger-guard actual replay PASS,all internal
+stage q/v/force/time EXACT to standalone reference.
 1470/1473 longer reference FAIL because124→117 contact birth occurs.
 1473 observes old124reaction positive at23.5ms and new117negative endpoint
 trial reaction:do NOT interpret that rejected trial as physical release.
 Independent isolated6-row transfer1478 passes at23.503224464179916ms.
-Actual transfer needs separate1481 qualification;not a global CCD proof.
+1481 ACTUAL transfer PASS:same event/state/impulses EXACT.1483/1486 actual
+post-transfer to24.4ms PASS narrow gates,not a global CCD/time/grasp proof.
 
 The original time/energy FAILs remain. Numerical normal-work defects are
 not Coulomb heat. Root reaction work/full energy/friction/grasp remain blocked.

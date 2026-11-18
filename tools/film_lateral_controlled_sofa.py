@@ -5,7 +5,7 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--parent');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rm=json.loads((ref/'summary.json').read_text());parent=ROOT/'results'/('autonomous_film_'+(a.parent or '20261118_lateral_unload_boundary1458'));pm=json.loads((parent/'summary.json').read_text());provider=ROOT/'results/autonomous_film_20261118_lateral_resume1420';proof=json.loads((provider/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--parent');p.add_argument('--reuse-build');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rm=json.loads((ref/'summary.json').read_text());parent=ROOT/'results'/('autonomous_film_'+(a.parent or '20261118_lateral_unload_boundary1458'));pm=json.loads((parent/'summary.json').read_text());provider=ROOT/'results/autonomous_film_20261118_lateral_resume1420';proof=json.loads((provider/'summary.json').read_text())
  if rm['status']!='PASS' or rm['macros'] not in (1,2,4,8) or pm['status']!=('PASS' if a.parent else 'FAIL') or proof['status']!='PASS':raise ValueError('qualified isolated reference and preserved old failure required')
  for f,d in proof['source_hashes'].items():
   if sha(provider/'sources'/f)!=d:raise ValueError('actual provider archive changed')
@@ -35,7 +35,16 @@ def main():
   text=text.replace(row,'  {Eigen::VectorXd microQ=q,microV=v;double microTime=last;for(const auto&result:controlled.accepted){\n'+changed+'\n microQ=result.q;microV=result.v;microTime=result.stages[1].time;}}')
   text='#include "../film_coupled_collocation/EndpointControlledRows.h"\n'+text;path.write_text(text)
  path=archive/'models/film_three_finger_resume/ThreeFilmResume.cpp';text=path.read_text().replace('REGRIP_LATERAL_PERSISTENT_V1','REGRIP_LATERAL_CONTROLLED_V1');path.write_text(text)
- sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};build=ROOT/'build'/('lateral_controlled_'+a.tag);build.mkdir(exist_ok=False);configure=guarded(['cmake','-S',archive/'models/film_three_finger_resume','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120);compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None;r=dict(status='FAIL',scope='ACTUAL source-bound lateral persistent contact-admissibility continuation;NOT full time/energy/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,reference_summary_sha256=sha(ref/'summary.json'),parent_summary_sha256=sha(parent/'summary.json'),configure=configure,compile=compile,predicted_child_runtime_s=forecast,sdk=str(SDK),sdk_runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),parent_status=pm['status'],position_projection=False,tolerance_relaxed=False,root_work=None,actual_steps=rm['macros'],start_time_s=float(checkpoint.read_text().split()[1]),dt_s=float(checkpoint.read_text().split()[2]))
+ sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()}
+ if a.reuse_build:
+  prior=ROOT/'results'/('autonomous_film_'+a.reuse_build);pr=json.loads((prior/'summary.json').read_text())
+  if pr['status']!='PASS' or pr['source_hashes']!=sources or pr['sdk_runner_sha256']!=sha(SDK/'bin/runSofa-26.06.00'):raise ValueError('exact ALL-source qualified binary reuse required')
+  build=ROOT/pr['build_relative']
+  if sha(build/'libReGripThreeFilmResume.so')!=pr['binary_sha256']:raise ValueError('reused binary changed')
+  configure=dict(exit_code=0,reused_from=a.reuse_build);compile=dict(exit_code=0,reused_from=a.reuse_build)
+ else:
+  build=ROOT/'build'/('lateral_controlled_'+a.tag);build.mkdir(exist_ok=False);configure=guarded(['cmake','-S',archive/'models/film_three_finger_resume','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120);compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None
+ r=dict(status='FAIL',scope='ACTUAL source-bound lateral persistent contact-admissibility continuation;NOT full time/energy/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,reference_summary_sha256=sha(ref/'summary.json'),parent_summary_sha256=sha(parent/'summary.json'),configure=configure,compile=compile,predicted_child_runtime_s=forecast,sdk=str(SDK),sdk_runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),parent_status=pm['status'],position_projection=False,tolerance_relaxed=False,root_work=None,actual_steps=rm['macros'],start_time_s=float(checkpoint.read_text().split()[1]),dt_s=float(checkpoint.read_text().split()[2]))
  if compile and compile['exit_code']==0:
   binary=build/'libReGripThreeFilmResume.so';deps=subprocess.check_output(['ldd',binary],text=True);(out/'ldd.txt').write_text(deps)
   if 'not found' in deps or any('libSofa.' in x and '=> /' in x and str(SDK) not in x for x in deps.splitlines()):raise ValueError('SDK mismatch')

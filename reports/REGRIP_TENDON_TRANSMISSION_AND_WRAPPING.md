@@ -1,5 +1,106 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Current actual lateral contact continuation to24.4ms —2026-11-18
+
+Feature commit0c1d40d:bounded contact-admissibility reintegration and
+isolated six-row birth,independent references AND actual SOFA.
+1469/1472 actual controlled prefix through23.4ms has ALL micro-stage
+q/v/force/time EXACT to reference.1475/1476 nonquadratic test exposed a
+positive active-stage gap omission;1477 STRONGER two-sided active-stage
+check passes circle analytic and sine independently-refined RK references.
+1480 actual stronger-guard replay PASS,without changing accepted old prefix.
+These are NOT general error-controlled time integration or whole energy PASS.
+
+1470/1473 longer reference FAIL is124→117 NEW CONTACT BIRTH,not object
+release. Rejected signed forces were NEVER applied or committed.
+1478 isolated reference and1481 ACTUAL SOFA event at
+.023503224464179916s PASS:6rows,3retained,impact loss4.54963e-12Nmm,
+momentum1.05928e-20Ns,global angular balance4.34163e-24Nmm*s.
+Actual q/v/event time/impulses EXACT. This is an externally isolated
+numerical branch,NOT global earliest continuous-trajectory CCD.
+1483 actual post-impact and1485/1486 continued to.024399999999999963s:
+ALL micro stages/absolute clocks exact,gap−3.90123e-11mm,
+momentum1.02815e-18Ns. Existing1458/1459/1460/1470/1473 FAILs preserved.
+Latest COMPLETE actual lateral state:
+results/autonomous_film_20261118_lateral_post_birth_four_actual1486/three.checkpoint_122.txt
+Build:build/lateral_controlled_20261118_lateral_post_birth_actual1483/libReGripThreeFilmResume.so
+SHA22bf301e5f55a1d5d8210164b3563512876f9d46cd7eb8d0698c2373ccab2731.
+SDK /home/ubuntu/SOFA/v26.06.00,unchanged runner/ABI. Binary reuse1486
+requires EXACT ALL-model source identity to qualified1483,not relaxed parity.
+
+1487 actual endpoint force inventory:at24.4ms,T6.11425e-5N/rail,
+direct Skin tendon force0,Attachment Skin power+.00164815Nmm/s,
+Rail power−.00230185Nmm/s;Skin75vz+9.46331,Rail75vz+18.78199mm/s
+(positive local z is AWAY from object). Thus coupling transmits energy,
+but the observed deformation is NOT certified wrapping.
+Nodal force norms are NOT resultant grasp capacity.
+Attachment net-force/moment residuals<3.87e-20N/3.18e-18Nmm;
+actual Field cable length error0. Root work/contact area/pressure remainNULL.
+Actual scale1 PNG/OBJ1484/1488. No invented wrap pose.
+Current profiled FREE50ms candidate remains unselected:more work AND worse
+75mm arch. Original,quadratic,lateral and profiled histories remain separate.
+
+Next bounded reference1490 is a NEW24.4ms IVP;inspect completed summary
+before any actual continuation. If PASS,reproduce with unique actual tag:
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_lateral_controlled_sofa.py --tag UNIQUE --reference 20261118_lateral_after244_four1490 --parent 20261118_lateral_post_birth_four_actual1486 --reuse-build 20261118_lateral_post_birth_actual1483
+No wrapping/holding/gravity lift,full time/mesh/energy,friction,selfcollision,
+full thickness,mechanical equalizer,12-Wrench or final Optuna certification.
+No OS/RAM/disk exhaustion is claimed;no automatic background restart.
+
+## Latest completed transmission comparison and contact limit —2026-11-18
+
+Feature0337fe2 lateral resume/actual energy diagnosis;bcd2de7 separate
+distributed-profile route and actual short regression. No remote push.
+Actual lateral coupled Hold1440/1447 passes to19.6ms;1448/1450 and
+1451/1457 pass Unload through22.799999999999973ms:q/v/clock/normal force
+EXACT to same-IVP reference,Field energy differences<3e-19Nmm.
+Latest FULLY qualified lateral checkpoint:
+results/autonomous_film_20261118_lateral_unload_next1451/three.checkpoint_114.txt
+Same1420 DLL SHA526872e0d040f77b37b5f950c79b24dfc94d5b5cb9033311a1253ef395fb3dc3.
+1458/1459 intended24.4ms horizon FAIL;only one accepted23ms prefix exists.
+1461 verifies that prefix q/v/time/checkpoint EXACT,but does NOT certify
+the failed horizon. At rejected23.1ms MID stage selected triangle124/face
+gap−1.05835e-10mm,endpoint+1.97957e-11mm;normalv~1e-14,momentum5.93e-19Ns.
+Same selected surface,not evidence of a missing triangle.1460 uniformhalf
+reference also FAIL endpoint drift. No rejected state was committed.
+
+1436 separate profiled route API PASS;1437/1438 and1442/1443 actual short
+no-object dynamics PASS;1444 zero-profile versus original lateral6 EXACT.
+1445 actual294step50ms PASS execution/API,NOT time convergence.
+1454 SAME core/Tmax/C2:mean tip−.743267→−.761872mm;75mm centre upward
+arch+.372966→+.399852mm;mid mean−.097787→−.134871mm.
+1455 actual stage mechanical work.000167955009Nmm versus baseline1394
+.000149076386Nmm (~12.7% MORE),not matched-work superiority.
+1456 virtual fixed-sphere overlay on NO-OBJECT states has minimum buffer
+gap−.0185480mm;NOT valid contact/wrapping solution. Wire centreline
+gap+.263898mm does not certify finite wire/guide clearance.
+Candidate NOT selected as a wrapping improvement.
+Actual equal-aspect scale1 PNG/SVG/OBJ:
+results/autonomous_film_20261118_profiled_surface50_1465/
+Coordinate comparison1454 explicitly labels unequal-axis geometric ratio.
+
+New EndpointControlledRows is isolated,never replaces old law silently.
+It discards entire inadmissible uncommitted steps and reintegrates halves
+using SAME forces/gates;NO q/v projection or fabricated reaction.
+Only explicit endpoint-drift observation or returned whole-stage gap failure
+admits subdivision. Release/ambiguous geometry/other errors propagate.
+1463 unit-mass circle fixture FAIL line search;1464 dimensioned1g fixture
+fails incorrect test expectation of endpoint rejection.1466 correct circle
+test PASS:7stage rejections,15attempts,gap6.36e-11mm,analytic position
+error3.58e-12mm. These failures remain preserved.
+1467 same ACTUAL23ms-IVP independent one-macro reference PASS with
+unchanged gates. Actual controlled-owner qualification is still separate;
+do not claim general adaptive-time or whole-energy PASS.
+
+No final wrapping/holding/gravity lift,friction,selfcollision,full-thickness,
+whole time/mesh/energy,mechanical equalizer,12-Wrench or Optuna certified.
+Original-route44.4ms,quadratic-route50ms,lateral22.8ms and profiled FREE50ms
+are DIFFERENT histories and must not be spliced.
+For an EXACT same-state short lateral replay inside known qualified history:
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_routed_resume_continue.py --tag UNIQUE --parent 20261118_lateral_unload_next1451 --checkpoint-step 110 --steps 4 --end-time .0228 --reuse-journal-rows
+
 ## Current lateral transmission/contact qualification —2026-11-18
 
 Feature c369746 binds SAME objective6mm lateral cable to actual Field,

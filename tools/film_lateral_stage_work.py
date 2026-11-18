@@ -12,7 +12,7 @@ def prepare_power(cpp,design):
  cpp.write_text(text)
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.case);m=json.loads((src/'summary.json').read_text());provider=ROOT/'results'/('autonomous_film_'+m['source_provider_case']);proof=json.loads((provider/'summary.json').read_text())
- if m['status']!='PASS' or (m.get('design'),m['amplitude_mm']) not in (('lateral',6),('profiled',.5)) or not m['stage_rows_exact'] or m['binary_sha256']!=proof['binary_sha256']:raise ValueError('qualified actual lateral6/profiled.5 Gauss stages required')
+ if m['status']!='PASS' or (m.get('design'),m.get('design_parameter_value',m.get('amplitude_mm'))) not in (('lateral',6),('profiled',.5),('distributed',2)) or not m['stage_rows_exact'] or m['binary_sha256']!=proof['binary_sha256']:raise ValueError('qualified actual lateral6/profiled.5/distributed2 Gauss stages required')
  for f,d in m['raw_hashes'].items():
   if sha(src/f)!=d:raise ValueError('actual raw changed')
  for f,d in proof['source_hashes'].items():

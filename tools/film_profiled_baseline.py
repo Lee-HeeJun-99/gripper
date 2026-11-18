@@ -1,17 +1,17 @@
-"""Typed zero-profile versus lateral6 actual regression,not shape superiority."""
+"""Typed zero-design-parameter versus lateral6 actual regression,not superiority."""
 import argparse,csv,json,shutil
 import numpy as np
 from curve_common import ROOT,sha,write_json
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--profiled',required=True);p.add_argument('--lateral',required=True);a=p.parse_args();data=[]
- for name,design,amp in ((a.profiled,'profiled',0),(a.lateral,'lateral',6)):
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--profiled',required=True);p.add_argument('--design',choices=('profiled','distributed'),default='profiled');p.add_argument('--lateral',required=True);a=p.parse_args();data=[]
+ for name,design,amp in ((a.profiled,a.design,0),(a.lateral,'lateral',6)):
   path=ROOT/'results'/('autonomous_film_'+name);m=json.loads((path/'summary.json').read_text())
   ramp=m.get('control_ramp_s')
   if ramp is None and m.get('source_provider_case')=='20261118_lateral_api_build1356':
    provider=ROOT/'results/autonomous_film_20261118_lateral_api_build1356'
    if sha(provider/'summary.json')!=m['source_provider_summary_sha256']:raise ValueError('original10ms provider changed')
    ramp=.01
-  if m['status']!='PASS' or m['design']!=design or m['amplitude_mm']!=amp or ramp!=.01:raise ValueError('typed identical physical route required')
+  if m['status']!='PASS' or m['design']!=design or m.get('design_parameter_value',m.get('amplitude_mm'))!=amp or ramp!=.01:raise ValueError('typed identical physical route required')
   for f,d in m['raw_hashes'].items():
    if sha(path/f)!=d:raise ValueError('raw changed')
   data.append((path,m,list(csv.DictReader((path/'actual.csv').open()))))

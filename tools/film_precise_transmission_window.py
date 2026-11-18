@@ -5,16 +5,16 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_transmission_linear import shape
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--startup-only',action='store_true');p.add_argument('--newton-tol',type=float,choices=(1e-22,1e-24),default=1e-24);a=p.parse_args();provider=ROOT/'results/autonomous_film_20261119_precise_gauss4_1681';m=json.loads((provider/'summary.json').read_text());qualification=ROOT/'results/autonomous_film_20261119_precise_startup_actual_time1691';qm=json.loads((qualification/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--provider',default='20261119_precise_gauss4_1681');p.add_argument('--startup-only',action='store_true');p.add_argument('--first-output',action='store_true');p.add_argument('--newton-tol',type=float,choices=(1e-22,1e-24),default=1e-24);a=p.parse_args();provider=ROOT/'results'/('autonomous_film_'+a.provider);m=json.loads((provider/'summary.json').read_text());qualification=ROOT/'results/autonomous_film_20261119_precise_startup_actual_time1691';qm=json.loads((qualification/'summary.json').read_text())
  if qm['status']!='PASS' or not m['FD_query_state_stages_EXACT'] or sha(provider/'reference')!=m['binary_sha256']:raise ValueError('qualified immutable startup kernel required')
  for f,d in m['source_hashes'].items():
   if sha(provider/'sources'/f)!=d:raise ValueError('compiled source changed')
  profile=max(x['process']['runtime_s'] for x in m['trials'].values());forecast=2*profile*160/8+20
  if forecast>480:raise ValueError('predicted child>480;NOT OS exhaustion')
- out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');r=dict(status='FAIL',scope='independent SAME nonlinear FEM1ms40/80/160-step extension ONLY;NOT actual SOFA/contact/wrapping/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),provider_summary_sha256=sha(provider/'summary.json'),startup_time_summary_sha256=sha(qualification/'summary.json'),binary_sha256=m['binary_sha256'],source_hashes=m['source_hashes'],horizon_s=(.0002 if a.startup_only else .001),Newton_tolerance_Ns=a.newton_tol,relative_gate=.001,absolute_floor='NONE',predicted_max_child_runtime_s=forecast,actual_SOFA='NOT RUN',energy='NOT ASSESSED',work='NOT ASSESSED',trials={})
- r['scope']='independent SAME nonlinear FEM'+('200us8/16/32-step startup' if a.startup_only else '1ms40/80/160-step extension')+' ONLY;NOT actual SOFA/contact/wrapping/grasp'
+ out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');r=dict(status='FAIL',scope='independent SAME nonlinear FEM1ms40/80/160-step extension ONLY;NOT actual SOFA/contact/wrapping/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),provider_summary_sha256=sha(provider/'summary.json'),startup_time_summary_sha256=sha(qualification/'summary.json'),binary_sha256=m['binary_sha256'],source_hashes=m['source_hashes'],horizon_s=(.000025 if a.first_output else .0002 if a.startup_only else .001),Newton_tolerance_Ns=a.newton_tol,relative_gate=.001,absolute_floor='NONE',predicted_max_child_runtime_s=forecast,actual_SOFA='NOT RUN',energy='NOT ASSESSED',work='NOT ASSESSED',trials={})
+ r['scope']='independent SAME nonlinear FEM'+('25us8/16/32-step first-output resolution' if a.first_output else '200us8/16/32-step startup' if a.startup_only else '1ms40/80/160-step extension')+' ONLY;NOT actual SOFA/contact/wrapping/grasp'
  r['Newton_candidate']='stricter than historical1e-18;distinct1e-22/1e-24 settings,oldFAIL never relabeled'
- counts=(8,16,32) if a.startup_only else (40,80,160)
+ counts=(8,16,32) if a.startup_only or a.first_output else (40,80,160)
  for steps in counts:
   completed=[x for x in r['trials'].values() if x.get('status')=='PASS']
   if completed:

@@ -44,13 +44,13 @@ def main():
                 'models/film_three_finger_release','models/film_three_finger_recovery',
                 'models/film_three_finger_recovery_next','models/film_transmission',
                 'models/film_transmission_plan','models/film_routed_tendon','models/film_routed_contact',
-                'models/film_routed_refined_resume','models/film_lateral_tendon','models/film_profiled_tendon','models/film_routed_recovery'):
+                'models/film_routed_refined_resume','models/film_lateral_tendon','models/film_profiled_tendon','models/film_distributed_attachment','models/film_lateral_release','models/film_routed_recovery'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
     for path in ROOT.glob('tests/test_closest_primitive*.cpp'):record(path)
     record(ROOT/'tests/test_control_transmission.py')
     for pattern in ('tests/test_transmission*','tests/test_routed_*','tests/test_compiled_sources.py',
-                    'tests/test_precise_query_cache.cpp','tests/test_separated_numerical_path.cpp'):
+                    'tests/test_precise_query_cache.cpp','tests/test_separated_numerical_path.cpp','tests/test_endpoint_controlled*.cpp','tests/test_lateral_free_footer.cpp'):
         for path in ROOT.glob(pattern):record(path)
     for pattern in ('tools/film_*.py','tests/test_film*','tests/test_contact_radau.cpp','tests/test_coupled*.cpp','tests/test_sustained_birth*.cpp','tests/test_persistent*.cpp','tests/test_three_film*.cpp','tests/test_gap_controlled_rows.cpp','tests/test_routed_cable_power.cpp','tests/test_precise_distance_order.cpp','tests/test_event_budget.cpp','tests/test_modal_rational.py','tests/test_surface_roundoff.cpp','tests/test_*impact*.cpp','tests/test_whole_surface*.cpp','reports/*FILM*.md',
                     'reports/AUTONOMOUS_RESEARCH_*.md','reports/REGRIP_*.md',

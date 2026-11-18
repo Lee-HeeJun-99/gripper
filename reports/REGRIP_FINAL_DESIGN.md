@@ -1,4 +1,35 @@
-## Current actual lateral contact continuation to24.4ms —2026-11-18
+## Actual lateral release / candidate comparison —2026-11-19
+
+Latest completed actual lateral checkpoint is27.2ms,NOT wrapping/holding/lift:
+`results/autonomous_film_20261119_lateral_release_actual1522/three.checkpoint_136.txt`.
+1522 SOFA release PASS: q/v and512 RK force/state/time/weight/mask evaluations
+EXACT to1518 independent reference; gap−1.55644e-11mm,
+outgoing normal velocity+.02381532mm/s,segment momentum norm bound7.38836e-19Ns.
+Runtime229.561s<480s. Build
+`build/lateral_release_20261119_lateral_release_actual1522/libReGripLateralRelease.so`,
+SHA bf6a7f2f534c5635398ea03e8db34fa0124c5369b2f763b9633324cbb93ba9db.
+No exact continuous exit-root/whole time/energy/recovery claim.
+1513/1517 release32/64 velocity FAIL preserved.
+New typed FREE_V1 has explicitly UNMEASURED edge birth history;do not
+feed it to quadratic FREE_V3 or invent history. FREE extension is separate
+validation;1525 compile FAIL preserved. Inspect1526 summary/process before reuse.
+
+Feature commits ce86695 passive stage/work observer and9082bb1 distributed
+attachment candidate.1497 passive labels preserve prior physical CSV/tokens
+exactly.1499 measured-micro work is PARTIAL,root workNULL.
+1515 actual distributed-joint NO-OBJECT50ms coupon API/stages PASS:
+mean tip bends more,centre tip bends less,tip warp increases;1520 work
+decreases.1524 virtual sphere intersection−.0354186mm is NOT contact dynamics.
+Candidate NOT selected;no superiority/area/pressure/holding inference.
+Same core/material/route/input,not matched adhesive hardware or equal work.
+
+Current evidence/detail/reproduction:
+[REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md).
+Existing full Time/Mesh/Energy,friction,self-collision,full-thickness clearance,
+Mechanical Equalizer,gravity lift,12-Wrench and Grasp Optuna remain BLOCKED.
+Older sections below are historical,not current running-process claims.
+
+## Historical actual lateral contact continuation to24.4ms —2026-11-18
 
 Feature commit0c1d40d:bounded contact-admissibility reintegration and
 isolated six-row birth,independent references AND actual SOFA.

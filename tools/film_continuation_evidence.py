@@ -40,7 +40,7 @@ def main():
             if path.is_file():record(path)
     for path in (ROOT/'models/film_three_finger_event').rglob('*'):
         if path.is_file():record(path)
-    for top in ('models/film_stationary_gauss_continuation','models/film_lateral_gauss_parallel','models/film_stationary_gauss_parallel',
+    for top in ('models/film_precise_tendon','models/film_precise_attachment','models/film_c2_startup','models/film_rail_aspect','models/film_stationary_gauss_continuation','models/film_lateral_gauss_parallel','models/film_stationary_gauss_parallel',
                 'models/film_three_finger_resume','models/film_three_finger_primitive',
                 'models/film_three_finger_release','models/film_three_finger_recovery',
                 'models/film_three_finger_recovery_next','models/film_transmission',

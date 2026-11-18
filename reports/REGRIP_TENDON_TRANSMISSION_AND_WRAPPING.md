@@ -1,5 +1,252 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+Method background: Gauss collocation order2s is described in
+[Hairer, geometric integration lecture2](https://www.unige.ch/~hairer/poly_geoint/week2.pdf).
+That general order result is NOT proof of ReGrip startup/remote-signal accuracy;
+the100-digit counterexample1663 and full FEM/SOFA campaigns provide separate
+evidence. No literature result is used as a grasp certification.
+
+## New precise-tendon actual200us common-output state/shape PASS —2026-11-19
+
+1717 actual new Field API PASS.1718/1719/1720 actual SAME binary
+4f860ce0a79ad7f65a26eb11e4ddc2c337e5903c1b04753cf936e5f2517048d5
+run8/16/32 PUBLIC steps,each with8 private Gauss4 microsteps. ALL256/512/1024
+actual stages match independent same-law reference within STRICT1e-12.
+1721 checks ALL common public output clocks,not only endpoint:PASS0.1%,
+worst0.0201771235% Skin mid total curvature at12.5us,absolute8.22130e-51/mm.
+NO absolute floor;actual clock interpolation distances<=1.35525e-19s are
+recorded,raw clocks/states unchanged. Between-output continuum accuracy,
+1ms/all-cycle time,mesh/contact/energy/grasp are NOT certified by this test.
+Old Attachment-only all-time1708/1710 FAIL194.297% remains preserved.
+
+1722 offline actual-stage observer PASS:all recomputed physical forces EXACT,
+Field stored/kinetic energies within~1e-31Nmm. Tendon/damping/stored/kinetic
+endpoint energy all-pair errors PASS0.1%. Signed partial residual still FAILS
+relative200%,absolute9.86076e-32Nmm;NO heat reclassification,root workNULL.
+Field Legacy Sampled Work/rounded cable length are NOT full work certification.
+1723 actual material-displacement PNG/CSV produced,NO displacement scaling or
+concept pose. Skin displacement is still microscopic;NO wrapping/holding/lift.
+
+Reused actual build:`build/precise_startup_20261119_precise_tendon_actual1718/`.
+Exact fresh reproduction (unique tag mandatory):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_precise_startup_sofa.py --tag UNIQUE_TENDON --precise-tendon --steps 8 --reuse-build 20261119_precise_tendon_actual1718`
+
+This NEW free single-coupon formulation must NOT be spliced into old three-film
+checkpoint1644 at56.4ms. Existing free-body/contact/three-finger SDK,Raw and
+checkpoints are preserved. Final design/holding/lift/friction/12-wrench/Optuna
+remain unqualified or BLOCKED. Latest functional commit before this entry:b234bab.
+1724 SAME new tendon1ms at1e-24Ns FAILS line search,last accepted0.85ms;
+80/160-step cases NOT RUN. The value fix is NOT the sole late Newton remedy.
+1725 separately tests1e-22Ns (still stricter than historical1e-18),and1ms
+40/80/160 ENDPOINT state/shape comparisons PASS,worst0.00000544569%.
+This is NOT all-time or actual SOFA certification. Old24-setting FAILs remain.
+All owned physics children for these completed campaigns have recorded exits;
+no background restart or continued work after the session is promised.
+
+Next priority:combine the qualified early24-setting localized refinement with
+a separately validated later-window solver plan,then reassess ALL common times,
+stage work and contact before changing the old three-finger production model.
+Do not rerun the old25us/1ms failed configurations unchanged. Existing executable
+candidate (fresh tag) for independent numerical-study continuation:
+
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_precise_transmission_window.py --tag UNIQUE_PRECISE_WINDOW --provider 20261119_precise_tendon_gauss1715 --newton-tol 1e-22`
+
+This command reproduces1725;it is NOT new research by itself. New localized
+method implementation is required before a longer certified actual run.
+
+
+## Historical all-output FAIL;new tendon-value candidate isolated —2026-11-19
+
+IMPORTANT:1691/1706 PASS is ENDPOINT q/v/shape all-pairs ONLY.1708 checks
+all common physical outputs in200us and FAILS;1710 checks1ms using explicit
+fine-state time interpolation and FAILS. Worst50us right-mid Rail curvature:
+relative194.297%,absolute1.098643e-30/mm. No absolute floor.1709 clock
+alignment analysis was incomplete;its failure is preserved. Actual raw clocks
+were not overwritten. Whole Time/Energy/Contact/Grasp certification remainsFAIL/BLOCKED.
+
+1700 independent1ms40/80/160 endpoint test PASS at1e-22Ns;1702/1703/1704
+actual SOFA same binary87112e71b1578ec14cf820753642ab7428d8d608587094878ba04a1b5b987073
+match same-law numerical reference STRICT1e-12.1701 factory registration
+failure preserved. All160/320/640 real stages recorded,not legacy two-stage
+placeholders. These real free-coupon results are NOT new three-finger recovery
+or contact/wrapping/lift. Old three-finger checkpoint remains1644 at56.4ms.
+
+1707 builds NEW-model rest Jacobian and verifies balanced continuous linear
+flow1-vs4 at1e-8. Direct Skin tension gradient and instantaneous acceleration
+sensitivity0;Rail gradient norm9.34631774. Actual Skin tip at1ms-1.31998e-8mm,
+Rail tip-1.03773e-5mm,Skin curvature5.27490e-10/mm. Linear/nonlinear state
+relative differences are measured,not automatically solver errors or wrapping.
+
+1712 isolates tendon force VALUE quantization,FAIL. Separate
+models/film_precise_tendon algebraically telescopes constant-tension linear
+terms before AD assembly;NO force/stiffness/state correction.1713 tiny-value
+and1714 original FD/Hessian/objectivity/balance gates PASS.1715 stage FD/query
+purity PASS.1716 independent25us8/16/32 refinement PASS,worst0.0111928%;old
+Attachment-only1711 FAIL22.3772%. New tendon actual SOFA NOT RUN yet.
+All previous models and failures remain immutable;no final design selected.
+
+
+## Historical endpoint-only actual precise-startup PASS;NOT all-time PASS —2026-11-19
+
+1694 offline observer reproduces every actual stage force EXACT and Field
+energies within~1e-31Nmm. All tested tendon/damping/stored/kinetic energy
+all-pair differences PASS0.1%,but signed partial-defect relative error FAIL200%
+(absolute9.86076e-32Nmm).1697 decimal100 reduction demonstrates summation
+sensitivity but cannot recover binary64 input precision;FAIL preserved,NO heat
+reclassification and root work remainsNULL.1693 missing<iostream> compile
+failure and1695 plot-key failure preserved;1696 actual displacement PNG/CSV
+completed. No concept deformation or displacement amplification was used.
+
+1698 1ms extension at1e-24Ns Newton setting FAILS line search after37accepted
+microsteps (last recorded0.925ms);80/160steps NOT RUN. This is algorithmic
+failure,NOT OS exhaustion.1699 separately tests1e-22Ns (still stricter than
+historical1e-18),200us state/shape all-pairs PASS0.07672095%. Its old scope
+literal says1ms incorrectly;SCOPE_CORRECTION.json explicitly limits it to
+recorded200us without editing old summary.1700 is a separate1ms candidate,
+never a replacement PASS for1698. Physical0.1% gate remains unchanged.
+
+
+1688/1689/1690 SAME actual SOFA binary595d2e39eac51d545082cbc14b2919304e86d6bca1cd7af9af0836ac1741b04b,
+200us with8/16/32steps,all32/64/128 physical stages journaled. Each run matches
+its independent same-law reference within STRICT1e-12.1691 actual all-pair
+state/shape time assessment PASS0.1%;worst0.060082213% centre-mid Skin
+value,absolute5.72146e-35mm;NO absolute floor. This is a very short free-coupon
+startup,NOT whole-time/contact/energy/wrapping/holding/lift certification.
+
+1686 compile succeeded but runner scene path was wrong;actual SOFA NOT RUN.
+Failure preserved.1687 corrected runner reused the identical compiled sources,
+then1688 rebuilt the independently qualified8/16/32 bound. No SDK edits.
+1692 observer setup failed before compilation because its diagnostics folder
+was absent;failure preserved.1693 offline stage-power audit is separate.
+
+Reusable actual startup build:
+`build/precise_startup_20261119_precise_startup_base1688/`.
+Reproduce fresh (unique tag mandatory):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_precise_startup_sofa.py --tag UNIQUE_STARTUP --steps 8 --reuse-build 20261119_precise_startup_base1688`
+
+Actual three-finger recovery checkpoint remains1644 at56.4ms;new attachment
+startup must NOT be spliced into that old-model checkpoint. Original rail-aspect
+10ms time FAIL and full contact/friction/energy FAIL/BLOCKED remain preserved.
+No final design selection or automatic background execution is claimed.
+
+
+## Attachment value precision isolated;independent regression PASS —2026-11-19
+
+1684 same-new-nonlinear-model8/16/32 refinement PASS all tested q/v/shape
+with0.1% gate,no absolute floor;worst0.0600822% Skin centre-mid displacement.
+1685 actual SOFA Force/dForce/matrix/FD/query-purity PASS. Energy/work and
+full-cycle time remain NOT ASSESSED/FAIL;these results do not certify grasp.
+That preliminary verification was completed by1687..1691;see newer section above.
+
+
+Campaign1678 isolates a constitutive VALUE defect without any time solver:
+for uniform Rail dz=1e-18mm,legacy Skin force is0 while the analytic5*k*dz
+is5e-21N and the AD derivative remains.005N/mm. Rigid translation also
+creates a spurious tiny force. Original absolute FD/Golden results remain valid
+within their tested scope;1678 remains FAIL.
+
+Separate models/film_precise_attachment uses displacement differences and a
+reference-exact flat attachment potential,including a rationalized normal
+increment. NO stiffness/material/accepted-state correction or epsilon normal.
+Shell and routed tendon remain historical.1679 constitutive tiny-value tests
+PASS through1e-30mm.1680 original regression PASS:forceFD1.010812e-11N,
+HessianFD2.178568e-10N/mm,baseline E/F/H6.505213e-18,
+rigid-objectivity1.082867e-11,with unchanged original gates.
+This is NOT yet actual SOFA integration,time convergence or grasp PASS.
+
+Gauss4 independent kernel1668/1672 passes stage FD and query purity, but
+1671 nonlinear8/16/32 time comparison FAIL. Tightening Newton tolerance
+alone does not fix it:1677 at1e-22Ns still FAIL. The separate precision
+variant is now being tested before any production replacement. Frozen linear
+reference1666 is not exact nonlinear truth for extremely small remote fields.
+
+Latest actual qualified recovery remains56.4ms,checkpoint378 under1637
+provider (1644 actual run). No wrapping,holding,lift,full recovery,friction,
+whole-energy or final design certification. No automatic background restart.
+See immutable results/autonomous_film_20261119_attachment_precise1679/,
+results/autonomous_film_20261119_attachment_math1680/ and prior1648 chain audit.
+
+
+
+## C2 indirect-transmission startup defect isolated;full time FAIL retained —2026-11-19
+
+1659/1660 actual100/50us free-coupon10ms trials PASS strict API against
+independent same-stage references using SAME1654 SOFA binary. This is NOT
+time convergence.1662 all-pair assessment at recorded physical clocks FAILS
+for all rail designs;no absolute floor. Worst Skin tip at200us:relative187.44%,
+absolute3.28049e-13mm. Legacy sampled work max9.54%,stage work max12.66%
+also FAIL. Interpolation distances at most3.12250e-17s are recorded;no row-index
+or time overwrite. Endpoint-only design differences are NOT certified superiority.
+
+1663 independent100-digit two-DOF cubic-load counterexample:
+Rail q leading exacth5/20,Gauss2h5/18;indirect Skin exacth7/840,
+Gauss2−h7/864 (opposite sign,ratio−35/36). Direct high-precision linear stages
+have NO Newton threshold. Gauss3 still has5% Skin leading coefficient error;
+Gauss4 reproduces this leading coefficient. This is NOT a full FEM certificate.
+
+1664 frozen-FEM exponential reference fails its split gate and is preserved.
+1665 balances the augmentation clock and inverse forcing together (exact
+coordinate change,NO physical/tolerance change).1666 additionally checks ALL
+reported shape observables under1-vs4 flow segmentation at1e-8 relative;PASS.
+Atfirst200us actual nonlinear Skin displacement vs direct LINEAR Gauss differs
+2.87428e-9 relative,but both differ from continuous frozen reference by~133.964%.
+This independently isolates a Gauss temporal/stage error at startup;Newton
+and nonlinear physics are not the dominant difference at this particular step.
+It does NOT explain every later/contact/global time failure.
+1667 compares order/subdivision remedies on this SAME frozen FEM before
+nonlinear/SOFA adoption. No damping/stiffness/T tuning or design selection.
+
+## Actual56.4ms recovery and physical rail-aspect SOFA candidates —2026-11-19
+
+Latest committed functional checkpoint c65aa0ae5b1693c418947f4fa7e6b90f5ecaa690;
+new rail-aspect work uses that commit plus complete archived source hashes.
+Actual typed stationary Gauss chain1637→1639→1641→1643→1644 completes
+128nominal50us steps from50ms to.05639999999999999s.
+1648 audits byte-exact typed links,q/v checkpoint identity,ALL stage clocks/
+weights and same-binary ownership. Each actual segment q/v/stages EXACT versus
+its independent nominal-dt reference. End numerical-path gap bound+.284651749mm.
+Relative final film q/v versus the aligned independent1634 reference:
+8.64314e-15/2.61633e-12;clock difference1.66533e-16s is recorded,NOT bit identity.
+Latest checkpoint:
+results/autonomous_film_20261119_stationary_gauss_to564_1644/three.checkpoint_378.txt.
+Reuse1637 DLL SHA f4dec6d84184b24c71736e0c85ea3d94b6944a32f11bf9fd05aaa049a9392cec.
+Its56.4ms domain guard is intentional;do NOT edit header/time/step or claim
+unqualified continuation beyond that domain.
+
+Actual56.4ms1645/1646:Skin mean tip−.389086840mm,centre−.540641173mm,
+maximum discrete centreline curvature.00457220/mm;rails tips−.328249699/
+−.341392343mm. Skin75vz−3.72106mm/s,Rail75vz+7.19295mm/s.
+Skin Attachment power+.00129377,Rail−.000800778Nmm/s while tension0.
+This is internal delayed energy exchange,NOT wrapped/fully recovered/holding.
+1648 partial inventory:U.0002136677141,K.0001271362864,Damping3.525975879e-6,
+signed defect5.874239897e-14Nmm;root workNULL,NOT heat/whole Energy PASS.
+1645 scale1 PNG/OBJ and1648 actual energy plot use saved SOFA states.
+
+Physical rail-aspect model1649/1654 preserves core439.339791775mm³/three,
+skin/material/mass/T/root/bond/route;only rail thickness75/100/125um varies,
+with width adjusted at fixed cross-sectional area. Assumed1g/finger is independent
+of core material density,NOT measured PET/TPU. No final design selected.
+Independent nonlinear1652 and ACTUAL10ms1658 reproduce a trade-off:
+75um gives about13% higher Skin curvature but42% greater stage tendon work;
+125um bends less and uses less work. SAME tension,NOT matched actuation work.
+1654 actual Force/dForce/matrix/FD/query-purity PASS for all3;1657 actual profile
+and1658 peak states/stages/Field energies pass strict API comparisons.
+This is a FREE NO-OBJECT coupon,NOT coupled contact/wrapping/grasp.
+Build:build/film_rail_aspect_20261119_rail_aspect_api1654/libReGripFilmRailAspect.so
+SHA d5fa365f88cc8cc563981a5207ca4dc850f2ac05e2ce68bec78f1da1c56f3126.
+1653 missing relative header,1655 missing mass topology,1656 missing mass
+geometryState initialization failures remain preserved;they are NOT Newton
+convergence failures. Corrected Scene retains static NEW-design mass-reference
+geometry and removes the inapplicable old world mapping. Actual deformed
+geometry is Field x=rest+u;1661 reconstructs it to7.06211e-15mm,scale1.
+
+Next actual all-pair assessment includes every recorded time,legacy sampled
+work AND stage-consistent work;keep0.1% gate and all previous failures.
+Run:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_rail_aspect_time.py --tag UNIQUE_TIME_ASSESSMENT`
+Grasp/lift/friction/selfcollision/full thickness/global energy/mesh/Optuna
+remain NOT RUN or BLOCKED as previously recorded. No automatic background service.
+
 ## Fine-window core time PASS;typed actual Gauss resume PASS —2026-11-19
 
 1632 independent50/25/12.5us1.6ms core state/energy/shape/work pairs PASS;

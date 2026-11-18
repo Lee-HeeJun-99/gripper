@@ -25,5 +25,13 @@ int main(){try{
  try{persistentRows(M,0,q,v,0,.001,[](const Eigen::VectorXd&q,double){return Force{Eigen::VectorXd::Ones(q.size())*1e-6,Eigen::MatrixXd::Zero(q.size(),q.size())};},linear);}catch(const std::domain_error&){releasing=true;}
  try{auto bad=M;bad(0,1)+=1e-7;persistentRows(bad,0,q,v,0,.001,force,linear);}catch(const std::invalid_argument&){nonsymmetric=true;}
  require(dependent&&releasing&&nonsymmetric,"dependent/release/nonsymmetric guards");
+ // Passive release observer must neither accept tensile contact nor mutate IVP.
+ bool stageObserved=false,stageRejected=false;auto originalQ=q,originalV=v;
+ auto ramp=[](const Eigen::VectorXd&x,double t){Eigen::VectorXd f=Eigen::VectorXd::Zero(x.size());f(0)=f(1)=1e-6*(t/.001-.25);return Force{f,Eigen::MatrixXd::Zero(x.size(),x.size())};};
+ try{persistentRows(M,0,q,v,0,.001,ramp,linear,false,{},[&](const RowsResult&r){stageObserved=true;require(r.initialForce.minCoeff()>0&&r.stages.back().force.minCoeff()<0,"signed stage diagnostic");});}catch(const std::domain_error&){stageRejected=true;}
+ require(stageObserved&&stageRejected&&(q.array()==originalQ.array()).all()&&(v.array()==originalV.array()).all(),"passive signed observer rejects without state mutation");
+ auto defaultStep=persistentRows(M,0,q,v,0,.001,force,linear);bool unexpectedlyObserved=false;
+ auto observedStep=persistentRows(M,0,q,v,0,.001,force,linear,false,{},[&](const RowsResult&){unexpectedlyObserved=true;});
+ require(!unexpectedlyObserved&&(defaultStep.q.array()==observedStep.q.array()).all()&&(defaultStep.v.array()==observedStep.v.array()).all(),"observer query purity");
  std::cout<<std::setprecision(17)<<"PASS two-row independent Lobatto;NOT SOFA/active-set/grasp\nanalytic_errors "<<errors[0]<<' '<<errors[1]<<' '<<errors[2]<<"\nmax_tangent_FD "<<maxfd<<"\ncurved_gap "<<curvedStep.stages.back().geometry.gap.cwiseAbs().maxCoeff()<<'\n';
  }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

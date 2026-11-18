@@ -21,7 +21,8 @@ inline RowsResult persistentRows(const Eigen::MatrixXd&M,double damping,
  const std::function<Force(const Eigen::VectorXd&,double)>&force,
  const std::function<RowGeometry(const Eigen::VectorXd&)>&geometry,
  bool checkTangent=false,
- const std::function<void(const RowsResult&)>&rejectedEndpointObserver={}){
+ const std::function<void(const RowsResult&)>&rejectedEndpointObserver={},
+ const std::function<void(const RowsResult&)>&rejectedStageObserver={}){
  const int n=q0.size();if(n==0||v0.size()!=n||M.rows()!=n||M.cols()!=n||!(h>0)||damping<0||!M.allFinite()||!M.isApprox(M.transpose(),1e-14))throw std::invalid_argument("persistent rows input");
  Eigen::LDLT<Eigen::MatrixXd>mass(M);
  if(mass.info()!=Eigen::Success||mass.vectorD().minCoeff()<=0)throw std::domain_error("persistent rows mass not SPD");
@@ -91,7 +92,12 @@ inline RowsResult persistentRows(const Eigen::MatrixXd&M,double damping,
   tangentError=std::max(tangentError,(fd-e.tangent).norm()/e.tangent.norm());
   if(tangentError>1e-8)throw std::runtime_error("persistent rows true tangent FD failed");
  }
- for(auto&s:e.s)if(s.force.minCoeff()<0)throw std::domain_error("persistent stage row releases;active-set transition NOT implemented");
+ for(auto&s:e.s)if(s.force.minCoeff()<0){
+  // Diagnostic only: expose the rejected bilateral trial without committing it.
+  // The original unilateral rejection and all acceptance gates are unchanged.
+  if(rejectedStageObserver)rejectedStageObserver({e.s[1].q,e.s[1].v,lambda,e.s,e.momentum,e.velocity,tangentError,iteration,evaluations});
+  throw std::domain_error("persistent stage row releases;active-set transition NOT implemented");
+ }
  if(e.s[1].geometry.gap.cwiseAbs().maxCoeff()>1e-10){
   if(rejectedEndpointObserver)rejectedEndpointObserver({e.s[1].q,e.s[1].v,lambda,e.s,e.momentum,e.velocity,tangentError,iteration,evaluations});
   throw std::domain_error("persistent rows endpoint drift;no projection");

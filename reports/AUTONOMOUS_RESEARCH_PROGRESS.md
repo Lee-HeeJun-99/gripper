@@ -1,5 +1,17 @@
 # Autonomous research log
 
+## CURRENT — typed Edge resume qualified; Unload stops at release
+
+1059 actual Face->Edge event PASS;1060 four-step V2 resume EXACT including
+byte-identical snapshots.1061 requested30ms FAILS after accepted27ms at
+negative stage reaction (127.184s,not timeout).1062 independent signed
+diagnostic reproduces +1.06418e-7N at27ms and -4.88759e-7N at27.05ms.
+No negative reaction committed.1064 independent passive-observer regression
+and query-purity PASS. Next is zero-reaction event and coupled release;
+full time/energy/wrapping/lift remain UNQUALIFIED. Detailed1059–1061
+evidence and reusable DLL are recorded below; earlier status is historical.
+
+
 ## Latest implementation — through1048,project INCOMPLETE
 
 Persistent resume1014/1015/1016 strict1e-12 EXACT;actual C2 Hold reaches20ms
@@ -1697,3 +1709,32 @@ Nevertheless measured runtime worsened4.22901→4.89190s, so restored original
 algorithm, retaining passive instrumentation/tools (c565ac9). Failure876 is a
 compile duplicate declaration, not a physics failure. Next: integrate existing
 C2 input in independent shared three-film stages before changing SOFA guards.
+## Latest verified continuation — 1059/1060; Unload1061 FAIL (2026-11-18)
+
+Actual SOFA1059 implements bounded deformed Face->Edge transition at
+23.67137720356692ms, preserving velocity without an impulse or projection.
+Independent q/v/time match EXACT; whole-stage gap >= -7.21201e-13mm.
+New material-edge owner stores ordered nodes [77,73], source triangle117,
+birth time, exact normal/parameter and accumulated clock in REGRIP_EDGE_V2.
+Actual1060 restores the V2 state in a separate Edge Owner: four subsequent
+steps, all36 stage rows and ForceField observations match EXACT (legacy
+sampled-work excluded with a declared new origin); four checkpoints are
+byte-identical. Original strict1e-12 API gate retained.
+
+1061 attempts 59 steps from24.1ms to30ms. FAIL after29 individually accepted
+steps, latest checkpoint170 at~27ms: next bilateral stage reaction is negative.
+Runtime127.184s, exit-6, NOT timeout/resource exhaustion. Unilateral guard
+correctly refuses the trial; no negative reaction is committed. This is not
+completed Unload, object release, wrapping, holding or lift. Existing1041
+time FAIL and whole-energy/friction/self-collision/mesh BLOCKED remain.
+Next: locate zero-reaction event using signed diagnostics only, remove
+released material-edge rows, re-solve coupled dynamics and recheck ALL triangles.
+Do not simply continue with negative force or reset velocity.
+
+Reusable DLL:
+`build/three_film_primitive_20261118_three_film_primitive_actual1059/libReGripThreeFilmPrimitive.so`
+SHA256 `52d558a749f2a5288a51ab9b522b1cc128cd9b804eb1300ce62705d1310fc637`.
+Raw: `results/autonomous_film_20261118_three_film_primitive_actual1059/`,
+`...three_film_edge_resume1060/`, `...three_film_edge_unload1061/`.
+Sources at0fa09fb plus archived feature-development source snapshots.
+No completed grasp or automatic background restart is claimed.

@@ -26,12 +26,12 @@ def specialize(archive):
  patch('models/film_three_finger_event/CMakeLists.txt','SHARED ThreeFilmEventOwner.cpp)','SHARED ThreeFilmEventOwner.cpp ../film_routed_tendon/Field.generated.cpp)')
  return changes
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference-provider');p.add_argument('--build-provider');p.add_argument('--steps',type=int,choices=(1,8,50),default=1);p.add_argument('--cost-pair',nargs=2);a=p.parse_args();gate=ROOT/'results/autonomous_film_20261118_routed_contact_force1265';g=json.loads((gate/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference-provider');p.add_argument('--build-provider');p.add_argument('--steps',type=int,choices=(1,8,50),default=1);p.add_argument('--cost-pair',nargs=2);p.add_argument('--design',choices=('quadratic','lateral'),default='quadratic');a=p.parse_args();gate=ROOT/'results'/('autonomous_film_20261118_lateral_contact_force1412' if a.design=='lateral' else 'autonomous_film_20261118_routed_contact_force1265');g=json.loads((gate/'summary.json').read_text())
  if a.steps>1 and (a.reference_provider or not a.build_provider):raise ValueError('continuation requires its own reference path and completed actual first-impact build profile')
  if a.steps==50 and not a.cost_pair:raise ValueError('50step first-peak needs measured startup+continuation cost model')
  if g['status']!='PASS':raise ValueError('independent implicit force/tangent/control prerequisite failed')
  for name,d in g['source_hashes'].items():
-  if name=='models/film_routed_contact/Force.h' and sha(ROOT/name)!=d:raise ValueError('qualified force adapter changed')
+  if name in ('models/film_routed_contact/Force.h','models/film_lateral_tendon/Force.h') and sha(ROOT/name)!=d:raise ValueError('qualified force adapter changed')
  parent=ROOT/'results/autonomous_film_20261118_three_film_first_peak_actual1002';meta=json.loads((parent/'summary.json').read_text());scene_hash=meta.get('scene_sha256',meta.get('scene_hash'))
  if meta['status']!='PASS' or not scene_hash or sha(parent/'scene.scn')!=scene_hash:raise ValueError('actual1002 scene identity required')
  ledger=json.loads((ROOT/'reports/FILM_CONTACT_EVIDENCE_20261118_three_film_v10.json').read_text())
@@ -40,7 +40,11 @@ def main():
   if sha(path)!=ledger['files'][str(path.relative_to(ROOT))]:raise ValueError('immutable original1002 input changed')
  for path,digest in meta['plugins'].items():
   if sha(path)!=digest:raise ValueError('original scene plugin/mapping binary changed')
- out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(ROOT/'tools/film_routed_generate.py',out/'field_generator.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));test=archive/'tests/test_three_film_birth.cpp';test.parent.mkdir();shutil.copy2(ROOT/'tests/test_three_film_birth.cpp',test);shutil.copy2(ROOT/'tests/test_film_rail_tendon_api.cpp',test.parent/'test_film_rail_tendon_api.cpp');generated=generate(archive);modified=specialize(archive);sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};shutil.copy2(parent/'public_mass_reference.txt',out/'public_mass_reference.txt');r=dict(status='FAIL',scope='actual separate quadratic-route THREE-film/ONE free sphere externally bracketed first impact+compressive remainder;NOT wrapping/holding/CCD/thickness/friction/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,generated_source_identity=generated,coupled_specialization=modified,sdk=str(SDK),sdk_runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),actual_steps=1,dt_s=.0002,control='original shared C2 .0001N/rail,ramp10ms,release20..30ms',initial='films REST;sphere incoming vz=-1mm/s,offset+.0001mm;NOT capture from stationary separation',gravity=[0,0,0],external_force_N=[0,0,-.001],contact_model='triangle midsurface buffered sphereR30.01;frictionless perfectly inelastic;finite wire/guide contact absent',force_adapter_gate_sha256=sha(gate/'summary.json'),public_mass_sha256=sha(out/'public_mass_reference.txt'))
+ out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(ROOT/'tools/film_routed_generate.py',out/'field_generator.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));test=archive/'tests/test_three_film_birth.cpp';test.parent.mkdir();shutil.copy2(ROOT/'tests/test_three_film_birth.cpp',test);shutil.copy2(ROOT/'tests/test_film_rail_tendon_api.cpp',test.parent/'test_film_rail_tendon_api.cpp');generated=generate(archive);modified=specialize(archive);lateral_binding=None
+ if a.design=='lateral':
+  from film_lateral_coupled_bind import bind
+  lateral_binding=bind(archive)
+ sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};shutil.copy2(parent/'public_mass_reference.txt',out/'public_mass_reference.txt');r=dict(status='FAIL',design=a.design,lateral_binding=lateral_binding,scope='actual separate source-bound routed THREE-film/ONE free sphere externally bracketed first impact+compressive remainder;NOT wrapping/holding/CCD/thickness/friction/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,generated_source_identity=generated,coupled_specialization=modified,sdk=str(SDK),sdk_runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),actual_steps=1,dt_s=.0002,control='original shared C2 .0001N/rail,ramp10ms,release20..30ms',initial='films REST;sphere incoming vz=-1mm/s,offset+.0001mm;NOT capture from stationary separation',gravity=[0,0,0],external_force_N=[0,0,-.001],contact_model='triangle midsurface buffered sphereR30.01;frictionless perfectly inelastic;finite wire/guide contact absent',force_adapter_gate_sha256=sha(gate/'summary.json'),public_mass_sha256=sha(out/'public_mass_reference.txt'))
  ref=out/'reference'
  provider=None
  if a.build_provider:
@@ -96,7 +100,7 @@ def main():
  tree=ET.parse(parent/'scene.scn');scene=tree.getroot();scene.set('dt','.0002')
  for node in scene.iter():
   if node.tag=='RequiredPlugin' and 'libReGripThreeFilmEvent.so' in node.get('pluginName',''):node.set('pluginName',str(binary))
-  if node.tag=='FilmRailTendon':node.tag='FilmRoutedTendon';node.set('routeAmplitude','4.5')
+  if node.tag=='FilmRailTendon':node.tag='FilmLateralTendon' if a.design=='lateral' else 'FilmRoutedTendon';node.set('lateralOffset' if a.design=='lateral' else 'routeAmplitude','6' if a.design=='lateral' else '4.5')
   for key,value in list(node.attrib.items()):
    if key in ('filename','displacementFilename','ownerCostFilename','costProfileFilename','publicMassFilename') and value.startswith(str(parent)):node.set(key,str(out)+value[len(str(parent)):])
  owner=scene.find('ThreeFilmFirstPeakODE');owner.tag='RoutedThreeFilmBracketedEventODE' if a.steps==1 else 'RoutedThreeFilmEventContinuationODE' if a.steps==8 else 'RoutedThreeFilmFirstPeakODE';owner.set('maxSteps','64' if a.steps==50 else '8');owner.set('firstIntervalJournal','true')

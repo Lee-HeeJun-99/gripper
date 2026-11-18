@@ -72,8 +72,10 @@ public:
  Step advance(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double time,double h,const std::vector<double>&mass)const override{return stepGauss(m,q,v,time,h,mass,prescribedControl());}
 };
 }
+#ifndef REGRIP_TRANSMISSION_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripFilmTransmission";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Independent actual single FilmRailTendon nonlinear transmission;NO object/contact/grasp;reuse validated free midpoint").add<regrip_transmission::FilmTransmissionODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate exact-endpoint coupon with public next-dt schedule;no time/q/v projection").add<regrip_transmission::FilmTransmissionAlignedODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate Gauss-Legendre order4 single-film transmission;not contact/full time/grasp qualified").add<regrip_transmission::FilmTransmissionGaussODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate same-Tmax longer C2 hold input;not old pulse repair/contact qualification").add<regrip_transmission::FilmTransmissionHoldODE>());}
 }
+#endif

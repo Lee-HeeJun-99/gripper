@@ -227,6 +227,53 @@ Intermediate physical epochs and contact/moving-object dynamics still
 require independent qualification;fixed two-window outcomes cannot replace
 all-time validation. No physical stiffness,damping,Tmax or gate was changed.
 
+##7e. Explicit public-clock step-expansion experiments
+
+New FilmTransmissionPlanODE schedules NEXT public dt at every accepted
+endpoint;it never changes physical time,q orv to align output. All4 child
+contexts are checked. Standalone variable-plan reference uses the SAME
+endpoints,actual force stages and unchanged default Gauss/Newton law.
+This is a deterministic numerical-plan experiment,NOT error-controlled
+adaptive integration or a contact integrator. Unit plan-clock/count tests PASS.
+1222 actual8step profile API/stages/time EXACT.1223–25 one fine0.8ms epoch
+then8x expansion FAIL at1.6ms(max1.05571%,1226),not extended blindly to50ms.
+1227–29 two fine epochs passall4 canonical epochs through3.2ms,max.0712951%
+(1230).1231–33 graded25→50→100→200us (scaledby1/2,1/4) passall4 epochs
+through3.2ms,max.0271423% atfirstepoch and.00985773% at3.2ms(1234).
+1235/1237 actual graded50ms294/588steps are API/stages/time EXACT.
+1239 quarter1176-step run is pending at this checkpoint:NOT a time PASS.
+Only after completed all-pair ALL canonical-epoch assessment may its sampled
+trajectory be called converged;continuous-time/contact/mesh remain separate.
+
+##7f. Shape and wire-route limitations,not just Solver error
+
+1236 ACTUAL no-object Hold snapshots:material x=75mm Skin centre arches
+towardpositive localz,+.37061522mm at50ms,whilemean tipmovesnegative.
+Whole320-triangle virtual-fixed-sphere overlay haspositivegap.36598062mm.
+This is NOT contact-solved dynamics,butshows whytip motion alone cannot
+demonstrate wrapping. The earlier moving-contact model must be evaluated
+independently rather than copying this virtual geometry as actual contact.
+
+1238 independent wire/guide preflight uses ORIGINAL guide kinematics and
+the ORIGINAL initial R30 sphere/50mm mount geometry. Existing constant5mm
+offset cable CENTRELINE gap is-2.60796821mm. Earlier whole-TRIANGLE tests
+do not cover wire collision. Baseline physical-route clearance FAIL remains
+even if its skin/rail triangle constraints pass. No wire reaction was modeled.
+Constant2mm offset hascentrelinegap+.14852245mm;quadratic material-coordinate
+offset e(s)=5-4.5*4s(1-s) has+.26020791mm andcombinedlength201.00833432mm.
+These are mathematical path candidates,NOT actual SOFA candidate dynamics.
+Finite wire radius and guide bodies are unmodeled;no full clearance or
+manufacturability PASS. Box/other object geometries are not covered.
+Core skin/rail volume staysfixed,buttotalguide/wiremass/volume isUNMEASURED.
+Preflight SAME force/Hessian/objectivity/wrench gates as existing kernel tests
+PASS;baseline force/H matches original EXACT. Quadratic route creates
+negative-z station forceatx75 (-.17247749N/N unit multiplier),whereconstant
+routeinitialstationforceis0. This motivates testing distributed loading,
+not increasing tension. Unit multiplier isNOT1N actualactuation.
+Next:shared route kernel→independent regression→distinct actual ForceField/
+Owner API→same-Tmax dynamics→wire/triangle clearance→coupled contact.
+No final structure orholding advantage isselected from preflight geometry.
+
 1192 inherited RAW/build/SDK byte preservation PASS19096 files,no changes.
 Evolving live sources/reports are separately versioned,not falsely called
 unchanged by the oldV12 ledger. Old manifests themselves remain untouched.

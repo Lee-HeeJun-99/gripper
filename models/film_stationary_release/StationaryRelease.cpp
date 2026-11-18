@@ -60,9 +60,11 @@ public:
  }
 };
 }
+#ifndef REGRIP_STATIONARY_RELEASE_EMBEDDED
 void registerFilmLateralField(sofa::core::ObjectFactory*);
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripStationaryRelease";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){registerFilmLateralField(f);f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL zero-load stationary-origin face release;NOT time/energy/grasp certification").add<regrip_three_resume::StationaryReleaseODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL typed zero-load stationary FREE continuation;reimpact rejects;NOT grasp").add<regrip_three_resume::StationaryFreeODE>());}
 }
+#endif

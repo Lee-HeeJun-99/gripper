@@ -52,7 +52,7 @@ def main():
         for path in ROOT.glob(pattern):record(path)
     for directory in sorted((ROOT/'results').glob('autonomous_film_*')):
         match=re.search(r'(\d+)(?:_plan\d+|_r\d+_v\d+)?$',directory.name)
-        if not match or not a.min_campaign<=int(match.group())<=99999:continue
+        if not match or not a.min_campaign<=int(match.group(1))<=99999:continue
         summary=directory/'summary.json'
         state=json.loads(summary.read_text()) if summary.exists() else {}
         campaigns[directory.name]=dict(status=state.get('status',state.get('time_status',state.get('discrete_identity_status','NOT ASSESSED'))),

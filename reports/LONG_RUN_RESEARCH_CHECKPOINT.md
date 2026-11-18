@@ -1,5 +1,16 @@
 # Executable research checkpoint — 2026-11-18
 
+## Last verified functional commit
+
+`d397dce` (control/energy diagnostics),after`e2b97cf`(exact64-step chain and
+actual clearance optimization) and`ed9bab6`(persistent V5 recovery).
+All actual physics children through1138 completed;none left running.
+Latest physical state is1127_plan7/checkpoint280 at38ms,not a grasp success.
+The first V11 evidence-freeze attempt failed before writing a ledger because
+the newly supported1127_plan1 suffix was parsed with group() instead of
+group(1). No Raw was changed. Corrected collector includes every plan/replay
+directory in the new freeze. This is an evidence-tool failure,not physics.
+
 ## Latest completed1134–1138 — exact chain and transmission/energy diagnostics
 
 1134 independent same-plan reference matches ALL64 actual31.6..38ms q/v

@@ -1,5 +1,38 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Latest continuation:1282–1299
+
+Persistent new-route actual Hold now reaches13.2ms,checkpoint66 in1296.
+1289/1296 run the unchanged .0001N/rail C2 Hold under gravity0,Fz−.001N;
+1291/1299 standalone same-IVP state/API q/v/time/normal force EXACT.
+Neither maintained tension nor contact is a demonstrated stable grasp.
+1298 renders ACTUAL11.6ms geometry at scale1;reconstruction7.044e−15mm,
+contact area/pressure/holding load remain NULL.
+
+1295 compares ALL8 common macro endpoints and interval works for
+200/100/50us references,all3pairs from actual saved10ms IVP. Maximum
+relative errors:film q change1.66445e−7,velocity7.43032e−7,normal force
+4.21748e−7,attachment energy4.53370e−7,interval tendon work1.87585e−6.
+Normal-work numerical residual max relative35.01494(cumulative),67.54576
+(interval) FAIL with no absolute exemption. Overall time FAIL retained.
+No fine SOFA trajectory or full-cycle/mesh/whole-energy certification.
+
+1294 links measured0..10ms inventory1276 to actual10..11.6ms stages with
+EXACT initial q/v/time and zero energy-bridge error. Wt=.000113108803321Nmm,
+impact loss9.38172884e−10Nmm,signed defect−3.28132097e−12Nmm. Root work
+NULL;normal residual is NOT heat;private sampled-work was not restored
+and is excluded. Raw/process/source/binary identities in campaign summaries.
+
+1284 existing exact journal-row reuse:all9physical CSVs+4checkpoints
+byte-identical,21.9921→14.3398s. Fresh serial pair1286/1288→1290:
+16.5070→14.8398s (10.0998%). These separate observations vary;do NOT
+generalize34.8% or combine with old free-recovery gains.1285 opt-in
+inclusive profiling is passive per1287 bytewise proof.4 steps:coupled
+18.2148s,stage14.8695s,geometry7.0631s,selected geometry5.1657s,
+material F/H2.9142s. Nested timings MUST NOT be added;heap allocations
+NOT MEASURED. Selected search is a candidate for separate exact-primal
+optimization,not a reason to repeat rejected gradient-only RHS work.
+
 ## Current outcome and scope
 
 Actual source starts atf70a46f. V12 integrity PASS19717 files;no preexisting

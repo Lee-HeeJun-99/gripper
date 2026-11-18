@@ -1,3 +1,47 @@
+## Latest routed Hold/API/work checkpoint —2026-11-18
+
+Actual quadratic-route3-finger Hold reaches13.2ms (1296), from saved10ms
+via1289/1296;1291/1299 strict same-IVP API q/v/time/normal-force EXACT.
+This is a maintained T=.0001N/rail INPUT, NOT object holding or lifting.
+1295 local10..11.6ms all-pair 200/100/50us reference: all state/force/
+stored-energy/tendon/damping metrics <0.1%, but normal-work residual
+relative errors FAIL (max cumulative35.015, interval67.546). Overall FAIL
+retained;this is NOT fine actual SOFA/full-cycle time certification.
+1294 actual stage-work prefix0..11.6ms is connected by EXACT q/v/time;
+Wt=.000113108803321Nmm,signed defect−3.28132e-12Nmm,NOT heat/whole energy.
+1284/1290 byte-identical journal-row reuse observed34.80%/10.10% runtime
+reduction in separate4-step pairs;no universal or combined speed claim.
+1287 opt-in cost logging is passive:all9CSVs+4checkpoints byte-identical.
+Latest actual:results/autonomous_film_20261118_routed_hold_next1296/
+three.checkpoint_66.txt. Reuse routed_resume1278 DLL78ec827b1136f2dc.
+Original route44.4ms remains a DIFFERENT model;never splice to this route.
+Next:profile-bounded Hold extension to19.6ms,then explicit release-owner
+validation;friction/full thickness/self-collision/wrapping/lift/12wrench/
+whole energy/mesh/full time/final optimization remain NOT qualified.
+
+## Previous actual routed3-finger milestone — commit267252a (2026-11-18)
+
+NEW quadratic route is now bound to ALL coupled force/event derivatives and
+actual fields,not just a loaded OBJ/ForceField.1269/1270/1272 actual first
+impact+1.6ms+10ms C2 peak PASS with shared-kernel standalone q/v/time EXACT.
+1278 route-bound checkpoint40→44 and1279 actual retransfer44→48 PASS EXACT;
+legacy Field sampled-work is NOT restored and must NOT be spliced.
+1275:10ms mean tip−.020577mm,centre tip+.000556mm,3D angle.003856rad;
+NOT wrapping/holding. Sphere continues downward undergravity0/Fz−.001N,
+NOT lift.1277 moving-body stage geometry:612 samples,wire centreline minimum
++.230671mm;triangle buffered gap−5.613e-13mm. Finite wire/guide/physical
+thickness/self-contact/friction remain unqualified.1276 actual new-route
+stage-work defect−3.280e-12Nmm is NOT heat or whole-energy PASS.
+Rejected speed claim:1264 SOFA+5.88%;1266 larger run−1.37%,mixed/no robust
+benefit. Default core unchanged. Full quarter tests1255/1267 budget-BLOCKED
+at forecasts490.11/483.80s,NOT OS exhaustion.1259 LOCAL3.2ms time PASS only.
+Old fixed-route actual44.4ms checkpoint is preserved and is NOT this new model.
+Last functional commit267252a. New event/resume DLLs and all reproduction paths
+are in [research](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md) §8d.
+Next:finish route-bound replay to10ms,then SAME-IVP Hold reference/actual
+continuation with correct stage-work origin;do not copy old-route gates.
+No final grasp/design/Optuna certification;no automatic background restart.
+
 ## Latest qualified result — public-clock refinement and routed tendon (1241–1251)
 
 Actual3-finger endpoint remains44.4ms/checkpoint344,NOT wrapping/holding/lift.

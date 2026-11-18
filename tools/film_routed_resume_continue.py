@@ -5,7 +5,7 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--checkpoint-step',type=int,required=True);p.add_argument('--steps',type=int,choices=(2,4,8),default=4);p.add_argument('--end-time',type=float,default=.01);p.add_argument('--compare-peak',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);m=json.loads((src/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--checkpoint-step',type=int,required=True);p.add_argument('--steps',type=int,choices=(2,4,8),default=4);p.add_argument('--end-time',type=float,default=.01);p.add_argument('--compare-peak',action='store_true');p.add_argument('--reuse-journal-rows',action='store_true');p.add_argument('--owner-profile',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);m=json.loads((src/'summary.json').read_text())
  if m['status'] not in ('PASS','EXPERIMENTAL') or m['process']['exit_code'] or m['sofa_errors']:raise ValueError('qualified actual routed resume parent required')
  for f,d in m['raw_hashes'].items():
   if sha(src/f)!=d:raise ValueError('actual resume evidence changed')
@@ -27,7 +27,9 @@ def main():
  for node in scene.iter():
   for key,value in list(node.attrib.items()):
    if key in ('filename','displacementFilename','publicMassFilename') and value.startswith(str(src)):node.set(key,str(out)+value[len(str(src)):])
- tree.write(out/'scene.scn');r=dict(status='BLOCKED',scope='same-binary actual routed persistent continuation;NOT wrapping/holding/lift/time/energy certification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),parent=a.parent,parent_summary_sha256=sha(src/'summary.json'),identity=identity,checkpoint_magic=tokens[0],route_amplitude_mm=4.5,binary_sha256=sha(binary),sdk=str(SDK),sdk_runner_sha256=m['sdk_runner_sha256'],scene_sha256=sha(out/'scene.scn'),input_checkpoint_sha256=sha(out/'input.checkpoint'),start_time_s=time,dt_s=dt,actual_steps=a.steps,predicted_child_runtime_s=forecast,legacy_sampled_work='NOT RESTORED;excluded from physical work/splicing',root_reaction_work=None)
+ owner.set('reuseJournalRows','1' if a.reuse_journal_rows else '0');owner.attrib.pop('ownerCostFilename',None)
+ if a.owner_profile:owner.set('ownerCostFilename',str(out/'owner_cost.csv'))
+ tree.write(out/'scene.scn');r=dict(status='BLOCKED',scope='same-binary actual routed persistent continuation;NOT wrapping/holding/lift/time/energy certification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),parent=a.parent,parent_summary_sha256=sha(src/'summary.json'),identity=identity,checkpoint_magic=tokens[0],route_amplitude_mm=4.5,binary_sha256=sha(binary),sdk=str(SDK),sdk_runner_sha256=m['sdk_runner_sha256'],scene_sha256=sha(out/'scene.scn'),input_checkpoint_sha256=sha(out/'input.checkpoint'),start_time_s=time,dt_s=dt,actual_steps=a.steps,predicted_child_runtime_s=forecast,reuse_journal_rows=a.reuse_journal_rows,owner_profile=a.owner_profile,legacy_sampled_work='NOT RESTORED;excluded from physical work/splicing',root_reaction_work=None)
  if forecast>480:r['failure_reason']='measured policy forecast>480s;NOT OS exhaustion';write_json(out/'summary.json',r);return
  run=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(a.steps),'--hideProgressBar',out/'scene.scn'],out/'process',480);errors=sum((out/'process'/f).read_text(errors='replace').count('[ERROR]') for f in ('stdout.log','stderr.log'));r.update(status='FAIL',process=run,sofa_errors=errors)
  if run['exit_code']==0 and not errors:

@@ -323,6 +323,77 @@ Raw:results/autonomous_film_20261118_routed_*1240..1247.
 Wire finite radius/guide body/mass/friction/self-contact and matched-work
 comparison remain unqualified. No full energy/time/grasp certification.
 
+## 8b. Distributed-route actual result and rejected superiority claim (1244–1257)
+
+1244 actual50ms294-step route experiment completed (SOFA84.111s,reference
+94.351s);q/v,time,all4 contexts,all588 force stages and applied tension EXACT.
+1248 half-step588 completed (SOFA191.713s,reference180.857s),same exact checks.
+1256 compares ALL63 common epochs;the two-resolution pair passes0.1% at each,
+but the overall qualification is BLOCKED because quarter-resolution is missing.
+1255 predicted1176-step cost490.111s>480s;child was NOT started. This is policy
+cost blocking,NOT OS exhaustion.1257 tests a smaller3.2ms quarter-step prefix;
+do not claim whole50ms convergence from that local check.
+
+Same T=.0001N/rail,core volume/mass,geometry/root,Hold profile and time plan:
+
+| Actual50ms observable | Existing route1235 | Quadratic route1244 |
+|---|---:|---:|
+| Skin width-mean tip z,mm | −0.73835869 | −0.39959346 |
+| Skin centre tip z,mm | −0.77704268 | −0.50766937 |
+| Skin centre75mm z,mm | +0.37061522 | +0.25384502 |
+| Skin3D root-tip angle,rad | 0.06392641 | 0.03122251 |
+| Skin max3D curvature,1/mm | 0.00537055 | 0.00372507 |
+
+Positive localz is AWAY from the initial sphere. Both tips close but material
+75mm arches away by50ms. This is NOT a wrapping improvement.1249 actual-scale1
+figure:results/autonomous_film_20261118_routed_shape_full1249/actual_route_comparison.png.
+The new route fixes one initial centerline interference issue while reducing
+effective bending. No final design selection or holding superiority follows.
+
+1250/1253 actual Gauss-stage work uses the NEW route's length gradient,not the
+old cable formula:Wt=.000115662469493Nmm,Wdamp=4.176548332e-6Nmm,
+stored+K=.000111485923419Nmm,signed defect−2.25801222e-12Nmm,NOT heat.
+Mechanical/electrical actuator work and root reaction work remain distinct;
+root work NULL.1254 additional station-force instrumentation preserves ALL
+old work/force columns EXACT. At material75mm the rail tendonFz remains
+negative(−2.48070e-5..−2.54132e-14N),but skin attachmentFz changes sign
+(−3.82352e-5..+1.13226e-4N). This verifies a NONLINEAR delayed force response,
+not zero control authority or a measured contact reaction.588 actual stages.
+Actual response figure:results/autonomous_film_20261118_routed_force_response1254/actual_transmission_response.png.
+
+1251 virtual original FIXED sphere overlay of actual NO-OBJECT states:
+wire centerline min+.20303917mm;triangle buffered gap min−.02185858mm at
+27.6ms (6/320triangles). At50ms triangle gap+.250878mm and wiregap+.376977mm.
+The obstacle was not in the equations:these are geometric feasibility checks,
+NOT actual contact forces,contact-solver failure,contact area or CCD proof.
+Finite cable thickness/guide body clearance and moving-object contact untested.
+
+1252 independent16-stage static Newton continuation at unchanged Tmax passes
+force gate1e-12N(max endpoint residual3.49951e-13N);same globalization as1165.
+New-route equilibrium skin tip−19.965055mm,centre−19.931113mm,root-tipangle
+.31147494rad,stored energy.000146408118Nmm. Existing-route1165:−43.05871mm,
+.82769689rad,.000520708899Nmm. No-object statics,NOT SOFA,stability/contact
+or dynamic arrival certification. Actual50ms is still FAR from either equilibrium.
+No external friction/material/actuator data were invented;core material assumptions
+and incomplete thickness/self-contact/general-friction/whole-energy gates remain.
+
+Next priorities:qualify routed local time prefix;eliminate redundant zero-tension
+cable AD only with exact physical parity and measured wall-clock benefit,or use
+an independently qualified persistent one-step continuation. Then adapt the
+coupled event/contact FORCE callback to the NEW route and verify all owner/field
+queries use it. Merely loading the new Field beside an old-route contact owner
+would be physically inconsistent and is NOT permitted. Full-surface finite
+thickness/cable/guide clearance needs its own physical geometry specification.
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_routed_run.py --tag UNIQUE_LOCAL --amplitude 4.5 --duration .0032 --refinement 4 --profile 20261118_routed_candidate_half1248
+$PY tools/film_transmission_plan_assess.py --tag UNIQUE_PREFIX --until .0032 --cases 20261118_routed_candidate_full1244 20261118_routed_candidate_half1248 20261118_routed_quarter_local1257
+```
+
+Do not repeat completed runs just to recreate plots. All original failures,
+quarter budget block1255 and failed plot1245 are preserved. No automatic restart.
+
 ##9. Reproduction and artifacts
 
 Raw:results/autonomous_film_20261118_transmission_*1139..1168/ (each own

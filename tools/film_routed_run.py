@@ -6,7 +6,7 @@ from film_guarded_process import guarded
 from film_rigid_reference import SDK
 from film_transmission_plan_run import make_plan
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--amplitude',type=float,choices=(0.,4.5),required=True);p.add_argument('--duration',type=float,choices=(.0002,.0032,.05),default=.0002);p.add_argument('--refinement',type=int,choices=(1,2,4),default=1);p.add_argument('--profile');a=p.parse_args();ends,epochs=make_plan(a.duration,a.refinement,1,True);n=len(ends)
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--amplitude',type=float,choices=(0.,4.5),required=True);p.add_argument('--duration',type=float,choices=(.0002,.0032,.05),default=.0002);p.add_argument('--refinement',type=int,choices=(1,2,4),default=1);p.add_argument('--profile');p.add_argument('--cost-pair',nargs=2);a=p.parse_args();ends,epochs=make_plan(a.duration,a.refinement,1,True);n=len(ends)
  provider=ROOT/'results/autonomous_film_20261118_routed_math_api1240';proof=json.loads((provider/'summary.json').read_text());parent=ROOT/'results/autonomous_film_20261118_transmission_hold50_1187';meta=json.loads((parent/'summary.json').read_text());binary=ROOT/proof['build_relative']/'libReGripFilmRoutedTransmission.so'
  if proof['status']!='PASS' or meta['status']!='PASS':raise ValueError('qualified build and parent required')
  for path,digest in proof['source_hashes'].items():
@@ -16,13 +16,22 @@ def main():
   if sha(path)!=digest:raise ValueError('legacy mapping binary changed')
  for name,digest in meta['raw_hashes'].items():
   if sha(parent/name)!=digest:raise ValueError('parent input changed')
- forecast=None
+ forecast=None;cost_evidence=[]
  if n>8:
   if not a.profile:raise ValueError('actual same-amplitude cost profile required')
   previous=ROOT/'results'/('autonomous_film_'+a.profile);cost=json.loads((previous/'summary.json').read_text())
   if cost['status']!='PASS' or cost['amplitude_mm']!=a.amplitude or cost['binary_sha256']!=proof['binary_sha256']:raise ValueError('cost family differs')
   forecast=2*max(cost['process']['runtime_s'],cost['reference_process']['runtime_s'])*n/cost['steps']+30
+  if a.cost_pair:
+   sizes=[];rates=[]
+   for name in a.cost_pair:
+    path=ROOT/'results'/('autonomous_film_'+name)/'summary.json';c=json.loads(path.read_text())
+    if c['status']!='PASS' or c['duration_s']!=.05 or c['amplitude_mm']!=a.amplitude or c['binary_sha256']!=proof['binary_sha256'] or c['reference_binary_sha256']!=proof['reference_binary_sha256']:raise ValueError('completed SAME-route cost family required')
+    sizes.append(c['steps']);rates.append(max(c['process']['runtime_s'],c['reference_process']['runtime_s'])/c['steps']);cost_evidence.append(dict(case=name,summary_sha256=sha(path),steps=c['steps'],actual_s=c['process']['runtime_s'],reference_s=c['reference_process']['runtime_s']))
+   if min(sizes)<250 or max(sizes)<500 or n>2*max(sizes):raise ValueError('bounded two-size extrapolation required')
+   forecast=1.2*max(rates)*n+30
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(provider/'reference',out/'reference');shutil.copy2(parent/'public_mass.txt',out/'public_mass.txt');(out/'plan.txt').write_text(str(n)+'\n'+'\n'.join(format(t,'.17g') for t in ends)+'\n');r=dict(status='BLOCKED',scope='actual no-object routed coupon;NOT wrapping/contact/grasp certification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_provider_commit=proof['source_commit'],source_provider_summary_sha256=sha(provider/'summary.json'),source_hashes=proof['source_hashes'],binary_sha256=proof['binary_sha256'],reference_binary_sha256=proof['reference_binary_sha256'],sdk=str(SDK),sdk_runner_sha256=proof['sdk_runner_sha256'],build_relative=proof['build_relative'],amplitude_mm=a.amplitude,steps=n,duration_s=a.duration,canonical_epochs=epochs,predicted_child_runtime_s=forecast,physical_input='same core material/mass/root;C2 Hold Tmax .0001N/rail,ramp10ms,release50..60ms;route ONLY changed',full_wire_clearance='NOT QUALIFIED:finite wire/guide bodies absent',whole_energy='BLOCKED',root_reaction_work=None)
+ r['cost_evidence']=cost_evidence
  if forecast and forecast>480:r['failure_reason']='measured policy forecast>480s;NOT OS exhaustion';write_json(out/'summary.json',r);return
  ref=guarded([out/'reference',out/'plan.txt',out/'public_mass.txt',out/'reference',str(a.amplitude)],out/'reference_process',480);r.update(status='FAIL',reference_process=ref);write_json(out/'summary.json',r)
  if ref['exit_code']==0:

@@ -9,6 +9,9 @@ def main():
   if sha(src/f)!=d:raise ValueError('actual raw changed')
  provider=ROOT/'results/autonomous_film_20261118_routed_math_api1240'
  if sha(provider/'summary.json')!=m['source_provider_summary_sha256']:raise ValueError('routed physical provider differs')
+ proof=json.loads((provider/'summary.json').read_text())
+ for f,d in proof['source_hashes'].items():
+  if sha(provider/'sources'/f)!=d:raise ValueError('routed physical source archive changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copytree(provider/'sources/models',out/'sources/models');cpp=out/'sources/diagnostics/film_three_finger/RoutedObserve.cpp';cpp.parent.mkdir(parents=True);shutil.copy2(ROOT/'diagnostics/film_three_finger/RoutedObserve.cpp',cpp);rows=list(csv.DictReader((src/'actual.csv.stages.csv').open()))
  with (out/'samples.txt').open('w') as f:
   f.write(str(len(rows))+'\n')

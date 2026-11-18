@@ -1,3 +1,29 @@
+## Latest qualified result — public-clock refinement and routed tendon (1241–1251)
+
+Actual3-finger endpoint remains44.4ms/checkpoint344,NOT wrapping/holding/lift.
+Separate NO-OBJECT original-route50ms Hold:all63 exact canonical epochs and
+all294/588/1176-step pairs PASS0.1%,maximum0.0271422922% (1241). This does
+NOT certify all-time/contact/mesh/whole energy. Old startup/contact FAIL retained.
+1238 exposed original wire centerline initial sphere overlap2.607968mm;
+old triangle clearance never certified cable/guide clearance.
+New separate quadratic route Field/ODE actual math/API/profile PASS (1240–43).
+Amplitude0 old-state regression EXACT (1246);plot failure1245 retained.
+1244 actual50ms route completed:q/v/time/force-stage/control EXACT vsreference.
+1249:mean skin tip-.399593mm vs baseline-.738359mm,root-tip3D angle.031223
+vs.063926rad;material75mm still arches AWAY(+.253845mm centre). Thus NO
+wrapping improvement certified. Same core/Tmax,NOT same work/hardware mass.
+1250 measured route work.0001156624695Nmm,signed defect-2.258e-12Nmm,NOT heat.
+1251 VIRTUAL fixed-sphere overlay:wire centerline min+.203039mm;triangles
+minbuffer gap-.0218586mm at27.6ms. Obstacle was absent from dynamics,so this
+is NOT actual contact-solver failure or wrapping. Finite wire/guide bodies,
+friction,self-contact,full thickness,whole energy/lift/Optuna remain BLOCKED.
+Latest feature commit:ab02bab. More results must use new tags,not overwrite.
+Details and source/binary identities:[research](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md).
+Reusable route DLL:build/film_routed_20261118_routed_math_api1240/libReGripFilmRoutedTransmission.so.
+Next:finish candidate dt comparison and independent static study,then implement
+new-route coupled contact without copying old triangle-only qualification.
+No automatic post-session restart. Historical RUNNING text below is not process evidence.
+
 ## Latest completed — same-Tmax HOLD and startup diagnostics1186–1206
 
 1187/1189/1190/1199 actual NO-OBJECT50ms Hold completed;not RUNNING.

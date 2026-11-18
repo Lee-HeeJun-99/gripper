@@ -394,6 +394,108 @@ $PY tools/film_transmission_plan_assess.py --tag UNIQUE_PREFIX --until .0032 --c
 Do not repeat completed runs just to recreate plots. All original failures,
 quarter budget block1255 and failed plot1245 are preserved. No automatic restart.
 
+## 8c. Local qualification and explicit rejected performance claim (1258–1264)
+
+1259 three-resolution NO-OBJECT initial0..3.2ms prefix ALL4 exact canonical
+epochs PASS,maximum0.00494009%. It does not remove1255 full50ms quarter
+policy block or certify actual contact.1256 remains overall BLOCKED despite
+its two-resolution63-epoch pair passing. No adjacent-only substitution.
+
+1258 guarded opt-in generated-core specialization omits only eight discarded
+zero-tension baseline cable AD terms. Original shell/attachment/contact body
+is extracted verbatim,not rederived;original Kernel/Assembly layout/SDK unchanged.
+Unit source tests verify original bytes and reject generated-output overwrite.
+This variant removes an extraneous baseline-cable degeneracy rejection;it does
+NOT certify arbitrary folded/self-contact states. Default variant unchanged.
+1258 independent math and ACTUAL SOFA APIs PASS;1260 actual profile EXACT.
+1261 actual50ms294-step run and1264 regression:ALL actual state,stage,clock,
+ForceField energy/work,displacement,plan and mass CSV bytes IDENTICAL to1244.
+All compiled source changes are restricted to generated Core/Route headers.
+
+Measured reference94.351→92.184s(−2.30%),SOFA84.111→89.054s(+5.88%).
+Therefore **NOT ADOPTED as a speed improvement**. This is a measured mixed
+result,not an operation-count success. Concurrent scheduling/no repeat timing
+prevents a robust speed claim.1263 is the same optional variant's588-step
+study;its completed summary is required before reporting a result. No policy
+limit or physics tolerance was changed;old failed/rejected approaches retained.
+
+## 8d. Actual NEW route coupled3-finger integration (1265–1281)
+
+1265 mechanical-stage adapter passes:amplitude0 old potential/gradient/Hessian
+EXACT;tangent FD1.84714e-18,potential FD7.23489e-17,tension derivative9.19031e-16.
+Actual separate generated source binds the SAME route to SharedFilmSystem force,
+pre-event mechanical solve,event-family derivative and actual FilmRoutedTendon.
+Original live contact/film owners are NOT modified. Generated class names are
+Routed-prefixed.1268 standalone reference passed but module compile failed:
+renaming also changed an include filename;failure retained.1269 fixes symbol-only
+renaming and reuses completed reference with all compiled headers unchanged.
+
+1269 actual200us first event+remainder PASS:event time9.996003594715e-5s,
+18 rows/rank3,world impulse balance8.85621e-21Ns,angular1.76651e-23Nmm·s,
+impact loss9.38172884e-10Nmm. Actual event/pre/post/end/impulses EXACT to
+standalone SHARED-KERNEL reference. This is API/state integration consistency,
+not an independently different physical model or a global earliest-CCD proof.
+1270 actual8steps1.6ms PASS:q/v/accumulated time EXACT,whole-stage triangle
+gap−1.06581e-14mm,momentum8.33581e-20Ns,normal velocity2.74800e-13mm/s.
+
+1272 actual50steps to10ms first C2 peak PASS:same strict API/clock agreement
+at ALL50 steps. Actual197.659s/reference162.095s,forecast319.077s,480s hard
+unchanged. Whole-stage min gap−5.61329e-13mm. Same original pulse,NOT the
+separate longer-Hold no-object input. Incoming sphere v_z−1mm/s,gravity0,
+externalFz−.001N is NOT stationary capture or gravity lift.
+1275 identical actual per-finger tension at all50 common epochs;finger0:
+
+| Actual10ms | Original1002 | Quadratic1272 |
+|---|---:|---:|
+| Skin width-mean tip z,mm | −0.02496388 | −0.02057746 |
+| Skin centre tip z,mm | +0.00066215 | +0.00055553 |
+| Skin75mm width-mean z,mm | +0.00077955 | −0.00118854 |
+| Skin3D root-tip angle,rad | 0.00468336 | 0.00385599 |
+| Object v_z,mm/s | −1.07909233 | −1.07909782 |
+
+Small material75mm sign improvement is NOT full wrapping/contact coverage.
+Centre and width-mean tip move differently;body continues downward,NOT holding.
+No pressure/contact-area/holding capacity derived from three selected rows.
+
+1274/1276 OFFLINE actual new-route stage work includes the COMPLETE first
+free/impact/remainder and every subsequent Lobatto stage;old constant-offset
+observer is deliberately NOT reused unchanged.1273 wrong stage-clock preflight
+(end-minus-begin vs actual used dt) rejected before integration;failure retained.
+Corrected observer uses declared used dt AND exact accumulated-time equality;
+no clock tolerance widening.1276 first10ms measured Wt8.6968197364e-5Nmm,
+Wext1.0396800791e-5,Wdamp2.5097544259e-6,Wnormal−4.2843092257e-24,
+plasticImpactLoss9.3817288366e-10,signed defect−3.2796883876e-12Nmm.
+Actual field energy error6.77626e-20Nmm,tension/length errors0. Root workNULL.
+Signed defect is NOT heat;relative tiny normal-work residual is NOT waived;
+full energy/time/contact/mesh certification remains BLOCKED/NOT RUN here.
+
+1277 ACTUAL moving-sphere geometry at612 accepted/recorded-stage film samples:
+all320triangles per sample,minimum buffered gap−5.61329e-13mm;wire centerline
+minimum+.23067080mm. This is no longer a virtual fixed-sphere overlay. Still
+NOT finite-wire/guide-body/full-thickness or continuous-time clearance proof.
+1281 uses saved actual geometry at scale1;surface colors are finger IDs,not
+pressure,wire not rendered. No fabricated wrap pose.
+
+1278 separate route-bound checkpoint replay40→44 PASS:q/v/time/ALL stage
+rows and actual field values(excluding legacy work) EXACT. Magic is NEW
+REGRIP_ROUTED_PERSISTENT_V1;token binds amplitude4.5,source,binary and actual
+parent1272. NO old-route checkpoint transplanted. Quaternion exporter permits
+ONLY this proven zero-spin history;actual C++ snapshots save public quaternion.
+1279 actual checkpoint44→48 retransfer PASS:q/v/time/stage rows EXACT.
+Legacy Field length/T/work history is NOT restored;exclude sampled-work from
+splicing. Stage-work physical origin and preceding1276 inventory are separate.
+1280 is the next two-step replay to known peak;use completed summary only.
+
+Reusable event DLL:build/routed_coupled_20261118_routed_coupled_event1269/libReGripThreeFilmEvent.so
+SHA:a21639f13140bc1e1d4244928e2dbdc100fd5b57ca165dfba7d8b62ff5eae176.
+Reusable resume DLL:build/routed_resume_20261118_routed_resume1278/libReGripThreeFilmResume.so
+SHA:78ec827b1136f2dc91a4a31ebd129c924af5def52a43e1b4842f0ee77ce717cf.
+All geometry/material values remain research assumptions(E250MPa,nu0,
+skin.05mm,rails.1mm,100mm,50mm roots,1g/finger,100g sphere,R30mm).
+Actual friction,self-contact,guide hardware,full thickness,equalizer,gravity
+lift and final design/Optuna remain unqualified. Old fixed-route endpoint44.4ms
+and new-route10ms are DIFFERENT models/checkpoints,not one stitched trajectory.
+
 ##9. Reproduction and artifacts
 
 Raw:results/autonomous_film_20261118_transmission_*1139..1168/ (each own

@@ -1,0 +1,10 @@
+#include "../models/film_routed_contact/Force.h"
+#include "../models/film_transmission/Kernel.h"
+#include <iostream>
+int main(){try{
+ using namespace regrip_transmission;auto m=model();std::vector<Point>q(m.size()),v(m.size());auto map=mechanics(m,q,v,.0001,.0001,m.masses());Eigen::VectorXd qfree(map.freeSize),velocity(map.freeSize);for(unsigned i=0;i<map.freeSize;++i){qfree(i)=.0001*std::sin(.2*i);velocity(i)=.01*std::cos(.1*i);}q=map.expand(qfree);v=map.expand(velocity);auto stage=mechanics(m,q,v,.0001,.0001,m.masses());auto old=stage.evaluate(velocity),baseline=regrip_routed_contact::evaluate(stage,velocity,0.);double exact=std::max({std::abs(old.phi-baseline.phi),(old.gradient-baseline.gradient).cwiseAbs().maxCoeff(),(old.tangent-baseline.tangent).cwiseAbs().maxCoeff()});if(exact!=0)throw std::runtime_error("amplitude0 original mechanical stage changed");
+  auto candidate=regrip_routed_contact::evaluate(stage,velocity,4.5);double fd=0,phiFD=0;for(unsigned j:{0u,30u,200u,400u,600u}){double h=1e-4;Eigen::VectorXd p=velocity,a=velocity;p(j)+=h;a(j)-=h;auto plus=regrip_routed_contact::evaluate(stage,p,4.5),minus=regrip_routed_contact::evaluate(stage,a,4.5);fd=std::max(fd,((plus.gradient-minus.gradient)/(2*h)-candidate.tangent.col(j)).cwiseAbs().maxCoeff());phiFD=std::max(phiFD,std::abs((plus.phi-minus.phi)/(2*h)-candidate.gradient(j)));}
+  // SAME velocity potential:material q=q0+h*y;kinetic mass term is unchanged.
+  auto zero=stage;zero.T=0;auto core=regrip_routed_contact::evaluate(zero,velocity,4.5);double T=.0001,hT=1e-7;auto p=stage,a=stage;p.T=T+hT;a.T=T-hT;auto plus=regrip_routed_contact::evaluate(p,velocity,4.5),minus=regrip_routed_contact::evaluate(a,velocity,4.5);double affine=((plus.gradient-minus.gradient)/(2*hT)-(candidate.gradient-core.gradient)/T).cwiseAbs().maxCoeff();
+  if(fd>1e-12||phiFD>1e-12||affine>1e-12)throw std::runtime_error("routed stage tangent/tension derivative FD failed");std::cout<<"PASS amplitude0 exact="<<exact<<" tangent_FD="<<fd<<" potential_FD="<<phiFD<<" tension_FD="<<affine<<";NOT actual coupled event/contact certification\n";
+ }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

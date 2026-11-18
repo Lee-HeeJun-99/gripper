@@ -13,6 +13,7 @@ def main():
   data.append((src,m,{float(r['time']):r for r in csv.DictReader((src/'actual.csv').open())}));identities[name]=dict(summary_sha256=sha(src/'summary.json'),binary_sha256=m['binary_sha256'])
  times=sorted(set(data[0][2])&set(data[1][2]))
  if not times:raise ValueError('no EXACT common accepted time;no interpolation')
+ if a.exact_baseline and (data[0][1].get('amplitude_mm',0.)!=data[1][1].get('amplitude_mm',0.) or data[0][1]['raw_hashes']['public_mass.txt']!=data[1][1]['raw_hashes']['public_mass.txt'] or set(data[0][2])!=set(data[1][2])):raise ValueError('exact regression requires same geometry/public mass/ALL accepted times')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');records=[];maximum={k:0. for k in ('q','v')}
  for time in times:
   for k in maximum:maximum[k]=max(maximum[k],float(np.max(abs(np.fromstring(data[0][2][time][k],sep=' ')-np.fromstring(data[1][2][time][k],sep=' ')))))
@@ -22,7 +23,7 @@ def main():
  os.environ.setdefault('MPLCONFIGDIR',str(out/'matplotlib_cache'));import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  fig,axes=plt.subplots(2,2,figsize=(12,8))
  for i,(src,m,rows) in enumerate(data):
-  label=('existing route','quadratic route')[i] if not a.exact_baseline else ('old field','new field amplitude0')[i];r=rows[times[-1]];u=np.fromstring(r['q'],sep=' ').reshape(231,3);skin=u[:105].reshape(21,5,3);centre=skin[:,2];mean=skin.mean(axis=1);axes[0,0].plot(np.linspace(0,100,21)+mean[:,0],mean[:,2],label=label+' mean');axes[0,0].plot(np.linspace(0,100,21)+centre[:,0],centre[:,2],ls='--',label=label+' centre')
+  label=('existing route','quadratic route')[i] if not a.exact_baseline else ('provider A,same geometry','provider B,same geometry')[i];r=rows[times[-1]];u=np.fromstring(r['q'],sep=' ').reshape(231,3);skin=u[:105].reshape(21,5,3);centre=skin[:,2];mean=skin.mean(axis=1);axes[0,0].plot(np.linspace(0,100,21)+mean[:,0],mean[:,2],label=label+' mean');axes[0,0].plot(np.linspace(0,100,21)+centre[:,0],centre[:,2],ls='--',label=label+' centre')
   rr=[r for r in records if r['case']==(a.baseline,a.candidate)[i]];t=[r['time_s']*1000 for r in rr]
   for ax,key in ((axes[0,1],'skin_mean75_z_mm'),(axes[1,0],'skin_tip_z'),(axes[1,1],'skin_root_tip_total_angle_rad')):ax.plot(t,[r[key] for r in rr],label=label)
  axes[0,0].set(xlabel='actual local x [mm]',ylabel='actual z [mm],scale1',title=f'Accepted shape at {times[-1]*1000:.3g}ms')

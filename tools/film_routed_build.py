@@ -5,9 +5,9 @@ from film_guarded_process import guarded
 from film_rigid_reference import SDK
 from film_routed_generate import generate
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(ROOT/'tools/film_routed_generate.py',out/'generator.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));tests=archive/'tests';tests.mkdir()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--core-only',action='store_true');a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(ROOT/'tools/film_routed_generate.py',out/'generator.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));tests=archive/'tests';tests.mkdir()
  for name in ('test_film_rail_tendon_api.cpp','test_film_routed.cpp'):shutil.copy2(ROOT/'tests'/name,tests/name)
- cpp=archive/'diagnostics/film_three_finger/RoutedPlan.cpp';cpp.parent.mkdir(parents=True);shutil.copy2(ROOT/'diagnostics/film_three_finger/RoutedPlan.cpp',cpp);generated=generate(archive);sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};write_json(out/'generated_source_manifest.json',generated);build=ROOT/'build'/('film_routed_'+a.tag);build.mkdir(exist_ok=False)
+ cpp=archive/'diagnostics/film_three_finger/RoutedPlan.cpp';cpp.parent.mkdir(parents=True);shutil.copy2(ROOT/'diagnostics/film_three_finger/RoutedPlan.cpp',cpp);generated=generate(archive,core_only=a.core_only);sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};write_json(out/'generated_source_manifest.json',generated);build=ROOT/'build'/('film_routed_'+a.tag);build.mkdir(exist_ok=False)
  mathcompile=guarded(['g++','-O2','-std=c++17','-ffp-contract=off',tests/'test_film_routed.cpp','-o',out/'math'],out/'math_compile',120);mathrun=guarded([out/'math'],out/'math_process',120) if mathcompile['exit_code']==0 else None
  configure=compile=refcompile=api0=api45=None
  if mathrun and mathrun['exit_code']==0:

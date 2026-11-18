@@ -1,5 +1,168 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Actual stationary-origin26.8ms geometry and transmission —2026-11-19
+
+Release refinement evidence (not yet whole time certification):
+40us local-window32/64/128 (1576/1577/1580) all FAIL at unchanged
+positive-reaction tangent gate;normal-velocity defects3.6512e−9,
+9.1282e−10,2.2821e−10mm/s respectively. The approximately second-order
+RK internal-stage defect motivates reducing only the local window,not changing
+material/control/contact law or increasing the128-grid cap.
+10us window32 (1581) FAIL2.3137e−10mm/s;10us64 (1582) reference PASS:
+root bracket[71.87081566080452,71.87081575393679]us after26.8ms,
+last-active/first-free RK STAGE times26.871792690660784/26.871870815660785ms.
+These are NOT certified continuous-time exit roots. Final27ms gap minimum
+−5.8690829973784275e−12mm,outgoing normal velocity+.012739307327679385mm/s,
+summed reduced momentum bound8.066896214799044e−19Ns.
+Measured root/RK/free costs68.1243/45.6836/.4777s within480s.
+No tensile force,projection,clock reset or forced active-mask removal.
+
+1583 actual-module compile FAIL duplicate historical registration;1584 compile
+FAIL embedded legacy EDGE API after adding a FACE overload. Both preserved.
+The embedding adapter now wraps ONLY old registration and retains original EDGE
+overload bodies alongside the qualified FACE functions;physical functions are
+not replaced.1586 compilation PASS but initialization rejects runner's incorrectly
+changed maximum-step budget1. Original validated inherited budget is restored
+unchanged;isolated solve still permits exactly count0 and runSofa executes1step.
+1587 is the corrected actual trial;read its completed summary before claiming PASS.
+1585 pure FREE footer roundtrip and7 invalid geometry/clock/history/origin/active
+fixtures PASS. Known last global impact is retained,not renamed row birth time.
+
+Functional commit4fc7200;actual1573 checkpoint134. Stationary sphere/film initial
+velocities0,external force0,gravity0;new IVP,not incoming-body history splice.
+1565/1566 independently resolve/execute additional rank6 impact at
+22.62314827800726ms.1567 verifies frozen same-core source handoff;subsequent
+actual1573 reaches .026799999999999949s with q/v and contact stages EXACT.
+Gap−1.1691980716932449e−11mm,reduced momentum bound9.765636736557555e−19Ns.
+
+1578 read-only actual nonlinear force inventory at26.8ms:
+
+| Quantity,representative finger | Actual value |
+|---|---:|
+| C2 tension per rail,N |1.9052625920000715e−5|
+| Direct Skin tendon force norm,N |0|
+| Rail tendon force norm,N |2.5838801825274753e−4|
+| Skin attachment force norm,N |1.1826961684533375e−4|
+| Skin attachment power,Nmm/s |+5.767409770974783e−4|
+| Rail attachment power,Nmm/s |−2.8756768616332966e−3|
+| Width-mean Skin Tip local-z displacement,mm |−.2875729315313698|
+| Centre Skin Tip local-z displacement,mm |−.09117523192875018|
+| Left/Right Rail Tip local-z displacement,mm |−.3825419197660118 /−.3820240473977512|
+| Skin maximum discrete mean-line curvature,1/mm |.0026564739022279377|
+| Left/Right Rail maximum curvature,1/mm |.01538702319113262 /.015219040423364959|
+| Skin tip width warp,mm |.33916012457661016|
+| Actual endpoint owned normal force per row,N |8.323114780402672e−7|
+
+Endpoint force is NOT holding capacity;power is NOT cumulative stage work.
+Rail distal arch persists while mean Skin bends much less. This actual input
+achieves wire-driven contact but does NOT establish continuous surface coverage,
+wrapping,holding,lifting or recovery. No structural winner is selected.
+Root work/contact area/pressure/holding load remain NULL.
+
+1579 actual accepted-state reconstruction error7.070732888081466e−15mm.
+Geometry scale1,orthographic equal-aspect view;profile axes independent.
+Colors identify fingers,NOT pressure. Actual Scene force/gravity verified.
+Image: `results/autonomous_film_20261119_stationary_shape268_1579/actual_geometry_curvature.png`.
+Raw: `results/autonomous_film_20261119_stationary_force268_1578/response.csv`.
+
+1572 positive-only continuation rejects release;longer actual NOT RUN.
+1574 preflight anchor failure and1575 edge-owner mismatch remain preserved.
+1576/1577 face-owned release32/64 reject positive force at RK trial states with
+normal-velocity defects3.6512e−9/9.1282e−10mm/s (gate1e−10 unchanged).
+The near4x reduction motivates a separate local-window numerical refinement,
+not a tensile reaction,projection or tolerance change. See new reference
+runner options `--stationary-268 --window-us 10`;require completed reference
+PASS before executing the prepared StationaryReleaseODE actual owner.
+No full time/energy/mesh/impact-friction/grasp certification is implied.
+
+## Current stationary wire contact22.6ms,not yet wrapping —2026-11-19
+
+Verified feature commits9e5126f and0b55c2d implement actual stationary-origin
+closing/impact and typed persistent contact. Initial velocity/external force/
+gravity are all0;this is distinct from the incoming-body experiment.
+1549 independent isolated root,1550 impact/remainder and1552 ACTUAL SOFA
+PASS with all final/pre/post q/v,impulse,event metrics and force-stage rows EXACT.
+Event20.364869768894265ms,6rows/rank3,loss8.10396002971e-9Nmm,
+gap−5.32907e-14mm,reduced momentum bound7.54995e-20Ns.
+First contact is AFTER the20ms Hold end:transmission is nonzero but the current
+control schedule has no pre-unload contact Hold. This is not proof that a
+longer Hold will wrap;such a different input needs a separate common profile.
+
+1555/1558/1561 continue actual contact through22.6ms;API/control/clocks and
+ALL force-stage rows exact.1560 persistent suffix reproduces full checkpoint
+tokens and stage rows exactly. Minimum1561 whole-stage gap−3.04965e-11mm,
+momentum norm bound6.37823e-19Ns. Root continuous work remainsNULL.
+Actual checkpoint113 and binary path/hash are in current STATUS/checkpoint.
+1553 nonlinear endpoint transmission reconstructs Field coordinates within
+7.09e-15mm;skin direct tendon force0,attachment net force/moment cancel to
+1.23e-20N/6.69e-19Nmm. No inferred area/pressure/load capacity.
+
+1559 8-step independent continuation FAILs depth5 after two completed
+reference macros;actual for that horizon NOT RUN.1561 independently executes
+ONLY the two qualified macros in actual SOFA.1563 passive attempt trace:
+accepted state/force prefix exact,requery gap error0,observed115/3 edge and
+117/6 face,min/max rejected stage gaps−9.54855e-8/+8.60380e-8mm.
+Smallest tried h6.25us;depth/attempt/physical gates unchanged. This is NOT
+OS exhaustion. Distinguish independent support birth from smooth transition.
+1564 fails because the archived old-face analytic extrapolation was not an
+old-edge law;failure preserved.1565 replaces it with qualified owned-edge
+geometry/domain checks,without changing force/control/gates. Result must be
+inspected before any actual transfer. No generic variational/RATTLE solver
+has been implemented or certified by this work.
+
+Caption erratum:1542/1554 correct geometry was labelled with hardcoded old
+Fz−.001N.1556/1557/1562 read immutable actual Scene force0;OBJ hashes stay
+identical.1562 additionally fits time/dt/condition caption inside the canvas.
+Actual scale1 PNG/OBJ are not a prescribed wrap pose or pressure map.
+All prior whole Time/Mesh/Energy/friction/clearance/grasp FAILs remain.
+
+## Two distinct actual IVPs: unload30ms and stationary closing10ms —2026-11-19
+
+Feature commit f16eecb introduces actual deformed lateral release and typed
+FREE resume.1527 actual27.2..27.6ms API q/v EXACT;1530 suffix restart also
+reproduces ALL free-stage rows and full checkpoint tokens exactly.
+1531/1532/1534 extend SAME incoming-body IVP to accumulated
+.02999999999999993s,original C2 unload endpoint.1544 final suffix restart
+also has exact q/v/stages/full checkpoints. Tension is zero at the endpoint;
+body separation is NOT stable holding or lifting. Minimum1534 force-stage
+gap+.00306953867mm,momentum residual1.15516e-18Ns.
+Latest actual incoming lateral checkpoint:
+`results/autonomous_film_20261119_lateral_unload30_1534/three.checkpoint_150.txt`.
+Build `build/lateral_free_20261119_lateral_free_actual1527/libReGripLateralRelease.so`,
+SHA839f5b4e353273a6915a68275bcd480c18d4bb97193b7d3916b36060ffae49ba.
+1529/1536 force inventory reconstructs actual Field positions within7.10e-15mm;
+direct Skin tendon force0,attachment net force/moment cancel. Empty normal
+force is justified by an explicit accepted empty Active Set,not missing-data0.
+1537 actual scale1 curvature/OBJ:Skin max discrete width-mean curvature
+.00248510/mm versus Rails .0134777/.0133246/mm. This is not recovery complete.
+
+NEW stationary-body IVP: all initial film/body velocities0,external force0,
+gravity0;same geometry/material/masses/route/C2. No incoming speed or copied
+physical checkpoint.1538/1540 actual1.6ms,1541 actual10ms PASS strict API.
+1539 default-mass reference velocity error3.06954e-12mm/s FAIL preserved.
+1543 audit: ALL actual model sources,binary,states,free stages and six Field/
+displacement CSV files BYTE-IDENTICAL before/after correcting only reference
+public mass binding. Reference q/v error becomes0;threshold remains1e-12.
+This demonstrates reference input consistency,NOT time convergence.
+1535 missing reference sample API compile failure is preserved.
+
+At the10ms first tension peak,actual contact is NONE on committed force
+stages. Minimum stage gap+2.82860287e-5mm.1542 actual shape:Skin mean tip
+localz−.02496365mm/root-tip angle.268336deg;Rail tips−.101584/−.100790mm,
+angles2.33342/2.31376deg. Thus transmission is nonzero and delayed/unequal;
+the initial peak does not demonstrate capture from rest. It also does not
+prove eventual failure. Longer stationary-origin continuation requires the
+new typed zero-load owner;do not use incoming-body schemas/force assumptions.
+Its first step1545 is separate validation,not presumed PASS.
+
+Stationary first-peak checkpoint:
+`results/autonomous_film_20261119_lateral_stationary_peak_public1541/three.checkpoint_50.txt`.
+Build `build/lateral_rest_20261119_lateral_stationary1535/libReGripLateralRestClosing.so`,
+SHAf7505d0bd484a63996caef6af447750f425aa0e1fe26a19d5ac8e159c344089c.
+The reused compiled1535 module was unqualified until actual1538/1540/1541;
+its reference-only compile failure never counted as a physics PASS.
+No friction/area/pressure/holding/lift/mesh/time/whole-energy certification.
+
 ## Actual lateral release and distributed joints —2026-11-19
 
 Campaign1491/1494/1501/1509 extend the actual lateral six-mm-outboard

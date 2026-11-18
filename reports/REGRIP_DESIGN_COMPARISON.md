@@ -1,4 +1,148 @@
-## Actual lateral release / candidate comparison —2026-11-19
+## Verified stationary-origin C2 unloading reaches30ms —2026-11-19
+
+1587 actual face release PASS;1590/1592/1594/1595 actual separated continuation
+reaches .029999999999999929s with independent q/v,ALL midpoint stages and actual
+Field tension EXACT.1591 suffix replay q/v/stages/full checkpoint tokens EXACT.
+No incoming-body state/history is spliced. Public mass/root/quaternion/clock
+and known last impact provenance remain checked.1595 gap+.007675162795734991mm.
+Actual30ms Field tension is3.4217820030178116e−46N,NOT rounded to0:accumulated
+clock lies just below exact .03s;subsequent stages use the original C2 law.
+1595 maximum film speed25.93963933656778mm/s,so recovery NOT completed.
+1593 limited64/128 local release-grid observables PASS;NOT global macro-dt,
+ALL-pair,stored-energy/tendon-work or whole time/energy certification.
+
+Latest verified checkpoint:
+`results/autonomous_film_20261119_stationary_unload30_1595/three.checkpoint_150.txt`.
+Qualified FREE build:
+`build/lateral_free_20261119_stationary_free_actual1590/libReGripStationaryRelease.so`,
+SHAea8283ac84dd0538e30177bc573f8bc4e6b2715b29f4afbd549093404d6b7e4e.
+Reuse provider20261119_stationary_free_actual1590;schema REGRIP_STATIONARY_FREE_V1.
+1596 is a FOREGROUND bounded30→50ms continuation plan;inspect its completed
+summary/last checkpoint before using it. It checks every segment and stops on
+FAIL/reimpact;no automatic background restart service exists.
+
+Example independent next short continuation (use a UNIQUE new tag):
+`$PY tools/film_lateral_free_sofa.py --tag UNIQUE --stationary --parent 20261119_stationary_unload30_1595 --checkpoint-step 150 --steps 2 --reuse-build 20261119_stationary_free_actual1590`.
+Wrapping,holding,lift,friction,self-collision,full thickness,whole energy,
+global time/mesh convergence,mechanical equalizer and final design remain
+unqualified. Existing FAIL/Raw/SDK unchanged;no remote push.
+
+## Historical checkpoint:actual stationary face release27ms —2026-11-19
+
+1587 ACTUAL SOFA PASS:26.8→.026999999999999948s. Final q/v and ALL256
+acceleration-RK q/v/force/time/weight/mask stages match independent1582 EXACT.
+Gap−5.8690829973784275e−12mm,outgoing normal velocity+.012739307327679385mm/s,
+summed reduced momentum bound8.066896214799044e−19Ns;no tensile force or reset.
+This is a numerical release composition,NOT exact continuous exit-time certification.
+1582 uses10us local window64 divisions,unchanged material/C2/200us macro step/gates.
+40us32/64/128 failures1576/1577/1580 and10us32 failure1581 remain preserved.
+1583/1584 compile failures,1586 initialization failure and1589 FREE stream duplicate
+initialization failure remain preserved;none is a physics PASS.
+1585 exact FREE provenance roundtrip and7 invalid fixtures PASS.
+1590 tests the corrected inherited-stream FREE continuation;inspect its summary.
+
+Latest verified actual release checkpoint:
+`results/autonomous_film_20261119_stationary_release_actual1587/three.checkpoint_135.txt`.
+Release build:
+`build/stationary_release_20261119_stationary_release_actual1587/libReGripStationaryRelease.so`,
+SHAbaf961e02d262aff4ad3ceebbefe0990f647899220733c5a3de010e7cc715504.
+Schema REGRIP_STATIONARY_FREE_V1;last global impact22.623148278ms preserved.
+Its initial FREE subclass has a journal-open defect fixed separately in1590;
+reuse this binary for RELEASE only,not as a qualified FREE continuation.
+No arbitrary q/v/time/quaternion change;only provenance identity token changes.
+
+Actual26.8ms force/shape metrics1578/1579 show wire-driven contact but NOT wrapping:
+Skin width-mean tip−.287573mm,centre tip−.091175mm,Rail tips≈−.383mm;
+Rail distal arch and Skin width warp persist. Geometry image and OBJ are actual
+scale1,not prescribed deformation. Contact area/pressure/holding load NULL.
+Zero gravity/external load is NOT lift. Global time/mesh/energy,friction,
+self-collision,thickness clearance,equalizer,holding/lift/Optuna remain unqualified.
+Next:qualify typed FREE continuation and exact suffix replay,reach C2 unload30ms,
+then analyse delayed Skin response/recovery and separately local time refinement.
+No session/OS exhaustion or automatic restart is claimed.
+
+## Historical checkpoint:stationary-origin C2 contact26.8ms —2026-11-19
+
+Verified functional commit4fc720026cf1c521b97d158825ff3d8c20625878.
+1565 independently resolves an additional EDGE115→FACE117 contact birth at
+22.62314827800726ms (six independent impact rows);1566 ACTUAL SOFA matches
+pre/post states,impulses,global recovered-impulse inventory and stage rows EXACT.
+Recovered root impulse is NOT an independent SDK reaction/work measurement.
+1567 verifies ALL common frozen physical sources during the support-owner handoff.
+1569/1570/1571/1573 continue actual stationary-origin C2 contact to
+.026799999999999949s.1573 q/v and ALL contact-stage rows EXACT;
+minimum whole-stage gap−1.1691980716932449e−11mm,reduced momentum bound
+9.765636736557555e−19Ns. These are not full time/mesh/energy/grasp gates.
+
+Latest ACTUAL checkpoint:
+`results/autonomous_film_20261119_stationary_to268_1573/three.checkpoint_134.txt`.
+Reusable build:
+`build/stationary_persistent_20261119_stationary_persistent1555/libReGripStationaryImpact.so`
+SHA0ba20b83089d6a7f305e65c7d5227790a9b8cf4881ca3b29df68b41482cafb19.
+Stationary initial q/v,external force0,gravity0;NEVER splice incoming-body cases.
+
+1568 policy forecast542.7s BLOCKED before physics,NOT OS resource exhaustion.
+1572 longer reference FAIL:positive-only contact cannot continue after reaction
+changes sign;that longer ACTUAL horizon NOT RUN.
+1574 archived fixture-anchor preflight failure preserved;1575 edge-only reference
+rejects actual FACE116/6 ownership.1576 tests the SAME non-tensile release
+equations using existing fixed-smooth owned face Gap/J/H pullback.
+Do not infer release PASS until its completed summary and actual API comparison.
+Next priority:qualify zero-load face release,then typed free continuation and
+actual curvature/transmission metrics. Full wrapping/holding/lift,friction,
+self-collision,thickness clearance,whole energy,time/mesh convergence,mechanical
+equalizer and final design selection remain BLOCKED/NOT RUN as appropriate.
+No automatic background restart is promised.
+
+## Historical checkpoint:actual contact to22.6ms —2026-11-19
+
+Last verified functional commit0b55c2d;prior9e5126f first wire-driven impact.
+NEW stationary-origin IVP:initial sphere/films at rest,external force0,gravity0.
+Same assumed material/masses/geometry/lateral6mm route/C2 input as documented.
+1541 actual10ms strict API PASS after public-mass reference binding;1543
+proves actual model/binary/physical CSV bytes unchanged from preserved1539FAIL.
+1547 first-birth guard rejects its uncommitted20.2..20.4ms step.
+1549 qualifies ONLY18 accepted prefix steps and isolated numerical birth.
+1550 reference and1552 ACTUAL impact/remainder PASS:q/v/pre/post/impulse and
+ALL contact-stage rows EXACT,event20.364869768894265ms,6rows/rank3.
+Not globally earliest continuous CCD,area/pressure/holding/lift certification.
+
+1555/1558/1561 actual persistent continuation reaches
+.022599999999999974s. q/v/control/clocks and ALL contact-stage rows EXACT.
+1560 suffix replay also reproduces full checkpoint tokens and stages exactly.
+Latest completed STATIONARY contact checkpoint:
+`results/autonomous_film_20261119_stationary_to226_1561/three.checkpoint_113.txt`.
+Build `build/stationary_persistent_20261119_stationary_persistent1555/libReGripStationaryImpact.so`,
+SHA0ba20b83089d6a7f305e65c7d5227790a9b8cf4881ca3b29df68b41482cafb19.
+Schema REGRIP_STATIONARY_CONTACT_V1;NEVER splice incoming-object/free histories.
+
+1559 longer reference FAIL:depth5 in22.6..22.8ms;that actual SOFA horizon
+NOT RUN.1563 passive trace reproduces failure with accepted-prefix/state/force
+rows EXACT and geometry requery error0;Edge115/3 and Face117/6 alternate.
+This is algorithm depth budget,NOT OS exhaustion. No budget/tolerance increase.
+1564 first transfer adapter FAIL retained because archived FACE extrapolation
+is invalid for an old EDGE.1565 tests the corrected physical edge branch;
+inspect its completed summary before deciding whether birth or smooth transfer.
+
+Original incoming lateral IVP separately reaches30ms C2 unload (1534);
+1544 suffix replay exact. Its initial velocity-1mm/s/Fz-.001N is NOT capture
+from rest. Original/quadratic/free50ms histories remain separate.
+Distributed joints1515 have mixed bending/warp/work results,NOT selected.
+Legacy stationary render captions1542/1554 incorrectly said Fz-.001N;
+1556/1557/1562 use actual Scene force0,geometry/OBJ unchanged.
+Use corrected1562 actual scale1 image,not the erroneous legacy caption.
+
+All whole Time0.1%/Mesh/Energy/friction/thickness/self-collision/Equalizer/
+gravity lift/12-Wrench/Grasp Optuna gates remain FAIL/BLOCKED/NOT RUN.
+First contact occurs AFTER the20ms Hold end;this motivates control-time-scale
+study,not a claim that longer Hold guarantees wrapping. Final design deferred.
+Details:REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md.
+Next exact inspection command (do not duplicate a completed campaign):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool results/autonomous_film_20261119_stationary_edge_face1565/summary.json`
+Then qualify support-transition math/actual owner,not a larger depth budget.
+Checkpoint writing does NOT end the ongoing research. Older text is historical.
+
+## Historical actual lateral release / candidate comparison —2026-11-19
 
 Latest completed actual lateral checkpoint is27.2ms,NOT wrapping/holding/lift:
 `results/autonomous_film_20261119_lateral_release_actual1522/three.checkpoint_136.txt`.

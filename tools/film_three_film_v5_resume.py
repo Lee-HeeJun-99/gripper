@@ -1,11 +1,11 @@
 """Actual V5 used/next-dt plan restore;optional explicit COMPLETED-plan extension."""
-import argparse,csv,hashlib,json,shutil,xml.etree.ElementTree as ET
+import argparse,csv,hashlib,json,shutil,subprocess,xml.etree.ElementTree as ET
 import numpy as np
 from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--step',type=int,required=True);p.add_argument('--steps',type=int,required=True);p.add_argument('--compare',action='store_true');p.add_argument('--restart-plan',action='store_true');p.add_argument('--extended-build',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--step',type=int,required=True);p.add_argument('--steps',type=int,required=True);p.add_argument('--compare',action='store_true');p.add_argument('--restart-plan',action='store_true');p.add_argument('--extended-build',action='store_true');p.add_argument('--value-clearance',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
  if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('complete qualified actual V5 parent required')
  for name,digest in meta['raw_hashes'].items():
   if sha(src/name)!=digest:raise ValueError('parent raw changed')
@@ -34,12 +34,11 @@ def main():
   for case,digest in qualification['source_summary_hashes'].items():
    if sha(ROOT/'results'/('autonomous_film_'+case)/'summary.json')!=digest:raise ValueError('qualification evidence changed')
   archive=out/'sources/models';shutil.copytree(ROOT/'models',archive,ignore=shutil.ignore_patterns('*.so','__pycache__'));build=ROOT/'build'/('three_film_extended_'+a.tag);build.mkdir(exist_ok=False)
-  configure=guarded(['cmake','-S',archive/'film_three_finger_recovery','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120)
+  configure=guarded(['cmake','-S',archive/'film_three_finger_recovery','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK),'-DREGRIP_VALUE_CLEARANCE='+('ON' if a.value_clearance else 'OFF')],out/'configure',120)
   compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None
-  extension=dict(qualification_sha256=sha(proof),configure=configure,compile=compile,sources={str(f.relative_to(out/'sources')):sha(f) for f in archive.rglob('*') if f.is_file()})
+  extension=dict(value_clearance=a.value_clearance,qualification_sha256=sha(proof),configure=configure,compile=compile,sources={str(f.relative_to(out/'sources')):sha(f) for f in archive.rglob('*') if f.is_file()})
   write_json(out/'extension_build.json',extension)
   if not compile or compile['exit_code']:raise RuntimeError('extended build failed;preserved extension_build.json')
-  import subprocess
   binary=build/'libReGripThreeFilmRecovery.so';deps=subprocess.check_output(['ldd',binary],text=True);(out/'ldd.txt').write_text(deps)
   if 'not found' in deps or any('libSofa.' in line and '=> /' in line and str(SDK) not in line for line in deps.splitlines()):raise ValueError('extended ABI mismatch')
   for plugin in scene.findall('RequiredPlugin'):
@@ -54,6 +53,7 @@ def main():
   for key,text in list(node.attrib.items()):
    if key in ('filename','displacementFilename','publicMassFilename') and text.startswith(str(src)):node.set(key,str(out)+text[len(str(src)):])
  tree.write(out/'scene.scn');run=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(a.steps),'--hideProgressBar',out/'scene.scn'],out/'process',480);errors=sum((out/'process'/n).read_text(errors='replace').count('[ERROR]') for n in ('stdout.log','stderr.log'));result=dict(status='FAIL',scope='actual persistent V5 plan continuation or explicit completed-plan extension;NOT physical recovery/grasp certification',parent=a.parent,parent_summary_sha256=sha(src/'summary.json'),original_checkpoint_sha256=sha(checkpoint),input_checkpoint_sha256=sha(out/'input.checkpoint'),binary_sha256=sha(binary),sdk=str(SDK),scene_sha256=sha(out/'scene.scn'),start_time=time,steps=a.steps,nominal_dt_s=nominal,restored_next_dt_s=next_dt,source_used_dt_s=float(tokens[2]),source_remaining_steps=remaining,restart_plan=a.restart_plan,target_time_s=target,predicted_runtime_s=forecast,process=run,sofa_errors=errors,root_reaction_work=None,legacy_sampled_work='new private origin;prior work evidence stays in parent;NOT restored',physical_payload_and_counter_unchanged=True)
+ result['source_commit']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
  result['extended_build']=extension
  result['extended_owner']=owner.tag=='ThreeFilmExtendedRecoveryODE'
  if run['exit_code']==0 and not errors:
@@ -68,5 +68,5 @@ def main():
      for k in x:
       if k!='tendon_work':field_error=max(field_error,float(np.max(abs(np.fromstring(x[k],sep=' ')-np.fromstring(y[k],sep=' ')))))
    exact_time=all(x['time']==y['time'] for x,y in zip(rows,reference));result.update(status='PASS' if result['status']=='EXPERIMENTAL' and max(state_errors.values())<1e-12 and field_error<1e-12 and exact_time and stages==reference_stages and clocks==reference_clocks and all(snapshots.values()) else 'FAIL',reference_max_abs=state_errors,actual_field_max_abs=field_error,absolute_api_gate=1e-12,stage_rows_exact=stages==reference_stages,controller_rows_exact=clocks==reference_clocks,accumulated_time_exact=exact_time,serialized_snapshots_byte_exact=snapshots)
- result['raw_hashes']={f.name:sha(f) for f in out.iterdir() if f.is_file() and f.suffix in ('.txt','.csv')};write_json(out/'summary.json',result);print(json.dumps({k:v for k,v in result.items() if k not in ('process','raw_hashes')}))
+ result['raw_hashes']={f.name:sha(f) for f in out.iterdir() if f.is_file() and f.suffix in ('.txt','.csv')};write_json(out/'summary.json',result);print(json.dumps({k:v for k,v in result.items() if k not in ('process','raw_hashes','extended_build')}))
 if __name__=='__main__':main()

@@ -1,5 +1,17 @@
 # Bounded actual unloaded recovery and persistent V5 plans
 
+Separate Extended Owner (1124) admits31.6..38ms,100us eight-step plans only,
+after independent1123 same-IVP100/50/25us all-pair subset qualification.
+Legacy30ms/32ms owners remain unchanged. Actual1125 API and1126 persistent
+replay are EXACT;1127 reaches38ms but skin is NOT restored (1128/1129).
+
+Optional CMake REGRIP_VALUE_CLEARANCE (default OFF) changes only whole-surface
+distance queries to value-only arithmetic and hoists immutable rest positions.
+Contact AD2 force/Jacobian/Hessian remain unchanged.1130 checks12000 random
+bit-exact queries and degenerate rejection;1131/1132 actual state/field/stage
+CSV are byte-identical. Alternating three-pair four-step FREE median runtime
+4.175684s→3.310452s (20.7207% reduction). NOT an impact/contact speedup claim.
+
 Separate experimental module. The legacy resume cap remains30ms and its
 original dt table remains unchanged;1104 reproduces Campaign1002 EXACT and
 1105 rejects extended legacy end time/quarter dt before any accepted step.

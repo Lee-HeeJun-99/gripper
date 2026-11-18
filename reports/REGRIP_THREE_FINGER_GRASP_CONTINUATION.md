@@ -458,6 +458,32 @@ Sources at0fa09fb plus archived feature-development source snapshots.
 No completed grasp or automatic background restart is claimed.
 # Latest actual continuation1124–1129
 
+## Next completed work1130–1133
+
+Optional value-only clearance (default OFF) preserves original AD primal
+operation ordering,including constant multiplication.1130:12000 randomized
+point/edge/triangle queries bit-exact and3 degeneracies rejected. Mechanical
+Force/Hessian/actual contact Jacobian stay on the original AD2 code path.
+Actual1131 matches1124 state/stage and allthree ForceField CSV BYTE-EXACT.
+1132 alternating three A/B pairs replay four actual steps:all strict API and
+serialized snapshots PASS;median4.175683954s→3.310452311s,20.7207167% reduction.
+Only this unloaded FREE recovery scope is qualified;no impact performance claim.
+
+1133 actual20ms Hold-row independent wrench audit:body-normal Jacobian error
+1.11e-16,radial moment error1.24345e-14mm;normalized wrench rank3,normal torque0.
+Observed upward normal force5.2774468e-6N,NOT holding capacity. 100g Earth-weight
+reference.981N is a calculation,NOT a gravity/lift experiment (actualgravity0).
+This frictionless spherical-contact geometry cannot certify six-DOF wrench
+closure. The actual12-wrench test remains NOT RUN;friction remains unqualified.
+
+Comparing repeated800us plans to one continuous6.4ms numerical plan gives
+endpointclock difference1.38778e-17s and velocity difference4.05720e-11mm/s:
+the existing1e-12 strict API is NOT waived. Independent1134 uses the identical
+accumulated plan schedule to separate clock representation from physical
+time-step convergence.1134 completed PASS:all64 actual steps q/v EXACT and
+accumulated API times EXACT. Different clock schemes remain different schemes;
+this does NOT repair the earlier common-plan strict API comparison by waiver.
+
 Separate Extended Recovery Owner preserves the legacy32ms limit. Independent
 1123 all-pair100/50/25us6.4ms subset PASS,max0.02950534%;coarser1121 remains
 FAIL0.11718728%. Actual1124 matches the independent800us q/v and clock EXACT.

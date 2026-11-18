@@ -1,5 +1,21 @@
 # Autonomous research log
 
+## Additional verified1130–1133 — value-only geometry and grasp feasibility
+
+12000 independent closest-point queries are bit-exact with original AD2.
+Optional clearance-only mode (defaultOFF) leaves mechanical Force/Hessian
+unchanged. Actual1131 eight-step state/stage/ForceField CSV match1124 bytewise.
+Actual1132 three alternating A/B pairs all PASS strict replay and snapshots:
+median4.175684s→3.310452s,20.7207% reduction,ONLY unloaded FREE recovery.
+No general collision/impact speedup claim.
+
+Actual20ms-row audit1133 finds frictionless sphere wrench rank3 and exactly
+zero normal torque. Upward normal force observed5.27745e-6N is NOT a holding
+capacity.100g Earth-weight reference.981N is a calculation,NOT measured lift.
+Actual gravity remains0,Fz=-.001N. Friction/self-contact remain unqualified.
+Thus simply extending zero-tension recovery will not establish stable grasp.
+Full12-wrench dynamic trials and final design/Optuna remain NOT RUN/BLOCKED.
+
 ## Latest verified checkpoint — 2026-11-18, Campaigns1091–1129
 
 - Actual1091 fixes the representable RK interval duration without changing forces:

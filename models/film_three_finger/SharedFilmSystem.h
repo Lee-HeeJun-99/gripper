@@ -2,6 +2,9 @@
 #include "FrameLayout.h"
 #include "PreciseDistanceOrder.h"
 #include "../film_coupled_collocation/PersistentRows.h"
+#ifdef REGRIP_VALUE_CLEARANCE
+#include "../film_sphere_contact/ClosestPrimitiveValue.h"
+#endif
 namespace regrip_three_finger {
 // Independent nonlinear FEM adapter. Three material frames,ONE free sphere.
 // Only a fixed three-row branch;NOT yet a SOFA owner or active-set gripper.
@@ -66,6 +69,15 @@ struct SharedFilmSystem {
    if(snapshot)(*snapshot)[f]=std::move(row);
   }return out;
  }
- double clearance(const Eigen::VectorXd&x)const{double gap=std::numeric_limits<double>::infinity();for(unsigned f=0;f<3;++f){auto state=local(x,f);for(unsigned k=0;k<shared.films[f].triangles.size();++k)gap=std::min(gap,shared.films[f].primitive(state,k).gap.v);}return gap;}
+ double clearance(const Eigen::VectorXd&x)const{
+  double gap=std::numeric_limits<double>::infinity();for(unsigned f=0;f<3;++f){auto state=local(x,f);
+#ifdef REGRIP_VALUE_CLEARANCE
+   const auto&system=shared.films[f];const auto rest=system.film.model.rest();const auto center=point(state.body.center);
+   for(const auto&t:system.triangles){std::vector<Point>relative;for(unsigned i:t)relative.push_back(sub(add(rest.at(i),state.q.at(i)),center));gap=std::min(gap,regrip_film_sphere_value::ClosestPrimitiveValue::evaluate(relative,{0,0,0},system.radius).gap.v);}
+#else
+   for(unsigned k=0;k<shared.films[f].triangles.size();++k)gap=std::min(gap,shared.films[f].primitive(state,k).gap.v);
+#endif
+  }return gap;
+ }
 };
 }

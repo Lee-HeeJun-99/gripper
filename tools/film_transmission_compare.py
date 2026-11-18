@@ -20,8 +20,9 @@ def main():
   for row in rows:history.append(dict(time=float(row['time']),**shape(np.fromstring(row['q'],sep=' '))))
   records.append(dict(case=case,summary_sha256=sha(src/'summary.json'),binary_sha256=proof['binary_sha256'],endpoint=history[-1],bond_stiffness_N_mm=proof['bond_stiffness_N_mm'],guide_offset_mm=proof['guide_offset_mm']))
   histories.append(history);proofs.append(proof)
- for key in ('mass_kg','material_volume_mm3','duration_s'):
-  if any(p.get(key)!=proofs[0].get(key) for p in proofs):raise ValueError('comparison input differs: '+key)
+ for key in ('mass_kg','volume_mm3','duration_s','material','control','root','dt_s','solver','public_mass_sha256'):
+  if key not in proofs[0] or any(p.get(key)!=proofs[0][key] for p in proofs):raise ValueError('comparison input differs or missing: '+key)
+ if [(p['bond_stiffness_N_mm'],p['guide_offset_mm']) for p in proofs]!=[(.001,5.),(.01,5.),(.001,-5.)]:raise ValueError('one-factor physical design changes differ')
  os.environ.setdefault('MPLCONFIGDIR',str(out/'matplotlib_cache'));import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  fig,axes=plt.subplots(2,2,figsize=(11,8))
  for history,record in zip(histories,records):

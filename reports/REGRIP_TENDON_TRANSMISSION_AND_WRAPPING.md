@@ -114,9 +114,41 @@ far from that equilibrium. This is an independent nonlinear static result,
 NOT actual SOFA dynamics,stability,object wrapping,contact clearance or grasp.
 1147/1149 failures remain preserved;no physical stiffness/damping was changed.
 
-1164 independent preserved-reference38→44.4ms run completed in40.52s.
-This is NOT an actual SOFA extension.128/256-step refinement1166/1167
-must be assessed before admitting a new actual continuation window.
+1164/66/67 independent38→44.4ms64/128/256-step all-pair endpoint subset
+PASS in1173,max0.02999976%. Separate actual Owner1174 then passes first
+8step API1176 and4step resume1177:q/v/time EXACT,field error0,checkpoint
+bytes identical.1178 seven remaining actual V5 plans reach44.4ms.
+1182 ALL64 actual q/v/time match preserved same-plan reference1134 EXACT.
+Reference1118 lacks the `plans` clock mode:1181 rejected before integration;
+that failure is preserved,not conflated with a physical Solver failure.
+Independent common-end clock and actual eight-plan accumulated clock are
+different numerical plans;no1e-12 bridge waiver or actual cross-grid time
+certification is claimed. Original38ms Owner cap is unchanged;the new class
+has a separately admitted44.4ms cap. All paths reject reimpact,not mask it.
+
+##7b. Actual pulse energy and physical control hypothesis
+
+1169 actual no-object Gauss250step50ms cycle API/stages/time EXACT;
+reference78.76s,actual90.03s. Skin mean tip-.38082105mm,centre-.57327854mm,
+midspan-.10098897mm,root-tip angle.03102525rad. Still moving,not recovered.
+1175 actual shape/static comparison distinguishes those two result types.
+1179 integrates ACTUAL two Gauss force stages (not midpoint interpolation):
+tendon work.00012119183184Nmm,damping.00000771352625Nmm,
+remaining stored+kinetic.00011347832209Nmm,signed defect1.64990e-11Nmm.
+Root Work NULL;not whole-gripper energy certification.
+1185 conditional energy analysis:the pulse injects23.2744% ofthe.000520708899
+Nmm stored energy of1165's static configuration. With T=0 after30ms and
+passive damping,merely extending this unloaded trajectory cannot reach THAT
+configuration under the stated model. This does NOT prove all possible
+lower-energy contact-guided wrapping configurations impossible.
+1180 overlays those no-object static shapes with the ORIGINAL fixed sphere
+using all320 triangles/ClosestPrimitive:maximum-load buffered gap-29.6233mm.
+This is geometric infeasibility of an unconstrained shape,NOT a contact
+Solver failure,wrapping or pressure measurement. Contact must be solved.
+Therefore a longer same-Tmax HOLD is a separate next control-design test,
+not a higher tension,stiffness repair or deletion of the old pulse result.
+1183 bondK10x static trial FAIL atNewton60 nearstage15 (force~1.0184e-12N);
+the unchanged1e-12N equilibrium gate is not waived.
 
 ##8. Remaining contact/grasp/design boundaries
 

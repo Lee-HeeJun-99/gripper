@@ -5,6 +5,8 @@ namespace regrip_transmission {
 using namespace regrip_coupled;
 inline Assembly model(double bond=.001,double offset=5){Assembly m(21);m.guideIntervals=4;m.guideOffset=offset;m.bondK=bond;m.rootGuideSecondOrder=true;if((bond!=.001&&bond!=.01&&bond!=.0001)||(offset!=5&&offset!=-5))throw std::invalid_argument("separate declared single-factor coupon design required");return m;}
 inline EventControl control(){EventControl c;c.maximum=.0001;c.ramp=.01;c.release=.02;c.end=.03;return c;}
+// Separate physical input candidate, not a correction of the old pulse FAILs.
+inline EventControl holdControl(){auto c=control();c.release=.05;c.end=.06;return c;}
 inline std::vector<double>publicMass(const std::string&path){std::ifstream in(path);unsigned n;in>>n;if(!in||n!=231)throw std::runtime_error("actual231-node public mass required");std::vector<double>mass(n);for(double&x:mass){in>>x;if(!in||!std::isfinite(x)||x<=0)throw std::runtime_error("finite positive exact public nodal mass required");}return mass;}
 inline CoupledPlaneStep mechanics(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double h,double T,const std::vector<double>&mass){return CoupledPlaneStep(m,mass,h,2,T,q,v,std::vector<Point>(m.size()),0);}
 struct Parts {

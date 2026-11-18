@@ -12,7 +12,9 @@ def main():
  old=ROOT/'results/autonomous_film_20261118_three_film_v5_long_base1118';proof=json.loads((old/'summary.json').read_text());binary=old/'reference'
  if proof['status']!='PASS' or sha(binary)!=proof['binary_sha256']:raise ValueError('preserved reference binary required')
  if sha(src/'input.checkpoint')==actual['original_checkpoint_sha256']:raise ValueError('expected explicit new identity token')
- original=(ROOT/'results'/('autonomous_film_'+actual['parent'])/'three.checkpoint_216.txt').read_text().split();tokens=(src/'input.checkpoint').read_text().split()
+ initial_step=280 if actual.get('after38_owner') else 216
+ if actual.get('after38_owner') and (actual['parent']!='20261118_three_film_recovery_chain1127_plan7' or actual['start_time']<.038-1e-14):raise ValueError('after38 API qualification requires exact admitted initial state')
+ original=(ROOT/'results'/('autonomous_film_'+actual['parent'])/f'three.checkpoint_{initial_step}.txt').read_text().split();tokens=(src/'input.checkpoint').read_text().split()
  if any(x!=y for i,(x,y) in enumerate(zip(original,tokens)) if i!=4) or len(original)!=len(tokens):raise ValueError('non-identity physical payload changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(src/'input.checkpoint',out/'input.checkpoint');shutil.copy2(binary,out/'reference')
  run=guarded([out/'reference',out/'input.checkpoint','8',out/'recovery','common','.0008'],out/'process',480)

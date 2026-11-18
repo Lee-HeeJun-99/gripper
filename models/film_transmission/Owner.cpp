@@ -24,13 +24,14 @@ public:
  sofa::core::objectmodel::Data<unsigned>maxSteps{initData(&maxSteps,8u,"maxSteps","Profiled finite coupon budget <=2000")};
  unsigned count=0;double last=-1;std::ofstream journal,stageJournal;
  virtual double interval(double,double dt)const{return dt;}
+ virtual EventControl prescribedControl()const{return control();}
  virtual Step advance(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double time,double h,const std::vector<double>&mass)const{return step(m,q,v,time,h,mass);}
  template<class T>T parameter(const char*key)const{auto*d=dynamic_cast<sofa::core::objectmodel::Data<T>*>(field->findData(key));if(!d)throw std::runtime_error("actual transmission parameter missing");return d->getValue();}
  void init()override{
   OdeSolver::init();if(!root||!field||field->getClassName()!="FilmRailTendon"||getContext()->getGravity().norm()!=0||maxSteps.getValue()==0||maxSteps.getValue()>2000||getContext()->getTime()!=0)throw std::runtime_error("separate single-film rest/zero-gravity coupon required");
   if(getContext()->getObjects<sofa::core::behavior::OdeSolver>(sofa::core::objectmodel::BaseContext::SearchDown).size()!=1||getContext()->getObjects<sofa::core::behavior::BaseMass>(sofa::core::objectmodel::BaseContext::SearchDown).size()!=1)throw std::runtime_error("single actual projected-mass/ODE coupon only");
   for(auto*f:getContext()->getObjects<sofa::core::behavior::BaseForceField>(sofa::core::objectmodel::BaseContext::SearchDown))if(f!=field.get()&&!dynamic_cast<sofa::core::behavior::BaseMass*>(f))throw std::runtime_error("extra physical forces not supported");
-  if(parameter<unsigned>("nx")!=21||parameter<unsigned>("guideIntervals")!=4||!parameter<bool>("rootGuideSecondOrder")||!parameter<bool>("c2Control")||parameter<double>("maximumTension")!=.0001||parameter<double>("rampTime")!=.01||parameter<double>("releaseBegin")!=.02||parameter<double>("releaseEnd")!=.03)throw std::runtime_error("qualified transmission control/root/model mismatch");
+  auto input=prescribedControl();if(parameter<unsigned>("nx")!=21||parameter<unsigned>("guideIntervals")!=4||!parameter<bool>("rootGuideSecondOrder")||!parameter<bool>("c2Control")||parameter<double>("maximumTension")!=input.maximum||parameter<double>("rampTime")!=input.ramp||parameter<double>("releaseBegin")!=input.release||parameter<double>("releaseEnd")!=input.end)throw std::runtime_error("qualified transmission control/root/model mismatch");
   model(parameter<double>("bondStiffness"),parameter<double>("guideOffset"));if(filename.getValue().empty()||std::ifstream(filename.getValue())||std::ifstream(filename.getValue()+".stages.csv"))throw std::runtime_error("transmission journal exists/empty");journal.open(filename.getValue());journal<<std::setprecision(17)<<"time,dt,momentum_residual,evaluations,T_mid,T_end,q,v\n";stageJournal.open(filename.getValue()+".stages.csv");stageJournal<<std::setprecision(17)<<"macro,stage,time,weight,T,q,v\n";
  }
  void solve(const sofa::core::ExecParams*,SReal dt,sofa::core::MultiVecCoordId,sofa::core::MultiVecDerivId)override{
@@ -41,7 +42,7 @@ public:
   auto map=mechanics(m,q,v,h,0,mm);if(map.expand(map.pack(q))!=q||map.expand(map.pack(v))!=v)throw std::runtime_error("actual root map differs");auto after=advance(m,q,v,time,h,mm);
   auto rx=root->read(sofa::core::vec_id::read_access::position)->getValue(),rv=root->read(sofa::core::vec_id::read_access::velocity)->getValue();for(unsigned a=0;a<map.index.size();++a)if(map.index[a]>=0&&map.weight[a]==1){rx[a/3][a%3]=after.q[a/3][a%3];rv[a/3][a%3]=after.v[a/3][a%3];}root->write(sofa::core::vec_id::write_access::position)->setValue(rx);root->write(sofa::core::vec_id::write_access::velocity)->setValue(rv);mop.propagateXAndV(sofa::core::vec_id::write_access::position,sofa::core::vec_id::write_access::velocity);
   const auto&actual=local->read(sofa::core::vec_id::read_access::position)->getValue();const auto&av=local->read(sofa::core::vec_id::read_access::velocity)->getValue();for(unsigned i=0;i<q.size();++i)for(unsigned d=0;d<3;++d)if(actual[i][d]!=after.q[i][d]||av[i][d]!=after.v[i][d])throw std::runtime_error("exact actual transmission commit/map failed");
-  journal<<time+dt<<','<<h<<','<<after.residual<<','<<after.evaluations<<','<<control().sample(time+h/2).tension<<','<<control().sample(time+dt).tension;quote(journal,after.q);quote(journal,after.v);journal<<'\n';journal.flush();
+  journal<<time+dt<<','<<h<<','<<after.residual<<','<<after.evaluations<<','<<prescribedControl().sample(time+h/2).tension<<','<<prescribedControl().sample(time+dt).tension;quote(journal,after.q);quote(journal,after.v);journal<<'\n';journal.flush();
   if(after.highOrder)for(unsigned i=0;i<2;++i){stageJournal<<count<<','<<i<<','<<after.stageTime[i]<<','<<h/2<<','<<after.stageT[i];quote(stageJournal,after.stageQ[i]);quote(stageJournal,after.stageV[i]);stageJournal<<'\n';}stageJournal.flush();
  }
 };
@@ -64,9 +65,15 @@ public:
  SOFA_CLASS(FilmTransmissionGaussODE,FilmTransmissionAlignedODE);
  Step advance(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double time,double h,const std::vector<double>&mass)const override{return stepGauss(m,q,v,time,h,mass);}
 };
+class FilmTransmissionHoldODE:public FilmTransmissionGaussODE {
+public:
+ SOFA_CLASS(FilmTransmissionHoldODE,FilmTransmissionGaussODE);
+ EventControl prescribedControl()const override{return holdControl();}
+ Step advance(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double time,double h,const std::vector<double>&mass)const override{return stepGauss(m,q,v,time,h,mass,prescribedControl());}
+};
 }
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripFilmTransmission";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Independent actual single FilmRailTendon nonlinear transmission;NO object/contact/grasp;reuse validated free midpoint").add<regrip_transmission::FilmTransmissionODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate exact-endpoint coupon with public next-dt schedule;no time/q/v projection").add<regrip_transmission::FilmTransmissionAlignedODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate Gauss-Legendre order4 single-film transmission;not contact/full time/grasp qualified").add<regrip_transmission::FilmTransmissionGaussODE>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Independent actual single FilmRailTendon nonlinear transmission;NO object/contact/grasp;reuse validated free midpoint").add<regrip_transmission::FilmTransmissionODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate exact-endpoint coupon with public next-dt schedule;no time/q/v projection").add<regrip_transmission::FilmTransmissionAlignedODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate Gauss-Legendre order4 single-film transmission;not contact/full time/grasp qualified").add<regrip_transmission::FilmTransmissionGaussODE>());f->registerObjects(sofa::core::ObjectRegistrationData("Separate same-Tmax longer C2 hold input;not old pulse repair/contact qualification").add<regrip_transmission::FilmTransmissionHoldODE>());}
 }

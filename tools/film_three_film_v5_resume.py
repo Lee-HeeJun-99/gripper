@@ -5,7 +5,8 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--step',type=int,required=True);p.add_argument('--steps',type=int,required=True);p.add_argument('--compare',action='store_true');p.add_argument('--restart-plan',action='store_true');p.add_argument('--extended-build',action='store_true');p.add_argument('--value-clearance',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--step',type=int,required=True);p.add_argument('--steps',type=int,required=True);p.add_argument('--compare',action='store_true');p.add_argument('--restart-plan',action='store_true');p.add_argument('--extended-build',action='store_true');p.add_argument('--value-clearance',action='store_true');p.add_argument('--after38-build',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
+ if a.after38_build and (a.extended_build or a.value_clearance or a.parent!='20261118_three_film_recovery_chain1127_plan7' or a.step!=280):raise ValueError('separate after38 build bound to exact newly qualified38ms IVP')
  if a.value_clearance and not a.extended_build:raise ValueError('value-clearance option requires a new explicitly configured build;no silently ignored flag')
  if a.extended_build and (a.parent!='20261118_three_film_v5_next_plan1115' or a.step!=216):raise ValueError('new extended build admission is bound to the independently qualified31.6ms IVP')
  if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('complete qualified actual V5 parent required')
@@ -19,24 +20,28 @@ def main():
   target=time+.0008;next_dt=nominal
  elif remaining==0 or not 1<=a.steps<=remaining:raise ValueError('resume cannot exceed restored remaining budget')
  extended_parent=bool(meta.get('extended_owner') or meta.get('extended_build'))
- if target>(.038 if a.extended_build or extended_parent else .032):raise ValueError('separate qualified recovery physical cap exceeded')
+ after38_parent=bool(meta.get('after38_owner'))
+ if target>(.0444 if a.after38_build or after38_parent else .038 if a.extended_build or extended_parent else .032):raise ValueError('separate qualified recovery physical cap exceeded')
  forecast=2*meta['process']['runtime_s']*a.steps/meta['steps']+30
  if forecast>480:raise ValueError('profiled resume forecast exceeds480s')
  tree=ET.parse(src/'scene.scn');scene=tree.getroot();owner=scene.find('ThreeFilmPersistentRecoveryODE')
  if owner is None:owner=scene.find('ThreeFilmExtendedRecoveryODE')
+ if owner is None:owner=scene.find('ThreeFilmAfter38RecoveryODE')
  if owner is None:raise ValueError('actual persistent plan owner required')
  binary=next(n.get('pluginName') for n in scene.findall('RequiredPlugin') if n.get('pluginName','').endswith('/libReGripThreeFilmRecovery.so'))
  if sha(binary)!=meta['binary_sha256']:raise ValueError('qualified V5 DLL changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');original=tokens.copy()
  extension=None
- if a.extended_build:
+ if a.extended_build or a.after38_build:
   if not a.restart_plan or time<.0315 or nominal!=.0001 or a.steps!=8:raise ValueError('new extended binary only for completed100us eight-step plan')
-  proof=ROOT/'results/autonomous_film_20261118_three_film_v5_long_fine_time1123/summary.json';qualification=json.loads(proof.read_text())
-  if qualification['status']!='PASS' or qualification['duration_s']!=.0064:raise ValueError('separate long FREE all-pair qualification required')
-  for case,digest in qualification['source_summary_hashes'].items():
+  proof=ROOT/'results'/('autonomous_film_20261118_three_film_after38_time1173/summary.json' if a.after38_build else 'autonomous_film_20261118_three_film_v5_long_fine_time1123/summary.json');qualification=json.loads(proof.read_text())
+  if qualification['status']!='PASS' or (not a.after38_build and qualification['duration_s']!=.0064):raise ValueError('separate long FREE all-pair qualification required')
+  qualified_sources=qualification['source_summaries'] if a.after38_build else qualification['source_summary_hashes']
+  for case,digest in qualified_sources.items():
    if sha(ROOT/'results'/('autonomous_film_'+case)/'summary.json')!=digest:raise ValueError('qualification evidence changed')
+   if a.after38_build and json.loads((ROOT/'results'/('autonomous_film_'+case)/'summary.json').read_text())['actual_checkpoint_sha256']!=sha(checkpoint):raise ValueError('next-window qualification initial state differs')
   archive=out/'sources/models';shutil.copytree(ROOT/'models',archive,ignore=shutil.ignore_patterns('*.so','__pycache__'));build=ROOT/'build'/('three_film_extended_'+a.tag);build.mkdir(exist_ok=False)
-  configure=guarded(['cmake','-S',archive/'film_three_finger_recovery','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK),'-DREGRIP_VALUE_CLEARANCE='+('ON' if a.value_clearance else 'OFF')],out/'configure',120)
+  configure=guarded(['cmake','-S',archive/('film_three_finger_recovery_next' if a.after38_build else 'film_three_finger_recovery'),'-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK),'-DREGRIP_VALUE_CLEARANCE='+('ON' if a.value_clearance or a.after38_build else 'OFF')],out/'configure',120)
   compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None
   extension=dict(value_clearance=a.value_clearance,qualification_sha256=sha(proof),configure=configure,compile=compile,sources={str(f.relative_to(out/'sources')):sha(f) for f in archive.rglob('*') if f.is_file()})
   write_json(out/'extension_build.json',extension)
@@ -45,7 +50,7 @@ def main():
   if 'not found' in deps or any('libSofa.' in line and '=> /' in line and str(SDK) not in line for line in deps.splitlines()):raise ValueError('extended ABI mismatch')
   for plugin in scene.findall('RequiredPlugin'):
    if plugin.get('pluginName','').endswith('/libReGripThreeFilmRecovery.so'):plugin.set('pluginName',str(binary))
-  owner.tag='ThreeFilmExtendedRecoveryODE'
+  owner.tag='ThreeFilmAfter38RecoveryODE' if a.after38_build else 'ThreeFilmExtendedRecoveryODE'
  if a.restart_plan:tokens[4]=hashlib.sha256(json.dumps(dict(binary=sha(binary),parent=sha(src/'summary.json'),checkpoint=sha(checkpoint),new_target=target,nominal_dt=nominal,explicit_restart=True),sort_keys=True).encode()).hexdigest()
  if any(x!=y for i,(x,y) in enumerate(zip(original,tokens)) if i!=4):raise ValueError('physical payload or step counter changed')
  if a.restart_plan:(out/'input.checkpoint').write_text(' '.join(tokens)+'\n')
@@ -58,6 +63,7 @@ def main():
  result['source_commit']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
  result['extended_build']=extension
  result['extended_owner']=owner.tag=='ThreeFilmExtendedRecoveryODE'
+ result['after38_owner']=owner.tag=='ThreeFilmAfter38RecoveryODE'
  if run['exit_code']==0 and not errors:
   rows=list(csv.DictReader((out/'three.states.csv').open()));clocks=list(csv.DictReader((out/'three.recovery.clock.csv').open()));gap=min(float(r['minimum_gap']) for r in rows);momentum=max(float(r['momentum_residual']) for r in rows);result.update(status='EXPERIMENTAL' if len(rows)==a.steps and len(clocks)==a.steps and all(r['all_child_times_exact']=='true' and int(r['contexts'])==11 for r in clocks) and gap>=-1e-10 and momentum<=1e-17 else 'FAIL',actual_end_time_s=float(rows[-1]['time']),minimum_gap_mm=gap,momentum_Ns=momentum)
   if a.compare:

@@ -1,3 +1,21 @@
+## Latest verified continuation — campaigns1169–1188 (2026-11-18)
+
+Actual3-finger endpoint is now44.4ms (1174/1178),not38ms.1176/1177 exact
+state/time/API and persistent resume PASS;1182 all64 q/v/time match the
+preserved same-plan reference EXACT. Separate .1% independent endpoint
+subset1173 PASS,max.0300%;not actual full contact/time certification.
+Actual no-object50ms pulse1169 is API/stage EXACT,NOT complete recovery.
+1185:injected pulse work is23.2744% of ONE no-object static state's stored
+energy. More unloaded time cannot reach THAT state under passive-model
+assumptions;not a proof against every possible contact-guided wrap.
+Static shape intersects an overlaid fixed sphere (1180);it is NOT wrapping.
+1183 stronger attachment static FAIL retained. Next:longer same-Tmax Hold,
+not higher tension.1186 short new-control API PASS;1187 actual50ms Hold
+is an in-progress experiment at this checkpoint,not a claimed result.
+Details/raw/source/binary identities:[research](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md).
+Full friction/self-contact/lift/energy/grasp/Optuna remain BLOCKED/NOT RUN.
+Last completed feature commit before this checkpoint:1f9a339.
+
 ## Latest continuation — transmission campaigns1139–1168 (2026-11-18)
 
 See [transmission and wrapping research](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md).

@@ -82,8 +82,10 @@ public:
  }
 };
 }
+#ifndef REGRIP_RECOVERY_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmRecovery";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL separated30..32ms recovery;100/50/25us nominal steps and actual clock intervals;rejects reimpact;NOT restored shape/grasp certificate").add<regrip_three_resume::ThreeFilmRecoveryODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL exact-end observation:public next-dt scheduler,all11 contexts;observation V4 resume NOT qualified;NOT grasp").add<regrip_three_resume::ThreeFilmAlignedRecoveryODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL persistent V5 observation plan:used/next dt,accumulated clock,counter and explicit completed-plan extension;NOT grasp").add<regrip_three_resume::ThreeFilmPersistentRecoveryODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL separately admitted31.6..38ms FREE recovery;100us,V5 exact plan;NOT full recovery/grasp").add<regrip_three_resume::ThreeFilmExtendedRecoveryODE>());}
 }
+#endif

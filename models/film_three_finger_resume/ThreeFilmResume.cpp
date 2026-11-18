@@ -16,6 +16,8 @@ public:
  bool exactDistanceOrder()const override{return true;}
  bool requiresRestStart()const override{return false;}
  double physicalEndLimit()const override{return endTime.getValue();}
+ virtual double maximumResumeEndTime()const{return .03;}
+ virtual bool permittedResumeDt(double dt)const{return dt==.0002||dt==.0001||dt==.00005;}
  virtual std::string inputCheckpointMagic()const{return "REGRIP_PERSISTENT_V1";}
  virtual std::string outputCheckpointMagic()const{return "REGRIP_PERSISTENT_V1";}
  virtual void readContactCheckpoint(std::istream&in,const SharedFilmSystem&s,const Eigen::VectorXd&q,const Eigen::VectorXd&v){
@@ -31,7 +33,7 @@ std::set<sofa::core::objectmodel::BaseNode*>seen;std::function<void(sofa::core::
  void bwdInit()override{
   ThreeFilmDrivenODE::bwdInit();if(!ready)throw std::runtime_error("resume parent validation failed");
   std::ifstream in(checkpoint.getValue());std::string magic,token;in>>magic>>initialTime>>savedDt>>priorSteps>>token;
-if(!in||magic!=inputCheckpointMagic()||identity.getValue().size()!=64||token!=identity.getValue()||(savedDt!=.0002&&savedDt!=.0001&&savedDt!=.00005)||!(initialTime>0)||endTime.getValue()> .03||endTime.getValue()<=initialTime)throw std::runtime_error("resume header/provenance/time rejected");
+if(!in||magic!=inputCheckpointMagic()||identity.getValue().size()!=64||token!=identity.getValue()||!permittedResumeDt(savedDt)||!(initialTime>0)||endTime.getValue()>maximumResumeEndTime()||endTime.getValue()<=initialTime)throw std::runtime_error("resume header/provenance/time rejected");
   SharedFilmSystem system(Layout(),{0,0,-.001},true,true);system.exactUnresolved=true;unsigned nf=system.shared.nf,n=system.initial.size();
   Eigen::VectorXd q(n),v(n);for(auto*z:{&q,&v})for(int i=0;i<z->size();++i)in>>(*z)(i);Eigen::Vector4d quaternion;for(double&x:quaternion)in>>x;
   if(!q.allFinite()||!v.allFinite()||!quaternion.allFinite()||std::abs(quaternion.squaredNorm()-1)>1e-14||q.tail<3>().norm()!=0)throw std::runtime_error("resume finite/quaternion/local-chart validation");

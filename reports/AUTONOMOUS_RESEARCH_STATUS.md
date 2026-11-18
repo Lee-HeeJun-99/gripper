@@ -1,5 +1,53 @@
 # Autonomous research status — active continuation 2026-11-18
 
+## Latest verified checkpoint — 2026-11-18, Campaigns1091–1129
+
+- Actual1091 fixes the representable RK interval duration without changing forces:
+  independent q/v EXACT;1092 verifies sum(stage weights)==actual elapsed time.
+  Prior1076/1089 clock failures remain preserved.
+- Actual unloaded recovery reaches **38ms** (1124 and seven bounded1127 plans),
+  via V5 persistent clock/used-dt/next-dt/plan/counter state.1125 independent
+  q/v/time EXACT;1126 four-step actual resume and checkpoints BYTE-IDENTICAL.
+  Earlier1112/1113/1117 exact resumes and1114 corruption rejection also PASS.
+- 1110 actual same-time800us recovery subset PASS (max all-pair0.01281255%).
+  The longer independent6.4ms200/100/50us comparison1121 FAIL0.11718728%;
+  separate100/50/25us1123 PASS0.02950534%. This is NOT full-cycle time PASS.
+  1106's multiplied/common-time API bridge FAIL5.57e-12 is preserved;the actual
+  next-dt scheduler aligns all11 contexts rather than overwriting q/v/time.
+- 1096 release power inventory: mechanical tendon work -5.45816e-8Nmm,
+  signed defect -1.11372e-12Nmm;not heat/full energy certification.
+  Root reaction work NULL. Legacy sampled-work private origin is not restored.
+- Actual1128 at38ms: skin width-mean tip z=-0.34690653mm,vz=-3.74943732mm/s;
+  skin RMS displacement0.12074783mm and squared-RMS rate +1.07056815mm²/s:
+  **shape recovery not completed**. Rails relax while skin continues moving.
+  Body vz=-1.29190161mm/s;gravity0,Fz=-.001N,friction OFF:NOT hold/lift.
+  1129 scale-one actual geometry/OBJ uses saved state,not prescribed deformation.
+- Independent current-deformed frozen spectrum1087 has longest undamped
+  period5.85155s;NOT measured nonlinear recovery time. A naive long rollout is
+  not justified.1116's old32ms admission block was model scope,not OS/session
+  exhaustion;independent work and separately qualified actual extension followed.
+
+Reusable DLL:
+`build/three_film_extended_20261118_three_film_extended_actual1124/libReGripThreeFilmRecovery.so`
+SHA256 `9767481765017b112b4789afabdda3412cd556ec7b775a92b8b9cec754d4ba5c`.
+Latest actual state:
+`results/autonomous_film_20261118_three_film_recovery_chain1127_plan7/three.checkpoint_280.txt`.
+Raw/manifests and earlier FAILs remain immutable. Actual30ms/32ms legacy caps
+remain;only separate Extended Owner admits this qualified31.6..38ms window.
+New sources currently based on77706b;see next feature Git commit for live code.
+
+Next: profile/validate value-only geometry queries (do NOT alter mechanical
+Force/Hessian),then choose a qualified longer-time or structural study from
+actual shape response. Do not blindly extend beyond38ms or call zero tension
+recovery. Full contact time/mesh/energy,friction,thickness,self-collision,
+mechanical equalizer,wrapping/hold/lift/12-wrench/Optuna remain NOT CERTIFIED.
+Exact replay command (unique TAG,foreground,not automatic restart):
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_three_film_v5_resume.py --tag UNIQUE_TAG --parent 20261118_three_film_extended_actual1124 --step 220 --steps 4 --compare
+```
+
+Older entries below are historical,not current RUNNING processes.
+
 ## CURRENT verified — deformed release1079 and exact FREE resume1082
 
 Actual1079 independently matches q/v EXACT at original1e-12 API; applied

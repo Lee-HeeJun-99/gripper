@@ -28,7 +28,15 @@ inline AccelerationRelease accelerationRelease(const SharedFilmSystem&s,const Ei
   for(unsigned i=0;i<3;++i)if(contact.force(i)>0&&(std::abs(g.gap(i))>1e-10||std::abs(g.J.row(i).dot(vel))>1e-10)){std::ostringstream error;error<<std::setprecision(17)<<"positive acceleration reaction outside touching tangent state;reimpact requires separate law:time="<<t<<" row="<<i<<" gap="<<g.gap(i)<<" vn="<<g.J.row(i).dot(vel)<<" force="<<contact.force(i);throw std::runtime_error(error.str());}
   out.minimumGap=std::min(out.minimumGap,s.clearance(x));if(out.minimumGap< -1e-10)throw std::runtime_error("acceleration release whole RK-stage gap fails;no projection");
   Eigen::VectorXd total=applied+g.J.transpose()*contact.force,derivative(2*n);derivative.head(n)=vel;derivative.tail(n)=total.cwiseQuotient(diagonal);impulse+=weight*total;out.minimumForce=std::min(out.minimumForce,contact.force.minCoeff());out.stages.push_back({t,weight,x,vel,contact.force,applied,contact.mask,contact.residual});return derivative;};
- double dt=h/grid,clock=time;for(unsigned i=0;i<grid;++i){Eigen::VectorXd k1=rhs(y,clock,dt/6),k2=rhs(y+dt/2*k1,clock+dt/2,dt/3),k3=rhs(y+dt/2*k2,clock+dt/2,dt/3),k4=rhs(y+dt*k3,clock+dt,dt/6);y+=dt/6*(k1+2*k2+2*k3+k4);clock+=dt;out.minimumGap=std::min(out.minimumGap,s.clearance(y.head(n)));if(out.minimumGap< -1e-10)throw std::runtime_error("acceleration release whole accepted-substep gap fails;no projection");}
+ double nominal=h/grid,clock=time;
+ for(unsigned i=0;i<grid;++i){
+  // Preserve the accumulated absolute clock,then integrate over that actual
+  // representable interval. Nominal micro-dt is NOT silently substituted for
+  // next-clock:their per-step rounding otherwise accumulates in the work weights.
+  double next=clock+nominal,dt=next-clock;if(!(dt>0))throw std::runtime_error("unresolved floating micro-clock interval");
+  Eigen::VectorXd k1=rhs(y,clock,dt/6),k2=rhs(y+dt/2*k1,clock+dt/2,dt/3),k3=rhs(y+dt/2*k2,clock+dt/2,dt/3),k4=rhs(y+dt*k3,next,dt/6);y+=dt/6*(k1+2*k2+2*k3+k4);clock=next;
+  out.minimumGap=std::min(out.minimumGap,s.clearance(y.head(n)));if(out.minimumGap< -1e-10)throw std::runtime_error("acceleration release whole accepted-substep gap fails;no projection");
+ }
  out.q=y.head(n);out.v=y.tail(n);out.endTime=clock;out.finalMask=out.stages.back().mask;out.momentumResidual=(s.shared.M*(out.v-v)-impulse).norm();if(!y.allFinite()||out.momentumResidual>1e-17||out.minimumForce<0||out.stages.back().time!=clock)throw std::runtime_error("acceleration release finite/momentum/nonnegative/accumulated clock gate");return out;
 }
 }

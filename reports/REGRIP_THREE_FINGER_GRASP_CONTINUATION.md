@@ -1,5 +1,129 @@
 # Three-finger actual continuation — 2026-11-18
 
+## LATEST verified — C2 unload end,exact-time early recovery,persistent V5
+
+Project remains INCOMPLETE. This is a chain of scoped accepted-state experiments,
+not one general automatic contact/impact/release dispatcher or a certified grasp.
+Actual1083 reaches29.99999999999993ms from the validated FREE V3 chain.24steps
+complete,minimum buffered midsurface gap5.62585363e-5mm,momentum5.38937e-19Ns.
+Tension at that accumulated endpoint is3.421782e-46N,not an invented exact0.
+New recovery midpoints after30ms use the existing profile's exact unloaded branch.
+
+### Clock/work-duration correction
+
+1089 read-only audit FAIL:1079 has exact stage joins but quadrature duration
+exceeds actual clock advance by9.10187724e-17s,above the existing1e-18s
+duration-inventory gate.1090/1091 instead integrate each representable interval
+`h_i=(clock+nominal_i)-clock`,without resetting the accumulated clock.
+1091 actual q/v match independent1090 EXACT.1092 audit PASS:weight sum equals
+actual clock advance9.99999999999994e-5s EXACT;nominal-dt difference
+-6.09863722e-19s remains below the UNCHANGED1e-18s gate. Original1089 retained.
+
+1096 independent reconstruction of259 ACTUAL1091 stage states:
+
+|Item|Nmm|
+|---|---:|
+|Tendon mechanical work|-5.45815957350e-8|
+|External work|1.20979849041e-7|
+|Mass-proportional damping work|6.08952795430e-8|
+|Normal work,independent reconstruction|-4.37592621773e-29|
+|Stored+kinetic energy change|5.50186003912e-9|
+|Signed inventory defect|-1.11372404875e-12|
+
+Positive pull coordinate is minus routed length:power=-T*dL/dt. Negative
+tendon work is mechanical energy returned to the prescribed source,not an
+electrical-energy measurement. Normal work is reconstructed from actual q/v
+and applied multipliers with the same material-edge geometry,not forced0.
+No instantaneous velocity jump/impact impulse occurs in this release interval.
+Actual field energy discrepancy2.1684e-19Nmm,endpoint control error0N.
+Root reaction work NULL. Signed defect is NOT physical heat or whole-energy
+certification.1094 missing-iostream compile FAIL remains;1095/1096 fix/reuse
+the observer only,no physical simulation data is changed.
+
+### Recovery shape/time scale,not successful recovery
+
+1086 actual30ms geometry uses scale1,rest+u reconstruction7.08114e-15mm.
+1093 maps serialized velocities through the exact root map:skin width-mean
+tip z=-.322245298mm,vz=-6.705277515mm/s,RMS-displacement-squared rate
++.635853760mm2/s. Rails' corresponding rates are-.519393007/-.541065799:
+rails are relaxing while skin still deforms. Zero tension does NOT prove
+restored shape. Body vz=-1.232094853mm/s,gravity0;NOT holding/lifting evidence.
+
+1085 independent stress-free FREE-finger spectrum:649 positive modes,
+lowest omega1.18611609rad/s,undamped period5.29727686s.1087/1088 CURRENT
+deformed finger0 frozen tangent:649 positive modes,lowest1.07376343rad/s,
+period5.85155455s;not an equilibrium or nonlinear dominant-response certificate.
+Frozen current modal kinetic projection agrees with actual film K to
+-2.71050543e-20Nmm;fraction above omega*100us>1 is1.1920716e-9.
+The flat-reference quadratic potential grossly differs from nonlinear actual
+stored energy;do NOT use1085's combined quadratic metric as actual fast-mode
+energy.1087's figure retains an old stress-free title;use corrected1088 image.
+1084 worker-import FAIL remains;its complete FEM matrix dump is hash-verified
+and reused in1085,no failed physics result is changed into an actual SOFA PASS.
+
+### Exact-time early FREE recovery,0.1% unchanged
+
+1097/1098/1099 independently integrate the SAME actual30ms q/v/mass state
+for800us at100/50/25us nominal dt,with a consistent final fractional interval.
+1100 all-pair observable subset PASS,base-to-quarter max.0128125483%.
+1101/1102/1103 actual SOFA match their OWN accumulated-clock references
+EXACT,but endpoints differ by floating clock accumulation.1106 strict
+common-time bridge FAIL:max state5.57065505e-12>original1e-12. No waiver.
+
+1107/1108/1109 use a separate public NEXT-dt scheduler,all11 child contexts;
+no time reset,q/v correction or StepCount spoof. All reach the identical
+absolute target.030799999999999928s,and match exact-target independent states
+EXACT.1110 actual all-pair FREE800us observables PASS0.1%,max.0128125483%;
+exact-time bridge error0. This LIMITED unloaded/no-contact interval does NOT
+replace997/1041 contact/work/full-cycle Time FAIL,mesh/history or energy gates.
+1104 legacy1002 regression stays EXACT;1105 confirms original legacy cap/dt
+guards still reject31ms/25us. New bounds apply only to the separate owner.
+
+### V5 full numerical-plan persistence and actual extension
+
+1111 V5 stores physical state plus plan start/original counter,nominal dt,total
+steps,target,USED dt,EXPECTED NEXT dt and remaining budget.1112 resumes4steps
+from checkpoint204:all q/v/time/field/stage/controller records EXACT and
+205..208 checkpoints byte-identical.1113 restores checkpoint207's next
+dt=.00010000000000000286s (used dt=.0001s) and produces byte-identical208.
+1114 corrupted next/used dt,remaining budget/global index all reject before
+accepted commit. V4 observation-only snapshots are not silently relabeled V5.
+
+1115 starts an EXPLICIT new800us plan from completed208 without changing
+physical payload or counter;C2 absolute time is preserved. Actual end
+.03159999999999993s,min gap.0147152625mm,momentum5.10174e-19Ns,EXPERIMENTAL.
+1117 resumes its final4steps from212:all state/field/stage/controller records
+EXACT,213..216 byte-identical. Private legacy work is not restored;prior
+segment evidence stays linked by parent hashes,not an invented cumulative0.
+
+Reusable V5 build:build/three_film_recovery_20261118_three_film_persistent_recovery1111/
+DLL SHA2562e5f27eba96c49d2708f90217d898ba35a9ce741d71b9598c359d19e90e9c132.
+Actual duration-corrected release1091 DLL SHA256
+b85e7ad746fc5649d650cf489e7922ce0c3190e63c9be9fe1e4c513ea7cc4075.
+Every campaign retains its runner,source/binary identity,SDK/command,raw and
+exit status. Research parameters remain E250MPa,nu0,1g/film,100g sphere,
+Tmax.0001N/rail,gravity0,Fz-.001N. No real PET/actuator measurement is implied.
+
+### Remaining bottlenecks and executable checkpoint
+
+Latest complete actual state:1115 checkpoint216 at31.6ms. The next fixed800us
+plan would end32.4ms,outside this owner's explicitly validated32ms cap.
+This is a MODEL-SCOPE admission condition,not OS exhaustion or proof that
+the overall project is complete. Do not delete the guard. Next develop an
+independent completed-V5 FREE recovery reference for a longer horizon and
+validate time/cost before a separately versioned window extension. In parallel,
+the manually selected contact/birth/feature/release owners need one automatic
+dispatcher;all-gripper contact time/energy,friction,self-collision,physical
+thickness,shared mechanical equalizer,gravity/palm lift and true wrapping
+remain unqualified. No Grasp Optuna or final design selection is permitted.
+
+Verified regression after future source changes (NEW tag,not old raw paths):
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_three_film_v5_resume.py --tag UNIQUE --parent 20261118_three_film_v5_next_plan1115 --step 212 --steps 4 --compare
+```
+Do not rerun unchanged long campaigns to substitute for the missing next code.
+No automatic research after session termination is provided or claimed.
+
 ## FREE V3 exact resume1082 — actual SOFA
 
 From1081 checkpoint173(27.3ms),a separate Free Owner reproduces two steps
@@ -332,3 +456,15 @@ Raw: `results/autonomous_film_20261118_three_film_primitive_actual1059/`,
 `...three_film_edge_resume1060/`, `...three_film_edge_unload1061/`.
 Sources at0fa09fb plus archived feature-development source snapshots.
 No completed grasp or automatic background restart is claimed.
+# Latest actual continuation1124–1129
+
+Separate Extended Recovery Owner preserves the legacy32ms limit. Independent
+1123 all-pair100/50/25us6.4ms subset PASS,max0.02950534%;coarser1121 remains
+FAIL0.11718728%. Actual1124 matches the independent800us q/v and clock EXACT.
+1126 four-step resume matches API/stages/controller and snapshots BYTE-EXACT.
+Seven bounded explicit V5 plans1127 then reach37.999999999999944ms without
+reimpact.1128/1129 reconstruct actual state and scale-one geometry.
+Skin width-mean tipz=-.34690653mm,velocityz=-3.74943732mm/s;skin squared-RMS
+rate remains positive1.07056815mm²/s. No completed recovery or holding/lifting.
+Bodyvz=-1.29190161mm/s,gravity0,Fz=-.001N,frictionOFF.
+Reusable build/raw/replay commands are at the top of LONG_RUN_RESEARCH_CHECKPOINT.

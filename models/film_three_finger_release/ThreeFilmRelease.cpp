@@ -47,8 +47,10 @@ public:
  }
 };
 }
+#ifndef REGRIP_THREE_RELEASE_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmRelease";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL isolated20us three-row acceleration complementarity release plus80us free midpoint;NOT full time/energy/grasp").add<regrip_three_resume::ThreeFilmAccelerationReleaseODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL separated FREE V3 resume and midpoint continuation;rejects dense-path reimpact;NOT grasp").add<regrip_three_resume::ThreeFilmFreeODE>());}
 }
+#endif

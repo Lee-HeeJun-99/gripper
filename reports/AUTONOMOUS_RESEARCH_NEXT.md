@@ -1,3 +1,19 @@
+## Latest continuation — transmission campaigns1139–1168 (2026-11-18)
+
+See [transmission and wrapping research](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md).
+Actual single-film20ms q/v/time/force-stage API identity PASS1e-12.
+Midpoint endpoint time FAIL0.629144%;separate unconstrained order4 Gauss
+all-pair endpoint PASS0.00458128% maximum against0.1% gate. Not full time,
+contact or mesh certification. Actual skin mean tip-0.16733mm versus centre
+-0.02290mm shows nonuniform deformation,NOT wrapping/holding proof.
+Independent nonlinear static1165 force equilibrium PASS1e-12N at unchanged
+T=.0001N/rail:mean tip-43.05871mm,angle0.827697rad. Stability/contact/dynamic
+arrival time unqualified. One-factor bond/route actual trials preserved.
+Actual3-finger endpoint remains38ms;1164 onward are independent next-window
+references,not actual continuation. Friction,lift,full energy,Optuna BLOCKED.
+Raw/build/reproduction details are in the linked report. No automatic restart.
+Historical RUNNING text below is not current process evidence.
+
 # Next research checkpoint
 
 ## Latest completed1134–1138 — exact chain and transmission/energy diagnostics

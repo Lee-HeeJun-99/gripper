@@ -1,0 +1,19 @@
+"""Independent nonlinear root-constrained equilibrium,not actual SOFA dynamics."""
+import argparse,csv,json,shutil,subprocess
+import numpy as np
+from curve_common import ROOT,sha,write_json
+from film_guarded_process import guarded
+from film_transmission_linear import shape
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--bond',type=float,choices=(.0001,.001,.01),default=.001);p.add_argument('--offset',type=float,choices=(-5.,5.),default=5.);p.add_argument('--load-stages',type=int,default=16);p.add_argument('--reuse');p.add_argument('--energy-merit',action='store_true');p.add_argument('--hybrid-merit',action='store_true');a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));cpp=archive/'diagnostics/film_three_finger/TransmissionStatic.cpp';cpp.parent.mkdir(parents=True);shutil.copy2(ROOT/'diagnostics/film_three_finger/TransmissionStatic.cpp',cpp);sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};binary=out/'reference';mass=ROOT/'results/autonomous_film_20261118_three_film_first_peak_actual1002/public_mass_reference.txt';ledger=json.loads((ROOT/'reports/FILM_CONTACT_EVIDENCE_20261118_three_film_v10.json').read_text())
+ if sha(mass)!=ledger['files'][str(mass.relative_to(ROOT))]:raise ValueError('original mass identity failed')
+ if a.reuse:
+  prev=ROOT/'results'/('autonomous_film_'+a.reuse);proof=json.loads((prev/'summary.json').read_text())
+  if proof['sources']!=sources or proof['compile']['exit_code'] or sha(prev/'reference')!=proof['binary_sha256']:raise ValueError('exact compiled static source/binary required')
+  shutil.copy2(prev/'reference',binary);compile={'exit_code':0,'reused_from':a.reuse}
+ else:compile=guarded(['g++','-O2','-std=c++17','-ffp-contract=off','-I/usr/include/eigen3',cpp,'-o',binary],out/'compile',120)
+ run=guarded([binary,str(a.bond),str(a.offset),str(a.load_stages),mass,out/'equilibrium']+(['hybrid'] if a.hybrid_merit else ['energy'] if a.energy_merit else []),out/'process',480) if compile['exit_code']==0 else None;result=dict(merit='hybrid physical potential/residual globalization' if a.hybrid_merit else 'constant-T physical potential Armijo' if a.energy_merit else 'force residual',status='FAIL',scope='independent nonlinear static film/rails/tendon force equilibrium;NOT actual SOFA/contact/stable grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources=sources,binary_sha256=sha(binary) if binary.exists() else None,compile=compile,process=run,material_measured=False,material_volume_mm3=439.3397917746089/3,bond_stiffness_N_mm=a.bond,guide_offset_mm=a.offset,maximum_tension_N_per_rail=.0001,root='same quarter root-slope mapping as actual3film',force_equilibrium_gate_N=1e-12,stability='NOT CERTIFIED;force equilibrium is not stability/dynamic convergence',contact='NONE',actuation_work='NOT MATCHED;fixedT comparison only',root_reaction_work=None)
+ if run and run['exit_code']==0:
+  rows=list(csv.DictReader((out/'equilibrium.states.csv').open()));last=rows[-1];result.update(status='PASS' if len(rows)==a.load_stages and max(float(r['residual_N']) for r in rows)<=1e-12 else 'FAIL',accepted_load_stages=len(rows),maximum_residual_N=max(float(r['residual_N']) for r in rows),endpoint={k:float(v) for k,v in last.items() if k!='q'},shape=shape(np.fromstring(last['q'],sep=' ')))
+ result['failure_reason']=(out/'process/stderr.log').read_text().strip() if run and run['exit_code'] else None;result['raw_hashes']={f.name:sha(f) for f in out.glob('equilibrium.*')};write_json(out/'summary.json',result);print(json.dumps({k:v for k,v in result.items() if k not in ('sources','compile','process','raw_hashes')}))
+if __name__=='__main__':main()

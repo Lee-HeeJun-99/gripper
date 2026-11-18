@@ -24,7 +24,7 @@ std::set<sofa::core::objectmodel::BaseNode*>seen;std::function<void(sofa::core::
  void bwdInit()override{
   ThreeFilmDrivenODE::bwdInit();if(!ready)throw std::runtime_error("resume parent validation failed");
   std::ifstream in(checkpoint.getValue());std::string magic,token;in>>magic>>initialTime>>savedDt>>priorSteps>>token;
-  if(!in||magic!="REGRIP_PERSISTENT_V1"||identity.getValue().size()!=64||token!=identity.getValue()||savedDt!=.0002||!(initialTime>0)||endTime.getValue()> .03||endTime.getValue()<=initialTime)throw std::runtime_error("resume header/provenance/time rejected");
+if(!in||magic!="REGRIP_PERSISTENT_V1"||identity.getValue().size()!=64||token!=identity.getValue()||(savedDt!=.0002&&savedDt!=.0001&&savedDt!=.00005)||!(initialTime>0)||endTime.getValue()> .03||endTime.getValue()<=initialTime)throw std::runtime_error("resume header/provenance/time rejected");
   SharedFilmSystem system(Layout(),{0,0,-.001},true,true);system.exactUnresolved=true;unsigned nf=system.shared.nf,n=system.initial.size();
   Eigen::VectorXd q(n),v(n);for(auto*z:{&q,&v})for(int i=0;i<z->size();++i)in>>(*z)(i);Eigen::Vector4d quaternion;for(double&x:quaternion)in>>x;
   if(!q.allFinite()||!v.allFinite()||!quaternion.allFinite()||std::abs(quaternion.squaredNorm()-1)>1e-14||q.tail<3>().norm()!=0)throw std::runtime_error("resume finite/quaternion/local-chart validation");
@@ -55,8 +55,10 @@ std::set<sofa::core::objectmodel::BaseNode*>seen;std::function<void(sofa::core::
  }
 };
 }
+#ifndef REGRIP_THREE_RESUME_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmResume";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL exact persistent checkpoint transfer;legacy sampled-work origin NOT restored;NOT grasp").add<regrip_three_resume::ThreeFilmResumeODE>());}
 }
+#endif

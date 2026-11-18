@@ -1,7 +1,7 @@
 """Read-only full-AD work inventory of actual resumed stages;explicit ledger origin.
 Reuse qualified material observer. Missing root work remains NULL,not heat.
 """
-import argparse,csv,json,shutil
+import argparse,csv,json,shutil,subprocess
 import numpy as np
 from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
@@ -9,9 +9,19 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args();out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py')
  observer=ROOT/'results/autonomous_film_20261118_three_film_actual_work946';proof=json.loads((observer/'summary.json').read_text());binary=observer/'reference'
  if sha(binary)!=proof['binary_sha256']:raise ValueError('qualified read-only observer changed')
- # Every header used by observer is checked against its archived compiled bytes.
- for n,h in proof['sources'].items():
-  if n.endswith('.h') and sha(ROOT/n)!=h:raise ValueError('observer material header changed:'+n)
+ # Canonical compiler closure,not an exemption for an included-file change.
+ # PersistentRows is not included by read-only DrivenPower;new diagnostic hook
+ # there must not invalidate an unrelated immutable observer binary.
+ driver='diagnostics/film_three_finger/DrivenPower.cpp'
+ if sha(ROOT/driver)!=proof['sources'][driver]:raise ValueError('observer driver changed')
+ dependency_text=subprocess.check_output(['g++','-std=c++17','-I/usr/include/eigen3','-MM',driver],cwd=ROOT,text=True);(out/'observer_dependencies.txt').write_text(dependency_text);closure={}
+ for name in dependency_text.replace('\\\n',' ').split(':',1)[1].split():
+  path=(ROOT/name).resolve()
+  if path.is_relative_to(ROOT):
+   relative=str(path.relative_to(ROOT));digest=sha(path)
+   if proof['sources'].get(relative)!=digest:raise ValueError('compiled observer dependency changed:'+relative)
+   closure[relative]=digest
+ if not closure:raise ValueError('empty compiler closure')
  samples=[];macros=[];origin=None;previous=None;provenance=[];fields=[]
  for case in a.cases:
   src=ROOT/'results'/('autonomous_film_'+case);meta=json.loads((src/'summary.json').read_text())
@@ -30,7 +40,7 @@ def main():
    name='end'+str(number);samples.append((name,float(state['time']),state['q'],state['v']));macros.append((state,groups,h));fields.append([f[i] for f in film])
   previous=float(states[-1]['time']),np.fromstring(states[-1]['q'],sep=' '),np.fromstring(states[-1]['v'],sep=' ');provenance.append(dict(case=case,summary_sha256=sha(src/'summary.json'),checkpoint_sha256=sha(src/'input.checkpoint')))
  (out/'samples.txt').write_text(str(len(samples))+'\n'+'\n'.join(name+' '+format(t,'.17g')+' '+q+' '+v for name,t,q,v in samples)+'\n');shutil.copy2(ROOT/'results/autonomous_film_20261118_three_film_first_peak_actual1002/public_mass_reference.txt',out/'mass.txt');run=guarded([binary,out/'mass.txt',out/'samples.txt',out/'observed.csv'],out/'run',120)
- result=dict(status='FAIL',scope='actual saved resumed-stage partial energy/work inventory;NOT full energy/time/grasp certification',observer_binary_sha256=sha(binary),provenance=provenance,run=run,work_origin_s=origin,root_reaction_work=None,legacy_sampled_work='NOT continuous;private state intentionally not reconstructed',prior_interval_evidence=['Campaign1011:first200us','Campaign1007:200us..10ms,overlap must not be double counted'])
+ result=dict(status='FAIL',scope='actual saved resumed-stage partial energy/work inventory;NOT full energy/time/grasp certification',observer_binary_sha256=sha(binary),observer_dependency_closure=closure,provenance=provenance,run=run,work_origin_s=origin,root_reaction_work=None,legacy_sampled_work='NOT continuous;private state intentionally not reconstructed',prior_interval_evidence=['Campaign1011:first200us','Campaign1007:200us..10ms,overlap must not be double counted'])
  if run['exit_code']==0:
   observed={r['sample']:{k:float(v) for k,v in r.items() if k!='sample'} for r in csv.DictReader((out/'observed.csv').open())};keys=('U_skin','U_rails','U_attachment','K_film','K_linear','K_rotation');energy=lambda x:sum(x[k] for k in keys);initial=observed['initial'];tendon=external=damping=normal=field_error=control_error=0.;records=[]
   for i,(state,groups,h) in enumerate(macros):

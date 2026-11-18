@@ -1,5 +1,22 @@
 # Next research checkpoint
 
+## Latest implementation — through1048,project INCOMPLETE
+
+Persistent resume1014/1015/1016 strict1e-12 EXACT;actual C2 Hold reaches20ms
+in1022. Actual Unload200us1024 and100us1033 FAIL:stage position drift and
+new surface contact support.334-bit audits exclude a large geometry roundoff.
+1042/1043 isolated117 Birth/shared6-row impulse kernel qualified;1044 ACTUAL
+SOFA deformed124->117 support migration PASS,q/v/impulse/time EXACT,global
+momentum/whole-stage clearance pass. This releases OLD ROWS,NOT the object.
+1048 actual segmented work/impact inventory PASS consistency,not full energy.
+1047 subsequent ordinary continuation FAILS at another event after23.6ms;
+next actual development is generalized inactive-surface birth/retained-row
+handling,not unchanged long-step retries.1041 time gate remains FAIL;full
+Unload/object release/wrapping/holding/lift/friction/self-contact/full energy
+remain unqualified. Detailed evidence/builds:REGRIP_THREE_FINGER_GRASP_CONTINUATION.md.
+Lower RUNNING/checkpoint sections are historical,not current process claims.
+
+
 ## New persistent continuation checkpoint — through1017
 
 Separate checkpoint/resume owner implemented;actual1014 four-step transfer,

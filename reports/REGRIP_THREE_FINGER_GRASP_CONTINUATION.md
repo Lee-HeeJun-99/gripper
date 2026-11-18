@@ -1,5 +1,120 @@
 # Three-finger actual continuation — 2026-11-18
 
+## Actual support migration implemented — through1048
+
+1042 independent isolated new triangle117 birth PASS. Six old/new rows share
+the same projected mass;plastic impulse retains new117 rows and releases old124
+rows with outgoing normal velocity~+.0201492mm/s,old impulse0. Root time
+23.495650505693598ms,bracket9.31322e-14s. Not a full globally earliest CCD.
+1043 extracted reusable kernel exactly reproduces this reference;old3-row
+J/H match exactly,new6-row directional gap FD7.32e-10mm,H directional relative
+8.81327e-9;world momentum balances meet inherited1e-17Ns/1e-16Nmm s gates.
+
+1044 **actual SOFA** ONE100us deformed contact-support transfer PASS:
+q/v,event time,impulses,quaternion,actual field control all EXACT to independent
+reference under original strict1e-12 API. Whole-stage minimum gap-3.57758e-12mm,
+momentum residual3.63071e-19Ns,vn5.46925e-14mm/s. Global linear balance
+1.91115e-21Ns,angular1.05097e-24Nmm s. New stage journal separates the two
+Lobatto intervals and actual impulse event;weights total100us. Instantaneous
+impulse is not a continuous force. Old rows genuinely separate;the object
+remains in contact with new rows,so this is NOT object release or successful
+Unload. Initial condition is an individually accepted23.4ms prefix of failed
+1033,not a claim that1033's requested horizon completed. Parent failure stays.
+
+1048 read-only actual segmented energy inventory consistency PASS:
+Wt1.03791839116e-6Nmm,Wexternal1.18270777203e-7,Wdamping7.08645143619e-8,
+normal constraint work-1.41849e-22,stable plastic loss4.811702162e-12,
+signed residual-2.59885e-15Nmm. Kinetic subtraction differs from stable loss
+by-1.84999e-20Nmm;NOT extra physical heat. Callback energy error6.78e-20Nmm,
+stage-control error0N. Root work NULL;no whole-energy/time certification.
+Actual graph:results/autonomous_film_20261118_three_film_actual_transfer_work1048/actual_transfer_inventory.png.
+
+1045 actual generic-resume regression after embedded-module guard PASS,
+q/v/time/used stages exact.1046 runner preflight indentation error:SOFA NOT RUN,
+failure.json preserved;import/negative runners corrected and14 new/changed
+Python tools py_compile PASS.1047 actual bridge from transferred checkpoint
+does NOT finish requested4steps:one23.6ms step accepted,then endpoint drift
+rejects. This exposes another contact transition;do not claim persistent
+post-transfer/full Unload PASS. No repeated unmodified long run is justified.
+
+Reuse actual transfer DLL:
+build/three_film_transfer_20261118_three_film_actual_transfer1044/libReGripThreeFilmTransfer.so
+(SHA256940b6cb43e89d00392fcabebb63373a226fab3ef187fdf9d6fc2fdef092741f7).
+Reuse generic checkpoint DLL:
+build/three_film_resume_20261118_three_film_bridge_regression1045/libReGripThreeFilmResume.so.
+Next bottleneck:detect/resolve further inactive-surface births and releases,
+not hardcode only124→117. Validate generalized owner independently before SOFA.
+Full all-pair time1041 remains FAIL;wrapping/holding/lift remain unverified.
+
+## Newest actual checkpoint through1041 — still INCOMPLETE
+
+Actual1022 completes Hold to19.99999999999999ms in106.8482s;minimum
+whole-stage gap-3.49942e-12mm,momentum5.24636e-19Ns,vn1.45484e-14mm/s.
+1021 same-DLL opt-in owner profiling retains exact states/used rows versus
+continuous1002. Inclusive2-step costs:coupled10.1652s,implicit7.7376s,
+selected geometry3.4572s,material force/Hessian1.5498s. These are nested and
+MUST NOT be summed. No speed improvement is claimed.
+
+Actual1024 Unload200us FAILS after accepted23ms,before25ms completion:
+whole-stage clearance gate. The failed process is NOT a completed trajectory.
+Independent1026 cubic numerical-path chain rule on its accepted prefix:
+endpoint reconstruction7.11e-15mm,chain-rule error8.09e-15mm;selected
+features stay124/6 through that prefix.1028/1030 independent334-bit audit
+over ALL960 triangles identifies the discrepancy as stage versus endpoint:
+22.9ms midpoint gap-9.69884e-11mm,23ms endpoint+1.81888e-11mm.
+AD distance value error<=1.42e-14mm. Thus this specific clearance failure is
+real numerical Stage-position drift,not candidate omission or large geometry
+roundoff. It is NOT solved by deleting midpoint clearance checks.
+
+1027 actual regression after permitting explicit100/50us checkpoint grids:
+q/v/time/stages EXACT versus1002,strict1e-12 unchanged.1029/1034 start from
+EXACT SAME complete20ms checkpoint at100/50us and complete20→22ms:
+minimum gaps-1.23279e-12/+2.30216e-12mm. No force/material/control changes.
+Their clocks accumulate,endpoint discrepancy6.94e-17s is recorded.1041 listed
+100→50us pair STILL FAILS:normal constraint-work residual99.99498% relative,
+absolute1.67122e-19Nmm. Motion,separate stored/kinetic energies,force and stage
+tendon work pass0.1% for this pair only;no base-to-quarter/full-cycle PASS.
+Legacy sampled work is NOT continuous across restarts and not substituted.
+
+Actual1033 extended100us Unload FAILS after accepted23.4ms with endpoint
+drift. Independent1036 replay captures REJECTED,NOT COMMITTED trial:
+mid23.45ms triangle124 gap-8.42e-8mm;end23.5ms selected triangle117 gap
++2.498e-7mm. Initial reaction remains positive~1.266e-5N. It is NOT release.
+1036 raw accepted_initial force0 was an unmeasured diagnostic placeholder,
+NOT physical zero reaction;use its rejected_initial computed reaction instead.
+Future driver writes null for this unmeasured field.1037 frozen-triangle
+contrast ran but its initial diagnostic harness did not record the completed
+trial;FAIL preserved. Corrected1039 records same fixed124 branch but whole
+surface gap-8.79934e-8mm:holding old ownership does NOT fix new contact.
+Therefore a new surface/owned-row event must be resolved,not simply more
+unchanged time refinement or a relaxed gap tolerance.1040 actual regression
+after opt-in pre-rejection observer hook again q/v/time/used rows EXACT;
+observer never permits a failed state to commit.
+
+1025 actual10→20ms partial work inventory:Wt2.02742614486e-4Nmm,
+Wexternal1.11798136627e-5,Wdamping5.78768015695e-6;
+signed residual-1.03539e-12Nmm,NOT heat/full energy.1035/1038 reuse the
+immutable read-only material observer with canonical GCC dependency closure;
+new PersistentRows diagnostic hook is proven NOT included by that observer.
+No included file or binary identity exemption.
+
+1031 visualization failed because installed Matplotlib lacks Axes3D;failure
+and OBJ preserved.1032 uses standard orthographic projection of SAME actual
+3D coordinates,scale1,not a fabricated pose. Skin width-mean tip z at20ms
+-0.167364mm,root-to-tip tangent bend1.18514deg;rails about5.80deg.
+These discrete shape metrics do not establish contact coverage or wrapping.
+PNG/OBJ:results/autonomous_film_20261118_three_film_hold_shape1032/.
+Sphere centrez-63.46909358mm,gravity0,NOT lift. Area/pressure/holding load NULL.
+
+Last feature commit before these diagnostics:be34e4639a770bfc03156333e1760f591cda0717.
+New compiled resume DLL1027/1029/1034:
+build/three_film_resume_20261118_three_film_resume_grid1027/libReGripThreeFilmResume.so.
+Latest regression DLL1040:
+build/three_film_resume_20261118_three_film_resume_hook_regression1040/libReGripThreeFilmResume.so.
+Next:isolated triangle117 Contact Birth using original124 persistent branch,
+shared multi-row impulse,then retained-row/release and whole-surface validation.
+This is not a declaration of full production contact completeness or grasp.
+
 Project INCOMPLETE. Measurements below are **actual SOFA** unless explicitly
 identified as read-only mathematical postprocessing. No wrapping,lift,holding
 load,frictional grasp or design superiority certificate is claimed.

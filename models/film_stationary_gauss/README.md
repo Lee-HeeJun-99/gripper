@@ -22,3 +22,22 @@ Output `REGRIP_STATIONARY_GAUSS_PILOT_V1` is a distinct isolated-pilot schema.
 No resume reader is qualified for it yet. Use the qualified stationary FREE
 checkpoint at50ms for independent follow-up,not a silent schema conversion.
 Global time/mesh/energy,recovery,holding and lifting remain unqualified.
+
+## Explicit800us isolated transition
+
+1615/1616 independent800us1/2/4/8/16/32 state/energy comparisons and1617
+all film shape comparisons pass the existing.1% local gate.1615's old scope
+text incorrectly says200us;its span_us800 and endpoint50.8ms are authoritative.
+No historical result was overwritten to repair that label.
+
+`StationaryGaussExpandedPilotODE` restores the original200us checkpoint first,
+then explicitly changes dt to800us at unchanged accumulated time. Physical
+q/v/quaternion remain EXACT;existing public clock traversal checks all11
+contexts. No input state/time/dt/step token is edited to bypass the reader.
+The transition is recorded separately in `.dt_transition.csv`.
+
+Actual1618 endpoint and all film Gauss stages match the independent nominal
+800us reference EXACT;gap lower bound+.289800mm,momentum6.39628e-23Ns.
+Output `REGRIP_STATIONARY_GAUSS_EXPANDED_PILOT_V1` has NO qualified resume
+reader. This remains a ONE-step pilot,not a long-trajectory accuracy/speed or
+energy certificate. A cumulative same-seed window is tested separately.

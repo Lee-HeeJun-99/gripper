@@ -1,4 +1,35 @@
-## Latest routed Hold/API/work checkpoint —2026-11-18
+## Latest actual Hold/Unload and feature-transition checkpoint —2026-11-18
+
+Feature commit before this unit:f2502c2. Actual new-route200us Hold reaches
+19.6ms(1300),Unload21.2ms(1307);1303/1311 API q/v/time/force EXACT.
+1318 separate explicit100us restart21.2→22.8ms preserves ALL physical
+checkpoint tokens except provenance token;1320 API q/v/time/force EXACT
+at8 common endpoints of the accepted prefix of FAILED1317. This does NOT
+make1317's27.6ms horizon or global time/energy/grasp PASS.
+1312 actual/1313 reference longer Unload FAIL endpoint drift;both15 accepted
+states exactly match through24.2ms.1317 half-step reference also FAIL.
+1319 isolated rejected-step diagnostic:triangle124→117 on all3fingers,
+mid gap−1.45847e−9mm,end gap+1.96782e−8mm;rejected state NOT committed.
+1322 constraint-defect bisection prototype FAIL:negative stage reaction
+requires release/active-set law,not clipping.1323 unit-mass circle FAIL
+line-search;separate1324 gram-scale analytic circle PASS,NOT a repair of
+1323.1325 existing FaceEdgeTransfer/new-route integration under study;
+inspect actual process/result,never infer RUNNING from this historical text.
+1309/1315 actual nonlinear force inventory:Skin direct tendon force0,
+attachment net force<3e−20N/net moment<1.86e−18Nmm. At19.6ms Skin tip
+−.117741mm,rail tip−.198934mm,skin root-tip angle.0142212rad;NOT wrapping.
+1314 actual frictionless wrench rank3,body normal Fz5.70371e−6N,
+zero centre torque;NOT holding capacity or12-wrench dynamic test.
+1316 measured stage-work chain0..21.2ms Wt=.000275939839188Nmm,
+signed defect−3.61970e−12Nmm;NOT heat;root workNULL/full energyBLOCKED.
+Latest complete200us checkpoint:results/autonomous_film_20261118_routed_unload_begin1307/three.checkpoint_106.txt.
+Latest complete100us checkpoint:results/autonomous_film_20261118_routed_refined_actual1318/three.checkpoint_122.txt.
+Reuse100us DLL:build/routed_refined_20261118_routed_refined_actual1318/libReGripRoutedRefinedResume.so (e9d31b0aca45895f).
+Next:inspect1325,resolve smooth-face/shared-edge/release transition with
+EXISTING validated branch laws;do not repeat failed long Unload. Wrapping,
+holding,lift,friction,thickness,selfcollision,whole time/energy remain unqualified.
+
+## Previous routed Hold/API/work checkpoint —2026-11-18
 
 Actual quadratic-route3-finger Hold reaches13.2ms (1296), from saved10ms
 via1289/1296;1291/1299 strict same-IVP API q/v/time/normal-force EXACT.

@@ -5,7 +5,7 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--checkpoint-step',type=int,required=True);p.add_argument('--steps',type=int,choices=(2,4,8),default=4);p.add_argument('--end-time',type=float,default=.01);p.add_argument('--compare-peak',action='store_true');p.add_argument('--reuse-journal-rows',action='store_true');p.add_argument('--owner-profile',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);m=json.loads((src/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--checkpoint-step',type=int,required=True);p.add_argument('--steps',type=int,choices=(2,4,8,16,32),default=4);p.add_argument('--end-time',type=float,default=.01);p.add_argument('--compare-peak',action='store_true');p.add_argument('--reuse-journal-rows',action='store_true');p.add_argument('--owner-profile',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);m=json.loads((src/'summary.json').read_text())
  if m['status'] not in ('PASS','EXPERIMENTAL') or m['process']['exit_code'] or m['sofa_errors']:raise ValueError('qualified actual routed resume parent required')
  for f,d in m['raw_hashes'].items():
   if sha(src/f)!=d:raise ValueError('actual resume evidence changed')

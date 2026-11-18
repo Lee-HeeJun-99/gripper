@@ -1,6 +1,55 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
-## Latest continuation:1282–1299
+## Actual Hold/Unload,nonlinear transmission and branch diagnosis:1300–1326
+
+1300 actual200us32-step13.2→19.6ms completes under measured277.6s forecast;
+1301 same-IVP reference and1303 strict API q/v/time/normal-force EXACT.
+1307 actual19.6→21.2ms C2 Unload begins;1310/1311 same strict identity,
+endpoint T=9.856811008e−5N/rail from the ORIGINAL compiled C2 function.
+No prescribed control equality is interpreted as mechanical equalization.
+
+1302 observer compile FAIL (std::array addition);1304 read-only observer
+FAIL exposed absolute-coordinate/displacement-input mismatch,NOT a solver
+defect. Both preserved. Correct1309 uses actual displacement DOFs and
+actual rest+u for moment inventory.96 actual endpoint samples:bond net
+force<3.0e−20N,moment<1.61e−18Nmm;Skin direct cable force EXACT0.
+1315 Unload inventory adds actual Field cable length equality EXACT.
+At19.6ms finger0:rail75 tendonFz−1.89903e−5N,skin75 bondFz+5.50976e−5N,
+skin75 meanVz+.86647mm/s,rail75 meanVz+12.1164mm/s;power/force directions
+reflect nonlinear lag and elastic storage,not zero control authority.
+Skin mean tip−.117741mm,centre tip−.198934mm,root-tip angle.0142212rad;
+rail mean tip−.198934mm. These are actual small motions,NOT wrapping.
+1306 actual scale1 OBJ/PNG;1314 force reconstruction:bodyFz+5.70371e−6N,
+zero sphere-centre normal torque,rank3. External−.001N/gravity0 remains;
+100g Earth weight.981N is an unrun reference,NOT certified holding load.
+
+1316 connects measured0..21.2ms stage work through EXACT physical q/v/time
+bridges:Wt=.000275939839188Nmm,D=8.54354e−6Nmm,impact9.38173e−10Nmm,
+signed defect−3.61970e−12Nmm. Root workNULL/private sampled-workexcluded.
+
+1312 actual longer Unload and1313 reference both FAIL at attempted24.4ms;
+their15accepted states through24.2ms match EXACT.1317 same-IVP half-step
+reference reduces preceding Gap drift but still FAILs near that transition.
+1319 minimal rejected-step observer (no rejected commit):selected triangle
+124/face6→117/face6 on all3fingers;mid gap−1.45847e−9mm,end+1.96782e−8mm.
+The velocity constraint remains~1e−14mm/s while geometric position drifts.
+This indicates a feature-transition issue;it is not proof that ALL time
+errors have one cause.1322 separate constraint-defect local bisection uses
+unchanged force/criteria,then encounters a negative stage reaction and
+correctly FAILs rather than clipping or projecting. Existing FaceEdgeTransfer
+is being connected in1325;its actual result must be inspected separately.
+
+1318 separate public-context100us restart BEFORE animation preserves q/v,
+quaternion,mass/root/contact payload;only a COPY's provenance token changes.
+All11 Context clocks/dt change together;one-step Lobatto has no BDF history.
+Actual16microsteps complete21.2..22.8ms.1320 q/v/time/force EXACT at8common
+endpoints of FAILED1317's accepted prefix. Prefix proof is NOT completed
+27.6ms time convergence. New HALF_V1 schema prevents silent dt mixing.
+1323 unit-mass analytic circle FAILs existing absolute momentum/line-search;
+separate1324 gram-scale analogue PASS does NOT erase unit-mass failure or
+certify general mass scaling. No actual film stiffness,mass or tolerance changed.
+
+## Previous continuation:1282–1299
 
 Persistent new-route actual Hold now reaches13.2ms,checkpoint66 in1296.
 1289/1296 run the unchanged .0001N/rail C2 Hold under gravity0,Fz−.001N;

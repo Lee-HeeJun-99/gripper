@@ -1,4 +1,32 @@
-## Latest actual Hold/Unload and feature-transition checkpoint —2026-11-18
+## Latest actual routed simultaneous birth/impact —2026-11-18
+
+Prior feature commit:d095b67.1325 FaceEdgeTransfer FAIL identified an
+independent surface birth BEFORE face-edge boundary.1327 old detected
+birth trial FAILs when the full bracketing trial leaves the old face.
+Separate1328 analytically continues ONLY root-bracketing trials and
+requires ALL accepted pre-impact stages strictly inside the physical face.
+No force/tolerance/state projection change.1328 isolated transfer PASS.
+1329 ACTUAL SOFA same kernel:24.237106380844455ms event,6owned rows,
+3new active rows;old124 release/new117 contact,not full object ungrasp.
+q/v/time/impulse EXACT vs reference. Minimum gap−1.45661e−13mm,
+momentum5.88299e−21Ns,loss1.13763e−13Nmm;NOT wrapping/lift/full time.
+Latest complete actual event checkpoint:results/autonomous_film_20261118_routed_birth_actual1329/three.checkpoint_122.txt at24.4ms.
+DLL:build/routed_birth_20261118_routed_birth_actual1329/libReGripThreeFilmTransfer.so (593fea50b6084e69).
+1330 dependency preflight FAIL(path canonicalization),physics NOT RUN;
+fixed1332 uses unchanged persistent DLL only after compiled .o.d model
+dependency parity.1331 reference/1332 actual longer continuation FAIL
+next geometric drift;4 accepted states through25.2ms match EXACT in1333.
+Do NOT relabel that failed26ms horizon as PASS.1334 next FaceEdge reference
+must be inspected by actual process/result;its inherited24.2..24.4ms label
+is stale metadata for supplied25.2ms checkpoint,NOT the physical clock.
+Live runner now records source time/dt explicitly.1335 scale1 actual24.4ms
+PNG/OBJ generated,contact area/pressure/holding remain NULL.
+Next:resolve new supplied25.2ms feature/release event with existing laws;
+do not rerun failed long continuation or infer whole-cycle success.
+No wrapping,holding,lift,friction,thickness,selfcollision,whole time/energy,
+mechanical equalizer or final design superiority is certified.
+
+## Previous actual Hold/Unload and feature-transition checkpoint —2026-11-18
 
 Feature commit before this unit:f2502c2. Actual new-route200us Hold reaches
 19.6ms(1300),Unload21.2ms(1307);1303/1311 API q/v/time/force EXACT.

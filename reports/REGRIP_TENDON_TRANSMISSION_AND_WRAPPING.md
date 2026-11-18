@@ -1,6 +1,40 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
-## Actual Hold/Unload,nonlinear transmission and branch diagnosis:1300–1326
+## Actual routed independent-contact birth:1327–1335
+
+The124→117 switch was NOT merely an interchangeable triangle alias.
+1325 existing FaceEdgeTransfer correctly rejected an independent birth
+before the face-edge boundary.1327 existing detected-birth bracketing
+failed because its FULL trial left the old face before root isolation.
+New1328 uses existing exact physical feature6 expression analytically
+continued ONLY for root bracketing. ALL accepted pre-event stages must
+still have strictly positive physical-face barycentric coordinates. No
+outside-face accepted force,normal clipping,velocity reset or gap projection.
+Existing six-row Shared Mass/ManyRowImpact and post-contact law are reused.
+
+1328 independent root:24.237106380844455ms,width9.31323e−14s,6rows/3retained,
+minimum stage gap−1.45661e−13mm,linear balance5.88299e−21Ns,angular balance
+1.08660e−25Nmm·s,impact loss1.13763088e−13Nmm. This externally isolated
+symmetric branch is NOT global earliest CCD or general active-set contact.
+1329 actual SOFA binds all routed forces/fields and this event header;
+q/v/clock/event time/impulse EXACT versus1328. Public q/v/quaternion/mass/
+root/contact payload is restored;only a copied provenance token changes.
+New explicit200us24.2ms fixture replaces an old100us fixture ONLY in a
+separate generated archive;original models and SDK remain unchanged.
+Actual24.4ms checkpoint122 and scale1 actual PNG/OBJ1335 are preserved.
+Old-row release is NOT complete object release or lifting success.
+
+1330 preflight FAIL:noncanonical .. dependency key;NO physics child ran.
+1332 handoff to old persistent DLL78ec827b uses SHA parity of actual .o.d
+compiled model dependencies against new event archive,not broad assumptions
+about all unused headers. Actual/reference longer26ms trials FAIL next
+endpoint drift.1333 proves ONLY4accepted states through25.2ms q/v/time
+EXACT;failed horizons remain FAIL.1334 tests existing FaceEdgeTransfer at
+that new supplied checkpoint. Its old hardcoded24.2..24.4ms summary label
+is a METADATA defect,not the actual25.2ms input clock;future runner records
+header time/dt explicitly. Inspect final result before any success claim.
+
+## Previous Hold/Unload,nonlinear transmission and branch diagnosis:1300–1326
 
 1300 actual200us32-step13.2→19.6ms completes under measured277.6s forecast;
 1301 same-IVP reference and1303 strict API q/v/time/normal-force EXACT.

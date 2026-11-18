@@ -1,4 +1,105 @@
-## Verified stationary-origin C2 unloading reaches30ms —2026-11-19
+## Cumulative recovery FAIL and exact parallel scheduling PASS —2026-11-19
+
+Actual stationary wire-driven cycle remains qualified only to50ms;isolated
+Gauss actual pilot reaches50.8ms. No wrapping/holding/lift or full recovery PASS.
+1619 baseline cumulative window fails Newton line search.1620 passive trace
+locates residual stagnation near1e-18 despite linear residual near1e-33.
+1621/1622/1623 isolate temporal summation alternatives,without changing tolerance,
+AD/material/damping.1626 both-sums candidate passes existing directional FD.
+1624 both-sums800/400/200us completes50→56.4ms but film velocity differs up to
+.365871%;1629 at200/100/50us still fails .104112% and .101918% pairs.
+Signed partial-defect relative time also FAILS;absolute defect is NOT heat.
+1624/1625 helper_sha256 was taken after execution while helper was edited;
+their archived generated C++/compiled model hashes remain authoritative.
+1629 snapshots and hashes the helper BEFORE compilation.
+
+1630 independent separated Gauss scheduling is EXACT.1631 actual SOFA six
+alternating1/3-worker runs use ONE binary,immutable numerical snapshots and
+serial observer/reduction. Physical CSVs and full checkpoint bytes EXACT,
+also actual q/v/stage-force/clearance CSVs EXACT versus qualified1618.
+Median process wall1.67018→1.16878s (ratio.699791);inclusive kernel
+.979441→.471747s (ratio.481650).Do not add nested timings or combine unrelated
+optimization percentages. This is NOT contact parallelism or time certification.
+Build:build/stationary_gauss_parallel_20261119_stationary_parallel_actual1631/
+libReGripStationaryGaussParallelPilot.so
+SHA256 db160df7472247f5a29d2b77c59f54a9eeba1866f505ff0fdc813e254f189ebc.
+Its output is a distinct isolated pilot schema,NOT a qualified reusable resume.
+
+1627 actual49.4→50ms wire-segment screen agrees with ForceField length to
+2.84217e-14mm;minimum wire-centreline R30 sphere gap+.464539mm.
+Wire radius and guide solids NULL;self-collision/continuous wire clearance NOT RUN.
+1628 REST-basis projection supports investigating high-frequency velocity phase
+error,but is NOT a modal causal proof for nonlinear recovery.
+
+Reusable seed remains results/autonomous_film_20261119_stationary_free_to50_chain1596_part12/three.checkpoint_250.txt.
+Next:bounded fine-window refinement using exact parallel kernel;keep ALL prior
+time failures and whole-energy/root-work/friction/self-collision gates.
+Reproduce scheduling with:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_stationary_gauss_parallel_sofa.py --tag UNIQUE_ACTUAL_PARALLEL`
+No background continuation service is running or promised.
+
+## Stationary wire-driven cycle to50ms;actual Gauss pilot50.2ms —2026-11-19
+
+Latest verified functional commit da3988ad6c462d11659c33fd85ab0e4ba6f0a116.
+1616 extended800us state/energy pairs PASS;1617 film/curvature all-pairs PASS,
+maximum relative.09115055%.1618 ACTUAL explicit200→800us one-step transition
+PASS:restored physical q/v/quaternion unchanged,11 clocks verified;accepted
+q/v and ALL Gauss film stage forces/states EXACT against independent nominal
+800us reference. End .050799999999999811s,gap lower bound+.289799852mm,
+momentum6.39628e−23Ns. Original checkpoint dt/time/step tokens are NOT edited.
+Build `build/stationary_gauss_20261119_stationary_gauss800_actual1618/libReGripStationaryGaussPilot.so`,
+SHAc015160274aad8017e2d93cf23050f3a3a2251259c572cf0a4f9a50f2ac016eb.
+Pilot output step251 is NOT interchangeable with1614 step251:distinct schema,
+dt and absolute time. No pilot resume reader is qualified. Reusable seed remains
+stationary FREE50ms step250.1619 tests cumulative50→56.4ms at common800us
+epochs,including damping work and signed partial defect;inspect completed
+summary before approving any longer window. Full trajectory/energy/grasp NOT PASS.
+
+Prior functional commit c803a7556ee8b7461937cd4ae5cd89aab66038cb
+(previous181229f strict deformed release/unload).1596 FOREGROUND chain completed:
+all13 segments to .049999999999999808s PASS,not a continuing background service.
+Every segment checks actual q/v,midpoint stages,C2 tension,physical clock and
+checkpoint identity.1591 suffix replay remains EXACT. No incoming-body splice.
+
+Latest REUSABLE stationary FREE checkpoint:
+`results/autonomous_film_20261119_stationary_free_to50_chain1596_part12/three.checkpoint_250.txt`.
+Qualified FREE provider20261119_stationary_free_actual1590,
+`build/lateral_free_20261119_stationary_free_actual1590/libReGripStationaryRelease.so`,
+SHAea8283ac84dd0538e30177bc573f8bc4e6b2715b29f4afbd549093404d6b7e4e.
+50ms Skin mean tip−.384746mm,centre tip−.584968mm,Rail tips−.228824/−.233135mm,
+maximum film speed47.3383mm/s.1598/1599 show delayed Skin deformation,
+NOT completed recovery/wrapping/holding/lift. Scene gravity/external force0.
+
+1614 ACTUAL isolated Gauss-film/midpoint-body50→50.2ms pilot PASS:
+q/v and ALL film Gauss q/v/force stages EXACT vs same-nominal-dt reference;
+numerical-path gap lower bound+.318303mm,momentum residual6.06522e−23Ns.
+Build `build/stationary_gauss_20261119_stationary_gauss_actual1614/libReGripStationaryGaussPilot.so`,
+SHA5c71e3a999f81fa10d4362091441de467a76dd938ca1033972cb02058335ebae.
+Output REGRIP_STATIONARY_GAUSS_PILOT_V1 is NOT a qualified resume schema.
+Use the reusable50ms FREE seed for follow-up,not a silent pilot conversion.
+1612 strict preflight rejection preserved:old refinement used endpoint-minus-clock,
+1.2e−18s shorter than nominal200us;1614 SAME nominal-dt observer ON/OFF EXACT.
+
+1597 actual release partial energy inventory PASS,not whole energy certification.
+1602 frozen linear reference:actual projected mass EXACT;linear velocity time
+error still exceeds.1%;nonlinear/contact differences are NOT isolated solver errors.
+1603/1605 limited local1/2/4 midpoint observables PASS,1604/1607 extended32 FAIL:
+sum of reduced residual norms2.53917e−17Ns>1e−17;clock/gap PASS,NOT OS exhaustion.
+1608/1611 Gauss local1..32 state/energy/shape comparisons PASS;NOT global time.
+1615 initial800us Gauss probe PASS;its old scope text incorrectly says200us:
+span_us800 and endpoint50.8ms are authoritative.1616 extended800us is a new
+trial;inspect completed summary before accepting any step expansion.
+1610 force-only ASSEMBLY kernel is bit-exact,7.82% faster in that microbenchmark;
+NOT integrated/end-to-end gain,original AD2 unchanged.1609 compile FAIL preserved.
+1613 is a conditional energy scale,NOT actual gravity/lift or capacity evaluation.
+
+Next:finish all-pair800us qualification before any dt-transition owner;retain
+strict1e−12 API/.1% time/1% mesh-history gates. Independent exact assembly A/B
+is available but not adopted yet. Whole energy,global time/mesh,friction,
+self-collision,thickness,equalizer,holding/lift/12-wrench/Optuna remain unqualified.
+No final structure selected. No OS/session exhaustion or automatic restart claimed.
+
+## Historical checkpoint:stationary C2 unloading30ms —2026-11-19
 
 1587 actual face release PASS;1590/1592/1594/1595 actual separated continuation
 reaches .029999999999999929s with independent q/v,ALL midpoint stages and actual

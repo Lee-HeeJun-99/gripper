@@ -36,9 +36,11 @@ public:
  }
 };
 }
+#ifndef REGRIP_STATIONARY_GAUSS_EMBEDDED
 void registerFilmLateralField(sofa::core::ObjectFactory*);
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripStationaryGaussPilot";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){registerFilmLateralField(f);f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL isolated50ms separated Gauss film pilot;NOT whole time/energy/grasp").add<regrip_three_resume::StationaryGaussPilotODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL explicit200→800us one-step transition after exact checkpoint restore;NOT global time/grasp").add<regrip_three_resume::StationaryGaussExpandedPilotODE>());}
 }
+#endif

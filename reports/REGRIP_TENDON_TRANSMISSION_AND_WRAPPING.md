@@ -1,5 +1,152 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Cumulative recovery FAIL and exact parallel scheduling PASS —2026-11-19
+
+Actual stationary wire-driven cycle remains qualified only to50ms;isolated
+Gauss actual pilot reaches50.8ms. No wrapping/holding/lift or full recovery PASS.
+1619 baseline cumulative window fails Newton line search.1620 passive trace
+locates residual stagnation near1e-18 despite linear residual near1e-33.
+1621/1622/1623 isolate temporal summation alternatives,without changing tolerance,
+AD/material/damping.1626 both-sums candidate passes existing directional FD.
+1624 both-sums800/400/200us completes50→56.4ms but film velocity differs up to
+.365871%;1629 at200/100/50us still fails .104112% and .101918% pairs.
+Signed partial-defect relative time also FAILS;absolute defect is NOT heat.
+1624/1625 helper_sha256 was taken after execution while helper was edited;
+their archived generated C++/compiled model hashes remain authoritative.
+1629 snapshots and hashes the helper BEFORE compilation.
+
+1630 independent separated Gauss scheduling is EXACT.1631 actual SOFA six
+alternating1/3-worker runs use ONE binary,immutable numerical snapshots and
+serial observer/reduction. Physical CSVs and full checkpoint bytes EXACT,
+also actual q/v/stage-force/clearance CSVs EXACT versus qualified1618.
+Median process wall1.67018→1.16878s (ratio.699791);inclusive kernel
+.979441→.471747s (ratio.481650).Do not add nested timings or combine unrelated
+optimization percentages. This is NOT contact parallelism or time certification.
+Build:build/stationary_gauss_parallel_20261119_stationary_parallel_actual1631/
+libReGripStationaryGaussParallelPilot.so
+SHA256 db160df7472247f5a29d2b77c59f54a9eeba1866f505ff0fdc813e254f189ebc.
+Its output is a distinct isolated pilot schema,NOT a qualified reusable resume.
+
+1627 actual49.4→50ms wire-segment screen agrees with ForceField length to
+2.84217e-14mm;minimum wire-centreline R30 sphere gap+.464539mm.
+Wire radius and guide solids NULL;self-collision/continuous wire clearance NOT RUN.
+1628 REST-basis projection supports investigating high-frequency velocity phase
+error,but is NOT a modal causal proof for nonlinear recovery.
+
+Reusable seed remains results/autonomous_film_20261119_stationary_free_to50_chain1596_part12/three.checkpoint_250.txt.
+Next:bounded fine-window refinement using exact parallel kernel;keep ALL prior
+time failures and whole-energy/root-work/friction/self-collision gates.
+Reproduce scheduling with:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_stationary_gauss_parallel_sofa.py --tag UNIQUE_ACTUAL_PARALLEL`
+No background continuation service is running or promised.
+
+## Actual stationary cycle50ms and measured numerical follow-up —2026-11-19
+
+Newest functional commit da3988ad6c462d11659c33fd85ab0e4ba6f0a116 adds the
+explicit200→800us SOFA pilot.1616/1617 local all-pair state/energy/shape gates
+PASS,maximum.09115055%.1618 actual transition preserves physical q/v/quaternion
+EXACT and checks all11 context clocks. Actual50.8ms q/v/film Gauss stages EXACT;
+numerical path gap lower bound+.2897998522532316mm,momentum6.39628e−23Ns.
+No input checkpoint dt/time/step token is changed;transition is explicit runtime
+behavior recorded in CSV. This is NOT global time/energy or speed certification.
+Output Expanded Pilot step251 has dt800us,time50.8ms and distinct schema;
+do not confuse it with200us Pilot step251 at50.2ms. Neither has a qualified
+resume reader. Continue independent work from actual stationary FREE50ms.
+1619 evaluates cumulative6.4ms at shared800us epochs with core energies,
+curvature,damping work and signed partial defect;do not infer its result from
+the one-interval PASS. Previous failures and smaller-interval PASS remain.
+
+Functional commit c803a7556ee8b7461937cd4ae5cd89aab66038cb.
+1596 completes the foreground13-segment30→50ms continuation with all
+independent midpoint stages,q/v,control,clock and checkpoint links checked.
+Latest reusable FREE seed is1596_part12/three.checkpoint_250.txt;
+provider1590 DLL SHAea8283ac84dd0538e30177bc573f8bc4e6b2715b29f4afbd549093404d6b7e4e.
+This is the stationary initial-object,zero force/zero gravity IVP,not incoming
+body data. Contact occurred20.36487ms,additional impact22.62315ms,release
+STAGES26.8718ms,unload30ms,free motion to50ms. No wrap/hold/lift certification.
+
+| Actual50ms representative finger | Value |
+|---|---:|
+| Applied tension per rail,N |0|
+| Width-mean Skin Tip local-z,mm |−.3847458999656071|
+| Centre Skin Tip local-z,mm |−.5849675610511983|
+| Left/Right Rail Tip local-z,mm |−.22882423482161054 /−.23313470618264598|
+| Skin maximum discrete mean-line curvature,1/mm |.005073366162106307|
+| Left Rail maximum curvature,1/mm |.006496538911613839|
+| Skin tip width warp,mm |.3713338472211487|
+| Skin/Rail75%-station mean local-vz,mm/s |−4.982946876963949 /−4.481188584054683|
+| Maximum actual film speed,mm/s |47.338281595870058|
+
+Rails relax while Skin deformation still grows after unloading;the actual
+nonlinear delayed transmission is nonzero. This does NOT prove eventual
+wrapping or full recovery.1598 response.csv and1599 actual_geometry_curvature.png
+use actual stored states,scale1,force0/gravity0;colors are finger IDs,not pressure.
+Area/pressure/holding load/root work remain NULL. No final design is selected.
+
+1597 release26.8→27ms actual-stage partial inventory:
+260 weighted stages (3 Lobatto,256 RK,1 free midpoint),actual used weights sum
+.0002000000000000004s vs clock duration.0001999999999999988s (floating sums
+recorded,not forced equal).Field stored/K agreement5.42101e−20Nmm.
+Wt−1.533312629107409e−7Nmm,normal constraint work−1.813099614176964e−26Nmm,
+Rayleigh loss6.410347334601792e−8Nmm,ΔU8.302447163344943e−7Nmm,
+ΔK−1.0476802640016557e−6Nmm,signed partial defect−8.114104025677058e−13Nmm.
+No impact impulse occurs in this declared release composition;root work NULL.
+The defect is NOT heat,not whole energy PASS,and not previous cumulative work.
+
+1600 frozen-response export KeyError FAIL preserved.1601/1602 independently
+integrate the REST frozen linear system with matrix exponentials under the
+existing compiled C2 polynomial;M is EXACT actual public projected M.
+Compiled-control polynomial discrepancy1.66230e−19N,exponential split-state
+discrepancy9.59519e−17 modal units,eigen residual9.30876e−16.
+Frozen linear midpoint vs continuous velocity differences:10ms.11936%,
+20ms.22386%,30ms.55644%,50ms.58518% (existing.1% time gate NOT met).
+Actual nonlinear vs frozen-continuous10ms q/v differences3.7788%/6.0134%;
+50ms30.3161%/36.0658%. Nonlinear force/tangent evolution,contact and numerical
+errors differ;do not attribute these differences solely to physics or solver.
+The frozen model is NOT a prediction of nonlinear wrap/recovery completion.
+
+1603/1605 limited50→50.2ms midpoint1/2/4 energy/state/shape comparisons PASS;
+nonmonotone velocity refinement motivated independent extended32 trial1604.
+1607 passive trace isolates its FAIL:clock defect0,gap+.327772mm,
+sum of substep residual norms2.5391661105490122e−17Ns>1e−17.
+This is a conservative summed-norm metric failure,NOT proof of the same-sized
+global vector momentum defect or OS resource exhaustion. Gate unchanged.
+
+1606/1608 reuse the EXISTING Gauss4 film kernel (body midpoint retained).
+All local1/2/4/8/16/32 state/energy pairs PASS;1611 all local shape pairs PASS,
+maximum relative.0680828%. Initial7-substep cost6.117s vs midpoint4.343s,
+so Gauss is NOT a demonstrated speedup at equal h.1608 extended cost49.024s.
+1614 ACTUAL50→50.2ms q/v and all film Gauss force/q/v stages EXACT;
+momentum6.06522e−23Ns,numerical-path gap lower bound+.318302829mm.
+1612 preflight FAIL preserved because nominal h and endpoint-minus-clock were
+incorrectly compared as bit-identical.1614 validates observer ON/OFF at SAME
+nominal h EXACT;cross-duration max velocity difference9.61751e−11mm/s is
+reported separately,not hidden by relaxing the1e−12 actual API gate.
+Pilot output has a new schema and NO qualified resume reader;do not splice it.
+1615 first800us probe PASS but old scope label incorrectly says200us;
+span_us800/end50.8ms are authoritative.1616 extended800us must complete before
+any dt expansion is considered;no large step has yet been committed in SOFA.
+
+1610 tests unchanged AD2 with unused GLOBAL Hessian assembly skipped.
+Force bits and subsequent full Hessians EXACT;12-query kernel totals
+.921053s/.848999s,7.82% reduction,NOT end-to-end SOFA speedup.
+1609 Element-namespace compile FAIL preserved. Candidate not integrated;
+same-binary actual state/force/energy/runtime A/B still required.
+
+1613 conditional scale (NOT a lifting test):actual public body mass.1kg,
+assumed comparison gravity9.81m/s² gives.981N. A hypothetical1mm rise needs
+.981Nmm. Measured snapshot film stored+K plus rigid K is.0003443299763Nmm.
+Only IF inventory is complete and perfectly convertible with no additional
+input/losses does that correspond to.000350999mm rise. At recorded100μN/rail,
+six rails would need at least1635mm mean positive shortening for that ideal
+1mm energy. This is NOT a measured actuator stroke/capacity bound;real actuator
+and root work remain unknown. The tiny research input must not be presented
+as a practical100g lifting design or corrected by fictitious energy/force.
+
+Next priorities:complete measured800us all-pair check;only then explicitly
+validate a dt-transition owner. Continue structural/control comparisons without
+claiming global time/energy or final grasp PASS. Baseline design is preserved.
+
 ## Actual stationary-origin26.8ms geometry and transmission —2026-11-19
 
 Release refinement evidence (not yet whole time certification):

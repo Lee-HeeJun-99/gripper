@@ -1,4 +1,94 @@
-## Latest actual release and outboard-route comparison —2026-11-18
+## Current lateral transmission/contact qualification —2026-11-18
+
+Feature c369746 binds SAME objective6mm lateral cable to actual Field,
+implicit force/tangent and active shared event path.1416 THREE real films
+plus FREE Rigid3 reach10ms C2 peak,actual q/v/impulse/time EXACT to reference.
+1420 persistent replay and1422/1426 transfers retain exact physical state,
+quaternion/public clock/root/mass ownership.1428 actual Hold to
+.011600000000000004s;1430 strict API comparison PASS:q/v/force/control error0,
+stored/kinetic inventory difference4.7434e-20Nmm.
+Gap minimum−3.62377e-13mm,momentum2.04578e-19Ns.
+This is NOT actual holding capacity or wrapping certification.
+Latest lateral checkpoint:
+results/autonomous_film_20261118_lateral_hold_short1428/three.checkpoint_58.txt
+Build:build/routed_resume_20261118_lateral_resume1420/libReGripThreeFilmResume.so
+SHA526872e0d040f77b37b5f950c79b24dfc94d5b5cb9033311a1253ef395fb3dc3.
+Prior lateral stage-work origin NULL;never splice quadratic-route work.
+Actual scale1 geometry:results/autonomous_film_20261118_lateral_coupled_shape1425/.
+
+1419 frozen REST actual-mass basis has lowest period5.297s,but is NOT an
+actual nonlinear completion-time estimate.1427 complete-basis reconstruction
+of actual50ms motion is exact;fast tip−.743267mm vs frozen-static−41.5368mm.
+Actual response still includes positive75mm skin arch.1417 lower-load static
+witness passes residual at9.375e-5N,but full-load1374/1376 FAIL remains;
+virtual object penetration means static FREE branch is not contact solution.
+
+1421/1423/1424 ACTUAL saved-state energy decomposition:100/50/25us cumulative
+signed defects2.85848e-10/7.12760e-11/1.78801e-11Nmm are dominated by
+potential-chord single-midpoint quadrature,not momentum/cancellation.
+Momentum-energy terms~1e-19Nmm,chord4/8-point diagnostic errors~1e-18Nmm.
+Diagnostic quadrature does NOT alter physical forces or time integration.
+1411 relative-defect time FAIL remains FAIL;root work NULL,whole energy BLOCKED.
+Slow40ms-ramp1404 is a DIFFERENT C2 input;less arch AND less bending,not
+proven superior wrapping.1418 corrected unequal-axis chart captions preserve
+original1406 evidence and explicitly report geometric exaggeration.
+
+1431/1432 isolated quarter-guide profile [5.5,5,4.5,5,5.5]mm plus same6mm
+outboard passes independent FD/objectivity/zero-profile parity. Initial wire
+centreline gap+.366772mm,core unchanged,hardware mass/finite-wire clearance
+unknown. Actual profile dynamics NOT RUN until separately qualified build.
+No final grasp,lift,friction,selfcollision,full thickness/full time/mesh/energy,
+mechanical equalizer,12-Wrench or Optuna certification.
+
+Exact next bounded lateral continuation (new unique tag):
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_routed_resume_continue.py --tag UNIQUE --parent 20261118_lateral_hold_short1428 --checkpoint-step 58 --steps 8 --end-time .013200000000000008 --reuse-journal-rows
+$PY tools/film_routed_hold_reference.py --tag UNIQUE_REF --parent 20261118_lateral_hold_short1428 --checkpoint-step 58 --qualification 20261118_lateral_hold_api1430 --reuse 20261118_lateral_hold_reference1429
+$PY tools/film_routed_hold_api.py --tag UNIQUE_AUDIT --case UNIQUE --reference UNIQUE_REF
+Do not extrapolate isolated/free trajectories into object holding.
+
+## Previous actual quadratic-route FREE continuation to50ms —2026-11-18
+
+Feature commit:defd292(strict rotating numerical-path exclusion/resume).
+1391 completes original C2 Unload at accumulated.02999999999999993s.
+1392 separate FREE-only endpoint50ms build changes ONLY the virtual horizon
+limit,not physical force/control or accepted step counter.1393 actual to31.6ms;
+1395 repeat-resume q/v,ALL stages and physical checkpoint tokens EXACT.
+1396 twelve bounded segments reaches.04999999999999981s;1399 actual scale1
+shape,1403 ALL-join audit PASS:all q/v/time/mass/root/quaternion bridges,
+ForceField input0 difference,rest reconstruction7.11e-15mm.
+This is NOT complete recovery:skin mean tip−.1623459mm,maxspeed42.5619mm/s,
+body vz−1.379764mm/s. All actual tendon inputs zero after30ms;no lift claim.
+Signed31.6..50ms inventory defect3.3253e-8Nmm is NOT heat or whole energy PASS.
+Latest complete checkpoint:
+results/autonomous_film_20261118_routed_free_to50_chain1396_part11/three.checkpoint_250.txt
+Build:build/routed_free_window_20261118_routed_free_window1392/libReGripThreeFilmRelease.so
+SHA2561b9e370100e260ad759d40eca432b59a8b4793fcd268861db6375d63c67b5024.
+Original-route44.4ms and new quadratic-route50ms are different histories.
+
+Lateral6mm route:1363/1372 actual50ms base/half PASS execution/API only;
+1384 ALL epochs FAIL centre-mid z20.8ms .121871773% (abs1.25791e-11mm).
+1388 local0..3.2ms ALL3pairs PASS max.03712239%,not50ms.
+1386 quarter50ms forecast529.913s>480s:policy BLOCKED,not OS exhaustion.
+1374/1376 static continuation FAIL final1e-12N force gate/budget.
+1394/1397 actual Gauss-stage cable-work inventories measured separately,
+NOT matched work or whole energy. Slow40ms C2 ramp is a DIFFERENT physical
+input:1398 separate build/API,1400/1401 short actual PASS,1404 full50ms
+must be inspected by completed result/process before any success claim.
+No final wrapping,holding,gravity lift,friction,selfcollision,full thickness,
+full time/mesh/energy,mechanical equalizer,12-Wrench or Grasp Optuna certified.
+
+Actual images:
+results/autonomous_film_20261118_routed_recovery_shape1399/actual_geometry_curvature.png
+results/autonomous_film_20261118_routed_recovery_audit1403/actual_recovery_inventory.png
+Reproduce a NEW same-state short suffix audit,not a historical rerun:
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_routed_free_continue.py --tag UNIQUE --provider 20261118_routed_free_window1392 --parent 20261118_routed_free_to50_chain1396_part11 --checkpoint-step 248 --steps 2 --compare 20261118_routed_free_to50_chain1396_part11
+Next:inspect1404 and compare same-core/Tmax10vs40ms C2 response,then qualify
+control/time/work separately. Do not extend beyond compiled50ms window blindly.
+
+
+## Previous actual release and outboard-route comparison —2026-11-18
 
 Feature commits:df6748f exact-query reuse;60a0341 edge resume;
 32849a7 bounded actual release;d766032 outboard route.

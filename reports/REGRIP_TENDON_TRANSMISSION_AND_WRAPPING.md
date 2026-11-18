@@ -1,5 +1,107 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Current lateral transmission/contact qualification —2026-11-18
+
+Feature c369746 binds SAME objective6mm lateral cable to actual Field,
+implicit force/tangent and active shared event path.1416 THREE real films
+plus FREE Rigid3 reach10ms C2 peak,actual q/v/impulse/time EXACT to reference.
+1420 persistent replay and1422/1426 transfers retain exact physical state,
+quaternion/public clock/root/mass ownership.1428 actual Hold to
+.011600000000000004s;1430 strict API comparison PASS:q/v/force/control error0,
+stored/kinetic inventory difference4.7434e-20Nmm.
+Gap minimum−3.62377e-13mm,momentum2.04578e-19Ns.
+This is NOT actual holding capacity or wrapping certification.
+Latest lateral checkpoint:
+results/autonomous_film_20261118_lateral_hold_short1428/three.checkpoint_58.txt
+Build:build/routed_resume_20261118_lateral_resume1420/libReGripThreeFilmResume.so
+SHA526872e0d040f77b37b5f950c79b24dfc94d5b5cb9033311a1253ef395fb3dc3.
+Prior lateral stage-work origin NULL;never splice quadratic-route work.
+Actual scale1 geometry:results/autonomous_film_20261118_lateral_coupled_shape1425/.
+
+1419 frozen REST actual-mass basis has lowest period5.297s,but is NOT an
+actual nonlinear completion-time estimate.1427 complete-basis reconstruction
+of actual50ms motion is exact;fast tip−.743267mm vs frozen-static−41.5368mm.
+Actual response still includes positive75mm skin arch.1417 lower-load static
+witness passes residual at9.375e-5N,but full-load1374/1376 FAIL remains;
+virtual object penetration means static FREE branch is not contact solution.
+
+1421/1423/1424 ACTUAL saved-state energy decomposition:100/50/25us cumulative
+signed defects2.85848e-10/7.12760e-11/1.78801e-11Nmm are dominated by
+potential-chord single-midpoint quadrature,not momentum/cancellation.
+Momentum-energy terms~1e-19Nmm,chord4/8-point diagnostic errors~1e-18Nmm.
+Diagnostic quadrature does NOT alter physical forces or time integration.
+1411 relative-defect time FAIL remains FAIL;root work NULL,whole energy BLOCKED.
+Slow40ms-ramp1404 is a DIFFERENT C2 input;less arch AND less bending,not
+proven superior wrapping.1418 corrected unequal-axis chart captions preserve
+original1406 evidence and explicitly report geometric exaggeration.
+
+1431/1432 isolated quarter-guide profile [5.5,5,4.5,5,5.5]mm plus same6mm
+outboard passes independent FD/objectivity/zero-profile parity. Initial wire
+centreline gap+.366772mm,core unchanged,hardware mass/finite-wire clearance
+unknown. Actual profile dynamics NOT RUN until separately qualified build.
+No final grasp,lift,friction,selfcollision,full thickness/full time/mesh/energy,
+mechanical equalizer,12-Wrench or Optuna certification.
+
+Exact next bounded lateral continuation (new unique tag):
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY tools/film_routed_resume_continue.py --tag UNIQUE --parent 20261118_lateral_hold_short1428 --checkpoint-step 58 --steps 8 --end-time .013200000000000008 --reuse-journal-rows
+$PY tools/film_routed_hold_reference.py --tag UNIQUE_REF --parent 20261118_lateral_hold_short1428 --checkpoint-step 58 --qualification 20261118_lateral_hold_api1430 --reuse 20261118_lateral_hold_reference1429
+$PY tools/film_routed_hold_api.py --tag UNIQUE_AUDIT --case UNIQUE --reference UNIQUE_REF
+Do not extrapolate isolated/free trajectories into object holding.
+
+## Actual50ms recovery and C2 transmission contrast:1392–1414
+
+a5a9b88 actual FREE horizon/recovery;ba964e7 stage-work observer;prior
+defd292 geometric certificate.1392 separate FREE endpoint limit50ms,
+unchanged forces/control/counter,actual1393→31.6ms and1395 strict suffix
+replay EXACT.1396 twelve bounded segments to.04999999999999981s.
+1403 read-only audit of ALL joins verifies exact q/v/time/quaternion,
+actual projected masses,root maps,full released-owner inventory,and all
+actual Field inputs(error0). Rest reconstruction7.11e-15mm;independent
+mass-based film K vs actual Field K error1.36e-19Nmm.
+At50ms skin mean tip−.1623459mm,rails−.004106/−.001917mm,maxspeed42.5619mm/s,
+body vz−1.379764mm/s,gap+.223084mm. Thus rail relaxation does not mean skin
+has recovered. No retained contact or lift. Actual scale1PNG/OBJ1399,
+time/energy curve1403.31.6..50ms signed defect3.325305e-8Nmm,root workNULL;
+not heat or whole energy PASS.1396 chain is NOT full time convergence.
+1402 initial read-only audit incorrectly included changing accumulated time
+in invariant-tail comparison;corrected1403 validates time separately. No
+physical state was changed and no failed dynamics was relabelled PASS.
+
+1405/1408/1409 reuse original aligned observation method100/50/25us
+on SAME actual31.6ms IVP,only declared copied numerical dt/provenance change.
+ALL physical state/counter/control preserved. Actual q/v/time EXACT to
+standalone reference,all11contexts. EXACT final32.4ms,not interpolation.
+1411 overall endpoint time assessment FAIL:signed defect relative301.04%,
+1498.69%,298.63%,while other physical/work observables ≤.0637656%.
+Only final epoch common across ALL grids;not whole-stage time certification.
+1414 independent80-digit quartic oscillator identity
+DeltaE=k*qmid*(Deltaq)^3/4 explains why a midpoint truncation-error residual
+can tend to zero with roughly300%/1500% relative comparisons. Existing
+ReGrip FAIL remains FAIL;this example is not the sole actual cause proof.
+V6 numerical-observation checkpoint RESUME NOT QUALIFIED.
+
+40ms rise is a CONTROL CHANGE,not a numerical fix of the10ms-rise FAIL.
+1398 build/API,1400/1401 short actual and1404 actual50ms pass strict
+state/stage/public-clock/Field-control identity.1406 atsame50ms/sameTmax/core:
+tip−.743267→−.444770mm,skin75centre+.372966→+.0783884mm,
+angle.0643616→.0377583rad. Thus less adverse arch and less tip bending.
+Actual stage work1394/1397 fast.0001490763855/.0001490763186Nmm;
+1410 slow.0001462498350Nmm. Damping6.08725e-6→2.25232e-6Nmm.
+No matched-work,hardware efficiency,holding or wrapping superiority claim.
+1407 virtual fixed-sphere overlay still crosses buffer−.00204308mm;
+NO-OBJECT motion is not a valid contact solution. Its wire centreline
+min+.367377mm does not certify finite guide/body/wire clearance.
+
+1412 new lateral implicit-stage FD gate passes.1413 actual THREE lateral
+films and ONE FREE Rigid3 first bracketed event pass:event/state/impulse
+EXACT,whole-stage gap−1.06581e-14mm,momentum7.27576e-19Ns,
+normalv2.73602e-13mm/s. No contact law,mass,root orTmax alteration.
+Active force/implicit/event-family/Field paths bind SAME lateral6;
+unused general System::advance sensitivities are NOT qualified. Initial
+incoming sphere−1mm/s,+.0001mm gap,gravity0/Fz−.001N:NOT grasp from rest.
+1415 short coupled continuation must be inspected by completed summary.
+
 ## Additional actual dynamics and structural contrast:1336–1391
 
 Implementation commits:df6748f(query-local identical-distance reuse),

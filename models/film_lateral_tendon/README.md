@@ -1,5 +1,33 @@
 # Separate outboard tendon candidate
 
+## Additional control contrast,not input-identical superiority
+
+1398 separate source-bound40ms C2 rise uses SAME generic ControlProfile,
+Field Data,Gauss stage force and journal input.1398 API,1400/1401 short
+actual and1404 actual294step50ms PASS strict q/v/stage/time/control parity.
+Default10ms route implementation and old results remain untouched.
+1406 at50ms:skin mean tip−.743267→−.444770mm,centre75mm
++.372966→+.0783884mm,angle.0643616→.0377583rad. Less adverse arch but
+also less total bending;NOT wrapping/grasp success.1407 virtual fixed
+sphere overlay still has min triangle-buffer gap−.00204308mm,so it is
+NOT a collision-resolved contact solution. Wire centreline min+.367377mm
+is not finite wire/guide-body clearance.
+1394/1397 measured10ms-rise Gauss stage mechanical work at50ms
+.0001490763855/.0001490763186Nmm;1410 new40ms rise.0001462498350Nmm.
+Different prescribed profile and work,not a matched-work comparison.
+Damping integrals6.08725e-6 vs2.25232e-6Nmm are this free assumed model,
+not motor energy,friction heat,or whole-system certified savings.
+
+`Force.h` separately reuses original implicit-stage pullback with lateral
+provider.1412 potential/gradient/Hessian/tension FD and zero-route EXACT
+baseline PASS.1413 actual3film/free Rigid3 bracketed initial event PASS:
+all event/state/impulse outputs EXACT to independent same-kernel reference;
+gap−1.06581e-14mm,momentum7.27576e-19Ns,normalv2.73602e-13mm/s.
+This200us incoming-sphere fixture is NOT capture from stationary rest or
+40ms-rise coupled closing. Active Shared/implicit/BlockFree derivative
+callbacks and Field all bind lateral6. General unused System::advance
+sensitivity paths and long contact closure/release remain unqualified.
+
 `Route.h` reuses original Film/Rails/Attachment mechanics and5mm normal
 moment arm,adding objective6mm outboard guide offset along local rail width.
 Zero offset is exactly original force/Hessian/energy. Guide body/mass and

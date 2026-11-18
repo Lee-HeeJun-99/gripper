@@ -1,3 +1,39 @@
+## Fine-window core time PASS;typed actual Gauss resume PASS —2026-11-19
+
+1632 independent50/25/12.5us1.6ms core state/energy/shape/work pairs PASS;
+maximum.06733945%.1634 completes50→56.4ms in322.679s (forecast440.126<480).
+All core pairs at eight common epochs PASS;maximum film velocity.07671273%.
+Signed partial-defect relative time STILL FAIL:maximum99.6681%,absolute
+5.10659e-14Nmm at that pair. This is NOT heat or whole Energy/Time PASS.
+1638 plots these INDEPENDENT trajectories,not actual SOFA long-window states.
+
+1636 actual four-step continuation worked,but suffix init FAILED at the old
+FREE footer50ms guard. Original parser/guard is unchanged. A separate bounded
+Gauss typed footer is added;1640 roundtrip+seven invalid fixtures PASS,including
+explicit old-reader rejection above50ms.
+1637 actual4 vs2+2 PASS:all q/v differences0,all Gauss stage forces/states EXACT,
+accepted rows EXACT,final checkpoint BYTES EXACT. Legacy sampled-work history
+is NOT resumed;do not splice its cumulative values.
+Build:build/stationary_gauss_resume_20261119_stationary_gauss_resume1637/
+libReGripStationaryGaussContinuation.so
+SHA256 f4dec6d84184b24c71736e0c85ea3d94b6944a32f11bf9fd05aaa049a9392cec.
+Identity6a4d1d2dc924d02bdf50c7f7ab1889be53ce28f518e98d2b26f375df5eff5b48.
+Actual1639 extends to.05179999999999986s,32steps50us:independentq/v/stages/
+accumulated clocks EXACT,actual tension0,minimum numerical-path gap+.325142mm.
+Latest qualified typed Gauss checkpoint:
+results/autonomous_film_20261119_stationary_gauss_to518_1639/three.checkpoint_286.txt.
+Old50ms midpoint FREE seed is preserved;never mix the schemas or edit dt tokens.
+Source commit at execution4ed7083 plus complete archived compiled source hashes.
+
+1633 contact-phase26.8ms actual wire CENTRELINE gap+.455272mm;length agrees
+with actual Field to5.68434e-14mm. Finite radius/guide solids/selfcollision NOT RUN.
+No actual wrapping,holding,lift,full recovery or final design selection.
+Next bounded actual segment targets53.4ms using the SAME qualified binary.
+Reproduce (new unique tag):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_stationary_gauss_window.py --tag UNIQUE --provider 20261119_stationary_gauss_resume1637 --parent 20261119_stationary_gauss_to518_1639 --checkpoint-step 286 --steps 32`
+Resume owner supports only separated zero-load/no-spin fixture;new contact rejects.
+Actual work/geometry/friction/selfcollision/mesh/global energy gates remain separate.
+
 ## Cumulative recovery FAIL and exact parallel scheduling PASS —2026-11-19
 
 Actual stationary wire-driven cycle remains qualified only to50ms;isolated

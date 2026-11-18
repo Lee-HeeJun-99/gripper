@@ -13,14 +13,14 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',default='20261118_routed_release_actual1360');p.add_argument('--provider',default='20261118_routed_release_actual1360');p.add_argument('--checkpoint-step',type=int,default=137);p.add_argument('--steps',type=int,choices=(1,2,4,8),default=4);p.add_argument('--compare');a=p.parse_args()
  provider=ROOT/'results'/('autonomous_film_'+a.provider);proof=json.loads((provider/'summary.json').read_text());src=ROOT/'results'/('autonomous_film_'+a.parent);m=json.loads((src/'summary.json').read_text());checkpoint=src/f'three.checkpoint_{a.checkpoint_step}.txt'
  rebind=m['binary_sha256']!=proof['binary_sha256']
- if rebind and (proof.get('parent_summary_sha256')!=sha(src/'summary.json') or proof.get('change_scope')!='strict separating-plane exclusion ONLY'):raise ValueError('unqualified compiled handoff')
+ if rebind and (proof.get('parent_summary_sha256')!=sha(src/'summary.json') or proof.get('change_scope') not in ('strict separating-plane exclusion ONLY','explicit FREE endpoint50ms ONLY')):raise ValueError('unqualified compiled handoff')
  if proof['status']!='PASS' or m['status']!='PASS' or m['process']['exit_code'] or m['sofa_errors'] or sha(checkpoint)!=m['raw_hashes'][checkpoint.name]:raise ValueError('completed exact actual released checkpoint required')
  for f,d in proof['source_hashes'].items():
   if sha(provider/'sources'/f)!=d:raise ValueError('compiled source archive changed')
  tokens=checkpoint.read_text().split();time,dt=float(tokens[1]),float(tokens[2]);end=time
  if tokens[0]!='REGRIP_ROUTED_FREE_V3' or tokens[4]!=m['identity'] or dt!=.0002:raise ValueError('explicit route/released clock schema required')
  for i in range(a.steps):end+=dt
- if end>.03:raise ValueError('bounded existing C2 control interval only')
+ if end>proof.get('maximum_resume_end_s',.03):raise ValueError('explicit compiled FREE physical interval only')
  binary=ROOT/proof['build_relative']/'libReGripThreeFilmRelease.so'
  if sha(binary)!=proof['binary_sha256'] or sha(SDK/'bin/runSofa-26.06.00')!=proof['sdk_runner_sha256'] or sha(src/'scene.scn')!=m['scene_sha256']:raise ValueError('binary/SDK/scene changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');before=tokens.copy();tokens[4]=proof['identity'];(out/'input.checkpoint').write_text(' '.join(tokens)+'\n')

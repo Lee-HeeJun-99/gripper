@@ -1,5 +1,42 @@
 # Routed-force integration prerequisite and actual contact coupon
 
+## Additional qualified branches,2026-11-18
+
+1336 actual25.2→25.4ms face-to-material-edge transition:reference/API EXACT,
+event25.34324085354ms,J continuity6.78e-14. REGRIP_ROUTED_EDGE_V2 owns
+finger,triangle117,nodes77/73,birth,parameter and normal.1338/1342 resume
+to27ms;1341/1344 exact same physical q/v/clock/API suffix.1346/1347
+longer27.8ms FAIL negative stage reaction;1349 only certifies the accepted
+prefix through27.2ms,not the failed horizon.
+
+`AdmissibleRelease.h` brackets the first collocation-stage force admissibility
+boundary using diagnostic signed bilateral trials;accepted pre-stages must
+remain compressive. It composes existing Lobatto,40us acceleration-LCP RK4,
+then free midpoint to the exact accumulated outer clock.1350/1352 grids32/64
+FAIL internal normal-velocity gate;1355 grid128 passes the local gates.
+1360 actual SOFA27.2→27.4ms:q/v and all512 RK stage states/forces EXACT.
+All three rows release;outgoing normal velocity+.0005288796mm/s,
+minimum gap−5.11235e-12mm. No negative unilateral force,position projection,
+velocity jump,changed stiffness or relaxed tolerance. This is NOT a continuous
+exact release-time root/global event guarantee or time-grid convergence.
+Momentum metric7.7193e-19Ns is sum of segment norm bounds,not separately
+measured global vector defect. Whole energy/root work remain BLOCKED/NULL.
+1364 FREE initialization FAIL(configuration cap);1365 actual FREE path search
+FAIL algorithm budget512,not OS exhaustion;no later accepted state.
+
+`PreciseQueryCache.h` reuses identical multiprecision squared-distance
+evaluations only within one immutable geometry query.1337/1345 exact
+ordering/force/Hessian parity;1343/1348 opposite serial timing orders show
+7.16%/6.46% reduction for the bounded eight-step coupon,all9 CSVs byte-exact.
+1351 limited opt-in qualification;not automatically adopted in release DLL.
+No universal speed factor or combined speedup claim.
+
+Latest completed actual quadratic-route checkpoint:
+`results/autonomous_film_20261118_routed_release_actual1360/three.checkpoint_137.txt`.
+DLL `build/routed_release_20261118_routed_release_actual1360/libReGripThreeFilmRelease.so`,
+SHA25651b1554482e714c185d3f788abd90df1b536d4b04a7a1ad1d2944df2e63bb808.
+Do NOT combine this new-route state with original-route44.4ms recovery.
+
 `Force.h` adapts the existing implicit film mechanical stage: unchanged mass,
 root projection,core elastic/attachment terms and damping,then SAME quadratic
 route force,potential and consistent tangent. It does not replace contact

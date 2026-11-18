@@ -2,6 +2,12 @@
 #include "Kernel.h"
 #include <Eigen/SparseLU>
 namespace regrip_transmission {
+#ifndef REGRIP_GAUSS_NEWTON_TOLERANCE
+#define REGRIP_GAUSS_NEWTON_TOLERANCE 1e-18
+#endif
+// Independent diagnostic may TIGHTEN only. Production default is unchanged.
+constexpr double gaussNewtonTolerance=REGRIP_GAUSS_NEWTON_TOLERANCE;
+static_assert(gaussNewtonTolerance>0&&gaussNewtonTolerance<=1e-18,"Newton precision probe may not relax the existing gate");
 struct GaussResult{Eigen::VectorXd q,v;std::array<Eigen::VectorXd,2>stageQ,stageV;double residual=0,tangentError=0;unsigned evaluations=0;};
 // Two-stage Gauss-Legendre order4,NO contacts/constraints other than reduced roots.
 // Preserves original physical M,C=2M and the same stage-time force law.
@@ -17,7 +23,7 @@ GaussResult gauss(const Eigen::MatrixXd&M,const Eigen::VectorXd&q,const Eigen::V
  };
  auto e=evaluate(x);
  if(check){for(unsigned k=0;k<3;++k){Eigen::VectorXd direction(2*n);for(int i=0;i<2*n;++i)direction(i)=std::sin((i+1)*(k+1)*.71);direction.normalize();double eps=1e-5;Eigen::VectorXd fd=(evaluate(x+eps*direction).residual-evaluate(x-eps*direction).residual)/(2*eps),exact=e.tangent*direction;out.tangentError=std::max(out.tangentError,(fd-exact).norm()/exact.norm());}if(out.tangentError>1e-8)throw std::runtime_error("Gauss stage tangent directional FD fails");}
- unsigned iteration=0;for(;iteration<20;++iteration){double norm=e.residual.norm();if(norm<=1e-18)break;Eigen::SparseMatrix<double>B=e.tangent.sparseView(0.,0.);Eigen::SparseLU<Eigen::SparseMatrix<double>>lu;lu.compute(B);if(lu.info()!=Eigen::Success)throw std::runtime_error("unmodified Gauss tangent singular");Eigen::VectorXd delta=lu.solve(-e.residual);if(lu.info()!=Eigen::Success||!delta.allFinite())throw std::runtime_error("Gauss correction invalid");bool accepted=false;for(unsigned cut=0;cut<16;++cut){double alpha=std::ldexp(1.,-int(cut));Eigen::VectorXd trial=x+alpha*delta;auto next=evaluate(trial);if(next.residual.norm()<=(1-1e-4*alpha)*norm||next.residual.norm()<=1e-18){x=std::move(trial);e=std::move(next);accepted=true;break;}}if(!accepted)throw std::runtime_error("Gauss residual line search failed");}if(iteration==20)throw std::runtime_error("Gauss Newton20 budget");
+ unsigned iteration=0;for(;iteration<20;++iteration){double norm=e.residual.norm();if(norm<=gaussNewtonTolerance)break;Eigen::SparseMatrix<double>B=e.tangent.sparseView(0.,0.);Eigen::SparseLU<Eigen::SparseMatrix<double>>lu;lu.compute(B);if(lu.info()!=Eigen::Success)throw std::runtime_error("unmodified Gauss tangent singular");Eigen::VectorXd delta=lu.solve(-e.residual);if(lu.info()!=Eigen::Success||!delta.allFinite())throw std::runtime_error("Gauss correction invalid");bool accepted=false;for(unsigned cut=0;cut<16;++cut){double alpha=std::ldexp(1.,-int(cut));Eigen::VectorXd trial=x+alpha*delta;auto next=evaluate(trial);if(next.residual.norm()<=(1-1e-4*alpha)*norm||next.residual.norm()<=gaussNewtonTolerance){x=std::move(trial);e=std::move(next);accepted=true;break;}}if(!accepted)throw std::runtime_error("Gauss residual line search failed");}if(iteration==20)throw std::runtime_error("Gauss Newton20 budget");
  out.q=q+h/2*(e.v[0]+e.v[1]);out.v=v+h/2*mass.solve(e.total[0]+e.total[1]);out.residual=(M*(out.v-v)-h/2*(e.total[0]+e.total[1])).norm();out.stageQ=e.q;out.stageV=e.v;out.evaluations=calls;if(out.residual>1e-17||!out.q.allFinite()||!out.v.allFinite())throw std::runtime_error("Gauss momentum/finite gate fails");return out;
 }
 inline Step stepGauss(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double time,double h,const std::vector<double>&mass,const EventControl&input=control()){

@@ -190,7 +190,42 @@ nonlinear spectrum or proof of a sole error source.
 lifts actual double q without invented digits. At0.8ms attachment force
 difference2.66600e-17N L2 (~4.63690e-7%),shell1.57683e-21N.
 It is not an extended-precision trajectory and cannot excuse the time FAIL.
+Both AD force variants use a common long-double accumulation in this oracle;
+it does not measure the production double summation path separately.
 Next distinguish the absolute Newton residual floor from timestep error.
+
+##7d. Independent startup references and localized refinement
+
+1207 default Newton1e-18 reproduces the SAME reference binary SHA as1186
+and all actual0.8ms q/v EXACT.1208/1209 tighten only Newton to1e-20/1e-22:
+complete,butmean Skin tip changes~8e-21mm,far below100us timestep error.
+This tests that100us endpoint,not every future step/tolerance regime.
+Production default/momentum gates unchanged;compile-time probe can only
+tighten,never relax1e-18. No tighter setting is silently adopted in SOFA.
+
+1214/1215/1219 independent continuous frozen-rest LINEAR response uses
+adaptive DOP853 and an archived compiled ControlProfile::evaluate shared
+library—not a Python C2 copy.1220 all-pair rtol1e-8/10/12 endpoint reference
+check PASS,max2.20e-9%. Finite double-precision adaptive reference,NOT an
+analytic/nonlinear SOFA solution. At0.8ms continuous linear Skin mean tip
+-2.839278285e-9mm,midspan1.021588669e-15mm.1203 nonlinear100us differs in
+bulk q/v by.00284231%/.00647355%;cross-model discrepancy is not solely
+integration error. rtol1e-12 costs748877 RHS calls/27.76s versus3965/.504s
+at1e-10:do not blindly tighten production solver tolerances.
+1210/11 tooling FAIL:archived worker missed helper import;1212/13 FAIL:
+incomplete helper dependency closure. No ODE trajectory was produced there.
+All failed folders/stderr are preserved,not labeled physics/OS failures.
+
+1216/17/18 ACTUAL SOFA localized0.8ms32/64/128step tests use the explicitly
+archived1186 default model/DLL/reference,with ALL source/build/input and
+binary hash guards intact. New live Newton experiments do not silently
+change the archived tested physical model. All q/v/time/stage/API EXACT.
+1221 all-pair25/12.5/6.25us onset endpoint PASS:max.0271423%,including tiny
+Skin metrics;1204 coarse onset FAIL is preserved. This supports testing a
+new localized-refinement numerical plan,NOT declaring whole50ms time PASS.
+Intermediate physical epochs and contact/moving-object dynamics still
+require independent qualification;fixed two-window outcomes cannot replace
+all-time validation. No physical stiffness,damping,Tmax or gate was changed.
 
 1192 inherited RAW/build/SDK byte preservation PASS19096 files,no changes.
 Evolving live sources/reports are separately versioned,not falsely called

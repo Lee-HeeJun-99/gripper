@@ -1,5 +1,107 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Additional actual dynamics and structural contrast:1336–1391
+
+Implementation commits:df6748f(query-local identical-distance reuse),
+60a0341(material-edge ownership/resume),32849a7(bounded actual release),
+d766032(objective outboard route). Each experiment's immutable summary
+stores compiled/generated source hashes,binary/SDK identity,commands and logs.
+
+### Quadratic-route actual contact and release
+
+1336 actual face→edge event25.34324085354ms;1341/1344 strict state and
+accumulated-clock identity through27ms.1346/1347 longer runs fail stage
+compression;1349 certifies ONLY accepted prefix through27.2ms.
+1350 RK32/1352 RK64 fail existing1e-10mm/s stage normal-velocity criterion.
+1354 independent circular-path witness shows O(dt²) intermediate RK stage
+off-manifold velocity even from valid position/velocity/acceleration;it is
+not proof of the sole cause in the full film.1355 existing RK128 micro-law
+passes bounded gates.1360 ACTUAL SOFA same helper27.2→27.4ms:all512 stages
+and final q/v/clock EXACT,all rows inactive,outgoing+.00052887956mm/s,
+gap−5.11235498e-12mm,segment momentum norm bound7.71931727e-19Ns.
+No velocity clamp,position projection,negative unilateral force or changed
+stiffness. Local admission boundary is a collocation admissibility bracket,
+NOT exact continuous contact exit. Global time/energy not certified.
+
+1364 FREE runner configuration cap mismatch fails initialization;1365
+corrected FREE fails surface-event budget512 before any accepted state.
+Fixed-direction interval supporting-plane exclusion1370/1371 also fails
+that algorithm budget;NOT OS exhaustion.1373/1375 reconstruct the actual
+27.4ms IVP midpoint numerical path read-only.33 sampled gaps are positive,
+but sampling is NOT CCD. First unresolved triangle116 needs tiny fixed-plane
+intervals around fraction.00383 despite~6.56e-9mm pointwise gap.
+
+`RotatingPlane.h` reuses outward-polynomial/Bernstein arithmetic to certify
+time-dependent separating directions. Vertex direction r(t),edge direction
+r(e·e)−e(r·e),or signed face cross product are geometric witnesses ONLY.
+For every triangle vertex,certify N·r>0 and (N·r)²−R²(N·N)>0,plus N·N>0.
+Strict outward bounds mean inconclusive intervals fall back/reject;no radius,
+normal or gap tolerance modification.1369/1378/1380/1382 unit proofs include
+middle-only collision,tangent rejection,curved face,edge and vertex witnesses.
+1366 intentionally hit undefined zero-distance normal in an early test fixture;
+1377 old test expected subdivision even when polynomial witness succeeded;
+both preserved.1379 actual-IVP path now strictly excluded with984 plane
+queries/12 subdivisions;NOT exact ODE motion claim.
+
+1383 separate SDK-matched FREE DLL:
+build/routed_separation_20261118_routed_rotating_build1383/libReGripThreeFilmRelease.so
+SHA256103c1ef94696d82ba3b5c38f716e910d92d36b9bc7e8f705e9e322d54f93b0b3.
+1385 actual27.4→28.2ms passes;1387 checkpoint139 resume suffix q/v=0
+difference,ALL free-stage rows and complete checkpoint physical tokens EXACT.
+1390 actual8steps extends to29.8ms;1391 bounded final Unload step PASS
+at accumulated time.02999999999999993s,whole-stage minimum gap.00242127mm,
+momentum1.02378e-18Ns. This completes C2 Unload on this route,not recovery.
+No legacy sampled-work origin is reconstructed;no missing work is set to0.
+Scale1 actual28.2ms PNG/OBJ:results/autonomous_film_20261118_routed_free_shape1389/.
+
+### Outboard6mm route:interference and authority,not wrapping success
+
+Keep5mm normal lever,add objective6mm outward rail-width offset. Same core
+439.33979mm3,material,public mass,root and prescribed tension;guide hardware
+mass/volume and finite radii remain UNKNOWN. Initial wire/arm centreline
+R30gap+.370865mm vs original−2.607968mm,rest cable length200mm unchanged,
+unit discrete closing-mode work9.75Nmm unchanged.1353 math/1356 actual
+SOFA force/dForce/stiffness/objectivity/query-purity and Data guards pass.
+1362 zero-offset actual q/v parity EXACT.1363 actual294-step50ms and1372
+588-step50ms both complete with state/stage/control/API EXACT to standalone
+same-kernel reference. This API parity is NOT independent physics convergence.
+
+1367 comparison to completed original graded-plan1235 at294 EXACT epochs:
+mean tip−.73835869→−.74326741mm,centre tip−.77704268→−.78510775mm,
+root-tip3D angle.06392641→.06436158rad,centre75mm+.370615→+.372966mm.
+The upward arch remains. No actual contact/holding advantage is shown.
+1368 virtual fixed-sphere overlay:wire centreline min+.341364mm but
+triangle buffered min−.0170890mm;the NO-OBJECT trajectory cannot be used as
+a collision-resolved contact state. Actual contact/area/pressure remain NULL.
+Scale1 comparison PNG in results/autonomous_film_20261118_lateral_hold_comparison1367/.
+
+1384 ALL common epochs base/half FAIL centre-mid z at20.8ms:relative
+.121871773%,absolute1.25791379e-11mm. Keep FAIL despite small absolute error.
+1388 actual base/half/quarter local0..3.2ms ALL-pair observable PASS,
+max.03712239%;not50ms/global contact certification.1386 full-quarter policy
+forecast529.913s>480s:BLOCKED BEFORE physics,not OS exhaustion.1374/1376
+static16/32-load-stage continuation fail60Newton budget at final load near
+1.2e-12N floor;no final force-equilibrium or static wrap claim.
+
+### Exact arithmetic reuse qualification
+
+1351 opt-in query-local Q/H distance reuse only:2048 unit comparisons,
+17 actual state force/Hessian/J/gap parity EXACT,9 physical CSVs byte-exact
+and physical checkpoint tokens unchanged. Two opposite serial run orders
+7.1587%/6.4588% reduction for bounded8step19.6..21.2ms only. Cache lifetime
+one immutable query;no coordinate tolerance. Not adopted silently in current
+release DLL. Do not combine with earlier journal-reuse speedup percentages.
+
+1392 is a separate FREE-only horizon50ms build in progress;inspect final
+summary before any build/actual claim. It adds only virtual endpoint limit,
+not physical force/control changes or step-counter manipulation. Continue
+only in bounded profiled chunks with exact physical checkpoint payload.
+
+Whole energy/root work,full time/mesh,friction,selfcollision,full thickness,
+mechanical equalizer,wrapping,holding,gravity lift,12-Wrench and final grasp
+optimization remain BLOCKED/unqualified. Original-route44.4ms state and
+new quadratic-route continuation are separate histories;never stitch them.
+
 ## Actual routed independent-contact birth:1327–1335
 
 The124→117 switch was NOT merely an interchangeable triangle alias.

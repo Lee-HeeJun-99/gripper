@@ -1,3 +1,45 @@
+## Latest actual release and outboard-route comparison —2026-11-18
+
+Feature commits:df6748f exact-query reuse;60a0341 edge resume;
+32849a7 bounded actual release;d766032 outboard route.
+1336 actual face→edge transfer PASS at25.34324085354ms;1338/1342
+resume to27ms with1341/1344 strict q/v/time identity.1346/1347 longer
+horizon FAIL;1349 certifies ONLY its accepted prefix through27.2ms.
+1360 actual deformed three-row release27.2→27.4ms PASS local gates:
+all512 RK stages/final q/v/clock EXACT to1355,minimum gap−5.11235e−12mm,
+outgoing normal speed+.0005288796mm/s. No state projection or negative
+unilateral force.1350/1352 grids32/64 remain FAIL;no time-convergence claim.
+Latest completed actual quadratic-route checkpoint:
+results/autonomous_film_20261118_routed_release_actual1360/three.checkpoint_137.txt
+Build:build/routed_release_20261118_routed_release_actual1360/libReGripThreeFilmRelease.so
+SHA25651b1554482e714c185d3f788abd90df1b536d4b04a7a1ad1d2944df2e63bb808.
+1364 FREE setup FAIL frozen-cap mismatch;corrected1365 FREE and1371
+interval-exclusion variant FAIL original surface-event algorithm budget512,
+NOT OS exhaustion. No actual accepted state beyond27.4ms on this route.
+Original-route44.4ms remains separate;never stitch different geometries.
+
+New OUTBOARD6mm route preserves5mm normal lever and same CORE volume,
+not total hardware mass.1353 math/1356 SOFA API PASS;1362 zero-route
+regression q/v EXACT.1363 actual294-step50ms NO-OBJECT coupon PASS,
+all state/stage/context clocks EXACT to same-kernel reference.
+1367 comparison294 exact epochs:skin width-mean tip−.738359→−.743267mm,
+root-tip3D angle.0639264→.0643616rad;centre75mm remains positive arch
++.370615→+.372966mm. NOT wrapping or holding superiority.
+1368 VIRTUAL sphere overlay:wire centreline min gap+.341364mm but
+triangle buffer min gap−.0170890mm. Free trajectory is NOT contact proof.
+Actual scale1 comparison:results/autonomous_film_20261118_lateral_hold_comparison1367/actual_route_comparison.png.
+
+1351 opt-in exact query cache qualification:byte-identical9CSVs,
+two opposite serial orders7.16%/6.46% bounded runtime reduction.
+Not applied automatically to current release DLL or universal speed factor.
+Whole time/energy,friction,selfcollision,full thickness,mechanical equalizer,
+wrapping,holding,gravity lift,12-Wrench and Grasp Optuna remain unqualified.
+Root work/contact area/pressure/holding load remain NULL when unmeasured.
+Next bounded work:inspect1373 read-only dense path and1372 actual50ms
+half-step comparison;do not repeat failed long FREE runs or relax gates.
+See models/film_lateral_tendon/README.md and detailed transmission report.
+
+
 ## Latest actual routed simultaneous birth/impact —2026-11-18
 
 Prior feature commit:d095b67.1325 FaceEdgeTransfer FAIL identified an

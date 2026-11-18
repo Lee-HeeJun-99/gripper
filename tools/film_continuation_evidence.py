@@ -44,7 +44,7 @@ def main():
                 'models/film_three_finger_release','models/film_three_finger_recovery',
                 'models/film_three_finger_recovery_next','models/film_transmission',
                 'models/film_transmission_plan','models/film_routed_tendon','models/film_routed_contact',
-                'models/film_routed_refined_resume','models/film_lateral_tendon','models/film_profiled_tendon','models/film_distributed_attachment','models/film_lateral_release','models/film_lateral_rest_closing','models/film_lateral_rest_resume','models/film_lateral_rest_contact','models/film_routed_recovery'):
+                'models/film_routed_refined_resume','models/film_lateral_tendon','models/film_profiled_tendon','models/film_distributed_attachment','models/film_lateral_release','models/film_lateral_rest_closing','models/film_lateral_rest_resume','models/film_lateral_rest_contact','models/film_stationary_support_transfer','models/film_routed_recovery'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
     for path in ROOT.glob('tests/test_closest_primitive*.cpp'):record(path)

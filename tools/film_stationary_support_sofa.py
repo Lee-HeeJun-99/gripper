@@ -1,0 +1,45 @@
+"""Actual isolated old-edge/new-face impact, source-bound to qualified math."""
+import argparse,csv,hashlib,json,shutil,subprocess,xml.etree.ElementTree as ET
+import numpy as np
+from curve_common import ROOT,sha,write_json
+from film_guarded_process import guarded
+from film_rigid_reference import SDK
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();ref=ROOT/'results/autonomous_film_20261119_stationary_edge_face1565';proof=json.loads((ref/'summary.json').read_text());parent=ROOT/'results/autonomous_film_20261119_stationary_to226_1561';m=json.loads((parent/'summary.json').read_text());cp=ref/'input.checkpoint'
+ if proof['status']!='PASS' or m['status']!='PASS' or proof['parent_summary_sha256']!=sha(parent/'summary.json') or sha(cp)!=proof['source_checkpoint_sha256']:raise ValueError('qualified actual prefix and isolated transfer required')
+ for path,meta in ((ref,proof),(parent,m)):
+  for f,d in meta['source_hashes'].items():
+   if sha(path/'sources'/f)!=d:raise ValueError('source archive changed')
+  for f,d in meta['raw_hashes'].items():
+   if sha(path/f)!=d:raise ValueError('qualified raw changed')
+ out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources';shutil.copytree(ref/'sources',archive);shutil.copytree(ROOT/'models/film_stationary_support_transfer',archive/'models/film_stationary_support_transfer');path=archive/'models/film_lateral_rest_contact/StationaryImpact.cpp';text=path.read_text();anchor='void registerFilmLateralField(sofa::core::ObjectFactory*);'
+ if text.count(anchor)!=1 or 'REGRIP_STATIONARY_CONTACT_EMBEDDED' in text:raise ValueError('frozen registration adapter differs')
+ path.write_text(text.replace(anchor,'#ifndef REGRIP_STATIONARY_CONTACT_EMBEDDED\n'+anchor)+'#endif\n')
+ if path.read_text()!=(ROOT/'models/film_lateral_rest_contact/StationaryImpact.cpp').read_text():raise ValueError('only exact registration embedding change permitted')
+ # Additional read-only stage journal in the independent reference.
+ cpp=archive/'diagnostics/film_three_finger/StationaryEdgeFace.cpp';text=cpp.read_text();anchor='std::ofstream result(argv[2]);'
+ if text.count(anchor)!=1:raise ValueError('qualified reference output anchor differs')
+ journal='''std::ofstream stages(std::string(argv[2])+".stages.csv");stages<<std::setprecision(17)<<"segment,stage,time,weight_s,finger,triangle,feature,gap,force,normal_velocity,tension,q,v\\n";auto journal=[&](unsigned segment,const auto&result,const Eigen::VectorXd&x0,const Eigen::VectorXd&v0,double start,double h,const auto&owners){for(unsigned k=0;k<3;++k){const auto&x=k?result.stages[k-1].q:x0;const auto&vel=k?result.stages[k-1].v:v0;auto g=ownedGeometry(s,x,owners);double clock=start+h*(k==0?0:k==1?.5:1),weight=h*(k==1?2./3:1./6);for(unsigned i=0;i<owners.size();++i){const auto&o=owners[i];stages<<segment<<','<<k<<','<<clock<<','<<weight<<','<<o.finger<<','<<o.triangle<<','<<o.feature<<','<<g.gap(i)<<','<<(k?result.stages[k-1].force(i):result.initialForce(i))<<','<<g.J.row(i).dot(vel)<<','<<regrip_film_rail::ControlProfile::evaluate(clock,.0001,.01,.02,.03,true).tension;for(const auto*z:{&x,&vel}){stages<<",\\\"";for(double y:*z)stages<<y<<' ';stages<<'\\\"';}stages<<'\\n';}}};journal(0,r.pre,q,v,t,r.fractionTime,r.old);journal(1,r.post,r.pre.q,r.impact.state.velocity,t+r.fractionTime,h-r.fractionTime,r.active);stages.flush();''';cpp.write_text(text.replace(anchor,journal+anchor));sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()};build=ROOT/'build'/('stationary_support_'+a.tag);build.mkdir(exist_ok=False);configure=guarded(['cmake','-S',archive/'models/film_stationary_support_transfer','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120);compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None;rc=guarded(['g++','-O2','-std=c++17','-ffp-contract=off','-I/usr/include/eigen3',cpp,'-o',out/'reference'],out/'reference_compile',120);forecast=2*proof['process']['runtime_s']+30;r=dict(status='FAIL',scope='ACTUAL isolated stationary edge115/newface117 impact22.6..22.8ms;NOT global CCD/time/energy/wrapping/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,parent_summary_sha256=sha(parent/'summary.json'),reference_summary_sha256=sha(ref/'summary.json'),source_checkpoint_sha256=sha(cp),configure=configure,compile=compile,reference_compile=rc,predicted_child_runtime_s=forecast,sdk=str(SDK),sdk_runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),root_work=None,whole_energy='BLOCKED',contact_area=None,pressure=None,holding_capacity=None)
+ if forecast>480:r.update(status='BLOCKED',failure_reason='measured policy forecast>480s;NOT OS exhaustion');write_json(out/'summary.json',r);return
+ if compile and compile['exit_code']==0 and rc['exit_code']==0:
+  rr=guarded([out/'reference',cp,out/'reference.csv'],out/'reference_process',480);r['reference_process']=rr
+  if rr['exit_code']==0:
+   same=all((out/new).read_bytes()==(ref/old).read_bytes() for new,old in (('reference.csv','transfer.csv'),('reference.csv.event.csv','transfer.csv.event.csv')));r['reference_extra_journal_physical_CSV_bytes_exact']=same
+   if not same:raise ValueError('passive reference stage journal changes physical results')
+   binary=build/'libReGripStationarySupportTransfer.so';deps=subprocess.check_output(['ldd',binary],text=True);(out/'ldd.txt').write_text(deps)
+   if 'not found' in deps or any('libSofa.' in x and '=> /' in x and str(SDK) not in x for x in deps.splitlines()):raise ValueError('SDK mismatch')
+   tokens=cp.read_text().split();time,h=float(tokens[1]),float(tokens[2]);before=tokens.copy();identity=hashlib.sha256(json.dumps(dict(sources=sources,binary=sha(binary),input=sha(cp)),sort_keys=True).encode()).hexdigest();tokens[4]=identity;(out/'input.checkpoint').write_text(' '.join(tokens)+'\n')
+   if tokens[:4]+tokens[5:]!=before[:4]+before[5:]:raise ValueError('physical state/time changed')
+   tree=ET.parse(parent/'scene.scn');scene=tree.getroot();scene.set('time',format(time,'.17g'));owner=scene.find('StationaryPersistentODE');owner.tag='StationarySupportTransferODE';owner.set('checkpoint',str(out/'input.checkpoint'));owner.set('identity',identity);owner.set('endTime',format(time+h,'.17g'))
+   for node in scene.iter():
+    if node.tag=='RequiredPlugin' and node.get('pluginName','').endswith('/libReGripStationaryImpact.so'):
+     if sha(node.get('pluginName'))!=m['binary_sha256']:raise ValueError('actual parent binary changed')
+     node.set('pluginName',str(binary))
+    for k,v in list(node.attrib.items()):
+     if k in ('filename','displacementFilename','publicMassFilename') and v.startswith(str(parent)):node.set(k,str(out)+v[len(str(parent)):])
+   tree.write(out/'scene.scn');r.update(binary_sha256=sha(binary),reference_binary_sha256=sha(out/'reference'),build_relative=str(build.relative_to(ROOT)),identity=identity,input_checkpoint_sha256=sha(out/'input.checkpoint'),scene_sha256=sha(out/'scene.scn'));run=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','1','--hideProgressBar',out/'scene.scn'],out/'process',480);errors=sum((out/'process'/f).read_text(errors='replace').count('[ERROR]') for f in ('stdout.log','stderr.log'));r.update(process=run,sofa_errors=errors)
+   if run['exit_code']==0 and not errors:
+    actual=next(csv.DictReader((out/'three.support.metrics.csv').open()));expected=next(csv.DictReader((out/'reference.csv').open()));ae=next(csv.DictReader((out/'three.support.event.csv').open()));ee=next(csv.DictReader((out/'reference.csv.event.csv').open()));delta={k:float(np.max(abs(np.fromstring(actual[k],sep=' ')-np.fromstring(expected[k],sep=' ')))) for k in ('q','v')};ed={k:float(np.max(abs(np.fromstring(ae[k],sep=' ')-np.fromstring(ee[k],sep=' ')))) for k in ('qminus','vminus','vplus','impulse_Ns')};stages=list(csv.DictReader((out/'three.support.stages.csv').open()))==list(csv.DictReader((out/'reference.csv.stages.csv').open()));metrics={k:float(v) for k,v in actual.items() if k not in ('q','v')};me=all(actual[k]==expected[k] for k in metrics);event_exact=all(ae[k]==ee[k] for k in ae if k not in ed);r.update(status='PASS' if max(delta.values())<=1e-12 and max(ed.values())<=1e-12 and stages and me and event_exact else 'FAIL',reference_max_abs=delta,event_state_max_abs=ed,ALL_pre_post_force_stage_rows_exact=stages,all_world_metrics_exact=me,all_event_metrics_exact=event_exact,metrics=metrics,event={k:float(v) for k,v in ae.items() if k not in ed})
+  else:r['failure_reason']=(out/'reference_process/stderr.log').read_text().strip()
+ r['raw_hashes']={f.name:sha(f) for f in out.iterdir() if f.suffix in ('.txt','.csv')};write_json(out/'summary.json',r);print(json.dumps({k:v for k,v in r.items() if k not in ('source_hashes','raw_hashes','configure','compile','reference_compile','reference_process','process')}))
+if __name__=='__main__':main()

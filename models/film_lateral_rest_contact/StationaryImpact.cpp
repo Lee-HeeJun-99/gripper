@@ -44,9 +44,11 @@ public:
  }
 };
 }
+#ifndef REGRIP_STATIONARY_CONTACT_EMBEDDED
 void registerFilmLateralField(sofa::core::ObjectFactory*);
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripStationaryImpact";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){registerFilmLateralField(f);f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL isolated C2-driven stationary-origin first impact/remainder;NOT global CCD/time/energy/grasp").add<regrip_three_resume::StationaryImpactODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL typed stationary-origin persistent contact;release/new birth reject;NOT grasp").add<regrip_three_resume::StationaryPersistentODE>());}
 }
+#endif

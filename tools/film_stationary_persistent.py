@@ -33,10 +33,22 @@ int main(int argc,char**argv){try{using namespace regrip_three_finger;SharedFilm
  if a.reuse_build:
   old=ROOT/'results'/('autonomous_film_'+a.reuse_build);proof=json.loads((old/'summary.json').read_text());build=ROOT/proof['build_relative']
   if proof['status']!='PASS' or sources!=proof['source_hashes'] or sha(build/'libReGripStationaryImpact.so')!=proof['binary_sha256'] or sha(old/'reference')!=proof['reference_binary_sha256'] or sha(SDK/'bin/runSofa-26.06.00')!=proof['sdk_runner_sha256']:raise ValueError('EXACT complete compiled source/binary/SDK reuse required')
+  # Typed transfer handoff may add an owner, but may NOT change a single
+  # inherited material/geometry/control/solver source. Only the explicitly
+  # verified module-registration embedding wrapper is nonphysical.
+  differences=[]
+  for f,d in proof['source_hashes'].items():
+   if not f.startswith('models/'):continue
+   if f not in m['source_hashes']:raise ValueError('parent omitted a frozen inherited model source')
+   if m['source_hashes'][f]==d:continue
+   anchor='void registerFilmLateralField(sofa::core::ObjectFactory*);';original=(old/'sources'/f).read_text();changed=(parent/'sources'/f).read_text()
+   if f!='models/film_lateral_rest_contact/StationaryImpact.cpp' or original.count(anchor)!=1 or changed!=original.replace(anchor,'#ifndef REGRIP_STATIONARY_CONTACT_EMBEDDED\n'+anchor)+'#endif\n':raise ValueError('parent changes inherited compiled physics;not a same-model continuation')
+   differences.append(f)
   shutil.copy2(old/'reference',out/'reference');configure=compile=rc=dict(exit_code=0,reused_from=a.reuse_build)
  else:
   build.mkdir(exist_ok=False);configure=guarded(['cmake','-S',archive/'models/film_lateral_rest_contact','-B',build,'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120);compile=guarded(['cmake','--build',build,'-j','1'],out/'compile',180) if configure['exit_code']==0 else None;rc=guarded(['g++','-O2','-std=c++17','-ffp-contract=off','-I/usr/include/eigen3',cpp,'-o',out/'reference'],out/'reference_compile',120)
  r=dict(status='FAIL',scope='actual stationary-origin zero-load persistent contact;new birth/release reject;NOT time/energy/wrapping/holding/lift',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes=sources,parent_summary_sha256=sha(parent/'summary.json'),source_checkpoint_sha256=sha(cp),configure=configure,compile=compile,reference_compile=rc,actual_steps=a.steps,start_time_s=time,dt_s=h,predicted_child_runtime_s=forecast,sdk=str(SDK),sdk_runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),root_work=None,global_momentum='NOT independently measured;sum of reduced norm bounds only',contact_area=None,pressure=None,holding_capacity=None,time_convergence='NOT RUN')
+ if a.reuse_build:r['parent_model_handoff']=dict(ALL_inherited_model_sources_checked=True,registry_only_differences=differences,added_parent_model_files=sorted(f for f in m['source_hashes'] if f.startswith('models/') and f not in proof['source_hashes']),note='No material/geometry/control/solver change;ALL frozen compiled sources/binary/SDK independently verified')
  if forecast>480:r.update(status='BLOCKED',failure_reason='measured policy forecast>480s;NOT OS exhaustion');write_json(out/'summary.json',r);return
  if compile and compile['exit_code']==0 and rc['exit_code']==0:
   binary=build/'libReGripStationaryImpact.so';deps=subprocess.check_output(['ldd',binary],text=True);(out/'ldd.txt').write_text(deps)
@@ -47,10 +59,11 @@ int main(int argc,char**argv){try{using namespace regrip_three_finger;SharedFilm
   if ref['exit_code']==0:
    tree=ET.parse(parent/'scene.scn');scene=tree.getroot();scene.set('time',format(time,'.17g'));owner=scene.find('StationaryImpactODE')
    if owner is None:owner=scene.find('StationaryPersistentODE')
+   if owner is None:owner=scene.find('StationarySupportTransferODE')
    if owner is None or owner.get('externalForce')!='0 0 0':raise ValueError('actual stationary contact owner missing')
    owner.tag='StationaryPersistentODE';owner.set('checkpoint',str(out/'input.checkpoint'));owner.set('identity',identity);owner.set('endTime',format(end,'.17g'))
    for node in scene.iter():
-    if node.tag=='RequiredPlugin' and node.get('pluginName','').endswith('/libReGripStationaryImpact.so'):
+    if node.tag=='RequiredPlugin' and node.get('pluginName','').endswith(('/libReGripStationaryImpact.so','/libReGripStationarySupportTransfer.so')):
      if sha(node.get('pluginName'))!=m['binary_sha256']:raise ValueError('parent actual binary changed')
      node.set('pluginName',str(binary))
     for k,v in list(node.attrib.items()):

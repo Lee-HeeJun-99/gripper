@@ -25,10 +25,11 @@ public:
  unsigned count=0;double last=-1;std::ofstream journal,stageJournal;
  virtual double interval(double,double dt)const{return dt;}
  virtual EventControl prescribedControl()const{return control();}
+ virtual std::string expectedFieldClass()const{return "FilmRailTendon";}
  virtual Step advance(const Assembly&m,const std::vector<Point>&q,const std::vector<Point>&v,double time,double h,const std::vector<double>&mass)const{return step(m,q,v,time,h,mass);}
  template<class T>T parameter(const char*key)const{auto*d=dynamic_cast<sofa::core::objectmodel::Data<T>*>(field->findData(key));if(!d)throw std::runtime_error("actual transmission parameter missing");return d->getValue();}
  void init()override{
-  OdeSolver::init();if(!root||!field||field->getClassName()!="FilmRailTendon"||getContext()->getGravity().norm()!=0||maxSteps.getValue()==0||maxSteps.getValue()>2000||getContext()->getTime()!=0)throw std::runtime_error("separate single-film rest/zero-gravity coupon required");
+  OdeSolver::init();if(!root||!field||field->getClassName()!=expectedFieldClass()||getContext()->getGravity().norm()!=0||maxSteps.getValue()==0||maxSteps.getValue()>2000||getContext()->getTime()!=0)throw std::runtime_error("separate single-film rest/zero-gravity coupon required");
   if(getContext()->getObjects<sofa::core::behavior::OdeSolver>(sofa::core::objectmodel::BaseContext::SearchDown).size()!=1||getContext()->getObjects<sofa::core::behavior::BaseMass>(sofa::core::objectmodel::BaseContext::SearchDown).size()!=1)throw std::runtime_error("single actual projected-mass/ODE coupon only");
   for(auto*f:getContext()->getObjects<sofa::core::behavior::BaseForceField>(sofa::core::objectmodel::BaseContext::SearchDown))if(f!=field.get()&&!dynamic_cast<sofa::core::behavior::BaseMass*>(f))throw std::runtime_error("extra physical forces not supported");
   auto input=prescribedControl();if(parameter<unsigned>("nx")!=21||parameter<unsigned>("guideIntervals")!=4||!parameter<bool>("rootGuideSecondOrder")||!parameter<bool>("c2Control")||parameter<double>("maximumTension")!=input.maximum||parameter<double>("rampTime")!=input.ramp||parameter<double>("releaseBegin")!=input.release||parameter<double>("releaseEnd")!=input.end)throw std::runtime_error("qualified transmission control/root/model mismatch");

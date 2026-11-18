@@ -287,6 +287,42 @@ The old3-finger geometry is rectangular with50mm roots,not tapered artwork;
 thickness clearance,self-contact,mechanical equalizer/general friction and
 all-gripper time/energy/mesh remain unqualified. Final design/Optuna BLOCKED.
 
+## 8a. Local public-clock time verification and cable interference (1238–1247)
+
+1239 completed1176 steps to50ms,reference327.53s/actual324.68s,below480s.
+1235/1237/1239 share EXACT63 canonical physical times;1241 tests ALL pairs at
+ALL63 times including tiny shape/energy signals:PASS,max0.0271422922% vs0.1%.
+No interpolation/no tolerance relaxation. This is a NO-OBJECT coupon and exact
+sampled-epoch qualification,not all-time/contact/mesh/global-energy certification.
+The graded local plan is deterministic,NOT an error-controlled adaptive solver.
+
+1238 exposed a separate MECHANICAL defect:original5mm-offset wire centerline
+intersects the initially overlaid R30sphere by2.60796821mm. Existing triangle
+contact does not model cable collision. Constant2mm and quadratic variable
+offset give initial centerline clearances0.14852245/0.26020791mm respectively.
+These are NOT finite-wire/guide-body clearance proofs. Preserve old contact
+results with their actual triangle-only scope;do not fabricate wire reaction.
+
+Implemented separate generated FilmRoutedTendon+FilmRoutedPlanODE,unchanged
+Assembly layout and original Field/mappings/SDK. e(s)=5-18s(1-s)mm;five guides
+per rail;only route changes,core material/mass/root/C2 unchanged. The cable is
+1.00833432mm longer at rest. Actual cable virtual-work loads distributed Rails;
+Skin is still indirectly driven. Source/generator/binary hashes archived1240.
+1240 full independent mechanics and actual SOFA Force/dForce/matrix/query-purity
+APIs PASS for amplitude0/4.5. Runtime geometry mutation rejected.
+1242/1243 actual8step XML runs PASS:q/v/time/stages EXACT,all4 contexts exact,
+actual ForceField tension equals solver input.1246 amplitude0 preserves old
+1222 q/v EXACT.1245 plot KeyError failure preserved;fixed output1246,new tag.
+1244 is the actual50ms quadratic-route experiment;only its completed summary
+may be used to report a result. No claim of wrapping/holding/lift from profiles.
+
+New routed sources:models/film_routed_tendon;generator:film_routed_generate.py.
+Reusable DLL:build/film_routed_20261118_routed_math_api1240/libReGripFilmRoutedTransmission.so
+SHA256:0b5606781a4a8b21369e25d572d4a5ff1f4490c24d95cb32ed17fc0ac930e1e1.
+Raw:results/autonomous_film_20261118_routed_*1240..1247.
+Wire finite radius/guide body/mass/friction/self-contact and matched-work
+comparison remain unqualified. No full energy/time/grasp certification.
+
 ##9. Reproduction and artifacts
 
 Raw:results/autonomous_film_20261118_transmission_*1139..1168/ (each own

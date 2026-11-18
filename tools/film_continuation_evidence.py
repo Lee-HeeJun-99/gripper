@@ -42,7 +42,8 @@ def main():
         if path.is_file():record(path)
     for top in ('models/film_three_finger_resume','models/film_three_finger_primitive',
                 'models/film_three_finger_release','models/film_three_finger_recovery',
-                'models/film_three_finger_recovery_next','models/film_transmission'):
+                'models/film_three_finger_recovery_next','models/film_transmission',
+                'models/film_transmission_plan','models/film_routed_tendon'):
         for path in (ROOT/top).rglob('*'):
             if path.is_file():record(path)
     for path in ROOT.glob('tests/test_closest_primitive*.cpp'):record(path)

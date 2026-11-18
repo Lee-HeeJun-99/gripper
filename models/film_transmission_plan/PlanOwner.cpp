@@ -24,8 +24,10 @@ public:
  }
 };
 }
+#ifndef REGRIP_PLAN_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripFilmTransmissionPlan";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL explicit variable public-dt Gauss plan,all child clocks;NOT error-controlled adaptive/contact/grasp certification").add<regrip_transmission::FilmTransmissionPlanODE>());}
 }
+#endif

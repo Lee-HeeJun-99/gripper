@@ -458,6 +458,25 @@ Sources at0fa09fb plus archived feature-development source snapshots.
 No completed grasp or automatic background restart is claimed.
 # Latest actual continuation1124–1129
 
+## Frozen-control and actual-recovery energy1135–1138
+
+1135/1136 are independent frozen actual20ms state diagnostics,not new dynamics.
+Tendon-force affine residual8.32728e-20N;unit load norm3.92120469 entirely on
+Rails,unit Skin force0. Direct normal-acceleration gain0;local zero-velocity
+linearized delayed-reaction second derivative norm7.96365944/s². No nonlinear
+time scale/actuator requirement inferred.1138 analytic three-mass reference
+verifies the delayed-response formula and second-order small-time expansion.
+This supports studying transmission through attachment rather than treating
+instantaneous gain0 as absent eventual control authority.
+
+1137 independent observer reconstructs192 actual31.6..38ms stages:
+stage-duration sum equals actual elapsed0.006400000000000017s EXACT.
+Actual stored/kinetic field error2.71050543e-19Nmm. Wt0,Wext8.11563637e-6,
+Wdamp6.25963299e-6,delta(stored+K)1.86086141e-6Nmm;
+signed defect+4.85802552e-9Nmm,NOT heat. Root Work remainsNULL.
+The defect is about0.261% of this interval energy change (diagnostic ratio,
+not an invented energy Gate). No full energy/time/contact certification.
+
 ## Next completed work1130–1133
 
 Optional value-only clearance (default OFF) preserves original AD primal

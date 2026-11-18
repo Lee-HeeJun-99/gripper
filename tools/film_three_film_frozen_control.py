@@ -1,0 +1,13 @@
+"""Actual Hold geometry frozen-control sensitivity,not a new grasp trial."""
+import argparse,csv,json,shutil,subprocess
+from curve_common import ROOT,sha,write_json
+from film_guarded_process import guarded
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();src=ROOT/'results/autonomous_film_20261118_three_film_hold_end1022';meta=json.loads((src/'summary.json').read_text());checkpoint=src/'three.checkpoint_100.txt'
+ if meta['status']!='EXPERIMENTAL' or meta['process']['exit_code'] or sha(checkpoint)!=meta['raw_hashes'][checkpoint.name]:raise ValueError('actual20ms Hold checkpoint required')
+ out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources';shutil.copytree(ROOT/'models',archive/'models',ignore=shutil.ignore_patterns('*.so','__pycache__'));cpp=archive/'diagnostics/film_three_finger/FrozenControl.cpp';cpp.parent.mkdir(parents=True);shutil.copy2(ROOT/'diagnostics/film_three_finger/FrozenControl.cpp',cpp);shutil.copy2(checkpoint,out/'input.checkpoint');binary=out/'reference';compile=guarded(['g++','-O2','-std=c++17','-ffp-contract=off','-I/usr/include/eigen3',cpp,'-o',binary],out/'compile',120);run=guarded([binary,out/'input.checkpoint',out/'sensitivity.csv'],out/'process',480) if compile['exit_code']==0 else None
+ result=dict(status='PASS' if run and run['exit_code']==0 else 'FAIL',scope='independent frozen actual Hold-state signed acceleration-reaction sensitivity;NOT actual SOFA/load capacity/static equilibrium',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()},checkpoint_sha256=sha(checkpoint),parent_summary_sha256=sha(src/'summary.json'),compile=compile,process=run,binary_sha256=sha(binary) if binary.exists() else None,changed_physical_inputs='T and hypothetical body external load only in frozen diagnostic;NOT old model numerical repair',earth_gravity_trial='NOT RUN;-.981N body-only load omits film gravity',actual_actuator_specification=None,holding_capacity=None)
+ if run and run['exit_code']==0:
+  result['samples']=list(csv.DictReader((out/'sensitivity.csv').open()));result['gain']=next(csv.DictReader((out/'sensitivity.csv.gain.csv').open()));result['raw_hashes']={f.name:sha(f) for f in out.glob('sensitivity.csv*')};result['gain_scope']='local zero-velocity linearization at actual frozen geometry;NOT nonlinear transfer time or actuator requirement'
+ write_json(out/'summary.json',result);print(json.dumps({k:v for k,v in result.items() if k not in ('sources','compile','process','samples')}))
+if __name__=='__main__':main()

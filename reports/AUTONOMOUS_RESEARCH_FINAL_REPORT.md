@@ -1,5 +1,37 @@
 # ReGrip autonomous research — unfinished measured checkpoint
 
+## Latest completed1134–1138 — exact chain and transmission/energy diagnostics
+
+1134 independent same-plan reference matches ALL64 actual31.6..38ms q/v
+and accumulated times EXACT. The different-plan endpoint clock comparison
+(1.38778e-17s,velocity4.05720e-11mm/s) is NOT waived under1e-12 API gate.
+
+1135/1136 use actual20ms q/v,public mass and root mapping without integrating
+or applying signed diagnostic forces to SOFA. Frozen tendon-force affine
+error8.32728e-20N;unit-force norm3.92120469 acts on Rails,unit Skin force0,
+direct normal acceleration gain0. The local zero-velocity linearized delayed
+reaction second-time-derivative gain norm is7.96365944/s². This does NOT mean
+zero eventual control authority,nor establish nonlinear response time or
+required actuator force.1138 verifies the delayed-response formula against
+an independent analytic three-mass model (second-order Taylor convergence).
+Larger tensions/body-only loads in1135/36 are FROZEN sensitivity inputs,
+NOT new actual grasp trials,gravity simulation,or repairs of old FAILs.
+
+1137 reconstructs192 ACTUAL FREE recovery stages31.6..38ms. Stage weights sum
+EXACTLY to actual elapsed0.006400000000000017s. Actual ForceField energy error
+2.71051e-19Nmm;Wt=0 (actual T0),Wext=8.11563637e-6Nmm,
+Wdamp=6.25963299e-6Nmm,delta(stored+K)=1.86086141e-6Nmm.
+Signed defect=+4.85802552e-9Nmm,NOT heat. Root Work NULL.
+Relative to measured energy change,this defect is about0.261% (diagnostic
+normalization,NOT a new acceptance criterion). Whole energy remains BLOCKED.
+
+Current actual endpoint remains38ms/checkpoint280. No holding,lifting,
+completed recovery,friction,mechanical equalizer or final design certification.
+No OS/RAM exhaustion or child timeout caused these results. No automatic
+post-session process/restart is provided. Next development should investigate
+delayed Rail→Attachment→Skin control response and error-controlled longer
+physical-time integration,not merely increase tension or delete38ms bounds.
+
 ## Additional verified1130–1133 — value-only geometry and grasp feasibility
 
 12000 independent closest-point queries are bit-exact with original AD2.

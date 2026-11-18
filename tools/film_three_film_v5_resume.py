@@ -6,6 +6,8 @@ from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',required=True);p.add_argument('--step',type=int,required=True);p.add_argument('--steps',type=int,required=True);p.add_argument('--compare',action='store_true');p.add_argument('--restart-plan',action='store_true');p.add_argument('--extended-build',action='store_true');p.add_argument('--value-clearance',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
+ if a.value_clearance and not a.extended_build:raise ValueError('value-clearance option requires a new explicitly configured build;no silently ignored flag')
+ if a.extended_build and (a.parent!='20261118_three_film_v5_next_plan1115' or a.step!=216):raise ValueError('new extended build admission is bound to the independently qualified31.6ms IVP')
  if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('complete qualified actual V5 parent required')
  for name,digest in meta['raw_hashes'].items():
   if sha(src/name)!=digest:raise ValueError('parent raw changed')

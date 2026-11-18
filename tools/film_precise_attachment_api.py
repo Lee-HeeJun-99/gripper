@@ -4,7 +4,7 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();provider=ROOT/'results/autonomous_film_20261119_rail_aspect_api1654';pm=json.loads((provider/'summary.json').read_text());math=ROOT/'results/autonomous_film_20261119_attachment_math1680';mm=json.loads((math/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--precise-tendon',action='store_true');a=p.parse_args();provider=ROOT/'results/autonomous_film_20261119_rail_aspect_api1654';pm=json.loads((provider/'summary.json').read_text());math=ROOT/'results'/('autonomous_film_20261119_precise_tendon_math1714' if a.precise_tendon else 'autonomous_film_20261119_attachment_math1680');mm=json.loads((math/'summary.json').read_text())
  if pm['status']!='PASS' or mm['status']!='PASS':raise ValueError('qualified source and new kernel regression required')
  for f,d in pm['source_hashes'].items():
   if sha(provider/'sources'/f)!=d:raise ValueError('archived actual source changed')
@@ -12,7 +12,11 @@ def main():
   if sha(ROOT/'models/film_precise_attachment'/name)!=mm['source_hashes']['models/film_precise_attachment/'+name]:raise ValueError('qualified attachment changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources';shutil.copytree(provider/'sources',archive);shutil.copytree(ROOT/'models/film_precise_attachment',archive/'models/film_precise_attachment');folder=archive/'models/film_precise_attachment'
  code=(archive/'models/film_rail_aspect/Field.generated.cpp').read_text().replace('#include "Design.h"','#include "../film_rail_aspect/Design.h"\n#include "Elements.h"').replace('FilmAspectTendon','FilmPreciseAttachmentTendon').replace('registerFilmAspectField','registerFilmPreciseAttachmentField').replace('regrip_lateral_tendon::elements(m,q,stepT,','regrip_precise_attachment::elements(m,q,stepT,');(folder/'Field.generated.cpp').write_text(code)
+ if a.precise_tendon:
+  if sha(ROOT/'models/film_precise_tendon/Route.h')!=mm['source_hashes']['models/film_precise_tendon/Route.h']:raise ValueError('qualified telescoped tendon required')
+  shutil.copytree(ROOT/'models/film_precise_tendon',archive/'models/film_precise_tendon');code=code.replace('#include "Elements.h"','#include "../film_precise_tendon/Route.h"').replace('regrip_precise_attachment::elements','regrip_precise_tendon::elements').replace('FilmPreciseAttachmentTendon','FilmPreciseTendon');(folder/'Field.generated.cpp').write_text(code)
  code=(archive/'tests/test_film_rail_aspect_api.generated.cpp').read_text().replace('film_rail_aspect/Field.generated.cpp','film_precise_attachment/Field.generated.cpp').replace('FilmAspectTendon','FilmPreciseAttachmentTendon');(archive/'tests/test_precise_api.generated.cpp').write_text(code)
+ if a.precise_tendon:(archive/'tests/test_precise_api.generated.cpp').write_text(code.replace('FilmPreciseAttachmentTendon','FilmPreciseTendon'))
  (folder/'CMakeLists.txt').write_text('''cmake_minimum_required(VERSION 3.22)
 project(ReGripPreciseAttachment LANGUAGES CXX)
 find_package(Sofa.Core REQUIRED)

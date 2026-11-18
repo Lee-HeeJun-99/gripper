@@ -150,6 +150,52 @@ not a higher tension,stiffness repair or deletion of the old pulse result.
 1183 bondK10x static trial FAIL atNewton60 nearstage15 (force~1.0184e-12N);
 the unchanged1e-12N equilibrium gate is not waived.
 
+##7c. Same-Tmax longer HOLD and initial-time failure
+
+1186 adds a SEPARATE C2 input:release50..60ms instead of20..30ms,all other
+material/mass/root/route/Tmax unchanged.1187/1189/1190/1199 actual50ms
+Gauss250/125/500/1000step q/v/time/stages EXACT against their kernel reference.
+1191 shared1.6ms prefix and1193 all250 original-pulse states/stages/time are
+EXACT after the control refactor. Different control work is never labeled a
+same-work structural comparison.
+At50ms:Skin mean tip-.73835869mm,centre-.77704268mm,midspan-.09689811mm,
+total root-tip angle.06392641rad;tip width warp.06800614mm. These are still
+NO-OBJECT motions,not continuous wrapping or holding force.
+1194 true-stage work.00014514548522Nmm,damping.00000601767193Nmm,
+remaining stored+kinetic.00013912782191Nmm,signed defect8.61859e-12Nmm.
+Combined cable shortening1.54554116mm,maximum1.87444198mm at36.8ms.
+Tendon power becomes NEGATIVE while tension remains positive:the prescribed
+load can absorb mechanical work during dynamic recoil. Not numerical heat,
+motor electrical energy or a measured actuator/equalizer capability.
+1200/1202 add attachment/tendon raw nodal-force norms at ACTUAL force stages;
+old work columns remain byte-identical. Initial indirect response is not a
+measured finite propagation dead-time.
+
+1198 actual50ms400/200/100us all-pair FAIL:velocity error up to.26717137%.
+1206 actual50ms200/100/50us all-pair endpoint PASS:max.00514502%,including
+all recorded energy/shape/velocity quantities. This is NOT whole-time PASS.
+1199 cost was calibrated from COMPLETE250/500-step same-input trials:
+max seconds/step,+20% slowdown margin,+30s overhead=>469.92s/child forecast.
+The hard limit remained480s/4GiB;actual reference304.14s,SOFA240.37s.
+No900s exception or OS exhaustion. This is not an isolated speedup benchmark.
+
+1204 exact accepted0.8ms comparison (NO interpolation) remains FAIL.
+At200→100us:q L2.040475%,v.072873%,butSkin mean tip.502295%
+(absolute1.42569e-11mm),Skin midspan18.5355% (absolute1.87146e-16mm).
+Tiny absolute differences are recorded,not waived.400→100us bulk q/v also
+FAIL(.669357%/1.050982%).1201 frozen-REST modal projection puts96.34% of
+400→100us velocity error mass-norm² in10⁴..10⁵rad/s;this is NOT a measured
+nonlinear spectrum or proof of a sole error source.
+1205 generated long-double FORCE oracle freezes original input geometry and
+lifts actual double q without invented digits. At0.8ms attachment force
+difference2.66600e-17N L2 (~4.63690e-7%),shell1.57683e-21N.
+It is not an extended-precision trajectory and cannot excuse the time FAIL.
+Next distinguish the absolute Newton residual floor from timestep error.
+
+1192 inherited RAW/build/SDK byte preservation PASS19096 files,no changes.
+Evolving live sources/reports are separately versioned,not falsely called
+unchanged by the oldV12 ledger. Old manifests themselves remain untouched.
+
 ##8. Remaining contact/grasp/design boundaries
 
 Existing1133 frictionless sphere normals have zero centre torque andwrench

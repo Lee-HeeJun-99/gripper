@@ -1,3 +1,21 @@
+## Latest completed — same-Tmax HOLD and startup diagnostics1186–1206
+
+1187/1189/1190/1199 actual NO-OBJECT50ms Hold completed;not RUNNING.
+Same Tmax,release moved20..30→50..60ms. Mean skin tip-.73836mm vs original
+pulse-.38082mm;different work,NOT wrapping/holding superiority.
+1206 endpoint200/100/50us all-pair PASS,max.00514502%;1198 coarse family
+FAIL.1204 exact0.8ms startup FAIL remains,including tiny signals;NO full
+time/mesh/energy/grasp certification.1205 force precision probe is not a
+high-precision trajectory. Next isolate Newton absolute residual vs dt.
+1193 original50ms pulse unchanged EXACT after refactor;1192 preserved
+RAW/build/SDK integrity PASS19096. No SDK edits/pushes/old-result deletions.
+See [research](REGRIP_TENDON_TRANSMISSION_AND_WRAPPING.md) §7b/7c.
+Actual3-finger44.4ms checkpoint:1178_plan7/three.checkpoint_344.txt.
+Validated reusable Hold DLL:build/film_transmission_20261118_transmission_hold_profile1186/libReGripFilmTransmission.so.
+Next-window actual DLL:build/three_film_extended_20261118_three_film_after38_actual1174/libReGripThreeFilmRecovery.so.
+Current complete feature commits:1f9a339,04630f2;subsequent checkpoints
+record the additional tool/report commit. No automatic background restart.
+
 ## Latest verified continuation — campaigns1169–1188 (2026-11-18)
 
 Actual3-finger endpoint is now44.4ms (1174/1178),not38ms.1176/1177 exact

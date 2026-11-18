@@ -1,5 +1,73 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Actual lateral release and distributed joints —2026-11-19
+
+Campaign1491/1494/1501/1509 extend the actual lateral six-mm-outboard
+three-film/free-sphere system to accumulated .026999999999999948s.
+All accepted q/v, micro-stage forces and clocks match independent references
+exactly. This is not whole temporal convergence. The original, quadratic,
+lateral and profiled route histories remain separate.
+
+1506 rejects the next persistent-contact interval: the old material edge's
+required normal reaction becomes negative. Unlike1470's new contact birth,
+this is an all-row release candidate. Negative diagnostic forces are never
+applied to the unilateral physical solution.
+1513/1517 release32/64 FAIL normal-velocity bounds;1518 release128 reference
+PASS. Actual1522 SOFA27.0..27.2ms PASS: q/v and all512 RK stage q/v/force,
+times/weights/masks EXACT; minimum gap -1.55644386268e-11mm,
+outgoing normal velocity +.0238153195854mm/s, sum-of-segment momentum
+residual norm bound7.38835904289e-19Ns. This bound is not an independent
+global vector balance. Runtime229.561s versus measured forecast373.707s,
+under480s/4GiB. Contact-exit bracket is numerical admissibility, not an
+exact continuous-time root. Whole time/energy/recovery/grasp remain BLOCKED.
+
+Latest completed actual lateral checkpoint:
+`results/autonomous_film_20261119_lateral_release_actual1522/three.checkpoint_136.txt`
+Build `build/lateral_release_20261119_lateral_release_actual1522/libReGripLateralRelease.so`
+SHA256 bf6a7f2f534c5635398ea03e8db34fa0124c5369b2f763b9633324cbb93ba9db.
+Schema REGRIP_LATERAL_FREE_V1 explicitly preserves UNKNOWN edge birth history,
+not an invented prior contact time. SDK unchanged /home/ubuntu/SOFA/v26.06.00.
+
+1495 material-edge identity/force-kind audit: same state/time endpoint and
+next initial normal multipliers differ by .138252736%, maximum1.73077e-8N.
+Endpoint collocation and acceleration-constraint forces are distinct numerical
+observables; no averaging or temporal PASS claim.1496 passive stage labels,
+1497 purity: all old columns/state/Field/displacement/checkpoint physical
+tokens EXACT.1499 actual25.2..26.0ms measured-micro partial inventory:
+Wt5.300771107e-7Nmm, signed partial defect -5.59195501e-13Nmm,
+normal work -9.04883e-24Nmm. Root work NULL, not heat or whole energy PASS.
+
+Separate distributed attachment candidate1503/1504/1514/1515:
+same core439.339791775mm3, materials, masses, root, route and no-object C2
+input; root spring .001N/mm and FREE stiffness sum .004N/mm per rail preserved.
+20 free attachment stations replace4 free clips. Adhesive/hardware mass and
+volume NOT matched/modelled. Mode0 matches old lateral dynamics exactly.
+Actual50ms mode2 matches independent states/stages exactly, NOT mesh/time PASS.
+
+|50ms no-object metric|five clips/rail|distributed mode2|
+|---|---:|---:|
+|width-mean tip local z, mm|-.743267|-.834985|
+|centre tip local z, mm|-.785108|-.699924|
+|75mm centre arch local z, mm|+.372966|+.341182|
+|transverse tip warp, mm|.0731253|.247774|
+|root-tip width-mean angle, rad|.0643616|.0995159|
+|tendon work, Nmm|.000149076386|.000140670528|
+
+Mixed result: increased mean bending and reduced work do NOT establish
+wrapping superiority; centre-tip bend decreases and tip warp increases.
+1520 signed partial work defect2.86762e-11Nmm is not whole energy certification.
+1521 actual scale1 equal-aspect surface PNG/SVG/OBJ;1524 VIRTUAL sphere overlay
+finds sampled minimum gap -.0354185734mm. This overlay is NOT a contact-solved
+trajectory, contact area or pressure.1523's legacy parameter label mistakenly
+says mm; preserved, superseded by dimensionless typed1524 metadata.
+Final design selection, stable holding/lifting, friction, self-collision,
+full-thickness clearance,12-Wrench and Grasp Optuna remain BLOCKED/NOT RUN.
+
+Reproduce completed release with a NEW tag:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_lateral_release_sofa.py --tag UNIQUE_RELEASE`
+Typed lateral FREE continuation implementation is under separate validation;
+do not feed this schema to the old quadratic FREE_V3 owner.
+
 ## Current actual lateral contact continuation to24.4ms —2026-11-18
 
 Feature commit0c1d40d:bounded contact-admissibility reintegration and

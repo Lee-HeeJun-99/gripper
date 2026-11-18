@@ -5,7 +5,7 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--parent');p.add_argument('--reuse-build');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rm=json.loads((ref/'summary.json').read_text());parent=ROOT/'results'/('autonomous_film_'+(a.parent or '20261118_lateral_unload_boundary1458'));pm=json.loads((parent/'summary.json').read_text());provider=ROOT/'results/autonomous_film_20261118_lateral_resume1420';proof=json.loads((provider/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--reference',required=True);p.add_argument('--parent');p.add_argument('--reuse-build');p.add_argument('--stage-labels',action='store_true');a=p.parse_args();ref=ROOT/'results'/('autonomous_film_'+a.reference);rm=json.loads((ref/'summary.json').read_text());parent=ROOT/'results'/('autonomous_film_'+(a.parent or '20261118_lateral_unload_boundary1458'));pm=json.loads((parent/'summary.json').read_text());provider=ROOT/'results/autonomous_film_20261118_lateral_resume1420';proof=json.loads((provider/'summary.json').read_text())
  if rm['status']!='PASS' or rm['macros'] not in (1,2,4,8) or pm['status']!=('PASS' if a.parent else 'FAIL') or proof['status']!='PASS':raise ValueError('qualified isolated reference and preserved old failure required')
  for f,d in proof['source_hashes'].items():
   if sha(provider/'sources'/f)!=d:raise ValueError('actual provider archive changed')
@@ -34,6 +34,16 @@ def main():
   text=text.replace(old,new);row=next(x for x in lines if x.lstrip().startswith('for(unsigned k=0;k<3;++k){const auto&position='));changed=row.replace(':q;',':microQ;').replace(':v;',':microV;').replace('last+dt*(k==0?0:k==1?.5:1)','(k?result.stages[k-1].time:microTime)')
   text=text.replace(row,'  {Eigen::VectorXd microQ=q,microV=v;double microTime=last;for(const auto&result:controlled.accepted){\n'+changed+'\n microQ=result.q;microV=result.v;microTime=result.stages[1].time;}}')
   text='#include "../film_coupled_collocation/EndpointControlledRows.h"\n'+text;path.write_text(text)
+ if a.stage_labels:
+  path=archive/'models/film_three_finger/ThreeFilmOwner.cpp';text=path.read_text();changes={
+   'jacobian,stage_q,stage_v\\n':'jacobian,stage_q,stage_v,local_macro,micro,stage,used_h_s,force_kind\\n',
+   'double microTime=last;for(const auto&result:controlled.accepted){':'double microTime=last;unsigned microIndex=0;for(const auto&result:controlled.accepted){double used_h=controlled.durations[microIndex];',
+   "quote(rowJournal,velocity);rowJournal<<'\\n';":"quote(rowJournal,velocity);rowJournal<<','<<count<<','<<microIndex<<','<<k<<','<<used_h<<','<<(k?\"collocation_stage\":\"acceleration_constraint\")<<'\\n';",
+   'microTime=result.stages[1].time;}}':'microTime=result.stages[1].time;++microIndex;}}'}
+  for old,new in changes.items():
+   if text.count(old)!=1:raise ValueError('passive stage-label anchor differs')
+   text=text.replace(old,new)
+  path.write_text(text)
  path=archive/'models/film_three_finger_resume/ThreeFilmResume.cpp';text=path.read_text().replace('REGRIP_LATERAL_PERSISTENT_V1','REGRIP_LATERAL_CONTROLLED_V1');path.write_text(text)
  sources={str(f.relative_to(archive)):sha(f) for f in archive.rglob('*') if f.is_file()}
  if a.reuse_build:

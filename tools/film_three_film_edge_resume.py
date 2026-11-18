@@ -5,15 +5,22 @@ from curve_common import ROOT,sha,write_json
 from film_guarded_process import guarded
 from film_rigid_reference import SDK
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',default='20261118_three_film_primitive_actual1059');p.add_argument('--checkpoint-step',type=int,default=137);p.add_argument('--steps',type=int,default=4);p.add_argument('--compare',action='store_true');p.add_argument('--end-time',type=float,default=.025);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
- if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('completed actual primitive parent required')
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--parent',default='20261118_three_film_primitive_actual1059');p.add_argument('--checkpoint-step',type=int,default=137);p.add_argument('--steps',type=int,default=4);p.add_argument('--compare',action='store_true');p.add_argument('--end-time',type=float,default=.025);p.add_argument('--accepted-prefix',action='store_true');a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.parent);meta=json.loads((src/'summary.json').read_text())
+ if a.accepted_prefix:
+  if meta['status']!='FAIL' or not a.compare:raise ValueError('failed-horizon prefix is ONLY permitted for exact existing-window comparison')
+ else:
+  if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('completed actual primitive parent required')
  for n,h in meta['raw_hashes'].items():
   if sha(src/n)!=h:raise ValueError('parent raw changed')
  checkpoint=src/f'three.checkpoint_{a.checkpoint_step}.txt';tokens=checkpoint.read_text().split();time,dt=float(tokens[1]),float(tokens[2])
  if tokens[0]!='REGRIP_EDGE_V2' or not 1<=a.steps<=64 or time+dt*a.steps>a.end_time+1e-14 or not time<a.end_time<=.03:raise ValueError('explicit V2 bounded continuation required')
+ if a.accepted_prefix:
+  reference_states=list(csv.DictReader((src/'three.states.csv').open()));indices=[i for i,r in enumerate(reference_states) if float(r['time'])==time]
+  if len(indices)!=1 or len(reference_states)<indices[0]+1+a.steps:raise ValueError('requested comparison extends beyond individually accepted prefix')
  tree=ET.parse(src/'scene.scn');scene=tree.getroot();binary=next(n.get('pluginName') for n in scene.findall('RequiredPlugin') if n.get('pluginName','').endswith('/libReGripThreeFilmPrimitive.so'))
  if sha(binary)!=meta['binary_sha256']:raise ValueError('primitive binary changed')
- estimate=2*meta['process']['runtime_s']*a.steps/meta['steps']+30
+ completed_steps=len(reference_states) if a.accepted_prefix else meta['steps']
+ estimate=2*meta['process']['runtime_s']*a.steps/completed_steps+30
  if estimate>480:raise ValueError('measured child forecast exceeds480s')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copy2(checkpoint,out/'input.checkpoint');scene.set('time',tokens[1]);scene.set('dt',tokens[2]);owner=scene.find('ThreeFilmFaceEdgeODE');owner=scene.find('ThreeFilmEdgeODE') if owner is None else owner;owner.tag='ThreeFilmEdgeODE';owner.set('checkpoint',str(out/'input.checkpoint'));owner.set('identity',tokens[4]);owner.set('endTime',format(a.end_time,'.17g'))
  for node in scene.iter():

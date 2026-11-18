@@ -40,8 +40,10 @@ public:
  void readContactCheckpoint(std::istream&in,const SharedFilmSystem&s,const Eigen::VectorXd&q,const Eigen::VectorXd&v)override{ThreeFilmResumeODE::readContactCheckpoint(in,s,q,v);}
 };
 }
+#ifndef REGRIP_THREE_PRIMITIVE_EMBEDDED
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripThreeFilmPrimitive";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL material-edge V2 checkpoint persistent contact;NOT fullcycle/grasp").add<regrip_three_resume::ThreeFilmEdgeODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL bounded Face->Edge C1 event without impulse followed by material-edge contact;NOT global CCD/grasp").add<regrip_three_resume::ThreeFilmFaceEdgeODE>());}
 }
+#endif

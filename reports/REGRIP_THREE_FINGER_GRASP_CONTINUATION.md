@@ -1,5 +1,99 @@
 # Three-finger actual continuation — 2026-11-18
 
+## FREE V3 exact resume1082 — actual SOFA
+
+From1081 checkpoint173(27.3ms),a separate Free Owner reproduces two steps
+through27.5ms. q/v error0,all force stages exact,actual field error0 with
+only declared legacy sampled-work excluded;checkpoints174/175 byte-identical.
+Minimum gap6.76473674e-6mm,momentum4.31892292e-19Ns. Original1e-12 gate.
+1083 extends checkpoint176(27.6ms) by24steps to30ms;actual measured four-step
+runtime22.7082s yields conservative forecast302.498s<480s. Check its result,
+not this pre-execution forecast,before asserting completed Unload.
+
+Exact replay with a fresh unique tag:
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_three_film_free_resume.py --tag UNIQUE --parent 20261118_three_film_free_four1081 --checkpoint-step 173 --steps 2 --compare
+```
+
+## CURRENT — actual deformed release1079; separated continuation1081
+
+**Actual SOFA1079** integrates the same27ms accepted state of failed1061
+through a separately defined acceleration-complementarity release variant.
+No stiffness/damping/mass/control change,no force clipping,no velocity reset
+or geometric projection.256 actual RK stages all have nonnegative applied
+normal forces and whole-stage clearance>=1.42108547e-13mm. Shared momentum
+residual3.55121519e-19Ns. At27.1ms active set empty, outgoing normal velocity
+>=.00631256147756mm/s. q/v match independent1078 EXACT under original1e-12
+API; quaternion and mapped physical state checked exactly at commit.
+RK accumulated clock joins free remainder EXACT. This is a LIMITED actual
+deformed release,NOT completed Unload/recovery,holding/lift or full physics.
+
+Actual1080 restores FREE V3 and takes one step.1081 continues four steps to
+27.6ms. Each uses all960 triangles and existing quadratic midpoint dense
+numerical-path CCD; new impact is explicitly rejected,not ignored.1081 minimum
+force-stage gap1.99168699e-6mm,momentum4.32180607e-19Ns. No friction/grasp
+certificate follows. Legacy work restarts at each process; root work NULL.
+
+1072/1074 are preserved failures: full100us explicit acceleration queries
+leave the tangent manifold;1074 first refusal at27.00078125ms has
+gap-7.35412e-13mm,vn-1.10922e-9mm/s,lambda+9.72447e-8N. Gate not relaxed.
+1075 instead localizes the new integration law to20us,64RK substeps and then
+free midpoint;1073 independently tests all8 coupled active subsets,permutation,
+zero-reaction and invalid-compliance guards.1077 local64/128 comparison gives
+relative full-state q1.93028e-13%,v5.83336e-10%,but both share the same80us
+free-remainder bias and there is no base-to-quarter/full-cycle test: NOT
+full0.1% time convergence. Tiny gap/residual relative differences are not waived.
+
+1076 old actual release matched its reference but its RK/free clock join
+reconstructed from the macro start differs9.02056208e-17s; keep its result
+but do NOT use it as exact accumulated internal-clock qualification.1078
+independent and1079 actual pass the corrected accumulated endpoint forward.
+RK quadrature weights and fractional remainder durations are their actual
+floating values; do not force their sum to a nominal value or invent work.
+
+Build:build/three_film_release_20261118_three_film_actual_clock_release1079/
+DLL SHA25622add00153af4573a0e852c954af0514f444ca4d23c03a1d9f5136ab05e9cc51.
+Raw:results/autonomous_film_20261118_three_film_actual_clock_release1079/,
+...three_film_free_profile1080/,...three_film_free_four1081/.
+Each contains archived runner/scene,source or parent identity,SDK,binary and
+raw hashes,actual command and guarded process exit/runtime. All before/after
+physical conditions remain research assumptions,gravity0 andfrictionOFF.
+
+## Release diagnostics1062–1066 (not actual release)
+
+1062 archived independent replay captures the previously rejected100us trial
+from actual checkpoint170. Initial reaction+1.0641827e-7N becomes negative
+at27.05ms (-4.8875909e-7N) for all three material edges. Nothing is committed.
+1063/1065 reintegrated signed bilateral diagnostic locates a reaction root at
+27.009042662754602ms, bracket9.31322568e-14s. Outgoing free midpoint remainder
+has whole endpoint gap+2.87091638e-7mm and momentum residual3.53960e-19Ns.
+1065 importantly measures pre-event collocation reaction minimum
+-4.4303170e-16N: this signed diagnostic is NOT an admissible unilateral
+trajectory and is NOT directly installed into SOFA. No tiny-force exemption
+or clipping is permitted. Next experiment1067 seeks an admissible interval
+split satisfying both nonnegative pre-stage reactions and separating free
+acceleration, with explicitly refined root uncertainty. Its result must be
+checked before actual owner integration; signed-reference PASS alone is not
+physical release PASS.
+
+1064 independent regression preserves fourth-order analytic Lobatto behavior
+(errors6.33439e-9,3.96261e-10,2.47720e-11), maximum tangent FD1.63276e-16,
+and verifies optional rejected-stage observer leaves accepted q/v EXACT while
+still rejecting tensile contact and never mutating input state.
+
+1066 read-only actual failed-horizon accepted-prefix geometry at27ms is checked
+against the exact serialized q/v before rendering. Reconstruction7.05686e-15mm,
+scale1. Skin width-mean tip z deformation-.289499920mm,root-tip tangent angle
+1.75203891deg; rail tip angles6.87049/6.85541deg. Body centre z-63.47737494mm,
+gravity0. Contact area/pressure/holding load NULL,wrapping NOT ESTABLISHED.
+Actual image/OBJ:
+`results/autonomous_film_20261118_three_film_unload_shape1066/`.
+
+Functional commit:bea42b197f00e09cc745d8203191c7a9a93f0ef7 qualifies actual
+Face->Edge and typed resume;1063–1066 diagnostic sources are archived per run.
+No timeout/resource exhaustion caused1061;it stopped at a physical active-set
+transition. Existing full time/energy/material/grasp gates remain unmet.
+
 ## CURRENT — typed Edge resume qualified; Unload stops at release
 
 1059 actual Face->Edge event PASS;1060 four-step V2 resume EXACT including

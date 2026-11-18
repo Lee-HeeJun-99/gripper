@@ -1,5 +1,26 @@
 # Executable research checkpoint — 2026-11-18
 
+## CURRENT verified — deformed release1079 and exact FREE resume1082
+
+Actual1079 independently matches q/v EXACT at original1e-12 API; applied
+normal forces nonnegative,whole-stage gap>=1.42109e-13mm,momentum3.55122e-19Ns,
+outgoing normal velocity>=.00631256mm/s. Separate20us acceleration
+complementarity plus remaining free-midpoint variant;old failed Lobatto
+horizons remain FAIL. RK/free accumulated-clock join is EXACT after fixing
+1076's reconstructed-clock mismatch9.02056e-17s. No force/velocity projection.
+
+Actual1081 reaches27.6ms separated.1082 restores FREE V3:two subsequent
+steps,q/v/stages/ForceField observations EXACT,two snapshots BYTE-IDENTICAL.
+Whole quadratic midpoint numerical-path surface CCD rejects new impacts.
+NOT an exact continuous nonlinear CCD/full time/mesh/energy/grasp certificate.
+1083 is the next bounded24-step Unload-to30ms experiment;inspect its actual
+process/summary before claiming completion. No background restart promised.
+Reusable DLL:build/three_film_release_20261118_three_film_actual_clock_release1079/libReGripThreeFilmRelease.so
+SHA25622add00153af4573a0e852c954af0514f444ca4d23c03a1d9f5136ab05e9cc51.
+Full details:REGRIP_THREE_FINGER_GRASP_CONTINUATION.md. Older states below
+are historical;full time FAIL,friction/self-contact/lift/optimization BLOCKED.
+
+
 ## CURRENT — typed Edge resume qualified; Unload stops at release
 
 1059 actual Face->Edge event PASS;1060 four-step V2 resume EXACT including

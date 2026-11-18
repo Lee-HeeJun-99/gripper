@@ -5,8 +5,15 @@ import argparse,csv,json,os,shutil,xml.etree.ElementTree as ET
 import numpy as np
 from curve_common import ROOT,sha,write_json
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.case);meta=json.loads((src/'summary.json').read_text())
- if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('complete actual continuation required')
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);p.add_argument('--accepted-prefix-step',type=int);a=p.parse_args();src=ROOT/'results'/('autonomous_film_'+a.case);meta=json.loads((src/'summary.json').read_text())
+ if a.accepted_prefix_step is None:
+  if meta['status'] not in ('PASS','EXPERIMENTAL') or meta['process']['exit_code'] or meta['sofa_errors']:raise ValueError('complete actual continuation required')
+ else:
+  if meta['status']!='FAIL':raise ValueError('explicit accepted-prefix mode requires preserved failed horizon')
+  checkpoint=src/f'three.checkpoint_{a.accepted_prefix_step}.txt'
+  if sha(checkpoint)!=meta['raw_hashes'][checkpoint.name]:raise ValueError('accepted checkpoint changed')
+  tokens=checkpoint.read_text().split();state=list(csv.DictReader((src/'three.states.csv').open()))[-1];q=np.fromstring(state['q'],sep=' ');v=np.fromstring(state['v'],sep=' ');n=len(q)
+  if tokens[0]!='REGRIP_EDGE_V2' or float(tokens[1])!=float(state['time']) or not np.array_equal(q,np.array(tokens[5:5+n],dtype=float)) or not np.array_equal(v,np.array(tokens[5+n:5+2*n],dtype=float)):raise ValueError('last actual accepted state differs from checkpoint')
  for n,h in meta['raw_hashes'].items():
   if sha(src/n)!=h:raise ValueError('actual raw changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');scene=ET.parse(src/'scene.scn');topology=scene.find('.//TriangleSetTopologyContainer');rest=np.fromstring(topology.get('position'),sep=' ').reshape(-1,3);tri=np.fromstring(topology.get('triangles'),sep=' ',dtype=int).reshape(-1,3);states=list(csv.DictReader((src/'three.states.csv').open()));state=states[-1];center=np.fromstring(state['q'],sep=' ')[-6:-3];world=[];initial=[];metrics=[];reconstruction_error=0.;profiles=[]

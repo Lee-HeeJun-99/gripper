@@ -1,0 +1,14 @@
+"""Preserved failed reference vs public-mass correction; actual states unchanged."""
+import argparse,difflib,json,shutil,subprocess
+from curve_common import ROOT,sha,write_json
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();names=('20261119_lateral_stationary_peak1539','20261119_lateral_stationary_peak_public1541');cases=[ROOT/'results'/('autonomous_film_'+n) for n in names];meta=[json.loads((x/'summary.json').read_text()) for x in cases]
+ if [x['status'] for x in meta]!=['FAIL','PASS'] or any(x['process']['exit_code'] or x['sofa_errors'] or x['actual_steps']!=50 for x in meta) or meta[0]['binary_sha256']!=meta[1]['binary_sha256'] or meta[0]['physical_input']!=meta[1]['physical_input']:raise ValueError('same completed actual dynamics,failed/corrected references required')
+ for path,m in zip(cases,meta):
+  for f,d in m['raw_hashes'].items():
+   if sha(path/f)!=d:raise ValueError('actual raw changed')
+  for f,d in m['source_hashes'].items():
+   if sha(path/'sources'/f)!=d:raise ValueError('reference sources changed')
+ same_models={f:d for f,d in meta[0]['source_hashes'].items() if f.startswith('models/')}=={f:d for f,d in meta[1]['source_hashes'].items() if f.startswith('models/')};files=['three.states.csv','three.free.stages.csv']+[f'{kind}_{f}.csv' for kind in ('film','displacement') for f in range(3)];exact={f:(cases[0]/f).read_bytes()==(cases[1]/f).read_bytes() for f in files}
+ out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');relative='diagnostics/film_three_finger/RestClosing.cpp';texts=[(x/'sources'/relative).read_text().splitlines(True) for x in cases];(out/'reference_mass_binding.diff').write_text(''.join(difflib.unified_diff(*texts,fromfile=names[0],tofile=names[1])));r=dict(status='PASS' if same_models and all(exact.values()) and max(meta[1]['reference_max_abs'].values())==0 else 'FAIL',scope='read-only reference input-mass binding diagnosis;NOT Time/Mesh/Energy or grasp certification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),summary_hashes=[sha(x/'summary.json') for x in cases],same_actual_binary_sha256=meta[0]['binary_sha256'],ALL_physical_model_sources_exact=same_models,actual_CSV_bytes_exact=exact,old_reference_error=meta[0]['reference_max_abs'],public_mass_reference_error=meta[1]['reference_max_abs'],interpretation='SOFA state/control/physics unchanged;reference public mass binding fixes strict API mismatch. Old FAIL preserved.',source_hashes={str(x.relative_to(ROOT)):sha(x) for x in (ROOT/'tools/film_rest_mass_binding_audit.py',)},raw_hashes={'reference_mass_binding.diff':sha(out/'reference_mass_binding.diff')});write_json(out/'summary.json',r);print(json.dumps(r))
+if __name__=='__main__':main()

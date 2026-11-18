@@ -58,9 +58,11 @@ public:
  }
 };
 }
+#ifndef REGRIP_LATERAL_RELEASE_EMBEDDED
 void registerFilmLateralField(sofa::core::ObjectFactory*);
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripLateralRelease";}
 __attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){registerFilmLateralField(f);f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL actual bounded lateral deformed release;no whole time/energy/grasp certification").add<regrip_three_resume::LateralReleaseODE>());f->registerObjects(sofa::core::ObjectRegistrationData("EXPERIMENTAL typed separated lateral FREE resume;rejects reimpact;NOT grasp").add<regrip_three_resume::LateralFreeODE>());}
 }
+#endif

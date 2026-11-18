@@ -16,7 +16,9 @@ def main():
  if tokens[0]!='REGRIP_LATERAL_FREE_V1' or tokens[4]!=m['identity'] or h!=.0002:raise ValueError('typed released physical checkpoint required')
  for _ in range(a.steps):end+=h
  if end>.03:raise ValueError('bounded original C2 unload interval')
- out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources';shutil.copytree(parent/'sources/models',archive/'models');shutil.copytree(ROOT/'models/film_lateral_release',archive/'models/film_lateral_release',dirs_exist_ok=True)
+ out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');archive=out/'sources'
+ if a.reuse_build:shutil.copytree(ROOT/'results'/('autonomous_film_'+a.reuse_build)/'sources/models',archive/'models')
+ else:shutil.copytree(parent/'sources/models',archive/'models');shutil.copytree(ROOT/'models/film_lateral_release',archive/'models/film_lateral_release',dirs_exist_ok=True)
  diag=archive/'diagnostics/film_three_finger';diag.mkdir(parents=True);loader=(ROOT/'diagnostics/film_three_finger/RoutedCheckpoint.h').read_text().replace('REGRIP_ROUTED_PERSISTENT_V1','REGRIP_LATERAL_FREE_V1');start=loader.index(' for(unsigned f=0;f<3;++f){unsigned triangle,feature;');loader=loader[:start]+''' double begin,end;regrip_lateral_release::readFreeFooter(in,s,time,begin,end);
  std::string extra;if(!in||in>>extra||s.clearance(q)<=0)throw std::runtime_error("strictly separated typed checkpoint required");
 }

@@ -50,3 +50,10 @@ def compiled_feature_rows():
     if sha(binary)!='f2a8ca3a35608b5b62719cbbf6a09dea5f38fa6670fa7b73d603d06ffe597b59' or sha(source)!='eb0149022d83fe5b6636a080dfcadaf40204722fdbdb24da8b0990ad6139869b':
         raise ValueError('frozen Native feature observer source/binary mismatch')
     return binary,source
+
+def compiled_mapping_acceleration():
+    binary=BASE/'cad/build_b3_mapping_build589/libReGripMappingAcceleration.so'
+    source=BASE/'results/b3_mapping_build589/Observer.cpp'
+    if sha(binary)!='3f1c9995cdadbef875ea340a6a814566939bbf19bd636681315e3dc2f397e909' or sha(source)!='9e3e3a8001b1eb9755a32720c3222491d9e5010e9f8fa3d44e3444d66964865d':
+        raise ValueError('frozen composite acceleration observer identity mismatch')
+    return binary,source

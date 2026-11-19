@@ -2,7 +2,7 @@
 import argparse,json,shutil,subprocess
 from pathlib import Path
 from analyse import BASE,sha
-from observer_identity import compiled_alarm_window,compiled_feature_rows
+from observer_identity import compiled_alarm_window,compiled_feature_rows,compiled_mapping_acceleration
 ROOT=BASE.parent
 
 def immutable(name):
@@ -30,6 +30,14 @@ def main():
     for name in ('finite_free_spin_reference.py','test_finite_mass.py','finite_reference_test_run.py','finite_mass_reference.py','finite_com_native.py','finite_com_audit.py','finite_mapped_mass_audit.py','finite_com_event_rows.py','finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     shutil.copy2(BASE/'cad/finite_guide_product.py',out/'finite_guide_product.py')
+    for name in ('mapping_acceleration_build.py','mapping_acceleration_run.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
+    for f in compiled_mapping_acceleration():
+        files[str(f.relative_to(ROOT))]=sha(f)
+        if f.suffix=='.cpp':shutil.copy2(f,out/'mapping_acceleration_Observer.cpp')
+    mapping_build=BASE/'cad/build_b3_mapping_build589'
+    files[str((mapping_build/'CMakeCache.txt').relative_to(ROOT))]=sha(mapping_build/'CMakeCache.txt')
+    shutil.copy2(BASE/'sofa/native_mapping_acceleration/CMakeLists.txt',out/'mapping_acceleration_CMakeLists.txt')
     for f in compiled_feature_rows():
         files[str(f.relative_to(ROOT))]=sha(f)
         if f.suffix=='.cpp':shutil.copy2(f,out/'feature_Observer.cpp')

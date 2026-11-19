@@ -1,3 +1,44 @@
+## Native composite-acceleration continuation588–591 — 2026-11-19
+
+Feature commits:e85534a,f3869ba;26 archived campaigns565–591 (587 is preliminary build only).
+Authority:product_prototype/reports/FINITE_COM_NATIVE_VALIDATION_20261119.md.
+Latest evidence:evidence_product_mapping_v26/manifest.json → v25 → v24.
+3933 recorded files;3785 prior immutable paths verified0mismatches.
+
+-588 compile FAIL (missing MechanicalParams include) preserved;589 fixed read-only
+ observer compiled against INSTALLED SDK only. No SDK/FEM/contact/ODE changes.
+ Binary:cad/build_b3_mapping_build589/libReGripMappingAcceleration.so.
+-590 observer scene FAIL:RequiredPlugin was placed after child creation.
+ 591 fixes XML plugin order ONLY;both Native children complete with0SOFA errors.
+-Public composite acceleration API called on temporary output at real q/v:
+ returned0;expected omega×(omega×r) max0.403523685m/s²,96actual point records.
+ Observer q/v/mapped mass points/contact impulse difference EXACT0 vs572.
+ Thus current mapped-mass composition lacks this composite acceleration response;
+ not a proof that every Native rigid solver is unsupported.
+-18 successful short Native children +2 observer-init failures this continuation;
+ no full B3 Holding rerun. Independent geometry/Jacobian/reference Gates advance,
+ but physical rigid inertia/free-spin/time/mesh and product adoption remain BLOCKED.
+-No new50g,100g,Lift/STEP approval. Old B3 functional results/failures unchanged.
+ Physical material density and eyelet/support union/join still NOT MEASURED.
+
+NEXT:do not repeat free dt refinements or adopt world-frozen tensor. Verify a stock
+Native composition that supplies composite acceleration/gyroscopic response using
+581(off-axis negative) and584(principal positive) references. If unavailable,
+a narrowly scoped inertial correction requires its own force/Jacobian/reference
+validation;do NOT rebuild an ODE/contact solver or silently resume B3 checkpoint.
+Only then redo moving finite contact clearance and qualified physical convergence.
+
+Exact read-only resume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_mapping_acceleration591/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_finite_spin_exact581/summary.json`
+Reusable compiled probe589 plus unchanged physical332/direct512;source/binary guards
+in observer_identity.py. Probe replay,ONLY with a new hypothesis/unique tag:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/mapping_acceleration_run.py --tag UNIQUE_MAPPING_API`
+Regression:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m unittest discover -s product_prototype/sofa -p test_finite_mass.py -v`
+No active physics child;no background continuation promised.
+This is an adoption/model-capability block,NOT OS memory or480s exhaustion.
+
 ## Free-spin continuation581–586 — 2026-11-19
 
 Feature commit:e85534a (COM/Native contact565–580);this continuation separately committed.

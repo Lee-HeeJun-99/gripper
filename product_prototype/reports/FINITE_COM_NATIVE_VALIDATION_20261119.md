@@ -1,5 +1,36 @@
 # Finite hardware COM / Native mass validation
 
+## Follow-on actual public acceleration API588–591
+
+Read-only NativeMappingAcceleration observer calls installed Mapping API with real
+parent velocity and ZERO parent acceleration into a TEMPORARY output Data object.
+No body/child position,velocity,acceleration,force or mass Data are changed.
+Expected child composite acceleration is omega cross (omega cross radius).
+
+588 build failure missing MechanicalParams include is archived;589 success only adds
+the correct installed header. Build/Native children4GiB/480s guarded. A preliminary
+unbounded compiler invocation587 failed with the same include error before the
+bounded build runner was added;it is NOT claimed as a guarded experiment.
+590 scene failure is XML registration order,not physics failure.591 moves RequiredPlugin
+before children;both runs complete. Real q/v/impulse/mapped-point arrays match572
+EXACTLY0 before/after observer.96temporary output samples:API0m/s²,expected up to
+0.403523684933m/s². This backs the header finding with an actual API capability test.
+It does not certify all SOFA compositions or prove an ODE solver replacement is needed.
+
+Probe589 binary SHA3f1c9995cdadbef875ea340a6a814566939bbf19bd636681315e3dc2f397e909;
+compiled source SHA9e3e3a8001b1eb9755a32720c3222491d9e5010e9f8fa3d44e3444d66964865d.
+Reusable build product_prototype/cad/build_b3_mapping_build589.
+Raw build588/589 and Native590/591 under product_prototype/results/.
+v26 evidence3933files;prior3785immutable files unchanged. SDK/binaries/source/cache
+and scenes/commands/actual outputs frozen. Runtime5910.121/0.137s;RSS NOT MEASURED.
+
+Current composition is BLOCKED for physical off-axis rigid dynamics adoption.
+Do not report this as resource exhaustion or product completion. Existing B3 physical
+time/mesh Gates remain FAIL and density/joint/wholeassembly data remain missing.
+Repeated dt refinement on this branch is stopped because it cannot remove the
+identified missing response. Next stock inertial-capability verification or narrowly
+scoped inertial-force correction must pass BOTH581/584 references before B3 contact.
+
 ## Follow-on cycles581–586 (after feature commit e85534a)
 
 Analytical torque-free reference for an axisymmetric ring:

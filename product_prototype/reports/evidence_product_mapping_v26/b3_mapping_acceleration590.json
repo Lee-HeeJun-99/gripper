@@ -1,0 +1,51 @@
+{
+  "status": "FAIL_PROBE",
+  "scope": "Actual public API evaluated with real q/v but ZERO parent acceleration and TEMPORARY child output only. No physical state/force writes,no solver correction. Missing composite term diagnostic,not global root-cause proof for all Native solvers.",
+  "source_commit": "f3869ba08b6a4e650c54025d6f4729e08496bb60",
+  "source_sha256": "e4528aae42f7e3a1b201a8dade4e4442073b9b1ee5fd9cc646472fa1b0377f31",
+  "binary_sha256": "3f1c9995cdadbef875ea340a6a814566939bbf19bd636681315e3dc2f397e909",
+  "compiled_source_sha256": "9e3e3a8001b1eb9755a32720c3222491d9e5010e9f8fa3d44e3444d66964865d",
+  "source_summary_sha256": "609c7a3bc9e6a15964b85dd9127a4bb6fb6cc20ebf0eb4638f74a99a6d77e5fa",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "records": [
+    {
+      "variant": 0,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.10836112103424966,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "57345bfca3835da14b3517e90519a030a4883b25c74951603f5bae378878dd92",
+          "command.json": "886909cf1b77a536b6de5e8d79e402758285bb7155e50f8dec5a0a4ea81e456d",
+          "stderr.log": "631646a0fb0e15ff17ddc4fc2b45f8df0790c22f1e885d641e097b391a591198",
+          "process.json": "ba4a40f762c5c7dc702c8b3375fd9a7f0b4bbb7cab1294e18dc2c381df6c2fae"
+        }
+      },
+      "scene_sha256": "4075117b43fbd736f84a6d4eb11f17f057ba00bb3383520510d0621f4371aff6",
+      "sofa_errors": 3,
+      "status": "FAIL_PROBE",
+      "observer_state_error": null
+    },
+    {
+      "variant": 1,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13620359601918608,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "2a2c8a23708e741b36d055524565625c754b502c8a7e60df5a4017f409b13345",
+          "command.json": "8399e81e8946cfb5499bf8fdf8ee789957a900975976305a843a83e982817eff",
+          "stderr.log": "631646a0fb0e15ff17ddc4fc2b45f8df0790c22f1e885d641e097b391a591198",
+          "process.json": "e53b802be619c367616a0023098efac0ef48bd926b40869e5cc245f6abf5d374"
+        }
+      },
+      "scene_sha256": "427c656fbead09bc0eb181c52b716de06b2784c9014f760b4576b70c7b8fe9b2",
+      "sofa_errors": 3,
+      "status": "FAIL_PROBE",
+      "observer_state_error": null
+    }
+  ]
+}

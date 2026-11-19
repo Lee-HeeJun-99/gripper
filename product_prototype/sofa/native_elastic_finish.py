@@ -12,7 +12,8 @@ def main():
     out=BASE/'reports'/a.tag;out.mkdir(exist_ok=False)
     cases=CASES+['native_elastic_audit395','native_pure_bending396','native_hexa_inventory397',
                 'native_pure_bending_thin398','native_hexa_thin_inventory399',
-                'native_matrix_assess401','native_matrix_assess402','native_static_large403']
+                'native_matrix_assess401','native_matrix_assess402','native_static_large403',
+                'native_section_spectrum404','native_section_spectrum405']
     files={};processes=[]
     for name in cases:
         folder=BASE/'results'/name
@@ -58,6 +59,8 @@ def main():
     result['native_observer_binary_sha256']=sha(observer)
     result['files'][str(observer.relative_to(ROOT))]=sha(observer)
     result['observer_scope']='Read-only initial native K/force queries;solid tetra/hexa two-step q/v difference0;not general internal-history purity'
+    result['excluded_analysis']={'native_section_spectrum404':'INVALID_MATERIAL_LABELS:world inward normal was reversed;Raw preserved;corrected prospectively405 with analytic volume assertion',
+                                 'native_matrix_assess401':'INVALID_SCENE_FACTORY_ORDER:observer RequiredPlugin placed after child;corrected prospectively402'}
     for f in out.glob('*'):
         if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
     (out/'producer.py').write_bytes(Path(__file__).read_bytes())

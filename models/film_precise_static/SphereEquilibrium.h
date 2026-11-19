@@ -20,6 +20,15 @@ struct SphereEquilibrium {
  using Potential=std::function<double(const Assembly&,const std::vector<Point>&,double)>;
  Force mechanical;Potential externalPotential;
  std::vector<std::array<unsigned,3>>triangles;
+ std::vector<double> rowOffsets;
+ double rowRadius(unsigned row)const{return radius+(rowOffsets.empty()?0:rowOffsets.at(row));}
+ void setThicknessEnvelope(){
+  rowOffsets.clear();
+  for(unsigned part=0;part<3;++part){double t=map.model.parts[part].thickness;
+   if(!(std::isfinite(t)&&t>0))throw std::invalid_argument("positive finite part thickness required");
+   for(unsigned i=0;i+1<map.model.nx;++i)for(unsigned j=0;j+1<map.model.parts[part].ny;++j){rowOffsets.push_back(t/2);rowOffsets.push_back(t/2);}}
+  if(rowOffsets.size()!=triangles.size())throw std::runtime_error("thickness topology mismatch");
+ }
  explicit SphereEquilibrium(const CoupledPlaneStep&m,Point c,double r,Force f={},Potential p={}):map(m),center(c),radius(r),mechanical(std::move(f)),externalPotential(std::move(p)){
   if(!mechanical)mechanical=[](const CoupledPlaneStep&m,const std::vector<Point>&q,double T){return regrip_precise_tendon::parts(m,q,T,6.);};
   if(!externalPotential)externalPotential=[](const Assembly&m,const std::vector<Point>&q,double T){return tendonPotential(m,q,T,6.);};
@@ -29,7 +38,7 @@ struct SphereEquilibrium {
  struct Geometry{Eigen::VectorXd gap;Eigen::MatrixXd C,H;};
  Geometry geometry(const Eigen::VectorXd&x,const Eigen::VectorXd&lambda,bool hessian=true)const{
   auto q=map.expand(x),rest=map.model.rest();for(unsigned i=0;i<q.size();++i)rest[i]=add(rest[i],q[i]);Geometry out{Eigen::VectorXd(triangles.size()),Eigen::MatrixXd::Zero(x.size(),triangles.size()),Eigen::MatrixXd::Zero(x.size(),x.size())};
-  for(unsigned row=0;row<triangles.size();++row){auto tri=triangles[row];auto e=regrip_film_sphere::ClosestPrimitive::evaluate({rest[tri[0]],rest[tri[1]],rest[tri[2]]},center,radius);out.gap(row)=e.gap.v;
+  for(unsigned row=0;row<triangles.size();++row){auto tri=triangles[row];auto e=regrip_film_sphere::ClosestPrimitive::evaluate({rest[tri[0]],rest[tri[1]],rest[tri[2]]},center,rowRadius(row));out.gap(row)=e.gap.v;
    for(unsigned a=0;a<9;++a){unsigned ga=3*tri[a/3]+a%3;int i=map.index[ga];if(i<0)continue;out.C(i,row)+=map.weight[ga]*e.gap.g[a];if(hessian&&lambda(row)!=0)for(unsigned b=0;b<9;++b){unsigned gb=3*tri[b/3]+b%3;int j=map.index[gb];if(j>=0)out.H(i,j)+=lambda(row)*map.weight[ga]*map.weight[gb]*e.gap.h[regrip_film::N*a+b];}}
   }return out;
  }

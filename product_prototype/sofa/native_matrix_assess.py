@@ -7,17 +7,18 @@ import xml.etree.ElementTree as ET
 import numpy as np
 from scipy.linalg import eigvalsh
 from native_bending_coupon import BASE,ROOT,add,sha,guarded
+from observer_identity import compiled_observer
 
 def main():
     csv.field_size_limit(64*1024*1024)
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args()
     out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
-    build=BASE/'cad/build_elastic_observer400';binary=build/'libReGripElasticObserver.so'
+    build=BASE/'cad/build_elastic_observer400';binary,compiled_source=compiled_observer('400')
     deps=subprocess.check_output(['ldd',str(binary)],text=True)
     if any('libSofa' in line and '=>' in line and '/home/ubuntu/SOFA/v26.06.00/' not in line for line in deps.splitlines()):raise ValueError('nonmatching SDK dependency')
     (out/'ldd.txt').write_text(deps)
-    for name in ('Observer.cpp','CMakeLists.txt'):
-        (out/name).write_bytes((BASE/'sofa/native_elastic_observer'/name).read_bytes())
+    (out/'Observer.cpp').write_bytes(compiled_source.read_bytes())
+    (out/'CMakeLists.txt').write_bytes(subprocess.check_output(['git','show','6b20e85:product_prototype/sofa/native_elastic_observer/CMakeLists.txt'],cwd=ROOT))
     (out/'CMakeCache.txt').write_bytes((build/'CMakeCache.txt').read_bytes())
     records=[]
     for name,source in [('solid_tetra',BASE/'results/native_traction_cross3_389/tetra_21'),

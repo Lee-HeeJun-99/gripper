@@ -5,6 +5,8 @@
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/defaulttype/VecTypes.h>
 #include <sofa/linearalgebra/FullMatrix.h>
+#include <sofa/core/behavior/BaseMatrixLinearSystem.h>
+#include <sofa/simulation/AnimateEndEvent.h>
 #include <fstream>
 #include <iomanip>
 #include <cmath>
@@ -22,7 +24,8 @@ public:
     sofa::core::objectmodel::SingleLink<NativeElasticMatrixObserver,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
     sofa::core::objectmodel::SingleLink<NativeElasticMatrixObserver,Field,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>elastic;
     sofa::core::objectmodel::Data<std::string> filename;
-    NativeElasticMatrixObserver():body(initLink("body","Observed Vec3 native state")),elastic(initLink("elastic","Native elastic ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive initial diagnostic prefix")){}
+    sofa::core::objectmodel::Data<Types::VecCoord> probePositions;
+    NativeElasticMatrixObserver():body(initLink("body","Observed Vec3 native state")),elastic(initLink("elastic","Native elastic ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive initial diagnostic prefix")),probePositions(initData(&probePositions,Types::VecCoord(),"probePositions","Optional PRIVATE force-query positions;never assigned to actual state")){}
     void bwdInit() override {
         BaseObject::bwdInit();
         if(!body||!elastic||std::ifstream(filename.getValue()+".matrix.csv"))throw std::runtime_error("unique explicitly linked native elastic diagnostic required");
@@ -47,13 +50,37 @@ public:
                 error+=(derivative-exact)*(derivative-exact);norm+=derivative*derivative;}
             fd<<epsilon<<','<<std::sqrt(error)<<','<<std::sqrt(norm)<<'\n';
         }
+        if(!probePositions.getValue().empty()){
+            if(probePositions.getValue().size()!=q.size())throw std::runtime_error("probe size mismatch");
+            Field::DataVecCoord x;Field::DataVecDeriv v,f;
+            x.setValue(probePositions.getValue());v.setValue(velocity);f.setValue(Types::VecDeriv(q.size()));
+            elastic->addForce(&params,f,x,v);
+            std::ofstream probe(filename.getValue()+".probe.csv");probe<<std::setprecision(17)<<"node,fx_N,fy_N,fz_N\n";
+            const auto force=f.getValue();for(unsigned i=0;i<force.size();++i)probe<<i<<','<<force[i][0]<<','<<force[i][1]<<','<<force[i][2]<<'\n';
+        }
         evaluate(0.); // restore the native force-query cache to the actual initial state
         if(q!=body->read(sofa::core::vec_id::read_access::position)->getValue()||velocity!=body->read(sofa::core::vec_id::read_access::velocity)->getValue())throw std::runtime_error("observer modified actual initial state");
+    }
+};
+class NativeAssembledMatrixObserver:public sofa::core::objectmodel::BaseObject {
+public:
+    SOFA_CLASS(NativeAssembledMatrixObserver,sofa::core::objectmodel::BaseObject);
+    using BaseLink=sofa::core::objectmodel::BaseLink;
+    sofa::core::objectmodel::SingleLink<NativeAssembledMatrixObserver,sofa::core::behavior::BaseMatrixLinearSystem,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>system;
+    sofa::core::objectmodel::Data<std::string>filename;bool written=false;
+    NativeAssembledMatrixObserver():system(initLink("system","Actual native assembled matrix system")),filename(initData(&filename,std::string(),"filename","Exclusive post-step matrix CSV")){f_listening.setValue(true);}
+    void handleEvent(sofa::core::objectmodel::Event* event) override {
+        if(written||!dynamic_cast<sofa::simulation::AnimateEndEvent*>(event))return;
+        if(!system||std::ifstream(filename.getValue()))throw std::runtime_error("unique explicit native matrix link required");
+        auto* matrix=system->getSystemBaseMatrix();if(!matrix)throw std::runtime_error("native assembled matrix unavailable");
+        std::ofstream output(filename.getValue());output<<std::setprecision(17)<<"i,j,A\n";
+        for(sofa::Index i=0;i<matrix->rowSize();++i)for(sofa::Index j=0;j<matrix->colSize();++j)if(matrix->element(i,j)!=0)output<<i<<','<<j<<','<<matrix->element(i,j)<<'\n';
+        written=true;
     }
 };
 }
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripElasticObserver";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Initial native elastic matrix and force FD query; no physics update").add<diagnostic::NativeElasticMatrixObserver>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Initial native elastic matrix and force FD query; no physics update").add<diagnostic::NativeElasticMatrixObserver>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only post-step native assembled matrix").add<diagnostic::NativeAssembledMatrixObserver>());}
 }

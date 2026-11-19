@@ -1,3 +1,33 @@
+## Latest continuation — Native axial strain468–471,2026-11-19
+
+Feature commit7701d5b. Authority:
+`product_prototype/reports/NATIVE_AXIAL_STRAIN_PATH_20261119.md`.
+Evidence:`product_prototype/reports/evidence_native_strain_v18/manifest.json`.
+
+-Actual installed force path inspected:default axial strain uses spline-midpoint
+ local/rest endpoint transforms,not chord length. SDK remains unchanged.
+-468 build/API constness failure is preserved;physics NOT RUN. New build469
+ fixes observer temporary qualification only;470 completes6native PRIVATE queries.
+-Native force reproduces455 exactly. Reconstructed axial changes explain
+ 1ULP force changes1.70e-12/3.40e-12N to≤4.16e-18N. Actual unloaded q unchanged.
+-47170digit projection contrast supports representation sensitivity but is not a
+ complete high-precision spline reference,force correction or accepted equilibrium.
+-Strict fine-mesh equilibrium remains FAIL. Stop further unit/origin/FD/precision
+ sweeps without a new remedy hypothesis. No Gate waived;no B3/100g/Lift approval.
+-Prior immutable1258files verified,0mismatches;new manifest1351files.
+
+NEXT independent product task:read-only actual-state Guide interference audit
+using saved375. Identify offending physical Guide/support pairs before proposing
+new geometry;do not disable collisions or promote prescribed geometry.
+Fine-mesh physics qualification remains blocked separately.
+Exact read-only restart:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_strain_assess471/summary.json`
+`rg -n '375|Guide|gap|interference' product_prototype/reports/SKIN_ROUTING_AND_PRECURVATURE_20261119.md`
+Reuse frozen strain observer469 and force observer451 only for justified new
+diagnostics. Full commands/source/binary/SDK identity are in authority/Raw.
+No physics child intentionally running;no automatic continuation promise.
+
+
 ## Latest continuation — loaded tangent459–466,2026-11-19
 
 Feature commits1c20109,b19f839. Authority:

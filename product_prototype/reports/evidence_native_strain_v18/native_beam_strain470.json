@@ -1,0 +1,179 @@
+{
+  "scope": "Installed native interpolation strain diagnosis;NOT corrected force,accepted equilibrium,mesh/time or grasp PASS",
+  "source_commit": "4faf13b373b5c79296f3e10fe40060fc6e996629",
+  "producer_sha256": "6f1eea0f634d82b21e4d8f4fb777d5ace38fcbcc750474b7107b33be55539ca7",
+  "binary_sha256": "4f5aede3ad22bca3144ad442885a09ab1236684631c7a44dc57fec8691a6589c",
+  "compiled_source_sha256": "4bb9800d9b776799e7bdfa42c3d3247d10ae69ca1e2b24bad934ca6e6521aec6",
+  "beamadapter_binary_sha256": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "header_sha256": {
+    "component/forcefield/AdaptiveBeamForceFieldAndMass.inl": "593876a5addb9149d80d6be5a11082069f88a40267e9fc524c9270b06eba226b",
+    "component/BaseBeamInterpolation.inl": "a19dc009d21d68d8cecb346f4127eb7d00dddc976e7ace95648359970c41f9bc",
+    "component/BeamInterpolation.inl": "520d3e1bcc4589a74c7c8d54ebb1c34d84e959574e9e27552611085b45ff2b38"
+  },
+  "assumptions": "straight geometric rest,reinforceLength=false,shearStressComputation=true,no end offsets;reconstructed axial component only,not full native force",
+  "records": [
+    {
+      "nx": 41,
+      "variant": "base",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.14034345198888332,
+        "pid": 51,
+        "artifacts": {
+          "stdout.log": "e032c45590396510045277963916ba7cb1cbfaeeef4d10c6c5691df0889c91ff",
+          "command.json": "dc750b4908d10b41b54a30cd509725be8f47281d4a2da296690414acbbc6bf88",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "82419292deae13317827cacaab8b8f6fa5e378accb29a511ef1b30727de0ec83"
+        }
+      },
+      "scene_sha256": "bf3441f6acac3daeaeb2dbc2408c390174435d42bba14debfbbfce2ec73b466a",
+      "source_scene_sha256": "d38e40513c502d45d729e6994c3c7325210d2266650ce15ddbacb7ec5c43fbb8",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "native_force_reproduction_error_N": 0.0,
+      "axial_reconstructed_change_N": 0.0,
+      "native_force_change_N": 0.0,
+      "change_reconstruction_error_N": 0.0,
+      "absolute_vs_relative_projection_max_m": 9.540979117872439e-18,
+      "baseline_global_axial_difference_N": 8.805891266162083e-14,
+      "status": "PRIVATE_STRAIN_PATH_ONLY"
+    },
+    {
+      "nx": 41,
+      "variant": "plus",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1717887659324333,
+        "pid": 52,
+        "artifacts": {
+          "stdout.log": "e9e3bfaac919d1bba07c0a95f31b7e68f857baf6ee90c4138bb5cdc056f96108",
+          "command.json": "a24f450b7142392f81c85322bce6b63fb98f7fd0ebd45b1d56ea634e0453a0c9",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "006374d08394ee8d40225d471c7c7fdb1f6e067205ca5be7d02cf357893fe93d"
+        }
+      },
+      "scene_sha256": "23dfa3d7ad9bca9979e6827b11e4e236b76e5e9f4c62e8f16fb55ea7d48be183",
+      "source_scene_sha256": "07455d80fffcbd0d055f35301e5d071e5a6082d66f51d96fb0e5f48ad9b61676",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "native_force_reproduction_error_N": 0.0,
+      "axial_reconstructed_change_N": 1.699674944388145e-12,
+      "native_force_change_N": 1.699674944388224e-12,
+      "change_reconstruction_error_N": 5.184914417715449e-19,
+      "absolute_vs_relative_projection_max_m": 9.540979117872439e-18,
+      "baseline_global_axial_difference_N": 8.80589126634254e-14,
+      "status": "PRIVATE_STRAIN_PATH_ONLY"
+    },
+    {
+      "nx": 41,
+      "variant": "minus",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13821803603786975,
+        "pid": 53,
+        "artifacts": {
+          "stdout.log": "266acc3323b2c55d859130234b93abb08a14763d1c34ebd49e3dbdc8efb3c869",
+          "command.json": "45efe16760e29661731abd7005b3a50f1c0ddf3b999748d038b78576e3256a52",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "af85267ad2ccbcd7895b3f51a23c6f50a69d2b73c726c1cfa05e1c15eb37d4cf"
+        }
+      },
+      "scene_sha256": "bae6eddecca9fecf06df0e27a5f4d089c5afd61c3e422a241974851676904f21",
+      "source_scene_sha256": "d108a0f84afae60f43ef99b996e1ca8582d5bc2c89d303ff6094f6a03026f62a",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "native_force_reproduction_error_N": 0.0,
+      "axial_reconstructed_change_N": 1.699674944388145e-12,
+      "native_force_change_N": 1.699674944388461e-12,
+      "change_reconstruction_error_N": 1.0371950935344644e-18,
+      "absolute_vs_relative_projection_max_m": 9.540979117872439e-18,
+      "baseline_global_axial_difference_N": 8.805891265801243e-14,
+      "status": "PRIVATE_STRAIN_PATH_ONLY"
+    },
+    {
+      "nx": 81,
+      "variant": "base",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13674062595237046,
+        "pid": 54,
+        "artifacts": {
+          "stdout.log": "33b92619b1987dba710a08fb91d57344ab9a6cd5fed3ecb13351cb65b0b8e9f2",
+          "command.json": "acbdc9b3abc213dcf90596e823773ee4a7d3161a6cf1a45d51eab1c4f8f58585",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "5b58e40b6e6693a61ec01719ba904987d3ecec2f55c8a20685adb08d845f7179"
+        }
+      },
+      "scene_sha256": "3cbd86da93f34e59176ce62c3d2d404dd3c1bdb74c4ff05ee8871705da34283d",
+      "source_scene_sha256": "ccfb270c5037377872ef43aee08e2145131eb95f32bb8a76902816a8dcc772e0",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "native_force_reproduction_error_N": 0.0,
+      "axial_reconstructed_change_N": 0.0,
+      "native_force_change_N": 0.0,
+      "change_reconstruction_error_N": 0.0,
+      "absolute_vs_relative_projection_max_m": 1.235990476633475e-17,
+      "baseline_global_axial_difference_N": 8.737445309416723e-14,
+      "status": "PRIVATE_STRAIN_PATH_ONLY"
+    },
+    {
+      "nx": 81,
+      "variant": "plus",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.16870877298060805,
+        "pid": 55,
+        "artifacts": {
+          "stdout.log": "af0c6b00e9d5616d396e9aeb1e556c0ec4eeda26f9851f89ee3672d028d69a05",
+          "command.json": "7db5a8214f28873651447179d7187e4da95b26ae969ae75c25636e5c8cd77d5d",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "bb3e09e6fdbeec49254b7ccc77f8ebbb15c31ca84d8d65dd9e3db2e4372a6585"
+        }
+      },
+      "scene_sha256": "e1fab16a472bc467c28116c31a69828f4b8d5e56aad3bb4954e77586ac6be334",
+      "source_scene_sha256": "e820176c994ae54d6192ad31c072bbda9b3eaa1857e3674e6ba288c56976a9c5",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "native_force_reproduction_error_N": 0.0,
+      "axial_reconstructed_change_N": 3.3993498887763037e-12,
+      "native_force_change_N": 3.3993498887788273e-12,
+      "change_reconstruction_error_N": 4.142271371060031e-18,
+      "absolute_vs_relative_projection_max_m": 1.235990476633475e-17,
+      "baseline_global_axial_difference_N": 8.737445309416725e-14,
+      "status": "PRIVATE_STRAIN_PATH_ONLY"
+    },
+    {
+      "nx": 81,
+      "variant": "minus",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.137268042890355,
+        "pid": 56,
+        "artifacts": {
+          "stdout.log": "29cbefa76423fb94dddee391db198aa8faf12282ca7680213b01003243a061e7",
+          "command.json": "435ebf97376757196899465659db3132fcaf2399c49f0c4c9556cc8266c2b465",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "e12ceaef174388a4b5d8182a02eb5fcc829b8c6e563634bec7a81112dae5bcd0"
+        }
+      },
+      "scene_sha256": "eca862dced52ab6ac4e98ddfe1f5a739b652e44a320f107d29aa5a7ceeb0a904",
+      "source_scene_sha256": "7b1f8c21026281f36ce0d1084ca215361181f292639f83c38f452bdf6ab5567d",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "native_force_reproduction_error_N": 0.0,
+      "axial_reconstructed_change_N": 3.3993498887763033e-12,
+      "native_force_change_N": 3.399349888778845e-12,
+      "change_reconstruction_error_N": 4.1569550271802656e-18,
+      "absolute_vs_relative_projection_max_m": 1.235990476633475e-17,
+      "baseline_global_axial_difference_N": 8.737445309416722e-14,
+      "status": "PRIVATE_STRAIN_PATH_ONLY"
+    }
+  ]
+}

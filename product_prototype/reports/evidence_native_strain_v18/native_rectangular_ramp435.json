@@ -1,0 +1,41 @@
+{
+  "scope": "Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification",
+  "source_commit": "8cf025bc0deced893a7d3e235982732f41523024",
+  "source_sha256": "e55a0c4f7bb72df31a1ccc062a76f8c286f4bd5c588a2999ff95be0cf2b4b97e",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "beamadapter_binary_sha256": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+  "journal_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "E_Pa": 250000000.0,
+  "section_m": [
+    0.002,
+    0.0005
+  ],
+  "force_N": 1e-06,
+  "solver": "direct",
+  "newton_iteration_budget": 30,
+  "geometric_rest": true,
+  "load_stages": 20,
+  "loading_scope": "quasi-static native LinearForceField continuation;NOT physical dynamic time",
+  "precurved_stress_free_assumption": false,
+  "approximate_small_deflection_Euler_tip_m": 5.487199999999999e-05,
+  "records": [
+    {
+      "nx": 21,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.211990954936482,
+        "pid": 51,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "244cb46bccca835cf6ed25af6ac35c55b0ddca46c34a642e400d7e5000e240aa",
+          "command.json": "685a88cb309638363eabaca4e8579ec32c54b23eba923271de5afcb239674ca8",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "1e3296c1338074448ed3cc539f3fec4758069b8bdab0604efa879bd9f3964766"
+        }
+      },
+      "status": "FAIL_NATIVE_BEAM_SOLVE",
+      "scene_sha256": "c5dfd949e2a3b94cc3ed61850e90c2989b075c61c636438c9942355272700ddb"
+    }
+  ]
+}

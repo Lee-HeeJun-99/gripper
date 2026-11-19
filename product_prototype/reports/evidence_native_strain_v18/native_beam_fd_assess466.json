@@ -1,0 +1,68 @@
+{
+  "scope": "Read-only assessment;native directional evidence only",
+  "producer_sha256": "b13007a5e04f38410d4fe22f2131678f828ef6ee87282a9ca7ae886ee4fc22c3",
+  "sources": {
+    "native_beam_loaded_fd459": "2a38bcf6edbca59f585ce222c4896337755157152251601ae478b6eafcccfa34",
+    "native_beam_loaded_regression460": "778aeb42e062a84bae6491c1c16340fdf534fa76cff3f6c06637b29d4049b123",
+    "native_beam_mode_fd462": "b45e77215b2a7bd007950720064e98007481c25a4ca6e0a0a1c2f55abaf3ee9a",
+    "native_beam_mode_fd464": "446dc3ba5df8bd7dc440558be6818d6fdf316e711eff92ea031cb1a89669ce81",
+    "native_beam_mode_ladder465": "fef9cae41f6da2774a22210d9f617ea974ec7a0f64b32758a70322c4a508f099"
+  },
+  "records": [
+    {
+      "direction": "mixed",
+      "nx": 41,
+      "best_force_row": {
+        "epsilon": 3e-07,
+        "force_error_N": 1.199338337204263e-05,
+        "force_derivative_norm_N": 9256.390970264441,
+        "torque_error_Nm": 1.0760412970877665e-07,
+        "torque_derivative_norm_Nm": 19.11214668216996,
+        "force_relative": 1.2956867758255458e-09,
+        "torque_relative": 5.6301435677637575e-09
+      }
+    },
+    {
+      "direction": "mixed",
+      "nx": 81,
+      "best_force_row": {
+        "epsilon": 3e-07,
+        "force_error_N": 3.622313825931801e-05,
+        "force_derivative_norm_N": 48942.3225101457,
+        "torque_error_Nm": 1.571864160589829e-07,
+        "torque_derivative_norm_Nm": 106.76393650140099,
+        "force_relative": 7.401189073487264e-10,
+        "torque_relative": 1.4722800714351727e-09
+      }
+    },
+    {
+      "direction": "bending",
+      "nx": 41,
+      "best_force_row": {
+        "epsilon": 3e-05,
+        "force_error_N": 2.6372458379887884e-07,
+        "force_derivative_norm_N": 0.0015942536877402377,
+        "torque_error_Nm": 2.6716937949688667e-11,
+        "torque_derivative_norm_Nm": 2.7831020275613514e-11,
+        "force_relative": 0.00016542196880390671,
+        "torque_relative": 0.9599697634189487
+      }
+    },
+    {
+      "direction": "bending",
+      "nx": 81,
+      "best_force_row": {
+        "epsilon": 3e-05,
+        "force_error_N": 3.2484757148376617e-07,
+        "force_derivative_norm_N": 0.0015887218623748655,
+        "torque_error_Nm": 7.597774165217029e-11,
+        "torque_derivative_norm_Nm": 7.914662698393846e-11,
+        "force_relative": 0.00020447101483086222,
+        "torque_relative": 0.9599618397836304
+      }
+    }
+  ],
+  "legacy_default_bytes_identical": true,
+  "decision": "Mixed direction shows small relative differences;soft bending is cancellation/truncation sensitive and torque derivative near zero. No full tangent certificate or static residual remedy established. Stop tolerance/unit/FD sweeps;mesh qualification remains FAIL.",
+  "next": "Inspect native axial strain evaluation and quantify force sensitivity to represented segment length using preserved private poses. Do not alter SDK,forces,accepted q or gates."
+}

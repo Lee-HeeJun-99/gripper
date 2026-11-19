@@ -1,0 +1,144 @@
+{
+  "scope": "Loaded PRIVATE directional derivative,not equilibrium,mesh/time or grasp PASS",
+  "legacy_regression": true,
+  "source_commit": "04ce7b21a0bac2939d012771f03bcebd62d4649e",
+  "producer_sha256": "6b150ce5bd2c65d6a680f3f5476d4a1d354a7427386eb7c96cfebf049cd0fb6b",
+  "binary_sha256": "7637bd0b7928f7fc95e93fd60b0be586935da3765c3b575c2e882f33addcf61b",
+  "compiled_source_sha256": "6b941c36b76713ea107d10dd7d3dbceea651784f3695d456dd1543c64282479a",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "direction": "translation .1m*sin(index),left rotation 1rad*sin(index);legacy mode excludes only first2 nodes,otherwise all fixed roots excluded",
+  "records": [
+    {
+      "nx": 41,
+      "root_nodes": [
+        0,
+        1,
+        2
+      ],
+      "legacy_default_FD_bytes_identical": true,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1383030880242586,
+        "pid": 51,
+        "artifacts": {
+          "stdout.log": "4cd9374efade84c14a6f03fa23e2f26ddf1c350d645214b4c5bf17bfbc46da0a",
+          "command.json": "7c82196a11a48ffacc9e3763586fceee8df259117d59f5a4da15cbc1f18c577b",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "84f58e3b288a635ffae94b745937b0efa18b1ce1f80672325f6faa958c29d8b4"
+        }
+      },
+      "source_scene_sha256": "d38e40513c502d45d729e6994c3c7325210d2266650ce15ddbacb7ec5c43fbb8",
+      "scene_sha256": "af587bcecb0da587ea06e277b43d4d911c7a4f50d8039ebe91efd55df128da66",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "ladder": [
+        {
+          "epsilon": 1e-06,
+          "force_error_N": 0.00022357643174711426,
+          "force_derivative_norm_N": 10740.748082797209,
+          "torque_error_Nm": 2.1123767028331973e-07,
+          "torque_derivative_norm_Nm": 19.584349408070292,
+          "force_relative": 2.0815722519849693e-08,
+          "torque_relative": 1.0786044809651589e-08
+        },
+        {
+          "epsilon": 1e-07,
+          "force_error_N": 3.349925985283208e-05,
+          "force_derivative_norm_N": 10740.74807802636,
+          "torque_error_Nm": 1.604600710178264e-08,
+          "torque_derivative_norm_Nm": 19.584349426411165,
+          "force_relative": 3.11889447638806e-09,
+          "torque_relative": 8.193280640787195e-10
+        },
+        {
+          "epsilon": 1e-08,
+          "force_error_N": 0.00027604821325755683,
+          "force_derivative_norm_N": 10740.74811693734,
+          "torque_error_Nm": 1.604609542497854e-08,
+          "torque_derivative_norm_Nm": 19.58434942641134,
+          "force_relative": 2.570102289450861e-08,
+          "torque_relative": 8.193325739653557e-10
+        }
+      ],
+      "best_force_row": {
+        "epsilon": 1e-07,
+        "force_error_N": 3.349925985283208e-05,
+        "force_derivative_norm_N": 10740.74807802636,
+        "torque_error_Nm": 1.604600710178264e-08,
+        "torque_derivative_norm_Nm": 19.584349426411165,
+        "force_relative": 3.11889447638806e-09,
+        "torque_relative": 8.193280640787195e-10
+      },
+      "status": "PRIVATE_DIRECTIONAL_DIAGNOSTIC_ONLY",
+      "warning": "Best FD step is diagnostic selection,not a physical solver tolerance or full Jacobian certificate"
+    },
+    {
+      "nx": 81,
+      "root_nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "legacy_default_FD_bytes_identical": true,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13729610096197575,
+        "pid": 52,
+        "artifacts": {
+          "stdout.log": "6c484143ca98194761ae7e24866ed42835c501b0588979f3da34c039803e50a4",
+          "command.json": "1c94488660cf8a4aa5df657e3b6505399f300fddc4ddc37dcaf117c167f3867b",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "18239bcb4b771240f350327443c7e55d7e32b38fcf52910a2db8bdfa38ed78ba"
+        }
+      },
+      "source_scene_sha256": "ccfb270c5037377872ef43aee08e2145131eb95f32bb8a76902816a8dcc772e0",
+      "scene_sha256": "289a7e10e46b4e61fc50d19cdd3c9d3a5961fc186b49a989fbbd1c9724386662",
+      "actual_position_error_m": 0.0,
+      "actual_frames": 2,
+      "ladder": [
+        {
+          "epsilon": 1e-06,
+          "force_error_N": 0.000738796670604848,
+          "force_derivative_norm_N": 62242.862959004364,
+          "torque_error_Nm": 3.5042658187068833e-07,
+          "torque_derivative_norm_Nm": 111.97758630399845,
+          "force_relative": 1.1869580470478182e-08,
+          "torque_relative": 3.1294350363950953e-09
+        },
+        {
+          "epsilon": 1e-07,
+          "force_error_N": 8.182558264925362e-05,
+          "force_derivative_norm_N": 62242.863229684226,
+          "torque_error_Nm": 2.1479427067989902e-08,
+          "torque_derivative_norm_Nm": 111.97758635650551,
+          "force_relative": 1.3146179080372093e-09,
+          "torque_relative": 1.918189859853326e-10
+        },
+        {
+          "epsilon": 1e-08,
+          "force_error_N": 0.0008430078100935093,
+          "force_derivative_norm_N": 62242.8632673399,
+          "torque_error_Nm": 2.123966396907498e-08,
+          "torque_derivative_norm_Nm": 111.97758635693218,
+          "force_relative": 1.3543846890087601e-08,
+          "torque_relative": 1.8967781553509168e-10
+        }
+      ],
+      "best_force_row": {
+        "epsilon": 1e-07,
+        "force_error_N": 8.182558264925362e-05,
+        "force_derivative_norm_N": 62242.863229684226,
+        "torque_error_Nm": 2.1479427067989902e-08,
+        "torque_derivative_norm_Nm": 111.97758635650551,
+        "force_relative": 1.3146179080372093e-09,
+        "torque_relative": 1.918189859853326e-10
+      },
+      "status": "PRIVATE_DIRECTIONAL_DIAGNOSTIC_ONLY",
+      "warning": "Best FD step is diagnostic selection,not a physical solver tolerance or full Jacobian certificate"
+    }
+  ]
+}

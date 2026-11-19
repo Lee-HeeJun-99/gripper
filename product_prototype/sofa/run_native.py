@@ -12,7 +12,7 @@ def add(n,tag,**kw):return ET.SubElement(n,tag,{k:str(v) for k,v in kw.items()})
 def flat(x):return ' '.join(format(float(a),'.17g') for row in x for a in row)
 def main():
  launch_command=[sys.executable,*sys.argv]
- extra=argparse.ArgumentParser(add_help=False);extra.add_argument('--guide-normal-mm',type=float);extra.add_argument('--cable-audit',action='store_true');extra.add_argument('--split-contact-surfaces',action='store_true');extra.add_argument('--rigid-sphere-collision',action='store_true');extra.add_argument('--uniform-cross-ribs',action='store_true');extra.add_argument('--distal-tip-offset-mm',type=float);extra.add_argument('--precurve-deg',type=float,default=0);extra.add_argument('--reference-start-mm',type=float,default=50);extra.add_argument('--sector-guide-margin-mm',type=float);extra.add_argument('--cable-force-N',type=float);variant,remaining=extra.parse_known_args();sys.argv=[sys.argv[0],*remaining]
+ extra=argparse.ArgumentParser(add_help=False);extra.add_argument('--guide-normal-mm',type=float);extra.add_argument('--cable-audit',action='store_true');extra.add_argument('--split-contact-surfaces',action='store_true');extra.add_argument('--rigid-sphere-collision',action='store_true');extra.add_argument('--uniform-cross-ribs',action='store_true');extra.add_argument('--distal-tip-offset-mm',type=float);extra.add_argument('--precurve-deg',type=float,default=0);extra.add_argument('--reference-start-mm',type=float,default=50);extra.add_argument('--sector-guide-margin-mm',type=float);extra.add_argument('--cable-force-N',type=float);extra.add_argument('--mesh-nx',type=int,choices=(21,41));extra.add_argument('--clear-support-after-hold',action='store_true');variant,remaining=extra.parse_known_args();sys.argv=[sys.argv[0],*remaining]
  if variant.guide_normal_mm is not None and not -6<=variant.guide_normal_mm<=6:raise ValueError('bounded physical guide offset study')
  if variant.cable_force_N is not None and not 0<=variant.cable_force_N<=2.5:raise ValueError('bounded native force-control research input required;not actuator qualification')
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fingers',type=int,choices=(1,3),default=1);p.add_argument('--steps',type=int);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--object',choices=('none','fixed','free'),default='none');p.add_argument('--radius',type=float,choices=(20,30),default=30);p.add_argument('--stroke',type=float,default=5);p.add_argument('--reuse-build');p.add_argument('--gravity',action='store_true');p.add_argument('--floor',action='store_true');p.add_argument('--outboard',type=float,choices=(4.,10.,14.,24.),default=4.);p.add_argument('--intersection',choices=('MinProximityIntersection','LocalMinDistance'),default='MinProximityIntersection');p.add_argument('--lift',action='store_true');p.add_argument('--center-z',type=float,choices=(-65.,-75.,-80.),default=-65.);p.add_argument('--shape',choices=('sphere','cylinder','box'),default='sphere');p.add_argument('--support-gap',type=float,choices=(0.,.4),default=0.);p.add_argument('--support-radius',type=float,choices=(5.,35.),default=5.);p.add_argument('--slow-cycle',action='store_true');p.add_argument('--support-shape',choices=('mesh','sphere'),default='mesh');p.add_argument('--dense-guides',action='store_true');p.add_argument('--withdraw-support',action='store_true');p.add_argument('--constraint-solver',choices=('BlockGaussSeidelConstraintSolver','GenericConstraintSolver'),default='BlockGaussSeidelConstraintSolver')
@@ -23,6 +23,7 @@ def main():
  if a.lift and not(a.gravity and a.object=='free'):raise ValueError('Lift experiments require explicit gravity and a free object')
  if a.end_clock_motion and not(a.withdraw_support or a.lift):raise ValueError('explicit moving native fixture/root required')
  if a.smooth_support and not a.withdraw_support:raise ValueError('smooth support is an explicit withdrawal input variant')
+ if variant.clear_support_after_hold and not(a.withdraw_support and a.smooth_support and a.end_clock_motion):raise ValueError('post-hold support clearance requires explicit smooth end-clock withdrawal fixture;never prescribe object motion')
  if a.component_film_damping and not a.global_native_ode:raise ValueError('explicit global zero-Rayleigh solver required to avoid double counting')
  if a.object_depth is not None:a.center_z=-a.object_depth
  if a.mapped_guide_joints and not(a.rigid_guides and a.global_native_ode):raise ValueError('mapped rigidification requires explicit rigid-guides and global-native-ode')
@@ -34,6 +35,7 @@ def main():
  if a.steps is None:a.steps=round((4 if a.slow_cycle else 3 if a.lift or a.withdraw_support else 2)/a.dt)
  if not 0<a.steps<=4000 or not 0<=a.stroke<=10:raise ValueError('bounded exploratory prototype only')
  if variant.uniform_cross_ribs and a.steps>240:raise ValueError('cross-rib211 failed mechanical/contact checks;only bounded240-step diagnostic allowed until joint/cable mechanics are isolated')
+ if variant.mesh_nx==41 and a.fingers!=1:raise ValueError('loaded41-node single-finger360/364 lacks quality/convergence qualification;do not expand this candidate to3 fingers before independent bending validation')
  if variant.rigid_sphere_collision and a.object=='none':raise ValueError('native rigid sphere collision requires an actual sphere object')
  if variant.rigid_sphere_collision and a.intersection=='LocalMinDistance':raise ValueError('LocalMinDistance installed intersector lacks Rigid3 sphere vs mesh;use verified MinProximityIntersection(useSphereTriangle) path,not silent missing collisions')
  out=BASE/'results'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copy2(__file__,out/'runner.py');meshdir=BASE/'meshes/product_v1b';c=json.loads((meshdir/'config.json').read_text());m=json.loads((meshdir/'mesh.json').read_text());c['tendon']['outboard']=a.outboard;c['tendon']['maximum_stroke']=a.stroke;c['simulation']['dt_s']=a.dt;c['simulation']['sphere_radius_mm']=a.radius;c['simulation']['closing_end_s']=1 if a.slow_cycle else .5;c['simulation']['hold_end_s']=2 if a.slow_cycle or a.lift or a.withdraw_support else 1;c['simulation']['release_end_s']=3 if a.slow_cycle else 2.5 if a.lift or a.withdraw_support else 1.5;c['simulation']['sphere_center_mm'][2]=a.center_z;c['tendon']['guide_stations']=[10,20,30,40,50,60,70,80,90,98] if a.dense_guides else c['tendon']['guide_stations'];(out/'config.json').write_text(json.dumps(c,indent=2));(out/'mesh.json').write_text(json.dumps(m));source=out/'source';shutil.copytree(BASE/'sofa',source,ignore=shutil.ignore_patterns('__pycache__'))
@@ -54,7 +56,10 @@ def main():
  if variant.sector_guide_margin_mm is not None:
   if not .5<=variant.sector_guide_margin_mm<=2:raise ValueError('finite physical guide sector margin required')
   c['tendon']['sector_margin_mm']=variant.sector_guide_margin_mm
- if variant.precurve_deg or variant.distal_tip_offset_mm is not None or variant.sector_guide_margin_mm is not None:
+ if variant.mesh_nx is not None:
+  from generate import mesh as build_mesh
+  c['simulation']['nx']=variant.mesh_nx;v,t,triangles=build_mesh(c);m=dict(local_positions_mm=v,tetrahedra=t,triangles=triangles);(out/'mesh.json').write_text(json.dumps(m))
+ if variant.precurve_deg or variant.distal_tip_offset_mm is not None or variant.sector_guide_margin_mm is not None or variant.mesh_nx is not None:
   from mechanism_candidates import preflight
   geometry=preflight(c,m,a.radius,a.fingers);(out/'initial_geometry.json').write_text(json.dumps(geometry,indent=2))
   if geometry['status']!='INITIAL_GEOMETRY_PASS':
@@ -64,6 +69,7 @@ def main():
  (out/'config.json').write_text(json.dumps(c,indent=2))
  r=dict(status='FAIL',scope='experimental native SOFA product prototype;NOT numerical/material/grasp certification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes={f.name:sha(f) for f in source.iterdir() if f.is_file()},config_sha256=sha(out/'config.json'),mesh_sha256=sha(meshdir/'mesh.json'),sdk=str(SDK),runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),fingers=a.fingers,object=a.object,steps=a.steps,dt_s=c['simulation']['dt_s'],stroke_mm=a.stroke,units='SI',contact_force=None,root_reaction=None,lift='NOT RUN',cables_per_finger=a.cables,guide_location=a.guide_location)
  build=BASE/'cad'/('build_'+a.tag) if not a.reuse_build else BASE/'cad'/('build_'+a.reuse_build)
+ if variant.mesh_nx is not None:r.update(mesh_sha256=sha(out/'mesh.json'),mesh_study='longitudinal native tetra refinement;total UniformMass fixed,but nodal mass quadrature changes;NOT mesh-qualified')
  if a.reuse_build:
   old=json.loads((BASE/'results'/a.reuse_build/'summary.json').read_text());build=ROOT/old['build'];binary=build/'libReGripProductSequence.so'
   if any(old['source_hashes'][k]!=r['source_hashes'][k] for k in ('Controller.cpp','CMakeLists.txt')) or sha(binary)!=old['binary_sha256']:raise ValueError('exact compiled controller source/binary required;Python runners have separate snapshots')
@@ -146,6 +152,8 @@ def main():
  if a.slow_cycle:
   for node in root.iter('NativeCableSequence'):node.set('closing','1');node.set('hold','2');node.set('release','3')
   r['control_profile']='C2 closing0-1/hold1-2/release2-3/recovery3-4s;changed physical input,not a numerical fix'
+ if variant.clear_support_after_hold:
+  movement=floor.find('LinearMovementProjectiveConstraint');knots=np.r_[0.,np.linspace(1.,1.5,101),2.,np.linspace(2.,2.2,81)[1:],3.];u=np.clip((knots-1)/.5,0,1);vertical=-.04*u**3*(10+u*(-15+6*u));v=np.clip((knots-2)/.2,0,1);horizontal=.12*v**3*(10+v*(-15+6*v));movement.set('keyTimes',' '.join(format(x,'.17g') for x in knots));movement.set('movements',flat(np.column_stack([horizontal,np.zeros(len(knots)),vertical])));r['post_hold_fixture']='same0-2s holding protocol;support ONLY exits+x120mm2-2.2s;NEW post-hold fixture input,NOT repair of old release trial;object remains free/gravity-driven'
  if a.constraint_journal:
   add(root,'NativeConstraintJournal',solver='@constraints',filename=str(out/'constraints.csv'))
   if a.object=='free':add(root,'NativeContactRows',solver='@constraints',body='@object/rigid',filename=str(out/'contact_rows.csv'),**{'film'+str(f):'@finger'+str(f)+'/dofs' for f in range(a.fingers)})

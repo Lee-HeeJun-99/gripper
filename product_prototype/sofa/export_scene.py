@@ -12,7 +12,7 @@ def main():
  out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=False);(out/'records').mkdir();tree=ET.parse(src/'scene.scn');root=tree.getroot()
  names=set()
  for node in root.iter():
-  if node.tag in ('NativeCableSequence','NativeRigidJournal','NativePointJournal','NativeConstraintJournal','NativeContactRows','NativeCableAudit'):
+  if node.tag.startswith('Native') and 'filename' in node.attrib:
    name=Path(node.get('filename')).name
    if name in names:raise ValueError('journal collision would overwrite evidence:'+name)
    names.add(name);node.set('filename',str(out/'records'/name))

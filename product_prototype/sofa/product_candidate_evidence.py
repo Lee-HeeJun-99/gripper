@@ -2,11 +2,11 @@
 import argparse,json,shutil,subprocess
 from pathlib import Path
 from analyse import BASE,sha
-from observer_identity import compiled_alarm_window
+from observer_identity import compiled_alarm_window,compiled_feature_rows
 ROOT=BASE.parent
 
 def immutable(name):
-    return name.startswith(('product_prototype/results/','product_prototype/reports/evidence_','product_prototype/cad/build_','product_prototype/meshes/','product_prototype/drawings/','/home/ubuntu/SOFA/'))
+    return name.startswith(('product_prototype/results/','product_prototype/reports/evidence_','product_prototype/cad/build_','product_prototype/meshes/','product_prototype/drawings/','/home/ubuntu/SOFA/','/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/site-packages/trimesh/'))
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--prior',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args();prior=BASE/'reports'/a.prior/'manifest.json';old=json.loads(prior.read_text());files={k:v for k,v in old['files'].items() if immutable(k)};bad=[k for k,v in files.items() if not (ROOT/k).is_file() or sha(ROOT/k)!=v]
@@ -27,12 +27,23 @@ def main():
             files[str(f.relative_to(ROOT))]=sha(f)
             if f.suffix in ('.cpp','.txt'):shutil.copy2(f,out/('pair_rows_'+f.name))
     for f in compiled_alarm_window():files[str(f.relative_to(ROOT))]=sha(f)
+    for name in ('finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
+    shutil.copy2(BASE/'cad/finite_guide_product.py',out/'finite_guide_product.py')
+    for f in compiled_feature_rows():
+        files[str(f.relative_to(ROOT))]=sha(f)
+        if f.suffix=='.cpp':shutil.copy2(f,out/'feature_Observer.cpp')
+    feature_cache=BASE/'cad/build_feature_rows554/CMakeCache.txt';files[str(feature_cache.relative_to(ROOT))]=sha(feature_cache)
+    shutil.copy2(BASE/'sofa/native_feature_rows/CMakeLists.txt',out/'feature_CMakeLists.txt')
+    import inspect,trimesh
+    library=Path(inspect.getfile(trimesh.triangles));files[str(library)]=sha(library)
     physical=BASE/'cad/build_default_control332/libReGripProductSequence.so'
     if sha(physical)!='3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0':raise ValueError('physical controller binary changed')
     files[str(physical.relative_to(ROOT))]=sha(physical)
     for category in ('meshes','drawings'):
-        for f in (BASE/category/'precurve_distal40_route_audit_v10').rglob('*'):
-            if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+        for candidate in ('precurve_distal40_route_audit_v10','finite_eyelet_support_v11'):
+            for f in (BASE/category/candidate).rglob('*'):
+                if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
     for f in out.iterdir():
         if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
     result=dict(scope='Product functionality/clearance diagnostics,NOT final physics/fabrication qualification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),prior_manifest_sha256=sha(prior),prior_immutable_audit=dict(checked=sum(immutable(k) for k in old['files']),mismatches=bad),cases=cases,files=files)

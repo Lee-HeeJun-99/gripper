@@ -32,6 +32,9 @@ def main():
  if a.withdraw_support and (a.slow_cycle or not a.floor or a.support_shape!='sphere'):raise ValueError('explicit rounded support/ordinary cycle required for withdrawal')
  if a.steps is None:a.steps=round((4 if a.slow_cycle else 3 if a.lift or a.withdraw_support else 2)/a.dt)
  if not 0<a.steps<=4000 or not 0<=a.stroke<=10:raise ValueError('bounded exploratory prototype only')
+ if variant.uniform_cross_ribs and a.steps>240:raise ValueError('cross-rib211 failed mechanical/contact checks;only bounded240-step diagnostic allowed until joint/cable mechanics are isolated')
+ if variant.rigid_sphere_collision and a.object=='none':raise ValueError('native rigid sphere collision requires an actual sphere object')
+ if variant.rigid_sphere_collision and a.intersection=='LocalMinDistance':raise ValueError('LocalMinDistance installed intersector lacks Rigid3 sphere vs mesh;use verified MinProximityIntersection(useSphereTriangle) path,not silent missing collisions')
  out=BASE/'results'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copy2(__file__,out/'runner.py');meshdir=BASE/'meshes/product_v1b';c=json.loads((meshdir/'config.json').read_text());m=json.loads((meshdir/'mesh.json').read_text());c['tendon']['outboard']=a.outboard;c['tendon']['maximum_stroke']=a.stroke;c['simulation']['dt_s']=a.dt;c['simulation']['sphere_radius_mm']=a.radius;c['simulation']['closing_end_s']=1 if a.slow_cycle else .5;c['simulation']['hold_end_s']=2 if a.slow_cycle or a.lift or a.withdraw_support else 1;c['simulation']['release_end_s']=3 if a.slow_cycle else 2.5 if a.lift or a.withdraw_support else 1.5;c['simulation']['sphere_center_mm'][2]=a.center_z;c['tendon']['guide_stations']=[10,20,30,40,50,60,70,80,90,98] if a.dense_guides else c['tendon']['guide_stations'];(out/'config.json').write_text(json.dumps(c,indent=2));(out/'mesh.json').write_text(json.dumps(m));source=out/'source';shutil.copytree(BASE/'sofa',source,ignore=shutil.ignore_patterns('__pycache__'))
  (out/'launch_command.json').write_text(json.dumps(launch_command,indent=2))
  c['palm']['root_angle_deg']=a.root_angle;c['simulation']['sphere_mass_kg']=a.object_mass
@@ -168,7 +171,10 @@ def main():
     r.update(status='REJECTED_INITIAL_PENETRATION',process=None);(out/'summary.json').write_text(json.dumps(r,indent=2));raise ValueError('initial penetration:reject before physics run')
  ET.ElementTree(root).write(out/'scene.scn');r['scene_sha256']=sha(out/'scene.scn');r['process']=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',a.steps,'--hideProgressBar',out/'scene.scn'],out/'process',480)
  r['sofa_errors']=sum((out/'process'/f).read_text(errors='replace').count('[ERROR]') for f in ('stdout.log','stderr.log'))
- if r['process']['exit_code']==0 and not r['sofa_errors']:
+ import re
+ r['missing_intersectors']=sum(len(re.findall(r'Element Intersector[^\n]*NOT FOUND',(out/'process'/f).read_text(errors='replace'))) for f in ('stdout.log','stderr.log'))
+ if r['missing_intersectors']:r['status']='INVALID_CONTACT_COMPONENT_COMBINATION'
+ if r['process']['exit_code']==0 and not r['sofa_errors'] and not r['missing_intersectors']:
   metrics=[]
   for f in range(a.fingers):
    rows=list(csv.DictReader((out/('finger'+str(f)+'.csv')).open()));q=np.array([np.fromstring(x['q_m'],sep=' ') for x in rows]).reshape(-1,len(m['local_positions_mm']),3);rest=np.array([world(c,x,c['palm']['angles_deg'][f]) for x in m['local_positions_mm']])*.001;tip=np.array([i for i,p in enumerate(m['local_positions_mm']) if p[0]==100]);motion=np.linalg.norm(q[:,tip].mean(axis=1)-rest[tip].mean(axis=0),axis=1);metrics.append(dict(rows=len(rows),peak_tip_displacement_m=float(motion.max()),final_tip_displacement_m=float(motion[-1]),finite=bool(np.isfinite(q).all()),last_time_s=float(rows[-1]['time_s']),max_cable_raw_force=max(float(x[k]) for x in rows for k in ('cable0_force_raw','cable1_force_raw'))))

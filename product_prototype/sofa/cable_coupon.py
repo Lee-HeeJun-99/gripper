@@ -6,12 +6,16 @@ BASE=Path(__file__).resolve().parents[1];ROOT=BASE.parent;sys.path.insert(0,str(
 from film_guarded_process import guarded
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--build-case',default='native_single_generic_045');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.build_case;m=json.loads((src/'summary.json').read_text());binary=ROOT/m['build']/'libReGripProductSequence.so'
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--build-case',default='native_single_generic_045');p.add_argument('--velocity-first',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.build_case;m=json.loads((src/'summary.json').read_text());binary=ROOT/m['build']/'libReGripProductSequence.so'
  if sha(binary)!=m['binary_sha256'] or sha(BASE/'sofa/Controller.cpp')!=m['source_hashes']['Controller.cpp']:raise ValueError('exact input/logger binary required')
  tree=ET.parse(src/'scene.scn');root=tree.getroot()
  for node in list(root):
-  if node.tag=='Node':root.remove(node)
- root.find('GenericConstraintSolver').tag='BlockGaussSeidelConstraintSolver'
+  if node.tag not in ('RequiredPlugin','FreeMotionAnimationLoop','GenericConstraintSolver','BlockGaussSeidelConstraintSolver'):root.remove(node)
+ solver=root.find('GenericConstraintSolver')
+ if solver is not None:solver.tag='BlockGaussSeidelConstraintSolver'
+ if root.find('BlockGaussSeidelConstraintSolver') is None:raise ValueError('stock BlockGaussSeidel template required')
+ root.set('gravity','0 0 0');root.set('dt','.0025')
+ if a.velocity_first:root.find('FreeMotionAnimationLoop').set('solveVelocityConstraintFirst','1')
  def add(parent,tag,**kw):return ET.SubElement(parent,tag,{k:str(v) for k,v in kw.items()})
  add(root,'RequiredPlugin',pluginName='Sofa.Component.SolidMechanics.Spring')
  finger=add(root,'Node',name='coupon');add(finger,'EulerImplicitSolver');add(finger,'SparseLDLSolver',name='linear');add(finger,'MechanicalObject',name='dofs',template='Vec3d',position='0 0 0 .01 0 0');add(finger,'UniformMass',totalMass=.002);add(finger,'RestShapeSpringsForceField',stiffness=1000,points='0 1');add(finger,'GenericConstraintCorrection')
@@ -19,7 +23,8 @@ def main():
   node=add(finger,'Node',name=f'cable{j}');add(node,'MechanicalObject',name='points',template='Vec3d',position=f'{j*.01} 0 0');add(node,'CableConstraint',name='actuator',indices=0,pullPoint=f'{j*.01} 0 .1',value=0,valueType='displacement',minForce=0);add(node,'SubsetMapping',input='@../dofs',output='@points',indices=j,handleTopologyChange=0)
  add(finger,'NativeCableSequence',body='@dofs',cable0='@cable0/actuator',cable1='@cable1/actuator',filename=str(out/'coupon.csv'),stroke=.005)
  tree.write(out/'scene.scn');r=dict(scope='two independent straight cables on native spring-mass points;NOT FEM/grasp',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_sha256=sha(Path(__file__)),binary_sha256=sha(binary),scene_sha256=sha(out/'scene.scn'),dt_s=.0025,mass_kg=.001,stiffness_N_per_m=1000,sdk='/home/ubuntu/SOFA/v26.06.00');r['process']=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','800','--hideProgressBar',out/'scene.scn'],out/'process',480);r['status']='FAIL'
- if r['process']['exit_code']==0:
+ r['velocity_first']=a.velocity_first;r['sofa_errors']=sum((out/'process'/f).read_text(errors='replace').count('[ERROR]') for f in ('stdout.log','stderr.log'))
+ if r['process']['exit_code']==0 and not r['sofa_errors']:
   rows=list(csv.DictReader((out/'coupon.csv').open()));errors=[]
   for row in rows:
    q=np.fromstring(row['q_m'],sep=' ').reshape(2,3)

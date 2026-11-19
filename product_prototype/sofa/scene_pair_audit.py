@@ -5,7 +5,9 @@ from skin_load_assess import BASE,read,sha
 from pathlib import Path
 def main():
  p=argparse.ArgumentParser();p.add_argument('--cases',nargs=2,required=True);p.add_argument('--tag',required=True);p.add_argument('--prefix',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);sources=[BASE/'results'/x for x in a.cases];records=[]
- for file,fields in [('object.csv',('rigid_q','rigid_v')),*[(f'finger{k}.csv',('q_m','v_m_s')) for k in range(3)]]:
+ counts=[json.loads((s/'summary.json').read_text()).get('fingers',3) for s in sources]
+ if len(set(counts))!=1:raise ValueError('same finger count required')
+ for file,fields in [('object.csv',('rigid_q','rigid_v')),*[(f'finger{k}.csv',('q_m','v_m_s')) for k in range(counts[0])]]:
   x,y=[read(s/file) for s in sources]
   if len(x)!=len(y) and not a.prefix:raise ValueError('complete equal-length comparison required')
   n=min(len(x),len(y));x=x[:n];y=y[:n]

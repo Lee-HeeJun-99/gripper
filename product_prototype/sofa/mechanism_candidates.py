@@ -55,7 +55,15 @@ def export(name,c,out):
  return report
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--publish-actual-cases',action='store_true');p.add_argument('--publish-sector-cases',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);result={}
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--publish-actual-cases',action='store_true');p.add_argument('--publish-sector-cases',action='store_true');p.add_argument('--publish-case');p.add_argument('--design-name');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);result={}
+ if a.publish_case:
+  if not a.design_name or Path(a.design_name).name!=a.design_name:raise ValueError('unique local design name required')
+  src=BASE/'results'/a.publish_case
+  if json.loads((src/'summary.json').read_text())['status']!='RUN_COMPLETED_NOT_QUALIFIED':raise ValueError('completed source scene required,not partial physics')
+  target=BASE/'meshes'/a.design_name;report=export(a.design_name,json.loads((src/'config.json').read_text()),target);draw=BASE/'drawings'/a.design_name;draw.mkdir(exist_ok=False)
+  for f in ('reference_assembly.scad','orthographic.svg','BOM.csv','checks.json','config.json'):shutil.copy2(target/f,draw/f)
+  report.update(actual_case=a.publish_case,exact_config_bytes_equal=(src/'config.json').read_bytes()==(target/'config.json').read_bytes(),qualification='manufactured reference only;source run completion NOT grasp or assembly qualification')
+  (out/'summary.json').write_text(json.dumps(report,indent=2));print(json.dumps(dict(candidate=a.design_name,exact_config_bytes_equal=report['exact_config_bytes_equal'],status=report['status'])));return
  if a.publish_sector_cases:
   for name,case in [('distal_A_sector_v8','distal_sector_single285'),('precurve_B_sector_v8','precurve_sector_single286'),('hybrid_C_sector_v8','hybrid_sector_single292')]:
    src=BASE/'results'/case;c=json.loads((src/'config.json').read_text());target=BASE/'meshes'/name;report=export(name,c,target);draw=BASE/'drawings'/name;draw.mkdir(exist_ok=False)

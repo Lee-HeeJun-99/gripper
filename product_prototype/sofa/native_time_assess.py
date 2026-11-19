@@ -6,10 +6,11 @@ from analyse import rotation,cable_node
 BASE=Path(__file__).resolve().parents[1]
 def read(p):return list(csv.DictReader(p.open()))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-def fingerprint(src):
+def fingerprint(src,solver_independent=False):
  tree=ET.parse(src/'scene.scn');root=tree.getroot();root.set('dt','TIME_VARIABLE');commands=json.loads((src/'motion_commands.json').read_text())['commands'] if (src/'motion_commands.json').exists() else []
  for node in root.iter():
   if 'filename' in node.attrib:node.set('filename','EXCLUSIVE_JOURNAL')
+  if solver_independent and node.get('name')=='constraints':node.tag='NativeConstraintAlgorithmVariant'
  for node in root.iter('Node'):
   for move in node.findall('LinearMovementProjectiveConstraint'):
    wanted=next(x for x in commands if x['node']==node.get('name'));move.set('keyTimes',' '.join(format(x,'.17g') for x in wanted['keyTimes_s']))

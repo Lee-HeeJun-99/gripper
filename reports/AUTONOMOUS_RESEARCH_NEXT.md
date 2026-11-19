@@ -1,4 +1,21 @@
-## Latest next work after native432–440,2026-11-19
+## Latest next work after native442–453,2026-11-19
+
+Feature2dc6afc/fcc7ba5. Read product_prototype/reports/CHECKPOINT.md and
+NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md. PRIVATE force partition
+442/444 is DONE:axial amplitude^2,transverse^3;do not repeat. Actual centered21node
+small-load state/force/API452 and scaling453 are limited PASS. Centered41/81
+cases449 still FAIL,so no all-pair mesh or B3 promotion.443/445 FAIL,447 unadopted.
+
+Next:diagnose per-node native force/torque versus coordinate representation at
+41/81;any full Rigid3 failed-frame snapshots must be labelled diagnostic,not
+accepted equilibrium. Test invariant native scaling/local-frame configuration
+only with physical-unit residuals and unchanged.1% time/1% mesh gates. No own solver.
+Exact first command:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_accepted452/summary.json`
+Then453 and449. Builds441/451,Raw,figures,reproduction in authority and evidencev15.
+No physics child intentionally left running;no automatic restart promise.
+
+## Historical next work after native432–440,2026-11-19
 
 Feature e5d4dae/bc762c1. Read product_prototype/reports/CHECKPOINT.md and
 NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md. Reference lengths/initial force

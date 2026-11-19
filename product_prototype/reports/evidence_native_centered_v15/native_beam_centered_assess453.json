@@ -1,0 +1,35 @@
+{
+  "scope": "Actual21-node STATIC Rail coupon only;NOT B3,Skin,time/mesh convergence or grasp",
+  "source_summary_sha256": "1e8fe268923b6f453cacc3c5135e2abeb7cb1a96218ee584341a385307e15626",
+  "producer_sha256": "826dd12feaa4978b4ef3892e4524fd800abc70f8544673fd84fb8643485d197b",
+  "records": [
+    {
+      "case": "native_rectangular_centered448",
+      "force_N": 1e-08,
+      "actual_tip_m": 5.487199999812008e-07,
+      "Euler_tip_m": 5.487200000000001e-07,
+      "all_node_transverse_reference_error_m": 1.8799260989598755e-17,
+      "all_node_rotation_reference_error_rad": 2.380128700466694e-16,
+      "all_node_second_order_axial_reference_error_m": 1.1310397063368782e-15,
+      "reference_scope": "Euler/second-order are approximate analytical references,NOT SOFA prescribed states or exact nonlinear solution"
+    },
+    {
+      "case": "native_rectangular_centered_half450",
+      "force_N": 5e-09,
+      "actual_tip_m": 2.7435999999765015e-07,
+      "Euler_tip_m": 2.7436000000000003e-07,
+      "all_node_transverse_reference_error_m": 2.3498811539202427e-18,
+      "all_node_rotation_reference_error_rad": 2.9751185239360045e-17,
+      "all_node_second_order_axial_reference_error_m": 2.8449465006019636e-16,
+      "reference_scope": "Euler/second-order are approximate analytical references,NOT SOFA prescribed states or exact nonlinear solution"
+    }
+  ],
+  "load_scaling": {
+    "full_vs_twice_half_displacement_error_m": 9.502329478827676e-13,
+    "transverse_relative_error": 2.5695252008750038e-11,
+    "rotation_relative_error": 2.060370493684825e-11,
+    "status": "PASS_ABSOLUTE_LOAD_SCALING_ONLY",
+    "gate_m": 1e-12
+  },
+  "spatial_gate": "FAIL_OR_BLOCKED:41/81 actual native solves449 failed;no all-pair mesh certification"
+}

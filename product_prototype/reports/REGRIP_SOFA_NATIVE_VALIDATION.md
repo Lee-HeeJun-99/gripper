@@ -1,4 +1,14 @@
-## Latest validation432–440,2026-11-19
+## Latest validation442–453,2026-11-19
+
+Actual native21node centered Rail448/450 independently measured452:force residual
+6.17e-13/2.30e-13N,torque<=1e-12Nm,observer/control mapped q/v EXACT0.453 absolute
+load scaling9.50233e-13m. These narrow checks PASS,not mesh/time/Skin/attachment/
+B3/grasp. Fine41/81 native449 FAIL. PRIVATE442/444 expose nonlinear axial residual
+and representation effects without accepted-state injection.443/445 FAIL;447 is
+unadopted different native force model. Source/build/Raw preserved;SDK unchanged.
+Authority:NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md;v15 evidence.
+
+## Historical validation432–440,2026-11-19
 
 Initial native BeamAdapter assembly/addDForce exact agreement and geometric-rest
 zero force/torque confirmed.439 precision regression retains nine force/matrix

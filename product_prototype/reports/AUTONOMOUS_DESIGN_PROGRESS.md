@@ -1,4 +1,14 @@
-## Latest cycle432–440,2026-11-19
+## Latest cycle442–453,2026-11-19
+
+2dc6afc/fcc7ba5 implement PRIVATE native nonlinear-force partition and actual
+accepted-state force observer. Axial amplitude^2 effect distinguished from rounding;
+second-order PRIVATE reference not injected. Native plans443/445 FAIL;447 different
+force model not adopted. Centered21node448/450 passes actual small-load force/API
+checks452 and scaling453;fine41/81 cases449 FAIL. No product promotion.
+Authority:NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md;v15 evidence.
+Next:per-node fine-frame residual/precision diagnosis,not repeated coarse tests.
+
+## Historical cycle432–440,2026-11-19
 
 e5d4dae/bc762c1 implement actual reference/force/full native assembly inventory.
 Initial modern/addDForce matrices agree exactly;actual rest transforms eliminate

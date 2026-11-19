@@ -1,4 +1,33 @@
-## Latest checkpoint — native reference/assembly432–440,2026-11-19
+## Latest checkpoint — native residual/centered Rail442–453,2026-11-19
+
+Feature commits2dc6afc,fcc7ba5. Authority:
+`product_prototype/reports/NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md`.
+Evidence:`product_prototype/reports/evidence_native_centered_v15/manifest.json`.
+
+-442 completes the previous next task:PRIVATE native axial residual scales with
+  amplitude^2,transverse^3.444 second-order PRIVATE kinematics reduces axial error,
+  but is NEVER installed into actual state. No need to repeat these diagnoses.
+-443 full-step-like native budget0 and445 smaller load FAIL strict solver gates.
+ 447 native reinforceLength is a DIFFERENT force approximation,not adopted.
+-448/450 translate complete geometry/root by−50mm;21node actual small-load static
+  solves now complete WITHOUT gate relaxation.452 directly measures free force
+  residuals6.17e-13/2.30e-13N,torque criterion passes,and observer/control q/v error0.
+  This is only centered21node Rail at1e-8/5e-9N,NOT B3,mesh/time or grasp PASS.
+-453 actual load scaling error9.50233e-13m passes absolute1e-12m only.449 centered
+  41/81node solves FAIL;no full mesh certification and no partial-state promotion.
+-Reusable read-only builds441/451,frozen source/binary guards and actual/private
+  plots are preserved. All old B3/raw/Golden/verdicts remain unchanged.
+
+NEXT:per-node native force/torque and coordinate representation diagnosis of
+centered41/81 failures449. Full Rigid3 failed frames must be marked diagnostic,
+NOT accepted states. No tolerance waiver or repeated parameter sweep.
+Exact read-only restart:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_accepted452/summary.json`
+Then inspect453 and449;source/build/raw/reproduction commands are in authority.
+Full wrapping,mesh/time,energy,hardware clearance,100g,Lift and fabrication stay
+unqualified. No physics child intentionally running;no automatic restart promise.
+
+## Historical checkpoint — native reference/assembly432–440,2026-11-19
 
 Feature commits:e5d4dae,bc762c1. Authority:
 `product_prototype/reports/NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md`.

@@ -1,4 +1,11 @@
-## Latest product status after native432–440,2026-11-19
+## Latest product status after native442–453,2026-11-19
+
+Centered21node native Rail small-load validation is limited;no B3 geometry or
+product acceptance change. Fine mesh,attachment,time/energy,clearance and fabrication
+remain open. No new100g/Lift/STEP claim. Authority:
+NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md.
+
+## Historical product status after native432–440,2026-11-19
 
 No B3 geometry or product acceptance change. Initial native Rail rest/assembly
 diagnosis is complete,but loaded model still fails;no replacement selected.

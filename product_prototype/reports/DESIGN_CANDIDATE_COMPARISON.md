@@ -1,4 +1,13 @@
-## Latest native model comparison432–440,2026-11-19
+## Latest native model comparison442–453,2026-11-19
+
+Centered21node native Rail now has limited actual small-load state/force/scaling
+PASS,not B3 or spatial qualification. Fine41/81 remain FAIL. Same rigid coordinate
+translation,material and load kept;no geometry/stiffness fitting. PRIVATE kinematic
+references are not candidates with demonstrated grasping. Native reinforceLength
+changes force approximation and was not adopted. Authority:
+NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md;2dc6afc/fcc7ba5.
+
+## Historical native model comparison432–440,2026-11-19
 
 Geometric rest fixes initial native Rail residual,not loaded failure. Same-state
 modern/addDForce blocks agree exactly;do not reuse the spring415 bug diagnosis.

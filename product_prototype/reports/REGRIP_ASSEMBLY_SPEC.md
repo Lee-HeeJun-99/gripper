@@ -1,4 +1,11 @@
-## Latest assembly scope after432–440,2026-11-19
+## Latest assembly scope after442–453,2026-11-19
+
+No actual hardware/CAD modification. Native centered Rail coupons do not validate
+product joints,self-collision,guide swept solids or fabrication. B3 assembly/STEP/
+actuator/fastener/tolerance limitations unchanged. See
+NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md.
+
+## Historical assembly scope after432–440,2026-11-19
 
 Native Rail coupon diagnoses do not validate product attachments or hardware.
 Existing B3 actual moving interference,STEP assembly,actuator and fastener/tolerance

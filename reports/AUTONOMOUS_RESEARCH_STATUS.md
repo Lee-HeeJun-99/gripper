@@ -1,4 +1,15 @@
-## Latest status432–440,2026-11-19
+## Latest status442–453,2026-11-19
+
+Feature2dc6afc/fcc7ba5:PRIVATE nonlinear force partition plus actual centered
+21node small-load Rail validation.452 actual force residual6.17e-13/2.30e-13N,
+q/v control difference0;453 absolute scaling9.50233e-13m. Limited coupon PASS only.
+Fine41/81 native449 still FAIL;no mesh/time/B3 or final product certification.
+443/445 fail preserved;447 different native model not adopted. Prior B3 functional
+holding/release,all Raw/Golden/verdicts retained. No SDK edits,push or new100g/Lift.
+Authority:product_prototype/reports/NATIVE_NONLINEAR_RESIDUAL_AND_CENTERED_RAIL_20261119.md.
+Evidencev15 and updated product checkpoint provide exact continuation.
+
+## Historical status432–440,2026-11-19
 
 Feature e5d4dae/bc762c1:actual native initial Rail reference/force and full same-state
 assembly comparison completed. Rest transforms remove initial residual;four

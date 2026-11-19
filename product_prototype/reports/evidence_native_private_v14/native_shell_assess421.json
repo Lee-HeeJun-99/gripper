@@ -1,0 +1,181 @@
+{
+  "scope": "Native static shell diagnostics,NOT B3,stress-free precurve,grasp,time or continuum certification",
+  "mesh_pairs": [
+    {
+      "nx": [
+        41,
+        21
+      ],
+      "ny": 3,
+      "relative": 0.10979440535704996,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "nx": [
+        41,
+        81
+      ],
+      "ny": 3,
+      "relative": 0.034643149033933916,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "nx": [
+        21,
+        81
+      ],
+      "ny": 3,
+      "relative": 0.14063393044310743,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "nx": [
+        21,
+        81
+      ],
+      "ny": 5,
+      "relative": 0.3055702022874204,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    }
+  ],
+  "load_linearity": [
+    {
+      "nx": 41,
+      "ny": 3,
+      "absolute_scaled_state_error_m": 2.7184851592032544e-14,
+      "gate_m": 1e-12,
+      "status": "PASS_LOAD_LINEARITY_ONLY"
+    },
+    {
+      "nx": 21,
+      "ny": 3,
+      "absolute_scaled_state_error_m": 1.1345091532888318e-14,
+      "gate_m": 1e-12,
+      "status": "PASS_LOAD_LINEARITY_ONLY"
+    }
+  ],
+  "constitutive_reference_fields": [
+    {
+      "case": "coarse",
+      "source_matrix_sha256": "f466e4f82ec7223be6a252959b4b65235b2d7b9118dbd1dd782d5757fb178805",
+      "reference_curvature_tensor_over_input_D": [
+        [
+          0.31666666666751714,
+          6.708854945557146e-15,
+          0.6333333333333453
+        ],
+        [
+          8.418934336746767e-15,
+          0.16666666666666713,
+          0.08333333333333365
+        ],
+        [
+          0.6333333333333324,
+          0.08333333333333307,
+          3.3916666666667017
+        ]
+      ],
+      "desired_nu0_tensor_over_D": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "scope": "unconstrained quadratic reference fields,NOT actual prescribed/deformed Native output;no fitted parameter applied"
+    },
+    {
+      "case": "81_3",
+      "source_matrix_sha256": "259b31eebf918d9022dad7aeff763979d6cb137451807664c543520ce0bd7f98",
+      "reference_curvature_tensor_over_input_D": [
+        [
+          0.32916666589621024,
+          -4.644628980407203e-12,
+          2.63333333332997
+        ],
+        [
+          -3.4888493004016568e-12,
+          0.16666666666659796,
+          0.020833333333809646
+        ],
+        [
+          2.6333333333351363,
+          0.020833333333508546,
+          43.07447916664892
+        ]
+      ],
+      "desired_nu0_tensor_over_D": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "scope": "unconstrained quadratic reference fields,NOT actual prescribed/deformed Native output;no fitted parameter applied"
+    },
+    {
+      "case": "81_5",
+      "source_matrix_sha256": "a987e888a594a9732fc98983a42e8a077ba33ed0c3f8dcaf7efd88446246dbb3",
+      "reference_curvature_tensor_over_input_D": [
+        [
+          0.32916666742207445,
+          4.21024472307468e-12,
+          1.3166666666741769
+        ],
+        [
+          3.7995176701668e-12,
+          0.2500000000000544,
+          0.06250000000033791
+        ],
+        [
+          1.3166666666731042,
+          0.06250000000043279,
+          11.303125000015536
+        ]
+      ],
+      "desired_nu0_tensor_over_D": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "scope": "unconstrained quadratic reference fields,NOT actual prescribed/deformed Native output;no fitted parameter applied"
+    }
+  ],
+  "gate": "FAIL_MESH_AND_CONSTITUTIVE_QUALIFICATION;NO_B3_PROMOTION"
+}

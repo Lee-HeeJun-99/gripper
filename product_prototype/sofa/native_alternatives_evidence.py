@@ -24,7 +24,8 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_rectangular_centered448','native_rectangular_centered_refine449','native_rectangular_centered_half450',
        'native_beam_accepted452','native_beam_centered_assess453',
        'native_beam_refined_diagnostic454','native_beam_ulp_probe455','native_beam_units457',
-       'native_beam_loaded_fd459','native_beam_loaded_regression460']
+       'native_beam_loaded_fd459','native_beam_loaded_regression460','native_beam_mode_fd462',
+       'native_beam_mode_fd464','native_beam_mode_ladder465','native_beam_fd_assess466']
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True)
@@ -50,11 +51,13 @@ def main():
             if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     manifest['exclusions']={'native_rectangular_ramp434':'Unused keyTimes/keyForces;zero load;not loaded bending evidence. Original summary/Raw retained.',
                             'native_rigid_tangent427':'Wrong scalar matrix API;not native tangent discrepancy evidence.'}
-    for identifier in ('400','406','410','428','431','438','441','451','456','458'):
+    for identifier in ('400','406','410','428','431','438','441','451','456','458','463'):
         binary,source=compiled_observer(identifier)
         for f in (binary,source):manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     rejected_binary=BASE/'cad/build_rigid_observer426/libReGripElasticObserver.so'
     manifest['files'][str(rejected_binary.relative_to(ROOT))]=sha(rejected_binary)
+    failed_observer=BASE/'cad/build_mode_observer461/libReGripElasticObserver.so'
+    manifest['files'][str(failed_observer.relative_to(ROOT))]=sha(failed_observer)
     sdk=Path('/home/ubuntu/SOFA/v26.06.00')
     for f in [sdk/'bin/runSofa-26.06.00',sdk/'plugins/BeamAdapter/lib/libBeamAdapter.so',
               sdk/'include/Sofa.Component.SolidMechanics.Spring/sofa/component/solidmechanics/spring/FastTriangularBendingSprings.inl']:
@@ -94,7 +97,8 @@ def main():
                  'native_matrix_assess.py','native_alternatives_evidence.py','native_rigid_tangent.py',
                  'native_beam_reference_inventory.py','native_beam_reference_assess.py',
                  'native_beam_private_force.py','native_beam_private_assess.py','native_beam_accepted.py','native_beam_centered_assess.py',
-                 'native_beam_refined_diagnostic.py','native_beam_ulp_probe.py','native_beam_unit_scale.py','native_beam_loaded_fd.py'):
+                 'native_beam_refined_diagnostic.py','native_beam_ulp_probe.py','native_beam_unit_scale.py','native_beam_loaded_fd.py',
+                 'native_beam_mode_fd.py','native_beam_fd_assess.py'):
         f=BASE/'sofa'/name;shutil.copy2(f,out/name)
     for f in out.iterdir():
         if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)

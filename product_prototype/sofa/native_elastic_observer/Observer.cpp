@@ -76,10 +76,11 @@ public:
     sofa::core::objectmodel::Data<double>amplitude;
     sofa::core::objectmodel::Data<unsigned>directionStart;
     sofa::core::objectmodel::Data<sofa::type::vector<double>>fdSteps;
+    sofa::core::objectmodel::Data<Types::VecDeriv>privateDirection;
     sofa::core::objectmodel::Data<Types::VecCoord>privatePositions;
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::behavior::BaseMatrixLinearSystem,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>system;
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::objectmodel::BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>interpolation;
-    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),directionStart(initData(&directionStart,unsigned(2),"directionStart","First free node in diagnostic direction;root nodes excluded")),fdSteps(initData(&fdSteps,sofa::type::vector<double>{1e-6,1e-7,1e-8},"fdSteps","Positive dimensionless symmetric FD step ladder")),privatePositions(initData(&privatePositions,Types::VecCoord(),"privatePositions","Optional PRIVATE Rigid3 force-query coordinates;never installed in state")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
+    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),directionStart(initData(&directionStart,unsigned(2),"directionStart","First free node in diagnostic direction;root nodes excluded")),fdSteps(initData(&fdSteps,sofa::type::vector<double>{1e-6,1e-7,1e-8},"fdSteps","Positive dimensionless symmetric FD step ladder")),privateDirection(initData(&privateDirection,Types::VecDeriv(),"privateDirection","Optional PRIVATE SI translation/left-rotation direction;never applied to actual state")),privatePositions(initData(&privatePositions,Types::VecCoord(),"privatePositions","Optional PRIVATE Rigid3 force-query coordinates;never installed in state")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
     void bwdInit()override {
         BaseObject::bwdInit();if(!body||!elastic||std::ifstream(filename.getValue()))throw std::runtime_error("unique Rigid3 observer required");
         const auto original=body->read(sofa::core::vec_id::read_access::position)->getValue();
@@ -90,6 +91,12 @@ public:
         if(start>=original.size()||steps.empty())throw std::runtime_error("invalid private derivative plan");
         for(double h:steps)if(!std::isfinite(h)||h<=0)throw std::runtime_error("positive finite FD steps required");
         for(unsigned i=start;i<original.size();++i)for(unsigned j=0;j<6;++j)direction[i][j]=(j<3?.1:1.)*std::sin(double(6*i+j+1));
+        if(!privateDirection.getValue().empty()){
+            if(privateDirection.getValue().size()!=original.size())throw std::runtime_error("direction size mismatch");
+            direction=privateDirection.getValue();
+            for(unsigned i=0;i<direction.size();++i)for(unsigned j=0;j<6;++j){
+                if(!std::isfinite(direction[i][j])||(i<start&&direction[i][j]!=0))throw std::runtime_error("invalid private direction/root motion");}
+        }
         auto perturb=[&](const Types::VecCoord&q,double h){auto result=q;
             for(unsigned i=0;i<q.size();++i){for(unsigned j=0;j<3;++j)result[i].getCenter()[j]+=h*direction[i][j];
                 double norm=0;for(unsigned j=3;j<6;++j)norm+=direction[i][j]*direction[i][j];norm=std::sqrt(norm);

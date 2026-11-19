@@ -2,6 +2,9 @@
 #include <sofa/core/behavior/MechanicalState.h>
 #include <sofa/core/behavior/BaseMass.h>
 #include <sofa/core/collision/NarrowPhaseDetection.h>
+#include <sofa/core/collision/ContactManager.h>
+#include <sofa/component/constraint/lagrangian/model/UnilateralLagrangianConstraint.h>
+#include <set>
 #include <sofa/core/CollisionModel.h>
 #include <sofa/linearalgebra/FullMatrix.h>
 #include <sofa/defaulttype/VecTypes.h>
@@ -23,6 +26,40 @@ public:
  NativeDetectionPairs():narrow(initLink("narrow","Public native detection output")),filename(initData(&filename,std::string(),"filename","Exclusive detector provenance")){f_listening.setValue(true);}
  void init()override{BaseObject::init();if(!narrow||std::ifstream(filename.getValue()))throw std::runtime_error("unique detector journal required");file.open(filename.getValue());file<<std::setprecision(17)<<"accepted_time_s,model0,model1,pair_index,detected_point0,detected_point1\n";}
  void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;for(auto&pair:narrow->getDetectionOutputs()){auto*out=pair.second;if(!out)continue;for(unsigned k=0;k<out->size();++k)file<<getContext()->getTime()<<",\""<<pair.first.first->getPathName()<<"\",\""<<pair.first.second->getPathName()<<"\","<<k<<",\""<<out->getFirstPosition(k)<<"\",\""<<out->getSecondPosition(k)<<"\"\n";}file.flush();}
+};
+class NativeResponseRows:public BaseObject {
+public:
+ using Constraint=sofa::component::constraint::lagrangian::model::UnilateralLagrangianConstraint<sofa::defaulttype::Vec3Types>;
+ using Point=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;
+ using Body=sofa::core::behavior::MechanicalState<sofa::defaulttype::Rigid3Types>;
+ using Solver=sofa::component::constraint::lagrangian::solver::GenericConstraintSolver;
+ SOFA_CLASS(NativeResponseRows,BaseObject);
+ sofa::core::objectmodel::SingleLink<NativeResponseRows,sofa::core::collision::ContactManager,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>manager;
+ sofa::core::objectmodel::SingleLink<NativeResponseRows,Body,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
+ sofa::core::objectmodel::SingleLink<NativeResponseRows,Solver,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>solver;
+ sofa::core::objectmodel::Data<std::string>filename;std::ofstream file;
+ NativeResponseRows():manager(initLink("manager","Native contact responses")),body(initLink("body","Actual free rigid object")),solver(initLink("solver","Actual native multipliers")),filename(initData(&filename,std::string(),"filename","Exclusive direct response row journal")){f_listening.setValue(true);}
+ void init()override{BaseObject::init();if(!manager||!body||!solver||std::ifstream(filename.getValue()))throw std::runtime_error("unique linked response journal required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,model0,model1,response_name,constraint_path,first_row,row_id,lambda_Ns,object_impulse_Ns_Nms\n";}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{
+  if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;
+  auto constraints=getContext()->getObjects<Constraint>(sofa::core::objectmodel::BaseContext::SearchDown);
+  auto&lambda=solver->d_constraintForces.getValue();auto&J=body->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();std::set<unsigned>claimed;
+  for(auto&contact:manager->getContacts()){
+   auto models=contact->getCollisionModels();Constraint*owner=nullptr;unsigned matches=0;
+   for(auto*c:constraints)if(c->getName()==contact->getName()&&c->getContext()==contact->getContext()){
+    auto*one=c->getMechModel1();auto*two=c->getMechModel2();auto prefix0=models.first->getContext()->getPathName()+"/";auto prefix1=models.second->getContext()->getPathName()+"/";
+    if(one&&two&&one->getPathName().find(prefix0)==0&&two->getPathName().find(prefix1)==0){owner=c;++matches;}
+   }
+   if(matches!=1){std::ostringstream error;error<<"response name="<<contact->getName()<<" context="<<contact->getContext()->getName()<<" matches="<<matches<<" candidates=";for(auto*c:constraints)error<<c->getName()<<"@"<<c->getContext()->getName()<<';';throw std::runtime_error(error.str());}
+   // Public API changes yetIntegrated metadata; never claim internal-history query purity.
+   Constraint::VecConstraintBlockInfo blocks;Constraint::VecPersistentID ids;owner->getConstraintInfo(nullptr,blocks,ids);
+   for(auto&block:blocks)for(int offset=0;offset<block.nbGroups*block.nbLines;++offset){
+    unsigned id=block.const0+offset;if(block.parent!=owner||id>=lambda.size()||!claimed.insert(id).second)throw std::runtime_error("invalid or duplicate native response row");
+    Body::Deriv impulse{};for(auto r=J.begin();r!=J.end();++r)if(r.index()==id)for(auto col=r.begin();col!=r.end();++col)impulse+=col.val()*lambda[id];
+    file<<getContext()->getTime()<<",\""<<models.first->getPathName()<<"\",\""<<models.second->getPathName()<<"\",\""<<contact->getName()<<"\",\""<<owner->getPathName()<<"\","<<block.const0<<','<<id<<','<<lambda[id]<<",\""<<impulse<<"\"\n";
+   }
+  }file.flush();
+ }
 };
 class NativeCableSequence:public BaseObject {
 public:
@@ -122,5 +159,5 @@ public:
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripProductSequence";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Input and logging ONLY;native SOFA FEM/cable/solver").add<product::NativeCableSequence>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 journal").add<product::NativeRigidJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native fixture journal").add<product::NativePointJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native constraint convergence").add<product::NativeConstraintJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only cable/parent Jacobian audit").add<product::NativeCableAudit>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only actual native contact row ownership").add<product::NativeContactRows>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only detector provenance").add<product::NativeDetectionPairs>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Input and logging ONLY;native SOFA FEM/cable/solver").add<product::NativeCableSequence>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 journal").add<product::NativeRigidJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native fixture journal").add<product::NativePointJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native constraint convergence").add<product::NativeConstraintJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only cable/parent Jacobian audit").add<product::NativeCableAudit>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only actual native contact row ownership").add<product::NativeContactRows>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only detector provenance").add<product::NativeDetectionPairs>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native response row provenance").add<product::NativeResponseRows>());}
 }

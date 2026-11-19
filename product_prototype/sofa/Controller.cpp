@@ -53,8 +53,20 @@ public:
  sofa::core::objectmodel::SingleLink<NativeContactRows,Solver,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>solver;
  sofa::core::objectmodel::Data<std::string>filename;std::ofstream file;
  NativeContactRows():film0(initLink("film0","Native parent0")),film1(initLink("film1","Optional parent1")),film2(initLink("film2","Optional parent2")),body(initLink("body","Native rigid body")),guide0(initLink("guide0","Optional rigid hardware0")),guide1(initLink("guide1","Optional rigid hardware1")),guide2(initLink("guide2","Optional rigid hardware2")),solver(initLink("solver","Native multipliers")),filename(initData(&filename,std::string(),"filename","Actual object row ownership")){f_listening.setValue(true);}
- void init()override{BaseObject::init();if(!body||!solver||!film0||std::ifstream(filename.getValue()))throw std::runtime_error("unique contact row observer links required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,row_id,film_mask,lambda_Ns,object_impulse_Ns_Nms\n";}
- void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;auto&J=body->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();auto&lambda=solver->d_constraintForces.getValue();for(auto row=J.begin();row!=J.end();++row){if(row.index()>=lambda.size())throw std::runtime_error("actual row/multiplier mismatch");unsigned mask=0,k=0;for(auto*f:{film0.get(),film1.get(),film2.get()}){if(f){auto&F=f->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto r=F.begin();r!=F.end();++r)if(r.index()==row.index()){for(auto c=r.begin();c!=r.end();++c)if(c.val().norm2()>0)mask|=1u<<k;}}++k;}k=0;for(auto*g:{guide0.get(),guide1.get(),guide2.get()}){if(g){auto&G=g->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto r=G.begin();r!=G.end();++r)if(r.index()==row.index())for(auto c=r.begin();c!=r.end();++c)for(unsigned d=0;d<6;++d)if(c.val()[d]!=0)mask|=1u<<k;}++k;}Rigid::Deriv impulse{};for(auto c=row.begin();c!=row.end();++c)impulse+=c.val()*lambda[row.index()];file<<getContext()->getTime()<<','<<row.index()<<','<<mask<<','<<lambda[row.index()]<<",\""<<impulse<<"\"\n";}file.flush();}
+ void init()override{BaseObject::init();if(!body||!solver||!film0||std::ifstream(filename.getValue()))throw std::runtime_error("unique contact row observer links required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,row_id,film_mask,lambda_Ns,object_impulse_Ns_Nms,surface_mask,hardware_only_mask\n";}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{
+  if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;
+  auto&J=body->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();auto&lambda=solver->d_constraintForces.getValue();
+  for(auto row=J.begin();row!=J.end();++row){
+   if(row.index()>=lambda.size())throw std::runtime_error("actual row/multiplier mismatch");
+   unsigned mask=0,k=0;
+   for(auto*f:{film0.get(),film1.get(),film2.get()}){if(f){auto&F=f->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto r=F.begin();r!=F.end();++r)if(r.index()==row.index())for(auto c=r.begin();c!=r.end();++c)if(c.val().norm2()>0)mask|=1u<<k;}++k;}
+   const unsigned surface=mask;k=0;
+   for(auto*g:{guide0.get(),guide1.get(),guide2.get()}){if(g){auto&G=g->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto r=G.begin();r!=G.end();++r)if(r.index()==row.index())for(auto c=r.begin();c!=r.end();++c)for(unsigned d=0;d<6;++d)if(c.val()[d]!=0)mask|=1u<<k;}++k;}
+   Rigid::Deriv impulse{};for(auto c=row.begin();c!=row.end();++c)impulse+=c.val()*lambda[row.index()];
+   file<<getContext()->getTime()<<','<<row.index()<<','<<mask<<','<<lambda[row.index()]<<",\""<<impulse<<"\","<<surface<<','<<(mask&~surface)<<'\n';
+  }file.flush();
+ }
 };
 class NativeCableAudit:public BaseObject {
 public:

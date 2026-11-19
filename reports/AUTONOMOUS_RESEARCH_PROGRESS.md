@@ -1,3 +1,40 @@
+## Latest continuation — Native entry/angular audit503–531,2026-11-19
+
+Feature commits:985f93e,3ea736c,eeef6a9;unit-label correction0840e2a.
+Authority:product_prototype/reports/NATIVE_GUIDE_CONTACT_ENTRY_20261119.md.
+Evidence:evidence_product_angular_v22/manifest.json → evidence_product_entry_v21
+→ evidence_product_velocity_v20. Prior immutable audits0mismatches.
+
+-Actual Native detector/response/direct-J/free-state observers implemented.
+ Thirty short Native children completed under4GiB/480s policy;no long B3 rerun.
+-503–518 observer comparisons q/v/impulse error0,strict1e-12 preserved.
+ Actual mapped impulse,mass-velocity change and effective-mass row update agree.
+-506 input-path analysis FAIL and519 wrong sphere-radius interpretation preserved.
+ 520 verifies detector coordinates are previous mapped CENTRES(error≤6.94e-18m),
+ then subtracts both radii. No old Raw or verdict rewritten.
+-Native active row follows−gap/dt,NOT necessarily zero normal velocity.
+ Same near-identical entry row/gap/prevelocity yields~50%dt sensitivity522.
+ Old all-time0.1%FAIL498/502 unchanged;no event-time/impact-law PASS.
+-523/524 angular ledger closes,but net internal tangential couple reaches
+ 3.83e-11Nms. Linear momentum agreement is not angular-conservation certification.
+-525/527/528 stock Rigid3 sphere mapping changes contact kinematics only.
+ Runs complete,but529 all-output/all-pair time gate FAIL(alarm5 worst65.85%).
+ Angular inventories526/530/531 are not conservation PASS. Candidate NOT adopted.
+-Functional50g Skin Holding/release485/489–491 preserved;mesh/time/wholeenergy,
+ solid hardware clearance,100g/Lift/STEP/fabrication remain NOT QUALIFIED.
+
+NEXT:validate finite Guide/Support Native contact geometry and contact-point
+pullback against shared CAD dimensions in a reduced scene BEFORE full B3.
+Do not repeat velocity-first/RigidSphere/alarm parameter sweeps without a new
+mechanism. No custom physics solver,zero-velocity patch or collision disable.
+Exact immediate read-only commands:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_rigid_time529/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_angular_partition524/summary.json`
+Reusable read-only build512/source guard:observer_identity.compiled_pair_rows().
+Raw paths,SDK/binary/source hashes,actual commands and scope in authority.
+No physics child intentionally running;no automatic background continuation.
+
+
 ## Latest continuation — B3 moving clearance472–502,2026-11-19
 
 Feature commits:ea03025,83da78d,18bd3eb,bd43763,3b7a4c5.

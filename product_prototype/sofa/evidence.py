@@ -17,6 +17,13 @@ def main():
   if not path.is_file() or sha(path)!=digest:fail.append(name)
   checked+=1
  result=dict(source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),scope='product evidence;NOT grasp/numerical/material approval',legacy=dict(checked=checked,excluded_narrative=excluded,mismatches=fail,status='PASS' if not fail else 'FAIL'),cases={},files={})
+ prior=json.loads((BASE/'reports/evidence_native_v1/manifest.json').read_text());old_fail=[];old_count=0
+ for name,digest in prior['files'].items():
+  immutable=name.startswith('product_prototype/results/') or any(name.startswith('product_prototype/'+x) for x in ('meshes/','drawings/','cad/build_')) or name.startswith('product_prototype/sofa/scenes/')
+  if not immutable:continue
+  path=ROOT/name;old_count+=1
+  if not path.is_file() or sha(path)!=digest:old_fail.append(name)
+ result['prior_product_immutable']=dict(checked=old_count,mismatches=old_fail,status='PASS' if not old_fail else 'FAIL',scope='Raw,old assets,private binary,scenes;live source/narrative intentionally mutable')
  for folder in sorted((BASE/'results').iterdir()):
   if not folder.is_dir():continue
   summary=folder/'summary.json'
@@ -29,8 +36,9 @@ def main():
   # Hash Raw/log/config/source snapshots. Source copies include no runtime records.
   for f in folder.rglob('*'):
    if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
- for name in ('analysis_tracking_048','analysis_038','analysis_043'):
-  for f in (BASE/'results'/name).glob('*.png'):shutil.copy2(f,out/f.name)
+ for folder in (BASE/'results').iterdir():
+  if folder.is_dir() and (folder.name.endswith('_144') or folder.name.endswith('_145')):
+   for f in folder.glob('*.png'):shutil.copy2(f,out/(folder.name+'_'+f.name))
  for f in (BASE/'cad').glob('build_*/libReGripProductSequence.so'):result['files'][str(f.relative_to(ROOT))]=sha(f)
  for top in ('config','cad','drawings','meshes','sofa'):
   for f in (BASE/top).rglob('*'):
@@ -38,5 +46,5 @@ def main():
  for f in out.iterdir():
   if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
  (out/'manifest.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(output=str(out),legacy=result['legacy'],cases=len(result['cases']),files=len(result['files']))))
- if fail:raise SystemExit('Legacy evidence mismatch;inspect,do not rewrite baseline')
+ if fail or old_fail:raise SystemExit('Prior immutable evidence mismatch;inspect,do not rewrite baseline')
 if __name__=='__main__':main()

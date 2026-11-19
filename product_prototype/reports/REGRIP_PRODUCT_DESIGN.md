@@ -1,3 +1,46 @@
+## Native continuation checkpoint — 2026-11-19 (supersedes priorities below, not historical results)
+
+Functional commit: `ff21719` (preceded by 3f600b7, af356fb, e29719f, 956d6c3).
+Detailed evidence: `product_prototype/reports/NATIVE_CABLE_COUPLING_AND_HOLDING_20261119.md`.
+New native trials051–146 are separate from legacy Campaign numbering.
+
+- Cable error isolated: exterior lateral Barycentric extrapolation (weights −29..37,
+  amplification73) plus lagged native cable linearization produces a two-state cycle.
+  Mapping/Jacobian arithmetic is consistent; straight/surface coupons pass. Existing044 FAIL retained.
+- Stock RigidMapping/SubsetMultiMapping guide hardware replaces extrapolated guide mechanics
+  in opt-in scenes. No custom force/contact/ODE solver added. No-contact131 hold shortening
+  error ≤2.33e-10mm; transient error .00365mm means NOT whole-time cable certification.
+- R30/50g conditional holding124: support force0, support clearance about44mm,
+  low measured speed. Weight is borne by GUIDE HARDWARE, not Skin. This is
+  experimental hardware-only holding, NOT film wrapping or final grasp PASS.
+  Matched100g132 FAIL. No maximum holding capacity or fabrication claim.
+- End-clock support adapter124/127: declared versus actual path error0m.
+  Half/quarter-dt assessment133 retains0.1% gate: FAIL, including substantive object-motion
+  differences (~1.44mm), not only tiny-value relative errors. Contact cable errors at
+  base/half/quarter remain .21489/.09091/.05674mm.
+- Public initial mass API140 PASS; opt-in query purity four steps difference0.
+  Frozen scene replay141: all1200 steps q/v/quaternion/support differences0, STRICT1e-12 PASS.
+  Repeatability is not physical accuracy. Input guards146 PASS (no physical trial).
+- Cross-guide bridge136–138 current DiagonalMass configuration fails initialization;
+  only that candidate BLOCKED, not proof all native diagonal mass is unsupported.
+- CAD sources/STL/drawings/BOM: native_guides_v5. FreeCAD/OCC unavailable;
+  STEP/kernel assembly NOT GENERATED. Moving full hardware interference NOT qualified.
+- Lift BLOCKED by contact/time gates and mapped-root actuation path; no Lift run.
+  Skin wrapping, general friction, self-collision, full energy/pressure/area and fabrication
+  readiness remain unverified. Legacy results/SDK preserved; no push.
+
+Next implementation: isolate native contact-transition cable linearization on a short
+recorded failure interval, then revise guides so Skin, not hardware, bears load.
+Before bridge dynamics, reproduce its native Rigid3 DiagonalMass initialization in a
+minimal scene. Before Lift, implement a verified free-subset root fixture and pullPoint
+motion; do not bypass current guards. Existing tests should be reused, not blindly repeated.
+
+Reproduction commands and exact Raw/Build identities are in the detailed report and
+`product_prototype/reports/evidence_native_coupling_v2/manifest.json` (once published).
+All trials are stopped; no automatic continuation is configured. This is an incomplete
+product-development checkpoint, not OS resource exhaustion or project completion.
+
+
 # ReGrip product prototype — 2026-11-19
 
 제품 우선 방향 전환에 따라 별도 구현했다. 기존 models/,Golden,Raw,

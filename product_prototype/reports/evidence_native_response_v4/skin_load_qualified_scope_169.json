@@ -1,0 +1,37 @@
+{
+  "status": "ROW_LOAD_CRITERION_MET_CONTACT_NOT_QUALIFIED",
+  "scope": "Skin force-source qualification ONLY;requires separate unsupported holding,clearance,time convergence gates",
+  "case": "skin_mapping_probe_166",
+  "predeclared_minimum_skin_weight_fraction": 0.8,
+  "minimum_skin_weight_fraction": 0.9989126918345894,
+  "mean_vertical_weight_fraction": {
+    "skin": 0.9999878520307528,
+    "rail": 0.0,
+    "hardware": 0.0,
+    "support": 0.0,
+    "ambiguous": 0.0
+  },
+  "force_partition_max_error_N_Nm": 8.881784197001252e-16,
+  "maximum_ambiguous_force_N": 0.0,
+  "contact_area": null,
+  "pressure": null,
+  "wire_object_force": null,
+  "wire_collision": "NOT IMPLEMENTED;no wire contact force claimed",
+  "source_sha256": "90746a42bfc12c7f9c7cfef0b9076f13c0e50310085bb26f46ebfb6c44625731",
+  "input_hashes": {
+    "skin_rows.csv": "d72537fe409c93f1c689f0fcea29bf768277ecea6cd70037806a71aab8fe1e2f",
+    "rail_rows.csv": "1835bcf542ae974a84a33dd9105fb43c6f6ad72d8e3e9de83724407c5fa1e937",
+    "contact_rows.csv": "1835bcf542ae974a84a33dd9105fb43c6f6ad72d8e3e9de83724407c5fa1e937",
+    "config.json": "a2466b428430a9430740801c81fd6da45fbe14befa83b70ead2756f2a58b5ad2"
+  },
+  "surface_rule": {
+    "rule": "Skin:all reference vertices z>=0;Rail:any z<0;native generated exterior faces",
+    "skin_triangles": 252,
+    "rail_triangles": 248,
+    "contact_area": null,
+    "pressure": null
+  },
+  "notes": "signed supported load/weight,not clamped percentages;surface partition duplicates boundary features,so requires matched original-scene regression",
+  "row_load_criterion_met": true,
+  "physical_skin_holding": "NOT QUALIFIED: requires independent accepted surface geometry,detector source ownership and time gates;child Jacobian influence alone is insufficient"
+}

@@ -1,0 +1,74 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "stock Cable/FEM diagnostic NOT grasp certification",
+  "source_commit": "cfffbbf7263483262d3f89db90e12d411b2ceb70",
+  "source_hashes": {
+    "Controller.cpp": "3c746c3464288f6376eccb45155668fd981f2cad899d898f3082d55fd32179f4",
+    "cable_matrix.py": "4ef87841517891a02c8abc8af5902c0082604ee6fbfdf919a3a0c920b57efbe2",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4"
+  },
+  "command": [
+    "product_prototype/sofa/cable_matrix.py",
+    "--tag",
+    "cable_D_pair_out_054",
+    "--cables",
+    "2",
+    "--guide",
+    "outboard",
+    "--reuse-build",
+    "cable_B_single_out_051"
+  ],
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "cables": 2,
+  "guide": "outboard",
+  "stroke_mm": 8,
+  "dt_s": 0.0025,
+  "steps": 800,
+  "binary_sha256": "48d7cb1dd6afc168844603a4dc5c067485dc5abed99c141ac6ce00b7d596f484",
+  "build": "product_prototype/cad/build_cable_B_single_out_051",
+  "scene_sha256": "6ab7f4e67d4f3eb3fdd19edfa16f6e58704624cf10ede1fe61e83c0e8d1f0250",
+  "config_sha256": "d919044613b849677022af7530999a4029177956bc83ed16a197b22407b07c80",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "original_scene_sha256": "100acc0643b4c18a58aa7578046db85587366353bc7f64fe7de4ab3706522c7c",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 4.4823995949700475,
+    "pid": 24,
+    "artifacts": {
+      "stdout.log": "b47b50f1665d6d16ee3f500253747e483e2c6d0a661bbfcb8b04bd47e75c7390",
+      "command.json": "b6ca9babbd68610022def6ef884e864c5359314849f66d78f79c0145e9eaddb8",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "b9b3552904444ab8646bb73eff64a11c3a4b4b94cd4574b80b476f10bc62b1cb"
+    }
+  },
+  "rows": 800,
+  "tracking": [
+    {
+      "cable": 0,
+      "L0_m": 0.09834436471813442,
+      "hold_end_shortening_mm": 5.373844139418174,
+      "maximum_hold_error_mm": 2.6261568269767763,
+      "max_error_mm": 2.639870740337273,
+      "internal_final_mm": 2.7755575615628914e-14,
+      "peak_force_N": 2.8842278762293776
+    },
+    {
+      "cable": 1,
+      "L0_m": 0.09834436471813442,
+      "hold_end_shortening_mm": 5.807751366762398,
+      "maximum_hold_error_mm": 2.192249679748147,
+      "max_error_mm": 2.207027188680925,
+      "internal_final_mm": -2.498001805406602e-13,
+      "peak_force_N": 3.5938632812462443
+    }
+  ],
+  "solver": {
+    "max_error": 1.9369418289481506e-10,
+    "max_iterations": 8
+  },
+  "raw_hashes": {
+    "constraints.csv": "3426049b52c1ae00c1073b23fb80114243ceb2a35ded372d87e9fdb5042e28fa",
+    "finger0.csv": "566c6cd6c61d490656e59a7e5ef88e60a888f9826f68e88554bf2974be33d093"
+  }
+}

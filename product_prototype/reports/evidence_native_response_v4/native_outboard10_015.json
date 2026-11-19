@@ -1,0 +1,105 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "experimental native SOFA product prototype;NOT numerical/material/grasp certification",
+  "source_commit": "e5675c9f3f07c88b08054589a84e9961e558b50a",
+  "source_hashes": {
+    "Controller.cpp": "fde581e658c14c0e1bc2fa6cc3aaebff848875347a309c42113d9fa368c0e60d",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4",
+    "analyse.py": "95a7017ffff445443ed0d99c73beaba36637241e1871de89fc75ba9fde4ec8fb",
+    "run_native.py": "1be31c19eb2b2f7491676e80275c115a18c47c9f1b995a3e0424f7f82a2e7265"
+  },
+  "config_sha256": "014490eda4e1d54cf2c7ae6b09c58f91b5238ca2f20485057f05e595830b7cd2",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "runner_sha256": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad",
+  "fingers": 3,
+  "object": "free",
+  "steps": 800,
+  "dt_s": 0.0025,
+  "stroke_mm": 5,
+  "units": "SI",
+  "contact_force": null,
+  "root_reaction": null,
+  "lift": "NOT RUN",
+  "configure": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.1661339260172099,
+    "pid": 24,
+    "artifacts": {
+      "stdout.log": "21ad200988cde1fcd5d70c7903fba210c11db94eaad9b59db1bc8229d9c16f1d",
+      "command.json": "a8e0ba41adec3366950614787fa28b5822577a6b62f2193f152e8d457b863936",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "92cfee33e70129b02ab4bb721dac2dc0379aaeefbdc2ec560fb9f1f5c24d34c3"
+    }
+  },
+  "compile": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 2.5722113319206983,
+    "pid": 48,
+    "artifacts": {
+      "stdout.log": "57afc5b1bc34fa0443056b27b99e69adc40283b074a5de7f8741f3e22d987961",
+      "command.json": "b8ba0759b96ee7f67100ad06d21dca67b700a7ed6099d5b713fe4285ebdd7c38",
+      "stderr.log": "49ba435fb1d8e668673c2fdfab6e5e88545b74a8232e8cf52da199023d959a9e",
+      "process.json": "e9eb83faacbbc48738bbc67859bbd1040d70750f40315665141efcedba9352a0"
+    }
+  },
+  "binary_sha256": "a0c05f80c5edb0a77bcc5afcc1ee45243a9417dbf336000dc7bc05be47f8bca6",
+  "build": "product_prototype/cad/build_native_outboard10_015",
+  "gravity_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "floor": true,
+  "frame": "proper right-handed;longitudinal down,width minus-tangent,normal inward",
+  "geometry_generator_sha256": "1e7b4be809fe5f9f910c182822ad19766a369124f6f03a6c51a32aeb57a2d09c",
+  "scene_sha256": "61280007b2669e9ec2fc228aa3e838a80a37acac2ff5cff28008bd720d3d9bf2",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 27.769243158982135,
+    "pid": 80,
+    "artifacts": {
+      "stdout.log": "163ba1ee115926492f50648970c9d6db2024820e3bd82911aed99ffa5faa2f62",
+      "command.json": "4cc1fce87e680f20379ab0bb54e2b595e3c9f6580d80787a2382dba7ccbfac7d",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "226e5a58604eee380159fe251c5046e2cccd65426069894c959351fa4617e720"
+    }
+  },
+  "sofa_errors": 0,
+  "metrics": [
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.03398880152268504,
+      "final_tip_displacement_m": 3.867877539952455e-06,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.008149371872828753
+    },
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.033988799170748984,
+      "final_tip_displacement_m": 3.867877540789091e-06,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.008149370082184191
+    },
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.033988799864895405,
+      "final_tip_displacement_m": 3.86787753997304e-06,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.008149370905126895
+    }
+  ],
+  "raw_hashes": {
+    "finger1.csv": "97d7dd56c1047b53d85c815bc3c8e9f6bdeeca35f17e63f6cd2c117fe1fac4cb",
+    "finger2.csv": "d942589facc0cb225e69e5b310a43118ae6f095b69084c2be55339ff471d4e02",
+    "object.csv.center.csv": "2cd1bb8a327af78b3317ae59add63735b76a4339eac6114ae4f9bdd4848da463",
+    "finger0.csv": "0fd6b51bcb20d5a7d1bda775c22aa94803c8eceb0e6ee3ee7b1c6533cc2d504c",
+    "object.csv": "d6ad99e3b57e295691b7ea7ff6b7ffaa9fd48432a1001e25a6a0809d32e01fe6"
+  }
+}

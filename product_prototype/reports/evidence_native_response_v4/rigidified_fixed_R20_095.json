@@ -1,0 +1,134 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "experimental native SOFA product prototype;NOT numerical/material/grasp certification",
+  "source_commit": "af356fbbf14cd23033feadaddb01613c05ced0f2",
+  "source_hashes": {
+    "evidence.py": "b5d9f605e11f877fc1666bc8cbccbb172bd53ece03f74ef279446cd1b6082335",
+    "Controller.cpp": "3a6c07a2a79301f4bb077153193379ba34ce88e84b9e90a64bbfd1263552b5ec",
+    "cable_diagnostics.py": "ba65fd9356022b177453e4a11d4d9ee76f4c101de32dd3b9046f6e02d764498e",
+    "cable_coupon.py": "880ddecf81ab17b47bf7ce5da48558e228abab19debab95cafc17fdb64252827",
+    "export_scene.py": "7a87cc37b5ea2312cd25677e08d5d842e8e797fc98b729bf67cbb82432b21156",
+    "cable_matrix.py": "f542b12488897e7c54780097ea9e3f9dd22df5af6d5e08430acbce9b934ebb07",
+    "holding_assess.py": "55011a69aa8ea3223a21a5a26edc91e41c8c515d8ae0bafa05fd0af050ef994b",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4",
+    "analyse.py": "ee499ad3964f10d31a0547727aebd20e53c920e8ff74f04c2061180b85c0b082",
+    "run_native.py": "c8d44b705d4a3cee8c933bef977df683e4c5a3562154d12e73a698ad9f59b418",
+    "rigid_guides.py": "6bb495c6b72df3f7e5293f3a21d3c75efe5d0997e1c42411f387c38a2c769ca6"
+  },
+  "config_sha256": "f985683ac8cc786a2e2d814c8fb171c46923e39ea9b9ee4bddc7f8de68d321cb",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "runner_sha256": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad",
+  "fingers": 1,
+  "object": "fixed",
+  "steps": 800,
+  "dt_s": 0.0025,
+  "stroke_mm": 8.0,
+  "units": "SI",
+  "contact_force": null,
+  "root_reaction": null,
+  "lift": "NOT RUN",
+  "cables_per_finger": 2,
+  "guide_location": "outboard",
+  "binary_sha256": "ad57362686cfe95a13e7601e353d8695336012cc980e31d23bcce067af99ea1f",
+  "build": "product_prototype/cad/build_rigid_guides_graph_087",
+  "gravity_m_s2": [
+    0,
+    0,
+    0
+  ],
+  "floor": false,
+  "frame": "proper right-handed;longitudinal down,width minus-tangent,normal inward",
+  "object_shape": "sphere",
+  "object_radius_or_halfwidth_mm": 20.0,
+  "object_inertia_assumption": "solid homogeneous primitive;normalized inertia supplied to RigidMass,not measured",
+  "rigid_guides": [
+    {
+      "type": "native rigid brackets with3 noncollinear rail points each",
+      "frames": 12,
+      "attachment_nodes": [
+        25,
+        28,
+        37,
+        73,
+        76,
+        85,
+        121,
+        124,
+        133,
+        169,
+        172,
+        181,
+        217,
+        220,
+        205,
+        229,
+        232,
+        241,
+        34,
+        31,
+        46,
+        82,
+        79,
+        94,
+        130,
+        127,
+        142,
+        178,
+        175,
+        190,
+        226,
+        223,
+        214,
+        238,
+        235,
+        250
+      ],
+      "mass_per_bracket_kg": 1e-05,
+      "normalized_inertia_m2": [
+        1e-06,
+        1e-06,
+        1e-06
+      ],
+      "collision": "bounding spheres of actual guide outer radius;wire swept collision NOT implemented",
+      "mass_and_inertia": "research assumptions,not measured",
+      "joint": "native SubsetMultiMapping rigidification"
+    }
+  ],
+  "global_native_ode": "one stock EulerImplicit/SparseLDL scalar mixed system;Rayleigh=0 explicitly CHANGED physical damping,not old-model gate repair",
+  "geometry_generator_sha256": "85ed25a1ad6a7a45cdce93b78e6b77063d2b431ae7ed2a374598a2a78f6b6318",
+  "initial_surface_gap_mm": [
+    29.9
+  ],
+  "scene_sha256": "74a83c0aecfacdd58a2eab84a4ef416caeb7e4d4a4424eae51b3553e7eb8fd93",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 9.935192508040927,
+    "pid": 52,
+    "artifacts": {
+      "stdout.log": "ee67162996f91cb402f846ea1fe5c50f25016db67e871b395ff880994dc3729e",
+      "command.json": "7beafaee2f2d9696000f57e28954ade697450d1bafd95248a3002513c7a5c06c",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "15011187fcfd8c651d8db0de2889c92e56348e1dadee71b30c05910e12b5f817"
+    }
+  },
+  "sofa_errors": 0,
+  "metrics": [
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.041214756633300154,
+      "final_tip_displacement_m": 2.1421749054433534e-15,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.02270902018038096
+    }
+  ],
+  "raw_hashes": {
+    "object.csv.center.csv": "b03d93f745de5729b43a776a23f2dac119e7d5a1fea6b0b4dfb6932ff3ab71d5",
+    "constraints.csv": "070c6c616f4757a55537759e119e62c5ceccf02b955c42f4dc2ff3984deb3ba9",
+    "guide_frames0.csv": "85fbfdf3b8b3ca2c800e19f708c38a0e53c8ba6beb5cf63be68d44d553a644e8",
+    "finger0.csv": "b13d04738fdef9689843cffd946dbf75998cb6e0d65dcae0180fe3d6653ccc8d",
+    "object.csv": "fc24e68b89a331a9ef4d1a6854b2067242be8c5cf2e88bc485136d20a85a7d3c"
+  }
+}

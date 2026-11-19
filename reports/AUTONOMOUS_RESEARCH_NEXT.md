@@ -2758,3 +2758,60 @@ Next development:thickness-aware contact plus consistent initial mounting,
 then profile precision/time qualification BEFORE new3-finger integration.
 Do not splice precise model into legacy56.4ms checkpoint1644.
 No SDK changes,remote push or automatic post-session execution.
+## Latest native Skin-contact checkpoint — 2026-11-19 (trials179–258)
+
+Latest functional commit: b5e99ee; preceding commits9298860,427c124,ba0657f,c17f99a.
+See product_prototype/reports/AUTONOMOUS_DESIGN_PROGRESS.md and
+DESIGN_CANDIDATE_COMPARISON.md. Historical verdicts/Raw are preserved.
+
+Actual Contact model pairs now bind to public response ConstraintBlockInfo rows.
+Object impulse partition is verified;190 physical q/v/quaternion equality is0
+at STRICT1e-12. getConstraintInfo changes yetIntegrated metadata: internal-history
+query purity is NOT claimed. Child-J influence alone is not direct Skin contact.
+
+Native Rigid3 sphere requires supported MinProximityIntersection/useSphereTriangle.
+231 audits missing LocalMinDistance RigidSphere/mesh intersectors in205/206/211/
+216/220/226; those are INVALID collision-completeness comparisons,not evidence
+that their Skin mechanisms cannot work. New unsupported combinations are rejected.
+
+Valid R30/50g,mu.3,gravity,3-finger trials235(2mm) and247(4mm) finish2s:
+real Skin response,Guide/Rail load0,but unsupported Holding FAIL.
+247 downward slip40.242309mm;Skin mean Fz−.3244778N,support+.8149382N.
+256 late Skin Coulomb cones all have negative maximum vertical coefficient:
+increasing normal force alone cannot support gravity at those measured normals.
+Early upward normals245 did not persist through support withdrawal.
+257 accepted-state gap/active-response consistency FAIL (max active gap.202431mm
+versus declared.2mm);this is not per-row or swept-clearance certification.
+258 linear/angular momentum inventory passes only its narrow balance scope.
+251 body/collision Rigid3 identity mapping q/v/time difference0 over800steps.
+
+236/237 complete.6s half/quarter refinement;243 all-common-time/all-pair comparison
+FAIL at unchanged.1% gate. Base/quarter finger-motion difference.245452mm at.05s.
+239 assumed-radial reconstructed Jacobian FD FAIL;actual native contact-point
+Jacobian FD remains unqualified,not conclusively a native force implementation bug.
+Full2s quarter run forecast~950s exceeds480s child policy:NOT RUN,not OS exhaustion.
+No Skin Wrapping/Holding/100g/Lift/whole-energy or final-product PASS.
+Area,pressure,root work remainNULL. CADv6 sources/STL/SVG/BOM exist;STEP/kernel
+assembly,full moving interference,measured materials and fabrication readiness BLOCKED.
+
+Stop this constant-offset routing family after measured2/4mm failures;do not blindly
+increase stroke/force. Next independent hypothesis:distributed distal routing or
+precurvature must preserve upward Skin contact normals during withdrawal. First
+validate native Cable/FEM bending and actual contact-point logging in a short coupon;
+keep real hardware collision enabled and shared CAD/SOFA configuration.
+Thin tetrahedral bending/locking and native animation-loop alternatives are hypotheses,
+not established causes. No custom solver redevelopment or old checkpoint reuse.
+
+Reusable build:product_prototype/cad/build_response_public_187/libReGripProductSequence.so
+SHA256:33baec3658a718b7bff6f472f6701f6f75c02a70507bbe5a4ea4260fa478e1c2.
+Raw:product_prototype/results/rigid_min_stroke4_hold_247/
+Actual-state PNGs:product_prototype/results/native_min_actual_255/
+Reproduce analysis with a NEW unique tag,not existing directories:
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/response_load_assess.py --case rigid_min_stroke4_hold_247 --tag NEXT_UNIQUE_SOURCE
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/skin_contact_direction.py --case rigid_min_stroke4_hold_247 --tag NEXT_UNIQUE_DIRECTION
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/wrapping_geometry.py --case rigid_min_stroke4_hold_247 --tag NEXT_UNIQUE_GEOMETRY
+```
+All launched children completed. This is a bounded failed design-family checkpoint,
+not project completion or a claim of background continuation. No SDK/legacy solver
+changes,remote push or old evidence overwrite.

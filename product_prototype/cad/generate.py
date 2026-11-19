@@ -7,8 +7,20 @@ import numpy as np
 BASE=Path(__file__).resolve().parents[1]
 def width(c,x):
  f=c['finger'];return f['root_width']+(f['tip_width']-f['root_width'])*max(0,x-f['taper_start'])/(f['length']-f['taper_start'])
+def guide_normal(c,x):
+ """Shared physical guide route;flat/constant legacy path is unchanged."""
+ td=c['tendon'];base=td['normal_offset'];profile=td.get('distal_profile')
+ if profile is None:return base
+ u=max(0.,min(1.,(x-profile['start_mm'])/(c['finger']['length']-profile['start_mm'])))
+ return base+(profile['tip_offset_mm']-base)*u*u*(3-2*u)
+def reference_local(c,p):
+ """Stress-free manufactured circular distal reference;NOT prescribed motion."""
+ x,y,z=p;curve=c['finger'].get('precurve')
+ if curve is None or curve['angle_deg']==0 or x<=curve['start_mm']:return [x,y,z]
+ start=curve['start_mm'];k=math.radians(curve['angle_deg'])/(c['finger']['length']-start);phi=k*(x-start)
+ return [start+math.sin(phi)/k-z*math.sin(phi),y,(1-math.cos(phi))/k+z*math.cos(phi)]
 def world(c,p,angle=0):
- x,y,z=p;tilt=math.radians(c['palm'].get('root_angle_deg',0));x,z=x*math.cos(tilt)-z*math.sin(tilt),x*math.sin(tilt)+z*math.cos(tilt);a=math.radians(angle);r=c['palm']['mount_radius']-z
+ x,y,z=reference_local(c,p);tilt=math.radians(c['palm'].get('root_angle_deg',0));x,z=x*math.cos(tilt)-z*math.sin(tilt),x*math.sin(tilt)+z*math.cos(tilt);a=math.radians(angle);r=c['palm']['mount_radius']-z
  # Proper right-handed mount:longitudinal down,width -tangent,normal inward.
  return [r*math.cos(a)+y*math.sin(a),r*math.sin(a)-y*math.cos(a),-x]
 def mesh(c):

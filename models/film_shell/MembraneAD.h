@@ -4,8 +4,8 @@ namespace regrip_film::compact {
 // Compile-time nine-coordinate AD2 for a triangle. No runtime derivative
 // mode, no gradient-only cache, and no change to the 27-DOF bending kernel.
 struct AD9 {
- double v=0;std::array<double,9>g{};std::array<double,81>h{};bool constant=true;
- AD9(double value=0):v(value){}
+ ADScalar v=0;std::array<ADScalar,9>g{};std::array<ADScalar,81>h{};bool constant=true;
+ AD9(ADScalar value=0):v(value){}
  static AD9 variable(double value,int i){AD9 a(value);a.g.at(i)=1;a.constant=false;return a;}
 };
 inline AD9 operator+(const AD9&a,const AD9&b){AD9 r(a.v+b.v);r.constant=a.constant&&b.constant;if(!r.constant){for(int i=0;i<9;++i)r.g[i]=a.g[i]+b.g[i];for(int i=0;i<81;++i)r.h[i]=a.h[i]+b.h[i];}return r;}

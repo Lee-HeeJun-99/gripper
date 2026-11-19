@@ -25,7 +25,7 @@ def main():
   clamp=clamp.cut(Part.makeCylinder(1.7,5,V(2.5,y,-1)))
  mount=mount.cut(Part.makeBox(7,f['root_width'],5,V(0,-f['root_width']/2,-f['rail_thickness'])))
  guide=Part.makeCylinder(td['guide_outer_radius'],2,V(-1,0,0),V(1,0,0)).cut(Part.makeCylinder(td['guide_hole_radius'],4,V(-2,0,0),V(1,0,0)))
- anchor=Part.makeBox(4,4,2,V(-2,-2,-1)).cut(Part.makeCylinder(.6,4,V(0,0,-2)))
+ anchor=guide.copy() # terminal eyelet centre/shape matches native last cable point;end-stop retention unverified
  pulley=Part.makeCylinder(8,5).fuse(Part.makeCylinder(10,1)).fuse(Part.makeCylinder(10,1,V(0,0,4))).cut(Part.makeCylinder(3,7,V(0,0,-1)))
  plate=Part.makeBox(50,40,4,V(-25,-20,17))
  for x in (-15,15):plate=plate.cut(Part.makeBox(3.4,24,6,V(x-1.7,-12,16)).fuse(Part.makeCylinder(1.7,6,V(x,-12,16))).fuse(Part.makeCylinder(1.7,6,V(x,12,16))))

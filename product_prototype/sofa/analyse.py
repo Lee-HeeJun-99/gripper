@@ -34,7 +34,7 @@ def analyse(case,out):
   tangent=segments/lengths[:,:,None];angle=np.arccos(np.clip(np.sum(tangent[:,:-1]*tangent[:,1:],axis=2),-1,1));curvature=angle/((lengths[:,:-1]+lengths[:,1:])/2)
   item.update(reference_width_mean_skin_tip_peak_mm=float(skin_motion.max()*1000),reference_width_mean_skin_tip_final_mm=float(skin_motion[-1]*1000),max_discrete_skin_centreline_curvature_per_mm=float(curvature.max()/1000))
   tracking=[]
-  for j in ((0,1) if 'guide0_q_m' in rows[0] else ()):
+  for j in (range(m.get('cables_per_finger',2)) if 'guide0_q_m' in rows[0] else ()):
    node=cable_node(tree,f,j);cable=node.find('CableConstraint');pull=np.fromstring(cable.get('pullPoint'),sep=' ');initial=np.fromstring(node.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);length0=np.linalg.norm(np.diff(np.vstack([pull,initial]),axis=0),axis=1).sum();stroke=[]
    for row in rows:
     origin=pull.copy();origin[2]+=float(control.get('liftHeight','0'))*np.clip((float(row['time_s'])-1)/.5,0,1);path=np.vstack([origin,np.fromstring(row[f'guide{j}_q_m'],sep=' ').reshape(-1,3)]);stroke.append(length0-np.linalg.norm(np.diff(path,axis=0),axis=1).sum())
@@ -50,7 +50,7 @@ def analyse(case,out):
    item.update(min_triangle_sphere_gap_mm=min(gaps)*1000,near_surface=angles)
    if 'guide0_q_m' in rows[0]:
     minimum=1e10
-    for j in (0,1):
+    for j in range(m.get('cables_per_finger',2)):
      pull=np.fromstring(cable_node(tree,f,j).find('CableConstraint').get('pullPoint'),sep=' ');lift_height=float(tree.find(f"./Node[@name='finger{f}']/NativeCableSequence").get('liftHeight','0'))
      for i,row in enumerate(rows):
       moved_pull=pull.copy();moved_pull[2]+=lift_height*np.clip((float(row['time_s'])-1)/.5,0,1);path=np.vstack([moved_pull,np.fromstring(row[f'guide{j}_q_m'],sep=' ').reshape(-1,3)]);a=path[:-1];d=np.diff(path,axis=0);u=np.clip(np.sum((obj[i,:3]-a)*d,axis=1)/np.sum(d*d,axis=1),0,1);minimum=min(minimum,float(np.linalg.norm(a+u[:,None]*d-obj[i,:3],axis=1).min()-R-.00025))

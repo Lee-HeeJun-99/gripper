@@ -12,7 +12,11 @@ def add(n,tag,**kw):return ET.SubElement(n,tag,{k:str(v) for k,v in kw.items()})
 def flat(x):return ' '.join(format(float(a),'.17g') for row in x for a in row)
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fingers',type=int,choices=(1,3),default=1);p.add_argument('--steps',type=int);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--object',choices=('none','fixed','free'),default='none');p.add_argument('--radius',type=float,choices=(20,30),default=30);p.add_argument('--stroke',type=float,default=5);p.add_argument('--reuse-build');p.add_argument('--gravity',action='store_true');p.add_argument('--floor',action='store_true');p.add_argument('--outboard',type=float,choices=(4.,10.,14.),default=4.);p.add_argument('--intersection',choices=('MinProximityIntersection','LocalMinDistance'),default='MinProximityIntersection');p.add_argument('--lift',action='store_true');p.add_argument('--center-z',type=float,choices=(-65.,-75.,-80.),default=-65.);p.add_argument('--shape',choices=('sphere','cylinder','box'),default='sphere');p.add_argument('--support-gap',type=float,choices=(0.,.4),default=0.);p.add_argument('--support-radius',type=float,choices=(5.,35.),default=5.);p.add_argument('--slow-cycle',action='store_true');p.add_argument('--support-shape',choices=('mesh','sphere'),default='mesh');p.add_argument('--dense-guides',action='store_true');p.add_argument('--withdraw-support',action='store_true');p.add_argument('--constraint-solver',choices=('BlockGaussSeidelConstraintSolver','GenericConstraintSolver'),default='BlockGaussSeidelConstraintSolver')
- p.add_argument('--guide-location',choices=('outboard','surface','rail-back'),default='outboard');p.add_argument('--rail-back-offset',type=float,default=.5);p.add_argument('--root-angle',type=float,choices=(0,10,12,14,15),default=0);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--constraint-journal',action='store_true');p.add_argument('--rigid-guides',action='store_true');p.add_argument('--nncg',action='store_true');p.add_argument('--global-native-ode',action='store_true');p.add_argument('--mapped-guide-joints',action='store_true');a=p.parse_args()
+ p.add_argument('--guide-location',choices=('outboard','surface','rail-back'),default='outboard');p.add_argument('--rail-back-offset',type=float,default=.5);p.add_argument('--root-angle',type=float,choices=(0,10,12,14,15),default=0);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--constraint-journal',action='store_true');p.add_argument('--rigid-guides',action='store_true');p.add_argument('--nncg',action='store_true');p.add_argument('--global-native-ode',action='store_true');p.add_argument('--mapped-guide-joints',action='store_true');p.add_argument('--object-depth',type=float,choices=(50.,65.,75.,80.));p.add_argument('--object-mass',type=float,choices=(.02,.05,.1),default=.1);p.add_argument('--component-film-damping',action='store_true');p.add_argument('--smooth-support',action='store_true');p.add_argument('--end-clock-motion',action='store_true');a=p.parse_args()
+ if a.end_clock_motion and not(a.withdraw_support or a.lift):raise ValueError('explicit moving native fixture/root required')
+ if a.smooth_support and not a.withdraw_support:raise ValueError('smooth support is an explicit withdrawal input variant')
+ if a.component_film_damping and not a.global_native_ode:raise ValueError('explicit global zero-Rayleigh solver required to avoid double counting')
+ if a.object_depth is not None:a.center_z=-a.object_depth
  if a.mapped_guide_joints and not(a.rigid_guides and a.global_native_ode):raise ValueError('mapped rigidification requires explicit rigid-guides and global-native-ode')
  if a.nncg:a.constraint_solver='NNCGConstraintSolver'
  if a.lift and a.slow_cycle:raise ValueError('separate explicit lift and slow profiles;do not mix timings')
@@ -21,7 +25,7 @@ def main():
  if a.steps is None:a.steps=round((4 if a.slow_cycle else 3 if a.lift or a.withdraw_support else 2)/a.dt)
  if not 0<a.steps<=4000 or not 0<=a.stroke<=10:raise ValueError('bounded exploratory prototype only')
  out=BASE/'results'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copy2(__file__,out/'runner.py');meshdir=BASE/'meshes/product_v1b';c=json.loads((meshdir/'config.json').read_text());m=json.loads((meshdir/'mesh.json').read_text());c['tendon']['outboard']=a.outboard;c['tendon']['maximum_stroke']=a.stroke;c['simulation']['dt_s']=a.dt;c['simulation']['sphere_radius_mm']=a.radius;c['simulation']['closing_end_s']=1 if a.slow_cycle else .5;c['simulation']['hold_end_s']=2 if a.slow_cycle or a.lift or a.withdraw_support else 1;c['simulation']['release_end_s']=3 if a.slow_cycle else 2.5 if a.lift or a.withdraw_support else 1.5;c['simulation']['sphere_center_mm'][2]=a.center_z;c['tendon']['guide_stations']=[10,20,30,40,50,60,70,80,90,98] if a.dense_guides else c['tendon']['guide_stations'];(out/'config.json').write_text(json.dumps(c,indent=2));(out/'mesh.json').write_text(json.dumps(m));source=out/'source';shutil.copytree(BASE/'sofa',source,ignore=shutil.ignore_patterns('__pycache__'))
- c['palm']['root_angle_deg']=a.root_angle
+ c['palm']['root_angle_deg']=a.root_angle;c['simulation']['sphere_mass_kg']=a.object_mass
  if a.guide_location=='surface':c['tendon'].update(outboard=-1,normal_offset=c['finger']['skin_thickness']);(out/'config.json').write_text(json.dumps(c,indent=2))
  if a.guide_location=='rail-back':
   if not .5<=a.rail_back_offset<=3:raise ValueError('explicit bounded rail-back guide offset')
@@ -84,6 +88,8 @@ def main():
   floor=root.find("./Node[@name='floor']");floor.find('MechanicalObject').set('name','support');floor.find('SphereCollisionModel').set('moving','1');add(floor,'EulerImplicitSolver');add(floor,'SparseLDLSolver');add(floor,'UniformMass',totalMass=1);add(floor,'LinearMovementProjectiveConstraint',indices=0,keyTimes='0 1 1.5 3',movements='0 0 0 0 0 0 0 0 -.04 0 0 -.04');add(floor,'NativePointJournal',body='@support',filename=str(out/'support.csv'))
   for node in root.iter('NativeCableSequence'):node.set('hold','2');node.set('release','2.5')
   r['support_withdrawal']='native kinematic support down40mm1-1.5s;object/finger shapes NOT prescribed;fixture work NOT measured'
+  if a.smooth_support:
+   knots=np.r_[0.,np.linspace(1.,1.5,101),3.];u=np.clip((knots-1)/.5,0,1);distance=-.04*u**3*(10+u*(-15+6*u));movement=floor.find('LinearMovementProjectiveConstraint');movement.set('keyTimes',' '.join(format(x,'.17g') for x in knots));movement.set('movements',flat([[0,0,z] for z in distance]));r['support_withdrawal']='fixed101-knot piecewise-linear approximation to quintic40mm withdrawal1-1.5s;NOT exact C2;different physical input,not old-model gate repair'
  if a.slow_cycle:
   for node in root.iter('NativeCableSequence'):node.set('closing','1');node.set('hold','2');node.set('release','3')
   r['control_profile']='C2 closing0-1/hold1-2/release2-3/recovery3-4s;changed physical input,not a numerical fix'
@@ -106,6 +112,17 @@ def main():
    for child in list(node):
     if child.tag in ('EulerImplicitSolver','SparseLDLSolver','GenericConstraintCorrection'):node.remove(child)
   add(root,'EulerImplicitSolver',rayleighMass=0,rayleighStiffness=0);add(root,'SparseLDLSolver',name='globalLinear',template='CompressedRowSparseMatrixd');add(root,'GenericConstraintCorrection');r['global_native_ode']='one stock EulerImplicit/SparseLDL scalar mixed system;Rayleigh=0 explicitly CHANGED physical damping,not old-model gate repair'
+ if a.component_film_damping:
+  for node in root.findall("./Node"):
+   if node.get('name','').startswith('finger'):
+    node.find('UniformMass').set('rayleighMass',str(s['rayleigh_mass_per_s']));node.find('TetrahedronFEMForceField').set('rayleighStiffness',str(s['rayleigh_stiffness_s']))
+  r['component_film_damping']=dict(mass_per_s=s['rayleigh_mass_per_s'],stiffness_s=s['rayleigh_stiffness_s'],scope='explicit original Film coefficient assumptions via native Mass/ForceField;object and hardware undamped;NOT measured material or old-model convergence repair')
+ if a.end_clock_motion:
+  commands=[]
+  for node in root.iter('Node'):
+   for movement in node.findall('LinearMovementProjectiveConstraint'):
+    times=np.fromstring(movement.get('keyTimes'),sep=' ');commands.append(dict(node=node.get('name'),keyTimes_s=times.tolist(),movements_m=np.fromstring(movement.get('movements'),sep=' ').reshape(-1,3).tolist()));movement.set('keyTimes',' '.join(format(x-dt,'.17g') for x in times))
+  (out/'motion_commands.json').write_text(json.dumps(dict(clock='declared accepted-end physical time;native component evaluates begin clock,serialized keyTimes shifted by-dt',commands=commands),indent=2));r['motion_commands_sha256']=sha(out/'motion_commands.json');r['native_motion_clock']='end-clock-via-keyshift;NEW explicit command interpretation,not rewriting historical begin-clock trials'
  shutil.copy2(BASE/'cad/generate.py',out/'geometry_generator.py');r['geometry_generator_sha256']=sha(out/'geometry_generator.py')
  for f in range(a.fingers):
   points=np.array([world(c,x,c['palm']['angles_deg'][f]) for x in m['local_positions_mm']])*.001

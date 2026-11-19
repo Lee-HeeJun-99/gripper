@@ -63,6 +63,8 @@ def analyse(case,out):
   minimum=min(float(np.linalg.norm(gAll[i][:,:,None,:]-gAll[j][:,None,:,:],axis=3).min()) for i,j in ((0,1),(1,2),(0,2)))
   result['guide_interfinger_bounding_ball_clearance_mm']=minimum*1000-2*math.sqrt(1.5**2+1**2)
   result['guide_clearance_scope']='only sampled mapped guides;bounding balls enclose radius1.5/length2;negative cannot alone prove solid overlap;skin/rail self-collision NOT qualified'
+ if 'support_withdrawal' in result and float(sphere[-1]['time_s'])>hold_end+1e-12:
+  result['support_withdrawal'].update(status='POST_UNLOAD_FINAL_POSITION_NOT_HOLD_VERDICT',note='final drop after commanded unloading is not a hold-window failure;use predeclared holding_assess and release_assess separately')
  if m.get('lift','').startswith('EXPERIMENTAL') and obj is not None:
   hold=np.array([i for i,row in enumerate(sphere) if 1.6<=float(row['time_s'])<=2]);rise=1000*(obj[hold,2]-s['sphere_center_mm'][2]*.001)
   result['object']['lift']='FAIL:object does not follow driven palm by >=5mm during1.6-2s' if rise.min()<5 else 'OBSERVED_EXPERIMENTAL_RISE_NOT_CERTIFIED'

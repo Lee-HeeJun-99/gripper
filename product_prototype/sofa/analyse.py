@@ -17,12 +17,12 @@ def analyse(case,out):
  sphere=read(src/'object.csv') if (src/'object.csv').exists() else None;obj=np.array([np.fromstring(r['rigid_q'],sep=' ') for r in sphere]) if sphere else None;vobj=np.array([np.fromstring(r['rigid_v'],sep=' ') for r in sphere]) if sphere else None
  control=tree.find('./Node/NativeCableSequence');closing_time=float(control.get('closing','.5'));hold_end=float(control.get('hold','1'))
  if sphere:
-  impulses=np.array([np.fromstring(r.get('object_impulse_Ns_Nms',''),sep=' ') for r in sphere]);hold=[i for i,r in enumerate(sphere) if closing_time+.1*(hold_end-closing_time)<=float(r['time_s'])<=hold_end];result['object']=dict(final_translation_mm=(1000*(obj[-1,:3]-np.array(s['sphere_center_mm'])*.001)).tolist(),hold_translation_range_mm=(1000*np.ptp(obj[hold,:3],axis=0)).tolist(),max_upward_displacement_mm=float(1000*(obj[:,2]-s['sphere_center_mm'][2]*.001).max()),max_solver_error=max(float(r.get('solver_error',0)) for r in sphere),max_solver_iterations=max(int(r.get('solver_iterations',0)) for r in sphere),holding='NOT QUALIFIED:pedestal/external load isolation incomplete',lift='NOT RUN:palm has not been lifted')
+  impulses=np.array([np.fromstring(r.get('object_impulse_Ns_Nms',''),sep=' ') for r in sphere]);hold=[i for i,r in enumerate(sphere) if closing_time+.1*(hold_end-closing_time)<=float(r['time_s'])<=hold_end];result['object']=dict(final_translation_mm=(1000*(obj[-1,:3]-np.array(s['sphere_center_mm'])*.001)).tolist(),hold_translation_range_mm=(1000*np.ptp(obj[hold,:3],axis=0)).tolist() if hold else None,max_upward_displacement_mm=float(1000*(obj[:,2]-s['sphere_center_mm'][2]*.001).max()),max_solver_error=max(float(r.get('solver_error',0)) for r in sphere),max_solver_iterations=max(int(r.get('solver_iterations',0)) for r in sphere),holding='NOT QUALIFIED:pedestal/external load isolation incomplete',lift='NOT RUN:palm has not been lifted')
   if impulses.shape==(len(sphere),6) and m['object']=='free':
    mass=s['sphere_mass_kg'];dt=m['dt_s'];prev=np.vstack([np.zeros(3),vobj[:-1,:3]]);res=mass*(vobj[:,:3]-prev)-mass*np.array(m.get('gravity_m_s2',[0,0,0]))*dt-impulses[:,:3];result['object'].update(momentum_max_abs_Ns=float(np.abs(res).max()),peak_contact_resultant_N=float(np.linalg.norm(impulses[:,:3]/dt,axis=1).max()),contact_wrench_scope='all native object rows,includes pedestal when present;fixed-object projected rows are NOT reactions')
  sphere_collision=tree.find("./Node[@name='object']/Node[@name='collision']/SphereCollisionModel");R=float(sphere_collision.get('radius')) if sphere_collision is not None else None
  if obj is not None and R is not None:
-  result['object']['hold_rise_mm']=[float(1000*(obj[hold,2]-s['sphere_center_mm'][2]*.001).min()),float(1000*(obj[hold,2]-s['sphere_center_mm'][2]*.001).max())]
+  result['object']['hold_rise_mm']=[float(1000*(obj[hold,2]-s['sphere_center_mm'][2]*.001).min()),float(1000*(obj[hold,2]-s['sphere_center_mm'][2]*.001).max())] if hold else None
   if tree.find("./Node[@name='floor']/MeshTopology") is not None:
    floor_z=np.fromstring(tree.find("./Node[@name='floor']/MeshTopology").get('position'),sep=' ').reshape(-1,3)[0,2];result['object']['minimum_hold_floor_clearance_mm']=float(1000*(obj[hold,2]-R-floor_z).min())
  qAll=[];gAll=[];result['fingers']=[]
@@ -67,6 +67,8 @@ def analyse(case,out):
   hold=np.array([i for i,row in enumerate(sphere) if 1.6<=float(row['time_s'])<=2]);rise=1000*(obj[hold,2]-s['sphere_center_mm'][2]*.001)
   result['object']['lift']='FAIL:object does not follow driven palm by >=5mm during1.6-2s' if rise.min()<5 else 'OBSERVED_EXPERIMENTAL_RISE_NOT_CERTIFIED'
   result['object']['minimum_lift_hold_rise_mm']=float(rise.min())
+ if (src/'motion_commands.json').exists() and 'support_withdrawal' in result:
+  commands=json.loads((src/'motion_commands.json').read_text());wanted=next(x for x in commands['commands'] if x['node']=='floor');knots=np.array(wanted['keyTimes_s']);values=np.array(wanted['movements_m']);expected=np.stack([np.interp(supporttime,knots,values[:,j])+supportrest[j] for j in range(3)],axis=1);error=float(np.max(abs(supportq-expected)));result['support_withdrawal'].update(support_position_error_m=error,support_api_status='PASS' if error<=1e-12 else 'FAIL',support_clock='declared end-clock motion_commands;not legacy linear-motion assumption')
  # Orthographic projection of ACTUAL saved positions,no deformation scaling.
  os.environ.setdefault('MPLCONFIGDIR','/tmp/regrip-matplotlib');import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  from matplotlib.collections import PolyCollection
@@ -93,7 +95,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);r={c:analyse(c,out) for c in a.cases}
  # Same-binary NO-contact time refinement,all common output clocks,no floor.
  names=['native_single_010','native_single_half_011','native_single_quarter_012']
- if all((BASE/'results'/n/'summary.json').exists() for n in names):
+ if set(names).issubset(a.cases) and all((BASE/'results'/n/'summary.json').exists() for n in names):
   data=[read(BASE/'results'/n/'finger0.csv') for n in names];summary=[json.loads((BASE/'results'/n/'summary.json').read_text()) for n in names];errors=[]
   if len({s['binary_sha256'] for s in summary})!=1:raise ValueError('same binary time test required')
   tree=ET.parse(BASE/'results'/names[0]/'scene.scn');rest=np.fromstring(tree.find('./Node/MechanicalObject').get('position'),sep=' ')

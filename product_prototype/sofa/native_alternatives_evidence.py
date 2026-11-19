@@ -18,7 +18,9 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_rigid_tangent427','native_rigid_tangent429','native_rectangular_budget430',
        'native_beam_reference432','native_rectangular_geometric433','native_rectangular_ramp434',
        'native_rectangular_ramp435','native_beam_linear_reference436','native_beam_reference_api437',
-       'native_beam_reference_precision439','native_beam_precision_assess440']
+       'native_beam_reference_precision439','native_beam_precision_assess440',
+       'native_beam_private_force442','native_rectangular_ls_zero443','native_beam_second_order444',
+       'native_rectangular_small_load445','native_beam_private_assess446','native_beam_reinforce447']
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True)
@@ -44,7 +46,7 @@ def main():
             if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     manifest['exclusions']={'native_rectangular_ramp434':'Unused keyTimes/keyForces;zero load;not loaded bending evidence. Original summary/Raw retained.',
                             'native_rigid_tangent427':'Wrong scalar matrix API;not native tangent discrepancy evidence.'}
-    for identifier in ('400','406','410','428','431','438'):
+    for identifier in ('400','406','410','428','431','438','441'):
         binary,source=compiled_observer(identifier)
         for f in (binary,source):manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     rejected_binary=BASE/'cad/build_rigid_observer426/libReGripElasticObserver.so'
@@ -81,10 +83,12 @@ def main():
     axis.axhline(1e-12,color='k',linestyle='--',label='unchanged absolute force gate')
     axis.set_ylabel('Actual initial native free-force norm [N]');axis.set_title('439: initial native reference only, NOT loaded B3')
     axis.legend(fontsize=8);fig.tight_layout();fig.savefig(out/'native_reference_inventory.png',dpi=160);plt.close(fig)
+    shutil.copy2(BASE/'results/native_beam_private_assess446/PRIVATE_reference_force_scaling.png',out/'PRIVATE_reference_force_scaling.png')
     for name in ('native_loaded_section.py','native_shell_coupon.py','native_shell_assess.py',
                  'native_bending_matrix_paths.py','native_beamadapter_coupon.py','observer_identity.py',
                  'native_matrix_assess.py','native_alternatives_evidence.py','native_rigid_tangent.py',
-                 'native_beam_reference_inventory.py','native_beam_reference_assess.py'):
+                 'native_beam_reference_inventory.py','native_beam_reference_assess.py',
+                 'native_beam_private_force.py','native_beam_private_assess.py'):
         f=BASE/'sofa'/name;shutil.copy2(f,out/name)
     for f in out.iterdir():
         if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)

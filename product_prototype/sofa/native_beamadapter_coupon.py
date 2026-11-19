@@ -14,7 +14,9 @@ def main():
     p.add_argument('--geometric-rest',action='store_true',help='Use actual reference transforms also for a flat beam;do not change geometry')
     p.add_argument('--load-stages',type=int,default=0,help='Stock LinearForceField quasi-static load path,NOT dynamic time integration')
     p.add_argument('--solver',choices=['direct','graph-cg'],default='direct')
-    p.add_argument('--newton-iterations',type=int,default=30);a=p.parse_args()
+    p.add_argument('--newton-iterations',type=int,default=30)
+    p.add_argument('--line-search-iterations',type=int,default=12);a=p.parse_args()
+    if not 0<=a.line_search_iterations<=100:raise ValueError('bounded native line search plan required')
     if not 1<=a.newton_iterations<=200:raise ValueError('bounded native Newton budget required')
     if not 0<=a.load_stages<=100:raise ValueError('bounded native load continuation required')
     out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);sdk=Path('/home/ubuntu/SOFA/v26.06.00')
@@ -39,7 +41,7 @@ def main():
         add(root,'RequiredPlugin',pluginName=str(plugin));add(root,'RequiredPlugin',pluginName=str(journal));add(root,'DefaultAnimationLoop')
         if a.solver=='graph-cg':add(root,'RequiredPlugin',pluginName='Sofa.Component.LinearSolver.Iterative')
         node=add(root,'Node',name='rail');add(node,'NewtonRaphsonSolver',name='newton',maxNbIterationsNewton=a.newton_iterations,
-            maxNbIterationsLineSearch=12,absoluteResidualStoppingThreshold=1e-12,relativeInitialStoppingThreshold=1e-12,
+            maxNbIterationsLineSearch=a.line_search_iterations,absoluteResidualStoppingThreshold=1e-12,relativeInitialStoppingThreshold=1e-12,
             relativeSuccessiveStoppingThreshold=1e-12,printLog=1)
         add(node,'StaticSolver',newtonSolver='@newton')
         if a.solver=='direct':add(node,'SparseLDLSolver',template='CompressedRowSparseMatrixd')
@@ -71,7 +73,7 @@ def main():
     data=dict(scope='Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification',
         source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_sha256=sha(Path(__file__)),
         sdk=str(sdk),beamadapter_binary_sha256=sha(plugin),journal_binary_sha256=sha(journal),E_Pa=E,section_m=[by,hz],
-        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,geometric_rest=a.geometric_rest,load_stages=a.load_stages,
+        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,line_search_iteration_budget=a.line_search_iterations,geometric_rest=a.geometric_rest,load_stages=a.load_stages,
         loading_scope='quasi-static native LinearForceField continuation;NOT physical dynamic time' if a.load_stages else 'constant static load',
         precurved_stress_free_assumption=a.precurve,approximate_small_deflection_Euler_tip_m=reference,records=records)
     (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(data,indent=2));print(json.dumps(data,indent=2))

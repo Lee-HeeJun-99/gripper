@@ -74,9 +74,10 @@ public:
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,Field,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>elastic;
     sofa::core::objectmodel::Data<std::string>filename;
     sofa::core::objectmodel::Data<double>amplitude;
+    sofa::core::objectmodel::Data<Types::VecCoord>privatePositions;
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::behavior::BaseMatrixLinearSystem,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>system;
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::objectmodel::BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>interpolation;
-    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
+    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),privatePositions(initData(&privatePositions,Types::VecCoord(),"privatePositions","Optional PRIVATE Rigid3 force-query coordinates;never installed in state")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
     void bwdInit()override {
         BaseObject::bwdInit();if(!body||!elastic||std::ifstream(filename.getValue()))throw std::runtime_error("unique Rigid3 observer required");
         const auto original=body->read(sofa::core::vec_id::read_access::position)->getValue();
@@ -105,7 +106,11 @@ public:
             for(unsigned column=0;column<6*original.size();++column){Types::VecDeriv basis(original.size());basis[column/6][column%6]=1.;Field::DataVecDeriv dx,df;dx.setValue(basis);df.setValue(Types::VecDeriv(original.size()));elastic->addDForce(&params,df,dx);const auto values=df.getValue();
                 for(unsigned i=0;i<values.size();++i)for(unsigned k=0;k<6;++k)if(values[i][k]!=0)tangentOutput<<6*i+k<<','<<column<<','<<-values[i][k]<<'\n';}
         }
-        const auto probe=perturb(original,amplitude.getValue());force(probe);
+        const auto probe=privatePositions.getValue().empty()?perturb(original,amplitude.getValue()):privatePositions.getValue();
+        if(probe.size()!=original.size())throw std::runtime_error("private Rigid3 query size mismatch");
+        const auto probeForce=force(probe);
+        std::ofstream probeOutput(filename.getValue()+".probe.csv");probeOutput<<std::setprecision(17)<<"node,fx_N,fy_N,fz_N,tx_Nm,ty_Nm,tz_Nm\n";
+        for(unsigned i=0;i<probeForce.size();++i){probeOutput<<i;for(unsigned j=0;j<6;++j)probeOutput<<','<<probeForce[i][j];probeOutput<<'\n';}
         // BeamAdapter overrides addDForce/MultiMatrixAccessor, NOT the scalar
         // convenience addKToMatrix used by the Vec3 observer. Query its real path.
         Field::DataVecDeriv dx,df;dx.setValue(direction);df.setValue(Types::VecDeriv(probe.size()));

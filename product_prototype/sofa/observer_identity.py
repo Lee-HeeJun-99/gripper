@@ -36,3 +36,10 @@ def compiled_alarm_window():
     if sha(binary)!='6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf' or sha(source)!='0fc9234e959d76f94218e6c4dd123d4b65940665e725baf3ec051dacf8e8f8bf':
         raise ValueError('frozen native alarm controller identity mismatch')
     return binary,source
+
+def compiled_pair_rows():
+    binary=BASE/'cad/build_pair_rows512/libReGripPairRows.so'
+    source=BASE/'results/b3_direct_rows513/Observer.cpp'
+    if sha(binary)!='6a00b4e75ef314f5d92ebc67431ee36cedba02c91e6546ff28a4ffe9d5514527' or sha(source)!='2334142b2609a4132f1a96696475d0e527e4246dab22fe92905d9d3cbd25eb99':
+        raise ValueError('frozen direct-J observer source/binary mismatch')
+    return binary,source

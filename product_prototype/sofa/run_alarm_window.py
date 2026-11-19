@@ -5,13 +5,14 @@ import xml.etree.ElementTree as ET
 import numpy as np
 from analyse import BASE,sha
 from native_bending_coupon import guarded
+from observer_identity import compiled_alarm_window
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results/force_release_clear_support375';out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);meta=json.loads((src/'summary.json').read_text());binary=BASE/'cad/build_alarm_window484/libReGripAlarmWindow.so';native=BASE.parent/meta['build']/'libReGripProductSequence.so'
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results/force_release_clear_support375';out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);meta=json.loads((src/'summary.json').read_text());binary,compiled=compiled_alarm_window();native=BASE.parent/meta['build']/'libReGripProductSequence.so'
  if sha(native)!=meta['binary_sha256']:raise ValueError('frozen physical/controller binary mismatch')
  (out/'source').mkdir()
  for name in ('Controller.cpp','CMakeLists.txt'):shutil.copy2(src/'source'/name,out/'source'/name)
- for name in ('Controller.cpp','CMakeLists.txt'):shutil.copy2(BASE/'sofa/native_alarm_window'/name,out/('Alarm'+name))
+ shutil.copy2(compiled,out/'AlarmController.cpp');shutil.copy2(compiled.parent/'AlarmCMakeLists.txt',out/'AlarmCMakeLists.txt')
  shutil.copy2(binary.parent/'CMakeCache.txt',out/'AlarmCMakeCache.txt');(out/'ldd.txt').write_text(subprocess.check_output(['ldd',str(binary)],text=True))
  for name in ('config.json','mesh.json','holding_protocol.json','motion_commands.json','initial_geometry.json','geometry_generator.py'):shutil.copy2(src/name,out/name)
  tree=ET.parse(src/'scene.scn');root=tree.getroot()

@@ -29,3 +29,10 @@ def compiled_strain_observer():
     if sha(binary)!='4f5aede3ad22bca3144ad442885a09ab1236684631c7a44dc57fec8691a6589c' or sha(source)!='4bb9800d9b776799e7bdfa42c3d3247d10ae69ca1e2b24bad934ca6e6521aec6':
         raise ValueError('frozen strain observer identity mismatch')
     return binary,source
+
+def compiled_alarm_window():
+    binary=BASE/'cad/build_alarm_window484/libReGripAlarmWindow.so'
+    source=BASE/'results/b3_alarm_window485/AlarmController.cpp'
+    if sha(binary)!='6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf' or sha(source)!='0fc9234e959d76f94218e6c4dd123d4b65940665e725baf3ec051dacf8e8f8bf':
+        raise ValueError('frozen native alarm controller identity mismatch')
+    return binary,source

@@ -50,7 +50,13 @@ def export(name,c,out):
  paths=[]
  for label,points,color in [('Skin',np.array([world(c,[x,0,c['finger']['skin_thickness']]) for x in np.linspace(0,100,101)]),'#1673a0'),('Tendon',np.array([world(c,[x,width(c,x)/2+guide_outboard(c,x),guide_normal(c,x)]) for x in [0]+c['tendon']['guide_stations']]),'#b34225')]:
   paths.append('<polyline fill="none" stroke="'+color+'" stroke-width="2" points="'+' '.join(f'{300+4*p[0]:.4f},{80-4*p[2]:.4f}' for p in points)+'"/>')
- (out/'orthographic.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600"><rect width="900" height="600" fill="white"/><text x="20" y="25">'+name+' — manufactured reference, NOT actual simulation</text><text x="20" y="50">L material arc100 mm;root R50 mm;3x120deg;Skin0.1 / Rail0.5 mm</text>'+''.join(paths)+'<text x="20" y="555">Side projection:blue Skin / red tendon. Guide/support solids,STEP,assembly NOT VERIFIED.</text></svg>')
+ routes=[]
+ for angle in c['palm']['angles_deg']:
+  for side in (-1,1):
+   points=np.array([world(c,[x,side*(width(c,x)/2+guide_outboard(c,x)),guide_normal(c,x)],angle) for x in [0]+c['tendon']['guide_stations']]);routes.append(dict(angle_deg=angle,side=side,points_mm=points.tolist()))
+   paths.append('<polyline fill="none" stroke="#b34225" stroke-width="1" points="'+' '.join(f'{650+3*p[0]:.6f},{250+3*p[1]:.6f}' for p in points)+'"/>')
+ (out/'guide_routes_mm.json').write_text(json.dumps(dict(scope='Manufactured reference shared with native geometry;NOT deformed motion',routes=routes),indent=2))
+ (out/'orthographic.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600"><rect width="900" height="600" fill="white"/><text x="20" y="25">'+name+' — manufactured reference, NOT actual simulation</text><text x="20" y="50">L material arc100 mm;root R50 mm;3x120deg;Skin0.1 / Rail0.5 mm</text><text x="560" y="80">Top: six sector-limited routes</text>'+''.join(paths)+'<text x="20" y="555">Side projection:blue Skin / red tendon. Guide/support solids,STEP,assembly NOT VERIFIED.</text></svg>')
  (out/'BOM.csv').write_text('part,quantity,status\nSkin,3,assumed manufactured stress-free reference\nBonded rail,6,assumed continuously bonded\nGuide bracket,36,10mg each assumed;actual support strength unverified\nEdge wire,6,radius0.25mm assumed;physical bend radius unverified\nPalm mount cartridge clamp fasteners actuator,1,existing baseline placeholders;new assembly NOT VERIFIED\n')
  return report
 
@@ -61,7 +67,7 @@ def main():
   src=BASE/'results'/a.publish_case
   if json.loads((src/'summary.json').read_text())['status']!='RUN_COMPLETED_NOT_QUALIFIED':raise ValueError('completed source scene required,not partial physics')
   target=BASE/'meshes'/a.design_name;report=export(a.design_name,json.loads((src/'config.json').read_text()),target);draw=BASE/'drawings'/a.design_name;draw.mkdir(exist_ok=False)
-  for f in ('reference_assembly.scad','orthographic.svg','BOM.csv','checks.json','config.json'):shutil.copy2(target/f,draw/f)
+  for f in ('reference_assembly.scad','orthographic.svg','BOM.csv','checks.json','config.json','guide_routes_mm.json'):shutil.copy2(target/f,draw/f)
   report.update(actual_case=a.publish_case,exact_config_bytes_equal=(src/'config.json').read_bytes()==(target/'config.json').read_bytes(),qualification='manufactured reference only;source run completion NOT grasp or assembly qualification')
   (out/'summary.json').write_text(json.dumps(report,indent=2));print(json.dumps(dict(candidate=a.design_name,exact_config_bytes_equal=report['exact_config_bytes_equal'],status=report['status'])));return
  if a.publish_sector_cases:

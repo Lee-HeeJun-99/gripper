@@ -7,7 +7,7 @@ BASE=Path(__file__).resolve().parents[1]
 def read(p):return list(csv.DictReader(p.open()))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def fingerprint(src):
- tree=ET.parse(src/'scene.scn');root=tree.getroot();root.set('dt','TIME_VARIABLE');commands=json.loads((src/'motion_commands.json').read_text())['commands']
+ tree=ET.parse(src/'scene.scn');root=tree.getroot();root.set('dt','TIME_VARIABLE');commands=json.loads((src/'motion_commands.json').read_text())['commands'] if (src/'motion_commands.json').exists() else []
  for node in root.iter():
   if 'filename' in node.attrib:node.set('filename','EXCLUSIVE_JOURNAL')
  for node in root.iter('Node'):
@@ -27,7 +27,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs=3,required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);sources=[BASE/'results'/x for x in a.cases];meta=[json.loads((s/'summary.json').read_text()) for s in sources]
  if any(m['status']!='RUN_COMPLETED_NOT_QUALIFIED' for m in meta):raise ValueError('partial process is NOT convergence evidence')
  fp=[fingerprint(s) for s in sources]
- if len(set(fp))!=1 or len({m['binary_sha256'] for m in meta})!=1 or len({m['motion_commands_sha256'] for m in meta})!=1:raise ValueError('same physics,binary and declared physical command required')
+ if len(set(fp))!=1 or len({m['binary_sha256'] for m in meta})!=1 or len({m.get('motion_commands_sha256') for m in meta})!=1:raise ValueError('same physics,binary and declared physical command required')
  data=[features(s,m) for s,m in zip(sources,meta)];records=[];limit=min(t[-1] for t,F in data)
  for i,j in ((0,1),(1,2),(0,2)):
   ti,Fi=data[i];tj,Fj=data[j];ratio=round(meta[i]['dt_s']/meta[j]['dt_s'])
@@ -38,6 +38,6 @@ def main():
    for key,x in Fi.items():
     u=x[k];v=Fj[key][l];absolute=float(np.linalg.norm(u-v));denom=max(float(np.linalg.norm(u)),float(np.linalg.norm(v)));rel=absolute/denom if denom else 0.;records.append(dict(pair=f'{i}_{j}',time_s=float(time),quantity=key,absolute=absolute,relative=rel,clock_difference_s=clock,status='PASS' if rel<=.001 else 'FAIL'))
  with (out/'errors.csv').open('w') as f:w=csv.DictWriter(f,fieldnames=records[0]);w.writeheader();w.writerows(records)
- result=dict(status='FAIL' if any(x['status']=='FAIL' for x in records) else 'PASS_TIME_SCOPE_ONLY',scope='0..common horizon actual native states/forces/curvature/kinetic inventory,NOT whole energy/mesh/friction/grasp certification',cases=a.cases,physics_fingerprint=fp[0],binary_sha256=meta[0]['binary_sha256'],motion_commands_sha256=meta[0]['motion_commands_sha256'],horizon_s=float(limit),gate=.001,absolute_floor=None,worst=max(records,key=lambda x:x['relative']),metrics={key:max((x for x in records if x['quantity']==key),key=lambda x:x['relative']) for key in data[0][1]},input_hashes={str(s/'summary.json'):sha(s/'summary.json') for s in sources},source_sha256=sha(Path(__file__)))
+ result=dict(status='FAIL' if any(x['status']=='FAIL' for x in records) else 'PASS_TIME_SCOPE_ONLY',scope='0..common horizon actual native states/forces/curvature/kinetic inventory,NOT whole energy/mesh/friction/grasp certification;fixed object projected J is NOT its reaction',cases=a.cases,physics_fingerprint=fp[0],binary_sha256=meta[0]['binary_sha256'],motion_commands_sha256=meta[0].get('motion_commands_sha256'),horizon_s=float(limit),gate=.001,absolute_floor=None,worst=max(records,key=lambda x:x['relative']),metrics={key:max((x for x in records if x['quantity']==key),key=lambda x:x['relative']) for key in data[0][1]},input_hashes={str(s/'summary.json'):sha(s/'summary.json') for s in sources},source_sha256=sha(Path(__file__)))
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps({k:v for k,v in result.items() if k!='metrics'}))
 if __name__=='__main__':main()

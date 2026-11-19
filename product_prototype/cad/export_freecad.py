@@ -9,6 +9,7 @@ import Part
 ROOT=Path(__file__).resolve().parents[1]
 def main():
  c=json.loads(Path(os.environ.get('REGRIP_CAD_CONFIG',ROOT/'config/design_v1.json')).read_text());out=Path(os.environ['REGRIP_CAD_OUT']);out.mkdir(parents=True,exist_ok=False);f=c['finger'];td=c['tendon'];p=c['palm'];V=App.Vector;doc=App.newDocument('ReGripCandidate')
+ if c['finger'].get('precurve') or td.get('distal_profile') or td.get('sector_margin_mm') is not None:raise ValueError('Legacy flat solid exporter does not implement v7/v8 curves/routes;use exact shared mesh sources,NOT mismatched STEP')
  def poly(points,h):return Part.Face(Part.makePolygon([V(*v) for v in points+[points[0]]])).extrude(V(0,0,h))
  def w(x):return f['root_width']+(f['tip_width']-f['root_width'])*max(0,x-50)/50
  skin=poly([[x,y,0] for x,y in ((0,-12),(50,-12),(100,-6),(100,6),(50,12),(0,12))],f['skin_thickness'])

@@ -19,6 +19,14 @@ def reference_local(c,p):
  if curve is None or curve['angle_deg']==0 or x<=curve['start_mm']:return [x,y,z]
  start=curve['start_mm'];k=math.radians(curve['angle_deg'])/(c['finger']['length']-start);phi=k*(x-start)
  return [start+math.sin(phi)/k-z*math.sin(phi),y,(1-math.cos(phi))/k+z*math.cos(phi)]
+def guide_outboard(c,x):
+ """Distributed lateral route within its 120deg assembly sector,finite guide size."""
+ td=c['tendon'];margin=td.get('sector_margin_mm')
+ if margin is None:return td['outboard']
+ radial=world(c,[x,0,guide_normal(c,x)],0)[0]
+ allowed=math.sqrt(3)*radial-2*(math.hypot(td['guide_outer_radius'],1)+margin)-width(c,x)/2
+ if allowed<2:raise ValueError('manufactured guide sector has no outboard support space')
+ return min(td['outboard'],allowed)
 def world(c,p,angle=0):
  x,y,z=reference_local(c,p);tilt=math.radians(c['palm'].get('root_angle_deg',0));x,z=x*math.cos(tilt)-z*math.sin(tilt),x*math.sin(tilt)+z*math.cos(tilt);a=math.radians(angle);r=c['palm']['mount_radius']-z
  # Proper right-handed mount:longitudinal down,width -tangent,normal inward.
@@ -61,7 +69,9 @@ def stl(path,v,faces):
    s.write(' endloop\n endfacet\n')
   s.write('endsolid\n')
 def main():
- p=argparse.ArgumentParser();p.add_argument('--out',required=True);p.add_argument('--config');a=p.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=False);parameter_file=Path(a.config) if a.config else BASE/'config/design_v1.json';c=json.loads(parameter_file.read_text());(out/'config.json').write_text(json.dumps(c,indent=2));v,t,surf=mesh(c);(out/'mesh.json').write_text(json.dumps(dict(local_positions_mm=v,tetrahedra=t,triangles=surf)))
+ p=argparse.ArgumentParser();p.add_argument('--out',required=True);p.add_argument('--config');a=p.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=False);parameter_file=Path(a.config) if a.config else BASE/'config/design_v1.json';c=json.loads(parameter_file.read_text());
+ if c['finger'].get('precurve') or c['tendon'].get('distal_profile') or c['tendon'].get('sector_margin_mm') is not None:raise ValueError('Use mechanism_candidates exact shared-reference export;legacy flat SCAD/parts do not implement candidate profiles')
+ (out/'config.json').write_text(json.dumps(c,indent=2));v,t,surf=mesh(c);(out/'mesh.json').write_text(json.dumps(dict(local_positions_mm=v,tetrahedra=t,triangles=surf)))
  stl(out/'finger_bonded.stl',v,surf)
  for part in ('skin','rail_left','rail_right'):
   f=c['finger'];vv=[]

@@ -3,7 +3,7 @@ import argparse,csv,json,sys,hashlib,xml.etree.ElementTree as ET
 from pathlib import Path
 import numpy as np
 import trimesh
-from mechanism_candidates import BASE,world,width,guide_normal
+from mechanism_candidates import BASE,world,width,guide_normal,guide_outboard
 def read(p):return list(csv.DictReader(p.open()))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
@@ -31,7 +31,7 @@ def main():
  # Unit-tension guide moments in the actual manufactured reference,not FEM response.
  route=[]
  for side in (-1,1):
-  route.append(np.array([world(c,[x,side*(width(c,x)/2+c['tendon']['outboard']),guide_normal(c,x)]) for x in [0]+c['tendon']['guide_stations']]))
+  route.append(np.array([world(c,[x,side*(width(c,x)/2+guide_outboard(c,x)),guide_normal(c,x)]) for x in [0]+c['tendon']['guide_stations']]))
  moment=[]
  for route_side,side in zip(route,(-1,1)):
   ds=np.diff(route_side,axis=0);u=ds/np.linalg.norm(ds,axis=1)[:,None];force=-u.copy();force[:-1]+=u[1:]

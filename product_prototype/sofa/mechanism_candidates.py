@@ -5,7 +5,7 @@ import numpy as np
 import trimesh
 BASE=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(BASE/'cad'))
-from generate import world,width,guide_normal,reference_local,mesh,stl
+from generate import world,width,guide_normal,guide_outboard,reference_local,mesh,stl
 
 def preflight(c,m,R,fingers=1):
  local=np.array(m['local_positions_mm']);tet=np.array(m['tetrahedra']);faces=np.array(m['triangles']);centre=np.array(c['simulation']['sphere_center_mm']);records=[]
@@ -13,10 +13,13 @@ def preflight(c,m,R,fingers=1):
   q=np.array([world(c,p,angle) for p in local]);d=q[tet[:,1:]]-q[tet[:,0,None]];det=np.linalg.det(d.transpose(0,2,1));edges=q[tet[:,[1,2,3,2,3,3]]]-q[tet[:,[0,0,0,1,1,2]]];quality=12*(abs(det)/2)**(2/3)/np.sum(edges*edges,axis=(1,2))
   near=trimesh.triangles.closest_point(q[faces],np.repeat(centre[None],len(faces),axis=0));gap=float((np.linalg.norm(near-centre,axis=1)-R).min());wire=1e9;guide=1e9;routes=[]
   for side in (-1,1):
-   route=np.array([world(c,[x,side*(width(c,x)/2+c['tendon']['outboard']),guide_normal(c,x)],angle) for x in [0]+c['tendon']['guide_stations']]);routes.append(route.tolist());a=route[:-1];v=np.diff(route,axis=0);u=np.clip(np.sum((centre-a)*v,axis=1)/np.sum(v*v,axis=1),0,1);wire=min(wire,float((np.linalg.norm(a+u[:,None]*v-centre,axis=1)-R-c['tendon']['wire_radius']).min()));guide=min(guide,float((np.linalg.norm(route[1:]-centre,axis=1)-R-math.hypot(c['tendon']['guide_outer_radius'],1)).min()))
+   route=np.array([world(c,[x,side*(width(c,x)/2+guide_outboard(c,x)),guide_normal(c,x)],angle) for x in [0]+c['tendon']['guide_stations']]);routes.append(route.tolist());a=route[:-1];v=np.diff(route,axis=0);u=np.clip(np.sum((centre-a)*v,axis=1)/np.sum(v*v,axis=1),0,1);wire=min(wire,float((np.linalg.norm(a+u[:,None]*v-centre,axis=1)-R-c['tendon']['wire_radius']).min()));guide=min(guide,float((np.linalg.norm(route[1:]-centre,axis=1)-R-math.hypot(c['tendon']['guide_outer_radius'],1)).min()))
   records.append(dict(angle_deg=angle,minimum_surface_gap_mm=gap,wire_object_gap_mm=wire,guide_enclosing_sphere_gap_mm=guide,minimum_signed_tet_determinant_mm3=float(det.min()),minimum_mean_ratio_quality=float(quality.min()),volume_mm3=float(det.sum()/6),routes_mm=routes))
- ok=all(r['minimum_surface_gap_mm']>=c['simulation']['contact_distance_mm'] and r['wire_object_gap_mm']>0 and r['guide_enclosing_sphere_gap_mm']>0 and r['minimum_signed_tet_determinant_mm3']>0 for r in records)
- return dict(status='INITIAL_GEOMETRY_PASS' if ok else 'REJECT_INITIAL_GEOMETRY',scope='initial closest triangle/finite wire/conservative guide spheres/signed tetra quality only;NOT swept clearance,self-collision,assembly or bending validation',records=records,stress_free_reference=c['finger'].get('precurve'),area=None,pressure=None)
+ between=None
+ if fingers>1:
+  groups=[np.array(r['routes_mm'])[:,1:].reshape(-1,3) for r in records];between=min(float(np.linalg.norm(groups[i][:,None]-groups[j][None,:],axis=2).min()-2*math.hypot(c['tendon']['guide_outer_radius'],1)) for i in range(fingers) for j in range(i+1,fingers))
+ ok=all(r['minimum_surface_gap_mm']>=c['simulation']['contact_distance_mm'] and r['wire_object_gap_mm']>0 and r['guide_enclosing_sphere_gap_mm']>0 and r['minimum_signed_tet_determinant_mm3']>0 for r in records) and (between is None or between>=0)
+ return dict(status='INITIAL_GEOMETRY_PASS' if ok else 'REJECT_INITIAL_GEOMETRY',scope='initial closest triangle/finite wire/conservative guide spheres/interfinger guide sphere/signed tetra quality only;NOT swept clearance,self-collision,assembly or bending validation',initial_interfinger_guide_sphere_gap_mm=between,records=records,stress_free_reference=c['finger'].get('precurve'),area=None,pressure=None)
 
 def configs():
  c=json.loads((BASE/'meshes/native_skin_out24_v6/config.json').read_text());c['simulation']['sphere_center_mm']=[0,0,-65];c['simulation']['sphere_mass_kg']=.05;c['tendon']['maximum_stroke']=4
@@ -42,7 +45,7 @@ def export(name,c,out):
   pts=np.array([world(c,p,angle) for p in v]);lines.append('polyhedron(points='+json.dumps(pts.tolist())+',faces='+json.dumps(surf)+',convexity=10);')
   for side in (-1,1):
    for x in c['tendon']['guide_stations']:
-    p=world(c,[x,side*(width(c,x)/2+c['tendon']['outboard']),guide_normal(c,x)],angle);lines.append('translate('+json.dumps(p)+') sphere(r='+str(math.hypot(c['tendon']['guide_outer_radius'],1))+');')
+    p=world(c,[x,side*(width(c,x)/2+guide_outboard(c,x)),guide_normal(c,x)],angle);lines.append('translate('+json.dumps(p)+') sphere(r='+str(math.hypot(c['tendon']['guide_outer_radius'],1))+');')
  (out/'reference_assembly.scad').write_text('\n'.join(lines))
  paths=[]
  for label,points,color in [('Skin',np.array([world(c,[x,0,c['finger']['skin_thickness']]) for x in np.linspace(0,100,101)]),'#1673a0'),('Tendon',np.array([world(c,[x,width(c,x)/2+c['tendon']['outboard'],guide_normal(c,x)]) for x in [0]+c['tendon']['guide_stations']]),'#b34225')]:
@@ -52,7 +55,13 @@ def export(name,c,out):
  return report
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--publish-actual-cases',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);result={}
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--publish-actual-cases',action='store_true');p.add_argument('--publish-sector-cases',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);result={}
+ if a.publish_sector_cases:
+  for name,case in [('distal_A_sector_v8','distal_sector_single285'),('precurve_B_sector_v8','precurve_sector_single286'),('hybrid_C_sector_v8','hybrid_sector_single292')]:
+   src=BASE/'results'/case;c=json.loads((src/'config.json').read_text());target=BASE/'meshes'/name;report=export(name,c,target);draw=BASE/'drawings'/name;draw.mkdir(exist_ok=False)
+   for f in ('reference_assembly.scad','orthographic.svg','BOM.csv','checks.json','config.json'):shutil.copy2(target/f,draw/f)
+   report['actual_case']=case;report['exact_config_bytes_equal']=hashlib.sha256((src/'config.json').read_bytes()).digest()==hashlib.sha256((target/'config.json').read_bytes()).digest();result[name]=report
+  (out/'summary.json').write_text(json.dumps(dict(status='CAD_REFERENCE_CREATED_NOT_ASSEMBLY_VERIFIED',candidates=result),indent=2));print(json.dumps({k:v['exact_config_bytes_equal'] for k,v in result.items()}));return
  if a.publish_actual_cases:
   for name,case in [('distal_A_v7','distal_single261'),('precurve_B_v7','precurve_single262'),('hybrid_C_v7','hybrid_single268')]:
    src=BASE/'results'/case;c=json.loads((src/'config.json').read_text());target=BASE/'meshes'/name;report=export(name,c,target);draw=BASE/'drawings'/name;draw.mkdir(exist_ok=False)

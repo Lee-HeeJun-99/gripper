@@ -85,7 +85,7 @@ def main():
   if variant.rigid_sphere_collision:
    if a.shape!='sphere':raise ValueError('native Rigid3 sphere collision is sphere-only')
    for child in list(coll):coll.remove(child)
-   add(coll,'MechanicalObject',name='rigidSurface',template='Rigid3d',position=body.find('MechanicalObject').get('position'));add(coll,'SphereCollisionModel',template='Rigid3d',radius=R,group=10);add(coll,'IdentityMapping',input='@../rigid',output='@rigidSurface');body.find('NativeRigidJournal').attrib.pop('center',None);r['sphere_collision_representation']='native Rigid3d SphereCollisionModel;distinct contact mapping,not old model certification'
+   add(coll,'MechanicalObject',name='rigidSurface',template='Rigid3d',position=body.find('MechanicalObject').get('position'));add(coll,'SphereCollisionModel',template='Rigid3d',radius=R,group=10);add(coll,'IdentityMapping',input='@../rigid',output='@rigidSurface');add(coll,'NativeRigidJournal',body='@rigidSurface',solver='@../../constraints',filename=str(out/'collision_object.csv'));body.find('NativeRigidJournal').attrib.pop('center',None);r['sphere_collision_representation']='native Rigid3d SphereCollisionModel;distinct contact mapping,not old model certification'
   if a.floor:
    z=center[2]*.001-R-a.support_gap*.001;r['initial_support_gap_mm']=a.support_gap;r['support_radius_mm']=a.support_radius;floor=add(root,'Node',name='floor')
    if a.support_radius==5:corners=[[-.005,-.005,z],[.005,-.005,z],[.005,.005,z],[-.005,.005,z]];faces=[[0,1,2],[0,2,3]]

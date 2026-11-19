@@ -39,6 +39,8 @@ def mesh(c):
  if any(len(p)>2 for p in faces.values()):raise ValueError('nonmanifold tets')
  return v,t,surf
 def stl(path,v,faces):
+ signed=sum(float(np.dot(v[a],np.cross(v[b],v[c]))) for a,b,c in faces)/6
+ if signed<0:faces=[(a,c,b) for a,b,c in faces]
  with path.open('w') as s:
   s.write('solid product_candidate\n')
   for tri in faces:
@@ -47,7 +49,7 @@ def stl(path,v,faces):
    s.write(' endloop\n endfacet\n')
   s.write('endsolid\n')
 def main():
- p=argparse.ArgumentParser();p.add_argument('--out',required=True);a=p.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=False);c=json.loads((BASE/'config/design_v1.json').read_text());(out/'config.json').write_text(json.dumps(c,indent=2));v,t,surf=mesh(c);(out/'mesh.json').write_text(json.dumps(dict(local_positions_mm=v,tetrahedra=t,triangles=surf)))
+ p=argparse.ArgumentParser();p.add_argument('--out',required=True);p.add_argument('--config');a=p.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=False);parameter_file=Path(a.config) if a.config else BASE/'config/design_v1.json';c=json.loads(parameter_file.read_text());(out/'config.json').write_text(json.dumps(c,indent=2));v,t,surf=mesh(c);(out/'mesh.json').write_text(json.dumps(dict(local_positions_mm=v,tetrahedra=t,triangles=surf)))
  stl(out/'finger_bonded.stl',v,surf)
  for part in ('skin','rail_left','rail_right'):
   f=c['finger'];vv=[]
@@ -67,9 +69,9 @@ L={f['length']};W={f['root_width']};tip={f['tip_width']};skin={f['skin_thickness
 function w(x)=x<=50?W:W+(tip-W)*(x-50)/50;
 module film(){{linear_extrude(skin)polygon([[0,-W/2],[50,-W/2],[L,-tip/2],[L,tip/2],[50,W/2],[0,W/2]]);}}
 module backing(side){{translate([0,0,-rail])linear_extrude(rail)polygon([[0,side*W/2],[50,side*W/2],[L,side*tip/2],[L,side*(tip/2-rw)],[50,side*(W/2-rw)],[0,side*(W/2-rw)]]);}}
-module mount(){{difference(){{union(){{translate([0,-18,-4])cube([7,36,4+skin]);translate([-5,-18,-7])cube([5,36,14]);}}for(y=[-14,14]){{translate([1,y,-5])cylinder(h=10,r=1.7);translate([-6,y,0])rotate([0,90,0])cylinder(h=7,r=1.7);}}translate([0,-W/2,-rail])cube([7,W,5]);}}}}
+module mount(){{difference(){{union(){{translate([0,-18,-4])cube([7,36,4+skin]);translate([-5,-18,-7])cube([5,36,14]);}}for(y=[-14,14]){{translate([2.5,y,-5])cylinder(h=10,r=1.7);translate([-6,y,0])rotate([0,90,0])cylinder(h=7,r=1.7);}}translate([0,-W/2,-rail])cube([7,W,5]);}}}}
 module guide(){{difference(){{rotate([0,90,0])cylinder(h=2,r={td['guide_outer_radius']},center=true);rotate([0,90,0])cylinder(h=3,r={td['guide_hole_radius']},center=true);}}}}
-module clamp(){{difference(){{translate([-3,-18,skin])cube([8,36,3]);for(y=[-14,14])translate([1,y,-1])cylinder(h=5,r=1.7);}}}}
+module clamp(){{difference(){{translate([0,-18,skin])cube([5,36,3]);for(y=[-14,14])translate([2.5,y,-1])cylinder(h=5,r=1.7);}}}}
 module palm(){{translate([0,0,5])difference(){{cylinder(h=8,r={palm['outer_radius']});translate([0,0,-1])cylinder(h=10,r={palm['inner_radius']});for(a=[0,120,240],y=[-14,14])rotate([0,0,a])translate([50,y,-1])cylinder(h=10,r=1.7);}}}}
 module motor_plate(){{difference(){{translate([-25,-20,17])cube([50,40,4]);for(x=[-15,15])hull()for(y=[-12,12])translate([x,y,16])cylinder(h=6,r=1.7);}}}}
 module guide_support(x,side){{hull(){{translate([x-1,side*(w(x)/2-1)-.6,-rail])cube([2,1.2,rail]);translate([x-1,side*(w(x)/2+{td['outboard']})-.6,{td['normal_offset']}-1.5])cube([2,1.2,.8]);}}}}
@@ -97,5 +99,5 @@ else if(part=="skin")film();else if(part=="rail_left")backing(-1);else if(part==
    path=[np.array(world(c,[x,side*(width(c,x)/2+td['outboard']),td['normal_offset']],angle)) for x in td['guide_stations']]
    for p0,p1 in zip(path,path[1:]):
     d=p1-p0;u=np.clip(np.dot(center-p0,d)/np.dot(d,d),0,1);clear.append(float(np.linalg.norm(p0+u*d-center)-r-td['wire_radius']))
- summary=dict(status='GENERATED_CANDIDATE_NOT_FABRICATION_READY',config_sha256=hashlib.sha256((BASE/'config/design_v1.json').read_bytes()).hexdigest(),vertices=len(v),tetrahedra=len(t),surface_triangles=len(surf),positive_tetrahedra=min(volumes)>0,volume_mm3_per_finger=sum(volumes),initial_wire_sphere_clearance_mm=min(clear),STEP='NOT GENERATED:no CAD kernel installed',assembly='NOT VERIFIED:moving interference/guide supports/anchors/coupling unfinished',parts_STL=['skin.stl','rail_left.stl','rail_right.stl','finger_bonded.stl']);(out/'summary.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary))
+ summary=dict(status='GENERATED_CANDIDATE_NOT_FABRICATION_READY',config_sha256=hashlib.sha256(parameter_file.read_bytes()).hexdigest(),vertices=len(v),tetrahedra=len(t),surface_triangles=len(surf),positive_tetrahedra=min(volumes)>0,volume_mm3_per_finger=sum(volumes),initial_wire_sphere_clearance_mm=min(clear),STEP='NOT GENERATED:no CAD kernel installed',assembly='NOT VERIFIED:moving interference/guide supports/anchors/coupling unfinished',parts_STL=['skin.stl','rail_left.stl','rail_right.stl','finger_bonded.stl']);(out/'summary.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary))
 if __name__=='__main__':main()

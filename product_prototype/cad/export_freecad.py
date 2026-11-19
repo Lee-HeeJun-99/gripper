@@ -19,10 +19,10 @@ def main():
   a=math.radians(angle)
   for y in (-14,14):palm=palm.cut(Part.makeCylinder(1.7,10,V(50*math.cos(a)+y*math.sin(a),50*math.sin(a)-y*math.cos(a),4)))
  mount=Part.makeBox(7,36,4+f['skin_thickness'],V(0,-18,-4)).fuse(Part.makeBox(5,36,14,V(-5,-18,-7)))
- clamp=Part.makeBox(8,36,3,V(-3,-18,f['skin_thickness']))
+ clamp=Part.makeBox(5,36,3,V(0,-18,f['skin_thickness']))
  for y in (-14,14):
-  mount=mount.cut(Part.makeCylinder(1.7,10,V(1,y,-5))).cut(Part.makeCylinder(1.7,7,V(-6,y,0),V(1,0,0)))
-  clamp=clamp.cut(Part.makeCylinder(1.7,5,V(1,y,-1)))
+  mount=mount.cut(Part.makeCylinder(1.7,10,V(2.5,y,-5))).cut(Part.makeCylinder(1.7,7,V(-6,y,0),V(1,0,0)))
+  clamp=clamp.cut(Part.makeCylinder(1.7,5,V(2.5,y,-1)))
  mount=mount.cut(Part.makeBox(7,f['root_width'],5,V(0,-f['root_width']/2,-f['rail_thickness'])))
  guide=Part.makeCylinder(td['guide_outer_radius'],2,V(-1,0,0),V(1,0,0)).cut(Part.makeCylinder(td['guide_hole_radius'],4,V(-2,0,0),V(1,0,0)))
  anchor=Part.makeBox(4,4,2,V(-2,-2,-1)).cut(Part.makeCylinder(.6,4,V(0,0,-2)))

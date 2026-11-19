@@ -20,16 +20,28 @@ public:
  sofa::core::objectmodel::Data<std::string> filename;
  sofa::core::objectmodel::Data<double>stroke,closing,hold,release;
  std::ofstream journal;double applied=0;
- NativeCableSequence():body(initLink("body","Native actual position DOFs")),cable0(initLink("cable0","Native SoftRobots CableConstraint")),cable1(initLink("cable1","Second native cable")),filename(initData(&filename,std::string(),"filename","Exclusive CSV")),stroke(initData(&stroke,.005,"stroke","Commanded shortening m;not actuator spec")),closing(initData(&closing,.5,"closing","Closing ramp end s")),hold(initData(&hold,1.,"hold","Hold end s")),release(initData(&release,1.5,"release","Release end s")){f_listening.setValue(true);}
+ sofa::core::objectmodel::Data<double> liftHeight;
+ std::array<sofa::type::Vec3d,2> pullOrigin;
+ NativeCableSequence():body(initLink("body","Native actual position DOFs")),cable0(initLink("cable0","Native SoftRobots CableConstraint")),cable1(initLink("cable1","Second native cable")),filename(initData(&filename,std::string(),"filename","Exclusive CSV")),stroke(initData(&stroke,.005,"stroke","Commanded shortening m;not actuator spec")),closing(initData(&closing,.5,"closing","Closing ramp end s")),hold(initData(&hold,1.,"hold","Hold end s")),release(initData(&release,1.5,"release","Release end s")),liftHeight(initData(&liftHeight,0.,"liftHeight","Driven palm/root upward movement m;NOT imposed finger/object pose")){f_listening.setValue(true);}
  static double smooth(double u){u=std::max(0.,std::min(1.,u));return u*u*u*(10+u*(-15+6*u));}
- void init()override{BaseObject::init();if(!body||!cable0||!cable1)throw std::runtime_error("explicit native state/cable links required");if(std::ifstream(filename.getValue()))throw std::runtime_error("immutable output exists");journal.open(filename.getValue());journal<<std::setprecision(17)<<"time_s,command_m,cable0_force_raw,cable1_force_raw,cable0_displacement_m,cable1_displacement_m,q_m,v_m_s,guide0_q_m,guide1_q_m\n";}
+ void init()override{BaseObject::init();if(!body||!cable0||!cable1)throw std::runtime_error("explicit native state/cable links required");if(std::ifstream(filename.getValue()))throw std::runtime_error("immutable output exists");unsigned k=0;for(auto*b:{cable0.get(),cable1.get()}){auto*d=dynamic_cast<sofa::core::objectmodel::Data<sofa::type::Vec3d>*>(b->findData("pullPoint"));if(!d)throw std::runtime_error("typed cable pull point required");pullOrigin[k++]=d->getValue();}journal.open(filename.getValue());journal<<std::setprecision(17)<<"time_s,command_m,cable0_force_raw,cable1_force_raw,cable0_displacement_m,cable1_displacement_m,q_m,v_m_s,guide0_q_m,guide1_q_m\n";}
  std::string value(BaseObject*b,const char*key){auto*d=b->findData(key);if(auto*x=dynamic_cast<sofa::core::objectmodel::Data<double>*>(d)){std::ostringstream s;s<<std::setprecision(17)<<x->getValue();return s.str();}return d?d->getValueString():"NOT_MEASURED";}
  void handleEvent(sofa::core::objectmodel::Event*ev)override{
-  if(dynamic_cast<sofa::simulation::AnimateBeginEvent*>(ev)){double t=getContext()->getTime()+getContext()->getDt();applied=stroke.getValue()*(t<closing.getValue()?smooth(t/closing.getValue()):t<hold.getValue()?1:t<release.getValue()?1-smooth((t-hold.getValue())/(release.getValue()-hold.getValue())):0);std::ostringstream s;s<<std::setprecision(17)<<applied;for(auto*b:{cable0.get(),cable1.get()}){auto*d=b->findData("value");if(!d||!d->read(s.str()))throw std::runtime_error("native CableConstraint.value input rejected");}}
+  if(dynamic_cast<sofa::simulation::AnimateBeginEvent*>(ev)){double t=getContext()->getTime()+getContext()->getDt();applied=stroke.getValue()*(t<closing.getValue()?smooth(t/closing.getValue()):t<hold.getValue()?1:t<release.getValue()?1-smooth((t-hold.getValue())/(release.getValue()-hold.getValue())):0);unsigned k=0;for(auto*b:{cable0.get(),cable1.get()}){auto point=pullOrigin[k++];point[2]+=liftHeight.getValue()*std::max(0.,std::min(1.,(t-1.)/.5));std::ostringstream p;p<<std::setprecision(17)<<point;b->findData("pullPoint")->read(p.str());}std::ostringstream s;s<<std::setprecision(17)<<applied;for(auto*b:{cable0.get(),cable1.get()}){auto*d=b->findData("value");if(!d||!d->read(s.str()))throw std::runtime_error("native CableConstraint.value input rejected");}}
   if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(ev))return;
   journal<<getContext()->getTime()<<','<<applied;for(auto*b:{cable0.get(),cable1.get()})journal<<",\""<<value(b,"force")<<'"';for(auto*b:{cable0.get(),cable1.get()})journal<<",\""<<value(b,"displacement")<<'"';
   auto&q=body->read(sofa::core::vec_id::read_access::position)->getValue();auto&v=body->read(sofa::core::vec_id::read_access::velocity)->getValue();for(auto*list:{&q,&v}){journal<<",\"";for(auto&p:*list)for(double d:p){if(!std::isfinite(d))throw std::runtime_error("nonfinite native state");journal<<d<<' ';}journal<<'"';}for(auto*b:{cable0.get(),cable1.get()}){auto*s=dynamic_cast<State*>(b->getContext()->getMechanicalState());if(!s)throw std::runtime_error("mapped guide state missing");journal<<",\"";for(auto&p:s->read(sofa::core::vec_id::read_access::position)->getValue())for(double d:p)journal<<d<<' ';journal<<'"';}journal<<'\n';journal.flush();
  }
+};
+class NativePointJournal:public BaseObject {
+public:
+ using State=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;
+ SOFA_CLASS(NativePointJournal,BaseObject);
+ sofa::core::objectmodel::SingleLink<NativePointJournal,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
+ sofa::core::objectmodel::Data<std::string>filename;std::ofstream file;
+ NativePointJournal():body(initLink("body","Native driven support state")),filename(initData(&filename,std::string(),"filename","Exclusive public fixture log")){f_listening.setValue(true);}
+ void init()override{BaseObject::init();if(!body||std::ifstream(filename.getValue()))throw std::runtime_error("unique linked fixture journal required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,q,v\n";}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;file<<getContext()->getTime()<<",\""<<body->read(sofa::core::vec_id::read_access::position)->getValue()<<"\",\""<<body->read(sofa::core::vec_id::read_access::velocity)->getValue()<<"\"\n";file.flush();}
 };
 class NativeRigidJournal:public BaseObject {
 public:
@@ -49,5 +61,5 @@ public:
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripProductSequence";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Input and logging ONLY;native SOFA FEM/cable/solver").add<product::NativeCableSequence>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 journal").add<product::NativeRigidJournal>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Input and logging ONLY;native SOFA FEM/cable/solver").add<product::NativeCableSequence>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 journal").add<product::NativeRigidJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native fixture journal").add<product::NativePointJournal>());}
 }

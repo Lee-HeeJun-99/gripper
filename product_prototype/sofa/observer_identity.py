@@ -43,3 +43,10 @@ def compiled_pair_rows():
     if sha(binary)!='6a00b4e75ef314f5d92ebc67431ee36cedba02c91e6546ff28a4ffe9d5514527' or sha(source)!='2334142b2609a4132f1a96696475d0e527e4246dab22fe92905d9d3cbd25eb99':
         raise ValueError('frozen direct-J observer source/binary mismatch')
     return binary,source
+
+def compiled_feature_rows():
+    binary=BASE/'cad/build_feature_rows554/libReGripFeatureRows.so'
+    source=BASE/'results/b3_finite_features555/Observer.cpp'
+    if sha(binary)!='f2a8ca3a35608b5b62719cbbf6a09dea5f38fa6670fa7b73d603d06ffe597b59' or sha(source)!='eb0149022d83fe5b6636a080dfcadaf40204722fdbdb24da8b0990ad6139869b':
+        raise ValueError('frozen Native feature observer source/binary mismatch')
+    return binary,source

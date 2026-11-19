@@ -22,3 +22,10 @@ def compiled_observer(identifier):
     if sha(binary)!=binary_hash or sha(source)!=source_hash:
         raise ValueError('frozen compiled observer source/binary mismatch;do not substitute live source')
     return binary,source
+
+def compiled_strain_observer():
+    binary=BASE/'cad/build_strain_observer469/libReGripNativeStrainObserver.so'
+    source=BASE/'results/native_beam_strain470/Observer.cpp'
+    if sha(binary)!='4f5aede3ad22bca3144ad442885a09ab1236684631c7a44dc57fec8691a6589c' or sha(source)!='4bb9800d9b776799e7bdfa42c3d3247d10ae69ca1e2b24bad934ca6e6521aec6':
+        raise ValueError('frozen strain observer identity mismatch')
+    return binary,source

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripNativeStrainObserver LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.DefaultType REQUIRED)
+find_package(BeamAdapter REQUIRED)
+add_library(ReGripNativeStrainObserver SHARED Observer.cpp)
+target_compile_features(ReGripNativeStrainObserver PRIVATE cxx_std_17)
+target_link_libraries(ReGripNativeStrainObserver PRIVATE Sofa.Core Sofa.DefaultType BeamAdapter)

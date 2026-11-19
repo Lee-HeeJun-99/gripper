@@ -7,7 +7,7 @@ import argparse,json,shutil,subprocess
 from pathlib import Path
 import numpy as np
 from native_bending_coupon import BASE,ROOT,sha
-from observer_identity import compiled_observer
+from observer_identity import compiled_observer,compiled_strain_observer
 
 CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph409',
        'native_shell_graph_fine411','native_shell_graph_cross412','native_shell_cg_trace413',
@@ -25,7 +25,8 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_beam_accepted452','native_beam_centered_assess453',
        'native_beam_refined_diagnostic454','native_beam_ulp_probe455','native_beam_units457',
        'native_beam_loaded_fd459','native_beam_loaded_regression460','native_beam_mode_fd462',
-       'native_beam_mode_fd464','native_beam_mode_ladder465','native_beam_fd_assess466']
+       'native_beam_mode_fd464','native_beam_mode_ladder465','native_beam_fd_assess466',
+       'native_beam_strain468','native_beam_strain470','native_beam_strain_assess471']
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True)
@@ -58,6 +59,7 @@ def main():
     manifest['files'][str(rejected_binary.relative_to(ROOT))]=sha(rejected_binary)
     failed_observer=BASE/'cad/build_mode_observer461/libReGripElasticObserver.so'
     manifest['files'][str(failed_observer.relative_to(ROOT))]=sha(failed_observer)
+    for f in compiled_strain_observer():manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     sdk=Path('/home/ubuntu/SOFA/v26.06.00')
     for f in [sdk/'bin/runSofa-26.06.00',sdk/'plugins/BeamAdapter/lib/libBeamAdapter.so',
               sdk/'include/Sofa.Component.SolidMechanics.Spring/sofa/component/solidmechanics/spring/FastTriangularBendingSprings.inl']:
@@ -98,7 +100,7 @@ def main():
                  'native_beam_reference_inventory.py','native_beam_reference_assess.py',
                  'native_beam_private_force.py','native_beam_private_assess.py','native_beam_accepted.py','native_beam_centered_assess.py',
                  'native_beam_refined_diagnostic.py','native_beam_ulp_probe.py','native_beam_unit_scale.py','native_beam_loaded_fd.py',
-                 'native_beam_mode_fd.py','native_beam_fd_assess.py'):
+                 'native_beam_mode_fd.py','native_beam_fd_assess.py','native_beam_strain_probe.py','native_beam_strain_assess.py'):
         f=BASE/'sofa'/name;shutil.copy2(f,out/name)
     for f in out.iterdir():
         if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)

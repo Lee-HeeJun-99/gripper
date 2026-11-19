@@ -1,0 +1,59 @@
+{
+  "scope": "Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification",
+  "source_commit": "2dc6afc50e69cf43e7bc2930348a9972c7e28cf4",
+  "source_sha256": "09b630e9cfee09f0d6a3cb87d52cffe9bc6e5d5161e93ceb23071174f4c26830",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "beamadapter_binary_sha256": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+  "journal_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "E_Pa": 250000000.0,
+  "section_m": [
+    0.002,
+    0.0005
+  ],
+  "force_N": 1e-08,
+  "solver": "direct",
+  "newton_iteration_budget": 30,
+  "line_search_iteration_budget": 12,
+  "geometric_rest": true,
+  "load_stages": 0,
+  "origin_x_m": -0.05,
+  "loading_scope": "constant static load",
+  "precurved_stress_free_assumption": false,
+  "approximate_small_deflection_Euler_tip_m": 5.4872e-07,
+  "records": [
+    {
+      "nx": 41,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.16888074297457933,
+        "pid": 51,
+        "artifacts": {
+          "stdout.log": "47edc74a97c4213e141fc9e59adae4a43222f5330fe57a5d934d3cad46946a0b",
+          "command.json": "303bb9591b93a7568ab9976aadb9e93b48d84532930846081e2c2c9244dc9c88",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "7e1ae54e8ccade1575460c85b7d1200bf6d601e511329045e6db89683e37fceb"
+        }
+      },
+      "status": "FAIL_NATIVE_BEAM_SOLVE",
+      "scene_sha256": "05a53022ef68c2550771c6ca522244eb69900b5629f0bc9fc59565f3d5d4c327"
+    },
+    {
+      "nx": 81,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.2046367289731279,
+        "pid": 52,
+        "artifacts": {
+          "stdout.log": "cc9152bba453990d54f56be421c34038efa2a5d70cbc585195c2cb9d4c239d4a",
+          "command.json": "87822427c9056874e841ee40e70a34db114f2e2d05d60847e530914ccc21c503",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "c34e50c6ad07b9fe36de046c8aa80326f51b43089ef30bcf29a1401d1f733ecd"
+        }
+      },
+      "status": "FAIL_NATIVE_BEAM_SOLVE",
+      "scene_sha256": "a12f6ad6d16489fd69e41d171177ccca979a9e8b6e365b76774ef63feb9a524a"
+    }
+  ]
+}

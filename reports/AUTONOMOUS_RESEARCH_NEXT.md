@@ -1,3 +1,30 @@
+## Latest continuation — loaded tangent459–466,2026-11-19
+
+Feature commits1c20109,b19f839. Authority:
+`product_prototype/reports/NATIVE_LOADED_TANGENT_VALIDATION_20261119.md`.
+Evidence:`product_prototype/reports/evidence_native_loaded_fd_v17/manifest.json`.
+-459 corrects diagnostic root mask(3/5nodes);mixed-direction force derivatives
+ agree to best1.30e-9/7.40e-10 relative.460 old-default FD byte regression PASS.
+-462 observer input registration FAIL is preserved. New build463 fixes it;
+ 464/465 test a soft bending direction without changing actual q/v.
+-Soft-direction force agreement is much less precise(best1.65e-4/2.04e-4 relative);
+ torque derivatives near zero remain unresolved. No complete tangent/mesh PASS.
+-466 records the comparison and actual-query plot. Actual unloaded positions
+ unchanged(error0). Prior immutable1119files verified;0mismatches.
+-Strict static41/81 residuals remain FAIL. No B3/full time/energy/hardware,
+ 100g,Lift or fabrication approval. No tolerance or model change adopted.
+
+NEXT:read the actual native axial strain/length force path,then quantify
+represented segment-length/axial-force sensitivity at frozen PRIVATE states.
+Do not assume chord length equals the implementation's internal strain.
+No more blind FD-step/unit/origin sweeps;no new custom physics solver.
+Read-only restart:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_fd_assess466/summary.json`
+Reuse frozen builds458(root ladder),463(explicit direction);source/binary guards
+and complete reproduction commands are in the authority. All prior results kept.
+No physics child intentionally left running;no background continuation promised.
+
+
 ## Latest continuation — refined Rail454–457, 2026-11-19
 
 Feature commit:c50516b. Authority:

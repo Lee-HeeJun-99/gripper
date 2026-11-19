@@ -93,12 +93,16 @@ def main():
   oldfloor=root.find("./Node[@name='floor']");root.remove(oldfloor);floor=add(root,'Node',name='floor');z=s['sphere_center_mm'][2]*.001-a.radius*.001-a.support_gap*.001-.035;add(floor,'MechanicalObject',template='Vec3d',position=f'0 0 {z}');add(floor,'SphereCollisionModel',radius=.035,simulated=0,moving=0,group=20);r['support_shape']='fixed R35 rounded pedestal;NEW physical fixture,NOT flat-table repair'
  for corr in root.iter('GenericConstraintCorrection'):corr.attrib.pop('solverName',None)
  if variant.split_contact_surfaces and a.object!='none':
+  root.find('BVHNarrowPhase').set('name','nativeNarrow');add(root,'NativeDetectionPairs',narrow='@nativeNarrow',filename=str(out/'detection_pairs.csv'))
   local=np.array(m['local_positions_mm']);tri=np.array(m['triangles']);rail=np.any(local[tri,2]<0,axis=1)
   c['surface_partition']=dict(rule='Skin:all reference vertices z>=0;Rail:any z<0;native generated exterior faces',skin_triangles=int((~rail).sum()),rail_triangles=int(rail.sum()),contact_area=None,pressure=None)
   for f in range(a.fingers):
    node=root.find(f"./Node[@name='finger{f}']");old=node.find("./Node[@name='collision']");points=old.find('MechanicalObject').get('position');node.remove(old)
    for label,selection in (('skin',~rail),('rail',rail)):
     faces=tri[selection];ids=sorted(set(faces.reshape(-1).tolist()));lookup={v:k for k,v in enumerate(ids)};compact=np.array([[lookup[int(v)] for v in face] for face in faces]);positions=flat(np.fromstring(points,sep=' ').reshape(-1,3)[ids]);edges=sorted({tuple(sorted((int(t[k]),int(t[(k+1)%3])))) for t in compact for k in range(3)});surface=add(node,'Node',name=label+'Collision');add(surface,'MeshTopology',name='surfaceTopology',position=positions,triangles=flat(compact),edges=flat(edges));add(surface,'MechanicalObject',name='surface',template='Vec3d',position=positions);add(surface,'TriangleCollisionModel',group=f+1);add(surface,'LineCollisionModel',group=f+1);add(surface,'PointCollisionModel',group=f+1);add(surface,'SubsetMapping',input='@../dofs',output='@surface',indices=' '.join(map(str,ids)))
+  for f in range(a.fingers):
+   for label in ('skin','rail'):
+    surface=root.find(f"./Node[@name='finger{f}']/Node[@name='{label}Collision']");add(surface,'NativePointJournal',body='@surface',filename=str(out/f'{label}_points{f}.csv'))
   if a.object=='free' and a.constraint_journal:
    for label in ('skin','rail'):add(root,'NativeContactRows',solver='@constraints',body='@object/rigid',filename=str(out/f'{label}_rows.csv'),**{'film'+str(f):f'@finger{f}/{label}Collision/surface' for f in range(a.fingers)})
   (out/'config.json').write_text(json.dumps(c,indent=2));r['config_sha256']=sha(out/'config.json')

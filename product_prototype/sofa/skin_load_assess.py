@@ -13,6 +13,13 @@ def main():
  total=np.array([np.fromstring(r['object_impulse_Ns_Nms'],sep=' ') for r in rows])/dt;err=float(np.max(abs(total-sum(forces.values()))));window=(t>=1.6-1e-12)&(t<=2.+1e-12);weight=cfg['simulation']['sphere_mass_kg']*9.81
  if not window.any():raise ValueError('hold interval NOT RUN')
  fractions={name:float(force[window,2].mean()/weight) for name,force in forces.items()};skin_min=float(np.min(forces['skin'][window,2]/weight));ambiguous=float(np.max(np.linalg.norm(forces['ambiguous'][window,:3],axis=1)));result=dict(status='PASS_SKIN_LOAD_ONLY' if skin_min>=threshold and err<=1e-12 and ambiguous==0 else 'FAIL',scope='Skin force-source qualification ONLY;requires separate unsupported holding,clearance,time convergence gates',case=a.case,predeclared_minimum_skin_weight_fraction=threshold,minimum_skin_weight_fraction=skin_min,mean_vertical_weight_fraction=fractions,force_partition_max_error_N_Nm=err,maximum_ambiguous_force_N=ambiguous,contact_area=None,pressure=None,wire_object_force=None,wire_collision='NOT IMPLEMENTED;no wire contact force claimed',source_sha256=sha(Path(__file__)),input_hashes={p.name:sha(p) for p in (src/'skin_rows.csv',src/'rail_rows.csv',src/'contact_rows.csv',src/'config.json')},surface_rule=cfg['surface_partition'],notes='signed supported load/weight,not clamped percentages;surface partition duplicates boundary features,so requires matched original-scene regression')
+ result['row_load_criterion_met']=result['status']=='PASS_SKIN_LOAD_ONLY'
+ result['status']='ROW_LOAD_CRITERION_MET_CONTACT_NOT_QUALIFIED' if result['row_load_criterion_met'] else 'FAIL'
+ result['physical_skin_holding']='NOT QUALIFIED: requires independent accepted surface geometry,detector source ownership and time gates;child Jacobian influence alone is insufficient'
+ result['scope']='JACOBIAN INFLUENCE partition only,NOT direct Skin/Rail contact-force-source certification'
+ if (src/'detection_pairs.csv').exists():
+  skin_pairs=[r for r in read(src/'detection_pairs.csv') if any('/object/' in r[k] for k in ('model0','model1')) and any('/skinCollision/' in r[k] for k in ('model0','model1'))];result['object_skin_detector_samples']=len(skin_pairs)
+  if not skin_pairs:result['status']='FAIL_SKIN_PROVENANCE'
  with (out/'load_partition.csv').open('w') as f:
   w=csv.writer(f);w.writerow(['time_s',*[name+'_vertical_N' for name in forces]]);w.writerows(zip(t,*[force[:,2] for force in forces.values()]))
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))

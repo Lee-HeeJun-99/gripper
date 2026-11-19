@@ -33,6 +33,77 @@ Finer actual runs require `--profile 20261119_plan_actual1743` and the same buil
 
 ## Scope
 
+### Static contact/structure continuation1754–1771
+
+New independent static equations enforce grad(U)-C lambda=0,g>=0,lambda>=0
+and complementarity on ALL320 triangle constraints. Multipliers are N,not Ns.
+No inertial/damping term from the reused root map enters these equations.
+1754 all8 low loads to1uN PASS;1755 all16 load/unload stages PASS,ending with
+zero active force rows and positive gap2.82876209e-5mm. This is NOT a dynamic
+release/recovery. Callback regression1760 physical states/rows/wrenches/Newton
+journals versus1755 is BYTE EXACT. Fixed-object guards in old SOFA are unchanged.
+
+Rest feature ties make the small-step central gradient FD fail:1751/52/53 remain
+FAIL (1753 is an identical diagnostic retry,not new physical evidence). Errors
+at h1e-6/1e-5/1e-4 are1.34687e-8/3.97588e-8/4.00430e-7. C1 Richardson
+2D(h/2)-D(h),h1e-4,passes the unchanged1e-8 gradient gate with4.26204e-10.
+This does not qualify a smooth Hessian/IFT at a feature transition.
+
+1756 original100uN static continuation FAIL,last complete80.3085722uN;1757
+smaller load-tail increments freshly validate the q/owned-force seed and reach
+90.1542861uN,then FAIL Newton30 with residual~1e-12N. No physical criterion is
+relaxed. At90.15uN,Skin mean midspan+1.77606mm,tip−5.21571mm:the arch persists
+even in static equilibrium,so short integration time is not its sole cause.
+
+One-factor guide profiling reuses the old1431 geometry (old .5mm dynamic
+worse-arch result preserved). Same core439.3397918mm3,T,material,root and object:
+
+|Profile/outboard[mm]|Skin mid z[mm]|Skin tip z[mm]|Shortening[mm]|Wire gap to R30.01[mm]|
+|---|---:|---:|---:|---:|
+|0/6|+1.554737|−4.738094|3.290686|+.019653|
+|.5/6|+1.353947|−4.658590|3.345348|−.066015|
+|4.5/6|−.264342|−3.471204|5.178679|−.908896|
+|4.5/8|−.171552|−3.581020|5.451211|+.209123|
+
+All values are at the same completed80.3085722uN load,not failed final states.
+Profile4.5 changes offsets to[9.5,5,.5,5,9.5]mm;outboard6→8 is a second,
+separately isolated factor relative to profile4.5/6.1759/1764/1765 original
+force/Hessian/objectivity/balance tests PASS. For changed8mm designs the old
+zero-amplitude parity is NOT MEASURED;unvisited raw harness counter0 is not
+presented as a physical measurement. Extra guide volume/mass and matched work
+are NOT certified. Mean normal offset stays5mm,but cable reference length
+changes200→203.2141727mm. No efficiency superiority or final selection.
+
+1766 profile4.5/outboard8 completes all64 static loads through100uN with
+force residual8.15572e-13N and gap7.10543e-15mm.1768 freshly validates that static
+seed and completes64 unload stages toT0,zero active rows,stored energy~1.6e-27Nmm.
+NOT a dynamic checkpoint,actual SOFA or elastic-recovery-time certification.
+
+1767 completed force/guide observer,then Python rendering failed due to a
+triangle-index variable shadowing argparse. Original observations are preserved.
+1769 recompiles IDENTICAL binary/input,then reuses the completed immutable
+observation rather than rerunning physics. Static OBJ/PNG uses stored q at scale1;
+labels explicitly say independent STATIC FEM,NOT SOFA/wrapping/holding. All
+contact reactions remain one point;area/pressure/continuous coverage NULL.
+
+Crucially,the positive wire gap at80.31uN does NOT extend to all loads.1770 audits
+all64 profile4.5/outboard8 states:minimum actual-R30 wire centreline gap
+−.111805651mm,so the peak wire path is still inadmissible even at zero radius.
+The conservative Skin half-thickness envelope gap is−.01500000008mm,and a
+constant-current-facet prism proxy gives the same penetration. This is conditional
+on that explicit thickness proxy,NOT a measured physical-film failure. Rails
+remain clear in that proxy. The declared .01mm buffer does not qualify .025mm
+Skin half-thickness. No force/state is corrected to hide this failure.
+
+1769/1770 therefore do NOT approve the wider route as a final design,despite its
+equation-level static PASS. Three rotated copies of the fixed-object reaction
+give only a CONDITIONAL vertical scale~2e-5N at80uN versus100g weight.981N;
+this is NOT a free3-finger holding capacity or lift experiment. General friction,
+finite wire/guide solids,full thickness,self collision and actual C2 validation
+of the new profile remain required. Historical archive audit1771 verifies107505
+inherited Raw/build/design/absolute-SDK files unchanged. Live edited source is
+explicitly excluded;this is NOT physics or old live-root equivalence certification.
+
 Track A numerical convergence and Track B mechanical efficacy remain separate.
 No new wrapping, holding, lift, free-object/contact or final design PASS is
 claimed. Existing three-film56.4ms checkpoint1644 remains immutable and is NOT

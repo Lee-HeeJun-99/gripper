@@ -4,6 +4,7 @@
 #include <sofa/core/MechanicalParams.h>
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/defaulttype/VecTypes.h>
+#include <sofa/defaulttype/RigidTypes.h>
 #include <sofa/linearalgebra/FullMatrix.h>
 #include <sofa/core/behavior/BaseMatrixLinearSystem.h>
 #include <sofa/simulation/AnimateEndEvent.h>
@@ -62,6 +63,46 @@ public:
         if(q!=body->read(sofa::core::vec_id::read_access::position)->getValue()||velocity!=body->read(sofa::core::vec_id::read_access::velocity)->getValue())throw std::runtime_error("observer modified actual initial state");
     }
 };
+class NativeRigidTangentObserver:public sofa::core::objectmodel::BaseObject {
+public:
+    SOFA_CLASS(NativeRigidTangentObserver,sofa::core::objectmodel::BaseObject);
+    using Types=sofa::defaulttype::Rigid3Types;
+    using State=sofa::core::behavior::MechanicalState<Types>;
+    using Field=sofa::core::behavior::ForceField<Types>;
+    using BaseLink=sofa::core::objectmodel::BaseLink;
+    sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
+    sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,Field,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>elastic;
+    sofa::core::objectmodel::Data<std::string>filename;
+    sofa::core::objectmodel::Data<double>amplitude;
+    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")){}
+    void bwdInit()override {
+        BaseObject::bwdInit();if(!body||!elastic||std::ifstream(filename.getValue()))throw std::runtime_error("unique Rigid3 observer required");
+        const auto original=body->read(sofa::core::vec_id::read_access::position)->getValue();
+        const auto velocity=body->read(sofa::core::vec_id::read_access::velocity)->getValue();
+        Types::VecDeriv direction(original.size());
+        for(unsigned i=2;i<original.size();++i)for(unsigned j=0;j<6;++j)direction[i][j]=(j<3?.1:1.)*std::sin(double(6*i+j+1));
+        auto perturb=[&](const Types::VecCoord&q,double h){auto result=q;
+            for(unsigned i=0;i<q.size();++i){for(unsigned j=0;j<3;++j)result[i].getCenter()[j]+=h*direction[i][j];
+                double norm=0;for(unsigned j=3;j<6;++j)norm+=direction[i][j]*direction[i][j];norm=std::sqrt(norm);
+                if(norm>0){double s=std::sin(h*norm/2)/norm;sofa::type::Quat<double>delta(s*direction[i][3],s*direction[i][4],s*direction[i][5],std::cos(h*norm/2));
+                    result[i].getOrientation()=delta*q[i].getOrientation();}}
+            return result;};
+        sofa::core::MechanicalParams params;
+        auto force=[&](const Types::VecCoord&q){Field::DataVecCoord x;Field::DataVecDeriv v,f;x.setValue(q);v.setValue(velocity);f.setValue(Types::VecDeriv(q.size()));elastic->addForce(&params,f,x,v);return f.getValue();};
+        const auto probe=perturb(original,amplitude.getValue());force(probe);
+        // BeamAdapter overrides addDForce/MultiMatrixAccessor, NOT the scalar
+        // convenience addKToMatrix used by the Vec3 observer. Query its real path.
+        Field::DataVecDeriv dx,df;dx.setValue(direction);df.setValue(Types::VecDeriv(probe.size()));
+        params.setKFactor(1.).setBFactor(0.);elastic->addDForce(&params,df,dx);const auto tangent=df.getValue();
+        std::ofstream out(filename.getValue());out<<std::setprecision(17)<<"epsilon,force_error_N,force_derivative_norm_N,torque_error_Nm,torque_derivative_norm_Nm\n";
+        for(double eps:{1e-6,1e-7,1e-8}){auto plus=force(perturb(probe,eps)),minus=force(perturb(probe,-eps));double ef=0,nf=0,et=0,nt=0;
+            for(unsigned i=2;i<probe.size();++i)for(unsigned k=0;k<6;++k){double exact=tangent[i][k];
+                double fd=(plus[i][k]-minus[i][k])/(2*eps);if(k<3){ef+=(fd-exact)*(fd-exact);nf+=fd*fd;}else{et+=(fd-exact)*(fd-exact);nt+=fd*fd;}}
+            out<<eps<<','<<std::sqrt(ef)<<','<<std::sqrt(nf)<<','<<std::sqrt(et)<<','<<std::sqrt(nt)<<'\n';}
+        force(original);
+        if(original!=body->read(sofa::core::vec_id::read_access::position)->getValue()||velocity!=body->read(sofa::core::vec_id::read_access::velocity)->getValue())throw std::runtime_error("Rigid3 observer changed actual q/v");
+    }
+};
 class NativeAssembledMatrixObserver:public sofa::core::objectmodel::BaseObject {
 public:
     SOFA_CLASS(NativeAssembledMatrixObserver,sofa::core::objectmodel::BaseObject);
@@ -82,5 +123,5 @@ public:
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripElasticObserver";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Initial native elastic matrix and force FD query; no physics update").add<diagnostic::NativeElasticMatrixObserver>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only post-step native assembled matrix").add<diagnostic::NativeAssembledMatrixObserver>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Initial native elastic matrix and force FD query; no physics update").add<diagnostic::NativeElasticMatrixObserver>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 force/tangent query").add<diagnostic::NativeRigidTangentObserver>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only post-step native assembled matrix").add<diagnostic::NativeAssembledMatrixObserver>());}
 }

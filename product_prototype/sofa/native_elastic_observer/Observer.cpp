@@ -94,7 +94,7 @@ public:
         const auto initial=force(original);
         std::ofstream initialOutput(filename.getValue()+".initial.csv");initialOutput<<std::setprecision(17)<<"node,fx_N,fy_N,fz_N,tx_Nm,ty_Nm,tz_Nm\n";
         for(unsigned i=0;i<initial.size();++i){initialOutput<<i;for(unsigned j=0;j<6;++j)initialOutput<<','<<initial[i][j];initialOutput<<'\n';}
-        if(interpolation){std::ofstream data(filename.getValue()+".lengths.txt");auto* lengths=interpolation->findData("lengthList");if(!lengths)throw std::runtime_error("native lengthList unavailable");data<<lengths->getValueString();}
+        if(interpolation){std::ofstream data(filename.getValue()+".lengths.txt");auto* lengths=dynamic_cast<sofa::core::objectmodel::Data<sofa::type::vector<double>>*>(interpolation->findData("lengthList"));if(!lengths)throw std::runtime_error("typed native lengthList unavailable");data<<std::setprecision(17);for(double length:lengths->getValue())data<<length<<' ';}
         if(system){
             params.setMFactor(0.).setBFactor(0.).setKFactor(-1.);system->buildSystemMatrix(&params);
             const auto* A=system->getSystemBaseMatrix();if(!A)throw std::runtime_error("initial native assembled matrix missing");

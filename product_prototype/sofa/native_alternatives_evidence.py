@@ -17,7 +17,8 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_rectangular_rest423','native_rectangular_graph424','native_section_translation425',
        'native_rigid_tangent427','native_rigid_tangent429','native_rectangular_budget430',
        'native_beam_reference432','native_rectangular_geometric433','native_rectangular_ramp434',
-       'native_rectangular_ramp435','native_beam_linear_reference436','native_beam_reference_api437']
+       'native_rectangular_ramp435','native_beam_linear_reference436','native_beam_reference_api437',
+       'native_beam_reference_precision439','native_beam_precision_assess440']
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True)
@@ -43,7 +44,7 @@ def main():
             if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     manifest['exclusions']={'native_rectangular_ramp434':'Unused keyTimes/keyForces;zero load;not loaded bending evidence. Original summary/Raw retained.',
                             'native_rigid_tangent427':'Wrong scalar matrix API;not native tangent discrepancy evidence.'}
-    for identifier in ('400','406','410','428','431'):
+    for identifier in ('400','406','410','428','431','438'):
         binary,source=compiled_observer(identifier)
         for f in (binary,source):manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     rejected_binary=BASE/'cad/build_rigid_observer426/libReGripElasticObserver.so'
@@ -73,6 +74,13 @@ def main():
     ax[1].set_title('416/417: native shell, mesh FAIL');ax[1].legend()
     fig.suptitle('Installed SOFA v26.06.00; 1 microN; not B3 or grasp certification',fontsize=10)
     fig.tight_layout();fig.savefig(out/'native_diagnostics.png',dpi=160);plt.close(fig)
+    reference=json.loads((BASE/'results/native_beam_reference_precision439/summary.json').read_text())
+    measured=[r for r in reference['records'] if r['observed']]
+    fig,axis=plt.subplots(figsize=(7,4))
+    axis.bar(['flat / straight=true','flat / geometric rest','curved / geometric rest'],[r['initial_free_force_norm_N'] for r in measured])
+    axis.axhline(1e-12,color='k',linestyle='--',label='unchanged absolute force gate')
+    axis.set_ylabel('Actual initial native free-force norm [N]');axis.set_title('439: initial native reference only, NOT loaded B3')
+    axis.legend(fontsize=8);fig.tight_layout();fig.savefig(out/'native_reference_inventory.png',dpi=160);plt.close(fig)
     for name in ('native_loaded_section.py','native_shell_coupon.py','native_shell_assess.py',
                  'native_bending_matrix_paths.py','native_beamadapter_coupon.py','observer_identity.py',
                  'native_matrix_assess.py','native_alternatives_evidence.py','native_rigid_tangent.py',

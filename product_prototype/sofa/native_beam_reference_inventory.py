@@ -11,12 +11,12 @@ from observer_identity import compiled_observer
 def main():
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args()
     out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
-    build=BASE/'cad/build_reference_observer431';binary,compiled_source=compiled_observer('431')
+    build=BASE/'cad/build_reference_precision438';binary,compiled_source=compiled_observer('438')
     deps=subprocess.check_output(['ldd',str(binary)],text=True)
     if any('libSofa' in line and '=>' in line and '/home/ubuntu/SOFA/v26.06.00/' not in line for line in deps.splitlines()):raise ValueError('SDK mismatch')
     (out/'ldd.txt').write_text(deps)
     (out/'Observer.cpp').write_bytes(compiled_source.read_bytes())
-    (out/'CMakeLists.txt').write_bytes((BASE/'results/native_beam_reference432/CMakeLists.txt').read_bytes())
+    (out/'CMakeLists.txt').write_bytes((BASE/'results/native_beam_reference_precision439/CMakeLists.txt').read_bytes())
     (out/'CMakeCache.txt').write_bytes((build/'CMakeCache.txt').read_bytes());records=[]
     for geometry,straight in [('flat',True),('flat',False),('curved',False)]:
         for observed in (False,True):

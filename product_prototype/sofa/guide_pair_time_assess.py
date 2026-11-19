@@ -5,7 +5,7 @@ import numpy as np
 from analyse import BASE,sha
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);names=['b3_guide_pair483','b3_guide_pair_half496','b3_guide_pair_quarter497'];records=[]
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs=3,default=['b3_guide_pair483','b3_guide_pair_half496','b3_guide_pair_quarter497']);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);names=a.cases;records=[]
  for alarm in ('1','5'):
   for body in (0,1):
    data=[list(csv.DictReader((BASE/'results'/name/alarm/f'guide{body}.csv').open())) for name in names]

@@ -1,4 +1,11 @@
-## Latest assembly scope after407–430,2026-11-19
+## Latest assembly scope after432–440,2026-11-19
+
+Native Rail coupon diagnoses do not validate product attachments or hardware.
+Existing B3 actual moving interference,STEP assembly,actuator and fastener/tolerance
+gates stay open. No CAD alteration to conceal physical failures.
+See NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md.
+
+## Historical assembly scope after407–430,2026-11-19
 
 No assembly geometry was changed to conceal failed physics. Existing B3 moving
 Guide clearance and exact solid/support sweep remain unresolved. Native coupon

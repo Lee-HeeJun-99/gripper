@@ -1,4 +1,22 @@
-## Latest next work after native407–430,2026-11-19
+## Latest next work after native432–440,2026-11-19
+
+Feature e5d4dae/bc762c1. Read product_prototype/reports/CHECKPOINT.md and
+NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md. Reference lengths/initial force
+and same-state full native matrix comparison are DONE:rest-transform choice
+removes initial force,modern/addDForce blocks agree exactly. Do not repeat.
+Loaded geometric433 and corrected ramp435 still FAIL;434 wrong-attribute zero
+load is excluded,preserved.439 precision observer q/v regression exact0.
+
+Next independent diagnostic:native FORCE at PRIVATE linearized reference440,
+partition axial/transverse/rotational residual and coordinate precision before
+another evidence-based native plan. No custom force/ODE solver,accepted-state
+injection,tolerance waiver or repeated cap/ramp sweeps. B3 promotion blocked.
+Exact first command:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_precision_assess440/summary.json`
+Build438 and evidence v13/raw identities/reproduction commands in authority.
+No physics child intentionally left running;no automatic background restart.
+
+## Historical next work after native407–430,2026-11-19
 
 Feature commits3593421,c487517,127119b,e0d5750. Read product_prototype/reports/CHECKPOINT.md
 and NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md first.

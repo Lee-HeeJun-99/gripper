@@ -1,4 +1,14 @@
-## Latest validation407–430,2026-11-19
+## Latest validation432–440,2026-11-19
+
+Initial native BeamAdapter assembly/addDForce exact agreement and geometric-rest
+zero force/torque confirmed.439 precision regression retains nine force/matrix
+files exactly;actual valid control/observer mapped-center q/v difference0.
+Loaded433/435 still FAIL.434 zero load from unused API fields EXCLUDED;not bending
+evidence.440 is PRIVATE initial linearized reference only. No time/mesh/contact/
+whole-energy/grasp promotion. SDK unchanged;feature e5d4dae/bc762c1.
+Authority:NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md;evidence v13.
+
+## Historical validation407–430,2026-11-19
 
 Feature commits3593421,c487517,127119b,e0d5750;authority:
 `NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md`.

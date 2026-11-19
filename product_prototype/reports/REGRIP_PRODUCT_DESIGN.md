@@ -1,4 +1,11 @@
-## Latest product status after native coupons407–430,2026-11-19
+## Latest product status after native432–440,2026-11-19
+
+No B3 geometry or product acceptance change. Initial native Rail rest/assembly
+diagnosis is complete,but loaded model still fails;no replacement selected.
+100g/Lift/CAD/STEP/fabrication claims remain unchanged and unqualified.
+See NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md.
+
+## Historical product status after native coupons407–430,2026-11-19
 
 B3 CAD/functional holding baseline preserved;NO alternative model or geometry
 is approved for production. Native shell fails continuum/mesh/precurve checks;

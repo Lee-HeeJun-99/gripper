@@ -1,4 +1,13 @@
-## Latest native model comparison407–430,2026-11-19
+## Latest native model comparison432–440,2026-11-19
+
+Geometric rest fixes initial native Rail residual,not loaded failure. Same-state
+modern/addDForce blocks agree exactly;do not reuse the spring415 bug diagnosis.
+433/435 loaded native alternatives FAIL;no geometry/material/force fitting and
+no product model selected.440 PRIVATE linearized Euler agreement is not a loaded
+stiffness ratio or B3 performance comparison. Authority:
+NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md;feature e5d4dae/bc762c1.
+
+## Historical native model comparison407–430,2026-11-19
 
 No new product geometry selected. B3 remains functional research baseline only.
 Native shell and rectangular BeamAdapter are separate coupon models,not fair

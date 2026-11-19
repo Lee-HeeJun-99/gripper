@@ -1,0 +1,37 @@
+{
+  "scope": "Native flat thin-strip bending diagnostic,NOT calibrated isotropic shell or B3/contact/time certification",
+  "source_commit": "6b20e854f578079e1df492d3be521a06b1c24000",
+  "source_sha256": "c3dba02bb7f3385aad7bc7a6a67b4210bec00d04bd9ac9dc891540caf6e543be",
+  "binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "E_Pa": 250000000.0,
+  "thickness_m": 0.0001,
+  "nu": 0.0,
+  "bending_D_Nm": 2.083333333333334e-05,
+  "force_N": 1e-06,
+  "solver": "graph-cg",
+  "cg_tolerance": 1e-10,
+  "manufactured_precurve": false,
+  "approximate_Euler_tip_m": 0.0006858999999999999,
+  "records": [
+    {
+      "nx": 41,
+      "ny": 3,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 27.328842554008588,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "014af17139807c1de7053164abf3f865a7abfb07e93a1955b338a76956d35a05",
+          "command.json": "6173110dc5c9d851336653e243581dc6bc2ad6e38d0be070e7f84dd9b961d37c",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "007e8b5d687631d15395152daba7df841c43a7acfa6e33ef312653e971a21a1d"
+        }
+      },
+      "scene_sha256": "76cc6b58ed0403f9f3b426e22dd2c0e440ed3b67d7432202424a2184fcb2a9bb",
+      "status": "FAIL_NATIVE_SOLVE"
+    }
+  ]
+}

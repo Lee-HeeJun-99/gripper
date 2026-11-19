@@ -1,4 +1,33 @@
-## Latest checkpoint — native backward error/alternatives407–430,2026-11-19
+## Latest checkpoint — native reference/assembly432–440,2026-11-19
+
+Feature commits:e5d4dae,bc762c1. Authority:
+`product_prototype/reports/NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md`.
+Evidence:`product_prototype/reports/evidence_native_reference_v13/manifest.json`.
+
+-432/439 initial native modern assembly and full addDForce agree EXACTLY in all
+  four translation/rotation blocks. This next task is DONE,not to be repeated.
+-Flat straight=true starts with1.01244e-12N free force and strict rest FAIL.
+  Actual geometric rest transforms remove initial force/torque;rest q/v control
+  differences0.439 exports native lengths at17digits;432 generic string was rounded.
+-433 loaded21/41/81 geometric-rest cases FAIL.435 corrected native20-stage load
+  continuation also FAILs.434 unsupported fields caused zero load:EXCLUDED,not PASS;
+  original records retained. Runner now rejects unused attributes.
+-440 measured initial tangent PRIVATE linear reference matches Euler to9.04e-13
+  relative;not an actual accepted state,loaded bending or full energy certification.
+-New431/438 read-only builds and frozen source/binary guards are reusable.
+  Precision-only changes retain nine initial force/matrix CSVs exactly and actual
+  zero-load mapped-center q/v exactly. All old B3/raw/verdicts remain preserved.
+
+NEXT:read439/440,then query native FORCE at PRIVATE linear reference,partition
+axial/transverse/rotational residual and representation error. Do NOT install
+private coordinates as accepted state or repeat cap/ramp sweeps without evidence.
+Immediate command:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_precision_assess440/summary.json`
+B3 full wrapping/mesh/time/energy/hardware-clearance/fabrication remain open;
+100g/Lift NOT RUN. No physical process intentionally left running;no automatic
+restart promised. Exact reproduction/build/raw identities are in the authority.
+
+## Historical checkpoint — native backward error/alternatives407–430,2026-11-19
 
 Feature commits:3593421,c487517,127119b,e0d5750. Authority:
 `product_prototype/reports/NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md`.

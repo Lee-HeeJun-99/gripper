@@ -1,4 +1,15 @@
-## Latest cycle — native alternatives407–430,2026-11-19
+## Latest cycle432–440,2026-11-19
+
+e5d4dae/bc762c1 implement actual reference/force/full native assembly inventory.
+Initial modern/addDForce matrices agree exactly;actual rest transforms eliminate
+flat reference residual. Loaded433 and corrected ramp435 still FAIL.434 wrong
+attributes EXCLUDED,old bytes retained;new unused-attribute guard prevents reuse.
+439 full-precision read-only observer regression passes zero state difference;
+440 PRIVATE tangent/Euler algebra is not accepted-state or grasp qualification.
+Next:finite PRIVATE reference native-force residual partition,not more cap/ramp
+sweeps. Authority:NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md;v13 evidence.
+
+## Historical cycle — native alternatives407–430,2026-11-19
 
 Problem:loaded thin-section equilibrium was unqualified. Implemented read-only
 native probe/assembled-matrix observers, frozen binary identities, loaded component

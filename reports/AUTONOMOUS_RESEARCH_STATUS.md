@@ -1,4 +1,15 @@
-## Latest status407–430,2026-11-19
+## Latest status432–440,2026-11-19
+
+Feature e5d4dae/bc762c1:actual native initial Rail reference/force and full same-state
+assembly comparison completed. Rest transforms remove initial residual;four
+modern/addDForce matrix blocks agree exactly. Loaded433/435 remain FAIL;434 wrong
+attributes excluded/preserved.439 precise Data export and actual rest q/v identity
+verified.440 PRIVATE linearized reference is not actual loaded or grasp evidence.
+Authority:product_prototype/reports/NATIVE_BEAM_REFERENCE_AND_ASSEMBLY_20261119.md.
+Evidence v13. Prior B3 functional50g/release and all product gate failures retained.
+No SDK changes,push,100g,Lift or fabrication promotion.
+
+## Historical status407–430,2026-11-19
 
 Native loaded-section backward error and stock bending alternatives implemented
 and actually tested;feature commits3593421,c487517,127119b,e0d5750. Report:

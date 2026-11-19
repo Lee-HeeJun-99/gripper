@@ -24,6 +24,13 @@ def main():
   path=ROOT/name;old_count+=1
   if not path.is_file() or sha(path)!=digest:old_fail.append(name)
  result['prior_product_immutable']=dict(checked=old_count,mismatches=old_fail,status='PASS' if not old_fail else 'FAIL',scope='Raw,old assets,private binary,scenes;live source/narrative intentionally mutable')
+ newer=BASE/'reports/evidence_native_coupling_v2/manifest.json';new_fail=[];new_count=0
+ if newer.exists():
+  for name,digest in json.loads(newer.read_text())['files'].items():
+   if not(name.startswith('product_prototype/results/') or name.startswith('product_prototype/reports/evidence_native_coupling_v2/') or any(name.startswith('product_prototype/'+x) for x in ('meshes/','drawings/','cad/build_','sofa/scenes/'))):continue
+   new_count+=1;path=ROOT/name
+   if not path.is_file() or sha(path)!=digest:new_fail.append(name)
+ result['prior_coupling_immutable']=dict(checked=new_count,mismatches=new_fail,status='PASS' if not new_fail else 'FAIL')
  for folder in sorted((BASE/'results').iterdir()):
   if not folder.is_dir():continue
   summary=folder/'summary.json'
@@ -37,7 +44,7 @@ def main():
   for f in folder.rglob('*'):
    if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
  for folder in (BASE/'results').iterdir():
-  if folder.is_dir() and (folder.name.endswith('_144') or folder.name.endswith('_145')):
+  if folder.is_dir() and any(folder.name.endswith('_'+x) for x in ('144','145','165')):
    for f in folder.glob('*.png'):shutil.copy2(f,out/(folder.name+'_'+f.name))
  for f in (BASE/'cad').glob('build_*/libReGripProductSequence.so'):result['files'][str(f.relative_to(ROOT))]=sha(f)
  for top in ('config','cad','drawings','meshes','sofa'):
@@ -46,5 +53,5 @@ def main():
  for f in out.iterdir():
   if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
  (out/'manifest.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(output=str(out),legacy=result['legacy'],cases=len(result['cases']),files=len(result['files']))))
- if fail or old_fail:raise SystemExit('Prior immutable evidence mismatch;inspect,do not rewrite baseline')
+ if fail or old_fail or new_fail:raise SystemExit('Prior immutable evidence mismatch;inspect,do not rewrite baseline')
 if __name__=='__main__':main()

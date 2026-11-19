@@ -1,0 +1,63 @@
+{
+  "status": "FAIL",
+  "scope": "predeclared external-support-free native holding functionality;NOT time/mesh/energy/material/fabrication certification",
+  "tests": {
+    "vertical_slip": false,
+    "speed": true,
+    "support_clearance": false,
+    "support_reaction": false,
+    "row_partition": true,
+    "gravity": true
+  },
+  "protocol": {
+    "scope": "experimental native holding,NOT whole physical certification",
+    "mass_kg": 0.1,
+    "radius_mm": 20.0,
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "window_s": [
+      1.6,
+      2.0
+    ],
+    "reference_s": 1.0,
+    "max_vertical_slip_mm": 2.0,
+    "max_speed_mm_s": 5.0,
+    "minimum_support_surface_gap_mm": 5.0,
+    "maximum_support_resultant_N": 1e-05,
+    "friction_assumed": 0.3,
+    "contact_rows_required": true
+  },
+  "vertical_slip_mm": 39.999999999485084,
+  "translation_drift_mm": 40.00000000000158,
+  "max_speed_mm_s": 4.662936703426235e-12,
+  "minimum_support_gap_mm": 0.20000000000000573,
+  "maximum_support_reaction_N": 0.9810000000000278,
+  "hold_mean_finger_object_force_N": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "row_partition_max_error_Ns_Nms": 8.673617379884035e-19,
+  "ambiguous_rows": 0,
+  "linear_momentum_max_error_Ns": 2.168404344971009e-18,
+  "sphere_angular_momentum_max_error_Nms": 0.0,
+  "quaternion_norm_error": 0.0,
+  "support_end_clock_position_error_m": 0.00020000000000000573,
+  "support_begin_clock_position_error_m": 0.0,
+  "support_timing_note": "stock LinearMovement uses begin-of-step context;record both clocks,do not silently shift physical state",
+  "cable_work": null,
+  "contact_area": null,
+  "pressure": null,
+  "whole_energy": "NOT MEASURED",
+  "input_hashes": {
+    "summary.json": "95a9ca4a8b6b707b4d9f355c1f7d25c0074be57f0d42a8fe46ca66c5e42b506c",
+    "holding_protocol.json": "d048a78284559432d89e2673b4aab9685c858a111421d4a3d14c8e4506f7146b",
+    "contact_rows.csv": "c0a792a94f8b1efa528428a00c75852d329e273dc7ee2289bfcc3185ea13dc1d",
+    "support.csv": "5db98fe9f64172dcb1ff0fb7f331324820894b6a91941d9df88bddef2256547f",
+    "object.csv": "39bb603e71d823925aeb5926f7a7deda8572799b7d46f300d7c4e04eca72df77"
+  },
+  "source_sha256": "55011a69aa8ea3223a21a5a26edc91e41c8c515d8ae0bafa05fd0af050ef994b"
+}

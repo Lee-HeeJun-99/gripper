@@ -1,0 +1,73 @@
+{
+  "status": "FAIL",
+  "scope": "predeclared external-support-free native holding functionality;NOT time/mesh/energy/material/fabrication certification",
+  "tests": {
+    "vertical_slip": false,
+    "speed": true,
+    "support_clearance": true,
+    "support_reaction": true,
+    "row_partition": true,
+    "gravity": true
+  },
+  "protocol": {
+    "scope": "experimental native holding,NOT whole physical certification",
+    "mass_kg": 0.05,
+    "radius_mm": 30.0,
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "window_s": [
+      1.6,
+      2.0
+    ],
+    "reference_s": 1.0,
+    "max_vertical_slip_mm": 2.0,
+    "max_speed_mm_s": 5.0,
+    "minimum_support_surface_gap_mm": 5.0,
+    "maximum_support_resultant_N": 1e-05,
+    "friction_assumed": 0.3,
+    "contact_rows_required": true
+  },
+  "vertical_slip_mm": 9.308411395407862,
+  "translation_drift_mm": 9.308435006343108,
+  "max_speed_mm_s": 4.624588293259121,
+  "minimum_support_gap_mm": 30.891590896561432,
+  "maximum_support_reaction_N": 0.0,
+  "hold_mean_finger_object_force_N": [
+    -1.3062122284036607e-05,
+    7.343195024456463e-06,
+    0.4916187410902684
+  ],
+  "row_partition_max_error_Ns_Nms": 6.505213034913027e-19,
+  "ambiguous_rows": 0,
+  "linear_momentum_max_error_Ns": 8.673617379884035e-19,
+  "sphere_angular_momentum_max_error_Nms": 0.0,
+  "quaternion_norm_error": 0.0,
+  "support_end_clock_position_error_m": 0.0,
+  "support_begin_clock_position_error_m": 0.0,
+  "support_timing_note": "stock LinearMovement uses begin-of-step context;record both clocks,do not silently shift physical state",
+  "cable_work": null,
+  "contact_area": null,
+  "pressure": null,
+  "whole_energy": "NOT MEASURED",
+  "input_hashes": {
+    "summary.json": "7f3b99dae2a8da4fd51f1a5869de57fa3bb9e310e46ec8bf6d3cf5f5a38094e0",
+    "holding_protocol.json": "600e7f1136dd446134430a9db48ecb6e81921f9fca463165e3a5e2a76687288c",
+    "contact_rows.csv": "537c16cb58022207fca33be72bc53ad090aa711f662774690e23ec6d115b3263",
+    "support.csv": "e9647d9a12c43655f6afb58eda54de5f4c6cdc7c1468475f4b0efd2be373c5ae",
+    "object.csv": "55e9f0f3fa5cf52e68ceb3670e8d75675a7e47bf40ca98d8dc2e4e269ed37d46"
+  },
+  "source_sha256": "e13b28c685b8d50c99cce79c7cc3d1ebd6192ed12e852184ace7c4b3544ba2db",
+  "hold_mean_surface_object_force_N": [
+    -1.3062122284035082e-05,
+    7.3431950244596306e-06,
+    0.4916187410902684
+  ],
+  "hold_mean_hardware_only_object_force_N": [
+    0.0,
+    0.0,
+    0.0
+  ]
+}

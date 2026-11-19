@@ -1,0 +1,40 @@
+{
+  "scope": "saved-state guide attachment/actuation audit;NOT time/energy/grasp approval",
+  "case": "rigidified_out14_actuation_131",
+  "source_sha256": "70721bf954519d81ea181c3c5e04902ff4ed748dfa362f280c592a40934e88bb",
+  "input_hashes": {
+    "summary.json": "8921d991f96c9621d8d493901d698fc401b761023e7ec6572bf82d5639f6b1e7",
+    "scene.scn": "e75b070dedfec87dde1d4df83cc5d2321ee4874ccf2b7469a54931591c452087"
+  },
+  "fingers": [
+    {
+      "max_attachment_component_error_m": 1.3877787807814457e-17,
+      "attachment_api_status": "PASS",
+      "quaternion_norm_error": 4.440892098500626e-15,
+      "tracking": [
+        {
+          "cable": 0,
+          "max_error_mm": 0.0036501120881079,
+          "max_hold_error_mm": 2.322100844942554e-10,
+          "peak_force_N": 3.6856350565478952,
+          "sampled_actual_path_work_J": 0.00031011109674417697,
+          "sampled_command_work_J": 0.00030235099093891757,
+          "work_scope": "sampled trapezoid proxy,NOT stage-consistent or whole energy identity"
+        },
+        {
+          "cable": 1,
+          "max_error_mm": 0.003289087823730996,
+          "max_hold_error_mm": 2.059949433252939e-10,
+          "peak_force_N": 3.511847237448736,
+          "sampled_actual_path_work_J": 0.00029769266189796223,
+          "sampled_command_work_J": 0.0002920588181115104,
+          "work_scope": "sampled trapezoid proxy,NOT stage-consistent or whole energy identity"
+        }
+      ]
+    }
+  ],
+  "solver": {
+    "maximum_reported_error": 1.9786430628165734e-10,
+    "max_iterations": 8
+  }
+}

@@ -1,3 +1,12 @@
+## Product prototype development —2026-11-19
+
+Separate product_prototype implemented without editing legacy models/tools/SDK.
+Generated parametric assembly sources,STLs,SVG/BOM;executed stock native single/three
+finger scenes,R20/R30 sphere,cylinder/box,gravity,root lift and support withdrawal.
+Preserved native factory/nonfinite/contact/clearance/time/holding/lift failures.
+050 stock straight-cable coupon PASS,paired FEM cable tracking NOT QUALIFIED.
+Details,source/binary hashes,actual plots:product_prototype/reports/.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

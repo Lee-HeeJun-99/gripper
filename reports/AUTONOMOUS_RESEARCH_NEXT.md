@@ -1,3 +1,15 @@
+## Next product task —2026-11-19
+
+Native straight cable050 tracks command within1.78e-17m,but actual finger044
+8mm command yields5.360/5.793mm shortening at2s. Isolate ONE native cable vs paired
+cables and inside-surface vs outboard Barycentric guides using SAME FEM/inputs.
+Do not repeat historical custom solver campaigns or assume new solver needed.
+Track actual mapped path length,solver residual,tip/curvature and runtime.
+Support withdrawal044 holding FAIL;support intermediate API timing mismatch.2mm
+also FAIL underSTRICT1e-12. Separate fixture timing audit from holding observation.
+FreeCAD/kernel unavailable:export script exists,STEP/assembly interference still BLOCKED.
+Exact commands and local Raw/Build paths:product_prototype/reports/CHECKPOINT.md.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

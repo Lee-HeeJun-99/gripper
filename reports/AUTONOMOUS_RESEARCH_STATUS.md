@@ -1,3 +1,14 @@
+## Product/native SOFA pivot —2026-11-19
+
+User priority now product CAD/native SOFA,not another custom solver. Legacy evidence preserved.
+Implemented product_prototype/:parametric SCAD/FreeCAD source,closed Skin/Rail STL,
+dimensioned/exploded SVG,BOM,and actual stock-SOFA three-finger free-object scenes.
+Functional commit d6c4580. STEP/whole assembly kernel verification NOT GENERATED.
+Native actuation/contact observed;whole-time gate FAIL,wrapping NOT PROVEN,
+independent holding FAIL044,lift FAIL021,fabrication NOT READY.
+Straight cable coupon050 STRICT tracking PASS1.77809e-17m,not finger/grasp approval.
+See product_prototype/reports/REGRIP_SOFA_NATIVE_VALIDATION.md and checkpoint.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

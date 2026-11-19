@@ -1,3 +1,12 @@
+## Product development checkpoint,NOT final grasp completion —2026-11-19
+
+Product-first priority adopted. Native SOFA scene actually runs three deformable
+fingers and a free rigid body;new custom physics solver not introduced.
+CAD source and partial STL assets created,not STEP/verified assembly.
+Wrapping/holding/lift/fabrication readiness NOT achieved. Detailed status matrix:
+product_prototype/reports/REGRIP_SOFA_NATIVE_VALIDATION.md.
+All prior research below remains historical;its PASS scope is unchanged.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

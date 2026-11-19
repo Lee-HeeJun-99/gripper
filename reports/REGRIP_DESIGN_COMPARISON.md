@@ -1,3 +1,12 @@
+## Product/native comparison scope —2026-11-19
+
+New product_prototype uses bonded tetra Skin/Rails,stock corotational FEM/native
+cables/contact,410mm³/finger,and assumed material values. It is not a matched
+comparison with old Beam/film custom models. No superiority or grasp-success claim.
+Outboard4/10/14 and denser-guide trials expose wire-clearance/actuation tradeoffs.
+Independent holding044 and root lift021 FAIL;wrapping NOT PROVEN.
+See product_prototype/reports/REGRIP_SOFA_NATIVE_VALIDATION.md for actual evidence.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

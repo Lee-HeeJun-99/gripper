@@ -1,3 +1,10 @@
+## Product-first resume checkpoint —2026-11-19
+
+Latest product functional commit d6c4580;native stock cable isolation050 subsequently
+verified. See product_prototype/reports/CHECKPOINT.md for exact Raw/build/commands.
+Do NOT resume legacy checkpoint1644 into changed native tetra/bonded physics.
+No background automatic continuation is running or promised.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

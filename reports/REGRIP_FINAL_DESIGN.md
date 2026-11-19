@@ -1,3 +1,12 @@
+## Product candidate,NOT final selection —2026-11-19
+
+Single Skin+two Rails+two edge tendons now has parametric product CAD source and
+actual stock SOFA scenes in product_prototype/. Material volume410mm³/finger,
+assumed0.1mm Skin/0.5mm Rails differs from old research. Not equal-volume superiority.
+Outboard14 is only a candidate:larger stroke can still cause wire interference.
+Holding/lift failed;STEP/whole assembly/motor/material measurements absent.
+Final design/fabrication readiness withheld. Legacy results below preserved.
+
 ## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
 
 Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope

@@ -1,4 +1,17 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest native model comparison407–430,2026-11-19
+
+No new product geometry selected. B3 remains functional research baseline only.
+Native shell and rectangular BeamAdapter are separate coupon models,not fair
+same-geometry B3 performance comparisons. Shell PCG solves its stored equations,
+but mesh/constitutive/stress-free precurve gates FAIL. Rectangular BeamAdapter
+retains curved rest positions exactly at zero load,not loaded certification.
+Loaded Skin/Rail private matrix references407/425 are NOT accepted states or
+certified stiffness ratios. No fitted shell scalar or physical material change.
+Authority:`NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md`;
+feature commits3593421,c487517,127119b,e0d5750.429 directional Rigid3 FD is
+diagnostic only;430 raised iteration budget still FAILs.100g/Lift/CAD promotion NOT RUN.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

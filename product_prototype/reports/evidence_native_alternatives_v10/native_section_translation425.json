@@ -1,0 +1,130 @@
+{
+  "scope": "Native LOADED static tests plus private backward-error reference;private positions NOT accepted states;no B3/mesh/time qualification",
+  "source_commit": "3593421932fe59ef9c60c1bbf81d24af64495136",
+  "source_sha256": "ef7242446c0969e0de93dc45c86eb06d397c5a13f406663bff9be281c9b9cc51",
+  "observer_source_sha256": "792b0b37c794e2db4c347bb52856410434be0712c42f38ad144121dde9f924ed",
+  "binary_sha256": "e143096e607ab25c0740254b8bd66a7983a3bd6b1ba6a1ec447925b52e514f53",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "force_gate_N": 1e-12,
+  "origin_shift_m": [
+    -0.04995,
+    0.0,
+    0.05
+  ],
+  "reference_K_scope": "original405 matrix; translation invariance checked independently in native observer",
+  "records": [
+    {
+      "component": "skin_only",
+      "force_N": 1e-06,
+      "tip_nodes": 8,
+      "tip_load_positions_m": [
+        [
+          5.000000000000143e-05,
+          0.006,
+          -0.05
+        ],
+        [
+          -5.000000000000143e-05,
+          0.006,
+          -0.05
+        ],
+        [
+          5.000000000000143e-05,
+          0.004,
+          -0.05
+        ],
+        [
+          -5.000000000000143e-05,
+          0.004,
+          -0.05
+        ],
+        [
+          5.000000000000143e-05,
+          -0.004,
+          -0.05
+        ],
+        [
+          -5.000000000000143e-05,
+          -0.004,
+          -0.05
+        ],
+        [
+          5.000000000000143e-05,
+          -0.006,
+          -0.05
+        ],
+        [
+          -5.000000000000143e-05,
+          -0.006,
+          -0.05
+        ]
+      ],
+      "matrix_sha256": "5eb243464173fc8c675034139917cf0de3a126529cb1591e78590ed77641646e",
+      "private_linear_residual_N": 4.422385367998673e-14,
+      "private_represented_linear_residual_N": 5.827363258271999e-10,
+      "position_rounding_max_m": 3.4282537193399914e-18,
+      "private_reference_skin_tip_m": 2.7560168272674455e-07,
+      "runs": [
+        {
+          "label": "zero_probe",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.1219436340034008,
+            "pid": 51,
+            "artifacts": {
+              "stdout.log": "90771c59c8378a4519b42623610eec699a6d4fd0d5c00d1dc96fbcbfe6f9ae2b",
+              "command.json": "95bf441425fe1c191fe6337b6044e356e3874d30316c6e2cc57058c13fee5986",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "f524a561f991451b4549cde52d2f8e41b54aefd2a5ef8cf65983a5b929d187de"
+            }
+          },
+          "status": "COMPLETED_NATIVE_STATIC_ONLY",
+          "actual_state_error_m": 0.0,
+          "actual_skin_tip_displacement_m": -0.0,
+          "private_native_force_residual_N": 6.988217557118719e-10,
+          "private_native_force_vs_K_defect_N": 3.520307442796014e-10,
+          "initial_K_vs_original_relative": 3.228371646612909e-15
+        },
+        {
+          "label": "loaded_control",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.20503458403982222,
+            "pid": 71,
+            "artifacts": {
+              "stdout.log": "b215c238d14a0c3392751b4602b35b04a7653a612b2bf871ff0ff52197b6cb12",
+              "command.json": "72c721fdde1a9d45f5d6913aba1d7343697de9f0b392c2fab2851cf738dc4e26",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "8773b3c62907d337208522531dc5a2e20ccc93c17e81ea2ce37f73ee53a530fc"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null
+        },
+        {
+          "label": "loaded_probe",
+          "process": {
+            "exit_code": -9,
+            "process_status": "nonlinear_failure",
+            "runtime_s": 0.2082904839189723,
+            "pid": 72,
+            "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+            "artifacts": {
+              "stdout.log": "599b33896ad637b4f8715b6b2baf58d9b49f3756e74e30732f822de2de7d5dc6",
+              "command.json": "5902dd72c443f8bcf4c5e9e507bd21fb521557c3d02300bd51b62b4485b9d4ce",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "d1baaa5b3000908e170da7b1b2881082fb106a32552671e14db1fb3769802740"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null,
+          "private_native_force_residual_N": 6.988217557118719e-10,
+          "private_native_force_vs_K_defect_N": 3.520307442796014e-10,
+          "initial_K_vs_original_relative": 3.228371646612909e-15
+        }
+      ]
+    }
+  ]
+}

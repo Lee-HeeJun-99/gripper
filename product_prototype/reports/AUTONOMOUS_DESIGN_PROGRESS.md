@@ -1,4 +1,24 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest cycle — native alternatives407–430,2026-11-19
+
+Problem:loaded thin-section equilibrium was unqualified. Implemented read-only
+native probe/assembled-matrix observers, frozen binary identities, loaded component
+tests, stock shell/PCG/rectangular BeamAdapter coupons and byte-preserving evidence.
+Feature commits3593421,c487517,127119b,e0d5750;report:
+`NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md`.
+
+407/425 isolate amplified coordinate representation error;actual loaded static
+tests still FAIL1e-12N.415 measures native derivative-path mismatch34.7062%.
+PCG workaround solves shell coupons,but421 mesh/constitutive gates FAIL and419
+curved reference is not stress-free.423 native Rail rest test passes position
+identity only;422/424 loaded tests FAIL. No replacement adopted,SDK untouched.
+Continued429 Rigid3 addDForce directional FD,rest identity and unobserved control
+are DONE.427 wrong scalar API is excluded.430 iteration-cap hypothesis FAILs at
+Line Search58. Next:reference lengths/initial-force and actual assembled-vs-addDForce
+inventory. Repeated failed directions stopped;no100g/Lift expansion.
+Raw/reproduction/plot:evidence_native_alternatives_v11 and authority report.
+Old B3 functional evidence and all product gate failures remain unchanged.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

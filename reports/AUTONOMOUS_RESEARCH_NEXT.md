@@ -1,4 +1,25 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest next work after native407–430,2026-11-19
+
+Feature commits3593421,c487517,127119b,e0d5750. Read product_prototype/reports/CHECKPOINT.md
+and NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md first.
+Loaded Skin/Rail407 and translated425 are DONE and FAIL strict equilibrium;
+do not repeat them unchanged.415 native derivative-path mismatch is measured.
+Stock PCG numerical workaround is DONE;421 mesh/constitutive FAIL,419 precurve
+FAIL.422/424 loaded rectangular BeamAdapter FAIL;423 zero-load position identity
+only PASS. Do not promote these models or expand B3 to100g/Lift.
+
+429 Rigid3 directional addDForce FD is DONE.427 scalar-API artifact excluded.
+430 raised iteration cap120 still FAILs actual Line Search58. Next independent
+hypothesis:reference segment lengths/initial-force inventory and modern assembled
+matrix versus addDForce at the SAME state,before a new evidence-based native plan.
+No custom ForceField or SDK patch. Separate ongoing
+exact moving-solid clearance/CAD kernel limitations from numerical qualifications.
+First exact command:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_rigid_tangent429/summary.json`
+Raw/frozen binaries/reproduction/evidence v11 are linked in authority. No physics
+child intentionally left running;no automatic background continuation claim.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

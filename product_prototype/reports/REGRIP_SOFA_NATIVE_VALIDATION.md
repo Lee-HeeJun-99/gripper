@@ -1,4 +1,22 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest validation407–430,2026-11-19
+
+Feature commits3593421,c487517,127119b,e0d5750;authority:
+`NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md`.
+All loaded thin-section tests407/425 FAIL strict equilibrium. Read-only probes
+separate coordinate rounding from native force/K differences;no accepted-state
+replacement. Actual native modern/legacy spring matrices415 differ34.7062%.
+Native matrix-free PCG is runnable416/417;mesh/constitutive421 and curved
+stress-free419 FAIL.423 passes exact zero-load position identity only;loaded
+BeamAdapter422/424 FAIL. None qualifies B3 mesh/time/contact/energy.
+Observer420 states exactly match417. Frozen source/binary guards protect400/406/410.
+Evidence v8/v9 verifies764/395 prior immutable files with no mismatches.
+429 actual native addDForce directional FD completed with separate force/torque
+errors and exact curved rest-position control identity.427 scalar-API comparison
+is EXCLUDED as observer failure.430 raises only iteration cap but Line Search58
+FAILs. v11 archives all21 cases. No SDK modification,new force law,gate relaxation,
+100g or Lift.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

@@ -1,4 +1,13 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest assembly scope after407–430,2026-11-19
+
+No assembly geometry was changed to conceal failed physics. Existing B3 moving
+Guide clearance and exact solid/support sweep remain unresolved. Native coupon
+alternatives are not replacement parts or verified joint models. STEP assembly,
+actuator/fastener/tolerance qualification and fabrication readiness remain open.
+See `NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md` for actual
+native tests and reasons no alternative was integrated.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

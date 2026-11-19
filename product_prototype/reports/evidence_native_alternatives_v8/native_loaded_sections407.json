@@ -1,0 +1,344 @@
+{
+  "scope": "Native LOADED static tests plus private backward-error reference;private positions NOT accepted states;no B3/mesh/time qualification",
+  "source_commit": "6b20e854f578079e1df492d3be521a06b1c24000",
+  "source_sha256": "635403e12f35eb52bc655c532a743c89d6189e3214ed7ee56338912adfbf7c91",
+  "observer_source_sha256": "792b0b37c794e2db4c347bb52856410434be0712c42f38ad144121dde9f924ed",
+  "binary_sha256": "e143096e607ab25c0740254b8bd66a7983a3bd6b1ba6a1ec447925b52e514f53",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "force_gate_N": 1e-12,
+  "records": [
+    {
+      "component": "skin_only",
+      "force_N": 1e-06,
+      "tip_nodes": 8,
+      "tip_load_positions_m": [
+        [
+          0.05,
+          0.006,
+          -0.1
+        ],
+        [
+          0.0499,
+          0.006,
+          -0.1
+        ],
+        [
+          0.05,
+          0.004,
+          -0.1
+        ],
+        [
+          0.0499,
+          0.004,
+          -0.1
+        ],
+        [
+          0.05,
+          -0.004,
+          -0.1
+        ],
+        [
+          0.0499,
+          -0.004,
+          -0.1
+        ],
+        [
+          0.05,
+          -0.006,
+          -0.1
+        ],
+        [
+          0.0499,
+          -0.006,
+          -0.1
+        ]
+      ],
+      "matrix_sha256": "5eb243464173fc8c675034139917cf0de3a126529cb1591e78590ed77641646e",
+      "private_linear_residual_N": 4.3534881784159114e-14,
+      "private_represented_linear_residual_N": 3.8732871460032054e-09,
+      "position_rounding_max_m": 6.932671334351722e-18,
+      "private_reference_skin_tip_m": 2.7560168318954355e-07,
+      "runs": [
+        {
+          "label": "zero_probe",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.17439183394890279,
+            "pid": 13,
+            "artifacts": {
+              "stdout.log": "72f7567f0e0ee9f80c2d2612522ad0b723faddbb503280a7cce81536d79b50bd",
+              "command.json": "9af823d5cc7dd507577ee0838e991a4819bde2ec3a4e122d799a06321ea0d8b7",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "bc46faffb4d6fa99167395ebbfc391693e59e19edd62e1a77a5021370cca9af2"
+            }
+          },
+          "status": "COMPLETED_NATIVE_STATIC_ONLY",
+          "actual_state_error_m": 0.0,
+          "actual_skin_tip_displacement_m": -0.0,
+          "private_native_force_residual_N": 3.873233741226073e-09,
+          "private_native_force_vs_K_defect_N": 1.1676285470606815e-11
+        },
+        {
+          "label": "loaded_control",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.3052967480616644,
+            "pid": 14,
+            "artifacts": {
+              "stdout.log": "fd6e47d6e36219b7bdff8e409cc76efec975566f0ea29dd477340c85d7f43c49",
+              "command.json": "a18f33d03405061c0d591c2dd85d3cfe1c7545936365ad704a2ce17ffdc64510",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "e68ada291ed39019570373f7b81857ae77e95f9f439a4150f7e2a13cd4f98d41"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null
+        },
+        {
+          "label": "loaded_probe",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.30544898798689246,
+            "pid": 15,
+            "artifacts": {
+              "stdout.log": "e4000ea9dc9a6582d5c11e2297c72c3533ce842a747bf4f97c676ea22304c2e5",
+              "command.json": "5cb529725968f5e6db34071113ef9a66c54c1c6e4b661c29027f28d51b1fa56a",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "48a805944b52147aec7cbfdc94a474dd3713c2fc5a4cec8f43c3fd29daa58b80"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null,
+          "private_native_force_residual_N": 3.873233741226073e-09,
+          "private_native_force_vs_K_defect_N": 1.1676285470606815e-11
+        }
+      ]
+    },
+    {
+      "component": "one_rail",
+      "force_N": 1e-06,
+      "tip_nodes": 8,
+      "tip_load_positions_m": [
+        [
+          0.05,
+          0.006,
+          -0.1
+        ],
+        [
+          0.0499,
+          0.006,
+          -0.1
+        ],
+        [
+          0.05,
+          0.004,
+          -0.1
+        ],
+        [
+          0.0499,
+          0.004,
+          -0.1
+        ],
+        [
+          0.05,
+          -0.004,
+          -0.1
+        ],
+        [
+          0.0499,
+          -0.004,
+          -0.1
+        ],
+        [
+          0.05,
+          -0.006,
+          -0.1
+        ],
+        [
+          0.0499,
+          -0.006,
+          -0.1
+        ]
+      ],
+      "matrix_sha256": "072ef2551a8ffed9c3b3648defe5bcff99c6ef5485dbac4b78339b35ceacc28c",
+      "private_linear_residual_N": 2.1388865775464214e-14,
+      "private_represented_linear_residual_N": 4.005988167755417e-09,
+      "position_rounding_max_m": 6.918135651338845e-18,
+      "private_reference_skin_tip_m": 1.7600583598878497e-07,
+      "runs": [
+        {
+          "label": "zero_probe",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.1686090090079233,
+            "pid": 16,
+            "artifacts": {
+              "stdout.log": "f9e059b64911744f9d0c3e0f8108916395378533827de9a31e58bcfb79b6a847",
+              "command.json": "159ad87a3aaf60a52d60d96d5898ebcc8e7fa7cd9904ac94119fcf4baf8defde",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "5325c73ac8c5778a21fb299edc3fafb007e3296617622823c93ea002de774e69"
+            }
+          },
+          "status": "COMPLETED_NATIVE_STATIC_ONLY",
+          "actual_state_error_m": 0.0,
+          "actual_skin_tip_displacement_m": -0.0,
+          "private_native_force_residual_N": 4.005937198831397e-09,
+          "private_native_force_vs_K_defect_N": 3.3737008742373774e-11
+        },
+        {
+          "label": "loaded_control",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.3063242830103263,
+            "pid": 17,
+            "artifacts": {
+              "stdout.log": "22693e3361c2db21a9962cd89c293d13cfab02b1185a9082012d3d814844a785",
+              "command.json": "e2fedfab06ddd7b1951a2d019630d663b0545afe5a81da21ecbda44cdfbffc18",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "0b194d18b98274c26e1ac6bdcc1efb9d6851860dc371780a6596e8a02aa6f740"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null
+        },
+        {
+          "label": "loaded_probe",
+          "process": {
+            "exit_code": -9,
+            "process_status": "nonlinear_failure",
+            "runtime_s": 0.3106588659575209,
+            "pid": 18,
+            "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+            "artifacts": {
+              "stdout.log": "4a8262ad264db66507b49f2a7fb648c9f508a7211a60ded39c773f86df9de306",
+              "command.json": "329b157137fcbfbdbdc5088c2c14d6d44f8ce27d97713812d6ee00e7a98e4043",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "6e44584854cf117dc60407c81206453f4767fb511099b9a07639bf0f0d958669"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null,
+          "private_native_force_residual_N": 4.005937198831397e-09,
+          "private_native_force_vs_K_defect_N": 3.3737008742373774e-11
+        }
+      ]
+    },
+    {
+      "component": "two_rails",
+      "force_N": 1e-06,
+      "tip_nodes": 8,
+      "tip_load_positions_m": [
+        [
+          0.05,
+          0.006,
+          -0.1
+        ],
+        [
+          0.0499,
+          0.006,
+          -0.1
+        ],
+        [
+          0.05,
+          0.004,
+          -0.1
+        ],
+        [
+          0.0499,
+          0.004,
+          -0.1
+        ],
+        [
+          0.05,
+          -0.004,
+          -0.1
+        ],
+        [
+          0.0499,
+          -0.004,
+          -0.1
+        ],
+        [
+          0.05,
+          -0.006,
+          -0.1
+        ],
+        [
+          0.0499,
+          -0.006,
+          -0.1
+        ]
+      ],
+      "matrix_sha256": "6809d9d7779529c047420f156e2a6356f3a5e5465eed5dff33ce5927f5f578f4",
+      "private_linear_residual_N": 2.5378156910275038e-14,
+      "private_represented_linear_residual_N": 4.603074334101328e-09,
+      "position_rounding_max_m": 6.880883830946461e-18,
+      "private_reference_skin_tip_m": 1.3128403246325122e-07,
+      "runs": [
+        {
+          "label": "zero_probe",
+          "process": {
+            "exit_code": 0,
+            "process_status": "exited",
+            "runtime_s": 0.20581231801770627,
+            "pid": 19,
+            "artifacts": {
+              "stdout.log": "c3866a3b0e1f49c9f65e87af77f3a0d04fa6fd2ff6e9c6c14bc0df8024173d97",
+              "command.json": "5472704fe09b3367e7b533668b5b587f9c3f750d92f67806491b54ba1417a06d",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "331428ff903bde904a3ece1758093c17150f5f3afa92eb96d1e29ba02aed8e0e"
+            }
+          },
+          "status": "COMPLETED_NATIVE_STATIC_ONLY",
+          "actual_state_error_m": 0.0,
+          "actual_skin_tip_displacement_m": -0.0,
+          "private_native_force_residual_N": 4.603242130798989e-09,
+          "private_native_force_vs_K_defect_N": 3.6399858881047015e-11
+        },
+        {
+          "label": "loaded_control",
+          "process": {
+            "exit_code": -9,
+            "process_status": "nonlinear_failure",
+            "runtime_s": 0.3147272130008787,
+            "pid": 20,
+            "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+            "artifacts": {
+              "stdout.log": "f4c3ade5cb6605960e8091e1ab2c4517de4a3b9e1fed0eed73196bf5f809d279",
+              "command.json": "50eb3499c723071419d15881a4110ada7c3708126780e6603d1b5b8e0b1259be",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "94b9a2f1986fbd313c9189873e031eae3acfb1fc76d90c91866ff011d54fa2d1"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null
+        },
+        {
+          "label": "loaded_probe",
+          "process": {
+            "exit_code": -9,
+            "process_status": "nonlinear_failure",
+            "runtime_s": 0.310442644986324,
+            "pid": 21,
+            "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+            "artifacts": {
+              "stdout.log": "1a6d7eeb92f49a955cd2139e64d396af89593b5b34b976ae7b51159fef514e34",
+              "command.json": "995bb14afadee12b8cc37f559f74c091e54b404ffddeb07f228ae841a6a4bbe3",
+              "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process.json": "254577bfd3a3facac545535c139aca71ac8fd72dcd0a42cd13678b573cc51051"
+            }
+          },
+          "status": "FAIL_NATIVE_SOLVE",
+          "actual_state_error_m": null,
+          "private_native_force_residual_N": 4.603242130798989e-09,
+          "private_native_force_vs_K_defect_N": 3.6399858881047015e-11
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,20 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest status407–430,2026-11-19
+
+Native loaded-section backward error and stock bending alternatives implemented
+and actually tested;feature commits3593421,c487517,127119b,e0d5750. Report:
+product_prototype/reports/NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md.
+Coordinate arithmetic contributes strongly to thin loaded residuals;translation
+reduces but does not solve the gate. Native spring matrix paths differ34.7062%.
+Stock PCG solves the spring model but mesh/constitutive/precurve FAIL. Native
+rectangular Rail retains curved rest positions only;loaded solves FAIL.
+No B3 replacement,100g,Lift,full wrapping,energy or fabrication qualification.
+Existing B3 functional50g holding/release and all historical verdicts preserved.
+429 read-only Rigid3 native tangent directional FD completed;427 wrong scalar-API
+comparison excluded.430 iteration-cap extension still Line Search FAILs.
+v8/v9 immutable audits764/395 files:zero mismatches;v10/v11 final archives retain
+later diagnostics. No SDK changes/push.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

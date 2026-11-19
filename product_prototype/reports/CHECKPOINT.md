@@ -1,4 +1,43 @@
-## Latest continuation — native elastic validation380–405,2026-11-19
+## Latest checkpoint — native backward error/alternatives407–430,2026-11-19
+
+Feature commits:3593421,c487517,127119b,e0d5750. Authority:
+`product_prototype/reports/NATIVE_SECTION_BACKWARD_ERROR_AND_ALTERNATIVES_20261119.md`.
+New evidence:`product_prototype/reports/evidence_native_alternatives_v11/manifest.json`.
+
+-407 actually tests loaded Skin/one-Rail/two-Rail. All loaded native trials FAIL;
+  PRIVATE matrix equilibria are NOT accepted states. Coordinate representation
+  amplifies residual from~1e-14N to~4e-9N; native force agrees with this diagnosis.
+-425 rigid coordinate translation preserves K to3.23e-15 relative, reduces but
+  does not cure residual. Both translated loaded trials remain FAIL1e-12N.
+-415 actual native bending derivative paths differ34.7062%; SDK NOT patched.
+  Stock matrix-free PCG416/417 works numerically, but mesh and constitutive
+  qualification421 FAIL; manufactured precurve419 is not stress-free. No B3 use.
+-423 native rectangular BeamAdapter curved zero-load state is exactly retained;
+  loaded422/424 FAIL. This is not loaded Rail/attachment certification.
+-429 Rigid3 directional native addDForce FD is DONE:force~.00312%,torque~.0890%;
+  curved observed/control rest positions exactly agree.427 scalar-API comparison
+  is an observer failure,excluded;not a native bug.430 raises only iteration cap
+  to120 and still FAILs actual Line Search at58. Do not repeat cap sweeps.
+-v8 verifies764 prior-v7 immutable files;v9 verifies395 prior-v8 immutable files;
+  zero mismatches. Historical evidence and all old PASS/FAIL retained.
+-B3 functional50g holding/release unchanged. Full wrapping,mesh/time,energy,
+  moving solid clearance,100g,Lift and fabrication remain unqualified/NOT RUN.
+
+Reusable read-only builds:cad/build_elastic_probe406,
+cad/build_assembled_observer410,cad/build_rigid_observer428;
+frozen identities in sofa/observer_identity.py.
+Raw:product_prototype/results/native_*407–430 (exact names in v11 manifest).
+No physics process is left intentionally running. No background restart promise.
+
+Next:429 directional FD is DONE. Read429/430,then inventory native rectangular
+BeamAdapter reference lengths/initial force and compare actual modern assembled
+matrix versus addDForce at the SAME state. No custom force law or cap sweep.
+Immediate exact restart:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_rigid_tangent429/summary.json`
+Reproduction commands/frozen sources/build hashes and explicit scope are in
+the authority. A unique tag is mandatory for any new physics run.
+
+## Historical continuation — native elastic validation380–405,2026-11-19
 
 Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
 and ALL prior failures remain unchanged;no product promotion,100g or Lift run.

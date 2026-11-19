@@ -55,7 +55,7 @@ Offline derivative test checks functional-law derivative only. The actual held
 ConstantForceField Jacobian remains ZERO and is NOT advertised as implicit gyro.
 
 613–615 extend FREE spin to100ms with SAME physical inputs,40/80/160steps.
-Measured cost~0.169–0.205s/child (100ms fine cost is in process logs);4GiB/480s guard.
+Measured100ms cost0.169–0.305s/child;contact fine max1.13850s;4GiB/480s guard.
 Projection from the measured short runs was far below480s;no long B3 process run.
 616 base/half/quarter angular invariant errors0.133470%,0.0667322%,0.0333655%.
 617 all-common-time/all-pair worst0.100100244% angular momentum at100ms:FAIL.

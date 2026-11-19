@@ -1,5 +1,13 @@
 ## Inertia/contact continuation600–622 — 2026-11-20
 
+Last functional commit:36f6831 (complete contact ownership/energy/validity-limit
+audit);input feature commit844afa1. Working branch development/regrip-autonomous-research.
+31 new archived campaigns592–622;22 actual Native children completed,all under
+4GiB/480s guard. Actual max Native runtime1.13850s;RSS NOT MEASURED.
+Current sampled-input/trapezoidal branches are stopped at reproducible validity
+limits;no host resource exhaustion claimed. A true inertial-force tangent is a
+separate unimplemented candidate,not silently approximated or declared PASS.
+
 Functional input commit:844afa1. Authority:NATIVE_SAMPLED_INERTIA_20261120.md.
 Evidence:evidence_product_long_inertia_v29/manifest.json → contact_inventory_v28 → inertia_v27.
 Latest4630files;prior4393immutable paths checked0mismatches. Old Raw/verdicts unchanged.

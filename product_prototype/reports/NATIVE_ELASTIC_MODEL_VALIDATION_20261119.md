@@ -31,6 +31,9 @@ ForceField,ODE or contact solver. It queries existing native addKToMatrix/addFor
 into private buffers,never injects a force or modifies q/v. Build400 links ONLY
 installed v26.06.00 libraries;402 preserves ldd,source,CMakeCache and binary hashes.
 Native force queries can alter internal caches:do not claim general query/history purity.
+401 was an INVALID scene-order probe:the observer plugin appeared after the child
+that referenced its factory type.402 loads it before children;the same binary then
+executes.401 is not evidence that native FEM or installed plugin loading is absent.
 402's two-step solid tetra/hexa q/v and absolute times match the corresponding
 unobserved389 states EXACTLY (difference0,STRICT1e-12). Thin372 still fails,so
 no thin-model trajectory equivalence or accepted static state is claimed.
@@ -145,6 +148,11 @@ Observer binary:cad/build_elastic_observer400/libReGripElasticObserver.so,
 SHA256 c2e3eac945fdbe6ccb4bb66817077db453f900d2d1092327238af03b5a1fb7f7.
 Historical controller332 SHA3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0
 is unchanged. Exact compiled observer source is preserved in402/Observer.cpp.
+Actual local build commands (SDK was read,not modified):
+```bash
+cmake -S product_prototype/sofa/native_elastic_observer -B product_prototype/cad/build_elastic_observer400 -DCMAKE_PREFIX_PATH=/home/ubuntu/SOFA/v26.06.00 -DCMAKE_BUILD_TYPE=Release
+cmake --build product_prototype/cad/build_elastic_observer400 --parallel 1
+```
 
 NEXT:initial Skin/one-rail/two-rail decomposition is now completed405;do not repeat
 it as new research. Extend to physically small LOADED section reference tests,

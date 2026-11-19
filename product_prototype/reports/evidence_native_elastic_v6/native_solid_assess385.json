@@ -1,0 +1,209 @@
+{
+  "scope": "Static diagnostic only; no energy/reaction/time/B3 certification",
+  "mesh_pairs": [
+    {
+      "case": "native_solid_baseline380",
+      "model": "tetra",
+      "nx": [
+        11,
+        21
+      ],
+      "relative": 0.3025607715428587,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_baseline380",
+      "model": "tetra",
+      "nx": [
+        11,
+        41
+      ],
+      "relative": 0.3800523490505331,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_baseline380",
+      "model": "tetra",
+      "nx": [
+        21,
+        41
+      ],
+      "relative": 0.11110871649577185,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_baseline380",
+      "model": "hexa",
+      "nx": [
+        11,
+        21
+      ],
+      "relative": 0.20647370625298406,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_baseline380",
+      "model": "hexa",
+      "nx": [
+        11,
+        41
+      ],
+      "relative": 0.25918993826460385,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_baseline380",
+      "model": "hexa",
+      "nx": [
+        21,
+        41
+      ],
+      "relative": 0.06643287365147628,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_halfload382",
+      "model": "tetra",
+      "nx": [
+        11,
+        21
+      ],
+      "relative": 0.3025607715428587,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_halfload382",
+      "model": "tetra",
+      "nx": [
+        11,
+        41
+      ],
+      "relative": 0.3800523490560834,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_halfload382",
+      "model": "tetra",
+      "nx": [
+        21,
+        41
+      ],
+      "relative": 0.11110871650373003,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_halfload382",
+      "model": "hexa",
+      "nx": [
+        11,
+        21
+      ],
+      "relative": 0.20647370625298517,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_halfload382",
+      "model": "hexa",
+      "nx": [
+        11,
+        41
+      ],
+      "relative": 0.25918993826460485,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    },
+    {
+      "case": "native_solid_halfload382",
+      "model": "hexa",
+      "nx": [
+        21,
+        41
+      ],
+      "relative": 0.06643287365147624,
+      "gate": 0.01,
+      "status": "FAIL_MESH_GATE"
+    }
+  ],
+  "linearity": [
+    {
+      "cases": [
+        "native_solid_baseline380",
+        "native_solid_halfload382"
+      ],
+      "model": "tetra",
+      "nx": 11,
+      "relative": 0.0,
+      "gate": 1e-12,
+      "status": "PASS_LINEARITY_ONLY"
+    },
+    {
+      "cases": [
+        "native_solid_baseline380",
+        "native_solid_halfload382"
+      ],
+      "model": "tetra",
+      "nx": 21,
+      "relative": 0.0,
+      "gate": 1e-12,
+      "status": "PASS_LINEARITY_ONLY"
+    },
+    {
+      "cases": [
+        "native_solid_baseline380",
+        "native_solid_halfload382"
+      ],
+      "model": "tetra",
+      "nx": 41,
+      "relative": 8.952853860867584e-12,
+      "gate": 1e-12,
+      "status": "FAIL"
+    },
+    {
+      "cases": [
+        "native_solid_baseline380",
+        "native_solid_halfload382"
+      ],
+      "model": "hexa",
+      "nx": 11,
+      "relative": 7.987346469257081e-16,
+      "gate": 1e-12,
+      "status": "PASS_LINEARITY_ONLY"
+    },
+    {
+      "cases": [
+        "native_solid_baseline380",
+        "native_solid_halfload382"
+      ],
+      "model": "hexa",
+      "nx": 21,
+      "relative": 6.338169440622881e-16,
+      "gate": 1e-12,
+      "status": "PASS_LINEARITY_ONLY"
+    },
+    {
+      "cases": [
+        "native_solid_baseline380",
+        "native_solid_halfload382"
+      ],
+      "model": "hexa",
+      "nx": 41,
+      "relative": 5.917106630992332e-16,
+      "gate": 1e-12,
+      "status": "PASS_LINEARITY_ONLY"
+    }
+  ],
+  "inputs": {
+    "native_solid_baseline380": "5a708f66dbfed4ed360de9b0eb4ecdc5bb947d062a2cad7bf9b2145a70dccdc1",
+    "native_solid_halfload382": "7570709ddc1b860ec9e82032616831be258cf1d4681af206c06d4983577f0dd5"
+  }
+}

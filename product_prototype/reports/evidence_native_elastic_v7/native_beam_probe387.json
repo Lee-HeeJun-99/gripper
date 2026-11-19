@@ -1,0 +1,63 @@
+{
+  "scope": "Native circular BeamFEM availability and static response only;not B3 qualification",
+  "source_commit": "fa446a95502b709639441280ecc7aa605a8db29f",
+  "source_sha256": "b808b0b1fe55c07f2666408797c636c0e39e7c4745213dfacc534db6825006f9",
+  "binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "approximate_Euler_tip_m": 0.0006790610905254202,
+  "records": [
+    {
+      "nx": 11,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1043910909211263,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "a272e9b914838ecd885f26671d8989abf2f3fac355cf5cb98bb55e366207965a",
+          "command.json": "6805a251d3962cfd5696b79da2184dd2fe574f15bfdc2e5864ab8a92f9e3cf96",
+          "stderr.log": "2ffebbb5fd20aa76c4934ae55091514e4981a6a822b34dc7214590094ac86348",
+          "process.json": "3f871c7597aa96eb39ab5e3fc49a585c27e754bb8685b5ca591d33186d312036"
+        }
+      },
+      "status": "FAIL",
+      "scene_sha256": "7dcbd6290e268c06813a4d38892d094571f915f70a883b26bb00c2b3a4193144"
+    },
+    {
+      "nx": 21,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.10791604104451835,
+        "pid": 43,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "c81bae56486addd8977b12a88cf3df933ebadc91d56e0e9b2809facb9edd37a7",
+          "command.json": "ba6034677d5584ff18667fbfe43bd16f78801ba2a59f3f3971063e3bf15c22ff",
+          "stderr.log": "2ffebbb5fd20aa76c4934ae55091514e4981a6a822b34dc7214590094ac86348",
+          "process.json": "2aca91df774df593a4681f73feae70ce4bc5f2399f05fa567bb025d5b3f5d491"
+        }
+      },
+      "status": "FAIL",
+      "scene_sha256": "1e3380438245899de7ad297038f5bb94b240ce8b5123c4a2e5ed901169db2692"
+    },
+    {
+      "nx": 41,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.1076270469930023,
+        "pid": 44,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "b9279525eb4d1f56c181c5f4024cf921a6ce36979c419458fba29ef4ab761c1d",
+          "command.json": "7fc4f81df8373e73bb0ec1fa05a408d7758de38781cd9aefdcc108fdbbe36aa0",
+          "stderr.log": "2ffebbb5fd20aa76c4934ae55091514e4981a6a822b34dc7214590094ac86348",
+          "process.json": "d80a6162dd2f159f257d76e80111646ab9e189ecab8bb58906cf271248108ed3"
+        }
+      },
+      "status": "FAIL",
+      "scene_sha256": "893b430cbaf87eea8bb85e54f67de5081d5290fd90e750be2808e6f9c9241e13"
+    }
+  ]
+}

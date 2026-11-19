@@ -1,0 +1,64 @@
+{
+  "scope": "Native initial elastic matrix/FD and isolated observer state regression; not B3 certification",
+  "source_sha256": "4dd752d626bf8d0a1b1a9527de406ac48aed6d89e2e3ed83e5aec4612ba90df0",
+  "observer_source_sha256": "effbb80334e70ecb805b1643fef8e488b671008dff96104e1a17d770c44309e2",
+  "binary_sha256": "c2e3eac945fdbe6ccb4bb66817077db453f900d2d1092327238af03b5a1fb7f7",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "records": [
+    {
+      "case": "solid_tetra",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.17380584497004747,
+        "pid": 13,
+        "artifacts": {
+          "stdout.log": "9af447f8ebd5409c3157b6c997ec96af740caff570dff97261801137432f3651",
+          "command.json": "916dc479442aa61031b405bba4b1985e10a6f2283e65c8d2b310fca270db9946",
+          "stderr.log": "7eabd1abdc06dff84110d351be7edfe4b3be12843764e5b2e730da435efceaa5",
+          "process.json": "880c91f529f8ba659460d64f28d208a37265ece1f7613c0abda9d31c60be9f29"
+        }
+      },
+      "scene_sha256": "6f32388806bcb525cd3a95487b22ca642779291c0ba4cbd6b46d397287a99533",
+      "status": "FAIL_NATIVE_SOLVE",
+      "observer_state_identity": null
+    },
+    {
+      "case": "solid_hexa",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1758740129880607,
+        "pid": 14,
+        "artifacts": {
+          "stdout.log": "45948169ef6107c440b0b4efa7836ea1dfad12bc75d8dcaa8904b37e0111cbe2",
+          "command.json": "2002fe0ae4ce5f995fc11f17c4652c4436add31921fdb90aa11d582371a1aec1",
+          "stderr.log": "7eabd1abdc06dff84110d351be7edfe4b3be12843764e5b2e730da435efceaa5",
+          "process.json": "ef0f5dd5155dfd041d2f32d78b657135acf635cbfeed0c833c6c0bd9fc07159f"
+        }
+      },
+      "scene_sha256": "09e04c3c62e2e767b3233eede93fe1627524977646137c9305e59fbf1b4937d2",
+      "status": "FAIL_NATIVE_SOLVE",
+      "observer_state_identity": null
+    },
+    {
+      "case": "thin_tetra",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21037006098777056,
+        "pid": 15,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "54ae413bd2ee19a056dc23a4adc3f49a666629eea83f1090af4f4aeddfab3c4b",
+          "command.json": "34987696f085e2c89534109745544d0585711377aca3488c288d7e41c7b39b8e",
+          "stderr.log": "468d62f38ee304c75bf098365dde52f0ba623bf5fbb09bfe7d138f7b034adc50",
+          "process.json": "bc0ce3d1e38de9872f6c2136fd8b13a24622e654493ae8a789c16be2464a81ca"
+        }
+      },
+      "scene_sha256": "7f42f0f26afc567822c5ce74d7da24dfcda37510b6c5eafaf5c1b8bee7f4d8dd",
+      "status": "FAIL_NATIVE_SOLVE",
+      "observer_state_identity": null
+    }
+  ]
+}

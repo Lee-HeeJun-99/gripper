@@ -1,0 +1,163 @@
+{
+  "scope": "Native solid beam diagnostic only; no B3,contact,cable,time or product qualification",
+  "source_commit": "fa446a95502b709639441280ecc7aa605a8db29f",
+  "source_sha256": "aad910534c80fe74fc62ba6293435ebfb3fc523cdf0e5c950044ebba025119ed",
+  "binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "force_N": 0.001,
+  "E_Pa": 1000000.0,
+  "nu": 0.3,
+  "geometry_m": [
+    0.1,
+    0.01,
+    0.01
+  ],
+  "cross_nodes": 5,
+  "approximate_Euler_tip_m": 0.00039999999999999996,
+  "records": [
+    {
+      "model": "tetra",
+      "nx": 21,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1719060679897666,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "7f47b6abd53d3fc2a989bd9bfe3be2396a5f1c8686863f852e9cb34dd4eb70d5",
+          "command.json": "1653bf16e1af65a3fee06708c01cd74a035e2b5563bea25008bb475427c41ada",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "fa28f98ea08098a5aeb991b893784994402cfa4783fa746914b7ef5e2dcd82b0"
+        }
+      },
+      "scene_sha256": "6e4a3cf779910b888ae8dd3f4fa14702e4ab67e42ecff4a37113ed92bfb8df33",
+      "status": "COMPLETED_STATIC_DIAGNOSTIC",
+      "tip_m": 0.00027015981615654807,
+      "repeat_difference_m": 0.0,
+      "minimum_tet_determinant_ratio": 0.9997259835231179,
+      "external_half_work_J": 1.3507990807827402e-07,
+      "strain_energy_J": null,
+      "reaction_N": null,
+      "state_sha256": "d374c8281b90d6e87daf9463c8d2ce7a0c4774d44b2203d7a132c610d9e58bc4"
+    },
+    {
+      "model": "tetra",
+      "nx": 41,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.20833206200040877,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "5a43383312513e020a8fce53d8c34be73946cf8ccd1d61ef55fe099cce5912c4",
+          "command.json": "a1c6a08d97c2a3077ae93c02cf8c3cf1e2301a68d2d4f7c259eddbc95183c0bb",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "868d2b9b12a2ed1e7e91967c862d42bf371c0457ae65c7b1c69dab58dc4b183e"
+        }
+      },
+      "scene_sha256": "4ff010fb88936748492c62efa60a2ac98d8c8949bff3e1837491df5a674f9a30",
+      "status": "COMPLETED_STATIC_DIAGNOSTIC",
+      "tip_m": 0.0003173182390781437,
+      "repeat_difference_m": 0.0,
+      "minimum_tet_determinant_ratio": 0.9996610988319813,
+      "external_half_work_J": 1.5865911953907186e-07,
+      "strain_energy_J": null,
+      "reaction_N": null,
+      "state_sha256": "d43d54d9b34323def1c47ac320f88d9030ce57e8a75c2c866be8818a4c370456"
+    },
+    {
+      "model": "tetra",
+      "nx": 81,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 2.323932903003879,
+        "pid": 44,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "8f4b33eee032058243ec0d96320cc68eb1e0db6950ba6b92146d6de83053a23d",
+          "command.json": "6498e9c73f171713847f4264890dbe62b8eab7aa2d9aab9dcade66cffd842584",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "484110ba39d6e7933146e3d17474e67a484786a386522a2289db1485bd87e6e4"
+        }
+      },
+      "scene_sha256": "6567c3ffb8f48fc9337595aaa2db6273d7a9b27f11d45a9e915868dedb6ef367",
+      "status": "FAIL_NATIVE_SOLVE"
+    },
+    {
+      "model": "hexa",
+      "nx": 21,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.20521128899417818,
+        "pid": 45,
+        "artifacts": {
+          "stdout.log": "09c23d7270a3db7439195cba134dd5f2951d920932fa06694a195076889174f4",
+          "command.json": "2032ef592abfaced667a7df643a2c816bde3e75d853e1aa5dbe6efd3454dc3b2",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "c318fab05e8961241fe8cd2317a61c7549704335fb6bad1ada9ac431deb9ea5b"
+        }
+      },
+      "scene_sha256": "4025d919744a26ef3a09f552efc61a0012c5bdda35ef52a883e33c843f80c808",
+      "status": "COMPLETED_STATIC_DIAGNOSTIC",
+      "tip_m": 0.0003594295717935281,
+      "repeat_difference_m": 0.0,
+      "minimum_tet_determinant_ratio": 0.9996455740656068,
+      "external_half_work_J": 1.7971478589676406e-07,
+      "strain_energy_J": null,
+      "reaction_N": null,
+      "state_sha256": "75c9b023da4ccd4540ad3190c4ecdf26aef086041d07574916c43084144388b2"
+    },
+    {
+      "model": "hexa",
+      "nx": 41,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.22363323508761823,
+        "pid": 46,
+        "artifacts": {
+          "stdout.log": "75a791f03c6a0010484f163c65eccb53af445f032676809efae6fddd032a0157",
+          "command.json": "d9184ff44f2a8c9eed8652e7fdf2389e9d3542cbf542f7873fa484bbf5aaca25",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "da79c49a8a8729a54a4fa98e6c47dead4463615ed4312815e1bc82a28fcc4446"
+        }
+      },
+      "scene_sha256": "230db523341a782dc5c456db7227c558eeb518218346818e9352820b9db7dd8d",
+      "status": "COMPLETED_STATIC_DIAGNOSTIC",
+      "tip_m": 0.000385957050049083,
+      "repeat_difference_m": 0.0,
+      "minimum_tet_determinant_ratio": 0.999597032876497,
+      "external_half_work_J": 1.929785250245415e-07,
+      "strain_energy_J": null,
+      "reaction_N": null,
+      "state_sha256": "e48d3305ac4ae98561eaa0f67674b25d897b8b9bc4d2ab516bcda98bb0272991"
+    },
+    {
+      "model": "hexa",
+      "nx": 81,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.3231206509517506,
+        "pid": 47,
+        "artifacts": {
+          "stdout.log": "80c5447f812e4963b142fe48440de22b33ada77953656bf7681573bf0b540366",
+          "command.json": "9b2e4f2ea5777bee1e663cc69ff70764b5e67d943a9e68fba4c1062152a7f470",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "6ccd0320130c866ef20b6487f36e1151c087b3543cda1b672ba220512fe6e06c"
+        }
+      },
+      "scene_sha256": "032e812c0e7e48c1e06435b96e070c397e8e2920fe3d7ebc201d0aa9c5853746",
+      "status": "COMPLETED_STATIC_DIAGNOSTIC",
+      "tip_m": 0.00039341989859643033,
+      "repeat_difference_m": 0.0,
+      "minimum_tet_determinant_ratio": 0.9995509623424389,
+      "external_half_work_J": 1.9670994929821517e-07,
+      "strain_energy_J": null,
+      "reaction_N": null,
+      "state_sha256": "2ab29a7dc8c4aa588dd208d5e8d2e6643c18585f8fe14c597c203df5470184e2"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "source_scene_sha256": "a01667e6f8acce4b2a9ea13a986f302a994b6ea6cf89780238a517d3d3dbf61f",
+  "force_gate_N": 1e-12,
+  "solver": "EigenSimplicialLDLT",
+  "scope": "Static coordinate/unit arithmetic contrasts,not B3 physics qualification",
+  "records": [
+    {
+      "contrast": "translated_SI",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.4136494839331135,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "b8f4d84d02799cc8d6ebf1e79917a3ad08d483df4bd7acce7f5f4d069ac5935a",
+          "command.json": "3131a6d62a7267f34246260494314a82f48cde6e9addf45a96ef5fc18c7fabaa",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "07b6ed59cca90b43dfd2e94ef85d447fbaa82bc85e16dd53ed56a3287a98caca"
+        }
+      },
+      "scene_sha256": "9a88035c69164188067a196a93e328669d9867533a6d32daeaf1b54bd2a26b6f",
+      "status": "FAIL_NATIVE_SOLVE"
+    },
+    {
+      "contrast": "translated_mm_N",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.41012365696951747,
+        "pid": 43,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "e74154387d04ebc376f8dfe73da0038d8a8ff4acc19d8226aae20fe625d2131f",
+          "command.json": "ab8959a87c6fb7487dbff0d4f96e21a57a3d569f3f041ee93c63b14861dcb5b8",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "01b1ec46c24b87ff7566342b750d039f6a010bca17312bdf79b5fb8a9d1abe6a"
+        }
+      },
+      "scene_sha256": "15050a6dcc25ce2be9c9d52e376a28b8538bf8f083e2450b71a116c7324665da",
+      "status": "FAIL_NATIVE_SOLVE"
+    }
+  ]
+}

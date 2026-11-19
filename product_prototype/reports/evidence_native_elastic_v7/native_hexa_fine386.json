@@ -1,0 +1,59 @@
+{
+  "scope": "Native solid beam diagnostic only; no B3,contact,cable,time or product qualification",
+  "source_commit": "fa446a95502b709639441280ecc7aa605a8db29f",
+  "source_sha256": "c7de1f24a4f04f1b6d73bdbaa1a5526c0553b2fa4ba39d4fb07818c479d2c46e",
+  "binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "force_N": 0.001,
+  "E_Pa": 1000000.0,
+  "nu": 0.3,
+  "geometry_m": [
+    0.1,
+    0.01,
+    0.01
+  ],
+  "cross_nodes": 5,
+  "approximate_Euler_tip_m": 0.00039999999999999996,
+  "records": [
+    {
+      "model": "hexa",
+      "nx": 161,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 3.719786091009155,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "96be25a29225c20339153c436bcdf1c8b8f23fc702a3d0c8b8ab8bf2c5251764",
+          "command.json": "d087e0ccaca8a07ac634210b68c815eb3ddd53e10917c3131d5bd5b0556e7ea3",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "e6eb19c3b2d0d1c370f2c836e5bb2a52640213b3d68b9624c60f0cc32b31322b"
+        }
+      },
+      "scene_sha256": "ca071f199855aca4c2c6e6463ebd687a05f96971477623f79897a1cae731bc26",
+      "status": "FAIL_NATIVE_SOLVE",
+      "last_logged_residual_N": 1.69723e-12
+    },
+    {
+      "model": "hexa",
+      "nx": 321,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 7.131338147097267,
+        "pid": 43,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "a691e95626a82c134b7ff7f2a78cd1c0523d9595866921cf268737ced2b4479c",
+          "command.json": "63421ef6241c83f348b8cd649a6b8cb1377917932c229ad009322a6a6eb0fe66",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "3de50aafd54e6f40b69407cd3516c334f9e174f487991eb56f8aa1b48bdc7028"
+        }
+      },
+      "scene_sha256": "bb7747bcff2f44448e22b71fa70566f8f82d6295690a4d3a70c0c875e4308522",
+      "status": "FAIL_NATIVE_SOLVE",
+      "last_logged_residual_N": 4.95233e-12
+    }
+  ]
+}

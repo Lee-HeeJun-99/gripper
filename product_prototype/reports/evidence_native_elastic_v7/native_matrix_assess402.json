@@ -1,0 +1,131 @@
+{
+  "scope": "Native initial elastic matrix/FD and isolated observer state regression; not B3 certification",
+  "source_sha256": "1d7d1f9e6e7f63856b074127017269eced7631683157beb1c7ea957061c686d6",
+  "observer_source_sha256": "effbb80334e70ecb805b1643fef8e488b671008dff96104e1a17d770c44309e2",
+  "binary_sha256": "c2e3eac945fdbe6ccb4bb66817077db453f900d2d1092327238af03b5a1fb7f7",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "records": [
+    {
+      "case": "solid_tetra",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.17311855196021497,
+        "pid": 13,
+        "artifacts": {
+          "stdout.log": "609b6456081ef6a78ffac0c0a88a41c740d846a7775f800d391bd3b8dc5f1cf4",
+          "command.json": "d8e74249291fd2c5332e7856825f89c89f0bb0fc1b69cdb8213a197e33102191",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "64d5f52b2ce63f53d9e179d465e24ada3e9a5e7b8498c9054b9d5049e55ab024"
+        }
+      },
+      "scene_sha256": "d975acceca7fdee4c6cbf60690d01a2c6614550a2ff20ffb4f58e9a4ddc6eb04",
+      "status": "COMPLETED_NATIVE_DIAGNOSTIC",
+      "observer_state_identity": {
+        "max_qv_error": 0.0,
+        "time_identity": true,
+        "count_identity": true,
+        "status": "PASS_STRICT_API_ONLY"
+      },
+      "matrix_sha256": "82ab39ac3c948f4f42374fdf0b2ed83dfc9b08c8a4d3232593529734c2144999",
+      "projected_min_eigenvalue_N_per_m": 0.08641756702309066,
+      "projected_max_eigenvalue_N_per_m": 43893.355156406746,
+      "symmetric_part_condition": 507921.6722761762,
+      "symmetry_relative": 4.2994294992901996e-17,
+      "force_fd": [
+        {
+          "epsilon_m": 1e-07,
+          "relative": 1.5288348461036468e-11
+        },
+        {
+          "epsilon_m": 1e-08,
+          "relative": 1.4567372342608503e-10
+        },
+        {
+          "epsilon_m": 1e-09,
+          "relative": 1.7377414990116103e-09
+        }
+      ]
+    },
+    {
+      "case": "solid_hexa",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.16847062204033136,
+        "pid": 14,
+        "artifacts": {
+          "stdout.log": "cf2692d8f932ee93200d84da5ae17cef800c0875c3fe817f951a9e999775d9a3",
+          "command.json": "f0a39ad7db4bf90272612be13e492d59f84668a38cb1f4ac30b885b8d866898a",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "13332746e9fd2e9042231459f9f61302f6427c657d4ccc4587b1e027832136e4"
+        }
+      },
+      "scene_sha256": "6658b1ba88327e25ffed835d3ae6930109356d7432e84f2a1cf094165297c0d0",
+      "status": "COMPLETED_NATIVE_DIAGNOSTIC",
+      "observer_state_identity": {
+        "max_qv_error": 0.0,
+        "time_identity": true,
+        "count_identity": true,
+        "status": "PASS_STRICT_API_ONLY"
+      },
+      "matrix_sha256": "1b430fc3f4f40d01152c7e928914e612e9b61340bf6c6ae3f95585dc6b196b5c",
+      "projected_min_eigenvalue_N_per_m": 0.058866230632175755,
+      "projected_max_eigenvalue_N_per_m": 17387.363907193805,
+      "symmetric_part_condition": 295370.7706518247,
+      "symmetry_relative": 0.0,
+      "force_fd": [
+        {
+          "epsilon_m": 1e-07,
+          "relative": 3.279358881432776e-11
+        },
+        {
+          "epsilon_m": 1e-08,
+          "relative": 3.0078132055397134e-10
+        },
+        {
+          "epsilon_m": 1e-09,
+          "relative": 3.2672676769253072e-09
+        }
+      ]
+    },
+    {
+      "case": "thin_tetra",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.3132398420711979,
+        "pid": 15,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "1de794ebdf1cb6cdd0561f9633a0630297772b4818c2ba823fc79eb02230e9cc",
+          "command.json": "63bc6d8801656a96d5c6baad9624eb503ba6a18602e9bda1b5b1ce0afa11c461",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "6b502249cd309464e0dc55a8b615facae8bda6e2174b99233b8d37c62b49c9f6"
+        }
+      },
+      "scene_sha256": "08b9fa57775c212ead4a2888e264b528ab02dc8abfb25b76424303d36b86ec1c",
+      "status": "FAIL_NATIVE_SOLVE",
+      "observer_state_identity": null,
+      "matrix_sha256": "6809d9d7779529c047420f156e2a6356f3a5e5465eed5dff33ce5927f5f578f4",
+      "projected_min_eigenvalue_N_per_m": 0.1255270595316309,
+      "projected_max_eigenvalue_N_per_m": 372092322.04390097,
+      "symmetric_part_condition": 2964239929.0818996,
+      "symmetry_relative": 1.5803996131506461e-16,
+      "force_fd": [
+        {
+          "epsilon_m": 1e-07,
+          "relative": 1.9653001743775838e-11
+        },
+        {
+          "epsilon_m": 1e-08,
+          "relative": 2.1335788798363438e-10
+        },
+        {
+          "epsilon_m": 1e-09,
+          "relative": 1.8508185586100733e-09
+        }
+      ]
+    }
+  ]
+}

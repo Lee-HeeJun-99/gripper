@@ -1,3 +1,32 @@
+## Latest continuation — native elastic validation380–405,2026-11-19
+
+Latest feature commits:73e431e,e1dc3ea,19432e5. B3 functional holding/release
+and ALL prior failures remain unchanged;no product promotion,100g or Lift run.
+Authority:product_prototype/reports/NATIVE_ELASTIC_MODEL_VALIDATION_20261119.md.
+Evidence:product_prototype/reports/evidence_native_elastic_v7/manifest.json.
+
+- Actual native tetra/hexa exact axial patch393 passes all-node1e-12m.
+- Actual pure-bending396/398 and independent force/strain/energy397/399 are
+  recorded;thin section and ALL-PAIR mesh gates still FAIL. Time.1% unchanged.
+- Native K/force observer402 changes solid q/v by EXACTLY0. Thin projected
+  condition~2.96e9;force/K FD checked. NO new FEM/contact/ODE solver.
+-405 verified material volumes210/310/410mm³ and zero-load state identity;
+  initial Skin-only condition~4.10e9 already precedes Rail/Guide attachment.
+  This is NOT loaded component bending certification.404 wrong material labels,
+  401 scene plugin ordering failure and383 CSV parser failure are retained/excluded.
+- Prior10613 immutable files byte-verified with zero mismatches. B3 moving
+  hardware clearance,full wrapping,whole energy,mesh/time and fabrication remain
+  unqualified. STEP/CAD geometry was not changed to conceal failed physics.
+
+NEXT:loaded Skin/one-rail/two-rail reference and native element/arithmetic
+diagnostics,then incremental Guide attachment. Initial spectra405 are DONE.
+Do not rerun failed372 unchanged or expand unqualified B3 to100g/Lift.
+Exact read-only restart:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_section_spectrum405/summary.json`
+Full commands/build hashes/raw paths are in the authority above.
+No physics child is intentionally left running;no automatic restart is promised.
+
+
 ## Latest product checkpoint — 2026-11-19, native trials259–379
 
 Last functional checkpoint commit:d215185 (routing8f1cbc7/1de4288,force input81640fe,

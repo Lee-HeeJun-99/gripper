@@ -11,6 +11,8 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def add(n,tag,**kw):return ET.SubElement(n,tag,{k:str(v) for k,v in kw.items()})
 def flat(x):return ' '.join(format(float(a),'.17g') for row in x for a in row)
 def main():
+ extra=argparse.ArgumentParser(add_help=False);extra.add_argument('--guide-normal-mm',type=float);extra.add_argument('--cable-audit',action='store_true');extra.add_argument('--split-contact-surfaces',action='store_true');variant,remaining=extra.parse_known_args();sys.argv=[sys.argv[0],*remaining]
+ if variant.guide_normal_mm is not None and not -6<=variant.guide_normal_mm<=6:raise ValueError('bounded physical guide offset study')
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fingers',type=int,choices=(1,3),default=1);p.add_argument('--steps',type=int);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--object',choices=('none','fixed','free'),default='none');p.add_argument('--radius',type=float,choices=(20,30),default=30);p.add_argument('--stroke',type=float,default=5);p.add_argument('--reuse-build');p.add_argument('--gravity',action='store_true');p.add_argument('--floor',action='store_true');p.add_argument('--outboard',type=float,choices=(4.,10.,14.),default=4.);p.add_argument('--intersection',choices=('MinProximityIntersection','LocalMinDistance'),default='MinProximityIntersection');p.add_argument('--lift',action='store_true');p.add_argument('--center-z',type=float,choices=(-65.,-75.,-80.),default=-65.);p.add_argument('--shape',choices=('sphere','cylinder','box'),default='sphere');p.add_argument('--support-gap',type=float,choices=(0.,.4),default=0.);p.add_argument('--support-radius',type=float,choices=(5.,35.),default=5.);p.add_argument('--slow-cycle',action='store_true');p.add_argument('--support-shape',choices=('mesh','sphere'),default='mesh');p.add_argument('--dense-guides',action='store_true');p.add_argument('--withdraw-support',action='store_true');p.add_argument('--constraint-solver',choices=('BlockGaussSeidelConstraintSolver','GenericConstraintSolver'),default='BlockGaussSeidelConstraintSolver')
  p.add_argument('--guide-location',choices=('outboard','surface','rail-back'),default='outboard');p.add_argument('--rail-back-offset',type=float,default=.5);p.add_argument('--root-angle',type=float,choices=(0,10,12,14,15),default=0);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--constraint-journal',action='store_true');p.add_argument('--rigid-guides',action='store_true');p.add_argument('--nncg',action='store_true');p.add_argument('--global-native-ode',action='store_true');p.add_argument('--mapped-guide-joints',action='store_true');p.add_argument('--object-depth',type=float,choices=(50.,65.,75.,80.));p.add_argument('--object-mass',type=float,choices=(.02,.05,.1),default=.1);p.add_argument('--component-film-damping',action='store_true');p.add_argument('--smooth-support',action='store_true');p.add_argument('--end-clock-motion',action='store_true');p.add_argument('--guide-bridges',action='store_true');a=p.parse_args()
  if a.guide_bridges and not a.mapped_guide_joints:raise ValueError('cross-bridge study requires disjoint mapped guide attachments')
@@ -34,11 +36,13 @@ def main():
  if a.guide_location=='rail-back':
   if not .5<=a.rail_back_offset<=3:raise ValueError('explicit bounded rail-back guide offset')
   c['tendon'].update(outboard=-1,normal_offset=-a.rail_back_offset);(out/'config.json').write_text(json.dumps(c,indent=2))
+ if variant.guide_normal_mm is not None:c['tendon']['normal_offset']=variant.guide_normal_mm
+ c['study']=dict(guide_normal_override_mm=variant.guide_normal_mm,cable_audit=variant.cable_audit,skin_load_bearing_minimum_fraction=.8,qualification='Skin-only rows required;whole FEM surface is NOT Skin-only;no qualification from surface_mask alone')
  (out/'config.json').write_text(json.dumps(c,indent=2))
  r=dict(status='FAIL',scope='experimental native SOFA product prototype;NOT numerical/material/grasp certification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_hashes={f.name:sha(f) for f in source.iterdir() if f.is_file()},config_sha256=sha(out/'config.json'),mesh_sha256=sha(meshdir/'mesh.json'),sdk=str(SDK),runner_sha256=sha(SDK/'bin/runSofa-26.06.00'),fingers=a.fingers,object=a.object,steps=a.steps,dt_s=c['simulation']['dt_s'],stroke_mm=a.stroke,units='SI',contact_force=None,root_reaction=None,lift='NOT RUN',cables_per_finger=a.cables,guide_location=a.guide_location)
  build=BASE/'cad'/('build_'+a.tag) if not a.reuse_build else BASE/'cad'/('build_'+a.reuse_build)
  if a.reuse_build:
-  old=json.loads((BASE/'results'/a.reuse_build/'summary.json').read_text());binary=build/'libReGripProductSequence.so'
+  old=json.loads((BASE/'results'/a.reuse_build/'summary.json').read_text());build=ROOT/old['build'];binary=build/'libReGripProductSequence.so'
   if any(old['source_hashes'][k]!=r['source_hashes'][k] for k in ('Controller.cpp','CMakeLists.txt')) or sha(binary)!=old['binary_sha256']:raise ValueError('exact compiled controller source/binary required;Python runners have separate snapshots')
  else:
   r['configure']=guarded(['cmake','-S',source,'-B',build,'-DCMAKE_PREFIX_PATH='+str(SDK)],out/'configure',120)
@@ -88,6 +92,16 @@ def main():
  if a.floor and a.support_shape=='sphere':
   oldfloor=root.find("./Node[@name='floor']");root.remove(oldfloor);floor=add(root,'Node',name='floor');z=s['sphere_center_mm'][2]*.001-a.radius*.001-a.support_gap*.001-.035;add(floor,'MechanicalObject',template='Vec3d',position=f'0 0 {z}');add(floor,'SphereCollisionModel',radius=.035,simulated=0,moving=0,group=20);r['support_shape']='fixed R35 rounded pedestal;NEW physical fixture,NOT flat-table repair'
  for corr in root.iter('GenericConstraintCorrection'):corr.attrib.pop('solverName',None)
+ if variant.split_contact_surfaces and a.object!='none':
+  local=np.array(m['local_positions_mm']);tri=np.array(m['triangles']);rail=np.any(local[tri,2]<0,axis=1)
+  c['surface_partition']=dict(rule='Skin:all reference vertices z>=0;Rail:any z<0;native generated exterior faces',skin_triangles=int((~rail).sum()),rail_triangles=int(rail.sum()),contact_area=None,pressure=None)
+  for f in range(a.fingers):
+   node=root.find(f"./Node[@name='finger{f}']");old=node.find("./Node[@name='collision']");points=old.find('MechanicalObject').get('position');node.remove(old)
+   for label,selection in (('skin',~rail),('rail',rail)):
+    faces=tri[selection];ids=sorted(set(faces.reshape(-1).tolist()));lookup={v:k for k,v in enumerate(ids)};compact=np.array([[lookup[int(v)] for v in face] for face in faces]);positions=flat(np.fromstring(points,sep=' ').reshape(-1,3)[ids]);edges=sorted({tuple(sorted((int(t[k]),int(t[(k+1)%3])))) for t in compact for k in range(3)});surface=add(node,'Node',name=label+'Collision');add(surface,'MeshTopology',name='surfaceTopology',position=positions,triangles=flat(compact),edges=flat(edges));add(surface,'MechanicalObject',name='surface',template='Vec3d',position=positions);add(surface,'TriangleCollisionModel',group=f+1);add(surface,'LineCollisionModel',group=f+1);add(surface,'PointCollisionModel',group=f+1);add(surface,'SubsetMapping',input='@../dofs',output='@surface',indices=' '.join(map(str,ids)))
+  if a.object=='free' and a.constraint_journal:
+   for label in ('skin','rail'):add(root,'NativeContactRows',solver='@constraints',body='@object/rigid',filename=str(out/f'{label}_rows.csv'),**{'film'+str(f):f'@finger{f}/{label}Collision/surface' for f in range(a.fingers)})
+  (out/'config.json').write_text(json.dumps(c,indent=2));r['config_sha256']=sha(out/'config.json')
  if a.withdraw_support:
   floor=root.find("./Node[@name='floor']");floor.find('MechanicalObject').set('name','support');floor.find('SphereCollisionModel').set('moving','1');add(floor,'EulerImplicitSolver');add(floor,'SparseLDLSolver');add(floor,'UniformMass',totalMass=1);add(floor,'LinearMovementProjectiveConstraint',indices=0,keyTimes='0 1 1.5 3',movements='0 0 0 0 0 0 0 0 -.04 0 0 -.04');add(floor,'NativePointJournal',body='@support',filename=str(out/'support.csv'))
   for node in root.iter('NativeCableSequence'):node.set('hold','2');node.set('release','2.5')
@@ -111,6 +125,9 @@ def main():
  if a.withdraw_support:
   protocol=dict(scope='experimental native holding,NOT whole physical certification',mass_kg=s['sphere_mass_kg'],radius_mm=a.radius,gravity_m_s2=[0,0,-9.81] if a.gravity else [0,0,0],window_s=[1.6,2.0],reference_s=1.,max_vertical_slip_mm=2.,max_speed_mm_s=5.,minimum_support_surface_gap_mm=5.,maximum_support_resultant_N=1e-5,friction_assumed=s['friction'],contact_rows_required=True)
   (out/'holding_protocol.json').write_text(json.dumps(protocol,indent=2));r['holding_protocol_sha256']=sha(out/'holding_protocol.json')
+ if variant.cable_audit:
+  for f in range(a.fingers):
+   for j in range(a.cables):add(root,'NativeCableAudit',body=f'@finger{f}/dofs',cable=f'@guides{f}/cable{j}/actuator' if a.rigid_guides else f'@finger{f}/cable{j}/actuator',filename=str(out/f'cable_audit_{f}_{j}.csv'))
  if a.global_native_ode:
   for node in root.iter('Node'):
    for child in list(node):

@@ -9,13 +9,18 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results'/a.case;out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);m=json.loads((src/'summary.json').read_text());protocol=json.loads((src/'holding_protocol.json').read_text())
  if m['status']!='RUN_COMPLETED_NOT_QUALIFIED' or sha(src/'holding_protocol.json')!=m['holding_protocol_sha256']:raise ValueError('complete trial and predeclared protocol required')
  rows=read(src/'object.csv');t=np.array([float(r['time_s']) for r in rows]);q=np.array([np.fromstring(r['rigid_q'],sep=' ') for r in rows]);v=np.array([np.fromstring(r['rigid_v'],sep=' ') for r in rows]);total=np.array([np.fromstring(r['object_impulse_Ns_Nms'],sep=' ') for r in rows]);dt=m['dt_s'];index={float(x):i for i,x in enumerate(t)};finger=np.zeros((len(t),3,6));support=np.zeros_like(total);surface=np.zeros_like(total);hardware=np.zeros_like(total);ambiguous=0;contactrows=read(src/'contact_rows.csv');has_source=bool(contactrows and 'surface_mask' in contactrows[0])
+ child_masks={}
+ for label in ('skin','rail'):
+  if (src/f'{label}_rows.csv').exists():
+   for r in read(src/f'{label}_rows.csv'):
+    key=(r['time_s'],r['row_id']);child_masks[key]=child_masks.get(key,0)|int(r['film_mask'])
  for row in contactrows:
-  k=index[float(row['time_s'])];mask=int(row['film_mask']);impulse=np.fromstring(row['object_impulse_Ns_Nms'],sep=' ')
+  k=index[float(row['time_s'])];mask=int(row['film_mask'])|child_masks.get((row['time_s'],row['row_id']),0);impulse=np.fromstring(row['object_impulse_Ns_Nms'],sep=' ')
   if mask==0:support[k]+=impulse
   elif mask in (1,2,4):finger[k,mask.bit_length()-1]+=impulse
   else:ambiguous+=1
   if has_source and mask:
-   if int(row['surface_mask']):surface[k]+=impulse
+   if int(row['surface_mask']) or child_masks.get((row['time_s'],row['row_id']),0):surface[k]+=impulse
    else:hardware[k]+=impulse
  partition_error=float(np.max(np.abs(total-support-finger.sum(axis=1))));reference=int(np.argmin(abs(t-protocol['reference_s'])));window=(t>=protocol['window_s'][0]-1e-12)&(t<=protocol['window_s'][1]+1e-12)
  if not window.any():raise ValueError('required hold window NOT RUN')

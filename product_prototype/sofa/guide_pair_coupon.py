@@ -7,7 +7,7 @@ from analyse import BASE,sha,rotation
 from native_bending_coupon import guarded,flat
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--velocity-first',action='store_true');p.add_argument('--contact-audit',action='store_true');p.add_argument('--row-binary',type=Path);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);source=BASE/'results/force_release_clear_support375';tree=ET.parse(source/'scene.scn');old=tree.getroot();index=954 # actual2.3875s frame,not a checkpoint claim
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--velocity-first',action='store_true');p.add_argument('--contact-audit',action='store_true');p.add_argument('--row-binary',type=Path);p.add_argument('--rigid-sphere',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);source=BASE/'results/force_release_clear_support375';tree=ET.parse(source/'scene.scn');old=tree.getroot();index=954 # actual2.3875s frame,not a checkpoint claim
     specs=[]
     for f,j,k in ((1,0,5),(2,1,5)):
         rows=list(csv.DictReader((source/f'finger{f}.csv').open()));frames=list(csv.DictReader((source/f'guide_frames{f}.csv').open()));assert abs(float(rows[index]['time_s'])-2.3875)<1e-12
@@ -28,6 +28,8 @@ def main():
         for i,(q,v,point) in enumerate(specs):
             node=ET.SubElement(root,'Node',name=f'guide{i}');ET.SubElement(node,'MechanicalObject',name='frames',template='Rigid3d',position=flat(q[None,:]),velocity=flat(v[None,:]));ET.SubElement(node,'UniformMass',template='Rigid3d',vertexMass='.00001 1e-8 1e-6 0 0 0 1e-6 0 0 0 1e-6')
             child=ET.SubElement(node,'Node',name='collision');ET.SubElement(child,'MechanicalObject',name='points',template='Vec3d',position=flat(point[None,:]));ET.SubElement(child,'RigidMapping',input='@../frames',output='@points',globalToLocalCoords='1');ET.SubElement(child,'SphereCollisionModel',radius=str(radius),group=str(i+1));ET.SubElement(node,'NativeRigidJournal',body='@frames',solver='@../constraints',auditMass='1',filename=str(d/f'guide{i}.csv'))
+            if a.rigid_sphere:
+                child.find('MechanicalObject').set('template','Rigid3d');child.find('MechanicalObject').set('position',flat(np.r_[point,q[3:]][None,:]));child.find('RigidMapping').set('template','Rigid3d,Rigid3d');child.find('SphereCollisionModel').set('template','Rigid3d')
         if a.contact_audit:
             narrow=root.find('BVHNarrowPhase');manager=root.find('CollisionResponse')
             ET.SubElement(root,'NativeDetectionPairs',narrow='@'+narrow.get('name'),filename=str(d/'detector.csv'))
@@ -47,6 +49,7 @@ def main():
         records.append(r)
     result=dict(scope='Two FREE guides at extracted position/velocity;NO rail attachments,FEM,cables,gravity.Independent Native detection contrast,NOT source trajectory restart or grasp fix.',velocity_first=a.velocity_first,dt_s=dt,steps=steps,source_scene_sha256=sha(source/'scene.scn'),source_binary_sha256=json.loads((source/'summary.json').read_text())['binary_sha256'],producer_sha256=sha(Path(__file__)),actual_source_time_s=2.3875,initial_gap_mm=float((np.linalg.norm(specs[0][2]-specs[1][2])-2*radius)*1000),records=records)
     result['contact_audit']=a.contact_audit
+    result['collision_representation']='Native Rigid3 sphere with rotational surface mapping' if a.rigid_sphere else 'Native Vec3 sphere centre mapping'
     result['initial_rigid_q']=[q.tolist() for q,v,p in specs];result['initial_rigid_v']=[v.tolist() for q,v,p in specs]
     result['source_commit']=__import__('subprocess').check_output(['git','rev-parse','HEAD'],cwd=BASE.parent,text=True).strip()
     result['sdk']='/home/ubuntu/SOFA/v26.06.00'

@@ -18,7 +18,7 @@ def main():
         shutil.copy2(summary,out/(case+'.json'));cases[case]=dict(raw=str(folder.relative_to(ROOT)),summary_sha256=sha(summary))
         for f in folder.rglob('*'):
             if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
-    for name in ('guide_entry_phase.py','guide_entry_assess.py','guide_row_dynamics.py','guide_entry_plot.py','guide_motion_clearance.py','guide_sector_candidate.py','guide_clearance_event.py','product_candidate_evidence.py','mechanism_candidates.py','guide_pair_coupon.py','run_alarm_window.py','b3_clearance_comparison.py','guide_chord_audit.py','guide_pair_time_assess.py','b3_clearance_plot.py','guide_route_identity.py','observer_identity.py','run_native.py'):
+    for name in ('guide_angular_audit.py','guide_entry_phase.py','guide_entry_assess.py','guide_row_dynamics.py','guide_entry_plot.py','guide_motion_clearance.py','guide_sector_candidate.py','guide_clearance_event.py','product_candidate_evidence.py','mechanism_candidates.py','guide_pair_coupon.py','run_alarm_window.py','b3_clearance_comparison.py','guide_chord_audit.py','guide_pair_time_assess.py','b3_clearance_plot.py','guide_route_identity.py','observer_identity.py','run_native.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     row_binary=BASE/'cad/build_pair_rows512/libReGripPairRows.so'
     if sha(row_binary)!='6a00b4e75ef314f5d92ebc67431ee36cedba02c91e6546ff28a4ffe9d5514527':raise ValueError('direct row observer binary changed')

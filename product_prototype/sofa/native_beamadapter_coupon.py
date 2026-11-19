@@ -11,7 +11,9 @@ def main():
     csv.field_size_limit(64*1024*1024)
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--load',type=float,default=1e-6)
     p.add_argument('--nx',type=int,nargs='+',default=[21,41,81]);p.add_argument('--precurve',action='store_true')
-    p.add_argument('--solver',choices=['direct','graph-cg'],default='direct');a=p.parse_args()
+    p.add_argument('--solver',choices=['direct','graph-cg'],default='direct')
+    p.add_argument('--newton-iterations',type=int,default=30);a=p.parse_args()
+    if not 1<=a.newton_iterations<=200:raise ValueError('bounded native Newton budget required')
     out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);sdk=Path('/home/ubuntu/SOFA/v26.06.00')
     plugin=sdk/'plugins/BeamAdapter/lib/libBeamAdapter.so'
     deps=subprocess.check_output(['ldd',str(plugin)],text=True)
@@ -33,7 +35,7 @@ def main():
             add(root,'RequiredPlugin',pluginName='Sofa.Component.'+name)
         add(root,'RequiredPlugin',pluginName=str(plugin));add(root,'RequiredPlugin',pluginName=str(journal));add(root,'DefaultAnimationLoop')
         if a.solver=='graph-cg':add(root,'RequiredPlugin',pluginName='Sofa.Component.LinearSolver.Iterative')
-        node=add(root,'Node',name='rail');add(node,'NewtonRaphsonSolver',name='newton',maxNbIterationsNewton=30,
+        node=add(root,'Node',name='rail');add(node,'NewtonRaphsonSolver',name='newton',maxNbIterationsNewton=a.newton_iterations,
             maxNbIterationsLineSearch=12,absoluteResidualStoppingThreshold=1e-12,relativeInitialStoppingThreshold=1e-12,
             relativeSuccessiveStoppingThreshold=1e-12,printLog=1)
         add(node,'StaticSolver',newtonSolver='@newton')
@@ -63,7 +65,7 @@ def main():
     data=dict(scope='Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification',
         source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_sha256=sha(Path(__file__)),
         sdk=str(sdk),beamadapter_binary_sha256=sha(plugin),journal_binary_sha256=sha(journal),E_Pa=E,section_m=[by,hz],
-        force_N=a.load,solver=a.solver,precurved_stress_free_assumption=a.precurve,approximate_small_deflection_Euler_tip_m=reference,records=records)
+        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,precurved_stress_free_assumption=a.precurve,approximate_small_deflection_Euler_tip_m=reference,records=records)
     (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(data,indent=2));print(json.dumps(data,indent=2))
 
 if __name__=='__main__':main()

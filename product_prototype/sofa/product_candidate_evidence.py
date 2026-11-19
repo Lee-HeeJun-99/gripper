@@ -27,7 +27,7 @@ def main():
             files[str(f.relative_to(ROOT))]=sha(f)
             if f.suffix in ('.cpp','.txt'):shutil.copy2(f,out/('pair_rows_'+f.name))
     for f in compiled_alarm_window():files[str(f.relative_to(ROOT))]=sha(f)
-    for name in ('finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
+    for name in ('finite_mass_reference.py','finite_com_native.py','finite_com_audit.py','finite_mapped_mass_audit.py','finite_com_event_rows.py','finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     shutil.copy2(BASE/'cad/finite_guide_product.py',out/'finite_guide_product.py')
     for f in compiled_feature_rows():

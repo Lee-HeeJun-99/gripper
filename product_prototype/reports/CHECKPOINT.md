@@ -1,3 +1,23 @@
+## COM continuation565–580 — 2026-11-19
+
+Authority:product_prototype/reports/FINITE_COM_NATIVE_VALIDATION_20261119.md.
+Evidence:evidence_product_com_v24/manifest.json;3354 prior immutable files unchanged.
+
+-565 independent signed-volume COM/inertia cross-check passes;physical density/join/union still NULL.
+-566 free Native basis comparison passes,but567 anisotropic body-input contact FAILS:
+ maximum mapped position difference1.20949mm. Not adopted into B3.
+-568 input WORLD-frozen inertia passes strict1e-12 basis comparison;this is NOT a
+ rotating physical tensor.569/570 actual public M and direct J identify convention mismatch.
+-571 Native Vec3 mass quadrature + RigidMapping passes basis check with contact.
+ 572/573 free angular momentum FAIL0.660162%;577–580 half/quarter same drift.
+ No custom solver/SDK change;candidate NOT qualified for B3 or physical rigid dynamics.
+-575 block-only analysis omitted simultaneous cross-block impulses;preserved.
+ 576 corrected ALL-row audit on SAME Raw closes row update2.22e-16m/s and shows
+ finite-surface active velocity target=-buffered_gap/dt residual2.83e-9m/s.
+-Physical calibration,B3 time/mesh/energy,100g/Lift/STEP remain unresolved.
+ Next:independent torque-free reference isolates Native rotational dynamics,
+ then inspect stock inertial-force/mapped-mass support;do not blind-reduce dt.
+
 ## Latest continuation — finite Native hardware532–564,2026-11-19
 
 Feature commits:fcf0282,ea5794a,9e09cc4,ad88042.

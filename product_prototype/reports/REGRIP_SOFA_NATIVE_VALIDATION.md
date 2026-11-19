@@ -1,3 +1,42 @@
+## Free-spin continuation581–586 — 2026-11-19
+
+Feature commit:e85534a (COM/Native contact565–580);this continuation separately committed.
+Authority:product_prototype/reports/FINITE_COM_NATIVE_VALIDATION_20261119.md.
+Evidence:evidence_product_spin_v25/manifest.json → com_v24;3672 prior immutable files unchanged.
+
+-581 exact axisymmetric torque-free reference:angular invariant relative defect
+ ≤2.03e-16,energy≤7.34e-16,Euler-equation FD residual≤9.74e-9rad/s².
+ Actual Native off-axis omega error0.122997rad/s and angular error0.660162%
+ at10ms persist at all3dt. No interpolation/error floor/new physical solver.
+-582 Native principal-axis spin changes ONLY initial angular-velocity direction,
+ same magnitude and COM translation.583/584 actual angular invariant PASS:
+ point inventory drift3.11e-15,omega vs exact≤6.47e-15rad/s.
+ This narrows failed configuration to off-axis rotational dynamics,not a blanket
+ failure of Rigid3,geometry/Jacobian or all Native physics.
+-585 mathematical regression FAIL preserved:elementwise relative comparison
+ mishandled exact-zero tensor entries.586 uses tensor-norm relative error at
+ same1e-14 bound (NO floor),5tests PASS. No physical Gate changed.
+-New COM/mass candidates remain NOT ADOPTED. No new50g/100g/Lift PASS.
+ Actual density,material join/union inertia and CAD STEP remain BLOCKED.
+
+NEXT do NOT repeat565–586 or blind dt/alarm changes. Inspect a STOCK Native
+composition supporting composite mapping acceleration/gyroscopic dynamics using
+581/584 as negative/positive references. Installed RigidMapping.h declares no
+computeAccFromMapping override;Mapping.h default composite-acceleration method
+is empty. This is evidence for this composition,not proof all SOFA is incapable.
+Do not silently replace old B3 inertia or resume old checkpoints with changed mass.
+If no installed stock path is verified,keep adoption blocked and isolate any
+minimal inertial correction as a NEW scoped candidate,not a new contact/ODE solver.
+
+Read-only resume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_finite_spin_exact581/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_finite_spin_principal_exact584/summary.json`
+Regression:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m unittest discover -s product_prototype/sofa -p test_finite_mass.py -v`
+Guarded fresh control:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/finite_com_native.py --tag UNIQUE_COM_CONTROL --mapped-mass --free --spin-mode principal`
+Reusable unchanged332/512 binaries;no new C++ build or SDK edits. No active physics process.
+
 ## COM continuation565–580 — 2026-11-19
 
 Authority:product_prototype/reports/FINITE_COM_NATIVE_VALIDATION_20261119.md.

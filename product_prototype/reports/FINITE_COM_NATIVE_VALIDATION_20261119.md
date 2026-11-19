@@ -1,5 +1,45 @@
 # Finite hardware COM / Native mass validation
 
+## Follow-on cycles581–586 (after feature commit e85534a)
+
+Analytical torque-free reference for an axisymmetric ring:
+world angular momentum L is fixed;the symmetry axis n rotates about L with
+angular speed |L|/Itransverse. Then
+omega=L/Itransverse+(1/Iaxial-1/Itransverse)(L dot n0)n(t).
+This is an exact mathematical reference,not prescribed SOFA output.
+581 checks reference momentum defect≤2.03e-16,energy≤7.34e-16 and Euler-equation
+FD residual≤9.74e-9rad/s². Native measured omega differs by0.122997rad/s after10ms,
+same for all3dt;angular momentum defect0.660162%. No timestep cure demonstrated.
+
+582 changes ONLY initial spin direction to the ring principal axis,keeping
+spin magnitude,translation,mass,geometry,solver and duration.583 actual mapped
+mass inventory relative angular drift3.11e-15;584 Native omega vs exact≤6.47e-15rad/s.
+Positive control narrows the failure to non-principal rotational dynamics in this
+Native composition. Existing SDK Mapping.h documents dJ*v composite acceleration,
+but default implementation is empty and installed RigidMapping.h/inl contains no
+computeAccFromMapping override. Headers/executable are hashed in v25 evidence.
+Do not infer that every Native rigid/integrator option is unsupported.
+
+585 preserves2 failed independent regression definitions:componentwise relative
+comparison at exact-zero off-diagonal inertia components.586 tensor-norm relative
+comparison keeps1e-14 threshold without any denominator floor;all5 tests pass
+(analytic box,unit scaling,rigid objectivity,principal/stationary spin,invalid inertia).
+This changes mathematical-test comparison,NOT physical0.1%/1%/strict API Gates.
+Both failed and corrected test source/logs are frozen.
+
+Actual Native plots:results/b3_finite_spin_exact581/actual_native_free_spin.png and
+results/b3_finite_spin_principal_exact584/actual_native_free_spin.png. Viewed581.
+Experimental vs analytical quantities clearly labelled;no fabricated shape/force.
+
+v25 evidence3787files,prior3672immutable paths unchanged. No long B3 trial run.
+Independent material/join calibration cannot be inferred from geometric moments.
+No new hardware mass candidate adopted;old Holding and failures unchanged.
+
+NEXT:verify installed stock composite-inertia/gyroscopic path against BOTH
+off-axis and principal-axis references before any B3 adoption. No further blind
+dt/alarm sweep. No new ODE/contact solver justified. Full B3 time/mesh/interference,
+100g Holding,Lift and fabrication remain incomplete. Exact fresh commands in CHECKPOINT.
+
 Research scope only. Original B3 functional Holding/Release and all failed
 time/mesh/clearance trials remain immutable. No B3 checkpoint reused.
 
@@ -74,4 +114,3 @@ Reproduce with new UNIQUE tags,never overwrite:
 Next independent torque-free reference;then stock Native inertial/mass composition
 verification. Physical material/join calibration remains missing. Do not silently
 set density,change old lumped B3 mass,or claim time/mesh/Holding100g/Lift approval.
-

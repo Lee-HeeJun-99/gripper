@@ -27,7 +27,7 @@ def main():
             files[str(f.relative_to(ROOT))]=sha(f)
             if f.suffix in ('.cpp','.txt'):shutil.copy2(f,out/('pair_rows_'+f.name))
     for f in compiled_alarm_window():files[str(f.relative_to(ROOT))]=sha(f)
-    for name in ('finite_mass_reference.py','finite_com_native.py','finite_com_audit.py','finite_mapped_mass_audit.py','finite_com_event_rows.py','finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
+    for name in ('finite_free_spin_reference.py','test_finite_mass.py','finite_reference_test_run.py','finite_mass_reference.py','finite_com_native.py','finite_com_audit.py','finite_mapped_mass_audit.py','finite_com_event_rows.py','finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     shutil.copy2(BASE/'cad/finite_guide_product.py',out/'finite_guide_product.py')
     for f in compiled_feature_rows():
@@ -40,6 +40,9 @@ def main():
     physical=BASE/'cad/build_default_control332/libReGripProductSequence.so'
     if sha(physical)!='3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0':raise ValueError('physical controller binary changed')
     files[str(physical.relative_to(ROOT))]=sha(physical)
+    sdk=Path('/home/ubuntu/SOFA/v26.06.00')
+    for relative in ('bin/runSofa-26.06.00','include/Sofa.DefaultType/sofa/defaulttype/RigidMass.h','include/Sofa.Component.Mass/sofa/component/mass/UniformMass.inl','include/Sofa.Component.Mass/sofa/component/mass/UniformMass.h','include/Sofa.Core/sofa/core/Mapping.h','include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.h','include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.inl'):
+        f=sdk/relative;files[str(f)]=sha(f)
     for category in ('meshes','drawings'):
         for candidate in ('precurve_distal40_route_audit_v10','finite_eyelet_support_v11'):
             for f in (BASE/category/candidate).rglob('*'):

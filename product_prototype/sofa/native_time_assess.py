@@ -15,6 +15,7 @@ def fingerprint(src):
    wanted=next(x for x in commands if x['node']==node.get('name'));move.set('keyTimes',' '.join(format(x,'.17g') for x in wanted['keyTimes_s']))
  return hashlib.sha256(ET.tostring(root)).hexdigest()
 def features(src,m):
+ if any(x.get('ideal_cross_bridge') for x in m['rigid_guides']):raise ValueError('anisotropic merged-guide kinetic evaluator NOT qualified;do not substitute isotropic1e-6')
  tree=ET.parse(src/'scene.scn');mesh=json.loads((src/'mesh.json').read_text());local=np.array(mesh['local_positions_mm']);c=json.loads((src/'config.json').read_text());F={};kinetic=None;t=None
  for f in range(m['fingers']):
   r=read(src/f'finger{f}.csv');t=np.array([float(x['time_s']) for x in r]);q=np.array([np.fromstring(x['q_m'],sep=' ').reshape(-1,3) for x in r]);v=np.array([np.fromstring(x['v_m_s'],sep=' ').reshape(-1,3) for x in r]);rest=np.fromstring(tree.find(f"./Node[@name='finger{f}']/MechanicalObject").get('position'),sep=' ').reshape(-1,3);F[f'finger{f}_motion_m']=(q-rest).reshape(len(r),-1);F[f'finger{f}_velocity_m_s']=v.reshape(len(r),-1);F[f'finger{f}_cable_force_N']=np.array([[float(x[k])/m['dt_s'] for k in ('cable0_force_raw','cable1_force_raw')] for x in r]);centres=np.stack([q[:,np.flatnonzero((local[:,0]==x)&(local[:,2]==.1))[1:3]].mean(axis=1) for x in np.unique(local[:,0])],axis=1);d=np.diff(centres,axis=1);L=np.linalg.norm(d,axis=2);u=d/L[:,:,None];F[f'finger{f}_curvature_per_m']=np.arccos(np.clip(np.sum(u[:,:-1]*u[:,1:],axis=2),-1,1))/((L[:,:-1]+L[:,1:])/2)

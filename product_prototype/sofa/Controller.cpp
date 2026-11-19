@@ -1,5 +1,7 @@
 #include <sofa/core/objectmodel/BaseObject.h>
 #include <sofa/core/behavior/MechanicalState.h>
+#include <sofa/core/behavior/BaseMass.h>
+#include <sofa/linearalgebra/FullMatrix.h>
 #include <sofa/defaulttype/VecTypes.h>
 #include <sofa/defaulttype/RigidTypes.h>
 #include <sofa/core/ObjectFactory.h>
@@ -99,7 +101,9 @@ public:
  sofa::core::objectmodel::SingleLink<NativeRigidJournal,Solver,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>solver;
  sofa::core::objectmodel::SingleLink<NativeRigidJournal,CenterState,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>center;
  sofa::core::objectmodel::Data<std::string>filename;std::ofstream stream;
- NativeRigidJournal():body(initLink("body","Actual free Rigid3")),solver(initLink("solver","Public native impulse data")),center(initLink("center","Actual mapped sphere centre")),filename(initData(&filename,std::string(),"filename","Exclusive rigid journal")){f_listening.setValue(true);}
+ sofa::core::objectmodel::Data<bool>auditMass;
+ NativeRigidJournal():body(initLink("body","Actual free Rigid3")),solver(initLink("solver","Public native impulse data")),center(initLink("center","Actual mapped sphere centre")),filename(initData(&filename,std::string(),"filename","Exclusive rigid journal")),auditMass(initData(&auditMass,false,"auditMass","Read-only public initial element mass matrices")){f_listening.setValue(true);}
+ void bwdInit()override{BaseObject::bwdInit();if(!auditMass.getValue())return;auto*m=body->getContext()->getMass();auto name=filename.getValue()+".mass.json";if(!m||std::ifstream(name))throw std::runtime_error("unique public mass audit required");std::ofstream f(name);f<<std::setprecision(17)<<"{\"scope\":\"public initial element mass matrices,not global assembly certification\",\"elements\":[";for(sofa::Index i=0;i<body->getSize();++i){if(i)f<<',';sofa::linearalgebra::FullMatrix<SReal>A;m->getElementMass(i,&A);f<<"{\"mass_kg\":"<<m->getElementMass(i)<<",\"matrix\":[";for(sofa::Index r=0;r<A.rowSize();++r){if(r)f<<',';f<<'[';for(sofa::Index c=0;c<A.colSize();++c){if(c)f<<',';f<<A.element(r,c);}f<<']';}f<<"]}";}f<<"]}";}
  void init()override{BaseObject::init();if(!body||!solver||std::ifstream(filename.getValue()))throw std::runtime_error("rigid journal requires explicit state/solver/unique output");stream.open(filename.getValue());stream<<std::setprecision(17)<<"time_s,rigid_q,rigid_v,object_impulse_Ns_Nms,object_J_rows,solver_error,solver_iterations\n";}
  void handleEvent(sofa::core::objectmodel::Event*ev)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(ev))return;if(center){std::ofstream c(filename.getValue()+".center.csv",std::ios::app);c<<std::setprecision(17)<<getContext()->getTime()<<','<<center->read(sofa::core::vec_id::read_access::position)->getValue()<<'\n';}State::Deriv impulse{};unsigned rows=0;auto&lambda=solver->d_constraintForces.getValue();auto&J=body->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto row=J.begin();row!=J.end();++row){if(row.index()>=lambda.size())throw std::runtime_error("native object Jacobian/multiplier mismatch");++rows;for(auto col=row.begin();col!=row.end();++col)impulse+=col.val()*lambda[row.index()];}stream<<getContext()->getTime()<<",\""<<body->read(sofa::core::vec_id::read_access::position)->getValue()<<"\",\""<<body->read(sofa::core::vec_id::read_access::velocity)->getValue()<<"\",\""<<impulse<<"\","<<rows<<','<<solver->d_currentError.getValue()<<','<<solver->d_currentIterations.getValue()<<'\n';stream.flush();}
 };

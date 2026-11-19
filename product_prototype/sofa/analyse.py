@@ -73,13 +73,21 @@ def analyse(case,out):
  fig,axes=plt.subplots(1,4,figsize=(14,4));P=np.array([[.70710678,-.70710678,0],[.40824829,.40824829,.81649658]])
  for ax,t in zip(axes,(closing_time/2,closing_time,hold_end,len(qAll[0])*m['dt_s'])):
   i=min(len(qAll[0])-1,max(0,round(t/m['dt_s'])-1))
-  for f,q in enumerate(qAll):ax.add_collection(PolyCollection((q[i,tri]*1000)@P.T,facecolor=('teal','goldenrod','royalblue')[f],edgecolor='black',linewidth=.1,alpha=.45))
+  for f,q in enumerate(qAll):
+   ax.add_collection(PolyCollection((q[i,tri]*1000)@P.T,facecolor=('teal','goldenrod','royalblue')[f],edgecolor='black',linewidth=.1,alpha=.45))
+   if tree.find(f"./Node[@name='guides{f}']") is not None:
+    offset=0
+    for j in range(m.get('cables_per_finger',2)):
+     cable=cable_node(tree,f,j);count=len(np.fromstring(cable.find('MechanicalObject').get('position'),sep=' '))//3;positions=gAll[f][i,offset:offset+count];offset+=count;pull=np.fromstring(cable.find('CableConstraint').get('pullPoint'),sep=' ');path=np.vstack([pull,positions])*1000;uv=path@P.T;ax.plot(uv[:,0],uv[:,1],color='saddlebrown',lw=.6)
+     proxy=cable.find('SphereCollisionModel')
+     if proxy is not None:
+      for centre in positions*1000:ax.add_patch(plt.Circle(centre@P.T,1000*float(proxy.get('radius')),color='grey',alpha=.25))
   if obj is not None:
    if R is not None:ax.add_patch(plt.Circle((obj[i,:3]*1000)@P.T,R*1000,fill=False,color='crimson'))
    else:
     topology=tree.find("./Node[@name='object']/Node[@name='collision']/MeshTopology");vertices=np.fromstring(topology.get('position'),sep=' ').reshape(-1,3);faces=np.fromstring(topology.get('triangles'),sep=' ',dtype=int).reshape(-1,3);world=vertices@rotation(obj[i,3:7]).T+obj[i,:3];ax.add_collection(PolyCollection((world[faces]*1000)@P.T,facecolor='crimson',edgecolor='crimson',alpha=.15,linewidth=.3))
   ax.autoscale();ax.set_aspect('equal');ax.set_title(f'Actual SOFA t={(i+1)*m["dt_s"]:.3f}s');ax.set(xlabel='Projected mm',ylabel='Projected mm')
- fig.suptitle(case+' — native experimental model,NO deformation scaling');fig.tight_layout();fig.savefig(out/(case+'.png'));plt.close(fig)
+ fig.suptitle(case+' — actual native states,NO deformation scaling;grey=guide collision proxies');fig.tight_layout();fig.savefig(out/(case+'.png'));plt.close(fig)
  return result
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);r={c:analyse(c,out) for c in a.cases}

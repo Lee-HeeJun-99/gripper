@@ -10,8 +10,12 @@ def main():
  if m['status']!='RUN_COMPLETED_NOT_QUALIFIED':raise ValueError('completed actual scene required,NOT grasp approval')
  if sha(src/'scene.scn')!=m['scene_sha256']:raise ValueError('immutable source scene changed')
  out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=False);(out/'records').mkdir();tree=ET.parse(src/'scene.scn');root=tree.getroot()
- for i,node in enumerate(root.iter('NativeCableSequence')):node.set('filename',str(out/'records'/f'finger{i}.csv'))
- for node in root.iter('NativeRigidJournal'):node.set('filename',str(out/'records/object.csv'))
+ names=set()
+ for node in root.iter():
+  if node.tag in ('NativeCableSequence','NativeRigidJournal','NativePointJournal','NativeConstraintJournal','NativeContactRows','NativeCableAudit'):
+   name=Path(node.get('filename')).name
+   if name in names:raise ValueError('journal collision would overwrite evidence:'+name)
+   names.add(name);node.set('filename',str(out/'records'/name))
  tree.write(out/'scene.scn');r=dict(status='EXPORTED_FROM_ACTUAL_SCENE_NOT_GRASP_QUALIFIED',source_case=a.case,source_scene_sha256=sha(src/'scene.scn'),scene_sha256=sha(out/'scene.scn'),source_binary_sha256=m['binary_sha256'],sdk=str(SDK),notes='ONLY journal destinations changed;full component/physical configuration retained;old Raw NEVER overwritten')
  if a.run:
   r['process']=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',m['steps'],'--hideProgressBar',out/'scene.scn'],out/'records/process',480)

@@ -1,5 +1,15 @@
 # ReGrip tendon transmission and wrapping research —2026-11-18
 
+## Latest precise-law numerical/mechanical separation —2026-11-19
+
+Actual1ms ALL-output state/shape1747 now PASS.1%;actual1743–45 SAME-binary
+states/stages EXACT to independent plan. Signed partial energy still FAIL.
+Free static1746 at51.79uN gives22.51mm Skin tip bending,but1750 virtual
+sphere overlap14.50mm is NOT contact/wrapping. Independent constrained static
+1754 now enforces all320 triangles and passes8 loads to1uN (force1e-12N,
+gap1e-10mm);no actual dynamic/grasp claim. Same-volume rail comparisons remain
+fixed-tension,NOT equal-work superiority. See the new precise validation report.
+
 Method background: Gauss collocation order2s is described in
 [Hairer, geometric integration lecture2](https://www.unige.ch/~hairer/poly_geoint/week2.pdf).
 That general order result is NOT proof of ReGrip startup/remote-signal accuracy;
@@ -1596,3 +1606,37 @@ Run only with a NEW tag andmatching archived/current compiled source guard.
 Existing runs need not be repeated.
 The next research report update must replace pending status only after actual
 completion. No automatic post-session continuation is provided.
+## Checkpoint 2026-11-19 — precise 1ms and mechanical limitations
+
+Actual SOFA1743/1744/1745 completed40/80/160 steps with SAME binary and
+STRICT1e-12 state/stage agreement. All-common-output state/shape1747 PASS:
+maximum0.0201771235% against0.1%. Offline same-law force/Hessian replay1777
+also PASS800 comparisons:worst0.00122270019%,absolute5.62252e-13N.
+This is single-film NO-object1ms evidence,NOT3-finger contact/grasp qualification.
+Partial signed energy residual1748 remains FAIL198.74477%;root workNULL.
+Old Newton1e-24 failure remains preserved;explicit numerical plan is not its cure.
+
+Independent static constrained designs retain identical core volume/material/
+tension. Guide profile4.5mm,outboard8mm reaches100uN and statically unloads,
+but whole sampled-load wire clearance FAILS:actual-sphere gap−0.111806mm.
+Outboard10mm only completes through80.3086uN;full100uN solve FAIL.
+Its sampled-prefix wire gap is+1.41313mm,NOT a full-load qualification.
+Both fail skin half-thickness clearance by about0.015mm. One contact row is
+NOT continuous coverage/contact area/wrapping. Pressure/holding loadNULL.
+No final design selected;NO lifting,friction,self-collision or Optuna PASS.
+
+New diagnostics1776 reconstruct the failed-stage mechanical Hessian from the
+saved Newton matrix:reconstruction relative2.15448e-16,mechanical condition
+estimate~9.33e10. This differs from dynamic Newton matrix condition~548.6;
+diagnostic symmetrization was never fed back into physics.
+
+Latest detailed results and exact reproduction commands:
+[precise validation](REGRIP_PRECISE_TRANSMISSION_AND_GRASP_VALIDATION.md).
+Actual reuse build:build/precise_plan_20261119_plan_actual1743/.
+Raw:results/autonomous_film_20261119_precise_actual_force_time1777/,
+results/autonomous_film_20261119_precise_static_thickness1770/,
+results/autonomous_film_20261119_precise_static_wide10_compare1775/.
+Next development:thickness-aware contact plus consistent initial mounting,
+then profile precision/time qualification BEFORE new3-finger integration.
+Do not splice precise model into legacy56.4ms checkpoint1644.
+No SDK changes,remote push or automatic post-session execution.

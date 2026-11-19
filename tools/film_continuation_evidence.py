@@ -40,7 +40,7 @@ def main():
             if path.is_file():record(path)
     for path in (ROOT/'models/film_three_finger_event').rglob('*'):
         if path.is_file():record(path)
-    for top in ('models/film_precise_tendon','models/film_precise_attachment','models/film_c2_startup','models/film_rail_aspect','models/film_stationary_gauss_continuation','models/film_lateral_gauss_parallel','models/film_stationary_gauss_parallel',
+    for top in ('models/film_solver_plan','models/film_extended_precision','models/film_precise_static','models/film_precise_tendon','models/film_precise_attachment','models/film_c2_startup','models/film_rail_aspect','models/film_stationary_gauss_continuation','models/film_lateral_gauss_parallel','models/film_stationary_gauss_parallel',
                 'models/film_three_finger_resume','models/film_three_finger_primitive',
                 'models/film_three_finger_release','models/film_three_finger_recovery',
                 'models/film_three_finger_recovery_next','models/film_transmission',
@@ -79,6 +79,12 @@ def main():
         for path in directory.rglob('command.json'):
             command=json.loads(path.read_text())
             if isinstance(command,list) and command and Path(str(command[0])).is_absolute():record(command[0])
+            # Resource-wrapped runs put /usr/bin/time first. Bind the actual
+            # absolute runner/binary and input files too,not only the wrapper.
+            if isinstance(command,list):
+                for argument in command:
+                    candidate=Path(str(argument))
+                    if candidate.is_absolute() and candidate.is_file():record(candidate)
             if isinstance(command,list) and '-B' in command:
                 generated_build=Path(command[command.index('-B')+1])
                 if generated_build.is_relative_to(ROOT/'build'):

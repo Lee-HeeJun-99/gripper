@@ -18,7 +18,7 @@ for(unsigned stage=0;stage<8;++stage){double T=1e-10*std::pow(10.,4.*stage/7);au
 return 0;}catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}
 '''
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--richardson',action='store_true');p.add_argument('--load-unload',action='store_true');p.add_argument('--full-load',action='store_true');p.add_argument('--profile-amplitude',type=float,choices=(0.,.5,4.5),default=0.);p.add_argument('--outboard',type=float,choices=(6.,8.),default=6.);p.add_argument('--profile-proof');a=p.parse_args();src=ROOT/'results/autonomous_film_20261119_precise_static_potential1746';m=json.loads((src/'summary.json').read_text())
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--richardson',action='store_true');p.add_argument('--load-unload',action='store_true');p.add_argument('--full-load',action='store_true');p.add_argument('--profile-amplitude',type=float,choices=(0.,.5,4.5),default=0.);p.add_argument('--outboard',type=float,choices=(6.,8.,10.),default=6.);p.add_argument('--profile-proof');a=p.parse_args();src=ROOT/'results/autonomous_film_20261119_precise_static_potential1746';m=json.loads((src/'summary.json').read_text())
  for f,d in m['source_hashes'].items():
   if sha(src/'sources'/f)!=d:raise ValueError('immutable precise model changed')
  out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');shutil.copytree(src/'sources/models',out/'sources/models');shutil.copy2(ROOT/'models/film_precise_static/SphereEquilibrium.h',out/'sources/models/film_precise_static/SphereEquilibrium.h');cpp=out/'sources/diagnostics/film_three_finger/StaticContact.cpp';cpp.parent.mkdir(parents=True)

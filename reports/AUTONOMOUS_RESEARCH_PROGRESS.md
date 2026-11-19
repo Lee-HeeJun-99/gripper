@@ -1,4 +1,17 @@
-## New precise-tendon actual200us common-output state/shape PASS —2026-11-19
+## Actual development1726–1754 —2026-11-19
+
+ed7fbc5:passive Newton trial diagnostics,original failure journals BYTE EXACT;
+condition estimate548.6 and locally unresolved Trial changes. Increment/extended
+arithmetic candidates FAIL,preserved. Default AD regression1739 EXACT old metrics.
+8e88fbb:explicit early/late numerical Plan,independent1737/1740 and actual
+1743–45/1747 ALL-output1ms state/shape PASS.1%;STRICT1e-12 API errors0.
+1742/1748 signed partial-energy relative FAIL remains198.74477%,NOT heat.
+Nonlinear static continuation1746 reaches51.79uN/−22.51mm tip,but1750 whole
+virtual sphere geometry FAIL−14.50mm. New independent static unilateral owner1754
+passes8 load stages to1uN with actual full-triangle constraints;no dynamic/grasp
+claim. See REGRIP_PRECISE_TRANSMISSION_AND_GRASP_VALIDATION.md for raw/builds.
+
+## Historical: new precise-tendon actual200us common-output state/shape PASS —2026-11-19
 
 1717 actual new Field API PASS.1718/1719/1720 actual SAME binary
 4f860ce0a79ad7f65a26eb11e4ddc2c337e5903c1b04753cf936e5f2517048d5
@@ -2820,3 +2833,37 @@ Raw: `results/autonomous_film_20261118_three_film_primitive_actual1059/`,
 `...three_film_edge_resume1060/`, `...three_film_edge_unload1061/`.
 Sources at0fa09fb plus archived feature-development source snapshots.
 No completed grasp or automatic background restart is claimed.
+## Checkpoint 2026-11-19 — precise 1ms and mechanical limitations
+
+Actual SOFA1743/1744/1745 completed40/80/160 steps with SAME binary and
+STRICT1e-12 state/stage agreement. All-common-output state/shape1747 PASS:
+maximum0.0201771235% against0.1%. Offline same-law force/Hessian replay1777
+also PASS800 comparisons:worst0.00122270019%,absolute5.62252e-13N.
+This is single-film NO-object1ms evidence,NOT3-finger contact/grasp qualification.
+Partial signed energy residual1748 remains FAIL198.74477%;root workNULL.
+Old Newton1e-24 failure remains preserved;explicit numerical plan is not its cure.
+
+Independent static constrained designs retain identical core volume/material/
+tension. Guide profile4.5mm,outboard8mm reaches100uN and statically unloads,
+but whole sampled-load wire clearance FAILS:actual-sphere gap−0.111806mm.
+Outboard10mm only completes through80.3086uN;full100uN solve FAIL.
+Its sampled-prefix wire gap is+1.41313mm,NOT a full-load qualification.
+Both fail skin half-thickness clearance by about0.015mm. One contact row is
+NOT continuous coverage/contact area/wrapping. Pressure/holding loadNULL.
+No final design selected;NO lifting,friction,self-collision or Optuna PASS.
+
+New diagnostics1776 reconstruct the failed-stage mechanical Hessian from the
+saved Newton matrix:reconstruction relative2.15448e-16,mechanical condition
+estimate~9.33e10. This differs from dynamic Newton matrix condition~548.6;
+diagnostic symmetrization was never fed back into physics.
+
+Latest detailed results and exact reproduction commands:
+[precise validation](REGRIP_PRECISE_TRANSMISSION_AND_GRASP_VALIDATION.md).
+Actual reuse build:build/precise_plan_20261119_plan_actual1743/.
+Raw:results/autonomous_film_20261119_precise_actual_force_time1777/,
+results/autonomous_film_20261119_precise_static_thickness1770/,
+results/autonomous_film_20261119_precise_static_wide10_compare1775/.
+Next development:thickness-aware contact plus consistent initial mounting,
+then profile precision/time qualification BEFORE new3-finger integration.
+Do not splice precise model into legacy56.4ms checkpoint1644.
+No SDK changes,remote push or automatic post-session execution.

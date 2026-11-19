@@ -45,3 +45,7 @@ as a physically cleared final design. See the precise validation report.
 
 No old dynamic checkpoint is imported. No friction,self contact,full thickness,
 dynamic stability,free-body grasp or final design certification is supplied.
+Latest domain extension: outboard10mm is independently force/Hessian tested
+in1772. Full-load1773 FAILS;1774 clearance covers only its committed prefix
+through80.3086uN.8mm full-load design fails wire clearance1770. Both fail
+skin half-thickness clearance. Neither is a selected or SOFA-qualified design.

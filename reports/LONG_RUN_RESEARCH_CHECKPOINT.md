@@ -1,4 +1,29 @@
-## New precise-tendon actual200us common-output state/shape PASS —2026-11-19
+## Latest verified functional checkpoint8e88fbb —2026-11-19
+
+Completed actual1743/1744/1745:precise1ms,40/80/160 public steps,SAME binary
+ef4f9ebe2b1746ea7dee15ef9d969291388ea814e9c933b7ecf9961b7fc26064.
+Reuse build/precise_plan_20261119_plan_actual1743. All accepted states/stages/
+clocks/input EXACT to independent1737,STRICT1e-12. Actual1747 full common-output
+state/shape.1% PASS,worst.0201771235%. Actual1748 energy link PASS but partial
+signed residual time FAIL198.74477%,root workNULL,whole energy BLOCKED.
+Actual shapes/PNG:results/autonomous_film_20261119_plan_actual_inventory1748/.
+Precise model MUST NOT use old three-finger56.4ms checkpoint1644.
+
+Independent static1746 reaches51.79uN/−22.51mm tip,full100uN FAIL. Geometry1750
+virtual buffer overlap−14.503mm,NOT contact/wrapping. Independent constrained
+static1754 passes8 loads to1uN;new cycle/full-load1755/1756 have their own
+process/result JSONs. Check these exits before resuming,do not assume RUNNING.
+No holding/lift/friction/self-collision/full mesh/whole-energy qualification.
+
+Exact bounded next commands (unique tags):
+`$PY tools/film_precise_static_contact.py --tag UNIQUE_CYCLE --richardson --load-unload`
+`$PY tools/film_precise_static_contact.py --tag UNIQUE_FULL --richardson --full-load`
+Fresh actual API reproduction only if needed:
+`$PY tools/film_precise_plan_sofa.py --tag UNIQUE --steps 40 --reference 20261119_precise_solver_plan1737 --reuse-build 20261119_plan_actual1743`
+Full evidence:REGRIP_PRECISE_TRANSMISSION_AND_GRASP_VALIDATION.md.
+No remote push/SDK change or guaranteed automatic restart.
+
+## Historical: new precise-tendon actual200us common-output state/shape PASS —2026-11-19
 
 1717 actual new Field API PASS.1718/1719/1720 actual SAME binary
 4f860ce0a79ad7f65a26eb11e4ddc2c337e5903c1b04753cf936e5f2517048d5
@@ -2050,3 +2075,51 @@ Raw: `results/autonomous_film_20261118_three_film_primitive_actual1059/`,
 `...three_film_edge_resume1060/`, `...three_film_edge_unload1061/`.
 Sources at0fa09fb plus archived feature-development source snapshots.
 No completed grasp or automatic background restart is claimed.
+## Checkpoint 2026-11-19 — precise 1ms and mechanical limitations
+
+Actual SOFA1743/1744/1745 completed40/80/160 steps with SAME binary and
+STRICT1e-12 state/stage agreement. All-common-output state/shape1747 PASS:
+maximum0.0201771235% against0.1%. Offline same-law force/Hessian replay1777
+also PASS800 comparisons:worst0.00122270019%,absolute5.62252e-13N.
+This is single-film NO-object1ms evidence,NOT3-finger contact/grasp qualification.
+Partial signed energy residual1748 remains FAIL198.74477%;root workNULL.
+Old Newton1e-24 failure remains preserved;explicit numerical plan is not its cure.
+
+Independent static constrained designs retain identical core volume/material/
+tension. Guide profile4.5mm,outboard8mm reaches100uN and statically unloads,
+but whole sampled-load wire clearance FAILS:actual-sphere gap−0.111806mm.
+Outboard10mm only completes through80.3086uN;full100uN solve FAIL.
+Its sampled-prefix wire gap is+1.41313mm,NOT a full-load qualification.
+Both fail skin half-thickness clearance by about0.015mm. One contact row is
+NOT continuous coverage/contact area/wrapping. Pressure/holding loadNULL.
+No final design selected;NO lifting,friction,self-collision or Optuna PASS.
+
+New diagnostics1776 reconstruct the failed-stage mechanical Hessian from the
+saved Newton matrix:reconstruction relative2.15448e-16,mechanical condition
+estimate~9.33e10. This differs from dynamic Newton matrix condition~548.6;
+diagnostic symmetrization was never fed back into physics.
+
+Latest detailed results and exact reproduction commands:
+[precise validation](REGRIP_PRECISE_TRANSMISSION_AND_GRASP_VALIDATION.md).
+Actual reuse build:build/precise_plan_20261119_plan_actual1743/.
+Raw:results/autonomous_film_20261119_precise_actual_force_time1777/,
+results/autonomous_film_20261119_precise_static_thickness1770/,
+results/autonomous_film_20261119_precise_static_wide10_compare1775/.
+Next development:thickness-aware contact plus consistent initial mounting,
+then profile precision/time qualification BEFORE new3-finger integration.
+Do not splice precise model into legacy56.4ms checkpoint1644.
+No SDK changes,remote push or automatic post-session execution.
+## Resume identity and bounded commands
+
+Actual SOFA qualified implementation commit:8e88fbbb8bf86b2d13f5d4fb1b174bc4a3161a2f.
+Static contact functional checkpoint:c624a0f85c07dec7947cc9c497b3f9cbc8b4e679.
+Later audit/tool changes are recorded by the next local commit and v14 ledger.
+Before continuing inspect git log and the v14 source_commit,not this historical
+hash alone. All owned trials through1777 exited;NO automatic background run.
+
+Read-only evidence verification:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_continuation_evidence.py --name 20261119_precise_v14 --verify`
+Optional exact actual reproduction (new unique output tag,not a new study):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python tools/film_precise_plan_sofa.py --tag NEXT_UNIQUE --steps 40 --reference 20261119_precise_solver_plan1737 --reuse-build 20261119_plan_actual1743`
+First new development is thickness-aware geometry/contact and reference-exact
+profile potential;do not rerun failed full-load candidates unchanged.

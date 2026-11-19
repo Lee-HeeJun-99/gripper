@@ -1,0 +1,17 @@
+{
+  "status": "CANCELLED_COST_FORECAST_NOT_PHYSICS_VERDICT",
+  "scope": "Incomplete native alarm-distance diagnostic;NOT Holding,clearance,time or energy result",
+  "source_commit": "83da78d",
+  "target_steps": 1200,
+  "completed_csv_frames_observed": 4,
+  "last_observed_time_s": 0.01,
+  "changed_variable": "Native alarmDistance1mm->5mm only;original B3 geometry,contactDistance0.2mm,dt0.0025s,force and solver thresholds unchanged",
+  "reason": "Approximately50seconds elapsed for initial4frames;full1200step forecast far exceeds480second policy. Interrupted rather than waste the remaining budget. Partial outputs are not qualified.",
+  "launcher_tool_exit_code": 130,
+  "final_child_exit_code": null,
+  "exact_runtime_s": null,
+  "process_result_available": false,
+  "termination_evidence": "Tool session ended after Ctrl-C;output journals subsequently remained unchanged. Child final exit report NOT MEASURED;do not fabricate a timeout or OS resource exhaustion.",
+  "guard_policy": "4GiB and480seconds configured by unchanged guarded launcher",
+  "next": "Reject global alarm expansion as a practical remedy in this scene;isolate guide-only normal approach with native minimal benchmark before another full grasp run"
+}

@@ -1,0 +1,61 @@
+{
+  "status": "FAIL_SAMPLED_NATIVE_GUIDE_SPHERES",
+  "scope": "Actual synchronous saved mapped guide centers and native sphere radii ONLY;negative proxy gap not proof of exact solid eyelet/support intersection;NOT swept CCD,whole assembly or grasp PASS",
+  "case": "force_release_clear_support375",
+  "source_sha256": "48b58547669cd252665428e3b84e4b83a522247a5ddf5827d1538843f29f48c8",
+  "inputs": {
+    "finger0.csv": "89a7ab8b61d43bcd27342bc7ad3ee74a9ccb5b772377993c03092db7bb7575de",
+    "guide_frames0.csv": "c2a4187696b51d54bc95a25ec913cadc57dc0a38719bd6894117c17573faef57",
+    "finger1.csv": "4f9cf342b66fe368863342f746a004adb6baf22d94255840151ea6bf93c7d6bf",
+    "guide_frames1.csv": "58e8d28b395cb5b019151eb1c5fd33b35ab2b9352cb9c40d29fbde49ef17c0a9",
+    "finger2.csv": "f1843394fc012cd0653b78f96bb10d53bd5c5d5b5db0539678a94bed16218774",
+    "guide_frames2.csv": "d698e41695f4bfb72c820e89f75d017952f4e00462c3c221702c3550585c375f",
+    "detection_pairs.csv": "5eb8e1badf5d27489775c99186cf5958ae85a503435577c690fa7af98cee182b",
+    "scene.scn": "b17d82724e92ddcf610cbe0a97a5d2521fc5062241e210a8896b1ba5d9b08ea6",
+    "config.json": "4a1326b11a354137dd441fc080e74bfe4766dc0ef1903ed76ac05b98b4d29010"
+  },
+  "actual_frames": 1200,
+  "mapping_max_error_m": 1.3877787807814457e-17,
+  "mapping_state_api": "PASS",
+  "minimum_gap_mm": -0.8644687773621909,
+  "negative_frame_count": 1,
+  "offending_pairs": [
+    {
+      "finger0": 1,
+      "cable0": 0,
+      "side0": -1,
+      "station0_mm": 98,
+      "finger1": 2,
+      "cable1": 1,
+      "side1": 1,
+      "station1_mm": 98,
+      "minimum_gap_mm": -0.8644687773621909,
+      "worst_time_s": 2.38999999999996,
+      "first_negative_s": 2.38999999999996,
+      "last_negative_s": 2.38999999999996,
+      "negative_frames": 1,
+      "centre0_m": [
+        -0.027670842337225828,
+        0.000657413339801018,
+        -0.08771043556995381
+      ],
+      "centre1_m": [
+        -0.028474106424469663,
+        -0.0018724395811239095,
+        -0.08839464625828887
+      ]
+    }
+  ],
+  "actual_native_detector_guide_pair_counts": {
+    "/guides0/cable0/SphereCollisionModel1 | /guides1/cable1/SphereCollisionModel1": 886,
+    "/guides1/cable0/SphereCollisionModel1 | /guides2/cable1/SphereCollisionModel1": 884,
+    "/guides0/cable1/SphereCollisionModel1 | /guides2/cable0/SphereCollisionModel1": 882
+  },
+  "window_minimum_mm": {
+    "closing": 0.1947389819213182,
+    "hold": 0.19976651678089963,
+    "release": -0.8644687773621909,
+    "recovery": 1.2029144956514817
+  },
+  "solid_support_clearance": null
+}

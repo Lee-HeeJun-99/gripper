@@ -1,3 +1,41 @@
+## Latest continuation — B3 moving clearance472–502,2026-11-19
+
+Feature commits:ea03025,83da78d,18bd3eb,bd43763,3b7a4c5.
+Authority:`product_prototype/reports/B3_GUIDE_RELEASE_AND_DETECTION_20261119.md`.
+Final evidence:`product_prototype/reports/evidence_product_velocity_v20/manifest.json`
+(linked to v19 and all old immutable evidence).
+
+-472/475 locate375 overlap at2.390s,98mm adjacent Guide pair:one negative frame.
+ Detector output follows at2.3925s;small solver residual is not accepted clearance.
+-474 changes ONLY sector margin0.5→1mm,completes3s/221.356s. Holding functionality
+ remains,but Guide overlap worsens to−1.102mm. Candidate NOT adopted.
+-480 global5mm alarm is CANCELLED for measured cost forecast(4partial frames);
+ NOT timeout,OS exhaustion,completed physics or a remedy.
+-483 Native free-pair reference supports alarm-range cause.484/485 scheduled
+ native alarm window changes no force/state solver;3s completes133.319s.
+-488 saved Guide spheres show no overlap(min+0.194739mm).492 first954frames
+ finger/Guide/object q/v and cable force match375 EXACTLY;4wide-alarm frames.
+ Skin-only functional50g Holding and release retained489–491. NOT final grasp PASS.
+-493 positive chord gaps are NOT actual swept CCD. Solid supports remain unverified.
+-498 free-pair0.1%all-common/all-pair time gate FAIL. Native velocity-first499–502
+ also FAIL(5mm worst~63.8%);not applied to B3. Prior mesh/time/energy FAIL preserved.
+-481/487 new baseline route drawing/STL/SCAD coordinate audit:all6Native routes
+ error0. STEP/assembly/fabrication NOT READY. No100g/Lift expansion.
+-v19/v20 prior hash audits0mismatches;final2087files. No old results rewritten.
+
+NEXT:read-only Native free-pair row/normal/tangential velocity/impulse recording
+around contact entry;compare modes at same physical event phase using existing
+verified mass/Jacobian references. No new solver,margin sweep,global alarm full
+run,or unvalidated100g/Lift. Read exact restart commands in authority.
+Immediate read-only commands:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_pair_velocity_time502/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_comparison492/summary.json`
+Reusable physical build332 and separate alarm build484 have frozen hash guards.
+ActualRaw,source/binary,applied alarm clocks and commands are preserved.
+All launched sessions ended;480child final report absent/NULL,not fabricated.
+No background continuation promised.
+
+
 ## Latest continuation — Native axial strain468–471,2026-11-19
 
 Feature commit7701d5b. Authority:

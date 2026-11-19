@@ -1,0 +1,86 @@
+{
+  "status": "FAIL_SAMPLED_NATIVE_GUIDE_SPHERES",
+  "scope": "Actual synchronous saved mapped guide centers and native sphere radii ONLY;negative proxy gap not proof of exact solid eyelet/support intersection;NOT swept CCD,whole assembly or grasp PASS",
+  "case": "b3_sector_margin1_474",
+  "source_sha256": "48b58547669cd252665428e3b84e4b83a522247a5ddf5827d1538843f29f48c8",
+  "inputs": {
+    "finger0.csv": "295b4ef6d2b8a4d6ac0ce8c0a17a4b300505e3b125c9bc659fc4097ef9757749",
+    "guide_frames0.csv": "261679e8e4f73c64dbecfe2dc0c1bbb1a0836b4b1ac41ac7ed3a66a3cf7b6b67",
+    "finger1.csv": "cf14e186d2c1c7eeafcaf9cc009207f676c4b1f2cadefaf2f483210a61cb1c61",
+    "guide_frames1.csv": "824daea93606f97dcacdb8cc55c04c4657ac5b8d93a7c97d2a0043559a8588e2",
+    "finger2.csv": "7670f544c8cd92150454199cc0893073befbe34df637e79784dc868b94c96fe3",
+    "guide_frames2.csv": "8727ba0a275a9b935a303d4bbf0fd0085c6fb5846d10144a9cf48ec8f0b1b6c6",
+    "detection_pairs.csv": "fd2149a2d87fc94e88cf3cdd2bbce0496dfc75a6163b9df5d56618595f91728e",
+    "scene.scn": "d43ce55cfc3a648988bc961ee2ff42c85b2728159203e472a4d84d53ecc5ce9e",
+    "config.json": "3f90f3c8ad2fa9f1682f4dcddc14c9988e06f866f8c9db2b8b7a28d30cff22c0"
+  },
+  "actual_frames": 1200,
+  "mapping_max_error_m": 1.3877787807814457e-17,
+  "mapping_state_api": "PASS",
+  "minimum_gap_mm": -1.1020904964883091,
+  "negative_frame_count": 1,
+  "offending_pairs": [
+    {
+      "finger0": 0,
+      "cable0": 1,
+      "side0": 1,
+      "station0_mm": 98,
+      "finger1": 2,
+      "cable1": 0,
+      "side1": -1,
+      "station1_mm": 98,
+      "minimum_gap_mm": -1.1020904964883091,
+      "worst_time_s": 2.38999999999996,
+      "first_negative_s": 2.38999999999996,
+      "last_negative_s": 2.38999999999996,
+      "negative_frames": 1,
+      "centre0_m": [
+        0.01496802584164146,
+        -0.022745587223239955,
+        -0.08797765089487965
+      ],
+      "centre1_m": [
+        0.012601906736690616,
+        -0.02342256618446269,
+        -0.0875188527485038
+      ]
+    },
+    {
+      "finger0": 0,
+      "cable0": 1,
+      "side0": 1,
+      "station0_mm": 90,
+      "finger1": 2,
+      "cable1": 0,
+      "side1": -1,
+      "station1_mm": 90,
+      "minimum_gap_mm": -0.18129926775454228,
+      "worst_time_s": 2.38999999999996,
+      "first_negative_s": 2.38999999999996,
+      "last_negative_s": 2.38999999999996,
+      "negative_frames": 1,
+      "centre0_m": [
+        0.02042812569149375,
+        -0.031209719869077248,
+        -0.08297031903808362
+      ],
+      "centre1_m": [
+        0.017244245792166032,
+        -0.032402999732023006,
+        -0.0825647407254888
+      ]
+    }
+  ],
+  "actual_native_detector_guide_pair_counts": {
+    "/guides0/cable0/SphereCollisionModel1 | /guides1/cable1/SphereCollisionModel1": 1548,
+    "/guides0/cable1/SphereCollisionModel1 | /guides2/cable0/SphereCollisionModel1": 1540,
+    "/guides1/cable0/SphereCollisionModel1 | /guides2/cable1/SphereCollisionModel1": 1522
+  },
+  "window_minimum_mm": {
+    "closing": 0.1935406674701274,
+    "hold": 0.19957576750800182,
+    "release": -1.1020904964883091,
+    "recovery": 2.175016081543014
+  },
+  "solid_support_clearance": null
+}

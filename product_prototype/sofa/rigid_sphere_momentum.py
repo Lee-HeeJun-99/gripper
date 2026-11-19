@@ -1,0 +1,10 @@
+"""Actual native rigid sphere impulse/momentum inventory,not full energy proof."""
+import argparse,json
+from pathlib import Path
+import numpy as np
+from skin_load_assess import BASE,read,sha
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results'/a.case;out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);m=json.loads((src/'summary.json').read_text());cfg=json.loads((src/'config.json').read_text())
+ if m['status']!='RUN_COMPLETED_NOT_QUALIFIED':raise ValueError('completed native trial required')
+ rows=read(src/'object.csv');v=np.array([np.fromstring(r['rigid_v'],sep=' ') for r in rows]);q=np.array([np.fromstring(r['rigid_q'],sep=' ') for r in rows]);pvec=np.array([np.fromstring(r['object_impulse_Ns_Nms'],sep=' ') for r in rows]);dv=np.diff(np.vstack([np.zeros(6),v]),axis=0);mass=cfg['simulation']['sphere_mass_kg'];R=cfg['simulation']['sphere_radius_mm']*.001;linear=mass*dv[:,:3]-mass*np.array(m['gravity_m_s2'])*m['dt_s']-pvec[:,:3];angular=.4*mass*R*R*dv[:,3:]-pvec[:,3:];le=float(np.max(abs(linear)));ae=float(np.max(abs(angular)));qn=float(np.max(abs(np.linalg.norm(q[:,3:],axis=1)-1)));result=dict(status='PASS_MOMENTUM_INVENTORY_ONLY' if max(le,ae,qn)<=1e-12 else 'FAIL',scope='native mixed system spherical inertia momentum balance,not angular contact-kinematics FD,energy,time or grasp certification',case=a.case,linear_max_error_Ns=le,angular_max_error_Nms=ae,maximum_angular_impulse_Nms=float(np.max(abs(pvec[:,3:]))),maximum_angular_speed_rad_s=float(np.linalg.norm(v[:,3:],axis=1).max()),quaternion_norm_error=qn,normalized_inertia_m2=.4*R*R,sphere_collision=m.get('sphere_collision_representation','legacy Vec3 centre Sphere model;torque coupling limited'),source_sha256=sha(Path(__file__)),input_hashes={f.name:sha(f) for f in (src/'summary.json',src/'object.csv')});(out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
+if __name__=='__main__':main()

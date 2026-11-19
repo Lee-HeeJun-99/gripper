@@ -12,7 +12,7 @@ def add(n,tag,**kw):return ET.SubElement(n,tag,{k:str(v) for k,v in kw.items()})
 def flat(x):return ' '.join(format(float(a),'.17g') for row in x for a in row)
 def main():
  launch_command=[sys.executable,*sys.argv]
- extra=argparse.ArgumentParser(add_help=False);extra.add_argument('--guide-normal-mm',type=float);extra.add_argument('--cable-audit',action='store_true');extra.add_argument('--split-contact-surfaces',action='store_true');variant,remaining=extra.parse_known_args();sys.argv=[sys.argv[0],*remaining]
+ extra=argparse.ArgumentParser(add_help=False);extra.add_argument('--guide-normal-mm',type=float);extra.add_argument('--cable-audit',action='store_true');extra.add_argument('--split-contact-surfaces',action='store_true');extra.add_argument('--rigid-sphere-collision',action='store_true');extra.add_argument('--uniform-cross-ribs',action='store_true');variant,remaining=extra.parse_known_args();sys.argv=[sys.argv[0],*remaining]
  if variant.guide_normal_mm is not None and not -6<=variant.guide_normal_mm<=6:raise ValueError('bounded physical guide offset study')
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fingers',type=int,choices=(1,3),default=1);p.add_argument('--steps',type=int);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--object',choices=('none','fixed','free'),default='none');p.add_argument('--radius',type=float,choices=(20,30),default=30);p.add_argument('--stroke',type=float,default=5);p.add_argument('--reuse-build');p.add_argument('--gravity',action='store_true');p.add_argument('--floor',action='store_true');p.add_argument('--outboard',type=float,choices=(4.,10.,14.,24.),default=4.);p.add_argument('--intersection',choices=('MinProximityIntersection','LocalMinDistance'),default='MinProximityIntersection');p.add_argument('--lift',action='store_true');p.add_argument('--center-z',type=float,choices=(-65.,-75.,-80.),default=-65.);p.add_argument('--shape',choices=('sphere','cylinder','box'),default='sphere');p.add_argument('--support-gap',type=float,choices=(0.,.4),default=0.);p.add_argument('--support-radius',type=float,choices=(5.,35.),default=5.);p.add_argument('--slow-cycle',action='store_true');p.add_argument('--support-shape',choices=('mesh','sphere'),default='mesh');p.add_argument('--dense-guides',action='store_true');p.add_argument('--withdraw-support',action='store_true');p.add_argument('--constraint-solver',choices=('BlockGaussSeidelConstraintSolver','GenericConstraintSolver'),default='BlockGaussSeidelConstraintSolver')
  p.add_argument('--guide-location',choices=('outboard','surface','rail-back'),default='outboard');p.add_argument('--rail-back-offset',type=float,default=.5);p.add_argument('--root-angle',type=float,choices=(0,10,12,14,15),default=0);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--constraint-journal',action='store_true');p.add_argument('--rigid-guides',action='store_true');p.add_argument('--nncg',action='store_true');p.add_argument('--global-native-ode',action='store_true');p.add_argument('--mapped-guide-joints',action='store_true');p.add_argument('--object-depth',type=float,choices=(50.,65.,75.,80.));p.add_argument('--object-mass',type=float,choices=(.02,.05,.1),default=.1);p.add_argument('--component-film-damping',action='store_true');p.add_argument('--smooth-support',action='store_true');p.add_argument('--end-clock-motion',action='store_true');p.add_argument('--guide-bridges',action='store_true');a=p.parse_args()
@@ -25,6 +25,7 @@ def main():
  if a.component_film_damping and not a.global_native_ode:raise ValueError('explicit global zero-Rayleigh solver required to avoid double counting')
  if a.object_depth is not None:a.center_z=-a.object_depth
  if a.mapped_guide_joints and not(a.rigid_guides and a.global_native_ode):raise ValueError('mapped rigidification requires explicit rigid-guides and global-native-ode')
+ if variant.uniform_cross_ribs and not a.mapped_guide_joints:raise ValueError('explicit mapped joints required for new uniform cross-rib design')
  if a.nncg:a.constraint_solver='NNCGConstraintSolver'
  if a.lift and a.slow_cycle:raise ValueError('separate explicit lift and slow profiles;do not mix timings')
  if a.constraint_solver=='GenericConstraintSolver':raise ValueError('Installed v26.06 factory removed GenericConstraintSolver;045 preserves actual rejection. Use BlockGaussSeidelConstraintSolver.')
@@ -78,6 +79,10 @@ def main():
    volume=math.pi*R*R*(2*R) if a.shape=='cylinder' else (2*R)**3
    body.find('UniformMass').set('vertexMass',f'{s["sphere_mass_kg"]} {volume} {inertia[0]} 0 0 0 {inertia[1]} 0 0 0 {inertia[2]}')
   r.update(object_shape=a.shape,object_radius_or_halfwidth_mm=a.radius,object_inertia_assumption='solid homogeneous primitive;normalized inertia supplied to RigidMass,not measured')
+  if variant.rigid_sphere_collision:
+   if a.shape!='sphere':raise ValueError('native Rigid3 sphere collision is sphere-only')
+   for child in list(coll):coll.remove(child)
+   add(coll,'MechanicalObject',name='rigidSurface',template='Rigid3d',position=body.find('MechanicalObject').get('position'));add(coll,'SphereCollisionModel',template='Rigid3d',radius=R,group=10);add(coll,'IdentityMapping',input='@../rigid',output='@rigidSurface');body.find('NativeRigidJournal').attrib.pop('center',None);r['sphere_collision_representation']='native Rigid3d SphereCollisionModel;distinct contact mapping,not old model certification'
   if a.floor:
    z=center[2]*.001-R-a.support_gap*.001;r['initial_support_gap_mm']=a.support_gap;r['support_radius_mm']=a.support_radius;floor=add(root,'Node',name='floor')
    if a.support_radius==5:corners=[[-.005,-.005,z],[.005,-.005,z],[.005,.005,z],[-.005,.005,z]];faces=[[0,1,2],[0,2,3]]
@@ -125,7 +130,7 @@ def main():
  if a.rigid_guides:
   if a.cables!=2:raise ValueError('explicit rigid bracket prototype currently requires two cables')
   from rigid_guides import install
-  r['rigid_guides']=[install(root,root.find(f"./Node[@name='finger{f}']"),c,m,c['palm']['angles_deg'][f],f,add,out,mapped=a.mapped_guide_joints,bridges=a.guide_bridges) for f in range(a.fingers)]
+  r['rigid_guides']=[install(root,root.find(f"./Node[@name='finger{f}']"),c,m,c['palm']['angles_deg'][f],f,add,out,mapped=a.mapped_guide_joints,bridges=a.guide_bridges or variant.uniform_cross_ribs,uniform_ribs=variant.uniform_cross_ribs) for f in range(a.fingers)]
   c['guide_mechanics']=r['rigid_guides'];(out/'config.json').write_text(json.dumps(c,indent=2));r['config_sha256']=sha(out/'config.json')
   observer=root.find('NativeContactRows')
   if observer is not None:

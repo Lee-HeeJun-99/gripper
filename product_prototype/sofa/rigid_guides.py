@@ -4,7 +4,7 @@ This is a NEW explicit hardware model,not a correction to the old massless model
 import numpy as np
 from generate import world,width
 def flat(v):return ' '.join(format(float(x),'.17g') for row in v for x in row)
-def install(root,finger,c,mesh,angle,index,add,out,mapped=False,bridges=False):
+def install(root,finger,c,mesh,angle,index,add,out,mapped=False,bridges=False,uniform_ribs=False):
  add(root,'RequiredPlugin',pluginName='Sofa.Component.Constraint.Lagrangian.Model') if index==0 else None
  guides=add(root,'Node',name=f'guides{index}');root.remove(guides);root.insert(list(root).index(finger),guides);local=np.array(mesh['local_positions_mm']);frames=[];anchor_nodes=[];anchor_world=[];anchor_indices=[];cable_indices=[[],[]]
  for j,side in enumerate((-1,1)):
@@ -25,7 +25,11 @@ def install(root,finger,c,mesh,angle,index,add,out,mapped=False,bridges=False):
    after+=2*mass*(I+np.dot(centre,centre)*eye-np.outer(centre,centre))
   frames=combined;anchor_indices=[k%n for k in anchor_indices];cable_indices=[[k%n for k in group] for group in cable_indices];mass*=2;merge_error=float(np.max(abs(before-after)))
  add(guides,'EulerImplicitSolver');add(guides,'SparseLDLSolver',name='linear');add(guides,'MechanicalObject',name='frames',template='Rigid3d',position=flat(frames))
- if bridges:
+ if uniform_ribs:
+  # New physical rib candidate,NOT an equivalent-mass fix to legacy DiagonalMass.
+  origin=np.array(world(c,[0,0,0],angle));basis=np.column_stack([np.array(world(c,p,angle))-origin for p in ([1,0,0],[0,1,0],[0,0,1])]);principal=np.array([24**2+.5**2,3**2+.5**2,24**2+3**2])/12*1e-6;I=basis@np.diag(principal)@basis.T;tensors=[I.tolist() for _ in frames];merge_error=None
+  add(guides,'UniformMass',template='Rigid3d',vertexMass=' '.join(format(x,'.17g') for x in [mass,36e-9,*I.reshape(-1)]));c['uniform_rib_design']=dict(dimensions_mm=[3,24,.5],mass_per_rib_kg=mass,scope='assumed lightweight rigid cross-rib replacing independent brackets;new inertia and transverse constraint,NOT measured or equal-inertia contrast;rib/support collision not yet modeled')
+ elif bridges:
   add(guides,'MeshTopology',name='massTopology',position=flat(np.array(frames)[:,:3]));add(guides,'DiagonalMass',template='Rigid3d,Rigid3d',geometryState='@frames',topology='@massTopology',vertexMass=' '.join(format(x,'.17g') for I in tensors for x in [mass,2e-8,*np.array(I).reshape(-1)]))
  else:add(guides,'UniformMass',template='Rigid3d',vertexMass='.00001 1e-8 1e-6 0 0 0 1e-6 0 0 0 1e-6')
  add(guides,'GenericConstraintCorrection')
@@ -42,4 +46,4 @@ def install(root,finger,c,mesh,angle,index,add,out,mapped=False,bridges=False):
   add(cable,'SphereCollisionModel',radius=np.hypot(c['tendon']['guide_outer_radius'],1.)*.001,group=index+1)
   finger.find('NativeCableSequence').set('cable'+str(j),f'@../guides{index}/cable{j}/actuator')
  add(guides,'NativeRigidJournal',body='@frames',solver='@../constraints',auditMass=1,filename=str(out/f'guide_frames{index}.csv'))
- return dict(type='native rigid brackets with3 noncollinear rail points each',frames=len(frames),attachment_nodes=anchor_nodes,mass_per_bracket_kg=mass,normalized_inertia_m2=[1e-6]*3,normalized_inertia_tensors_m2=tensors or None,ideal_cross_bridge=bridges,mass_merge_inertia_error_kg_m2=merge_error,bridge_scope='ideal zero-added-mass connector;real rib mass/volume/compliance NOT validated' if bridges else None,collision='conservative enclosing sphere sqrt(OD_radius^2+half_length1mm^2);wire swept collision NOT implemented',mass_and_inertia='research assumptions,not measured',joint='native SubsetMultiMapping rigidification' if mapped else 'bilateral rigid attachment replaces local rail deformation;different physical design')
+ return dict(type='native rigid brackets with3 noncollinear rail points each',frames=len(frames),attachment_nodes=anchor_nodes,mass_per_bracket_kg=mass,normalized_inertia_m2=None if uniform_ribs else [1e-6]*3,normalized_inertia_tensors_m2=tensors or None,ideal_cross_bridge=bridges,mass_merge_inertia_error_kg_m2=merge_error,bridge_scope='uniform 24x3x0.5mm assumed rigid rib;new inertia;not matched legacy bridge' if uniform_ribs else 'ideal zero-added-mass connector;real rib mass/volume/compliance NOT validated' if bridges else None,collision='conservative enclosing sphere sqrt(OD_radius^2+half_length1mm^2);wire swept collision NOT implemented',mass_and_inertia='research assumptions,not measured',joint='native SubsetMultiMapping rigidification' if mapped else 'bilateral rigid attachment replaces local rail deformation;different physical design')

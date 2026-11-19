@@ -1,0 +1,38 @@
+{
+  "scope": "Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification",
+  "source_commit": "127119bcfc12a08c5e1cc9707dc87624a5e1895c",
+  "source_sha256": "2c11d4978a3bbd467f7a5d69332bf0330cc540c8311633d48c527d90f2aa35ca",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "beamadapter_binary_sha256": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+  "journal_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "E_Pa": 250000000.0,
+  "section_m": [
+    0.002,
+    0.0005
+  ],
+  "force_N": 1e-06,
+  "solver": "direct",
+  "newton_iteration_budget": 120,
+  "precurved_stress_free_assumption": false,
+  "approximate_small_deflection_Euler_tip_m": 5.487199999999999e-05,
+  "records": [
+    {
+      "nx": 21,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21060925698839128,
+        "pid": 51,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "a12159602799a8171cd623049cbcb77b9c33a8280ae406ba6b06d82a3685d670",
+          "command.json": "e57fd15a4fd4fae7c39c040ddafc89979ef89adfd9a38d9140e8ae1119b5a18c",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "a212cd5140668968005088e91477c56b4a41f93a1d0136c88a709f91e9ff07fb"
+        }
+      },
+      "status": "FAIL_NATIVE_BEAM_SOLVE",
+      "scene_sha256": "7897943e33798f45d290031c9f73eb3087e3532ac81efd0eabbfb5339e4e4395"
+    }
+  ]
+}

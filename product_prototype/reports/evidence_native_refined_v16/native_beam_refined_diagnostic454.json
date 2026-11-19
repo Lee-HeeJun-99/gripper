@@ -1,0 +1,78 @@
+{
+  "scope": "Failed fine-frame diagnostics only;NO equilibrium,mesh or B3 PASS",
+  "source_commit": "ba026aa87264b5bd431573fa82d4a75c1baae172",
+  "producer_sha256": "47a5163260ea06c6017beea1bb945c10e1d952f500821aa36e52f8b9ce79fd53",
+  "binary_sha256": "9674de6b5c85051c52b1b055e09e8725393e71319d6e639fbcb6a42cb1aaa9ef",
+  "observer_source_sha256": "f26d44cf6721c514b72dbd1dcfb28a257399e0f2697743a1330d628ed6b35acd",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "records": [
+    {
+      "nx": 41,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.21000449708662927,
+        "pid": 51,
+        "artifacts": {
+          "stdout.log": "fb6a1a1987d89e97d6f3b96555602f4573a10f23999133f339e0ee9e34333d27",
+          "command.json": "d38d703f10e4a70eabf913e760445ddbe86e70057b22d23ec036731485af6291",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "2b3b119ef0d7b35d61e2ab9ed3d2d730fadd41de295848209323022d3813371f"
+        }
+      },
+      "source_scene_sha256": "05a53022ef68c2550771c6ca522244eb69900b5629f0bc9fc59565f3d5d4c327",
+      "scene_sha256": "3f1843350505216e66e7b73315dfcedf5c7241985e04c9d339c8eb630b480d54",
+      "status": "FAILED_FRAME_DIAGNOSTIC_ONLY",
+      "fixed_nodes": [
+        0,
+        1,
+        2
+      ],
+      "free_axial_residual_N": 1.3481200247075472e-12,
+      "free_transverse_residual_N": 9.593910296000493e-18,
+      "free_torque_residual_Nm": 1.069738488506793e-21,
+      "largest_axial_node": 39,
+      "largest_axial_residual_N": -6.940093903707035e-13,
+      "one_ULP_x_m": 6.938893903907228e-18,
+      "initial_linear_half_ULP_force_envelope_N": 5.453612368583896e-12,
+      "envelope_scope": "initial linear absolute-K half-ULP envelope;NOT lower bound,nonlinear proof or residual floor",
+      "failed_tip_displacement_m": 5.487199999811777e-07,
+      "state_qualification": "FAIL449 preserved;frame is not accepted equilibrium"
+    },
+    {
+      "nx": 81,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.23742754105478525,
+        "pid": 71,
+        "artifacts": {
+          "stdout.log": "1529038c505a0a380acd6154e6413983f340c7fa77bcbbfe1e1400a4331fe786",
+          "command.json": "a53b0263e24a038b5d734ac29b90ce8f014a45873f02587f92e6bda064bf7c3a",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "916c6e601f34e25f0cb20b5e12b91a82ce19c502aa8f464f22ea55b59761a52b"
+        }
+      },
+      "source_scene_sha256": "a12f6ad6d16489fd69e41d171177ccca979a9e8b6e365b76774ef63feb9a524a",
+      "scene_sha256": "926dc421cebb058dcfca755d20e60190a0e502db7bbbcdf1287facc0f3cab77c",
+      "status": "FAILED_FRAME_DIAGNOSTIC_ONLY",
+      "fixed_nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "free_axial_residual_N": 2.5904670577621787e-12,
+      "free_transverse_residual_N": 3.241240928793756e-17,
+      "free_torque_residual_Nm": 8.88282198932514e-21,
+      "largest_axial_node": 71,
+      "largest_axial_residual_N": -1.3880487806948827e-12,
+      "one_ULP_x_m": 6.938893903907228e-18,
+      "initial_linear_half_ULP_force_envelope_N": 1.572806318601025e-11,
+      "envelope_scope": "initial linear absolute-K half-ULP envelope;NOT lower bound,nonlinear proof or residual floor",
+      "failed_tip_displacement_m": 5.487199999811719e-07,
+      "state_qualification": "FAIL449 preserved;frame is not accepted equilibrium"
+    }
+  ]
+}

@@ -1,3 +1,35 @@
+## Latest continuation — refined Rail454–457, 2026-11-19
+
+Feature commit:c50516b. Authority:
+`product_prototype/reports/NATIVE_FINE_RAIL_PRECISION_20261119.md`.
+Evidence:`product_prototype/reports/evidence_native_refined_v16/manifest.json`.
+
+-454 per-node failed-state diagnostics and455 PRIVATE ±1ULP force queries are
+ complete. Baseline queries reproduce actual failed-frame forces exactly;
+ actual unloaded q is unchanged. These are NOT accepted equilibrium states.
+-41/81 axial residuals1.34812e-12/2.59047e-12N; one-coordinate ULP perturbations
+ change force by1.69967e-12/3.39935e-12N. Sensitivity is not an error floor,
+ proof of impossible equilibrium, or permission to correct actual coordinates.
+-456 read-only observer exports SI positions/torques for static unit tests.
+-457 equivalent N-mm-s static representation passes coarse21 force/state checks,
+ but41/81 remain native solve FAIL. No mesh, time, B3,100g or Lift approval.
+ Previous B3 functional Holding and all historical failures remain preserved.
+-Old immutable evidence audit:980 files checked,0 mismatches; new manifest1122
+ files. Original SDK, Golden, Raw and Checkpoints are not modified.
+
+NEXT:compare loaded-state native tangent/directional force derivative with
+symmetric FD over a documented perturbation ladder at frozen PRIVATE41/81
+failed states. Initial-reference matrix equivalence432/439 is DONE;do not repeat.
+First inspect exact preserved inputs:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_refined_diagnostic454/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/native_beam_units457/summary.json`
+Reusable frozen observer451 for SI PRIVATE queries,456 for SI unit exports.
+Actual reproduction scenes/commands are in each Raw process record and authority.
+Stop blind unit/origin/parameter sweeps. No tolerance waiver, custom solver,
+failed-frame promotion or new product candidate is justified by these results.
+No physics child intentionally running; no automatic session continuation.
+
+
 ## Latest next work after native442–453,2026-11-19
 
 Feature2dc6afc/fcc7ba5. Read product_prototype/reports/CHECKPOINT.md and

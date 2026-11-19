@@ -1,0 +1,41 @@
+{
+  "scope": "Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification",
+  "source_commit": "51011cadc0c374e8a409b6bcf52ca6e07f614f5b",
+  "source_sha256": "060f4fb080a7768e0c57ffe0661976e67ec84079a1bbd1f4c532f994ad706260",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "beamadapter_binary_sha256": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+  "journal_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "E_Pa": 250000000.0,
+  "section_m": [
+    0.002,
+    0.0005
+  ],
+  "force_N": 1e-06,
+  "solver": "direct",
+  "newton_iteration_budget": 30,
+  "line_search_iteration_budget": 0,
+  "geometric_rest": true,
+  "load_stages": 0,
+  "loading_scope": "constant static load",
+  "precurved_stress_free_assumption": false,
+  "approximate_small_deflection_Euler_tip_m": 5.487199999999999e-05,
+  "records": [
+    {
+      "nx": 21,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.17457051202654839,
+        "pid": 51,
+        "artifacts": {
+          "stdout.log": "d38d993cc8f98b6e6ab1b87d1d7a9ed71a7bd208738900152cde791196bee183",
+          "command.json": "1f3a547bfebd7566dfbcdc0a52fdd9891d6ddf54cba6190ac304ea74b977f6bf",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "a4f1ec69c11bcac3f8211d0ae57d9eb98d7a9426b0b40bab23cd25984241cc6f"
+        }
+      },
+      "status": "FAIL_NATIVE_BEAM_SOLVE",
+      "scene_sha256": "06355019d705a03fc93fa2a4c8aa5529847e6fc3fc737836b08a652443b47953"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "scope": "Equivalent-unit STATIC Rail diagnostics;not dynamic/time/Skin/B3 certification",
+  "producer_sha256": "3823592c5f3463b6cc25269390ea4de27c6d5bc45e1f410ac8477c85a2bad9ba",
+  "source_commit": "ba026aa87264b5bd431573fa82d4a75c1baae172",
+  "binary_sha256": "16fa6e24f192a46779eea712fa1381eb1adbbb3143b200cdf6e1e7f9ba782bd1",
+  "observer_source_sha256": "831fd04b007973d2554f661ba6ff65c406713591409fbb55c64f5c61768b9a3f",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "native_length_unit": "mm",
+  "length_to_m": 0.001,
+  "force_unit": "N",
+  "native_torque_unit": "N mm",
+  "young_modulus_native": 250.0,
+  "young_modulus_SI_Pa": 250000000.0,
+  "force_gate_SI_N": 1e-12,
+  "torque_gate_SI_Nm": 1e-12,
+  "criterion_note": "Native mixed force/torque residual is not unit invariant;mm imposes stricter native torque component. Independent SI gates unchanged.",
+  "records": [
+    {
+      "nx": 21,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1252073070500046,
+        "pid": 51,
+        "artifacts": {
+          "stdout.log": "e413fc651df0056c4f1857f919b8132e2cce817f01768521562d39a135e0eb0f",
+          "command.json": "d3c776ed24fb4a10eba9b05f09bbc87b72d1e8a04500517b423f5aa47e491e90",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "c8fb50741d6ae5ef281c9783d4c747eb70744fd8c9e9c5843f3c1c71d6384d24"
+        }
+      },
+      "source_scene_sha256": "b439a9565ca2a3427a99510c06fc669c250e3913e7b88f7df7ab24ab6f5d734a",
+      "scene_sha256": "e9a65fe5d5c5e4d3fbbaabc7a41b6c89bce24dbb66f90a68afe2deac91b20d02",
+      "status": "PASS_STATIC_FORCE_ONLY",
+      "geometry_roundtrip_error_m": 0.0,
+      "frames_SI": [
+        {
+          "step": 1,
+          "force_residual_N": 6.643634376349312e-13,
+          "torque_residual_Nm": 1.8360927638721495e-22,
+          "tip_m": 5.487199999812008e-07,
+          "quaternion_norm_error": 1.1102230246251565e-16
+        },
+        {
+          "step": 2,
+          "force_residual_N": 6.643634376349312e-13,
+          "torque_residual_Nm": 1.8360927638721495e-22,
+          "tip_m": 5.487199999812008e-07,
+          "quaternion_norm_error": 1.1102230246251565e-16
+        }
+      ],
+      "SI_control_errors": {
+        "q": 3.469446951953614e-17,
+        "v": 0.0
+      }
+    },
+    {
+      "nx": 41,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.20539650798309594,
+        "pid": 52,
+        "artifacts": {
+          "stdout.log": "734d3d65ca595a3214f6d71853b585997317efc88d9e0f32edaecf56ae115781",
+          "command.json": "eadc65a70635882f14054f96cb239e3e52423f2152df2e869deae711231a65e2",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "49d1ca78d4894b0303debee225a5dece85542fe0bf86f85512ba19cc8f567492"
+        }
+      },
+      "source_scene_sha256": "05a53022ef68c2550771c6ca522244eb69900b5629f0bc9fc59565f3d5d4c327",
+      "scene_sha256": "2389845cd9aecde3e21de74da3e6d95802e3a2c9aef4c781cc8c075c756cb0c9",
+      "status": "FAIL_NATIVE_SOLVE",
+      "geometry_roundtrip_error_m": 0.0,
+      "frames_SI": [
+        {
+          "step": 1,
+          "force_residual_N": 1.2970087303347059e-12,
+          "torque_residual_Nm": 1.777925458041972e-21,
+          "tip_m": 5.487199999811773e-07,
+          "quaternion_norm_error": 1.1102230246251565e-16
+        },
+        {
+          "step": 2,
+          "force_residual_N": 1.297008730333385e-12,
+          "torque_residual_Nm": 1.0993645225385278e-21,
+          "tip_m": 5.48719999981178e-07,
+          "quaternion_norm_error": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "nx": 81,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21260166401043534,
+        "pid": 53,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "101f72f321c095a5cba18ccd5fc5af700dc1087f2dab44f84801d2521178f3d3",
+          "command.json": "8df4d5d6e35e113ce4ae137078a1141cfd931adc77078addc60430e771cee930",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "0bb860232cb44f0106f62330c80a65b1a9856a73485b8833037bd449a3bdbddc"
+        }
+      },
+      "source_scene_sha256": "a12f6ad6d16489fd69e41d171177ccca979a9e8b6e365b76774ef63feb9a524a",
+      "scene_sha256": "20da0454e00e43f2c51157aa7e1eb5942dec01146a34ece6d627d47bcbb591be",
+      "status": "FAIL_NATIVE_SOLVE",
+      "geometry_roundtrip_error_m": 4.336808689942018e-19,
+      "frames_SI": [
+        {
+          "step": 1,
+          "force_residual_N": 2.7098056889319333e-12,
+          "torque_residual_Nm": 7.498902285134284e-21,
+          "tip_m": 5.487199999811723e-07,
+          "quaternion_norm_error": 1.1102230246251565e-16
+        }
+      ]
+    }
+  ]
+}

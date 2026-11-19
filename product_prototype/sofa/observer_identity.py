@@ -2,6 +2,7 @@
 from native_bending_coupon import BASE,sha
 
 IDENTITIES={
+    '458':('build_loaded_observer458','native_beam_loaded_fd459','6b941c36b76713ea107d10dd7d3dbceea651784f3695d456dd1543c64282479a','7637bd0b7928f7fc95e93fd60b0be586935da3765c3b575c2e882f33addcf61b'),
     '456':('build_unit_observer456','native_beam_units457','831fd04b007973d2554f661ba6ff65c406713591409fbb55c64f5c61768b9a3f','16fa6e24f192a46779eea712fa1381eb1adbbb3143b200cdf6e1e7f9ba782bd1'),
     '451':('build_accepted_observer451','native_beam_accepted452','f26d44cf6721c514b72dbd1dcfb28a257399e0f2697743a1330d628ed6b35acd','9674de6b5c85051c52b1b055e09e8725393e71319d6e639fbcb6a42cb1aaa9ef'),
     '441':('build_private_rigid441','native_beam_private_force442','afe612f0372849d6077134b64d7519332a91058196b514f066dcdf558a29a9bb','ceadd757a6d134be84f5f59aa29219f57955af1ebf704ec4ed04ec52e3797d42'),

@@ -23,7 +23,8 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_rectangular_small_load445','native_beam_private_assess446','native_beam_reinforce447',
        'native_rectangular_centered448','native_rectangular_centered_refine449','native_rectangular_centered_half450',
        'native_beam_accepted452','native_beam_centered_assess453',
-       'native_beam_refined_diagnostic454','native_beam_ulp_probe455','native_beam_units457']
+       'native_beam_refined_diagnostic454','native_beam_ulp_probe455','native_beam_units457',
+       'native_beam_loaded_fd459','native_beam_loaded_regression460']
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True)
@@ -49,7 +50,7 @@ def main():
             if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     manifest['exclusions']={'native_rectangular_ramp434':'Unused keyTimes/keyForces;zero load;not loaded bending evidence. Original summary/Raw retained.',
                             'native_rigid_tangent427':'Wrong scalar matrix API;not native tangent discrepancy evidence.'}
-    for identifier in ('400','406','410','428','431','438','441','451','456'):
+    for identifier in ('400','406','410','428','431','438','441','451','456','458'):
         binary,source=compiled_observer(identifier)
         for f in (binary,source):manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     rejected_binary=BASE/'cad/build_rigid_observer426/libReGripElasticObserver.so'
@@ -93,7 +94,7 @@ def main():
                  'native_matrix_assess.py','native_alternatives_evidence.py','native_rigid_tangent.py',
                  'native_beam_reference_inventory.py','native_beam_reference_assess.py',
                  'native_beam_private_force.py','native_beam_private_assess.py','native_beam_accepted.py','native_beam_centered_assess.py',
-                 'native_beam_refined_diagnostic.py','native_beam_ulp_probe.py','native_beam_unit_scale.py'):
+                 'native_beam_refined_diagnostic.py','native_beam_ulp_probe.py','native_beam_unit_scale.py','native_beam_loaded_fd.py'):
         f=BASE/'sofa'/name;shutil.copy2(f,out/name)
     for f in out.iterdir():
         if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)

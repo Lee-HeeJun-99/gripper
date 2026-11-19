@@ -74,16 +74,22 @@ public:
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,Field,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>elastic;
     sofa::core::objectmodel::Data<std::string>filename;
     sofa::core::objectmodel::Data<double>amplitude;
+    sofa::core::objectmodel::Data<unsigned>directionStart;
+    sofa::core::objectmodel::Data<sofa::type::vector<double>>fdSteps;
     sofa::core::objectmodel::Data<Types::VecCoord>privatePositions;
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::behavior::BaseMatrixLinearSystem,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>system;
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::objectmodel::BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>interpolation;
-    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),privatePositions(initData(&privatePositions,Types::VecCoord(),"privatePositions","Optional PRIVATE Rigid3 force-query coordinates;never installed in state")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
+    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),directionStart(initData(&directionStart,unsigned(2),"directionStart","First free node in diagnostic direction;root nodes excluded")),fdSteps(initData(&fdSteps,sofa::type::vector<double>{1e-6,1e-7,1e-8},"fdSteps","Positive dimensionless symmetric FD step ladder")),privatePositions(initData(&privatePositions,Types::VecCoord(),"privatePositions","Optional PRIVATE Rigid3 force-query coordinates;never installed in state")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
     void bwdInit()override {
         BaseObject::bwdInit();if(!body||!elastic||std::ifstream(filename.getValue()))throw std::runtime_error("unique Rigid3 observer required");
         const auto original=body->read(sofa::core::vec_id::read_access::position)->getValue();
         const auto velocity=body->read(sofa::core::vec_id::read_access::velocity)->getValue();
         Types::VecDeriv direction(original.size());
-        for(unsigned i=2;i<original.size();++i)for(unsigned j=0;j<6;++j)direction[i][j]=(j<3?.1:1.)*std::sin(double(6*i+j+1));
+        const unsigned start=directionStart.isSet()?directionStart.getValue():2;
+        const auto steps=fdSteps.isSet()?fdSteps.getValue():sofa::type::vector<double>{1e-6,1e-7,1e-8};
+        if(start>=original.size()||steps.empty())throw std::runtime_error("invalid private derivative plan");
+        for(double h:steps)if(!std::isfinite(h)||h<=0)throw std::runtime_error("positive finite FD steps required");
+        for(unsigned i=start;i<original.size();++i)for(unsigned j=0;j<6;++j)direction[i][j]=(j<3?.1:1.)*std::sin(double(6*i+j+1));
         auto perturb=[&](const Types::VecCoord&q,double h){auto result=q;
             for(unsigned i=0;i<q.size();++i){for(unsigned j=0;j<3;++j)result[i].getCenter()[j]+=h*direction[i][j];
                 double norm=0;for(unsigned j=3;j<6;++j)norm+=direction[i][j]*direction[i][j];norm=std::sqrt(norm);
@@ -116,8 +122,8 @@ public:
         Field::DataVecDeriv dx,df;dx.setValue(direction);df.setValue(Types::VecDeriv(probe.size()));
         params.setKFactor(1.).setBFactor(0.);elastic->addDForce(&params,df,dx);const auto tangent=df.getValue();
         std::ofstream out(filename.getValue());out<<std::setprecision(17)<<"epsilon,force_error_N,force_derivative_norm_N,torque_error_Nm,torque_derivative_norm_Nm\n";
-        for(double eps:{1e-6,1e-7,1e-8}){auto plus=force(perturb(probe,eps)),minus=force(perturb(probe,-eps));double ef=0,nf=0,et=0,nt=0;
-            for(unsigned i=2;i<probe.size();++i)for(unsigned k=0;k<6;++k){double exact=tangent[i][k];
+        for(double eps:steps){auto plus=force(perturb(probe,eps)),minus=force(perturb(probe,-eps));double ef=0,nf=0,et=0,nt=0;
+            for(unsigned i=start;i<probe.size();++i)for(unsigned k=0;k<6;++k){double exact=tangent[i][k];
                 double fd=(plus[i][k]-minus[i][k])/(2*eps);if(k<3){ef+=(fd-exact)*(fd-exact);nf+=fd*fd;}else{et+=(fd-exact)*(fd-exact);nt+=fd*fd;}}
             out<<eps<<','<<std::sqrt(ef)<<','<<std::sqrt(nf)<<','<<std::sqrt(et)<<','<<std::sqrt(nt)<<'\n';}
         force(original);

@@ -57,3 +57,10 @@ def compiled_mapping_acceleration():
     if sha(binary)!='3f1c9995cdadbef875ea340a6a814566939bbf19bd636681315e3dc2f397e909' or sha(source)!='9e3e3a8001b1eb9755a32720c3222491d9e5010e9f8fa3d44e3444d66964865d':
         raise ValueError('frozen composite acceleration observer identity mismatch')
     return binary,source
+
+def compiled_inertia_input():
+    binary=BASE/'cad/build_b3_inertia_input_build592/libReGripInertiaInput.so'
+    source=BASE/'results/b3_inertia_input_build592/Observer.cpp'
+    if sha(binary)!='0e9d7336992942af5a0606e72323155335ced9f1eac3d9c540b8fe31cf3009b7' or sha(source)!='f590fac8ec3cdc755597382badf8759352ccd22effbf2d096a0eeb59b3f3318e':
+        raise ValueError('frozen sampled inertia input identity mismatch')
+    return binary,source

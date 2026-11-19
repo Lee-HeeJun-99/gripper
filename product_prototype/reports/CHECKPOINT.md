@@ -1,3 +1,28 @@
+## Sampled inertia candidate592–599 — 2026-11-20
+
+Authority:product_prototype/reports/NATIVE_SAMPLED_INERTIA_20261120.md.
+Evidence:evidence_product_inertia_v27/manifest.json;3931 prior immutable files unchanged.
+Installed SDK unchanged;original B3 and all earlier PASS/FAIL preserved.
+
+-592 scoped input module builds. Native EulerImplicit/ConstantForceField/mapped
+ mass retained. Adds ONLY sampled torque=-omega cross(Iworld*omega),not an ODE or
+ contact solver. No q/v reset,no implicit gyro Jacobian or B3 adoption.
+-593/595/596 real Native10ms off-axis runs:angular invariant error0.0154663%,
+ 0.00773297%,0.00386646%;baseline0.660162%581 preserved.
+-594/597 actual omega vs analytical reference error0.00286461,0.00143227,
+ 0.000716132rad/s;first-order sampled-input trend,not a universal integration PASS.
+-598 principal control state difference≤7.11e-15,strict1e-12 PASS.
+-599 all common outputs/all3pairs selected FREE-ring state,shape,L and kinetic
+ energy comparison max0.0622731%,below unchanged0.1% Gate. No denominator floor.
+ Input zero-power roundoff kept separately;NOT global energy/contact/FEM certification.
+-Next finite contact600–602 runs and ALL-output checks;free-spin success does not
+ qualify impact,friction,time/mesh,Holding,Lift or fabricated hardware mass.
+
+Reusable build:cad/build_b3_inertia_input_build592;binary/source guards in run tool.
+Reproduction(new UNIQUE tags):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/inertia_input_run.py --tag UNIQUE_GYRO --case b3_finite_com_mapped571`
+No old B3 checkpoint reused. Density/join/union still NULL.
+
 ## Native composite-acceleration continuation588–591 — 2026-11-19
 
 Last functional commit:7c83f9e (read-only public API probe);preceding feature

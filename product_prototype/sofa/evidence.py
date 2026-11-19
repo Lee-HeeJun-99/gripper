@@ -38,6 +38,13 @@ def main():
    skin_count+=1;path=ROOT/name
    if not path.is_file() or sha(path)!=digest:skin_fail.append(name)
  result['prior_skin_immutable']=dict(checked=skin_count,mismatches=skin_fail,status='PASS' if not skin_fail else 'FAIL')
+ response=BASE/'reports/evidence_native_response_v4/manifest.json';response_fail=[];response_count=0
+ if response.exists():
+  for name,digest in json.loads(response.read_text())['files'].items():
+   if not(name.startswith('product_prototype/results/') or name.startswith('product_prototype/reports/evidence_native_response_v4/') or any(name.startswith('product_prototype/'+x) for x in ('meshes/','drawings/','cad/build_','sofa/scenes/'))):continue
+   response_count+=1;path=ROOT/name
+   if not path.is_file() or sha(path)!=digest:response_fail.append(name)
+ result['prior_response_immutable']=dict(checked=response_count,mismatches=response_fail,status='PASS' if not response_fail else 'FAIL')
  for folder in sorted((BASE/'results').iterdir()):
   if not folder.is_dir():continue
   summary=folder/'summary.json'
@@ -51,7 +58,7 @@ def main():
   for f in folder.rglob('*'):
    if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
  for folder in (BASE/'results').iterdir():
-  if folder.is_dir() and any(folder.name.endswith('_'+x) for x in ('144','145','165','255')):
+  if folder.is_dir() and any(folder.name.endswith(x) for x in ('_144','_145','_165','_255','299','305')):
    for f in folder.glob('*.png'):shutil.copy2(f,out/(folder.name+'_'+f.name))
  for f in (BASE/'cad').glob('build_*/libReGripProductSequence.so'):result['files'][str(f.relative_to(ROOT))]=sha(f)
  for top in ('config','cad','drawings','meshes','sofa'):
@@ -60,5 +67,5 @@ def main():
  for f in out.iterdir():
   if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
  (out/'manifest.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(output=str(out),legacy=result['legacy'],cases=len(result['cases']),files=len(result['files']))))
- if fail or old_fail or new_fail or skin_fail:raise SystemExit('Prior immutable evidence mismatch;inspect,do not rewrite baseline')
+ if fail or old_fail or new_fail or skin_fail or response_fail:raise SystemExit('Prior immutable evidence mismatch;inspect,do not rewrite baseline')
 if __name__=='__main__':main()

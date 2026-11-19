@@ -13,6 +13,7 @@ def main():
     p.add_argument('--nx',type=int,nargs='+',default=[21,41,81]);p.add_argument('--precurve',action='store_true')
     p.add_argument('--geometric-rest',action='store_true',help='Use actual reference transforms also for a flat beam;do not change geometry')
     p.add_argument('--load-stages',type=int,default=0,help='Stock LinearForceField quasi-static load path,NOT dynamic time integration')
+    p.add_argument('--origin-x',type=float,default=0.,help='Rigid translation of reference and fixed-root coordinates;not a geometry/material change')
     p.add_argument('--solver',choices=['direct','graph-cg'],default='direct')
     p.add_argument('--newton-iterations',type=int,default=30)
     p.add_argument('--line-search-iterations',type=int,default=12);a=p.parse_args()
@@ -34,6 +35,7 @@ def main():
                 if x>.07:
                     radius=.03/math.radians(40);theta=(x-.07)/radius
                     q[i]=[.07+radius*math.sin(theta),0,radius*(1-math.cos(theta)),0,-math.sin(theta/2),0,math.cos(theta/2)]
+        q[:,0]+=a.origin_x
         root=ET.Element('Node',name='root',dt='1',gravity='0 0 0')
         for name in ('AnimationLoop','Constraint.Projective','LinearSolver.Direct','MechanicalLoad',
                      'Mapping.NonLinear','ODESolver.Backward','StateContainer','Topology.Container.Constant'):
@@ -73,7 +75,7 @@ def main():
     data=dict(scope='Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification',
         source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_sha256=sha(Path(__file__)),
         sdk=str(sdk),beamadapter_binary_sha256=sha(plugin),journal_binary_sha256=sha(journal),E_Pa=E,section_m=[by,hz],
-        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,line_search_iteration_budget=a.line_search_iterations,geometric_rest=a.geometric_rest,load_stages=a.load_stages,
+        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,line_search_iteration_budget=a.line_search_iterations,geometric_rest=a.geometric_rest,load_stages=a.load_stages,origin_x_m=a.origin_x,
         loading_scope='quasi-static native LinearForceField continuation;NOT physical dynamic time' if a.load_stages else 'constant static load',
         precurved_stress_free_assumption=a.precurve,approximate_small_deflection_Euler_tip_m=reference,records=records)
     (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(data,indent=2));print(json.dumps(data,indent=2))

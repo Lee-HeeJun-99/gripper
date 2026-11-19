@@ -23,6 +23,9 @@ def main():
     parser.add_argument('--cross', type=int, default=3)
     parser.add_argument('--nx', type=int, nargs='+', default=[11,21,41])
     parser.add_argument('--models', nargs='+', choices=['tetra','hexa'], default=['tetra','hexa'])
+    parser.add_argument('--tip-load', choices=['uniform-node','uniform-traction','consistent-surface'], default='uniform-traction')
+    parser.add_argument('--axis', choices=['x','z'], default='z')
+    parser.add_argument('--poisson', type=float, default=.3)
     args = parser.parse_args()
     out = BASE/'results'/args.tag
     out.mkdir(exist_ok=False)
@@ -66,9 +69,22 @@ def main():
             add(node,'UniformMass',totalMass=.001)
             add(node,'FixedProjectiveConstraint',indices=' '.join(map(str,np.flatnonzero(q[:,0]==0))))
             add(node,'TetrahedronFEMForceField' if model=='tetra' else 'HexahedronFEMForceField',
-                method='small',youngModulus=1e6,poissonRatio=.3)
+                method='small',youngModulus=1e6,poissonRatio=args.poisson)
             tip=np.flatnonzero(q[:,0]==.1)
-            add(node,'ConstantForceField',indices=' '.join(map(str,tip)),forces=flat([[0,0,-args.load/len(tip)]]*len(tip)))
+            weights=np.ones((args.cross,args.cross))
+            if args.tip_load in ('uniform-traction','consistent-surface'):
+                weights[[0,-1],:]*=.5;weights[:,[0,-1]]*=.5
+            weights=weights.ravel()/weights.sum()
+            if args.tip_load=='consistent-surface' and model=='tetra':
+                weights=np.zeros(len(tip));tip_index={v:i for i,v in enumerate(tip)}
+                for tet in tets:
+                    for face in itertools.combinations(tet,3):
+                        if all(v in tip_index for v in face):
+                            points=q[list(face)];area=np.linalg.norm(np.cross(points[1]-points[0],points[2]-points[0]))/2
+                            for v in face:weights[tip_index[v]]+=area/3
+                weights/=weights.sum()
+            direction=np.array([1.,0,0]) if args.axis=='x' else np.array([0.,0,-1.])
+            add(node,'ConstantForceField',indices=' '.join(map(str,tip)),forces=flat([args.load*w*direction for w in weights]))
             add(node,'NativePointJournal',body='@dofs',filename=str(d/'states.csv'))
             ET.ElementTree(root).write(d/'scene.scn')
             process=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','2','--hideProgressBar',d/'scene.scn'],d/'process',480)
@@ -82,17 +98,20 @@ def main():
                 if len(states)==2 and all(np.isfinite(x).all() for x in states):
                     u=states[-1]-q
                     determinants=[np.linalg.det((states[-1][t[1:]]-states[-1][t[0]]).T)/np.linalg.det((q[t[1:]]-q[t[0]]).T) for t in tets]
-                    r.update(status='COMPLETED_STATIC_DIAGNOSTIC',tip_m=float(-u[tip,2].mean()),
+                    projection=u[tip]@direction
+                    r.update(status='COMPLETED_STATIC_DIAGNOSTIC',tip_m=float(projection.mean()),
                              repeat_difference_m=float(np.max(abs(states[-1]-states[0]))),
                              minimum_tet_determinant_ratio=float(min(determinants)),
-                             external_half_work_J=float(-args.load*u[tip,2].mean()/2),
+                             external_half_work_J=float(args.load*np.dot(weights,projection)/2),
                              strain_energy_J=None,reaction_N=None,state_sha256=sha(d/'states.csv'))
             records.append(r)
     result=dict(scope='Native solid beam diagnostic only; no B3,contact,cable,time or product qualification',
                 source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                 source_sha256=sha(Path(__file__)),binary_sha256=sha(binary),
-                sdk='/home/ubuntu/SOFA/v26.06.00',force_N=args.load,E_Pa=1e6,nu=.3,
-                geometry_m=[.1,.01,.01],cross_nodes=args.cross,approximate_Euler_tip_m=args.load*.1**3/(3*1e6*(.01*.01**3/12)),records=records)
+                sdk='/home/ubuntu/SOFA/v26.06.00',force_N=args.load,E_Pa=1e6,nu=args.poisson,load_axis=args.axis,
+                geometry_m=[.1,.01,.01],tip_load=args.tip_load,cross_nodes=args.cross,
+                approximate_Euler_tip_m=args.load*.1**3/(3*1e6*(.01*.01**3/12)) if args.axis=='z' else None,
+                exact_axial_tip_m=args.load*.1/(1e6*.01*.01) if args.axis=='x' and args.poisson==0 else None,records=records)
     (out/'producer.py').write_bytes(Path(__file__).read_bytes())
     (out/'summary.json').write_text(json.dumps(result,indent=2))
     print(json.dumps(result,indent=2))

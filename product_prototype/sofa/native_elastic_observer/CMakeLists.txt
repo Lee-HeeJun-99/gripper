@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripElasticObserver LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.DefaultType REQUIRED)
+find_package(Sofa.LinearAlgebra REQUIRED)
+add_library(ReGripElasticObserver SHARED Observer.cpp)
+target_compile_features(ReGripElasticObserver PRIVATE cxx_std_17)
+target_link_libraries(ReGripElasticObserver PRIVATE Sofa.Core Sofa.DefaultType Sofa.LinearAlgebra)

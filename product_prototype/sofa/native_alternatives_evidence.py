@@ -15,7 +15,9 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_shell_pcg_refine417','native_shell_pcg_half418','native_shell_precurve_rest419',
        'native_shell_tensor_probe420','native_shell_assess421','native_rectangular_beam422',
        'native_rectangular_rest423','native_rectangular_graph424','native_section_translation425',
-       'native_rigid_tangent427','native_rigid_tangent429','native_rectangular_budget430']
+       'native_rigid_tangent427','native_rigid_tangent429','native_rectangular_budget430',
+       'native_beam_reference432','native_rectangular_geometric433','native_rectangular_ramp434',
+       'native_rectangular_ramp435','native_beam_linear_reference436','native_beam_reference_api437']
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--name',required=True)
@@ -39,7 +41,9 @@ def main():
         shutil.copy2(summary,out/(case+'.json'));manifest['cases'][case]=dict(raw=str(folder.relative_to(ROOT)),summary_sha256=sha(summary))
         for f in folder.rglob('*'):
             if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)
-    for identifier in ('400','406','410','428'):
+    manifest['exclusions']={'native_rectangular_ramp434':'Unused keyTimes/keyForces;zero load;not loaded bending evidence. Original summary/Raw retained.',
+                            'native_rigid_tangent427':'Wrong scalar matrix API;not native tangent discrepancy evidence.'}
+    for identifier in ('400','406','410','428','431'):
         binary,source=compiled_observer(identifier)
         for f in (binary,source):manifest['files'][str(f.relative_to(ROOT))]=sha(f)
     rejected_binary=BASE/'cad/build_rigid_observer426/libReGripElasticObserver.so'
@@ -71,7 +75,8 @@ def main():
     fig.tight_layout();fig.savefig(out/'native_diagnostics.png',dpi=160);plt.close(fig)
     for name in ('native_loaded_section.py','native_shell_coupon.py','native_shell_assess.py',
                  'native_bending_matrix_paths.py','native_beamadapter_coupon.py','observer_identity.py',
-                 'native_matrix_assess.py','native_alternatives_evidence.py','native_rigid_tangent.py'):
+                 'native_matrix_assess.py','native_alternatives_evidence.py','native_rigid_tangent.py',
+                 'native_beam_reference_inventory.py','native_beam_reference_assess.py'):
         f=BASE/'sofa'/name;shutil.copy2(f,out/name)
     for f in out.iterdir():
         if f.is_file():manifest['files'][str(f.relative_to(ROOT))]=sha(f)

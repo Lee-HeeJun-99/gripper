@@ -74,7 +74,9 @@ public:
     sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,Field,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>elastic;
     sofa::core::objectmodel::Data<std::string>filename;
     sofa::core::objectmodel::Data<double>amplitude;
-    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")){}
+    sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::behavior::BaseMatrixLinearSystem,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>system;
+    sofa::core::objectmodel::SingleLink<NativeRigidTangentObserver,sofa::core::objectmodel::BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>interpolation;
+    NativeRigidTangentObserver():body(initLink("body","Observed native Rigid3 state")),elastic(initLink("elastic","Native Rigid3 ForceField")),filename(initData(&filename,std::string(),"filename","Exclusive private tangent diagnostic")),amplitude(initData(&amplitude,0.,"amplitude","Dimensionless PRIVATE probe amplitude; translation scale .1m,rotation scale1rad")),system(initLink("system","Optional DIAGNOSTIC native matrix assembly at initial state")),interpolation(initLink("interpolation","Optional native interpolation data inventory")){}
     void bwdInit()override {
         BaseObject::bwdInit();if(!body||!elastic||std::ifstream(filename.getValue()))throw std::runtime_error("unique Rigid3 observer required");
         const auto original=body->read(sofa::core::vec_id::read_access::position)->getValue();
@@ -89,6 +91,20 @@ public:
             return result;};
         sofa::core::MechanicalParams params;
         auto force=[&](const Types::VecCoord&q){Field::DataVecCoord x;Field::DataVecDeriv v,f;x.setValue(q);v.setValue(velocity);f.setValue(Types::VecDeriv(q.size()));elastic->addForce(&params,f,x,v);return f.getValue();};
+        const auto initial=force(original);
+        std::ofstream initialOutput(filename.getValue()+".initial.csv");initialOutput<<std::setprecision(17)<<"node,fx_N,fy_N,fz_N,tx_Nm,ty_Nm,tz_Nm\n";
+        for(unsigned i=0;i<initial.size();++i){initialOutput<<i;for(unsigned j=0;j<6;++j)initialOutput<<','<<initial[i][j];initialOutput<<'\n';}
+        if(interpolation){std::ofstream data(filename.getValue()+".lengths.txt");auto* lengths=interpolation->findData("lengthList");if(!lengths)throw std::runtime_error("native lengthList unavailable");data<<lengths->getValueString();}
+        if(system){
+            params.setMFactor(0.).setBFactor(0.).setKFactor(-1.);system->buildSystemMatrix(&params);
+            const auto* A=system->getSystemBaseMatrix();if(!A)throw std::runtime_error("initial native assembled matrix missing");
+            std::ofstream matrix(filename.getValue()+".assembled.csv");matrix<<std::setprecision(17)<<"i,j,K\n";
+            for(int i=0;i<A->rowSize();++i)for(int j=0;j<A->colSize();++j)if(A->element(i,j)!=0)matrix<<i<<','<<j<<','<<A->element(i,j)<<'\n';
+            force(original);params.setKFactor(1.);
+            std::ofstream tangentOutput(filename.getValue()+".dforce.csv");tangentOutput<<std::setprecision(17)<<"i,j,K\n";
+            for(unsigned column=0;column<6*original.size();++column){Types::VecDeriv basis(original.size());basis[column/6][column%6]=1.;Field::DataVecDeriv dx,df;dx.setValue(basis);df.setValue(Types::VecDeriv(original.size()));elastic->addDForce(&params,df,dx);const auto values=df.getValue();
+                for(unsigned i=0;i<values.size();++i)for(unsigned k=0;k<6;++k)if(values[i][k]!=0)tangentOutput<<6*i+k<<','<<column<<','<<-values[i][k]<<'\n';}
+        }
         const auto probe=perturb(original,amplitude.getValue());force(probe);
         // BeamAdapter overrides addDForce/MultiMatrixAccessor, NOT the scalar
         // convenience addKToMatrix used by the Vec3 observer. Query its real path.

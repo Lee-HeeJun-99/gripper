@@ -11,9 +11,12 @@ def main():
     csv.field_size_limit(64*1024*1024)
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--load',type=float,default=1e-6)
     p.add_argument('--nx',type=int,nargs='+',default=[21,41,81]);p.add_argument('--precurve',action='store_true')
+    p.add_argument('--geometric-rest',action='store_true',help='Use actual reference transforms also for a flat beam;do not change geometry')
+    p.add_argument('--load-stages',type=int,default=0,help='Stock LinearForceField quasi-static load path,NOT dynamic time integration')
     p.add_argument('--solver',choices=['direct','graph-cg'],default='direct')
     p.add_argument('--newton-iterations',type=int,default=30);a=p.parse_args()
     if not 1<=a.newton_iterations<=200:raise ValueError('bounded native Newton budget required')
+    if not 0<=a.load_stages<=100:raise ValueError('bounded native load continuation required')
     out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);sdk=Path('/home/ubuntu/SOFA/v26.06.00')
     plugin=sdk/'plugins/BeamAdapter/lib/libBeamAdapter.so'
     deps=subprocess.check_output(['ldd',str(plugin)],text=True)
@@ -45,27 +48,32 @@ def main():
         add(node,'MechanicalObject',template='Rigid3d',name='dofs',position=flat(q))
         add(node,'FixedProjectiveConstraint',indices=' '.join(map(str,np.flatnonzero(s<=.005))))
         add(node,'BeamInterpolation',name='interpolation',crossSectionShape='rectangular',lengthY=by,lengthZ=hz,
-            defaultYoungModulus=E,defaultPoissonRatio=.3,dofsAndBeamsAligned=1,straight=0 if a.precurve else 1)
+            defaultYoungModulus=E,defaultPoissonRatio=.3,dofsAndBeamsAligned=1,straight=0 if a.precurve or a.geometric_rest else 1)
         add(node,'AdaptiveBeamForceFieldAndMass',name='elastic',interpolation='@interpolation',computeMass=0)
-        add(node,'ConstantForceField',indices=nx-1,forces=f'0 0 {-a.load:.17g} 0 0 0')
+        if a.load_stages:
+            add(node,'LinearForceField',template='Rigid3d',points=nx-1,times=f'0 {a.load_stages} {a.load_stages+3}',forces=f'0 0 0 0 0 0 0 0 {-a.load:.17g} 0 0 0 0 0 {-a.load:.17g} 0 0 0')
+        else:add(node,'ConstantForceField',indices=nx-1,forces=f'0 0 {-a.load:.17g} 0 0 0')
         centers=add(node,'Node',name='centers');add(centers,'MechanicalObject',name='points',position=flat(np.zeros((nx,3))))
         add(centers,'RigidMapping',input='@../dofs',output='@points',rigidIndexPerPoint=' '.join(map(str,range(nx))),globalToLocalCoords=0)
         add(centers,'NativePointJournal',body='@points',filename=str(d/'states.csv'));ET.ElementTree(root).write(d/'scene.scn')
-        process=guarded([sdk/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','2','--hideProgressBar',d/'scene.scn'],d/'process',480)
+        outputs=a.load_stages+3 if a.load_stages else 2
+        process=guarded([sdk/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(outputs),'--hideProgressBar',d/'scene.scn'],d/'process',480)
         logs=''.join((d/'process'/f).read_text() for f in ('stdout.log','stderr.log'));r=dict(nx=nx,process=process,status='FAIL_NATIVE_BEAM_SOLVE',scene_sha256=sha(d/'scene.scn'))
-        if process['exit_code']==0 and not any(x in logs for x in ('[ERROR]','Line search failed','failed to converge')):
+        if process['exit_code']==0 and not any(x in logs for x in ('[ERROR]','Line search failed','failed to converge','Unused Attribute')):
             rows=list(csv.DictReader((d/'states.csv').open()))
-            if len(rows)==2:
+            if len(rows)==outputs:
                 states=[np.fromstring(row['q'],sep=' ').reshape(-1,3) for row in rows]
                 if all(np.isfinite(x).all() for x in states):
                     r.update(status='COMPLETED_NATIVE_RECTANGULAR_BEAM_DIAGNOSTIC',tip_m=float(-(states[-1]-q[:,:3])[-1,2]),
-                             repeat_difference_m=float(np.max(abs(states[1]-states[0]))),max_rest_error_m=float(np.max(abs(states[-1]-q[:,:3]))))
+                             repeat_difference_m=float(np.max(abs(states[-1]-states[-2]))),max_rest_error_m=float(np.max(abs(states[-1]-q[:,:3]))))
         records.append(r)
     reference=a.load*.095**3/(3*E*(by*hz**3/12)) if not a.precurve else None
     data=dict(scope='Rectangular native BeamAdapter bending only;NOT Skin/attachment/torsion/contact/time/B3 certification',
         source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),source_sha256=sha(Path(__file__)),
         sdk=str(sdk),beamadapter_binary_sha256=sha(plugin),journal_binary_sha256=sha(journal),E_Pa=E,section_m=[by,hz],
-        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,precurved_stress_free_assumption=a.precurve,approximate_small_deflection_Euler_tip_m=reference,records=records)
+        force_N=a.load,solver=a.solver,newton_iteration_budget=a.newton_iterations,geometric_rest=a.geometric_rest,load_stages=a.load_stages,
+        loading_scope='quasi-static native LinearForceField continuation;NOT physical dynamic time' if a.load_stages else 'constant static load',
+        precurved_stress_free_assumption=a.precurve,approximate_small_deflection_Euler_tip_m=reference,records=records)
     (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(data,indent=2));print(json.dumps(data,indent=2))
 
 if __name__=='__main__':main()

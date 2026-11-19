@@ -1,0 +1,97 @@
+{
+  "surface_fixed_R20_058": {
+    "source_summary_sha256": "407232fdbcd57d5de07e87661e7910d1abeecd38512e82651e8753fe9640af88",
+    "source_binary_sha256": "314bc3645ab19fb3de6a5c30a99d57e4051b787deeaac44859eeaaf19b2af101",
+    "status": "ANALYSED_NOT_GRASP_CERTIFIED",
+    "contact_area": null,
+    "pressure": null,
+    "root_reaction": null,
+    "initial_geometry_valid": true,
+    "object": {
+      "final_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hold_translation_range_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_upward_displacement_mm": 0.0,
+      "max_solver_error": 1.9865611132867003e-10,
+      "max_solver_iterations": 10,
+      "holding": "NOT QUALIFIED:pedestal/external load isolation incomplete",
+      "lift": "NOT RUN:palm has not been lifted",
+      "hold_rise_mm": [
+        0.0,
+        0.0
+      ]
+    },
+    "fingers": [
+      {
+        "min_initial_tet_det_m3": 1.0000000000000292e-09,
+        "min_volume_ratio": 0.9341484019136395,
+        "max_tip_node_mean_displacement_mm": 25.472108610033594,
+        "residual_tip_node_mean_displacement_mm": 9.84571633704291e-12,
+        "peak_tendon_force_N": 29.333370568776225,
+        "force_units": "native CableModel.force is impulse;divide by actual dt (installed CableModel header)",
+        "first_command_m": 9.925150000000003e-09,
+        "reference_width_mean_skin_tip_peak_mm": 25.472487865506675,
+        "reference_width_mean_skin_tip_final_mm": 9.825725051758584e-12,
+        "max_discrete_skin_centreline_curvature_per_mm": 0.07523825454590623,
+        "cable_tracking": [
+          {
+            "cable": 0,
+            "hold_time_s": 0.9999999999999897,
+            "command_mm": 8.0,
+            "actual_path_shortening_mm": 8.000000001068583,
+            "hold_error_mm": 1.0685827223078093e-09,
+            "maximum_absolute_error_mm": 0.01479146600049698,
+            "scope": "actual mapped path length;not pre-correction CableModel displacement"
+          },
+          {
+            "cable": 1,
+            "hold_time_s": 0.9999999999999897,
+            "command_mm": 8.0,
+            "actual_path_shortening_mm": 7.999999997873528,
+            "hold_error_mm": -2.1264726091096975e-09,
+            "maximum_absolute_error_mm": 0.01534699567871424,
+            "scope": "actual mapped path length;not pre-correction CableModel displacement"
+          }
+        ],
+        "min_triangle_sphere_gap_mm": 25.150792294595725,
+        "near_surface": [
+          {
+            "time_s": 0.5000000000000003,
+            "near_surface_triangles": 0,
+            "normal_z_range": null,
+            "scope": "geometric proximity ONLY;not pressure-bearing contact area/wrapping"
+          },
+          {
+            "time_s": 0.9999999999999897,
+            "near_surface_triangles": 0,
+            "normal_z_range": null,
+            "scope": "geometric proximity ONLY;not pressure-bearing contact area/wrapping"
+          }
+        ],
+        "minimum_sampled_finite_wire_sphere_gap_mm": 25.02365477363954
+      }
+    ]
+  },
+  "native_no_contact_time": {
+    "status": "FAIL",
+    "scope": "all common NO-contact state/motion/force outputs;not whole energy/contact",
+    "gate": 0.001,
+    "absolute_floor": null,
+    "worst": {
+      "pair": "1_2",
+      "time_s": "1.6049999999999713",
+      "clock_difference_s": 1.0458300891968975e-13,
+      "quantity": "v_m_s",
+      "absolute": 0.00012263561924190063,
+      "relative": 1.9458254404801805,
+      "status": "FAIL"
+    }
+  }
+}

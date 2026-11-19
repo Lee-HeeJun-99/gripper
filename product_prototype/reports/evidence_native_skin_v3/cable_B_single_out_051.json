@@ -1,0 +1,88 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "stock Cable/FEM diagnostic NOT grasp certification",
+  "source_commit": "cfffbbf7263483262d3f89db90e12d411b2ceb70",
+  "source_hashes": {
+    "Controller.cpp": "3c746c3464288f6376eccb45155668fd981f2cad899d898f3082d55fd32179f4",
+    "cable_matrix.py": "4ef87841517891a02c8abc8af5902c0082604ee6fbfdf919a3a0c920b57efbe2",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4"
+  },
+  "command": [
+    "product_prototype/sofa/cable_matrix.py",
+    "--tag",
+    "cable_B_single_out_051",
+    "--cables",
+    "1",
+    "--guide",
+    "outboard"
+  ],
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "cables": 1,
+  "guide": "outboard",
+  "stroke_mm": 8,
+  "dt_s": 0.0025,
+  "steps": 800,
+  "configure": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.20289812493138015,
+    "pid": 24,
+    "artifacts": {
+      "stdout.log": "1ae38aa5d0163260bd8d9b42771d9717cfb43d37b81d84204b9ceabe71a1afd9",
+      "command.json": "63f97f20387a2b2105414b9b808e498931e70f87886e99a0320a189b28ac221f",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "7d1e0a683c5d2bb88c7433d4ebc6b0631fd48fe2c4205c7f149b56926ecaa788"
+    }
+  },
+  "compile": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 3.4151621729834005,
+    "pid": 48,
+    "artifacts": {
+      "stdout.log": "57afc5b1bc34fa0443056b27b99e69adc40283b074a5de7f8741f3e22d987961",
+      "command.json": "05ad25c43baa173291c06ff6792e7ad92806a35846424fed23e1442993758ce6",
+      "stderr.log": "1ff2d85a377aebf02ff1b13ec8487b5b45e8afc3f12bf9c60f933735b6393132",
+      "process.json": "582d4ca5c9c4c8105ec0382a3a5c41146e191089c75ea637f6f92c6a68167a90"
+    }
+  },
+  "binary_sha256": "48d7cb1dd6afc168844603a4dc5c067485dc5abed99c141ac6ce00b7d596f484",
+  "build": "product_prototype/cad/build_cable_B_single_out_051",
+  "single_logging": "two CSV cable columns intentionally alias one physical constraint;count once",
+  "scene_sha256": "ac23da2a726f4c2d86000e76f8eec8a65f5f5537cb710857af7b1ec1d2d65654",
+  "config_sha256": "747c17a069e3cc82ce4009eac970233dcaaf3369c22ee01a00c3e9890f5fa5bd",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "original_scene_sha256": "100acc0643b4c18a58aa7578046db85587366353bc7f64fe7de4ab3706522c7c",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 4.315396353951655,
+    "pid": 71,
+    "artifacts": {
+      "stdout.log": "6db9217fd7d6d181b0158b50c36fadf5af985b6910c5fa0b10003dca3f3120a7",
+      "command.json": "2cf00ef5605c6f91d401642c4da63aeaf929c4dcdc3ab2bbc9c1e51e5ceae3bf",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "7da871962cb1633c4017c7d627a38bc9d85d32da553c08ecc1740d63e2439089"
+    }
+  },
+  "rows": 800,
+  "tracking": [
+    {
+      "cable": 0,
+      "L0_m": 0.09834436471813442,
+      "hold_end_shortening_mm": 4.450714563422692,
+      "maximum_hold_error_mm": 3.6092334416853236,
+      "max_error_mm": 3.6203311803385176,
+      "internal_final_mm": 6.245004513516506e-13,
+      "peak_force_N": 3.30620093696954
+    }
+  ],
+  "solver": {
+    "max_error": 7.113946931536219e-11,
+    "max_iterations": 3
+  },
+  "raw_hashes": {
+    "constraints.csv": "a2b949bfeb71525fb66cdd86d597d065cd4ae2b222e74dd45773e8298fb45363",
+    "finger0.csv": "e43e35944bd2bf7d71efb9ecbeda71da4b13bf7dff52a8b7a04154ae4d437a44"
+  }
+}

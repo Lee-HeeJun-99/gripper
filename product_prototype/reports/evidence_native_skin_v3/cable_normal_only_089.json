@@ -1,0 +1,69 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "stock Cable/FEM diagnostic NOT grasp certification",
+  "source_commit": "3f600b7ce1c28fae224617bded096e74dad284ba",
+  "source_hashes": {
+    "Controller.cpp": "3a6c07a2a79301f4bb077153193379ba34ce88e84b9e90a64bbfd1263552b5ec",
+    "cable_matrix.py": "f542b12488897e7c54780097ea9e3f9dd22df5af6d5e08430acbce9b934ebb07",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4"
+  },
+  "command": [
+    "product_prototype/sofa/cable_matrix.py",
+    "--tag",
+    "cable_normal_only_089",
+    "--cables",
+    "1",
+    "--guide",
+    "normal-only",
+    "--steps",
+    "400",
+    "--reuse-build",
+    "rigid_guides_graph_087"
+  ],
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "cables": 1,
+  "guide": "normal-only",
+  "stroke_mm": 8,
+  "dt_s": 0.0025,
+  "steps": 400,
+  "binary_sha256": "ad57362686cfe95a13e7601e353d8695336012cc980e31d23bcce067af99ea1f",
+  "build": "product_prototype/cad/build_rigid_guides_graph_087",
+  "single_logging": "two CSV cable columns intentionally alias one physical constraint;count once",
+  "scene_sha256": "6327b9ee46f53bc9400084362b7594b02a7de362957fdc641b8f8b7b039508d3",
+  "config_sha256": "8d77b0e0ae00aadc474ddbc411dc9d962238c88d69d3d041ab88f7da8f1eaa57",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "original_scene_sha256": "100acc0643b4c18a58aa7578046db85587366353bc7f64fe7de4ab3706522c7c",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 2.413603284978308,
+    "pid": 24,
+    "artifacts": {
+      "stdout.log": "bb1f620fe7a2abde332b45a642710d951ee4577cd37b019cf8f8b28ca7dfae2b",
+      "command.json": "0dd0eac3a68fecf5549d67d948f489621c5554b73fd15705c44adeeec1022da4",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "10ae609f5d0fd5382943f774b1769539cc4eb4a86c9d587317f0459def454175"
+    }
+  },
+  "rows": 400,
+  "tracking": [
+    {
+      "cable": 0,
+      "L0_m": 0.09834436471813442,
+      "hold_end_shortening_mm": 8.000000000000105,
+      "maximum_hold_error_mm": 5.204170427930421e-13,
+      "max_error_mm": 0.0017603930067321485,
+      "internal_final_mm": 7.999999999999549,
+      "peak_force_N": 10.486526177639
+    }
+  ],
+  "solver": {
+    "max_error": 1.128330503636994e-18,
+    "max_iterations": 3
+  },
+  "raw_hashes": {
+    "constraints.csv": "56bd90094ee7b79bd2c7dd3443ac868ff88591e0523ad157e3ee241f38335c4e",
+    "finger0.csv": "737c448592279cafc3fa92d6afb36ef3cb966462b41e4648e85270d7b7056bc4",
+    "cable_audit.csv": "310ead457463b239e99e4006552a79c965d422601686f379b5c24ff66075db92"
+  }
+}

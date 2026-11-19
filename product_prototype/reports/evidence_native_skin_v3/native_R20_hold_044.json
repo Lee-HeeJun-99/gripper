@@ -1,0 +1,114 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "experimental native SOFA product prototype;NOT numerical/material/grasp certification",
+  "source_commit": "e5675c9f3f07c88b08054589a84e9961e558b50a",
+  "source_hashes": {
+    "Controller.cpp": "c60fc3de23f0d2cd9bf3ea7abf4129e9b3dd3f24b4e5792c9e03a0472956a034",
+    "export_scene.py": "7a87cc37b5ea2312cd25677e08d5d842e8e797fc98b729bf67cbb82432b21156",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4",
+    "analyse.py": "0149b78f41a55f953e1dabfeefd6ad42857b8d324f6ab501b1035aadcec5d305",
+    "run_native.py": "11e083be91712f71175dbcd9ee1f0cfb89c79f7f08c64ad814fd3fddfc518c17"
+  },
+  "config_sha256": "6102b4c08a34f360efcc800e727fb3f6d8c9c2643690c0afb8a25e3a29f6ac91",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "runner_sha256": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad",
+  "fingers": 3,
+  "object": "free",
+  "steps": 1200,
+  "dt_s": 0.0025,
+  "stroke_mm": 8.0,
+  "units": "SI",
+  "contact_force": null,
+  "root_reaction": null,
+  "lift": "NOT RUN",
+  "configure": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.16609953006263822,
+    "pid": 24,
+    "artifacts": {
+      "stdout.log": "5cd60856343214ebed769e55d31e1159f554d50298ad4636774ad960a6dddbb9",
+      "command.json": "63b706595911e5cee3d6f3cc9804cc88d1635c276848ee15682ca18a5ae7a11d",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "911c64bde1e668d2c9e01cdf0094290009afeb754939ba44ef5c2f206ecafe96"
+    }
+  },
+  "compile": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 2.5399868560489267,
+    "pid": 48,
+    "artifacts": {
+      "stdout.log": "57afc5b1bc34fa0443056b27b99e69adc40283b074a5de7f8741f3e22d987961",
+      "command.json": "9cf634890433c6d1b4803bf98b924d31e78b75a92ca5d39bfb9eb7e2ad82128e",
+      "stderr.log": "d7de4eaaf9e1b30ac02c0db9639b4a60fb3d51aa26cc93acffefa63ceef42fd0",
+      "process.json": "36e3e60a052ad189abf26eb340fb3539f985f2b446ea40c22197216472883c59"
+    }
+  },
+  "binary_sha256": "297401ed64eff5c7782867fef61def956ca80adaf90a1dab969c08610df66993",
+  "build": "product_prototype/cad/build_native_R20_hold_044",
+  "gravity_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "floor": true,
+  "frame": "proper right-handed;longitudinal down,width minus-tangent,normal inward",
+  "object_shape": "sphere",
+  "object_radius_or_halfwidth_mm": 20.0,
+  "object_inertia_assumption": "solid homogeneous primitive;normalized inertia supplied to RigidMass,not measured",
+  "initial_support_gap_mm": 0.4,
+  "support_radius_mm": 35.0,
+  "support_shape": "fixed R35 rounded pedestal;NEW physical fixture,NOT flat-table repair",
+  "support_withdrawal": "native kinematic support down40mm1-1.5s;object/finger shapes NOT prescribed;fixture work NOT measured",
+  "geometry_generator_sha256": "67a96c35f20b32058d88d10cdddb512f150b777310f7e0b57bfcfe4b18a59069",
+  "scene_sha256": "100acc0643b4c18a58aa7578046db85587366353bc7f64fe7de4ab3706522c7c",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 15.241439392091706,
+    "pid": 80,
+    "artifacts": {
+      "stdout.log": "773a2fb7aadbd588773a5288c3bd52523ed1a2354942bb6a5bb4aea79bd838bc",
+      "command.json": "fb53543db84dd5b8a4fc521a49b7ec465d0e74e6118ecdcb2a7f9fa7b0e6bfec",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "9813946967848c53b7339523a1244239a9eb5e9001bfe3d80310cf0e7b71e10d"
+    }
+  },
+  "sofa_errors": 0,
+  "metrics": [
+    {
+      "rows": 1200,
+      "peak_tip_displacement_m": 0.04135796871387065,
+      "final_tip_displacement_m": 3.3445361182916917e-06,
+      "finite": true,
+      "last_time_s": 2.999999999999947,
+      "max_cable_raw_force": 0.00910938749284542
+    },
+    {
+      "rows": 1200,
+      "peak_tip_displacement_m": 0.04135796867108724,
+      "final_tip_displacement_m": 3.344536120103601e-06,
+      "finite": true,
+      "last_time_s": 2.999999999999947,
+      "max_cable_raw_force": 0.00910862907477302
+    },
+    {
+      "rows": 1200,
+      "peak_tip_displacement_m": 0.041357968712833586,
+      "final_tip_displacement_m": 3.3445361177320494e-06,
+      "finite": true,
+      "last_time_s": 2.999999999999947,
+      "max_cable_raw_force": 0.009109385091355728
+    }
+  ],
+  "raw_hashes": {
+    "finger1.csv": "5cd2267c94c8898bd780c35cf5a6ab61ff3058c8cd83257e505d94cbca3e311b",
+    "finger2.csv": "8dac0ca21c31af02be3eda7d0e6ec11b4d0997e35ed92fc0515a12c4c3a08fe0",
+    "object.csv.center.csv": "88309db938f2d097d9766f2f127a703c9f44487067868af58f4ffe72ebdd74c0",
+    "finger0.csv": "bbd0bc89df15197424664361c26149655c63a5b6d83b185df28a3f9af63f5dc1",
+    "object.csv": "7f7e59b6d1f2e6af739fc0336bf549e4e03968a9228b58bc78702d74fdda6ce1",
+    "support.csv": "2325b8e39c84a72e14ffcea5902e528aeb68896a44740e88163568a2ddb785e1"
+  }
+}

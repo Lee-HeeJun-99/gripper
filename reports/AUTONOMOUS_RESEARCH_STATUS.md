@@ -1,3 +1,35 @@
+## Latest Skin-contact continuation — 2026-11-19
+
+Source commits fbc9754,0ec92f0; details: product_prototype/reports/SKIN_CONTACT_CONTINUATION_20261119.md.
+Trials147–175 use unique Raw paths; legacy and earlier FAILs unchanged.
+
+-150/152: first finger impulse1.07s coincides with−.214888mm cable error.
+ Assembled J matches previous geometry (~1.25e-16),not current geometry;
+ reported linear error3.33e-9 does not certify geometric shortening.
+-Backside guide149/151 (normal−3mm,unchanged hardware size) fails:no finger load,
+ object follows support40mm. This routing is not selected.
+-Outboard4 candidate155 initially meets functional holding and child-J row-load
+ criteria, but these are NOT physical Skin holding. Geometry168 FAIL:
+ Skin gap>=3.394mm despite active row influence;child/FEM coordinates match0.
+ Detector173 confirms object–GUIDE pairs and NO object–Skin pairs through.4s.
+ Child Jacobian influence is NOT direct contact provenance;169 is not grasp PASS.
+-Read-only mapping logger171 and native detector174 give EXACT state equality
+ (STRICT1e-12) over their respective2s/.4s scopes. Split-vs-unsplit172 FAIL:
+ contact partition changes dynamics and is not a passive observer substitution.
+-Base/Half/Quarter155/162/163 all completed2s;all-pair/all-common-time167 FAIL at
+ unchanged.1% gate. No100g/Lift or final CAD selection is authorized by these results.
+-Minimal Rigid3/DiagonalMass158 FAILs factory/state/topology initialization;
+ not proof the entire SOFA capability is unsupported. Full bridge remains BLOCKED.
+-CADv5 retained;STEP/assembly kernel/moving hardware/wire swept clearance,
+ full energy/contact area/pressure remain NOT QUALIFIED/NOT MEASURED.
+
+Next:bind actual Contact collision-model pair and response Constraint row identity,
+ not mechanical-J influence. Use public detector provenance first,then eliminate
+ Guide-first contact without disabling hardware collision. No custom solver rewrite.
+Exact commands/Raw/Build identities are in the new detailed report.
+All launched physics children completed;no automatic continuation is promised.
+
+
 ## Native continuation checkpoint — 2026-11-19 (supersedes priorities below, not historical results)
 
 Functional commit: `ff21719` (preceded by 3f600b7, af356fb, e29719f, 956d6c3).

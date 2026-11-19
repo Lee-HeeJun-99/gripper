@@ -58,7 +58,7 @@ def main():
   for f in folder.rglob('*'):
    if f.is_file():result['files'][str(f.relative_to(ROOT))]=sha(f)
  for folder in (BASE/'results').iterdir():
-  if folder.is_dir() and any(folder.name.endswith(x) for x in ('_144','_145','_165','_255','299','305')):
+  if folder.is_dir() and any(folder.name.endswith(x) for x in ('_144','_145','_165','_255','299','305','370','371','379')):
    for f in folder.glob('*.png'):shutil.copy2(f,out/(folder.name+'_'+f.name))
  for f in (BASE/'cad').glob('build_*/libReGripProductSequence.so'):result['files'][str(f.relative_to(ROOT))]=sha(f)
  for top in ('config','cad','drawings','meshes','sofa'):

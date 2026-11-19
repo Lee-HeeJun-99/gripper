@@ -1,3 +1,79 @@
+## Latest product checkpoint — 2026-11-19, native trials259–379
+
+Last functional checkpoint commit:d215185 (routing8f1cbc7/1de4288,force input81640fe,
+mesh/time isolation4d7d4e9). Detailed authority:
+product_prototype/reports/SKIN_ROUTING_AND_PRECURVATURE_20261119.md.
+Historical bodies,Raw,Golden,SDK and prior verdicts below are preserved.
+
+- A/B/C distributed routing/stress-free precurve candidates were implemented and
+  actually tested first in SINGLE fingers. Initial3-finger guide-proxy overlap was
+  discovered287,not hidden;293 now rejects it before physics. v8 sector routes retain
+  real wire/guide dimensions and all hardware collision.
+- B3=40deg manufactured distal curve70–100mm,1.5N/cable NATIVE force input.
+  330/331 calibrate native value=T*dt;334/335 C2 input and discrete BE reference pass
+  STRICT1e-12. New default displacement branch333 q/v difference0 for200 contact
+  steps. This is input/controller work,NOT new FEM/contact/ODE solver.
+- 344/348 ACTUAL Skin-source50g holding:slip.032359mm,speed.272144mm/s,
+  support gap41.599746mm,Support/Guide/Rail hold force0,Skin Fz.490513N.
+  Half-dt351/368/373 also meets FUNCTIONAL hold protocol,with Skin Fz.490480N.
+  SAME-geometry zero-force345/349 FAILs (40.00054mm slip):not passive-curvature
+  holding alone. This is limited SIMULATION evidence,NOT full physical certification.
+- Matched constant-route308 ALSO meets functional holding;do not claim routing
+  uniquely creates holding. Its cable errors/settling are worse;force and displacement
+  inputs are different physical models,not a relabelled numerical fix.
+- 375 completes3s in172.152s:after the SAME0–2s hold,the support ONLY exits laterally
+  120mm2–2.2s (NEW post-hold fixture input);object remains free under gravity.
+  377 first800 q/v states match344 EXACTLY.376 last Skin contact2.3875s;late Skin/
+  Guide-object/support forces0;support and Guide-object forces after2s also0.
+  Actual force unload reaches0N. Tip rest-reference error.150984mm under gravity;
+  full recovery to validated gravity equilibrium NOT QUALIFIED. Old325 separation
+  failure and residual cable tension are retained,not converted to PASS.
+- Wrapping NOT QUALIFIED:48deg tip angle is not broad contact coverage;area/pressure
+  remainNULL. Full moving hardware clearance FAIL/UNQUALIFIED (e.g.375 guide-proxy
+  gap−.864mm);exact supports/solid sweep/self-collision/thickness remain unfinished.
+- Physical gates FAIL:315/366 all-pair.6s,367 full2s pair,276/346 single full2s
+  refinement retain.1% gate with NO floors. Loaded41-node360 has inverted tets;
+ 365 no-object also inverts;364 quarter-dt avoids inversion through.5s but differs
+  strongly from coarse spatial response.363 zero-input reference is exact.
+  These isolate causes,NOT prove locking or a unique solver bug. No production3-finger
+ 41-node expansion. Static native bending372 stops on actual Newton failures;
+  missing static pairs areNOTMEASURED/BLOCKED,not measured zero errors.
+- No100g,Lift,12-Wrench,Optuna,whole energy,final design or fabrication PASS.
+  Native velocity-first Cable coupon322 FAILs;323 control PASS. Do not enable that
+  combination in product scenes. General friction/energy certification remains open.
+
+Reusable calibrated controller:product_prototype/cad/build_default_control332/
+libReGripProductSequence.so
+SHA2563eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0.
+Historical displacement build187 remains immutable;current runner source guard
+requires the new332 build. Actual source snapshots/hash identities,not just a
+possibly dirty parent source_commit,define each experiment.
+
+CAD references:meshes/drawings distal_A_sector_v8,precurve_B_sector_v8,
+hybrid_C_sector_v8,precurve_distal40_v9. STEP/OCC/FreeCAD assembly NOT GENERATED.
+Actual figures:results/release_figures379/ and final_actual370/ (NOT QUALIFIED).
+Frozen native scene:product_prototype/sofa/scenes/native_force_hold_release_v9/
+(journals redirected;export-only is not an extra replay PASS).
+
+Next priority:well-conditioned NATIVE small-load bending/attachment validation,
+then moving-clearance and mesh/time gates. Do not continue stroke/offset/force sweeps
+or repeat failed372 unchanged. Inspect its real residual/line-search logs before
+changing any numerical scheme;do not waive tolerances or resume custom solver work.
+The current family is checkpointed after repeated physical-gate failures,not declared
+complete. All launched children finished;no automatic background continuation.
+Actual275 hit480s policy timeout;no OS/RAM exhaustion is claimed.
+
+Exact review/reproduction commands (use NEW tags;do not overwrite existing outputs):
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY -m json.tool product_prototype/results/mesh_isolation369/summary.json
+$PY -m json.tool product_prototype/results/force_three_time366/summary.json
+$PY product_prototype/sofa/release_assess.py --case force_release_clear_support375 --tag NEXT_UNIQUE_RELEASE_AUDIT
+$PY product_prototype/sofa/response_load_assess.py --case precurve40_force_three344 --tag NEXT_UNIQUE_SKIN_AUDIT
+```
+Actual simulation commands are preserved in each case launch_command.json and
+process/command.json;full-quarter2s cost exceeds480s and was NOT RUN.
+
 ## Latest Skin-contact continuation — 2026-11-19
 
 Source commits fbc9754,0ec92f0; details: product_prototype/reports/SKIN_CONTACT_CONTINUATION_20261119.md.

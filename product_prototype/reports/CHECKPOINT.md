@@ -1,5 +1,11 @@
 ## Native composite-acceleration continuation588–591 — 2026-11-19
 
+Last functional commit:7c83f9e (read-only public API probe);preceding feature
+commits:e85534a (COM/contact),f3869ba (exact/free-spin controls).
+Current direction stopped at a reproducible model-capability failure,not because
+one test or commit completed. Product is NOT complete. Next inertial capability
+work must satisfy off-axis and principal controls before higher-level trials.
+
 Feature commits:e85534a,f3869ba;26 archived campaigns565–591 (587 is preliminary build only).
 Authority:product_prototype/reports/FINITE_COM_NATIVE_VALIDATION_20261119.md.
 Latest evidence:evidence_product_mapping_v26/manifest.json → v25 → v24.

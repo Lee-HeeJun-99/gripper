@@ -14,12 +14,13 @@ CASES=['native_loaded_sections407','native_shell_loaded408','native_shell_graph4
        'native_shell_cg_plan414','native_bending_matrix_paths415','native_shell_pcg416',
        'native_shell_pcg_refine417','native_shell_pcg_half418','native_shell_precurve_rest419',
        'native_shell_tensor_probe420','native_shell_assess421','native_rectangular_beam422',
-       'native_rectangular_rest423','native_rectangular_graph424']
+       'native_rectangular_rest423','native_rectangular_graph424','native_section_translation425']
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--name',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--name',required=True)
+    p.add_argument('--prior',default='evidence_native_elastic_v7');a=p.parse_args()
     out=BASE/'reports'/a.name;out.mkdir(exist_ok=False)
-    previous=BASE/'reports/evidence_native_elastic_v7/manifest.json'
+    previous=BASE/'reports'/a.prior/'manifest.json'
     old=json.loads(previous.read_text());checked=0;mismatches=[]
     for name,digest in old['files'].items():
         immutable=name.startswith('product_prototype/results/') or name.startswith('product_prototype/reports/evidence_') or any(name.startswith('product_prototype/'+x) for x in ('cad/build_','meshes/','drawings/','sofa/scenes/'))

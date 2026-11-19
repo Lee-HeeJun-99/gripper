@@ -1,3 +1,49 @@
+## Latest continuation — finite Native hardware532–564,2026-11-19
+
+Feature commits:fcf0282,ea5794a,9e09cc4,ad88042.
+Authority:product_prototype/reports/FINITE_GUIDE_AND_SUPPORT_VALIDATION_20261119.md.
+Evidence:evidence_product_finite_v23/manifest.json → v22 and older evidence.
+Prior immutable2695files audited,0mismatches;new3356files.
+
+-24short Native children;no full B3/Holding rerun.532 MinProximity finite mesh
+ yields1001iterations/large residual;alarm5 aborts std::bad_alloc under4GiB limit.
+ Actual failure preserved;not host-wide OS exhaustion or a successful run.
+-Stock LocalMinDistance tested with all finite eyelet collision models ENABLED.
+ 16/32/64surface refinements and native compound support scene implemented.
+ Fewer rows are a detection-policy change,NOT same-result speed optimization.
+-539 detects real saved facet crossings with alarm1.543/5630.1%time and5451%
+ contact-mesh Gates FAIL. Compound alarm5 worst~64.6244%;NOT adopted into B3.
+-552/555 actual mapped points and Detector feature/edge IDs recorded read-only.
+ Observer q/v/impulse difference0.557 mapped API passes strict1e-12.
+-534–553 apparent surface discrepancies traced to independent trimesh SI scale
+ classification.556 analysis-only nondimensional wrapper passes analytic refs;
+ no Native state/force/tolerance changes.557 actual loaded surface-point error
+ ≤4.18e-18m;old analysis Raw preserved. Not a physical/time Gate workaround.
+-v11 CAD:36finite eyelets+36proposed supports,STL/SCAD/section/BOM/shared config.
+ No STEP/kernel/joins/material/strength/whole assembly/fabrication approval.
+-548/549 exact convex/envelope SAT screens show no saved support interference
+ on OLD485 motion;559 support-object min+0.647705mm. Conditional replay ONLY,
+ not dynamics of new hardware or swept clearance.547 sector certificate failed,
+ but sector violation was correctly NOT labelled actual solid collision.
+-564 partwise COM/normalized inertia audit:eyelet COM offset18.25–25.10mm from
+ assumed Native mass origin;support7.61–10.94mm. Actual density/mass/union
+ inertia NULL. Existing10mg origin lump is not calibrated fabricated hardware.
+-Existing functional50g Skin Holding/release remains limited;full time/mesh/
+ energy,100g/Lift/fabrication remain NOT QUALIFIED. SDK/Raw/verdicts preserved.
+
+NEXT:Native COM-frame/shared-Jacobian mini reference using explicit component
+mass assumptions supported by564 geometry;do not silently change lumped mass,
+invent density,claim numerical repair or reuse old B3 checkpoints.
+Separately investigate Native event/step timing on verified finite geometry.
+No blind alarm/dt/mesh sweep,collision disable,post-set velocity or custom solver.
+Immediate read-only resume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_finite_hardware_mass564/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_compound_time563/summary.json`
+Reusable332/512 and new554 read-only observer;frozen source/binary guards and
+exact regression commands in authority. Actual Native plot560 retained.
+No active physics child or promised background continuation.
+
+
 ## Latest continuation — Native entry/angular audit503–531,2026-11-19
 
 Feature commits:985f93e,3ea736c,eeef6a9;unit-label correction0840e2a.

@@ -1,0 +1,109 @@
+{
+  "status": "RUN_COMPLETED_NOT_QUALIFIED",
+  "scope": "experimental native SOFA product prototype;NOT numerical/material/grasp certification",
+  "source_commit": "e5675c9f3f07c88b08054589a84e9961e558b50a",
+  "source_hashes": {
+    "Controller.cpp": "d2c676fc5e53ffd625dc4ea32199ee7e06247936f1e20b4d88b7c17ce614599e",
+    "CMakeLists.txt": "97ba64d30f9bef5c3860edc330e6bc773711e30ab562e9d6411598823405c8c4",
+    "analyse.py": "b2703f57fc88c412f8964f1c3cc2483f021aeac724ec0ceb19f414567e409adc",
+    "run_native.py": "9208fe04ff7694fac001f322ad8372b7e2069bd09cad9a89171823c1a807b139"
+  },
+  "config_sha256": "f895cd99900eebf0177bc691884bd9a7fbfcecfc291aef8dbdd639b58a98756c",
+  "mesh_sha256": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+  "sdk": "/home/ubuntu/SOFA/v26.06.00",
+  "runner_sha256": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad",
+  "fingers": 3,
+  "object": "free",
+  "steps": 800,
+  "dt_s": 0.0025,
+  "stroke_mm": 6.0,
+  "units": "SI",
+  "contact_force": null,
+  "root_reaction": null,
+  "lift": "NOT RUN",
+  "configure": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.16583143500611186,
+    "pid": 24,
+    "artifacts": {
+      "stdout.log": "315182f6ebf578966663c9600a7e6e4e9c595bce3178d12ae4de772b50ad6d57",
+      "command.json": "b5461fc75682db0491ed5a324e30956347176e4296a118cf03f2f599f737d2e6",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "bdf6d0e690834973539d43181527078c95eaf4465ba92d109b93d94784a327f9"
+    }
+  },
+  "compile": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 2.67248152801767,
+    "pid": 48,
+    "artifacts": {
+      "stdout.log": "57afc5b1bc34fa0443056b27b99e69adc40283b074a5de7f8741f3e22d987961",
+      "command.json": "41a917907c6af25a24306e58107067dcbc5ec63263ee05e5af26cc0f80c4279d",
+      "stderr.log": "9502ddb30cd7f338310ff6aecd4da20492a1b2d2772879a0a9258a69ef9d3e55",
+      "process.json": "3d2af1f920da36dd09506502080b5ba15ac825859766cda084ccb319e3490515"
+    }
+  },
+  "binary_sha256": "df67c9089309449ce8f91032aec975ec62c333cd0b67a28974c69bc1291b35a6",
+  "build": "product_prototype/cad/build_native_box_table_030",
+  "gravity_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "floor": true,
+  "frame": "proper right-handed;longitudinal down,width minus-tangent,normal inward",
+  "object_shape": "box",
+  "object_radius_or_halfwidth_mm": 30,
+  "object_inertia_assumption": "solid homogeneous primitive;normalized inertia supplied to RigidMass,not measured",
+  "initial_support_gap_mm": 0.4,
+  "support_radius_mm": 35.0,
+  "geometry_generator_sha256": "67a96c35f20b32058d88d10cdddb512f150b777310f7e0b57bfcfe4b18a59069",
+  "scene_sha256": "0fc370635a5a604d14587e389ec01f6d64dc97c7de22c78d06e1e4fd2b89d524",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 12.135496253031306,
+    "pid": 99,
+    "artifacts": {
+      "stdout.log": "429002c943b5f2476a9657c2ad713f9d9636aaff53aa5e26dad5d2c737264feb",
+      "command.json": "ea84afefecbb77c8ed2d9ff873e19200d55fa4c78bb3928bd4029da60c006982",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "4059e8efe687e4335d90bbf527a76ed133880a7b7de0bc4059392b325ae85029"
+    }
+  },
+  "sofa_errors": 0,
+  "metrics": [
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.015970658237836464,
+      "final_tip_displacement_m": 3.3445554059316296e-06,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.009369306275050499
+    },
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.013387591515584697,
+      "final_tip_displacement_m": 3.3445554051353957e-06,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.009621533983433616
+    },
+    {
+      "rows": 800,
+      "peak_tip_displacement_m": 0.013326419990931305,
+      "final_tip_displacement_m": 3.3445554045964727e-06,
+      "finite": true,
+      "last_time_s": 1.9999999999999685,
+      "max_cable_raw_force": 0.01027013806348701
+    }
+  ],
+  "raw_hashes": {
+    "finger1.csv": "d61c88b73e6764c666eb684ffaa6c6019b3b2212b4175e3bb6edc00ceb669295",
+    "finger2.csv": "7361fa406e0a9a2039de546fce19b0051b6a1c7e388ff018de969da7e7be2b90",
+    "finger0.csv": "5760b9313098f4c5a8a82f3505d974105cc5abe75b65784d49d5b23b92e3aaff",
+    "object.csv": "a93940ad39f17d49f135bafbf6bd62962a258e5a27056484c3e98cc2d7e455c7"
+  }
+}

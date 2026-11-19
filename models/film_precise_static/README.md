@@ -1,5 +1,17 @@
 # Independent precise-bond static contact/transmission research
 
+Latest opt-in thickness model:SphereEquilibrium::setThicknessEnvelope assigns
+half part thickness to all320 topology rows;default remains legacy BYTE EXACT.
+g=distance(triangle,sphere centre)−R−.01−halfThickness. This conservative
+Minkowski-ball envelope contains constant-thickness normal facet prisms but is
+NOT a finite-strain thickness law. New fixture+.2mm world-Z sphere offset is
+explicitly separate from old+.0001mm.1780/1784 full static100uN PASS;baseline
+wire geometry/unload FAIL,profile4.5/outboard10 sampled geometry/unload PASS.
+Actual1782 observer is PASSIVE ONLY and never applies contact forces. Same
+binary ON/OFF states/stages/Field journals and old1743 are BYTE EXACT. No dynamic
+thickness contact,wrapping,holding or final design certification follows.
+See reports/REGRIP_THICKNESS_CONTACT_20261119.md for scopes and next code.
+
 This is NOT the actual SOFA dynamic Owner or a replacement for the old3-finger
 checkpoint. `CoupledPlaneStep` is reused for its constant root reduction only;
 its mass,h and damping terms never enter the static force equations.

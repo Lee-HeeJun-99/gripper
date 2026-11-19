@@ -1,3 +1,35 @@
+## Latest continuation1778–1795: thickness-aware geometry —2026-11-19
+
+Functional checkpoint ad3acc5 adds optional per-triangle half-thickness envelope
+and passive actual SOFA observer;legacy disabled-envelope1755/1783 journals are
+BYTE EXACT. Actual1782 SAME binary ON/OFF and old1743 state/stage/Field outputs
+BYTE EXACT,12,800 geometry rows,1ms. This is a FREE coupon with PASSIVE sphere
+geometry,NOT dynamic thickness contact or3-finger grasp.
+
+New STATIC model uses explicit+.2mm world-Z sphere-centre placement and
+R+.01+half-part-thickness. Both baseline1780 and profile4.5/outboard10,1784
+complete64 loads to100uN with original force1e-12/gap1e-10 gates.
+1788 profile sampled geometry is clear:Skin envelope+.0100mm,wire centreline
++1.118785mm.1787 baseline wire gap−.0838626mm FAIL. Zero-radius wire only.
+Baseline1785 static unload FAIL;profile1789 static64-stage unload PASS toT0,
+zero active force rows. NOT dynamic release/recovery,holding or lift.
+1794/1795 deformed Lagrangian Hessian FD PASS;old signed-energy FAIL retained.
+No final design selected;one contact row is NOT wrapping/contact area/pressure.
+
+Next NEW code:per-triangle radii in a separate dynamic event/contact Owner,
+shared by event roots,normal Jacobian,accepted closure and energy/work.
+Single-film fixed-sphere verification precedes free-body/3-finger integration.
+Do not repeat completed static campaigns unchanged or splice old checkpoint1644.
+Baseline unload residual/rounding analysis is independently actionable.
+
+Full results,Raw/build identities,reproduction commands:
+[Thickness continuation](REGRIP_THICKNESS_CONTACT_20261119.md).
+Reusable actual observer build:build/thickness_audit_20261119_thickness_sofa1782/.
+Results/figure:results/autonomous_film_20261119_thickness_assess1790/.
+Inherited15,278 immutable v14 artifacts unchanged (1791);new live sources differ.
+New byte ledger: FILM_CONTACT_EVIDENCE_20261119_thickness_v15.json.
+All owned children completed;no remote push/SDK modification/automatic restart.
+
 ## Latest priorities after actual1ms qualification —2026-11-19
 
 Do NOT repeat completed1743/44/45 actual runs or1747 time comparison without a

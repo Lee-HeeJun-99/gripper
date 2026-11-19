@@ -3,7 +3,9 @@ import argparse,json,shutil
 from pathlib import Path
 from curve_common import ROOT,sha,write_json
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();ledger=ROOT/'reports/FILM_CONTACT_EVIDENCE_20261119_tendon_v13.json';m=json.loads(ledger.read_text());out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');changed=[];checked=0;excluded=[]
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--ledger-name',default='20261119_tendon_v13');a=p.parse_args()
+ if not a.ledger_name or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_' for c in a.ledger_name):raise ValueError('ledger identifier required')
+ ledger=ROOT/'reports'/('FILM_CONTACT_EVIDENCE_'+a.ledger_name+'.json');m=json.loads(ledger.read_text());out=ROOT/'results'/('autonomous_film_'+a.tag);out.mkdir(exist_ok=False);shutil.copy2(__file__,out/'runner.py');changed=[];checked=0;excluded=[]
  for name,digest in m['files'].items():
   if not (name.startswith(('results/','build/','designs/')) or Path(name).is_absolute()):excluded.append(name);continue
   path=Path(name) if Path(name).is_absolute() else ROOT/name;checked+=1

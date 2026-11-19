@@ -1,3 +1,52 @@
+## Inertia/contact continuation600–622 — 2026-11-20
+
+Functional input commit:844afa1. Authority:NATIVE_SAMPLED_INERTIA_20261120.md.
+Evidence:evidence_product_long_inertia_v29/manifest.json → contact_inventory_v28 → inertia_v27.
+Latest4630files;prior4393immutable paths checked0mismatches. Old Raw/verdicts unchanged.
+
+-600–602 real finite-ring contact with SAME592 input binary passes basis1e-12,
+ but604 all-common-time0.1% CONTACT Gate FAIL:surface displacement19.3158%,
+ COM6.48978%,angular velocity81.3824%,rotational energy94.5976%,force100%.
+-609 actual sampled torque law error≤1.37e-22Nm;M*dv-inertiaImpulse-contactImpulse
+ residual≤7.64e-22Ns /9.72e-24Nms;free predictor≤9.60e-14.
+ Active Native normal target remains-gap/dt(residual≤3.21e-8m/s).
+-606 actual saved mapped finite surfaces show0strict edge/facet crossings and0
+ uncertain tests. NOT containment/swept/full hardware clearance or time certification.
+-607 analysis omitted contacts after each response group's first block.608/609
+ expand ALL actual3-row contacts with ownership/coverage checks;old607 preserved.
+ Signed inventory residual≤1.18e-21J,row work≤1.70e-21J. NOT heat/global energy PASS.
+-610 cumulative energy/time Gate FAIL,including tiny signed residual192.377%
+ (absolute1.63e-21J);NO error floor or residual exclusion.
+-611 floating-point test bound failed because cross-product cancellation was
+ scaled by output torque instead of operands.612 derives correct operand-based
+ bound;6227regressions PASS. No physical tolerance changed.
+-613–617100ms free extension:base angular invariant0.133470%,base-quarter
+ all-time worst0.100100244%,STRICT FAIL at unchanged0.1%. Do not round to PASS.
+-618/619 installed Native trapezoidal option gives EXACT same q/v/impulse as613;
+ verified in622. B=K=0 held-input formula is unchanged;stop this branch,not dt sweep.
+-620/621 OLD552/550 Raw reanalysis with FULL contact ownership:additional points
+ remain on actual mesh≤1.56e-17m;active body-point counts7eyelet/3support,not old6/2.
+ Old analysis files retained;counts are NOT area. Native state unchanged.
+
+NEXT:
+1.Native retained solver + actual velocity/rotation-dependent inertial-force
+ tangent candidate (SparseLU available;do not send nonsymmetric Jacobian to LDL)
+ only if independently force/Jacobian/FD/objectivity validated. Current sampled
+ ConstantForceField hasZERO within-step Jacobian and is NOT production qualified.
+2.Separately validate stock contact's discrete event/stabilization policy using
+609 actual rows. Do not assume gyro fix,time smoothing or larger alarm repairs impact.
+3.No B3 mass/checkpoint replacement,100g/Lift claim,or fabricated density/union.
+Physical material/join/STEP and all original B3 failed time/mesh Gates persist.
+
+Read-only restart:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_inertia_input_100ms_time617/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_inertia_contact_allcontacts609/summary.json`
+Reusable build:cad/build_b3_inertia_input_build592 (unchanged);physical332/direct512.
+Code regression:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m unittest discover -s product_prototype/sofa -p test_native_inertia.py -v`
+No active physics child,no background continuation. Current sampled-input and
+trapezoidal directions stop at measured validity limits,NOT OS/resource exhaustion.
+
 ## Native composite-acceleration continuation588–591 — 2026-11-19
 
 Feature commits:e85534a,f3869ba;26 archived campaigns565–591 (587 is preliminary build only).

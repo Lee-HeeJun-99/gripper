@@ -1,0 +1,1999 @@
+{
+  "status": "FINITE_GUIDE_PULLBACK_AUDIT_ONLY",
+  "scope": "Actual compound finite ring/support Native states. Point source matched per actual Collision Model Pair,not nearest part guessing. Stages recorded separately. Whole-surface diagnostic below covers rings ONLY,not support clearance. No wholeassembly/holding/time qualification.",
+  "producer_sha256": "b19a152beb7a436a76e3a1ecdb26ac59222f4b4e9f8dccd59e6281a82124e868",
+  "source_summary_sha256": "74277d8f3d15e485de4ca862ef8eaa8f78fff7a1ed2fd29c77af158e1d424038",
+  "geometry": {
+    "outer_radius_mm": 1.5,
+    "hole_radius_mm": 0.6,
+    "length_mm": 2.0,
+    "length_source": "existing CAD generate.py guide() h=2mm,explicit inherited assumption",
+    "segments": 32,
+    "analytic_volume_mm3": 11.875220230569418,
+    "mesh_volume_mm3": 11.799062675535438,
+    "volume_relative_error": 0.006413148855794159,
+    "outer_radial_chord_error_mm": 0.007222909991704607,
+    "watertight": true,
+    "winding_consistent": true,
+    "minimum_triangle_area_mm2": 0.052674386944354445
+  },
+  "records": [
+    {
+      "alarm_mm": 1,
+      "time_s": 0.0025,
+      "contact_blocks": 0,
+      "contact_rows": 0,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 0.0,
+      "net_internal_angular_impulse_Nms": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angular_inventory_error_Nms": 6.617444900424221e-23,
+      "contact_point_pullbacks": [],
+      "minimum_vertex_to_other_surface_distance_m": 3.1778167376671426e-06,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 0.0,
+      "solver_iterations": 0
+    },
+    {
+      "alarm_mm": 1,
+      "time_s": 0.005,
+      "contact_blocks": 3,
+      "contact_rows": 9,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 1.3069453678337837e-22,
+      "net_internal_angular_impulse_Nms": [
+        3.381596195207344e-12,
+        -3.632400764836482e-13,
+        1.9832197021530444e-12
+      ],
+      "angular_inventory_error_Nms": 1.7577588016751838e-23,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "support",
+          "normal_impulse_Ns": 2.184029018237105e-08,
+          "point_using_previous_origin_m": [
+            -0.028173582243728894,
+            0.000310305016797267,
+            -0.08844836009020496
+          ],
+          "model0": "/guide0/supportCollision/LineCollisionModel1",
+          "model1": "/guide1/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.476216610979977e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.484660190605998e-18,
+            "free_predictor": 1.2352448255464339e-05,
+            "accepted": 0.0009359014466111347
+          },
+          "lever_fit_error_m": 5.753426884836168e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 2.184029018237105e-08,
+          "point_using_previous_origin_m": [
+            -0.02841955792065513,
+            -0.00011916417582766986,
+            -0.08810760611821827
+          ],
+          "model0": "/guide0/supportCollision/LineCollisionModel1",
+          "model1": "/guide1/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.469446951953614e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.878959614448864e-18,
+            "free_predictor": 0.00026150216200202447,
+            "accepted": 0.0022025646690003804
+          },
+          "lever_fit_error_m": 1.734723475976807e-18
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028171751666462956,
+            0.0003071576858365149,
+            -0.08845100541286761
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.4476433706704057e-17,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.686287386450715e-18,
+            "free_predictor": 1.2364165274311034e-05,
+            "accepted": 0.0009357199470494118
+          },
+          "lever_fit_error_m": 4.982613841084488e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028405161695574485,
+            -0.00012218793605859798,
+            -0.08810170296717036
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.755682002596558e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 5.062190913816454e-18,
+            "free_predictor": 0.0002617907672245444,
+            "accepted": 0.002201699614278381
+          },
+          "lever_fit_error_m": 3.878959614448864e-18
+        },
+        {
+          "body": 0,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027909486664662177,
+            -0.00014375732083793738,
+            -0.08882999818514256
+          ],
+          "model0": "/guide1/collision/TriangleCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 6.938893903907228e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.5375806445106496e-17,
+            "free_predictor": 3.9119775983326555e-05,
+            "accepted": 0.0010457350638422714
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 1,
+          "first_row": 6,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028154703047450123,
+            -0.0005733651264674643,
+            -0.08845203746138587
+          ],
+          "model0": "/guide1/collision/TriangleCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.471140604459642e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.168404344971009e-19,
+            "free_predictor": 0.00023990318893112557,
+            "accepted": 0.0021258470827687655
+          },
+          "lever_fit_error_m": 3.0046291974743185e-18
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 3.3683769694399286e-06,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 1.2446595045466278e-10,
+      "solver_iterations": 34
+    },
+    {
+      "alarm_mm": 1,
+      "time_s": 0.0075,
+      "contact_blocks": 9,
+      "contact_rows": 27,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 3.8381180422460484e-22,
+      "net_internal_angular_impulse_Nms": [
+        -1.4518698420830389e-12,
+        -1.1703532948919025e-12,
+        1.7468861249582906e-12
+      ],
+      "angular_inventory_error_Nms": 1.1580528575742387e-22,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027719213403857516,
+            -6.621953475122351e-05,
+            -0.08733853646601973
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.1384122811097797e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.000981341925731947,
+            "accepted": 0.0009213683516664555
+          },
+          "lever_fit_error_m": 1.734723475976807e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027650207902019792,
+            -0.0002258569468581266,
+            -0.08683714048685809
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.604972223514302e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.2526065174565133e-18,
+            "free_predictor": 0.0020511595151180705,
+            "accepted": 0.0027684605880095234
+          },
+          "lever_fit_error_m": 5.334671333213283e-18
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02784897279112431,
+            -0.00013412301332323476,
+            -0.08734229761296579
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.4732565087124975e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.0009893679946700543,
+            "accepted": 0.0009289635723679543
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027868962921826355,
+            -0.00012469485883973182,
+            -0.08682285430129677
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.80900761682411e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.168404344971009e-18,
+            "free_predictor": 0.002076538168435616,
+            "accepted": 0.0027873672288008604
+          },
+          "lever_fit_error_m": 2.4556640689879255e-18
+        },
+        {
+          "body": 0,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.0277710832047636,
+            -9.336315794912509e-05,
+            -0.08734003994062284
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 2.9544509200229996e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.0009845502531342833,
+            "accepted": 0.0009244044525137524
+          },
+          "lever_fit_error_m": 3.9747508192403134e-18
+        },
+        {
+          "body": 1,
+          "first_row": 6,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02774271688285596,
+            -0.0001762841660867681,
+            -0.08682162670725092
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.047314121155779e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3879481770324007e-17,
+            "free_predictor": 0.002062921581335394,
+            "accepted": 0.002778606574822726
+          },
+          "lever_fit_error_m": 1.791395985745431e-18
+        },
+        {
+          "body": 0,
+          "first_row": 9,
+          "part": "support",
+          "normal_impulse_Ns": 6.293918607881669e-09,
+          "point_using_previous_origin_m": [
+            -0.02765489228565387,
+            -0.0007694998849933771,
+            -0.08778186218552239
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.78695538395053e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.0357660829594124e-18,
+            "free_predictor": 0.0009651323204506649,
+            "accepted": 0.0009576133279211979
+          },
+          "lever_fit_error_m": 3.6799042000400975e-18
+        },
+        {
+          "body": 1,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 6.293918607881669e-09,
+          "point_using_previous_origin_m": [
+            -0.02769239249058896,
+            -0.0008392765179091807,
+            -0.08771701968444365
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.476216610979977e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.8431436932253575e-18,
+            "free_predictor": 0.0019601032704431084,
+            "accepted": 0.0026260897043208315
+          },
+          "lever_fit_error_m": 1.2266347333466993e-18
+        },
+        {
+          "body": 0,
+          "first_row": 12,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02796755503216538,
+            -0.00019617745757702712,
+            -0.0873457347842036
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.152448122690996e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 7.152448122690996e-18,
+            "free_predictor": 0.0009967027182802444,
+            "accepted": 0.0009359045599215733
+          },
+          "lever_fit_error_m": 4.2491873609703695e-18
+        },
+        {
+          "body": 1,
+          "first_row": 12,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02826201567626565,
+            -8.678342066577999e-05,
+            -0.08699779305292216
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.714974880483436e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.470280076681873e-18,
+            "free_predictor": 0.0021003299425546634,
+            "accepted": 0.002796535128257708
+          },
+          "lever_fit_error_m": 1.9873754096201567e-18
+        },
+        {
+          "body": 0,
+          "first_row": 15,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02796755503216538,
+            -0.00019617745757702712,
+            -0.0873457347842036
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.152448122690996e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 7.152448122690996e-18,
+            "free_predictor": 0.0009967027182802444,
+            "accepted": 0.0009359045599215733
+          },
+          "lever_fit_error_m": 4.422694427346622e-18
+        },
+        {
+          "body": 1,
+          "first_row": 15,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028374059968367026,
+            -0.00012395832515042088,
+            -0.08711457355554812
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.640548946097516e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.476216610979977e-18,
+            "free_predictor": 0.0021000826306350586,
+            "accepted": 0.002797420196075008
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 0,
+          "first_row": 18,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027825020589807514,
+            -0.0003225080918794667,
+            -0.086980953017188
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 5.963111948670274e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 7.355215072363195e-18,
+            "free_predictor": 0.00018433124478261207,
+            "accepted": 0.00010425575379392269
+          },
+          "lever_fit_error_m": 1.788112030672749e-18
+        },
+        {
+          "body": 1,
+          "first_row": 18,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027771008584127697,
+            -0.00016221452278546156,
+            -0.08681840364970622
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.476216610979977e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3920075028157926e-17,
+            "free_predictor": 0.0020663533361012475,
+            "accepted": 0.002781360858221517
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 0,
+          "first_row": 21,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028526233398471365,
+            -0.0010537374439088913,
+            -0.08652240108063855
+          ],
+          "model0": "/guide1/collision/TriangleCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3010426069826053e-18,
+            "free_predictor": 0.0003351553409807535,
+            "accepted": 0.00024856833806827163
+          },
+          "lever_fit_error_m": 4.84869951806108e-19
+        },
+        {
+          "body": 1,
+          "first_row": 21,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028633053637326385,
+            -0.0009305514376231911,
+            -0.08641252631075544
+          ],
+          "model0": "/guide1/collision/TriangleCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.6263032587282567e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 5.469582363254732e-18,
+            "free_predictor": 0.0010173589299304368,
+            "accepted": 0.0017232961327664368
+          },
+          "lever_fit_error_m": 3.503164429852627e-18
+        },
+        {
+          "body": 0,
+          "first_row": 24,
+          "part": "eyelet",
+          "normal_impulse_Ns": 1.2919241666803458e-08,
+          "point_using_previous_origin_m": [
+            -0.025985097712168566,
+            -0.0016389736861817852,
+            -0.08753245281839753
+          ],
+          "model0": "/guide1/supportCollision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 2.168404344971009e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.5540063044689707e-17,
+            "free_predictor": 0.0005102240407139303,
+            "accepted": 0.0014200027447291417
+          },
+          "lever_fit_error_m": 2.7769124835677133e-18
+        },
+        {
+          "body": 1,
+          "first_row": 24,
+          "part": "support",
+          "normal_impulse_Ns": 1.2919241666803458e-08,
+          "point_using_previous_origin_m": [
+            -0.026259880587088637,
+            -0.001956780252985773,
+            -0.0880442523598001
+          ],
+          "model0": "/guide1/supportCollision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.878959614448864e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.878959614448864e-18,
+            "free_predictor": 0.0015100829917193664,
+            "accepted": 0.0023663039800204894
+          },
+          "lever_fit_error_m": 1.734723475976807e-18
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 5.3534598378375915e-06,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 1.913565407939397e-09,
+      "solver_iterations": 13
+    },
+    {
+      "alarm_mm": 1,
+      "time_s": 0.01,
+      "contact_blocks": 2,
+      "contact_rows": 6,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 0.0,
+      "net_internal_angular_impulse_Nms": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angular_inventory_error_Nms": 4.1359030627651384e-23,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027536444249437582,
+            -0.0008548395605811263,
+            -0.08649886926837846
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 6.898968492810677e-18,
+            "free_predictor": 0.0009516296790060956,
+            "accepted": 0.0009516296790060956
+          },
+          "lever_fit_error_m": 1.939479807224432e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027662728550587202,
+            -0.0010908512180733071,
+            -0.08632314898318336
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.336808689942018e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.878959614448864e-18,
+            "free_predictor": 0.002594356602613224,
+            "accepted": 0.002594356602613224
+          },
+          "lever_fit_error_m": 1.939479807224432e-18
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.026397463963154295,
+            -0.0009101936043991038,
+            -0.08643684573689706
+          ],
+          "model0": "/guide0/collision/TriangleCollisionModel1",
+          "model1": "/guide1/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 8.673617379884035e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.539429035673396e-18,
+            "free_predictor": 0.00014738646074311445,
+            "accepted": 0.00014738646074311445
+          },
+          "lever_fit_error_m": 3.6799042000400975e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02671195937528214,
+            -0.0012240812504669138,
+            -0.08616753918729605
+          ],
+          "model0": "/guide0/collision/TriangleCollisionModel1",
+          "model1": "/guide1/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.576224061345498e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 5.222209201006512e-18,
+            "free_predictor": 0.0026796035788317365,
+            "accepted": 0.0026796035788317365
+          },
+          "lever_fit_error_m": 4.336808689942018e-18
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 2.293122434702652e-06,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 0.0,
+      "solver_iterations": 2
+    },
+    {
+      "alarm_mm": 5,
+      "time_s": 0.0025,
+      "contact_blocks": 4,
+      "contact_rows": 12,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 4.7811039405565e-22,
+      "net_internal_angular_impulse_Nms": [
+        -5.248043197571e-12,
+        -1.4635481873227078e-13,
+        4.348886481225692e-12
+      ],
+      "angular_inventory_error_Nms": 5.83485449276663e-23,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 1.2107394557727212e-08,
+          "point_using_previous_origin_m": [
+            -0.029308150149049132,
+            0.000906468327308646,
+            -0.08873419208778766
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.0842021724855044e-18,
+            "free_predictor": 0.00010255390963697922,
+            "accepted": 0.0008540106991986352
+          },
+          "lever_fit_error_m": 1.788112030672749e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 1.2107394557727212e-08,
+          "point_using_previous_origin_m": [
+            -0.029569115945237416,
+            -0.0022279600320257494,
+            -0.08915459820179802
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.469446951953614e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.0002615021620020175,
+            "accepted": 0.0009708868981219931
+          },
+          "lever_fit_error_m": 3.903127820947816e-18
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02925105840484693,
+            0.0020827178190564004,
+            -0.08989714248347279
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.152448122690996e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 7.152448122690996e-18,
+            "free_predictor": 3.911977598332043e-05,
+            "accepted": 0.0008129433382963057
+          },
+          "lever_fit_error_m": 7.269816092100959e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029826418333112746,
+            -0.00221708491785314,
+            -0.0892965258286747
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.757919228897728e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 6.619851161367216e-18,
+            "free_predictor": 0.0002538244120797927,
+            "accepted": 0.0009553462679193069
+          },
+          "lever_fit_error_m": 5.502793334042459e-18
+        },
+        {
+          "body": 0,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029251058404846937,
+            0.002082717819056397,
+            -0.08989714248347279
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 3.9119775983322964e-05,
+            "accepted": 0.0008129433382963055
+          },
+          "lever_fit_error_m": 3.476216610979977e-18
+        },
+        {
+          "body": 1,
+          "first_row": 6,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029778697506483428,
+            -0.0022191018810157805,
+            -0.08927020308937943
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 2.6020852139652106e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 8.673617379884035e-19,
+            "free_predictor": 0.00025524837310855514,
+            "accepted": 0.0009573200297970281
+          },
+          "lever_fit_error_m": 3.496446946337351e-18
+        },
+        {
+          "body": 0,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029509922200157912,
+            0.0009754368900269945,
+            -0.08893667076551295
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 9.126519360742579e-05,
+            "accepted": 0.0008452058751868553
+          },
+          "lever_fit_error_m": 0.0
+        },
+        {
+          "body": 1,
+          "first_row": 9,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.030019047112839835,
+            -0.003453940853719131,
+            -0.09060397795878278
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.00017018880428554964,
+            "accepted": 0.0009220829738018762
+          },
+          "lever_fit_error_m": 8.673617379884035e-19
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 0.0003054725294873303,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 8.584467764453926e-10,
+      "solver_iterations": 15
+    },
+    {
+      "alarm_mm": 5,
+      "time_s": 0.005,
+      "contact_blocks": 4,
+      "contact_rows": 12,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 1.8942436027464334e-22,
+      "net_internal_angular_impulse_Nms": [
+        -1.955897128908824e-12,
+        -9.016700674521451e-14,
+        9.057084351433023e-14
+      ],
+      "angular_inventory_error_Nms": 1.6597895978759346e-22,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028449703835270408,
+            0.0005344646554299518,
+            -0.08877694244815615
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3877787807814457e-17,
+            "free_predictor": 0.0008098007978944536,
+            "accepted": 0.002477321045797643
+          },
+          "lever_fit_error_m": 3.0046291974743185e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028956168016836113,
+            -0.0007354314655182315,
+            -0.08803318267488118
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3985787785349405e-17,
+            "free_predictor": 0.0009656475946692686,
+            "accepted": 0.0023212840315294256
+          },
+          "lever_fit_error_m": 8.673617379884035e-19
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 2.1688838107648942e-08,
+          "point_using_previous_origin_m": [
+            -0.028818725026106665,
+            -0.0004878179545737809,
+            -0.0878453659851409
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.3610267347050637e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.4094628242311558e-18,
+            "free_predictor": 0.00083239682400259,
+            "accepted": 0.0024927893994731638
+          },
+          "lever_fit_error_m": 4.670885906470169e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 2.1688838107648942e-08,
+          "point_using_previous_origin_m": [
+            -0.02881218227809037,
+            -0.0007597557677571105,
+            -0.08797479921244075
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.551486221896847e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.8189256484623115e-18,
+            "free_predictor": 0.000971788645724403,
+            "accepted": 0.0023415241470730384
+          },
+          "lever_fit_error_m": 2.491306920542244e-18
+        },
+        {
+          "body": 0,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028449703835270415,
+            0.00053446465542995,
+            -0.08877694244815615
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.757919228897728e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3972754085293053e-17,
+            "free_predictor": 0.0008098007978944524,
+            "accepted": 0.002477321045797642
+          },
+          "lever_fit_error_m": 6.490740907898788e-18
+        },
+        {
+          "body": 1,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029313950036526905,
+            -0.001914123713213223,
+            -0.08954607570557004
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.878959614448864e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.0009205994072320517,
+            "accepted": 0.002346183292788309
+          },
+          "lever_fit_error_m": 3.576224061345498e-18
+        },
+        {
+          "body": 0,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02907100196723721,
+            -0.0001680600041010661,
+            -0.0884010585182516
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 2.4936649967166602e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.610090873601838e-18,
+            "free_predictor": 0.0008035419708630029,
+            "accepted": 0.0024635368876428747
+          },
+          "lever_fit_error_m": 5.485677294651096e-18
+        },
+        {
+          "body": 1,
+          "first_row": 9,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029313950036526898,
+            -0.0019141237132132248,
+            -0.08954607570557004
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.469446951953614e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.0009205994072320541,
+            "accepted": 0.0023461832927883096
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 0.0004603072062395293,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 6.82605036381841e-10,
+      "solver_iterations": 11
+    },
+    {
+      "alarm_mm": 5,
+      "time_s": 0.0075,
+      "contact_blocks": 13,
+      "contact_rows": 39,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 0.0,
+      "net_internal_angular_impulse_Nms": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angular_inventory_error_Nms": 1.1911400820763599e-22,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028505797668010185,
+            0.00044132579855436956,
+            -0.08730910150720797
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.5178830414797062e-18,
+            "free_predictor": 0.002478835454966597,
+            "accepted": 0.002478835454966597
+          },
+          "lever_fit_error_m": 1.788112030672749e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02877488173949247,
+            -0.0005744387689364458,
+            -0.08700283185229557
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.496446946337351e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.0023800032546255345,
+            "accepted": 0.0023800032546255345
+          },
+          "lever_fit_error_m": 3.805534180917389e-18
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02866770355387853,
+            0.0008209424686798864,
+            -0.08799443184207138
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.469446951953614e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 6.505213034913027e-19,
+            "free_predictor": 0.002272035922500188,
+            "accepted": 0.002272035922500188
+          },
+          "lever_fit_error_m": 3.602423855278284e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02854657023483529,
+            -0.001841125728809529,
+            -0.08864927709209881
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.576224061345498e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 8.673617379884035e-19,
+            "free_predictor": 0.0018159568622775517,
+            "accepted": 0.0018159568622775517
+          },
+          "lever_fit_error_m": 3.496446946337351e-18
+        },
+        {
+          "body": 0,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028505797668010185,
+            0.0004413257985543678,
+            -0.08730910150720797
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 6.505213034913027e-19,
+            "free_predictor": 0.0024788354549665987,
+            "accepted": 0.0024788354549665987
+          },
+          "lever_fit_error_m": 8.673617379884035e-19
+        },
+        {
+          "body": 1,
+          "first_row": 6,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028578142070013836,
+            -0.0018354311285847004,
+            -0.08865777091904435
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.529906531158615e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.168404344971009e-18,
+            "free_predictor": 0.0018184911797081587,
+            "accepted": 0.0018184911797081587
+          },
+          "lever_fit_error_m": 1.939479807224432e-18
+        },
+        {
+          "body": 0,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02921136355539802,
+            -0.0001587388867063215,
+            -0.08688379634264237
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.4745548144155188e-17,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.0939164726509464e-17,
+            "free_predictor": 0.0024528769652494464,
+            "accepted": 0.0024528769652494464
+          },
+          "lever_fit_error_m": 3.9747508192403134e-18
+        },
+        {
+          "body": 1,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02912829405123287,
+            -0.000532010554509587,
+            -0.08712761789748476
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 7.449502554017965e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 5.421010862427522e-19,
+            "free_predictor": 0.0023253596513090288,
+            "accepted": 0.0023253596513090288
+          },
+          "lever_fit_error_m": 7.165583942981724e-18
+        },
+        {
+          "body": 0,
+          "first_row": 12,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027244736987838553,
+            0.0002830259425072208,
+            -0.08651395361141184
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.7947076036992655e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.878959614448864e-18,
+            "free_predictor": 0.0022436638122921345,
+            "accepted": 0.0022436638122921345
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 1,
+          "first_row": 12,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02896586330175563,
+            -0.00169021525310626,
+            -0.08865716607473716
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.878959614448864e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.5178830414797062e-18,
+            "free_predictor": 0.001858587400045043,
+            "accepted": 0.001858587400045043
+          },
+          "lever_fit_error_m": 4.670885906470169e-18
+        },
+        {
+          "body": 0,
+          "first_row": 15,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028529657637451616,
+            0.0004972696705147564,
+            -0.08741009821130817
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.634908046050479e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.336808689942018e-19,
+            "free_predictor": 0.00243595969817753,
+            "accepted": 0.00243595969817753
+          },
+          "lever_fit_error_m": 2.6020852139652106e-18
+        },
+        {
+          "body": 1,
+          "first_row": 15,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028633116709098808,
+            -0.001825191028704213,
+            -0.08867210883668214
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.3010426069826053e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.001822942734477005,
+            "accepted": 0.001822942734477005
+          },
+          "lever_fit_error_m": 3.582791971490862e-18
+        },
+        {
+          "body": 0,
+          "first_row": 18,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029203157648035903,
+            6.846524228297513e-05,
+            -0.08721818208518316
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.476216610979977e-18,
+            "free_predictor": 0.0024206573133878874,
+            "accepted": 0.0024206573133878874
+          },
+          "lever_fit_error_m": 1.788112030672749e-18
+        },
+        {
+          "body": 1,
+          "first_row": 18,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029367399396854184,
+            -0.0016674034543869409,
+            -0.08873824088555199
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 6.938893903907228e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.336808689942018e-18,
+            "free_predictor": 0.0023437918240573896,
+            "accepted": 0.0023437918240573896
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 0,
+          "first_row": 21,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028505797668010185,
+            0.0004413257985543678,
+            -0.08730910150720797
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 6.505213034913027e-19,
+            "free_predictor": 0.0024788354549665965,
+            "accepted": 0.0024788354549665965
+          },
+          "lever_fit_error_m": 8.673617379884035e-19
+        },
+        {
+          "body": 1,
+          "first_row": 21,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029367399396854184,
+            -0.0016674034543869409,
+            -0.08873824088555199
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 6.938893903907228e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.336808689942018e-18,
+            "free_predictor": 0.0023437918240573896,
+            "accepted": 0.0023437918240573896
+          },
+          "lever_fit_error_m": 3.469446951953614e-18
+        },
+        {
+          "body": 0,
+          "first_row": 24,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028667703553878526,
+            0.0008209424686798864,
+            -0.08799443184207138
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.0022720359225001886,
+            "accepted": 0.0022720359225001886
+          },
+          "lever_fit_error_m": 4.336808689942018e-19
+        },
+        {
+          "body": 1,
+          "first_row": 24,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029367399396854177,
+            -0.0016674034543869409,
+            -0.08873824088555199
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 0.0,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.0023437918240573905,
+            "accepted": 0.0023437918240573905
+          },
+          "lever_fit_error_m": 4.336808689942018e-19
+        },
+        {
+          "body": 0,
+          "first_row": 27,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027243001350481223,
+            0.0002870639281057491,
+            -0.08651906517680485
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.4373041290881546e-17,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 7.903714856861513e-18,
+            "free_predictor": 0.0022428790129154896,
+            "accepted": 0.0022428790129154896
+          },
+          "lever_fit_error_m": 1.7381083054899885e-18
+        },
+        {
+          "body": 1,
+          "first_row": 27,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028241068935272857,
+            -0.0020812779130605173,
+            -0.08872888012855
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.469446951953614e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.6020852139652106e-18,
+            "free_predictor": 0.002216691486928569,
+            "accepted": 0.002216691486928569
+          },
+          "lever_fit_error_m": 2.491306920542244e-18
+        },
+        {
+          "body": 0,
+          "first_row": 30,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02918500138061728,
+            0.000110706062953091,
+            -0.08727165347873862
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 2.710505431213761e-20,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.951563910473908e-18,
+            "free_predictor": 0.0024134010295241257,
+            "accepted": 0.0024134010295241257
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 1,
+          "first_row": 30,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029367399396854177,
+            -0.0016674034543869426,
+            -0.08873824088555199
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 8.673617379884035e-19,
+            "free_predictor": 0.0023437918240573896,
+            "accepted": 0.0023437918240573896
+          },
+          "lever_fit_error_m": 3.576224061345498e-18
+        },
+        {
+          "body": 0,
+          "first_row": 33,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02858635145796442,
+            0.0006301982496355191,
+            -0.08765007710267674
+          ],
+          "model0": "/guide0/supportCollision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.604055018529306e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 7.373371937284243e-18,
+            "free_predictor": 0.0023464661773411493,
+            "accepted": 0.0023464661773411493
+          },
+          "lever_fit_error_m": 4.9065389333867974e-18
+        },
+        {
+          "body": 1,
+          "first_row": 33,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029367399396854177,
+            -0.0016674034543869426,
+            -0.08873824088555199
+          ],
+          "model0": "/guide0/supportCollision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 8.673617379884035e-19,
+            "free_predictor": 0.0023437918240573896,
+            "accepted": 0.0023437918240573896
+          },
+          "lever_fit_error_m": 7.152448122690996e-18
+        },
+        {
+          "body": 0,
+          "first_row": 36,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02850579766801018,
+            0.00044132579855436956,
+            -0.08730910150720797
+          ],
+          "model0": "/guide1/supportCollision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.878959614448864e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.0599841277224584e-18,
+            "free_predictor": 0.002478835454966598,
+            "accepted": 0.002478835454966598
+          },
+          "lever_fit_error_m": 3.9747508192403134e-18
+        },
+        {
+          "body": 1,
+          "first_row": 36,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029280517924573243,
+            -0.0016993283854223242,
+            -0.0887375188271706
+          ],
+          "model0": "/guide1/supportCollision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.091337135425211e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.336808689942018e-19,
+            "free_predictor": 0.0023320807755288987,
+            "accepted": 0.0023320807755288987
+          },
+          "lever_fit_error_m": 4.422694427346622e-18
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 0.0008654908356022439,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 0.0,
+      "solver_iterations": 2
+    },
+    {
+      "alarm_mm": 5,
+      "time_s": 0.01,
+      "contact_blocks": 10,
+      "contact_rows": 30,
+      "row_impulse_reconstruction_error_Ns_Nms": 0.0,
+      "mass_velocity_impulse_error_Ns_Nms": 0.0,
+      "net_internal_angular_impulse_Nms": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "angular_inventory_error_Nms": 1.9521462456251453e-22,
+      "contact_point_pullbacks": [
+        {
+          "body": 0,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02902976198528164,
+            0.00026753909064567306,
+            -0.08591306550158392
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.576224061345498e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.980661232645204e-18,
+            "free_predictor": 0.002420657313387886,
+            "accepted": 0.002420657313387886
+          },
+          "lever_fit_error_m": 3.878959614448864e-18
+        },
+        {
+          "body": 1,
+          "first_row": 0,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028926203634276098,
+            -0.0004735721385565727,
+            -0.08634792662930038
+          ],
+          "model0": "/guide1/collision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.8431436932253575e-18,
+            "free_predictor": 0.0023623455076095313,
+            "accepted": 0.0023623455076095313
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 0,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02858605839171856,
+            0.000701860291840879,
+            -0.0865237036594893
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.336808689942018e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.576224061345498e-18,
+            "free_predictor": 0.0023225130433605283,
+            "accepted": 0.0023225130433605283
+          },
+          "lever_fit_error_m": 5.204170427930421e-18
+        },
+        {
+          "body": 1,
+          "first_row": 3,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028327651862804143,
+            -0.0016337068505035551,
+            -0.08799175470090917
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.529906531158615e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.5178830414797062e-18,
+            "free_predictor": 0.0018167550690485633,
+            "accepted": 0.0018167550690485633
+          },
+          "lever_fit_error_m": 2.4532694666933987e-18
+        },
+        {
+          "body": 0,
+          "first_row": 6,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028289728182850783,
+            0.000541121492422825,
+            -0.08601844537709805
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.469446951953614e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.4100048211072667e-17,
+            "free_predictor": 0.0024788354549665995,
+            "accepted": 0.0024788354549665995
+          },
+          "lever_fit_error_m": 3.602423855278284e-18
+        },
+        {
+          "body": 1,
+          "first_row": 6,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028453772567085128,
+            -0.00052762869890924,
+            -0.08624417591297598
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.529906531158615e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.168404344971009e-19,
+            "free_predictor": 0.002401072680354296,
+            "accepted": 0.002401072680354296
+          },
+          "lever_fit_error_m": 3.576224061345498e-18
+        },
+        {
+          "body": 0,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028632180214689055,
+            0.0006695424650939091,
+            -0.08648305061341718
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.210279659405073e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 8.673617379884035e-19,
+            "free_predictor": 0.0023312634025475934,
+            "accepted": 0.0023312634025475934
+          },
+          "lever_fit_error_m": 2.4628339063450876e-18
+        },
+        {
+          "body": 1,
+          "first_row": 9,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028357076107443892,
+            -0.0016316063085306557,
+            -0.0880002757763918
+          ],
+          "model0": "/guide1/collision/LineCollisionModel1",
+          "model1": "/guide0/collision/LineCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.78695538395053e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.0018191227792096571,
+            "accepted": 0.0018191227792096571
+          },
+          "lever_fit_error_m": 4.422694427346622e-18
+        },
+        {
+          "body": 0,
+          "first_row": 12,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028781317379983178,
+            0.0005650411952158084,
+            -0.0863515970050972
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.336808689942018e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 6.992893892674703e-18,
+            "free_predictor": 0.002356868665584818,
+            "accepted": 0.002356868665584818
+          },
+          "lever_fit_error_m": 4.670885906470169e-18
+        },
+        {
+          "body": 1,
+          "first_row": 12,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029150293915478343,
+            -0.0015605812946710342,
+            -0.08810194130970207
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.5612511283791264e-17,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 8.673617379884035e-19,
+            "free_predictor": 0.0023437918240573935,
+            "accepted": 0.0023437918240573935
+          },
+          "lever_fit_error_m": 7.359808400080195e-18
+        },
+        {
+          "body": 0,
+          "first_row": 15,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028398795633001073,
+            0.0008955304837796945,
+            -0.08672731670404189
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 8.673617379884035e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 0.0,
+            "free_predictor": 0.002272035922500189,
+            "accepted": 0.002272035922500189
+          },
+          "lever_fit_error_m": 1.734723475976807e-18
+        },
+        {
+          "body": 1,
+          "first_row": 15,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029150293915478336,
+            -0.001560581294671035,
+            -0.08810194130970209
+          ],
+          "model0": "/guide1/supportCollision/PointCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 8.673617379884035e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3877787807814457e-17,
+            "free_predictor": 0.0023437918240573914,
+            "accepted": 0.0023437918240573914
+          },
+          "lever_fit_error_m": 1.734723475976807e-18
+        },
+        {
+          "body": 0,
+          "first_row": 18,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027111389656508514,
+            0.0002210849399776789,
+            -0.08513009234933758
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.2197274440461925e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.119968255444917e-18,
+            "free_predictor": 0.0022563950082150016,
+            "accepted": 0.0022563950082150016
+          },
+          "lever_fit_error_m": 3.805534180917389e-18
+        },
+        {
+          "body": 1,
+          "first_row": 18,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027808039132587888,
+            -0.0007315814676503683,
+            -0.08631388521444329
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/collision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.734723475976807e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 4.336808689942018e-19,
+            "free_predictor": 0.002389319590952916,
+            "accepted": 0.002389319590952916
+          },
+          "lever_fit_error_m": 2.0456685677126055e-18
+        },
+        {
+          "body": 0,
+          "first_row": 21,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.027271662964690583,
+            0.00011680334564225653,
+            -0.08500309496775392
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.2197274440461925e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.928643636968952e-18,
+            "free_predictor": 0.0022858645650370053,
+            "accepted": 0.0022858645650370053
+          },
+          "lever_fit_error_m": 1.788112030672749e-18
+        },
+        {
+          "body": 1,
+          "first_row": 21,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.02798153205424206,
+            -0.0018302656418599048,
+            -0.08806635950816236
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.878959614448864e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.5178830414797062e-18,
+            "free_predictor": 0.002216691486928571,
+            "accepted": 0.002216691486928571
+          },
+          "lever_fit_error_m": 3.9747508192403134e-18
+        },
+        {
+          "body": 0,
+          "first_row": 24,
+          "part": "eyelet",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028791902391510714,
+            0.0005546800104338952,
+            -0.08633702959560502
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 4.272637039144576e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 2.3852447794681098e-18,
+            "free_predictor": 0.002359129380458415,
+            "accepted": 0.002359129380458415
+          },
+          "lever_fit_error_m": 2.6020852139652106e-18
+        },
+        {
+          "body": 1,
+          "first_row": 24,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.029150293915478336,
+            -0.0015605812946710368,
+            -0.08810194130970209
+          ],
+          "model0": "/guide0/collision/LineCollisionModel1",
+          "model1": "/guide1/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 8.673617379884035e-19,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.3985787785349405e-17,
+            "free_predictor": 0.00234379182405739,
+            "accepted": 0.00234379182405739
+          },
+          "lever_fit_error_m": 1.734723475976807e-18
+        },
+        {
+          "body": 0,
+          "first_row": 27,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028398795633001076,
+            0.0008955304837796937,
+            -0.08672731670404189
+          ],
+          "model0": "/guide1/supportCollision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 3.878959614448864e-18,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 3.576224061345498e-18,
+            "free_predictor": 0.002272035922500189,
+            "accepted": 0.002272035922500189
+          },
+          "lever_fit_error_m": 4.670885906470169e-18
+        },
+        {
+          "body": 1,
+          "first_row": 27,
+          "part": "support",
+          "normal_impulse_Ns": 0.0,
+          "point_using_previous_origin_m": [
+            -0.028935323506035227,
+            -0.0016101843459498198,
+            -0.0880953967477178
+          ],
+          "model0": "/guide1/supportCollision/LineCollisionModel1",
+          "model1": "/guide0/supportCollision/PointCollisionModel1",
+          "nearest_same_response_detector_point_error_m": 1.5521898148890684e-17,
+          "surface_distances_by_explicit_stage_m": {
+            "previous": 1.734723475976807e-18,
+            "free_predictor": 0.0023158677872990876,
+            "accepted": 0.0023158677872990876
+          },
+          "lever_fit_error_m": 8.684452633802431e-18
+        }
+      ],
+      "minimum_vertex_to_other_surface_distance_m": 0.0014360388824244655,
+      "whole_surface_clearance": "NOT CERTIFIED(vertex distances do not exclude crossing triangles)",
+      "solver_error": 0.0,
+      "solver_iterations": 2
+    }
+  ],
+  "maximum_contact_surface_distance_by_stage_m": {
+    "previous": 1.5540063044689707e-17,
+    "free_predictor": 0.0026796035788317365,
+    "accepted": 0.002797420196075008
+  },
+  "maximum_mass_velocity_impulse_error_Ns_Nms": 4.7811039405565e-22,
+  "maximum_angular_inventory_error_Nms": 1.9521462456251453e-22,
+  "maximum_ACTIVE_contact_surface_distance_by_stage_m": {
+    "previous": 1.5540063044689707e-17,
+    "free_predictor": 0.0019601032704431084,
+    "accepted": 0.0026260897043208315
+  },
+  "maximum_point_pullback_to_same_response_detector_error_m": 1.5612511283791264e-17,
+  "support_included": true,
+  "active_part_point_counts": {
+    "eyelet": 7,
+    "support": 3
+  }
+}

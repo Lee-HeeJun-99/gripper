@@ -1,0 +1,181 @@
+{
+  "status": "PASS_BASIS_API_ONLY",
+  "scope": "Sampled gyroscopic inertia torque=-omega cross Iworld*omega at AnimateBegin through Native ConstantForceField. Native EulerImplicit/mapped mass/contact unchanged;NO implicit gyro Jacobian,not a production physical qualification. No state reset,new ODE/contact solver or B3 adoption.",
+  "source_commit": "18c3902476bd605cd416a5af80a8ba3e62e99d7e",
+  "producer_sha256": "a4ea5590b838ab6d5a6ee927ddbaa9e6137269316d2ed77aa2314f80b184f483",
+  "input_binary_sha256": "0e9d7336992942af5a0606e72323155335ced9f1eac3d9c540b8fe31cf3009b7",
+  "compiled_source_sha256": "f590fac8ec3cdc755597382badf8759352ccd22effbf2d096a0eeb59b3f3318e",
+  "physical_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "source_summary_sha256": "84c6ba8a35d805093843f3b54d435a4aeb19a40f4ef3493ccbae25f4f52366a2",
+  "initial": [
+    {
+      "q": [
+        -0.02888516536834323,
+        0.0026585017079263917,
+        -0.08877244007456227,
+        0.1618185904145632,
+        0.28640505460869614,
+        -0.4714469711022171,
+        0.8182448545083428
+      ],
+      "v": [
+        0.5271075517897437,
+        -0.8744927609280636,
+        0.4207439514131417,
+        -14.780490160138822,
+        -8.04270979239418,
+        1.8419585415138242
+      ],
+      "world_inertia_kg_m2": [
+        [
+          1.0299131902905214e-11,
+          -8.369413648323296e-13,
+          -7.659865071921386e-13
+        ],
+        [
+          -8.369413648323295e-13,
+          1.1268021870012551e-11,
+          1.3284258191193754e-12
+        ],
+        [
+          -7.659865071921386e-13,
+          1.3284258191193754e-12,
+          1.1032344833257038e-11
+        ]
+      ],
+      "input_normalized_inertia_m2": [
+        [
+          1.2966415969754054e-06,
+          -8.821328559803182e-25,
+          4.75984186872713e-24
+        ],
+        [
+          -8.821328559803182e-25,
+          9.816541318210365e-07,
+          1.3048215161375526e-23
+        ],
+        [
+          4.75984186872713e-24,
+          1.3048215161375526e-23,
+          9.816541318210365e-07
+        ]
+      ]
+    },
+    {
+      "q": [
+        -0.02963797342576699,
+        -0.004001545132378368,
+        -0.08947027927373984,
+        -0.16891905929325263,
+        0.2975376846270081,
+        0.4691685969769002,
+        0.8141366625112818
+      ],
+      "v": [
+        0.46785129134140746,
+        0.8497603645156699,
+        0.3923317970322074,
+        15.569844331644974,
+        -9.779934406156976,
+        2.416373524866044
+      ],
+      "world_inertia_kg_m2": [
+        [
+          1.0277880108757241e-11,
+          7.997274451678839e-13,
+          -7.750883149031644e-13
+        ],
+        [
+          7.997274451678842e-13,
+          1.1202863040250264e-11,
+          -1.3436099685487059e-12
+        ],
+        [
+          -7.750883149031638e-13,
+          -1.3436099685487059e-12,
+          1.1118755457167284e-11
+        ]
+      ],
+      "input_normalized_inertia_m2": [
+        [
+          1.2966415969754054e-06,
+          -8.821328559803182e-25,
+          4.75984186872713e-24
+        ],
+        [
+          -8.821328559803182e-25,
+          9.816541318210365e-07,
+          1.3048215161375526e-23
+        ],
+        [
+          4.75984186872713e-24,
+          1.3048215161375526e-23,
+          9.816541318210365e-07
+        ]
+      ]
+    }
+  ],
+  "assumed_mass_kg": 1e-05,
+  "mapped_mass": true,
+  "free_reference": false,
+  "dt_s": 0.00125,
+  "steps": 8,
+  "records": [
+    {
+      "variant": 0,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.6216452639782801,
+        "pid": 85,
+        "artifacts": {
+          "stdout.log": "93188f123fcf824b7bae3a7c96c70803c3caec13ac574d5c2df283359b7088df",
+          "command.json": "ca21a49f0abc32b0091a16cf31159c85ab305ca416d5de26c4d30365c3d84ddb",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "0667090b8b29419537cb1a2d9c43e67db9784d761bbced80391bd55fe19fb222"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "c913aa89a3d7fe98ae5935ff42ad6a0fa1338f4ded51ec8cbd9e3d83294dfe36"
+    },
+    {
+      "variant": 1,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.6086918049259111,
+        "pid": 86,
+        "artifacts": {
+          "stdout.log": "7fd5bb0a751714550eda6c0828dbf0d0d9be89d77ae8acdbdcfcd34df09238ad",
+          "command.json": "78a6e0c9873bcc8f1a9dcd1d3a210225914bdd99f2b16b6d0a95b9092cecfb39",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "27a580382e4f2aac052572660d71b6219441dcead27f1f619d200a1de68e4ba0"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "b42df0f3a56e7e1c5e4303a52477bc2672f78d7d98d727f44832297e950fee25"
+    }
+  ],
+  "metrics": [
+    {
+      "body": 0,
+      "basis_error": {
+        "q": 3.469446951953614e-17,
+        "v": 1.0103029524088925e-14
+      },
+      "maximum_input_power_W": 1.6940658945086007e-21,
+      "maximum_input_torque_Nm": 8.328218356157058e-08
+    },
+    {
+      "body": 1,
+      "basis_error": {
+        "q": 5.551115123125783e-17,
+        "v": 1.1934897514720433e-14
+      },
+      "maximum_input_power_W": 3.705769144237564e-22,
+      "maximum_input_torque_Nm": 7.14739194399617e-09
+    }
+  ],
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "physical_density": null
+}

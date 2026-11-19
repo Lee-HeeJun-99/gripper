@@ -6,6 +6,7 @@ import trimesh
 from analyse import BASE,sha,rotation
 from finite_guide_coupon import eyelet
 from closest_geometry import closest
+from native_response_blocks import friction_blocks
 def read(p):return list(csv.DictReader(p.open()))
 def vec(s):return np.fromstring(s,sep=' ')
 def main():
@@ -16,18 +17,18 @@ def main():
    if not np.array_equal(mass,np.diag(np.diag(mass))) or not np.all(np.diag(mass)[3:]==mass[3,3]):raise ValueError('isotropic mass only')
   for k,s in enumerate(states[0]):
    t=float(s['time_s']);oldq=[np.array(meta['initial_rigid_q'][i]) if k==0 else vec(states[i][k-1]['rigid_q']) for i in (0,1)];oldv=[np.array(meta['initial_rigid_v'][i]) if k==0 else vec(states[i][k-1]['rigid_v']) for i in (0,1)];newq=[vec(states[i][k]['rigid_q']) for i in (0,1)];newv=[vec(states[i][k]['rigid_v']) for i in (0,1)];imp=[vec(states[i][k]['object_impulse_Ns_Nms']) for i in (0,1)]
-   rows=[{int(r['row_id']):r for r in data if float(r['time_s'])==t} for data in direct];blocks=sorted({int(r['first_row']) for r in response if float(r['time_s'])==t});pullback=[];reconstruction=0.;momentum=0.
+   rows=[{int(r['row_id']):r for r in data if float(r['time_s'])==t} for data in direct];blocks=friction_blocks(response,t,rows[0]);pullback=[];reconstruction=0.;momentum=0.
    for i in (0,1):
     total=sum((vec(r['J'])*float(r['lambda_Ns']) for r in rows[i].values()),np.zeros(6));reconstruction=max(reconstruction,float(np.max(abs(total-imp[i]))));momentum=max(momentum,float(np.max(abs(M[i]@(newv[i]-oldv[i])-imp[i]))))
    for b in blocks:
     for i in (0,1):
      ids=[b+j for j in range(3)]
      if any(idx not in rows[i] for idx in ids):raise ValueError('incomplete actual friction block')
-     provenance=next(r for r in response if float(r['time_s'])==t and int(r['first_row'])==b);this_model=provenance['model0'] if f'/guide{i}/' in provenance['model0'] else provenance['model1'];part='support' if '/supportCollision/' in this_model else 'eyelet';part_local=np.array(meta['models'][i]['support_body_local_vertices_m']) if part=='support' else local[i];part_faces=np.array(meta['models'][i]['support_faces']) if part=='support' else faces
+     provenance=next(r for r in response if float(r['time_s'])==t and int(r['row_id'])==b);this_model=provenance['model0'] if f'/guide{i}/' in provenance['model0'] else provenance['model1'];part='support' if '/supportCollision/' in this_model else 'eyelet';part_local=np.array(meta['models'][i]['support_body_local_vertices_m']) if part=='support' else local[i];part_faces=np.array(meta['models'][i]['support_faces']) if part=='support' else faces
      j=np.array([vec(rows[i][idx]['J']) for idx in ids]);lever=.5*sum((np.cross(x[:3],x[3:]) for x in j),np.zeros(3));point=oldq[i][:3]+lever;distances={}
      for label,qstage in [('previous',oldq[i]),('free_predictor',vec(rows[i][b]['free_q'])),('accepted',newq[i])]:
       stagepoint=qstage[:3]+lever;verts=part_local@rotation(qstage[3:]).T+qstage[:3];tri=verts[part_faces];near=closest(tri,np.repeat(stagepoint[None,:],len(tri),axis=0));distances[label]=float(np.linalg.norm(near-stagepoint,axis=1).min())
-     provenance=next(r for r in response if float(r['time_s'])==t and int(r['first_row'])==b);same=[r for r in detector if float(r['accepted_time_s'])==t and r['model0']==provenance['model0'] and r['model1']==provenance['model1']];key='detected_point0' if f'/guide{i}/' in provenance['model0'] else 'detected_point1';deterror=min((np.linalg.norm(vec(r[key])-point) for r in same),default=None)
+     provenance=next(r for r in response if float(r['time_s'])==t and int(r['row_id'])==b);same=[r for r in detector if float(r['accepted_time_s'])==t and r['model0']==provenance['model0'] and r['model1']==provenance['model1']];key='detected_point0' if f'/guide{i}/' in provenance['model0'] else 'detected_point1';deterror=min((np.linalg.norm(vec(r[key])-point) for r in same),default=None)
      pullback.append(dict(body=i,first_row=b,part=part,normal_impulse_Ns=float(rows[i][b]['lambda_Ns']),point_using_previous_origin_m=point.tolist(),model0=provenance['model0'],model1=provenance['model1'],nearest_same_response_detector_point_error_m=None if deterror is None else float(deterror),surface_distances_by_explicit_stage_m=distances,lever_fit_error_m=float(max(np.linalg.norm(np.cross(lever,x[:3])-x[3:]) for x in j))))
    def angular(q,v):return sum((np.cross(x[:3],m[:3,:3]@y[:3])+m[3:,3:]@y[3:] for x,y,m in zip(q,v,M)),np.zeros(3))
    delta=angular(newq,newv)-angular(oldq,oldv);couple=sum((np.cross(q[:3],f[:3])+f[3:] for q,f in zip(oldq,imp)),np.zeros(3));advection=sum((np.cross(q[:3]-r[:3],m[:3,:3]@v[:3]) for q,r,m,v in zip(newq,oldq,M,newv)),np.zeros(3))

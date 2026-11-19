@@ -38,7 +38,7 @@ def main():
     mapping_build=BASE/'cad/build_b3_mapping_build589'
     files[str((mapping_build/'CMakeCache.txt').relative_to(ROOT))]=sha(mapping_build/'CMakeCache.txt')
     shutil.copy2(BASE/'sofa/native_mapping_acceleration/CMakeLists.txt',out/'mapping_acceleration_CMakeLists.txt')
-    for name in ('inertia_input_build.py','inertia_input_run.py','inertia_input_validate.py'):
+    for name in ('inertia_input_build.py','inertia_input_run.py','inertia_input_validate.py','inertia_contact_audit.py','inertia_surface_audit.py','inertia_energy_audit.py','inertia_energy_time.py','native_response_blocks.py','test_native_inertia.py','inertia_test_run.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     for f in compiled_inertia_input():
         files[str(f.relative_to(ROOT))]=sha(f)

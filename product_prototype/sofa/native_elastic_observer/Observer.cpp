@@ -130,15 +130,15 @@ public:
     using Types=sofa::defaulttype::Rigid3Types;using State=sofa::core::behavior::MechanicalState<Types>;using Field=sofa::core::behavior::ForceField<Types>;using BaseLink=sofa::core::objectmodel::BaseLink;
     sofa::core::objectmodel::SingleLink<NativeRigidAcceptedObserver,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
     sofa::core::objectmodel::SingleLink<NativeRigidAcceptedObserver,Field,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>elastic;
-    sofa::core::objectmodel::Data<std::string>filename;std::ofstream output;unsigned step=0;
-    NativeRigidAcceptedObserver():body(initLink("body","Actual native Rigid3 state")),elastic(initLink("elastic","Native elastic field")),filename(initData(&filename,std::string(),"filename","Exclusive actual end-event state/force journal")){f_listening.setValue(true);}
+    sofa::core::objectmodel::Data<std::string>filename;sofa::core::objectmodel::Data<double>lengthToM;std::ofstream output;unsigned step=0;
+    NativeRigidAcceptedObserver():body(initLink("body","Actual native Rigid3 state")),elastic(initLink("elastic","Native elastic field")),filename(initData(&filename,std::string(),"filename","Exclusive actual end-event state/force journal")),lengthToM(initData(&lengthToM,1.,"lengthToM","Native length unit in metres;force unit must be N;SI journal only")){f_listening.setValue(true);}
     void handleEvent(sofa::core::objectmodel::Event*event)override{
         if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(event))return;
-        if(!body||!elastic)throw std::runtime_error("Explicit accepted observer links required");
+        if(!body||!elastic||!std::isfinite(lengthToM.getValue())||lengthToM.getValue()<=0)throw std::runtime_error("Explicit accepted observer links and positive units required");
         if(!output.is_open()){if(std::ifstream(filename.getValue()))throw std::runtime_error("Unique accepted journal required");output.open(filename.getValue());output<<std::setprecision(17)<<"step,time_s,node,x_m,y_m,z_m,qx,qy,qz,qw,fx_N,fy_N,fz_N,tx_Nm,ty_Nm,tz_Nm\n";}
         const auto q=body->read(sofa::core::vec_id::read_access::position)->getValue();const auto velocity=body->read(sofa::core::vec_id::read_access::velocity)->getValue();
         Field::DataVecCoord x;Field::DataVecDeriv v,f;x.setValue(q);v.setValue(velocity);f.setValue(Types::VecDeriv(q.size()));sofa::core::MechanicalParams params;elastic->addForce(&params,f,x,v);const auto force=f.getValue();
-        ++step;for(unsigned i=0;i<q.size();++i){output<<step<<','<<getContext()->getTime()<<','<<i;for(unsigned j=0;j<3;++j)output<<','<<q[i].getCenter()[j];for(unsigned j=0;j<4;++j)output<<','<<q[i].getOrientation()[j];for(unsigned j=0;j<6;++j)output<<','<<force[i][j];output<<'\n';}output.flush();
+        ++step;for(unsigned i=0;i<q.size();++i){output<<step<<','<<getContext()->getTime()<<','<<i;for(unsigned j=0;j<3;++j)output<<','<<q[i].getCenter()[j]*lengthToM.getValue();for(unsigned j=0;j<4;++j)output<<','<<q[i].getOrientation()[j];for(unsigned j=0;j<6;++j)output<<','<<force[i][j]*(j<3?1.:lengthToM.getValue());output<<'\n';}output.flush();
         if(q!=body->read(sofa::core::vec_id::read_access::position)->getValue()||velocity!=body->read(sofa::core::vec_id::read_access::velocity)->getValue())throw std::runtime_error("accepted force observer changed actual state");
     }
 };

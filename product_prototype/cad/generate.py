@@ -8,7 +8,7 @@ BASE=Path(__file__).resolve().parents[1]
 def width(c,x):
  f=c['finger'];return f['root_width']+(f['tip_width']-f['root_width'])*max(0,x-f['taper_start'])/(f['length']-f['taper_start'])
 def world(c,p,angle=0):
- x,y,z=p;a=math.radians(angle);r=c['palm']['mount_radius']-z
+ x,y,z=p;tilt=math.radians(c['palm'].get('root_angle_deg',0));x,z=x*math.cos(tilt)-z*math.sin(tilt),x*math.sin(tilt)+z*math.cos(tilt);a=math.radians(angle);r=c['palm']['mount_radius']-z
  # Proper right-handed mount:longitudinal down,width -tangent,normal inward.
  return [r*math.cos(a)+y*math.sin(a),r*math.sin(a)-y*math.cos(a),-x]
 def mesh(c):
@@ -79,7 +79,7 @@ module anchor(){{difference(){{cube([4,4,2],center=true);cylinder(h=4,r=.6,cente
 module pulley(){{difference(){{union(){{cylinder(h=5,r=8);cylinder(h=1,r=10);translate([0,0,4])cylinder(h=1,r=10);}}translate([0,0,-1])cylinder(h=7,r=3);}}}}
 module coupling(){{difference(){{cylinder(h=12,r=8);translate([0,0,-1])cylinder(h=14,r=3);translate([0,-.5,5])cube([9,1,8]);translate([-9,0,9])rotate([0,90,0])cylinder(h=18,r=1.7);}}}}
 module cartridge(){{film();backing(-1);backing(1);translate([0,0,explode])clamp();mount();for(x={td['guide_stations']},side=[-1,1]){{guide_support(x,side);translate([x,side*(w(x)/2+{td['outboard']}),{td['normal_offset']}])guide();}}for(side=[-1,1])translate([98,side*(w(98)/2+{td['outboard']}),{td['normal_offset']}+3])anchor();}}
-module finger_frame(a){{rotate([0,0,a])translate([50,0,0])multmatrix([[0,0,-1,0],[0,-1,0,0],[-1,0,0,0],[0,0,0,1]])children();}}
+module finger_frame(a){{rotate([0,0,a])translate([{palm['mount_radius']},0,0])multmatrix([[0,0,-1,0],[0,-1,0,0],[-1,0,0,0],[0,0,0,1]])rotate([0,{-palm.get('root_angle_deg',0)},0])children();}}
 if(part=="assembly"){{palm();motor_plate();translate([0,0,22])pulley();translate([0,0,29])coupling();for(a=[0,120,240])finger_frame(a)cartridge();}}
 else if(part=="skin")film();else if(part=="rail_left")backing(-1);else if(part=="rail_right")backing(1);else if(part=="mount")mount();else if(part=="clamp")clamp();else if(part=="guide")guide();else if(part=="palm")palm();else if(part=="motor_plate")motor_plate();else if(part=="anchor")anchor();else if(part=="pulley")pulley();else if(part=="coupling")coupling();
 // Guide support stalks,anchors,pulley,coupling and fastening stack require detailed design.

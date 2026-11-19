@@ -43,6 +43,39 @@ public:
  void init()override{BaseObject::init();if(!body||std::ifstream(filename.getValue()))throw std::runtime_error("unique linked fixture journal required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,q,v\n";}
  void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;file<<getContext()->getTime()<<",\""<<body->read(sofa::core::vec_id::read_access::position)->getValue()<<"\",\""<<body->read(sofa::core::vec_id::read_access::velocity)->getValue()<<"\"\n";file.flush();}
 };
+class NativeContactRows:public BaseObject {
+public:
+ using Film=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;using Rigid=sofa::core::behavior::MechanicalState<sofa::defaulttype::Rigid3Types>;using Solver=sofa::component::constraint::lagrangian::solver::GenericConstraintSolver;
+ SOFA_CLASS(NativeContactRows,BaseObject);
+ sofa::core::objectmodel::SingleLink<NativeContactRows,Film,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>film0,film1,film2;
+ sofa::core::objectmodel::SingleLink<NativeContactRows,Rigid,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
+ sofa::core::objectmodel::SingleLink<NativeContactRows,Solver,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>solver;
+ sofa::core::objectmodel::Data<std::string>filename;std::ofstream file;
+ NativeContactRows():film0(initLink("film0","Native parent0")),film1(initLink("film1","Optional parent1")),film2(initLink("film2","Optional parent2")),body(initLink("body","Native rigid body")),solver(initLink("solver","Native multipliers")),filename(initData(&filename,std::string(),"filename","Actual object row ownership")){f_listening.setValue(true);}
+ void init()override{BaseObject::init();if(!body||!solver||!film0||std::ifstream(filename.getValue()))throw std::runtime_error("unique contact row observer links required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,row_id,film_mask,lambda_Ns,object_impulse_Ns_Nms\n";}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;auto&J=body->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();auto&lambda=solver->d_constraintForces.getValue();for(auto row=J.begin();row!=J.end();++row){if(row.index()>=lambda.size())throw std::runtime_error("actual row/multiplier mismatch");unsigned mask=0,k=0;for(auto*f:{film0.get(),film1.get(),film2.get()}){if(f){auto&F=f->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto r=F.begin();r!=F.end();++r)if(r.index()==row.index()){for(auto c=r.begin();c!=r.end();++c)if(c.val().norm2()>0)mask|=1u<<k;}}++k;}Rigid::Deriv impulse{};for(auto c=row.begin();c!=row.end();++c)impulse+=c.val()*lambda[row.index()];file<<getContext()->getTime()<<','<<row.index()<<','<<mask<<','<<lambda[row.index()]<<",\""<<impulse<<"\"\n";}file.flush();}
+};
+class NativeCableAudit:public BaseObject {
+public:
+ using State=sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>;
+ SOFA_CLASS(NativeCableAudit,BaseObject);
+ sofa::core::objectmodel::SingleLink<NativeCableAudit,State,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>body;
+ sofa::core::objectmodel::SingleLink<NativeCableAudit,BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>cable;
+ sofa::core::objectmodel::Data<std::string>filename;std::ofstream file;
+ NativeCableAudit():body(initLink("body","Parent state")),cable(initLink("cable","Read-only cable metadata")),filename(initData(&filename,std::string(),"filename","Exclusive cable diagnostic")){f_listening.setValue(true);}
+ void init()override{BaseObject::init();if(!body||!cable||std::ifstream(filename.getValue()))throw std::runtime_error("unique cable audit links required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,L0_m,L_internal_m,command,child_v,parent_J,child_J\n";}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;file<<getContext()->getTime();for(auto key:{"cableInitialLength","cableLength","value"}){file<<",\"";auto*d=cable->findData(key);if(auto*x=dynamic_cast<sofa::core::objectmodel::Data<double>*>(d))file<<x->getValue();else file<<(d?d->getValueString():"NOT_MEASURED");file<<'"';}auto*child=dynamic_cast<State*>(cable->getContext()->getMechanicalState());if(!child)throw std::runtime_error("child state missing");file<<",\""<<child->read(sofa::core::vec_id::read_access::velocity)->getValue()<<'"';for(auto*s:{body.get(),child}){file<<",\"";auto&J=s->read(sofa::core::vec_id::read_access::constraintJacobian)->getValue();for(auto row=J.begin();row!=J.end();++row)for(auto col=row.begin();col!=row.end();++col)file<<row.index()<<':'<<col.index()<<':'<<col.val()<<';';file<<'"';}file<<'\n';file.flush();}
+};
+class NativeConstraintJournal:public BaseObject {
+public:
+ using Solver=sofa::component::constraint::lagrangian::solver::GenericConstraintSolver;
+ SOFA_CLASS(NativeConstraintJournal,BaseObject);
+ sofa::core::objectmodel::SingleLink<NativeConstraintJournal,Solver,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK>solver;
+ sofa::core::objectmodel::Data<std::string>filename;std::ofstream file;
+ NativeConstraintJournal():solver(initLink("solver","Read-only native solver")),filename(initData(&filename,std::string(),"filename","Exclusive constraint log")){f_listening.setValue(true);}
+ void init()override{BaseObject::init();if(!solver||std::ifstream(filename.getValue()))throw std::runtime_error("unique solver journal required");file.open(filename.getValue());file<<std::setprecision(17)<<"time_s,error,iterations,impulses_Ns\n";}
+ void handleEvent(sofa::core::objectmodel::Event*e)override{if(!dynamic_cast<sofa::simulation::AnimateEndEvent*>(e))return;file<<getContext()->getTime()<<','<<solver->d_currentError.getValue()<<','<<solver->d_currentIterations.getValue()<<",\""<<solver->d_constraintForces.getValue()<<"\"\n";file.flush();}
+};
 class NativeRigidJournal:public BaseObject {
 public:
  using State=sofa::core::behavior::MechanicalState<sofa::defaulttype::Rigid3Types>;
@@ -61,5 +94,5 @@ public:
 extern "C" {
 __attribute__((visibility("default")))void initExternalModule(){}
 __attribute__((visibility("default")))const char*getModuleName(){return "ReGripProductSequence";}
-__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Input and logging ONLY;native SOFA FEM/cable/solver").add<product::NativeCableSequence>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 journal").add<product::NativeRigidJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native fixture journal").add<product::NativePointJournal>());}
+__attribute__((visibility("default")))void registerObjects(sofa::core::ObjectFactory*f){f->registerObjects(sofa::core::ObjectRegistrationData("Input and logging ONLY;native SOFA FEM/cable/solver").add<product::NativeCableSequence>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native Rigid3 journal").add<product::NativeRigidJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native fixture journal").add<product::NativePointJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only native constraint convergence").add<product::NativeConstraintJournal>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only cable/parent Jacobian audit").add<product::NativeCableAudit>());f->registerObjects(sofa::core::ObjectRegistrationData("Read-only actual native contact row ownership").add<product::NativeContactRows>());}
 }

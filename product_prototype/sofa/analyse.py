@@ -7,6 +7,9 @@ import trimesh
 BASE=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read(p):return list(csv.DictReader(p.open()))
+def cable_node(tree,f,j):
+ node=tree.find(f"./Node[@name='finger{f}']/Node[@name='cable{j}']")
+ return node if node is not None else tree.find(f"./Node[@name='guides{f}']/Node[@name='cable{j}']")
 def rotation(q):
  x,y,z,w=q;return np.array([[1-2*(y*y+z*z),2*(x*y-z*w),2*(x*z+y*w)],[2*(x*y+z*w),1-2*(x*x+z*z),2*(y*z-x*w)],[2*(x*z-y*w),2*(y*z+x*w),1-2*(x*x+y*y)]])
 def analyse(case,out):
@@ -32,7 +35,7 @@ def analyse(case,out):
   item.update(reference_width_mean_skin_tip_peak_mm=float(skin_motion.max()*1000),reference_width_mean_skin_tip_final_mm=float(skin_motion[-1]*1000),max_discrete_skin_centreline_curvature_per_mm=float(curvature.max()/1000))
   tracking=[]
   for j in ((0,1) if 'guide0_q_m' in rows[0] else ()):
-   cable=tree.find(f"./Node[@name='finger{f}']/Node[@name='cable{j}']/CableConstraint");pull=np.fromstring(cable.get('pullPoint'),sep=' ');initial=np.fromstring(tree.find(f"./Node[@name='finger{f}']/Node[@name='cable{j}']/MechanicalObject").get('position'),sep=' ').reshape(-1,3);length0=np.linalg.norm(np.diff(np.vstack([pull,initial]),axis=0),axis=1).sum();stroke=[]
+   node=cable_node(tree,f,j);cable=node.find('CableConstraint');pull=np.fromstring(cable.get('pullPoint'),sep=' ');initial=np.fromstring(node.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);length0=np.linalg.norm(np.diff(np.vstack([pull,initial]),axis=0),axis=1).sum();stroke=[]
    for row in rows:
     origin=pull.copy();origin[2]+=float(control.get('liftHeight','0'))*np.clip((float(row['time_s'])-1)/.5,0,1);path=np.vstack([origin,np.fromstring(row[f'guide{j}_q_m'],sep=' ').reshape(-1,3)]);stroke.append(length0-np.linalg.norm(np.diff(path,axis=0),axis=1).sum())
    command=np.array([float(row['command_m']) for row in rows]);error=np.array(stroke)-command;k=min(range(len(rows)),key=lambda i:abs(float(rows[i]['time_s'])-hold_end));tracking.append(dict(cable=j,hold_time_s=float(rows[k]['time_s']),command_mm=float(command[k]*1000),actual_path_shortening_mm=float(stroke[k]*1000),hold_error_mm=float(error[k]*1000),maximum_absolute_error_mm=float(np.abs(error).max()*1000),scope='actual mapped path length;not pre-correction CableModel displacement'))
@@ -48,7 +51,7 @@ def analyse(case,out):
    if 'guide0_q_m' in rows[0]:
     minimum=1e10
     for j in (0,1):
-     pull=np.fromstring(tree.find(f"./Node[@name='finger{f}']/Node[@name='cable{j}']/CableConstraint").get('pullPoint'),sep=' ');lift_height=float(tree.find(f"./Node[@name='finger{f}']/NativeCableSequence").get('liftHeight','0'))
+     pull=np.fromstring(cable_node(tree,f,j).find('CableConstraint').get('pullPoint'),sep=' ');lift_height=float(tree.find(f"./Node[@name='finger{f}']/NativeCableSequence").get('liftHeight','0'))
      for i,row in enumerate(rows):
       moved_pull=pull.copy();moved_pull[2]+=lift_height*np.clip((float(row['time_s'])-1)/.5,0,1);path=np.vstack([moved_pull,np.fromstring(row[f'guide{j}_q_m'],sep=' ').reshape(-1,3)]);a=path[:-1];d=np.diff(path,axis=0);u=np.clip(np.sum((obj[i,:3]-a)*d,axis=1)/np.sum(d*d,axis=1),0,1);minimum=min(minimum,float(np.linalg.norm(a+u[:,None]*d-obj[i,:3],axis=1).min()-R-.00025))
     item['minimum_sampled_finite_wire_sphere_gap_mm']=minimum*1000

@@ -12,7 +12,9 @@ def add(n,tag,**kw):return ET.SubElement(n,tag,{k:str(v) for k,v in kw.items()})
 def flat(x):return ' '.join(format(float(a),'.17g') for row in x for a in row)
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fingers',type=int,choices=(1,3),default=1);p.add_argument('--steps',type=int);p.add_argument('--dt',type=float,choices=(.0025,.00125,.000625),default=.0025);p.add_argument('--object',choices=('none','fixed','free'),default='none');p.add_argument('--radius',type=float,choices=(20,30),default=30);p.add_argument('--stroke',type=float,default=5);p.add_argument('--reuse-build');p.add_argument('--gravity',action='store_true');p.add_argument('--floor',action='store_true');p.add_argument('--outboard',type=float,choices=(4.,10.,14.),default=4.);p.add_argument('--intersection',choices=('MinProximityIntersection','LocalMinDistance'),default='MinProximityIntersection');p.add_argument('--lift',action='store_true');p.add_argument('--center-z',type=float,choices=(-65.,-75.,-80.),default=-65.);p.add_argument('--shape',choices=('sphere','cylinder','box'),default='sphere');p.add_argument('--support-gap',type=float,choices=(0.,.4),default=0.);p.add_argument('--support-radius',type=float,choices=(5.,35.),default=5.);p.add_argument('--slow-cycle',action='store_true');p.add_argument('--support-shape',choices=('mesh','sphere'),default='mesh');p.add_argument('--dense-guides',action='store_true');p.add_argument('--withdraw-support',action='store_true');p.add_argument('--constraint-solver',choices=('BlockGaussSeidelConstraintSolver','GenericConstraintSolver'),default='BlockGaussSeidelConstraintSolver')
- p.add_argument('--guide-location',choices=('outboard','surface','rail-back'),default='outboard');p.add_argument('--rail-back-offset',type=float,default=.5);p.add_argument('--root-angle',type=float,choices=(0,10,15),default=0);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--constraint-journal',action='store_true');a=p.parse_args()
+ p.add_argument('--guide-location',choices=('outboard','surface','rail-back'),default='outboard');p.add_argument('--rail-back-offset',type=float,default=.5);p.add_argument('--root-angle',type=float,choices=(0,10,12,14,15),default=0);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--constraint-journal',action='store_true');p.add_argument('--rigid-guides',action='store_true');p.add_argument('--nncg',action='store_true');p.add_argument('--global-native-ode',action='store_true');p.add_argument('--mapped-guide-joints',action='store_true');a=p.parse_args()
+ if a.mapped_guide_joints and not(a.rigid_guides and a.global_native_ode):raise ValueError('mapped rigidification requires explicit rigid-guides and global-native-ode')
+ if a.nncg:a.constraint_solver='NNCGConstraintSolver'
  if a.lift and a.slow_cycle:raise ValueError('separate explicit lift and slow profiles;do not mix timings')
  if a.constraint_solver=='GenericConstraintSolver':raise ValueError('Installed v26.06 factory removed GenericConstraintSolver;045 preserves actual rejection. Use BlockGaussSeidelConstraintSolver.')
  if a.withdraw_support and (a.slow_cycle or not a.floor or a.support_shape!='sphere'):raise ValueError('explicit rounded support/ordinary cycle required for withdrawal')
@@ -88,9 +90,22 @@ def main():
  if a.constraint_journal:
   add(root,'NativeConstraintJournal',solver='@constraints',filename=str(out/'constraints.csv'))
   if a.object=='free':add(root,'NativeContactRows',solver='@constraints',body='@object/rigid',filename=str(out/'contact_rows.csv'),**{'film'+str(f):'@finger'+str(f)+'/dofs' for f in range(a.fingers)})
+ if a.rigid_guides:
+  if a.cables!=2:raise ValueError('explicit rigid bracket prototype currently requires two cables')
+  from rigid_guides import install
+  r['rigid_guides']=[install(root,root.find(f"./Node[@name='finger{f}']"),c,m,c['palm']['angles_deg'][f],f,add,out,mapped=a.mapped_guide_joints) for f in range(a.fingers)]
+  c['guide_mechanics']=r['rigid_guides'];(out/'config.json').write_text(json.dumps(c,indent=2));r['config_sha256']=sha(out/'config.json')
+  observer=root.find('NativeContactRows')
+  if observer is not None:
+   for f in range(a.fingers):observer.set('guide'+str(f),'@guides'+str(f)+'/frames')
  if a.withdraw_support:
   protocol=dict(scope='experimental native holding,NOT whole physical certification',mass_kg=s['sphere_mass_kg'],radius_mm=a.radius,gravity_m_s2=[0,0,-9.81] if a.gravity else [0,0,0],window_s=[1.6,2.0],reference_s=1.,max_vertical_slip_mm=2.,max_speed_mm_s=5.,minimum_support_surface_gap_mm=5.,maximum_support_resultant_N=1e-5,friction_assumed=s['friction'],contact_rows_required=True)
   (out/'holding_protocol.json').write_text(json.dumps(protocol,indent=2));r['holding_protocol_sha256']=sha(out/'holding_protocol.json')
+ if a.global_native_ode:
+  for node in root.iter('Node'):
+   for child in list(node):
+    if child.tag in ('EulerImplicitSolver','SparseLDLSolver','GenericConstraintCorrection'):node.remove(child)
+  add(root,'EulerImplicitSolver',rayleighMass=0,rayleighStiffness=0);add(root,'SparseLDLSolver',name='globalLinear',template='CompressedRowSparseMatrixd');add(root,'GenericConstraintCorrection');r['global_native_ode']='one stock EulerImplicit/SparseLDL scalar mixed system;Rayleigh=0 explicitly CHANGED physical damping,not old-model gate repair'
  shutil.copy2(BASE/'cad/generate.py',out/'geometry_generator.py');r['geometry_generator_sha256']=sha(out/'geometry_generator.py')
  for f in range(a.fingers):
   points=np.array([world(c,x,c['palm']['angles_deg'][f]) for x in m['local_positions_mm']])*.001

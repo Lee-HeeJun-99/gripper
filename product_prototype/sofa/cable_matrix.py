@@ -9,7 +9,7 @@ from generate import world,width
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def flat(v):return ' '.join(format(float(x),'.17g') for row in v for x in row)
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--guide',choices=('surface','outboard'),default='outboard');p.add_argument('--stroke',type=float,default=8);p.add_argument('--steps',type=int,default=800);p.add_argument('--dt',type=float,default=.0025);p.add_argument('--reuse-build');p.add_argument('--no-journal',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cables',type=int,choices=(1,2),default=2);p.add_argument('--guide',choices=('surface','outboard','normal-only','lateral-only'),default='outboard');p.add_argument('--stroke',type=float,default=8);p.add_argument('--steps',type=int,default=800);p.add_argument('--dt',type=float,default=.0025);p.add_argument('--reuse-build');p.add_argument('--no-journal',action='store_true');a=p.parse_args()
  if not(0<=a.stroke<=8 and 0<a.steps<=3200):raise ValueError('bounded diagnostic')
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=out/'source';src.mkdir()
  for name in ('Controller.cpp','CMakeLists.txt','cable_matrix.py'):shutil.copy2(BASE/'sofa'/name,src/name)
@@ -27,15 +27,16 @@ def main():
   if node.tag=='Node' and node.get('name')!='finger0':root.remove(node)
   if node.tag=='RequiredPlugin' and 'libReGripProductSequence.so' in node.get('pluginName',''):node.set('pluginName',str(binary))
  finger=root.find('./Node');control=finger.find('NativeCableSequence');control.set('filename',str(out/'finger0.csv'));control.set('stroke',str(a.stroke*.001));control.set('hold','1');control.set('release','1.5')
- if a.guide=='surface':
+ normal=.1 if a.guide in ('surface','lateral-only') else 3;outboard=-1 if a.guide in ('surface','normal-only') else 14
+ if a.guide!='outboard':
   for j,side in enumerate((-1,1)):
-   cable=finger.find(f"./Node[@name='cable{j}']");positions=[[x,side*(width(c,x)/2-1),c['finger']['skin_thickness']] for x in c['tendon']['guide_stations']];cable.find('MechanicalObject').set('position',flat(np.array([world(c,x,0) for x in positions])*.001));cable.find('CableConstraint').set('pullPoint',flat([np.array(world(c,[0,side*(width(c,0)/2-1),c['finger']['skin_thickness']],0))*.001]))
+   cable=finger.find(f"./Node[@name='cable{j}']");positions=[[x,side*(width(c,x)/2+outboard),normal] for x in c['tendon']['guide_stations']];cable.find('MechanicalObject').set('position',flat(np.array([world(c,x,0) for x in positions])*.001));cable.find('CableConstraint').set('pullPoint',flat([np.array(world(c,[0,side*(width(c,0)/2+outboard),normal],0))*.001]))
  if a.cables==1:
   finger.remove(finger.find("./Node[@name='cable1']"));control.set('cable1','@cable0/actuator');r['single_logging']='two CSV cable columns intentionally alias one physical constraint;count once'
  if not a.no_journal:
   ET.SubElement(root,'NativeConstraintJournal',solver='@constraints',filename=str(out/'constraints.csv'))
   ET.SubElement(finger,'NativeCableAudit',body='@dofs',cable='@cable0/actuator',filename=str(out/'cable_audit.csv'))
- c['diagnostic']=dict(cables=a.cables,guide=a.guide,normal_offset_mm=.1 if a.guide=='surface' else 3,outboard_mm=-1 if a.guide=='surface' else 14);c['simulation']['dt_s']=a.dt;c['simulation']['hold_end_s']=1;c['simulation']['release_end_s']=1.5
+ c['diagnostic']=dict(cables=a.cables,guide=a.guide,normal_offset_mm=normal,outboard_mm=outboard);c['tendon'].update(normal_offset=normal,outboard=outboard,maximum_stroke=a.stroke);c['simulation']['dt_s']=a.dt;c['simulation']['hold_end_s']=1;c['simulation']['release_end_s']=1.5
  (out/'config.json').write_text(json.dumps(c,indent=2));shutil.copy2(original/'mesh.json',out/'mesh.json');tree.write(out/'scene.scn');r.update(scene_sha256=sha(out/'scene.scn'),config_sha256=sha(out/'config.json'),mesh_sha256=sha(out/'mesh.json'),original_scene_sha256=sha(original/'scene.scn'));r['process']=guarded([SDK/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',a.steps,'--hideProgressBar',out/'scene.scn'],out/'process',480)
  if r['process']['exit_code']==0:
   rows=list(csv.DictReader((out/'finger0.csv').open()));metrics=[];time=np.array([float(x['time_s']) for x in rows]);command=np.array([float(x['command_m']) for x in rows]);hold=np.flatnonzero((time>=.6)&(time<=1+1e-12))

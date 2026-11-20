@@ -1,5 +1,11 @@
 ## Root redirect continuation778–781 — 2026-11-21
 
+Follow-up782–784:inward10mmpinextractioncollideswithFingerMount6/6,preservedFAIL.
+Outwarddirection c0:+axis/c1:-axis:6convexsweptpinvolumes overfull10mmtranslation
+clearagainst298parts(783). Not retained/mountedassemblyPASS.78448softwaretests.
+NextRoot mount/retention must preserveOUTWARDservice,notbidirectionalaccess.
+Featureecce74f;laterlocalcommitcontainsserviceauditandcheckpoint.
+
 Authority:ROOT_REDIRECT_CONTINUATION_20261121.md. Six finite Root wheels then
 six forks/pin proxies created:meshes/b3_root_fork_v31/assembly_recipe.json.
 Actual280-parent/new-module solid screen0intersections; rootwire intendedwheel

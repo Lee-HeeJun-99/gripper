@@ -14,6 +14,10 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_root_service_keeps_inward_failure_and_outboard_sweep_scope(self):
+  old=result('product_root_service782');self.assertEqual(sum(bool(r['intersections']) for r in old['records']),6)
+  new=result('product_root_outboard783');self.assertTrue(new['conservative_linear_swept_volume']);self.assertEqual(len(new['records']),6);self.assertFalse(any(r['intersections'] for r in new['records']));self.assertFalse(new['fabrication_ready'])
+  self.assertTrue(all(r['axis_sign']==(1 if '_c0_' in r['pin'] else -1) for r in new['records']))
  def test_root_redirect_preserves_contact_review_and_new_path_origin(self):
   d=result('product_root_redirect778');self.assertEqual(len(d['records']),6);self.assertFalse(d['solid_intersections']);self.assertTrue(all(r['wire_intersections'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
   for r in d['records']:

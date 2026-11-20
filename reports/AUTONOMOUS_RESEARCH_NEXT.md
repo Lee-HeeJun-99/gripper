@@ -3577,6 +3577,10 @@ not project completion or a claim of background continuation. No SDK/legacy solv
 changes,remote push or old evidence overwrite.
 # 2026-11-21 Root redirect778–781 continuation
 
+782 inward10mm extractionFAIL6/6 vsFingerMount.783outward6fullsweptpinvolumes
+clear,notretainedassemblyPASS. ImplementRoot mount/retention withOUTWARD
+service (c0:+axis,c1:-axis).78448softwaretests;oldphysicsGatesunchanged.
+
 Read product_prototype/reports/ROOT_REDIRECT_CONTINUATION_20261121.md first.
 Finite root wheels/forks/pins now exist, unmounted; no new SOFA physics PASS.
 Next: finite Palm-to-root-fork support/retention, then compact support redesign.

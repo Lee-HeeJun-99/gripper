@@ -46,6 +46,25 @@ timeout 480 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/c
 
 ## Next executable work
 
+### Follow-up782–784 (after feature commit ecce74f)
+
+782:36 actual pin extraction samples (both directions,2/5/10mm),4.5840s.
+Six inward10mm samples collide with matching Finger Mount,volume~0.31365mm3.
+This FAILURE is preserved; an arbitrary bidirectional service claim is rejected.
+783: choose OUTBOARD service direction (c0:+axis,c1:-axis), and construct the
+convex hull of original/translated convex cylindrical pin. This volume contains
+the entire straight10mm translation, not just endpoints. Six such swept volumes
+vs298parts including own fork/wheel:0intersections,4.1432s. Only these unheaded,
+unretained pin proxies qualify for this geometry statement; no tool/retainer or
+Palm mount is yet modeled.784:48design/software regression tests,not physics.
+
+Pin retention design must permit outward extraction and avoid the inward Mount.
+Reproduce with unique tags:
+
+```bash
+timeout 480 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/root_service_audit.py --tag UNIQUE_SERVICE --outboard-sweep
+```
+
 Design a finite Palm-to-root-fork mounting and retention path; screen against
 all280 obstacles and both sides of the wire BEFORE Native integration. Avoid
 adding another large outer tower: latest bridge already reachesR94.6495mm.

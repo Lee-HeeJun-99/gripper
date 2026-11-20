@@ -3,6 +3,35 @@ import csv,json,unittest
 from analyse import BASE
 def summary(case):return json.loads((BASE/'results'/case/'summary.json').read_text())
 class ContactPolicyTest(unittest.TestCase):
+ def test_potential_only_adapter_preserves_actual_newton_acceptance(self):
+  data=summary('b3_native_spring_newton_purity702');self.assertEqual(data['status'],'PASS_NEWTON_API_PURITY_NOT_TIME_OR_B3')
+  for r in data['records']:self.assertTrue(r['actual_state_force_slot_Newton_status_residualGraph_identity_exact']);self.assertLess(r['maximum_potential_reference_error_J'],1e-12)
+ def test_loop_only_intervention_identifies_native_ode_not_cable_compatibility(self):
+  records=summary('b3_native_loop_intervention692')['records']
+  for r in records:
+   if r['loop']=='DefaultAnimationLoop':
+    if r['channel']=='external_force':self.assertEqual(r['status'],'PASS_DISCRETE_STATE_SCOPE');self.assertLess(r['maximum_velocity_reference_error_m_s'],1e-12)
+    else:self.assertEqual(r['status'],'FAIL_DISCRETE_STATE');self.assertTrue(all(z==0. and v==0. for z,v in r['frames']))
+   else:self.assertEqual(r['status'],'FAIL_NATIVE_EXECUTION');self.assertNotEqual(r['process']['exit_code'],0)
+ def test_old_tangent_elastic_reference_is_not_physical_time_gate(self):
+  data=summary('b3_native_elastic_tangent694')
+  for r in data['records']:
+   if r['mode']=='taut_release':self.assertTrue(r['strict_old_tangent_reference_pass']);self.assertLess(r['old_tangent_predicted_acceleration_at_slack_m_s2'],-9.)
+   else:self.assertTrue(r['strict_zero_motion'])
+  self.assertFalse(any(p['pass_time_gate'] for p in data['pairs']))
+ def test_native_nonlinear_be_fixes_slack_acceleration_not_time_accuracy(self):
+  data=summary('b3_native_elastic_newton_reference696')
+  for r in data['records']:
+   if r['mode']=='taut_release':self.assertTrue(r['strict_discrete_reference_pass']);self.assertEqual(r['discrete_acceleration_at_slack_m_s2'],0.)
+  self.assertFalse(any(p['pass_time_gate'] for p in data['pairs']))
+ def test_actual_native_slack_energy_api_and_force_are_inconsistent(self):
+  data=summary('b3_native_spring_potential_fd698');self.assertEqual(data['status'],'FAIL_NATIVE_UNILATERAL_FORCE_POTENTIAL_CONSISTENCY');self.assertAlmostEqual(data['actual_native_potential_gradient_z_N'],1.,places=10)
+  for r in data['records']:self.assertTrue(all(x==0. for v in r['actual_native_force_slot_N'] for x in v));self.assertTrue(all(x==0. for v in r['v'] for x in v))
+  for r in summary('b3_native_spring_energy697')['records']:self.assertTrue(r['observer_state_purity_exact'])
+ def test_potential_only_adapter_is_state_pure_and_not_a_time_fix(self):
+  data=summary('b3_native_spring_potential_adapter699');self.assertEqual(data['status'],'PASS_POTENTIAL_ONLY_NOT_TIME_OR_B3');self.assertEqual(data['slack_actual_potential_FD_gradient_N'],0.)
+  for r in data['records']:self.assertTrue(r['actual_q_v_force_slot_identity_exact']);self.assertLess(r['maximum_potential_reference_error_J'],1e-12)
+  data=summary('b3_native_elastic_tangent694');self.assertFalse(any(p['pass_time_gate'] for p in data['pairs']))
  def test_reuse_build_and_correct_parameter_name_are_state_pure(self):
   data=summary('b3_native_newmark_reuse_regression690');self.assertIsNone(data['configure']);self.assertIsNone(data['compile'])
   for r in data['records']:

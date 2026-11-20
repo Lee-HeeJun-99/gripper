@@ -1,0 +1,3191 @@
+{
+  "status": "ELASTIC_DISCRETE_DIAGNOSIS_NOT_PHYSICAL_PASS",
+  "source_commit": "c0ca121019d2e63bf5f802f6bf7d3ab2c00800ea",
+  "producer_sha256": "f568ec9d5a9dc3c7a365b7240e101b768efbceaad5614b89d9112c488bb1920a",
+  "input_summary_sha256": "f9dd09173d2c0804c97176632629ad739f24475a4ff54703dc9825eb01cdcb27",
+  "input_case": "b3_native_elastic_newton695",
+  "strict_gate": 1e-12,
+  "time_gate": 0.001,
+  "records": [
+    {
+      "mode": "taut_release",
+      "dt_s": 0.00025,
+      "maximum_discrete_position_error_m": 6.938893903907228e-18,
+      "maximum_discrete_velocity_error_m_s": 7.549516567451064e-15,
+      "discrete_reference": "exact_nonlinear_BE",
+      "strict_discrete_reference_pass": true,
+      "first_sampled_slack_time_s": 0.005000000000000003,
+      "continuous_analytic_release_s": 0.00496729413289805,
+      "first_sampled_slack_position_m": 0.010066756708192737,
+      "previous_sampled_position_m": 0.009323544885468904,
+      "discrete_acceleration_at_slack_m_s2": 0.0,
+      "physical_acceleration_at_slack_m_s2": 0.0,
+      "scope": "sampled release bracket,NOT continuous Native event time;negative extrapolated acceleration is not physical string compression force"
+    },
+    {
+      "mode": "taut_release",
+      "dt_s": 0.000125,
+      "maximum_discrete_position_error_m": 1.5612511283791264e-17,
+      "maximum_discrete_velocity_error_m_s": 1.7763568394002505e-14,
+      "discrete_reference": "exact_nonlinear_BE",
+      "strict_discrete_reference_pass": true,
+      "first_sampled_slack_time_s": 0.005000000000000004,
+      "continuous_analytic_release_s": 0.00496729413289805,
+      "first_sampled_slack_position_m": 0.010092413750818253,
+      "previous_sampled_position_m": 0.009709154520750472,
+      "discrete_acceleration_at_slack_m_s2": 0.0,
+      "physical_acceleration_at_slack_m_s2": 0.0,
+      "scope": "sampled release bracket,NOT continuous Native event time;negative extrapolated acceleration is not physical string compression force"
+    },
+    {
+      "mode": "taut_release",
+      "dt_s": 6.25e-05,
+      "maximum_discrete_position_error_m": 6.869504964868156e-16,
+      "maximum_discrete_velocity_error_m_s": 1.532107773982716e-13,
+      "discrete_reference": "exact_nonlinear_BE",
+      "strict_discrete_reference_pass": true,
+      "first_sampled_slack_time_s": 0.005000000000000004,
+      "continuous_analytic_release_s": 0.00496729413289805,
+      "first_sampled_slack_position_m": 0.010099832772510559,
+      "previous_sampled_position_m": 0.009905225000440533,
+      "discrete_acceleration_at_slack_m_s2": 0.0,
+      "physical_acceleration_at_slack_m_s2": 0.0,
+      "scope": "sampled release bracket,NOT continuous Native event time;negative extrapolated acceleration is not physical string compression force"
+    },
+    {
+      "mode": "initial_slack",
+      "dt_s": 0.00025,
+      "strict_zero_motion": true
+    },
+    {
+      "mode": "initial_slack",
+      "dt_s": 0.000125,
+      "strict_zero_motion": true
+    },
+    {
+      "mode": "initial_slack",
+      "dt_s": 6.25e-05,
+      "strict_zero_motion": true
+    }
+  ],
+  "pairs": [
+    {
+      "dt_s": [
+        0.00025,
+        0.000125
+      ],
+      "pass_time_gate": false,
+      "worst": {
+        "time_s": 0.00025,
+        "observable": "moving_point_displacement_m",
+        "absolute": 1.5358605061346686e-05,
+        "relative": 0.2472735414876814
+      },
+      "measurements": [
+        {
+          "time_s": 0.00025,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.5358605061346686e-05,
+          "relative": 0.2472735414876814
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.000773372278482759,
+          "relative": 0.003103163819875725
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0015358605061355224,
+          "relative": 0.0015430748743678329
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "reconstructed_energy_J",
+          "absolute": 1.5467445569663542e-05,
+          "relative": 0.003103163819877399
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.0165126205990584e-05,
+          "relative": 0.16255930070384225
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0023026735317369096,
+          "relative": 0.004641450280121311
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.003016512620598877,
+          "relative": 0.003064128784290074
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 3.079059733280924e-05,
+          "relative": 0.006196698014058131
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.4141928375978343e-05,
+          "relative": 0.11955833035535278
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.004561126472586996,
+          "relative": 0.006170864071589468
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004414192837597031,
+          "relative": 0.004562504518337744
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "reconstructed_energy_J",
+          "absolute": 4.597050186781228e-05,
+          "relative": 0.009280632464853042
+        },
+        {
+          "time_s": 0.001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.702227460308083e-05,
+          "relative": 0.09324515260465527
+        },
+        {
+          "time_s": 0.001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.007512937355164118,
+          "relative": 0.007691357063007217
+        },
+        {
+          "time_s": 0.001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005702227460308018,
+          "relative": 0.006036983276915712
+        },
+        {
+          "time_s": 0.001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 6.100819878381795e-05,
+          "relative": 0.012354996961839603
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.855305611868203e-05,
+          "relative": 0.07527830827076938
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.011113696247079474,
+          "relative": 0.009202846677221661
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "elastic_tension_N",
+          "absolute": 0.006855305611867757,
+          "relative": 0.007485681130672033
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "reconstructed_energy_J",
+          "absolute": 7.590472076548192e-05,
+          "relative": 0.015419821202147996
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.849738513256198e-05,
+          "relative": 0.06208321485958133
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.015310856199253209,
+          "relative": 0.010705213994719229
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0078497385132561,
+          "relative": 0.008905880100895852
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "reconstructed_energy_J",
+          "absolute": 9.066109361750146e-05,
+          "relative": 0.01847513479076103
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "moving_point_displacement_m",
+          "absolute": 8.663702825131956e-05,
+          "relative": 0.05187288322950156
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.020044286826469193,
+          "relative": 0.012198301125351071
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "elastic_tension_N",
+          "absolute": 0.008663702825131847,
+          "relative": 0.010293764136796857
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00010527833630873378,
+          "relative": 0.021520967240786858
+        },
+        {
+          "time_s": 0.002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.277465991988079e-05,
+          "relative": 0.04365482519683186
+        },
+        {
+          "time_s": 0.002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.025246897213272,
+          "relative": 0.013681907745956973
+        },
+        {
+          "time_s": 0.002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0092774659919872,
+          "relative": 0.0116440084492915
+        },
+        {
+          "time_s": 0.002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00011975746101613831,
+          "relative": 0.024557347973751177
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.673591684110014e-05,
+          "relative": 0.03683381856487558
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.030845322504555295,
+          "relative": 0.015155786665285395
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.009673591684110416,
+          "relative": 0.012949131411606854
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00013409947316841975,
+          "relative": 0.027584306319884285
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.837123604596086e-05,
+          "relative": 0.031031347731941446
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03676066803226252,
+          "relative": 0.016619638232174307
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.009837123604596099,
+          "relative": 0.014198443681751848
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014830537148931636,
+          "relative": 0.030601871518391385
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.755746113639064e-05,
+          "relative": 0.025995325953491303
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.04290930437277751,
+          "relative": 0.018073103344827996
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "elastic_tension_N",
+          "absolute": 0.009755746113639163,
+          "relative": 0.015376279418157286
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.000162376148040759,
+          "relative": 0.03361007271775084
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.41992031893036e-05,
+          "relative": 0.021551486234725976
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.04920370632716198,
+          "relative": 0.01951575474332389
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.009419920318930242,
+          "relative": 0.016458873854736246
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00017631278826562777,
+          "relative": 0.03660893897598557
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 8.822994487844675e-05,
+          "relative": 0.01757560672595395
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.055553328471327657,
+          "relative": 0.020947086167405034
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.008822994487844849,
+          "relative": 0.017408511681144476
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00019011627103030556,
+          "relative": 0.03959849926094701
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.961287852355312e-05,
+          "relative": 0.013976848054623505
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.06186550963799142,
+          "relative": 0.02236649882749377
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "elastic_tension_N",
+          "absolute": 0.007961287852355226,
+          "relative": 0.018161698556445043
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0002037875686669438,
+          "relative": 0.042578782450594356
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.83414709971037e-05,
+          "relative": 0.0106873413395025
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.06804639846885108,
+          "relative": 0.02377328445477822
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "elastic_tension_N",
+          "absolute": 0.006834147099710197,
+          "relative": 0.01860278310281681
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00021732764701547398,
+          "relative": 0.04554981733327538
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.4439750690297994e-05,
+          "relative": 0.007655453312359144
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.07400189201537088,
+          "relative": 0.02516660394585295
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005443975069030493,
+          "relative": 0.018496778595729867
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00023073746546532423,
+          "relative": 0.04851163260800056
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.796231404374316e-05,
+          "relative": 0.004841298816659743
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.07963857927095175,
+          "relative": 0.02654546026862847
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0037962314043737955,
+          "relative": 0.017282202225195227
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0002440179769969096,
+          "relative": 0.05146425688472401
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.8994051466981327e-05,
+          "relative": 0.0022136729807670933
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.08486468148656146,
+          "relative": 0.02790866380371658
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0018994051466977857,
+          "relative": 0.013202590197327758
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.000257170128222837,
+          "relative": 0.05440771868461844
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.350405213786058e-06,
+          "relative": 0.0002520299810930002
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.08959098115629782,
+          "relative": 0.02925478758998069
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "elastic_tension_N",
+          "absolute": 0.00023504052137773845,
+          "relative": 0.0034745915335515245
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0002701948594288541,
+          "relative": 0.057342046440350423
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.5657042625516074e-05,
+          "relative": 0.0025422107395701946
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.896368003724609e-05,
+          "relative": 0.004509069500208738
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.227031744897611e-05,
+          "relative": 0.006216560501065197
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.557695486070612e-05,
+          "relative": 0.007712814149921821
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00011888359227243614,
+          "relative": 0.009034745934668952
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00014219022968416616,
+          "relative": 0.010211143116084292
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00016549686709589617,
+          "relative": 0.01126478514635213
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001888035045076262,
+          "relative": 0.012213933216026106
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0002121101419193562,
+          "relative": 0.013073397565143354
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00023541677933108796,
+          "relative": 0.013855315896748837
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0002587234167428197,
+          "relative": 0.014569730186016224
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00028203005415455146,
+          "relative": 0.015225020280974475
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0003053366915662832,
+          "relative": 0.015828234127801388
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0932265496469169,
+          "relative": 0.030405839681417936
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028149389033689,
+          "relative": 0.05988716427610373
+        }
+      ]
+    },
+    {
+      "dt_s": [
+        0.00025,
+        6.25e-05
+      ],
+      "pass_time_gate": false,
+      "worst": {
+        "time_s": 0.00025,
+        "observable": "moving_point_displacement_m",
+        "absolute": 2.3102656974444258e-05,
+        "relative": 0.3719527772885522
+      },
+      "measurements": [
+        {
+          "time_s": 0.00025,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.3102656974444258e-05,
+          "relative": 0.3719527772885522
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.001065047391958146,
+          "relative": 0.004268517404979486
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0023102656974444136,
+          "relative": 0.0023193131395306266
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "reconstructed_energy_J",
+          "absolute": 2.3251024059256498e-05,
+          "relative": 0.004657475015368278
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.544134727585346e-05,
+          "relative": 0.24488257021567497
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0032697435769747374,
+          "relative": 0.006577930516006519
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004544134727585414,
+          "relative": 0.004608713159933241
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 4.6321337545465746e-05,
+          "relative": 0.009293257957218035
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.65962695719142e-05,
+          "relative": 0.1803758714412208
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.00657691777872027,
+          "relative": 0.008873878447877197
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "elastic_tension_N",
+          "absolute": 0.006659626957190912,
+          "relative": 0.006867444079595003
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "reconstructed_energy_J",
+          "absolute": 6.921211953900535e-05,
+          "relative": 0.013907449855838016
+        },
+        {
+          "time_s": 0.001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 8.616278907083263e-05,
+          "relative": 0.14089691215717362
+        },
+        {
+          "time_s": 0.001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.010935715393376788,
+          "relative": 0.011156327881005653
+        },
+        {
+          "time_s": 0.001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.008616278907082275,
+          "relative": 0.009094051185719718
+        },
+        {
+          "time_s": 0.001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 9.192454170835456e-05,
+          "relative": 0.01850015127097464
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00010375559957491736,
+          "relative": 0.11393432257924696
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.016282156325388986,
+          "relative": 0.013425202673752615
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "elastic_tension_N",
+          "absolute": 0.010375559957491398,
+          "relative": 0.011286254475355495
+        },
+        {
+          "time_s": 0.00125,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00011445976835624833,
+          "relative": 0.02307146229401934
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00011901269353806546,
+          "relative": 0.0941265828341112
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.022539814255671642,
+          "relative": 0.0156803816634631
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "elastic_tension_N",
+          "absolute": 0.011901269353806199,
+          "relative": 0.013440741101741437
+        },
+        {
+          "time_s": 0.0015,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0001368189564655408,
+          "relative": 0.027621482550185126
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00013159910614274632,
+          "relative": 0.0787933889681343
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.02962061055479359,
+          "relative": 0.0179216955658237
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "elastic_tension_N",
+          "absolute": 0.01315991061427435,
+          "relative": 0.015552840172291981
+        },
+        {
+          "time_s": 0.00175,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00015900325574486236,
+          "relative": 0.03215031120068867
+        },
+        {
+          "time_s": 0.002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001412104013964791,
+          "relative": 0.06644611140866877
+        },
+        {
+          "time_s": 0.002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03742571562332486,
+          "relative": 0.020148922849932086
+        },
+        {
+          "time_s": 0.002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.014121040139647434,
+          "relative": 0.01761601625521946
+        },
+        {
+          "time_s": 0.002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00018101380867389938,
+          "relative": 0.036658046944903475
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001475758704813845,
+          "relative": 0.05619198137950967
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.04584654957203593,
+          "relative": 0.022361784422031565
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.014757587048137899,
+          "relative": 0.019621069400314557
+        },
+        {
+          "time_s": 0.0022500000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00020285175054844326,
+          "relative": 0.041144788022513236
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00015046141505496366,
+          "relative": 0.047463269533678465
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.054765873352544236,
+          "relative": 0.024559936895349375
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.015046141505496657,
+          "relative": 0.02155483723598766
+        },
+        {
+          "time_s": 0.0025000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00022451820952516278,
+          "relative": 0.04561063221565576
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00014967209087587193,
+          "relative": 0.039881878260642184
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.06405896072028083,
+          "relative": 0.0267429641525323
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "elastic_tension_N",
+          "absolute": 0.014967209087587974,
+          "relative": 0.023398009315424812
+        },
+        {
+          "time_s": 0.0027500000000000007,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0002460143066660373,
+          "relative": 0.050055676851044964
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00014505428999370823,
+          "relative": 0.03318643288101961
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.07359484076179967,
+          "relative": 0.028910366814889885
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.014505428999370129,
+          "relative": 0.025121266868767513
+        },
+        {
+          "time_s": 0.003000000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00026734115598260437,
+          "relative": 0.054480018802100745
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001364975427738755,
+          "relative": 0.027190622573297782
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0832376001522177,
+          "relative": 0.031061549110690412
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.013649754277386683,
+          "relative": 0.026678044394398005
+        },
+        {
+          "time_s": 0.003250000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00028849986447989154,
+          "relative": 0.05888375449106099
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00012393592420340428,
+          "relative": 0.021758208134477184
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.09284773383020717,
+          "relative": 0.033195802471364305
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "elastic_tension_N",
+          "absolute": 0.012393592420339994,
+          "relative": 0.02798988790285616
+        },
+        {
+          "time_s": 0.0035000000000000014,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00030949153220003866,
+          "relative": 0.06326697989107657
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00010734905221620322,
+          "relative": 0.016787405169479925
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.10228353239085974,
+          "relative": 0.03531228496264717
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "elastic_tension_N",
+          "absolute": 0.010734905221621016,
+          "relative": 0.028913774284978763
+        },
+        {
+          "time_s": 0.0037500000000000016,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0003303172522656954,
+          "relative": 0.06762979052830562
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 8.676266916070666e-05,
+          "relative": 0.012200782600825253
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.11140249420379567,
+          "relative": 0.03740999535270257
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.008676266916071707,
+          "relative": 0.029158780223493528
+        },
+        {
+          "time_s": 0.004000000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00035097811092312664,
+          "relative": 0.07197228148399366
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.224880098278703e-05,
+          "relative": 0.007938532044943263
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.12006275006705724,
+          "relative": 0.03948774019433438
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.006224880098278096,
+          "relative": 0.02802864105948949
+        },
+        {
+          "time_s": 0.004250000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00037147518758508247,
+          "relative": 0.0762945473965508
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.3925492185230693e-05,
+          "relative": 0.003953866585031729
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.12812448810802035,
+          "relative": 0.04154409169828747
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0033925492185227224,
+          "relative": 0.023339067745621923
+        },
+        {
+          "time_s": 0.004500000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0003918095548733642,
+          "relative": 0.08059668246361117
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.956118124875339e-06,
+          "relative": 0.00020980411945289423
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.13545136664131396,
+          "relative": 0.043577333314766
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0001956118124882278,
+          "relative": 0.00288338109795746
+        },
+        {
+          "time_s": 0.0047500000000000025,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00041198227866112713,
+          "relative": 0.08487878044408377
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.307606431782184e-05,
+          "relative": 0.003274912076549163
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005000000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.829532987409105e-05,
+          "relative": 0.006278146103833078
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005250000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00010351459543036026,
+          "relative": 0.008880269740490391
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005500000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00013873386098662947,
+          "relative": 0.011156610762924351
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005750000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00017395312654289868,
+          "relative": 0.013164746244254965
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006000000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0002091723920991679,
+          "relative": 0.014949440272627249
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006250000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0002443916576554371,
+          "relative": 0.016546020302834735
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006500000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0002796109232117063,
+          "relative": 0.017982739314480703
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006750000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00031483018876797553,
+          "relative": 0.019282462250540693
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.0070000000000000045,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00035004945432424647,
+          "relative": 0.020463891986523312
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007250000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0003852687198805174,
+          "relative": 0.02154247512802174
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007500000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00042048798543678836,
+          "relative": 0.022531081118974478
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007750000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0004557072509930593,
+          "relative": 0.02344051819818748
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.140877062225091,
+          "relative": 0.045243909302347535
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00042872916611574104,
+          "relative": 0.08844080727573612
+        }
+      ]
+    },
+    {
+      "dt_s": [
+        0.000125,
+        6.25e-05
+      ],
+      "pass_time_gate": false,
+      "worst": {
+        "time_s": 0.000125,
+        "observable": "moving_point_displacement_m",
+        "absolute": 3.889499249261594e-06,
+        "relative": 0.249316901877668
+      },
+      "measurements": [
+        {
+          "time_s": 0.000125,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.889499249261594e-06,
+          "relative": 0.249316901877668
+        },
+        {
+          "time_s": 0.000125,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 9.740874098318475e-05,
+          "relative": 0.000779878851403777
+        },
+        {
+          "time_s": 0.000125,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0003889499249258854,
+          "relative": 0.00038940596310812125
+        },
+        {
+          "time_s": 0.000125,
+          "observable": "reconstructed_energy_J",
+          "absolute": 3.8963496393276675e-06,
+          "relative": 0.0007798788514038318
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.744051913097572e-06,
+          "relative": 0.165636845086176
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.000291675113475387,
+          "relative": 0.0011689811250370937
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0007744051913088912,
+          "relative": 0.0007774379100682011
+        },
+        {
+          "time_s": 0.00025,
+          "observable": "reconstructed_energy_J",
+          "absolute": 7.783578489592956e-06,
+          "relative": 0.0015591494917835626
+        },
+        {
+          "time_s": 0.000375,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.1545590169767655e-05,
+          "relative": 0.12363450402508848
+        },
+        {
+          "time_s": 0.000375,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0005819462456020386,
+          "relative": 0.0015575251626383227
+        },
+        {
+          "time_s": 0.000375,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0011545590169775855,
+          "relative": 0.0011640858096053136
+        },
+        {
+          "time_s": 0.000375,
+          "observable": "reconstructed_energy_J",
+          "absolute": 1.1661703155184736e-05,
+          "relative": 0.002337812395476173
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.5276221069862876e-05,
+          "relative": 0.09830340175850397
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0009670700452378278,
+          "relative": 0.0019455102248633796
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.001527622106986537,
+          "relative": 0.0015493317275860775
+        },
+        {
+          "time_s": 0.0005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 1.5530740212656505e-05,
+          "relative": 0.003115868036433337
+        },
+        {
+          "time_s": 0.000625,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.891827293513929e-05,
+          "relative": 0.08130806696376888
+        },
+        {
+          "time_s": 0.000625,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0014455984398424881,
+          "relative": 0.0023329350564799995
+        },
+        {
+          "time_s": 0.000625,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0018918272935140035,
+          "relative": 0.0019331494699975583
+        },
+        {
+          "time_s": 0.000625,
+          "observable": "reconstructed_energy_J",
+          "absolute": 1.9390706210918943e-05,
+          "relative": 0.003893316888251289
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.2454341195935856e-05,
+          "relative": 0.06907617299668975
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0020157913061332744,
+          "relative": 0.0027197978793031064
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "elastic_tension_N",
+          "absolute": 0.002245434119593881,
+          "relative": 0.002315504058988624
+        },
+        {
+          "time_s": 0.00075,
+          "observable": "reconstructed_energy_J",
+          "absolute": 2.3241617671193072e-05,
+          "relative": 0.004670159424152806
+        },
+        {
+          "time_s": 0.000875,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.586733356759103e-05,
+          "relative": 0.05982157268755243
+        },
+        {
+          "time_s": 0.000875,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.00267562108031949,
+          "relative": 0.0031060963827227103
+        },
+        {
+          "time_s": 0.000875,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0025867333567588524,
+          "relative": 0.0026963510223063664
+        },
+        {
+          "time_s": 0.000875,
+          "observable": "reconstructed_energy_J",
+          "absolute": 2.7083491087060568e-05,
+          "relative": 0.005446396116988617
+        },
+        {
+          "time_s": 0.001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.9140514467751802e-05,
+          "relative": 0.05255197663337355
+        },
+        {
+          "time_s": 0.001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0034227780382126705,
+          "relative": 0.003491827711731869
+        },
+        {
+          "time_s": 0.001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0029140514467742573,
+          "relative": 0.0030756354686944033
+        },
+        {
+          "time_s": 0.001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 3.091634292453661e-05,
+          "relative": 0.006222027439243372
+        },
+        {
+          "time_s": 0.0011250000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.2257548578143685e-05,
+          "relative": 0.046672024539544575
+        },
+        {
+          "time_s": 0.0011250000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.004254676233151233,
+          "relative": 0.003876988452351598
+        },
+        {
+          "time_s": 0.0011250000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.003225754857813623,
+          "relative": 0.003453290912368295
+        },
+        {
+          "time_s": 0.0011250000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 3.474018962210893e-05,
+          "relative": 0.006997053863034849
+        },
+        {
+          "time_s": 0.0012500000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.520254345623533e-05,
+          "relative": 0.04180286312543484
+        },
+        {
+          "time_s": 0.0012500000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.005168460078309511,
+          "relative": 0.004261574614309988
+        },
+        {
+          "time_s": 0.0012500000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0035202543456236413,
+          "relative": 0.003829237797811395
+        },
+        {
+          "time_s": 0.0012500000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 3.855504759076641e-05,
+          "relative": 0.007771475860111067
+        },
+        {
+          "time_s": 0.0013750000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.796009110428641e-05,
+          "relative": 0.03769193509887691
+        },
+        {
+          "time_s": 0.0013750000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.006161011558643903,
+          "relative": 0.004645581610820548
+        },
+        {
+          "time_s": 0.0013750000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0037960091104281,
+          "relative": 0.0042033816608885175
+        },
+        {
+          "time_s": 0.0013750000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 4.2360933214020784e-05,
+          "relative": 0.008545293901846015
+        },
+        {
+          "time_s": 0.0015000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.0515308405503474e-05,
+          "relative": 0.03416440400918142
+        },
+        {
+          "time_s": 0.0015000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.007228958056418433,
+          "relative": 0.005029004235262708
+        },
+        {
+          "time_s": 0.0015000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004051530840550099,
+          "relative": 0.004575610842396325
+        },
+        {
+          "time_s": 0.0015000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 4.615786284803934e-05,
+          "relative": 0.009318508459257729
+        },
+        {
+          "time_s": 0.0016250000000000006,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.285387633944744e-05,
+          "relative": 0.03109539704002183
+        },
+        {
+          "time_s": 0.0016250000000000006,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.008368680772992132,
+          "relative": 0.005411836634541937
+        },
+        {
+          "time_s": 0.0016250000000000006,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004285387633944149,
+          "relative": 0.004945793643812732
+        },
+        {
+          "time_s": 0.0016250000000000006,
+          "observable": "reconstructed_energy_J",
+          "absolute": 4.9945852821582475e-05,
+          "relative": 0.010091120002987149
+        },
+        {
+          "time_s": 0.0017500000000000007,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.496207789142677e-05,
+          "relative": 0.028393350704206316
+        },
+        {
+          "time_s": 0.0017500000000000007,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.009576323728324398,
+          "relative": 0.005794072278872363
+        },
+        {
+          "time_s": 0.0017500000000000007,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004496207789142503,
+          "relative": 0.005313774779753972
+        },
+        {
+          "time_s": 0.0017500000000000007,
+          "observable": "reconstructed_energy_J",
+          "absolute": 5.372491943612858e-05,
+          "relative": 0.010863129003314587
+        },
+        {
+          "time_s": 0.0018750000000000008,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.682683457337051e-05,
+          "relative": 0.02598960192140343
+        },
+        {
+          "time_s": 0.0018750000000000008,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.010847803318452476,
+          "relative": 0.006175703927677503
+        },
+        {
+          "time_s": 0.0018750000000000008,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004682683457336911,
+          "relative": 0.005679370933608213
+        },
+        {
+          "time_s": 0.0018750000000000008,
+          "observable": "reconstructed_energy_J",
+          "absolute": 5.7495078965862784e-05,
+          "relative": 0.011634535930148996
+        },
+        {
+          "time_s": 0.002000000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.843574147659832e-05,
+          "relative": 0.02383165285120798
+        },
+        {
+          "time_s": 0.002000000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.01217881841005286,
+          "relative": 0.006556723591266561
+        },
+        {
+          "time_s": 0.002000000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0048435741476602345,
+          "relative": 0.006042365156868236
+        },
+        {
+          "time_s": 0.002000000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 6.125634765776107e-05,
+          "relative": 0.012405341253036242
+        },
+        {
+          "time_s": 0.002125000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.977710077998937e-05,
+          "relative": 0.02187868079959813
+        },
+        {
+          "time_s": 0.002125000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.013564860950089797,
+          "relative": 0.006937122487891895
+        },
+        {
+          "time_s": 0.002125000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0049777100779981875,
+          "relative": 0.006402499760649684
+        },
+        {
+          "time_s": 0.002125000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 6.500874173159116e-05,
+          "relative": 0.013175545441150736
+        },
+        {
+          "time_s": 0.002250000000000001,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.083995364028437e-05,
+          "relative": 0.020098466067185093
+        },
+        {
+          "time_s": 0.002250000000000001,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.015001227067480638,
+          "relative": 0.00731689099573061
+        },
+        {
+          "time_s": 0.002250000000000001,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005083995364027483,
+          "relative": 0.006759467217985851
+        },
+        {
+          "time_s": 0.002250000000000001,
+          "observable": "reconstructed_energy_J",
+          "absolute": 6.875227738002351e-05,
+          "relative": 0.013945148963309296
+        },
+        {
+          "time_s": 0.0023750000000000012,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.161411039463111e-05,
+          "relative": 0.018465241460352496
+        },
+        {
+          "time_s": 0.0023750000000000012,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.016483028642701125,
+          "relative": 0.00769601859927383
+        },
+        {
+          "time_s": 0.0023750000000000012,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005161411039464325,
+          "relative": 0.007112898409203406
+        },
+        {
+          "time_s": 0.0023750000000000012,
+          "observable": "reconstructed_energy_J",
+          "absolute": 7.248697076862008e-05,
+          "relative": 0.01471415228796032
+        },
+        {
+          "time_s": 0.0025000000000000014,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.2090179009002795e-05,
+          "relative": 0.016958156245070393
+        },
+        {
+          "time_s": 0.0025000000000000014,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.018005205320281714,
+          "relative": 0.008074493829529778
+        },
+        {
+          "time_s": 0.0025000000000000014,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005209017900900559,
+          "relative": 0.007462347271706814
+        },
+        {
+          "time_s": 0.0025000000000000014,
+          "observable": "reconstructed_energy_J",
+          "absolute": 7.621283803584643e-05,
+          "relative": 0.015482555883177698
+        },
+        {
+          "time_s": 0.0026250000000000015,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.225959170977084e-05,
+          "relative": 0.015560159039670077
+        },
+        {
+          "time_s": 0.0026250000000000015,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.019562536938222852,
+          "relative": 0.0084523041973585
+        },
+        {
+          "time_s": 0.0026250000000000015,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005225959170977679,
+          "relative": 0.007807270514430024
+        },
+        {
+          "time_s": 0.0026250000000000015,
+          "observable": "reconstructed_energy_J",
+          "absolute": 7.992989529322352e-05,
+          "relative": 0.016250360216682906
+        },
+        {
+          "time_s": 0.0027500000000000016,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.211462973948129e-05,
+          "relative": 0.014257172144214778
+        },
+        {
+          "time_s": 0.0027500000000000016,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.02114965634750332,
+          "relative": 0.008829436119162487
+        },
+        {
+          "time_s": 0.0027500000000000016,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0052114629739488105,
+          "relative": 0.008147000452647284
+        },
+        {
+          "time_s": 0.0027500000000000016,
+          "observable": "reconstructed_energy_J",
+          "absolute": 8.36381586252783e-05,
+          "relative": 0.01701756575582656
+        },
+        {
+          "time_s": 0.0028750000000000017,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.1648446181776046e-05,
+          "relative": 0.01303747230495065
+        },
+        {
+          "time_s": 0.0028750000000000017,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.02276106259403088,
+          "relative": 0.009205874834036783
+        },
+        {
+          "time_s": 0.0028750000000000017,
+          "observable": "elastic_tension_N",
+          "absolute": 0.005164844618177344,
+          "relative": 0.008480708089679947
+        },
+        {
+          "time_s": 0.0028750000000000017,
+          "observable": "reconstructed_energy_J",
+          "absolute": 8.733764408961394e-05,
+          "relative": 0.017784172967594044
+        },
+        {
+          "time_s": 0.003000000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.0855086804404634e-05,
+          "relative": 0.011891220112870261
+        },
+        {
+          "time_s": 0.003000000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.024391134434637696,
+          "relative": 0.009581604311353955
+        },
+        {
+          "time_s": 0.003000000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0050855086804398875,
+          "relative": 0.008807352111427497
+        },
+        {
+          "time_s": 0.003000000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 9.10283677169766e-05,
+          "relative": 0.018550182318610598
+        },
+        {
+          "time_s": 0.003125000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.9729508873368015e-05,
+          "relative": 0.010810098020395781
+        },
+        {
+          "time_s": 0.003125000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.026034144158020744,
+          "relative": 0.00995660714760351
+        },
+        {
+          "time_s": 0.003125000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.00497295088733718,
+          "relative": 0.0091256071076906
+        },
+        {
+          "time_s": 0.003125000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 9.471034551127022e-05,
+          "relative": 0.01931559427513571
+        },
+        {
+          "time_s": 0.003250000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.8267597895428754e-05,
+          "relative": 0.009787028816844266
+        },
+        {
+          "time_s": 0.003250000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.02768427168089005,
+          "relative": 0.010330864451126914
+        },
+        {
+          "time_s": 0.003250000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004826759789541835,
+          "relative": 0.009433760442107067
+        },
+        {
+          "time_s": 0.003250000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 9.838359344958598e-05,
+          "relative": 0.02008040930306074
+        },
+        {
+          "time_s": 0.003375000000000002,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.64661822505083e-05,
+          "relative": 0.008815954448931027
+        },
+        {
+          "time_s": 0.003375000000000002,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.029335618888998827,
+          "relative": 0.010704355713176104
+        },
+        {
+          "time_s": 0.003375000000000002,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004646618225051524,
+          "relative": 0.009729560551634103
+        },
+        {
+          "time_s": 0.003375000000000002,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00010204812748231939,
+          "relative": 0.020844627867924025
+        },
+        {
+          "time_s": 0.0035000000000000022,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.432304567985115e-05,
+          "relative": 0.007891660621255622
+        },
+        {
+          "time_s": 0.0035000000000000022,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.030982224192215746,
+          "relative": 0.01107705866347932
+        },
+        {
+          "time_s": 0.0035000000000000022,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004432304567984768,
+          "relative": 0.010009987726045265
+        },
+        {
+          "time_s": 0.0035000000000000022,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00010570396353309485,
+          "relative": 0.021608250434887236
+        },
+        {
+          "time_s": 0.0036250000000000024,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.183693760024653e-05,
+          "relative": 0.007009636495799139
+        },
+        {
+          "time_s": 0.0036250000000000024,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03261807726234878,
+          "relative": 0.011448949108210276
+        },
+        {
+          "time_s": 0.0036250000000000024,
+          "observable": "elastic_tension_N",
+          "absolute": 0.004183693760025087,
+          "relative": 0.01027089686119094
+        },
+        {
+          "time_s": 0.0036250000000000024,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00010935111749893912,
+          "relative": 0.022371277468762017
+        },
+        {
+          "time_s": 0.0037500000000000025,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.9007581219099516e-05,
+          "relative": 0.0061659615659186515
+        },
+        {
+          "time_s": 0.0037500000000000025,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03423713392200867,
+          "relative": 0.011820000747904574
+        },
+        {
+          "time_s": 0.0037500000000000025,
+          "observable": "elastic_tension_N",
+          "absolute": 0.003900758121910819,
+          "relative": 0.010506440210582127
+        },
+        {
+          "time_s": 0.0037500000000000025,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00011298960525022144,
+          "relative": 0.023133709433989524
+        },
+        {
+          "time_s": 0.0038750000000000026,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.58356794296754e-05,
+          "relative": 0.005357213761530077
+        },
+        {
+          "time_s": 0.0038750000000000026,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03583333115249898,
+          "relative": 0.012190184972472345
+        },
+        {
+          "time_s": 0.0038750000000000026,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0035835679429677136,
+          "relative": 0.010708094006025974
+        },
+        {
+          "time_s": 0.0038750000000000026,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00011661944263074986,
+          "relative": 0.023895546794651328
+        },
+        {
+          "time_s": 0.004000000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.232291847040866e-05,
+          "relative": 0.0045803942830522125
+        },
+        {
+          "time_s": 0.004000000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03740060218842478,
+          "relative": 0.012559470629963482
+        },
+        {
+          "time_s": 0.004000000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.003232291847041213,
+          "relative": 0.010862930854683466
+        },
+        {
+          "time_s": 0.004000000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00012024064545780241,
+          "relative": 0.024656790014467567
+        },
+        {
+          "time_s": 0.004125000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.8471969336800462e-05,
+          "relative": 0.0038328657211669473
+        },
+        {
+          "time_s": 0.004125000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.03893289166652858,
+          "relative": 0.012927823765172576
+        },
+        {
+          "time_s": 0.004125000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0028471969336793523,
+          "relative": 0.01095035500640691
+        },
+        {
+          "time_s": 0.004125000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00012385322952216012,
+          "relative": 0.025417439556795048
+        },
+        {
+          "time_s": 0.004250000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.4286486939043873e-05,
+          "relative": 0.0031123008064950935
+        },
+        {
+          "time_s": 0.004250000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.040424170796105496,
+          "relative": 0.013295207323474376
+        },
+        {
+          "time_s": 0.004250000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0024286486939043006,
+          "relative": 0.010935427096800043
+        },
+        {
+          "time_s": 0.004250000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00012745721058817286,
+          "relative": 0.026177495884632303
+        },
+        {
+          "time_s": 0.004375000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.9771107003180646e-05,
+          "relative": 0.0024166397235819326
+        },
+        {
+          "time_s": 0.004375000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.04186845251828508,
+          "relative": 0.013661580814453981
+        },
+        {
+          "time_s": 0.004375000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.001977110700318585,
+          "relative": 0.010753745474443587
+        },
+        {
+          "time_s": 0.004375000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00013105260439376983,
+          "relative": 0.026936959460613356
+        },
+        {
+          "time_s": 0.004500000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.4931440718249367e-05,
+          "relative": 0.00174405437030116
+        },
+        {
+          "time_s": 0.004500000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.043259806621458896,
+          "relative": 0.014026899928894786
+        },
+        {
+          "time_s": 0.004500000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0014931440718249367,
+          "relative": 0.010272095819871612
+        },
+        {
+          "time_s": 0.004500000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00013463942665052717,
+          "relative": 0.027695830747013022
+        },
+        {
+          "time_s": 0.004625000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.774067136531298e-06,
+          "relative": 0.001092918284706469
+        },
+        {
+          "time_s": 0.004625000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.044592374780183075,
+          "relative": 0.014391116101471691
+        },
+        {
+          "time_s": 0.004625000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0009774067136536502,
+          "relative": 0.009163042816858202
+        },
+        {
+          "time_s": 0.004625000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.0001382176930437018,
+          "relative": 0.028454110205745477
+        },
+        {
+          "time_s": 0.004750000000000003,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.306523338661397e-06,
+          "relative": 0.0004617812236176355
+        },
+        {
+          "time_s": 0.004750000000000003,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.04586038548501614,
+          "relative": 0.014754176010023745
+        },
+        {
+          "time_s": 0.004750000000000003,
+          "observable": "elastic_tension_N",
+          "absolute": 0.00043065233386596624,
+          "relative": 0.006347954059958019
+        },
+        {
+          "time_s": 0.004750000000000003,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014178741923227302,
+          "relative": 0.029211798298364306
+        },
+        {
+          "time_s": 0.0048750000000000035,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.4627076200361688e-06,
+          "relative": 0.00015062972678633928
+        },
+        {
+          "time_s": 0.0048750000000000035,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.04705816883092728,
+          "relative": 0.01511602100047226
+        },
+        {
+          "time_s": 0.0048750000000000035,
+          "observable": "elastic_tension_N",
+          "absolute": 0.00014627076200396383,
+          "relative": 0.005029157144934196
+        },
+        {
+          "time_s": 0.0048750000000000035,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014534862084899028,
+          "relative": 0.029968895486063945
+        },
+        {
+          "time_s": 0.005000000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.419021692305766e-06,
+          "relative": 0.0007345687655837878
+        },
+        {
+          "time_s": 0.005000000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005000000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005000000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005125000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.3375335764575363e-05,
+          "relative": 0.0012751715275582229
+        },
+        {
+          "time_s": 0.005125000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005125000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005125000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005250000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 1.933164983684496e-05,
+          "relative": 0.0017770896242481737
+        },
+        {
+          "time_s": 0.005250000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005250000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005250000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005375000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 2.5287963909114558e-05,
+          "relative": 0.0022443319397636003
+        },
+        {
+          "time_s": 0.005375000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005375000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005375000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005500000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.1244277981384155e-05,
+          "relative": 0.0026803719337165
+        },
+        {
+          "time_s": 0.005500000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005500000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005500000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005625000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 3.720059205365375e-05,
+          "relative": 0.0030882341417546107
+        },
+        {
+          "time_s": 0.005625000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005625000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005625000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005750000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.315690612592335e-05,
+          "relative": 0.0034705644314576927
+        },
+        {
+          "time_s": 0.005750000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005750000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005750000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.005875000000000004,
+          "observable": "moving_point_displacement_m",
+          "absolute": 4.911322019819295e-05,
+          "relative": 0.003829687464741033
+        },
+        {
+          "time_s": 0.005875000000000004,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.005875000000000004,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.005875000000000004,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.0060000000000000045,
+          "observable": "moving_point_displacement_m",
+          "absolute": 5.5069534270462545e-05,
+          "relative": 0.004167654004661739
+        },
+        {
+          "time_s": 0.0060000000000000045,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.0060000000000000045,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.0060000000000000045,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006125000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.102584834273214e-05,
+          "relative": 0.004486280100699458
+        },
+        {
+          "time_s": 0.006125000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006125000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006125000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006250000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 6.698216241500174e-05,
+          "relative": 0.004787179733928518
+        },
+        {
+          "time_s": 0.006250000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006250000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006250000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006375000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.293847648727134e-05,
+          "relative": 0.005071792161100405
+        },
+        {
+          "time_s": 0.006375000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006375000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006375000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006500000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 7.889479055954093e-05,
+          "relative": 0.0053414049354602285
+        },
+        {
+          "time_s": 0.006500000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006500000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006500000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006625000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 8.485110463181053e-05,
+          "relative": 0.005597173381280047
+        },
+        {
+          "time_s": 0.006625000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006625000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006625000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006750000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.080741870408013e-05,
+          "relative": 0.00584013714349771
+        },
+        {
+          "time_s": 0.006750000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006750000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006750000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.006875000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 9.676373277634973e-05,
+          "relative": 0.006071234312452949
+        },
+        {
+          "time_s": 0.006875000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.006875000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.006875000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00010272004684861932,
+          "relative": 0.006291313528360561
+        },
+        {
+          "time_s": 0.007000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.0071250000000000055,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00010867636092088892,
+          "relative": 0.006501144394789679
+        },
+        {
+          "time_s": 0.0071250000000000055,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.0071250000000000055,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.0071250000000000055,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007250000000000006,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00011463267499315852,
+          "relative": 0.0067014264704818366
+        },
+        {
+          "time_s": 0.007250000000000006,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007250000000000006,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007250000000000006,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007375000000000006,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.00012058898906542811,
+          "relative": 0.006892797060905044
+        },
+        {
+          "time_s": 0.007375000000000006,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007375000000000006,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007375000000000006,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007500000000000006,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001265453031376977,
+          "relative": 0.00707583799239467
+        },
+        {
+          "time_s": 0.007500000000000006,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007500000000000006,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007500000000000006,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007625000000000006,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001325016172099673,
+          "relative": 0.0072510815205746966
+        },
+        {
+          "time_s": 0.007625000000000006,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007625000000000006,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007625000000000006,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007750000000000006,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001384579312822369,
+          "relative": 0.0074190154994439
+        },
+        {
+          "time_s": 0.007750000000000006,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007750000000000006,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007750000000000006,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.007875000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001444142453545065,
+          "relative": 0.007580087916855829
+        },
+        {
+          "time_s": 0.007875000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.007875000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.007875000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "moving_point_displacement_m",
+          "absolute": 0.0001503705594267761,
+          "relative": 0.007734710885187695
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "moving_point_velocity_m_s",
+          "absolute": 0.0476505125781741,
+          "relative": 0.015303381794352196
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "elastic_tension_N",
+          "absolute": 0.0,
+          "relative": 0.0
+        },
+        {
+          "time_s": 0.008000000000000005,
+          "observable": "reconstructed_energy_J",
+          "absolute": 0.00014723527577885104,
+          "relative": 0.030372570094360854
+        }
+      ]
+    }
+  ],
+  "scope": "Native elastic physical model differs from force-controlled Cable. Correct discrete old-tangent algebra does not qualify slack-event consistency. All common times/all pairs,moving-point displacement,NO relative floor. No B3 modification."
+}

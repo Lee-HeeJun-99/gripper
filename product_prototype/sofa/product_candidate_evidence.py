@@ -68,6 +68,11 @@ def main():
     shutil.copy2(BASE/'sofa/native_inertia_input/CMakeLists.txt',out/'inertia_input_CMakeLists.txt')
     for name in ('inertia_force_build.py','inertia_force_run.py','inertia_matrix_run.py','inertia_matrix_audit.py','inertia_world_run.py','inertia_force_contact_audit.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
+    for name in ('native_loop_intervention.py','native_elastic_tendon.py','elastic_tendon_assess.py','native_spring_energy_run.py','native_spring_potential_fd.py','native_spring_potential_adapter.py','native_spring_newton_purity.py','elastic_tendon_plot.py','test_native_contact_policy.py','contact_policy_test_run.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
+    for directory in ('native_spring_energy','native_unilateral_spring'):
+        for f in (BASE/'sofa'/directory).iterdir():
+            if f.is_file():shutil.copy2(f,out/(directory+'_'+f.name))
     for directory in ('native_inertia_force','native_system_matrix'):
         for f in (BASE/'sofa'/directory).iterdir():
             if f.is_file():shutil.copy2(f,out/(directory+'_'+f.name))
@@ -88,6 +93,8 @@ def main():
     if sha(physical)!='3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0':raise ValueError('physical controller binary changed')
     files[str(physical.relative_to(ROOT))]=sha(physical)
     sdk=Path('/home/ubuntu/SOFA/v26.06.00')
+    for relative in ('lib/libSofa.Component.SolidMechanics.Spring.so','include/Sofa.Component.SolidMechanics.Spring/sofa/component/solidmechanics/spring/SpringForceField.h','include/Sofa.Component.SolidMechanics.Spring/sofa/component/solidmechanics/spring/SpringForceField.inl','include/Sofa.Component.SolidMechanics.Spring/sofa/component/solidmechanics/spring/LinearSpring.h'):
+        f=sdk/relative;files[str(f)]=sha(f)
     for relative in ('lib/libSofa.Component.ODESolver.Backward.so.26.06.00','lib/libSofa.Component.AnimationLoop.so.26.06.00','lib/libSofa.Component.Collision.Response.Contact.so.26.06.00','lib/libSofa.Component.MechanicalLoad.so.26.06.00','include/Sofa.Component.Constraint.Lagrangian.Model/sofa/component/constraint/lagrangian/model/BaseContactLagrangianConstraint.inl','include/Sofa.Component.Collision.Response.Contact/sofa/component/collision/response/contact/PenalityContactForceField.inl','include/Sofa.Component.Collision.Response.Contact/sofa/component/collision/response/contact/BarycentricPenalityContact.inl','include/Sofa.Component.MechanicalLoad/sofa/component/mechanicalload/PlaneForceField.inl','include/Sofa.Component.ODESolver.Backward/sofa/component/odesolver/backward/NewmarkImplicitSolver.h'):
         f=sdk/relative;files[str(f)]=sha(f)
     for relative in ('bin/runSofa-26.06.00','include/Sofa.DefaultType/sofa/defaulttype/RigidMass.h','include/Sofa.Component.Mass/sofa/component/mass/UniformMass.inl','include/Sofa.Component.Mass/sofa/component/mass/UniformMass.h','include/Sofa.Core/sofa/core/Mapping.h','include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.h','include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.inl'):

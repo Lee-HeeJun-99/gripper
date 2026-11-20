@@ -1,0 +1,51 @@
+{
+  "status": "PASS_NEWTON_API_PURITY_NOT_TIME_OR_B3",
+  "source_commit": "c0ca121019d2e63bf5f802f6bf7d3ab2c00800ea",
+  "producer_sha256": "286bb1adbd882a3d38203e3a5c503e4aaac5ee22eee2299c36fcc6003ee57663",
+  "build": "product_prototype/cad/build_b3_native_spring_potential_adapter699",
+  "binary_sha256": "81f92e4c50cfa36fe13c2d48260ff8ad54cdaacb6e31d718522a393d583c3963",
+  "observer_binary_sha256": "40ebe133b26fe56e009c3bff78a99c0b139476fe9e66fa0acf657834c04fbea0",
+  "records": [
+    {
+      "mode": "taut_release",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.12223327101673931,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "986e1060814b256082dfd3949afc9392373fe1ce57813330876a25cf91c6aa75",
+          "command.json": "019a3ce619208281386f593b1129152fdb4566941a20ea13a469c3b0f7377f70",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "7adb3c4590a347831122a2cf04d149b1f8e5e308a4d175b7d68368b6c14b844e"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "4d6962e86482c4d996682c032c24fb03f9c6a5ea42d2c2545f9a580c00b51a38",
+      "status": "PASS_NEWTON_POTENTIAL_ONLY_SCOPE",
+      "actual_state_force_slot_Newton_status_residualGraph_identity_exact": true,
+      "maximum_potential_reference_error_J": 8.673617379884035e-19
+    },
+    {
+      "mode": "initial_slack",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1368494409834966,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "b663b9e3e6df6876249ffcd5ec3aca6decf3d23784c876f75ef8dd9da931cfd3",
+          "command.json": "9950a429c5b0d15c03953ae2611bf1f77802a17e4adbe5b3a889beecd44c11c4",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "9c779f76b2af985cff7ceeec2721f08c55d6de57f3a30053d2ecd8e2b94d7a8c"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "9a1aab0d43c1657011e69f0ff5a291260c3a671c056494d0e6a737c59b541fff",
+      "status": "PASS_NEWTON_POTENTIAL_ONLY_SCOPE",
+      "actual_state_force_slot_Newton_status_residualGraph_identity_exact": true,
+      "maximum_potential_reference_error_J": 0.0
+    }
+  ],
+  "scope": "Actual NativeBDF1/Newton potential-only adapter. Allstate/force-slot/Newtonjournals compareEXACT. DoesNOTfix first-order dissipation/timeGate or certify general Newton graphs/realwire/B3."
+}

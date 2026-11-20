@@ -1,0 +1,30 @@
+{
+  "checked_date": "2026-11-20",
+  "status": "CANDIDATES_ONLY_NOT_PURCHASE_OR_PHYSICAL_VALIDATION",
+  "materials": [
+    {"part":"Skin","candidate":"Toray Lumirror S10 PET100um","supplier_url":"https://www.toraypenfibre.com.my/business/series/lumirror_s10.html","confirmed":"100um thickness listed by manufacturer;biaxially oriented PET","measured_modulus_Pa":null,"fatigue_cycles":null,"domestic_stock":"NOT VERIFIED;request Korea distributor quote","cost_KRW":null,"manufacture":"knife/die cut plus separate precurve-forming coupon;edge radius and MD/TD must be controlled"},
+    {"part":"Skin alternative","candidate":"Covestro Platilon U TPU film","supplier_url":"https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1674482634.pdf?rev=ebf9fefc096546538f774be166fc6e4f","confirmed":"manufacturer family thickness25-1000um;grade/width dependent,not all combinations stocked","measured_modulus_Pa":null,"fatigue_cycles":null,"domestic_stock":"NOT VERIFIED;grade-specific quote required","cost_KRW":null,"manufacture":"cut coupon;creep,tear,forming and bond compatibility required;NOT substitute with B3 linear E"},
+    {"part":"Backing rails baseline","candidate":"0.5mm polymer sheet,grade UNSELECTED","supplier_url":null,"confirmed":"B3 design thickness only;actual material not supplied","measured_modulus_Pa":null,"fatigue_cycles":null,"domestic_stock":"NOT VERIFIED","cost_KRW":null,"manufacture":"2mm strip cutting with radiused edges;bond and precurvature need measurement"},
+    {"part":"Backing rails alternate","candidate":"SUS301-CSP thin strip coupon","supplier_url":"https://en.sus-csp.com/product-info/sus-b_301csp.html","confirmed":"spring strip grade family exists;temper/thickness/quantity must be quoted","proposed_coupon_thickness_mm":[0.05,0.1],"measured_modulus_Pa":null,"fatigue_cycles":null,"domestic_stock":"NOT VERIFIED","cost_KRW":null,"manufacture":"DIFFERENT STRUCTURAL CANDIDATE;not0.5mm steel replacement or material-volume matched B3"},
+    {"part":"Rail/Skin adhesive coupon","candidate":"3M467MP transfer adhesive","supplier_url":"https://www.3m.com/3M/en_US/p/dc/v000185218/","confirmed":"current product page nominal adhesive thickness0.05mm;acrylic transfer adhesive","nominal_thickness_mm":0.05,"measured_shear_modulus_Pa":null,"fatigue_cycles":null,"domestic_stock":"NOT VERIFIED;3M Korea distributor quote","cost_KRW":null,"manufacture":"bondline thickness and compliance are NOT in current B3 FEM;peel/creep coupons mandatory"},
+    {"part":"Eyelet/support","candidate":"Alumina insert or low-friction polymer-lined custom support","supplier_url":null,"confirmed":"CAD OD3/ID1.2/L2 are design inputs,not purchased item dimensions","measured_density_kg_m3":null,"measured_joint_strength_N":null,"wire_friction":null,"cost_KRW":null,"manufacture":"separate insert and conformal support;saddle bond/join and insert retention UNVERIFIED"},
+    {"part":"Palm/cartridge/frame","candidate":"machined polymer or PA printed coupon","supplier_url":null,"confirmed":"no grade/process selected","measured_density_kg_m3":null,"measured_modulus_Pa":null,"cost_KRW":null,"manufacture":"measure hole compensation,anisotropy,creep and captive-nut pullout;do not assign print material to B3 FEM"}
+  ],
+  "wires": [
+    {"candidate":"Carl Stahl SE000005","construction":"AISI316 6x7-WSC","nominal_diameter_mm":0.45,"minimum_breaking_force_N":151,"catalog_mass_kg_per_1000m":0.8,"supplier_url":"https://www.carlstahl-technocables.com/gb/en/products/wire-ropes-and-strands/stainless-steel-wire-rope/","minimum_bend_radius_mm":null,"axial_stiffness_N_m":null,"domestic_stock":"NOT VERIFIED","cost_KRW":null},
+    {"candidate":"Carl Stahl SE000022","construction":"AISI316 6x19-WSC","nominal_diameter_mm":0.45,"minimum_breaking_force_N":145,"catalog_mass_kg_per_1000m":0.81,"supplier_url":"https://www.carlstahl-technocables.com/gb/en/products/wire-ropes-and-strands/stainless-steel-wire-rope/","minimum_bend_radius_mm":null,"axial_stiffness_N_m":null,"domestic_stock":"NOT VERIFIED","cost_KRW":null}
+  ],
+  "motors": [
+    {"candidate":"ROBOTIS XL330-M288-T","manual_url":"https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/","korea_listing_url":"https://www.robotis.com/shop/item.php?it_id=902-0163-000","voltage_V":5.0,"stall_torque_Nm":0.52,"no_load_speed_rpm":103,"stall_current_A":1.47,"mass_kg":0.018,"dimensions_WHD_mm":[20,34,26],"internal_gear_ratio":288.4,"continuous_torque_verified_Nm":null,"loaded_speed_verified_rpm":null,"domestic_stock":"Korean official listing found;stock/price/leadtime NOT CONFIRMED","unit_cost_KRW":null},
+    {"candidate":"ROBOTIS XL330-M077-T","manual_url":"https://emanual.robotis.com/docs/en/dxl/x/xl330-m077/","korea_listing_url":null,"voltage_V":5.0,"stall_torque_Nm":0.215,"no_load_speed_rpm":383,"stall_current_A":1.47,"mass_kg":0.018,"dimensions_WHD_mm":[20,34,26],"internal_gear_ratio":77.5,"continuous_torque_verified_Nm":null,"loaded_speed_verified_rpm":null,"domestic_stock":"NOT VERIFIED","unit_cost_KRW":null}
+  ],
+  "driver": {
+    "candidate":"ROBOTIS integrated TTL motor drive + U2D2 interface + optional Power Hub",
+    "interface_url":"https://emanual.robotis.com/docs/en/parts/interface/u2d2/",
+    "power_hub_url":"https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/",
+    "facts":"U2D2 is communication converter,NOT motor power supply;hub maximum10A is a device rating,NOT a selected fuse or safe system supply",
+    "power_supply":"5V regulated candidate,actual wiring/fuse/current/thermal design NOT VERIFIED;do not use12V supply for5V XL330",
+    "unit_cost_KRW":null
+  },
+  "source_limits":"Manufacturer catalog values are NOT measured specimen properties,fatigue,continuous torque or grasp capacity.No prices,stock confirmations or purchase authorizations inferred. No material/driver substitutions made in SOFA."
+}

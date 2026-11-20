@@ -1,0 +1,63 @@
+{
+  "status": "CONDITIONAL_STACK_BUDGET_NOT_TOLERANCE_QUALIFICATION",
+  "source_commit": "ad19a6e24235b690358de462934ff45ba4bea97c",
+  "producer_sha256": "219046edfb5299f227884dd202f6c40f6b915c2cfe8812cb99ff5e5b7236fe12",
+  "service_evidence_sha256": "5d94c8a5123496c64985004df4cc084a852734932a209cd97ce454f6c14c1e08",
+  "records": [
+    {
+      "case": "current_nominal_no_shims",
+      "shim_thickness_mm_each": 0.0,
+      "minimum_total_axial_clearance_mm": 0.9999999999999998,
+      "maximum_total_axial_clearance_mm": 0.9999999999999998,
+      "maximum_centered_wheel_wander_mm": 0.4999999999999999,
+      "available_centered_wire_side_gap_mm": 0.15000000000000002,
+      "alignment_margin_mm": -0.34999999999999987,
+      "strict_nonbinding_and_alignment": false
+    },
+    {
+      "case": "proposed_0p4_shims_nominal",
+      "shim_thickness_mm_each": 0.4,
+      "minimum_total_axial_clearance_mm": 0.19999999999999973,
+      "maximum_total_axial_clearance_mm": 0.19999999999999973,
+      "maximum_centered_wheel_wander_mm": 0.09999999999999987,
+      "available_centered_wire_side_gap_mm": 0.15000000000000002,
+      "alignment_margin_mm": 0.050000000000000155,
+      "strict_nonbinding_and_alignment": true
+    },
+    {
+      "case": "ASSUMED_tolerance_example_NOT_process_capability",
+      "shim_thickness_mm_each": 0.4,
+      "minimum_total_axial_clearance_mm": 0.05999999999999983,
+      "maximum_total_axial_clearance_mm": 0.33999999999999964,
+      "maximum_centered_wheel_wander_mm": 0.16999999999999982,
+      "available_centered_wire_side_gap_mm": 0.15000000000000002,
+      "alignment_margin_mm": -0.019999999999999796,
+      "strict_nonbinding_and_alignment": false
+    }
+  ],
+  "radial_scenarios": [
+    {
+      "assumed_symmetric_diameter_errors_mm": 0.0,
+      "assumed_coaxial_offset_mm": 0.0,
+      "minimum_radial_margin_mm": 0.09999999999999998
+    },
+    {
+      "assumed_symmetric_diameter_errors_mm": 0.01,
+      "assumed_coaxial_offset_mm": 0.01,
+      "minimum_radial_margin_mm": 0.07999999999999997
+    },
+    {
+      "assumed_symmetric_diameter_errors_mm": 0.05,
+      "assumed_coaxial_offset_mm": 0.05,
+      "minimum_radial_margin_mm": -6.938893903907228e-17
+    },
+    {
+      "assumed_symmetric_diameter_errors_mm": 0.1,
+      "assumed_coaxial_offset_mm": 0.1,
+      "minimum_radial_margin_mm": -0.10000000000000012
+    }
+  ],
+  "actual_manufacturing_tolerances_mm": null,
+  "measured_endplay_mm": null,
+  "scope": "Nominal existing fork inner span2.8,wheelwidth1.8,groove0.8,wireD0.5,pinD1,bore1.2mm. Geometric centered-wire/wheel assumptions only. Axisfreeplay can invalidate nominal route alignment. Example symmetric error bounds are ASSUMPTIONS,not shop capability,ISO fit or supplier specs. Neither positive nominalmargin nor service-screen clearance certifies friction,wear or dynamic alignment."
+}

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripSpringPotential LANGUAGES CXX)
+find_package(Sofa.Component.SolidMechanics.Spring REQUIRED)
+add_library(ReGripSpringPotential SHARED Adapter.cpp)
+target_compile_features(ReGripSpringPotential PRIVATE cxx_std_17)
+target_link_libraries(ReGripSpringPotential PRIVATE Sofa.Component.SolidMechanics.Spring)

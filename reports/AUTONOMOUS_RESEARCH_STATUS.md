@@ -1,3 +1,20 @@
+## Product bridge/axle continuation761–777 — 2026-11-20
+
+Functionalcommitsad19a6e,101a17a;45design regressionsPASS,notproductGates.
+FinitePalmbridges/12newbores/18headedpins+nutsimplemented;actualfailures
+identifiedanditerated. New767preservessame54pin2/5/10mmsamples:0blocked,
+12hole/12driverpaths0blocked;wire0. Zero-volumePalm-mating keptandstrictly
+bounded,notfakeassemblyPASS.36actualthrustshimsimprovenominalendplay,but
+ASSUMEDcoarsetolerancecaseFAILand16tinypositiveCSGseamsremainunresolved.
+Full280part/proxyCADouterR94.65vsbaseline67.89:oversizedexperimentalframe,
+NOTfinaldesign. Frame stiffness/mass/material/preload/thread/wirefriction and
+finiteRootinletredirectmissing;Native time/meshFAILsand100g/Lift/STEPunchanged.
+No actualnewSOFAdynamicsinthisCADcontinuation. Nextcompactarchitecture,
+Rootredirect,frameforce-deflection/retention/tolerancequalification.
+Authority:product_prototype/reports/PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.
+Evidencev40:19cases/10724files,10134priorimmutablehashes0mismatches;failures
+and772rejectedimagelabelspreserved. No overallproductPASS.
+
 ## Product CAD/motion screening744–760 — 2026-11-20
 
 Functional commits3ad4792,af9effb,1c97d82;39design regressionsPASS,not product

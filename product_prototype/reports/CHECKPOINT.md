@@ -1,5 +1,13 @@
 ## Palm bridge/retention continuation761–777 — 2026-11-20
 
+Final functional commitsad19a6e,101a17a.777:45design/software regressionsPASS.
+Append-onlyevidence:evidence_product_palm_bridge_v40/manifest.json,
+19cases/10724files,10134priorimmutablehasheschecked0mismatches. Archiveincludes
+FAILED761/762/763/765cases and772visualizationrejection,not19PASSclaims.
+CorrectCADfigures/BOM:results/product_bridge_review774/ (committed).
+NewestfullCAD:meshes/b3_thrust_shims_v29/full_assembly_recipe.json,280instances.
+No intentionally runninganalysis orsession-exitautomaticresearchcontinuation.
+
 Authority:PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md. Firstfeaturead19a6e.
 761directFAIL18solid/6wirehits;762disconnectedtowerSTLFAILpartialpreserved;
 763connectedbutwheel/wirehitsFAIL.764backroutewire0,but3pin10mmsamplesblocked.

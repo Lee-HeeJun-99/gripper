@@ -92,6 +92,11 @@ Holding/Lift/mesh/time/STEP/fabrication-ready advancement in theseCADcycles.
 
 ## Reproduce only NEW candidates / outputs
 
+Finalfunctionalcommitsad19a6e,101a17a;77745design/softwaretestsPASS.
+evidence_product_palm_bridge_v40:10724files/19campaigns,10134priorimmutable
+hashesverified0mismatches. Failed/partialcases and772image-labelrejection
+explicitlyretained;archive membershipnevermeans allcasesPASS.
+
 ```bash
 PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
 $PY product_prototype/cad/palm_bridge_run.py --tag UNIQUE_BRIDGE --name UNIQUE_CAD --topology tower

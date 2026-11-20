@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripInertiaInput LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+find_package(Sofa.Component.MechanicalLoad REQUIRED)
+add_library(ReGripInertiaInput SHARED Observer.cpp)
+target_compile_features(ReGripInertiaInput PRIVATE cxx_std_17)
+target_link_libraries(ReGripInertiaInput PRIVATE Sofa.Core Sofa.Simulation.Core Sofa.Component.MechanicalLoad)

@@ -1,3 +1,15 @@
+## Root thrust V39 — NOT FABRICATION READY (2026-11-21)
+
+IntegralRootlandsOD2.5/ID1.2,nominalinnerfaces+/-1mm;RootwheelOD6,width1.8,
+groove1.0mm,pitchR2,wireD0.5unchanged. Nominalendplay0.2mm;ASSUMEDstack
+minimum0.1mm/alignmentmargin+0.061064,NOTmeasuredtolerances. NoRootloose
+washersintroduced;old36turnwheelshimsremainwitholdunresolvedfitcases.
+Actualaxialsections:results/product_root_thrust_drawing820. Service813clear.
+Thinnerflanges/contactlandsneedmaterial/wear/frictionvalidation. Threadedboss
+isstillunqualifiedproxy:clearancebore/shaftgeometryisNOTactualengagedthread.
+NativeidealbearingDOFscope834isnotphysicalretention/frictionqualification.
+NoSTEP/realassemblyreadyclaim;featuresaff7e9b,f9a3f82.
+
 ## Compact V36 nominal service — NOT FABRICATION READY (2026-11-21)
 
 Usemeshes/b3_compact_root_v36/full_assembly_recipe.json,292parts/proxies.

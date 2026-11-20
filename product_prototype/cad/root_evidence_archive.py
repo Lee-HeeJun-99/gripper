@@ -35,6 +35,7 @@ def main():
  for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
  for pattern in ('root_*.py','native_finite_guard.py','finite_guard_fixture.py','finite_guard_test_run.py'):
   for f in (BASE/'sofa').glob(pattern):shutil.copy2(f,out/('sofa_'+f.name))
+ for f in (BASE/'config').glob('root_*.json'):shutil.copy2(f,out/('config_'+f.name))
  for f in out.iterdir():
   if f.is_file():files[str(f.relative_to(root))]=sha(f)
  d=dict(scope='Append-onlyCAD/reference evidence including partialfailures/corrections;NOT product/physics/STEP qualification. NewCAD directories hashed as produced,including failedpartialSTLs;directory presence isNOT completion.',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),prior_manifest_sha256=sha(prior),prior_immutable_audit=dict(checked=len([k for k in old['files'] if immutable(k)]),mismatches=bad),cases=cases,files=files)

@@ -1,3 +1,18 @@
+## Actual Native thrust / ideal bearing806–835 — 2026-11-21
+
+8Nativeattempts,6completedscopedcoupons/2NaNinvalidpartials. Alluseinstalled
+Nativecomponentsandfrozenpassive332/512observers;noSDK/customSolverchanges.
+Freewheelfinitelands:810/811completewithsmallresidualmotion;815/816explicit
+unscaled/allVerifiedLocalMinDistanceFAILat10.75ms,finitefreeq/vbutLineLineJNaN.
+817/819MinProximityalternative80finiteeach,~33.6/34.0s,notqualifiedcontinuous
+contact/time/energy.832idealPartialFixedProjectiveConstraintbearing80finite;
+833spin10finite,omega_z1exact.834DOF/APIonlyPASS,RootreactionworkNULL.
+NewjointisphysicalASSUMPTION,notq/vpostprocessing. Realbearing/wirefriction/
+clearance/pulloutandfull3Fingeradoptionstillopen.83560softwaretestsPASS.
+AnalysisMemoryError826and815/816outertimeoutfinalizationFAILretained;
+streaming827andowned-childfiniteguard420simplemented. NoB3Holding/Lift/
+time/meshGateupgraded. Authority:ROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+
 ## Compact support797–805 scope — 2026-11-21
 
 No newSOFArun. V36onlychanges6supportshaperecipes,outerRsmaller10.9839%;

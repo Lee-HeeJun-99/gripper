@@ -1,0 +1,47 @@
+{
+  "status": "MATCHED_NATIVE_POLICY_COUPON_COMPARISON_ONLY",
+  "source_commit": "2a81fb044200531e52ba51ac2f9fca946b6c7888",
+  "input_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/root_policy_compare.py": "7ee3784d27f3c0cefbcdb5daaa66c7b191e3d7efdad8789c74a024f8ff59a3c2",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_native810/summary.json": "af301a08773cc68271ad14fa60b231960711c51331fb87481fef49e2c72fa875",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_native810/scene.scn": "dbdb360648a7a4a7906686602976a8c1ca9424078dcd107335873f8810e0467c",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_native810/wheel.csv": "c95909988fff320f7c658cf029a10a17186bcc7dfba122fcca19bdd952a9d515",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_native_strict815/summary.json": "2f22b2acab6b50c17f12b2f8b463b0a9e4bdbedf23b24891e99e08b301a9a010",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_native_strict815/scene.scn": "6560056f8c03cc70479d1c6a1628f3daad3d9359c35215cf71491dbc80b67c5a",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_native_strict815/wheel.csv": "c3306215bd56f0de4da8360a06313cf9deaa9d7ad44b22f5c7185e35b5160a23",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_intersection817/summary.json": "c1a2f19f4677edd17a2374571b9d9c4349e34e0568b715ea9f08de49cd50b2bc",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_intersection817/scene.scn": "098e5708120b1056fa2c135753630257c4796e98fe7e54dd1e92892979a96b47",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_intersection817/wheel.csv": "6c7551026f565724bf000edaa2c8e1cde5ebfa27e9d2e02ba0dc74d83bbb740a"
+  },
+  "same_physical_scene_after_explicit_policy_normalization": true,
+  "strict_to_alternative_only_intersector_class_changed": true,
+  "records": [
+    {
+      "case": "product_root_native810",
+      "rows": 80,
+      "nonfinite_rows": 0,
+      "final_angular_speed_rad_s": 0.0004058233448128044,
+      "recorded_runtime_s": 4.715307311969809,
+      "status": "NATIVE_FINITE_THRUST_COUPON_RUN_ONLY"
+    },
+    {
+      "case": "product_root_native_strict815",
+      "rows": 43,
+      "nonfinite_rows": 1,
+      "final_angular_speed_rad_s": null,
+      "recorded_runtime_s": null,
+      "status": "FAIL_NONFINITE_OUTER_TIMEOUT_PARTIAL_RAW"
+    },
+    {
+      "case": "product_root_intersection817",
+      "rows": 80,
+      "nonfinite_rows": 0,
+      "final_angular_speed_rad_s": 5.638473641641133e-05,
+      "recorded_runtime_s": 33.59338986908551,
+      "status": "INTERSECTOR_RUN_COMPLETED_NOT_QUALIFIED"
+    }
+  ],
+  "alternative_vs_default_actual_runtime_ratio": 7.12432671860192,
+  "scope": "ExactXMLphysicalinputidentity afteronlyfilename/solverpolicy/intersector normalization. Allfinitecollisionmodelsretained. MinProximityiscontact-policyalternativewithmorecandidates/runtime,notprovedsamecontinuouscontactsolution. No dt/time/energy/mesh/productPASS;strictNaNFAILpreserved.",
+  "fabrication_ready": false
+}

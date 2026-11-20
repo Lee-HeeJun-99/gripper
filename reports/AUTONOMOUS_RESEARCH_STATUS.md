@@ -1,3 +1,20 @@
+## Root thrust / actual Native component milestone806–835 — 2026-11-21
+
+Append-onlyevidence_product_thrust_native_v42:27cases/11363files,
+11050priorimmutablehashesverified0mismatches. NoSDK/oldRawchanges.
+Includes2NaNfailures,analysisfailures/corrections andSOFTWAREfixtures.
+
+Featuresaff7e9b,f9a3f82. V39Rootintegrallands/widegrooveCADimplemented,
+ASSUMEDstackmargin+0.061064mm,actualtolerancesNULL;service813clear.
+8Nativeattempts:6completescopedcoupons/2NaNpartialsFAIL. Nativeidealbearing
+DOF/APIonlyPASS834,notrealfriction/clearance/retention/holdingPASS. OldB3time/
+mesh/contactFAILsunchanged.83560softwaretestsPASS. State/provenance/analysis
+failurespreserved;streaminganalysisand420sNaN-own-childguardimplemented.
+NEXTNativewire/pulleyforce/slidingcontractandphysicalbearing/wire/material/
+retentiondata;full3FingeradoptionfromNEWstateaftermissingGates.100g/Lift/
+STEP/fabricationstillopen. Noactivechildrenorautomaticbackgroundcontinuation.
+Authority:product_prototype/reports/ROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+
 ## Compact support797–805 milestone — 2026-11-21
 
 Functionalcommitsa57d9db,31f37d5. V36actual292partCAD:6supportshapechanges,

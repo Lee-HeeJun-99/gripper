@@ -1,3 +1,26 @@
+## Latest Root thrust / Native bearing806–835 — 2026-11-21
+
+Evidencev42:27cases/11363files,11050oldimmutablehashes0mismatches;includes
+FAILs/corrections/SOFTWAREfixtures,not27PASS. Noactivechildren. Nextstartwith
+NEWwire/pulleycontractimplementation,not832/833repeat. ActualSDKsource:
+/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/include/SoftRobots/component/
+constraint/model/CableModel.{h,inl};comparewithsofa/run_native.py and
+root_bearing_coupon.py. Fullread-onlyresumecommandinROOT_THRUSTreport.
+
+Readproduct_prototype/reports/ROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+Featuresaff7e9b,f9a3f82. V39lands/widegroovecandidatecreated,nominal/ASSUMED
+stackimproved;actualfriction/tolerances/retentionNOTqualified. ActualNative
+finiteendstopandidealbearingcouponsrun;815/816NaNFAILspreserved,notrepeated.
+MinProximityavoidsNaNinthese2coupons,but~7.12xruntimeandresidualmotion/
+CSGcontactremain.834idealjointDOF/APIonlyPASS;83560softwaretestsPASS.
+NEXTdefineNativeidealwire/pulleyload-transferandfree-slidingcontract before
+full3Fingeradoption;actualradial/thrustfriction/wear/wireminbend/material/
+retentionandframeforce-deflectionrequiredata. DoNOTreuseoldcheckpoint.
+KnownB3contact/time/FEMmeshFAILs,50gfinalqualification,100g/Lift/STEPremainopen.
+LauncherfiniteguardstopsonactualNaN,420sinsideouter480s;noSDK/statecorrection.
+Repro:robot_wsPython product_prototype/sofa/root_bearing_coupon.py --tag UNIQUE
+[--spin-only]. Native8attempts,6completedscopedcoupons/2invalidpartials.
+
 ## Latest compact drive797–805 — 2026-11-21
 
 Featurecommitsa57d9db,31f37d5. Evidencev41:28cases/11050files,10722previous

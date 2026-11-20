@@ -1,3 +1,15 @@
+## Root thrust and Native component cycles806–835 — 2026-11-21
+
+Featuresaff7e9b,f9a3f82. Implementedseparatedlands/widegrooveCAD andcombined
+V39,actualservice813clear. ASSUMEDstackmargin+0.061064mm,notphysicalfitPASS.
+8actualNativeattempts:2defaultendstop/2alternativeintersector/2idealbearing
+complete;2strictLocalMinDistanceNaNpartialsFAILpreserved. Rootrowdiagnosis,
+NaN-own-childguardandstreaminganalysisimplemented;analysisfailuresretained.
+834Nativeideal4locked/2freeDOFscopePASS,notrealbearingmaterial/frictionPASS.
+83560softwaretestsPASS. NEXTwire/pulleyload/slidingcontractandphysical
+friction/retention/clearancemeasurements;nofullgripperqualificationadded.
+Authority:ROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+
 ## Compact support milestone797–805 — 2026-11-21
 
 Featuresa57d9db,31f37d5. ActualouterR94.6495->84.2534mm(-10.9839%);

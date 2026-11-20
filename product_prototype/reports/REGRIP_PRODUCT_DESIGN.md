@@ -1,3 +1,14 @@
+## Root thrust V39 / Native component update — 2026-11-21
+
+CurrentnewresearchCAD:meshes/b3_root_thrust_v39/full_assembly_recipe.json,
+292parts. Rootlands/widegroovefactorial806–809implemented;813serviceclear,
+820actualaxialsectiondrawing. OldV36preserved. Actualendplay/material/strength/
+friction/retentionnotqualified.8Nativecouponsattempted;idealbearingDOF/APIonly
+PASS,notactualpulley/wiresliding/Cable/fullgripperPASS. NaN815/816preserved;
+default/alternativecontactlawresultsnotconvertedtofulltime/energycertification.
+60softwaretestsPASS835;featuresaff7e9b,f9a3f82. NoSTEPkernelavailableor
+fabricationreadiness. Authority:ROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+
 ## Compact V36 support update — 2026-11-21
 
 CurrentreferenceCAD:meshes/b3_compact_root_v36/full_assembly_recipe.json,

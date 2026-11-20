@@ -1,3 +1,13 @@
+## Root thrust V37–V39 factorial — 2026-11-21
+
+Rootspan2.8->2.0mmbyintegralannularlands;groove0.8->1.0mmindependentlytested
+asCADfactors.806baseline/wide-onlyfailnominalalignment;lands-onlyfailsASSUMED
+tolerancecase;combinedmargin+0.061064mmunderSAMEASSUMEDbounds. Actualprocess
+andmaterial/frictionNULL. V39has292parts,old18turnwheel/shimassembliesunchanged.
+NewRootwheelthinnerflangesareunverifiedstrength/weartradeoff. NoHoldinggain
+oroptimizedequalmaterialclaim. ActualNativeendstop/idealbearingtestsareseparate
+coupons,notfullCADassemblyvalidation. SeeROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+
 ## Compact V36 reference comparison — 2026-11-21
 
 V34outerR94.6495268mm,V36outerR84.2533606mm,10.9839%smaller;6supportshapes

@@ -1,3 +1,33 @@
+## Root thrust / actual Native coupons806–835 — 2026-11-21
+
+Finalevidence:evidence_product_thrust_native_v42/manifest.json,27cases/11363
+files,11050priorimmutablehasheschecked0mismatches. Includesfailures/corrections
+andSOFTWAREfixtures,not27PASSclaims. Lastfunctionalcommitsaff7e9b,f9a3f82.
+Nextimplementationentry:sofa/root_bearing_coupon.py+run_native.py andinstalled
+SoftRobots/component/constraint/model/CableModel.{h,inl}. DoNOTreruncompleted
+832/833asnexttask. Read-onlySDKcontractcommandinROOT_THRUSTreport.
+
+Functionalcommitsaff7e9b,f9a3f82. Authority:ROOT_THRUST_AND_NATIVE_VALIDATION_20261121.md.
+V39CAD:meshes/b3_root_thrust_v39/full_assembly_recipe.json,292parts.
+6Rootintegralthrustlands+6widergroovewheelscreated;old18turnwheel/shimFAILs
+unchanged.806factorial:combinedASSUMEDtolerancealignmentmargin+0.061064mm,
+notmeasuredprocessPASS.81324pinsweeps/12bores/18tools0blocked;Palmzero-volume
+contactsandintendedwheelprobecontactsretained.820actualCADaxialsections.
+ActualNative8attempts:810/811defaultfinite80each;815/816NaN43states/outer
+timeoutFAILpreserved;818LineLineJnonfinitewithfinitefreeq/v,undefinednormal
+hypothesis.817/819MinProximityfinite80each,~33.6/34.0s,NOTphysics/timePASS.
+832idealNativecylindricalbearing80statesfinite;833spin10statesomega_z1exact.
+834STRICTDOF/APIscopePASSonly;physicalfriction/clearance/Rootworkunmeasured.
+83560design/softwaretestsPASS,notwholeproductGates.827streaminganalysisfix
+after822/826failures:280920KiBmaxRSS;825launcherfixturesareNOTSOFAdata.
+FutureNativeusesowned-childNaNguard/internal420s,beforeouter480s;noq/vrepair.
+NEXTNativeidealwire/pulleyload-transfercontract andactualbearing/wirefriction,
+clearance/material/retentionmeasurements;doNOTmapdiscretepointsontoawheel
+andclaimverifiedwiresliding. Full3FingeradoptionfromNEWstateafterphysicsGates.
+No100g/Lift/time/mesh/STEP/fabricationPASS;noactivechildren/autocontinuation.
+Newcoupon:robot_wsPython product_prototype/sofa/root_bearing_coupon.py
+--tag UNIQUE_BEARING [--spin-only];guard4GiB/420s. Fullcommands/Rawinreport.
+
 ## Compact drive797–805 — 2026-11-21
 
 Featurecommitsa57d9db,31f37d5. Append-onlyarchive:

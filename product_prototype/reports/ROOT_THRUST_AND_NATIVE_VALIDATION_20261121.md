@@ -1,5 +1,11 @@
 # Root thrust geometry and Native coupon continuation806–830
 
+Finalfunctionalcommitsaff7e9b,f9a3f82.835:60design/softwaretestsPASS2.410s.
+Append-onlyevidence:evidence_product_thrust_native_v42/manifest.json,
+27newcases/11363files,11050priorimmutablehashesverified0mismatches.
+IncludesNaN/timeout,analysisfailures/corrections andlauncherSOFTWAREfixtures;
+NOT27physicalPASSclaims. Noactivechildrenorautomaticbackgroundcontinuation.
+
 Baseline2a81fb044200531e52ba51ac2f9fca946b6c7888;oldRaw/SDK/Golden unchanged.
 No fullgripper Holding/Lift/time/mesh/energy/productqualification added.
 
@@ -123,6 +129,14 @@ wirefriction/clearance/material measurements;doNOTsubstitutea body-fixed discret
 guidepointpath for verifiedwire slidingaround a rotatingpulley. V39CAD still
 doesnotverifythread/headretention,other18wheelstacktolerances or fullhardware
 actuationCCD. Full3Finger adoption andnewHolding requireseparatephysicsGates.
+
+Do NOTstartnextsessionbyrerunning832/833. Implementationentry:
+product_prototype/sofa/root_bearing_coupon.py (jointbasis) andrun_native.py
+(existingCablegraph),plusinstalledSoftRobotsCableModel. Read-onlyresume:
+
+```bash
+rg -n 'pullPoint|cableLength|indices|valueType' /home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/include/SoftRobots/component/constraint/model/CableModel.h /home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/include/SoftRobots/component/constraint/model/CableModel.inl
+```
 
 Everynew outputusesunique path;source/scene/binary hashes andcommands inRaw.
 KeyNativecommands (NEWtags):

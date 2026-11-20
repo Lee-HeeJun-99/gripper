@@ -863,3 +863,11 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+## 2026-11-20 — cycles728–741
+
+Implemented axis-only V20 and bore-only successorV21;V20failed6sites,V21reference
+straight and2mm-radius rounded wire geometric screensclear. Continued through
+service,STL reload,selection-evidence gate and29design regressions. Details and
+commands:WIRE_EYELET_CONTINUATION_20261120.md. NoNative results added;no Gate
+relaxed. Next deformed clearance replay and motor lead-in/interface; material
+and continuous motor duty measurements remainBLOCKED. Local feature32a4825.

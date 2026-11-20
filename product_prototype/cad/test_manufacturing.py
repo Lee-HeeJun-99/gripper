@@ -14,6 +14,12 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_circular_fillet_reference_and_overlap_rejection(self):
+  from rounded_wire_path import fillet
+  p=np.array([[0.,0,0],[10.,0,0],[10.,10,0]]);q,s,t=fillet(p,2.)
+  self.assertAlmostEqual(t[0],2.);self.assertTrue(np.allclose(q[1],[8,0,0]));self.assertTrue(np.allclose(q[-2],[10,2,0]));self.assertGreater(s,0.)
+  for point in q[1:-1]:self.assertAlmostEqual(np.linalg.norm(point-[8,2,0]),2.)
+  with self.assertRaises(ValueError):fillet(p,6.)
  def test_full_reference_wire_and_new_service_not_complete_qualification(self):
   full=result('product_wire_full736')['full_assembly'][0];self.assertEqual(full['segments'],36);self.assertEqual(full['nonempty_intersections'],[])
   service=result('product_bore_service732');self.assertEqual(len(service['records']),12);self.assertFalse(any(r['positive_intersections'] for r in service['records']))

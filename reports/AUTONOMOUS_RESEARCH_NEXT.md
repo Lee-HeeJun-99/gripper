@@ -1,3 +1,17 @@
+## Product continuation728–741 — 2026-11-20
+
+Read product_prototype/reports/WIRE_EYELET_CONTINUATION_20261120.md and CHECKPOINT.
+Completed:new V20axis-only and V21bore candidates,actual mesh CSG,straight and
+rounded finite wire envelope screening,service12samples,160ASCIISTL readbacks,
+29design regressions. NOT Native/moving/material qualification. OldFAILs retained.
+NEXT:deformed B3 accepted-state replay with NEW finite Eyelet frames and rounded
+wire route; do not assume reference clearance survives contact. Then complete
+drum-to-root lead-in and supplier horn interface. Physical wire bend/fatigue,
+motor continuous duty and material/bond data missing;737selection BLOCKED.
+STEPkernel absent. Known Native contact/time and FEMmesh FAIL remain open.
+Current reference radius2mm is a hypothesis,NOT approved wire minimum.
+New output required for any replay;never overwrite728–741.
+
 ## Parallel Track A/B/C continuation704–727 — 2026-11-20
 
 Last implementation commits:901b1cd0d05e283ac96319aef699cbfabb13c09b,

@@ -43,9 +43,20 @@ No motor/material approved, purchased or measured. Rail grade/join unknown.
 
 ## Remaining and next executable work
 
-1. Design a finite rounded wire path with explicit candidate bend radius;
-   compare its swept tube against V21 bore/support, without treating unknown
-   supplier minimum bend radius as zero. Current polyline is diagnostic only.
+Further cycle739–741 after first feature commit32a4825:
+Circular fillet radius2mm (DESIGN ASSUMPTION,not supplier minimum) implemented.
+Analytic90deg reference tangencies and constant radius tested; overlapping
+fillets explicitly rejected.739 conservative box tube envelope returned12hits
+at distalEyelet s4.740 tighter CIRCUMSCRIBED64gon cylinders + circumscribed
+icospheres, inflated by analytic arc-to-chord sagitta bound, returned0hits
+for6wires against160parts. This identifies coarse envelope false positives,
+NOT permission to shrink wire radius or approve actual wire fatigue/friction.
+74129design tests PASS. Actual path coordinates and producers retained in
+results/product_wire_round739 and product_wire_round740. No Native run.
+
+1. The finite rounded reference path is now implemented and screened at a
+   proposed2mm radius. Obtain supplier minimum radius and fatigue coupon data;
+   do not treat this successful geometric screen as material suitability.
 2. Verify deformed hardware using actual B3 accepted states and changed Eyelet
    frames; do not transfer old collision/mass qualification to the new shape.
 3. Complete motor lead-in routing and supplier horn/shaft interface only with

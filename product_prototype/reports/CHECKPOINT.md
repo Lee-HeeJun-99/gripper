@@ -1,3 +1,22 @@
+## Wire/Eyelet continuation728–741 — 2026-11-20
+
+Feature commit32a48259996b7efee7746ad94373a3ea76da3ab3; later rounded-path
+code/evidence commit follows. Authority:WIRE_EYELET_CONTINUATION_20261120.md.
+V20axis-only FAIL6bore sites. V21axis+ID1.4/OD3/L2,wire0.5:36straight
+segments vs160parts no intersections. Separate2mm-radius circular-filleted
+reference route:740circumscribed tight envelopes no hits;739coarse-box12hits
+preserved. Supplier minradius/material/friction unknown,NOT moving-wire PASS.
+73212service samplesclear;733six assembledclamp driver paths stillblocked.
+734160ASCIISTLs closed/positive;STEP absent;24tiny assembly seam intersections
+UNRESOLVED.74129design testsPASS;Native/time/mesh/Holding Gates unchanged.
+737motor/material selectionBLOCKED by8missing physical/interface measurements.
+Next:deformed B3 accepted-state replay with finite changed Eyelet frames and
+wire path,then motor lead-in/horn interface from actual drawings. Do not rerun
+known failed Native loop/dt sweeps. No newSOFA or fabrication-ready claim.
+Raw:results/product_wire_round740;CAD:meshes/b3_manufacturing_bore_v21_stl_ascii.
+Reproduce unique output:
+`ulimit -v 4194304; timeout 480 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/rounded_wire_path.py --tag UNIQUE_ROUND --candidate b3_manufacturing_bore_v21 --radius-mm 2 --tight-envelope`
+
 ## Parallel Track A/B/C continuation704–727 — 2026-11-20
 
 Last implementation commits:901b1cd0d05e283ac96319aef699cbfabb13c09b,

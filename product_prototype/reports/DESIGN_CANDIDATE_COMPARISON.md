@@ -759,3 +759,10 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+## 2026-11-20 — finite wire candidatesV20/V21
+
+V20changesaxis only:6necessarybore FAILs. V21ID1.4 only afterV20,OD3unchanged:
+0straightwire intersections with160parts. Proposed2mm-radius rounded path tight
+conservative envelope also0hits;not supplier/bending/moving qualification.
+Skin/Rail/Support unchanged.24static fastener seam overlaps UNRESOLVED;no
+assemblyPASS. SeeWIRE_EYELET_CONTINUATION_20261120.md and cases728–741.

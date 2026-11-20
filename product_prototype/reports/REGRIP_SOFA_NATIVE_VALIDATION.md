@@ -900,3 +900,10 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+## 2026-11-20 — product CAD728–741 scope
+
+No new Native SOFA execution in these cycles. Changed finite Eyelet axis/bore
+and proposed rounded wire path are CAD-only candidates;old Native collision,
+mass orHolding qualification is NOT transferred. Existing contact/time/mesh
+FAILs unchanged.29software/design tests are NOT physical Gates. Details:
+WIRE_EYELET_CONTINUATION_20261120.md. Next accepted-state finite geometry replay.

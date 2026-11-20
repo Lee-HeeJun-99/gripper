@@ -10,7 +10,7 @@ from matplotlib.collections import PolyCollection
 from manufacturing_assembly import BASE,evaluate,root_frame,cyl,transform,sector,sha,standoff_positions
 
 
-def render(parts,shapes,path,exploded=False):
+def render(parts,shapes,path,exploded=False,title=None,footer=None):
  view=np.array([[1,-1,0],[1,1,2],[1,1,-1]],float);view/=np.linalg.norm(view,axis=1)[:,None]
  colors={'finger':'#56a9bf','eyelet':'#c79432','support':'#b8b27a','palm':'#a9b5be','mount':'#597c91','cartridge':'#408fa3','clamp':'#8baeb9','drive_deck':'#c3c7cc','drum':'#b25f59','motor_envelope':'#d7adc3','fastener_proxy':'#9a9a9a','standoff':'#a6a6a6'}
  triangles=[];facecolors=[];depth=[]
@@ -18,7 +18,7 @@ def render(parts,shapes,path,exploded=False):
   q=shape.triangles.copy()
   if exploded:q[:,:,2]+=dict(palm=20,drive_deck=60,standoff=40,motor_envelope=90,drum=120,clamp=10).get(part['group'],0)
   projected=q@view.T;triangles.extend(projected[:,:,:2]);depth.extend(projected[:,:,2].mean(axis=1));facecolors.extend([colors.get(part['group'],'#999999')]*len(q))
- order=np.argsort(depth);triangles=np.asarray(triangles)[order];facecolors=np.asarray(facecolors)[order];fig,ax=plt.subplots(figsize=(9,9));ax.add_collection(PolyCollection(triangles,facecolors=facecolors,edgecolors='none'));xy=triangles.reshape(-1,2);ax.set_xlim(xy[:,0].min()-8,xy[:,0].max()+8);ax.set_ylim(xy[:,1].min()-8,xy[:,1].max()+8);ax.set_aspect('equal');ax.set_xlabel('Orthographic projection [mm]');ax.set_ylabel('Orthographic projection [mm]');ax.set_title('ReGrip B3 MANUFACTURING CANDIDATE\n'+('EXPLODED design view:display-only offsets,NOT motion' if exploded else 'As-designed rest assembly,NOT SOFA grasp result'));fig.text(.03,.02,'160 mesh parts/proxies;motor output interface,threads,wires,moving clearance,STEP and strength NOT qualified.',fontsize=8);fig.savefig(path,dpi=140);plt.close(fig)
+ order=np.argsort(depth);triangles=np.asarray(triangles)[order];facecolors=np.asarray(facecolors)[order];fig,ax=plt.subplots(figsize=(9,9));ax.add_collection(PolyCollection(triangles,facecolors=facecolors,edgecolors='none'));xy=triangles.reshape(-1,2);ax.set_xlim(xy[:,0].min()-8,xy[:,0].max()+8);ax.set_ylim(xy[:,1].min()-8,xy[:,1].max()+8);ax.set_aspect('equal');ax.set_xlabel('Orthographic projection [mm]');ax.set_ylabel('Orthographic projection [mm]');ax.set_title(title if title is not None else 'ReGrip B3 MANUFACTURING CANDIDATE\n'+('EXPLODED design view:display-only offsets,NOT motion' if exploded else 'As-designed rest assembly,NOT SOFA grasp result'));fig.text(.03,.02,footer if footer is not None else '160 mesh parts/proxies;motor output interface,threads,wires,moving clearance,STEP and strength NOT qualified.',fontsize=8);fig.savefig(path,dpi=140);plt.close(fig)
 
 
 def main():

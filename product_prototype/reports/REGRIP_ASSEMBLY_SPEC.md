@@ -762,3 +762,12 @@ notselectedbearing/shaft/tolerances.54actualASCIISTLs checked;Palmconnection,
 pinretention/rootredirect/strength/friction unresolved. DoNOTassemble/fabricate
 asqualifiedproduct.Conditionalloadbudget757isnotstressFEMormeasuredstrength.
 See DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md forcommands/Raw.
+## 2026-11-20 — Palm mounting/axle retention candidate
+
+Eachbranch uses2M3-likebolt/nutproxiesatlocalx44/52,y+/-30mm. NewPalm12boresD3.4.
+18axlespinD1/headD2.5/nutAF2.5 envelopes NOTsupplier/thread/preloadspecifications.
+Axialplaynominal0.1mm;wheelendplayreducedby36OD2.5/ID1.2/t0.4shims.
+Capturelooseshimsbeforepinextraction. Same54service samplesclear in768,
+notcontinuousphysicalservice. Realtool/thread/tolerance/friction/strengthopen.
+DoNOTfabricateasqualifiedassembly;outerR94.65mmoversized. Authority:
+PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md;774hascorrect280partreviewlabels.

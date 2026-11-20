@@ -14,6 +14,23 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_bridge_size_and_stiffness_remain_unqualified_tradeoffs(self):
+  d=result('product_bridge_review774');self.assertEqual(d['part_instances'],280);self.assertGreater(d['new_maximum_radial_extent_mm'],d['baseline_maximum_radial_extent_mm']);self.assertFalse(d['fabrication_ready'])
+  e=result('product_bridge_stiffness776');self.assertIsNone(e['actual_material_modulus_MPa']);self.assertIsNone(e['actual_frame_displacement_mm']);r=e['records'];self.assertGreater(r[0]['deflection_divided_by_length'],.5);self.assertGreater(r[0]['ideal_EB_tip_deflection_mm'],r[-1]['ideal_EB_tip_deflection_mm'])
+ def test_CAD_renderer_honors_candidate_title_and_part_count(self):
+  from unittest.mock import patch
+  from release_pack import render
+  with patch('matplotlib.axes.Axes.set_title',autospec=True) as title,patch('matplotlib.figure.Figure.text',autospec=True) as footer,patch('matplotlib.figure.Figure.savefig',autospec=True):
+   render([dict(group='finger')],[evaluate(box([0,0,0],[1,1,1]))],'/tmp/regrip_mock_no_file.png',title='CUSTOM_BRIDGE',footer='280_PART_PROXIES')
+   self.assertEqual(title.call_args.args[1],'CUSTOM_BRIDGE');self.assertEqual(footer.call_args.args[3],'280_PART_PROXIES')
+ def test_revised_bridge_retains_full_service_distances(self):
+  d=result('product_bridge_service767');self.assertTrue(d['dependencies_unchanged']);self.assertFalse(d['analysis']['wire_intersections']);self.assertEqual(len(d['analysis']['records']),67)
+  service=result('product_bridge_service768');self.assertEqual(len(service['pin_withdrawal_samples']),54);self.assertEqual(max(r['negative_axis_withdrawal_mm'] for r in service['pin_withdrawal_samples']),10);self.assertFalse(any(r['intersections'] for r in service['pin_withdrawal_samples']));self.assertFalse(any(r['intersections'] for r in service['mount_driver_access']))
+  self.assertTrue(all(r['all_bits_exclude_palm_open_interior'] for r in result('product_bridge_service_mating769')['records']))
+ def test_axial_stack_and_real_shims_do_not_claim_tolerance_or_friction_PASS(self):
+  from pulley_stack_budget import stack
+  self.assertFalse(stack(0.)['strict_nonbinding_and_alignment']);self.assertTrue(stack(.4)['strict_nonbinding_and_alignment']);self.assertFalse(stack(.4,.05,.05,.02)['strict_nonbinding_and_alignment'])
+  d=result('product_thrust_shims771');self.assertEqual(len(d['records']),36);self.assertFalse(d['wire_intersections']);self.assertTrue(d['intersections']);self.assertFalse(d['fabrication_ready'])
  def test_bridge_failures_are_preserved_and_not_upgraded(self):
   direct=result('product_bridge_direct761');self.assertTrue(direct['wire_intersections']);self.assertTrue(direct['nonempty_solid_intersections'])
   self.assertTrue(result('product_bridge_tower762')['status'].startswith('FAIL'))

@@ -880,3 +880,12 @@ andfiniteinterfingerhardware0hits;NOTCCD/newdynamics.745sourceidentityFAIL
 retained and747frozenworker repair verified. NextPalm mountbridges/retention;
 materials/strength/horn/continuousdrive physicaldata missing. NoGate relaxed.
 Details:DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md;firstcommit3ad4792.
+## 2026-11-20 — cycles761–777
+
+ImplementedfinitePalmbridges/axle-retentionproxies;iteratedactualdetected
+nut/rod/wire/disconnectedbody andpinservicefailures,notSolverparameters.
+767/768retains10mmpincriterion:12holes/12drivers/54samplesclear. New36shims
+improvenominalendplay,buttoleranceexampleFAILandCSGmatingseamsremainopen.
+280partreviewshowsouterR94.65mm:oversized,notfinalproduct. Nextcompactness/
+Rootinletredirect +frameforce-deflectionqualification. No newSOFAphysics/Gate
+relaxation. Authority:PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.

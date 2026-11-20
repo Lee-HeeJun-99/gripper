@@ -18,6 +18,8 @@ def main():
         shutil.copy2(summary,out/(case+'.json'));cases[case]=dict(raw=str(folder.relative_to(ROOT)),summary_sha256=sha(summary))
         rejection=folder/'SOURCE_IDENTITY_REJECTION.json'
         if rejection.exists():cases[case]['evidence_rejection']=json.loads(rejection.read_text())
+        visual_rejection=folder/'VISUALIZATION_REJECTION.json'
+        if visual_rejection.exists():cases[case]['visualization_rejection']=json.loads(visual_rejection.read_text())
         for f in folder.rglob('*'):
             if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
         detail=json.loads(summary.read_text())

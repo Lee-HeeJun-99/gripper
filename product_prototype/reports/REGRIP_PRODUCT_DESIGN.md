@@ -890,3 +890,12 @@ bearing/motorhornfit/materialqualification. Actual local views in
 results/product_pulley_drawing756.54STLmodules areNOT54approvedsuppliedparts.
 Fullproductassembly,100g/Lift/STEPnotqualified;oldtime/meshFAILsunchanged.
 See DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.
+## 2026-11-20 — assembled-reference bridge/retention CADcandidate
+
+280part/proxyrecipe:meshes/b3_thrust_shims_v29/full_assembly_recipe.json.
+67newbridge/retentionparts +36shims;177parentreferences.12actualPalmbores,
+6integralbridge/forkstructures,18headedpins/18nuts;nominalthreadproxiesonly.
+OuterR94.65mm vsbaseline67.89mm:experimentaloversizedlayout,notfinalproduct.
+Sampledserviceclearance doesnotapproveframe stiffness,tolerance/friction,
+mass/inertia orHolding. FiniteRootinletredirectstillmissing;motor/materialnot
+selected. STEP/fabricationreadyfalse. SeePALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.

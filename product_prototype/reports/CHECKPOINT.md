@@ -1,3 +1,26 @@
+## Palm bridge/retention continuation761–777 — 2026-11-20
+
+Authority:PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md. Firstfeaturead19a6e.
+761directFAIL18solid/6wirehits;762disconnectedtowerSTLFAILpartialpreserved;
+763connectedbutwheel/wirehitsFAIL.764backroutewire0,but3pin10mmsamplesblocked.
+767secondturnservice-loop candidate:67closedpositiveSTLs,wire0,6zero-volume
+Palm-mating results retained.768same12holes/12drivers/54pinsamples(2/5/10mm)
+0blocked.769strictmating envelope proof6/6. Genericintersectionstatusnotchanged.
+77136thrustshims reduce NOMINALendplay;770ASSUMED tolerancecase stillFAIL;
+16tinypositive wheel/shim CSGseams remainUNRESOLVED,notclearancePASS.
+774actualCADreview/BOM:280parts/proxies,outerR94.6495 vs67.8914baseline:
+oversizedexperimentalframe,NOT finalproduct.772wrongcaptionimagesrejected,
+774correctedandreviewed.776idealizedstiffness sensitivity NOTframeFE/strength.
+NEXT:compact supportarchitecture +finiteRootinletredirect,thenframeforce-
+deflection/boltretention/tolerance/frictionqualification andNativeadoption.
+Material/motorduty/hornfit/wireminbend physicaldata stillmissing;STEPabsent.
+OldNativecontact/time/FEMmeshFAILsand100g/Lift remainunchanged. No newSOFA
+physics run intheseCADcycles;no completedproduct or backgroundcontinuation.
+Read-onlyresume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/product_bridge_service768/summary.json`
+Newcandidate buildonlyafterimplementation:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/palm_bridge_run.py --tag UNIQUE --name UNIQUE_DESIGN --topology tower`
+
 ## Deformed wire / drivetrain continuation744–758 — 2026-11-20
 
 Final functional commits3ad4792,af9effb,1c97d82.760:39design/software testsPASS.

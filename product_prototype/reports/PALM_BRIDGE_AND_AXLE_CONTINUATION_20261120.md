@@ -45,6 +45,40 @@ It avoids pulling pin through thepreviousoutercrossbar withoutcrossingwire
 plane.768retains original54service samples;769repeats strictmating proof
 on changedcandidate. Read final summaries beforeclaiming these outcomes.
 
+**Final767–769:**67newSTLreadbacks,wirehits0;6Palm-mating results volume0
+remain in generic status,not hidden. Actualbuild41.386s/sourceidentityverified.
+768retains all54pin samples including10mm:0blocked,12boregauges/12driverpaths
+also0blocked.769all6strictsufficient matingexclusions proven;not BRepPASS.
+
+## Stack, size and stiffness follow-on770–777
+
+770found nominalwheel axialwander0.5mm vswire sidegap0.15mm:alignmentFAIL.
+Two0.4mm thrustshims reduce nominalwander to0.1mm (margin0.05mm),but explicit
+ASSUMED tolerancecase(span/wheel0.05,shim0.02mm) margin-0.02mm stillFAIL.
+No claimed shopcapability/ISO fit,measuredtolerance/endplay or newphysicalPASS.
+771created36finiteOD2.5/ID1.2/t0.4mmshims,allSTLreadbackclosedpositive;
+wirehits0.16wheel-face CSGpositivevolumes~0.4–1.5e-6mm³ retained asunresolved
+numeric/mating evidence,not rounded tozero orcalledassemblyclearancePASS.
+280part fullrecipe:new67bridge/retentionparts +36shims +177parentreferences.
+Axleremoval mustcaptureloose shims;physicalassemblysequence unverified.
+
+772reviewimage labels incorrectly retainedold160partcaption due renderer
+ignoring passedtitle/footer. Originalfigures retained withVISUALIZATION_REJECTION.
+774rendererfixed,newfiguresvisuallyreviewed,280parts/proxies correctlylabelled.
+Image repair isnot newphysics. Regression added toassertcustomlabels areused.
+Fullradius94.64953mm vsbaseline67.89142mm;rootradius50unchanged. This is
+a LARGE experimental supportframe,NOT final compactproductselection.
+776single50mm/D4cantilever sensitivity underconditional2.121Nturnload:
+assumedE250/2000/200000MPa givesidealEBdeflections28.13/3.517/0.03517mm.
+TheseareNOT actualbranchedframeorselectedmaterialresults;large delta/Linvalidates
+small-deflectioninterpretation. Frameforce-displacement/materialvalidation open.
+777finaldesign/software regressions;not time/mesh/Holding qualification.
+
+Nextpriority:compact supportarchitecture andfiniteRootinletredirect (current
+idealpullpoint isnot actualpulley);thenframeforce-deflection/fastenerretention,
+tolerance/friction andwearcoupon,actualNativecandidate withdefinedmass/joints.
+Do not simplyreuseoldB3acceptedstates or6prescribedforces as newdriveapproval.
+
 ## Qualification boundary
 
 New full neutralrecipe references177unchangedparentparts/wheels +67newparts.

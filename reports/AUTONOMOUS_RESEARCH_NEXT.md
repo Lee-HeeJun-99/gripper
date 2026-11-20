@@ -1,3 +1,19 @@
+## Product continuation761–777 — 2026-11-20
+
+Read product_prototype/reports/PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.
+ImplementedactualPalmbridges/12bores/18headedpins+18nutproxies. Faileddirect,
+disconnectedtower,wheel-wireconflicts and3blockedpinsamples retained;new767
+service-loop candidate clears same12holes/12drivers/54pin samplesandwirepath.
+Notthread/preload/strength/dynamicsPASS. New36shims improveNOMINALendplay,
+butcoarsetoleranceexampleFAILand16tinyCSGmatingvolumesunresolved.
+Full280partrecipe:meshes/b3_thrust_shims_v29/full_assembly_recipe.json.
+OuterR94.6495mm makes frameoversizedvs67.8914baseline;NOTfinalselection.
+NEXTindependentdevelopment:compact supportarchitecture,finiteRootinletredirect
+(replaceidealfixedpullpointgeometrically,but doNOTassumeequivalentNativeforce),
+frameforce-deflection andretention/tolerance/frictioncouponrequirements.
+Measuredmaterial/strength/continuousmotorduty/hornfit stillBLOCKED;noSTEPkernel.
+Do not repeat knownNative loop/dtFAILs;no newtime/mesh/Holding/LiftPASS.
+
 ## Product continuation744–758 — 2026-11-20
 
 Read product_prototype/reports/DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.

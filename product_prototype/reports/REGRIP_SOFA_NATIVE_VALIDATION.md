@@ -916,3 +916,11 @@ is sampled geometric evidence only.746all1200times objectgap notCCD/timeGate.
 identity verified. Existing Native time/mesh/Holding/Lift qualificationunchanged.
 New18pulleys/18forks/18pins areUNMOUNTED modules,not physically validateddrive.
 Authority:DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.
+## 2026-11-20 — bridge/retention CAD761–777boundary
+
+No actualnewNativeSOFAdynamics.67bridge/retentionparts and36shims areNEWCAD
+candidates;mass/inertia/material/preload/joints andphysicalwirefrictionunknown.
+Samepinservicecriterioncleared,notGrasp/CCD/strength/tolerancequalification.
+OldNativeSDK/scene/binaries/Rawpreserved;time/meshFAILsand100g/Liftunchanged.
+Do not adopt old6prescribedforces as validatedmotor/pulley input. Authority:
+PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.

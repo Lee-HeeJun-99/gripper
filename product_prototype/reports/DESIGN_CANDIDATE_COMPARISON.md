@@ -774,3 +774,11 @@ Directlead-inFAIL18hits;perimetercandidate0obstaclehits butlarger envelope
 andassumedmotoraxis. Finitepulley/fork/pin54modules haveSTLreadbacks and
 staticchecks;Palmbridge/axleretention/bearing/material absent. NOTassemblyPASS.
 See DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md;alloldFAILspreserved.
+## 2026-11-20 — Palm bridge candidatesV24–V29
+
+V24directfailswire/solidinterference,V25disconnectedpartial,V26wheel/wirehits,
+V27clearswirebut3pin10mmsamplesblocked. V28service-loop clears SAMEsampled
+servicecriteria;Palmzero-volume mating independentlybounded,not BRepPASS.
+V29adds36shimstoaddressnominalaxialwander;coarsetolerancecaseFAILpreserved.
+OuterR94.65vs67.89mm ismajornegative;nofinalstructureselected. No newNative
+Holding/time/meshPASS. SeePALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.

@@ -1,0 +1,54 @@
+{
+  "status": "PASS_LAUNCHER_SOFTWARE_FIXTURES_NOT_NATIVE",
+  "source_commit": "2a81fb044200531e52ba51ac2f9fca946b6c7888",
+  "input_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/finite_guard_test_run.py": "4222eb67f7bdf64ec72bfcd5ccb3221a30b5a5b8472535e0243d680ad1c56eb3",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/finite_guard_fixture.py": "9bccc6f5b3bc832354d543a499e4d0dcfa18e6b8308631aef42ab902a17fd95b",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/native_finite_guard.py": "2b632a4bc51740035dc54dcdad3de4cc37a73f7bf5a0ecfc2455d1b550261327"
+  },
+  "records": [
+    {
+      "software_nonfinite_fixture": false,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.0742262180428952,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command.json": "5150e8b84ea57d8d3c24a35dae57f0b8817bbad2a501ceeed75bd53ee3929241",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "4c798ea139af17ae032f7659f90de1b202f0930441b45a4c86c31cf5f8a9e05a"
+        },
+        "nonfinite_observation": {},
+        "finite_guard_error": {},
+        "internal_limit_s": 5
+      },
+      "passed": true
+    },
+    {
+      "software_nonfinite_fixture": true,
+      "process": {
+        "exit_code": -15,
+        "process_status": "exited",
+        "runtime_s": 0.0689230130519718,
+        "pid": 45,
+        "artifacts": {
+          "stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command.json": "16180c0246a13f5a2e96fc3730ad340a29b518a936b577fe06e2af8f08ffa725",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "11d10d6d5ac7430b7992398a19657ab8db2d98dc91abfd8961fb828f97b79de0"
+        },
+        "nonfinite_observation": {
+          "reason": "actual_nonfinite_accepted_state",
+          "first_time_s": 0.001
+        },
+        "finite_guard_error": {},
+        "internal_limit_s": 5
+      },
+      "passed": true
+    }
+  ],
+  "scope": "DeliberatelygeneratedCSVfixtures testfiniteexit/nonfiniteabort ONLY. NOT SOFA states,physicsmeasurements ornewcontactresults.",
+  "fabrication_ready": false
+}

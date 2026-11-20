@@ -1,0 +1,29 @@
+"""Independent Native coupon provenance/momentum/reference diagnostics,not qualification."""
+import argparse,csv,json,subprocess,time
+from pathlib import Path
+import numpy as np
+import trimesh
+from analyse import BASE,sha,rotation
+
+def read(path):return list(csv.DictReader(path.open()))
+def vector(row,key):return np.fromstring(row[key],sep=' ')
+def valid_pair(x,y):return ('/wheel/surface/' in x and '/lands/' in y) or ('/lands/' in x and '/wheel/surface/' in y)
+
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs=2,required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic();records=[];series=[];inputs=[Path(__file__),BASE/'sofa/analyse.py']
+ for case in a.cases:
+  folder=BASE/'results'/case;meta=json.loads((folder/'summary.json').read_text());rows=read(folder/'wheel.csv');responses=read(folder/'response.csv');detector=read(folder/'detector.csv');moving=trimesh.load_mesh(folder/'wheel_mm.stl');land=trimesh.load_mesh(folder/'lands_mm.stl');massdata=json.loads((folder/'wheel.csv.mass.json').read_text());inputs.extend([folder/f for f in ('summary.json','wheel.csv','response.csv','detector.csv','wheel_mm.stl','lands_mm.stl','wheel.csv.mass.json')]);q=np.array([vector(r,'rigid_q') for r in rows]);v=np.array([vector(r,'rigid_v') for r in rows]);imp=np.array([vector(r,'object_impulse_Ns_Nms') for r in rows]);times=np.array([float(r['time_s']) for r in rows]);accum={t:np.zeros(6) for t in times};active=[];pairs=set();mass=meta['ASSUMED_mass_kg'];initial_speed=meta['initial_velocity_m_s'];I=np.array(meta['ASSUMED_homogeneous_inertia_kg_m2']);lower=[];energy=[]
+  for row in responses:
+   t=float(row['time_s']);accum[t]+=vector(row,'object_impulse_Ns_Nms');pairs.add((row['model0'],row['model1']))
+   if float(row['lambda_Ns'])>0:active.append(t)
+  for state,vel in zip(q,v):
+   R=rotation(state[3:]);points=moving.vertices*.001@R.T+state[:3];lower.append(float(min(.001-points[:,2].max(),points[:,2].min()+.001)));energy.append(float(.5*mass*(vel[:3]@vel[:3])+.5*vel[3:]@(R@I@R.T)@vel[3:]))
+  event=.0001/abs(initial_speed);reference_z=np.sign(initial_speed)*np.minimum(abs(initial_speed)*times,.0001);reference_v=np.where(times<event,initial_speed,0.);response_error=max(float(np.max(abs(accum[t]-imp[i]))) for i,t in enumerate(times));q0=np.array([0,0,0,0,0,0,1.]);v0=np.array([0,0,initial_speed,0,0,0.]);selected=sorted(set([0,len(rows)-1,*[int(np.argmin(abs(times-t))) for t in (event-meta['dt_s'],event,event+meta['dt_s'],event+2*meta['dt_s'])]]));intersections=[]
+  for index in selected:
+   solid=moving.copy();solid.apply_transform(np.block([[rotation(q[index,3:]),q[index,:3,None]*1000],[np.zeros((1,3)),np.ones((1,1))]]));hit=trimesh.boolean.intersection([solid,land],engine='manifold');intersections.append(dict(time_s=float(times[index]),nonempty=bool(len(hit.faces)),signed_volume_mm3=float(hit.volume) if len(hit.faces) else 0.))
+  records.append(dict(case=case,state_rows=len(rows),first_detector_record_s=float(detector[0]['accepted_time_s']) if detector else None,first_positive_response_s=min(active) if active else None,nominal_e0_reference_event_s=event,maximum_nominal_e0_position_error_m=float(abs(q[:,2]-reference_z).max()),maximum_nominal_e0_velocity_error_m_s=float(abs(v[:,2]-reference_v).max()),maximum_response_vs_body_impulse_error_Ns_Nms=response_error,minimum_conservative_two_plane_gap_m=min(lower),plane_bound_is_sufficient_for_all_outer_vertices_not_necessary_for_annular_contact=True,sampled_mesh_intersections=intersections,model_pairs=[list(x) for x in sorted(pairs)],pair_provenance_valid=all(valid_pair(x,y) for x,y in pairs),public_mass_kg=massdata['elements'][0]['mass_kg'],public_mass_vs_input_error_kg=abs(massdata['elements'][0]['mass_kg']-mass),public_inertia_vs_input_max_abs_error_kg_m2=float(np.max(abs(np.array(massdata['elements'][0]['matrix'])[3:,3:]-I))),maximum_solver_error=max(float(r['solver_error']) for r in rows),maximum_solver_iterations=max(int(r['solver_iterations']) for r in rows),initial_kinetic_energy_J=.5*mass*initial_speed**2,final_kinetic_energy_J=energy[-1],maximum_quaternion_norm_error=float(abs(np.linalg.norm(q[:,3:],axis=1)-1).max()),final_angular_speed_rad_s=float(np.linalg.norm(v[-1,3:])),full_energy_certified=False))
+  series.append((times,q,v,imp))
+ if not np.array_equal(series[0][0],series[1][0]):raise ValueError('common time identity required,no interpolation')
+ P=np.diag([1,1,-1]);A=-P;first=series[0];second=series[1];qerr=np.max(abs(first[1][:,:3]@P.T-second[1][:,:3]));verr=np.max(abs(first[2][:,:3]@P.T-second[2][:,:3]));werr=np.max(abs(first[2][:,3:]@A.T-second[2][:,3:]));d=dict(status='NATIVE_THRUST_DIAGNOSTICS_NOT_TIME_ENERGY_OR_PRODUCT_PASS',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f):sha(f) for f in inputs},records=records,reflection_position_max_abs_error_m=float(qerr),reflection_linear_velocity_max_abs_error_m_s=float(verr),reflection_angular_velocity_max_abs_error_rad_s=float(werr),runtime_s=time.monotonic()-start,scope='ActualNativegeometry/impulses read withoutstatecorrection. Nominalperfectlyinelastic1Dreference is a SEPARATEassumption;detectoralarmrecord isNOTcontinuousbirthtime. MeshBoolean samples retain ALLnonempty results includingzero/negativevolume. Two-plane global bound can be pessimisticoutsideannulus;negativebound notproof ofpenetration. Reflectionisdiagnostic,notdtconvergence. Rootassembly/friction/wire/FEM/holding andfullenergyNOTqualified.',fabrication_ready=False)
+ (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(d,indent=2));print(json.dumps(dict(records=records,reflection_position_max_abs_error_m=float(qerr),reflection_linear_velocity_max_abs_error_m_s=float(verr),reflection_angular_velocity_max_abs_error_rad_s=float(werr)),indent=2))
+if __name__=='__main__':main()

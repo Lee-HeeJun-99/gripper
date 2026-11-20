@@ -1,0 +1,95 @@
+{
+  "status": "CONDITIONAL_ROOT_STACK_FACTORIAL_NOT_QUALIFICATION",
+  "source_commit": "2a81fb044200531e52ba51ac2f9fca946b6c7888",
+  "input_hashes": {
+    "cad/root_thrust_budget.py": "85e637eeab4558304b4908ddb0bb96741ab9648dffb8ac46464fdd1b9c2294f3",
+    "config/root_thrust_v37.json": "153681c8f1a68857b9b6ba8b1bed92214cc1c5e29b5425c8a711431802455e7d",
+    "results/product_root_motion793/summary.json": "dfd9a185f49ec8a8c5697ae3312cb6c0c95674d5c4bcacf344b058a5d51421ff"
+  },
+  "records": [
+    {
+      "candidate": "baseline",
+      "condition": "nominal",
+      "minimum_axial_clearance_mm": 0.9999999999999998,
+      "maximum_centered_wander_mm": 0.4999999999999999,
+      "available_wire_side_mm": 0.15000000000000002,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": -0.353935979085193,
+      "conditional_nonbinding_and_alignment": false
+    },
+    {
+      "candidate": "baseline",
+      "condition": "ASSUMED_NOT_MEASURED",
+      "minimum_axial_clearance_mm": 0.8999999999999998,
+      "maximum_centered_wander_mm": 0.5499999999999999,
+      "available_wire_side_mm": 0.115,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": -0.43893597908519305,
+      "conditional_nonbinding_and_alignment": false
+    },
+    {
+      "candidate": "lands_only",
+      "condition": "nominal",
+      "minimum_axial_clearance_mm": 0.19999999999999996,
+      "maximum_centered_wander_mm": 0.09999999999999998,
+      "available_wire_side_mm": 0.15000000000000002,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": 0.046064020914806936,
+      "conditional_nonbinding_and_alignment": true
+    },
+    {
+      "candidate": "lands_only",
+      "condition": "ASSUMED_NOT_MEASURED",
+      "minimum_axial_clearance_mm": 0.09999999999999995,
+      "maximum_centered_wander_mm": 0.14999999999999997,
+      "available_wire_side_mm": 0.115,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": -0.03893597908519307,
+      "conditional_nonbinding_and_alignment": false
+    },
+    {
+      "candidate": "wide_only",
+      "condition": "nominal",
+      "minimum_axial_clearance_mm": 0.9999999999999998,
+      "maximum_centered_wander_mm": 0.4999999999999999,
+      "available_wire_side_mm": 0.25,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": -0.253935979085193,
+      "conditional_nonbinding_and_alignment": false
+    },
+    {
+      "candidate": "wide_only",
+      "condition": "ASSUMED_NOT_MEASURED",
+      "minimum_axial_clearance_mm": 0.8999999999999998,
+      "maximum_centered_wander_mm": 0.5499999999999999,
+      "available_wire_side_mm": 0.21499999999999997,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": -0.3389359790851931,
+      "conditional_nonbinding_and_alignment": false
+    },
+    {
+      "candidate": "combined",
+      "condition": "nominal",
+      "minimum_axial_clearance_mm": 0.19999999999999996,
+      "maximum_centered_wander_mm": 0.09999999999999998,
+      "available_wire_side_mm": 0.25,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": 0.1460640209148069,
+      "conditional_nonbinding_and_alignment": true
+    },
+    {
+      "candidate": "combined",
+      "condition": "ASSUMED_NOT_MEASURED",
+      "minimum_axial_clearance_mm": 0.09999999999999995,
+      "maximum_centered_wander_mm": 0.14999999999999997,
+      "available_wire_side_mm": 0.21499999999999997,
+      "old_motion_misalignment_mm": 0.003935979085193109,
+      "strict_alignment_margin_mm": 0.061064020914806894,
+      "conditional_nonbinding_and_alignment": true
+    }
+  ],
+  "actual_endplay_mm": null,
+  "actual_process_capability_mm": null,
+  "scope": "Four-factorial geometric hypotheses keep pitchR2/OD6/wireD0.5 andOLD793motion. Worst axialwander added conservatively toOLDmisalignment. Assumederrors are illustrative,not shop/ISO/supplier/physical data. No friction/load-deflection/wear/pullout certification;old770FAIL preserved.",
+  "fabrication_ready": false
+}

@@ -1,0 +1,36 @@
+"""Actual Native finite wheel/land end-stop coupon;NOT gripper or time qualification."""
+import argparse,csv,json,subprocess,sys,time,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+from native_bending_coupon import guarded,flat
+from native_plane_policy import add
+from observer_identity import compiled_pair_rows
+sys.path.insert(0,str(BASE/'cad'))
+from root_thrust_candidate import wheel,lands
+from manufacturing_assembly import evaluate
+
+def collision(parent,body,name,shape,group,fixed=False):
+ node=add(parent,'Node',name=name);v=shape.vertices*.001;faces=shape.faces;edges=sorted({tuple(sorted((int(face[j]),int(face[(j+1)%3])))) for face in faces for j in range(3)});add(node,'MeshTopology',name='topology',position=flat(v),triangles=flat(faces),edges=flat(edges));add(node,'MechanicalObject',name='points',template='Vec3d',position=flat(v))
+ if fixed:add(node,'FixedConstraint',indices=' '.join(map(str,range(len(v)))))
+ else:add(node,'RigidMapping',input=body,output='@points')
+ for kind in ('Triangle','Line','Point'):add(node,kind+'CollisionModel',group=group,moving=0 if fixed else 1,simulated=0 if fixed else 1)
+
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--dt',type=float,default=.00025);p.add_argument('--velocity',type=float,default=.01);a=p.parse_args()
+ if a.dt<=0 or a.velocity==0:raise ValueError('positive dt and nonzero axial speed required')
+ out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic();physical=BASE/'cad/build_default_control332/libReGripProductSequence.so';direct,frozen=compiled_pair_rows()
+ if sha(physical)!='3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0':raise ValueError('physical observer identity changed')
+ cfgfile=BASE/'config/root_thrust_v37.json';cfg=json.loads(cfgfile.read_text());moving=evaluate(wheel(cfg['new_groove_width']));fixed=evaluate(lands(cfg));moving.export(out/'wheel_mm.stl');fixed.export(out/'lands_mm.stl');si=moving.copy();si.apply_scale(.001);mass=.0001;inertia_per_mass=si.moment_inertia/si.volume;duration=.02;steps=round(duration/a.dt)
+ if abs(steps*a.dt-duration)>1e-15:raise ValueError('duration must be integer steps')
+ root=ET.Element('Node',name='root',dt=str(a.dt),gravity='0 0 0')
+ for plugin in ('AnimationLoop','Constraint.Lagrangian.Correction','Constraint.Lagrangian.Solver','Constraint.Lagrangian.Model','Constraint.Projective','LinearSolver.Direct','Mass','ODESolver.Backward','StateContainer','Topology.Container.Constant','Mapping.NonLinear','Collision.Detection.Algorithm','Collision.Detection.Intersection','Collision.Geometry','Collision.Response.Contact'):add(root,'RequiredPlugin',pluginName='Sofa.Component.'+plugin)
+ for binary in (physical,direct):add(root,'RequiredPlugin',pluginName=binary)
+ add(root,'FreeMotionAnimationLoop');add(root,'BlockGaussSeidelConstraintSolver',name='constraints',tolerance=1e-10,maxIterations=1000,computeConstraintForces=1);add(root,'EulerImplicitSolver',rayleighMass=0,rayleighStiffness=0);add(root,'EigenSparseLU',name='linear');add(root,'GenericConstraintCorrection');add(root,'CollisionPipeline',depth=6);add(root,'BruteForceBroadPhase');add(root,'BVHNarrowPhase',name='narrow');add(root,'LocalMinDistance',alarmDistance=.0002,contactDistance=0);add(root,'CollisionResponse',name='responses',response='FrictionContactConstraint',responseParams='mu=0')
+ node=add(root,'Node',name='wheel');add(node,'MechanicalObject',name='frames',template='Rigid3d',position='0 0 0 0 0 0 1',velocity=f'0 0 {a.velocity} 0 0 0');add(node,'UniformMass',template='Rigid3d',vertexMass=' '.join(map(str,[mass,si.volume,*inertia_per_mass.ravel()])));add(node,'NativeRigidJournal',body='@frames',solver='@../constraints',auditMass=1,filename=out/'wheel.csv');collision(node,'@../frames','surface',moving,1);collision(root,None,'lands',fixed,2,True)
+ add(root,'NativePairRows',body='@wheel/frames',solver='@constraints',filename=out/'direct.csv');add(root,'NativeResponseRows',manager='@responses',body='@wheel/frames',solver='@constraints',filename=out/'response.csv');add(root,'NativeDetectionPairs',narrow='@narrow',filename=out/'detector.csv');ET.ElementTree(root).write(out/'scene.scn');(out/'producer.py').write_bytes(Path(__file__).read_bytes())
+ inputs=[Path(__file__),cfgfile,BASE/'cad/root_thrust_candidate.py',BASE/'cad/manufacturing_assembly.py',physical,direct,frozen,Path('/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00')];before={str(x):sha(x) for x in inputs};command=['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(steps),'--hideProgressBar',str(out/'scene.scn')];process=guarded(command,out/'process',480);logs=''.join((out/'process'/f).read_text(errors='replace') for f in ('stdout.log','stderr.log'));states=list(csv.DictReader((out/'wheel.csv').open())) if (out/'wheel.csv').exists() else [];detector=list(csv.DictReader((out/'detector.csv').open())) if (out/'detector.csv').exists() else [];responses=list(csv.DictReader((out/'response.csv').open())) if (out/'response.csv').exists() else [];q=[np.fromstring(r['rigid_q'],sep=' ') for r in states];v=[np.fromstring(r['rigid_v'],sep=' ') for r in states];imp=[np.fromstring(r['object_impulse_Ns_Nms'],sep=' ') for r in states];momentum=[];last=np.array([0,0,a.velocity])
+ for velocity,impulse in zip(v,imp):momentum.append(float(np.linalg.norm(mass*(velocity[:3]-last)-impulse[:3])));last=velocity[:3]
+ d=dict(status='NATIVE_FINITE_THRUST_COUPON_RUN_ONLY' if process['exit_code']==0 and '[ERROR]' not in logs and len(states)==steps and before=={str(x):sha(x) for x in inputs} else 'FAIL_NATIVE_THRUST_COUPON',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes=before,scene_sha256=sha(out/'scene.scn'),binary_sha256=sha(physical),SDK='/home/ubuntu/SOFA/v26.06.00',command=command,dt_s=a.dt,duration_s=duration,initial_velocity_m_s=a.velocity,ASSUMED_mass_kg=mass,ASSUMED_homogeneous_inertia_kg_m2=(inertia_per_mass*mass).tolist(),process=process,sofa_errors=logs.count('[ERROR]'),state_rows=len(states),detector_rows=len(detector),response_rows=len(responses),maximum_abs_z_m=max((abs(r[2]) for r in q),default=None),final_v_m_s=v[-1].tolist() if v else None,maximum_linear_momentum_residual_Ns=max(momentum,default=None),runtime_s=time.monotonic()-start,scope='Actual installedNative finiteOD6wheel / integralannularland subgeometry;fixedlands,freerigidsinglewheel,zeroGravity/friction. Mass0.1g is RESEARCHASSUMPTION,not measured material. No fork/frame/axle/wire/Cable/fullmechanism,jointrotationorwear qualification. No newODE/contactsolver;existingread-onlyobservers reused. Endpointnonpenetration/momentum examined separately;runcompletionNOTphysicaltime/energy/holdingPASS.',fabrication_ready=False)
+ (out/'summary.json').write_text(json.dumps(d,indent=2));print(json.dumps({k:d[k] for k in ('status','state_rows','detector_rows','response_rows','sofa_errors','maximum_abs_z_m','maximum_linear_momentum_residual_Ns','runtime_s')},indent=2))
+if __name__=='__main__':main()

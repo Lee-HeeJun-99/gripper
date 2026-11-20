@@ -14,6 +14,30 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_root_thrust_factorial_keeps_assumed_tolerances_separate(self):
+  d=result('product_root_stack806');r={(x['candidate'],x['condition']):x for x in d['records']};self.assertFalse(r['baseline','nominal']['conditional_nonbinding_and_alignment']);self.assertFalse(r['wide_only','nominal']['conditional_nonbinding_and_alignment']);self.assertFalse(r['lands_only','ASSUMED_NOT_MEASURED']['conditional_nonbinding_and_alignment']);self.assertGreater(r['combined','ASSUMED_NOT_MEASURED']['strict_alignment_margin_mm'],.06);self.assertIsNone(d['actual_endplay_mm']);self.assertFalse(d['fabrication_ready'])
+ def test_finite_thrust_candidates_retain_actual_obstacles(self):
+  for tag,count in [('product_root_lands807',6),('product_root_wide808',6),('product_root_thrust809',12)]:
+   d=result(tag);self.assertEqual(len(d['records']),count);self.assertEqual(d['part_count'],292);self.assertFalse(any(r['classification']=='OBSTACLE' for r in d['wire_intersections']));self.assertFalse(d['fabrication_ready'])
+  service=result('product_root_thrust_service813');self.assertEqual(len(service['pins']),24);self.assertFalse(any(r['full_swept_intersections'] for r in service['pins']));self.assertFalse(any(r['intersections'] for r in service['tools']+service['hole_gauges']))
+ def test_native_thrust_run_and_nonfinite_failures_are_not_qualification(self):
+  for case in ('product_root_native810','product_root_native811'):
+   d=result(case);self.assertEqual(d['state_rows'],80);self.assertEqual(d['sofa_errors'],0);self.assertLess(d['maximum_linear_momentum_residual_Ns'],1e-20);self.assertFalse(d['fabrication_ready'])
+  for case in ('product_root_native_strict815','product_root_native_strict816'):
+   d=result(case);self.assertTrue(d['status'].startswith('FAIL'));self.assertEqual(d['state_rows'],43);self.assertAlmostEqual(d['first_nonfinite_state_time_s'],.01075);self.assertIsNone(d['actual_runtime_s'])
+  d=result('product_root_normal818');self.assertTrue(all(r['first_nonfinite_J_events'][0]['free_position_finite'] for r in d['records']));self.assertTrue(all('LineCollisionModel' in r['first_nonfinite_J_events'][0]['model_pair'][0] for r in d['records']))
+ def test_native_policy_intervention_preserves_scene_contract_and_cost(self):
+  d=result('product_root_policy828');self.assertTrue(d['same_physical_scene_after_explicit_policy_normalization']);self.assertTrue(d['strict_to_alternative_only_intersector_class_changed']);self.assertGreater(d['alternative_vs_default_actual_runtime_ratio'],1)
+  d=result('product_root_minproximity_assess827');self.assertTrue(all(r['pair_provenance_valid'] for r in d['records']));self.assertTrue(all(r['maximum_response_vs_body_impulse_error_Ns_Nms']==0 for r in d['records']));self.assertTrue(all(not r['full_energy_certified'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
+ def test_native_analysis_failures_and_ordered_pair_correction_preserved(self):
+  self.assertTrue(result('product_root_minproximity_assess822')['status'].startswith('FAIL'));self.assertTrue(result('product_root_minproximity_assess826')['status'].startswith('FAIL'));self.assertTrue((BASE/'results/product_root_native_assess812/PROVENANCE_CORRECTION.json').is_file())
+  from root_thrust_assess import valid_pair
+  self.assertTrue(valid_pair('/lands/TriangleCollisionModel1','/wheel/surface/PointCollisionModel1'));self.assertFalse(valid_pair('/lands/a','/lands/b'))
+ def test_finite_launcher_fixture_is_explicitly_not_native_physics(self):
+  d=result('product_root_guard825');self.assertIn('SOFTWARE',d['status']);self.assertTrue(all(r['passed'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
+  from native_finite_guard import finite_guard
+  with self.assertRaises(ValueError):finite_guard([],Path('/tmp/regrip_not_created/process'),421)
+  with self.assertRaises(ValueError):finite_guard([],Path('/tmp/regrip_not_created/process'),5,state_file=BASE/'results/not_this_trial.csv')
  def test_compact_drive_changes_only_support_and_retains_full_service(self):
   d=result('product_compact_comparison801');self.assertEqual(len(d['changed_parts']),6);self.assertTrue(all(r['part_count']==292 for r in d['records']));self.assertGreater(d['radial_extent_reduction_percent'],10);self.assertIsNone(d['actual_stiffness_N_per_mm'])
   service=result('product_compact_full_service803');self.assertEqual(len(service['pins']),24);self.assertEqual(len(service['tools']),18);self.assertEqual(len(service['hole_gauges']),12);self.assertFalse(any(r['full_swept_intersections'] for r in service['pins']));self.assertFalse(any(r['intersections'] for r in service['tools']+service['hole_gauges']));self.assertFalse(service['fabrication_ready'])

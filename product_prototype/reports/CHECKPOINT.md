@@ -1,5 +1,10 @@
 ## Compact drive797–805 — 2026-11-21
 
+Featurecommitsa57d9db,31f37d5. Append-onlyarchive:
+evidence_product_root_compact_v41/manifest.json,28cases/11050files,
+10722priorimmutablehasheschecked0mismatches. IncludesFAIL/corrected/rejected
+cases,not28PASSclaims. Noactiveanalysischildrenorautomaticexitcontinuation.
+
 Authority:COMPACT_DRIVE_CONTINUATION_20261121.md. Featurebaselinea57d9db.
 V36full292partCAD:meshes/b3_compact_root_v36/full_assembly_recipe.json.
 Only6supportshape recipeschange;outerR94.6495->84.2534(-10.9839%),wire0.

@@ -1,3 +1,13 @@
+## Compact V36 reference comparison — 2026-11-21
+
+V34outerR94.6495268mm,V36outerR84.2533606mm,10.9839%smaller;6supportshapes
+changedamongmatched292parts. Supportvolumes16368.66->13726.02mm3;notactual
+mass/stiffnessimprovementorequal-materialHoldingcomparison. OtherSkin/Rail/
+Guide/pin/wheel/drumrecipesunchanged.803actual24sweptpins/12bores/18tools
+clear.791transformcoverageinvalid,correctedV34result804clear. V36remains
+thread/material/tolerance/strength/time/mesh/physicalqualificationOPEN.
+Authority:COMPACT_DRIVE_CONTINUATION_20261121.md;feature31f37d5.
+
 ## Root variants785–796 — 2026-11-21
 
 V32loosenut:connectedbutinnernuttools6/6blocked byMount;notselected.

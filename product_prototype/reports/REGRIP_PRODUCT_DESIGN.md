@@ -1,3 +1,14 @@
+## Compact V36 support update — 2026-11-21
+
+CurrentreferenceCAD:meshes/b3_compact_root_v36/full_assembly_recipe.json,
+292parts/proxies;actualCAD/BOM/sections:results/product_compact_review802.
+OuterR84.2534mm vs94.6495mm prior;6supportshapechangesonly.24fullpin
+sweeps/12bores/18nominaltoolspathsclear803. Noactualthread/headslot/strength/
+preload/material/STEPqualification. Old7914canonicalserviceplacementsinvalid;
+804correctsV34service,803validatesV36fullstaticservice. Featuresa57d9db,31f37d5.
+52softwaretestsPASS,notphysicalGates. Evidencev41verifies10722priorimmutable
+hashes0mismatches,includes28cases/failures/corrections. FinaldesignNOTselected.
+
 ## Root retention design update785–796 — 2026-11-21
 
 Newcandidate:meshes/b3_root_canonical_v34/full_assembly_recipe.json,292parts.

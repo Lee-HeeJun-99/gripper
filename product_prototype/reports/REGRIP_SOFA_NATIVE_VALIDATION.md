@@ -1,3 +1,12 @@
+## Compact support797–805 scope — 2026-11-21
+
+No newSOFArun. V36onlychanges6supportshaperecipes,outerRsmaller10.9839%;
+CADserviceclearance803and52softwaretests805arenotNativephysicsPASS.
+791nestedserviceplacementcoverageREJECTED/804corrected;thiscorrectiondoesnot
+changeoldNative/B3raw. Evidencev41checks10722priorimmutablehashes0mismatches.
+Nativeadoptionstillrequiresnewfinitejointmass/inertia/control/pathfromNEWstate.
+Oldcontact/time/FEMmeshFAILs,100g/Lift/Recovery/STEPGatesremainopen.
+
 ## Root mechanism785–796 scope — 2026-11-21
 
 No newSOFAsimulation/binary. CADmechanism nowhasfiniteRootmount/retention

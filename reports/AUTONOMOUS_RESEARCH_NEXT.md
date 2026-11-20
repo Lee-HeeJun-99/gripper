@@ -1,5 +1,8 @@
 ## Latest compact drive797–805 — 2026-11-21
 
+Featurecommitsa57d9db,31f37d5. Evidencev41:28cases/11050files,10722previous
+immutablehashesverified0mismatches;failures/correctionsincluded,notallPASS.
+
 Readproduct_prototype/reports/COMPACT_DRIVE_CONTINUATION_20261121.md.
 CurrentCADcandidate:meshes/b3_compact_root_v36(full292parts),outerR84.2534mm
 vs94.6495mm prior;only6supportshapechanges.24actualfullpinsweeps/12bores/

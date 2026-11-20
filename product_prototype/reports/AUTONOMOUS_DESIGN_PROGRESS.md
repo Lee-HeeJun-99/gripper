@@ -1,3 +1,15 @@
+## Compact support milestone797–805 — 2026-11-21
+
+Featuresa57d9db,31f37d5. ActualouterR94.6495->84.2534mm(-10.9839%);
+matched292componentnames,only6supportshaperecipeschange. Fullactual24pin
+sweeps/12bores/18nominaltoolsclear803.52design/softwaretestsPASS805.
+791fourcanonicalserviceplacementsREJECTEDbycorrection;804repairsV34service.
+787/800failure,790coveragecorrection,794visualrejectionretained.
+Append-onlyevidence:evidence_product_root_compact_v41/manifest.json,
+28cases/11050files,10722priorimmutablehasheschecked0mismatches. Not28PASSclaims.
+NEXTactualretention/thread/head/material/strengthandframeforce-deflection,
+wheelstack/tolerance/friction;notapprovedfabricationornewSOFAqualification.
+
 ## Root mount/retention785–796 — 2026-11-21
 
 ImplementedfinitePalm-connectedRootforks;loosenutaccessFAIL6/6preserved.

@@ -1,3 +1,14 @@
+## Compact V36 nominal service — NOT FABRICATION READY (2026-11-21)
+
+Usemeshes/b3_compact_root_v36/full_assembly_recipe.json,292parts/proxies.
+803composesallnestedcanonicaltransformsandtests24full10mmpinextrusions,
+12actualPalm/rootbridgebores,18nominaldriverpaths:0blocked.791previous4
+canonicalserviceplacementsincorrect;804correctedV34service6/6clear.
+KeepRootoutwardandturnpinnegative-localaxisservice. Actualthread/headslot,
+material,torquepreload,anti-loosening,pulloutandhand/wrenchaccessstillTBD.
+CompactsupportreducesouterRto84.2534mm;noassembledstiffnessqualification.
+CAD/BOM/sections:results/product_compact_review802. NoSTEPgenerated.
+
 ## Root assembly hypothesis785–796 — NOT FABRICATION READY (2026-11-21)
 
 Rootloosenuts cannotbe serviced frominside whileMountinstalled(786FAIL6/6).

@@ -1,3 +1,15 @@
+## Compact support797–805 milestone — 2026-11-21
+
+Functionalcommitsa57d9db,31f37d5. V36actual292partCAD:6supportshapechanges,
+outerR94.6495->84.2534mm(-10.9839%).80324fullpinextrusions/12bores/18nominal
+tools0blocked;52design/softwaretestsPASS805. NoSOFArunornewphysicalPASS.
+791nestedtransformcoverageREJECTED,804repaired;787/800failures,790/794
+correctionsremain. evidence_product_root_compact_v41:28cases/11050files,
+10722priorimmutablehasheschecked0mismatches. ProductqualificationstillOPEN.
+NEXTactualRootretention/thread/head/material,pullout/preload/strength,
+frameforce-deflectionandwheelstack/tolerance/friction;Nativechangedmechanism
+adoptionfromNEWstateafterrequiredphysicsconditions. Noautomaticcontinuation.
+
 ## Root mount/retention785–796 — 2026-11-21
 
 NewfiniteRootmount/retentioncandidate created;loosenuttoolFAIL6/6preserved.

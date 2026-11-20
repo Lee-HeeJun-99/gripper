@@ -14,6 +14,18 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_full_reference_wire_and_new_service_not_complete_qualification(self):
+  full=result('product_wire_full736')['full_assembly'][0];self.assertEqual(full['segments'],36);self.assertEqual(full['nonempty_intersections'],[])
+  service=result('product_bore_service732');self.assertEqual(len(service['records']),12);self.assertFalse(any(r['positive_intersections'] for r in service['records']))
+  self.assertEqual(len(result('product_bore_stl734')['records']),160)
+  self.assertTrue(result('product_drive_gate737')['qualification']['status'].startswith('BLOCKED'));self.assertIsNone(result('product_drive_gate737')['qualification']['motor_selected'])
+ def test_axis_then_bore_are_separate_and_do_not_certify_moving_wire(self):
+  a,b=result('product_wire_solid731')['candidates'];self.assertEqual(a['necessary_condition_failures'],6);self.assertGreater(a['positive_solid_intersections'],0);self.assertEqual(b['necessary_condition_failures'],0);self.assertEqual(b['positive_solid_intersections'],0)
+  self.assertIsNone(result('product_wire_solid731')['minimum_bend_radius_mm'])
+  old=design('b3_manufacturing_service_v19');new=design('b3_manufacturing_bore_v21')
+  self.assertEqual(old['baseline_config']['tendon']['guide_hole_radius'],.6);self.assertEqual(new['baseline_config']['tendon']['guide_hole_radius'],.7)
+  for p,q in zip(old['parts'],new['parts']):
+   if p['group'] not in ('eyelet',):self.assertEqual(p,q)
  def test_service_slot_fixes_detected_sampled_removal_not_CCD(self):
   old=result('product_cartridge_service717');new=result('product_cartridge_service721');self.assertEqual(sum(bool(r['positive_intersections']) for r in old['records']),3);self.assertEqual(len(new['records']),12);self.assertFalse(any(r['positive_intersections'] for r in new['records']));self.assertIn('NOT_SWEPT',new['status'])
  def test_finite_bore_condition_exposes_unmodeled_wire_conflict(self):

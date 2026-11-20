@@ -86,6 +86,12 @@ def material_surfaces(cfg):
 
 
 def recipe(cfg,design):
+ cfg=copy.deepcopy(cfg)
+ eye=design.get('eyelet_design',{})
+ if 'bore_radius_mm' in eye:
+  radius=eye['bore_radius_mm']
+  if not 0<radius<cfg['tendon']['guide_outer_radius']:raise ValueError('bore must leave positive eyelet wall')
+  cfg['tendon']['guide_hole_radius']=radius
  parts=[];mates=[];c=design['cassette'];drive=design['drive'];mount=design['mount'];clear=c['pocket_clearance_mm'];holes=c['bolt_clearance_diameter_mm']/2;fast=design.get('fastener_proxies',{});fasteners=fast.get('enabled',False)
  def add(name,shape,group,finger=None,role='manufacturing_candidate',**meta):
   parts.append(dict(name=name,shape=shape,group=group,finger=finger,role=role,**meta))
@@ -139,6 +145,14 @@ def recipe(cfg,design):
   for cable,side in enumerate((-1,1)):
    for k,x in enumerate(cfg['tendon']['guide_stations']):
     p=[x,side*(width(cfg,x)/2+guide_outboard(cfg,x)),guide_normal(cfg,x)];G=np.eye(4);G[:3,:3]=guide_basis(cfg,np.asarray(p),angle);G[:3,3]=world(cfg,p,angle);join=f'f{finger}_c{cable}_s{k}'
+    if eye.get('axis_model','reference_tangent')=='branch_bisector':
+     stations=[0]+cfg['tendon']['guide_stations'];points=np.asarray([world(cfg,[xx,side*(width(cfg,xx)/2+guide_outboard(cfg,xx)),guide_normal(cfg,xx)],angle) for xx in stations]);segments=np.diff(points,axis=0);segments/=np.linalg.norm(segments,axis=1)[:,None]
+     axis=segments[k]+(segments[k+1] if k+1<len(segments) else 0)
+     if np.linalg.norm(axis)==0:raise ValueError('undefined branch bisector')
+     axis/=np.linalg.norm(axis);ey=G[:3,1]-axis*(axis@G[:3,1])
+     if np.linalg.norm(ey)==0:raise ValueError('undefined eyelet transverse frame')
+     ey/=np.linalg.norm(ey);G[:3,:3]=np.column_stack((axis,ey,np.cross(axis,ey)))
+    elif eye.get('axis_model','reference_tangent')!='reference_tangent':raise ValueError('unknown eyelet axis model')
     add(join+'_eyelet',transform(poly(ring),G),'eyelet',finger,join_id=join)
     bracket=poly(support(cfg,x,side,angle))
     if keepouts is not None:bracket=cut(bracket,transform(poly(keepouts['rail_left' if side<0 else 'rail_right']),R))

@@ -85,6 +85,11 @@ These assumptions expose required material/joint tests,not justify approval.
 758design regression includes analytic segment/sphere,force-budget references,
 finite module readback,source identity,all-frame andeventworst scope guards.
 
+759closed remaining wheel-wheel pair gap:54actual STLreadbacks andall1431
+module pairs through AABB/Manifold;0nonemptyintersections,0.749s. Combined
+MODULE_BOM.csv records18wheels/18forks/18pins andmissingmounts explicitly.
+StillUNMOUNTED,not wholeproductassembly clearance;760finaldesignregression.
+
 Next priority:design actual Palm-to-fork mounting bridges andaxle retention;
 verify full finite routes (including root inlet redirect),tolerances andtool
 access. Use known conditional loads but do not pick material from unmeasured

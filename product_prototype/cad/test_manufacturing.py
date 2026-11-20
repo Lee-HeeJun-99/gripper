@@ -14,6 +14,8 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_all_finite_drive_module_pairs_checked_without_assembly_upgrade(self):
+  d=result('product_drive_modules759');self.assertEqual(d['module_count'],54);self.assertEqual(d['possible_pairs'],1431);self.assertEqual(len(d['actual_STL_readbacks']),54);self.assertFalse(d['nonempty_intersections']);self.assertFalse(d['full_drive_assembly'])
  def test_pulley_force_budget_is_idealized_and_does_not_select_material(self):
   from pulley_load_budget import budget
   r=budget(1.5,math.pi/2,1.,1.,3.,5.,2.8,1.);self.assertAlmostEqual(r['conditional_turn_load_N'],1.5*math.sqrt(2));self.assertAlmostEqual(r['double_shear_pin_average_MPa'],r['conditional_turn_load_N']/(math.pi/2))

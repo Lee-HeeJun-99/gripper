@@ -1,5 +1,9 @@
 ## Deformed wire / drivetrain continuation744–758 — 2026-11-20
 
+759supplement:all54finite modules /1431pairs andSTLreadbacks checked,
+0nonempty intersections;combined MODULE_BOM.csv retained. 760finalregression.
+Feature commits3ad4792,af9effb;finalarchivecommit recorded in gitlog.
+
 Authority:DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.
 First functional commit3ad479279bee648fc98cb1a895537539b1942f57;later modules
 and evidence commits follow. All old Native/SDK/Raw/Gates unchanged.

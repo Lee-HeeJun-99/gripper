@@ -14,6 +14,14 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_bridge_failures_are_preserved_and_not_upgraded(self):
+  direct=result('product_bridge_direct761');self.assertTrue(direct['wire_intersections']);self.assertTrue(direct['nonempty_solid_intersections'])
+  self.assertTrue(result('product_bridge_tower762')['status'].startswith('FAIL'))
+  before=result('product_bridge_connected763');self.assertTrue(before['wire_intersections'])
+  new=result('product_bridge_backroute764');self.assertTrue(new['dependencies_unchanged']);self.assertEqual(new['status'],'REFERENCE_GEOMETRY_INTERSECTIONS_REMAIN');self.assertFalse(new['analysis']['wire_intersections']);self.assertEqual(len(new['analysis']['nonempty_solid_intersections']),6)
+ def test_nominal_mating_proof_does_not_hide_service_failure(self):
+  d=result('product_bridge_mating766');self.assertEqual(len(d['records']),6);self.assertTrue(all(r['all_bits_exclude_palm_open_interior'] for r in d['records']))
+  service=result('product_bridge_assembly765');self.assertFalse(any(r['intersections'] for r in service['hole_gauges']));self.assertFalse(any(r['intersections'] for r in service['mount_driver_access']));self.assertEqual(sum(bool(r['intersections']) for r in service['pin_withdrawal_samples']),3)
  def test_all_finite_drive_module_pairs_checked_without_assembly_upgrade(self):
   d=result('product_drive_modules759');self.assertEqual(d['module_count'],54);self.assertEqual(d['possible_pairs'],1431);self.assertEqual(len(d['actual_STL_readbacks']),54);self.assertFalse(d['nonempty_intersections']);self.assertFalse(d['full_drive_assembly'])
  def test_pulley_force_budget_is_idealized_and_does_not_select_material(self):

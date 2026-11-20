@@ -1,0 +1,49 @@
+{
+  "source_commit": "67906a68b3231a77efbde6efc8b57613246e7ec2",
+  "producer_sha256": "e0af0949d9a402d54a26f58829c7933e3d2c718caf8d4c1aabba65f43885f07e",
+  "input_hashes": {
+    "product_prototype/results/product_drive707/summary.json": "20ff6247d11715f7c7098ae173db2ccc8aceb6a231395ce5b7067c350d86c873",
+    "product_prototype/config/procurement_candidates_v12.json": "ee99a31efcd35d102005123fae324a4bb5f8464653885ca15fc8707c9b2e46b5"
+  },
+  "qualification": {
+    "status": "BLOCKED_MISSING_PHYSICAL_COMPONENT_DATA",
+    "missing": [
+      "continuous_output_torque_Nm",
+      "loaded_speed_rpm",
+      "required_stroke_mm",
+      "thermal_duty_pass",
+      "horn_interface_verified",
+      "wire_minimum_bend_radius_mm",
+      "termination_pullout_N",
+      "skin_rail_bond_fatigue_pass"
+    ],
+    "motor_selected": null,
+    "material_selected": null
+  },
+  "measurements": {
+    "continuous_output_torque_Nm": null,
+    "loaded_speed_rpm": null,
+    "required_stroke_mm": null,
+    "thermal_duty_pass": null,
+    "horn_interface_verified": null,
+    "wire_minimum_bend_radius_mm": null,
+    "termination_pullout_N": null,
+    "skin_rail_bond_fatigue_pass": null
+  },
+  "conditional_torque_range_Nm": [
+    0.06,
+    0.096
+  ],
+  "candidate_catalog_date": "2026-11-20",
+  "scope": "Uses existing manufacturer-candidate snapshot and conditional budgets;NO new procurement recommendation, stock verification, purchase or physical experiment. Stall/no-load ratings do not satisfy continuous loaded duty. CAD V21 retains baseline0.5mm wire;0.45mm supplier alternatives require separate geometry.",
+  "tests": [
+    {
+      "case": "all_unmeasured_must_block",
+      "pass_result": true
+    },
+    {
+      "case": "zero_not_invented",
+      "pass_result": true
+    }
+  ]
+}

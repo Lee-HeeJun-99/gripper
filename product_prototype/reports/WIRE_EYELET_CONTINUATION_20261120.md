@@ -43,6 +43,15 @@ No motor/material approved, purchased or measured. Rail grade/join unknown.
 
 ## Remaining and next executable work
 
+742–743 continuation (after9d0829b):implemented frozen-motion bore replay over
+actual historical485Rigid3 frames. Correctly includes CAD-to-body centre offset
+and relative axis rotation,not body origin asEyelet centre. Same baselineconfig
+SHA verified;historicalfloor-only motion independently inspected.36sites have
+0failed savedframes/holdframes;maxrequiredradius0.66934932158mm vs0.7mm bore.
+No candidate dynamics inferred. Future producer explicitly rejects moving
+fixture commands without an actual pullpoint path.743adds this regression.
+Evidencev37covers728–741;later archive captures742–743 separately.
+
 Further cycle739–741 after first feature commit32a4825:
 Circular fillet radius2mm (DESIGN ASSUMPTION,not supplier minimum) implemented.
 Analytic90deg reference tangencies and constant radius tested; overlapping
@@ -57,8 +66,10 @@ results/product_wire_round739 and product_wire_round740. No Native run.
 1. The finite rounded reference path is now implemented and screened at a
    proposed2mm radius. Obtain supplier minimum radius and fatigue coupon data;
    do not treat this successful geometric screen as material suitability.
-2. Verify deformed hardware using actual B3 accepted states and changed Eyelet
-   frames; do not transfer old collision/mass qualification to the new shape.
+2. Straight-branch bore necessary conditions on actual B3 saved transforms are
+   now screened in742. NEXT:round the DEFORMED wire path and test actual finite
+   support/other hardware at worst saved frames;include object and motor lead-in.
+   Do not transfer old collision/mass qualification to the new shape.
 3. Complete motor lead-in routing and supplier horn/shaft interface only with
    actual manufacturer drawings. Three paired drums != six prescribed forces.
 4. STEP remainsBLOCKED:FreeCAD/OCC unavailable. No fabrication-ready claim.

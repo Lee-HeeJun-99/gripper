@@ -745,3 +745,12 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+## 2026-11-20 — V21 manufacturing candidate
+
+FiniteEyelets:OD3/ID1.4/L2mm,axes follow adjacent reference-wire bisectors.
+Supports unchanged fromV19;proposed0.05mm rail bondline still unqualified.
+Wire0.5mm;rounded reference routing radius2mm is an assumption,NOT supplier
+approved minimum. No lead-in/horn/termination qualification. Cartridge12sample
+withdrawal clear;6assembledclamp tool pathsblocked:detach and benchservice.
+160ASCIISTLs reloadclosed/positive,NOT STEP/BRep/strength/completeassemblyPASS.
+SeeWIRE_EYELET_CONTINUATION_20261120.md forRaw,commands and retainedFAILs.

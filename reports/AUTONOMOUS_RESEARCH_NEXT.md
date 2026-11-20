@@ -1,5 +1,10 @@
 ## Product continuation728–741 — 2026-11-20
 
+UPDATE742–743:actual saved485transforms+NEWEyelet relative frames screened;
+36sites satisfy straightbranch bore condition,max0.669349mm vs0.7. NOT new
+dynamics. NEXT precise target:finite ROUNDED deformed wire/support/object
+clearance atworstsavedframes;motor lead-in and supplier interface afterthat.
+
 Read product_prototype/reports/WIRE_EYELET_CONTINUATION_20261120.md and CHECKPOINT.
 Completed:new V20axis-only and V21bore candidates,actual mesh CSG,straight and
 rounded finite wire envelope screening,service12samples,160ASCIISTL readbacks,

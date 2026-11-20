@@ -1,5 +1,13 @@
 ## Wire/Eyelet continuation728–741 — 2026-11-20
 
+Latest further cycle742–743:wire_bore_replay.py mapsNEWCADEyelet centre/axis
+through actual485Rigid3 accepted transforms.36sites0failedsavedframes and
+0holdfailures;maxrequiredradius0.66934932158mm<0.7. Correct body-to-Eyelet
+offset included. This isFROZENMOTIONnecessary-condition screening,NOT newNative
+dynamics. Next deform rounded path andscreenfiniteSupport/object/otherhardware
+atworstframes,then complete motor lead-in. Code also rejects moving fixtures
+without actualpullpointpath. See authority report for all commands andboundary.
+
 Feature commit32a48259996b7efee7746ad94373a3ea76da3ab3; later rounded-path
 code/evidence commit follows. Authority:WIRE_EYELET_CONTINUATION_20261120.md.
 V20axis-only FAIL6bore sites. V21axis+ID1.4/OD3/L2,wire0.5:36straight

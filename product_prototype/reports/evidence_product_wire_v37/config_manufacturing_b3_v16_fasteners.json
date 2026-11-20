@@ -1,0 +1,13 @@
+{
+  "extends": "manufacturing_b3_v15_holes.json",
+  "version": "B3_v16_fastener_stack_AND_head_clearance_candidate_NOT_QUALIFIED",
+  "drive": {"deck_width_mm": 42,"inner_standoff_tangential_mm": [-17,17]},
+  "fastener_proxies": {
+    "enabled": true,
+    "head_radius_mm": 2.75,"head_height_mm": 3,
+    "nominal_shank_radius_mm": 1.5,"nut_across_flats_mm": 5.5,
+    "nut_thickness_mm": 2.4,"unthreaded_proxy_bore_mm": 3.4,
+    "status": "nominal geometric proxies,not supplier drawings;no thread/preload/tolerance certification"
+  },
+  "change": "model shared outerM3x35 and innerM3x20 stacks,root M3x12 hardware and normal-seat bosses;move inner deck screws to y17 and widen deck to42 to clear actual screw-head envelopes around26mm motor bbox"
+}

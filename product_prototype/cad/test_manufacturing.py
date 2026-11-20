@@ -14,6 +14,8 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_frozen_native_bore_replay_is_not_candidate_dynamics(self):
+  d=result('product_wire_replay742');self.assertIn('NOT_CANDIDATE_DYNAMICS',d['status']);self.assertEqual(len(d['records']),36);self.assertFalse(any(r['failed_frames'] for r in d['records']));self.assertLess(max(r['maximum_required_bore_radius_mm'] for r in d['records']),.7)
  def test_circular_fillet_reference_and_overlap_rejection(self):
   from rounded_wire_path import fillet
   p=np.array([[0.,0,0],[10.,0,0],[10.,10,0]]);q,s,t=fillet(p,2.)

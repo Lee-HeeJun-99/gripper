@@ -873,3 +873,12 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+## 2026-11-20 — V21 finite wire reference candidate
+
+728–741:branch-bisector Eyelet orientation,OD3/ID1.4/L2mm,wire0.5mm. Rest-pose
+straight and proposed2mm-radius circular-filleted routes screened against160
+parts with no tight-envelope intersections. Not deformed/moving/material or
+Native qualification.24tiny fastener seam intersections remainUNRESOLVED.
+Motor/material approval blocked,STEP absent. No newHolding/Lift/GraspPASS.
+CAD:meshes/b3_manufacturing_bore_v21_stl_ascii;drawings/b3_manufacturing_bore_v21.
+Authority:WIRE_EYELET_CONTINUATION_20261120.md.

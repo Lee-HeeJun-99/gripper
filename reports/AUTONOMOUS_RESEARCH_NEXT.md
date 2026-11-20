@@ -1,3 +1,10 @@
+Latest verified feature commit: `35bee4217b8d0c0dc26b1f945175995f490b8fba`.
+Next actionable prerequisite is a validated Native constrained-loop integration
+contract; the factor-only override is rejected, not ready for B3 integration.
+Read `product_prototype/reports/NATIVE_COMPLIANCE_AND_LOOP_20261120.md`
+before selecting a new hypothesis. Physical density/join calibration remains
+independently blocked by missing measurements. No product-complete claim.
+
 ## Native compliance/loop limits663–691 — 2026-11-20
 
 Authority:product_prototype/reports/NATIVE_COMPLIANCE_AND_LOOP_20261120.md.

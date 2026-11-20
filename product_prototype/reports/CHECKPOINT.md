@@ -1,3 +1,14 @@
+## Verified local code checkpoint — 2026-11-20
+
+Last feature commit: `35bee4217b8d0c0dc26b1f945175995f490b8fba`.
+Campaigns663–691 preserve 67 actual Native child attempts, including19 with
+SOFA errors;691 has nine passing regression checks, NOT nine physical Gates.
+Evidence: `evidence_product_native_ode_limits_v34/manifest.json` (6814files;
+5831 prior immutable hashes checked without mismatch). No running runSofa child
+at handoff. Product qualification remains incomplete. Resume by reading the
+authority below; repeat known failed Native loop configurations only after a
+specific integration-contract change, not as a new experiment.
+
 ## Native compliance/loop limits663–691 — 2026-11-20
 
 Authority:product_prototype/reports/NATIVE_COMPLIANCE_AND_LOOP_20261120.md.

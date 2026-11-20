@@ -1,0 +1,21 @@
+"""Exact translated-cylinder sweep and nominal access for new retained root pins."""
+import argparse,json,subprocess,time
+from pathlib import Path
+import numpy as np
+from manufacturing_assembly import BASE,cyl,union,transform,evaluate,sha
+from bridge_assembly_audit import hits
+
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--candidate',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic()
+ src=BASE/'meshes'/a.candidate/'full_assembly_recipe.json';assembly=json.loads(src.read_text());parts=assembly['parts'];shapes=[evaluate(p['shape']) for p in parts];records=[]
+ for p in parts:
+  if p['group']!='root_headed_pin_proxy':continue
+  M=np.array(p['shape']['matrix']);nut=p['name'].replace('_headed_pin','_axle_nut');distance=10.
+  # Each component is a convex coaxial cylinder. Its positive-axis extrusion
+  # is exactly a longer cylinder;union distributes over the swept components.
+  sweep=evaluate(transform(union(cyl(.5,-3.7,2.45+distance),cyl(1.25,2.45,3.45+distance)),M))
+  tool=evaluate(transform(cyl(2.,-13.35,-3.35),M))
+  records.append(dict(pin=p['name'],removed_nut=nut,outward_sweep_mm=distance,swept_intersections=hits(sweep,parts,shapes,[p['name'],nut]),inner_nut_tool_radius_mm=2.,inner_nut_tool_length_mm=10.,nut_tool_intersections=hits(tool,parts,shapes,[p['name'],nut])))
+ result=dict(status='RETAINED_ROOT_SERVICE_REQUIRES_REVIEW' if any(r['swept_intersections'] or r['nut_tool_intersections'] for r in records) else 'NOMINAL_RETAINED_ROOT_SERVICE_CLEAR_NOT_PRODUCT_PASS',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f.relative_to(BASE)):sha(f) for f in (Path(__file__),src,BASE/'cad/bridge_assembly_audit.py',BASE/'cad/manufacturing_assembly.py')},records=records,runtime_s=time.monotonic()-start,fabrication_ready=False,scope='Outward10mm full swept finite stepped pins after nut removed. Nominal R2/10mm inner nut-tool cylinder excludes own pin/nut only. No supplier wrench,hand access/thread engagement/preload/actualassembly/tolerances/strength qualification. Existing obstacles retained. Tool blockage is distinct from pin extraction clearance.')
+ (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],pins=len(records),blocked_sweeps=sum(bool(r['swept_intersections']) for r in records),blocked_tools=sum(bool(r['nut_tool_intersections']) for r in records),runtime_s=result['runtime_s']),indent=2))
+if __name__=='__main__':main()

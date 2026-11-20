@@ -1,3 +1,16 @@
+## Latest Root mount/retention785–796 — 2026-11-21
+
+Read product_prototype/reports/ROOT_MOUNT_AND_RETENTION_20261121.md.
+New finite connectedRootmount/retention CAD:meshes/b3_root_canonical_v34.
+LoosenutserviceFAIL6/6;bossalternativeoutwardsweep/tool nominalgeometryclear.
+787partialSTLFAIL,790coveragecorrection,794sectioncolorrejection allpreserved.
+No newSOFA orphysicalPASS. Oldcontact/time/FEMmeshFAILs stayopen.
+NEXT compactouterframe architecture (currentR94.6495),Rootthread/head/material
+andretention/pullout/tolerance data;thenchangedtendonpathNativeintegrationfromNEW
+state. Donotrepeat oldconstrained-loop/dt/alarm sweeps orclaimCAD=HoldingPASS.
+Producer:product_prototype/cad/root_mount_candidate.py --tag UNIQUE --name
+UNIQUE_CAD --retention threaded-boss --canonical;4GiB/480s.
+
 ## Product continuation761–777 — 2026-11-20
 
 Read product_prototype/reports/PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.

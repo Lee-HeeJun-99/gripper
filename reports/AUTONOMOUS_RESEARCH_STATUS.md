@@ -1,3 +1,15 @@
+## Root mount/retention785–796 — 2026-11-21
+
+NewfiniteRootmount/retentioncandidate created;loosenuttoolFAIL6/6preserved.
+Canonicalbossalternative12closedpositiveSTLs/292fullparts,outwardsweptpin/
+nominaldriverclear6/6. Thread/material/strength/toleranceNOTqualified.
+Wire0,newPalmzero-volumeCSGresultskept. OLD4857200savedstateRootalignment
+boundmax0.253936<0.4mm,NOTnewdynamics.50softwaretestsPASS;noSOFArun.
+CorrectCADreview796;R94.6495outerframe stilloversized. AlloldphysicalFAILs,
+100g/Lift/STEP/fabricationqualificationremainopen. Next:compactframe+actual
+retentionmanufacturingqualification. Readproduct_prototype/reports/
+ROOT_MOUNT_AND_RETENTION_20261121.md;noautomaticbackgroundcontinuation.
+
 ## Product bridge/axle continuation761–777 — 2026-11-20
 
 Functionalcommitsad19a6e,101a17a;45design regressionsPASS,notproductGates.

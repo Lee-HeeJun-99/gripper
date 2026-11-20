@@ -1,3 +1,13 @@
+## Root mechanism785–796 scope — 2026-11-21
+
+No newSOFAsimulation/binary. CADmechanism nowhasfiniteRootmount/retention
+candidate;793replaysOLD485actualfirstEyeletstatesagainstproposedfixedRootwheel.
+7200savedstateboundsmax0.253936mm<0.4nominalgroovehalfwidth isNOTNative
+adoption,timeconvergence,frictionornewHoldingPASS. Newpath/physicaljointmass
+andcontrolrequireNEWinitialstatevalidation,notoldcheckpointreuse.
+Oldfunctional50g/Releaseandallcontact/time/FEMmeshFAILs remainunchanged.
+Authority:ROOT_MOUNT_AND_RETENTION_20261121.md. CAD/softwarePASSnotphysics.
+
 ## Parallel Track A/B/C continuation704–727 — 2026-11-20
 
 Last implementation commits:901b1cd0d05e283ac96319aef699cbfabb13c09b,

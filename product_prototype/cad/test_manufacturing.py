@@ -14,6 +14,19 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_root_mount_retention_failure_and_new_boss_service_are_separate(self):
+  before=result('product_root_mount785');self.assertEqual(len(before['records']),18);self.assertFalse(before['wire_intersections']);self.assertEqual(len(before['solid_intersections']),6);self.assertTrue(all(h['volume_mm3']==0 for h in before['solid_intersections']))
+  old=result('product_root_retention786');self.assertTrue(all(r['nut_tool_intersections'] for r in old['records']));self.assertFalse(any(r['swept_intersections'] for r in old['records']))
+  self.assertTrue(result('product_root_boss787')['status'].startswith('FAIL'))
+  new=result('product_root_canonical788');self.assertTrue(new['canonical_sector']);self.assertEqual(len(new['records']),12);self.assertEqual(new['full_part_count'],292);self.assertFalse(new['fabrication_ready']);self.assertFalse(new['wire_intersections'])
+  service=result('product_root_boss_service791');self.assertTrue(service['threaded_boss']);self.assertFalse(any(r['swept_intersections'] or r['tool_intersections'] for r in service['records']))
+  self.assertTrue(all(r['sufficient_exclusion'] for r in result('product_root_boss_palm792')['records']))
+ def test_root_motion_bound_includes_finite_wire_radius_and_old_state_scope(self):
+  from root_motion_alignment import tangent,side_envelope
+  t=tangent(np.array([4.,0]),2.,np.array([1.,2.]));self.assertAlmostEqual(t@t,4);self.assertAlmostEqual(t@(t-[4,0]),0.)
+  self.assertAlmostEqual(side_envelope(np.array([4.,0,0]),t),.25)
+  with self.assertRaises(ValueError):tangent(np.array([1.,0]),2.,np.array([1.,2.]))
+  d=result('product_root_motion793');self.assertEqual(d['centreline_radial_screen_mm'],d['flange_outer_radius_mm']+d['wire_radius_mm']);self.assertEqual(sum(r['saved_frames'] for r in d['records']),7200);self.assertTrue(all(r['worst']['axial_bound_mm']<.4 for r in d['records']));self.assertIn('OLD_MOTION',d['status']);self.assertFalse(d['fabrication_ready'])
  def test_root_service_keeps_inward_failure_and_outboard_sweep_scope(self):
   old=result('product_root_service782');self.assertEqual(sum(bool(r['intersections']) for r in old['records']),6)
   new=result('product_root_outboard783');self.assertTrue(new['conservative_linear_swept_volume']);self.assertEqual(len(new['records']),6);self.assertFalse(any(r['intersections'] for r in new['records']));self.assertFalse(new['fabrication_ready'])

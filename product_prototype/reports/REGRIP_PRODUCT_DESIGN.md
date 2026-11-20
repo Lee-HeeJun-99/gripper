@@ -1,3 +1,13 @@
+## Root retention design update785–796 — 2026-11-21
+
+Newcandidate:meshes/b3_root_canonical_v34/full_assembly_recipe.json,292parts.
+FiniteRootforks nowjoin existingboltedbridges;loosenutserviceFAILledtointegral
+threadedbosshypothesis. Noactualthread/headslot/materialstrengthqualification.
+Outward6pinsweeps/6nominaltools clear;priorPalmseams/toleranceFAILs remain.
+OLDstatealignment793isnotnewdynamics. CorrectCAD/BOM/section:results/
+product_root_review796. OuterR94.6495stilloversized,STEPnotgenerated.
+Authority:ROOT_MOUNT_AND_RETENTION_20261121.md. FinaldesignNOTselected.
+
 ## Parallel product-design milestone704–727 — 2026-11-20
 
 Feature code:901b1cd. Detailed immutable evidence:

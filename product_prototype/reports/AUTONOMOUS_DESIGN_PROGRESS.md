@@ -1,3 +1,13 @@
+## Root mount/retention785–796 — 2026-11-21
+
+ImplementedfinitePalm-connectedRootforks;loosenutaccessFAIL6/6preserved.
+BossalternativefailedSTL787,thennewcanonicalrepresentation788created12closed
+positiveSTLs/292fullparts. Outwardpinsweep/tool791clear6/6;notactualthread/
+strengthPASS. Wire0;zero-volumePalmcontactsremain.793OLD1200framesx6sidebound
+max0.253936<0.4,notnewSOFA.79550softwaretestsPASS.796correctCAD/BOM/section.
+NEXT compactframe,actualretention/material/thread/pullout/tolerance andNative
+adoptionfromNEWinitialstate. Details:ROOT_MOUNT_AND_RETENTION_20261121.md.
+
 ## Parallel Track A/B/C continuation704–727 — 2026-11-20
 
 Last implementation commits:901b1cd0d05e283ac96319aef699cbfabb13c09b,

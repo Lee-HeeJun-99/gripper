@@ -1,3 +1,22 @@
+## Root mount/retention785–796 — 2026-11-21
+
+Authority:ROOT_MOUNT_AND_RETENTION_20261121.md. Baseline2bf6ab6.
+785finitePalm-connectedRootforks/pins/nuts created.786innernuttoolFAIL6/6
+vsFingerMount,whileoutwardpinsweepsclear.787bossSTLpartialFAILpreserved;
+788canonical-sectorbossalternative12closedpositiveSTLs/292fullparts.
+791outward6fullpinsweeps+6nominaldriverpaths0blocked. Noactualthread/strength
+qualification.785/788wirehits0,6Palmzero-volumeBooleanresultsretained;
+789/792strictleafbounds6/6excludeopenPalminterior,notBReporassemblyPASS.
+793OLD4851200framesx6alignmentboundmax0.253936<0.4mm;notnewSOFAdynamics.
+790radialcoveragecorrectionpreserved.794sectionlegendcolorrejected;
+796correctCAD/BOM/sectionpack.79550softwaretestsPASS,notphysicalGates.
+NEXT:compactouterframe(R94.6495stilloversized),actualRootretention/thread
+manufacturingandstrength/tolerancequalification,thenNativeadoptionfromNEWstate.
+NoSDK/oldRawedits,no100g/Lift/time/mesh/STEP/fabricationPASS.
+Candidate:meshes/b3_root_canonical_v34/full_assembly_recipe.json.
+Newbuild:cad/root_mount_candidate.py --tag UNIQUE --name UNIQUE_CAD
+--retention threaded-boss --canonical (robot_wsPython,4GiB,timeout480).
+
 ## Root redirect continuation778–781 — 2026-11-21
 
 Follow-up782–784:inward10mmpinextractioncollideswithFingerMount6/6,preservedFAIL.

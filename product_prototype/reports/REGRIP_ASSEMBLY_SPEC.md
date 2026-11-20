@@ -1,3 +1,15 @@
+## Root assembly hypothesis785–796 — NOT FABRICATION READY (2026-11-21)
+
+Rootloosenuts cannotbe serviced frominside whileMountinstalled(786FAIL6/6).
+V34candidateinsteadmodelsintegralOD3receiver/ID1.1proxyandoutwardheadedD1pin.
+Nominalreceiver/shaftoverlap1.3mm isNOTverifiedthreadengagement. Actualthread,
+headslot,material,joining,preload/loosening/pulloutqualification remainTBD.
+Outward10mmsweptpins+R1/10mmdriverpaths clear6/6(791),notactualassemblyPASS.
+Keepoutwardservice;donotclaiminneraccessorbidirectionalremoval. Rootforksreuse
+existing12bridgebolts;Palmzero-volumecontactsandwheelstacktoleranceFAILremain.
+BOM/actualsection:results/product_root_review796. Full292partrecipe:
+meshes/b3_root_canonical_v34/full_assembly_recipe.json. NoSTEPkernelrun.
+
 ## B3 manufacturing V19 review — NOT FABRICATION READY (2026-11-20)
 
 Implementation:901b1cd /62610d6. See latest REGRIP_PRODUCT_DESIGN.md for cycle

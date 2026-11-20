@@ -1,3 +1,12 @@
+## Root variants785–796 — 2026-11-21
+
+V32loosenut:connectedbutinnernuttools6/6blocked byMount;notselected.
+V33boss:partialSTLfailure preserved. V34canonicalboss:12readbacks/292fullparts,
+6outwardfullpinsweeps+6nominaldriverclear. Thisisretentionmanufacturinghypothesis,
+notthread/strength/holdingapproval. Bothwireclear andPalmcoplanarCSGresults
+unchanged;R94.6495outerframe stilloversized. No newSOFA/materialselection.
+SeeROOT_MOUNT_AND_RETENTION_20261121.md andcorrectCADreview796.
+
 ## Parallel Track A/B/C continuation704–727 — 2026-11-20
 
 Last implementation commits:901b1cd0d05e283ac96319aef699cbfabb13c09b,

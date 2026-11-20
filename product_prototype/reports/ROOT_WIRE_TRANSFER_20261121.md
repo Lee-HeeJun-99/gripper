@@ -2,6 +2,20 @@
 
 ## Independent product continuation840–842
 
+843 additional actual Native free-in-plane axle diagnostic completed10finite
+states in2.77s. Initial reference/J-lambda/linear momentum all equal
+(2.5e-9,2.5e-9,0)Ns; angular impulse0. New ideal DOF arrangement,not same bearing
+physics as837/838. Repro: `python product_prototype/sofa/root_wire_coupon.py
+--tag UNIQUE_FREE_AXLE --balanced --free-axle`. Only initial impulse is certified;
+subsequent positions change branch geometry. No reaction/work/sliding claim.
+
+Installed SlidingLagrangianConstraint.{h,inl} also inspected read-only: its
+`sliding_point`, `axis_1`, `axis_2` API constrains a point to a straight axis/edge;
+it is not an exact circular wrap/arc-length pulley model. This observation is not
+a proof that no other SOFA/plugin mechanism could implement sliding. NextNative
+work must first specify a matched arc/branch-change contract, not relabel this
+straight slider. No custom solver or SDK changes authorized by these results.
+
 First feature commit `468b853`. CAD-root load841 reads all six actual780 route
 directions and centres: ideal1.5N/branch gives1.846984426N/axle; angle-reference
 error<=4.44e-16N, ideal moment norm<=6.98e-18Nm. No actual load/strength claim.

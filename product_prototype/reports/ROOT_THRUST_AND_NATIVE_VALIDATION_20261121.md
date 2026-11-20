@@ -95,6 +95,35 @@ OCC/cadquery recheckedabsent;STEP NOT GENERATED.
 
 ## 4. Reproduction and next work
 
+### Independent follow-up832–835:ideal bearing
+
+Afterfunctionalfeatureaff7e9b,installedPartialFixedProjectiveConstraint<Rigid3d>
+was actuallyrun withfixedDirections1 1 0 1 1 0. Thisis a NEWideal cylindrical
+joint assumption,not a correctiontofreeRigidstates or measuredbearingfriction.
+832axialendstop:80statesfinite,21.118s,lockedvelocity/positioncomponents0.
+833free-spin:10statesfinite,3.887s,actualomega_z=1rad/s,uncommandedcomponents0.
+834independentDOF/APIcheck:analyticalspin quaternionerror3.33e-16,
+quaternionnormerror<=2.22e-16,unrestrictedz/spin impulsebalance<=9.41e-38
+Ns/Nms. LoadedobserverDLLhashes matchthe frozen332/512binaries. Thispasses
+ONLYidealjointDOF/API scope,not material/clearance/friction/physicalbearingPASS.
+Projectivereactionwork staysNULL. Bothuse420sfiniteguard;NaNfailure815/816
+wasNOTrepeated.835finalregressions include integration-margin/source guards.
+
+Raw:results/product_root_bearing832,product_root_bearing_spin833,
+product_root_bearing_assess834,product_root_bearing_regression835.
+ReproduceNEWcoupon:
+
+```bash
+timeout 480 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/root_bearing_coupon.py --tag UNIQUE_BEARING
+timeout 480 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/root_bearing_coupon.py --tag UNIQUE_SPIN --spin-only
+```
+
+NEXT:defineNativeidealwire/pulleyforce-transfer contract and actualbearing/
+wirefriction/clearance/material measurements;doNOTsubstitutea body-fixed discrete
+guidepointpath for verifiedwire slidingaround a rotatingpulley. V39CAD still
+doesnotverifythread/headretention,other18wheelstacktolerances or fullhardware
+actuationCCD. Full3Finger adoption andnewHolding requireseparatephysicsGates.
+
 Everynew outputusesunique path;source/scene/binary hashes andcommands inRaw.
 KeyNativecommands (NEWtags):
 

@@ -12,6 +12,11 @@ def main():
  for case in a.cases:
   if Path(case).name!=case:raise ValueError('local case name required')
   folder=BASE/'results'/case;summary=folder/'summary.json';detail=json.loads(summary.read_text());shutil.copy2(summary,out/(case+'.json'));record=dict(summary_sha256=sha(summary),status=detail['status'],annotations={})
+  for name,digest in detail.get('input_hashes',{}).items():
+   path=Path(name)
+   if path.is_absolute() and str(path).startswith('/home/ubuntu/SOFA/'):
+    if not path.is_file() or sha(path)!=digest:raise ValueError('recorded SDK input changed:'+name)
+    files[name]=digest
   for f in folder.rglob('*'):
    if f.is_file():
     files[str(f.relative_to(root))]=sha(f)
@@ -28,6 +33,8 @@ def main():
    for f in draw.rglob('*'):
     if f.is_file():files[str(f.relative_to(root))]=sha(f)
  for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
+ for pattern in ('root_*.py','native_finite_guard.py','finite_guard_fixture.py','finite_guard_test_run.py'):
+  for f in (BASE/'sofa').glob(pattern):shutil.copy2(f,out/('sofa_'+f.name))
  for f in out.iterdir():
   if f.is_file():files[str(f.relative_to(root))]=sha(f)
  d=dict(scope='Append-onlyCAD/reference evidence including partialfailures/corrections;NOT product/physics/STEP qualification. NewCAD directories hashed as produced,including failedpartialSTLs;directory presence isNOT completion.',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),prior_manifest_sha256=sha(prior),prior_immutable_audit=dict(checked=len([k for k in old['files'] if immutable(k)]),mismatches=bad),cases=cases,files=files)

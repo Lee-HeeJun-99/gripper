@@ -14,6 +14,13 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_native_ideal_bearing_keeps_free_spin_and_scope(self):
+  d=result('product_root_bearing_assess834');self.assertEqual(d['status'],'PASS_IDEAL_BEARING_DOF_API_SCOPE_ONLY');self.assertEqual([r['state_rows'] for r in d['records']],[80,10]);self.assertEqual(d['records'][1]['spin_velocity_error_rad_s'],0.);self.assertLess(d['records'][1]['spin_analytic_quaternion_max_abs_error'],1e-12)
+  self.assertTrue(all(r['projective_reaction_work_J'] is None and not r['physical_qualification'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
+ def test_current_native_launchers_have_finalization_margin(self):
+  for name in ('root_thrust_coupon.py','root_intersection_probe.py','root_bearing_coupon.py'):
+   tree=ast.parse((BASE/'sofa'/name).read_text());calls=[n for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='finite_guard'];self.assertEqual(len(calls),1);self.assertEqual(calls[0].args[2].value,420)
+  d=result('product_root_bearing832');self.assertEqual(d['process']['internal_limit_s'],420);self.assertFalse(d['process']['nonfinite_observation']);self.assertFalse(d['process']['finite_guard_error'])
  def test_root_thrust_factorial_keeps_assumed_tolerances_separate(self):
   d=result('product_root_stack806');r={(x['candidate'],x['condition']):x for x in d['records']};self.assertFalse(r['baseline','nominal']['conditional_nonbinding_and_alignment']);self.assertFalse(r['wide_only','nominal']['conditional_nonbinding_and_alignment']);self.assertFalse(r['lands_only','ASSUMED_NOT_MEASURED']['conditional_nonbinding_and_alignment']);self.assertGreater(r['combined','ASSUMED_NOT_MEASURED']['strict_alignment_margin_mm'],.06);self.assertIsNone(d['actual_endplay_mm']);self.assertFalse(d['fabrication_ready'])
  def test_finite_thrust_candidates_retain_actual_obstacles(self):

@@ -1,3 +1,16 @@
+## Native contact policy660–662 — 2026-11-20
+
+Last feature:d697a67 conditional union geometry;3a5844b actual inertial matrix fix.
+660 actual8active finite contacts start at positive buffered gap;normal target-gap/dt.
+661 six actual Native1D sphere/plane runs isolate this WITHOUT FEM,cable or gyro.
+Position error≤6.51e-19m/momentum≤5.43e-20Ns,but post-impact velocity error
+0.6/.2/.4m/s.662 exact Decimal gap/dt recurrence strict1e-12 PASS;physical
+all-common-time0.1%Gate FAIL. Velocity-first option does NOT fix this policy.
+Authority:NATIVE_CONTACT_POLICY_20261120.md;evidence_product_contact_policy_v33.
+NEXT:independent Native compliant-contact/analytic-reference comparison;different
+physical law,not a repair of old hard-contact FAIL. No B3/100g/Lift/STEP promotion.
+Reproduce:python product_prototype/sofa/native_plane_policy.py --tag UNIQUE_PLANE
+
 ## Actual Native matrix635–657 — 2026-11-20
 
 Authority:product_prototype/reports/NATIVE_INERTIA_FORCE_TANGENT_20261120.md.

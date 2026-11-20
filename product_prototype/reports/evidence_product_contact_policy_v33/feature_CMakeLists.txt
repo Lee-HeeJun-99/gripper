@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripFeatureRows LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+find_package(Sofa.Component.Collision.Geometry REQUIRED)
+add_library(ReGripFeatureRows SHARED Observer.cpp)
+target_compile_features(ReGripFeatureRows PRIVATE cxx_std_17)
+target_link_libraries(ReGripFeatureRows PRIVATE Sofa.Core Sofa.Simulation.Core Sofa.Component.Collision.Geometry)

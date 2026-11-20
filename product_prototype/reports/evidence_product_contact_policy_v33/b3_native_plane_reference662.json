@@ -1,0 +1,1869 @@
+{
+  "status": "PASS_NATIVE_DISCRETE_RECURRENCE_NOT_IMPACT_OR_TIME",
+  "scope": "Exact decimal unilateral gap/dt recurrence/reference API only. Actual Native velocity/reference and all-common-time Gate remain separately failed. No floors,interpolation,zero exclusions or algorithmic-loss-as-heat claims.",
+  "producer_sha256": "acd061f4be8ea48774dcd979dc69185ea836877f6b643498235378efc8bb78cc",
+  "source_summary_sha256": "2d71360edd65278909143616f3527262ca14dddd93861fe5edbd17ff05ebdf8c",
+  "analytic_inelastic_reference_event_s": 0.0015,
+  "reference_checks": [
+    {
+      "mode": "position_first",
+      "dt_s": 0.0025,
+      "exact_decimal_gap_over_dt_recurrence_API_error": {
+        "gap_m": 7.318364664277155e-19,
+        "vz_m_s": 1.1102230246251565e-16,
+        "impulse_Ns": 1.0842021724855044e-19
+      },
+      "strict_API_pass": true,
+      "actual_final_kinetic_J": 6.162975822039155e-36,
+      "total_algorithmic_kinetic_decrease_J": 0.0005,
+      "instantaneous_e0_reference_energy_loss_J": 0.0005,
+      "maximum_velocity_reference_error_m_s": 0.6
+    },
+    {
+      "mode": "position_first",
+      "dt_s": 0.00125,
+      "exact_decimal_gap_over_dt_recurrence_API_error": {
+        "gap_m": 1.0842021724855044e-19,
+        "vz_m_s": 5.551115123125783e-17,
+        "impulse_Ns": 0.0
+      },
+      "strict_API_pass": true,
+      "actual_final_kinetic_J": 1.5407439555097887e-36,
+      "total_algorithmic_kinetic_decrease_J": 0.0005,
+      "instantaneous_e0_reference_energy_loss_J": 0.0005,
+      "maximum_velocity_reference_error_m_s": 0.19999999999999996
+    },
+    {
+      "mode": "position_first",
+      "dt_s": 0.000625,
+      "exact_decimal_gap_over_dt_recurrence_API_error": {
+        "gap_m": 1.0842021724855044e-19,
+        "vz_m_s": 4.440892098500626e-16,
+        "impulse_Ns": 4.336808689942018e-19
+      },
+      "strict_API_pass": true,
+      "actual_final_kinetic_J": 1.5407439555097887e-36,
+      "total_algorithmic_kinetic_decrease_J": 0.0005,
+      "instantaneous_e0_reference_energy_loss_J": 0.0005,
+      "maximum_velocity_reference_error_m_s": 0.3999999999999996
+    },
+    {
+      "mode": "velocity_first",
+      "dt_s": 0.0025,
+      "exact_decimal_gap_over_dt_recurrence_API_error": {
+        "gap_m": 2.981555974335137e-19,
+        "vz_m_s": 1.1102230246251565e-16,
+        "impulse_Ns": 1.0842021724855044e-19
+      },
+      "strict_API_pass": true,
+      "actual_final_kinetic_J": 1.5407439555097887e-36,
+      "total_algorithmic_kinetic_decrease_J": 0.0005,
+      "instantaneous_e0_reference_energy_loss_J": 0.0005,
+      "maximum_velocity_reference_error_m_s": 0.6000000000000001
+    },
+    {
+      "mode": "velocity_first",
+      "dt_s": 0.00125,
+      "exact_decimal_gap_over_dt_recurrence_API_error": {
+        "gap_m": 1.0842021724855044e-19,
+        "vz_m_s": 5.551115123125783e-17,
+        "impulse_Ns": 1.0842021724855044e-19
+      },
+      "strict_API_pass": true,
+      "actual_final_kinetic_J": 0.0,
+      "total_algorithmic_kinetic_decrease_J": 0.0005,
+      "instantaneous_e0_reference_energy_loss_J": 0.0005,
+      "maximum_velocity_reference_error_m_s": 0.20000000000000007
+    },
+    {
+      "mode": "velocity_first",
+      "dt_s": 0.000625,
+      "exact_decimal_gap_over_dt_recurrence_API_error": {
+        "gap_m": 1.0842021724855044e-19,
+        "vz_m_s": 3.3306690738754696e-16,
+        "impulse_Ns": 3.2526065174565133e-19
+      },
+      "strict_API_pass": true,
+      "actual_final_kinetic_J": 0.0,
+      "total_algorithmic_kinetic_decrease_J": 0.0005,
+      "instantaneous_e0_reference_energy_loss_J": 0.0005,
+      "maximum_velocity_reference_error_m_s": 0.3999999999999997
+    }
+  ],
+  "velocity_first_vs_position_first_max_absolute_difference": 1.1102230246251565e-16,
+  "time_gate": 0.001,
+  "time_gate_status": "FAIL",
+  "time_worst": {
+    "mode": "position_first",
+    "dt_pair_s": [
+      0.0025,
+      0.000625
+    ],
+    "time_s": 0.0025,
+    "quantity": "normal_velocity_m_s",
+    "absolute_error": 0.6000000000000001,
+    "relative_error": 1.0000000000000002
+  },
+  "time_records": [
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.4,
+      "relative_error": 0.6666666666666667
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.48,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0004,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.00015999999999999999,
+      "relative_error": 0.8888888888888888
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.4456028966473392e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.24000000000000002,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 4.622231866529366e-36,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "displacement_m",
+      "absolute_error": 4.336808689942018e-19,
+      "relative_error": 2.8912057932946783e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 4.622231866529366e-36,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "displacement_m",
+      "absolute_error": 6.505213034913027e-19,
+      "relative_error": 4.3368086899420177e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 4.622231866529366e-36,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.6000000000000001,
+      "relative_error": 1.0000000000000002
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.4799999999999994,
+      "relative_error": 0.7499999999999998
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0006000000000000001,
+      "relative_error": 0.6000000000000001
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.00017999999999999998,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.4456028966473392e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.24000000000000002,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 4.622231866529366e-36,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "displacement_m",
+      "absolute_error": 4.336808689942018e-19,
+      "relative_error": 2.8912057932946783e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 4.622231866529366e-36,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "displacement_m",
+      "absolute_error": 6.505213034913027e-19,
+      "relative_error": 4.3368086899420177e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 4.622231866529366e-36,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.7347234759768068e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.2,
+      "relative_error": 1.0000000000000002
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 5.551115123125783e-16,
+      "relative_error": 8.673617379884035e-16
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.00019999999999999998,
+      "relative_error": 0.19999999999999998
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 1.999999999999999e-05,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.16,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "position_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.445602896647339e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.4,
+      "relative_error": 0.6666666666666666
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.4799999999999999,
+      "relative_error": 0.75
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.00039999999999999996,
+      "relative_error": 0.5
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0025,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.00016000000000000004,
+      "relative_error": 0.8888888888888888
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.445602896647339e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.24000000000000002,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.005,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 2.2204460492503132e-17,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.0075,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 1.5407439555097887e-36,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.4456028966473392e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.00125
+      ],
+      "time_s": 0.01,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 1.5407439555097887e-36,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.445602896647339e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.6000000000000001,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.4799999999999995,
+      "relative_error": 0.7499999999999998
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0006000000000000001,
+      "relative_error": 0.6000000000000001
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.00018000000000000007,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.445602896647339e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.24000000000000002,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 2.2204460492503132e-17,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.0075,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 1.5407439555097887e-36,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.4456028966473392e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 5.551115123125783e-17,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.0025,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 1.5407439555097887e-36,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "displacement_m",
+      "absolute_error": 2.168404344971009e-19,
+      "relative_error": 1.7347234759768068e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00125,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.20000000000000007,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 4.440892098500626e-16,
+      "relative_error": 6.938893903907229e-16
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0002000000000000001,
+      "relative_error": 0.2000000000000001
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.0025,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 2.0000000000000015e-05,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.16000000000000006,
+      "relative_error": 1.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00375,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.005,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00625,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.007500000000000001,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.00875,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "displacement_m",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "normal_velocity_m_s",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "equivalent_force_N",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "cumulative_impulse_Ns",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "mode": "velocity_first",
+      "dt_pair_s": [
+        0.00125,
+        0.000625
+      ],
+      "time_s": 0.01,
+      "quantity": "kinetic_energy_J",
+      "absolute_error": 0.0,
+      "relative_error": 0.0
+    }
+  ]
+}

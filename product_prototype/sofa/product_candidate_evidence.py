@@ -37,6 +37,8 @@ def main():
     shutil.copy2(BASE/'cad/finite_guide_product.py',out/'finite_guide_product.py')
     for name in ('finite_union_moments.py','finite_union_run.py','test_finite_union.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
+    for name in ('inertia_contact_phase.py','native_plane_policy.py','native_plane_assess.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
     for name in ('mapping_acceleration_build.py','mapping_acceleration_run.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     for f in compiled_mapping_acceleration():

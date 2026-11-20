@@ -1,0 +1,84 @@
+{
+  "status": "FAIL_NATIVE_PENALTY",
+  "scope": "Native PenalityContactForceField response,assumed100N/m,1g sphere,-.01m/s,15um initial buffer gap. No gravity,damping,friction or new solver. Not equivalent to hard impact661 or B3 product model. Stored contacts are rebuilt after force evaluation;not force callback samples.",
+  "source_commit": "facd9e2b77a029d4bd5d9e522b87e16e07b71dc2",
+  "producer_sha256": "6cfba19b65edaab9b3de005ecf9507a1011bec57e9b1720645eae4689207483e",
+  "probe": true,
+  "trapezoidal": false,
+  "variational": false,
+  "bdf_order": 1,
+  "animation_loop": "DefaultAnimationLoop",
+  "actual_response": "PenalityContactForceField",
+  "build": "product_prototype/cad/build_b3_native_penalty_bdf679",
+  "binary_sha256": "709b61c98f975766b1d681859b2687d91611f4cdbff1aaad3dc6efc3e78392a3",
+  "configure": null,
+  "compile": null,
+  "records": [
+    {
+      "dt_s": 0.00025,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.17171002505347133,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "9124692d12004f2cec6e254068400093ebc0b7563d31e2c9135359c97ccbc981",
+          "command.json": "f63b1fef19def9c91f67d7b6b9072ee70ad487a4f0c12211ae798e749908b4a9",
+          "stderr.log": "8eaf7cdf6b0f8c257af2d3be7474d89593e4f7d3109854ab2ea4fb8d66e8c3da",
+          "process.json": "012e92b915b9c9ce45fd88cb8790f5701934811c8a0f7267423e86fda5802809"
+        }
+      },
+      "sofa_errors": 160,
+      "actual_frames": 80,
+      "scene_sha256": "c7e0774fb55d1a3149a8d1e74adc9f38c95972fd6069aadd1e23a16f7806a889",
+      "maximum_actual_buffered_penetration_m": 0.0001849999999999918,
+      "actual_penalty_rows": 80
+    },
+    {
+      "dt_s": 0.000125,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.20748538803309202,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "a1f0fbc58bbb4241e8b604c15be89ef3205c970f5dfec3345c93ffb2f9d92a14",
+          "command.json": "a5e96bbe0cf199a14404fde1484a489dfb07104fe512f54fed67ae87c8d2dedc",
+          "stderr.log": "01389075ebf6888d1376a9ea25429fc6523b89312adce767773920cb6af056df",
+          "process.json": "75fb1300ff1d5b73c19670961aa4c28b3c67d34e9b58bcf81de95900c0c4d9cf"
+        }
+      },
+      "sofa_errors": 320,
+      "actual_frames": 160,
+      "scene_sha256": "92e2d36dab5a02efed547dd2f67223cbc4ec81367747be74c243ead21ff61388",
+      "maximum_actual_buffered_penetration_m": 0.0001849999999999918,
+      "actual_penalty_rows": 160
+    },
+    {
+      "dt_s": 6.25e-05,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.20943389204330742,
+        "pid": 44,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "cbf6db68abf5009358ff246fcc3a0169851f411128f956a63964d241b39e6d31",
+          "command.json": "cc0335d548b30c68ca21e6426848c3dd3c435dc68847a445b1bee4e1790af828",
+          "stderr.log": "564f47975c899162079f7fbd5585be8b5e546dc7504a050cabe2767c795492f1",
+          "process.json": "aff2ef41c2556c50f11f2388210a156433429e4258abe5257945cd9e54c9a74f"
+        }
+      },
+      "sofa_errors": 548,
+      "actual_frames": 274,
+      "scene_sha256": "eceda61b97e4bbeb0aa27e790c0d5ee8d80fb4ddf4eec4b5259abbe9154e200d",
+      "maximum_actual_buffered_penetration_m": 0.00015624999999999298,
+      "actual_penalty_rows": 274
+    }
+  ],
+  "assumed_stiffness_N_per_m": 100.0,
+  "mass_kg": 0.001,
+  "initial_vz_m_s": -0.01,
+  "initial_buffered_gap_m": 1.5e-05,
+  "SDK": "/home/ubuntu/SOFA/v26.06.00"
+}

@@ -1,0 +1,101 @@
+{
+  "status": "FAIL_NATIVE_PENALTY",
+  "scope": "Native default BarycentricPenalityContact,assumed100N/m,1g sphere,-.01m/s,15um initial buffer gap. No gravity,damping,friction or new solver. Not equivalent to hard impact661 or B3 product model. Last forcefield evaluation and accepted gap are DISTINCT.",
+  "source_commit": "d697a67067373d6c6780c0ff759e47fd7b7d8fc6",
+  "producer_sha256": "ce23aaddc155509eceeea1be307329b97b9b685d6d0fdb24d81a72d0328aec18",
+  "probe": true,
+  "build": "product_prototype/cad/build_b3_native_penalty663",
+  "binary_sha256": "2640a0048e32ddfdd4609749427749226ea7fd80c4d1404fe196e0cb814146b7",
+  "configure": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.2701565769966692,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "ce7a7f8b088bbc99632fa3accdd81f67bbbc6fdfa9e56d64b416ae7de8c43de0",
+      "command.json": "e23dee29d5ea5b5b6d0f17ccc59c53cd74d4f305112705228f17f38b2334ba74",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "b260c970fb444a6762bbf735a4802fc94bd584847a207552b4303c9a1a270e24"
+    }
+  },
+  "compile": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 4.280566078028642,
+    "pid": 66,
+    "artifacts": {
+      "stdout.log": "790bd9aa2dac03c6a4ad78400f6c6e36b69643b65f14709eda53a81865458cd3",
+      "command.json": "07fbb49035b54113984bf87cda5f16ab1ab6cc9893c3e2fae044cfdc322219f4",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "d84b62c2487401190c942c79086a545342155a043ce951521e6a293db5bef6df"
+    }
+  },
+  "records": [
+    {
+      "dt_s": 0.00025,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.17230977199506015,
+        "pid": 89,
+        "artifacts": {
+          "stdout.log": "5e9a25aadf1fdc923e122e261f33d3d5d8c7ceabdd26d2ef348e7e57b6ad5c99",
+          "command.json": "2429bb54f37e5d12e35c5bce81acf171a0d893874d3c9a1bfa3b67bf4cec6155",
+          "stderr.log": "f49c1cb4bae247cb76c5f7bb4247c445c54b2ee7355b2bde941079ce4390ab2f",
+          "process.json": "87335168202b0d992590dbc6b43b09a120f287c345266a56c25f2ab32f988323"
+        }
+      },
+      "sofa_errors": 1,
+      "actual_frames": 80,
+      "scene_sha256": "8217a25686168fa17db5b01c067171e7468e7ae558130387ed6939b0682b907b",
+      "maximum_actual_buffered_penetration_m": -2.168404344971009e-19,
+      "actual_penalty_rows": 0
+    },
+    {
+      "dt_s": 0.000125,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.2081942220684141,
+        "pid": 90,
+        "artifacts": {
+          "stdout.log": "e491cc9e0f12a05a4dacfa6d05695b3ac2ba24eaf6aa08b3907f9272a0d9c011",
+          "command.json": "ac993602c8a37708b943c54749de5526591698a20a748ff261fc2bd69299f295",
+          "stderr.log": "f49c1cb4bae247cb76c5f7bb4247c445c54b2ee7355b2bde941079ce4390ab2f",
+          "process.json": "779c58f43d71b7f518a6fbf740bcd63b5900bc57506135b4f633cbde4602c123"
+        }
+      },
+      "sofa_errors": 1,
+      "actual_frames": 160,
+      "scene_sha256": "1cceb03df49b7dc58a23834be0be2697ef9dce6ecf89b131317686131446267a",
+      "maximum_actual_buffered_penetration_m": -2.168404344971009e-19,
+      "actual_penalty_rows": 0
+    },
+    {
+      "dt_s": 6.25e-05,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.20867016597185284,
+        "pid": 91,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "fa7b0b2496825b1ef595c3c1ed4ce7ffd4398ec2857739aef596db70bba6efa1",
+          "command.json": "3419d41715fd1c0256a16285b4ce2aeb4dc277671f6fb3b795b067c1c15b9bbb",
+          "stderr.log": "f49c1cb4bae247cb76c5f7bb4247c445c54b2ee7355b2bde941079ce4390ab2f",
+          "process.json": "57958d4fedab0cd1209830f133789d3dae77670657f53d5a64ab9d02fba9f13c"
+        }
+      },
+      "sofa_errors": 1,
+      "actual_frames": 214,
+      "scene_sha256": "a502708dff872a9d074062aefdffcaa9f3dbb50bf630cccf4e6ab7a5d195ccfa",
+      "maximum_actual_buffered_penetration_m": -2.168404344971009e-19,
+      "actual_penalty_rows": 0
+    }
+  ],
+  "assumed_stiffness_N_per_m": 100.0,
+  "mass_kg": 0.001,
+  "initial_vz_m_s": -0.01,
+  "initial_buffered_gap_m": 1.5e-05,
+  "SDK": "/home/ubuntu/SOFA/v26.06.00"
+}

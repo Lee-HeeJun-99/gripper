@@ -1,0 +1,52 @@
+{
+  "status": "READ_ONLY_NATIVE_LOOP_BINARY_AUDIT",
+  "scope": "Installed26.06 binary functions and public signatures only. SolveVisitor bool means free states,NOT velocity-only. The subsequent VOp receives freePos,pos,freeVel,dt. No inference that a public ODE-factor override alone fixes this loop;actual687 external-force states remain unchanged and failed.",
+  "producer_sha256": "08321c236f33a5e7b9b2e23e686fd12b8e09b90a4fc2c079bcbb33fee9c98c98",
+  "source_commit": "facd9e2b77a029d4bd5d9e522b87e16e07b71dc2",
+  "SDK_dependency_hashes": {
+    "/home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.AnimationLoop.so.26.06.00": "5f4391124ab04ab4bf6e087d75434ccd1a7b07f221ea78e726aae126e8f7c7c4",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.AnimationLoop/sofa/component/animationloop/FreeMotionAnimationLoop.h": "d8bef2472ae827197e7c68cef8a36b0df1ff12b81c357a4c2837922a3db08589",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.AnimationLoop/sofa/component/animationloop/ConstraintAnimationLoop.h": "5467438344dda37a9f0ceac22b16942a786136e7a8a4d9df0f5054ef984b59c2",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Simulation.Core/sofa/simulation/SolveVisitor.h": "baeb3d1926aaf0580f8efa68f410c65f6b8a30081fe5168ab76d0277b081bca8",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Simulation.Core/sofa/simulation/mechanicalvisitor/MechanicalVOpVisitor.h": "b013d84e8f3ec3b868ba68e2c60753c639abb43a05c9f6e580cb87e58cd6cc64",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.ODESolver.Backward/sofa/component/odesolver/backward/NewmarkImplicitSolver.h": "a92c3330876ca4867f6f777c1cfb72cb8eb5ae14e48092bddb95b5b557dfff77"
+  },
+  "records": [
+    {
+      "function": "free_motion",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.015678838011808693,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "68362eb4ae35bffe26aafe21a50626e5be306cc4a3a0d67142abf9df3171970a",
+          "command.json": "2f289f9e0ec7f375891d2cc7a7434ce698d5e3f2586fabc4d00d8b2b514edd42",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "82710c881cf4fbbe1aedf35d6b1703747bf7b793ece39e8ca2d30ecca2b51dee"
+        }
+      },
+      "contains_solve_visitor": true,
+      "contains_position_vector_operation": true,
+      "disassembly_sha256": "68362eb4ae35bffe26aafe21a50626e5be306cc4a3a0d67142abf9df3171970a"
+    },
+    {
+      "function": "constraint_loop",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.00956688798032701,
+        "pid": 44,
+        "artifacts": {
+          "stdout.log": "b389c5ba9cb2d7d86cb54e7d09e089bbf0474ae356d8f96fca7ccdb3a781a904",
+          "command.json": "edf3971475f0a7adc8ff66e9ee7dd847787038d8c130b0133be9307a0cea4233",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "a9b700526a173a0dca5b474c64e9cb5ff25dd5e633a955806fbe27f9908149fe"
+        }
+      },
+      "contains_solve_visitor": true,
+      "contains_position_vector_operation": true,
+      "disassembly_sha256": "b389c5ba9cb2d7d86cb54e7d09e089bbf0474ae356d8f96fca7ccdb3a781a904"
+    }
+  ]
+}

@@ -1,3 +1,25 @@
+## Native compliance/loop limits663–691 — 2026-11-20
+
+Authority:product_prototype/reports/NATIVE_COMPLIANCE_AND_LOOP_20261120.md.
+Last prior featurefacd9e2;exact producer/compiled source snapshots authoritative.
+Native penalty reference and observer purity implemented;all-common time FAIL.
+Native contact metadata resets after evaluation:NOT a force callback journal.
+673 frozen-state agreement is rejected by678;partial675/676 rejected by677.
+682/684 Native BDF1 discrete equations PASS;tested BDF2 reference mismatch remains.
+683 Newmark improves elastic surrogate error,NOT full0.1% Gate.685 actual1N Cable
+multiplier correct but Newmark state FAIL;ConstantForceField control also FAIL.
+686 factor-only adapter is OPT-IN and REJECTED after687 full-reference FAIL.
+688 actual binary loop path forms freePos=pos+dt*freeVel;do NOT patch SDK or states.
+690 build-reuse/vdamping cleanup reproduces exact states;691 nine regressions PASS.
+Evidence:evidence_product_native_ode_limits_v34. All old Raw/SDK/B3 preserved.
+BOUNDARY:stop this candidate family,not a claim of OS resource exhaustion.
+NEXT meaningful change needs independently verified Native loop integration
+contract/matching source;no blind dt/alarm/parameter repeats or B3 promotion.
+Hardware material/join calibration,original mesh/time/interference,100g/Lift/STEP
+remain BLOCKED. No final product PASS or automatic background continuation.
+Read-only restart:python -m json.tool product_prototype/results/b3_native_plane_ode_reference684/summary.json
+Regression after change:python product_prototype/sofa/contact_policy_test_run.py --tag UNIQUE_REGRESSION
+
 ## Native contact policy660–662 — 2026-11-20
 
 Last feature:d697a67 conditional union geometry;3a5844b actual inertial matrix fix.

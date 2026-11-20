@@ -1,0 +1,46 @@
+{
+  "status": "FAIL_NATIVE_PENALTY",
+  "scope": "Native PenalityContactForceField response,assumed100N/m,1g sphere,-.01m/s,15um initial buffer gap. No gravity,damping,friction or new solver. Not equivalent to hard impact661 or B3 product model. Stored contacts are rebuilt after force evaluation;not force callback samples.",
+  "source_commit": "facd9e2b77a029d4bd5d9e522b87e16e07b71dc2",
+  "producer_sha256": "0c931165017741e3a7ba5a6aaa13bc1a8fc89eb9d77d59d2a4b3bcdc9e542d5c",
+  "probe": true,
+  "trapezoidal": false,
+  "variational": false,
+  "bdf_order": 1,
+  "translation_only": true,
+  "newton_precise": true,
+  "animation_loop": "DefaultAnimationLoop",
+  "actual_response": "PenalityContactForceField",
+  "build": "product_prototype/cad/build_b3_native_penalty_bdf679",
+  "binary_sha256": "709b61c98f975766b1d681859b2687d91611f4cdbff1aaad3dc6efc3e78392a3",
+  "configure": null,
+  "compile": null,
+  "records": [
+    {
+      "dt_s": 0.00025,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21658478095196187,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "8d5e391364a391c4ff0b41f4f131d6ab9568a3674fcf2e567a6bb383edfaed0f",
+          "command.json": "4f61f3744ded5b2fd7c27d4890e56d68ec199c350ecf3074a27083960dec790f",
+          "stderr.log": "22427120d822368aa1dd5517ab10c4c66081cd79ed30cdc0b52c27095c87fefd",
+          "process.json": "263af9bad5f04a1b49a5cb7927a626ba578519f06f5ddd5273f083fd77961f47"
+        }
+      },
+      "sofa_errors": 1,
+      "actual_frames": 6,
+      "scene_sha256": "fc8752082e970e566574ecd82865710d773cad5a07292c00d521a6894c861e7d",
+      "maximum_actual_buffered_penetration_m": -6.505213034913027e-19,
+      "actual_penalty_rows": 6
+    }
+  ],
+  "assumed_stiffness_N_per_m": 100.0,
+  "mass_kg": 0.001,
+  "initial_vz_m_s": -0.01,
+  "initial_buffered_gap_m": 1.5e-05,
+  "SDK": "/home/ubuntu/SOFA/v26.06.00"
+}

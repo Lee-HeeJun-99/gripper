@@ -1,0 +1,74 @@
+{
+  "status": "NATIVE_SURROGATE_RUN_COMPLETED_NOT_PHYSICALLY_QUALIFIED",
+  "scope": "Native PlaneForceField Vec3 oscillator only,not collision detector/rigid/guide/B3/cable/contact production model. Same100N/m unilateral elastic law in exact translational plane symmetry reduction;stiffness research assumption,not measured hardware. Numerical solve remains stock Native.",
+  "producer_sha256": "42e2ed16c09f82f904a865703c08c9991f05c07fcdcb983cfc1f5fc54910a209",
+  "source_commit": "facd9e2b77a029d4bd5d9e522b87e16e07b71dc2",
+  "configure": null,
+  "compile": null,
+  "build": "product_prototype/cad/build_b3_native_plane_force682",
+  "binary_sha256": "11d942a190d96ef3b80b47a31f279308b4a17a09ae8ca5d9b15e90d23028d1d9",
+  "records": [
+    {
+      "mode": "newmark",
+      "dt_s": 0.00025,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.10902809700928628,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "eb2430adc395e94025be4753d2010b175577f0c247ec6d5edfca24dc2c290bf4",
+          "command.json": "c182fad47e71c271bbecc2d6bbe1a269ebe989b3cca6a6454c19744580452050",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "91ed9e92c3c057c93e0920977018185df2af744cff0e28e3ce08ef9817ab8b4b"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "64f2a25dd29779ec52842ceb19e9b1da4667e35cc4d337d5a6687c2bb29d46f4",
+      "actual_frames": 80
+    },
+    {
+      "mode": "newmark",
+      "dt_s": 0.000125,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13929042196832597,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "e4520c7d3938052c158e22e5f09cef48b37333c60b3c3cee44ed46169cc8b7ae",
+          "command.json": "18f360fa5a0b1e8a4f180a773933ef9a86b7397d1000d831dba776467ca29fc6",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "c761f924c480cb1f08ed51688442d77cbc84b3565082f2568f85dc4324813666"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "d25346800e48bb1ab361ca486ac1fe240d9f3c244d4395e2b8e99b4768525f3c",
+      "actual_frames": 160
+    },
+    {
+      "mode": "newmark",
+      "dt_s": 6.25e-05,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1685069400118664,
+        "pid": 44,
+        "artifacts": {
+          "stdout.log": "aa5d0b80d99082a64b74eec8953357e8e4ad4dda94e29539458bfe1a0af694cf",
+          "command.json": "a5f124089c93b0b454bb402981a4186cd4bdb66c0d33bc50fad490cc07b1de70",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "26573ad91d959cf2d864b8fb94c684a6d01d68d7cc98952baf6e5e3abf23a03a"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "84d596d2dacdac9f3b2c16396c0615dc2dd95bd3648ac94c450148584e093709",
+      "actual_frames": 320
+    }
+  ],
+  "mass_kg": 0.001,
+  "stiffness_N_per_m": 100.0,
+  "initial_vz_m_s": -0.01,
+  "initial_buffered_gap_m": 1.5e-05,
+  "SDK": "/home/ubuntu/SOFA/v26.06.00"
+}

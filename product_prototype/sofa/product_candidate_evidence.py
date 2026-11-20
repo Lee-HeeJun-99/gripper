@@ -19,10 +19,16 @@ def main():
         for f in folder.rglob('*'):
             if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
         detail=json.loads(summary.read_text())
-        if detail.get('build') and case.startswith('b3_inertia'):
-            build=ROOT/detail['build']
-            for f in [build/'CMakeCache.txt',*build.glob('libReGrip*.so')]:
-                if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+        if case.startswith(('b3_inertia','b3_native')):
+            builds=[ROOT/detail['build']] if detail.get('build') else []
+            builds.append(BASE/'cad'/('build_'+case))
+            for build in builds:
+                for f in [build/'CMakeCache.txt',*build.glob('libReGrip*.so')]:
+                    if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+        for name,digest in detail.get('SDK_dependency_hashes',{}).items():
+            f=Path(name)
+            if sha(f)!=digest:raise ValueError('actual SDK evidence changed:'+name)
+            files[name]=digest
     for name in ('guide_angular_audit.py','guide_entry_phase.py','guide_entry_assess.py','guide_row_dynamics.py','guide_entry_plot.py','guide_motion_clearance.py','guide_sector_candidate.py','guide_clearance_event.py','product_candidate_evidence.py','mechanism_candidates.py','guide_pair_coupon.py','run_alarm_window.py','b3_clearance_comparison.py','guide_chord_audit.py','guide_pair_time_assess.py','b3_clearance_plot.py','guide_route_identity.py','observer_identity.py','run_native.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     row_binary=BASE/'cad/build_pair_rows512/libReGripPairRows.so'
@@ -39,6 +45,11 @@ def main():
         shutil.copy2(BASE/'sofa'/name,out/name)
     for name in ('inertia_contact_phase.py','native_plane_policy.py','native_plane_assess.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
+    for name in ('native_penalty_run.py','native_penalty_assess.py','native_compliance_ode.py','native_compliance_assess.py','native_newmark_cable.py','newmark_factor_build.py','native_loop_binary_audit.py','test_native_contact_policy.py','contact_policy_test_run.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
+    for directory in ('native_penalty_probe','native_newmark_factors'):
+        for f in (BASE/'sofa'/directory).iterdir():
+            if f.is_file():shutil.copy2(f,out/(directory+'_'+f.name))
     for name in ('mapping_acceleration_build.py','mapping_acceleration_run.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     for f in compiled_mapping_acceleration():
@@ -77,6 +88,8 @@ def main():
     if sha(physical)!='3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0':raise ValueError('physical controller binary changed')
     files[str(physical.relative_to(ROOT))]=sha(physical)
     sdk=Path('/home/ubuntu/SOFA/v26.06.00')
+    for relative in ('lib/libSofa.Component.ODESolver.Backward.so.26.06.00','lib/libSofa.Component.AnimationLoop.so.26.06.00','lib/libSofa.Component.Collision.Response.Contact.so.26.06.00','lib/libSofa.Component.MechanicalLoad.so.26.06.00','include/Sofa.Component.Constraint.Lagrangian.Model/sofa/component/constraint/lagrangian/model/BaseContactLagrangianConstraint.inl','include/Sofa.Component.Collision.Response.Contact/sofa/component/collision/response/contact/PenalityContactForceField.inl','include/Sofa.Component.Collision.Response.Contact/sofa/component/collision/response/contact/BarycentricPenalityContact.inl','include/Sofa.Component.MechanicalLoad/sofa/component/mechanicalload/PlaneForceField.inl','include/Sofa.Component.ODESolver.Backward/sofa/component/odesolver/backward/NewmarkImplicitSolver.h'):
+        f=sdk/relative;files[str(f)]=sha(f)
     for relative in ('bin/runSofa-26.06.00','include/Sofa.DefaultType/sofa/defaulttype/RigidMass.h','include/Sofa.Component.Mass/sofa/component/mass/UniformMass.inl','include/Sofa.Component.Mass/sofa/component/mass/UniformMass.h','include/Sofa.Core/sofa/core/Mapping.h','include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.h','include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.inl'):
         f=sdk/relative;files[str(f)]=sha(f)
     for category in ('meshes','drawings'):

@@ -1,4 +1,25 @@
-Latest verified feature commit: `35bee4217b8d0c0dc26b1f945175995f490b8fba`.
+## Native loop / elastic-wire continuation692–703 — 2026-11-20
+
+Feature commit: `6b8d0b64a03e8598a2ece62ce0bf04b83a7c68f0`.
+Authority:product_prototype/reports/NATIVE_LOOP_INTERVENTION_AND_ELASTIC_TENDON_20261120.md.
+692 loop-only intervention:Default external-force Euler/Newmark STRICT1e-12 PASS;
+Default Cable stationary FAIL;deprecated ConstraintAnimationLoop graph segfault.
+693–696 Native elastic-wire candidate:old-tangent and nonlinearBE discrete
+references PASS,but BOTH full-common-time/all-pair0.1% Gates FAIL. Different
+physical model from prescribed-tension Cable;wire properties NOT measured.
+697/698 actual Native slack potential/force API inconsistency independently found.
+699 potential-only Native subclass:unchanged force/tangent/q/v;potential error
+<=8.68e-19J,slack FD gradient0.702 Native Newton journals EXACTLY unchanged.
+This scoped API correction does NOT fix time/contact/B3/Holding qualification.
+703 fifteen regression checks PASS.27actual Native attempts,one segfault preserved.
+Evidence:evidence_product_elastic_tendon_v35 (7264files;6812prior hashes unchanged).
+NEXT:new validated Native constrained-loop contract or independently calibrated
+elastic-wire physical model;stop blind repeats/promotion under current limits.
+Original B3,SDK,Raw/checkpoints preserved;100g/Lift/STEP remain unqualified.
+Read-only resume:python -m json.tool product_prototype/results/b3_native_spring_potential_adapter699/summary.json
+Regression after specific change:python product_prototype/sofa/contact_policy_test_run.py --tag UNIQUE_REGRESSION
+
+Previous verified feature commit: `35bee4217b8d0c0dc26b1f945175995f490b8fba`.
 Next actionable prerequisite is a validated Native constrained-loop integration
 contract; the factor-only override is rejected, not ready for B3 integration.
 Read `product_prototype/reports/NATIVE_COMPLIANCE_AND_LOOP_20261120.md`

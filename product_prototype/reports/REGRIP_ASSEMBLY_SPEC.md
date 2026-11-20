@@ -1,3 +1,12 @@
+## Elastic-wire candidate boundary — 2026-11-20
+
+692–703 test a separate Native elastic-string coupon,NOT a measured wire or
+approved assembly change.No CAD,routing,hardware mass or B3 model was replaced.
+Potential-only API correction6b8d0b6 is validated on coupons only;time Gate FAIL.
+Wire stiffness/density/preload,guide sliding/friction and joint construction
+remain unspecified.Physical assembly/fabrication readiness is NOT granted.
+See NATIVE_LOOP_INTERVENTION_AND_ELASTIC_TENDON_20261120.md and CHECKPOINT.md.
+
 ## Conditional finite union658–659 — 2026-11-20
 
 Previous functional commit3a5844b:actual Native missing-B assembly corrected;

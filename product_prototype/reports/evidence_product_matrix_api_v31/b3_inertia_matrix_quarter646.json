@@ -1,0 +1,189 @@
+{
+  "status": "PASS_FORCE_FD_BASIS_AND_LEGACY_ASSEMBLY_ONLY",
+  "scope": "Gyroscopic force and nonsymmetric world rotation/velocity Jacobians;stock Native EulerImplicit + SparseLU,mapped mass/contact retained. Not a new ODE/contact solver or B3/global physical qualification. Assembly presence separately verified,not assumed.",
+  "source_commit": "5b8bf1e3cb72cb5d13b23c0d1d71a5d45505ae17",
+  "producer_sha256": "de8e7c04e7d752a91121c23e23f574a48b4854eb36db730e73cf03794619191b",
+  "input_binary_sha256": "57b121f37839c7e0aa5273ba5d3390736bebffdcdc1b3d201f5f582f1236ea0e",
+  "compiled_source_sha256": "8d19f1bee137476b4c5402d2a4fa945bc4da530c1e128f4eb137ff074fc7d3f2",
+  "physical_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "source_summary_sha256": "609c7a3bc9e6a15964b85dd9127a4bb6fb6cc20ebf0eb4638f74a99a6d77e5fa",
+  "initial": [
+    {
+      "q": [
+        -0.02888516536834323,
+        0.0026585017079263917,
+        -0.08877244007456227,
+        0.1618185904145632,
+        0.28640505460869614,
+        -0.4714469711022171,
+        0.8182448545083428
+      ],
+      "v": [
+        0.5271075517897437,
+        -0.8744927609280636,
+        0.4207439514131417,
+        -14.780490160138822,
+        -8.04270979239418,
+        1.8419585415138242
+      ],
+      "world_inertia_kg_m2": [
+        [
+          1.0299131902905214e-11,
+          -8.369413648323296e-13,
+          -7.659865071921386e-13
+        ],
+        [
+          -8.369413648323295e-13,
+          1.1268021870012551e-11,
+          1.3284258191193754e-12
+        ],
+        [
+          -7.659865071921386e-13,
+          1.3284258191193754e-12,
+          1.1032344833257038e-11
+        ]
+      ],
+      "input_normalized_inertia_m2": [
+        [
+          1.2966415969754054e-06,
+          -8.821328559803182e-25,
+          4.75984186872713e-24
+        ],
+        [
+          -8.821328559803182e-25,
+          9.816541318210365e-07,
+          1.3048215161375526e-23
+        ],
+        [
+          4.75984186872713e-24,
+          1.3048215161375526e-23,
+          9.816541318210365e-07
+        ]
+      ]
+    },
+    {
+      "q": [
+        -0.02963797342576699,
+        -0.004001545132378368,
+        -0.08947027927373984,
+        -0.16891905929325263,
+        0.2975376846270081,
+        0.4691685969769002,
+        0.8141366625112818
+      ],
+      "v": [
+        0.46785129134140746,
+        0.8497603645156699,
+        0.3923317970322074,
+        15.569844331644974,
+        -9.779934406156976,
+        2.416373524866044
+      ],
+      "world_inertia_kg_m2": [
+        [
+          1.0277880108757241e-11,
+          7.997274451678839e-13,
+          -7.750883149031644e-13
+        ],
+        [
+          7.997274451678842e-13,
+          1.1202863040250264e-11,
+          -1.3436099685487059e-12
+        ],
+        [
+          -7.750883149031638e-13,
+          -1.3436099685487059e-12,
+          1.1118755457167284e-11
+        ]
+      ],
+      "input_normalized_inertia_m2": [
+        [
+          1.2966415969754054e-06,
+          -8.821328559803182e-25,
+          4.75984186872713e-24
+        ],
+        [
+          -8.821328559803182e-25,
+          9.816541318210365e-07,
+          1.3048215161375526e-23
+        ],
+        [
+          4.75984186872713e-24,
+          1.3048215161375526e-23,
+          9.816541318210365e-07
+        ]
+      ]
+    }
+  ],
+  "assumed_mass_kg": 1e-05,
+  "mapped_mass": true,
+  "free_reference": true,
+  "dt_s": 0.000625,
+  "duration_s": 0.1,
+  "steps": 160,
+  "trapezoidal": true,
+  "records": [
+    {
+      "variant": 0,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.40699984692037106,
+        "pid": 123,
+        "artifacts": {
+          "stdout.log": "3fdf4f279f3f862cd93207983b7069322020c31a31036c0037eb89347bd4d6fb",
+          "command.json": "bfc35a751aed00257009acf1b5e59cf51ad840c84d8baac925007083f55d4aeb",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "551294ea8e970bcdd9f433ca048e4c1c33f08f09b1a374b1b8267ab70e776819"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "f4b4ec1ee40f27dc0d04545a40b5e1e8939093bba00071acbc1ba136569be307"
+    },
+    {
+      "variant": 1,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.36973118502646685,
+        "pid": 124,
+        "artifacts": {
+          "stdout.log": "ab772f20838d7ffa23c3b155308f0ebdf4ba52c981acc2684a92a41c078f431b",
+          "command.json": "12353bec9f6fe718e243bbbb614ca39b2cf3a5de69be21ab6d1bac1c5f470eb1",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "925386bc1990ac9fcd9a9f26a7c4b22b08126d07719231961d13e38cd64366cd"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "11c3b2fd282d276a8cd267152871102d5e4748fdaee5090affe06b073655801d"
+    }
+  ],
+  "metrics": [
+    {
+      "body": 0,
+      "basis_error": {
+        "q": 1.3877787807814457e-17,
+        "v": 1.1102230246251565e-16
+      },
+      "rotation_FD_relative_error": 6.648053613871836e-11,
+      "velocity_FD_relative_error": 3.2825763251281294e-10,
+      "force_calls": 160,
+      "K_assembly_calls": 160,
+      "B_assembly_calls": 160
+    },
+    {
+      "body": 1,
+      "basis_error": {
+        "q": 1.3877787807814457e-17,
+        "v": 1.1102230246251565e-16
+      },
+      "rotation_FD_relative_error": 6.192449857377545e-11,
+      "velocity_FD_relative_error": 3.301096460171007e-10,
+      "force_calls": 160,
+      "K_assembly_calls": 160,
+      "B_assembly_calls": 160
+    }
+  ],
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "physical_density": null
+}

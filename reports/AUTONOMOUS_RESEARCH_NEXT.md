@@ -1,3 +1,20 @@
+## Actual Native matrix635–657 — 2026-11-20
+
+Authority:product_prototype/reports/NATIVE_INERTIA_FORCE_TANGENT_20261120.md.
+Previous feature5b8bf1 preserved. Missing B found despite callback counts635–639;
+new640 installed matrix APIs fix actual assembly,not physics parameters.
+644 actual operator isolated tangent relative error2.05e-12;observer purity0.
+648 FREE100ms all-common/all3pairs worst0.0753113% PASS selected0.1% Gate.
+654 actual world-transform Native strict1e-12 PASS.653 NOT RUN runner error retained.
+652 CONTACT time FAIL (surface19.4683%,omega81.4033%,force100%).656 actual
+A impulse correction agrees≤2.85e-14;normal target still-gap/dt.657 ten tests PASS.
+Evidence:evidence_product_matrix_api_v31/manifest.json;all old immutable Raw retained.
+Build:product_prototype/cad/build_b3_inertia_matrix_api_build640 (scoped force),
+build_b3_inertia_matrix_api642 (read-only matrix).No SDK/old B3/checkpoint changes.
+NEXT:independent eyelet/support overlap-corrected GEOMETRIC union moments;
+material/joint mass remains unknown. Contact event/mesh/B3/100g/Lift/STEP unqualified.
+Read-only resume:python product_prototype/sofa/inertia_force_contact_audit.py --tag UNIQUE --case b3_inertia_contact_operator655 --reference b3_inertia_matrix_contact649
+
 ## Native inertial force/tangent623–634 — 2026-11-20
 
 Authority:NATIVE_INERTIA_FORCE_TANGENT_20261120.md.

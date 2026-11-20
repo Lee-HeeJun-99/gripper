@@ -18,6 +18,11 @@ def main():
         shutil.copy2(summary,out/(case+'.json'));cases[case]=dict(raw=str(folder.relative_to(ROOT)),summary_sha256=sha(summary))
         for f in folder.rglob('*'):
             if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+        detail=json.loads(summary.read_text())
+        if detail.get('build') and case.startswith('b3_inertia'):
+            build=ROOT/detail['build']
+            for f in [build/'CMakeCache.txt',*build.glob('libReGrip*.so')]:
+                if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
     for name in ('guide_angular_audit.py','guide_entry_phase.py','guide_entry_assess.py','guide_row_dynamics.py','guide_entry_plot.py','guide_motion_clearance.py','guide_sector_candidate.py','guide_clearance_event.py','product_candidate_evidence.py','mechanism_candidates.py','guide_pair_coupon.py','run_alarm_window.py','b3_clearance_comparison.py','guide_chord_audit.py','guide_pair_time_assess.py','b3_clearance_plot.py','guide_route_identity.py','observer_identity.py','run_native.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     row_binary=BASE/'cad/build_pair_rows512/libReGripPairRows.so'
@@ -46,8 +51,11 @@ def main():
     inertia_build=BASE/'cad/build_b3_inertia_input_build592'
     files[str((inertia_build/'CMakeCache.txt').relative_to(ROOT))]=sha(inertia_build/'CMakeCache.txt')
     shutil.copy2(BASE/'sofa/native_inertia_input/CMakeLists.txt',out/'inertia_input_CMakeLists.txt')
-    for name in ('inertia_force_build.py','inertia_force_run.py'):
+    for name in ('inertia_force_build.py','inertia_force_run.py','inertia_matrix_run.py','inertia_matrix_audit.py','inertia_world_run.py','inertia_force_contact_audit.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
+    for directory in ('native_inertia_force','native_system_matrix'):
+        for f in (BASE/'sofa'/directory).iterdir():
+            if f.is_file():shutil.copy2(f,out/(directory+'_'+f.name))
     for f in compiled_inertia_force():
         files[str(f.relative_to(ROOT))]=sha(f)
         if f.suffix=='.cpp':shutil.copy2(f,out/'inertia_force_Force.cpp')

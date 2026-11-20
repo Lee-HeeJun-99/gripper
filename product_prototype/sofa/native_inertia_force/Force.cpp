@@ -4,6 +4,7 @@
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/defaulttype/RigidTypes.h>
 #include <sofa/linearalgebra/BaseMatrix.h>
+#include <sofa/core/behavior/BaseLocalForceFieldMatrix.h>
 #include <fstream>
 #include <iomanip>
 namespace regrip {
@@ -37,9 +38,19 @@ public:
  }
  void addForce(const sofa::core::MechanicalParams*,DataVecDeriv&f,const DataVecCoord&q,const DataVecDeriv&v)override{if(q.getValue().size()!=1)throw std::runtime_error("single body only");const auto a=evaluate(q.getValue()[0],v.getValue()[0].getVOrientation());auto*o=f.beginEdit();o->resize(1);(*o)[0].getVOrientation()+=a.force;f.endEdit();++forceCalls;log<<"FORCE,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<",\""<<a.force<<"\",0\n";log.flush();}
  void addDForce(const sofa::core::MechanicalParams*p,DataVecDeriv&df,const DataVecDeriv&dx)override{auto a=current();auto*out=df.beginEdit();out->resize(1);(*out)[0].getVOrientation()+=(a.K*p->kFactor()+a.B*p->bFactor())*dx.getValue()[0].getVOrientation();df.endEdit();++dCalls;}
- void addKToMatrix(sofa::linearalgebra::BaseMatrix*mat,SReal factor,unsigned&offset)override{const auto a=current();for(unsigned i=0;i<3;++i)for(unsigned j=0;j<3;++j)mat->add(offset+3+i,offset+3+j,factor*a.K[i][j]);++kCalls;log<<"K,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<",0,0\n";log.flush();}
- void addBToMatrix(sofa::linearalgebra::BaseMatrix*mat,SReal factor,unsigned&offset)override{const auto a=current();for(unsigned i=0;i<3;++i)for(unsigned j=0;j<3;++j)mat->add(offset+3+i,offset+3+j,factor*a.B[i][j]);++bCalls;log<<"B,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<",0,0\n";log.flush();}
+ void addKToMatrix(sofa::linearalgebra::BaseMatrix*mat,SReal factor,unsigned&offset)override{const auto a=current();for(unsigned i=0;i<3;++i)for(unsigned j=0;j<3;++j)mat->add(offset+3+i,offset+3+j,factor*a.K[i][j]);++kCalls;log<<"K,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<','<<factor<<",0\n";log.flush();}
+ void addBToMatrix(sofa::linearalgebra::BaseMatrix*mat,SReal factor,unsigned&offset)override{const auto a=current();for(unsigned i=0;i<3;++i)for(unsigned j=0;j<3;++j)mat->add(offset+3+i,offset+3+j,factor*a.B[i][j]);++bCalls;log<<"B,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<','<<factor<<",0\n";log.flush();}
  SReal getPotentialEnergy(const sofa::core::MechanicalParams*,const DataVecCoord&)const override{return 0;}
+ void buildStiffnessMatrix(sofa::core::behavior::StiffnessMatrix*matrix)override{
+  auto block=matrix->getForceDerivativeIn(this->mstate).withRespectToPositionsIn(this->mstate);const auto a=current();
+  for(unsigned i=0;i<3;++i)for(unsigned j=0;j<3;++j)block(3+i,3+j)+=a.K[i][j];
+  ++kCalls;log<<"K,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<",1,1\n";log.flush();
+ }
+ void buildDampingMatrix(sofa::core::behavior::DampingMatrix*matrix)override{
+  auto block=matrix->getForceDerivativeIn(this->mstate).withRespectToVelocityIn(this->mstate);const auto a=current();
+  for(unsigned i=0;i<3;++i)for(unsigned j=0;j<3;++j)block(3+i,3+j)+=a.B[i][j];
+  ++bCalls;log<<"B,"<<getContext()->getTime()<<','<<forceCalls<<','<<kCalls<<','<<bCalls<<','<<dCalls<<",1,1\n";log.flush();
+ }
 };
 }
 extern "C" {

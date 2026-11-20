@@ -1,11 +1,27 @@
 """No physics-Gate floors:input-law and actual response-group layout regressions."""
-import csv,unittest
+import csv,json,unittest
 import numpy as np
 from analyse import BASE
 from native_response_blocks import friction_blocks
 def read(path):
  with path.open() as stream:return list(csv.DictReader(stream))
 class NativeInertiaTest(unittest.TestCase):
+ def test_actual_matrix_tangent_not_callback_count(self):
+  old=json.loads((BASE/'results/b3_inertia_matrix_coefficients637/summary.json').read_text());new=json.loads((BASE/'results/b3_inertia_matrix_chain644/summary.json').read_text())
+  self.assertEqual(old['status'],'FAIL_ACTUAL_NATIVE_OPERATOR');self.assertEqual(new['status'],'PASS_ACTUAL_NATIVE_ROTATIONAL_OPERATOR')
+  self.assertLess(new['maximum_isolated_tangent_correction_relative_error'],1e-9)
+  for r in new['records']:
+   self.assertLess(abs(r['fitted_B_dt_coefficient']+.5),1e-9);self.assertLess(abs(r['fitted_K_dt2_coefficient']+.25),1e-9)
+  for r in old['records']:self.assertLess(abs(r['fitted_B_dt_coefficient']),1e-9)
+ def test_actual_matrix_observer_does_not_change_states(self):
+  for case in ('b3_inertia_matrix635','b3_inertia_matrix_api642','b3_inertia_contact_operator655'):
+   result=json.loads((BASE/'results'/case/'summary.json').read_text())
+   for r in result['records']:self.assertEqual(r['observer_state_error'],0.)
+ def test_world_transform_is_actual_native_execution(self):
+  result=json.loads((BASE/'results/b3_inertia_matrix_world654/summary.json').read_text())
+  self.assertEqual(result['status'],'PASS_ACTUAL_NATIVE_FREE_SE3_OBJECTIVITY')
+  for r in result['records']:
+   self.assertEqual(r['process']['exit_code'],0);self.assertLessEqual(max(r['errors'].values()),1e-12)
  def test_stock_trapezoidal_held_input_no_change(self):
   # Installed scheme changed,but B=K=0 held-input system is unchanged here.
   for variant in (0,1):

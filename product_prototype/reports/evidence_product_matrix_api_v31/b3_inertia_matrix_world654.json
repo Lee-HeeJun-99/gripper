@@ -1,0 +1,95 @@
+{
+  "status": "PASS_ACTUAL_NATIVE_FREE_SE3_OBJECTIVITY",
+  "scope": "Actual independently executed Native initial world rotation+translation,not postprocessed replacement trajectory. Free finite rings only,no contact/B3 qualification.",
+  "source_commit": "5b8bf1e3cb72cb5d13b23c0d1d71a5d45505ae17",
+  "source_sha256": "5a1947938988e7545eb53ada7180dd1cffff2e4a50e4bfad29622d7cc762428a",
+  "source_summary_sha256": "5324a20b5a2373fc28d892eec1ac4c554d36f4d106c3bec02dd9dcd4409450af",
+  "force_binary_sha256": "57b121f37839c7e0aa5273ba5d3390736bebffdcdc1b3d201f5f582f1236ea0e",
+  "rotation_matrix": [
+    [
+      0.8485769303298005,
+      -0.28718906461657634,
+      -0.444341799155457
+    ],
+    [
+      0.10191848525539132,
+      0.9128534956747023,
+      -0.3953620085411881
+    ],
+    [
+      0.5191626100513201,
+      0.2902084364713263,
+      0.8038962916481011
+    ]
+  ],
+  "translation_m": [
+    0.013,
+    -0.021,
+    0.008
+  ],
+  "dt_s": 0.0025,
+  "steps": 40,
+  "records": [
+    {
+      "variant": 0,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.2234398650471121,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "f76d3bb3e43b536edabd534738247c72509f50be73592919ba8032955223220d",
+          "command.json": "3020703cd9e57ff2ecc17f6b4336f929068c1d5b1931501a1f8f500a6d74eea6",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "2b69435106044475811e2737cbcb77235ab7bc49821cab3010d9b53ee43cbfbf"
+        }
+      },
+      "scene_sha256": "ccf4ac7d4668989afcdc870f6a44f79eabc9b27bd6b852eb8271f95697d5b4db",
+      "errors": {
+        "mass0.csv:q": 1.5265566588595902e-16,
+        "mass0.csv:v": 2.220446049250313e-16,
+        "mapped0_eyelet.csv:q": 1.5265566588595902e-16,
+        "mapped0_eyelet.csv:v": 3.3306690738754696e-16,
+        "body0:angular_velocity": 7.105427357601002e-15,
+        "body0:rotation_matrix": 8.881784197001252e-16,
+        "mass1.csv:q": 1.1102230246251565e-16,
+        "mass1.csv:v": 3.3306690738754696e-16,
+        "mapped1_eyelet.csv:q": 1.1102230246251565e-16,
+        "mapped1_eyelet.csv:v": 3.3306690738754696e-16,
+        "body1:angular_velocity": 7.993605777301127e-15,
+        "body1:rotation_matrix": 1.970645868709653e-15
+      }
+    },
+    {
+      "variant": 1,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.20677563606295735,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "fd973fdd738e449ec4052ce930c1097bf5ab691944fff28cd6aca01dd7826071",
+          "command.json": "c3810064728276fc82615a1794925ae0033548e9a60a90a3dcd31676e22a6f1d",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "12c3b7c6f555a3f40ffd232f6c427b265be2ad447c5d14b3bb5103a0403b769b"
+        }
+      },
+      "scene_sha256": "26b08613d305b1920a9d60e6628001a4508fbe35d17efb9c21f31dfed6c32b59",
+      "errors": {
+        "mass0.csv:q": 1.5265566588595902e-16,
+        "mass0.csv:v": 2.220446049250313e-16,
+        "mapped0_eyelet.csv:q": 1.5265566588595902e-16,
+        "mapped0_eyelet.csv:v": 3.885780586188048e-16,
+        "body0:angular_velocity": 5.329070518200751e-15,
+        "body0:rotation_matrix": 1.304512053934559e-15,
+        "mass1.csv:q": 1.1102230246251565e-16,
+        "mass1.csv:v": 3.3306690738754696e-16,
+        "mapped1_eyelet.csv:q": 1.1102230246251565e-16,
+        "mapped1_eyelet.csv:v": 4.440892098500626e-16,
+        "body1:angular_velocity": 1.4210854715202004e-14,
+        "body1:rotation_matrix": 1.7763568394002505e-15
+      }
+    }
+  ],
+  "gate": 1e-12
+}

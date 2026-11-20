@@ -754,3 +754,11 @@ approved minimum. No lead-in/horn/termination qualification. Cartridge12sample
 withdrawal clear;6assembledclamp tool pathsblocked:detach and benchservice.
 160ASCIISTLs reloadclosed/positive,NOT STEP/BRep/strength/completeassemblyPASS.
 SeeWIRE_EYELET_CONTINUATION_20261120.md forRaw,commands and retainedFAILs.
+## 2026-11-20 — unmounted turn-pulley/fork modules
+
+PulleyOD6/pitchD4/bore1.2/groove0.8/width1.8mm;forkarms1mmthick,
+3mmwide,5mmlever;pinD1,nominalaxialgap0.5mm. These are DESIGNassumptions,
+notselectedbearing/shaft/tolerances.54actualASCIISTLs checked;Palmconnection,
+pinretention/rootredirect/strength/friction unresolved. DoNOTassemble/fabricate
+asqualifiedproduct.Conditionalloadbudget757isnotstressFEMormeasuredstrength.
+See DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md forcommands/Raw.

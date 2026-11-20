@@ -1,3 +1,26 @@
+## Deformed wire / drivetrain continuation744–758 — 2026-11-20
+
+Authority:DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.
+First functional commit3ad479279bee648fc98cb1a895537539b1942f57;later modules
+and evidence commits follow. All old Native/SDK/Raw/Gates unchanged.
+747frozen-source repair:745producer identity rejected,preserved with annotation.
+7461200savedframes/6wires:minimumspheregaplowerbound3.858159mm;hardwareNOTtested.
+75322worst/eventframes/132wires:0wire and0interfinger finitehardware intersections;
+actual147s,bounded4GiB/480s. NOT continuousCCD or newcandidate SOFA dynamics.
+748directmotorleadFAIL18obstaclehits;perimeterroute0,drumcontact retained.
+75118finitepulleys +75418forks/18pins created andactualSTL readbackchecked.
+754parent/module andwire-envelope intersections0. StillUNMOUNTED:bridge toPalm,
+root redirect,axle retention,bearings,tolerances/materialstrength missing.
+757conditional1.5N/90degload2.121N;idealstress10.61MPafork/15.13MPapin,
+NOT measured strengthPASS. No motor/material approved;STEP absent.
+NEXT executable independent task:actual Palm-to-fork mounting/retention CAD,
+then finite-route/tool-access review;do not repeat cleared staticwire tests.
+Current models:meshes/b3_lead_pulley_modules_v22,b3_pulley_fork_modules_v23.
+Bounded replay command (NEWtag):
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/deformed_wire_run.py --tag UNIQUE_EVENT --candidate b3_manufacturing_bore_v21 --include-film --all-event-worst --hardware-pairs`
+Old contact0.1%/FEMmesh FAILs;100g/Lift/fullRecovery/STEPstillunqualified.
+No intentionally running simulation orautomatic session-exit continuation.
+
 ## Wire/Eyelet continuation728–741 — 2026-11-20
 
 Last functional implementation commit529a5c0 (prior32a4825,9d0829b).

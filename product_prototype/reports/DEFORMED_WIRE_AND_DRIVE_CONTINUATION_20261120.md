@@ -63,6 +63,34 @@ Its final outcome must be read before choosing design changes;do not inferPASS
 from this pending-run description. Any new collision is a frozen-path rejection,
 not proof that a newly simulated mechanism would follow the same trajectory.
 
+**Final753:**22saved times,132wire samples,0wire obstacle intersections,
+0inter-finger finiteEyelet/Support intersections. Actual guardedruntime146.996s;
+source/worker/dependency identity verified. NOT continuous CCD or new dynamics.
+
+754continued with18finite fork modules+18pin proxies. Fork back faces away
+from actual wire arc;pinD1/forkbore1.2,nominal axialwheel gap0.5mm eachside.
+36ASCIISTLsreadbackclosed/positive;0parent/module solid intersections and
+0wire-envelope/fork/pin intersections;9.847s. No collisions disabled.
+STLs+neutralrecipe:meshes/b3_pulley_fork_modules_v23. No Palm mountingbridge,
+pin retention,bearing orload-bearing material selected. NOT a mounted drive.
+756actual finite-mesh orthographic SVG/PNG views generated andvisually reviewed,
+nominal dimensions labelled;NOT production-tolerance/STEP drawing release.
+
+757conditional elementary load budget,NOT actual measured stress:
+at1.5N/two equal branches/90deg turn ->2.12132N wheel load;
+ideal fork-arm stress10.6066MPa,pin bending15.1253MPa (assumed3x1mm arms,
+5mmcantilever,simplysupported2.8mm pinspan).SF2 doubles these demands.
+Materialallowable,fatigue,friction,termination,continuousmotor duty remainNULL.
+These assumptions expose required material/joint tests,not justify approval.
+758design regression includes analytic segment/sphere,force-budget references,
+finite module readback,source identity,all-frame andeventworst scope guards.
+
+Next priority:design actual Palm-to-fork mounting bridges andaxle retention;
+verify full finite routes (including root inlet redirect),tolerances andtool
+access. Use known conditional loads but do not pick material from unmeasured
+strength. Then run separate Native candidate coupon with physically defined
+mass/inertia/joints;do not assume new drive == old sixprescribedforces.
+
 Motor/material approvals remainBLOCKED by actual continuous loaded duty,
 interface drawings,wirebend/termination/bondfatigue data. Native contact/time
 0.1% andFEMmesh failures unchanged.100g/Lift/recovery qualification not advanced.

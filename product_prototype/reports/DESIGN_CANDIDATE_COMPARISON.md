@@ -766,3 +766,11 @@ V20changesaxis only:6necessarybore FAILs. V21ID1.4 only afterV20,OD3unchanged:
 conservative envelope also0hits;not supplier/bending/moving qualification.
 Skin/Rail/Support unchanged.24static fastener seam overlaps UNRESOLVED;no
 assemblyPASS. SeeWIRE_EYELET_CONTINUATION_20261120.md and cases728–741.
+## 2026-11-20 — deformed V21 andconditionalV22/V23drive
+
+Old485acceptedmotions+newV21finiteparts:22high-risk savedtimes/132wires,
+0wireobstacle and0interfingerhardwarehits. Not continuous/newdynamics.
+Directlead-inFAIL18hits;perimetercandidate0obstaclehits butlarger envelope
+andassumedmotoraxis. Finitepulley/fork/pin54modules haveSTLreadbacks and
+staticchecks;Palmbridge/axleretention/bearing/material absent. NOTassemblyPASS.
+See DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md;alloldFAILspreserved.

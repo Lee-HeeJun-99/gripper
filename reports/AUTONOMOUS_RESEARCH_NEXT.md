@@ -1,3 +1,18 @@
+## Product continuation744–758 — 2026-11-20
+
+Read product_prototype/reports/DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.
+Completed:deformed OLDNative path screening,actual nodalSkin/Railsurface inclusion,
+sourcefrozenworker,22eventworsttimes/132wires/finiteinterfingerhardware0hits,
+1200savedframeobjectclearance;conditionalmotorlead-in geometry and54actual
+pulley/fork/pinSTLs. No newNative dynamics or time/mesh/HoldingPASS.
+NEXT:actual Palm-to-fork mountingbridge+axleretention CAD,rootinletredirect,
+fullfinitewire/hardware/tolerance/tool-access checks. Materials,continuousmotor
+duty,hornfit,wirefatigue/minbendradius arephysical-data blockers,not numbers
+to assume. Unmountedmodules mustNOTbe calledcompleteassembly. Do not repeat
+knownfailed constrained-loop/dt sweeps.745identityfailpreserved;747repairvalid.
+Newmodulepaths:product_prototype/meshes/b3_lead_pulley_modules_v22 and
+product_prototype/meshes/b3_pulley_fork_modules_v23. No STEPkernel execution.
+
 ## Product continuation728–741 — 2026-11-20
 
 UPDATE742–743:actual saved485transforms+NEWEyelet relative frames screened;

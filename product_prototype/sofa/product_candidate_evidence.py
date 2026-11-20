@@ -9,13 +9,15 @@ def immutable(name):
     return name.startswith(('product_prototype/results/','product_prototype/reports/evidence_','product_prototype/cad/build_','product_prototype/meshes/','product_prototype/drawings/','/home/ubuntu/SOFA/','/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/site-packages/trimesh/'))
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--prior',required=True);p.add_argument('--cases',nargs='+',required=True);p.add_argument('--designs',nargs='*',default=[]);a=p.parse_args();prior=BASE/'reports'/a.prior/'manifest.json';old=json.loads(prior.read_text());files={k:v for k,v in old['files'].items() if immutable(k)};bad=[k for k,v in files.items() if not (ROOT/k).is_file() or sha(ROOT/k)!=v]
+    p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--prior',required=True);p.add_argument('--cases',nargs='+',required=True);p.add_argument('--designs',nargs='*',default=[]);p.add_argument('--modules',nargs='*',default=[]);a=p.parse_args();prior=BASE/'reports'/a.prior/'manifest.json';old=json.loads(prior.read_text());files={k:v for k,v in old['files'].items() if immutable(k)};bad=[k for k,v in files.items() if not (ROOT/k).is_file() or sha(ROOT/k)!=v]
     if bad:raise ValueError('prior immutable evidence mismatch:'+str(bad))
     out=BASE/'reports'/a.name;out.mkdir(exist_ok=False);cases={}
     for case in a.cases:
         folder=BASE/'results'/case;summary=folder/'summary.json'
         if not summary.exists():raise ValueError('Missing final summary;do not archive partial run as complete:'+case)
         shutil.copy2(summary,out/(case+'.json'));cases[case]=dict(raw=str(folder.relative_to(ROOT)),summary_sha256=sha(summary))
+        rejection=folder/'SOURCE_IDENTITY_REJECTION.json'
+        if rejection.exists():cases[case]['evidence_rejection']=json.loads(rejection.read_text())
         for f in folder.rglob('*'):
             if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
         detail=json.loads(summary.read_text())
@@ -111,6 +113,19 @@ def main():
             if not folder.resolve().is_relative_to((BASE/'meshes').resolve()):raise ValueError('partial CAD path outside product meshes')
             for f in folder.rglob('*'):
                 if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+    if a.modules:
+        for name in a.modules:
+            if Path(name).name!=name:raise ValueError('local module name required')
+            mesh=BASE/'meshes'/name;draw=BASE/'drawings'/name
+            if not (mesh/'assembly_recipe.json').is_file() or not (draw/'summary.json').is_file():raise ValueError('incomplete unmounted module evidence')
+            detail=json.loads((draw/'summary.json').read_text());recipe=json.loads((mesh/'assembly_recipe.json').read_text())
+            if len(recipe['parts'])!=len(detail['records']) or detail['fabrication_ready']:raise ValueError('module count/scope mismatch')
+            for record in detail['records']:
+                f=mesh/(record['part']+'.stl');expected=record.get('STL_sha256',record.get('saved_STL_sha256'))
+                if not expected or sha(f)!=expected:raise ValueError('module STL identity mismatch')
+            for folder in (mesh,draw):
+                for f in folder.rglob('*'):
+                    if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
     if a.designs:
         for name in a.designs:
             if Path(name).name!=name:raise ValueError('local product design name required')
@@ -119,6 +134,7 @@ def main():
                 if not (folder/'checks.json').is_file():raise ValueError('incomplete product CAD evidence:'+str(folder))
                 for f in folder.rglob('*'):
                     if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+    if a.designs or a.modules:
         for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
         shutil.copy2(BASE/'sofa/native_multistep_contract.py',out/'native_multistep_contract.py')
         for f in (BASE/'config').glob('*v1*.json'):shutil.copy2(f,out/('config_'+f.name))

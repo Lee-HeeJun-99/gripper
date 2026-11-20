@@ -871,3 +871,12 @@ service,STL reload,selection-evidence gate and29design regressions. Details and
 commands:WIRE_EYELET_CONTINUATION_20261120.md. NoNative results added;no Gate
 relaxed. Next deformed clearance replay and motor lead-in/interface; material
 and continuous motor duty measurements remainBLOCKED. Local feature32a4825.
+## 2026-11-20 — cycles744–758
+
+Advanced deformedwire/finitehardware screening,fullsavedframe spheregap,
+conditionalmotorlead-in,18finitepulleys and18fork/18pinmodules,orthographic
+review andconditionalcomponentloadrequirements.753132wire samples/22times
+andfiniteinterfingerhardware0hits;NOTCCD/newdynamics.745sourceidentityFAIL
+retained and747frozenworker repair verified. NextPalm mountbridges/retention;
+materials/strength/horn/continuousdrive physicaldata missing. NoGate relaxed.
+Details:DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md;firstcommit3ad4792.

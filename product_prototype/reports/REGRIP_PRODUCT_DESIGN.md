@@ -882,3 +882,11 @@ Native qualification.24tiny fastener seam intersections remainUNRESOLVED.
 Motor/material approval blocked,STEP absent. No newHolding/Lift/GraspPASS.
 CAD:meshes/b3_manufacturing_bore_v21_stl_ascii;drawings/b3_manufacturing_bore_v21.
 Authority:WIRE_EYELET_CONTINUATION_20261120.md.
+## 2026-11-20 — conditional lead-in andfinite modulesV22/V23
+
+Perimeterlead-in replaces geometrically blocked directpath atdesignlevel only;
+18finitepulley/18fork/18pin modules generated. No Palmbridge/axleretention,
+bearing/motorhornfit/materialqualification. Actual local views in
+results/product_pulley_drawing756.54STLmodules areNOT54approvedsuppliedparts.
+Fullproductassembly,100g/Lift/STEPnotqualified;oldtime/meshFAILsunchanged.
+See DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.

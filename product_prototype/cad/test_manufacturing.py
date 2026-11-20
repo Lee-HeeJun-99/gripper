@@ -14,6 +14,15 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_pulley_force_budget_is_idealized_and_does_not_select_material(self):
+  from pulley_load_budget import budget
+  r=budget(1.5,math.pi/2,1.,1.,3.,5.,2.8,1.);self.assertAlmostEqual(r['conditional_turn_load_N'],1.5*math.sqrt(2));self.assertAlmostEqual(r['double_shear_pin_average_MPa'],r['conditional_turn_load_N']/(math.pi/2))
+  self.assertIsNone(result('product_pulley_budget757')['approved_material'])
+  with self.assertRaises(ValueError):budget(1.5,0,1.,1.,3.,5.,2.8,1.)
+ def test_event_worst_finite_hardware_is_sampled_not_CCD(self):
+  d=result('product_event_hardware753');self.assertTrue(d['dependencies_unchanged']);a=d['analysis'];self.assertEqual(len(a['selected_times_s']),22);self.assertEqual(len(a['records']),132);self.assertTrue(a['hardware_pair_check']);self.assertFalse(a['interfinger_hardware_intersections']);self.assertFalse(any(r.get('intersections') for r in a['records']))
+ def test_forks_and_pins_are_finite_but_not_mounted_drive(self):
+  d=result('product_pulley_fork754');self.assertEqual(len(d['records']),36);self.assertFalse(d['solid_intersections']);self.assertFalse(d['wire_envelope_intersections']);self.assertEqual(d['pin_diameter_mm'],1.);self.assertEqual(d['fork_bore_mm'],1.2);self.assertFalse(d['fabrication_ready']);self.assertIn('NOT_MOUNTED',d['status'])
  def test_motor_lead_in_keeps_intended_drum_contact_and_rejects_direct_route(self):
   d=result('product_motor_lead748');direct=[r for r in d['records'] if r['model']=='direct_unrouted_diagnostic'];perimeter=[r for r in d['records'] if r['model']=='perimeter_rounded_candidate'];self.assertEqual(len(direct),6);self.assertEqual(len(perimeter),6)
   self.assertTrue(any(h['classification']=='UNRESOLVED_OBSTACLE' for r in direct for h in r['intersections']));self.assertFalse(any(h['classification']=='UNRESOLVED_OBSTACLE' for r in perimeter for h in r['intersections']));self.assertTrue(any(r['intersections'] for r in perimeter));self.assertIsNone(d['wire_supplier_minimum_radius_mm'])

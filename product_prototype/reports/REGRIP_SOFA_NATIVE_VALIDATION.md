@@ -907,3 +907,12 @@ and proposed rounded wire path are CAD-only candidates;old Native collision,
 mass orHolding qualification is NOT transferred. Existing contact/time/mesh
 FAILs unchanged.29software/design tests are NOT physical Gates. Details:
 WIRE_EYELET_CONTINUATION_20261120.md. Next accepted-state finite geometry replay.
+## 2026-11-20 — cycles744–758qualificationboundary
+
+No newNative SOFA dynamics in this manufacturing continuation. ActualOLD485
+q/rigidframes replayed for NEWCADwire/hardware.75322worsttimes/132wiresclear
+is sampled geometric evidence only.746all1200times objectgap notCCD/timeGate.
+745sourceidentityrejection retained;747snapshottedworker hash/dependency
+identity verified. Existing Native time/mesh/Holding/Lift qualificationunchanged.
+New18pulleys/18forks/18pins areUNMOUNTED modules,not physically validateddrive.
+Authority:DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.

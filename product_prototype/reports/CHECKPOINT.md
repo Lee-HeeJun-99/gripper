@@ -1,3 +1,21 @@
+## Compact drive797–805 — 2026-11-21
+
+Authority:COMPACT_DRIVE_CONTINUATION_20261121.md. Featurebaselinea57d9db.
+V36full292partCAD:meshes/b3_compact_root_v36/full_assembly_recipe.json.
+Only6supportshape recipeschange;outerR94.6495->84.2534(-10.9839%),wire0.
+6zero-volumePalmBooleancontacts retained,NOTassemblyPASS.803actualcomposed
+transform24fullpinsweeps/12bores/18nominaldriverpathsallclear.800unsupported
+nestedauditFAILpreserved.791earlier4serviceplacementsREJECTEDbycorrection;
+804repairedV34actual6pins/6toolsallclear.80552softwaretestsPASS,notphysics.
+ActualCADreview/BOM/sections:results/product_compact_review802.
+NEXT:actualRootthread/head/retentionmanufacturingandpullout/preload/fatigue,
+frameforce-deflection,existingwheelstacktolerances/friction/wireminimumradius.
+NoSOFArun;contact/time/FEMmeshFAILs,100g/Lift/STEP/fabricationGatesremainopen.
+Repro:cad/palm_bridge_candidate.py --tag UNIQUE --name UNIQUE_BRIDGE
+--topology tower --backbone behind-pulley;thenroot_mount_candidate.py
+--tag UNIQUE_ROOT --name UNIQUE_CAD --retention threaded-boss --canonical
+--bridge-candidate UNIQUE_BRIDGE (robot_wsPython,4GiB/480s).
+
 ## Root mount/retention785–796 — 2026-11-21
 
 Authority:ROOT_MOUNT_AND_RETENTION_20261121.md. Baseline2bf6ab6.

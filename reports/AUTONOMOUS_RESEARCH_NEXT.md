@@ -1,3 +1,16 @@
+## Latest compact drive797–805 — 2026-11-21
+
+Readproduct_prototype/reports/COMPACT_DRIVE_CONTINUATION_20261121.md.
+CurrentCADcandidate:meshes/b3_compact_root_v36(full292parts),outerR84.2534mm
+vs94.6495mm prior;only6supportshapechanges.24actualfullpinsweeps/12bores/
+18nominaldriverpaths clear803;52softwaretestsPASS805,notphysicalGates.
+791nestedtransformcoverageREJECTED;804repairsoriginalV34actualservice.
+NEXTrealRootretention/thread/head/materialandpullout/preload/strengthdata,
+frameforce-deflection,wheelstack/tolerance/friction/wireminbendqualification.
+ThenNativechangedmechanismadoptionfromNEWstate. NoSDK/oldrawedits/no newSOFA.
+Knowncontact/time/FEMmeshFAILs/100g/Lift/STEP remainopen;doNOTrepeatblinddt/
+loop/alarm/offsetsweeps. Reprocommands andrawpaths inauthorityreportabove.
+
 ## Latest Root mount/retention785–796 — 2026-11-21
 
 Read product_prototype/reports/ROOT_MOUNT_AND_RETENTION_20261121.md.

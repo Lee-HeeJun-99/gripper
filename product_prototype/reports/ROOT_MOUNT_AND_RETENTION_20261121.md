@@ -1,5 +1,12 @@
 # Root mount and retention continuation785–796
 
+ERRATUMfrom800/803/804:791usedoutermosttransformonly,f1/f2canonicalpinscontain
+nestedtransforms. Fourserviceplacementswereincorrect;raw791+COVERAGE_CORRECTION
+preserved. Corrected804recheckedV34actual6pins/6driverpathsallclear. Cite804,
+not791,forcorrectednominalservice. V36compactfullaudit803handlesalltransforms.
+SeeCOMPACT_DRIVE_CONTINUATION_20261121.md. Priorreportstatements about791are
+historicalandnotvalid6/6qualification.
+
 Baseline2bf6ab62a006b99d14161857d78a982bb12ae2dc,clean before work.
 Existing Raw/Golden/SDK/B3 states and prior PASS/FAIL were not changed.
 This milestone is CAD/reference validation,NOT a new SOFA run or Grasp PASS.

@@ -10,7 +10,10 @@ def main():
  src=BASE/'meshes'/a.candidate/'full_assembly_recipe.json';assembly=json.loads(src.read_text());parts=assembly['parts'];shapes=[evaluate(p['shape']) for p in parts];records=[]
  for p in parts:
   if p['group']!='root_headed_pin_proxy':continue
-  M=np.array(p['shape']['matrix']);nut=p['name'].replace('_headed_pin','_axle_nut');distance=10.
+  M=np.eye(4);local=p['shape']
+  while local['op']=='transform':M=M@np.array(local['matrix']);local=local['shape']
+  if local['op']!='union':raise ValueError('unsupported root pin geometry')
+  nut=p['name'].replace('_headed_pin','_axle_nut');distance=10.
   # Each component is a convex coaxial cylinder. Its positive-axis extrusion
   # is exactly a longer cylinder;union distributes over the swept components.
   sweep=evaluate(transform(union(cyl(.5,-3.7,2.45+distance),cyl(1.25,2.45,3.45+distance)),M))

@@ -8,12 +8,18 @@ from palm_bridge_candidate import rod
 from deformed_wire_screen import probes
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--name',required=True);p.add_argument('--retention',choices=['loose-nut','threaded-boss'],default='loose-nut');p.add_argument('--canonical',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--name',required=True);p.add_argument('--retention',choices=['loose-nut','threaded-boss'],default='loose-nut');p.add_argument('--canonical',action='store_true');p.add_argument('--bridge-candidate');a=p.parse_args()
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);target=BASE/'meshes'/a.name;target.mkdir(exist_ok=False);start=time.monotonic()
  parentfile=BASE/'meshes/b3_thrust_shims_v29/full_assembly_recipe.json';rootfile=BASE/'meshes/b3_root_fork_v31/assembly_recipe.json';wirefile=BASE/'results/product_root_fork780/summary.json';leadfile=BASE/'results/product_motor_lead748/summary.json'
- sources=[Path(__file__),parentfile,rootfile,wirefile,leadfile,*[BASE/'cad'/s for s in ('manufacturing_assembly.py','palm_bridge_candidate.py','deformed_wire_screen.py')]];hashes={str(s.relative_to(BASE)):sha(s) for s in sources}
+ sources=[Path(__file__),parentfile,rootfile,wirefile,leadfile,*[BASE/'cad'/s for s in ('manufacturing_assembly.py','palm_bridge_candidate.py','deformed_wire_screen.py')]]
+ if a.bridge_candidate:sources.append(BASE/'meshes'/a.bridge_candidate/'assembly_recipe.json')
+ hashes={str(s.relative_to(BASE)):sha(s) for s in sources}
  (out/'producer.py').write_bytes(Path(__file__).read_bytes())
  parent=json.loads(parentfile.read_text());roots=json.loads(rootfile.read_text());parts=[];newsolids=[];records=[];removed=[];canonical={}
+ if a.bridge_candidate:
+  replacement={p['name']:p for p in json.loads(sources[-1].read_text())['parts']}
+  if not set(replacement)<=set(p['name'] for p in parent['parts']):raise ValueError('replacement introduces unmatched bridge part')
+  parent['parts']=[replacement.get(p['name'],p) for p in parent['parts']]
  for f,angle in enumerate((0,120,240)):
   S=sector(angle)
   for c,side in enumerate((1,-1)):
@@ -55,6 +61,6 @@ def main():
     if len(hit.faces):wirehits.append(dict(sample=sample,part=part['name'],volume_mm3=float(hit.volume)))
  if hashes!={str(s.relative_to(BASE)):sha(s) for s in sources}:raise ValueError('producer dependencies changed')
  for file,data in [('assembly_recipe.json',dict(units='mm',parts=parts)),('full_assembly_recipe.json',dict(units='mm',parts=fixed+parts))]:(target/file).write_text(json.dumps(data,indent=2))
- result=dict(status='ROOT_MOUNT_REVIEW_REQUIRED' if hits or wirehits else 'ROOT_MOUNT_REFERENCE_MESH_CLEAR_NOT_PRODUCT_PASS',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes=hashes,retention=a.retention,canonical_sector=a.canonical,records=records,solid_intersections=hits,wire_intersections=wirehits,full_part_count=len(fixed+parts),runtime_s=time.monotonic()-start,STEP_generated=False,fabrication_ready=False,scope='Finite connected root forks reuse original12bolted bridge feet/Palm holes;no collision disabled. New6headedpins,headoutboard;loose nuts OR separate integral threaded-boss hypothesis. Optional canonicalfirstsector rotation changes tessellation representation,not nominal configuration;NO digitalidentity claim. Thread shape,material/thread engagement/preload/strength/deflection/wheelendplay/tolerance and movingwire alignment unqualified. Fullrecipe includes prior unresolved mating/seam contacts;only changedparts screened. No SOFA execution.')
+ result=dict(status='ROOT_MOUNT_REVIEW_REQUIRED' if hits or wirehits else 'ROOT_MOUNT_REFERENCE_MESH_CLEAR_NOT_PRODUCT_PASS',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes=hashes,bridge_candidate=a.bridge_candidate,retention=a.retention,canonical_sector=a.canonical,records=records,solid_intersections=hits,wire_intersections=wirehits,full_part_count=len(fixed+parts),runtime_s=time.monotonic()-start,STEP_generated=False,fabrication_ready=False,scope='Finite connected root forks reuse original12bolted bridge feet/Palm holes;no collision disabled. New6headedpins,headoutboard;loose nuts OR separate integral threaded-boss hypothesis. Optional canonicalfirstsector rotation changes tessellation representation,not nominal configuration;NO digitalidentity claim. Thread shape,material/thread engagement/preload/strength/deflection/wheelendplay/tolerance and movingwire alignment unqualified. Fullrecipe includes prior unresolved mating/seam contacts;only changedparts screened. No SOFA execution.')
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps({k:result[k] for k in ('status','full_part_count','runtime_s','solid_intersections','wire_intersections')},indent=2))
 if __name__=='__main__':main()

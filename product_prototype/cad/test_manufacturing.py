@@ -14,12 +14,24 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_compact_drive_changes_only_support_and_retains_full_service(self):
+  d=result('product_compact_comparison801');self.assertEqual(len(d['changed_parts']),6);self.assertTrue(all(r['part_count']==292 for r in d['records']));self.assertGreater(d['radial_extent_reduction_percent'],10);self.assertIsNone(d['actual_stiffness_N_per_mm'])
+  service=result('product_compact_full_service803');self.assertEqual(len(service['pins']),24);self.assertEqual(len(service['tools']),18);self.assertEqual(len(service['hole_gauges']),12);self.assertFalse(any(r['full_swept_intersections'] for r in service['pins']));self.assertFalse(any(r['intersections'] for r in service['tools']+service['hole_gauges']));self.assertFalse(service['fabrication_ready'])
+  self.assertTrue(result('product_compact_full_service800')['status'].startswith('FAIL'))
+ def test_axial_sweep_composes_all_canonical_transforms(self):
+  from complete_drive_service import axial_sweep
+  from manufacturing_assembly import union,transform,sector
+  M=np.eye(4);M[:3,:3]=[[1,0,0],[0,0,-1],[0,1,0]];M[:3,3]=[20,30,40];S=sector(120)
+  op=transform(transform(union(cyl(.5,-3,2),cyl(1.,2,3)),M),S);q=axial_sweep(op,10)
+  self.assertTrue(np.array_equal(q['matrix'],S@M));self.assertEqual(q['shape']['items'][0]['z'],[-3,12]);self.assertEqual(q['shape']['items'][1]['z'],[2,13])
+  self.assertTrue((BASE/'results/product_root_boss_service791/COVERAGE_CORRECTION.json').is_file())
+  repaired=result('product_root_boss_service804');self.assertFalse(any(r['swept_intersections'] or r['tool_intersections'] for r in repaired['records']))
  def test_root_mount_retention_failure_and_new_boss_service_are_separate(self):
   before=result('product_root_mount785');self.assertEqual(len(before['records']),18);self.assertFalse(before['wire_intersections']);self.assertEqual(len(before['solid_intersections']),6);self.assertTrue(all(h['volume_mm3']==0 for h in before['solid_intersections']))
   old=result('product_root_retention786');self.assertTrue(all(r['nut_tool_intersections'] for r in old['records']));self.assertFalse(any(r['swept_intersections'] for r in old['records']))
   self.assertTrue(result('product_root_boss787')['status'].startswith('FAIL'))
   new=result('product_root_canonical788');self.assertTrue(new['canonical_sector']);self.assertEqual(len(new['records']),12);self.assertEqual(new['full_part_count'],292);self.assertFalse(new['fabrication_ready']);self.assertFalse(new['wire_intersections'])
-  service=result('product_root_boss_service791');self.assertTrue(service['threaded_boss']);self.assertFalse(any(r['swept_intersections'] or r['tool_intersections'] for r in service['records']))
+  service=result('product_root_boss_service804');self.assertTrue(service['threaded_boss']);self.assertFalse(any(r['swept_intersections'] or r['tool_intersections'] for r in service['records']))
   self.assertTrue(all(r['sufficient_exclusion'] for r in result('product_root_boss_palm792')['records']))
  def test_root_motion_bound_includes_finite_wire_radius_and_old_state_scope(self):
   from root_motion_alignment import tangent,side_envelope

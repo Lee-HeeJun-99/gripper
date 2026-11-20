@@ -14,6 +14,20 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_native_wire_anchors_are_not_sliding_pulleys(self):
+  for case in ('product_root_wire837','product_root_wire838'):
+   d=result(case);self.assertEqual(d['steps'],10);self.assertEqual(d['status'],'PASS_NATIVE_ANCHORED_CABLE_CONTRACT_ONLY');self.assertFalse(d['physical_sliding_qualified'])
+   self.assertLess(abs(d['first_angular_momentum_Nms']-d['first_reference_angular_impulse_Nms']),1e-18)
+  self.assertEqual(result('product_root_wire836')['status'],'FAIL')
+ def test_ideal_circular_wire_reference_has_zero_spin_torque(self):
+  d=result('product_root_wire_reference839');self.assertLess(d['maximum_gradient_error'],1e-8);self.assertEqual(d['spin_torque_Nm'],0);self.assertTrue(d['invalid_endpoint_rejected'])
+ def test_CAD_root_load_is_not_measured_strength(self):
+  d=result('product_root_load841');self.assertEqual(len(d['records']),6);self.assertIsNone(d['actual_measurements']);self.assertIsNone(d['pin_screen']['safety_factor']);self.assertFalse(d['fabrication_ready'])
+  self.assertTrue(all(r['force_reference_error_N']<1e-12 and r['ideal_moment_norm_Nm']<1e-12 for r in d['records']))
+ def test_integer_reference_route_is_supported_without_direction_fudge(self):
+  from root_load_requirements import root_load
+  r=root_load(dict(part='test',route_mm=[[2,-10,0],[2,0,0],[0,2,0],[-10,2,0]],centre_mm=[0,0,0],turn_angle_deg=90),1.5)
+  np.testing.assert_allclose(r['force_N'],[-1.5,-1.5,0],atol=1e-14)
  def test_native_ideal_bearing_keeps_free_spin_and_scope(self):
   d=result('product_root_bearing_assess834');self.assertEqual(d['status'],'PASS_IDEAL_BEARING_DOF_API_SCOPE_ONLY');self.assertEqual([r['state_rows'] for r in d['records']],[80,10]);self.assertEqual(d['records'][1]['spin_velocity_error_rad_s'],0.);self.assertLess(d['records'][1]['spin_analytic_quaternion_max_abs_error'],1e-12)
   self.assertTrue(all(r['projective_reaction_work_J'] is None and not r['physical_qualification'] for r in d['records']));self.assertFalse(d['fabrication_ready'])

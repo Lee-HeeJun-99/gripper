@@ -1,5 +1,21 @@
 # Root wire/pulley contract — 836–839
 
+## Independent product continuation840–842
+
+First feature commit `468b853`. CAD-root load841 reads all six actual780 route
+directions and centres: ideal1.5N/branch gives1.846984426N/axle; angle-reference
+error<=4.44e-16N, ideal moment norm<=6.98e-18Nm. No actual load/strength claim.
+Physical measurements CSV remains blank/NOT MEASURED; bench protocol is
+`ROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md`. Candidate geometry was not altered.
+840 original calculation retained. Separate integer-fixture software test failed
+because in-place division used an integer numpy array; corrected explicit float
+conversion and degenerate-direction rejection in841 (no physical-state fudge).
+Four standalone reference tests then passed.842 runs the expanded bounded design
+regression suite; its actual logs/status are authoritative.
+
+Repro: `python product_prototype/cad/root_load_requirements.py --tag UNIQUE_LOAD`
+and `python product_prototype/cad/manufacturing_test_run.py --tag UNIQUE_TEST`.
+
 Source baseline `57b0e97`; SDK `/home/ubuntu/SOFA/v26.06.00` unchanged.
 Actual commands (robot_ws Python, repository root):
 

@@ -1,0 +1,56 @@
+{
+  "status": "FAIL",
+  "source_commit": "57b0e97ac0fb2a15b5f9391e26a42b459dd918d4",
+  "input_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/root_wire_coupon.py": "2dc25b46a31f93de80c1c89dad17c2bfe0b5220b404af136c6db7f110cd3b6e5",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_bearing832/scene.scn": "a36a05038722879bbb2d8d769d1cecec30eb451eec75d9eb73f73fb9a7c47159",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/native_finite_guard.py": "2b632a4bc51740035dc54dcdad3de4cc37a73f7bf5a0ecfc2455d1b550261327",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/include/SoftRobots/component/constraint/model/CableModel.inl": "0ce7d01ac81623b57b52f4469a568546ed9896ac4d1d7c1543d1ed36197f29ee"
+  },
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_pair_rows512/libReGripPairRows.so": "6a00b4e75ef314f5d92ebc67431ee36cedba02c91e6546ff28a4ffe9d5514527",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f"
+  },
+  "scene_sha256": "deae82e35d9f0f316370401d7f6dbd2d87afd331a1ddc91e76a8ead61ce0fccd",
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "10",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/product_root_wire836/scene.scn"
+  ],
+  "process": {
+    "exit_code": -9,
+    "process_status": "nonlinear_failure",
+    "runtime_s": 0.21091706294100732,
+    "pid": 43,
+    "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+    "artifacts": {
+      "stdout.log": "368c16884ccc72eab82f839514400e13043c759a92769104eca25eb89b33d0e4",
+      "command.json": "35d2262adaee6e8b500e4447aa1ffbb9ae7f01005af82c54b2f001f7d90317b9",
+      "stderr.log": "517f6c1523808acf037d93a4725432c29e013d3b2e256d11d4ebb32162b1e092",
+      "process.json": "1c3f1010520a7a1e02bd8bd6e1b7c010eb5293cfe7b9b7fd93e790430e1ab37d"
+    },
+    "nonfinite_observation": {},
+    "finite_guard_error": {},
+    "internal_limit_s": 420
+  },
+  "runtime_s": 0.2456897048978135,
+  "steps": 0,
+  "dt_s": 0.00025,
+  "balanced": false,
+  "tension_N": 1e-05,
+  "radius_m": 0.002,
+  "first_reference_angular_impulse_Nms": 5.0000000000000005e-12,
+  "first_native_J_lambda_Nms": 0.0,
+  "first_angular_momentum_Nms": null,
+  "final_velocity": null,
+  "scope": "Rigidly attached anchors,not cable sliding. Balanced case has TWO independently prescribed equal forces,not mechanical equalization. Existing finite wheel/land collision geometry stays enabled. Ideal bearing reactions/work NOT MEASURED. No wire collision,arc constraint,friction,time/energy/3finger qualification.",
+  "physical_sliding_qualified": false
+}

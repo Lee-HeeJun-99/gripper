@@ -14,6 +14,23 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_motor_lead_in_keeps_intended_drum_contact_and_rejects_direct_route(self):
+  d=result('product_motor_lead748');direct=[r for r in d['records'] if r['model']=='direct_unrouted_diagnostic'];perimeter=[r for r in d['records'] if r['model']=='perimeter_rounded_candidate'];self.assertEqual(len(direct),6);self.assertEqual(len(perimeter),6)
+  self.assertTrue(any(h['classification']=='UNRESOLVED_OBSTACLE' for r in direct for h in r['intersections']));self.assertFalse(any(h['classification']=='UNRESOLVED_OBSTACLE' for r in perimeter for h in r['intersections']));self.assertTrue(any(r['intersections'] for r in perimeter));self.assertIsNone(d['wire_supplier_minimum_radius_mm'])
+ def test_finite_turn_wheel_is_closed_and_matches_polygon_volume(self):
+  from lead_pulley_candidate import wheel_recipe
+  s=evaluate(wheel_recipe());expected=32*math.sin(2*math.pi/64)*(.8*(1.75**2-.6**2)+(3.**2-.6**2))
+  self.assertLess(abs(s.volume-expected)/expected,2e-7)
+  d=result('product_pulley751');self.assertEqual(len(d['records']),18);self.assertTrue(all(r['watertight_readback'] for r in d['records']));self.assertFalse(d['fabrication_ready']);self.assertIsNone(d['supplier_minimum_bend_radius_mm'])
+ def test_sphere_gap_has_analytic_segment_reference_and_rejects_zero_path(self):
+  from deformed_wire_screen import segment_sphere_gap
+  route=np.array([[-2.,0,0],[2.,0,0]])
+  self.assertAlmostEqual(segment_sphere_gap(route,np.array([0.,3,0]),1.,.25,.01),1.74)
+  with self.assertRaises(ValueError):segment_sphere_gap(np.zeros((2,3)),np.zeros(3),1.,.25,0.)
+ def test_all_saved_object_frames_not_continuous_or_full_hardware(self):
+  d=result('product_wire_object_all746');self.assertTrue(d['object_only_all_frames']);self.assertFalse(d['film_included']);self.assertEqual(len(d['records']),7200);self.assertEqual(len(d['selected_times_s']),1200);self.assertTrue(all(r['sphere_gap_lower_bound_mm']>0 for r in d['records']))
+ def test_frozen_source_deformed_worker_retains_identity(self):
+  d=result('product_deformed_frozen747');self.assertTrue(d['dependencies_unchanged']);self.assertEqual(d['process']['exit_code'],0);self.assertEqual(d['executed_worker_sha256'],d['analysis']['producer_sha256']);self.assertTrue(d['analysis']['film_included']);self.assertEqual(len(d['analysis']['deformed_surface_quality']),24)
  def test_frozen_native_bore_replay_is_not_candidate_dynamics(self):
   d=result('product_wire_replay742');self.assertIn('NOT_CANDIDATE_DYNAMICS',d['status']);self.assertEqual(len(d['records']),36);self.assertFalse(any(r['failed_frames'] for r in d['records']));self.assertLess(max(r['maximum_required_bore_radius_mm'] for r in d['records']),.7)
  def test_circular_fillet_reference_and_overlap_rejection(self):

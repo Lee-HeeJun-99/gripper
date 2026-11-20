@@ -14,6 +14,16 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_root_redirect_preserves_contact_review_and_new_path_origin(self):
+  d=result('product_root_redirect778');self.assertEqual(len(d['records']),6);self.assertFalse(d['solid_intersections']);self.assertTrue(all(r['wire_intersections'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
+  for r in d['records']:
+   self.assertAlmostEqual(r['turn_angle_deg'],76.);self.assertAlmostEqual(r['path_length_change_mm'],-.47227571452119)
+  ref=result('product_root_reference779');self.assertEqual(ref['degenerate_cases_rejected'],2);self.assertTrue(ref['right_angle_reference'])
+  self.assertTrue(all(r['arc_radius_max_abs_error_mm']<1e-13 for r in ref['records']));self.assertTrue(all(r['mount_reaction_N'] is None for r in ref['records']))
+ def test_root_corner_rejects_undefined_geometry(self):
+  from root_redirect_candidate import corner_frame
+  for a,b,c,r in (([0,0,0],[0,0,0],[1,0,0],2),([0,0,0],[1,0,0],[2,0,0],2),([0,0,0],[1,0,0],[1,1,0],0)):
+   with self.assertRaises(ValueError):corner_frame(np.array(a,dtype=float),np.array(b,dtype=float),np.array(c,dtype=float),r)
  def test_bridge_size_and_stiffness_remain_unqualified_tradeoffs(self):
   d=result('product_bridge_review774');self.assertEqual(d['part_instances'],280);self.assertGreater(d['new_maximum_radial_extent_mm'],d['baseline_maximum_radial_extent_mm']);self.assertFalse(d['fabrication_ready'])
   e=result('product_bridge_stiffness776');self.assertIsNone(e['actual_material_modulus_MPa']);self.assertIsNone(e['actual_frame_displacement_mm']);r=e['records'];self.assertGreater(r[0]['deflection_divided_by_length'],.5);self.assertGreater(r[0]['ideal_EB_tip_deflection_mm'],r[-1]['ideal_EB_tip_deflection_mm'])

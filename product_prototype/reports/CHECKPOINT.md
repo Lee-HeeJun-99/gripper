@@ -1,3 +1,17 @@
+## Root redirect continuation778–781 — 2026-11-21
+
+Authority:ROOT_REDIRECT_CONTINUATION_20261121.md. Six finite Root wheels then
+six forks/pin proxies created:meshes/b3_root_fork_v31/assembly_recipe.json.
+Actual280-parent/new-module solid screen0intersections; rootwire intendedwheel
+contacts516 retained, NOT promoted toclearancePASS. Rootturn76deg and reference
+pathchange-0.4722757145mm:oldNativepullpoint isNOT equivalent.78147software
+regressionsPASS;noSOFArun/newphysicalPASS. NEXT:finitePalm-to-root-fork mount
+andretention,thencompact supportarchitecture/service/strength/tolerance checks.
+Raw:results/product_root_redirect778,product_root_reference779,
+product_root_fork780,product_root_regression781. Existingfailuresunchanged.
+Reproduce NEW candidate with cad/root_redirect_candidate.py --tag UNIQUE
+--name UNIQUE_CAD --fork (Pythonrobot_ws;ulimit4GiB;timeout480).
+
 ## Palm bridge/retention continuation761–777 — 2026-11-20
 
 Final functional commitsad19a6e,101a17a.777:45design/software regressionsPASS.

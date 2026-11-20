@@ -3575,3 +3575,10 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+# 2026-11-21 Root redirect778–781 continuation
+
+Read product_prototype/reports/ROOT_REDIRECT_CONTINUATION_20261121.md first.
+Finite root wheels/forks/pins now exist, unmounted; no new SOFA physics PASS.
+Next: finite Palm-to-root-fork support/retention, then compact support redesign.
+Preserve516 intendedwheel conservative-probe intersections and all old Gates.
+47software testsPASS is not physical convergence/holding certification.

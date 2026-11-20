@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripInertiaForce LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+find_package(Sofa.LinearAlgebra REQUIRED)
+add_library(ReGripInertiaForce SHARED Force.cpp)
+target_compile_features(ReGripInertiaForce PRIVATE cxx_std_17)
+target_link_libraries(ReGripInertiaForce PRIVATE Sofa.Core Sofa.Simulation.Core Sofa.LinearAlgebra)

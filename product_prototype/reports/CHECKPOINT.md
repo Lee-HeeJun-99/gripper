@@ -1,5 +1,12 @@
 ## Wire/Eyelet continuation728–741 — 2026-11-20
 
+Last functional implementation commit529a5c0 (prior32a4825,9d0829b).
+Final regression743:30design/software testsPASS,not physical Gates.
+Append-only evidence: evidence_product_wire_v37 then evidence_product_wire_v38.
+Exact replay command (NEW tag required):
+`ulimit -v 4194304; timeout 480 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/wire_bore_replay.py --tag UNIQUE_REPLAY --candidate b3_manufacturing_bore_v21`
+No active simulation is intentionally left running;no automatic continuation.
+
 Latest further cycle742–743:wire_bore_replay.py mapsNEWCADEyelet centre/axis
 through actual485Rigid3 accepted transforms.36sites0failedsavedframes and
 0holdfailures;maxrequiredradius0.66934932158mm<0.7. Correct body-to-Eyelet

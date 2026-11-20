@@ -1,0 +1,767 @@
+{
+  "status": "PHYSICAL_TEST_PLAN_ONLY_ALL_RESULTS_NOT_MEASURED",
+  "source_commit": "669a8ab1130bf1c6e669258ff2f6ebccaba95956",
+  "producer_sha256": "854c03c4dea3655b84820a145e9125f2e522b0feb423cb4754c77d3d5b2a1302",
+  "tests": [
+    {
+      "test_id": "P01",
+      "test": "Single-finger small-load bending",
+      "metrics": [
+        "tip_displacement_mm",
+        "force_N",
+        "unloaded_shape_mm"
+      ],
+      "equipment_required": [
+        "calibrated force gauge",
+        "camera with scale",
+        "thickness gauge"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "clamp5mm;measure force/displacement in both bend directions;do not fit E to an unqualified FEM response",
+      "status": "NOT RUN",
+      "measurements": {
+        "tip_displacement_mm": null,
+        "force_N": null,
+        "unloaded_shape_mm": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P02",
+      "test": "Tendon stroke-curvature",
+      "metrics": [
+        "geometric_stroke_mm",
+        "cable_tension_N",
+        "distributed_curvature_per_mm"
+      ],
+      "equipment_required": [
+        "two independent wire load cells",
+        "linear stage/encoder",
+        "camera"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "record actual guide path and reel rotation separately;slack/stretch/sliding are not equalized tension",
+      "status": "NOT RUN",
+      "measurements": {
+        "geometric_stroke_mm": null,
+        "cable_tension_N": null,
+        "distributed_curvature_per_mm": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P03",
+      "test": "Rail-Skin bond and force-displacement",
+      "metrics": [
+        "peel_force_N",
+        "bondline_thickness_mm",
+        "creep_mm"
+      ],
+      "equipment_required": [
+        "bond coupons",
+        "force gauge",
+        "microscope"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "PET/TPU and polymer/metal alternatives each get separate specimen IDs;adhesive layer is not zero-thickness",
+      "status": "NOT RUN",
+      "measurements": {
+        "peel_force_N": null,
+        "bondline_thickness_mm": null,
+        "creep_mm": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P04",
+      "test": "Repeated Skin-Rail actuation",
+      "metrics": [
+        "cycle_count",
+        "residual_tip_mm",
+        "crack_length_mm",
+        "force_drift_N"
+      ],
+      "equipment_required": [
+        "repeatable actuator",
+        "load cell",
+        "camera"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "1000cycle screening target only;not demonstrated fatigue life or reliability rating",
+      "status": "NOT RUN",
+      "measurements": {
+        "cycle_count": null,
+        "residual_tip_mm": null,
+        "crack_length_mm": null,
+        "force_drift_N": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P05",
+      "test": "Skin/object load path",
+      "metrics": [
+        "skin_vertical_load_N",
+        "guide_vertical_load_N",
+        "object_motion_mm"
+      ],
+      "equipment_required": [
+        "calibrated contact/load sensing",
+        "camera",
+        "isolated-load-path control fixtures"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "Skin/Guide load fraction needs real sensor calibration or physically justified controls;video alone does not measure force partition",
+      "status": "NOT RUN",
+      "measurements": {
+        "skin_vertical_load_N": null,
+        "guide_vertical_load_N": null,
+        "object_motion_mm": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P06",
+      "test": "Geometry/size generalization",
+      "metrics": [
+        "object_dimensions_mm",
+        "object_mass_kg",
+        "slip_mm"
+      ],
+      "equipment_required": [
+        "R20/R30 specimens",
+        "cylinder",
+        "box",
+        "scale",
+        "camera"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "register material,orientation,initial pose and surface condition;no fragile-damage claim without material strength test",
+      "status": "NOT RUN",
+      "measurements": {
+        "object_dimensions_mm": null,
+        "object_mass_kg": null,
+        "slip_mm": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P07",
+      "test": "50g unsupported Holding",
+      "metrics": [
+        "mass_kg",
+        "downward_slip_mm",
+        "object_speed_mm_s",
+        "support_gap_mm",
+        "support_reaction_N",
+        "skin_load_fraction"
+      ],
+      "equipment_required": [
+        "calibrated scale",
+        "camera",
+        "support withdrawal fixture",
+        "load-path sensing"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "reuse0.05kg/R30/gravity9.81/assumedmu0.3 simulation protocol as comparator;physical friction must be measured",
+      "status": "NOT RUN",
+      "measurements": {
+        "mass_kg": null,
+        "downward_slip_mm": null,
+        "object_speed_mm_s": null,
+        "support_gap_mm": null,
+        "support_reaction_N": null,
+        "skin_load_fraction": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P08",
+      "test": "100g unsupported Holding",
+      "metrics": [
+        "mass_kg",
+        "downward_slip_mm",
+        "object_speed_mm_s",
+        "support_gap_mm",
+        "skin_load_fraction"
+      ],
+      "equipment_required": [
+        "P07 equipment",
+        "75g and100g masses"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "after qualified50g evidence;change mass alone first;no result generated here",
+      "status": "NOT RUN",
+      "measurements": {
+        "mass_kg": null,
+        "downward_slip_mm": null,
+        "object_speed_mm_s": null,
+        "support_gap_mm": null,
+        "skin_load_fraction": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P09",
+      "test": "Lift",
+      "metrics": [
+        "palm_rise_mm",
+        "object_rise_mm",
+        "relative_slip_mm",
+        "cable_tension_N"
+      ],
+      "equipment_required": [
+        "vertical stage",
+        "independent palm/object tracking",
+        "wire load cells"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "proposed20mm lift target;both palm and object must rise under gravity;not verified by palm command alone",
+      "status": "NOT RUN",
+      "measurements": {
+        "palm_rise_mm": null,
+        "object_rise_mm": null,
+        "relative_slip_mm": null,
+        "cable_tension_N": null
+      },
+      "physical_qualified_pass": false
+    },
+    {
+      "test_id": "P10",
+      "test": "Release and Recovery",
+      "metrics": [
+        "contact_end_time_s",
+        "residual_tip_mm",
+        "shape_error_mm",
+        "object_separation_mm"
+      ],
+      "equipment_required": [
+        "camera",
+        "wire sensors",
+        "shape reference template"
+      ],
+      "equipment_available": "NOT VERIFIED",
+      "protocol": "measure unloading and separation;proposed1mm recovery screen is not an existing GatePASS or full elastic certification",
+      "status": "NOT RUN",
+      "measurements": {
+        "contact_end_time_s": null,
+        "residual_tip_mm": null,
+        "shape_error_mm": null,
+        "object_separation_mm": null
+      },
+      "physical_qualified_pass": false
+    }
+  ],
+  "measurement_fields": [
+    {
+      "test_id": "P01",
+      "metric": "tip_displacement_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P01",
+      "metric": "force_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P01",
+      "metric": "unloaded_shape_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P02",
+      "metric": "geometric_stroke_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P02",
+      "metric": "cable_tension_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P02",
+      "metric": "distributed_curvature_per_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P03",
+      "metric": "peel_force_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P03",
+      "metric": "bondline_thickness_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P03",
+      "metric": "creep_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P04",
+      "metric": "cycle_count",
+      "value": null,
+      "units": "count",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P04",
+      "metric": "residual_tip_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P04",
+      "metric": "crack_length_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P04",
+      "metric": "force_drift_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P05",
+      "metric": "skin_vertical_load_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P05",
+      "metric": "guide_vertical_load_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P05",
+      "metric": "object_motion_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P06",
+      "metric": "object_dimensions_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P06",
+      "metric": "object_mass_kg",
+      "value": null,
+      "units": "kg",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P06",
+      "metric": "slip_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P07",
+      "metric": "mass_kg",
+      "value": null,
+      "units": "kg",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P07",
+      "metric": "downward_slip_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P07",
+      "metric": "object_speed_mm_s",
+      "value": null,
+      "units": "s",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P07",
+      "metric": "support_gap_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P07",
+      "metric": "support_reaction_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P07",
+      "metric": "skin_load_fraction",
+      "value": null,
+      "units": "fraction",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P08",
+      "metric": "mass_kg",
+      "value": null,
+      "units": "kg",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P08",
+      "metric": "downward_slip_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P08",
+      "metric": "object_speed_mm_s",
+      "value": null,
+      "units": "s",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P08",
+      "metric": "support_gap_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P08",
+      "metric": "skin_load_fraction",
+      "value": null,
+      "units": "fraction",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P09",
+      "metric": "palm_rise_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P09",
+      "metric": "object_rise_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P09",
+      "metric": "relative_slip_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P09",
+      "metric": "cable_tension_N",
+      "value": null,
+      "units": "N",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P10",
+      "metric": "contact_end_time_s",
+      "value": null,
+      "units": "s",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P10",
+      "metric": "residual_tip_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P10",
+      "metric": "shape_error_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    },
+    {
+      "test_id": "P10",
+      "metric": "object_separation_mm",
+      "value": null,
+      "units": "mm",
+      "status": "NOT MEASURED",
+      "origin": null,
+      "specimen_id": null,
+      "instrument_id": null,
+      "calibration_reference": null,
+      "actual_time": null,
+      "expanded_uncertainty": null
+    }
+  ],
+  "simulation_comparator": {
+    "hold_window_s": [
+      1.6,
+      2.0
+    ],
+    "max_downward_slip_mm": 2,
+    "max_speed_mm_s": 5,
+    "min_support_gap_mm": 5,
+    "max_support_reaction_N": 1e-05,
+    "min_skin_load_fraction": 0.8,
+    "unchanged": true
+  },
+  "physical_instrument_limit": "A0.01N force gauge CANNOTverify1e-5N support reaction;that criterion remains unmeasured/blocked unless load-path removal is independently proven or adequate sensing exists. DoNOTround to0 or relax original simulation Gate.",
+  "proposed_hardware_extended_hold_s": 10,
+  "extended_hold_scope": "new stronger bench observation target,NOT an old criterion retroactively changed",
+  "physical_tests_executed": 0
+}

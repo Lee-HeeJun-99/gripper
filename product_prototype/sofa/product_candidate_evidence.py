@@ -9,7 +9,7 @@ def immutable(name):
     return name.startswith(('product_prototype/results/','product_prototype/reports/evidence_','product_prototype/cad/build_','product_prototype/meshes/','product_prototype/drawings/','/home/ubuntu/SOFA/','/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/site-packages/trimesh/'))
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--prior',required=True);p.add_argument('--cases',nargs='+',required=True);a=p.parse_args();prior=BASE/'reports'/a.prior/'manifest.json';old=json.loads(prior.read_text());files={k:v for k,v in old['files'].items() if immutable(k)};bad=[k for k,v in files.items() if not (ROOT/k).is_file() or sha(ROOT/k)!=v]
+    p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--prior',required=True);p.add_argument('--cases',nargs='+',required=True);p.add_argument('--designs',nargs='*',default=[]);a=p.parse_args();prior=BASE/'reports'/a.prior/'manifest.json';old=json.loads(prior.read_text());files={k:v for k,v in old['files'].items() if immutable(k)};bad=[k for k,v in files.items() if not (ROOT/k).is_file() or sha(ROOT/k)!=v]
     if bad:raise ValueError('prior immutable evidence mismatch:'+str(bad))
     out=BASE/'reports'/a.name;out.mkdir(exist_ok=False);cases={}
     for case in a.cases:
@@ -103,6 +103,25 @@ def main():
         for candidate in ('precurve_distal40_route_audit_v10','finite_eyelet_support_v11'):
             for f in (BASE/category/candidate).rglob('*'):
                 if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+    for case in a.cases:
+        detail=json.loads((BASE/'results'/case/'summary.json').read_text())
+        partial=detail.get('partial_CAD_output')
+        if partial:
+            folder=ROOT/partial
+            if not folder.resolve().is_relative_to((BASE/'meshes').resolve()):raise ValueError('partial CAD path outside product meshes')
+            for f in folder.rglob('*'):
+                if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+    if a.designs:
+        for name in a.designs:
+            if Path(name).name!=name:raise ValueError('local product design name required')
+            for category in ('meshes','drawings'):
+                folder=BASE/category/name
+                if not (folder/'checks.json').is_file():raise ValueError('incomplete product CAD evidence:'+str(folder))
+                for f in folder.rglob('*'):
+                    if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
+        for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
+        shutil.copy2(BASE/'sofa/native_multistep_contract.py',out/'native_multistep_contract.py')
+        for f in (BASE/'config').glob('*v1*.json'):shutil.copy2(f,out/('config_'+f.name))
     for f in out.iterdir():
         if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
     result=dict(scope='Product functionality/clearance diagnostics,NOT final physics/fabrication qualification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),prior_manifest_sha256=sha(prior),prior_immutable_audit=dict(checked=sum(immutable(k) for k in old['files']),mismatches=bad),cases=cases,files=files)

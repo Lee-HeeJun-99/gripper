@@ -1,0 +1,62 @@
+{
+  "status": "NATIVE_MULTISTEP_CONTRACT_DIAGNOSTIC_NOT_B3",
+  "source_commit": "669a8ab1130bf1c6e669258ff2f6ebccaba95956",
+  "producer_sha256": "d72399e747533d5c9bf98ac959c308e45b17596d76513a5df8775aac0afad676",
+  "SDK_dependency_hashes": {
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.AnimationLoop/sofa/component/animationloop/MultiStepAnimationLoop.h": "39ff976bed729a9b91efb150bced7832ec9bfc6d1a3e71f4673433fc38ccc7b9",
+    "/home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.AnimationLoop.so": "5f4391124ab04ab4bf6e087d75434ccd1a7b07f221ea78e726aae126e8f7c7c4"
+  },
+  "actual_configuration": {
+    "collisionSteps": 1,
+    "integrationSteps": 1,
+    "dt_s": 0.00025,
+    "steps": 80
+  },
+  "records": [
+    {
+      "channel": "external_force",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.31287652801256627,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "ec0f9275636ea8ce81d99ef0da376845d832c0cda222c1584e587edff4602d70",
+          "command.json": "529b0317fc94f2ca461564d5fa5c5efe82ce9bce1a42a2ace2de94a49ae14249",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "28e6279cb881671ca7ee12ee903fe9265684f0779ba358e067ba0b12bfccaf25"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "05e660422f671060edbeb25ed923921cd1f57f4a5c191ab57ee01de59bd9ccad",
+      "status": "PASS_FREE_ODE_SCOPE_ONLY",
+      "actual_steps": 80,
+      "maximum_position_reference_error_m": 9.893344823930228e-19,
+      "maximum_velocity_reference_error_m_s": 9.992007221626409e-16,
+      "actual_positions_and_velocities_identically_zero": false
+    },
+    {
+      "channel": "cable",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.3112286679679528,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "6d32c2fadffa51744a36a2501f092e2c2b3803b2a386dcd2e57d475deb3641eb",
+          "command.json": "03d073859bbe5e8b53d1336a84fc2fbf47691c4cc8f8c77e2795517a57bd0ccd",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "5fe7cf1c6409f60b86deb46189fb8fc3c2f36ff18d88b6906b71dd16c30d61c4"
+        }
+      },
+      "sofa_errors": 0,
+      "scene_sha256": "188c5fff6801683a0b63c141ec2799642d95b17549555405a8c8447a5f1848dc",
+      "status": "FAIL_CABLE_INTEGRATION_CONTRACT",
+      "actual_steps": 80,
+      "maximum_position_reference_error_m": 0.001999656757067076,
+      "maximum_velocity_reference_error_m_s": 0.999914185584712,
+      "actual_positions_and_velocities_identically_zero": true
+    }
+  ],
+  "scope": "Native installed alternative loop classification only;not constraint/contact/time/FEM/Holding qualification.No dt decrease,new solver,SDKpatch or B3change."
+}

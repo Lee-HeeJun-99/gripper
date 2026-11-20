@@ -1,0 +1,4116 @@
+{
+  "status": "CAD_CANDIDATE_GENERATED_NOT_QUALIFIED",
+  "source_commit": "669a8ab1130bf1c6e669258ff2f6ebccaba95956",
+  "source_sha256": "b4121b5ae5cd933272429076f4ebb590bb229618c706e95ebaa1f50708496819",
+  "producer_sha256": "f2349c21bbcd14865945020c6709de11685aa5c5c27fa1e25ec1cb964c538c65",
+  "config_sha256": "177132c59a07ce3482e82ba683bd0c49ae857f504405d4b4c0f14be64a1bf0f4",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 4.383167689898983,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "8089a06378ab96d3d04317a23e54ab16dabc810f929858f8e186915c1803abe5",
+      "command.json": "7b6f22ec500471e06dc3c510325fa30c025613a6f0d19f55f63669f0a44a095f",
+      "stderr.log": "621bafd0992f84309f26abca44081d639239f3755902aba2d41fb36cc4dadbc8",
+      "process.json": "b738a4b175fd408505c2d28684ca2721c533c849f384fba6d92757a28e16957d"
+    }
+  },
+  "meshes": "product_prototype/meshes/b3_manufacturing_spotface_v18",
+  "drawings": "product_prototype/drawings/b3_manufacturing_spotface_v18",
+  "checks_sha256": "dfef4a26fcf5feae819ec3704f1768053f3e1f0ef13862ae84baff0488b74bb7",
+  "RSS_bytes": null,
+  "summary": {
+    "status": "PARAMETRIC_MESH_ASSEMBLY_CREATED_NOT_FABRICATION_READY",
+    "source_commit": "669a8ab1130bf1c6e669258ff2f6ebccaba95956",
+    "producer_sha256": "b4121b5ae5cd933272429076f4ebb590bb229618c706e95ebaa1f50708496819",
+    "baseline_sha256": "4a1326b11a354137dd441fc080e74bfe4766dc0ef1903ed76ac05b98b4d29010",
+    "design_sha256": "177132c59a07ce3482e82ba683bd0c49ae857f504405d4b4c0f14be64a1bf0f4",
+    "dependency_hashes": {
+      "product_prototype/cad/generate.py": "09ae70661c7f75996416a3a9611871a6f58bcac053e5892fa1404bad55be71b1",
+      "product_prototype/cad/finite_guide_product.py": "afd1856b6748d5f61b7fa92afcb08c119f452b19a02e7bcd249ab4d6e521d991",
+      "product_prototype/sofa/finite_guide_coupon.py": "06d1a54fdc834d070fe3c205cdebd953228448ef2d9174d31c8c7941ac9ff49d"
+    },
+    "environment": {
+      "executables": {
+        "FreeCADCmd": null,
+        "freecadcmd": null,
+        "openscad": null
+      },
+      "python_modules": {
+        "FreeCAD": false,
+        "OCP": false,
+        "OCC": false,
+        "cadquery": false,
+        "manifold3d": true
+      },
+      "boolean_engines": [
+        "None",
+        "manifold"
+      ]
+    },
+    "parts": [
+      {
+        "name": "f0_mount",
+        "group": "mount",
+        "vertices": 2812,
+        "triangles": 5664,
+        "watertight": true,
+        "volume_mm3": 8373.60081551756,
+        "bounds_mm": [
+          [
+            40.0,
+            -24.0,
+            -7.0
+          ],
+          [
+            63.578922271728516,
+            24.0,
+            5.0
+          ]
+        ],
+        "sha256": "5613eccf87c2f51400d7d0e24c8445060446e8fadd2b46da7c7c01fee2d0d645",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_carrier",
+        "group": "cartridge",
+        "vertices": 560,
+        "triangles": 1132,
+        "watertight": true,
+        "volume_mm3": 1612.309723641791,
+        "bounds_mm": [
+          [
+            48.790390522001665,
+            -18.0,
+            -5.8191662137786535
+          ],
+          [
+            55.81655806990133,
+            18.0,
+            7.762365810207972
+          ]
+        ],
+        "sha256": "2426b5ec1fe61d8cd42173d72682609758b150740c5cd38bc1f77e480791b451",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_root_clamp",
+        "group": "clamp",
+        "vertices": 264,
+        "triangles": 532,
+        "watertight": true,
+        "volume_mm3": 485.61223617001605,
+        "bounds_mm": [
+          [
+            45.78247386308068,
+            -18.0,
+            -4.827286441459524
+          ],
+          [
+            49.90297042592655,
+            18.0,
+            0.7499578532875001
+          ]
+        ],
+        "sha256": "f7e1c50c438a3f843092153a3c75a7cc61a6a306b07df3d5fe54e7cf1419309c",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_skin",
+        "group": "finger",
+        "vertices": 168,
+        "triangles": 332,
+        "watertight": true,
+        "volume_mm3": 209.83944271417545,
+        "bounds_mm": [
+          [
+            16.569511948690632,
+            -12.0,
+            -92.2898176461033
+          ],
+          [
+            50.0,
+            12.0,
+            0.024192189559966774
+          ]
+        ],
+        "sha256": "df4d0c71dbaef135d33cdf8e40e4704b50f794f01701abf8233de2412c2048ef",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_rail_left",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956514,
+        "bounds_mm": [
+          [
+            16.628290473919883,
+            4.0,
+            -92.69432614329078
+          ],
+          [
+            50.485147863137996,
+            12.0,
+            0.0
+          ]
+        ],
+        "sha256": "fde80f665c3214b2589f2075870223e8598adbfa588ee137893cf69ce941eb11",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_rail_right",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956531,
+        "bounds_mm": [
+          [
+            16.628290473919883,
+            -12.0,
+            -92.69432614329078
+          ],
+          [
+            50.485147863137996,
+            -4.0,
+            0.0
+          ]
+        ],
+        "sha256": "5969794df037ddf8785c45769d7480ec66d0d2edd15fe4ffb93b9b53adea1428",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            42.97252838016108,
+            34.5,
+            -10.31037014563764
+          ],
+          [
+            46.367259350189585,
+            37.5,
+            -7.6440130062842835
+          ]
+        ],
+        "sha256": "166604673fdcddcb00c0f2c3d17feebd88c0bcf6b002e4ce5342fe7ac88d47c9",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s0_support",
+        "group": "support",
+        "vertices": 31,
+        "triangles": 58,
+        "watertight": true,
+        "volume_mm3": 75.4084046142995,
+        "bounds_mm": [
+          [
+            45.107177734375,
+            9.600000381469727,
+            -11.861017227172852
+          ],
+          [
+            49.30181884765625,
+            36.599998474121094,
+            -7.980356216430664
+          ]
+        ],
+        "sha256": "ff7adcd597a8b572abbd2319533b2a9e6e2cf0052db7df707e7a2115b0ec29e0",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            38.13409046816799,
+            34.5,
+            -29.716284671157048
+          ],
+          [
+            41.52882143819597,
+            37.5,
+            -27.049927531804734
+          ]
+        ],
+        "sha256": "7fb8f8f464f820c7f30acc13e535be110b9c81a9d7fe6844b26af790832ae852",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s1_support",
+        "group": "support",
+        "vertices": 30,
+        "triangles": 56,
+        "watertight": true,
+        "volume_mm3": 75.40826092873158,
+        "bounds_mm": [
+          [
+            40.268741607666016,
+            9.600000381469727,
+            -31.266931533813477
+          ],
+          [
+            44.46337890625,
+            36.599998474121094,
+            -27.38627052307129
+          ]
+        ],
+        "sha256": "7ce26f0837a13c1a2fa076c415b5be40159ebf9a7d2d6ad421f33eb406fd0929",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263626,
+        "bounds_mm": [
+          [
+            33.295652556176464,
+            34.5,
+            -49.12219919667332
+          ],
+          [
+            36.690383526200776,
+            37.5,
+            -46.455842057328326
+          ]
+        ],
+        "sha256": "16458894109e98ea35ed4c13967df4d6769df9834141fef823485a97bb421d82",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s2_support",
+        "group": "support",
+        "vertices": 32,
+        "triangles": 60,
+        "watertight": true,
+        "volume_mm3": 75.54641352862338,
+        "bounds_mm": [
+          [
+            35.430301666259766,
+            9.600000381469727,
+            -50.672847747802734
+          ],
+          [
+            39.624942779541016,
+            36.599998474121094,
+            -46.79218673706055
+          ]
+        ],
+        "sha256": "3875a0cb99edbd2e8ee5f5b823cf7b3f8806fc96272e485a4f290af3c78a19ed",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            28.457211238238063,
+            32.1,
+            -68.52812052680336
+          ],
+          [
+            31.85194902015247,
+            35.1,
+            -65.86174977823812
+          ]
+        ],
+        "sha256": "b9fde3068fa6c015803944772a278c004acd4532b906c54234c85d0237efe655",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s3_support",
+        "group": "support",
+        "vertices": 39,
+        "triangles": 74,
+        "watertight": true,
+        "volume_mm3": 75.40057875745448,
+        "bounds_mm": [
+          [
+            30.594148635864258,
+            7.380000114440918,
+            -70.12344360351562
+          ],
+          [
+            34.786502838134766,
+            34.20000076293945,
+            -66.1980972290039
+          ]
+        ],
+        "sha256": "360cc5e74b0fa0c0f62a4e560d96bfa3436d0c683929413c9a97c99235afa47d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            19.899831729662523,
+            29.7,
+            -85.30880756268529
+          ],
+          [
+            23.4786869373496,
+            32.7,
+            -81.83680870951777
+          ]
+        ],
+        "sha256": "ea0d077ec68cc4cf48d5b051a43faa75a1f0decdd83b7ee0f656af648fda09d3",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s4_support",
+        "group": "support",
+        "vertices": 37,
+        "triangles": 70,
+        "watertight": true,
+        "volume_mm3": 75.73377260394896,
+        "bounds_mm": [
+          [
+            21.595142364501953,
+            4.980000019073486,
+            -87.8310317993164
+          ],
+          [
+            26.193239212036133,
+            31.799999237060547,
+            -83.30393981933594
+          ]
+        ],
+        "sha256": "85b79b4e1abc313b15af03c3052136f360888495292cd2d809baaf8ff2d762ae",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            14.626046198213475,
+            22.203126954907418,
+            -90.53062241979741
+          ],
+          [
+            18.061999795201388,
+            25.203126954907418,
+            -86.9386633106803
+          ]
+        ],
+        "sha256": "b1f702d2bea96bdc03ddb22be451bc6f9cd38500d07357449fba798843a986fe",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s5_support",
+        "group": "support",
+        "vertices": 34,
+        "triangles": 64,
+        "watertight": true,
+        "volume_mm3": 60.36108962052136,
+        "bounds_mm": [
+          [
+            16.035558700561523,
+            4.019999980926514,
+            -93.2808837890625
+          ],
+          [
+            20.531471252441406,
+            24.30312728881836,
+            -88.68130493164062
+          ]
+        ],
+        "sha256": "f73dce1778cacadfe7d9ce62b62794f6d9511d2986ac6b4e00ee798b0437cae7",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            42.97252838016108,
+            -37.5,
+            -10.31037014563764
+          ],
+          [
+            46.367259350189585,
+            -34.5,
+            -7.6440130062842835
+          ]
+        ],
+        "sha256": "8b9063f6296b21eb764346d71da92d4c5eab1c7a7064f1e83ef2d68145b76c7d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s0_support",
+        "group": "support",
+        "vertices": 31,
+        "triangles": 58,
+        "watertight": true,
+        "volume_mm3": 75.40840710670652,
+        "bounds_mm": [
+          [
+            45.107177734375,
+            -36.599998474121094,
+            -11.861017227172852
+          ],
+          [
+            49.30181884765625,
+            -9.600000381469727,
+            -7.980356216430664
+          ]
+        ],
+        "sha256": "a47d9bc1d5465333c40aab0103ddd8aa92a05f76e1bf36e39fea54cf49e7561b",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            38.13409046816799,
+            -37.5,
+            -29.716284671157048
+          ],
+          [
+            41.52882143819597,
+            -34.5,
+            -27.049927531804734
+          ]
+        ],
+        "sha256": "61482439577a4a621f6989efd37ae8da925e50a257304fb2890438a2aac82e19",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s1_support",
+        "group": "support",
+        "vertices": 30,
+        "triangles": 56,
+        "watertight": true,
+        "volume_mm3": 75.40821669229081,
+        "bounds_mm": [
+          [
+            40.268741607666016,
+            -36.599998474121094,
+            -31.266931533813477
+          ],
+          [
+            44.46337890625,
+            -9.600000381469727,
+            -27.38627052307129
+          ]
+        ],
+        "sha256": "ca4108e549170ce93bbc817a377dd002f5f0c8a8aac62b75b5679de795799c0b",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263626,
+        "bounds_mm": [
+          [
+            33.295652556176464,
+            -37.5,
+            -49.12219919667332
+          ],
+          [
+            36.690383526200776,
+            -34.5,
+            -46.455842057328326
+          ]
+        ],
+        "sha256": "a7b1d5836af71bb61f4969d2cff9ff28a4675db13b552fc376bbd7d9d0aca81d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s2_support",
+        "group": "support",
+        "vertices": 32,
+        "triangles": 60,
+        "watertight": true,
+        "volume_mm3": 75.54642199276785,
+        "bounds_mm": [
+          [
+            35.430301666259766,
+            -36.599998474121094,
+            -50.672847747802734
+          ],
+          [
+            39.624942779541016,
+            -9.600000381469727,
+            -46.79218673706055
+          ]
+        ],
+        "sha256": "dea497a8b35325fa4dbb962c5aa3133ac77cfd9ccf5fae9088283710afc554dd",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            28.457211238238063,
+            -35.1,
+            -68.52812052680336
+          ],
+          [
+            31.85194902015247,
+            -32.1,
+            -65.86174977823812
+          ]
+        ],
+        "sha256": "7f2fc86d49836e170917e03b81177f22e6aefcfec53f32ae2e67f9c215e222d0",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s3_support",
+        "group": "support",
+        "vertices": 39,
+        "triangles": 74,
+        "watertight": true,
+        "volume_mm3": 75.40057642904206,
+        "bounds_mm": [
+          [
+            30.594148635864258,
+            -34.20000076293945,
+            -70.12344360351562
+          ],
+          [
+            34.786502838134766,
+            -7.380000114440918,
+            -66.1980972290039
+          ]
+        ],
+        "sha256": "0e6401910ca9844b829901ce1e9b35891a6c0733932d9e349ac4b527beb62ed7",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            19.899831729662523,
+            -32.7,
+            -85.30880756268529
+          ],
+          [
+            23.4786869373496,
+            -29.7,
+            -81.83680870951777
+          ]
+        ],
+        "sha256": "399473c156919d5cef930ecf0c840f536d5753a26efd30f47422335e014c997c",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s4_support",
+        "group": "support",
+        "vertices": 37,
+        "triangles": 70,
+        "watertight": true,
+        "volume_mm3": 75.73377360871915,
+        "bounds_mm": [
+          [
+            21.595142364501953,
+            -31.799999237060547,
+            -87.8310317993164
+          ],
+          [
+            26.193239212036133,
+            -4.980000019073486,
+            -83.30393981933594
+          ]
+        ],
+        "sha256": "a53ff5f035eca421f5792709e783cf944e0f00610d85ee4aee05ea1259214dd7",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            14.626046198213475,
+            -25.203126954907418,
+            -90.53062241979741
+          ],
+          [
+            18.061999795201388,
+            -22.203126954907418,
+            -86.9386633106803
+          ]
+        ],
+        "sha256": "11fddd5b6b3e856c1e23db4e031f69eb817497822c4ae01574236ec7cdb7f88e",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s5_support",
+        "group": "support",
+        "vertices": 34,
+        "triangles": 64,
+        "watertight": true,
+        "volume_mm3": 60.36108658695869,
+        "bounds_mm": [
+          [
+            16.035558700561523,
+            -24.30312728881836,
+            -93.2808837890625
+          ],
+          [
+            20.531471252441406,
+            -4.019999980926514,
+            -88.68130493164062
+          ]
+        ],
+        "sha256": "ce5248b8b65d4e399504f129c33c20645c6a1d3ce0cf3ab5ef3da18fe82e727f",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_32_-17",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723009465,
+        "bounds_mm": [
+          [
+            29.0,
+            -20.0,
+            13.0
+          ],
+          [
+            35.0,
+            -14.0,
+            17.0
+          ]
+        ],
+        "sha256": "ebddbc592d9def451f2ebbfd23aefe5e67034690e3b6262ac9757bd0d0f3c36c",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_32_17",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723009465,
+        "bounds_mm": [
+          [
+            29.0,
+            14.0,
+            13.0
+          ],
+          [
+            35.0,
+            20.0,
+            17.0
+          ]
+        ],
+        "sha256": "2fdc7010ba4262e1d759614a42f89afdd407c0dc34f4e0a543e90cca3ce29022",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_58_-19",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65721612237394,
+        "bounds_mm": [
+          [
+            55.0,
+            -22.0,
+            13.0
+          ],
+          [
+            61.0,
+            -16.0,
+            17.0
+          ]
+        ],
+        "sha256": "66a4942d17c7a07a529409fcf1485b73db2363b3b24902a7959cb5b38c647b71",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_58_19",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65721612237394,
+        "bounds_mm": [
+          [
+            55.0,
+            16.0,
+            13.0
+          ],
+          [
+            61.0,
+            22.0,
+            17.0
+          ]
+        ],
+        "sha256": "9ad0d22f8b5e3e9b4b76de4470b212b7a1457ba3fb741572f2c4677803e6c30b",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_motor_deck",
+        "group": "drive_deck",
+        "vertices": 520,
+        "triangles": 1052,
+        "watertight": true,
+        "volume_mm3": 4787.2244982396805,
+        "bounds_mm": [
+          [
+            28.0,
+            -24.0,
+            17.0
+          ],
+          [
+            62.0,
+            24.0,
+            20.0
+          ]
+        ],
+        "sha256": "23966ce6645e3098193c4567903aad009bfc77a8b474a076dfcf2229a3a5e37d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_motor_ENVELOPE",
+        "group": "motor_envelope",
+        "vertices": 8,
+        "triangles": 12,
+        "watertight": true,
+        "volume_mm3": 17680.0,
+        "bounds_mm": [
+          [
+            32.0,
+            -13.0,
+            20.0
+          ],
+          [
+            52.0,
+            13.0,
+            54.0
+          ]
+        ],
+        "sha256": "603193a73483e43e9fc7e41920a521602844c26e5186f85142c2663a1bf55abc",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_two_channel_drum",
+        "group": "drum",
+        "vertices": 796,
+        "triangles": 1592,
+        "watertight": true,
+        "volume_mm3": 1336.7578222144814,
+        "bounds_mm": [
+          [
+            32.0,
+            -10.0,
+            55.0
+          ],
+          [
+            52.0,
+            10.0,
+            61.0
+          ]
+        ],
+        "sha256": "8bbab45223d6099597cd7708cfedefa78ef6842ff64f5221f54e07741e01819f",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_bolt_32_-17",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 212.30508562451632,
+        "bounds_mm": [
+          [
+            29.25,
+            -19.75,
+            0.0
+          ],
+          [
+            34.75,
+            -14.25,
+            23.0
+          ]
+        ],
+        "sha256": "36384a4b10876807b0a9303be0c9536c3f5ea36102c2862482e1ac4e29826d46",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_nut_32_-17",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.118333051168214,
+        "bounds_mm": [
+          [
+            28.824573516845703,
+            -19.75,
+            2.5999999046325684
+          ],
+          [
+            35.1754264831543,
+            -14.25,
+            5.0
+          ]
+        ],
+        "sha256": "063bb08000830b06a2714df125526ad98412d1301d1f751f3b4e1b81372be616",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_bolt_32_17",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 212.30508562451632,
+        "bounds_mm": [
+          [
+            29.25,
+            14.25,
+            0.0
+          ],
+          [
+            34.75,
+            19.75,
+            23.0
+          ]
+        ],
+        "sha256": "9a41a45ac9ae704b0d7f104f0d3237d9a1a74b2c581c35e999cc8e20a2f32674",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_nut_32_17",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11833305116829,
+        "bounds_mm": [
+          [
+            28.824573516845703,
+            14.25,
+            2.5999999046325684
+          ],
+          [
+            35.1754264831543,
+            19.75,
+            5.0
+          ]
+        ],
+        "sha256": "dab2969e7e56b62db7dc4854df92dd49e286dcb7359b482ad8cbee724d6037c3",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_bolt_58_-19",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 318.1636003575404,
+        "bounds_mm": [
+          [
+            55.25,
+            -21.75,
+            -15.0
+          ],
+          [
+            60.75,
+            -16.25,
+            23.0
+          ]
+        ],
+        "sha256": "da04bd66518791bb774dd90a6625f8e4c83651ec9c58e3939ad3d586f10a57dc",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_nut_58_-19",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11831231042614,
+        "bounds_mm": [
+          [
+            54.8245735168457,
+            -21.75,
+            -9.399999618530273
+          ],
+          [
+            61.1754264831543,
+            -16.25,
+            -7.0
+          ]
+        ],
+        "sha256": "e1143475a6bd8539312c37294ee1609f9872e505a5cb3daf5f214d3e6194e774",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_bolt_58_19",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 318.1636003575404,
+        "bounds_mm": [
+          [
+            55.25,
+            16.25,
+            -15.0
+          ],
+          [
+            60.75,
+            21.75,
+            23.0
+          ]
+        ],
+        "sha256": "cfe73e80bfaca516c1860fda8b0e1f265ac83e40aa8e88c6d787c6c5d0b7b0e4",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_deck_nut_58_19",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11831231042614,
+        "bounds_mm": [
+          [
+            54.8245735168457,
+            16.25,
+            -9.399999618530273
+          ],
+          [
+            61.1754264831543,
+            21.75,
+            -7.0
+          ]
+        ],
+        "sha256": "5448e6e3705a2ed12a50251ac84a73fef8528c6dc19e0806efbd650e82493692",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_clamp_bolt_-14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724236293812,
+        "bounds_mm": [
+          [
+            42.81110621035276,
+            11.25,
+            -6.034287683655149
+          ],
+          [
+            58.393709698118286,
+            16.75,
+            1.7182974716555024
+          ]
+        ],
+        "sha256": "1aa339d558d2fd965ed5c26c981f37d701ad0462effa6b7d09fc988c6867b81f",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_clamp_nut_-14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834673971854,
+        "bounds_mm": [
+          [
+            52.50817297196276,
+            11.25,
+            -7.0551422163075665
+          ],
+          [
+            56.373293195843914,
+            16.75,
+            -0.3123241523804303
+          ]
+        ],
+        "sha256": "06f5316b0b07f0c827e5b8488c474016b632e26cce479f794051f3eaed62c283",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_retaining_bolt_-14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724633885676,
+        "bounds_mm": [
+          [
+            50.604804738999164,
+            11.25,
+            -2.4159587761500205
+          ],
+          [
+            66.18740868943775,
+            16.75,
+            5.33662649451798
+          ]
+        ],
+        "sha256": "d669c6e62bcb204a00042f933b221d4939152bbe5951865a4ef1c8075bfd1f1d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_retaining_nut_-14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834631428277,
+        "bounds_mm": [
+          [
+            50.1994823882566,
+            11.25,
+            0.21946758688508178
+          ],
+          [
+            54.06460261213775,
+            16.75,
+            6.962285650812218
+          ]
+        ],
+        "sha256": "9e723ab334ed7da158cf3a90df7681b60040efb5ef5b6a91a96abc8ba669a321",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_clamp_bolt_14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724236293826,
+        "bounds_mm": [
+          [
+            42.81110621035276,
+            -16.75,
+            -6.034287683655149
+          ],
+          [
+            58.393709698118286,
+            -11.25,
+            1.7182974716555024
+          ]
+        ],
+        "sha256": "7fb4033b8e43c0964a3bd75e2fff82ab6af28a17fc53826aa087fc90ffbf0639",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_clamp_nut_14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834673971854,
+        "bounds_mm": [
+          [
+            52.50817297196276,
+            -16.75,
+            -7.0551422163075665
+          ],
+          [
+            56.373293195843914,
+            -11.25,
+            -0.3123241523804303
+          ]
+        ],
+        "sha256": "ded800e3d81d0406e43568f61af55d127b4a7c3633cbf252cafab5c59d4aff4a",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_retaining_bolt_14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724633885676,
+        "bounds_mm": [
+          [
+            50.604804738999164,
+            -16.75,
+            -2.4159587761500205
+          ],
+          [
+            66.18740868943775,
+            -11.25,
+            5.33662649451798
+          ]
+        ],
+        "sha256": "3aae7550395f7d2dcd440b71135e34033d6b68854aaa8161c4cb827bed63f1dd",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_retaining_nut_14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834631428277,
+        "bounds_mm": [
+          [
+            50.1994823882566,
+            -16.75,
+            0.21946758688508178
+          ],
+          [
+            54.06460261213775,
+            -11.25,
+            6.962285650812218
+          ]
+        ],
+        "sha256": "759f143ef492d1e161b6b3b46e5afc0d10aa9d80d7fde47042f605863deb0637",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_mount",
+        "group": "mount",
+        "vertices": 3559,
+        "triangles": 7158,
+        "watertight": true,
+        "volume_mm3": 8373.601495579891,
+        "bounds_mm": [
+          [
+            -51.784610748291016,
+            22.641016006469727,
+            -7.0
+          ],
+          [
+            0.7846096754074097,
+            65.69357299804688,
+            5.0
+          ]
+        ],
+        "sha256": "2fd836757dfe7090cea58e03efc0f5b39180bcd6a49ab5e207a927fcd1f14ff3",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_carrier",
+        "group": "cartridge",
+        "vertices": 560,
+        "triangles": 1132,
+        "watertight": true,
+        "volume_mm3": 1612.3097236417907,
+        "bounds_mm": [
+          [
+            -43.496736303070534,
+            33.25371765261694,
+            -5.8191662137786535
+          ],
+          [
+            -8.806737992880947,
+            57.33855724034389,
+            7.762365810207972
+          ]
+        ],
+        "sha256": "31af26dd1d703f4e2f0599447889ae848903109e1b06dccfcca4f687fda8df6c",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_root_clamp",
+        "group": "clamp",
+        "vertices": 264,
+        "triangles": 532,
+        "watertight": true,
+        "volume_mm3": 485.6122361700156,
+        "bounds_mm": [
+          [
+            -40.53994248108314,
+            30.648785413524948,
+            -4.827286441459524
+          ],
+          [
+            -7.302779663420452,
+            52.217240113155945,
+            0.7499578532875001
+          ]
+        ],
+        "sha256": "cf8e8862167844aa2d58de62f32ee80869a849bfe631bd216c1ae0ecf1a953ea",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_skin",
+        "group": "finger",
+        "vertices": 168,
+        "triangles": 332,
+        "watertight": true,
+        "volume_mm3": 209.8394427141743,
+        "bounds_mm": [
+          [
+            -35.392304845413236,
+            11.349618275875788,
+            -92.2898176461033
+          ],
+          [
+            -3.0886035516386805,
+            49.30127018922194,
+            0.024192189559966774
+          ]
+        ],
+        "sha256": "c6fd61e9684e7494bd729f354842ce68691ea382181329536dfa13ea3dfc5530",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_rail_left",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956462,
+        "bounds_mm": [
+          [
+            -35.63487877698224,
+            11.4005219719213,
+            -92.69432614329078
+          ],
+          [
+            -11.77824685209768,
+            38.72142056329118,
+            0.0
+          ]
+        ],
+        "sha256": "e9cac0ba3adfa3e00b5bc700030dff95e6ae43573d94b5d27f4b88ddaf88c863",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_rail_right",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956503,
+        "bounds_mm": [
+          [
+            -16.582319893724616,
+            16.4005219719213,
+            -92.69432614329078
+          ],
+          [
+            -3.1179928142533058,
+            49.72142056329118,
+            0.0
+          ]
+        ],
+        "sha256": "bc626e9cf54fe973b3dc02eca3938eadccd5cefb57d24e28b9a4ecf6435c8280",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263606,
+        "bounds_mm": [
+          [
+            -55.12151742456187,
+            19.010586164308798,
+            -10.310370145635318
+          ],
+          [
+            -51.90220551309302,
+            22.359939578884187,
+            -7.644013006286605
+          ]
+        ],
+        "sha256": "3c564bf78f917f13cc97ef474a465b1173e2e8bdbb7088c3ffef687b779841e8",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s0_support",
+        "group": "support",
+        "vertices": 35,
+        "triangles": 66,
+        "watertight": true,
+        "volume_mm3": 75.40841327039635,
+        "bounds_mm": [
+          [
+            -54.88016128540039,
+            20.76396369934082,
+            -11.861017227172852
+          ],
+          [
+            -32.47986602783203,
+            37.89662551879883,
+            -7.980356216430664
+          ]
+        ],
+        "sha256": "7739c351795820f2a9d6ca704b90fbb299c232a4731c381d96592702ed9a0913",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            -52.702298468567896,
+            14.820376017889172,
+            -29.716284671156817
+          ],
+          [
+            -49.48298655709366,
+            18.169729432463857,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "248079a6c2a0031078adacb61fb244d08867d287781558c4db67073914e5e7a6",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s1_support",
+        "group": "support",
+        "vertices": 39,
+        "triangles": 74,
+        "watertight": true,
+        "volume_mm3": 75.40838223910835,
+        "bounds_mm": [
+          [
+            -52.460941314697266,
+            16.573753356933594,
+            -31.266931533813477
+          ],
+          [
+            -30.060646057128906,
+            33.706417083740234,
+            -27.38627052307129
+          ]
+        ],
+        "sha256": "7e429cd295d40b058d991959e47d08ca9514ccb566c30b0a2dd17bc86324077c",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            -50.283079512568555,
+            10.63016587146999,
+            -49.12219919667337
+          ],
+          [
+            -47.063767601099634,
+            13.979519286043073,
+            -46.455842057328276
+          ]
+        ],
+        "sha256": "777fab5b4c61b4cba42c7c57c0d5189f7722d15aa1e863f91de63392e08d05bb",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s2_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 75.54637709831714,
+        "bounds_mm": [
+          [
+            -50.04172134399414,
+            12.383543014526367,
+            -50.672847747802734
+          ],
+          [
+            -27.641427993774414,
+            29.516204833984375,
+            -46.79218673706055
+          ]
+        ],
+        "sha256": "a1904aa6d1625b4defac667f144de239bb0211cf57ad2468ea4ccedb74013ec3",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263587,
+        "bounds_mm": [
+          [
+            -45.78540182827313,
+            7.639952567336448,
+            -68.52812052680271
+          ],
+          [
+            -42.56608543523641,
+            10.98931229733665,
+            -65.86174977823877
+          ]
+        ],
+        "sha256": "1155d61ede3a3491c238d0f826e0be0518a66bdadd03918a74ac64ed374100ba",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s3_support",
+        "group": "support",
+        "vertices": 41,
+        "triangles": 78,
+        "watertight": true,
+        "volume_mm3": 75.40057857358414,
+        "bounds_mm": [
+          [
+            -45.54404067993164,
+            9.395310401916504,
+            -70.12344360351562
+          ],
+          [
+            -23.299633026123047,
+            26.43599510192871,
+            -66.1980972290039
+          ]
+        ],
+        "sha256": "42b218ef96278a12f90a8b9d337eb8cff5c2704b8305157f75d8c32aac89bcc0",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263672,
+        "bounds_mm": [
+          [
+            -39.60830853320369,
+            1.3816262827004746,
+            -85.30880756268479
+          ],
+          [
+            -36.120935996451344,
+            4.985272861469527,
+            -81.83680870951827
+          ]
+        ],
+        "sha256": "e4f820f5fb405019dae40c82f07fd9d7c26435904f82d290d363ca23b2f5a52e",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s4_support",
+        "group": "support",
+        "vertices": 40,
+        "triangles": 76,
+        "watertight": true,
+        "volume_mm3": 75.73369125858987,
+        "bounds_mm": [
+          [
+            -39.26329040527344,
+            2.8019425868988037,
+            -87.8310317993164
+          ],
+          [
+            -16.841976165771484,
+            20.19400978088379,
+            -83.30393981933594
+          ]
+        ],
+        "sha256": "26018a54471010ed3b5816455937fc2736080623f0461e3bcb26ca117edec836",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            -30.469395481492153,
+            0.5223531929475813,
+            -90.53062241979747
+          ],
+          [
+            -26.92964769937029,
+            4.083198082516421,
+            -86.93866331068024
+          ]
+        ],
+        "sha256": "9d9e13e2fb81fdba67b0ab21986a403b3524d7f8688f09eeb52911b61e95c97e",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s5_support",
+        "group": "support",
+        "vertices": 34,
+        "triangles": 64,
+        "watertight": true,
+        "volume_mm3": 60.36111386680659,
+        "bounds_mm": [
+          [
+            -30.060955047607422,
+            1.7356371879577637,
+            -93.2808837890625
+          ],
+          [
+            -13.176750183105469,
+            15.770774841308594,
+            -88.68130493164062
+          ]
+        ],
+        "sha256": "2fbaf3055d00759b5e1fd71b924ee5301101ccea95dae96034993dbc5a96918c",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263656,
+        "bounds_mm": [
+          [
+            7.2323116479148855,
+            55.01058616430898,
+            -10.31037014563741
+          ],
+          [
+            10.451623559389388,
+            58.359939578883974,
+            -7.6440130062845135
+          ]
+        ],
+        "sha256": "90fcdbc7853912c92ba10869987b34f69bd20aff9fbde629741e97e994b57bbc",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s0_support",
+        "group": "support",
+        "vertices": 35,
+        "triangles": 66,
+        "watertight": true,
+        "volume_mm3": 75.40839491025822,
+        "bounds_mm": [
+          [
+            -16.337064743041992,
+            46.656776428222656,
+            -11.861017227172852
+          ],
+          [
+            9.142940521240234,
+            58.455223083496094,
+            -7.980356216430664
+          ]
+        ],
+        "sha256": "10cb0606d10051182179acbf65022ae9834477564a4a77e34cae8e1b6643f716",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            9.651530603911553,
+            50.82037601788884,
+            -29.716284671156817
+          ],
+          [
+            12.870842515386066,
+            54.16972943246416,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "8500d97175bdd9500defd5524220db9ff6c16a811144317137c511d1877d9672",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s1_support",
+        "group": "support",
+        "vertices": 35,
+        "triangles": 66,
+        "watertight": true,
+        "volume_mm3": 75.40831875999739,
+        "bounds_mm": [
+          [
+            -13.917845726013184,
+            42.46656799316406,
+            -31.266931533813477
+          ],
+          [
+            11.562159538269043,
+            54.2650146484375,
+            -27.38627052307129
+          ]
+        ],
+        "sha256": "3185cc17a3c6c2f96a190a6db3cf6b1a67fbc81476d91be5594af170bf4f9f48",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263661,
+        "bounds_mm": [
+          [
+            12.07074955990943,
+            46.63016587147087,
+            -49.122199196672604
+          ],
+          [
+            15.290061471381549,
+            49.97951928604217,
+            -46.45584205732904
+          ]
+        ],
+        "sha256": "0d7032b6e377f1b94939f47f3fbd179ad31f3e237531e7ddab501c66a4058daa",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s2_support",
+        "group": "support",
+        "vertices": 37,
+        "triangles": 70,
+        "watertight": true,
+        "volume_mm3": 75.54644164223053,
+        "bounds_mm": [
+          [
+            -11.498626708984375,
+            38.2763557434082,
+            -50.672847747802734
+          ],
+          [
+            13.981378555297852,
+            50.07480239868164,
+            -46.79218673706055
+          ]
+        ],
+        "sha256": "f098aa747ee105f85ade0ca9054a66152d090c44bbd96b61179b047ad3281f9e",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263658,
+        "bounds_mm": [
+          [
+            12.411505306041962,
+            41.239952567335294,
+            -68.52812052680405
+          ],
+          [
+            15.630821699077066,
+            44.58931229733777,
+            -65.86174977823744
+          ]
+        ],
+        "sha256": "2d76bd4f31ad7e7631f969861c7249e8792fb37753b15ba5fcc63c4b194de2bb",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s3_support",
+        "group": "support",
+        "vertices": 40,
+        "triangles": 76,
+        "watertight": true,
+        "volume_mm3": 75.40051540979317,
+        "bounds_mm": [
+          [
+            -11.001984596252441,
+            32.97614669799805,
+            -70.12344360351562
+          ],
+          [
+            14.32099437713623,
+            44.684593200683594,
+            -66.1980972290039
+          ]
+        ],
+        "sha256": "8a5b20466320f575b57858ddb281f1c4cef650e39a5de66ae8cb8790789a9c88",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263658,
+        "bounds_mm": [
+          [
+            14.43167666294477,
+            32.58162628270019,
+            -85.30880756268576
+          ],
+          [
+            17.919049199698154,
+            36.18527286146978,
+            -81.8368087095173
+          ]
+        ],
+        "sha256": "0ee77fd1cb5b82b1b9e7cff608d2c5ad2c61ee1ea6f6b76bd9a74250058e7631",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s4_support",
+        "group": "support",
+        "vertices": 40,
+        "triangles": 76,
+        "watertight": true,
+        "volume_mm3": 75.73374861783918,
+        "bounds_mm": [
+          [
+            -8.783812522888184,
+            23.280271530151367,
+            -87.8310317993164
+          ],
+          [
+            16.742036819458008,
+            36.20601272583008,
+            -83.30393981933594
+          ]
+        ],
+        "sha256": "9ed487a066a41de203d6d7fd97673e71b1d1bc7590288f2defbbeb9560afd625",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.85615329426364,
+        "bounds_mm": [
+          [
+            10.585624702662695,
+            24.225480147854753,
+            -90.5306224197974
+          ],
+          [
+            14.1253724847849,
+            27.786325037424064,
+            -86.93866331068031
+          ]
+        ],
+        "sha256": "089413bc5c0697fa72869f7e4186981b3d32c312a4569ee231d0e27ebe7b9521",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s5_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 60.36111334824653,
+        "bounds_mm": [
+          [
+            -6.784313201904297,
+            17.578441619873047,
+            -93.2808837890625
+          ],
+          [
+            13.029346466064453,
+            27.76397705078125,
+            -88.68130493164062
+          ]
+        ],
+        "sha256": "9c9af524c56c20d6cdbdbf06c55ccc4d5697338dbed43f6f4c3b70dd784b0c48",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_32_-17",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723009465,
+        "bounds_mm": [
+          [
+            -4.275960642562183,
+            33.214419460530074,
+            13.0
+          ],
+          [
+            1.7208253249074292,
+            39.211206381673996,
+            17.0
+          ]
+        ],
+        "sha256": "251df495d49ff2c4450ff1cebe80079a6bf468945c3d6f95f16eef836a6536b0",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_32_17",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723009465007,
+        "bounds_mm": [
+          [
+            -33.7208243712331,
+            16.214419460530078,
+            13.0
+          ],
+          [
+            -27.724038403763487,
+            22.211206381674007,
+            17.0
+          ]
+        ],
+        "sha256": "b33935edd4f24b84f09a11099c22f0f601bfdeaac649adc7440bc03815935cd5",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_58_-19",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65721612237388,
+        "bounds_mm": [
+          [
+            -15.543909834993299,
+            56.73107995892548,
+            13.0
+          ],
+          [
+            -9.547124821198002,
+            62.7278668800694,
+            17.0
+          ]
+        ],
+        "sha256": "d1b13f099f45d937510db065b3d10d5e3493a66d5df42aacccb97a880a34d66c",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_58_19",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65721612237394,
+        "bounds_mm": [
+          [
+            -48.45287517880197,
+            37.73107995892549,
+            13.0
+          ],
+          [
+            -42.45609016500667,
+            43.72786688006941,
+            17.0
+          ]
+        ],
+        "sha256": "e60245830d42be95e91836d61751f6ff0e4f906fbaa2940503cc74a2d10c549c",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_motor_deck",
+        "group": "drive_deck",
+        "vertices": 520,
+        "triangles": 1052,
+        "watertight": true,
+        "volume_mm3": 4787.22449823968,
+        "bounds_mm": [
+          [
+            -51.784609690826514,
+            12.24871130596429,
+            17.0
+          ],
+          [
+            6.784609690826536,
+            65.6935750346352,
+            20.0
+          ]
+        ],
+        "sha256": "67e33fe68f900ff5dfbf47db6702caac1ca61a5aedd6a41e73675817809d2527",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_motor_ENVELOPE",
+        "group": "motor_envelope",
+        "vertices": 8,
+        "triangles": 12,
+        "watertight": true,
+        "volume_mm3": 17680.0,
+        "bounds_mm": [
+          [
+            -37.25833024919769,
+            21.212812921102042,
+            20.0
+          ],
+          [
+            -4.74166975080229,
+            51.53332099679081,
+            54.0
+          ]
+        ],
+        "sha256": "edc370e66d40dfec7ed8a8a0bb398d00920bbbd5d6229df1e06071d63c9bee65",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_two_channel_drum",
+        "group": "drum",
+        "vertices": 796,
+        "triangles": 1592,
+        "watertight": true,
+        "volume_mm3": 1336.7578222144812,
+        "bounds_mm": [
+          [
+            -30.994645609300633,
+            26.378420046902438,
+            55.0
+          ],
+          [
+            -11.005354390699349,
+            46.367713870990414,
+            61.0
+          ]
+        ],
+        "sha256": "487bbf33049c9e430e5f358bb463966a27b3da17246b7428e3f7c052e2f4a8d4",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_bolt_32_-17",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 212.30508562451624,
+        "bounds_mm": [
+          [
+            -4.026095670351371,
+            33.4642853864152,
+            0.0
+          ],
+          [
+            1.4709593990223009,
+            38.96134210760124,
+            23.0
+          ]
+        ],
+        "sha256": "91738d04bf63309bde7a30915b935b80d24e4b9544fccfb335b5c7d82e853f78",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_nut_32_-17",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11833305116829,
+        "bounds_mm": [
+          [
+            -4.452993663185999,
+            33.462812918840534,
+            2.5999999046325684
+          ],
+          [
+            1.8978583455312459,
+            38.962812923363536,
+            5.0
+          ]
+        ],
+        "sha256": "e3287214e55306a90a354cd8457d1ce30bb30482e5ff5e9de07a3248b12a4429",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_bolt_32_17",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 212.3050856245163,
+        "bounds_mm": [
+          [
+            -33.470959399022284,
+            16.464285386415206,
+            0.0
+          ],
+          [
+            -27.973904329648615,
+            21.961342107601247,
+            23.0
+          ]
+        ],
+        "sha256": "58fdd95ec8e0ad03ca282fb86813493e3182d7e7524bb5c6b1b708e79157d7b3",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_nut_32_17",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11833305116837,
+        "bounds_mm": [
+          [
+            -33.89785739185692,
+            16.46281291884054,
+            2.5999999046325684
+          ],
+          [
+            -27.54700538313967,
+            21.962812923363543,
+            5.0
+          ]
+        ],
+        "sha256": "c1abbb32a7ca0a0ecc2e21d666e7cf07b01c298fad9907c67431494f7552aff8",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_bolt_58_-19",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 318.1636003575405,
+        "bounds_mm": [
+          [
+            -15.294044862782487,
+            56.98094423299823,
+            -15.0
+          ],
+          [
+            -9.796989793408814,
+            62.47800260599664,
+            23.0
+          ]
+        ],
+        "sha256": "9e10a707874d0db1a8bc8effc9a59bff2ead9d727dd2d02633324bc5df172deb",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_nut_58_-19",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11831231042611,
+        "bounds_mm": [
+          [
+            -15.720942855617114,
+            56.97947341723594,
+            -9.399999618530273
+          ],
+          [
+            -9.370091800574187,
+            62.47947342175894,
+            -7.0
+          ]
+        ],
+        "sha256": "b4adae1726274ab5f60f01db82c828d4a7ba5fe7ac5f25fdd1c4db3bb30f5f87",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_bolt_58_19",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 318.1636003575404,
+        "bounds_mm": [
+          [
+            -48.20301020659116,
+            37.98094423299825,
+            -15.0
+          ],
+          [
+            -42.70595513721749,
+            43.47800260599666,
+            23.0
+          ]
+        ],
+        "sha256": "cdd6cf8ffaa1002b3b072c9c8be8a256f1ea925b19ba6abb0361a6e5312cb239",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_deck_nut_58_19",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11831231042621,
+        "bounds_mm": [
+          [
+            -48.629908199425785,
+            37.97947341723595,
+            -9.399999618530273
+          ],
+          [
+            -42.279057144382854,
+            43.479473421758954,
+            -7.0
+          ]
+        ],
+        "sha256": "1f3cbe95bd7dac2ef7da728ff99e1bff8607943036a3b917edd3ff913a730188",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_clamp_bolt_-14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724236293854,
+        "bounds_mm": [
+          [
+            -42.45033615554627,
+            29.160840657990082,
+            -6.034287683655149
+          ],
+          [
+            -31.459844523881515,
+            44.0693442776159,
+            1.7182974716555024
+          ]
+        ],
+        "sha256": "1cabc7863312c9eef40b8279ec0501b39615d5e96137d784533e0f0fa91f81d0",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_clamp_nut_-14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.118346739718696,
+        "bounds_mm": [
+          [
+            -42.500520812775754,
+            37.4310543067503,
+            -7.0551422163075665
+          ],
+          [
+            -36.188923577091806,
+            42.86306139586619,
+            -0.3123241523804303
+          ]
+        ],
+        "sha256": "e4a9d1064ccaea8d5a3f42bbe15c5f73259f766c55667edc5cfa0dc4cd1bb90f",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_retaining_bolt_-14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.8472463388566,
+        "bounds_mm": [
+          [
+            -47.28812337723244,
+            36.32613819969273,
+            -2.4159587761500205
+          ],
+          [
+            -36.297632368976686,
+            51.23464226995637,
+            5.33662649451798
+          ]
+        ],
+        "sha256": "d52a9e41c18bb70de1427075f60b80af5818aff38b4c697584a52c0e0c9d4224",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_retaining_nut_-14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834631428269,
+        "bounds_mm": [
+          [
+            -41.34617552092267,
+            35.43166961178284,
+            0.21946758688508178
+          ],
+          [
+            -35.03457828523872,
+            40.86367670089873,
+            6.962285650812218
+          ]
+        ],
+        "sha256": "a1c30fd6e783b7f3ce82cb2d64ba83b1f665abe2910ee82db46cde3203349558",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_clamp_bolt_14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724236293835,
+        "bounds_mm": [
+          [
+            -18.201624849582018,
+            43.160840657990086,
+            -6.034287683655149
+          ],
+          [
+            -7.211134043823453,
+            58.0693442776159,
+            1.7182974716555024
+          ]
+        ],
+        "sha256": "69bfd1dc3c9f3bd2054e76249352baae5374bfb725ece2e97e88723c06b50599",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_clamp_nut_14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.118346739718554,
+        "bounds_mm": [
+          [
+            -18.251809506811504,
+            51.4310543067503,
+            -7.0551422163075665
+          ],
+          [
+            -11.940212271127558,
+            56.86306139586619,
+            -0.3123241523804303
+          ]
+        ],
+        "sha256": "38dc3f5c4eaea091ab4cfd30b58f25c92ff080912abd35416a04a098f689686a",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_retaining_bolt_14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724633885665,
+        "bounds_mm": [
+          [
+            -23.03941289717438,
+            50.32613819969273,
+            -2.4159587761500205
+          ],
+          [
+            -12.048921063012434,
+            65.23464226995637,
+            5.33662649451798
+          ]
+        ],
+        "sha256": "5b93617f74310aedcbf8e5d37056e0cf1db3d18d5aaf1d2304a89f8e50c7ecdf",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_retaining_nut_14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834631428264,
+        "bounds_mm": [
+          [
+            -17.097464214958425,
+            49.43166961178284,
+            0.21946758688508178
+          ],
+          [
+            -10.785866979274477,
+            54.86367670089873,
+            6.962285650812218
+          ]
+        ],
+        "sha256": "d37ee83ed666d3e297b0f1117f2707b5ba3974287f00ca60a364c83257d3a97b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_mount",
+        "group": "mount",
+        "vertices": 3518,
+        "triangles": 7076,
+        "watertight": true,
+        "volume_mm3": 8373.601353527918,
+        "bounds_mm": [
+          [
+            -51.784610748291016,
+            -65.69357299804688,
+            -7.0
+          ],
+          [
+            0.7846096754074097,
+            -22.641016006469727,
+            5.0
+          ]
+        ],
+        "sha256": "cb17754145b9f2aa0a7791f82d02381e92961882b6c98b9c9e10bdd27b36ce10",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_carrier",
+        "group": "cartridge",
+        "vertices": 560,
+        "triangles": 1132,
+        "watertight": true,
+        "volume_mm3": 1612.309723641791,
+        "bounds_mm": [
+          [
+            -43.49673630307056,
+            -57.33855724034387,
+            -5.8191662137786535
+          ],
+          [
+            -8.80673799288098,
+            -33.25371765261692,
+            7.762365810207972
+          ]
+        ],
+        "sha256": "eaa9720cb066c3ce6cae53ec3f89a8b5a2c204c7e3d43cd99265dea4012a4c3e",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_root_clamp",
+        "group": "clamp",
+        "vertices": 264,
+        "triangles": 532,
+        "watertight": true,
+        "volume_mm3": 485.6122361700157,
+        "bounds_mm": [
+          [
+            -40.53994248108317,
+            -52.217240113155924,
+            -4.827286441459524
+          ],
+          [
+            -7.302779663420484,
+            -30.648785413524926,
+            0.7499578532875001
+          ]
+        ],
+        "sha256": "96ec6e5233d4dbc26b51aa73f2b3cc4e7a396b0db4c13cb8f07fab299c4ed10b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_skin",
+        "group": "finger",
+        "vertices": 168,
+        "triangles": 332,
+        "watertight": true,
+        "volume_mm3": 209.83944271417337,
+        "bounds_mm": [
+          [
+            -35.39230484541327,
+            -49.30127018922192,
+            -92.2898176461033
+          ],
+          [
+            -3.0886035516387125,
+            -11.349618275875766,
+            0.024192189559966774
+          ]
+        ],
+        "sha256": "558dacb2bdd2d53956c50e83f879dfc0fb0d38c0ee9fae0cbaef5e310a3dac49",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_rail_left",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956484,
+        "bounds_mm": [
+          [
+            -16.582319893724645,
+            -49.72142056329116,
+            -92.69432614329078
+          ],
+          [
+            -3.1179928142533377,
+            -16.40052197192128,
+            0.0
+          ]
+        ],
+        "sha256": "2ecd63ffcd07159355bd65f7ff3dc05a78aabd609ba5c478df4aa699c615e802",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_rail_right",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956493,
+        "bounds_mm": [
+          [
+            -35.63487877698227,
+            -38.72142056329116,
+            -92.69432614329078
+          ],
+          [
+            -11.778246852097713,
+            -11.400521971921279,
+            0.0
+          ]
+        ],
+        "sha256": "9c80d01b2f073ff36f24e69b65b582bb9bdb34b8519a969ef299c71188e5b5d3",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            7.232311647914718,
+            -58.35993957888427,
+            -10.31037014563741
+          ],
+          [
+            10.451623559389471,
+            -55.0105861643087,
+            -7.6440130062845135
+          ]
+        ],
+        "sha256": "5d5a4a94cfacabd8910fda14085b41f5a90415035d70376efe9a94dc924474fa",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s0_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 75.40843356311444,
+        "bounds_mm": [
+          [
+            -16.337064743041992,
+            -58.455223083496094,
+            -11.861017227172852
+          ],
+          [
+            9.142940521240234,
+            -46.656776428222656,
+            -7.980356216430664
+          ]
+        ],
+        "sha256": "738ad6e26f73a74769173e9d049ea92d81d75cc098ba71213af1c8f808078435",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263661,
+        "bounds_mm": [
+          [
+            9.651530603911745,
+            -54.16972943246365,
+            -29.716284671156817
+          ],
+          [
+            12.870842515385803,
+            -50.820376017889366,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "3dbdd54b11365bf6137ba2ae6f7394ee6f37662b40d1103acb557f3dc09184cc",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s1_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 75.40832266979959,
+        "bounds_mm": [
+          [
+            -13.917845726013184,
+            -54.2650146484375,
+            -31.266931533813477
+          ],
+          [
+            11.562159538269043,
+            -42.46656799316406,
+            -27.38627052307129
+          ]
+        ],
+        "sha256": "1d5a0487c0ede386736c8970fbfb5651575dbc484da88d37f796c0000a10b5c5",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263665,
+        "bounds_mm": [
+          [
+            12.07074955990945,
+            -49.979519286042056,
+            -49.122199196672604
+          ],
+          [
+            15.290061471381465,
+            -46.630165871470986,
+            -46.45584205732904
+          ]
+        ],
+        "sha256": "89b4151e7d6c3bf5c0fc3bcd2d3c068597d7f4f0b8decb8df470cfba88387389",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s2_support",
+        "group": "support",
+        "vertices": 39,
+        "triangles": 74,
+        "watertight": true,
+        "volume_mm3": 75.54644460732258,
+        "bounds_mm": [
+          [
+            -11.498626708984375,
+            -50.07480239868164,
+            -50.672847747802734
+          ],
+          [
+            13.981378555297852,
+            -38.2763557434082,
+            -46.79218673706055
+          ]
+        ],
+        "sha256": "7e61d31a37f0e29e2bcc697abbbc3fd9eb9487d21335454972a280b68363ebe8",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            12.41150530604198,
+            -44.58931229733767,
+            -68.52812052680405
+          ],
+          [
+            15.630821699076984,
+            -41.23995256733542,
+            -65.86174977823744
+          ]
+        ],
+        "sha256": "3a82859b806eb0fb5c149ff1fa12f3bad95016ab58ed4a27336036c6e905c8c7",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s3_support",
+        "group": "support",
+        "vertices": 41,
+        "triangles": 78,
+        "watertight": true,
+        "volume_mm3": 75.40051479089814,
+        "bounds_mm": [
+          [
+            -11.001984596252441,
+            -44.684593200683594,
+            -70.12344360351562
+          ],
+          [
+            14.32099437713623,
+            -32.97614669799805,
+            -66.1980972290039
+          ]
+        ],
+        "sha256": "87611f9a4ce38947c60826250834391ed1b13aa24e87e16d5f63b19d62dbdfcc",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            14.431676662943882,
+            -36.18527286146979,
+            -85.3088075626861
+          ],
+          [
+            17.919049199698993,
+            -32.581626282700206,
+            -81.83680870951696
+          ]
+        ],
+        "sha256": "d285f6fa4ef9c9e31b915bfc700c96366fa0e498a83fc429db3a042962fd1fea",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s4_support",
+        "group": "support",
+        "vertices": 40,
+        "triangles": 76,
+        "watertight": true,
+        "volume_mm3": 75.73374214484713,
+        "bounds_mm": [
+          [
+            -8.783812522888184,
+            -36.20601272583008,
+            -87.8310317993164
+          ],
+          [
+            16.742036819458008,
+            -23.280271530151367,
+            -83.30393981933594
+          ]
+        ],
+        "sha256": "798f4c2819595b03b4b224a226d35f50d76a5061cad0078d699c20393fd67bc6",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            10.585624702662802,
+            -27.786325037423993,
+            -90.5306224197974
+          ],
+          [
+            14.125372484784759,
+            -24.225480147854846,
+            -86.93866331068031
+          ]
+        ],
+        "sha256": "6515ee10f2155cb01ebcb99521107c57294be50ca499bac088b067d2dfd67d99",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s5_support",
+        "group": "support",
+        "vertices": 34,
+        "triangles": 64,
+        "watertight": true,
+        "volume_mm3": 60.3611147530002,
+        "bounds_mm": [
+          [
+            -6.784313201904297,
+            -27.76397705078125,
+            -93.2808837890625
+          ],
+          [
+            13.029346466064453,
+            -17.578441619873047,
+            -88.68130493164062
+          ]
+        ],
+        "sha256": "26a4971e54fc94c66702b58a7048b1a23444d6790ec65b8ffd657592b72b120e",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            -55.12151742456753,
+            -22.35993957888373,
+            -10.310370145639501
+          ],
+          [
+            -51.90220551308741,
+            -19.010586164309185,
+            -7.644013006282423
+          ]
+        ],
+        "sha256": "486d2d4aea5b9f3ce00f020e87b54c0cf83f8df1024ced573c4743ea4ffcee96",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s0_support",
+        "group": "support",
+        "vertices": 35,
+        "triangles": 66,
+        "watertight": true,
+        "volume_mm3": 75.4084383163274,
+        "bounds_mm": [
+          [
+            -54.88016128540039,
+            -37.89662551879883,
+            -11.861017227172852
+          ],
+          [
+            -32.47986602783203,
+            -20.76396369934082,
+            -7.980356216430664
+          ]
+        ],
+        "sha256": "8878d82e9207904e324ab190d0a9e013691602d258abcde6eeb56ecba2ff940b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            -52.70229846856782,
+            -18.16972943246362,
+            -29.716284671156817
+          ],
+          [
+            -49.48298655709377,
+            -14.820376017889338,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "ec11d4e588ebf9fb7efa7d521f4c6d441939aac6d0958b9d9feb6bc203912e2b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s1_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 75.40841832381518,
+        "bounds_mm": [
+          [
+            -52.460941314697266,
+            -33.706417083740234,
+            -31.266931533813477
+          ],
+          [
+            -30.060646057128906,
+            -16.573753356933594,
+            -27.38627052307129
+          ]
+        ],
+        "sha256": "a596d53ce65b232d54ee8fca458b5764bec544adb4a6fe64d69dce55066d5ecf",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263597,
+        "bounds_mm": [
+          [
+            -50.28307951256851,
+            -13.979519286041684,
+            -49.12219919667156
+          ],
+          [
+            -47.063767601099705,
+            -10.630165871471307,
+            -46.45584205733009
+          ]
+        ],
+        "sha256": "3c1f6b432243984486cb73cfe7592e9107b10508f20ec16551ee0ccd10e6bf69",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s2_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 75.54637537572832,
+        "bounds_mm": [
+          [
+            -50.04172134399414,
+            -29.516204833984375,
+            -50.672847747802734
+          ],
+          [
+            -27.641427993774414,
+            -12.383543014526367,
+            -46.79218673706055
+          ]
+        ],
+        "sha256": "0eceb625eb37e26a5d8204f870ca0bbfc98e5e50ea57bd6552869e1f19e63092",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            -45.78540182827321,
+            -10.989312297338044,
+            -68.52812052680459
+          ],
+          [
+            -42.566085435236346,
+            -7.63995256733499,
+            -65.8617497782369
+          ]
+        ],
+        "sha256": "811f99a33b925e3486c0588343b69d12e6f3d7c3a7ad0c79f7e51e6164b71a2d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s3_support",
+        "group": "support",
+        "vertices": 40,
+        "triangles": 76,
+        "watertight": true,
+        "volume_mm3": 75.4005793866411,
+        "bounds_mm": [
+          [
+            -45.54404067993164,
+            -26.43599510192871,
+            -70.12344360351562
+          ],
+          [
+            -23.299633026123047,
+            -9.395310401916504,
+            -66.1980972290039
+          ]
+        ],
+        "sha256": "b74f77d5b9fe5cea65cc6eeaaaa3d1f4ad7dc10a7b380c8ddab16a9078af073d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263683,
+        "bounds_mm": [
+          [
+            -39.60830853320518,
+            -4.98527286146987,
+            -85.3088075626855
+          ],
+          [
+            -36.12093599644985,
+            -1.381626282700076,
+            -81.83680870951756
+          ]
+        ],
+        "sha256": "559fa207fc0aa9bb4f37556aa9a61717e8a722f5cc5460948f99394b1a53074d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s4_support",
+        "group": "support",
+        "vertices": 40,
+        "triangles": 76,
+        "watertight": true,
+        "volume_mm3": 75.73369536565944,
+        "bounds_mm": [
+          [
+            -39.26329040527344,
+            -20.19400978088379,
+            -87.8310317993164
+          ],
+          [
+            -16.841976165771484,
+            -2.8019425868988037,
+            -83.30393981933594
+          ]
+        ],
+        "sha256": "f27852d2d6f9e813afefa0002f115aa1ac157b4abfc2f73aebaf7630272253cd",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.85615329426363,
+        "bounds_mm": [
+          [
+            -30.469395481492267,
+            -4.083198082516594,
+            -90.5306224197974
+          ],
+          [
+            -26.929647699370182,
+            -0.5223531929473653,
+            -86.93866331068031
+          ]
+        ],
+        "sha256": "f546c8e9ce32b394da661a5a7b52697efee12e979afa9d86cff44a8fe2cf4ff3",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s5_support",
+        "group": "support",
+        "vertices": 36,
+        "triangles": 68,
+        "watertight": true,
+        "volume_mm3": 60.36111659931999,
+        "bounds_mm": [
+          [
+            -30.060955047607422,
+            -15.770774841308594,
+            -93.2808837890625
+          ],
+          [
+            -13.176750183105469,
+            -1.7356371879577637,
+            -88.68130493164062
+          ]
+        ],
+        "sha256": "4b1b793dab5d73e856e9017c6d8722aeb3ea888c65693235d0d9c56d258b01d9",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_32_-17",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723009464999,
+        "bounds_mm": [
+          [
+            -33.720824371233114,
+            -22.211206381673986,
+            13.0
+          ],
+          [
+            -27.724038403763505,
+            -16.214419460530056,
+            17.0
+          ]
+        ],
+        "sha256": "c78bf6f8f125d190cc652912f1fda464364c4a1dad846f11b438f7428a2d82f2",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_32_17",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723009465,
+        "bounds_mm": [
+          [
+            -4.275960642562208,
+            -39.211206381674,
+            13.0
+          ],
+          [
+            1.7208253249074013,
+            -33.21441946053007,
+            17.0
+          ]
+        ],
+        "sha256": "d43d6a4ebbd5997d190e5f639e80440b0e692db740d56e97b816df197a9a32dd",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_58_-19",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65721612237395,
+        "bounds_mm": [
+          [
+            -48.452875178802,
+            -43.727866880069385,
+            13.0
+          ],
+          [
+            -42.45609016500671,
+            -37.731079958925456,
+            17.0
+          ]
+        ],
+        "sha256": "6bad78d34a649ab7c87aac86386f01a817190622c9590d2f124518149e3a52cc",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_58_19",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65721612237395,
+        "bounds_mm": [
+          [
+            -15.543909834993343,
+            -62.7278668800694,
+            13.0
+          ],
+          [
+            -9.547124821198048,
+            -56.73107995892547,
+            17.0
+          ]
+        ],
+        "sha256": "a1ba58bb9732fa8e50afbc667e50bc6fc5a7e792f016c4cf4ac3675d47bf8045",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_motor_deck",
+        "group": "drive_deck",
+        "vertices": 520,
+        "triangles": 1052,
+        "watertight": true,
+        "volume_mm3": 4787.22449823968,
+        "bounds_mm": [
+          [
+            -51.78460969082655,
+            -65.69357503463519,
+            17.0
+          ],
+          [
+            6.7846096908265086,
+            -12.248711305964264,
+            20.0
+          ]
+        ],
+        "sha256": "2d19cdc231581cf993a739d0f6f30b598d97cbb4863cf7c72420fbc45df5c73e",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_motor_ENVELOPE",
+        "group": "motor_envelope",
+        "vertices": 8,
+        "triangles": 12,
+        "watertight": true,
+        "volume_mm3": 17679.999999999993,
+        "bounds_mm": [
+          [
+            -37.25833024919772,
+            -51.5333209967908,
+            20.0
+          ],
+          [
+            -4.741669750802315,
+            -21.21281292110202,
+            54.0
+          ]
+        ],
+        "sha256": "6706f0086d989c4b8c46079a25fdd6bc6fda14bc6385f1a9dc555ff53eeaa945",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_two_channel_drum",
+        "group": "drum",
+        "vertices": 796,
+        "triangles": 1592,
+        "watertight": true,
+        "volume_mm3": 1336.757822214481,
+        "bounds_mm": [
+          [
+            -30.99464560930066,
+            -46.36771387099039,
+            55.0
+          ],
+          [
+            -11.005354390699377,
+            -26.378420046902423,
+            61.0
+          ]
+        ],
+        "sha256": "e1c55d6a40df26628002d1c2201da10ef2335523a82d8ebb594152e142ec1d9f",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_bolt_32_-17",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 212.30508562451632,
+        "bounds_mm": [
+          [
+            -33.4709593990223,
+            -21.961342107601226,
+            0.0
+          ],
+          [
+            -27.973904329648633,
+            -16.464285386415185,
+            23.0
+          ]
+        ],
+        "sha256": "3ac6ac2da63ab8b13ca94082a7864c1677d9d21ac3d260490b03c41b1382b318",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_nut_32_-17",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11833305116827,
+        "bounds_mm": [
+          [
+            -33.89785739185693,
+            -21.96281292336352,
+            2.5999999046325684
+          ],
+          [
+            -27.547005383139687,
+            -16.462812918840523,
+            5.0
+          ]
+        ],
+        "sha256": "f8b9046241345be2a2198c6ff291f5e8fa360e0e47fdb38b57f30c3ebec8cb5c",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_bolt_32_17",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 212.30508562451644,
+        "bounds_mm": [
+          [
+            -4.026095670351396,
+            -38.96134210760124,
+            0.0
+          ],
+          [
+            1.470959399022273,
+            -33.4642853864152,
+            23.0
+          ]
+        ],
+        "sha256": "62ea6be2ed83174c2fba4c3455bb4422b8f9bb562aeedfc06f2c7c6b7e81f721",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_nut_32_17",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11833305116824,
+        "bounds_mm": [
+          [
+            -4.452993663186025,
+            -38.962812923363536,
+            2.5999999046325684
+          ],
+          [
+            1.897858345531218,
+            -33.46281291884054,
+            5.0
+          ]
+        ],
+        "sha256": "3c58a973bb6302f9b78c8b2d1133cf1a54397f98b3eaa36719cb4bd475c29cde",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_bolt_58_-19",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 318.1636003575406,
+        "bounds_mm": [
+          [
+            -48.20301020659119,
+            -43.47800260599662,
+            -15.0
+          ],
+          [
+            -42.70595513721752,
+            -37.98094423299821,
+            23.0
+          ]
+        ],
+        "sha256": "0bf8d033a1f879318e0c3d1ee210bec18990a86d959a09631af9e48149fb30b1",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_nut_58_-19",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.1183123104262,
+        "bounds_mm": [
+          [
+            -48.62990819942582,
+            -43.47947342175892,
+            -9.399999618530273
+          ],
+          [
+            -42.27905714438289,
+            -37.97947341723592,
+            -7.0
+          ]
+        ],
+        "sha256": "20ba5292f8c8c1e9899364f9ef78cc9438e427632506ef8728be10a859f74c50",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_bolt_58_19",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 318.1636003575403,
+        "bounds_mm": [
+          [
+            -15.294044862782531,
+            -62.478002605996636,
+            -15.0
+          ],
+          [
+            -9.79698979340886,
+            -56.980944232998226,
+            23.0
+          ]
+        ],
+        "sha256": "c3f305757fb0a62fb8fa1f5c7d4b5093bdbf29bf804b2dfb6becc4cc7d22fe62",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_deck_nut_58_19",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11831231042608,
+        "bounds_mm": [
+          [
+            -15.720942855617158,
+            -62.47947342175893,
+            -9.399999618530273
+          ],
+          [
+            -9.370091800574233,
+            -56.97947341723594,
+            -7.0
+          ]
+        ],
+        "sha256": "8d81906c12aaa89c2afea85dddc1e4689f8d6a5bc3f0e2ad56b98b9335400625",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_clamp_bolt_-14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724236293832,
+        "bounds_mm": [
+          [
+            -18.201624849582053,
+            -58.06934427761588,
+            -6.034287683655149
+          ],
+          [
+            -7.211134043823485,
+            -43.160840657990065,
+            1.7182974716555024
+          ]
+        ],
+        "sha256": "5cbcf8ac2470172f92450bdb8ea868fc293be1eeca05bb9860c86f6f26c30679",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_clamp_nut_-14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.118346739718596,
+        "bounds_mm": [
+          [
+            -18.25180950681154,
+            -56.86306139586617,
+            -7.0551422163075665
+          ],
+          [
+            -11.94021227112759,
+            -51.431054306750276,
+            -0.3123241523804303
+          ]
+        ],
+        "sha256": "2f83b2060b2124467d6516142574e2e826f0fac73b4e70f45e61948af8f31150",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_retaining_bolt_-14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.8472463388567,
+        "bounds_mm": [
+          [
+            -23.039412897174408,
+            -65.23464226995634,
+            -2.4159587761500205
+          ],
+          [
+            -12.048921063012466,
+            -50.32613819969271,
+            5.33662649451798
+          ]
+        ],
+        "sha256": "98178af0a725b6c8e43f5960f34ebb7fe6b3f20f22053cec867de767a84586aa",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_retaining_nut_-14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834631428267,
+        "bounds_mm": [
+          [
+            -17.097464214958457,
+            -54.86367670089871,
+            0.21946758688508178
+          ],
+          [
+            -10.785866979274509,
+            -49.431669611782816,
+            6.962285650812218
+          ]
+        ],
+        "sha256": "010cc9a83b592375b2af39e2c44b97d6c1ebb0eeb562ef40bcfada88183d778c",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_clamp_bolt_14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.8472423629383,
+        "bounds_mm": [
+          [
+            -42.4503361555463,
+            -44.069344277615876,
+            -6.034287683655149
+          ],
+          [
+            -31.45984452388155,
+            -29.16084065799006,
+            1.7182974716555024
+          ]
+        ],
+        "sha256": "5910511663f7685cd71dcfc385c7a11407f98a1d03367fd5ef80ba79f504b02d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_clamp_nut_14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.118346739718525,
+        "bounds_mm": [
+          [
+            -42.50052081277579,
+            -42.86306139586617,
+            -7.0551422163075665
+          ],
+          [
+            -36.18892357709184,
+            -37.431054306750276,
+            -0.3123241523804303
+          ]
+        ],
+        "sha256": "711de51296ac10d569b18a2239b17ea8dcf784bb569e1f1b4b992b3d3a8369ab",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_retaining_bolt_14",
+        "group": "fastener_proxy",
+        "vertices": 258,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 155.84724633885676,
+        "bounds_mm": [
+          [
+            -47.28812337723247,
+            -51.234642269956346,
+            -2.4159587761500205
+          ],
+          [
+            -36.297632368976714,
+            -36.32613819969271,
+            5.33662649451798
+          ]
+        ],
+        "sha256": "d5f0c1de57f86aea64840814775a4cd64ccb33af3201a76efcc88dfaf3c34c2f",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_retaining_nut_14",
+        "group": "fastener_proxy",
+        "vertices": 140,
+        "triangles": 280,
+        "watertight": true,
+        "volume_mm3": 41.11834631428273,
+        "bounds_mm": [
+          [
+            -41.346175520922706,
+            -40.86367670089871,
+            0.21946758688508178
+          ],
+          [
+            -35.03457828523876,
+            -35.431669611782816,
+            6.962285650812218
+          ]
+        ],
+        "sha256": "462404550cc6de40ff368846bd98e28e1b116d4caeb8ff55b566b591a39a25dd",
+        "mass_kg": null
+      },
+      {
+        "name": "palm",
+        "group": "palm",
+        "vertices": 1816,
+        "triangles": 3680,
+        "watertight": true,
+        "volume_mm3": 76266.31894114932,
+        "bounds_mm": [
+          [
+            -64.0,
+            -64.0,
+            5.0
+          ],
+          [
+            64.0,
+            64.0,
+            13.0
+          ]
+        ],
+        "sha256": "707da982f3eaafe15f2e835d825573730a0d6b053cf256a493a3a1198d04b6e4",
+        "mass_kg": null
+      }
+    ],
+    "interference": {
+      "positive_overlaps": [
+        {
+          "parts": [
+            "f0_mount",
+            "f0_retaining_bolt_-14"
+          ],
+          "volume_mm3": 3.5346937844830486e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_mount",
+            "f0_retaining_bolt_14"
+          ],
+          "volume_mm3": 3.504239657559083e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_carrier",
+            "f0_clamp_nut_-14"
+          ],
+          "volume_mm3": 8.720644245840958e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_carrier",
+            "f0_clamp_nut_14"
+          ],
+          "volume_mm3": 9.124952233226699e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_root_clamp",
+            "f0_clamp_bolt_-14"
+          ],
+          "volume_mm3": 2.653154600314641e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_root_clamp",
+            "f0_clamp_bolt_14"
+          ],
+          "volume_mm3": 2.586862516788339e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_c0_s0_eyelet",
+            "f0_c0_s0_support"
+          ],
+          "volume_mm3": 2.364744445451341,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s1_eyelet",
+            "f0_c0_s1_support"
+          ],
+          "volume_mm3": 2.3647367597413527,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s2_eyelet",
+            "f0_c0_s2_support"
+          ],
+          "volume_mm3": 2.364746140905917,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s3_eyelet",
+            "f0_c0_s3_support"
+          ],
+          "volume_mm3": 2.3625917684559,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s4_eyelet",
+            "f0_c0_s4_support"
+          ],
+          "volume_mm3": 2.3603499393021585,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s5_eyelet",
+            "f0_c0_s5_support"
+          ],
+          "volume_mm3": 2.3528424782940314,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s0_eyelet",
+            "f0_c1_s0_support"
+          ],
+          "volume_mm3": 2.3647450348037182,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s1_eyelet",
+            "f0_c1_s1_support"
+          ],
+          "volume_mm3": 2.3647374818827416,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s2_eyelet",
+            "f0_c1_s2_support"
+          ],
+          "volume_mm3": 2.364746496021032,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s3_eyelet",
+            "f0_c1_s3_support"
+          ],
+          "volume_mm3": 2.36259153314226,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s4_eyelet",
+            "f0_c1_s4_support"
+          ],
+          "volume_mm3": 2.360349507553991,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s5_eyelet",
+            "f0_c1_s5_support"
+          ],
+          "volume_mm3": 2.352841695564365,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_mount",
+            "f1_retaining_bolt_-14"
+          ],
+          "volume_mm3": 1.3632027275889413e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_carrier",
+            "f1_skin"
+          ],
+          "volume_mm3": 4.3131627911329646e-05,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_carrier",
+            "f1_clamp_nut_-14"
+          ],
+          "volume_mm3": 7.63745193429107e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_carrier",
+            "f1_retaining_nut_-14"
+          ],
+          "volume_mm3": 3.0826211059320485e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_carrier",
+            "f1_clamp_nut_14"
+          ],
+          "volume_mm3": 5.465048085776895e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_carrier",
+            "f1_retaining_nut_14"
+          ],
+          "volume_mm3": 4.122629491121188e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_root_clamp",
+            "f1_skin"
+          ],
+          "volume_mm3": 2.0452103550875716e-05,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_root_clamp",
+            "f1_clamp_bolt_-14"
+          ],
+          "volume_mm3": 2.130658126967925e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_root_clamp",
+            "f1_clamp_bolt_14"
+          ],
+          "volume_mm3": 4.026753960791514e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_c0_s0_eyelet",
+            "f1_c0_s0_support"
+          ],
+          "volume_mm3": 2.364742154176478,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s1_eyelet",
+            "f1_c0_s1_support"
+          ],
+          "volume_mm3": 2.3647454187292944,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s2_eyelet",
+            "f1_c0_s2_support"
+          ],
+          "volume_mm3": 2.364743495893672,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s3_eyelet",
+            "f1_c0_s3_support"
+          ],
+          "volume_mm3": 2.3625901980639696,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s4_eyelet",
+            "f1_c0_s4_support"
+          ],
+          "volume_mm3": 2.3603485436895375,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s5_eyelet",
+            "f1_c0_s5_support"
+          ],
+          "volume_mm3": 2.3528439552782996,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s0_eyelet",
+            "f1_c1_s0_support"
+          ],
+          "volume_mm3": 2.36474326030689,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s1_eyelet",
+            "f1_c1_s1_support"
+          ],
+          "volume_mm3": 2.36474157792307,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s2_eyelet",
+            "f1_c1_s2_support"
+          ],
+          "volume_mm3": 2.3647448921972654,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s3_eyelet",
+            "f1_c1_s3_support"
+          ],
+          "volume_mm3": 2.362590028687265,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s4_eyelet",
+            "f1_c1_s4_support"
+          ],
+          "volume_mm3": 2.3603496164305304,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s5_eyelet",
+            "f1_c1_s5_support"
+          ],
+          "volume_mm3": 2.3528440272526154,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_mount",
+            "f2_retaining_bolt_14"
+          ],
+          "volume_mm3": 1.5372583561656938e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_carrier",
+            "f2_skin"
+          ],
+          "volume_mm3": 6.937969063377143e-05,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_carrier",
+            "f2_clamp_nut_-14"
+          ],
+          "volume_mm3": 6.85326881466608e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_carrier",
+            "f2_retaining_nut_-14"
+          ],
+          "volume_mm3": 3.234629578704092e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_carrier",
+            "f2_clamp_nut_14"
+          ],
+          "volume_mm3": 6.636740636167815e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_carrier",
+            "f2_retaining_nut_14"
+          ],
+          "volume_mm3": 2.3211144745497827e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_root_clamp",
+            "f2_skin"
+          ],
+          "volume_mm3": 6.363343421374641e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_root_clamp",
+            "f2_clamp_bolt_-14"
+          ],
+          "volume_mm3": 3.988649893926777e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_root_clamp",
+            "f2_clamp_bolt_14"
+          ],
+          "volume_mm3": 3.2243396503872646e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_c0_s0_eyelet",
+            "f2_c0_s0_support"
+          ],
+          "volume_mm3": 2.364744327661384,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s1_eyelet",
+            "f2_c0_s1_support"
+          ],
+          "volume_mm3": 2.3647416938098282,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s2_eyelet",
+            "f2_c0_s2_support"
+          ],
+          "volume_mm3": 2.3647450958808443,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s3_eyelet",
+            "f2_c0_s3_support"
+          ],
+          "volume_mm3": 2.3625887522041182,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s4_eyelet",
+            "f2_c0_s4_support"
+          ],
+          "volume_mm3": 2.360348634446666,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s5_eyelet",
+            "f2_c0_s5_support"
+          ],
+          "volume_mm3": 2.3528442202386373,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s0_eyelet",
+            "f2_c1_s0_support"
+          ],
+          "volume_mm3": 2.3647444108936213,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s1_eyelet",
+            "f2_c1_s1_support"
+          ],
+          "volume_mm3": 2.3647465983848974,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s2_eyelet",
+            "f2_c1_s2_support"
+          ],
+          "volume_mm3": 2.3647439170716686,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s3_eyelet",
+            "f2_c1_s3_support"
+          ],
+          "volume_mm3": 2.362590686722797,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s4_eyelet",
+            "f2_c1_s4_support"
+          ],
+          "volume_mm3": 2.3603481276105973,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s5_eyelet",
+            "f2_c1_s5_support"
+          ],
+          "volume_mm3": 2.352842857458922,
+          "classification": "intended_bond_overlap"
+        }
+      ],
+      "small_boundary_residuals": [
+        {
+          "parts": [
+            "f0_carrier",
+            "f0_retaining_nut_-14"
+          ],
+          "volume_mm3": 3.949000415559567e-07,
+          "classification": "mesh_float32_boundary_uncertainty_NOT_clearance_PASS"
+        },
+        {
+          "parts": [
+            "f0_carrier",
+            "f0_retaining_nut_14"
+          ],
+          "volume_mm3": 4.044070275692017e-07,
+          "classification": "mesh_float32_boundary_uncertainty_NOT_clearance_PASS"
+        },
+        {
+          "parts": [
+            "f1_mount",
+            "f1_retaining_bolt_14"
+          ],
+          "volume_mm3": 9.616633794469938e-07,
+          "classification": "mesh_float32_boundary_uncertainty_NOT_clearance_PASS"
+        },
+        {
+          "parts": [
+            "f2_mount",
+            "f2_retaining_bolt_-14"
+          ],
+          "volume_mm3": 8.052182162524938e-07,
+          "classification": "mesh_float32_boundary_uncertainty_NOT_clearance_PASS"
+        }
+      ],
+      "invalid_or_boundary_kernel_results": [
+        {
+          "parts": [
+            "f0_root_clamp",
+            "f0_skin"
+          ],
+          "signed_volume_mm3": -1.2744422292598756e-05,
+          "watertight": true,
+          "classification": "INVALID_OR_BOUNDARY_KERNEL_RESULT_NOT_CLEARANCE_PASS"
+        }
+      ],
+      "mesh_intersections_evaluated": 371,
+      "scope": "Static Boolean INTERSECTION VOLUMES using manifold float32 mesh kernel;AABB rejection for disjoint pairs. No swept clearance/contact or micron-tolerance certification;1e-6mm3 reporting threshold is NOT physicsGate."
+    },
+    "manufactured_reference": true,
+    "actual_sofa_result": false,
+    "STEP_generated": false,
+    "full_BRep_assembly_verified": false,
+    "moving_clearance_verified": false,
+    "fastener_access_verified": false,
+    "wire_bend_radius_verified": false,
+    "material_strength_verified": false,
+    "fabrication_ready": false,
+    "runtime_s": 3.7774784659268335
+  }
+}

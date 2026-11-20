@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripNewmarkFactors LANGUAGES CXX)
+find_package(Sofa.Component.ODESolver.Backward REQUIRED)
+add_library(ReGripNewmarkFactors SHARED Adapter.cpp)
+target_compile_features(ReGripNewmarkFactors PRIVATE cxx_std_17)
+target_link_libraries(ReGripNewmarkFactors PRIVATE Sofa.Component.ODESolver.Backward)

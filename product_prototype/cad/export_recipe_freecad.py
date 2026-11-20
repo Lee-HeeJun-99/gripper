@@ -4,13 +4,15 @@ Shared neutral CSG recipe includes exact faceted B3 reference. Triangulated B3
 shells become faceted BRep solids,NOT smooth manufactured-surface certification.
 This source is syntax-checked here;kernel execution remains BLOCKED if absent.
 """
-import argparse,json
+import argparse,json,os
 from pathlib import Path
 
 def main():
  import FreeCAD as App
  import Part
- p=argparse.ArgumentParser();p.add_argument('--recipe',required=True,type=Path);p.add_argument('--out',required=True,type=Path);a=p.parse_args();data=json.loads(a.recipe.read_text());a.out.mkdir(parents=True,exist_ok=False);doc=App.newDocument('ReGripManufacturingCandidate');V=App.Vector
+ p=argparse.ArgumentParser();p.add_argument('--recipe',type=Path,default=os.environ.get('REGRIP_RECIPE'));p.add_argument('--out',type=Path,default=os.environ.get('REGRIP_CAD_OUT'));a,unused=p.parse_known_args()
+ if a.recipe is None or a.out is None:p.error('new explicit recipe/output paths required,or REGRIP_RECIPE/REGRIP_CAD_OUT environment')
+ data=json.loads(a.recipe.read_text());a.out.mkdir(parents=True,exist_ok=False);doc=App.newDocument('ReGripManufacturingCandidate');V=App.Vector
  def shape(op):
   kind=op['op']
   if kind=='box':

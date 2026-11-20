@@ -120,6 +120,14 @@ def recipe(cfg,design):
     for y in (-14,14):adapter=cut(adapter,transform(cyl(fast['clamp_head_access_radius_mm'],3.0,20,(2.5,y)),R))
    if fast.get('retaining_head_spotface_radius_mm'):
     for y in (-14,14):adapter=cut(adapter,transform(cyl(fast['retaining_head_spotface_radius_mm'],-20,-12,(c['retaining_bolt_x_mm'],y)),R))
+   if c.get('service_clamp_track_end_x_mm'):
+    end=c['service_clamp_track_end_x_mm']
+    if end<=2.5:raise ValueError('invalid positive-x cartridge withdrawal track')
+    for y in (-14,14):
+     shaft=union(box([2.5,y-holes,-20],[end,y+holes,5]),cyl(holes,-20,5,(2.5,y)),cyl(holes,-20,5,(end,y)))
+     radius=fast['clamp_head_access_radius_mm'];head=union(box([2.5,y-radius,3],[end,y+radius,20]),cyl(radius,3,20,(2.5,y)),cyl(radius,3,20,(end,y)))
+     radius=(c['nut_across_flats_mm']+.4)/math.sqrt(3);nut_track=box([2.5-radius,y-radius,-6.6],[end+radius,y+radius,-3.8])
+     adapter=cut(adapter,transform(shaft,R),transform(head,R),transform(nut_track,R))
   for y in mount['seat_bolt_tangential_mm']:
    tool=transform(cyl(mount['seat_bolt_hole_mm']/2,-10,14,(mount['seat_bolt_radial_mm'],y)),S);adapter=cut(adapter,tool);palm=cut(palm,tool)
   for y in c['retaining_bolt_y_mm']:

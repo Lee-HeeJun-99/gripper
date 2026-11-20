@@ -1,0 +1,54 @@
+{
+  "version": "B3_manufacturing_v12_candidate_NOT_QUALIFIED",
+  "units": "mm",
+  "baseline_geometry": "drawings/finite_eyelet_support_v11/config.json",
+  "baseline_sha256": "4a1326b11a354137dd441fc080e74bfe4766dc0ef1903ed76ac05b98b4d29010",
+  "cassette": {
+    "root_x_mm": [-8, 5], "width_mm": 36, "backing_mm": 4,
+    "clamp_thickness_mm": 3, "rail_groove_clearance_mm": 0.1,
+    "retaining_bolt_x_mm": -4, "retaining_bolt_y_mm": [-14, 14],
+    "bolt_clearance_diameter_mm": 3.4, "nut_across_flats_mm": 5.5,
+    "nut_thickness_mm": 2.4, "nut_pocket_clearance_mm": 0.2,
+    "pocket_clearance_mm": 0.2,
+    "root_joint_status": "bolts and root contact design only;preload,thread and Skin crushing NOT MEASURED"
+  },
+  "mount": {
+    "radial_range_mm": [40, 62], "tangential_width_mm": 40,
+    "z_range_mm": [-9, 5], "seat_bolt_radial_mm": 58,
+    "seat_bolt_tangential_mm": [-14, 14], "seat_bolt_hole_mm": 3.4
+  },
+  "drive": {
+    "architecture": "3 independent motor channels,2 separate drum grooves/channel;equal stroke NOT equal tension;NOT a mechanical equalizer",
+    "motor_envelope_mm": [20, 26, 34], "motor_center_radius_mm": 42,
+    "motor_base_z_mm": 20, "output_axis_supplier_verified": false,
+    "deck_radial_range_mm": [28, 62], "deck_width_mm": 36,
+    "deck_z_range_mm": [17, 20], "standoff_radial_mm": [32, 58],
+    "standoff_tangential_mm": [-14, 14],
+    "drum_effective_wire_radius_mm": 8, "drum_flange_radius_mm": 10,
+    "drum_z_range_mm": [55, 61], "drum_bore_mm": 6,
+    "drum_bore_status": "generic interface placeholder;NOT ROBOTIS shaft/horn specification",
+    "tension_scenarios_N_per_wire": [0.5, 1.5, 3.0],
+    "stroke_scenarios_mm": [4, 10, 20],
+    "closing_time_scenarios_s": [0.5, 1.0],
+    "assumed_transmission_efficiencies": [0.5, 0.8],
+    "design_load_factor": 2.0,
+    "wire_axial_stiffness_N_m": null,
+    "measured_required_stroke_mm": null,
+    "measured_continuous_torque_Nm": null,
+    "wire_supplier_minimum_bend_radius_mm": null
+  },
+  "fabrication": {
+    "skin": "PET100um / TPU100um candidates;no measured modulus selected",
+    "rail": "polymer0.5mm baseline;spring-metal thin-strip coupon is DIFFERENT design,NOT0.5mm steel substitution",
+    "joint": "bonded-rail candidate;adhesive thickness/compliance NOT in B3 FEM",
+    "frame": "machined polymer or printed PA candidate;strength and print anisotropy unmeasured",
+    "eyelet_support": "v11 finite shapes retained;material,join and moving interference unqualified",
+    "contact_pad": "optional removable thin pad;thickness/friction unselected;NOT added to qualified geometry",
+    "variable_stiffness": "future removable layer-jamming cartridge;no stiffness or vacuum performance claim"
+  },
+  "qualification": {
+    "static_mesh_boolean_only": true, "moving_interference_verified": false,
+    "STEP_generated": false, "fabrication_ready": false,
+    "simulation_adoption": "NO;new fixture/drive is independent design candidate,not a changed B3 physics scene"
+  }
+}

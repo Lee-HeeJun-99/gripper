@@ -1,0 +1,3192 @@
+{
+  "status": "CAD_CANDIDATE_GENERATED_NOT_QUALIFIED",
+  "source_commit": "669a8ab1130bf1c6e669258ff2f6ebccaba95956",
+  "source_sha256": "d3259047aef73151cc1d98569c9cdea33065b945f5fd5d5739e7dfad7d9d2987",
+  "producer_sha256": "f2349c21bbcd14865945020c6709de11685aa5c5c27fa1e25ec1cb964c538c65",
+  "config_sha256": "813b855a32edc5fb332e6a040e587cd8616c3261c275e2da092173b4df1110ce",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 2.1124097789870575,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "b7f60a195520ef0f233f7de6ac382ad4ac6f800a12bfbd8a7acf9a5da1d40928",
+      "command.json": "ff0e52847c62e808808d6a5738d383fbe087f4d226ef8fc742f828688eaab66a",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "c946cff3300c282946008839e929d3dec68fa4b49e4a0ed967b42aefa4930862"
+    }
+  },
+  "meshes": "product_prototype/meshes/b3_manufacturing_v12",
+  "drawings": "product_prototype/drawings/b3_manufacturing_v12",
+  "checks_sha256": "363dd8d945ae395b67b20d229711aa4ddf6d807992b7855a7472398de322b091",
+  "RSS_bytes": null,
+  "summary": {
+    "status": "PARAMETRIC_MESH_ASSEMBLY_CREATED_NOT_FABRICATION_READY",
+    "source_commit": "669a8ab1130bf1c6e669258ff2f6ebccaba95956",
+    "producer_sha256": "d3259047aef73151cc1d98569c9cdea33065b945f5fd5d5739e7dfad7d9d2987",
+    "baseline_sha256": "4a1326b11a354137dd441fc080e74bfe4766dc0ef1903ed76ac05b98b4d29010",
+    "design_sha256": "813b855a32edc5fb332e6a040e587cd8616c3261c275e2da092173b4df1110ce",
+    "dependency_hashes": {
+      "product_prototype/cad/generate.py": "09ae70661c7f75996416a3a9611871a6f58bcac053e5892fa1404bad55be71b1",
+      "product_prototype/cad/finite_guide_product.py": "afd1856b6748d5f61b7fa92afcb08c119f452b19a02e7bcd249ab4d6e521d991",
+      "product_prototype/sofa/finite_guide_coupon.py": "06d1a54fdc834d070fe3c205cdebd953228448ef2d9174d31c8c7941ac9ff49d"
+    },
+    "environment": {
+      "executables": {
+        "FreeCADCmd": null,
+        "freecadcmd": null,
+        "openscad": null
+      },
+      "python_modules": {
+        "FreeCAD": false,
+        "OCP": false,
+        "OCC": false,
+        "cadquery": false,
+        "manifold3d": true
+      },
+      "boolean_engines": [
+        "None",
+        "manifold"
+      ]
+    },
+    "parts": [
+      {
+        "name": "f0_mount",
+        "group": "mount",
+        "vertices": 1159,
+        "triangles": 2342,
+        "watertight": true,
+        "volume_mm3": 8043.580168335783,
+        "bounds_mm": [
+          [
+            40.0,
+            -20.0,
+            -9.0
+          ],
+          [
+            62.0,
+            20.0,
+            5.0
+          ]
+        ],
+        "sha256": "899ee6865597a1c69f0db9ee0dbd5828e4f57ae8c6f3d5959d68d91791c18150",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_carrier",
+        "group": "cartridge",
+        "vertices": 560,
+        "triangles": 1132,
+        "watertight": true,
+        "volume_mm3": 1612.309723641791,
+        "bounds_mm": [
+          [
+            48.790390522001665,
+            -18.0,
+            -5.8191662137786535
+          ],
+          [
+            55.81655806990133,
+            18.0,
+            7.762365810207972
+          ]
+        ],
+        "sha256": "2426b5ec1fe61d8cd42173d72682609758b150740c5cd38bc1f77e480791b451",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_root_clamp",
+        "group": "clamp",
+        "vertices": 264,
+        "triangles": 532,
+        "watertight": true,
+        "volume_mm3": 485.61223617001605,
+        "bounds_mm": [
+          [
+            45.78247386308068,
+            -18.0,
+            -4.827286441459524
+          ],
+          [
+            49.90297042592655,
+            18.0,
+            0.7499578532875001
+          ]
+        ],
+        "sha256": "f7e1c50c438a3f843092153a3c75a7cc61a6a306b07df3d5fe54e7cf1419309c",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_skin",
+        "group": "finger",
+        "vertices": 168,
+        "triangles": 332,
+        "watertight": true,
+        "volume_mm3": 209.83944271417545,
+        "bounds_mm": [
+          [
+            16.569511948690632,
+            -12.0,
+            -92.2898176461033
+          ],
+          [
+            50.0,
+            12.0,
+            0.024192189559966774
+          ]
+        ],
+        "sha256": "df4d0c71dbaef135d33cdf8e40e4704b50f794f01701abf8233de2412c2048ef",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_rail_left",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956514,
+        "bounds_mm": [
+          [
+            16.628290473919883,
+            4.0,
+            -92.69432614329078
+          ],
+          [
+            50.485147863137996,
+            12.0,
+            0.0
+          ]
+        ],
+        "sha256": "fde80f665c3214b2589f2075870223e8598adbfa588ee137893cf69ce941eb11",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_rail_right",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956531,
+        "bounds_mm": [
+          [
+            16.628290473919883,
+            -12.0,
+            -92.69432614329078
+          ],
+          [
+            50.485147863137996,
+            -4.0,
+            0.0
+          ]
+        ],
+        "sha256": "5969794df037ddf8785c45769d7480ec66d0d2edd15fe4ffb93b9b53adea1428",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            42.97252838016108,
+            34.5,
+            -10.31037014563764
+          ],
+          [
+            46.367259350189585,
+            37.5,
+            -7.6440130062842835
+          ]
+        ],
+        "sha256": "166604673fdcddcb00c0f2c3d17feebd88c0bcf6b002e4ce5342fe7ac88d47c9",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s0_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000078,
+        "bounds_mm": [
+          [
+            45.107178977968864,
+            9.6,
+            -11.861017606963927
+          ],
+          [
+            49.30181708980149,
+            36.6,
+            -7.980356330635405
+          ]
+        ],
+        "sha256": "6bc117d5daa0b9e10cb52aaa013ee85324b62a73963d65757c105489a439de42",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            38.13409046816799,
+            34.5,
+            -29.716284671157048
+          ],
+          [
+            41.52882143819597,
+            37.5,
+            -27.049927531804734
+          ]
+        ],
+        "sha256": "7fb8f8f464f820c7f30acc13e535be110b9c81a9d7fe6844b26af790832ae852",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s1_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000024,
+        "bounds_mm": [
+          [
+            40.268741065975505,
+            9.6,
+            -31.26693213248386
+          ],
+          [
+            44.463379177808136,
+            36.6,
+            -27.386270856155335
+          ]
+        ],
+        "sha256": "42dfc67ed4f4e67d03f42412c67e42cb0857820b75dfb61d15f212786ee002e2",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263626,
+        "bounds_mm": [
+          [
+            33.295652556176464,
+            34.5,
+            -49.12219919667332
+          ],
+          [
+            36.690383526200776,
+            37.5,
+            -46.455842057328326
+          ]
+        ],
+        "sha256": "16458894109e98ea35ed4c13967df4d6769df9834141fef823485a97bb421d82",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s2_support",
+        "group": "support",
+        "vertices": 17,
+        "triangles": 30,
+        "watertight": true,
+        "volume_mm3": 76.51920000000001,
+        "bounds_mm": [
+          [
+            35.43030315398215,
+            9.6,
+            -50.672846658003785
+          ],
+          [
+            39.624941265814776,
+            36.6,
+            -46.79218538167527
+          ]
+        ],
+        "sha256": "62fa1850f9a267579b2bfe84e655b423f65c1445fe98689df8c056a979293248",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            28.457211238238063,
+            32.1,
+            -68.52812052680336
+          ],
+          [
+            31.85194902015247,
+            35.1,
+            -65.86174977823812
+          ]
+        ],
+        "sha256": "b9fde3068fa6c015803944772a278c004acd4532b906c54234c85d0237efe655",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s3_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.31317824109162,
+        "bounds_mm": [
+          [
+            30.594149250775338,
+            7.38,
+            -70.12344704995203
+          ],
+          [
+            34.78650335382142,
+            34.2,
+            -66.19809990719519
+          ]
+        ],
+        "sha256": "4f3e0dd6bb34b8a2e917c6be14f0843ee96bb83e43401bd853f5c18e9a3e4e30",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            19.899831729662523,
+            29.7,
+            -85.30880756268529
+          ],
+          [
+            23.4786869373496,
+            32.7,
+            -81.83680870951777
+          ]
+        ],
+        "sha256": "ea0d077ec68cc4cf48d5b051a43faa75a1f0decdd83b7ee0f656af648fda09d3",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s4_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.51774792070606,
+        "bounds_mm": [
+          [
+            21.59514326315919,
+            4.98,
+            -87.8310294204845
+          ],
+          [
+            26.19323851038213,
+            31.8,
+            -83.30394143953373
+          ]
+        ],
+        "sha256": "f32a317839551aef8c85a81f9be4b6745c9dfd11f5d63abfc8ff3660adfec96a",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            14.626046198213475,
+            22.203126954907418,
+            -90.53062241979741
+          ],
+          [
+            18.061999795201388,
+            25.203126954907418,
+            -86.9386633106803
+          ]
+        ],
+        "sha256": "b1f702d2bea96bdc03ddb22be451bc6f9cd38500d07357449fba798843a986fe",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c0_s5_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 61.23863620709616,
+        "bounds_mm": [
+          [
+            16.03555807106921,
+            4.0200000000000005,
+            -93.28088609719053
+          ],
+          [
+            20.531470665694236,
+            24.30312695490742,
+            -88.68130606052218
+          ]
+        ],
+        "sha256": "6858f92d23d881b04cb87fe17cd3f4074fb22b51d5315a923b7dd69bf5fe8b87",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            42.97252838016108,
+            -37.5,
+            -10.31037014563764
+          ],
+          [
+            46.367259350189585,
+            -34.5,
+            -7.6440130062842835
+          ]
+        ],
+        "sha256": "8b9063f6296b21eb764346d71da92d4c5eab1c7a7064f1e83ef2d68145b76c7d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s0_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000035,
+        "bounds_mm": [
+          [
+            45.107178977968864,
+            -36.6,
+            -11.861017606963927
+          ],
+          [
+            49.30181708980149,
+            -9.6,
+            -7.980356330635405
+          ]
+        ],
+        "sha256": "dd914a52608da29d35e5828f209327e80312e75f8385872d9fcb98983ad7d43f",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            38.13409046816799,
+            -37.5,
+            -29.716284671157048
+          ],
+          [
+            41.52882143819597,
+            -34.5,
+            -27.049927531804734
+          ]
+        ],
+        "sha256": "61482439577a4a621f6989efd37ae8da925e50a257304fb2890438a2aac82e19",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s1_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000021,
+        "bounds_mm": [
+          [
+            40.268741065975505,
+            -36.6,
+            -31.26693213248386
+          ],
+          [
+            44.463379177808136,
+            -9.6,
+            -27.386270856155335
+          ]
+        ],
+        "sha256": "e570d4da57413efbd73b4ce85da62cf6eb2288731fec8be92cecbe89bc757cd7",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263626,
+        "bounds_mm": [
+          [
+            33.295652556176464,
+            -37.5,
+            -49.12219919667332
+          ],
+          [
+            36.690383526200776,
+            -34.5,
+            -46.455842057328326
+          ]
+        ],
+        "sha256": "a7b1d5836af71bb61f4969d2cff9ff28a4675db13b552fc376bbd7d9d0aca81d",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s2_support",
+        "group": "support",
+        "vertices": 17,
+        "triangles": 30,
+        "watertight": true,
+        "volume_mm3": 76.51920000000003,
+        "bounds_mm": [
+          [
+            35.43030315398215,
+            -36.6,
+            -50.672846658003785
+          ],
+          [
+            39.624941265814776,
+            -9.6,
+            -46.79218538167527
+          ]
+        ],
+        "sha256": "919eead4ca3f30181a64a0018344458eb8e3167d7a8d1e0a35a26e14d349d75b",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            28.457211238238063,
+            -35.1,
+            -68.52812052680336
+          ],
+          [
+            31.85194902015247,
+            -32.1,
+            -65.86174977823812
+          ]
+        ],
+        "sha256": "7f2fc86d49836e170917e03b81177f22e6aefcfec53f32ae2e67f9c215e222d0",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s3_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.31317824109163,
+        "bounds_mm": [
+          [
+            30.594149250775338,
+            -34.2,
+            -70.12344704995203
+          ],
+          [
+            34.78650335382142,
+            -7.379999999999999,
+            -66.19809990719519
+          ]
+        ],
+        "sha256": "575ac850f883d56bf153d9c8153b9f7409a39ea1ef27cf432621b5c63c352fb8",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            19.899831729662523,
+            -32.7,
+            -85.30880756268529
+          ],
+          [
+            23.4786869373496,
+            -29.7,
+            -81.83680870951777
+          ]
+        ],
+        "sha256": "399473c156919d5cef930ecf0c840f536d5753a26efd30f47422335e014c997c",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s4_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.51774792070604,
+        "bounds_mm": [
+          [
+            21.59514326315919,
+            -31.799999999999997,
+            -87.8310294204845
+          ],
+          [
+            26.19323851038213,
+            -4.9799999999999995,
+            -83.30394143953373
+          ]
+        ],
+        "sha256": "44a649381baca60df89e49cd6bdd15c99582c11835e65ebedc4a9dbb640c0525",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            14.626046198213475,
+            -25.203126954907418,
+            -90.53062241979741
+          ],
+          [
+            18.061999795201388,
+            -22.203126954907418,
+            -86.9386633106803
+          ]
+        ],
+        "sha256": "11fddd5b6b3e856c1e23db4e031f69eb817497822c4ae01574236ec7cdb7f88e",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_c1_s5_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 61.23863620709616,
+        "bounds_mm": [
+          [
+            16.03555807106921,
+            -24.303126954907416,
+            -93.28088609719053
+          ],
+          [
+            20.531470665694236,
+            -4.02,
+            -88.68130606052218
+          ]
+        ],
+        "sha256": "c2ebb95c3dba130df7f3a3a4fdc7354bba4ff0784046610611f4fc299caeb4eb",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_32_-14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723450022779,
+        "bounds_mm": [
+          [
+            29.0,
+            -17.0,
+            13.0
+          ],
+          [
+            35.0,
+            -11.0,
+            17.0
+          ]
+        ],
+        "sha256": "79427d1c770bf142d2b15db41c9cc56ba34ce2991408c2064d64fdec07deffc0",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_32_14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723450022779,
+        "bounds_mm": [
+          [
+            29.0,
+            11.0,
+            13.0
+          ],
+          [
+            35.0,
+            17.0,
+            17.0
+          ]
+        ],
+        "sha256": "7731d5dd61707c5c49ce15f7959d7e88212916eb250bbde97b901f249ca7dd90",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_58_-14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65722382774402,
+        "bounds_mm": [
+          [
+            55.0,
+            -17.0,
+            13.0
+          ],
+          [
+            61.0,
+            -11.0,
+            17.0
+          ]
+        ],
+        "sha256": "f00069327ac8878333a911e76a6094807b66f7a7950ab126917ae8d7135560d8",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_standoff_58_14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65722382774402,
+        "bounds_mm": [
+          [
+            55.0,
+            11.0,
+            13.0
+          ],
+          [
+            61.0,
+            17.0,
+            17.0
+          ]
+        ],
+        "sha256": "a3a4608db820fad29c4a6fa0ad7f95f53489e5a49e7749d33d3712ea6d9025f0",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_motor_deck",
+        "group": "drive_deck",
+        "vertices": 520,
+        "triangles": 1052,
+        "watertight": true,
+        "volume_mm3": 3563.22450462752,
+        "bounds_mm": [
+          [
+            28.0,
+            -18.0,
+            17.0
+          ],
+          [
+            62.0,
+            18.0,
+            20.0
+          ]
+        ],
+        "sha256": "e85df98afa8c7f6aa393de04637ef1887e225ea606f0646697a941aeb80ad4f4",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_motor_ENVELOPE",
+        "group": "motor_envelope",
+        "vertices": 8,
+        "triangles": 12,
+        "watertight": true,
+        "volume_mm3": 17680.0,
+        "bounds_mm": [
+          [
+            32.0,
+            -13.0,
+            20.0
+          ],
+          [
+            52.0,
+            13.0,
+            54.0
+          ]
+        ],
+        "sha256": "603193a73483e43e9fc7e41920a521602844c26e5186f85142c2663a1bf55abc",
+        "mass_kg": null
+      },
+      {
+        "name": "f0_two_channel_drum",
+        "group": "drum",
+        "vertices": 796,
+        "triangles": 1592,
+        "watertight": true,
+        "volume_mm3": 1336.7578222144814,
+        "bounds_mm": [
+          [
+            32.0,
+            -10.0,
+            55.0
+          ],
+          [
+            52.0,
+            10.0,
+            61.0
+          ]
+        ],
+        "sha256": "8bbab45223d6099597cd7708cfedefa78ef6842ff64f5221f54e07741e01819f",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_mount",
+        "group": "mount",
+        "vertices": 1589,
+        "triangles": 3202,
+        "watertight": true,
+        "volume_mm3": 8043.581460457967,
+        "bounds_mm": [
+          [
+            -48.32050704956055,
+            24.641016006469727,
+            -9.0
+          ],
+          [
+            -2.6794919967651367,
+            63.69357681274414,
+            5.0
+          ]
+        ],
+        "sha256": "c579a984ad0b72653a2b535d6f76d441528bb732ea6377719a6d44b9815f7c08",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_carrier",
+        "group": "cartridge",
+        "vertices": 560,
+        "triangles": 1132,
+        "watertight": true,
+        "volume_mm3": 1612.3097236417907,
+        "bounds_mm": [
+          [
+            -43.496736303070534,
+            33.25371765261694,
+            -5.8191662137786535
+          ],
+          [
+            -8.806737992880947,
+            57.33855724034389,
+            7.762365810207972
+          ]
+        ],
+        "sha256": "31af26dd1d703f4e2f0599447889ae848903109e1b06dccfcca4f687fda8df6c",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_root_clamp",
+        "group": "clamp",
+        "vertices": 264,
+        "triangles": 532,
+        "watertight": true,
+        "volume_mm3": 485.6122361700156,
+        "bounds_mm": [
+          [
+            -40.53994248108314,
+            30.648785413524948,
+            -4.827286441459524
+          ],
+          [
+            -7.302779663420452,
+            52.217240113155945,
+            0.7499578532875001
+          ]
+        ],
+        "sha256": "cf8e8862167844aa2d58de62f32ee80869a849bfe631bd216c1ae0ecf1a953ea",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_skin",
+        "group": "finger",
+        "vertices": 168,
+        "triangles": 332,
+        "watertight": true,
+        "volume_mm3": 209.8394427141743,
+        "bounds_mm": [
+          [
+            -35.392304845413236,
+            11.349618275875788,
+            -92.2898176461033
+          ],
+          [
+            -3.0886035516386805,
+            49.30127018922194,
+            0.024192189559966774
+          ]
+        ],
+        "sha256": "c6fd61e9684e7494bd729f354842ce68691ea382181329536dfa13ea3dfc5530",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_rail_left",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956462,
+        "bounds_mm": [
+          [
+            -35.63487877698224,
+            11.4005219719213,
+            -92.69432614329078
+          ],
+          [
+            -11.77824685209768,
+            38.72142056329118,
+            0.0
+          ]
+        ],
+        "sha256": "e9cac0ba3adfa3e00b5bc700030dff95e6ae43573d94b5d27f4b88ddaf88c863",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_rail_right",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956503,
+        "bounds_mm": [
+          [
+            -16.582319893724616,
+            16.4005219719213,
+            -92.69432614329078
+          ],
+          [
+            -3.1179928142533058,
+            49.72142056329118,
+            0.0
+          ]
+        ],
+        "sha256": "bc626e9cf54fe973b3dc02eca3938eadccd5cefb57d24e28b9a4ecf6435c8280",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263606,
+        "bounds_mm": [
+          [
+            -55.12151742456187,
+            19.010586164308798,
+            -10.310370145635318
+          ],
+          [
+            -51.90220551309302,
+            22.359939578884187,
+            -7.644013006286605
+          ]
+        ],
+        "sha256": "3c564bf78f917f13cc97ef474a465b1173e2e8bdbb7088c3ffef687b779841e8",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s0_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36799999999975,
+        "bounds_mm": [
+          [
+            -54.880159453604946,
+            20.763962887972436,
+            -11.861017606963927
+          ],
+          [
+            -32.47986537248108,
+            37.89662605250188,
+            -7.980356330635405
+          ]
+        ],
+        "sha256": "537d8aadbdde4ee96d7e3ed392f84c2114808691b50a9fdf4cc4eb82d1068f12",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            -52.702298468567896,
+            14.820376017889172,
+            -29.716284671156817
+          ],
+          [
+            -49.48298655709366,
+            18.169729432463857,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "248079a6c2a0031078adacb61fb244d08867d287781558c4db67073914e5e7a6",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s1_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000055,
+        "bounds_mm": [
+          [
+            -52.46094049760827,
+            16.57375274155245,
+            -31.26693213248386
+          ],
+          [
+            -30.060646416484403,
+            33.7064159060819,
+            -27.386270856155335
+          ]
+        ],
+        "sha256": "f76a7a5cc8cf920744b7f25bd87bc861993a40fd09ff1d56be5292ee1a7f6567",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263635,
+        "bounds_mm": [
+          [
+            -50.283079512568555,
+            10.63016587146999,
+            -49.12219919667337
+          ],
+          [
+            -47.063767601099634,
+            13.979519286043073,
+            -46.455842057328276
+          ]
+        ],
+        "sha256": "777fab5b4c61b4cba42c7c57c0d5189f7722d15aa1e863f91de63392e08d05bb",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s2_support",
+        "group": "support",
+        "vertices": 17,
+        "triangles": 30,
+        "watertight": true,
+        "volume_mm3": 76.51919999999967,
+        "bounds_mm": [
+          [
+            -50.041721541611594,
+            12.383542595132472,
+            -50.672846658003785
+          ],
+          [
+            -27.64142746048773,
+            29.516205759661915,
+            -46.79218538167527
+          ]
+        ],
+        "sha256": "504459eba914bb8ae556648f809656cd7e2d20ab2eb8a402e7ef5b32f36f5120",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263587,
+        "bounds_mm": [
+          [
+            -45.78540182827313,
+            7.639952567336448,
+            -68.52812052680271
+          ],
+          [
+            -42.56608543523641,
+            10.98931229733665,
+            -65.86174977823877
+          ]
+        ],
+        "sha256": "1155d61ede3a3491c238d0f826e0be0518a66bdadd03918a74ac64ed374100ba",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s3_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.31317824109233,
+        "bounds_mm": [
+          [
+            -45.54404161653227,
+            9.395310458344102,
+            -70.12344704995203
+          ],
+          [
+            -23.2996321080896,
+            26.435995613241932,
+            -66.19809990719519
+          ]
+        ],
+        "sha256": "207f20acba448a21fa3593d49e1265d5539eff9a17240f53c971a4bb03a2d9c8",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263672,
+        "bounds_mm": [
+          [
+            -39.60830853320369,
+            1.3816262827004746,
+            -85.30880756268479
+          ],
+          [
+            -36.120935996451344,
+            4.985272861469527,
+            -81.83680870951827
+          ]
+        ],
+        "sha256": "e4f820f5fb405019dae40c82f07fd9d7c26435904f82d290d363ca23b2f5a52e",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s4_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.51774792070601,
+        "bounds_mm": [
+          [
+            -39.26329074045214,
+            2.801942664260247,
+            -87.8310294204845
+          ],
+          [
+            -16.841975748713207,
+            20.194009957375798,
+            -83.30394143953373
+          ]
+        ],
+        "sha256": "168d84c3fee0c204e5799bf85e839fe517aaeb8346c18ddfb0bd66e1e13d6f5f",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            -30.469395481492153,
+            0.5223531929475813,
+            -90.53062241979747
+          ],
+          [
+            -26.92964769937029,
+            4.083198082516421,
+            -86.93866331068024
+          ]
+        ],
+        "sha256": "9d9e13e2fb81fdba67b0ab21986a403b3524d7f8688f09eeb52911b61e95c97e",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c0_s5_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 61.23863620709623,
+        "bounds_mm": [
+          [
+            -30.0609559672745,
+            1.7356371759528244,
+            -93.28088609719053
+          ],
+          [
+            -13.176750388630346,
+            15.77077517354621,
+            -88.68130606052218
+          ]
+        ],
+        "sha256": "22da067c02500d13f4c9faa314036e862570bba42e06d740d6ab9431f5d4046f",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263656,
+        "bounds_mm": [
+          [
+            7.2323116479148855,
+            55.01058616430898,
+            -10.31037014563741
+          ],
+          [
+            10.451623559389388,
+            58.359939578883974,
+            -7.6440130062845135
+          ]
+        ],
+        "sha256": "90fcdbc7853912c92ba10869987b34f69bd20aff9fbde629741e97e994b57bbc",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s0_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000021,
+        "bounds_mm": [
+          [
+            -16.33706466857012,
+            46.65677704813428,
+            -11.861017606963927
+          ],
+          [
+            9.142940289526038,
+            58.455224501125215,
+            -7.980356330635405
+          ]
+        ],
+        "sha256": "850adba786115b4c6fedd3439e80e87eb0002021ffc0b422fdc16a6261bd7a43",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            9.651530603911553,
+            50.82037601788884,
+            -29.716284671156817
+          ],
+          [
+            12.870842515386066,
+            54.16972943246416,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "8500d97175bdd9500defd5524220db9ff6c16a811144317137c511d1877d9672",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s1_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000008,
+        "bounds_mm": [
+          [
+            -13.917845712573445,
+            42.4665669017143,
+            -31.26693213248386
+          ],
+          [
+            11.562159245522718,
+            54.26501435470523,
+            -27.386270856155335
+          ]
+        ],
+        "sha256": "d77e77eb9384e8e5dee223d61235a91932a70834000059515bb45ae93eb79755",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263661,
+        "bounds_mm": [
+          [
+            12.07074955990943,
+            46.63016587147087,
+            -49.122199196672604
+          ],
+          [
+            15.290061471381549,
+            49.97951928604217,
+            -46.45584205732904
+          ]
+        ],
+        "sha256": "0d7032b6e377f1b94939f47f3fbd179ad31f3e237531e7ddab501c66a4058daa",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s2_support",
+        "group": "support",
+        "vertices": 17,
+        "triangles": 30,
+        "watertight": true,
+        "volume_mm3": 76.51919999999994,
+        "bounds_mm": [
+          [
+            -11.498626756576769,
+            38.27635675529432,
+            -50.672846658003785
+          ],
+          [
+            13.98137820151939,
+            50.074804208285244,
+            -46.79218538167527
+          ]
+        ],
+        "sha256": "7d296b0b9b37a27963ca8198c8e18699c50e0b4aea15a295248b671497bc4670",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263658,
+        "bounds_mm": [
+          [
+            12.411505306041962,
+            41.239952567335294,
+            -68.52812052680405
+          ],
+          [
+            15.630821699077066,
+            44.58931229733777,
+            -65.86174977823744
+          ]
+        ],
+        "sha256": "2d76bd4f31ad7e7631f969861c7249e8792fb37753b15ba5fcc63c4b194de2bb",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s3_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.31317824109159,
+        "bounds_mm": [
+          [
+            -11.001984196981548,
+            32.976146608874345,
+            -70.12344704995203
+          ],
+          [
+            14.320994184040146,
+            44.68459406186527,
+            -66.19809990719519
+          ]
+        ],
+        "sha256": "21c1ade85acbf65207bfc1507b39414def1e8af8b0e1f11ca22d7b0d8bc518f5",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263658,
+        "bounds_mm": [
+          [
+            14.43167666294477,
+            32.58162628270019,
+            -85.30880756268576
+          ],
+          [
+            17.919049199698154,
+            36.18527286146978,
+            -81.8368087095173
+          ]
+        ],
+        "sha256": "0ee77fd1cb5b82b1b9e7cff608d2c5ad2c61ee1ea6f6b76bd9a74250058e7631",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s4_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.51774792070586,
+        "bounds_mm": [
+          [
+            -8.783812744344555,
+            23.280271659544443,
+            -87.8310294204845
+          ],
+          [
+            16.74203620876556,
+            36.20601443481175,
+            -83.30394143953373
+          ]
+        ],
+        "sha256": "bc738fb659f6a125b2bd16c838328d5e2709b1fdaf0d9340f35c4dc3f13252d8",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.85615329426364,
+        "bounds_mm": [
+          [
+            10.585624702662695,
+            24.225480147854753,
+            -90.5306224197974
+          ],
+          [
+            14.1253724847849,
+            27.786325037424064,
+            -86.93866331068031
+          ]
+        ],
+        "sha256": "089413bc5c0697fa72869f7e4186981b3d32c312a4569ee231d0e27ebe7b9521",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_c1_s5_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 61.23863620709623,
+        "bounds_mm": [
+          [
+            -6.78431320963367,
+            17.55585861599578,
+            -93.28088609719053
+          ],
+          [
+            13.029346298813568,
+            27.763976104502838,
+            -88.68130606052218
+          ]
+        ],
+        "sha256": "ad6ef51ba1e29eeb73962a32a963cda69a9824372d351489c7fb1e534e2337b6",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_32_-14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.6572345002278,
+        "bounds_mm": [
+          [
+            -6.874036853915499,
+            31.71441946053007,
+            13.0
+          ],
+          [
+            -0.877250886445887,
+            37.711206381674,
+            17.0
+          ]
+        ],
+        "sha256": "646dd8de71d086fd0561b6bfbf248c0ca7ca32b6b0ad972cac5a9099913d91bd",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_32_14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723450022779,
+        "bounds_mm": [
+          [
+            -31.122748159879784,
+            17.714419460530078,
+            13.0
+          ],
+          [
+            -25.12596219241017,
+            23.711206381674007,
+            17.0
+          ]
+        ],
+        "sha256": "73b47426ddcc4b63e43f9bfce25ef9728acdc4d23c4d152243bb97a4cf17dc4e",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_58_-14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.6572238277439,
+        "bounds_mm": [
+          [
+            -19.87403685391549,
+            54.231079958925484,
+            13.0
+          ],
+          [
+            -13.877251840120197,
+            60.227866880069406,
+            17.0
+          ]
+        ],
+        "sha256": "3696fb1d2b68e8a837dc43457cebdcbdfaaf513c5355d319f7d5c1190b8785cc",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_standoff_58_14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65722382774386,
+        "bounds_mm": [
+          [
+            -44.12274815987978,
+            40.231079958925484,
+            13.0
+          ],
+          [
+            -38.12596314608448,
+            46.227866880069406,
+            17.0
+          ]
+        ],
+        "sha256": "65606263ad3956219734be7acc60d8752e9e2b44621b7b46e280c0de80eadaf4",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_motor_deck",
+        "group": "drive_deck",
+        "vertices": 520,
+        "triangles": 1052,
+        "watertight": true,
+        "volume_mm3": 3563.22450462752,
+        "bounds_mm": [
+          [
+            -46.58845726811988,
+            15.248711305964289,
+            17.0
+          ],
+          [
+            1.5884572681199038,
+            62.693575034635195,
+            20.0
+          ]
+        ],
+        "sha256": "c3ca92f08686c0120bb61f15d0c165b5719c459ff6137fd100415d3427769731",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_motor_ENVELOPE",
+        "group": "motor_envelope",
+        "vertices": 8,
+        "triangles": 12,
+        "watertight": true,
+        "volume_mm3": 17680.0,
+        "bounds_mm": [
+          [
+            -37.25833024919769,
+            21.212812921102042,
+            20.0
+          ],
+          [
+            -4.74166975080229,
+            51.53332099679081,
+            54.0
+          ]
+        ],
+        "sha256": "edc370e66d40dfec7ed8a8a0bb398d00920bbbd5d6229df1e06071d63c9bee65",
+        "mass_kg": null
+      },
+      {
+        "name": "f1_two_channel_drum",
+        "group": "drum",
+        "vertices": 796,
+        "triangles": 1592,
+        "watertight": true,
+        "volume_mm3": 1336.7578222144812,
+        "bounds_mm": [
+          [
+            -30.994645609300633,
+            26.378420046902438,
+            55.0
+          ],
+          [
+            -11.005354390699349,
+            46.367713870990414,
+            61.0
+          ]
+        ],
+        "sha256": "487bbf33049c9e430e5f358bb463966a27b3da17246b7428e3f7c052e2f4a8d4",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_mount",
+        "group": "mount",
+        "vertices": 1583,
+        "triangles": 3190,
+        "watertight": true,
+        "volume_mm3": 8043.581694408832,
+        "bounds_mm": [
+          [
+            -48.32050704956055,
+            -63.69357681274414,
+            -9.0
+          ],
+          [
+            -2.6794919967651367,
+            -24.641016006469727,
+            5.0
+          ]
+        ],
+        "sha256": "33bd3b2caafb27b1ab8876c713c7668e905d65edc21fc67ed81d20137a8c8de8",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_carrier",
+        "group": "cartridge",
+        "vertices": 560,
+        "triangles": 1132,
+        "watertight": true,
+        "volume_mm3": 1612.309723641791,
+        "bounds_mm": [
+          [
+            -43.49673630307056,
+            -57.33855724034387,
+            -5.8191662137786535
+          ],
+          [
+            -8.80673799288098,
+            -33.25371765261692,
+            7.762365810207972
+          ]
+        ],
+        "sha256": "eaa9720cb066c3ce6cae53ec3f89a8b5a2c204c7e3d43cd99265dea4012a4c3e",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_root_clamp",
+        "group": "clamp",
+        "vertices": 264,
+        "triangles": 532,
+        "watertight": true,
+        "volume_mm3": 485.6122361700157,
+        "bounds_mm": [
+          [
+            -40.53994248108317,
+            -52.217240113155924,
+            -4.827286441459524
+          ],
+          [
+            -7.302779663420484,
+            -30.648785413524926,
+            0.7499578532875001
+          ]
+        ],
+        "sha256": "96ec6e5233d4dbc26b51aa73f2b3cc4e7a396b0db4c13cb8f07fab299c4ed10b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_skin",
+        "group": "finger",
+        "vertices": 168,
+        "triangles": 332,
+        "watertight": true,
+        "volume_mm3": 209.83944271417337,
+        "bounds_mm": [
+          [
+            -35.39230484541327,
+            -49.30127018922192,
+            -92.2898176461033
+          ],
+          [
+            -3.0886035516387125,
+            -11.349618275875766,
+            0.024192189559966774
+          ]
+        ],
+        "sha256": "558dacb2bdd2d53956c50e83f879dfc0fb0d38c0ee9fae0cbaef5e310a3dac49",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_rail_left",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956484,
+        "bounds_mm": [
+          [
+            -16.582319893724645,
+            -49.72142056329116,
+            -92.69432614329078
+          ],
+          [
+            -3.1179928142533377,
+            -16.40052197192128,
+            0.0
+          ]
+        ],
+        "sha256": "2ecd63ffcd07159355bd65f7ff3dc05a78aabd609ba5c478df4aa699c615e802",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_rail_right",
+        "group": "finger",
+        "vertices": 84,
+        "triangles": 164,
+        "watertight": true,
+        "volume_mm3": 100.10649241956493,
+        "bounds_mm": [
+          [
+            -35.63487877698227,
+            -38.72142056329116,
+            -92.69432614329078
+          ],
+          [
+            -11.778246852097713,
+            -11.400521971921279,
+            0.0
+          ]
+        ],
+        "sha256": "9c80d01b2f073ff36f24e69b65b582bb9bdb34b8519a969ef299c71188e5b5d3",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            7.232311647914718,
+            -58.35993957888427,
+            -10.31037014563741
+          ],
+          [
+            10.451623559389471,
+            -55.0105861643087,
+            -7.6440130062845135
+          ]
+        ],
+        "sha256": "5d5a4a94cfacabd8910fda14085b41f5a90415035d70376efe9a94dc924474fa",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s0_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36799999999998,
+        "bounds_mm": [
+          [
+            -16.337064668570157,
+            -58.455224501125215,
+            -11.861017606963927
+          ],
+          [
+            9.142940289525992,
+            -46.65677704813427,
+            -7.980356330635405
+          ]
+        ],
+        "sha256": "7081e18e5ccb102ea7fc45077a2c2241f1b4eaba7454f04eca8b38647d863287",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263661,
+        "bounds_mm": [
+          [
+            9.651530603911745,
+            -54.16972943246365,
+            -29.716284671156817
+          ],
+          [
+            12.870842515385803,
+            -50.820376017889366,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "3dbdd54b11365bf6137ba2ae6f7394ee6f37662b40d1103acb557f3dc09184cc",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s1_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000027,
+        "bounds_mm": [
+          [
+            -13.917845712573481,
+            -54.265014354705244,
+            -31.26693213248386
+          ],
+          [
+            11.562159245522675,
+            -42.466566901714295,
+            -27.386270856155335
+          ]
+        ],
+        "sha256": "57418ca2f1b0401cd30dfda2005c8c57034627233089004e3f3247fe3601d2c1",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263665,
+        "bounds_mm": [
+          [
+            12.07074955990945,
+            -49.979519286042056,
+            -49.122199196672604
+          ],
+          [
+            15.290061471381465,
+            -46.630165871470986,
+            -46.45584205732904
+          ]
+        ],
+        "sha256": "89b4151e7d6c3bf5c0fc3bcd2d3c068597d7f4f0b8decb8df470cfba88387389",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s2_support",
+        "group": "support",
+        "vertices": 17,
+        "triangles": 30,
+        "watertight": true,
+        "volume_mm3": 76.5192,
+        "bounds_mm": [
+          [
+            -11.498626756576797,
+            -50.07480420828526,
+            -50.672846658003785
+          ],
+          [
+            13.981378201519355,
+            -38.276356755294316,
+            -46.79218538167527
+          ]
+        ],
+        "sha256": "2511b48a4007c19ab6db003661ed888e1e55a98e5b1a96201c863d8dba0120de",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            12.41150530604198,
+            -44.58931229733767,
+            -68.52812052680405
+          ],
+          [
+            15.630821699076984,
+            -41.23995256733542,
+            -65.86174977823744
+          ]
+        ],
+        "sha256": "3a82859b806eb0fb5c149ff1fa12f3bad95016ab58ed4a27336036c6e905c8c7",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s3_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.31317824109155,
+        "bounds_mm": [
+          [
+            -11.00198419698157,
+            -44.684594061865276,
+            -70.12344704995203
+          ],
+          [
+            14.32099418404011,
+            -32.97614660887434,
+            -66.19809990719519
+          ]
+        ],
+        "sha256": "bef7664e51a253d6f0ef373da7d96ac0589f9ee2e07708f678d4e463bda6cee8",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            14.431676662943882,
+            -36.18527286146979,
+            -85.3088075626861
+          ],
+          [
+            17.919049199698993,
+            -32.581626282700206,
+            -81.83680870951696
+          ]
+        ],
+        "sha256": "d285f6fa4ef9c9e31b915bfc700c96366fa0e498a83fc429db3a042962fd1fea",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s4_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.51774792070599,
+        "bounds_mm": [
+          [
+            -8.783812744344573,
+            -36.20601443481176,
+            -87.8310294204845
+          ],
+          [
+            16.742036208765537,
+            -23.28027165954444,
+            -83.30394143953373
+          ]
+        ],
+        "sha256": "4f32dbecbae301566d9910663771f069d5001eadfcc36b63fe504cd6aef2f53e",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            10.585624702662802,
+            -27.786325037423993,
+            -90.5306224197974
+          ],
+          [
+            14.125372484784759,
+            -24.225480147854846,
+            -86.93866331068031
+          ]
+        ],
+        "sha256": "6515ee10f2155cb01ebcb99521107c57294be50ca499bac088b067d2dfd67d99",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c0_s5_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 61.23863620709627,
+        "bounds_mm": [
+          [
+            -6.784313209633684,
+            -27.763976104502845,
+            -93.28088609719053
+          ],
+          [
+            13.029346298813554,
+            -17.55585861599578,
+            -88.68130606052218
+          ]
+        ],
+        "sha256": "9d78bb2676337d5f8769ff735c109f91099406d609ffb5e3f3a8c3ce7a7cf293",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s0_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263644,
+        "bounds_mm": [
+          [
+            -55.12151742456753,
+            -22.35993957888373,
+            -10.310370145639501
+          ],
+          [
+            -51.90220551308741,
+            -19.010586164309185,
+            -7.644013006282423
+          ]
+        ],
+        "sha256": "486d2d4aea5b9f3ce00f020e87b54c0cf83f8df1024ced573c4743ea4ffcee96",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s0_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36799999999958,
+        "bounds_mm": [
+          [
+            -54.88015945360496,
+            -37.89662605250185,
+            -11.861017606963927
+          ],
+          [
+            -32.47986537248111,
+            -20.763962887972397,
+            -7.980356330635405
+          ]
+        ],
+        "sha256": "e03eb1154ac91621cc2c6ba8cb952ab1dbb9af91ad2a1e67492afe76ca666282",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s1_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263663,
+        "bounds_mm": [
+          [
+            -52.70229846856782,
+            -18.16972943246362,
+            -29.716284671156817
+          ],
+          [
+            -49.48298655709377,
+            -14.820376017889338,
+            -27.049927531804965
+          ]
+        ],
+        "sha256": "ec11d4e588ebf9fb7efa7d521f4c6d441939aac6d0958b9d9feb6bc203912e2b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s1_support",
+        "group": "support",
+        "vertices": 16,
+        "triangles": 28,
+        "watertight": true,
+        "volume_mm3": 76.36800000000038,
+        "bounds_mm": [
+          [
+            -52.460940497608284,
+            -33.70641590608188,
+            -31.26693213248386
+          ],
+          [
+            -30.060646416484428,
+            -16.57375274155241,
+            -27.386270856155335
+          ]
+        ],
+        "sha256": "cb13c474f0cd924b72ed9ca3b98576402116acb56310b4517ab2927cddf31a9b",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s2_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263597,
+        "bounds_mm": [
+          [
+            -50.28307951256851,
+            -13.979519286041684,
+            -49.12219919667156
+          ],
+          [
+            -47.063767601099705,
+            -10.630165871471307,
+            -46.45584205733009
+          ]
+        ],
+        "sha256": "3c1f6b432243984486cb73cfe7592e9107b10508f20ec16551ee0ccd10e6bf69",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s2_support",
+        "group": "support",
+        "vertices": 17,
+        "triangles": 30,
+        "watertight": true,
+        "volume_mm3": 76.51919999999957,
+        "bounds_mm": [
+          [
+            -50.04172154161161,
+            -29.516205759661894,
+            -50.672846658003785
+          ],
+          [
+            -27.64142746048775,
+            -12.383542595132436,
+            -46.79218538167527
+          ]
+        ],
+        "sha256": "7cf1c3140be77cf98b278fa1b6fc06e7e6949e588f24dc0e6ce1b53778ebd271",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s3_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263654,
+        "bounds_mm": [
+          [
+            -45.78540182827321,
+            -10.989312297338044,
+            -68.52812052680459
+          ],
+          [
+            -42.566085435236346,
+            -7.63995256733499,
+            -65.8617497782369
+          ]
+        ],
+        "sha256": "811f99a33b925e3486c0588343b69d12e6f3d7c3a7ad0c79f7e51e6164b71a2d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s3_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.31317824109152,
+        "bounds_mm": [
+          [
+            -45.54404161653227,
+            -26.435995613241918,
+            -70.12344704995203
+          ],
+          [
+            -23.299632108089618,
+            -9.39531045834407,
+            -66.19809990719519
+          ]
+        ],
+        "sha256": "0f2387dd2b59a98a8abfbb6080678a99ce7099fff838decd724d7076e885d021",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s4_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.856153294263683,
+        "bounds_mm": [
+          [
+            -39.60830853320518,
+            -4.98527286146987,
+            -85.3088075626855
+          ],
+          [
+            -36.12093599644985,
+            -1.381626282700076,
+            -81.83680870951756
+          ]
+        ],
+        "sha256": "559fa207fc0aa9bb4f37556aa9a61717e8a722f5cc5460948f99394b1a53074d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s4_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 76.51774792070603,
+        "bounds_mm": [
+          [
+            -39.26329074045214,
+            -20.194009957375783,
+            -87.8310294204845
+          ],
+          [
+            -16.84197574871322,
+            -2.8019426642602205,
+            -83.30394143953373
+          ]
+        ],
+        "sha256": "93633360a114d2ded7450be79395ac83049513808119f2402102ffeddf152048",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s5_eyelet",
+        "group": "eyelet",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 11.85615329426363,
+        "bounds_mm": [
+          [
+            -30.469395481492267,
+            -4.083198082516594,
+            -90.5306224197974
+          ],
+          [
+            -26.929647699370182,
+            -0.5223531929473653,
+            -86.93866331068031
+          ]
+        ],
+        "sha256": "f546c8e9ce32b394da661a5a7b52697efee12e979afa9d86cff44a8fe2cf4ff3",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_c1_s5_support",
+        "group": "support",
+        "vertices": 19,
+        "triangles": 34,
+        "watertight": true,
+        "volume_mm3": 61.238636207096086,
+        "bounds_mm": [
+          [
+            -30.060955967274502,
+            -15.770775173546202,
+            -93.28088609719053
+          ],
+          [
+            -13.176750388630357,
+            -1.7356371759528049,
+            -88.68130606052218
+          ]
+        ],
+        "sha256": "2202cd7db191045957a666daa24f17885d0d70d453985fda52561bb417c5af1d",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_32_-14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723450022784,
+        "bounds_mm": [
+          [
+            -31.122748159879798,
+            -23.711206381673986,
+            13.0
+          ],
+          [
+            -25.12596219241019,
+            -17.714419460530056,
+            17.0
+          ]
+        ],
+        "sha256": "399a5e83f42bdc4d3519db10ea8d0ac0399661da7b30660da6529f06f956bdbb",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_32_14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65723450022783,
+        "bounds_mm": [
+          [
+            -6.874036853915523,
+            -37.711206381673996,
+            13.0
+          ],
+          [
+            -0.8772508864459139,
+            -31.71441946053007,
+            17.0
+          ]
+        ],
+        "sha256": "45b429385acc74ca7959cdabfff461e408827c43582b4e23c103c9edfb4ef6c2",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_58_-14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65722382774409,
+        "bounds_mm": [
+          [
+            -44.12274815987981,
+            -46.227866880069385,
+            13.0
+          ],
+          [
+            -38.125963146084516,
+            -40.231079958925456,
+            17.0
+          ]
+        ],
+        "sha256": "8d3ba3f90e0f86a282720e7bd76a1da962e6d4f51547c4b599c9564777331632",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_standoff_58_14",
+        "group": "standoff",
+        "vertices": 256,
+        "triangles": 512,
+        "watertight": true,
+        "volume_mm3": 76.65722382774403,
+        "bounds_mm": [
+          [
+            -19.874036853915534,
+            -60.2278668800694,
+            13.0
+          ],
+          [
+            -13.877251840120241,
+            -54.23107995892547,
+            17.0
+          ]
+        ],
+        "sha256": "0fc5e41fc864b5bd449c875feb4f1db54db1ae2bc3f3c6e3304ec2d512a4d8ed",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_motor_deck",
+        "group": "drive_deck",
+        "vertices": 520,
+        "triangles": 1052,
+        "watertight": true,
+        "volume_mm3": 3563.22450462752,
+        "bounds_mm": [
+          [
+            -46.58845726811992,
+            -62.69357503463519,
+            17.0
+          ],
+          [
+            1.5884572681198783,
+            -15.248711305964267,
+            20.0
+          ]
+        ],
+        "sha256": "c7aa4ff95f2fbd0e905af5af4313a946842abc8180e4629c081f2d326b05e112",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_motor_ENVELOPE",
+        "group": "motor_envelope",
+        "vertices": 8,
+        "triangles": 12,
+        "watertight": true,
+        "volume_mm3": 17679.999999999993,
+        "bounds_mm": [
+          [
+            -37.25833024919772,
+            -51.5333209967908,
+            20.0
+          ],
+          [
+            -4.741669750802315,
+            -21.21281292110202,
+            54.0
+          ]
+        ],
+        "sha256": "6706f0086d989c4b8c46079a25fdd6bc6fda14bc6385f1a9dc555ff53eeaa945",
+        "mass_kg": null
+      },
+      {
+        "name": "f2_two_channel_drum",
+        "group": "drum",
+        "vertices": 796,
+        "triangles": 1592,
+        "watertight": true,
+        "volume_mm3": 1336.757822214481,
+        "bounds_mm": [
+          [
+            -30.99464560930066,
+            -46.36771387099039,
+            55.0
+          ],
+          [
+            -11.005354390699377,
+            -26.378420046902423,
+            61.0
+          ]
+        ],
+        "sha256": "e1c55d6a40df26628002d1c2201da10ef2335523a82d8ebb594152e142ec1d9f",
+        "mass_kg": null
+      },
+      {
+        "name": "palm",
+        "group": "palm",
+        "vertices": 1048,
+        "triangles": 2120,
+        "watertight": true,
+        "volume_mm3": 76701.42096844176,
+        "bounds_mm": [
+          [
+            -64.0,
+            -64.0,
+            5.0
+          ],
+          [
+            64.0,
+            64.0,
+            13.0
+          ]
+        ],
+        "sha256": "20cb56b967030eae5373104bdf1a57ad0d01fdd4eb3962ca966d7bddcae26ec4",
+        "mass_kg": null
+      }
+    ],
+    "interference": {
+      "positive_overlaps": [
+        {
+          "parts": [
+            "f0_mount",
+            "f0_c0_s0_support"
+          ],
+          "volume_mm3": 1.7430456658627804,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_mount",
+            "f0_c1_s0_support"
+          ],
+          "volume_mm3": 1.7430451796340283,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_left",
+            "f0_c0_s0_support"
+          ],
+          "volume_mm3": 0.6261333560924527,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_left",
+            "f0_c0_s1_support"
+          ],
+          "volume_mm3": 0.6261219845996872,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_left",
+            "f0_c0_s2_support"
+          ],
+          "volume_mm3": 0.6368224568115011,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_left",
+            "f0_c0_s3_support"
+          ],
+          "volume_mm3": 0.597280098867202,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_left",
+            "f0_c0_s4_support"
+          ],
+          "volume_mm3": 0.4747993412636499,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_left",
+            "f0_c0_s5_support"
+          ],
+          "volume_mm3": 0.5612541867739225,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_right",
+            "f0_c1_s0_support"
+          ],
+          "volume_mm3": 0.6261314264761874,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_right",
+            "f0_c1_s1_support"
+          ],
+          "volume_mm3": 0.6261219240156871,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_right",
+            "f0_c1_s2_support"
+          ],
+          "volume_mm3": 0.6368228095881913,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_right",
+            "f0_c1_s3_support"
+          ],
+          "volume_mm3": 0.5972806675279022,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_right",
+            "f0_c1_s4_support"
+          ],
+          "volume_mm3": 0.4748004669415214,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_rail_right",
+            "f0_c1_s5_support"
+          ],
+          "volume_mm3": 0.5612541867739242,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f0_c0_s0_eyelet",
+            "f0_c0_s0_support"
+          ],
+          "volume_mm3": 2.3647439492263516,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s1_eyelet",
+            "f0_c0_s1_support"
+          ],
+          "volume_mm3": 2.3647366943708144,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s2_eyelet",
+            "f0_c0_s2_support"
+          ],
+          "volume_mm3": 2.364745505042189,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s3_eyelet",
+            "f0_c0_s3_support"
+          ],
+          "volume_mm3": 2.362592493665886,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s4_eyelet",
+            "f0_c0_s4_support"
+          ],
+          "volume_mm3": 2.360350222811429,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c0_s5_eyelet",
+            "f0_c0_s5_support"
+          ],
+          "volume_mm3": 2.3528422036967576,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s0_eyelet",
+            "f0_c1_s0_support"
+          ],
+          "volume_mm3": 2.3647442491801294,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s1_eyelet",
+            "f0_c1_s1_support"
+          ],
+          "volume_mm3": 2.3647373802465097,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s2_eyelet",
+            "f0_c1_s2_support"
+          ],
+          "volume_mm3": 2.3647455730566094,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s3_eyelet",
+            "f0_c1_s3_support"
+          ],
+          "volume_mm3": 2.362592244937597,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s4_eyelet",
+            "f0_c1_s4_support"
+          ],
+          "volume_mm3": 2.360349767675492,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f0_c1_s5_eyelet",
+            "f0_c1_s5_support"
+          ],
+          "volume_mm3": 2.352841199248753,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_mount",
+            "f1_c0_s0_support"
+          ],
+          "volume_mm3": 1.7430455484084604,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_mount",
+            "f1_c1_s0_support"
+          ],
+          "volume_mm3": 1.7430441766777196,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_carrier",
+            "f1_skin"
+          ],
+          "volume_mm3": 4.3131627911329646e-05,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_root_clamp",
+            "f1_skin"
+          ],
+          "volume_mm3": 2.0452103550875716e-05,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_left",
+            "f1_c0_s0_support"
+          ],
+          "volume_mm3": 0.6261263395338795,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_left",
+            "f1_c0_s1_support"
+          ],
+          "volume_mm3": 0.6261329449693326,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_left",
+            "f1_c0_s2_support"
+          ],
+          "volume_mm3": 0.6368182367325771,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_left",
+            "f1_c0_s3_support"
+          ],
+          "volume_mm3": 0.5972925977080431,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_left",
+            "f1_c0_s4_support"
+          ],
+          "volume_mm3": 0.4747973080357326,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_left",
+            "f1_c0_s5_support"
+          ],
+          "volume_mm3": 0.5612545063354825,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_right",
+            "f1_c1_s0_support"
+          ],
+          "volume_mm3": 0.6261299425558166,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_right",
+            "f1_c1_s1_support"
+          ],
+          "volume_mm3": 0.6261196266007806,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_right",
+            "f1_c1_s2_support"
+          ],
+          "volume_mm3": 0.636820953132494,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_right",
+            "f1_c1_s3_support"
+          ],
+          "volume_mm3": 0.597293353823396,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_right",
+            "f1_c1_s4_support"
+          ],
+          "volume_mm3": 0.4747968656306815,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_rail_right",
+            "f1_c1_s5_support"
+          ],
+          "volume_mm3": 0.5612525977128667,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f1_c0_s0_eyelet",
+            "f1_c0_s0_support"
+          ],
+          "volume_mm3": 2.3647420403806243,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s1_eyelet",
+            "f1_c0_s1_support"
+          ],
+          "volume_mm3": 2.3647456654431287,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s2_eyelet",
+            "f1_c0_s2_support"
+          ],
+          "volume_mm3": 2.3647438959562046,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s3_eyelet",
+            "f1_c0_s3_support"
+          ],
+          "volume_mm3": 2.362590169512894,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s4_eyelet",
+            "f1_c0_s4_support"
+          ],
+          "volume_mm3": 2.360348584013851,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c0_s5_eyelet",
+            "f1_c0_s5_support"
+          ],
+          "volume_mm3": 2.352843696461926,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s0_eyelet",
+            "f1_c1_s0_support"
+          ],
+          "volume_mm3": 2.364743030348398,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s1_eyelet",
+            "f1_c1_s1_support"
+          ],
+          "volume_mm3": 2.3647415796100404,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s2_eyelet",
+            "f1_c1_s2_support"
+          ],
+          "volume_mm3": 2.364744794049225,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s3_eyelet",
+            "f1_c1_s3_support"
+          ],
+          "volume_mm3": 2.3625900472697574,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s4_eyelet",
+            "f1_c1_s4_support"
+          ],
+          "volume_mm3": 2.360349702499358,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f1_c1_s5_eyelet",
+            "f1_c1_s5_support"
+          ],
+          "volume_mm3": 2.3528439977461724,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_mount",
+            "f2_c0_s0_support"
+          ],
+          "volume_mm3": 1.7430451848781683,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_mount",
+            "f2_c1_s0_support"
+          ],
+          "volume_mm3": 1.7430451445342552,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_carrier",
+            "f2_skin"
+          ],
+          "volume_mm3": 6.937969063377143e-05,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_root_clamp",
+            "f2_skin"
+          ],
+          "volume_mm3": 6.363343421374641e-06,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_left",
+            "f2_c0_s0_support"
+          ],
+          "volume_mm3": 0.6261299516683453,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_left",
+            "f2_c0_s1_support"
+          ],
+          "volume_mm3": 0.6261173791812951,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_left",
+            "f2_c0_s2_support"
+          ],
+          "volume_mm3": 0.6368197812386797,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_left",
+            "f2_c0_s3_support"
+          ],
+          "volume_mm3": 0.5972937240820203,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_left",
+            "f2_c0_s4_support"
+          ],
+          "volume_mm3": 0.4747947340321848,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_left",
+            "f2_c0_s5_support"
+          ],
+          "volume_mm3": 0.5612520038810688,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_right",
+            "f2_c1_s0_support"
+          ],
+          "volume_mm3": 0.6261259948571549,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_right",
+            "f2_c1_s1_support"
+          ],
+          "volume_mm3": 0.6261309503699903,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_right",
+            "f2_c1_s2_support"
+          ],
+          "volume_mm3": 0.6368192611426599,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_right",
+            "f2_c1_s3_support"
+          ],
+          "volume_mm3": 0.5972897676881376,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_right",
+            "f2_c1_s4_support"
+          ],
+          "volume_mm3": 0.47479955827915415,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_rail_right",
+            "f2_c1_s5_support"
+          ],
+          "volume_mm3": 0.5612548186134276,
+          "classification": "UNRESOLVED_STATIC_INTERFERENCE"
+        },
+        {
+          "parts": [
+            "f2_c0_s0_eyelet",
+            "f2_c0_s0_support"
+          ],
+          "volume_mm3": 2.3647441864645393,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s1_eyelet",
+            "f2_c0_s1_support"
+          ],
+          "volume_mm3": 2.3647418835495224,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s2_eyelet",
+            "f2_c0_s2_support"
+          ],
+          "volume_mm3": 2.3647453541424475,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s3_eyelet",
+            "f2_c0_s3_support"
+          ],
+          "volume_mm3": 2.3625887433601256,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s4_eyelet",
+            "f2_c0_s4_support"
+          ],
+          "volume_mm3": 2.3603486379601435,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c0_s5_eyelet",
+            "f2_c0_s5_support"
+          ],
+          "volume_mm3": 2.35284391821781,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s0_eyelet",
+            "f2_c1_s0_support"
+          ],
+          "volume_mm3": 2.364744407901753,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s1_eyelet",
+            "f2_c1_s1_support"
+          ],
+          "volume_mm3": 2.3647468148115536,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s2_eyelet",
+            "f2_c1_s2_support"
+          ],
+          "volume_mm3": 2.3647435330444466,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s3_eyelet",
+            "f2_c1_s3_support"
+          ],
+          "volume_mm3": 2.3625906617110957,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s4_eyelet",
+            "f2_c1_s4_support"
+          ],
+          "volume_mm3": 2.3603482340320525,
+          "classification": "intended_bond_overlap"
+        },
+        {
+          "parts": [
+            "f2_c1_s5_eyelet",
+            "f2_c1_s5_support"
+          ],
+          "volume_mm3": 2.352842390130474,
+          "classification": "intended_bond_overlap"
+        }
+      ],
+      "small_boundary_residuals": [],
+      "mesh_intersections_evaluated": 167,
+      "scope": "Static Boolean INTERSECTION VOLUMES using manifold float32 mesh kernel;AABB rejection for disjoint pairs. No swept clearance/contact or micron-tolerance certification;1e-6mm3 reporting threshold is NOT physicsGate."
+    },
+    "manufactured_reference": true,
+    "actual_sofa_result": false,
+    "STEP_generated": false,
+    "full_BRep_assembly_verified": false,
+    "moving_clearance_verified": false,
+    "fastener_access_verified": false,
+    "wire_bend_radius_verified": false,
+    "material_strength_verified": false,
+    "fabrication_ready": false,
+    "runtime_s": 1.4949368039378896
+  }
+}

@@ -1,3 +1,26 @@
+## Latest wire transfer836–843 — 2026-11-21
+
+Final844regressions66PASS;finalevidence_product_wire_regression_v44extendsv43.
+Next startfrom23c3a81functionalcode andnewcheckpoint,notrepeatcompletedcoupons.
+
+Read product_prototype/reports/ROOT_WIRE_TRANSFER_20261121.md andCHECKPOINT.
+Features468b853/e1db691/23c3a81. ThreeNEWactualNativeanchoredwirecoupons
+complete10steps each;initialJ-lambda/momentum matches,NOTslidingpulley.
+836plugin-orderFAILpreserved;839circulararc independent reference only.
+841actualCADroot6loadvectors,1.846984N/axle fromASSUMED1.5N/branch;
+physical measurementsNULL.84264softwaretestsPASS,notproductqualification.
+NEXT:exactcircular tangency/arc andbranch-transition Nativeintegrationcontract;
+existingCableConstraint straightsegments + RigidMapping isfixedanchor physics.
+InstalledSlidingLagrangianConstraint point/straightaxis isnotexactcircularwrap.
+DoNOTrepeat837/838/843asnextresearch orwritecustomSolver. Physicalfriction/
+bendradius/retention/material/force-deflection needactualdata. Blankmeasurement
+CSV/protocol inrootload841/ROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md.
+Thennewmatchedphysicalmodel fromNEWinitialstate,notoldB3checkpoint.
+CurrentCADV39unchanged;time/contact/FEMmesh/100g/Lift/STEPGatesremainopen.
+Resume command:robot_wsPython product_prototype/cad/root_load_requirements.py
+--tag UNIQUE_LOAD (newassumption/dataonly,donotrepeatunchangedcalculation).
+Evidencev43extendsv42,previousrawFAILspreserved;noautomaticbackgroundwork.
+
 ## Latest Root thrust / Native bearing806–835 — 2026-11-21
 
 Evidencev42:27cases/11363files,11050oldimmutablehashes0mismatches;includes

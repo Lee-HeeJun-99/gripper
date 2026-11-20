@@ -1,3 +1,29 @@
+## Wire/axle continuation836–843 — 2026-11-21
+
+Final regression844:66software/design testsPASS in2.526s;includesactual843
+linear-momentum andplugin-order guards. Finalarchivev44extendsv43;v43audited
+11363priorimmutablehasheswith0mismatches. Lastfunctionalcommit23c3a81.
+
+Features468b853,e1db691,23c3a81. Authority:ROOT_WIRE_TRANSFER_20261121.md.
+Completed NEW Native anchored-wire837/838/free-axle843,10finite states each;
+initial J-lambda/angular or linear momentum match analytic impulse.836plugin
+creation FAIL preserved. No repeat832/833.839independent circular-arc reference
+FDerror5.94e-12,NOTSOFA.841sixCAD76deg root forces1.846984N atASSUMED1.5N/branch,
+NOTactual load;blank physical CSV andROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md.
+84264design/software regressionsPASS,notproductGate.840originalnumeric producer
+retained;integer-fixture cast bug fixed explicitly,not physical state correction.
+NoCAD geometry changes/noSTEP/noqualifiedsliding/equalizer. NativeRigidMapping
+anchors produce torque;balanced2prescribed forces are not physical equalization.
+SlidingLagrangianConstraint installed API is point/straight-axis,notcirculararc.
+NEXT:matchedNative circularwire/tangency/branch-change contract or keepBLOCKED;
+physicalwire bend/friction,axleload-deflection/material/retention data required.
+DoNOTreuseoldB3checkpoint or promotecomponentPASS toholding/time/meshPASS.
+Repro:robot_wsPython product_prototype/sofa/root_wire_coupon.py --tag UNIQUE
+--balanced --free-axle;load841producer:cad/root_load_requirements.py --tag UNIQUE.
+Evidence:evidence_product_wire_transfer_v43/manifest.json. All priorRaw preserved.
+Noactivephysicschildren/noautomaticexitcontinuation. Full3Finger/100g/Lift/
+time0.1%/mesh/STEP/fabrication qualification remainopen.
+
 ## Root thrust / actual Native coupons806–835 — 2026-11-21
 
 Finalevidence:evidence_product_thrust_native_v42/manifest.json,27cases/11363

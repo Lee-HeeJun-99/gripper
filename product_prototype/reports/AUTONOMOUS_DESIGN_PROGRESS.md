@@ -1,3 +1,13 @@
+## Wire-transfer / product load cycles836–843 — 2026-11-21
+
+ImplementedNativeanchoredcableimpulsediagnostic,circulararcindependentreference,
+CADrootloadvectorsandphysicalmeasurementinterface. Native837/838/84310finite
+each;initialimpulsebalancePASSscopeonly.836pluginorderFAILpreserved.841six
+rootidealforces1.846984N,NOTmeasuredstrength.84264softwaretestsPASS.
+Features468b853/e1db691/23c3a81. Noexactslidingmodel/fullgripper/CADgeometry
+change. NextmatchedcircularNativecontract andphysicalfriction/material/
+deflection/retentiondata;knownproductGatesunchanged. ROOT_WIRE_TRANSFER report.
+
 ## Root thrust and Native component cycles806–835 — 2026-11-21
 
 Featuresaff7e9b,f9a3f82. Implementedseparatedlands/widegrooveCAD andcombined

@@ -1,3 +1,12 @@
+## Root axle load interface — NOT FABRICATION READY (2026-11-21)
+
+ROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md definescompletebridgefixture atactual
+Palmboltseats,twoinstrumentedbranches,loadeddeflection/friction/retention
+observations. rootload841recordsall6worldloadvectors,notmeasuredloads.
+No actualpinthread,allowablestress,preload,safetyfactor orwireminimumradius
+approved. IdealD1/span2.8mmscreen1.176MPashear/13.169MPabendingisnotactual
+fork/bossstressproof. V39geometryunchanged;STEP/assemblyqualificationopen.
+
 ## Root thrust V39 — NOT FABRICATION READY (2026-11-21)
 
 IntegralRootlandsOD2.5/ID1.2,nominalinnerfaces+/-1mm;RootwheelOD6,width1.8,

@@ -1,3 +1,13 @@
+## Wire/axle contract — 2026-11-21
+
+V39geometryunchanged. Nativefixed-wheelanchors837produce5e-12Nmsinitial
+torqueimpulse;balancedindependentanchors838produce0. Free-in-plane843
+confirmsinitialnetlinearimpulse(2.5e-9,2.5e-9,0)Ns. Noneisfreewire sliding.
+839independentcirculararc reference haszeroidealspin torque andradialresultant;
+notamatchedNativecomparison.8416actualCADroutevectorsgive1.846984N/axle
+underASSUMEDequal1.5Nbranches,notstrength/holdingmargin. No newcandidate
+qualification;physical material/deflection/friction datarequired.
+
 ## Root thrust V37–V39 factorial — 2026-11-21
 
 Rootspan2.8->2.0mmbyintegralannularlands;groove0.8->1.0mmindependentlytested

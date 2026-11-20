@@ -1,5 +1,10 @@
 # Root wire/pulley contract — 836–839
 
+Final regression844:66design/software testsPASS,2.526s,including843momentum
+andfactorydeclaration-orderguards. Final evidencev44extendsv43;v43verified
+11363priorimmutablefilehashes0mismatches. Lastfeature23c3a81. NoactiveNative
+children after these completedruns;noautomaticcontinuationpromised.
+
 ## Independent product continuation840–842
 
 843 additional actual Native free-in-plane axle diagnostic completed10finite

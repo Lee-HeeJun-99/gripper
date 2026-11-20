@@ -14,6 +14,14 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_free_axle_wire_impulse_has_independent_momentum(self):
+  d=result('product_root_free_axle843');self.assertTrue(d['free_axle']);self.assertFalse(d['physical_sliding_qualified']);self.assertEqual(d['steps'],10)
+  np.testing.assert_allclose(d['first_linear_momentum_Ns'],[2.5e-9,2.5e-9,0],rtol=0,atol=1e-18)
+  np.testing.assert_allclose(d['first_projected_linear_J_lambda_Ns'],d['first_linear_momentum_Ns'],rtol=0,atol=1e-18)
+ def test_wire_plugin_precedes_model_creation(self):
+  import xml.etree.ElementTree as ET
+  root=ET.parse(BASE/'results/product_root_free_axle843/scene.scn').getroot()
+  self.assertIn('SoftRobots',list(root)[0].get('pluginName'))
  def test_native_wire_anchors_are_not_sliding_pulleys(self):
   for case in ('product_root_wire837','product_root_wire838'):
    d=result(case);self.assertEqual(d['steps'],10);self.assertEqual(d['status'],'PASS_NATIVE_ANCHORED_CABLE_CONTRACT_ONLY');self.assertFalse(d['physical_sliding_qualified'])

@@ -1,3 +1,11 @@
+## Root wire load interface — 2026-11-21
+
+V39CADunchanged. All6rootroute vectors nowexplicit inload841;ASSUMEDequal
+1.5Nbranches imply1.846984N/axle. Actualmaterial/allowablestress/preload/
+retention/frictionNULL. Measurementprotocol andblankCSVcreated. Nativeanchor
+couponsverifyloadpullback,NOTphysicalfree-slidingpulley/equalizer. No new
+productPASS. ROOT_WIRE_TRANSFER_20261121.md;features468b853/e1db691/23c3a81.
+
 ## Root thrust V39 / Native component update — 2026-11-21
 
 CurrentnewresearchCAD:meshes/b3_root_thrust_v39/full_assembly_recipe.json,

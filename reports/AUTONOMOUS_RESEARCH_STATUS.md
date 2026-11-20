@@ -1,3 +1,13 @@
+## Wire-transfer / root load cycles836–843 — 2026-11-21
+
+ThreeNEWNativeanchoredwirecoupons10finiteeach,initialJ-lambda/momentum
+referenceagreement. Notphysicalsliding/equalizer/3FingerPASS.836plugin-order
+FAILpreserved;839circulararcindependentmathonly.841sixactualCADrouteforces
+1.846984N fromASSUMED1.5Nbranches;realstrength/friction/deflectionNULL.
+84264design/softwaretestsPASS. Features468b853/e1db691/23c3a81;V39CADunchanged.
+Evidencev43/reportROOT_WIRE_TRANSFER_20261121.md. OldRaw/FAILspreserved,
+time/contact/FEMmesh/100g/Lift/STEP/fabricationGatesremainopen.
+
 ## Root thrust / actual Native component milestone806–835 — 2026-11-21
 
 Append-onlyevidence_product_thrust_native_v42:27cases/11363files,

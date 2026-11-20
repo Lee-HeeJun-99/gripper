@@ -1,3 +1,12 @@
+## Actual wire/axle836–843 — 2026-11-21
+
+Native837/838/843 each10finite states,3.80/3.20/2.77s;initialanchored-cable
+J-lambda/momentumcontractPASSonly.836factoryloadFAILpreserved. Forceinput
+T*dt remainsNs. NoSDK/customsolver changes,finitewheel/landcollisionsremain.
+839circulararc mathisNOTaSOFArun;84264softwaretestsareNOTphysicsGates.
+Exactfree-sliding circular wireNOTimplemented/qualified;noholding/time/mesh/
+energy/100g/LiftPASSadded. AuthorityROOT_WIRE_TRANSFER_20261121.md.
+
 ## Actual Native thrust / ideal bearing806–835 — 2026-11-21
 
 8Nativeattempts,6completedscopedcoupons/2NaNinvalidpartials. Alluseinstalled

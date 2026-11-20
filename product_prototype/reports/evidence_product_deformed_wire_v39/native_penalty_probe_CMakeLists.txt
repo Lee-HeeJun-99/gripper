@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripPenaltyProbe LANGUAGES CXX)
+find_package(Sofa.Component.Collision.Response.Contact REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+add_library(ReGripPenaltyProbe SHARED Observer.cpp)
+target_compile_features(ReGripPenaltyProbe PRIVATE cxx_std_17)
+target_link_libraries(ReGripPenaltyProbe PRIVATE Sofa.Component.Collision.Response.Contact Sofa.Simulation.Core)

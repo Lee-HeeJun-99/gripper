@@ -1,0 +1,11 @@
+{
+  "version": "product_v1_experimental",
+  "units_cad": "mm",
+  "units_sofa": "SI m kg s N Pa",
+  "finger": {"length":100,"root_width":24,"tip_width":12,"taper_start":50,"skin_thickness":0.1,"rail_thickness":0.5,"rail_width":2,"clamp_length":5},
+  "palm": {"mount_radius":50,"outer_radius":64,"inner_radius":30,"thickness":8,"angles_deg":[0,120,240]},
+  "tendon": {"normal_offset":3,"outboard":4,"wire_radius":0.25,"guide_outer_radius":1.5,"guide_hole_radius":0.6,"guide_stations":[10,30,50,70,90,98],"minimum_bend_radius_target":5,"maximum_stroke":5},
+  "simulation": {"young_modulus_Pa":250000000,"poisson_ratio":0.3,"mass_per_finger_kg":0.001,"sphere_mass_kg":0.1,"sphere_radius_mm":30,"sphere_center_mm":[0,0,-65],"dt_s":0.0025,"duration_s":2,"closing_end_s":0.5,"hold_end_s":1,"release_end_s":1.5,"nx":21,"rayleigh_mass_per_s":1,"rayleigh_stiffness_s":0.0001,"friction":0.3,"contact_distance_mm":0.2,"alarm_distance_mm":1},
+  "fabrication": {"fastener":"M3 placeholder,3.4mm clearance;not supplier confirmed","motor":"UNSELECTED;universal slotted plate only","material":"PET/TPU and rail stock UNSELECTED;all moduli assumed","skin_rail_joint":"continuous bonded interface assumed in native FEM;not layer jamming","actuation":"two independently commanded edge cables per finger,NOT mechanical equalizer"},
+  "status":"INITIAL CANDIDATE ONLY;not fabricated or final selected;changed thickness/core volume vs old research explicitly intentional"
+}

@@ -1,5 +1,18 @@
 ## Deformed wire / drivetrain continuation744–758 — 2026-11-20
 
+Final functional commits3ad4792,af9effb,1c97d82.760:39design/software testsPASS.
+Evidence:evidence_product_deformed_wire_v39/manifest.json:19campaigns,
+10136files,9811priorimmutablehasheschecked,0mismatches.745isexplicitlyREJECTED
+inmanifest as sourceidentityfailure,not19PASSclaims. Snapshot747repair retained.
+Figures:results/product_wire_plot750/accepted_state_wire_screen.png and
+results/product_pulley_drawing756/pulley_module_views.{svg,png} (committed).
+NEXT implementation entry:cad/pulley_fork_candidate.py fork_recipe andcurrent
+worldmoduleframes;add actual Palm-to-fork mounting/axleretention asNEWcandidate,
+not by relocating or disabling existing obstacles. Nominal conditionalturnload
+2.121N at1.5Nwire/90deg,physicalstrength stillUNKNOWN. Rootinletredirect open.
+Read-only resume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/product_pulley_fork754/summary.json`
+
 759supplement:all54finite modules /1431pairs andSTLreadbacks checked,
 0nonempty intersections;combined MODULE_BOM.csv retained. 760finalregression.
 Feature commits3ad4792,af9effb;finalarchivecommit recorded in gitlog.

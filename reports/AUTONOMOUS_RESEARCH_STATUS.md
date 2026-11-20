@@ -1,3 +1,17 @@
+## Product CAD/motion screening744–760 — 2026-11-20
+
+Functional commits3ad4792,af9effb,1c97d82;39design regressionsPASS,not product
+Gates. ActualOLD485motion screened with NEWfinitewire/hardware at22high-risk
+times;132samples nointersections;object-only1200savedtimes minlowergap3.858mm.
+NotcontinuousCCD,newSOFAdynamics,time/mesh/Holdingqualification.
+18pulleys+18forks+18pins generated,actualSTLreadbacks checked;all1431module
+pairs nointersection. TheyareUNMOUNTED,not completeassembly/fabricationready.
+NextPalm mountingbridges/axleretention,rootredirect;motor/material/strength
+data remainmissing. Native time/meshFAILs and100g/Lift/STEPopen.
+Authority:product_prototype/reports/DEFORMED_WIRE_AND_DRIVE_CONTINUATION_20261120.md.
+Evidencev39:19campaigns/10136files,9811priorimmutablehashes0mismatches;
+745sourceidentityfailure preserved/rejected;747frozen-source repair verified.
+
 ## Parallel Track A/B/C continuation704–727 — 2026-11-20
 
 Last implementation commits:901b1cd0d05e283ac96319aef699cbfabb13c09b,

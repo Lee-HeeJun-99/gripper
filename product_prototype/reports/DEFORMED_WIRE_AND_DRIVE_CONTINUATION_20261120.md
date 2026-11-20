@@ -102,6 +102,11 @@ interface drawings,wirebend/termination/bondfatigue data. Native contact/time
 
 ## Commands (NEW tags only)
 
+Final functional commits:3ad4792,af9effb,1c97d82.760:39design/software testsPASS.
+Archive:evidence_product_deformed_wire_v39/manifest.json,19campaigns,
+10136files,9811priorimmutablehashes verified0mismatches.745rejection isexplicit
+inmanifest;archive membership never means everycasePASS.
+
 ```bash
 PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
 $PY product_prototype/cad/deformed_wire_run.py --tag UNIQUE_SCREEN --candidate b3_manufacturing_bore_v21 --include-film --all-event-worst --hardware-pairs

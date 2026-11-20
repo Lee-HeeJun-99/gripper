@@ -1,3 +1,18 @@
+## Conditional finite union658–659 — 2026-11-20
+
+Previous functional commit3a5844b:actual Native missing-B assembly corrected;
+FREE100ms selected0.1% Gate PASS,CONTACT652 still FAIL. No B3 approval.
+Independent geometric union implemented and four analytic/objectivity tests PASS.
+Eyelet/support overlap2.35284–2.36475mm³;naive mass sum can overcount3.32594%
+under SAME uniform material assumption,COM bias≤0.332202mm. Physical density/joint
+unknown:actual union mass/inertia BLOCKED. No replacement of B3/checkpoints.
+32/64facet geometric sensitivity≤0.080251%;NOT FEM/contact mesh qualification.
+Authority:product_prototype/reports/FINITE_UNION_GEOMETRY_20261120.md.
+Evidence:evidence_product_union_geometry_v32/manifest.json. STEP NOT GENERATED.
+NEXT:contact-entry policy/feature diagnostics from649–651 (current impulse law
+still-gap/dt),not more blind dt/alarm sweeps. Material/join/STEP remain separate.
+Exact independent reproduction:python product_prototype/sofa/finite_union_run.py --tag UNIQUE_UNION
+
 ## Inertia/contact continuation600–622 — 2026-11-20
 
 Functional input commit:844afa1. Authority:NATIVE_SAMPLED_INERTIA_20261120.md.

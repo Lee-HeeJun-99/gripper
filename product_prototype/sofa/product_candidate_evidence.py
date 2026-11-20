@@ -35,6 +35,8 @@ def main():
     for name in ('finite_free_spin_reference.py','test_finite_mass.py','finite_reference_test_run.py','finite_mass_reference.py','finite_com_native.py','finite_com_audit.py','finite_mapped_mass_audit.py','finite_com_event_rows.py','finite_hardware_mass.py','finite_guide_coupon.py','finite_guide_assess.py','finite_guide_surface_audit.py','finite_mesh_compare.py','finite_support_replay.py','finite_hardware_sector.py','finite_support_sat.py','finite_mapped_consistency.py','finite_feature_run.py','closest_geometry.py','finite_native_plot.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     shutil.copy2(BASE/'cad/finite_guide_product.py',out/'finite_guide_product.py')
+    for name in ('finite_union_moments.py','finite_union_run.py','test_finite_union.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
     for name in ('mapping_acceleration_build.py','mapping_acceleration_run.py'):
         shutil.copy2(BASE/'sofa'/name,out/name)
     for f in compiled_mapping_acceleration():

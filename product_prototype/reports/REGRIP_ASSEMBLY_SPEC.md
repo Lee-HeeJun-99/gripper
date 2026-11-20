@@ -1,3 +1,74 @@
+## B3 manufacturing V19 review — NOT FABRICATION READY (2026-11-20)
+
+Implementation:901b1cd /62610d6. See latest REGRIP_PRODUCT_DESIGN.md for cycle
+results and manufacturer sources. Actual drawings/recipe/BOM:
+product_prototype/drawings/b3_manufacturing_service_v19/.
+Readback-verified individual STLs:
+product_prototype/meshes/b3_manufacturing_service_v19_stl_ascii/.
+Original V19binary STLs have3failed Mount readbacks;do NOT use them as qualified
+exports.725partial exactcleanup failure retained.726canonical module +ASCII
+PASS is only160closedpositive single-body STLreadbacks,not STEP or structure.
+The numeric representation changes;QUALIFICATION_SCOPE_CORRECTION.json clarifies
+that nominal geometry is unchanged but digital identity is NOT verified.
+
+### Current joints and service sequence
+
+- Palm annulus OD128/ID60,t8,z5..13;3rootframesR50,tilt14deg,120deg.
+- Rootcarrier x[-8,5],width36,back4;only first5mm Skin/Rail root is clamped.
+  Proposed rail grooves andSkin remain nominal B3 geometry,not a changed FEM.
+- Sixnormal-axis M3retaining screws:localx=-4,y=±14,headseat localz=-12.
+  R3spotface andfinite outward bosses remove the measured wedge/head overlap.
+- Rootclamp5x36x3 overSkin.1;M3x12 geometric screw/nut proxies,y±14,x2.5.
+  Nut/head/shaft withdrawal tracks extend tolocalx12.5 inV19.
+- Mount flatseat atz5,bottom-7,width48;outer verticalbolt locations localPalm
+  radial58/tangent±19. Deck width48,z17..20,spacersz13..17. Outer shared
+  M3x35 bolts pass through deck/spacer/Palm/Mount;do NOT stack an extra head
+  inside the standoff. Inner deck bolts atR32/tangent±17 are M3x20 proxies.
+- All nominal M3head/nut envelopes are provisional;thread/preload/grade,washer
+  stack,tool dimensions andactual supplierdrawings are NOT verified.
+-3motor20x26x34 size envelopes andtwo-groove R8drums are package studies ONLY.
+ 6mm drum bore is a GENERIC placeholder,NOT a ROBOTIS horn/shaft specification.
+ Motorbody orientation/outputaxis,caseholes,adapter,lead-in guides andwiring need
+ supplierCAD andnew checks. Native six prescribedtensions !=3pairedstroke drives.
+-No actual mechanical equalizer. No contactpad is inserted in the qualified
+ geometry. No8layer/vacuum/variable-stiffness performance is implemented.
+
+Assembly procedure is a proposed bench sequence,not an executed hardware test:
+1.Measure Skin/Rail/thickness/MD-TD andform/bond coupons first.Precurve R42.9718,
+ 40deg/start70 is a manufactured-reference target,NOT measured stress-free shape.
+ No heatset temperature or cure schedule is invented.
+2.Build Skin/Rails,Support/eyelets andRootClamp as a detachedcartridge;record
+ bond thickness,preload andactual dimensions before installation.
+3.Mount/Palm/deck share throughbolts;install actual motoradapter ONLY after vendor
+ hole/shaft data. Do not approve the size envelope as a complete motor mount.
+4.Install detachedcartridge andtwo retaining screws.721sampled extraction after
+ wire disconnect/retaining-screw removal has0positive intersections at5/10/15/20mm
+ on eachfinger. This is NOT continuous swept-clearance or physical servicePASS.
+5.ForClamp service,first disconnectwire/removeobject,remove retaining screws and
+ withdrawcartridge. SixClamp driver shanks hit fixedparts when installed;do NOT
+ claim in-situ accessibility. Other18nominal driver-shank samples are clear,
+ but full handle/hand/wiring access andcaptive-nut retention remain unverified.
+6.DO NOT energize/thread a final wire on current guide geometry:723finite-bore
+ necessary condition fails12sites. Bisector axis is only an unbuilt hypothesis;
+ requires independent axis/bore/support/rounded-wire candidates andsupplierdata.
+
+### CAD verification boundary and future commands
+
+Manifold Boolean CSG ran;static fixes are real model changes,not removed collision
+models. Float32contactseams andnegative-volume artifacts are retained asuncertain,
+NOT clearancePASS. Actual wire/hardware swept actuation,printed hole compensation,
+minimumwall strength,bond fatigue,density/COM/inertia are NOT MEASURED.
+
+FreeCAD/OCC/OCP/cadquery andFreeCADCmd were not found in checkedPython/PATH.
+No STEP,FCStd orCAD BRep assembly was generated. New shared exporter source:
+product_prototype/cad/export_recipe_freecad.py. It rejects invalid solids and
+has no flat-geometry fallback. Syntaxcheck is NOT kernel execution.
+
+Future command only when a real FreeCAD environment is supplied (NOT RUN here):
+REGRIP_RECIPE=/absolute/product_prototype/meshes/b3_manufacturing_service_v19/assembly_recipe.json REGRIP_CAD_OUT=/absolute/NEW_UNIQUE_OUTPUT FreeCADCmd product_prototype/cad/export_recipe_freecad.py
+Faceted Skin/Rail reference produces faceted BRep;surface/forming quality still
+requires separate validation. Full product/fabrication qualification is withheld.
+
 ## Elastic-wire candidate boundary — 2026-11-20
 
 692–703 test a separate Native elastic-string coupon,NOT a measured wire or

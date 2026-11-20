@@ -1,3 +1,147 @@
+## Parallel product-design milestone704–727 — 2026-11-20
+
+Feature code:901b1cd. Detailed immutable evidence:
+`product_prototype/reports/evidence_product_manufacturing_v36/manifest.json`.
+24new cases,8977paths;7262previous immutable hashes verified with0mismatches.
+No existing B3 scene,Raw,checkpoint,SDK or old PASS/FAIL was changed.
+
+### Track A:Native contract boundary
+
+713 actually instantiates installed MultiStepAnimationLoop with1collision/
+1integration substep on the same692 graph,input anddt. Native Newmark external
+force agrees with the independent discrete reference<=1.00e-15m/s;Cable-only
+states remain exactly0 and FAIL. Two actual Native children,0SOFA ERROR,
+<=.313s each under4GiB/480s. No dt/alarm sweep,new solver or velocity repair.
+Together with692–703,this tested installed family has NO qualified higher-order
+Cable/contact integration contract. This is a scoped BLOCKED result,not a claim
+that all possible SOFA configurations are impossible. Stop this numerical family;
+product design proceeds independently. Existing FREE100ms selected time PASS,
+B3 functional50g Holding/release and all contact/FEM-mesh/time FAILs stay unchanged.
+
+### Track B:actual manufactured-reference CAD
+
+Shared B3 basis:100mm arc length,24->12mm width,Skin.1/Rails.5mm,40deg distal
+manufactured curve from70mm,root R50/tilt14deg,3x120deg. Exact baseline source
+`drawings/finite_eyelet_support_v11/config.json` hash4a1326b11a354137dd441fc080e74bfe4766dc0ef1903ed76ac05b98b4d29010.
+Tests verify identical nine Skin/Rail shape recipes acrossV12–V19;this is NOT
+a new Native state/FEM mesh certification. New mounts/drivetrain are NOT simulated.
+
+New actual artifacts:112initial solids then160solids/proxies with fasteners;
+Root carrier13x36x4,root clamp5x36x3,normal-axis captive-nut retention,
+Pocket clearance.2mm DESIGN input,flat Palm seats,two-groove drums and3motor
+envelopes. Nominal M3hardware is geometric proxy,not supplier thread/preload CAD.
+
+|Cycle|Actual diagnosis and implementation|Result scope|
+|---|---|---|
+|704 V12|36Support/Rail overlaps and6Mount/first-Support overlaps|FAIL initial assembly,not hidden|
+|705 V13|subtract expanded own rail for proposed.05mm adhesive saddle|36rail overlaps removed;bond strength unmeasured|
+|706 V14|Mount bottom raised2mm(-9 to-7)|6first-support overlaps removed|
+|708/709|sixinner deck-to-Palm bolt holes missing;added|actual gauge checks later show12passages|
+|710 V16|actual fastener proxies reveal crossing screws and blocked heads|FAIL;do not use part-only layout as assembly proof|
+|712 V17|outerthroughbolts movedy14->19,frame/deckwidth48,head access pockets|large bolt-crossings removed|
+|714 V18|real.0557mm wedge lip under normal retaining head;R3spotface|six~.007mm3intersections removed;seam artifacts remain|
+|715|24nominal driver-shank paths tested|18clear samples;6installed Clamp approaches blocked|
+|717/720/721|assembled-cartridge at5mm hitsClamp fasteners;addwithdrawal tracks|12samples at5/10/15/20mm clear;NOT sweptCCD PASS|
+|724–726|saved Mount STLs fail reload despite indexed meshes closed|oldfailure kept;canonical module +ASCII yields160closedpositive single-body STLs|
+
+V19 dimensions:assembly AABB x[-64,66.1874],y±65.6936,z[-93.2809,61]mm.
+These are actual DESIGN geometry bounds,not stroke envelope or observed motion.
+Manifold is available and actual Boolean operations ran. FreeCAD/OCC/OCP/cadquery
+andFreeCADCmd are absent. STEP/FCStd NOT GENERATED. Parametric CSG/SCAD,STL,
+orthographic SVG,root section,mm-unitDXF profile,BOM,assembly/exploded PNG exist.
+No OpenSCAD kernel execution is claimed. The exporter source is syntax-checked,
+NOT FreeCAD-run. Faceted B3 meshes would be faceted BRep,not smooth formed films.
+
+Authoritative individual STLs:
+`product_prototype/meshes/b3_manufacturing_service_v19_stl_ascii/`.
+Authoritative assembly recipe,BOM and drawings:
+`product_prototype/drawings/b3_manufacturing_service_v19/`.
+The old V19binary STLs contain3failed Mount readbacks and must NOT be used
+as validated manufacturing exports.725exact-only cleanup stops atf1Mount;
+partial outputs are preserved.726 uses ONE nominal Mount module rotated120deg
+andASCII serialization,NOT numerical geometry identity to old float32worldCSG.
+Read `QUALIFICATION_SCOPE_CORRECTION.json` in the ASCII drawing folder:the old
+geometry_identical label means nominal configuration ONLY,digital equivalence
+is NOT verified. No physical FEM mesh Gate was passed by changing serialization.
+
+Contact-seam positive residuals and one negative-volume Boolean artifact remain.
+708common-root-frame checks diagnose float32kernel sensitivity;they do not
+certify zero interference. Continuous actuation/service clearance,print/machining
+tolerances,material strength and actual insert joints remain unqualified.
+
+### Drive,materials and procurement
+
+707 recomputes existing344 geometric cable lengths from actual mappedguide
+coordinates and XMLstationary pullpoints WITHOUT rerunning SOFA. Peak shortening
+2.62754–2.90653mm over six wires;internal/geometric difference up to.100733mm.
+This is a FUNCTIONAL simulation with time/mesh FAIL,not measured required stroke.
+Root lead-in,wire stretch,friction,termination and motor backlash are extra unknowns.
+Sampled trapezoidal work is NOT stage-consistent/global certified energy.
+
+36conditional scenarios:0.5/1.5/3N perwire,4/10/20mmstroke,.5/1sclosing,
+assumed transmission efficiency.5/.8,design loadfactor2,R8mm. Per2wirechannel:
+tau_nominal=2*T*r;tau_design=2*tau_nominal/efficiency.
+At1.5N,the conditional design torque is.060–.096Nm. This is NOT a motor rating.
+Two isolated grooves give equal nominal take-up,NOT equal tension or a mechanical
+equalizer,and are NOT the six independently prescribed force inputs of B3.
+
+Manufacturer-based candidates (checked2026-11-20,not purchased):
+- [ROBOTIS XL330-M288](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/) and
+  [M077](https://emanual.robotis.com/docs/en/dxl/x/xl330-m077/):integrated gearbox/
+  driver alternatives,NOT final selections.Stall torque/no-load speed do not
+  specify simultaneous continuous performance. Current is measured atinput,
+  NOT direct cable tension;inlineforce calibration is still required.
+  [Korean official M288listing](https://www.robotis.com/shop/item.php?it_id=902-0163-000)
+  exists;stock,leadtime andKRWprice NOT CONFIRMED.
+- [Toray S10](https://www.toraypenfibre.com.my/business/series/lumirror_s10.html)
+  PET100um and[Platilon U](https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1674482634.pdf?rev=ebf9fefc096546538f774be166fc6e4f)
+  TPU family are coupon candidates;no specimen E/fatigue/friction is assigned.
+- Polymer.5mmrails remain unselected;[SUS301-CSP](https://en.sus-csp.com/product-info/sus-b_301csp.html)
+  thin-strip coupon is a DIFFERENT design,not.5mmsteel substituted into B3.
+- [3M467MP](https://www.3m.com/3M/en_US/p/dc/v000185218/) nominal.05mmbond candidate;
+  actual lot thickness,peel,creep and shear compliance require measurement.
+  Any finite adhesive layer changes the current zero-thickness bonded FEM model.
+- [Carl Stahl](https://www.carlstahl-technocables.com/gb/en/products/wire-ropes-and-strands/stainless-steel-wire-rope/)
+  SE000005/SE000022 are.45mmalternatives,NOT the.5mmB3 wire;minimum bend radius,
+  axial stiffness,termination strength anddomestic stock remainunknown.
+- [U2D2](https://emanual.robotis.com/docs/en/parts/interface/u2d2/) is a communication
+  interface,NOT a motorpower supply.The[power hub](https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/)
+  rating does not select safe supply/fuse/wiring. No12Vsupply recommendation for5VXL330.
+
+All unitcosts,physical densities,measured inertia,loaded motor speed andcontinuous
+torque remainNULL. Catalog candidates are not simulated material replacements.
+
+### New actual design blocker:finite wire/bore geometry723
+
+At existing guide axis,ID1.2mm,L2mm andwire radius.25mm,12of36guide sites FAIL
+a straight-branch finite-bore necessary condition. Worst required bore radius
+1.37425mm vs existing.6mm. Formula atboreface:
+radial_extent=(L/2)*tan(theta)+wire_radius/cos(theta).
+The UNBUILT branch-bisector axis hypothesis lowers the worst required radius
+to.642363mm,but6sites STILL FAIL existing bore. It is NOT a qualified guide.
+This explains why guide centreline clearance alone is insufficient. Rounded
+wire motion,bend radius,Support occlusion,friction andsupplier dimensions remain
+unmeasured. NEXT design:separate axis-only then bore-size candidates,maintain
+finite OD/support/realwire;test fit/strength and shared CAD config BEFORE Native
+adoption. Do not merely enlarge bore nearOD or disablehardware collision.
+
+### Track C:physical test readiness
+
+718 defines10tests and40NULL measurement fields for bending,stroke/curvature,
+force/displacement,bonding/repetition,loadpath,generalization,50g/100gHold,Lift,
+Release/Recovery. Hardware tests executed0.716draft unit-schema defect is kept;
+718corrects mm/s,1/mm andscalar dimensionfields. Data validation rejects simulation
+as physical measurements,per-field PASS,and missing-value replacement by0.
+A.01N gauge cannot certify1e-5Nsupport reaction;adequate sensing or independently
+verified removal of the support loadpath is required,not a relaxed old Gate.
+
+727 has26DESIGN/SOFTWARE regression checks PASS.719had22PASS;724FAIL and725
+failed export are preserved. This is NOT26physical product Gates or a passed
+time/mesh/holding/lift/fatigue certification. No physical apparatus/material data
+or CAD BRep kernel is available in this session;no fabrication order was issued.
+Variable-stiffness/layer-jamming cartridge remains a separate future module;
+an8layerstack will NOT fit unchanged.1mmSkinclamp clearance without redesign.
+
 ## Native loop / elastic-wire continuation692–703 — 2026-11-20
 
 Feature commit: `6b8d0b64a03e8598a2ece62ce0bf04b83a7c68f0`.

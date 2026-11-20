@@ -2,7 +2,7 @@
 import argparse,json,shutil,subprocess
 from pathlib import Path
 from analyse import BASE,sha
-from observer_identity import compiled_alarm_window,compiled_feature_rows,compiled_mapping_acceleration,compiled_inertia_input
+from observer_identity import compiled_alarm_window,compiled_feature_rows,compiled_mapping_acceleration,compiled_inertia_input,compiled_inertia_force
 ROOT=BASE.parent
 
 def immutable(name):
@@ -46,6 +46,14 @@ def main():
     inertia_build=BASE/'cad/build_b3_inertia_input_build592'
     files[str((inertia_build/'CMakeCache.txt').relative_to(ROOT))]=sha(inertia_build/'CMakeCache.txt')
     shutil.copy2(BASE/'sofa/native_inertia_input/CMakeLists.txt',out/'inertia_input_CMakeLists.txt')
+    for name in ('inertia_force_build.py','inertia_force_run.py'):
+        shutil.copy2(BASE/'sofa'/name,out/name)
+    for f in compiled_inertia_force():
+        files[str(f.relative_to(ROOT))]=sha(f)
+        if f.suffix=='.cpp':shutil.copy2(f,out/'inertia_force_Force.cpp')
+    force_cache=BASE/'cad/build_b3_inertia_force_build623/CMakeCache.txt'
+    files[str(force_cache.relative_to(ROOT))]=sha(force_cache)
+    shutil.copy2(BASE/'sofa/native_inertia_force/CMakeLists.txt',out/'inertia_force_CMakeLists.txt')
     for f in compiled_feature_rows():
         files[str(f.relative_to(ROOT))]=sha(f)
         if f.suffix=='.cpp':shutil.copy2(f,out/'feature_Observer.cpp')

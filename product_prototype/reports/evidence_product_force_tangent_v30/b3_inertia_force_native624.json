@@ -1,0 +1,166 @@
+{
+  "status": "FAIL_FORCE_CANDIDATE",
+  "scope": "Gyroscopic force and nonsymmetric world rotation/velocity Jacobians;stock Native EulerImplicit + SparseLU,mapped mass/contact retained. Not a new ODE/contact solver or B3/global physical qualification. Assembly presence separately verified,not assumed.",
+  "source_commit": "47094a377f42c3de8afedd12d1a5d6986a8796ed",
+  "producer_sha256": "3303bfd1bb928419202353707b45eccf61b3e93ede16f5bfde3687d6763d96e7",
+  "input_binary_sha256": "37e4bae116075688ef011fd2ec427bbb2d264ea604bb0abc1d01cfc2a086d153",
+  "compiled_source_sha256": "fb8ce8630d6ac0a148ac3be596fddca20de670ebbfe94d6bd1901e9ea313fae6",
+  "physical_binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "source_summary_sha256": "609c7a3bc9e6a15964b85dd9127a4bb6fb6cc20ebf0eb4638f74a99a6d77e5fa",
+  "initial": [
+    {
+      "q": [
+        -0.02888516536834323,
+        0.0026585017079263917,
+        -0.08877244007456227,
+        0.1618185904145632,
+        0.28640505460869614,
+        -0.4714469711022171,
+        0.8182448545083428
+      ],
+      "v": [
+        0.5271075517897437,
+        -0.8744927609280636,
+        0.4207439514131417,
+        -14.780490160138822,
+        -8.04270979239418,
+        1.8419585415138242
+      ],
+      "world_inertia_kg_m2": [
+        [
+          1.0299131902905214e-11,
+          -8.369413648323296e-13,
+          -7.659865071921386e-13
+        ],
+        [
+          -8.369413648323295e-13,
+          1.1268021870012551e-11,
+          1.3284258191193754e-12
+        ],
+        [
+          -7.659865071921386e-13,
+          1.3284258191193754e-12,
+          1.1032344833257038e-11
+        ]
+      ],
+      "input_normalized_inertia_m2": [
+        [
+          1.2966415969754054e-06,
+          -8.821328559803182e-25,
+          4.75984186872713e-24
+        ],
+        [
+          -8.821328559803182e-25,
+          9.816541318210365e-07,
+          1.3048215161375526e-23
+        ],
+        [
+          4.75984186872713e-24,
+          1.3048215161375526e-23,
+          9.816541318210365e-07
+        ]
+      ]
+    },
+    {
+      "q": [
+        -0.02963797342576699,
+        -0.004001545132378368,
+        -0.08947027927373984,
+        -0.16891905929325263,
+        0.2975376846270081,
+        0.4691685969769002,
+        0.8141366625112818
+      ],
+      "v": [
+        0.46785129134140746,
+        0.8497603645156699,
+        0.3923317970322074,
+        15.569844331644974,
+        -9.779934406156976,
+        2.416373524866044
+      ],
+      "world_inertia_kg_m2": [
+        [
+          1.0277880108757241e-11,
+          7.997274451678839e-13,
+          -7.750883149031644e-13
+        ],
+        [
+          7.997274451678842e-13,
+          1.1202863040250264e-11,
+          -1.3436099685487059e-12
+        ],
+        [
+          -7.750883149031638e-13,
+          -1.3436099685487059e-12,
+          1.1118755457167284e-11
+        ]
+      ],
+      "input_normalized_inertia_m2": [
+        [
+          1.2966415969754054e-06,
+          -8.821328559803182e-25,
+          4.75984186872713e-24
+        ],
+        [
+          -8.821328559803182e-25,
+          9.816541318210365e-07,
+          1.3048215161375526e-23
+        ],
+        [
+          4.75984186872713e-24,
+          1.3048215161375526e-23,
+          9.816541318210365e-07
+        ]
+      ]
+    }
+  ],
+  "assumed_mass_kg": 1e-05,
+  "mapped_mass": true,
+  "free_reference": true,
+  "dt_s": 0.0025,
+  "duration_s": 0.1,
+  "steps": 40,
+  "trapezoidal": false,
+  "records": [
+    {
+      "variant": 0,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21108623500913382,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "7ef057291f19bfa7020e191f0038de5c02469c3fcb923d01b5eba51c11741cfa",
+          "command.json": "12f3bb1ee618aee38aea08a6340c63aa8bca94d5d8fbf9c02f00fe50e90f34ad",
+          "stderr.log": "a162c0626d9bcc982b0474f6c3c38ede08979a1085074e3d25734f6d128fb696",
+          "process.json": "2fb0654bdb554fa5d9eaa44b473fe23bcd84fae0a0bf7da110308a364fde50af"
+        }
+      },
+      "sofa_errors": 4,
+      "scene_sha256": "c5f22abb6351b81ac12b5a5a002965aaea910ef5665b415ac78d1b9b7eba99ac"
+    },
+    {
+      "variant": 1,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.2113851229660213,
+        "pid": 43,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "7ef057291f19bfa7020e191f0038de5c02469c3fcb923d01b5eba51c11741cfa",
+          "command.json": "b464af35538f3862951b85edf80f80f421a3e6ed43aab4a550e58c5cb4102cd0",
+          "stderr.log": "a162c0626d9bcc982b0474f6c3c38ede08979a1085074e3d25734f6d128fb696",
+          "process.json": "5d4fb0e00ed22d1816847142a74a447a29d206d0384dbf8252992a65e4a433f5"
+        }
+      },
+      "sofa_errors": 4,
+      "scene_sha256": "b56deb2df9066f649cc66c8e4eb3cd407357586a9c96cf0bd7a3e260835b1894"
+    }
+  ],
+  "metrics": [],
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "physical_density": null
+}

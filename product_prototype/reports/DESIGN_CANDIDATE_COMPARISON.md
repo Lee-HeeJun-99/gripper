@@ -1,3 +1,24 @@
+## Native inertial force/tangent623–634 — 2026-11-20
+
+Authority:NATIVE_INERTIA_FORCE_TANGENT_20261120.md.
+Evidence:evidence_product_force_tangent_v30/manifest.json;4628prior immutable hashes unchanged.
+-623 scoped gyroscopic ForceField,NOT ODE/contact solver. Actual world-rotation K
+ and velocity B derivatives. Native mapped mass retained;no q/v writes or SDK edit.
+-624 FAIL preserved:old SparseLUSolver factory moved to optional CSparseSolvers.
+ 625 uses installed EigenSparseLU (nonsymmetric),NOT symmetric LDL.
+-Actual C++ FD relative error:K≤6.65e-11,B≤3.31e-10;K/B assembly calls each40.
+-625/626 backward Euler100ms still FAIL0.132861% angular invariant.
+-627–632 Native trapezoidal with actual K/B:angular invariant base/half/quarter
+ 0.0112466%,0.00555120%,0.00276304%. All-common-time/all3pairs worst0.0748267%,
+ selected FREE-ring0.1% Gate PASS. First-order observed trend;not generic2nd-order proof.
+-633/634 principal-axis reference omega error≤9.01e-14rad/s;strict basis1e-12 PASS.
+ No contact/B3/global energy/100g/Lift qualification. Physical hardware mass still assumed.
+NEXT:read-only ACTUAL assembled matrix audit (K/B calls alone do not prove matrix),
+ world-objectivity,then finite contact using same force law/Native solver.
+Reusable build:cad/build_b3_inertia_force_build623,source/binary guarded.
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_inertia_force_trap_time632/summary.json`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/inertia_force_run.py --tag UNIQUE_FORCE --trapezoidal`
+
 ## Inertia/contact continuation600–622 — 2026-11-20
 
 Functional input commit:844afa1. Authority:NATIVE_SAMPLED_INERTIA_20261120.md.

@@ -64,3 +64,10 @@ def compiled_inertia_input():
     if sha(binary)!='0e9d7336992942af5a0606e72323155335ced9f1eac3d9c540b8fe31cf3009b7' or sha(source)!='f590fac8ec3cdc755597382badf8759352ccd22effbf2d096a0eeb59b3f3318e':
         raise ValueError('frozen sampled inertia input identity mismatch')
     return binary,source
+
+def compiled_inertia_force():
+    binary=BASE/'cad/build_b3_inertia_force_build623/libReGripInertiaForce.so'
+    source=BASE/'results/b3_inertia_force_build623/Force.cpp'
+    if sha(binary)!='37e4bae116075688ef011fd2ec427bbb2d264ea604bb0abc1d01cfc2a086d153' or sha(source)!='fb8ce8630d6ac0a148ac3be596fddca20de670ebbfe94d6bd1901e9ea313fae6':
+        raise ValueError('frozen gyroscopic force/tangent source/binary mismatch')
+    return binary,source

@@ -46,3 +46,40 @@ Next hypothesis: recalculate the actual Root single-corner fillet and wheel cent
 at pitchR5.85, with a larger finite fork. Validate this as a separate unmounted
 module, then redesign the Palm connection. A clear isolated module must NOT be
 reported as a clear full assembly, new mechanical equalizer or Holding PASS.
+
+## 857–860 — actual module and neighboring parts
+
+857 first module attempt FAIL:fork STL readback not watertight. Failed STLs and
+logs remain in `meshes/b3_supplier_root_module_v40`/corresponding result. Inspection
+found1438faces in the main solid and a separate2face zero-volume fragment;no
+triangle deletion or acceptance tolerance change was used to make it pass.
+
+858 constructs the same nominal fork union with ONE final through-bore instead of
+unioning separately bored solids. V41 saves3closed singlebody STLs,0.74s. This is a
+different CSG/tessellation representation,not a digital identity claim. Root centre
+moves4.885720mm,trim4.570521mm,turn76deg. Local solid pairs and conservative finite
+wire-vs-fork/pin probes have no reported intersections. Pin remains an unretained
+proxy and fork is UNMOUNTED. All other18turn wheels remain undersized for these
+catalog wire candidates. No Native scene was adopted.
+
+859 checks module vs ALL292 original named parts,3.98s. New wheel overlaps first
+Eyelet0.428231mm3 and first Support0.550588mm3:FAIL. Old replaceable Root wheel/pin
+overlaps and integral mount overlaps are separately recorded,not silently hidden.
+
+860 changes only first Eyelet+Support position by2mm along the original straight
+incoming wire direction,keeping finite shape and volume. New translation is
+(-0.483844,0,-1.940591)mm,not a random outboard-offset/stroke search. Actual module
+neighbor CSG then reports no unchanged-neighbor obstacles,4.03s. StillBLOCKED:
+old integral bridge interferes with new wheel/fork/pin and must be physically
+rebuilt. Shifted-guide-vs-all-other-parts,attachment,6modules/motion/retention and
+strength remain unqualified. An isolated clear module is not an assemblyPASS.
+
+```
+python product_prototype/cad/supplier_root_module.py --tag product_supplier_root858 --name b3_supplier_root_module_v41
+python product_prototype/cad/supplier_module_neighbors.py --tag product_supplier_neighbors859 --candidate b3_supplier_root_module_v41
+python product_prototype/cad/supplier_module_neighbors.py --tag product_supplier_shift860 --candidate b3_supplier_root_module_v41 --guide-shift-mm 2
+```
+
+Next:reconstruct the integral Root mount from the existing bolted compact bridge
+plus the new fork,not by deleting its collision geometry. Preserve the shifted
+finite guide/support and test all changed parts against their actual neighbors.

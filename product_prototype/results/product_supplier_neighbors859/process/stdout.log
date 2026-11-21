@@ -1,0 +1,66 @@
+{
+  "status": "FAIL_UNCHANGED_NEIGHBOR_CLEARANCE",
+  "source_commit": "a86f5b44bce094238f94645ceb6330ebdb3766cb",
+  "input_hashes": {
+    "cad/supplier_module_neighbors.py": "54466311cae976f8b7d676ce42a35210183122da9f35a0e2cae5fd5cddd7b852",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b",
+    "meshes/b3_supplier_root_module_v41/assembly_recipe.json": "cc910c14a4c569c5a5d7311aab002d02f3de52da2c1cec0a522598a3440b254f",
+    "meshes/b3_root_thrust_v39/full_assembly_recipe.json": "7eb60c61c00e8d86cbecdec2b4b8050b755d5a1a8beafc6f0b4e5fc855637a08"
+  },
+  "new_parts": 3,
+  "existing_parts": 292,
+  "intersections": [
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_s0_eyelet",
+      "classification": "UNCHANGED_NEIGHBOR_OBSTACLE",
+      "volume_mm3": 0.428231372259764,
+      "faces": 164
+    },
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_s0_support",
+      "classification": "UNCHANGED_NEIGHBOR_OBSTACLE",
+      "volume_mm3": 0.5505881500083672,
+      "faces": 66
+    },
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_root_redirect",
+      "classification": "REPLACED_PART_OVERLAP_NOT_CLEARANCE",
+      "volume_mm3": 25.93843848215393,
+      "faces": 3988
+    },
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_root_mounted_bridge",
+      "classification": "OLD_INTEGRAL_MOUNT_REQUIRES_REBUILD",
+      "volume_mm3": 9.93534221576065,
+      "faces": 826
+    },
+    {
+      "new": "supplier_root_fork_unmounted",
+      "existing": "f0_c0_root_mounted_bridge",
+      "classification": "OLD_INTEGRAL_MOUNT_REQUIRES_REBUILD",
+      "volume_mm3": 14.237369464398588,
+      "faces": 1340
+    },
+    {
+      "new": "supplier_root_pin_proxy",
+      "existing": "f0_c0_root_mounted_bridge",
+      "classification": "OLD_INTEGRAL_MOUNT_REQUIRES_REBUILD",
+      "volume_mm3": 2.754092894362278,
+      "faces": 568
+    },
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_root_headed_pin",
+      "classification": "REPLACED_PART_OVERLAP_NOT_CLEARANCE",
+      "volume_mm3": 1.411448790844247,
+      "faces": 252
+    }
+  ],
+  "runtime_s": 3.984039401053451,
+  "fabrication_ready": false,
+  "scope": "Actual finite CSG against ALL292 existing parts,no collision model/obstacle disabled. Replacedwheel/pin andoldintegralbridge are NOT silently excluded:overlaps recorded underseparateclasses. Unchanged-neighbor obstacles FAIL;even nohardhit wouldnotqualify newmount,6modules,retention,motion,strength orassembly. NoSOFA adoption."
+}

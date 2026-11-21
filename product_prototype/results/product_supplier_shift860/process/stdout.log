@@ -1,0 +1,79 @@
+{
+  "status": "BLOCKED_PALM_MOUNT_AND_FULL_ASSEMBLY_QUALIFICATION",
+  "source_commit": "a86f5b44bce094238f94645ceb6330ebdb3766cb",
+  "input_hashes": {
+    "cad/supplier_module_neighbors.py": "971a36fcfb716521baa3886dc6cf6eab482330829a573d23d48d90428bd38454",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b",
+    "meshes/b3_supplier_root_module_v41/assembly_recipe.json": "cc910c14a4c569c5a5d7311aab002d02f3de52da2c1cec0a522598a3440b254f",
+    "meshes/b3_root_thrust_v39/full_assembly_recipe.json": "7eb60c61c00e8d86cbecdec2b4b8050b755d5a1a8beafc6f0b4e5fc855637a08",
+    "results/product_root_fork780/summary.json": "43567e9744f74a4946eb46a6e2f2331e450aee234351301aea2385c32b2e63cb",
+    "results/product_motor_lead748/summary.json": "292671cdb64c4eac83b5ac9166b8b5e280b3ee4b5bccf97518198fd7d67ebf18"
+  },
+  "new_parts": 3,
+  "existing_parts": 292,
+  "guide_shift_mm": 2.0,
+  "changed_guides": [
+    {
+      "part": "f0_c0_s0_eyelet",
+      "translation_mm": [
+        -0.4838437911993353,
+        0.0,
+        -1.940591452551993
+      ],
+      "before_volume_mm3": 11.040650686721696,
+      "after_volume_mm3": 11.040650686721733,
+      "STL_sha256": "940d0d85a8f0e5f8f3e8f4a2b75ce169bc618cf9273ebf55e8e07b30b84e5345"
+    },
+    {
+      "part": "f0_c0_s0_support",
+      "translation_mm": [
+        -0.4838437911993353,
+        0.0,
+        -1.940591452551993
+      ],
+      "before_volume_mm3": 75.4084046142995,
+      "after_volume_mm3": 75.40840461429889,
+      "STL_sha256": "14553f9916352179ce8422b96128ca1b7add3c332f2e6e37f77cc7a5725c8423"
+    }
+  ],
+  "intersections": [
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_root_redirect",
+      "classification": "REPLACED_PART_OVERLAP_NOT_CLEARANCE",
+      "volume_mm3": 25.93843848215393,
+      "faces": 3988
+    },
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_root_mounted_bridge",
+      "classification": "OLD_INTEGRAL_MOUNT_REQUIRES_REBUILD",
+      "volume_mm3": 9.93534221576065,
+      "faces": 826
+    },
+    {
+      "new": "supplier_root_fork_unmounted",
+      "existing": "f0_c0_root_mounted_bridge",
+      "classification": "OLD_INTEGRAL_MOUNT_REQUIRES_REBUILD",
+      "volume_mm3": 14.237369464398588,
+      "faces": 1340
+    },
+    {
+      "new": "supplier_root_pin_proxy",
+      "existing": "f0_c0_root_mounted_bridge",
+      "classification": "OLD_INTEGRAL_MOUNT_REQUIRES_REBUILD",
+      "volume_mm3": 2.754092894362278,
+      "faces": 568
+    },
+    {
+      "new": "supplier_root_wheel",
+      "existing": "f0_c0_root_headed_pin",
+      "classification": "REPLACED_PART_OVERLAP_NOT_CLEARANCE",
+      "volume_mm3": 1.411448790844247,
+      "faces": 252
+    }
+  ],
+  "runtime_s": 4.028176325955428,
+  "fabrication_ready": false,
+  "scope": "Actual finite CSG against ALL292 named parts,no collision model/obstacle disabled. Optionalfirstguide+support translation usesSAMEfinitegeometry,NOTshrunk/removedparts;twoSTLs/volumes/recipe preserved. Module-vs-neighbors only,nottranslated-guide-vs-allothers qualification. Replacedwheel/pin andoldintegralbridge are NOT silently excluded:overlaps recorded underseparateclasses. Hardobstacles FAIL;even nohardhit wouldnotqualify newmount,6modules,retention,motion,strength orassembly. NoSOFA adoption."
+}

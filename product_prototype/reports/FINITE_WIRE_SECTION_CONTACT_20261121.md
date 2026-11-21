@@ -61,3 +61,47 @@ Next independent task: verify detector observation time vs previous/accepted sta
 and discrete impulse/work accounting from these saved rows, without rerunningSOFA.
 Then assess the minimum missing wire connectivity/tangency contract. No 3-Finger
 integration until that model and the existing physical Gates are qualified.
+
+## Follow-on chronology / work cycle851–853
+
+Feature253f9c1 preserved all preceding data.851/852 read existing rows only;
+no repeated physical execution. For each direction,519 detected sphere centres
+match the previous accepted centre exactly; maximum difference from current
+accepted centre1.007782um. Thus an AnimateEnd journal time is not the geometry's
+evaluation time. No continuous birth time is established by the3.75ms first
+nonzero-impulse record.
+
+Stable kinetic increments use `m*(v_new-v_old) dot (v_new+v_old)/2`, not subtraction
+of two large energies. Midpoint impulse identity residual<=6.47e-27J; BE position
+update residual<=3.86e-19m. BE geometric-work identity residual<=3.86e-24J.
+Contact midpoint impulse-work approximately-7.108e-11J and BE inertial defect
+approximately-3.687e-11J are **not separately measured physical heat/plastic loss**.
+Root reaction work, true impact loss and complete-wire elastic energy remainNULL.
+
+At the first accepted contact, normal velocity remains-2.18193mm/s; next step is
+approximately0. The first velocity agrees with the position-level relation
+`v_normal=-previous_gap_to_accepted_plane/dt` within1e-12m/s, while accepted
+geometric gap is approximately0. Consequently an explicitly imposed instantaneous
+perfectly-inelastic `v_plus=0` reference is **NOT QUALIFIED** here. This is not a
+new Native solver defect claim or an SDK correction; its position-level contract
+differs from that reference law. No velocity postprocessing, blind dt sweep or
+new custom solver was introduced. Existing contact/time Gate failures stay open.
+
+853 plots actual accepted states, exact plane sections of the saved wheel triangles,
+normal velocities and step impulses (not force peaks). Image visually inspected:
+`results/product_root_wire_plot853/actual_wire_section.png`. Proxy geometry and
+scope are marked, no amplified displacement. Matplotlib's unavailable optional
+Axes3D warning does not affect this2D figure; no3D rendering is claimed.
+
+Repro read-only continuation:
+
+```
+python product_prototype/sofa/root_wire_work_audit.py --tag UNIQUE_WORK --cases product_root_wire_section845 product_root_wire_section846
+python product_prototype/sofa/root_wire_contact_plot.py --tag UNIQUE_PLOT
+```
+
+NEXT: circular arc/continuous wire connectivity remainsBLOCKED on a matched
+Native model contract; these spherical-proxy tests do not supply it. Physical
+friction/bend/retention/load-deflection remainNOT MEASURED. Continue independent
+wire/axle assembly inspection and supplier-data/bench-data ingestion when such
+data exist. Do not repeat constrained-loop/Alarm/dt sweeps without a new hypothesis.

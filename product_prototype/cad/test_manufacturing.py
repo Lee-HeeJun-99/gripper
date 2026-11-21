@@ -14,6 +14,16 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_detector_time_is_not_accepted_geometry_time(self):
+  for r in result('product_root_wire_birth852')['records']:
+   self.assertEqual(r['detector_wire_points'],519);self.assertEqual(r['maximum_detector_center_vs_previous_accepted_m'],0)
+   self.assertGreater(r['maximum_detector_center_vs_current_accepted_m'],1e-6)
+   self.assertFalse(r['physical_energy_certified']);self.assertIsNone(r['physical_impact_loss_J']);self.assertIsNone(r['root_reaction_work_J'])
+   self.assertLess(r['maximum_midpoint_impulse_identity_residual_J'],1e-22)
+   birth=r['first_contact_diagnostic'];self.assertLess(birth['accepted_normal_velocity_m_s'],-.002)
+   self.assertLess(abs(birth['accepted_normal_velocity_m_s']-birth['position_level_normal_velocity_reference_m_s']),1e-12)
+ def test_unit_conditioning_helper_is_archived(self):
+  self.assertIn("'metric_mesh_query.py'",(BASE/'cad/root_evidence_archive.py').read_text())
  def test_unit_conditioned_query_matches_independent_triangle(self):
   import sys
   sys.path.insert(0,str(BASE/'sofa'))

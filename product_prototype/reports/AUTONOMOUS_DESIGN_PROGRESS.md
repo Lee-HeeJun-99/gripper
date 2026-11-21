@@ -1,3 +1,15 @@
+## Supplier-constrained Root redesign855–868 — 2026-11-21
+
+Primary manufacturer bend guidance checked;two existing catalog-wire/R2wheel
+combinations FAIL recommendation screen. Actual larger-wheel drop-in fails CSG.
+Implemented re-centred finite module,translated same guide/support and reconstructed
+real Palm-connected mount. Failed857STL preserved;single-bore CSG recipe repair
+does not delete triangles. Explicit seating/bondline candidate and293instance
+BOM/sections generated. Service86724pins/12bores/18drivers clear;fixed silentpin
+group skip.86879software testsPASS. Featuresa86f5b4/6b931d1/a4a8fbe.
+OnlyONE Root unit updated,no newNative/holding/fabrication qualification.
+Authority:SUPPLIER_BEND_AND_ROOT_REDESIGN_20261121.md;all priorGatesunchanged.
+
 ## Finite wire contact / analysis repair845–854 — 2026-11-21
 
 Implemented actual Native groove / spherical wire-section tests in both directions,

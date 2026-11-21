@@ -1,3 +1,14 @@
+## Supplier-sized first Root unit — NOT FABRICATION READY (2026-11-21)
+
+293partCADcandidate:meshes/b3_supplier_eyelet_seat_v43/full_assembly_recipe.json.
+Onlyf0c0Rootwheel/bridge/pin andfirstEyelet/Support replaced,onebondline added.
+NewgrooverootR5.625/pitchR5.85/UgrooveR0.2385 for0.45mm6x19wirecandidate.
+NominalCADjointgap0.05mm isUNMEASUREDdesigninput,notaprocess tolerance orselectedglue.
+867nominal24pin/12bore/18driverpaths clear;unknownpinlabels nowreject ratherthan
+silentlyskip. Actualheadslot/thread/material/preload/retention/jointstrength and
+continuousmotion NOTqualified. AlltinyjointCSGfragments retained. STEPabsent.
+Reviewsections/BOM/config in drawings/b3_supplier_eyelet_seat_v43.
+
 ## Root axle load interface — NOT FABRICATION READY (2026-11-21)
 
 ROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md definescompletebridgefixture atactual

@@ -1,3 +1,14 @@
+## Supplier-constrained Root candidate — 2026-11-21
+
+NewCADreview:meshes/b3_supplier_eyelet_seat_v43,293parts,ONLYfirstRootunit
+changed. Supplier-specific minimum groove-root diameter blocks the oldR2wheel
+for two catalog0.45mm candidates. NewrootD11.25/pitchD11.7/OD13.75 U-groove,
+re-centred finite fork/mount,2mm translated firstguide and explicit UNSELECTED
+seat/bondline created. Catalog dimensions are not measured fatigue/strength.
+Full service867 nominalclear;joint/interface CSG fragments andall otherunits/
+material/retention/motion/NativeGates remainopen. No wire/motor/material selected,
+no fullproduct orfabricationPASS. Reviewpackdrawings/b3_supplier_eyelet_seat_v43.
+
 ## Finite wire-section contact qualification limit — 2026-11-21
 
 V39 CAD unchanged. New Native sphere-on-groove tests845/846 demonstrate scoped

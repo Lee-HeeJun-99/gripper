@@ -1,3 +1,14 @@
+## Supplier bend / actual Root CAD855–868 — 2026-11-21
+
+Featuresa86f5b4/6b931d1/a4a8fbe. Primary manufacturer bend recommendations
+checked;two existingcatalogwire/R2wheel combinationsFAILcompatibility. Created
+actual larger/re-centred Root module,translatedfiniteguide,connectedmount and
+seat/explicitunselectedbondline;rejected drop-in/STL/neighborexperiments preserved.
+CurrentadditionalCAD293parts,ONLYONE Rootunitupdated.867service24pins/12bores/
+18drivers nominallyclear;86879softwaretestsPASS. No newSOFA/physicaltest/STEP/
+fabricationPASS. ExistingB3functionalresults and time/contact/FEMmesh failures
+unchanged. Reviewpack andevidencev46;authoritySUPPLIER_BEND_AND_ROOT_REDESIGN report.
+
 ## Finite wire contact / Native chronology845–854 — 2026-11-21
 
 Features253f9c1/15ef7b3. TwoNEWNative60step finite-groove/sphere-proxy runs,

@@ -1,3 +1,13 @@
+## Supplier CAD continuation855–868 — 2026-11-21
+
+NO newSOFAexecution. Supplier wire bend guidance exposed geometric incompatibility,
+and actual CADCSG/service/seat checks were performed instead of running invalid
+newHolding. Candidate changes wireD0.5->0.45,RootpitchR2->5.85,guide/mount/joints
+andhasunselectedbondline;oldB3Nativecheckpoint MUSTNOTbecontinued intoit.
+Sourcefeaturesa86f5b4/6b931d1/a4a8fbe;86879software testsareNOTphysicsGates.
+Existingfunctional50g observation,time/contact/FEMmeshFAILsand100g/Liftlimits
+remainunchanged. SeeSUPPLIER_BEND_AND_ROOT_REDESIGN_20261121.md.
+
 ## Actual finite wire-section proxy845–854 — 2026-11-21
 
 Two Native runs60finite states each,8.87/8.77s;mu0,fixed actual Root groove,

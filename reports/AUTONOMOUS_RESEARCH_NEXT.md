@@ -1,3 +1,31 @@
+## Latest supplier bend / Root CAD855–868 — 2026-11-21
+
+Read product_prototype/reports/SUPPLIER_BEND_AND_ROOT_REDESIGN_20261121.md
+andCHECKPOINT. Featuresa86f5b4/6b931d1/a4a8fbe. Current additional CAD is
+meshes/b3_supplier_eyelet_seat_v43/full_assembly_recipe.json (293parts,ONLYONE
+Root unit changed);NOT a new Native or fabrication-qualified gripper.
+Primary supplier guidance reveals two catalog wire/currentR2wheel combinations
+fail bend-root-diameter recommendations. Do NOT equate pitchD4/flangeOD6 to rootD.
+Larger wheel drop-in FAIL;re-centred module+translated finite guide+rebuilt mount
+and explicit unselected seat/bondline created. All failures remain. Nominal
+24pin/12bore/18driver service check clear;86879software regressionsPASSonly.
+
+NEXT executable development priorities:
+1. Inspect remaining5Root+18turn routing under the same chosen construction's
+   actual groove-root requirement. Do not approve R2 because cable force is small
+   or because B3 held50g;no supplier fatigue exception is available.
+2. First changed Root's seat/interface CSG,actual retention and translated Skin
+   attachment still require qualification;do not blindly propagate6units.
+3. Define a mechanically consistent whole-path candidate,then NEW Native initial
+   state with its actual masses/joints/wire law. Do not reuse oldB3checkpoint.
+4. Actual wire/guide/support/adhesive/motor duty data remainNULL;existing physical
+   protocol and measurement templates are available. No purchase approval inferred.
+Code entry:cad/supplier_root_wheel.py,supplier_root_module.py,supplier_root_mount.py,
+supplier_eyelet_seat.py;configuration wire_bend_supplier_v40.json. Full repro
+commands in authorityreport,not instructions to repeat unchanged855–868.
+Reviewpack:drawings/b3_supplier_eyelet_seat_v43. FreeCAD/OCC absent;STEPnotgenerated.
+Time/contact/FEMmesh/100g/Lift/productqualification remainopen. Evidencev46.
+
 ## Latest finite wire-section845–854 — 2026-11-21
 
 Read product_prototype/reports/CHECKPOINT.md and

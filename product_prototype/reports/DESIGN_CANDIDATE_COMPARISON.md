@@ -1,3 +1,16 @@
+## Supplier bend and Root module comparison — 2026-11-21
+
+V39 remains historical reference. Existing0.45mm6x7/6x19 catalog candidates need
+recommended rootD18.9/11.25;actualV39 rootD3.5 is not pitchD4.855 compatibilityFAIL.
+856 supplier-sized wheel at same centre collidesPalm/bridge;858 re-centredR5.85
+module localclear but859 firstguide/support collide.860 same-size firstguide+support
+translation2mm removes those two obstacles.861 physically reconstructed integral
+mount and862 seated/bondline candidate remainreviewrequired,notwholeassemblyPASS.
+Materialvolume/wirediameter/pulley/fork/guidepositions differ,so no equalmaterial,
+same-input stiffness/holding superiority claim. OnlyONE Root unit changed;other5
+Root+18turns remainold. Actual service867clear and software79PASS do not qualify
+strength/friction/fatigue/Nativegrasp. SeeSUPPLIER_BEND_AND_ROOT_REDESIGN report.
+
 ## Finite groove contact proxy — 2026-11-21
 
 CAD V39 unchanged.845/846 compare opposite initial tangential speed on identical

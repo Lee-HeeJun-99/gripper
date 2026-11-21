@@ -1,3 +1,42 @@
+## Supplier bend / real Root CAD cycles855–868 — 2026-11-21
+
+Feature commits:a86f5b4,6b931d1,a4a8fbe. Authority:
+SUPPLIER_BEND_AND_ROOT_REDESIGN_20261121.md. No new SOFA run this cycle;
+existing B3 functional Holding and all time/contact/FEM mesh failures unchanged.
+
+NEW primary-source supplier facts:0.45mm6x7/6x19 recommendations require groove
+rootD18.9/11.25mm;V39 actual rootD3.5 is not pitchD4 or flangeOD6.855 candidate
+compatibility FAIL,not a retrospective oldGate change. Facts/URLs/date in
+config/wire_bend_supplier_v40.json;not measured fatigue or purchased items.
+
+856 larger U-groove wheel at old centre FAIL Palm/bridge CSG.857 failed fork
+STL retained.858 revised exact-CSG bore construction creates3valid STLs in
+meshes/b3_supplier_root_module_v41;centre moves4.88572mm,pitchR5.85.859 module
+hits first Eyelet/Support.860 shifts SAMEfinite guide+support2mm along existing
+incoming branch,removing those two obstacles;old mount stillBLOCKED.
+861 physically rebuilds connected Root mount from real bolted compact bridge,
+not deleted collisions.862 adds finite seating cavity and UNSELECTED bondline:
+meshes/b3_supplier_eyelet_seat_v43/full_assembly_recipe.json,293parts,ONLY f0c0
+Root unit updated. Wire full-bore/support/bond CSG no hits. Tiny bond-interface
+CSG overlaps retained;actual material/strength/retention/tolerance NULL.
+865 actual mesh sections visually inspected;866 drawing/BOM review pack at
+drawings/b3_supplier_eyelet_seat_v43. No FreeCAD/OCC/STEP/fabrication release.
+867 exact24pin sweeps/12bores/18drivers nominally clear,4.71s. Fixed silent
+new-pin-group skip;unknown groups now rejected and coverage verified.
+86879software/design regressionsPASS,2.410s;NOT physical/product qualification.
+
+NEXT priority:apply construction-specific bend/finite groove requirements to
+remaining5Root+18turn units and firstguide Skin attachment BEFORE fullNative
+adoption. Do not blindly mirror an unqualified joint or run invalid Holding.
+Resolve finite seat/interface representation and retention/material measurements;
+mechanical equalizer,continuous wire law,time/contact/FEMmesh/100g/Lift remainopen.
+Repro source entries:cad/supplier_root_module.py,supplier_root_mount.py,
+supplier_eyelet_seat.py,complete_drive_service.py;full commands in authorityreport.
+For new wire data use a NEW config/candidate;never overwrite current Raw/config
+or oldB3checkpoint. No automatically running children or post-session work.
+Evidence:evidence_product_supplier_root_v46/manifest.json extendsv45 and includes
+all14cases,failedpartialmeshes,catalogfacts and boundaryfragments,not14PASSclaims.
+
 ## Finite wire-section / metric-query cycles845–854 — 2026-11-21
 
 Feature commits:253f9c1,15ef7b3. Authority:FINITE_WIRE_SECTION_CONTACT_20261121.md.

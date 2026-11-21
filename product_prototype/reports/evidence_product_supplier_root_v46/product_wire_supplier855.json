@@ -1,0 +1,39 @@
+{
+  "status": "SUPPLIER_COMPATIBILITY_AUDIT_NOT_PRODUCT_QUALIFICATION",
+  "source_commit": "c2d42a73db715889826bba50da3bb8a01885dc21",
+  "input_hashes": {
+    "cad/wire_supplier_audit.py": "ebb69853f3721efc0ec02383c19b12974b0dd7abd68678757c402812c3dcdd70",
+    "config/wire_bend_supplier_v40.json": "097a7fd35fceec2ef2e3cbb78973c0fcf84b262bffec0b4c2e71104fda271a3c",
+    "cad/root_thrust_candidate.py": "f53f1db766656632663ee453d698dd40506fa48463db4148a980633dac986672"
+  },
+  "records": [
+    {
+      "item": "SE000005",
+      "construction": "6x7-WSC",
+      "wire_diameter_mm": 0.45,
+      "minimum_recommended_groove_root_diameter_mm": 18.900000000000002,
+      "actual_groove_root_diameter_mm": 3.5,
+      "diameter_margin_mm": -15.400000000000002,
+      "status": "FAIL_CATALOG_BEND_COMPATIBILITY",
+      "physical_fatigue_pass": false
+    },
+    {
+      "item": "SE000022",
+      "construction": "6x19-WSC",
+      "wire_diameter_mm": 0.45,
+      "minimum_recommended_groove_root_diameter_mm": 11.25,
+      "actual_groove_root_diameter_mm": 3.5,
+      "diameter_margin_mm": -7.75,
+      "status": "FAIL_CATALOG_BEND_COMPATIBILITY",
+      "physical_fatigue_pass": false
+    }
+  ],
+  "current_CAD_wire_diameter_mm": 0.5,
+  "catalog_candidate_wire_diameter_mm": 0.45,
+  "source_urls": [
+    "https://www.carlstahl-technocables.com/gb/en/products/pulleys/",
+    "https://www.carlstahl-technocables.com/gb/en/products/wire-ropes-and-strands/stainless-steel-wire-rope/"
+  ],
+  "scope": "NEW supplier-specific incompatibility screen,NOT a retroactive change to prior simulation or geometry PASS/FAIL. Uses actual V39 barrelR1.75 definition from root_thrust_candidate.wheel. Pitch radius2 and flangeOD6 must not substitute for groove-root diameter. No exact life,material,friction or exception data.",
+  "fabrication_ready": false
+}

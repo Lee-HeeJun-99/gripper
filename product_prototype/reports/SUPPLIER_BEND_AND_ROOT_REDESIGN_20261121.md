@@ -1,5 +1,10 @@
 # Supplier bend limits and Root module redesign
 
+Final regression868:79design/software testsPASS,2.410s. This does not change
+physical time/mesh/energy/holding Gates. New CAD has no Native qualification;
+no new SOFA or hardware execution performed in855–868. All experiment failures,
+partial meshes and boundary fragments are preserved.
+
 Baseline `c2d42a7`. Original CAD, simulation data and qualification results remain
 unchanged. This is a new supplier-compatibility screen, not a retrospective change
 to old PASS/FAIL scopes. No purchases or supplier messages sent.
@@ -83,3 +88,64 @@ python product_prototype/cad/supplier_module_neighbors.py --tag product_supplier
 Next:reconstruct the integral Root mount from the existing bolted compact bridge
 plus the new fork,not by deleting its collision geometry. Preserve the shifted
 finite guide/support and test all changed parts against their actual neighbors.
+
+## 861–865 — reconstructed Palm connection, seat and drawing review
+
+861 reconstructs a real connected Root bridge from the existing bolted V35 bridge,
+new finite fork,connector rods and finite boss/pin proxies. Five named parts are
+physically replaced,287others remain. All5STLs closed/positive/singlebody;full
+recipe still292parts. Actual changed-vs-whole CSG finds a0-volume Palm mating
+result and2.364747mm3 Eyelet–Support overlap. REVIEW REQUIRED,not assemblyPASS.
+Runtime6.33s. No collision disabled;old Root bridge is replaced,not just hidden.
+
+862 creates an explicit seating cavity in that support and a separate finite
+research adhesive volume. Nominal radial bondline0.05mm is an **unmeasured design
+assumption**,not a supplier-selected adhesive or manufacturing tolerance. Full
+recipe293parts. Support volume72.748734mm3,bond volume0.219564mm3. Finite full-length
+wire-bore/support/bond CSG has no intersections. Bond interfaces still produce
+CSG fragments2.12e-13 and1.25e-6mm3;retained,not rounded into a PASS. Material,
+retention,bond fatigue/preload and actual joint strength remainNULL. Runtime7.86s.
+
+863 actual mesh sections and293-instance BOM generated.865 fixes a dimension-label
+overlap in that drawing;both preserved. The dashed wire circle is DESIGN geometry,
+not an actual SOFA state. FreeCADCmd/freecadcmd and PythonFreeCAD/OCP/OCC/cadquery
+were rechecked unavailable;no STEP or BRep/fabrication qualification claimed.
+864 bounded design/software regression suite:77testsPASS,not physicalGates.
+
+```
+python product_prototype/cad/supplier_root_mount.py --tag product_supplier_mount861 --name b3_supplier_root_mount_v42
+python product_prototype/cad/supplier_eyelet_seat.py --tag product_supplier_seat862 --name b3_supplier_eyelet_seat_v43
+python product_prototype/cad/supplier_design_review.py --tag product_supplier_review865
+python product_prototype/cad/manufacturing_test_run.py --tag product_supplier_regression864
+```
+
+No new SOFA execution this cycle:the whole6Root/18turn-pulley mechanism is not yet
+supplier-compatible or mechanically qualified. Running an invalid configuration
+as another Holding trial would not establish product performance. Original B3
+functional Holding and its time/contact/FEMmesh failures remain unchanged.
+
+NEXT:qualify the first changed Root unit's service path and shifted Skin attachment;
+then apply the same construction-specific bend check to ALL remaining turns and
+guides before propagating a full mechanism. Actual support/wire/adhesive properties,
+fit/retention/deflection and motor duty measurements remainrequired. No automatic
+component purchase,exception approval or post-session execution is implied.
+
+## 866–867 — review pack and actual service sweep
+
+866 publishes actual recipe/sections/BOM/facts/report into
+`drawings/b3_supplier_eyelet_seat_v43/`,explicitly NOT a fabrication release.
+The copied report is that pack's creation-time snapshot;this canonical report
+continues afterward. CAD-kernel absence is machine-recorded,not assumed.
+
+867 validates the new Root headed-pin group explicitly. The old generic service
+loop would have silently skipped a new group label;it now rejects unknown headed
+pin groups and verifies sweep-name coverage. On the current293-part candidate,
+all24exact stepped-pin sweeps,12real bore gauges and18driver paths are nominally
+clear,4.71s,4GiB/420s. Raw command is `product_supplier_service867/RUN_COMMAND.json`.
+This is static service geometry,NOT actual thread/driver engagement,retention,
+strength,tolerance,whole-motion or product approval. No old service results changed.
+
+Next physical/model constraints remain:all5otherRoot units and18turns must be
+supplier-compatible,finite seating/interface CSG needs review,shifted attachment
+and full actuated mechanism require NEW Native states and physical parameters.
+Do not begin100g/Lift or certify full product from this single-unit CAD milestone.

@@ -1,0 +1,54 @@
+{
+  "status": "SEATED_EYELET_CAD_REVIEW_REQUIRED_NOT_JOINT_PASS",
+  "source_commit": "6b931d138efb395e98f3514ae0774b95752567ae",
+  "input_hashes": {
+    "cad/supplier_eyelet_seat.py": "5e4333e8617b2a4b066b84b928ee5f7809e0fa87de33d644943d0b061951d7f0",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b",
+    "cad/deformed_wire_screen.py": "6724b3e42df77febc0947595c605d22a5c9db3176303fb14c306e1488e44259b",
+    "meshes/b3_supplier_root_mount_v42/full_assembly_recipe.json": "88eadc7f921458061815ce68cda5bd5bf9a63bd9f5834c30e223ec952c488d8e",
+    "meshes/b3_supplier_root_mount_v42/route_mm.json": "38f84f0b21969bfcc50224651eb8aea386108a4e14a8745086ceeeb2cfb148ab"
+  },
+  "records": [
+    {
+      "part": "f0_c0_s0_support",
+      "volume_mm3": 72.74873375680852,
+      "STL_sha256": "068224e0f9da26d7fc243efc907e4395c21821b3b74d7082de7510027216ab7d",
+      "closed_singlebody": true
+    },
+    {
+      "part": "f0_c0_s0_bondline_RESEARCH",
+      "volume_mm3": 0.2195635879188386,
+      "STL_sha256": "d51955ddc207d33089280f0d7ea7fb93b37842d6b1d4d261eb80603c41dba4e9",
+      "closed_singlebody": true
+    }
+  ],
+  "full_part_count": 293,
+  "nominal_UNMEASURED_bondline_radial_gap_mm": 0.05,
+  "eyelet_outer_radius_mm": 1.5000000000000042,
+  "finite_polygon_seat_radial_clearance_lower_bound_mm": 0.049533168979116526,
+  "solid_intersections": [
+    {
+      "parts": [
+        "f0_c0_s0_bondline_RESEARCH",
+        "f0_c0_s0_eyelet"
+      ],
+      "volume_mm3": 2.1206878845584734e-13,
+      "faces": 14
+    },
+    {
+      "parts": [
+        "f0_c0_s0_support",
+        "f0_c0_s0_bondline_RESEARCH"
+      ],
+      "volume_mm3": 1.245795327046532e-06,
+      "faces": 246
+    }
+  ],
+  "wire_bore_support_bond_intersections": [],
+  "actual_adhesive_material": null,
+  "actual_bond_strength_N": null,
+  "runtime_s": 7.863911001011729,
+  "STEP_generated": false,
+  "fabrication_ready": false,
+  "scope": "ONEeyelet/support seat andexplicit finite UNSELECTEDadhesive candidate. Allother291originalnamedparts retained;newbondline adds1=>293. Intended bondinterfaces andanyCSGfragments retained,notroundedaway. Actualresearchgap0.05mm isNOTshop tolerance/material property orpress-fitapproval. Rootlocalwireextendedbeyondfullguide length for finitebore check;notactualdynamics/CCD. NoNative/B3/retention/strength/fullassemblyqualification."
+}

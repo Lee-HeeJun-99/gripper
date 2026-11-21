@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import trimesh
 from manufacturing_assembly import BASE,box,cyl,union,cut,transform,evaluate,poly,sha
-from supplier_root_wheel import dimensions,wheel_mesh
+from supplier_root_wheel import supplier_dimensions,wheel_mesh
 from root_redirect_candidate import corner_frame
 from root_thrust_candidate import lands
 from deformed_wire_screen import probes
@@ -25,7 +25,7 @@ def module_fork(outer,cfg):
  return cut(union(base,cyl(r,inner,outer_z),cyl(r,-outer_z,-inner)),cyl(bore,-2.5,2.5))
 
 def worker(a):
- out=BASE/'results'/a.tag;dest=BASE/'meshes'/a.name;dest.mkdir(exist_ok=False);start=time.monotonic();d=dimensions();src=BASE/'results/product_root_fork780/summary.json';lead=BASE/'results/product_motor_lead748/summary.json';cfgfile=BASE/'config/root_thrust_v37.json';supplier=BASE/'config/wire_bend_supplier_v40.json';cfg=json.loads(cfgfile.read_text())
+ out=BASE/'results'/a.tag;dest=BASE/'meshes'/a.name;dest.mkdir(exist_ok=False);start=time.monotonic();src=BASE/'results/product_root_fork780/summary.json';lead=BASE/'results/product_motor_lead748/summary.json';cfgfile=BASE/'config/root_thrust_v37.json';supplier=BASE/'config/wire_bend_supplier_v40.json';cfg=json.loads(cfgfile.read_text());d=supplier_dimensions(json.loads(supplier.read_text()))
  old=next(r for r in json.loads(src.read_text())['records'] if r['part']=='f0_c0_root_redirect');oldlead=next(r for r in json.loads(lead.read_text())['records'] if r['model']=='perimeter_rounded_candidate' and r['finger']==0 and r['cable']==0)
  first=np.array(old['route_mm'][0]);pull=np.array(oldlead['route_mm'][0]);direction=np.array(oldlead['route_mm'][1])-pull;direction/=np.linalg.norm(direction);endpoint=pull+8*direction
  route,M,angle,trim,sag=single_corner(first,pull,endpoint,d['wire_centre_pitch_radius_mm']);facing=np.mean(route[1:-1],axis=0)-M[:3,3];facing-=M[:3,2]*(M[:3,2]@facing);facing/=np.linalg.norm(facing);F=M.copy();F[:3,:3]=np.column_stack([facing,np.cross(M[:3,2],facing),M[:3,2]])

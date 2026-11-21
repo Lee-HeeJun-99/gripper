@@ -14,6 +14,40 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_supplier_pin_group_does_not_silently_skip_new_root(self):
+  d=result('product_supplier_service867');self.assertEqual(len(d['pins']),24);self.assertEqual(len(d['hole_gauges']),12);self.assertEqual(len(d['tools']),18)
+  self.assertIn('f0_c0_root_headed_pin',{r['pin'] for r in d['pins']});self.assertFalse(any(r['full_swept_intersections'] for r in d['pins']));self.assertFalse(any(r['intersections'] for r in d['tools']+d['hole_gauges']));self.assertFalse(d['fabrication_ready'])
+  self.assertIn('unknown headed pin group;do not silently skip',(BASE/'cad/complete_drive_service.py').read_text())
+ def test_supplier_pack_is_not_fabrication_release(self):
+  d=result('product_supplier_pack866');self.assertEqual(d['status'],'CAD_REVIEW_PACK_NOT_FABRICATION_RELEASE');self.assertFalse(d['STEP_generated']);self.assertFalse(d['fabrication_ready'])
+  self.assertIn('wire_bend_*.json',(BASE/'cad/root_evidence_archive.py').read_text())
+ def test_supplier_groove_root_not_wire_pitch(self):
+  from supplier_root_wheel import supplier_dimensions
+  cfg=json.loads((BASE/'config/wire_bend_supplier_v40.json').read_text());d=supplier_dimensions(cfg)
+  self.assertEqual(d['groove_root_radius_mm'],5.625);self.assertEqual(d['wire_centre_pitch_radius_mm'],5.85)
+  self.assertEqual([r['status'] for r in result('product_wire_supplier855')['records']],['FAIL_CATALOG_BEND_COMPATIBILITY']*2)
+  self.assertEqual([r['actual_groove_root_diameter_mm'] for r in result('product_wire_supplier855')['records']],[3.5,3.5])
+ def test_single_corner_does_not_reject_valid_long_fillet(self):
+  from supplier_root_module import single_corner
+  route,M,angle,trim,sag=single_corner([-10,0,0],[0,0,0],[0,8,0],5.85)
+  self.assertAlmostEqual(trim,5.85);self.assertTrue(4<trim<8)
+  np.testing.assert_allclose(np.linalg.norm(route[1:-1]-M[:3,3],axis=1),5.85,rtol=0,atol=1e-12)
+  with self.assertRaises(ValueError):single_corner([-10,0,0],[0,0,0],[0,4,0],5.85)
+ def test_drop_in_supplier_wheel_rejection_preserved(self):
+  d=result('product_supplier_wheel856');self.assertEqual(d['status'],'FAIL_DROP_IN_RETROFIT_INTERFERENCE');self.assertFalse(d['fabrication_ready'])
+  self.assertTrue(any(r['part']=='palm_bridge_bores' and r['volume_mm3']>2 for r in d['intersections']))
+ def test_failed_fork_STL_is_not_deleted_or_promoted(self):
+  self.assertEqual(result('product_supplier_root857')['status'],'FAIL_MODULE_CHILD');self.assertTrue((BASE/'meshes/b3_supplier_root_module_v40/supplier_root_fork_unmounted.stl').is_file())
+  d=result('product_supplier_root858');self.assertEqual(len(d['records']),3);self.assertEqual(d['solid_intersections'],[]);self.assertFalse(d['fabrication_ready'])
+ def test_guide_shift_keeps_same_finite_parts(self):
+  self.assertEqual(result('product_supplier_neighbors859')['status'],'FAIL_UNCHANGED_NEIGHBOR_CLEARANCE');d=result('product_supplier_shift860');self.assertTrue(d['status'].startswith('BLOCKED'));self.assertEqual(len(d['changed_guides']),2)
+  self.assertTrue(all(abs(r['before_volume_mm3']-r['after_volume_mm3'])<1e-9 for r in d['changed_guides']));self.assertFalse(any(r['classification']=='UNCHANGED_NEIGHBOR_OBSTACLE' for r in d['intersections']))
+ def test_new_mount_and_bond_stay_unqualified(self):
+  d=result('product_supplier_mount861');self.assertEqual(d['full_part_count'],292);self.assertEqual(d['changed_parts'],5)
+  d=result('product_supplier_seat862');self.assertEqual(d['full_part_count'],293);self.assertEqual(d['wire_bore_support_bond_intersections'],[]);self.assertIsNone(d['actual_adhesive_material']);self.assertFalse(d['fabrication_ready'])
+  self.assertTrue(any(r['volume_mm3']>0 for r in d['solid_intersections']))
+ def test_supplier_review_is_actual_instance_BOM_not_STEP(self):
+  d=result('product_supplier_review863');self.assertEqual(d['actual_BOM_instances'],293);self.assertFalse(d['STEP_generated']);self.assertFalse(d['fabrication_ready'])
  def test_detector_time_is_not_accepted_geometry_time(self):
   for r in result('product_root_wire_birth852')['records']:
    self.assertEqual(r['detector_wire_points'],519);self.assertEqual(r['maximum_detector_center_vs_previous_accepted_m'],0)

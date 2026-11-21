@@ -20,10 +20,13 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--candidate',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic();src=BASE/'meshes'/a.candidate/'full_assembly_recipe.json';parts=json.loads(src.read_text())['parts'];shapes=[evaluate(p['shape']) for p in parts];pins=[];gauges=[];tools=[]
  for part in parts:
   group=part['group'];name=part['name']
-  if group not in ('headed_pin_proxy','root_headed_pin_proxy'):continue
-  isroot=group.startswith('root_');distance=10. if isroot else -10.;ownnut=name.replace('_headed_pin','_axle_nut');exclude=[name,ownnut];sweep=evaluate(axial_sweep(part['shape'],distance));pins.append(dict(pin=name,signed_axial_distance_mm=distance,full_swept_intersections=hits(sweep,parts,shapes,exclude)))
+  if not name.endswith('_headed_pin'):continue
+  if group not in ('headed_pin_proxy','root_headed_pin_proxy','supplier_root_headed_pin_PROXY'):raise ValueError('unknown headed pin group;do not silently skip '+name)
+  isroot='_root_headed_pin' in name;distance=10. if isroot else -10.;ownnut=name.replace('_headed_pin','_axle_nut');exclude=[name,ownnut];sweep=evaluate(axial_sweep(part['shape'],distance));pins.append(dict(pin=name,signed_axial_distance_mm=distance,full_swept_intersections=hits(sweep,parts,shapes,exclude)))
   if isroot:
    tool=evaluate(transform(cyl(1.,3.55,13.55),axial_sweep(part['shape'],distance)['matrix']));tools.append(dict(tool=name+'_outward_driver',intersections=hits(tool,parts,shapes,exclude)))
+ expected={p['name'] for p in parts if p['name'].endswith('_headed_pin')}
+ if not expected or {p['pin'] for p in pins}!=expected:raise ValueError('incomplete pin sweep coverage')
  for f,angle in enumerate((0,120,240)):
   S=sector(angle)
   for c,side in enumerate((1,-1)):

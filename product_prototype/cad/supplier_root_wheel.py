@@ -10,6 +10,10 @@ def dimensions(wire_d=.45,ratio=25):
  root=wire_d*ratio/2;groove=.53*wire_d
  return dict(wire_diameter_mm=wire_d,groove_root_radius_mm=root,groove_cross_section_radius_mm=groove,wire_centre_pitch_radius_mm=root+wire_d/2,flange_outer_radius_mm=root+1.25,bore_radius_mm=.6,width_mm=1.8,scope='Manufacturer-sized bend/root and groove cross-section;flange/bore/width are independent research CAD inputs,NOT catalog product dimensions')
 
+def supplier_dimensions(cfg,item='SE000022'):
+ wire=next(w for w in cfg['candidate_wires'] if w['item']==item)
+ return dimensions(wire['uncoated_diameter_mm'],cfg['minimum_recommended_B_over_uncoated_d'][wire['construction']])
+
 def wheel_mesh(d):
  r=d['groove_root_radius_mm'];g=d['groove_cross_section_radius_mm'];outer=d['flange_outer_radius_mm'];half=d['width_mm']/2;bore=d['bore_radius_mm']
  if not r>bore or not half>g or not outer>r+g:raise ValueError('invalid pulley section')
@@ -21,7 +25,7 @@ def wheel_mesh(d):
  return body,np.array(profile)
 
 def worker(a):
- out=BASE/'results'/a.tag;start=time.monotonic();cfgfile=BASE/'config/wire_bend_supplier_v40.json';src=BASE/'meshes/b3_root_thrust_v39/full_assembly_recipe.json';cfg=json.loads(cfgfile.read_text());parent=json.loads(src.read_text());wheel=next(x for x in parent['parts'] if x['name']=='f0_c0_root_redirect');d=dimensions();mesh,profile=wheel_mesh(d);M=np.array(wheel['shape']['matrix']);op=transform(poly(mesh),M);world=evaluate(op);target=out/'geometry';target.mkdir(exist_ok=False);file=target/'f0_c0_supplier_wheel.stl';file.write_text(world.export(file_type='stl_ascii'));saved=trimesh.load_mesh(file)
+ out=BASE/'results'/a.tag;start=time.monotonic();cfgfile=BASE/'config/wire_bend_supplier_v40.json';src=BASE/'meshes/b3_root_thrust_v39/full_assembly_recipe.json';cfg=json.loads(cfgfile.read_text());parent=json.loads(src.read_text());wheel=next(x for x in parent['parts'] if x['name']=='f0_c0_root_redirect');d=supplier_dimensions(cfg);mesh,profile=wheel_mesh(d);M=np.array(wheel['shape']['matrix']);op=transform(poly(mesh),M);world=evaluate(op);target=out/'geometry';target.mkdir(exist_ok=False);file=target/'f0_c0_supplier_wheel.stl';file.write_text(world.export(file_type='stl_ascii'));saved=trimesh.load_mesh(file)
  if not saved.is_volume or saved.body_count!=1:raise ValueError('saved wheel STL failed readback')
  hits=[]
  for other in parent['parts']:

@@ -14,6 +14,24 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_unit_conditioned_query_matches_independent_triangle(self):
+  import sys
+  sys.path.insert(0,str(BASE/'sofa'))
+  from metric_mesh_query import closest_si,triangle_reference
+  vertices=np.array([[.00175,-.0001,-.0005],[.00175,.0001,-.0005],[.00175,.0001,.0005],[.00175,-.0001,.0005]])
+  mesh=trimesh.Trimesh(vertices=vertices,faces=[[0,1,2],[0,2,3]],process=False);p=np.array([[.002,.00004,.0001]])
+  near,dist,tri=closest_si(mesh,p)
+  np.testing.assert_allclose(near[0],[.00175,.00004,.0001],rtol=0,atol=1e-18)
+  self.assertLess(abs(dist[0]-.00025),1e-18)
+  np.testing.assert_allclose(triangle_reference(p[0],mesh.triangles[tri[0]]),near[0],rtol=0,atol=1e-18)
+  with self.assertRaises(ValueError):triangle_reference([0,0,0],np.zeros((3,3)))
+ def test_wire_contact_proxy_scope_and_response_provenance(self):
+  d=result('product_root_wire_metric849');self.assertEqual(len(d['records']),2)
+  for r in d['records']:
+   self.assertEqual(r['status'],'PASS_RESPONSE_OWNERSHIP_ONLY');self.assertFalse(r['physical_contact_qualified']);self.assertEqual(r['response_vs_body_max_impulse_error_Ns_Nms'],0.)
+   self.assertLess(r['closest_point_independent_triangle_reference_error_m'],1e-18)
+  for case in ('product_root_wire_section845','product_root_wire_section846'):
+   self.assertEqual(result(case)['steps'],60);self.assertTrue((BASE/'results'/case/'GEOMETRY_ANALYSIS_CORRECTION.json').is_file())
  def test_free_axle_wire_impulse_has_independent_momentum(self):
   d=result('product_root_free_axle843');self.assertTrue(d['free_axle']);self.assertFalse(d['physical_sliding_qualified']);self.assertEqual(d['steps'],10)
   np.testing.assert_allclose(d['first_linear_momentum_Ns'],[2.5e-9,2.5e-9,0],rtol=0,atol=1e-18)

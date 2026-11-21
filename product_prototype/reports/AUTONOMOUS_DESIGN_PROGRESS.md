@@ -1,3 +1,15 @@
+## Finite wire contact / analysis repair845–854 — 2026-11-21
+
+Implemented actual Native groove / spherical wire-section tests in both directions,
+60finite steps each;not continuous wire. Response provenance and momentum verified.
+Discovered SI-unit-sensitive trimesh query error;preserved old845–847 analysis with
+corrections,conditioned query independently validated849. Physical state unchanged.
+852 detector chronology/discrete work audit done;first-contact inward velocity
+persists,so no instantaneous impact-law PASS.853 actual-state plot inspected.
+85470software regressionsPASS. Features253f9c1/15ef7b3;CAD V39 unchanged.
+Next complete Native wire contract/data qualification BLOCKED as specified in
+FINITE_WIRE_SECTION_CONTACT_20261121.md;no new whole-productGates passed.
+
 ## Wire-transfer / product load cycles836–843 — 2026-11-21
 
 ImplementedNativeanchoredcableimpulsediagnostic,circulararcindependentreference,

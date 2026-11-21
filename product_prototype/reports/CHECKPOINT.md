@@ -1,3 +1,39 @@
+## Finite wire-section / metric-query cycles845–854 — 2026-11-21
+
+Feature commits:253f9c1,15ef7b3. Authority:FINITE_WIRE_SECTION_CONTACT_20261121.md.
+845/846 actual Native spherical wire-section proxies against actual finite Root
+groove:60finite states each,15ms,8.87/8.77s. NOT complete wire/pulley/B3.
+Actual response pairs are wheel Triangle / section Sphere;846 reversal only
+changes initial tangential speed. Aggregate response/body impulse mismatch0;
+linear momentum residual3.31e-24Ns. No SDK/customSolver/collision removal.
+
+Analysis failure preserved:845/846 original SI-trimesh gaps and847 geometry
+are INVALID (unit-sensitive face query). Append-only correction files retained.
+848/849 scale geometry+points together to mm,output SI; independent dimensionless
+triangle reference agrees<=2.34e-19m. Correct initial gap7.107980um; raw negative
+minimum accepted gap~-3.79e-19m retained,not clearancePASS. Geometry conditioning
+does NOT alter SOFA physics/tolerances. New metric_mesh_query.py is archived.
+
+851/852:each519 detector sphere centres equal PREVIOUS accepted positions,
+not current (difference up to1.007782um). First impulse record3.75ms is NOT
+continuous event time. Accepted normal velocity~-2.182mm/s at first contact,
+next step~0:position-level contract,NOT instantaneous e=0 impact qualification.
+Discrete impulse/work identities only;physical impact loss/Root work/wire energy
+NULL.853actual-state plot visually inspected;85470software testsPASS,3.416s.
+
+Next:complete circular wire/connectivity/tangency Native model remains BLOCKED
+pending a matched component contract;do NOT relabel spherical proxy as wire.
+Actual friction/bendradius/material/retention/force-deflection data NOT MEASURED.
+Use ROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md for independent physical qualification.
+Do not repeat old loop/dt/alarm/offset sweeps or845/846 unchanged. B3 time/contact/
+FEMmesh/100g/Lift/STEP Gates unchanged. CAD remains V39,not fabrication-ready.
+Evidence:evidence_product_wire_contact_v45/manifest.json. Old immutable data
+audited;corrections only affect these newly created analyses,not historicalGates.
+Repro new analysis:robot_wsPython product_prototype/sofa/root_wire_work_audit.py
+--tag UNIQUE_WORK --cases product_root_wire_section845 product_root_wire_section846
+(only for new analysis hypotheses;completed852 need not be repeated).
+All Native children completed;no automatic work after session exit.
+
 ## Wire/axle continuation836–843 — 2026-11-21
 
 Final regression844:66software/design testsPASS in2.526s;includesactual843

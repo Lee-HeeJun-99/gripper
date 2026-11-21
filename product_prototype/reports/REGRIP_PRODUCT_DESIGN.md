@@ -1,3 +1,12 @@
+## Finite wire-section contact qualification limit — 2026-11-21
+
+V39 CAD unchanged. New Native sphere-on-groove tests845/846 demonstrate scoped
+response/load transfer only,not a continuous wire or physical pulley design.
+No material/motor/wire/bearing approved;actual stiffness/friction/bend/retention
+data remain unmeasured. Unit-conditioned query repair849 changes analysis only.
+Do not integrate this proxy as a mechanical equalizer or claim fabrication readiness.
+SeeFINITE_WIRE_SECTION_CONTACT_20261121.md;features253f9c1/15ef7b3.
+
 ## Root wire load interface — 2026-11-21
 
 V39CADunchanged. All6rootroute vectors nowexplicit inload841;ASSUMEDequal

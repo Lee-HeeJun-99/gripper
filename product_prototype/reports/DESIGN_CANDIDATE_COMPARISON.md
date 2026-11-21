@@ -1,3 +1,12 @@
+## Finite groove contact proxy — 2026-11-21
+
+CAD V39 unchanged.845/846 compare opposite initial tangential speed on identical
+finite wheel triangles;actual60step states each. These are spherical proxies,
+not competing full-wire/product candidates. Response provenance verified;first
+accepted normal velocity~-2.182mm/s prevents instantaneous e=0 reference approval.
+849 conditioned mesh queries replace invalid845–847 SI-distance analysis ONLY;
+originals/corrections preserved. No holding/material/assembly/strength gain claimed.
+
 ## Wire/axle contract — 2026-11-21
 
 V39geometryunchanged. Nativefixed-wheelanchors837produce5e-12Nmsinitial

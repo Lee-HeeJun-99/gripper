@@ -1,3 +1,14 @@
+## Actual finite wire-section proxy845–854 — 2026-11-21
+
+Two Native runs60finite states each,8.87/8.77s;mu0,fixed actual Root groove,
+free sphere cross-section proxy. Response/body impulse mismatch0;momentum
+residual3.31e-24Ns. Sphere has no continuous-wire constitutive/connectivity law.
+Analysis-only SI closest-point error corrected849 with independent reference,
+not altered physics. Detector centres equal previous accepted states;first accepted
+normal velocity~-2.182mm/s despite zero gap. Position-level Native contract is not
+an instantaneous inelastic collision-law qualification. No energy/time/mesh/holding
+PASS.85470software testsPASS. AuthorityFINITE_WIRE_SECTION_CONTACT_20261121.md.
+
 ## Actual wire/axle836–843 — 2026-11-21
 
 Native837/838/843 each10finite states,3.80/3.20/2.77s;initialanchored-cable

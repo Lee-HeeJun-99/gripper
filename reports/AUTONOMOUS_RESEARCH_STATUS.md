@@ -1,3 +1,14 @@
+## Finite wire contact / Native chronology845–854 — 2026-11-21
+
+Features253f9c1/15ef7b3. TwoNEWNative60step finite-groove/sphere-proxy runs,
+response provenance andmomentum scoped checks complete. SI mesh-query analysis
+failure found and corrected with independent dimensionless triangle reference;
+old data/corrections preserved. Detector uses previous positions;first accepted
+normal velocity remains~-2.182mm/s,so no instantaneous collision-law qualification.
+85470software/design testsPASS;actual-state plot853. Completewire/physicalfriction/
+material/retention,old B3 time/contact/FEMmesh/100g/Lift/STEP remainunqualified.
+V39 CAD unchanged. Evidencev45 andFINITE_WIRE_SECTION_CONTACT_20261121.md.
+
 ## Wire-transfer / root load cycles836–843 — 2026-11-21
 
 ThreeNEWNativeanchoredwirecoupons10finiteeach,initialJ-lambda/momentum

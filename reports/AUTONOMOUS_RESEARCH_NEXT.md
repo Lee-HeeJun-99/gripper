@@ -1,3 +1,31 @@
+## Latest finite wire-section845–854 — 2026-11-21
+
+Read product_prototype/reports/CHECKPOINT.md and
+FINITE_WIRE_SECTION_CONTACT_20261121.md. Features253f9c1/15ef7b3.
+Two NEW Native finite groove/sphere-proxy runs completed60steps each. No full
+wire/sliding/3Finger qualification. Corrected NEW unit-sensitive SI mesh-distance
+analysis with explicit mm conditioning+independent triangle reference;old raw/
+erroneous analyses remain with correction files. Final849 authoritative geometry.
+852 confirms detector uses previous state and first accepted contact still has
+inward normal velocity~-2.182mm/s. Do not promote position clearance or discrete
+momentum/work identity into impact/energy/timePASS.85470software testsPASS.
+
+NEXT priorities:
+1. A complete Native wire model needs connectivity,axial/bending constitutive data,
+   circular tangency/branch transitions and shared force transfer. Current sphere
+   proxy and straight CableConstraint/SlidingLagrangianConstraint do NOT supply it.
+   Keep adoption BLOCKED until a matched Native contract is specified;no customODE.
+2. Independent physical material/friction/bend/retention/load-deflection data remain
+   NOT MEASURED. Use ROOT_AXLE_LOAD_MEASUREMENT_PROTOCOL.md and841 blank sheet;
+   reject simulation data as measurements. No supplier/motor/material approved.
+3. Only after model/data qualification start a NEW state with changed mechanism;
+   never reuse old B3 checkpoint. B3 time/contact/FEMmesh/100g/Lift/STEP remainopen.
+
+Do not repeat845/846,old constrained-loop/alarm/dt sweeps without new hypothesis.
+Source entry:sofa/root_wire_contact.py,metric_mesh_query.py,root_wire_work_audit.py.
+Actual-state plot:results/product_root_wire_plot853/actual_wire_section.png.
+Evidencev45 extendsv44,all previous failures preserved;no background continuation.
+
 ## Latest wire transfer836–843 — 2026-11-21
 
 Final844regressions66PASS;finalevidence_product_wire_regression_v44extendsv43.

@@ -1,5 +1,13 @@
 ## Current continuation958+ — 2026-11-23
 
+Local features7478225/8eeb9f6. Evidencev56 verifies13719prior immutable hashes,
+zero mismatch;13966files/13newcases. WholeHEADscan no blob>=100000000bytes,
+no newdetectorCSV,nopush/SDKchanges/historyrewrite. 970148tests PASS2.379sbody.
+No active researchchildren. Resume read-only command:
+robot_wsPython -m json.tool product_prototype/results/product_remaining_clamped968/summary.json
+Implementation next: add c1-aware coherent Turn completion with exact delta
+parent resolver; existing remaining_lead_completion supports c0 ONLY.
+
 Feature7478225 followed by968actual13part f1/c1clamp DELTA placement (parent964
 SHA must match),969declared Palm-envelope exclusion and970148softwaretestsPASS.
 NEXT coherent f1/c1Turn completion from actual f0/c1source,not c0mirror/route;

@@ -1,4 +1,18 @@
-## Latest continuous service915–923 — 2026-11-23
+## Latest separation / pressure shoe924–938 — 2026-11-23
+
+Authority product_prototype/reports/RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
+Do NOT repeat41/36nonvolumeCSGfailures:924/925oldgeometry20336exactproofs;
+934/935new926geometry17856exactproofs,independentlyreplayed. OldRawscopeunchanged.
+NewONEroot .30mmpressure shoe/v46CADpack isUNQUALIFIEDresearchgeometry,NOTjoint
+or3FingerPASS. 288partsstaticclear,finitewire/sampledserviceclear. Actualpreload/
+friction/material/filmindentation/slipremainNULL;no newSOFAadoption.
+NEXT finite actualthread/retentioninterface andpad-toleranceprocessspecification,
+physicalpreload/slip/indentation measurements beforematchedNativejoint. Remaining
+4Roots/12turns,movinginterference,time/mesh/100g/Lift/STEPstillopen. Do notblindly
+propagateoruseoldB3checkpoint. 937savedproducerreplayworksaftergeneratorevolution.
+Read-onlyresume:robot_wsPython -m json.tool product_prototype/results/product_shoe_certificate_audit935/summary.json.
+
+## Continuous service915–923 — 2026-11-23
 
 Lastfeatures371b318/7635633. Guarded922identicalto920CADcoordinatesandclosure;
 923112softwaretestsPASS,NOTphysicsqualification. Source/evidencev51/v52.

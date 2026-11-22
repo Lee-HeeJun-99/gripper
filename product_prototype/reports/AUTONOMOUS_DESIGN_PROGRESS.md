@@ -1,3 +1,12 @@
+## Exact separation / pressure shoe924–938 — 2026-11-23
+
+Three developmentcycles afterf822d0d:exactrationalwitnesses+independentreplay for
+old41nonvolumeprisms(20336pairs);new.30mmpressure shoe+necessarylipheightchange
+withactualstatic/service/wire/CADchecks;candidate-specific36prismproofs(17856)
+andimmutableproducerreplay. See RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
+PhysicaljointdataremainBLOCKED,no newNative/holding/time/mesh/fabricationPASS.
+NEXT actualthread/pad/toleranceinterface andpreload/slip/indentationdata.
+
 ## Continuous service / stack915–921 — 2026-11-23
 
 Three implementation/verification cycles,not newphysics. See

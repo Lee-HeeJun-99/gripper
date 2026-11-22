@@ -1,3 +1,12 @@
+## Latest 2026-11-23 — exact separation / pressure shoe924–938
+
+Authorityproduct_prototype/reports/RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
+Old41/new36nonvolumeprismquestionsresolvedwith20336/17856exactseparationproofs
+andindependentcompleteness/replay. Separate.30mmshoe/v46CADcandidatehasstatic/
+sampledservice/finitewirechecks,NOTphysicaljointorNativequalification. Actual
+material/preload/slip/indentationdataBLOCKED. No holding/time/mesh/100g/Lift/
+STEP/fabricationPASSupgrade. ExistingB3functionalresultsandallFAILs retained.
+
 ## Latest 2026-11-23 — continuous service / stack915–923
 
 Feature371b318 and resource-guard continuation. Authority:

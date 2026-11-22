@@ -13,7 +13,7 @@ def closure(seat_top,rail_bottom,skin_top,pad_bottom,pad_top,screw_bottom):
 
 def worker(a):
  out=BASE/'results'/a.tag;start=time.monotonic()
- src=BASE/'results/product_rail_clamp908/full_assembly_recipe.json';frame=src.parent/'root_frame.json';M=np.array(json.loads(frame.read_text()));parts=json.loads(src.read_text())['parts']
+ src=BASE/'results'/a.case/'full_assembly_recipe.json';frame=src.parent/'root_frame.json';M=np.array(json.loads(frame.read_text()));parts=json.loads(src.read_text())['parts']
  names=['f0_c1_s0_support','f0_rail_right','f0_skin','f0_c1_s0_rail_pressure_pad_RESEARCH','f0_c1_s0_rail_clamp_screw_PROXY'];solids={}
  for part in parts:
   if part['name'] in names:
@@ -34,15 +34,15 @@ def worker(a):
   local[name]=[float(q[:,2].min()),float(q[:,2].max())]
  pad=solids[names[3]].bounds;screw=solids[names[4]].bounds
  r=closure(seat,local[names[1]][0],local[names[2]][1],float(pad[0,2]),float(pad[1,2]),float(screw[0,2]))
- result=dict(status='CAD_FREE_STACK_KINEMATICS_ONLY',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f.relative_to(BASE)):sha(f) for f in (Path(__file__),src,frame,BASE/'cad/manufacturing_assembly.py')},measured_CAD_coordinates_mm=dict(seat_top=seat,rail_skin=local,pad_bounds=pad.tolist(),screw_bounds=screw.tolist()),closure=r,runtime_s=time.monotonic()-start,fabrication_ready=False,scope='Nominal CAD coordinates;ideal rigid free-stack closure along Rootnormal. Rail/Skin bending, bonded stack constraint, screw thread/pitch/preload, real pad manufacturing, contact pressure and strength are NOT measured or simulated. Required screw travel is NOT a preload command or qualified Native joint. Existing .03mm pad remains research-only.')
+ result=dict(status='CAD_FREE_STACK_KINEMATICS_ONLY',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f.relative_to(BASE)):sha(f) for f in (Path(__file__),src,frame,BASE/'cad/manufacturing_assembly.py')},measured_CAD_coordinates_mm=dict(seat_top=seat,rail_skin=local,pad_bounds=pad.tolist(),screw_bounds=screw.tolist()),closure=r,runtime_s=time.monotonic()-start,fabrication_ready=False,scope='Nominal CAD coordinates;ideal rigid free-stack closure along Rootnormal. Rail/Skin bending, bonded stack constraint, screw thread/pitch/preload, real pad manufacturing, contact pressure and strength are NOT measured or simulated. Required screw travel is NOT a preload command or qualified Native joint. Actual extracted pad thickness remains a research design input,not a manufacturing-approved material specification.')
  (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--worker',action='store_true');a=p.parse_args()
- if Path(a.tag).name!=a.tag:p.error('local tag required')
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',default='product_rail_clamp908');p.add_argument('--worker',action='store_true');a=p.parse_args()
+ if any(Path(n).name!=n for n in (a.tag,a.case)):p.error('local names required')
  if a.worker:worker(a);return
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes())
  sys.path.insert(0,str(BASE/'sofa'));from native_bending_coupon import guarded
- cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker'];proc=guarded(cmd,out/'process',420)
+ cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--case',a.case,'--worker'];proc=guarded(cmd,out/'process',420)
  (out/'launcher.json').write_text(json.dumps(dict(command=cmd,process=proc),indent=2))
  if not(out/'summary.json').exists():(out/'summary.json').write_text(json.dumps(dict(status='FAIL_STACK_CONTRACT_CHILD',process=proc),indent=2))
  print((out/'summary.json').read_text())

@@ -1,4 +1,21 @@
-## Latest continuous service915–923 — 2026-11-23
+## Latest separation / pressure shoe924–938 — 2026-11-23
+
+Read RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md. Feature18dea00 resolves ONLY
+old91741nonvolumeprismpairs:20336exactrational separatingcertificates,independent
+925replayPASS. Old917scope unchanged;noepsilon/thickness/deletedfaces.
+New926ONEsecondRoot pad.03→.30mm,footprint1.92mm² retained,lip/screwendpoint
+raised.27mm tokeepgaps. Actual288partstaticclear,3closedSTLs. 928sampledservice
+clear;929actualfinite secondwireclear. 930actualv46reviewpack9STLs/288BOM,
+931actualsectionvisuallychecked. NoSTEP/fabrication/preload/strengthPASS.
+933newgeometry36nonvolumeprisms resolved934/935 with17856NEWexactproofs,notoldindices.
+932actualfree-stackclosure.06999999881mm,NOTpreload. 937oldproofsavedproducer
+replay preservesidentityaftergeneratorevolution. NEXT actualthread/retention/
+pad-tolerancespecification andrealpreload/slip/indentation/materialqualification.
+Do not repeat former41/36CSGfailure orunchangedNative895. No newSOFA adopted;
+actualjointdataBLOCKED,remainingsector/movingwire/time/mesh/100g/Lift/STEPopen.
+Exactread-onlyresume:robot_wsPython -m json.tool product_prototype/results/product_shoe_certificate_audit935/summary.json.
+
+## Continuous service915–923 — 2026-11-23
 
 Functional commits371b318 and7635633. 922stack CLI nowbounded4GiB/420s;
 actualcoordinates+closure EXACTLY match920. 923112softwaretestsPASS(2.592stest,

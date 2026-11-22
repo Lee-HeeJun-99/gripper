@@ -1,3 +1,12 @@
+## Pressure-shoe926 — NOT FABRICATION READY (2026-11-23)
+
+v46actualCAD/BOM:9savedSTLs,288instances. Pad.30mm/footprint1.92mm²,unloaded
+stackclosure~.07mm. ThisisNOTscrewpreloadinstruction. Sameunloadeddisassembly
+sequence;newgeometrysampled928serviceclear. New933/934/935surfaceproofs close
+36nonvolumeprismquestions only,notthread/tool/tolerance/physicaljointGates.
+Actualmaterial,threadpitch,retention/preload/slip/filmindentationstillunqualified.
+Read RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
+
 ## Continuous-service limitations — NOT FABRICATION READY (2026-11-23)
 
 Unloaded sequence:unthreadwire,removeclampscrew,slidepadinboard4mm,thenkeeper

@@ -26,10 +26,12 @@ def worker(a):
  start=time.monotonic();out=BASE/'results'/a.tag;folder=BASE/'results'/a.case;summary=folder/'summary.json';d=json.loads(summary.read_text());proof=folder/'certificates.json'
  if sha(proof)!=d['certificate_sha256']:raise ValueError('certificate hash mismatch')
  for path,digest in d['input_hashes'].items():
-  if sha(BASE/path)!=digest:raise ValueError('input hash mismatch:'+path)
+  # Replay the saved producer identity, not today's evolved generator source.
+  actual=folder/'producer.py' if path=='cad/swept_separation_certificate.py' else BASE/path
+  if sha(actual)!=digest:raise ValueError('input hash mismatch:'+path)
  src=BASE/next(n for n in d['input_hashes'] if n.endswith('/full_assembly_recipe.json'));prior=BASE/next(n for n in d['input_hashes'] if n.endswith('/summary.json'));parts=json.loads(src.read_text())['parts'];lookup={p['name']:p for p in parts};old=json.loads(prior.read_text());source=evaluate(lookup['f0_c1_s0_support']['shape']).triangles;targets={name:evaluate(lookup[name]['shape']).triangles for name in ('f0_skin','f0_rail_right')};delta=next(r['translation_mm'] for r in old['records'] if r['part']=='f0_c1_s0_support');expected={(i['triangle'],name,j) for i in old['support_surface_refinement']['unresolved_prisms'] for name in i['obstacles'] for j in range(len(targets[name]))}
  detail=verify(json.loads(proof.read_text()),source,delta,targets,expected)
- result=dict(status='PASS_EXACT_CERTIFICATE_REPLAY_ONLY',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f.relative_to(BASE)):sha(f) for f in (Path(__file__),summary,proof,src,prior,BASE/'cad/manufacturing_assembly.py')},detail=detail,runtime_s=time.monotonic()-start,fabrication_ready=False,scope=f'Independent rational dot-product replay;duplicates/missing/invalid axes/gaps rejected. Complete{len(expected)}stored-float triangle pairs only. Projection gap is NOT normalized Euclidean clearance, manufacturing tolerance, Native result or fullassembly qualification.')
+ result=dict(status='PASS_EXACT_CERTIFICATE_REPLAY_ONLY',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f.relative_to(BASE)):sha(f) for f in (Path(__file__),summary,proof,src,prior,folder/'producer.py',BASE/'cad/manufacturing_assembly.py')},detail=detail,runtime_s=time.monotonic()-start,fabrication_ready=False,scope=f'Independent rational dot-product replay;duplicates/missing/invalid axes/gaps rejected. Saved generator producer identity checked,not mutable current source. Complete{len(expected)}stored-float triangle pairs only. Projection gap is NOT normalized Euclidean clearance, manufacturing tolerance, Native result or fullassembly qualification.')
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
 
 def main():

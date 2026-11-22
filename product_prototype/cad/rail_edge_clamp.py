@@ -6,7 +6,7 @@ import trimesh
 from manufacturing_assembly import BASE,evaluate,sha,root_frame,box,cyl,cut,union,transform,poly
 
 def worker(a):
- out=BASE/'results'/a.tag;start=time.monotonic();src=BASE/'results/product_eyelet_keeper894/full_assembly_recipe.json';cfgfile=BASE/'meshes/b3_manufacturing_bore_v21/assembly_recipe.json';cfg=json.loads(cfgfile.read_text())['baseline_config'];M=root_frame(cfg,0);parts=json.loads(src.read_text())['parts'];support=next(p for p in parts if p['name']=='f0_c1_s0_support');rail=cfg['finger']['rail_thickness'];skin=cfg['finger']['skin_thickness'];back=-rail-.05;front=skin+.05
+ out=BASE/'results'/a.tag;start=time.monotonic();src=BASE/'results/product_eyelet_keeper894/full_assembly_recipe.json';cfgfile=BASE/'meshes/b3_manufacturing_bore_v21/assembly_recipe.json';cfg=json.loads(cfgfile.read_text())['baseline_config'];M=root_frame(cfg,0);parts=json.loads(src.read_text())['parts'];support=next(p for p in parts if p['name']=='f0_c1_s0_support');rail=cfg['finger']['rail_thickness'];skin=cfg['finger']['skin_thickness'];back=-rail-.05;front=skin+.02+a.pad_thickness
  if rail!=.5 or skin!=.1:raise ValueError('review this candidate for changed stack geometry')
  # Rootregion edgeclamp only:finite lower saddle/web/innerlip,not removed Rail.
  # .05mm clearance retained UNLOADED;no invented tight joint or friction force.
@@ -34,14 +34,19 @@ def worker(a):
  result['local_CSG']=a.local_csg
  result['pad_fit']=a.pad_fit
  result['open_foot']=a.open_foot
+ result['design_pad_thickness_mm']=a.pad_thickness
+ result['design_lip_bottom_mm']=front
+ result['pad_material']=None
  if a.pad_fit:result['pad_geometry_footprint_mm2']=1.92;result['UNLOADED_pad_screw_and_lip_gap_mm']=.01
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],hits=hits,runtime_s=result['runtime_s']),indent=2))
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--local-csg',action='store_true');p.add_argument('--pad-fit',action='store_true');p.add_argument('--open-foot',action='store_true');p.add_argument('--worker',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--local-csg',action='store_true');p.add_argument('--pad-fit',action='store_true');p.add_argument('--open-foot',action='store_true');p.add_argument('--worker',action='store_true');p.add_argument('--pad-thickness',type=float,default=.03);a=p.parse_args()
  if a.open_foot and not a.local_csg:p.error('open foot requires explicit local CSG')
+ if not np.isfinite(a.pad_thickness) or not 0<a.pad_thickness<1.2:p.error('finite positive pad thickness below existing boss limit required')
+ if a.pad_thickness!=.03 and not(a.local_csg and a.pad_fit and a.open_foot):p.error('new thickness requires explicit local-CSG fitted open-foot candidate')
  if a.worker:worker(a);return
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes());sys.path.insert(0,str(BASE/'sofa'));from native_bending_coupon import guarded
- cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker']+(['--local-csg'] if a.local_csg else [])+(['--pad-fit'] if a.pad_fit else [])+(['--open-foot'] if a.open_foot else []);proc=guarded(cmd,out/'process',420);(out/'launcher.json').write_text(json.dumps(dict(command=cmd,process=proc),indent=2))
+ cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--pad-thickness',str(a.pad_thickness),'--worker']+(['--local-csg'] if a.local_csg else [])+(['--pad-fit'] if a.pad_fit else [])+(['--open-foot'] if a.open_foot else []);proc=guarded(cmd,out/'process',420);(out/'launcher.json').write_text(json.dumps(dict(command=cmd,process=proc),indent=2))
  if not(out/'summary.json').exists():(out/'summary.json').write_text(json.dumps(dict(status='FAIL_EDGE_CLAMP_CHILD',process=proc),indent=2))
  print((out/'summary.json').read_text())
 if __name__=='__main__':main()

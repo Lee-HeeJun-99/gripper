@@ -1,3 +1,11 @@
+## Exact CAD proof / finite pressure shoe924–938 — 2026-11-23
+
+No newSOFA modeladopted:actualjoint/preload/materialdata missing. Newexactrational
+separationcertificates closeONLYpreviousnonvolumeprismquestions,notNativeCCD/
+physicalcontact/time/mesh Gates. New.30mmshoe/v46CAD isresearchgeometryonly.
+Do notreuse895keeperphysicsorB3checkpoint asnewclampvalidation. See
+RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md;alloldphysicalFAILspreserved.
+
 ## CAD-only continuation915–921 — 2026-11-23
 
 No new Native physics run:actualjoint/preload/material evidence missing.

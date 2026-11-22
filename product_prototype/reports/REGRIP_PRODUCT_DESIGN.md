@@ -1,3 +1,12 @@
+## Pressure-shoe candidate926 — 2026-11-23
+
+Separatev46CADpack:ONEsecondRoot pad.30mm,researchdesigninputNOTmaterialspec.
+Skin/Rail/footprintunchanged;lip/screwendpoint+.27mm maintainsunloadedgaps.
+Static288part CSGclear;sampledserviceandsecondfinitewireclear. Specificplanar
+prismquestionsresolvedbyexactproofs,notwholeproductqualification. Thread,
+padmaterial/process,preload/slip/indentationNOTMEASURED. NoSTEP/fabricationPASS.
+AuthorityRAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
+
 ## Rail clamp continuation — 2026-11-23
 
 Actual908 shape unchanged. Newcontinuousservice Support sweep remainsUNRESOLVED

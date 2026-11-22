@@ -16,6 +16,23 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_old_certificate_replay_uses_immutable_producer(self):
+  d=result('product_certificate_snapshot937');self.assertEqual(d['detail']['verified_pairs'],20336)
+  inputs=d['input_hashes'];self.assertIn('results/product_rail_certificate924/producer.py',inputs)
+  self.assertEqual(inputs['results/product_rail_certificate924/producer.py'],result('product_rail_certificate924')['input_hashes']['cad/swept_separation_certificate.py'])
+ def test_pressure_shoe_is_separate_unloaded_geometry(self):
+  old=result('product_rail_clamp908');new=result('product_rail_pressure_shoe926')
+  self.assertEqual(old['full_part_count'],new['full_part_count']);self.assertEqual(new['design_pad_thickness_mm'],.3);self.assertFalse(new['solid_intersections']);self.assertIsNone(new['actual_preload_N']);self.assertIsNone(new['pad_material'])
+  self.assertAlmostEqual(next(r['volume_mm3'] for r in new['records'] if 'pressure_pad' in r['part']),.576)
+  stack=result('product_shoe_stack932')['closure'];self.assertAlmostEqual(stack['pad_thickness_mm'],.3);self.assertAlmostEqual(stack['ideal_free_stack_closure_travel_mm'],.07,places=6)
+ def test_pressure_shoe_wire_service_and_pack_keep_scope(self):
+  service=result('product_rail_shoe_service928');self.assertFalse(any(r['intersections'] for r in service['records']));self.assertIn('SAMPLED',service['records'][2]['type'])
+  self.assertEqual(result('product_rail_shoe_wire929')['assembly_part_count'],288)
+  pack=result('product_rail_shoe_pack930');self.assertEqual(pack['saved_STL_count'],9);self.assertFalse(pack['STEP_generated']);self.assertFalse(pack['fabrication_ready'])
+ def test_new_shoe_surface_proofs_not_old_triangle_indices(self):
+  raw=result('product_shoe_continuous933');self.assertEqual(len(raw['support_surface_refinement']['unresolved_prisms']),36)
+  proof=result('product_shoe_certificate934');self.assertEqual(proof['certified_pairs'],36*(332+164));self.assertFalse(any(r['unresolved_pairs'] for r in proof['records']))
+  self.assertEqual(result('product_shoe_certificate_audit935')['detail']['verified_pairs'],17856)
  def test_nonvolume_prisms_have_new_exact_proofs_not_rewritten_old_scope(self):
   old=result('product_rail_surface917');self.assertEqual(len(old['support_surface_refinement']['unresolved_prisms']),41)
   d=result('product_rail_certificate924');self.assertEqual(d['certified_pairs'],41*(332+164));self.assertFalse(any(r['unresolved_pairs'] for r in d['records']))

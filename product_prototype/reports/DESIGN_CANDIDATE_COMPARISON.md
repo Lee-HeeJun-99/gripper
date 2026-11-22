@@ -1,3 +1,13 @@
+## Pressure-shoe926 vs Railclamp908 — 2026-11-23
+
+Designpad.03→.30mm;footprintunchanged1.92mm²,necessarylip/screwendpoint+.27mm.
+SameSkin/Rail/wire/Root. 926288partsstaticclear;928sampledserviceclear;
+929secondfinitewireclear. v46actualCADpack,NOTSTEP/fabricationready.
+Actualgeometryfree-stackclosure~.07mm remains;noactualpreload/jointcapacity.
+Old41nonvolumeprisms/new36resolvedwith20336/17856exactseparationproofsand
+independentreplay;NOdynamic/holding/time/mesh superiorityclaim. Material/process
+unselected. AuthorityRAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
+
 ## Rail-clamp908 continuation915–921 — 2026-11-23
 
 No newshape adopted. Continuous convex envelopes clearseven parts but Support

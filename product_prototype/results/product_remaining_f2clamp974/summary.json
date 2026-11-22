@@ -1,0 +1,98 @@
+{
+  "status": "CLAMPED_ROOT_PLACEMENT_REVIEW",
+  "source_commit": "07a424c66cad0fb0b490fb99cc713ecee75c2970",
+  "input_hashes": {
+    "cad/remaining_clamped_root.py": "8ac1ac6e766eed7dade66da94b613f2d88e90820adb64ec1042e2bb48034154c",
+    "results/product_remaining_c1lead971/assembly_delta_recipe.json": "69476ad3dde922a70adaab1cdb6e8054a8d84fc4c2f9282b784a4c948ad00547",
+    "results/product_captive_nut941/full_assembly_recipe.json": "c30d4ca5096eb4db8809089e52cc13bb129b56f0519e6bc1db8c610be3b61afe",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b",
+    "results/product_remaining_clamped968/assembly_delta_recipe.json": "5c369e8b19ad86d4c771656df59842890b2c90f3b833b8fb86d7a323a444393b",
+    "results/product_remaining_lead964/full_assembly_recipe.json": "6b0fb423bef3d4e71376998668d333ba6b1ee6401905806d03dc2ae6f6b4b985",
+    "cad/assembly_recipe_io.py": "da1721c98679664619e748cab6add2ca28838be5fb03a9e0e6394b1701a31a02"
+  },
+  "records": [
+    {
+      "part": "f2_c1_root_redirect",
+      "STL_SHA256": "1c6d9eedf5ecb77c69332af05efef2ff9fff5c7d6fd19551053e0165419729f0",
+      "volume_mm3": 242.60453027385404
+    },
+    {
+      "part": "f2_c1_root_mounted_bridge",
+      "STL_SHA256": "63f62260cbbfa9c297a007a8c88456000b40b4334ceab5058b55e8392703750c",
+      "volume_mm3": 2350.9624538025123
+    },
+    {
+      "part": "f2_c1_root_headed_pin",
+      "STL_SHA256": "23a03e6ce93f1a8dd9824a0f69df2984cba5a45f8252c963a40e6f9b59687e51",
+      "volume_mm3": 9.72330033709259
+    },
+    {
+      "part": "f2_c1_s0_eyelet",
+      "STL_SHA256": "69e0ad52bca1734d28efa887c62fb0d4e5c2bdf1dae21972def0c325821cc2ef",
+      "volume_mm3": 11.040650686721733
+    },
+    {
+      "part": "f2_c1_s0_keeper_cover",
+      "STL_SHA256": "a871d3adc771d7f4117c1787a3542763c20e9df2b33164c4bc95cdd055fd5ae7",
+      "volume_mm3": 41.61419734722282
+    },
+    {
+      "part": "f2_c1_s0_keeper_screw0",
+      "STL_SHA256": "abf27b552e3f7e6decbcfbb6f9b81adfe0ee870763c252f5393786a06dd20574",
+      "volume_mm3": 8.225598339683946
+    },
+    {
+      "part": "f2_c1_s0_keeper_screw1",
+      "STL_SHA256": "9bcafe6ff6f4a217166b7c7b87e60f7b9d6bc27d4648717439b6a0058fc5f38f",
+      "volume_mm3": 8.22559833968385
+    },
+    {
+      "part": "f2_c1_s0_keeper_nut0",
+      "STL_SHA256": "d4712a4f7e197a54ec0a4cd55745fd799d3fdfc1c5af6804d4238946748994f4",
+      "volume_mm3": 2.1948663812341684
+    },
+    {
+      "part": "f2_c1_s0_keeper_nut1",
+      "STL_SHA256": "3570ddc084a1c78e3260d2f59bb88b6f84d5b55780c06e8eb651fe5720134616",
+      "volume_mm3": 2.194866381234173
+    },
+    {
+      "part": "f2_c1_s0_rail_pressure_pad_RESEARCH",
+      "STL_SHA256": "318f6ccd3ee745f6c1ab948b2e16e740ffc793e6df83c2c29e9bf36b26aba582",
+      "volume_mm3": 0.5759999999999966
+    },
+    {
+      "part": "f2_c1_s0_support",
+      "STL_SHA256": "7d7c83e8968c8f61df3f5c9f2fe5c721efe662ba5879f0953659289e3041d337",
+      "volume_mm3": 161.4817463080481
+    },
+    {
+      "part": "f2_c1_s0_pressure_adjuster_M1p6",
+      "STL_SHA256": "d30e7d0ee65de46d25e7f5d18bf70e7532b7b65ad591ce5f1a0c589755d8b1ab",
+      "volume_mm3": 5.051076880895901
+    },
+    {
+      "part": "f2_c1_s0_pressure_captive_nut_M1p6",
+      "STL_SHA256": "65c4391a98d402f07b3b03275491621e275cc0312794c7f7b7343eca202e0fe7",
+      "volume_mm3": 8.853274604544646
+    }
+  ],
+  "solid_intersections": [
+    {
+      "parts": [
+        "f2_c1_root_mounted_bridge",
+        "palm_bridge_bores"
+      ],
+      "faces": 328,
+      "signed_volume_mm3": 0.0
+    }
+  ],
+  "target_finger": 2,
+  "target_cable": 1,
+  "retained_part_count": 276,
+  "candidate_part_count": 289,
+  "runtime_s": 10.000670593930408,
+  "fabrication_ready": false,
+  "actual_joint_strength": null,
+  "scope": "ONE13part donor c1Root/clamp independently placed against exact parent-resolved retained assembly. All hardware collisions retained. Delta MUST resolve exact parent SHA;not standalone full assembly. Source backbone includes Turn forks,legacy target Turn wheel/axle/shims not yet coherently replaced;wire/service/motion MUST be checked after completion. No bond deletion,Nativeadoption,preload/material/holding/STEPqualification."
+}

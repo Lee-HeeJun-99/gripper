@@ -1,9 +1,26 @@
-import json,tempfile,unittest
+import csv,json,tempfile,unittest
 from pathlib import Path
 from assembly_recipe_io import resolve_recipe
 from manufacturing_assembly import sha
 
 class RecipeIOTests(unittest.TestCase):
+ def test_completed_c1_chain_and_wire(self):
+  from manufacturing_assembly import BASE
+  parts,hashes=resolve_recipe(BASE/'results/product_remaining_f2lead975/assembly_delta_recipe.json')
+  self.assertEqual(len(parts),283);self.assertEqual(len(hashes),5)
+  d=json.loads((BASE/'results/product_remaining_f2wire976/summary.json').read_text())
+  self.assertFalse(any(r['classification']=='UNRESOLVED_OBSTACLE' for r in d['intersections']))
+ def test_service_does_not_become_motion_qualification(self):
+  from manufacturing_assembly import BASE
+  for n,finger in [('product_remaining_f1service977',1),('product_remaining_f2service978',2),('product_completed_f0service979',0)]:
+   d=json.loads((BASE/'results'/n/'summary.json').read_text());self.assertEqual(d['target_finger'],finger)
+   self.assertFalse(any(r['intersections'] for r in d['records']));self.assertFalse(d['actual_locking_or_preload_qualified'])
+   self.assertTrue(any(r['type']=='SAMPLED_DIAGONAL_ASSEMBLY_REMOVAL' for r in d['records']))
+ def test_BOM_does_not_invent_material_mass(self):
+  from manufacturing_assembly import BASE
+  with (BASE/'results/product_resolved_BOM980/assembly_instance_BOM.csv').open() as f:rows=list(csv.DictReader(f))
+  self.assertEqual(len(rows),283);self.assertEqual(len({r['instance'] for r in rows}),283)
+  self.assertTrue(all(r['actual_mass_g']=='NULL' and r['actual_material']=='NULL' for r in rows))
  def test_actual_chain_has_unique_ids(self):
   from manufacturing_assembly import BASE
   parts,hashes=resolve_recipe(BASE/'results/product_remaining_c1lead971/assembly_delta_recipe.json')

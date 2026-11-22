@@ -1,5 +1,11 @@
 ## Current971+ — 2026-11-23
 
+UPDATE974–981: allremaining c1Root/Turn placements implemented,RESTcandidate283
+parts.976f2c1wireclear;977–9793Rootserviceenvelopes/sampledscreensclear.980
+actualinstanceBOM,actualmaterials/massNULL.981154softwaretestsPASS. NEXTfinal
+6lead screen982 then fullfinger/wire-wire/movingclearance andmanufacturing
+joint/driveinterface. No actualNative/physics/STEPGate upgrade.
+
 Read product_prototype/reports/C1_LEAD_COMPLETION_20261123.md. f1/c1Turn971
 and705probe full lead972 clear in REST geometry only. Strict hashed delta
 resolver introduced,151software tests973PASS. NEXT independent f2/c1Root,

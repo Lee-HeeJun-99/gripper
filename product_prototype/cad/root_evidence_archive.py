@@ -12,7 +12,7 @@ def main():
  for case in a.cases:
   if Path(case).name!=case:raise ValueError('local case name required')
   folder=BASE/'results'/case;summary=folder/'summary.json';detail=json.loads(summary.read_text());shutil.copy2(summary,out/(case+'.json'));record=dict(summary_sha256=sha(summary),status=detail['status'],annotations={})
-  for name,digest in detail.get('input_hashes',{}).items():
+  for name,digest in [*detail.get('input_hashes',{}).items(),*detail.get('binary_hashes',{}).items()]:
    path=Path(name)
    if path.is_absolute() and str(path).startswith('/home/ubuntu/SOFA/'):
     if not path.is_file() or sha(path)!=digest:raise ValueError('recorded SDK input changed:'+name)
@@ -33,7 +33,7 @@ def main():
    for f in draw.rglob('*'):
     if f.is_file():files[str(f.relative_to(root))]=sha(f)
  for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
- for pattern in ('root_*.py','metric_mesh_query.py','native_finite_guard.py','finite_guard_fixture.py','finite_guard_test_run.py'):
+ for pattern in ('root_*.py','eyelet_*.py','metric_mesh_query.py','native_finite_guard.py','finite_guard_fixture.py','finite_guard_test_run.py'):
   for f in (BASE/'sofa').glob(pattern):shutil.copy2(f,out/('sofa_'+f.name))
  for pattern in ('root_*.json','wire_bend_*.json'):
   for f in (BASE/'config').glob(pattern):shutil.copy2(f,out/('config_'+f.name))

@@ -1,3 +1,13 @@
+## Mechanical keeper / Railclamp review — 2026-11-22
+
+Actualparametricmeshreviewpacks:v44mechanicalEyelet286parts andv45Railclamp
+288parts,7/9individualSTLs,fullrecipes,BOM,parameters,3sections,DESIGNexploded
+recipes. v45includesUNLOADED.5mmRail/.1mmSkin edgeclamp;screw/pad/preload/
+material/thread/friction/slip/filmstrengthNOTqualified. Rootstation12mmsection
+showsrealstack. Staticclear andsampleddiagonalserviceareNOTfabricationapproval.
+ActualNative895testsONLY894keeperunderidealrigidassumptions,notnewRailjoint.
+No STEP/selectedmotor/material/50gfinal/100g/Liftqualification. OldB3preserved.
+
 ## Supplier-sized turn branches — 2026-11-22
 
 LATEST886:results/product_supplier_second_root886/full_assembly_recipe.json,

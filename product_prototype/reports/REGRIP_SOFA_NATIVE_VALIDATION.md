@@ -1,3 +1,15 @@
+## Actual Native Eyelet895 / geometry892–914 — 2026-11-22
+
+NEWactualNative20ms/80step finiteEyeletkeepercoupon895 completed273.135s with
+installedSOFAFreeMotion/EulerImplicit/BlockGaussSeidel/MinProximity,mu0. Actual
+8946keeper solids ideallyfixed,assumed100mguniformEyelet,initialspeed10mm/s,
+gravity0.899actual4modelpairs/92nonzeroresponseRows sum matchesmΔv1.48e-28Ns;
+publicmass/inertia matchesRESEARCHinput. NOTrealmaterial/preload/strength,
+impactlaw/angular/energy/time/mesh/3FingerHoldingqualification. Source/binary/
+scene/SDK/publicmass/journals preserved. No SDKchanges ornewphysicsSolver.
+New908Railclamp isUNLOADED CADONLY;895mustNOTbeusedasitsphysicalqualification.
+914101softwaretestsPASSonly. Alloldtime/mesh/100g/Lift/wholeenergyFAIL/openstay.
+
 ## Supplier turn continuation873–884 — 2026-11-22
 
 NO newSOFAexecution. Actual CAD/finitewire/service checks improved two turn

@@ -1,3 +1,14 @@
+## Mechanical Eyelet / Railclamp review — NOT FABRICATION READY (2026-11-22)
+
+v44keeper pack:286instances,finitecover/2screw/2nut proxies,EyeletD3/L2 retained.
+v45Railclamp pack:288instances,UNLOADED Cedgeclamp/setscrew/pressurepad added.
+Actualfiles inmeshes/drawings/b3_mechanical_eyelet_v44 andb3_rail_edge_clamp_v45.
+Procedureunthreadwire/unloadactuator;removeclampscrew,slidepadinboard,then
+7partkeeperassembly diagonallyoutboard+longitudinalratio1. Exactfastenersweeps
+andSAMPLEDassemblyclearances only;sidewaysremovalFAIL907/909preserved. No full
+CCD/hand/thread/preload/capture/tolerancetest. Actualmaterial/jointstrengthNULL.
+Pad.03mm isdesignproxy,notfabrication-approved. NoSTEPorproductassemblyPASS.
+
 ## Supplier-sized first Root unit — NOT FABRICATION READY (2026-11-21)
 
 293partCADcandidate:meshes/b3_supplier_eyelet_seat_v43/full_assembly_recipe.json.

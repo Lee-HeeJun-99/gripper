@@ -1,4 +1,30 @@
-## Latest mechanical Eyelet892–900 — 2026-11-22
+## Latest Rail-clamp904–914 — 2026-11-22
+
+Authority product_prototype/reports/RAIL_ATTACHMENT_CLAMP_20261122.md.
+Actual908288part UNLOADEDcandidate andv45CADpack completewithinscope.914101
+softwaretestsPASS. Staticclear isNOTservicePASS:907/909failures preserved;
+910onlyDIAGONAL SAMPLEDserviceclear.911wireclear. Native895is894keeperONLY,
+notnewRailclamp/preload/holding. No STEP/material/joint/skinloadqualification.
+NEXT measured/specifiable preload/slip/indentation/material/retention joint
+contract;doNOTinventRigidMappingtie orrepeat273s895. Actualpreload/strengthNULL.
+Actualgeometry/servicecommands inauthorityreport;remaining4Roots/12turns,
+fullmovingwire,time/mesh/100g/LiftGatesopen. Sourcecad/rail_edge_clamp.py,
+rail_clamp_service.py. Candidate results/product_rail_clamp908/full_assembly_recipe.json.
+Finalevidence product_prototype/reports/evidence_product_eyelet_keeper_v50/manifest.json
+verifies12447oldimmutablehashes0mismatches. No active researchchildren.
+
+## Mechanical Eyelet892–902 — 2026-11-22
+
+Read product_prototype/reports/MECHANICAL_EYELET_KEEPER_20261122.md,CHECKPOINT.
+901keeperreviewpackcomplete,notSTEP.902Support→Skin samplegap.239388mm,
+ownRail.04999925mm;allCSGempty. InheritedV21.05mmrailbondlinekeepout verified.
+NEXT finiteRail edgeclamp orqualifiedbondedsaddle,not an inventedrigidtie.
+Actualjoint/material/preload/fatigue/wirelaw neededbeforematchedNEWNative.
+89580stepactualNativeaxialstop/899responsemomentum narrowlyverified,not3Finger.
+DoNOTrepeat273s895unchanged orblindlypropagate6keepers. Featured7141b4.
+Actualrecipe results/product_eyelet_keeper894/full_assembly_recipe.json.
+
+## Mechanical Eyelet892–900 — 2026-11-22
 
 Authority product_prototype/reports/MECHANICAL_EYELET_KEEPER_20261122.md.
 Mechanicalkeeper894 static/finitewire896/service897 geometry clear withinscope;

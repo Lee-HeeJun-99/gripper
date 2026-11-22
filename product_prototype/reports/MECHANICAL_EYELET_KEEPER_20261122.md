@@ -1,5 +1,25 @@
 # Mechanical Eyelet keeper continuation — 2026-11-22
 
+Finalevidence_product_eyelet_keeper_v50:23cases(includingFAILs/correction),
+12831filehashes;12447previousimmutablehashes verified0mismatches. ActualSDK
+binaryhashes revalidated,eyeletsource snapshots included.914101softwaretests
+PASS,notproductGates. All launched researchchildren exited;no automaticresearch
+after session claimed. RawNative895CSVjournals preserved on disk (~616MB).
+
+LATEST featured7141b4;Native895 completed,notwholegripperqualification.
+901 actualreviewpack:meshes/drawings/b3_mechanical_eyelet_v44,7savedSTLs,
+286instanceBOM,3readableactualCADsections,explicitDESIGNexplodedrecipe,parameters.
+NoSTEP/fabrication release. 898y0section limitation is corrected by NEW901views,
+not oldplot deletion.901visuallyinspected;notNativevisualization.
+902 independentattachment audit reveals no actualbonded joint:Support vertex
+samples vsSkin min.239388mm,vsownRail min.04999925mm,allsolidCSGempty. These
+are vertex-sampled distances,NOT wholetriangleclearance certification.
+InheritedV21 manufacturing_config.support_design explicitly specifies.05mm
+rail_bondline_clearance_mm;source subtractsexpandedownRail. Thus current loadpath
+requires Support→Rail→Skin attachment,NOT directSupport→Skin contact. Translation
+alone didnot qualify a joint. Actualjointtype/strength remainNULL. Next design
+must specify andtestthat interface ratherthan rigidlytie it without evidence.
+
 Baseline3212e14. Old evidence/SDK preserved. ONE second Root guide only.
 892 replaces unselected bondline by finite split housing,axial stops,cover and
 two screw/nut proxies. Same Eyelet D3/length2mm retained. Connected lower support
@@ -56,3 +76,12 @@ NewNative requires newhypothesis,not automatic repeat. Modelmass/preload are
 researchassumptions,not measured data or oldB3adoption. No50g/100g/Lift/STEP/
 fabrication/time/meshPASS. Next:complete readable keeperCAD/BOM/servicepack,
 then address translated Skin attachment/actualjointandmaterial qualification.
+
+Readablepack901 iscomplete withinCAD-onlyscope. Physicaljoint/material/preload/
+fatigue/strength and currentNativewholewirecontract remainBLOCKED withoutdata;
+other4Roots/12turns andfullmovingassembly notqualified. Do not select a motor
+fromB3prescribed1.5N or erase these constraints with assumed material properties.
+Next feasible geometryhypothesis:finite Rail edge-clamp or explicitly specified
+bondedsaddle must preserve.5mmRail/.1mmSkin androotregionflexibility;compare
+interference,assemblyaccess andjointforce-transfer independently. No actual
+connection is inferredfromproximity. See902actualsummary beforeimplementing.

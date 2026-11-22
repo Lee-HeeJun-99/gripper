@@ -1,4 +1,37 @@
-## Latest mechanical Eyelet892–900 — 2026-11-22
+## Latest Rail-clamp904–914 — 2026-11-22
+
+Read RAIL_ATTACHMENT_CLAMP_20261122.md andMECHANICAL_EYELET_KEEPER_20261122.md.
+Actual908288part UNLOADEDcandidate addsfiniteRail/SkinCclamp,screw,pad tokeeper894.
+904invalidSTL/905padcollision/907serviceFAIL preserved. LocalCSG fixesmesh
+representationwithoutdeletingtriangles;906padfit clearsstatic,butsideways
+servicefailsRail+Rootwheel.908openfoot removesinheritedRailundercut;909only
+Rootwheel remains.910diagonaloutboard+longitudinalratio1 clears SAMPLEDservice.
+911finitewireclear(288actualsolids).912actualCADpack meshes/drawings/
+b3_rail_edge_clamp_v45 (9STLs,288BOM,parameters,DESIGNexplodedrecipe).913actual
+Skin/Rail/clampdetailvisuallyinspected.914101softwaretestsPASS,notproductGates.
+Native895 appliesONLYto894keeper,NOTnewRailclamp908. Actualpreload/friction/
+material/slip/filmdamage/strengthNULL;no force-transfer orholdingPASS.
+NEXT qualify preload/slip/indentation andactualjoint/material contract BEFORE
+matchedNativeadoption;independent remainingsector/movingclearance stillopen.
+Read-only resume:robot_wsPython -m json.tool product_prototype/results/product_rail_service910/summary.json.
+Feature d7141b4 plusnext CADcontinuationcommit. NoSTEP/SDKchanges/push.
+Evidenceproduct_eyelet_keeper_v50 (reports/evidence_product_eyelet_keeper_v50):
+12447priorimmutablehashes verified0mismatch,12831files/23casesincludingfailures.
+Native895actualSDKbinaryhashes revalidated. No active researchchildren.
+
+## Mechanical Eyelet892–902 — 2026-11-22
+
+Featurecommitd7141b4.901actualreviewpackcomplete:meshes/drawings/
+b3_mechanical_eyelet_v44 (7STLs,286instanceBOM,parameters,3sections,DESIGNexploded
+recipe). NoSTEP/fabrication release.902actualvertex-sampledcadgap Support→Skin
+.239388mm,Support→ownRail.04999925mm,CSGempty. SourceV21inherited.05mmrail
+bondlinekeepout confirmed. NOactualbond/tiedjoint orSkinloadtransferproven.
+NEXT specify finiteRail edgeclamp orqualifiedbondedsaddle,keepingrealRail/Skin
+geometry;independentjointforce/preload/material/fatiguetest needed. No arbitrary
+RigidMapping tie oroldB3checkpointadoption. ActualNative895narrowaxialcoupon
+and899momentumidentity preserved;notwholegripper/time/mesh/100g/LiftPASS.
+
+## Mechanical Eyelet892–900 — 2026-11-22
 
 Read MECHANICAL_EYELET_KEEPER_20261122.md. Actual894286part candidate replaces
 ONE secondRoot bondline with finite split keeper/cover/2screw+2nut proxies.

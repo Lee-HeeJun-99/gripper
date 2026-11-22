@@ -14,6 +14,29 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_rail_clamp_preserves_failed_mesh_and_pad_fit(self):
+  d=result('product_rail_clamp904');self.assertEqual(d['status'],'FAIL_EDGE_CLAMP_CHILD');m=trimesh.load_mesh(BASE/'results/product_rail_clamp904/f0_c1_s0_support.stl');self.assertFalse(m.is_watertight)
+  d=result('product_rail_clamp905');self.assertTrue(any(h['volume_mm3']>.01 for h in d['solid_intersections']))
+  d=result('product_rail_clamp906');self.assertFalse(d['solid_intersections']);self.assertIsNone(d['actual_preload_N']);self.assertFalse(d['fabrication_ready'])
+ def test_rail_service_failure_cause_is_separated(self):
+  old=result('product_rail_service907');new=result('product_rail_service909');good=result('product_rail_service910')
+  oldhits={h['part'] for r in old['records'] for h in r['intersections']};newhits={h['part'] for r in new['records'] for h in r['intersections']}
+  self.assertIn('f0_rail_right',oldhits);self.assertNotIn('f0_rail_right',newhits);self.assertIn('f0_c1_root_redirect',newhits)
+  self.assertFalse(any(r['intersections'] for r in good['records']));self.assertEqual(good['longitudinal_ratio'],1);self.assertEqual(good['moving_subassembly_count'],7)
+ def test_rail_candidate_pack_and_wire_are_not_preloaded_joint(self):
+  d=result('product_rail_clamp908');self.assertTrue(d['open_foot']);self.assertEqual(d['full_part_count'],288);self.assertIsNone(d['actual_joint_strength_N'])
+  w=result('product_rail_wire911');self.assertEqual(w['assembly_part_count'],288);self.assertEqual(w['status'],'WIRE_OBSTACLE_SCREEN_CLEAR_ONLY')
+  p=result('product_rail_pack912');self.assertEqual(p['saved_STL_count'],9);self.assertEqual(p['BOM_instances'],288);self.assertFalse(p['fabrication_ready']);self.assertFalse(p['STEP_generated'])
+ def test_keeper_native_public_mass_matches_research_input_only(self):
+  d=result('product_eyelet_native895');m=json.loads((BASE/'results/product_eyelet_native895/eyelet.csv.mass.json').read_text())['elements'][0];A=np.array(m['matrix']);self.assertEqual(m['mass_kg'],d['ASSUMED_eyelet_mass_kg'])
+  np.testing.assert_allclose(A[:3,:3],np.eye(3)*m['mass_kg'],rtol=0,atol=0);np.testing.assert_allclose(A[3:,3:],np.array(d['assumed_uniform_inertia_per_mass_m2'])*m['mass_kg'],rtol=1e-12,atol=1e-30)
+ def test_keeper_pack_is_actual_cad_not_step_release(self):
+  d=result('product_eyelet_pack901');self.assertEqual(d['saved_STL_count'],7);self.assertEqual(d['BOM_instances'],286);self.assertFalse(d['STEP_generated']);self.assertFalse(d['fabrication_ready'])
+  recipe=json.loads((BASE/'meshes/b3_mechanical_eyelet_v44/exploded_review_recipe.json').read_text());self.assertEqual(len(recipe['parts']),7);self.assertIn('NOT actual motion',recipe['scope'])
+ def test_keeper_support_not_invented_skin_joint(self):
+  d=result('product_eyelet_attachment902');r={r['target']:r for r in d['records']};self.assertIsNone(d['actual_joint_type']);self.assertIsNone(d['actual_joint_strength_N'])
+  self.assertGreater(r['f0_skin']['minimum_SUPPORT_VERTEX_sampled_distance_mm'],.2);self.assertGreater(r['f0_rail_right']['minimum_SUPPORT_VERTEX_sampled_distance_mm'],.049)
+  self.assertFalse(any(r['CSG_faces'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
  def test_eyelet_keeper_rejected_profiles_remain(self):
   first=result('product_eyelet_keeper892');second=result('product_eyelet_keeper893');last=result('product_eyelet_keeper894')
   self.assertTrue(any(h['volume_mm3']>.5 for h in first['solid_intersections']));self.assertTrue(any(h['volume_mm3']>0 for h in second['solid_intersections']))

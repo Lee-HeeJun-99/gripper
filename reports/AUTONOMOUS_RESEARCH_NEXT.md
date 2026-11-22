@@ -1,5 +1,9 @@
 ## Latest Rail-clamp904–914 — 2026-11-22
 
+Last functional commitd10f564;preceding Native/keeperfeatured7141b4. No active
+researchchildren. Physicaljoint/material/preloadqualificationBLOCKED on actual
+measurementdata;no assumedNULLreplacement ornew3FingerPASS permitted.
+
 Authority product_prototype/reports/RAIL_ATTACHMENT_CLAMP_20261122.md.
 Actual908288part UNLOADEDcandidate andv45CADpack completewithinscope.914101
 softwaretestsPASS. Staticclear isNOTservicePASS:907/909failures preserved;

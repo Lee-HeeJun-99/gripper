@@ -14,10 +14,15 @@ material/slip/filmdamage/strengthNULL;no force-transfer orholdingPASS.
 NEXT qualify preload/slip/indentation andactualjoint/material contract BEFORE
 matchedNativeadoption;independent remainingsector/movingclearance stillopen.
 Read-only resume:robot_wsPython -m json.tool product_prototype/results/product_rail_service910/summary.json.
-Feature d7141b4 plusnext CADcontinuationcommit. NoSTEP/SDKchanges/push.
+Last functional commitd10f564 (preceding Native/keeperfeatured7141b4).
+Workingtree clean afterfinalcheckpointsave. NoSTEP/SDKchanges/push.
 Evidenceproduct_eyelet_keeper_v50 (reports/evidence_product_eyelet_keeper_v50):
 12447priorimmutablehashes verified0mismatch,12831files/23casesincludingfailures.
 Native895actualSDKbinaryhashes revalidated. No active researchchildren.
+Physicaljoint qualification BLOCKED:actualmaterial/preload/slip/filmindentation
+data areNOTMEASURED. Do notfillNULLwithassumedvalues toadoptnew3Fingerphysics.
+Exact read-only resume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/product_rail_service910/summary.json`.
 
 ## Mechanical Eyelet892–902 — 2026-11-22
 

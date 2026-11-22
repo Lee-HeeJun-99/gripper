@@ -1,8 +1,9 @@
 # Rail attachment / service continuation — 2026-11-22
 
+Last functional commitd10f564;preceding Native/keeperfeatured7141b4.
 914 final101softwaretestsPASS(1.991stestbody/2.542sguardedruntime). v50evidence
 chain verifies12447priorimmutablehashes0mismatch;23newcases,not23physicalPASS.
-No active researchchildren. Latestfeaturecommit recordedinCHECKPOINT aftersave.
+No active researchchildren. Exactnexttask andphysicaldatablockers inCHECKPOINT.
 
 Following featured7141b4,not a newsolver. 902actualgeometry audit found Support
 vertex-sampled distancesSkin.239388mm,ownRail.04999925mm;CSGempty. SourceV21

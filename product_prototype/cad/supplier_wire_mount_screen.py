@@ -27,6 +27,8 @@ def worker(a):
  if a.cable==1:result['scope']='SECOND channel LEAD ONLY .45mm design envelope,pull→3supplier-sized turns→drum. Root arc deliberately NOT included because legacy Root remains bend-INCOMPATIBLE;do not claim whole-path clearance. All281finite solids retained,intended proximities recorded. No moving-wire/contact-law/Native/product qualification.'
  if a.complete_root:result['scope']='SECOND channel translated firstguide→rebuiltRoot→3turns→drum finite .45mm design envelope. All282solid obstacles retained,intended wheel proximities recorded. Not fullfinger/allchannels/movingclearance,wirelaw/Native/material/joint/strength or productqualification. Unselected bondline and translated Skin attachment unqualified.'
  result['cable']=a.cable
+ result['assembly_part_count']=len(parts)
+ result['scope']=result['scope'].replace('All282solid',f'All{len(parts)}solid').replace('All281finite',f'All{len(parts)}finite')
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],probe_count=count,unresolved_hits=sum(h['classification']=='UNRESOLVED_OBSTACLE' for h in hits),runtime_s=result['runtime_s']),indent=2))
 
 def main():

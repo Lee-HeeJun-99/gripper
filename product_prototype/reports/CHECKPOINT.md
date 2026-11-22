@@ -1,4 +1,18 @@
-## Latest second Root886–891 — 2026-11-22
+## Latest mechanical Eyelet892–900 — 2026-11-22
+
+Read MECHANICAL_EYELET_KEEPER_20261122.md. Actual894286part candidate replaces
+ONE secondRoot bondline with finite split keeper/cover/2screw+2nut proxies.
+892/893RootwheelcollisionFAIL retained;894outboardtabs andphysicalwall.45mm
+clearstaticCSG.896finitewireclear(metadataCORRECTION286parts),897serviceclear
+within exactfastenersweeps+sampledcover scope.898CADstops bothaxialdirections.
+NEWNative895 actual80steps/20ms,273.135s,assumed100mgEyelet/idealfixedkeeper,
+maxaxialtravel.100000019704mm.899actualresponsepairs/impulses vs mΔv residual
+1.48e-28Ns,rigidjournalagreement0. NOTrealjointstrength/time/mesh/graspPASS.
+NEXT readable CAD/BOM/servicepack,then translatedSkinattachment/actualjoint
+andmaterial qualification. No oldB3checkpoint reuse;other4Roots/12turnslegacy.
+Rawresults/product_eyelet_*,actualrecipe product_eyelet_keeper894/full_assembly_recipe.json.
+
+## Second Root886–891 — 2026-11-22
 
 Actual current CAD results/product_supplier_second_root886/full_assembly_recipe.json
 has282parts:2Roots+6turns resized to candidate .45mmwire bend guidance,onlyONE

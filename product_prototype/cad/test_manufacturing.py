@@ -14,6 +14,22 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_eyelet_keeper_rejected_profiles_remain(self):
+  first=result('product_eyelet_keeper892');second=result('product_eyelet_keeper893');last=result('product_eyelet_keeper894')
+  self.assertTrue(any(h['volume_mm3']>.5 for h in first['solid_intersections']));self.assertTrue(any(h['volume_mm3']>0 for h in second['solid_intersections']))
+  self.assertFalse(last['solid_intersections']);self.assertEqual(last['full_part_count'],286);self.assertEqual(len(last['records']),6)
+  self.assertTrue(all(r['singlebody'] for r in last['records']));self.assertIsNone(last['actual_preload_N']);self.assertFalse(last['fabrication_ready'])
+ def test_eyelet_keeper_service_is_scoped_and_wire_metadata_corrected(self):
+  d=result('product_eyelet_service897');self.assertEqual(len(d['records']),18);self.assertFalse(any(r['intersections'] for r in d['records']));self.assertFalse(d['fabrication_ready'])
+  w=result('product_eyelet_wire896');self.assertEqual(w['status'],'WIRE_OBSTACLE_SCREEN_CLEAR_ONLY');c=json.loads((BASE/'results/product_eyelet_wire896/CORRECTION.json').read_text());self.assertFalse(c['geometry_or_numerical_change']);self.assertIn('286',c['correct_value'])
+ def test_eyelet_keeper_geometry_not_preload(self):
+  d=result('product_eyelet_geometry898');self.assertFalse(d['fabrication_ready'])
+  for r in d['records']:
+   if abs(r['axial_displacement_mm'])==.15:self.assertTrue(all(h['volume_mm3']>.1 for h in r['intersections']))
+   if r['axial_displacement_mm']==0:self.assertFalse(any(h['faces'] for h in r['intersections']))
+ def test_eyelet_native_actual_rows_not_clamp_qualification(self):
+  d=result('product_eyelet_native895');a=result('product_eyelet_audit899');self.assertEqual(d['state_rows'],80);self.assertEqual(a['rows'],80);self.assertEqual(len(a['active_model_pairs']),4)
+  self.assertLess(a['maximum_linear_momentum_residual_Ns'],5e-12);self.assertEqual(a['maximum_rigid_vs_response_impulse_discrepancy'],0);self.assertIsNone(d['actual_joint_strength_N']);self.assertFalse(d['fabrication_ready'])
  def test_supplier_second_root_keeps_finite_joint_review_failure(self):
   d=result('product_supplier_second_root886');self.assertEqual(d['full_part_count'],282);self.assertEqual(len(d['records']),6);self.assertTrue(all(r['singlebody'] for r in d['records']))
   np.testing.assert_allclose(d['pin_outward_axis'],[0,-1,0],rtol=0,atol=1e-12)

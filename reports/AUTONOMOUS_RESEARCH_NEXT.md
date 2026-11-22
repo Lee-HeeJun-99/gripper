@@ -1,4 +1,15 @@
-## Latest second Root886–891 — 2026-11-22
+## Latest mechanical Eyelet892–900 — 2026-11-22
+
+Authority product_prototype/reports/MECHANICAL_EYELET_KEEPER_20261122.md.
+Mechanicalkeeper894 static/finitewire896/service897 geometry clear withinscope;
+failed892/893preserved. ActualNative89520ms axialstop coupon completes273s,
+899ResponseRow momentum identity narrowlyPASS;NOTphysicalclampstrength/grasp.
+NEXT readable keeperCAD/BOM/servicepack (898y0section liesinsplitgap),then
+translatedSkinattachment andrealjoint/material qualification. No unchanged
+273sNative repeat,oldcoupon/dt/alarm sweep orunqualifiedB3checkpoint reuse.
+Sourcecad/eyelet_keeper.py,sofa/eyelet_keeper_coupon.py. Other4Roots/12turnslegacy.
+
+## Second Root886–891 — 2026-11-22
 
 Last functional commit61cd6c6 (preceding e11fc36). No active researchchildren.
 

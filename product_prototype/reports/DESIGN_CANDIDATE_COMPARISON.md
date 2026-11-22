@@ -1,3 +1,11 @@
+## Rail-clamp908 continuation915–921 — 2026-11-23
+
+No newshape adopted. Continuous convex envelopes clearseven parts but Support
+hull overlap isNOT provenphysicalcollision. Refinedactualsurface sweep917 keeps
+41numericalprismsUNRESOLVED. ActualRootsection920 free-stackclosure.07000002mm,
+notpreload/force-transfer. 919 erroneous vertexwindow extractionannotated.
+No fabrication/holding/time/mesh superiority claimed;authorityRAIL_CONTINUOUS_SERVICE_20261123.md.
+
 ## Mechanical Eyelet / Railclamp892–914 — 2026-11-22
 
 894finitekeeperstaticclear after892/893FAIL;actualNative895idealaxialstop narrow

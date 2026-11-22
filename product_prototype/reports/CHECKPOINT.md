@@ -1,3 +1,18 @@
+## Latest continuous service915–921 — 2026-11-23
+
+Read RAIL_CONTINUOUS_SERVICE_20261123.md. Baseline0a52556 clean. New continuous
+translation envelopes clear pad+six keeper bodies; concave Support hull unresolved.
+916 numerical-prism failure preserved;917 actual triangle sweeps:830CSG tests,
+0 reported intersections,41 NONVOLUME unresolved prisms. NOT continuous-service PASS.
+919 wrong boundary-vertex stack extraction preserved with CORRECTION;920 actual
+x12mm mesh section gives ideal free-stack closure0.07000001788mm,NOT preload.
+921111softwaretests PASS;no newSOFA/SDK/STEP/holding qualification. Actual joint
+material/preload/slip/indentation stillNULL/BLOCKED. NEXT finite manufacturable
+pad/screw interface and physical evidence; robust Support sweep or provable
+convex decomposition,not eps floors or repeated unchanged Native895. Raw
+results/product_rail_continuous915,product_rail_surface916/917,product_clamp_stack919/920.
+Exact read-only resume:robot_wsPython -m json.tool product_prototype/results/product_clamp_stack920/summary.json.
+
 ## Latest Rail-clamp904–914 — 2026-11-22
 
 Read RAIL_ATTACHMENT_CLAMP_20261122.md andMECHANICAL_EYELET_KEEPER_20261122.md.

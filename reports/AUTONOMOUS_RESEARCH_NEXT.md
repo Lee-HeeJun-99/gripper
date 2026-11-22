@@ -1,3 +1,17 @@
+## Latest continuous service915–921 — 2026-11-23
+
+Authority product_prototype/reports/RAIL_CONTINUOUS_SERVICE_20261123.md.
+Seven continuous translation envelopes clear, but Support refined sweep retains
+41 numerical nonvolume prisms (830CSG tests,no reported intersections):UNRESOLVED.
+Do not convert sampled910 or numerical917 to full service PASS. 920 actualRoot
+section yields0.07000001788mm ideal free-stack closure;NOT actual preload. 919
+extraction error preserved and annotated. 111software regressions PASS only.
+NEXT manufacturable pad/screw interface and measured preload/slip/indentation;
+robust kernel Support sweep or provable convex decomposition. Do notinvent
+jointforce/RigidMapping ties,repeatNative895 oradopt oldB3 checkpoint. Physical
+joint qualificationBLOCKED;Native/time/mesh/100g/Lift/STEP stillopen.
+Read-only resume:robot_wsPython -m json.tool product_prototype/results/product_rail_surface917/summary.json.
+
 ## Latest Rail-clamp904–914 — 2026-11-22
 
 Last functional commitd10f564;preceding Native/keeperfeatured7141b4. No active

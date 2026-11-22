@@ -8,12 +8,22 @@ from generate import world,reference_local
 from drive_requirements import requirement
 from prototype_protocol import validate_measurement,measurement_unit
 from wire_bore_audit import radial_extent
+from test_continuous_service import SweptServiceTests
 
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').read_text())
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_continuous_service_does_not_hide_numerical_faces(self):
+  d=result('product_rail_surface917');s=d['support_surface_refinement']
+  self.assertEqual(d['status'],'SURFACE_SWEEP_REVIEW_REQUIRED');self.assertEqual(len(s['unresolved_prisms']),41);self.assertFalse(s['intersections']);self.assertEqual(s['CSG_tests'],830)
+  self.assertEqual(result('product_rail_surface916')['status'],'FAIL_CONTINUOUS_SERVICE_CHILD')
+ def test_stack_section_corrects_boundary_vertex_extraction(self):
+  d=result('product_clamp_stack920');self.assertAlmostEqual(d['closure']['ideal_free_stack_closure_travel_mm'],.07,places=6);self.assertAlmostEqual(d['measured_CAD_coordinates_mm']['rail_skin']['f0_skin'][1],.1)
+  self.assertIsNone(d['closure']['actual_preload_N']);self.assertFalse(d['fabrication_ready'])
+  old=result('product_clamp_stack919');self.assertGreater(old['closure']['ideal_free_stack_closure_travel_mm'],.16)
+  correction=json.loads((BASE/'results/product_clamp_stack919/CORRECTION.json').read_text());self.assertTrue(correction['original_summary_preserved'])
  def test_rail_clamp_preserves_failed_mesh_and_pad_fit(self):
   d=result('product_rail_clamp904');self.assertEqual(d['status'],'FAIL_EDGE_CLAMP_CHILD');m=trimesh.load_mesh(BASE/'results/product_rail_clamp904/f0_c1_s0_support.stl');self.assertFalse(m.is_watertight)
   d=result('product_rail_clamp905');self.assertTrue(any(h['volume_mm3']>.01 for h in d['solid_intersections']))

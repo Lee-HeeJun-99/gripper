@@ -1,0 +1,508 @@
+{
+  "status": "SURFACE_SWEEP_REVIEW_REQUIRED",
+  "source_commit": "0a52556f4a165bfdbb9018494c9a01c58236096e",
+  "input_hashes": {
+    "cad/rail_continuous_service.py": "dac407626c78781201055f40ec34d91a7bd62fcebdaab93460f938deb134ab23",
+    "results/product_rail_clamp908/full_assembly_recipe.json": "fa90f8b03d3fac82899988c6a87c87d5b616e6e2196ab28efb0f01b2eef301d0",
+    "results/product_rail_clamp908/root_frame.json": "4e1a99f8ef32b74793b81c4479c8cd1f395dd910e500d0afa3292338570660ac",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b",
+    "cad/bridge_assembly_audit.py": "360c161d054aa7a7a538a75a6da0da45e6c2eef0c705b80d74cd6a562e988492"
+  },
+  "records": [
+    {
+      "part": "f0_c1_s0_eyelet",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 118.57234103728403,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_cover",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 423.074634546436,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_screw0",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 125.51793229882388,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_screw1",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 125.51793229882448,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_nut0",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 45.45042301213352,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_nut1",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 45.450423012133264,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_support",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 1764.3189403031267,
+      "intersections": [
+        {
+          "part": "f0_skin",
+          "signed_volume_mm3": 1.0562928571627594
+        },
+        {
+          "part": "f0_rail_right",
+          "signed_volume_mm3": 5.223426944533003
+        }
+      ],
+      "verdict": "UNRESOLVED_ENVELOPE_INTERSECTION"
+    },
+    {
+      "part": "f0_c1_s0_rail_pressure_pad_RESEARCH",
+      "translation_mm": [
+        -0.0,
+        4.0,
+        -0.0
+      ],
+      "path_length_mm": 4.0,
+      "convex_source": true,
+      "envelope_volume_mm3": 0.2496000000000246,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    }
+  ],
+  "assembly_part_count": 288,
+  "runtime_s": 7.260367251001298,
+  "fabrication_ready": false,
+  "scope": "Unloaded nominal CAD only. Screw already removed; pad slides inboard4mm then seven-part subassembly moves outboard8mm+longitudinal8mm. Each whole-body convex hull bounds ALL intermediate translations, not just samples. Hull intersections on concave solids are unresolved, NOT actual collision evidence. No rotation, tolerance, wire threading, real tools, preload, moving gripper or Native dynamics qualification. Optional Support refinement checks actual swept triangle prisms against hull-hit obstacles and initial Support solid. Zero-volume/near-coplanar/tangent contacts and numerical certification remain unqualified; no invented face thickness.",
+  "support_surface_refinement": {
+    "intersections": [],
+    "unresolved_prisms": [
+      {
+        "triangle": 2223,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2233,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2237,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2241,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2251,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2255,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2265,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2267,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2271,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2272,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2292,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2305,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2451,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2453,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 3.4579746473658207e-13
+      },
+      {
+        "triangle": 2454,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2460,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": -4.239571656701931e-13
+      },
+      {
+        "triangle": 2462,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2465,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2468,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2469,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2477,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2507,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2508,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2511,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2534,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2535,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2540,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2544,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2550,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2551,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2553,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2570,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": -1.7763568394002505e-14
+      },
+      {
+        "triangle": 2715,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2722,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 3.126388037344441e-13
+      },
+      {
+        "triangle": 2736,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2737,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": -4.3579954459952813e-13
+      },
+      {
+        "triangle": 2773,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2776,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2777,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2787,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      },
+      {
+        "triangle": 2788,
+        "reason": "NONVOLUME_NUMERICAL_PRISM",
+        "obstacles": [
+          "f0_skin",
+          "f0_rail_right"
+        ],
+        "signed_volume_mm3": 0.0
+      }
+    ],
+    "collapsed_candidate_faces": 0,
+    "CSG_tests": 830,
+    "triangle_count": 2798,
+    "initial_intersections": []
+  }
+}

@@ -1,3 +1,11 @@
+## CAD-only continuation915–921 — 2026-11-23
+
+No new Native physics run:actualjoint/preload/material evidence missing.
+Native895 is not repeated or promoted. Continuousservice Support remains
+UNRESOLVED41numericalprisms;111softwaretestsPASS doesNOTqualifyNative/time/mesh.
+ActualCAD free-stackclosure.07000002mm isNOTpreload orNativejointinput.
+Read RAIL_CONTINUOUS_SERVICE_20261123.md;existingNative/physicalFAILs preserved.
+
 ## Actual Native Eyelet895 / geometry892–914 — 2026-11-22
 
 NEWactualNative20ms/80step finiteEyeletkeepercoupon895 completed273.135s with

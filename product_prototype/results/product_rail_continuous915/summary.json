@@ -1,0 +1,130 @@
+{
+  "status": "CONSERVATIVE_SERVICE_UNRESOLVED",
+  "source_commit": "0a52556f4a165bfdbb9018494c9a01c58236096e",
+  "input_hashes": {
+    "cad/rail_continuous_service.py": "f40795684be305d15b310ac01653707da77f3c217de2d8d79a1dc74b3dafa7a7",
+    "results/product_rail_clamp908/full_assembly_recipe.json": "fa90f8b03d3fac82899988c6a87c87d5b616e6e2196ab28efb0f01b2eef301d0",
+    "results/product_rail_clamp908/root_frame.json": "4e1a99f8ef32b74793b81c4479c8cd1f395dd910e500d0afa3292338570660ac",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b",
+    "cad/bridge_assembly_audit.py": "360c161d054aa7a7a538a75a6da0da45e6c2eef0c705b80d74cd6a562e988492"
+  },
+  "records": [
+    {
+      "part": "f0_c1_s0_eyelet",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 118.57234103728403,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_cover",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 423.074634546436,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_screw0",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 125.51793229882388,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_screw1",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 125.51793229882448,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_nut0",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 45.45042301213352,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_keeper_nut1",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 45.450423012133264,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    },
+    {
+      "part": "f0_c1_s0_support",
+      "translation_mm": [
+        -1.9353751647973354,
+        -8.0,
+        -7.762365810207972
+      ],
+      "path_length_mm": 11.31370849898476,
+      "convex_source": false,
+      "envelope_volume_mm3": 1764.3189403031267,
+      "intersections": [
+        {
+          "part": "f0_skin",
+          "signed_volume_mm3": 1.0562928571627594
+        },
+        {
+          "part": "f0_rail_right",
+          "signed_volume_mm3": 5.223426944533003
+        }
+      ],
+      "verdict": "UNRESOLVED_ENVELOPE_INTERSECTION"
+    },
+    {
+      "part": "f0_c1_s0_rail_pressure_pad_RESEARCH",
+      "translation_mm": [
+        -0.0,
+        4.0,
+        -0.0
+      ],
+      "path_length_mm": 4.0,
+      "convex_source": true,
+      "envelope_volume_mm3": 0.2496000000000246,
+      "intersections": [],
+      "verdict": "CONTINUOUS_TRANSLATION_ENVELOPE_CLEAR"
+    }
+  ],
+  "assembly_part_count": 288,
+  "runtime_s": 5.7915373489959165,
+  "fabrication_ready": false,
+  "scope": "Unloaded nominal CAD only. Screw already removed; pad slides inboard4mm then seven-part subassembly moves outboard8mm+longitudinal8mm. Each whole-body convex hull bounds ALL intermediate translations, not just samples. Hull intersections on concave solids are unresolved, NOT actual collision evidence. No rotation, tolerance, wire threading, real tools, preload, moving gripper or Native dynamics qualification."
+}

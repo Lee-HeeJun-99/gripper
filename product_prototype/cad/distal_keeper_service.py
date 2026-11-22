@@ -33,12 +33,14 @@ def worker(a):
   for i,(x,y) in enumerate(d['bolt_centres_XY_mm']):
    travel=8;tip=top-cfg['screw']['nominal_length_mm'];sweep=evaluate(transform(union(cyl(.8,tip,top+travel,(x,y)),cyl(max(cfg['screw']['head_diameter_mm'])/2,top,top+head+travel,(x,y))),G))
    records.append(dict(operation='SCREW_CONTINUOUS_CONSERVATIVE_AXIAL_ENVELOPE',bolt=i,travel_mm=travel,intersections=intersections(sweep,[(n,b) for n,b in obstacles if n!=names[2+i]])))
-   nut=envelope(bodies[4+i],[0,4,0]);nut.apply_transform(G)
-   records.append(dict(operation='NUT_CONTINUOUS_CONVEX_ENVELOPE_SCREWS_REMOVED',bolt=i,travel_local_Y_mm=4,intersections=intersections(nut,[(n,b) for n,b in obstacles if n not in {names[4+i],names[2],names[3]}]),scope='Concave nut bore filled by hull; hits unresolved, no-hit sufficient only for nominal continuous translation.'))
+   delta=np.asarray(d.get('nut_withdrawal_local_mm',[0,4,0]),dtype=float)
+   if delta.shape!=(3,) or not np.all(np.isfinite(delta)):raise ValueError('finite nut withdrawal vector required')
+   nut=envelope(bodies[4+i],delta);nut.apply_transform(G)
+   records.append(dict(operation='NUT_CONTINUOUS_CONVEX_ENVELOPE_SCREWS_REMOVED',bolt=i,travel_local_Y_mm=float(delta[1]),translation_local_mm=delta.tolist(),intersections=intersections(nut,[(n,b) for n,b in obstacles if n not in {names[4+i],names[2],names[3]}]),scope='Concave nut bore filled by hull; hits unresolved, no-hit sufficient only for nominal continuous translation.'))
    if a.nut_samples:
     for dy in (0,.1,.5,1,2,3,4):
-     T=np.eye(4);T[1,3]=dy;actual=evaluate(transform(transform(local[4+i],T),G))
-     records.append(dict(operation='ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY',bolt=i,translation_local_Y_mm=dy,intersections=intersections(actual,[(n,b) for n,b in obstacles if n not in {names[4+i],names[2],names[3]}])))
+     T=np.eye(4);T[:3,3]=delta*dy/4;actual=evaluate(transform(transform(local[4+i],T),G))
+     records.append(dict(operation='ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY',bolt=i,translation_local_Y_mm=float(T[1,3]),translation_local_mm=T[:3,3].tolist(),path_fraction=dy/4,intersections=intersections(actual,[(n,b) for n,b in obstacles if n not in {names[4+i],names[2],names[3]}])))
  # Screws and nuts removed before cover withdrawal. Actual concave part, not hull.
  for dz in (() if a.fasteners_only else (0,.1,.5,1,2,4,8)):
   T=np.eye(4);T[2,3]=dz;T[1,3]=a.cover_y_ratio*dz;cover=evaluate(transform(transform(local[1],T),G));records.append(dict(operation='COVER_WITHDRAWAL_SAMPLED_ONLY',translation_local_Z_mm=dz,translation_local_Y_mm=a.cover_y_ratio*dz,intersections=intersections(cover,[(n,b) for n,b in obstacles if n not in set(names[1:])])) )

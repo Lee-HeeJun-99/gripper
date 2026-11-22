@@ -1,0 +1,84 @@
+{
+  "status": "DISTAL_KEEPER_STATIC_REVIEW",
+  "source_commit": "f74631eac1d5d6d30f2bb127ef5b8888e5f89b89",
+  "input_hashes": {
+    "results/product_distal_basal1000/assembly_delta_recipe.json": "275c385a8e923637d91afe9b20fe992dbfefd25d2f0329a3a0981f6ee7cee17a",
+    "results/product_remaining_f2lead975/assembly_delta_recipe.json": "0c30816c30f8850481d9162ab40059974bd66723d0682e3b81c5299d6649f6a5",
+    "results/product_remaining_f2clamp974/assembly_delta_recipe.json": "d0fe670456cc76c5eedae812be64a94d4f27b4dd52bc81fd12f588117f282a71",
+    "results/product_remaining_c1lead971/assembly_delta_recipe.json": "69476ad3dde922a70adaab1cdb6e8054a8d84fc4c2f9282b784a4c948ad00547",
+    "results/product_remaining_clamped968/assembly_delta_recipe.json": "5c369e8b19ad86d4c771656df59842890b2c90f3b833b8fb86d7a323a444393b",
+    "results/product_remaining_lead964/full_assembly_recipe.json": "6b0fb423bef3d4e71376998668d333ba6b1ee6401905806d03dc2ae6f6b4b985",
+    "cad/distal_keeper.py": "a9762631d09cec056b5591814b9a5951024316fee442d8534c3b43df5107699f",
+    "config/distal_keeper_v54.json": "5543bd376a18f1948d03be5c8f48d9d693de6e6537503af1da40ec1258ccf60a",
+    "cad/assembly_recipe_io.py": "da1721c98679664619e748cab6add2ca28838be5fb03a9e0e6394b1701a31a02",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b"
+  },
+  "records": [
+    {
+      "part": "f0_c0_s5_support",
+      "STL_SHA256": "6226f4a3ce4d3952b072422efffb6ea2755d9e82828fe8e0ac0f76f0ce5adebe",
+      "CAD_volume_mm3": 212.9546764791339
+    },
+    {
+      "part": "f0_c0_s5_keeper_cover",
+      "STL_SHA256": "8db5af6a482c2d777e0701534646fbda68cca3ac1df5d9e040eb9c338419fc19",
+      "CAD_volume_mm3": 72.59160420695714
+    },
+    {
+      "part": "f0_c0_s5_keeper_screw0",
+      "STL_SHA256": "8e0b86d76d3756cdc84f58e734c3a870f599ef11275041d2eacc859981645b22",
+      "CAD_volume_mm3": 21.971930635930164
+    },
+    {
+      "part": "f0_c0_s5_keeper_screw1",
+      "STL_SHA256": "54c256011d53d3a67f5f73056848d2cff97a94fefc465484e4c51d4848e2ab05",
+      "CAD_volume_mm3": 21.971930231685764
+    },
+    {
+      "part": "f0_c0_s5_keeper_nut0",
+      "STL_SHA256": "0996a51b2e88738f7e74f9021ce661cb2064084a47eb148f701a163586a145a4",
+      "CAD_volume_mm3": 8.853274667350044
+    },
+    {
+      "part": "f0_c0_s5_keeper_nut1",
+      "STL_SHA256": "c138b6c5878f7917cbad21b63e8a28429ac0f644c2454bce8216e08e0df36c59",
+      "CAD_volume_mm3": 8.853274665387808
+    }
+  ],
+  "solid_intersections": [
+    {
+      "parts": [
+        "f0_c0_s5_support",
+        "f0_c0_s5_keeper_cover"
+      ],
+      "faces": 3430,
+      "signed_volume_mm3": 2.1208345325855287e-05
+    },
+    {
+      "parts": [
+        "f0_c0_s5_keeper_cover",
+        "f0_c0_s5_keeper_screw0"
+      ],
+      "faces": 766,
+      "signed_volume_mm3": 8.54078412733846e-07
+    },
+    {
+      "parts": [
+        "f0_c0_s5_keeper_cover",
+        "f0_c0_s5_keeper_screw1"
+      ],
+      "faces": 1110,
+      "signed_volume_mm3": 1.9122614673960925e-06
+    }
+  ],
+  "candidate_part_count": 294,
+  "target_finger": 0,
+  "target_cable": 0,
+  "runtime_s": 8.366554684937,
+  "actual_preload_N": null,
+  "actual_retention_N": null,
+  "fabrication_ready": false,
+  "scope": "ONEactualdistalGframe;finiteupper/lowerhousing,front/rearaxialshoulders,throughwirebore,twoM1.6nominalcapbolts/nuts. Allhardware/finitewireguidesretained;threadhelixnotmodeled. Realinner1.4distalringnotRoot1.2copy. Splitplane/bearingfacesintersectionsretained,NOTdiscarded aszero. Unverifiedmanufacturing/threads/material/preload/strength/assemblytool/service/slackescape,wirelaw,movingclearance/Native/holding/STEP;notkinematicorphysicalretentionPASS.",
+  "configuration": "config/distal_keeper_v54.json",
+  "nut_antirotation_qualified": false
+}

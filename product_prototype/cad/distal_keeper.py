@@ -14,7 +14,8 @@ def keeper_shapes(old_local,cfg):
  d=cfg['design'];lo,hi=d['housing_X_mm'];outer=axial(d['outer_radius_mm'],lo,hi);pocket=axial(d['pocket_radius_mm'],*d['pocket_X_mm']);wire=axial(d['wire_bore_radius_mm'],lo-1,hi+1);yl,yh=d['wing_Y_mm'];z0=d['base_bottom_Z_mm'];top=d['cap_wing_top_Z_mm'];holes=[];nuts=[];screws=[];entries=[]
  lower=union(old_local,cut(outer,box([lo-1,-10,0],[hi+1,10,10])),box([lo,yl,z0],[hi,yh,0]));upper=union(cut(outer,box([lo-1,-10,-10],[hi+1,10,0])),box([lo,yl,0],[hi,yh,top]))
  for x,y in d['bolt_centres_XY_mm']:
-  holes.append(cyl(d['clearance_hole_radius_mm'],z0-1,top+2,(x,y)));nb=d['nut_bottom_Z_mm'];nt=nb+max(cfg['nut']['height_mm']);p0,p1=d['nut_pocket_Z_mm'];AF=d['nut_pocket_AF_mm'];pocketnut=cyl(AF/math.sqrt(3),p0,p1,(x,y),sections=6);entry=box([x-1.91,y+d.get('nut_entry_start_Y_offset_mm',0),p0],[x+1.91,yh+1,p1]);entries.extend([pocketnut,entry])
+  holes.append(cyl(d['clearance_hole_radius_mm'],z0-1,top+2,(x,y)));nb=d['nut_bottom_Z_mm'];nt=nb+max(cfg['nut']['height_mm']);p0,p1=d['nut_pocket_Z_mm'];AF=d['nut_pocket_AF_mm'];pocketnut=cyl(AF/math.sqrt(3),p0,p1,(x,y),sections=6);entries.append(pocketnut)
+  if d.get('nut_side_entry_enabled',True):entries.append(box([x-1.91,y+d.get('nut_entry_start_Y_offset_mm',0),p0],[x+1.91,yh+1,p1]))
   nut=cut(cyl(max(cfg['nut']['AF_mm'])/math.sqrt(3),nb,nt,(x,y),sections=6),cyl(.81,nb-.1,nt+.1,(x,y)));nuts.append(nut)
   length=cfg['screw']['nominal_length_mm'];head=max(cfg['screw']['head_height_mm']);tip=top-length;hexradius=cfg['screw']['hex_AF_mm']/math.sqrt(3);screw=cut(union(cyl(.8,tip,top,(x,y)),cyl(max(cfg['screw']['head_diameter_mm'])/2,top,top+head,(x,y))),cyl(hexradius,top+head-cfg['screw']['nominal_drive_depth_mm'],top+head+.2,(x,y),sections=6));screws.append(screw)
  return [cut(lower,pocket,wire,*holes,*entries),cut(upper,pocket,wire,*holes),*screws,*nuts]

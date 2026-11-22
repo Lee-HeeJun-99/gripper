@@ -82,3 +82,33 @@ No remote Push,SDK edit,old Raw overwrite or after-session automatic execution.
 The [official XL330 reference](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/)
 links PDF/STP downloads;the accessed download landing pages were not dimension
 sheets,so no new motor interface geometry was asserted.
+
+## Continued after feature482568f: finite temporary assembly tool
+
+1028 config/distal_nut_loader_v55.json and actual two positional STL copies
+of ONE hollow loader. Design OD2.9/ID1.9mm tip,16mmshaft,D6×6mmgrip.
+Material,tolerance,hand force and strength NULL;not an operating product part.
+Eight nut+tool positions per bolt from−4mm to+0.05mm. All16tool positions
+clear retained hardware;all14nut positions up to zero are clear. At+0.05mm
+nominal roof closure,small nut/roof CSG bearing artifacts remain REVIEW
+(4.40e−6/2.80e−6mm³). No contact faces discarded or force imposed.
+Nominal final screw clears hollow tool in both positions;not the complete
+screw insertion or purchased tool/hand clearance qualification.
+
+Simultaneous two-tool grips overlap24.354751mm³. Therefore retain predefined
+ONE_LOADER_AT_A_TIME procedure:temporarily press/thread one nut,withdraw tool,
+then service the second. Actual thread engagement/preload and temporary retention
+must be physically verified;no claim the proposed sequence already works.
+This implements the previously missing finite retention-tool candidate rather
+than pretending the open-bottom nut is captive. Raw/STLs under
+results/product_distal_nut_loader1028;not a new STEP assembly.
+
+Next Root clamp/bond disconnect remains unqualified;do not present the
+cartridge-out workaround as an approved physical sequence. No new Native trial.
+Reproduce a new geometry study:
+```bash
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/distal_nut_loader.py --tag UNIQUE_NUT_LOADER
+```
+1029:188softwaretestsPASS,5.284sbody. Actual STL/SVG exporter whitespace is
+preserved as generated;it is not a CAD validity or physics test. Source-only
+diff whitespace check clean. Old manifests/Raw/FAILs unchanged;no newSOFArun.

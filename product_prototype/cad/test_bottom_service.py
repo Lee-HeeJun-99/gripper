@@ -45,3 +45,16 @@ class BottomServiceTests(unittest.TestCase):
   self.assertTrue(all(r['intersections'] for r in d['rotation_samples'] if r['rotation_deg']==30))
   self.assertIsNone(d['actual_preload_N']);self.assertFalse(d['actual_locking_or_torque_qualified'])
   self.assertAlmostEqual(d['bearing_reference']['unloaded_roof_gap_mm'],.05)
+ def test_finite_loader_and_nut_actual_insertion_not_hidden_hardware(self):
+  d=result('product_distal_nut_loader1028');rows=[r for r in d['records'] if 'translation_local_Z_mm' in r]
+  self.assertEqual(len(rows),16);self.assertFalse(any(r['tool_intersections'] for r in rows))
+  self.assertFalse(any(r['nut_intersections'] for r in rows if r['translation_local_Z_mm']<=0))
+  self.assertTrue(all(r['nut_intersections'] for r in rows if r['translation_local_Z_mm']>0))
+ def test_two_loaders_not_silently_assumed_simultaneously_usable(self):
+  d=result('product_distal_nut_loader1028');self.assertEqual(d['required_operation'],'ONE_LOADER_AT_A_TIME')
+  self.assertGreater(d['simultaneous_tool_intersections'][0]['signed_volume_mm3'],24)
+  self.assertFalse(d['physical_service_qualified']);self.assertIsNone(d['actual_hand_force_N'])
+ def test_loader_bore_allows_nominal_screw_not_preload_capacity(self):
+  d=result('product_distal_nut_loader1028');rows=[r for r in d['records'] if r.get('operation')=='NOMINAL_FINAL_SCREW_VS_LOADER']
+  self.assertEqual(len(rows),2);self.assertFalse(any(r['intersections'] for r in rows))
+  self.assertEqual(len(d['saved_tool_positions']),2);self.assertIsNone(d['actual_strength_N'])

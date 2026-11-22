@@ -1,3 +1,12 @@
+## Latest 2026-11-23 — bottom nut/cartridge service1018–1029
+
+Authorityproduct_prototype/reports/BOTTOM_NUT_AND_CARTRIDGE_SERVICE_20261123.md.
+Newv54bottom-loadedpocketandv55temporaryhollowloaderimplemented/tested.
+Nominalnutpaths+toolinsertionsclear;simultaneoustwoloaderscollide,sequence
+unqualified. Cartridge-outcovergeometryconditional;Rootdisconnectunqualified
+and185continuous-sweepprismsunresolved. CAD/physicalqualificationdistinct.
+No newNativeSOFAtrial,100g/Lift/STEP/physicaljointPASS. OldFAILsunchanged.
+
 ## Latest 2026-11-23 — exact separation / pressure shoe924–938
 
 Authorityproduct_prototype/reports/RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.

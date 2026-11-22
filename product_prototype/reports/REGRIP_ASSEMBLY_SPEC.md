@@ -1,3 +1,13 @@
+## Bottom-loaded nut and conditional cartridge service1018–1028 — 2026-11-23
+
+v54nutwithdrawaldown4mmnominalclear. v55hollowloadersupportsnutunderside;
+useONEtoolatatime,twoD6gripscollide. Bothscrewsabsentduringmodelednutinsert;
+actualthreading/temporaryretention/toolhand/torqueNOTvalidated. No physical
+assemblysequenceapproved. Cartridge-outcovergeometryonlyafterassumedRoot
+clamp/bond/wiredisconnectand2retainingboltremoval;mustverifytheseoperations.
+EightclearpositionsDONOTresolve185continuoussweepprismsorprovejointcut.
+See BOTTOM_NUT_AND_CARTRIDGE_SERVICE_20261123.md;oldfailureskept.
+
 ## Distal keeper service1005–1016 — 2026-11-23
 
 Nominal1.5AFkeyshankaccessclears,butnotwholetool/handapproval. Screws/nuts

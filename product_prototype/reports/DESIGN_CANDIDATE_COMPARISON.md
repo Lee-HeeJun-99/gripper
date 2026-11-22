@@ -1,3 +1,11 @@
+## Bottom-loaded v54 / temporary loader v55 — 2026-11-23
+
+Comparedwithside-entryv52/v53,newbottomporthasclear nominalnutservice1019.
+Doesnotmakeopen-bottomnutcaptive. Actualhollowtool1028clearssequentialinsertion
+buttwotoolgripsinterfere;notphysicalassemblyPASS. Conditionalcartridge-out
+covergeometryimproves1023,whileRootjointcut/sweep185prismsremainunqualified.
+SameSupplier/outerhousing/fastenerpositions;no force/material/Nativechange.
+
 ## Split Keeper v52/v53 — 2026-11-23
 
 1005v52 adds5netpartsatONEstation,staticmatingREVIEW. Coververticalpathfails

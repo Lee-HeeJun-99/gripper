@@ -1,3 +1,12 @@
+## Bottom nut and temporary loader1018–1029 — 2026-11-23
+
+Feature482568f thenfinitehollowloader1028. Newbottomhexportretainsroof;
+two continuousnutpaths+14actualpositionsclear. Cartridge8samplesclear,
+continuoussweep185unresolvedprisms;conditionalbenchcover6nonzeropositionsclear.
+ONEloadersequentialonly;twogripscollide24.35mm3. ActualRootdisconnect/
+preload/threading/strengthNOTvalidated. Read BOTTOM_NUT_AND_CARTRIDGE_SERVICE.
+No newNative/holding/time/mesh/STEPqualification;nextRootservicecut/toolaccess.
+
 ## Keeper/service1005–1017 — 2026-11-23
 
 OnefiniteKeeper+2M1.6bolts/2nutsimplemented;actual6STLs+sectionscreated.

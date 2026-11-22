@@ -1,3 +1,24 @@
+## Current bottom-loader/cartridge1018–1029 — 2026-11-23
+
+Startingf74631e;feature482568f. Read BOTTOM_NUT_AND_CARTRIDGE_SERVICE_20261123.md.
+v54bottom-loadedhexpocket1018 retainsupperroof,disablessideslot.1019two4mm
+continuousnut envelopes+14actualpositionsclear;static/screw matingartifacts
+remainREVIEW. Notcaptivewhenboltremoved,nopreload/material/physicalthreadapproval.
+v54actualsixSTLs/sectionBOM1021createdandPNGinspected;notSTEP/fullassembly.
+1020explicit51moving/241fixed/2retainingboltsassumedremoved;8cartridgepositions
+clear,Rootbond/clampdisconnectUNQUALIFIED.1022twohullhits;1024surfacechecks
+noactualpositivehitbut185numericalprismsunresolved. NotcontinuousclearancePASS.
+1023cartridge20mmout:6nonzerocoversamplesclear,initialmatingartifactREVIEW.
+1026hexrotationssampledstops,NOTproof torque.1028actualhollowloaderSTLs,
+16toolpositionsclear;nutroofclosurefacesREVIEW. Two simultaneousgripscollide
+24.354751mm3;ONEtoolsequentialoperationonly,actualretention/threadingunmeasured.
+NEXT explicitRootclamp/bond/wiredisconnectandtoolaccesssequence;actualpreload/
+pulloutrequirespecimens. Do notresumeslotslope/dt/alarmorunchangedNative895.
+No newNative/time/mesh/holding/100g/Lift/STEPqualification. Read-onlyresume:
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/product_distal_cartridge_surface1024/summary.json
+Newhypothesiscommand(NEWtag):
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/distal_nut_loader.py --tag UNIQUE_LOADER
+
 ## Current distal keeper1005–1017 — 2026-11-23
 
 Feature commits05c984d/8e715fc. Evidencev59 archives13newcases/14939files and

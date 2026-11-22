@@ -1,3 +1,13 @@
+## Current1018–1029 — 2026-11-23
+
+Read product_prototype/reports/BOTTOM_NUT_AND_CARTRIDGE_SERVICE_20261123.md.
+Do not repeat1018–1028unchanged. Bottomnutport resolvesnominalnutextraction,
+notentireassembly. Finitehollowloadertested,ONEtoolsequentialonly;actualthread/
+preloadunmeasured. Cartridge-out covergeometryimprovesBUTRootclamp/bondcut
+notqualified;185sweepprismsunresolved,notclearedby8samples. NEXT explicit
+Rootclamp/bondandwire-disconnectsequence+finitewholetoolaccess;physicaljoint
+testsrequirespecimens. Do notpromoteRESTCADtoNative/time/mesh/holding/STEP.
+
 ## Current1005–1017 — 2026-11-23
 
 Read product_prototype/reports/DISTAL_KEEPER_AND_SERVICE_20261123.md first.

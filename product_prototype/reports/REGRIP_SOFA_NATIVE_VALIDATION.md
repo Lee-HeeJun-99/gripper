@@ -1,3 +1,10 @@
+## Bottom-loaded nut/service CAD1018–1029 — 2026-11-23
+
+No newNativeSOFArun. Newv54socket/v55temporarytoolandconditionalservice
+posesareCADmaintenancegeometry,NOTAcceptedStatedynamics/skinwrapping.
+ExistingNativeContact/Time/Mesh/EnergyFAILs,100g/Lift/STEPandactualmaterial/
+Jointqualificationremainopen. Do notuseoldB3Holdingasnewhardwarecertification.
+
 ## Distal keeper CAD1005–1017 — 2026-11-23
 
 No newSOFArunorNativehardwareadoption. CADstatic/servicefailurespreserved,

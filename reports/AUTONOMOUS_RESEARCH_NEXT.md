@@ -1,4 +1,14 @@
-## Latest continuous service915–921 — 2026-11-23
+## Latest continuous service915–923 — 2026-11-23
+
+Lastfeatures371b318/7635633. Guarded922identicalto920CADcoordinatesandclosure;
+923112softwaretestsPASS,NOTphysicsqualification. Source/evidencev51/v52.
+NEXT finite manufacturablepad/thread specification plusactualpreload/slip/
+indentationdata;orrobustSupportcontinuousCADsweep/provableconvexdecomposition.
+41nonvolumeprismsremainUNRESOLVED. No same-failure epsfloor/repeatNative895.
+ActualjointdataBLOCKED;independentCADworkallowedwithoutadoptingnew3Fingerphysics.
+Read-only resume:robot_wsPython -m json.tool product_prototype/results/product_rail_surface917/summary.json.
+
+## Continuous service915–921 — 2026-11-23
 
 Authority product_prototype/reports/RAIL_CONTINUOUS_SERVICE_20261123.md.
 Seven continuous translation envelopes clear, but Support refined sweep retains

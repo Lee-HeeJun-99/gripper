@@ -1,4 +1,15 @@
-## Latest continuous service915–921 — 2026-11-23
+## Latest continuous service915–923 — 2026-11-23
+
+Functional commits371b318 and7635633. 922stack CLI nowbounded4GiB/420s;
+actualcoordinates+closure EXACTLY match920. 923112softwaretestsPASS(2.592stest,
+3.281sguard). No newSOFA;physicaljoint/material/preloaddataBLOCKED,continuous
+Support41numericalprismsUNRESOLVED. No product/time/mesh/holding/STEP upgrade.
+Evidencev51verified12831priorhashes0mismatch;v52appends922/923+source snapshots.
+No researchchildrenleft. NEXT robustSupportCADsweep/provableconvexdecomposition
+andmanufacturablepad/threadinterface withrealpreload/slip/indentation data.
+Do not repeat unchanged Native895 or the same numerical failure with eps floors.
+
+## Continuous service915–921 — 2026-11-23
 
 Read RAIL_CONTINUOUS_SERVICE_20261123.md. Baseline0a52556 clean. New continuous
 translation envelopes clear pad+six keeper bodies; concave Support hull unresolved.

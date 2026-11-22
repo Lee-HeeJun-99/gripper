@@ -92,9 +92,10 @@ No new physical Holding, Native, time/mesh, fabrication or STEP PASS claimed.
 
 The initial short CAD-only919/920 invocations were not resource-wrapped; their
 actual runtime was below1s, not a claim that they had the child guard. The
-stack CLI now uses the existing4GiB/420s guard. 922 executes that launcher and
+stack CLI now uses the existing4GiB/420s guard (feature7635633). 922 executes that launcher and
 matches920 CAD coordinates and closure dictionaries EXACTLY (no tolerance,
-model or geometry change);923 checks this and all prior software regressions.
+model or geometry change);923 checks this and all prior software regressions:
+112tests PASS,2.592s testbody/3.281s guard. No product physics qualification.
 No costly Native rerun. Evidencev51 verifies12831 prior immutable filehashes,
 zero mismatches,12989 total hashes,7cases including failures/correction. Follow-on
 v52 includes922/923 and updated source snapshots; no old evidence rewritten.

@@ -9,12 +9,17 @@ from drive_requirements import requirement
 from prototype_protocol import validate_measurement,measurement_unit
 from wire_bore_audit import radial_extent
 from test_continuous_service import SweptServiceTests
+from test_separation_certificate import SeparationTests
 
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').read_text())
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_nonvolume_prisms_have_new_exact_proofs_not_rewritten_old_scope(self):
+  old=result('product_rail_surface917');self.assertEqual(len(old['support_surface_refinement']['unresolved_prisms']),41)
+  d=result('product_rail_certificate924');self.assertEqual(d['certified_pairs'],41*(332+164));self.assertFalse(any(r['unresolved_pairs'] for r in d['records']))
+  self.assertEqual(result('product_rail_certificate_audit925')['detail']['verified_pairs'],20336);self.assertFalse(d['fabrication_ready'])
  def test_bounded_stack_worker_preserves_actual_geometry(self):
   old=result('product_clamp_stack920');new=result('product_clamp_guard922')
   self.assertEqual(old['closure'],new['closure']);self.assertEqual(old['measured_CAD_coordinates_mm'],new['measured_CAD_coordinates_mm'])

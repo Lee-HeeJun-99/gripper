@@ -1,0 +1,404 @@
+{
+  "status": "WHOLE_ROUTE_PREREQUISITE_AUDIT_NOT_ASSEMBLY_PASS",
+  "source_commit": "362b324a9645439a478f52e2e067b15705f40dd7",
+  "input_hashes": {
+    "meshes/b3_supplier_eyelet_seat_v43/full_assembly_recipe.json": "9138cd47413f6fc356b7bc199cf8ef0b7ae1ec62ac2ea9c665ce58abac7aa766",
+    "meshes/b3_manufacturing_bore_v21/assembly_recipe.json": "be1db099e3bd6e6bd5068d1ac7142eb30984514652ee70aac8d79753863cc815",
+    "config/wire_bend_supplier_v40.json": "097a7fd35fceec2ef2e3cbb78973c0fcf84b262bffec0b4c2e71104fda271a3c",
+    "cad/supplier_path_audit.py": "45cffdb1eace926a84407496616970f7c659a5e5cead3b94a5710e1eb5c5ae1a",
+    "cad/lead_pulley_candidate.py": "1539281714c59baaf71f860c0f5f30c2eef980af8a6fd0c74e78f0f296086ac2",
+    "cad/supplier_root_wheel.py": "c27d23b5b43d138421cf1287d4b698474e76695eeb48ef33fcaad7dc6189cca7"
+  },
+  "dimensions": {
+    "wire_diameter_mm": 0.45,
+    "groove_root_radius_mm": 5.625,
+    "groove_cross_section_radius_mm": 0.23850000000000002,
+    "wire_centre_pitch_radius_mm": 5.85,
+    "flange_outer_radius_mm": 6.875,
+    "bore_radius_mm": 0.6,
+    "width_mm": 1.8,
+    "scope": "Manufacturer-sized bend/root and groove cross-section;flange/bore/width are independent research CAD inputs,NOT catalog product dimensions"
+  },
+  "remaining_legacy_root_parts": [
+    "f0_c1_root_redirect",
+    "f1_c0_root_redirect",
+    "f1_c1_root_redirect",
+    "f2_c0_root_redirect",
+    "f2_c1_root_redirect"
+  ],
+  "legacy_turn_parts": [
+    "f0_c0_turn1",
+    "f0_c0_turn2",
+    "f0_c0_turn3",
+    "f0_c1_turn1",
+    "f0_c1_turn2",
+    "f0_c1_turn3",
+    "f1_c0_turn1",
+    "f1_c0_turn2",
+    "f1_c0_turn3",
+    "f1_c1_turn1",
+    "f1_c1_turn2",
+    "f1_c1_turn3",
+    "f2_c0_turn1",
+    "f2_c0_turn2",
+    "f2_c0_turn3",
+    "f2_c1_turn1",
+    "f2_c1_turn2",
+    "f2_c1_turn3"
+  ],
+  "legacy_groove_root_diameter_mm": 3.5,
+  "required_groove_root_diameter_mm": 11.25,
+  "records": [
+    {
+      "finger": 0,
+      "cable": 0,
+      "parts": [
+        "f0_c0_turn1",
+        "f0_c0_turn2",
+        "f0_c0_turn3"
+      ],
+      "design_polyline_local_mm": [
+        [
+          47.08911282117201,
+          36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          36.0,
+          56.75
+        ],
+        [
+          50.0,
+          36.0,
+          56.75
+        ],
+        [
+          50.0,
+          0.0,
+          56.75
+        ]
+      ],
+      "budget": {
+        "segment_lengths_mm": [
+          22.91088717882799,
+          56.024234313201,
+          20.0,
+          36.0
+        ],
+        "corner_trims_mm": [
+          0.0,
+          5.849999999999999,
+          5.849999999999999,
+          5.849999999999999,
+          0.0
+        ],
+        "straight_remainder_mm": [
+          17.060887178827993,
+          44.324234313200996,
+          8.300000000000004,
+          30.150000000000002
+        ],
+        "status": "TANGENT_BUDGET_ONLY_CLEAR"
+      }
+    },
+    {
+      "finger": 0,
+      "cable": 1,
+      "parts": [
+        "f0_c1_turn1",
+        "f0_c1_turn2",
+        "f0_c1_turn3"
+      ],
+      "design_polyline_local_mm": [
+        [
+          47.08911282117201,
+          -36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          -36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          -36.0,
+          59.25
+        ],
+        [
+          50.0,
+          -36.0,
+          59.25
+        ],
+        [
+          50.0,
+          0.0,
+          59.25
+        ]
+      ],
+      "budget": {
+        "segment_lengths_mm": [
+          22.91088717882799,
+          58.524234313201,
+          20.0,
+          36.0
+        ],
+        "corner_trims_mm": [
+          0.0,
+          5.849999999999999,
+          5.849999999999999,
+          5.849999999999999,
+          0.0
+        ],
+        "straight_remainder_mm": [
+          17.060887178827993,
+          46.824234313200996,
+          8.300000000000004,
+          30.150000000000002
+        ],
+        "status": "TANGENT_BUDGET_ONLY_CLEAR"
+      }
+    },
+    {
+      "finger": 1,
+      "cable": 0,
+      "parts": [
+        "f1_c0_turn1",
+        "f1_c0_turn2",
+        "f1_c0_turn3"
+      ],
+      "design_polyline_local_mm": [
+        [
+          47.08911282117201,
+          36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          36.0,
+          56.75
+        ],
+        [
+          50.0,
+          36.0,
+          56.75
+        ],
+        [
+          50.0,
+          0.0,
+          56.75
+        ]
+      ],
+      "budget": {
+        "segment_lengths_mm": [
+          22.91088717882799,
+          56.024234313201,
+          20.0,
+          36.0
+        ],
+        "corner_trims_mm": [
+          0.0,
+          5.849999999999999,
+          5.849999999999999,
+          5.849999999999999,
+          0.0
+        ],
+        "straight_remainder_mm": [
+          17.060887178827993,
+          44.324234313200996,
+          8.300000000000004,
+          30.150000000000002
+        ],
+        "status": "TANGENT_BUDGET_ONLY_CLEAR"
+      }
+    },
+    {
+      "finger": 1,
+      "cable": 1,
+      "parts": [
+        "f1_c1_turn1",
+        "f1_c1_turn2",
+        "f1_c1_turn3"
+      ],
+      "design_polyline_local_mm": [
+        [
+          47.08911282117201,
+          -36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          -36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          -36.0,
+          59.25
+        ],
+        [
+          50.0,
+          -36.0,
+          59.25
+        ],
+        [
+          50.0,
+          0.0,
+          59.25
+        ]
+      ],
+      "budget": {
+        "segment_lengths_mm": [
+          22.91088717882799,
+          58.524234313201,
+          20.0,
+          36.0
+        ],
+        "corner_trims_mm": [
+          0.0,
+          5.849999999999999,
+          5.849999999999999,
+          5.849999999999999,
+          0.0
+        ],
+        "straight_remainder_mm": [
+          17.060887178827993,
+          46.824234313200996,
+          8.300000000000004,
+          30.150000000000002
+        ],
+        "status": "TANGENT_BUDGET_ONLY_CLEAR"
+      }
+    },
+    {
+      "finger": 2,
+      "cable": 0,
+      "parts": [
+        "f2_c0_turn1",
+        "f2_c0_turn2",
+        "f2_c0_turn3"
+      ],
+      "design_polyline_local_mm": [
+        [
+          47.08911282117201,
+          36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          36.0,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          36.0,
+          56.75
+        ],
+        [
+          50.0,
+          36.0,
+          56.75
+        ],
+        [
+          50.0,
+          0.0,
+          56.75
+        ]
+      ],
+      "budget": {
+        "segment_lengths_mm": [
+          22.91088717882799,
+          56.024234313201,
+          20.0,
+          36.0
+        ],
+        "corner_trims_mm": [
+          0.0,
+          5.849999999999999,
+          5.849999999999999,
+          5.849999999999999,
+          0.0
+        ],
+        "straight_remainder_mm": [
+          17.060887178827993,
+          44.324234313200996,
+          8.300000000000004,
+          30.150000000000002
+        ],
+        "status": "TANGENT_BUDGET_ONLY_CLEAR"
+      }
+    },
+    {
+      "finger": 2,
+      "cable": 1,
+      "parts": [
+        "f2_c1_turn1",
+        "f2_c1_turn2",
+        "f2_c1_turn3"
+      ],
+      "design_polyline_local_mm": [
+        [
+          47.08911282117201,
+          -35.99999999999999,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          -35.99999999999999,
+          0.7257656867990032
+        ],
+        [
+          70.0,
+          -35.99999999999999,
+          59.25
+        ],
+        [
+          50.0,
+          -35.99999999999999,
+          59.25
+        ],
+        [
+          50.0,
+          0.0,
+          59.25
+        ]
+      ],
+      "budget": {
+        "segment_lengths_mm": [
+          22.91088717882799,
+          58.524234313201,
+          20.0,
+          35.99999999999999
+        ],
+        "corner_trims_mm": [
+          0.0,
+          5.849999999999999,
+          5.849999999999999,
+          5.849999999999999,
+          0.0
+        ],
+        "straight_remainder_mm": [
+          17.060887178827993,
+          46.824234313200996,
+          8.300000000000004,
+          30.149999999999995
+        ],
+        "status": "TANGENT_BUDGET_ONLY_CLEAR"
+      }
+    }
+  ],
+  "runtime_s": 0.22403412801213562,
+  "scope": "Analytic tangent-interval budget on actual lead design polylines. All18 legacy turns and5 legacy Roots still fail supplier diameter recommendation. Positive budget is NOT finite-wheel/fork/wire clearance. Drum wrap, moving Skin guides and wire constitutive data NOT qualified. No Native run,STEP or product PASS.",
+  "fabrication_ready": false
+}

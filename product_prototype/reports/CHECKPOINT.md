@@ -1258,3 +1258,13 @@ Reproduce analysis with a NEW unique tag,not existing directories:
 All launched children completed. This is a bounded failed design-family checkpoint,
 not project completion or a claim of background continuation. No SDK/legacy solver
 changes,remote push or old evidence overwrite.
+## 2026-11-22 — whole-path supplier CAD869–872
+
+Read SUPPLIER_WHOLE_PATH_20261122.md. Six lead tangent budgets clear only;
+5oldRoots+18turns fail candidate wire bend diameter. Actual3wheel retrofit871
+FAILS wheel/wheel and retained hardware interference. Single-variable outer
+route x74 candidate872 removes wheel/wheel overlap but retained bridge/pins
+still FAIL. Do NOT repeat unchanged runs or promote to Native/product PASS.
+NEXT reconstruct connected finite turn mount/axle at872 centres, then full
+wire/channel/service clearance. No approved wire/material/STEP/wholewire law.
+Old physical Gates preserved; no new SOFA run or automatic background work.

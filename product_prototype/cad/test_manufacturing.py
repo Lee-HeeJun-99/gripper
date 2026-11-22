@@ -14,6 +14,19 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_supplier_tangent_budget_shared_segment(self):
+  from supplier_path_audit import tangent_budget
+  d=tangent_budget([[0,0,0],[10,0,0],[10,10,0],[20,10,0]],6)
+  self.assertEqual(d['status'],'FAIL_OVERLAPPING_TANGENT_INTERVALS')
+  self.assertAlmostEqual(d['straight_remainder_mm'][1],-2)
+  with self.assertRaises(ValueError):tangent_budget([[0,0,0],[0,0,0]],1)
+ def test_supplier_whole_route_not_finite_clearance(self):
+  d=result('product_supplier_path870');self.assertEqual(len(d['remaining_legacy_root_parts']),5);self.assertEqual(len(d['legacy_turn_parts']),18)
+  self.assertTrue(all(r['budget']['status']=='TANGENT_BUDGET_ONLY_CLEAR' for r in d['records']))
+  self.assertFalse(d['fabrication_ready'])
+ def test_supplier_turn_positive_tangent_budget_still_collides(self):
+  d=result('product_supplier_turn871');self.assertEqual(d['status'],'FAIL_FINITE_TURN_RETROFIT');self.assertEqual(d['retained_neighbor_count'],290)
+  self.assertTrue(any(set(h['parts'])=={'f0_c0_turn2','f0_c0_turn3'} and h['volume_mm3']>0 for h in d['intersections']))
  def test_supplier_pin_group_does_not_silently_skip_new_root(self):
   d=result('product_supplier_service867');self.assertEqual(len(d['pins']),24);self.assertEqual(len(d['hole_gauges']),12);self.assertEqual(len(d['tools']),18)
   self.assertIn('f0_c0_root_headed_pin',{r['pin'] for r in d['pins']});self.assertFalse(any(r['full_swept_intersections'] for r in d['pins']));self.assertFalse(any(r['intersections'] for r in d['tools']+d['hole_gauges']));self.assertFalse(d['fabrication_ready'])

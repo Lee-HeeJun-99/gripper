@@ -957,3 +957,11 @@ improvenominalendplay,buttoleranceexampleFAILandCSGmatingseamsremainopen.
 280partreviewshowsouterR94.65mm:oversized,notfinalproduct. Nextcompactness/
 Rootinletredirect +frameforce-deflectionqualification. No newSOFAphysics/Gate
 relaxation. Authority:PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.
+## 2026-11-22 supplier path869–872
+
+Implemented whole-lead tangent budget and finite3wheel CSG screen.870:6lead
+budgets clear,min8.30mm;871:finite flange collision0.214086mm3 FAIL.872:
+outer route x74 removes wheelpair conflict,retained mounts/pins still FAIL.
+869metadata failure preserved.82software tests PASS,notNative/product.
+Next connected turn mount/axle reconstruction;see SUPPLIER_WHOLE_PATH_20261122.md
+for raw paths and commands. No new SOFA execution or fabricated material data.

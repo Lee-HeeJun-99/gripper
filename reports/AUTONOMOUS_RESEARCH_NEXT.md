@@ -3717,3 +3717,13 @@ Finite root wheels/forks/pins now exist, unmounted; no new SOFA physics PASS.
 Next: finite Palm-to-root-fork support/retention, then compact support redesign.
 Preserve516 intendedwheel conservative-probe intersections and all old Gates.
 47software testsPASS is not physical convergence/holding certification.
+## Latest 2026-11-22 supplier whole-path869–872
+
+Read product_prototype/reports/SUPPLIER_WHOLE_PATH_20261122.md.
+Analytic6lead tangent budget minimum8.30mm is NOT finite clearance:871 actual
+turn2/3 flange overlap0.214086mm3.872 outer route x74 removes this pair overlap
+but existing pins/connected bridge remain obstacles. NEXT reconstruct ONE
+connected finite turn support/axle stack at872 centres without removing real
+hardware;check all retained neighbors,wire envelope,other channel and service.
+Do not repeat old Native loop/dt/coupons or propagate incompatible6leads.
+Actualwire/material/jointdata,Rootseat/translatedSkin/STEP remain unqualified.

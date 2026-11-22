@@ -1,3 +1,11 @@
+## Keeper/service1005–1017 — 2026-11-23
+
+OnefiniteKeeper+2M1.6bolts/2nutsimplemented;actual6STLs+sectionscreated.
+Keyshankclearonly;coverpathfailsneighbor/ownterminal.1013slotdoesnotclear
+nutservice;1016actualsolidsconfirmSupporthits. PreserveallREVIEW/failedpaths.
+Read DISTAL_KEEPER_AND_SERVICE_20261123.md. Nextsplit/accessdesignorcartridge
+serviceorder;notNative/holding/time/mesh/strength/STEPqualification.
+
 ## Distal terminal/joint988–1004 — 2026-11-23
 
 Read TERMINATION_AND_DISTAL_JOINT_20261123.md. Catalog-backed stop candidates,

@@ -1,3 +1,11 @@
+## Distal split keeper1005/v53 — NOT QUALIFIED (2026-11-23)
+
+Onlyf0/c0Keeperimplemented:finitecover,2M1.6x6nominalbolts,2nuts,realwirebore.
+ActualSTLs+sectionsv52exist;294candidateinstances,not294approvedBOMparts.
+Cover/nutserviceFAIL/REVIEW;v53slotnotrepair. Threadfit,locking,preload,
+material/strength,remaining5stations,movingclearanceandSTEPremainunqualified.
+Read DISTAL_KEEPER_AND_SERVICE_20261123.md. No Nativehardwareadoption.
+
 ## New distal interface candidate1000 — NOT QUALIFIED (2026-11-23)
 
 Read TERMINATION_AND_DISTAL_JOINT_20261123.md.1000candidate adds6catalogmaximum

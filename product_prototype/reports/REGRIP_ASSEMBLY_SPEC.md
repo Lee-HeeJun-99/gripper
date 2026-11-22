@@ -1,3 +1,12 @@
+## Distal keeper service1005–1016 — 2026-11-23
+
+Nominal1.5AFkeyshankaccessclears,butnotwholetool/handapproval. Screws/nuts
+removedBEFOREcoverwithdrawaltest;removalitselfnotqualified. Normal/shallow
+coverhitsneighbor,anddiagonalhitsownEyelet. Side-entrynutsactuallyhitretained
+s4/s5Supports1016evenafterv53slotchange. Do notissuein-placeassemblysequence.
+Nextdifferentaccessarchitectureorvalidatedcartridge-outsequence;nomaterial/
+torque/preload/locking/pulloutvaluesassigned. SixactualSTLsectionsv52only.
+
 ## Distal end assembly requirement — 2026-11-23
 
 CandidateNI000001 isfactoryassembledstop,notapprovedlooseDIYcrimp.995requires

@@ -1,3 +1,11 @@
+## Split Keeper v52/v53 — 2026-11-23
+
+1005v52 adds5netpartsatONEstation,staticmatingREVIEW. Coververticalpathfails
+neighbor;diagonalpathfailsownEyelet. v53changesonlysideentryYstart:actualnut
+translationsstillfail retainedSupports1016. No winnerorqualifiedassembly.
+Sourcehardwareandsupplierinputsretained;newslotloseshexantirotationcapture.
+v52reviewsectionsareactualsavedSTLs,notNativeorSTEP. Nextaccessarchitecture.
+
 ## Distal terminal candidates — 2026-11-23
 
 989catalogmaxcylinder+oldSupportcollides~.690mm3.990exitrelief alone exposes old

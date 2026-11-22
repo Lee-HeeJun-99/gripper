@@ -1,3 +1,10 @@
+## Distal keeper CAD1005–1017 — 2026-11-23
+
+No newSOFArunorNativehardwareadoption. CADstatic/servicefailurespreserved,
+actualSTLsectionsarenotSOFAAcceptedStates. No newtime/mesh/energy/holding/
+100g/Lift/STEPGatePASS. Joint/material/retentionselectionneededbeforecoupled
+hardwaremodel;do notreplayold895orB3foranunchangedhypothesis.
+
 ## Exact CAD proof / finite pressure shoe924–938 — 2026-11-23
 
 No newSOFA modeladopted:actualjoint/preload/materialdata missing. Newexactrational

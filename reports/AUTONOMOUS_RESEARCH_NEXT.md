@@ -1,3 +1,15 @@
+## Current1005–1017 — 2026-11-23
+
+Read product_prototype/reports/DISTAL_KEEPER_AND_SERVICE_20261123.md first.
+Do not repeat1005–1016 unchanged. Actual distalkeeper/tool/socket candidate
+implemented,notRootcopy. Vertical/diagonal/shallowcover servicefails;sideentry
+nutslot1013still failsagainstretainedSupport.1016actualsampledsolid confirms
+bothnutobstructions,notonlyhullwarning. NEXT separate split/access architecture
+or explicitcartridge-out serviceorder,then remaining5channelsindependentchecks.
+Keep real hardware. No Native rerun justified before joint/material/geometry
+selection. Old time/meshFAIL,100g/Lift/STEP/material/preload remainopen.
+ActualsixSTLs/sections:v52;no physicalretention or fabricationPASS.
+
 ## Current988+ — 2026-11-23
 
 UPDATE1000–1004: explicitbasalweb restores4sampledsectionthickness to~.95mm;

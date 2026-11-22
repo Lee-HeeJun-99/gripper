@@ -1,3 +1,23 @@
+## Current distal keeper1005–1017 — 2026-11-23
+
+Feature05c984d followed byactual service/slot experiments;read
+DISTAL_KEEPER_AND_SERVICE_20261123.md. One f0/c0 distal Keeper has6actualSTLs,
+294candidateassemblyinstances. Staticmating artifacts remainREVIEW. No Native
+adoption/physicaljoint/STEP/100g/Lift/time/mesh qualification. ExistingFAILs kept.
+1006normal cover withdrawal collidesneighbor terminal;1008diagonal collidesown
+Eyelet;1009shallowroute stillcollidesneighbor. Stop slope-only exploration.
+1011nut hulls unresolved;1013fullwidthslot candidate doesNOTsolve1014service.
+1016actual nuts confirm solidcollisions:bolt0hits s4Support atY+3/+4mm;
+bolt1hits s5Support atY+2/+3/+4mm. Not merely convex-hull falsepositives.
+Two nominal1.5AF key shanks clear;wholekey/hand/locking/preload NOTvalidated.
+v52actualSTLsections/BOMcreatedandPNGinspected;NOTfabricationrelease.
+NEXT change split/access architecture or verify cartridge-out assembly order,
+NOTlargerblindslots/removinghardwarefromoperatingmodel. Thread/material/preload
+andpulloutmeasurements requirehardware. Read-only resume:
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/product_distal_nut_actual1016/summary.json
+Reproduce independentnewcase with UNIQUE tag:
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/distal_keeper_service.py --tag UNIQUE --case product_distal_slot1013 --fasteners-only --nut-samples
+
 ## Current terminal continuation988+ — 2026-11-23
 
 Sessionfeatures42f0b12/69e4f2d. Evidencev58 verified14289priorimmutablehashes,

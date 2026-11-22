@@ -92,6 +92,21 @@ Do NOT push backup refs or use `--mirror`. If remote advances,fetch/recheck
 ancestry first;do not force-overwrite another contributor's changes.
 An actual push is NOT authorized/performed by this cleanup task.
 
+### Final preflight
+
+After maintenance commit `fb3e375`,the working tree was clean and the fetched
+remote comparison was0remote-only/44local-only commits. Full reachable-HEAD
+blob scan again found zero blobs≥100000000bytes,including the new docs.
+`GIT_TERMINAL_PROMPT=0 git push --dry-run origin HEAD:refs/heads/development/regrip-autonomous-research`
+was attempted without modifying the remote,but returned128:
+`could not read Username for 'https://github.com': terminal prompts disabled`.
+Thus local size/ancestry/fast-forward checks PASS;authenticated server dry-run
+is **BLOCKED_CREDENTIALS**,not claimed PASS. Configure the user's normal safe
+Git credential method before publication;no credentials from chat were used.
+No token was written into repository/config/commands. The final note commit
+adds one further local-only documentation commit and does not change research
+trees or the fast-forward requirement. No force push is necessary for this fix.
+
 Non-destructive recovery:clone the complete bundle into a NEW directory:
 ```
 git clone -b development/regrip-autonomous-research /ABS/BACKUP/pre-cleanup-all-refs.bundle recovered-regrip

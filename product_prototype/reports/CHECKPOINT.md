@@ -7,6 +7,9 @@ Remote67906a6remainsancestor;cleanedresearchtip012c316. Code/CAD/Raw/manifests/
 PASS-FAILNOTregenerated. HistoricSHAsremaininlocalrecoveryref/bundle;fullmapping
 git_cleanup_20261123/commit-map.txt. Oldfeature18dea00→3ca5670,5c1a99b→f28a16a.
 Noactualpush/forcepush. NewdetectorCSVignorepolicy;avoidgitadd-f journals.
+LocalfullHEADblobscanPASS:nofiles≥100000000bytes. Authenticatedpushdry-run
+BLOCKED_CREDENTIALS(noHTTPSUsernameconfigured);normalfast-forwardancestryPASS.
+ConfigureownsafeGitcredentialmethodbeforepublishing;nochattokenused.
 ResearchNEXTunchanged:realjoint/preload/materialqualification,thread/padinterface,
 notrepeatcompletedproofsorNative895. Precisedbackup/recoveryinmaintenance report.
 

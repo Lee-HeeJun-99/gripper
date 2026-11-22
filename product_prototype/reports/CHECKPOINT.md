@@ -1,3 +1,14 @@
+## Fastener/captive-nut939–950 — 2026-11-23
+
+Authority FASTENER_AND_CARTRIDGE_CONTINUATION_20261123.md. Manufacturer-based
+M1.6x.35adjuster/nut dimensions andconditionalpocket/pad tolerances939implemented.
+940oldD1.1lipcollisionFAIL;941D1.7actualthroughpassage clearsstatic289parts.
+942QhullFAIL/946nut6mmRootClampcollision/947serializationFAILpreserved. 949
+actualnominal4.4475..5.1525mmtravelwindow;9484.8mmnut/tool/padenvelopesclear,
+7positionassemblyscreenonly.943wireclear,944v47actual10STLs/289BOM,945section.
+950135softwaretestsPASS. Nohelicalfit/strength/preload/Native/holding/STEPapproval.
+NEXT remainingRootseparateplacement/interfacechecks;physicaljointdataBLOCKED.
+
 ## Git publication cleanup — 2026-11-23 (research scope unchanged)
 
 Read GIT_DETECTOR_CLEANUP_20261123.md. Unpublished43commit range only:five

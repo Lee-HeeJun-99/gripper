@@ -10,12 +10,25 @@ from prototype_protocol import validate_measurement,measurement_unit
 from wire_bore_audit import radial_extent
 from test_continuous_service import SweptServiceTests
 from test_separation_certificate import SeparationTests
+from test_pressure_fastener import PressureFastenerTests
 
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').read_text())
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_captive_nut_actual_bore_failure_and_repair(self):
+  old=result('product_captive_nut940');self.assertTrue(any(r['signed_volume_mm3']>.12 for r in old['solid_intersections']))
+  new=result('product_captive_nut941');self.assertFalse(new['solid_intersections']);self.assertTrue(new['full_support_through_passage_D1p7']);self.assertEqual(new['full_part_count'],289);self.assertIsNone(new['actual_preload_N']);self.assertFalse(new['actual_thread_fit_qualified'])
+ def test_nut_service_does_not_hide_old_failures(self):
+  self.assertEqual(result('product_captive_service942')['status'],'FAIL_NUT_SERVICE_CHILD')
+  old=result('product_captive_service946');self.assertTrue(any(h['part']=='f0_root_clamp' for r in old['records'] for h in r['intersections']))
+  new=result('product_captive_service948');self.assertFalse(any(r['intersections'] for r in new['records']));self.assertEqual(new['nut_rootward_travel_mm'],4.8);self.assertFalse(new['actual_locking_or_preload_qualified'])
+  stops={r['angle_deg']:r['cage_intersections'] for r in new['nut_rotation_samples']};self.assertFalse(stops[0]);self.assertFalse(stops[3]);self.assertTrue(stops[5]);self.assertTrue(stops[30])
+ def test_captive_pack_and_source_dimensions_not_strength(self):
+  d=result('product_captive_pack944');self.assertEqual(d['saved_STL_count'],10);self.assertEqual(d['BOM_instances'],289);self.assertFalse(d['STEP_generated'])
+  self.assertEqual(result('product_captive_wire943')['assembly_part_count'],289);self.assertEqual(result('product_nut_window947')['status'],'FAIL_SERVICE_INTERVAL_CHILD')
+  self.assertAlmostEqual(result('product_nut_window949')['detail']['midpoint_travel_mm'],4.8)
  def test_old_certificate_replay_uses_immutable_producer(self):
   d=result('product_certificate_snapshot937');self.assertEqual(d['detail']['verified_pairs'],20336)
   inputs=d['input_hashes'];self.assertIn('results/product_rail_certificate924/producer.py',inputs)

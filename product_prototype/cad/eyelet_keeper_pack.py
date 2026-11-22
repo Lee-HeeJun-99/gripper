@@ -5,13 +5,17 @@ import numpy as np
 from manufacturing_assembly import BASE,evaluate,sha,transform
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--name',required=True);p.add_argument('--assembly-case',default='product_eyelet_keeper894');a=p.parse_args()
- if Path(a.assembly_case).name!=a.assembly_case:p.error('local assembly case required')
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--name',required=True);p.add_argument('--assembly-case',default='product_eyelet_keeper894');p.add_argument('--source-cases',nargs='*',default=[]);a=p.parse_args()
+ if any(Path(n).name!=n for n in [a.tag,a.name,a.assembly_case,*a.source_cases]):p.error('local names required')
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);dest=BASE/'meshes'/a.name;draw=BASE/'drawings'/a.name;dest.mkdir(exist_ok=False);draw.mkdir(exist_ok=False);start=time.monotonic();source=BASE/'results'/a.assembly_case;base=BASE/'results/product_eyelet_keeper894';recipe=source/'full_assembly_recipe.json';frame=base/'keeper_frame.json';summary=base/'summary.json';H=np.array(json.loads(frame.read_text()));parts=json.loads(recipe.read_text())['parts'];meta=json.loads(summary.read_text());selected=[p for p in parts if p['name'].startswith('f0_c1_s0_')];solids=[];exploded=[];outputs=[]
  for p in selected:
   body=evaluate(p['shape']);local=body.copy();local.apply_transform(np.linalg.inv(H));solids.append((p['name'],local))
-  original=next((folder/(p['name']+'.stl') for folder in (source,base,BASE/'results/product_supplier_second_root886') if (folder/(p['name']+'.stl')).is_file()),source/(p['name']+'.stl'))
+  original=next((folder/(p['name']+'.stl') for folder in (source,*[BASE/'results'/case for case in a.source_cases],base,BASE/'results/product_supplier_second_root886') if (folder/(p['name']+'.stl')).is_file()),source/(p['name']+'.stl'))
   if not original.is_file():raise ValueError('actual saved source STL missing')
+  provenance=original.parent/'full_assembly_recipe.json'
+  if provenance.is_file():
+   producer_part=next(q for q in json.loads(provenance.read_text())['parts'] if q['name']==p['name'])
+   if producer_part['shape']!=p['shape']:raise ValueError('saved-STL source recipe identity mismatch:'+p['name'])
   target=dest/original.name;shutil.copy2(original,target);outputs.append(target)
   delta=3 if 'cover' in p['name'] else 6 if 'screw' in p['name'] else -6 if 'nut' in p['name'] else 1.5 if p['name'].endswith('_eyelet') else 0
   T=np.eye(4);T[:3,3]=delta*H[:3,1];exploded.append(dict(p,shape=transform(p['shape'],T)))

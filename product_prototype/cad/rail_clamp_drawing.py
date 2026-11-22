@@ -14,10 +14,16 @@ def main():
   if not np.array_equal(M,other):raise ValueError('different Root frames require explicit comparison transform')
   parts=json.loads(src.read_text())['parts']
   for name,color in zip(names,colors):
+   if name=='f0_c1_s0_rail_clamp_screw_PROXY' and not any(p['name']==name for p in parts):name='f0_c1_s0_pressure_adjuster_M1p6'
    body=evaluate(next(p['shape'] for p in parts if p['name']==name));body.apply_transform(np.linalg.inv(M));section=body.section(plane_origin=[12,0,0],plane_normal=[1,0,0])
    if section is None:continue
    for i,line in enumerate(section.discrete):ax.plot(line[:,1],line[:,2],lw=1.3,color=color,label=name.replace('f0_c1_s0_','') if i==0 else None)
-  ax.set(title=title,xlabel='finger width y [mm]',ylabel='normal z [mm]',xlim=(9,14),ylim=(-1.5,3));ax.set_aspect('equal');ax.legend(fontsize=7)
+  for p in parts:
+   if p['name']=='f0_c1_s0_pressure_captive_nut_M1p6':
+    body=evaluate(p['shape']);body.apply_transform(np.linalg.inv(M));section=body.section(plane_origin=[12,0,0],plane_normal=[1,0,0])
+    if section is not None:
+     for i,line in enumerate(section.discrete):ax.plot(line[:,1],line[:,2],color='tab:red',lw=1.3,label='M1.6 nut ENVELOPE' if i==0 else None)
+  ax.set(title=title,xlabel='finger width y [mm]',ylabel='normal z [mm]',xlim=(8.5,14.5),ylim=(-1.5,3.8));ax.set_aspect('equal');ax.legend(fontsize=7)
  fig.suptitle('ACTUAL CAD sections at manufactured longitudinal x=12mm\nUNLOADED .5mm Rail / .1mm Skin; gaps/pad are design inputs,NOT preload or force-transfer qualification',fontsize=10);fig.tight_layout();outputs=[]
  for ext in ('png','svg'):
   file=out/('rail_clamp_detail.'+ext);fig.savefig(file,dpi=170);target=draw/file.name

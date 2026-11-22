@@ -1,0 +1,48 @@
+{
+  "status": "NOMINAL_DISASSEMBLY_WINDOW_ONLY",
+  "source_commit": "b25699ea37c5305cd9c978843da3b2fa017654ce",
+  "input_hashes": {
+    "cad/pressure_service_interval.py": "8df6c7c9c6955bbc1da2c500b3fe40bf0994f12492388a8a0b88395a5b8ef2d3",
+    "results/product_captive_nut941/full_assembly_recipe.json": "c30d4ca5096eb4db8809089e52cc13bb129b56f0519e6bc1db8c610be3b61afe",
+    "results/product_captive_nut941/root_frame.json": "4e1a99f8ef32b74793b81c4479c8cd1f395dd910e500d0afa3292338570660ac",
+    "cad/pressure_captive_nut.py": "f253fe5504c6a268339245c32ce07f85d7181135defa8902a6f0312d8df9b6d9",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b"
+  },
+  "actual_Root_frame_bounds_mm": {
+    "f0_c1_s0_pressure_captive_nut_M1p6": [
+      [
+        10.152479171752926,
+        9.899999618530273,
+        1.299999952316277
+      ],
+      [
+        13.84752082824707,
+        13.100000381469727,
+        2.5999999046325755
+      ]
+    ],
+    "f0_root_clamp": [
+      [
+        -1.7763568394002505e-15,
+        -18.0,
+        0.10000000149010901
+      ],
+      [
+        4.999999999999999,
+        18.0,
+        3.0999999046325755
+      ]
+    ]
+  },
+  "declared_cage_mouth_x_mm": 9.4,
+  "detail": {
+    "minimum_nut_rootward_travel_to_clear_mouth_mm": 4.44752082824707,
+    "maximum_travel_before_root_clamp_AABB_mm": 5.152479171752927,
+    "nominal_window_exists": true,
+    "midpoint_travel_mm": 4.799999999999999,
+    "midpoint_end_margin_mm": 0.35247917175292853
+  },
+  "runtime_s": 0.4555872710188851,
+  "fabrication_ready": false,
+  "scope": "Bounds of actual941nut/RootClamp and explicit designedcagemouth. Interval is necessary nominal geometry for fullnutexit vsRootClampAABB,not allobstacle or continuouspath proof. Verify chosen travel with finite sweep;real tolerance/hand access/retention not measured."
+}

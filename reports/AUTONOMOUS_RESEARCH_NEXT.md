@@ -1,3 +1,13 @@
+## Fastener/captive-nut939–950 — 2026-11-23
+
+Readproduct_prototype/reports/FASTENER_AND_CARTRIDGE_CONTINUATION_20261123.md.
+ONErootactualcaptiveM1.6nut/adjusterENVELOPES andpadtargetsimplemented,notthread
+fit/strength/preloadapproval. Static941clear,service9484.8mmnominalclearafter
+preserved940/942/946/947FAILs. CatalogfactswithURLs;135softwaretestsPASS950.
+NEXT independentremainingRootplacement/interface andwirechecks,notblind6copy.
+Actualmaterial/preload/slip/indentation/threadgaugingrequiresphysicaldata.
+No newNative/B3/time/mesh/100g/Lift/STEPapproval;detectorCSVpolicyretained.
+
 ## Git maintenance note — 2026-11-23
 
 Unpublished43commitscleanedonlyfiveoversizeddetectorCSVpaths;originalRawremains

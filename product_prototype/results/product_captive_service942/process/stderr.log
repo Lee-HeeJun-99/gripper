@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/pressure_nut_service.py", line 33, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/pressure_nut_service.py", line 28, in main
+    if a.worker:worker(a);return
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/pressure_nut_service.py", line 14, in worker
+    nut_env=envelope(lookup[nut],-6*M[:3,0]);records.append(dict(part=nut,type='CONTINUOUS_CONVEX_NUT_ENVELOPE_AFTER_SCREW_REMOVAL',intersections=hits(nut_env,parts,solids,[screw,nut])))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/bridge_assembly_audit.py", line 13, in hits
+    value=trimesh.boolean.intersection([shape,solid],engine='manifold')
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/site-packages/trimesh/boolean.py", line 114, in intersection
+    return _engines[engine](
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/site-packages/trimesh/boolean.py", line 142, in boolean_manifold
+    raise ValueError("Not all meshes are volumes!")
+ValueError: Not all meshes are volumes!

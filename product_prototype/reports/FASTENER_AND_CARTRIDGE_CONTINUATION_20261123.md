@@ -102,3 +102,57 @@ Reproduce only with a NEW hypothesis/tag:
 ```
 All actual scripts/input hashes/process commands/runtime/results are retained.
 CAD pack `meshes/` and `drawings/b3_captive_nut_v47/`;no fabrication order.
+# Continuation951–957
+
+After feature7c4b3c7, development continued into a separately placed f1/c0
+Root/lead candidate and physical-joint instrumentation preparation.
+
+951 rotates ONE supplier-sized Root structure into f1/c0; its saved scope note
+retains the Palm zero-volume seam and unselected bondline intersections
+(maximum 1.39718e-6mm³). This is REVIEW, not full assembly approval. Inspection
+found that its support backbone also includes three Turn forks. 953 therefore
+replaces the corresponding nine legacy wheel/axle/nut parts coherently; six
+loose shims are replaced by the source backbone's integral thrust lands, not
+silently omitted. All changed-part solid intersection checks clear; prior
+951 interface issues remain open. 954 checks this ONE complete Root/three-turn/
+drum lead against all 284 candidate parts with 705 conservative wire probes:
+no unresolved obstacle intersections. Other channels, moving clearance,
+wire friction/bending fatigue and actual joints remain unqualified.
+
+955 supplies six clamp bench protocols and a NULL measurement template, reusing
+the existing physical-provenance validator with unit, uncertainty, timezone,
+geometry and material-lot checks. No physical tests executed; actual apparatus,
+preload, friction, slip and strength are NOT MEASURED. Acceptance load/slip
+limits must be preregistered from actual requirements before testing.
+
+956 computes only an ideal REST-CAD two-leg guide point-wrench reference.
+Equal 1.5N tensions cancel at the straight reference route (roundoff ~3.47e-14N).
+Independent assumed 0.5N/3N legs give 2.5N and 0.0618803Nm about the pad geometry
+datum. This is not measured joint load/capacity, motor sizing or a friction law;
+distributed bore couples, wire bending, hardware inertia and deformed motion
+are omitted. It motivates moment measurement rather than inferring capacity
+from nominal pad size or equal-tension cancellation.
+
+957: 141 software regressions PASS, 1.966s test body / 2.511s guarded runtime.
+Analytic force/moment, rigid-motion objectivity, invalid-input and NULL-protocol
+guards added. No Native SOFA rerun: missing joint/material data does not justify
+repeating old constrained-loop or dt/alarm failures. No STEP/holding/mesh/time
+or product qualification is advanced by these results.
+
+Reproduction (use new unique tags; preserve existing outputs):
+
+```bash
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY product_prototype/cad/remaining_root_layout.py --help
+$PY product_prototype/cad/remaining_lead_completion.py --help
+$PY product_prototype/cad/remaining_root_wire.py --tag UNIQUE --case product_remaining_lead953 --full-lead
+$PY product_prototype/cad/joint_bench_protocol.py --tag UNIQUE
+$PY product_prototype/cad/guide_joint_load_reference.py --tag UNIQUE
+$PY product_prototype/cad/manufacturing_test_run.py --tag UNIQUE
+```
+
+NEXT: resolve the 951 Palm/bond interface using an explicit manufacturable joint,
+then independently place the next remaining channel. Obtain actual clamp
+preload/slip/indentation and material-lot data before adopting the new joint in
+Native physics. CAD motor-drum interface remains unqualified; continuous torque,
+loaded speed, thread fit and STEP generation are still open.

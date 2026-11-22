@@ -1,3 +1,12 @@
+## Continuous-service limitations — NOT FABRICATION READY (2026-11-23)
+
+Unloaded sequence:unthreadwire,removeclampscrew,slidepadinboard4mm,thenkeeper
+subassemblyoutboard8mm+longitudinal8mm. Sevenbodycontinuousenvelopes clear;
+Supportactualsurface sweep keeps41nonvolumeprismsUNRESOLVED. Do not replace
+sampled910 withassemblyPASS. ActualRootsection gapclosure.07000001788mm is
+kinematicsONLY,NOTtightening/preloadinstruction. Actualtool/thread/material/
+filmindentation/slip/tolerance stillunqualified. AuthorityRAIL_CONTINUOUS_SERVICE_20261123.md.
+
 ## Mechanical Eyelet / Railclamp review — NOT FABRICATION READY (2026-11-22)
 
 v44keeper pack:286instances,finitecover/2screw/2nut proxies,EyeletD3/L2 retained.

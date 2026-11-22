@@ -1,3 +1,12 @@
+## Latest 2026-11-23 — continuous service / stack915–923
+
+Feature371b318 and resource-guard continuation. Authority:
+product_prototype/reports/RAIL_CONTINUOUS_SERVICE_20261123.md.
+Seven continuous envelopes clear;Support41nonvolumeprismsUNRESOLVED,notPASS.
+ActualRootsection free-stackclosure.07000001788mm,NOTpreload/physicaljoint.
+Failed916/error919preserved;guarded922 exactlymatches920CADoutputs.
+No newSOFA/Holding/time/mesh/STEP qualification;physicaljointdataBLOCKED.
+
 ## Latest 2026-11-22 — mechanical Eyelet/Railclamp892–914
 
 Current authority:product_prototype/reports/MECHANICAL_EYELET_KEEPER_20261122.md

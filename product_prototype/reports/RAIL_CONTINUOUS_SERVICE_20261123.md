@@ -1,6 +1,7 @@
 # Rail clamp continuous-service and stack continuation — 2026-11-23
 
 Baseline clean branch `development/regrip-autonomous-research`, HEAD `0a52556`.
+Main implementation/evidence commit `371b318`.
 Existing 892–914 and Native895 preserved; no SDK edits, push, purchases or new
 SOFA physics runs. Native adoption remains BLOCKED on actual joint data, not
 on an invented substitute mass/preload. This work is CAD/reference verification.
@@ -86,3 +87,17 @@ New-hypothesis reproduction only, use NEW names:
 ```
 Source hashes, actual commands, timing and failures accompany each new case.
 No new physical Holding, Native, time/mesh, fabrication or STEP PASS claimed.
+
+## Cycle 4: resource guard and immutable chain
+
+The initial short CAD-only919/920 invocations were not resource-wrapped; their
+actual runtime was below1s, not a claim that they had the child guard. The
+stack CLI now uses the existing4GiB/420s guard. 922 executes that launcher and
+matches920 CAD coordinates and closure dictionaries EXACTLY (no tolerance,
+model or geometry change);923 checks this and all prior software regressions.
+No costly Native rerun. Evidencev51 verifies12831 prior immutable filehashes,
+zero mismatches,12989 total hashes,7cases including failures/correction. Follow-on
+v52 includes922/923 and updated source snapshots; no old evidence rewritten.
+Remaining meaningful progression needs actual joint/material evidence or a
+robust finite CAD sweep. Do not repeat the same CSG nonvolume failure or infer
+preload from the nominal kinematic closure. Current product Gates remain open.

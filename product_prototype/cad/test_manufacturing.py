@@ -15,6 +15,10 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_bounded_stack_worker_preserves_actual_geometry(self):
+  old=result('product_clamp_stack920');new=result('product_clamp_guard922')
+  self.assertEqual(old['closure'],new['closure']);self.assertEqual(old['measured_CAD_coordinates_mm'],new['measured_CAD_coordinates_mm'])
+  launch=json.loads((BASE/'results/product_clamp_guard922/launcher.json').read_text());self.assertEqual(launch['process']['exit_code'],0)
  def test_continuous_service_does_not_hide_numerical_faces(self):
   d=result('product_rail_surface917');s=d['support_surface_refinement']
   self.assertEqual(d['status'],'SURFACE_SWEEP_REVIEW_REQUIRED');self.assertEqual(len(s['unresolved_prisms']),41);self.assertFalse(s['intersections']);self.assertEqual(s['CSG_tests'],830)

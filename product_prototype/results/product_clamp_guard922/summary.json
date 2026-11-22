@@ -1,0 +1,59 @@
+{
+  "status": "CAD_FREE_STACK_KINEMATICS_ONLY",
+  "source_commit": "371b31825ae84bbe060e2c4e2003994513124361",
+  "input_hashes": {
+    "cad/clamp_stack_contract.py": "48aaed272a027f4ed86fe07a66e3e5423964b93f1bd37672fcfacaf5df204fff",
+    "results/product_rail_clamp908/full_assembly_recipe.json": "fa90f8b03d3fac82899988c6a87c87d5b616e6e2196ab28efb0f01b2eef301d0",
+    "results/product_rail_clamp908/root_frame.json": "4e1a99f8ef32b74793b81c4479c8cd1f395dd910e500d0afa3292338570660ac",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b"
+  },
+  "measured_CAD_coordinates_mm": {
+    "seat_top": -0.550000011920929,
+    "rail_skin": {
+      "f0_rail_right": [
+        -0.5000000000000029,
+        0.0
+      ],
+      "f0_skin": [
+        0.0,
+        0.09999999999999432
+      ]
+    },
+    "pad_bounds": [
+      [
+        11.199999999999998,
+        10.8,
+        0.10999999999999943
+      ],
+      [
+        12.8,
+        12.0,
+        0.14000000000000057
+      ]
+    ],
+    "screw_bounds": [
+      [
+        10.899999618530272,
+        10.399999618530273,
+        0.15000000596045737
+      ],
+      [
+        13.100000381469727,
+        12.600000381469727,
+        2.750000000000007
+      ]
+    ]
+  },
+  "closure": {
+    "lower_seat_rail_gap_mm": 0.05000001192092607,
+    "skin_pad_gap_mm": 0.010000000000005116,
+    "pad_screw_gap_mm": 0.010000005960456804,
+    "pad_thickness_mm": 0.030000000000001137,
+    "ideal_free_stack_closure_travel_mm": 0.07000001788138799,
+    "actual_preload_N": null,
+    "actual_joint_stiffness_N_per_mm": null
+  },
+  "runtime_s": 0.48755409102886915,
+  "fabrication_ready": false,
+  "scope": "Nominal CAD coordinates;ideal rigid free-stack closure along Rootnormal. Rail/Skin bending, bonded stack constraint, screw thread/pitch/preload, real pad manufacturing, contact pressure and strength are NOT measured or simulated. Required screw travel is NOT a preload command or qualified Native joint. Existing .03mm pad remains research-only."
+}

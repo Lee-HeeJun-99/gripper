@@ -14,6 +14,7 @@ from test_pressure_fastener import PressureFastenerTests
 from test_joint_reference import JointReferenceTests
 from test_remaining_contracts import RemainingContractTests
 from test_recipe_io import RecipeIOTests
+from test_lead_pairs import LeadPairTests
 
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').read_text())

@@ -65,3 +65,38 @@ whose neighbouring hardware has changed. Cost estimate before launch:6x~31s
 plus one mesh assembly,within420s guarded child/4GiB. This is NOT unchanged prior
 experiment repetition. Other full-finger segments,wire-wire distance,moving
 clearance,physical materials/joints,Native time/mesh and STEP remain open.
+
+## Continued982–987: actual static path coverage
+
+982 all6lead paths against SAME283part completed975candidate clear,4230finite
+probes,130.190s (420s/4GiB guarded). Actualproximities retained perpath JSON.
+985 separately checks station0..5guide-centre chains only,66probes total,9.077s,
+no obstacle or Eyelet proximity intersections. Firststation is independently
+matched to Root route origin with1e-10mm identity guard,not a physical tolerance.
+CADring centroids define numerical straight chains;this is NOT real flexible
+wire equilibrium/finiteborecontact/winding/anchor validation or prescribedSOFA.
+
+98315lead-pair numerical distance references;986 adds the actual985guide chains
+to form distalguide→Root→drum paths. Both minimum nominal+sagitta-expanded gap
+2.0495544998508044mm. Closest segment indices/parameters/point witnesses saved.
+Extendedprecision endpoint/interior minimization validated against analytic
+crossing/parallel/skew/endpoint and rigidmotion references. NOT interval/exact
+certified distance,manufacturingtolerance,movingCCD or a physicalwirecontact law.
+Distal anchor/drum termination beyond endpoints and all deformed paths remain
+unverified. These static passes do not qualify whole dynamic assembly.
+
+987159softwaretests PASS5.333sbody/5.925sguard. No newNativeSOFA run: actual
+joint/material/preload missing;no newconstrained-loop hypothesis introduced.
+Old Native time/mesh FAIL,100g/Lift/STEP gaps retained. No purchases or push.
+
+```bash
+$PY product_prototype/cad/completed_lead_audit.py --tag UNIQUE
+$PY product_prototype/cad/completed_lead_audit.py --tag UNIQUE --finger-chain-only
+$PY product_prototype/cad/lead_pair_distance.py --tag UNIQUE --finger-chain-case product_finger_chains985
+```
+
+NEXT independent product work: explicit distal wire-anchor and drum termination/
+motor-horn interface from actual chosen part drawing;continuous cartridge
+service/whole-tool access and deformed hardware/wire clearance. Real clamp
+preload/slip/indentation and materials require hardware,remain NOT MEASURED.
+Do not rerun971–987 without a new changed-geometry/physical hypothesis.

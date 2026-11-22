@@ -1,5 +1,12 @@
 ## Current971+ — 2026-11-23
 
+UPDATE982–987: final283part RESTcandidate6lead obstacle screen4230probesclear;
+6guidechains66probesclear. Combined15wire-pair numericalreference minexpanded
+gap2.0495545mm,notexact/moving/toleranceproof.159softwaretestsPASS. NEXT actual
+distalanchor/drumtermination/motorcoupling andcontinuous service/deformed
+clearance,NOTrepeat completedroutes. Actual material/joint/preload andNative
+physicalGates remainopen. Authority C1_LEAD_COMPLETION_20261123.md.
+
 UPDATE974–981: allremaining c1Root/Turn placements implemented,RESTcandidate283
 parts.976f2c1wireclear;977–9793Rootserviceenvelopes/sampledscreensclear.980
 actualinstanceBOM,actualmaterials/massNULL.981154softwaretestsPASS. NEXTfinal

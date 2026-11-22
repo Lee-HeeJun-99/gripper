@@ -1,3 +1,12 @@
+## Current resolved static assembly975 — 2026-11-23
+
+Read C1_LEAD_COMPLETION_20261123.md. Candidate975 contains283actual CAD instances,
+strict parent-hashed delta chain;BOM980 records material/mass/vendor UNKNOWN.
+All6lead/guidechain obstacle screens982/985clear only inREST configuration.
+Wirepair numericalreference986 minexpandedgap2.04955mm isnot exact/dynamic proof.
+No distalanchor/drumtermination/hornfit,physicaljoint/material/Nativephysics/
+100g/Lift/STEPapproval. Not fabricationready;earlierB3functionalresults separate.
+
 ## Pressure-shoe candidate926 — 2026-11-23
 
 Separatev46CADpack:ONEsecondRoot pad.30mm,researchdesigninputNOTmaterialspec.

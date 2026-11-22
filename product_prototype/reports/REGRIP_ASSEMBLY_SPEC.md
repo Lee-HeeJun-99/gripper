@@ -1,3 +1,12 @@
+## Resolved975 candidate — NOT FABRICATION READY (2026-11-23)
+
+Exact parent-chain resolver required;283part BOM980 and C1_LEAD_COMPLETION report
+are current static references.977–979service:unload wire,unscrewadjuster,slide
+nut4.8mmRootward,remove pad4mminboard,then sampled7position subassembly removal.
+Continuous first4envelopes areNOT fulltool/hand/continuouscartridge qualification.
+Actual threadfit/preload/slip/material andanchor/drum/horn coupling remainopen.
+Do not assemble from legacyRoot/Turnmixtures or infer physicalpressure fromgap.
+
 ## Pressure-shoe926 — NOT FABRICATION READY (2026-11-23)
 
 v46actualCAD/BOM:9savedSTLs,288instances. Pad.30mm/footprint1.92mm²,unloaded

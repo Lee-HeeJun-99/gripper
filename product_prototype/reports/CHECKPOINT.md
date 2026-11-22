@@ -1,5 +1,13 @@
 ## Current c1 continuation971+ — 2026-11-23
 
+Features9914651/6abdd76 followed by9826lead obstacle screen clear4230probes/
+130.190s,985actual6guide-centrechains clear66probes.98615combinedpath pair
+numericalreference minexpandedgap2.0495545mm,NOTexact/moving/toleranceproof.
+987159softwaretests PASS. Final REST recipe is975delta chain;BOM980283parts.
+NEXT anchor/drumtermination/motorcoupling design and continuous service/moving
+clearance. Actual materials/jointpreload requirehardware;Native/time/mesh/
+100g/Lift/STEP remainopen. No newSOFA run,oldFAILs preserved.
+
 Feature9914651 followed by974f2clamp REVIEW(Palm0volume seam only),975coherent
 c1Turnset clear/283parts,976705probe lead clear.977–979all3Root service clear
 forcontinuous first4envelopes+sampledassemblypositions ONLY.980actual283instance

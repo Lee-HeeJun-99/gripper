@@ -35,7 +35,7 @@ def main():
  for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
  for pattern in ('root_*.py','eyelet_*.py','metric_mesh_query.py','native_finite_guard.py','finite_guard_fixture.py','finite_guard_test_run.py'):
   for f in (BASE/'sofa').glob(pattern):shutil.copy2(f,out/('sofa_'+f.name))
- for pattern in ('root_*.json','wire_bend_*.json','pressure_shoe_*.json','termination_*.json','motor_horn_*.json'):
+ for pattern in ('root_*.json','wire_bend_*.json','pressure_shoe_*.json','termination_*.json','motor_horn_*.json','distal_keeper_*.json'):
   for f in (BASE/'config').glob(pattern):shutil.copy2(f,out/('config_'+f.name))
  for f in out.iterdir():
   if f.is_file():files[str(f.relative_to(root))]=sha(f)

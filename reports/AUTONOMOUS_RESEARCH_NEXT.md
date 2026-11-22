@@ -1,3 +1,14 @@
+## Latest turn mount873–880 — 2026-11-22
+
+Read product_prototype/reports/SUPPLIER_TURN_MOUNT_20261122.md andCHECKPOINT.
+New ONE finite connected turn branch875 clears positive-volume static collisions;
+873failed cross-member preserved.24pin/12bore/18driver geometry878 and onefinite
+wire877 clear;other5LEGACY leads880 clear vs changedparts only. NOTwholeproduct.
+NEXT geometry-derived COM/inertia-per-unit-mass and explicit unmeasured material/
+retention interface,then other channel redesign;do not blindly mirror6units.
+Actualmass/wirelaw/Rootseat/translatedSkin/time/mesh/100g/Lift/STEPremainopen.
+No newSOFA intheseCADcycles;oldGatesunchanged. Recipes inresults/product_supplier_mount875.
+
 ## Latest supplier bend / Root CAD855–868 — 2026-11-21
 
 Read product_prototype/reports/SUPPLIER_BEND_AND_ROOT_REDESIGN_20261121.md

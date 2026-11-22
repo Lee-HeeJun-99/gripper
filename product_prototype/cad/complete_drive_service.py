@@ -17,10 +17,11 @@ def axial_sweep(op,distance):
  return transform(union(*items),M)
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--candidate',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic();src=BASE/'meshes'/a.candidate/'full_assembly_recipe.json';parts=json.loads(src.read_text())['parts'];shapes=[evaluate(p['shape']) for p in parts];pins=[];gauges=[];tools=[]
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);choice=p.add_mutually_exclusive_group(required=True);choice.add_argument('--candidate');choice.add_argument('--recipe',type=Path);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic();src=a.recipe.resolve() if a.recipe else BASE/'meshes'/a.candidate/'full_assembly_recipe.json';parts=json.loads(src.read_text())['parts'];shapes=[evaluate(p['shape']) for p in parts];pins=[];gauges=[];tools=[]
  for part in parts:
-  group=part['group'];name=part['name']
+  name=part['name']
   if not name.endswith('_headed_pin'):continue
+  group=part.get('group')
   if group not in ('headed_pin_proxy','root_headed_pin_proxy','supplier_root_headed_pin_PROXY'):raise ValueError('unknown headed pin group;do not silently skip '+name)
   isroot='_root_headed_pin' in name;distance=10. if isroot else -10.;ownnut=name.replace('_headed_pin','_axle_nut');exclude=[name,ownnut];sweep=evaluate(axial_sweep(part['shape'],distance));pins.append(dict(pin=name,signed_axial_distance_mm=distance,full_swept_intersections=hits(sweep,parts,shapes,exclude)))
   if isroot:

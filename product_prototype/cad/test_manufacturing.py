@@ -14,6 +14,24 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_supplier_mount_union_component_failure_is_preserved(self):
+  d=result('product_supplier_mount873');self.assertEqual(len(d['records']),10);self.assertEqual(d['full_part_count'],287)
+  self.assertTrue(any(h['volume_mm3']>4 for h in d['solid_intersections']))
+  diagnostic=result('product_supplier_mount_diag874');self.assertEqual(len(diagnostic['hits']),1)
+  self.assertEqual(diagnostic['hits'][0]['component'],'new_branch_component_17')
+ def test_supplier_reroute_keeps_connected_finite_mount(self):
+  d=result('product_supplier_mount875');self.assertTrue(all(r['singlebody'] for r in d['records']))
+  self.assertFalse(any(h['volume_mm3']>0 for h in d['solid_intersections']))
+  self.assertTrue(d['solid_intersections']);self.assertEqual(d['turn3_support_rise_mm'],12)
+  self.assertFalse(d['fabrication_ready']);self.assertEqual(len(d['replaced_parts']),16)
+ def test_supplier_rebuilt_mount_service_complete(self):
+  d=result('product_supplier_service878');self.assertEqual(len(d['pins']),24);self.assertEqual(len(d['hole_gauges']),12);self.assertEqual(len(d['tools']),18)
+  self.assertFalse(any(r['full_swept_intersections'] for r in d['pins']))
+  self.assertFalse(any(r['intersections'] for r in d['hole_gauges']+d['tools']))
+ def test_supplier_wire_screen_keeps_intended_contacts(self):
+  d=result('product_supplier_wire877');self.assertEqual(d['status'],'WIRE_OBSTACLE_SCREEN_CLEAR_ONLY')
+  self.assertTrue(d['intersections']);self.assertTrue(all(h['classification'].startswith('INTENDED') for h in d['intersections']))
+  self.assertFalse(d['fabrication_ready']);self.assertAlmostEqual(d['wire_radius_mm'],.225)
  def test_supplier_tangent_budget_shared_segment(self):
   from supplier_path_audit import tangent_budget
   d=tangent_budget([[0,0,0],[10,0,0],[10,10,0],[20,10,0]],6)

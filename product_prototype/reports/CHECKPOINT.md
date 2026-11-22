@@ -1,3 +1,15 @@
+## Latest turn mount873–880 — 2026-11-22
+
+Authority SUPPLIER_TURN_MOUNT_20261122.md. Source baseline6f4d423. Actual
+connected3fork/axle branch873 FAIL4.10185mm3;component diagnostic874 identifies
+third support cross-member.875 raises that member12mm:no positive solid hits,
+zero-volume Palm contact retained. Full287parts,ONE branch only.878 all24pin/
+12bore/18driver nominal geometry clear;877 finite .45wire obstacle screen clear;
+880 other5LEGACY .5wire paths clear vs changed solids,NOTsupplier qualified.
+879 actual CAD sections+287instance BOM. No new SOFA/STEP/physical qualification.
+NEXT mass-normalized COM/inertia+material/retention interfaces,then remaining
+channels. Full wire law/Root seat/translated Skin/time/mesh/100g/Lift remainopen.
+
 ## Supplier bend / real Root CAD cycles855–868 — 2026-11-21
 
 Feature commits:a86f5b4,6b931d1,a4a8fbe. Authority:

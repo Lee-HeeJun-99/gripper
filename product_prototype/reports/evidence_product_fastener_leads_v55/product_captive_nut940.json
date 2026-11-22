@@ -1,0 +1,53 @@
+{
+  "status": "CAPTIVE_NUT_CAD_REVIEW_REQUIRED",
+  "source_commit": "b25699ea37c5305cd9c978843da3b2fa017654ce",
+  "input_hashes": {
+    "cad/pressure_captive_nut.py": "0e04b36764b5152d5bcd2125d384c43d2e75ac6dd44724f93c305d4117e050cc",
+    "results/product_rail_pressure_shoe926/full_assembly_recipe.json": "9974907aa8af4252d8aed17ad8d0682858744a4cb91f8ffb5bc8b17bf0a9a423",
+    "results/product_rail_pressure_shoe926/root_frame.json": "4e1a99f8ef32b74793b81c4479c8cd1f395dd910e500d0afa3292338570660ac",
+    "config/pressure_shoe_fastener_v47.json": "e30efcc2361bebe7802c574803b2f63d329f4ca72bf68d19050564b098847e71",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b"
+  },
+  "records": [
+    {
+      "part": "f0_c1_s0_support",
+      "volume_mm3": 162.04096714592364,
+      "singlebody": true,
+      "STL_SHA256": "dec4b2644b3d68cc58598a615389ed80e2b31cf8eebbc68119cd650949f21820"
+    },
+    {
+      "part": "f0_c1_s0_pressure_adjuster_M1p6",
+      "volume_mm3": 5.051076880895901,
+      "singlebody": true,
+      "STL_SHA256": "5547d1213931e6cb6c9b59f8f4e62d5e28a731139d34990149208b09a0a74bc6"
+    },
+    {
+      "part": "f0_c1_s0_pressure_captive_nut_M1p6",
+      "volume_mm3": 8.853274604544671,
+      "singlebody": true,
+      "STL_SHA256": "fc0efc6617b5f2e31f6b6d4000d1d29d624c5069cce9a914c26aed5bea9bb235"
+    }
+  ],
+  "solid_intersections": [
+    {
+      "parts": [
+        "f0_c1_s0_support",
+        "f0_c1_s0_pressure_adjuster_M1p6"
+      ],
+      "faces": 964,
+      "signed_volume_mm3": 0.124154775963414
+    }
+  ],
+  "full_part_count": 289,
+  "screw_length_crosscheck_mm": 3.0,
+  "pocket_AF_mm": 3.3,
+  "pocket_height_mm": 1.4,
+  "design_upper_wall_mm": 0.55,
+  "design_lower_wall_mm": 0.43,
+  "actual_thread_fit_qualified": false,
+  "actual_preload_N": null,
+  "actual_joint_strength_N": null,
+  "runtime_s": 5.861611858010292,
+  "fabrication_ready": false,
+  "scope": "ONE NEWsecondRoot:captive purchased M1.6nut and headless compressive adjuster instead of D1headed proxy. Major-diameter screw envelope plus catalog flatpoint/hexsocket;nut sharphex/bore are ENVELOPES,NOT helical flank/tolerance fit CAD. Side insertion after screw removal;upper/lower walls and side flats geometrically retain nut only when screw installed. No frictionlocking/preload/strength/realprocess or Native/holding qualification. No washer added:separate .30mmpressure shoe retains footprint;it isNOT pressure measurement. Wall dimensions are local design intervals,NOT wholepart minimum wall."
+}

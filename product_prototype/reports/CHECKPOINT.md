@@ -1,3 +1,13 @@
+## Current terminal continuation988+ — 2026-11-23
+
+Read TERMINATION_AND_DISTAL_JOINT_20261123.md. New supplier v48terminal inputs;
+988boreassumption corrected append-only by995/997actualdistalmesh.989bulkSupport
+collision retained;990exitrelief/991oldinterface diagnostic/992socketcandidate
+remain REVIEW.993commonframeplane ref doesnoteraseCSGfaces.994partialpack FAIL,
+996actual18STL+sectionv50 created.998166softwaretestsPASS.999localweb17–111um
+is a geometry warning,notstrengthPASS. NEXT thicker socketbase/actualretention.
+No newNative/holding/time/mesh/STEPapproval;actualjoint/materialdata unavailable.
+
 ## Current c1 continuation971+ — 2026-11-23
 
 Session features9914651/6abdd76/771a2a9. Evidencev57 verified13966prior immutable

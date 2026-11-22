@@ -1,3 +1,12 @@
+## Current988+ — 2026-11-23
+
+Read product_prototype/reports/TERMINATION_AND_DISTAL_JOINT_20261123.md.988–999
+supplierterminal/seat/assemblyorder diagnostics implemented,failurespreserved.
+ActualdistalCADbore~1.4NOTRoot1.2assumption;988CORRECTIONappendonly.992socket
+removes bulkinterference but leaves very thin localweb andUNSELECTEDretention.
+NEXT explicitly reinforcebase thenactualkeeper/bond/drumtermination checks.
+99618actualSTLs/sectionv50,998166softwaretestsPASS. No newSOFA/physicalGate.
+
 ## Current971+ — 2026-11-23
 
 UPDATE982–987: final283part RESTcandidate6lead obstacle screen4230probesclear;

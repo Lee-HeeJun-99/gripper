@@ -1,0 +1,72 @@
+{
+  "status": "CONDITIONAL_ASSEMBLY_ORDER_NOT_INSTALLATION_APPROVAL",
+  "source_commit": "3f780a79a27bb80e5cac72ea5cb9b25c2b496471",
+  "input_hashes": {
+    "results/product_distal_seat992/assembly_delta_recipe.json": "ddece2ed7f23707752cd7181cdf0766a28c04c6dfd897c2f2a4acbb27cb6349c",
+    "results/product_remaining_f2lead975/assembly_delta_recipe.json": "0c30816c30f8850481d9162ab40059974bd66723d0682e3b81c5299d6649f6a5",
+    "results/product_remaining_f2clamp974/assembly_delta_recipe.json": "d0fe670456cc76c5eedae812be64a94d4f27b4dd52bc81fd12f588117f282a71",
+    "results/product_remaining_c1lead971/assembly_delta_recipe.json": "69476ad3dde922a70adaab1cdb6e8054a8d84fc4c2f9282b784a4c948ad00547",
+    "results/product_remaining_clamped968/assembly_delta_recipe.json": "5c369e8b19ad86d4c771656df59842890b2c90f3b833b8fb86d7a323a444393b",
+    "results/product_remaining_lead964/full_assembly_recipe.json": "6b0fb423bef3d4e71376998668d333ba6b1ee6401905806d03dc2ae6f6b4b985",
+    "cad/termination_installation.py": "1913a9a1335cb7dc77a82c4772e2aed9eceb29d18855726040ebaf9899ccfc6e",
+    "config/termination_candidates_v48.json": "23dec6696a1aeccb862a17c34122b406d37e9aebe044ab7976a54161d8b40158",
+    "cad/assembly_recipe_io.py": "da1721c98679664619e748cab6add2ca28838be5fb03a9e0e6394b1701a31a02",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b"
+  },
+  "distal_mesh_openings": [
+    {
+      "part": "f0_c0_s5_eyelet",
+      "mesh_minimum_central_hole_diameter_mm": 1.3983136386872412,
+      "physical_hole_diameter_mm": null
+    },
+    {
+      "part": "f0_c1_s5_eyelet",
+      "mesh_minimum_central_hole_diameter_mm": 1.3983136386872412,
+      "physical_hole_diameter_mm": null
+    },
+    {
+      "part": "f1_c0_s5_eyelet",
+      "mesh_minimum_central_hole_diameter_mm": 1.3983136386872412,
+      "physical_hole_diameter_mm": null
+    },
+    {
+      "part": "f1_c1_s5_eyelet",
+      "mesh_minimum_central_hole_diameter_mm": 1.3983136386872412,
+      "physical_hole_diameter_mm": null
+    },
+    {
+      "part": "f2_c0_s5_eyelet",
+      "mesh_minimum_central_hole_diameter_mm": 1.3983136386872412,
+      "physical_hole_diameter_mm": null
+    },
+    {
+      "part": "f2_c1_s5_eyelet",
+      "mesh_minimum_central_hole_diameter_mm": 1.3983136386872412,
+      "physical_hole_diameter_mm": null
+    }
+  ],
+  "records": [
+    {
+      "condition": "one_NI000001_stop_plus_nominal_free_.45_end",
+      "max_feed_end_diameter_mm": 0.45,
+      "diametral_clearance_mm": 0.9483136386872413,
+      "positive_clearance": true
+    },
+    {
+      "condition": "both_factory_NI000001_KU000016_stops",
+      "max_feed_end_diameter_mm": 1.8,
+      "diametral_clearance_mm": -0.4016863613127588,
+      "positive_clearance": false
+    }
+  ],
+  "required_sequence": [
+    "Supplier one-end swaged NI000001 with other end un-terminated (quote/finished dimensions required)",
+    "Feed nominal free end through distal Eyelet toward Root,not terminal through closed ring",
+    "Route remaining closed guides and independently openable pulley/Root hardware",
+    "Attach reusable motor/drum termination ONLY after threading;actual termination design and test still REQUIRED",
+    "Measure seating/load/retention;unload before service"
+  ],
+  "actual_threading_trial": null,
+  "fabrication_ready": false,
+  "scope": "Mesh-derived central flat-to-flat hole for6distalEyelets only,not minimum bore overwholepart/allguides. Nominalfreewire.45 isNOTmeasuredfrayed/cutenddiameter. Bothprefittedstops cannotthread theseclosedrings across catalogmaxrange;NOimaginarycompression/forcedsplit. No physicalassembly/strength/adhesive/drumtermination approval. Source manufacturer offersassembledends;notlooseDIYcrimpqualification."
+}

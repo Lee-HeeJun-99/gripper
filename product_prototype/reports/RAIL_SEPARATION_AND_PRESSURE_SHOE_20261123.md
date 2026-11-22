@@ -33,7 +33,7 @@ full moving gripper, tolerance or product Gates.
 Regression covers planar separation, middle-only contact, strict tangency,
 exact sub-ULP endpoint construction, axis-gap reference, rigid rotation and
 invalid inputs. Independent replay rejects missing/duplicate/corrupt proofs.
-927 guarded software regressions PASS. New source hashes/commands/process
+927121 guarded software regressions PASS. New source hashes/commands/process
 logs accompany each case. Guard4GiB/420s; no SDK edits or external writes.
 
 ## Cycle B: separate pressure-shoe candidate
@@ -71,7 +71,14 @@ The certificate audit now validates each case's saved `producer.py`,rather than
 requiring today's mutable generator to equal its earlier hash. Geometry/prior
 data hashes and exact proof replay remain mandatory. 937replays924aftergenerator
 evolution:20336verified,5.078s,oldRawunchanged. No physics rerun or retroactive
-scope change. 938final software regression adds saved-producer identity check.
+scope change. 938final software regression adds saved-producer identity check:
+**125tests PASS**,2.668stestbody/3.434sguard. Not physical/productqualification.
+
+Featurecommits `18dea00`, `5c1a99b`. Evidence archive
+`reports/evidence_product_pressure_shoe_v53/manifest.json` verifies13113prior
+immutablefilehashes,zero mismatches;13377totalhashes,15newcases. Archive includes
+actual source snapshots,fail-safe scopes,finiteCADpack and exact rational proof
+files. It isNOT a15physical-PASSclaim. No active researchchildren after final save.
 
 ## Remaining qualification / decision
 

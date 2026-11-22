@@ -1,5 +1,8 @@
 ## Latest separation / pressure shoe924–938 — 2026-11-23
 
+Lastfeatures18dea00/5c1a99b. 938125softwaretestsPASS;v53evidenceverifies13113
+priorimmutablehashes0mismatch. Noactive researchchildren,no newNativephysics.
+
 Authority product_prototype/reports/RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md.
 Do NOT repeat41/36nonvolumeCSGfailures:924/925oldgeometry20336exactproofs;
 934/935new926geometry17856exactproofs,independentlyreplayed. OldRawscopeunchanged.

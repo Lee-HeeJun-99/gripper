@@ -1,5 +1,11 @@
 ## Latest separation / pressure shoe924–938 — 2026-11-23
 
+Featurecommits18dea00 (exactproofs/replay),5c1a99b (pressure shoe/CAD/verification).
+938final125softwaretestsPASS:2.668stestbody/3.434sguard. v53evidence manifest
+reports/evidence_product_pressure_shoe_v53/manifest.json verifies13113prior
+immutablehashes0mismatch;13377totalfilehashes/15newcases. Noactive researchchildren.
+Localcommitsonly,nopush/SDKchanges/purchases. ExistingRaw/FAILspreserved.
+
 Read RAIL_SEPARATION_AND_PRESSURE_SHOE_20261123.md. Feature18dea00 resolves ONLY
 old91741nonvolumeprismpairs:20336exactrational separatingcertificates,independent
 925replayPASS. Old917scope unchanged;noepsilon/thickness/deletedfaces.

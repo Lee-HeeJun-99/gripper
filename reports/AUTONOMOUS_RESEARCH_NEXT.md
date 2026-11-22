@@ -1,11 +1,38 @@
-## Latest turn mount873–880 — 2026-11-22
+## Latest second Root886–891 — 2026-11-22
+
+Read product_prototype/reports/SUPPLIER_TURN_MOUNT_20261122.md andCHECKPOINT.
+SecondRoot geometry now rebuilt/seat added,full282part ONE-sector candidate.
+887secondwire throughRoot/turns and888service nominalclear;890firstwire vsnew
+parent rechecked. Tinypositive seat/bondCSG retained,actualjoint/adhesive/material/
+translatedSkinattachment unqualified. Other4Roots/12turns remainlegacy.
+89191softwaretestsPASSonly. NEXT mechanically retained finite Eyelet seat and
+translatedSkininterface;actualmaterial/jointdataNULL. Then remainingsector/allwire/moving
+assembly. No current matched wholewire/Native contract;do not runoldcoupons or
+adopt oldB3checkpoint. NoSTEP/kernelabsentNov22. Time/mesh/100g/Liftstayopen.
+Sourceentry cad/supplier_second_root.py;actualrecipe results/product_supplier_second_root886.
+
+## Two-channel CAD873–884 — 2026-11-22
+
+Read product_prototype/reports/SUPPLIER_TURN_MOUNT_20261122.md.882 full281part
+candidate retains firstchannel and ALL secondlegacyRoot parts,secondturn branch
+rebuilt and individually CSG-tested.88324pin/12bore/18driver clear;884 SECOND
+LEAD ONLY finite .45wire obstacleclear. SecondRoot remainsR2/bendINCOMPATIBLE.
+NEXT actual secondRoot/guide/seat/mount redesign,not repeat882/883/884 or blindly
+copy6units. Then bothchannel/allsector compatibility,movingclearance and actual
+joint/material/wire law before NEWNative. No oldB3checkpoint reuse orphysicalPASS.
+881geometrymasscoefficients complete,actualmassNULL. Evidencev47 11969oldhashes
+verified0mismatches. Details/commands and unresolved Gates inCHECKPOINT.
+
+## Turn mount873–881 — 2026-11-22
 
 Read product_prototype/reports/SUPPLIER_TURN_MOUNT_20261122.md andCHECKPOINT.
 New ONE finite connected turn branch875 clears positive-volume static collisions;
 873failed cross-member preserved.24pin/12bore/18driver geometry878 and onefinite
 wire877 clear;other5LEGACY leads880 clear vs changedparts only. NOTwholeproduct.
-NEXT geometry-derived COM/inertia-per-unit-mass and explicit unmeasured material/
-retention interface,then other channel redesign;do not blindly mirror6units.
+881 geometric COM/inertia-per-unit-mass now complete10parts,actualmassNULL;
+89softwaretestsPASS. Read SUPPLIER_TURN_INTERFACE_20261122.md. NEXT second-channel
+finite route/support redesign plus checked material/retention interface;do not
+blindly mirror6units or repeat881 as a physical mass measurement.
 Actualmass/wirelaw/Rootseat/translatedSkin/time/mesh/100g/Lift/STEPremainopen.
 No newSOFA intheseCADcycles;oldGatesunchanged. Recipes inresults/product_supplier_mount875.
 

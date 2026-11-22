@@ -1,3 +1,11 @@
+## Supplier turn continuation873–884 — 2026-11-22
+
+NO newSOFAexecution. Actual CAD/finitewire/service checks improved two turn
+branches;secondRoot andother4Roots/12turns remain bend-INCOMPATIBLE. Changed
+geometry-only masscoefficients881 do NOT supply actualmaterial/mass/inertia.
+Native adoption remains blocked by joint/wirelaw/geometry qualification;no
+newHolding/time/mesh/100g/Lift/whole-energy PASS. See SUPPLIER_TURN_MOUNT_20261122.md.
+
 ## Supplier CAD continuation855–868 — 2026-11-21
 
 NO newSOFAexecution. Supplier wire bend guidance exposed geometric incompatibility,

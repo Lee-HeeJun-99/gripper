@@ -14,6 +14,30 @@ def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').r
 def overlaps(name):return json.loads((BASE/'meshes'/name/'checks.json').read_text())['interference']['positive_overlaps']
 
 class ManufacturingTests(unittest.TestCase):
+ def test_supplier_second_root_keeps_finite_joint_review_failure(self):
+  d=result('product_supplier_second_root886');self.assertEqual(d['full_part_count'],282);self.assertEqual(len(d['records']),6);self.assertTrue(all(r['singlebody'] for r in d['records']))
+  np.testing.assert_allclose(d['pin_outward_axis'],[0,-1,0],rtol=0,atol=1e-12)
+  self.assertTrue(any(h['volume_mm3']>0 for h in d['solid_intersections']));self.assertIsNone(d['actual_bond_strength_N']);self.assertFalse(d['fabrication_ready'])
+  w=result('product_supplier_second_full_wire887');self.assertEqual(w['status'],'WIRE_OBSTACLE_SCREEN_CLEAR_ONLY');self.assertNotIn('LEAD ONLY',w['scope']);self.assertFalse(w['fabrication_ready'])
+  s=result('product_supplier_second_root_service888');self.assertEqual(len(s['pins']),24);self.assertFalse(any(r['full_swept_intersections'] for r in s['pins']));self.assertFalse(any(r['intersections'] for r in s['hole_gauges']+s['tools']))
+ def test_supplier_second_channel_is_independently_screened_not_qualified_root(self):
+  d=result('product_supplier_second882');self.assertEqual(d['changed_cable'],1);self.assertEqual(d['full_part_count'],281)
+  self.assertFalse(any(h['volume_mm3']>0 for h in d['solid_intersections']));self.assertIn('legacy Root',d['scope'])
+  s=result('product_supplier_second_service883');self.assertEqual(len(s['pins']),24);self.assertFalse(any(r['full_swept_intersections'] for r in s['pins']));self.assertFalse(any(r['intersections'] for r in s['hole_gauges']+s['tools']))
+  w=result('product_supplier_second_wire884');self.assertEqual(w['cable'],1);self.assertIn('LEAD ONLY',w['scope']);self.assertTrue(all(h['classification'].startswith('INTENDED') for h in w['intersections']));self.assertFalse(w['fabrication_ready'])
+ def test_supplier_independent_mass_coefficients_analytic_box(self):
+  from supplier_mass_inventory import tetra_moments
+  m=trimesh.creation.box(extents=[2,4,6]);R=trimesh.transformations.rotation_matrix(.41,[1,2,3]);R[:3,3]=[58,36,50];m.apply_transform(R);volume,com,I=tetra_moments(m)
+  ref=R[:3,:3]@np.diag([48*(16+36)/12,48*(4+36)/12,48*(4+16)/12])@R[:3,:3].T
+  self.assertAlmostEqual(volume,48,places=10);np.testing.assert_allclose(com,R[:3,3],rtol=0,atol=1e-12);np.testing.assert_allclose(I,ref,rtol=1e-12,atol=1e-10)
+ def test_supplier_mass_coefficients_are_not_actual_material(self):
+  d=result('product_supplier_mass881');self.assertEqual(len(d['records']),10)
+  for r in d['records']:
+   self.assertIsNone(r['actual_density_kg_m3']);self.assertIsNone(r['actual_mass_kg']);self.assertIsNone(r['actual_inertia_kg_m2']);self.assertLess(r['independent_inertia_relative_error'],1e-9)
+   self.assertTrue(all(v>0 for v in r['principal_inertia_per_mass_m2']))
+ def test_supplier_other_paths_screen_does_not_approve_old_bends(self):
+  d=result('product_supplier_other_wire880');self.assertEqual(len(d['records']),5);self.assertFalse(d['intersections']);self.assertFalse(d['fabrication_ready'])
+  self.assertTrue(all(r['construction'].startswith('LEGACY_UNSPECIFIED') for r in d['records']))
  def test_supplier_mount_union_component_failure_is_preserved(self):
   d=result('product_supplier_mount873');self.assertEqual(len(d['records']),10);self.assertEqual(d['full_part_count'],287)
   self.assertTrue(any(h['volume_mm3']>4 for h in d['solid_intersections']))

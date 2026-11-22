@@ -1,3 +1,19 @@
+## Supplier-sized turn branches — 2026-11-22
+
+LATEST886:results/product_supplier_second_root886/full_assembly_recipe.json,
+282parts,ONEsector twoRoot/sixturn candidate. Both finite .45mmwire paths887/890
+screened against thisparent;nominalservice888clear. Unselected seat/bond positive
+CSG1.117e-6mm3 retained;actualbond/translatedSkinattachment NOTqualified. No
+fullfinger/mutualwire/movingclearance orNative/STEP. Other4Roots/12turnslegacy.
+
+New actual CADrecipe results/product_supplier_second882/full_assembly_recipe.json
+contains281parts,two separately checked turn branches. Six .45mmwire-sized
+turnwheels/forks/finiteaxles,integral thrustlands,connected support cross-members.
+One member rerouted12mm upward to avoid finiteflange. This is review-only,not
+newproductrelease:secondRoot+other4Roots and12oldturns stillbend-INCOMPATIBLE.
+FirstRootseat/bond/translatedSkin,actualjoint/material/wirelaw/movingclearance
+andSTEP remainunqualified. No motor/material selected from CAD-only mass881.
+
 ## Supplier-constrained Root candidate — 2026-11-21
 
 NewCADreview:meshes/b3_supplier_eyelet_seat_v43,293parts,ONLYfirstRootunit

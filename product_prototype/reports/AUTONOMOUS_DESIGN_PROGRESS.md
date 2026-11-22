@@ -1,3 +1,16 @@
+## Latest continuation873–891 — 2026-11-22
+
+Multiple actualCADcycles:cross-member collision isolated/repaired,finitewire and
+assembly service checked;secondturnbranch andsecondRoot independently rebuilt.
+Current282part ONEsector candidate has2Roots+6turns supplier-sized;4Roots+12turns
+remainlegacy.887/890both design Root-through-drum envelopes clear ofunresolved
+obstacles againstsameparent;888serviceclear. PositivebondinterfaceCSG retained,
+notassemblyPASS.881 geometric COM/inertia coefficients,actualmassNULL.89191tests
+PASSsoftwareonly. NOnewNative/STEP/physicalqualification. Nexthypothesis:finite
+mechanically retained Eyelet seat and translatedSkininterface. Sourcee11fc36+
+finalfeaturecommit;authority SUPPLIER_TURN_MOUNT_20261122.md. Evidencev49 verified
+12306oldimmutablehashes0mismatch. Raw/SDK/oldGates preserved.
+
 ## Supplier-constrained Root redesign855–868 — 2026-11-21
 
 Primary manufacturer bend guidance checked;two existing catalog-wire/R2wheel
@@ -957,6 +970,17 @@ improvenominalendplay,buttoleranceexampleFAILandCSGmatingseamsremainopen.
 280partreviewshowsouterR94.65mm:oversized,notfinalproduct. Nextcompactness/
 Rootinletredirect +frameforce-deflectionqualification. No newSOFAphysics/Gate
 relaxation. Authority:PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md.
+## 2026-11-22 connected supplier turn branch873–881
+
+e11fc36 reconstructs ONE actual connected3fork/axle branch.873FAIL4.10mm3;
+874component provenance finds cross-member;875raised12mm removes positive hits.
+876metadata observation failure preserved;87824pin/12bore/18driver nominal clear.
+877finitewire obstacle clear;880other5LEGACY wirepaths clear vschangedparts only.
+879actualCADsections/BOM.881geometric COM/inertia coefficients,notactualmass;
+89softwaretestsPASS. Physical GATES unchanged,no newSOFA/STEP. Next second-channel
+architecture and physical joint/material qualification. Details/repro in
+SUPPLIER_TURN_MOUNT_20261122.md and SUPPLIER_TURN_INTERFACE_20261122.md.
+
 ## 2026-11-22 supplier path869–872
 
 Implemented whole-lead tangent budget and finite3wheel CSG screen.870:6lead

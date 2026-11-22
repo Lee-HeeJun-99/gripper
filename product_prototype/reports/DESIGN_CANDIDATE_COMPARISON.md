@@ -1,3 +1,18 @@
+## Supplier turn branch873–884 — 2026-11-22
+
+Continuation886–891:secondRoot independently rebuilt,282part currentcandidate.
+887/890both root-through-drum design envelopes clear ofunresolved obstacles;
+888serviceclear. Tinyseat/bondpositiveCSG1.117e-6mm3 retained,notassemblyPASS.
+91software regressionsPASS,notphysicalGates. Other4Roots/12turnsremainlegacy.
+
+873 actual connected fork/axle branch fails cross-member4.10mm3;874 pinpoints
+component17.875 only third support raised12mm;positive static hits removed,
+not productqualification.877finiteonewire clear;878service nominal clear.
+882secondchannel rebuilt independently retainingfirstchannel+legacysecondRoot;
+883service/884SECOND LEAD ONLY clear. Full281parts,not supplier-compatiblewhole
+path:5legacyRoots and12legacyturnwheels remain. Materialvolume/route/wheels/
+supports differ;no equalmaterial orholding superiority claim. NoNative/STEP.
+
 ## Supplier bend and Root module comparison — 2026-11-21
 
 V39 remains historical reference. Existing0.45mm6x7/6x19 catalog candidates need

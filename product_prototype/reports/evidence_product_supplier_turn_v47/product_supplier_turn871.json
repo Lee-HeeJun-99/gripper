@@ -1,0 +1,117 @@
+{
+  "status": "FAIL_FINITE_TURN_RETROFIT",
+  "source_commit": "362b324a9645439a478f52e2e067b15705f40dd7",
+  "input_hashes": {
+    "cad/supplier_turn_screen.py": "09877b35270d9c621454e2db3687759072d3c4e08b4552647cfc4404c98a8048",
+    "meshes/b3_supplier_eyelet_seat_v43/full_assembly_recipe.json": "9138cd47413f6fc356b7bc199cf8ef0b7ae1ec62ac2ea9c665ce58abac7aa766",
+    "results/product_supplier_path870/summary.json": "44d4a7f8661478c1de9def667d2615ab33432bbb703cba59bc6cc31b277407e6",
+    "config/wire_bend_supplier_v40.json": "097a7fd35fceec2ef2e3cbb78973c0fcf84b262bffec0b4c2e71104fda271a3c",
+    "cad/supplier_root_wheel.py": "c27d23b5b43d138421cf1287d4b698474e76695eeb48ef33fcaad7dc6189cca7",
+    "cad/root_redirect_candidate.py": "0328ebba04b9c63ba87df75d444075907932c83dd0be2714fc12b43540c4b5cf"
+  },
+  "records": [
+    {
+      "part": "f0_c0_turn1",
+      "centre_mm": [
+        64.15,
+        36.0,
+        6.575765686799003
+      ],
+      "trim_mm": 5.849999999999999,
+      "volume_mm3": 242.60453027385336,
+      "STL_sha256": "2a13c323dbbea0a77815a2ee05e7f1f4c626ca9753fe82586573453fd321a532"
+    },
+    {
+      "part": "f0_c0_turn2",
+      "centre_mm": [
+        64.15,
+        36.0,
+        50.9
+      ],
+      "trim_mm": 5.849999999999999,
+      "volume_mm3": 242.60453027385356,
+      "STL_sha256": "ba73295fd0fdf5b3711476492d5c5554f9ada699fa6c1306aeaf52b2cadbce96"
+    },
+    {
+      "part": "f0_c0_turn3",
+      "centre_mm": [
+        55.85,
+        30.15,
+        56.75
+      ],
+      "trim_mm": 5.849999999999999,
+      "volume_mm3": 242.60453027385358,
+      "STL_sha256": "7444bb139ceeedb76df44bbddebc744edd84b3e0ce0a503c0cd70695ac21ba30"
+    }
+  ],
+  "intersections": [
+    {
+      "parts": [
+        "f0_c0_turn1",
+        "f0_c0_turn1_headed_pin"
+      ],
+      "volume_mm3": 1.3269013094018902,
+      "faces": 1482
+    },
+    {
+      "parts": [
+        "f0_c0_turn1",
+        "f0_c0_root_mounted_bridge"
+      ],
+      "volume_mm3": 34.23544229549384,
+      "faces": 3898
+    },
+    {
+      "parts": [
+        "f0_c0_turn2",
+        "f0_c0_turn2_headed_pin"
+      ],
+      "volume_mm3": 1.3269005927477313,
+      "faces": 1482
+    },
+    {
+      "parts": [
+        "f0_c0_turn2",
+        "f0_c0_root_mounted_bridge"
+      ],
+      "volume_mm3": 43.643817049989906,
+      "faces": 1230
+    },
+    {
+      "parts": [
+        "f0_c0_turn2",
+        "f0_c0_turn3"
+      ],
+      "volume_mm3": 0.21408593018062275,
+      "faces": 36
+    },
+    {
+      "parts": [
+        "f0_c0_turn3",
+        "f0_c0_turn3_headed_pin"
+      ],
+      "volume_mm3": 1.3269002430063328,
+      "faces": 1482
+    },
+    {
+      "parts": [
+        "f0_c0_turn3",
+        "f0_c0_turn3_thrust_shim1"
+      ],
+      "volume_mm3": 0.0,
+      "faces": 118
+    },
+    {
+      "parts": [
+        "f0_c0_turn3",
+        "f0_c0_root_mounted_bridge"
+      ],
+      "volume_mm3": 26.83803124893608,
+      "faces": 1824
+    }
+  ],
+  "retained_neighbor_count": 290,
+  "runtime_s": 7.246613024966791,
+  "scope": "ONE f0/c0 lead,three recentered finite wheels. Only corresponding old wheels replaced;all290 other parts retained. No fork/support redesign,wire envelope,Native run,STEP or product clearance claim.",
+  "fabrication_ready": false
+}

@@ -1,4 +1,31 @@
-## Latest turn mount873–880 — 2026-11-22
+## Latest second Root886–891 — 2026-11-22
+
+Actual current CAD results/product_supplier_second_root886/full_assembly_recipe.json
+has282parts:2Roots+6turns resized to candidate .45mmwire bend guidance,onlyONE
+finger sector. Other4Roots/12turns stilllegacy. Secondguide/support translated2mm,
+finite seat/UNSELECTED bondline added;positive interface CSG1.117e-6mm3 retained,
+notassemblyPASS.887secondRoot-through-lead wire obstacleclear;88824pin/12bore/
+18driver nominalclear.890firstwire cross-channel recheck against new282parent
+also obstacleclear.89191softwaretestsPASS,notphysicalGates.
+Actualmaterial/retention/bond/translatedSkinattachment unqualified. NOnewSOFA.
+NEXT mechanically retained finite Eyelet seat and translatedSkininterface,
+actualmaterial/jointdata;then remainingsector/allwire/movingclearance;
+do not blindly propagate or reuse oldB3checkpoint. Time/mesh/100g/Lift remainopen.
+Authority SUPPLIER_TURN_MOUNT_20261122.md;sourcefeatures e11fc36 andnextcommit.
+Evidencev49 verifies12306oldimmutablehashes0mismatch. NoSTEP(kernelabsentNov22).
+
+## Two-channel CAD873–884 — 2026-11-22
+
+882 independently reconstructs second three-turn branch while retaining first
+channel and ALL legacy secondRoot pieces;full281parts,onlyzero-volume Palmface.
+88324pin/12bore/18driver nominalclear.884SECOND LEAD ONLY .45mm wire envelope
+clear,notRoot/wholepath. Actual secondRoot remainsR2/bendINCOMPATIBLE. Do NOT
+mirror6units or claimnewNative/STEP/physicalPASS. Authority SUPPLIER_TURN_MOUNT_20261122.md.
+NEXT secondRootguide/seat/mount at actual geometry,then coupled bothchannel
+clearance. Actualjoint/material/wirelaw,time/mesh/100g/Liftremainopen.
+Evidencev47 verifies11969oldimmutablehashes,0mismatch. Featuree11fc36.
+
+## Turn mount873–881 — 2026-11-22
 
 Authority SUPPLIER_TURN_MOUNT_20261122.md. Source baseline6f4d423. Actual
 connected3fork/axle branch873 FAIL4.10185mm3;component diagnostic874 identifies
@@ -7,8 +34,13 @@ zero-volume Palm contact retained. Full287parts,ONE branch only.878 all24pin/
 12bore/18driver nominal geometry clear;877 finite .45wire obstacle screen clear;
 880 other5LEGACY .5wire paths clear vs changed solids,NOTsupplier qualified.
 879 actual CAD sections+287instance BOM. No new SOFA/STEP/physical qualification.
-NEXT mass-normalized COM/inertia+material/retention interfaces,then remaining
-channels. Full wire law/Root seat/translated Skin/time/mesh/100g/Lift remainopen.
+881 geometric COM/inertia-per-mass inventory independently checked10saved
+solids;max relative discrepancy7.89e-11,actualmass/materialNULL.89softwaretestsPASS.
+Read SUPPLIER_TURN_INTERFACE_20261122.md. NEXT second-channel finite route/support
+architecture plus checked material/retention specification,not blind propagation.
+Previous priority was mass-normalized COM/inertia+material/retention interfaces;
+that geometric portion is complete,physical measurement remains unperformed.
+Full wire law/Root seat/translated Skin/time/mesh/100g/Lift remainopen.
 
 ## Supplier bend / real Root CAD cycles855–868 — 2026-11-21
 

@@ -18,13 +18,18 @@ def exclusion(bounds):
              excludes_open_palm=bool(lo[2]>=13 or hi[2]<=5 or r>64))
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args()
- if Path(a.tag).name!=a.tag:p.error('local tag required')
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',default='product_remaining_lead953');p.add_argument('--finger',type=int,choices=(1,2),default=1);p.add_argument('--cable',type=int,choices=(0,1),default=0);p.add_argument('--delta',action='store_true');a=p.parse_args()
+ if any(Path(n).name!=n for n in (a.tag,a.case)):p.error('local tag required')
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);start=time.monotonic()
- donor=BASE/'results/product_captive_nut941/full_assembly_recipe.json';placed=BASE/'results/product_remaining_lead953/full_assembly_recipe.json'
- d={r['name']:r for r in json.loads(donor.read_text())['parts']};t={r['name']:r for r in json.loads(placed.read_text())['parts']}
- source=d['f0_c0_root_mounted_bridge']['shape'];S=sector(120)
- if t['f1_c0_root_mounted_bridge']['shape']!=transform(source,S):raise ValueError('source/placed CSG identity mismatch')
+ donor=BASE/'results/product_captive_nut941/full_assembly_recipe.json';placed=BASE/'results'/a.case/('assembly_delta_recipe.json' if a.delta else 'full_assembly_recipe.json')
+ d={r['name']:r for r in json.loads(donor.read_text())['parts']};raw=json.loads(placed.read_text());extra=[]
+ if a.delta:
+  parent=BASE/raw['parent_recipe']
+  if sha(parent)!=raw['parent_SHA256']:raise ValueError('delta parent SHA mismatch')
+  parts=[r for r in json.loads(parent.read_text())['parts'] if r['name'] not in raw['remove_names']]+raw['add_parts'];extra=[parent]
+ else:parts=raw['parts']
+ t={r['name']:r for r in parts};source=d[f'f0_c{a.cable}_root_mounted_bridge']['shape'];S=sector(120*a.finger)
+ if t[f'f{a.finger}_c{a.cable}_root_mounted_bridge']['shape']!=transform(source,S):raise ValueError('source/placed CSG identity mismatch')
  if t['palm_bridge_bores']['shape']!=d['palm_bridge_bores']['shape']:raise ValueError('Palm changed')
  palm=t['palm_bridge_bores']['shape']
  while palm['op']=='difference':palm=palm['items'][0]
@@ -33,5 +38,8 @@ def main():
  for i,shape in enumerate(positive_operands(source)):
   b=evaluate(shape).bounds;r=exclusion(b);records.append(dict(operand=i,bounds_mm=b.tolist(),**r))
  result=dict(status='PALM_OPEN_INTERIOR_EXCLUDED_BY_SOURCE_BOUNDS' if all(r['excludes_open_palm'] for r in records) else 'PALM_CERTIFICATE_UNRESOLVED',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(f.relative_to(BASE)):sha(f) for f in (Path(__file__),donor,placed,BASE/'cad/manufacturing_assembly.py')},records=records,runtime_s=time.monotonic()-start,fabrication_ready=False,actual_joint_strength=None,scope='Declared source CSG exact structural equality before120degsectorplacement. Palm declared cylinderR64/z5..13 has only subtractions. Rotation aboutZ preserves z and radius; each positive operand bound excludes Palm open interior via z>=13 OR z<=5 OR radial lower>64. Difference operands only subtract. Bounds apply to evaluated source operands against declared Palm envelope,NOT floatCSGartifact exclusion/analytic BRep/tolerance/strength/fastenerfit. No zero-volume face deletion,epsilon or old951 status change. Bondline issues remain open.')
+ for f in extra:result['input_hashes'][str(f.relative_to(BASE))]=sha(f)
+ result['target_finger']=a.finger;result['target_cable']=a.cable
+ result['scope']=result['scope'].replace('before120degsectorplacement',f'before{120*a.finger}degsectorplacement')
  (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],operands=len(records)),indent=2))
 if __name__=='__main__':main()

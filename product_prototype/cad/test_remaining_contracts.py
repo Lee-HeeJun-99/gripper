@@ -6,6 +6,12 @@ from remaining_palm_certificate import exclusion,positive_operands
 from drum_interface_contract import winding,inspect
 
 class RemainingContractTests(unittest.TestCase):
+ def test_c1_delta_keeps_parent_and_all_hardware(self):
+  folder=BASE/'results/product_remaining_clamped968'
+  d=json.loads((folder/'assembly_delta_recipe.json').read_text());self.assertEqual(d['parent_SHA256'],sha(BASE/d['parent_recipe']))
+  self.assertEqual(len(d['add_parts']),13);self.assertTrue(all(p['name'].startswith('f1_c1_') for p in d['add_parts']))
+  proof=json.loads((BASE/'results/product_remaining_clamp_palm969/summary.json').read_text());self.assertEqual(proof['target_cable'],1)
+  self.assertTrue(all(r['excludes_open_palm'] for r in proof['records']));self.assertFalse(proof['fabrication_ready'])
  def test_placed_f2_scope_and_wire_provenance(self):
   d=json.loads((BASE/'results/product_remaining_lead964/summary.json').read_text())
   self.assertEqual(d['target_finger'],2);self.assertEqual(len(d['records']),9);self.assertFalse(d['solid_intersections'])

@@ -1,5 +1,11 @@
 ## Current958–967 continuation — 2026-11-23
 
+UPDATE968–970: actual13part f1/c1clamp placement tested,no intersection except
+Palm zero-volume seam;969separate declared-envelope proof clears open interior.
+970148softwaretestsPASS. NEXT resolve968delta parentSHA and coherent c1Turn set
+using f0/c1source,then ACTUAL c1wire/service. c0geometry must not be mirrored as
+substitute. No Native/material/preload/holding/STEP qualification upgrade.
+
 Read product_prototype/reports/PALM_AND_DRUM_CONTRACT_CONTINUATION_20261123.md.
 Do not rerun completed951–967. Declared Palm-envelope proof959 excludes26
 positive operands only,not joint/tolerance approval. Actual drum contract962

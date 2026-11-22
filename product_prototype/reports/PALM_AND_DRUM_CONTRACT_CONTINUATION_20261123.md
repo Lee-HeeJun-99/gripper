@@ -66,3 +66,33 @@ Remaining fabrication dependencies: actual thread fit/preload/skin indentation,
 bond or mechanical retention choice, supplier motor coupling drawing, wire
 termination and groove design. No fabricated material, friction or proof-load
 values. These must be resolved before a new Native hardware model is adopted.
+
+## Cycle D — actual c1 clamp placement968–970
+
+After7478225, independently placed ALL13actual f0/c1Root/keeper/pad/captive-nut
+parts into f1/c1, not a collision-disabled proxy. 968 all-new-vs-retained and
+new-vs-new CSG gives only Palm zero-volume seam (352faces), no other intersection;
+runtime7.077s. 96926operand declared-envelope proof excludes open Palm interior
+for this DIFFERENT c1 source structure; no old result reclassified.
+970148software regressions PASS, including exact delta parent SHA and all13parts.
+
+To avoid repeated large full-assembly copies,968 stores an explicit DELTA recipe
+with parent path/SHA,remove_names,add_parts. It is NOT standalone: resolver must
+verify parent hash before use. Actual13STLs saved. Legacy c1Turn wheels/axles/
+shims remain incompatible with the included source fork backbone until separately
+completed; do not call968 fulllead/assembly approval.
+
+Next executable development: resolve968delta after verifying its exact parent,
+replace f1/c1's three wheel/pin/nut sets using the source f0/c1 modules, account
+for actual integral thrust lands,then independently screen fullwire and service.
+Do NOT apply the c0route to this side;source c1route and Root module differ.
+Reproduction:
+
+```bash
+$PY product_prototype/cad/remaining_clamped_root.py --tag UNIQUE --finger 1
+$PY product_prototype/cad/remaining_palm_certificate.py --tag UNIQUE --case product_remaining_clamped968 --finger 1 --cable 1 --delta
+```
+
+No new physical measurements or SOFA runs: actual preload/material/joints
+are unavailable, and no new constrained-loop physics hypothesis was introduced.
+Native time/mesh,100g,Lift,STEP and whole-assembly motion remain unqualified.

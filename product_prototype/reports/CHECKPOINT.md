@@ -1,5 +1,12 @@
 ## Current continuation958+ — 2026-11-23
 
+Feature7478225 followed by968actual13part f1/c1clamp DELTA placement (parent964
+SHA must match),969declared Palm-envelope exclusion and970148softwaretestsPASS.
+NEXT coherent f1/c1Turn completion from actual f0/c1source,not c0mirror/route;
+account integral lands vsloose shims,then full finite wire/service screen.
+968NOTfullassembly:legacyTurnhardware retained and unqualified. Raw/13STLs
+saved;actual preload/material/strength/STEP/Nativephysical Gates unchanged.
+
 Latest local starting HEAD9c2966f; clean start. Read
 PALM_AND_DRUM_CONTRACT_CONTINUATION_20261123.md for this session. Historical
 95926operand Palm declared-envelope exclusion only;958numeric-envelope FAIL

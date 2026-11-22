@@ -1,3 +1,11 @@
+## Current971+ — 2026-11-23
+
+Read product_prototype/reports/C1_LEAD_COMPLETION_20261123.md. f1/c1Turn971
+and705probe full lead972 clear in REST geometry only. Strict hashed delta
+resolver introduced,151software tests973PASS. NEXT independent f2/c1Root,
+coherent Turn set andactual c1wire path,then service/moving hardware checks.
+No joint/material/Native/time/mesh/holding/STEPscope upgrade.
+
 ## Current958–967 continuation — 2026-11-23
 
 UPDATE968–970: actual13part f1/c1clamp placement tested,no intersection except

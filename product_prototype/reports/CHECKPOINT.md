@@ -1,3 +1,11 @@
+## Current c1 continuation971+ — 2026-11-23
+
+Read C1_LEAD_COMPLETION_20261123.md. Starting07a424c clean.971actual f1/c1Turn
+completion281parts solid clear;972705probe lead obstacle screen clear28.537s.
+973151software tests PASS;strict delta parent resolver implemented. No newNative
+or physical Gate upgrade. NEXT f2/c1Root/Turn/lead independent verification,
+then whole-channel service/moving/joint qualification. Do not repeat971/972.
+
 ## Current continuation958+ — 2026-11-23
 
 Local features7478225/8eeb9f6. Evidencev56 verifies13719prior immutable hashes,

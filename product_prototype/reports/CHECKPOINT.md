@@ -1,5 +1,12 @@
 ## Current bottom-loader/cartridge1018–1029 — 2026-11-23
 
+Featurecommits482568f/9d52bd5. Evidencev60archives12newcases/15246files and
+verifies14939priorimmutablehashes,0mismatch.188softwaretestsPASS5.284sbody.
+No Gitblob>=100000000bytes atfeature9d52bd5;no detectorCSV,push,historyrewrite
+orSDKedit. Cachedlocalupstream18ahead/0behind,notaliveGitHubfetch. Allchildren
+complete. ActualRootjoint/preload/material/physicaltoolvalidationrequires
+definedjointandtestspecimens;no approvedfullassemblysequence/productPASS.
+
 Startingf74631e;feature482568f. Read BOTTOM_NUT_AND_CARTRIDGE_SERVICE_20261123.md.
 v54bottom-loadedhexpocket1018 retainsupperroof,disablessideslot.1019two4mm
 continuousnut envelopes+14actualpositionsclear;static/screw matingartifacts

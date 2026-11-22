@@ -103,6 +103,12 @@ This implements the previously missing finite retention-tool candidate rather
 than pretending the open-bottom nut is captive. Raw/STLs under
 results/product_distal_nut_loader1028;not a new STEP assembly.
 
+Features482568f/9d52bd5. Append-only evidence_product_bottom_service_v60:
+12newcases,15246filehashes,14939priorimmutablehashes verified,0mismatch.
+WholeHEADscan at9d52bd5 no blob>=100000000bytes,no detectorCSVadded.
+No push/historyrewrite/SDKchange. All launched researchchildren completed.
+Cached upstream comparison18ahead/0behind is not a fresh remote check.
+
 Next Root clamp/bond disconnect remains unqualified;do not present the
 cartridge-out workaround as an approved physical sequence. No new Native trial.
 Reproduce a new geometry study:

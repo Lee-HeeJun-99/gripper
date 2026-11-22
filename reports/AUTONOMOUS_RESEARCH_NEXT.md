@@ -1,5 +1,7 @@
 ## Latest second Root886–891 — 2026-11-22
 
+Last functional commit61cd6c6 (preceding e11fc36). No active researchchildren.
+
 Read product_prototype/reports/SUPPLIER_TURN_MOUNT_20261122.md andCHECKPOINT.
 SecondRoot geometry now rebuilt/seat added,full282part ONE-sector candidate.
 887secondwire throughRoot/turns and888service nominalclear;890firstwire vsnew

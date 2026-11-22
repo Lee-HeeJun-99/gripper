@@ -1,3 +1,13 @@
+## Distal terminal candidates — 2026-11-23
+
+989catalogmaxcylinder+oldSupportcollides~.690mm3.990exitrelief alone exposes old
+2.13mm3Eyelet/Supportinterpenetration991.992real socketremovesbulkoverlap but
+leaves17–111um at4localwebinspectionlines999.1000addsONEbasalbox,samesocket/
+wire/terminal;1001those4line thicknesses~.95mm. Materialvolumechanges,so NOT
+equalvolume stiffness/grasp performance comparison. AllremainREVIEWbecause
+actualretention/material/strength/slack/service/movingwire unqualified;no new
+NativeHoldingPASS. Actual18STLsubassemblyv50/v51,partialv49preserved,noSTEP.
+
 ## Pressure-shoe926 vs Railclamp908 — 2026-11-23
 
 Designpad.03→.30mm;footprintunchanged1.92mm²,necessarylip/screwendpoint+.27mm.

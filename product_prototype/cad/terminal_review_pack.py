@@ -7,9 +7,9 @@ from manufacturing_assembly import BASE,evaluate,sha
 from assembly_recipe_io import resolve_recipe
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--name',required=True);a=p.parse_args()
- if any(Path(n).name!=n for n in (a.tag,a.name)):p.error('local names required')
- out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);mesh=BASE/'meshes'/a.name;mesh.mkdir(exist_ok=False);draw=BASE/'drawings'/a.name;draw.mkdir(exist_ok=False);src=BASE/'results/product_distal_seat992/assembly_delta_recipe.json';parts,hashes=resolve_recipe(src);lookup={p['name']:p for p in parts};chosen=[p for p in parts if '_distal_NI000001' in p['name'] or '_s5_support' in p['name'] or '_s5_eyelet' in p['name']];records=[]
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--name',required=True);p.add_argument('--case',default='product_distal_seat992');a=p.parse_args()
+ if any(Path(n).name!=n for n in (a.tag,a.name,a.case)):p.error('local names required')
+ out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);mesh=BASE/'meshes'/a.name;mesh.mkdir(exist_ok=False);draw=BASE/'drawings'/a.name;draw.mkdir(exist_ok=False);src=BASE/'results'/a.case/'assembly_delta_recipe.json';parts,hashes=resolve_recipe(src);lookup={p['name']:p for p in parts};chosen=[p for p in parts if '_distal_NI000001' in p['name'] or '_s5_support' in p['name'] or '_s5_eyelet' in p['name']];records=[]
  if len(chosen)!=18:raise ValueError('18actual solids expected')
  for p0 in chosen:
   body=evaluate(p0['shape']);f=mesh/(p0['name']+'.stl');f.write_text(body.export(file_type='stl_ascii'));saved=trimesh.load_mesh(f)
@@ -18,7 +18,7 @@ def main():
  with (mesh/'REVIEW_BOM.csv').open('w',newline='') as f:
   w=csv.DictWriter(f,fieldnames=list(records[0]));w.writeheader();w.writerows(records)
  (mesh/'assembly_recipe.json').write_text(json.dumps(dict(units='mm',parts=chosen),indent=2))
- (mesh/'qualification.json').write_text(json.dumps(dict(scope='18partSUBASSEMBLYONLY,notfull3Fingerassembly;992physicalrelief/seatcandidate,unselectedjoint/retention',STEP_generated=False,fabrication_ready=False),indent=2))
+ (mesh/'qualification.json').write_text(json.dumps(dict(source_case=a.case,scope='18partSUBASSEMBLYONLY,notfull3Fingerassembly;physicalrelief/seatcandidate,unselectedjoint/retention',STEP_generated=False,fabrication_ready=False),indent=2))
  os.environ['MPLCONFIGDIR']=str(out/'mplconfig');import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
  prefix='f0_c0';G=np.eye(4);op=lookup[prefix+'_s5_eyelet']['shape']
  while op['op']=='transform':G=G@np.asarray(op['matrix']);op=op['shape']

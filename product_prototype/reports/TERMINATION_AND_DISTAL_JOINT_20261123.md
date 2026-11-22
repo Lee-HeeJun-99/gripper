@@ -87,3 +87,47 @@ interfaces and section changes, not just closedness. Actual insert retention,
 wire pullout, reusable drum termination, complete moving clearance, material,
 Native time/mesh/100g/Lift remain unqualified. Old B3 functional Holding does not
 certify this new joint or terminal candidate.
+
+## Continued after42f0b12: basal-web candidate1000–1004
+
+1000 adds ONE explicit local base box[-1.2,−1.6,−2.5]..[2,1.6,−1.5]mm before
+the SAME socket/exit cut. This changes material volume and any eventual mass/
+stiffness;not an equal-volume or simulated grasp comparison. All6Supports remain
+single closed bodies. No new non-mating interference in changed-part CSG;
+the same6 terminal/Eyelet small world-CSG intersections remain REVIEW, unchanged
+in geometry. All289geometric instances include6terminal maximum envelopes,
+not289purchased/qualified physical parts. No collision component disabled.
+
+1001 local line-section thickness becomes~0.950001mm at the same4inspection
+lines, versus0.017449..0.110924mm in992. This is a geometric improvement only;
+not a global wall minimum, structural stiffness, fatigue or retention PASS.
+1002actual18STLs+subassembly/BOM/section v51 created and visually inspected.
+Its inherited992ancestor wording is clarified by append-only SCOPE_NOTE;
+actual recipe/input hash/mesh source is1000. v49partial failure andv50 remain.
+
+1004motor interface gate is BLOCKED: family compatibility does not supply
+validated centring datum, pattern/thread engagement, horn envelope/stack,
+assembly torque or body/output-axis transform. Do not guess them from the
+generic D6drum bore. Checked sources are in motor_horn_interface_v49.json.
+No motors selected/purchased, no price or continuous torque asserted. Actual
+FreeCAD/OCP/OCC/cadquery availability probes remain false. No STEP generated.
+
+1003:171software regressions PASS,7.222sbody/7.938sguard. No physical equipment
+was operated;pullout/preload/actual materials and Native SOFA validation NOT RUN.
+
+```bash
+$PY product_prototype/cad/distal_terminal_candidate.py --tag UNIQUE --exit-relief --seat-relief --basal-web
+$PY product_prototype/cad/distal_web_section.py --tag UNIQUE --case product_distal_basal1000
+$PY product_prototype/cad/terminal_review_pack.py --tag UNIQUE --name UNIQUE --case product_distal_basal1000
+$PY product_prototype/cad/motor_interface_gate.py --tag UNIQUE
+```
+
+NEXT IMPLEMENTATION: actual Eyelet keeper/retainer and fastening/tool envelope
+for the1000socket,without using the old intersecting proxy as a real joint.
+Then check unload/slack terminal axial escape and assembly service. Keep ONE
+factory-terminated distal end and a feedable other end;reusable drum termination
+still needs design/testing. Actual manufacturer dimensional drawing is needed
+before drilling motor/horn interfaces. Hardware pullout/slip/material tests
+remain BLOCKED without specimens,not waived. Old Native time/mesh FAIL and
+100g/Lift/STEP gaps unchanged. Do not repeat completed988–1004 without a new
+changed-geometry or physical hypothesis.

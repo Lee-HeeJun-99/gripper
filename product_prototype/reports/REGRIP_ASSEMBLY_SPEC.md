@@ -1,3 +1,13 @@
+## Distal end assembly requirement — 2026-11-23
+
+CandidateNI000001 isfactoryassembledstop,notapprovedlooseDIYcrimp.995requires
+onefinished distalend plusfreefeedend:threadthroughdistalEyelettowardRoot,
+thenotherguides/openablepulleys,thenvalidatedreusabledrumtermination(REQUIRED,
+notyetimplemented). Bothprefittedstopendsfailworstcaseclosedringthreading.
+Physicalfrayedenddiameter/allboreclearance/assemblytrial NOTMEASURED.1000socket
+requiresREALkeeper/bondandstrength/retentionvalidation;donotuseoldinterpenetrating
+proxyasrealjoint.171softwaretestsareNOTfabricationorphysicalassemblyapproval.
+
 ## Resolved975 candidate — NOT FABRICATION READY (2026-11-23)
 
 Exact parent-chain resolver required;283part BOM980 and C1_LEAD_COMPLETION report

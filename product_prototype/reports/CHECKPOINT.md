@@ -1,5 +1,13 @@
 ## Current terminal continuation988+ — 2026-11-23
 
+Feature42f0b12 followed by1000explicitbasalweb (samewire/socket),1001local4line
+thickness~.95mm vs99217–111um.1002actual18STLs/sectionv51,NOTfullassembly/
+strength/retention.1004motor dimensional gate BLOCKED,not guessedD6fit.
+1003171softwaretests PASS. NEXT actualEyeletkeeper/retainer+fasteners/tool
+access for1000socket,slackterminal retention andone-end wireinstallation.
+Drumtermination/actualmotor drawing/material/pullout require further work.
+No newSOFA/physical/time/mesh/100g/Lift/STEPqualification. ExistingRaw retained.
+
 Read TERMINATION_AND_DISTAL_JOINT_20261123.md. New supplier v48terminal inputs;
 988boreassumption corrected append-only by995/997actualdistalmesh.989bulkSupport
 collision retained;990exitrelief/991oldinterface diagnostic/992socketcandidate

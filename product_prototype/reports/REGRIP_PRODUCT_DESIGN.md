@@ -1,3 +1,13 @@
+## New distal interface candidate1000 — NOT QUALIFIED (2026-11-23)
+
+Read TERMINATION_AND_DISTAL_JOINT_20261123.md.1000candidate adds6catalogmaximum
+terminalenvelopes andexplicitSupportsocket+basalweb,289geometricinstances.
+v51is18partactualSTLreviewSUBASSEMBLYonly;old975referencepreserved. No actual
+Eyeletkeeper/bond/preload/pullout/material/Native adoption or physicalproduct
+qualification. Distalopening isnominal1.4mm,NOTRoot1.2assumption988(correction
+retained). Two-endedfactoryswagecannotthreadclosedrings. Motorhorn dimensional
+interface1004BLOCKED;D6drumgenericboreisnotmatchedhorn. STEPstillunavailable.
+
 ## Current resolved static assembly975 — 2026-11-23
 
 Read C1_LEAD_COMPLETION_20261123.md. Candidate975 contains283actual CAD instances,

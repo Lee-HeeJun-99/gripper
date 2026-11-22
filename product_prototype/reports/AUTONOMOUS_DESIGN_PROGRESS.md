@@ -1,3 +1,13 @@
+## Distal terminal/joint988–1004 — 2026-11-23
+
+Read TERMINATION_AND_DISTAL_JOINT_20261123.md. Catalog-backed stop candidates,
+actualdistalbore/assemblyorder checks andexplicitSupportrelief/socket/base
+implemented.989bulkcollision/991originaljointoverlap/994sectionFAIL preserved;
+988Rootboreassumption correctedappendonly.1000basalweb improves4localsections
+to~.95mm,not strength;1002v51actual18STLs/section.171softwaretestsPASS1003.
+Motorinterface1004BLOCKED;actualretention/pullout/material/STEP/NativeGates open.
+NEXT realkeeper/fastening/tool andslackretention,notrepeatcompletedstaticpaths.
+
 ## Exact separation / pressure shoe924–938 — 2026-11-23
 
 Three developmentcycles afterf822d0d:exactrationalwitnesses+independentreplay for

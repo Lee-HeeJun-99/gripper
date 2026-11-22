@@ -1,5 +1,13 @@
 ## Current988+ — 2026-11-23
 
+UPDATE1000–1004: explicitbasalweb restores4sampledsectionthickness to~.95mm;
+actual18STL/sectionv51,171softwaretestsPASS. No newnon-mating staticinterference,
+EyeletmatingCSGremainsREVIEW;not globalwall/strength/physicaljointqualification.
+NEXT actualkeeper/retainer/fastener/tool envelope for1000socket andslackterminal
+retention;reuseone-end factoryswage+freefeedend,drumterminationstillmissing.
+Motor1004BLOCKEDondimensionedhorn/body-axisinterface,do notguessholepattern.
+No newNative/time/mesh/holding/STEPapproval. See TERMINATION_AND_DISTAL_JOINT.
+
 Read product_prototype/reports/TERMINATION_AND_DISTAL_JOINT_20261123.md.988–999
 supplierterminal/seat/assemblyorder diagnostics implemented,failurespreserved.
 ActualdistalCADbore~1.4NOTRoot1.2assumption;988CORRECTIONappendonly.992socket

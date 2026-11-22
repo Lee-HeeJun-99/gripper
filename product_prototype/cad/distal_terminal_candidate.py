@@ -3,7 +3,7 @@ import argparse,json,subprocess,sys,time
 from pathlib import Path
 import numpy as np
 import trimesh
-from manufacturing_assembly import BASE,evaluate,sha,cyl,transform,cut
+from manufacturing_assembly import BASE,evaluate,sha,cyl,transform,cut,union,box
 from assembly_recipe_io import resolve_recipe
 
 def worker(a):
@@ -22,7 +22,9 @@ def worker(a):
  supports=[]
  if a.exit_relief:
   for rec in records:
-   G=np.asarray(rec['Eyelet_frame']);R=np.eye(4);R[:3,:3]=[[0,0,1],[1,0,0],[0,1,0]];name=rec['part'].replace('_distal_NI000001_MAX_ENVELOPE','_s5_support');old=lookup[name];tool=transform(cyl(1.55,-1.05 if a.seat_relief else rec['shoulder_X_mm'],rec['shoulder_X_mm']+5.5),G@R);q=dict(old,shape=cut(old['shape'],tool),role='UNQUALIFIED_TERMINAL_EXIT_RELIEF_R1p55');body=evaluate(q['shape']);file=out/(name+'.stl');file.write_text(body.export(file_type='stl_ascii'));saved=trimesh.load_mesh(file)
+   G=np.asarray(rec['Eyelet_frame']);R=np.eye(4);R[:3,:3]=[[0,0,1],[1,0,0],[0,1,0]];name=rec['part'].replace('_distal_NI000001_MAX_ENVELOPE','_s5_support');old=lookup[name];tool=transform(cyl(1.55,-1.05 if a.seat_relief else rec['shoulder_X_mm'],rec['shoulder_X_mm']+5.5),G@R)
+   base=union(old['shape'],transform(box([-1.2,-1.6,-2.5],[2.,1.6,-1.5]),G)) if a.basal_web else old['shape']
+   q=dict(old,shape=cut(base,tool),role='UNQUALIFIED_TERMINAL_EXIT_RELIEF_R1p55');body=evaluate(q['shape']);file=out/(name+'.stl');file.write_text(body.export(file_type='stl_ascii'));saved=trimesh.load_mesh(file)
    if not saved.is_volume or saved.body_count!=1:raise ValueError('exit relief splits or invalidates support')
    supports.append(dict(part=name,old_volume_mm3=float(evaluate(old['shape']).volume),new_volume_mm3=float(body.volume),STL_SHA256=sha(file),actual_strength_N=None));new.append(q);bodies.append(body)
  removed=[r['part'] for r in supports];fixed=[p for p in parts if p['name'] not in removed];fixedbodies=[body for p,body in zip(parts,solids) if p['name'] not in removed]
@@ -36,16 +38,19 @@ def worker(a):
  result=dict(status='DISTAL_TERMINAL_PLACEMENT_REVIEW' if hits else 'SIX_MAX_TERMINAL_ENVELOPES_STATIC_CLEAR_ONLY',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes=hashes,records=records,solid_intersections=hits,candidate_part_count=len(parts+new),runtime_s=time.monotonic()-start,actual_pullout_N=None,fabrication_ready=False,scope='NI000001maxD2.8/L5envelopes at actual6Eyelet distalfaces;actual.45mmwireassembly NOT procured or simulated. GframefromdeclaredsavedCAD;wirepullprojection checkednegative. No guessed bore/swageinterior,threads/force/preload. ExistingEyelet/support/bond/rail joints UNQUALIFIED. Terminal endface loadpath hypothesisonly,not observedforce;zero-volume/small intersections kept. Slack retention/axial escape/wireinstallation,toolaccess,movingclearance,objectcontact/material/Native/holding/STEP NOT qualified.')
  result['candidate_part_count']=len(fixed+new);result['exit_relief_design_radius_mm']=1.55 if a.exit_relief else None;result['support_changes']=supports
  result['eyelet_seat_relief']=a.seat_relief
+ result['design_basal_web_local_box_mm']=[[-1.2,-1.6,-2.5],[2.,1.6,-1.5]] if a.basal_web else None
+ if a.basal_web:result['scope']+=' AddedexplicitlocalbasalwebBEFOREsamesocketcut;ONEvariablegeometrycomparisonvs992. Materialvolume/mass/stiffnesschanged,NOTequalvolumeorqualifiedphysicsimprovement. Not actualstrength/loadcapacity/retention approval.'
  if a.seat_relief:result['scope']+=' Seatrelief fromEyeletX=-1.05 includesR1.55socket aroundnominalOD3insert;thisremovesoldpositiveEyelet/supportinterpenetration byEXPLICITmachinedseat withnominal.05radialgap. Bond/keeper/insertretentionUNSELECTED;cutisNOTjointstrength/loadpathPASS.'
  if a.exit_relief:result['scope']+=' NewR1.55cylindricalSupportexitrelief isEXPLICITphysicaldesignchange,notcollisiondisable/epsilonfloor. Singlebodymeshchecked;minimumwall/material/stress/preload/retentionNOTqualified. Eyeletmatingintersectionsremainrecorded.'
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],hits=hits,runtime_s=result['runtime_s']),indent=2))
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--exit-relief',action='store_true');p.add_argument('--seat-relief',action='store_true');p.add_argument('--worker',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--exit-relief',action='store_true');p.add_argument('--seat-relief',action='store_true');p.add_argument('--basal-web',action='store_true');p.add_argument('--worker',action='store_true');a=p.parse_args()
  if a.seat_relief and not a.exit_relief:p.error('seat relief requires explicit exit relief')
+ if a.basal_web and not a.seat_relief:p.error('basal web requires explicit seat relief')
  if Path(a.tag).name!=a.tag:p.error('local tag required')
  if a.worker:worker(a);return
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes());sys.path.insert(0,str(BASE/'sofa'));from native_bending_coupon import guarded
- cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker']+(['--exit-relief'] if a.exit_relief else [])+(['--seat-relief'] if a.seat_relief else []);proc=guarded(cmd,out/'process',420);(out/'launcher.json').write_text(json.dumps(dict(command=cmd,process=proc),indent=2))
+ cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker']+(['--exit-relief'] if a.exit_relief else [])+(['--seat-relief'] if a.seat_relief else [])+(['--basal-web'] if a.basal_web else []);proc=guarded(cmd,out/'process',420);(out/'launcher.json').write_text(json.dumps(dict(command=cmd,process=proc),indent=2))
  if not(out/'summary.json').exists():(out/'summary.json').write_text(json.dumps(dict(status='FAIL_TERMINAL_CHILD',process=proc),indent=2))
  d=json.loads((out/'summary.json').read_text());print(json.dumps({k:d[k] for k in ('status','runtime_s','solid_intersections') if k in d},indent=2))
 if __name__=='__main__':main()

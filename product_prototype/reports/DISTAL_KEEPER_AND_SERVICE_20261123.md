@@ -106,3 +106,9 @@ All CAD trials guarded4GiB/420s;longest new worker10.94s. Pack1010 was a short
 0.505s local STL/plot utility,not a physics process. No active research child.
 Actual pullout/thread/preload/material data need specimens;CAD kernel/STEP
 unavailable. No background continuation or completed product claim.
+
+Feature commits05c984d and8e715fc. Append-only evidence_product_distal_keeper_v59
+archives13newcases/14939files,verifies14636priorimmutablehashes,0mismatch.
+Whole HEAD scan found no blob>=100000000bytes. No detector CSV added,remote
+push/history rewrite/SDK modification. Local cached upstream was15commits
+behind at feature8e715fc;this is not a fresh remote query.

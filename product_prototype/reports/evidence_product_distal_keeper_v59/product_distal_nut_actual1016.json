@@ -1,0 +1,240 @@
+{
+  "status": "DISTAL_KEEPER_SERVICE_REVIEW",
+  "source_commit": "05c984dd4b55ceecee593bb73732fce4c6740ddf",
+  "input_hashes": {
+    "results/product_distal_slot1013/assembly_delta_recipe.json": "d3766df44e6a0649b59c170ed2eacab7108261b4375eac189635f0bb4c20bac5",
+    "results/product_distal_basal1000/assembly_delta_recipe.json": "275c385a8e923637d91afe9b20fe992dbfefd25d2f0329a3a0981f6ee7cee17a",
+    "results/product_remaining_f2lead975/assembly_delta_recipe.json": "0c30816c30f8850481d9162ab40059974bd66723d0682e3b81c5299d6649f6a5",
+    "results/product_remaining_f2clamp974/assembly_delta_recipe.json": "d0fe670456cc76c5eedae812be64a94d4f27b4dd52bc81fd12f588117f282a71",
+    "results/product_remaining_c1lead971/assembly_delta_recipe.json": "69476ad3dde922a70adaab1cdb6e8054a8d84fc4c2f9282b784a4c948ad00547",
+    "results/product_remaining_clamped968/assembly_delta_recipe.json": "5c369e8b19ad86d4c771656df59842890b2c90f3b833b8fb86d7a323a444393b",
+    "results/product_remaining_lead964/full_assembly_recipe.json": "6b0fb423bef3d4e71376998668d333ba6b1ee6401905806d03dc2ae6f6b4b985",
+    "cad/distal_keeper_service.py": "40ba08d97cf46e4f8c93116527e2d4ab83683603d253348b4c0f47b23f30665e",
+    "cad/distal_keeper.py": "49295cdab710a9bc2a7007dca4892b8d4bcfa7a59e9fe0eb174a5f24cb82c3b6",
+    "config/distal_keeper_v53.json": "9b44e4a149d46f87271c66f380d68988d4cb0451e5da2561cd6a818823a4b79c"
+  },
+  "local_mating_diagnostics": [
+    {
+      "parts": [
+        "f0_c0_s5_support",
+        "f0_c0_s5_keeper_cover"
+      ],
+      "intersections": []
+    },
+    {
+      "parts": [
+        "f0_c0_s5_keeper_cover",
+        "f0_c0_s5_keeper_screw0"
+      ],
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_screw0",
+          "faces": 210,
+          "signed_volume_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "parts": [
+        "f0_c0_s5_keeper_cover",
+        "f0_c0_s5_keeper_screw1"
+      ],
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_screw1",
+          "faces": 278,
+          "signed_volume_mm3": 0.0
+        }
+      ]
+    }
+  ],
+  "service_records": [
+    {
+      "operation": "NOMINAL_KEY_SHANK_CONTINUOUS_AXIAL_ENVELOPE",
+      "bolt": 0,
+      "intersections": [],
+      "key_AF_mm": 1.5,
+      "key_reach_mm": 15,
+      "whole_tool_and_hand_qualified": false
+    },
+    {
+      "operation": "NOMINAL_KEY_SHANK_CONTINUOUS_AXIAL_ENVELOPE",
+      "bolt": 1,
+      "intersections": [],
+      "key_AF_mm": 1.5,
+      "key_reach_mm": 15,
+      "whole_tool_and_hand_qualified": false
+    },
+    {
+      "operation": "SCREW_CONTINUOUS_CONSERVATIVE_AXIAL_ENVELOPE",
+      "bolt": 0,
+      "travel_mm": 8,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_cover",
+          "faces": 778,
+          "signed_volume_mm3": 7.998157371957859e-07
+        }
+      ]
+    },
+    {
+      "operation": "NUT_CONTINUOUS_CONVEX_ENVELOPE_SCREWS_REMOVED",
+      "bolt": 0,
+      "travel_local_Y_mm": 4,
+      "intersections": [
+        {
+          "part": "f0_c0_s4_support",
+          "faces": 22,
+          "signed_volume_mm3": 0.8775325928710251
+        }
+      ],
+      "scope": "Concave nut bore filled by hull; hits unresolved, no-hit sufficient only for nominal continuous translation."
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 0.1,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 0.5,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 1,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 2,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 3,
+      "intersections": [
+        {
+          "part": "f0_c0_s4_support",
+          "faces": 30,
+          "signed_volume_mm3": 0.04452747402855065
+        }
+      ]
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 0,
+      "translation_local_Y_mm": 4,
+      "intersections": [
+        {
+          "part": "f0_c0_s4_support",
+          "faces": 68,
+          "signed_volume_mm3": 0.8582772025744988
+        }
+      ]
+    },
+    {
+      "operation": "SCREW_CONTINUOUS_CONSERVATIVE_AXIAL_ENVELOPE",
+      "bolt": 1,
+      "travel_mm": 8,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_cover",
+          "faces": 1118,
+          "signed_volume_mm3": 1.8638419708357408e-06
+        }
+      ]
+    },
+    {
+      "operation": "NUT_CONTINUOUS_CONVEX_ENVELOPE_SCREWS_REMOVED",
+      "bolt": 1,
+      "travel_local_Y_mm": 4,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_support",
+          "faces": 46,
+          "signed_volume_mm3": 0.4098235135512535
+        }
+      ],
+      "scope": "Concave nut bore filled by hull; hits unresolved, no-hit sufficient only for nominal continuous translation."
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 0.1,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 0.5,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 1,
+      "intersections": []
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 2,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_support",
+          "faces": 48,
+          "signed_volume_mm3": 0.034200074602483234
+        }
+      ]
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 3,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_support",
+          "faces": 68,
+          "signed_volume_mm3": 0.18585055505964757
+        }
+      ]
+    },
+    {
+      "operation": "ACTUAL_NUT_TRANSLATION_SAMPLED_ONLY",
+      "bolt": 1,
+      "translation_local_Y_mm": 4,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_support",
+          "faces": 80,
+          "signed_volume_mm3": 0.33146029632143365
+        }
+      ]
+    }
+  ],
+  "axial_terminal_obstruction_samples": [],
+  "actual_preload_N": null,
+  "actual_retention_N": null,
+  "fabrication_ready": false,
+  "runtime_s": 8.055363603984006,
+  "scope": "Fastener-only nominal key/screw/nut service, no cover path or axial terminal test executed. Original static hits retained. Convex nut hull fills thread bore; hits unresolved until actual sampled/surface refinement. No actual wrench/hand/preload/strength/thread or physical retention approval.",
+  "fasteners_only": true
+}

@@ -1,5 +1,11 @@
 ## Current distal keeper1005–1017 — 2026-11-23
 
+Feature commits05c984d/8e715fc. Evidencev59 archives13newcases/14939files and
+verifies14636priorimmutablehashes with0mismatch.178softwaretestsPASS5.320sbody.
+WholeHEADscan noGitblob>=100000000bytes;no detectorCSVadded,push/historyrewrite
+orSDKedit. Localupstreamcachecomparison15ahead/0behind beforearchivecommit;
+not aliveGitHubfetch. Allresearchchildrencomplete. Latestassetsv52andRaw1005–1017.
+
 Feature05c984d followed byactual service/slot experiments;read
 DISTAL_KEEPER_AND_SERVICE_20261123.md. One f0/c0 distal Keeper has6actualSTLs,
 294candidateassemblyinstances. Staticmating artifacts remainREVIEW. No Native

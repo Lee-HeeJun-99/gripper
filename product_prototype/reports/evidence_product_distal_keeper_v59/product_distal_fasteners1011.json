@@ -1,0 +1,125 @@
+{
+  "status": "DISTAL_KEEPER_SERVICE_REVIEW",
+  "source_commit": "05c984dd4b55ceecee593bb73732fce4c6740ddf",
+  "input_hashes": {
+    "results/product_distal_keeper1005/assembly_delta_recipe.json": "0bfeb8df2de80f62bab859c04948732cbd8b7934cabfb3823c4178f13854126f",
+    "results/product_distal_basal1000/assembly_delta_recipe.json": "275c385a8e923637d91afe9b20fe992dbfefd25d2f0329a3a0981f6ee7cee17a",
+    "results/product_remaining_f2lead975/assembly_delta_recipe.json": "0c30816c30f8850481d9162ab40059974bd66723d0682e3b81c5299d6649f6a5",
+    "results/product_remaining_f2clamp974/assembly_delta_recipe.json": "d0fe670456cc76c5eedae812be64a94d4f27b4dd52bc81fd12f588117f282a71",
+    "results/product_remaining_c1lead971/assembly_delta_recipe.json": "69476ad3dde922a70adaab1cdb6e8054a8d84fc4c2f9282b784a4c948ad00547",
+    "results/product_remaining_clamped968/assembly_delta_recipe.json": "5c369e8b19ad86d4c771656df59842890b2c90f3b833b8fb86d7a323a444393b",
+    "results/product_remaining_lead964/full_assembly_recipe.json": "6b0fb423bef3d4e71376998668d333ba6b1ee6401905806d03dc2ae6f6b4b985",
+    "cad/distal_keeper_service.py": "51f6be531c3c257a4a1b23549a477df894979b781c411fa0c078f19e88cee340",
+    "cad/distal_keeper.py": "414f2b089fa0cc1697c3d763c6e7c5088321b91e7181c2689c7671e31640db28",
+    "config/distal_keeper_v52.json": "d31437807c7fb6cb41b23ba7efc3303cd1f74a1fecf976fa79b0b4cdb0063796"
+  },
+  "local_mating_diagnostics": [
+    {
+      "parts": [
+        "f0_c0_s5_support",
+        "f0_c0_s5_keeper_cover"
+      ],
+      "intersections": []
+    },
+    {
+      "parts": [
+        "f0_c0_s5_keeper_cover",
+        "f0_c0_s5_keeper_screw0"
+      ],
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_screw0",
+          "faces": 210,
+          "signed_volume_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "parts": [
+        "f0_c0_s5_keeper_cover",
+        "f0_c0_s5_keeper_screw1"
+      ],
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_screw1",
+          "faces": 278,
+          "signed_volume_mm3": 0.0
+        }
+      ]
+    }
+  ],
+  "service_records": [
+    {
+      "operation": "NOMINAL_KEY_SHANK_CONTINUOUS_AXIAL_ENVELOPE",
+      "bolt": 0,
+      "intersections": [],
+      "key_AF_mm": 1.5,
+      "key_reach_mm": 15,
+      "whole_tool_and_hand_qualified": false
+    },
+    {
+      "operation": "NOMINAL_KEY_SHANK_CONTINUOUS_AXIAL_ENVELOPE",
+      "bolt": 1,
+      "intersections": [],
+      "key_AF_mm": 1.5,
+      "key_reach_mm": 15,
+      "whole_tool_and_hand_qualified": false
+    },
+    {
+      "operation": "SCREW_CONTINUOUS_CONSERVATIVE_AXIAL_ENVELOPE",
+      "bolt": 0,
+      "travel_mm": 8,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_cover",
+          "faces": 778,
+          "signed_volume_mm3": 7.998157371957859e-07
+        }
+      ]
+    },
+    {
+      "operation": "NUT_CONTINUOUS_CONVEX_ENVELOPE_SCREWS_REMOVED",
+      "bolt": 0,
+      "travel_local_Y_mm": 4,
+      "intersections": [
+        {
+          "part": "f0_c0_s4_support",
+          "faces": 22,
+          "signed_volume_mm3": 0.8775325928710251
+        }
+      ],
+      "scope": "Concave nut bore filled by hull; hits unresolved, no-hit sufficient only for nominal continuous translation."
+    },
+    {
+      "operation": "SCREW_CONTINUOUS_CONSERVATIVE_AXIAL_ENVELOPE",
+      "bolt": 1,
+      "travel_mm": 8,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_keeper_cover",
+          "faces": 1118,
+          "signed_volume_mm3": 1.8638419708357408e-06
+        }
+      ]
+    },
+    {
+      "operation": "NUT_CONTINUOUS_CONVEX_ENVELOPE_SCREWS_REMOVED",
+      "bolt": 1,
+      "travel_local_Y_mm": 4,
+      "intersections": [
+        {
+          "part": "f0_c0_s5_support",
+          "faces": 46,
+          "signed_volume_mm3": 0.4098235135512535
+        }
+      ],
+      "scope": "Concave nut bore filled by hull; hits unresolved, no-hit sufficient only for nominal continuous translation."
+    }
+  ],
+  "axial_terminal_obstruction_samples": [],
+  "actual_preload_N": null,
+  "actual_retention_N": null,
+  "fabrication_ready": false,
+  "runtime_s": 10.516565199010074,
+  "scope": "1005 original world CSG hits preserved; local-frame diagnostics do not replace them. Nominal key shank only, no head/hand/bent-key clearance. Cover translation seven samples, screws/nuts already removed; not continuous sweep or complete assembly sequence. Axial stop samples are NOT general slack/rotation retention, thread fit, strength, tolerance, physical material or Native qualification."
+}

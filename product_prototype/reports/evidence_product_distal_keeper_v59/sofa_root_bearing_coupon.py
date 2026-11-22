@@ -1,0 +1,15 @@
+"""Installed ideal cylindrical bearing plus finite thrust surfaces;not actual bearing data."""
+import argparse,csv,json,subprocess,time,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+from native_finite_guard import finite_guard
+
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--spin-only',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);source=BASE/'results/product_root_intersection817';tree=ET.parse(source/'scene.scn');root=tree.getroot();node=root.find("./Node[@name='wheel']");ET.SubElement(node,'PartialFixedProjectiveConstraint',name='ideal_cylindrical_bearing',template='Rigid3d',indices='0',fixedDirections='1 1 0 1 1 0')
+ if a.spin_only:node.find('MechanicalObject').set('velocity','0 0 0 0 0 1')
+ for item in root.iter():
+  if item.get('filename'):item.set('filename',str(out/Path(item.get('filename')).name))
+ steps=10 if a.spin_only else 80;tree.write(out/'scene.scn');(out/'producer.py').write_bytes(Path(__file__).read_bytes());command=['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(steps),'--hideProgressBar',str(out/'scene.scn')];start=time.monotonic();proc=finite_guard(command,out/'process',420,state_file=out/'wheel.csv');rows=list(csv.DictReader((out/'wheel.csv').open())) if (out/'wheel.csv').exists() else [];v=np.array([np.fromstring(r['rigid_v'],sep=' ') for r in rows]);q=np.array([np.fromstring(r['rigid_q'],sep=' ') for r in rows]);finite=bool(len(rows) and np.isfinite(v).all() and np.isfinite(q).all());logs=''.join((out/'process'/x).read_text(errors='replace') for x in ('stdout.log','stderr.log'));d=dict(status='NATIVE_IDEAL_BEARING_COUPON_ONLY' if proc['exit_code']==0 and '[ERROR]' not in logs and finite and len(rows)==steps else 'FAIL_NATIVE_BEARING_COUPON',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes={str(x):sha(x) for x in (Path(__file__),source/'scene.scn',BASE/'sofa/native_finite_guard.py',Path('/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Constraint.Projective/sofa/component/constraint/projective/PartialFixedProjectiveConstraint.h'))},command=command,process=proc,scene_sha256=sha(out/'scene.scn'),spin_only=a.spin_only,dt_s=.00025,state_rows=len(rows),all_states_finite=finite,maximum_locked_velocity_component= float(abs(v[:,[0,1,3,4]]).max()) if finite else None,maximum_locked_position_m=float(abs(q[:,:2]).max()) if finite else None,final_v=v[-1].tolist() if finite else None,runtime_s=time.monotonic()-start,scope='NewIDEALcylindricaljointresearchassumption viaNativePartialFixedProjectiveConstraint,allowsaxialtranslation/spin,locksother4DOFs. Not postprocessingq/v orsamephysicsasfreeRigidcoupon. Actualradialclearance/friction/compliance/axlemass/retentionstrengthNOTmodeled. Samefinitecollisionmodels remainactive;not3Finger/holding/time/energyqualification.',fabrication_ready=False)
+ (out/'summary.json').write_text(json.dumps(d,indent=2));print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

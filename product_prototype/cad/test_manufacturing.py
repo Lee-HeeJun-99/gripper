@@ -12,6 +12,7 @@ from test_continuous_service import SweptServiceTests
 from test_separation_certificate import SeparationTests
 from test_pressure_fastener import PressureFastenerTests
 from test_joint_reference import JointReferenceTests
+from test_remaining_contracts import RemainingContractTests
 
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').read_text())

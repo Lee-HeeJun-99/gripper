@@ -1,3 +1,14 @@
+## Current958–967 continuation — 2026-11-23
+
+Read product_prototype/reports/PALM_AND_DRUM_CONTRACT_CONTINUATION_20261123.md.
+Do not rerun completed951–967. Declared Palm-envelope proof959 excludes26
+positive operands only,not joint/tolerance approval. Actual drum contract962
+shows generic coupling/anchor/groove still missing. Independently placed f2/c0
+Root963 REVIEW;964coherent Turn set and965705probe lead screen clear only.
+967147softwaretestsPASS. NEXT separately verify remaining c1Root/lead/retention;
+actual joint/material tests require hardware. Native/time/mesh/100g/Lift/STEP
+remain unqualified. Preserve958/960software/representation failures.
+
 ## Fastener/captive-nut939–950 — 2026-11-23
 
 Readproduct_prototype/reports/FASTENER_AND_CARTRIDGE_CONTINUATION_20261123.md.

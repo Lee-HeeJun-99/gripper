@@ -1,0 +1,91 @@
+{
+  "status": "REMAINING_ROOT_LAYOUT_REVIEW_REQUIRED",
+  "source_commit": "9c2966f3394623290ca5f5ab22ad1862ce333326",
+  "input_hashes": {
+    "cad/remaining_root_layout.py": "78fa34cc22378288829d9dfb17a56f64306baf98301b7c103b5b8dca0582eaee",
+    "results/product_remaining_lead953/full_assembly_recipe.json": "b31ee8fa5a6756738e55cec40f62fbd763afcc0ead9144642f8b330c8218a645",
+    "meshes/b3_supplier_root_mount_v42/route_mm.json": "38f84f0b21969bfcc50224651eb8aea386108a4e14a8745086ceeeb2cfb148ab",
+    "cad/manufacturing_assembly.py": "9e6d11dd94d344feef07cc3cf629b997d41d1ce1a566eda4e8b55f35b9160b0b"
+  },
+  "target_finger": 2,
+  "target_cable": 0,
+  "records": [
+    {
+      "source_part": "f0_c0_root_redirect",
+      "target_part": "f2_c0_root_redirect",
+      "volume_mm3": 242.60453027385336,
+      "STL_SHA256": "0dafd812ac4080560625d9ffea29ce41132d156d4408045901a922b27c54adcf"
+    },
+    {
+      "source_part": "f0_c0_root_mounted_bridge",
+      "target_part": "f2_c0_root_mounted_bridge",
+      "volume_mm3": 2319.5969570301954,
+      "STL_SHA256": "1e2eb3548a92bfaad38298e999e8ae8272475c206540593be0c989768b197961"
+    },
+    {
+      "source_part": "f0_c0_root_headed_pin",
+      "target_part": "f2_c0_root_headed_pin",
+      "volume_mm3": 9.723300337092615,
+      "STL_SHA256": "ca6bc85bb09d584850c2bf893da0501b2915a54561bcf22b644e9e2318b17cac"
+    },
+    {
+      "source_part": "f0_c0_s0_eyelet",
+      "target_part": "f2_c0_s0_eyelet",
+      "volume_mm3": 11.040650686721724,
+      "STL_SHA256": "4ebef6d5b9e2f9bb566ee3a887781b7e5701cf3c8d030f8356f1497b67852961"
+    },
+    {
+      "source_part": "f0_c0_s0_support",
+      "target_part": "f2_c0_s0_support",
+      "volume_mm3": 72.74873375680824,
+      "STL_SHA256": "bfe7367815874be5ab6842d7964a18e24495886db2e221297602a8a414ad6f55"
+    },
+    {
+      "source_part": "f0_c0_s0_bondline_RESEARCH",
+      "target_part": "f2_c0_s0_bondline_RESEARCH",
+      "volume_mm3": 0.2195635879188328,
+      "STL_SHA256": "cd88d9ea5edf72adc0eb8abd4a1d4c6d570681aad201adf0fc837a34b64876b3"
+    }
+  ],
+  "solid_intersections": [
+    {
+      "parts": [
+        "f2_c0_root_mounted_bridge",
+        "palm_bridge_bores"
+      ],
+      "faces": 338,
+      "signed_volume_mm3": 0.0,
+      "classification": "SOLID_INTERFERENCE_REVIEW"
+    },
+    {
+      "parts": [
+        "f2_c0_s0_eyelet",
+        "f2_c0_s0_bondline_RESEARCH"
+      ],
+      "faces": 60,
+      "signed_volume_mm3": 3.806735019799371e-11,
+      "classification": "UNSELECTED_BOND_INTERFACE_REVIEW"
+    },
+    {
+      "parts": [
+        "f2_c0_s0_support",
+        "f2_c0_s0_bondline_RESEARCH"
+      ],
+      "faces": 274,
+      "signed_volume_mm3": 1.0094402801049303e-06,
+      "classification": "UNSELECTED_BOND_INTERFACE_REVIEW"
+    }
+  ],
+  "replaced_existing_names": [
+    "f2_c0_root_headed_pin",
+    "f2_c0_root_mounted_bridge",
+    "f2_c0_root_redirect",
+    "f2_c0_s0_eyelet",
+    "f2_c0_s0_support"
+  ],
+  "retained_other_parts": 279,
+  "full_part_count": 285,
+  "runtime_s": 9.856833062018268,
+  "fabrication_ready": false,
+  "scope": "ONLYone remainingf1/f2c0Root layout hypothesis.6supplier-sized sourceparts rigidlyplaced atdeclared120/240deg,5legacy targetparts replaced,othersretained;allnewvsactualassembly CSG checked. ThisisNOTblindpropagationorqualifiedjoint/adopted3Fingerassembly. Otherturns/lead/Rootc1 remain legacy;wirepath and service MUST be checked independently. Unselectedbond/translatedRailSkinattachment/actualmaterials/mass/joints/Native/movinginterference/holding/STEP remain unqualified."
+}

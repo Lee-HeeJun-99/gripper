@@ -20,6 +20,7 @@ def worker(a):
  result['full_lead']=a.full_lead
  if a.full_lead:
   result['scope']='ONLYONEf1c0savedRoot+three-turn+drum leadpath,notfullfinger/all6wires/movingclearance. Allactualsolidsretained;Root/turn/drumintendedproximitiesrecorded,notcontactlawPASS. Mount/bondinterfaceissuesunchanged;noNative/physicalholding/strength/STEPapproval.'
+  result['scope']=f'ONLYONE{prefix} saved Root+three-turn+drum lead,notfullfinger/all6wires/movingclearance. All solids retained;intended proximity isnot contactlaw/strength qualification. Mount/bond issues remain open;noNative/holding/STEPapproval.'
   if not any(h['classification']=='UNRESOLVED_OBSTACLE' for h in contacts):result['status']='ONE_PLACED_FULL_LEAD_OBSTACLE_CLEAR_ONLY'
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],unresolved=sum(h['classification']=='UNRESOLVED_OBSTACLE' for h in contacts),runtime_s=result['runtime_s']),indent=2))
 def main():

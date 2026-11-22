@@ -1,3 +1,15 @@
+## Current continuation958+ — 2026-11-23
+
+Latest local starting HEAD9c2966f; clean start. Read
+PALM_AND_DRUM_CONTRACT_CONTINUATION_20261123.md for this session. Historical
+95926operand Palm declared-envelope exclusion only;958numeric-envelope FAIL
+preserved. 962actual3drum dimensional contract,960metadata FAIL preserved.
+963f2/c0Root REVIEW,964coherent turnset clear,965finite lead705probes clear
+against279parts in29.012s.967147softwaretests PASS. No physical/SOFA upgrade.
+939–957 already completed;do not rerun. Current open scope: actual joint/bond
+selection, all remaining c1 channels, dynamic assembly, Native physics Gates,
+hardware measurement and STEP. No push or history rewrite permitted.
+
 ## Fastener/captive-nut939–950 — 2026-11-23
 
 Authority FASTENER_AND_CARTRIDGE_CONTINUATION_20261123.md. Manufacturer-based

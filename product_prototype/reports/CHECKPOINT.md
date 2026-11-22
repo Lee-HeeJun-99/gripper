@@ -1,5 +1,14 @@
 ## Current c1 continuation971+ — 2026-11-23
 
+Session features9914651/6abdd76/771a2a9. Evidencev57 verified13966prior immutable
+hashes0mismatch;14289files/17newcases. WholeHEAD no blob>=100000000bytes,no new
+detectorCSV,nopush/historyrewrite/SDKchanges. All guardedchildren complete.
+Read-only resume:
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/product_remaining_f2lead975/summary.json
+NEXT explicit distalanchor/drumtermination/horninterface andcontinuous moving
+service/clearance;do not repeat completed971–987 static paths. No physical
+measurement ornewNative qualification;159softwaretests areNOTproductPASS.
+
 Features9914651/6abdd76 followed by9826lead obstacle screen clear4230probes/
 130.190s,985actual6guide-centrechains clear66probes.98615combinedpath pair
 numericalreference minexpandedgap2.0495545mm,NOTexact/moving/toleranceproof.

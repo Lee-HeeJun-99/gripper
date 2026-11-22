@@ -1,3 +1,15 @@
+## Git publication cleanup — 2026-11-23 (research scope unchanged)
+
+Read GIT_DETECTOR_CLEANUP_20261123.md. Unpublished43commit range only:five
+oversizeddetectorCSVpathsremovedfromGit,ALLoriginalCSVbytesstilllocal+backedup.
+All43trees/metadata/parentsaudited;otherfilesunchanged.16IDsunchanged/27remapped.
+Remote67906a6remainsancestor;cleanedresearchtip012c316. Code/CAD/Raw/manifests/
+PASS-FAILNOTregenerated. HistoricSHAsremaininlocalrecoveryref/bundle;fullmapping
+git_cleanup_20261123/commit-map.txt. Oldfeature18dea00→3ca5670,5c1a99b→f28a16a.
+Noactualpush/forcepush. NewdetectorCSVignorepolicy;avoidgitadd-f journals.
+ResearchNEXTunchanged:realjoint/preload/materialqualification,thread/padinterface,
+notrepeatcompletedproofsorNative895. Precisedbackup/recoveryinmaintenance report.
+
 ## Latest separation / pressure shoe924–938 — 2026-11-23
 
 Featurecommits18dea00 (exactproofs/replay),5c1a99b (pressure shoe/CAD/verification).

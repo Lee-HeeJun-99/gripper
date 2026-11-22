@@ -1,3 +1,12 @@
+## Git maintenance note — 2026-11-23
+
+Unpublished43commitscleanedonlyfiveoversizeddetectorCSVpaths;originalRawremains
+atallfivepaths+externalbackup. No researchresult/manifestreclassified. See
+product_prototype/reports/GIT_DETECTOR_CLEANUP_20261123.md andgit_cleanup_20261123/
+commit-map.txt forold/newSHA mapping. Cleanedresearchtip012c316;oldfeature18dea00
+maps3ca5670,5c1a99b mapsf28a16a. Remote67906a6isancestor;noactualpush/forcepush.
+NEXTresearchpriorityunchangedbelow;do notrerunphysicsdueonlytoGitSHArewriting.
+
 ## Latest separation / pressure shoe924–938 — 2026-11-23
 
 Lastfeatures18dea00/5c1a99b. 938125softwaretestsPASS;v53evidenceverifies13113

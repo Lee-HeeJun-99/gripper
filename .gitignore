@@ -7,6 +7,9 @@ results/**/rigid.txt
 results/**/interface.txt
 # Reproducible per-step CSV outputs stay local; summaries and golden data remain tracked.
 results/**/timeseries.csv
+# Detector journals remain local Raw evidence; do not add new copies to Git.
+# Already tracked smaller detector files are intentionally preserved.
+/product_prototype/results/**/detector.csv
 # Never publish local credentials or authentication material.
 .env
 .env.*

@@ -1098,3 +1098,10 @@ base/halfbutallcommonoutputsTIMEPAIRFAIL;notphysicalqualification. NSDmapping
 geometrictangentcandidatealsoinverts/rejected. EightnewscopechecksPASS1135.
 Old50gHolding/Liftfunctionalresults,alltime/meshFAILs preserved. No new100g,
 energy/material/Joint/wrapping/liftproductPASS. SDKunchanged.
+## InitialNativeassembly1136–1141 — BOUNDED IDENTITY ONLY
+
+FirsteffectiveA extractionandrestKquerypreserve5-outputq/vexactly. Actual
+Native720x720A matchesmappedmass+NativeK+Rayleighformula(TT/TR/RT/RR)within
+2.752e-16relative. NOT isolatedmass orfullnonlinearassembly/timePASS. Four
+scopechecksPASS1141;frozen1137spectrumisNOTdominantresponsecertification.
+NextsamplelaterAandpreviousacceptedstate. OldRailbacktimeFAILpreserved.

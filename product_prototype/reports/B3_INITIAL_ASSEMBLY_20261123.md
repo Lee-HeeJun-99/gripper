@@ -1,0 +1,51 @@
+# Continued initial assembly diagnostics1136–1141
+
+Continuedafterfeaturec38c461,notstoppedatcommit. Reusedbuild1120deformedprobe
+andfrozenbuild410NativeAssembledMatrixObserver,matchingcompiledsource/binary/
+installedSDK. Nonewphysicscomponent,material/tolerance/controlchange.
+
+1136 probesRailbackcandidatefirstAccepted2.5ms,5outputs,0.270s. q/v/Guideprefix
+errors0;single-directionFDrelative≤2.697e-6. SnapshotNativeFEMmatrixavailable.
+
+1137 constructs anINDEPENDENTfrozenmappedmaterialblock spectrum usingdeclared
+UniformMass1g/252nodes,public12Guideelementmassmatrices,actualmappinggeometry
+andRootprojection.648freecoordinates;smallest frozenfrequency26.719Hz,median
+100509Hz,max1541149.64Hz. No nonpositiveeigenvalue;firstsamplevelocitymapping
+error1.735e-18m/s. This is NOT aNativeassemblednonlinearmass/tangent oractual
+dominantresponse/timeprediction. Geometric/inertiatangent terms omitted;
+FEMpointmass isinputderived. Rayleighdamping isnot included intheseundamped
+eigenpairs. HighfrequencyprojectiondoesNOTequalactualenergyorgraspfailurecause.
+Rawmodeweights/frequenciesretained;do notrespondwithanunboundeddtsearch.
+
+1138 adds explicitstockMatrixLinearSystem plusEXISTINGobserver toactualNative
+scene,NOT anewsolver.1139alsoqueriesNativeinitialFEMmaterialmatrixusingexisting
+observer. Both5Nativeoutputs,0.237seach,noERROR,q/v/Guideprefixerrorsexact0.
+ActualeffectiveA dimension720,20247nonzeroentries. This verifiesboundedpath
+purityonly;doesnotcertifyalllatermatrixassemblies.
+
+1140 reconstructsfirstfree-motionA BEFOREfirstCableimpulse:
+
+`A=(1+dt*alphaFilm) GᵀMfilmG + Mguide + (dt²+dt*betaFilm)GᵀKnativeRestG`
+
+dt2.5ms,alphaFilm1/s,betaFilm1e-4s fromactualScene. Nativecoordinateorder is
+12Rigidframes then216freeVec3nodes;fixedRootrows72–143excluded. ActualGuide
+massmatricesreadfromAPI,pointmassinputderived;all fourTT/TR/RT/RRblockrelative
+errors≤2.752e-16 againstNativeA,gate0.1%. Thusinitialeffectiveassemblyidentity
+PASS ONLY. This is NOT independentmassisolation orfullnonlinearassemblyPASS.
+Initialmissingmass/duplicatedmappedstiffness isnot supportedbythischeck.
+
+Next:observeNativeeffectiveA atonevalidlaterstep,andrecordthePREVIOUSaccepted
+q/Guideframes usedforassembly;comparewithactualNativeFEMcache/materialblock
+anddeclaredRayleighterms. ExistingobserverwritesfirstAonly,so do notmislabel
+poststepK asprevstepA. Aread-onlysampledobserverextensionneedsfreshbuildand
+trajectorypuritycheck. Then separateCableimpulse applicationfromfree-motion
+response. No repeatedfull100g/grasp/dt/force/frictionsweepjustified.
+
+1141foursoftware/scoperegressionchecks,notphysicalgates. Evidence,buildidentities,
+RawandpriorFAILspreserved. Material/joint/CAD/variable-stiffness/100g/Liftproduct
+qualification remainabsent. Fresh1142+tags aftercheckingdirectories.
+
+Read-onlyresume:
+`python -m json.tool product_prototype/results/b3_initial_system_assess1140/summary.json`
+Sourceentry:`product_prototype/sofa/b3_rail_back_system.py`;
+reusablebinariesbuild410andbuild1120guardedbyexistingidentitymetadata.

@@ -1,3 +1,14 @@
+## Next after1136–1141 — firstNativeassemblyidentity
+
+Read product_prototype/reports/B3_INITIAL_ASSEMBLY_20261123.md.
+FirstNative720x720AandrestKobservedwithprefixq/vpurity0.1140TT/TR/RT/RR
+blocks matchmass+Rayleigh+NativeKformula≤2.752e-16relative. NOTfullmass/
+nonlinear/timequalification.1137frozeneigenpairsNOTactualdominantresponse.
+NEXT sampledNativeAatvalidlaterstep,recordPREVIOUSacceptedq/Guideframes,
+freshread-onlyobserverbuild+puritycheck. Existingbuild410writesfirstAonly.
+No stalecheckpoint/poststepKconfusion. Then free-motionvsCableimpulsephase.
+FournewscopechecksPASS1141. Fresh1142+,no100g/dt/force/frictionsweep.
+
 ## Next after1120–1135 — Native tangent andRailbackcandidate
 
 Read product_prototype/reports/B3_DEFORMED_TANGENT_20261123.md and

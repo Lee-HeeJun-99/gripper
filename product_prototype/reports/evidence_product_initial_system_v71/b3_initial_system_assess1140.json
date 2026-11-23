@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FIRST_EFFECTIVE_SYSTEM_IDENTITY_ONLY",
+  "sample": "Firstfree-motionassemblyatrest,beforefirstCableimpulse",
+  "formula": "A=(1+dt*alphaFilm)*G^T Mfilm G+Mguide+(dt\u00b2+dt*betaFilm)*G^T KnativeRest G;projectiveRootDOFs excluded",
+  "native_order": "12Rigidframes first,then216freeVec3nodes;Rootrows72\u2013143excluded",
+  "dt_s": 0.0025,
+  "alphaFilm": 1.0,
+  "betaFilm": 0.0001,
+  "blocks": {
+    "TT": {
+      "relative_error": 1.5883100546747308e-16,
+      "absolute_Frobenius_difference": 2.205587572650328e-12,
+      "status": "PASS_INITIAL_BLOCK_ONLY"
+    },
+    "TR": {
+      "relative_error": 2.2090310127690238e-16,
+      "absolute_Frobenius_difference": 7.73363395282982e-17,
+      "status": "PASS_INITIAL_BLOCK_ONLY"
+    },
+    "RT": {
+      "relative_error": 2.751325032484126e-16,
+      "absolute_Frobenius_difference": 9.632160238356348e-17,
+      "status": "PASS_INITIAL_BLOCK_ONLY"
+    },
+    "RR": {
+      "relative_error": 1.4709631814763135e-16,
+      "absolute_Frobenius_difference": 2.0418560892336383e-19,
+      "status": "PASS_INITIAL_BLOCK_ONLY"
+    }
+  },
+  "relative_gate": 0.001,
+  "mass_isolation_verified": false,
+  "full_deformed_assembly_verified": false,
+  "physical_validation": "NOT QUALIFIED",
+  "time_convergence": "FAIL_PRESERVED",
+  "input_hashes": {
+    "results/b3_rail_back_hold1129/scene.scn": "2f6fb5cff787b451cb2e1558d682eb08a8064aaa139ebe15f1d795d743071f59",
+    "results/b3_rail_back_hold1129/guide_frames0.csv.mass.json": "4fe2b916425861e2e33a429376b36877e5afda2d077cb072c773daf20f225be2",
+    "results/b3_rail_back_rest_system1139/rest.matrix.csv": "450c18edb0d64becb332a475bbc7120aeb409229e1c0b14783e5f597d499fb2e",
+    "results/b3_rail_back_rest_system1139/assembled.csv": "13c40931090db1f93979ab7dcbb462b1f22dd68f212c1d6cec83bef351ab00a4",
+    "sofa/b3_initial_system_assess.py": "dc78bbd6bffb660666e998ea9e5572c9b5c0264e176d4e4cd472f1fd6bfd8a06"
+  }
+}

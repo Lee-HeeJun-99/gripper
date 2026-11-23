@@ -1,3 +1,25 @@
+## Continued initial assembly1136–1141 — 2026-11-23
+
+Savedfeaturesa3dd268/c38c461;continuedafterbothcommits. Read
+Evidencev71verifies18425priorimmutablefiles,0mismatch,total18680hashes.
+Relatedregressions25PASS(13prior+8deformed/joint+4initialassembly),nophysicalGate.
+B3_INITIAL_ASSEMBLY_20261123.md.1136firstRailbackprobe,q/vprefixerror0.
+1137frozeninputspectrumNOTactualnonlinearmodes. Reusedexistingbuild410:
+1138/1139actual720x720NativeAandrestmaterialK extracted,5outputpurityerror0.
+1140firsteffectiveA matchesdeclaredmass+NativeK+Rayleighformula inTT/TR/RT/RR
+blocks≤2.752e-16relative. Initialmissingmass/duplicatedstiffness notsupported;
+NOT massisolation/fullnonlinearassembly/timePASS.1141fournewscopechecksPASS.
+
+NEXT read-onlysampledNativeAobserveratonevalidlaterstep,WITHpreviousaccepted
+q/Guideframes;existingbuild410observerwritesfirstmatrixonly. Do notcompare
+poststepKtoprevstepA orinstallstalecheckpoint. Freshbuild+puritycheckneeded.
+Then isolateCableimpulseapplicationvsfree-motionresponse. Fresh1142+tags.
+No full100g/dt/force/frictionsweep orCADadoption. Read-onlyresume:
+`python -m json.tool product_prototype/results/b3_initial_system_assess1140/summary.json`.
+Reusebuild410(viaobserver_identity.py)andbuild1120;identitiesfrozeninRaw.
+OldRailbacktimepairFAIL,NSD/NeoFAIL,andallphysicalqualificationflagsunchanged.
+No livephysicschildrenorafter-sessioncontinuationpromise.
+
 ## Deformed tangent / Rail-back joint1120–1135 — 2026-11-23
 
 Starting63711a7,clean. Featurea3dd268 preservesnewobserver+NativeNeo controls.

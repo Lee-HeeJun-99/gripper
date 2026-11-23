@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN_INPUT_DERIVED_SPECTRUM_ONLY",
+  "source_commit": "c38c4613271348c971aebb2baa54b9295d2fda35",
+  "sample_time_s": 0.0025,
+  "free_dofs": 648,
+  "input_derived_point_mass_kg": 3.968253968253968e-06,
+  "point_mass_assembly_verified": false,
+  "Guide_mass_source": "Native public element mass matrices",
+  "native_assembled_mass_tangent_verified": false,
+  "projected_material_K_antisymmetry_relative": 8.772574434252813e-17,
+  "minimum_eigenvalue": 28184.37597262174,
+  "nonpositive_eigenvalues": 0,
+  "frequency_quantiles_Hz": {
+    "0": 26.719254919283863,
+    "0.25": 31131.973684377466,
+    "0.5": 100509.27955032948,
+    "0.75": 257255.16072621927,
+    "1": 1541149.6366473264
+  },
+  "first_sample_velocity_mapping_error_m_s": 1.734723475976807e-18,
+  "resolution_diagnostics": {
+    "0.0025": {
+      "modes_above_Nyquist": 645,
+      "reference_load_squared_fraction_above_Nyquist": 0.999970025150603,
+      "max_omega_dt": 24208.3218828691
+    },
+    "0.00125": {
+      "modes_above_Nyquist": 644,
+      "reference_load_squared_fraction_above_Nyquist": 0.9999697168390929,
+      "max_omega_dt": 12104.16094143455
+    }
+  },
+  "physical_validation": "NOT QUALIFIED",
+  "conclusion": "Frozen high-frequency content is a hypothesis for resolution sensitivity,not actual dominant modes,not proof of unique cause or predicted grasp time. No dt/force/stiffness change prescribed.",
+  "input_hashes": {
+    "results/b3_rail_back_hold1129/scene.scn": "2f6fb5cff787b451cb2e1558d682eb08a8064aaa139ebe15f1d795d743071f59",
+    "results/b3_rail_back_hold1129/guide_frames0.csv": "c46d1e913551f687c27a656d20201aab07e6154102290bc0d62db047b994bc78",
+    "results/b3_rail_back_hold1129/guide_frames0.csv.mass.json": "4fe2b916425861e2e33a429376b36877e5afda2d077cb072c773daf20f225be2",
+    "results/b3_rail_back_initial_probe1136/probe.matrix.csv": "af512b56d5b9965686e4d0f1858fc3b106786e6d21257923bcd922621fbd2ace",
+    "results/b3_rail_back_initial_probe1136/probe.state.csv": "3217cae8586dc731edc3267ab595ac4bca5f6cddd66be820756844a1aad773b6",
+    "sofa/b3_rail_back_spectrum.py": "8b717b39ddc293472533cb2ada29e79e656a35641aa4c832cf264e6dcfd7235b"
+  }
+}

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripCablePause LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+add_library(ReGripCablePause SHARED Pause.cpp)
+target_compile_features(ReGripCablePause PRIVATE cxx_std_17)
+target_link_libraries(ReGripCablePause PRIVATE Sofa.Core Sofa.Simulation.Core)

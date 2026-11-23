@@ -1,0 +1,27 @@
+# One-step Cable input pause1148/1150/1151
+
+ContinuedimmediatelyafterTask1featureb7d0e71. Newsmallinputmodule1148compiled
+againstinstalledSDK,3.719s/4GiB120sguard. No ForceField/ODE/constraintsolver.
+It changesONLYexistingNativeCableSequence.maximumForceNto0 fortheONEstep
+ending50ms,andrestores2.5N atnextBegin. No actualq/v/forcebuffer/mass writes.
+This isexplicitNEWactuatorinput,NOT anobserverorperformanceimprovement.
+
+ActualNative1150:24outputs/60ms,0.610s,noERROR. Old1143 unchanged.1151checks:
+allpreviousq/v/Guidestatesexactlyequaluntil47.5ms;NativeA,previousNativeK,
+CableparentJ hashesidentical. FreeMotionq/vatBuildEndexactlyequal. AtSolveEnd
+lambda0,atAcceptedEndindependentguide/freevelocitiesequalfreeVelocityEXACTLY.
+Onlyonecommandtimechanged,50ms;nextC2commands restored. No nonlinearstate
+postprocessing. This directlyseparatesfree-motionandconstraintcorrection.
+
+Combinedwith1145/1146/1149,AΔv=Jᵀlambda alreadyholds:there isnoevidenceofa
+simplemissing/duplicatedCableimpulseorforce-vs-Nsuniterroratthesesamples.
+LateapplicationisnotbyitselfauniquelyprovedtimeFAILcause. Fullenergy,
+nonlinearstageconsistencyandspatial/timeconvergence remainunqualified.
+
+Nextphysicalsingle-variablecandidate:retainRailbottom3pointjoint,routing,
+mass/material/control;increaseONLYcriticaltransitionGuideattachmentfootprint
+longitudinalspan5→10mm forbothsymmetricedges. Motive:spreadGuideangular
+reactionnearoriginalstrainconcentrationat70–75mm,notarbitraryYoung/damping.
+Mustretaindisjointnodemappingandrank6;physicalsupport/masschangeisNOTCADapproved.
+Testsinglefingerfirst,nofull100ggrasp. Committhisdiagnosticthenactuallyrun
+candidate. Read-only:`python -m json.tool product_prototype/results/b3_pause_assess1151/summary.json`.

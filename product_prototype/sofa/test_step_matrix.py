@@ -14,5 +14,7 @@ class StepMatrix(unittest.TestCase):
             d=self.data(n);self.assertEqual(d['status'],'PASS_SAMPLED_EFFECTIVE_MATRIX_ONLY');self.assertEqual(d['impulse_correction_status'],'PASS_DISCRETE_CORRECTION_IDENTITY_ONLY');self.assertEqual(d['command_impulse_error_Ns'],0)
     def test_not_physical_time_pass(self):
         d=self.data('b3_step_assess1146');self.assertEqual(d['physical_validation'],'NOT QUALIFIED');self.assertEqual(d['time_convergence'],'FAIL_PRESERVED');self.assertIsNone(d['energy_work'])
+    def test_one_step_input_not_state_reset(self):
+        d=self.data('b3_pause_assess1151');self.assertEqual(d['status'],'PASS_ONE_STEP_PHASE_SEPARATION_ONLY');self.assertEqual(d['paused_lambda_Ns'],[0,0]);self.assertTrue(all(d['matrix_hash_identity'].values()));self.assertEqual(len(d['changed_command_times_s']),1);self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
 
 if __name__=='__main__':unittest.main()

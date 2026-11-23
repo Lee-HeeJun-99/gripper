@@ -56,3 +56,28 @@ until a separately validated contact fixture/contract is available.
 P2 pressure/friction simulation BLOCKED,actual PET/vacuum/friction NOT MEASURED.
 Independent next task:conditional laminated cartridge/pouch CAD and theoretical
 free/slip vs bonded stiffness bounds,not a jamming performance claim.
+
+## Actual chronology and orientation-fixture test1205–1208
+
+1205 finds free-body contact impulses obey translational discrete balance to
+6.65e-19Ns,but large angular speed precedes contact loss (up to366/104rad/s).
+This suggests a testable rotation/contact coupling hypothesis,not a unique cause.
+Executed NEW Native lab-fixture controls1206/1207:PartialFixedProjectiveConstraint
+fixes only3angular DOFs,XYZ translation free;not postprocessed velocity reset,
+not unsupported Holding. Same pressure/mu/input/support as1195/1196 otherwise.
+Actual100steps each~0.168s.1208 confirms angular speed EXACT0,yet bodies still
+fall below support (minimum centreZ≈−0.403m);contact J disappears from1.2ms.
+Thus rotation is NOT necessary for this failure. Local linear momentum
+residual≤6.65e-19Ns still does not validate contact geometry. Fixture control
+is not friction/jamming/grasp PASS. Stop this coupon path;no new validated
+contact hypothesis available in-session,no blind timestep/alarm/friction sweep.
+
+1209 independent point-clock reconstruction uses actual rigid q/v/contact
+impulse/mass. In rotation-fixed cases,Native detector layer vertex Z matches
+PREVIOUS accepted pose EXACTLY (40samples each),not reconstructed free pose
+(RMS41.4µm) or accepted pose(RMS27.6µm). Accepted translational step identity
+holds to2.61e-17m. This is a temporal association,not proof that previous-state
+detection is inherently wrong or the unique tunneling cause. NEXT fresh
+read-only Native constraint-violation/J/free-position phase observer with
+purity qualification to see how geometry becomes a predicted constraint gap.
+No undocumented repair or new force/dt/alarm search justified yet.

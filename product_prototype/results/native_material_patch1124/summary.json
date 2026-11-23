@@ -1,0 +1,123 @@
+{
+  "status": "PASS_SMALL_SHEAR_COMPARISON_ONLY",
+  "source_commit": "63711a7facd940302331e837a202e73c6333c9f7",
+  "binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "records": [
+    {
+      "material": "corotational",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1386363710043952,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "7b6a55304dbefe07e1666e454fc59092022f7099b115d08f8c4820db2dd9da73",
+          "command.json": "353886187c1683151e4f387bdbc60d74894dcd4ff965cb381a8bf6df03c16914",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "69247441bc9eaed4ff4067c22599ed5038b8ccee8ced16bddd70e05c79994c61"
+        }
+      },
+      "status": "PASS_SMALL_SHEAR_PATCH_ONLY",
+      "command": [
+        "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+        "--noautoload",
+        "--tmp",
+        "-g",
+        "batch",
+        "-a",
+        "-n",
+        "4",
+        "--hideProgressBar",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/native_material_patch1124/corotational/scene.scn"
+      ],
+      "outputs": 4,
+      "all_output_displacement_relative_error": 2.6471096967823023e-16,
+      "all_output_velocity_relative_error": 1.1424253093072542e-11,
+      "tip_shear_displacement_m": 6.239985049943732e-09,
+      "linear_reference": [
+        [
+          6.2302807620112626e-09,
+          6.230280762011263e-06
+        ],
+        [
+          6.249688961198005e-09,
+          1.9408199186742804e-08
+        ],
+        [
+          6.240045320869643e-09,
+          -9.643640328362398e-09
+        ],
+        [
+          6.239985049943731e-09,
+          -6.02709259116023e-11
+        ]
+      ]
+    },
+    {
+      "material": "NeoHookean",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13605394610203803,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "71cf36aab21682d07df855ab51e8b7d873c878d52b4f99f12cb462504c7d23c7",
+          "command.json": "dfeaa03bfeb78f79174bc327fe8123ccc772ca93c2852d7a9864b0cd8b7576c9",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "23b456c530610f8a4df177ea6ca9a142db19c8bf53ec30afa41049206fd9fc35"
+        }
+      },
+      "status": "PASS_SMALL_SHEAR_PATCH_ONLY",
+      "command": [
+        "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+        "--noautoload",
+        "--tmp",
+        "-g",
+        "batch",
+        "-a",
+        "-n",
+        "4",
+        "--hideProgressBar",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/native_material_patch1124/NeoHookean/scene.scn"
+      ],
+      "outputs": 4,
+      "all_output_displacement_relative_error": 5.302452527898199e-16,
+      "all_output_velocity_relative_error": 3.384987706463755e-11,
+      "tip_shear_displacement_m": 6.2399850499437345e-09,
+      "linear_reference": [
+        [
+          6.2302807620112626e-09,
+          6.230280762011263e-06
+        ],
+        [
+          6.249688961198005e-09,
+          1.9408199186742804e-08
+        ],
+        [
+          6.240045320869643e-09,
+          -9.643640328362398e-09
+        ],
+        [
+          6.239985049943731e-09,
+          -6.02709259116023e-11
+        ]
+      ]
+    }
+  ],
+  "E_Pa": 250000000.0,
+  "nu": 0.3,
+  "NeoHookean_parameters_mu_lambda_Pa": [
+    96153846.15384614,
+    144230769.23076922
+  ],
+  "force_N": 0.001,
+  "mass_kg": 0.001,
+  "dt_s": 0.001,
+  "relative_gate": 0.001,
+  "estimated_runtime_s": 1,
+  "child_limit_s": 60,
+  "memory_GiB": 4,
+  "physical_validation": "NOT QUALIFIED",
+  "scope": "Native component/parameter-order check against independent linear backward Euler patch;not finite-strain or B3 qualification"
+}

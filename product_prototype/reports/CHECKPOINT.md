@@ -1,5 +1,26 @@
 ## Latest force-branch rejection1101–1106 — 2026-11-23
 
+Saved feature commits:ccd6cc7 and1ab1b8d. Evidencev64 records26newcases and
+verifies16295priorimmutablefiles,0mismatch;v65 records6morecases and verifies
+16838priorfiles,0mismatch,total17096hashes. New13evidence regressions PASS;
+old6B3 exploration regressions rerun after feature1ab1b8d and PASS. These are
+software/scope checks,not physical Gates. Reachable Git scan finds no blob
+>=100000000bytes;no detector.csv,push,history rewrite or SDK edits.
+
+All Native launches ended or were cost-interrupted. Interrupted1101 lacks
+final child report;exit/runtime remain NULL and Raw object.csv stayed unchanged
+across post-interruption reads. No continuing background simulation is claimed.
+Some launchers were new uncommitted code at execution;their frozen producer.py/
+source snapshots and manifest hashes are authoritative,not SourceCommit alone.
+Compiled physical332 and observer1075 identities remain separately recorded.
+
+Actual performance figure:
+`product_prototype/results/b3_lift50_corrected1085/actual_lift.png`.
+Precise next diagnosis:single-finger high-force1105 has inversion with only
+2cable rows and linear solver residual0. Separate thin-Skin bending from
+Rigid Guide/force-cable mapping/integration;do not repeat higher-force full
+Holding or label50g functional Lift as product qualification.
+
 50g Native5mm Lift and subsequent Release remain EXPLORATORY FUNCTIONAL results (1085/1091/1089);gravity-reference return1095 is a bounded numerical comparison,not full physical Recovery.100g1.5N Holding FAIL persists.100g2.5N candidate1101 was cost-cancelled at246outputs/.615s:forecast~572s exceeded480s;child exit/runtime NULL because final child report absent. Partial journals stable and preserved.1103/1104 independently find Skin tetra inversion from.4325s (materialX~69–71mm),so later object motion is NOT valid performance evidence. QUALITY_REJECTION annotation preserves original cancellation status.
 
 Actual single-finger no-object/no-support/no-other-finger isolation1105 also inverts at.520s despite only2cable constraint rows,residual0. External contacts are not necessary;do NOT attribute everything to contact solver or raise force again. Next separate thin-Skin FEM bending from Rigid Guide/force-cable coupling with Native components in a bounded no-contact contrast. No custom solver,stiffness/friction/tolerance sweep or repeated unchanged full grasp. Current300-partCAD is NOT this Native model. Time/mesh/energy/material/joint/variable-stiffness/100g/Lift-product Gates remain open.

@@ -1,0 +1,91 @@
+{
+  "status": "FROZEN_LINEAR_TRANSIENT_DIAGNOSTIC_ONLY",
+  "source_commit": "4c6bd433f4f14d1bd6d7dcb4838a69e476011d88",
+  "free_dofs": 648,
+  "interval_s": [
+    0.0025,
+    0.1
+  ],
+  "first_outputs": [
+    {
+      "case": "b3_rail_back_zero1127",
+      "time_s": 0.0025,
+      "native_vs_frozen_discrete": {
+        "absolute_L2_m": 5.16527765370195e-13,
+        "relative": 5.032507399648056e-09
+      },
+      "frozen_discrete_vs_continuous": {
+        "absolute_L2_m": 4.2980038402623385e-05,
+        "relative": 0.4187526320939198
+      },
+      "native_vs_continuous": {
+        "absolute_L2_m": 4.2980037892131603e-05,
+        "relative": 0.41875262918731415
+      }
+    },
+    {
+      "case": "b3_rail_back_zero_half1157",
+      "time_s": 0.0025,
+      "native_vs_frozen_discrete": {
+        "absolute_L2_m": 2.4899726172657087e-07,
+        "relative": 0.0029432804392942415
+      },
+      "frozen_discrete_vs_continuous": {
+        "absolute_L2_m": 2.4793329756312156e-05,
+        "relative": 0.2935173691660266
+      },
+      "native_vs_continuous": {
+        "absolute_L2_m": 2.4916867193656006e-05,
+        "relative": 0.2945306599400012
+      }
+    }
+  ],
+  "last_outputs": [
+    {
+      "case": "b3_rail_back_zero1127",
+      "time_s": 0.1,
+      "native_vs_frozen_discrete": {
+        "absolute_L2_m": 9.352887050341629e-07,
+        "relative": 0.001309629596451736
+      },
+      "frozen_discrete_vs_continuous": {
+        "absolute_L2_m": 0.0002537915404061842,
+        "relative": 0.2623757198161345
+      },
+      "native_vs_continuous": {
+        "absolute_L2_m": 0.00025312158653970334,
+        "relative": 0.2616831056033826
+      }
+    },
+    {
+      "case": "b3_rail_back_zero_half1157",
+      "time_s": 0.1,
+      "native_vs_frozen_discrete": {
+        "absolute_L2_m": 5.6376909026024e-06,
+        "relative": 0.0073329771468464205
+      },
+      "frozen_discrete_vs_continuous": {
+        "absolute_L2_m": 0.00020405610049707156,
+        "relative": 0.2109580412534823
+      },
+      "native_vs_continuous": {
+        "absolute_L2_m": 0.00019847061932715593,
+        "relative": 0.20518363821337068
+      }
+    }
+  ],
+  "maximum_native_vs_frozen_discrete_relative": 0.07526083266417505,
+  "physical_validation": "NOT QUALIFIED",
+  "time_convergence": "FAIL_PRESERVED",
+  "scope": "Rest-linearized mathematical reference, not nonlinear Native truth. Matrix exponential vs backward Euler, no fitted material/damping/load.",
+  "energy_work": null,
+  "input_hashes": {
+    "results/b3_first_free_step1159/scene.scn": "d3bee40032d0e759428fb36347d7e6072bf88e7f7c34a5747b63d272c49d4bf2",
+    "results/b3_first_free_step1159/step.previous_K.csv": "450c18edb0d64becb332a475bbc7120aeb409229e1c0b14783e5f597d499fb2e",
+    "results/b3_first_free_step1159/step.phases.csv": "4ed90a8f1708ef12de475f17edfa4f611414d930c2cfda6272746c9da287e4a0",
+    "results/b3_rail_back_hold1129/guide_frames0.csv.mass.json": "4fe2b916425861e2e33a429376b36877e5afda2d077cb072c773daf20f225be2",
+    "sofa/b3_gravity_transient.py": "2fcc62605f5756564f215a5a4373cb1801683b0c84aa1f6ebb01d81157fef478",
+    "results/b3_rail_back_zero1127/finger0.csv": "c9109ae9bd5a5decc6975d9e240e29e577eee9d07828425a19c8538616dd1ebd",
+    "results/b3_rail_back_zero_half1157/finger0.csv": "0b73a1b0902291a2fddff66b904e463a1f93f57ded6c300b3307179284acd709"
+  }
+}

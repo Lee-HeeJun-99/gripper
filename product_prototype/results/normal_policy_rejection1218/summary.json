@@ -1,0 +1,34 @@
+{
+  "status": "REJECT_NORMAL_POLICIES_FOR_PRODUCT",
+  "records": {
+    "layer_local_slip1216": {
+      "status": "FAIL_NONFINITE_AND_TIMEOUT",
+      "first_nonfinite_accepted_time_s": 0.0006000000000000001,
+      "raw_status": "FAIL_EXECUTION",
+      "runtime_s": 60.00360193406232,
+      "outputs": 66,
+      "cause": "UNKNOWN;do not interpret later trajectory/friction"
+    },
+    "layer_local_friction1217": {
+      "status": "FAIL_NONFINITE_AND_TIMEOUT",
+      "first_nonfinite_accepted_time_s": 0.0006000000000000001,
+      "raw_status": "FAIL_EXECUTION",
+      "runtime_s": 60.00502136198338,
+      "outputs": 15,
+      "cause": "UNKNOWN;do not interpret later trajectory/friction"
+    },
+    "surface_normals_mu0": {
+      "status": "FAIL_FRICTIONLESS_COMPONENT_EXPECTATION",
+      "evidence": "contact_gap_assess1215",
+      "description": "Support restored but lateral contact force\u22120.01N cancels0.01N applied force atmu0;not validated flat frictionless sliding or jamming"
+    }
+  },
+  "physical_validation": "NOT QUALIFIED",
+  "scope": "Specific fixture/load/geometry only;not universal SOFA component verdict. Existing Raw/NaN evidence untouched,old FAIL unchanged.",
+  "input_hashes": {
+    "results/layer_local_slip1216/rigid.csv": "7080e663b7944ff528a9e34228bf913c9ad5f8cf8552089952899def950a35ea",
+    "results/layer_local_slip1216/summary.json": "6070b86174f2950873f0077fc5cd28084c882f77b55086b7817892986e5a0ff5",
+    "results/layer_local_friction1217/rigid.csv": "e299c53fdaa98ea635e331e6c7f597f9033e7a2deeb052bb9c1af963ca89aab4",
+    "results/layer_local_friction1217/summary.json": "107be9d50e28c861cffc5fd1cce41b1700a02fdf32b18d74a95ed5423903b308"
+  }
+}

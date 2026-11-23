@@ -21,3 +21,21 @@ confirmed,NO vacuum-jamming/holding/product PASS. Work/heat/pressure map NULL.
 Actualcommands/source/binaryhashes/SDK in each preflight. No detector.csv used.
 Reproduce fresh tag:python product_prototype/sofa/layer_pressure_coupon.py
 --tag NEW_LAYER --pressure 1000 --mu .3 --steps 500.
+
+## Actual matched runs1189–1192
+
+Completed500steps100ms:free3.146s,pressure/slip5.954s,pressure/friction32.607s.
+No NaN/element inversion/NativeERROR. BUT independent strict tetra-centroid
+inside-other-tetra witnesses show interlayer intersection from1.4ms(mu0)
+and1.8ms(mu.3).1192 flags both FAIL_INTERLAYER_INTERSECTION. Tiny final
+velocity and near-unit element volumes do NOT validate layer contact.
+Free case has no such witnesses,corresponding interface gap≈2µm. No stiffness
+ratio calculated;contact force/energy/heat remainNULL. Simulator state-only
+status was not a physical PASS and is not rewritten after assessment.
+
+New testable cause hypothesis:step pressure allows free-motion surfaces to
+cross before discrete contact resolution. One explicit NEW protocol uses
+Native LinearForceField ramp0→1000Pa over10ms with SAME E/mass/mesh/dt/mu and
+tip load. No state corrections,dt reduction,tolerance/alarm changes. Ramp is
+not a retroactive cure of step-input failure or a calibrated vacuum model.
+First50-step pilot1193,then independent accepted-state overlap assessment.

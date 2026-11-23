@@ -1,3 +1,17 @@
+## Native sampled dynamics1142–1160 — 2026-11-23
+
+Continued through sampled-matrix observer,one-step Cable input control,
+mechanical footprint candidate,zero-input half control,and first-step gravity
+RHS. Actual Native runs preserve all historical Raw/verdicts. Local algebraic
+identities pass ONLY; 5→10mm footprint NOT adopted (worse volume,time FAIL).
+First2.5ms error already exists with no object/support and near-rest elements;
+zero-Cable difference almost equals driven difference. Independent gravity
+force/moment predicts Native first free step≤1.91e-9 relative. No unique cause
+or time repair claimed. Old50g Holding/Lift functional only;100g and final
+product still unqualified. Next actual restM/K frozen-linear gravity transient
+comparison,not spectrum-only or arbitrary solver sweep. Latest checkpoint:
+product_prototype/reports/CHECKPOINT.md. Features22560f0 and predecessors.
+
 ## Native deformed tangent / Railback1120–1135 — 2026-11-23
 
 Featurea3dd268:read-onlyaccepted-stateFEMprobe qualifiedagainstoriginalq/v,

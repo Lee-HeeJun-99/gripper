@@ -1,3 +1,15 @@
+## Sampled dynamics1142–1160 — 2026-11-23
+
+New local discrete identities ONLY: previous-state effective A blocks≤1.739e-15,
+A delta-v=J-transpose lambda≤4.80e-9,first-step mapped gravity RHS/free-motion
+≤1.91e-9 relative. Actual observer q/v/Guide prefix errors0. One-step input
+knockout yields identical free prediction and zero correction,not an ODE fix.
+Footprint enlargement actual1s candidate fails0.1% time Gate and worsens
+volume quality; rejected. Early gravity-only contrast still time-sensitive.
+Full-time/mesh/energy/Joint/material qualification remains OPEN/FAIL as before.
+No new Holding/Lift claim. Evidence v72/v73 append old hashes,never revise.
+Details CHECKPOINT.md and B3_GRAVITY_RHS_20261123.md.
+
 ## Latest force-branch rejection1101–1106 — 2026-11-23
 
 50g Native5mm Lift and subsequent Release remain EXPLORATORY FUNCTIONAL results (1085/1091/1089);gravity-reference return1095 is a bounded numerical comparison,not full physical Recovery.100g1.5N Holding FAIL persists.100g2.5N candidate1101 was cost-cancelled at246outputs/.615s:forecast~572s exceeded480s;child exit/runtime NULL because final child report absent. Partial journals stable and preserved.1103/1104 independently find Skin tetra inversion from.4325s (materialX~69–71mm),so later object motion is NOT valid performance evidence. QUALITY_REJECTION annotation preserves original cancellation status.

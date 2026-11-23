@@ -1,3 +1,17 @@
+## Continued Native diagnostics1142–1160 — 2026-11-23
+
+Multiple actual cycles preserved in b7d0e71,2bb83f1,0a7135f,35d3509,22560f0.
+Sampled previous-state A/K/J and impulse correction verified without q/v change.
+One-step Cable input knockout separates free-motion and accepted correction.
+5→10mm footprint candidate actual base/half1s: no saved inversion but worsened
+volume quality and time FAIL; not adopted. New zero-Cable half control shows
+early sensitivity largely persists without actuator input. First-step mapped
+gravity RHS reproduces Native free-motion≤1.91e-9 relative; discrete identity
+only,not time accuracy.11 focused scope regressions PASS. See CHECKPOINT and
+B3_GRAVITY_RHS_20261123.md. Old50g functional results unchanged;100g/physical/
+variable-stiffness/product qualification NOT achieved. Next frozen linear
+forced-gravity transient,not another full grasp/dt/force sweep.
+
 ## Latest force-branch rejection1101–1106 — 2026-11-23
 
 50g Native5mm Lift and subsequent Release remain EXPLORATORY FUNCTIONAL results (1085/1091/1089);gravity-reference return1095 is a bounded numerical comparison,not full physical Recovery.100g1.5N Holding FAIL persists.100g2.5N candidate1101 was cost-cancelled at246outputs/.615s:forecast~572s exceeded480s;child exit/runtime NULL because final child report absent. Partial journals stable and preserved.1103/1104 independently find Skin tetra inversion from.4325s (materialX~69–71mm),so later object motion is NOT valid performance evidence. QUALITY_REJECTION annotation preserves original cancellation status.

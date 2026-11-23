@@ -1,0 +1,61 @@
+{
+  "status": "FAIL_TIME_PAIR_GATE",
+  "comparisons": {
+    "skin_displacement": {
+      "maximum_absolute_L2_difference": 0.05774556603248069,
+      "maximum_relative_error": 1.3978646134987476,
+      "worst_time_s": 0.0375,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    },
+    "rail_displacement": {
+      "maximum_absolute_L2_difference": 0.058268336812091585,
+      "maximum_relative_error": 1.3920811828816535,
+      "worst_time_s": 0.0375,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    },
+    "velocity": {
+      "maximum_absolute_L2_difference": 10.236201395871156,
+      "maximum_relative_error": 1.724873781579917,
+      "worst_time_s": 0.5324999999999996,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    },
+    "skin_width_mean_curvature_change": {
+      "maximum_absolute_L2_difference": 31.275825607945723,
+      "maximum_relative_error": 0.5648316247181404,
+      "worst_time_s": 0.034999999999999996,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    }
+  },
+  "quality": {
+    "base": {
+      "maximum_absolute_Skin_principal_Green_strain": 0.24214998493306839,
+      "minimum_volume_ratio": 0.5838633560334625
+    },
+    "half": {
+      "maximum_absolute_Skin_principal_Green_strain": 0.2119668649623241,
+      "minimum_volume_ratio": 0.7878689791034948
+    }
+  },
+  "common_outputs": 400,
+  "max_common_time_error_s": 5.495603971894525e-15,
+  "short_to_long_prefix_q_error_m": null,
+  "short_to_long_prefix_v_error_m_s": null,
+  "material_allowable_strain": null,
+  "energy_work": null,
+  "full_time_convergence": "NOT QUALIFIED:onepair only,noQuarter,noenergy",
+  "physical_validation": "NOT QUALIFIED",
+  "holding": "NOT RUN",
+  "input_hashes": {
+    "results/b3_footprint_force1153/finger0.csv": "127d6d5e909fc187b906587160445abeb10170da709d8ecea98354c69e5d23d4",
+    "results/b3_footprint_half1154/finger0.csv": "7d544bb20cd7c5eced4e621d9e88ad8e1251bfb8a9814dddb1f5e5fabd5afc1a",
+    "sofa/b3_rail_back_assess.py": "c2e15c24708107dce0a471601b6d11f82372a660fc0734737a66f3b7f9dd6517"
+  }
+}

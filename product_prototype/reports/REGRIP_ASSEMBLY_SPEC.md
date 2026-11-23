@@ -893,3 +893,15 @@ Capturelooseshimsbeforepinextraction. Same54service samplesclear in768,
 notcontinuousphysicalservice. Realtool/thread/tolerance/friction/strengthopen.
 DoNOTfabricateasqualifiedassembly;outerR94.65mmoversized. Authority:
 PALM_BRIDGE_AND_AXLE_CONTINUATION_20261120.md;774hascorrect280partreviewlabels.
+## Root service and dual-drum continuation — 2026-11-23
+
+Latest assembly: product_prototype/results/product_all_hood_drive1055/assembly_delta_recipe.json (300 parts); instance BOM: product_current_BOM1057. Feature base 43a9651; continuation commit is recorded by Git history. See ROOT_DISCONNECT_AND_DRUM_TERMINATION_20261123.md.
+
+Implemented intact cartridge service cut-set, three integral Root nut hoods, catalog-dimensional M3 retaining-bolt sockets, and separate f0/c0 and f0/c1 reusable drum-pad candidates. First pad service1036 failed on the original flange; repaired negative-Y breakout1037/1038 and independently oriented c1 candidate1041/1042 retain that failure. Catalog indexed tool access remains REVIEW because own-drive mating artifacts are preserved; actual purchased tool/thread/preload are unmeasured.
+
+Actual CAD checks: seven-part nominal full-turn drum bound1043 clear against293 fixed parts (not motor/wire dynamics). Full six REST reference routes1050:4290 finite probes, zero unresolved obstacles,77.29s. Current all-hood geometry1056 reuses exact CSG identities for298 parts and checks all six paths against the two changed Root clamps; no new hits. BOM1057:300 valid solids, actual mass NULL. Thirteen-part STL/section review packs1044/1049 exist; not full STEP or fabrication readiness.
+
+No new SOFA physics run or physical hardware test. Existing Native time/mesh FAIL, old185 unresolved continuous-service prisms, full cartridge continuous path, actual nut retention/thread/clamping/pullout, remaining five distal keepers, other two drum modules, motor interface, materials,100g/Lift/Recovery and STEP remain unqualified. Old B3 functional50g result is NOT validation of this hardware. Eight physical service steps and eight drum tests remain NOT EXECUTED/NOT MEASURED.
+
+Next: use frozen300-part assembly to define positive pad/nut retention and reversible unloaded service with finite tool geometry; validate each remaining distal terminal independently. Do not propagate f0 drum geometry without placement/wire checks. Actual pullout/preload requires specimens and instrumentation. Reproduction: Python cad/incremental_wire_audit.py --tag UNIQUE --case product_all_hood_drive1055 --baseline-assembly product_root_catalog_drive1045 --baseline-audit product_current_wire1050 (only for a justified changed candidate; do not repeat unchanged results). Python cad/manufacturing_test_run.py --tag UNIQUE runs software regressions, not physical gates.
+

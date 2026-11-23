@@ -1,0 +1,324 @@
+{
+  "status": "SERVICE_DEPENDENCY_PLAN_VALID_PHYSICAL_EXECUTION_BLOCKED",
+  "source_commit": "43a965169149e8aa340e8598e62ab7d44589ab1e",
+  "input_hashes": {
+    "cad/root_service_plan.py": "8f134867b5e92ff42e9a68471a68c13fd98a053b3e9405b47745028d2f28f86f",
+    "config/root_service_plan_v56.json": "3cf4c1b32636d1002cc2d72f236f977d2b076494646e7a0ab51aae974563380a",
+    "results/product_root_disconnect1030/summary.json": "bba5746bb59c8b10103518247a1a5684f9110220f7520ea0bb5539759f4291ba",
+    "results/product_root_catalog_drive1045/assembly_delta_recipe.json": "d79815a8dbc7912d409a6f67426cada25416c940d4726985d207ae7c52ab81d6",
+    "results/product_drum_second_channel1041/assembly_delta_recipe.json": "5e18d8ea0b4dc4a465398f2b380f032b4a2e529924d0017d8a2262a307e184fd",
+    "results/product_drum_pad_breakout1037/assembly_delta_recipe.json": "40cc9bbe20b14300b579bc9cb7e954aad51102e8f019d2db1b44790d5b2f2edd",
+    "results/product_root_nut_hood1032/assembly_delta_recipe.json": "c914a50f699e8f5294964e51ec8d05dc3d7d1a895fa229ff8c0f4918387699f9",
+    "results/product_distal_bottom1018/assembly_delta_recipe.json": "2a12086a5057650a927056ee281398f410c25da51202eaaa38ff7949582bca1d",
+    "results/product_distal_basal1000/assembly_delta_recipe.json": "275c385a8e923637d91afe9b20fe992dbfefd25d2f0329a3a0981f6ee7cee17a",
+    "results/product_remaining_f2lead975/assembly_delta_recipe.json": "0c30816c30f8850481d9162ab40059974bd66723d0682e3b81c5299d6649f6a5",
+    "results/product_remaining_f2clamp974/assembly_delta_recipe.json": "d0fe670456cc76c5eedae812be64a94d4f27b4dd52bc81fd12f588117f282a71",
+    "results/product_remaining_c1lead971/assembly_delta_recipe.json": "69476ad3dde922a70adaab1cdb6e8054a8d84fc4c2f9282b784a4c948ad00547",
+    "results/product_remaining_clamped968/assembly_delta_recipe.json": "5c369e8b19ad86d4c771656df59842890b2c90f3b833b8fb86d7a323a444393b",
+    "results/product_remaining_lead964/full_assembly_recipe.json": "6b0fb423bef3d4e71376998668d333ba6b1ee6401905806d03dc2ae6f6b4b985",
+    "cad/assembly_recipe_io.py": "da1721c98679664619e748cab6add2ca28838be5fb03a9e0e6394b1701a31a02",
+    "cad/root_disconnect.py": "225d84aff89be527c65e3835ee1a0f482d2ab70b8dae381f9066d4693d07e787",
+    "cad/distal_cartridge_service.py": "524b3b6056303710d420c098bcc3e180fc9f170a836cec8b5ab9693c7f5870af"
+  },
+  "ordered_steps": [
+    "unload",
+    "release_drum",
+    "free_fixed_route",
+    "secure_cartridge",
+    "remove_retaining_bolts",
+    "withdraw_cartridge",
+    "bench_service",
+    "reassemble"
+  ],
+  "records": [
+    {
+      "id": "unload",
+      "requires": [],
+      "operation": "Remove object;isolate actuator power;independently verify zero cable load,not only zero command",
+      "unverified": "Actual tension measurement and safe stored-energy release",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Actual tension measurement and safe stored-energy release",
+      "physical_measurement": null,
+      "upstream_blocked": []
+    },
+    {
+      "id": "release_drum",
+      "requires": [
+        "unload"
+      ],
+      "operation": "Release reusable drum-side free-end termination;retain factory distal stop",
+      "unverified": "Both finite channel candidates present;actual wire release/pullout/thread/fixture NOT MEASURED",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Both finite channel candidates present;actual wire release/pullout/thread/fixture NOT MEASURED",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "unload"
+      ]
+    },
+    {
+      "id": "free_fixed_route",
+      "requires": [
+        "release_drum"
+      ],
+      "operation": "Pull free end backwards through fixed drum/Turn/Root path;leave wire threaded in moving Finger Eyelets if possible",
+      "unverified": "Actual frayed-end diameter,path friction and threading/reconnection trial",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Actual frayed-end diameter,path friction and threading/reconnection trial",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "release_drum"
+      ]
+    },
+    {
+      "id": "secure_cartridge",
+      "requires": [
+        "free_fixed_route"
+      ],
+      "operation": "Support cartridge before loosening two retaining screws;keep Skin/Rail/internal Eyelet bonds and Root Clamp bolts intact",
+      "unverified": "Cartridge fixture,hand access and nut capture",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Cartridge fixture,hand access and nut capture",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "free_fixed_route"
+      ]
+    },
+    {
+      "id": "remove_retaining_bolts",
+      "requires": [
+        "secure_cartridge"
+      ],
+      "operation": "Withdraw two retaining bolts along their actual axes;other hardware remains in place",
+      "unverified": "Actual bolt drive,thread fit,tool and hand access;nominal axial CAD screen only",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Actual bolt drive,thread fit,tool and hand access;nominal axial CAD screen only",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "secure_cartridge"
+      ]
+    },
+    {
+      "id": "withdraw_cartridge",
+      "requires": [
+        "remove_retaining_bolts"
+      ],
+      "operation": "Translate intact cartridge along actual carrier longitudinal axis;do not break internal adhesive joins",
+      "unverified": "Complete physical cut-set and continuous trajectory;185numerical prism questions remain open",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Complete physical cut-set and continuous trajectory;185numerical prism questions remain open",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "remove_retaining_bolts"
+      ]
+    },
+    {
+      "id": "bench_service",
+      "requires": [
+        "withdraw_cartridge"
+      ],
+      "operation": "Unloaded bench service;one hollow loader at a time for bottom-loaded distal nuts",
+      "unverified": "Physical nut retention/thread engagement/tool forces and complete bench fixture",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Physical nut retention/thread engagement/tool forces and complete bench fixture",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "withdraw_cartridge"
+      ]
+    },
+    {
+      "id": "reassemble",
+      "requires": [
+        "bench_service"
+      ],
+      "operation": "Reinsert and mechanically retain cartridge;rethread free end and reconnect drum;verify independent cable paths before actuation",
+      "unverified": "Reverse geometry alone does not certify alignment,preload,wire tension or physical reassembly",
+      "status": "BLOCKED_NOT_PHYSICALLY_EXECUTED",
+      "blocking_reason": "Reverse geometry alone does not certify alignment,preload,wire tension or physical reassembly",
+      "physical_measurement": null,
+      "upstream_blocked": [
+        "bench_service"
+      ]
+    }
+  ],
+  "internal_joins_preserved": [
+    {
+      "finger": 0,
+      "internal_joins": [
+        {
+          "join": "EXPLICIT_EYELET_SUPPORT_BOND",
+          "members": [
+            "f0_c0_s0_eyelet",
+            "f0_c0_s0_support",
+            "f0_c0_s0_bondline_RESEARCH"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "ASSUMED_SKIN_RAIL_BOND",
+          "members": [
+            "f0_skin",
+            "f0_rail_left"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "ASSUMED_SKIN_RAIL_BOND",
+          "members": [
+            "f0_skin",
+            "f0_rail_right"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "INTACT_ROOT_CLAMP_STACK",
+          "members": [
+            "f0_carrier",
+            "f0_root_clamp",
+            "f0_skin",
+            "f0_rail_left",
+            "f0_rail_right",
+            "f0_clamp_bolt_-14",
+            "f0_clamp_bolt_14",
+            "f0_clamp_nut_-14",
+            "f0_clamp_nut_14"
+          ],
+          "all_members_move": true,
+          "physical_preload_N": null,
+          "physical_strength_qualified": false
+        }
+      ],
+      "declared_bond_cut_needed": false
+    },
+    {
+      "finger": 1,
+      "internal_joins": [
+        {
+          "join": "EXPLICIT_EYELET_SUPPORT_BOND",
+          "members": [
+            "f1_c0_s0_eyelet",
+            "f1_c0_s0_support",
+            "f1_c0_s0_bondline_RESEARCH"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "ASSUMED_SKIN_RAIL_BOND",
+          "members": [
+            "f1_skin",
+            "f1_rail_left"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "ASSUMED_SKIN_RAIL_BOND",
+          "members": [
+            "f1_skin",
+            "f1_rail_right"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "INTACT_ROOT_CLAMP_STACK",
+          "members": [
+            "f1_carrier",
+            "f1_root_clamp",
+            "f1_skin",
+            "f1_rail_left",
+            "f1_rail_right",
+            "f1_clamp_bolt_-14",
+            "f1_clamp_bolt_14",
+            "f1_clamp_nut_-14",
+            "f1_clamp_nut_14"
+          ],
+          "all_members_move": true,
+          "physical_preload_N": null,
+          "physical_strength_qualified": false
+        }
+      ],
+      "declared_bond_cut_needed": false
+    },
+    {
+      "finger": 2,
+      "internal_joins": [
+        {
+          "join": "EXPLICIT_EYELET_SUPPORT_BOND",
+          "members": [
+            "f2_c0_s0_eyelet",
+            "f2_c0_s0_support",
+            "f2_c0_s0_bondline_RESEARCH"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "ASSUMED_SKIN_RAIL_BOND",
+          "members": [
+            "f2_skin",
+            "f2_rail_left"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "ASSUMED_SKIN_RAIL_BOND",
+          "members": [
+            "f2_skin",
+            "f2_rail_right"
+          ],
+          "all_members_move": true,
+          "actual_adhesive": null,
+          "physical_strength_qualified": false
+        },
+        {
+          "join": "INTACT_ROOT_CLAMP_STACK",
+          "members": [
+            "f2_carrier",
+            "f2_root_clamp",
+            "f2_skin",
+            "f2_rail_left",
+            "f2_rail_right",
+            "f2_clamp_bolt_-14",
+            "f2_clamp_bolt_14",
+            "f2_clamp_nut_-14",
+            "f2_clamp_nut_14"
+          ],
+          "all_members_move": true,
+          "physical_preload_N": null,
+          "physical_strength_qualified": false
+        }
+      ],
+      "declared_bond_cut_needed": false
+    }
+  ],
+  "first_missing_mechanism": null,
+  "actual_joint_cut_qualified": false,
+  "physical_steps_executed": 0,
+  "physical_service_qualified": false,
+  "fabrication_ready": false,
+  "scope": "Software validates uniqueIDs,known prerequisites and acyclic ordering. All physical steps remain BLOCKED/NOT RUN,no hardware IO. Current declared internal joins stay on cartridge;do not cut Skin/Rail bond for exchange. Actual completeness of physical joints,thread/drive/nutretention/wire tension and new mechanism approval still required;valid plan isNOT a valid physical sequence. Current-case mechanism presence and internal membership rebound to exact parent-hashed CAD. Presence doesNOTcomplete physical unload/thread/retention/pullout/service;all stages stillBLOCKED/NOT RUN. Original1031missing-mechanism observation remains immutable.",
+  "candidate_mechanisms_present": [
+    "f0_c0_drum_pressure_pad",
+    "f0_c0_drum_adjuster_M1p6",
+    "f0_c0_drum_nut_M1p6",
+    "f0_c1_drum_pressure_pad",
+    "f0_c1_drum_adjuster_M1p6",
+    "f0_c1_drum_nut_M1p6"
+  ],
+  "source_case": "product_root_catalog_drive1045",
+  "assembly_part_count": 300,
+  "first_unqualified_physical_prerequisite": "Actual unload and independent zero-cable-load verification"
+}

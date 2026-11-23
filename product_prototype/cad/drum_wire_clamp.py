@@ -21,9 +21,17 @@ def clamp_shapes(drum,cfg,fast):
 
 def worker(a):
  start=time.monotonic();out=BASE/'results'/a.tag;src=BASE/'results'/a.case/'assembly_delta_recipe.json';spec=BASE/'config'/a.config;cfg=json.loads(spec.read_text());fastpath=BASE/'config'/cfg['source_fasteners'];fast=json.loads(fastpath.read_text());parts,hashes=resolve_recipe(src);old=next(p for p in parts if p['name']=='f0_two_channel_drum');shape=old['shape']
- if shape['op']!='transform' or not np.array_equal(np.asarray(shape['matrix']),np.eye(4)):raise ValueError('explicit f0 drum frame identity required')
- local=clamp_shapes(old['shape'],cfg,fast);names=['f0_two_channel_drum','f0_c0_drum_pressure_pad','f0_c0_drum_adjuster_M1p6','f0_c0_drum_nut_M1p6'];new=[];records=[];bodies=[]
+ if shape['op']!='transform' or not np.array_equal(np.asarray(shape['matrix']),np.eye(4)):
+  # Earlier candidate1037 stored absolute f0 CSG without a redundant identity wrapper.
+  prior=src.parent/'summary.json';producer=src.parent/'producer.py';pm=json.loads(prior.read_text())
+  if old.get('group')!='UNQUALIFIED_REUSABLE_DRUM_TERMINATION' or pm['input_hashes'].get('cad/drum_wire_clamp.py')!=sha(producer):raise ValueError('unverified absolute f0 drum producer/frame')
+  hashes[str(prior.relative_to(BASE))]=sha(prior);hashes[str(producer.relative_to(BASE))]=sha(producer)
+ if cfg['drum_centre_XY_mm']!=[42,0]:raise ValueError('only declared absolute f0 CAD datum supported')
+ cable=cfg.get('cable_index',0)
+ if cable not in (0,1):raise ValueError('cable identity required')
+ prefix=f'f0_c{cable}_drum';local=clamp_shapes(old['shape'],cfg,fast);names=['f0_two_channel_drum',prefix+'_pressure_pad',prefix+'_adjuster_M1p6',prefix+'_nut_M1p6'];new=[];records=[];bodies=[]
  for name,shape in zip(names,local):
+  if name=='f0_two_channel_drum':shape=transform(shape,np.eye(4))
   part=dict(name=name,group='UNQUALIFIED_REUSABLE_DRUM_TERMINATION',shape=shape,role='UNLOADED_RADIAL_CLAMP_NOT_PULLTESTED');body=evaluate(shape);file=out/(name+'.stl');file.write_text(body.export(file_type='stl_ascii'));saved=trimesh.load_mesh(file)
   if not saved.is_volume or saved.body_count!=1:raise ValueError('invalid/disconnected clamp part:'+name)
   records.append(dict(part=name,STL_SHA256=sha(file),CAD_volume_mm3=float(saved.volume)));bodies.append(body);new.append(part)
@@ -33,6 +41,8 @@ def worker(a):
  (out/'assembly_delta_recipe.json').write_text(json.dumps(dict(units='mm',parent_recipe=str(src.relative_to(BASE)),parent_SHA256=sha(src),remove_names=[old['name']],add_parts=new),indent=2))
  for f in (Path(__file__),spec,fastpath,BASE/'cad/manufacturing_assembly.py',BASE/'cad/assembly_recipe_io.py',BASE/'cad/distal_keeper_service.py'):hashes[str(f.relative_to(BASE))]=sha(f)
  result=dict(status='DRUM_WIRE_CLAMP_STATIC_REVIEW' if hits else 'ONE_UNLOADED_DRUM_CLAMP_STATIC_CLEAR_ONLY',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),input_hashes=hashes,records=records,solid_intersections=hits,candidate_part_count=len(fixed+new),actual_pullout_N=None,actual_preload_N=None,actual_wire_friction=None,physical_service_qualified=False,fabrication_ready=False,runtime_s=time.monotonic()-start,scope='One c0 free-feed-end drum clamp on actual f0 drum;integral body/pad/nominal catalog cap screw/nut. All other hardware retained. Adjuster intentionally not seated against body;no torque-to-preload inference. Wire/pad initially unloaded with gaps,not a no-slip constraint or actual gripping result. New drum volume/inertia/rotating envelope changes;genericD6shaft/horn fit unqualified. Thread/pilot/process/material/nut capture/drive access/wire crush/slip/friction/pullout/fatigue and c1 design not qualified. No Native/holding/STEP approval.')
+ result['target_cable']=cable;result['frame_convention']='Absolute f0 CAD world coordinates,NOT a verified motor shaft datum'
+ result['scope']=result['scope'].replace('One c0 free-feed-end',f'One c{cable} free-feed-end').replace('and c1 design not qualified','and other-channel force qualification not qualified')
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],runtime_s=result['runtime_s'],hits=hits)))
 
 def main():

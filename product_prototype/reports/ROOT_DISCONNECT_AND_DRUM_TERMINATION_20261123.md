@@ -1,5 +1,35 @@
 # Root disconnect and drum termination — 2026-11-23
 
+## Continuation1041–1058
+
+Independent c1 termination1041/1042 preserves c0 and uses its own saved lead,
+opposite pad service direction and positive finite hardware.300-part candidate.
+Nominal seven-part full-turn drum envelope1043 has no fixed-part hits;this is
+not a real motor-axis,wire-winding or Native dynamics certificate.
+
+Catalog retaining screw dimensions use Accu SSCF-M3-12-A2:
+https://www.accu.co.uk/metric-cap-head-screws/3820-SSCF-M3-12-A2 .
+M3x12,2.5mm socket,1.3mm drive depth define the nominal cavity;actual purchased
+socket fit,thread mating,preload and availability remain unqualified/UNKNOWN.
+1045/1055 retain own-drive floating mating artifacts as REVIEW;all six indexed
+nominal shanks have no other-hardware hits.Three Root hoods are now independently
+placed1051/1052 and axial nut obstruction checked1053/1054,not retention-force tests.
+
+Actual13-part STL/section packs1044/1049 created;not STEP/full assembly approval.
+1050 screens4290 finite probes on six current REST reference paths:zero unresolved
+obstacles,77.29s.1056 checks the two changed Root clamps against those same paths,
+with298 exact unchanged CSG identities;zero new hits,not dynamic/interval proof.
+1057 instance BOM contains300 valid solids,actual assembly mass NULL.
+1058 software regression PASS;physical tests remain zero.1047 provides eight
+instrumented test plans and34 NULL fields,not fabricated measurements.
+
+Current assembly:results/product_all_hood_drive1055/assembly_delta_recipe.json.
+Latest BOM:results/product_current_BOM1057/. Old1036 service failure and185
+unresolved continuous-cartridge prisms remain unchanged. Next priorities:
+positive pad/nut retention and unloaded reversible service,remaining five distal
+keepers and two drum modules,physical thread/preload/pullout tests,then actual
+materials/joints and justified Native integration. No100g/Lift/STEP/product PASS.
+
 Started clean at b1c01a6;1018–1029 reused,not rerun. New maintenance geometry,
 NOT Native SOFA/holding/time/mesh/physical service qualification.
 

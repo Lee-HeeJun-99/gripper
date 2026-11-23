@@ -19,6 +19,8 @@ from test_termination import TerminationTests
 from test_distal_keeper import DistalKeeperTests
 from test_bottom_service import BottomServiceTests
 from test_root_disconnect import RootDisconnectTests
+from test_dual_drum import DualDrumTests
+from test_incremental_service import IncrementalServiceTests
 
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 def design(name):return json.loads((BASE/'meshes'/name/'assembly_recipe.json').read_text())

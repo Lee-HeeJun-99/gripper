@@ -1,0 +1,12 @@
+"""Independent actual STL nominal gap checks and ideal stiffness bounds."""
+import argparse,json
+from pathlib import Path
+import numpy as np
+import trimesh
+from manufacturing_assembly import BASE,sha
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/layer_cartridge_pocket1198';layers=[trimesh.load(src/f'PET_layer_{i}.stl',force='mesh') for i in range(1,9)];gaps=[layers[i+1].bounds[0,2]-layers[i].bounds[1,2] for i in range(7)];end=trimesh.load(src/'seal_band_port_end.stl',force='mesh');tube=trimesh.load(src/'port_tube_concept.stl',force='mesh');pts=np.unique(end.vertices[:,1:],axis=0);radius=np.linalg.norm(pts,axis=1);inner=pts[radius<.5];inner=inner[np.argsort(np.arctan2(inner[:,1],inner[:,0]))];clearances=[]
+ for u,w in zip(inner,np.roll(inner,-1,axis=0)):
+  segment=w-u;t=np.clip(-u@segment/(segment@segment),0,1);clearances.append(np.linalg.norm(u+t*segment))
+ tubeR=np.linalg.norm(tube.vertices[:,1:],axis=1).max();portgap=float(min(clearances)-tubeR);minzgap=float(min(.7-layers[-1].bounds[1,2],layers[0].bounds[0,2]+.7));planar=float(min(22-max(x.bounds[1,0] for x in layers),6-max(x.bounds[1,1] for x in layers)));perEfree=8*.01*(.0001**3)/12;perEbond=.01*(8*.0001)**3/12;meshes=list(src.glob('*.stl'));d=dict(status='PASS_NOMINAL_COUPON_ENVELOPE_ONLY' if min(gaps)>0 and portgap>0 and minzgap>0 and planar>0 else 'FAIL_NOMINAL_COUPON_GEOMETRY',minimum_actual_STL_layer_gap_mm=float(min(gaps)),minimum_actual_STL_membrane_gap_mm=minzgap,minimum_planar_stack_wall_clearance_mm=planar,actual_polygon_bore_tube_clearance_mm=portgap,all_loaded_STL_watertight=all(trimesh.load(f,force='mesh').is_watertight for f in meshes),ideal_free_EI_per_E_m4=perEfree,ideal_bonded_compressed_EI_per_E_m4=perEbond,ideal_bonded_to_free_ratio=perEbond/perEfree,scope='Theoretical n-squared limit assumes zero-gap perfect bond vs free slip;NOT measured pressure-dependent stiffness or validated jamming. Nominal static geometry only,not sealed/assembled/moving Native gripper.',actual_pressure_stiffness=None,physical_validation='NOT QUALIFIED',fabrication_ready=False,input_hashes={str(f.relative_to(BASE)):sha(f) for f in meshes});(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d))
+if __name__=='__main__':main()

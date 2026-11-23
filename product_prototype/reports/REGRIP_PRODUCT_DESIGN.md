@@ -1,3 +1,14 @@
+## Autonomous candidate updates1187/1198–1201 — NOT PRODUCT APPROVAL
+
+Manufacturedcurvaturestart70→60mm withsame40deg wasactuallyexportedand
+checked:initialobjectpenetration1.675mm,REJECT,no B3adoption. Separate8layer
+pressure-pocketcouponconcept has15individualSTLs,SCAD/GLB/drawing/BOM and
+positive nominalstack/portclearances. It is NOT integratedwith300partB3 or
+a sealedvacuumcartridge. CombinedSTL isvisualonly,notbooleanmanufacturing
+solid. Materials/seal/pressure/friction/STEP/fabricationunknown. Native layer
+pressurefriction tests failedgeometry;ideal64bonded/freeboundisNOTperformance.
+Existing50gHolding/Lift FUNCTIONAL results and100gFAIL remainunchanged.
+
 ## Actual Native Lift/Release continuation1075–1100 — 2026-11-23
 
 Read B3_CABLE_ORIGIN_AND_LIFT_20261123.md. Actual50g Root/origin-driven5mm Lift1077 and3sLift→Release1081 completed. Corrected1085/1091:minimum object rise4.98046mm,relative slip0.110716mm,end speed4.00943mm/s,Support/Guide/Rail load0. Exploratory functional Lift ONLY;Native time/mesh/energy and actual hardware qualification still NOT PASS. Read-only PullPoint observer1075 preserves q/v within1e-12;driven origins1076 match Root clock. 1081 first800object/Film/guide states equal1077 exactly. Last Skin impulse2.385s;late object contacts0 and gravity fall observed. Guide sphere saved-state gap stays positive,not solid/swept assembly approval.

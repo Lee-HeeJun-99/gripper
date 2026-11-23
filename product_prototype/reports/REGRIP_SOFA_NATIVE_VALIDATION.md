@@ -1,3 +1,16 @@
+## Actual modal / pressure-layer / gap controls1181–1219 — 2026-11-23
+
+NewactualNative single-modeFEM(noGuide/Cable/contact)matchesdiscreteBE but
+timepairFAIL29.77%;actualmodalparticipationisnotjustspectrum. Newpressure/friction
+two-layer FEM/ramp/rigid/orientation controls allunqualifiedcontactgeometry;
+no stiffness/jamming/100g claim. Freshread-only dFree/W/f/J/free-stateprobe
+1211/12 hasq/v/impulseprefixerrors0;atcoincidence normal rows losevertical
+component. Surface-normalpolicy restoresnormal supportbutmu0 lateral locking;
+LocalMinDistance becomesNaN andtimesout. AllRaw/verdicts retained,noSDKedits.
+41regressions1219 are software/scope tests,NOT physicalcertification. Next
+actualfeature/response-row sourcealignment beforeanynewnormalpolicy.
+Detailed NATIVE_CONTACT_GAP_AND_NORMAL_POLICY_20261123.md and CHECKPOINT.
+
 ## Forced gravity / damping contract1161–1180 — 2026-11-23
 
 Actual Native isolated small-FEM coupon:first-step physical-damping recurrence

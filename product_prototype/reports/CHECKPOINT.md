@@ -1,3 +1,55 @@
+## Autonomous modal / design / layer continuation1181–1219 — 2026-11-23
+
+Started9d954a8 clean,continued across P0/P1/P2/CAD/measurement and fresh
+observer implementation rather than stopping after a commit. Feature commits:
+63346bc,ef3a53b,a6279db,054f995,a027f07,b045b5a,3bca391,937b839,
+7593d25,bc6920f,f2c41c0. Old B3/CAD/Raw/verdicts/SDK preserved,no push.
+Read B3_MODAL_LOAD_RESPONSE_20261123.md,B3_FIRST_MODE_CONTROL_20261123.md,
+B3_DISTRIBUTED_ARC_CANDIDATE_20261123.md,LAYER_PRESSURE_COUPON_20261123.md,
+LAYER_CARTRIDGE_POCKET_20261123.md,NATIVE_CONTACT_GAP_AND_NORMAL_POLICY_20261123.md.
+
+1181 actual gravity/C2/state projections:lowest26.72Hz rest mode accounts
+98.48%gravity compliance weight,83.09%saved time-pair mass error.1199 actual
+deformedJ/velocity projection shows changing load distribution;rest chart
+error~2mm at300ms forbids full nonlinear certification.1184/85 actual Native
+single-mode/noGuide/Cable/contact coupon matches BE≤6.1e-7 yet actualtimepair
+FAIL29.77%. Factory-order failures1182/83 kept(1183 partial,archived in1186).
+1187 one-variable curvature start70→60mm produces actualCAD/STLs but initial
+objectpenetration1.675mm:REJECT,no Nativegrasp orobject relocation.
+
+1188–94 actualNative two-layer FEM/pressure/friction controls,including ramp:
+no inverted elements but strict interlayer intersection witnesses;NOT jamming.
+1195–97 rigid controls tunnel;1206/07 Native orientation fixture keeps angular
+speed0 but tunneling persists.1205/08 translational impulse balance≤6.65e-19Ns
+is local identity only.1209 detector vertex coordinates matchPREVIOUSpose,
+notfree/accepted;this temporal association alone was not declared a defect.
+1198/1200/1201 separate8layer pressure-pocket concept:15watertight parts,
+actualSTL gap checks,componentGLB/SCAD/drawings/BOM. CombinedSTL nonmanifold
+atweldedinterfaces:visualONLY,noSTEP/seal/fabricationPASS. Ideal64stiffness
+bound is theoretical,NOT pressure law.1202 emptycalibrations/template is
+NOT MEASURED.1204 actualNative FAIL figures inspected;concepts separated.
+
+Actually continued READY observer:1211 fresh installedSDK-only read-only
+constraint dFree/W/f/J/state component,build3.01s.1212 prefixq/v/impulse errors
+EXACT0.1215 atcoincidence all7normal rows becomehorizontal despitevertical
+freepenetration;later reverseZ.1213/14 useSurfaceNormals stops tunneling but
+mu0 lateral force cancels applied0.01N:NOT validated friction.1216/17 Native
+LocalMinDistance producesNaN from0.6ms and60s timeout:REJECT1218,rawunchanged.
+No more blind normal/dt/alarm/friction trials.41scope regressions1219PASS,
+7installedSDK hashes recorded. Existing0.1%time/1%mesh/100g/material/joints/
+fullenergy/variable-stiffness Gates remain NOT QUALIFIED. No newHolding/Lift.
+
+NEXT READY in config/research_queue.json:join actual detector normal/feature
+pair to Native response-row identity atcoincidence,with fresh read-only build
+andstrictpurity;do NOToverwrite frozenbuild1211. Newtags1220+.
+Reusablediagnostic:cad/build_contact_gap1211/libReGripContactGapProbe.so;
+compiledsource/binaryhash guards incontact_gap_build1211/summary.json.
+Read-only resume:
+`python product_prototype/tools/research_queue.py`
+`python -m json.tool product_prototype/results/contact_gap_assess1215/summary.json`
+Fresh reproduction only(notnextunchangedtrial):contact_gap_probe.py --tag UNIQUE.
+No livephysicschildren or after-session background execution promised.
+
 ## Continued gravity / damping contract1161–1180 — 2026-11-23
 
 Started4c6bd43 clean; completed multiple consecutive implementation/Native/

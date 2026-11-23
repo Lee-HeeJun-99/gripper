@@ -1,3 +1,25 @@
+## Next after1181–1219 — detector-feature/constraint-normal provenance
+
+Modal actualloads/states DONE1181/1199,freshNative singlemodecontrol1184/85
+still timeFAIL29.77%;notonlyGuide/Cable/contact. New one-variablecurvature
+CAD1187 REJECTinitialpenetration;no100gtrial. Native layerpressure/friction/
+ramp/rigid/orientationcontrols FAILcontactgeometry. Independent15part pocket
+CAD1198/1200/1201 nominalgapsPASS ONLY,no seal/STEP/material/pressurelaw.
+Emptyhardwarecapture1202 NOTMEASURED,queue/schema/code actuallyimplemented.
+
+Continued into fresh read-only dFree/W/f/J/state observer1211/12,prefixpurity0.
+1215 coincidence normals becomehorizontal;surface-normal policy givesmu0
+lateral lock,LocalMinDistanceNaN/timeout. DO NOTadoptorretune;1218preservesFAIL.
+NEXT READY:actualdetector normal and feature-model pair joined to response
+row identity at zero separation. Need new bounded observer build1220+ and
+strictq/v/impulsepurity. Existingbinary1211/sourcehashesfrozen;do notoverwrite.
+No customsolver/SDKpatch,force/dt/alarm/frictionsweep orunqualified100g.
+41regressions1219PASS ONLY. Read NATIVE_CONTACT_GAP_AND_NORMAL_POLICY_20261123.md
+andLAYER_PRESSURE_COUPON_20261123.md. Read-only resume:
+`python product_prototype/tools/research_queue.py`
+`python -m json.tool product_prototype/results/contact_gap_assess1215/summary.json`
+Otherphysical/PET/vacuum/assembly data stillBLOCKED/NOTMEASURED.
+
 ## Next after1161–1180 — stop damping-only cure;forced-response attribution
 
 Read product_prototype/reports/B3_GRAVITY_TRANSIENT_AND_DAMPING_20261123.md,

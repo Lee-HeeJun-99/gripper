@@ -1,3 +1,22 @@
+## Next after1220–1256 — bending-reliable layer reference;B3 feature scope
+
+Actual feature/row joins and temporal impulse attribution DONE1224/1249,
+purityEXACT0. Interior primitive friction controlsPASSonly1233;diagonal
+control failures unchanged. NativeLocalMinDistance sphere loses support:
+1253FAIL,no further policy/dt/alarm sweeps. Layer idealinterface100ms has
+no overlap/inversion but free/tiedratio1.00694,NOT qualified jamming law.
+BE translationalwork inventory1241 separated numerical loss;wholeenergyNULL.
+Actual B3 historical force partition1254/55:50gPoint supports,Line0;100g
+earlyPoint.2349+Line.4719=.7068N<.981N,thenbothlose support. Do not assign
+the plane-coupon failure as uniqueB3 cause. No newHolding/Lift certification.
+
+READY layer_bending_reference:reuse1189/1240,compare reliable small-load
+section/discretization and idealinterface limit;not newEfit,static372repeat
+or fullB3 run. Layer pressure/friction calibration and actualB3 eventnormals
+remain prerequisites.54 software regressions1256PASSonly,oldGates retained.
+Read-only:`python product_prototype/tools/research_queue.py`.
+Rawfresh1257+,SDKunchanged,no push or historyrewrite.
+
 ## Next after1181–1219 — detector-feature/constraint-normal provenance
 
 Modal actualloads/states DONE1181/1199,freshNative singlemodecontrol1184/85

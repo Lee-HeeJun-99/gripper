@@ -1,3 +1,54 @@
+## Continued feature / friction / interface / B3 cycles1220–1256 — 2026-11-24
+
+Started9d3d064 clean on development/regrip-autonomous-research. Consecutive
+feature commits a7639d6,35fc319,12ba7c0,394b9f8,b5164ad,25e908f. No SDK
+changes,push,historyrewrite,oldRaw/verdict edits or new product approval.
+See CONTACT_FEATURE_PROVENANCE_20261124.md,PRIMITIVE_CONTACT_TRANSLATION_20261124.md,
+LAYER_INTERFACE_LIMIT_20261124.md,PRIMITIVE_DISCRETE_WORK_20261124.md,
+LINE_FACE_TRANSITION_20261124.md,B3_FEATURE_LOAD_PARTITION_20261124.md.
+
+Actual new read-only observer1221/22:35/35 unique Detector-feature/child-row
+joins at coincidence;all7 horizontal normals originate atDetector. Strict
+q/v/impulse purityEXACT0. Failed build1220 and analysis failures documented,
+freshbuilds1221/1242 used;old1211/1221 remain frozen. New late bounded window
+1243–49 proves line/face coexistence,computednormalGramcondition2.187e8 at
+iterationlimit and positive mu0 lateral impulse. Actual row impulse sum
+equals actual rigid impulseEXACT0. This is not a universal Native W/B3 proof.
+
+Actual primitive sphere controls1225/26/28:some component expectationsFAIL.
+Single-variable initial planar translation1230–32,ALL collisions retained:
+mu0/slip reference,mu.3stick,and saturatedsliding.15N pass narrowly1233;
+20ms only,no time/mesh qualification. New LocalMinDistance sphere contrast
+1250/52 loses support,1253FAIL;old thin-mesh NaNfailures also unchanged.
+No more blind detector/force/alarm/dt sweeps.1241 BE translation work identity
+residual~1e-20J;physical friction vs numerical loss separated;wholeenergyNULL.
+
+Actual Native two-layer ideal interface constraint1238/39 at sameE/material/
+load/mesh/dt/pressure0,all collisions retained:100ms3.61s,no savedinversion/
+centroidoverlap. Free/tied tip ratio1.006939ONLY,NOT jamming/EI gain. World
+rest-gap vector is small-angle limit,not objective adhesive/friction law.
+Rootreaction/energy/pressurelawNULL. New physical prerequisite bendingreference.
+
+1254/55 reuseB3 actual source485/1059,not newgrasp:50gPointFz~.4905N,Line0;
+100g1.0–1.2s Point.2349+Line.4719=.7068N<.981N,then both collapse. Late
+strictwindow160outputs differs historical161endpointclockmembership;no old
+Holding verdict edited. ActualDetectornormals not saved in oldjournals:NULL.
+Contact counts NOT area. 54 focused software tests1256PASS,7SDKhashes.
+
+NEXT READY:layer_bending_reference in config/research_queue.json. Reuse1189/
+1240;independent no-contact small-load section/discretization diagnosis,
+not fullB3 rerun or static372 duplicate. B3 actual normal/feature event
+measurement still requires fresh justified boundedscene;do not transfer
+primitive coupon results to100g. Existing50g/Lift functional results stand,
+time0.1%/mesh1%/100g/jamming/recovery/STEP/material/joint Gates unqualified.
+
+Read-only resume:
+`python product_prototype/tools/research_queue.py`
+`python -m json.tool product_prototype/results/layer_interface_assess1240/summary.json`
+`python -m json.tool product_prototype/results/b3_feature_withdrawal1255/summary.json`
+Fresh tags1257+;source/binary hashes and exact actualcommands in each Raw.
+No liveNativechildren or after-session background development promised.
+
 ## Autonomous modal / design / layer continuation1181–1219 — 2026-11-23
 
 Started9d954a8 clean,continued across P0/P1/P2/CAD/measurement and fresh

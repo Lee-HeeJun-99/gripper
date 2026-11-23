@@ -23,6 +23,13 @@ def main():
         for f in folder.rglob('*'):
             if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
         detail=json.loads(summary.read_text())
+        if case.startswith('contact_provenance_build'):
+            build=BASE/'cad'/case;binary=build/'libReGripContactProvenance.so'
+            if detail.get('binary_sha256'):
+                if sha(binary)!=detail['binary_sha256']:raise ValueError('contact provenance binary mismatch')
+                files[str(binary.relative_to(ROOT))]=sha(binary)
+            cache=build/'CMakeCache.txt'
+            if cache.is_file():files[str(cache.relative_to(ROOT))]=sha(cache)
         if case.startswith(('b3_inertia','b3_native')):
             builds=[ROOT/detail['build']] if detail.get('build') else []
             builds.append(BASE/'cad'/('build_'+case))
@@ -140,6 +147,9 @@ def main():
         for f in (BASE/'cad').glob('*.py'):shutil.copy2(f,out/('cad_'+f.name))
         shutil.copy2(BASE/'sofa/native_multistep_contract.py',out/'native_multistep_contract.py')
         for f in (BASE/'config').glob('*v1*.json'):shutil.copy2(f,out/('config_'+f.name))
+    for name in ('contact_provenance.py','contact_provenance_assess.py','primitive_sphere_control.py','primitive_sphere_assess.py','primitive_sphere_slip.py','primitive_plane_translation.py','primitive_local_filter.py','primitive_feature_impulses.py','primitive_work_inventory.py','layer_interface_limit.py','layer_interface_assess.py','b3_feature_load_audit.py','test_contact_provenance.py','test_primitive_control.py','test_primitive_work.py','test_layer_interface.py','test_feature_impulses.py','test_b3_feature_audit.py'):
+        source=BASE/'sofa'/name
+        if source.is_file():shutil.copy2(source,out/('sofa_'+name))
     for f in out.iterdir():
         if f.is_file():files[str(f.relative_to(ROOT))]=sha(f)
     result=dict(scope='Product functionality/clearance diagnostics,NOT final physics/fabrication qualification',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),prior_manifest_sha256=sha(prior),prior_immutable_audit=dict(checked=sum(immutable(k) for k in old['files']),mismatches=bad),cases=cases,files=files)

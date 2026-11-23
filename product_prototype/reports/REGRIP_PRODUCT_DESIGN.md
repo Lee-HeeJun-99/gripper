@@ -1084,3 +1084,11 @@ current300partCAD. No savedinversionthrough1s,buttimepairFAIL andlargeSkin
 strain;do notadoptasproductorclaim100gperformance. NativeNeoHookeanmaterial
 candidatefailedandisnotselected. ReuseoldCADonlyasindependentdesignreference.
 See B3_RAIL_BACK_ATTACHMENT_20261123.md;no motor/materialspecificationchanged.
+## 2026-11-24 physics/design scope update
+
+No new product geometry adopted. Independent primitive sphere benchmark is
+not a replacement Skin or a grasp candidate. Ideal layerinterface constraint
+does not represent calibrated PET adhesion or pressure-controlled jamming;
+actual displacementratio1.00694 cannot qualify stiffness benefit. Historical
+B3 Point/Line loadpartition informs future contact-shape diagnosis only.
+300partCAD/pocketconcept unchanged;no fabricatedmaterial/STEP/productPASS.

@@ -3178,3 +3178,14 @@ andrestKextractedwithq/vpurity0;independentblockreconstructionmatches
 nonlinear/time/mesh/energy/productqualificationstillabsent. Fournewscope
 checksPASS. Seeproduct_prototype/reports/B3_INITIAL_ASSEMBLY_20261123.md.
 NextsamplelaterNativeAwithpreviousacceptedq/Guideframes,notstalecheckpoint.
+## 2026-11-24 continuation1220–1256
+
+Six consecutive implementation/Native/analysis feature commits preserved.
+Actual detector-feature/row provenance and temporal impulse attribution
+completed with exact observerpurity. Native primitive component expectations
+pass only for interior flatface;diagonal and LocalMinDistance failures kept.
+Native ideal-layer-interface ratio1.00694 unqualified as jamming. Actual
+historical B3 featureload partition confirms100g earlysupport deficit and
+different Point/Line transmission,not new grasp success.54 regressionsPASS,
+all old physical/product Gates unchanged. See product CHECKPOINT for Raw,
+hashes,scope,reproduction and next bending-reference task.

@@ -1143,3 +1143,14 @@ Native720x720A matchesmappedmass+NativeK+Rayleighformula(TT/TR/RT/RR)within
 2.752e-16relative. NOT isolatedmass orfullnonlinearassembly/timePASS. Four
 scopechecksPASS1141;frozen1137spectrumisNOTdominantresponsecertification.
 NextsamplelaterAandpreviousacceptedstate. OldRailbacktimeFAILpreserved.
+## Scoped continuation1220–1256 — 2026-11-24
+
+New actual detector normal/feature→childJacobian→multiplier impulse joins,
+all strictq/v/impulseobserverpurityEXACT0. Interior primitive sphere controls
+meet frictionless discrete reference,stick and Coulomb saturation,ONLY20ms
+component scope. Diagonal nearparallel row/saturation and LocalMinDistance
+normal-support loss retainedFAIL. No policy adopted forB3. Ideal two-layer
+nativeinterface ratio1.00694,not pressure/frictionjamming law;wholeEI/energy
+unqualified. ActualBEtranslationinventory closes~1e-20J with numerical loss
+separate,NOT whole-system energy. HistoricalB3 feature partition uses oldRaw,
+no changedHoldingverdict.54softwaretests1256PASS,notphysicalqualification.

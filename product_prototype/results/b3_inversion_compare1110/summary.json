@@ -1,0 +1,115 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_CAUSAL_CERTIFICATION",
+  "records": [
+    {
+      "case": "b3_high_force_isolation1105",
+      "outputs": 240,
+      "valid_saved_prefix_outputs": 207,
+      "first_inversion_time_s": 0.5199999999999999,
+      "first_element_id": 402,
+      "maximum_absolute_skin_principal_Green_strain_before_inversion": 2.7936177455207987,
+      "source_hashes": {
+        "scene.scn": "a2582a086b4f57492d8b1bfb574b443321c09e5e15b3b5ec1632583d5e213c55",
+        "finger0.csv": "e665d171b5dc63d58822aab33a598b757d94efce4687dce33612f20fe877e74d",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935"
+      },
+      "energy_work": null,
+      "first_element_nodes": [
+        160,
+        172,
+        175,
+        176
+      ],
+      "first_element_material_centroid_mm": [
+        68.75,
+        -0.1499999999999999,
+        0.025
+      ],
+      "first_element_rigid_owned_nodes": [
+        172,
+        175
+      ],
+      "first_element_is_skin": true
+    },
+    {
+      "case": "b3_zero_input1107",
+      "outputs": 240,
+      "valid_saved_prefix_outputs": 240,
+      "first_inversion_time_s": null,
+      "first_element_id": null,
+      "maximum_absolute_skin_principal_Green_strain_before_inversion": 0.00015568029983159537,
+      "source_hashes": {
+        "scene.scn": "a77c260b0e780758a1b8111c046c768fb9dd4f646f0ca991acc658db449327df",
+        "finger0.csv": "616e8885318da82257b5585afbf2a86fe08d19a89fb1f612d2754b660dce937c",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935"
+      },
+      "energy_work": null
+    },
+    {
+      "case": "b3_polar_contrast1108",
+      "outputs": 240,
+      "valid_saved_prefix_outputs": 203,
+      "first_inversion_time_s": 0.5100000000000001,
+      "first_element_id": 444,
+      "maximum_absolute_skin_principal_Green_strain_before_inversion": 5.030171936135405,
+      "source_hashes": {
+        "scene.scn": "36965e38de61bb6382e6db38e269dff85f9a1089ce65cdc9b5df7626989a8f89",
+        "finger0.csv": "fb85154d91a6599073c12e2b6aecd11033b2b1456b6004c68b41a7406a0c4d0d",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935"
+      },
+      "energy_work": null,
+      "first_element_nodes": [
+        175,
+        187,
+        190,
+        191
+      ],
+      "first_element_material_centroid_mm": [
+        73.75,
+        8.15,
+        0.025
+      ],
+      "first_element_rigid_owned_nodes": [
+        175,
+        190
+      ],
+      "first_element_is_skin": true
+    },
+    {
+      "case": "b3_two_point_joint1109",
+      "outputs": 240,
+      "valid_saved_prefix_outputs": 7,
+      "first_inversion_time_s": 0.02,
+      "first_element_id": 270,
+      "maximum_absolute_skin_principal_Green_strain_before_inversion": 17.880580216863212,
+      "source_hashes": {
+        "scene.scn": "d96e6b0c10272a584b33c1bdf4810a35f57a96f10169c46059932a8dfbe35fea",
+        "finger0.csv": "00e8382b8932d101dd65d22dba331c9b7a2b206eb21b26c911640ea08fbf9452",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935"
+      },
+      "energy_work": null,
+      "first_element_nodes": [
+        108,
+        120,
+        123,
+        124
+      ],
+      "first_element_material_centroid_mm": [
+        48.75,
+        -11.0,
+        -0.375
+      ],
+      "first_element_rigid_owned_nodes": [
+        124
+      ],
+      "first_element_is_skin": false
+    }
+  ],
+  "conclusions": [
+    "No-input full joint is stable only over saved0.6s interval.",
+    "Polar rotation formulation alone does not prevent inversion.",
+    "Releasing third rigid attachment point is unstable;reject this joint candidate.",
+    "No individual thin-Skin versus bonded-Rail cause is established. No100g performance rerun justified."
+  ],
+  "next": "Isolate load transfer with a validated Native guide-joint coupon before another full high-force grasp."
+}

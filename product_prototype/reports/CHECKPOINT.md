@@ -1,3 +1,18 @@
+## Native inversion contrasts1107–1111 — 2026-11-23
+
+Four new actual Native single-finger runs completed,240steps each,noSDKERROR.
+ZeroCable1107 stable only through0.6s(minratio0.999962907). Polar1108 still
+inverts0.510s. Two-point guide joint1109 inverts0.020s;even itszero-input
+control1111 inverts0.0375s:REJECT this attachment candidate. Do not interpret
+later motion.1110 first reference badSkin tet402 contains rigid-owned nodes
+172/175;not unique causal proof. Five evidence-scope regression tests PASS.
+Read B3_INVERSION_CONTRASTS_20261123.md;no100g rerun or physicalGatePASS.
+NEXT smallNative three-point guide-joint load-transfer coupon with explicit
+restforce/mass/rotation checks,then Skin-only/bonded-Rail isolation. Do not
+repeat force/dt/polar sweep or use unstable two-point joint. Old50gLift/100gFAIL,
+time/meshFAILs and300partCAD unchanged. Newtags1112+aftercheckingpaths.
+Resume:`python -m json.tool product_prototype/results/b3_inversion_compare1110/summary.json`.
+
 ## Latest force-branch rejection1101–1106 — 2026-11-23
 
 Saved feature commits:ccd6cc7 and1ab1b8d. Evidencev64 records26newcases and

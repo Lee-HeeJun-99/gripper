@@ -1,3 +1,14 @@
+## Next after inversion contrasts1107–1111
+
+Read product_prototype/reports/B3_INVERSION_CONTRASTS_20261123.md.
+Original joint without Cable stable0.6s;polar still inverts. Two-point joint
+fails even withoutCable:reject,not a100g improvement. NEXT minimal Native
+three-point guide-joint load-transfer coupon,restforce/mass/rotational mapping
+checks before another B3 attachment change. Then explicit Skin-only/bonded-Rail
+load-path comparison. No new high-force fullgrasp justified. Existing1100
+100g earlysupportdeficit alreadyanalysed;do notrepeat unchanged. Newtags1112+.
+Five new scope regressionsPASS;time/mesh/energy/productGateNOTPASS.
+
 ## Latest force-branch rejection1101–1106 — 2026-11-23
 
 50g Native5mm Lift and subsequent Release remain EXPLORATORY FUNCTIONAL results (1085/1091/1089);gravity-reference return1095 is a bounded numerical comparison,not full physical Recovery.100g1.5N Holding FAIL persists.100g2.5N candidate1101 was cost-cancelled at246outputs/.615s:forecast~572s exceeded480s;child exit/runtime NULL because final child report absent. Partial journals stable and preserved.1103/1104 independently find Skin tetra inversion from.4325s (materialX~69–71mm),so later object motion is NOT valid performance evidence. QUALITY_REJECTION annotation preserves original cancellation status.

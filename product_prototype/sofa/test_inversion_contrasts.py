@@ -30,5 +30,15 @@ class Contrasts(unittest.TestCase):
         d=self.data('b3_inversion_compare1110')
         self.assertEqual(d['status'],'DIAGNOSTIC_ONLY_NOT_CAUSAL_CERTIFICATION')
         self.assertEqual(d['records'][0]['first_element_rigid_owned_nodes'],[172,175])
+    def test_unloaded_rest_not_forced_state(self):
+        d=self.data('b3_joint_rest1112')
+        self.assertEqual(d['quality']['maximum_node_motion_mm'],0)
+        self.assertEqual(d['quality']['minimum_determinant_ratio'],1)
+        a=ET.parse(BASE/'results/b3_two_point_zero1111/scene.scn').getroot()
+        b=ET.parse(BASE/'results/b3_joint_rest1112/scene.scn').getroot()
+        a.set('gravity','0 0 0')
+        for n in a.iter():
+            for k,v in list(n.attrib.items()):n.set(k,v.replace('b3_two_point_zero1111','b3_joint_rest1112'))
+        self.assertEqual(ET.tostring(a),ET.tostring(b))
 
 if __name__=='__main__':unittest.main()

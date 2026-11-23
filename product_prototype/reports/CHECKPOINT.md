@@ -1,5 +1,11 @@
 ## Native inversion contrasts1107–1111 — 2026-11-23
 
+FOLLOW-ON1112:rejectedtwo-pointjoint withCable0 AND gravity0 remains exactly
+stationary240steps;onlygravity changedfrom1111. Gravity alone excites the
+candidatefailure;not restgeometry mismatch proof orhingequalification.
+Six scope regressionsPASS. Use NEWtags1113+,not1112. No ongoingchildren.
+Saved contrast feature140c358;follow-on rest evidence is the next localcommit.
+
 Four new actual Native single-finger runs completed,240steps each,noSDKERROR.
 ZeroCable1107 stable only through0.6s(minratio0.999962907). Polar1108 still
 inverts0.510s. Two-point guide joint1109 inverts0.020s;even itszero-input

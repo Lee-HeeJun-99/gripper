@@ -1,5 +1,9 @@
 ## Next after inversion contrasts1107–1111
 
+Follow-on1112zero-input/zero-gravity reducedjoint stays exactlyatrest;gravity
+excites1111failure. Candidate stillREJECTED;do not disablegravity inHolding.
+Six regressionchecksPASS. Fresh tag1113+aftercheckingactualpaths.
+
 Read product_prototype/reports/B3_INVERSION_CONTRASTS_20261123.md.
 Original joint without Cable stable0.6s;polar still inverts. Two-point joint
 fails even withoutCable:reject,not a100g improvement. NEXT minimal Native

@@ -58,3 +58,15 @@ Other modes:polar,two-point-joint,two-point-zero-input.
 Read existing1110 with `python -m json.tool product_prototype/results/b3_inversion_compare1110/summary.json`.
 Actual Commands/sourceScene SHA/binarySHA/SDK are in eachpreflight.json;
 producer.py and process journals are preserved. No Holding/physical/productPASS.
+
+## Follow-on rest-state discriminator1112
+
+After rejecting1109,continued immediately with1111 changed ONLY gravity→0.
+240 actualNative steps,3.248s,exit0/noERROR;maximum nodemotion exactly0,
+minimumtet ratio1.0. Thus the reduced-joint rest geometry can remain stationary
+without excitation;gravity alone excites its observed instability1111.
+This does NOT prove physically valid hinge dynamics or uniquely distinguish
+ill-conditioned mapped tangent from inadequate moment transfer. Do not rescue
+the candidate by disablinggravity in a grasp. No prescribed q/v used.
+Six evidence regressionsPASS after this follow-on cycle.
+Next tag1113+;prior1107–1111evidencev66 verifies17096oldhashes,0mismatch.

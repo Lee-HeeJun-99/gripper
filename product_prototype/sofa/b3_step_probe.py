@@ -7,7 +7,7 @@ from analyse import BASE,sha
 from native_bending_coupon import guarded
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--build',action='store_true');p.add_argument('--sample',type=float,default=.05);p.add_argument('--reference',choices=['b3_rail_back_hold1129','b3_rail_back_half1130'],default='b3_rail_back_hold1129');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--build',action='store_true');p.add_argument('--sample',type=float,default=.05);p.add_argument('--reference',choices=['b3_rail_back_hold1129','b3_rail_back_half1130','b3_ode_gravity_base1168'],default='b3_rail_back_hold1129');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
     build=BASE/'cad/build_step_probe1142';binary=build/'libReGripStepProbe.so';code=BASE/'sofa/native_step_probe';(out/'producer.py').write_bytes(Path(__file__).read_bytes())
     if a.build:
         for f in ('Probe.cpp','CMakeLists.txt'):shutil.copy2(code/f,out/f)

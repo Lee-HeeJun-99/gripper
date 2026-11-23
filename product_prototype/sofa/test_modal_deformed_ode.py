@@ -1,0 +1,21 @@
+import json,unittest
+from analyse import BASE
+
+class ModalDeformedTests(unittest.TestCase):
+    def test_independent_reference_scope(self):
+        d=json.loads((BASE/'results/b3_modal_reference_audit1173/summary.json').read_text())
+        self.assertEqual(d['status'],'PASS_LINEAR_REFERENCE_CROSSCHECK_ONLY')
+        self.assertGreater(d['minimum_eigenvalue_s_minus2'],0)
+        self.assertLess(max(x['relative'] for x in d['comparisons']),1e-6)
+        self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
+    def test_read_only_actual_path(self):
+        d=json.loads((BASE/'results/b3_ode_deformed_step1174/summary.json').read_text())
+        self.assertEqual(max(d['state_errors'].values()),0)
+    def test_deformed_algebra_not_time_pass(self):
+        d=json.loads((BASE/'results/b3_ode_deformed_rhs1175/summary.json').read_text())
+        self.assertLess(d['matrix_error']['relative'],1e-14)
+        self.assertLess(d['hypotheses']['no_convective_term']['free_velocity']['relative'],1e-8)
+        self.assertEqual(d['time_convergence'],'FAIL_PRESERVED')
+        self.assertIsNone(d['energy_work'])
+
+if __name__=='__main__':unittest.main()

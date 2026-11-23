@@ -1,0 +1,61 @@
+{
+  "checked_date": "2026-11-23",
+  "source_kind": "PRIMARY_SUPPLIER_DIMENSIONS_NOT_PHYSICAL_MEASUREMENTS",
+  "sources": {
+    "screw": "https://www.accu.co.uk/flat-point-set-screws/4488-SSF-M1-6-3-A2",
+    "screw_dimension_crosscheck": "https://eshop.boellhoff.de/out/media/pdf/ISO_4026_Edelstahl_A2___en.pdf",
+    "nut": "https://www.aspenfasteners.com/content/2D_PDF/product89/ME177-016035.PDF",
+    "nut_dimension_crosscheck": "https://www.westfieldfasteners.co.uk/Standards/Nut_Hex_M.html"
+  },
+  "capture": "Normalized dimensional facts read from supplier pages/PDFs; not a redistributed full document, purchase, availability guarantee or measured specimen.",
+  "screw_candidate": {
+    "part": "Accu SSF-M1.6-3-A2",
+    "catalog_material": "A2 stainless steel",
+    "nominal_diameter_mm": 1.6,
+    "pitch_mm": 0.35,
+    "nominal_length_mm": 3.0,
+    "length_interval_mm": [2.8, 3.2],
+    "length_interval_source": "Bollhoff ISO4026 same nominal size dimensional crosscheck, not Accu lot certification",
+    "end_diameter_interval_mm": [0.55, 0.8],
+    "hex_socket_AF_mm": 0.7,
+    "right_hand": true,
+    "actual_thread_tolerance_class": null,
+    "actual_locking_method": null,
+    "stock_price_domestic_supply": null
+  },
+  "nut_candidate": {
+    "part": "Aspen ME177-016035",
+    "catalog_material": "brass",
+    "nominal_diameter_mm": 1.6,
+    "pitch_mm": 0.35,
+    "AF_interval_mm": [3.02, 3.2],
+    "height_interval_mm": [1.05, 1.3],
+    "minimum_across_corners_mm": 3.41,
+    "minimum_across_corners_source": "Westfield same size dimensional crosscheck, not Aspen lot certification",
+    "right_hand": true,
+    "actual_thread_tolerance_class": null,
+    "actual_proof_load_N": null,
+    "stock_price_domestic_supply": null
+  },
+  "design_targets_NOT_PROCESS_CAPABILITY": {
+    "pocket_AF_mm": 3.3,
+    "pocket_AF_plus_minus_mm": 0.03,
+    "pocket_height_mm": 1.4,
+    "pocket_height_plus_minus_mm": 0.03,
+    "nut_bottom_mm": 1.3,
+    "screw_tip_mm": 0.42,
+    "passage_diameter_mm": 1.7,
+    "pad_thickness_mm": 0.3,
+    "pad_thickness_plus_minus_mm": 0.01,
+    "pad_length_mm": 1.6,
+    "pad_width_mm": 1.2,
+    "pad_XY_plus_minus_mm": 0.02,
+    "axis_position_plus_minus_mm": 0.05,
+    "nominal_axis_to_pad_width_centre_mm": 0.1,
+    "nominal_unloaded_stack_travel_mm": 0.07
+  },
+  "measured_material_preload_slip_indent_fatigue": null,
+  "screw_torque_command_Nm": null,
+  "fabrication_ready": false,
+  "qualification": "Catalog-compatible thread designation only; thread class, chamfers, fit, retention, galvanic/corrosion, material strength, actual tolerances and preload require confirmation. Set screw is a compressive adjuster, NOT a tensile retention fastener. No motor/material/wholegripper qualification."
+}

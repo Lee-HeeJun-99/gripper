@@ -1,5 +1,14 @@
 ## Native guide transfer1113–1118 — 2026-11-23
 
+FOLLOW-ON1119afterfeature9fc9a1a:existingelasticobserver supportsinitialtangent
+only;100msdeformedtangentNOTMEASURED. Independentvalidprefixstrainanalysis:
+1105SkinGreenstrain>0.01 at147.5ms,>0.1 at470ms(before520msinversion).
+Deadload1116also>0.1 at165ms despitepositivevolumes:NOTmaterialvalidityPASS.
+MarkersareNOTmateriallimits;allowablesNULL. Sevennewscopechecks+prior6PASS.
+NEXT deformedprivateprobeobserverwithstate/cachepurity orindependentlowload
+Skin/Railcoupon;fresh1120+tags. No livephysicschildren orautomaticcontinuation.
+Evidencev68 verified17549priorfiles,0mismatch;feature9fc9a1a saved1113–1118.
+
 Starting5a32ce1;new componentcoupon1113/1114 confirms actualguide mass/mapping
 translation/couple response,positionerror≤1.735e-18m,3pointJacobianrank6vs2point5.
 NOT assembledFEM qualification.1115plugin-orderFAILpreserved;corrected1116

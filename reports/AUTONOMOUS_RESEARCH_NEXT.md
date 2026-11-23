@@ -1,5 +1,11 @@
 ## Next after guide transfer1113–1118
 
+1119follow-on:privateprobePositions doesNOTquerydeformedtangent inexisting
+observer;100msmatrixNOTMEASURED. Skinstrainriseprecedesinversion;deadload
+positivevolumesstilllarge strain. No-inversionisNOTmaterialPASS. Fresh1120+.
+Nextread-onlydeformedtangentextensionrequirescache/statepurityvalidation;
+otherwise separatelow-loadSkin/Railcoupon. Sevennewscopechecks+prior6PASS.
+
 Read product_prototype/reports/B3_GUIDE_LOAD_TRANSFER_20261123.md.
 SmallNative mapping/masscouponPASS ONLY;reference3pointrank6,2point5.
 Cablefree recordedforcehistory1117 stillinverts.2425s;differenttrajectory,

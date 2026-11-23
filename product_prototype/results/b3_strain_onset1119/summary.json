@@ -1,0 +1,112 @@
+{
+  "status": "KINEMATIC_HISTORY_ONLY_NOT_MATERIAL_FAILURE_GATE",
+  "records": [
+    {
+      "case": "b3_high_force_isolation1105",
+      "valid_outputs": 207,
+      "first_inversion_s": 0.5199999999999999,
+      "source_hashes": {
+        "finger0.csv": "e665d171b5dc63d58822aab33a598b757d94efce4687dce33612f20fe877e74d",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+        "scene.scn": "a2582a086b4f57492d8b1bfb574b443321c09e5e15b3b5ec1632583d5e213c55"
+      },
+      "diagnostic_thresholds_not_material_limits": {
+        "0.01": {
+          "time_s": 0.14750000000000008,
+          "element_id": 539,
+          "material_centroid_mm": [
+            88.75,
+            5.85,
+            0.05
+          ]
+        },
+        "0.1": {
+          "time_s": 0.47000000000000036,
+          "element_id": 428,
+          "material_centroid_mm": [
+            71.25,
+            -7.949999999999999,
+            0.05
+          ]
+        }
+      }
+    },
+    {
+      "case": "b3_zero_input1107",
+      "valid_outputs": 240,
+      "first_inversion_s": null,
+      "source_hashes": {
+        "finger0.csv": "616e8885318da82257b5585afbf2a86fe08d19a89fb1f612d2754b660dce937c",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+        "scene.scn": "a77c260b0e780758a1b8111c046c768fb9dd4f646f0ca991acc658db449327df"
+      },
+      "diagnostic_thresholds_not_material_limits": {
+        "0.01": null,
+        "0.1": null
+      }
+    },
+    {
+      "case": "b3_reference_deadload1116",
+      "valid_outputs": 240,
+      "first_inversion_s": null,
+      "source_hashes": {
+        "states.csv": "288b2e7bc5e40373d5f7234fe5cb1b99cb69df2e17b765f12bd52ceed3ad2c16",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+        "scene.scn": "0a4b84f4773e81706eb4c4ac74fe9605961bc4fe288b4772dffb76c67425852c"
+      },
+      "diagnostic_thresholds_not_material_limits": {
+        "0.01": {
+          "time_s": 0.13750000000000007,
+          "element_id": 491,
+          "material_centroid_mm": [
+            83.75,
+            -7.45,
+            0.05
+          ]
+        },
+        "0.1": {
+          "time_s": 0.1650000000000001,
+          "element_id": 505,
+          "material_centroid_mm": [
+            82.5,
+            7.6000000000000005,
+            0.025
+          ]
+        }
+      }
+    },
+    {
+      "case": "b3_recorded_load1117",
+      "valid_outputs": 96,
+      "first_inversion_s": 0.24250000000000016,
+      "source_hashes": {
+        "states.csv": "c722111060465ddc581c0d449fe0cefc0c105d3496699f14bf7ef12237fb9992",
+        "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+        "scene.scn": "a056dc61f00b17fe84d90a1f3724ea7486e1bcef87fba31df975a426a9f8dfab"
+      },
+      "diagnostic_thresholds_not_material_limits": {
+        "0.01": {
+          "time_s": 0.14750000000000008,
+          "element_id": 539,
+          "material_centroid_mm": [
+            88.75,
+            5.85,
+            0.05
+          ]
+        },
+        "0.1": {
+          "time_s": 0.22000000000000014,
+          "element_id": 594,
+          "material_centroid_mm": [
+            98.75,
+            5.15,
+            0.025
+          ]
+        }
+      }
+    }
+  ],
+  "material_allowable_strain": null,
+  "physical_validation": "NOT QUALIFIED",
+  "deformed_tangent": "NOT MEASURED: existing compiled elastic observer queries tangent only at initial bwdInit state; private probePositions queries forces,not deformed tangent. No stale dynamic checkpoint installed."
+}

@@ -26,5 +26,11 @@ class GuideTransfer(unittest.TestCase):
     def test_comparison_not_equivalence(self):
         d=self.data('b3_load_compare1118');self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
         for r in d['records']:self.assertLessEqual(r['first_step_max_position_error_m'],1e-12)
+    def test_strain_is_not_failure_threshold(self):
+        d=self.data('b3_strain_onset1119');self.assertIsNone(d['material_allowable_strain'])
+        self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
+        for r in d['records']:
+            t=r['diagnostic_thresholds_not_material_limits']['0.1']
+            if t and r['first_inversion_s'] is not None:self.assertLess(t['time_s'],r['first_inversion_s'])
 
 if __name__=='__main__':unittest.main()

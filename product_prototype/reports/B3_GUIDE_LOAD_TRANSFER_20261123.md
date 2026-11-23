@@ -72,3 +72,27 @@ Reproduction with NEWtag only:
 Inspect1118 read-only:`python -m json.tool product_prototype/results/b3_load_compare1118/summary.json`.
 Per-case preflight records actualcommand,sourceScene/binarySHA,SDK,resourceguard;
 producer snapshots and Raw preserved. CurrentCAD remains a separate model.
+
+## Continued valid-prefix strain analysis1119
+
+After feature9fc9a1a,inspected existingNativeElasticMatrixObserver:its matrix
+query is only atinitialbwdInit;probePositions privately queries forces but NOT
+the deformed tangent. Therefore a100ms assembledtangent is NOT MEASURED with
+this existing binary. No invalid state or new checkpoint was installed.
+
+Continued with an independent saved-state kinematic analysis instead:original
+1105 Skin maximum absolute principalGreenstrain firstexceeds0.01 at147.5ms
+(tet539,materialX88.75mm),0.1 at470ms(tet428,X71.25mm),beforeinversion520ms.
+Reference-direction deadload1116 exceeds0.1 at165ms despite NO savedinversion;
+this explicitly rejects 'noinversion means valid material response'. Recorded
+history1117 matchesfirst0.01crossing butexceeds0.1 at220ms before242.5msinversion.
+Unloaded1107 crossesneither. The0.01/0.1levels are descriptive markers,NOT
+materialallowables/newPASSgates;materialstrainlimits andfailuredataNULL.
+Per-time Skin/Rail strain andvolumeCSV retained;postinversion excluded.
+
+Next minimal improvement must address local large strain/loadpath,not just
+eliminate negativevolumes. Build a private-deformed-state read-onlytangent
+observer only if its cache/state purity can be independently checked,or use
+low-loadSkin/Railcoupon with explicit geometry/mass/load definitions. Do not
+claim stiffnessgain/jamming or new100gcapacity fromthese diagnostics.
+Seven new scope regressionsPASS;prior6inversionchecksPASS. Fresh tags1120+.

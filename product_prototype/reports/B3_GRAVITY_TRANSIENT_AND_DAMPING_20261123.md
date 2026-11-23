@@ -35,7 +35,16 @@ an installed Native configuration contract; NOT a universal SOFA bug claim,
 not a nonlinear B3 cure. No existing FAIL is relabeled. Full physical/time/
 mesh/energy/material/joint qualification remains open.
 
-Next actual contrast: field coefficients0, same nominal alpha1/beta1e-4 on
+Completed next actual contrast1166/1167: field coefficients0, same nominal
+alpha1/beta1e-4 on Native EulerImplicitSolver. Actual Native0.472s/40outputs,
+no ERROR. Physical velocity-damping recurrence now matches all outputs:
+maxq9.747e-9,maxv7.393e-6 relative,0.1% algebraic Gate PASS ONLY. Rest K hash
+identical to1162. Configuration/law distinction,not coefficient magnitude
+tuning or retroactive repair of old B3. Continuous-time errors still large;
+no time/mesh/grasp/energy qualification. Proceed to bounded full-joint zero
+Cable contrast,explicitly accounting for new global Guide damping too.
+
+Original next action (now completed): field coefficients0, same nominal alpha1/beta1e-4 on
 Native EulerImplicitSolver instead. Check actual A and intended recurrence;
 explicit configuration/law change, not retroactive reinterpretation of B3.
 Do not tune coefficient magnitude or damp velocities in postprocessing.

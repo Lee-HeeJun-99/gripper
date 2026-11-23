@@ -13,5 +13,15 @@ class GravityContractTests(unittest.TestCase):
         self.assertGreater(d['variants']['physical_velocity_damping']['max_v_relative'],.18)
         self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
         self.assertIsNone(d['energy_work'])
+    def test_ode_configuration_not_coefficient_tuning(self):
+        import xml.etree.ElementTree as ET
+        root=ET.parse(BASE/'results/b3_linear_gravity_ode1166/scene.scn').getroot()
+        self.assertEqual(root.find('EulerImplicitSolver').get('rayleighMass'),'1')
+        self.assertEqual(root.find('EulerImplicitSolver').get('rayleighStiffness'),'0.0001')
+        self.assertEqual(root.find('Node/UniformMass').get('rayleighMass'),'0')
+        self.assertEqual(root.find('Node/TetrahedronFEMForceField').get('rayleighStiffness'),'0')
+        d=json.loads((BASE/'results/b3_linear_gravity_ode_assess1167/summary.json').read_text())
+        self.assertEqual(d['status'],'PASS_LINEAR_COUPON_DISCRETE_REFERENCE_ONLY')
+        self.assertGreater(d['maximum_relative_errors']['discrete_q_vs_continuous'],.9)
 
 if __name__=='__main__':unittest.main()

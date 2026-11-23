@@ -10,7 +10,7 @@ from native_bending_coupon import guarded
 from observer_identity import compiled_observer
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--no-observer',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/b3_rail_back_zero1127';source=ET.parse(src/'scene.scn').getroot();body=source.find("./Node[@name='finger0']");q=np.fromstring(body.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);local=np.array(json.loads((src/'mesh.json').read_text())['local_positions_mm']);root=ET.Element('Node',name='root',dt='.0025',gravity='0 0 -9.81')
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--no-observer',action='store_true');p.add_argument('--ode-rayleigh',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/b3_rail_back_zero1127';source=ET.parse(src/'scene.scn').getroot();body=source.find("./Node[@name='finger0']");q=np.fromstring(body.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);local=np.array(json.loads((src/'mesh.json').read_text())['local_positions_mm']);root=ET.Element('Node',name='root',dt='.0025',gravity='0 0 -9.81')
     for c in source.findall('RequiredPlugin'):
         name=c.get('pluginName')
         if name.startswith('/') and not name.endswith('libReGripProductSequence.so'):continue
@@ -18,6 +18,8 @@ def main():
     binary,compiled=compiled_observer('410');ET.SubElement(root,'RequiredPlugin',pluginName=str(binary));ET.SubElement(root,'DefaultAnimationLoop');root.append(source.find('EulerImplicitSolver'));root.append(source.find('SparseLDLSolver'));node=ET.SubElement(root,'Node',name='coupon')
     for tag in ('MeshTopology','MechanicalObject','UniformMass','TetrahedronFEMForceField'):node.append(body.find(tag))
     node.find('TetrahedronFEMForceField').set('method','small');ET.SubElement(node,'FixedProjectiveConstraint',indices=' '.join(map(str,np.flatnonzero(local[:,0]<=5))))
+    if a.ode_rayleigh:
+        root.find('EulerImplicitSolver').set('rayleighMass',node.find('UniformMass').get('rayleighMass'));root.find('EulerImplicitSolver').set('rayleighStiffness',node.find('TetrahedronFEMForceField').get('rayleighStiffness'));node.find('UniformMass').set('rayleighMass','0');node.find('TetrahedronFEMForceField').set('rayleighStiffness','0')
     ET.SubElement(node,'NativePointJournal',body='@dofs',filename=str(out/'states.csv'))
     if not a.no_observer:ET.SubElement(node,'NativeElasticMatrixObserver',body='@dofs',elastic='@nativeFEM',filename=str(out/'rest'))
     ET.ElementTree(root).write(out/'scene.scn');shutil.copy2(src/'mesh.json',out/'mesh.json');(out/'producer.py').write_bytes(Path(__file__).read_bytes())

@@ -8,14 +8,15 @@ from analyse import BASE,sha
 from native_bending_coupon import guarded
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--worker',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--source',default='b3_linear_gravity_coupon1162');p.add_argument('--worker',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag
     if not a.worker:
-        out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(guarded([sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker'],out/'process',120)));return
-    src=BASE/'results/b3_linear_gravity_coupon1162';root=ET.parse(src/'scene.scn').getroot();node=root.find('Node');q0=np.fromstring(node.find('MechanicalObject').get('position'),sep=' ');N=len(q0);fixed=np.fromstring(node.find('FixedProjectiveConstraint').get('indices'),sep=' ',dtype=int);free=np.ones(N,bool)
+        out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(guarded([sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--source',a.source,'--worker'],out/'process',120)));return
+    if Path(a.source).name!=a.source:raise ValueError('local source required')
+    src=BASE/'results'/a.source;root=ET.parse(src/'scene.scn').getroot();node=root.find('Node');q0=np.fromstring(node.find('MechanicalObject').get('position'),sep=' ');N=len(q0);fixed=np.fromstring(node.find('FixedProjectiveConstraint').get('indices'),sep=' ',dtype=int);free=np.ones(N,bool)
     for i in fixed:free[3*i:3*i+3]=False
     K0=np.zeros((N,N))
     for r in csv.DictReader((src/'rest.matrix.csv').open()):K0[int(r['i']),int(r['j'])]=float(r['K_N_per_m'])
-    K=K0[np.ix_(free,free)];n=len(K);mass=node.find('UniformMass');m=float(mass.get('totalMass'))/(N//3);alpha=float(mass.get('rayleighMass'));beta=float(node.find('TetrahedronFEMForceField').get('rayleighStiffness'));M=m*np.eye(n);C=alpha*M+beta*K;f=np.tile(m*np.fromstring(root.get('gravity'),sep=' '),N//3)[free];dt=float(root.get('dt'));lu=lu_factor(M+dt*C+dt*dt*K)
+    K=K0[np.ix_(free,free)];n=len(K);mass=node.find('UniformMass');m=float(mass.get('totalMass'))/(N//3);ode=root.find('EulerImplicitSolver');alpha=float(mass.get('rayleighMass'))+float(ode.get('rayleighMass','0'));beta=float(node.find('TetrahedronFEMForceField').get('rayleighStiffness'))+float(ode.get('rayleighStiffness','0'));M=m*np.eye(n);C=alpha*M+beta*K;f=np.tile(m*np.fromstring(root.get('gravity'),sep=' '),N//3)[free];dt=float(root.get('dt'));lu=lu_factor(M+dt*C+dt*dt*K)
     B=np.zeros((2*n+1,2*n+1));B[:n,n:2*n]=np.eye(n);B[n:2*n,:n]=-K/m;B[n:2*n,n:2*n]=-C/m;B[n:2*n,-1]=f/m;T=expm(dt*B);Th=expm(dt/2*B);semigroup=float(np.linalg.norm(T-Th@Th)/np.linalg.norm(T));cont=np.zeros(2*n+1);cont[-1]=1;x=np.zeros(n);v=np.zeros(n);trace=[]
     rows=list(csv.DictReader((src/'states.csv').open()))
     def error(u,w):

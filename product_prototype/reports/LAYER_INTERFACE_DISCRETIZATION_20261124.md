@@ -45,3 +45,21 @@ Reproduce(unique outputtags):
 `python product_prototype/sofa/layer_interface_reference.py --tag UNIQUE`
 `python product_prototype/sofa/layer_refined_interface.py --tag UNIQUE --steps 10`
 `python product_prototype/sofa/test_layer_interface_reference.py`
+
+## Actual refined contrast1266/1267
+
+1266 completed500Native steps100ms in107.619s within120s/4GiB (forecast
+113.620s),0ERROR,sourcee8ab6ba.1267 accepted-state geometry/referenceaudit
+12.735s:finalfree/tied endpoint-displacement ratio1.098749997 vs independent
+1.098733680. This is NOT a static stiffness ratio. Actual tied finalTip
+−1.70892173um,last50tiprelative drift.0001114,maximum node speed4.87e-5m/s:
+static equilibrium NOT QUALIFIED. All500accepted elements remainpositive,
+minvolume.999999116;no strict tetra-centroid overlap witnesses. Maximum
+interface vector mismatch13.928nm. No complete collision proof claimed.
+Contactforce/rootreaction/wholeenergy/pressurelaw remainNULL.
+
+ActualNative PNG/SVG generated and visually checked in1267,with separate
+mathreference dottedlines and NOTjamming qualification title. Matplotlib's
+Axes3D unavailable warning preserved;2D figure generated correctly.
+Next check actual Cq/Cv coupling and accepted-state position increment;
+do not infer equilibrium from only width-mean tip convergence.

@@ -1,0 +1,13 @@
+"""Free-sphere momentum/pose inventory,not full coupled energy/time validation."""
+import argparse,csv,json
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+def read(path):return list(csv.DictReader(path.open()))
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results/b3_lift_release1081';old=BASE/'results/b3_lift50_explore1077';out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);rows=read(src/'object.csv');before=read(old/'object.csv');meta=json.loads((src/'summary.json').read_text());cfg=json.loads((src/'config.json').read_text());mass=cfg['simulation']['sphere_mass_kg'];radius=cfg['simulation']['sphere_radius_mm']*.001;dt=meta['dt_s'];t=np.array([float(r['time_s']) for r in rows]);q=np.array([np.fromstring(r['rigid_q'],sep=' ') for r in rows]);v=np.array([np.fromstring(r['rigid_v'],sep=' ') for r in rows]);imp=np.array([np.fromstring(r['object_impulse_Ns_Nms'],sep=' ') for r in rows]);dv=np.diff(np.vstack([np.zeros(6),v]),axis=0);linear=mass*dv[:,:3]-mass*np.array(meta['gravity_m_s2'])*dt-imp[:,:3];angular=.4*mass*radius**2*dv[:,3:]-imp[:,3:];ref=int(np.argmin(abs(t-1.6)));window=(t>=1.6-1e-12)&(t<=2+1e-12);unit=q[:,3:]/np.linalg.norm(q[:,3:],axis=1)[:,None];angle=np.rad2deg(2*np.arccos(np.clip(abs(unit@unit[ref]),0,1)));prefix=0
+ for k,r in enumerate(before):
+  for field in ('rigid_q','rigid_v','object_impulse_Ns_Nms'):prefix=max(prefix,float(abs(np.fromstring(r[field],sep=' ')-np.fromstring(rows[k][field],sep=' ')).max()))
+ d=dict(status='PASS_FREE_SPHERE_MOMENTUM_INVENTORY_ONLY' if max(float(abs(linear).max()),float(abs(angular).max()))<=1e-12 else 'FAIL_FREE_SPHERE_MOMENTUM_INVENTORY',maximum_linear_momentum_defect_Ns=float(abs(linear).max()),maximum_angular_momentum_defect_Nms=float(abs(angular).max()),maximum_lift_object_rotation_from_reference_deg=float(angle[window].max()),maximum_lift_lateral_drift_mm=float(np.linalg.norm(q[window,:2]-q[ref,:2],axis=1).max()*1000),maximum_quaternion_norm_error=float(abs(np.linalg.norm(q[:,3:],axis=1)-1).max()),first800_object_state_impulse_prefix_vs1077_error=prefix,scope='Actual isolated FREE sphere inventory with isotropic inertia and gravity only;Root work/film energy not inferred. Quaternion normalization is analysis-only for rotation metric,not state correction. No wrench capacity/time/mesh certification.',whole_coupled_energy='NOT MEASURED',physical_validation='NOT QUALIFIED',input_hashes={str(f.relative_to(BASE)):sha(f) for f in [src/'object.csv',old/'object.csv',src/'config.json',src/'summary.json',Path(__file__)]})
+ (out/'producer.py').write_bytes(Path(__file__).read_bytes());(out/'summary.json').write_text(json.dumps(d,indent=2));print(json.dumps(d))
+if __name__=='__main__':main()

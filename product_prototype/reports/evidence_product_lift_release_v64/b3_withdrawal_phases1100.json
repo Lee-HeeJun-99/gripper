@@ -1,0 +1,119 @@
+{
+  "status": "TEMPORAL_ASSOCIATION_ONLY_NOT_UNIQUE_CAUSAL_PROOF",
+  "records": [
+    {
+      "case": "b3_alarm_window485",
+      "first_2mm_downward_slip_after_support_withdrawal_s": null,
+      "first_20_consecutive_negative_normal_z_start_s": null,
+      "first_iteration_limit_after1s": null,
+      "phases": [
+        {
+          "window_s": [
+            0.5,
+            1.0
+          ],
+          "mean_skin_normal_z_N": 0.4185565921829702,
+          "mean_skin_total_z_N": 0.49041770707313914,
+          "iteration_limited_outputs": 0,
+          "outputs": 201,
+          "maximum_downward_displacement_mm": 0.0028949579987808116
+        },
+        {
+          "window_s": [
+            1.0,
+            1.2
+          ],
+          "mean_skin_normal_z_N": 0.418655129286695,
+          "mean_skin_total_z_N": 0.49047745493743755,
+          "iteration_limited_outputs": 0,
+          "outputs": 81,
+          "maximum_downward_displacement_mm": 0.009171655805481627
+        },
+        {
+          "window_s": [
+            1.2,
+            1.5
+          ],
+          "mean_skin_normal_z_N": 0.41897297849406534,
+          "mean_skin_total_z_N": 0.49049820187963866,
+          "iteration_limited_outputs": 0,
+          "outputs": 121,
+          "maximum_downward_displacement_mm": 0.018779136792948514
+        },
+        {
+          "window_s": [
+            1.6,
+            2.0
+          ],
+          "mean_skin_normal_z_N": 0.41841832738706775,
+          "mean_skin_total_z_N": 0.4905133151495999,
+          "iteration_limited_outputs": 0,
+          "outputs": 161,
+          "maximum_downward_displacement_mm": 0.03235880622791398
+        }
+      ]
+    },
+    {
+      "case": "b3_mass100_explore1059",
+      "first_2mm_downward_slip_after_support_withdrawal_s": 1.0974999999999877,
+      "first_20_consecutive_negative_normal_z_start_s": 1.3249999999999829,
+      "first_iteration_limit_after1s": 1.2874999999999837,
+      "phases": [
+        {
+          "window_s": [
+            0.5,
+            1.0
+          ],
+          "mean_skin_normal_z_N": 0.5722725590911657,
+          "mean_skin_total_z_N": 0.662721052667894,
+          "iteration_limited_outputs": 0,
+          "outputs": 201,
+          "maximum_downward_displacement_mm": 0.0017017925927065303
+        },
+        {
+          "window_s": [
+            1.0,
+            1.2
+          ],
+          "mean_skin_normal_z_N": 0.568636908983009,
+          "mean_skin_total_z_N": 0.7064531712410749,
+          "iteration_limited_outputs": 0,
+          "outputs": 81,
+          "maximum_downward_displacement_mm": 12.356511978492996
+        },
+        {
+          "window_s": [
+            1.2,
+            1.5
+          ],
+          "mean_skin_normal_z_N": -0.019190798528082982,
+          "mean_skin_total_z_N": 0.20320395761734011,
+          "iteration_limited_outputs": 58,
+          "outputs": 121,
+          "maximum_downward_displacement_mm": 40.0218607133767
+        },
+        {
+          "window_s": [
+            1.6,
+            2.0
+          ],
+          "mean_skin_normal_z_N": -0.2838847189458278,
+          "mean_skin_total_z_N": -0.0739293746035715,
+          "iteration_limited_outputs": 161,
+          "outputs": 161,
+          "maximum_downward_displacement_mm": 40.021865381242705
+        }
+      ]
+    }
+  ],
+  "definition": "20 consecutive negative normal-Z outputs is a sign-persistence diagnostic,not a force floor or acceptance Gate. First2mm slip uses existing functional limit;actual saved clock,not continuous event time.",
+  "scope": "Direct response force split and actual object/solver traces. If normal reversal follows slip,it cannot alone explain initial loss of support;iteration limits remain confounding. No force/friction/stiffness change adopted.",
+  "physical_validation": "NOT QUALIFIED",
+  "input_hashes": {
+    "results/b3_alarm_window485/object.csv": "4ba9eb279f4d9ee6e53b4c8bf7468e4ed65951e894f5efbdf317782c49809a2c",
+    "results/b3_mass50_wrench1099/wrenches.csv": "5085d03d75e97869ed989e5c5ec347e658d47867df5f3cc243390b4111792854",
+    "results/b3_mass100_explore1059/object.csv": "ae437f9b05281a333a16235ad2def0f6a269d69e6d42631c2050292bc6af90af",
+    "results/b3_mass100_wrench1067/wrenches.csv": "db7689d4d5a8b20e329d05e24cde90c7ee22bcf73d135088289214f330793a1c"
+  },
+  "producer_sha256": "de5fdcc7335d7b2d769b0f64116695763de825cb93cd249f76e584d8cf167328"
+}

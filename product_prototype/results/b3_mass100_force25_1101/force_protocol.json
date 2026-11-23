@@ -1,0 +1,22 @@
+{
+  "classification": "EXPLORATORY FUNCTIONAL FORCE SENSITIVITY;NOT structural fix or motor specification",
+  "mass_kg": 0.1,
+  "force_N_per_cable": 2.5,
+  "hold_window_s": [
+    1.6,
+    2.0
+  ],
+  "minimum_skin_vertical_weight_fraction": 0.8,
+  "maximum_hardware_resultant_N": 1e-05,
+  "holding_thresholds": "unchanged holding_protocol.json",
+  "physical_validation": "NOT QUALIFIED",
+  "hypothesis": "1100 shows2mm slip before later solver saturation/normal reversal;early100gSkin support~.706N<.981N. A single research input increase tests available actuation sensitivity,not reliable capacity or a linear scaling law.",
+  "basis_sha256": "a3d2d58e2174b51eaff180617fc3631c16201abe7c6613515d914624dcdb3156",
+  "changes": [
+    "NativeCableSequence.maximumForceN1.5->2.5 on each of3controllers;each drives2cables"
+  ],
+  "unchanged": "geometry,mass,material,friction,dt,solver,contact,Root and support motion",
+  "expected_runtime_s": 140.446,
+  "limit_s": 480,
+  "memory_GiB": 4
+}

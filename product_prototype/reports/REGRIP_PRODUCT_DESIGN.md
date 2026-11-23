@@ -1,3 +1,11 @@
+## Actual Native Lift/Release continuation1075–1100 — 2026-11-23
+
+Read B3_CABLE_ORIGIN_AND_LIFT_20261123.md. Actual50g Root/origin-driven5mm Lift1077 and3sLift→Release1081 completed. Corrected1085/1091:minimum object rise4.98046mm,relative slip0.110716mm,end speed4.00943mm/s,Support/Guide/Rail load0. Exploratory functional Lift ONLY;Native time/mesh/energy and actual hardware qualification still NOT PASS. Read-only PullPoint observer1075 preserves q/v within1e-12;driven origins1076 match Root clock. 1081 first800object/Film/guide states equal1077 exactly. Last Skin impulse2.385s;late object contacts0 and gravity fall observed. Guide sphere saved-state gap stays positive,not solid/swept assembly approval.
+
+Recovery vs independent1s zero-input gravity reference1095 agrees within1.44e-8 relative displacement (no floor);not material/fatigue/full physical recovery certification. Earlier.25s stabilityFAIL1093 preserved. Analysis defects1079 support-radius assumption and1088 window-over-Release are preserved with append-only corrections and new corrected outputs.100g1.5N Holding remains FAIL. Variable stiffness NOT IMPLEMENTED.
+
+NEXT performance candidate1101 is an independent100g2.5N/cable sensitivity,preregistered from actual early support deficit;only input force changed. See its directory for running/completed state;do not claim capacity or structure improvement before actual analysis. Current300-partCAD remains separate. No newCAD detail,SDK edit,push,history rewrite or acceptance tolerance change.
+
 ## Grasp-first continuation1059–1072 — 2026-11-23
 
 Read B3_MASS_EXPLORATION_AND_ROOT_LIFT_20261123.md. NEW actual Native mass-only100g exploration1059 completed800steps/2s in140.446s. Functional Holding FAIL:40.021865mm slip,object caught by withdrawn support,mean SkinZ−0.073929N vs weight0.981N;Guide/Rail0N. All161hold outputs hit solver iteration limit;do not infer a unique mechanical cause or physical capacity. Existing50g functional result and all time/meshFAILs preserved;300-partCAD remains a DIFFERENT model.

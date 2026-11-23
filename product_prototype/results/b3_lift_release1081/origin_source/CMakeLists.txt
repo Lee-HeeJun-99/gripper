@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripCableOrigin LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+add_library(ReGripCableOrigin SHARED CableOrigin.cpp)
+target_compile_features(ReGripCableOrigin PRIVATE cxx_std_17)
+target_link_libraries(ReGripCableOrigin PRIVATE Sofa.Core Sofa.Simulation.Core)

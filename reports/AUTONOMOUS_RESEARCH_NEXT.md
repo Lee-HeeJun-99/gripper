@@ -1,3 +1,19 @@
+## Latest force-branch rejection1101–1106 — 2026-11-23
+
+50g Native5mm Lift and subsequent Release remain EXPLORATORY FUNCTIONAL results (1085/1091/1089);gravity-reference return1095 is a bounded numerical comparison,not full physical Recovery.100g1.5N Holding FAIL persists.100g2.5N candidate1101 was cost-cancelled at246outputs/.615s:forecast~572s exceeded480s;child exit/runtime NULL because final child report absent. Partial journals stable and preserved.1103/1104 independently find Skin tetra inversion from.4325s (materialX~69–71mm),so later object motion is NOT valid performance evidence. QUALITY_REJECTION annotation preserves original cancellation status.
+
+Actual single-finger no-object/no-support/no-other-finger isolation1105 also inverts at.520s despite only2cable constraint rows,residual0. External contacts are not necessary;do NOT attribute everything to contact solver or raise force again. Next separate thin-Skin FEM bending from Rigid Guide/force-cable coupling with Native components in a bounded no-contact contrast. No custom solver,stiffness/friction/tolerance sweep or repeated unchanged full grasp. Current300-partCAD is NOT this Native model. Time/mesh/energy/material/joint/variable-stiffness/100g/Lift-product Gates remain open.
+
+Resume read-only: `/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_force_inversion_local1104/summary.json` and inspect1105/preflight.json+scene.scn. New experiment tags1107 or later after checking paths. All Native executions completed or interrupted;no promised background continuation. Source observer featureccd6cc7;latest performance commit is recorded in Git history.
+
+## Actual Native Lift/Release continuation1075–1100 — 2026-11-23
+
+Read B3_CABLE_ORIGIN_AND_LIFT_20261123.md. Actual50g Root/origin-driven5mm Lift1077 and3sLift→Release1081 completed. Corrected1085/1091:minimum object rise4.98046mm,relative slip0.110716mm,end speed4.00943mm/s,Support/Guide/Rail load0. Exploratory functional Lift ONLY;Native time/mesh/energy and actual hardware qualification still NOT PASS. Read-only PullPoint observer1075 preserves q/v within1e-12;driven origins1076 match Root clock. 1081 first800object/Film/guide states equal1077 exactly. Last Skin impulse2.385s;late object contacts0 and gravity fall observed. Guide sphere saved-state gap stays positive,not solid/swept assembly approval.
+
+Recovery vs independent1s zero-input gravity reference1095 agrees within1.44e-8 relative displacement (no floor);not material/fatigue/full physical recovery certification. Earlier.25s stabilityFAIL1093 preserved. Analysis defects1079 support-radius assumption and1088 window-over-Release are preserved with append-only corrections and new corrected outputs.100g1.5N Holding remains FAIL. Variable stiffness NOT IMPLEMENTED.
+
+NEXT performance candidate1101 is an independent100g2.5N/cable sensitivity,preregistered from actual early support deficit;only input force changed. See its directory for running/completed state;do not claim capacity or structure improvement before actual analysis. Current300-partCAD remains separate. No newCAD detail,SDK edit,push,history rewrite or acceptance tolerance change.
+
 ## Grasp-first continuation1059–1072 — 2026-11-23
 
 UPDATE1073/1074,feature26ec283:Root position and velocity narrowly verified

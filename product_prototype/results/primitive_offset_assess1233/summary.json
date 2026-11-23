@@ -1,0 +1,125 @@
+{
+  "status": "PASS_SCOPED_COMPONENT_EXPECTATIONS",
+  "records": {
+    "primitive_offset_slip1230": {
+      "status": "PASS_PRIMITIVE_COMPONENT_SCOPE_ONLY",
+      "scope": "Finite-radius laboratory contact component ONLY;not time/mesh convergence,energy,thin-layer jamming,grasp or hardware qualification",
+      "criteria": {
+        "finite": true,
+        "no_penetration": true,
+        "impulse_identity": true,
+        "no_iteration_saturation": true,
+        "frictionless_x_reference": true,
+        "frictionless_v_reference": true,
+        "zero_lateral_contact": true,
+        "sphere_projection_within_support_face": true
+      },
+      "maximum_impulse_residual_Ns": 1.753019387637472e-20,
+      "minimum_bottom_gap_m": 0.0,
+      "final": {
+        "time_s": 0.01999999999999999,
+        "x_m": 0.00861904183342383,
+        "vx_m_s": 0.7910238153094286,
+        "contact_force_N": [
+          0.0,
+          0.0,
+          0.4000000000000009
+        ]
+      },
+      "mu": 0.0,
+      "tangential_force_N": 0.01,
+      "normal_force_mean_N": 0.4,
+      "friction_ratio_range": [
+        0.0,
+        1.0408340855860843e-15
+      ],
+      "maximum_frictionless_reference_x_error_m": 3.2959746043559335e-17,
+      "maximum_frictionless_reference_v_error_m_s": 5.995204332975845e-15,
+      "input_hashes": {
+        "results/primitive_offset_slip1230/rigid.csv": "6f3876e5a0d96aaab741db9e58e7e5e3a754fb0071d98f843f260710844ba724",
+        "results/primitive_offset_slip1230/preflight.json": "29cd7055b5b5a7a89fc86ad567dbe0fd109cc57a931f77fa3e9d9d5a434bbd3b",
+        "results/primitive_offset_slip1230/scene.scn": "fbc1afc03702f43f84555a6cdacfb82145f339d3e3cad939826fa2ccd52761b2"
+      }
+    },
+    "primitive_offset_stick1231": {
+      "status": "PASS_PRIMITIVE_COMPONENT_SCOPE_ONLY",
+      "scope": "Finite-radius laboratory contact component ONLY;not time/mesh convergence,energy,thin-layer jamming,grasp or hardware qualification",
+      "criteria": {
+        "finite": true,
+        "no_penetration": true,
+        "impulse_identity": true,
+        "no_iteration_saturation": true,
+        "stick_displacement": true,
+        "force_balance": true,
+        "sphere_projection_within_support_face": true
+      },
+      "maximum_impulse_residual_Ns": 1.3552527156068805e-20,
+      "minimum_bottom_gap_m": 0.0,
+      "final": {
+        "time_s": 0.01999999999999999,
+        "x_m": 0.005,
+        "vx_m_s": 1.124100812432971e-15,
+        "contact_force_N": [
+          -0.009999999999999964,
+          0.0,
+          0.4000000000000009
+        ]
+      },
+      "mu": 0.3,
+      "tangential_force_N": 0.01,
+      "normal_force_mean_N": 0.39999999999999997,
+      "friction_ratio_range": [
+        0.024999999999999852,
+        0.025000000000000005
+      ],
+      "maximum_frictionless_reference_x_error_m": null,
+      "maximum_frictionless_reference_v_error_m_s": null,
+      "input_hashes": {
+        "results/primitive_offset_stick1231/rigid.csv": "e510d4903cee153460bd30a48479fe4754a684b1fde40a3d732fbe7fb5f75c57",
+        "results/primitive_offset_stick1231/preflight.json": "b449173d849315e3bdcc7abfcc56979c80784331071f5d550e831e2649ccf271",
+        "results/primitive_offset_stick1231/scene.scn": "2f8ccbbbf8d487709fe86f0a644a4d9173d6a9ce87bec837d5633858eae48e8b"
+      }
+    },
+    "primitive_offset_sliding1232": {
+      "status": "PASS_PRIMITIVE_COMPONENT_SCOPE_ONLY",
+      "scope": "Finite-radius laboratory contact component ONLY;not time/mesh convergence,energy,thin-layer jamming,grasp or hardware qualification",
+      "criteria": {
+        "finite": true,
+        "no_penetration": true,
+        "impulse_identity": true,
+        "no_iteration_saturation": true,
+        "positive_slip": true,
+        "coulomb_saturation": true,
+        "sphere_projection_within_support_face": true
+      },
+      "maximum_impulse_residual_Ns": 4.933194348681964e-20,
+      "minimum_bottom_gap_m": 0.0,
+      "final": {
+        "time_s": 0.01999999999999999,
+        "x_m": 0.013979890078602737,
+        "vx_m_s": 2.1606629670642485,
+        "contact_force_N": [
+          -0.12000000000000054,
+          2.256949153578792e-32,
+          0.4000000000000013
+        ]
+      },
+      "mu": 0.3,
+      "tangential_force_N": 0.15,
+      "normal_force_mean_N": 0.4000000000000001,
+      "friction_ratio_range": [
+        0.29999999999999927,
+        0.30000000000000115
+      ],
+      "maximum_frictionless_reference_x_error_m": null,
+      "maximum_frictionless_reference_v_error_m_s": null,
+      "input_hashes": {
+        "results/primitive_offset_sliding1232/rigid.csv": "5011b218de18b2d1e4842bfd018c294f0a114875d66f1fe8bde859ab6495571d",
+        "results/primitive_offset_sliding1232/preflight.json": "7d5d0c28719f3fc9cfb6f1a2e19f0080ec99c36bd0e2033490aa3a81815f8df1",
+        "results/primitive_offset_sliding1232/scene.scn": "4c0c56974f8fc0bf746e46d11f95e4a8a951edf45f48cd90917f6a8f8c06ccc4"
+      }
+    }
+  },
+  "physical_product_validation": "NOT QUALIFIED",
+  "source_sha256": "68fb8b15d9a1bd4a22f4d93ecb07c680dcc1b2609b56e49bb7ef43173005dfef"
+}

@@ -30,7 +30,7 @@ def join(features,children,tol=1e-12):
    records.append(r)
  return records
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/contact_provenance_run1222';files=[src/'provenance.features.csv',src/'provenance.children.csv'];f,c=[list(csv.DictReader(x.open())) for x in files];records=join(f,c);all_unique=bool(records) and all(r['match_count']==1 for r in records)
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--source',default='contact_provenance_run1222');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.source;files=[src/'provenance.features.csv',src/'provenance.children.csv'];f,c=[list(csv.DictReader(x.open())) for x in files];records=join(f,c);all_unique=bool(records) and all(r['match_count']==1 for r in records)
  times=[]
  for t in sorted({r['previous_time_s'] for r in records}):
   rr=[r for r in records if r['previous_time_s']==t];times.append(dict(previous_time_s=t,normal_rows=len(rr),horizontal_normals=sum(abs(r.get('normal',[0,0,9])[2])<1e-10 for r in rr),unique=sum(r['match_count']==1 for r in rr),model_pairs=sorted({r['detector']['model0']+' | '+r['detector']['model1'] for r in rr if 'detector'in r})))

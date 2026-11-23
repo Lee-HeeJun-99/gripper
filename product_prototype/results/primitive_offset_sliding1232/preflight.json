@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "100",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/primitive_offset_sliding1232/scene.scn"
+  ],
+  "source_commit": "a7639d6678c88dc319b43c941322705453cc7215",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "source_scene_sha256": "42c7dcacc8cc27ef4c72e451cd464edbb8651e69794b49b95a701a07406d0cec",
+  "scene_sha256": "4c0c56974f8fc0bf746e46d11f95e4a8a951edf45f48cd90917f6a8f8c06ccc4",
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "mass_kg": 0.000112,
+  "radius_m": 0.005,
+  "normalized_inertia_m2": 1e-05,
+  "mu": 0.3,
+  "dt_s": 0.0002,
+  "initial_gap_m": 2e-06,
+  "estimated_runtime_s": 1,
+  "child_limit_s": 60,
+  "memory_GiB": 4,
+  "scope": "NEW analytical sphere vs mesh support;proper sphere inertia,orientation fixture unchanged;not original thin-layer physics or jamming or grasp",
+  "tangential_force_N": 0.15,
+  "hypothesis": "Flat interior contact is translation-invariant physically;initial center shifted away from internal triangulation diagonal. ALL collision models retained. Diagnostic only,not moving held object or repairing grasp. Boundary clearance assessed from actual trajectory.",
+  "initial_x_m": 0.005
+}

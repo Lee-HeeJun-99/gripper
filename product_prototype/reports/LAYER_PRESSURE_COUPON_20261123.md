@@ -39,3 +39,20 @@ Native LinearForceField ramp0→1000Pa over10ms with SAME E/mass/mesh/dt/mu and
 tip load. No state corrections,dt reduction,tolerance/alarm changes. Ramp is
 not a retroactive cure of step-input failure or a calibrated vacuum model.
 First50-step pilot1193,then independent accepted-state overlap assessment.
+
+## Ramp and rigid controls1193–1197 — still FAIL
+
+1193 actual50steps3.820s,1194 independent overlap from6ms despite pressure
+ramp. Delay is not a cure. No500step ramp trial launched after this failure.
+1195/1196 independent rigid thin-layer on thick fixed support controls,
+normal preload ramp then lateral force,mu0/.3,100steps20ms,0.168/0.167s.
+Actual rigid corner audit1197 proves both bodies entirely below support bottom;
+FAIL_CONTACT_GEOMETRY. Thus even this component control is not friction-law
+validation. It is not evidence that SOFA never supports friction;this specific
+thin-geometry/pressure/input/scene path is unqualified. No coefficient tuning,
+dt/alarm reduction,custom contact or artificial fixing used. Stop this direction
+until a separately validated contact fixture/contract is available.
+
+P2 pressure/friction simulation BLOCKED,actual PET/vacuum/friction NOT MEASURED.
+Independent next task:conditional laminated cartridge/pouch CAD and theoretical
+free/slip vs bonded stiffness bounds,not a jamming performance claim.

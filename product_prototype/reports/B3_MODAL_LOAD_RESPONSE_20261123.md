@@ -32,3 +32,12 @@ Then proceed to one-variable grasp geometry and layer-friction coupon tracks.
 Reproduce fresh tag:
 `OPENBLAS_NUM_THREADS=1 python product_prototype/sofa/b3_modal_load_response.py --tag NEW_MODAL_LOAD`.
 Actual inputs/source hashes and guarded process saved in results/b3_modal_load_response1181.
+
+1199 follow-on actually projects accepted velocity/displacement at50/300ms and
+actual deformed parent CableJ-transpose lambda/dt at297.5→300ms onto the same
+rest basis. Mode0 contributes97.08% of base squared modal velocity at50ms,
+79.17% at300ms;deformed Cable compliance weight88.33% (vs initial27.14%).
+This change demonstrates why frozen rest load alone is not a complete late
+reference. Initial scene q/v are truly rest/zero;first saved output is NOT t0.
+Spatial angular velocity is not exact finite SO3-log derivative;reference
+chart body error≈0.05µm at50ms and≈1.97mm at300ms. No energy/work certification.

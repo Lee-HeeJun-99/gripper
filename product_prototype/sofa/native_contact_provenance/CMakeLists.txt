@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripContactProvenance LANGUAGES CXX)
+find_package(Sofa.Core REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+find_package(Sofa.Component.Constraint.Lagrangian.Model REQUIRED)
+add_library(ReGripContactProvenance SHARED Observer.cpp)
+target_compile_features(ReGripContactProvenance PRIVATE cxx_std_17)
+target_link_libraries(ReGripContactProvenance PRIVATE Sofa.Core Sofa.Simulation.Core Sofa.Component.Constraint.Lagrangian.Model)

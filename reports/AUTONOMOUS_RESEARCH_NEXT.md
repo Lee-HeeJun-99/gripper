@@ -1,3 +1,14 @@
+## Next after guide transfer1113–1118
+
+Read product_prototype/reports/B3_GUIDE_LOAD_TRANSFER_20261123.md.
+SmallNative mapping/masscouponPASS ONLY;reference3pointrank6,2point5.
+Cablefree recordedforcehistory1117 stillinverts.2425s;differenttrajectory,
+NOT uniqueoriginalcause. Deadload1116noinversion isNOTactuationrepair.
+NEXT read-onlytangent/loadtransfer atvalid1105state100ms withcompatibleAPI;
+otherwise independentlowloadSkin-only/bonded-Railcoupon. No invalidstatefeed,
+newfullgrasp/force/friction/dtsweep. Newtags1119+. SixnewscopechecksPASS.
+Inspect1118summary;wholephysical/time/mesh/100g/stiffnessGatesremainopen.
+
 ## Next after inversion contrasts1107–1111
 
 Follow-on1112zero-input/zero-gravity reducedjoint stays exactlyatrest;gravity

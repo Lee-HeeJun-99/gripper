@@ -1,0 +1,89 @@
+{
+  "status": "PASS_MAPPING_COUPON_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.12029688700567931,
+    "pid": 43,
+    "artifacts": {
+      "stdout.log": "2b38e252b167253c1370ac1f358fe19d9949ac1e77f9bc67f907cb94b2a09e61",
+      "command.json": "6c041562860c8840e2b4b5816d53fb37b497888e5b34ebaac0b34eb1b0b5a221",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "e1ea366a9ce94ed51a163794dd1ecbdaec96bfc114b243b96480bd54eef396ab"
+    }
+  },
+  "physical_validation": "NOT QUALIFIED",
+  "scope": "Native mapping/mass coupon only;not FEM joint or grasp qualification",
+  "outputs": 4,
+  "public_mass_matrix": [
+    [
+      1e-05,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1e-05,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1e-05,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0000000000000001e-11,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0000000000000001e-11,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0000000000000001e-11
+    ]
+  ],
+  "first_velocity_expected": [
+    0.0,
+    0.0,
+    1e-06,
+    -5.686866711302065e-19,
+    6.927637630131606e-18,
+    0.0
+  ],
+  "first_velocity_actual": [
+    0.0,
+    0.0,
+    1e-06,
+    -5.686866711302064e-19,
+    6.927637630131606e-18,
+    0.0
+  ],
+  "first_step_velocity_relative_error": 9.629649721936179e-29,
+  "mapped_position_max_error_m": 0,
+  "three_point_rank": 6,
+  "two_point_rank": 5,
+  "physical_work_energy": null
+}

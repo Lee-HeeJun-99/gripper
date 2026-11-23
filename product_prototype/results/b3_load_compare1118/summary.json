@@ -1,0 +1,100 @@
+{
+  "status": "DIAGNOSTIC_DIFFERENT_LOAD_LAWS_NOT_EQUIVALENCE",
+  "records": [
+    {
+      "case": "b3_reference_deadload1116",
+      "first_step_max_position_error_m": 1.2399022780718028e-13,
+      "valid_shared_outputs": 207,
+      "samples": [
+        {
+          "time_s": 0.0025,
+          "state_difference_L2_m": 2.7593745551554867e-13,
+          "relative_to_reference_displacement": 1.5596012363120543e-09
+        },
+        {
+          "time_s": 0.05000000000000001,
+          "state_difference_L2_m": 2.4102499472251533e-05,
+          "relative_to_reference_displacement": 0.037507527722584914
+        },
+        {
+          "time_s": 0.10000000000000005,
+          "state_difference_L2_m": 0.006284684968926469,
+          "relative_to_reference_displacement": 0.528946008458932
+        },
+        {
+          "time_s": 0.20000000000000012,
+          "state_difference_L2_m": 0.8779202101660866,
+          "relative_to_reference_displacement": 11.653758983968485
+        },
+        {
+          "time_s": 0.24000000000000016,
+          "state_difference_L2_m": 0.9794272940217696,
+          "relative_to_reference_displacement": 8.462312121828065
+        },
+        {
+          "time_s": 0.4000000000000003,
+          "state_difference_L2_m": 1.035024981887243,
+          "relative_to_reference_displacement": 3.4604311365242624
+        },
+        {
+          "time_s": 0.5000000000000003,
+          "state_difference_L2_m": 1.0239206178749245,
+          "relative_to_reference_displacement": 3.0842813795983397
+        }
+      ],
+      "source_hashes": {
+        "states.csv": "288b2e7bc5e40373d5f7234fe5cb1b99cb69df2e17b765f12bd52ceed3ad2c16",
+        "scene.scn": "0a4b84f4773e81706eb4c4ac74fe9605961bc4fe288b4772dffb76c67425852c",
+        "summary.json": "a1b3504d21ed2aa0805ba0b74f6a2c871ad91568ce9b6809922c224671060a23"
+      }
+    },
+    {
+      "case": "b3_recorded_load1117",
+      "first_step_max_position_error_m": 1.2399022780718028e-13,
+      "valid_shared_outputs": 96,
+      "samples": [
+        {
+          "time_s": 0.0025,
+          "state_difference_L2_m": 2.7593745551554867e-13,
+          "relative_to_reference_displacement": 1.5596012363120543e-09
+        },
+        {
+          "time_s": 0.05000000000000001,
+          "state_difference_L2_m": 1.5886153228210938e-09,
+          "relative_to_reference_displacement": 2.472151626010148e-06
+        },
+        {
+          "time_s": 0.10000000000000005,
+          "state_difference_L2_m": 3.8502680641773e-07,
+          "relative_to_reference_displacement": 3.24055053532996e-05
+        },
+        {
+          "time_s": 0.20000000000000012,
+          "state_difference_L2_m": 0.005429819412298559,
+          "relative_to_reference_displacement": 0.07207694506250152
+        },
+        {
+          "time_s": 0.24000000000000016,
+          "state_difference_L2_m": 0.7216460700481762,
+          "relative_to_reference_displacement": 6.235066475595411
+        }
+      ],
+      "source_hashes": {
+        "states.csv": "c722111060465ddc581c0d449fe0cefc0c105d3496699f14bf7ef12237fb9992",
+        "scene.scn": "a056dc61f00b17fe84d90a1f3724ea7486e1bcef87fba31df975a426a9f8dfab",
+        "summary.json": "d96cb78753faa9c8e2f88fc8f95fc8ac4592b3bb3a489ecc35e9aca78c0d69c2"
+      }
+    }
+  ],
+  "baseline_hashes": {
+    "finger0.csv": "e665d171b5dc63d58822aab33a598b757d94efce4687dce33612f20fe877e74d",
+    "scene.scn": "a2582a086b4f57492d8b1bfb574b443321c09e5e15b3b5ec1632583d5e213c55"
+  },
+  "physical_validation": "NOT QUALIFIED",
+  "conclusions": [
+    "First-step mapped impulse/external load responses agree within1e-12 position;this is not subsequent trajectory equivalence.",
+    "Reference-direction dead load remains noninverted but is not the same control law.",
+    "Recorded force history inverts without CableConstraint;does not identify the original unique cause because load application and integration differ.",
+    "No new100g Holding or stiffness sensitivity is justified as a stability repair."
+  ]
+}

@@ -1081,3 +1081,10 @@ withoutCable inverts.0375s. Reject newjoint;do not usepostinversion trajectories
 No unique Skin/Rail/Guide causalassignment,no time/mesh/energyPASS.
 Actualsource/binary/sceneidentities and logs retained percase;five scope testsPASS.
 Read B3_INVERSION_CONTRASTS_20261123.md. Oldfunctionalresults unchanged.
+## Guide mapping/load1113–1118 — COMPONENT SCOPE ONLY
+
+ActualNative translation/couple coupons matchpublicmassreference;mappingerror
+≤1.735e-18m. AssembledFEM remainsunqualified. Cablefree reference-load1116
+changesloadlaw;recorded-load1117inverts.2425s.1115initializationFAILpreserved.
+No change tooldtime/meshFAILs or100gHoldingFAIL. Sixscope regressionsPASS.
+See B3_GUIDE_LOAD_TRANSFER_20261123.md foractualcommands,identitiesandlimits.

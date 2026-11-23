@@ -1,3 +1,18 @@
+## Native guide transfer1113–1118 — 2026-11-23
+
+Starting5a32ce1;new componentcoupon1113/1114 confirms actualguide mass/mapping
+translation/couple response,positionerror≤1.735e-18m,3pointJacobianrank6vs2point5.
+NOT assembledFEM qualification.1115plugin-orderFAILpreserved;corrected1116
+reference-direction deadload hasno savedinversion0.6s but DIFFERENT loadlaw.
+1117recordedforcehistory inverts0.2425s WITHOUTCableConstraint,not original
+uniquecauseproof.1118firststep agrees1.240e-13m,butlaterpathdiverges;notreplay/
+timePASS. SixnewscopechecksPASS. Read B3_GUIDE_LOAD_TRANSFER_20261123.md.
+NEXT valid100ms deformedstate read-only tangent/load-transfer diagnostic using
+existingcompatibleNativeAPI;do notloadinvalidcheckpoint orrerunfullhighforce.
+If unavailable,independentlowloadSkin-only/bonded-Railcoupon. Newtags1119+.
+Read-onlyresume:`python -m json.tool product_prototype/results/b3_load_compare1118/summary.json`.
+No100gimprovement/physicalGatePASS;oldRaw/CAD/resultsunchanged.
+
 ## Native inversion contrasts1107–1111 — 2026-11-23
 
 FOLLOW-ON1112:rejectedtwo-pointjoint withCable0 AND gravity0 remains exactly

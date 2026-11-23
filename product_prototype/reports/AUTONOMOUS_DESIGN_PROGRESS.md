@@ -1090,3 +1090,10 @@ Two-point attachment candidate fails bothloaded/unloaded,REJECTED.
 1110 localizes first referenceSkinfailure to joint-owned nodes;cause notunique.
 Five scope testsPASS. Nextjointload-transfercoupon;no100g/Lift/productapproval.
 See B3_INVERSION_CONTRASTS_20261123.md for measurements andcommands.
+## Guide load transfer1113–1118 — 2026-11-23
+
+TwoactualNative mapping/masscouponsPASSboundedonly. Plugindeclarationfailure
+1115preserved,correcteddeadload1116andrecordedload1117executed. Recordedload
+invertswithoutCableConstraint;deadloadchangestrajectory,notrepair. Sixscope
+testsPASS. Read B3_GUIDE_LOAD_TRANSFER_20261123.md. Nextvalidstate tangent
+diagnostic orindependentlowloadSkin/Railcoupon;no100g/productqualification.

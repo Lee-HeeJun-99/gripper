@@ -1,0 +1,55 @@
+{
+  "status": "PASS_MASS_ONLY_SCENE_CONTRACT_NOT_PHYSICS",
+  "scene_equivalent_except_mass": true,
+  "old_vertexMass": "0.05 0.00011309733552923254 0.00035999999999999997 0 0 0 0.00035999999999999997 0 0 0 0.00035999999999999997",
+  "new_vertexMass": "0.1 0.00011309733552923254 0.00035999999999999997 0 0 0 0.00035999999999999997 0 0 0 0.00035999999999999997",
+  "initial_geometry_status": "INITIAL_GEOMETRY_PASS",
+  "initial_geometry_scope": "initial closest triangle/finite wire/conservative guide spheres/interfinger guide sphere/signed tetra quality only;NOT swept clearance,self-collision,assembly or bending validation",
+  "fixed_root_subsets": [
+    {
+      "name": "free0",
+      "fixed_root": true,
+      "movement_constraint": false
+    },
+    {
+      "name": "free1",
+      "fixed_root": true,
+      "movement_constraint": false
+    },
+    {
+      "name": "free2",
+      "fixed_root": true,
+      "movement_constraint": false
+    }
+  ],
+  "controllers": [
+    {
+      "node": "finger0",
+      "body": "@dofs",
+      "liftHeight": "0"
+    },
+    {
+      "node": "finger1",
+      "body": "@dofs",
+      "liftHeight": "0"
+    },
+    {
+      "node": "finger2",
+      "body": "@dofs",
+      "liftHeight": "0"
+    }
+  ],
+  "lift": "BLOCKED_UNQUALIFIED_ROOT_PULLPOINT_COUPLING",
+  "lift_next_test": "Separate no-object fixture coupon: drive only original free-subset Root indices with Native movement constraint; journal mapped Root and all PullPoints at every accepted time. Verify no unexpected direct full-film/object state write, then loaded exploratory lift with predeclared relative-slip criteria.",
+  "variable_stiffness": "NOT IMPLEMENTED_IN_THIS_SCENE",
+  "variable_stiffness_basis": "Single bonded Skin/Rail FEM; no vacuum/pressure/layer sliding or layer-friction state. Young modulus sensitivity would not validate jamming.",
+  "physical_validation": "NOT QUALIFIED",
+  "input_hashes": {
+    "results/b3_alarm_window485/scene.scn": "d55f8b0c7df440b8244ca3fdb061665eacf8a145eb48c42f88833117dfcb6007",
+    "results/b3_mass100_explore1059/scene.scn": "47c110f8945b7719d859a1e8737c17737c50d7148f428d741117144e72c3efb6",
+    "results/b3_alarm_window485/initial_geometry.json": "9bca895d133bc18856acc034d4743603c61ae81aee8f9d3134f5c8514fcedd79",
+    "sofa/Controller.cpp": "292e59d8a368b0e8d96ac6d74c8f871025b8aad5b29a796ad3dcc1b69016245e",
+    "sofa/b3_exploration_contract.py": "3b8cc35fa1e91ebcaa59940b00b9e0d798777a13c7617c11b831f6f12705ed8a"
+  },
+  "source_commit": "4a9c65d6789edba7d3bfa9a1c6c79d4a0b46dfbb"
+}

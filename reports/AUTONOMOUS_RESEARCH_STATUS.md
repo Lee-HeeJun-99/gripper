@@ -1,3 +1,11 @@
+## Grasp-first continuation1059–1072 — 2026-11-23
+
+Read B3_MASS_EXPLORATION_AND_ROOT_LIFT_20261123.md. NEW actual Native mass-only100g exploration1059 completed800steps/2s in140.446s. Functional Holding FAIL:40.021865mm slip,object caught by withdrawn support,mean SkinZ−0.073929N vs weight0.981N;Guide/Rail0N. All161hold outputs hit solver iteration limit;do not infer a unique mechanical cause or physical capacity. Existing50g functional result and all time/meshFAILs preserved;300-partCAD remains a DIFFERENT model.
+
+Native no-object free-subset Root probes1061/1066 expose clock/terminal-key failures. Explicit end-clock+terminal-hold1068 gives Root position error4.07e-19m,NOT complete Lift. Next qualify actual PullPoint/Root velocity/force/work timing,then loaded exploratory Lift. First contact/cable solver-limit onset0.280s needs bounded diagnosis before full grasp force/friction sweeps. Variable stiffness NOT IMPLEMENTED;100g/Lift/Recovery/product approval still absent. Six new evidence-regression checks pass;not new physical gates.
+
+Reproduce Root probe only with a new tag: `/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/b3_root_fixture_probe.py --tag UNIQUE --end-clock --terminal-hold`. Do not rerun the unchanged100g failure without a new hypothesis. Raw1059–1072 preserved;no SDK edit/push/history rewrite.
+
 ## Latest 2026-11-23 — bottom nut/cartridge service1018–1029
 
 Authorityproduct_prototype/reports/BOTTOM_NUT_AND_CARTRIDGE_SERVICE_20261123.md.
@@ -3092,4 +3100,3 @@ Actual CAD checks: seven-part nominal full-turn drum bound1043 clear against293 
 No new SOFA physics run or physical hardware test. Existing Native time/mesh FAIL, old185 unresolved continuous-service prisms, full cartridge continuous path, actual nut retention/thread/clamping/pullout, remaining five distal keepers, other two drum modules, motor interface, materials,100g/Lift/Recovery and STEP remain unqualified. Old B3 functional50g result is NOT validation of this hardware. Eight physical service steps and eight drum tests remain NOT EXECUTED/NOT MEASURED.
 
 Next: use frozen300-part assembly to define positive pad/nut retention and reversible unloaded service with finite tool geometry; validate each remaining distal terminal independently. Do not propagate f0 drum geometry without placement/wire checks. Actual pullout/preload requires specimens and instrumentation. Reproduction: Python cad/incremental_wire_audit.py --tag UNIQUE --case product_all_hood_drive1055 --baseline-assembly product_root_catalog_drive1045 --baseline-audit product_current_wire1050 (only for a justified changed candidate; do not repeat unchanged results). Python cad/manufacturing_test_run.py --tag UNIQUE runs software regressions, not physical gates.
-

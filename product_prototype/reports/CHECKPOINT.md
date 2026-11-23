@@ -1,3 +1,36 @@
+## Deformed tangent / Rail-back joint1120–1135 — 2026-11-23
+
+Starting63711a7,clean. Featurea3dd268 preservesnewobserver+NativeNeo controls.
+Evidencev70verifies17990priorimmutablefiles,0mismatch,total18425hashes;
+eightnewscopechecksand13priorchecksPASS. No detectorCSVor100MBblobadded.
+Read B3_DEFORMED_TANGENT_20261123.md andB3_RAIL_BACK_ATTACHMENT_20261123.md.
+Observedoriginal100/300/470ms q/v/Guideprefixerrors EXACT0. NativeFEMsingle
+directionFDerror.0259/.4895/.9472%;notfullmappedtangent. NativeNeoHookean
+smallpatchpassesbutfullsinglefingerinverts480msandaborts;notarepair despite
+good300msFD. Alloldphysical/material/mesh/timeFAILsremain.
+
+Newjoint1127–1130 moves36three-pointattachments interface0→Railbottom−.5mm,
+sameFEM/mass/2.5NCable/root/guideframes. No savedinversionthrough1s atbaseand
+halfdt,minvolume.77645/.87523. This isboundedstructuralqualityONLY,newphysical
+SupportconnectionNOTmodeled/CADNOTupdated. SkinmaxGreenstrain.2500/.2245,
+materialallowablesNULL. Full100gHolding/LiftNOTRUN.
+
+1131 all400commonoutputsFAIL.1%timepairgate:Skin140.43%,Rail139.86%,
+velocity173.56%,curvature56.73%. No relativefloors/interpolation.1132actual
+commandNs/dtidentityexact,commonTdiff1.6e-14N,Scenesequalexceptdt/paths.
+NativeMappingNSDgeometricStiffness2 hypothesis1133/1134FAIL,inverts525/512.5ms,
+SparseLDLfactorizationerror,guardstops;DO NOTadoptorrepeatunchanged. Exact
+nonsymmetricmode1wasNOTfedtosymmetricSolver. Eightnewscope regressions1135PASS.
+
+NEXT first0–50ms savedstate modal/impulse-vs-force response diagnosis for
+Railback1129/1130,usingexistingcompatibleNativeassembledmass/tangentAPI.
+Do notrunanotherfull100ggrasp,dt/force/friction/tolerance sweep. IfAPIblocked,
+independentphysicallyspecifiedlow-loadGuide/Railcoupon,notCADdetail. Fresh1136+.
+Read-onlyresume:`python -m json.tool product_prototype/results/b3_rail_back_assess1131/summary.json`.
+Reusablebuild:product_prototype/cad/build_deformed_probe1120/libReGripDeformedProbe.so;
+source/binarySHAinb3_deformed_build1120/summary.json. AllRaw1120–1135preserved,
+noSDKedits/push/historyrewrite. Noongoingphysicschildrenorafter-sessionpromise.
+
 ## Native guide transfer1113–1118 — 2026-11-23
 
 FOLLOW-ON1119afterfeature9fc9a1a:existingelasticobserver supportsinitialtangent

@@ -1,0 +1,19 @@
+[ERROR]   [SparseLDLSolver] Failed to factorize, D(k,k) is zero
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  nonfinite native state
+
+########## SIG 6 - SIGABRT: usually caused by an abort() or assert() ##########
+  sofa::helper::BackTrace::sig(int)
+  pthread_kill
+  raise
+  abort
+  product::NativeCableSequence::handleEvent(sofa::core::objectmodel::Event*)
+  sofa::simulation::PropagateEventVisitor::processNodeTopDown(sofa::simulation::Node*)
+  sofa::simulation::Node::executeVisitorTopDown(sofa::simulation::Visitor*, std::__cxx11::list<sofa::simulation::Node*, std::allocator<sofa::simulation::Node*> >&, std::map<sofa::simulation::Node*, sofa::simulation::Node::StatusStruct, std::less<sofa::simulation::Node*>, std::allocator<std::pair<sofa::simulation::Node* const, sofa::simulation::Node::StatusStruct> > >&, sofa::simulation::Node*)
+  sofa::simulation::Node::executeVisitorTopDown(sofa::simulation::Visitor*, std::__cxx11::list<sofa::simulation::Node*, std::allocator<sofa::simulation::Node*> >&, std::map<sofa::simulation::Node*, sofa::simulation::Node::StatusStruct, std::less<sofa::simulation::Node*>, std::allocator<std::pair<sofa::simulation::Node* const, sofa::simulation::Node::StatusStruct> > >&, sofa::simulation::Node*)
+  sofa::simulation::Node::doExecuteVisitor(sofa::simulation::Visitor*, bool)
+  sofa::component::animationloop::FreeMotionAnimationLoop::step(sofa::core::ExecParams const*, double)
+  sofa::simulation::node::animate(sofa::simulation::Node*, double)
+  sofa::gui::batch::BatchGUI::mainLoop()
+  sofa::gui::common::GUIManager::MainLoop(boost::intrusive_ptr<sofa::simulation::Node>, char const*)
+  __libc_start_main

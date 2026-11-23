@@ -1088,3 +1088,13 @@ ActualNative translation/couple coupons matchpublicmassreference;mappingerror
 changesloadlaw;recorded-load1117inverts.2425s.1115initializationFAILpreserved.
 No change tooldtime/meshFAILs or100gHoldingFAIL. Sixscope regressionsPASS.
 See B3_GUIDE_LOAD_TRANSFER_20261123.md foractualcommands,identitiesandlimits.
+## Native deformed / material / Railback1120–1135
+
+Read B3_DEFORMED_TANGENT_20261123.md andB3_RAIL_BACK_ATTACHMENT_20261123.md.
+Read-onlydeformedprobe:actualq/v/Guideprefixerrors0. Nativecorotationaltangent
+single-direction.1%FAILat300/470ms. NeoHookeanpatchPASSbutloadedinversion480ms;
+finite-strainlawaloneisNOTstabilityrepair. Railbackjointnosavedinversion1s
+base/halfbutallcommonoutputsTIMEPAIRFAIL;notphysicalqualification. NSDmapping
+geometrictangentcandidatealsoinverts/rejected. EightnewscopechecksPASS1135.
+Old50gHolding/Liftfunctionalresults,alltime/meshFAILs preserved. No new100g,
+energy/material/Joint/wrapping/liftproductPASS. SDKunchanged.

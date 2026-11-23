@@ -1,3 +1,15 @@
+## Native deformed tangent / Railback1120–1135 — 2026-11-23
+
+Featurea3dd268:read-onlyaccepted-stateFEMprobe qualifiedagainstoriginalq/v,
+newNativeNeoHookeanpatchPASSbutloadedcandidateinverts480ms. No material-only
+repair. Subsequentrank6Railbottomjointcandidateavoidsinversionthrough1s,
+but400commonoutputsbase/halfFAIL0.1%timegate;largeSkinstrainunqualified.
+Input/SceneidentitychecksPASS ONLY. NativeNSDmappingtangentcandidateinverts
+atbothdtandisrejected. Eightnewscopechecksplus13oldchecksPASS. Evidencev70
+verifies17990priorimmutablefiles,0mismatch,total18425hashes. No100gHolding/
+Lift/productPASS,SDKedit,push,historyrewrite ornewCADadoption. PreciseRaw/build/
+nextfirstintervaldiagnosis inproduct_prototype/reports/CHECKPOINT.md.
+
 ## Latest force-branch rejection1101–1106 — 2026-11-23
 
 50g Native5mm Lift and subsequent Release remain EXPLORATORY FUNCTIONAL results (1085/1091/1089);gravity-reference return1095 is a bounded numerical comparison,not full physical Recovery.100g1.5N Holding FAIL persists.100g2.5N candidate1101 was cost-cancelled at246outputs/.615s:forecast~572s exceeded480s;child exit/runtime NULL because final child report absent. Partial journals stable and preserved.1103/1104 independently find Skin tetra inversion from.4325s (materialX~69–71mm),so later object motion is NOT valid performance evidence. QUALITY_REJECTION annotation preserves original cancellation status.

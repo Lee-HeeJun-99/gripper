@@ -1064,3 +1064,12 @@ Actual CAD checks: seven-part nominal full-turn drum bound1043 clear against293 
 No new SOFA physics run or physical hardware test. Existing Native time/mesh FAIL, old185 unresolved continuous-service prisms, full cartridge continuous path, actual nut retention/thread/clamping/pullout, remaining five distal keepers, other two drum modules, motor interface, materials,100g/Lift/Recovery and STEP remain unqualified. Old B3 functional50g result is NOT validation of this hardware. Eight physical service steps and eight drum tests remain NOT EXECUTED/NOT MEASURED.
 
 Next: use frozen300-part assembly to define positive pad/nut retention and reversible unloaded service with finite tool geometry; validate each remaining distal terminal independently. Do not propagate f0 drum geometry without placement/wire checks. Actual pullout/preload requires specimens and instrumentation. Reproduction: Python cad/incremental_wire_audit.py --tag UNIQUE --case product_all_hood_drive1055 --baseline-assembly product_root_catalog_drive1045 --baseline-audit product_current_wire1050 (only for a justified changed candidate; do not repeat unchanged results). Python cad/manufacturing_test_run.py --tag UNIQUE runs software regressions, not physical gates.
+## Railbackattachmentresearch1127–1135 — NOT CAD ADOPTED
+
+Single-fingerNativecandidate movesguide3pointjointfromSkin/Railinterface
+toRailunderside−.5mm. Frame/guidehardwareandFEMgeometryunchanged;physical
+Supportconnectionanditsmass/strength/interferenceNOTMODELED. This is NOT the
+current300partCAD. No savedinversionthrough1s,buttimepairFAIL andlargeSkin
+strain;do notadoptasproductorclaim100gperformance. NativeNeoHookeanmaterial
+candidatefailedandisnotselected. ReuseoldCADonlyasindependentdesignreference.
+See B3_RAIL_BACK_ATTACHMENT_20261123.md;no motor/materialspecificationchanged.

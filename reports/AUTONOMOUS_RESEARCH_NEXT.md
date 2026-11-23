@@ -1,3 +1,17 @@
+## Next after1120–1135 — Native tangent andRailbackcandidate
+
+Read product_prototype/reports/B3_DEFORMED_TANGENT_20261123.md and
+B3_RAIL_BACK_ATTACHMENT_20261123.md. Featurea3dd268 savedobserver/Neo.
+Deformedobservationspreserveq/vexactly;NativecorotationalFD worsenswithstrain.
+NeoHookeanmatchespatchanddeformedFDbutstillinverts480ms:rejectmaterial-onlyfix.
+Railbottomthree-pointjointnosavedinversionthrough1sbut1131timepairFAIL,
+actualinputidentity1132PASS ONLY. NativeNSDmappingtangent1133/1134inverts:
+reject,notanotherSolverparametersearch. EightnewscopechecksPASS1135.
+NEXT boundedfirst0–50ms1129/1130modal/impulse-vs-force diagnosis usingexisting
+assembledmass/tangentAPI. Ifblocked,physicallyspecifiedlow-loadGuide/Railcoupon.
+No newfull100g/dt/force/frictionsearch,noCADapproval. Fresh1136+tags.
+Inspect1131summaryread-only;reusabledeformedobserverbuild1120 documented.
+
 ## Next after guide transfer1113–1118
 
 1119follow-on:privateprobePositions doesNOTquerydeformedtangent inexisting

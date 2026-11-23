@@ -1097,3 +1097,12 @@ TwoactualNative mapping/masscouponsPASSboundedonly. Plugindeclarationfailure
 invertswithoutCableConstraint;deadloadchangestrajectory,notrepair. Sixscope
 testsPASS. Read B3_GUIDE_LOAD_TRANSFER_20261123.md. Nextvalidstate tangent
 diagnostic orindependentlowloadSkin/Railcoupon;no100g/productqualification.
+## Deformedstate / Railback1120–1135
+
+Nativeobserverbuiltandstate/cachepurityqualifiedon3savedprefixes. Approximate
+corotationaltangentFDFAILat300/470ms;NativeNeoHookeanpassespatch/FDbutinverts
+480ms,rejected. Featurea3dd268. Newrank6Railbottomattachment survives1sbase/
+halfwithoutinversionbuttimepairFAIL;largeSkinstrainandactualJointunqualified.
+ActualCableinputidentityconfirmed. NSDmappingtangentcandidatefailsbothdt,
+rejected. EightnewsoftwarechecksPASS. No100g/product/CADPASS;nextbounded
+firstintervalresponseaudit. SeeB3_DEFORMED_TANGENTandB3_RAIL_BACK_ATTACHMENT.

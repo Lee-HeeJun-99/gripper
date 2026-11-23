@@ -1,0 +1,42 @@
+[INFO]    [runSofa] PluginRepository paths = /home/ubuntu/SOFA/v26.06.00/lib:/home/ubuntu/SOFA/v26.06.00/plugins
+[INFO]    [runSofa] DataRepository paths = /home/ubuntu/SOFA/v26.06.00/share/sofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/examples:/home/ubuntu/SOFA/v26.06.00/share/sofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/examples:/home/ubuntu/SOFA/v26.06.00/share/sofa/icons
+[INFO]    [runSofa] runSofaDataRepository paths = /home/ubuntu/SOFA/v26.06.00/share/sofa/gui/runSofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/gui/runSofa
+[INFO]    [GUIManager] Registered batch as a GUI.
+[INFO]    [runSofa] Automatic plugin loading disabled.
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Lagrangian.Model.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Lagrangian.Correction.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Collision.Detection.Algorithm.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Collision.Detection.Intersection.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Collision.Geometry.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Collision.Response.Contact.so
+[INFO]    [PluginManager] Loaded plugin: /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so
+[WARNING] [RequiredPlugin()] No component has been registered from .
+It could be because: 
+ - the entrypoint registerObjects() has not been implemented;
+ - (deprecated since v24.12) no sofa::core::RegisterObject() has been called;
+ - your plugin does not add any component (i.e BaseObject) into the factory. In that case, RequiredPlugin is not useful for this kind of plugin.
+[SUGGESTION] [SparseLDLSolver(globalLinear)] Template is empty
+By default SparseLDLSolver uses blocks with a single scalar (to handle all cases of simulations).
+If you are using only 3D DOFs, you may consider using blocks of Matrix3 to speedup the calculations.
+If it is the case, add template="CompressedRowSparseMatrixMat3x3d" to this object in your scene
+Otherwise, if you want to disable this message, add template="CompressedRowSparseMatrixd" .
+[INFO]    [SceneCheckerVisitor] Validating node "root" with checks: [SceneCheckCollisionPipelineAndModels, SceneCheckCollisionResponse, SceneCheckDeprecatedComponents, SceneCheckDuplicatedName, SceneCheckEmptyNodeName, SceneCheckMapping, SceneCheckMissingRequiredPlugin, SceneCheckSpecialCharacters, SceneCheckUsingAlias]
+[INFO]    [SceneCheckerVisitor] Finished validating node "root".
+[INFO]    [BatchGUI] Computing 10 iterations.  
+
+[INFO]    [BatchGUI] Processing.  
+
+[INFO]    [BatchGUI] 10 iterations done in 2.06852 s ( 4.83438 FPS).  
+
+[INFO]    [BatchGUI] 10 iterations done in 2.06852 s ( 4.83438 FPS).  
+

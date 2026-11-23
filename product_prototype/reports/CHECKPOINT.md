@@ -1,5 +1,24 @@
 ## Grasp-first continuation1059–1072 — 2026-11-23
 
+Feature commit26ec283. Continued read-only1073/1074:50g baseline hold has
+0/161iteration-limited outputs vs100g161/161;Root velocity API error0 across
+12records after explicit terminal hold. This does NOT repair contact convergence.
+Six new evidence regression tests PASS. All four Native launches completed;
+no SDK change,push,history rewrite or Git blob>=100000000bytes found.
+
+NEXT performance task: add a bounded read-only actual PullPoint API observer
+to the small moving-free-subset fixture1068,not a new physics solver. Compare
+all cable origins and mapped Root on the same end clock,then re-evaluate
+loaded exploratory Lift. Also isolate first100g solver-limit interval0.280s
+against frozen50g trace;do not repeat100g with random force/friction/dt changes.
+Current assembly1055 remains separate from B3. 100g Holding FAIL,Lift NOT RUN,
+variable stiffness NOT IMPLEMENTED,physical/time/mesh qualification NOT PASS.
+
+Read-only resume:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python -m json.tool product_prototype/results/b3_mass100_solver1064/summary.json`
+and `... -m json.tool product_prototype/results/b3_root_velocity1074/summary.json`.
+Fresh diagnostic tags must begin1075 or later after checking for existing paths.
+
 Read B3_MASS_EXPLORATION_AND_ROOT_LIFT_20261123.md. NEW actual Native mass-only100g exploration1059 completed800steps/2s in140.446s. Functional Holding FAIL:40.021865mm slip,object caught by withdrawn support,mean SkinZ−0.073929N vs weight0.981N;Guide/Rail0N. All161hold outputs hit solver iteration limit;do not infer a unique mechanical cause or physical capacity. Existing50g functional result and all time/meshFAILs preserved;300-partCAD remains a DIFFERENT model.
 
 Native no-object free-subset Root probes1061/1066 expose clock/terminal-key failures. Explicit end-clock+terminal-hold1068 gives Root position error4.07e-19m,NOT complete Lift. Next qualify actual PullPoint/Root velocity/force/work timing,then loaded exploratory Lift. First contact/cable solver-limit onset0.280s needs bounded diagnosis before full grasp force/friction sweeps. Variable stiffness NOT IMPLEMENTED;100g/Lift/Recovery/product approval still absent. Six new evidence-regression checks pass;not new physical gates.

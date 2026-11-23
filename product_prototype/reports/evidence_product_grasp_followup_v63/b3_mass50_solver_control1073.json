@@ -1,0 +1,71 @@
+{
+  "status": "EXPLORATORY_SOLVER_LIMIT_REVIEW",
+  "case": "b3_alarm_window485",
+  "all_output_solver_max_error": 1.3356701747766142e-06,
+  "hold_solver_max_error": 1.9497134825799567e-08,
+  "all_outputs_at_or_above_iteration_limit": 11,
+  "hold_outputs_at_or_above_iteration_limit": 0,
+  "hold_outputs": 161,
+  "first_limit_time_s": 0.2825000000000002,
+  "cables": [
+    {
+      "finger": 0,
+      "hold_command_N": [
+        1.5,
+        1.5
+      ],
+      "hold_reported_impulse_over_dt_N_range": [
+        1.5,
+        1.5
+      ],
+      "hold_internal_cable_shortening_mm_range": [
+        2.60286956531601,
+        2.850376727926776
+      ],
+      "geometric_shortening": "NOT RECOMPUTED_BY_THIS_AUDIT"
+    },
+    {
+      "finger": 1,
+      "hold_command_N": [
+        1.5,
+        1.5
+      ],
+      "hold_reported_impulse_over_dt_N_range": [
+        1.5,
+        1.5
+      ],
+      "hold_internal_cable_shortening_mm_range": [
+        2.572760870194743,
+        2.83051897242613
+      ],
+      "geometric_shortening": "NOT RECOMPUTED_BY_THIS_AUDIT"
+    },
+    {
+      "finger": 2,
+      "hold_command_N": [
+        1.5,
+        1.5
+      ],
+      "hold_reported_impulse_over_dt_N_range": [
+        1.5,
+        1.5
+      ],
+      "hold_internal_cable_shortening_mm_range": [
+        2.593444147709567,
+        2.8549816564332198
+      ],
+      "geometric_shortening": "NOT RECOMPUTED_BY_THIS_AUDIT"
+    }
+  ],
+  "interpretation": "Native solver iteration-limit evidence prevents attributing lost holding solely to friction, stiffness or normal direction. No tolerance change or force increase adopted. Need a bounded actual failing-state contact/cable coupling diagnostic; not a repeat dt/alarm sweep.",
+  "physical_validation": "NOT QUALIFIED",
+  "numerical_convergence": "EXISTING_FAIL_NOT_RETESTED",
+  "input_hashes": {
+    "summary.json": "67f9308ccc24b1b42b29503542ec174ce0eb6158e6ee3d11c0c114a7f46c5056",
+    "object.csv": "4ba9eb279f4d9ee6e53b4c8bf7468e4ed65951e894f5efbdf317782c49809a2c",
+    "finger0.csv": "4977f1e23a74a4993f0a220b5d8f0ad898611d77e31e3ce0e48eaefe5666cadb",
+    "finger1.csv": "b38f7a39813e5708d434b0b56a10cf0d77aa108ed6a676c3c05419d962a00240",
+    "finger2.csv": "ce82ca933689df08c6aa5faecf882711bc46caab3799608904b9e199bc122ae9"
+  },
+  "producer_sha256": "e488169ba3067c1742d7d78bc32695ae8648635444658b2e4740be756682c59b"
+}

@@ -1,5 +1,13 @@
 ## Grasp-first continuation1059–1072 — 2026-11-23
 
+UPDATE1073/1074,feature26ec283:Root position and velocity narrowly verified
+after explicit end-clock+terminal-hold;actual PullPoint API/work still missing.
+Next implement ONLY read-only cable-origin measurement in fixture1068,then
+assess loaded Lift feasibility. Frozen50g hold solver limit0/161 vs100g161/161
+is the next bounded contact/cable diagnostic,not permission for random sweeps.
+Evidencev62 verifies15787prior hashes;v63 verifies16112prior hashes,zero mismatch.
+100g Holding remains FAIL;no variable-stiffness or full Recovery certification.
+
 Read B3_MASS_EXPLORATION_AND_ROOT_LIFT_20261123.md. NEW actual Native mass-only100g exploration1059 completed800steps/2s in140.446s. Functional Holding FAIL:40.021865mm slip,object caught by withdrawn support,mean SkinZ−0.073929N vs weight0.981N;Guide/Rail0N. All161hold outputs hit solver iteration limit;do not infer a unique mechanical cause or physical capacity. Existing50g functional result and all time/meshFAILs preserved;300-partCAD remains a DIFFERENT model.
 
 Native no-object free-subset Root probes1061/1066 expose clock/terminal-key failures. Explicit end-clock+terminal-hold1068 gives Root position error4.07e-19m,NOT complete Lift. Next qualify actual PullPoint/Root velocity/force/work timing,then loaded exploratory Lift. First contact/cable solver-limit onset0.280s needs bounded diagnosis before full grasp force/friction sweeps. Variable stiffness NOT IMPLEMENTED;100g/Lift/Recovery/product approval still absent. Six new evidence-regression checks pass;not new physical gates.

@@ -1,3 +1,24 @@
+## Next after1257–1278 — section interpolation;Git repair authority
+
+Read productCHECKPOINT and LAYER_BENDING_REFERENCE/LAYER_NATIVE_MESH_FORMULATION/
+LAYER_INTERFACE_DISCRETIZATION/LAYER_CONSTRAINT_NORMALIZATION_20261124.md.
+ActualNative mesh9→33 remainsFAIL93.66%;independentCST matchesTipbut reveals
+largeinterpolation-shear stiffness. Idealinterfaceweakratio ismeshdependent,
+NOT actualjamming. CleanNative correctionlink validated;q/v/impulses0diff.
+Removingrowcounttolerance scaling (numeric1e-10unchanged) reduces Cq/Cv
+residual1773x/2207x onSAME20ms,NOTtime/mesh/productPASS.68softwaretestsPASS.
+
+READY:throughthickness/width strain-interpolation reference,consistentload
+quadrature required before Native sectionvariant. Reuse1257/58/1264. No
+newunqualifiedB3trial orblindsolversearch. Fresh1279+tags.
+BLOCKEDGitrepair:agentmistakenlycommitted128561058B layer_pairs.csv inlocal
+9a8d4a8;noRawdeletion,push orrewrite. Must obtain explicitpermission for
+backed-up unpublished-local-only affectedhistory repair. BranchNOTpush-ready.
+Currentfuturestagingguardpreventsdetector/>=100MBnew additions butcannot
+remove an existing historicalblob. Read-only:
+`python product_prototype/tools/research_git_guard.py --since 168e11b`.
+Exactnexttaskqueue:`python product_prototype/tools/research_queue.py`.
+
 ## Next after1220–1256 — bending-reliable layer reference;B3 feature scope
 
 Actual feature/row joins and temporal impulse attribution DONE1224/1249,

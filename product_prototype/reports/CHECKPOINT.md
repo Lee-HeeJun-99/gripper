@@ -1,3 +1,68 @@
+## Layer bending / Native normalization1257–1278 — 2026-11-24
+
+IMPORTANT GIT BLOCKER:agent erroneously included128561058byte
+results/layer_mesh_native1260/layer_pairs.csv in local9a8d4a8. Raw preserved,
+no push/historyrewrite. Branch NOTpush-ready. Repair of unpublished affected
+history needs explicit permission under existing ban. See
+GIT_LAYER_PAIRS_POLICY_FAILURE_20261124.md. Newstagedfiles now guarded;
+detector.csv and>=100MB excluded without deletion. Do not hide old blob by
+later untracking/delete commits. Research and thisGitrepair are separate.
+
+External backup verified:LHJ/regrip_backups/layer-20261124-SK2mmt/ contains
+incremental168e11b..7052623bundle (verifyPASS;SHA02fcf01aa65be8398c1431dd5bf0cbf3bc9af2b771b86b176fbb0850f39582e5)
+and8Rawcopies,allbyteequal. NOT a standalone fullrepo backup;freshbackup
+oflatestHEAD required before any approved repair. No history repair done.
+Evidencev78 audits20989priorimmutablehashes,0mismatch,total21398files,
+22cases. Large localdetectorRaw preserved/hashable butnotnewlyGit-added.
+
+Started168e11b clean,currentbranch unchanged. Featurecommitsfe5f9ba,9a8d4a8,
+981e035(Gitguard/disclosure),e8ab6ba,7cc6671,7052623. Continued multiple
+actual implementation/reference/Native/analysis cycles,no oldRaw/SDK edits.
+Read LAYER_BENDING_REFERENCE_20261124.md,LAYER_NATIVE_MESH_FORMULATION_20261124.md,
+LAYER_INTERFACE_DISCRETIZATION_20261124.md,LAYER_CONSTRAINT_NORMALIZATION_20261124.md.
+
+1257 actual1189CST-reference tip matchesNative5.42e-9relative BUT nativeq
+inlinearK residual17.43%;not equilibrium. Purebending nodalinterpolant
+energy538.714x exactepsilon_xx-only3Dreference,99.44%shear. Independent
+length-only9…257reference1258 alladjacentmeshFAIL. ActualNative nx33pilot
+1259→100ms1260 forecast63.185s,actual62.675s within4GiB/120s;actualmesh
+9→33tipdifference93.6641%FAIL. No savedinversion/centroidoverlap/contact
+impulse,but not completegeometry orphysics qualification.1261 onlyNative
+small-vs-large formulation contrast2.408s reducesreference residual;notB3fix.
+
+1264 exactidealinterfacetie reference ratio1.00694→1.09873 atnx33→1.84353
+atnx257,reproducescoarseNative1239 without pressure law.1263errorfield was
+assigned byalgebraicidentity;1264computespaired difference directly. Actual
+refinedtie1266 completes100ms107.619s,endpointdisplacementratio1.09875close
+reference. Notstaticstiffness:nodevelocity48.7um/s remains. ActualNative
+AcceptedState figures1267 generated/visuallychecked;not conceptgeometry.
+
+1268actualCq/Cv confirmsvelocity tracks alternatingconstraintposition error;
+Nyquist2500Hz sampled peak isNOT provenphysicalmode.519rows scalesNative
+termination to~519*1e-10.1269/70preserveFAILproducerverdict frominherited
+UnusedsolverNamewarning (Nativeexit0). InstalledAPIcorrected1271using
+linearSolver=@globalLinear:prefixq/v/impulseEXACT0 vsauto. Cleanunscaled
+1272pilot→1273actual20ms22.148s;onlyrowcountnormalizationdisabled,tolerance
+number1e-10 unchanged,allVerified/defaultforce/model/dt retained.1275
+ALL100commonoutputs:positionresidual1772.52xsmaller,velocity2206.69x;
+cleanexplicitvsoldauto unscaledq/v/impulseEXACT0. NOT timeconvergencePASS.
+1276actualresidualfigureschecked;1277prospectivelyfixes20msFFTscope label
+(old1274descriptionwrong,noNativeRawrewritten,no physicalmodeclaim).
+
+68 softwaretests1278PASS,7SDKhashes unchanged. Git_history_policyFAIL,
+push_readyfalse explicitly invalidation. Physicaltime.1%/mesh1%/fullenergy/
+100g/jamming/actualmaterials/joints/STEP/recovery Gates remainunqualified.
+Nativecomponent improvements NOT retrofitted intoB3 or300partCAD.
+
+NEXT READY independentlayer_section_resolution_reference:separateZ/width
+interpolation effects with exactstrainfields before newNativeplatechoice.
+Reuse1257/58/1264;noEfit,blinddt/pressure/frictionsweep orfullB3replay.
+GitrepairBLOCKEDpendingauthority,not silently performed. Read-onlyresume:
+`python product_prototype/tools/research_queue.py`
+`python product_prototype/tools/research_git_guard.py --since 168e11b` (expectedFAIL)
+`python -m json.tool product_prototype/results/layer_constraint_comparison1275/summary.json`
+Newresults1279+. No liveNativechildren/after-sessionbackgrounddevelopment.
+
 ## Continued feature / friction / interface / B3 cycles1220–1256 — 2026-11-24
 
 Started9d3d064 clean on development/regrip-autonomous-research. Consecutive

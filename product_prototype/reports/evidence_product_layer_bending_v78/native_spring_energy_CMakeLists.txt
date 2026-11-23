@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(ReGripSpringEnergy LANGUAGES CXX)
+find_package(Sofa.Component.SolidMechanics.Spring REQUIRED)
+find_package(Sofa.Simulation.Core REQUIRED)
+add_library(ReGripSpringEnergy SHARED Observer.cpp)
+target_compile_features(ReGripSpringEnergy PRIVATE cxx_std_17)
+target_link_libraries(ReGripSpringEnergy PRIVATE Sofa.Component.SolidMechanics.Spring Sofa.Simulation.Core)

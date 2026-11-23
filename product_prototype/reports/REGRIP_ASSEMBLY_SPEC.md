@@ -1,3 +1,11 @@
+## Interface calibration and Native API scope — 2026-11-24
+
+The new world-vector bilateral tie remains an abstract small-rotation coupon,
+NOT actual clamp/bond strength orassembly instruction. Mesh-dependent response
+cannot specifyvacuumpressure,sealload oradhesive. Numerictermination/APIlink
+corrections supplyno new measuredhardwareproperties. STEP/material/joint/
+fatigue/assemblyreadiness remainunqualified;300partCAD unchanged.
+
 ## Independent layer-pocket concept1198/1200/1201 — NOT FABRICATION READY
 
 Separate15partlaminatedcoupon,notamodificationofthe300partB3. Eight0.1mm

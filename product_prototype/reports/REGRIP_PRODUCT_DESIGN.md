@@ -1,3 +1,12 @@
+## Layer discretization / transmission limitation — 2026-11-24
+
+No new product geometry or300partassembly change. Actuallayercoupon's
+free/tied response depends strongly on mesh and abstractinterfaceconstraints;
+no calibrated vacuum/adhesive/materialperformance. Improved Native termination
+residual is a component diagnostic,not proof of50/100gHolding,Lift,jamming,
+Recovery orfabricationreadiness. No FEM/ODE/constraint changes transferred
+intoB3 fromthissession. Source/Raw andfailedCADcandidates preserved.
+
 ## Autonomous candidate updates1187/1198–1201 — NOT PRODUCT APPROVAL
 
 Manufacturedcurvaturestart70→60mm withsame40deg wasactuallyexportedand

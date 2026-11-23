@@ -1,3 +1,17 @@
+## Layer bending / termination1257–1278 — 2026-11-24
+
+Actual Native/independent reference cycles identify excessive CST bending
+interpolation stiffness for this layercoupon;actual9→33meshFAIL93.66%.
+Ideal interface endpoint comparisons remain NOT static/jamming qualification.
+CanonicalNative correctionlink validated,then stricter rowcount-normalization
+contrast at unchanged numeric1e-10 reduces SAME20ms Cq/Cv residual1773x/
+2207x. Not time/mesh/grasp PASS.68softwaretestsPASS,oldRaw/SDK preserved.
+IMPORTANT:agent accidentally committed128561058B layer_pairs.csv in9a8d4a8.
+NoPush/historyrewrite;GitpolicyFAIL,push_readyfalse. Explicit repairapproval
+required. Externalincrementalbundle+8Rawcopies verified;seeproductCHECKPOINT
+andGIT_LAYER_PAIRS_POLICY_FAILURE_20261124.md. CurrentresearchREADYsection
+interpolation reference is separate from blockedGitrepair.
+
 ## Autonomous modal / grasp geometry / layer tracks1181–1219 — 2026-11-23
 
 Multiple actual implementation/Native/design/commit cycles after9d954a8.

@@ -1,3 +1,15 @@
+## Consecutive layer/reference/Native cycles1257–1278 — 2026-11-24
+
+Implemented independentactualmesh/CST and idealinterface references,actual
+Native refined/free/tied and smallformulation contrasts,acceptedCq/Cv audit,
+canonicalcorrectionlink purity and same-window normalization comparison.
+Actual position/velocity residual reductions1773x/2207x at SAME numericTol,
+not a product/time/mesh PASS.68softwaretestsPASS;6Native-oriented feature/
+safety commits after168e11b,not stopped after oneexperiment. Gitbulkstage
+mistake9a8d4a8 includes128.6MBRaw:explicitFAIL,noPush/rewrite;newguardexcludes
+newdetector/largeRaw and externalcopies verified. See CHECKPOINT for
+hashes,scope,backuppath and nextsectionreference;repairrequiresapproval.
+
 ## Continued autonomous P0/P1/P2/design cycles1181–1219 — 2026-11-23
 
 Actualmodal load/state response1181/1199;Nativeone-modecontroltimeFAIL.

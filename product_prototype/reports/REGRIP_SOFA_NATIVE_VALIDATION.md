@@ -1,3 +1,16 @@
+## Native layer diagnostics1257–1278 — 2026-11-24
+
+Actual refinedlayer mesh9→33tipchange93.66%FAIL;zero contactimpulses and
+positive elements do not qualify bending. IndependentCSTmatchesTip but
+purebendinginterpolant energy~539x3Dreference oncoarsemesh. Idealinterface
+Nativeendpoint1.09875 vsreference1.09873,NOTequilibrium/EI/jamming.
+Actual Cq/Cv residual oscillation observed;Native scaleTolerance multiplies
+stoppingthreshold byrowcount. Canonical linearSolver link replaces inherited
+unusedsolverName,validatedq/v/impulsepurity0. Same20ms unscaledtermination
+reducesCq1773x/Cv2207x with1e-10numericthreshold unchanged. No Gate relaxation
+orNativeB3adoption.68softwaretestsPASS;Git historypolicy separatelyFAIL from
+oversizedlocalRawblob,not silently repaired. OldphysicalFAILs remain.
+
 ## Actual modal / pressure-layer / gap controls1181–1219 — 2026-11-23
 
 NewactualNative single-modeFEM(noGuide/Cable/contact)matchesdiscreteBE but

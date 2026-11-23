@@ -1,0 +1,61 @@
+{
+  "status": "FAIL_TIME_PAIR_GATE",
+  "comparisons": {
+    "skin_displacement": {
+      "maximum_absolute_L2_difference": 0.00116288592142236,
+      "maximum_relative_error": 1.628006131738379,
+      "worst_time_s": 0.0375,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    },
+    "rail_displacement": {
+      "maximum_absolute_L2_difference": 0.0011734159202845206,
+      "maximum_relative_error": 1.641186526897907,
+      "worst_time_s": 0.0375,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    },
+    "velocity": {
+      "maximum_absolute_L2_difference": 0.045234572191414926,
+      "maximum_relative_error": 0.7876774264697002,
+      "worst_time_s": 0.045000000000000005,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    },
+    "skin_width_mean_curvature_change": {
+      "maximum_absolute_L2_difference": 0.6147464941147135,
+      "maximum_relative_error": 0.5204632612491762,
+      "worst_time_s": 0.034999999999999996,
+      "undefined_zero_denominator_outputs": 0,
+      "gate": 0.001,
+      "status": "FAIL_PAIR_OBSERVABLE"
+    }
+  },
+  "quality": {
+    "base": {
+      "maximum_absolute_Skin_principal_Green_strain": 0.060762913221867165,
+      "minimum_volume_ratio": 0.9786664508341563
+    },
+    "half": {
+      "maximum_absolute_Skin_principal_Green_strain": 0.06115519262055508,
+      "minimum_volume_ratio": 0.9783588560681447
+    }
+  },
+  "common_outputs": 124,
+  "max_common_time_error_s": 1.3322676295501878e-15,
+  "short_to_long_prefix_q_error_m": null,
+  "short_to_long_prefix_v_error_m_s": null,
+  "material_allowable_strain": null,
+  "energy_work": null,
+  "full_time_convergence": "NOT QUALIFIED:onepair only,noQuarter,noenergy",
+  "physical_validation": "NOT QUALIFIED",
+  "holding": "NOT RUN",
+  "input_hashes": {
+    "results/b3_ode_force_candidate1176/finger0.csv": "83e7aaae39fe357feb3ae51ea6efed236cfdd76f7c38e6b1f880b01d18263cbf",
+    "results/b3_ode_force_half1179/finger0.csv": "ad7063be5adbae89b128e61e8ff50071879b1506cb5a97f3178317dc3350a6ea",
+    "sofa/b3_rail_back_assess.py": "c2e15c24708107dce0a471601b6d11f82372a660fc0734737a66f3b7f9dd6517"
+  }
+}

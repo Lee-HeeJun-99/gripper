@@ -1,0 +1,46 @@
+{
+  "status": "LINEAR_REFERENCE_ENERGY_ACCOUNTING_ONLY",
+  "records": {
+    "b3_linear_gravity_coupon1162": {
+      "contract": "field_A_only",
+      "final": {
+        "time_s": 0.10000000000000005,
+        "reference_stored_plus_kinetic_J": 7.313810708517411e-08,
+        "gravity_work_J": 1.4440939325877661e-07,
+        "reference_velocity_damping_work_J": 3.938229794031778e-09,
+        "A_only_algorithmic_term_J": 4.36032059785918e-10,
+        "backward_Euler_numerical_loss_J": 7.083525389442204e-08,
+        "selected_contract_residual_J": -2.1939455647042782e-16,
+        "selected_contract_residual_relative": 1.5192540562599026e-09
+      },
+      "maximum_residual_relative": 4.784930973081469e-09
+    },
+    "b3_linear_gravity_ode1166": {
+      "contract": "ODE_velocity_damping",
+      "final": {
+        "time_s": 0.10000000000000005,
+        "reference_stored_plus_kinetic_J": 7.282162247282376e-08,
+        "gravity_work_J": 1.4410907780881577e-07,
+        "reference_velocity_damping_work_J": 3.7479291166390305e-09,
+        "A_only_algorithmic_term_J": 4.229839108278199e-10,
+        "backward_Euler_numerical_loss_J": 6.753952641689462e-08,
+        "selected_contract_residual_J": 1.975416358268589e-16,
+        "selected_contract_residual_relative": 1.3707785715548755e-09
+      },
+      "maximum_residual_relative": 6.869293493603012e-09
+    }
+  },
+  "physical_validation": "NOT QUALIFIED",
+  "Native_potential_energy_API": null,
+  "global_B3_energy_work": null,
+  "scope": "Quadratic reference energy using saved Native K/q/v,not measured material heat or actual full nonlinear Native energy. Field A-only term is signed algorithmic work,not viscous loss.",
+  "input_hashes": {
+    "sofa/b3_linear_energy_contract.py": "6ab0cfc4ee81957b0a5a8e4b7bda7f15e0231f6d704d9a8977617cf41dbc8a48",
+    "results/b3_linear_gravity_coupon1162/scene.scn": "ac88d3cc1396e6c2de8981aa27247ee7e9f14733304899503fd8814cb201afe2",
+    "results/b3_linear_gravity_coupon1162/rest.matrix.csv": "b1717619e55a3d2434db11226beb43bf27f7b1a7d736752dbb95552b05c5e32f",
+    "results/b3_linear_gravity_coupon1162/states.csv": "d12d7f1ab90e1ee92e6400b137da548dce8934c579778e79b2fb4fd1b615ab96",
+    "results/b3_linear_gravity_ode1166/scene.scn": "a1b1797a47b5f07eed41976d1374b1e2c5b195abb8a53b90acd73b32b55954c6",
+    "results/b3_linear_gravity_ode1166/rest.matrix.csv": "b1717619e55a3d2434db11226beb43bf27f7b1a7d736752dbb95552b05c5e32f",
+    "results/b3_linear_gravity_ode1166/states.csv": "a826bd6d7049d6649b59380f9e94e29869594a161e652598afa7ccf7c27d6f18"
+  }
+}

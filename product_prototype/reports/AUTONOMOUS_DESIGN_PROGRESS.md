@@ -1,3 +1,16 @@
+## Continued forced gravity / damping1161–1180 — 2026-11-23
+
+Five meaningful cycles implemented/executed/committed after4c6bd43. Native
+linear-coupon observer control q/v0;field Rayleigh A-only contract isolated.
+NativeODE coefficient placement matches intended velocity-damping recurrence
+but fulljoint zero/force timepairs still FAIL. Actual forcecandidate0.31s
+minvolume0.97867/0.97836,no savedinversion;not material/100g certification.
+DeformedA/freeRHS/Cableimpulse identities and independent continuous/modal
+references qualified ONLY locally. Energyledger reference-only,notheat/APIPE.
+Actual-state plots1172 created/inspected. See CHECKPOINT and new reports.
+No CAD adoption or new Holding/Lift success. Stop damping-only cure, next
+load/forced-response participation analysis;no blind parameter sweeps.
+
 ## Continued Native diagnostics1142–1160 — 2026-11-23
 
 Multiple actual cycles preserved in b7d0e71,2bb83f1,0a7135f,35d3509,22560f0.

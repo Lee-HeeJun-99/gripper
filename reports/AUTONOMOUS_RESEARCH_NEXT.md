@@ -1,3 +1,20 @@
+## Next after1161–1180 — stop damping-only cure;forced-response attribution
+
+Read product_prototype/reports/B3_GRAVITY_TRANSIENT_AND_DAMPING_20261123.md,
+B3_ODE_DAMPING_SCOPE_20261123.md,B3_MODAL_AND_DEFORMED_ODE_20261123.md,
+B3_ODE_FORCE_CONTRACT_20261123.md. Actual isolated Native field Rayleigh
+follows A-only recurrence;ODE coefficients realize intended velocity law.
+This does NOT cure full-joint time sensitivity:1180Skin162.80%,v78.77%FAIL.
+No saved inversion through0.31s,NOT material/stability/grasp certification.
+Observerpurity0 and deformedmatrix/freeRHS/impulseidentities pass ONLY.
+NEXT actualgravity/C2load modal participation and forced transient contributions
+using saved states,not another spectrum-only1137 run. Need evidence before
+new integrator/mechanical contrast;no arbitrary dt/force/damping/alarm sweep.
+Old constrained-loop/higher-order FAIL preserved;no customODE/SDK changes.
+Fresh1181+tags,reusableStepProbe1142 guardedfrozenbinary. Read-only:
+`python -m json.tool product_prototype/results/b3_ode_force_pair1180/summary.json`.
+100g/fullB3 qualification remains BLOCKED;existing50gfunctionresults unchanged.
+
 ## Next after1142–1160 — gravity transient diagnosis
 
 Read product_prototype/reports/B3_SAMPLED_MATRIX_AND_IMPULSE_20261123.md,

@@ -1,3 +1,17 @@
+## Native gravity / damping contract1161–1180 — 2026-11-23
+
+Five consecutive development cycles after4c6bd43;features08fc5a9,b7bc494,
+d2ae306,410bc99,e8d49e6. Actual linear coupon discriminates field A-only
+Rayleigh from physical velocity damping;NativeODE setting realizes the latter
+without tuning coefficient magnitude. Old assumptionFAIL retained. Actual
+joint zero/force trials still timeFAIL;1180Skin162.80%,velocity78.77%.
+Deformedmatrix/freeRHS/Cableimpulse local identities match≤1.3e-9relative;
+NOT continuous accuracy. Independent continuous reference crosscheckedmodal
+closedform≤7.53e-7;referenceenergyresidual≤6.87e-9,NOT actual fullNativePE.
+No new100g/Holding/Lift/productPASS. Stop damping-only cure and analyze actual
+gravity/C2 forced-response contributions before any next intervention.
+See product_prototype/reports/CHECKPOINT.md and B3_ODE_FORCE_CONTRACT_20261123.md.
+
 ## Native sampled dynamics1142–1160 — 2026-11-23
 
 Continued through sampled-matrix observer,one-step Cable input control,

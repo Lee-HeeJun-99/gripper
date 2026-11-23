@@ -1,0 +1,23 @@
+"""Publish actual generated candidate assets and limited geometric checks."""
+import argparse,json,csv,shutil,hashlib,math,ast
+from pathlib import Path
+import numpy as np
+import trimesh
+BASE=Path(__file__).resolve().parents[1]
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--mesh',required=True);p.add_argument('--name',required=True);a=p.parse_args();src=BASE/'meshes'/a.mesh;c=json.loads((src/'config.json').read_text());out=BASE/'drawings'/a.name;out.mkdir(parents=True,exist_ok=False)
+ shutil.copy2(src/'orthographic.svg',out/'orthographic.svg');shutil.copy2(src/'assembly.scad',out/'assembly.scad');shutil.copy2(src/'config.json',out/'config.json');f=c['finger'];td=c['tendon'];checks={}
+ for name in ('skin','rail_left','rail_right','finger_bonded'):
+  mesh=trimesh.load_mesh(src/(name+'.stl'));checks[name]=dict(watertight=bool(mesh.is_watertight),winding_consistent=bool(mesh.is_winding_consistent),volume_mm3=float(mesh.volume))
+ ast.parse((BASE/'cad/export_freecad.py').read_text())
+ # Proper rotation test shared by CAD and SOFA mathematical frame convention.
+ frames=[]
+ for deg in c['palm']['angles_deg']:
+  a0=math.radians(deg);R=np.array([[0,math.sin(a0),-math.cos(a0)],[0,-math.cos(a0),-math.sin(a0)],[-1,0,0]]);frames.append(dict(angle_deg=deg,determinant=float(np.linalg.det(R)),orthogonality_error=float(np.linalg.norm(R.T@R-np.eye(3)))))
+ # Partial exploded section is a construction drawing,NOT physical deformation.
+ svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650"><rect width="1000" height="650" fill="white"/><g font-family="sans-serif" font-size="18" fill="black"><text x="30" y="35">ReGrip candidate:{a.mesh} — DESIGN DRAWING,NOT SOFA RESULT</text><text x="30" y="70">Exploded cartridge:Root clamp / single Skin / two backing Rails</text></g><g stroke="black"><rect x="150" y="110" width="36" height="180" fill="grey"/><path d="M150 320 L450 320 L750 350 L750 410 L450 440 L150 440 Z" fill="#e6abab"/><path d="M150 470 L450 470 L750 500 L750 510 L450 480 L150 480 Z" fill="steelblue"/><path d="M150 555 L450 555 L750 525 L750 535 L450 565 L150 565 Z" fill="steelblue"/><path d="M160 300 L160 315 M160 445 L160 465" stroke-dasharray="3 3" fill="none"/></g><g font-family="sans-serif" font-size="16"><text x="220" y="180">Clamp5 x36 x3 mm,M3 clearance3.4 mm</text><text x="220" y="210">Mount base bolts normal to Palm;clamp bolts normal to Skin</text><text x="220" y="240">Motor mount:slotted50 x40 x4;shaft/coupling bore6 placeholder</text><text x="790" y="360">L={f['length']}mm</text><text x="790" y="390">Skin={f['skin_thickness']}mm</text><text x="790" y="500">2 Rails</text><text x="790" y="530">{f['rail_width']} x{f['rail_thickness']}mm</text><text x="30" y="620">Exploded offsets arbitrary for assembly explanation;not dimensional spacing. Native model uses bonded interface.</text></g></svg>''';(out/'exploded.svg').write_text(svg)
+ rows=[['Palm housing',1,'R64/R30 x8,z5..13','TBD','CAD source only,not kernel exported'],['Finger mount',3,'12x36x14 overall L-bracket','TBD','M3 placeholder'],['Skin',3,'100x24->12x0.1','TBD','closed STL created'],['Rail',6,'100x2x0.5 follows taper','TBD','closed STL created'],['Tendon guide/support',36,f'OD3 ID1.2,normal3,outboard{td["outboard"]}','TBD','guide support and finite collision qualification pending'],['Root clamp',3,'5x36x3,holes atx2.5 y+-14','TBD','clamped mating surfaces revised'],['Cartridge',3,'Skin+2rails+mount+clamp','assembly','FEM assumes continuous bond'],['Wire',6,'radius0.25 candidate,stroke up to8 tested','TBD','not purchased/tested'],['Anchor',6,'4x4x2 hole1.2 placeholder','TBD','CAD source,attachment pending'],['Pulley',1,'groove R8/flange R10,bore6 placeholder','TBD','NOT equalizer'],['Motor plate',1,'50x40x4,slotted','TBD','actuator unselected'],['Coupling',1,'OD16 x12,bore6 placeholder','TBD','shaft spec unknown'],['Fastener set',16,'M3 placeholder,length/stack TBD','TBD','quantity includes4 motor bolts;not purchasing approval']]
+ with (out/'REGRIP_BOM.csv').open('w') as s:w=csv.writer(s);w.writerow(['part','quantity','dimensions_mm','material','status']);w.writerows(rows)
+ result=dict(status='PARTIAL_CAD_ASSETS_CREATED_NOT_ASSEMBLY_VERIFIED',STL=checks,frames=frames,FreeCAD='script syntax only;module absent;NOT executed',STEP='NOT GENERATED',mount_seating='candidate Palm undersidez5 matches bracket topz5;M3 nominal axes checked algebraically,not kernel interference',clamp='starts atx0,zSkinT;previous source overlap removed;not assembled/tested',moving_collision='NOT QUALIFIED:guide/support,anchor,palm/cable and actuator hardware',physical_fabrication_ready=False)
+ (out/'checks.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
+if __name__=='__main__':main()

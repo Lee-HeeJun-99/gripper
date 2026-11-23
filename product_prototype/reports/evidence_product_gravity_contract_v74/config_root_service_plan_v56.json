@@ -1,0 +1,16 @@
+{
+ "kind":"UNPOWERED_MAINTENANCE_PLAN_NOT_EXECUTED_PHYSICAL_SEQUENCE",
+ "steps":[
+  {"id":"unload","requires":[],"operation":"Remove object;isolate actuator power;independently verify zero cable load,not only zero command","unverified":"Actual tension measurement and safe stored-energy release"},
+  {"id":"release_drum","requires":["unload"],"operation":"Release reusable drum-side free-end termination;retain factory distal stop","unverified":"Finite reusable drum termination not implemented or tested"},
+  {"id":"free_fixed_route","requires":["release_drum"],"operation":"Pull free end backwards through fixed drum/Turn/Root path;leave wire threaded in moving Finger Eyelets if possible","unverified":"Actual frayed-end diameter,path friction and threading/reconnection trial"},
+  {"id":"secure_cartridge","requires":["free_fixed_route"],"operation":"Support cartridge before loosening two retaining screws;keep Skin/Rail/internal Eyelet bonds and Root Clamp bolts intact","unverified":"Cartridge fixture,hand access and nut capture"},
+  {"id":"remove_retaining_bolts","requires":["secure_cartridge"],"operation":"Withdraw two retaining bolts along their actual axes;other hardware remains in place","unverified":"Actual bolt drive,thread fit,tool and hand access;nominal axial CAD screen only"},
+  {"id":"withdraw_cartridge","requires":["remove_retaining_bolts"],"operation":"Translate intact cartridge along actual carrier longitudinal axis;do not break internal adhesive joins","unverified":"Complete physical cut-set and continuous trajectory;185numerical prism questions remain open"},
+  {"id":"bench_service","requires":["withdraw_cartridge"],"operation":"Unloaded bench service;one hollow loader at a time for bottom-loaded distal nuts","unverified":"Physical nut retention/thread engagement/tool forces and complete bench fixture"},
+  {"id":"reassemble","requires":["bench_service"],"operation":"Reinsert and mechanically retain cartridge;rethread free end and reconnect drum;verify independent cable paths before actuation","unverified":"Reverse geometry alone does not certify alignment,preload,wire tension or physical reassembly"}
+ ],
+ "actual_measurements":null,
+ "physical_service_qualified":false,
+ "scope":"Plan and dependency validation only,not an actuator or maintenance executor. No part removed from operating model. Missing mechanisms/data block physical completion;CAD screens cannot automatically satisfy safety/measurement prerequisites."
+}

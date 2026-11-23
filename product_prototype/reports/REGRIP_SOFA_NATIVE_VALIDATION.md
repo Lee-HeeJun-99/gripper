@@ -1,3 +1,16 @@
+## Forced gravity / damping contract1161–1180 — 2026-11-23
+
+Actual Native isolated small-FEM coupon:first-step physical-damping recurrence
+matches,laterFAILq2.56%/v18.54%. Observer removed:q/vEXACT0difference.
+Field-Rayleigh follows A-only recurrence;ODE placement with SAME nominal
+coefficients matches physical velocity damping q≤9.75e-9/v≤7.40e-6relative.
+Global joint/Guide damping law changed explicitly,NOT identical old B3.
+Actual fulljoint zero/force base/half stillFAIL0.1%;1180Skin162.80%,v78.77%.
+300ms previous-state A/freeRHS/impulse identities only;no fulltimePASS.
+Modal continuous reference crosscheck≤7.53e-7;energyledger residual≤6.87e-9
+is quadratic reference only,NOT NativePE/heat/globalenergy. No newgraspPASS.
+All historical time/mesh/100gFAILs retained. Checkpoint details fresh1181+.
+
 ## Sampled dynamics1142–1160 — 2026-11-23
 
 New local discrete identities ONLY: previous-state effective A blocks≤1.739e-15,

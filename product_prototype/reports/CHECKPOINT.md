@@ -1,3 +1,44 @@
+## Continued gravity / damping contract1161–1180 — 2026-11-23
+
+Started4c6bd43 clean; completed multiple consecutive implementation/Native/
+analysis/commit cycles:08fc5a9,b7bc494,d2ae306,410bc99,e8d49e6.
+Evidencev74 verifies19286priorimmutablehashes,0mismatch,total19689files.
+21focusedregressiontestsPASS;no SDK edits,push,historyrewrite,detectorCSVor
+100MBblobadded. Evidence/CADscope remains independent of physics qualification.
+Read B3_GRAVITY_TRANSIENT_AND_DAMPING_20261123.md,B3_ODE_DAMPING_SCOPE_20261123.md,
+B3_MODAL_AND_DEFORMED_ODE_20261123.md,B3_ODE_FORCE_CONTRACT_20261123.md.
+1161 independent frozen gravity transient,1162 actual small-FEM/no-Guide/
+Cable/contact coupon.1163 physical velocity-damping assumption FAIL;q2.56%,
+v18.54%.1164 observer removed:q/v EXACT0difference.1165 installed field
+Rayleigh follows A-only recurrence,q≤5.64e-9,v≤7.17e-7relative;not viscous law.
+1166/67 same nominal coefficients on Native ODE,fields0:actual coupon matches
+physical velocity-damping recurrence,q≤9.75e-9,v≤7.40e-6relative. Local algebra
+PASS ONLY; global Guide damping is new law,not identical original B3.
+
+1168–70 full-joint zero-Cable100ms base/half:timeFAIL Skin30.50%,v174.33%.
+1171 reference energy ledger separates viscous work and BE numerical loss,
+residual≤6.87e-9;NOT Native PE/heat/globalenergy,all thoseNULL.1172 actual
+accepted-state plots inspected.1173 modal closed form independently matches
+affine exponential≤7.53e-7relative at100ms;not actual nonlinear dominant modes.
+1174/75 deformed50ms pureobserver q/vprefix0,mappedA/RHS identities only.
+1176–80 C2 force-controlled SAME old2.5Nmaximum single-finger0.31s,noobject,
+no saved inversion,minratio0.97867/0.97836;base/halfSkinstrain~6.1%,allowablesNULL.
+1177 sampled300ms q/vprefix0;1178 A≤2.20e-16,freeRHSvelocity≤1.29e-9,
+impulsecorrection≤1.14e-9relative,Tdt=lambda EXACT.1180 fullcommon124outputs
+FAIL0.1%:Skin162.80%,Rail164.12%,v78.77%,curvature52.05%. No repair/adoption.
+
+Stop damping-only cure direction; no full100g/friction/force/dt/solver sweep.
+NEXT independent gravity/C2 modal participation and saved early error-source
+localization before choosing any Native integration or mechanical contrast.
+Do not repeat1137 spectrum-only result; need actual load projections and
+forced-response contributions. Old constrained higher-order FAILs retained.
+Fresh1181+tags. Reuse StepProbe1142 frozen binary/source guard (no rebuild).
+Read-only resume:
+`python -m json.tool product_prototype/results/b3_ode_force_pair1180/summary.json`.
+Old50g Holding/Lift FUNCTIONAL only;100g/time/mesh/energy/material/joints/
+variable-stiffness/product qualification still NOT achieved. Latest300partCAD
+separate,unchanged. No Native children left running or remote push.
+
 ## Continued sampled dynamics1142–1160 — 2026-11-23
 
 Completed multiple consecutive cycles, not a single-experiment stop. Features:

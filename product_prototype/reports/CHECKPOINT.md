@@ -1,3 +1,37 @@
+## Continued sampled dynamics1142–1160 — 2026-11-23
+
+Completed multiple consecutive cycles, not a single-experiment stop. Features:
+b7d0e71 sampled previous-state A/K/J,2bb83f1 one-step input knockout,
+0a7135f footprint candidate,35d3509 gravity-only control. Old evidence preserved.
+1143/1144/1147 actual Native q/v/Guide observer prefix errors EXACT0.
+1145/1146/1149 previous-state effective A blocks≤1.739e-15 relative;
+actual A delta-v=J-transpose lambda≤4.80e-9 relative. lambda=T*dt, not N.
+1150/1151 one-step Cable input0: same previous state,A,K,J,free-motion;
+lambda and accepted-velocity correction exactly0. No force-unit/double-impulse
+defect demonstrated; no unique explanation of time failure claimed.
+
+1152–55 5→10mm Guide footprint actual1s base/half trials: no saved inversion,
+but volume ratios0.58386/0.78787 worse than baseline; time Gate FAIL
+Skin139.786%,velocity172.487%. REJECT repair/CAD adoption,NOT Holding.
+1156–58 new zero-Cable half control480steps,4.714s. First2.5ms driven/zero
+Skin pair differences18.086/18.102µm; actuator increment difference0.0163µm.
+Early sensitivity largely remains without Cable/contact/inversion.
+1159 read-only first-step probe actual Native0.237s,prefixerror0.
+1160 mapped gravity RHS+actual A predicts free v blocks≤1.91e-9relative;
+only first-step discrete identity PASS. Time/mesh/energy/material FAILs remain.
+
+Reusable builds:cad/build_step_probe1142/libReGripStepProbe.so,
+cad/build_cable_pause1148/libReGripCablePause.so; frozen hashes in Raw.
+Evidence v72 includes1142–1158,18680 prior immutable files checked0 mismatch.
+Later1159/1160 appended separately; no old Raw overwritten.
+NEXT independent frozen-linear forced gravity transient with actual rest M/K,
+root projection and zero-input1127/1157; separate expected startup integration
+error from nonlinear/mapping effects. NOT spectrum-only1137 replay.
+Read-only restart:
+`python -m json.tool product_prototype/results/b3_gravity_rhs1160/summary.json`.
+Fresh tags1161+. No full100g/high-force/solver sweep, no fabricated energy,
+no latest300partCAD qualification. Existing50g Holding/Lift functional only.
+
 ## Continued initial assembly1136–1141 — 2026-11-23
 
 Savedfeaturesa3dd268/c38c461;continuedafterbothcommits. Read

@@ -1,3 +1,19 @@
+## Next after1142–1160 — gravity transient diagnosis
+
+Read product_prototype/reports/B3_SAMPLED_MATRIX_AND_IMPULSE_20261123.md,
+B3_ONE_STEP_INPUT_20261123.md,B3_JOINT_FOOTPRINT_20261123.md,
+B3_EARLY_LOAD_SEPARATION_20261123.md,B3_GRAVITY_RHS_20261123.md.
+TASK1/2 actually completed; pure sampledA/K/J and impulse identity pass only.
+Footprint5→10mm candidate actual base/half FAIL; reject as repair, no CAD.
+Missing zero-Cable half control executed1157. Early error persists without
+Cable input; first-step mapped gravity force/A identity1160 matches Native.
+NEXT frozen linear forced-gravity transient reference with actual restM/K,
+root projection and zero-input1127/1157. Existing1137 spectrum not enough;
+do not assume gravity/impulse bug or silently change load/pre-equilibrate.
+Fresh1161+tags;reusablebuild1142,frozenSource/binaryhashes inpreflight.
+Read-only: `python -m json.tool product_prototype/results/b3_gravity_rhs1160/summary.json`.
+Oldtime/meshFAIL,energyNULL,material/jointNOTMEASURED,100gnotqualified.
+
 ## Next after1136–1141 — firstNativeassemblyidentity
 
 Read product_prototype/reports/B3_INITIAL_ASSEMBLY_20261123.md.

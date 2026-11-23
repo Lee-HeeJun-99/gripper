@@ -1,0 +1,33 @@
+{
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "100",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/primitive_local_sliding1252/scene.scn"
+  ],
+  "source_commit": "394b9f86d6a4bb228d7379b12c9349e6c3c257cf",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "source_scene_sha256": "42c7dcacc8cc27ef4c72e451cd464edbb8651e69794b49b95a701a07406d0cec",
+  "scene_sha256": "222b26423ce966571e0f349ab66fc730693a8786305ba14268e37f40dee5ba86",
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "mass_kg": 0.000112,
+  "radius_m": 0.005,
+  "normalized_inertia_m2": 1e-05,
+  "mu": 0.3,
+  "dt_s": 0.0002,
+  "initial_gap_m": 2e-06,
+  "estimated_runtime_s": 1,
+  "child_limit_s": 5,
+  "memory_GiB": 4,
+  "scope": "NEW analytical sphere vs mesh support;proper sphere inertia,orientation fixture unchanged;not original thin-layer physics or jamming or grasp",
+  "tangential_force_N": 0.15,
+  "hypothesis": "Actual nearly parallel line/face contact pair caused saturation at finite-radius departure. Native local normal-cone filtering only;all collision models,geometry,load,dt,mass,solver tolerances unchanged. Prior thin mesh LMD NaN is NOT erased."
+}

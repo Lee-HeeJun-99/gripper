@@ -15,16 +15,18 @@ public:
  using Constraint=sofa::component::constraint::lagrangian::model::UnilateralLagrangianConstraint<sofa::defaulttype::Vec3Types>;
  sofa::core::objectmodel::SingleLink<ReGripContactProvenance,sofa::core::collision::NarrowPhaseDetection,Link::FLAG_STOREPATH|Link::FLAG_STRONGLINK>narrow;
  sofa::core::objectmodel::Data<std::string>filename;
+ sofa::core::objectmodel::Data<double>startTime,endTime;
  std::ofstream features,children;
- ReGripContactProvenance():narrow(initLink("narrow","Read-only actual detection outputs")),filename(initData(&filename,std::string(),"filename","Unique output prefix")){f_listening.setValue(true);}
+ ReGripContactProvenance():narrow(initLink("narrow","Read-only actual detection outputs")),filename(initData(&filename,std::string(),"filename","Unique output prefix")),startTime(initData(&startTime,0.,"startTime","Read-only sampling window start")),endTime(initData(&endTime,.00121,"endTime","Read-only sampling window end")){f_listening.setValue(true);}
  void init()override{
   BaseObject::init();if(!narrow||std::ifstream(filename.getValue()+".features.csv"))throw std::runtime_error("unique linked provenance output required");
+  if(startTime.getValue()<0||endTime.getValue()<startTime.getValue()||endTime.getValue()-startTime.getValue()>.005)throw std::runtime_error("bounded sampling window <=5ms required");
   features.open(filename.getValue()+".features.csv");children.open(filename.getValue()+".children.csv");features<<std::setprecision(17);children<<std::setprecision(17);
   features<<"previous_time_s,model0,model1,index,element0,element1,contact_id,point0,point1,normal,value\n";
   children<<"previous_time_s,constraint,state,side,row,column,point,J\n";
  }
  void handleEvent(sofa::core::objectmodel::Event*e)override{
-  if(!dynamic_cast<sofa::simulation::BuildConstraintSystemEndEvent*>(e)||getContext()->getTime()>.00121)return;
+  if(!dynamic_cast<sofa::simulation::BuildConstraintSystemEndEvent*>(e)||getContext()->getTime()<startTime.getValue()||getContext()->getTime()>endTime.getValue())return;
   double t=getContext()->getTime();
   for(const auto&pair:narrow->getDetectionOutputs()){
    if(!pair.second)continue;

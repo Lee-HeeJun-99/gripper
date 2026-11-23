@@ -1,0 +1,82 @@
+{
+  "status": "FAIL_COMPONENT",
+  "records": {
+    "primitive_local_slip1250": {
+      "status": "FAIL_COMPONENT_EXPECTATIONS",
+      "scope": "Finite-radius laboratory contact component ONLY;not time/mesh convergence,energy,thin-layer jamming,grasp or hardware qualification",
+      "criteria": {
+        "finite": true,
+        "no_penetration": false,
+        "impulse_identity": true,
+        "no_iteration_saturation": true,
+        "frictionless_x_reference": true,
+        "frictionless_v_reference": true,
+        "zero_lateral_contact": true,
+        "sphere_projection_within_support_face": true,
+        "positive_normal_support": false
+      },
+      "maximum_impulse_residual_Ns": 6.641175853721887e-19,
+      "minimum_bottom_gap_m": -0.41437687133131806,
+      "final": {
+        "time_s": 0.01999999999999999,
+        "x_m": 0.0036190418334238594,
+        "vx_m_s": 0.7910238153094334,
+        "contact_force_N": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "mu": 0.0,
+      "tangential_force_N": 0.01,
+      "normal_force_mean_N": 0.0,
+      "friction_ratio_range": null,
+      "maximum_frictionless_reference_x_error_m": 8.673617379884035e-19,
+      "maximum_frictionless_reference_v_error_m_s": 1.1102230246251565e-15,
+      "input_hashes": {
+        "results/primitive_local_slip1250/rigid.csv": "167ac0337b3b3c251fb62f5dab06194811249ecb5821d2837a8a618ff8aca60e",
+        "results/primitive_local_slip1250/preflight.json": "20ecf3d8dd5ddbbb12c351996d848885e60f55a4f7fe5da578893a675bea45d0",
+        "results/primitive_local_slip1250/scene.scn": "16b0ee0ab92dde38b2f20893dc4076c8600223bffc9f611e222b4f17abd94e90"
+      }
+    },
+    "primitive_local_sliding1252": {
+      "status": "FAIL_COMPONENT_EXPECTATIONS",
+      "scope": "Finite-radius laboratory contact component ONLY;not time/mesh convergence,energy,thin-layer jamming,grasp or hardware qualification",
+      "criteria": {
+        "finite": true,
+        "no_penetration": false,
+        "impulse_identity": true,
+        "no_iteration_saturation": true,
+        "positive_slip": true,
+        "coulomb_saturation": false,
+        "sphere_projection_within_support_face": false,
+        "positive_normal_support": false
+      },
+      "maximum_impulse_residual_Ns": 6.784474822570069e-19,
+      "minimum_bottom_gap_m": -0.41437687133131806,
+      "final": {
+        "time_s": 0.01999999999999999,
+        "x_m": 0.0542856275013579,
+        "vx_m_s": 11.865357229641504,
+        "contact_force_N": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "mu": 0.3,
+      "tangential_force_N": 0.15,
+      "normal_force_mean_N": 0.0,
+      "friction_ratio_range": null,
+      "maximum_frictionless_reference_x_error_m": null,
+      "maximum_frictionless_reference_v_error_m_s": null,
+      "input_hashes": {
+        "results/primitive_local_sliding1252/rigid.csv": "c30a6f51faec999e99d88807c1f5bf85bc470e78a5a8be282976aa4bf9dd7d8c",
+        "results/primitive_local_sliding1252/preflight.json": "73be95ac9a4cd4f0cc9af4fcf80344487d1f4b6dbc649bc59b6bb511c39eb1f5",
+        "results/primitive_local_sliding1252/scene.scn": "222b26423ce966571e0f349ab66fc730693a8786305ba14268e37f40dee5ba86"
+      }
+    }
+  },
+  "physical_product_validation": "NOT QUALIFIED",
+  "source_sha256": "018e6e1a27d5311078e01c142c2405c5fe6ecd3dc2aae44c59e0196bb6d07e76"
+}

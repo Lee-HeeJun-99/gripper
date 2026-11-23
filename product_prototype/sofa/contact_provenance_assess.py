@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 from analyse import BASE,sha
 def vec(s):return np.fromstring(s,sep=' ')
-def join(features,children,tol=1e-12):
+def join(features,children,tol=1e-12,lines=3):
  groups={}
  for c in children:groups.setdefault((c['previous_time_s'],c['constraint']),[]).append(c)
  records=[]
@@ -12,7 +12,7 @@ def join(features,children,tol=1e-12):
   first=min(int(c['row']) for c in cs)
   for row in sorted({int(c['row']) for c in cs}):
    # Installed BaseContactLagrangianConstraint: normal followed by 2 tangent rows at mu>0.
-   if (row-first)%3:continue
+   if (row-first)%lines:continue
    sides={int(c['side']):c for c in cs if int(c['row'])==row}
    # A shared surface state contains other constraints' rows. Require both
    # owner sides before attribution, rather than assigning every child row.
@@ -30,10 +30,10 @@ def join(features,children,tol=1e-12):
    records.append(r)
  return records
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--source',default='contact_provenance_run1222');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.source;files=[src/'provenance.features.csv',src/'provenance.children.csv'];f,c=[list(csv.DictReader(x.open())) for x in files];records=join(f,c);all_unique=bool(records) and all(r['match_count']==1 for r in records)
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--source',default='contact_provenance_run1222');p.add_argument('--lines',type=int,choices=[1,3],default=3);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.source;files=[src/'provenance.features.csv',src/'provenance.children.csv'];f,c=[list(csv.DictReader(x.open())) for x in files];records=join(f,c,lines=a.lines);all_unique=bool(records) and all(r['match_count']==1 for r in records)
  times=[]
  for t in sorted({r['previous_time_s'] for r in records}):
   rr=[r for r in records if r['previous_time_s']==t];times.append(dict(previous_time_s=t,normal_rows=len(rr),horizontal_normals=sum(abs(r.get('normal',[0,0,9])[2])<1e-10 for r in rr),unique=sum(r['match_count']==1 for r in rr),model_pairs=sorted({r['detector']['model0']+' | '+r['detector']['model1'] for r in rr if 'detector'in r})))
- d=dict(status='PASS_UNIQUE_FEATURE_ROW_PROVENANCE_ONLY' if all_unique else 'FAIL_AMBIGUOUS_PROVENANCE',normal_rows=len(records),all_unique=all_unique,times=times,records=records,identity_matching_tolerance=1e-12,matching_tolerance_scope='read-only coordinate/J identity matching,not contact clearance or time gate',row_layout='installed Native mu=.3 normal,tangent,tangent order;not arbitrary constraint assumption',physical_validation='NOT QUALIFIED',input_hashes={str(x.relative_to(BASE)):sha(x) for x in files},source_sha256=sha(Path(__file__)))
+ d=dict(status='PASS_UNIQUE_FEATURE_ROW_PROVENANCE_ONLY' if all_unique else 'FAIL_AMBIGUOUS_PROVENANCE',normal_rows=len(records),all_unique=all_unique,times=times,records=records,identity_matching_tolerance=1e-12,matching_tolerance_scope='read-only coordinate/J identity matching,not contact clearance or time gate',row_layout=f'installed Native normal'+(',tangent,tangent at mu>0' if a.lines==3 else ' ONLY at mu=0'),physical_validation='NOT QUALIFIED',input_hashes={str(x.relative_to(BASE)):sha(x) for x in files},source_sha256=sha(Path(__file__)))
  (out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps({k:v for k,v in d.items() if k!='records'}))
 if __name__=='__main__':main()

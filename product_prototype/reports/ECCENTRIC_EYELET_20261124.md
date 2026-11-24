@@ -36,3 +36,19 @@ Reproduce with unique new tags:
 Next actually executable cycle: generate eccentric finite solids with unchanged
 outer body, verify manifold and independent analytic volume before any assembly
 promotion. Existing time/mesh FAIL and all 100g FAIL remain unchanged.
+
+## Finite solid implementation1416
+
+Following f5f38dc, generated20 separate through-eyelet STL solids from parametric
+source `sofa/eccentric_eyelet_mesh.py`; OD3/central ID1.2/length2mm, same declared
+chamfers. All20 watertight, consistent winding, positive volume. Minimum radial
+wall lower bound0.391607276mm. Independent regular-polygon volume identity error
+≤3.56e−15mm³. Analytic circular volume and polygon discretization error are
+reported separately. Eccentricity does not change ideal removed bore volume.
+Actual mass/material/tolerance/strength NOT MEASURED; STEP NOT GENERATED.
+These are local part coordinates, not yet assembled Native/CAD hardware. The
+next cycle actually applies explicit route frames and measures STL roundtrip
+error before proposing any assembly-level qualification.
+
+Reproduce: `python product_prototype/sofa/eccentric_eyelet_mesh.py --tag NEW_MESH`
+and `python product_prototype/sofa/test_eccentric_eyelet_mesh.py`.

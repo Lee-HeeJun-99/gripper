@@ -22,15 +22,26 @@
     {
       "id": "eccentric_eyelet_manufacturing_geometry",
       "priority": 2,
-      "status": "READY",
+      "status": "PASS",
       "scope": "Generate separate finite eccentric-bore eyelet meshes and independent manifold/volume checks;not STEP or hardware strength",
       "hypothesis": "Bore centred on R5 fillet midpoint avoids local finite-wire conflict without increasing ID/OD;manufacturing and Native path still distinct",
       "prerequisites": ["eyelet_bore_and_bend_geometry"],
       "prerequisite_states": {"eyelet_bore_and_bend_geometry": ["REJECTED"]},
-      "evidence": ["eccentric_eyelet1415"],
+      "evidence": ["eccentric_eyelet1415", "eccentric_eyelet_mesh1416"],
       "validation_criteria": ["unchanged OD3/central ID1.2/length2;explicit eccentricity/chamfer,positive wall,watertight solid,independent volume;no original CAD edits"],
-      "successors": [],
+      "successors": ["eccentric_eyelet_world_placement"],
       "failure_alternatives": ["independent input-only delayed control contract"]
+    },
+    {
+      "id": "eccentric_eyelet_world_placement",
+      "priority": 2,
+      "status": "READY",
+      "scope": "Apply initial route bisectors and analytic offset axes to actual finite STL;verify transform/reload and conservative discretization budget,not dynamic hardware",
+      "hypothesis": "Local eccentric solids need explicit assembly frames to avoid changing bore side or translating unchanged outer body",
+      "prerequisites": ["eccentric_eyelet_manufacturing_geometry"],
+      "evidence": ["eccentric_eyelet_mesh1416"],
+      "validation_criteria": ["outer centres equal original guide centres;right handed axes;STL roundtrip errors measured;analytic clearance minus geometric discretization remains positive"],
+      "failure_alternatives": ["independent input-only control contract"]
     },
     {
       "id": "finite_antagonistic_four_route_gate",

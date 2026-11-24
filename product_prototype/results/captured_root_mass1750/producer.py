@@ -1,0 +1,22 @@
+"""Actual moving-root mass coupling gate, not a fixed-root kinematic promotion.
+Analytic1D mass matrix [[M+m,m],[m,m]] predicts zero base acceleration and
+child accelerationF/m for a world force on the freely sliding child.
+No duplicate scalar lumped mass may hide a missing mapping matrix.
+"""
+import argparse,csv,json,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+from native_bending_coupon import guarded
+
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results/captured_prismatic1746';out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);assert json.loads((src/'summary.json').read_text())['status']=='PASS_CAPTURED_PRISMATIC_CABLE_STOPPER_COUPON_ONLY';root=ET.parse(src/'scene.scn').getroot();ET.SubElement(root,'RequiredPlugin',pluginName='Sofa.Component.MechanicalLoad');base=ET.SubElement(root,'Node',name='base');ET.SubElement(base,'MechanicalObject',template='Rigid3d',name='root',position='0 0 0 0 0 0 1');ET.SubElement(base,'UniformMass',template='Rigid3d',vertexMass='.005 1e-8 1e-6 0 0 0 1e-6 0 0 0 1e-6');ET.SubElement(base,'NativeRigidJournal',body='@root',solver='@../constraints',filename=str(out/'base.csv'))
+ joint=root.find("Node[@name='carriage']");joint.remove(joint.find('UniformMass'));joint.remove(joint.find('StopperLagrangianConstraint'));mapped=joint.find("Node[@name='rigid']");mapped.remove(mapped.find("Node[@name='cable']"));mapped.find('ArticulatedSystemMapping').set('input2','@../../base/root');ET.SubElement(mapped,'UniformMass',template='Rigid3d',name='physicalCarriageMass',indices='1',vertexMass='.001 1e-8 1e-6 0 0 0 1e-6 0 0 0 1e-6');ET.SubElement(mapped,'ConstantForceField',template='Rigid3d',indices='1',forces='.01 0 0 0 0 0')
+ for n in root.iter():
+  for k,v in list(n.attrib.items()):n.set(k,v.replace(str(src),str(out)))
+ ET.ElementTree(root).write(out/'scene.scn');header=Path('/home/ubuntu/SOFA/v26.06.00/plugins/ArticulatedSystemPlugin/include/ArticulatedSystemPlugin/ArticulatedSystemMapping.h');pre=dict(source_sha256=sha(Path(__file__)),source_scene_sha256=sha(src/'scene.scn'),scene_sha256=sha(out/'scene.scn'),installed_mapping_header_sha256=sha(header),mass_matrix_1D_kg=[[.006,.001],[.001,.001]],external_generalized_force_N=[.01,.01],predicted_root_acceleration_m_s2=0,predicted_relative_acceleration_m_s2=10,scope='Fixed-root1746 PASS does not test transported child mass. Actual mapped rigid child UniformMass supplies it here; no duplicate scalar mass and no prescribed root/child states. Stock globally assembled Euler/SparseLDL only; no SDK/custom solver. Four no-contact steps, not FEM/grasp/joint strength.');(out/'preflight.json').write_text(json.dumps(pre,indent=2))
+ process=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','4','--hideProgressBar',out/'scene.scn'],out/'process',60);logs=''.join((out/'process'/f).read_text(errors='replace') for f in ('stdout.log','stderr.log'));valid=process['exit_code']==0 and '[ERROR]'not in logs;metrics={}
+ if valid and (out/'base.csv').exists() and (out/'body.csv').exists():
+  b=list(csv.DictReader((out/'base.csv').open()));c=list(csv.DictReader((out/'body.csv').open()));assert len(b)==len(c)==4;qbase=np.array([np.fromstring(x['rigid_q'],sep=' ') for x in b]);vbase=np.array([np.fromstring(x['rigid_v'],sep=' ') for x in b]);qchild=np.array([np.fromstring(x['rigid_q'],sep=' ').reshape(-1,7)[1] for x in c]);vchild=np.array([np.fromstring(x['rigid_v'],sep=' ').reshape(-1,6)[1] for x in c]);n=np.arange(1,5);expected=.01+10*.001**2*n*(n+1)/2;err=float(abs(qchild[:,0]-expected).max());verr=float(abs(vchild[:,0]-10*.001*n).max());baseerr=float(max(abs(qbase[:,:3]).max(),abs(vbase).max()));finite=bool(np.isfinite(qchild).all() and np.isfinite(vchild).all());valid=finite and max(err,verr,baseerr)<=1e-12;metrics=dict(finite=finite,child_position_error_m=err,child_velocity_error_m_s=verr,base_qv_error=baseerr)
+ d=dict(status='PASS_MOVING_ROOT_MAPPED_PRISMATIC_MASS_ONLY' if valid else 'FAIL_MOVING_ROOT_MAPPED_PRISMATIC_MASS',process=process,measurements=metrics,sofa_error_lines=[x for x in logs.splitlines() if '[ERROR]'in x][:12],preflight_sha256=sha(out/'preflight.json'),scope=pre['scope']);(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

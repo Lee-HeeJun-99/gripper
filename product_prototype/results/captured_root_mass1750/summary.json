@@ -1,0 +1,22 @@
+{
+  "status": "FAIL_MOVING_ROOT_MAPPED_PRISMATIC_MASS",
+  "process": {
+    "exit_code": -9,
+    "process_status": "nonlinear_failure",
+    "runtime_s": 0.10847000102512538,
+    "pid": 42,
+    "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+    "artifacts": {
+      "stdout.log": "7969bac9b6c812e015f5b41a68b9b348c324d29508ddd97821ce913ba8114a0c",
+      "command.json": "d5dc7a3f79ec1beca5f2c750f31173189cdefd3594c6745eb5dbb7fa55987cb1",
+      "stderr.log": "e0a23f458f09fe3639a3b376480eb6c91ce3d16c271ad78b31a310e383f4c275",
+      "process.json": "4da8064062d5615ef793f7188a86416ef1dc7ec2179d14dc00a238985ac8b15c"
+    }
+  },
+  "measurements": {},
+  "sofa_error_lines": [
+    "[ERROR]   [Node(rigid)] Object type ArticulatedSystemMapping<> was not created  "
+  ],
+  "preflight_sha256": "0fc6c3939b4bf125b47125180a07f94aa12d2a02b49bf4da31ff2c89019bcb91",
+  "scope": "Fixed-root1746 PASS does not test transported child mass. Actual mapped rigid child UniformMass supplies it here; no duplicate scalar mass and no prescribed root/child states. Stock globally assembled Euler/SparseLDL only; no SDK/custom solver. Four no-contact steps, not FEM/grasp/joint strength."
+}

@@ -1,3 +1,15 @@
+## 2026-11-25 — experimental dorsal yoke, NOT fabrication-qualified assembly
+
+Same-finger terminal six-foot rigid yoke1728: three finite STL parts in
+results/yoke_union1728, metres. New material excludes original support weld
+overlap; mass/inertia use explicit1000kg/m3 assumption. Original bonded
+support domains retained; actual joint retention/strain/strength unmeasured.
+No assembly STEP or real fastener/weld qualification. New100g Native1741
+fails speed and internalGuide criteria; do not propagate to production CAD.
+Captured prismatic guide mechanism needs finite rail/carriage geometry and
+an explicit inward force source (old terminal cable reference pulls outward).
+Small native joint coupons are NOT assembly or finite-wire sliding approval.
+
 ## Current1713 — completed unbraced research cycles; goal NOT achieved
 
 This supersedes ALL historical RUNNING/READY/queue-empty text below.

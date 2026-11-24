@@ -130,3 +130,50 @@ Four new producer contract tests pass; not physics certification.
 
 Actual full diagnostic command:
 `python product_prototype/sofa/yoke_holding_diagnostic.py --tag yoke_hold_diagnostic1741`
+
+##1741–1753 completed: full Holding FAIL; new translating-guide contracts
+
+1741 actual800steps/2s249.292s normal exit, min saved FEM0.989808;
+common1.2s prefix q/v difference0 (reproducibility, NOT time convergence).
+1742 original100g Holding: slip0.576782mm, maxspeed32.928255mm/s FAIL;
+Skin meanFz0.983151N vsweight0.981N; Guide/Rail/Support/other object loads0.
+Support gap42.0512mm; momentum residual4.337e-19Ns. Solver1001/1000.
+1743 internal48rows total,30IN HOLD: actual repeated terminalGuide bracing.
+Thus both FUNCTIONAL and UNBRACED FAIL. Compared with1700: fewer internal
+Hold rows99→30 but speed25.5913→32.9283mm/s worsens; do NOT select as better
+grasp design. No Lift.1747 all75hardware/1.5million saved pairframes:9within
+unchanged0.2mm buffer, all separated SAT0.199056–0.199991mm, not swept PASS.
+1748 initial+8samples/finger new-material/FEM overlap0;1749 actual18Guides
+still fail straight radius0.25mm wire fitting, flexible-wire contact unqualified.
+
+1745 quaternion swing/twist diagnosis: prefix max twist0.188811deg; removing
+twist at SAME actual COM rescues0/300 unsafe own-sector samples. Therefore
+torsion-only stiffening is not supported as the next cure by this geometric
+reference. Counterfactual poses are NEVER actual deformation or grasp results.
+
+Different mechanism: a physically keyed prismatic eyelet carriage, not a
+different fixed-guide offset and not equivalent loose-bore wire contact.
+1746 installed ArticulatedSystemMapping + NativeCableConstraint + stock
+Vec1 Stopper:40actualsteps0.169s; free discrete position error9.758e-19m;
+actual travel2mm, final velocity−1.324e-16m/s, keyed orientation/root errors0.
+Fixture mass1g/T0.01N are explicit coupon assumptions, NOT B3 hardware specs.
+1750 moving-root scene parse FAIL: input2 state defined after mapping;
+1751 corrected base order but late RequiredPlugin caused ForceField factory
+FAIL. Both preserved.1752 plugin/base before dependent components: actual
+four-step free-force moving-root response error0, base error8.674e-19.
+This initial collinear response is limited; next actual stop-transfer test
+must cause a FREE root to move, excluding a hidden fixture/mass-coupling error.
+
+1753 actual path/multiplier independent virtual-work reference: all4800
+loaded terminal samples point OUTWARD; hold outward demand1.04319–1.04394N.
+Necessary fixed-pose inward travel max1.87901mm, not a dynamic route or chosen
+stroke. A freely passive slider alone is rejected as a closing mechanism.
+Actual lagged Native J is NOT measured by this current-geometry reference.
+Need an explicit cross-draw/cam/spring force source and real carriage geometry,
+not assume the old cable automatically pulls the slider inward. No arbitrary
+spring/force increase or whole-grasp trial justified yet.
+
+Next executable native contract:
+`python product_prototype/sofa/captured_prismatic_moving_cable.py --tag captured_moving_stop1754`
+Then actual internal cross-draw cable action/reaction and finite keyed carriage
+geometry are independent prerequisites before any new3Finger trial.

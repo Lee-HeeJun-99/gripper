@@ -1,0 +1,26 @@
+"""Native captured-slider force-path coupon, NOT loose wire/eyelet contact.
+A distinct mechanical alternative: a keyed translating carriage can move an
+eyelet relative to the finger, rather than just resizing or moving fixed eyes.
+Fixed-root1DOF only; moving FEM root/full rigid inertia needs separate proof.
+"""
+import argparse,copy,csv,json,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+from native_bending_coupon import guarded
+
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);sdk=Path('/home/ubuntu/SOFA/v26.06.00');example=sdk/'plugins/ArticulatedSystemPlugin/share/sofa/examples/ArticulatedSystemPlugin/ArticulatedSystemMapping.scn';plugin=sdk/'plugins/ArticulatedSystemPlugin/lib/libArticulatedSystemPlugin.so.1.0';assert example.is_file() and plugin.is_file()
+ source=ET.parse(BASE/'results/capillary_hold1700/scene.scn').getroot();root=ET.Element('Node',name='root',dt='.001',gravity='0 0 0')
+ for n in source:
+  if n.tag in ('RequiredPlugin','FreeMotionAnimationLoop','BlockGaussSeidelConstraintSolver','EulerImplicitSolver','SparseLDLSolver','GenericConstraintCorrection'):root.append(copy.deepcopy(n))
+ ET.SubElement(root,'RequiredPlugin',pluginName=str(plugin));joint=ET.SubElement(root,'Node',name='carriage');ET.SubElement(joint,'MechanicalObject',template='Vec1d',name='coordinate',position='0');ET.SubElement(joint,'UniformMass',template='Vec1d',totalMass='.001');ET.SubElement(joint,'StopperLagrangianConstraint',template='Vec1d',index='0',min='0',max='.002')
+ mapped=ET.SubElement(joint,'Node',name='rigid');ET.SubElement(mapped,'MechanicalObject',template='Rigid3d',name='frames',position='0 0 0 0 0 0 1  .01 0 0 0 0 0 1');ET.SubElement(mapped,'ArticulatedSystemMapping',input1='@../coordinate',output='@frames');ET.SubElement(mapped,'NativeRigidJournal',body='@frames',solver='@../../constraints',filename=str(out/'body.csv'))
+ cable=ET.SubElement(mapped,'Node',name='cable');ET.SubElement(cable,'MechanicalObject',template='Vec3d',name='point',position='.01 0 0');ET.SubElement(cable,'RigidMapping',input='@../frames',output='@point',globalToLocalCoords='1',index='1');ET.SubElement(cable,'CableConstraint',template='Vec3d',name='actuator',indices='0',pullPoint='.03 0 0',valueType='force',value='.00001');ET.SubElement(cable,'NativeCableAudit',body='@point',cable='@actuator',filename=str(out/'cable.csv'))
+ ET.SubElement(joint,'ArticulatedHierarchyContainer');centres=ET.SubElement(joint,'Node',name='centres');centre=ET.SubElement(centres,'Node',name='centre');ET.SubElement(centre,'ArticulationCenter',parentIndex='0',childIndex='1',posOnParent='0 0 0',posOnChild='-.01 0 0',articulationProcess='0');arts=ET.SubElement(centre,'Node',name='articulations');ET.SubElement(arts,'Articulation',translation='1',rotation='0',rotationAxis='1 0 0',articulationIndex='0');ET.SubElement(root,'NativeConstraintJournal',solver='@constraints',filename=str(out/'constraints.csv'));ET.ElementTree(root).write(out/'scene.scn')
+ pre=dict(source_sha256=sha(Path(__file__)),scene_sha256=sha(out/'scene.scn'),sdk_example_sha256=sha(example),plugin_sha256=sha(plugin),force_N=.01,force_input_Ns=.00001,mass_kg=.001,dt_s=.001,steps=40,travel_bounds_m=[0,.002],scope='Installed ArticulatedSystemMapping prismatic joint, mapped native CableConstraint and Native1DOF Stopper. Coupon mass/input are declared fixture assumptions, NOT currentB3 motor or guide specs. No contact, material/sliding friction or FEM root represented. This keyed carriage is NOT proposed as equivalent loose-bore finite-wire contact.');(out/'preflight.json').write_text(json.dumps(pre,indent=2))
+ process=guarded([sdk/'bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','40','--hideProgressBar',out/'scene.scn'],out/'process',60);logs=''.join((out/'process'/f).read_text(errors='replace') for f in ('stdout.log','stderr.log'));valid=process['exit_code']==0 and '[ERROR]'not in logs;metrics={}
+ if valid:
+  rows=list(csv.DictReader((out/'body.csv').open()));q=np.array([np.fromstring(r['rigid_q'],sep=' ').reshape(-1,7) for r in rows]);v=np.array([np.fromstring(r['rigid_v'],sep=' ').reshape(-1,6) for r in rows]);n=np.arange(1,len(q)+1);s=q[:,1,0]-.01;free=n<=15;expected=.5*10*.001**2*n*(n+1);error=float(abs(s[free]-expected[free]).max());root_error=float(abs(q[:,0,:3]).max());rotation_error=float(abs(q[:,:,3:]-[0,0,0,1]).max());metrics=dict(outputs=len(q),free_discrete_position_error_m=error,fixed_root_error_m=root_error,rotation_error=rotation_error,minimum_travel_m=float(s.min()),maximum_travel_m=float(s.max()),last_travel_m=float(s[-1]),last_velocity_m_s=float(v[-1,1,0]));valid=len(q)==40 and max(error,root_error,rotation_error)<=1e-12 and s.min()>=-1e-12 and s.max()<=.002+1e-12 and abs(s[-1]-.002)<=1e-12 and abs(v[-1,1,0])<=1e-12
+ d=dict(status='PASS_CAPTURED_PRISMATIC_CABLE_STOPPER_COUPON_ONLY' if valid else 'FAIL_CAPTURED_PRISMATIC_COUPON',process=process,measurements=metrics,preflight_sha256=sha(out/'preflight.json'),scope=pre['scope']);(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

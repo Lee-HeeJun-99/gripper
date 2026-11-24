@@ -1,3 +1,16 @@
+## 2026-11-25 through1753 — new mechanisms tested; UNBRACED target FAIL
+
+Clutch1715 removes internal rows but unstable approach; rejected.
+Finite same-finger dorsal yoke1728 actually implemented with union-corrected
+mass/COM/inertia, original six-foot bond and all collisions. Actual2s1741:
+249.292s, no saved inversion.1742 speed32.928255mm/s FAIL, slip0.576782mm,
+SkinFz0.983151N, hardware/support object loads0.1743 internal30Hold rows.
+Reduced internal rows are NOT an unbraced or overall performance PASS.
+New native captured-slider/stop coupon1746 and limited moving-root1752 pass
+within small-coupon scope ONLY; passive slider force direction1753 rejected.
+No old result reclassified; contact/time/mesh/energy failures unchanged.
+See SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md for exact inputs/hashes/commands.
+
 ## Current1713 — completed unbraced research cycles; goal NOT achieved
 
 This supersedes ALL historical RUNNING/READY/queue-empty text below.

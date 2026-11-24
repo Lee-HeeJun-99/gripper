@@ -1,3 +1,21 @@
+## Current1753 — full100g yoke Holding FAIL; captured-guide mechanism opened
+
+1741 completed800steps/2s249.292s, positiveFEM, common-prefix q/v diff0.
+1742 Holding slip0.576782mm, speed32.928255mm/s FAIL; SkinFz0.983151N,
+Guide/Rail/Support object load0;1743 actual48internal rows/30IN HOLD.
+UNBRACED FAIL, no Lift.1747 actual75hardware/1.5million pairframes:9inside
+0.2mm buffer but separated solids.1749finite-wire straight-bore nonfits18.
+Do not repeat yoke, force, buffer or rung dimensions; prior failures retained.
+1745 twist removal does not rescue unsafe sector samples: torsion-only cure
+not supported. NEW captured prismatic-guide mechanism has actual native
+fixed-root cable/stop coupon1746 PASS, limited moving-root force coupon1752
+PASS after preserved scene ordering failures1750/1751.1753 geometric ideal
+cable force points outward: passive slider alone REJECTED, explicit inward
+actuation and finite carriage geometry needed. Not a finite-wire-contact fix.
+Next READY actual moving-root/Cable/Stopper momentum contract1754 (no child
+currently running). Full results/hashes/commands in
+SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md. Final target NOT achieved.
+
 ## Current1741 — actual full diagnostic RUNNING; zero-internal-row gate FAIL
 
 1734 actual1.2s149.121s, valid FEM.1738:15internal terminalEyelet5 rows

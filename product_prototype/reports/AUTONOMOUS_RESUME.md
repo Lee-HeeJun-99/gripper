@@ -1,3 +1,21 @@
+## Current1753 — full yoke FAIL, captured-guide Native path ready for next gate
+
+All Native children through1753 completed; no process remains running.
+1741 full actual2s249.292s;1742 speed32.928255mm/s FAIL, slip0.576782mm;
+1743 repeated internalGuide rows30inHold/48total. No UNBRACED or Lift PASS.
+1746 captured prismatic cable/stop coupon PASS within fixed-root1D scope;
+1752 limited moving-root mapped mass/force response PASS.1750/1751 scene
+ordering failures retained, not unsupported-SOFA claims.1753 reference old
+terminal cable force is outward: passive carriage is not a closing actuator.
+Next READY command (new file only, not a repeat):
+`python product_prototype/sofa/captured_prismatic_moving_cable.py --tag captured_moving_stop1754`
+Verify stop reaction moves free root and matches independent2x2 dynamics.
+Then internal cross-draw/active carriage force mechanism and finite carriage
+geometry preflight. Do NOT launch another3Finger trial from component PASS.
+Actual laggedJ, full6DOF/moving FEM root, real materials/friction/finite-wire,
+time/mesh/energy/hardware remain unqualified. All originalRaw/verdicts intact.
+Local HEAD/save: `git log -1 --oneline`; no push/history rewrite/SDK changes.
+
 ## Current1741 — full diagnostic actually RUNNING; no whole-motion PASS
 
 Latest saves: `git log -5 --oneline`; start05252d7, cached origin05252d7

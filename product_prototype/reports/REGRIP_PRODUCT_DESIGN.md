@@ -1,3 +1,17 @@
+## 2026-11-25 — dorsal rung research candidate rejected for grasp qualification
+
+Added finite same-finger0.8mm dorsal terminal rung, not inter-finger brace.
+Geometry/source1723/1728, union-only added material12.874–12.922mg/finger
+at ASSUMED1000kg/m3, full COM/inertia included. Perfect rigid six-foot weld
+is a research idealization; original guide masses inherited, not calibrated.
+Original300part production CAD is NOT replaced or qualified by this model.
+Full Native1741 Holding fails speed/internal-bracing, no product selection.
+New translating keyed guide is a mechanism candidate, not an adopted part:
+component coupons1746/1752 pass, actual force reference1753 requires an
+explicit inward actuator; free passive sliding is not a closing mechanism.
+Finite carriage/rail geometry and real joint/friction/material data remain
+prerequisites. No fabrication/STEP/hardware readiness claim.
+
 ## Current1713 — completed unbraced research cycles; goal NOT achieved
 
 This supersedes ALL historical RUNNING/READY/queue-empty text below.

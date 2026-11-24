@@ -1,3 +1,15 @@
+## Git repair completed — 2026-11-24
+
+Explicitly authorized unpublished-history repair removed ONLY tracked
+layer_mesh_native1260/layer_pairs.csv; original local Raw and external backup
+preserved. 30 commits verified,9 SHA changes,21 unchanged. Published remote
+9d954a8 and unrelated refs unchanged. Cleaned history tip00e9713; ordinary
+fast-forward possible;no push performed. Historical Git FAIL records below
+are preserved as historical evidence,not current branch verdict.
+See GIT_LAYER_PAIRS_CLEANUP_20261124.md for fullbackup,mapping,verification.
+Research queue unchanged: next bounded Native section-refined pilot. No
+SOFA run,old evidence regeneration or physics verdict change for Git repair.
+
 ## Section interpolation / face traction1279–1285 — 2026-11-24
 
 Continued from4372ac1 clean. Local feature commits c3d2e9e and2645971.

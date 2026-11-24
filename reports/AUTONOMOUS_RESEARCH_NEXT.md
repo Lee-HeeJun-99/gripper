@@ -1,3 +1,12 @@
+## Git publication blocker repaired — 2026-11-24
+
+User-authorized targeted unpublished-history cleanup complete. Only oversized
+layer_mesh_native1260/layer_pairs.csv removed from tracking; Raw stays local
+and externally backed up.30 commits compared,9 rewritten,published base and
+other refs unchanged. No push. Read product report GIT_LAYER_PAIRS_CLEANUP_
+20261124.md before publication/recovery;old Git FAIL logs below immutable.
+Research nexttask unchanged;do not rerun research merely for Git cleanup.
+
 ## Next after1279–1285 — loaded section Native pilot
 
 Exact-field section test and consistent face traction implemented;actual

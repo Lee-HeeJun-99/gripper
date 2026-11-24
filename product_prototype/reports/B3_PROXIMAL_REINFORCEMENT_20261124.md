@@ -61,6 +61,29 @@ candidate;material provenance needed before claiming bareSkin contribution.
 17 contact-layer software regression tests pass,including3new reinforcement
 checks. Software checks are not time/mesh/physics certification.
 
+## Follow-on actual provenance and all-finger comparison
+
+After featured80265b,actually executed frozen1242 read-only observer1374 on
+the1.2s candidate,63.210s runtime. All9physical journals exactly equal the
+original480outputs.1377 uniquely joins74normalrows at previous1.195/1.1975s.
+1378 maps9active rows:all actual Skin at100mm,none added reinforcement;
+no unmatched activepoints. This is sampled normal-row provenance,not whole
+tangential force partition/contact area/distributed wrapping.
+
+1375 analysis incorrectly asserted allthree tipangles mustworsen,failedbefore
+measurementserialization. Failure retained; source snapshot NOTCAPTURED before
+patch. Corrected1376 writes actual data without assumed outcome:1.2s tipangle
+changes candidate-minusbaseline −.895115,+.799535,−1.287919degrees. Hence
+nonuniform coupled response,NOT universal stiffening or universal worsening.
+Firstfinger observation remains valid;candidate is not selected as a consistent
+shape-retention improvement. No extraNative Holding run performed.
+
+Next READY:independent fixed-boundary small-load composite-bending comparison
+of old and addedbacking,using exactsame baselinefootprint/root and material.
+This isolates whether discrete coupledFEM/mapping actually gains intended
+bendingstiffness BEFORE interpreting staticsectionI as dynamicimprovement.
+No force/material/thickness sweep. Full100gHolding/Lift/time/meshremainblocked.
+
 ## Reproduction (never reuse an existing result tag)
 
 Use `/home/ubuntu/miniconda3/envs/robot_ws/bin/python` and repo root:

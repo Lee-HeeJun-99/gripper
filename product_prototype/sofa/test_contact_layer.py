@@ -3,6 +3,12 @@ from analyse import BASE
 from contact_layer_union import exterior
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 class ContactLayerTests(unittest.TestCase):
+ def test_reinforcement_contacts_are_skin_tip_not_backing(self):
+  d=result('proximal_reinforcement_material1378');self.assertEqual(d['mapped_material_station_span_mm'],[100,100]);self.assertEqual(len(d['records']),9);self.assertTrue(all(r['material_label']=='Skin' for r in d['records']));self.assertEqual(d['unmapped_active_rows'],[])
+ def test_reinforcement_readonly_purity(self):
+  d=result('proximal_reinforcement_provenance1374');self.assertEqual(d['status'],'PASS_READ_ONLY_PREFIX');self.assertEqual(len(d['exact_record_equality']),9);self.assertTrue(all(d['exact_record_equality'].values()))
+ def test_reinforcement_asymmetric_comparison_not_assumed_uniform(self):
+  d=result('proximal_reinforcement_compare1376');self.assertFalse(d['all_three_endpoint_tip_angles_worse']);self.assertFalse(d['all_three_endpoint_tip_angles_better']);self.assertEqual(len(d['records']),6);self.assertEqual(result('proximal_reinforcement_compare1375')['status'],'FAIL_ANALYSIS_ASSERTION')
  def test_reinforcement_added_mass_not_equal_volume(self):
   d=result('proximal_reinforcement_geometry1364');self.assertEqual(d['interface_triangles_cancelled'],56);self.assertTrue(all(r['mass_kg']>0 and r['unchanged_guide_anchors']==36 for r in d['records']))
  def test_reinforcement_independent_coupon(self):

@@ -1,5 +1,10 @@
 ## Latest continuation through1373 — 2026-11-24
 
+Follow-on1374–1378completedafterfeature d80265b: frozenobserveractual1.2srun
+63.210s,9journalsEXACT.1378all9active samplednormalrowsSkin100mm.1376allfinger
+comparisonmixed −.895,+.800,−1.288°notuniversalworseningorimprovement;1375bad
+analysisassertion retainedasFAIL. NextREADY reinforcement_discrete_bending_contract.
+
 Finite proximal reinforcement1364–1373 actuallyimplemented andNativeexecuted.
 0.125mm added behindexisting2mmrails0–70mm,85.354939mg/finger,not equalvolume.
 Original physical graph/108guideanchors unchanged afterdeclared exteriorunion

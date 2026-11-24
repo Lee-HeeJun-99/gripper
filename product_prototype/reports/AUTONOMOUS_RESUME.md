@@ -84,3 +84,16 @@ git log -2 --oneline
 Git repair completed previously;no further rewrite or push. New stageguard
 rejects detector.csv AND layer_pairs.csv of ANY size;history check preserves
 old smaller journals and checks100MB limit. Old timestamps/verdicts retained.
+## Latest continuation1378 — 2026-11-24
+
+Feature d80265b,then actual frozen-observerNative1374(63.210s) andmaterialjoin
+1377/1378.9journalsEXACT480outputs;9active samplednormalrows areSkin100mm,
+NOT addedbacking.1375analysisassertionFAILretained;1376actualallfingercomparison
+mixed −.895,+.800,−1.288°at1.2s. Candidate notselected;fullHoldingNOTMEASURED.
+No Nativepending. NextREADY reinforcement_discrete_bending_contract; inspect
+sofa/proximal_reinforcement_geometry.py and1364/1368/1370Scene before building
+same-root/same-load discrete composite-bending comparison. Do not rerunexisting
+grasp or increaseforce/damping. Currentqueue/checkpoint/report authoritative.
+Reproduction of newanalysis(useNEWtag):
+`python product_prototype/sofa/proximal_reinforcement_compare.py --tag NEW_COMPARE`
+`python -m unittest discover -s product_prototype/sofa -p test_contact_layer.py`

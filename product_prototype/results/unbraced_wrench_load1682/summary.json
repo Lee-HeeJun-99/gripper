@@ -1,0 +1,68 @@
+{
+  "status": "ACTUAL_INTERNAL_HARDWARE_WRENCH_INVENTORY_NOT_UNBRACED_PASS",
+  "case": "unbraced_wrench1681",
+  "source_resolved_body_rows": 15414,
+  "active_constraint_rows": 7707,
+  "maximum_pair_linear_impulse_imbalance_Ns": 2.710505431213761e-20,
+  "maximum_pair_origin_angular_impulse_sum_Nms": 7.947645378803896e-08,
+  "hold": [
+    {
+      "finger": 0,
+      "hold_samples": 161,
+      "mean_internal_hardware_force_N": [
+        0.0667178945459472,
+        0.0003271939819033392,
+        -0.0032928923968516
+      ],
+      "maximum_per_body_contact_force_N": 0.04554578975983344,
+      "maximum_per_body_contact_moment_Nm": 0.00021573785165767586
+    },
+    {
+      "finger": 1,
+      "hold_samples": 161,
+      "mean_internal_hardware_force_N": [
+        -0.03317173359324377,
+        0.056961653185744233,
+        0.001496604764408975
+      ],
+      "maximum_per_body_contact_force_N": 0.048375293278921455,
+      "maximum_per_body_contact_moment_Nm": 0.00022244144961212288
+    },
+    {
+      "finger": 2,
+      "hold_samples": 161,
+      "mean_internal_hardware_force_N": [
+        -0.03354616095270349,
+        -0.057288847167647594,
+        0.0017962876324426262
+      ],
+      "maximum_per_body_contact_force_N": 0.048375293278921455,
+      "maximum_per_body_contact_moment_Nm": 0.00021784501811629147
+    }
+  ],
+  "source_pairs": {
+    "/guides0/cable0/eyelet5/PointCollisionModel1 | /guides1/cable1/eyelet5/LineCollisionModel1": 2952,
+    "/guides0/cable1/eyelet5/LineCollisionModel1 | /guides2/cable0/eyelet5/LineCollisionModel1": 24,
+    "/guides0/cable1/eyelet5/LineCollisionModel1 | /guides2/cable0/eyelet5/PointCollisionModel1": 1680,
+    "/guides0/cable0/eyelet5/LineCollisionModel1 | /guides1/cable1/eyelet5/PointCollisionModel1": 1698,
+    "/guides0/cable1/eyelet5/PointCollisionModel1 | /guides2/cable0/eyelet5/LineCollisionModel1": 2910,
+    "/guides0/cable0/eyelet5/TriangleCollisionModel1 | /guides1/cable1/eyelet5/PointCollisionModel1": 6,
+    "/guides0/cable1/eyelet5/PointCollisionModel1 | /guides2/cable0/eyelet5/PointCollisionModel1": 426,
+    "/guides0/cable0/eyelet5/PointCollisionModel1 | /guides1/cable1/eyelet5/PointCollisionModel1": 480,
+    "/guides1/cable0/eyelet5/PointCollisionModel1 | /guides2/cable1/eyelet5/LineCollisionModel1": 2334,
+    "/guides1/cable0/eyelet5/PointCollisionModel1 | /guides2/cable1/eyelet5/PointCollisionModel1": 2094,
+    "/guides1/cable0/eyelet5/LineCollisionModel1 | /guides2/cable1/eyelet5/PointCollisionModel1": 786,
+    "/guides1/cable0/eyelet5/LineCollisionModel1 | /guides2/cable1/eyelet5/LineCollisionModel1": 24
+  },
+  "scope": "Actual parent J^T lambda/dt, summed by body and timestep. Forces can brace fingers although sum across fingers cancels. Moments at Native free/reference centre; parent projection/other loads not whole attachment reaction. Nonzero pair moment may reflect distinct contact points/linearization. No work/energy closure or causal support-removal proof.",
+  "source_sha256": "7804a3c26ee5554ba3e7b3d0c2e4bbec5d49a88e02614274963861593b54abd5",
+  "input_hashes": {
+    "scene.scn": "f1d81b71a1b585be7ea695589fb95025dc5a3fe6851354dc1c17d1f19329bd3a",
+    "summary.json": "4d0801502d0c345756d05bca8e7b297290ba4741d1004636b0f489ebe7787cbb",
+    "response_rows.csv": "e349613fae5c35a0157794f7dc84a7e968d3c2fc4c037d5205aa32f3fffd5cc6",
+    "object.csv": "741b77ccddbe23eb98742fecf805f1ad5d77f02bb599eab78fbc26a75a77f840",
+    "direct0.csv": "f9a5dc6dbfea1504e92dcdbbf93f4b0942db15fd713d5b08854e7663ecc83679",
+    "direct1.csv": "8d5da84fdf7feb7dc546d0f3f1f15e1a860f988dcf23522feed87e3e5e08f650",
+    "direct2.csv": "3405f9cdcfc9e77d6c0b6d04ca663a581695ddc18699422ac2e0ccbaa750d318"
+  }
+}

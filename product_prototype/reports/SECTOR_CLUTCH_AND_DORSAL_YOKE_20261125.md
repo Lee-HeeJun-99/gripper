@@ -99,3 +99,34 @@ python product_prototype/sofa/yoke_deformed_material_screen.py --case UNIQUE_PIL
 python product_prototype/sofa/actual_hardware_clearance.py --case UNIQUE_PILOT --tag UNIQUE_CLEARANCE
 python product_prototype/sofa/dorsal_yoke_native.py --tag UNIQUE_PREFIX --design UNIQUE_GEOMETRY --mass-contract UNIQUE_MASS --duration 1.2 --pilot UNIQUE_PILOT --pair-case UNIQUE_PAIRS
 ```
+
+##1734–1741: withdrawal prefix and declared full diagnostic
+
+1734 actual1.2s480steps149.121s: min saved FEM0.989808, shared terminal
+mapping1.388e-17m.1738 internal15nonzero rows at1.0575–1.0675s, exclusively
+F0Cable1/F2Cable0 terminalEyelet5. Whole-motion zero-row gate remains FAIL.
+1739 sampled new-material/FEM intersections0 (840cell tests);1740 all75parts,
+900000pairframes, two frames inside0.2mm buffer but actual envelope SAT
+separation0.199711/0.199881mm. This is NOT zero internal support.
+Original1700 bracing starts0.7125s; yoke delays but does not eliminate it.
+At1.2s actual object speed21.603mm/s; formal Hold window not yet observed.
+
+1741 actual full2s diagnostic is now running, not a qualified unbraced trial.
+Reason: short transient disappeared before1.2s; determine actual recurrence
+and1.6–2.0s object performance rather than infer either from a prefix.
+No collision, friction, force, dt, shape or physical gate changed. Full-path
+UNBRACED is already FAIL due15earlier rows, even if later Hold has none.
+Runtime estimate uses new measured stage evidence, not a physical gate change:
+149.121s observed1.2s +2*(149.121−87.087)/.6*.8 =314.543s, hard420s/4GiB.
+No initial-state checkpoint or object forcing; full run starts from original
+initial conditions and common-prefix q/v must reproduce exactly.
+Original2mm slip/5mm_s speed/5mm gap/1e-5N support gates remain unchanged.
+Do not promote a functional observation to numerical/physical/hardware PASS.
+
+1736 indexes all original102 task evidence:53PASS,24FAIL,15REJECTED,9BLOCKED,
+1NOT MEASURED. Missing root causes stay explicit, not fabricated.1737 exact
+scene-attribute whitelist confirms no undeclared original grasp input changes.
+Four new producer contract tests pass; not physics certification.
+
+Actual full diagnostic command:
+`python product_prototype/sofa/yoke_holding_diagnostic.py --tag yoke_hold_diagnostic1741`

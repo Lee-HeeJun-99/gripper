@@ -2,6 +2,21 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
+      "id": "dorsal_yoke_full_hold_diagnosis",
+      "priority": 0,
+      "status": "RUNNING",
+      "scope": "Full2s diagnostic with known15transient internal prefix rows; NOT promotion through whole-motion zero-row gate",
+      "hypothesis": "Yoke prefix delays bracing to1.0575s and rows vanish after1.0675s. Only actual full-Hold observations can distinguish sustained bracing recurrence from a short closing transient; neither is inferred from a prefix",
+      "prerequisites": [],
+      "evidence": ["yoke_union_prefix1734", "yoke_prefix_internal1738", "yoke_prefix_clearance1740", "yoke_prefix_material1739"],
+      "expected_outputs": ["Actual2s100g Native trajectory and original goal/force partition; full internal row audit and immutable source provenance"],
+      "validation_criteria": ["Original1.6–2s2mm/5mm_s5mm/1e-5N gates unchanged", "WHOLE-MOTION UNBRACED remains FAIL if ANY internal row; report this separately from object functional result", "No FEM inversion, all hardware collision enabled, exact common-prefix q/v reproduction"],
+      "failure_criteria": ["Grasp criteria fail, internal loads recur in Hold, inverted FEM or child420s timeout"],
+      "maximum_execution_cost": "4GiB/420s hard cap; measured phase-informed remaining2x estimate314.54s",
+      "failure_alternatives": ["Actual shape/rigid rotation versus local guide splay decomposition; no blind rung size or tension scan"],
+      "successors": ["New independent structural hypothesis from observed failure location, not assumed success"]
+    },
+    {
       "id": "finite_sector_clutch_control",
       "priority": 0,
       "status": "REJECTED",
@@ -19,11 +34,11 @@
     {
       "id": "same_finger_dorsal_yoke",
       "priority": 0,
-      "status": "RUNNING",
+      "status": "FAIL",
       "scope": "A finite transverse rung joins ONLY opposite terminal guides of one finger; actual added geometry/mass/COM/inertia, not inter-finger bracing",
       "hypothesis": "Closing the same-finger transverse structural loop may suppress independent guide splay without removing collision or increasing force; previous width/reinforcement candidates did not weld opposed terminal frames",
       "prerequisites": [],
-      "evidence": ["unbraced_wrench_load1682", "capillary_hold1700", "sector_route1707", "indexed_mass1720", "dorsal_yoke1723", "dorsal_yoke_pilot1724", "yoke_bond1725", "yoke_union1728", "yoke_inertia1729"],
+      "evidence": ["unbraced_wrench_load1682", "capillary_hold1700", "sector_route1707", "indexed_mass1720", "dorsal_yoke1723", "dorsal_yoke_pilot1724", "yoke_bond1725", "yoke_union1728", "yoke_inertia1729", "yoke_union_prefix1734", "yoke_prefix_internal1738"],
       "expected_outputs": ["Indexed native mass contract, finite rung geometry and initial object/wire/FEM gate, bounded Native trial if gates pass"],
       "validation_criteria": ["Exact assembly of distinct native rigid masses under constant loads", "Positive watertight bridge geometry, no initial object or foreign hardware interference, actual original anchor coordinates preserved", "Actual saved FEM positive, no hidden object support or contact removal"],
       "failure_criteria": ["Mass assembly mismatch, initial collision, invalid mapping/FEM or continued internal bracing"],

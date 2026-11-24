@@ -1,0 +1,26 @@
+{
+  "source_sha256": "dddf889ff8407db625e556b4e3a882a36bfe6d07cb688075752857f59a6cf0e1",
+  "design_case": "yoke_union1728",
+  "geometry_summary_sha256": "9eb71faf24fd0d5cb7f8c10b47ae567c10f94c99ffb78c0c9c3cdfbaa4d83b36",
+  "indexed_mass_contract_sha256": "15bada3e26674ee1fc92254e0e54549b38819056e9cc6728420b00d25f43d9f2",
+  "initial_FEM": [
+    {
+      "finger": 0,
+      "initial_FEM_coordinate_difference_m": 0,
+      "minimum_absolute_tet_volume_m3": 1.653837716458403e-10
+    },
+    {
+      "finger": 1,
+      "initial_FEM_coordinate_difference_m": 0,
+      "minimum_absolute_tet_volume_m3": 1.6538377164583384e-10
+    },
+    {
+      "finger": 2,
+      "initial_FEM_coordinate_difference_m": 0,
+      "minimum_absolute_tet_volume_m3": 1.653837716458344e-10
+    }
+  ],
+  "scope": "One shared terminal rigid body per finger, finite dorsal0.8mm rung. All original guide/support/skin/rail collisions preserved plus real rung collisions. Six original feet rigidly bonded; NO inter-finger joint. Added density1000kg/m3 and rigid perfect bond are declared assumptions, NOT measured hardware. Original guide inertia inherited; actual yoke COM/inertia from closed-solid integration+parallel-axis. Initial geometry ONLY, no swept/full grasp or real finite-wire sliding qualification. MASS UNION CORRECTION: only rung material outside original supports adds density-derived mass/inertia; initial world geometry/feet/FEM/wire path unchanged. Not a material calibration.",
+  "density_assumption_kg_m3": 1000.0,
+  "variable": "Physical terminal same-finger rung, shared6foot rigid body, added finite geometry and correct assumed mass/COM/inertia; not material/force/solver changes"
+}

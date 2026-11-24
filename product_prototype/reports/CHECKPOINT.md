@@ -1,3 +1,17 @@
+## Current1741 — actual full diagnostic RUNNING; zero-internal-row gate FAIL
+
+1734 actual1.2s149.121s, valid FEM.1738:15internal terminalEyelet5 rows
+at1.0575–1.0675s; WHOLE-MOTION UNBRACED FAIL retained.1739 sampled new-rung
+material/FEM overlap0.1740 two saved buffer-unclear frames, separated solids.
+1741 full2s Native DIAGNOSTIC now RUNNING (420s/4GiB, forecast314.543s from
+two measured stages). Not promotion past that failure: actual Hold recurrence
+and object speed/slip need measurement, not prefix extrapolation. No input
+change beyond longer duration; prefix q/v reproducibility will be checked.
+Do NOT rerun1741 or hash its changing Raw while active. After completion:
+`python product_prototype/sofa/grasp_goal_assess.py --case yoke_hold_diagnostic1741 --tag yoke_goal1742`
+`python product_prototype/sofa/mechanism_contact_inventory.py --case yoke_hold_diagnostic1741 --tag yoke_hold_internal1743`
+Research details: SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md.
+
 ## Current1733 — union-mass corrected dorsal yoke; withdrawal test next
 
 1730 actual0.6s/240steps:87.087s, positive saved FEMmin0.990450.

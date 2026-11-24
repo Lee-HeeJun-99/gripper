@@ -1,3 +1,22 @@
+## Current1741 — full diagnostic actually RUNNING; no whole-motion PASS
+
+Latest saves: `git log -5 --oneline`; start05252d7, cached origin05252d7
+(local cached reference only; no remote network/push). Original102 task
+evidence explicitly indexed1736. New clutch1715 rejected: no internal rows,
+but unstable approach. New same-finger terminal yoke1723/1728 implemented
+and actual Native mass/mapping/bond geometry validated within stated scope.
+1734 withdrawal prefix valid FEM but15terminal internal rows1.0575–1.0675s:
+whole-motion UNBRACED FAIL, not reclassified. Actual full2s diagnostic1741
+now RUNNING with314.543s phase-informed estimate, hard420s/4GiB.
+Do not rerun/hash active output. Check actual process/files before restart.
+After normal completion, assess original Hold and internal pair rows:
+`python product_prototype/sofa/grasp_goal_assess.py --case yoke_hold_diagnostic1741 --tag yoke_goal1742`
+`python product_prototype/sofa/mechanism_contact_inventory.py --case yoke_hold_diagnostic1741 --tag yoke_hold_internal1743`
+Then finite75part geometry/actual FEM/wire checks. A zero-Hold-row result
+would NOT erase the15closing rows or certify entire-motion independence.
+No SDK/push/history rewrite. All CSV local; helper and actual Native source
+hashes/binaries are preserved by per-case preflight and completed manifests.
+
 ## Current1714 — passive clutch sensor validated; active contrast READY
 
 Start05252d7; original102-task review did not imply project completion.

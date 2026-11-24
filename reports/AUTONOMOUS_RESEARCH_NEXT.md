@@ -1,3 +1,15 @@
+## Active after1508 — width-only100g trial actuallyrunning
+
+1483/1484/1496fullNativecomplete,goals1488/1487/1502FAIL. Bestverticalcapture
+equatorial1496slip.795mm/SkinFz.984N/GuideRailSupport0but69.04mm/sFAILspeed.
+Neverpromotethis toHoldingPASS. Newuntapered24mmwidthcandidateactualsingle1504
+and3Finger.6s1505positiveFEM/corematerialandmass+7.2776%. Samecentreline/T1.5/
+materials/mu;hardwaremasses retained. Full2suntapered_hold1001506RUNNINGunder
+420s/4GiB. Inspectactualsummary/processfirst,thenuniquegrasp_goal_assess.py
+tag. No100gPASSyet. NoFootspan1152repeat/forceincrease/dtsearch. Latestproduct
+AUTONOMOUS_RESUME,queue andFINITE_WIRE_AND_100G_GOAL_20261124.md contain
+reproduction/sourcehashes/actualworkandGuide-motion limits. No backgroundpromise.
+
 ## Active after1486 — conformal100g fullHolding trials
 
 Finitewire/Eyeletcontact+sliding1431/32/36DONEconditionalzero-frictioncoupon.

@@ -2,7 +2,7 @@
 Radius/placement derive from R30+.5mm initialinnerface allowance;route is
 derived from finite-guide/object/sector clearances,not offset performance scan.
 """
-import argparse,csv,json,math,subprocess,xml.etree.ElementTree as ET
+import argparse,copy,csv,json,math,subprocess,xml.etree.ElementTree as ET
 from pathlib import Path
 import numpy as np
 import trimesh
@@ -21,7 +21,11 @@ def continuation_cost(pilot,prefix,target,geometry,force):
  for name in ('object.csv','finger0.csv','finger1.csv','finger2.csv'):
   x=list(csv.DictReader((earlier/name).open()));y=list(csv.DictReader((latest/name).open()));assert x==y[:len(x)],'Wallcost comparison needs identical accepted prefix'
  rate=(hi['process']['runtime_s']-lo['process']['runtime_s'])/(hi['duration_s']-lo['duration_s']);forecast=hi['process']['runtime_s']+2*rate*(target-hi['duration_s']);return forecast,dict(method='Completed full-run cost plus2x measured marginal interval cost;hard420s unchanged',pilot=pilot,prefix=prefix,remaining_wall_rate_s_per_simulation_s=rate,forecast_s=forecast,accepted_prefix_exact=True,summary_hashes=[sha(earlier/'summary.json'),sha(latest/'summary.json')])
-def make(root,c,m,dorsal_terminal=False):
+def make(root,c,m,dorsal_terminal=False,equatorial_entry=False):
+ if equatorial_entry:
+  # Preserve original cradle distal spatial points and70.172deg terminal angle.
+  # Replace proximal tangent by equatorial vertical entry;not a pitch sweep.
+  Rc=c['simulation']['sphere_radius_mm']+.5+c['finger']['skin_thickness'];c['finger']['precurve']['start_mm']-=Rc*math.radians(c['palm']['root_angle_deg']);c['palm']['root_angle_deg']=0
  centre=np.array(c['simulation']['sphere_center_mm']);assert np.array_equal(centre[:2],[0,0]);R=c['simulation']['sphere_radius_mm'];skin=c['finger']['skin_thickness'];Rc=R+.5+skin;start=c['finger']['precurve']['start_mm'];span=100-start;tilt=math.radians(c['palm']['root_angle_deg']);c['finger']['precurve']=dict(start_mm=start,angle_deg=math.degrees(span/Rc),reference='NEW manufactured stress-free circular cradle;not prescribed deformation');c['palm']['mount_radius']=start*math.sin(tilt)+Rc*math.cos(tilt);dz=float(centre[2]+start*math.cos(tilt)-Rc*math.sin(tilt));proxy=float(root.find("Node[@name='guides0']/Node[@name='cable0']/SphereCollisionModel").get('radius'))*1000;last=c['tendon']['guide_stations'][-1];theta=tilt+(last-start)/Rc;sector=2*(proxy+c['tendon']['sector_margin_mm']);desired=R+proxy+.5;A=1+3*math.cos(theta)**2;B=-2*math.sqrt(3)*math.cos(theta)*sector;C=sector**2-desired**2;d=(-B+math.sqrt(B*B-4*A*C))/(2*A);offset= min(c['tendon']['normal_offset'],Rc-d);assert offset>0
  if dorsal_terminal:offset=-c['finger']['rail_thickness']
  u=(last-90)/10;h=u*u*(3-2*u);tip=3+(offset-3)/h;c['tendon']['distal_profile']=dict(start_mm=90,tip_offset_mm=tip)
@@ -44,9 +48,25 @@ def make(root,c,m,dorsal_terminal=False):
  gap=min(float(np.linalg.norm(groups[i][:,None]-groups[j][None,:],axis=2).min()-2*proxy) for i in range(3) for j in range(i));c['research_root_translation_z_mm']=dz;geometry=dict(innerface_radius_mm=Rc-skin,base_reference_radius_mm=Rc,reference_angle_deg=c['finger']['precurve']['angle_deg'],root_radius_mm=c['palm']['mount_radius'],root_translation_z_mm=dz,dorsal_terminal=dorsal_terminal,distal_last_guide_normal_offset_mm=offset,distal_profile_tip_offset_mm=tip,minimum_interfinger_guide_sphere_gap_mm=gap,records=records,routes_mm=routes,scope='New manufactured reference and necessary finite-route placement;not isolatedone-variable efficiency gain. Originalassigned masses/idealguideinertias retained,actualvolumechangesexplicit;not equaldensity/volume proof or CADhardwarequalification. No object relocation/forceddeformation. Initialpolyline stays in its eroded convex120deg sector via sharedguide_outboard;not dynamicwire/bore/wholehardware validation. Dorsal option after1472actualGuide-first collision puts98mm terminal on existingRailbackplane(-.5mm),retains hardwarecollision size and allDOFs;not collision disable or randomoffset sweep.')
  valid=gap>.2 and all(min(r['initial_skin_gap_mm'],r['initial_wire_gap_mm'],r['initial_guide_gap_mm'])>=c['simulation']['contact_distance_mm'] and r['minimum_reference_det_m3']>0 for r in records);return geometry,valid
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--native',action='store_true');p.add_argument('--single',action='store_true');p.add_argument('--dorsal-terminal',action='store_true');p.add_argument('--load-sized',action='store_true');p.add_argument('--duration',type=float,choices=[.25,.6,1.0,1.2,2.],default=.25);p.add_argument('--pilot');p.add_argument('--cost-prefix');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/b3_railback_grasp1001298';root=ET.parse(src/'scene.scn').getroot();c=json.loads((src/'config.json').read_text());m=json.loads((src/'mesh.json').read_text());force=json.loads((BASE/'results/grasp_load_budget1465/summary.json').read_text())['proposed_force_N_per_cable'] if a.load_sized else 1.5
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True)
+ for flag in ('native','single','dorsal-terminal','load-sized','equatorial-entry','untapered'):p.add_argument('--'+flag,action='store_true')
+ p.add_argument('--duration',type=float,choices=[.25,.6,.8,1.0,1.2,2.],default=.25);p.add_argument('--pilot');p.add_argument('--cost-prefix');a=p.parse_args()
+ out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/b3_railback_grasp1001298';root=ET.parse(src/'scene.scn').getroot();c=json.loads((src/'config.json').read_text());m=json.loads((src/'mesh.json').read_text());force=json.loads((BASE/'results/grasp_load_budget1465/summary.json').read_text())['proposed_force_N_per_cable'] if a.load_sized else 1.5
+ reference_volume_ratio=None
+ if a.untapered:
+  assert a.equatorial_entry and not a.load_sized,'One matched1.5N width-only mechanism contrast'
+  baseline,_=make(copy.deepcopy(root),copy.deepcopy(c),copy.deepcopy(m),a.dorsal_terminal,True);reference_volume_ratio=baseline['records'][0]['discrete_material_volume_ratio'];local=np.array(m['local_positions_mm']);half=c['finger']['root_width']/2;rail=c['finger']['rail_width']
+  for x in np.unique(local[:,0]):
+   ys=np.unique(local[local[:,0]==x,1]);assert len(ys)==4
+   for before,after in zip(ys,(-half,-half+rail,half-rail,half)):local[(local[:,0]==x)&(local[:,1]==before),1]=after
+  m['local_positions_mm']=local.tolist();c['finger']['tip_width']=c['finger']['root_width']
  for control in root.iter('NativeCableSequence'):control.set('maximumForceN',format(force,'.17g'))
- geo,valid=make(root,c,m,a.dorsal_terminal);(out/'geometry.json').write_text(json.dumps(geo,indent=2));(out/'config.json').write_text(json.dumps(c,indent=2));(out/'mesh.json').write_bytes((src/'mesh.json').read_bytes());(out/'producer.py').write_bytes(Path(__file__).read_bytes());q=np.fromstring(root.find("Node[@name='finger0']/MechanicalObject").get('position'),sep=' ').reshape(-1,3)*1000;stl(out/'manufactured_reference_finger0.stl',q,m['triangles'])
+ geo,valid=make(root,c,m,a.dorsal_terminal,a.equatorial_entry);geo['equatorial_entry']=a.equatorial_entry;(out/'geometry.json').write_text(json.dumps(geo,indent=2));(out/'config.json').write_text(json.dumps(c,indent=2));(out/'mesh.json').write_bytes((src/'mesh.json').read_bytes());(out/'producer.py').write_bytes(Path(__file__).read_bytes());q=np.fromstring(root.find("Node[@name='finger0']/MechanicalObject").get('position'),sep=' ').reshape(-1,3)*1000;stl(out/'manufactured_reference_finger0.stl',q,m['triangles'])
+ if a.untapered:
+  ratio=geo['records'][0]['discrete_material_volume_ratio']/reference_volume_ratio
+  for i in range(3):
+   mass=root.find(f"Node[@name='finger{i}']/UniformMass");assert mass is not None;mass.set('totalMass',format(float(mass.get('totalMass'))*ratio,'.17g'))
+  margin=float(((np.sqrt(3)*q[:,0]-abs(q[:,1]))/2).min());valid=valid and margin>0;geo['untapered']=dict(width_mm=c['finger']['root_width'],core_volume_and_assigned_lumped_mass_ratio_to_same_circle_tapered=ratio,initial_core_sector_halfplane_margin_mm=margin,scope='Width24 throughout instead24to12;unchangedrailwidth/thickness/centreline/force/mu. Addedcorevolume scales originaluniformlumpedfreeMass;not equalmaterialvolume or independentlyvalidatedmassquadrature. Guidehardwaremass/inertia unchanged. Footpoints follow corresponding newrailbottomcorners,not removed constraints.');(out/'geometry.json').write_text(json.dumps(geo,indent=2));(out/'mesh.json').write_text(json.dumps(m))
  if not valid or not a.native:
   ET.ElementTree(root).write(out/'reference.scn');(out/'summary.json').write_text(json.dumps(dict(status='PASS_INITIAL_CONFORMAL_REFERENCE_ONLY' if valid else 'REJECT_CONFORMAL_REFERENCE',geometry=geo,Native='NOT RUN'),indent=2));print(json.dumps(dict(status=valid,geometry=geo)));return
  if a.single:

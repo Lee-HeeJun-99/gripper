@@ -1,5 +1,49 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1508 supersedesbelow. Untapered1505 actual3Finger.6s57.331s/240each,
+minvol>.98851,forceinputerror0;1507endpointSkinFz.99500N/GuideRailSupport0,
+speed19.029mm/s,notHolding. Full2suntapered_hold1001506 NOWRUNNING after
+382.20sforecast/hard420s/4GiB,not newdt/inputchange. Checkactualsummary/process
+BEFOREanyretry;then grasp_goal_assess.py --tag NEW --case untapered_hold1001506.
+IftruefunctionalPASS,independentreproductionthenLift;otherwise noautomatic
+width/force sweep.1508software12/SDK7same. Lastlocalcommitgitlog;notproductPASS.
+
+CURRENT1505 supersedesbelow. Lastfeature04d4e1c;gitlogauthoritative.
+1496equatorialfull2sDONE/274.555s/800each/noinversion;1502FAILspeed69.0436mm/s
+despiteslip.79523mm,SkinFz.98401N,Guide/Rail/Support0,gap41.818mm. No100gPASS.
+1500actualdetector/acceptedpointinventorysupportssidecontactextension,notarea/
+forcefraction.1495/1501actualhigh-inputGuide10.5865mmstep/~159.94rad/s warning;
+reconstructedchordworknotglobalenergyclosure. Do not raiseforce/repeat1152.
+
+NewcandidateALREADYimplemented/run:untapered_single1504valid100states,
+minvolume.99524. WidthONLY24mmthroughout instead24→12,matchedcentreline/T1.5/
+materials/mu;corevolumeandmappedUniformMass+7.2776%,Guidehardwaremasssame.
+1503producerlookupFAILbeforeNative preserved. Actualfree3.6suntapered_three1505
+RUNNING. Inspectsummary/process before anyretry. Thenboundedwithdrawal/full2s
+usingconformal_cradle_grasp.py --tag NEW --equatorial-entry --dorsal-terminal
+--untapered --native --duration 1.2 --pilot untapered_three1505 onlyifcost<420.
+Ifcostblocked,use validshorternewwithdrawalphase andtwoexact-prefix marginal
+costevidence,not silentlyrelaxedhardlimit. Actualfullgrasp_goal_assess.py
+required. Singlefixedsphere isNOT Holding ormeasuredtotalreaction. NoSDK/
+oldRaw/FAILchanges,push/historyrewrite orsessionexternaljobpromise.
+
+CURRENT1491 supersedesbelow. Lastfeature04d4e1c,notproductcompletion.
+1483/1484full2sactuallycompleted;1488/1487originalgoalFAIL. Base1.5N Skin
+meanFz.97252N,noGuideRailSupport,butslip3.627mm/speed58.371mm/s. Hybrid
+frozen2.2889N slip.768mm butspeed82.289mm/s,Guidepeak.875N =>FAIL. Do not
+retryorraiseT.1490actualNative comparisonplot,notconceptualimage.
+
+Nextnewhypothesis ALREADYimplemented/run:equatorial_entry_single1489 valid
+100states/minvol.9948;actualfree3Pilot equatorial_entry_three1491 RUNNING.
+PreserveEXACTdistal70–100points,force1.5/material/mu;deriveverticalequatorial
+proximalentry (root30.6,z−2.477,onset62.523) toapproach sphere side andlimit
+lateraloscillation. Not randompitch/height scan. Checkactualsummary/process;
+ifvalid useconformal_cradle_grasp.py --tag NEW --equatorial-entry
+--dorsal-terminal --native --duration1.2 --pilot equatorial_entry_three1491
+(argument '--duration 1.2' withspace) onlyifactualcostforecast<420. Full2s
+thenactualgrasp_goal_assess.py,notpartialHolding. No100gPASSyet. NoSDK/oldRaw/
+FAILchanges,remoteoperationsoraftersessionpromise. Furtherdetailsmainreport.
+
 CURRENT1482 supersedesbelow. Lastfeaturea4a14e7;additionalinput/geometrycycles
 awaitlocalcommit.1468full2sforce-sizingFAIL1469(slip205.847mm);no moreforce
 incrementsoldgeometry. Newconformalmanufacturedcircle56.172deg/R30.5 reference

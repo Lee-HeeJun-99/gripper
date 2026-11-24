@@ -1,3 +1,24 @@
+## Active continuation through1505 — 100g vertical capture,stability still FAIL
+
+Actualequatorial1496full2s274.555s/positiveFEM,1502goalFAILspeed69.04mm/s,
+butslip.795mm/SkinFz.984N/GuideRailSupport0. NotHoldingPASS.1500actualDetector
+locatesmoreproximalcontactswithstagemismatchreported,notpressure/area.
+Nextuntaperedwidthcandidate1504singleactualPASSboundedonly;corevolume/mass
++7.2776%,hardwaremasssame,T1.5/centreline/materialsunchanged.1505actualfree3
+.6sRUNNING. Inspectsummaryfirst;seeAUTONOMOUS_RESUMEandmainreport. OldFootspan
+failure1152–55reviewednotrepeated.1499software12/SDK7identityPASSonly.
+
+## Active continuation through1491 — full failures and next actual mechanism
+
+Lastfeature04d4e1c. Bothconformalfull2sNative trialscompleted800each/positiveFEM.
+Base1483/goal1488FAIL slip3.627mm/speed58.371mm/s despiteSkinFz.97252N and
+Guide/Rail/Support0. Hybrid1484/goal1487FAILspeed82.289mm/s/Guide.875Npeak,
+evenwhileslip.768mm;NOTSkinHoldingPASS.1490actualRawcomparisonPNG.
+Nextmechanism1491ALREADYrunning:equatorialentry proximalshape with EXAC same
+distal70–100positions and1.5N,derived30.6mmRoot/onset62.523.1489actualsingle
+positiveinitialgaps/FEM. Readsummary/process beforeanynewpath;fulloriginalgoal
+stillrequired. AUTONOMOUS_RESUME topauthoritative. NotCAD/productcertification.
+
 ## Active continuation through1482 — actual conformal grasp pilots
 
 See AUTONOMOUS_RESUME.md top and FINITE_WIRE_AND_100G_GOAL_20261124.md.

@@ -102,13 +102,37 @@
     {
       "id": "conformal_cradle_grasp100",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "REJECTED",
       "scope": "New stress-free manufactured circular distal reference and compatible finite guide placement;not final hardware or time/mesh qualification",
       "hypothesis": "Conformal lower-hemisphere reference radius30.5mm can distribute Skin contact;actual initial Guide-first result requires dorsal terminal on railback,not removed collision. Hybrid reuses frozen1465 force,not a new force increment.",
       "prerequisites": [],
-      "evidence": ["conformal_geometry1470", "conformal_fixed1471", "conformal_fixed_mid1472", "conformal_dorsal1473", "conformal_dorsal_mid1474", "conformal_three_pilot1475", "conformal_hybrid_fixed1477", "conformal_hybrid_three1478", "conformal_hybrid_pilot1482"],
+      "evidence": ["conformal_geometry1470", "conformal_fixed1471", "conformal_fixed_mid1472", "conformal_dorsal1473", "conformal_dorsal_mid1474", "conformal_three_pilot1475", "conformal_hybrid_fixed1477", "conformal_hybrid_three1478", "conformal_hybrid_pilot1482", "conformal_hold1001483", "conformal_hybrid_hold1001484", "conformal_base_goal1488", "conformal_hybrid_goal1487"],
       "validation_criteria": ["Retain all collision radii/DOFs;initialSkin/wire/guidegap positive;actualSkin detector/response;positive all saved FEM;original100g full2s criteria unchanged;partial pilots not HoldingPASS;4GiB/420s"],
       "failure_alternatives": ["Stop candidate without new physical hypothesis;inspect actual contact source/wrench and support withdrawal;no arbitraryforce/dt search"],
+      "successors": ["equatorial_entry_grasp100"]
+    },
+    {
+      "id": "equatorial_entry_grasp100",
+      "priority": 1,
+      "status": "FAIL",
+      "prerequisites": [],
+      "hypothesis": "Oldconformal1.5N supplies.97252N viaSkin butlateraloscillation/slip fails. Preserve EXACT distalpoints70–100 andforce1.5N;replace proximal14deg tangent with0deg equatorialentry andderived62.523mm curve onset to approach sphere side,not more tension or pitch sweep.",
+      "scope": "Separate stress-free manufactured reference withrootradius30.6mm;not old300partCAD or physicalcertification",
+      "evidence": ["conformal_base_goal1488", "conformal_comparison1490", "equatorial_entry_single1489", "equatorial_withdrawal1492", "equatorial_hold1001496", "equatorial_contact_location1500", "equatorial_goal1502"],
+      "validation_criteria": ["Allfiniteguidecollisions preserved;positiveinitialsurface/wire/guidegap;positiveFEM;actualSkinloadand original100g2sgoalcriteria;no fixedobjectclaimfromsinglecoupon"],
+      "failure_alternatives": ["Actualcontact/wrench/energy diagnosis ifnoimprovement;no newforce/dt/pose sweep"],
+      "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
+    },
+    {
+      "id": "untapered_torsion_grasp100",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": [],
+      "hypothesis": "Equatorial1.5N cradle passesverticalslip andSkin-onlyweight butspeed69mm/sFAIL. Remove widthtaper24to12,retain24mmwidth toincrease transversecontact span andrail torsional lever;unchangedcentreline/material/T1.5/mu. Addedcorevolume+7.2776% scales mappedUniformMass,not equalmasscomparison.",
+      "scope": "Independent manufacturedwidthcandidate,not fullCADhardwarevalidation;retains all guidecollisions andcorrespondingrailbottomfootnodes",
+      "evidence": ["equatorial_goal1502", "untapered_single1503", "untapered_single1504"],
+      "validation_criteria": ["Initialskin/wire/guide/sectorpositive;Scene correctmassvolumechange;positiveNativeFEM;actual100gfullgoal,noGuideRailSupportloads,speed<=5mm/s,slip<=2mm"],
+      "failure_alternatives": ["Stop widthfamily ifnotmeaningful;no rejected1152footprint repeats orforce/dt sweeps;diagnose acceptedguidework andjointconstraints"],
       "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
     },
     {

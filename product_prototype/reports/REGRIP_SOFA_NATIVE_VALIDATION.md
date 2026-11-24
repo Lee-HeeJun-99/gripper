@@ -1,3 +1,15 @@
+## Actual100g follow-up through1508 — no functionalPASSyet
+
+1483/84full2spositiveFEMgoals1488/87FAILspeedandhybridGuidecontact.1496actual
+equatorial2s274.555s/800each/minvol>.98709,1502FAILspeed69.0436mm/s despite
+slip.79523mm/SkinFz.98401N/GuideRailSupport0. Detectorinventory1500locates
+moreproximalpointsbutstagemismatchexplicit;notarea/forcefraction.1495/1501
+actualhigh-inputGuidepointstep10.5865mm/angularvelocity~159.94rad/s warns
+against promotingpositiveFEMasfullstatequality. WorkinventoryisNOTglobal
+energyclosure. Width-onlyuntapered1504/1505actualboundedpilotspositive,
+corematerial/mappedMass+7.2776%,T1.5same.1506actualfull2sunderway.1508
+software12tests/7SDKhashesunchanged. All time/meshFAILs preserved.
+
 ## Actual wire contact and new100g mechanisms1426–1486
 
 Wire/finiteEyelet1431/32/36 actualcontact+frictionlessaxialsliding;1437

@@ -171,3 +171,74 @@ withdrawalpilot RUNNING,forecast393.57s/hard420s/4GiB;inspectsummary beforeany
 fulltest. No100gPASS yet.1480twelve softwaretests+7SDKhashesPASS,notphysics.
 Newtestfixture first failed(nonexistentcentrelinenode/wrongresultbasename);
 fixed test to actualwidthmeans andactual1469path,not alteredmodel/tolerance.
+
+## Full conformal results and equatorial-entry follow-up1483–1491
+
+1479actual1s159.698s/400states each,positiveFEM. Comparedcompleted1475 .6s
+with1479:fouracceptedstateprefixjournals EXACT. Startup/fullprefixcost paid
+once plus2x measuredmarginalcost(.6→1s) predicts364.534s for2s,hard420s
+unchanged.1483actuallycompleted2s225.528s/800each,minvol>.98878.
+1488 originalgoal FAIL:slip3.627230mm/speed58.371070mm/s exceeds2/5 limits;
+gap37.02758mm,Support/Guide/Rail0,SkinmeanFz.972520N(weight.981). Noinversion.
+Nearly balancedverticalsupport isNOT stableHolding.
+
+1481hybrid1.2s124.382s/positiveFEM;1485inventory,notHolding.1484full2s
+163.064s/800each completed.1487FAIL:slip.767901mm passes butspeed82.288622
+mm/s fails;Guidepeak.875138N supportsmeanFz.201151N,soalsohardwareexclusion
+FAIL. SkinmeanFz.785012N,Support0,gap43.79394mm,positiveFEM;Nativeforceinput
+error0,momentum6.78e−19Ns. Maxobjectangularspeed19.361rad/s/rotation179.86deg
+from1s reported,not hidden. Reject both theseconformalvariants,notmoretension.
+1490actualRaw scientificcomparisonPNG(source/Rawhashes),not conceptualwrap.
+
+Newequatorialentry hypothesis preserves EXACT distalspatialpositions70–100mm
+(test<=1e−10mm) and1.5N input,butadds side-facing proximalSkin. Replace14deg
+tangent byvertical0deg tangent,derivecurveonset70−30.6*radians14=62.5230095mm;
+terminalangle70.172333deg unchanged. Rootradius30.6mm,z−2.4769905mm follow
+circle,not a randompitch sweep and not strongerfriction/material. InitialSkin/
+wire/Guidegaps.398266/5.162524/3.609748mm,interfingerGuidegap1mm. Allfoot/
+free/collisionreference/cablepositions consistent. Initialobjects never moved.
+Referencevolume .99966937xold,assignedmasses retained as explicitidealization.
+1489actualfixedsingle.25s6.126s/100states,minvol.994828. It is NOT Holding or
+totalfixedreaction measurement.1491actualfree3 .6sPilot RUNNING;readsummary
+beforepromotion,uniqueoutputpath. Originaltime/meshFAILs andoldRawunchanged.
+
+## Actual equatorial result and width mechanism1492–1505
+
+1491actual.6s148.384s;1492actual.8s164.480s/320each/minvolume>.98709.
+Fouracceptedprefixjournals EXACT,marginalcostforecast357.63s/hard420s.
+1496actuallycompleted2s274.555s/800each/minvol>.98709.1502goalFAIL solely
+speed69.04364mm/s;slip.795230mm,gap41.81805mm,SkinFz.984012N,Guide/Rail/
+Support0,actualinputerror0,finite/normalcompletion. This improvesvertical
+retention butNOTstableHolding.1500NativeDetectorpoints nearestacceptedSkin
+material inventory(.5–.6s):below70mm193/2642old vs635/2771equatorial,minimum
+materialx65→55mm. Stagemismatchsurfacegapmax.2168/.2848mm explicit:NOTexact
+load-bearingfraction/contactarea or forceassignedtodetectedsamples.
+
+1493/94/95/98workinventory usesactualforceNs/dt andacceptedgeometriclengths;
+previous-chordwork isindependentlyreconstructed,NOT observedSDKstagework.
+Hybrid1495maxsavedGuidepointjump10.5865mm/2.5ms,previouschord-vs-geometric
+cumulativeworkdifference182.982J;1501actualRigid3maxomega~159.94rad/s atbody8.
+This isconcretehigh-inputmechanism/couplingwarning,not uniqueenergycausalproof.
+Base1.5Nworkdiff.00046568J,Guideomega~5rad/s. FEMstrainenergy/frictionloss/
+globalenergyresidual remainNULL. Prior1152criticalFootspan5→10mmalreadyfailed;
+reviewed1152–55anddidNOTrepeatit.1499software12+SDK7identityPASS,notphysics.
+
+Nextone-variablewidthhypothesis:REMOVE24→12taper,retain24mmwidththroughout,
+sameequatorialcentreline/railwidth/thickness/material/T1.5/mu. Motive:increase
+transverseSkinspan andrail torsionallever,notforce/Young/damping search.
+CorrespondingrailbottomfootcoordinatesandGuides remainconsistent. Actual
+newcorevolume/mappedUniformMassratio1.072776088 vs SAME taperedcircle;
+not equalmaterial/mass efficiency. Hardwaremasses/inertias unchanged. Generic
+geometryscope's retainedmass clause isoverriddenbyexplicituntaperedrecord and
+actualSceneUniformMass=.001072776088kg;not freeNode.1503producerincorrectmass
+NodelookupFAILED beforeNative;originalproducer/failurepreserved.1504fixedonly
+Nodelookup,actualsingle.25s3.052s/100states,minvol.99524. Coreinitialsector
+margin2.95935mm positive;allGuidecollisions retained.1505free3 .6sNative
+RUNNING,inspectsummary beforepromotion. No100gPASS. NooldRaw/SDKchanges.
+
+1505completed.6s57.331s/240each,minvol>.98851.1507actualendpointSkinFz
+.995004N,Guide/Rail/Support0,speed19.0294mm/s;NOTfullHolding.1506actual2s
+launched after382.20sforecast/hard420s,4GiB.1508software12+SDK7identityPASS.
+Readactual1506summary thenrunnewgoalassessment. Sceneanduntaperedrecord
+explicitlyoverride generic retainedmass clause;coremappedUniformMassscaled,
+allGuidehardwaremasses retained. Nootherpropertyorinput changes.

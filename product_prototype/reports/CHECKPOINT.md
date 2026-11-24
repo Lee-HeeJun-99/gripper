@@ -2413,3 +2413,14 @@ speed0.297867mm/s,SkinFz0.980999934N/GuideRailSupportbodyforces0.
 0.543–0.654mm. Stopmarginfamily,keepfailures. NextREADY actualGuide-row
 wrenchprovenance/attachmentloadpath,notcollisionremoval. Nochildrenrunning.
 SeeAUTONOMOUS_RESUMEtop andGUIDE_BRACING_QUALIFICATION_20261124.md.
+## Latest1566 — finite hardware tested, two shortcuts rejected
+
+1556actualfiniteEyeletsANDSupport .6spilotTIMEOUT420s at.44s/176each;
+allSavedFEMpositive,finiteGuideGuidecontactsremain.1558Cylinderprimitive
+contactpathBLOCKEDactualintersectorNOTFOUND.1561LocalMinDistancefastbut
+1562actualSkinpenetration3.12mm/force0;1563computeNormals1sameFAIL1564.
+DoNOTpromotefastcompletion tocontact/graspPASS.1565singleactualfacet and
+1566fullSkinrigidcoupon BOTHNativeMin/Local respond,so normalwinding/static
+surfacegeometry notuniquecause. NextREADY minimalmappedSkincontactcontract.
+NOchildrunning;alloldRaw/verdictsintact. Latestgitlogauthoritative.
+SeeAUTONOMOUS_RESUMEtop/GUIDE_BRACING_QUALIFICATION_20261124.md.

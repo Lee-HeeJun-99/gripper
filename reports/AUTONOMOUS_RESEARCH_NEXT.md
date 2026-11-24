@@ -4355,3 +4355,14 @@ Stopmarginfamily. NextREADYguide_pair_wrench_provenance: actual perGuide
 contactrowJtransposelambda andattachmentloadpath;aggregateGuideimpulseor
 scalarrowλ/dt isnot source-resolvedbodywrench. Follow AUTONOMOUS_RESUMEtop.
 No100gLiftclaim,time/mesh/strict1528FAILspreserved. DoNOT rerunoldpaths.
+## Latest1566 — next minimal mapped-Skin contact contract
+
+Finitehardware1556TIMEDOUT420s at.44s/positiveFEM;noHoldingclaim.
+NativeCylindercontactpath1558actualBLOCKED/intersectorNOTFOUND.
+LocalMinDistance1561fastbutSkinpenetrates3.12mm/force0(1562);
+PointcomputeNormals1 control1563sameFAIL1564. Rejectwholegraspuse.
+Actualfacet1565/fullSkinrigid1566 Min/Local BOTHrespond: notsimplewinding
+orstaticmeshshapeproof. Isolateactualdeformable/multimapping/motionpath
+beforeanotherlargeNative. Queue mapped_skin_contact_contract READY.
+Nochildrunning. Originalobject-only100gfunctionalPASSandGuidebracingFAIL
+separate;notunbraced/physicalPASS. AUTONOMOUS_RESUMEtopauthoritative.

@@ -108,3 +108,62 @@ single-finger .25s1555 completes3.312s, positiveFEM; NO Holding claim.
 Fresh actualfree3finger.6s1556 follows, not a saved-state restart. Inspect
 its actual summary before longer trials. Original 100g object goal AND new
 hardware-bracing qualification remain necessary for any promotion.
+
+1557 independently contracts actual source-resolved Guide row impulses with
+actual free/accepted/midpoint-accepted parent velocities:990 rows, internal
+pair net linear impulse exactly0. Sums are respectively+0.01132456J,
+−0.00000627007J and−0.00001026224J. They are distinct discrete kinematic
+contractions, NOT observedSDKstagework, dissipated heat or global energy.
+Do not select one velocity convention to claim energy closure. Actual Guide
+contact angular/reference-point closure remains unqualified.
+
+## Final actual state through1566
+
+1556 free3finger finite hardware requested.6s but hit420.015s child limit at
+.44s,176complete outputs/finger;minimum signed volume ratios0.990050,
+0.990186,0.990172, NO saved inversion. This is failed completion, not valid
+Holding.1559/1560 stillidentify72nonzero finiteEyelet–Eyelet response rows,
+onset0.3775s. Support–Support bracing is not inferred from sphere proxies.
+No unchanged full run was repeated or timeout enlarged.
+
+1558 actual installed CylinderCollisionModel capability test: sphere control
+has actualresponse;Cylinder–Cylinder returns noresponse and intersector
+NOT FOUND warning. Factory/header existence is insufficient. This tested
+Native primitive path is BLOCKED, not an authorized fastgeometry replacement.
+
+1561 one explicit geometric-policy intervention changes ONLY Native
+MinProximityIntersection to LocalMinDistance, allphysicalgeometry/collisions/
+buffers/friction/masses/cable/solverlimits unchanged. Actual.6s completes
+15.744s,positiveFEM. However independent1562 triangle–sphere closest-gap
+and actualresponse crosscheck finds up to3.119903mm penetration and212
+negative-gap outputs/finger, FIRST0.0725s, with Skin force exactly0.
+Therefore REJECTED FOR GRASP despite normal execution/fastcompletion.
+1563 enables PointCollisionModel computeNormals=1 as a single independent
+API hypothesis, not a relaxed cone/buffer:14.941s, but1564 finds IDENTICAL
+missingSkinresponse/penetration. Stop that normal-computation hypothesis.
+
+1565 extracts the actual missed facet330 at0.0725s into a separate two-rigid
+initial-geometry coupon. Native Min,Local and reversed-facet Local each
+produce3 nonzero response rows.1566 repeats this independent capability
+contrast with the complete actual Skin surface under one rigid mapping;
+all three variants likewise produce3 nonzero rows. No FEM/cable/support or
+checkpoint continuation is present. Deliberate initial tiny overlap is ONLY
+a response capability probe, not an acceptable grasp initial condition.
+Thus static facet geometry, full static surface and winding alone are NOT
+proven causes of the missing full-FEM response. Next minimal hypothesis
+must isolate deformable/multimapping/motion, not morelargegrasp runs or cone,
+dt,alarm andforce scans. No child remains running; Raw and verdicts retained.
+
+Commands for these completed probes (use NEW tags only for a NEW hypothesis):
+
+```bash
+python product_prototype/sofa/native_cylinder_contract.py --tag UNIQUE
+python product_prototype/sofa/finite_hardware_local_contract.py --tag UNIQUE
+python product_prototype/sofa/finite_hardware_normals_contract.py --tag UNIQUE
+python product_prototype/sofa/skin_gap_contact_contract.py --case CASE --tag UNIQUE
+python product_prototype/sofa/local_skin_triangle_coupon.py --tag UNIQUE
+PYTHONPATH=product_prototype/sofa python -c 'import local_skin_triangle_coupon as m; m.main(True)' --tag UNIQUE
+```
+
+Native execution/completion flags are NOT physicalcontact verdicts; their
+independent rejection in1562/1564 is preserved alongside original Raw.

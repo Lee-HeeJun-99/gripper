@@ -1,5 +1,31 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1566 supersedesALLbelow. NO child isrunning. Latestcommits7c68364,
+5dd8c38,6d91168;gitlogFINALsaveauthoritative. Unbraced100gstillUNQUALIFIED.
+1556finiteEyelet+Supportfree3 .6sTIMEDOUT420.015s at.44s/176each;savedFEM
+positive,min.99005.1559actualfiniteEyeletGuideGuide72nonzerorows,NOTcleared.
+1558installedCylinderfactoryexistsbutNOactualCylinderCylinderintersector:
+Spherecontrolresponds,Cylinder0rows+NOTFOUNDwarning. DoNOTblindlyreplace.
+1561nativeLocalMinDistance.6scompletes15.744sbut1562crosscheckFAIL:
+SkinSpherepenetration3.12mm/212framesperFinger/actualSkinforce0.
+1563explicitPointcomputeNormals1samegeometrycompletes14.941sbut1564SAMEFAIL.
+REJECTfastLocalfamilyforgrasp;notperformanceimprovement/numericalPASS.
+1565actualmissedfacet isolatedtworigidcoupon Min/Local/LocalReversed ALL
+respond3rows;1566sameFULLSkinmesh rigidmapped likewiseALL3respond3rows.
+Thusnormalcomputationalone/windingalone/fullstaticmeshgeometry NOTproven
+causes; investigateactualdeformable/multimapping/motionpathviaMINIMALcoupon.
+NextREADY mapped_skin_contact_contract. No newlarge3fingerNativeuntilfresh
+matchedgeometryresponsecriterion. No repeatedmargins/forces/dt/angle scans.
+Originalobject-only100gfunctional1537/1541/1551PASSpreserved,Guidebracing
+separateFAIL;time/mesh/strict1528FAILspreserved.100gLiftNOTMEASURED.
+Reproduction: robot_wsPython product_prototype/tools/research_queue.py;
+local_skin_triangle_coupon.py --tag UNIQUE forsinglefacet;
+PYTHONPATH=product_prototype/sofa robot_wsPython -c
+'import local_skin_triangle_coupon as m; m.main(True)' --tag UNIQUE
+forfullsurfacecapability. TheseareisolatedINITIALgeometrycoupons,notrestart
+orHolding. Existing1565/1566alreadycomplete;DONOTrepeatwithoutnewhypothesis.
+
+
 CURRENT1556 supersedesbelow.1553 actualREADONLYGuideJcouponPASS q/vpurity0,
 1980source-resolvedrows, single-rowforcepeak0.06936N/moment0.254658mNm.
 Notwholebodyreaction/energy.1554 actualsavedcylinder supportplane lowerbound

@@ -1160,3 +1160,12 @@ Candidate1542 changesonly sector-margin .5→.892121794mm fromgeometricroot
 of1mm oldtrajectoryGuidegap; finiteGuide collision radii andallcollisions
 remain enabled.1543fixedpilotvalid,1544newdynamicsunderway. Old300partCAD,
 actualmass/inertia/attachment/material/STEP qualification remainseparate.
+## Finite hardware1555/1556 — design assumptions, not product approval
+
+NativeScene nowcontains separateclosedOD3/ID1.2/L2eyeletmeshes AND finite
+convexsupporthullsfromactualthreeRigid-mappedfootcentres/0.8mmpads.
+Allhardwarecollisionsenabled;parentmass/inertia inherited NOTcalibrated.
+Singlefixedpilotvalidbutfree3pilotTIMEOUT420s;noclaimofnewCADHolding.
+NativeCylinderintersector1558unavailablein testedpath. FastLocalMinDistance
+candidate1561/63rejecteddueactual3.12mmSkinpenetrationandmissingresponse.
+Old300partCAD/STEP/material/attachment/fabricationqualificationremainseparate.

@@ -198,14 +198,26 @@
     {
       "id": "finite_hardware_bracing_control",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "BLOCKED",
       "prerequisites": ["guide_pair_wrench_provenance"],
       "hypothesis": "Sphereproxy contacts may be overconservative:actualsavedfinitecylinder lowerbound0.461mm exceeds0.2mmbuffer. ReplaceproxywithfiniteannularEyelets AND actual3footSupporthulls,notcollisionremoval",
       "scope": "Newgeometrycandidate,allhardwarecollisionsenabled;mass/inertia/strength uncalibrated;notprevious300partCAD orphysicalPASS",
-      "evidence": ["guide_cylinder_bound1554", "finite_hardware_fixed1555", "finite_hardware_three1556"],
+      "evidence": ["guide_cylinder_bound1554", "finite_hardware_fixed1555", "finite_hardware_three1556", "finite_hardware_pairs1559", "finite_hardware_local1561", "local_skin_contact1562", "finite_hardware_normals1563", "normals_skin_contact1564"],
       "validation_criteria": ["Initialfinitehardwaregaps>=0.2mm;watertightsolids;actualsinglepilot thenbounded3finger;positiveFEM;fulloriginal100ggoal plus noGuidebracing if promoted"],
       "failure_alternatives": ["actualfiniteSupportcontact provenance andphysicalattachmentgeometry diagnosis,notGuidecollisionremoval or dt/force scan"],
-      "successors": ["exploratory_100g_lift"]
+      "successors": ["mapped_skin_contact_contract"]
+    },
+    {
+      "id": "mapped_skin_contact_contract",
+      "priority": 1,
+      "status": "READY",
+      "prerequisites": [],
+      "hypothesis": "LocalMinDistance rejectsactualFEMSkincontacts butsamefrozenfacet/fullsurface respondswhenrigidmapped. Isolate deformable/multimapping/motion path;normalcomputation andfacetwinding aloneNOTconfirmedcauses",
+      "scope": "Minimal installedNative contact/mapping contrast,notanotherlargegrasp/dt/force/filter-angle scan",
+      "evidence": ["local_skin_contact1562", "normals_skin_contact1564", "local_skin_triangle1565", "local_fullskin1566"],
+      "validation_criteria": ["Actualgeometrygap andresponsebothrequired;retainallfinitehardwarecollisionmodelsforanywholegrasp;noLocalfamilyHoldinguntilmissingSkincontactresolved;do notpromotefastcompletion"],
+      "failure_alternatives": ["Newindependentphysicalsupportkinematicscandidate orfinitecollisionfeatureownershipcontract with explicitmatchedgeometry"],
+      "successors": ["finite_hardware_bracing_control", "exploratory_100g_lift"]
     },
     {
       "id": "native_finite_beam_component_coupon",

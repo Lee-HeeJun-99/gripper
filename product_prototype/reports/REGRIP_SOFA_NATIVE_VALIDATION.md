@@ -1287,3 +1287,15 @@ lambda/dt0.046946N (NOT reconstructedfullGuideforce). Indirectbracingunresolved.
 Not unbraced/physical/time/mesh orhardwarePASS. Frozen1542 routegeometry
 intervention keepsallcollisions/radii enabled;1543 fixedpilotvalid/1544freepilot
 underway. No historicalverdictmodified. Root/originAPI1535PASSnot100gLift.
+## Through1566 — functional evidence does not clear hardware/contact defects
+
+Originalobject-only100ggoal1537/1541andnewroute1551PASSretained;GuideGuide
+bracing remains actualnonzero,sohardware-independentHoldingUNQUALIFIED.
+1553actualsourceGuideJcouponPASSq/vpurity0,notwholephysicalqualification.
+1556finiteeyelets+actual3footSupportcollisionsenabled:420stimeoutat.44s,
+positiveSavedFEMbutNOcompletedHolding.1561LocalMinDistancefastcompletion
+REJECTEDby1562actual3.12mmSkinpenetration/0Skinforce;1563computeNormals1
+sameFAIL1564. No tolerance/modelremoval usedtoscorePASS.1565actualfacet
+and1566fullsurfaceindependentRigidcouponsrespondunderMinANDLocal,not
+fullFEM/mappingvalidation. Nextminimalmappedcontactcontract;nochildrunning.
+Oldtime/mesh/API1528FAILs unchanged. SeeGUIDE_BRACING_QUALIFICATIONreport.

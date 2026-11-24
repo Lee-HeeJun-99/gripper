@@ -9,4 +9,6 @@ class QueueTest(unittest.TestCase):
  def test_rejected_allowed_and_missing_dependency_fails(self):
   self.assertIsNone(select(dict(tasks=[task('a','REJECTED')]))['next'])
   with self.assertRaises(AssertionError):select(dict(tasks=[task('b',deps=['missing'])]))
+ def test_running_is_not_empty_project(self):
+  r=select(dict(tasks=[task('a','RUNNING')]));self.assertEqual(r['running'],['a']);self.assertFalse(r['requires_project_reevaluation'])
 if __name__=='__main__':unittest.main()

@@ -14,7 +14,8 @@ def select(queue):
   assert all(dep in byid for dep in task['prerequisites'])
   for case in task.get('evidence',[]):assert (BASE/'results'/case/'summary.json').exists()
  ready=sorted([t for t in queue['tasks'] if t['status']=='READY' and all(byid[d]['status']=='PASS' for d in t['prerequisites'])],key=lambda t:(t['priority'],-t['impact']/max(t['estimated_cost'],1),t['id']))
- return dict(next=ready[0] if ready else None,qualified_product=False,running=[t['id'] for t in queue['tasks'] if t['status']=='RUNNING'],blocked=[t['id'] for t in queue['tasks'] if t['status']=='BLOCKED'],requires_project_reevaluation=not ready)
+ running=[t['id'] for t in queue['tasks'] if t['status']=='RUNNING']
+ return dict(next=ready[0] if ready else None,qualified_product=False,running=running,blocked=[t['id'] for t in queue['tasks'] if t['status']=='BLOCKED'],requires_project_reevaluation=not ready and not running)
 def main():
  p=argparse.ArgumentParser();p.add_argument('--refresh-metadata',action='store_true',help='Add explicit metadata defaults,never change verdicts or execute tasks');a=p.parse_args();path=BASE/'config/research_queue.json';queue=enrich(json.loads(path.read_text()));result=select(queue)
  if a.refresh_metadata:path.write_text(json.dumps(queue,indent=2)+'\n')

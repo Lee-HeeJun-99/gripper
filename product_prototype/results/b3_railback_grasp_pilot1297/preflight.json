@@ -1,0 +1,51 @@
+{
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "100",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/b3_railback_grasp_pilot1297/scene.scn"
+  ],
+  "source_commit": "a2b7bcc63601decb08b9f0b52b8bf7e868802d59",
+  "source_sha256": "573f40d9eed7ff5e274c985fb3dcec914cc638edfe298be55fdf3377e8b9739c",
+  "source_scene_sha256": "47c110f8945b7719d859a1e8737c17737c50d7148f428d741117144e72c3efb6",
+  "scene_sha256": "1ac0d656f809c8bca5f6ea5965e2ce6c7b9ea8cad42fd6c584b33a7180e783c3",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_alarm_window484/libReGripAlarmWindow.so": "6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "changes": [
+    {
+      "finger": 0,
+      "mapped_nodes": 36,
+      "min_twice_triangle_area_m2": 9.999999999999999e-06
+    },
+    {
+      "finger": 1,
+      "mapped_nodes": 36,
+      "min_twice_triangle_area_m2": 9.999999999999975e-06
+    },
+    {
+      "finger": 2,
+      "mapped_nodes": 36,
+      "min_twice_triangle_area_m2": 1e-05
+    }
+  ],
+  "dt_s": 0.0025,
+  "duration_s": 0.25,
+  "expected_outputs": 100,
+  "estimated_runtime_s": 25.0,
+  "child_limit_s": 420,
+  "memory_GiB": 4,
+  "hypothesis": "Move same36 rank6joint nodes per finger fromSkin/Railinterface toRailback to change transmitted bending without increasing1.5N cable force. Existing single-finger1129 avoided inversion;not yet a loaded grasp validation.",
+  "classification": "EXPLORATORY FUNCTIONAL CANDIDATE",
+  "hardware_joint": "IDEAL_ASSUMPTION_NOT_CAD_QUALIFIED",
+  "physical_validation": "NOT QUALIFIED"
+}

@@ -541,6 +541,90 @@
       "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
     },
     {
+      "id": "b3_response_cone_budget",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Frozen historical response-column LP and measured normal allocation bound only;1294invalid grouping preserved,1295/96corrected;no grasp verdict.",
+      "goal": "Separate contact direction and measured force deficit in100g failure",
+      "prerequisites": [
+        "historical_B3_feature_loads"
+      ],
+      "evidence": [
+        "b3_response_cone_budget1296"
+      ],
+      "expected_outputs": [
+        "source-hashed frozen force/moment analysis"
+      ],
+      "validation_criteria": [
+        "unique first_row/group/component identities",
+        "conditional scopes and exact residuals"
+      ],
+      "failure_alternatives": [
+        "actual detector/response provenance audit"
+      ],
+      "successors": [
+        "b3_railback_grasp_exploration"
+      ],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "b3_railback_grasp_exploration",
+      "priority": 1,
+      "status": "RUNNING",
+      "scope": "New100g1.5N/cable joint-plane-only Native candidate;ideal joint not hardware/physical qualification",
+      "goal": "Test altered force transfer without increasing tension",
+      "prerequisites": [
+        "b3_response_cone_budget"
+      ],
+      "evidence": [
+        "b3_railback_grasp_pilot1297"
+      ],
+      "expected_outputs": [
+        "b3_railback_grasp1001298/summary.json",
+        "accepted object and contact forces"
+      ],
+      "validation_criteria": [
+        "original100g holding protocol",
+        "positive saved elements",
+        "actual Skin/Guide/Rail/Support partition"
+      ],
+      "failure_alternatives": [
+        "compare actual response directions before further design"
+      ],
+      "successors": [
+        "b3_railback_force_diagnosis"
+      ],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "b3_railback_force_diagnosis",
+      "priority": 1,
+      "status": "READY",
+      "scope": "Read-only postcandidate force analysis;no motion/physics certification",
+      "goal": "Explain candidate contact force and normal changes",
+      "prerequisites": [
+        "b3_railback_grasp_exploration"
+      ],
+      "expected_outputs": [
+        "fresh read-only candidate assessment"
+      ],
+      "validation_criteria": [
+        "complete trial before evaluation",
+        "exclude invalid geometry from performance"
+      ],
+      "failure_alternatives": [
+        "isolated pre-inversion diagnostic only"
+      ],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
       "id": "git_history_repair",
       "priority": 0,
       "status": "PASS",

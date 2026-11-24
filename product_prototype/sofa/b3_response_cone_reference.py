@@ -43,8 +43,13 @@ def assess(case,mass):
  return dict(case=case,mass_kg=mass,records=records,input_hashes={f:sha(src/f) for f in ('object.csv','response_rows.csv','scene.scn')})
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--worker',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--worker',action='store_true');p.add_argument('--case');a=p.parse_args();out=BASE/'results'/a.tag
  if not a.worker:
-  out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(guarded([sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker'],out/'process',60)));return
- d=dict(status='HISTORICAL_RESPONSE_CONE_REFERENCE_ONLY',records=[assess('b3_alarm_window485',.05),assess('b3_mass100_explore1059',.1)],friction_assumption=.3,polygon='8-ray inscribed cone;linearized static frozen measured basis',scope='Incomplete active-contact subset only. Feasible LP proves only force/moment equilibrium in frozen subset model,not capacity,stability or newholding. Failed subset LP does not prove full-contact infeasibility. Actual Native time/mesh and solver-limit failures retained. Measured normal sum is not actuator capacity.',physical_validation='NOT QUALIFIED',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip());(out/'summary.json').write_text(json.dumps(d,indent=2));print(json.dumps(d))
+  out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes());cmd=[sys.executable,str(Path(__file__).resolve()),'--tag',a.tag,'--worker']
+  if a.case:cmd+=['--case',a.case]
+  print(json.dumps(guarded(cmd,out/'process',60)));return
+ if a.case:
+  run=json.loads((BASE/'results'/a.case/'summary.json').read_text());assert run['status']=='VALID_BOUNDED_EXPLORATION_ONLY' and run['duration_s']==2.;mass=json.loads((BASE/'results'/a.case/'config.json').read_text())['simulation']['sphere_mass_kg'];records=[assess(a.case,mass)]
+ else:records=[assess('b3_alarm_window485',.05),assess('b3_mass100_explore1059',.1)]
+ d=dict(status='HISTORICAL_RESPONSE_CONE_REFERENCE_ONLY',records=records,friction_assumption=.3,polygon='8-ray inscribed cone;linearized static frozen measured basis',scope='Incomplete active-contact subset only. Feasible LP proves only force/moment equilibrium in frozen subset model,not capacity,stability or newholding. Failed subset LP does not prove full-contact infeasibility. Actual Native time/mesh and solver-limit failures retained. Measured normal sum is not actuator capacity.',physical_validation='NOT QUALIFIED',source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip());(out/'summary.json').write_text(json.dumps(d,indent=2));print(json.dumps(d))
 if __name__=='__main__':main()

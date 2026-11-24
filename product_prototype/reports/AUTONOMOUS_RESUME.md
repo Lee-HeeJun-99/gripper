@@ -1,5 +1,17 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1389 supersedesbelow. Afterbc17cc2actuallyimplemented/executedgeometry1388.
+Newnonuniformmanufacturedcurvature same40deg/70–100spanhas−1.58315mminitial
+spherepenetrationonALL3,REJECTbeforeNative. Candidateq0/STLs+source/inputs
+preserved. No Guide/WiretransformorNativeperformanceclaim. NewREADY
+opposed_tendon_opening_feasibility. Run research_queue.py,inspect1388producer/
+summary,definefiniteopposedroute/anchorswithphysicalopeningmomentbeforeNative.
+Notprescribedopenposeorobjectrelocation. Existing2edgeclosingtendonsdoNOTprove
+openingactuation. OldB3/300partCADunchanged.1389software44PASS/SDK7unchanged.
+All Nativechildrenfinished,no promisedbackgroundexecution. Lastcommit:gitlog.
+Reproduce scopedcheckswithuniqueNEWtag using
+`python product_prototype/sofa/reinforcement_cycle_validation.py --tag NEW_UNIQUE`.
+
 LATEST1387 supersedes ALL older next-task text. Starting31c0512,features
 15ccb67/113b229:matchedlinear bendingNative1380strictvelocityFAIL;independent
 staticstiffnessgain1.131307(noGuide)/1.126481(actualGuidepullback1385). Not a

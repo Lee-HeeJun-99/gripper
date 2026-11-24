@@ -4252,3 +4252,12 @@ hardware.1387regression41PASS,7SDKunchanged. Pairedactualpressuremeasurement
 BLOCKEDhardware/calibration. Newgeometrymustaddress100mm-onlycontactwitha
 newphysicalhypothesis,not oldpitch/pad/offset/terminal/widthsweep. Seeupdated
 CHECKPOINT/AUTONOMOUS_RESUME and B3_REINFORCEMENT_BENDING_CONTRACT_20261124.md.
+## Latest after1388/1389 — 2026-11-24
+
+Afterbc17cc2,nextmechanismactuallyimplemented1388,notjustplanned. Same40deg
+70–100mmspan withlinearlydecreasingcurvature givesinitialpenetration1.58315mm
+all3fingers,REJECTbeforeNative. No fictionalguide/wireclearance ornewgraspPASS.
+NextREADY opposed_tendon_opening_feasibility:no-objectphysicalopeningmoment/
+finitehardwaregate beforetrying tighterrestprofiles. Do notprescribeSkinpose,
+moveobjecttohidecollision orrepeatuniformcurve/force/pitchsweeps.1389final
+regression44softwaretests,notphysicsqualification. Seeactualsummaryandresume.

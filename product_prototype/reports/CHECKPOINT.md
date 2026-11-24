@@ -1,4 +1,11 @@
-## Latest continuation through1387 — 2026-11-24
+## Latest continuation through1389 — 2026-11-24
+
+Afterbc17cc2,nextmechanismactuallyimplemented1388:nonuniformcurvature
+phi=40deg*(2u−u²),same70–100mm/span/root/width. All3initialSkin/spheregaps
+−1.58315mmatmaterial96.278mm;positiveFEMreferencevolumes. REJECTbeforeNative,
+Guide/WiretransformNOTMEASURED,not newwrapping. NewREADY
+opposed_tendon_opening_feasibility:realphysicalopeningbeforetighterrestprofile.
+No prescribeSkin/forcedobjectmotion.1389finalregression44softwarePASS/SDK7same.
 
 Starting31c0512clean. Actuallycompleted matchedbending,Guide-mapping and
 stockStaticSolver cycles1379–1386,thenindependentmeasurementingesttooling.

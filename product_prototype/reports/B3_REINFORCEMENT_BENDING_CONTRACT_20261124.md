@@ -79,5 +79,21 @@ Transitiontoindependentvariable-stiffnessmeasurementingest/protocol tooling;
 actualpressure/friction/material/hardware data remainNOTMEASURED. This avoids
 repeatingNativeprecisionfailures withoutanewcausalhypothesis.
 
+## Next-mechanism actual implementation afterbc17cc2
+
+1388implementedone nonuniformcurvaturecandidate,not anotheruniformangle/start
+sweep:phi(u)=40deg*(2u−u²),same70–100mmspan,total40deg,root14deg/radius50,
+samewidth/thickness. Earlierinwardtangent intended toadvance contactawayfrom
+100mmtip. Existinggenerator exactlymatches originalNativecoordinatesbefore
+newlaw. Actualtriangle/spheregate:all3fingers−1.5831497mm initialgap atmaterial
+96.278mm. Reference tetspositive,volumechanges−.02414%explicit,notexactequal
+volume. REJECT beforeGuide/Wiretransform orNative;STLsreferencecandidateonly,
+notobserveddeformation. No oldgeometrychanged. Tightermanufacturedrestshape
+needs a realopeningmechanism beforeinitialR30placement. Do notdisablecollision,
+prescribeopenSkinorforceobjectmotion. NextREADY opposed_tendon_opening_feasibility
+inno-objectsingleFinger;current2edgeclosingtendonsarenotopenactuatorproof.
+Actualhardware/pressuremeasurementsremainBLOCKED.1389finalregression44tests
+PASS/7SDKhashesunchanged supersedes1387softwarecount,notphysicalcertification.
+
 Child4GiB/30s;forecast5s perNativecoupon. No newphysicalmaterialmeasurement,
 time/meshconvergence,100gHolding,Lift,jammingorhardwarePASS.

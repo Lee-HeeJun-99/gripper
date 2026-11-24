@@ -1,0 +1,57 @@
+{
+  "status": "REJECT_INITIAL_SKIN_FEM_GATE",
+  "records": [
+    {
+      "finger": 0,
+      "minimum_initial_surface_gap_mm": -1.5831497265893262,
+      "nearest_material_mm": [
+        96.27808207605659,
+        -8.881784197001252e-16,
+        0.1
+      ],
+      "minimum_signed_tet_determinant_mm3": 0.9878491498078145,
+      "reference_volume_ratio": 0.9997586272608178,
+      "initial_gate_pass": false
+    },
+    {
+      "finger": 1,
+      "minimum_initial_surface_gap_mm": -1.5831497265893368,
+      "nearest_material_mm": [
+        96.27808207605658,
+        -8.881784197001252e-16,
+        0.1
+      ],
+      "minimum_signed_tet_determinant_mm3": 0.9878491498078147,
+      "reference_volume_ratio": 0.9997586272608113,
+      "initial_gate_pass": false
+    },
+    {
+      "finger": 2,
+      "minimum_initial_surface_gap_mm": -1.5831497265893368,
+      "nearest_material_mm": [
+        96.27808207605658,
+        2.4424906541753444e-15,
+        0.09999999999999999
+      ],
+      "minimum_signed_tet_determinant_mm3": 0.9878491498078139,
+      "reference_volume_ratio": 0.999758627260812,
+      "initial_gate_pass": false
+    }
+  ],
+  "hypothesis": "Advance inward tangent atmid-distal material beforeterminal byredistributing same40deg over same70\u2013100mm,not increasing totalangle/startlength/force",
+  "reference_assumption": "New manufactured stress-free material;not observed actuation",
+  "curvature_law": "phi(u)=40deg*(2u-u^2),kappa=2*(40deg/30mm)*(1-u)",
+  "unchanged": "100mmlength,24to12width,skin.1/rail.5mm,root14deg/radius50/layout120",
+  "guide_mapping_and_hardware_transform": "NOT IMPLEMENTED_BEFORE_SKIN_GATE",
+  "wire_guide_clearance": "NOT MEASURED",
+  "Native_grasp": "NOT RUN",
+  "scope": "Initial physicalsurface triangles/sphere andFEM signedvolumes. No stress/strainorNativegrasp,dynamicclearance,sharedCADassembly,100gHoldingorWrappinglevelPASS. Existingmodeluntouched.",
+  "physical_validation": "NOT QUALIFIED",
+  "source_commit": "bc17cc219f19b13860ef35954345d178e7e43fc6",
+  "source_sha256": "d9f91aab904785f97db647d2c14c7f9ee04c7757c65a8e6a4a38811764eaa483",
+  "input_hashes": {
+    "scene.scn": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+    "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+    "config.json": "3e74eec7daa80f8b8cdb62164ffb8ca2d8bd7fc41c19e95a02b324bc4b0c766e"
+  }
+}

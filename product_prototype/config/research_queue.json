@@ -2,9 +2,27 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
-      "id": "contact_adaptation_reference_profile",
+      "id": "opposed_tendon_opening_feasibility",
       "priority": 2,
       "status": "READY",
+      "goal": "Evaluate real no-object opening actuation before tighter manufactured rest curves",
+      "hypothesis": "Initial rest-shape overlap requires physical opening,not forced initial pose or object relocation",
+      "scope": "Single-finger no-object finite-route feasibility,not grasp qualification",
+      "prerequisites": ["contact_adaptation_reference_profile"],
+      "prerequisite_states": {"contact_adaptation_reference_profile": ["REJECTED"]},
+      "evidence": ["contact_adaptation_profile1388"],
+      "expected_outputs": ["explicit opposite-moment route,finite guide/anchor assumptions and initial gates before bounded Native"],
+      "validation_criteria": ["retain oldB3;no prescribed Skin deformation or forced object motion;record force/stroke/elements"],
+      "failure_criteria": ["no opposite bending moment or incompatible finite wire/guide supports"],
+      "failure_alternatives": ["independent calibrated layer measurement uncertainty tooling"],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1
+    },
+    {
+      "id": "contact_adaptation_reference_profile",
+      "priority": 2,
+      "status": "REJECTED",
       "goal": "Define one new stress-free reference profile targeting distributed lower-hemisphere contact rather than another stiffness/force sweep",
       "hypothesis": "Actual100mm-only contacts and modest1.126mappedstaticstiffnessgain motivate inverse geometric feasibility at95mm before another Nativegrasp",
       "scope": "Manufactured reference geometry and initial guide/wire/object gates first;not prescribed dynamic wrapping",
@@ -19,7 +37,8 @@
       "evidence": [
         "reinforcement_mapped_reference1385",
         "proximal_reinforcement_material1378",
-        "contact_layer_profile_rays1358"
+        "contact_layer_profile_rays1358",
+        "contact_adaptation_profile1388"
       ],
       "expected_outputs": [
         "one explicitly parameterized alternative rest profile with shared guide anchors and interference checks or a justified infeasibility result"

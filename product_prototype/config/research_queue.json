@@ -1,36 +1,630 @@
 {
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
-    {"id":"actual_modal_loads","priority":0,"status":"PASS","scope":"Frozen reference participation only","evidence":["b3_modal_load_response1181","b3_modal_state_samples1199"]},
-    {"id":"single_mode_time_control","priority":0,"status":"FAIL","scope":"Actual Native time pair; discrete algebra matches, continuous accuracy fails","evidence":["b3_first_mode_pair1186"]},
-    {"id":"distributed_arc_grasp_candidate","priority":1,"status":"FAIL","scope":"Initial object penetration, no dynamic grasp","evidence":["b3_arc_start_candidate1187"]},
-    {"id":"layer_pressure_physics","priority":2,"status":"BLOCKED","scope":"Overlap/tunneling failures require new validated fixture, not parameter sweep","evidence":["layer_coupon_assess1192","layer_ramp_assess1194","layer_rigid_failure_audit1197"]},
-    {"id":"layer_pocket_geometry","priority":2,"status":"PASS","scope":"Nominal component envelopes only; no seal or STEP","evidence":["layer_pocket_audit1200","layer_pocket_scene1201"]},
-    {"id":"layer_measurement_capture","priority":2,"status":"PASS","scope":"Software template/schema ONLY;zero actual samples NOT MEASURED","evidence":["layer_measurement_template1202"]},
-    {"id":"actual_result_visualization","priority":2,"status":"PASS","scope":"Actual Native states/reference figures,invalid results labeled FAIL","evidence":["modal_layer_figures1204"]},
-    {"id":"orientation_fixture_control","priority":2,"status":"FAIL","scope":"Rotation constrained exactly but contact tunneling persists;not a grasp","evidence":["layer_fixture_phase_audit1208"]},
-    {"id":"session_validation","priority":2,"status":"PASS","scope":"41 software regressions and7 SDK hashes only,not physical product pass","evidence":["modal_layer_validation1203","modal_layer_validation1210","modal_layer_validation1219"]},
-    {"id":"contact_violation_phase_observer","priority":0,"status":"PASS","scope":"Read-only actual dFree/W/f/J/free-state observer prefix q/v/impulse errors0;diagnostic ONLY","evidence":["contact_gap_probe1212","contact_gap_assess1215"]},
-    {"id":"native_normal_policy_controls","priority":0,"status":"FAIL","scope":"Surface normals cause mu0 lateral lock;LocalMinDistance becomes nonfinite and times out;no product adoption","evidence":["normal_policy_rejection1218"]},
-    {"id":"contact_feature_row_provenance","priority":0,"status":"PASS","scope":"Actual unique model/element/normal/child-row matching only;purity EXACT0;not product qualification","evidence":["contact_provenance_run1222","contact_provenance_assess1224"]},
-    {"id":"primitive_friction_control","priority":1,"status":"PASS","scope":"Interior planar primitive component only;old diagonal cases remain FAIL;not mesh/time/grasp qualification","evidence":["primitive_offset_assess1233","primitive_work_inventory1241"]},
-    {"id":"line_face_transition_attribution","priority":0,"status":"PASS","scope":"Actual feature normal and row impulse join EXACT0;Gram conditioning is calculated,not direct Native W","evidence":["primitive_feature_impulses1249"]},
-    {"id":"primitive_local_cone_filter","priority":0,"status":"FAIL","scope":"New finite sphere control loses normal support;not adopted;no more policy sweep","evidence":["primitive_local_reject1253"]},
-    {"id":"ideal_layer_interface_limit","priority":2,"status":"BLOCKED","scope":"Actual tied/free displacement ratio1.00694;no qualified EI or pressure law;requires bending-reliable discretization","evidence":["layer_interface_assess1240"]},
-    {"id":"historical_B3_feature_loads","priority":1,"status":"PASS","scope":"Actual historical Point/Line force partition only;100g early support deficit persists;no new holding verdict","evidence":["b3_feature_load_audit1254","b3_feature_withdrawal1255"]},
-    {"id":"layer_bending_reference","priority":1,"status":"PASS","scope":"Independent CST reference/native displacement agreement and excessive pure-bending interpolation shear ONLY,not qualified EI","evidence":["layer_bending_reference1257","layer_mesh_reference1258"]},
-    {"id":"native_layer_mesh","priority":1,"status":"FAIL","scope":"Actual Native9→33tip error93.6641%;no inversion/contact impulse does not repair mesh independence","evidence":["layer_native_reference_assess1262"]},
-    {"id":"interface_discretization_reference","priority":2,"status":"PASS","scope":"World-vector ideal interface mathematics and Native endpoint ONLY,not static stiffness/pressure law","evidence":["layer_interface_reference1264","layer_refined_interface_assess1267"]},
-    {"id":"native_constraint_normalization","priority":0,"status":"PASS","scope":"Same20ms stricter termination residual comparison only;explicit-link100step q/v/impulse purity0;NOT time convergence","evidence":["layer_constraint_comparison1275","layer_clean_kinematics1277"]},
-    {"id":"layer_section_resolution_reference","priority":1,"status":"PASS","scope":"Exact polynomial field only: thickness normal error and longitudinal shear separated;no loaded section convergence.","evidence":["layer_section_reference1279"]},
-    {"id":"layer_consistent_face_load","priority":1,"status":"PASS","scope":"Affine virtual work and load resultant;new small-strain Native100ms reference endpoint agreement only,not physical convergence.","evidence":["layer_face_load1280","layer_traction_native1282","layer_traction_assess1283"]},
-    {"id":"layer_loaded_section_reference","priority":1,"status":"PASS","scope":"Independent reference diagnostic only;loaded width/thickness effects separated,NOT converged mesh or product model.","evidence":["layer_loaded_section1285"]},
-    {"id":"layer_native_section_pilot","priority":1,"status":"PASS","scope":"Actual thickness-only Native100ms endpoint reference q agreement;coarse pair only,not full mesh/bending qualification.","evidence":["layer_section_assess1289"]},
-    {"id":"layer_interface_section_limit","priority":2,"status":"READY","scope":"Separate ideal-interface vs section interpolation with consistent traction;not calibrated vacuum jamming.","prerequisites":["layer_native_section_pilot"],"evidence":["layer_section_assess1289"]},
-    {"id":"git_history_repair","priority":0,"status":"PASS","scope":"Explicit user-authorized targeted unpublished repair completed9d84690;externalfullbackup;CSVoriginal preserved;oldFAILlogs retained;no further rewrite authorized."},
-    {"id":"current_regression","priority":2,"status":"PASS","scope":"68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse","evidence":["layer_reference_validation1278"]},
-    {"id":"PET_vacuum_properties","priority":2,"status":"NOT MEASURED","scope":"Actual materials,pressure,friction,seal,fatigue absent"},
-    {"id":"fabrication_STEP","priority":3,"status":"BLOCKED","scope":"CAD kernel/material/seal/assembly qualification missing"},
-    {"id":"100g_holding_lift","priority":4,"status":"BLOCKED","scope":"New geometry failed;new Native model time/contact/mesh unqualified"}
+    {
+      "id": "actual_modal_loads",
+      "priority": 0,
+      "status": "PASS",
+      "scope": "Frozen reference participation only",
+      "evidence": [
+        "b3_modal_load_response1181",
+        "b3_modal_state_samples1199"
+      ],
+      "goal": "Frozen reference participation only",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Frozen reference participation only"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "single_mode_time_control",
+      "priority": 0,
+      "status": "FAIL",
+      "scope": "Actual Native time pair; discrete algebra matches, continuous accuracy fails",
+      "evidence": [
+        "b3_first_mode_pair1186"
+      ],
+      "goal": "Actual Native time pair; discrete algebra matches, continuous accuracy fails",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual Native time pair; discrete algebra matches, continuous accuracy fails"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "distributed_arc_grasp_candidate",
+      "priority": 1,
+      "status": "FAIL",
+      "scope": "Initial object penetration, no dynamic grasp",
+      "evidence": [
+        "b3_arc_start_candidate1187"
+      ],
+      "goal": "Initial object penetration, no dynamic grasp",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Initial object penetration, no dynamic grasp"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_pressure_physics",
+      "priority": 2,
+      "status": "BLOCKED",
+      "scope": "Overlap/tunneling failures require new validated fixture, not parameter sweep",
+      "evidence": [
+        "layer_coupon_assess1192",
+        "layer_ramp_assess1194",
+        "layer_rigid_failure_audit1197"
+      ],
+      "goal": "Overlap/tunneling failures require new validated fixture, not parameter sweep",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Overlap/tunneling failures require new validated fixture, not parameter sweep"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_pocket_geometry",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "Nominal component envelopes only; no seal or STEP",
+      "evidence": [
+        "layer_pocket_audit1200",
+        "layer_pocket_scene1201"
+      ],
+      "goal": "Nominal component envelopes only; no seal or STEP",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Nominal component envelopes only; no seal or STEP"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_measurement_capture",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "Software template/schema ONLY;zero actual samples NOT MEASURED",
+      "evidence": [
+        "layer_measurement_template1202"
+      ],
+      "goal": "Software template/schema ONLY;zero actual samples NOT MEASURED",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Software template/schema ONLY;zero actual samples NOT MEASURED"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "actual_result_visualization",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "Actual Native states/reference figures,invalid results labeled FAIL",
+      "evidence": [
+        "modal_layer_figures1204"
+      ],
+      "goal": "Actual Native states/reference figures,invalid results labeled FAIL",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual Native states/reference figures,invalid results labeled FAIL"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "orientation_fixture_control",
+      "priority": 2,
+      "status": "FAIL",
+      "scope": "Rotation constrained exactly but contact tunneling persists;not a grasp",
+      "evidence": [
+        "layer_fixture_phase_audit1208"
+      ],
+      "goal": "Rotation constrained exactly but contact tunneling persists;not a grasp",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Rotation constrained exactly but contact tunneling persists;not a grasp"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "session_validation",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "41 software regressions and7 SDK hashes only,not physical product pass",
+      "evidence": [
+        "modal_layer_validation1203",
+        "modal_layer_validation1210",
+        "modal_layer_validation1219"
+      ],
+      "goal": "41 software regressions and7 SDK hashes only,not physical product pass",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "41 software regressions and7 SDK hashes only,not physical product pass"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "contact_violation_phase_observer",
+      "priority": 0,
+      "status": "PASS",
+      "scope": "Read-only actual dFree/W/f/J/free-state observer prefix q/v/impulse errors0;diagnostic ONLY",
+      "evidence": [
+        "contact_gap_probe1212",
+        "contact_gap_assess1215"
+      ],
+      "goal": "Read-only actual dFree/W/f/J/free-state observer prefix q/v/impulse errors0;diagnostic ONLY",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Read-only actual dFree/W/f/J/free-state observer prefix q/v/impulse errors0;diagnostic ONLY"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "native_normal_policy_controls",
+      "priority": 0,
+      "status": "FAIL",
+      "scope": "Surface normals cause mu0 lateral lock;LocalMinDistance becomes nonfinite and times out;no product adoption",
+      "evidence": [
+        "normal_policy_rejection1218"
+      ],
+      "goal": "Surface normals cause mu0 lateral lock;LocalMinDistance becomes nonfinite and times out;no product adoption",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Surface normals cause mu0 lateral lock;LocalMinDistance becomes nonfinite and times out;no product adoption"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "contact_feature_row_provenance",
+      "priority": 0,
+      "status": "PASS",
+      "scope": "Actual unique model/element/normal/child-row matching only;purity EXACT0;not product qualification",
+      "evidence": [
+        "contact_provenance_run1222",
+        "contact_provenance_assess1224"
+      ],
+      "goal": "Actual unique model/element/normal/child-row matching only;purity EXACT0;not product qualification",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual unique model/element/normal/child-row matching only;purity EXACT0;not product qualification"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "primitive_friction_control",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Interior planar primitive component only;old diagonal cases remain FAIL;not mesh/time/grasp qualification",
+      "evidence": [
+        "primitive_offset_assess1233",
+        "primitive_work_inventory1241"
+      ],
+      "goal": "Interior planar primitive component only;old diagonal cases remain FAIL;not mesh/time/grasp qualification",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Interior planar primitive component only;old diagonal cases remain FAIL;not mesh/time/grasp qualification"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "line_face_transition_attribution",
+      "priority": 0,
+      "status": "PASS",
+      "scope": "Actual feature normal and row impulse join EXACT0;Gram conditioning is calculated,not direct Native W",
+      "evidence": [
+        "primitive_feature_impulses1249"
+      ],
+      "goal": "Actual feature normal and row impulse join EXACT0;Gram conditioning is calculated,not direct Native W",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual feature normal and row impulse join EXACT0;Gram conditioning is calculated,not direct Native W"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "primitive_local_cone_filter",
+      "priority": 0,
+      "status": "FAIL",
+      "scope": "New finite sphere control loses normal support;not adopted;no more policy sweep",
+      "evidence": [
+        "primitive_local_reject1253"
+      ],
+      "goal": "New finite sphere control loses normal support;not adopted;no more policy sweep",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "New finite sphere control loses normal support;not adopted;no more policy sweep"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "ideal_layer_interface_limit",
+      "priority": 2,
+      "status": "BLOCKED",
+      "scope": "Actual tied/free displacement ratio1.00694;no qualified EI or pressure law;requires bending-reliable discretization",
+      "evidence": [
+        "layer_interface_assess1240"
+      ],
+      "goal": "Actual tied/free displacement ratio1.00694;no qualified EI or pressure law;requires bending-reliable discretization",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual tied/free displacement ratio1.00694;no qualified EI or pressure law;requires bending-reliable discretization"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "historical_B3_feature_loads",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Actual historical Point/Line force partition only;100g early support deficit persists;no new holding verdict",
+      "evidence": [
+        "b3_feature_load_audit1254",
+        "b3_feature_withdrawal1255"
+      ],
+      "goal": "Actual historical Point/Line force partition only;100g early support deficit persists;no new holding verdict",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual historical Point/Line force partition only;100g early support deficit persists;no new holding verdict"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_bending_reference",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Independent CST reference/native displacement agreement and excessive pure-bending interpolation shear ONLY,not qualified EI",
+      "evidence": [
+        "layer_bending_reference1257",
+        "layer_mesh_reference1258"
+      ],
+      "goal": "Independent CST reference/native displacement agreement and excessive pure-bending interpolation shear ONLY,not qualified EI",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Independent CST reference/native displacement agreement and excessive pure-bending interpolation shear ONLY,not qualified EI"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "native_layer_mesh",
+      "priority": 1,
+      "status": "FAIL",
+      "scope": "Actual Native9\u219233tip error93.6641%;no inversion/contact impulse does not repair mesh independence",
+      "evidence": [
+        "layer_native_reference_assess1262"
+      ],
+      "goal": "Actual Native9\u219233tip error93.6641%;no inversion/contact impulse does not repair mesh independence",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual Native9\u219233tip error93.6641%;no inversion/contact impulse does not repair mesh independence"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "interface_discretization_reference",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "World-vector ideal interface mathematics and Native endpoint ONLY,not static stiffness/pressure law",
+      "evidence": [
+        "layer_interface_reference1264",
+        "layer_refined_interface_assess1267"
+      ],
+      "goal": "World-vector ideal interface mathematics and Native endpoint ONLY,not static stiffness/pressure law",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "World-vector ideal interface mathematics and Native endpoint ONLY,not static stiffness/pressure law"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "native_constraint_normalization",
+      "priority": 0,
+      "status": "PASS",
+      "scope": "Same20ms stricter termination residual comparison only;explicit-link100step q/v/impulse purity0;NOT time convergence",
+      "evidence": [
+        "layer_constraint_comparison1275",
+        "layer_clean_kinematics1277"
+      ],
+      "goal": "Same20ms stricter termination residual comparison only;explicit-link100step q/v/impulse purity0;NOT time convergence",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Same20ms stricter termination residual comparison only;explicit-link100step q/v/impulse purity0;NOT time convergence"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_section_resolution_reference",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Exact polynomial field only: thickness normal error and longitudinal shear separated;no loaded section convergence.",
+      "evidence": [
+        "layer_section_reference1279"
+      ],
+      "goal": "Exact polynomial field only: thickness normal error and longitudinal shear separated;no loaded section convergence.",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Exact polynomial field only: thickness normal error and longitudinal shear separated;no loaded section convergence."
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_consistent_face_load",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Affine virtual work and load resultant;new small-strain Native100ms reference endpoint agreement only,not physical convergence.",
+      "evidence": [
+        "layer_face_load1280",
+        "layer_traction_native1282",
+        "layer_traction_assess1283"
+      ],
+      "goal": "Affine virtual work and load resultant;new small-strain Native100ms reference endpoint agreement only,not physical convergence.",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Affine virtual work and load resultant;new small-strain Native100ms reference endpoint agreement only,not physical convergence."
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_loaded_section_reference",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Independent reference diagnostic only;loaded width/thickness effects separated,NOT converged mesh or product model.",
+      "evidence": [
+        "layer_loaded_section1285"
+      ],
+      "goal": "Independent reference diagnostic only;loaded width/thickness effects separated,NOT converged mesh or product model.",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Independent reference diagnostic only;loaded width/thickness effects separated,NOT converged mesh or product model."
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_native_section_pilot",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Actual thickness-only Native100ms endpoint reference q agreement;coarse pair only,not full mesh/bending qualification.",
+      "evidence": [
+        "layer_section_assess1289"
+      ],
+      "goal": "Actual thickness-only Native100ms endpoint reference q agreement;coarse pair only,not full mesh/bending qualification.",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual thickness-only Native100ms endpoint reference q agreement;coarse pair only,not full mesh/bending qualification."
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "layer_interface_section_limit",
+      "priority": 2,
+      "status": "READY",
+      "scope": "Separate ideal-interface vs section interpolation with consistent traction;not calibrated vacuum jamming.",
+      "prerequisites": [
+        "layer_native_section_pilot"
+      ],
+      "evidence": [
+        "layer_section_assess1289"
+      ],
+      "goal": "Separate ideal-interface vs section interpolation with consistent traction;not calibrated vacuum jamming.",
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Separate ideal-interface vs section interpolation with consistent traction;not calibrated vacuum jamming."
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "git_history_repair",
+      "priority": 0,
+      "status": "PASS",
+      "scope": "Explicit user-authorized targeted unpublished repair completed9d84690;externalfullbackup;CSVoriginal preserved;oldFAILlogs retained;no further rewrite authorized.",
+      "goal": "Explicit user-authorized targeted unpublished repair completed9d84690;externalfullbackup;CSVoriginal preserved;oldFAILlogs retained;no further rewrite authorized.",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Explicit user-authorized targeted unpublished repair completed9d84690;externalfullbackup;CSVoriginal preserved;oldFAILlogs retained;no further rewrite authorized."
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "current_regression",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse",
+      "evidence": [
+        "layer_reference_validation1278"
+      ],
+      "goal": "68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "PET_vacuum_properties",
+      "priority": 2,
+      "status": "NOT MEASURED",
+      "scope": "Actual materials,pressure,friction,seal,fatigue absent",
+      "goal": "Actual materials,pressure,friction,seal,fatigue absent",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "Actual materials,pressure,friction,seal,fatigue absent"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "fabrication_STEP",
+      "priority": 3,
+      "status": "BLOCKED",
+      "scope": "CAD kernel/material/seal/assembly qualification missing",
+      "goal": "CAD kernel/material/seal/assembly qualification missing",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "CAD kernel/material/seal/assembly qualification missing"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "100g_holding_lift",
+      "priority": 4,
+      "status": "BLOCKED",
+      "scope": "New geometry failed;new Native model time/contact/mesh unqualified",
+      "goal": "New geometry failed;new Native model time/contact/mesh unqualified",
+      "prerequisites": [],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "New geometry failed;new Native model time/contact/mesh unqualified"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    }
   ]
 }

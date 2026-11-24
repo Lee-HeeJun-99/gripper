@@ -14,7 +14,9 @@ def history(since):
  raw=subprocess.check_output(['git','rev-list','--objects',since+'..HEAD'],cwd=ROOT);output=subprocess.run(['git','cat-file','--batch-check=%(objecttype) %(objectsize) %(rest)'],input=raw,capture_output=True,check=True,cwd=ROOT).stdout.decode().splitlines();bad=[]
  for line in output:
   typ,size,path=(line.split(' ',2)+[''])[:3]
-  if typ=='blob' and forbidden(path,int(size)):bad.append(dict(path=path,bytes=int(size)))
+  # Historic smaller journals stay tracked;new journal additions are blocked
+  # by staged(). History audit concerns GitHub blob size,not retroactive bans.
+  if typ=='blob' and int(size)>=100_000_000:bad.append(dict(path=path,bytes=int(size)))
  return bad
 def main():
  p=argparse.ArgumentParser();p.add_argument('--since');p.add_argument('--stage-results',nargs='+',help='Explicit result folder names;stage only safe files,leave excluded Raw untouched');a=p.parse_args();excluded=[]

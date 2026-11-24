@@ -1207,3 +1207,14 @@ Frozenobserver1353nine240journalsEXACT;1355activecontactsall100mmlayerpoints,
 notbareSkinWrapping. Actualcomposite.66122N,Support.219394N at1.2s;no unsupported
 100gHolding.1357momentum/partition inventory residual≤2.17e-18Ns,notenergy/time/
 meshPASS. Old50gfunctionalPASS andphysicsFAIL unchanged. ReportB3_FINITE_CONTACT_LAYER.
+## Opposed-route continuation1390–1410 — exploratory ONLY
+
+Nine actualsinglefinger/no-objectNativecoupons completedwithpositive saved
+corevolumes. Opposite3mmroute reversesmoment/sign andopensSkin;nonuniform
+manufacturedreferencealsoopensandunloads towardindependentgravityreference.
+1399virtualR30clearance isNOT detectorcontact. No actualobjectinserted,moved
+orheld;no Grasp/100g/Lift/time/mesh/hardwarePASS. MaximumGreenstrain3.38%
+nonuniformopening,allowablematerialNULL. 1410software56PASS,SDK7unchanged.
+Fourrouteinitialsupportinterference1408correctedonlyinlimitedproxy1409;
+straightbore/bendradius unresolved,overallREJECT,nofourCableNative. Details
+andactualcommands/hashes:OPPOSED_TENDON_OPENING_20261124.md/per-casepreflight.

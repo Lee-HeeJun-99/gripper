@@ -1,4 +1,33 @@
-## Latest continuation through1389 — 2026-11-24
+## Latest continuation through1410 — 2026-11-24
+
+Startinga18771fclean,actuallycompleted9Native no-object coupons1391/1392/
+1393/1394/1397/1398/1401/1402/1403,plusfinitegeometry/acceptedstateanalyses.
+Sameold1.5N/C2 input,singlefingerRailbackmapping;opposite+3→−3mmpoint/pull
+routeproducesopening.1395fronttip+33.099°vsback−16.166°relative restat.6s.
+1398usesnewnonuniformmanufacturedreferenceinFEM/free/anchors/guides/collision
+states consistently;actualtipopens14.019°,mincorevolume.989995.1399virtualR30
+insertionenvelopeSkinmargin≥10.7394mmall41saved.5–.6sstates. NOactualsphere,
+contactorHoldingclaim. Existing1388initialsphereoverlapREJECTunchanged.
+
+1401actualC2unload.6–.9s→1.2s,480outputs;1403independentzero-forcegravity
+reference.1404lateCableimpulse0,endpointqreferenceerror9.48957e-11m,
+maxnodespeed6.62278e-8m/s. First240rows4journalsEXACT—not timeconvergence.
+1405maxGreenstrain3.38053%nonuniformopening,4.82557%frontclosing;allowable
+materialstrainNULL,notmaterialPASS.1406acceptedstatePNG/SVGvisuallychecked.
+
+After75f21ed,nextfourroutegateactuallyimplemented1408thenonecorrectivesupport
+candidate1409. Oldsupportwireobstructionprovenbyactualaxiswitness.088811mm
+<.5mm. Backplane−6mmreroutegiveswirelowerbound+.874817mm,Skin+.221518mm,
+addsnominal39.4335mm³rodvolume(notmass/unionvolume). OVERALLfourrouteREJECT:
+straightborewiremargin−.00659688mm,bendradius/hardwareunqualified. NoNative
+fourCableor3Fingergrasp launched. NextREADY eyelet_bore_and_bend_geometry.
+1410regression56softwarePASS/7SDKunchanged. NoNativepending,noSDK/controller
+binarychanges,push,historyrewrite,oldRaweditsornew100g/HoldingPASS. Feature
+commits59b73b7,b11afdd,c2b9dd6,75f21ed;latestfinalcommitgitlog. Fullcommands,
+source/binary/SceneSHA andlimits4GiB/120sinper-casepreflight. Report
+OPPOSED_TENDON_OPENING_20261124.md authoritative;300partCADstillseparate.
+
+## Previous continuation through1389 — 2026-11-24
 
 Afterbc17cc2,nextmechanismactuallyimplemented1388:nonuniformcurvature
 phi=40deg*(2u−u²),same70–100mm/span/root/width. All3initialSkin/spheregaps

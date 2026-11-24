@@ -1119,3 +1119,14 @@ Supportload remains;no100g/Wrapping/Lift qualification. No actualsilicone/PET
 material,jointstrength,STEP,pressure,jamming orfabrication readiness follows.
 See B3_FINITE_CONTACT_LAYER_20261124.md;nextmechanicalhypothesis concerns load-
 dependent proximalshape retention,not further decorativeCAD or materialfitting.
+## Opposite-opening mechanism study1390–1410 — NOT CAD adoption
+
+ActualNative singlefinger canopenviaopposite-sideCablethenunload;thisis
+two-routeswapwithcontrolledoldguide-mass/jointassumptions,NOT completed
+antagonisticfourcableproduct. NewnonuniformrestreferenceclearsvirtualR30after
+actualopening,not contact/Holding. Finite4routehardwaregate1408rejectsrod/wire
+intersectionandborefit. Rearplane−6mmsupportcandidate1409fixescheckedinitial
+rod/wire/Skinseparationbutaddsnominal39.4335mm³rodmaterial;noBooleanCADmass/
+COM/inertia orstrengthvalidated. Boremargin−.00659688mmandR5bendtargetremain
+unqualified. Current300partCAD/BOMunchanged;do notfabricateordeclare50/100g
+performancefromthisstudy. Nextentry/bendgeometrygatebeforeintegration.

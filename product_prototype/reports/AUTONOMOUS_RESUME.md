@@ -1,5 +1,32 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1410 supersedesbelow. ActualopposedNativeopening1390–1404andfinite
+4routehardwaregates1408–1409done,notpending. Oppositepathopensoldandnewrest
+fingerusingNativeCableC2;virtualsphere1399NOTactualcontact. No-objectunload
+returnsclose tozero-forcegravityreference1404,notfullphysics/hardwarePASS.
+All9Nativechildrencomplete,noRUNNINGjobs. Software1410=56PASS,7SDKunchanged.
+Existingtime/meshFAILs,100gFAILs,1388rest-overlapREJECTandallRawpreserved.
+Feature59b73b7,b11afdd,c2b9dd6,75f21ed;latestfinalcommit`git log -1`.
+
+NextREADY eyelet_bore_and_bend_geometry. Run:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py`
+Thenread1408/1409summaryandOPPOSED_TENDON_OPENING_20261124.md. Backplane
+supportfixpassesONLYinitialwire/Skinproxyclearance;overallfourrouteREJECT
+fromunchanged2mmstraightbore(ID1.2/wireD.5)margin−.00659688mm. Needexplicit
+finiteentry/bendgeometrytargetR5mm,not toleranceenlargement orpointguideclaim.
+No4cableNative/3Fingercontactuntilmeaningfulgeometry/inputcontrolcontract;
+current2routeswapisnotanantagonisticassembly. FullhardwaremassCOM/joints,
+materialallowable/FEMconvergence,borefriction/actualwirebending NOTMEASURED.
+
+Reproduction(useuniqueNEWtags,neverexistingfolders):
+`python product_prototype/sofa/antagonistic_four_route_gate.py --tag NEW_GATE`
+`python product_prototype/sofa/antagonistic_support_rear_gate.py --tag NEW_SUPPORT`
+`python product_prototype/sofa/reinforcement_cycle_validation.py --tag NEW_REGRESSION`
+Actualreleaseexample:
+`python product_prototype/sofa/opposed_tendon_coupon.py --tag NEW_RELEASE --native --opposed --nonuniform-rest --release-cycle --duration 1.2 --pilot opposed_nonuniform_pilot1397`
+Sourcesmake noautomaticbackgroundcontinuationpromise. SDK/oldfrozenbinaries
+unchanged;newControllerdelaywouldrequireseparatebuild/snapshot+defaultpurity.
+
 LATEST1389 supersedesbelow. Afterbc17cc2actuallyimplemented/executedgeometry1388.
 Newnonuniformmanufacturedcurvature same40deg/70–100spanhas−1.58315mminitial
 spherepenetrationonALL3,REJECTbeforeNative. Candidateq0/STLs+source/inputs

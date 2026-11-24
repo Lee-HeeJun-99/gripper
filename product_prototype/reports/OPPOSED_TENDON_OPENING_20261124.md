@@ -114,5 +114,27 @@ andthenidlereferenceNativebeforegrasp. Existing inputController lacksdelayed
 closingonset;anyextensionmustbeinput-only withseparatebinary/sourcesnapshot
 anddefault-modeq/vpurity,NOT a newSolverorunverifiedstateinitialization.
 
+## Actual follow-on four-route geometry1408–1409
+
+After75f21ed,actually builtfourinitialrest routes(front+3/back−3),not just
+documentedfuturework.1408wire/wirelowerbound5.00030mm;guide/guide enclosing
+spheregap2.39445mm. Priorcentre-terminatedsupportproxyobstructswire;one
+outer-wallattachment+elbowcandidatealsoobstructsbackwire.1409explicitwitness:
+supportsegment6/backroute2/segment4sampledaxisdistance.088811mm<.5mmsumradii,
+actualcapsuleoverlap.411189mm. This is not merely a negativeconservativebound.
+1390PASSwasSkin-onlyproxyclearance,neverwire/support/boreapproval.
+
+ONE redesign movesrodmainspan to−6mmbackplane,keepingradii andeyelets:
+1409support/wirelowerbound+.874817mm,Skin+.221518mm. Totalrodlength676.710→
+877.543mm,nominalcylindervolume+39.4335mm³,NOT Booleanunionvolumeoractual
+massCOM/inertia/strength. No mass-freeefficiencyclaimor3Fingeradoption.
+
+OverallfourroutegateSTILLREJECTED:unchanged ID1.2mm,2mmstraightbore/axis
+bisectorhasminimumfinitewireentrymargin−.00659688mm. 5mmbendradiustarget,
+actualboredsolid,manufacturingtolerance,friction/selfclearanceunqualified.
+No fourCableNativeorgrasp launched. NextREADY eyelet_bore_and_bend_geometry:
+oneexplicitentry/bendcandidate,not empiricaltolerancerelaxation. Preserve
+currentFAIL andalloldRaw. Existing50gfunctional/100gFAIL/time/meshstatesunchanged.
+
 All commands/source/binary/scene hashes/limits inpreflight,Raw preserved;
 actualforcework/rootreaction/wholeenergy NOTMEASURED. SDKunchanged,nopush.

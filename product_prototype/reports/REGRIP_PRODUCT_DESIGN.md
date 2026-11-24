@@ -1,3 +1,17 @@
+## Current1768/1770 — no new product adoption; actual open-guide seed
+
+New100g dorsal-yoke1741 FAIL retained. Captured closed sleeve1761 actual
+initial foreign solid overlaps~0.82929mm3 and wire blockage: REJECTED, not
+shrunk by a parameter scan. Alternative open parallel-guide reduced-motion
+Native1766 passes small-component torque/inertia/velocity contract only.
+Actual all-six-guide finite concept1768 is separate from production300partCAD:
+Root/hinge envelopes, links/carrier/tubes at0–2mm sampled mechanism travel.
+Sampled NEW-part object gap2.02867mm is not whole-assembly/swept or grasp PASS.
+Hinge axial clevis/pin spaces are explicitly unfinished and overlapping in
+this seed. Foreign/wire/newSkin/mass/bond qualification and real hardware
+properties remain required. No fabrication/STEP/physical or product PASS.
+Next READY task continues actual cad/open_parallel_geometry_seed.py.
+
 ## 2026-11-25 — dorsal rung research candidate rejected for grasp qualification
 
 Added finite same-finger0.8mm dorsal terminal rung, not inter-finger brace.

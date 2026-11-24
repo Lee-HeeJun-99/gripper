@@ -1,3 +1,46 @@
+## Current1768/1770 — no child running; actual open-guide seed is next work
+
+This supersedes every historical RUNNING/READY section below. Start05252d7;
+cached origin05252d7 (not a network verification). Local history preserved,
+feature commits bc7d2f3,ceb2b89,c82babf,138187b,399df34,a0d301d,23fb35f;
+final checkpoint SHA is authoritative `git log -1 --oneline`.
+
+Last actual full grasp1741:100g/R30/1.5N each/μ.3/dt.0025,2s249.292s.
+1742 speed32.928255mm/s FAIL, slip0.576782mm;1743 internal30Hold/48totalrows.
+No unbraced, numerical, hardware or Lift PASS. Historical1586 remains braced
+object-only exploratory PASS, never substituted for latest CAD/model.
+Latest Native1766 is a SMALL fixed-root open-guide component:100steps/0.1s
+torque-driven1.209rad, unique joint indices and stockSubsetMapping. Reference
+velocity error4.974e-14rad/s, closure1.735e-18m. Not a grasp or actual hinge.
+1761 closed-sleeve finite prototype REJECTED: true initial foreign intersections
+and wire obstructions. No repeated sleeve/window/force/dt scans.
+
+Next READY task open_parallel_finite_geometry is ACTUALLY STARTED, not just
+listed: cad/open_parallel_geometry_seed.py and results/open_parallel_seed1768
+contain all six finite concepts/initial+2mm endpointSTLs and30stroke samples.
+Root and hinge hubs are still ENVELOPES and have unmachined axial overlap;
+physical clevis/spacer/pin/mounting fit is the first unfinished operation.
+Foreign hardware, newSkin material and finite-wire routing are NOT QUALIFIED.
+Keep tubeOD1.651/ID1.1938/L2mm and wireØ.5mm; no collision deletion.
+Complete those actual solid checks, then full6DOF moving-root/force-Jacobian
+contract and ONLY THEN a new single-finger Native mechanism. No new3Finger
+run is justified by component or geometric-seed PASS.
+
+Resume checks:
+`git status --short`
+`git log -8 --oneline`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py`
+Read SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md; inspect1768geometry and1766
+actual NativeScene/preflight, then EDIT the unresolved bearing geometry.
+Do NOT rerun completed1760–1768 paths. Reproduction commands are per-case
+process/command.json; use new unique tags only for a new hypothesis/change.
+
+All original102queue entries/verdicts unchanged. Raw CSV remains local with
+immutable manifests; no SDK/push/history rewrite. Final audits1769/1770 record
+preservation and helper tests, not physics. No RUNNING tasks/Native children,
+no automatic session-external continuation. Further READY work remains;
+this is a session handoff, NOT product completion or exhaustion of mechanisms.
+
 ## Current1753 — full yoke FAIL, captured-guide Native path ready for next gate
 
 All Native children through1753 completed; no process remains running.

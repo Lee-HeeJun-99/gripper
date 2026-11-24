@@ -1,3 +1,33 @@
+## Current1768/1770 — actual new mechanisms tested; UNBRACED100g still FAIL
+
+Supersedes ALL historical RUNNING/READY claims below. Start05252d7 clean;
+local feature saves include bc7d2f3,ceb2b89,c82babf,138187b,399df34,a0d301d,
+23fb35f; final checkpoint commit is `git log -1 --oneline`.
+1741 NEW100g actual2s249.292s, minFEM0.989808. Original Hold: slip0.576782mm,
+speed32.928255mm/s FAIL; SkinFz0.983151N, object hardware/support loads0.
+1743 internal48rows/30IN HOLD => UNBRACED FAIL, no Lift. Do not rerun yoke.
+Native captured-guide/C2/stop/moving-root/internal-crossdraw contracts
+1746/1752/1754/1758 pass ONLY within stated small-coupon scopes. Passive
+slider alone rejected by1753force direction; explicit inward actuation needed.
+Actual finite closed sleeve1761 rejected by initial foreign solid/wire conflict.
+Different open mechanism Native1765/1766: UNIQUE articulated indices + stock
+SubsetMapping fix measured shared-index cache error; actual torque/inertia,
+velocity and loop closure pass unchanged1e-12 component gates through1.209rad.
+Actual finite seed1768 IMPLEMENTED for all six original guides,0–2mm geometric
+stroke; sampled object gap2.02867mm, closure3.469e-18m. NOT_NATIVE_READY:
+hinge clevis/pin axial spaces and real interface geometry still incomplete;
+foreign hardware/wire/Skin and full6DOF moving-root proof remain required.
+
+Next READY: open_parallel_finite_geometry. Continue ACTUAL partial source
+product_prototype/cad/open_parallel_geometry_seed.py, not another closed-sleeve
+dimension sweep. Do not reexecute existing output1767/1768 or launch whole
+Native grasp from this seed. First cut physical bearing/fork spaces and audit
+the actual solid geometry/wire path; then fresh bounded root/FEM integration.
+No child RUNNING; no session-external execution. This handoff is NOT project
+completion or a claim no further safe tasks exist. Current actual resume is
+AUTONOMOUS_RESUME.md; exact evidence/hashes/commands in
+SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md and results/session_audit1769.
+
 ## Current1753 — full100g yoke Holding FAIL; captured-guide mechanism opened
 
 1741 completed800steps/2s249.292s, positiveFEM, common-prefix q/v diff0.

@@ -1,3 +1,17 @@
+## Current1768/1770 — multiple new mechanisms, final grasp target NOT achieved
+
+Actual new100g2sNative1741 executed249.292s, valid saved FEM; speed32.9283mm/s
+and30internalHold rows FAIL. Skinmean0.983151N and zero hardware/object load
+do not imply stable or unbraced grasp. Original1586 strengths/failures intact.
+Clutch, same-finger yoke, captured prismatic/cross-draw and open-link mechanisms
+actually implemented/tested in separate cycles; seven prior feature commits
+plus final checkpoint, no remote push/history rewrite/SDK change.
+Closed sleeve1761 initial solid/wire conflict rejects Native expansion.
+Native open-link component1766 is small-coupon PASS only; actual finite seed
+1768 remains NOT_NATIVE_READY. Next READY actual work is bearing/fork/pin
+geometry and clearance, not another parameter sweep. All processes ended;
+exact resume and evidence in product_prototype/reports/AUTONOMOUS_RESUME.md.
+
 ## Current1713 — completed unbraced research cycles; goal NOT achieved
 
 This supersedes ALL historical RUNNING/READY/queue-empty text below.

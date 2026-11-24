@@ -1,3 +1,16 @@
+## 2026-11-25 through1768 — actual mechanism cycles, no product PASS
+
+Full100g yoke1741 actual2s: speed32.928255mm/s and30Hold internal rows FAIL.
+Clutch1715 rejected, yoke1730/1741 mapped/mass geometry verified but grasp
+not qualified. Actual prismatic/C2/moving-root/stop/internal-draw coupons
+open a different actuation mechanism, not more fixed offset/force exploration.
+Finite sleeve1761 rejected by initial interference. Open-loop Native1766
+torque/kinematic contract passes only with unique indices+stockSubsetMapping.
+Actual all-six-guide seed1768 exists; real hinge bearing axial spaces and
+foreign/wire/Skin checks incomplete. NEXT READY task is that actual geometry.
+Current300part CAD and historicalB3 results remain separate. No running child.
+Details: SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md; resume file authoritative.
+
 ## Current1713 — completed unbraced research cycles; goal NOT achieved
 
 This supersedes ALL historical RUNNING/READY/queue-empty text below.

@@ -1,3 +1,19 @@
+## Current1768/1770 — grasp FAIL, new open-guide component evidence only
+
+Latest actual full100g1741:32.928255mm/s and30internalHold rows FAIL;
+all old time/mesh/contact/energy failures unchanged. No Lift expansion.
+New1754 moving-root/C2/stop coupon verifies actual free-root reaction and
+momentum.1756/1757 paired-stop strict reference FAILs retained;1758 ONE
+tighter small-coupon solve1e-14 (unchanged1e-12 accuracy gate) fixes measured
+stop impulse/order imbalance. No fullB3 setting changed or physical promotion.
+Finite sleeve1761 rejected before Native by actual initial collisions.
+Native open mechanism1762–1764 failures reveal shared articulation-index
+cache/configuration contract. Unique indices + stockSubsetMapping1765/1766
+match torque/mass/velocity/closure reference to1e-12 through1.209rad.
+Actual finite seed1768 is NOT_NATIVE_READY: hinge bearing spaces and full
+wire/foreign/Skin/moving-root checks remain. Prescribed mechanism-geometry
+samples are not Native FEM grasp. See detailed20261125report and1769audit.
+
 ## 2026-11-25 through1753 — new mechanisms tested; UNBRACED target FAIL
 
 Clutch1715 removes internal rows but unstable approach; rejected.

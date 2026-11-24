@@ -6,7 +6,7 @@ contract do not establish a same-finger closed transverse frame. Native
 DiagonalMass bridge136–158 initialization failure is preserved; a supported
 indexed UniformMass assembly is a separately testable path, not assumed valid.
 
-##1714–1718: measured finite-envelope safety clutch
+## 1714–1718: measured finite-envelope safety clutch
 
 New mechanism: actual hardware vertices in accepted Rigid3 frames measure
 signed distance to own120degree sector planes. A latching cable clutch cuts
@@ -47,7 +47,7 @@ Next actual work: separate native indexed rigid-mass contract, then finite
 same-finger dorsal-yoke geometry. This closes a transverse structural loop,
 not the previous external ring relief, beam width or axial offset family.
 
-##1720–1726: same-finger dorsal terminal rung
+## 1720–1726: same-finger dorsal terminal rung
 
 1720 NEW Native indexed UniformMass contract (not failed DiagonalMass):
 two distinct masses/inertias, known force/torque, four actualsteps; maximum
@@ -72,7 +72,7 @@ use added-material-only mass/COM/inertia, not reuse1724 as that result.
 No old data or verdict is changed. Actual physical weld stiffness/retention,
 guide original masses, contact normals and global convergence remain open.
 
-##1728–1733: union-mass corrected candidate
+## 1728–1733: union-mass corrected candidate
 
 1728 actual new material only (complete yoke minus old support weld domains)
 adds12.874–12.922mg/finger at assumed1000kg/m3. Original guide/support masses
@@ -100,7 +100,7 @@ python product_prototype/sofa/actual_hardware_clearance.py --case UNIQUE_PILOT -
 python product_prototype/sofa/dorsal_yoke_native.py --tag UNIQUE_PREFIX --design UNIQUE_GEOMETRY --mass-contract UNIQUE_MASS --duration 1.2 --pilot UNIQUE_PILOT --pair-case UNIQUE_PAIRS
 ```
 
-##1734–1741: withdrawal prefix and declared full diagnostic
+## 1734–1741: withdrawal prefix and declared full diagnostic
 
 1734 actual1.2s480steps149.121s: min saved FEM0.989808, shared terminal
 mapping1.388e-17m.1738 internal15nonzero rows at1.0575–1.0675s, exclusively
@@ -131,7 +131,7 @@ Four new producer contract tests pass; not physics certification.
 Actual full diagnostic command:
 `python product_prototype/sofa/yoke_holding_diagnostic.py --tag yoke_hold_diagnostic1741`
 
-##1741–1753 completed: full Holding FAIL; new translating-guide contracts
+## 1741–1753 completed: full Holding FAIL; new translating-guide contracts
 
 1741 actual800steps/2s249.292s normal exit, min saved FEM0.989808;
 common1.2s prefix q/v difference0 (reproducibility, NOT time convergence).
@@ -178,7 +178,7 @@ Next executable native contract:
 Then actual internal cross-draw cable action/reaction and finite keyed carriage
 geometry are independent prerequisites before any new3Finger trial.
 
-##1754–1758: real free-root reaction and internal cross-draw force source
+## 1754–1758: real free-root reaction and internal cross-draw force source
 
 1754 actual Native40steps0.137s: mapped carriage reaches2mm stopper; free
 root actually moves1.03333mm, root/child velocity0.0666667m/s. Independent
@@ -203,3 +203,65 @@ The old closing cable pulls outward in1753, so this explicit internal draw
 cable is a different physical actuator, not a passive offset assumption.
 Actual finite guide/carriage/sleeve geometry and routing are the NEXT READY
 gate. Native1746/1752/1754/1758 have no object and are never grasp success.
+
+## 1760–1768: finite sleeve rejected; open mechanism actually started
+
+1760 initial CAD producer failed: metre-scale Trimesh cylinder creation
+omitted wire endcaps. PartialSTLs/error preserved; failed source digest was
+NOT CAPTURED (NULL), not retrospectively fabricated.1761 builds the SAME
+wire radius topology in millimetres then scales, no physical size change.
+Six actual finite sleeve/carrier prototypes, original eyelets/feet retained:
+2mm nominal travel fits and object gap>=1.44315mm, BUT three foreign sleeve
+solid intersections0.829291–0.829293mm3, plus straight-wire/new-housing
+intersection~0.224297mm3 and carrier~0.117954mm3 each. REJECTED; no Native
+grasp integration and no sleeve wall/window/radius scan. Real bent-wire
+possibility remains separate, not disproved by a straight-wire witness.
+
+Different mechanism: open parallel-crank/ideal geared coupler.
+1762 factory rejects3centres with1input storage.1763 adds unused fixed
+padding, initial geometry closes to1.735e-18m but dynamic angle error0.136889rad
+and mapped velocity error0.0145392m/s FAIL: visual closure is not dynamics.
+Installed ArticulatedSystemMapping caches ArticulationAxis/Pos by INDEX;
+reusing0 overwrites different joint axes/centres. No SDK modification.
+1764 unique-index stockSubsetMapping initially fails missing scalar topology;
+1765 explicitly disables topology-change handling (scalar coordinates have
+no changing mesh). One torque-driven theta is copied to three UNIQUE joint
+indices; actual Native torque/mapped-mass reference now PASS: angle8.327e-17rad,
+velocity1.776e-15rad/s, loopclosure8.674e-19m. Original1762–1764 FAILs retained.
+1766 extends actual torque motion to100steps/0.1s,1.208905rad (~69.26deg),
+covering the larger mechanism angle range: velocity error4.974e-14rad/s,
+closure1.735e-18m, fixed coupler orientation0. This is discrete-component
+response, NOT time convergence, a fabricated hinge or a three-finger grasp.
+
+1767 then ACTUALLY implements all six open-guide finite seeds from old
+guide/three-foot positions: root envelopes, finite links/hubs/carrier and
+actual tubes at five mechanism stroke samples0–2mm. No object state changed.
+1768 independently handles exact-degenerate triangle distance instead of
+letting NaNs disappear in min(): uncertain states0, sampled object gap2.02867mm,
+loop closure3.469e-18m. This is MECHANISM geometry, not prescribed FEM grasp.
+Root/hinge envelopes still overlap axially at bearing hubs: physical clevis,
+spacer/pin and mounting-retention geometry is NOT YET IMPLEMENTED. Foreign
+hardware/wire/newSkin clearances, moving full6DOF root, actual mass/Jacobian,
+real materials/hinge friction remain unqualified. Therefore seed1768 is
+NOT_NATIVE_READY. Task open_parallel_finite_geometry remains READY with
+actual partial code/data, not a future-plan-only entry. Do not rerun unchanged
+seed or another whole-grasp trial. Next edit its physical bearing spaces,
+then independently check all finite clearances before native integration.
+
+Mass API caution: guide_frames*.csv.mass.json queries ONE context BaseMass.
+Stock UniformMass.getElementMass ignores index, so in a multiple-indexed-mass
+scene it is not the assembled sum. Frozen query files are preserved, not
+corrected. Actual1720/1729 acceleration/tensor coupons are separate assembly
+evidence; full deformed global A/mass validation remains NOT QUALIFIED.
+
+Final handoff audits are session_audit1769/session_integrity1770. All launched
+Native children have ended; no background continuation. Original102queue
+entries/verdicts and old Raw/manifests are preserved. UNBRACED100g target is
+still FAIL; open-guide component successes are NOT a product completion.
+
+Implementation-error runs1717/1721/1760 did not capture the failing source
+file before correction: original failed-producer SHA is NULL/NOT CAPTURED.
+Their errors/partial artifacts and verdicts are retained; no reconstructed
+source is falsely labeled an original snapshot. These are not executed
+Native physics trials. Actual Native case preflight/producer/binary-reference
+records and corrected-code results remain independently auditable.

@@ -1,3 +1,19 @@
+## Current1768/1770 — resume actual open-guide bearing geometry
+
+Read product_prototype/reports/AUTONOMOUS_RESUME.md and actual Git/queue first.
+New100g full Native1741 FAIL: maxspeed32.928255mm/s, internal30Hold rows.
+No unbraced/Lift/physical qualification. New closed-sleeve candidate1761
+rejected before Native by actual initial solid/wire interference.
+Open-guide Native component1765/1766 passes a limited torque/mass/kinematic
+contract after unique articulation indices+stockSubsetMapping; prior cache
+and initialization FAILs retained. Finite six-guide seed1768 is IMPLEMENTED
+but NOT_NATIVE_READY: root/hinge axial fork/spacer/pin geometry unfinished.
+Next task open_parallel_finite_geometry is READY, partial code in
+product_prototype/cad/open_parallel_geometry_seed.py. Complete physical
+bearing spaces and independent foreign-hardware/wire/newSkin checks before
+moving-root/FEM integration. Do not repeat completed runs or shrink sleeve
+dimensions blindly. No worker is running; no automatic external continuation.
+
 ## Current1680 — dynamic ownership rejected; material demands inventoried
 
 This section supersedes older RUNNING/READY claims below; historical evidence is retained.

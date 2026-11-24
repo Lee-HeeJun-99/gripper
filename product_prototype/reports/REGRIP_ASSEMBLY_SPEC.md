@@ -1,3 +1,15 @@
+## Current1768/1770 — finite concept, actual assembly still unqualified
+
+Closed sleeve1761 rejected by actual initial foreign solid and wire conflict.
+Open-guide seed1768 has finite all-six-guide STLs, but root bodies are
+ENVELOPES and hinge hubs still overlap axially. Do not fabricate or put these
+into a Native grasp as finished joints. Next actual operations: clevis/spacer
+and pin clearance, retained3foot root bond, carrier/eyelet retention, then
+foreign/wire/newSkin interference and actual moved-root mass/Jacobian proof.
+Dimensions are research assumptions, not measured tolerances or strengths.
+Native reduced-motion component1766 PASS does not validate these physical
+parts or existing300partCAD. No actual hardware/STEP/assembly qualification.
+
 ## 2026-11-25 — experimental dorsal yoke, NOT fabrication-qualified assembly
 
 Same-finger terminal six-foot rigid yoke1728: three finite STL parts in

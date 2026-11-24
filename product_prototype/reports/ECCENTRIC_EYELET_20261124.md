@@ -52,3 +52,35 @@ error before proposing any assembly-level qualification.
 
 Reproduce: `python product_prototype/sofa/eccentric_eyelet_mesh.py --tag NEW_MESH`
 and `python product_prototype/sofa/test_eccentric_eyelet_mesh.py`.
+
+## Initial placement1417 and actual-state replay1418
+
+After ae4bef8, actually generated20 initial world-coordinate STL parts plus
+combined visual assembly. Explicit right-handed frames retain original outer
+guide centres; only bore axes are eccentric. STL roundtrip maximum vertex error
+4.443900557e−6mm; polygon hole sagitta and measured serialization error deducted
+from analytic clearance leave minimum +0.275119080mm. PASS_INITIAL_PART_PLACEMENT
+ONLY. Terminal anchors and complete support unions are not part of this assembly.
+STEP/material/tolerance/strength/dynamic assembly remain unqualified.
+
+Then actually implemented1418 trajectory replay, using all240 accepted guide
+frames from existing Native1398. Each hypothesized R5 arc is carried rigidly by
+its original Guide Rigid3; links between arc endpoints are straight. Initial
+maximum tangent mismatch2.95e−14°; during opening maximum7.545254830°, endpoint
+7.544934256°. Minimum endpoint link length8.869085127mm. Thus REJECT fixed-arc
+C1 replay proxy: static local fit does not ensure a smooth wire under motion.
+This does NOT prove a real flexible wire cannot slide/bend. Hypothesized attached
+arc motion is a replay of old ideal-body states, NOT new hardware dynamics.
+
+No new Native physics run was justified: four-route wire/contact representation,
+terminal anchors, measured material/mass/joints remain missing. Existing Native
+1398 data were reused, not rerun. Next READY finite_wire_motion_contract must
+check installed Native finite wire/guide features in a small coupon, with actual
+wire radius and changing curvature; no custom solver or offset/dt parameter sweep.
+
+Reproduce with unique tags:
+```
+python product_prototype/sofa/eccentric_eyelet_assembly.py --tag NEW_ASSEMBLY
+python product_prototype/sofa/eyelet_arc_replay.py --tag NEW_REPLAY
+python product_prototype/sofa/reinforcement_cycle_validation.py --tag NEW_REGRESSION
+```

@@ -1,3 +1,13 @@
+## Finite eyelet1411–1419: no new Native dynamics qualification
+
+Actually implemented local geometry,finite STL solids,world placements and
+replay of240actual accepted Native1398 guide frames. Eccentric initial bore
+clearance+.275119mm after geometric budget, but fixedR5wire arc proxy develops
+7.545255° tangent mismatch under motion. Rejected representation,not rejection
+of real flexiblewire feasibility. New finite hardware was NOT run in Native;
+oldq/v unmodified. No new4Cable/contact/Holding/Lift or time/mesh PASS. Minimal
+Native finitewire/guide contract required next. See1418summary andnewreport.
+
 ## Completed observer/material and geometry continuation1315–1325
 
 Actual frozen-observer reuse early/late:9journal prefixdifferences0,114/100

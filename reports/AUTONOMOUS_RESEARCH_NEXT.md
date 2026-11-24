@@ -1,3 +1,15 @@
+## Next after1419 — finite wire motion contract
+
+Latest actual state/queue supersede historical headings below. Finite eccentric
+eyelet initial clearance passes narrowly scoped geometry1415–1417; fixedR5 arc
+replay1418 on old Native guide motion FAILS C1 tangency (max7.545255°).
+NextREADY finite_wire_motion_contract: inspect installed Native finite-wire and
+guide sliding/contact features,define minimal coupon before any4Cable scene.
+Do not rerun oldNative1398 or100g force/dt/offset sweeps. NewSTLs are separate
+candidate,not300partCAD adoption/STEP or actual dynamic hardware. No newNative
+physics runs in1411–1419;actual oldacceptedstates reused. Read product resume,
+queue and ECCENTRIC_EYELET_20261124.md;all oldFAILs remain.
+
 ## Next after1325 — distributed contact mechanism,not parameter sweeps
 
 No RUNNING Native jobs. Reused frozen observer1315/1319 preserves442/574

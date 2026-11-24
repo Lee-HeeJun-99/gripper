@@ -1,3 +1,14 @@
+## Eccentric eyelet separate candidate1415–1418 — NOT PRODUCT APPROVAL
+
+20 finite eccentric through-eyelet parts and initial world placement generated;
+OD3/centralID1.2/length2mm unchanged,explicit0.2mm45deg entrance chamfers.
+Minimum radial wall bound.391607mm, finite mesh initial wire clearance bound
+.275119mm. Not terminal anchors,full support unions,STEP or300partassembly.
+ActualoldNativeguide replay fixedR5arc/straightlink model acquires7.545255°
+tangent jump: rejected as smooth moving-wire representation. No physical wire
+equilibrium,friction,strength,tolerance,mass/joint or newgrasp qualification.
+Source/report ECCENTRIC_EYELET_20261124.md;oldCAD/Native unchanged.
+
 ## Rail-back exploratory grasp candidates — 2026-11-24
 
 Newjoint-planeNativecandidates1298/1306areNOT300partCADvalidation.100g

@@ -1,3 +1,23 @@
+## Latest continuation through1419 — 2026-11-24
+
+Starting cb1fc7d clean. Multiple actual geometry/implementation cycles1411–1418,
+not repeated Native runs. Chamfer-only R5 wire FAIL1412, four actual collision
+witnesses1413 (worst−0.0258611mm). Separate eccentric bore1415 retains OD3/ID1.2,
+length2 and0.2x45deg chamfers: initial wire clearance bound+.275364mm. 1416
+20watertight finite part STLs, minimum wall bound.391607mm, analytic polygon
+volume identity≤3.56e−15mm³.1417world placement leaves+.275119mm after mesh and
+serialization budget. Not STEP/fabrication or dynamic assembly PASS.
+
+Actually followed with1418old accepted Native1398 guide trajectory replay:
+fixedR5 arc/straightlink tangent mismatch grows from~3e−14° to7.545255°.
+REJECT fixedarc C1 proxy, not proof flexible wire impossible. No new Native
+hardware dynamics/force/grasp claim. OriginalRaw,oldgeometry/FAILs/SDK preserved.
+Commits f5f38dc,ae4bef8; final commit `git log -1`. Regression1419 summary is
+authoritative. NextREADY finite_wire_motion_contract: installed Native finite
+wire/guide minimal coupon representation before4Cable. No dt/offset sweep.
+Report ECCENTRIC_EYELET_20261124.md;actual commands/hashes in new case summaries.
+No automatic execution after session. Existing time/mesh/100g FAILs unchanged.
+
 ## Latest continuation through1410 — 2026-11-24
 
 Startinga18771fclean,actuallycompleted9Native no-object coupons1391/1392/

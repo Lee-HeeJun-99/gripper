@@ -1,5 +1,28 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1419 supersedes below. Startingcb1fc7d,commitsf5f38dc/ae4bef8 actual
+chamfer/filletFAIL→eccentricboregeometry→20finiteSTLs→worldplacement→motionreplay.
+1412actualwire-solidcollision,1415eccentricinitialbound+.275364mm,
+1416watertightsolids/wallbound.391607mm,1417finite meshbound+.275119mm.
+1418fixedR5arc proxy on actual old1398 guide states has7.545255° tangent jumps:
+REJECT motioncontract,not flexiblewire impossibility or newNativehardware result.
+No newphysicsruns;oldNativeacceptedstate reuse only. No Nativepending.
+
+NextREADY finite_wire_motion_contract. Run
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py`
+Read ECCENTRIC_EYELET_20261124.md and1418producer/summary. Need installedNative
+finitewire/slidingcontact representation minimalcoupon;not oldpointguide or
+fixedarc masquerading as hardware. Terminalanchors/material/friction/mass/joints
+NOTMEASURED;fullfourCable/3FingerHolding notready. No forcedstate or tolerance
+changes. ExistingCAD/SDK/Raw/FAILs untouched. Lastlocalcommit `git log -1`.
+Regression1419 authoritative. No backgroundcontinuation promise.
+
+Reproduce newscope checks (alwaysuniqueNEWtags):
+`python product_prototype/sofa/eyelet_entry_geometry.py --tag NEW_ENTRY --eccentric`
+`python product_prototype/sofa/eccentric_eyelet_mesh.py --tag NEW_MESH`
+`python product_prototype/sofa/eccentric_eyelet_assembly.py --tag NEW_ASSEMBLY`
+`python product_prototype/sofa/eyelet_arc_replay.py --tag NEW_REPLAY`
+
 LATEST1410 supersedesbelow. ActualopposedNativeopening1390–1404andfinite
 4routehardwaregates1408–1409done,notpending. Oppositepathopensoldandnewrest
 fingerusingNativeCableC2;virtualsphere1399NOTactualcontact. No-objectunload

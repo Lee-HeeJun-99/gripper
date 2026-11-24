@@ -35,13 +35,24 @@
     {
       "id": "eccentric_eyelet_world_placement",
       "priority": 2,
-      "status": "READY",
+      "status": "PASS",
       "scope": "Apply initial route bisectors and analytic offset axes to actual finite STL;verify transform/reload and conservative discretization budget,not dynamic hardware",
       "hypothesis": "Local eccentric solids need explicit assembly frames to avoid changing bore side or translating unchanged outer body",
       "prerequisites": ["eccentric_eyelet_manufacturing_geometry"],
-      "evidence": ["eccentric_eyelet_mesh1416"],
+      "evidence": ["eccentric_eyelet_mesh1416", "eccentric_eyelet_assembly1417"],
       "validation_criteria": ["outer centres equal original guide centres;right handed axes;STL roundtrip errors measured;analytic clearance minus geometric discretization remains positive"],
       "failure_alternatives": ["independent input-only control contract"]
+    },
+    {
+      "id": "finite_wire_motion_contract",
+      "priority": 2,
+      "status": "READY",
+      "scope": "Determine installed Native finite wire/guide representation on a minimal coupon before any four-cable integration;not another offset/dt sweep",
+      "hypothesis": "Fixed R5 arcs pass initial bore but acquire up to7.545deg tangent discontinuity on actual old Native guide motion;sliding/changing wire curvature is not represented by rigid arcs or point CableConstraint",
+      "prerequisites": ["eccentric_eyelet_world_placement"],
+      "evidence": ["eyelet_arc_replay1418", "eccentric_eyelet_assembly1417"],
+      "validation_criteria": ["distinguish physical wire equilibrium from kinematic replay;no prescribed finger/object state;retain finite radius and measured-data gaps;installed Native features only before custom modules"],
+      "failure_alternatives": ["independent layer hardware calibration readiness;input-only delayed control contract"]
     },
     {
       "id": "finite_antagonistic_four_route_gate",

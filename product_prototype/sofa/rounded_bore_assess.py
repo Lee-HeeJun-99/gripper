@@ -5,6 +5,7 @@ import numpy as np
 import trimesh
 from analyse import BASE,sha
 from rounded_bore_wire import geometry,inside
+csv.field_size_limit(16*1024*1024) # Parser capacity only;never a physical tolerance.
 def read(p):return list(csv.DictReader(p.open()))
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',default='rounded_bore_wire1633');p.add_argument('--geometry-case');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.case;m,inner=geometry();geosrc=BASE/'results'/a.geometry_case if a.geometry_case else src;meta=json.loads((geosrc/'geometry.json').read_text());assert meta['volume_mm3']==m.volume;node=ET.parse(src/'scene.scn').getroot().find("Node[@name='finiteEyelet']");np.testing.assert_array_equal(np.fromstring(node.find('MeshTopology').get('triangles'),sep=' ',dtype=int).reshape(-1,3),m.faces);np.testing.assert_array_equal(np.fromstring(node.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3),m.vertices*.001+[.01,0,0]);history=[];pair={}

@@ -5,6 +5,7 @@ import numpy as np
 import trimesh
 from analyse import BASE,sha
 from rounded_bore_wire import geometry
+csv.field_size_limit(16*1024*1024) # Larger numeric surface fields,not a physics tolerance.
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',default='rounded_partitioned_full1650');p.add_argument('--witness-case',default='rounded_partitioned_surface1651');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.case;wsrc=BASE/'results'/a.witness_case;witness=json.loads((wsrc/'witness.json').read_text());times={r['time_s'] for r in witness};actual={}
  with (src/'surface.csv').open() as f:

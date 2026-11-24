@@ -1,3 +1,17 @@
+## Current1662 — next finite-surface feature capability, not another mesh scan
+
+ALL Native through1655done;nochildrunning. Fine25umcollisionpilot206.380s,
+same11BeamDOFs/precontactq/v0. Vertex-only1658clear butwholefacet1659FAIL4
+states;1660independent16Nativefacewitnesses .008914–.022843umdepth. PreserveFAIL.
+DoNOTfullrerun (~1238sforecast>420cap) orrepeatresolution/dt/forcefamily.
+NextREADY native_finite_surface_feature_coverage: inspectactualinstalled
+Line/Triangle/facet registeredpairs,thenactualwitnessminimalcoupon ONLYif
+supported;allfeatures/geometryremain. OtherwiseBLOCKEDandindependentNative
+radialcontract. NoSDKedit/customsolver orstaticcouponmasqueradingasgrasp.
+AUTONOMOUS_RESUME top and CURRENT_TURN_FINITE_WIRE_20261124.md contain paths,
+commands,case-specific metadatawarnings andactualverdicts. 1662integrityindex
+includesGitexcludedRaw,whichremainlocallypreserved. No100gLift/productPASS.
+
 ## Current1655 — evaluate actual local collision-mesh pilot, not a new force scan
 
 Fullrounded+partition1650done,1652noinsidevertices BUT1653actualfullNative
@@ -1831,7 +1845,7 @@ SHA d5fa365f88cc8cc563981a5207ca4dc850f2ac05e2ce68bec78f1da1c56f3126.
 geometryState initialization failures remain preserved;they are NOT Newton
 convergence failures. Corrected Scene retains static NEW-design mass-reference
 geometry and removes the inapplicable old world mapping. Actual deformed
-geometry is Field x=rest+u;1661 reconstructs it to7.06211e-15mm,scale1.
+geometry is Field x=rest+u;1662 reconstructs it to7.06211e-15mm,scale1.
 
 Next actual all-pair assessment includes every recorded time,legacy sampled
 work AND stage-consistent work;keep0.1% gate and all previous failures.

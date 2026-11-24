@@ -379,14 +379,29 @@
     {
       "id": "finite_wire_local_contact_discretization",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "prerequisites": ["finite_wire_rounded_partition"],
       "prerequisite_states": {"finite_wire_rounded_partition": ["FAIL"]},
       "scope": "ONLYmappedcollisiontube axialresolution near8..12mm,25umderivedfromR.2fillet/2umcontactbuffer. Same11BeamDOFs/mass/E/BC/dt/16around,ALLhardware/features. NotFEMmesh convergence ornewmechanicalfinger.",
       "hypothesis": "1653independentactualNativeface witnesses prove500umaxialtriangles cut200umfillet despiteverticesoutside. Localcollisionresolution can distinguish representationaliasing,notincreaseforce/friction orhidefacetFAIL.",
-      "evidence": ["rounded_facet_reference1653", "wire_local_mesh_pilot1654"],
+      "evidence": ["rounded_facet_reference1653", "wire_local_mesh_pilot1654", "wire_local_mesh_pilot1655", "wire_local_mesh_vertices1656", "wire_local_mesh_facets1657", "wire_local_mesh_vertices1658", "wire_local_mesh_facets1659", "wire_local_mesh_facet_reference1660"],
       "validation_criteria": ["Nativeprecontactq/v API<=1e-12,finitealloutputs,actualGuidegeometryandwholeWirefacetchecks;endpointmapping kept identicaltolegacy validindex9.999999999999998,notinvalidbeam10"],
       "failure_alternatives": ["Preserve1654initializerSIGSEGV;noSDKpatch/newsolver orblindresolution sweep. Ifstillintersects,stopthisfamily pendingfreshhypothesis."],
+      "successors": ["native_finite_surface_feature_coverage"]
+    },
+    {
+      "id": "native_finite_surface_feature_coverage",
+      "priority": 1,
+      "impact": 2,
+      "estimated_cost": 1,
+      "status": "READY",
+      "prerequisites": ["finite_wire_local_contact_discretization"],
+      "prerequisite_states": {"finite_wire_local_contact_discretization": ["FAIL"]},
+      "scope": "Actual minimal installed Native feature-pair coverage at1659/1660wirefacet witnesses;read installed supportedintersectors first,then isolatedmatchingcoupon only. No furthermesh/dt/force sweep or SDK/newsolver.",
+      "hypothesis": "Actualfinitewirefacets intersectGuide withoutanywirevertexinside;coarse+fine preservethisfailure. Determine which line/triangle/facet collision combinations are really supported and represented before any moregraspintegration.",
+      "evidence": ["wire_local_mesh_facets1659", "wire_local_mesh_facet_reference1660"],
+      "validation_criteria": ["Useactualwitnesspositions andcompletefinitegeometry;actual registeredpair,detector provenance,response row andsignedsolid/facetgap crosscheck. Never removephysicalfeatures orclaim staticprescribedcoupon aswireactuation/holding;BLOCKED if no stocksupported contract"],
+      "failure_alternatives": ["Independent native_radial_contact_refresh_feasibility or actualmaterial/joint measurementreadiness;do notlaunchfullrefinedtrial forecast>420s"],
       "successors": []
     },
     {

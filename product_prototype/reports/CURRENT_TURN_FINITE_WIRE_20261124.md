@@ -1,5 +1,60 @@
 # Actual guide-turn finite wire coupon — 2026-11-24
 
+## Latest1655–1662 — fine collision candidate still fails actual facets
+
+1655 completed200outputs in206.380s, no Native errors. All25precontact Beam
+q/v outputs match reference **exactly0**; same11Beam DOFs and physicalinputs,
+so this is not an altered mechanical stiffness/force test. Endpoint mapping
+compatibility fix uses original serialized index, not a hidden state change.
+Independent1658 finds no inside wire vertices; complete-facet clipping1659
+still finds4penetrating output states,first10.6ms. Independent1660 confirms
+all16sampled interior witnesses by ray containment/nearest actual triangles
+and wire barycentrics,face error<=1.24127e-19m. Witness depth range
+**.008914–.022843um**. Small is not zero; no physical error floor or gate
+relaxation. Failures76→4 outputs in the SAME200step window indicate improved
+representation only; earlier firstevent and remaining penetration preventPASS.
+Do not describe this as contact/mesh/time convergence or successful sliding.
+Frozen1660 scope text mentions1650 from its original default; actual `case`,
+all inputs/hashes and algorithm select1655 correctly. No Raw corrected.
+
+1656/1657 analysis-only failures: default Python CSV131072byte field cap cannot
+read3088vertex fields. Preserved failures; parser capacity raised to16MiB,
+NOT a physics or numerical tolerance. Fresh1658/1659 analyse the SAME Raw,
+no Native rerun or result regeneration. Two local-mesh constructor regressions
+check Native-valid endpoint range, radius/stations/positive initial triangles.
+
+Stop this collision-resolution family: there is no justified next mesh scan.
+Full1200step refined run would forecast~1238s from actual206.38s/200steps,
+exceeds420s child cap, and the pilot already FAILS wholefacets. It was NOT run.
+No wire sliding/full3finger100g integration/Lift is justified by these data.
+Next READY native_finite_surface_feature_coverage: first inspect installed
+Line/Triangle/facet intersector registration, then actual-witness minimal
+coupon only if supported; otherwise BLOCKED and independent Native radial
+contact contract. No SDK/newsolver/state correction or hidden collision off.
+
+Manifest attempt1661 failed before writing an index because Python3.10 lacks
+hashlib.file_digest; failure recorded separately, no original file changed.
+The implementation now streams1MiB blocks using the supported SHA256 API.
+1662 is a new streaming SHA256 integrity index of explicit completed1618–1660
+directories,including Git-excluded CSV/surface Raw and installed reference
+binary/header fingerprints. It is NOT a backup or a physicalvalidationPASS;
+old manifests/Raw untouched. Local commits07627fe,454346a,f6aef44 plus final
+save from `git log -1 --oneline`. No push/history rewrite.
+
+Reproduction of completed scoped analyses (unique result names only):
+
+```bash
+$PY product_prototype/sofa/rounded_bore_assess.py --tag UNIQUE --case wire_local_mesh_pilot1655
+$PY product_prototype/sofa/rounded_wire_surface_contract.py --tag UNIQUE --case wire_local_mesh_pilot1655
+$PY product_prototype/sofa/wire_facet_witness_reference.py --tag UNIQUE --case wire_local_mesh_pilot1655 --witness-case wire_local_mesh_facets1659
+$PY product_prototype/tools/research_queue.py
+```
+
+No child remains running. Current finite-wire/wholegrasp/contact qualification
+is NOTPASS. Original50g exploratory functions and old object-only100g/Guide
+bracing outcomes, strictAPI/time/mesh failures and unknown hardware inputs
+remain unchanged. Session save is not automatic background continuation.
+
 ## Continuation1642–1655: vertex clearance is not surface clearance
 
 Local commits07627fe and454346a preserve preceding cycles. No SDK changes,

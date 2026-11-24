@@ -1,3 +1,11 @@
+## Current1662 — no finite-wire or fabrication qualification from vertex clearance
+
+ActualR.2entryfillet+sector collisionrepresentation retainscompletephysical
+Guide;notphysicalsplitparts orCADassemblyPASS. Actualwirewholefacets penetrate
+despitenointernalvertices. Localcollisionrefinement improvesobservedincidence
+butstillfails1659/1660. Neither resultisapprovedfor3fingerintegration/100gLift,
+STEP/fabrication oractualwirepropertyqualification. Existing300partCAD preserved.
+
 ## Current1639 — actual bend/entry candidate rejected, not product design approval
 
 Isolated Native finitewire atactual43.7256deg guideturn implemented1614,not

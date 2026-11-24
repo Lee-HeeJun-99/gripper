@@ -1,3 +1,14 @@
+## Current1662 — complete saved-facet check rejects vertex-only clearance
+
+SameNativeBeamDOFs/physicalinputs maintained. Rounded+collisionpartition1650
+has0insidevertices butactualwirefacetinteriors penetrateGuide1651/1653.
+Fine25umlocalcollisionpilot1655completed200steps206.380s/precontactq/v0;
+1658again0insidevertices BUT1659/1660actual16facetwitnesses remaininside
+.008914–.022843um. WholecontactFAIL,notroundoff-toleratedPASS. No gripper
+integration/new100gHolding/Lift orphysical/convergence promotion. Further
+meshscan stopped;fullrefinedtrial forecast>420s andnotexecuted. NativeSDK,
+originalRaw/FAIL unchanged. ReadcurrentturnreportandAUTONOMOUS_RESUMEtop.
+
 ## Current1639 — scoped wire diagnostics, no new grasp qualification
 
 Actual finitewire Local grosspenetration;Min still4.602854um;innerentryR.2fillet

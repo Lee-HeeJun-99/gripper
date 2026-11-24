@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 from analyse import BASE,sha
 from rounded_bore_wire import geometry,inside
+csv.field_size_limit(16*1024*1024) # Denser saved surface field,not a numerical gate.
 def cells(inner,n=32):
  result=[];h=np.pi/n;c=np.cos(h)
  for (x0,r0),(x1,r1) in zip(inner[:-1],inner[1:]):

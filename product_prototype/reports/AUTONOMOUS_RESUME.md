@@ -1,5 +1,27 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1662 supersedes ALL RUNNING claims below. NoNativechildrunning.
+1655 local25umcollisiontube actual200steps206.380s;precontact25Beamq/v API0.
+1658verticesoutside,BUT1659wholefacetsFAIL4states;1660independent16interior
+witnesses .008914–.022843umdepth. Noerrorfloor/physicalPASS. Stopresolution
+family,NO fullrefinedtrial (~1238sforecast>420cap andalreadyfailedpilot).
+1654SIGSEGV/1656–57CSVparserfailures preserved. ExistingRaw/oldverdictsintact.
+Newintegrity1662indexescompleted1618–1660 includingexcludedRawwithSHA256;
+notexternalbackup. Saved07627fe/454346a/f6aef44;finalsaveauthoritativegitlog.
+
+NextREADY native_finite_surface_feature_coverage: actual1659/1660witnesses,
+inspectinstalledNativeLine/Triangle/facetintersectorregistration BEFORE
+minimalstaticcapabilitycoupon. Preservewholegeometry/features;doNOTclaimthat
+couponaswireactuation/holding. Ifstockcontractabsent,BLOCKEDandindependent
+native_radial_contact_refresh_feasibility. No newlargegrasp/force/dt/meshscan.
+Restart: actualgitstatus/log,then `/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+product_prototype/tools/research_queue.py` (single command,repo root).
+Actualresults CURRENT_TURN_FINITE_WIRE_20261124.md latestsection. Toinspect:
+`.../bin/python product_prototype/sofa/wire_facet_witness_reference.py --tag UNIQUE
+--case wire_local_mesh_pilot1655 --witness-case wire_local_mesh_facets1659`.
+Alreadycomplete;doNOTrepeatwithoutnewhypothesis orreuseexistingtags.
+Sessionendedsafe,notbackgroundcontinuation;100g/Lift/physicalproductunqualified.
+
 CURRENT1655 supersedes RUNNING claims below. 1642 fullpartitionFAIL10negative
 states/worst6.478um;actualfirstcrossingprefix1643purity0.1644actual linear
 impulse/sourceorder agrees1.70e-21Ns. Roundedhybrid1650full1200outputs67.637s,
@@ -198,7 +220,7 @@ selects frozen1542 route; allGuide spheres/radii/collisions remain enabled.
 Strict1528 velocityAPI FAIL, old time/mesh FAIL preserved. Gitlog authoritative.
 
 CURRENT1533 supersedesbelow. ActualpairedQRmesh fixed1529andfree3.6s1530
-completedpositiveFEM.1530endobjectspeed4.46mm/s/omegaZ.01661rad/s,NOTfinal
+completedpositiveFEM.1530endobjectspeed4.46mm/s/omegaZ.01662rad/s,NOTfinal
 Holding. Actualpaired_mesh_withdraw1532 nowRUNNING1.2s/hard420s/4GiB.
 Inspectsummarybeforepromotion. Thenrun_mirror_mesh_grasp.py --tag NEW
 --duration 2 --pilot paired_mesh_withdraw1532 ONLYifforecast<420;costprefix

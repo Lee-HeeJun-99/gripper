@@ -1,3 +1,14 @@
+## Current1662 — wire facet failures preserved; no active child
+
+Finecollisionpilot1655:200outputs/206.380s,precontact25Beamq/v exactly0.
+1658noinsidevertices, but1659/1660wholefacetFAIL4states/16independentwitnesses
+.008914–.022843umdepth. No tolerance relaxation. Stop axialmeshscan/fulltrial:
+1200stepsforecast~1238s exceeds420s andpilotfails. Next actualNativefacet-pair
+coverage contract,notgraspintegration. Read AUTONOMOUS_RESUME top/latestreport.
+1662 newcompleted-artifact SHAindexpreservesexcludedRaw identity,notbackup.
+Commits07627fe/454346a/f6aef44 and finalsavevia gitlog;oldRaw/FAIL unchanged.
+No100gLift/unbracedHolding/physicalconvergence/STEP/product qualification.
+
 ## Current1655 — actual whole-facet failure despite no penetrating vertices
 
 Through1653: all completed. Rounded+partition Native1650 completes1200outputs,

@@ -1,0 +1,101 @@
+{
+  "status": "FAIL_NATIVE_COUPON_OR_OBSERVER",
+  "records": [
+    {
+      "probe": false,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21481747087091208,
+        "pid": 42,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "ed9d78dc1a31abe15658f94b65573561165feef07f55a916b3a648a1c348797b",
+          "command.json": "580823213964a4d99cc6f79299d6f5e6876fd197fc17b3bcdef03f8132de1977",
+          "stderr.log": "5c1a3cb92d4522d861b342f03007bf8a33395491572f0f1c781a22e0f22ac651",
+          "process.json": "cfc0e45aeb2c00c14b9de921966628a34d583022d5d4057a7bf673167a649eb2"
+        }
+      },
+      "outputs": 0,
+      "Native_execution_valid": false
+    },
+    {
+      "probe": true,
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.21131740091368556,
+        "pid": 43,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "d232bc7ad09163ece3e9dac018e9a2eb05126506ba353bea515c3e0e6a4dee46",
+          "command.json": "9f016089a94678a31830b273261aa3607858fdde382f973c563666119df493ae",
+          "stderr.log": "5c1a3cb92d4522d861b342f03007bf8a33395491572f0f1c781a22e0f22ac651",
+          "process.json": "255025c975d7e5eb221c899dfe3feab793ccebe122c32f5d9c23302e8b1874f6"
+        }
+      },
+      "outputs": 0,
+      "Native_execution_valid": false
+    }
+  ],
+  "maximum_observer_q_v_surface_impulse_error": 0.0,
+  "actual_registered_pair_inventory": {
+    "TriangleCollisionModel | LineCollisionModel": [
+      [
+        "0",
+        "NULL"
+      ]
+    ],
+    "TriangleCollisionModel | PointCollisionModel": [
+      [
+        "1",
+        "TTriangle<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>-TPoint<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>"
+      ]
+    ],
+    "TriangleCollisionModel | TriangleCollisionModel": [
+      [
+        "0",
+        "NULL"
+      ]
+    ],
+    "LineCollisionModel | LineCollisionModel": [
+      [
+        "1",
+        "TLine<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>-TLine<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>"
+      ]
+    ],
+    "LineCollisionModel | PointCollisionModel": [
+      [
+        "1",
+        "TLine<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>-TPoint<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>"
+      ]
+    ],
+    "LineCollisionModel | TriangleCollisionModel": [
+      [
+        "0",
+        "NULL"
+      ]
+    ],
+    "PointCollisionModel | LineCollisionModel": [
+      [
+        "1",
+        "TLine<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>-TPoint<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>"
+      ]
+    ],
+    "PointCollisionModel | PointCollisionModel": [
+      [
+        "1",
+        "TPoint<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>-TPoint<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>"
+      ]
+    ],
+    "PointCollisionModel | TriangleCollisionModel": [
+      [
+        "1",
+        "TTriangle<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>-TPoint<StdVectorTypes<Vec<3u,double>,Vec<3u,double>,double>>"
+      ]
+    ]
+  },
+  "initial_source_frame_s": 0.010599999999999991,
+  "source_sha256": "6a1aba84ab7c5422ef90b4554efaffabb5a7624d48e7a68e688551a8ea10fc33",
+  "scope": "Actualregisteredpair availability andobserverpurityONLY. Initialpenetration deliberately inheritedforcapabilitydiagnosis,not acceptednormalinitialconditionforgrasp. Wholephysicalguide/wiremesh retained; rigid surrogate andassumedinertia doNOTvalidate elasticwire/tendon/mass/dynamics/100gHolding. RegistryNULLmaydeliberatelyignoredcompositepair;requireactualfeature/geometryresponse audit."
+}

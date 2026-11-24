@@ -1,4 +1,20 @@
-## Latest continuation through1363 — 2026-11-24
+## Latest continuation through1373 — 2026-11-24
+
+Finite proximal reinforcement1364–1373 actuallyimplemented andNativeexecuted.
+0.125mm added behindexisting2mmrails0–70mm,85.354939mg/finger,not equalvolume.
+Original physical graph/108guideanchors unchanged afterdeclared exteriorunion
+andobserver edits1368. IndependentCSTmappedcoupon1365STRICT1e-12PASS scopeonly.
+1366default-added-damping pilot retained;correctedmatched-damping1367usedfor
+longer runs.1369/.6s31.937s and1370/1.2s63.464s complete,positive savedvolumes,
+bond0.1372endpoint compositeFz.702336N,Support.177712N,speed138.022mm/s,
+solverlimit1001.1373firstfinger1.2stip51.1886° vsbaseline52.0837°;proximalturn
+worse. REJECT thisearlyshape-retention candidate,do not runfull2sonlyforcount.
+FullHoldingNOTMEASURED;oldphysicsFAILunchanged.17contact-layer softwaretestsPASS.
+Next actualtask:compare allthree acceptedrotation/force histories and assess
+coupled transient versus simple sectionI prediction. No reinforcement sweep.
+Report:B3_PROXIMAL_REINFORCEMENT_20261124.md. No pendingNativechildren.
+
+## Previous continuation through1363 — 2026-11-24
 
 After feature5ab1755,actually started nextmechanism cycle1362. Reviewed old
 uniformrail-aspect1649–1660(separate custommodel,not adopted) andNative3point

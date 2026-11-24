@@ -1,0 +1,70 @@
+{
+  "status": "PASS_MODELED_INITIAL_REINFORCEMENT_GEOMETRY",
+  "records": [
+    {
+      "finger": 0,
+      "minimum_initial_extension_sphere_gap_m": 0.004534844502191979,
+      "minimum_all_guide_proxy_gap_m": 0.02228193619049175,
+      "minimum_wire_AABB_capsule_lower_bound_m": 0.019248026925980505,
+      "minimum_other_finger_AABB_lower_bound_m": 0.03663921872279992,
+      "minimum_signed_tet_determinant_m3": 1.2499999999999152e-09,
+      "volume_m3": 3.49999999999998e-08,
+      "mass_kg": 8.535493914482492e-05,
+      "unchanged_guide_anchors": 36
+    },
+    {
+      "finger": 1,
+      "minimum_initial_extension_sphere_gap_m": 0.004534844502191972,
+      "minimum_all_guide_proxy_gap_m": 0.02228193619049174,
+      "minimum_wire_AABB_capsule_lower_bound_m": 0.01440390017395371,
+      "minimum_other_finger_AABB_lower_bound_m": 0.02787026297782886,
+      "minimum_signed_tet_determinant_m3": 1.249999999999911e-09,
+      "volume_m3": 3.499999999999974e-08,
+      "mass_kg": 8.535493914482478e-05,
+      "unchanged_guide_anchors": 36
+    },
+    {
+      "finger": 2,
+      "minimum_initial_extension_sphere_gap_m": 0.004534844502191972,
+      "minimum_all_guide_proxy_gap_m": 0.02228193619049174,
+      "minimum_wire_AABB_capsule_lower_bound_m": 0.014403900173953713,
+      "minimum_other_finger_AABB_lower_bound_m": 0.027870262977828873,
+      "minimum_signed_tet_determinant_m3": 1.249999999999911e-09,
+      "volume_m3": 3.499999999999969e-08,
+      "mass_kg": 8.535493914482466e-05,
+      "unchanged_guide_anchors": 36
+    }
+  ],
+  "original_core_volume_m3": 4.100524275533017e-07,
+  "material": {
+    "young_modulus_Pa": 250000000.0,
+    "poisson_ratio": 0.3,
+    "density_kg_m3": 2438.712546995012,
+    "scope": "E/nu copied existing nativeassumptions;density derived from1g/originalactualFEMvolume,NOT measured material"
+  },
+  "nominal_rail_only_I_ratio": 1.953125,
+  "composite_section_I_ratios": [
+    {
+      "station_mm": 0,
+      "ratio": 1.7221602390689237
+    },
+    {
+      "station_mm": 50,
+      "ratio": 1.7221602390689237
+    },
+    {
+      "station_mm": 70,
+      "ratio": 1.7171417869223318
+    }
+  ],
+  "interface_triangles_cancelled": 56,
+  "source_commit": "b10394ebfdb0de7743bd741dd48a8cb2af3f8b74",
+  "source_sha256": "9ae2f6c1b722ea7ecb92aedc7c391153f4ea482e7e7fee90c131becdec193045",
+  "input_hashes": {
+    "scene.scn": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+    "mesh.json": "8b1359cb30853370289f6b5c094fc0372b3d11d7ac532f90acdf836c71c21935",
+    "config.json": "3e74eec7daa80f8b8cdb62164ffb8ca2d8bd7fc41c19e95a02b324bc4b0c766e"
+  },
+  "scope": "One finite0.125mmproximalreinforcement,original2mmrailfootprint/108guideanchors retained. Addsvolume/mass,not equalvolume efficiency. Perfectbond/rootclampedmaterialrange0\u20135mm are assumptions. ActualClamp/support fabricationandmovinginterference NOTQUALIFIED;sectionI ratios are referencealgebra,NOT Native stiffness.",
+  "physical_validation": "NOT QUALIFIED"
+}

@@ -9,13 +9,13 @@ import numpy as np
 from b3_contact_layer_native import add,flat
 
 def exterior(mesh,g):
- old=np.array(mesh['tetrahedra']);count=len(mesh['local_positions_mm']);pad=np.array(g['tetrahedra']);parents=g['bottom_Skin_parent_indices'];remap=np.array([parents[k//2] if k%2==0 else count+k//2 for k in range(40)]);new=remap[pad];faces={}
+ old=np.array(mesh['tetrahedra']);count=len(mesh['local_positions_mm']);pad=np.array(g['tetrahedra']);parents=g['bottom_Skin_parent_indices'];remap=np.array([parents[k//2] if k%2==0 else count+k//2 for k in range(len(g['local_positions_mm']))]);new=remap[pad];faces={}
  for part,tets in [('original',old),('layer',new)]:
   for a,b,c,d in tets:
    for f in ((b,c,d),(a,d,c),(a,b,d),(a,c,b)):faces.setdefault(tuple(sorted(f)),[]).append((f,part))
  assert max(map(len,faces.values()))<=2
  boundary=[v[0] for v in faces.values() if len(v)==1];interfaces=[key for key,v in faces.items() if len(v)==2 and v[0][1]!=v[1][1]]
- expected={tuple(sorted(f)) for f in g['triangles'] if all(k%2==0 for k in f)};expected={tuple(sorted(remap[list(f)])) for f in expected};assert set(interfaces)==expected and len(interfaces)==24
+ expected={tuple(sorted(f)) for f in g['triangles'] if all(k%2==0 for k in f)};expected={tuple(sorted(remap[list(f)])) for f in expected};assert set(interfaces)==expected and len(interfaces)==g.get('expected_interface_triangles',24)
  original=set(map(lambda f:tuple(sorted(f)),mesh['triangles']));retained={tuple(sorted(f)) for f,part in boundary if part=='original'};assert retained==original-set(interfaces)
  used=sorted({int(v) for f,_ in boundary for v in f});inv={k:i for i,k in enumerate(used)};tri=np.array([[inv[k] for k in f] for f,_ in boundary]);edges={}
  for f in tri:

@@ -3,6 +3,13 @@ from analyse import BASE
 from contact_layer_union import exterior
 def result(name):return json.loads((BASE/'results'/name/'summary.json').read_text())
 class ContactLayerTests(unittest.TestCase):
+ def test_reinforcement_added_mass_not_equal_volume(self):
+  d=result('proximal_reinforcement_geometry1364');self.assertEqual(d['interface_triangles_cancelled'],56);self.assertTrue(all(r['mass_kg']>0 and r['unchanged_guide_anchors']==36 for r in d['records']))
+ def test_reinforcement_independent_coupon(self):
+  d=result('proximal_reinforcement_coupon1365');self.assertLessEqual(d['max_velocity_reference_error_m_s'],1e-12);self.assertLessEqual(d['max_position_reference_error_m'],1e-12)
+ def test_reinforcement_graph_and_valid_entry_not_holding(self):
+  self.assertTrue(result('proximal_reinforcement_audit1368')['original_physical_graph_equal_after_declared_collision_and_observer_changes'])
+  d=result('proximal_reinforcement_entry1369');self.assertEqual(d['outputs'],[[240,240]]*3);self.assertEqual(d['maximum_bond_position_error_m'],0);self.assertTrue(all(r['minimum_saved_volume_ratio']>0 for r in d['qualities']));self.assertEqual(d['holding'],'NOT MEASURED')
  def test_finite_geometry(self):
   d=result('b3_contact_layer_geometry1336');self.assertEqual(d['status'],'PASS_LIMITED_INITIAL_GEOMETRY')
   self.assertTrue(all(r['minimum_initial_pad_object_gap_m']>.0002 and r['mass_kg']>0 for r in d['records']))

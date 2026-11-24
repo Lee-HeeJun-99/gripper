@@ -1,0 +1,55 @@
+{
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "20",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/proximal_reinforcement_damped_pilot1367/scene.scn"
+  ],
+  "source_commit": "b10394ebfdb0de7743bd741dd48a8cb2af3f8b74",
+  "source_sha256": "de2c257a7c7ef5bbf43e74f55136a2aa92800d6f7e0193cac4c242a71210e94b",
+  "binary_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_alarm_window484/libReGripAlarmWindow.so": "6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "scene_sha256": "cfa4f524fa8ff86769100ab283148c8e39831b6362a35a70fa18899a6a83a78e",
+  "baseline_scene_sha256": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+  "geometry_sha256": "407ddcbd34338080b1ada722514f83673c5e32761927d023dd4a6294ce2c6159",
+  "layer_design": {
+    "kind": "proximal_backing_reinforcement",
+    "material": {
+      "young_modulus_Pa": 250000000.0,
+      "poisson_ratio": 0.3,
+      "density_kg_m3": 2438.712546995012,
+      "scope": "E/nu copied existing nativeassumptions;density derived from1g/originalactualFEMvolume,NOT measured material"
+    }
+  },
+  "baseline_graph_unchanged": false,
+  "duration_s": 0.05,
+  "dt_s": 0.0025,
+  "forecast_s": 30.0,
+  "child_limit_s": 30,
+  "memory_GiB": 4,
+  "no_contact_control": false,
+  "classification": "EXPLORATORY_PROXIMAL_REINFORCEMENT",
+  "hypothesis": "Existing2mmrailfootprint preserved;0\u201370mmouterbacking+0.125mm uses same assumedE/nu and implieddensity,not materialfitting. Test whether proximaloutwardrotation/contact loss decreases under100gload.",
+  "scope": "Adds finite material and mass with ideal perfect bond;not equal-volume efficiency comparison. No original collision disabled.",
+  "physical_validation": "NOT QUALIFIED",
+  "reinforcement": true,
+  "union_source_sha256": "b556e96d057e237c4bd6bc7ca031d9f388188b14e17d5e9f80528fcaf0004f09",
+  "root_boundary": "Existingclampedmaterialrange0\u20135mm also fixes addedouter nodes. Actualclampclearance/preload not modeled.",
+  "added_mass_per_finger_kg": 8.535493914482492e-05,
+  "extension_rayleigh_contract": {
+    "mass_per_s": 1.0,
+    "stiffness_s": 0.0001
+  },
+  "exterior_union": true,
+  "collision_change": "Cancel56 exactly shared bond interface triangles;retain all other originalSkin/Rail exterior and finite hardware. New composite exterior replaces separate material collision nodes. Not contact removal to claim Holding.",
+  "union_sha256": "e2cb5e9c649f911630c9ee089850fbec4cff2c2c0a21a84a0eb87fc6b63d121b"
+}

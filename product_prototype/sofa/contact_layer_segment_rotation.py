@@ -4,8 +4,8 @@ from pathlib import Path
 import numpy as np
 from analyse import BASE,sha
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);records=[];hashes={}
- for case in ('b3_railback_grasp1001298','b3_contact_layer_union_withdraw1352'):
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',default=['b3_railback_grasp1001298','b3_contact_layer_union_withdraw1352']);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);records=[];hashes={}
+ for case in a.cases:
   src=BASE/'results'/case;local=np.array(json.loads((src/'mesh.json').read_text())['local_positions_mm']);stations=np.unique(local[:,0]);masks=[(local[:,0]==x)&(local[:,2]==.1) for x in stations];root=ET.parse(src/'scene.scn').getroot();hashes[case]={f:sha(src/f) for f in ('scene.scn','mesh.json')}
   for i,angle in enumerate((0,120,240)):
    file=src/f'finger{i}.csv';rows=list(csv.DictReader(file.open()));hashes[case][file.name]=sha(file)

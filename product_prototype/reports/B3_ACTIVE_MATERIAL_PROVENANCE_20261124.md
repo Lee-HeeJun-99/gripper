@@ -31,6 +31,16 @@ global420s),4GiB. Checkactualcompletionandfreshjoinbefore interpreting.
 No relaxationofphysicsgates. Latebodymovementandnormalsremain diagnostic,
 not unique evidence thatsolver ordesignalone causesloss.
 
+Completed1319actual78.271s:9journals×574prefixallfieldsEXACT0.102features,
+726childJentries.1320uniquelyjoins100normalrows.1321mapsall8activeSkin
+Point/Linerows in2lateframes tomaterialstation100mm,parent245/248. Normal
+onobjectz is−0.3403…−0.2923 instead of early≈+0.79…+0.80. Both measured
+windows carryloadatdistalendpoint,notproven distributedWrapping. Previous
+parentgeometryerror≤1.39e-17m andnormalimpulseidentityerror0. Nextaccepted
+point differs22–47µm;clockalignmentmustremainexplicit. No trial rerun merely
+to turn FAIL into PASS. These areobservations duringunqualifiedcontactdynamics,
+not a uniquely identifiedphysicalcauseorrealhardwaremeasurement.
+
 Reproduce ONLYwithNEWtags,Pythonrobot_ws:
 ```
 product_prototype/sofa/b3_existing_provenance_probe.py --tag NEW_EARLY

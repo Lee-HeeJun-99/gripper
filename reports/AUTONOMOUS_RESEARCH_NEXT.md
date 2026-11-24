@@ -1,3 +1,18 @@
+## Next after section and100g joint/input cycles1286–1315
+
+Native section/idealinterface controls complete,NOT mesh/jammingvalidation.
+NEW100gRailback1.5N and2N bothHoldingFAIL withoutsavedinversion;downward
+Skin/Railforces afterwithdrawal. Stopforcebranch,no100gLift. Contactdirection
+history isactualcase1309;useexactdirectory,notguessednumbers.
+1311strictsame-dtprefixEXACT0,90softwaretests1313PASSonly.
+
+CURRENT1315reuses frozen existingprovenance1242binary,notnewSolver/observer
+reimplementation. Checkitsactualcompletionbeforeanythingelse. IfpurityPASS,
+reusecontact_provenance_assess.py --source b3_existing_provenance1315
+--lines 3 --tag NEW_TAG. Thenjoinpreviousclocktoactualnextacceptedrow,
+notroundedtime orstep*dt. Needuniquematerial/contact attribution before
+newplacementdesign. Read productCHECKPOINT,AUTONOMOUS_RESUME andresearchqueue.
+
 ## Git publication blocker repaired — 2026-11-24
 
 User-authorized targeted unpublished-history cleanup complete. Only oversized

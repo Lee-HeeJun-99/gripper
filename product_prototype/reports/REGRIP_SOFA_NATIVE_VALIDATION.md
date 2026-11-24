@@ -1,3 +1,14 @@
+## Section / independent grasp candidates1286–1315 — 2026-11-24
+
+ActualNative section100ms endpointqreference3.18e-17m;paironlymeshcriterion,
+notfullconvergence. IdealXYZinterface endpoint matchesindependentreference,
+no calibratedpressure/friction. New100g1.5N railback and2Nsamejoint actual
+2s runscompletewithpositiveelements,butbothunsupportedHoldingFAIL. Solver
+iterationlimitspersist. DownwardSkin/Railloadsarenotgraspimprovement.
+Same-dtprefix1311exact0 isreproducibility,NOTtime.90softwaretestsPASSonly.
+Old .1%time/1%mesh/physicalgatesunchanged. No100gLift orhardwarePASS.
+ReadB3_RAILBACK_GRASP_20261124.md;current1315observerstatusneedsactualcheck.
+
 ## Native layer diagnostics1257–1278 — 2026-11-24
 
 Actual refinedlayer mesh9→33tipchange93.66%FAIL;zero contactimpulses and

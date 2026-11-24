@@ -1,3 +1,12 @@
+## Rail-back exploratory grasp candidates — 2026-11-24
+
+Newjoint-planeNativecandidates1298/1306areNOT300partCADvalidation.100g
+1.5N/2NbothHoldingFAIL;2Nisinput-sensitivity,notmechanicalefficiencygain
+ormotorrequirement. IdealRailbackconnection lacksrealhardwarequalification.
+No newCADadoption/STEP/fabricationapproval. Layeridealinterface isnotjamming.
+Nextdesignmustpreserveusefulcontactdirectionduringsupportwithdrawal;
+firstuniquelyattributemeasuredcontact,notrandomGuideoffset/strokechanges.
+
 ## Layer discretization / transmission limitation — 2026-11-24
 
 No new product geometry or300partassembly change. Actuallayercoupon's

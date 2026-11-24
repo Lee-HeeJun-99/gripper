@@ -1,3 +1,31 @@
+## Consecutive section / interface / grasp cycles1286–1315 — 2026-11-24
+
+Started9d84690clean;commits51c121a,b931f40,a2b7bcc,5038cef,9a871b6,
+858ecc2,2e265a5. No push,SDK edit,history rewrite oroldRaw/verdictchange.
+1288actualsection100ms4.831s,endpointreferenceqerror3.18e-17m;thickness
+pair0.344%ONLY,reference shear99.67%,NOTwholemeshPASS.1292idealXYZtie
+Native100ms7.297s,free/tiedendpoint1.0069643,NOTrealjamming/stiffness.
+1294LPgroupingomittedfirst_row;invalidanalysispreserved;1295/96corrected.
+
+1298NEW100g railback1.5N actual2s134.461s,noinversion;1300HoldingFAIL,
+Slip40.028mm,SkinFz−0.0802N,Support1.0612N,Guide/Rail0.1306samejoint2N
+sensitivity2s91.728s,noinversion;1307HoldingFAIL,Slip40.396mm,speed35.756
+mm/s,SkinFz−0.3995N,Rail−0.1816N,Support1.5612N,Guide0. Both reach
+solver1001. No100gLift,moreforceincrementsorphysicalqualification.
+1309active normal cone upward coefficient becomes nonpositive1.425/1.400s
+(1.5/2N),conditionalactive-set bound,notuniquecausality.1311prefix9journals
+×480outputsEXACT0;1310parserwarningresult preserved,supersededbystrict1311.
+1312actualwidthmeanSkinturningproxy only;1304actualcomparisonplotbothFAIL.
+1313software90testsPASS;alloldtime.1%/mesh1%/energy/materialgates remain.
+
+CURRENT1315read-only B3provenanceprobe reuses existingfrozen1242binary,
+442steps/120s,previousclockwindow1.0949–1.0998. Check actual summary;
+1314pre-Native narrownameassumptionFAILpreserved. Nextreuseexisting
+contact_provenance_assess.py with1315source,thenactualprevious→accepted
+indexjoin. No detector-orderguessing. Read AUTONOMOUS_RESUME.md andqueue.
+Reports:LAYER_SECTION_NATIVE,LAYER_SECTION_INTERFACE,B3_RESPONSE_CONE_BUDGET,
+B3_RAILBACK_GRASP_20261124.md. AllactualNativecommands/hashes inpreflight.
+
 ## Git repair completed — 2026-11-24
 
 Explicitly authorized unpublished-history repair removed ONLY tracked

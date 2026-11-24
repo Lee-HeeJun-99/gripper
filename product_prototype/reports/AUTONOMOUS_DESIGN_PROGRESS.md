@@ -1,3 +1,12 @@
+## Consecutive independent and actualNative cycles1286–1315
+
+SectionNativepilot→100ms,idealinterface math→Native100ms,dependency-aware
+queue,actualB3force/momentreference,new100gRailback1.5N2s,2Ncontactprofile
+and2sholding,same-dtstrictprefix,actualnormalhistory/centreline executed.
+BothnewHoldingtrialsFAILpreserved;noinversionisnotHolding.90softwaretests
+PASS;notphysicscertification. Nowreusingexistingfrozenprovenanceobserver
+1315beforematerial/contactplacementcandidate,notrewritingSolverorSDK.
+
 ## Continued cycles1279–1285 — 2026-11-24
 
 Implemented exact-field section diagnostic,consistent face traction,actual

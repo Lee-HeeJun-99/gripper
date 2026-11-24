@@ -1,3 +1,17 @@
+## Current1714 — new finite-envelope actuation interlock, passive control PASS
+
+2026-11-25, start05252d7 clean. Reviewed all102 original queue hypotheses;
+empty READY is not completion. A different input mechanism is now implemented:
+finite-sector sensor triggers a one-way cable clutch, not a force/offset sweep.
+All hardware/contact geometry, FEM, wire path, dt/solver and object states stay
+unchanged. Ideal sensing and instantaneous clutch are exploratory assumptions.
+1714 actual4step Native passive control:1.241s, q/v/object impulse difference0,
+Python-vs-C++ actual-surface sensor error1.952e-18m; positive saved FEM.
+This is SENSOR/PURITY PASS ONLY, not unbraced Holding. Next actual active1.2s
+trial is READY; command below. No SDK/push/history rewrite.
+`python product_prototype/sofa/sector_clutch_native.py --tag sector_clutch_prefix1715 --enabled --duration 1.2 --control sector_clutch_control1714`
+Local save: `git log -1 --oneline` (not a self-referential SHA).
+
 ## Current1713 — completed unbraced research cycles; goal NOT achieved
 
 This supersedes ALL historical RUNNING/READY/queue-empty text below.

@@ -2,6 +2,21 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
+      "id": "finite_sector_clutch_control",
+      "priority": 0,
+      "status": "READY",
+      "scope": "New accepted-state actuation interlock, not a force/offset/dt sweep; no object state writes or collision removal",
+      "hypothesis": "A geometry-triggered physical cable clutch can stop closure drive before sector encroachment; distinguish closure-driven bracing from passive continued collapse",
+      "prerequisites": [],
+      "evidence": ["capillary_hold1700", "sector_route1707", "bracing_buffer1710"],
+      "expected_outputs": ["Compiled controller, passive purity Native coupon, active minimal Native trial, source-resolved bracing assessment"],
+      "validation_criteria": ["Passive q/v/impulse purity exactly0; Python/C++ finite-surface sensor agreement<=1e-12m", "All original contacts/FEM enabled; actual next-step cable force change verified", "No UNBRACED claim unless zero cross-finger hardware loads and original Holding criteria pass"],
+      "failure_criteria": ["Internal contact after force cut, invalid FEM or lost grasp; retain full evidence"],
+      "maximum_execution_cost": "4GiB/420s each; 4-step passive control then at most1.2s active prefix",
+      "failure_alternatives": ["Same-finger passive cross-tie geometric compatibility, not another clutch threshold sweep"],
+      "successors": ["Causal actuation/sector event timing assessment"]
+    },
+    {
       "id": "finite_holding_internal_wrench",
       "priority": 0,
       "status": "PASS",

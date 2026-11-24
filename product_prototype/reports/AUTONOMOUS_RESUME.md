@@ -1,5 +1,13 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1642: saved07627fe through1639,thenactualnextNativeunits1640FAILstrictv
+3.22e-9rad/s>1e-12. NO mm-unitcontacttrial. IndependentSIcollisionpartition
+1641 retainsALL256actualorientedtrianglesandoriginalLine/Pointfeatures.
+44steps1.774s:positive2umminimumvertexgap/0negative,still1001iterations.
+Actual full1200steps partitioned_wire_full1642 RUNNING;inspectsummary/process
+BEFORE rerun. Nextindependentsource/impulse/gapaudit;noactualwire/graspPASSyet.
+Sourcepartitioned_eyelet_wire.py,reportCURRENT_TURN_FINITE_WIRE_20261124.md.
+
 CURRENT1639 supersedes RUNNING claims below. All Native through1636 completed;
 no active child. 1633 inner-entryfillet actual107.987s/1200outputs stillFAIL
 4.518705um penetration1634;stop filletsize scan. 1636 firstcrossing44steps

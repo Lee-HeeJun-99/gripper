@@ -342,13 +342,26 @@
     {
       "id": "finite_wire_units_contract",
       "priority": 1,
-      "status": "READY",
+      "status": "FAIL",
       "prerequisites": ["finite_wire_contact_phase_residual"],
       "scope": "Consistent mm/kg/s representation of SAME physical coupon;no SDK change or new response. No-contact Native physical-equivalence contract must precede contact contrast. Not pure dedup-only fix because other absolute Native epsilons also rescale.",
       "hypothesis": "1639 actual critical facet detected but suppressed by installed hardcoded1e-8f combined-point squared-distance dedup. A consistent units contrast can distinguish absolute numeric contact filtering without altering actual wire/guide/material/load/dt.",
-      "evidence": ["wire_response_dedup1639"],
+      "evidence": ["wire_response_dedup1639", "wire_units_control1640"],
       "validation_criteria": ["Explicit L1000/M1/T1 transformation of every dimensional field incl mixed AdaptiveBeamMapping coordinates;actual no-contact SI-normalized q/v/fixture error<=1e-12;contact physical gap/actual row coverage independently audited before interpretation"],
       "failure_alternatives": ["BLOCKED if native components violate physical unit contract;no fitted E/rho or new solver"],
+      "successors": ["finite_wire_facet_partition"]
+    },
+    {
+      "id": "finite_wire_facet_partition",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["finite_wire_units_contract"],
+      "prerequisite_states": {"finite_wire_units_contract": ["FAIL"]},
+      "scope": "Same finite originalsolid/wire/material/input/dt/tolerance inSI. Trianglecollisionmodel partition only;original Line/Point fullyretained. All256faces exactunion,notcollision-removal orphysicalguidesplit.",
+      "hypothesis": "1639criticaladjacentfacet dropped bywithinmodelpair dedup. Separate actual32azimuthsector TriangleModels retainbothfacetconstraints withstockNativecomponents andnoSDKedit.",
+      "evidence": ["wire_response_dedup1639", "partitioned_wire_prefix1641"],
+      "validation_criteria": ["Exact orderedfaceunion/positions;actual firstcrossingprefix retainspositivevertex-solidgap;full120msNative thenactualgap/sourceimpulse audit. No promotion toCCD/time/mesh/grasp ormaterialPASS"],
+      "failure_alternatives": ["If fullrunfails,inspect actualfeature/time ofnewfailure ratherthanpartition/dt/force sweep;switch independent scope if nonew validhypothesis"],
       "successors": []
     },
     {

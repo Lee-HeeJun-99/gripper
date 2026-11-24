@@ -81,6 +81,37 @@ All original Raw/FAIL preserved; detector journals stay local and excluded from
 Git. New component diagnostics do not qualify unbraced100gHolding/Lift,
 time/mesh convergence, real wire properties or300partCAD performance.
 
+## Units1640 FAIL and actual collision partition1641–1642
+
+Checkpoint07627fe saves1618–1639. Next task ACTUALLY executed,not just planned.
+Consistent mm/kg/s1640: radius/positions/translations×1000,E/1000,rho/1e9,
+normal tolerance1e-12m→1e-9mm (samephysicalgate),rotations/quaternions/time
+unchanged. AdaptiveBeamMapping useCurvAbs0 firstcoordinate is dimensionless
+beam-index+barycentric,onlylocal y/z scale. Two regression tests check geometry
+union and physical mass/EI conversion,not Nativephysicalqualification.
+Actual no-contact1200outputs/6.693s: normalized q1.82051e-13/surfaceq2.79637e-15,
+but rigidv3.220997e-9rad/s (1.5ms,node8,angularz),surfacev1.39543e-11m/s.
+**FAIL strict1e-12 API**, not rounded toPASS. No mm-unit contact run allowed.
+Raw1640 numbers are **mm/kg/s despite inherited SI-looking logger headers**;
+only independent analysis converts them. No original Raw rewritten.
+
+Independent implementation1641 keeps exact original256orientedEyelettriangles
+and all original Line/Point features, partitions ONLY TriangleCollisionModels
+into32azimuthsector contexts. No new seamLine/Point models;no actualsurface
+removed, enlarged or hidden. Static fixture coordinates duplicated identically
+as explicit collision representation,not additional physical guideparts/mass.
+44step Native1.774s: minimum sampled gap+2um,0negative outputs;firstcrossing
+removed in this prefix only. Still1001iterations: not numericalPASS.
+Bounded full1200step trial1642 RUNNING;inspect actualsummary/process first.
+Then independent actualcontact source/impulse andsolidgap audit required.
+
+```bash
+$PY product_prototype/sofa/wire_units_contract.py --tag UNIQUE_CONTROL
+$PY product_prototype/sofa/partitioned_eyelet_wire.py --tag UNIQUE_PREFIX
+$PY product_prototype/sofa/partitioned_eyelet_wire.py --tag UNIQUE_FULL --steps 1200
+$PY -m unittest discover -s product_prototype/sofa -p test_wire_contact_representation.py
+```
+
 StartingHEAD98ac710, clean tree; old Raw and verdicts preserved. Goal is to
 resolve the current finite-wire route incompatibility, not add unrelated CAD.
 

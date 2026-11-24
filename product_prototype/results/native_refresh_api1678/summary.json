@@ -1,0 +1,76 @@
+{
+  "status": "BLOCKED_REFRESH_IN_EXAMINED_CURRENT_STOCK_PATH",
+  "installed_paths": [
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.AnimationLoop/sofa/component/animationloop/FreeMotionAnimationLoop.h",
+      "sha256": "d8bef2472ae827197e7c68cef8a36b0df1ff12b81c357a4c2837922a3db08589",
+      "declared_Data_names": [
+        "d_solveVelocityConstraintFirst",
+        "d_threadSafeVisitor",
+        "d_parallelCollisionDetectionAndFreeMotion",
+        "d_parallelODESolving"
+      ],
+      "relevant_lines": [
+        {
+          "line": 47,
+          "text": "Data<bool> d_solveVelocityConstraintFirst; ///< solve separately velocity constraint violations before position constraint violations"
+        },
+        {
+          "line": 49,
+          "text": "Data<bool> d_parallelCollisionDetectionAndFreeMotion; ///< If true, executes free motion step and collision detection step in parallel."
+        },
+        {
+          "line": 50,
+          "text": "Data<bool> d_parallelODESolving; ///< If true, solves all the ODEs in parallel during the free motion step."
+        }
+      ]
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Constraint.Lagrangian.Model/sofa/component/constraint/lagrangian/model/BaseContactLagrangianConstraint.inl",
+      "sha256": "940f10aef799a56ce07c006f2d7c7e2eb46510cb99d8037ad3a879ef4a0eadf0",
+      "declared_Data_names": [],
+      "relevant_lines": [
+        {
+          "line": 204,
+          "text": "dfree = dot(Pfree - Qfree, c.norm) - c.contactDistance;"
+        }
+      ]
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Collision.Response.Mapper/sofa/component/collision/response/mapper/RigidContactMapper.inl",
+      "sha256": "25c63a35c27d3384d4962179c898a84d38d64dae678ccbe77ebf245359f40408",
+      "declared_Data_names": [],
+      "relevant_lines": []
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Collision.Detection.Intersection/sofa/component/collision/detection/intersection/MinProximityIntersection.h",
+      "sha256": "32b81698de014bab917e0f55d8061bf4db5b0544b3c3f504f28a3caa7db15555",
+      "declared_Data_names": [
+        "d_useSphereTriangle",
+        "d_usePointPoint",
+        "d_useSurfaceNormals",
+        "d_useLinePoint",
+        "d_useLineLine"
+      ],
+      "relevant_lines": [
+        {
+          "line": 60,
+          "text": "Data<bool> d_useSurfaceNormals; ///< Compute the norms of the Detection Outputs by considering the normals of the surfaces involved."
+        }
+      ]
+    }
+  ],
+  "previous_actual_results": {
+    "force_contact_phase1609": {
+      "summary_sha256": "391d4ec60768e1ebc394610511e7fe8256c856ecf4f1be9c1ca2f95a3f91c01d",
+      "status": "NATIVE_FORCE_RESPONSE_PHASE_COUPON_ONLY"
+    },
+    "spinning_phase_observer1610": {
+      "summary_sha256": "b09dd89dc2f51c7ad0c71e31b729499ac45fdfb8b2dd520674bdba0f9de5d09d",
+      "status": "PASS_READONLY_FREE_ORIENTATION_LEVER_CONTRACT_ONLY"
+    }
+  },
+  "decision": "No supportednormal-resampling configuration identifiedinexaminedFreeMotion/FrictionContact/RigidContactMapper path. Formulauses stored c.norm withfreepositions. Exposedvelocityfirstandparallelflags doNOTdocument a newnormalrefreshcontract;priorfailedvelocityfirst/DefaultCable/penalty/surfaceNormalscontrols notrerun.",
+  "scope": "Bounded installedheader/knownactualevidence review,NOTproof ofabsenceineverySOFAplugin/source or a newNativeexecution. No SDKedit,customODE/solver,repeateddt/tolerance scan or statecorrection. ReopenONLYonconcrete documentedstockAPI/newimplementation evidence. Wholegrasp physicalqualification remainsblocked;independentmaterial/fixture measurements stillNOTMEASURED.",
+  "source_sha256": "a93dda88f3c9539d98be0595e84f2a0b601aee01d709036bb439464193d774f9"
+}

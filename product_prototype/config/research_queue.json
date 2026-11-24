@@ -282,11 +282,11 @@
     {
       "id": "native_radial_contact_refresh_feasibility",
       "priority": 1,
-      "status": "READY",
+      "status": "BLOCKED",
       "prerequisites": ["native_normal_phase_readonly_observer"],
       "hypothesis": "Measured free-orientation normal lever effect needs a documented stock contact-normal refresh contract, not zeroing torque or mapping sphere to a centre-only Vec3 model. Prior velocity-first/DefaultCable failures remain relevant.",
       "scope": "Read installed Native API and existing loop evidence before any new coupon; reject state mutation, missing tangential torque, SDK edits and unsupported custom solver. No blind loop/dt/force scan.",
-      "evidence": ["spinning_phase_observer1610", "force_contact_phase1609"],
+      "evidence": ["spinning_phase_observer1610", "force_contact_phase1609", "native_refresh_api1678"],
       "validation_criteria": ["Actual supported stock configuration with explicit phase semantics, then zero-spin/spin/loaded-friction torque controls; otherwise BLOCKED with concrete missing contract and choose independent mechanics/material task"],
       "failure_alternatives": ["Independent finite wire entry/termination compatibility with actual known dynamic frames or layer material measurement protocol; not another chamfer-size scan"],
       "successors": []
@@ -433,14 +433,31 @@
     {
       "id": "dynamic_finite_guide_ownership",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "prerequisites": ["finite_surface_caps_ownership_factorial"],
       "scope": "Actual11BeamDOF/local25umwire Nativeprefix110steps atSAMEgeometry/material/mass/BC/dt/solver/features;ONLYGuideTriangleownershipaggregate. Notmechanicalimprovement orstaticcoupon success transfer.",
       "hypothesis": "1674staticcap-onlyeffect0butowner representation changesresponse/penetration. Directdynamiccontrast needed at1655first10.6msfacetfailure;doNOTinferfullvalidityfromstaticclearance.",
-      "evidence": ["finite_surface_factorial_assess1674"],
+      "evidence": ["finite_surface_factorial_assess1674", "dynamic_guide_ownership1675", "dynamic_owner_vertices1676", "dynamic_owner_facets1677"],
       "validation_criteria": ["Actual110steps/noErrors/precontact25q/v<=1e-12;independentvertexANDcompletefacetgeometry;sameorientedGuidefaceunion andallLine/Point retained. No largerfulltrial withoutnewvalidscope/cost forecast"],
       "failure_alternatives": ["Stopownershipfamily if dynamicfail;independent Native radialnormal contract ormaterial readiness,notparameter ormodelpartition sweep"],
       "successors": []
+    },
+    {
+      "id": "wire_bend_demand_inventory",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "Actual saved centreline geometry inventory only; r*kappa is not measured material strain or strength",
+      "evidence": ["wire_bend_demand1680"],
+      "prerequisites": [],
+      "successors": ["actual_wire_bend_material_qualification"]
+    },
+    {
+      "id": "actual_wire_bend_material_qualification",
+      "priority": 2,
+      "status": "BLOCKED",
+      "scope": "Actual wire construction, allowable bend radius/strain, fatigue and force-stroke-work NOT MEASURED; E2GPa/rho1000 remain research assumptions",
+      "prerequisites": ["wire_bend_demand_inventory"],
+      "validation_criteria": ["Obtain identified actual wire material/construction and bend/fatigue test evidence before hardware or grasp qualification"]
     },
     {
       "id": "native_finite_beam_component_coupon",

@@ -1,0 +1,69 @@
+{
+  "status": "ACTUAL_KINEMATIC_BEND_DEMAND_INVENTORY_ONLY",
+  "records": [
+    {
+      "label": "unobstructed_fixture_reference",
+      "source_case": "current_turn_wire1614/no_guide_control",
+      "outputs": 1200,
+      "accepted_time_limit_s": null,
+      "maximum_curvature_sample": {
+        "time_s": 0.08010000000000127,
+        "maximum_three_point_curvature_per_m": 112.09991722506082,
+        "station_index": 20,
+        "centre_m": [
+          0.009999999999999998,
+          0.0002806476575184908,
+          -9.317362419797304e-21
+        ],
+        "radius_times_curvature_proxy": 0.028024979306265206
+      },
+      "minimum_three_point_circle_radius_mm": 8.920613188253471,
+      "maximum_section_rotation_gradient_per_m": 107.02204247833681,
+      "wire_radius_m": 0.00025,
+      "configured_Young_modulus_Pa": 2000000000.0,
+      "configured_density_kg_m3": 1000.0,
+      "material_allowable_strain": "NOT MEASURED",
+      "material_minimum_bend_radius": "NOT MEASURED",
+      "fatigue_life": "NOT MEASURED",
+      "force_stroke_work": "NOT MEASURED",
+      "input_sha256": {
+        "scene.scn": "fb1dcee26b70f37ca145164fd740466c72f538705b24123f174bad3b8a0e9e7b",
+        "surface.csv": "0e3a93cf5163aefe2c1a6f75ce53ef1a8d98a03640f6bbf50683ed801f5da61b",
+        "states.csv": "5497a4cba7388903d6b7c723507018548be45bf830def80b68200b6206e3ecee"
+      }
+    },
+    {
+      "label": "finiteGuide_precontact_only",
+      "source_case": "wire_local_mesh_pilot1655",
+      "outputs": 25,
+      "accepted_time_limit_s": 0.0025,
+      "maximum_curvature_sample": {
+        "time_s": 0.0024999999999999996,
+        "maximum_three_point_curvature_per_m": 16.657502549907836,
+        "station_index": 96,
+        "centre_m": [
+          0.009999999999999998,
+          -0.0002595494971425001,
+          -9.317362419797304e-21
+        ],
+        "radius_times_curvature_proxy": 0.004164375637476959
+      },
+      "minimum_three_point_circle_radius_mm": 60.03300897021522,
+      "maximum_section_rotation_gradient_per_m": 15.367265079376454,
+      "wire_radius_m": 0.00025,
+      "configured_Young_modulus_Pa": 2000000000.0,
+      "configured_density_kg_m3": 1000.0,
+      "material_allowable_strain": "NOT MEASURED",
+      "material_minimum_bend_radius": "NOT MEASURED",
+      "fatigue_life": "NOT MEASURED",
+      "force_stroke_work": "NOT MEASURED",
+      "input_sha256": {
+        "scene.scn": "da0e64df133cb82ef299ab56452b4258d6b7354053f110f9adf74233b5def2e2",
+        "surface.csv": "20816861ffdce963935a8cf608bfeb9689564702eb251e51272624a428895c71",
+        "states.csv": "72a3781b83ff0dbcaaf7dd82764d82f8dfa8076b8e812dead449c969116c23ee"
+      }
+    }
+  ],
+  "scope": "Centre ofactual16point mappedsections andthreepointcircumcircle curvature;sectionrotationgradient alsoincludespotentialtorsion/shear,NOTNativeconstitutivestrain/stress/energy orstrengthlimit. r*kappa isGEOMETRICproxyonly,notverifiedmetal/strandedwirestrain. Unobstructed20mmfixturetrial isnotrealGuide/Cabletension/100ggrasp. ActualGuideinventoryrestrictedtoprecontact. No metricsfromfailedintersectingstates usedtoqualifyrealwire. ConfiguredE2GPa/rho1000researchassumptions,notmaterialselection. Actualmaterialdata requiredbefore bend/fatigue/Guide approval.",
+  "source_sha256": "7c84068fddd13f44d2db3a38767debbf3b6cfca2205c23fc21b92b699dda99bf"
+}

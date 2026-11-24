@@ -1,3 +1,42 @@
+## Current1680 — dynamic ownership rejected; material demands inventoried
+
+This section supersedes older RUNNING/READY claims below; historical evidence is retained.
+1675 completed 110 Native Beam steps through 11ms in 95.277s, no SOFA errors,
+precontact 25-state q/v difference zero. Independent 1676/1677 checks FAIL:
+63 intersecting outputs beginning 4.4ms; maximum vertex penetration 8.526295um.
+Static ownership improvement did NOT transfer to dynamic wire motion.
+Do not repeat ownership/partition, force, dt or collision-resolution sweeps.
+
+1678 read-only installed API audit is BLOCKED in the examined stock path:
+stored contact normal is used in free-position violation; no documented supported
+normal-refresh contract was identified. This is not a claim about every SOFA API.
+Existing velocity-first/DefaultCable/surface-normal failures remain unchanged.
+No SDK edits or new custom solver were made.
+
+1680 independently inventories actual saved geometry (not strain/material strength):
+unobstructed 20mm fixture minimum three-point circle radius 8.920613mm,
+maximum curvature 112.099917/m; actual finite-Guide PRECONTACT-only radius
+60.033009mm. r*kappa is only a geometric proxy. Actual wire allowable bend,
+fatigue, force/stroke/work and actual construction remain NOT MEASURED.
+Three independent straight/circle/rigid-motion/degeneracy unit tests pass.
+
+1679 indexes 181 files including 9 Git-excluded Raw fingerprints; originals remain
+local, unchanged. Sources: native_refresh_contract_audit.py,
+wire_bend_demand_inventory.py and test_wire_bend_demand.py.
+Reproduce read-only queue assessment:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py`
+Tests: same Python `-m unittest discover -s product_prototype/sofa -p test_wire_bend_demand.py`.
+Completed result tags 1675–1680 must NOT be reused for execution.
+
+Project reevaluation: no READY/RUNNING tasks remain after these scoped results.
+Reopen with a concrete supported Native refresh/contact contract or identified
+actual wire bend/fatigue measurements, not an artificial repeat trial.
+100g grasp/Lift, time/mesh/energy and fabrication gates remain unqualified.
+Prior B3 functional results are not new CAD or finite-wire qualification.
+Commits d590f55 and 5f9f107 preserve earlier cycles; final save is authoritative git log.
+No background continuation is promised; no remote push/history rewrite.
+
+
 ## Current1675 — inspect actual dynamic ownership contrast
 
 1663–74completed/recorded,doNOTrepeat. NativeLineTriangle/TT ignored;actual

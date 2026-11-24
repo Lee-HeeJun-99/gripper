@@ -1,5 +1,76 @@
 # Actual guide-turn finite wire coupon — 2026-11-24
 
+## Continuation1642–1655: vertex clearance is not surface clearance
+
+Local commits07627fe and454346a preserve preceding cycles. No SDK changes,
+no physical/tolerance/force adjustment and no new fullgrasp claim.
+
+| Candidate | Actual Native run | Independent result |
+| --- | --- | --- |
+| Sector partition1642 | 1200outputs,68.349s | 10negative vertex states, worst6.478343um; FAIL |
+| Rounded+partition1648 | 200outputs,16.541s | Correct rounded-solid audit1649:0insidevertices; not facet PASS |
+| Rounded+partition1650 | 1200outputs,67.637s | 1652:0insidevertices;1651/1653 actual facet penetration proves FAIL |
+
+1643 fresh172step prefix at first new crossing17.2ms,14.132s; observer q/v/
+surface/impulse purity0.1644 independently replays every actual model-pair
+dedup at17.2ms, all retained counts match; per-row linear impulse from detected
+point separation timeslambda agrees with NativeJtranspose<=1.69407e-21Ns,
+row/aggregate impulse error4.23516e-22Ns/Nms. Actualvertex360 near x10.992mm
+has prior+2.034567um gap,accepted-.280271um. Sector15 triangle detected,
+nextsector16 triangle absent at previous state; remaining edge feature event
+is distinct from original4.4ms dropped-detected-facet case.
+1647 actual164row reconstruction dFree error2.08709e-18m, NCP9.44346e-8m,
+accepted mapping/linearized difference55.271nm. Linear residual is nonzero
+here,not the sole demonstrated defect.1645 analysis assertion is preserved:
+multiple same-name contact objects expose IDENTICAL shared wire J/state rows.
+New analysis deduplicates only exactly identical same-state records; different
+state/J/q/freeq at same key still fails closed. No Native rerun for that fix.
+
+1648 producer initially applied the *straight* annulus distance to the new
+rounded entrance. Its gap/negative-count fields are UNQUALIFIED_ANALYSIS,
+not actual rounded-solid FAIL. Do not reuse those fields. Immutable summary/
+Raw preserved. Independent1649 matches all Native geometry EXACTLY and checks
+actual polygon-frustum membership. Producer now leaves rounded gap fieldsNULL
+pending independent audit;1650 does not emit the wrong straight-hole metric.
+
+Whole-facet test1651 clips every saved wire triangle against the288convex
+polygon-frustum ring wedges. Two independent software tests validate cell
+union vs analytic membership AND mesh ray containment, and known triangle
+crossing. Actual first200states:76states have strict interior facet witnesses,
+first12.5ms; tested16119broadphase triangle/cell candidates. FLOATING POINT
+geometry audit,not sweptCCD or a new physics law. Independent1653 checks48
+sample witness points against the actual FULL1650 Native wire facets:
+all48 insideGuide by separate ray containment/nearestGuide triangles, lie on
+wire facets within1.58383e-19m and within their barycentric bounds. Sample
+interior depths.026283–.465772um; NOT maximum penetration of the full trial.
+Thus no-vertex-intersection1652 is valid only in its explicitly limited scope;
+it does NOT qualify finite wire/guide contact or allow fullgrasp integration.
+
+Next physically motivated contrast: original500um wire collision facets span
+the200um entry fillet. Refine only mapped tube axial geometry8..12mm to25um,
+derived from sqrt(8R*(contactbuffer/4))=28.284um (heuristic geometry target,
+not a proven bound on actual deformed wire). Same11mechanicalBeamDOFs,E,rho,
+mass,16around,BC,dt,ALL Guide surfaces/features retained. New193stations,
+3088mapped vertices,6144facets; minimum reference triangle area positive.
+1654 fails Native initialization SIGSEGV,0outputs: generated exactmapping
+index10 refers to nonexistent beam10 when installed useCurvAbs0 takesfloor.
+Prior successful Scene serializes endpoint9.999999999999998.1655 reuses that
+EXACT existing endpoint index; no SDK patch, endpoint physical/tolerance fix,
+state correction or new solver. Failure1654 logs preserved.
+Actual wire_local_mesh_pilot1655 RUNNING; inspect summary before any rerun.
+If valid, independently check rounded vertices AND complete savedfacets before
+longer run. Stop resolution family if no new valid hypothesis; no blind scan.
+
+```bash
+$PY product_prototype/sofa/wire_contact_phase_probe.py --tag UNIQUE --source-case partitioned_wire_full1642 --build-case identified_contact_build1625 --children --target-time 0.0172
+$PY product_prototype/sofa/wire_pair_response_contract.py --tag UNIQUE --case partitioned_wire_full1642 --time 0.0172
+$PY product_prototype/sofa/partitioned_eyelet_wire.py --tag UNIQUE --rounded --steps 200
+$PY product_prototype/sofa/rounded_bore_assess.py --tag UNIQUE --case rounded_partitioned_full1650
+$PY product_prototype/sofa/rounded_wire_surface_contract.py --tag UNIQUE --case rounded_partitioned_pilot1648
+$PY product_prototype/sofa/wire_facet_witness_reference.py --tag UNIQUE
+$PY product_prototype/sofa/wire_local_collision_mesh.py --tag UNIQUE
+```
+
 ## Continuation1618–1639: measured constraint coverage, not a physical fix
 
 Read-only observer now samples an explicit window and actual child positions,

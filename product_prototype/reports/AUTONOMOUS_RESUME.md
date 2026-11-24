@@ -1,5 +1,19 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1655 supersedes RUNNING claims below. 1642 fullpartitionFAIL10negative
+states/worst6.478um;actualfirstcrossingprefix1643purity0.1644actual linear
+impulse/sourceorder agrees1.70e-21Ns. Roundedhybrid1650full1200outputs67.637s,
+1652verticesALLoutside BUT1651/1653 actualWIRE FACETS insideGuide =>FAIL.
+48independentfullNativeface witnesses,.0263–.4658umdepth;novertex-onlyPASS.
+1648straight-holegapfields invalidforroundedshape;useexact1649/1652. Rawunchanged.
+Next actualRUNNING wire_local_mesh_pilot1655: ONLYlocalcollisiontube25um,11Beam
+DOFs unchanged.1654SIGSEGVinitialexactendpointindex10preserved;1655usesexisting
+source9.999999999999998 withNativefloorcontract,notSDKpatch orphysicsfix.
+Inspect summary/process FIRST. Then rounded_bore_assess.py --tag UNIQUE --case
+wire_local_mesh_pilot1655 AND rounded_wire_surface_contract.py samecase/newtag.
+No longfulltrial untilbothgeometryandstrictprecontactAPI valid. Readcurrentturn
+report. Alltime/mesh/API/Guidebracing/material/100gLift failures remain.
+
 CURRENT1642: saved07627fe through1639,thenactualnextNativeunits1640FAILstrictv
 3.22e-9rad/s>1e-12. NO mm-unitcontacttrial. IndependentSIcollisionpartition
 1641 retainsALL256actualorientedtrianglesandoriginalLine/Pointfeatures.

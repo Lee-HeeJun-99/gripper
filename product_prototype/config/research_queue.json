@@ -354,14 +354,39 @@
     {
       "id": "finite_wire_facet_partition",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "prerequisites": ["finite_wire_units_contract"],
       "prerequisite_states": {"finite_wire_units_contract": ["FAIL"]},
       "scope": "Same finite originalsolid/wire/material/input/dt/tolerance inSI. Trianglecollisionmodel partition only;original Line/Point fullyretained. All256faces exactunion,notcollision-removal orphysicalguidesplit.",
       "hypothesis": "1639criticaladjacentfacet dropped bywithinmodelpair dedup. Separate actual32azimuthsector TriangleModels retainbothfacetconstraints withstockNativecomponents andnoSDKedit.",
-      "evidence": ["wire_response_dedup1639", "partitioned_wire_prefix1641"],
+      "evidence": ["wire_response_dedup1639", "partitioned_wire_prefix1641", "partitioned_wire_full1642", "partitioned_crossing_phase1643", "partitioned_pair_response1644", "partitioned_crossing_coverage1646", "partitioned_crossing_gap1647"],
       "validation_criteria": ["Exact orderedfaceunion/positions;actual firstcrossingprefix retainspositivevertex-solidgap;full120msNative thenactualgap/sourceimpulse audit. No promotion toCCD/time/mesh/grasp ormaterialPASS"],
       "failure_alternatives": ["If fullrunfails,inspect actualfeature/time ofnewfailure ratherthanpartition/dt/force sweep;switch independent scope if nonew validhypothesis"],
+      "successors": ["finite_wire_rounded_partition"]
+    },
+    {
+      "id": "finite_wire_rounded_partition",
+      "priority": 1,
+      "status": "FAIL",
+      "prerequisites": [],
+      "scope": "Hybrid of separatelytestedactualR.2innerfillet andunchanged32sector collisionownership. Sameallphysicalsurfaces/Line/Pointfeatures present. Vertexonlyclearance isNOTwholefacetclearance.",
+      "hypothesis": "1642remainingfailureatentryrim17.2ms hasabsentfuturefacet detection,notjustdedup. Combinephysicalinnerfillet1633 withactualcriticalfacetcoverage partition1641 afterindependentA/B results.",
+      "evidence": ["rounded_partitioned_pilot1648", "rounded_partitioned_audit1649", "rounded_partitioned_full1650", "rounded_partitioned_surface1651", "rounded_partitioned_full_audit1652", "rounded_facet_reference1653"],
+      "validation_criteria": ["ActualNativeoutputs andexactroundedgeometry;ALLsavedwirevertices ANDwholefacets outsidefiniteGuide;not wholegrasp/material/CCD/numericalqualification"],
+      "failure_alternatives": ["No fillet-size sweep;actualfacetwitnesses nearentryjoin justify collision-only axial discretization contrast"],
+      "successors": ["finite_wire_local_contact_discretization"]
+    },
+    {
+      "id": "finite_wire_local_contact_discretization",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["finite_wire_rounded_partition"],
+      "prerequisite_states": {"finite_wire_rounded_partition": ["FAIL"]},
+      "scope": "ONLYmappedcollisiontube axialresolution near8..12mm,25umderivedfromR.2fillet/2umcontactbuffer. Same11BeamDOFs/mass/E/BC/dt/16around,ALLhardware/features. NotFEMmesh convergence ornewmechanicalfinger.",
+      "hypothesis": "1653independentactualNativeface witnesses prove500umaxialtriangles cut200umfillet despiteverticesoutside. Localcollisionresolution can distinguish representationaliasing,notincreaseforce/friction orhidefacetFAIL.",
+      "evidence": ["rounded_facet_reference1653", "wire_local_mesh_pilot1654"],
+      "validation_criteria": ["Nativeprecontactq/v API<=1e-12,finitealloutputs,actualGuidegeometryandwholeWirefacetchecks;endpointmapping kept identicaltolegacy validindex9.999999999999998,notinvalidbeam10"],
+      "failure_alternatives": ["Preserve1654initializerSIGSEGV;noSDKpatch/newsolver orblindresolution sweep. Ifstillintersects,stopthisfamily pendingfreshhypothesis."],
       "successors": []
     },
     {

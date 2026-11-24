@@ -1,3 +1,14 @@
+## Current1655 — actual whole-facet failure despite no penetrating vertices
+
+Through1653: all completed. Rounded+partition Native1650 completes1200outputs,
+vertex audit1652 findsnoneinside, but independent48actualfacewitnesses1653
+prove facet penetration .0263–.4658um(sampledepthrange). NotfinitewirePASS.
+1648straight-holegapmetadata isinvalidforroundedsolid;independent1649corrects
+analysis WITHOUTmodifyingRaw. See CURRENT_TURN_FINITE_WIRE_20261124.md.
+Localcollision-only axial25um pilot1655 RUNNING,unchanged11BeamDOFs/physical
+inputs;1654initializerSIGSEGV preserved,endpointmappingcontract fixedfrom
+existingvalidsource. Read AUTONOMOUS_RESUME top before anynextNative run.
+
 ## Current1639 — first wire crossing is not linear solver failure alone
 
 All current children completed. Actual44step firstcrossing Native1636 purity0;

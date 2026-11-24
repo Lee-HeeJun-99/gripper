@@ -1,3 +1,15 @@
+## Current1655 — evaluate actual local collision-mesh pilot, not a new force scan
+
+Fullrounded+partition1650done,1652noinsidevertices BUT1653actualfullNative
+wiretriangleinteriors insideGuide. Vertexonlycriterion insufficient;FAIL.
+Actual new25umlocalcollision-onlypilot1655 RUNNING. Same11BeamDOFs/material/
+BC/mass/dt/tolerances,ALL finiteGuidefeatures retained.1654constructorSIGSEGV
+preserved;1655reusesexistingvalidendpointmappingindex,notSDK edit.
+Inspect completion, thenindependentrounded_bore_assess andwholefacetclipping
+usingnewtags. No fulltrial/sliding/grasp integration untilactualwholefacets,
+Nativecompletion andstrictprecontactq/v contract pass. No arbitraryrefinement
+scan. Allhistoricaltime/mesh/API/Guidebracing failures unchanged.
+
 ## Current1639 — actual finite-wire contact coverage failure isolated
 
 Do notrepeat1614/1616/1633:allcomplete. Inner-entryfillet stillFAIL4.518705um.

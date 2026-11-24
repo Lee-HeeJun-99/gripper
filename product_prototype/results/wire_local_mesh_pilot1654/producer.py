@@ -1,0 +1,25 @@
+"""One evidence-driven axial collision refinement; same eleven Native beam DOFs."""
+import argparse,csv,json,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+from native_bending_coupon import guarded
+def flat(x):return ' '.join(format(float(v),'.17g') for v in np.asarray(x).ravel())
+def read(p):return list(csv.DictReader(p.open()))
+def surface(radius=.00025):
+ # Integer micrometre station set prevents near-duplicate floating-point nodes.
+ x=np.unique(np.r_[np.arange(41)*500,np.arange(8000,12001,25)])*1e-6;theta=np.arange(16)*2*np.pi/16;q=np.array([[s,radius*np.cos(t),radius*np.sin(t)] for s in x for t in theta]);mapped=q.copy();mapped[:,0]/=.002;faces=[]
+ for k in range(len(x)-1):
+  for j in range(16):a=k*16+j;b=k*16+(j+1)%16;c=(k+1)*16+j;d=(k+1)*16+(j+1)%16;faces.extend(((d,c,a),(b,d,a)))
+ return q,mapped,np.array(faces),x
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--steps',type=int,default=200);a=p.parse_args();assert 0<a.steps<=1200;out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/rounded_partitioned_full1650';root=ET.parse(src/'scene.scn').getroot();node=root.find("Node[@name='wire']/Node[@name='wireSurface']");q,points,faces,x=surface();node.find('MechanicalObject').set('position',flat(q));node.find('MeshTopology').set('position',flat(q));node.find('MeshTopology').set('triangles',flat(faces));node.find('AdaptiveBeamMapping').set('points',flat(points));assert node.find('AdaptiveBeamMapping').get('mapMasses')=='0';assert all(node.find(k+'CollisionModel') is not None for k in ('Triangle','Line','Point'))
+ for n in root.iter():
+  for key,value in list(n.attrib.items()):n.set(key,value.replace(str(src),str(out)))
+ (out/'geometry.json').write_bytes((src/'geometry.json').read_bytes());ET.ElementTree(root).write(out/'scene.scn');area=np.linalg.norm(np.cross(q[faces[:,1]]-q[faces[:,0]],q[faces[:,2]]-q[faces[:,0]]),axis=1)/2;assert area.min()>0;pre=dict(source_sha256=sha(Path(__file__)),source_scene_sha256=sha(src/'scene.scn'),scene_sha256=sha(out/'scene.scn'),hypothesis='1651/1653actualwiretriangleinteriors intersectroundedguide whileverticesoutside. Original500um axialfacets span200um entry fillet. ResolveONLYmappedcollisiontube locally8..12mm with25um axialspacing;keep16around and11mechanicalRigid3nodes,ALLoriginalGuide/Support/collisionfeatures.',physical_geometry='Same20mm/r.25wire,OD3/coreID1.2/L2/R.2entry Guide withsame32Trianglemodelpartition. Noactualmaterial/stiffness/force/mass/beammesh/BC/dt/tolerancechange. Contactrepresentation differs,notmeshconvergencePASS.',spacing_basis='FilletR.2 andphysical2umcontactbuffer:local25um chord candidate below sqrt(8R*(buffer/4))=28.284um;geometric guide only,not rigorousdeformedwirecurvaturebound. No parameter sweep.',mechanical_beam_nodes=11,collision_axial_stations=len(x),collision_vertices=len(q),collision_triangles=len(faces),minimum_initial_collision_triangle_area_m2=float(area.min()),mapMasses=False,local_spacing_um=25,coarse_spacing_um=500,steps=a.steps,forecast_s=85 if a.steps==200 else 400,forecast_basis='actual200step1648 16.54s times6144/1280facets;420s hardlimit',memory_GiB=4,child_limit_s=420,SDK='/home/ubuntu/SOFA/v26.06.00',runSofa_sha256=sha(Path('/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00')),binary_sha256={n.get('pluginName'):sha(Path(n.get('pluginName'))) for n in root.iter('RequiredPlugin') if n.get('pluginName','').startswith('/')});(out/'preflight.json').write_text(json.dumps(pre,indent=2));proc=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n',str(a.steps),'--hideProgressBar',str(out/'scene.scn')],out/'process',420);rows=read(out/'states.csv') if (out/'states.csv').exists() else [];logs=''.join((out/'process'/f).read_text(errors='replace') for f in ('stdout.log','stderr.log'));old=read(src/'states.csv');error=0.;count=0
+ for r,s in zip(old,rows):
+  if float(r['time_s'])>.0025:break
+  assert r['time_s']==s['time_s'];count+=1
+  for key in ('rigid_q','rigid_v'):error=max(error,float(abs(np.fromstring(r[key],sep=' ')-np.fromstring(s[key],sep=' ')).max()))
+ d=dict(status='NATIVE_LOCAL_COLLISION_MESH_COMPLETED_ONLY' if proc['exit_code']==0 and '[ERROR]'not in logs and len(rows)==a.steps else 'FAIL_NATIVE_LOCAL_COLLISION_MESH',process=proc,outputs=len(rows),source_sha256=sha(Path(__file__)),precontact_compared_outputs=count,maximum_precontact_Beam_q_v_error=error,strict_precontact_API_pass=count==25 and error<=1e-12,physical_validation='NOT QUALIFIED',scope='Completion and actualprecontactunaffected11BeamDOFs only. Independent roundedsolid vertex ANDwholefacet checks REQUIRED. No25umchordtheory masquerading asactual nointersection/force/material/time/mesh/graspPASS.');(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

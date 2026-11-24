@@ -10,13 +10,16 @@ def main():
  for r in solve:i=int(r['row']);d[i]=float(r['dFree']);f[i]=float(r['f'])
  for r in read(src/'probe.W.csv'):
   if r['phase']=='solve_end' and float(r['time_s'])==time:W[int(r['i']),int(r['j'])]=float(r['W'])
- sums={};seen=set();sides={}
+ sums={};seen={};sides={}
  for r in read(src/'probe.children.csv'):
   t=float(r['time_s']);phase=r['phase'];row=int(r['row']);side=int(r['side']);col=int(r['column'])
   owner=owners.get(row)
   if owner is None or owner[0]!=r['constraint'] or not r['state'].startswith(owner[1][side]):continue
   if not ((phase=='build_end' and t==time) or (phase=='accepted_end' and abs(t-target)<1e-12)):continue
-  key=(phase,row,side,col);assert key not in seen;seen.add(key);J=np.fromstring(r['J'],sep=' ');q=np.fromstring(r['q'],sep=' ');fq=np.fromstring(r['free_q'],sep=' ');key=(phase,row);sums[key]=sums.get(key,np.zeros(2))+[J@q,J@fq];sides.setdefault(key,set()).add(side)
+  key=(phase,row,side,col);J=np.fromstring(r['J'],sep=' ');q=np.fromstring(r['q'],sep=' ');fq=np.fromstring(r['free_q'],sep=' ');value=(r['state'],np.r_[J,q,fq])
+  if key in seen:
+   old=seen[key];assert old[0]==value[0] and np.array_equal(old[1],value[1]),'Ambiguous different mechanical states must not be silently combined';continue
+  seen[key]=value;key=(phase,row);sums[key]=sums.get(key,np.zeros(2))+[J@q,J@fq];sides.setdefault(key,set()).add(side)
  for phase in ('build_end','accepted_end'):
   assert all(sides.get((phase,i))=={0,1} for i in range(n)),'Bothactualcontactstatesrequiredforeachglobalrow'
  buildfree=np.array([sums['build_end',i][1]-distance for i in range(n)]);accepted=np.array([sums['accepted_end',i][0]-distance for i in range(n)]);linear=W@f+d;dfree_error=float(abs(buildfree-d).max());nonlinear=float(abs(accepted-linear).max());diag=np.diag(W);assert np.all(diag>0);natural=float(abs(np.minimum(diag*f,linear)).max())

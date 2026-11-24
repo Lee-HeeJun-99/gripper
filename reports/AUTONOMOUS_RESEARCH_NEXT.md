@@ -37,6 +37,41 @@ Commits d590f55 and 5f9f107 preserve earlier cycles; final save is authoritative
 No background continuation is promised; no remote push/history rewrite.
 
 
+## Current1700 — actual new100g Holding trial running
+
+Supersedes historical READY/RUNNING/queue-empty statements below.
+Start6930d85clean; saves b488e22,1c780fe,68dbc62. Actual finite baseline
+observer1681purity0 and1682source-resolved wrenches show~.067N outward
+internal support perFinger,not vertical object load or causal failure proof.
+One axial2mm terminal setback cleared .6s but actual1.2s1687 migrated
+contact toEyelet4:192nonzero rows, first.730s. REJECTED,no full trial/offset scan.
+
+Independent16RW supplier-dimensioned metal ferrule1692 hasOD1.651/ID1.1938mm,
+L2mm assumed. Initial14support bore obstructions FAIL. Physical1.4mm support
+through-relief1694 independently clears bore by>=.08405mm, preserves3feet
+and connected finite solids. NOT strength/mass/STEP/material qualification.
+Actual1695 .6s58.465s positiveFEM(min.989664),224Skin response outputs,
+GuideGuide0;1697actual72hardware crossFinger geometry clear at saved outputs,
+1699ALLcrossFinger responses0 (includes Guide/foreignSkin/Rail).
+
+Actual capillary_hold1700 RUNNING800steps/2s,R30/100g,old1.6–2.0s protocol.
+Forecast389.77s with2xpilot cost allowance<420s,child4GiB. No object forcing,
+sameCable1.5N inputs/centres/path/solver/dt/margins;all hardware collisions.
+Inspect summary/process BEFORE any execution. Then grasp_goal_assess.py,
+guide_pair_response_inventory.py, mechanism_contact_inventory.py and
+actual_hardware_clearance.py with UNIQUE result tags. No PASS before results.
+Actual new-hardware4step Root/6Cable-origin API probe1701 also started.
+No100gLift before full functional and hardware-bracing assessments pass.
+
+Finite-wire1675/normal1678/time/mesh/energy/material/joint failures remain.
+IdealCableConstraint exploration is NOT physical finite-wire sliding or
+complete UNBRACED/NUMERICAL/HARDWARE grade. Supplier dimensions primary source
+and all exact limitations in CAPILLARY_UNBRACED_20261124.md.
+KeepRawlocal;new50MB limit and explicit summary-only CSV staging implemented.
+Restart: robot_wsPython product_prototype/tools/research_queue.py;inspect
+actual result completion,do not overwrite/repeat existing tags.
+
+
 ## Current1675 — inspect actual dynamic ownership contrast
 
 1663–74completed/recorded,doNOTrepeat. NativeLineTriangle/TT ignored;actual

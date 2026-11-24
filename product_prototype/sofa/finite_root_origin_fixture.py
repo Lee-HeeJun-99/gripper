@@ -13,7 +13,7 @@ def install(root,out,begin,end,height):
   for j in range(2):ET.SubElement(finger,'NativeCableOrigin',target=f'@../guides{i}/cable{j}/actuator',filename=str(out/f'origin{i}_{j}.csv'),drive='1',begin=str(begin),end=str(end),height=str(height))
  return dict(binary_sha256=sha(binary),compiled_source_sha256=meta['compiled_source_sha256'])
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();src=BASE/'results/dispatch_finite_holding1586';out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);root=ET.parse(src/'scene.scn').getroot();identity=install(root,out,0,.01,.0001)
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',default='dispatch_finite_holding1586');a=p.parse_args();src=BASE/'results'/a.case;out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);root=ET.parse(src/'scene.scn').getroot();identity=install(root,out,0,.01,.0001)
  for n in root.iter():
   for k,v in list(n.attrib.items()):n.set(k,v.replace(str(src),str(out)))
  ET.ElementTree(root).write(out/'scene.scn');(out/'producer.py').write_bytes(Path(__file__).read_bytes());proc=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','4','--hideProgressBar',str(out/'scene.scn')],out/'process',60);local=np.array(json.loads((src/'mesh.json').read_text())['local_positions_mm']);mask=local[:,0]<=5;position=velocity=origin=0.;counts=[]

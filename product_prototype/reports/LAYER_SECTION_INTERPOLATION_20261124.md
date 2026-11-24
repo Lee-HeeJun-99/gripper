@@ -23,3 +23,15 @@ checked. This is not proof of the unique B3 failure cause.
 PASS: exact-field diagnostic. Native time/mesh/contact, loaded section,
 jamming, Holding and product qualification remain NOT QUALIFIED.
 Next: consistent face traction integration before any Native section variant.
+
+## Loaded follow-up1285
+
+Using verified face traction (1280), independent existing CST reference:
+nx33 width nodes2→5 changes arithmetic mean end-tip8.4922%; thickness2→5
+changes6.5031%. Combined section5×5 gives1.2062% difference from2×2,
+which is cancellation,not convergence. Same5×5 nx33→65 gives73.58% pair
+relative difference,FAIL1%. All cases preserve8e-8m³ and50µN/layer.
+The y-independent polynomial diagnostic does NOT imply width independence
+of loaded,Poisson-coupled cantilever solutions. No new Native mesh trial.
+Reproduce:`python product_prototype/sofa/layer_loaded_section.py --tag NEW_TAG`.
+1285 process2.226s,4GiB/60s guard;immutable dependencies saved alongside.

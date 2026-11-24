@@ -1,3 +1,28 @@
+## Section interpolation / face traction1279–1285 — 2026-11-24
+
+Continued from4372ac1 clean. Local feature commits c3d2e9e and2645971.
+1279 exact-field diagnostic separates section normal vs longitudinal shear
+error. Thickness refinement alone leaves parasitic shear unchanged.
+1280 consistent face traction passes force/moment/affine virtual-work tests;
+it is NOT identical to old equal-point loading. Native1281pilot50steps0.406s,
+1282actual500steps100ms2.474s,positive saved element volumes. Small-FEM
+reference endpoint difference6.06e-17m; no mesh/time/contact certification.
+1284:73 software tests PASS,7 SDK hashes inventoried; historical Git blob
+policy remains FAIL and branch NOT push-ready. No history rewrite authorized.
+1285 loaded independent section reference disproves general width independence:
+nx33 width2→5 changes arithmetic mean tip8.492%; thickness2→5 changes6.503%.
+Combined width/thickness changes partially cancel (1.206% vs base), NOT
+convergence. nx33→65 at5×5 section changes tip73.58% (pair-relative),FAIL1%.
+No new B3,100g,Lift or real jamming qualification. Raw/SDK preserved.
+Read LAYER_SECTION_INTERPOLATION_20261124.md and LAYER_FACE_TRACTION_20261124.md.
+
+NEXT: evaluate a bounded Native section-refined pilot with the new consistent
+face-load definition against its independent reference. Preserve material,
+volume,root and same traction; first profile,check mesh-quality/mass quadrature.
+Do not replay full B3 or infer pressure law from tied-interface displacement.
+Reproduce reference with a NEW tag:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/layer_loaded_section.py --tag NEW_SECTION_TAG`.
+
 ## Layer bending / Native normalization1257–1278 — 2026-11-24
 
 IMPORTANT GIT BLOCKER:agent erroneously included128561058byte

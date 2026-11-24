@@ -1,3 +1,15 @@
+## Next after1279–1285 — loaded section Native pilot
+
+Exact-field section test and consistent face traction implemented;actual
+small-FEM Native100ms control1282 agrees independent endpoint6.06e-17m.
+Loaded mathematical section1285 shows width-only8.492%,thickness-only6.503%
+changes;combined cancellation is NOT convergence. Longitudinal refinement
+still fails1%. NEXT bounded section-refined Native pilot using same face
+traction,quality/mass checks and measured runtime before extending.
+73 software regressions PASS1284;physical gates unchanged. Historical
+oversized local CSV blocker remains;no historyrewrite/push authorized.
+Read productCHECKPOINT and new LAYER_SECTION_INTERPOLATION/LAYER_FACE_TRACTION.
+
 ## Next after1257–1278 — section interpolation;Git repair authority
 
 Read productCHECKPOINT and LAYER_BENDING_REFERENCE/LAYER_NATIVE_MESH_FORMULATION/

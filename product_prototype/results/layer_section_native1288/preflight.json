@@ -1,0 +1,77 @@
+{
+  "source_commit": "9d84690c6e41dccc1c0beefb0da16642ddd3ac7e",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "binary_sha256": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "500",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/layer_section_native1288/scene.scn"
+  ],
+  "pressure_Pa": 0.0,
+  "friction": 0.0,
+  "E_Pa": 2500000000.0,
+  "density_kg_m3": 1400,
+  "dimensions_m": [
+    0.04,
+    0.01,
+    0.0002
+  ],
+  "layers": 2,
+  "initial_interface_gap_m": 2e-06,
+  "tip_bending_load_N": 0.0001,
+  "dt_s": 0.0002,
+  "steps": 500,
+  "memory_GiB": 4,
+  "child_limit_s": 120,
+  "estimated_runtime_s": 6.432658310513943,
+  "classification": "SMALL_VS_LARGE_NATIVE_FORMULATION_DIAGNOSTIC_ONLY",
+  "vacuum_chamber": null,
+  "material_calibration": null,
+  "scene_sha256": "03063cc8ab14582311ffa98c5db7636d4c6a90fa4f678e682fae2bd0af8e0569",
+  "source_scene_sha256": "fc721b5bdb6bef9fa1c41c5b648d5db5632a3c4a9227c4ff29a9e7797758b99d",
+  "plugin_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "hypothesis": "Small coupon displacement closely matches linear reference but reference force residual differs17%;compare actual Native small formulation before assigning cause to nonlinear tangent/arithmetic. No tolerance,material,mesh,load,dt,BC or collision changes.",
+  "load_area_m2": 2.0000000000000003e-06,
+  "scope": "ONLY section thickness subdivision changes;consistent face traction,small FEM,E,nu,geometry,mass total,dt,ODE,collision unchanged. UniformMass nodal inertia changes disclosed.",
+  "section_nz": 3,
+  "source_sha256": "64793f7541da1a5467ded0432c36c8875a8a853f5454addc246046818d318e3e",
+  "quality": {
+    "volume_m3": 8.000000000000016e-08,
+    "minimum_tet_volume_m3": 8.333333333333334e-10,
+    "load_area_m2": 2.0000000000000003e-06,
+    "total_mass_kg": 0.000112,
+    "nodal_mass_kg": 2.0740740740740742e-06,
+    "COM_m": [
+      0.020000000000000004,
+      -2.9542164734036705e-20,
+      0.0001
+    ],
+    "uniform_nodal_inertia_kg_m2": [
+      [
+        2.8007466666666682e-09,
+        -5.169878828456423e-26,
+        0.0
+      ],
+      [
+        -5.169878828456423e-26,
+        1.8667413333333333e-08,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.1466666666666664e-08
+      ]
+    ],
+    "mass_quadrature": "UniformMass retained,total mass same;discrete section inertia changes with mesh;NOT continuum-consistent mass refinement"
+  }
+}

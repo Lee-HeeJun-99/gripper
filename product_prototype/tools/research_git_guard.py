@@ -3,7 +3,7 @@ import argparse,json,subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 def forbidden(path,size):
- return Path(path).name=='detector.csv' or size>=100_000_000
+ return Path(path).name in {'detector.csv','layer_pairs.csv'} or size>=100_000_000
 def staged():
  raw=subprocess.check_output(['git','diff','--cached','--name-only','--diff-filter=ACMR','-z'],cwd=ROOT);rows=[]
  for path in raw.decode().split('\0'):

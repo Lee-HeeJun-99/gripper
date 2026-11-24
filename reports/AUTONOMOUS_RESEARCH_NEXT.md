@@ -1,3 +1,16 @@
+## Current1612 — actual failed chamfer and measured mapping phase
+
+No active child.1586object-only100gPASS butindirectGuidebracing;1594chamfer
+fullgoalFAILspeed12.9579mm/s/Guideholdrows504. DoNOTscanmorechamfer sizes.
+1610 actualfreeq andnormalJphaseobserved withfrozen1211observer/purity0;
+physicalradialsphere normaltorqueFAIL retained,notwholefailurecausalproof.
+1611wireR.25 trajectoryboregeometryFAIL18guides;1612evenoptimalstraightleg
+axisfailsall6guide3 at43.7256degturn. Needfinitewirebendphysics,notaxis-onlyfix.
+Queue: native_radial_contact_refresh_feasibility (supportedNativeAPIfirst),
+or independentactualturn finitebendcoupon. Reports/AUTONOMOUS_RESUME top
+and FINITE_HOLDING_AND_NORMAL_PHASE_20261124.md contain completedtags/commands.
+No100gLift,physicalconvergence,STEPorproduct PASS fromthese scopedresults.
+
 ## Current1595 — actual chamfer fulltrial, not another offset scan
 
 Full dispatch1586 done;1588 object-onlyfunctional100gPASS but1589GuideGuide

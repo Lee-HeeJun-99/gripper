@@ -1,0 +1,74 @@
+{
+  "status": "PASS_OBJECT_ANGULAR_IMPULSE_AND_KINETIC_IDENTITY_ONLY",
+  "case": "dispatch_finite_holding1586",
+  "configured_isotropic_inertia_kg_m2": 3.6e-05,
+  "maximum_angular_momentum_residual_Nms": 1.0587911840678754e-21,
+  "maximum_source_partition_residual_Ns_Nms": 8.673617379884035e-19,
+  "maximum_discrete_kinetic_midpoint_identity_error_J": 4.0657581468206416e-20,
+  "hold_wrench_by_source": {
+    "skin0": {
+      "mean_torque_Nm": [
+        1.6643994033893355e-05,
+        -0.002767875217210899,
+        4.922291282333726e-06
+      ],
+      "object_midpoint_wrench_work_J": -1.531301577334127e-05
+    },
+    "skin1": {
+      "mean_torque_Nm": [
+        0.0023847575809138933,
+        0.001376670747789133,
+        5.139613184153517e-07
+      ],
+      "object_midpoint_wrench_work_J": 1.906961734517405e-05
+    },
+    "skin2": {
+      "mean_torque_Nm": [
+        -0.0024017702826728857,
+        0.0014000991743975842,
+        -3.901155097022321e-06
+      ],
+      "object_midpoint_wrench_work_J": -4.0945627948098805e-06
+    },
+    "rail": {
+      "mean_torque_Nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_midpoint_wrench_work_J": 0.0
+    },
+    "guide": {
+      "mean_torque_Nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_midpoint_wrench_work_J": 0.0
+    },
+    "support": {
+      "mean_torque_Nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_midpoint_wrench_work_J": 0.0
+    },
+    "other": {
+      "mean_torque_Nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_midpoint_wrench_work_J": 0.0
+    }
+  },
+  "maximum_hold_angular_speed_rad_s": 0.1467224005387014,
+  "scope": "Configured isotropicRigidMass;actual Jtranspose\u03bb angularimpulse/worldangularvelocities. Discrete kinetic identity usesmidpointvelocity,NOT actual contactpoint relativework or global storedenergy. Gravitypotentialpositionintegration,FEM/Guide/actuatorenergy/friction NOT closed. Doesnot repairNative time/mesh or qualifygrasp.",
+  "source_sha256": "6149ca7c6ccca2cfebd1b1cd5a94608d705f57f49557ee8fa6505c3135518df7",
+  "input_hashes": {
+    "scene.scn": "86712c75d6d03b9a0406b6c94c0ddecd7a6892db09a5fd03de7444fce9ee5dc5",
+    "object.csv": "741b77ccddbe23eb98742fecf805f1ad5d77f02bb599eab78fbc26a75a77f840",
+    "response_rows.csv": "e349613fae5c35a0157794f7dc84a7e968d3c2fc4c037d5205aa32f3fffd5cc6"
+  }
+}

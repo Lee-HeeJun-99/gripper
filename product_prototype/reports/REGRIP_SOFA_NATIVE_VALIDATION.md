@@ -1,3 +1,15 @@
+## Current1612 — full trials and measured normal mapping phase
+
+1586 actualfinitehardware2s:object-only100gPASS (.00204mmslip/4.14978mm/s)
+but2073GuideGuideholdrows/solvercap.1594outerchamfer2sFAIL12.9579mm/s,
+positiveFEM butGuidebracingstill504holdrows.1595Root/OriginAPIonlyPASS.
+1605/1607 frozen-normal/free-rotation lever reproduces normalJ;1610direct
+freeqobserverpure0,levererror1.08421e-19m. Nativezero-friction spinnormal
+torquegateFAIL,notclaimofsolewholegraspfailurecause.1609penaltyspincontrolFAIL.
+1611/12 actualmovingguide idealfinitewireboregeometryFAIL,notNativewirephysics.
+Full report FINITE_HOLDING_AND_NORMAL_PHASE_20261124.md. All previous time/
+mesh/API/physical failures retained. No unbraced/product/100gLift qualification.
+
 ## Dispatch1580–1585 — component validation, not whole-model qualification
 
 See NATIVE_RIGID_SPHERE_DISPATCH_20261124.md. Installed Local missing RigidSphere

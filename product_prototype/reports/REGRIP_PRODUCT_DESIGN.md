@@ -1,3 +1,13 @@
+## Current1612 — finite-part geometry still unqualified
+
+Actual100g functional1586 is object-onlyPASS with2073GuideGuideholdrows.
+Singleouterchamfer1594 worsensdynamicstability andfailsfunctionalspeed;
+notselected. FinitewireR.25 trajectoryreplay1611intersects18borewalls;1612
+sixguide3 point-kinkturns43.7256deg exceedstraight-legborebound37.1700deg.
+Actualelasticwirebend/entryshape/joints/materials NOT MEASURED. No nominal
+dimension was quietly zeroed, no collision disabled. Neither componentAPI
+norHoldingpasses certifycurrent300partCAD/fabrication. Keep originalCAD.
+
 ## Finite collision integration1583 — not fabrication approval
 
 Actual finite annular Eyelets and three-foot Support hulls, all collision

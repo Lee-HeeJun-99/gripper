@@ -1,3 +1,18 @@
+## Current1612 — no active Native child; functional and physical verdicts separate
+
+1586/1588 finite100g object-only exploratoryPASS, but2073 Guide–Guide holdrows.
+1594/1596 outerchamfer full100gFAIL speed12.9579mm/s;504Guideholdrows remain.
+No more chamfersize scan.1595 all3Root/6Origin API PASS, not100gLift.
+1605–1610 isolate frozen-normal/free-rotated sphere lever; directfreeq observer
+purity0 andnormalJ reconstruction1.08421e-19m. Physicalnormaltorque gateFAIL;
+penaltyresponse1609 alsofails spinningnormal control. No SDK/solver rewrites.
+1611 actualpath finitewireR.25/boreID1.2/L2 replay intersects18guides;1612
+guide3 turn43.7256deg exceeds37.1700deg straightleg/bore feasibility atall6
+cables evenidealaxis. Actualwirebendinginsideguide NOTsimulated/notimpossible.
+Nextqueue Nativephase API feasibility oractualturn finitewirebendcoupon;
+see FINITE_HOLDING_AND_NORMAL_PHASE_20261124.md and AUTONOMOUS_RESUME top.
+All oldRaw/FAIL preserved. No physical/time/mesh/fabrication/product PASS.
+
 ## Current1591 — finite hardware object-only Holding, bracing not solved
 
 1586actual2s/117.577s positiveFEM.1588 object-only100g functionalPASS:

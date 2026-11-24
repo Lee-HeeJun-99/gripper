@@ -247,14 +247,49 @@
     {
       "id": "terminal_outer_rim_relief",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "REJECTED",
       "prerequisites": ["native_dispatch_finite_hardware_grasp"],
       "scope": "Finite geometry-only sensitivity; unchanged inherited mass/inertia, not calibrated fabrication candidate. Keep OD3/ID1.2/L2; all hardware collision features enabled.",
       "hypothesis": "1590 actual5138detectorpoints all external endrim. Single0.3mm45deg external chamfer removes contact corner without moving cable force path; unchanged0.2mm buffer. Must validate newdynamics, not assume replay result.",
-      "evidence": ["eyelet_contact_location1590"],
+      "evidence": ["eyelet_contact_location1590", "chamfer_eyelet_pilot1591", "chamfer_pairs1592", "chamfer_skin1593", "chamfer_eyelet_holding1594", "chamfer_holding_goal1596", "chamfer_holding_pairs1597", "chamfer_contact_location1602"],
       "validation_criteria": ["Actual new Native positiveFEM/Skin response, full100g goal, separate Guide-Guide no-bracing assessment; retained nominal envelope/bore and finite solid wall"],
       "failure_alternatives": ["Do not scan chamfer sizes; analyse changed contact location and independent whole-model constraint convergence"],
       "successors": ["exploratory_100g_lift"]
+    },
+    {
+      "id": "native_sphere_normal_rotation_contract",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Diagnostic identification only: frozen detector radial vector rotated by free orientation reconstructs normal angular J. Physical zero-normal-torque gate FAIL in spinning coupon; not wholegrasp causal proof or physics PASS.",
+      "prerequisites": [],
+      "hypothesis": "RigidMapping rotatedPoints uses free orientation while contact normal belongs to earlier detection stage. Independent gravity/free-spin prediction can distinguish this from translation-reference mismatch.",
+      "evidence": ["dispatch_object_wrench1598", "chamfer_object_wrench1599", "dispatch_cone1600", "chamfer_cone1601", "finite_contact_rows1603", "sphere_normal_lever1604", "sphere_rotated_normal1605", "spinning_normal_contract1606", "spinning_normal_reference1607", "force_contact_phase1608", "force_contact_phase1609"],
+      "validation_criteria": ["Actual saved J and independent rotated-radius prediction; same stock Min and registration adapter; zero-spin control and nonzero response; preserve incorrect-axis1606reference and correction1607 separately"],
+      "successors": ["native_normal_phase_readonly_observer"]
+    },
+    {
+      "id": "native_normal_phase_readonly_observer",
+      "priority": 1,
+      "status": "PASS",
+      "prerequisites": ["native_sphere_normal_rotation_contract"],
+      "scope": "Read-only direct current/free orientation and contact mapping cache timing in minimal spinning coupon; no SDK edits, state correction or new contact law. Actual observer purity required.",
+      "hypothesis": "Independent1605/1607 prediction matches native angular J, but directly sampling internal free orientation/cache at BuildConstraintSystemEnd separates predicted phase from measured internal phase.",
+      "evidence": ["sphere_rotated_normal1605", "spinning_normal_reference1607", "spinning_phase_observer1610"],
+      "validation_criteria": ["Native APIs actually available, direct free q and normal J same phase, q/v unchanged<=1e-12; do not rerun fullgrasp until new physical improvement hypothesis"],
+      "failure_alternatives": ["No blind dt/stiffness/chamfer scan; measured hardware/material readiness or independent layer coupon with explicit assumptions"],
+      "successors": ["native_radial_contact_refresh_feasibility"]
+    },
+    {
+      "id": "native_radial_contact_refresh_feasibility",
+      "priority": 1,
+      "status": "READY",
+      "prerequisites": ["native_normal_phase_readonly_observer"],
+      "hypothesis": "Measured free-orientation normal lever effect needs a documented stock contact-normal refresh contract, not zeroing torque or mapping sphere to a centre-only Vec3 model. Prior velocity-first/DefaultCable failures remain relevant.",
+      "scope": "Read installed Native API and existing loop evidence before any new coupon; reject state mutation, missing tangential torque, SDK edits and unsupported custom solver. No blind loop/dt/force scan.",
+      "evidence": ["spinning_phase_observer1610", "force_contact_phase1609"],
+      "validation_criteria": ["Actual supported stock configuration with explicit phase semantics, then zero-spin/spin/loaded-friction torque controls; otherwise BLOCKED with concrete missing contract and choose independent mechanics/material task"],
+      "failure_alternatives": ["Independent finite wire entry/termination compatibility with actual known dynamic frames or layer material measurement protocol; not another chamfer-size scan"],
+      "successors": []
     },
     {
       "id": "finite_all_root_origin_contract",
@@ -266,6 +301,18 @@
       "evidence": ["finite_root_origin1595"],
       "validation_criteria": ["All3 roots/6origins actualposition andinteriorvelocity errors<=1e-12; noobjectpose/velocity forcing"],
       "successors": ["exploratory_100g_lift"]
+    },
+    {
+      "id": "current_guide_turn_finite_wire_bend",
+      "priority": 1,
+      "status": "READY",
+      "prerequisites": [],
+      "scope": "Independent Native finitewire coupon atactual currentguide3 turn;NOTprescribedcurvedcentreline orwholegrasp validation. ExistingBeamAdapter reusable; unknownmaterial/friction assumptions explicit.",
+      "hypothesis": "1612actualturn43.7256deg>straightlegborebound37.17deg evenidealaxis. Finitewirebending/entry/contact,notpoint-path axis rotation,must carry this geometry.",
+      "evidence": ["finite_bore_trajectory1611", "bore_axis_feasibility1612"],
+      "validation_criteria": ["ActualNative deformation/solidguide contact/tension and finiteR.25,ID1.2,L2;stressfreewireassumption explicit;noinvisibleguide or prescribedbend claimed as actuation"],
+      "failure_alternatives": ["Explicit physical guide-entry redesign with samewire radius and actualdynamicinterference proof;no random offset scan"],
+      "successors": []
     },
     {
       "id": "native_finite_beam_component_coupon",

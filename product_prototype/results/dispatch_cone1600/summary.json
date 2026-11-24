@@ -1,0 +1,84 @@
+{
+  "status": "HISTORICAL_RESPONSE_CONE_REFERENCE_ONLY",
+  "records": [
+    {
+      "case": "dispatch_finite_holding1586",
+      "mass_kg": 0.1,
+      "records": [
+        {
+          "status": "CONDITIONAL_STATIC_SUBSET_FEASIBLE",
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "minimum_normal_sum_N": 0.9457532800419338,
+          "force_residual_N": 1.1102230246251565e-16,
+          "moment_residual_Nm": 8.673617379884035e-19,
+          "actual_time_s": 1.0999999999999877,
+          "total_skin_contact_groups": 18,
+          "complete_reconstructed_groups": 3,
+          "rejected_or_zero_multiplier_groups": 15,
+          "measured_normal_sum_all_groups_N": 0.9392932838504576,
+          "measured_normal_sum_complete_groups_N": 0.9392932838504576,
+          "max_reconstructed_basis_orthogonality_error": 4.440892098500626e-16,
+          "actual_skin_vertical_force_N": 0.9802026963293011,
+          "active_normal_z_range": [
+            0.9486497198886721,
+            0.9510560360250973
+          ],
+          "maximum_vertical_force_at_measured_normal_allocation_N": 0.9802754885302739,
+          "gravity_N": 0.9810000000000001
+        },
+        {
+          "status": "CONDITIONAL_STATIC_SUBSET_FEASIBLE",
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "minimum_normal_sum_N": 0.945749437328944,
+          "force_residual_N": 8.673617379884035e-18,
+          "moment_residual_Nm": 4.336808689942018e-19,
+          "actual_time_s": 1.3999999999999813,
+          "total_skin_contact_groups": 18,
+          "complete_reconstructed_groups": 3,
+          "rejected_or_zero_multiplier_groups": 15,
+          "measured_normal_sum_all_groups_N": 0.9399873513686308,
+          "measured_normal_sum_complete_groups_N": 0.9399873513686308,
+          "max_reconstructed_basis_orthogonality_error": 2.220446049250313e-16,
+          "actual_skin_vertical_force_N": 0.9803547197836895,
+          "active_normal_z_range": [
+            0.9487067136534478,
+            0.9511328724799409
+          ],
+          "maximum_vertical_force_at_measured_normal_allocation_N": 0.981000272087891,
+          "gravity_N": 0.9810000000000001
+        },
+        {
+          "status": "CONDITIONAL_STATIC_SUBSET_FEASIBLE",
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "minimum_normal_sum_N": 0.9457683167827613,
+          "force_residual_N": 1.214306433183765e-17,
+          "moment_residual_Nm": 6.505213034913027e-19,
+          "actual_time_s": 1.7999999999999727,
+          "total_skin_contact_groups": 18,
+          "complete_reconstructed_groups": 3,
+          "rejected_or_zero_multiplier_groups": 15,
+          "measured_normal_sum_all_groups_N": 0.9400015006843376,
+          "measured_normal_sum_complete_groups_N": 0.9400015006843376,
+          "max_reconstructed_basis_orthogonality_error": 4.440892098500626e-16,
+          "actual_skin_vertical_force_N": 0.9808960807450853,
+          "active_normal_z_range": [
+            0.9486356816980142,
+            0.9510043318242788
+          ],
+          "maximum_vertical_force_at_measured_normal_allocation_N": 0.9810145331714297,
+          "gravity_N": 0.9810000000000001
+        }
+      ],
+      "input_hashes": {
+        "object.csv": "741b77ccddbe23eb98742fecf805f1ad5d77f02bb599eab78fbc26a75a77f840",
+        "response_rows.csv": "e349613fae5c35a0157794f7dc84a7e968d3c2fc4c037d5205aa32f3fffd5cc6",
+        "scene.scn": "86712c75d6d03b9a0406b6c94c0ddecd7a6892db09a5fd03de7444fce9ee5dc5"
+      }
+    }
+  ],
+  "friction_assumption": 0.3,
+  "polygon": "8-ray inscribed cone;linearized static frozen measured basis",
+  "scope": "Incomplete active-contact subset only. Feasible LP proves only force/moment equilibrium in frozen subset model,not capacity,stability or newholding. Failed subset LP does not prove full-contact infeasibility. Actual Native time/mesh and solver-limit failures retained. Measured normal sum is not actuator capacity.",
+  "physical_validation": "NOT QUALIFIED",
+  "source_commit": "6ec5a56b30ba0bae7a5007dd16dc37ca6ffefd7a"
+}

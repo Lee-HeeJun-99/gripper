@@ -1,0 +1,49 @@
+{
+  "status": "NATIVE_FORCE_RESPONSE_PHASE_COUPON_ONLY",
+  "records": [
+    {
+      "initial_spin_rad_s": 0,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1705570169724524,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "bf92e387254c8f78d38734f15f96b7ec8edfe5d65e3b9dc481ecfce8d3190333",
+          "command.json": "fa36a970a86260f0a3af67e03f42dab1e005783fedabb63a606ed0d8035011d6",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "0813e8bf85f4eb29a6fc5f36d1e15bd6cb203b8c614c450b14d8b82c64c7f008"
+        }
+      },
+      "outputs": 4,
+      "SOFA_error": false,
+      "maximum_angular_velocity_change_rad_s": 0.0,
+      "maximum_normal_velocity_m_s": 1.494314026944576,
+      "status": "PASS_SCOPE_NONZERO_NORMAL_RESPONSE_ZERO_SPIN_CHANGE",
+      "scene_sha256": "60d6b6e82cadaadc13649ec0a1dbdba963da8379655a2257fb5355f77655f4e4"
+    },
+    {
+      "initial_spin_rad_s": 10,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1731012959498912,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "c474a3d54c1b3e1f6e97709725acd1f57135a30c8932c5df6ce9f66c3271b57b",
+          "command.json": "818c31dfa81c886a1de2ea52742b0b5f9ac5e99a80dce44e199777d2cb21dd67",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "58bea5bc2b07105f2f6d2ac500cde5c8b69a416d177abee7f4bd932088ef1fb3"
+        }
+      },
+      "outputs": 4,
+      "SOFA_error": false,
+      "maximum_angular_velocity_change_rad_s": 11.829093539977272,
+      "maximum_normal_velocity_m_s": 1.382646357102404,
+      "status": "FAIL_FORCE_CONTACT_PHASE_CONTRACT",
+      "scene_sha256": "eebd4e76f359beace6930a0afadf28d4d7d9d4042eba9b4df9d704c850729275"
+    }
+  ],
+  "scope": "Onlystock contact RESPONSE changed frommu0LagrangeConstraint toNativePenaltyForce;FreeMotionODE/geometry/mass/initialstate preserved. Native default contact stiffness,not measuredmaterial. Nonzeroobjectnormalvelocity required,notzero-responsefakePASS. NoCable/FEM/Guide/grasp andnot justification to replacewholegraspcontact orclaimconvergence. NativeResponseRows impulsejournal doesNOTmeasure penaltyforce; onlyactualq/v usedhere.",
+  "source_sha256": "4a610a650f5a0c6d26284551118ec005ccf632ed097f19dad54d63de49bc14fd"
+}

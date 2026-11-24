@@ -1,0 +1,19 @@
+"""Reuse frozen1211 read-only phase observer;do not rebuild observation features."""
+import argparse,csv,json,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from scipy.spatial.transform import Rotation
+from analyse import BASE,sha
+from native_bending_coupon import guarded
+def read(p):return list(csv.DictReader(p.open()))
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/spinning_normal_contract1606/Min_spin10';meta=json.loads((BASE/'results/contact_gap_build1211/summary.json').read_text());binary=BASE/'cad/build_contact_gap1211/libReGripContactGapProbe.so';assert sha(binary)==meta['binary_sha256'];assert sha(BASE/'results/contact_gap_build1211/Probe.cpp')==meta['compiled_source_sha256'];root=ET.parse(src/'scene.scn').getroot();root.insert(0,ET.Element('RequiredPlugin',pluginName=str(binary)));ET.SubElement(root,'ReGripContactGapProbe',body='@guide1/frames',solver='@constraints',filename=str(out/'probe'))
+ for n in root.iter():
+  for k,v in list(n.attrib.items()):n.set(k,v.replace(str(src),str(out)))
+ ET.ElementTree(root).write(out/'scene.scn');proc=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','2','--hideProgressBar',str(out/'scene.scn')],out/'process',60);purity=0.
+ for file in ('guide0.csv','guide1.csv'):
+  old=read(src/file);new=read(out/file);assert [r['time_s'] for r in old]==[r['time_s'] for r in new]
+  for x,y in zip(old,new):
+   for key in ('rigid_q','rigid_v','object_impulse_Ns_Nms'):purity=max(purity,float(abs(np.fromstring(x[key],sep=' ')-np.fromstring(y[key],sep=' ')).max()))
+ rows=read(out/'probe.states.csv');build=next(r for r in rows if r['phase']=='build_end');current=np.fromstring(build['q'],sep=' ');free=np.fromstring(build['free_q'],sep=' ');velocity=np.fromstring(build['v'],sep=' ');want=Rotation.from_rotvec(float(root.get('dt'))*velocity[3:])*Rotation.from_quat(current[3:]);orientationerror=float(abs(Rotation.from_quat(free[3:]).as_matrix()-want.as_matrix()).max());response=next(r for r in read(out/'response1.csv') if int(r['row_id'])==int(r['first_row']) and float(r['lambda_Ns'])>0);J=np.fromstring(response['object_impulse_Ns_Nms'],sep=' ')/float(response['lambda_Ns']);det=next(r for r in read(out/'detector.csv') if '/guide1/'in r['model1']);point=np.fromstring(det['detected_point1'],sep=' ');lever=(Rotation.from_quat(free[3:])*Rotation.from_quat(current[3:]).inv()).apply(point-current[:3]);levererror=float(abs(np.cross(lever,J[:3])-J[3:]).max());logs=''.join((out/'process'/f).read_text(errors='replace') for f in ('stdout.log','stderr.log'));ok=proc['exit_code']==0 and '[ERROR]'not in logs and max(purity,orientationerror,levererror)<=1e-12;d=dict(status='PASS_READONLY_FREE_ORIENTATION_LEVER_CONTRACT_ONLY' if ok else 'FAIL_READONLY_PHASE_CONTRACT',process=proc,maximum_observer_q_v_impulse_error=purity,measured_build_current_q=current.tolist(),measured_build_free_q=free.tolist(),maximum_measured_free_orientation_vs_independent_error=orientationerror,maximum_measured_free_rotated_lever_vs_actual_normal_J_error_m=levererror,scope='Frozen1211observer reused. Direct actual freeq/currentq atsamebuild_end phase,normalJ fromsamefirststep response. Observedfreeorientation explainsnonradialnormalJ;doesNOTfixit orprovewholegraspfailure/time/mesh. Cachevector notdirectlyread;itsmappedJacobian consequence reconstructed.',observer_binary_sha256=sha(binary),observer_compiled_source_sha256=meta['compiled_source_sha256'],source_sha256=sha(Path(__file__)),source_scene_sha256=sha(src/'scene.scn'));(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

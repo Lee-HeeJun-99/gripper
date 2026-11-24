@@ -4,7 +4,7 @@ from pathlib import Path
 BASE=Path(__file__).resolve().parents[1]
 def enrich(queue):
  for t in queue['tasks']:
-  defaults=dict(goal=t['scope'],prerequisites=[],expected_outputs=[],validation_criteria=[t['scope']],failure_alternatives=[],successors=[],impact=1,estimated_cost=1,metadata_scope='Legacy scope retained;unspecified outputs/cost are not measured estimates')
+  defaults=dict(goal=t['scope'],hypothesis='NOT SPECIFIED:define before new experiment',failure_criteria=['Actual validation criteria not met;retain evidence and do not promote physical scope'],prerequisites=[],expected_outputs=[],validation_criteria=[t['scope']],failure_alternatives=[],successors=[],impact=1,estimated_cost=1,metadata_scope='Legacy scope retained;unspecified outputs/cost are not measured estimates')
   for key,value in defaults.items():t.setdefault(key,value)
  return queue
 def select(queue):

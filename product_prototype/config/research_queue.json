@@ -4,7 +4,9 @@
     {
       "id": "reinforcement_discrete_bending_contract",
       "priority": 1,
-      "status": "READY",
+      "status": "FAIL",
+      "hypothesis": "Finite backing increases discrete bending stiffness;matched Native small-load response must agree with independent FEM at strict1e-12",
+      "failure_criteria": ["Any q/v absolute reference error exceeds1e-12 or Native ERROR;do not substitute reference statics for Native equilibrium"],
       "goal": "Separate discrete composite bending gain from asymmetric coupled contact transient before another grasp candidate",
       "scope": "Matched small-load fixed-root reference;not Grasp or measured material validation",
       "prerequisites": ["footprint_preserving_proximal_reinforcement"],

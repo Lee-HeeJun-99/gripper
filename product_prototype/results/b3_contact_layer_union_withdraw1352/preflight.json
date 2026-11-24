@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "480",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/b3_contact_layer_union_withdraw1352/scene.scn"
+  ],
+  "source_commit": "7ccf1eabbef439caca58cab7eb0c35f50629dcd4",
+  "source_sha256": "2a988eabe5bb1d81d2dec22ecf45d50b8f99173c84be7be857ae5055ad9b0895",
+  "binary_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_alarm_window484/libReGripAlarmWindow.so": "6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "scene_sha256": "4211f00d06afd612707f634936dc50f69e88c1743fe2b4e4922cbb6793bc7d5c",
+  "baseline_scene_sha256": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+  "geometry_sha256": "7be3e14f440c7d788ec2c01ce07b7ab4149d8488fd9e5cbd439ad9af5e403679",
+  "layer_design": {
+    "start_mm": 80,
+    "end_mm": 100,
+    "thickness_mm": 0.5,
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "density_kg_m3": 1000,
+    "material_scope": "HYPOTHETICAL linear elastic contact-layer sensitivity;not measured silicone/PET or layer jamming",
+    "bond": "IDEAL_PERFECT_BOND_NOT_MEASURED"
+  },
+  "baseline_graph_unchanged": false,
+  "duration_s": 1.2,
+  "dt_s": 0.0025,
+  "forecast_s": 209.95727840811014,
+  "child_limit_s": 420,
+  "memory_GiB": 4,
+  "no_contact_control": false,
+  "classification": "EXPLORATORY_CONTACT_LAYER_NOT_JAMMING",
+  "hypothesis": "Finite separately deformable layer might distribute actual contact beyond distal Skin-tip edge. No improved force/contact coverage assumed.",
+  "scope": "Adds finite material and mass with ideal perfect bond;not equal-volume efficiency comparison. No original collision disabled.",
+  "physical_validation": "NOT QUALIFIED",
+  "exterior_union": true,
+  "collision_change": "Cancel24 exactly shared bond interface triangles;retain all other originalSkin/Rail exterior and finite hardware. New composite exterior replaces separate material collision nodes. Not contact removal to claim Holding.",
+  "union_sha256": "7b4e930b4acf60e63e2e4c025200907843f9bae9d03874fdd1887f71910bb08f"
+}

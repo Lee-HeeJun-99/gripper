@@ -1,4 +1,32 @@
-## Latest continuation through1335 — 2026-11-24
+## Latest continuation through1361 — 2026-11-24
+
+Finite-contact-layer cycle1336–1360 implemented and executed. Baseline1298,
+new0.5mm layer80–100mm;E1MPa/nu.3/rho1000 ASSUMED,perfectbond,added142.493mg
+perfinger. Separate collision interfaces1337abort nonfinite;allFAIL logs retained.
+1338 linear mappedcoupon matches independentCST/BE atSTRICT1e-12.1339/1343
+no-contact diagnostic ONLY. Optional earlier phase added to EXISTING observer,
+newbinary1344,old1242binary/source snapshot unchanged.1345ninefirststepjournals
+EXACT;1346 firstcollisiondata expose bondedinternal contacts,not uniquecausality.
+Exact exteriorunion cancels24sharedinterface triangles;all otheroriginalexterior
+andhardware retained.1348/.05s,1351/.6s,1352/1.2s complete withpositive saved
+elements,bonderror0.1352runtime75.313s,minimum layer ratio0.973086.
+
+1353 frozen1242observer replay nine240row journalsEXACT;1354unique93normalrows;
+1355all8active sampled materialpoints still100mm,on added layer,NOT bareSkin.
+At1.2s compositeFz.66122N<.981N,SupportFz.219394N,speed137.286mm/s. FullHolding
+windowNOTMEASURED,no100gHolding/LiftPASS. Time/mesh/wholeenergy unqualified.
+1357momentuminventory residual≤2.17e-18Ns,notphysicalcertification.1358frozen
+profilebudgets,1359accepted-state figure,1360proximalrotationdiagnostic completed.
+NextREADY proximal_shape_retention_hypothesis;review prior railaspect/attachments
+beforeONE mechanicalgeometrychange. Do not sweep padthickness/force/offset/angle.
+1361 regression115softwaretestsPASS;SDK7hashes unchanged versus1335.
+GitdiffM/D/R against dd9b32e reports no pre-existing result modifications.
+Newtests and snapshotpreservation do not certifyphysics.
+Feature7ccf1ea;latestfinalcommit seegitlog. No Native children left aftercompleted
+work,no SDK/historyrewrite/push. Existing300partCAD remainsseparate.
+Full evidence/commands:B3_FINITE_CONTACT_LAYER_20261124.md and per-casepreflight.
+
+## Previous continuation through1335 — 2026-11-24
 
 Three Native runs completed:1326(.6s,42.245s),1328(1.2s,98.521s),1331
 read-only observation(1.2s,79.804s). Six cable terminals98→90mm,all hardware,

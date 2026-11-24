@@ -1,5 +1,24 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1361 supersedes older notes below. All children completed,noRUNNING.
+Finite-contact-layer hypothesis implemented;separate internalbond contacts
+failed1337,corrected exactexterior union preserved ALL originalexterior except
+24bondinterface faces.1352actual1.2s savedvolumespositive,bond0,layerE/rhoassumed.
+1355active sampled layercontacts stillmaterial100mm. At1.2s compositeFz.66122N,
+Support.219394N,objectspeed137.286mm/s;not unsupported100gHolding. Fullholdwindow
+NOTMEASURED,noLift,newmaterialnotbareSkin. Time/mesh/wholeenergyFAILs unchanged.
+Stop uniform-layerthickness/force/offset/angle/terminal sweeps. NextREADY
+proximal_shape_retention_hypothesis:1360 shows~90percent finger0projected tipangle
+loss0.6to1.2 in0–70mmspan;1358 frozen profilebudget at95mm inadequate. Review
+prior railaspect/attachment evidence before a physicalgeometrycandidate;do not
+claim intrinsiccurvature or uniquephysicalcause. Existing300partCAD unchanged.
+Read B3_FINITE_CONTACT_LAYER_20261124.md. Feature7ccf1ea;latestfinalcommit gitlog.
+Recheck gitstatus,actualsummary1361 andqueue beforedoinganything;tags1336–1361
+alreadyused,neveroverwrite. Old1242observerbinary preserved,newoptionalphase1344
+was built separately. SDK notmodified,nohistoryrewrite,pushorautomaticbackground.
+
+Historical1335 resume retained below:
+
 LATEST supersedes next-task text below:1326–1335 completed this continuation.
 Read CHECKPOINT first. Terminal98→90mm candidate executed.6/1.2s without
 saved inversion,but1.2sSkin Fz0.6385N lower thanbaseline0.6589N. No new

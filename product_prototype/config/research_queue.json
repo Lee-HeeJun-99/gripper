@@ -871,12 +871,14 @@
     {
       "id": "distributed_contact_interface_hypothesis",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "scope": "Terminal-only mechanism did not spread active material contact. Review a finite compliant distal contact interface,not another force/offset/angle/terminal sweep. Must preserve initial clearance and explicit material law;no pad pose prescription or collision removal.",
       "prerequisites": [
         "proximal_terminal_material_provenance"
       ],
       "evidence": [
+        "contact_layer_material1355",
+        "contact_layer_response1357",
         "b3_terminal_material1333",
         "b3_proximal_terminal_late1330"
       ],
@@ -891,6 +893,102 @@
       ],
       "successors": [],
       "goal": "Terminal-only mechanism did not spread active material contact. Review a finite compliant distal contact interface,not another force/offset/angle/terminal sweep. Must preserve initial clearance and explicit material law;no pad pose prescription or collision removal.",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "contact_layer_exterior_contract",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Linear mapped coupon reference and exact24bond-face cancellation,all original other exterior retained. Startup and bounded1.2s positive saved elements ONLY,not contact/time/mesh/jamming/physical qualification.",
+      "prerequisites": [],
+      "evidence": [
+        "contact_layer_linear_coupon1338",
+        "b3_contact_layer_union_withdraw1352",
+        "contact_layer_initial_clearance1350"
+      ],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "couponscope only;oldfailed1337retained"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "goal": "Linear mapped coupon reference and exact24bond-face cancellation,all original other exterior retained. Startup and bounded1.2s positive saved elements ONLY,not contact/time/mesh/jamming/physical qualification.",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "proximal_rotation_diagnostic",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Actual projected centerline decomposition1352/1298,not intrinsic shell curvature or uniquephysicalcause. About90percent finger0tipangleloss0.6to1.2 lies in proximalspan in padcandidate.",
+      "prerequisites": [],
+      "evidence": [
+        "contact_layer_segment_rotation1360",
+        "contact_layer_profile_rays1358"
+      ],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "actualstates,reference separate,not stiffness improvement claim"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "goal": "Actual projected centerline decomposition1352/1298,not intrinsic shell curvature or uniquephysicalcause. About90percent finger0tipangleloss0.6to1.2 lies in proximalspan in padcandidate.",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "proximal_shape_retention_hypothesis",
+      "priority": 1,
+      "status": "READY",
+      "scope": "Review prior rail-aspect/attachment candidates before one mechanically explicit proximal bending-retention candidate. Use measured proximal rotation and finite profile budget;no additional force/offset/angle/terminal/pad-thickness sweep. Preserve anchor footprint or declare assembly change. Do not fit Young modulus or claim convergence.",
+      "prerequisites": [
+        "proximal_rotation_diagnostic",
+        "distributed_contact_interface_hypothesis"
+      ],
+      "prerequisite_states": {
+        "distributed_contact_interface_hypothesis": [
+          "FAIL"
+        ]
+      },
+      "evidence": [
+        "contact_layer_segment_rotation1360",
+        "contact_layer_material1355"
+      ],
+      "expected_outputs": [
+        "nonduplicate explicit physical geometry or load-transfer hypothesis with initial volume,mass,anchor and collision checks beforeNative"
+      ],
+      "validation_criteria": [
+        "actualcontact retention and load,bounded valid FEM,not softwaretestcounts or rendered pose"
+      ],
+      "failure_alternatives": [
+        "independent Native moving-bond/constraint diagnostic with new causal hypothesis"
+      ],
+      "successors": [],
+      "goal": "Review prior rail-aspect/attachment candidates before one mechanically explicit proximal bending-retention candidate. Use measured proximal rotation and finite profile budget;no additional force/offset/angle/terminal/pad-thickness sweep. Preserve anchor footprint or declare assembly change. Do not fit Young modulus or claim convergence.",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "finite_contact_layer_regression",
+      "priority": 3,
+      "status": "PASS",
+      "scope": "115softwaretests only;SDK7hashes unchanged versus1335,oldphysicsFAILs preserved,not productqualification",
+      "prerequisites": [],
+      "evidence": [
+        "contact_layer_regression1361"
+      ],
+      "expected_outputs": [],
+      "validation_criteria": [
+        "scoped softwaretests andGitblobpolicy only"
+      ],
+      "failure_alternatives": [],
+      "successors": [],
+      "goal": "115softwaretests only;SDK7hashes unchanged versus1335,oldphysicsFAILs preserved,not productqualification",
       "impact": 1,
       "estimated_cost": 1,
       "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"

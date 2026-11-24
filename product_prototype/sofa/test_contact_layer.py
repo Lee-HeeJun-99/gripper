@@ -21,4 +21,14 @@ class ContactLayerTests(unittest.TestCase):
   d=result('contact_layer_initial_assess1349');self.assertEqual(d['status'],'PASS_QUANTIZED_INITIAL_EXPORT_DIAGNOSTIC_ONLY');self.assertEqual(d['strict_API_identity'],'NOT MEASURED_BY_VTU');self.assertTrue(all(r['max_absolute_q_error_m']>1e-12 for r in d['records']))
  def test_all_modeled_initial_parts(self):
   d=result('contact_layer_initial_clearance1350');self.assertEqual(d['status'],'PASS_MODELED_INITIAL_NEW_PART_SEPARATION');self.assertTrue(all(r['minimum_all_wire_segment_AABB_capsule_lower_bound_m']>0 for r in d['records']))
+ def test_union_dynamic_elements_and_bond(self):
+  d=result('b3_contact_layer_union_withdraw1352');self.assertEqual(d['outputs'],[[480,480]]*3);self.assertEqual(d['maximum_bond_position_error_m'],0);self.assertTrue(all(r['minimum_saved_volume_ratio']>0 for r in d['qualities']));self.assertEqual(d['holding'],'NOT MEASURED')
+ def test_composite_point_provenance_not_distributed(self):
+  d=result('contact_layer_material1355');self.assertEqual(d['status'],'PASS_COMPOSITE_MATERIAL_PROVENANCE_ONLY');self.assertEqual(d['mapped_material_station_span_mm'],[100,100]);self.assertEqual(d['unmapped_active_rows'],[]);self.assertTrue(all(r['material_label']=='layer' for r in d['records']))
+ def test_momentum_is_not_bare_skin_holding(self):
+  d=result('contact_layer_response1357');self.assertLess(d['linear_momentum_max_residual_Ns'],1e-12);self.assertLess(d['response_partition_max_error_Ns_Nms'],1e-12);self.assertLess(d['endpoint']['composite_Fz_N'],d['weight_N']);self.assertGreater(d['endpoint']['support_Fz_N'],1e-5)
+ def test_profile_rays_preserve_limitation(self):
+  d=result('contact_layer_profile_rays1358');self.assertEqual(len(d['records']),40);self.assertEqual(sum(r['frozen_profile_within_initial_budget'] is False for r in d['records']),30);self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
+ def test_proximal_rotation_is_diagnostic(self):
+  d=result('contact_layer_segment_rotation1360');r=[r for r in d['records'] if r['case']=='b3_contact_layer_union_withdraw1352' and r['finger']==0 and not r['reference']];a,b=r;self.assertGreater(abs((b['proximal_signed_turn_deg']-a['proximal_signed_turn_deg'])/(b['tip_segment_angle_deg']-a['tip_segment_angle_deg'])),.8);self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
 if __name__=='__main__':unittest.main()

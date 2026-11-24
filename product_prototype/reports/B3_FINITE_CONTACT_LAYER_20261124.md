@@ -76,3 +76,72 @@ otherfinger,15.685mm guide,10.116mm wire. SameSkin bond intentionally shared.
 Missing productionCAD support/clamp/palm solids and dynamicclearance NOTQUALIFIED.
 1351 contact-entry0.6s forecast72.756s from actual1348×12×4;child420s unchanged.
 Later-duration pilot guard requires same exterior-union/contact-control modes.
+
+## Completed contact entry,withdrawal and mechanism diagnosis
+
+1351 completes0.6s/240outputs in52.489s.1352 completes1.2s/480outputs in75.313s
+(forecast209.957s). All saved Skin/Rail/layer volume ratios positive;minimum
+layer0.973086,Skin/Rail0.985760. Perfect-bond positionerror0. No ERROR. These
+are bounded finite-state observations,not strain-limit/time/mesh qualification.
+At0.6s composite Fz0.71853N versus old bareSkin0.68968N;different added mass,
+material and exterior,not equal-volume efficiency. At1.2s compositeFz0.66122N,
+SupportFz0.219394N,objectspeed137.286mm/s,objectz−77.5581mm. This does NOT show
+unsupported100gHolding. Full1.6–2s protocol NOTMEASURED for this candidate;
+do not label a partial horizon as full HoldingFAIL/PASS. No100gLift.
+
+1353 frozen1242observer reuse(no rebuild) completes0.6s in50.484s;all9journals
+exactly equal1351 over240outputs.1354 unique93normalrow joins.1355 all8active
+Point/Line contacts map to the added layer atmaterialstation100mm in sampled
+previous-times0.595/0.5975s. No unmapped rows. Line endpoints are matched to a
+UNIQUE actual geometric boundary edge at1e-12;Native generated edge ordering is
+NOT assumed. No distributedmaterial-contact claim. Pure layer points are NOT
+reported as bareSkin force;shared-interface attribution would remainAMBIGUOUS.
+
+1356 new analysis assumedtotalMass but actualsphere usesvertexMass;producer
+schemaFAIL before output,source snapshotNOTCAPTURED.1357 corrected analysis
+checks actual normalized spherical inertia. Linear/angular momentum residuals
+2.17e-18Ns/8.05e-21Nms;responsepartition8.67e-19Ns. Inventory-onlyPASS,not
+time/mesh/energy/physicalqualification. Solver reaches1001iterations earlier.
+Support load is actualNative response,not a guessed balance residual.
+
+1358 frozen normal-ray diagnostic uses actual pad bottom/top and actualsphere
+center at0.6/1.2s,plus manufactured initial clearance budget.40rays intersect;
+30rest-equivalent thicknesses exceed initialbudget under the frozen-stretch
+assumption. Atstation95mm,1.2s neededrestthickness~3.18/3.42mm versus initial
+budget1.706mm. Changing a profile changes mechanics,so this is NOT a global
+impossibility proof or fabricated manufactured pad solution. No thickness sweep.
+
+1359 renders/inspects actual unamplified Native projections at0.6/1.2s,with
+actualsphere positions;not conceptual Wrapping or contact-area visualization.
+1360 width-mean radial-Z decomposition shows finger0tip-angle60.079→51.901deg
+while proximalturn−0.656→−8.037deg;about90%of this projected angle loss is in
+0–70mm proximalspan. Distal/junction decomposition separately stored. The old
+1298model shows similar behavior. This is coarse-model diagnostic evidence,
+NOT proof of physical cause,an intrinsic shell-curvature measure or permission
+to increase stiffness arbitrarily.
+
+Disposition:finite uniform layer fails the distributed-contact hypothesis in
+sampled windows;do not extend this family by force/offset/angle/thickness sweeps.
+NextREADY proximal_shape_retention_hypothesis must review prior rail-aspect and
+attachment cases,then choose ONE physically explicit bending-retention change
+with volume/mass/anchor/collision checks. Existing productionCAD unchanged.
+
+Reproduction (existing tags already completed,do NOT overwrite):
+```
+PY=/home/ubuntu/miniconda3/envs/robot_ws/bin/python
+$PY product_prototype/sofa/b3_contact_layer_geometry.py --tag UNIQUE
+$PY product_prototype/sofa/contact_layer_coupon.py --tag UNIQUE
+$PY product_prototype/sofa/b3_contact_layer_native.py --tag UNIQUE --exterior-union
+$PY product_prototype/sofa/contact_layer_response.py --tag UNIQUE --case b3_contact_layer_union_withdraw1352
+$PY product_prototype/sofa/contact_layer_material.py --tag UNIQUE
+$PY product_prototype/sofa/contact_layer_profile_feasibility.py --tag UNIQUE
+$PY product_prototype/sofa/contact_layer_segment_rotation.py --tag UNIQUE
+```
+All actual Native launch commands,working source snapshots,scene/compiled-plugin
+hashes and runtime limits are in separate result paths. Failure records retained.
+Feature7ccf1ea preserves the first completed implementation/diagnostic cycle.
+
+1361 final software regression115testsPASS,history100MBcheckPASS,7SDKhashes
+exactly equal1335. `git diff --name-only --diff-filter=MDR dd9b32e --
+product_prototype/results` returns no pre-existing result modifications.
+All Native children completed;no persistent/background continuation promised.

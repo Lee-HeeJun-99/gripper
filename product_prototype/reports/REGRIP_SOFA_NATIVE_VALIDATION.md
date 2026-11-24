@@ -1197,3 +1197,13 @@ nine480row journals;104normalrow joins unique;10active Skin samples allmaterial
 100mm. No distributedWrapping. Independent initial cablegradientFD8.79e-11,
 not fullNative impulse/energy/time/mesh certification. See B3_PROXIMAL_TERMINAL
 report and unique resultfolders. Previous functionalPASS and physicsFAIL unchanged.
+## 2026-11-24 finite-contact-layer diagnostic1336–1361
+
+NewassumedmaterialE1MPa/nu.3/rho1000,perfectbond,finite142.493mg/fingerlayer.
+1337separatecollisioninternalbondFAIL kept;independentlinear mappedcoupon1338
+strictreferencePASS only. Exact24interface-face cancellation preservesallother
+exterior/hardware.1352actual1.2s positive savedvolumes,bond0,notphysqualification.
+Frozenobserver1353nine240journalsEXACT;1355activecontactsall100mmlayerpoints,
+notbareSkinWrapping. Actualcomposite.66122N,Support.219394N at1.2s;no unsupported
+100gHolding.1357momentum/partition inventory residual≤2.17e-18Ns,notenergy/time/
+meshPASS. Old50gfunctionalPASS andphysicsFAIL unchanged. ReportB3_FINITE_CONTACT_LAYER.

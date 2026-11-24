@@ -1210,3 +1210,12 @@ remain100mm under frozenobserver. Nine480row journals exactlysame. Independent
 idealforce gradientFD passes;no Holding,time/mesh,jamming or CAD qualification.
 Next contact-interface hypothesis,not further terminal/force/angle exploration.
 Evidence:B3_PROXIMAL_TERMINAL_20261124.md. Commits626172e/1f18df4 plusfinalgitlog.
+## Continuation1336–1361,2026-11-24
+
+Implemented finiteFEMcontactlayer,independentlinear coupon,boundedfailedcontact
+diagnosis,earlierread-onlyphase andexactexternalcompositeboundary. Valid0.6/1.2s
+Native states butactivecontactstillmaterial100mm.1.2sSupport.219394N;not100g
+unsupportedHolding. Frozenprofilebudget andactualproximalrotation investigated;
+nextsinglephysicalproximalshape-retention hypothesis,not padthickness sweep.
+ActualNative figure1359,fullreportB3_FINITE_CONTACT_LAYER_20261124.md. All old
+evidence preserved,SDKunchanged,newobserverbuildseparate,no productionCADadoption.

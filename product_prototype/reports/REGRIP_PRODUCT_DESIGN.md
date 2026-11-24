@@ -1110,3 +1110,12 @@ does not represent calibrated PET adhesion or pressure-controlled jamming;
 actual displacementratio1.00694 cannot qualify stiffness benefit. Historical
 B3 Point/Line loadpartition informs future contact-shape diagnosis only.
 300partCAD/pocketconcept unchanged;no fabricatedmaterial/STEP/productPASS.
+## 2026-11-24 finite-contact-layer research is NOT product adoption
+
+Native assumed-material0.5mm contactlayer80–100mm was tested separately from
+300partCAD. Exactexterior union represents perfectbond;nohardwarecollision
+deactivation. Positive savedvolumes through1.2s butsampledcontactstill100mm,
+Supportload remains;no100g/Wrapping/Lift qualification. No actualsilicone/PET
+material,jointstrength,STEP,pressure,jamming orfabrication readiness follows.
+See B3_FINITE_CONTACT_LAYER_20261124.md;nextmechanicalhypothesis concerns load-
+dependent proximalshape retention,not further decorativeCAD or materialfitting.

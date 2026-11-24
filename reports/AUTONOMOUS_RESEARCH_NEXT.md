@@ -4211,3 +4211,14 @@ Stop terminal/force/angle sweeps;next candidate must address finite contact
 distribution with explicit mechanics/material and initial hardware clearance.
 Read product_prototype/reports/B3_PROXIMAL_TERMINAL_20261124.md and queue.
 No Native jobs pending,no automatic background continuation,no push.
+## 2026-11-24 continuation1361
+
+NextREADY proximal_shape_retention_hypothesis. Review priorrailaspect/attachment
+beforeONE finite geometry/load-transfer change;no arbitraryYoungmodulus fitting
+or force/offset/angle/terminal/pad-thickness sweeps.1360actualproximalrotation
+diagnostic and1358frozenprofilebudget motivate this,not uniquephysicalcausality.
+Finitepad hypothesis executed:initialduplicatebond collisionFAIL1337 retained;
+exactexterior union startup/.6/1.2s valid savedvolumes. Actual1355activecontact
+still100mm.1.2sSupportload.219394N,composite.66122N<.981N;fullHoldingNOTMEASURED.
+No100g/Lift/Wrapping/physicsPASS. Existing300partCAD separate. ReadCHECKPOINT,
+B3_FINITE_CONTACT_LAYER_20261124.md,queue andactual1361summary. No pendingNative.

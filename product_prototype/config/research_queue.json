@@ -943,7 +943,7 @@
     {
       "id": "proximal_shape_retention_hypothesis",
       "priority": 1,
-      "status": "READY",
+      "status": "REJECTED",
       "scope": "Review prior rail-aspect/attachment candidates before one mechanically explicit proximal bending-retention candidate. Use measured proximal rotation and finite profile budget;no additional force/offset/angle/terminal/pad-thickness sweep. Preserve anchor footprint or declare assembly change. Do not fit Young modulus or claim convergence.",
       "prerequisites": [
         "proximal_rotation_diagnostic",
@@ -955,6 +955,7 @@
         ]
       },
       "evidence": [
+        "proximal_rail_footprint_gate1362",
         "contact_layer_segment_rotation1360",
         "contact_layer_material1355"
       ],
@@ -977,9 +978,10 @@
       "id": "finite_contact_layer_regression",
       "priority": 3,
       "status": "PASS",
-      "scope": "115softwaretests only;SDK7hashes unchanged versus1335,oldphysicsFAILs preserved,not productqualification",
+      "scope": "Latest116softwaretests1363;prior115test1361logs retained. SDK7hashes unchanged versus1335,oldphysicsFAILs preserved,not productqualification",
       "prerequisites": [],
       "evidence": [
+        "contact_layer_final_regression1363",
         "contact_layer_regression1361"
       ],
       "expected_outputs": [],
@@ -989,6 +991,38 @@
       "failure_alternatives": [],
       "successors": [],
       "goal": "115softwaretests only;SDK7hashes unchanged versus1335,oldphysicsFAILs preserved,not productqualification",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "footprint_preserving_proximal_reinforcement",
+      "priority": 1,
+      "status": "READY",
+      "scope": "Nominal-volume2.2prox/1.533distal rail candidate1362rejects12of108actualanchors. Next single physical reinforcement/redistribution candidate must preserve existing2mmfootprint and3pointattachment or declare explicit newassembly. Use actualproximalrotation1360,not arbitrarymaterial/forcefitting. Added volume/mass must be reported,not equalvolume superiority.",
+      "prerequisites": [
+        "proximal_shape_retention_hypothesis"
+      ],
+      "prerequisite_states": {
+        "proximal_shape_retention_hypothesis": [
+          "REJECTED"
+        ]
+      },
+      "evidence": [
+        "proximal_rail_footprint_gate1362",
+        "contact_layer_segment_rotation1360"
+      ],
+      "expected_outputs": [
+        "finite candidate mesh with preservedanchors,materialvolume/mass and initialhardware checks beforeNative"
+      ],
+      "validation_criteria": [
+        "no missinganchor support,no forcedobjectpose,no newcustomsolver;functionalvsphysicalscope separate"
+      ],
+      "failure_alternatives": [
+        "independent mapped-joint/Nativecontact cause isolation with new hypothesis"
+      ],
+      "successors": [],
+      "goal": "Nominal-volume2.2prox/1.533distal rail candidate1362rejects12of108actualanchors. Next single physical reinforcement/redistribution candidate must preserve existing2mmfootprint and3pointattachment or declare explicit newassembly. Use actualproximalrotation1360,not arbitrarymaterial/forcefitting. Added volume/mass must be reported,not equalvolume superiority.",
       "impact": 1,
       "estimated_cost": 1,
       "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"

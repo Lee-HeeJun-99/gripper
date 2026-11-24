@@ -1,5 +1,17 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1363 supersedes below. After commit5ab1755,the nextmechanism was actually
+screened1362:nominalequalvolume proxrail2.2mm/distal1.533mm loses12of108realguide
+footpoints by.466667mm. REJECT beforeNative,not a solverfailure. Noanchor moved.
+NextREADY footprint_preserving_proximal_reinforcement;preserve2mmexistingfootprint
+or explicitly declare newjointassembly. Useactualproximalrotation1360,reviewold
+railaspect/attachmentdata;no stiffness/forcefitting,no arbitrarywidthsweep. Added
+volume/mass mustbeexplicit. Latestfinalcommit gitlog;feature5ab1755/7ccf1ea.
+1363finalregressionsummary authoritative. Nativeallcompleted,noRUNNING,oldRaw/
+SDK/FAILs preserved,no push. ReadCHECKPOINT andupdatedfinitecontactlayerreport.
+
+Historical1361 resume retained below:
+
 LATEST1361 supersedes older notes below. All children completed,noRUNNING.
 Finite-contact-layer hypothesis implemented;separate internalbond contacts
 failed1337,corrected exactexterior union preserved ALL originalexterior except

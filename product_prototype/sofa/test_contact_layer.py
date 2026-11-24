@@ -31,4 +31,6 @@ class ContactLayerTests(unittest.TestCase):
   d=result('contact_layer_profile_rays1358');self.assertEqual(len(d['records']),40);self.assertEqual(sum(r['frozen_profile_within_initial_budget'] is False for r in d['records']),30);self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
  def test_proximal_rotation_is_diagnostic(self):
   d=result('contact_layer_segment_rotation1360');r=[r for r in d['records'] if r['case']=='b3_contact_layer_union_withdraw1352' and r['finger']==0 and not r['reference']];a,b=r;self.assertGreater(abs((b['proximal_signed_turn_deg']-a['proximal_signed_turn_deg'])/(b['tip_segment_angle_deg']-a['tip_segment_angle_deg'])),.8);self.assertEqual(d['physical_validation'],'NOT QUALIFIED')
+ def test_proximal_candidate_preserves_real_anchors_or_rejects(self):
+  d=result('proximal_rail_footprint_gate1362');self.assertEqual(d['status'],'REJECT_FIXED_ANCHOR_RAIL_REDISTRIBUTION');self.assertEqual(d['anchors_checked'],108);self.assertEqual(d['anchors_outside'],12);self.assertEqual(d['candidate']['original_nominal_one_rail_volume_mm3'],d['candidate']['candidate_nominal_one_rail_volume_mm3']);self.assertTrue(all(r['original_rail_inner_margin_mm']>=0 for r in d['records']))
 if __name__=='__main__':unittest.main()

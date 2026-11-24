@@ -1219,3 +1219,10 @@ unsupportedHolding. Frozenprofilebudget andactualproximalrotation investigated;
 nextsinglephysicalproximalshape-retention hypothesis,not padthickness sweep.
 ActualNative figure1359,fullreportB3_FINITE_CONTACT_LAYER_20261124.md. All old
 evidence preserved,SDKunchanged,newobserverbuildseparate,no productionCADadoption.
+## Additional mechanism cycle1362–1363,2026-11-24
+
+After commit5ab1755,a proximalrail nominalvolume redistributioncandidate was
+actually implemented and rejected beforeNative:12of108guidefeet wouldleave
+railby.466667mm. Nofootpointmoved. Nextfootprint-preservingreinforcement or
+explicitnewassembly,not randomrailwidth/stiffness/forcesweep. Evidence1362,
+latestregressions1363,finitecontactlayerreport. ProductstillNOTQUALIFIED.

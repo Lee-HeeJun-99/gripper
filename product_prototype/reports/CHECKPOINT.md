@@ -1,4 +1,17 @@
-## Latest continuation through1361 — 2026-11-24
+## Latest continuation through1363 — 2026-11-24
+
+After feature5ab1755,actually started nextmechanism cycle1362. Reviewed old
+uniformrail-aspect1649–1660(separate custommodel,not adopted) andNative3point
+railbackattachment1127–1135. ONE nominalvolume redistribution:railwidth2→2.2mm
+on0–70mm and1.533333mm on70–100mm,same.5mmthickness. Nominalone-railvolume
+100mm³ unchanged,NOT exactcurvedmeshvolume certification. Actual108guidefoot
+points checked:12outsidecandidate by.466667mm. REJECT beforeNative;noanchor
+silentlymoved or deleted. NextREADY footprint_preserving_proximal_reinforcement,
+mustpreserve existing2mmfootprint or explicitly redesignassembly;addedmaterial
+mustnotbe presented as equalvolume efficiency.1363finalregression summary
+authoritative;prior115test1361retained. No pendingNative,SDK/push unchanged.
+
+## Completed finite-layer continuation through1361 — 2026-11-24
 
 Finite-contact-layer cycle1336–1360 implemented and executed. Baseline1298,
 new0.5mm layer80–100mm;E1MPa/nu.3/rho1000 ASSUMED,perfectbond,added142.493mg

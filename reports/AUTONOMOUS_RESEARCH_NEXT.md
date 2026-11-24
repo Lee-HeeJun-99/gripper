@@ -4222,3 +4222,11 @@ exactexterior union startup/.6/1.2s valid savedvolumes. Actual1355activecontact
 still100mm.1.2sSupportload.219394N,composite.66122N<.981N;fullHoldingNOTMEASURED.
 No100g/Lift/Wrapping/physicsPASS. Existing300partCAD separate. ReadCHECKPOINT,
 B3_FINITE_CONTACT_LAYER_20261124.md,queue andactual1361summary. No pendingNative.
+## 2026-11-24 continuation1363
+
+NextREADY footprint_preserving_proximal_reinforcement. Actual1362nominal-volume
+railwidth2.2prox/1.533distalcandidate rejected:12/108actualfootpointsoutsideby
+.466667mm. NoNativeforinvalidattachment,noanchorrelocationhidden. Existing2mm
+footprintmustbepreserved or newassemblyexplicit;addedvolume/mass not equalvolume
+efficiency. Use1360proximalrotationdiagnostic,notphysicalcausalityclaim. Full
+100gHolding/Lift/time/mesh/jamming stillNOTQUALIFIED. Reportsretain1361detail.

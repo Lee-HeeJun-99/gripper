@@ -145,3 +145,20 @@ Feature7ccf1ea preserves the first completed implementation/diagnostic cycle.
 exactly equal1335. `git diff --name-only --diff-filter=MDR dd9b32e --
 product_prototype/results` returns no pre-existing result modifications.
 All Native children completed;no persistent/background continuation promised.
+
+## Actual next mechanism cycle after local commit5ab1755
+
+1362 reviews old uniformrail-aspect1649–1660 and the actual36anchor/finger
+rank6railbackjoint,then implements ONE nominal-volume proximalredistribution:
+width2.2mm at0–70mm,1.533333mm at70–100mm,thickness0.5mm. Nominalone-rail
+volume100mm³ retained. This is NOT an exactcurvedtetmeshvolume/mass/EI claim;
+piecewisewidthstep is only a feasibilitycandidate,not a fabricationdrawing.
+
+ActualScene SubsetMultiMapping gives108railbottomanchorpoints.12leave the
+candidate rail by0.466667mm;baselinefootmargin nonnegative. CandidateREJECTED
+BEFORENative. No arbitraryguidefootrelocation or lostanchor was permitted.
+NextREADY footprint_preserving_proximal_reinforcement:retain existing2mmfootprint,
+or explicitly redesignjointassembly. Addedreinforcementmaterial mustcarry its
+own mass/volume and mustnotbe called an equal-volume efficiencyimprovement.
+Command:Python sofa/proximal_rail_footprint_gate.py --tag UNIQUE. Raw1362stores
+all108localpoints,margins,source/config/mesh/scenehashes.1363finalregressionsummary.

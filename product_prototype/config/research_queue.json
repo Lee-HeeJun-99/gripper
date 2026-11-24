@@ -222,14 +222,26 @@
     {
       "id": "new_native_finite_hardware_grasp",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "REJECTED",
       "prerequisites": ["mapped_skin_contact_contract"],
       "scope": "ActualfreshNativeNewProximity withALLfinitehardwareandoriginalfreeRigid3sphere;notVec3shortcut orcouponscopepromotion",
       "hypothesis": "InstalledNewRigidSphereMesh1568retainsresponse/angularJ;singleintersectionchange mayenablefinitehardwaregraspwithoutLocalmissingSkin orMinredundantcontactcost",
-      "evidence": ["new_rigid_sphere_contract1568"],
+      "evidence": ["new_rigid_sphere_contract1568", "finite_hardware_new1569", "separated_rigid_sphere1570", "new_projection_audit1571", "cyclic_projection_contract1572", "cyclic_finite_hardware1573", "mixed_sphere_gravity1582"],
       "expected_outputs": ["actual.6spilot/positiveFEM;Skintriangle-gap/responsecrosscheck;hardwarebracingrows;thenbounded2soriginal100ggoalONLYifpreconditionsmet"],
       "validation_criteria": ["ALLhardwarecollisionmodelsandRigid3objectretained;nativecost<420;noinversion;actualSkinresponse;original100ggoal plus nohardwarebracing beforequalification"],
       "failure_alternatives": ["ActualfiniteGuidegeometry/forceprovenance diagnosis,notfiltercone/dt/forceorVec3torquesuppression"],
+      "successors": ["native_dispatch_finite_hardware_grasp"]
+    },
+    {
+      "id": "native_dispatch_finite_hardware_grasp",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["mapped_skin_contact_contract"],
+      "scope": "Registration-only compatibility adapter, not new physics solver: stock Min RigidSphere/mesh functions and stock Local other pairs. Full finite hardware enabled. No whole-model qualification from coupons.",
+      "hypothesis": "Installed Local lacks RigidSphere/mesh dispatch; installed New has independently observed projection and radius failures. Register stock Min functions only for missing pairs, preserving rigid torque and Local finite hardware contacts.",
+      "evidence": ["rigid_sphere_dispatch_build1578", "rigid_sphere_dispatch_contract1579", "rigid_sphere_dispatch_build1580", "rigid_sphere_dispatch_contract1581", "mixed_sphere_gravity1582", "dispatch_finite_hardware1583", "dispatch_skin_contact1584", "dispatch_guide_pairs1585"],
+      "validation_criteria": ["Stock q/v/impulse equivalence 1e-12, mesh-only no-op, actual gravity radius reference, positive saved FEM, actual Skin response and original full100g goal; Guide-Guide indirect bracing must be audited separately"],
+      "failure_alternatives": ["Actual contact-location-derived finite hardware geometry candidate; no collision disabling or buffer relaxation"],
       "successors": ["exploratory_100g_lift"]
     },
     {

@@ -1,3 +1,13 @@
+## Dispatch1580–1585 — component validation, not whole-model qualification
+
+See NATIVE_RIGID_SPHERE_DISPATCH_20261124.md. Installed Local missing RigidSphere
+mesh pairs1567; New separated contact1570 and radius1582 FAIL. Registration-only
+compatibility module1580 forwards installed Min callbacks for three missing
+pairs, retains stock Local otherwise. Actual coupon1581 q/v/impulse errors0;
+gravity1582 rest centre error1.38778e-17m/Fz.981N. Fullpilot1583 positive FEM
+and actualSkin response1584, but real Guide–Guide nonzero rows1585. Full2s1586
+RUNNING, not Holding/physical/time/mesh certification. Historical FAILs retained.
+
 ## Native tetra handedness1521–1533 — scoped evidence,not numericalPASS
 
 ActualnoobjectONLYtetreflection1521/22 reverses−1.424→+1.424mmlateral;

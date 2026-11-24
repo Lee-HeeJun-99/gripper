@@ -1,5 +1,18 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1586 supersedes all RUNNING claims below. Actual Native registration
+adapter1580/1581 validated against stock callbacks (q/v/impulse error0); actual
+mixed-sphere gravity radius1582 PASS for Dispatch, New FAIL30mm. Finite3finger
+pilot1583 positive FEM,1584 Skin response actual;1585 Guide–Guide639nonzero
+rows (not unbraced qualification). Full2s dispatch_finite_holding1586 RUNNING.
+Inspect summary and process before execution; never overwrite a completed tag.
+Next: grasp_goal_assess.py --case dispatch_finite_holding1586 --tag UNIQUE
+and guide_pair_response_inventory.py samecase/newtag; actual bracing stays
+separate from object-only functional goal. Sources/build identities and failures
+1569–1582 in NATIVE_RIGID_SPHERE_DISPATCH_20261124.md. No SDK changes, no custom
+contact arithmetic. Old time/mesh/API FAIL preserved. Physical/hardware inputs
+still uncalibrated. No100gLift until independent support/bracing assessment.
+
 CURRENT1569 supersedesbelow.1567matchedtemplateNativecoupon finds actual
 LocalRigidSphere–meshintersectorNOTFOUND,notFEMdefect;Vec3centreworksBUT
 angularJ/impulse0 =>forbiddenphysicalshortcut.1568installedNewRigidSphere

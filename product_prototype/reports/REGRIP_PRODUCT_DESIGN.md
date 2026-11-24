@@ -1,3 +1,14 @@
+## Finite collision integration1583 — not fabrication approval
+
+Actual finite annular Eyelets and three-foot Support hulls, all collision
+features enabled, tested in fresh .6s Native3finger run1583. Registration-only
+Native callback adapter required by missing Local RigidSphere dispatch; no new
+physics solver or SDK modification. Actual Skin forces present, positive FEM;
+639 nonzero Guide–Guide rows1585 mean indirect bracing is not excluded. No
+promotion of old object-only Holding or these coupons to current CAD/product
+qualification. Inherited hardware mass/inertia, support manufacture/strength,
+finite wire dynamics and real300partCAD integration remain unvalidated.
+
 ## Eccentric eyelet separate candidate1415–1418 — NOT PRODUCT APPROVAL
 
 20 finite eccentric through-eyelet parts and initial world placement generated;

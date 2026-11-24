@@ -1,3 +1,15 @@
+## Current1586 — finite hardware full Holding running
+
+1580/1581 registration-only Native compatibility adapter built and verified:
+stock Min RigidSphere/mesh callbacks on stock Local, not custom physics solver.
+1582 independent gravity reference PASS for Min/Dispatch; New radius FAIL30mm.
+1583 .6s actual3finger valid/positive FEM;1584 actual Skin response and positive
+saved gaps;1585 actual639 nonzero Guide–Guide rows => indirect bracing remains.
+Full2s dispatch_finite_holding1586 RUNNING. Inspect actual summary/process first.
+See NATIVE_RIGID_SPHERE_DISPATCH_20261124.md. New1569/1570 rejected; cyclic
+1573 not a valid whole fix;1576 strict surfaceAPI FAIL retained. Old entries
+below are historical, not active jobs. No physical/time/mesh/product PASS.
+
 ## Latest1569 — missing RigidSphere contact capability isolated
 
 1567actualmatchedcoupon:LocalRigidSphereMeshNOTFOUND;Vec3centrehaszero

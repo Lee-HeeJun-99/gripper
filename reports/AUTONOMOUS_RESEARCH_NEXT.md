@@ -1,3 +1,13 @@
+## Current1586 — verify actual finite-hardware Holding before promotion
+
+Inspect dispatch_finite_holding1586 completion first; then actual100g goal and
+Guide–Guide response audits, distinct verdicts. Pilot1583 positive FEM/actual
+Skin contact but639 nonzero hardware-hardware rows1585. New policy1569/1570
+and mixed-radius1582 FAIL retained. Registration-only adapter1580/1581 uses
+installed Native functions, not a new solver/SDK edit. Radius reference1582
+PASS for Dispatch. Full scope/reproduction: product_prototype/reports/
+NATIVE_RIGID_SPHERE_DISPATCH_20261124.md and AUTONOMOUS_RESUME top.
+
 ## Latest1569 — installed RigidSphere contact path, not Vec3 shortcut
 
 1567isolatesLocalRigidSphereMeshNOTFOUNDwithoutFEM;Vec3centreerasesactual

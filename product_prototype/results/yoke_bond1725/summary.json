@@ -1,0 +1,102 @@
+{
+  "status": "PASS_NEW_YOKE_MATERIAL_FEM_SEPARATION_ONLY",
+  "case": "dorsal_yoke1723",
+  "records": [
+    {
+      "finger": 0,
+      "complete_yoke_volume_mm3": 16.298784075685948,
+      "added_material_volume_mm3": 12.874084902259614,
+      "intended_original_support_union_overlap_mm3": 3.4246991734263323,
+      "added_mass_kg": 1.2874084902259615e-05,
+      "added_COM_m": [
+        0.014629933731172455,
+        -1.3668252042458826e-10,
+        -0.09286101212046168
+      ],
+      "added_inertia_COM_kg_m2": [
+        [
+          4.372647268654062e-10,
+          4.119434677502252e-20,
+          9.19185687746935e-15
+        ],
+        [
+          4.119434677502252e-20,
+          1.382627781058001e-12,
+          2.585642476765747e-19
+        ],
+        [
+          9.19185687746935e-15,
+          2.585642476765747e-19,
+          4.3725893896931257e-10
+        ]
+      ],
+      "tested_FEM_cells": 36,
+      "new_material_FEM_overlap": []
+    },
+    {
+      "finger": 1,
+      "complete_yoke_volume_mm3": 16.29878239325916,
+      "added_material_volume_mm3": 12.922036937608647,
+      "intended_original_support_union_overlap_mm3": 3.376745455650512,
+      "added_mass_kg": 1.2922036937608646e-05,
+      "added_COM_m": [
+        -0.007341707820742192,
+        0.012654674689488731,
+        -0.09286205453026163
+      ],
+      "added_inertia_COM_kg_m2": [
+        [
+          1.1172705241058554e-10,
+          -1.9112046743048674e-10,
+          8.024727672379535e-15
+        ],
+        [
+          -1.9112046743048674e-10,
+          3.324329764696868e-10,
+          1.629749909668203e-14
+        ],
+        [
+          8.024727672379535e-15,
+          1.629749909668203e-14,
+          4.4276470321672314e-10
+        ]
+      ],
+      "tested_FEM_cells": 27,
+      "new_material_FEM_overlap": []
+    },
+    {
+      "finger": 2,
+      "complete_yoke_volume_mm3": 16.298782393259145,
+      "added_material_volume_mm3": 12.92203357860457,
+      "intended_original_support_union_overlap_mm3": 3.3767488146545768,
+      "added_mass_kg": 1.2922033578604569e-05,
+      "added_COM_m": [
+        -0.0073417085335055945,
+        -0.012654674372069163,
+        -0.0928620545741677
+      ],
+      "added_inertia_COM_kg_m2": [
+        [
+          1.1172703425579347e-10,
+          1.9112043866054424e-10,
+          8.023548794603805e-15
+        ],
+        [
+          1.9112043866054424e-10,
+          3.324329287861237e-10,
+          -1.6296759810471908e-14
+        ],
+        [
+          8.023548794603805e-15,
+          -1.6296759810471908e-14,
+          4.427646375722703e-10
+        ]
+      ],
+      "tested_FEM_cells": 27,
+      "new_material_FEM_overlap": []
+    }
+  ],
+  "source_sha256": "26445cd441e506e1ffa48cf22fc300e3dc7fa2e1416336c1c0fd5fc4e1e3fdc9",
+  "input_scene_sha256": "d6102d5f3398b17d2b26b3627409d91a3881c06eae35a5703ae9e0f0df776bb7",
+  "scope": "Original two terminal supports are the declared intended weld domains, not arbitrary same-finger collision omissions. Subtract those actual solids before checking newly introduced material against EVERY broad-phase tetrahedron. Manifold faceted CSG, no modified Skin or old result. Material duplicated inside old support must NOT be counted twice in added mass. Density1000kg/m3 is a research assumption, real bond rigidity/strength NOT MEASURED. No dynamic/swept claim."
+}

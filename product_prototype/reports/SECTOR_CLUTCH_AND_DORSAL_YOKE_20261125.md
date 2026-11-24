@@ -46,3 +46,28 @@ mesh, contact-normal and finite-wire failures remain. UNBRACED goal NOT PASS.
 Next actual work: separate native indexed rigid-mass contract, then finite
 same-finger dorsal-yoke geometry. This closes a transverse structural loop,
 not the previous external ring relief, beam width or axial offset family.
+
+##1720–1726: same-finger dorsal terminal rung
+
+1720 NEW Native indexed UniformMass contract (not failed DiagonalMass):
+two distinct masses/inertias, known force/torque, four actualsteps; maximum
+velocity error4.441e-16. Independent initial assembly scope ONLY.
+1721 producer failed a SAT helper argument check before Native; preserved.
+1723 corrected geometry: same terminal Guide5/11 share one COM body; original
+six foot coordinates, existing support/rings and all collisions retained.
+Finite0.8mm section,1mm dorsal offset derived from section+existing buffer.
+Density1000kg/m3 and ideal rigid weld are research assumptions, not hardware.
+Initial new object gap0.92047mm; wire capsule separation>=4.16868mm and
+foreign hardware separation>=7.71536mm. Neither swept nor finite-wire PASS.
+1724 actual0.6s/240steps:87.892s, minimum saved FEM ratio0.990448;
+actual shared-body cable mapping error1.388e-17m, terminal pair distance
+invariance6.939e-18m. This is a new structural mechanism, not width tuning.
+1725 independent CSG audit subtracts declared original-support weld domains,
+then intersects NEW material with all broad-phase FEM tetrahedra: no positive
+new intrusion. Existing same-finger group is justified ONLY for those bonds.
+Audit also identifies duplicated support material in the initial full-bar
+mass calculation:3.38–3.42mm3/finger.1724 is therefore an uncalibrated mapping
+pilot, NOT a mass-corrected grasp candidate. Next actual implementation must
+use added-material-only mass/COM/inertia, not reuse1724 as that result.
+No old data or verdict is changed. Actual physical weld stiffness/retention,
+guide original masses, contact normals and global convergence remain open.

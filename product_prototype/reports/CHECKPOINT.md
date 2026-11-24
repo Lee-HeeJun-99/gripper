@@ -1,3 +1,18 @@
+## Current1726 — new structural loop pilot; mass union correction next
+
+Start05252d7; savebc7d2f3 plus subsequent local saves (`git log`).
+Clutch1715 actual1.2s: cross-finger active rows0 but speed128.05mm/s and
+8.34mm lateral displacement; REJECTED for expansion, formal Hold NOT RUN.
+Same-finger dorsal terminal rung is a DIFFERENT structural mechanism.
+1720 indexed stock UniformMass acceleration contract PASS4.44e-16;
+1723 initial finite geometry PASS within scope;1724 actual0.6s positive FEM,
+shared terminal mapping error1.39e-17m.1725 CSG excludes intended original
+support bonds and finds no NEW material/FEM intrusion. It also exposes
+support/rung overlap counted twice in1724 added mass. Correct that actual
+solid-union mass/COM/inertia in a NEW candidate before further Native trials.
+No unbraced100g Holding PASS. No Native child currently running.
+Sources/commands: SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md.
+
 ## Current1714 — new finite-envelope actuation interlock, passive control PASS
 
 2026-11-25, start05252d7 clean. Reviewed all102 original queue hypotheses;

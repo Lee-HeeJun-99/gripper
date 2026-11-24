@@ -305,13 +305,26 @@
     {
       "id": "current_guide_turn_finite_wire_bend",
       "priority": 1,
-      "status": "READY",
+      "status": "FAIL",
       "prerequisites": [],
       "scope": "Independent Native finitewire coupon atactual currentguide3 turn;NOTprescribedcurvedcentreline orwholegrasp validation. ExistingBeamAdapter reusable; unknownmaterial/friction assumptions explicit.",
       "hypothesis": "1612actualturn43.7256deg>straightlegborebound37.17deg evenidealaxis. Finitewirebending/entry/contact,notpoint-path axis rotation,must carry this geometry.",
-      "evidence": ["finite_bore_trajectory1611", "bore_axis_feasibility1612"],
+      "evidence": ["finite_bore_trajectory1611", "bore_axis_feasibility1612", "current_turn_wire1613", "current_turn_wire1614", "current_turn_wire_assess1615", "wire_contact_policy1616", "min_turn_wire_assess1617"],
       "validation_criteria": ["ActualNative deformation/solidguide contact/tension and finiteR.25,ID1.2,L2;stressfreewireassumption explicit;noinvisibleguide or prescribedbend claimed as actuation"],
       "failure_alternatives": ["Explicit physical guide-entry redesign with samewire radius and actualdynamicinterference proof;no random offset scan"],
+      "successors": ["finite_wire_contact_phase_residual"]
+    },
+    {
+      "id": "finite_wire_contact_phase_residual",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["current_guide_turn_finite_wire_bend"],
+      "prerequisite_states": {"current_guide_turn_finite_wire_bend": ["FAIL"]},
+      "scope": "Read-only W/dFree/f andq/freeq atactualworstwirecontactstep,notnewsolver or wholegrasp. Extend existingwindow-limited observer; preserve1211binary.",
+      "hypothesis": "Min prevents gross Local escape but4.60um penetration coincides with1001iterations. Actual native constraint-system residual and geometry atsamephase can separate unresolved linear constraint error from mapping nonlinearity.",
+      "evidence": ["min_turn_wire_assess1617"],
+      "validation_criteria": ["Native q/v/surface/impulse observerpurity<=1e-12 againstoriginalprefix;collectactualW/dFree/impulse atworst.0452s withoutcheckpoint;no timestep/alarm/tolerancechange"],
+      "failure_alternatives": ["Independent calibrated contact-ready loading/fixture study;do notdecrease dt orraiseiterationswithoutresidual evidence"],
       "successors": []
     },
     {

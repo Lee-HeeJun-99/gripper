@@ -1,0 +1,46 @@
+{
+  "status": "FINITE_WIRE_TURN_GEOMETRY_AND_RESPONSE_AUDIT_ONLY",
+  "records": [
+    {
+      "guide_present": false,
+      "minimum_actual_saved_vertex_solid_gap_mm": -0.43416462273344314,
+      "first_negative_vertex_time_s": 0.0031999999999999984,
+      "negative_outputs": 505,
+      "negative_outputs_without_contact_impulse": 505,
+      "maximum_contact_force_resultant_N": 0.0,
+      "maximum_solver_iterations": 0,
+      "source_partition_error_Ns_Nms": 0.0,
+      "actual_nonzero_model_pair_rows": {},
+      "status": "GEOMETRY_INVENTORY_ONLY",
+      "input_hashes": {
+        "scene.scn": "fb1dcee26b70f37ca145164fd740466c72f538705b24123f174bad3b8a0e9e7b",
+        "states.csv": "5497a4cba7388903d6b7c723507018548be45bf830def80b68200b6206e3ecee",
+        "surface.csv": "0e3a93cf5163aefe2c1a6f75ce53ef1a8d98a03640f6bbf50683ed801f5da61b",
+        "response_rows.csv": "14b22867659409f176125c12932b058f6b004263565a82f0d64d644bf4a40f84"
+      }
+    },
+    {
+      "guide_present": true,
+      "minimum_actual_saved_vertex_solid_gap_mm": -0.43416462273346396,
+      "first_negative_vertex_time_s": 0.0048,
+      "negative_outputs": 489,
+      "negative_outputs_without_contact_impulse": 484,
+      "maximum_contact_force_resultant_N": 0.06821258096912583,
+      "maximum_solver_iterations": 113,
+      "source_partition_error_Ns_Nms": 1.0587911840678754e-22,
+      "actual_nonzero_model_pair_rows": {
+        "/finiteEyelet/TriangleCollisionModel1 | /wire/wireSurface/PointCollisionModel1": 19,
+        "/finiteEyelet/LineCollisionModel1 | /wire/wireSurface/LineCollisionModel1": 6
+      },
+      "status": "FAIL_ACTUAL_WIRE_SOLID_INTERSECTION",
+      "input_hashes": {
+        "scene.scn": "d1eb1c9d739a57bd7c813fd416eaba88833ad715838fb10f640c347cb19b1c4d",
+        "states.csv": "3acd0985d1ccb35545b617dfbd3b07e1d764ad32a69b263f31173da90888914e",
+        "surface.csv": "9b650051a32f9319f3ab70ae5a703a98ade8749e56eace169784a5db1f2f861d",
+        "response_rows.csv": "142e0613a8f54e8e06dd2f9b23e0ba8e4ea9b8c5967fdb2eaf97026f69cb7e54"
+      }
+    }
+  ],
+  "scope": "Exact signed distance to actual32sided concentric OD3/ID1.2/L2 finite annular solid;actual AdaptiveBeamMapping surfacevertices. Negativevertex proves intersection;positive doesNOTcertify continuousfacets/CCD. NoGuidecontrol usesvirtualsame reference solid only,notmissingcontactfault. NativeJlambda/dt resultant,not pressure/actuatorforce/rootreaction ormeasuredwirematerial.",
+  "source_sha256": "b2a93f605a69c28958c55a5b60805159b532bcfc0804c25159796b6faa3c1f15"
+}

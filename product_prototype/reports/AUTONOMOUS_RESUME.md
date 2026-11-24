@@ -1,5 +1,15 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1617: actualendpoint-driven finitewirecoupon1614 completed1200outputs
+each,endpointAPIerrors<1e-12/interiorelasticmotion. Local guidecase1615FAIL
+.434165mmwallpenetration. One-variableMin1616 completed77.096s;1617stillFAIL
+4.602854um at45.2ms/1001iterations,notqualifiedfix. OldRaw/FAIL preserved.
+NextRUNNINGtask finite_wire_contact_phase_residual: existing1211observer window
+mustextendtospecificworststep,current/freestate/W/dFree/f;freeze newbuild,prove
+q/v/surface/impulse purity. Noalarm/dt/tolerance/force scan. Actual source
+current_turn_wire_coupon.py and reportCURRENT_TURN_FINITE_WIRE_20261124.md.
+All1613–1617completed;noNativechildcurrentlyneededforthecompletedcases.
+
 CURRENT1612 supersedes ALL RUNNING claims below. No Native child left active.
 Latestactualtrial1610 reuses frozen1211 phaseobserver, q/v/impulsepurity0,
 actualfreeorientation matchesprediction0 andnormalJlevererror1.08421e-19m.

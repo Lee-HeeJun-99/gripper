@@ -1,5 +1,19 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1675 supersedesolderREADY/RUNNING. StartingHEAD6022c14clean;d590f55
+savesNativepaircoverage1663–70.1665actualregistryobserverq/v/impulsepurity0;
+MinTriangleLine/TriangleTriangleNULL,otherfeaturesrespond.1667actual16edges
+crossGuidefacets. Ray/Octree1668noresponseand1670facetFAIL;REJECTED.
+Static2x2completed1671–74:cap-onlyeffect0,Guidecollisionownershipchanges
+q/v/impulse andfacetoutcome. StaticclearanceNOTdynamicwire/graspPASS.
+Actualdynamic_guide_ownership1675 RUNNING:110steps/11ms,same11BeamDOFs/25um
+wire/R.2Guide/ALLfeatures,E/rho/mass/BC/dt/tolerances;ONLYTriangleownership.
+Inspectsummary/processBEFOREanyrerun. Then robot_wsPython
+product_prototype/sofa/rounded_bore_assess.py --tag UNIQUE --case dynamic_guide_ownership1675
+AND rounded_wire_surface_contract.py --tag UNIQUE --case dynamic_guide_ownership1675.
+No fulltrial or100gLift basedonstaticcoupon. Latest report
+FINITE_SURFACE_FEATURE_COVERAGE_20261124.md. OldRaw/FAIL/SDK preserved.
+
 CURRENT1662 supersedes ALL RUNNING claims below. NoNativechildrunning.
 1655 local25umcollisiontube actual200steps206.380s;precontact25Beamq/v API0.
 1658verticesoutside,BUT1659wholefacetsFAIL4states;1660independent16interior

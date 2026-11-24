@@ -1,3 +1,14 @@
+## Current1675 — feature coverage measured; dynamic owner contrast running
+
+1665registryNativepurity0,actualMinLineTriangle/TTNULL.1667sixteenactualwire
+edge/facet crossings,not claimofallNativefailure. Ray/Octree1668rejected:
+zeroactualreactionand1670facetpenetration. Static2x2causalisolation1671–74
+findscap-onlyeffect0,collisionownershipchangesreaction/penetration.
+Actual dynamic_guide_ownership1675RUNNING110steps,notfullgrasp. Inspectbefore
+rerun;independentactualvertexANDfacetchecksrequired. AUTONOMOUS_RESUMEtop
+andFINITE_SURFACE_FEATURE_COVERAGE_20261124.md holdprecisecasepaths/commands.
+No physical/time/mesh/unbraced100g/Lift/STEP qualification. OldRawpreserved.
+
 ## Current1662 — wire facet failures preserved; no active child
 
 Finecollisionpilot1655:200outputs/206.380s,precontact25Beamq/v exactly0.

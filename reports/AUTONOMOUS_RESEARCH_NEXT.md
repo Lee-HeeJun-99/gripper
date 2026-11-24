@@ -1,3 +1,14 @@
+## Current1675 — inspect actual dynamic ownership contrast
+
+1663–74completed/recorded,doNOTrepeat. NativeLineTriangle/TT ignored;actual
+wireedge/facetcrossings measured1667. DocumentedRay/Octree1668FAILnoresponse/
+actualfacetpenetration. Staticfactorialshowscap-only0andownershipsensitivity,
+notmechanicaldesignsuccess. Actual110step dynamic_guide_ownership1675RUNNING;
+sameallphysicalinputs/features,ONLYGuideTriangleownerrepresentation.
+Nextindependentrounded_bore_assess ANDrounded_wire_surface_contract on1675,
+uniquetagsonly. No static-pass transfer,force/dt/partition sweep orfullgrasp.
+DetailsinAUTONOMOUS_RESUMEtopandFINITE_SURFACE_FEATURE_COVERAGE_20261124.md.
+
 ## Current1662 — next finite-surface feature capability, not another mesh scan
 
 ALL Native through1655done;nochildrunning. Fine25umcollisionpilot206.380s,

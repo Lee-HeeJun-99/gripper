@@ -421,13 +421,25 @@
       "priority": 1,
       "impact": 2,
       "estimated_cost": 1,
-      "status": "READY",
+      "status": "PASS",
       "prerequisites": ["native_finite_surface_feature_coverage"],
       "scope": "Two missingcells of2x2 STATICinitial geometry contactcoupon:wireendcaps versusGuideTrianglemodelownership. Samealloriginalwire/Guidefaces,Line/Pointfeatures,mass/inertia assumption,dt/friction/solver. Notwirebending/holding.",
       "hypothesis": "Open/partition1665 hasfacetpenetration;closed/aggregate1668Mincontrol clearsin2steps. Isolatewhichchange causedobservedresponse beforeanydynamic integration.",
-      "evidence": ["finite_surface_capability1665", "raytrace_finite_surface1668", "finite_capability_surface1666", "closed_control_surface1669"],
+      "evidence": ["finite_surface_capability1665", "raytrace_finite_surface1668", "finite_capability_surface1666", "closed_control_surface1669", "finite_surface_factorial1671", "open_aggregate_surface1672", "closed_partition_surface1673", "finite_surface_factorial_assess1674"],
       "validation_criteria": ["Onlyonevariable percontrast,actualNative outputs ANDindependentwholefacet audit;no claimingstaticinitialoverlapcorrection asactuation/sliding/graspPASS"],
       "failure_alternatives": ["Rejectnonrobust modelownership effect;read Nativecontactnormal refresh contract orindependentmaterial readiness withoutparameter scan"],
+      "successors": ["dynamic_finite_guide_ownership"]
+    },
+    {
+      "id": "dynamic_finite_guide_ownership",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["finite_surface_caps_ownership_factorial"],
+      "scope": "Actual11BeamDOF/local25umwire Nativeprefix110steps atSAMEgeometry/material/mass/BC/dt/solver/features;ONLYGuideTriangleownershipaggregate. Notmechanicalimprovement orstaticcoupon success transfer.",
+      "hypothesis": "1674staticcap-onlyeffect0butowner representation changesresponse/penetration. Directdynamiccontrast needed at1655first10.6msfacetfailure;doNOTinferfullvalidityfromstaticclearance.",
+      "evidence": ["finite_surface_factorial_assess1674"],
+      "validation_criteria": ["Actual110steps/noErrors/precontact25q/v<=1e-12;independentvertexANDcompletefacetgeometry;sameorientedGuidefaceunion andallLine/Point retained. No largerfulltrial withoutnewvalidscope/cost forecast"],
+      "failure_alternatives": ["Stopownershipfamily if dynamicfail;independent Native radialnormal contract ormaterial readiness,notparameter ormodelpartition sweep"],
       "successors": []
     },
     {

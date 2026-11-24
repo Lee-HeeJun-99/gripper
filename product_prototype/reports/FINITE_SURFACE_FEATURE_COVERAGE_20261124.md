@@ -1,5 +1,41 @@
 # Native finite-surface feature coverage — 2026-11-24
 
+## Actual next cycles1671–1675
+
+After locald590f55, executed both missing factorial cells, not a repeated
+diagonal or a report-only task.1671 open/aggregate and closed/partition both
+complete2Native steps in0.305/0.368s. Independent complete facet audits1672/
+1673 give the completed table:
+
+| Static shape | 32Guide Triangle models | One Guide Triangle model |
+| --- | --- | --- |
+| Open wire | 2/2penetrating states1666 | 0/2penetrating states1672 |
+| Closed wire | 2/2penetrating states1673 | 0/2penetrating states1669 |
+
+1674 actual q/v/impulse comparison: cap-only effects EXACTLY0 in both columns.
+Ownership alone changes position1.676867um,orientation.00134684rad,linear
+velocity.00838433m/s and angular velocity6.41317rad/s in this particular
+assumed-inertia STATIC INITIAL coupon. Not physical material/mass calibration,
+not a1.68um design improvement,not energy/time convergence. A physical-surface
+equivalent collision representation is changing contact reduction/order.
+
+Actual next Native dynamic_guide_ownership1675 RUNNING: reuse1655initial Beam
+scene, keep11BeamDOFs/local25umwiremesh/openendgeometry,E/rho/mass/ALLGuide
+faces/Line/Pointfeatures,BC,dt,friction,solver; only merge Guide Triangle model
+ownership.110steps through11ms includes1655 first facet failure10.6ms. Bounded
+420s/4GiB,forecast114s from measured206.38s/200steps. No unverified checkpoint,
+state overwrite,full3finger rerun or static-success promotion.
+
+Inspect actual completion before execution. Then independent roundedsolid
+vertex and wholefacet audits. If it fails, stop this ownership family rather
+than sweep partitions/dt/forces. Previous failedNative/static/Ray results stay.
+
+```bash
+$PY product_prototype/sofa/finite_surface_factorial.py --tag UNIQUE
+$PY product_prototype/sofa/finite_surface_factorial_assess.py --tag UNIQUE
+$PY product_prototype/sofa/dynamic_guide_ownership.py --tag UNIQUE
+```
+
 Start6022c14, clean working tree. Earlier Raw/verdicts preserved. No SDK edits,
 new contact law/solver, full gripper rerun or remote operations.
 

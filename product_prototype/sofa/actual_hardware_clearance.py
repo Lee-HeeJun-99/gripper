@@ -16,9 +16,10 @@ def main():
   parent=root.find(f"Node[@name='guides{i}']");q0=np.fromstring(parent.find('MechanicalObject').get('position'),sep=' ').reshape(-1,7);rr=list(csv.DictReader((src/f'guide_frames{i}.csv').open()));t=np.array([float(r['time_s']) for r in rr]);q=np.array([np.fromstring(r['rigid_q'],sep=' ').reshape(-1,7) for r in rr]);rot=Rotation.from_quat(q[:,:,3:].reshape(-1,4)).as_matrix().reshape(len(q),-1,3,3)
   if times is None:times=t
   else:assert np.array_equal(times,t)
-  for j in range(2):
-   for node in parent.find(f"Node[@name='cable{j}']").findall('Node'):
-    if not node.get('name','').startswith(('eyelet','support')):continue
+  for j in range(3):
+   nodes=parent.find(f"Node[@name='cable{j}']").findall('Node') if j<2 else parent.findall("Node[@name='dorsalYoke']")
+   for node in nodes:
+    if not node.get('name','').startswith(('eyelet','support','dorsalYoke')):continue
     v=np.fromstring(node.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);f=np.fromstring(node.find('MeshTopology').get('triangles'),sep=' ',dtype=int).reshape(-1,3);o=int(node.find('RigidMapping').get('rigidIndexPerPoint').split()[0]);local=Rotation.from_quat(q0[o,3:]).inv().apply(v-q0[o,:3]);hull=trimesh.convex.convex_hull(local);mapped=np.einsum('tij,vj->tvi',rot[:,o],hull.vertices)+q[:,o,None,:3]
     parts.append(dict(finger=i,cable=j,name=node.get('name'),vertices=mapped,faces=hull.faces,edges=hull.edges_unique,lo=mapped.min(1),hi=mapped.max(1)))
     # Exact triangle/sphere nearest surface distance. Body-local centres avoid
@@ -38,7 +39,7 @@ def main():
   for k in np.flatnonzero(mask):
    narrow+=1;gap,status=sat(left['vertices'][k],right['vertices'][k],left['faces'],right['faces'],left['edges'],right['edges'])
    if gap<=.0002:records.append(dict(time_s=float(times[k]),left=[left['finger'],left['cable'],left['name']],right=[right['finger'],right['cable'],right['name']],axis_gap_mm=gap*1000,status=status))
- d=dict(status='PASS_SAVED_INTERFINGER_ENVELOPE_CLEARANCE_ONLY' if not records and objectgap>=.0002 else 'FAIL_OR_UNRESOLVED_SAVED_HARDWARE_CLEARANCE',case=a.case,accepted_outputs=len(times),actual_parts=len(parts),pair_frames=broad,narrow_pair_frames=narrow,uncleared_pair_frames=len(records),minimum_hardware_object_triangle_gap_mm=objectgap*1000,worst_object_gap=objectworst,first_uncleared=records[:10],scope='Actual candidate accepted Rigid3 poses; all eyelet/support convex envelopes across DIFFERENT fingers. Positive separation certifies finite facets outside existing0.2mm buffer at saved outputs only. Envelope overlap is NOT proof of ring-solid penetration. Same-finger/joints/skin/wire and swept intervals NOT certified. Not time/mesh/energy/physical qualification.',source_sha256=sha(Path(__file__)),input_hashes={f:sha(src/f) for f in ['scene.scn','object.csv']+[f'guide_frames{i}.csv' for i in range(3)]})
+ d=dict(status='PASS_SAVED_INTERFINGER_ENVELOPE_CLEARANCE_ONLY' if not records and objectgap>=.0002 else 'FAIL_OR_UNRESOLVED_SAVED_HARDWARE_CLEARANCE',case=a.case,accepted_outputs=len(times),actual_parts=len(parts),pair_frames=broad,narrow_pair_frames=narrow,uncleared_pair_frames=len(records),minimum_hardware_object_triangle_gap_mm=objectgap*1000,worst_object_gap=objectworst,first_uncleared=records[:10],scope='Actual candidate accepted Rigid3 poses; all eyelet/support AND optional dorsalYoke convex envelopes across DIFFERENT fingers. Cable index2 denotes yoke. Positive separation certifies finite facets outside existing0.2mm buffer at saved outputs only. Envelope overlap is NOT proof of ring/yoke-solid penetration. Same-finger/joints/skin/wire and swept intervals NOT certified. Not time/mesh/energy/physical qualification.',source_sha256=sha(Path(__file__)),input_hashes={f:sha(src/f) for f in ['scene.scn','object.csv']+[f'guide_frames{i}.csv' for i in range(3)]})
  d['geometry_case']=geom.name;d['geometry_scene_sha256']=sha(geom/'scene.scn');d['actual_candidate_dynamics']=geom==src
  if geom!=src:
   d['status']='PASS_FROZEN_REPLAY_CLEARANCE_ONLY' if not records and objectgap>=.0002 else 'FAIL_OR_UNRESOLVED_FROZEN_REPLAY_CLEARANCE'

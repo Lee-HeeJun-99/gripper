@@ -19,11 +19,11 @@
     {
       "id": "same_finger_dorsal_yoke",
       "priority": 0,
-      "status": "READY",
+      "status": "RUNNING",
       "scope": "A finite transverse rung joins ONLY opposite terminal guides of one finger; actual added geometry/mass/COM/inertia, not inter-finger bracing",
       "hypothesis": "Closing the same-finger transverse structural loop may suppress independent guide splay without removing collision or increasing force; previous width/reinforcement candidates did not weld opposed terminal frames",
       "prerequisites": [],
-      "evidence": ["unbraced_wrench_load1682", "capillary_hold1700", "sector_route1707"],
+      "evidence": ["unbraced_wrench_load1682", "capillary_hold1700", "sector_route1707", "indexed_mass1720", "dorsal_yoke1723", "dorsal_yoke_pilot1724", "yoke_bond1725", "yoke_union1728", "yoke_inertia1729"],
       "expected_outputs": ["Indexed native mass contract, finite rung geometry and initial object/wire/FEM gate, bounded Native trial if gates pass"],
       "validation_criteria": ["Exact assembly of distinct native rigid masses under constant loads", "Positive watertight bridge geometry, no initial object or foreign hardware interference, actual original anchor coordinates preserved", "Actual saved FEM positive, no hidden object support or contact removal"],
       "failure_criteria": ["Mass assembly mismatch, initial collision, invalid mapping/FEM or continued internal bracing"],

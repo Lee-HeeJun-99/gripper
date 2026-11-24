@@ -1,3 +1,18 @@
+## Current1733 — union-mass corrected dorsal yoke; withdrawal test next
+
+1730 actual0.6s/240steps:87.087s, positive saved FEMmin0.990450.
+1731 internal cross-finger response0;1733 all75hardware,450000pairframes
+clear of0.2mm buffer at saved states, hardware/object gap>=0.594283mm.
+1732 initial+8sampled states/finger: no new-material/FEM positive CSG overlap.
+1728 corrects duplicated support mass using actual solid union, not fitted
+parameters;1729 verifies actual three full Native mass tensors initially.
+Ideal rigid weld and density1000kg/m3 remain research assumptions, actual
+guide/support masses inherited. No unbraced Holding PASS or physical PASS.
+Next actual1.2s test (new output):
+`python product_prototype/sofa/dorsal_yoke_native.py --tag yoke_union_prefix1734 --design yoke_union1728 --mass-contract yoke_inertia1729 --duration 1.2 --pilot yoke_union_pilot1730 --pair-case yoke_union_internal1731`
+Local save identifier: `git log -1 --oneline`. Full command/source/binary
+evidence and prior failures remain in SECTOR_CLUTCH_AND_DORSAL_YOKE_20261125.md.
+
 ## Current1726 — new structural loop pilot; mass union correction next
 
 Start05252d7; savebc7d2f3 plus subsequent local saves (`git log`).

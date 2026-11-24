@@ -71,3 +71,31 @@ pilot, NOT a mass-corrected grasp candidate. Next actual implementation must
 use added-material-only mass/COM/inertia, not reuse1724 as that result.
 No old data or verdict is changed. Actual physical weld stiffness/retention,
 guide original masses, contact normals and global convergence remain open.
+
+##1728–1733: union-mass corrected candidate
+
+1728 actual new material only (complete yoke minus old support weld domains)
+adds12.874–12.922mg/finger at assumed1000kg/m3. Original guide/support masses
+are inherited, not measured. Recomputed COM and full parallel-axis inertia;
+no geometry/FEM/force/dt/solver changes.1729 actual Native initial tensor
+response matches independently inverted full tensors to8.882e-16 in velocity.
+1730 NEW actual0.6s:87.087s, minimum saved FEM ratio0.990450, terminal mapping
+error1.388e-17m;1731 all cross-finger response rows0.1732 exact faceted CSG
+at initial+8stored states/finger (828cell checks): no positive new-material
+FEM intersection outside declared original weld domains. This is sampled,
+not swept, and not real joint strength.1733 includes ALL75finite hardware
+parts (the previous helper was explicitly extended to include3rungs):
+450000pairframes, none inside unchanged0.2mm buffer; hardware/object gap
+>=0.594283mm. No hardware/object active loads in this0.6s entry prefix.
+Next actual1.2s withdrawal test, same1728 geometry/mass and1.5N inputs.
+
+Commands (NEW tags only):
+```
+python product_prototype/sofa/yoke_union_mass_candidate.py --tag UNIQUE_GEOMETRY
+python product_prototype/sofa/yoke_inertia_native_contract.py --case UNIQUE_GEOMETRY --tag UNIQUE_MASS
+python product_prototype/sofa/dorsal_yoke_native.py --tag UNIQUE_PILOT --design UNIQUE_GEOMETRY --mass-contract UNIQUE_MASS
+python product_prototype/sofa/mechanism_contact_inventory.py --case UNIQUE_PILOT --tag UNIQUE_PAIRS
+python product_prototype/sofa/yoke_deformed_material_screen.py --case UNIQUE_PILOT --tag UNIQUE_MATERIAL
+python product_prototype/sofa/actual_hardware_clearance.py --case UNIQUE_PILOT --tag UNIQUE_CLEARANCE
+python product_prototype/sofa/dorsal_yoke_native.py --tag UNIQUE_PREFIX --design UNIQUE_GEOMETRY --mass-contract UNIQUE_MASS --duration 1.2 --pilot UNIQUE_PILOT --pair-case UNIQUE_PAIRS
+```

@@ -1,3 +1,19 @@
+## Next after1325 — distributed contact mechanism,not parameter sweeps
+
+No RUNNING Native jobs. Reused frozen observer1315/1319 preserves442/574
+prefixes exactly;actual Point/Line material mappings1318/1321 show station
+100mm loading in early/late windows. Both100g joint/input candidatesFAIL.
+Extra roottilt1323REJECT:sourcealready14deg,additional14means28deg and18.44mm
+initialpenetration. No100gLift or moreforce/angle/offset sweeps.
+
+READY queue:distributed_contact_mechanism_hypothesis. Review oldrouting/
+precurvecandidates first;select a nonduplicate mechanical change that retains
+supportingcontact beyondtip-onlyloading. Requirecomplete initialSkin/Guide/
+Wire geometry andrestframe checks beforeNative. Do not reuseoldfunctional
+50gPASS asnewdesignproof. Inspect AUTONOMOUS_RESUME,actualGit andqueue.
+1325software96PASS only;oldphysicsgatesremain.1322immutable21297files and
+7SDKhashes verified. No backgroundexecutionafterthissession.
+
 ## Next after section and100g joint/input cycles1286–1315
 
 Native section/idealinterface controls complete,NOT mesh/jammingvalidation.

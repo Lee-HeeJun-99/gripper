@@ -1,3 +1,24 @@
+## Latest completed continuation through1325 — 2026-11-24
+
+All Native children completed;no RUNNING workload or promised background work.
+Last feature122f4ed. 1315/1319 frozen observer reused without rebuild:
+9journal prefixes EXACT0 over442/574outputs. Existing feature join uniquely
+matches114/100normalrows.1318/1321 link all active Skin Point/Line contacts
+in sampled windows to materialstation100mm. Early normalZ≈+.80,late≈−.30;
+not distributedWrapping,not uniquephysicalcausality. No100gHolding/LiftPASS.
+
+1323extra rootpitch14deg means baseline14→total28,initialpenetration18.44mm,
+REJECT beforeNative. BaselineSkinrestgap1.399mm;1324localderivative gives
+first-orderextra allowance≈.843deg to.2mm margin,NOTcertifiedangleinterval.
+No anglesweep or forceincrease followup. NextREADY distributed-contact
+mechanism hypothesis must review prior candidates and passfullinitialhardware
+checks before newNative. Mutablequeue/RESUME contain exactrestart context.
+
+1322immutable audit21297files0mismatch,7SDKhashesunchanged,original128MBRaw
+preserved.1325software96testsPASS,Git100MBpushrangecheckPASS. OldphysicsFAILs,
+SourceCommitfields/manifests and300partCAD preserved. No SDK/historyrewrite/
+push. Read B3_ACTIVE_MATERIAL_PROVENANCE and B3_ROOT_PITCH_REJECTION reports.
+
 ## Consecutive section / interface / grasp cycles1286–1315 — 2026-11-24
 
 Started9d84690clean;commits51c121a,b931f40,a2b7bcc,5038cef,9a871b6,

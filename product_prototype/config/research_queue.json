@@ -704,14 +704,16 @@
     {
       "id": "b3_active_point_provenance",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "PASS",
       "scope": "Reuse already frozen1242 bounded observer onB3;existing main journal lacks IDs,do not reimplement observer orSolver",
       "goal": "Uniquely attribute active supporting and downward Skin rows to accepted material/contact geometry before new placement candidate",
       "prerequisites": [
         "b3_sustained_contact_direction"
       ],
       "evidence": [
-        "b3_contact_direction_history1309"
+        "b3_contact_direction_history1309",
+        "b3_active_material_line1318",
+        "b3_active_material_late1321"
       ],
       "expected_outputs": [
         "bounded source-consistent observer",
@@ -725,6 +727,73 @@
       "failure_alternatives": [
         "conditional geometry envelope without force attribution",
         "material/pressure coupon measurement prerequisites"
+      ],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "b3_extra_root_pitch",
+      "priority": 1,
+      "status": "REJECTED",
+      "scope": "Extra14deg atop existing14deg gives total28deg and18.44mm initial Skin penetration;no Native trial",
+      "goal": "Test single mount-orientation geometry hypothesis from material contact evidence",
+      "prerequisites": [
+        "b3_active_point_provenance"
+      ],
+      "evidence": [
+        "b3_root_pitch_geometry1323",
+        "b3_root_pitch_margin1324"
+      ],
+      "expected_outputs": [
+        "quarantined geometry and initial gap audit"
+      ],
+      "validation_criteria": [
+        "no initial Skin penetration",
+        "real hardware/wire gates not bypassed"
+      ],
+      "failure_alternatives": [
+        "nonduplicate distributed-contact mechanism review"
+      ],
+      "successors": [
+        "distributed_contact_mechanism_hypothesis"
+      ],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "distributed_contact_mechanism_hypothesis",
+      "priority": 1,
+      "status": "READY",
+      "scope": "Use newly verified materialstation100mm loading and rootclearance constraint;review prior routing/precurve campaigns before any new candidate",
+      "goal": "Select single mechanism variable that retains supporting contact beyond tip-only loading without initial penetration",
+      "prerequisites": [
+        "b3_active_point_provenance",
+        "b3_extra_root_pitch"
+      ],
+      "prerequisite_states": {
+        "b3_extra_root_pitch": [
+          "REJECTED"
+        ]
+      },
+      "evidence": [
+        "b3_active_material_late1321",
+        "b3_root_pitch_margin1324"
+      ],
+      "expected_outputs": [
+        "nonduplicate parameterized candidate with explicit moment/contact hypothesis",
+        "full initial Skin/Guide/Wire gate before Native"
+      ],
+      "validation_criteria": [
+        "preserve original geometry/material baseline",
+        "do not repeat force/offset/angle sweeps",
+        "no prescribed dynamic pose or unverified hardware clearance"
+      ],
+      "failure_alternatives": [
+        "independent calibrated layer coupon prerequisites",
+        "bounded Native physical validation with new cause hypothesis"
       ],
       "successors": [],
       "impact": 1,
@@ -752,15 +821,16 @@
       "id": "current_regression",
       "priority": 2,
       "status": "PASS",
-      "scope": "68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse",
+      "scope": "96 software regressions only;7SDK hashes unchanged and21297immutablefiles verified1322;not physics or product qualification",
       "evidence": [
-        "layer_reference_validation1278"
+        "layer_reference_validation1278",
+        "section_grasp_session_validation1325"
       ],
-      "goal": "68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse",
+      "goal": "Bounded software,SDK and preservation diagnostics;historical failures unchanged",
       "prerequisites": [],
       "expected_outputs": [],
       "validation_criteria": [
-        "68 software tests and7SDK hashes only;Git history policy independentlyFAIL andpush_readyfalse"
+        "software suite exit status and actual test count;separate physical gates"
       ],
       "failure_alternatives": [],
       "successors": [],

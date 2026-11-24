@@ -1,3 +1,14 @@
+## Completed observer/material and geometry continuation1315–1325
+
+Actual frozen-observer reuse early/late:9journal prefixdifferences0,114/100
+normalrows uniquelyjoined. All activeSkinPoint/Linerows in sampled windows
+map tostation100mm,withpreviousacceptedparenterror≤1.39e-17m andnormal
+impulseidentityerror0. Lateforce directions negative;this isnotWrappinglevel
+qualification. Two100gRailback candidatesFAIL;no100gLift.
+ExtraRoot14deg atop existing14 causesinitialpenetration,REJECTbeforeNative.
+96softwaretestsPASS;21297priorimmutablefiles and7SDKhashes verified. Old
+time/mesh/energy/material gatesunchanged. No activeNativechildren remain.
+
 ## Section / independent grasp candidates1286–1315 — 2026-11-24
 
 ActualNative section100ms endpointqreference3.18e-17m;paironlymeshcriterion,

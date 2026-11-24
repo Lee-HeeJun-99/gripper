@@ -47,5 +47,33 @@ product_prototype/sofa/opposed_tendon_coupon.py --native --opposed --tag NEW_PIL
 product_prototype/sofa/opposed_tendon_coupon.py --native --opposed --duration .6 --pilot opposed_pilot1392 --tag NEW_MID
 product_prototype/sofa/opposed_tendon_assess.py --tag NEW_ASSESS
 ```
+## Nonuniform manufactured-reference continuation1396–1400
+
+After59b73b7,actually rebuilt1388referenceinaseparateno-objectNative:allFEM
+rest/Mechanical/freeSubset/collisionpositions,36guidefoot positions,12body
+centroidsandwirepoints/pullpointsupdated consistently. Identitybodyorientation
+andoldmass/inertia are explicitidealized assumptions,not a fabricationmodel.
+Localmaterialconnectivity/root/nominalthickness unchanged;referencevolume
+changesas1388,not exactequalvolume.1396sameinitialSkinproxyclearancePASS;
+this doesNOT erase1388sphereinitialoverlapFAIL:noactualsphereexists here.
+
+1397.05s.426s/20outputs;1398.6s3.220s/240outputs,mincorevolume.989995,
+finite,noERROR.1400actualresttiptangent53.6297°→39.6107°,outwardtip14.0028mm,
+actualshortening2.24033/2.36474mm,Tdtjournalerror0,internal/geometricdifference
+21.3843µm. No strictCable/timeconvergencePASS.
+
+1399virtualR30atoldcentre(0,0,−65mm) is GEOMETRYONLY,notNativecontact. Actual
+openedSkin trajectory firstclears.2mmenvelopeat.1375s. ALL41savedstates.5–.6s
+Skinmargin≥10.7394mm,endpointguideproxy16.8258mm/wire18.3786mm. This shows
+singlefingeropeningcreates aninsertionenvelope inactualactuation,not3Finger
+synchronization,insertion/Holding orfuturecontactforce. Realfourcableassembly,
+wire/supportbores,COM/inertiaanddynamicselfclearance still required.
+
+Nextactualcycle:openingforce release and recovery vs independentzero-force
+samegravity reference. ExistingNativeCableSequence hold/release parameters
+driveINPUTONLY,not forcedSkinstate. Separatefullruns,no checkpoint transfer.
+Do not initialize sphere inmanufacturedrestoverlap orlabelvirtualsphere as
+contact. Delayedclosing/fourcableintegration remains aseparatehardware gate.
+
 All commands/source/binary/scene hashes/limits inpreflight,Raw preserved;
 actualforcework/rootreaction/wholeenergy NOTMEASURED. SDKunchanged,nopush.

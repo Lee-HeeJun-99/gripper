@@ -12,12 +12,17 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--cases',nargs='+',default=['opposed_control_mid1393','opposed_open_mid1394']);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);records=[];hashes={}
  for case in a.cases:
   src=BASE/'results'/case;meta=json.loads((src/'summary.json').read_text());assert meta['status']=='BOUNDED_NO_OBJECT_ACTUATION_ONLY';root=ET.parse(src/'scene.scn').getroot();mesh=json.loads((src/'mesh.json').read_text());cfg=json.loads((BASE/'results/b3_railback_grasp1001298/config.json').read_text());local=np.array(mesh['local_positions_mm']);top=[(local[:,0]==s)&(local[:,2]==.1) for s in np.unique(local[:,0])];finger=root.find("Node[@name='finger0']");q0=np.fromstring(finger.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);guides=root.find("Node[@name='guides0']");frames=np.fromstring(guides.find('MechanicalObject').get('position'),sep=' ').reshape(-1,7);film=read(src/'finger0.csv');rigid=read(src/'guide_frames0.csv');assert len(film)==len(rigid);rest=[]
+  reference=world
+  if (src/'config.json').exists():cfg=json.loads((src/'config.json').read_text())
+  if json.loads((src/'preflight.json').read_text()).get('nonuniform_rest'):
+   from contact_adaptation_profile import candidate
+   reference=candidate
   def phi(q):
    points=np.array([q[m].mean(0) for m in top]);d=np.diff(points[:,[0,2]],axis=0);return np.degrees(np.unwrap(np.arctan2(-d[:,0],-d[:,1])))[-1]
   for cable in range(2):
    n=guides.find(f"Node[@name='cable{cable}']");points=np.fromstring(n.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);owners=np.fromstring(n.find('RigidMapping').get('rigidIndexPerPoint'),sep=' ',dtype=int);pull=np.fromstring(n.find('CableConstraint').get('pullPoint'),sep=' ');body=Rotation.from_quat(frames[owners,3:]).inv().apply(points-frames[owners,:3]);length=float(np.linalg.norm(np.diff(np.vstack([pull,points]),axis=0),axis=1).sum());forces=np.zeros_like(points);path=np.vstack([pull,points]);unit=np.diff(path,axis=0);unit/=np.linalg.norm(unit,axis=1)[:,None];forces-=unit;forces[:-1]+=unit[1:];moments=[]
    for station in (0,30,50,70,90):
-    selected=np.array(cfg['tendon']['guide_stations'])>=station;origin=np.array(world(cfg,[station,0,0]))*.001;moment=np.cross(points[selected]-origin,forces[selected]).sum(0);moments.append(dict(material_station_mm=station,reference_bending_moment_y_Nm_per_N=float(moment[1])))
+    selected=np.array(cfg['tendon']['guide_stations'])>=station;origin=np.array(reference(cfg,[station,0,0],0))*.001;moment=np.cross(points[selected]-origin,forces[selected]).sum(0);moments.append(dict(material_station_mm=station,reference_bending_moment_y_Nm_per_N=float(moment[1])))
    rest.append(dict(body=body,owners=owners,pull=pull,length=length,moments=moments))
   history=[];errors=[];impulse_errors=[]
   for r,g in zip(film,rigid):

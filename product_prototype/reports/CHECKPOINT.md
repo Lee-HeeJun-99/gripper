@@ -1,4 +1,23 @@
-## Latest completed continuation through1325 — 2026-11-24
+## Latest continuation through1335 — 2026-11-24
+
+Three Native runs completed:1326(.6s,42.245s),1328(1.2s,98.521s),1331
+read-only observation(1.2s,79.804s). Six cable terminals98→90mm,all hardware,
+mass,FEM,collision,1.5N inputs unchanged;inverse-edit XML equals1298.
+Saved minimum volume ratios positive(.98807minimum),not physics qualification.
+At1.2s Skin Fz0.63850N versusbaseline0.65892N and100gweight0.981N.
+Early support-force improvement FAIL;full1.6–2s Holding NOTMEASURED.
+1329 ideal cable gradient FD error8.79e-11;not Native impulse certification.
+1331 nine480row journals EXACT;1332 unique104normalrows;1333 all10active
+sampled Skin Point/Line rows remain materialstation100mm. No distributed
+Wrapping. Stop terminal-position-only family;no further force/angle sweep.
+See B3_PROXIMAL_TERMINAL_20261124.md and per-case source/binary/scene hashes.
+NextREADY distributed_contact_interface_hypothesis,explicit finite geometry
+and material assumptions required. Existing300partCAD remains separate.
+Local feature commits626172e,1f18df4;final provenance commit seegitlog.
+1334 software101PASS;1335 adds active-material regression,check summary.
+Old time/mesh/100gFAILs preserved;no SDK/push/history rewrite;Raw retained.
+
+## Previous completed continuation through1325 — 2026-11-24
 
 All Native children completed;no RUNNING workload or promised background work.
 Last feature122f4ed. 1315/1319 frozen observer reused without rebuild:

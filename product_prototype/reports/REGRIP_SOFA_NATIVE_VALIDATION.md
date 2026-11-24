@@ -1189,3 +1189,11 @@ nativeinterface ratio1.00694,not pressure/frictionjamming law;wholeEI/energy
 unqualified. ActualBEtranslationinventory closes~1e-20J with numerical loss
 separate,NOT whole-system energy. HistoricalB3 feature partition uses oldRaw,
 no changedHoldingverdict.54softwaretests1256PASS,notphysicalqualification.
+## 2026-11-24 proximal-terminal diagnostic1326–1335
+
+Native .6/1.2s trials positive saved FEM volumes only. At1.2s Skin support
+0.63850N belowbaseline0.65892N,not100gHolding. Frozenobserver exactly preserves
+nine480row journals;104normalrow joins unique;10active Skin samples allmaterial
+100mm. No distributedWrapping. Independent initial cablegradientFD8.79e-11,
+not fullNative impulse/energy/time/mesh certification. See B3_PROXIMAL_TERMINAL
+report and unique resultfolders. Previous functionalPASS and physicsFAIL unchanged.

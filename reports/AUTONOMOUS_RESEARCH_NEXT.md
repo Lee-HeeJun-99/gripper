@@ -4201,3 +4201,13 @@ Actual CAD checks: seven-part nominal full-turn drum bound1043 clear against293 
 No new SOFA physics run or physical hardware test. Existing Native time/mesh FAIL, old185 unresolved continuous-service prisms, full cartridge continuous path, actual nut retention/thread/clamping/pullout, remaining five distal keepers, other two drum modules, motor interface, materials,100g/Lift/Recovery and STEP remain unqualified. Old B3 functional50g result is NOT validation of this hardware. Eight physical service steps and eight drum tests remain NOT EXECUTED/NOT MEASURED.
 
 Next: use frozen300-part assembly to define positive pad/nut retention and reversible unloaded service with finite tool geometry; validate each remaining distal terminal independently. Do not propagate f0 drum geometry without placement/wire checks. Actual pullout/preload requires specimens and instrumentation. Reproduction: Python cad/incremental_wire_audit.py --tag UNIQUE --case product_all_hood_drive1055 --baseline-assembly product_root_catalog_drive1045 --baseline-audit product_current_wire1050 (only for a justified changed candidate; do not repeat unchanged results). Python cad/manufacturing_test_run.py --tag UNIQUE runs software regressions, not physical gates.
+## 2026-11-24 continuation1335
+
+NextREADY distributed_contact_interface_hypothesis.1326/1328 native terminal
+98→90mm topology contrast keeps all hardware/collision but fails early support
+force improvement.1331–1333 frozenobserver replay is identical;sampled active
+Skin contact remains atmaterialstation100mm. No distributedWrapping or100gPASS.
+Stop terminal/force/angle sweeps;next candidate must address finite contact
+distribution with explicit mechanics/material and initial hardware clearance.
+Read product_prototype/reports/B3_PROXIMAL_TERMINAL_20261124.md and queue.
+No Native jobs pending,no automatic background continuation,no push.

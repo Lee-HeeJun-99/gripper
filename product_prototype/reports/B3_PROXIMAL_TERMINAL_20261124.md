@@ -49,5 +49,16 @@ provenance observer before deciding whether contact distribution changed.
 The force/centerline proxy alone cannot establish distributed Skin contact.
 Actual hardware90mm anchor strength and wire replacement remainNOTMEASURED.
 
+1331 reuses frozen1242 observer,no rebuild,1.2s in79.8036s. All nine480row
+journals exactly equal1328.1332 uniquely matches104normalrows.1333 maps all10
+active Point/Line Skin rows in sampled previous-times1.195/1.1975 to material
+station100mm;none unmapped. Object normal impulse error0;previous-parent error
+at most3.47e-18m. Thus terminal relocation did NOT produce distributed active
+material contact in these windows. Stop terminal-position-only family;do not
+infer unseen whole-time contact distribution or a unique physical cause.
+NextREADY reviews a finite compliant contact interface rather than another
+force/offset/angle/terminal sweep. Requires explicit material assumptions and
+finite initial-clearance checks;no hypothetical pad-performance claim.
+
 Actual source snapshot,source commit,plugin binary hashes,commands,scene and
 process logs are stored per result. No SDK change,old evidence overwrite or push.

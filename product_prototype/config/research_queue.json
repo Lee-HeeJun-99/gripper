@@ -842,15 +842,58 @@
     {
       "id": "proximal_terminal_material_provenance",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "PASS",
       "scope": "Frozen observer1331 on completed1328;identify actual active materialstation at1.195/1.1975,not infer contact distribution from rowcount",
-      "prerequisites": ["distributed_contact_mechanism_hypothesis"],
-      "prerequisite_states": {"distributed_contact_mechanism_hypothesis": ["FAIL"]},
-      "evidence": ["b3_proximal_terminal_late1330"],
-      "expected_outputs": ["exact nine-journal equality,unique detector-child-row and actual-clock material join"],
-      "validation_criteria": ["no observer trajectory change,no invented area or Holding verdict"],
+      "prerequisites": [
+        "distributed_contact_mechanism_hypothesis"
+      ],
+      "prerequisite_states": {
+        "distributed_contact_mechanism_hypothesis": [
+          "FAIL"
+        ]
+      },
+      "evidence": [
+        "b3_terminal_material1333"
+      ],
+      "expected_outputs": [
+        "exact nine-journal equality,unique detector-child-row and actual-clock material join"
+      ],
+      "validation_criteria": [
+        "no observer trajectory change,no invented area or Holding verdict"
+      ],
       "failure_alternatives": [],
-      "successors": []
+      "successors": [],
+      "goal": "Frozen observer1331 on completed1328;identify actual active materialstation at1.195/1.1975,not infer contact distribution from rowcount",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "distributed_contact_interface_hypothesis",
+      "priority": 1,
+      "status": "READY",
+      "scope": "Terminal-only mechanism did not spread active material contact. Review a finite compliant distal contact interface,not another force/offset/angle/terminal sweep. Must preserve initial clearance and explicit material law;no pad pose prescription or collision removal.",
+      "prerequisites": [
+        "proximal_terminal_material_provenance"
+      ],
+      "evidence": [
+        "b3_terminal_material1333",
+        "b3_proximal_terminal_late1330"
+      ],
+      "expected_outputs": [
+        "one mechanically explicit contact-distribution hypothesis with initial finite geometry and material assumptions before Native"
+      ],
+      "validation_criteria": [
+        "actual distributed material contact,not row count;no unverified product qualification"
+      ],
+      "failure_alternatives": [
+        "independent layer coupon material-calibration prerequisites"
+      ],
+      "successors": [],
+      "goal": "Terminal-only mechanism did not spread active material contact. Review a finite compliant distal contact interface,not another force/offset/angle/terminal sweep. Must preserve initial clearance and explicit material law;no pad pose prescription or collision removal.",
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
     },
     {
       "id": "PET_vacuum_properties",

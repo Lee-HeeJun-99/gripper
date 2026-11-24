@@ -25,4 +25,8 @@ class TerminalTests(unittest.TestCase):
   for r in d['records']:
    self.assertLess(r['gradient_FD_max_abs_error'],1e-7)
    self.assertAlmostEqual(r['last_98mm_guide_force_norm_N'],0 if '1326'in r['case'] else 1.5,places=12)
+ def test_terminal_still_tip_contact(self):
+  src=BASE/'results/b3_terminal_provenance1331';purity=json.loads((src/'summary.json').read_text());self.assertTrue(all(purity['exact_record_equality'].values()))
+  d=json.loads((BASE/'results/b3_terminal_material1333/summary.json').read_text());self.assertEqual(len(d['records']),10);self.assertEqual(d['unmapped_active_skin_rows'],[])
+  self.assertTrue(all(r['material_reference_mm'][0]==100 and r['object_normal_impulse_error_Ns']==0 for r in d['records']))
 if __name__=='__main__':unittest.main()

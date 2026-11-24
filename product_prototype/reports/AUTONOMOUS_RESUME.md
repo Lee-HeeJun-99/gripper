@@ -1,5 +1,18 @@
 # Autonomous resume — 2026-11-24
 
+LATEST supersedes next-task text below:1326–1335 completed this continuation.
+Read CHECKPOINT first. Terminal98→90mm candidate executed.6/1.2s without
+saved inversion,but1.2sSkin Fz0.6385N lower thanbaseline0.6589N. No new
+Holding/LiftPASS.1331 read-only replay ninejournals EXACT,1333 all10sampled
+active materialpoints still100mm. Stop terminal-only family. NextREADY
+distributed_contact_interface_hypothesis;review finite compliant contact
+interface mechanics/material before newNative. Do not rerun existingtags.
+No RUNNING children after completion. Feature commits626172e/1f18df4;
+latestfinalcommit fromgitlog. Commands:queue script and test_proximal_terminal.py.
+See B3_PROXIMAL_TERMINAL_20261124.md for actual commands and source hashes.
+
+Historical1325 resume retained below:
+
 Compare this note with actual Git, queue and results before acting. Never
 reuse an existing result tag. All Native children have completed; RUNNING is
 empty. Last feature commit:122f4ed (final checkpoint commit:see git log).

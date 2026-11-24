@@ -13,6 +13,7 @@ def main():
  patterns=['test_layer_reference.py','test_layer_native_reference.py','test_layer_interface_reference.py']+patterns
  patterns=['test_refined_interface.py','test_layer_constraint_scale.py']+patterns
  patterns=['test_root_pitch_geometry.py','test_b3_material_provenance.py','test_railback_grasp_results.py','test_skin_centerline.py','test_layer_section_native.py','test_layer_section_interface.py','test_response_cone_reference.py','test_layer_section.py','test_layer_face_load.py']+patterns
+ patterns=['test_proximal_terminal.py']+patterns
  for pattern in patterns:
   command=[sys.executable,'-m','unittest','discover','-s',str(BASE/'sofa'),'-p',pattern];r=subprocess.run(command,text=True,capture_output=True,cwd=BASE.parent);(out/(pattern+'.log')).write_text(r.stdout+r.stderr);match=re.search(r'Ran (\d+) tests?',r.stderr);records.append(dict(pattern=pattern,command=command,exit_code=r.returncode,tests=int(match.group(1)) if match else None))
  git_guard=subprocess.run([sys.executable,str(BASE/'tools/research_git_guard.py'),'--since','168e11b'],cwd=BASE.parent,text=True,capture_output=True);(out/'git_history_guard.log').write_text(git_guard.stdout+git_guard.stderr)

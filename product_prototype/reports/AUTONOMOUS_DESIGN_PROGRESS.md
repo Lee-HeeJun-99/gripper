@@ -1202,3 +1202,11 @@ historicalB3featureloadpartition. Not stopped after first commit or FAIL.
 No new productcandidate adopted.54 software regressionsPASS;actualNative
 failures and limited scopes preserved. Next layerbendingreference;see
 CHECKPOINT and six20261124 reports. No new100g/Lift/jamming/fabricationPASS.
+## Continuation1326–1335,2026-11-24
+
+Actual native terminal-topology candidate and1.2s followup executed;all finite
+hardware retained. Early Skin supportforce not improved;active materialstations
+remain100mm under frozenobserver. Nine480row journals exactlysame. Independent
+idealforce gradientFD passes;no Holding,time/mesh,jamming or CAD qualification.
+Next contact-interface hypothesis,not further terminal/force/angle exploration.
+Evidence:B3_PROXIMAL_TERMINAL_20261124.md. Commits626172e/1f18df4 plusfinalgitlog.

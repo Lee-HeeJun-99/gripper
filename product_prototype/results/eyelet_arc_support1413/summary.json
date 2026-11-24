@@ -1,0 +1,118 @@
+{
+  "status": "PASS_INITIAL_ARC_SUPPORT_PROXY_ONLY",
+  "minimum_arc_support": {
+    "route": 2,
+    "guide": 3,
+    "support": 11,
+    "actual_sample_capsule_gap_mm": 0.9993621258270355,
+    "lower_bound_mm": 0.9968649844479419,
+    "arc_point_mm": [
+      35.893026012135394,
+      33.59894683998301,
+      -68.63635852140203
+    ]
+  },
+  "arc_arc_pairs": [
+    {
+      "routes": [
+        0,
+        1
+      ],
+      "lower_bound_mm": 59.41977077907912
+    },
+    {
+      "routes": [
+        0,
+        2
+      ],
+      "lower_bound_mm": 5.3268356836850765
+    },
+    {
+      "routes": [
+        1,
+        2
+      ],
+      "lower_bound_mm": 59.75591054865183
+    },
+    {
+      "routes": [
+        0,
+        3
+      ],
+      "lower_bound_mm": 59.75591054865183
+    },
+    {
+      "routes": [
+        1,
+        3
+      ],
+      "lower_bound_mm": 5.3268356836850765
+    },
+    {
+      "routes": [
+        2,
+        3
+      ],
+      "lower_bound_mm": 59.49332550395781
+    }
+  ],
+  "local_bore_collision_witnesses": [
+    {
+      "route": 0,
+      "guide": 4,
+      "turn_deg": 39.25215122628433,
+      "trim_mm": 1.782984383151457,
+      "swept_wire_solid_clearance_lower_bound_mm": -0.028361085699862395,
+      "actual_sample_wire_solid_gap_mm": -0.025861085699862396,
+      "witness_radial_axial_mm": [
+        0.3794348121777433,
+        0.8398654088725684
+      ]
+    },
+    {
+      "route": 1,
+      "guide": 4,
+      "turn_deg": 39.25215122628433,
+      "trim_mm": 1.782984383151457,
+      "swept_wire_solid_clearance_lower_bound_mm": -0.028361085699862395,
+      "actual_sample_wire_solid_gap_mm": -0.025861085699862396,
+      "witness_radial_axial_mm": [
+        0.3794348121777433,
+        0.8398654088725684
+      ]
+    },
+    {
+      "route": 2,
+      "guide": 4,
+      "turn_deg": 39.236159387016215,
+      "trim_mm": 1.7821979165853155,
+      "swept_wire_solid_clearance_lower_bound_mm": -0.028111498179602065,
+      "actual_sample_wire_solid_gap_mm": -0.025611498179602066,
+      "witness_radial_axial_mm": [
+        0.3789002469022947,
+        -0.8382766107347096
+      ]
+    },
+    {
+      "route": 3,
+      "guide": 4,
+      "turn_deg": 39.236159387016215,
+      "trim_mm": 1.7821979165853155,
+      "swept_wire_solid_clearance_lower_bound_mm": -0.028111498179602065,
+      "actual_sample_wire_solid_gap_mm": -0.025611498179602066,
+      "witness_radial_axial_mm": [
+        0.3789002469022947,
+        -0.8382766107347096
+      ]
+    }
+  ],
+  "overall_four_route": "REJECTED_LOCAL_BORE_COLLISION",
+  "Native": "NOT RUN",
+  "scope": "R5 sampled circular arcs ONLY against finite OD.5 support capsules and other-route arcs. Lipschitz bounds;unchanged straight spans retain prior1409 test but joins/endanchors/fullguide/support/interfinger/dynamic checks NOT QUALIFIED. No force,contact or grasp evidence.",
+  "input_hashes": {
+    "results/eyelet_entry1412/summary.json": "dbd82b1826f824ccc3d52326e64cc93d001bd8a7f6f2b4ffa3f9c2abdc18c8e9",
+    "results/four_route_support1409/summary.json": "3a81dcb0e7dc9707befb1d90e83820ceb9fce17b132530ffd5fc879f9e9b1889"
+  },
+  "source_commit": "cb1fc7df6fa752341f13c385edcf4e41db978de1",
+  "source_sha256": "66c16daf7f97e148052a667c6b133e05f2d7e3ea7059f8d61a4545913bee5182"
+}

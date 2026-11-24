@@ -32,5 +32,22 @@ Commands (do not reuse existing tags):
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/b3_terminal_assess.py --tag b3_proximal_terminal_assess1327
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/b3_proximal_terminal.py --tag b3_proximal_terminal1328 --duration 1.2 --pilot b3_proximal_terminal1326
 ```
+## Completed follow-up
+
+1328 completed1.2s/480outputs in98.5207s;minimum saved volume ratio0.9880716.
+1330 actual common1.2s Skin Fz:baseline0.658925N,candidate0.638500N,below
+100g weight0.981N. Active-normal nz0.5382..0.5718;5rows are NOT contactarea.
+This pre-Hold point alone is not a formal Holding FAIL,but fails the proposed
+early support-force improvement. Do not extend this candidate blindly to full
+Holding or increase force/shift terminal repeatedly.
+
+1329 independent constant-tension initial length gradient matches centralFD
+within8.79e-11. Ideal force at98mm guide changes1.5→0N. This proves a changed
+force topology,not actual Native impulse or dynamic causal sufficiency.
+Next diagnostic:identify actual active materialstations in1328 with the frozen
+provenance observer before deciding whether contact distribution changed.
+The force/centerline proxy alone cannot establish distributed Skin contact.
+Actual hardware90mm anchor strength and wire replacement remainNOTMEASURED.
+
 Actual source snapshot,source commit,plugin binary hashes,commands,scene and
 process logs are stored per result. No SDK change,old evidence overwrite or push.

@@ -766,9 +766,9 @@
     {
       "id": "distributed_contact_mechanism_hypothesis",
       "priority": 1,
-      "status": "READY",
+      "status": "FAIL",
       "scope": "Use newly verified materialstation100mm loading and rootclearance constraint;review prior routing/precurve campaigns before any new candidate",
-      "goal": "Select single mechanism variable that retains supporting contact beyond tip-only loading without initial penetration",
+      "goal": "98to90mm terminal contrast executed1326/1328;early support force not improved,not a full Holding verdict",
       "prerequisites": [
         "b3_active_point_provenance",
         "b3_extra_root_pitch"
@@ -779,6 +779,7 @@
         ]
       },
       "evidence": [
+        "b3_proximal_terminal_late1330",
         "b3_active_material_late1321",
         "b3_root_pitch_margin1324"
       ],
@@ -837,6 +838,19 @@
       "impact": 1,
       "estimated_cost": 1,
       "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "proximal_terminal_material_provenance",
+      "priority": 1,
+      "status": "RUNNING",
+      "scope": "Frozen observer1331 on completed1328;identify actual active materialstation at1.195/1.1975,not infer contact distribution from rowcount",
+      "prerequisites": ["distributed_contact_mechanism_hypothesis"],
+      "prerequisite_states": {"distributed_contact_mechanism_hypothesis": ["FAIL"]},
+      "evidence": ["b3_proximal_terminal_late1330"],
+      "expected_outputs": ["exact nine-journal equality,unique detector-child-row and actual-clock material join"],
+      "validation_criteria": ["no observer trajectory change,no invented area or Holding verdict"],
+      "failure_alternatives": [],
+      "successors": []
     },
     {
       "id": "PET_vacuum_properties",

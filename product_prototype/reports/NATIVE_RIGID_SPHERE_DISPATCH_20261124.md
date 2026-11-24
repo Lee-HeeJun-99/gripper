@@ -71,3 +71,30 @@ $PY product_prototype/sofa/guide_pair_response_inventory.py --case UNIQUE --tag 
 Actual full2s run `dispatch_finite_holding1586` started after these component
 and pilot checks. Inspect summary/process before any rerun. Preregistered
 original100g Holding protocol retained; separate hardware-bracing audit required.
+
+## Full finite hardware result1586–1590
+
+1586 completed800 outputs/finger in117.577s, minimum saved FEM ratio.989778.
+1588 original object-only goal **EXPLORATORY FUNCTIONAL GRASP PASS**:
+slip.00204150mm, maxspeed4.149775mm/s, supportgap42.41837mm, Skin mean
+Fz.98100426N, Guide/Rail/Support/other object forces0. Partition and momentum
+residual4.33681e-19Ns. Actual direct Skin detector and response, free object,
+allthree Skin approach and actual cable force-command consistency verified.
+
+**Not unbraced qualification**:1589 actual2073nonzero Guide–Guide hold rows,
+maximum scalar row multiplier/dt.04594N (not a full-body resultant).
+Constraint solver reaches1001 iterations vs1000 limit: unresolved convergence,
+not hidden by small object momentum residual or positive FEM. Old failures
+unchanged. This does not validate wire dynamics, physical materials or CAD.
+
+1590 read-only actual detector inventory locates all5138points of active
+hardware pairs on outer endrims: |axial|1mm, radial1.492197–1.500000mm in
+previous accepted rigid frames. This motivates ONE separate candidate1591:
+terminal eyelets receive0.3mm45deg outer chamfer, OD3/ID1.2/L2 unchanged,
+endwall.6mm, supports/forcepath unchanged. All collision models retained.
+Inherited mechanical mass/inertia deliberately unchanged for geometry-only
+sensitivity; reduced actual solid volume recorded, real physical calibration
+still required. No arbitrary chamfer scan and no fabrication approval.
+
+Next actual run: `chamfer_eyelet_pilot1591`, then independent contact/Guide-pair
+audit. Full Holding only if pilot valid and forecast below420s.

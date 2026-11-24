@@ -235,13 +235,25 @@
     {
       "id": "native_dispatch_finite_hardware_grasp",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "PASS",
       "prerequisites": ["mapped_skin_contact_contract"],
-      "scope": "Registration-only compatibility adapter, not new physics solver: stock Min RigidSphere/mesh functions and stock Local other pairs. Full finite hardware enabled. No whole-model qualification from coupons.",
+      "scope": "Full1586/1588 object-only100g exploratory functional PASS, but2073hold Guide-Guide nonzero rows1589: unbraced mechanism qualification FAIL. Not numerical/physical/productPASS.",
       "hypothesis": "Installed Local lacks RigidSphere/mesh dispatch; installed New has independently observed projection and radius failures. Register stock Min functions only for missing pairs, preserving rigid torque and Local finite hardware contacts.",
-      "evidence": ["rigid_sphere_dispatch_build1578", "rigid_sphere_dispatch_contract1579", "rigid_sphere_dispatch_build1580", "rigid_sphere_dispatch_contract1581", "mixed_sphere_gravity1582", "dispatch_finite_hardware1583", "dispatch_skin_contact1584", "dispatch_guide_pairs1585"],
+      "evidence": ["rigid_sphere_dispatch_build1578", "rigid_sphere_dispatch_contract1579", "rigid_sphere_dispatch_build1580", "rigid_sphere_dispatch_contract1581", "mixed_sphere_gravity1582", "dispatch_finite_hardware1583", "dispatch_skin_contact1584", "dispatch_guide_pairs1585", "dispatch_finite_holding1586", "dispatch_holding_goal1588", "dispatch_holding_pairs1589"],
       "validation_criteria": ["Stock q/v/impulse equivalence 1e-12, mesh-only no-op, actual gravity radius reference, positive saved FEM, actual Skin response and original full100g goal; Guide-Guide indirect bracing must be audited separately"],
       "failure_alternatives": ["Actual contact-location-derived finite hardware geometry candidate; no collision disabling or buffer relaxation"],
+      "successors": ["terminal_outer_rim_relief"]
+    },
+    {
+      "id": "terminal_outer_rim_relief",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["native_dispatch_finite_hardware_grasp"],
+      "scope": "Finite geometry-only sensitivity; unchanged inherited mass/inertia, not calibrated fabrication candidate. Keep OD3/ID1.2/L2; all hardware collision features enabled.",
+      "hypothesis": "1590 actual5138detectorpoints all external endrim. Single0.3mm45deg external chamfer removes contact corner without moving cable force path; unchanged0.2mm buffer. Must validate newdynamics, not assume replay result.",
+      "evidence": ["eyelet_contact_location1590"],
+      "validation_criteria": ["Actual new Native positiveFEM/Skin response, full100g goal, separate Guide-Guide no-bracing assessment; retained nominal envelope/bore and finite solid wall"],
+      "failure_alternatives": ["Do not scan chamfer sizes; analyse changed contact location and independent whole-model constraint convergence"],
       "successors": ["exploratory_100g_lift"]
     },
     {

@@ -1,3 +1,12 @@
+## Current1591 — finite hardware object-only Holding, bracing not solved
+
+1586actual2s/117.577s positiveFEM.1588 object-only100g functionalPASS:
+slip.00204mm/speed4.14978mm/s/SkinFz.981004N,otherobjectloads0.
+1589 Guide–Guide2073holdrows +solveriterationlimit => NOT unbraced/physicalPASS.
+1590actualall5138hardwarepoints externalendrim. ONEterminalouterchamfer1591
+pilotRUNNING,OD3/ID1.2/L2/ALLcollisions retained, noforcepath/bufferchange.
+Read AUTONOMOUS_RESUME top for exact nextcommand; inspect before rerun.
+
 ## Current1586 — finite hardware full Holding running
 
 1580/1581 registration-only Native compatibility adapter built and verified:

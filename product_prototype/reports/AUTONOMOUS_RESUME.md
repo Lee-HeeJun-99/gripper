@@ -1,5 +1,17 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1591: full dispatch finite1586 completed117.577s/positiveFEM,1588
+object-only100g exploratoryPASS (.00204mmslip/4.14978mm/s/SkinFz.981004N,
+GuideRailSupportObject0). But1589 Guide–Guide2073holdrows and solver1001/1000:
+unbraced/physical qualification NOTPASS.1590allactual5138hardwarecontactpoints
+onouterrim motivates ONE0.3mm45deg terminal chamfer, noforcepath/bufferchange.
+Actual chamfer_eyelet_pilot1591 RUNNING; inspect summary/process first. Next
+guide_pair_response_inventory.py --case chamfer_eyelet_pilot1591 --tag UNIQUE
+and skin_gap_contact_contract.py samecase/newtag. Validpilot/cost permits
+chamfer_eyelet_grasp.py --tag UNIQUE --duration 2 --pilot chamfer_eyelet_pilot1591.
+See NATIVE_RIGID_SPHERE_DISPATCH_20261124.md. ActualCOM/material/inertia unknown;
+inheritedmass deliberately fixed in geometrysensitivity, not fabricatedpartPASS.
+
 CURRENT1586 supersedes all RUNNING claims below. Actual Native registration
 adapter1580/1581 validated against stock callbacks (q/v/impulse error0); actual
 mixed-sphere gravity radius1582 PASS for Dispatch, New FAIL30mm. Finite3finger

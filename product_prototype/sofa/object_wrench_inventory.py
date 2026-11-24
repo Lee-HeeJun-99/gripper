@@ -1,0 +1,17 @@
+"""Source-resolved actual object angular impulse and kinetic work identity.
+Not Skin relative contact work/friction dissipation or global energy closure.
+"""
+import argparse,csv,json,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+def read(p):return list(csv.DictReader(p.open()))
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--case',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results'/a.case;root=ET.parse(src/'scene.scn').getroot();dt=float(root.get('dt'));rows=read(src/'object.csv');t=np.array([float(r['time_s']) for r in rows]);idx={x:i for i,x in enumerate(t)};v=np.array([np.fromstring(r['rigid_v'],sep=' ') for r in rows]);imp=np.array([np.fromstring(r['object_impulse_Ns_Nms'],sep=' ') for r in rows]);massdata=np.fromstring(root.find("Node[@name='object']/UniformMass").get('vertexMass'),sep=' ');mass=massdata[0];I=mass*massdata[2:].reshape(3,3);assert np.max(abs(I-np.eye(3)*I[0,0]))<1e-15;inertia=I[0,0];parts={s:np.zeros_like(imp) for s in ('skin0','skin1','skin2','rail','guide','support','other')}
+ for r in read(src/'response_rows.csv'):
+  paths=(r['model0'],r['model1'])
+  if not any('/object/'in x for x in paths):continue
+  path=paths[1] if '/object/'in paths[0] else paths[0];kind=next((f'skin{i}' for i in range(3) if f'/finger{i}/skinCollision/'in path),None);kind=kind or ('rail' if '/railCollision/'in path else 'guide' if '/guides'in path else 'support' if '/floor/'in path else 'other');parts[kind][idx[float(r['time_s'])]]+=np.fromstring(r['object_impulse_Ns_Nms'],sep=' ')
+ previous=np.vstack([np.zeros((1,6)),v[:-1]]);mid=.5*(v+previous);g=np.fromstring(root.get('gravity'),sep=' ');angular=inertia*(v[:,3:]-previous[:,3:])-imp[:,3:];K=.5*(mass*np.sum(v[:,:3]**2,axis=1)+inertia*np.sum(v[:,3:]**2,axis=1));dK=K-np.r_[0.,K[:-1]];work=np.sum(imp*mid,axis=1);gravitywork=mass*dt*(mid[:,:3]@g);window=(t>=1.6-1e-12)&(t<=2.+1e-12);torques={name:dict(mean_torque_Nm=(x[window,3:]/dt).mean(0).tolist(),object_midpoint_wrench_work_J=float(np.sum(x[window]*mid[window]))) for name,x in parts.items()};error=float(abs(angular).max());partition=float(abs(imp-sum(parts.values())).max());energy=float(abs(dK-work-gravitywork).max())
+ d=dict(status='PASS_OBJECT_ANGULAR_IMPULSE_AND_KINETIC_IDENTITY_ONLY' if max(error,partition,energy)<=1e-10 else 'FAIL_OBJECT_WRENCH_IDENTITY',case=a.case,configured_isotropic_inertia_kg_m2=float(inertia),maximum_angular_momentum_residual_Nms=error,maximum_source_partition_residual_Ns_Nms=partition,maximum_discrete_kinetic_midpoint_identity_error_J=energy,hold_wrench_by_source=torques,maximum_hold_angular_speed_rad_s=float(np.linalg.norm(v[window,3:],axis=1).max()),scope='Configured isotropicRigidMass;actual Jtransposeλ angularimpulse/worldangularvelocities. Discrete kinetic identity usesmidpointvelocity,NOT actual contactpoint relativework or global storedenergy. Gravitypotentialpositionintegration,FEM/Guide/actuatorenergy/friction NOT closed. Doesnot repairNative time/mesh or qualifygrasp.',source_sha256=sha(Path(__file__)),input_hashes={f:sha(src/f) for f in ('scene.scn','object.csv','response_rows.csv')});(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

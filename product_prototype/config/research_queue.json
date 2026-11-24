@@ -126,13 +126,48 @@
     {
       "id": "untapered_torsion_grasp100",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "prerequisites": [],
       "hypothesis": "Equatorial1.5N cradle passesverticalslip andSkin-onlyweight butspeed69mm/sFAIL. Remove widthtaper24to12,retain24mmwidth toincrease transversecontact span andrail torsional lever;unchangedcentreline/material/T1.5/mu. Addedcorevolume+7.2776% scales mappedUniformMass,not equalmasscomparison.",
       "scope": "Independent manufacturedwidthcandidate,not fullCADhardwarevalidation;retains all guidecollisions andcorrespondingrailbottomfootnodes",
-      "evidence": ["equatorial_goal1502", "untapered_single1503", "untapered_single1504"],
+      "evidence": ["equatorial_goal1502", "untapered_single1503", "untapered_single1504", "untapered_hold1001506", "untapered_goal1509"],
       "validation_criteria": ["Initialskin/wire/guide/sectorpositive;Scene correctmassvolumechange;positiveNativeFEM;actual100gfullgoal,noGuideRailSupportloads,speed<=5mm/s,slip<=2mm"],
       "failure_alternatives": ["Stop widthfamily ifnotmeaningful;no rejected1152footprint repeats orforce/dt sweeps;diagnose acceptedguidework andjointconstraints"],
+      "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
+    },
+    {
+      "id": "support_sequenced_actuation_grasp100",
+      "priority": 1,
+      "status": "FAIL",
+      "prerequisites": [],
+      "hypothesis": "Widthcandidate lowers69to29.77mm/s butstillFAIL. Slow SAMEC2force ramp tooriginalsupportwithdrawalstart1s fromdefault.5s tolimitinitialbendingexcitation;not changeTmax/damping/dt/holdwindow or qv. ONE timingcontrast,no duration sweep.",
+      "scope": "Actuation sequencing onunchangeduntaperedmodel;not newFEM/SDK/force law or numericalrepair",
+      "evidence": ["untapered_goal1509", "sequenced_single1510", "sequenced_contract1512", "sequenced_hold1001513", "sequenced_goal1515", "sequenced_full_contract1516"],
+      "validation_criteria": ["NormalizedSceneidenticalexceptclosing;.5to1s fromactualSupportkeys;actualNativeNs matchesanalyticC2;original100gfull2sgoal and positiveFEM;GuideRailSupportexclusion"],
+      "failure_alternatives": ["Stop actuationtimingfamily without independent newhypothesis;no furtherclosingtime/force/dt sweep"],
+      "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
+    },
+    {
+      "id": "tet_handedness_diagnosis",
+      "priority": 1,
+      "status": "PASS",
+      "prerequisites": [],
+      "scope": "Actual no-objectNativeconnectivity contrast isolatesmeshhandednessbias;NOTtime/mesh/grasp/physicalPASS",
+      "hypothesis": "All3Skin same-signactualobjecttorque may be fed by same-handtetdiscretization ratherthan intendedshape. Reflect ONLYtetconnectivity atfixedgeometry/mass/foot/cable/ODE.",
+      "evidence": ["sequenced_wrench1520", "mirror_control1521", "mirror_reflected1522", "mirror_assess1523"],
+      "validation_criteria": ["Only2Cable rows/noobjectcontacts,bothpositiveFEM;normalizedSceneequalexcepttet;lateral/twist signsreverse andfullreflectedtrajectory quantitativelymatches"],
+      "successors": ["paired_order_mesh_grasp100"]
+    },
+    {
+      "id": "paired_order_mesh_grasp100",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["tet_handedness_diagnosis"],
+      "scope": "ExploratoryNativepairedQRtetmesh onunchangedphysicaluntaperedreference;NOTstrictreflection/time/meshqualification",
+      "hypothesis": "Conformingcentreline294nodes permit reflectedtetsets;paired0/1swap preservesQRABaxis/ABCplane underreflection. Eliminatedmm-scaleNoObjectbias may reducegraspdrivingtorque. OldStrict1e−12vFAIL1.44e−12preserved.",
+      "evidence": ["centreline_asym1524", "centreline_sym1525", "centreline_assess1526", "centreline_paired1527", "paired_order_assess1528"],
+      "validation_criteria": ["Conformingclosedboundary/positiveelements/exactsamevolumeandoldreferencepoints/foot36;consistentFEMcollisionboundary;actual100goriginalgoal;newnodeUniformMassquadraturechangeexplicit;no numericalPASSfromsymmetryalone"],
+      "failure_alternatives": ["ActualNativecontacttorque/event diagnosis ifstillunstable;no dt/force/randomdiagonal scan"],
       "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
     },
     {

@@ -1,3 +1,15 @@
+## Active through1529 — actual Native tetra handedness isolated
+
+SeeNATIVE_TET_HANDEDNESS_20261124.md andAUTONOMOUS_RESUMEtop.1513samegeometry
+slowC2full100gFAIL26.827mm/s,slip.181mm/realSkinweight/nohardwareloads.
+1520actualall3Skintorques sameZsign.1521/22noobject ONLYtetreflection flips
+tipy−1.424→+1.424mm/twist±1.316mm;fullreflectedqmatches1.98e−13m.
+294nodeconformingpairedQRmesh1527actualnoobjectqreflection4.13e−15m,
+v1.444891e−12m/s stillFAIL1e−12API1528preserved. NotnumericalPASS.
+Actualfixedsinglepaired_mesh_fixed1529RUNNING;newEXPLORATORY100gpilotnext,
+samephysicalreference/material/Guides/foot/totalmass,T1.5. Newnodalquadrature/
+FEMboundarycollisiontriangulationdifferences explicit. OldRaw/SDK/FAILsintact.
+
 ## Active continuation through1505 — 100g vertical capture,stability still FAIL
 
 Actualequatorial1496full2s274.555s/positiveFEM,1502goalFAILspeed69.04mm/s,

@@ -1,3 +1,16 @@
+## Active after1533 — tetra handedness isolated;new actual100g pilot
+
+No100gPASSyet.1513fullslowC2FAIL1515speed26.827mm/s despite.181mmslipand
+Skinweightonly.1520all3SkinactualtorqueZsamesign/angularmomentumconsistent.
+1521/22ONLYtetreflection(noobject)flips1.424mmlateral and1.316mmtwist;
+fullreflectedqmatch1.98e−13m. PairedQRconforming294nodemesh1527qreflection
+4.13e−15mbutv1.444891e−12FAILs unchanged1e−12API1528. No numericalpromotion.
+Actualfixed1529/free3.6s1530positiveFEM,objectendspeed4.46mm/s;nowactual
+paired_mesh_withdraw1532(1.2s)RUNNING. Checksummarythenfull2sunder420sand
+actualoriginalgoalassessment. NewcentrelineFEMboundary/UniformMassquadrature
+changes explicitvsold252nodes. NoSolver/SDK/tolerance/stateoverrides.
+ProductAUTONOMOUS_RESUME top andNATIVE_TET_HANDEDNESS_20261124.md authoritative.
+
 ## Active after1508 — width-only100g trial actuallyrunning
 
 1483/1484/1496fullNativecomplete,goals1488/1487/1502FAIL. Bestverticalcapture

@@ -1,0 +1,142 @@
+{
+  "status": "FAIL_EXPLORATORY_FUNCTIONAL_GRASP",
+  "tests": {
+    "actual_full_Native": true,
+    "slip": true,
+    "speed": false,
+    "support_gap": true,
+    "support_force": true,
+    "guide_force": true,
+    "rail_force": true,
+    "other_hidden_load": true,
+    "source_partition": true,
+    "momentum": true,
+    "direct_skin_detector_and_force": true,
+    "positive_all_saved_elements": true,
+    "finite_object": true,
+    "unit_quaternion": true,
+    "object_not_projectively_fixed": true,
+    "all_three_actual_skin_approach": true,
+    "actual_cable_force_command_consistent": true
+  },
+  "case": "sequenced_hold1001513",
+  "protocol": {
+    "scope": "Original functional100g thresholds preserved,additional actualloadpartition/momentum/FEM gates;not time/mesh/hardware certification",
+    "mass_kg": 0.1,
+    "radius_mm": 30.0,
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "window_s": [
+      1.6,
+      2.0
+    ],
+    "reference_s": 1.0,
+    "max_vertical_slip_mm": 2.0,
+    "max_speed_mm_s": 5.0,
+    "minimum_support_surface_gap_mm": 5.0,
+    "maximum_support_resultant_N": 1e-05,
+    "friction_assumed": 0.3,
+    "contact_rows_required": true,
+    "additional_hardware_exclusion": "Maximum Guide and Rail resultant force each<=1e-5N in1.6\u20132s",
+    "gravity_momentum_impulse_residual_limit_Ns": 1e-10
+  },
+  "slip_mm": 0.18066868981997386,
+  "maximum_speed_mm_s": 26.82658933468015,
+  "minimum_support_gap_mm": 42.027465753672196,
+  "force_partition": {
+    "skin": {
+      "mean_force_N": [
+        -0.0038849151673553076,
+        -1.4784073194235223e-05,
+        0.9805415976641425
+      ],
+      "maximum_resultant_N": 1.1217025748934744
+    },
+    "rail": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    },
+    "guide": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    },
+    "support": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    },
+    "other": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    }
+  },
+  "partition_error_Ns_Nms": 4.336808689942018e-19,
+  "maximum_hold_momentum_residual_Ns": 4.336808689942018e-19,
+  "hold_detector_skin_outputs": 4315,
+  "hold_solver_max_iterations": 1001,
+  "solver_iteration_limit_reached": true,
+  "gravity_load_N": 0.9810000000000001,
+  "response_model_paths": {
+    "/finger0/skinCollision/TriangleCollisionModel1": 4056,
+    "/finger0/skinCollision/LineCollisionModel1": 23493,
+    "/finger1/skinCollision/TriangleCollisionModel1": 9180,
+    "/finger1/skinCollision/LineCollisionModel1": 28287,
+    "/finger2/skinCollision/TriangleCollisionModel1": 16797,
+    "/finger2/skinCollision/LineCollisionModel1": 48942,
+    "/floor/SphereCollisionModel1": 963,
+    "/finger1/skinCollision/PointCollisionModel1": 4665,
+    "/finger1/railCollision/PointCollisionModel1": 2499,
+    "/finger1/railCollision/LineCollisionModel1": 144,
+    "/finger2/skinCollision/PointCollisionModel1": 147,
+    "/finger2/railCollision/PointCollisionModel1": 27,
+    "/guides1/cable0/SphereCollisionModel1": 39
+  },
+  "maximum_object_quaternion_norm_error": 3.1086244689504383e-15,
+  "maximum_hold_rotation_from_1s_deg": 170.65838007679076,
+  "maximum_hold_angular_speed_rad_s": 7.489770692188216,
+  "actual_radial_tip_approach_m": [
+    0.0019399814799569686,
+    0.0005919813268533847,
+    0.0005409418336734789
+  ],
+  "actual_widthmean_distal_skin_approach_m": [
+    0.0006586965943843129,
+    0.0005196066272595001,
+    0.00011307151152024561
+  ],
+  "approach_scope": "Maximum inwardmotion ofwidthmeanSkin stations70\u2013100 relativeFIXEDinitialobjectcentre before.6s;tip-onlymotion inventoryNOTa graspcriterion. No objectmotion used tofakeapproach.",
+  "maximum_cable_force_command_error_Ns": 0.0,
+  "physical_validation": "NOT QUALIFIED",
+  "time_mesh_convergence": "Existing FAIL unchanged",
+  "pressure": null,
+  "source_commit": "347c8584bec25911c1dda7876c865221d8c5b31d",
+  "source_sha256": "d88b26bea136a19b1ff094cf2ae19e8ef25e81fae45621976f23b4bd2c394ba1",
+  "input_hashes": {
+    "scene.scn": "b9560124a360ee53137a95e789af13db9b45a87ffb5217ce8b4c16bf81635f85",
+    "summary.json": "c5ab8452ca1b9d043f318524bcec28c8a9c7ecd80d836e66a2793cdb13cd2c1e",
+    "preflight.json": "aa565efecdbe343df349779f49b0f619e4eac8b074b252bb9aa338e78276d899",
+    "holding_protocol.json": "ac5abcdc648dcbd7760b84f7c1cbfd4f3d291929b0f0327c196df500de36114c",
+    "object.csv": "40c023f17d40c12059070b940854910b91faad6a5475972100cebd4908b16aa9",
+    "support.csv": "161589f1748330381303a48bd19fbe45b6522ed06e38d4887c73f279e60e665f",
+    "response_rows.csv": "10b33803d471ed8f312e7730bd5f90d49acbd0585cde7152b32ee34a690a1afc",
+    "detector.csv": "d5839fd87369ebffc348f022bb44d87e4f2979afb90a04a0c7905d471c65f56a"
+  }
+}

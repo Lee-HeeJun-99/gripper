@@ -49,7 +49,7 @@ def make(root,c,m,dorsal_terminal=False,equatorial_entry=False):
  valid=gap>.2 and all(min(r['initial_skin_gap_mm'],r['initial_wire_gap_mm'],r['initial_guide_gap_mm'])>=c['simulation']['contact_distance_mm'] and r['minimum_reference_det_m3']>0 for r in records);return geometry,valid
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True)
- for flag in ('native','single','dorsal-terminal','load-sized','equatorial-entry','untapered'):p.add_argument('--'+flag,action='store_true')
+ for flag in ('native','single','dorsal-terminal','load-sized','equatorial-entry','untapered','support-sequenced'):p.add_argument('--'+flag,action='store_true')
  p.add_argument('--duration',type=float,choices=[.25,.6,.8,1.0,1.2,2.],default=.25);p.add_argument('--pilot');p.add_argument('--cost-prefix');a=p.parse_args()
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/b3_railback_grasp1001298';root=ET.parse(src/'scene.scn').getroot();c=json.loads((src/'config.json').read_text());m=json.loads((src/'mesh.json').read_text());force=json.loads((BASE/'results/grasp_load_budget1465/summary.json').read_text())['proposed_force_N_per_cable'] if a.load_sized else 1.5
  reference_volume_ratio=None
@@ -67,6 +67,11 @@ def main():
   for i in range(3):
    mass=root.find(f"Node[@name='finger{i}']/UniformMass");assert mass is not None;mass.set('totalMass',format(float(mass.get('totalMass'))*ratio,'.17g'))
   margin=float(((np.sqrt(3)*q[:,0]-abs(q[:,1]))/2).min());valid=valid and margin>0;geo['untapered']=dict(width_mm=c['finger']['root_width'],core_volume_and_assigned_lumped_mass_ratio_to_same_circle_tapered=ratio,initial_core_sector_halfplane_margin_mm=margin,scope='Width24 throughout instead24to12;unchangedrailwidth/thickness/centreline/force/mu. Addedcorevolume scales originaluniformlumpedfreeMass;not equalmaterialvolume or independentlyvalidatedmassquadrature. Guidehardwaremass/inertia unchanged. Footpoints follow corresponding newrailbottomcorners,not removed constraints.');(out/'geometry.json').write_text(json.dumps(geo,indent=2));(out/'mesh.json').write_text(json.dumps(m))
+ if a.support_sequenced:
+  assert a.untapered and not a.load_sized
+  boundary=root.find("Node[@name='floor']/LinearMovementProjectiveConstraint");keys=np.fromstring(boundary.get('keyTimes'),sep=' ');moves=np.fromstring(boundary.get('movements'),sep=' ').reshape(-1,3);first=int(np.flatnonzero(np.linalg.norm(moves,axis=1)>0)[0]);closing=float(keys[first-1]+float(root.get('dt')));assert .5<closing<1.6
+  for control in root.iter('NativeCableSequence'):control.set('closing',format(closing,'.17g'))
+  geo['support_sequenced_force']=dict(closing_end_s=closing,maximum_N_per_cable=force,scope='ONE actuator timing contrast:unchangedC2 shape and1.5Nmaximum,finishforce ramp at originalsupportwithdrawalstart insteaddefault.5s. Supportpath/holdwindow/physics unchanged;not tuningdt/damping or numericalrepair. No additionalclosing-time sweep.');(out/'geometry.json').write_text(json.dumps(geo,indent=2))
  if not valid or not a.native:
   ET.ElementTree(root).write(out/'reference.scn');(out/'summary.json').write_text(json.dumps(dict(status='PASS_INITIAL_CONFORMAL_REFERENCE_ONLY' if valid else 'REJECT_CONFORMAL_REFERENCE',geometry=geo,Native='NOT RUN'),indent=2));print(json.dumps(dict(status=valid,geometry=geo)));return
  if a.single:

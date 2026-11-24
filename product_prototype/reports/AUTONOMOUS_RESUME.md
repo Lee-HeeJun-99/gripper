@@ -1,5 +1,44 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1533 supersedesbelow. ActualpairedQRmesh fixed1529andfree3.6s1530
+completedpositiveFEM.1530endobjectspeed4.46mm/s/omegaZ.01661rad/s,NOTfinal
+Holding. Actualpaired_mesh_withdraw1532 nowRUNNING1.2s/hard420s/4GiB.
+Inspectsummarybeforepromotion. Thenrun_mirror_mesh_grasp.py --tag NEW
+--duration 2 --pilot paired_mesh_withdraw1532 ONLYifforecast<420;costprefix
+paired_mesh_three1530requiresactualexactacceptedprefix andpositivewallrate.
+Newgrasp_goal_assess.py --case NEWCASE --tag UNIQUE required. No100gPASSyet.
+1531software16/SDK7identityPASSonly. StrictmirrorvFAIL1528andoldtime/meshFAILs
+remain. Source/reportNATIVE_TET_HANDEDNESS_20261124.md. Lastcommitgitlog.
+
+CURRENT1529 supersedesbelow.347c858lastfeature;newactualmajorfinding:
+NATIVE_TET_HANDEDNESS_20261124.md.1513full2sFAIL1515speed26.827mm/s,
+slip.181mm/Skinweightonly.1519oldlatchworstpositiveforce/too-longpathNOTslack.
+1520actualall3SkinZtorquessamesign,angularmomentumconsistent.1521/22Native
+noobject.6s ONLYtetreflection flips1.424mmlateral/1.316mmtwist,mirroredq
+error1.98e−13. Newconforming294nodepaired-QRmesh1527eliminatespositionbias
+(4.13e−15m),butv1.44e−12FAILsunrelaxed1e−12API1528. No numericalPASS.
+
+Actualfixedsinglepaired_mesh_fixed1529RUNNING. EXPLORATORYcandidate uses
+samephysical1506geometry/T1.5/Guides/foot/material/totalmass;consistentnewFEM
+collisionboundary andnewnodalmassquadrature explicitlydifferentvsold252nodes.
+Readsummary/processbeforefree3. Next:run_mirror_mesh_grasp.py --tag NEW
+--duration .6 --pilot paired_mesh_fixed1529;full2saftercost/elementgates and
+actualgrasp_goal_assess.py. StrictmirrorvFAILnot silentlypromoted/relaxed.
+Originalgoalunchanged. No100gPASSyet,notCAD/hardwarequalification.
+
+CURRENT1512 supersedesbelow. Lastfeature347c858;gitlogauthoritative.
+1506untaperedfull2sDONE123.927s/800each/positiveFEM;1509goalFAILspeed29.7741
+mm/s,slip.979mm/SkinFz.98542N/GuideRailSupport0. Improvedvs69mm/sbutnotPASS.
+NewONEinputsequencingcontrast alreadyactual:1510singlevalid/1512exactScene
+contract. Onlyclosingdefault.5→1s,derivedfromoriginalSupportwithdrawalstart;
+allmaterial/Tmax1.5/geometry/solver/holdwindowunchanged. Not force/dt/damping
+search,notnewSDK/ForceField.1511sequenced_three1511.6sNativeRUNNING.
+Inspectactualsummary/process;thenconformal_cradle_grasp.py --tag NEW
+--equatorial-entry --dorsal-terminal --untapered --support-sequenced --native
+--duration 2 --pilot sequenced_three1511 ONLYifactualforecast<420,elsebounded
+withdrawal/costprefixasprevious. Newgoalassessmentrequired. No100gPASSyet.
+Do not repeat completed1506 orfurtherclosingduration sweep ifthisfails.
+
 CURRENT1508 supersedesbelow. Untapered1505 actual3Finger.6s57.331s/240each,
 minvol>.98851,forceinputerror0;1507endpointSkinFz.99500N/GuideRailSupport0,
 speed19.029mm/s,notHolding. Full2suntapered_hold1001506 NOWRUNNING after

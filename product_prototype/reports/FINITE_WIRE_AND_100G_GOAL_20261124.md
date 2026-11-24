@@ -242,3 +242,23 @@ launched after382.20sforecast/hard420s,4GiB.1508software12+SDK7identityPASS.
 Readactual1506summary thenrunnewgoalassessment. Sceneanduntaperedrecord
 explicitlyoverride generic retainedmass clause;coremappedUniformMassscaled,
 allGuidehardwaremasses retained. Nootherpropertyorinput changes.
+
+## Width fullresult and deterministic actuator sequencing1506–1512
+
+1506actuallycompleted2s123.927s/800each,minvol>.98851.1509goalFAIL solely
+speed29.774142mm/s,improvedfromequatorial69.04364. Slip.979002mm,SkinFz
+.985416N,Guide/Rail/Support0,gap41.11804mm. Retainmechanismimprovement but
+NOTHoldingPASS or equalmass efficiency;corevolume/mass increased7.2776%.
+
+Next independent hypothesis changesONLY input timing:finish originalquinticC2
+force ramp atactualSupportwithdrawalstart1s(keyTimesfirstmoving−previoushold
+end plusdt) insteadNativeCableSequence default.5s. Same1.5Npeak,hold2/release2.5,
+Supporttrajectory/hold1.6–2/geometry/material/constraints/solverunchanged.
+Maximumforce slew5.625→2.8125N/s iscommanddesign,NOT measuredmotorlimit.
+Motive:limitinitialbendingexcitation,not anotherforce/dt/damping sweep;ONE
+preregisteredtimingcase,notadoptednumericalrepair. FinalholdingTunchanged,
+preclosureinputworkdifferssoNOTisolatedstructure-efficiencycomparison.
+1510single.25s2.310s/minvol.99900.1512normalizedScenes vs1504EXACT except
+closing(.5→1),analyticC2commanderror2.78e−17N/Nativeimpulsecommanderror0.
+Only100sampleinputcouponPASS,notgrasp.1511actualfree3.6sRUNNING;readsummary
+beforepromoting. NoSDK/sourcebinaryupdate needed(publicNativeinputDataonly).

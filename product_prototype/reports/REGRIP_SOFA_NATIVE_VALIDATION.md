@@ -1,3 +1,15 @@
+## Native tetra handedness1521–1533 — scoped evidence,not numericalPASS
+
+ActualnoobjectONLYtetreflection1521/22 reverses−1.424→+1.424mmlateral;
+reflectedqmatches1.98e−13m. Matched294nodeconformingdiagonals+pairedNativeQR
+vertexorder1527reduceqreflectionto4.13e−15m,butv1.444891e−12m/s stillFAIL
+STRICT1e−12API1528. Thresholdnotrelaxed. ActualNativeFEM/Cable/ODEunchanged.
+Positiveactualfixedsphere1529andfree3.6s1530permitEXPLORATORYfullcandidate,
+not qualification. Materialvolume/oldreferencepoints/foot36 preserved;newnode
+UniformMassquadratureandFEMcollisionboundarychangesexplicit.1532withdrawal
+pilotRUNNING;full100gGoalnotpassed.1531software16tests/SDK7identitysame.
+SeeNATIVE_TET_HANDEDNESS_20261124.md. Previous1506/1513fullfailurespreserved.
+
 ## Actual100g follow-up through1508 — no functionalPASSyet
 
 1483/84full2spositiveFEMgoals1488/87FAILspeedandhybridGuidecontact.1496actual

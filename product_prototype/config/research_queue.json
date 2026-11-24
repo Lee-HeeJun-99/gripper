@@ -48,7 +48,8 @@
     {
       "id": "thinwall_capillary_fit",
       "priority": 0,
-      "status": "RUNNING",
+      "status": "FAIL",
+      "evidence": ["capillary_guide1692", "capillary_replay1693"],
       "prerequisites": [],
       "scope": "Manufacturer-dimensioned16RW finite metal ferrule, not arbitrary chamfer/offset scan or calibrated material strength",
       "hypothesis": "Separate physical technology replaces bulky ring with nominal1.651mm OD/1.1938mm ID tube; unchanged centre/path, real wall and support/bore fit explicitly screened",
@@ -56,6 +57,29 @@
       "failure_criteria": ["Occluded bore, no ring/support connection, or unqualified joint treated as hardware PASS"],
       "maximum_execution_cost": "420s/4GiB bounded analysis; small Native only after meaningful fit/clearance",
       "failure_alternatives": ["Document concrete missing joint/material data, not tube size sweep"]
+    },
+    {
+      "id": "thinwall_support_bore_relief",
+      "priority": 0,
+      "status": "PASS",
+      "prerequisites": [],
+      "scope": "CSG finite1.4mm support through-relief and independent every-face slab check only, not joint strength/STEP",
+      "hypothesis": "Original convex support fills bore at14locations; physical machining can open it while retaining original3feet and connected solid",
+      "evidence": ["capillary_bored1694"],
+      "validation_criteria": ["Positive bore clearance, original feet inside, connected watertight solid; no claim of real strength/friction"],
+      "successors": ["capillary_native_exploration"]
+    },
+    {
+      "id": "capillary_native_exploration",
+      "priority": 0,
+      "status": "RUNNING",
+      "prerequisites": ["thinwall_support_bore_relief"],
+      "scope": "Actual new thinwall finite guide + bored-support geometry, inherited uncalibrated rigid mass/inertia and ideal CableConstraint; not finite-wire or hardware qualification",
+      "hypothesis": "Named manufactured small-envelope hardware may avoid bracing without changing force/path/solver",
+      "validation_criteria": ["Positive saved FEM, zero Guide-Guide response, actual Skin reaction and independent geometry screen before full2s"],
+      "failure_criteria": ["Any pilot bracing or invalid elements prevents expansion; do not scan tube sizes"],
+      "maximum_execution_cost": "420s/4GiB per child,2x measured-pilot forecast before expansion",
+      "failure_alternatives": ["Classify actual contact migration or geometric failure and stop this family"]
     },
     {
       "id": "eyelet_bore_and_bend_geometry",

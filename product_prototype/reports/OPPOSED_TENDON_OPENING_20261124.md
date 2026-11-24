@@ -95,5 +95,24 @@ limitedno-objectelasticreturn,NOT materialfatigue/fullRecovery/hardwarePASS.
 No objectinsertion/contact/Holding performed. Nextmeasure actualelement
 strain/stretches;positivevolumesalone doNOT establishmaterialvalidity.
 
+## Element validity and actual visualization1405–1406
+
+1405independentfinite-deformationinvariants fromallacceptedtetra states:
+maximumabsoluteprincipalGreenstrain4.82557%frontclosing,3.21829%backopening,
+3.38053%nonuniformopening/release;nonuniformlargeststretch1.031290 andsmallest
+.965603. Worstnonuniformsample.5175s,element569,materialcentroid93.75mm.
+AllowablematerialstrainNULL:no selected/calibrated material/elasticlimit,
+fatigue,strainconvergence orjointstrengthPASS. Positivevolumesarenotsufficient.
+1406PNG/SVG usesactualacceptedSkinwidthmean,actualinputclockandseparately
+labelledmanufacturedrest/zero-forcegravityreference. DottedR30isVIRTUAL,
+not Nativeobject. Figurevisuallyinspected;no conceptualshape masqueradesas
+actuation. No strain/force rescaling orstatecorrection applied.
+
+NextREADY finite_antagonistic_four_route_gate:currenttwo-routeswap isNOT
+simultaneousopening+closing. Checkfinitewire/guide/support/bore coexistence
+andthenidlereferenceNativebeforegrasp. Existing inputController lacksdelayed
+closingonset;anyextensionmustbeinput-only withseparatebinary/sourcesnapshot
+anddefault-modeq/vpurity,NOT a newSolverorunverifiedstateinitialization.
+
 All commands/source/binary/scene hashes/limits inpreflight,Raw preserved;
 actualforcework/rootreaction/wholeenergy NOTMEASURED. SDKunchanged,nopush.

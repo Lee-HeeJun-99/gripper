@@ -317,14 +317,38 @@
     {
       "id": "finite_wire_contact_phase_residual",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "PASS",
       "prerequisites": ["current_guide_turn_finite_wire_bend"],
       "prerequisite_states": {"current_guide_turn_finite_wire_bend": ["FAIL"]},
       "scope": "Read-only W/dFree/f andq/freeq atactualworstwirecontactstep,notnewsolver or wholegrasp. Extend existingwindow-limited observer; preserve1211binary.",
       "hypothesis": "Min prevents gross Local escape but4.60um penetration coincides with1001iterations. Actual native constraint-system residual and geometry atsamephase can separate unresolved linear constraint error from mapping nonlinearity.",
-      "evidence": ["min_turn_wire_assess1617"],
+      "evidence": ["min_turn_wire_assess1617", "wire_contact_phase1619", "wire_constraint_residual1621", "identified_contact_phase1626", "wire_static_check1628", "source_linked_gap1629", "wire_vertex_coverage1630", "wire_sidedness1635", "first_crossing_phase1636", "first_crossing_gap1637", "first_crossing_coverage1638", "wire_response_dedup1639"],
       "validation_criteria": ["Native q/v/surface/impulse observerpurity<=1e-12 againstoriginalprefix;collectactualW/dFree/impulse atworst.0452s withoutcheckpoint;no timestep/alarm/tolerancechange"],
       "failure_alternatives": ["Independent calibrated contact-ready loading/fixture study;do notdecrease dt orraiseiterationswithoutresidual evidence"],
+      "successors": ["finite_wire_units_contract"]
+    },
+    {
+      "id": "finite_wire_inner_entry_fillet",
+      "priority": 1,
+      "status": "FAIL",
+      "prerequisites": [],
+      "scope": "One actual inner-entry R0.2mm geometry change,not outerGuideGuide chamfer;ALL collision features retained. No grasp/fabrication qualification.",
+      "hypothesis": "Round actual inner entrance to test whether sharp-rim feature reactions cause penetration;retainOD3/coreID1.2/overallL2,declare shorter1.6mm straight bore.",
+      "evidence": ["rounded_bore_wire1633", "rounded_bore_audit1634"],
+      "validation_criteria": ["Closed finite actual Native mesh;independent solid membership/distance;no sampled wire vertex inside solid;do not erasefacets or relax gate"],
+      "failure_alternatives": ["Stop fillet-size scan;actual contact-row coverage and installed source contract"],
+      "successors": ["finite_wire_units_contract"]
+    },
+    {
+      "id": "finite_wire_units_contract",
+      "priority": 1,
+      "status": "READY",
+      "prerequisites": ["finite_wire_contact_phase_residual"],
+      "scope": "Consistent mm/kg/s representation of SAME physical coupon;no SDK change or new response. No-contact Native physical-equivalence contract must precede contact contrast. Not pure dedup-only fix because other absolute Native epsilons also rescale.",
+      "hypothesis": "1639 actual critical facet detected but suppressed by installed hardcoded1e-8f combined-point squared-distance dedup. A consistent units contrast can distinguish absolute numeric contact filtering without altering actual wire/guide/material/load/dt.",
+      "evidence": ["wire_response_dedup1639"],
+      "validation_criteria": ["Explicit L1000/M1/T1 transformation of every dimensional field incl mixed AdaptiveBeamMapping coordinates;actual no-contact SI-normalized q/v/fixture error<=1e-12;contact physical gap/actual row coverage independently audited before interpretation"],
+      "failure_alternatives": ["BLOCKED if native components violate physical unit contract;no fitted E/rho or new solver"],
       "successors": []
     },
     {

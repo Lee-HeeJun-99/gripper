@@ -1,0 +1,27 @@
+{
+  "status": "FAIL_ACTUAL_WIRE_SOLID_INTERSECTION",
+  "case": "rounded_bore_wire1633",
+  "outputs": 1200,
+  "negative_outputs": 687,
+  "first_negative_time_s": 0.0043999999999999985,
+  "maximum_vertex_penetration_mm": 0.004518704845848526,
+  "peak_time_s": 0.04500000000000026,
+  "maximum_solver_iterations": 1001,
+  "negative_outputs_without_contact_impulse": 0,
+  "actual_nonzero_model_pairs": {
+    "/finiteEyelet/TriangleCollisionModel1 | /wire/wireSurface/PointCollisionModel1": 2016,
+    "/finiteEyelet/LineCollisionModel1 | /wire/wireSurface/PointCollisionModel1": 19,
+    "/finiteEyelet/LineCollisionModel1 | /wire/wireSurface/LineCollisionModel1": 1841,
+    "/wire/wireSurface/TriangleCollisionModel1 | /finiteEyelet/PointCollisionModel1": 3
+  },
+  "minimum_positive_gap_mm": null,
+  "scope": "Exact membership of actual32-sided piecewise-linear inner-profile solid;distance to actual triangles evaluated in mm. Negative vertex proves intersection;no negative vertices would NOT certify surface facets/CCD. No tolerance floor or output correction. Not hardware/grasp/material/time convergence PASS.",
+  "source_sha256": "1b3767829f6d3d9c9a772a1f8fcbaef68a91dc7e52b9e3146d0d59d60fa69a9c",
+  "input_sha256": {
+    "scene.scn": "188f4283d8a7d0dbc459ee83be1eb3f4c96d9c49f46562c683ed7d69b7f52e5e",
+    "geometry.json": "e8d5facdc061af472c42a6384ee05ee1a37ecab3e6e0ac413d92c69166959104",
+    "surface.csv": "7ac91579117b03875d7589f6bca9af6272ecbd4b9c0589518c7bfba856c6c9df",
+    "states.csv": "15bc4ab550ee652450b7312ac8fd121e5840c4b9362a1c60df952e32194a5262",
+    "response_rows.csv": "642a23c61d6747c064d25a854365d929606dd226846adba0411853d703ddab0b"
+  }
+}

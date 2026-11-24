@@ -1,5 +1,86 @@
 # Actual guide-turn finite wire coupon — 2026-11-24
 
+## Continuation1618–1639: measured constraint coverage, not a physical fix
+
+Read-only observer now samples an explicit window and actual child positions,
+free positions and J. Frozen1211 binary is unchanged. Separate build snapshots
+1618/1622/1625 contain exact compiled source/binary hashes. Prefix Native runs
+1619/1623/1626 match original q/v/surface/aggregate impulse **exactly0**.
+Current source renames unused legacy `constraintId` output; frozen1625 header
+still calls this `first_row`, but it is NOT the actual global row start.
+
+At45.2ms: actual157normal rows, Min zero friction has ONE row per contact.
+Native max diagonal-scaled natural complementarity residual3.020633e-7m.
+Independent frozen-W/dFree SLSQP reference1621/1628 improves this to9.60095e-11m,
+but **both FAIL1e-12**; optimizer.success is not a KKT or physical PASS.
+No multipliers or state are installed back into Native.
+
+Source ownership MUST match constraint context AND actual mechanical-state
+context prefixes to original collision models. Path alone is ambiguous because
+multiple responses have identical paths and shared ancestor J. Analysis1624's
+9.5mm mismatch is UNQUALIFIED_ANALYSIS, not physical penetration;1627 fails
+when unused legacy constraintId is mistaken for row start. Both artifacts stay
+immutable. Correct1629 uses actual state prefixes (its frozen summary's
+`ANDfirstrow` scope wording is stale, NOT its actual algorithm).
+Actual reconstructed free gap vs Native dFree error1.85670e-18m; accepted-child
+vs linearized gap difference.322747um. This does not explain away the4.60um
+signed-solid penetration.
+
+1630 finds penetrating vertex328 actually detected.1635 cross-checks row34:
+child position equals physical wire surface exactly; J equals previous point
+separation within9.15934e-16; actual bore face plane error0. Native J points
+**into solid** (dot solid-outward normal=-1) after prior crossing. Accepted
+frozen halfspace gap+2.602854um while signed-solid gap=-4.602854um, lambda0.
+Across actual detector point pairs,991inside samples point inward;28234outside
+samples point outward. Other-time native J/multipliers are NOT inferred.
+
+Point computeNormals=1 contrast1631:1200outputs/8.937s, q/v/surface/impulse
+hashes identical to Local1614, same.434165mm penetration1632. Not a fix.
+Separate inner-entry R.2mm fillet1633 retains ALL collision features and outer
+OD3/coreID1.2/L2; entryID1.6, straight bore1.6mm, endwall.7mm. Four-segment
+quarter fillets,32azimuth,768triangles, chorderror3.843um explicitly recorded.
+Actual Native1200outputs/107.987s; exact polygon-frustum solid audit1634 finds
+**4.518705um penetration**,687negative outputs,1001iterations. FAIL; stop
+fillet-size scan. Three independent ray-membership/volume/topology tests pass
+only their software scope. STL not STEP/fabrication-ready.
+
+### First crossing1636–1639 (new actual Native44step prefix)
+
+First negative state4.4ms, not worst45.2ms: actual44steps/1.431s, observer purity0.
+139normal rows, reconstructed dFree error6.50521e-19m. Native natural NCP residual
+**0**, minimum frozen accepted halfspace positive.359395nm; yet actual vertex328
+penetrates.683042um. Thus initial crossing is NOT explained by iteration-limit
+failure alone.1638 matches both actual TrianglePoint detector outputs to previous
+wire vertex; only ONE becomes a triangle response row.
+
+Installed BaseUnilateralContactResponse.inl has hardcoded minDist2=1e-8f, i.e.
+100um combined point-separation threshold in metre scene.1639 independently
+replays original ordered outputs:24detector outputs→21retained,actual21rows;
+retained actual mapping error5.89806e-17m. Critical detector pair17/facet16 is
+discarded for pair4/facet15 (combined squared distance1.57433e-13m²). Retained
+pair4 is actualrow25. Finger/wire motion crosses the unrepresented adjacent
+facet although retained LCP solves. This identifies an actual source/geometry
+coverage failure, NOT proof of every residual or whole-grasp failure.
+
+Next: SAME physical coupon in consistent mm/kg/s units, first no-contact
+mass/elastic/fixture API equivalence, then contact ONLY if that contract passes.
+This changes physical scale of hardcoded Native numerical epsilons, not actual
+material/geometry/load/dt. It is NOT a pure dedup-only edit or certified fix.
+No SDK edits, custom solver, tolerance relaxation or further wholegrasp rerun.
+
+```bash
+$PY product_prototype/sofa/wire_contact_phase_probe.py --tag UNIQUE --build-case identified_contact_build1625 --children --target-time 0.0044
+$PY product_prototype/sofa/wire_mapped_gap_contract.py --tag UNIQUE --case first_crossing_phase1636
+$PY product_prototype/sofa/wire_response_dedup_contract.py --tag UNIQUE
+$PY product_prototype/sofa/rounded_bore_assess.py --tag UNIQUE --case rounded_bore_wire1633
+$PY -m unittest discover -s product_prototype/sofa -p 'test_*wire_geometry.py'
+$PY -m unittest discover -s product_prototype/sofa -p test_rounded_bore.py
+```
+
+All original Raw/FAIL preserved; detector journals stay local and excluded from
+Git. New component diagnostics do not qualify unbraced100gHolding/Lift,
+time/mesh convergence, real wire properties or300partCAD performance.
+
 StartingHEAD98ac710, clean tree; old Raw and verdicts preserved. Goal is to
 resolve the current finite-wire route incompatibility, not add unrelated CAD.
 

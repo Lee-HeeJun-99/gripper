@@ -1,3 +1,16 @@
+## Current1639 — scoped wire diagnostics, no new grasp qualification
+
+Actual finitewire Local grosspenetration;Min still4.602854um;innerentryR.2fillet
+1633still4.518705um. Allfeaturesretained. Firstcrossing1636observerpurity0;
+Native139rowNCPresidual0 but.683042um actualsolidpenetration1637. Installedfixed
+contactdedup1639 removesactuallydetected adjacentcriticalfacet;ordered24->21
+andactualchildmapping agree5.90e-17m. Not iteration-limit failure alone.
+1635 measuredpostcrossingnormalintosolid despitepositivefrozenhalfspace.
+Observer/software/reference PASS are not wire-contact/physical/graspPASS.
+Details andinvalid1624/1627analysiswarnings:CURRENT_TURN_FINITE_WIRE_20261124.md.
+PriorRaw/time/mesh/API/Guidebracing failures allpreserved. Nextconsistentunits
+couponrequiresno-contactphysicalequivalencefirst;SDK/solverunchanged.
+
 ## Current1612 — full trials and measured normal mapping phase
 
 1586 actualfinitehardware2s:object-only100gPASS (.00204mmslip/4.14978mm/s)

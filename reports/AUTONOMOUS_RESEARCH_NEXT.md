@@ -1,3 +1,15 @@
+## Current1639 — actual finite-wire contact coverage failure isolated
+
+Do notrepeat1614/1616/1633:allcomplete. Inner-entryfillet stillFAIL4.518705um.
+Firstcrossing1636 hasobserverpurity0;1637NativeNCP0 but.683042um solidpenetration.
+1639actualcriticalfacetdetectedthenremoved byinstalledfixed100umdedup threshold;
+24->21rows andactualchildpoints agree5.90e-17m. NoSDK changes/performancePASS.
+Next finite_wire_units_contract: samephysicalcouponinmm/kg/s;explicitmapping
+mixedcoordinates anddimensionalmaterial/mass/fixtureconversion;independent
+no-contact<=1e-12API FIRST,thencontactonlyifvalid. Existingnonnormalphase/time/
+mesh/Guidebracingfailures remain. No100gLift or300partCAD promotion.
+Seeproduct_prototype/reports/AUTONOMOUS_RESUME.md topandcurrentturnreport.
+
 ## Current1612 — actual failed chamfer and measured mapping phase
 
 No active child.1586object-only100gPASS butindirectGuidebracing;1594chamfer

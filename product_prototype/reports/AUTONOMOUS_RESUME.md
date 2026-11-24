@@ -1,5 +1,18 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1639 supersedes RUNNING claims below. All Native through1636 completed;
+no active child. 1633 inner-entryfillet actual107.987s/1200outputs stillFAIL
+4.518705um penetration1634;stop filletsize scan. 1636 firstcrossing44steps
+observerpurity0;1637 Native NCPresidual0 but actualsolidpenetration.683042um.
+1639 installedcontactdedup reproduces24->21actualrows;criticalfacetdetected
+then suppressed byhardcoded100umcombineddistance. NoSDK/physicsfix claimed.
+1635 aftercrossing measuredJ inwardwhileunsignedhalfspacepositive;not solecause.
+Next READY finite_wire_units_contract: implement consistent mm/kg/s transform,
+prove no-contact q/v/fixture physical-equivalence<=1e-12 BEFORE contacttrial.
+Full details/sources/commands CURRENT_TURN_FINITE_WIRE_20261124.md. Local save
+SHA resolved by git log -1; previous456988e preserves1613–1617. OldRaw/FAILs
+unchanged, no unbraced100g/Lift/physical/fabrication qualification.
+
 CURRENT1617: actualendpoint-driven finitewirecoupon1614 completed1200outputs
 each,endpointAPIerrors<1e-12/interiorelasticmotion. Local guidecase1615FAIL
 .434165mmwallpenetration. One-variableMin1616 completed77.096s;1617stillFAIL

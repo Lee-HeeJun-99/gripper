@@ -1,3 +1,13 @@
+## Current1639 — actual bend/entry candidate rejected, not product design approval
+
+Isolated Native finitewire atactual43.7256deg guideturn implemented1614,not
+prescribedcurve. Local/Min contacts fail actualsolid intersection;single inner
+entryR.2mmfillet1633alsoFAIL4.518705um. OD3/coreID1.2/L2 preserved,straightbore
+1.6mm/entryID1.6 and discretization declared;allcollisionfeaturesretained.
+NewclosedSTL/parametricgeometry isNOTSTEP/fabricationready or300partCAD update.
+Actualfirstcrossing coveragefailure1639 guidesnextcomponentcontract,notnew
+material/strength/motor evidence. No newfullHolding/Lift qualification.
+
 ## Current1612 — finite-part geometry still unqualified
 
 Actual100g functional1586 is object-onlyPASS with2073GuideGuideholdrows.

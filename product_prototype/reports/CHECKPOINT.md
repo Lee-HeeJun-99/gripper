@@ -1,3 +1,15 @@
+## Current1639 — first wire crossing is not linear solver failure alone
+
+All current children completed. Actual44step firstcrossing Native1636 purity0;
+1637NCPresidual0 yet .683042um actualsolidpenetration. Installed fixed100um
+dedup1639 suppresses actuallydetected criticalneighborfacet,24->21rows matches
+actualmapping5.90e-17m.1635 aftercrossingJpointsintosolid. Roundedinnerentry
+1633/1634FAIL4.518705um despiteALLcollisionfeatures;no morefilletsizescan.
+Read AUTONOMOUS_RESUME top and CURRENT_TURN_FINITE_WIRE_20261124.md for scoped
+results and invalid-analysis corrections1624/1627. Next consistentunits contract
+withindependentno-contactphysicalequivalence,not newsolver/dt/tolerancetuning.
+Existing100gobject-onlyPASS remainsGuidebraced,notwholeproductqualification.
+
 ## Current1612 — no active Native child; functional and physical verdicts separate
 
 1586/1588 finite100g object-only exploratoryPASS, but2073 Guide–Guide holdrows.

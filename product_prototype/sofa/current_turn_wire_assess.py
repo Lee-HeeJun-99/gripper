@@ -10,9 +10,9 @@ def polygon_ring_distance(points,n=32,ri=.0006,ro=.0015,half=.001):
   v=unit*radius;e=np.roll(v,-1,axis=0)-v;offset=yz[:,None,:]-v[None];u=np.clip(np.sum(offset*e,axis=2)/np.sum(e*e,axis=1),0,1);distance.append(np.linalg.norm(offset-u[:,:,None]*e,axis=2).min(1))
  planar=np.where(projection<ri*np.cos(np.pi/n),distance[0],np.where(projection>ro*np.cos(np.pi/n),distance[1],-np.minimum(*distance)));axial=abs(p[:,0])-half;return np.hypot(np.maximum(axial,0),np.maximum(planar,0))+np.minimum(np.maximum(axial,planar),0)
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--min-policy',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/current_turn_wire1614';records=[]
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--min-policy',action='store_true');p.add_argument('--guide-case');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/current_turn_wire1614';records=[]
  for name in ('no_guide_control','guide'):
-  folder=BASE/'results/wire_contact_policy1616' if a.min_policy and name=='guide' else src/name;root=ET.parse(folder/'scene.scn').getroot();rows=read(folder/'states.csv');surfaces=read(folder/'surface.csv');assert len(rows)==len(surfaces);history=[];partition=0.;impulse_rows={};actualpairs={}
+  folder=BASE/'results'/a.guide_case if a.guide_case and name=='guide' else BASE/'results/wire_contact_policy1616' if a.min_policy and name=='guide' else src/name;root=ET.parse(folder/'scene.scn').getroot();rows=read(folder/'states.csv');surfaces=read(folder/'surface.csv');assert len(rows)==len(surfaces);history=[];partition=0.;impulse_rows={};actualpairs={}
   for r in read(folder/'response_rows.csv'):
    t=float(r['time_s']);impulse_rows[t]=impulse_rows.get(t,np.zeros(6))+np.fromstring(r['object_impulse_Ns_Nms'],sep=' ')
    if float(r['lambda_Ns'])!=0:actualpairs[' | '.join((r['model0'],r['model1']))]=actualpairs.get(' | '.join((r['model0'],r['model1'])),0)+1

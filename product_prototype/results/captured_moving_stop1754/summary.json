@@ -1,0 +1,29 @@
+{
+  "status": "PASS_MOVING_ROOT_CABLE_STOPPER_CONTRACT_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.13667258410714567,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "27034214191c4577c221bd91c65aedc7342f1abf1f5706298334b7b5b4d8cf7d",
+      "command.json": "029c9a3cbacbdbae042ab27932d4d6e603dd9304ec245e54c08afc93c243020a",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "b316d942f9be454921b69acd2729f36624e7ae0521a5e1c8b943dc43566d9848"
+    }
+  },
+  "measurements": {
+    "finite": true,
+    "maximum_discrete_position_error_m": 9.75781955236954e-19,
+    "maximum_discrete_velocity_error_m_s": 4.440892098500626e-16,
+    "total_linear_momentum_error_Ns": 5.421010862427522e-20,
+    "maximum_joint_travel_m": 0.002,
+    "final_joint_travel_m": 0.002,
+    "final_root_position_m": 0.0010333333333333334,
+    "final_root_velocity_m_s": 0.06666666666666671,
+    "final_child_velocity_m_s": 0.06666666666666655
+  },
+  "sofa_error_lines": [],
+  "preflight_sha256": "b29cde59cfac6062487ae9d78b9c45a9e99df69b95ecfc7a658fb972ddc00c72",
+  "scope": "Original moving-root1752 mass transport, but mapped CableConstraint drives the carriage into an actual Native1DOF stopper. No duplicated scalar mass or state overrides. Fourty1mssteps; reference is2x2 mass/compliance projection ONLY, not a new simulator/solver used by Native. Real friction, FEM root, finite carriage geometry and impact/energy accuracy unqualified."
+}

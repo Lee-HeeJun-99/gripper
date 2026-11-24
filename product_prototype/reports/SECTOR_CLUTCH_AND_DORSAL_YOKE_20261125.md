@@ -177,3 +177,29 @@ Next executable native contract:
 `python product_prototype/sofa/captured_prismatic_moving_cable.py --tag captured_moving_stop1754`
 Then actual internal cross-draw cable action/reaction and finite keyed carriage
 geometry are independent prerequisites before any new3Finger trial.
+
+##1754–1758: real free-root reaction and internal cross-draw force source
+
+1754 actual Native40steps0.137s: mapped carriage reaches2mm stopper; free
+root actually moves1.03333mm, root/child velocity0.0666667m/s. Independent
+2x2 mass/stop discrete reference error q9.758e-19m/v4.441e-16m/s;
+momentum5.421e-20Ns. This rules out a fixed root masquerading as transport.
+No real impact/energy, arbitrary6DOF or full-FEM qualification is inferred.
+
+1756 internal no-pullPoint two-ended cable, two opposed carriages and free
+root: actual4mm geometric shortening, total momentum3.469e-21Ns, but
+strict1e-12 state test FAIL (root velocity2.067e-10m/s). Preserved, not hidden.
+1757 changes ONLY stopper row order: drift sign reverses exactly; actual
+opposing stop impulse difference/base5g predicts that root velocity exactly.
+This identifies finite linear solve/order error in this small coupon, NOT
+the cause of32.9mm/s B3 object motion or a general integration solution.
+1758 ONE justified tightening of native tolerance1e-10→1e-14, unchanged
+1e-12 state criterion, mass, input, dt, geometry and1000iteration cap:
+q error2.602e-17m, root q/v4.407e-15, momentum2.136e-20Ns; coupon PASS.
+Impact iteration7→10, residual1.303e-15; original1756/1757 FAILs remain.
+No fullB3 solver setting or time/mesh/contact gate was changed or promoted.
+
+The old closing cable pulls outward in1753, so this explicit internal draw
+cable is a different physical actuator, not a passive offset assumption.
+Actual finite guide/carriage/sleeve geometry and routing are the NEXT READY
+gate. Native1746/1752/1754/1758 have no object and are never grasp success.

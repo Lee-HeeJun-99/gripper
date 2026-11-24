@@ -1,0 +1,15 @@
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Initial native/geometric cable length mismatch
+
+########## SIG 6 - SIGABRT: usually caused by an abort() or assert() ##########
+  sofa::helper::BackTrace::sig(int)
+  pthread_kill
+  raise
+  abort
+  regrip::NativeCableLatch::bwdInit()
+  sofa::simulation::InitVisitor::processNodeBottomUp(sofa::simulation::Node*)
+  sofa::simulation::Node::executeVisitorBottomUp(sofa::simulation::Visitor*, std::__cxx11::list<sofa::simulation::Node*, std::allocator<sofa::simulation::Node*> >&)
+  sofa::simulation::Node::doExecuteVisitor(sofa::simulation::Visitor*, bool)
+  sofa::simulation::node::init(sofa::simulation::Node*)
+  sofa::simulation::node::initRoot(sofa::simulation::Node*)
+  __libc_start_main

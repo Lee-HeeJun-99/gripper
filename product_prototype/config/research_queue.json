@@ -46,13 +46,36 @@
     {
       "id": "finite_wire_motion_contract",
       "priority": 2,
-      "status": "READY",
-      "scope": "Determine installed Native finite wire/guide representation on a minimal coupon before any four-cable integration;not another offset/dt sweep",
+      "status": "PASS",
+      "scope": "Conditional20ms zero-friction finite-wire/finite-eyelet Native contact and sliding coupon1431/1432/1436 only;NOT fullfingerintegration,continuoussurfaceclearance or realwire qualification",
       "hypothesis": "Fixed R5 arcs pass initial bore but acquire up to7.545deg tangent discontinuity on actual old Native guide motion;sliding/changing wire curvature is not represented by rigid arcs or point CableConstraint",
       "prerequisites": ["eccentric_eyelet_world_placement", "native_finite_beam_component_coupon"],
-      "evidence": ["eyelet_arc_replay1418", "eccentric_eyelet_assembly1417", "native_finite_wire1420", "native_finite_wire1421", "native_finite_wire_zero1422"],
+      "evidence": ["eyelet_arc_replay1418", "eccentric_eyelet_assembly1417", "wire_eyelet1431", "wire_eyelet_slide1432", "wire_eyelet_audit1436", "wire_eyelet_assess1437"],
       "validation_criteria": ["distinguish physical wire equilibrium from kinematic replay;no prescribed finger/object state;retain finite radius and measured-data gaps;installed Native features only before custom modules"],
+      "successors": ["cable_length_hold_exploration"],
       "failure_alternatives": ["independent layer hardware calibration readiness;input-only delayed control contract"]
+    },
+    {
+      "id": "nonuniform_clearance_grasp100",
+      "priority": 1,
+      "status": "REJECTED",
+      "scope": "Actual100gNative2s nonuniformstress-freeprofile plus requiredrootspacing;not adopted hardware",
+      "hypothesis": "Earlier distal turning with initialclearance-derivedradius might sustain useful contact;fulltrial disproved this candidate",
+      "evidence": ["nonuniform_clearance1434", "nonuniform_contact1435", "nonuniform_hold1001438", "nonuniform_hold_assess1439"],
+      "prerequisites": [],
+      "successors": ["cable_length_hold_exploration"],
+      "validation_criteria": ["Original100gprotocol plus actualGuide/Railforce exclusions,momentum and positive savedFEM;FAIL preserved,do not retryprofile/radius family"]
+    },
+    {
+      "id": "cable_length_hold_exploration",
+      "priority": 1,
+      "status": "RUNNING",
+      "scope": "Input-only Native forceclosing then actualgeometriclength hold;straightcoupon before FEM/contact and100g",
+      "hypothesis": "Maintaining formed cablelength may prevent closure yielding underwithdrawal without raising prescribedforce;must measure actualemergenttension/elements",
+      "prerequisites": [],
+      "evidence": ["cable_latch_control1443", "cable_latch_active1444", "latch_single1446"],
+      "validation_criteria": ["No q/v/SDK/physicslaw edits;inputtype/lengthswitch journal;geometriclength/residual/elementchecks;original100gthresholds;no falseforcecommand afteroverride"],
+      "failure_alternatives": ["Retain fail and assess force-path/contact geometry;no furtherforce/dt sweep"]
     },
     {
       "id": "native_finite_beam_component_coupon",

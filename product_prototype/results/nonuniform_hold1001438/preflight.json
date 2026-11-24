@@ -1,0 +1,84 @@
+{
+  "source_commit": "41f15b0b0b2475648afee6a6a320e6ff8228ce2b",
+  "source_sha256": "c494b94fdb03127cde00a7c57ec6e35e4c5ee1c91d273ecc94d1aaa968e5552a",
+  "source_scene_sha256": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+  "scene_sha256": "3349c99d1573bfc55c2bb1e0daf21ff383b4e5596c5cf1fe7d7ece29c73f0fed",
+  "geometry": {
+    "original_radius_mm": 50,
+    "candidate_radius_mm": 53.17562365631602,
+    "initial_at_original_radius": [
+      {
+        "finger": 0,
+        "skin_gap_mm": -1.5831497265893262,
+        "wire_gap_mm": 4.627362077308312,
+        "guide_gap_mm": 3.0745864395763176,
+        "minimum_reference_determinant_mm3": 0.9878491498078145
+      },
+      {
+        "finger": 1,
+        "skin_gap_mm": -1.5831497265893368,
+        "wire_gap_mm": 4.627362077308312,
+        "guide_gap_mm": 3.0745864395763176,
+        "minimum_reference_determinant_mm3": 0.9878491498078147
+      },
+      {
+        "finger": 2,
+        "skin_gap_mm": -1.5831497265893368,
+        "wire_gap_mm": 4.6273620773083195,
+        "guide_gap_mm": 3.0745864395763247,
+        "minimum_reference_determinant_mm3": 0.9878491498078139
+      }
+    ],
+    "final_initial_gate": [
+      {
+        "finger": 0,
+        "skin_gap_mm": 0.30000000001661675,
+        "wire_gap_mm": 5.997894616756142,
+        "guide_gap_mm": 4.445118979024147,
+        "minimum_reference_determinant_mm3": 0.9878491498078142
+      },
+      {
+        "finger": 1,
+        "skin_gap_mm": 0.3000000000166132,
+        "wire_gap_mm": 5.997894616756142,
+        "guide_gap_mm": 4.445118979024147,
+        "minimum_reference_determinant_mm3": 0.9878491498078141
+      },
+      {
+        "finger": 2,
+        "skin_gap_mm": 0.30000000001661675,
+        "wire_gap_mm": 5.997894616756149,
+        "guide_gap_mm": 4.445118979024154,
+        "minimum_reference_determinant_mm3": 0.9878491498078139
+      }
+    ],
+    "placement_rule": "Smallest root radius>=original with Skin/wireR.25/actualguide sphere initial sphere gap>=.30mm;deterministic bisection,NOT performance optimization",
+    "assumption": "New stress-free manufactured phi=40deg*(2u-u\u00b2) over70\u2013100mm,original root14deg;paired root-radius compensation required by original1388 penetration. Not isolated one-variable superiority. Original assigned masses/guide inertias retained ideal assumptions,not new measured density or hardware."
+  },
+  "duration_s": 2.0,
+  "force_N_per_cable": 1.5,
+  "classification": "EXPLORATORY100g,not finite-wire hardware or numerical validation",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_alarm_window484/libReGripAlarmWindow.so": "6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "memory_GiB": 4,
+  "child_limit_s": 420,
+  "pilot": "nonuniform_contact1435",
+  "forecast_s": 327.7572839939967,
+  "holding_protocol_sha256": "ac5abcdc648dcbd7760b84f7c1cbfd4f3d291929b0f0327c196df500de36114c",
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "800",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/nonuniform_hold1001438/scene.scn"
+  ]
+}

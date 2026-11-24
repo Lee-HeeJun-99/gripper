@@ -1,0 +1,56 @@
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:28,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core_compat/sofa/core/objectmodel/BaseObject.h:25,
+                 from /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:1:
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:16:30: warning: ‘using BaseObject = class sofa::core::objectmodel::BaseComponent’ is deprecated: It is still usable but has been DEPRECATED since v26.06. You have until v29.06 to fix your code. BaseObject has been renamed to BaseComponent [-Wdeprecated-declarations]
+   16 |  SOFA_CLASS(NativeCableLatch,BaseObject);
+      |                              ^~~~~~~~~~
+/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:43:5: note: declared here
+   43 |     SOFA_CLASS(BaseComponent, Base);
+      |     ^~~~~~~~~~
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:18:55: warning: ‘using BaseObject = class sofa::core::objectmodel::BaseComponent’ is deprecated: It is still usable but has been DEPRECATED since v26.06. You have until v29.06 to fix your code. BaseObject has been renamed to BaseComponent [-Wdeprecated-declarations]
+   18 |  sofa::core::objectmodel::SingleLink<NativeCableLatch,BaseObject,BaseLink::FLAG_STOREPATH|BaseLink::FLAG_STRONGLINK> cable0,cable1;
+      |                                                       ^~~~~~~~~~
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:28,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core_compat/sofa/core/objectmodel/BaseObject.h:25,
+                 from /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:1:
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:16:2: note: declared here
+   16 |  SOFA_CLASS(NativeCableLatch,BaseObject);
+      |  ^~~~~~~~~~
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:23:44: warning: ‘using BaseObject = class sofa::core::objectmodel::BaseComponent’ is deprecated: It is still usable but has been DEPRECATED since v26.06. You have until v29.06 to fix your code. BaseObject has been renamed to BaseComponent [-Wdeprecated-declarations]
+   23 |  double number(BaseObject*b,const char*name){auto*d=dynamic_cast<sofa::core::objectmodel::Data<double>*>(b->findData(name));if(!d)throw std::runtime_error("Expected native scalar data");return d->getValue();}
+      |                                            ^
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:28,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core_compat/sofa/core/objectmodel/BaseObject.h:25,
+                 from /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:1:
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:16:2: note: declared here
+   16 |  SOFA_CLASS(NativeCableLatch,BaseObject);
+      |  ^~~~~~~~~~
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:24:28: warning: ‘using BaseObject = class sofa::core::objectmodel::BaseComponent’ is deprecated: It is still usable but has been DEPRECATED since v26.06. You have until v29.06 to fix your code. BaseObject has been renamed to BaseComponent [-Wdeprecated-declarations]
+   24 |  double length(BaseObject*b){
+      |                            ^
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:28,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core_compat/sofa/core/objectmodel/BaseObject.h:25,
+                 from /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:1:
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:16:2: note: declared here
+   16 |  SOFA_CLASS(NativeCableLatch,BaseObject);
+      |  ^~~~~~~~~~
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp: In member function ‘virtual void regrip::NativeCableLatch::init()’:
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:28:34: warning: ‘using BaseObject = class sofa::core::objectmodel::BaseComponent’ is deprecated: It is still usable but has been DEPRECATED since v26.06. You have until v29.06 to fix your code. BaseObject has been renamed to BaseComponent [-Wdeprecated-declarations]
+   28 |  void init()override{BaseObject::init();if(!cable0||!cable1||std::ifstream(filename.getValue()))throw std::runtime_error("Unique linked input latch required");unsigned i=0;for(auto*b:{cable0.get(),cable1.get()})rest[i++]=length(b);log.open(filename.getValue());log<<std::setprecision(17)<<"time_s,latched,target0_m,target1_m,geometric0_m,geometric1_m,force0_Ns,force1_Ns\n";}
+      |                                  ^~~~
+In file included from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/Base.h:28,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseContext.h:25,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/objectmodel/BaseComponent.h:24,
+                 from /home/ubuntu/SOFA/v26.06.00/include/Sofa.Core_compat/sofa/core/objectmodel/BaseObject.h:25,
+                 from /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:1:
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/cable_latch/CableLatch.cpp:16:2: note: declared here
+   16 |  SOFA_CLASS(NativeCableLatch,BaseObject);
+      |  ^~~~~~~~~~

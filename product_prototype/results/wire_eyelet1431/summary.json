@@ -1,0 +1,43 @@
+{
+  "status": "NATIVE_COUPON_COMPLETED_CONTACT_NOT_YET_QUALIFIED",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 2.6158803328871727,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "04fcdfa32a5a75f16006ac4970c8f8571165612e1d2b01fbf8a15fae5a6455c6",
+      "command.json": "b603257e17a8df3721ab72949a4bd45ded0d25932e9363169bc46bd12cece084",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "fce148b087fc27818cc05b954c397e5e3316091c502c1a86314bced671276f1a"
+    }
+  },
+  "rows": 200,
+  "active_constraint_outputs": 186,
+  "slide": false,
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "200",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/wire_eyelet1431/scene.scn"
+  ],
+  "source_commit": "41f15b0b0b2475648afee6a6a320e6ff8228ce2b",
+  "source_sha256": "2bdd1f1c8420584014bf41dcf03657162f25032418ddc5284eace2be88a64f3c",
+  "scene_sha256": "b99508a9667edf41a2de8b60aa9a98d6734e1a2f5489913e308b7c69df0085a3",
+  "eyelet_sha256": "244f3d56b9d66bcbc73f1815af23687340181c0c5631caf8a4b3ce149446eaa9",
+  "binary_sha256": {
+    "observer": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+    "BeamAdapter": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+    "runSofa": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad"
+  },
+  "scope": "Finite16-sided tube via stock AdaptiveBeamMapping against actual eccentric solid. E/rho inherited assumed2GPa/1000;zero-friction contact separates sliding availability from unmeasured friction. Initial mesh mapping/gap/contact impulse still need independent assessment. No grasp or constrained-loop/time/mesh/material PASS.",
+  "physical_validation": "NOT QUALIFIED",
+  "load_basis": "0.4mN transverse load gives approximate Euler midpoint54um versus ~42um nominal radial entry clearance;20ms observation,not gripper tension tuning",
+  "corrections": "Explicit beam-index coordinate mapping;outer-facing tube normals;old malformed/no-contact runs preserved. End coordinate nextafter10 implements last beam endpoint without invalid beam10."
+}

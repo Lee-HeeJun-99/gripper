@@ -2,36 +2,139 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
-      "id": "variable_stiffness_measurement_ingest",
+      "id": "contact_adaptation_reference_profile",
       "priority": 2,
       "status": "READY",
+      "goal": "Define one new stress-free reference profile targeting distributed lower-hemisphere contact rather than another stiffness/force sweep",
+      "hypothesis": "Actual100mm-only contacts and modest1.126mappedstaticstiffnessgain motivate inverse geometric feasibility at95mm before another Nativegrasp",
+      "scope": "Manufactured reference geometry and initial guide/wire/object gates first;not prescribed dynamic wrapping",
+      "prerequisites": [
+        "reinforcement_discrete_bending_contract"
+      ],
+      "prerequisite_states": {
+        "reinforcement_discrete_bending_contract": [
+          "FAIL"
+        ]
+      },
+      "evidence": [
+        "reinforcement_mapped_reference1385",
+        "proximal_reinforcement_material1378",
+        "contact_layer_profile_rays1358"
+      ],
+      "expected_outputs": [
+        "one explicitly parameterized alternative rest profile with shared guide anchors and interference checks or a justified infeasibility result"
+      ],
+      "validation_criteria": [
+        "do not repeat failed pitch/70to60uniformcurve/offset/pad sweeps;preserve originalmodel;declare stress-free manufacturing assumption;screen actual wire and guide envelope before Native"
+      ],
+      "failure_criteria": [
+        "initial penetration or unsupported guide footprint or no new causal design variable"
+      ],
+      "failure_alternatives": [
+        "independent layer measurement uncertainty tooling or calibrated material data ingestion"
+      ],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "paired_layer_hardware_measurements",
+      "priority": 2,
+      "status": "BLOCKED",
+      "goal": "Collect actual calibrated paired pressure/load-deflection data",
+      "hypothesis": "Pressure-dependent layer sliding changes measured compliance;requires real material and fixture",
+      "scope": "NOT MEASURED;no hardware access,calibrated raw or pressure/friction data",
+      "prerequisites": [
+        "variable_stiffness_measurement_ingest"
+      ],
+      "evidence": [
+        "reinforcement_cycle_regression1387"
+      ],
+      "expected_outputs": [
+        "actual calibrated raw plus instrument certificates and fixture dimensions"
+      ],
+      "validation_criteria": [
+        "no synthetic rows promoted as measurements;calibration/fixture/uncertainty independent verification"
+      ],
+      "failure_criteria": [
+        "missing hardware,calibration or actual readings"
+      ],
+      "failure_alternatives": [
+        "contact_adaptation_reference_profile"
+      ],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "variable_stiffness_measurement_ingest",
+      "priority": 2,
+      "status": "PASS",
       "goal": "Implement fail-closed layer-coupon measurement importer before real pressure/friction calibration",
       "hypothesis": "Recorded paired load-deflection and pressure histories can support measured coupon compliance only when calibration and units are explicit",
       "scope": "Data tooling and synthetic parser tests only;hardware measurements remain NOT MEASURED",
       "prerequisites": [],
-      "evidence": ["reinforcement_static1386", "reinforcement_mapped_reference1385"],
-      "expected_outputs": ["validated CSV/metadata schema and importer with no fabricated measured data"],
-      "validation_criteria": ["reject missing calibration,nonfinite values,mixed units,insufficient paired samples;do not infer jamming from modulus settings"],
-      "failure_criteria": ["unsafe acceptance of uncalibrated data or unmarked synthetic evidence"],
-      "failure_alternatives": ["record equipment/data BLOCKED and return to independent contact inverse-design analysis"],
-      "successors": [],
+      "evidence": [
+        "reinforcement_static1386",
+        "reinforcement_mapped_reference1385",
+        "reinforcement_cycle_regression1387"
+      ],
+      "expected_outputs": [
+        "validated CSV/metadata schema and importer with no fabricated measured data"
+      ],
+      "validation_criteria": [
+        "reject missing calibration,nonfinite values,mixed units,insufficient paired samples;do not infer jamming from modulus settings"
+      ],
+      "failure_criteria": [
+        "unsafe acceptance of uncalibrated data or unmarked synthetic evidence"
+      ],
+      "failure_alternatives": [
+        "record equipment/data BLOCKED and return to independent contact inverse-design analysis"
+      ],
+      "successors": [
+        "paired_layer_hardware_measurements"
+      ],
       "impact": 1,
-      "estimated_cost": 1
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
     },
     {
       "id": "reinforcement_discrete_bending_contract",
       "priority": 1,
       "status": "FAIL",
       "hypothesis": "Finite backing increases discrete bending stiffness;matched Native small-load response must agree with independent FEM at strict1e-12",
-      "failure_criteria": ["Any q/v absolute reference error exceeds1e-12 or Native ERROR;do not substitute reference statics for Native equilibrium"],
+      "failure_criteria": [
+        "Any q/v absolute reference error exceeds1e-12 or Native ERROR;do not substitute reference statics for Native equilibrium"
+      ],
       "goal": "Separate discrete composite bending gain from asymmetric coupled contact transient before another grasp candidate",
       "scope": "Matched small-load fixed-root reference;not Grasp or measured material validation",
-      "prerequisites": ["footprint_preserving_proximal_reinforcement"],
-      "prerequisite_states": {"footprint_preserving_proximal_reinforcement": ["REJECTED"]},
-      "evidence": ["proximal_reinforcement_compare1376", "proximal_reinforcement_material1378", "reinforcement_bending1380", "reinforcement_mapped1384", "reinforcement_mapped_reference1385", "reinforcement_static1386"],
-      "expected_outputs": ["same-boundary original/reinforced discrete stiffness and small-load response with Native comparison"],
-      "validation_criteria": ["same load/root/material;no force or modulus fitting;positive element quality;no sectionI-only dynamic claim"],
-      "failure_alternatives": ["independent variable-stiffness coupon with explicit pressure/material assumptions"],
+      "prerequisites": [
+        "footprint_preserving_proximal_reinforcement"
+      ],
+      "prerequisite_states": {
+        "footprint_preserving_proximal_reinforcement": [
+          "REJECTED"
+        ]
+      },
+      "evidence": [
+        "proximal_reinforcement_compare1376",
+        "proximal_reinforcement_material1378",
+        "reinforcement_bending1380",
+        "reinforcement_mapped1384",
+        "reinforcement_mapped_reference1385",
+        "reinforcement_static1386"
+      ],
+      "expected_outputs": [
+        "same-boundary original/reinforced discrete stiffness and small-load response with Native comparison"
+      ],
+      "validation_criteria": [
+        "same load/root/material;no force or modulus fitting;positive element quality;no sectionI-only dynamic claim"
+      ],
+      "failure_alternatives": [
+        "independent variable-stiffness coupon with explicit pressure/material assumptions"
+      ],
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
@@ -56,7 +159,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "single_mode_time_control",
@@ -76,7 +183,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "distributed_arc_grasp_candidate",
@@ -96,7 +207,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_pressure_physics",
@@ -118,7 +233,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_pocket_geometry",
@@ -139,7 +258,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_measurement_capture",
@@ -159,7 +282,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "actual_result_visualization",
@@ -179,7 +306,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "orientation_fixture_control",
@@ -199,7 +330,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "session_validation",
@@ -221,7 +356,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "contact_violation_phase_observer",
@@ -242,7 +381,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "native_normal_policy_controls",
@@ -262,7 +405,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "contact_feature_row_provenance",
@@ -283,7 +430,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "primitive_friction_control",
@@ -304,7 +455,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "line_face_transition_attribution",
@@ -324,7 +479,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "primitive_local_cone_filter",
@@ -344,7 +503,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "ideal_layer_interface_limit",
@@ -364,7 +527,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "historical_B3_feature_loads",
@@ -385,7 +552,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_bending_reference",
@@ -406,7 +577,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "native_layer_mesh",
@@ -426,7 +601,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "interface_discretization_reference",
@@ -447,7 +626,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "native_constraint_normalization",
@@ -468,7 +651,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_section_resolution_reference",
@@ -488,7 +675,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_consistent_face_load",
@@ -510,7 +701,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_loaded_section_reference",
@@ -530,7 +725,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_native_section_pilot",
@@ -550,7 +749,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "layer_interface_section_limit",
@@ -574,7 +777,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_response_cone_budget",
@@ -603,7 +810,11 @@
       ],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_railback_grasp_exploration",
@@ -635,7 +846,11 @@
       ],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_railback_force_diagnosis",
@@ -668,7 +883,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_force2_sensitivity",
@@ -698,7 +917,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_sustained_contact_direction",
@@ -735,7 +958,11 @@
       ],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_active_point_provenance",
@@ -767,7 +994,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "b3_extra_root_pitch",
@@ -797,7 +1028,11 @@
       ],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "distributed_contact_mechanism_hypothesis",
@@ -835,7 +1070,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "git_history_repair",
@@ -852,7 +1091,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "current_regression",
@@ -873,7 +1116,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "proximal_terminal_material_provenance",
@@ -902,7 +1149,11 @@
       "goal": "Frozen observer1331 on completed1328;identify actual active materialstation at1.195/1.1975,not infer contact distribution from rowcount",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "distributed_contact_interface_hypothesis",
@@ -931,7 +1182,11 @@
       "goal": "Terminal-only mechanism did not spread active material contact. Review a finite compliant distal contact interface,not another force/offset/angle/terminal sweep. Must preserve initial clearance and explicit material law;no pad pose prescription or collision removal.",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "contact_layer_exterior_contract",
@@ -953,7 +1208,11 @@
       "goal": "Linear mapped coupon reference and exact24bond-face cancellation,all original other exterior retained. Startup and bounded1.2s positive saved elements ONLY,not contact/time/mesh/jamming/physical qualification.",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "proximal_rotation_diagnostic",
@@ -974,7 +1233,11 @@
       "goal": "Actual projected centerline decomposition1352/1298,not intrinsic shell curvature or uniquephysicalcause. About90percent finger0tipangleloss0.6to1.2 lies in proximalspan in padcandidate.",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "proximal_shape_retention_hypothesis",
@@ -1008,7 +1271,11 @@
       "goal": "Review prior rail-aspect/attachment candidates before one mechanically explicit proximal bending-retention candidate. Use measured proximal rotation and finite profile budget;no additional force/offset/angle/terminal/pad-thickness sweep. Preserve anchor footprint or declare assembly change. Do not fit Young modulus or claim convergence.",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "finite_contact_layer_regression",
@@ -1029,7 +1296,11 @@
       "goal": "115softwaretests only;SDK7hashes unchanged versus1335,oldphysicsFAILs preserved,not productqualification",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "footprint_preserving_proximal_reinforcement",
@@ -1057,11 +1328,17 @@
       "failure_alternatives": [
         "independent mapped-joint/Nativecontact cause isolation with new hypothesis"
       ],
-      "successors": ["reinforcement_discrete_bending_contract"],
+      "successors": [
+        "reinforcement_discrete_bending_contract"
+      ],
       "goal": "Nominal-volume2.2prox/1.533distal rail candidate1362rejects12of108actualanchors. Next single physical reinforcement/redistribution candidate must preserve existing2mmfootprint and3pointattachment or declare explicit newassembly. Use actualproximalrotation1360,not arbitrarymaterial/forcefitting. Added volume/mass must be reported,not equalvolume superiority.",
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "PET_vacuum_properties",
@@ -1078,7 +1355,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "fabrication_STEP",
@@ -1095,7 +1376,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     },
     {
       "id": "100g_holding_lift",
@@ -1112,7 +1397,11 @@
       "successors": [],
       "impact": 1,
       "estimated_cost": 1,
-      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates",
+      "hypothesis": "NOT SPECIFIED:define before new experiment",
+      "failure_criteria": [
+        "Actual validation criteria not met;retain evidence and do not promote physical scope"
+      ]
     }
   ]
 }

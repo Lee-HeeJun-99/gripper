@@ -1,4 +1,26 @@
-## Latest continuation through1373 — 2026-11-24
+## Latest continuation through1387 — 2026-11-24
+
+Starting31c0512clean. Actuallycompleted matchedbending,Guide-mapping and
+stockStaticSolver cycles1379–1386,thenindependentmeasurementingesttooling.
+1379unsupportedmass templateFAILpreserved;1380canonicaltemplateNative20steps
+completebutstrictv1e-12FAIL(3.13e-12/2.14e-12). Independentstaticgain1.131307,
+addedmass8.5355%,not equalmass.1381referenceenergy/straininventory.1382origin
+translationdiagnosticdoesnotfixboth,FAILkept.1383missingMechanicalLoadplugin
+FAILkept;1384actual12Guide graph preserved,20Nativeoutputs/corepositive for
+both,transientNOTequilibrium.1385actualGuidepullbackstaticgain1.126481,
+virtualworkerror2.02e-28J,not Nativeenergy.1386actualstrictNewtonLineSearchFAIL,
+partialstateNOTequilibrium;forceresidual~1e-9Ndespiteqerror~1e-14m. No new
+NativeSolver/SDK/tolerancechange or100gGraspPASS. Readnewbendingcontractreport.
+
+Features15ccb67/113b229. Following113b229actuallyimplementedcalibration-aware
+layermeasurementingest and8syntheticparsertests;actualpressure/material/
+hardwaredataNOTMEASURED.1387regression41testsPASSand7SDKhashesunchanged.
+No Nativechildrenpending. NewREADY contact_adaptation_reference_profile:
+oneinversegeometryfeasibilitycandidate,not repeatedforce/pitch/widthsweep.
+ActualpairedlayermeasurementsBLOCKEDhardware/calibration. Currentqueueand
+AUTONOMOUS_RESUME supersedeoldnexttasknotes. Existing300partCADunchanged.
+
+## Previous continuation through1373 — 2026-11-24
 
 Follow-on1374–1378completedafterfeature d80265b: frozenobserveractual1.2srun
 63.210s,9journalsEXACT.1378all9active samplednormalrowsSkin100mm.1376allfinger

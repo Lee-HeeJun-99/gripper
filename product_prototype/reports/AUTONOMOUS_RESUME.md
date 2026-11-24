@@ -1,5 +1,29 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1387 supersedes ALL older next-task text. Starting31c0512,features
+15ccb67/113b229:matchedlinear bendingNative1380strictvelocityFAIL;independent
+staticstiffnessgain1.131307(noGuide)/1.126481(actualGuidepullback1385). Not a
+Nativeequilibrium or graspPASS. ActualmappedNative1384both20outputs/corepositive,
+buttransient. NativeStatic1386LineSearchFAIL,forceresidual~1e-9N,qclosealone
+notPASS. No tolerance/origin/forcefitting. Follow-onrealmeasurementimporter
+implemented with8syntheticparserchecks;hardwareNOTMEASURED.1387software41PASS,
+7SDKhashesunchanged. Reports:B3_REINFORCEMENT_BENDING_CONTRACT_20261124.md and
+LAYER_MEASUREMENT_INGEST_20261124.md. ExistingRaw/FAILs preserved.
+
+NextREADY contact_adaptation_reference_profile. Firstselectactualqueue:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py`
+Then inspectactual1378Skin100mm provenance,1358raybudget and1385reference
+before ONE newstress-free referenceprofilefeasibilitydesign. Do notrerunthese
+sameNativefailures or old70→60curve/pitch/force/padfamilies. Needexplicitnew
+geometryhypothesis and guide/wire/objectinitialgate beforeNative. Actual
+layermeasurementsBLOCKEDuntilhardware/calibrationdata;no fake readings.
+No Nativepending,RUNNINGwork or promisedbackgroundexecution.
+
+Scopedregressionreproduction(useuniqueNEWtag):
+`OPENBLAS_NUM_THREADS=1 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/reinforcement_cycle_validation.py --tag NEW_UNIQUE`
+ActualingestcommandrequiresrealCSV+metadata+3calibrationfiles;seeprotocol.
+Latestcommit `git log -1`;do notoverwrite any1379–1387resultpath.
+
 LATEST1363 supersedes below. After commit5ab1755,the nextmechanism was actually
 screened1362:nominalequalvolume proxrail2.2mm/distal1.533mm loses12of108realguide
 footpoints by.466667mm. REJECT beforeNative,not a solverfailure. Noanchor moved.

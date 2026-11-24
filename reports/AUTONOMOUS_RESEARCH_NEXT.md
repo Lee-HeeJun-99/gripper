@@ -4240,3 +4240,15 @@ butnot consistent shape retention.1374frozenobserver actualNative9journalsEXACT;
 changes −.895,+.800,−1.288°;no uniformimprovement. FullHoldingNOTMEASURED,
 100gLift/time/mesh/jamming/hardwareNOTQUALIFIED. No repeatedforce/offsetsweep.
 See B3_PROXIMAL_REINFORCEMENT_20261124.md andcurrentqueue. Nativechildrenfinished.
+## Latest after1387 — 2026-11-24
+
+READY contact_adaptation_reference_profile. reinforcement_discrete_bending_contract
+completedwithstrictNativeFAIL,not repeatedpending. Independentstaticgain
+1.131307/noGuide and1.126481/actualGuidepullback;NativeStaticLineSearchFAIL
+andtransientreferencevelocityFAILkept. ActualmappedNative1384completedbutnot
+equilibrium. Do notfitforce/modulus/damping orselectbackingasagripimprovement.
+Realcalibration-awaremeasurementimporterimplemented;8syntheticchecksNOTreal
+hardware.1387regression41PASS,7SDKunchanged. Pairedactualpressuremeasurement
+BLOCKEDhardware/calibration. Newgeometrymustaddress100mm-onlycontactwitha
+newphysicalhypothesis,not oldpitch/pad/offset/terminal/widthsweep. Seeupdated
+CHECKPOINT/AUTONOMOUS_RESUME and B3_REINFORCEMENT_BENDING_CONTRACT_20261124.md.

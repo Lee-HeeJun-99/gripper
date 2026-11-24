@@ -1,0 +1,65 @@
+{
+  "status": "FAIL_MAPPED_COUPON",
+  "originalGuideGraphEqual": true,
+  "records": [
+    {
+      "name": "baseline",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.10846829391084611,
+        "pid": 43,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "bd2f90fe1592ec71bbdc652716179536a7f66e78833a7816eeeb32c2c5b5a525",
+          "command.json": "3cb69e687a95b1e3b97625aaea5fdca1e3113066a78ce3f71e976d5680a15194",
+          "stderr.log": "369208fcede519b001af65998309ff538c5cbf7dcb6a96169ef72d5148e4ba8e",
+          "process.json": "168a22f4a699ea35e8a7d3b6d1e030c8439c7ba69c7a15f4961f4e5f5d068c56"
+        }
+      },
+      "outputs": 0,
+      "status": "FAIL_NATIVE_COUPON",
+      "minimum_core_saved_volume_ratio": null,
+      "tip_history": []
+    },
+    {
+      "name": "reinforced",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.20866680797189474,
+        "pid": 45,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "ba1810c14e84ce5ceccfe2df5ceae0a81ed8e8473e839c245238fc3d9a2c84d7",
+          "command.json": "b3d8e80079838896a2c708cd163b3c5bdcaf526ad159f0abec92c9e1d7167cd0",
+          "stderr.log": "369208fcede519b001af65998309ff538c5cbf7dcb6a96169ef72d5148e4ba8e",
+          "process.json": "9139575f025e65ee2848fda63ac6714d27aaf624640301f514ade60e9effa3c4"
+        }
+      },
+      "outputs": 4,
+      "status": "FAIL_NATIVE_COUPON",
+      "minimum_core_saved_volume_ratio": 0.999999999999993,
+      "tip_history": [
+        {
+          "time_s": 0.0025,
+          "width_mean_tip_x_displacement_m": 0.0
+        },
+        {
+          "time_s": 0.005,
+          "width_mean_tip_x_displacement_m": 0.0
+        },
+        {
+          "time_s": 0.0075,
+          "width_mean_tip_x_displacement_m": 0.0
+        },
+        {
+          "time_s": 0.01,
+          "width_mean_tip_x_displacement_m": 0.0
+        }
+      ]
+    }
+  ],
+  "scope": "Actual transient,not settledload-displacement or static stiffness ratio. Coreelementquality only;newlayerenergy/strain NOTMEASURED. No convergence or graspPASS.",
+  "physical_validation": "NOT QUALIFIED"
+}

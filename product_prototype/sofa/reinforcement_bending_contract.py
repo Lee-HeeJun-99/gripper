@@ -14,7 +14,7 @@ from b3_contact_layer_native import add,flat
 from layer_bending_reference import element,elastic
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--origin-shift',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
  src=BASE/'results/b3_railback_grasp1001298';geo=BASE/'results/proximal_reinforcement_geometry1364';mesh=json.loads((src/'mesh.json').read_text());g=json.loads((geo/'mesh.json').read_text());old=ET.parse(src/'scene.scn').getroot();f=old.find("Node[@name='finger0']");q0=np.fromstring(f.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);t0=np.array(mesh['tetrahedra']);local0=np.array(mesh['local_positions_mm']);records=[];young=250e6;nu=.3;D=elastic(young,nu)
  for reinforced in (False,True):
   name='reinforced' if reinforced else 'baseline';folder=out/name;folder.mkdir();q=q0.copy();tet=t0.copy();local=local0.copy();mass=np.full(len(q),.001/len(q))
@@ -23,6 +23,10 @@ def main():
   fixed=np.flatnonzero(local[:,0]<=5);free=np.flatnonzero(np.repeat(local[:,0]>5,3));K=np.zeros((3*len(q),)*2);det=[]
   for t in tet:
    V,B,_=element(q[t],D);idx=(3*t[:,None]+np.arange(3)).ravel();K[np.ix_(idx,idx)]+=V*B.T@D@B;det.append(float(np.linalg.det((q[t[1:]]-q[t[0]]).T)))
+  if a.origin_shift:
+   q=q-q0.mean(0);K[:]=0;det=[]
+   for t in tet:
+    V,B,_=element(q[t],D);idx=(3*t[:,None]+np.arange(3)).ravel();K[np.ix_(idx,idx)]+=V*B.T@D@B;det.append(float(np.linalg.det((q[t[1:]]-q[t[0]]).T)))
   F=np.zeros_like(q);tip=np.flatnonzero((local[:,0]==100)&(local[:,2]==.1));F[tip,0]=-1e-5/len(tip);force=F.ravel();kf=K[np.ix_(free,free)];factor=cho_factor(kf);us=np.zeros(3*len(q));us[free]=cho_solve(factor,force[free]);reaction=(K@us-force).reshape(-1,3)[fixed].sum(0);energy=float(.5*us@K@us);equilibrium=float(abs((K@us-force)[free]).max());massdiag=np.repeat(mass,3)[free];dt=.0025;steps=20;A=np.diag(massdiag)+dt*dt*kf;cf=cho_factor(A);u=np.zeros(len(free));v=u.copy();reference=[]
   for _ in range(steps):v=cho_solve(cf,massdiag*v+dt*(force[free]-kf@u));u+=dt*v;reference.append((u.copy(),v.copy()))
   root=ET.Element('Node',name='root',dt=str(dt),gravity='0 0 0')

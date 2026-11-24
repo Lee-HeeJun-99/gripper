@@ -45,5 +45,39 @@ product_prototype/sofa/reinforcement_bending_contract.py --tag NEW
 product_prototype/sofa/reinforcement_bending_inventory.py --tag NEW_INVENTORY
 ```
 Inventorycurrentlyreads1380explicitly;inspectbeforeusingnewsource.
+## Follow-on actual cycles after15ccb67
+
+1382 translates BOTH entirelinear coupons bytheoriginalcorecentroid,no object
+or productionstate correction. Nativepositionerrors9.12e-15/4.59e-15m;
+velocity1.32662e-12/7.78144e-13m/s. CombinedSTRICTFAIL persists. Coordinate
+origin influences tinyroundoff;not a demonstrated generalphysicalfix. Stop
+originparametersearch,do not alter actualB3position or productiontolerance.
+
+1383preserves actual guides/freeSubset/root and addsConstantForce. Missing
+MechanicalLoad factory causesFAIL;partialstate notperformance.1384 declares
+installedplugin explicitly and completes20steps forBOTH. Same originalguide
+XML asserted exactly. No object/cable/contact/gravity,smallFEM only. Positive
+savedcorevolumes;transienttiposcillation,NOTequilibrium stiffness ratio.
+Unlikeguide-free1380,1384retains originalmass/stiffnessRayleighcontract.
+Thus do not compare those timehistories as a pureGuide-only physicalcontrast.
+
+1385 independent pullbackJ=[I,−cross(r)] fromactual12Rigidguide owners and
+originalSubsetindexPairs;root72DOFs plus24newrootDOFs retained. Mappedstatic
+referencegain1.126480537,Tip−1.02730137→−.91195661µm. Virtualworkerror2.02e-28J,
+energy-halfworkerror≤3.58e-20J. Infinitesimalworldrotation only,NOT Native
+nonlinear tangent/geometricstiffness or NativeenergyAPIqualification.
+
+1386actualstockStaticSolver ontheexactsmalllinear1380coupon,2requestedsteps,
+25Newtonmax andstrict1e-12unchanged. BothstopatactualLineSearchfailure,one
+savedoutputonly. Lastqclosetoreference(~9e-15m)BUTfreeforceresidual~1e-9N.
+BaselineNativeNewtonresidual4.83521e-9N atiteration11;lineSearchFAIL. Do not
+certifyequilibriumorNativeEIfromthis. No Solverparametersearch performed.
+New shape/grasp candidate isdeferred:thelimitedreference stiffnessgain does
+not establish a reliablemapping fromsectionI todynamiccontactdistribution.
+
+Transitiontoindependentvariable-stiffnessmeasurementingest/protocol tooling;
+actualpressure/friction/material/hardware data remainNOTMEASURED. This avoids
+repeatingNativeprecisionfailures withoutanewcausalhypothesis.
+
 Child4GiB/30s;forecast5s perNativecoupon. No newphysicalmaterialmeasurement,
 time/meshconvergence,100gHolding,Lift,jammingorhardwarePASS.

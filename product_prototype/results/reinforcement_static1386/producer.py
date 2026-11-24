@@ -1,0 +1,17 @@
+"""One bounded stockStaticSolver test of already assembled linear coupons.
+No solver/tolerance search;distinct from old372 nonlinear/geometry conditions.
+"""
+import argparse,csv,json,subprocess,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+from native_bending_coupon import guarded
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/reinforcement_bending1380';records=[]
+ for name in ('baseline','reinforced'):
+  folder=out/name;folder.mkdir();root=ET.parse(src/name/'scene.scn').getroot();root.remove(root.find('EulerImplicitSolver'));j=root.find('NativePointJournal');j.set('filename',str(folder/'states.csv'));solver=root.find('SparseLDLSolver');at=list(root).index(solver);root.insert(at,ET.Element('NewtonRaphsonSolver',name='newton',maxNbIterationsNewton='25',absoluteResidualStoppingThreshold='1e-12',relativeInitialStoppingThreshold='1e-12',printLog='1'));root.insert(at+1,ET.Element('StaticSolver',newtonSolver='@newton'));ET.ElementTree(root).write(folder/'scene.scn');cmd=['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','2','--hideProgressBar',str(folder/'scene.scn')];pre=dict(command=cmd,source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),source_sha256=sha(Path(__file__)),source_scene_sha256=sha(src/name/'scene.scn'),scene_sha256=sha(folder/'scene.scn'),forecast_s=5,child_limit_s=30,memory_GiB=4,hypothesis='Positive definite linear CST curved coupon should have exact small-load equilibrium;actual NativeStaticSolver behavior measured without tolerance change');(folder/'preflight.json').write_text(json.dumps(pre,indent=2));proc=guarded(cmd,folder/'process',30);log=''.join((folder/'process'/f).read_text() for f in ('stdout.log','stderr.log'));rows=list(csv.DictReader((folder/'states.csv').open())) if (folder/'states.csv').exists() else [];x=np.load(src/name/'reference.npz');metrics={}
+  if rows:
+   q=np.fromstring(rows[-1]['q'],sep=' ').reshape(-1,3);u=(q-x['q']).ravel();K=x['K'];F=x['F'].ravel();fixed=np.fromstring(root.find('FixedProjectiveConstraint').get('indices'),sep=' ',dtype=int);free=np.setdiff1d(np.arange(len(u)),(3*fixed[:,None]+np.arange(3)).ravel());metrics=dict(native_reference_max_q_error_m=float(abs(q-(x['q']+x['static_u'])).max()),native_in_reference_free_residual_N=float(abs((K@u-F)[free]).max()),reference_quadratic_energy_of_native_q_J=float(.5*u@K@u),half_external_work_of_native_q_J=float(.5*F@u))
+  valid=proc['exit_code']==0 and '[ERROR]'not in log and len(rows)==2 and metrics.get('native_reference_max_q_error_m',1)<=1e-12 and metrics.get('native_in_reference_free_residual_N',1)<=1e-12;records.append(dict(name=name,process=proc,outputs=len(rows),status='PASS_SMALL_LINEAR_STATIC_COUPON_ONLY' if valid else 'FAIL_STATIC_NATIVE_OR_REFERENCE',**metrics))
+ d=dict(status='PASS_MATCHED_SMALL_STATIC_ONLY' if all(r['status'].startswith('PASS') for r in records) else 'FAIL_STATIC_DIAGNOSTIC',records=records,scope='Actual stockStaticSolver and independent linear reference residual;no relaxation. Any failure preserved. No fullRigidGuide/contact/B3 convergence or hardware certification.',physical_validation='NOT QUALIFIED');(out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d))
+if __name__=='__main__':main()

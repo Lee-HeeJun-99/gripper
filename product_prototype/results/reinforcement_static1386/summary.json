@@ -1,0 +1,51 @@
+{
+  "status": "FAIL_STATIC_DIAGNOSTIC",
+  "records": [
+    {
+      "name": "baseline",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.3082072790712118,
+        "pid": 5,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "661e9359ddf1ab34babb9185081e77098aa969d78002bb57a409d8c4479f6dba",
+          "command.json": "fc005ef8a74ab5201beb6edc6eea73cc4e5a283eb7e142ac7868ca4364e93869",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "64b7ed4138ef24993d6854461de0bee107d527fbfb2b3f454a4fa6ce57d23181"
+        }
+      },
+      "outputs": 1,
+      "status": "FAIL_STATIC_NATIVE_OR_REFERENCE",
+      "native_reference_max_q_error_m": 8.784639682346551e-15,
+      "native_in_reference_free_residual_N": 1.1655831855250653e-09,
+      "reference_quadratic_energy_of_native_q_J": 5.249020568164404e-12,
+      "half_external_work_of_native_q_J": 5.249020610040289e-12
+    },
+    {
+      "name": "reinforced",
+      "process": {
+        "exit_code": -9,
+        "process_status": "nonlinear_failure",
+        "runtime_s": 0.30800380697473884,
+        "pid": 7,
+        "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+        "artifacts": {
+          "stdout.log": "b13a770754055b962f64ae8baba80d28e69edf77f2713fc6ee330f87579438f9",
+          "command.json": "d29d45016d82d720e3c5ff764b2457ba6a1a9ceceb9b44a8bb2d86833608ede7",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "228f44a7df8252b540808d9aaf75a1ac7672b20113c7728271e71449b411ecc8"
+        }
+      },
+      "outputs": 1,
+      "status": "FAIL_STATIC_NATIVE_OR_REFERENCE",
+      "native_reference_max_q_error_m": 6.144390551909851e-15,
+      "native_in_reference_free_residual_N": 1.0243148551580816e-09,
+      "reference_quadratic_energy_of_native_q_J": 4.639782920929524e-12,
+      "half_external_work_of_native_q_J": 4.639782933595419e-12
+    }
+  ],
+  "scope": "Actual stockStaticSolver and independent linear reference residual;no relaxation. Any failure preserved. No fullRigidGuide/contact/B3 convergence or hardware certification.",
+  "physical_validation": "NOT QUALIFIED"
+}

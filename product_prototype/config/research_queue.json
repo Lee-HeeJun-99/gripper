@@ -2,6 +2,23 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
+      "id": "variable_stiffness_measurement_ingest",
+      "priority": 2,
+      "status": "READY",
+      "goal": "Implement fail-closed layer-coupon measurement importer before real pressure/friction calibration",
+      "hypothesis": "Recorded paired load-deflection and pressure histories can support measured coupon compliance only when calibration and units are explicit",
+      "scope": "Data tooling and synthetic parser tests only;hardware measurements remain NOT MEASURED",
+      "prerequisites": [],
+      "evidence": ["reinforcement_static1386", "reinforcement_mapped_reference1385"],
+      "expected_outputs": ["validated CSV/metadata schema and importer with no fabricated measured data"],
+      "validation_criteria": ["reject missing calibration,nonfinite values,mixed units,insufficient paired samples;do not infer jamming from modulus settings"],
+      "failure_criteria": ["unsafe acceptance of uncalibrated data or unmarked synthetic evidence"],
+      "failure_alternatives": ["record equipment/data BLOCKED and return to independent contact inverse-design analysis"],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1
+    },
+    {
       "id": "reinforcement_discrete_bending_contract",
       "priority": 1,
       "status": "FAIL",
@@ -11,7 +28,7 @@
       "scope": "Matched small-load fixed-root reference;not Grasp or measured material validation",
       "prerequisites": ["footprint_preserving_proximal_reinforcement"],
       "prerequisite_states": {"footprint_preserving_proximal_reinforcement": ["REJECTED"]},
-      "evidence": ["proximal_reinforcement_compare1376", "proximal_reinforcement_material1378"],
+      "evidence": ["proximal_reinforcement_compare1376", "proximal_reinforcement_material1378", "reinforcement_bending1380", "reinforcement_mapped1384", "reinforcement_mapped_reference1385", "reinforcement_static1386"],
       "expected_outputs": ["same-boundary original/reinforced discrete stiffness and small-load response with Native comparison"],
       "validation_criteria": ["same load/root/material;no force or modulus fitting;positive element quality;no sectionI-only dynamic claim"],
       "failure_alternatives": ["independent variable-stiffness coupon with explicit pressure/material assumptions"],

@@ -6,6 +6,7 @@
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/component/constraint/lagrangian/model/UnilateralLagrangianConstraint.h>
 #include <sofa/simulation/events/BuildConstraintSystemEndEvent.h>
+#include <sofa/simulation/CollisionEndEvent.h>
 #include <fstream>
 #include <iomanip>
 class ReGripContactProvenance:public sofa::core::objectmodel::BaseObject {
@@ -16,8 +17,9 @@ public:
  sofa::core::objectmodel::SingleLink<ReGripContactProvenance,sofa::core::collision::NarrowPhaseDetection,Link::FLAG_STOREPATH|Link::FLAG_STRONGLINK>narrow;
  sofa::core::objectmodel::Data<std::string>filename;
  sofa::core::objectmodel::Data<double>startTime,endTime;
+ sofa::core::objectmodel::Data<bool>atCollisionEnd;
  std::ofstream features,children;
- ReGripContactProvenance():narrow(initLink("narrow","Read-only actual detection outputs")),filename(initData(&filename,std::string(),"filename","Unique output prefix")),startTime(initData(&startTime,0.,"startTime","Read-only sampling window start")),endTime(initData(&endTime,.00121,"endTime","Read-only sampling window end")){f_listening.setValue(true);}
+ ReGripContactProvenance():narrow(initLink("narrow","Read-only actual detection outputs")),filename(initData(&filename,std::string(),"filename","Unique output prefix")),startTime(initData(&startTime,0.,"startTime","Read-only sampling window start")),endTime(initData(&endTime,.00121,"endTime","Read-only sampling window end")),atCollisionEnd(initData(&atCollisionEnd,false,"atCollisionEnd","Read detector ONLY before constraint assembly;no child Jacobian available at this phase")){f_listening.setValue(true);}
  void init()override{
   BaseObject::init();if(!narrow||std::ifstream(filename.getValue()+".features.csv"))throw std::runtime_error("unique linked provenance output required");
   if(startTime.getValue()<0||endTime.getValue()<startTime.getValue()||endTime.getValue()-startTime.getValue()>.005)throw std::runtime_error("bounded sampling window <=5ms required");
@@ -26,7 +28,8 @@ public:
   children<<"previous_time_s,constraint,state,side,row,column,point,J\n";
  }
  void handleEvent(sofa::core::objectmodel::Event*e)override{
-  if(!dynamic_cast<sofa::simulation::BuildConstraintSystemEndEvent*>(e)||getContext()->getTime()<startTime.getValue()||getContext()->getTime()>endTime.getValue())return;
+  const bool collision=atCollisionEnd.getValue();
+  if((collision?!dynamic_cast<sofa::simulation::CollisionEndEvent*>(e):!dynamic_cast<sofa::simulation::BuildConstraintSystemEndEvent*>(e))||getContext()->getTime()<startTime.getValue()||getContext()->getTime()>endTime.getValue())return;
   double t=getContext()->getTime();
   for(const auto&pair:narrow->getDetectionOutputs()){
    if(!pair.second)continue;
@@ -34,6 +37,7 @@ public:
    if(!out)throw std::runtime_error("unsupported public detector vector");
    unsigned k=0;for(const auto&c:*out)features<<t<<",\""<<pair.first.first->getPathName()<<"\",\""<<pair.first.second->getPathName()<<"\","<<k++<<','<<c.elem.first.getIndex()<<','<<c.elem.second.getIndex()<<','<<c.id<<",\""<<c.point[0]<<"\",\""<<c.point[1]<<"\",\""<<c.normal<<"\","<<c.value<<'\n';
   }
+  if(collision){features.flush();return;} // No access to not-yet-built constraint rows.
   for(auto*c:getContext()->getObjects<Constraint>(sofa::core::objectmodel::BaseContext::SearchDown)){
    unsigned side=0;for(auto*base:{c->getMechModel1(),c->getMechModel2()}){
     auto*state=dynamic_cast<sofa::core::behavior::MechanicalState<sofa::defaulttype::Vec3Types>*>(base);

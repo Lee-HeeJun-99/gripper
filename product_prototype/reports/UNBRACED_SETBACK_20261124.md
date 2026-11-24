@@ -36,8 +36,23 @@ surface gap1.97748mm is not a continuous initial/swept test. Replayed clearance
 is not changed dynamics or Holding. Same-finger/skin/support joints, real
 finite-wire bending/sliding and manufacture remain unqualified.
 
-Actual next task1684 .6s Native pilot RUNNING; inspect completion before rerun.
-No full2s until fresh positive-FEM/source-contact/runtime gates. This tests
+1684 completed.6s in82.170s, positive saved FEM(min.989877);1685Guide rows0,
+1686actualSkin responses224outputs, no negative Skin/Sphere surface gaps.
+1688independent actual72hardware mesh screen:414720pairframes,0uncleared;
+minimum hardware/Object gap1.66998mm. This is a pilot,NOT fullHolding.
+
+Full2s forecast from.6s with2x cost safety exceeded420s, so actual1.2s prefix
+1687 was used instead (forecast328.7s). It completed114.621s/480outputs with
+positive FEM(min.989515), but1689found192nonzero Guide rows, NOW atEyelet4.
+1691first response.730s, last.9425s.1690actual72hardware screen finds30pairframes
+inside the.2mm buffer (not proven solid overlap). Candidate REJECTED for the
+predeclared zero-bracing expansion gate. Full2s was NOT run;no extra setback scan.
+Old1586replay clearance did NOT transfer to changed mechanics. Observer/test
+contracts3PASS; initial test incorrectly guessed DiagonalMass, corrected to
+actualUniformMass before passing—no simulation input change.
+
+Actual next independent task: supplier-dimensioned thin-wall metal capillary
+fit, not another chamfer/offset or collision removal. This tests
 ideal NativeCableConstraint mechanical exploration only, not a fix for1675
 finite-wire surface crossing or1678normal refresh. Those failures remain.
 

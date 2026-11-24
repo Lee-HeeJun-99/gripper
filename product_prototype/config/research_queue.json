@@ -35,7 +35,8 @@
     {
       "id": "terminal_setback_dynamic",
       "priority": 0,
-      "status": "RUNNING",
+      "status": "REJECTED",
+      "evidence": ["terminal_setback_pilot1684", "setback_pairs1685", "setback_skin1686", "terminal_setback_prefix1687", "setback_clearance1688", "setback_prefix_pairs1689", "setback_prefix_clearance1690", "setback_prefix_events1691"],
       "prerequisites": ["terminal_setback_geometry"],
       "scope": "Actual new6terminal ring/cablepoint/support geometry, .6s Native pilot before any full100g trial; ideal CableConstraint not finite wire validation",
       "hypothesis": "Axial physical setback may remove endrim contacts without changing force, ring dimensions or solver",
@@ -43,6 +44,18 @@
       "failure_criteria": ["Bracing or invalid FEM blocks full trial; no offset scan"],
       "maximum_execution_cost": "420s/4GiB per child; full trial requires pilot forecast<420s",
       "failure_alternatives": ["Read actual new contact provenance, reject family if same cause"]
+    },
+    {
+      "id": "thinwall_capillary_fit",
+      "priority": 0,
+      "status": "RUNNING",
+      "prerequisites": [],
+      "scope": "Manufacturer-dimensioned16RW finite metal ferrule, not arbitrary chamfer/offset scan or calibrated material strength",
+      "hypothesis": "Separate physical technology replaces bulky ring with nominal1.651mm OD/1.1938mm ID tube; unchanged centre/path, real wall and support/bore fit explicitly screened",
+      "validation_criteria": ["Primary dimensional source, actual finite closed mesh, bore/support interference and bond overlap check; no Native expansion if geometric fit fails"],
+      "failure_criteria": ["Occluded bore, no ring/support connection, or unqualified joint treated as hardware PASS"],
+      "maximum_execution_cost": "420s/4GiB bounded analysis; small Native only after meaningful fit/clearance",
+      "failure_alternatives": ["Document concrete missing joint/material data, not tube size sweep"]
     },
     {
       "id": "eyelet_bore_and_bend_geometry",

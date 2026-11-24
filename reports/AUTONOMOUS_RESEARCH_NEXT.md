@@ -1,3 +1,12 @@
+## Current1595 — actual chamfer fulltrial, not another offset scan
+
+Full dispatch1586 done;1588 object-onlyfunctional100gPASS but1589GuideGuide
+2073holdrows+solvercap,notunbraced/physicalPASS.1590allactualhardwarepoints
+outerrim =>ONE0.3mmouterchamferpilot1591:84nonzerorows vs639,notzero.
+Fullchamfer_eyelet_holding1594RUNNING;inspectcompletionthen originalgoal
+andGuidepairaudits. All3Root/6Origins API1595PASS<=1e-12,notobjectLift.
+Do not promote couponAPI,repeatability orobject-onlyHolding tophysicalPASS.
+
 ## Current1586 — verify actual finite-hardware Holding before promotion
 
 Inspect dispatch_finite_holding1586 completion first; then actual100g goal and

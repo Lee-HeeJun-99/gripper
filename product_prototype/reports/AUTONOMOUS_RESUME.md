@@ -1,5 +1,12 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1595: chamferpilot1591 completed62.208s/positiveFEM;1592actualhardware
+nonzero rows84 vs639 reference, not eliminated.1593actualSkin response and
+positive physical gaps. Fullchamfer_eyelet_holding1594 RUNNING; inspect process
+and summary before anyrerun. Then originalgoal+Guideholdbracingaudits.
+Independent all3Root/6Origins fixture1595 PASS<=1e-12, not100gLift.
+No additional chamfersize scan; classify newcontacts if fullcandidatefails.
+
 CURRENT1591: full dispatch finite1586 completed117.577s/positiveFEM,1588
 object-only100g exploratoryPASS (.00204mmslip/4.14978mm/s/SkinFz.981004N,
 GuideRailSupportObject0). But1589 Guide–Guide2073holdrows and solver1001/1000:

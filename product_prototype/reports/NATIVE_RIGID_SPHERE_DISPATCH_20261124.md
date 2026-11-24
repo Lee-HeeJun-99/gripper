@@ -98,3 +98,19 @@ still required. No arbitrary chamfer scan and no fabrication approval.
 
 Next actual run: `chamfer_eyelet_pilot1591`, then independent contact/Guide-pair
 audit. Full Holding only if pilot valid and forecast below420s.
+
+## Follow-up actually started,1591–1595
+
+1591 .6s pilot completed62.208s, positive saved FEM min.989646.
+1592 nonzero Guide–Guide rows84 vs639 in unchanged .6s reference (not contact
+area).1593 actual Skin response224outputs, no saved negative physical gap,
+Guide–Object force0. Reduction does not establish absence of bracing.
+Full2s chamfer_eyelet_holding1594 started after these gates.
+
+Independent1595 allthree Root/sixCableOrigin fixture on currentfiniteScene:
+100micrometre/10ms actualRoot maxpositionerror4.06576e-19m, interiorvelocity
+error0, actualOrigin error1.76183e-19m. Actual freeobject and ALLfinitehardware
+collisions retained. No objectstate modification. ComponentAPI PASS only,
+not objectLift. Source finite_root_origin_fixture.py reuses frozen1075plugin
+SHA9ea5839e95850bbbfbb58c3b621873870d6915d2a43099950d79a36a944088bb.
+Terminal endpoint acceleration/work not certified; no totalenergy claim.

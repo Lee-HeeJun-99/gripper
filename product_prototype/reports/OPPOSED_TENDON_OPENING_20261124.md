@@ -75,5 +75,25 @@ driveINPUTONLY,not forcedSkinstate. Separatefullruns,no checkpoint transfer.
 Do not initialize sphere inmanufacturedrestoverlap orlabelvirtualsphere as
 contact. Delayedclosing/fourcableintegration remains aseparatehardware gate.
 
+## Unload/reference-return continuation1401–1404
+
+Afterb11afdd,actually executed NativeC2openingholdtill.6s,release.6–.9s,
+observeuntil1.2s.1401actual480outputs4.879s,mincorevolume.989995. Separate
+zero-force samegravity/reference1402pilot.338s,1403full480outputs4.715s,
+mincorevolume.999967. No statecorrection orcheckpointtransfer.1402preflight
+inheritedinputtext says1.5Nbutexplicitforce_N_per_cable=0,zero_force=trueand
+actualScene/journals0 authoritative;producertext correctedbefore1403. Preserved
+originalmetadata,not retroactivelyedited. Zero-force isreferencecondition,
+NOT a fitted material/forcechange to passgrasp.
+
+1404first240rows match1398 EXACT in4film/guide/Skin/Railjournals. This is
+same-dtreproducibility,NOTtimeconvergence. Afterrelease121outputsactualCable
+impulse0Ns;floatC2commandresidual≤1.67e-15N. At1.2s maxq−same-time-gravity
+reference9.48957e-11m,maxv difference5.99516e-8m/s,maxnodespeed6.62278e-8m/s.
+Relative displacementdifference6.63076e-7,withoutartificialfloor. Measured
+limitedno-objectelasticreturn,NOT materialfatigue/fullRecovery/hardwarePASS.
+No objectinsertion/contact/Holding performed. Nextmeasure actualelement
+strain/stretches;positivevolumesalone doNOT establishmaterialvalidity.
+
 All commands/source/binary/scene hashes/limits inpreflight,Raw preserved;
 actualforcework/rootreaction/wholeenergy NOTMEASURED. SDKunchanged,nopush.

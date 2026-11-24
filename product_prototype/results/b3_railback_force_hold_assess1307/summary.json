@@ -1,0 +1,111 @@
+{
+  "status": "FAIL_EXPLORATORY_HOLD",
+  "tests": {
+    "slip": false,
+    "speed": false,
+    "clearance": false,
+    "support": false,
+    "partition": true,
+    "valid_saved_elements": true
+  },
+  "case": "b3_railback_force_hold1306",
+  "holding_protocol": {
+    "scope": "EXPLORATORY FUNCTIONAL TEST; Native contact time/mesh gates FAIL; not product qualification",
+    "mass_kg": 0.1,
+    "radius_mm": 30.0,
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "window_s": [
+      1.6,
+      2.0
+    ],
+    "reference_s": 1.0,
+    "max_vertical_slip_mm": 2.0,
+    "max_speed_mm_s": 5.0,
+    "minimum_support_surface_gap_mm": 5.0,
+    "maximum_support_resultant_N": 1e-05,
+    "friction_assumed": 0.3,
+    "contact_rows_required": true
+  },
+  "holding_protocol_source_sha256": "9432fe6ed32cb5b153270006a5fec75fc2dc77bc076b3b599bd7a735e7559e95",
+  "protocol_note": "Original user100g protocol,not retroactively fitted thresholds;Native row source and physics gates unchanged",
+  "hold_outputs": 161,
+  "slip_mm": 40.395970350723395,
+  "max_speed_mm_s": 35.75579714759053,
+  "minimum_support_surface_gap_mm": 0.19992896314591224,
+  "maximum_support_force_N": 1.697302541505482,
+  "response_partition_max_error_Ns_Nms": 8.673617379884035e-19,
+  "forces": {
+    "skin": {
+      "mean_force_N": [
+        -0.1765730680066022,
+        -0.27370298065334725,
+        -0.3995018711982585
+      ],
+      "maximum_resultant_force_N": 0.7882204454711245
+    },
+    "rail": {
+      "mean_force_N": [
+        0.12075156752335005,
+        0.26975850461729817,
+        -0.18157582381684248
+      ],
+      "maximum_resultant_force_N": 0.7104210786979517
+    },
+    "guide": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_force_N": 0.0
+    },
+    "support": {
+      "mean_force_N": [
+        0.06192927340843189,
+        0.0035368208263109576,
+        1.5612246520318949
+      ],
+      "maximum_resultant_force_N": 1.697302541505482
+    },
+    "other": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_force_N": 0.0
+    }
+  },
+  "max_hold_solver_iterations": 1001,
+  "source_quality": [
+    {
+      "minimum_saved_volume_ratio": 0.93985277686005,
+      "first_inversion_time_s": null,
+      "finite": true
+    },
+    {
+      "minimum_saved_volume_ratio": 0.9375613186207666,
+      "first_inversion_time_s": null,
+      "finite": true
+    },
+    {
+      "minimum_saved_volume_ratio": 0.9396258455552742,
+      "first_inversion_time_s": null,
+      "finite": true
+    }
+  ],
+  "physical_validation": "NOT QUALIFIED",
+  "hardware_joint": "IDEAL_ASSUMPTION",
+  "whole_energy": null,
+  "input_hashes": {
+    "scene.scn": "890442fac0f2df4943cea6cc32f9faae9db9ea2551be7dad8cfc9eccc9ef2c9c",
+    "object.csv": "349bce302d99e618bac6a467a2c67fa60182972f9a07029ed252feb451ade768",
+    "support.csv": "161589f1748330381303a48bd19fbe45b6522ed06e38d4887c73f279e60e665f",
+    "response_rows.csv": "23c170c96de7bc55856114dc7681fb813b91afdf31eef7ec8ff9e41f24d9f57d",
+    "summary.json": "b74b7bdcee39393dc8e254288beda0c69b94475081834558e5e243f16f2845e5"
+  }
+}

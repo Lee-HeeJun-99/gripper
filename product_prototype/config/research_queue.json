@@ -637,14 +637,15 @@
     {
       "id": "b3_force2_sensitivity",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "scope": "2N vs1.5N same rail-back model,input sensitivity ONLY,not structural efficiency or hardware rating",
       "goal": "Test early measured force deficit vs later loss of supporting geometry",
       "prerequisites": [
         "b3_railback_force_diagnosis"
       ],
       "evidence": [
-        "b3_force_phase1305"
+        "b3_force_phase1305",
+        "b3_railback_force_hold_assess1307"
       ],
       "expected_outputs": [
         "b3_railback_force_hold1306/summary.json",
@@ -657,6 +658,73 @@
       ],
       "failure_alternatives": [
         "retire tension-only branch;analyze actual normal geometry"
+      ],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "b3_sustained_contact_direction",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "Actual active normal direction history and accepted Skin centreline proxy ONLY;no causal or grasp qualification",
+      "goal": "Separate sustained supporting direction from initial bending amplitude",
+      "prerequisites": [
+        "b3_force2_sensitivity"
+      ],
+      "prerequisite_states": {
+        "b3_force2_sensitivity": [
+          "PASS",
+          "FAIL"
+        ]
+      },
+      "evidence": [
+        "b3_contact_direction_history1309",
+        "b3_skin_centerline1312"
+      ],
+      "expected_outputs": [
+        "actual direction histories",
+        "accepted centreline proxies"
+      ],
+      "validation_criteria": [
+        "Native response provenance",
+        "no contact area inference"
+      ],
+      "failure_alternatives": [
+        "bounded read-only provenance observer"
+      ],
+      "successors": [
+        "b3_active_point_provenance"
+      ],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "b3_active_point_provenance",
+      "priority": 1,
+      "status": "READY",
+      "scope": "Current B3 detector journal lacks element/normalIDs;extend existing bounded read-only observer,not Solver",
+      "goal": "Uniquely attribute active supporting and downward Skin rows to accepted material/contact geometry before new placement candidate",
+      "prerequisites": [
+        "b3_sustained_contact_direction"
+      ],
+      "evidence": [
+        "b3_contact_direction_history1309"
+      ],
+      "expected_outputs": [
+        "bounded source-consistent observer",
+        "actualpair/point/row join and strict prefix audit"
+      ],
+      "validation_criteria": [
+        "no assumed detector order",
+        "strict1e-12q/v/impulse purity",
+        "same prior clock semantics"
+      ],
+      "failure_alternatives": [
+        "conditional geometry envelope without force attribution",
+        "material/pressure coupon measurement prerequisites"
       ],
       "successors": [],
       "impact": 1,

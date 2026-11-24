@@ -1,3 +1,13 @@
+## Latest1569 — installed RigidSphere contact path, not Vec3 shortcut
+
+1567isolatesLocalRigidSphereMeshNOTFOUNDwithoutFEM;Vec3centreerasesactual
+angularJandisREJECTEDasphysicalfix.1568NewProximityRigid3respondswithangularJ.
+Freshfinite_hardware_new1569 .6sactuallyRUNNING,onlyintersectionclasschanged,
+allfinitehardwareandoriginalfreeRigid3objectretained. Inspectsummaryfirst,
+thenactualSkintrianglegap/responseandGuidebracingauditsbeforelongertrial.
+No numerical/hardware/graspqualificationfromcoupon. AUTONOMOUS_RESUMEtop.
+OldRUNNINGentriesbelowarehistorical,notcurrentprocesses.
+
 ## Active after1533 — tetra handedness isolated;new actual100g pilot
 
 No100gPASSyet.1513fullslowC2FAIL1515speed26.827mm/s despite.181mmslipand

@@ -1,5 +1,17 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1569 supersedesbelow.1567matchedtemplateNativecoupon finds actual
+LocalRigidSphere–meshintersectorNOTFOUND,notFEMdefect;Vec3centreworksBUT
+angularJ/impulse0 =>forbiddenphysicalshortcut.1568installedNewRigidSphere
+retainsactualresponse/angularJ. Source/reportRIGID_SPHERE_CONTACT_TEMPLATE.
+Actualfinite_hardware_new1569 .6sRUNNING,onlyMin->NewProximitytagchange
+in1556initialScene,allfiniteEyelet/SupportcollisionmodelsandfreeRigid3object
+retained. Inspectsummary/processBEFOREcontinuing. NextactualSkinGapcontract
+andGuidepairauditrequired;no100gpromotionfromcoupon.3newsoftwaretestsPASS.
+Ifpilotvalid/cost<420: finite_hardware_new_contract.py --tag UNIQUE
+--duration 1.2 --pilot finite_hardware_new1569;thenfull2sONLYafteractualgates.
+OriginalRaw,strict1528/time/meshFAILs andGuidebracingfailuresunchanged.
+
 CURRENT1566 supersedesALLbelow. NO child isrunning. Latestcommits7c68364,
 5dd8c38,6d91168;gitlogFINALsaveauthoritative. Unbraced100gstillUNQUALIFIED.
 1556finiteEyelet+Supportfree3 .6sTIMEDOUT420.015s at.44s/176each;savedFEM

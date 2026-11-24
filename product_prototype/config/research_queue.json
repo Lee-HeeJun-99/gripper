@@ -210,14 +210,27 @@
     {
       "id": "mapped_skin_contact_contract",
       "priority": 1,
-      "status": "READY",
+      "status": "PASS",
       "prerequisites": [],
       "hypothesis": "LocalMinDistance rejectsactualFEMSkincontacts butsamefrozenfacet/fullsurface respondswhenrigidmapped. Isolate deformable/multimapping/motion path;normalcomputation andfacetwinding aloneNOTconfirmedcauses",
-      "scope": "Minimal installedNative contact/mapping contrast,notanotherlargegrasp/dt/force/filter-angle scan",
-      "evidence": ["local_skin_contact1562", "normals_skin_contact1564", "local_skin_triangle1565", "local_fullskin1566"],
+      "scope": "1567minimalcontrastisolatesUNSUPPORTEDLocalRigidSpheremesh intersector,notFEM/Mappinggeneraldefect;Vec3centre erasesangularJ,NOTallowedfix",
+      "evidence": ["local_skin_contact1562", "normals_skin_contact1564", "local_skin_triangle1565", "local_fullskin1566", "rigid_sphere_contract1567", "new_rigid_sphere_contract1568"],
       "validation_criteria": ["Actualgeometrygap andresponsebothrequired;retainallfinitehardwarecollisionmodelsforanywholegrasp;noLocalfamilyHoldinguntilmissingSkincontactresolved;do notpromotefastcompletion"],
       "failure_alternatives": ["Newindependentphysicalsupportkinematicscandidate orfinitecollisionfeatureownershipcontract with explicitmatchedgeometry"],
-      "successors": ["finite_hardware_bracing_control", "exploratory_100g_lift"]
+      "successors": ["new_native_finite_hardware_grasp"]
+    },
+    {
+      "id": "new_native_finite_hardware_grasp",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["mapped_skin_contact_contract"],
+      "scope": "ActualfreshNativeNewProximity withALLfinitehardwareandoriginalfreeRigid3sphere;notVec3shortcut orcouponscopepromotion",
+      "hypothesis": "InstalledNewRigidSphereMesh1568retainsresponse/angularJ;singleintersectionchange mayenablefinitehardwaregraspwithoutLocalmissingSkin orMinredundantcontactcost",
+      "evidence": ["new_rigid_sphere_contract1568"],
+      "expected_outputs": ["actual.6spilot/positiveFEM;Skintriangle-gap/responsecrosscheck;hardwarebracingrows;thenbounded2soriginal100ggoalONLYifpreconditionsmet"],
+      "validation_criteria": ["ALLhardwarecollisionmodelsandRigid3objectretained;nativecost<420;noinversion;actualSkinresponse;original100ggoal plus nohardwarebracing beforequalification"],
+      "failure_alternatives": ["ActualfiniteGuidegeometry/forceprovenance diagnosis,notfiltercone/dt/forceorVec3torquesuppression"],
+      "successors": ["exploratory_100g_lift"]
     },
     {
       "id": "native_finite_beam_component_coupon",

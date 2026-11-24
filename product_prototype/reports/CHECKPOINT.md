@@ -1,3 +1,12 @@
+## Latest1569 — missing RigidSphere contact capability isolated
+
+1567actualmatchedcoupon:LocalRigidSphereMeshNOTFOUND;Vec3centrehaszero
+angularJ,soNOTphysicalfix.1568installedNewProximityRigidSpherehasactual
+responseANDangularJ. Actualnewfinitehardware.6spilot1569RUNNING,allfinite
+Guide/SupportcollisionsandoriginalRigid3objectretained. SeeAUTONOMOUS_RESUME
+top andRIGID_SPHERE_CONTACT_TEMPLATE_20261124.md. Historicalentriesbelow
+arepreserved,NOTcurrentRUNNINGjobs. Nextgaps/response/Guidebracingaudit.
+
 ## Active through1529 — actual Native tetra handedness isolated
 
 SeeNATIVE_TET_HANDEDNESS_20261124.md andAUTONOMOUS_RESUMEtop.1513samegeometry

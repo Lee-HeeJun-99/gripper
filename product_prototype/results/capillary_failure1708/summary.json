@@ -1,0 +1,98 @@
+{
+  "status": "ACTUAL_SPEED_AND_ROW_TORQUE_FAILURE_INVENTORY_ONLY",
+  "metrics": [
+    {
+      "case": "dispatch_finite_holding1586",
+      "peak_speed_time_s": 1.8424999999999718,
+      "velocity_at_peak_mm_s": [
+        -4.149169427741869,
+        0.07041214588816531,
+        -0.008245380385293183
+      ],
+      "maximum_speed_mm_s": 4.149775029648482,
+      "maximum_horizontal_speed_mm_s": 4.14976683807613,
+      "maximum_abs_vertical_speed_mm_s": 0.16606793160462222,
+      "maximum_angular_speed_rad_s": 0.1467224005387014,
+      "maximum_single_normal_row_torque_Nm": 3.5327457123149365e-06,
+      "hold_actual_normal_impulse_sum_Ns_Nms": [
+        0.000452319751324585,
+        2.2429193917499705e-05,
+        0.35991615761045426,
+        3.313650666343734e-07,
+        3.183761421195797e-07,
+        7.204660457018009e-09
+      ],
+      "hold_actual_tangent_impulse_sum_Ns_Nms": [
+        -0.00011246958044554744,
+        9.179742110859961e-06,
+        0.034938057782607355,
+        -4.797699259867376e-07,
+        3.2617426106464274e-06,
+        6.106720847930001e-07
+      ],
+      "normal_row_object_angular_midpoint_work_J": 1.947803880162348e-07,
+      "tangent_row_object_angular_midpoint_work_J": 1.4701833000168266e-08,
+      "input_hashes": {
+        "scene.scn": "86712c75d6d03b9a0406b6c94c0ddecd7a6892db09a5fd03de7444fce9ee5dc5",
+        "object.csv": "741b77ccddbe23eb98742fecf805f1ad5d77f02bb599eab78fbc26a75a77f840",
+        "response_rows.csv": "e349613fae5c35a0157794f7dc84a7e968d3c2fc4c037d5205aa32f3fffd5cc6"
+      }
+    },
+    {
+      "case": "capillary_hold1700",
+      "peak_speed_time_s": 1.7124999999999746,
+      "velocity_at_peak_mm_s": [
+        7.628298299501249,
+        -0.19975095786761882,
+        24.427133245673822
+      ],
+      "maximum_speed_mm_s": 25.591320286246393,
+      "maximum_horizontal_speed_mm_s": 20.749516169031452,
+      "maximum_abs_vertical_speed_mm_s": 24.864716697574895,
+      "maximum_angular_speed_rad_s": 1.3069412943813539,
+      "maximum_single_normal_row_torque_Nm": 3.5607797558931976e-05,
+      "hold_actual_normal_impulse_sum_Ns_Nms": [
+        -0.00353211375674903,
+        -5.1166491464382216e-05,
+        0.38304925670539647,
+        -1.0127069259103942e-07,
+        -1.4310034934990055e-05,
+        -2.535332635525668e-07
+      ],
+      "hold_actual_tangent_impulse_sum_Ns_Nms": [
+        0.0006491047686244526,
+        0.0002821408340903664,
+        0.013166946494663186,
+        -1.772243429644302e-06,
+        -9.676695130512166e-07,
+        -6.872116031499914e-06
+      ],
+      "normal_row_object_angular_midpoint_work_J": 1.3216131359773641e-05,
+      "tangent_row_object_angular_midpoint_work_J": -1.2504451397069054e-05,
+      "input_hashes": {
+        "scene.scn": "4d893a9e5706e10f9259bd0d9655eeec82d6632691527b9542db4e15d146fdc8",
+        "object.csv": "1122db03d0196a3b6431ea17ba6014afee892d08763f0563a824b229150cce64",
+        "response_rows.csv": "6d567356e0ab7006269787b59c45217880c29dafce4cad719b89f1612b1ae735"
+      }
+    }
+  ],
+  "current_complete_Coulomb_contract": {
+    "case": "capillary_hold1700",
+    "complete_hold_skin_contact_groups": 10792,
+    "active_groups": 495,
+    "negative_normal_multipliers": 0,
+    "maximum_Coulomb_cone_excess_Ns": 2.710505431213761e-20,
+    "maximum_normal_row_object_torque_Nm": 3.5607797558931976e-05,
+    "friction_assumed": 0.3,
+    "input_hashes": {
+      "scene.scn": "4d893a9e5706e10f9259bd0d9655eeec82d6632691527b9542db4e15d146fdc8",
+      "response_rows.csv": "6d567356e0ab7006269787b59c45217880c29dafce4cad719b89f1612b1ae735",
+      "config.json": "e9fc98ba036617878c16c0e1cada2eb251c51c2fcf7f10b60dcf2f7d4e5eccf4"
+    },
+    "scope": "Actual complete3row multipliers. Sphere normal torque should vanish for radial contact. This is NOT full complementarity/W-matrix residual,contactwork,stability or time/mesh qualification. Tangential object power alone cannot be called frictional dissipation."
+  },
+  "old_row_audit_sha256": "d3f6e5ce37ee577e099f1dc3ce117cc00b7153fb5a0998e8d724a0ac74a00373",
+  "scope": "Normal rows of a radial sphere should have zero object torque. Nonzero measured angular work is object kinetic bookkeeping, NOT global stored energy/friction loss or a sole cause proof. Scalar gravity support near0.981N does not imply dynamic stability. Existing known frozen-normal/free-rotation defect remains; no arbitrary damping/force/mu/solver remedy inferred.",
+  "source_sha256": "9dae543abbc0f1c3e0533f71a962f9cee31e0b99645bcdfa06127d75a5d30259",
+  "dependency_sha256": "5e129a093fb23c3e3089febf0acef1484499ed7bda611fb87c809d0d37e0d724"
+}

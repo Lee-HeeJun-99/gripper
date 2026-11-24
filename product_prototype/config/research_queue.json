@@ -72,7 +72,8 @@
     {
       "id": "capillary_native_exploration",
       "priority": 0,
-      "status": "RUNNING",
+      "status": "FAIL",
+      "evidence": ["capillary_pilot1695", "capillary_hold1700", "capillary_goal1703", "capillary_internal1704", "capillary_clearance1705", "capillary_wire1706"],
       "prerequisites": ["thinwall_support_bore_relief"],
       "scope": "Actual new thinwall finite guide + bored-support geometry, inherited uncalibrated rigid mass/inertia and ideal CableConstraint; not finite-wire or hardware qualification",
       "hypothesis": "Named manufactured small-envelope hardware may avoid bracing without changing force/path/solver",
@@ -80,6 +81,58 @@
       "failure_criteria": ["Any pilot bracing or invalid elements prevents expansion; do not scan tube sizes"],
       "maximum_execution_cost": "420s/4GiB per child,2x measured-pilot forecast before expansion",
       "failure_alternatives": ["Classify actual contact migration or geometric failure and stop this family"]
+    },
+    {
+      "id": "new_capillary_root_origin_api",
+      "priority": 1,
+      "status": "PASS",
+      "prerequisites": [],
+      "goal": "Independently validate fixture on new hardware before any lift",
+      "scope": "Actual4step100um/10ms Root/6origin position and interior velocity API only;NOT Lift",
+      "evidence": ["capillary_root_origin1701"],
+      "validation_criteria": ["all input errors<=1e-12"],
+      "successors": ["100g_holding_lift"]
+    },
+    {
+      "id": "native_sliding_joint_scope",
+      "priority": 1,
+      "status": "BLOCKED",
+      "prerequisites": [],
+      "hypothesis": "Documented stock slider might represent an alternative captured guide, but must not replace loose finite-bore contact silently",
+      "scope": "New point/segment bilateral-joint API audit; no matching radius/clearance/friction/segment transfer contract",
+      "evidence": ["sliding_api_scope1702"],
+      "validation_criteria": ["Actual physical equivalent mechanical capture/clearance law before integration, not a cosmetic Native slider PASS"],
+      "failure_alternatives": ["Retain finite-wire contact BLOCKED; no SDK/custom contact solver"]
+    },
+    {
+      "id": "sector_route_actual_pose_contract",
+      "priority": 1,
+      "status": "PASS",
+      "prerequisites": [],
+      "scope": "Necessary fixed-pose outward cable/finite-ring sector bounds ONLY; not prescribed new dynamics or general impossibility proof",
+      "hypothesis": "Separate finite-sector geometry from wire/object clearance before proposing more offsets",
+      "evidence": ["sector_route1707"],
+      "validation_criteria": ["Mapped actual Guide centres<=1e-12; actual finite-face support function and sphere outward branch; no false dynamic success transfer"]
+    },
+    {
+      "id": "capillary_speed_torque_diagnosis",
+      "priority": 1,
+      "status": "PASS",
+      "prerequisites": [],
+      "scope": "Actual failure diagnosis only, not physical/model PASS",
+      "hypothesis": "Mean weight support need not imply stable speed; distinguish axis-specific velocity and Native normal-row angular work",
+      "evidence": ["capillary_failure1708"],
+      "validation_criteria": ["Use real unsmoothed q/v and source-resolved rows; no global energy or sole-cause claim"]
+    },
+    {
+      "id": "accepted_geometry_buffer_bracing_classification",
+      "priority": 1,
+      "status": "PASS",
+      "prerequisites": [],
+      "scope": "Separate actual saved positive solid gap from real Native buffer-mediated support; not unbraced or swept-contact PASS",
+      "hypothesis": "Finite solids can be separated while unchanged0.2mm contact policy still transmits internal impulses",
+      "evidence": ["bracing_buffer1710"],
+      "validation_criteria": ["Crosslink actual response pair-times and independent accepted geometry; retain all forces and stage limitations; no margin/gate changes"]
     },
     {
       "id": "eyelet_bore_and_bend_geometry",

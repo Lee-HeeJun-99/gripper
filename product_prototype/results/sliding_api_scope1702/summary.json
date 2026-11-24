@@ -1,0 +1,112 @@
+{
+  "status": "BLOCKED_AS_FINITE_WIRE_SURFACE_CONTACT_REPLACEMENT",
+  "alternative": "Installed documented SlidingLagrangianConstraint (Vec3 point/finite segment)",
+  "actual_Native_run": false,
+  "reason": "It supplies2bilateral transverse rows and2unilateral endpoint rows for a designated point/segment. No finite wire radius, bore clearance, rolling/friction or documented automatic material-segment reassociation. It may represent a deliberately idealized captured joint, NOT the current loose finite bore or contact normal refresh. Replacing actual surface collision with it would add unsupported transverse support. No equivalent-coupon claim or SDK edits.",
+  "records": [
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Constraint.Lagrangian.Model/sofa/component/constraint/lagrangian/model/SlidingLagrangianConstraint.h",
+      "sha256": "67aaff3564d488bf5fc18f9857aad60aa83b03f4f6410c688d098e95f54d746e",
+      "relevant_lines": [
+        {
+          "line": 98,
+          "text": "Real m_projectionBarycentricCoordinate;"
+        }
+      ]
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Constraint.Lagrangian.Model/sofa/component/constraint/lagrangian/model/SlidingLagrangianConstraint.inl",
+      "sha256": "ec36a5436e5df25a8e7bf7527f00beaa5fbbf2966226fcbcfdb3332c2484ef78",
+      "relevant_lines": [
+        {
+          "line": 47,
+          "text": ", d_m1(initData(&d_m1, 0, \"sliding_point\",\"index of the spliding point on the first model\"))"
+        },
+        {
+          "line": 48,
+          "text": ", d_m2a(initData(&d_m2a, 0, \"axis_1\",\"index of one end of the sliding axis\"))"
+        },
+        {
+          "line": 49,
+          "text": ", d_m2b(initData(&d_m2b, 0, \"axis_2\",\"index of the other end of the sliding axis\"))"
+        },
+        {
+          "line": 86,
+          "text": "m_projectionBarycentricCoordinate=0; //Coef to point B -> proj = bary*B + (1-bary)*A"
+        },
+        {
+          "line": 94,
+          "text": "m_constraintDirections.push_back(temp);"
+        },
+        {
+          "line": 108,
+          "text": "m_projectionBarycentricCoordinate = r2 < 0 ?  0 : r2;"
+        },
+        {
+          "line": 109,
+          "text": "m_projectionBarycentricCoordinate = m_projectionBarycentricCoordinate > 1.0 ?  1.0 : m_projectionBarycentricCoordinate;"
+        },
+        {
+          "line": 137,
+          "text": "m_constraintDirections.push_back(dirProj);"
+        },
+        {
+          "line": 140,
+          "text": "m_constraintDirections.push_back(dirOrtho);"
+        },
+        {
+          "line": 142,
+          "text": "m_constraintDirections.push_back(dirAxe);"
+        },
+        {
+          "line": 143,
+          "text": "m_constraintDirections.push_back(-dirAxe);"
+        },
+        {
+          "line": 174,
+          "text": "c2_it.addCol(tm2a, -m_constraintDirections[i] * (1-m_projectionBarycentricCoordinate));"
+        },
+        {
+          "line": 175,
+          "text": "c2_it.addCol(tm2b, -m_constraintDirections[i] * m_projectionBarycentricCoordinate);"
+        },
+        {
+          "line": 217,
+          "text": "typename DataTypes::CPos newProj = DataTypes::getCPos(B)*m_projectionBarycentricCoordinate + DataTypes::getCPos(A)*(1-m_projectionBarycentricCoordinate);"
+        },
+        {
+          "line": 242,
+          "text": "resTab[offset++] = new BilateralConstraintResolution();"
+        },
+        {
+          "line": 250,
+          "text": "resTab[offset++] = new BilateralConstraintResolution();"
+        },
+        {
+          "line": 252,
+          "text": "resTab[offset++] = new UnilateralConstraintResolution();"
+        },
+        {
+          "line": 253,
+          "text": "resTab[offset++] = new UnilateralConstraintResolution();"
+        }
+      ]
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/share/sofa/examples/Component/Constraint/Lagrangian/SlidingLagrangianConstraint.scn",
+      "sha256": "3ac558bd5fe9afed903abd23daf4f43817e0648b5a0f1b79a44b0fcbc5ad95a8",
+      "relevant_lines": [
+        {
+          "line": 56,
+          "text": "<SlidingLagrangianConstraint name=\"constraint1\" object1=\"@SlidingPoint/points\" object2=\"@CUBE_1/Constraints/points\" sliding_point=\"0\" axis_1=\"0\" axis_2=\"1\" />"
+        },
+        {
+          "line": 84,
+          "text": "<SlidingLagrangianConstraint name=\"constraint2\" object1=\"@CUBE_2/Constraints/points\" object2=\"@Line/points\" sliding_point=\"0\" axis_1=\"0\" axis_2=\"1\" />"
+        }
+      ]
+    }
+  ],
+  "scope": "New alternative contract scope audit only,not repeated1678normal-API scan or proof every stockSOFA representation is impossible. Do not launch a cosmetic joint coupon as wire sliding/grasp evidence.",
+  "source_sha256": "79c12c7f6e280ad5e2c0053e0c8fbf12d8051e9d99d90bdced17e2e7e47b1330"
+}

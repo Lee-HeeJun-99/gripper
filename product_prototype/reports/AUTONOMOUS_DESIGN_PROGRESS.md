@@ -1,3 +1,59 @@
+## Current1713 — completed unbraced research cycles; goal NOT achieved
+
+This supersedes ALL historical RUNNING/READY/queue-empty text below.
+Actual branch development/regrip-autonomous-research; start/cached-origin
+6930d85. Completed saves b488e22,1c780fe,68dbc62,78ee4b9; final save SHA is
+authoritative `git log -1 --oneline`,not a self-referential document hash.
+No Native child remains running. No remote push/history rewrite/SDK changes.
+
+1681 actual finite1586 observer:800steps168.061s,q/v/impulse purity0.
+1682 perFinger internal outward force~.067N; not a causal support-removal proof.
+1683–1691 axial-setback candidate: actual .6s clear,then1.2s192GuideGuide
+rows atEyelet4;REJECTED. No fulltrial or further setback/Chamfer sweep.
+
+1692 supplier16RW thin metal ferrule:OD1.651/ID1.1938/L2mm;14original support
+bore obstructions FAIL.1694physical1.4mm support through-relief clears bore
+by>=.08405mm,preserves original3feet/connected solids. Strength/bond/mass and
+manufacturing tolerances NOT MEASURED; new STL is in metres,not STEP.
+1695 .6s actual pilot clear/positiveFEM; full1700 actual224.325s/800outputs:
+**FUNCTIONAL FAIL and UNBRACED FAIL**. Slip.233781mm; maxspeed25.59132mm/s;
+Skin meanZ.984388N; Guide/Rail/Support/other object loads0; Support gap42.226mm.
+SavedFEMmin.989314,noinversion.738crossFinger rows/99Hold hardware rows.
+Solver1001/1000 iterations; oldtime/mesh/energy failures unchanged.
+1705/1710 saved finite solids physically separated,but0.2mm buffer mediates
+internal support; do NOT ignore those impulses or call swept clearance PASS.
+No tube-size,margin,force,dt or collision-resolution scan followed the failure.
+
+1701new-model Root/6origin API PASS<=1e-12 only. 100gLift NOT RUN because
+Holding fails.1702stock Sliding joint BLOCKED as equivalent loose-bore contact:
+bilateral transverse support is not finite clearance/friction/normal refresh.
+1706actual18Guide straight finite-wire nonfits require actual flexible-wire
+bending; idealCableConstraint is NOT finite-wire sliding qualification.
+1707fixed-pose routing intervals are nonempty (min9.297mm),not proof no route
+exists; actual ring sector excess up to1.832mm. Frozen replay is not dynamics.
+1708speed failure includes vertical24.865/horizontal20.750mm/s and nonradial
+normal-row torque3.561e-5Nm. No sole-cause or global energy claim.
+1712actual15helper tests PASS ONLY;1709/1713hash chain preserves320completed
+artifacts/141local CSV fingerprints. All previous Raw/verdicts remain intact.
+
+Queue reevaluated: no READY/RUNNING within currently supported candidate
+families. Stop those failed families without inventing parameter repetitions.
+Reopen with a CONCRETE documented Native contact-update/force contract or a
+different physical guide/load-path mechanism with finite-wire/attachment
+evidence. Actual wire bend/fatigue/friction and guide joint retention data are
+still absent; layer-pressure/hardware/STEP tracks remain independently blocked.
+This is not a claim no possible future ReGrip mechanism exists. Current300part
+CAD and old B3functional results remain separate; no product/HARDWARE PASS.
+
+Safe restart/inspection (not an automatic rerun):
+`git status --short`
+`git log -5 --oneline`
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py`
+Read CAPILLARY_UNBRACED_20261124.md and UNBRACED_SETBACK_20261124.md.
+Sources and UNIQUE-tag commands are there; all1681–1713existing results are
+completed and must NOT be overwritten. No session-external continuation.
+
+
 ## Completed through1325 — 2026-11-24
 
 Continued beyondinitialcoupons andcommits into actual100g joint/input trials,

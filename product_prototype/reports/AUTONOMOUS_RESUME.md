@@ -1,5 +1,23 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1556 supersedesbelow.1553 actualREADONLYGuideJcouponPASS q/vpurity0,
+1980source-resolvedrows, single-rowforcepeak0.06936N/moment0.254658mNm.
+Notwholebodyreaction/energy.1554 actualsavedcylinder supportplane lowerbound
+0.46143mm>0.2mmbuffer exposesSphereproxyconservatism underexplicitmanufactured
+axisassumption;SupportNOTcoveredbycylinderbound. ThereforeNEWfinitegeometry
+candidate implemented:finite_hardware_grasp_pilot.py replacesALLGuideproxies
+withOD3/ID1.2/L2eyeletsANDfiniteconvexhullsfromACTUAL3mappedfootcentres.
+Allhardwarecollisionsenabled;parentmass/inertia inherited/NOTcalibrated.
+1555actualfixedsingle.25sPASSboundedonly3.312s/positiveFEM/mininitialgap2.002mm.
+1556actualfree3.6sRUNNING. Checksummary/process FIRST beforecontinuation.
+Ifvalidandforecast<420: python product_prototype/sofa/finite_hardware_grasp_pilot.py
+--tag NEW --three --duration 1.2 --pilot finite_hardware_three1556
+Thenunique2saftercost/elementgates,originalgoal ANDactualGuide/Supportpairaudits.
+Surfacepathsnow /guidesF/cableC/{eyeletK,supportK}/...,existingguidepairregex
+stillincludesboth. Ownbondcollisiongroupunchangedintendedrigidattachment.
+Notoriginal300partCAD/fabrication/physical/time/meshPASS. No100gLiftclaim.
+
+
 CURRENT1553 supersedesbelow: nexttaskACTUALLYstarted,notplanonly.
 guide_pair_wrench_coupon.py --tag guide_pair_wrench1553 nowRUNNINGactual
 Native.6s, source1544initialScene+threeREADONLYNativePairRows fromfrozen

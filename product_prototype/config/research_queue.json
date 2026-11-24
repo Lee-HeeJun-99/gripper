@@ -185,14 +185,26 @@
     {
       "id": "guide_pair_wrench_provenance",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "PASS",
       "prerequisites": ["unbraced_route_qualification"],
       "prerequisite_states": {"unbraced_route_qualification": ["FAIL"]},
       "hypothesis": "GuideGuide rows can brace fingers through mapped attachment torques; scalarrowmultipliers andzeroGuideObjectload cannot quantifythismechanism",
       "scope": "Read-onlyNativeGuide/contact-rowJacobian provenance before newmechanismcandidate;notcollisionremoval oranothermargin sweep",
-      "evidence": ["unbraced_pairs1552", "unbraced_replay_error1550"],
+      "evidence": ["unbraced_pairs1552", "unbraced_replay_error1550", "guide_pair_wrench1553"],
       "validation_criteria": ["actualsource-rowJtransposelambda attribution withsameacceptedtime,physicalNs/Nunits,observerq/vpurity;NULLifunavailable"],
       "failure_alternatives": ["explicitly retainbracingunqualified;independentphysicalguide-supportkinematicscandidate withfreshclearanceverification"],
+      "successors": ["finite_hardware_bracing_control"]
+    },
+    {
+      "id": "finite_hardware_bracing_control",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["guide_pair_wrench_provenance"],
+      "hypothesis": "Sphereproxy contacts may be overconservative:actualsavedfinitecylinder lowerbound0.461mm exceeds0.2mmbuffer. ReplaceproxywithfiniteannularEyelets AND actual3footSupporthulls,notcollisionremoval",
+      "scope": "Newgeometrycandidate,allhardwarecollisionsenabled;mass/inertia/strength uncalibrated;notprevious300partCAD orphysicalPASS",
+      "evidence": ["guide_cylinder_bound1554", "finite_hardware_fixed1555", "finite_hardware_three1556"],
+      "validation_criteria": ["Initialfinitehardwaregaps>=0.2mm;watertightsolids;actualsinglepilot thenbounded3finger;positiveFEM;fulloriginal100ggoal plus noGuidebracing if promoted"],
+      "failure_alternatives": ["actualfiniteSupportcontact provenance andphysicalattachmentgeometry diagnosis,notGuidecollisionremoval or dt/force scan"],
       "successors": ["exploratory_100g_lift"]
     },
     {

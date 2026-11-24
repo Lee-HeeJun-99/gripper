@@ -76,3 +76,35 @@ parent frames/collision preservation and replay scope, NOT physics accuracy.
 All result directories preserve producer snapshots, source/input hashes,
 actual Scene and Native process manifests where applicable. detector.csv
 remains local and excluded fromGit. No remote Push/history rewrite.
+
+## Actual follow-up1553–1556: finite geometry, not disabled hardware
+
+1553 reuses frozen NativePairRows512/compiled source513 with actualRigid3
+Guide states in fresh.6s Native run. All seven q/v journals EXACTLY match1544:
+observer purity error0;1980 source-resolved Guide contact rows. Peak single-row
+linear force0.0693596N and moment0.254658mNm, from actual parentJ-transpose
+timeslambda/dt. This is not a whole body/contact-sum/unprojected bond reaction.
+
+1554 uses actual1534-derived new1549 saved Guide poses and an explicit
+manufactured tangent-axis OD3/L2 finite cylinder. Support-plane separation
+lower bound across neighboring-finger cylinder pairs is0.461431mm, above
+Native0.2mm contact buffer. All925 sampled proxy-near pairs retain cylinder
+lower bound above thebuffer (minimum0.462599mm). Annular eyelet is a subset
+of theclosedcylinder, so it inherits this bound. This exposes a NEW possible
+source of artificial bracing: circumscribed sphere proxy, not actual finite
+eyelet. It does NOT clear the support solid, sweptmotion or actual newdynamics.
+Two independent analytic/support-enclosure unit tests actually pass.
+
+Finite new geometry1555 therefore replaces each Guide proxy with BOTH a
+closed OD3/ID1.2/L2 annular32-segment mesh and a finite convex support hull.
+Support hull uses its actual three rigid-mapped foot centres with0.8mm finite
+manufacturing pads and finite terminal join, not an absent massless support.
+All hardware Triangle/Line/Point collision models remain enabled, with the
+same intended own-finger bonded collision group. Axis/terminal/pad geometry
+are explicit design assumptions, not confirmed300partfabrication CAD. Same
+parent mass/inertia inherited, NOT recalibrated material/strength evidence.
+Initial finitehardware–Object triangle gaps all>=2.001926mm. Actual fixed
+single-finger .25s1555 completes3.312s, positiveFEM; NO Holding claim.
+Fresh actualfree3finger.6s1556 follows, not a saved-state restart. Inspect
+its actual summary before longer trials. Original 100g object goal AND new
+hardware-bracing qualification remain necessary for any promotion.

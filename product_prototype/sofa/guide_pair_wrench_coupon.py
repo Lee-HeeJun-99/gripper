@@ -4,8 +4,10 @@ from pathlib import Path
 import numpy as np
 from analyse import BASE,sha
 from native_bending_coupon import guarded
+from observer_identity import compiled_pair_rows
 def read(p):return list(csv.DictReader(p.open()))
 def main():
+ checked_binary,compiled_source=compiled_pair_rows()
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/unbraced_three1544';root=ET.parse(src/'scene.scn').getroot();meta=json.loads((BASE/'results/b3_direct_rows514/summary.json').read_text());binary=Path(meta['row_binary_path']);assert sha(binary)==meta['row_binary_sha256'];root.insert(0,ET.Element('RequiredPlugin',pluginName=str(binary)))
  for i in range(3):ET.SubElement(root,'NativePairRows',body=f'@guides{i}/frames',solver='@constraints',filename=str(out/f'direct{i}.csv'))
  # Resolve the actual MechanicalObject name, not a guessed component API.

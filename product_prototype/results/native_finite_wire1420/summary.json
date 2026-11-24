@@ -1,0 +1,57 @@
+{
+  "status": "FAIL_NATIVE_FINITE_BEAM_PILOT",
+  "process": {
+    "exit_code": -9,
+    "process_status": "nonlinear_failure",
+    "runtime_s": 0.1082806100603193,
+    "pid": 42,
+    "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+    "artifacts": {
+      "stdout.log": "6a3b222a6457c5ee45cf0f191c174e77a21d3cba7d71e184ab9e00c5f910a698",
+      "command.json": "7677e320351439b46956edc6939591656e6eb2fa792a0363d91e470a273988ab",
+      "stderr.log": "609dc6654898b300986bd1695b7e830c4b71693529d00acdb4a68a0b564406ce",
+      "process.json": "1fdde251a51993ab45812ed513f56a872ce1c0d6d07231908a21c4fb909f7a27"
+    }
+  },
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "20",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/native_finite_wire1420/scene.scn"
+  ],
+  "sofa_errors": 2,
+  "accepted_rows": 0,
+  "endpoint_tip_y_m": null,
+  "maximum_fixed_root_error": null,
+  "source_commit": "ae4bef8f5d0c40b1bb220ebec5df687fbd4e8609",
+  "source_sha256": "5a1ffda167fce4f5d43e4d50f94d46f9c19cca7e5291ceb5b97e23efc1ec8d2b",
+  "scene_sha256": "d47f76c7fd7b7df043c47679615aa059c1e6c25ca3f6e9850e1a6d95a0146589",
+  "binary_sha256": {
+    "observer": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+    "BeamAdapter": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+    "runSofa": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad"
+  },
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "geometry": {
+    "length_m": 0.02,
+    "radius_m": 0.00025,
+    "edges": 10
+  },
+  "material": {
+    "Young_Pa": 2000000000.0,
+    "density_kg_m3": 1000,
+    "status": "RESEARCH ASSUMPTIONS;NOT measured tendon properties"
+  },
+  "load_N": 1e-05,
+  "dt_s": 0.0001,
+  "steps": 20,
+  "scope": "Actual installed BeamInterpolation/AdaptiveBeamForceFieldAndMass/EulerImplicit/BTD response. DefaultAnimationLoop has no constraints except fixed projective root;GenericConstraintSolver is read-only journal target,not used to claim constrained-loop compatibility. No cable/eyelet/contact/sliding/friction,mesh/time/energy qualification or grasp. No new solver/SDK/state correction.",
+  "eyelet_contact": "NOT IMPLEMENTED",
+  "physical_validation": "NOT QUALIFIED"
+}

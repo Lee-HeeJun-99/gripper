@@ -1,0 +1,33 @@
+/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/test_native_finite_wire.py:14: ResourceWarning: unclosed file <_io.TextIOWrapper name='/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/native_finite_wire_zero1422/states.csv' mode='r' encoding='UTF-8'>
+  np.testing.assert_array_equal(np.fromstring(row['rigid_q'],sep=' ').reshape(-1,7),q);np.testing.assert_array_equal(np.fromstring(row['rigid_v'],sep=' '),0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+F..
+======================================================================
+FAIL: test_loaded_and_zero_actual_states (test_native_finite_wire.NativeWireTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/sofa/test_native_finite_wire.py", line 14, in test_loaded_and_zero_actual_states
+    np.testing.assert_array_equal(np.fromstring(row['rigid_q'],sep=' ').reshape(-1,7),q);np.testing.assert_array_equal(np.fromstring(row['rigid_v'],sep=' '),0)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/numpy/testing/_private/utils.py", line 920, in assert_array_equal
+    assert_array_compare(operator.__eq__, x, y, err_msg=err_msg,
+  File "/home/ubuntu/miniconda3/envs/robot_ws/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 77 (6.49%)
+Max absolute difference: 6.9388939e-18
+Max relative difference: 4.33680869e-16
+ x: array([[0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 1.   ],
+       [0.002, 0.   , 0.   , 0.   , 0.   , 0.   , 1.   ],
+       [0.004, 0.   , 0.   , 0.   , 0.   , 0.   , 1.   ],...
+ y: array([[0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 1.   ],
+       [0.002, 0.   , 0.   , 0.   , 0.   , 0.   , 1.   ],
+       [0.004, 0.   , 0.   , 0.   , 0.   , 0.   , 1.   ],...
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.014s
+
+FAILED (failures=1)

@@ -1,3 +1,20 @@
+## Latest continuation through1425 — actual Native follow-on
+
+After finitegeometry/assembly/replay1411–1419 and commitsf5f38dc/ae4bef8/4abae67,
+actually started nextREADY installed Native finitewire pilot.1420factoryFAIL
+GenericConstraintSolver preserved. Correct v26 BlockGaussSeidel journal target
+1421 actual20states,error0,tip7.66376µm,rooterror0. Native BeamAdapter radius.25mm,
+length20mm,10edges,E2GPa/rho1000 ASSUMED,tip10µN,dt100µs/2ms. No Cable/contact
+constraints,unused journal solver is not constrained-loop validation.
+1422matchedzero-load20states,maxqerror6.94e−18m/v8.20e−14m/s,NOTbitwiseEXACT.
+Runtime~.105s each,4GiB/60s. Not static/material/time/mesh/contact/graspPASS.
+1423regressionFAILpreserved:bitwiseassertionwronglyexceeded original1e−12scope.
+1424sameFAILafter rejectedatomicpatch;bothlogsretained.1425actualcorrected-scope
+68tests/7SDKidentity summaryauthoritative. Commit `git log -1`.
+NextREADY finite_wire_motion_contract nowfinitebeam/Eyeletcontact-slidingcoupon;
+do not repeat standalonebeam/zero controls. Report ECCENTRIC_EYELET_20261124.md.
+No Nativejobs pending. OldRaw/SDK/CAD/FAILs unchanged,no push/historyrewrite.
+
 ## Latest continuation through1419 — 2026-11-24
 
 Starting cb1fc7d clean. Multiple actual geometry/implementation cycles1411–1418,

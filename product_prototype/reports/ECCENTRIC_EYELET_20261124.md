@@ -84,3 +84,46 @@ python product_prototype/sofa/eccentric_eyelet_assembly.py --tag NEW_ASSEMBLY
 python product_prototype/sofa/eyelet_arc_replay.py --tag NEW_REPLAY
 python product_prototype/sofa/reinforcement_cycle_validation.py --tag NEW_REGRESSION
 ```
+
+## Actual Native finite beam follow-on1420–1423
+
+Did not stop at replay rejection: inspected installed BeamAdapter examples and
+headers and implemented `native_finite_wire_pilot.py`. Uses stock
+BeamInterpolation + AdaptiveBeamForceFieldAndMass + EulerImplicit + BTD, radius
+0.25mm,length20mm,10edges. E2GPa,density1000kg/m³ are explicit research assumptions,
+not measured tendon properties. Root fixed,zero gravity,tip force10µN,dt100µs,
+20steps. Existing frozen332 observer reused without source/binary edits.
+
+1420 failed during factory creation: GenericConstraintSolver is not a registered
+v26 component. Error/log/zero outputs preserved. Correction1421 uses installed
+BlockGaussSeidelConstraintSolver ONLY as unused read-only journal target; no
+Lagrange cable/contact constraints exist and DefaultAnimationLoop compatibility
+is NOT being certified. Raw1421 scope still calls the journal target Generic;
+actual Scene is authoritative and current producer wording is corrected.
+
+1421 actual20 outputs,SOFA errors0,tip y7.663760011µm,fixed-root error0,
+runtime0.1054s. This transient is NOT static equilibrium or theoretical stiffness
+agreement. Matched zero-load1422 actual20 outputs,max q−rest6.94e−18m,
+max velocity8.20e−14m/s: original coupon1e−12 criterion,NOT bitwise identical,
+runtime0.1051s. Independent tests compare both Scenes: only force and log path
+differ. Limits4GiB/60s;peakRSS NOT MEASURED. Complete command,Scene/observer/
+BeamAdapter/runSofa hashes and raw state in per-case summaries. 1423 regression
+FAIL preserved: newly added bitwise-equality assertion was stronger than original
+coupon1e−12 and failed on actual roundoff.1424 also FAIL: an atomic patch was
+rejected and the intended test edit was not applied before that retry. Both
+logs preserved.1425 actually reruns corrected original1e−12 scope,not a relaxed
+physical threshold. Its summary is authoritative.
+
+NextREADY finite_wire_motion_contract is now specifically a finite beam/eyelet
+contact and sliding representation coupon, not redoing1421/1422. Native finite
+beam availability is scoped component PASS. Guide bore contact/friction,
+changing contact location,full wire equilibrium,material calibration and
+constrained-loop/time/mesh/energy gates remain open. No new four-cable or grasp
+run,100g success,STEP or fabrication claim. No process remains intentionally
+running after session.
+
+Reproduce only with fresh tags:
+```
+python product_prototype/sofa/native_finite_wire_pilot.py --tag NEW_WIRE
+python product_prototype/sofa/native_finite_wire_pilot.py --tag NEW_ZERO --zero-load
+```

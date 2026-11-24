@@ -1,0 +1,56 @@
+{
+  "status": "PASS_NATIVE_FINITE_BEAM_ACTUATION_COUPON_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.10511995409615338,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "7e7e0e334e13aa8c920eacaa0c7fb00b923fe01b82e52f7b198639a0d5575679",
+      "command.json": "bf3688130b6e53e5a37444e4b65a587c89a20b2c96571fe78f18a14d88465348",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "417db47bcd3a981deb4ef66fae48e30f7e0b1e576335a02f10383edb9c34c220"
+    }
+  },
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "20",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/native_finite_wire_zero1422/scene.scn"
+  ],
+  "sofa_errors": 0,
+  "accepted_rows": 20,
+  "endpoint_tip_y_m": 0.0,
+  "maximum_fixed_root_error": 0.0,
+  "source_commit": "ae4bef8f5d0c40b1bb220ebec5df687fbd4e8609",
+  "source_sha256": "690e0de6b13184c2f1a0df3356214e511ad0085573e4a7f53e860f8fa166a2d0",
+  "scene_sha256": "97447a38e872d77b35ef31dc6fdbb8430b95bf6d73c176ec560ff8019f8d43c2",
+  "binary_sha256": {
+    "observer": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+    "BeamAdapter": "ef50c3685a75de4e777f8225c13fc0ee039d53cca7f2899af35e7ac7dd389df9",
+    "runSofa": "ef58e68bae2b534a271918b62241a89379581f58f0dc66365d4d8acd38c5bcad"
+  },
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "geometry": {
+    "length_m": 0.02,
+    "radius_m": 0.00025,
+    "edges": 10
+  },
+  "material": {
+    "Young_Pa": 2000000000.0,
+    "density_kg_m3": 1000,
+    "status": "RESEARCH ASSUMPTIONS;NOT measured tendon properties"
+  },
+  "load_N": 0.0,
+  "dt_s": 0.0001,
+  "steps": 20,
+  "scope": "Actual installed BeamInterpolation/AdaptiveBeamForceFieldAndMass/EulerImplicit/BTD response. DefaultAnimationLoop has no constraints except fixed projective root;BlockGaussSeidelConstraintSolver is unused read-only journal target,not constrained-loop compatibility evidence. No cable/eyelet/contact/sliding/friction,mesh/time/energy qualification or grasp. No new solver/SDK/state correction.",
+  "eyelet_contact": "NOT IMPLEMENTED",
+  "physical_validation": "NOT QUALIFIED"
+}

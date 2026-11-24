@@ -1,0 +1,36 @@
+[ERROR]   [Node(root)] Object type GenericConstraintSolver<> was not created  
+The component 'GenericConstraintSolver' cannot be found in the factory.  
+Several reasons are possible:  
+1) GenericConstraintSolver has been replaced since v25.12 by a set of new components, whose names relate to the method used:
+    - BlockGaussSeidelConstraintSolver (if you were using this component without setting 'resolutionMethod' or by setting it to 'ProjectedGaussSeidel')
+    - UnbuiltGaussSeidelConstraintSolver (if you were using this component while setting 'resolutionMethod="UnbuiltGaussSeidel"')
+    - NNCGConstraintSolver (if you were using this component while setting 'resolutionMethod="NonsmoothNonlinearConjugateGradient"')
+      --> For NNCGConstraintSolver, data 'newtonIterations' has been replaced by 'maxIterations'  
+2) This component has been MOVED from SofaConstraint to Sofa.Component.Constraint.Lagrangian.Solver since SOFA v22.06.
+To continue using this component you may need to update your scene by adding
+<RequiredPlugin pluginName='Sofa.Component.Constraint.Lagrangian.Solver'/>  
+But the following object(s) exist:  
+                      : NNCGConstraintSolver (79% match)  
+                      : LCPConstraintSolver (76% match)  
+                      : BlockGaussSeidelConstraintSolver (69% match)  
+                      : ImprovedJacobiConstraintSolver (67% match)  
+                      : UnbuiltGaussSeidelConstraintSolver (66% match)  
+
+[ERROR]   [SceneLoaderXML] Node initialization failed. 
+
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  rigid journal requires explicit state/solver/unique output
+
+########## SIG 6 - SIGABRT: usually caused by an abort() or assert() ##########
+  sofa::helper::BackTrace::sig(int)
+  pthread_kill
+  raise
+  abort
+  product::NativeRigidJournal::init()
+  sofa::simulation::InitVisitor::processNodeTopDown(sofa::simulation::Node*)
+  sofa::simulation::Node::executeVisitorTopDown(sofa::simulation::Visitor*, std::__cxx11::list<sofa::simulation::Node*, std::allocator<sofa::simulation::Node*> >&, std::map<sofa::simulation::Node*, sofa::simulation::Node::StatusStruct, std::less<sofa::simulation::Node*>, std::allocator<std::pair<sofa::simulation::Node* const, sofa::simulation::Node::StatusStruct> > >&, sofa::simulation::Node*)
+  sofa::simulation::Node::executeVisitorTopDown(sofa::simulation::Visitor*, std::__cxx11::list<sofa::simulation::Node*, std::allocator<sofa::simulation::Node*> >&, std::map<sofa::simulation::Node*, sofa::simulation::Node::StatusStruct, std::less<sofa::simulation::Node*>, std::allocator<std::pair<sofa::simulation::Node* const, sofa::simulation::Node::StatusStruct> > >&, sofa::simulation::Node*)
+  sofa::simulation::Node::doExecuteVisitor(sofa::simulation::Visitor*, bool)
+  sofa::simulation::node::init(sofa::simulation::Node*)
+  sofa::simulation::node::initRoot(sofa::simulation::Node*)
+  __libc_start_main

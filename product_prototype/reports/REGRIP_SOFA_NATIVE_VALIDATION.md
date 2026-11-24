@@ -1,3 +1,14 @@
+## Native finite beam1420–1425 — component coupon only
+
+InstalledBeamAdapterradius.25mm/20mm/10edgecoupon actual20steps:tip7.66376µm,
+rooterror0,SOFAerror0. Zero-loadqerror6.94e−18m/v8.20e−14m/s,notbitwiseEXACT.
+No eyelet/contact/
+cableconstraints;read-onlyjournaltargetBlockGaussSeidel unused.1420obsolete
+factorynameFAILpreserved. Not constrained-loop,staticstiffness,time/mesh/energy,
+measuredwirematerialorwholegraspvalidation. Fullcommands/hashes/assumptions
+in1421/1422summaries;1423/1424bitwiseassertionFAILpreserved,1425actualoriginal
+1e−12scope regressionauthoritative. SDKunchanged.
+
 ## Finite eyelet1411–1419: no new Native dynamics qualification
 
 Actually implemented local geometry,finite STL solids,world placements and

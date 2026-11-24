@@ -49,10 +49,21 @@
       "status": "READY",
       "scope": "Determine installed Native finite wire/guide representation on a minimal coupon before any four-cable integration;not another offset/dt sweep",
       "hypothesis": "Fixed R5 arcs pass initial bore but acquire up to7.545deg tangent discontinuity on actual old Native guide motion;sliding/changing wire curvature is not represented by rigid arcs or point CableConstraint",
-      "prerequisites": ["eccentric_eyelet_world_placement"],
-      "evidence": ["eyelet_arc_replay1418", "eccentric_eyelet_assembly1417"],
+      "prerequisites": ["eccentric_eyelet_world_placement", "native_finite_beam_component_coupon"],
+      "evidence": ["eyelet_arc_replay1418", "eccentric_eyelet_assembly1417", "native_finite_wire1420", "native_finite_wire1421", "native_finite_wire_zero1422"],
       "validation_criteria": ["distinguish physical wire equilibrium from kinematic replay;no prescribed finger/object state;retain finite radius and measured-data gaps;installed Native features only before custom modules"],
       "failure_alternatives": ["independent layer hardware calibration readiness;input-only delayed control contract"]
+    },
+    {
+      "id": "native_finite_beam_component_coupon",
+      "priority": 2,
+      "status": "PASS",
+      "scope": "Installed BeamAdapter radius0.25mm/20mm elastic no-contact coupon and matched zero-load control ONLY;not eyelet contact or wire property qualification",
+      "hypothesis": "Installed native finite beam can represent elastic wire degrees of freedom without a custom solver;geometry-only rigid arcs are insufficient during motion",
+      "prerequisites": [],
+      "evidence": ["native_finite_wire1420", "native_finite_wire1421", "native_finite_wire_zero1422"],
+      "validation_criteria": ["20 actual rows,zero SOFA errors,finite nonzero loaded response,fixed root unchanged,zero-load rest maintained;all material values explicitly assumed"],
+      "successors": ["finite_wire_motion_contract"]
     },
     {
       "id": "finite_antagonistic_four_route_gate",

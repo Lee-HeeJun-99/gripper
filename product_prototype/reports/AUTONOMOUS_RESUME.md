@@ -1,5 +1,23 @@
 # Autonomous resume — 2026-11-24
 
+LATEST1425 supersedesbelow. Finitegeometry→STL→worldplacement→actualNativeguide
+replay→newNativeBeamAdaptercomponentcoupons actuallycompleted,not onecycle stop.
+1420factoryFAILpreserved;1421correctinstalledv26solvername,20Nativeoutputs,
+tip7.66376µm/rooterror0.1422zero-loadqerror6.94e−18m/v8.20e−14m/s,notbitwise.
+Materialassumed,noeyelet/contact/cableconstraintorwholegrasp.1423testFAILpreserved;
+1424sameFAILafterunappliedpatchpreserved;1425actualoriginal1e−12scope68tests
+summaryauthoritative.
+Lastfeature4abae67;finalcommit `git log -1`. NoNativepending or aftersessionjobs.
+
+NextREADY finite_wire_motion_contract. Usequeuecommandbelow. Need installed
+finitebeam/contactmapping for actual3DfiniteEyelet andradius.25mmwire with
+changing curvature/sliding. First inspect installedBeamAdapter collisionmapping
+example and existingNativecollisionpipeline;no customODE/SDK.1421component
+availabilitydone,doNOTrepeatit. Fullnewhardware mass/joints/material/friction,
+terminalanchors,time/mesh/100gHolding remainunqualified. Existing300partCAD
+unchanged. Source/scenes/hashes/commands at native_finite_wire1420/1421 and
+native_finite_wire_zero1422;geometryat1415–1418. Readnewreport forscope.
+
 LATEST1419 supersedes below. Startingcb1fc7d,commitsf5f38dc/ae4bef8 actual
 chamfer/filletFAIL→eccentricboregeometry→20finiteSTLs→worldplacement→motionreplay.
 1412actualwire-solidcollision,1415eccentricinitialbound+.275364mm,

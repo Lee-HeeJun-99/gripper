@@ -13,7 +13,7 @@ def select(queue):
   assert task['status'] in allowed and task['scope']
   assert all(dep in byid for dep in task['prerequisites'])
   for case in task.get('evidence',[]):assert (BASE/'results'/case/'summary.json').exists()
- ready=sorted([t for t in queue['tasks'] if t['status']=='READY' and all(byid[d]['status']=='PASS' for d in t['prerequisites'])],key=lambda t:(t['priority'],-t['impact']/max(t['estimated_cost'],1),t['id']))
+ ready=sorted([t for t in queue['tasks'] if t['status']=='READY' and all(byid[d]['status'] in t.get('prerequisite_states',{}).get(d,['PASS']) for d in t['prerequisites'])],key=lambda t:(t['priority'],-t['impact']/max(t['estimated_cost'],1),t['id']))
  running=[t['id'] for t in queue['tasks'] if t['status']=='RUNNING']
  return dict(next=ready[0] if ready else None,qualified_product=False,running=running,blocked=[t['id'] for t in queue['tasks'] if t['status']=='BLOCKED'],requires_project_reevaluation=not ready and not running)
 def main():

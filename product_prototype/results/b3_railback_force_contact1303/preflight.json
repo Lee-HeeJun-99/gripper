@@ -1,0 +1,55 @@
+{
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "480",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/b3_railback_force_contact1303/scene.scn"
+  ],
+  "source_commit": "9a871b65ffa5434ea8e664b3dfa594b803792a54",
+  "source_sha256": "2fc49c5ad05b5e0e60c57f468fe0edb07541547290313d78073ef0878dcb10ac",
+  "source_scene_sha256": "47c110f8945b7719d859a1e8737c17737c50d7148f428d741117144e72c3efb6",
+  "scene_sha256": "c8451d95c7ac247b5377bd4280914381936848a054b20eebca1256a085552264",
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_alarm_window484/libReGripAlarmWindow.so": "6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "changes": [
+    {
+      "finger": 0,
+      "mapped_nodes": 36,
+      "min_twice_triangle_area_m2": 9.999999999999999e-06
+    },
+    {
+      "finger": 1,
+      "mapped_nodes": 36,
+      "min_twice_triangle_area_m2": 9.999999999999975e-06
+    },
+    {
+      "finger": 2,
+      "mapped_nodes": 36,
+      "min_twice_triangle_area_m2": 1e-05
+    },
+    {
+      "cable_force_N": 2.0,
+      "scope": "For2N:single input sensitivity vs1298,not structure improvement;preregistered from1.012/0.772 early normal budget;not motor sizing"
+    }
+  ],
+  "dt_s": 0.0025,
+  "duration_s": 1.2,
+  "expected_outputs": 480,
+  "estimated_runtime_s": 301.45992381311953,
+  "child_limit_s": 420,
+  "memory_GiB": 4,
+  "hypothesis": "One force sensitivity2N vs1298sameRailback structure;early measured normal budget0.772N vsfrozen minimum1.012N motivates33percent input increase,not assumed linear performance or motor requirement.",
+  "classification": "EXPLORATORY FUNCTIONAL CANDIDATE",
+  "hardware_joint": "IDEAL_ASSUMPTION_NOT_CAD_QUALIFIED",
+  "physical_validation": "NOT QUALIFIED"
+}

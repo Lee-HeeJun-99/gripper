@@ -11,4 +11,7 @@ class QueueTest(unittest.TestCase):
   with self.assertRaises(AssertionError):select(dict(tasks=[task('b',deps=['missing'])]))
  def test_running_is_not_empty_project(self):
   r=select(dict(tasks=[task('a','RUNNING')]));self.assertEqual(r['running'],['a']);self.assertFalse(r['requires_project_reevaluation'])
+ def test_explicit_failure_diagnosis_not_physics_pass(self):
+  b=task('b',deps=['a']);b['prerequisite_states']={'a':['PASS','FAIL']}
+  r=select(dict(tasks=[task('a','FAIL'),b]));self.assertEqual(r['next']['id'],'b');self.assertFalse(r['qualified_product'])
 if __name__=='__main__':unittest.main()

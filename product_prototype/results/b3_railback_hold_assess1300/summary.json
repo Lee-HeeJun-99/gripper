@@ -1,0 +1,111 @@
+{
+  "status": "FAIL_EXPLORATORY_HOLD",
+  "tests": {
+    "slip": false,
+    "speed": true,
+    "clearance": false,
+    "support": false,
+    "partition": true,
+    "valid_saved_elements": true
+  },
+  "case": "b3_railback_grasp1001298",
+  "holding_protocol": {
+    "scope": "EXPLORATORY FUNCTIONAL TEST; Native contact time/mesh gates FAIL; not product qualification",
+    "mass_kg": 0.1,
+    "radius_mm": 30.0,
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "window_s": [
+      1.6,
+      2.0
+    ],
+    "reference_s": 1.0,
+    "max_vertical_slip_mm": 2.0,
+    "max_speed_mm_s": 5.0,
+    "minimum_support_surface_gap_mm": 5.0,
+    "maximum_support_resultant_N": 1e-05,
+    "friction_assumed": 0.3,
+    "contact_rows_required": true
+  },
+  "holding_protocol_source_sha256": "9432fe6ed32cb5b153270006a5fec75fc2dc77bc076b3b599bd7a735e7559e95",
+  "protocol_note": "Original user100g protocol,not retroactively fitted thresholds;Native row source and physics gates unchanged",
+  "hold_outputs": 161,
+  "slip_mm": 40.028160649747086,
+  "max_speed_mm_s": 0.06209753375249481,
+  "minimum_support_surface_gap_mm": 0.19999999978367877,
+  "maximum_support_force_N": 1.0615795247535207,
+  "response_partition_max_error_Ns_Nms": 8.673617379884035e-19,
+  "forces": {
+    "skin": {
+      "mean_force_N": [
+        0.022281223347283604,
+        -0.010606206533893279,
+        -0.08021626657448473
+      ],
+      "maximum_resultant_force_N": 0.08397998440739084
+    },
+    "rail": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_force_N": 0.0
+    },
+    "guide": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_force_N": 0.0
+    },
+    "support": {
+      "mean_force_N": [
+        -0.022276496579041242,
+        0.010595510850970146,
+        1.0612165407616003
+      ],
+      "maximum_resultant_force_N": 1.0615795247535207
+    },
+    "other": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_force_N": 0.0
+    }
+  },
+  "max_hold_solver_iterations": 1001,
+  "source_quality": [
+    {
+      "minimum_saved_volume_ratio": 0.9853802004610902,
+      "first_inversion_time_s": null,
+      "finite": true
+    },
+    {
+      "minimum_saved_volume_ratio": 0.9854777984804651,
+      "first_inversion_time_s": null,
+      "finite": true
+    },
+    {
+      "minimum_saved_volume_ratio": 0.9851704210363924,
+      "first_inversion_time_s": null,
+      "finite": true
+    }
+  ],
+  "physical_validation": "NOT QUALIFIED",
+  "hardware_joint": "IDEAL_ASSUMPTION",
+  "whole_energy": null,
+  "input_hashes": {
+    "scene.scn": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+    "object.csv": "c79af5d96d0e7f4a0057fdfe7c641b501b5a8156fa701fb79aeda966fd80d81b",
+    "support.csv": "161589f1748330381303a48bd19fbe45b6522ed06e38d4887c73f279e60e665f",
+    "response_rows.csv": "b87edfbaddc7879cae5f6cfd82e2b903dcde9091e06c9b4c3d7be1ba22387777",
+    "summary.json": "b817790d45cf1e3f56fe6df5957afc6dd2951badcdd8ad5079cddf2fdfdace40"
+  }
+}

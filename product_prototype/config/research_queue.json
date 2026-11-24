@@ -572,14 +572,15 @@
     {
       "id": "b3_railback_grasp_exploration",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "scope": "New100g1.5N/cable joint-plane-only Native candidate;ideal joint not hardware/physical qualification",
       "goal": "Test altered force transfer without increasing tension",
       "prerequisites": [
         "b3_response_cone_budget"
       ],
       "evidence": [
-        "b3_railback_grasp_pilot1297"
+        "b3_railback_grasp_pilot1297",
+        "b3_railback_hold_assess1300"
       ],
       "expected_outputs": [
         "b3_railback_grasp1001298/summary.json",
@@ -603,11 +604,20 @@
     {
       "id": "b3_railback_force_diagnosis",
       "priority": 1,
-      "status": "READY",
+      "status": "PASS",
       "scope": "Read-only postcandidate force analysis;no motion/physics certification",
       "goal": "Explain candidate contact force and normal changes",
       "prerequisites": [
         "b3_railback_grasp_exploration"
+      ],
+      "prerequisite_states": {
+        "b3_railback_grasp_exploration": [
+          "PASS",
+          "FAIL"
+        ]
+      },
+      "evidence": [
+        "b3_railback_cone1301"
       ],
       "expected_outputs": [
         "fresh read-only candidate assessment"
@@ -618,6 +628,35 @@
       ],
       "failure_alternatives": [
         "isolated pre-inversion diagnostic only"
+      ],
+      "successors": [],
+      "impact": 1,
+      "estimated_cost": 1,
+      "metadata_scope": "Legacy scope retained;unspecified outputs/cost are not measured estimates"
+    },
+    {
+      "id": "b3_force2_sensitivity",
+      "priority": 1,
+      "status": "RUNNING",
+      "scope": "2N vs1.5N same rail-back model,input sensitivity ONLY,not structural efficiency or hardware rating",
+      "goal": "Test early measured force deficit vs later loss of supporting geometry",
+      "prerequisites": [
+        "b3_railback_force_diagnosis"
+      ],
+      "evidence": [
+        "b3_force_phase1305"
+      ],
+      "expected_outputs": [
+        "b3_railback_force_hold1306/summary.json",
+        "original protocol holding assessment"
+      ],
+      "validation_criteria": [
+        "same Scene except force and outputpaths",
+        "positive saved elements",
+        "original Slip2mm,speed5mm/s,support5mm/1e-5N gates"
+      ],
+      "failure_alternatives": [
+        "retire tension-only branch;analyze actual normal geometry"
       ],
       "successors": [],
       "impact": 1,

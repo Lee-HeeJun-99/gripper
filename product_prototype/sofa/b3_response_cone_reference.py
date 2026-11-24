@@ -17,8 +17,8 @@ def cone_lp(columns,weight,mu=.3):
  A=np.array(rays).T;b=np.array([0,0,weight,0,0,0.]);r=linprog(np.ones(len(rays)),A_eq=A,b_eq=b,bounds=(0,None),method='highs')
  return dict(status='CONDITIONAL_STATIC_SUBSET_FEASIBLE' if r.success else 'CONDITIONAL_STATIC_SUBSET_LP_FAILED',solver_message=r.message,minimum_normal_sum_N=float(r.fun) if r.success else None,force_residual_N=float(abs((A@r.x-b)[:3]).max()) if r.success else None,moment_residual_Nm=float(abs((A@r.x-b)[3:]).max()) if r.success else None)
 
-def assess(case,mass):
- src=BASE/'results'/case;objects=list(csv.DictReader((src/'object.csv').open()));times=[float(r['time_s']) for r in objects];chosen=[min(times,key=lambda t:abs(t-target)) for target in (1.1,1.4,1.8)];groups={t:{} for t in chosen};seen=set()
+def assess(case,mass,sample_times=(1.1,1.4,1.8)):
+ src=BASE/'results'/case;objects=list(csv.DictReader((src/'object.csv').open()));times=[float(r['time_s']) for r in objects];assert all(min(times)<=target<=max(times) for target in sample_times);chosen=[min(times,key=lambda t:abs(t-target)) for target in sample_times];groups={t:{} for t in chosen};seen=set()
  with (src/'response_rows.csv').open() as f:
   for r in csv.DictReader(f):
    t=float(r['time_s']);models=r['model0']+r['model1']

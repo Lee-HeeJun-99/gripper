@@ -1277,3 +1277,13 @@ nonuniformopening,allowablematerialNULL. 1410software56PASS,SDK7unchanged.
 Fourrouteinitialsupportinterference1408correctedonlyinlimitedproxy1409;
 straightbore/bendradius unresolved,overallREJECT,nofourCableNative. Details
 andactualcommands/hashes:OPPOSED_TENDON_OPENING_20261124.md/per-casepreflight.
+## Actual100g1534/1538 — scoped functional PASS with hardware-bracing caveat
+
+Independent1537/1541 assessments pass original object-based100g thresholds:
+slip0.000239391mm, speed2.508229mm/s, Skinvertical0.980995N;
+Guide/Rail/Support objectforces0;positive savedFEM anddiscretebodymomentum.
+However1540 actualGuideGuide contact has1449 nonzeroholdrows, scalarpeak
+lambda/dt0.046946N (NOT reconstructedfullGuideforce). Indirectbracingunresolved.
+Not unbraced/physical/time/mesh orhardwarePASS. Frozen1542 routegeometry
+intervention keepsallcollisions/radii enabled;1543 fixedpilotvalid/1544freepilot
+underway. No historicalverdictmodified. Root/originAPI1535PASSnot100gLift.

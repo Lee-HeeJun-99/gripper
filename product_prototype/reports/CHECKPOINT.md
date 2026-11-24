@@ -2391,3 +2391,16 @@ Actual CAD checks: seven-part nominal full-turn drum bound1043 clear against293 
 No new SOFA physics run or physical hardware test. Existing Native time/mesh FAIL, old185 unresolved continuous-service prisms, full cartridge continuous path, actual nut retention/thread/clamping/pullout, remaining five distal keepers, other two drum modules, motor interface, materials,100g/Lift/Recovery and STEP remain unqualified. Old B3 functional50g result is NOT validation of this hardware. Eight physical service steps and eight drum tests remain NOT EXECUTED/NOT MEASURED.
 
 Next: use frozen300-part assembly to define positive pad/nut retention and reversible unloaded service with finite tool geometry; validate each remaining distal terminal independently. Do not propagate f0 drum geometry without placement/wire checks. Actual pullout/preload requires specimens and instrumentation. Reproduction: Python cad/incremental_wire_audit.py --tag UNIQUE --case product_all_hood_drive1055 --baseline-assembly product_root_catalog_drive1045 --baseline-audit product_current_wire1050 (only for a justified changed candidate; do not repeat unchanged results). Python cad/manufacturing_test_run.py --tag UNIQUE runs software regressions, not physical gates.
+## Active1544 — replicated object-only100g functional PASS; indirect hardware caveat
+
+1534/1537 and independent1538/1541 satisfy original exploratory100g goal:
+slip0.00023939mm, speed2.508229mm/s, SkinFz0.980995N, Guide/Rail/Support
+object force0, positive saved FEM. NOT physical/time/mesh qualification.
+Actual1540 Guide–Guide response has1449 nonzero hold rows; indirect bracing
+is NOT excluded. Existing object-only verdict preserved, not unbraced PASS.
+1542 geometry-root replay restores1mm saved guide gap with sector margin
+0.892121794mm; no collisions disabled.1543 actual fixedsingle.25s valid,
+1544 actual free3 .6s underway. Inspect its summary before continuing.
+Next full2s uses same candidate only if cost/element gates pass, followed by
+grasp_goal_assess AND guide_pair_response_inventory.1535 Root/origin API
+coupon PASS only; new100g Lift NOT MEASURED. Lastcommit: git log.

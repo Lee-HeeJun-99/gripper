@@ -161,14 +161,26 @@
     {
       "id": "paired_order_mesh_grasp100",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "PASS",
       "prerequisites": ["tet_handedness_diagnosis"],
-      "scope": "ExploratoryNativepairedQRtetmesh onunchangedphysicaluntaperedreference;NOTstrictreflection/time/meshqualification",
+      "scope": "1537/1541 originalobject-onlyEXPLORATORY100gfunctionalPASS independentlyreproduced;1540GuideGuidebracingpresent,NOTunbraced/time/mesh/physicalqualification",
       "hypothesis": "Conformingcentreline294nodes permit reflectedtetsets;paired0/1swap preservesQRABaxis/ABCplane underreflection. Eliminatedmm-scaleNoObjectbias may reducegraspdrivingtorque. OldStrict1e−12vFAIL1.44e−12preserved.",
       "evidence": ["centreline_asym1524", "centreline_sym1525", "centreline_assess1526", "centreline_paired1527", "paired_order_assess1528"],
       "validation_criteria": ["Conformingclosedboundary/positiveelements/exactsamevolumeandoldreferencepoints/foot36;consistentFEMcollisionboundary;actual100goriginalgoal;newnodeUniformMassquadraturechangeexplicit;no numericalPASSfromsymmetryalone"],
       "failure_alternatives": ["ActualNativecontacttorque/event diagnosis ifstillunstable;no dt/force/randomdiagonal scan"],
-      "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
+      "successors": ["unbraced_route_qualification", "exploratory_100g_lift"]
+    },
+    {
+      "id": "unbraced_route_qualification",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["paired_order_mesh_grasp100"],
+      "hypothesis": "Single geometric root restoring1mm saved-guidegap may remove indirecthardwarebracing while retainingoriginal100ggoal;not randomizedmargin tuning",
+      "scope": "ActualnewNative route required;1542savedpose replay isNOTequilibrium/holding",
+      "evidence": ["paired_guide_pairs1540", "unbraced_route1542", "unbraced_fixed1543", "unbraced_three1544"],
+      "validation_criteria": ["original100ggoal plus zero actualGuideGuide nonzeroresponse rows;allcollisions/radii retained;positiveallSavedFEM;boundedchild"],
+      "failure_alternatives": ["actualgeometry/contactforcefailureanalysis,notGuidecollisionremoval orrandommargin/force scan"],
+      "successors": ["exploratory_100g_lift"]
     },
     {
       "id": "native_finite_beam_component_coupon",

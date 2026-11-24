@@ -9,11 +9,23 @@ from analyse import BASE,sha
 from native_bending_coupon import guarded
 from mirror_conforming_mesh import generate,adapt
 from conformal_cradle_grasp import continuation_cost
+from mechanism_candidates import world,width,guide_outboard,guide_normal
+def apply_unbraced_route(root,c):
+ source=BASE/'results/unbraced_route1542';e=json.loads((source/'summary.json').read_text());assert e['status']=='READY_STATIC_ROUTE_INTERVENTION_ONLY'
+ candidate=json.loads((source/'config.json').read_text());old=c['tendon']['sector_margin_mm'];c['tendon']['sector_margin_mm']=candidate['tendon']['sector_margin_mm'];assert c==candidate
+ for i,angle in enumerate((0,120,240)):
+  for j,side in enumerate((-1,1)):
+   path=np.array([world(c,[x,side*(width(c,x)/2+guide_outboard(c,x)),guide_normal(c,x)],angle) for x in [0]+c['tendon']['guide_stations']])*.001;path[:,2]+=c['research_root_translation_z_mm']*.001
+   node=root.find(f"Node[@name='guides{i}']/Node[@name='cable{j}']");assert node.find('RigidMapping').get('globalToLocalCoords')=='1'
+   node.find('MechanicalObject').set('position',' '.join(map(str,path[1:].ravel())))
+   node.find('CableConstraint').set('pullPoint',' '.join(map(str,path[0])))
+ return dict(source_sha256=sha(source/'summary.json'),old_sector_margin_mm=old,new_sector_margin_mm=c['tendon']['sector_margin_mm'],scope='OnlychildGuiderestoffsets/pullpoints changed;allcollisions/radii/parentframes/masses retained. SavedreplayNOTnewdynamics;actualGuideGuideauditrequired.')
 def main():
  p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--single',action='store_true');p.add_argument('--duration',type=float,choices=[.25,.6,.8,1.,1.2,2.],default=.25);p.add_argument('--pilot');p.add_argument('--cost-prefix');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/untapered_hold1001506';coupon=BASE/'results/centreline_paired1527';eligible=json.loads((coupon/'summary.json').read_text());assert eligible['status']=='VALID_CENTRELINE_MESH_COUPON_ONLY' and eligible['only_two_Cable_rows'];root=ET.parse(src/'scene.scn').getroot();c=json.loads((src/'config.json').read_text());old=json.loads((src/'mesh.json').read_text());m,quality=generate(c,True,True);assert m==json.loads((coupon/'mesh.json').read_text());records=adapt(root,c,old,m);skin=[];centre=np.fromstring(root.find("Node[@name='object']/MechanicalObject").get('position'),sep=' ')[:3];radius=float(root.find("Node[@name='object']/Node/SphereCollisionModel").get('radius'))
  for i in range(3):
   n=root.find(f"Node[@name='finger{i}']/Node[@name='skinCollision']");q=np.fromstring(n.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);faces=np.fromstring(n.find('MeshTopology').get('triangles'),sep=' ',dtype=int).reshape(-1,3);tri=q[faces];near=trimesh.triangles.closest_point(tri,np.repeat(centre[None],len(tri),axis=0));gap=float(np.linalg.norm(near-centre,axis=1).min()-radius);assert gap>=c['simulation']['contact_distance_mm']*.001;skin.append(gap)
  geometry=dict(mesh=quality,adaptation=records,initial_Skin_object_gap_m=skin,source_geometry_sha256=sha(src/'geometry.json'),scope='Sameuntaperedreference/material/totalmass/cables/Guides/foot/Root/T1.5/BC as1506. Extra centreline nodeschangeUniformMassnodalquadrature andmatchingcollisiontriangulation vs252nodecase;not isolatedtopology-onlyfullgraspcomparison. No duplicated material/newforcefield/SDK. Strictmirrorvelocity1.44e−12 FAIL1528preserved;positions4.13e−15 andhandednesssuppressed supportEXPLORATORY functionalpilot ONLY,not numericalqualification.')
+ if 'unbraced' in a.tag:geometry['route_intervention']=apply_unbraced_route(root,c)
  if a.single:
   for n in list(root):
    if n.tag=='Node' and n.get('name') not in ('finger0','guides0','free0','object'):root.remove(n)

@@ -4334,3 +4334,14 @@ bendcandidate,no toleranceorforcefitting. No4cableNativeor3Fingergraspbefore
 geometry/controlcontract. 1410software56PASS,SDK7unchanged;time/mesh/100gFAIL
 and300partCADscopeunchanged. Nativeallfinished. SeeCHECKPOINT/AUTONOMOUS_RESUME
 andOPPOSED_TENDON_OPENING_20261124.md;oldnext-tasknotesbelowhistoricalonly.
+## Active1544 — original100g functional goal reproduced; unbraced gate next
+
+1537/1541 EXPLORATORY_FUNCTIONAL_GRASP_PASS: slip0.000239mm,
+speed2.508229mm/s, SkinFz0.980995N, Guide/Rail/Support objectforce0.
+1540 nevertheless1449 nonzero GuideGuide hold rows: indirect bracing unresolved.
+Do not promote to unbraced/physical/product PASS.1542 deterministic geometric
+root restores1mm old-trajectory guide clearance;1543 actual fixedpilot valid;
+1544 new actual3finger .6s underway. Follow AUTONOMOUS_RESUME top, inspect
+actualsummary before unique full2s trial and BOTH goal and hardware-row audits.
+1535 root/origin motionAPI coupon verified;100g Lift still NOT MEASURED.
+Strict1528 reflectionvelocityAPI FAIL andoldtime/mesh FAILs preserved.

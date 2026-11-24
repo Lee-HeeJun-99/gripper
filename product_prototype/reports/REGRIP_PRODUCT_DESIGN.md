@@ -1151,3 +1151,12 @@ bore/support/strength/COM/inertia/material data remain unqualified. Actual
 Skinload1.2s observedwithoutGuide/Rail/Support,buthighmotion,full100gHolding
 not yetpassed. All oldB3functionalresults/CAD/physicalFAILs preserved. See
 FINITE_WIRE_AND_100G_GOAL_20261124.md andlatestproductCHECKPOINT.
+## Candidate1542 — separate functional prototype, NOT fabrication approval
+
+PairedQR294node manufactured equatorial untapered24mm candidate achieves
+object-only exploratory100ggoal1537 independentlyreproduced1541.
+ButactualGuideGuide contact1540 may bracefingers; doNOTclaim unbracedproduct.
+Candidate1542 changesonly sector-margin .5→.892121794mm fromgeometricroot
+of1mm oldtrajectoryGuidegap; finiteGuide collision radii andallcollisions
+remain enabled.1543fixedpilotvalid,1544newdynamicsunderway. Old300partCAD,
+actualmass/inertia/attachment/material/STEP qualification remainseparate.

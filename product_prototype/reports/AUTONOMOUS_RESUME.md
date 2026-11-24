@@ -1,5 +1,23 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1544 supersedes historical entries below.1534/1537 actual100g
+EXPLORATORY_FUNCTIONAL_GRASP_PASS independently reproduced1538/1541 with
+identical object Raw SHA. BUT1540 actual GuideGuide nonzero hold rows1449:
+indirect bracing unresolved, not unbraced or fabrication/physical PASS.
+1542 deterministic saved-motion geometry root, no collision removal:
+sector_margin_mm0.8921217941633586 restores1mm guidegap in old-pose replay.
+1543 actual fixedsingle .25s positiveFEM;1544 actual free3 .6s RUNNING.
+Inspect results/unbraced_three1544/summary.json/process first; NEVER overwrite.
+If valid: python product_prototype/sofa/run_mirror_mesh_grasp.py --tag
+unbraced_hold100_NEW --duration 2 --pilot unbraced_three1544
+(must forecast<420s; otherwise bounded withdrawal pilot first).
+Then separate grasp_goal_assess.py --tag UNIQUE --case NEWCASE and
+guide_pair_response_inventory.py --tag UNIQUE --case NEWCASE. Require original
+goal plus zero actual guide-bracing rows. Tag containing unbraced explicitly
+selects frozen1542 route; allGuide spheres/radii/collisions remain enabled.
+1535 Root/origin coupon verified public API, not actual100g Lift.
+Strict1528 velocityAPI FAIL, old time/mesh FAIL preserved. Gitlog authoritative.
+
 CURRENT1533 supersedesbelow. ActualpairedQRmesh fixed1529andfree3.6s1530
 completedpositiveFEM.1530endobjectspeed4.46mm/s/omegaZ.01661rad/s,NOTfinal
 Holding. Actualpaired_mesh_withdraw1532 nowRUNNING1.2s/hard420s/4GiB.

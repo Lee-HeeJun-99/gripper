@@ -27,7 +27,7 @@ def main():
             values=gap[:,i,j];idx=int(np.argmin(values));negative=np.flatnonzero(values<0)
             if len(negative):pairs.append(dict(finger0=g['finger'],cable0=g['cable'],side0=(-1,1)[g['cable']],station0_mm=stations[i],finger1=h['finger'],cable1=h['cable'],side1=(-1,1)[h['cable']],station1_mm=stations[j],minimum_gap_mm=float(values[idx]*1000),worst_time_s=float(times[idx]),first_negative_s=float(times[negative[0]]),last_negative_s=float(times[negative[-1]]),negative_frames=len(negative),centre0_m=g['q'][idx,i].tolist(),centre1_m=h['q'][idx,j].tolist()))
     pairs.sort(key=lambda r:r['minimum_gap_mm']);detected={}
-    path=src/'detection_pairs.csv'
+    path=src/('detector.csv' if (src/'detector.csv').exists() else 'detection_pairs.csv')
     if path.exists():
         inputs[path.name]=sha(path)
         for row in csv.DictReader(path.open()):

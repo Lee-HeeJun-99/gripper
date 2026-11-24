@@ -69,13 +69,47 @@
     {
       "id": "cable_length_hold_exploration",
       "priority": 1,
-      "status": "RUNNING",
-      "scope": "Input-only Native forceclosing then actualgeometriclength hold;straightcoupon before FEM/contact and100g",
+      "status": "REJECTED",
+      "scope": "Straight Native input switch passes;singleFingerprefixpure, but coupledwithdrawal poor and resttarget error2.99mm;not promoted to fullHolding",
       "hypothesis": "Maintaining formed cablelength may prevent closure yielding underwithdrawal without raising prescribedforce;must measure actualemergenttension/elements",
       "prerequisites": [],
-      "evidence": ["cable_latch_control1443", "cable_latch_active1444", "latch_single1446"],
+      "evidence": ["cable_latch_control1443", "cable_latch_active1444", "latch_single1446", "cable_latch_initialized1449", "latch_single1450", "latch_contact1451", "fixed_length_pilot1453", "cable_ramp_coupon1456", "rest_target_contact1458", "rest_target_pilot1459", "rest_target_purity1460"],
       "validation_criteria": ["No q/v/SDK/physicslaw edits;inputtype/lengthswitch journal;geometriclength/residual/elementchecks;original100gthresholds;no falseforcecommand afteroverride"],
       "failure_alternatives": ["Retain fail and assess force-path/contact geometry;no furtherforce/dt sweep"]
+    },
+    {
+      "id": "axial_registration_grasp100",
+      "priority": 1,
+      "status": "REJECTED",
+      "scope": "One derived initialgripperapproach height,unchangedrelativefingergeometry/T1.5/mu.3/object/support;actual100g test",
+      "hypothesis": "Register90mm Skin station at lowerhemisphere z(c)−.85R to contact beforeterminal and leave distal tail belowobject;shift−5.037386mm derivedfromoriginalgeometry,not randompose sweep",
+      "prerequisites": [],
+      "evidence": ["axial_registration1461", "axial_hold1001462", "axial_hold_assess1463"],
+      "validation_criteria": ["ActualNativefull2s,old100gprotocol,source-resolvedSkinloads,Guide/Rail/Support exclusion,positiveelements,momentum. Object/support states never prescribed."],
+      "failure_alternatives": ["Evaluate actualcontact material locations/force direction;no arbitraryheight/force search"]
+    },
+    {
+      "id": "measured_load_sizing_grasp100",
+      "priority": 1,
+      "status": "REJECTED",
+      "scope": "ONE load-sizing hypothesis from existing matched1298/1306actualSkinloads,not structural-efficiency gain or motor spec",
+      "hypothesis": "Existing.55–.65s SkinFz .69237/.93747N at1.5/2N is below100gweight;local secant plus declared10%designreserve derives2.288913N. Prior2.5Nrailbackno-objectpositive is not monotonicproof;actualnewPilotrequired.",
+      "prerequisites": [],
+      "evidence": ["grasp_load_budget1465", "load_budget_single1466", "load_budget_contact1467", "load_budget_hold1468", "load_budget_assess1469"],
+      "validation_criteria": ["No additionalforce incrementsifthisfails;originalgeometry/Tshape/mu/mass unchanged;actualNativeforceNscommand checked,positiveFEM;full100gGoalprotocol beforePASS"],
+      "failure_alternatives": ["Stop input-sizing family;independent constitutive/coupling or contact mechanism work,not force/dt search"]
+    },
+    {
+      "id": "conformal_cradle_grasp100",
+      "priority": 1,
+      "status": "RUNNING",
+      "scope": "New stress-free manufactured circular distal reference and compatible finite guide placement;not final hardware or time/mesh qualification",
+      "hypothesis": "Conformal lower-hemisphere reference radius30.5mm can distribute Skin contact;actual initial Guide-first result requires dorsal terminal on railback,not removed collision. Hybrid reuses frozen1465 force,not a new force increment.",
+      "prerequisites": [],
+      "evidence": ["conformal_geometry1470", "conformal_fixed1471", "conformal_fixed_mid1472", "conformal_dorsal1473", "conformal_dorsal_mid1474", "conformal_three_pilot1475", "conformal_hybrid_fixed1477", "conformal_hybrid_three1478", "conformal_hybrid_pilot1482"],
+      "validation_criteria": ["Retain all collision radii/DOFs;initialSkin/wire/guidegap positive;actualSkin detector/response;positive all saved FEM;original100g full2s criteria unchanged;partial pilots not HoldingPASS;4GiB/420s"],
+      "failure_alternatives": ["Stop candidate without new physical hypothesis;inspect actual contact source/wrench and support withdrawal;no arbitraryforce/dt search"],
+      "successors": ["independent_functional_reproduction", "exploratory_100g_lift"]
     },
     {
       "id": "native_finite_beam_component_coupon",

@@ -1,3 +1,36 @@
+## Active continuation through1482 — actual conformal grasp pilots
+
+See AUTONOMOUS_RESUME.md top and FINITE_WIRE_AND_100G_GOAL_20261124.md.
+1468 actualfullforce-sizing100gFAIL1469;no moreincrementsoldgeometry.
+Newmanufacturedconformalcradle1470 preservesfinitehardwarecollisions;actual
+Guide-firstfailure1471/72 correctedbydorsalterminal1473/74.1475actual1.5N
+free3 .6sSkinFz.94784N,Support.03338N. Hybrid1477/78usesalreadyfrozen1465
+force,notrandomnewinput;1482 actual.6sSkinFz1.07020N/all3Skincontribute,
+Guide/Rail/Support0,positiveFEMbut42.25mm/sspeed. NO100gHoldingPASS.
+Actual Nativewithdrawaljobs1479/1481 underway;checksummary/process before
+continuation,uniqueoutputs/hard420s/4GiB.1480software12PASS/7SDKhashes same.
+No oldRaw/SDK/FAIL changes. Lastlocalcommit gitlog;checkpointnottermination.
+
+## Active continuation through1467 — actual grasp cycles continue
+
+Starting41f15b0;featurea4a14e7. Native inputlatch1449/1450worksinstraightcoupon
+and4singleFingerprefixes240rowsEXACT;firstactive.6025capturesaccepted.6.
+Singlelengtherror6.44e−11m isNOT1e−12PASS. Coupled1451poorwithdrawal by1.2s;
+rest-targetC2build1454/coupon1456strictPASSbut1458coupledcommanderror2.993mm,
+drop12.034mm at1.2s. Rejectlength-inputfamily,nofullHoldingclaim.1459/1460raw
+inventory/purity,notnewphysicsPASS. Old1441/1447binariespreserved.
+
+Newapproachpose1461/1462derived−5.037386mmgripperheightonly,objectunchanged;
+actual2s143.334spositiveFEMbut1463HoldingFAIL40.012mm,Support.90451N.
+DoNOTsweepheights.1464software8tests+7SDKidentityPASS,notgrasp.
+
+Currently RUNNINGmeasured_load_sizing_grasp100.1465reusesoldmatchedactual
+Skinloads.69237/.93747Nat1.5/2N,both<.981Nweight. ONE declared10%reserve/local
+secant yields2.2889131NperCable,not mechanismgain/motorspec/force-search.
+1466actualsingle.8spositive(minvolume.85322)/forceimpulseerror0.1467contact
+1.2sNativecurrentlyrunning;checkactualfiles/process beforeanyretry. Forecasteach
+under420s,4GiB,oldSDK/Raw/FAILsuntouched. No100g success yet. Lastcommitgitlog.
+
 ## Active continuation through1448 — 100g goal, not product approval
 
 Start41f15b0clean. Actual finitewire/Eyeletcontact+sliding1431/1432/1436 complete:

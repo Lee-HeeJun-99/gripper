@@ -1,0 +1,58 @@
+{
+  "source_commit": "a4a14e76ded54fe63370e5847d57647fd2090e88",
+  "source_sha256": "e705ebb7c20f591c43cabfcd761c1072d003ecdc104d910dc991e117d8b1f510",
+  "scene_sha256": "c31c064c6c7dcdb6230d248615dfcf4bfacfde059b68d69c3f35c2bbe2f1bc31",
+  "baseline_sha256": "02550c3b29fddc96c4066acbdc31f4f84289a4b7e011005614656b64b199d259",
+  "geometry": {
+    "shift_z_mm": -5.037385900316252,
+    "registered_material_station_mm": 90,
+    "design_target_normal_z": 0.85,
+    "rule": "Move gripper initial approach pose only,so undeformed90mmSkin centre reaches sphere lower-hemisphere z(c)\u2212.85R. .85 is a declared design direction inspired by old50g upwardnormals,not a new measured result. Object/support are not moved. One derived pose,no sweep.",
+    "records": [
+      {
+        "finger": 0,
+        "initial_skin_gap_mm": 3.835010349771956,
+        "initial_wire_gap_mm": 10.453746196674459,
+        "initial_guide_gap_mm": 8.900970558942465
+      },
+      {
+        "finger": 1,
+        "initial_skin_gap_mm": 3.8350103497719488,
+        "initial_wire_gap_mm": 10.453746196674459,
+        "initial_guide_gap_mm": 8.900970558942465
+      },
+      {
+        "finger": 2,
+        "initial_skin_gap_mm": 3.835010349771956,
+        "initial_wire_gap_mm": 10.453746196674459,
+        "initial_guide_gap_mm": 8.900970558942465
+      }
+    ],
+    "root_radius_mm": 50,
+    "unchanged": "Relativefingergeometry/mass/material/tendonpath/cableforce/Rootangle/friction/objectpose/supportprotocol;all three root/free/guide/collision reference positions and pullpoints translate equally. Fullhardware/gripper dynamics not certified."
+  },
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "100",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/axial_registration1461/scene.scn"
+  ],
+  "duration_s": 0.25,
+  "forecast_s": 30.0,
+  "SDK": "/home/ubuntu/SOFA/v26.06.00",
+  "binary_hashes": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_alarm_window484/libReGripAlarmWindow.so": "6da7c82044b72a024bc825a476020e75f99499ad4f51c106b0a00b36bde841bf",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "memory_GiB": 4,
+  "child_limit_s": 420,
+  "force_N_per_cable": 1.5,
+  "holding_protocol_sha256": "ac5abcdc648dcbd7760b84f7c1cbfd4f3d291929b0f0327c196df500de36114c"
+}

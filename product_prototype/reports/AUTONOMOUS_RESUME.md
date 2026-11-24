@@ -1,5 +1,40 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1482 supersedesbelow. Lastfeaturea4a14e7;additionalinput/geometrycycles
+awaitlocalcommit.1468full2sforce-sizingFAIL1469(slip205.847mm);no moreforce
+incrementsoldgeometry. Newconformalmanufacturedcircle56.172deg/R30.5 reference
+andderivedRoot46.6256/z−4.4821,notobjectprescription.1471/72Guide-firstfailed;
+dorsal98mmterminal onrailbackplane correctedcontactwithoutremovingcollision.
+1475actual1.5N3Finger.6sSkinFz.94784N/Support.03338N,notHolding.
+1477/78hybrid EXACTfrozen1465force2.2889131N newshape,not force-sweep.1482
+endpoint.6SkinFz1.0702N/GuideRailSupport0,all3Skinloads,but42.25mm/sspeed,
+notHoldingPASS.1480software12PASS/SDK7unchanged. Fullreport
+FINITE_WIRE_AND_100G_GOAL_20261124.md and actualsource snapshots.
+
+CURRENT Nativejobs: conformal_withdrawal1479(1.5N1s),
+conformal_hybrid_withdraw1481(2.2889131N1.2s). Inspect actualsummary/process
+BEFOREretry;no existingpath reuse. Use conformal_pilot_assess.py withNEWtag
+aftercompletion. If valid and runtimeforecast below420,full2s via
+conformal_cradle_grasp.py --tag NEW --dorsal-terminal --load-sized --native
+--duration 2 --pilot conformal_hybrid_withdraw1481,then grasp_goal_assess.py.
+Do not declare fullHoldingfrompartialstates;all originalthresholds unchanged.
+No100gPASS yet,notnewCADqualification;no aftersessionbackgroundpromise.
+
+CURRENT1467 supersedesbelow. Nativewirecontact/slidingandmultipleactual100g
+cyclesdone. Source/reportFINITE_WIRE_AND_100G_GOAL_20261124.md. Lastfeature
+a4a14e7.1462full2saxialregistrationFAIL1463;noheight-sweep. Latch/RAMPcoupled
+1451/1458only1.2s,poorwithdrawal+up to2.993mm commanderror,notfullHoldingPASS
+orFAIL. Software1464=8PASS/SDK7same. All oldRaw/Nativebinaries preserved.
+
+CurrentRUNNING measured_load_sizing_grasp100.1465actualoldSkinloadsecant and
+declared10%reserve derivesONE2.2889131Ninputcase;not structureefficiency or motor
+spec.1466actualsingle.8s/minvolume.85322/forcecommanderror0.1467contact1.2s
+currentlyNative:inspectactualprocess/summary before next. Ifvalid andinterpretable,
+same case2s withactualcostforecast;originalgoalprotocolalreadywritten. Ifbad,
+stopthisforce-sizingfamily,notmoreincrements. No100g success yet. Root/Finger/
+materials/mu/object/support original1298 unchanged inthiscase. No backgrounds
+promisedoutside session;lastlocalcommit `git log -1`.
+
 CURRENT1448 supersedesbelow. Multiple actualNativewire/contact/graspcyclesdone;
 100g goal NOTMET. ReadCHECKPOINT/reportFINITE_WIRE_AND_100G_GOAL_20261124.md.
 1438actualfull100g nonuniformprofile+initialclearance53.175624root FAIL1439:

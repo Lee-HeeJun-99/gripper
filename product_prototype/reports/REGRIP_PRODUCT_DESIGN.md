@@ -1141,3 +1141,13 @@ rod/wire/Skinseparationbutaddsnominal39.4335mm³rodmaterial;noBooleanCADmass/
 COM/inertia orstrengthvalidated. Boremargin−.00659688mmandR5bendtargetremain
 unqualified. Current300partCAD/BOMunchanged;do notfabricateordeclare50/100g
 performancefromthisstudy. Nextentry/bendgeometrygatebeforeintegration.
+## Research-only conformal cradle1486 — not qualified product geometry
+
+Newstress-free manufactured innerSkinradius30.5mm/70–100mm arc56.172deg,
+derivedrootradius46.6256mm/zshift−4.4821mm and98mm dorsalterminal onrailback
+planeare independent researchcandidate,not updated300partfabricationassembly.
+FiniteGuide collisionradii retained;wireR.25 staticroutegapchecked,but dynamic
+bore/support/strength/COM/inertia/material data remain unqualified. Actual
+Skinload1.2s observedwithoutGuide/Rail/Support,buthighmotion,full100gHolding
+not yetpassed. All oldB3functionalresults/CAD/physicalFAILs preserved. See
+FINITE_WIRE_AND_100G_GOAL_20261124.md andlatestproductCHECKPOINT.

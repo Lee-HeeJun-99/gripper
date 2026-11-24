@@ -5,8 +5,10 @@ import numpy as np
 from analyse import BASE,sha
 from native_bending_coupon import guarded,add
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--no-latch',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/force_profile334';root=ET.parse(src/'scene.scn').getroot();binary=BASE/'cad/build_cable_latch1447/libReGripCableLatch.so';plugin=add(root,'RequiredPlugin',pluginName=str(binary));root.remove(plugin);root.insert(0,plugin);n=root.find('Node');control=n.find('NativeCableSequence');control.set('closing','.05')
- if not a.no_latch:add(n,'NativeCableLatch',cable0='@cable0/actuator',cable1='@cable1/actuator',start=.1,filename=str(out/'latch.csv'))
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--no-latch',action='store_true');p.add_argument('--ramp-target',action='store_true');a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/force_profile334';root=ET.parse(src/'scene.scn').getroot();binary=BASE/'cad/build_cable_latch1454/libReGripCableLatch.so';plugin=add(root,'RequiredPlugin',pluginName=str(binary));root.remove(plugin);root.insert(0,plugin);n=root.find('Node');control=n.find('NativeCableSequence');control.set('closing','.05')
+ if not a.no_latch:
+  latch=add(n,'NativeCableLatch',cable0='@cable0/actuator',cable1='@cable1/actuator',start=.1,filename=str(out/'latch.csv'))
+  if a.ramp_target:latch.set('final0','.0012');latch.set('final1','.0013');latch.set('end','.15')
  for node in root.iter():
   for k,v in list(node.attrib.items()):node.set(k,v.replace(str(src),str(out)))
  ET.ElementTree(root).write(out/'scene.scn');snapshot=out/'source';snapshot.mkdir()

@@ -1,3 +1,19 @@
+## Active after1486 — conformal100g fullHolding trials
+
+Finitewire/Eyeletcontact+sliding1431/32/36DONEconditionalzero-frictioncoupon.
+Do not repeat. Three newfull100g failures1438/1462/1468preserved;noheight/
+force/dt sweeps. Inputlengthfamilyrejectedcoupledtracking. Currentnewcradle
+manufacturedcircle+dorsalterminal positiveFEM1479/1481;partialSkinloadwithout
+Guide/Rail/SupportnotfullHolding. Actual2sjobsconformal_hold1001483(1.5N)
+andconformal_hybrid_hold1001484(frozen1465load2.2889131N)running. Inspect
+actualsummary/process;neverreusefolders. Whencomplete run grasp_goal_assess.py
+--case CASE --tag NEW. Nativecosthard420/4GiB unchanged.1483usesactualidentical
+.6→1sstateprefix toforecast364.53swallcost,no physicalparameter/tolerancechange.
+If true100gfunctionalPASS,independentreproductionthenLift/Release;otherwise
+actualcontact/wrench/lateralstabilityanalysis before newmechanism. No100gPASS
+yet. ProductCHECKPOINT/AUTONOMOUS_RESUME andqueue authoritative;noSDKwrites/
+oldRawchanges/remotepush/historyrewrite/aftersessionjobpromise.
+
 ## Next after1425 — actual finite beam exists;eyelet contact next
 
 InstalledBeamAdapteractualcoupon1421andmatchedzero-load1422complete,20states

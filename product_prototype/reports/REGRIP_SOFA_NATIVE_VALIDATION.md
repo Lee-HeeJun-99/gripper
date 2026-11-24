@@ -1,3 +1,17 @@
+## Actual wire contact and new100g mechanisms1426–1486
+
+Wire/finiteEyelet1431/32/36 actualcontact+frictionlessaxialsliding;1437
+observerEXACT and actualpair/impulsepartition0,not fullwirehardwarefriction.
+Nonuniformcurve1438FAIL,axialpose1462FAIL,force-sizing1468FAIL preserved.
+Native inputlatchcoupon works,but coupled1458commanderror2.993mm rejects
+that actuationfamily. No q/v/SDK edits or revisedphysicalcriteria.
+Newconformalstress-freecircle/dorsalterminal keepsactualSkinload afterGuide-
+firstvariantfailed.1478/1481 actual100g .6/1.2s positiveFEM,Guide/Rail/Support
+0at1.2s,SkinFz.92626N,speed46.18mm/s:NOTfullHoldingPASS.1483/1484actual2s
+trials underway;readactualgoalassessment whencomplete.1480software12PASS/
+7SDKhashesunchanged isNOTphysical/time/meshPASS. SeeproductCHECKPOINT and
+FINITE_WIRE_AND_100G_GOAL_20261124.md for fullsource/binary/raw provenance.
+
 ## Native finite beam1420–1425 — component coupon only
 
 InstalledBeamAdapterradius.25mm/20mm/10edgecoupon actual20steps:tip7.66376µm,

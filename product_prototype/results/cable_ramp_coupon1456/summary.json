@@ -1,0 +1,39 @@
+{
+  "status": "PASS_STRAIGHT_NATIVE_LENGTH_LATCH_ONLY",
+  "no_latch": false,
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.13667824096046388,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "0b1851c2b2b769e6c32f4726f428d9ec3e87cea4525975327b534b09123f11eb",
+      "command.json": "e0aefa318e57dd769ce6b4a26955662f3eea83d1f0d9d02cdeceed279ea03b85",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "b1549da40123dfa0ca4d00d9ec37d5206be716b9911e1ce1da3136f9d55fa43a"
+    }
+  },
+  "command": [
+    "/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00",
+    "--noautoload",
+    "--tmp",
+    "-g",
+    "batch",
+    "-a",
+    "-n",
+    "80",
+    "--hideProgressBar",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/cable_ramp_coupon1456/scene.scn"
+  ],
+  "outputs": 80,
+  "maximum_geometric_latch_error_m": 1.734723475976807e-17,
+  "source_commit": "a4a14e76ded54fe63370e5847d57647fd2090e88",
+  "source_sha256": "209794e89f46abfab487d3547ae9dd84bd40c2b9b38db6fba1b99bd74a1a68e8",
+  "scene_sha256": "9f6fb1c7d6b8e6783bbb7b335b5339879a62fb0b907206e6d24fd2ddd8578a6e",
+  "binary_sha256": "67f32d409908411db30ff499e5b4790643d253aba0f7539f363772a67b72b3b3",
+  "compiled_source_sha256": {
+    "CableLatch.cpp": "795a7af83575487c78124c2c2ab881cc5c4cdcd28c9bd67c22887ff8c70343f2",
+    "CMakeLists.txt": "691f5709943a52ab72815ae0ab506e5637ab4fbbd7aad89eca0f71c673305edc"
+  },
+  "scope": "Input-only public CableConstraint.value/valueType;native spring-mass1g/1000N/m,dt2.5ms. No q/v correction,newphysicslaw/ODE/SDK changes. Originalcontrol.csvcommand_N/command_Ns are PRE-OVERRIDE REQUESTS afterlatch,not actual forces. Readlatch.csv for actual Native\u03bbNs and geometriclength. No curvedguide/contact/grasp/time/mesh or hardwarePASS."
+}

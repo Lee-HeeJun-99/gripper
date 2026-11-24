@@ -1,0 +1,122 @@
+{
+  "status": "FAIL_EXPLORATORY_FUNCTIONAL_GRASP",
+  "tests": {
+    "actual_full_Native": true,
+    "slip": false,
+    "speed": true,
+    "support_gap": false,
+    "support_force": false,
+    "guide_force": true,
+    "rail_force": true,
+    "other_hidden_load": true,
+    "source_partition": true,
+    "momentum": true,
+    "direct_skin_detector_and_force": true,
+    "positive_all_saved_elements": true
+  },
+  "case": "axial_hold1001462",
+  "protocol": {
+    "scope": "Original functional100g thresholds preserved,additional actualloadpartition/momentum/FEM gates;not time/mesh/hardware certification",
+    "mass_kg": 0.1,
+    "radius_mm": 30.0,
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "window_s": [
+      1.6,
+      2.0
+    ],
+    "reference_s": 1.0,
+    "max_vertical_slip_mm": 2.0,
+    "max_speed_mm_s": 5.0,
+    "minimum_support_surface_gap_mm": 5.0,
+    "maximum_support_resultant_N": 1e-05,
+    "friction_assumed": 0.3,
+    "contact_rows_required": true,
+    "additional_hardware_exclusion": "Maximum Guide and Rail resultant force each<=1e-5N in1.6\u20132s",
+    "gravity_momentum_impulse_residual_limit_Ns": 1e-10
+  },
+  "slip_mm": 40.012048434928644,
+  "maximum_speed_mm_s": 0.15285249653025462,
+  "minimum_support_gap_mm": 0.19999999871074536,
+  "force_partition": {
+    "skin": {
+      "mean_force_N": [
+        -0.004255651704984272,
+        0.00917037318849957,
+        0.0764895283552622
+      ],
+      "maximum_resultant_N": 0.07735036550663701
+    },
+    "rail": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    },
+    "guide": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    },
+    "support": {
+      "mean_force_N": [
+        0.004231433934331083,
+        -0.009149515231259968,
+        0.9045110834977439
+      ],
+      "maximum_resultant_N": 0.9046139854555904
+    },
+    "other": {
+      "mean_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_resultant_N": 0.0
+    }
+  },
+  "partition_error_Ns_Nms": 8.673617379884035e-19,
+  "maximum_hold_momentum_residual_Ns": 4.336808689942018e-19,
+  "hold_detector_skin_outputs": 5313,
+  "hold_solver_max_iterations": 900,
+  "solver_iteration_limit_reached": false,
+  "gravity_load_N": 0.9810000000000001,
+  "response_model_paths": {
+    "/floor/SphereCollisionModel1": 2400,
+    "/finger0/skinCollision/PointCollisionModel1": 15174,
+    "/finger0/railCollision/PointCollisionModel1": 11943,
+    "/finger1/skinCollision/PointCollisionModel1": 15180,
+    "/finger1/railCollision/PointCollisionModel1": 11943,
+    "/finger2/skinCollision/PointCollisionModel1": 15180,
+    "/finger2/railCollision/PointCollisionModel1": 12159,
+    "/finger0/skinCollision/LineCollisionModel1": 10134,
+    "/finger0/railCollision/LineCollisionModel1": 2442,
+    "/finger1/skinCollision/LineCollisionModel1": 10155,
+    "/finger1/railCollision/LineCollisionModel1": 1818,
+    "/finger2/skinCollision/LineCollisionModel1": 10143,
+    "/finger2/railCollision/LineCollisionModel1": 1749
+  },
+  "physical_validation": "NOT QUALIFIED",
+  "time_mesh_convergence": "Existing FAIL unchanged",
+  "pressure": null,
+  "source_commit": "a4a14e76ded54fe63370e5847d57647fd2090e88",
+  "source_sha256": "2b817e0daa7b10994c7e8225e80a126f6b9fed057b7b09e4534939413da674ee",
+  "input_hashes": {
+    "scene.scn": "1a9762087a88d076d81f95843bdc8cb336078be830d241bcb9c3d732a7ea8d87",
+    "summary.json": "3027dfcd96a0919c0f3bb9b2463f8860dbc3d000e6cf16d2851478fa297eaf25",
+    "preflight.json": "ff9785f13f053bc8f9379aa2ddabb9a49730fc9eed839e7f7d286859b5809831",
+    "holding_protocol.json": "ac5abcdc648dcbd7760b84f7c1cbfd4f3d291929b0f0327c196df500de36114c",
+    "object.csv": "9cd813a358462f865950ccf7bf876b60e15bb5a52d17c523ce5f107b2f1d95bb",
+    "support.csv": "161589f1748330381303a48bd19fbe45b6522ed06e38d4887c73f279e60e665f",
+    "response_rows.csv": "86b76759b140772c73c43911d45814e5bf4dc69a7f25f6e4c69a53c5aeb3b84c",
+    "detector.csv": "5d54b06252539331311dabfb8fe58ed30d4107981ba1dac2b67bf2d59ed11433"
+  }
+}

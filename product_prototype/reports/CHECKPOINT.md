@@ -2404,3 +2404,12 @@ is NOT excluded. Existing object-only verdict preserved, not unbraced PASS.
 Next full2s uses same candidate only if cost/element gates pass, followed by
 grasp_goal_assess AND guide_pair_response_inventory.1535 Root/origin API
 coupon PASS only; new100g Lift NOT MEASURED. Lastcommit: git log.
+## Latest1552 — full newroute goal PASS, unbraced mechanism FAIL
+
+1549 actual2s/800each81.388s positiveFEM;1551object-only100ggoalPASS:
+speed0.297867mm/s,SkinFz0.980999934N/GuideRailSupportbodyforces0.
+1552actualGuideGuide1449nonzeroholdrows remains. NOTunbraced/physicalPASS.
+1542oldpose1mmclearance didnotpredictnewmotion:1550Guidepointdifference
+0.543–0.654mm. Stopmarginfamily,keepfailures. NextREADY actualGuide-row
+wrenchprovenance/attachmentloadpath,notcollisionremoval. Nochildrenrunning.
+SeeAUTONOMOUS_RESUMEtop andGUIDE_BRACING_QUALIFICATION_20261124.md.

@@ -4345,3 +4345,13 @@ root restores1mm old-trajectory guide clearance;1543 actual fixedpilot valid;
 actualsummary before unique full2s trial and BOTH goal and hardware-row audits.
 1535 root/origin motionAPI coupon verified;100g Lift still NOT MEASURED.
 Strict1528 reflectionvelocityAPI FAIL andoldtime/mesh FAILs preserved.
+## Latest1552 — no running child; next Guide-row wrench provenance
+
+1549newroutefullNativeDONE81.388s/800each/allpositiveFEM.1551object-only
+100ggoalPASS speed0.297867mm/s,SkinFz0.980999934N/otherbodyforces0.
+1552GuideGuide1449nonzeroholdrows =>unbracedqualificationFAIL,notproductPASS.
+1550actualnewGuidecoordinatesdeviate0.543–0.654mmfromoldposeprediction.
+Stopmarginfamily. NextREADYguide_pair_wrench_provenance: actual perGuide
+contactrowJtransposelambda andattachmentloadpath;aggregateGuideimpulseor
+scalarrowλ/dt isnot source-resolvedbodywrench. Follow AUTONOMOUS_RESUMEtop.
+No100gLiftclaim,time/mesh/strict1528FAILspreserved. DoNOT rerunoldpaths.

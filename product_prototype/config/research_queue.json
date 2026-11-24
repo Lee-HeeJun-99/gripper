@@ -173,13 +173,26 @@
     {
       "id": "unbraced_route_qualification",
       "priority": 1,
-      "status": "RUNNING",
+      "status": "FAIL",
       "prerequisites": ["paired_order_mesh_grasp100"],
       "hypothesis": "Single geometric root restoring1mm saved-guidegap may remove indirecthardwarebracing while retainingoriginal100ggoal;not randomizedmargin tuning",
       "scope": "ActualnewNative route required;1542savedpose replay isNOTequilibrium/holding",
-      "evidence": ["paired_guide_pairs1540", "unbraced_route1542", "unbraced_fixed1543", "unbraced_three1544"],
+      "evidence": ["paired_guide_pairs1540", "unbraced_route1542", "unbraced_fixed1543", "unbraced_three1544", "unbraced_hold1001549", "unbraced_goal1551", "unbraced_pairs1552", "unbraced_replay_error1550"],
       "validation_criteria": ["original100ggoal plus zero actualGuideGuide nonzeroresponse rows;allcollisions/radii retained;positiveallSavedFEM;boundedchild"],
       "failure_alternatives": ["actualgeometry/contactforcefailureanalysis,notGuidecollisionremoval orrandommargin/force scan"],
+      "successors": ["guide_pair_wrench_provenance"]
+    },
+    {
+      "id": "guide_pair_wrench_provenance",
+      "priority": 1,
+      "status": "RUNNING",
+      "prerequisites": ["unbraced_route_qualification"],
+      "prerequisite_states": {"unbraced_route_qualification": ["FAIL"]},
+      "hypothesis": "GuideGuide rows can brace fingers through mapped attachment torques; scalarrowmultipliers andzeroGuideObjectload cannot quantifythismechanism",
+      "scope": "Read-onlyNativeGuide/contact-rowJacobian provenance before newmechanismcandidate;notcollisionremoval oranothermargin sweep",
+      "evidence": ["unbraced_pairs1552", "unbraced_replay_error1550"],
+      "validation_criteria": ["actualsource-rowJtransposelambda attribution withsameacceptedtime,physicalNs/Nunits,observerq/vpurity;NULLifunavailable"],
+      "failure_alternatives": ["explicitly retainbracingunqualified;independentphysicalguide-supportkinematicscandidate withfreshclearanceverification"],
       "successors": ["exploratory_100g_lift"]
     },
     {

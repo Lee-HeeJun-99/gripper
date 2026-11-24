@@ -1,5 +1,32 @@
 # Autonomous resume — 2026-11-24
 
+CURRENT1553 supersedesbelow: nexttaskACTUALLYstarted,notplanonly.
+guide_pair_wrench_coupon.py --tag guide_pair_wrench1553 nowRUNNINGactual
+Native.6s, source1544initialScene+threeREADONLYNativePairRows fromfrozen
+binary514 hashverified. PerGuideRigid3 parentJ rows joinedtoactualGuideGuide
+responsepairs; q/vpurity vs1544required≤1e−12. NoSDK/physics/constraints
+changed. Inspect1553summary/processbeforeanyretry. Full1552mechanismFAIL
+andoriginalobject-onlyfunctionalPASSunchanged. No100gLiftclaim.
+
+CURRENT1552 supersedes ALL earlier RUNNING entries. NO child remains running.
+Latest featurecommit beforefinalsave6d91168;gitlogfinalSHAauthoritative.
+1549 actualnewroutefull2sDONE81.388s/800each/positiveFEM;1551originalobject
+goalPASS speed0.297867mm/s,SkinFz0.980999934N/otherbodyloads0. Signedslip
+−0.0000977mm meansobjectslightlyhigherthan1s,notnegativefrictionalslip.
+BUT1552GuideGuide1449nonzeroholdrows:unbracedqualificationFAIL. Donotclaim
+hardware-independentHolding/Lift/physicalPASS. ReportGUIDE_BRACING_QUALIFICATION
+hasactualscope.1542replaygap1mmbecameactual.199mm;1550newGuidecoordinates
+differ0.543–0.654mmfromfrozenoldparentposeprediction. Stopmarginfamily.
+NextREADYguide_pair_wrench_provenance: inspect actual Native observer source
+for perGuide/contactrowJ andread-onlysampling; currentlyscalarλ/dtNOTfull
+Guidewrench. DoNOT inferpartitionsfromaggregateGuideimpulsealone. Exactroot/
+originfixture1535alreadyverified;new100gLiftNOTMEASURED/blockedbymechanism
+qualification. OriginalfunctionalPASS1537/1541preserved,time/meshFAILsremain.
+Recheck gitstatus/queue/results beforechanges. Queuecommand:
+python product_prototype/tools/research_queue.py
+Existing results1549/1551/1552MUSTNOTbereruninoverwrittenpaths.
+
+
 CURRENT1544 supersedes historical entries below.1534/1537 actual100g
 EXPLORATORY_FUNCTIONAL_GRASP_PASS independently reproduced1538/1541 with
 identical object Raw SHA. BUT1540 actual GuideGuide nonzero hold rows1449:

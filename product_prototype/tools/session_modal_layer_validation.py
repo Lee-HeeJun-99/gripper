@@ -12,6 +12,7 @@ def main():
  patterns=['test_contact_provenance.py','test_primitive_control.py','test_layer_interface.py','test_primitive_work.py','test_feature_impulses.py','test_b3_feature_audit.py']+patterns
  patterns=['test_layer_reference.py','test_layer_native_reference.py','test_layer_interface_reference.py']+patterns
  patterns=['test_refined_interface.py','test_layer_constraint_scale.py']+patterns
+ patterns=['test_layer_section.py','test_layer_face_load.py']+patterns
  for pattern in patterns:
   command=[sys.executable,'-m','unittest','discover','-s',str(BASE/'sofa'),'-p',pattern];r=subprocess.run(command,text=True,capture_output=True,cwd=BASE.parent);(out/(pattern+'.log')).write_text(r.stdout+r.stderr);match=re.search(r'Ran (\d+) tests?',r.stderr);records.append(dict(pattern=pattern,command=command,exit_code=r.returncode,tests=int(match.group(1)) if match else None))
  git_guard=subprocess.run([sys.executable,str(BASE/'tools/research_git_guard.py'),'--since','168e11b'],cwd=BASE.parent,text=True,capture_output=True);(out/'git_history_guard.log').write_text(git_guard.stdout+git_guard.stderr)

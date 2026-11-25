@@ -1,0 +1,57 @@
+{
+  "status": "PASS_NOMINAL_BULK_BOUNDS_ONLY_JOINTS_UNQUALIFIED",
+  "configuration": {
+    "rotor_hub_outer_radius_mm": 2.5,
+    "radial_bore_radius_mm": 1.55,
+    "sleeve_outer_radius_mm": 1.5,
+    "sleeve_inner_radius_mm": 0.35,
+    "return_shaft_radius_mm": 0.25,
+    "free_return_length_mm": 3,
+    "root_socket_length_mm": 0.2,
+    "rotor_socket_length_mm": 0.25,
+    "radial_bearing_gap_mm": 0.05
+  },
+  "lower_bounds_um": {
+    "return_shaft_to_hollow_sleeve": 98.31194196428571,
+    "sleeve_to_rotor_bore": 42.52431441326531,
+    "return_shaft_to_rotor_bore": 1292.5243144132653
+  },
+  "rational_bound": {
+    "cosine_lower": "24967/25088",
+    "shaft_to_sleeve_um": "176175/1792",
+    "sleeve_to_rotor_um": "533425/12544"
+  },
+  "declared_joining_domains_mm": {
+    "root_socket_z": [
+      -2.0,
+      -1.8
+    ],
+    "rotor_socket_z": [
+      1.2,
+      1.45
+    ],
+    "free_torsion_z": [
+      -1.8,
+      1.2
+    ]
+  },
+  "nominal_stress_references": {
+    "hollow_axle_mean_shear_Pa": 359080.4826515149,
+    "hollow_axle_root_bending_Pa": 1634591.8704473593,
+    "load_reference_N": 2.400000000000001,
+    "assumed_force_plane_to_base_m": 0.0018,
+    "root_bond_mean_torsion_shear_Pa": 1033655.2264669718,
+    "rotor_bond_mean_torsion_shear_Pa": 826924.1811735773
+  },
+  "actual_material_allowable_Pa": null,
+  "actual_bond_strength_Pa": null,
+  "actual_bearing_reaction_N": null,
+  "maximum_actual_controlled_rotor_speed_rad_s": 1.5275143008940972,
+  "source_sha256": "e30f88b968b6456cb30cbf779a198dadd8f5fe1b7645d45e8a7a5bea6995866a",
+  "inputs_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/bearing_geometry1873/summary.json": "a2c6233af46c1be68c454b1fa34e848a9cef6d531bbd067a7d39779bb35c19ca",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/bearing_load1869/summary.json": "d5ed3928b5f7ab111c74f7bb97d2f523dea7e345cf3185d2ca5991e52ea2af4e",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/bearing_stroke1876/states.csv": "e705d94cf267c61d7a892ddca7696b2d8ef8ee58604b2b20a39e4858ec50df33"
+  },
+  "scope": "Analytic separation for DECLARED nominal ideal circular/coplanar constructions outside named socket joints, all twist angles; conservative32facet inradius also bounded using rational pi<22/7. No CSG rerun or assertion that emitted STL topology/meshes satisfy every analytic boundary.1871/1872FAIL and1873REJECT remain. Exact-fit socket joining surfaces are NOT free-clearance regions; finite CSG artifacts there remain unresolved, not discarded by a volume floor. Stress references omit local concentration, contact stiffness, tolerances, fatigue and bond manufacture.50um bearing gap still smaller than200um inherited contact budget. No ideal-to-real bearing qualification, output/Finger routing or100g PASS."
+}

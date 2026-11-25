@@ -1,0 +1,27 @@
+{
+  "status": "FAIL_SINGLE_FINGER_SUPPORTED_WINCH",
+  "process": {
+    "exit_code": -9,
+    "process_status": "nonlinear_failure",
+    "runtime_s": 0.21307411906309426,
+    "pid": 62,
+    "failure_reason": "Stopped at actual SOFA Newton failure/error;partial state is invalid,not a completed trial",
+    "artifacts": {
+      "stdout.log": "68a58685b2fbfaf48159eb3441f3ff222b361abcdf67db95b0c1eaf515e1d2ed",
+      "command.json": "a1c7ff3178d2e94f2b63926a7ff7e300e2607905673a46b1066158d375f001a4",
+      "stderr.log": "47d445bc06f738a9835bab8d548db200ee5dec8d8f662684a0298f112ad5d33d",
+      "process.json": "c10e9253a2d1cda27166b1d00254b7e47751b3429edb238772b20787c47ff6fb"
+    }
+  },
+  "saved_steps": 0,
+  "minimum_saved_volume_ratio": null,
+  "maximum_skin_nodal_displacement_m": null,
+  "source_sha256": "9a9eee0653888640476c0521ecac41caefe4e56ed2c8a05f5330de89667d56fc",
+  "preflight_sha256": "57eb44eb36f9c15694a280a3a7f326f961f82ff8cafc4807ef0ddb58cf99ec67",
+  "errors": [
+    "[ERROR]   [Node(ports)] Object type ConstantForceField<Vec3d> was not created  ",
+    "[ERROR]   [Node(ports)] Object type ConstantForceField<Vec3d> was not created  ",
+    "[ERROR]   [SceneLoaderXML] Node initialization failed. "
+  ],
+  "scope": "Initial actual FEM/finiteGuide separation plus added finiteRotor collisions; same1741Skin/Rail/Guide mapping and material. Two ideal-bearing winches replace two world force sources with actual C2 endpoint coupling. Existing hardware collisions retained. Removing other fingers/object/support is declared no-object singleFinger isolation, not Holding. Winch ideal bearing/return bond/anchor unqualified; new1873hub NOT adopted. No grip/object/contact/time/mesh/material PASS; row/force analysis still required before expansion. Skin displacement is not automatically tendon contribution; gravity remains active."
+}

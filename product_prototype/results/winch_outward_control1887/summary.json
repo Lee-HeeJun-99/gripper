@@ -1,0 +1,57 @@
+{
+  "status": "PASS_INCREMENTAL_SINGLE_FINGER_INWARD_ACTUATION_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 1.8121831070166081,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "1a0b312eb280f1cbaa934ef75e668a847c71612a0d142a6eb9cf4fda553b38b7",
+      "command.json": "a6cf32a7fec291de836a29f4cb32f13a36c25223ae04f44eae2b247f59b1d21a",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "b096b3a1b8979754adaeb3e4fd1c252378d935bc0e0115eef34186270f7ded69"
+    }
+  },
+  "metrics": {
+    "control_minimum_saved_volume_ratio": 0.9999815752078233,
+    "maximum_active_control_nodal_difference_m": 0.010310545339852397,
+    "reference_minimum_z_vertex_id": 280,
+    "reference_vertex_active_minus_control_m": [
+      -0.008966225470885785,
+      -1.610646217092837e-10,
+      0.005090593847010896
+    ],
+    "maximum_input_tension_N": 0.8535199355469059,
+    "minimum_input_tension_N": 0.0010769979673131071,
+    "maximum_input_geometric_command_error_m": 8.223055545210703e-08,
+    "tendons": [
+      {
+        "tendon": 0,
+        "actual_row_ids": [
+          1
+        ],
+        "maximum_tension_N": 0.8449721918422844,
+        "final_tension_N": 0.8449721918422844,
+        "minimum_tension_N": 0.0010769717165738913,
+        "maximum_geometric_length_error_m": 5.664877530675572e-07
+      },
+      {
+        "tendon": 1,
+        "actual_row_ids": [
+          3
+        ],
+        "maximum_tension_N": 0.8449723296250787,
+        "final_tension_N": 0.8449723296250787,
+        "minimum_tension_N": 0.0010769723689110857,
+        "maximum_geometric_length_error_m": 5.664007752814726e-07
+      }
+    ],
+    "native_constraint_row_counts": [
+      4
+    ]
+  },
+  "source_sha256": "b09e847db0e395b36ebb4f90788c2a83baa00e2c3074082fc9a9756e3345a09e",
+  "source_scene_sha256": "793f76532df9fc49f8fa69c3250fcd6f31ece2bb6152620de7a395d51a075e52",
+  "scene_sha256": "87fd77db4ff6e7080ac43ab773f787d463af3cb7bf078339ef395cf852d27d1c",
+  "scope": "Matched zero-stroke new-mechanism control, all other mass/fixture/geometry/material/dt unchanged. Native C2 rest-length constraint remains: control is NOT slack/force-free gravity reference. Active output rows attributed from actual child J; exactly4actual Cable rows, other2are bounded inputs. Actual Skin incremental displacement, no object/Support/100g test, no complete wrapping/curvature/energy/time/mesh/material qualification."
+}

@@ -1,0 +1,68 @@
+{
+  "status": "FAIL_UNINTENDED_ROOT_ROTOR_SUPPORT_CONTACT",
+  "actual_incremental_inward_direction": true,
+  "reference_minimum_z_vertex_id": 280,
+  "reference_vertex_active_minus_control_m": [
+    -0.008804112618660466,
+    -0.00012181866488658426,
+    0.005056973400035622
+  ],
+  "maximum_active_control_nodal_difference_m": 0.010153827788466723,
+  "actual_tendon_records": [
+    {
+      "tendon": 0,
+      "input_row_ids": [
+        18,
+        21
+      ],
+      "output_row_ids": [
+        19,
+        22
+      ],
+      "maximum_input_tension_N": 0.8651722387402326,
+      "maximum_output_tension_N": 0.8565225978262629,
+      "final_input_output_tension_N": [
+        0.8651722387402326,
+        0.8565225978262629
+      ],
+      "maximum_output_geometric_length_error_m": 6.350026493379124e-07
+    },
+    {
+      "tendon": 1,
+      "input_row_ids": [
+        20,
+        23
+      ],
+      "output_row_ids": [
+        21,
+        24
+      ],
+      "maximum_input_tension_N": 1.0143774186754937,
+      "maximum_output_tension_N": 0.8632716132603468,
+      "final_input_output_tension_N": [
+        1.0143774186754937,
+        0.8632716132603468
+      ],
+      "maximum_output_geometric_length_error_m": 2.758658377954859e-06
+    }
+  ],
+  "contact_pairs": [
+    {
+      "model_pair": [
+        "/winch1/finiteRotor/LineCollisionModel1",
+        "/guides0/cable1/support0/LineCollisionModel1"
+      ],
+      "nonzero_response_rows": 309,
+      "maximum_absolute_row_multiplier_equivalent_N": 0.36670333226412
+    }
+  ],
+  "nonzero_root_contact_rows": 309,
+  "source_sha256": "7705dae44176df7c8a332f55d6be3ebf1627a3eb2221d00b198a4f1c0eb6328b",
+  "inputs_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/winch_observed1884/scene.scn": "f2db057b7dfebba5ee798bb88658effae1a4d98e61fbfe8f7119938bc102431e",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/winch_observed1884/skin.csv": "b07e2895c8df9bf0a9ff270d9ae40c035d6765ad4ce6cdfd6f4051211980f012",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/winch_observed1884/contact_provenance.csv": "a55b64be534f90de705bf4a31f7ce14252ecf78407ca9d27e538690cb0cec708",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/winch_control1883/skin.csv": "9c2ca132f84bb468bb1e85d4ea653afea9bee5973f14fe3264c47ada21c31a2f"
+  },
+  "scope": "Actual Native child-J row ownership; no4row assumption. Observer1884purity exactly0. Nonzero response row count is NOT area. Scalar row force-equivalent peak is NOT net vertical support or root reaction. Matched zero-stroke control still has taut length constraints and gravity, not force-free. Valid physical startup1882is not promoted to unbraced drive: real root rotor/Support contact must be removed mechanically. Historical failures preserved, no q/v or oldraw edits."
+}

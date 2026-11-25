@@ -1,0 +1,73 @@
+{
+  "status": "REJECT_BACKDRIVE_PASSIVE_LOSS_AS_SUFFICIENT_CURE",
+  "old_root_port_max_speed_mm_s": 30.68488001601718,
+  "new_root_port_max_speed_mm_s": 3.6204720545847877,
+  "root_port_peak_reduction_fraction": 0.8820112038015159,
+  "old_object_max_speed_mm_s": 23.208323813851194,
+  "new_object_max_speed_mm_s": 31.94020994033453,
+  "old_Skin_vertical_mean_N": 0.9836996632454883,
+  "new_Skin_vertical_mean_N": 0.9861527186468941,
+  "new_all_inputs_cap_entire_hold": true,
+  "details": [
+    {
+      "case": "crimp_hold1904",
+      "vertical_speed_spectrum": {
+        "dominant_sampled_frequency_Hz": 2.484472049689441,
+        "fraction_of_nonDC_sampled_power": 0.32648078733606123,
+        "n": 161,
+        "scope": "Finite0.4s sampled diagnostic; not a calibrated mode or continuous spectrum"
+      },
+      "vertical_contact_force_spectrum": {
+        "dominant_sampled_frequency_Hz": 24.844720496894407,
+        "fraction_of_nonDC_sampled_power": 0.15022515388634677,
+        "n": 161,
+        "scope": "Finite0.4s sampled diagnostic; not a calibrated mode or continuous spectrum"
+      },
+      "contact_force_std_N": [
+        0.026516187539133623,
+        0.028218536602974017,
+        0.051932052160991296
+      ],
+      "translational_velocity_RMS_mm_s": [
+        9.7917834381697,
+        9.169017442234574,
+        5.230460692224742
+      ]
+    },
+    {
+      "case": "braked_hold1925",
+      "vertical_speed_spectrum": {
+        "dominant_sampled_frequency_Hz": 27.329192546583847,
+        "fraction_of_nonDC_sampled_power": 0.26656899154621866,
+        "n": 161,
+        "scope": "Finite0.4s sampled diagnostic; not a calibrated mode or continuous spectrum"
+      },
+      "vertical_contact_force_spectrum": {
+        "dominant_sampled_frequency_Hz": 27.329192546583847,
+        "fraction_of_nonDC_sampled_power": 0.33248415163375594,
+        "n": 161,
+        "scope": "Finite0.4s sampled diagnostic; not a calibrated mode or continuous spectrum"
+      },
+      "contact_force_std_N": [
+        0.024845196149618186,
+        0.014897981375147312,
+        0.12152992422074517
+      ],
+      "translational_velocity_RMS_mm_s": [
+        8.581015160150786,
+        2.771760257179545,
+        8.751232685508105
+      ]
+    }
+  ],
+  "source_sha256": "5ce7be81945c34f72db148eef0624793ba945663e6f4bba17337e4da192d5c0f",
+  "input_hashes": {
+    "results/crimp_goal_window1915/summary.json": "4e1999080b81010c060a65ff077ddad56c64c1879d648d9d7c382e1192317624",
+    "results/braked_assessment1928_goal/summary.json": "ab00842cace10ae27ea7621aff133d71d5deefa649f8d2cbbf77946c468584f6",
+    "results/crimp_boundary1912/summary.json": "92c3c5bb9a1058db78a0c9e9c3257c6efa85a137387aafda482da0b1a99f4ea7",
+    "results/braked_boundary1929/summary.json": "59d3645333cb11b41856e7517576414962112dcc86af8e0c859c57dea1e45942",
+    "results/crimp_hold1904/object.csv": "f9ffe906acabfcfcf7702b3fdf9b1034aceba57b292c21b02e3c0a7d9f87b69b",
+    "results/braked_hold1925/object.csv": "29cb7774bcdabab18cebaccf1b933210f513bbc98adaab401f4f5dc734b82146"
+  },
+  "scope": "Single-variable delayed passive-loss comparison with actual pre-engagement purity. Root motion suppressed but object speed fails more; backdrive-only sufficiency rejected, NOT proof backdrive has no contribution or FEM/contact uniquely causes failure. No coefficient/timing/force/dt scan. Need separate physically qualified holding transmission/static brake model or new contact/FEM hypothesis, not larger damping. Candidate not adopted."
+}

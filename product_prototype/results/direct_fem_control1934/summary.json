@@ -1,0 +1,24 @@
+{
+  "status": "PASS_NONEMPTY_FINITE_SPEED_FEM_CONTROL_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.12502537108957767,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "343b453629e7b237384c9da33c4c1f36be0b64ed954bbf90723ae36fec69cfdd",
+      "command.json": "fdafff410df92c7ba1a215651cf8a1265f8b4552939e0a7c03016ec5aeada6e9",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "b3eec77f2df0791deb3811471863d837b71f69b507353a541e21da3f9ed397bd"
+    }
+  },
+  "metrics": {
+    "no_FEM_ballistic_q_error_m": 7.12642699842933e-17,
+    "no_FEM_constant_velocity_error_m_s": 0.0,
+    "actual_elastic_minus_noFEM_velocity_difference_m_s": 6.722733211299856e-06,
+    "actual_elastic_minus_noFEM_position_difference_m": 1.6969934395205666e-08
+  },
+  "source_sha256": "0528d4fc89b0b71c2392654b4e64dd08a2bdc36673f9514195e154341a89709e",
+  "preflight_sha256": "6a4ec741b82888596679b999a51b72fff67427ea832da4429ed340bfb122d024",
+  "scope": "Actual matched Native negative control confirms1933elastic dynamics rather than an empty/coasting smoke model. NoFEM control is not a proposed guide/grasp candidate. Free-solid conservation only; no actual load/attachment/bore/contact/time/mesh or hardware qualification."
+}

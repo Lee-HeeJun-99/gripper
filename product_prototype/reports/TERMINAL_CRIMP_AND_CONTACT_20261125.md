@@ -1,5 +1,85 @@
 # Finite terminal anchor and actual unbraced contact prefix
 
+## Final1937 — two actual full100g trials FAIL; different FEM path investigated
+
+No UNBRACED FUNCTIONAL PASS. Both new full trials removed observed Guide
+bracing but fail the original speed gate; no Lift launched from failure.
+
+|Actual Native trial|Slip mm|Max speed mm/s|Min Support gap mm|Support N|Guide–Guide/Root nonzero rows|
+|---|---:|---:|---:|---:|---:|
+|1904unbraked|0.209806|23.208324 FAIL|42.064484|0|0 /0|
+|1925scheduled loss|0.329782|31.940210 FAIL|42.251584|0|0 /0|
+
+1925normal800steps/2s297.31167s.1928bounded independent chain completed
+all5analyses: original HoldingFAIL, object impulsePASS, saved75part finite
+clearancePASS, pre-brake purityPASS, combined goalFAIL. Original inclusive
+161sample mean SkinZ0.986152719N, weight0.981N. Guide/Rail/Winch object
+response0. Saved minimumFEMratio0.98578345, no inversion. Solverlimit8/161:
+not numerical PASS. Full peak reconstructed passive torque0.00176665Nm,
+within reference0.015Nm; still unmeasured actual motor/brake capacity.
+
+1929/1930actual comparison rejects passive backdrive loss as a sufficient
+cure: Root output maximumspeed30.68488→3.620472mm/s (-88.201%), but object
+maximumspeed23.20832→31.94021mm/s. All6inputs remain capped161/161.
+Output tension now varies approximately1.41–1.69N despite input1.5N;
+extra passive braking is a changed physical impedance, not equal input/
+output force. Vertical contact-force std0.05193→0.12153N. New vertical
+velocity/contactforce sampled peak27.329Hz in0.4s window, NOT a certified
+mode or unique causal identification. No larger coefficient/timing/dt scan.
+Candidate not adopted as a grasp improvement.
+
+1931actual saved deformation gradients: max principal Green–Lagrange strain
+0.0468282unbraked /0.0491729braked; max stretch1.04578 /1.04802. Peaks at
+elements518/519 near restZ=-74.7586mm, not proof of a unique attachment
+fault. All positive determinants. Material allowable, actual stress, fatigue
+and FEM energy remainNOT MEASURED. This is actual strain evidence, not
+small strain/mesh/material qualification.
+
+Independent mechanism review: instead of mapped rigid Guide inertia,
+investigate directly deformable Cartesian FEM solids with constant nodal
+mass.1932incorrect DiagonalMass template fails; actual installed template
+Vec3d,Vec3d corrected inNEW1933.1933normal50steps/5ms free finite mixed
+velocity prism: linear momentum error1.059e-22Ns/angular5.186e-22Nms,
+positive volumes.1934matched no-elasticity negative control is ballistic
+to7.127e-17m, while actual elastic response differs6.723e-6m/s/16.970nm.
+Thus not an empty/coasting FEM smoke test. Only free-solid component PASS,
+NOT actual1.5N supported transfer, attachment, Guide or100gqualification.
+
+1935/1936then actually test a structured finite annular FEM ideal bore port
+at nominal1.5N.192tets/128nodes have positive volume and exact polygonal
+mass.1935CenterOfMassMappingFactory supportsRigid but notVec3 input;
+1936CenterOfMassMultiMapping supportsVec3 mechanical mapping but lacks
+ConstraintParams applyJT, producing actualERROR. Both FAIL preserved;
+no payload/momentum results accepted.1937installed header hashes and
+actual errors confirm **only this centre-port path BLOCKED**, not all FEM
+Guide mechanisms. No SDK/customMapping fix or fictitious solid across bore.
+gmsh/tetgen/meshio absent, but analytic prism/ring meshing already works;
+absence is not used to declare all design work impossible.
+
+Next READY=`direct_fem_solid_endpoint_coupon`: design a true finite material
+wire termination and explicit supported attachment, then direct stock Cable
+load at a real solid point. It is NOT another unsupported COM retry and
+NOT yet implemented/qualified. First require actual wire/solid geometry,
+nodal mass, positive tets, nominal1.5N row and an independently interpretable
+Root reaction/force path; no immediate wholegrasp. This is the bounded
+session resume point, not product completion. No RUNNING job remains.
+All old1586/1741verdicts, Raw, SDK and300partCAD stay unchanged.
+
+Actual commands (NEW output tags required for justified reproductions):
+```sh
+python product_prototype/sofa/assess_braked_trial.py --case braked_hold1925 --tag braked_assessment1928
+python product_prototype/sofa/winch_hold_boundary_diagnostic.py --case braked_hold1925 --tag braked_boundary1929
+python product_prototype/sofa/brake_effect_compare.py --tag braked_effect1930
+python product_prototype/sofa/winch_fem_strain_compare.py --tag winch_strain1931
+python product_prototype/sofa/direct_fem_support_inertia.py --tag direct_fem1933
+python product_prototype/sofa/direct_fem_elastic_control.py --tag direct_fem_control1934
+python product_prototype/sofa/direct_fem_bore_force.py --tag direct_bore1936
+python product_prototype/sofa/direct_fem_route_review.py --tag direct_fem_review1937
+```
+1932/1935failure reproduction needs its frozen producer with project sofa
+directory onPYTHONPATH, not the subsequently corrected current generator.
+Do NOT execute historical tags/Scenes with their existing output paths.
+
 ##1922/1926valid prefix;1925full actual Holding in progress
 
 1922normal240steps/.6s108.17103s. All3Skin contact, Guide–Guide/Root rows0,

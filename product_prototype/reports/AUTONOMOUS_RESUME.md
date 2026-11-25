@@ -1,3 +1,48 @@
+## Current1939 — no successful100g Holding; no active job
+
+Last completed research1937; last actual Native1936failed unsupported COM
+ConstraintParams path. Latest full100g1925normal297.312s, but HoldingFAIL.
+Unbraked1904 and braked1925 BOTH have Guide–Guide/Root nonzero rows0,
+positive savedFEM and actual Skin-only object support. Original gate results:
+1904Slip0.209806mm/speed23.208324mm_s;1925Slip0.329782mm/speed31.940210mm_s.
+Both Supportforce0/gap>42mm. Speedlimit remains5mm_s: no FUNCTIONAL,
+UNBRACED, NUMERICAL orPHYSICAL grasp PASS. Lift not launched from failure.
+1930Root port speed reduced88.201% but object speed worsened: passive-loss
+candidate rejected as sufficient cure, no larger damping/force/dt scan.
+1931actual maxprincipalGreen strain4.68%/4.92%; no material allowable.
+
+Different directVec3FEM mechanism1933finite-speed free-solid momentum
+PASS and1934nonempty elasticity controlPASS only.1932factory error and
+1935/1936nominal-force virtual-port errors retained.1937actual installed
+API review: COMMapping noVec3; COMMultiMapping missing constraint applyJT.
+Do not retry those same paths or use false solid/barycentric extrapolation.
+READY=`direct_fem_solid_endpoint_coupon`: real material termination plus
+explicit supported fixture and direct Native Cable at actual solid vertex.
+Needs NEW geometry/implementation and nominal1.5N force/reaction/element
+contracts before singleFinger/fullgrasp. Not yet executed. No assumption
+that a free-solid coupon or missing mesh package completes/blocks all work.
+
+Queue171: READY1, RUNNING0. Current session bounded research/analysis
+budget saved here; project NOT complete. No background continuation is
+configured. Report TERMINAL_CRIMP_AND_CONTACT_20261125.md contains actual
+commands, source/scene/binary hashes, all verdicts and scope.1939audit checks
+14frozen trial identities;1924verified3566oldmanifestrecords/102originaltasks/
+SDK/binaries unchanged. Final1938/1940manifests cover new completed work.
+Prior feature1052e22; latestsave=`git log -1 --format=%H`. Old1586/1741 and
+300partCAD remain unchanged, not qualified by new trials. No push/rewrite.
+
+Resume by checking actual files/HEAD first; never reuse historical output tags:
+```sh
+git status --short
+git log -8 --oneline
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py
+```
+Next READY requires implementing new finite endpoint model first; no existing
+fullgrasp command is authorized as a substitute. Material/brake/crimp/bond/
+wire fatigue still NOT MEASURED; finite-wire, contact/time/mesh gates remain.
+Older entries below are historical snapshots; their RUNNING labels are not
+current process status.
+
 ## Current1926 /1925 RUNNING — scheduled passive drive prefix valid
 
 Feature8e68ccd preserves actual full1904speedFAIL despite zero Guide–Guide/

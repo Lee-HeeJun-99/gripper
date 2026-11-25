@@ -1,0 +1,27 @@
+[ERROR]   [Node(idealBore)] Object type CenterOfMassMapping<> was not created  
+The object is in the factory but cannot be created.  
+Requested template : None  
+Used template      : None  
+Also tried to create the object with the template 'Rigid2d,Vec2d' but failed for the following reason(s):  
+    1. Data attribute 'input' does not point to a mechanical state of data type 'Rigid2d' and none can be found in the parent node context.  
+Also tried to create the object with the template 'Rigid3d,Vec3d' but failed for the following reason(s):  
+    1. Data attribute 'input' does not point to a mechanical state of data type 'Rigid3d' and none can be found in the parent node context.  
+  
+
+[ERROR]   [SceneLoaderXML] Node initialization failed. 
+
+
+########## SIG 8 - SIGFPE: arithmetic exception, such as divide by zero ##########
+  sofa::helper::BackTrace::sig(int)
+  sofa::linearalgebra::FullMatrix<double>::resize(int, int)
+  sofa::component::linearsolver::direct::SparseLDLSolver<sofa::linearalgebra::CompressedRowSparseMatrixMechanical<double, sofa::linearalgebra::CRSMechanicalPolicy>, sofa::linearalgebra::FullVector<double>, sofa::component::linearsolver::NoThreadManager>::doAddJMInvJtLocal(sofa::linearalgebra::BaseMatrix*, sofa::linearalgebra::SparseMatrix<double> const*, double, sofa::component::linearsolver::direct::SparseLDLImplInvertData<sofa::type::vector<int, sofa::type::CPUMemoryManager<int> >, sofa::type::vector<double, sofa::type::CPUMemoryManager<double> > >*)
+  sofa::component::linearsolver::MatrixLinearSolver<sofa::linearalgebra::CompressedRowSparseMatrixMechanical<double, sofa::linearalgebra::CRSMechanicalPolicy>, sofa::linearalgebra::FullVector<double>, sofa::component::linearsolver::NoThreadManager>::buildComplianceMatrix(sofa::core::ConstraintParams const*, sofa::linearalgebra::BaseMatrix*, double, double)
+  sofa::component::constraint::lagrangian::solver::BuiltConstraintSolver::doBuildSystem(sofa::core::ConstraintParams const*, sofa::component::constraint::lagrangian::solver::GenericConstraintProblem*, unsigned int)
+  sofa::component::constraint::lagrangian::solver::GenericConstraintSolver::buildSystem(sofa::core::ConstraintParams const*, sofa::core::TMultiVecId<(sofa::core::VecType)0, (sofa::core::VecAccess)1>, sofa::core::TMultiVecId<(sofa::core::VecType)0, (sofa::core::VecAccess)1>)
+  sofa::core::behavior::ConstraintSolver::buildSystemTask(sofa::core::ConstraintParams const*, sofa::core::TMultiVecId<(sofa::core::VecType)0, (sofa::core::VecAccess)1>, sofa::core::TMultiVecId<(sofa::core::VecType)0, (sofa::core::VecAccess)1>)
+  sofa::core::behavior::ConstraintSolver::solveConstraint(sofa::core::ConstraintParams const*, sofa::core::TMultiVecId<(sofa::core::VecType)0, (sofa::core::VecAccess)1>, sofa::core::TMultiVecId<(sofa::core::VecType)0, (sofa::core::VecAccess)1>)
+  sofa::component::animationloop::FreeMotionAnimationLoop::step(sofa::core::ExecParams const*, double)
+  sofa::simulation::node::animate(sofa::simulation::Node*, double)
+  sofa::gui::batch::BatchGUI::mainLoop()
+  sofa::gui::common::GUIManager::MainLoop(boost::intrusive_ptr<sofa::simulation::Node>, char const*)
+  __libc_start_main

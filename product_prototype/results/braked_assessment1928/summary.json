@@ -1,0 +1,142 @@
+{
+  "status": "FAIL_OR_INCOMPLETE_BRACKETED_ASSESSMENT",
+  "case": "braked_hold1925",
+  "analyses": {
+    "holding": "braked_assessment1928_holding",
+    "balance": "braked_assessment1928_balance",
+    "clearance": "braked_assessment1928_clearance",
+    "purity": "braked_assessment1928_purity",
+    "goal": "braked_assessment1928_goal"
+  },
+  "steps": [
+    {
+      "step": "holding",
+      "source_sha256": "e13b28c685b8d50c99cce79c7cc3d1ebd6192ed12e852184ace7c4b3544ba2db",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 2.826914520934224,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "2f6c702631ed83e1489a9a38f76864d922fc70a118e0a6fc751dbb602d93849c",
+          "command.json": "a95552671ce881d5e0f9b9526ae617eca3c5537591add1d064356a177d10f188",
+          "stderr.log": "a67d5b03fb9a5a49917a5fd7950c43cbe8fb662758495115e5b28f6fd9f3645f",
+          "process.json": "5925857d1cd4847e58819129aaa4d50ace835ff465be95e12aa569f2a05de564"
+        }
+      },
+      "result": "FAIL",
+      "result_summary_sha256": "06a243d432a17b2157dd7cdb4eaa75ed73879b84831251f10517a83d6cec21a5"
+    },
+    {
+      "step": "balance",
+      "source_sha256": "7ebfd5caf117cc553e6c85d5c6d7c4dba78deebd3afe3ceb4720a21d6bbbb323",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 2.1076401551254094,
+        "pid": 62,
+        "artifacts": {
+          "stdout.log": "fa91fac75c47af22fd912fc9cbe1fa9ed177c1474f387f57820ed4789f2f1f3e",
+          "command.json": "9b344b9c82fd086a0bab23a37b5d49aa84d4c05c9cdcbf75c7773cb9caf937fa",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "d153c844f79e31f2256bf29f84fc6ef55a2a1495190ada54c189ddaef3b9c8fc"
+        }
+      },
+      "result": "PASS_OBJECT_DISCRETE_IMPULSE_BALANCE_ONLY",
+      "result_summary_sha256": "bd739d31acdcc112d38bb4c6fac643ff8bcb1490df87c37f70df1013e6feb82a"
+    },
+    {
+      "step": "clearance",
+      "source_sha256": "891a15454d5f284e95eb9a8714f765f012306530ae1245109399b7ba123d905c",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 10.626082486007363,
+        "pid": 101,
+        "artifacts": {
+          "stdout.log": "a7bde1c6c7fac4ea6f8c34f4c1d2bebe8e4155ae8df0c6d9ffafc6227830c023",
+          "command.json": "a5da6d173665df0d11315d55939a1597781fbf8ec1915c501afd86b905c2c6c5",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "b89fb9412e75e60f37c275614d0e727d4c94ec19aea0fb5b0db2d3de186f959f"
+        }
+      },
+      "result": "PASS_SAVED_INTERFINGER_ENVELOPE_CLEARANCE_ONLY",
+      "result_summary_sha256": "328ede09d9c8267c09c1ab0d56749302443192274049d676e84b92a4eb3257ec"
+    },
+    {
+      "step": "purity",
+      "source_sha256": "44513afef6c606e13b74fdef56138252bdb84d74b5abfd11ecc7606e692d8c4a",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 2.1079125120304525,
+        "pid": 140,
+        "artifacts": {
+          "stdout.log": "7edb1c1a6b9418cac6c010964cdda0eb676cb04f82f4570cbbd211fe6a5878ea",
+          "command.json": "ad5d76f7206cedb79f968189780285aaa4495412e547c5060b75d5c45eaee4af",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "5b786b4ef6f70ba53562429bde3c4253f87ecc14a56324e6110a6435bdd6d453"
+        }
+      },
+      "result": "PASS_PREBRAKE_STATE_PURITY_AND_CONFIGURED_LOSS_ONLY",
+      "result_summary_sha256": "517f743caf09a6f87e909b105d6d328e26601c4d4e3ce38caf589f5e0137b131"
+    },
+    {
+      "step": "goal",
+      "source_sha256": "94dc6a6841515f3a849010abac8e68e4e428b7a5489a247d6808bc81f3f94875",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.505003146128729,
+        "pid": 179,
+        "artifacts": {
+          "stdout.log": "5488f1e4a33a468420dffdf56c4bb8b7ae05645e35c36ac05446473a8cc0004f",
+          "command.json": "66418cb98f10e0252a074e5dc6f30b1404f2b5d80e08e3149bee8fcfceeb37cc",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "32ac2851ad0132e84a64becff096f816441760628b221d90dd26206c1c57c978"
+        }
+      },
+      "result": "FAIL_EXPLORATORY_UNBRACED_HOLDING",
+      "result_summary_sha256": "ab00842cace10ae27ea7621aff133d71d5deefa649f8d2cbbf77946c468584f6"
+    }
+  ],
+  "goal": {
+    "status": "FAIL_EXPLORATORY_UNBRACED_HOLDING",
+    "tests": {
+      "original_holding": false,
+      "guide_guide_rows_zero": true,
+      "root_contact_rows_zero": true,
+      "object_hardware_response_rows_zero": true,
+      "all_three_skin_contact": true,
+      "saved_FEM_positive": true,
+      "object_impulse_balance": true,
+      "finite_saved_hardware_clearance": true,
+      "normal_native": true,
+      "complete_original_window": true
+    },
+    "vertical_slip_mm": 0.3297818872325803,
+    "maximum_speed_mm_s": 31.94020994033453,
+    "minimum_support_gap_mm": 42.251583799083,
+    "maximum_support_resultant_N": 0.0,
+    "hold_mean_skin_vertical_N": 0.9861527186468941,
+    "weight_N": 0.9810000000000001,
+    "nonzero_guide_guide_rows": 0,
+    "nonzero_root_contact_rows": 0,
+    "holding_solver_iteration_limit_samples": 8,
+    "numerical_convergence": "EXISTING FAIL / NEW CANDIDATE NOT QUALIFIED",
+    "physical_hardware_validation": "NOT QUALIFIED",
+    "finite_wire_sliding": "NOT QUALIFIED",
+    "lift_release_recovery": "NOT RUN ON THIS CANDIDATE",
+    "source_sha256": "94dc6a6841515f3a849010abac8e68e4e428b7a5489a247d6808bc81f3f94875",
+    "input_hashes": {
+      "results/braked_hold1925/summary.json": "69761631778016ed8e26fbe73e24ca3da1a98a92ea5462d826ec93b8da04d712",
+      "results/braked_assessment1928_holding/summary.json": "06a243d432a17b2157dd7cdb4eaa75ed73879b84831251f10517a83d6cec21a5",
+      "results/braked_assessment1928_balance/summary.json": "bd739d31acdcc112d38bb4c6fac643ff8bcb1490df87c37f70df1013e6feb82a",
+      "results/braked_assessment1928_clearance/summary.json": "328ede09d9c8267c09c1ab0d56749302443192274049d676e84b92a4eb3257ec"
+    },
+    "scope": "Original functional thresholds plus actual full-motion no-bracing, model-pair force provenance, saved finite hardware geometry, positive saved FEM and object momentum. Zero nonzero rows is not continuous CCD or full energy validation. No physical/material/time/mesh qualification. Real terminal crimp/bearing/bond strength and wire sliding unmeasured. Old1586/1741verdicts unchanged."
+  },
+  "source_sha256": "9aea84c12aecd129eb4181b621f2e9a7b136f4dad7eb87e68d2e5747adb7685b",
+  "native_summary_sha256": "69761631778016ed8e26fbe73e24ca3da1a98a92ea5462d826ec93b8da04d712",
+  "scope": "Analysis only, no new Native or force/state changes. Original161sample Holding threshold, actual hardware clearance/no-bracing/FEM/force/momentum and before-brake purity all required. Assumed actuator-loss coefficient is not actual motor/hardware/time/mesh/finitewire qualification. Process exit0 alone never passes physics."
+}

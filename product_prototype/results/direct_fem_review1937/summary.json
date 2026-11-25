@@ -1,0 +1,40 @@
+{
+  "status": "BLOCKED_CURRENT_NATIVE_CENTRE_CONSTRAINT_PORT_ONLY",
+  "cases": {
+    "direct_fem1932": "FAIL_DIRECT_VEC3_CONSERVATION_COUPON",
+    "direct_fem1933": "PASS_DIRECT_VEC3_FINITE_SPEED_CONSERVATION_COUPON_ONLY",
+    "direct_fem_control1934": "PASS_NONEMPTY_FINITE_SPEED_FEM_CONTROL_ONLY",
+    "direct_bore1935": "FAIL_DIRECT_FEM_BORE_FORCE_COUPON",
+    "direct_bore1936": "FAIL_DIRECT_FEM_BORE_FORCE_COUPON"
+  },
+  "installed_python_mesh_modules": {
+    "gmsh": false,
+    "tetgen": false,
+    "meshio": false
+  },
+  "installed_api_header_sha256": {
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mapping.Linear/sofa/component/mapping/linear/CenterOfMassMapping.h": "058f3ba0c991910ed31da56f4bc1935864d536bad13680bffa0742a048529d0c",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mapping.Linear/sofa/component/mapping/linear/CenterOfMassMultiMapping.h": "09ddb3a33064f16f10fdf0aa2314dd7a93da0324516915195732c6b72eca068c",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mapping.Linear/sofa/component/mapping/linear/CenterOfMassMultiMapping.inl": "eeca870639aaa786785cf00e3ba6aa611bcf7add68947ad197bbd88e2ac5fd09"
+  },
+  "evidence_sha256": {
+    "results/direct_fem1932/summary.json": "f3bbf7927ed046dadea9c0d7c2b996bff8b28f53aa8d3d631d88ea4cb1d79665",
+    "results/direct_fem1932/preflight.json": "59d1ff0608aa67569deea9c5e7bf5c5f1598e2b87d0236082c772d0d033ed6a9",
+    "results/direct_fem1932/process/stderr.log": "14bd86d916eba8e7bb5f2eff6d3863c3ed9a82839915860b3e66e65f316bc32d",
+    "results/direct_fem1933/summary.json": "8f5d91b159de5e0e3c60ca6c50aa8460408b9c336b7188bc5d8150125a35fde4",
+    "results/direct_fem1933/preflight.json": "99ebf8db7ba3b2c4573235160ab04b4683669f311b56848aa8e35ef6b55898ee",
+    "results/direct_fem1933/process/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/direct_fem_control1934/summary.json": "4306bffe05d242404b75550972d4c22fc871ff85baf03d41dfaa723733b9b51b",
+    "results/direct_fem_control1934/preflight.json": "6a4ec741b82888596679b999a51b72fff67427ea832da4429ed340bfb122d024",
+    "results/direct_fem_control1934/process/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/direct_bore1935/summary.json": "cee8d40e1639c28021510b3b7a1f66a5ac20be14736e9c5899846289f61fcf0c",
+    "results/direct_bore1935/preflight.json": "6d97034ca5ec104167a9fccc7bf1a9414b1c4e47c8ff8141ce8ca36eba950887",
+    "results/direct_bore1935/process/stderr.log": "0d0dca15b45847d37b6047d1efbcd83de37e6ffe9a6fb4a5e9d82194529480d9",
+    "results/direct_bore1936/summary.json": "a6872fb93b3448793560cf6ad40ac9b9d89199cf614043f25dd508b6627e53c2",
+    "results/direct_bore1936/preflight.json": "208a96c3ec777835a73763a625e73f31d4b1615913b87fedc545ad5c8568b8d2",
+    "results/direct_bore1936/process/stderr.log": "d3e75e1bb8ae9c20e52543c390902723c3f9eda4a8dee878b1d5c9a673bd3e87"
+  },
+  "source_sha256": "daca75a5f3fefae6a962a680b4ba3788930922b285ea0ed8e80ecf23a3214ba2",
+  "next_ready": "direct_fem_solid_endpoint_coupon",
+  "scope": "1935Factory offers noVec3d input for CenterOfMassMapping;1936correct Vec3d CenterOfMassMultiMapping lacks ConstraintParams applyJT (actual ERROR), so no load-port PASS.1933/1934demonstrate nonempty directFEM finite-speed conservation only. Analytic prism/ring meshes work WITHOUT missing mesh packages; their absence is NOT proof all FEM designs blocked. Different true material termination can avoid unsupported virtual bore port but needs actual finite geometry/force/reaction/attachment contract before grasp. No SDK/newcustomMapping/ForceField or fake material in bore; no repeat of these two unsupported APIs."
+}

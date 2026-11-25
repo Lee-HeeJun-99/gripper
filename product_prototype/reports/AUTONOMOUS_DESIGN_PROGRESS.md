@@ -1,3 +1,20 @@
+## 2026-11-25 through1939 — new no-bracing candidates, grasp still FAIL
+
+Registered parallel-axis supported drive plus finite blind terminal anchors
+is a separate research candidate, NOT adopted300part production CAD. Actual
+full100g1904 and1925have zero Guide–Guide/Root response and independent
+75part saved-pose envelope clearance, but maxspeed23.208/31.940mm_s fails
+unchanged5mm_s gate despite Slip0.210/0.330mm and Skin support near0.981N.
+No successful new Holding/Lift or physical qualification. Delayed local
+actuator-loss candidate reduces Rootmotion88.2% yet worsens object motion,
+so not a product improvement. DirectVec3FEM free-solid1933/34componentPASS
+is not an assembled guide;1935/36virtual bore forceportBLOCKED by installed
+NativeAPI. Next READY requires actual solid termination/support geometry
+and nominal-force/reaction contract. All material/retention/finitewire/time/
+mesh/assembly risks remain. See TERMINAL_CRIMP_AND_CONTACT_20261125.md
+and current CHECKPOINT/AUTONOMOUS_RESUME for exact evidence and nexttask.
+OldCAD/Raw/verdicts preserved. No product/fabrication readiness promotion.
+
 ## 2026-11-25 through1810 — connected mechanisms and Native force contracts
 
 Startc231571; multiple actual cycles,45bounded Native1step trials and separate

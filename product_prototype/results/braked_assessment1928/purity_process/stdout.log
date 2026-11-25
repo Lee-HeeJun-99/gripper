@@ -1,0 +1,65 @@
+{
+  "status": "PASS_PREBRAKE_STATE_PURITY_AND_CONFIGURED_LOSS_ONLY",
+  "case": "braked_hold1925",
+  "prefix_samples": 200,
+  "prefix_end_s": 0.5,
+  "errors": [
+    {
+      "file": "object.csv",
+      "maximum_numeric_prefix_error": 0.0
+    },
+    {
+      "file": "skin0.csv",
+      "maximum_numeric_prefix_error": 0.0
+    },
+    {
+      "file": "skin1.csv",
+      "maximum_numeric_prefix_error": 0.0
+    },
+    {
+      "file": "skin2.csv",
+      "maximum_numeric_prefix_error": 0.0
+    }
+  ],
+  "passive_ports": [
+    {
+      "finger": 0,
+      "tendon": 0,
+      "reconstructed_configured_viscous_loss_J": 5.225602197831449e-05,
+      "maximum_reconstructed_torque_Nm": 0.0017283876514855845
+    },
+    {
+      "finger": 0,
+      "tendon": 1,
+      "reconstructed_configured_viscous_loss_J": 5.091576543834695e-05,
+      "maximum_reconstructed_torque_Nm": 0.0017666548211400165
+    },
+    {
+      "finger": 1,
+      "tendon": 0,
+      "reconstructed_configured_viscous_loss_J": 3.410648065522405e-05,
+      "maximum_reconstructed_torque_Nm": 0.0010788747303790878
+    },
+    {
+      "finger": 1,
+      "tendon": 1,
+      "reconstructed_configured_viscous_loss_J": 4.08248350284203e-05,
+      "maximum_reconstructed_torque_Nm": 0.000958672370296998
+    },
+    {
+      "finger": 2,
+      "tendon": 0,
+      "reconstructed_configured_viscous_loss_J": 3.8090599752036496e-05,
+      "maximum_reconstructed_torque_Nm": 0.0011134054315594343
+    },
+    {
+      "finger": 2,
+      "tendon": 1,
+      "reconstructed_configured_viscous_loss_J": 3.453380922956927e-05,
+      "maximum_reconstructed_torque_Nm": 0.0010076299787396307
+    }
+  ],
+  "total_reconstructed_loss_J": 0.00025072751208191156,
+  "source_sha256": "44513afef6c606e13b74fdef56138252bdb84d74b5abfd11ecc7606e692d8c4a",
+  "scope": "Actual unbraked1904 versus new candidate before engagement; Native object/Skin q/v/impulse purity. Loss is reconstructed configured viscous model backward-Euler endpoint quadrature on ideal principal-axis rotor, not hardware calorimetry, actual force-array API or whole gripper energy. No physical/material/time/mesh PASS."
+}

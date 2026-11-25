@@ -1,0 +1,147 @@
+{
+  "status": "FAIL_NATIVE_IDEAL_OUTPUT_LINK",
+  "records": [
+    {
+      "case": "initial_mass",
+      "status": "FAIL_NATIVE_LINK_RESPONSE_OR_CLOSURE",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.10461205593310297,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "43b023c664504b8dbf546cf50403ad006f89889f2d8c74fa12c87e25ec3a483b",
+          "command.json": "e02c15716895f93d51351890cbfbe42e572b446f9c0ba42db88ccf91a58efb82",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "8dc276cccd8793513cd168d7b1220573628e57c4d271f22606d2163d2bb30cac"
+        }
+      },
+      "measurements": {
+        "initial_frozen_generalized_mass_kg_m2": 6.979497285499445e-09,
+        "initial_reference_acceleration_rad_s2": -71.63839737265843,
+        "first_omega_actual_rad_s": -0.07163840479769414,
+        "first_omega_reference_rad_s": -0.07163839737265844,
+        "first_angular_velocity_reference_error": 7.425035697394833e-09,
+        "joint_closure_maximum_m": 2.566030547768161e-11,
+        "joint_closure_by_step_m": [
+          2.566030547768161e-11
+        ],
+        "first_joint_closure_fail_step": 0,
+        "last_output_stroke_m": 7.163839380840142e-07,
+        "initial_mass_response_gate": false,
+        "finite_joint_closure_gate": false
+      },
+      "scene_sha256": "82377761bb5f5dd6d25aa5020de9162bc7f2e4a35b1e6c151ba9bc7ccda6a4b7",
+      "errors": []
+    },
+    {
+      "case": "finite_velocity",
+      "status": "FAIL_NATIVE_LINK_RESPONSE_OR_CLOSURE",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.10403238888829947,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "f79401c7bba5c6ceead09a3966e91aa9062e9d0298d05ada868b3d0a1a597a32",
+          "command.json": "6ac7ea40fb9293bac561332ebabfc8013b13ac13e6d0c213a64f831af6a6790e",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "5573c1bcb456e45223e1591e1b106c711d7dd0591c752e009a88786b2148e229"
+        }
+      },
+      "measurements": {
+        "initial_frozen_generalized_mass_kg_m2": 6.979497285499445e-09,
+        "initial_reference_acceleration_rad_s2": -71.63839737265843,
+        "first_omega_actual_rad_s": -0.27163840479769413,
+        "first_omega_reference_rad_s": -0.27163839737265844,
+        "first_angular_velocity_reference_error": 7.425035697394833e-09,
+        "joint_closure_maximum_m": 4.198745264666348e-09,
+        "joint_closure_by_step_m": [
+          3.689371117637785e-10,
+          5.891935411783678e-10,
+          8.60767851093569e-10,
+          1.1836631501338513e-09,
+          1.5578780921537971e-09,
+          1.9834127760326448e-09,
+          2.4602670612577926e-09,
+          2.9884407587443818e-09,
+          3.5679336117533378e-09,
+          4.198745264666348e-09
+        ],
+        "first_joint_closure_fail_step": 0,
+        "last_output_stroke_m": 5.940093009357619e-05,
+        "initial_mass_response_gate": false,
+        "finite_joint_closure_gate": false
+      },
+      "scene_sha256": "c7f3145c7f385ceb1b46fd3008b6ee945ac9bee6c628700dcfb86e9409823c29",
+      "errors": []
+    }
+  ],
+  "body_mass_kg": {
+    "rotor": 4.715720980889032e-05,
+    "rod": 3.143813987259354e-05,
+    "slider": 1.5719069936296778e-05
+  },
+  "body_inertia_kg_m2": {
+    "rotor": [
+      [
+        1.9910926159603233e-11,
+        1.1842378929335003e-28,
+        9.473903143468003e-28
+      ],
+      [
+        1.1842378929335003e-28,
+        2.2517249134189586e-09,
+        -1.156482317317871e-31
+      ],
+      [
+        9.473903143468003e-28,
+        -1.156482317317871e-31,
+        2.2637763046104134e-09
+      ]
+    ],
+    "rod": [
+      [
+        2.6068554221066145e-09,
+        -9.094947017729282e-25,
+        -2.2737367544323205e-25
+      ],
+      [
+        -9.094947017729282e-25,
+        5.273950773066191e-12,
+        4.547473508864641e-25
+      ],
+      [
+        -2.2737367544323205e-25,
+        4.547473508864641e-25,
+        2.6068896829009155e-09
+      ]
+    ],
+    "slider": [
+      [
+        2.263697538652377e-11,
+        -9.094947017729282e-25,
+        -2.2737367544323205e-25
+      ],
+      [
+        -9.094947017729282e-25,
+        2.2636975386534234e-11,
+        2.2737367544323205e-25
+      ],
+      [
+        -2.2737367544323205e-25,
+        2.2737367544323205e-25,
+        4.265410578367482e-11
+      ]
+    ]
+  },
+  "source_sha256": "72500a175abf57cbaa75bae72cef73accc1eebd0245d51fa6b58f3adc195d7d5",
+  "geometry_sha256": "780c568dc99d09ca5ea15a058cf215dd0b32ea1505af619469efe8321ce55452",
+  "source_commit": "d19f55a23bbb573618ac61cd4453d3f43f5211e2",
+  "binary_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_cable_phase1831/libReGripCablePhase.so": "9140d6a0be5283118412fa86df18a88a06dcba875602f3c9cba783b50f8cde96",
+    "/home/ubuntu/SOFA/v26.06.00/plugins/SoftRobots/lib/libSoftRobots.so": "b66e693ca7ba57dad324f9f8cdeebaad03aa228b0b89788fc7603c8d1c1ed59f"
+  },
+  "scope": "Only three finite rotor/rod/slider bodies at assumedrho1000; ideal massless pins and Bilateral point joints, physical pin mass/reaction/retention NOT qualified. Not the full seven-part dynamic assembly. Initial reduced1DOF reference at theta0 has Mprime0; does not validate general convective dynamics. Joint closure1e-12 unchanged, no projected q/v repair. No Finger, FEM, contact, finite wire, time/mesh or grasp qualification."
+}

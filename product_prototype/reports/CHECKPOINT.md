@@ -1,3 +1,47 @@
+## Stage1 manufacturing — 2026-11-25 bounded-session handoff
+
+Latest user scope is STAGE1 DESIGN ONLY, superseding the old physics queue
+priority below. Startc4dd6b3 clean/cached-origin equal. Feature commitsf0166cd,
+a6787cc,3f0dfdb,f08a196; final save SHA=`git log -1 --format=%H`.
+New package `product_prototype/stage1_manufacturing/`; historical CAD/Raw/
+research_queue/SDK and all old verdicts unchanged. No Native run or push.
+
+Actual real OpenCascade STEP/STL assemblies revA–H generated; failures kept.
+Current revH157single valid closed parts, nominal bulk collisions0; actual
+STEP aggregate-volume reread;6finite REST wire straight spans clear; rotor
+full-turn conservative foreign envelope clear. Cartridge25downward sampled
+poses clear under explicit unloaded/disconnected Root-front removal Cut-set.
+Motor tool approach6/12blocked in fullassembly,12/12clear before pedestal
+installation; only cylindrical shank, not full tool or socket engagement.
+Correct actual Root-datum93mm strip+finite terminal prescribed motion first
+interFinger collision58deg;0–56deg samples clear, NOT CCD/dynamics/fullwire.
+New outer bearing cap4part actual follow-up clear against revH, one-direction
+boundary stop only; NOT adopted, opposite cap/shaft retention still open.
+
+**STAGE1_DESIGN_RELEASE_FAIL**: axial capture, shaft/drum torque lock, retained
+tendon/drum terminals, complete moving wire/fixed hardware, exact supplier
+fits/threads/tooling, shop dimensioned drawings and jamming interface open.
+No physical material/preload/fatigue or hardware test. Old100gHoldingFAIL
+unchanged. No powered fabrication authorization. Product is NOT complete.
+
+Reports/BOM/actualSTEP/STL/reviewSVG and evidence are inside new package.
+`STAGE1_TASKS.json` is current Stage1 queue; no RUNNING job. Next READY:
+`stage1_axial_bearing_capture`, continue actual outer cap coupon with inner
+retainer/shaft shoulder without rotor/vertical-bolt interference and verify
+supplier race land. Then torque clamp and positive wire terminals. These
+remain executable design work; this handoff is a session boundary, not a
+claim that all independent tasks are exhausted. No background continuation.
+
+Resume with Git/status + package reports/OPEN_ISSUES + STAGE1_TASKS, then
+implement NEW geometry/output, not rerun revH or the existing coupon:
+```
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/stage1_manufacturing/scripts/test_release_evidence.py
+```
+OCC temporary dependencies `/tmp/regrip_stage1_ocp` (may disappear):
+cadquery-ocp7.9.3.1.1 +vtk9.6.2, binary SHA and2216file final snapshot in
+validation/session_final. Largest newfile7,053,684B. Five software evidence
+testsPASS are NOT a design release. No existing largeCSV newly tracked.
+
 ## Current1941 — saved continuation point; UNBRACED100g Holding still FAIL
 
 Last research1937, last full Native1925, last Native probe1936. Featurecommit

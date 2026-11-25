@@ -1,3 +1,33 @@
+## Latest Stage1 manufacturing resume — 2026-11-25
+
+Current scope: Stage1 design only. See CHECKPOINT top and
+`stage1_manufacturing/reports/STAGE1_RELEASE_CHECKLIST.md`, OPEN_ISSUES and
+`stage1_manufacturing/STAGE1_TASKS.json`. Featuref08a196 after actual8CAD
+revision cycles and new outer bearing-cap prototype. Finalsave=`git log -1`.
+No jobRUNNING. Do not continue historical Native task merely because it is
+READY in the unchanged old physics queue; latest user changed scope.
+
+New actual revH157part real STEP/STL assembly + BOM + review drawings.
+0nominal bulk collisions, six REST wire spans clear, declared25sample
+cartridge extraction clear, staged driver paths clear. Actual prescribed
+Root-datum motion first terminal/Finger collision58deg; not whole motion.
+STAGE1_DESIGN_RELEASE_FAIL. No strength/physical/grasp PASS or Native run.
+Outer cap actual4part prototype,0currentassembly interference, one-direction
+geometric stop; NOT adopted, inner cap/shaft/race land remains unresolved.
+
+Next actual work: extend `scripts/bearing_capture_coupon.py` to NEW output
+and complete race/shaft capture, compare finite drum/vertical bolt geometry;
+then implement shaft torque clamp and positive retained wire ends. No whole
+assembly regeneration until local geometry passes. Preserve every revA–H
+failure and old physics evidence. `/tmp/regrip_stage1_ocp` is temporary OCC
+toolchain; verify availability before NEW CAD generation. Existing tests:
+```
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/stage1_manufacturing/scripts/test_release_evidence.py
+```
+Final snapshot+OCC binary SHA/logs under validation/session_final; no auto
+restart configured. This bounded-session handoff is not project completion
+or exhaustion of possible engineering work.
+
 ## Current1941 — saved continuation point; UNBRACED100g Holding still FAIL
 
 Last research1937, last full Native1925, last Native probe1936. Featurecommit

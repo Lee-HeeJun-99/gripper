@@ -1,3 +1,14 @@
+## 2026-11-25 Stage1 fabrication candidate — NOT released
+
+Latest user requests Stage1 manufacturing only. New independent revH direct
+winch/shaft/two625bearing/fixed-idler/flat-sheet3Finger candidate, actual157
+single OCC solids and STEP/STL. Separate from old300part CAD and all Native
+B3 trials. Nominal static/wire/service checks pass declared subsets, but
+complete bearing/shaft/torque/tendon retention and whole-motion/tolerance/
+shop drawing/extension gates are open. STAGE1_DESIGN_RELEASE_FAIL. Actual
+outer cap prototype NOT adopted. See stage1_manufacturing/reports and
+current CHECKPOINT. No new holding or physical/material qualification.
+
 ## 2026-11-25 through1939 — new no-bracing candidates, grasp still FAIL
 
 Registered parallel-axis supported drive plus finite blind terminal anchors

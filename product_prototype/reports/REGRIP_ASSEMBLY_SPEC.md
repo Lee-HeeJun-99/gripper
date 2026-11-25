@@ -1,3 +1,16 @@
+## Stage1 manufacturing revH — unreleased, 2026-11-25
+
+New157part actual STEP/STL assembly, not replacement of300part production
+candidate or NativeB3. OD270Palm, RootsR50,3x120deg, direct outward winch
+bank plus fixed idlers. Motor mounting BEFORE pedestal/shaft assembly is
+required by actual driver approach screen. Declared Root-front cut-set gives
+25sampled120mm unloaded cartridge extraction clearance; not physical service
+or continuous CCD. Open angled terminal seat clears REST finite wire but
+does NOT retain it. Shaft axial capture/torque lock and complete terminations
+remain design blockers. Prototype outer cap one-direction geometry only.
+No motor power/fabrication release. Exact actual files, BOM, review drawings,
+assembly sequence, supplier links and failures in stage1_manufacturing.
+
 ## Current1808 — connected axial prototype, retention not qualified
 
 Three-foot base/rear spine and carrier collar/cheek/ties are real new solids,

@@ -8,6 +8,10 @@ from pathlib import Path
 import numpy as np
 import trimesh
 ROOT=Path(__file__).resolve().parents[1]
+IDLER_R=4.75
+def configure(index):
+ global IDLER_R
+ IDLER_R=index.get('design_geometry',{}).get('idler_wire_radius_mm',4.75)
 def rot(a,axis=(0,1,0),point=None):
  return trimesh.transformations.rotation_matrix(a,axis,point)
 def tip(a):
@@ -17,7 +21,7 @@ def tip(a):
  return T
 def beta(p):
  vx,vz=44-p[0],25-p[2]
- return -(math.atan2(vz,vx)-math.acos(4.75/math.hypot(vx,vz)))
+ return -(math.atan2(vz,vx)-math.acos(IDLER_R/math.hypot(vx,vz)))
 def move(m,T):
  q=m.copy();q.apply_transform(T);return q
 def flexible(a):
@@ -40,9 +44,19 @@ def flexible(a):
 def intersection(a,b):
  if np.any(np.minimum(a.bounds[1],b.bounds[1])-np.maximum(a.bounds[0],b.bounds[0])<=1e-8):return 0.
  return float(trimesh.boolean.intersection([a,b],engine='manifold').volume)
+def laminate_ends(meshes):
+ roots={};ends={}
+ for suffix in ('SKIN','RAIL_L','RAIL_R'):
+  m=meshes['F0_'+suffix]
+  for target,z,h,label in [(roots,1.5,17,'ROOT_FIXED'),(ends,-97.5,5,'DISTAL_RIGID')]:
+   clip=trimesh.creation.box(extents=[5,40,h]);clip.apply_translation([50,0,z])
+   q=trimesh.boolean.intersection([m,clip],engine='manifold');assert q.is_volume
+   target['F0_'+suffix+'_'+label]=q
+ return roots,ends
 def main():
  p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);args=p.parse_args()
  src=ROOT/'cad/exports'/args.case;index=json.loads((src/'summary.json').read_text());out=ROOT/'validation'/args.tag;out.mkdir(exist_ok=False)
+ configure(index)
  shutil.copyfile(__file__,out/'producer.py')
  meshes={};quality=[];hashes={}
  for n,v in index['parts'].items():
@@ -51,9 +65,12 @@ def main():
   hashes[str(f.relative_to(ROOT))]=hashlib.sha256(f.read_bytes()).hexdigest()
  if not all(q['volume'] for q in quality):
   (out/'summary.json').write_text(json.dumps(dict(status='MESH_FAIL',quality=quality,stage1_release=False),indent=2));raise RuntimeError('invalid STL')
- fixed={n:m for n,m in meshes.items() if not any(n.endswith(s) for s in ('SKIN','RAIL_L','RAIL_R')) and not any(k in n for k in ('TERMINAL','SWIVEL','TIP_FACTORY_NIPPLE'))}
+ fixed={n:m for n,m in meshes.items() if not any(n.endswith(s) for s in ('SKIN','RAIL_L','RAIL_R','TENDON_WIRE')) and not any(k in n for k in ('TERMINAL','SWIVEL','TIP_FACTORY_NIPPLE'))}
  rigid={n:m for n,m in meshes.items() if n.startswith('F0_') and ('TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SPACER_L','F0_SWIVEL_SPACER_R'))}
  swivel={n:m for n,m in meshes.items() if n.startswith('F0_') and (n.startswith(('F0_SWIVEL_LOWER','F0_SWIVEL_UPPER','F0_SWIVEL_BOLT','F0_SWIVEL_NUT','F0_TIP_FACTORY_NIPPLE')))}
+ roots,ends=laminate_ends(meshes);rigid.update(ends)
+ for i in range(3):
+  R=rot(i*2*math.pi/3,(0,0,1));fixed.update({n.replace('F0_',f'F{i}_',1):move(m,R) for n,m in roots.items()})
  hits=[];poses=[];b0=beta([43,0,-92])
  for deg in range(0,61,2):
   a=math.radians(deg);T=tip(a);pivot=(T@np.array([43,0,-92,1]))[:3];b=beta(pivot);S=rot(b-a-b0,point=pivot)@T
@@ -77,6 +94,6 @@ def main():
     v=intersection(local[n],local[k])
     if v>1e-6:hits.append(dict(angle_deg=deg,a=n,b=k,volume_mm3=v))
   poses.append(dict(angle_deg=deg,pivot_mm=pivot.tolist(),swivel_deg=math.degrees(b)))
- result=dict(status='SAMPLED_MOTION_PASS' if not hits else 'SAMPLED_MOTION_FAIL',case=args.case,quality=quality,hits=hits,poses=poses,static_bulk_collision_count=len(index['collisions']),scope='31 prescribed poses 0..60deg; tapered conservative flexible envelope, actual rigid tip and articulated swivel; fixed hardware and interFinger. Same-rigid-body internal pairs invariant from REST. Not continuous CCD, rotor sweep, wire sweep, FEM or hardware verification.',stage1_release=False)
+ result=dict(status='SAMPLED_MOTION_PASS' if not hits else 'SAMPLED_MOTION_FAIL',case=args.case,quality=quality,hits=hits,poses=poses,static_bulk_collision_count=len(index['collisions']),scope='31prescribed0..60deg poses; actual exported laminate root/top17mm and distal5mm clipped meshes, conservative tapered88mm flexible span, actual rigid tip/articulated swivel; fixed hardware/interFinger. Same-rigid pairs invariant from actual REST. No continuous CCD/rotor/wire/FEM/hardware qualification.',stage1_release=False)
  (out/'summary.json').write_text(json.dumps(result,indent=2));(out/'input_sha256.json').write_text(json.dumps(hashes,indent=2));print(json.dumps(dict(status=result['status'],parts=len(quality),hits=len(hits),first_hits=hits[:5])))
 if __name__=='__main__':main()

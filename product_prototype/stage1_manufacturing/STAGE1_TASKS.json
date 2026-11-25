@@ -3,15 +3,17 @@
  "tasks":[
   {"id":"stage1_architecture_and_OCC_exports","state":"PASS","scope":"engineering candidate only; real revH157part STEP/STL, not product release"},
   {"id":"stage1_static_wire_and_service_screen","state":"PASS","scope":"REST six straight spans;25discrete unloaded cartridge poses;staged driver approach"},
-  {"id":"stage1_full_motion","state":"FAIL","evidence":"prescribed interFinger collision at58deg; fixed-hardware/wire motion incomplete"},
+  {"id":"stage1_full_motion","state":"PASS","scope":"nominal sampled/prescribed kinematics only, NOT force/dynamics/continuousCCD","historical_failure_preserved":"RevH58deg; revJ_margin60deg; revN_bend22 swivel bolt/nut at60deg","evidence":["validation/revR_motion1/summary.json","validation/revR_wire1/summary.json"],"successor":"final documented-motor evidence transfer; no unmeasured physical performance claim"},
   {"id":"stage1_axial_bearing_capture","state":"PASS","scope":"Stage1 component design contract only, not hardware strength or overall release","evidence":["cad/exports/revI_supplier/summary.json","validation/revI_supplier_contract/summary.json","validation/revI_service/summary.json"],"mechanism":"integral inner housing abutments plus outer caps;8mm shaft shoulders, inner washers/fine nuts; locating L and captured floating R","successor":"verify transformed drive in mechanisms bank and final release assembly"},
   {"id":"stage1_torque_lock","state":"PASS","scope":"positive crosspin with retained end plugs plus real split coupling/screws; capacity NOT MEASURED","evidence":"validation/revI_supplier_contract/summary.json","successor":"updated drum nipple cup and complete swept rotation"},
-  {"id":"stage1_tendon_retention","state":"RUNNING","hypothesis":"Factory terminal NI000032 fits0.5mm wire; split swivel/pocket and removable winch cup provide positive nipple retention rather than fictional clearance-hole grip","current":"actual incremental revJ_mount CAD child","criteria":"all finite parts and0.5mm wire installation; actual route/motion and access verification; Stage2 factory-end pullout protocol"},
-  {"id":"stage1_supplier_fits_shop_drawings","state":"READY","criteria":"supplier-specific bearing races/pilot details and complete fit/thread/drawing interfaces"},
+  {"id":"stage1_tendon_retention","state":"PASS","scope":"nominal manufacturing/kinematic design, NOT measured swage/pullout/fatigue","hypothesis":"Factory NI000032 stem outlet, split blind receiver, directly tangent winch pocket/cap; no fictional clamp","evidence":["cad/exports/revQ_wire_assembly/summary.json","validation/revR_contract1/summary.json","validation/revR_wire1/summary.json","validation/revR_paths1/summary.json"],"successor":"final release packet includes aperture/whole finished-tendon assembly order; Stage2 physical strength"},
+  {"id":"stage1_supplier_fits_shop_drawings","state":"RUNNING","evidence":"SKF P6 table3 local variation: mean-only16H6 seat superseded by custom16.010..16.021; actual journal5f6.33review drawings/289row BOM revM_packet1, final22mm root packet needed","criteria":"complete fit/thread/process/drawing interfaces, manufacturer24+-1 motor shaft gap1..3 after1mm actual motor/mount relocation"},
+  {"id":"stage1_staged_tools_and_service","state":"PASS","scope":"component design/nominal discrete access, not physical tightening or continuous CCD","evidence":["validation/revR_keys1/summary.json","validation/revR_nuts2/summary.json","validation/revR_paths1/summary.json"],"successor":"actual simultaneous key/nut tool pairs and final documented-motor transfer"},
+  {"id":"stage1_final_release_evidence","state":"READY","prerequisites":["stage1_tendon_retention","stage1_supplier_fits_shop_drawings","stage1_full_motion"],"criteria":"actual latest CAD checks, authoritative drawings/BOM/assembly sequence/fit acceptance and fail-closed release checklist"},
   {"id":"stage1_release","state":"FAIL","evidence":"validation/release_revH/summary.json"},
   {"id":"stage2_load_hardware","state":"BLOCKED","reason":"out of current Stage1 scope and requires released retention design, specimens and instrumentation"}
  ],
- "RUNNING":["stage1_tendon_retention"],
- "next":"stage1_tendon_retention",
- "session_note":"Active resumed Stage1 session; current job must be closed before handoff"
+ "RUNNING":["stage1_supplier_fits_shop_drawings"],
+ "next":"revS_documented_motor feature catalogue/manufacturing packet; tool pairs; fail-closed final release",
+ "session_note":"Active Stage1-only continuation; actual job state must be reconciled with process/results before any handoff; no Native work"
 }

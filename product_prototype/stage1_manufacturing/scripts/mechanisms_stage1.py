@@ -5,7 +5,7 @@ pretence that a2.5-3.8mm nipple passes a0.8mm wire hole. No swage strength claim
 """
 import math
 from build_stage1 import box,cyl,cut,fuse,translate,compound,rotate
-from incremental_stage1 import hex_y
+from incremental_stage1 import hex_y,bounds
 from OCP.BRepAlgoAPI import BRepAlgoAPI_Common
 from OCP.BRepOffsetAPI import BRepOffsetAPI_MakePipe
 from OCP.Geom import Geom_BezierCurve
@@ -31,7 +31,13 @@ def hex_x(af,x,length,y,z):
 def bolt_m2_y(x,y,z,L):
  s=fuse(cyl(1,(x,y,z),L,(0,1,0)),cyl(1.9,(x,y-2,z),2,(0,1,0)))
  return cut(s,hex_y(1.5,y-2,1.0,x,z))
-def nipple():return cut(cyl(1.9,(43,0,-87),11),cyl(.25,(43,0,-88),13))
+def nipple():return cut(cyl(1.9,(43,0,-82),6),cyl(.25,(43,0,-83),8))
+def hex_axis(p,axis,af,length):
+ b=(0,1,0) if axis[0] else (1,0,0)
+ c=(axis[1]*b[2]-axis[2]*b[1],axis[2]*b[0]-axis[0]*b[2],axis[0]*b[1]-axis[1]*b[0]);w=BRepBuilderAPI_MakePolygon()
+ for i in range(6):
+  t=i*math.pi/3;r=af/math.sqrt(3);w.Add(gp_Pnt(*(p[j]+r*(b[j]*math.cos(t)+c[j]*math.sin(t)) for j in range(3))))
+ w.Close();return BRepPrimAPI_MakePrism(BRepBuilderAPI_MakeFace(w.Wire()).Face(),gp_Vec(*(length*v for v in axis))).Shape()
 def mechanisms_delta(old):
  new={};notes={};removed=[]
  def add(n,s,p):new[n]=s;notes[n]=p
@@ -119,13 +125,13 @@ def mechanisms_delta(old):
  # Split swivel chamber: max envelope includes both possible interpretation
  # of supplier A/B axial dimensions (sum upper bounds11mm); pocket12mm.
  whole=fuse(box(37,-3,-90,12,6,18),box(41,-3,-94,4,6,6))
- whole=cut(whole,cyl(2.1,(43,0,-88),12),cyl(.4,(43,0,-76),5),cyl(1.05,(43,-4,-92),8,(0,1,0)))
+ whole=cut(whole,cyl(2.1,(43,0,-82.2),6.2),cyl(.4,(43,0,-76),5),cyl(1.05,(43,-4,-92),8,(0,1,0)))
  for x in (39,47):
   for z in (-86.5,-74.5):whole=cut(whole,cyl(1.1,(x,-4,z),8,(0,1,0)))
  beta=swivel_beta(43,-92)
  for label,y in [('LOWER',-3),('UPPER',0)]:
-  half=common(whole,box(30,y,-100,25,3,35));add('SWIVEL_'+label,pitch_at(half,beta,(43,0,-92)),'CNC steel split receiver; pocket4.2x12, exit0.8; free Y swivel; no fictitious wire clamp')
- add('TIP_FACTORY_NIPPLE',pitch_at(nipple(),beta,(43,0,-92)),'CarlStahl NI000032 factory terminal for0.45..0.63wire; MAX envelope3.8x11, NOT actual crimp internals')
+  half=common(whole,box(30,y,-100,25,3,35));add('SWIVEL_'+label,pitch_at(half,beta,(43,0,-92)),'CNC steel split receiver; pocket4.2x6.2, exit0.8; free Y swivel; no fictitious wire clamp')
+ add('TIP_FACTORY_NIPPLE',pitch_at(nipple(),beta,(43,0,-92)),'NI000032 max conservative3.8x6; manufacturer diagram D isTOTAL5+-1, B4+-1 is stem, NOT additive; stem outlet seated atZ-76')
  for x in (39,47):
   for z in (-86.5,-74.5):
    add(f'SWIVEL_BOLT_{x}_{z}',pitch_at(bolt_m2_y(x,-3,z,8),beta,(43,0,-92)),'ISO4762M2x8,head3.8x2,1.5AF socket')
@@ -142,8 +148,8 @@ def mechanisms_delta(old):
  drum=cut(drum,cyl(4.05,(80,3,20),11,(0,1,0)),cyl(.75,(71.9,8.5,20),16.2,(1,0,0)))
  for x in (67.8,88):drum=cut(drum,cyl(1,(x,8.5,20),4.2,(1,0,0)))
  cap_region=box(69,10.5,7,22,2,18);cap=common(drum,cap_region);drum=cut(drum,cap_region)
- pocket=cyl(2.1,(74,9.6,13.5),12,(1,0,0))
- drum=cut(drum,pocket,box(74,9.6,11.4,12,4,4.2));cap=cut(cap,pocket)
+ pocket=cyl(2.1,(79.8,9.6,13.5),6.2,(1,0,0))
+ drum=cut(drum,pocket,box(79.8,9.6,11.4,6.2,4,4.2));cap=cut(cap,pocket)
  # Cubic lead-out with real finite wire-radius clearance, sampled cutter
  # axes. This is explicit routing geometry, not a Native wire simulation.
  P=[(86,9.6,13.5),(88.0,9.6,13.5),(88.25,6,18),(88.25,6,20)]
@@ -167,14 +173,14 @@ def mechanisms_delta(old):
    screw=cut(screw,hex_y(1.5,12.5,1.1,x,z));add(f'DRUM_CAP_BOLT_{x}_{z}',translate(screw,0,-6,0),'ISO4762M2x4, recessed head flush with Yface; 3mm thread engagement')
  add('DRUM',translate(drum,0,-6,0),'CNC6061 single grooveR8, factory nipple side pocket, pin retained by twoM2 plugs')
  add('DRUM_NIPPLE_CAP',translate(cap,0,-6,0),'CNC6061 removable face segment; side-load finished nipple and wire,3 noncollinear M2 screws; fourth removed from real wire channel')
- ni=cut(cyl(1.9,(74.5,9.6,13.5),11,(1,0,0)),cyl(.25,(74,9.6,13.5),13,(1,0,0)))
- add('DRUM_FACTORY_NIPPLE',translate(ni,0,-6,0),'CarlStahl NI000032 MAX supplier-end envelope; exact delivered end tested Stage2')
+ ni=cut(cyl(1.9,(80,9.6,13.5),6,(1,0,0)),cyl(.25,(79.8,9.6,13.5),6.4,(1,0,0)))
+ add('DRUM_FACTORY_NIPPLE',translate(ni,0,-6,0),'NI000032 conservative maximum3.8x6; stem outlet at load shoulderX86, eliminating earlier0.5mm datum gap; actual swage internals not represented')
  # Root cassette docking, two independent M2s and keyed registration boss.
  root=fuse(old['F0_ROOT_BACK'],box(53.5,-12,5,2,24,5))
  frame=box(50.5,-25,10,14,50,2);frame=fuse(frame,cyl(1.5,(53,0,9),1))
  for yy in (-24,22):frame=fuse(frame,box(53.5,yy,-18,2,2,30))
  frame=fuse(frame,box(53.5,-24,-18,2,48,4))
- for yy in (-8,8):frame=cut(frame,cyl(1,(53.4,yy,-16),2.2,(1,0,0)))
+ for yy in (-8,8):frame=cut(frame,cyl(1.1,(53.4,yy,-16),2.2,(1,0,0)))
  root=cut(root,cyl(1.6,(53,0,8.95),1.2))
  frame=cut(frame,cyl(2.75,(59,0,9.9),2.2))
  for y in (-8,8):
@@ -187,4 +193,37 @@ def mechanisms_delta(old):
   add(f'CASSETTE_BOLT_{y}',screw,'ISO4762M2x4;2mm engagement; top access independent from Root bolts')
  add('ROOT_BACK',root,'existing root updated only with two blindM2 docking holes/key pocket')
  add('JAMMING_DOCK',frame,'CNC keyed docking interface; two M2; future pressure film NOT installed or qualified')
+ # Removable blank/datum plate is actual hardware, not a fictitious vacuum
+ # chamber. A future chamber replaces this plate using the same2M2 flange.
+ adapter=box(51.5,-10,-18,2,20,4)
+ for yy in (-8,8):
+  adapter=cut(adapter,cyl(1,(51.4,yy,-16),2.2,(1,0,0)))
+  screw=fuse(cyl(1,(51.5,yy,-16),4,(1,0,0)),cyl(1.9,(55.5,yy,-16),2,(1,0,0)))
+  screw=cut(screw,hex_axis((57.5,yy,-16),(-1,0,0),1.5,1));add(f'CASSETTE_ADAPTER_BOLT_{yy}',screw,'ISO4762M2x4;1.5AF socket;2mm M2 threaded blank adapter')
+ add('CASSETTE_BLANK_ADAPTER',adapter,'CNC6061,20x4x2;2M2 through thread Y+-8/Z-16; replacement flange for future chamber, NOT actual jamming')
+ # Purchased M3 cylinders were deliberately conservative earlier envelopes.
+ # Give every remaining cap screw its actual tool socket and every M3 nut
+ # its5.5AF flats. Nominal major thread interfaces remain simplified.
+ for n,s in old.items():
+  if n.startswith(('F0_ROOT_BOLT','F0_ROOT_NUT','F0_RF')):add(n[3:],s,'Retained Root/Palm fastener, pending actual socket/hex upgrade below')
+ for n in list(new):
+  if n.startswith('CAP_R_BOLT'):
+   s=new[n];bb=bounds(s);add(n,cut(s,hex_axis(((bb[0]+bb[3])/2,bb[4],(bb[2]+bb[5])/2),(0,-1,0),2.5,1.5)),'ISO4762M3x4;2.5AF socket1.5deep; nominal major thread');continue
+  if n.startswith(('CAP_','TERMINAL','SWIVEL','DRUM','CASSETTE','SHAFT')):continue
+  s=new[n];bb=bounds(s);ctr=[(bb[j]+bb[j+3])/2 for j in range(3)]
+  if n.startswith('ROOT_NUT'):axis=(1,0,0)
+  elif n=='IDLER_NUT':axis=(0,1,0)
+  else:axis=(0,0,1)
+  if 'NUT' in n:
+   dim=next(i for i,v in enumerate(axis) if v);p=ctr[:];p[dim]=bb[dim]
+   s=cut(hex_axis(p,axis,5.5,bb[dim+3]-bb[dim]),cyl(1.5,tuple(p[j]-axis[j]*.1 for j in range(3)),bb[dim+3]-bb[dim]+.2,axis))
+   add(n,s,'Purchased ISO4032M3,5.5AF/t2.4; actual hex flats, nominal6H thread interface; locking perTDS')
+  elif 'BOLT' in n or n=='IDLER_AXLE':
+   if n.startswith('ROOT_BOLT'):axis=(1,0,0);p=[bb[0],ctr[1],ctr[2]]
+   elif n.startswith('MOTOR_BOLT'):axis=(0,-1,0);p=[ctr[0],bb[4],ctr[2]]
+   elif n=='IDLER_AXLE':axis=(0,1,0);p=[ctr[0],bb[1],ctr[2]]
+   else:axis=(0,0,-1);p=[ctr[0],ctr[1],bb[5]]
+   add(n,cut(s,hex_axis(p,axis,2.5,1.5)),'ISO4762M3 interface with real2.5AF/1.5deep socket; nominal thread; selected length from CAD; Idler axle custom smooth3mm8span+M3end, not threaded bearing surface')
+ idler=fuse(new['IDLER'],cut(cyl(1.72,(44,-2,25),4,(0,1,0)),cyl(1.52,(44,-2.1,25),4.2,(0,1,0))))
+ add('IDLER',idler,'Turn POM OD9 groove/OD11 flanges; custom plain bore3.040+-0.010 over smooth3h6 axle, no fully threaded journal; friction/wear Stage2')
  return new,notes,removed

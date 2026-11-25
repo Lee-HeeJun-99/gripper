@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/incremental_stage1.py", line 129, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/incremental_stage1.py", line 107, in main
+    changed,notes,removed=mechanisms_delta(allparts)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/mechanisms_stage1.py", line 75, in mechanisms_delta
+    half=common(whole,box(30,y,-100,25,3,35));add('SWIVEL_'+label,pitch_at(half,beta,(43,0,-92)),'CNC steel split receiver; pocket4.2x12, exit0.8; free Y swivel; no fictitious wire clamp')
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/mechanisms_stage1.py", line 17, in pitch_at
+    t=gp_Trsf();t.SetRotation(gp_Ax1(gp_Pnt(*p),gp_Dir(0,1,0)),beta);return BRepBuilderAPI_Transform(s,t,True).Shape()
+TypeError: __init__(): incompatible constructor arguments. The following argument types are supported:
+    1. OCP.OCP.BRepBuilderAPI.BRepBuilderAPI_Transform(T: OCP.OCP.gp.gp_Trsf)
+    2. OCP.OCP.BRepBuilderAPI.BRepBuilderAPI_Transform(theShape: OCP.OCP.TopoDS.TopoDS_Shape, theTrsf: OCP.OCP.gp.gp_Trsf, theCopyGeom: bool = False, theCopyMesh: bool = False)
+
+Invoked with: 555.8614057049933, <OCP.OCP.gp.gp_Trsf object at 0x730223fb6eb0>, True

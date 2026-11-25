@@ -1,4 +1,28 @@
-## Active Stage1 continuation — 2026-11-25
+## Latest active Stage1 continuation — 2026-11-26
+
+Current actual CAD revS_documented_motor:292single valid BRep parts,0nominal
+bulk intersections, real full STEP/STL including three finite0.5mm Tendons.
+Wire length190.809325mm is a design envelope/outlet-length requirement, NOT
+measured wire mass/strength. Root22mm grooves, tangent factory terminal,
+accessible2mm-endmill pocket, positive/captive hardware and future dock.
+New16.030+-0.005 seats account for P6 local diameters plus paired-axis
+error, not a mean-only16H6 claim. Actual motor source alternative supplies
+the previously missing pilot projection (17HS15-1504S1 A0648); no purchase.
+
+revR checks executed:292closed meshes/31full laminate+rigid tip0..60deg poses
+clear;40key paths;21nut paths/captive pockets;4rotation stops; actual U-floor
+containment and torus contact0; full3Finger wire/rotor screen0hits; cassette
+space/whole-wire separation13.92048mm lower bound;12rigid extraction paths.
+The first Rnut test found an Idler-base tool/wire clash: stage now locks that
+base BEFORE installing the COMPLETE tendon purchase (wire AND both ends).
+Original failure preserved. Discrete checks are NOT continuous CCD or forces.
+
+Remaining active work: final S-source manufacturing packet/feature catalogue,
+simultaneous tools, final checklist and scoped release assessment. Old RevA–H,
+all Raw and all old FAIL/PASS unchanged. NO Native/SDK/push/history rewrite.
+Feature saves19f69a0/799d378; see latest `git log -1` for current save.
+
+## Active Stage1 continuation — 2026-11-25 (historical intermediate)
 
 Latest bearing/shaft component commit19f69a0 after start98d1dd6. Historical
 sections below preserved. New283part revJ_forkclear actual STEP/STL,0bulk

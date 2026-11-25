@@ -1,4 +1,15 @@
-## Active Stage1 continuation — 2026-11-25
+## Latest active Stage1 continuation — 2026-11-26
+
+Actual revS_documented_motor292parts0bulk collisions, whole STEP/STL incl3
+finite Tendons. All inherited paths refer to versioned RevH/I/M/P/Q/R sources.
+Most latest complete geometry checks are revR_* (see CHECKPOINT top); latest
+S changes ONLY the purchased motor to a documented conservative envelope.
+Do NOT rerun old Native or regenerate RevH. Next: manufacturing feature
+catalogue/updated supplier drawings and BOM, final S proof-transfer/tool pairs,
+fail-closed release checklist. Current development is active, not a final handoff.
+Latest save SHA via `git log -1`; source snapshots/hashes in each actual case.
+
+## Active Stage1 continuation — 2026-11-25 (historical intermediate)
 
 Start98d1dd6; component commit19f69a0. Latest completed geometry
 revJ_forkclear, validation/revJ_motion2 sampled PASS0..60deg/283closed parts.

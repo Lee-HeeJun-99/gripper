@@ -1,5 +1,23 @@
 # Finite terminal anchor and actual unbraced contact prefix
 
+##1941integrity / handoff
+
+Featurea93246cb596ba3752815f2166f0ccc4ede04dbd1 preserves all current
+research.1941final read-only audit3811manifestrecords/original102queue
+entries/oldRaw/SDK/binaries unchanged; noRUNNING task or Native process.
+1939frozen14trial producer/Scene/recorded binary identity checksPASS. Extra
+stock SDK SHA values explicitly captured at audit time, not retrospectively
+claimed execution measurements. New Git history386blobs, none>=50MB;
+largest1,601,119B. Final checkpoint commit obtained with `git log -1`.
+No push, rewrite, CSV deletion or forced tracking. Next READY genuine solid
+endpoint contract remains unimplemented, with explicit prerequisites.
+
+Additional physical scope: stock UniformVelocityDamping onRigid3 applies
+all6components, but current bearing fixture leaves only axial rotation free.
+It therefore represents only the restricted fixed-housing rotor-loss test.
+Future Palm/Lift must qualify relative motor/housing loss, not silently use
+world translational drag as a physical motor model. No such Lift is claimed.
+
 ## Final1937 — two actual full100g trials FAIL; different FEM path investigated
 
 No UNBRACED FUNCTIONAL PASS. Both new full trials removed observed Guide

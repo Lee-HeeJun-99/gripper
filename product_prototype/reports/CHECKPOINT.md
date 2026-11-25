@@ -1,3 +1,49 @@
+## Current1941 — saved continuation point; UNBRACED100g Holding still FAIL
+
+Last research1937, last full Native1925, last Native probe1936. Featurecommit
+`a93246cb596ba3752815f2166f0ccc4ede04dbd1`; final audit/checkpoint save SHA
+is `git log -1 --format=%H` (self-referential commit hash not embedded).
+Completed multiple implementation/Native/analysis cycles from1868; this is a
+bounded-session handoff, NOT project completion or exhaustion of all designs.
+
+Actual2s100g trials1904/1925: Guide–Guide/Root nonzero rows0 throughout,
+no object hardware/support load in Holding, positive savedFEM, independently
+checked finite75part saved-pose separation. But speed23.208/31.940mm_s
+violates unchanged5mm_s threshold; Slip0.210/0.330mm. No functional grasp,
+numerical, physical or hardware PASS. No new Lift/Release experiment after
+failedHolding. Actual strain4.68%/4.92% Green principal, allowable unknown.
+
+NewdirectFEM1933/1934component conservation/nonempty elasticity PASS only.
+Nominal-force boreport1935/1936FAIL/BLOCKED by actual Native factory and
+missing constraint-JT support; no SDK/customMapping workaround or fictitious
+material. Next READY `direct_fem_solid_endpoint_coupon` needs a real material
+termination/support design and direct nominal Cable force/reaction contract;
+NOT YET IMPLEMENTED. Review exact queue hypothesis/criteria first, then new
+unique result tag. Do not rerun old fullgrasp or unsupportedCOM paths.
+
+Queue171 tasks: READY1/PASS93/FAIL35/REJECTED24/BLOCKED17/NOTMEASURED1,
+RUNNING0; process check found no active runSofa. Preserve READY: not an empty
+queue/completed goal. No automatic background continuation is configured.
+1941auditPASS verifies3811manifestrecords, original102entries/Raw/SDK/old
+compiled binaries unchanged.1939records14frozen source/Scene/recorded binary
+identitiesPASS; additional stock SHA labels are explicitly audit-time only.
+New Git history a9a8c2a..a93246c:386blobs, none>=50MB, largest1,601,119B.
+Final staged files also checked<50MB; no CSV tracked, push or rewrite.
+Historical audit helper1768seed wording is not a current-model qualification.
+
+Read TERMINAL_CRIMP_AND_CONTACT_20261125.md for actual outcomes, commands,
+limits and append-only manifests1938/1940. Resume with environment Python:
+```sh
+git status --short
+git log -8 --oneline
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py
+```
+Next action is NEW finite endpoint geometry/code and minimum1step force
+contract, not an existing command pretending that model has been built.
+Native children remain4GiB/60–420s. Material/brake/bond/wire properties and
+finite-wire/contact/time/mesh/assembly/hardware gates remain unqualified.
+Older entries below are historical snapshots, not active RUNNING states.
+
 ## Current1939 — no successful100g Holding; no active job
 
 Last completed research1937; last actual Native1936failed unsupported COM

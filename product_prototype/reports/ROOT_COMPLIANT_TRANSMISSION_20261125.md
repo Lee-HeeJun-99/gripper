@@ -74,6 +74,13 @@ force, complete elastic shaft or energy/time convergence. Actual command:
 Next add NativeBeamFEM at otherwise identical initial conditions and compare
 M+dt²K against independent circular beam stiffness before Cable integration.
 
+1862adds stock BeamFEM only, retaining1860physical masses, fixture, dt and
+six input directions. Independent fixed-left circular element6x6stiffness
+reproduces actual initial EulerImplicit response: all6PASS/noERROR. Exact
+values are in1862summary; no free-/accepted-state mixing. This is initial
+M+dt²K only, not whole-path dynamic accuracy. Actual command:
+`python product_prototype/sofa/compliant_elastic_coupon.py --tag compliant_elastic1862`.
+
 ## Provenance / reproduction
 
 SDK26.06.00; frozen journal binary

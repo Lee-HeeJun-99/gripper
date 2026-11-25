@@ -1,4 +1,16 @@
-## Stage1 manufacturing — 2026-11-25 bounded-session handoff
+## Active Stage1 continuation — 2026-11-25
+
+Latest bearing/shaft component commit19f69a0 after start98d1dd6. Historical
+sections below preserved. New283part revJ_forkclear actual STEP/STL,0bulk
+intersections;283closed meshes and31prescribed0..60deg Finger/swivel poses
+clear (validation/revJ_motion2). This fixes the old58deg geometry failure,
+NOT continuous motion or Native physics qualification. Whole wire/rotor
+screen revJ_wire1 FAIL found actual cap-head/coupler, drum screw/lead and
+Palm/Idler-foot route obstructions. Actual revK corrective CAD running;
+no Stage1 release PASS. See STAGE1_TENDON_MOTION_CONTINUATION.md and task queue.
+All old Raw/RevA–H untouched. No Native run, push or SDK modification.
+
+## Stage1 manufacturing — 2026-11-25 bounded-session handoff (historical)
 
 Latest user scope is STAGE1 DESIGN ONLY, superseding the old physics queue
 priority below. Startc4dd6b3 clean/cached-origin equal. Feature commitsf0166cd,

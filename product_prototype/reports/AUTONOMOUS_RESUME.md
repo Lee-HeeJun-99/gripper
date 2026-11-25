@@ -1,4 +1,14 @@
-## Latest Stage1 manufacturing resume — 2026-11-25
+## Active Stage1 continuation — 2026-11-25
+
+Start98d1dd6; component commit19f69a0. Latest completed geometry
+revJ_forkclear, validation/revJ_motion2 sampled PASS0..60deg/283closed parts.
+Whole wire revJ_wire1 FAIL (actual collisions), corrective revK CAD currently
+being evaluated. Do not repeat old Native or RevH generation. See
+stage1_manufacturing/reports/STAGE1_TENDON_MOTION_CONTINUATION.md.
+Release NOT complete; next wire/rotor, cassette/service, drawings/BOM gates.
+This active-session entry supersedes the old handoff below.
+
+## Previous Stage1 manufacturing resume — 2026-11-25
 
 Current scope: Stage1 design only. See CHECKPOINT top and
 `stage1_manufacturing/reports/STAGE1_RELEASE_CHECKLIST.md`, OPEN_ISSUES and

@@ -5,7 +5,7 @@ Stage2. Design changes are fresh solids against ALL retained actual hardware.
 """
 import argparse,csv,hashlib,json,math,shutil,subprocess,time
 from pathlib import Path
-from build_stage1 import box,cyl,cut,fuse,volume,rotate,translate,compound,export,solid_count
+from build_stage1 import box,cyl,cut,fuse,volume,rotate,translate,compound,export as export_native,solid_count
 from OCP.STEPControl import STEPControl_Reader
 from OCP.IFSelect import IFSelect_RetDone
 from OCP.BRepCheck import BRepCheck_Analyzer
@@ -14,7 +14,14 @@ from OCP.BRepBndLib import BRepBndLib
 from OCP.Bnd import Bnd_Box
 from OCP.BRepPrimAPI import BRepPrimAPI_MakePrism
 from OCP.BRepBuilderAPI import BRepBuilderAPI_MakePolygon,BRepBuilderAPI_MakeFace
+from OCP.ShapeUpgrade import ShapeUpgrade_UnifySameDomain
+from OCP.BRepTools import BRepTools
 from OCP.gp import gp_Pnt,gp_Vec
+from OCP.TopExp import TopExp_Explorer
+from OCP.TopAbs import TopAbs_FACE,TopAbs_REVERSED
+from OCP.TopoDS import TopoDS
+from OCP.TopLoc import TopLoc_Location
+from OCP.BRep import BRep_Tool
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):
@@ -22,6 +29,28 @@ def read(p):
 def bounds(s):
  b=Bnd_Box();BRepBndLib.AddOptimal_s(s,b);return list(b.Get())
 def overlap(a,b):return all(min(a[i+3],b[i+3])-max(a[i],b[i])>1e-8 for i in range(3))
+def canonical(s):
+ u=ShapeUpgrade_UnifySameDomain(s,True,True,False);u.Build();s=u.Shape();BRepTools.Clean_s(s);return s
+def export(s,path):
+ export_native(s,path)
+ # Preserve double precision instead of merging across an invented
+ # geometric tolerance or filling holes. revJ_precision demonstrated that
+ # precision alone did NOT fix zero-wall tangencies; those needed physical
+ # edge clearance and remain recorded failed meshes in their original case.
+ with Path(str(path)+'.stl').open('w') as f:
+  f.write('solid '+path.name+'\n');it=TopExp_Explorer(s,TopAbs_FACE)
+  while it.More():
+   face=TopoDS.Face_s(it.Current());loc=TopLoc_Location();tri=BRep_Tool.Triangulation_s(face,loc)
+   if tri is None:raise RuntimeError('unmeshed CAD face '+path.name)
+   for j in range(1,tri.NbTriangles()+1):
+    idx=list(tri.Triangle(j).Get())
+    if face.Orientation()==TopAbs_REVERSED:idx[1],idx[2]=idx[2],idx[1]
+    points=[tri.Node(k).Transformed(loc.Transformation()) for k in idx]
+    f.write(' facet normal 0 0 0\n  outer loop\n')
+    for p in points:f.write('   vertex '+ ' '.join(format(v,'.17g') for v in (p.X(),p.Y(),p.Z()))+'\n')
+    f.write('  endloop\n endfacet\n')
+   it.Next()
+  f.write('endsolid '+path.name+'\n')
 def common(a,b):return volume(BRepAlgoAPI_Common(a,b).Shape())
 def hex_y(af,y,length,x=80,z=20):
  r=af/math.sqrt(3);w=BRepBuilderAPI_MakePolygon()
@@ -115,6 +144,7 @@ def main():
     if i:continue
     n=name[8:]
    else:n=f'F{i}_{name}';s=rotate(s,i*120)
+   s=canonical(s)
    assert BRepCheck_Analyzer(s).IsValid() and solid_count(s)==1,(n,'invalid solid')
    export(s,out/n);allparts[n]=s;provenance[n]=dict(path=str((out/(n+'.step')).relative_to(ROOT)),sha256=sha(out/(n+'.step')),process=notes[name])
  export(compound(list(allparts.values())),out/'ASSEMBLY')

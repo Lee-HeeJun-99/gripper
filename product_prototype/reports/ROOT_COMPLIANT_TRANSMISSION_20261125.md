@@ -58,6 +58,22 @@ No user forcefield/ODE or free-root nonlinear rigid-loop mapping is proposed.
 It is not permission to repeat old open-guide finite-speed failures, nor does
 component readiness justify a new3Finger Holding launch.
 
+##1860actual initial spatial mass contract
+
+Installed supported Rigid3-to-Rigid3 mapping and indexed child UniformMass
+represent three finite cylinder Voronoi cells plus the actual three-bore rotor
+from1843. Exact cell COM offsets retained; total shaft mass0.5890486mg,
+rotor47.15721mg at assumedrho1000kg/m3. All nonterminal nodes fixed for
+isolation; no elastic/cable/contact force. Six independent one-step Native
+loads atdt0.0001s agree with independently assembled6x6spatial inertia:
+max velocity difference6.7763e-21, relative vector1.534e-16. All6children
+normal/noERROR, runtime0.12–0.17s each. PASS_INITIAL_SPATIAL_MASS_ONLY.
+No first-component getMass shortcut. Does not prove finite-speed convective
+force, complete elastic shaft or energy/time convergence. Actual command:
+`python product_prototype/sofa/compliant_mass_coupon.py --tag compliant_mass1860`.
+Next add NativeBeamFEM at otherwise identical initial conditions and compare
+M+dt²K against independent circular beam stiffness before Cable integration.
+
 ## Provenance / reproduction
 
 SDK26.06.00; frozen journal binary

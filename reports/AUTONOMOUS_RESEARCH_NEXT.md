@@ -1,3 +1,23 @@
+## Current1921 /1922 RUNNING — full unbraced geometry verified, speed still FAIL
+
+1904actual800step/2s100g Native normal259.340s. Original Holding1908 and
+independent1915FAIL:Slip0.209806mm/speed23.208324mm_s/gap42.064484mm/
+Support0. Entire motionGuide–Guide/Rootrows0, no hardware objectload,
+minFEM0.988971.1911saved-pose75part/800output clearancePASS only. Original
+inclusive161sample SkinmeanZ0.983699663N; weight0.981N. Solverlimit23/161.
+1912all6inputs capped1.5N throughoutHolding, actualstrokeerror1.80–2.01mm,
+outputportsup to30.685mm_s: command is not achieved or stationary.
+1916Native mapped actuator-loss componentPASS. Always-on1917/1918single
+closing REJECTED177.93um tracking; no fullgrasp.1920public dampingData
+schedule couponPASS, no custom physics/qv writes.1921scheduled afterclosing
+singleFingernormal4.077s, before-brake qvEXACT0, lateerror6.568pmPASS.
+1922ACTUALLY RUNNING new100g0.6s contact prefix, only actuatorloss schedule
+changes; ideal research brake/motor coefficient, NOT measured hardware.
+Next inspect actual1922 and torque/FEM/no-bracing gates. Full2s only if
+prefix passes and forecast<420s. All oldRaw/SDK/verdicts preserved. Details
+TERMINAL_CRIMP_AND_CONTACT_20261125.md. Current feature5054a99, nextsave
+=`git log -1`. No overall grasp/numerical/physical PASS; Lift not launched.
+
 ## Current1903 /1904 RUNNING — actual withdrawal valid, original Holding in progress
 
 Featurec45cab3 preserved terminal-prefix work.1899actual1.2s/480steps

@@ -1,9 +1,11 @@
 """Analytic algebra checks, never substitutes for an actual Native experiment."""
 import unittest
 import numpy as np
-from winch_object_balance import residuals
+from winch_object_balance import residuals,window_mask
 
 class ObjectBalance(unittest.TestCase):
+ def test_original_holding_endpoint_roundoff(self):
+  self.assertEqual(window_mask(np.array([1.5,1.6-2e-14,2.-3e-14,2.01]),1.6,2.).tolist(),[False,True,True,False])
  def test_free_fall(self):
   g=np.array([0,0,-9.81]);dt=.0025;v=np.zeros((4,6));v[:,:3]=np.arange(1,5)[:,None]*g*dt
   a,b=residuals(v,np.zeros(6),np.zeros((4,6)),.1,.03,g,dt)

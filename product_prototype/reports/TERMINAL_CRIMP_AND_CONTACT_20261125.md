@@ -1,5 +1,86 @@
 # Finite terminal anchor and actual unbraced contact prefix
 
+##1920–1922: independently scheduled actuator loss
+
+New NativeBrakeSchedule writes ONLY stock implicit FF dampingCoefficient at
+AnimateBegin, using declared end-clock quintic onset0.5s/full0.6s. No q/v,
+free-state, row, contact, force or ODE solver is implemented or modified.
+Coefficient nonnegative: ideal f=-c(t)v dissipates c(t)|v|²; this is not a
+real motor/friction/switching measurement or electrical energy certification.
+1920actual50step coupon checks applied schedule and Native operator/work
+against independentM/C/K. Normal0.13601s, PASS component only. Source/
+CMake/build recipe and actual binary SHA frozen in result/preflight.
+
+1921actual registered single-Finger fullclosing240steps/0.6s4.07732s normal:
+before-brake Skin q/v difference versus1892 EXACT0, no contacts, minFEM
+0.98892457, inputpeak1.41443636N/no cap, lateerror<=6.568pm. This preserves
+closing unlike always-on1917/1918. No100g success inferred. Append-only
+metadata clarification notes inherited preflight always-active wording;
+actual frozen Scene, producer scheduled=True and applied-data journals
+unambiguously show switched input. No original artifact edited.
+
+1922new actual3Finger/free100g0.6s contact prefix launched from1904. Only
+local nonnegative rotor loss schedule differs; same1.5Ncap, all geometry/
+mass/FEM/contact settings/support protocol retained. Check actual brake
+torque stays within declared0.015Nm reference budget and all original
+prefix gates before fullHolding. Coefficient not scanned or fitted.
+
+```sh
+python product_prototype/sofa/winch_brake_schedule_contract.py --tag brake_schedule1920
+python product_prototype/sofa/winch_brake_finger.py --tag brake_switched_finger1921 --scheduled
+python product_prototype/sofa/braked_crimp_native.py --tag braked_contact1922
+```
+
+## Actual full1904: internal support removed, speed gate FAIL
+
+Normal800steps/2s259.34044s. Original1908Holding: Slip0.209806mm PASS,
+maxspeed23.208324mm/s FAIL, Supportgap42.064484mm PASS, Supportforce0.
+Guide–Guide and Root nonzero rows0 throughout; no object Guide/Rail/Winch
+response, savedFEM minimum0.988971.1911independent actual-pose clearance:
+75parts/800poses/1,500,000interFinger pairframes,1260narrow tests, uncleared0;
+minimum hardware–object triangle gap0.609613mm. Saved outputs only, notCCD.
+1910/1914object linear residual8.674e-19Ns/angular4.235e-21Nms, actual row
+partition sound.1914aligns original inclusive1.6s endpoint to161samples;
+1910used160half-open samples and is preserved. Correct inclusive mean SkinZ
+0.983699663N versus weight0.981N. Original and combined1915verdicts FAIL.
+Solver iteration limit23/161Holding samples: no numerical convergence PASS.
+First1913aggregate parser expected maximum_support_resultant_N; existing
+Holding producer uses maximum_support_reaction_N. Corrected parser before
+writing1913, no Raw regeneration;1915uses corrected-window1914balance.
+
+1912actual held-drive diagnosis: all6inputs at1.5N cap in161/161outputs,
+stroke error1.799955–2.013069mm and output port speeds15.578–30.685mm/s.
+Thus commanded displacement is NOT achieved or stationary. This is actual
+coupling evidence, NOT proof of unique cause; do not just increase tension.
+
+1916distinct actuator passive-loss path: stock Rigid3d mapped implicit
+UniformVelocityDampingForceField on supported rotor. Research coefficient
+0.0048884Nms/rad derives0.015Nm torque budget at observed peakbackdrive,
+NOT actual motor data or global FEM damping fitting. Actual50step Native
+normal0.13598s; discreteM/C/K velocity error<=1.887e-14, reference work
+identity residual<=1.878e-20J, nonnegative loss. Component PASS only.
+1917actual registered single-Finger constant-loss closing normal4.34655s,
+minFEM0.989143/no contacts. Original postprocessor numpy.int64 serialization
+fails; independent1918reads same Raw without rerun:147cap samples/tendon,
+late stroke error177.93um violates unchanged1um gate. Always-on brake
+candidate REJECTED before fullgrasp. Original1917failure retained explicitly.
+
+Next distinct hypothesis is an independently controlled passive brake after
+closing, not another damping-coefficient sweep: c(t)>=0 cannot inject
+mechanical work in the ideal viscous model. It needs actual Native public
+Data scheduling, prefix purity and single-Finger closing validation before
+any3Finger trial. Switching bandwidth/actual motor loss remains unmeasured.
+
+```sh
+python product_prototype/sofa/holding_assess.py --case crimp_hold1904 --tag crimp_holding1908
+python product_prototype/sofa/winch_object_balance.py --case crimp_hold1904 --tag crimp_balance_window1914
+python product_prototype/sofa/actual_hardware_clearance.py --case crimp_hold1904 --tag crimp_clearance1911
+python product_prototype/sofa/winch_hold_boundary_diagnostic.py --case crimp_hold1904 --tag crimp_boundary1912
+python product_prototype/sofa/winch_brake_coupon.py --tag winch_brake1916
+python product_prototype/sofa/winch_brake_finger.py --tag brake_finger1917
+python product_prototype/sofa/winch_brake_finger_assess.py --tag brake_finger_assess1918
+```
+
 Start HEAD397a997; see git log for feature commit. This is NOT Holding PASS.
 
 1894 completed the new parallel-winch 3Finger/free100gR30 prefix:240steps,

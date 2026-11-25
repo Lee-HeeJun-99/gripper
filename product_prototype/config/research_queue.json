@@ -4,11 +4,11 @@
     {
       "id": "open_parallel_free_root_mass_contract",
       "priority": 0,
-      "status": "READY",
+      "status": "PASS",
       "scope": "Independent initial free6DOF root + geared crank mass/Jacobian coupon, not adoption of rejected finite assembly",
       "hypothesis": "Fixed-root1766 omits base-translation/rotation cross blocks; independent J transpose M J can test those with seven small force/torque columns without changing SDK",
       "prerequisites": ["open_parallel_guide_component"],
-      "evidence": ["open_parallel_range1766", "captured_root_cable1754", "open_guide_assembly1781", "open_guide_pockets1782"],
+      "evidence": ["open_parallel_range1766", "captured_root_cable1754", "open_guide_assembly1781", "open_guide_pockets1782", "open_parallel_root1784"],
       "expected_outputs": ["Actual stock Native free-root one-step responses and independent seven-coordinate mass reference"],
       "validation_criteria": ["No active fixed root or prescribed q/v", "Actual Native logs no errors; all seven input columns compared under declared small-load gate"],
       "failure_criteria": ["Mapping/mass response differs from independent reference; preserve mismatch"],

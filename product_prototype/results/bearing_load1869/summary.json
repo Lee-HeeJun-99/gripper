@@ -1,0 +1,39 @@
+{
+  "status": "PASS_LOAD_PATH_REFERENCE_ONLY_MATERIAL_AND_BEARING_UNQUALIFIED",
+  "source_commit": "a9a8c2ac3d20b48ef4f0787854bca4c4fce36d42",
+  "source_sha256": "42576da83519603c68d62ff0585c8c51973ff2ff94103d67a0bb920d69e13f37",
+  "inputs_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/dorsal_compression1847/summary.json": "ba053e3f59d410e0e3aa2e6e6e278edb522a8f846dc19f35354ca631f18d6ad3",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/root_torsion1853/summary.json": "4db1f040281921e4237e7a763fd0e3c01ff8e0bcb8c57ed66a7eb07b30ebc6bd",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/bellcrank_link1843/summary.json": "780c568dc99d09ca5ea15a058cf215dd0b32ea1505af619469efe8321ce55452"
+  },
+  "configuration": {
+    "input_reference_tension_N": 1.5,
+    "input_moment_arm_m": 0.01,
+    "output_moment_arm_m": 0.01,
+    "output_resisting_dead_load_N": 0.9000000000000008,
+    "shaft_return_stiffness_Nm_per_rad": 0.00019666420357508223,
+    "mechanism": "Fixed-axis radial bearing carries lever transverse force; shaft anchored at root and rotor supplies elastic return only. Rigid lever directly couples input and output ports; no loose pushrod. Ideal bearing is separate physical fixture, not a hidden support on object/Finger."
+  },
+  "reference": {
+    "input_torque_Nm": 0.015,
+    "output_torque_Nm": 0.009000000000000008,
+    "return_torque_at_target_angle_Nm": 8.118309164533332e-05,
+    "return_to_output_torque_ratio": 0.009020343516148138,
+    "initial_bearing_force_N": 2.400000000000001,
+    "solid_pin_single_shear_reference_Pa": 12223099.629457567,
+    "solid_pin_double_shear_reference_Pa": 6111549.814728783,
+    "lever_nominal_input_bending_stress_Pa": 22499999.999999996,
+    "lever_nominal_output_bending_stress_Pa": 13500000.000000011,
+    "input_arm_linear_deflection_times_E_m_Pa": 750000.0,
+    "output_arm_linear_deflection_times_E_m_Pa": 450000.00000000035,
+    "shaft_outer_shear_strain_at_target": 0.03440004593682082,
+    "rotor_volume_mm3": 47.15720980889032
+  },
+  "actual_allowable_stress_Pa": null,
+  "actual_fatigue_limit": null,
+  "actual_bearing_friction": null,
+  "actual_mechanical_efficiency": null,
+  "actual_joint_reaction_measurement": null,
+  "scope": "Independent necessary load reference, not material/strength/bearing or100g PASS.1.5N is historical nominal Cable input,0.009Nm is existing REST wrench scale, not minimum motor load. Output deadload is not attached Finger; tensile route must be independently designed. Lever stress uses gross rectangular cantilever section and omits hole stress concentration. Pin stress uses ideal solid section and omits contact pressure, retention/bending. Return shaft reference strain3.44percent still has no measured allowable. Radial load bypass is a different mechanical boundary, not proof1866mixed-motion case was correct; no old collision model disabled."
+}

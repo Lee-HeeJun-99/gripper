@@ -1,3 +1,20 @@
+## Current1778 — physical hinges and joined links, NOT_NATIVE_READY
+
+Start74e2d31, feature commit f3d4ab8; final checkpoint SHA: git log -1.
+1772 clevis coupon141angles0..70deg: all three pair solid overlaps0.
+1774 actual placement REJECTED12own-tube overlaps;1775 new-material mount relief
+fixes these without altering actual eyelet/collision.1777 no cross-owner new
+solid overlaps.1778 ACTUALLY unions12connected links, volumes2.263920–2.291104mm³,
+positive geometric inertia, no assigned density or measured mass claim.
+Initial72parts wire/object/original-hardware screen clear; NOT continuous.
+Read OPEN_HINGE_GEOMETRY_20261125.md and per-case producer/summary.
+READY open_parallel_finite_geometry: connect root/carrier forks to actual
+three-foot base/tube collar, retained pins, Skin/Rail and moving-wire checks.
+Do NOT rerun1771–1778 unchanged or launch full100g from incomplete mechanism.
+Latest actual grasp1741 remains FAIL: speed32.928255mm/s,30internalHoldrows.
+No new Native trial, UNBRACED/Numerical/Hardware PASS or running process.
+Original102queue entries/Raw preserved, no SDK/push/history rewrite.
+
 ## Current1768/1770 — no child running; actual open-guide seed is next work
 
 This supersedes every historical RUNNING/READY section below. Start05252d7;

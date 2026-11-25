@@ -1,3 +1,12 @@
+## Current1778 — integrate physical fork bases/carriers next
+
+Read product_prototype/reports/AUTONOMOUS_RESUME.md.1772hinge sample sweep and
+1778joined links are actual geometry only.1774tube conflict retained as FAIL;
+1775new-material relief clear at REST. No Native-ready mechanism or grasp PASS.
+Next physically connect forks to original3foot root and tube collar, retain pins,
+then Skin/Rail/moving-wire/foreign clearances. Do not rerun completed1771–1778.
+No Native child running. READY open_parallel_finite_geometry remains active.
+
 ## Current1768/1770 — resume actual open-guide bearing geometry
 
 Read product_prototype/reports/AUTONOMOUS_RESUME.md and actual Git/queue first.

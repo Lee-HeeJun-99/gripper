@@ -1,3 +1,17 @@
+## Current1778 — finite hinge continuation, UNBRACED100g still FAIL
+
+Start74e2d31; new feature commit f3d4ab8; final SHA git log -1.
+1772 finite clevis141angle samples no solid pair overlap.1774 real six-guide
+placement fails12tube overlaps;1775 actual new-part bore relief clears them.
+1777 all new-part cross-owner overlaps0 at REST;1778 twelve actual CSGjoined
+links connected/positive-volume/inertia.72hinge parts clear original wire,
+object and retained old hardware at REST. Not assembled complete guide.
+No new Native grasp: root/carrier bodies, pin retention, Skin and moving
+interference not qualified. READY open_parallel_finite_geometry persists.
+Latest full1741/1742 still FAIL32.928255mm/s and30internalHoldrows.
+See AUTONOMOUS_RESUME.md and OPEN_HINGE_GEOMETRY_20261125.md for exact resume.
+Original Raw/verdicts/SDK preserved; no push/history rewrite. No child running.
+
 ## Current1768/1770 — actual new mechanisms tested; UNBRACED100g still FAIL
 
 Supersedes ALL historical RUNNING/READY claims below. Start05252d7 clean;

@@ -44,7 +44,17 @@ Materials, strength, retention, fit tolerances, friction, assembly tooling and
 hardware measurements NOT MEASURED. No numerical or unbraced grasp PASS.
 Latest actual full grasp1741/1742 remains FAIL:32.928255mm/s and30internalHoldrows.
 
-Next READY: integrate connected link bodies and true root/carrier forks,
+1777: all new-part pairs screened. Twelve overlaps are the two halves of each
+proposed SAME rigid link; all differently owned new parts have zero positive
+solid intersections at REST. 1778 actually CSG-unioned those12links and exported
+union STLs. Every link is one closed positive solid with positive unit-density
+inertia. Volumes2.263920–2.291104mm³; centre of volume/inertia recorded.
+No density assigned: geometric integrals are not measured mass. Root/carrier
+forks still NOT connected to complete bases/collars. Native integration blocked.
+Commit1771–1776: f3d4ab8. Final checkpoint commit: git log -1.
+Producer elapsed runtime NOT MEASURED; no Native simulation/binary applicable.
+
+Next READY: integrate true root/carrier forks,
 retained pin construction, all new-part pair/Skin checks and moving-wire
 clearance before any new Native single-finger mechanism. Do not claim the
 standalone fork coupon as a finished six-guide mechanism.

@@ -1,0 +1,89 @@
+{
+  "status": "BLOCKED_SUPPORTED_FINITE_SPEED_FORCE_PATH",
+  "independent_wrench_FD_contract": "PASS",
+  "records": [
+    {
+      "case": "cable_only",
+      "omega_rad_s": [
+        -0.004409726781860064,
+        0.00035252356956877467,
+        2.5167379681828828e-17
+      ],
+      "physical_bias_force_N": [
+        -8.78367974232623e-15,
+        -1.0987528536148289e-13,
+        -7.612363813730414e-27
+      ],
+      "physical_bias_moment_Nm": [
+        -2.0812876256490238e-29,
+        -2.4990797105376864e-28,
+        -1.4624676318120489e-16
+      ],
+      "finite_difference": [
+        {
+          "h_s": 0.1,
+          "relative_vector_difference": 1.656760893858579e-08
+        },
+        {
+          "h_s": 0.05,
+          "relative_vector_difference": 3.4125724182239405e-08
+        }
+      ],
+      "pure_axial_contrast_bias": [
+        0.0,
+        -3.702040022673622e-29,
+        2.3038551831710315e-28,
+        0.0,
+        -1.266073143842626e-29,
+        -1.5074052468013585e-31
+      ],
+      "scope": "Independent rest-geometry finite-speed wrench evaluated at actual1864velocity, not measured Native inertial force. Tiny numerical off-axis rotor COM/tensor terms retained, no floor or assumed zero."
+    },
+    {
+      "case": "opposing_output",
+      "omega_rad_s": [
+        -0.002204863390930032,
+        0.0003155186886071272,
+        1.258253606601906e-17
+      ],
+      "physical_bias_force_N": [
+        -7.036397264943427e-15,
+        -4.9170763234350975e-14,
+        -1.902099776295697e-27
+      ],
+      "physical_bias_moment_Nm": [
+        -9.313206613671365e-30,
+        -6.247126792204353e-29,
+        -6.544752027278075e-17
+      ],
+      "finite_difference": [
+        {
+          "h_s": 0.1,
+          "relative_vector_difference": 5.235776126709753e-08
+        },
+        {
+          "h_s": 0.05,
+          "relative_vector_difference": 1.1236926029863004e-07
+        }
+      ],
+      "pure_axial_contrast_bias": [
+        0.0,
+        -9.255100056684055e-30,
+        5.759637957927579e-29,
+        0.0,
+        -3.165182859606565e-30,
+        -3.768513117003396e-32
+      ],
+      "scope": "Independent rest-geometry finite-speed wrench evaluated at actual1864velocity, not measured Native inertial force. Tiny numerical off-axis rotor COM/tensor terms retained, no floor or assumed zero."
+    }
+  ],
+  "input_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/compliant_mass1860/summary.json": "702f128b5a339c408b9b4b65f57219eb8765c2b60ff3f540652ec02489f83ea6",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/compliant_cable1864/summary.json": "987da69ab3ce2a85c3d209cf0864c6793c2a3f21c2cc05b90bd6d704ba25d85f",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mass/sofa/component/mass/UniformMass.inl": "cb5a8db97f8d794523093fab6418146d62a528744d78bd099dec524ac771c5b4",
+    "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.inl": "ad2f9a7a42c1104cc1b5b27c216e9c3a5abc1d6edafb3707b9330536eb39cc6b"
+  },
+  "source_sha256": "b5e0ca0e795d17aab4aad0690ed00a51943431d86e5981c22c9312bfd21ef45f",
+  "supported_native_implementation": null,
+  "scope": "Generic installed UniformMass.addForce471-497 uses gravity, no velocity; RigidMapping.applyDJT is a derivative force action, not proof of convective acceleration compensation. Earlier1806/1807Native failure already demonstrates a relevant mapping limitation; do not rerun it without a new supported implementation. Pure axial torsion and mixed input have different physical bias; no claim this tiny initial bias explains full100g failure. Need documented Native coupled gyroscopic/centrifugal path or distinct mechanism. No SDK/customforcefield/state correction or Native rerun, no grasp PASS."
+}

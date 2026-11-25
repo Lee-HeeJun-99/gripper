@@ -1,4 +1,24 @@
-## Current1837 — scoped cable phase evidence, grasp status unchanged
+## Current1868 — compliant transmission component evidence, no grasp promotion
+
+1839–1868independent transmission continuation is documented in
+ROOT_BELLCRANK_TRANSMISSION and ROOT_COMPLIANT_TRANSMISSION reports.
+1841Native fixed-root force inversion PASS does not include assembled rod;
+1844assembled ideal point-loop FAIL unchanged;1845KKT explains two distinct
+residuals, not a physics cure.1850/1851/1853/1855NativeBeamFEM references and
+1856static frame tests PASS within stated1percent/1e-12contracts only.
+1852finite interface REJECTED;1854factory failure retained, not hidden.
+1860finite shaft/rotor initial spatial mass6directions and1862M+dt²K6directions
+PASS.1864Cable input2actual one-step cases PASS, impulse1e-9Ns/error0 and
+parent velocity error<=2.711e-19. All successful children normal/noERROR.
+No customODE/FF, correction, SDK edit, tolerance or material fitting.
+1866independent mixed-motion inertial wrench FD PASS, supported actual Native
+coupled finite-speed implementation stillNULL/BLOCKED. Tiny initial bias is
+not proof of full100g failure cause.1858full-load material/output interface
+BLOCKED. No fullHolding/Lift launched from insufficient prerequisites.
+Latest1741UNBRACEDFAIL remains,1586bracedOBJECT-ONLY remainshistorical.
+1868preservationaudit2868records/102originaltasks/SDK/oldbinaries unchanged.
+
+## Current1837 — historical; superseded above
 
 Native1825control/observer pure mass5steps each: exact q/v purity, actual Jprev
 and impulse/position/kinetic identities within1e-12.1826separates convex cable

@@ -1,4 +1,45 @@
-## Current1837 — current handoff; no child running
+## Current1868 — current handoff; no child running
+
+Read actual git status/log plus CHECKPOINT and ROOT_COMPLIANT_TRANSMISSION
+report. Source startfa709ffd; completed feature commitsd19f55a,29a0c30,d55b386,
+bfe13dd,0c980ff,8ad610a,b888bca,f4efe60. Final save=`git log -1`.
+All1839–1868result paths are immutable; no rerun into those directories.
+Actual Native scenes/commands/producers in each completed case; local CSV
+remain excluded and indexed by1842/1846/1848/1857/1859/1861/1863/1865/1867.
+
+New paths evaluated: central carrier route fails geometry; rigid bellcrank
+port works, assembled ideal output loop fails closure. KKT1845separates
+iterative residual from geometric drift. Unsupported compression reference
+fails, not all supported composite spines. Compliant torsion/rotor1850–1856
+works in static reference/mesh/placement scope; physical material NOT MEASURED.
+1860mass,1862initial elastic response,1864actual Cable impulse eachPASS only
+in initial component scope.1866actual-velocity independent bias reference
+passesFD but supported convective/gyro implementation remainsNULL.
+
+No current READY/RUNNING;142tasks total, product stillUNQUALIFIED. Do not
+invent duplicate trials. Next reevaluation must produce a concrete supported
+finite-speed force implementation or distinct transmission/output support
+mechanism; static/initial q agreement is insufficient. Need measured shaft
+strain/fatigue/bond for load extension; actual tendon torque balance and
+supported push path also unqualified. Existing wire/sliding and layer/pressure
+physical tracks still require external material/contact evidence. These are
+current-route blockers, not universal proof of mechanical impossibility.
+
+Read-only restart commands (use environment Python):
+```sh
+git status --short
+git log -8 --oneline
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py
+```
+New reference source:sofa/compliant_inertial_bias.py, compliant_cable_coupon.py,
+compliant_elastic_coupon.py, compliant_mass_coupon.py. Reproduction commands
+in report use historical tags solely as execution records: change to NEW
+tags before any actual rerun. Do not rerun old failure without new hypothesis.
+1868audit2868records/original102entries/SDK/binaries unchanged, helper7PASS.
+No new full100gHolding/Lift;1741FAIL and1586bracedOBJECT-ONLY stay unchanged.
+No background or session-external continuation is configured.
+
+## Current1837 — historical; superseded above
 
 Starta8f4f44 clean; featuresd611804/09ffaa2; final save=`git log -1`.
 New source/actual commands/hashes and limitations:

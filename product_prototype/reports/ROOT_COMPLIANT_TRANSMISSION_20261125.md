@@ -95,6 +95,18 @@ finite-cell/rotor velocity-dependent wrench, especially because input port
 loads excite bending as well as axial torsion. Reuse known1806/1807 evidence
 where the same limitation applies; no redundant Native failure is justified.
 
+1866actually implements independent finite-speed wrench of finite terminal
+cell and rotor: centrifugal plus rotating COM-inertia angular term. At the
+actual1864Cable-only velocity, reference bias force norm~1.10e-13N and torque
+~1.46e-16Nm; central finite-difference check passes1e-6relative (worst over
+bothcases/twoderivativeintervals1.124e-7). These are **independent references**,
+not observed Native forces. Pure axial contrast is near numerical roundoff;
+actual input also excites bending. No claim this small initial term explains
+full-grasp jitter. Supported Native coupled force implementation remainsNULL,
+so finite-speed expansion BLOCKED, not a duplicate of1806/1807Nativefailure.
+Actual command: `python product_prototype/sofa/compliant_inertial_bias.py
+--tag compliant_bias1866`. No Native or old result rerun.
+
 ## Provenance / reproduction
 
 SDK26.06.00; frozen journal binary

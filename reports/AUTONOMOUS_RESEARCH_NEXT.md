@@ -1,4 +1,22 @@
-## Current1837 — actual force phases known; no validated active remedy
+## Current1868 — transmission alternatives tested, full-load/finite-speed gated
+
+Read current CHECKPOINT/AUTONOMOUS_RESUME and ROOT_COMPLIANT_TRANSMISSION.
+New compliant mechanism has actual static/mass/initial-elastic/NativeCable
+component passes1850–1864; none grants a new100gHolding pass.1866physical
+mixed-motion bias reference is implemented and finite-difference checked;
+documented supported Native coupled force path stillNULL. Reuse1806/1807
+where same limitation applies, not repeat without a new implementation.
+Full-load shaft material, fatigue, bond, output support and torque balance
+remain unqualified; do not tune stiffness/tension/dt to bypass them.
+Next evidence-based route: supported finite-speed force API OR distinct
+physical transmission with real supported output path and initial geometry.
+Do not copy static1855micro-load performance to1.5N capability: scale1858
+explicitly rejects that promotion. Independent wire/layer tracks require
+actual friction/curvature/material/pressure data and qualified contact path.
+Queue0READY is not completion; new tasks need concrete novel mechanisms and
+observable gates, not synthetic repeats. Latest full1741UNBRACEDFAIL retained.
+
+## Current1837 — historical; superseded above
 
 Read product_prototype/reports/AUTONOMOUS_RESUME.md and actual Git/queue.
 New bounded Native observations qualify previous-state child/parent cable rows

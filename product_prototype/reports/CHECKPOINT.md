@@ -1,4 +1,50 @@
-## Current1837 — actual cable phase/work measured, no new Holding PASS
+## Current1868 — independent transmission cycles; UNBRACED still not achieved
+
+Startfa709ffd clean, branchdevelopment/regrip-autonomous-research. Feature
+savesd19f55a/29a0c30/d55b386/bfe13dd/0c980ff/8ad610a/b888bca/f4efe60;
+final checkpoint/bias save=`git log -1`. No child running, no push/rewrite.
+Read ROOT_BELLCRANK_TRANSMISSION_20261125.md and
+ROOT_COMPLIANT_TRANSMISSION_20261125.md for actual commands/hashes/limits.
+
+New independent mechanisms actually investigated, not old dimension scans:
+1839central transverse route REJECTED(-4.110722mm gap);1841fixed-root
+bellcrank Native input/output port PASS only.1843finite rotor/rod/slider
+21poses no positive interference;1844Native loop FAIL preserved.1845actual
+KKT resolves iterative termination vs geometric closure, not a solver cure.
+1847loose unsupported compression rail reference REJECTED(291.805load/buckle
+ratio), not actual bonded composite.1840CSG construction failure retained.
+
+1850/1851Native3/5/9node bending;1853torsion;1855combined compliant rotor;
+1856vertical/oblique frame response PASS in declared static scope.1852side
+cantilever/rotor overlap REJECTED;1854factory FAIL retained separately from
+1855plugin-order-only corrected run. Actual1855input/output-3.055775/+2.185490um.
+1858full-load scale BLOCKED:0.009Nm reference is110.8605times1853moment;
+required radius0.811212mm would imply11.1623percent shear at assumedE, NOT
+an acceptable material rating.1855load is150000times smaller than1.5N.
+
+1860actual six-direction Native initial mapped spatial inertia PASS;
+1862actual six-direction initial M+dt²K response PASS.1864actual Native Cable
+two one-step cases PASS: impulse error0, velocity error<=2.711e-19. These
+are component/initial contracts, NOT finite-speed/time/mesh/grasp qualification.
+1866independent actual-velocity wrench reference FD error<=1.124e-7relative;
+supported mixed-motion convective/gyro force route remainsNULL/BLOCKED.
+Do not repeat1806/1807Native failure without a new supported implementation.
+
+Queue142:PASS73/FAIL29/REJECTED23/BLOCKED16/NOT MEASURED1;0READY/RUNNING.
+This is not completion or a proof that all conceivable mechanisms fail.
+Current new full-load path requires material/strain/fatigue/bond and a real
+supported output interface; finite-speed expansion requires documented
+physical force implementation or a genuinely distinct transmission principle.
+Independent layer/wire/hardware tracks retain actual measurement/contact
+prerequisites. No blind full-grasp launch justified by initial-only passes.
+
+1868audit:2868selected manifest records unchanged, original102queue entries
+unchanged, original tracked Raw/SDK/compiled plugins unchanged; helper7PASS.
+Cached remote f804e4f remains ancestor; no network fetch, not a fresh remote
+claim. Latest full1741FAIL32.928255mm/s/30internalHoldrows unchanged;
+1586OBJECT-ONLY braced PASS not UNBRACED. No new Holding/Lift success.
+
+## Current1837 — historical; superseded above
 
 Starta8f4f44; feature d611804/09ffaa2; final checkpoint=`git log -1`.
 Actual5successful Native children:2pure-mass5step controls plus B3prefixes

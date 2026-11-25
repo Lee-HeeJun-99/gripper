@@ -35,6 +35,29 @@ Native wire contact, supported output spine, Guide interference or100ggrasp.
 Micro-load coupon is not proof of1.5N tendon capability; next check is actual
 load scaling and output-interface feasibility before any Finger integration.
 
+##1858actual load-scale check — full-load extension BLOCKED
+
+Reused1847actual REST wrench: paired1.5N cable reference produces0.009Nm
+closing moment/finger. This is a comparison scale, NOT measured minimum100g
+motor demand or necessarily the net torque carried by a loaded new pivot.
+Reference is110.8605times1853operating torsion moment. Linear extrapolation
+of0.25mm shaft would give45.7633rad/shear3.81361: explicitly outside credible
+linear-material use, not a predicted Native physical deformation.
+Matching0.009Nm at0.412800551rad with the same assumed material would require
+r0.811212mm and reference shear0.111623. This is not a selected part or an
+approved allowable.1855input load is150000times smaller than1.5N. Need actual
+material/strain/fatigue, compound torque balance, bond and supported output
+path before full-load integration. No arbitrary stiffness/tension adjustment.
+Actual1858command: `python product_prototype/sofa/compliant_root_scale_contract.py
+--tag compliant_scale1858` (same environment interpreter). No Native rerun.
+
+Independent next READY is a **new compliant-root initial mass contract**:
+physical shaft quadrature plus finite rotor COM/tensor, installed Native mass
+API and one-step force response. Static massless coupons cannot answer it.
+No user forcefield/ODE or free-root nonlinear rigid-loop mapping is proposed.
+It is not permission to repeat old open-guide finite-speed failures, nor does
+component readiness justify a new3Finger Holding launch.
+
 ## Provenance / reproduction
 
 SDK26.06.00; frozen journal binary

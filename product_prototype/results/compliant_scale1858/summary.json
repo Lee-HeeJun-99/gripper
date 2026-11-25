@@ -1,0 +1,46 @@
+{
+  "status": "BLOCKED_FULL_LOAD_MATERIAL_AND_OUTPUT_INTERFACE_NOT_QUALIFIED",
+  "source_commit": "bfe13dd6520471d7ecf970ede59fceef5ec324be",
+  "source_sha256": "5ef14c0f5a4bab58037b92d21f67e0f84e8bbbf26de7bfbb506c5d6f4b42ca54",
+  "inputs": {
+    "results/dorsal_compression1847/summary.json": "ba053e3f59d410e0e3aa2e6e6e278edb522a8f846dc19f35354ca631f18d6ad3",
+    "results/root_torsion1853/summary.json": "4db1f040281921e4237e7a763fd0e3c01ff8e0bcb8c57ed66a7eb07b30ebc6bd",
+    "results/compliant_rotor1855/summary.json": "077c265c5b42f91cd3a7e668aa04716c4c12194a74ead4b48a71ac6872b53689"
+  },
+  "reference_moment_Nm": 0.009000000000000008,
+  "reference_tension_N_per_cable": 1.5,
+  "load_reference": "Actual REST paired-cable closing wrench from1847; not minimum motor demand and not torque necessarily applied to pivot in a loaded transmission",
+  "target_angle_rad": 0.4128005512418498,
+  "coupon_operating_moment_Nm": 8.118309164533329e-05,
+  "moment_to_coupon_operating_moment_ratio": 110.86052301775528,
+  "records": [
+    {
+      "design": "coupon_radius",
+      "radius_mm": 0.25,
+      "stiffness_Nm_per_rad": 0.00019666420357508223,
+      "linear_constitutive_reference_angle_rad": 45.763285012689146,
+      "reference_outer_shear_strain": 3.813607084390762,
+      "linear_reference_shear_stress_Pa": 366692988.8837271,
+      "shaft_volume_mm3": 0.5890486225480861,
+      "actual_allowable_shear_strain": null,
+      "actual_allowable_stress_Pa": null
+    },
+    {
+      "design": "radius_matching_reference_moment_at_target_angle",
+      "radius_mm": 0.8112117628713976,
+      "stiffness_Nm_per_rad": 0.02180229646720391,
+      "linear_constitutive_reference_angle_rad": 0.4128005512418498,
+      "reference_outer_shear_strain": 0.11162288762906189,
+      "linear_reference_shear_stress_Pa": 10732969.964332873,
+      "shaft_volume_mm3": 6.202112024641521,
+      "actual_allowable_shear_strain": null,
+      "actual_allowable_stress_Pa": null
+    }
+  ],
+  "compound_coupon": {
+    "input_dead_load_N": 1e-05,
+    "opposing_output_dead_load_N": 5e-06,
+    "ratio_1p5N_to_input": 150000.0
+  },
+  "scope": "Necessary independent SI scale illustration, no Native rerun or physical allowable assumption. Reference torque is a load scale, not a validated replacement architecture requirement. At large strain linear constitutive extrapolation is NOT a credible prediction; it forbids promotion of0.25mm shaft to full-load capability. Enlarged radius is not selected hardware: strain, fatigue, bond, compound bending, actual torque balance and supported compression path unqualified. No100g Holding PASS."
+}

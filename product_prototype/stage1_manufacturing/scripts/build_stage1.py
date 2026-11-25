@@ -19,6 +19,8 @@ from OCP.BRepMesh import BRepMesh_IncrementalMesh
 from OCP.StlAPI import StlAPI_Writer
 from OCP.BRep import BRep_Builder
 from OCP.TopoDS import TopoDS_Compound
+from OCP.TopExp import TopExp_Explorer
+from OCP.TopAbs import TopAbs_SOLID
 
 ROOT=Path(__file__).resolve().parents[1]
 def box(x,y,z,dx,dy,dz):return BRepPrimAPI_MakeBox(gp_Pnt(x,y,z),dx,dy,dz).Shape()
@@ -31,18 +33,24 @@ def volume(a):
  g=GProp_GProps();BRepGProp.VolumeProperties_s(a,g);return g.Mass()
 def rotate(s,a):
  t=gp_Trsf();t.SetRotation(gp_Ax1(gp_Pnt(0,0,0),gp_Dir(0,0,1)),math.radians(a));return BRepBuilderAPI_Transform(s,t,True).Shape()
+def translate(s,x,y,z):
+ t=gp_Trsf();t.SetTranslation(gp_Vec(x,y,z));return BRepBuilderAPI_Transform(s,t,True).Shape()
+def solid_count(s):
+ it=TopExp_Explorer(s,TopAbs_SOLID);n=0
+ while it.More():n+=1;it.Next()
+ return n
 def compound(shapes):
  c=TopoDS_Compound();b=BRep_Builder();b.MakeCompound(c)
  for s in shapes:b.Add(c,s)
  return c
 def export(s,path):
  w=STEPControl_Writer();w.Transfer(s,STEPControl_AsIs)
- if w.Write(str(path.with_suffix('.step')))!=IFSelect_RetDone:raise RuntimeError('STEP write')
+ if w.Write(str(path)+'.step')!=IFSelect_RetDone:raise RuntimeError('STEP write')
  BRepMesh_IncrementalMesh(s,0.08,False,0.15,False).Perform()
  w=StlAPI_Writer();w.ASCIIMode=False
- if not w.Write(s,str(path.with_suffix('.stl'))):raise RuntimeError('STL write')
+ if not w.Write(s,str(path)+'.stl'):raise RuntimeError('STL write')
 
-def module(revised=False,fastened=False):
+def module(revised=False,fastened=False,offset=False,outward=False,service=False,route_relief=False):
  p=[]
  def add(id,s,material,process,role='made',note=''):
   p.append(dict(id=id,shape=s,material=material,process=process,role=role,note=note))
@@ -94,7 +102,24 @@ def module(revised=False,fastened=False):
  # Removable distal clamp: open slot captures flat sheet without glue.
  terminal=cut(box(47,-8,-100,7,16,5),box(50,-13,-101,.5,26,7))
  terminal=cut(terminal,cyl(.4,(47,0,-98),8,(1,0,0)))
- add('TERMINAL',terminal,'POM candidate','CNC split clamp;0.8 tendon bore',note='clamp screws/positive retention unfinished')
+ if not offset:add('TERMINAL',terminal,'POM candidate','CNC split clamp;0.8 tendon bore',note='clamp screws/positive retention unfinished')
+ else:
+  for label,x,depth in [('FRONT',47,3),('BACK',50.5,3.5)]:
+   s=cut(box(x,-8,-100,depth,16,5),cyl(.4,(46,0,-98),9,(1,0,0)))
+   if route_relief and label=='FRONT':
+    # Actual declared outgoing tangent of the finite idler. A straight X
+    # bore was incompatible with this approach. This is an OPEN wire seat,
+    # not a qualified clamping/termination mechanism.
+    c=(44.,25.);vx,vz=3.,-123.;phi=math.atan2(vz,vx);beta=math.acos(4.75/math.hypot(vx,vz))
+    pts=[(c[0]+4.75*math.cos(phi+t),c[1]+4.75*math.sin(phi+t)) for t in (-beta,beta)];leave=min(pts)
+    d=(47-leave[0],-6.,-98-leave[1]);norm=math.sqrt(sum(v*v for v in d));d=tuple(v/norm for v in d)
+    s=cut(s,cyl(.4,tuple([47,0,-98][j]-8*d[j] for j in range(3)),14,d))
+   for y in (-4,4):s=cut(s,cyl(1.7,(46,y,-97.5),9,(1,0,0)))
+   add('TERMINAL_'+label,s,'POM candidate','CNC; two3.4 bolt bores,0.8 tendon bore',note='terminal clamp preload/wire retention need Stage2 test')
+  # Real sheet perforations align with removable terminal clamp; no holes
+  # are silently cut in imported/historical B3 meshes.
+  skin=next(q for q in p if q['id']=='SKIN')
+  for y in (-4,4):skin['shape']=cut(skin['shape'],cyl(1.7,(49,y,-97.5),3,(1,0,0)))
  if revised and not fastened:
   # Finite foot and M3 clearance holes complete a screw path to the Palm.
   # Bolts/threads/engagement still must be added and inspected, not assumed.
@@ -120,6 +145,33 @@ def module(revised=False,fastened=False):
   for x in (19.5,50.5):
    for z in (4.5,35.5):bolt(f'MOTOR_BOLT_{x}_{z}',(x,-34,z),6,(0,1,0))
   for y in (-16,16):bolt(f'ROOT_BOLT_{y}',(47,y,5),12,(-1,0,0))
+  if offset:
+   for y in (-4,4):bolt(f'TERMINAL_BOLT_{y}',(47,y,-97.5),12,(-1,0,0))
+   # The added shaft-bearing bolt space is resolved by moving the entire
+   # drive inward8mm, not shrinking a fastener/bearing/collision model.
+   for q in p:
+    if not q['id'].startswith(('ROOT','RF','RAIL','SKIN','TERMINAL')):q['shape']=translate(q['shape'],45 if outward else -8,0,0)
+   # Actual removable nuts; circumscribed cylindrical envelope is conservative
+   # for collision, not a claim that an off-the-shelf hex nut is round.
+   for label,ys,z,x in [('ROOT',(-16,16),5,53.5),('TERMINAL',(-4,4),-97.5,54)]:
+    for y in ys:add(f'{label}_NUT_{y}',cut(cyl(3.175,(x,y,z),2.4,(1,0,0)),cyl(1.5,(x-1,y,z),5,(1,0,0))),'M3 steel nut candidate','purchase; conservative circumcircle','fastener_envelope')
+ if outward:
+  # Separate fixed idler supplies the inward route while large real motors
+  # and bearing supports remain outside the Root bolt/service envelope.
+  bracket=fuse(box(38,1,-7,3,2,35),box(38,1,22,9,2,6))
+  bracket=fuse(bracket,box(31,-3,-7,10,10,4) if service else box(36,-1,-7,8,6,4))
+  bracket=cut(bracket,cyl(1.7,(44,0,25),4,(0,1,0)))
+  bracket=cut(bracket,cyl(1.7,(34.5 if service else 39.5,2,-8),6))
+  if route_relief:bracket=cut(bracket,box(40,3,-8,3,6,6))
+  add('IDLER_BRACKET',bracket,'6061-T6 candidate','CNC integral post/foot; M3 clearance')
+  pulley=cyl(4.5,(44,4,25),4,(0,1,0))
+  for y in (4,7.5):pulley=fuse(pulley,cyl(5.5,(44,y,25),.5,(0,1,0)))
+  pulley=cut(pulley,cyl(1.7,(44,3,25),6,(0,1,0)))
+  add('IDLER',pulley,'POM candidate','turn/drill;3.4 plain bore; nominal wire grooveR4.5',note='wire bend/fatigue/friction NOT MEASURED')
+  for label,y in [('L',3),('R',8)]:add('IDLER_SPACER_'+label,cut(cyl(2.5,(44,y,25),1,(0,1,0)),cyl(1.55,(44,y-1,25),3,(0,1,0))),'steel candidate','turn ID3.1 OD5 thickness1')
+  bolt('IDLER_AXLE',(44,1,25),12,(0,-1,0))
+  add('IDLER_NUT',cut(cyl(3.175,(44,9,25),2.4,(0,1,0)),cyl(1.5,(44,8,25),5,(0,1,0))),'M3 steel nut candidate','purchase; conservative circumcircle','fastener_envelope')
+  bolt('IDLER_BASE_BOLT',(34.5 if service else 39.5,2,-3),12);nut('IDLER_BASE_NUT',34.5 if service else 39.5,2)
  return p
 
 def main():
@@ -128,24 +180,31 @@ def main():
  parts=[]
  revised=arg.revision!='revA'
  fastened=arg.revision not in ('revA','revB')
+ offset=arg.revision not in ('revA','revB','revC')
+ outward=arg.revision not in ('revA','revB','revC','revD')
+ service=arg.revision not in ('revA','revB','revC','revD','revE')
+ route_relief=arg.revision not in ('revA','revB','revC','revD','revE','revF','revG')
+ if outward:palm=cut(cyl(135,(0,0,-12),5),cyl(20,(0,0,-13),7))
  palm=cut(cyl(115,(0,0,-12 if revised else -6),5),cyl(20,(0,0,-13 if revised else -7),7))
  if revised:
   for angle in (0,120,240):
    # Sheet slot permits insertion along Z; tendon slots use actual declared
    # straight REST route across Palm rather than deleting its collision.
-   for tool in [box(49.7,-13,-13,1.1,26,7),box(33,-1,-13,7,13,7)]:palm=cut(palm,rotate(tool,angle))
+   for tool in [box(49.7,-13,-13,1.1,26,7),box(38 if outward else 25 if offset else 33,-1,-13,8 if outward else 15 if offset else 7,13,7)]:palm=cut(palm,rotate(tool,angle))
    holes=([(x,y) for x in (24.5,45.5) for y in (.5,15.5)]+[(18,-29.5),(52,-29.5),(59,-16),(59,16)]) if fastened else [(26,.5),(44,.5),(26,15.5),(44,15.5),(18,-41.5),(52,-41.5),(59,-16),(59,16)]
-   for x,y in holes:palm=cut(palm,rotate(cyl(1.7,(x,y,-13),7),angle))
+   for x,y in holes:palm=cut(palm,rotate(cyl(1.7,(x+(45 if outward else -8) if offset and x!=59 else x,y,-13),7),angle))
+   if outward:palm=cut(palm,rotate(cyl(1.7,(34.5 if service else 39.5,2,-13),7),angle))
  # Motor envelopes extend below proposed palm. Full audit must detect this,
  # not remove motor collision geometry or white-list the contact.
  parts.append(dict(id='PALM',shape=palm,material='6061-T6 candidate',process='CNC plate',role='made',note='mount holes incomplete'))
  for i,angle in enumerate((0,120,240)):
-  for p in module(revised,fastened):parts.append(dict(p,id=f'F{i}_{p["id"]}',shape=rotate(p['shape'],angle)))
+  for p in module(revised,fastened,offset,outward,service,route_relief):parts.append(dict(p,id=f'F{i}_{p["id"]}',shape=rotate(p['shape'],angle)))
  rows=[]
  for p in parts:
   s=p['shape'];v=volume(s);valid=BRepCheck_Analyzer(s).IsValid()
   if not valid or v<=0:raise RuntimeError('invalid '+p['id'])
-  export(s,out/p['id']);rows.append(dict(**{k:v for k,v in p.items() if k!='shape'},volume_mm3=v,brep_valid=valid))
+  export(s,out/p['id']);rows.append(dict(**{k:v for k,v in p.items() if k!='shape'},volume_mm3=v,brep_valid=valid,solid_count=solid_count(s)))
+  assert (out/(p['id']+'.step')).is_file() and (out/(p['id']+'.stl')).is_file()
  export(compound([p['shape'] for p in parts]),out/'ASSEMBLY')
  # Actual STEP round trip, not a filename-presence check.
  r=STEPControl_Reader();assert r.ReadFile(str(out/'ASSEMBLY.step'))==IFSelect_RetDone;r.TransferRoots()
@@ -163,6 +222,6 @@ def main():
  shutil.copyfile(__file__,out/'producer.py')
  (out/'source_sha256.txt').write_text(hashlib.sha256(Path(__file__).read_bytes()).hexdigest()+'\n')
  with (out/'BOM.csv').open('w') as f:
-  w=csv.DictWriter(f,fieldnames=['id','material','process','role','note','volume_mm3','brep_valid']);w.writeheader();w.writerows(rows)
+  w=csv.DictWriter(f,fieldnames=['id','material','process','role','note','volume_mm3','brep_valid','solid_count']);w.writeheader();w.writerows(rows)
  print(json.dumps(dict(parts=len(parts),collisions=len(collisions),out=str(out))))
 if __name__=='__main__':main()

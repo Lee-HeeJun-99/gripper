@@ -1,0 +1,16 @@
+"""Necessary Euler screen for an explicitly UNBRACED dorsal push-spine idea."""
+import argparse,json,xml.etree.ElementTree as ET
+from pathlib import Path
+import numpy as np
+from analyse import BASE,sha
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);src=BASE/'results/capillary_hold1700';root=ET.parse(src/'scene.scn').getroot();cfg=json.loads((src/'config.json').read_text());local=np.array(json.loads((src/'mesh.json').read_text())['local_positions_mm']);records=[];T=1.5;e=abs(cfg['tendon']['normal_offset'])*.001;E=cfg['simulation']['young_modulus_Pa'];w=cfg['finger']['rail_width']*.001;t=cfg['finger']['rail_thickness']*.001;L=cfg['finger']['length']*.001;I=w*t**3/12
+ for i in range(3):
+  f=root.find(f"Node[@name='finger{i}']");q=np.fromstring(f.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);origin=q[(local[:,0]==0)&(local[:,2]==0)].mean(0);net=np.zeros(3);moment=np.zeros(3)
+  for j in range(2):
+   c=root.find(f"Node[@name='guides{i}']/Node[@name='cable{j}']");points=np.fromstring(c.find('MechanicalObject').get('position'),sep=' ').reshape(-1,3);pull=np.fromstring(c.find('CableConstraint').get('pullPoint'),sep=' ');delta=np.diff(np.vstack([pull,points]),axis=0);unit=delta/np.linalg.norm(delta,axis=1)[:,None];force=-T*unit;force[:-1]+=T*unit[1:];net+=force.sum(0);moment+=np.cross(points-origin,force).sum(0)
+  axis=np.array([-np.sin(i*2*np.pi/3),np.cos(i*2*np.pi/3),0]);closing=abs(moment@axis);compression=closing/e;per_rail=compression/2;pinned=np.pi**2*E*I/L**2;pitch=np.pi*np.sqrt(E*I/per_rail)
+  records.append(dict(finger=i,reference_tension_N_per_cable=T,initial_root_reference_m=origin.tolist(),actual_geometry_net_force_N=net.tolist(),actual_geometry_net_moment_Nm=moment.tolist(),closing_axis_moment_Nm=float(closing),matched_moment_dorsal_offset_m=e,compression_to_match_reference_moment_N=float(compression),assumed_each_loose_rail_compression_N=float(per_rail),each_unsupported100mm_rail_pinned_Euler_load_N=float(pinned),demand_to_pinned_Euler_ratio=float(per_rail/pinned),maximum_pinned_lateral_support_pitch_mm=float(pitch*1000)))
+ d=dict(status='REJECT_UNSUPPORTED_LOOSE_DORSAL_RAILS_AT_REFERENCE_MOMENT',records=records,assumptions=dict(E_Pa=E,rail_width_m=w,rail_thickness_m=t,unsupported_length_m=L,two_identical_rails_share_equally=True,pinned_end_factor_K=1,material_measured=False,load_reference='Existing nominal1.5N/cable on actual REST geometry; NOT measured necessary100gactuator load'),source_sha256=sha(Path(__file__)),input_sha256={f:sha(src/f) for f in ('scene.scn','mesh.json','config.json')},scope='Unbraced isolated straight-column reference ONLY. Actual bonded Skin/Rail composite, curved pre-stress, end conditions and lateral restraints differ and are NOT qualified by Euler formula. Does not reject a continuously supported push-spine or every bellcrank. No motor or material requirement fixed, no Native trial, no grasp or global stability PASS. Need a real supported compression path before Finger integration.')
+ (out/'summary.json').write_text(json.dumps(d,indent=2));(out/'producer.py').write_bytes(Path(__file__).read_bytes());print(json.dumps(d,indent=2))
+if __name__=='__main__':main()

@@ -2,6 +2,38 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
+      "id": "unsupported_dorsal_compression_screen",
+      "priority": 1,
+      "status": "REJECTED",
+      "goal": "Do not replace ventral guides by an unsupported push-spine without a load-path feasibility bound",
+      "scope": "Two isolated straight loose rails, research modulus/Euler pinned reference only; not bonded Skin composite",
+      "hypothesis": "Matching existing initial1.5N paired tendon moment through a3mm dorsal compression arm may exceed unsupported slender-rail buckling capacity",
+      "prerequisites": [],
+      "evidence": ["dorsal_compression1847"],
+      "expected_outputs": ["Actual REST cable wrench reference, declared compression demand and required support pitch"],
+      "validation_criteria": ["Initial root-wrench/moment computed from actual route, assumed material/end conditions explicit"],
+      "failure_criteria": ["Loose100mm rail pinned capacity0.00514N versus1.5N/rail reference"],
+      "failure_alternatives": ["Qualified continuously supported compression path, not stronger fitted material or guide-free wire compression"],
+      "successors": ["root_compression_transmission_prerequisites"],
+      "maximum_execution_cost": "Read-only geometry/section algebra under1s"
+    },
+    {
+      "id": "root_compression_transmission_prerequisites",
+      "priority": 1,
+      "status": "BLOCKED",
+      "goal": "Enable a root-only transmission without reintroducing distal guide bracing",
+      "scope": "Independent prerequisite boundary, not rejection of every bellcrank/flexure/continuous support",
+      "hypothesis": "A supported nonlinear output joint or compliant load path plus laterally supported dorsal compression spine is required before Finger integration",
+      "prerequisites": [],
+      "evidence": ["bellcrank_joint1844", "bellcrank_kkt1845", "dorsal_compression1847"],
+      "expected_outputs": ["Concrete supported Native joint/integration contract and real finite supported compression path"],
+      "validation_criteria": ["No joint projection, same physical gates, no isolated Euler result promoted to composite validation; declare pin mass/retention"],
+      "failure_criteria": ["Only tolerance/dt scan, q/v correction or unsupported loose compression rails available"],
+      "failure_alternatives": ["Review other physical transmission/contact mechanisms against original blockers"],
+      "successors": ["Single Finger drive only after new supported mechanism is implemented"],
+      "maximum_execution_cost": "No further large Native run until a concrete independent implementation exists"
+    },
+    {
       "id": "bellcrank_native_output_link",
       "priority": 0,
       "status": "FAIL",

@@ -73,6 +73,19 @@ error even if linear solve were exact.1844 remainsFAIL; no Finger expansion.
 Full nonlinear joint/integration qualification still requires a supported
 different contract, not another tolerance/dt scan or state projection.
 
+1847 independent prerequisite: matching actual REST route's paired nominal
+1.5N cable moment0.009Nm through3mm dorsal offset requires3N compression
+reference. This is NOT the measured minimum100g motor load. A pair of loose,
+isolated100mm x2mm x.5mm rails at existing assumedE250MPa has optimistic
+pinned Euler capacity0.0051404N EACH versus1.5N EACH reference, ratio291.8.
+At that reference load maximum pinned support spacing is5.854mm. This rejects
+only the **unsupported loose straight-rail** path. Existing bonded Skin/Rail,
+curved geometry, actual joint/end conditions differ; no actual composite
+buckling/strength conclusion or fitted material change is made. A supported
+compression spine and qualified output joint are prerequisites to Finger use.
+Root bellcrank success at small coupon loads cannot be scaled to3N hardware
+qualification without real material, pin/termination and lateral support data.
+
 Actual commands (NEW tags only for future runs):
 ```
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/cad/bellcrank_link_geometry.py --tag bellcrank_link1843
@@ -80,5 +93,6 @@ Actual commands (NEW tags only for future runs):
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/bellcrank_kkt_audit.py --tag bellcrank_kkt1845
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/test_bellcrank_contract.py
 ```
+Additional actual command: `python product_prototype/sofa/dorsal_compression_screen.py --tag dorsal_compression1847`
 This changes a physical transmission topology but not the old B3 model. No
 full100g test, UNBRACED, numerical convergence, physical joint or hardware PASS.

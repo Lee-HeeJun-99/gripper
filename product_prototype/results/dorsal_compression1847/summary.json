@@ -1,0 +1,100 @@
+{
+  "status": "REJECT_UNSUPPORTED_LOOSE_DORSAL_RAILS_AT_REFERENCE_MOMENT",
+  "records": [
+    {
+      "finger": 0,
+      "reference_tension_N_per_cable": 1.5,
+      "initial_root_reference_m": [
+        0.030600000000000006,
+        -3.4694469519536144e-19,
+        -0.0024769905155437046
+      ],
+      "actual_geometry_net_force_N": [
+        0.0,
+        0.0,
+        3.0
+      ],
+      "actual_geometry_net_moment_Nm": [
+        0.0,
+        0.008999999999999994,
+        0.0
+      ],
+      "closing_axis_moment_Nm": 0.008999999999999994,
+      "matched_moment_dorsal_offset_m": 0.003,
+      "compression_to_match_reference_moment_N": 2.999999999999998,
+      "assumed_each_loose_rail_compression_N": 1.499999999999999,
+      "each_unsupported100mm_rail_pinned_Euler_load_N": 0.005140418958900707,
+      "demand_to_pinned_Euler_ratio": 291.8050088899326,
+      "maximum_pinned_lateral_support_pitch_mm": 5.854012275867274
+    },
+    {
+      "finger": 1,
+      "reference_tension_N_per_cable": 1.5,
+      "initial_root_reference_m": [
+        -0.015299999999999994,
+        0.02650037735580383,
+        -0.0024769905155437046
+      ],
+      "actual_geometry_net_force_N": [
+        0.0,
+        0.0,
+        3.0
+      ],
+      "actual_geometry_net_moment_Nm": [
+        -0.0077942286340599645,
+        -0.00449999999999999,
+        6.938893903907228e-18
+      ],
+      "closing_axis_moment_Nm": 0.009000000000000008,
+      "matched_moment_dorsal_offset_m": 0.003,
+      "compression_to_match_reference_moment_N": 3.0000000000000027,
+      "assumed_each_loose_rail_compression_N": 1.5000000000000013,
+      "each_unsupported100mm_rail_pinned_Euler_load_N": 0.005140418958900707,
+      "demand_to_pinned_Euler_ratio": 291.80500888993305,
+      "maximum_pinned_lateral_support_pitch_mm": 5.8540122758672695
+    },
+    {
+      "finger": 2,
+      "reference_tension_N_per_cable": 1.5,
+      "initial_root_reference_m": [
+        -0.015300000000000017,
+        -0.026500377355803816,
+        -0.0024769905155437046
+      ],
+      "actual_geometry_net_force_N": [
+        0.0,
+        -3.2169420288477355e-18,
+        3.0
+      ],
+      "actual_geometry_net_moment_Nm": [
+        0.00779422863405993,
+        -0.004500000000000004,
+        -6.938893903907228e-18
+      ],
+      "closing_axis_moment_Nm": 0.008999999999999987,
+      "matched_moment_dorsal_offset_m": 0.003,
+      "compression_to_match_reference_moment_N": 2.9999999999999956,
+      "assumed_each_loose_rail_compression_N": 1.4999999999999978,
+      "each_unsupported100mm_rail_pinned_Euler_load_N": 0.005140418958900707,
+      "demand_to_pinned_Euler_ratio": 291.80500888993237,
+      "maximum_pinned_lateral_support_pitch_mm": 5.854012275867277
+    }
+  ],
+  "assumptions": {
+    "E_Pa": 250000000,
+    "rail_width_m": 0.002,
+    "rail_thickness_m": 0.0005,
+    "unsupported_length_m": 0.1,
+    "two_identical_rails_share_equally": true,
+    "pinned_end_factor_K": 1,
+    "material_measured": false,
+    "load_reference": "Existing nominal1.5N/cable on actual REST geometry; NOT measured necessary100gactuator load"
+  },
+  "source_sha256": "df7a3113535888ff05476dbac5c41b18d1c3bccef17cdc92f3200b8b349f0cc7",
+  "input_sha256": {
+    "scene.scn": "4d893a9e5706e10f9259bd0d9655eeec82d6632691527b9542db4e15d146fdc8",
+    "mesh.json": "ccf0d1cb52437aed7f38af91816d5d0ee4cf07b5b4944088a74504ed1593fe65",
+    "config.json": "e9fc98ba036617878c16c0e1cada2eb251c51c2fcf7f10b60dcf2f7d4e5eccf4"
+  },
+  "scope": "Unbraced isolated straight-column reference ONLY. Actual bonded Skin/Rail composite, curved pre-stress, end conditions and lateral restraints differ and are NOT qualified by Euler formula. Does not reject a continuously supported push-spine or every bellcrank. No motor or material requirement fixed, no Native trial, no grasp or global stability PASS. Need a real supported compression path before Finger integration."
+}

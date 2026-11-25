@@ -1,0 +1,143 @@
+{
+  "status": "PASS_ACTUAL_IMPULSE_VELOCITY_BOOKKEEPING",
+  "results": [
+    {
+      "case": "dispatch_finite_holding1586",
+      "begin_time_s": 1.599999999999977,
+      "peak_time_s": 1.8424999999999718,
+      "begin_velocity_mm_s": [
+        0.16929898854187464,
+        -0.27346560421282406,
+        -0.03566488115506333
+      ],
+      "peak_velocity_mm_s": [
+        -4.149169427741869,
+        0.07041214588816531,
+        -0.008245380385293183
+      ],
+      "actual_delta_velocity_mm_s": [
+        -4.318468416283744,
+        0.34387775010098937,
+        0.02741950076977015
+      ],
+      "contact_and_gravity_delta_velocity_mm_s": {
+        "other": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "finger0_normal": [
+          -243.55533904471184,
+          -0.1432616922484865,
+          742.6189932143958
+        ],
+        "finger0_tangent": [
+          218.7854630089791,
+          0.8380354693437391,
+          71.76470867287867
+        ],
+        "finger1_normal": [
+          118.88350345001308,
+          -203.88065157161017,
+          711.8162051361437
+        ],
+        "finger1_tangent": [
+          -108.33511806583378,
+          179.34468873527445,
+          69.49548838939482
+        ],
+        "finger2_normal": [
+          119.1674310973902,
+          204.10597408308132,
+          713.5179961295297
+        ],
+        "finger2_tangent": [
+          -109.26440886212036,
+          -179.92090727374,
+          69.73902795842636
+        ],
+        "gravity": [
+          0,
+          0,
+          -2378.9249999999497
+        ]
+      },
+      "full_trajectory_max_reconstruction_error_m_s": 3.0904445669222014e-13,
+      "interval_budget_error_mm_s": 4.9862808326750496e-11,
+      "input_sha256": {
+        "object.csv": "741b77ccddbe23eb98742fecf805f1ad5d77f02bb599eab78fbc26a75a77f840",
+        "response_rows.csv": "e349613fae5c35a0157794f7dc84a7e968d3c2fc4c037d5205aa32f3fffd5cc6"
+      }
+    },
+    {
+      "case": "yoke_hold_diagnostic1741",
+      "begin_time_s": 1.599999999999977,
+      "peak_time_s": 1.977499999999969,
+      "begin_velocity_mm_s": [
+        -1.2906239311930368,
+        0.618900615996077,
+        -1.1506259123441782
+      ],
+      "peak_velocity_mm_s": [
+        -7.171895127047831,
+        16.00647683210792,
+        27.86802086023619
+      ],
+      "actual_delta_velocity_mm_s": [
+        -5.881271195854794,
+        15.387576216111846,
+        29.018646772580368
+      ],
+      "contact_and_gravity_delta_velocity_mm_s": {
+        "other": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "finger0_normal": [
+          -433.60573285038146,
+          -31.916304704595174,
+          1319.0432720201752
+        ],
+        "finger0_tangent": [
+          188.31013984384117,
+          72.98901215234929,
+          62.60602444157119
+        ],
+        "finger1_normal": [
+          180.08577713290845,
+          -319.62119700964035,
+          972.1949384118373
+        ],
+        "finger1_tangent": [
+          -31.62697273437784,
+          41.58895689916462,
+          18.884982273162713
+        ],
+        "finger2_normal": [
+          255.59134276203764,
+          353.18224643779547,
+          1303.6290383482635
+        ],
+        "finger2_tangent": [
+          -164.635825349883,
+          -100.83513755896197,
+          55.93539127756957
+        ],
+        "gravity": [
+          0,
+          0,
+          -3703.274999999921
+        ]
+      },
+      "full_trajectory_max_reconstruction_error_m_s": 3.09131192866019e-13,
+      "interval_budget_error_mm_s": 7.811706836946541e-11,
+      "input_sha256": {
+        "object.csv": "6acefcfc0aaf7ea288aca269bdc5f730c2a56936c90af13cbb89dcfecc6482e7",
+        "response_rows.csv": "c554d41987b1f7439d9192522786eabd34a432e3b428d4e7e87ee0eec0fb33ad"
+      }
+    }
+  ],
+  "source_sha256": "f2c4927902d2e0d8d0703c6cc7761f84b4122b8327a9c0c40fa241b08bfdf63d",
+  "scope": "No causal proof or alternative trajectory: actual impulses depend on actual state. Cannot remove guide contacts or change friction by subtracting impulses. No global energy, hardware or Native convergence PASS. All original data read-only."
+}

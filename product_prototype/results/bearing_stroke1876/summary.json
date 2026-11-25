@@ -1,0 +1,57 @@
+{
+  "status": "PASS_IDEAL_BEARING_LOADED_STROKE_HOLD_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 3.9833902621176094,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "512f30708c3018dacfd3d550542720923def0aaa45a45460aed34c291fc506ef",
+      "command.json": "0a123edd1208747c4e812bcfe9b96a9b43f6dff134945b34a4368824069c98b0",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "a90d91e544cd6f2d8ee1acd933fce17735379f7e00e993b086c9392fffad8bbb"
+    }
+  },
+  "metrics": {
+    "saved_steps": 6000,
+    "maximum_all_time_cable_error_m": 3.5459051059977265e-11,
+    "late_maximum_cable_error_m": 3.469446951953614e-18,
+    "late_maximum_output_target_error_m": 4.336808689942018e-18,
+    "late_maximum_output_speed_m_s": 4.7180037654470694e-14,
+    "maximum_tension_N": 0.9312738887553682,
+    "minimum_tension_N": 0.9000000007208769,
+    "maximum_forbidden_motion": 0.0,
+    "final": {
+      "index": 5999,
+      "time_recorded_s": 0.5999999999999502,
+      "geometric_shortening_m": 0.003978234423080384,
+      "command_shortening_m": 0.003978234423080384,
+      "geometric_command_error_m": 0.0,
+      "output_displacement_m": 0.003999999999999998,
+      "output_speed_m_s": 1.1368683772161615e-14,
+      "actual_tension_N": 0.9312738887553393,
+      "forbidden_motion": 0.0
+    }
+  },
+  "configuration": {
+    "target_output_m": 0.004,
+    "derived_input_stroke_m": 0.003978234423080384,
+    "closing_s": 0.5,
+    "run_duration_s": 0.6,
+    "late_hold_index_begin": 5500,
+    "maximum_force_N": 1.5,
+    "maximum_native_impulse_Ns": 0.00015000000000000001,
+    "output_dead_load_N": 0.9000000000000008,
+    "dt_s": 0.0001,
+    "controller_links": "Both command links target same single cable; one physical constraint row, duplicate identical command writes only; liftHeight0. No parent/object q/v written."
+  },
+  "source_sha256": "b1f7c1cbdb25e09f836d651fa870e48fa26d95c6820cefc46f21ac52732d4fa0",
+  "source_commit": "239730f3081b5b772484332fb968ebbb2e255496",
+  "source_scene_sha256": "fb2755d7511c7c1f94e8794ab628f899961905faa7b2999c93fcf6fa9b1f7cd8",
+  "scene_sha256": "5743cb06f529b47df4cb13e09de4707356c89ddacec478bf76497db1ea041ddf",
+  "binary_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so": "3eb202b1e2a25f3ec6cded69e92a9d02bc48c304be14f6ca7123b4d758e5d0e0"
+  },
+  "frozen_controller_source_sha256": "292e59d8a368b0e8d96ac6d74c8f871025b8aad5b29a796ad3dcc1b69016245e",
+  "scope": "New displacement-limited input mode on same ideal-bearing1870mechanism; no input force/damping/dt/solver scan. Actual Cable length measured geometrically, force from full-precision solver impulse not rounded Data text. Same old rotor mass, NOT rejected finite1873CAD. Output deadload port only, no actual Finger/Guide/wirecontact/grasp. This is loaded stroke/hold exploration not time/mesh/physical material or full-device qualification; no release attempted under unvalidated constant load model."
+}

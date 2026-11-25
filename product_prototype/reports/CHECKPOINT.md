@@ -1,4 +1,20 @@
-## Current1868 — independent transmission cycles; UNBRACED still not achieved
+## Current1876 — loaded supported output port, not a new100gHolding
+
+Starta9a8c2a clean. First feature239730f; next feature/final=`git log -1`.
+Read BEARING_SEPARATED_DRIVE_20261125.md.1870actual1.5Ninput/0.9Noutput5step
+supported torsional component matches independent finite-motion operator,
+but bare rotor speeds1299.61rad/s.1874read-only work budget separates discrete
+loss/remainder; not a Native/global energyPASS.1871/1872finite geometry failures
+and1873strict CSG socket artifacts retained; no tolerance-floor rescue.
+1876new Native displacement/force-capped input on SAME ideal mechanism:
+6000steps/.6s normal/noERROR3.98339s. Output4mm delivered/held against0.9N;
+maxactualtension0.931274N, geometriccommanderror<=3.546e-11m. Not actualFinger,
+finite1873hardware, physical bearing or100ggrasp qualification.
+Next READY bearing_nominal_joint_bounds: independent nominal bulk radial
+proof and stress/bond reference, not another CSG or oldNative rerun.
+No child running. Latest full1741FAIL and1586bracedOBJECT-ONLY unchanged.
+
+## Current1868 — historical; superseded above
 
 Startfa709ffd clean, branchdevelopment/regrip-autonomous-research. Feature
 savesd19f55a/29a0c30/d55b386/bfe13dd/0c980ff/8ad610a/b888bca/f4efe60;

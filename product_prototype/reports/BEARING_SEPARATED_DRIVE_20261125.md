@@ -63,3 +63,24 @@ SDK26.06.00. Native scene/process command and SHA, source and per-case inputs
 are in summaries; completed file hashes indexed separately, CSV stayslocal.
 No SDK/FF/ODE change, q/v correction, collision removal, oldverdict change,
 history rewrite or push.1741fullgraspFAIL and1586bracedOBJECT-ONLY unchanged.
+
+##1876actual loaded stroke/hold, not a Finger trial
+
+Changed input **mode**, not tension/damping/dt scan: frozen332NativeCableSequence
+commands native displacement with1.5N cap (maxForce=1.5dt in native multiplier
+units). Target is4mm output, theta=-asin(0.4), geometric input3.978234423mm.
+Same1870ideal supported rotor/return shaft and0.9N resisting output, initial
+velocity0; closing0.5s and run0.6s,6000Native steps. Two sequence links point
+at the same cable, so identical command writes twice but only ONE physical
+constraint row. Controller writes only value/pullPoint with liftHeight0,
+not rotor/object q/v. Frozen source and binary hash checked/recorded.
+Normal/noERROR runtime3.98339s; force full-precision lambda/dt0.900–0.931274N.
+All-time geometric command error<=3.546e-11m. Late500samples: output4mm error
+<=4.337e-18m, maxspeed4.718e-14m/s, forbidden motion0. PASS predeclared1um
+position,1um/s hold-speed,1.5Nforce cap gates. No tolerance changed.
+This demonstrates loaded output-port delivery and holding in an **ideal
+bearing research component**, not useful work on actual Finger or successful
+100g Holding.1873finite assembly/bearing contact/retention and material remain
+unqualified; no full3Finger trial justified by component PASS.
+Actual command: `python product_prototype/sofa/bearing_stroke_native.py
+--tag bearing_stroke1876` using environment Python above. Per-child4GiB/60s.

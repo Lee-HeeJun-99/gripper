@@ -1,0 +1,39 @@
+{
+  "status": "DIAGNOSTIC_WORLD_FIXED_ASSEMBLY_EXPLAINS_COLUMNS",
+  "records": [
+    {
+      "case": "open_parallel_rotated1786",
+      "input_sha256": "129ff9f218915c47c8f7a044e7e5b7a4a8ddb68dd02b9cc49d123804fb72e9b6",
+      "original_status": "FAIL_FREE_ROOT_INITIAL_MASS",
+      "physical_body_rotated_inertia_velocity_error": 2.0407394795806635e-06,
+      "installed_world_fixed_inertia_velocity_error": 6.776263578034403e-21
+    },
+    {
+      "case": "open_parallel_angle1787",
+      "input_sha256": "5287aa4bfdb4f14be4b88dfc231bb10f4702de380a5e99e18aefef87a6cd92c7",
+      "original_status": "FAIL_FREE_ROOT_INITIAL_MASS",
+      "physical_body_rotated_inertia_velocity_error": 6.965148509194825e-07,
+      "installed_world_fixed_inertia_velocity_error": 5.082197683525802e-21
+    },
+    {
+      "case": "open_parallel_rotation1788",
+      "input_sha256": "9c4b608d22be460f398746327432ef6a5f259034f1436592e1ff1dca7ab3f569",
+      "original_status": "FAIL_FREE_ROOT_INITIAL_MASS",
+      "physical_body_rotated_inertia_velocity_error": 7.984032543425071e-07,
+      "installed_world_fixed_inertia_velocity_error": 1.3552527156068805e-20
+    }
+  ],
+  "source_sha256": "2c3112cf08d310f6e2724e4f199d9ccf5a81f4f17131f3ef85a0d93335ae9480",
+  "reference_source_sha256": "08cc19dd98c1c76a049d0a9a064019a67f3b2f1eee71ac9452bd291fff50644b",
+  "installed_headers": [
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mass/sofa/component/mass/UniformMass.inl",
+      "sha256": "cb5a8db97f8d794523093fab6418146d62a528744d78bd099dec524ac771c5b4"
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mass/sofa/component/mass/AddMToMatrixFunctor.h",
+      "sha256": "04450cffa424bcb674c7bf6eb23b018d6f2bd110f9561a87d57e3c19b7c971d5"
+    }
+  ],
+  "scope": "Original1786/1787/1788physical orientation FAILs unchanged. Alternative world-fixed tensor reproduces installed UniformMass assembly contract, NOT physical anisotropic body inertia. Initial mass-only response, not a new ODE or correction. No Native replay/state edits. Existing general inertia work remains separate; this diagnoses the new articulated coupon configuration."
+}

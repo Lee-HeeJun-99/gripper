@@ -51,3 +51,35 @@ python product_prototype/sofa/yoke_inertia_native_contract.py --case terminal_cr
 python product_prototype/sofa/terminal_crimp_native.py --tag crimp_contact1898
 python product_prototype/sofa/terminal_crimp_native.py --tag crimp_withdrawal1899 --duration 1.2 --prefix crimp_contact1898
 ```
+
+## Actual1899 / independent1902 / resource1903 / full1904
+
+1899normal/noERROR480steps/1.2s completed214.23001s. All3Skin contact,
+Guide–Guide and Root contact rows0, same minimum saved FEMratio0.988971.
+Finalspeed5.47397mm/s is outside original Holding window. No Holding verdict.
+
+1902read-only actual object impulse analysis: linear momentum residual
+8.674e-19Ns, angular4.235e-21Nms, row partition8.674e-19. Algebra regressions
+4PASS. First analysis attempt1901created no output: parser assumed totalMass
+and iterations; actual RigidMass uses vertexMass and solver_iterations.
+Corrected actual-source parsing, no Raw edit or rerun.1.0–1.2s maximumspeed
+12.51535mm/s, minimum Supportgap2.30523mm, Support/hardware force0, mean
+SkinZ0.97461856N, Solverlimit samples0/80. Earlier0–0.5s95/200 and0.6–1s
+11/160limit samples: convergence NOT globallyPASS. Small momentum residual
+does not certify contact, energy or FEM dynamics.
+
+1903resource model uses two actual durations with canonical Scenes identical
+except output paths. Every short CSV is a byte-identical prefix of the longer
+CSV. Fixed initial/closing cost78.99826s, incremental112.69313s/s, full2s
+forecast304.38451s; same1.3margin gives395.69987s<420. Supersedes only the
+single-run conservative resource estimate, not physics gates. No observer
+removal/dt change/state restart/tolerance change. Actual full1904started with
+hard4GiB/420s; preserve timeout if forecast wrong. Initial CLI rejected new
+argument before output or child; parser registration corrected before launch.
+
+```sh
+python product_prototype/sofa/test_winch_object_balance.py
+python product_prototype/sofa/winch_object_balance.py --case crimp_withdrawal1899 --tag crimp_balance1902
+python product_prototype/sofa/crimp_runtime_contract.py --tag crimp_runtime1903
+python product_prototype/sofa/terminal_crimp_native.py --tag crimp_hold1904 --full --prefix crimp_withdrawal1899 --runtime-contract crimp_runtime1903
+```

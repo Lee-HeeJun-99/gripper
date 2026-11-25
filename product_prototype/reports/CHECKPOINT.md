@@ -1,3 +1,21 @@
+## Current1903 /1904 RUNNING — actual withdrawal valid, original Holding in progress
+
+Featurec45cab3 preserved terminal-prefix work.1899actual1.2s/480steps
+normal214.230s, Guide–Guide/Root response0, positive savedFEM.1902actual
+object impulse balance errors<=8.674e-19Ns, but not contact/time/meshPASS.
+1.0–1.2s Support/hardware force0, SkinmeanZ0.974619N, speedmax12.515mm/s;
+not original1.6–2s Holding.1903identical canonical Scenes and every shortCSV
+byte-prefix verified. Two measured costs separate fixed78.998s from112.693s/s;
+2s forecast with same1.3margin395.700s<420. Hardlimit unchanged.
+1904ACTUALLY RUNNING original free100gR30 2s/800step Holding,4GiB420s;
+results/crimp_hold1904. No physical inputs/observers removed or changed.
+1906actual saved-pose finite hardware clearance also running; no new Native.
+Next inspect actual completion, independent originalholding_assess and
+winch_object_balance, plus zero-bracing/FEM/geometry. Do not claim PASS
+from prefix. Source/commands in TERMINAL_CRIMP_AND_CONTACT_20261125.md.
+Manifest1905completed1899/1902/1903 only, never active1904/1906. Last save
+=`git log -1`. All oldRaw/SDK/102tasks and1586/1741verdicts preserved.
+
 ## Current1898 /1899 RUNNING — blind terminal anchor removes prefix bracing
 
 Actual1894new3Finger100g contact prefix FAIL:36terminalGuide–Guide rows.

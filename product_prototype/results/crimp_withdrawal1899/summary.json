@@ -1,0 +1,176 @@
+{
+  "status": "VALID_UNBRACED_OBJECT_CONTACT_PREFIX_ONLY",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 214.23001110600308,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "f9eb07d41fea7d91c8e3380ee0d9937d6a55ff439d223be20a1200428150f590",
+      "command.json": "5a82198a831f957627d4467077c408d4a197cdf58803f425239f5a711e516dd8",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "bf990ae7e046a9203b2feb230afe5226645b211ed8bef8999e0856e34d35d2da"
+    }
+  },
+  "metrics": {
+    "minimum_saved_volume_ratios": [
+      0.9900298923962862,
+      0.9890442386102022,
+      0.988971070798788
+    ],
+    "actual_skin_contact_fingers": [
+      0,
+      1,
+      2
+    ],
+    "nonzero_guide_guide_rows": 0,
+    "guide_guide_first_time_s": null,
+    "guide_guide_last_time_s": null,
+    "nonzero_new_root_contact_rows": 0,
+    "contact_pairs": [
+      {
+        "pair": [
+          "/floor/SphereCollisionModel1",
+          "/object/collision/SphereCollisionModel1"
+        ],
+        "nonzero_rows": 209
+      },
+      {
+        "pair": [
+          "/finger0/skinCollision/LineCollisionModel1",
+          "/object/collision/SphereCollisionModel1"
+        ],
+        "nonzero_rows": 69
+      },
+      {
+        "pair": [
+          "/finger2/skinCollision/TriangleCollisionModel1",
+          "/object/collision/SphereCollisionModel1"
+        ],
+        "nonzero_rows": 663
+      },
+      {
+        "pair": [
+          "/finger1/skinCollision/TriangleCollisionModel1",
+          "/object/collision/SphereCollisionModel1"
+        ],
+        "nonzero_rows": 735
+      },
+      {
+        "pair": [
+          "/finger0/skinCollision/TriangleCollisionModel1",
+          "/object/collision/SphereCollisionModel1"
+        ],
+        "nonzero_rows": 102
+      },
+      {
+        "pair": [
+          "/object/collision/SphereCollisionModel1",
+          "/finger1/skinCollision/PointCollisionModel1"
+        ],
+        "nonzero_rows": 903
+      },
+      {
+        "pair": [
+          "/object/collision/SphereCollisionModel1",
+          "/finger2/skinCollision/PointCollisionModel1"
+        ],
+        "nonzero_rows": 927
+      },
+      {
+        "pair": [
+          "/object/collision/SphereCollisionModel1",
+          "/finger0/skinCollision/PointCollisionModel1"
+        ],
+        "nonzero_rows": 1269
+      }
+    ],
+    "actual_tendon_forces": [
+      {
+        "finger": 0,
+        "tendon": 0,
+        "maximum_input_N": 1.5,
+        "maximum_output_N": 1.5177249147279677
+      },
+      {
+        "finger": 0,
+        "tendon": 1,
+        "maximum_input_N": 1.5,
+        "maximum_output_N": 1.5177382736631153
+      },
+      {
+        "finger": 1,
+        "tendon": 0,
+        "maximum_input_N": 1.5,
+        "maximum_output_N": 1.5176615315521076
+      },
+      {
+        "finger": 1,
+        "tendon": 1,
+        "maximum_input_N": 1.5,
+        "maximum_output_N": 1.517264160735814
+      },
+      {
+        "finger": 2,
+        "tendon": 0,
+        "maximum_input_N": 1.5,
+        "maximum_output_N": 1.5172730140900703
+      },
+      {
+        "finger": 2,
+        "tendon": 1,
+        "maximum_input_N": 1.5,
+        "maximum_output_N": 1.5176811994040524
+      }
+    ],
+    "object_final_position_m": [
+      -0.0008812433814343774,
+      0.001148176577674993,
+      -0.06277078474843831
+    ],
+    "object_final_speed_mm_s": 5.473969063626294,
+    "object_partition_error_Ns": 4.336808689942018e-19,
+    "mean_object_force_groups_N": {
+      "skin": [
+        0.0005894786887696643,
+        -0.0003004291950754171,
+        0.861643788688479
+      ],
+      "rail": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "guide": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "support": [
+        -0.0002362423085220563,
+        1.2675342922679797e-05,
+        0.11933368452742861
+      ],
+      "winch": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unknown": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "dt_s": 0.0025,
+  "gravity_m_s2": [
+    0.0,
+    0.0,
+    -9.81
+  ],
+  "holding_protocol_sha256": "ac5abcdc648dcbd7760b84f7c1cbfd4f3d291929b0f0327c196df500de36114c",
+  "source_sha256": "0c86068e377d6ecbae4b7c2053ebec0e6cd2936c7eae9125af0596f2140f5a6e",
+  "preflight_sha256": "1cb7918adc0f56a0b8c5be331fc0c1d2cb0a844378649d737a6de92eb564cb78",
+  "scope": "New blind terminal fitting material/COM/tensor only vs1894; same actual Skin/Rail/control/force cap/dt/Support protocol/free100gR30object. Actual finite fitting bridge/bore, allCollisionfeatures retained. Ideal terminated wire/crimp bond/rigid support and research density assumptions, not hardware/finitewire/time/mesh qualification. No q/v imposed on object or post-corrected. Prefix NOT Holding; completed2s still needs original Holding and zero-bracing force assessment."
+}

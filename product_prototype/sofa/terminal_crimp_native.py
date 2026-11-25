@@ -7,9 +7,12 @@ from native_bending_coupon import guarded
 from common_winch_assessment import assess
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--full',action='store_true');p.add_argument('--prefix');p.add_argument('--duration',type=float,default=.6);a=p.parse_args();duration=2. if a.full else a.duration;assert .6<=duration<=2.;design=BASE/'results/terminal_crimp1896';mass=BASE/'results/crimp_tensor1897';assert json.loads((design/'summary.json').read_text())['status']=='PASS_TERMINAL_CRIMP_NECESSARY_GEOMETRY_ONLY';assert json.loads((mass/'summary.json').read_text())['status']=='PASS_ACTUAL_YOKE_INITIAL_TENSOR_ASSEMBLY_ONLY'
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--full',action='store_true');p.add_argument('--prefix');p.add_argument('--duration',type=float,default=.6);p.add_argument('--runtime-contract');a=p.parse_args();duration=2. if a.full else a.duration;assert .6<=duration<=2.;design=BASE/'results/terminal_crimp1896';mass=BASE/'results/crimp_tensor1897';assert json.loads((design/'summary.json').read_text())['status']=='PASS_TERMINAL_CRIMP_NECESSARY_GEOMETRY_ONLY';assert json.loads((mass/'summary.json').read_text())['status']=='PASS_ACTUAL_YOKE_INITIAL_TENSOR_ASSEMBLY_ONLY'
  if duration>.6:
-  assert a.prefix;previous=json.loads((BASE/'results'/a.prefix/'summary.json').read_text());assert previous['status']=='VALID_UNBRACED_OBJECT_CONTACT_PREFIX_ONLY';prior_duration=json.loads((BASE/'results'/a.prefix/'preflight.json').read_text())['duration_s'];assert previous['process']['runtime_s']*duration/prior_duration*1.3<420,'Existing conservative resource forecast exceeds limit'
+  assert a.prefix;previous=json.loads((BASE/'results'/a.prefix/'summary.json').read_text());assert previous['status']=='VALID_UNBRACED_OBJECT_CONTACT_PREFIX_ONLY';prior_duration=json.loads((BASE/'results'/a.prefix/'preflight.json').read_text())['duration_s'];forecast=previous['process']['runtime_s']*duration/prior_duration*1.3
+  if a.runtime_contract:
+   assert a.full and a.prefix=='crimp_withdrawal1899';budget=json.loads((BASE/'results'/a.runtime_contract/'summary.json').read_text());assert budget['status']=='PASS_BOUNDED_RUNTIME_ESTIMATE_ONLY' and budget['long_case']==a.prefix;assert budget['input_sha256']['results/'+a.prefix+'/summary.json']==sha(BASE/'results'/a.prefix/'summary.json');forecast=budget['full2s_with_margin_s']
+  assert forecast<420,'Existing measured resource forecast exceeds limit'
  out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);(out/'producer.py').write_bytes(Path(__file__).read_bytes())
  root=ET.parse(design/'scene.scn').getroot()
  for e in root.iter():

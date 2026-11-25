@@ -21,7 +21,9 @@ def main():
  (out/'producer.py').write_bytes(Path(__file__).read_bytes())
  dt=.01;mass=.01;T=.05;steps=5;origin=np.zeros(3)
  q0=np.array([[.01,0,0],[.02,.01,0],[.03,.01,.01]]);v0=np.array([[0,.1,0],[.02,0,.04],[-.03,.01,0]])
- binary=BASE/'cad/build_cable_phase1824/libReGripCablePhase.so';journal=BASE/'cad/build_default_control332/libReGripProductSequence.so';records=[]
+ binary=BASE/'cad/build_cable_phase1831/libReGripCablePhase.so';journal=BASE/'cad/build_default_control332/libReGripProductSequence.so';records=[]
+ compiled=BASE/'results/b3_cable_typed1831';meta=json.loads((compiled/'phase_assessment.json').read_text())
+ assert sha(binary)==meta['binary_sha256'] and sha(BASE/'sofa/native_cable_phase/Observer.cpp')==sha(compiled/'Observer.cpp'),'frozen compiled observer identity mismatch'
  for enabled in (False,True):
   folder=out/('observed' if enabled else 'control');folder.mkdir();r=ET.Element('Node',name='root',dt=str(dt),gravity='0 0 0')
   for name in ('AnimationLoop','Constraint.Lagrangian.Solver','Constraint.Lagrangian.Correction','LinearSolver.Direct','Mass','ODESolver.Backward','StateContainer'):

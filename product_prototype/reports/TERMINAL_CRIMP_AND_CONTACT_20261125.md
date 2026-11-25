@@ -1,5 +1,28 @@
 # Finite terminal anchor and actual unbraced contact prefix
 
+##1922/1926valid prefix;1925full actual Holding in progress
+
+1922normal240steps/.6s108.17103s. All3Skin contact, Guide–Guide/Root rows0,
+savedFEM minimum0.988971. Actual maximum reconstructed brake torque
+0.00139516Nm below declared0.015Nm design-reference budget. Finalobject
+speed14.92576mm/s is during prefix, NOT Holding.1926before0.5s actual
+objectq/v/impulse and all3Skinq/v agree EXACT0 with unbraked1904. Thus
+observed change is after declared engagement, not altered initial simulation.
+Configured viscous-loss reconstruction24.8894uJ at six ports is not actual
+hardware loss or whole coupled energy. Entire motion/physical brake remains
+unqualified.1925full2s actual run launched with unchanged420s/4GiB hardlimit;
+forecast337.14s from actual unbraked full259.34s with1.3margin, no positive
+prefix overhead (new108.17s versus old146.61s). No success before full data.
+
+1924preservation audit verifies3566manifestrecords, original102queue entries,
+all prior tracked Raw/SDK/compiled binaries unchanged; seven helper testsPASS.
+It explicitly observed1922RUNNING at audit time; not a final no-running claim.
+
+```sh
+python product_prototype/sofa/brake_prefix_compare.py --case braked_contact1922 --tag braked_purity1926
+python product_prototype/sofa/braked_crimp_native.py --tag braked_hold1925 --full --prefix braked_contact1922
+```
+
 ##1920–1922: independently scheduled actuator loss
 
 New NativeBrakeSchedule writes ONLY stock implicit FF dampingCoefficient at

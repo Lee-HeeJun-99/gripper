@@ -2,6 +2,22 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
+      "id": "scheduled_brake_original_100g_holding",
+      "priority": 0,
+      "status": "RUNNING",
+      "scope": "One scheduled passive actuator-loss assumption, original Holding protocol unchanged",
+      "goal": "Suppress observed backdrive while retaining proven no-bracing termination geometry",
+      "hypothesis": "Valid delayed passive loss can reduce late motion without raising1.5Ninputcap or modifying Skin/contact/geometry",
+      "prerequisites": ["scheduled_brake_100g_prefix"],
+      "evidence": ["braked_contact1922", "braked_purity1926"],
+      "expected_outputs": ["Actual800step Native and original independent Holding/force/FEM/clearance verdict"],
+      "validation_criteria": ["All original functional thresholds, zero bracing/hardware support, positive savedFEM, measured torque budget, weight-momentum partition"],
+      "failure_criteria": ["Any speed/slip/gap/reaction/FEM/bracing/budget or process failure"],
+      "failure_alternatives": ["Actual source-of-motion analysis; no gain/dt/force scan"],
+      "successors": ["Independent replication/Lift only if full criteria succeed"],
+      "maximum_execution_cost": "One4GiB420s child; actual full1904cost259.34s*1.3 plus positive newprefix overhead, below420s"
+    },
+    {
       "id": "scheduled_brake_native_data_contract",
       "priority": 0,
       "status": "PASS",
@@ -36,12 +52,12 @@
     {
       "id": "scheduled_brake_100g_prefix",
       "priority": 0,
-      "status": "RUNNING",
+      "status": "PASS",
       "scope": "One actuator-loss assumption on actual bracing-free but speed-failed100g model",
       "goal": "Test independent passive backdrive suppression without reintroducing internal Guide support",
       "hypothesis": "1912actual input cap and moving output port justify testing local delayed passive rotor loss, not global damping/force tuning",
       "prerequisites": ["scheduled_brake_single_finger"],
-      "evidence": ["crimp_hold1904", "crimp_boundary1912", "brake_switched_finger1921"],
+      "evidence": ["crimp_hold1904", "crimp_boundary1912", "brake_switched_finger1921", "braked_contact1922", "braked_purity1926"],
       "expected_outputs": ["Actual240step new prefix, all model-pair/FEM/force gates and brake torque budget"],
       "validation_criteria": ["No Guide/Root bracing, all3Skin contact, positive volumes, input<=1.5N, passive torque<=0.015Nm research budget"],
       "failure_criteria": ["Any gate fails; do not expand to fullgrasp"],

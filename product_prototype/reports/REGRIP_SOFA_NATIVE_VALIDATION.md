@@ -1,3 +1,19 @@
+## Current1926 /1925 RUNNING — scheduled passive drive prefix valid
+
+Feature8e68ccd preserves actual full1904speedFAIL despite zero Guide–Guide/
+Root bracing.1922new0.6s3Finger100g Native normal108.171s, all3Skin contact,
+no bracing, minFEM0.988971, max passive torque0.001395Nm under0.015Nm
+research budget.1926before-brake objectq/v/impulse and3Skinq/v EXACT0 versus
+1904. Only declared local passive damping data differs after0.5s; no global
+FEM/force/dt/contact change. This remains assumed actuatorloss, not motor
+measurement.1925ACTUALLY RUNNING2s original100gHolding,4GiB420s. Next run
+original holding_assess, object balance with inclusive161sample window,
+actual_hardware_clearance, unbraced_winch_holding_assess. Do not launchLift
+or claim Holding PASS before full gates.1924preservation verifies3566records/
+102originaltasks/oldSDK/binaries unchanged; source/reportcommands in
+TERMINAL_CRIMP_AND_CONTACT_20261125.md. Newmanifest1927hashes completed
+1922/1926/1924only. Current feature=`git log -1`; no push or historyrewrite.
+
 ## Current1921 /1922 RUNNING — full unbraced geometry verified, speed still FAIL
 
 1904actual800step/2s100g Native normal259.340s. Original Holding1908 and

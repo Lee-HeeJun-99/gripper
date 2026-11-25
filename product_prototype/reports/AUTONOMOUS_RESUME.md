@@ -1,3 +1,21 @@
+## Current1898 /1899 RUNNING — blind terminal anchor removes prefix bracing
+
+Actual1894new3Finger100g contact prefix FAIL:36terminalGuide–Guide rows.
+1896new closed-end termination retains wireØ0.5mm/endpoints/allCollisionfeatures,
+real Support bridge and coherent material-difference COM/fulltensor.1897actual
+Native initial mass operator error<=8.882e-16 PASS only in initial scope.
+1898new actual240steps/0.6s normal146.614s: all3Skin contact, zero nonzero
+Guide–Guide/Root rows, minFEMratio0.988971, object hardware load0. This is
+UNBRACED CONTACT PREFIX ONLY, NOT Holding. Final14.772mm/s is outside
+Holding window; Support still present. Details TERMINAL_CRIMP_AND_CONTACT.
+1899actual1.2s/480step withdrawal prefix RUNNING,4GiB420s. Full2s forecast
+635s exceeds limit; do not bypass forecast or claim late Holding. Source
+terminal_crimp_native.py; results/crimp_withdrawal1899. Next inspect actual
+completion and contact/force/FEM validity, then bounded independent work.
+Feature397a997 precedes terminal work; next save=`git log -1`. Manifest1900
+indexes completed1894/1896/1897/1898 only. Old1586/1741unchanged; time/mesh/
+finite-wire/hardware qualification still blocked. No push/history rewrite.
+
 ## Current1868 — current handoff; no child running
 
 Read actual git status/log plus CHECKPOINT and ROOT_COMPLIANT_TRANSMISSION

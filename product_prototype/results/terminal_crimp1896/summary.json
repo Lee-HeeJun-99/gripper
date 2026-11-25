@@ -1,0 +1,128 @@
+{
+  "status": "PASS_TERMINAL_CRIMP_NECESSARY_GEOMETRY_ONLY",
+  "mass_changes": [
+    {
+      "finger": 0,
+      "old_mass_kg": 3.287408490225962e-05,
+      "new_mass_kg": 3.1594558619182645e-05,
+      "old_COM_m": [
+        0.014020377149333478,
+        -5.352734160761481e-11,
+        -0.09285583286553882
+      ],
+      "new_COM_m": [
+        0.01408710308529959,
+        -5.5621375655280936e-11,
+        -0.09283901556487613
+      ],
+      "new_inertia_COM_kg_m2": [
+        [
+          2.686187205603515e-09,
+          1.0002224863126478e-18,
+          9.904243872728412e-13
+        ],
+        [
+          1.0002224863126478e-18,
+          2.3918764621276676e-11,
+          2.2321079150126757e-19
+        ],
+        [
+          9.904243872728412e-13,
+          2.2321079150126757e-19,
+          2.6902823741006097e-09
+        ]
+      ],
+      "minimum_inertia_eigenvalue": 2.391876462127644e-11,
+      "delta_density_assumed_kg_m3": 1000.0
+    },
+    {
+      "finger": 1,
+      "old_mass_kg": 3.2922036937608646e-05,
+      "new_mass_kg": 3.1624854564864165e-05,
+      "old_COM_m": [
+        -0.00702112843085895,
+        0.01213679792570135,
+        -0.09285624955949312
+      ],
+      "new_COM_m": [
+        -0.007047648593814617,
+        0.012199402510512092,
+        -0.09283854815189434
+      ],
+      "new_inertia_COM_kg_m2": [
+        [
+          6.89314491657229e-10,
+          -1.153215798356284e-09,
+          -1.4272348280431823e-13
+        ],
+        [
+          -1.153215798356284e-09,
+          2.0223752840458503e-09,
+          1.1348008832978737e-12
+        ],
+        [
+          -1.4272348280431823e-13,
+          1.1348008832978737e-12,
+          2.691971669058572e-09
+        ]
+      ],
+      "minimum_inertia_eigenvalue": 2.3865292264066977e-11,
+      "delta_density_assumed_kg_m3": 1000.0
+    },
+    {
+      "finger": 2,
+      "old_mass_kg": 3.292203357860457e-05,
+      "new_mass_kg": 3.160315744984173e-05,
+      "old_COM_m": [
+        -0.007021128677913109,
+        -0.012136797748274383,
+        -0.09285624957613414
+      ],
+      "new_COM_m": [
+        -0.00703755694095955,
+        -0.012206569762337574,
+        -0.09283765225772021
+      ],
+      "new_inertia_COM_kg_m2": [
+        [
+          6.869246438928734e-10,
+          1.1499321569900042e-09,
+          2.4633894948309667e-13
+        ],
+        [
+          1.1499321569900042e-09,
+          2.017739973740426e-09,
+          -1.413960840014208e-12
+        ],
+        [
+          2.4633894948309667e-13,
+          -1.413960840014208e-12,
+          2.684965821645464e-09
+        ]
+      ],
+      "minimum_inertia_eigenvalue": 2.375706784464632e-11,
+      "delta_density_assumed_kg_m3": 1000.0
+    }
+  ],
+  "initial_material_failures": [],
+  "replay_failures": [],
+  "minimum_replayed_new_fitting_pair_separating_gap_m": 0.0002050266869604549,
+  "minimum_replayed_fitting_object_surface_gap_m": 0.002862693699602452,
+  "configuration": {
+    "wire_diameter_mm": 0.5,
+    "blind_fitting_outer_mm": [
+      2,
+      1,
+      0.7
+    ],
+    "blind_bore_radius_mm": 0.25,
+    "blind_bore_length_mm": 1.0,
+    "wire_endpoint_unchanged": true,
+    "real_support_bridge": true,
+    "delta_density_assumed_kg_m3": 1000.0
+  },
+  "source_sha256": "9b0cb35b6da1f39be472f4d5b0d03f42ff7230653b243a36a32eb060ad141d9a",
+  "source_scene_sha256": "992d67b32e7b0579447327e1829d70b43bbe4bee433f117aa515a6dd8213ff22",
+  "scene_sha256": "4a71e7d8e5b6f086c6734d7ec7f913f63f1d3fcff741bb6631bbe0544cd2cebb",
+  "scope": "New terminal non-sliding blind crimp fittings, not a ring chamfer/offset scan. Existing last Native cable point has no outgoing span, so a real termination replaces pass-through geometry. Finite bridge overlaps actual support, allCollisionfeatures retained; input/control/Skin/rail/endpoint unchanged. Material mass differences exclude existing support overlap; applied to existing uncalibrated Guide mass budget at inherited researchrho1000, new COM/tensor SPD. Not actual material calibration or rigidJoint strength. Replay uses old accepted Guide poses solely as necessary geometry; not new equilibrated motion or full swept proof. Initial new-material check covers ownFEM; other hardware and fullobject dynamics still require next guarded trial. Crimp retention/friction/fatigue/finite-wire bending NOT MEASURED. No100g PASS."
+}

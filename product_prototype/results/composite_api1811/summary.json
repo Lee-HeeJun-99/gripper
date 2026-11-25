@@ -1,0 +1,91 @@
+{
+  "status": "BLOCKED_SUPPORTED_COMPOSITE_ACCELERATION_ROUTE",
+  "source_commit": "f804e4f0623875367dbcd9c2a278522e7f9ab05f",
+  "records": [
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/Mapping.h",
+      "sha256": "5e86121d5dd52cef9dd29e968675be929d7499eb00d9a74e5b65bd53689cc4e6",
+      "acceleration_callback_occurrences": 3,
+      "snippets": [
+        {
+          "line": 153,
+          "text": "    }\n\n    /// computeAccFromMapping\n    /// Compute the acceleration of the child, based on the acceleration and the velocity of the parent.\n    /// Let \\f$ v_c = J v_p \\f$ be the velocity of the child given the velocity of the parent, then the acceleration is \\f$ a_c = J a_p + dJ v_p \\f$.\n    /// The second term is null in linear mappings, otherwise it encodes the acceleration due to the change of mapping at constant parent velocity.\n    /// For instance, in a rigid mapping with angular velocity\\f$ w \\f$,  the second term is $ w^(w^rel_pos) $\n    void computeAccFromMapping(const MechanicalParams* mparams, MultiVecDerivId outAcc, ConstMultiVecDerivId inVel, ConstMultiVecDerivId inAcc ) override;\n\n    /// This method must be reimplemented by all mappings if they need to support composite accelerations\n    virtual void computeAccFromMapping(const MechanicalParams* /* mparams */, OutDataVecDeriv& /* accOut */, const InDataVecDeriv& /* vIn */, const InDataVecDeriv& /* accIn */)\n    {\n    }\n"
+        },
+        {
+          "line": 158,
+          "text": "    /// The second term is null in linear mappings, otherwise it encodes the acceleration due to the change of mapping at constant parent velocity.\n    /// For instance, in a rigid mapping with angular velocity\\f$ w \\f$,  the second term is $ w^(w^rel_pos) $\n    void computeAccFromMapping(const MechanicalParams* mparams, MultiVecDerivId outAcc, ConstMultiVecDerivId inVel, ConstMultiVecDerivId inAcc ) override;\n\n    /// This method must be reimplemented by all mappings if they need to support composite accelerations\n    virtual void computeAccFromMapping(const MechanicalParams* /* mparams */, OutDataVecDeriv& /* accOut */, const InDataVecDeriv& /* vIn */, const InDataVecDeriv& /* accIn */)\n    {\n    }\n\n    /// Propagate positions and velocities to the output\n    void init() override;\n\n    ///<TO REMOVE>  FF:why would we remove this, is there any alternative function ?\n    // Useful ?"
+        },
+        {
+          "line": 161,
+          "text": "\n    /// This method must be reimplemented by all mappings if they need to support composite accelerations\n    virtual void computeAccFromMapping(const MechanicalParams* /* mparams */, OutDataVecDeriv& /* accOut */, const InDataVecDeriv& /* vIn */, const InDataVecDeriv& /* accIn */)\n    {\n    }\n\n    /// Propagate positions and velocities to the output\n    void init() override;\n\n    ///<TO REMOVE>  FF:why would we remove this, is there any alternative function ?\n    // Useful ?\n    /// Get the source (upper) model.\n    virtual type::vector<behavior::BaseMechanicalState*> getMechFrom() override;\n"
+        }
+      ]
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Core/sofa/core/Multi2Mapping.h",
+      "sha256": "69ea4c8533a788c8cd3f30ed81bb5e2ec92ed72f2f782bc7c90713701ea706dd",
+      "acceleration_callback_occurrences": 3,
+      "snippets": [
+        {
+          "line": 176,
+          "text": "    }\n\n    /// computeAccFromMapping\n    void computeAccFromMapping(const MechanicalParams* mparams, MultiVecDerivId outAcc, ConstMultiVecDerivId inVel, ConstMultiVecDerivId inAcc ) override;\n\n    /// This method must be reimplemented by all mappings if they need to support composite accelerations\n    virtual void computeAccFromMapping(\n        const MechanicalParams* /* mparams */, const type::vector< DataVecDeriv_t<Out>*>& /* dataVecOutAcc */,\n        const type::vector<const DataVecDeriv_t<In1>*>& /* dataVecIn1Vel */,\n        const type::vector<const DataVecDeriv_t<In2>*>& /* dataVecIn2Vel */,\n        const type::vector<const DataVecDeriv_t<In1>*>& /* dataVecIn1Acc */,\n        const type::vector<const DataVecDeriv_t<In2>*>& /* dataVecIn2Acc */)\n    {\n    }"
+        },
+        {
+          "line": 177,
+          "text": "\n    /// computeAccFromMapping\n    void computeAccFromMapping(const MechanicalParams* mparams, MultiVecDerivId outAcc, ConstMultiVecDerivId inVel, ConstMultiVecDerivId inAcc ) override;\n\n    /// This method must be reimplemented by all mappings if they need to support composite accelerations\n    virtual void computeAccFromMapping(\n        const MechanicalParams* /* mparams */, const type::vector< DataVecDeriv_t<Out>*>& /* dataVecOutAcc */,\n        const type::vector<const DataVecDeriv_t<In1>*>& /* dataVecIn1Vel */,\n        const type::vector<const DataVecDeriv_t<In2>*>& /* dataVecIn2Vel */,\n        const type::vector<const DataVecDeriv_t<In1>*>& /* dataVecIn1Acc */,\n        const type::vector<const DataVecDeriv_t<In2>*>& /* dataVecIn2Acc */)\n    {\n    }\n"
+        },
+        {
+          "line": 180,
+          "text": "\n    /// This method must be reimplemented by all mappings if they need to support composite accelerations\n    virtual void computeAccFromMapping(\n        const MechanicalParams* /* mparams */, const type::vector< DataVecDeriv_t<Out>*>& /* dataVecOutAcc */,\n        const type::vector<const DataVecDeriv_t<In1>*>& /* dataVecIn1Vel */,\n        const type::vector<const DataVecDeriv_t<In2>*>& /* dataVecIn2Vel */,\n        const type::vector<const DataVecDeriv_t<In1>*>& /* dataVecIn1Acc */,\n        const type::vector<const DataVecDeriv_t<In2>*>& /* dataVecIn2Acc */)\n    {\n    }\n\n    void init() override;\n\n    /// Disable the mapping to get the original coordinates of the mapped model."
+        }
+      ]
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.h",
+      "sha256": "e4e7f8f78d117073adadd2b1eee03eb69c3ddd756501b1a0e58d0262e969655d",
+      "acceleration_callback_occurrences": 0,
+      "snippets": []
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mapping.NonLinear/sofa/component/mapping/nonlinear/RigidMapping.inl",
+      "sha256": "ad2f9a7a42c1104cc1b5b27c216e9c3a5abc1d6edafb3707b9330536eb39cc6b",
+      "acceleration_callback_occurrences": 0,
+      "snippets": []
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/plugins/ArticulatedSystemPlugin/include/ArticulatedSystemPlugin/ArticulatedSystemMapping.h",
+      "sha256": "fc8fcbaf0ddf95bf362e8e1a362a089d68a3aa4933afd704340ce60042675305",
+      "acceleration_callback_occurrences": 0,
+      "snippets": []
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/plugins/ArticulatedSystemPlugin/include/ArticulatedSystemPlugin/ArticulatedSystemMapping.inl",
+      "sha256": "b2397da24b486790bee80eb834ebe5b1bf8d4b2d12f6506b04646bc67e983288",
+      "acceleration_callback_occurrences": 0,
+      "snippets": []
+    },
+    {
+      "path": "/home/ubuntu/SOFA/v26.06.00/include/Sofa.Component.Mass/sofa/component/mass/UniformMass.inl",
+      "sha256": "cb5a8db97f8d794523093fab6418146d62a528744d78bd099dec524ac771c5b4",
+      "acceleration_callback_occurrences": 0,
+      "snippets": [
+        {
+          "line": 70,
+          "text": "    , d_showCenterOfGravity ( initData ( &d_showCenterOfGravity, false, \"showGravityCenter\", \"display the center of gravity of the system\" ) )\n    , d_showAxisSize ( initData ( &d_showAxisSize, 1.0f, \"showAxisSizeFactor\", \"factor length of the axis displayed (only used for rigids)\" ) )\n    , d_computeMappingInertia ( initData ( &d_computeMappingInertia, false, \"compute_mapping_inertia\", \"to be used if the mass is placed under a mapping\" ) )\n    , d_showInitialCenterOfGravity ( initData ( &d_showInitialCenterOfGravity, false, \"showInitialCenterOfGravity\", \"display the initial center of gravity of the system\" ) )\n    , d_showX0 ( initData ( &d_showX0, false, \"showX0\", \"display the rest positions\" ) )\n    , d_localRange ( initData ( &d_localRange, Vec<2,int> ( -1,-1 ), \"localRange\", \"optional range of local DOF indices. \\n\"\n                                                                                   \"Any computation involving only indices outside of this range \\n\"\n                                                                                   \"are discarded (useful for parallelization using mesh partitioning)\" ) )\n    , d_indices ( initData ( &d_indices, \"indices\", \"optional local DOF indices. Any computation involving only indices outside of this list are discarded\" ) )\n    , d_preserveTotalMass( initData ( &d_preserveTotalMass, false, \"preserveTotalMass\", \"Prevent totalMass from decreasing when removing particles.\"))\n{\n    constructor_message();\n\n"
+        },
+        {
+          "line": 471,
+          "text": "\ntemplate <class DataTypes>\nvoid UniformMass<DataTypes>::addForce ( const core::MechanicalParams*, DataVecDeriv& vf, const DataVecCoord& /*x*/, const DataVecDeriv& /*v*/ )\n{\n    //if gravity was added separately (in solver's \"solve\" method), then nothing to do here\n    if ( this->m_separateGravity.getValue() )\n        return;\n\n    helper::WriteAccessor<DataVecDeriv> f = vf;\n\n    // weight\n    const SReal* g = getContext()->getGravity().ptr();\n    Deriv theGravity;\n    DataTypes::set"
+        }
+      ]
+    }
+  ],
+  "source_sha256": "7f2141c4d778b129425dfbbbc23b640881a7549c745fa75bcde7aef0325ef16d",
+  "prior_native_evidence": {
+    "open_parallel_convective1806": "3f22f827558ac3d7e82e3ecd315f31b3eb0a5505b3d9de5714dfdd0611a1e52b",
+    "open_parallel_mapping_inertia1807": "7556089e68d6da8d3fb2d26cf1963438a7a2199901af6d02ba513aa5f30175ad",
+    "open_convective_reference1808": "8eb6b778c721cf05ea0a49527068ddf7f82c751b1db7021e373fb1346be8ab7c"
+  },
+  "native_run": false,
+  "scope": "Public installed template source audit ONLY. Base Mapping/Multi2Mapping expose documented J*a+dJ*v callback with empty default body; selected derived header/inl do not override it. UniformMass addForce ignores x/v. Prior actual1806/07 confirms missing response for THIS graph. This does NOT claim all installed plugins/compiled code/configurations are unsupported. No field/flag/SDK/force/ODE modification or unchanged Native replay. P0 stays blocked until a concrete supported composite force path is identified; proceed independent mechanisms/performance analysis."
+}

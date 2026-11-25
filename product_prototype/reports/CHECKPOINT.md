@@ -1,3 +1,22 @@
+## Current1821 — actual cable-rate observer qualified over .6s prefix
+
+Startf804e4f; feature saves20d51bd,146aba9; latest save=`git log -1`.
+1811 installed selected Mapping acceleration route BLOCKED;1812 different
+direct tendon finite spans REJECTED(-5.294722mm object gap,48FEM hits).
+1813/1815 matched actual1586/1741 row/velocity budgets agree to3.092e-13m/s.
+1741 delta-v1.6s-to-peak includes+29.018647mm/s vertical despite mean weight
+support; this is an impulse inventory, not a new causal cure or grasp PASS.
+1818 actual accepted cable rates independently checked by directional FD.
+1820 NEW Native4steps and1821 NEW Native240steps/.6s observer trials PASS:
+actual q/v/object impulse difference0, sensor error<=2.776e-17, saved Skin
+minimum volume ratio0.990449515;1821runtime87.100060s. No physical inputs,
+mapping, contacts or material changed. No new full100g Holding attempted.
+Next READY supported_motor_port_observation: distinguish actual cable J/free/
+accepted phases before any input-work or passive-control claim. No gain chosen.
+Full1741 still FAIL32.928255mm/s/30internalHoldrows. No UNBRACED/Numerical/
+Hardware PASS. No child running; original Raw/SDK/history preserved; no push.
+Read ACCEPTED_CABLE_RATE_20261125.md and AUTONOMOUS_RESUME.md.
+
 ## Current1808 — connected axial guide screened, Native finite-velocity FAIL
 
 Completed feature/evidence commit c5951ee; final documentation save = git HEAD.

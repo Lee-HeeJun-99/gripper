@@ -1,3 +1,41 @@
+## Current1821 — current handoff; no child running
+
+Startf804e4f; feature20d51bd/146aba9; observer feature/final commit=`git log -1`.
+Actual NEW Native1820foursteps and1821240steps/.6s completed normally;
+87.100060s latter runtime, exact0 saved-prefix q/v/object impulse difference,
+sensor error2.776e-17; min Skin volume ratio0.990449515. Read-only observer,
+not a new drive law or corrected dynamic model. Latest full100g1741 still
+FAIL32.928255mm/s/30internalHoldrows;1586 remains OBJECT-ONLY braced PASS.
+
+Implemented: native_composite_acceleration_audit.py(BLOCKED selectedgraph),
+direct_tendon_span_screen.py(REJECTED initial finite-wire interference),
+matched_finger_impulse.py and hold_velocity_budget.py(actual saved impulses),
+accepted_cable_rate.py, native_cable_rate/{Observer.cpp,CMakeLists.txt},
+native_cable_rate_pilot.py. All under product_prototype/{sofa,cad}.
+Evidence tags1811,1812,1813,1815,1818,1820,1821 never overwrite/reexecute.
+Current reports DIRECT_TENDON_AND_COMPOSITE_API, MATCHED_HOLD_IMPULSE,
+ACCEPTED_CABLE_RATE_20261125.md include actual commands and limitations.
+
+Next READY supported_motor_port_observation (not chosen gain/active control):
+actual accepted geometry rate is now available. Verify force/J/free-motion/
+accepted phase on a small Native coupon before any discrete power/passivity
+claim. Existing finger CSV force_raw/command_Ns are available; do not claim
+input force globally unavailable. Accepted geometric power alone is not the
+applied previous-linearized cable Jacobian work. Reuse prior force-unit proofs,
+not new T/dt/damping scan. Never directly change q/v or disable collision.
+
+Resume checks (read-only):
+```
+git status --short
+git log -8 --oneline
+/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/tools/research_queue.py
+```
+Exact existing proof: results/cable_rate_deformed1821/{observer_assessment.json,
+preflight.json,scene.scn,producer.py,Observer.cpp,process/command.json}.
+New bounded execution only after explicitly defining phase observation and
+independent expected result; never reuse an existing tag. No session-external
+continuation claimed. Real wire/material/joint data remain NOT MEASURED.
+
 ## Current1808 — axial mechanism advances, finite-velocity Native contract FAIL
 
 Last completed feature/evidence commit: c5951ee (full SHA from git rev-parse).

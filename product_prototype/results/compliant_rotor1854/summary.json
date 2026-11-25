@@ -1,0 +1,88 @@
+{
+  "status": "FAIL_NATIVE_COMPLIANT_ROTOR",
+  "records": [
+    {
+      "nodes": 3,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.16895198612473905,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "a8339b19c82843fe4801695cdad3520644b3561b0377b3c2840ab1639984f5a2",
+          "command.json": "1341213b1b8b0b5c2d6d86d4d0670efe09515fcd4ded05a170a30bfde2472b39",
+          "stderr.log": "9fde6978366d7530de0b87c23689df3cfeb0f82124fa7b89aa37c74f07b90b34",
+          "process.json": "ff8091693910fbb002cd6cad1ea85692239ab497add75ca72654123f7e60b408"
+        }
+      },
+      "status": "FAIL_COMPLIANT_ROTOR_STATIC",
+      "scene_sha256": "cebc199e3c216d4eadbc0faa852bd5c9aee8c674e3ffcb2022eb13a0d877f310",
+      "source_scene_sha256": "9ac79beac4de0713ebceb33b64a571be3ff46a922fa02925971e96ab564f5f8a",
+      "errors": [
+        "[ERROR]   [Node(rotorPorts)] Object type RigidMapping<> was not created  ",
+        "[ERROR]   [SceneLoaderXML] Node initialization failed. "
+      ]
+    },
+    {
+      "nodes": 5,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1361881939228624,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "07cc59609d6e89d4ef4f99a3247404a91d9766b1ddca505b5e80a44be0bd881a",
+          "command.json": "168b7076c6bcd7354e7e7e74bcf5f3f064985cd4f96dad80d75a3eee931a1183",
+          "stderr.log": "9fde6978366d7530de0b87c23689df3cfeb0f82124fa7b89aa37c74f07b90b34",
+          "process.json": "1763e7264c3f729857be31209fc5bb1ad7daf7300dc31418a7b1956e8347742f"
+        }
+      },
+      "status": "FAIL_COMPLIANT_ROTOR_STATIC",
+      "scene_sha256": "f96374fe1a6283846860fe8216e14406405acded4eb41c31b4c951908fc7c53a",
+      "source_scene_sha256": "74222d910a66205ea221b9a22a57596488bf8385fb6dbd62366f18da4bcbc1e7",
+      "errors": [
+        "[ERROR]   [Node(rotorPorts)] Object type RigidMapping<> was not created  ",
+        "[ERROR]   [SceneLoaderXML] Node initialization failed. "
+      ]
+    },
+    {
+      "nodes": 9,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1706485350150615,
+        "pid": 44,
+        "artifacts": {
+          "stdout.log": "88a51a115887f1968ccf8b5e0a5ad1652f418cf1a08e9e23e1d87911764d240e",
+          "command.json": "ac27c1824884af96bb15b3b62fc95af9fb812671b4edce916546e74d028cec8d",
+          "stderr.log": "9fde6978366d7530de0b87c23689df3cfeb0f82124fa7b89aa37c74f07b90b34",
+          "process.json": "f1e086940c207df8cf80c515852f2c0a0e5790e1458c7fb1a5c57e8dbb525ecf"
+        }
+      },
+      "status": "FAIL_COMPLIANT_ROTOR_STATIC",
+      "scene_sha256": "20dc247bda3c450ff0b1b3afb4c7e86e647c90fbb52c4b2a7c9fd0b6107787ec",
+      "source_scene_sha256": "942a687cde5c9fd276a57c8e19c285eacb9af8989c1fc8634c52dc221d7238b8",
+      "errors": [
+        "[ERROR]   [Node(rotorPorts)] Object type RigidMapping<> was not created  ",
+        "[ERROR]   [SceneLoaderXML] Node initialization failed. "
+      ]
+    }
+  ],
+  "mesh_pairs": [],
+  "reference": {
+    "E_assumed_Pa": 250000000.0,
+    "G_Pa": 96153846.15384614,
+    "input_dead_load_N": 1e-05,
+    "output_resisting_dead_load_N": 5e-06,
+    "shaft_end_force_z_N": -1.5000000000000002e-05,
+    "shaft_end_moment_x_Nm": -5.0000000000000004e-08,
+    "shaft_end_moment_y_Nm": 1.75e-08,
+    "tip_rotation_x_rad": -0.0002542404722927173,
+    "tip_rotation_y_rad": 0.0001564556752570568,
+    "tip_z_m": -2.786866715516324e-07,
+    "input_z_m": -3.0557749073643904e-06,
+    "output_z_m": 2.185490213747012e-06
+  },
+  "source_sha256": "22e46f86e1d07963726ee0ad4b3886f36dccea89d16f2cc81c83f097879b75df",
+  "scope": "Actual static Native BeamFEM + RigidMapping + dead-load force inversion, no ideal point joints or prescribed beam deformation. Canonical shaft axisX is rigidly equivalent to vertical geometry1852 after whole-frame rotation; actual placed assembly/cable/contact not tested. First-order Euler compliance matches installed BeamFEM zero shear-area model, not measured PET. Ports represent a rigid hub/plate without strength or dynamic mass. No CableConstraint, motor power, dynamic convergence, pin retention, supported dorsal spine, Finger or100ggrasp qualification."
+}

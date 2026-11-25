@@ -1,0 +1,113 @@
+{
+  "status": "PASS_STATIC_TORSIONAL_PIVOT_MESH_REFERENCE_SCOPE",
+  "records": [
+    {
+      "nodes": 3,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.10436147614382207,
+        "pid": 100,
+        "artifacts": {
+          "stdout.log": "17a1f763e225fa1cb24c26a5665bfe9ae88daa8c0e30c565bb0e18229302a630",
+          "command.json": "d4fd1d81347793557c717c30876817631087ef4ce4a126eab43973595a4db7ab",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "3233c0a7d30d3633860638ded1630e3c7604885af70facd5d795a6c2b8327736"
+        }
+      },
+      "status": "PASS_STATIC_TORSIONAL_PIVOT_REFERENCE_ONLY",
+      "source_scene_sha256": "9ac79beac4de0713ebceb33b64a571be3ff46a922fa02925971e96ab564f5f8a",
+      "scene_sha256": "faa432075d6f6d624a0179fb12fadd413e6db8dad5e0f95bfce8f9777905d9ef",
+      "errors": [],
+      "tip_angle_rad": 0.41280055124184967,
+      "angle_reference_relative_error": 2.6894901697326075e-16,
+      "maximum_centreline_translation_m": 0.0,
+      "last_state_change": 0.0
+    },
+    {
+      "nodes": 5,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.10399295203387737,
+        "pid": 101,
+        "artifacts": {
+          "stdout.log": "559890c683a4492a1df1dd78cfef5088fce9537b76c083f98327f10bdc238445",
+          "command.json": "4fd2f345718bbdf87ca06e108cd98739d7d3b63abc7ad628e60dbbbefddbe2ef",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "507e4b44332c933034955df986cac894ac5a38717ff5927f50faa15db7426372"
+        }
+      },
+      "status": "PASS_STATIC_TORSIONAL_PIVOT_REFERENCE_ONLY",
+      "source_scene_sha256": "74222d910a66205ea221b9a22a57596488bf8385fb6dbd62366f18da4bcbc1e7",
+      "scene_sha256": "4e9ecdde0960aae778e82941b87312867a44ef4ae818d80e1817ad03c6cb2c31",
+      "errors": [],
+      "tip_angle_rad": 0.41280055124184967,
+      "angle_reference_relative_error": 2.6894901697326075e-16,
+      "maximum_centreline_translation_m": 0.0,
+      "last_state_change": 0.0
+    },
+    {
+      "nodes": 9,
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.10471308417618275,
+        "pid": 102,
+        "artifacts": {
+          "stdout.log": "48e3a9ebe63b38c8aae6f8ae4dbfd4cf9895e116fdf196b03469b82e424f537b",
+          "command.json": "d05881f7c6328df7e4002e2c83f545b04a115d37dd1650b0c3e4893626f9b8b9",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "5be91bf329a9672c41b8587ed0b2c739f3b632436a0f237b974b0cfc144f9f88"
+        }
+      },
+      "status": "PASS_STATIC_TORSIONAL_PIVOT_REFERENCE_ONLY",
+      "source_scene_sha256": "942a687cde5c9fd276a57c8e19c285eacb9af8989c1fc8634c52dc221d7238b8",
+      "scene_sha256": "fb9612298a9a977b99c9292526397059a73d9f41819b1fb11dfadad206739191",
+      "errors": [],
+      "tip_angle_rad": 0.4128005512418495,
+      "angle_reference_relative_error": 6.723725424331519e-16,
+      "maximum_centreline_translation_m": 0.0,
+      "last_state_change": 0.0
+    }
+  ],
+  "mesh_pairs": [
+    {
+      "nodes": [
+        3,
+        5
+      ],
+      "angle_relative_difference": 0.0
+    },
+    {
+      "nodes": [
+        3,
+        9
+      ],
+      "angle_relative_difference": 4.0342352545989123e-16
+    },
+    {
+      "nodes": [
+        5,
+        9
+      ],
+      "angle_relative_difference": 4.0342352545989123e-16
+    }
+  ],
+  "configuration": {
+    "length_m": 0.003,
+    "radius_m": 0.00025,
+    "E_assumed_Pa": 250000000.0,
+    "nu_assumed": 0.3,
+    "G_Pa": 96153846.15384614,
+    "J_m4": 6.135923151542566e-15,
+    "target_angle_rad": 0.4128005512418498,
+    "applied_moment_Nm": 8.118309164533329e-05
+  },
+  "reference_outer_shear_strain": 0.03440004593682082,
+  "actual_allowable_shear_strain": null,
+  "root_torque_reaction_Nm": null,
+  "strain_energy_J": null,
+  "source_sha256": "7bb049914701ee6fe8dcdae48457249ffcaef645a79674dc06c7ab21a6f06ce5",
+  "scope": "Pure torsion in stock circular BeamFEM, canonical beam axisX; physical vertical pivot requires corresponding frame placement and compound force/bending tests. Torsional model is distinct from bending; no zero-relative-error floor added, centreline translation checked absolute1e-12. Assumed linear material at3.44percent reference shear, actual validity NOT MEASURED. No dynamic/transmission/Finger/grasp/hardware PASS."
+}

@@ -1,0 +1,52 @@
+{
+  "status": "PASS_STATIC_PLACEMENT_CONTRACT",
+  "records": [
+    {
+      "placement": "vertical",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.13694118289276958,
+        "pid": 42,
+        "artifacts": {
+          "stdout.log": "9cbe23931bfbd4ca9389e219d9a08b4443ea357fd0c0a6e0f2b1a477d92322a9",
+          "command.json": "44a60322c3c23147d346d08d6b1b922a6be0a9bd34a5f351bcd27da5d3c35a2a",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "85535f5cc31c521143839236bbf8fd1623b1d0323412b00912469f01c8270112"
+        }
+      },
+      "status": "PASS_WHOLE_FRAME_STATIC_OBJECTIVITY_ONLY",
+      "scene_sha256": "67d504fe2133264a489395c071219f1b26cef91d25a407a043fcbfea72282308",
+      "reference_scene_sha256": "d8708fc8cc9f1c50ff2439ee86e0533d76a9f1e005cb0329b150b8976e2cedd5",
+      "errors": [],
+      "maximum_position_difference_m": 5.630122121280928e-19,
+      "maximum_orientation_difference_rad": 4.440892183286638e-16,
+      "maximum_port_difference_m": 1.511530294375299e-18
+    },
+    {
+      "placement": "oblique",
+      "process": {
+        "exit_code": 0,
+        "process_status": "exited",
+        "runtime_s": 0.1392309709917754,
+        "pid": 43,
+        "artifacts": {
+          "stdout.log": "cfc26103609756fc5806a36d769bfcac5af64613981a73134e752293cc199f71",
+          "command.json": "245ac6c658e3f5710edcbcd446b563bf272f3c078d85582e940ab52c3cbcb2b6",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "process.json": "892a2c85f39126826bc65fd261dc1ccf108440a55cd9105d9a03e6cdf075d5e8"
+        }
+      },
+      "status": "PASS_WHOLE_FRAME_STATIC_OBJECTIVITY_ONLY",
+      "scene_sha256": "ecc19873fe983b48be30a2adda4ae97651c19b565efcba58f598397abaf70b9a",
+      "reference_scene_sha256": "d8708fc8cc9f1c50ff2439ee86e0533d76a9f1e005cb0329b150b8976e2cedd5",
+      "errors": [],
+      "maximum_position_difference_m": 4.336808689942018e-19,
+      "maximum_orientation_difference_rad": 3.5760557644884744e-16,
+      "maximum_port_difference_m": 3.469446951953614e-18
+    }
+  ],
+  "source_sha256": "a2f89bb52c02cfc5e5f1daba6ea9dc61a1666fbe9cf5fb1cd1debe13d38153e4",
+  "criteria": "All three actual saved states back-rotated to1855; translation/port<=1e-12m, relative orientation<=1e-12rad. No fitted correction or tolerance floor.",
+  "scope": "Actual whole-frame Native static BeamFEM and RigidMapping placement only. Same physical geometry, material, loads, full-root boundary and solver. No CableConstraint/dynamic mass, physical shaft fatigue/retention, wire routing or100g Holding qualification."
+}

@@ -1,0 +1,790 @@
+[INFO]    [runSofa] PluginRepository paths = /home/ubuntu/SOFA/v26.06.00/lib:/home/ubuntu/SOFA/v26.06.00/plugins
+[INFO]    [runSofa] DataRepository paths = /home/ubuntu/SOFA/v26.06.00/share/sofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/examples:/home/ubuntu/SOFA/v26.06.00/share/sofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/examples:/home/ubuntu/SOFA/v26.06.00/share/sofa/icons
+[INFO]    [runSofa] runSofaDataRepository paths = /home/ubuntu/SOFA/v26.06.00/share/sofa/gui/runSofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/gui/runSofa
+[INFO]    [GUIManager] Registered batch as a GUI.
+[INFO]    [runSofa] Automatic plugin loading disabled.
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so
+[WARNING] [RequiredPlugin()] No component has been registered from .
+It could be because: 
+ - the entrypoint registerObjects() has not been implemented;
+ - (deprecated since v24.12) no sofa::core::RegisterObject() has been called;
+ - your plugin does not add any component (i.e BaseObject) into the factory. In that case, RequiredPlugin is not useful for this kind of plugin.
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Mapping.NonLinear.so
+[INFO]    [SceneCheckerVisitor] Validating node "root" with checks: [SceneCheckCollisionPipelineAndModels, SceneCheckCollisionResponse, SceneCheckDeprecatedComponents, SceneCheckDuplicatedName, SceneCheckEmptyNodeName, SceneCheckMapping, SceneCheckMissingRequiredPlugin, SceneCheckSpecialCharacters, SceneCheckUsingAlias]
+[INFO]    [SceneCheckerVisitor] Finished validating node "root".
+[WARNING] [BlockGaussSeidelConstraintSolver(constraints)] Required data "maxIterations" has not been set. Falling back to default value: 1000
+[WARNING] [BlockGaussSeidelConstraintSolver(constraints)] Required data "tolerance" has not been set. Falling back to default value: 0.001
+[INFO]    [BatchGUI] Computing 3 iterations.  
+
+[INFO]    [NewtonRaphsonSolver(newton)] Initial squared residual norm: 1.25e-10
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #0
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 0.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 0
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #1
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 1.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 1
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #2
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 2.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 2
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #3
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 3.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 3
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #4
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 4.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 4
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #5
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 5.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 5
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #6
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 6.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 6
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #7
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 7.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 7
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #8
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 8.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 8
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #9
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 9.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 9
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #10
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 10.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 10
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #11
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 11.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 11
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #12
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 12.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 12
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #13
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 13.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 13
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #14
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 14.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 14
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #15
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 15.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 15
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #16
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 16.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 16
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #17
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 17.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 17
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #18
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 18.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 18
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #19
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 19.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 19
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #20
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 20.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 20
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #21
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 21.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 21
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #22
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 22.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 22
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #23
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 23.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 23
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #24
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 24.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 24
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[WARNING] [NewtonRaphsonSolver(newton)] Newton-Raphson method failed to converge after 25 iteration(s) with residual squared norm = 1.25e-10. 
+[INFO]    [BatchGUI] Processing.  
+
+[INFO]    [NewtonRaphsonSolver(newton)] Initial squared residual norm: 1.25e-10
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #0
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 0.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 0
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #1
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 1.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 1
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #2
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 2.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 2
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #3
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 3.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 3
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #4
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 4.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 4
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #5
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 5.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 5
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #6
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 6.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 6
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #7
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 7.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 7
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #8
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 8.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 8
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #9
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 9.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 9
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #10
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 10.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 10
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #11
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 11.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 11
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #12
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 12.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 12
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #13
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 13.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 13
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #14
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 14.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 14
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #15
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 15.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 15
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #16
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 16.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 16
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #17
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 17.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 17
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #18
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 18.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 18
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #19
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 19.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 19
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #20
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 20.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 20
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #21
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 21.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 21
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #22
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 22.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 22
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #23
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 23.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 23
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #24
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 24.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 24
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[WARNING] [NewtonRaphsonSolver(newton)] Newton-Raphson method failed to converge after 25 iteration(s) with residual squared norm = 1.25e-10. 
+[INFO]    [NewtonRaphsonSolver(newton)] Initial squared residual norm: 1.25e-10
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #0
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 0.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 0
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #1
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 1.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 1
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #2
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 2.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 2
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #3
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 3.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 3
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #4
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 4.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 4
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #5
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 5.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 5
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #6
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 6.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 6
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #7
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 7.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 7
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #8
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 8.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 8
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #9
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 9.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 9
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #10
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 10.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 10
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #11
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 11.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 11
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #12
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 12.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 12
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #13
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 13.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 13
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #14
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 14.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 14
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #15
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 15.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 15
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #16
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 16.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 16
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #17
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 17.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 17
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #18
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 18.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 18
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #19
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 19.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 19
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #20
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 20.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 20
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #21
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 21.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 21
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #22
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 22.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 22
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #23
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 23.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 23
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #24
+[WARNING] [SparseLDLSolver(linear)] Invalid Linear System to solve (size mismatch). Please insure that there is enough constraints (not rank deficient).
+[WARNING] [NewtonRaphsonSolver(newton)] Line search failed at Newton iteration 24.
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 24
+* Squared residual norm = 1.25e-10
+* Line search status: FAILED
+* Residual norm = 1.11803e-05 (absolute threshold = 1e-12)
+* Successive relative ratio = 1 (threshold = 1e-05, previous residual norm = 1.11803e-05)
+* residual initial ratio = 1 (threshold = 1e-12)
+[WARNING] [NewtonRaphsonSolver(newton)] Newton-Raphson method failed to converge after 25 iteration(s) with residual squared norm = 1.25e-10. 
+[INFO]    [BatchGUI] 3 iterations done in 0.006165 s ( 486.618 FPS).  
+
+[INFO]    [BatchGUI] 3 iterations done in 0.006167 s ( 486.46 FPS).  
+

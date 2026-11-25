@@ -1,0 +1,45 @@
+[INFO]    [runSofa] PluginRepository paths = /home/ubuntu/SOFA/v26.06.00/lib:/home/ubuntu/SOFA/v26.06.00/plugins
+[INFO]    [runSofa] DataRepository paths = /home/ubuntu/SOFA/v26.06.00/share/sofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/examples:/home/ubuntu/SOFA/v26.06.00/share/sofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/examples:/home/ubuntu/SOFA/v26.06.00/share/sofa/icons
+[INFO]    [runSofa] runSofaDataRepository paths = /home/ubuntu/SOFA/v26.06.00/share/sofa/gui/runSofa:/home/ubuntu/SOFA/v26.06.00/share/sofa/gui/runSofa
+[INFO]    [GUIManager] Registered batch as a GUI.
+[INFO]    [runSofa] Automatic plugin loading disabled.
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/ubuntu/SOFA/v26.06.00/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/cad/build_default_control332/libReGripProductSequence.so
+[WARNING] [RequiredPlugin()] No component has been registered from .
+It could be because: 
+ - the entrypoint registerObjects() has not been implemented;
+ - (deprecated since v24.12) no sofa::core::RegisterObject() has been called;
+ - your plugin does not add any component (i.e BaseObject) into the factory. In that case, RequiredPlugin is not useful for this kind of plugin.
+[INFO]    [SceneCheckerVisitor] Validating node "root" with checks: [SceneCheckCollisionPipelineAndModels, SceneCheckCollisionResponse, SceneCheckDeprecatedComponents, SceneCheckDuplicatedName, SceneCheckEmptyNodeName, SceneCheckMapping, SceneCheckMissingRequiredPlugin, SceneCheckSpecialCharacters, SceneCheckUsingAlias]
+[INFO]    [SceneCheckerVisitor] Finished validating node "root".
+[WARNING] [BlockGaussSeidelConstraintSolver(constraints)] Required data "maxIterations" has not been set. Falling back to default value: 1000
+[WARNING] [BlockGaussSeidelConstraintSolver(constraints)] Required data "tolerance" has not been set. Falling back to default value: 0.001
+[INFO]    [BatchGUI] Computing 3 iterations.  
+
+[INFO]    [NewtonRaphsonSolver(newton)] Initial squared residual norm: 6.59069e-09
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration #0
+[INFO]    [NewtonRaphsonSolver(newton)] Line search succeeded after 1 iterations
+[INFO]    [NewtonRaphsonSolver(newton)] Newton iteration results:
+* Current iteration = 0
+* Squared residual norm = 5.93257e-38
+* Line search status: SUCCESSFUL
+* Residual norm = 2.43569e-19 (absolute threshold = 1e-12)
+* Successive relative ratio = 3.00024e-15 (threshold = 1e-05, previous residual norm = 8.11831e-05)
+[INFO]    [NewtonRaphsonSolver(newton)] [CONVERGED] residual successive ratio is smaller than the threshold (1e-05) after 1 Newton iterations.
+[INFO]    [BatchGUI] Processing.  
+
+[INFO]    [NewtonRaphsonSolver(newton)] The equation to solve is satisfied with the initial guess. The residual squared norm is 5.93257e-38. The threshold for convergence is 1e-24
+[INFO]    [NewtonRaphsonSolver(newton)] The equation to solve is satisfied with the initial guess. The residual squared norm is 5.93257e-38. The threshold for convergence is 1e-24
+[INFO]    [BatchGUI] 3 iterations done in 0.000195 s ( 15384.6 FPS).  
+
+[INFO]    [BatchGUI] 3 iterations done in 0.000196 s ( 15306.1 FPS).  
+

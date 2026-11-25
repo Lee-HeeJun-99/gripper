@@ -1,6 +1,11 @@
 ## Current1821 — current handoff; no child running
 
-Startf804e4f; feature20d51bd/146aba9; observer feature/final commit=`git log -1`.
+Startf804e4f; feature20d51bd/146aba9/ed905e8; final checkpoint=`git log -1`.
+1823 preservation audit:2353 selected manifest records unchanged, original102
+queue entries unchanged, SDK/old binaries unchanged, helper7PASS. Queue121:
+PASS61/READY1/BLOCKED12/REJECTED19/FAIL27/NOT MEASURED1. No RUNNING task.
+Queue selector actually executed; corrected new task's evidence reference to
+the existing sector_clutch_prefix1715 (no original entry changed).
 Actual NEW Native1820foursteps and1821240steps/.6s completed normally;
 87.100060s latter runtime, exact0 saved-prefix q/v/object impulse difference,
 sensor error2.776e-17; min Skin volume ratio0.990449515. Read-only observer,

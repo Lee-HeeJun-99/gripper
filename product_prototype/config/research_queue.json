@@ -47,7 +47,7 @@
       "failure_criteria": ["No supported physical mass assembly, incorrect Native tensor/response, mutated frozen results"],
       "failure_alternatives": ["Document supported Native API blocker; independent material/actuator interface rather than force/dt scan"],
       "successors": ["Native cable impulse and finite-velocity compliant-root coupon if initial contract passes"],
-      "maximum_execution_cost": "Small API/mass analysis followed by at most three one-step4GiB/60s children"
+      "maximum_execution_cost": "Small API/mass analysis followed by six one-step4GiB/60s children"
     },
     {
       "id": "compliant_root_initial_elastic_response",
@@ -68,18 +68,34 @@
     {
       "id": "compliant_root_initial_cable_impulse",
       "priority": 0,
-      "status": "READY",
+      "status": "PASS",
       "scope": "New compliant shaft one-step Native constrained response, not finite-speed closure",
       "goal": "Check actual Cable impulse through mapped rotor port and initial elastic mass operator",
       "hypothesis": "FreeMotion Euler and GenericConstraintCorrection transmit prescribed cable impulse through the new physical compliance consistently with independently checked initial A",
       "prerequisites": ["compliant_root_initial_elastic_response"],
-      "evidence": ["compliant_mass1860", "compliant_elastic1862"],
+      "evidence": ["compliant_mass1860", "compliant_elastic1862", "compliant_cable1864"],
       "expected_outputs": ["Cable-only and opposing output load one-step Native trials"],
       "validation_criteria": ["Prescribed Tdt observed; parent velocity abs1e-12 and relative1e-9 vs independent M+dt²K; no errors"],
       "failure_criteria": ["Impulse or velocity mismatch"],
       "failure_alternatives": ["Analyze force/correction contract without blind solver scans"],
       "successors": ["Bounded finite-speed conservation test after initial contract"],
       "maximum_execution_cost": "Two one-step4GiB/60s children"
+    },
+    {
+      "id": "compliant_root_finite_velocity_prerequisite",
+      "priority": 0,
+      "status": "READY",
+      "scope": "Independent new compliant mechanism finite-speed feasibility; not another blind run of old open-link coupon",
+      "goal": "Determine whether the supported new shaft/rotor architecture can carry actual mixed-motion input without missing mapped convective force",
+      "hypothesis": "Axial torsion has a different inertial bias from generic bending; real input ports excite both and therefore require a supported Native force path before physical dynamic qualification",
+      "prerequisites": ["compliant_root_initial_cable_impulse"],
+      "evidence": ["compliant_mass1860", "compliant_elastic1862", "compliant_cable1864"],
+      "expected_outputs": ["Independent physical velocity-dependent wrench of actual finite cell/rotor; installed Native implementation feasibility; only a genuinely new supported implementation warrants another Native trial"],
+      "validation_criteria": ["Separate pure torsion and actual mixed-motion case; preserve1806/1807failures; no assumption from initial M or static placement"],
+      "failure_criteria": ["Required convective/gyro path not supported; same failed architecture without new implementation"],
+      "failure_alternatives": ["BLOCKED with exact force terms, or a distinct physical transmission mechanism; do not increase tension or tune dt"],
+      "successors": ["Bounded finite-speed Cable trial only after physical force-path prerequisite"],
+      "maximum_execution_cost": "Read-only source/independent wrench analysis first; no automatic full Native launch"
     },
     {
       "id": "root_flexure_operating_reference",

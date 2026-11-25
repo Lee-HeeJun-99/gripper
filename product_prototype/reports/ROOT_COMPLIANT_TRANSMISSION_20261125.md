@@ -81,6 +81,20 @@ values are in1862summary; no free-/accepted-state mixing. This is initial
 M+dt²K only, not whole-path dynamic accuracy. Actual command:
 `python product_prototype/sofa/compliant_elastic_coupon.py --tag compliant_elastic1862`.
 
+1864actually uses FreeMotionAnimationLoop/EulerImplicit/GenericConstraintCorrection
+and Native CableConstraint at1e-5N; command value1e-9Ns=Tdt, dt0.0001s.
+Cable-only and opposing output5e-6N cases bothPASS: observed impulse error0,
+maximum parent velocity difference2.711e-19, relative vector9.736e-17.
+Children0.17225/0.21005s, normal/noERROR. Same mapped finite masses and initial
+BeamFEM; no ideal pin loop or q/v correction. Actual command:
+`python product_prototype/sofa/compliant_cable_coupon.py --tag compliant_cable1864`.
+This initial contract does not cure finite-speed inertial bias. Installed
+UniformMass.inl generic addForce uses gravity, and RigidMapping.applyDJT is
+not by itself proof of a supported convective/gyroscopic force. Need actual
+finite-cell/rotor velocity-dependent wrench, especially because input port
+loads excite bending as well as axial torsion. Reuse known1806/1807 evidence
+where the same limitation applies; no redundant Native failure is justified.
+
 ## Provenance / reproduction
 
 SDK26.06.00; frozen journal binary

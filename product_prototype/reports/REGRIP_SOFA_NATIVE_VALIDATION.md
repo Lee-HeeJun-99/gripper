@@ -1,3 +1,19 @@
+## Current1837 — scoped cable phase evidence, grasp status unchanged
+
+Native1825control/observer pure mass5steps each: exact q/v purity, actual Jprev
+and impulse/position/kinetic identities within1e-12.1826separates convex cable
+length linearization excess from backward Euler kinetic loss;3/5positive
+Delta(K+T L) in this coupon, NOT global FEM/contact energy certification.
+B3actual1828/1829prefixes have exact0 q/v/impulse perturbation and positive
+saved FEM.1829force-string gateFAIL preserved;1833diagnoses240/240six-digit
+rounding with actual fullprecisionforce=solver EXACT. New typed1831Native100
+steps/.25s passes unchanged1e-12 sensor gates.1832actual parentJusesprevious
+arms while childaccepted v usesaccepted arms; mixed products not globalwork.
+1834/1837reject unconditional previous-sample damping sign assertions, not all
+controllers. No new full100gHolding, numerical/physical/hardware PASS added.
+Last full1741speed32.928255mm/s +30internalHoldrows FAIL retained. Source,
+actual commands/scene/plugin hashes in per-case evidence and current reports.
+
 ## Current1808 — initial operator PASS, finite-velocity mapping FAIL
 
 45actual bounded Native1step trials1784–1807, no new fullgrasp. Initial7coordinate

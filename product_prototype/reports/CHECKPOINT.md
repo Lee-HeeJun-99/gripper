@@ -1,3 +1,23 @@
+## Current1837 — actual cable phase/work measured, no new Holding PASS
+
+Starta8f4f44; feature d611804/09ffaa2; final checkpoint=`git log -1`.
+Actual5successful Native children:2pure-mass5step controls plus B3prefixes
+4/240/100steps. No new full100g test.1825actual previous-state J and impulse
+kinetic identities verified;1826separates geometric work excess and BE loss.
+1829actual .6s87.528s has exact0 trajectory change and positive saved FEM,
+but force-string observation gate FAIL retained.1833all240discrepancies EXACT
+six-digit rounding; full-precision native force=solver impulse EXACT0error.
+1831new typed100step/.25s43.162s observer passes unchanged1e-12 gate and
+prefix purity0.1832parent J matches previous arms; accepted child v uses
+accepted arms. No phase-inconsistent product called global actuator work.
+1834/1837reject unconditional delayed extra-damping sign claims (7accepted /
+5midpoint counterexamples). No chosen gain, actuator modification or SDK fix.
+Current queue125has0READY/RUNNING; this is NOT project completion. Supported
+coupled actuator-work/control contract remains BLOCKED. No extra fullgrasp
+justified by these observations; geometric Guide/wire/joint prerequisites
+from1800–1812remain. Read AUTONOMOUS_RESUME.md and B3_CABLE_PARENT_PHASE report.
+Latest full1741 still FAIL32.928255mm/s/30internalHoldrows; UNBRACED not achieved.
+
 ## Current1821 — actual cable-rate observer qualified over .6s prefix
 
 Startf804e4f; feature saves20d51bd,146aba9; latest save=`git log -1`.

@@ -1,4 +1,44 @@
-## Current1821 — current handoff; no child running
+## Current1837 — current handoff; no child running
+
+Starta8f4f44 clean; featuresd611804/09ffaa2; final save=`git log -1`.
+New source/actual commands/hashes and limitations:
+CABLE_PHASE_AND_WORK_20261125.md, B3_CABLE_PARENT_PHASE_20261125.md.
+Actual Native1825two5step controls,1828foursteps,1829.6s/240steps,
+1831.25s/100steps. All physical runs normal/noERROR/finite positive FEM;
+1829OBSERVATION FAIL remains due force-string rounding, not edited away.
+1833all240samples actual fullprecisionforce=solver EXACT0; new typed1831
+PASS with q/v/impulse difference0.1824factory failure and1830analysis refusal
+are separately preserved. Do not rerun any existing result directory.
+
+Measured applied Cable Jchild and rigid pullback BOTH use previous geometry;
+accepted child velocity uses accepted lever arms. Distinguish the conjugate
+generalized row product from accepted geometric dL/dt. Pure mass1826shows
+positive Delta(K+T L) in3of5steps; this is NOT global B3 energy evidence.
+Delayed force-reducing law's unconditional dissipation claim REJECTED:
+1834accepted-rate7counterexamples;1837midpoint-rate5counterexamples. No chosen
+gain, feedback activation, new forcefield/ODE or SDK change.
+
+Next research is NOT another damping/gain/dt or old force test. Need a concrete
+sampled-actuator energy/control contract or independent Guide/transmission
+mechanism meeting earlier wire/joint/inertia prerequisites. Existing open-link
+finite-speed1806/1807, twelve wire nonfits and50um-vs200um gap remain blockers.
+Re-evaluate independent mechanisms against these actual proofs before creating
+a new READY task; current0READY does NOT prove all mechanisms impossible.
+No new full Holding/Lift attempted because these hypotheses did not establish
+a new physically justified drive/geometry improvement. Latest1741UNBRACEDFAIL
+unchanged;1586OBJECT-ONLY braced PASS remains historical, not final success.
+
+Current125tasks:PASS63/REJECTED20/FAIL28/BLOCKED13/NOT MEASURED1;
+0RUNNING.1836audit2509selected manifests unchanged, original102entries
+unchanged, SDK and old compiled plugins unchanged, helper7PASS; additional
+4deterministic cable algebra tests PASS (not physical certification).
+Read-only resume: git status/log, research_queue.py, current reports and actual
+per-case summaries/phase_assessment.json; guard compiled source/binary before
+new Native. Current wrappers point at typed1831build with identity checks;
+older producer snapshots reference their immutable historical binaries.
+No push/history rewrite. All large CSV local; no session-external continuation.
+
+## Current1821 — historical handoff; superseded above
 
 Startf804e4f; feature20d51bd/146aba9/ed905e8; final checkpoint=`git log -1`.
 1823 preservation audit:2353 selected manifest records unchanged, original102

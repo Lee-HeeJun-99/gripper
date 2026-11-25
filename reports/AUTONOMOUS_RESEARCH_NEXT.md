@@ -1,3 +1,15 @@
+## Current1837 — actual force phases known; no validated active remedy
+
+Read product_prototype/reports/AUTONOMOUS_RESUME.md and actual Git/queue.
+New bounded Native observations qualify previous-state child/parent cable rows
+and typed force Data, not a new actuator law or Holding. Force-string1829FAIL
+preserved; independent rounding proof1833and separate typed1831PASS recorded.
+Delayed rate-only incremental passivity assertion rejected by actual accepted
+and midpoint sign tests1834/1837. No gain/damping/dt/tension scan justified.
+Review supported discrete actuator energy contract or independent transmission
+mechanism with qualified wire/joint/mass/contact prerequisites, not repeated
+observer features. Queue0READY != project complete. Full1741UNBRACEDFAIL stays.
+
 ## Current1808 — do not promote initial mass/geometry to dynamic grasp
 
 Read product_prototype/reports/AUTONOMOUS_RESUME.md and actual Git/queue.

@@ -35,6 +35,9 @@ Actual baseline240samples contain7positive incremental-power coefficients.
 Thus an unconditional extra-damping argument is REJECTED. This is not proof
 of absolute active motor power, nor a controlled/counterfactual trajectory.
 No gain/force/dt sweep, controller activation or new full Holding is justified.
+1837 independently uses frozen-row MIDPOINT rate (rather than accepted rate):
+5positive coefficients remain. This likewise rejects the universal sign claim,
+not every feedback mechanism or a physically measured motor energy law.
 
 Remaining GOAL A:1741full100g still speed32.928255mm/s and30internalHoldrows FAIL.
 Guide geometry, finite wire, nonlinear joint inertia and real material gates
@@ -51,6 +54,8 @@ Actual commands (existing outputs must never be rerun):
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/delayed_port_passivity.py --tag delayed_port1834
 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/sofa/test_cable_work_contract.py
 ```
+1834 used its frozen producer's accepted-rate convention; current default is
+midpoint. Actual1837 command adds `--tag delayed_midpoint1837 --evaluation-rate midpoint`.
 Four deterministic algebra regressions PASS; these are NOT Native performance
 tests. Actual run snapshots contain the producer version at execution, observer
 source, scene, SHA256 and process command/runtime; use those for historical

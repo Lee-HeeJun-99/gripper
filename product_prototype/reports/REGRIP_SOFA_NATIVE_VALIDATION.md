@@ -1,3 +1,13 @@
+## Current1808 — initial operator PASS, finite-velocity mapping FAIL
+
+45actual bounded Native1step trials1784–1807, no new fullgrasp. Initial7coordinate
+mass and C2impulse contracts PASS; rotated default Rigid3tensor controls FAIL.
+Explicit world initial tensor and mapped point masses fix INITIAL mass only.
+1806/1807nonzero-velocity response fails physical inertial balance and momentum;
+independent1808reference verified2.113e-9relative. No gyro/Coriolis correction,
+SDK/ODE rewrite, q/v forcing or time/mesh gate relaxation. Latest1741graspFAIL.
+See OPEN_GUIDE_FREE_ROOT_20261125.md; no new numerical/physical product PASS.
+
 ## Current1768/1770 — grasp FAIL, new open-guide component evidence only
 
 Latest actual full100g1741:32.928255mm/s and30internalHold rows FAIL;

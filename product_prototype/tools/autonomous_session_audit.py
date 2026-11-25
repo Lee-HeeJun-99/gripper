@@ -7,9 +7,9 @@ from film_guarded_process import guarded
 from current_wire_manifest import digest
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);old=json.loads(subprocess.check_output(['git','show','05252d7:product_prototype/config/research_queue.json'],cwd=BASE.parent));current=json.loads((BASE/'config/research_queue.json').read_text());byid={t['id']:t for t in current['tasks']};changed=[t['id'] for t in old['tasks'] if byid.get(t['id'])!=t];assert not changed
+ p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--additional-manifests',nargs='*',default=[]);a=p.parse_args();out=BASE/'results'/a.tag;out.mkdir(exist_ok=False);old=json.loads(subprocess.check_output(['git','show','05252d7:product_prototype/config/research_queue.json'],cwd=BASE.parent));current=json.loads((BASE/'config/research_queue.json').read_text());byid={t['id']:t for t in current['tasks']};changed=[t['id'] for t in old['tasks'] if byid.get(t['id'])!=t];assert not changed
  manifests=['overnight_integrity1709','overnight_final_index1713','clutch_integrity1716','clutch_active_integrity1719','yoke_pilot_integrity1727','yoke_union_integrity1735','yoke_prefix_integrity1744','yoke_full_integrity1755','prismatic_integrity1759'];verified=0;bad=[];sdk_changes=[]
- for case in manifests:
+ for case in manifests+a.additional_manifests:
   d=json.loads((BASE/'results'/case/'summary.json').read_text())
   for r in d['records']:
    f=BASE.parent/r['path'];verified+=1

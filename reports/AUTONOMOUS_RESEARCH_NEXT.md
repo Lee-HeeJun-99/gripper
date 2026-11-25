@@ -1,3 +1,14 @@
+## Current1808 — do not promote initial mass/geometry to dynamic grasp
+
+Read product_prototype/reports/AUTONOMOUS_RESUME.md and actual Git/queue.
+Connected axial guide1799/1800/1802clears sampled solids/new FEM material only;
+wire/retention/50um-vs200umresponse budget remain BLOCKED. No fullNative launch.
+45actual one-step Native trials isolate initial mass and finite-velocity failure.
+1806/1807missing convective response confirmed by1808independent reference.
+Next requires documented supported coupled force path OR independent physical
+wire/joint prerequisites, not repeated initial matrices/flags/dt/CSG scans.
+Original100gUNBRACED target FAIL, no running worker or automatic restart.
+
 ## Current1778 — integrate physical fork bases/carriers next
 
 Read product_prototype/reports/AUTONOMOUS_RESUME.md.1772hinge sample sweep and

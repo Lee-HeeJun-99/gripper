@@ -1,3 +1,19 @@
+## Current1808 — connected axial guide screened, Native finite-velocity FAIL
+
+Startc231571; feature commits843e7fa/37e6ef8/891b594; final SHA git log -1.
+Actual new Native45one-step component trials, NO new B3/full100g execution.
+1784free-root initial mass PASS;1786–88rotated body tensor FAIL diagnosed1789;
+1790world initial tensor/1805same-mass point quadrature initial operators PASS.
+1806/1807finite velocity FAIL, Native velocity unchanged, momentum1.863137e-8Ns.
+1808independent FD reference PASS2.113e-9relative; not Native time convergence.
+1794coplanar assembly collides in1796stroke. Different axial1799parts connected,
+1800all21FKstates0solid intersections;1802all96newmaterial/FEMcell checks clear.
+Still12straight-wire nonfits; all-angle axial gap50um misses actual200umbuffer.
+Current mechanism NOT_NATIVE_READY; finite wire, retained pins, coupled inertial
+force/time/contact/mesh and hardware prerequisites remain. No gate relaxed.
+Latest full1741FAILspeed32.928255mm/s and30internalHoldrows retained.
+No Native child running; exact next review in AUTONOMOUS_RESUME.md.
+
 ## Current1778 — finite hinge continuation, UNBRACED100g still FAIL
 
 Start74e2d31; new feature commit f3d4ab8; final SHA git log -1.

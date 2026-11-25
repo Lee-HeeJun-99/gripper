@@ -1,3 +1,39 @@
+## Current1808 — axial mechanism advances, finite-velocity Native contract FAIL
+
+Startc231571 clean; commits843e7fa,37e6ef8,891b594; final SHA git log -1.
+1780–1808new evidence includes45actual one-step Native trials, not B3 grasp.
+Initial free-root7column mass PASS; rotated fixed-tensor controls FAIL;
+world initial tensor and same-mass mapped point quadrature initial operators PASS.
+1806/1807finite velocity FAIL: Native generalized velocities unchanged while
+physical initial balance requires change, momentum error1.863137e-8Ns.
+1808independent32point FD verifies required convective load2.113e-9relative.
+No unsupported custom solver, SDK patch, q/v callback or gate relaxation.
+
+Geometry: connected coplanar1794RESTsolid overlaps0but1796FKcollides at1mm.
+Different axial1.25mm plane1799retains all18feet and original tubes; all54parts
+connected;1800twenty-one0..2mmFKsamples0solid overlaps,1802new-material96FEM
+cells0overlap. Actual indexed float64 geometry, no dropped zero-volume sliver.
+Still12straight-wire overlaps and1803gap50um<unchangedNativebuffer200um.
+Pins unretained. BLOCKED for Native integration, not a new grasp PASS.
+Read OPEN_GUIDE_ASSEMBLY_20261125.md and OPEN_GUIDE_FREE_ROOT_20261125.md.
+
+Latest actual full100g1741 stays FAIL: speed32.928255mm/s,30internalHoldrows.
+No new UNBRACED, Lift, numerical or hardware PASS. No child running.
+Do NOT repeat1780–1808unchanged. First find a supported coupled convective-force
+contract (not just initial M or old free-ring gyro), or independently resolve
+actual curved-wire/bearing/contact-gap prerequisites. Explicitly review other
+tracks before adding a concrete new READY task; current blockers do not mean
+whole project completion or global impossibility of open-guide designs.
+Resume: git status/log; research_queue.py; cross-check case summaries/manifests.
+Original102queue/verdicts/Raw and SDK preserved; no push/history rewrite.
+1810audit independently verifies2639manifest records unchanged, original102
+queue entries identical, oldresults/binaries/SDKreferences unchanged, helper7PASS.
+Queue116has0READY/RUNNING; this is a prerequisite boundary, not project completion.
+Do not create an identical trial to fill the queue. Initial mass, C2 rows, finite
+velocity, actual finite solids/FEM and contact-gap hypotheses have been tested;
+wire material/contact, supported convective force and real joint measurements
+are next cross-track prerequisites, not assumed resolved by this checkpoint.
+
 ## Current1778 — physical hinges and joined links, NOT_NATIVE_READY
 
 Start74e2d31, feature commit f3d4ab8; final checkpoint SHA: git log -1.

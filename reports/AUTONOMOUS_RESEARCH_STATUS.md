@@ -1,3 +1,15 @@
+## Current1808/1810 — axial geometry progress, moving Native dynamics blocked
+
+New45one-step Native runs are component contracts, no full B3/grasp replay.
+Axial connected mechanism1799/1800/1802clears stored geometry/initialFEM checks,
+but finite wire, pins/contact buffer and convective dynamics block integration.
+1806/1807FAIL verified independently by1808. Original1741full100g speed32.928255
+mm/s and30internalHoldrows remain FAIL. No new UNBRACED/Lift/numerical/hardware
+PASS.1810preserves102originalqueue entries and2639manifest records; no old
+result/binary/SDK change. All children complete. Final local SHA git log -1;
+next review and exact evidence in product_prototype/reports/AUTONOMOUS_RESUME.md.
+No remote operation, history rewrite, criterion relaxation or external restart.
+
 ## Current1768/1770 — multiple new mechanisms, final grasp target NOT achieved
 
 Actual new100g2sNative1741 executed249.292s, valid saved FEM; speed32.9283mm/s

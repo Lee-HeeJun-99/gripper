@@ -1,3 +1,13 @@
+## Current1808 — connected axial prototype, retention not qualified
+
+Three-foot base/rear spine and carrier collar/cheek/ties are real new solids,
+not empty-space mappings. Axial linkage plane1.25mm is derived from tube1mm
+half-length +leaf.2mm half-thickness +nominal.05mm gap. Root stand-off follows
+actual foot-corner normal projection. Pins are STILL unretained; bearing
+friction/strength/tooling/materials NOT MEASURED.50umgap fails unchanged200um
+Native response budget. No complete assembly/STEP/physical qualification.
+Exact indexed NPZ authoritative; STL/PLY visualization may lose tiny topology.
+
 ## Current1768/1770 — finite concept, actual assembly still unqualified
 
 Closed sleeve1761 rejected by actual initial foreign solid and wire conflict.

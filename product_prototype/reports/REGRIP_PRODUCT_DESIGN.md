@@ -1,3 +1,13 @@
+## Current1808 — new axial mechanism candidate, not adopted product
+
+Actual root/carrier/link connections implemented. Coplanar motion1796REJECTED;
+axial-plane1799/1800sampled clear, all54parts connected, original18feet/tubes
+retained. New material1802initialFEMseparation clear. Straight finite wire,
+pin retention,200umNative contact budget and finite-velocity dynamics BLOCKED.
+No material/strength/mass/STEP/fabrication or UNBRACEDgrasp qualification.
+300part fabrication CAD and historical B3 remain separate and unchanged.
+See OPEN_GUIDE_ASSEMBLY_20261125.md; no silent substitution of old grasp result.
+
 ## Current1768/1770 — no new product adoption; actual open-guide seed
 
 New100g dorsal-yoke1741 FAIL retained. Captured closed sleeve1761 actual

@@ -39,3 +39,33 @@ tensor/state overwrite. Original1786/87/88 FAILs remain unchanged. Do not adopt
 1790initial-only correction as a full moving-FEM or grasp qualification.
 Feature1784commit37e6ef8. The next geometry task is routed root/carrier load
 paths, since the convex connection and pocket cuts are physically rejected.
+
+1795 actual internal two-ended CableConstraint, no world pullPoint/fixed Root:
+1step0.205s. Actual impulse1e-10Ns atdt1ms =1e-7N, force error0, velocity error
+8.470e-21; net linear momentum components<=4.288e-19Ns. Initial C2/mass ONLY.
+
+1805 represents SAME mass/COM/inertia with eight mapped scalar point masses per
+body using stock RigidMapping. All7rotated initial columns PASS2.880e-20 maximum.
+This is a new articulated7coordinate assembly check, not rediscovery of mapped
+point masses: previous641free-ring work already used mapped masses AND an
+explicit NativeInertiaForce. It is not rerun or superseded here.
+
+1806 specifically tests whether the NEW articulated mapping alone supplies
+finite-velocity inertial terms. Declared initial free Root omega(.3,-.2,.4)rad/s
+and joint speed1rad/s, zero applied forces,1ms, Native1step0.209s. Actual all
+generalized velocities remain EXACTLY unchanged; physical initial balance needs
+nonzero convective load. Frozen Euler velocity difference.001618524, actual
+linear momentum changes up to1.863137e-8Ns: FAIL.1807only enables installed
+compute_mapping_inertia flag on the point masses; actual output identical,
+FAIL retained. Not a damping/dt/iteration scan. SDK/force/ODE code untouched.
+1808independent32point trajectory second differences verify ALL7components of
+the analytic convective load, worst relative2.113e-9, no denominator floor.
+These are mathematical differentiation increments, NOT Native dt convergence.
+Thus correct initial M is insufficient. No gyro/Coriolis/centrifugal correction
+or new custom solver was added; do not claim full dynamic validity from1805.
+
+Native current-turn runs:45one-step small trials total (1784/86/87/88/90/1805
+each7columns plus1795/1806/1807one each). No new B3 grasp; full1741FAIL unchanged.
+Next prerequisite is an independently supported articulated convective-force
+contract, not another inertia/damping/dt parameter trial or unchanged free-ring
+retest. Numerical0.1%/mesh1%gates remain untouched.

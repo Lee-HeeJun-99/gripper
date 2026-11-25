@@ -1,0 +1,66 @@
+{
+  "status": "FAIL_FINITE_VELOCITY_CONTRACT",
+  "measurements": {
+    "initial_velocity": [
+      0.0,
+      0.0,
+      0.0,
+      0.3,
+      -0.2,
+      0.4,
+      1.0
+    ],
+    "actual_velocity": [
+      0.0,
+      0.0,
+      0.0,
+      0.3,
+      -0.2,
+      0.4,
+      1.0
+    ],
+    "independent_initial_convective_load": [
+      -1.1215448172766612e-05,
+      -1.8625675542149518e-05,
+      -5.0315555654085755e-06,
+      1.616577499037207e-08,
+      -1.5947099434044324e-08,
+      2.0490101644977284e-08,
+      -5.114395662161295e-09
+    ],
+    "frozen_Euler_expected_velocity": [
+      1.0475463936657204e-06,
+      1.6144318856474911e-06,
+      7.268911389480131e-07,
+      0.29983905485124096,
+      -0.19925524518360796,
+      0.3988619483650735,
+      1.0016185237835395
+    ],
+    "maximum_frozen_velocity_error": 0.0016185237835395494,
+    "maximum_native_change_from_initial": 0.0,
+    "total_linear_momentum_change_Ns": [
+      -1.120256292587538e-08,
+      -1.863137329920963e-08,
+      -5.040674185823683e-09
+    ]
+  },
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 0.16889231582172215,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "6945196595636f1a5535aa6af5da17059e0b288fd3bb2c9005ea376e10429d74",
+      "command.json": "9621bb0d1ead3e299010dccc5e54255848721f55542637e2069f42333e0e8a9f",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "463ac31cdaf7b16004152e9e9c38df1a3c5748c9c56180ff3de62483c4f1ad23"
+    }
+  },
+  "installed_mapping_inertia_flag": true,
+  "source_sha256": "979d067c2813a1dddd5698828264f7503e5ce8f43bc63bf74ce66e561c50d254",
+  "source_scene_sha256": "8dc9fe3123a93921d227dedc0ccb4f3280cb90435250adc0c485241049529ddd",
+  "scene_sha256": "95647668f2a2cd12b4b70cbf18362c7bd6fb392e92bc3403a0de683b4fa1fe16",
+  "reference_source_sha256": "02fc85eede7eeba1b1a22eafddafe30057c474f747234bc8a524a2b548c6ed0c",
+  "scope": "Initial nonzero root/joint velocities are declared free coupon initial conditions, not trajectory resets or object manipulation. Exact physical initial convective generalized load and first frozen-Euler balance tested; not a continuous-time solution or B3 model. Point mass quadrature initial matrix1805PASS does not certify missing gyro/Coriolis/centrifugal dynamics. No corrective force/ODE/SDK implementation added."
+}

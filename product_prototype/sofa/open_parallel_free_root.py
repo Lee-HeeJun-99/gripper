@@ -39,6 +39,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True)
     p.add_argument('--angle',type=float,default=0.)
     p.add_argument('--world-initial-tensors',action='store_true')
+    p.add_argument('--point-mass-quadrature',action='store_true')
     p.add_argument('--root-euler-deg',type=float,nargs=3,default=[0.,0.,0.]);a=p.parse_args()
     out=BASE/'results'/a.tag;out.mkdir(exist_ok=False)
     src=BASE/'results/open_parallel_unique1765/scene.scn'
@@ -67,6 +68,24 @@ def main():
             link_mass.set('vertexMass',flat(props))
         mapped.find('ArticulatedSystemMapping').set('input2','@../../../base/body')
         mapped.find('NativeRigidJournal').set('filename',str(case/'body.csv'))
+        if a.point_mass_quadrature:
+            # Eight symmetric quadrature points reproduce each declared
+            # homogeneous box/isotropic rigid mass, COM and inertia exactly.
+            # Their mapped J.T m J rotates naturally; no mass tensor overwrite.
+            import itertools
+            signs=np.array(list(itertools.product((-1.,1.),repeat=3)))
+            specs=[(base,'@../body',0,.005,np.full(3,np.sqrt(.5e-6)))]
+            for body in (1,3):specs.append((mapped,'@../frames',body,.001,np.array([.005,.0008,.0008])/(2*np.sqrt(3))))
+            specs.append((mapped,'@../frames',2,.001,np.full(3,np.sqrt(.5e-6))))
+            for parent in (base,mapped):
+                for node in list(parent.findall('UniformMass')):parent.remove(node)
+            for parent,input_path,index,mass,radii in specs:
+                node=ET.SubElement(parent,'Node',name=f'physicalMass{index}')
+                ET.SubElement(node,'MechanicalObject',template='Vec3d',name='points',position=flat(signs*radii))
+                ET.SubElement(node,'UniformMass',template='Vec3d',totalMass=str(mass))
+                ET.SubElement(node,'RigidMapping',input=input_path,output='@points',index=str(index),globalToLocalCoords='0',mapMatrices='1')
+                inertia=np.diag(mass*np.array([radii[1]**2+radii[2]**2,radii[0]**2+radii[2]**2,radii[0]**2+radii[1]**2]))
+                assert np.isfinite(inertia).all() and np.linalg.eigvalsh(inertia).min()>0
         ET.ElementTree(root).write(case/'scene.scn')
         process=guarded(['/home/ubuntu/SOFA/v26.06.00/bin/runSofa-26.06.00','--noautoload','--tmp','-g','batch','-a','-n','1','--hideProgressBar',case/'scene.scn'],case/'process',60)
         logs=''.join((case/'process'/f).read_text(errors='replace') for f in ('stdout.log','stderr.log'))
@@ -93,6 +112,7 @@ def main():
         records=records,independent_mass_matrix=M.tolist(),gate_absolute_generalized_velocity=gate,dt_s=dt,
         initial_joint_angle_rad=a.angle,initial_root_euler_deg=a.root_euler_deg,
         explicit_world_initial_tensors=a.world_initial_tensors,
+        mapped_point_mass_quadrature=a.point_mass_quadrature,
         source_commit=commit,source_sha256=sha(Path(__file__)),source_scene_sha256=sha(src),plugin_files=plugin_files,
         sdk='/home/ubuntu/SOFA/v26.06.00',command=__import__('sys').argv,
         scope='Seven one-step small-force columns at undeformed rest, all six root coordinates FREE plus torque-driven scalar. Native mapped masses and root translation/rotation cross blocks compared with independent J transpose M J. Frozen initial tangent diagnostic only; finite amplitude/accepted-map timing can affect velocity. NO full nonlinear integration, deformed root, FEM/finite guides/wire/contact/energy/time convergence or grasp certification. No Native q/v writes or SDK modifications.')

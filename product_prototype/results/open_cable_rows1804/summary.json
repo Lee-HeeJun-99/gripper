@@ -1,0 +1,71 @@
+{
+  "status": "PASS_ENDPOINT_ROW_WRENCH_SCOPE_ONLY",
+  "actual_endpoint_J": [
+    [
+      0.9578262852211513,
+      0.2873478855663454,
+      0.0
+    ],
+    [
+      -0.9578262852211513,
+      -0.2873478855663454,
+      -0.0
+    ]
+  ],
+  "actual_multiplier_Ns": 1e-10,
+  "actual_endpoint_force_N": [
+    [
+      9.578262852211512e-08,
+      2.8734788556634538e-08,
+      0.0
+    ],
+    [
+      -9.578262852211512e-08,
+      -2.8734788556634538e-08,
+      -0.0
+    ]
+  ],
+  "previous_geometry_net_force_N": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "previous_geometry_net_moment_Nm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "endpoint_J_error": 0.0,
+  "endpoint_instantaneous_power_W": 2.1075963893555452e-15,
+  "frozen_geometry_generalized_power_W": 2.107596373712302e-15,
+  "power_pullback_residual_W": 1.5643243095873383e-23,
+  "cable_work_J": null,
+  "global_energy_balance_J": null,
+  "inputs": [
+    {
+      "path": "product_prototype/sofa/open_cable_row_audit.py",
+      "sha256": "0e37a302fcb894940229f280bfe0721f17de74c598b4e0a6f1bca14b0966080d"
+    },
+    {
+      "path": "product_prototype/results/open_parallel_cable1795/cable.csv",
+      "sha256": "6f98244b667ccbdb7f094261fa2c6c2ac8fc3053abaa601983ab94f2fd3d5295"
+    },
+    {
+      "path": "product_prototype/results/open_parallel_cable1795/constraints.csv",
+      "sha256": "fe338c97e151cd79121c1c96438aac0dd1ca9acb9edc49263f294b8dcd19a5ff"
+    },
+    {
+      "path": "product_prototype/results/open_parallel_cable1795/base.csv",
+      "sha256": "9b07059c647df9701432397f516d54e500b1b6f0b351041dddf8e5a49859a732"
+    },
+    {
+      "path": "product_prototype/results/open_parallel_cable1795/body.csv",
+      "sha256": "a52e45574e6bc3d5c22b4c87f64750bdc6b5e8605a59ef4cedf06a4d6edec921"
+    },
+    {
+      "path": "product_prototype/results/open_parallel_cable1795/scene.scn",
+      "sha256": "0c9f1192d6959cd22d4d7ceeed09406cbb72c04043562ffec3e4046e17ca3ad7"
+    }
+  ],
+  "scope": "Actual Native child Vec3 endpoint rows + actual solver impulse/dt, not command treated as measurement. Previous accepted initial geometry used for its assembled row; accepted velocities only for instantaneous power consistency. parent_J here is also Vec3, NOT a complete global Rigid3 Guide reaction/mass observation. All1step, no integrated work/global energy, wire friction, joint or grasp qualification."
+}

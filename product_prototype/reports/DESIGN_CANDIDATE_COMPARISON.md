@@ -1,3 +1,16 @@
+## 2026-11-25 — finite connected candidates through1808
+
+Coplanar1794: initial pair overlaps0, but1796motion starts carrier/link collision
+at1mm, tube/link1.8mm. REJECTED, do not resize pockets blindly.
+Axial1799: original tubes/feet unchanged, different1.25mm axial link plane and
+real rear ties.54connected parts, sampled21stroke states solid overlaps0;
+96initial new-materialFEMchecks clear. CONDITIONAL GEOMETRY ONLY: wire12nonfits,
+50umvs200umcontact budget, pin retention and material/joint dynamics blocked.
+Neither candidate selected as a product or used to claim new100gHolding.
+Native point-mass variant1805: same exact assumed mass/COM/inertia, rotated
+initial7column matrixPASS, but1806/1807finite-velocity dynamicsFAIL. Not a
+full dynamic replacement. Old50g/100gfunctional results and FAILs unchanged.
+
 ## 2026-11-25 — unbraced mechanism comparison (not product selection)
 
 |Candidate|Actual test|Outcome and scope|

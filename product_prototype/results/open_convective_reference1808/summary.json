@@ -1,0 +1,60 @@
+{
+  "status": "PASS_INDEPENDENT_CONVECTIVE_REFERENCE_ONLY",
+  "records": [
+    {
+      "math_difference_increment_s": 0.001,
+      "point_acceleration_generalized_load": [
+        -1.1215448174386141e-05,
+        -1.8625675540072356e-05,
+        -5.0315555643457576e-06,
+        1.6165774991959525e-08,
+        -1.5947099436753698e-08,
+        2.0490101650549956e-08,
+        -5.1143956534050624e-09
+      ],
+      "componentwise_relative_error": [
+        1.444016025279009e-10,
+        1.1152142917942498e-10,
+        2.1123049619204966e-10,
+        9.819854287132939e-11,
+        1.6989759544307724e-10,
+        2.719690155731325e-10,
+        1.7120757659650995e-09
+      ]
+    },
+    {
+      "math_difference_increment_s": 0.0005,
+      "point_acceleration_generalized_load": [
+        -1.1215448174890974e-05,
+        -1.8625675543848988e-05,
+        -5.0315555594572475e-06,
+        1.6165775024529682e-08,
+        -1.594709944171136e-08,
+        2.049010165278928e-08,
+        -5.1143956549265065e-09
+      ],
+      "componentwise_relative_error": [
+        1.8941392150551388e-10,
+        9.124340005097897e-11,
+        1.1828008155614614e-09,
+        2.112958567017071e-09,
+        4.807792513659414e-10,
+        3.8125707771985095e-10,
+        1.4145931004620947e-09
+      ]
+    }
+  ],
+  "maximum_componentwise_relative_error": 2.112958567017071e-09,
+  "gate": 1e-05,
+  "inputs": [
+    {
+      "path": "product_prototype/results/open_parallel_convective1806/summary.json",
+      "sha256": "3f22f827558ac3d7e82e3ecd315f31b3eb0a5505b3d9de5714dfdd0611a1e52b"
+    },
+    {
+      "path": "product_prototype/sofa/open_convective_reference_check.py",
+      "sha256": "4993f703dd05be75500e0588864b5d5e56d14dbb7803b47ef3fb1ed167afdea7"
+    }
+  ],
+  "scope": "Independent32Gaussian-point trajectory second differences reproduce analytic h of1806without reusing its rigid-body acceleration formula. This validates the diagnostic reference, not Native correction or B3 dynamics. Math FD increments are NOT Native time-step convergence; original physical0.1%gate unchanged. No new simulator or forces applied to Native."
+}

@@ -1,3 +1,20 @@
+## 2026-11-25 through1810 — connected mechanisms and Native force contracts
+
+Startc231571; multiple actual cycles,45bounded Native1step trials and separate
+CSG/FK/FEM/mathematical checks. Full B3/grasp is NOT rerun.
+Connected coplanar guide rejected at1mm. Axial candidate retains18feet/54closed
+parts and clears21FKsamples/96initialnewmaterialFEMcells. Straight wire12nonfits,
+50umsolid gap versus200umNative response and unretained pins prevent integration.
+Free-root initial mass/C2contracts pass. Rotated tensor failure explained;
+point-mass initial operator passes but finite-speed convective response FAILS.
+Independent physical reference crosschecked; no correction or SDK/ODE rewrite.
+1810preservation audit: original102queue entries unchanged,2639manifest records
+verified, oldresults/binaries/SDKreference changes0, helper7testsPASS. Separate
+CSG64kernel4testsPASS. Counts are not product performance metrics.
+Queue116:59PASS,27FAIL,18REJECTED,11BLOCKED,1NOTMEASURED,0READY/RUNNING.
+This requires fresh evidence-based cross-track review, not product completion,
+automatic repeated trials or a claim every possible mechanism is impossible.
+
 ## 2026-11-25 through1768 — actual mechanism cycles, no product PASS
 
 Full100g yoke1741 actual2s: speed32.928255mm/s and30Hold internal rows FAIL.

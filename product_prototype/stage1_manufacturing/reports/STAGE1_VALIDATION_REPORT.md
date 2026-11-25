@@ -79,3 +79,20 @@ Current verdict STAGE1_DESIGN_RELEASE_FAIL. Full assemblies exist as actual
 STEP, but axle capture, torque locks, tendon retention, tolerance/drawing and
 full motion/extension gates are not complete. Neither tests nor CAD quantity
 changes that verdict. No purchased part strength or hardware measurement.
+
+## Actual follow-up after feature commit3f0dfdb
+
+Implemented `bearing_capture_coupon.py`: real outer steel1mm candidate
+retaining plate,2M3x4 envelopes and threaded-hole pedestal replacement.
+All4new single BReps exported STEP/STL. Against every current revH part,
+excluding ONLY the explicitly replaced old pedestal:0bulk intersections.
+Independent shifted-bearing geometry: overlap0 atY0,-0.5,-1mm;4.712389mm³
+at-1.1mm. Thus the boundary model has a one-direction stop after1mm nominal
+travel, NOT a force/strength/preload proof. Exact supplier race/seal land,
+opposite cap and shaft capture remain open. Prototype NOT adopted in revH.
+Evidence `cad/parts/outer_bearing_cap_v1/summary.json`; producer and input
+STEP SHA256s included. No virtual fixture or omitted existing obstacles.
+
+The initial release_revH manifest predates later report updates; use its
+frozen CAD/measurement hashes or the final session manifest for CURRENT
+documentation. A live report changing is not a change to historical Raw.

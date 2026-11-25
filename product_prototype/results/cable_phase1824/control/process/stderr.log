@@ -1,0 +1,21 @@
+[ERROR]   [Node(root)] Object type GenericConstraintSolver<> was not created  
+The component 'GenericConstraintSolver' cannot be found in the factory.  
+Several reasons are possible:  
+1) GenericConstraintSolver has been replaced since v25.12 by a set of new components, whose names relate to the method used:
+    - BlockGaussSeidelConstraintSolver (if you were using this component without setting 'resolutionMethod' or by setting it to 'ProjectedGaussSeidel')
+    - UnbuiltGaussSeidelConstraintSolver (if you were using this component while setting 'resolutionMethod="UnbuiltGaussSeidel"')
+    - NNCGConstraintSolver (if you were using this component while setting 'resolutionMethod="NonsmoothNonlinearConjugateGradient"')
+      --> For NNCGConstraintSolver, data 'newtonIterations' has been replaced by 'maxIterations'  
+2) This component has been MOVED from SofaConstraint to Sofa.Component.Constraint.Lagrangian.Solver since SOFA v22.06.
+To continue using this component you may need to update your scene by adding
+<RequiredPlugin pluginName='Sofa.Component.Constraint.Lagrangian.Solver'/>  
+But the following object(s) exist:  
+                      : NNCGConstraintSolver (79% match)  
+                      : LCPConstraintSolver (76% match)  
+                      : GenericConstraintCorrection (76% match)  
+                      : BlockGaussSeidelConstraintSolver (69% match)  
+                      : ImprovedJacobiConstraintSolver (67% match)  
+                      : UnbuiltGaussSeidelConstraintSolver (66% match)  
+
+[ERROR]   [SceneLoaderXML] Node initialization failed. 
+

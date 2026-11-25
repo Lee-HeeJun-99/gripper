@@ -2,6 +2,38 @@
   "scope": "Session task scheduler; PASS is always scoped, not product qualification",
   "tasks": [
     {
+      "id": "native_cable_phase_coupon",
+      "priority": 0,
+      "status": "PASS",
+      "goal": "Distinguish applied frozen-row impulse work from accepted geometric rate",
+      "scope": "Pure diagonal-mass no-contact coupon only; not B3 passivity or grasp performance",
+      "hypothesis": "Actual build Jacobian uses previous accepted positions while free and accepted directions differ; midpoint impulse work differs from accepted-velocity work",
+      "prerequisites": [],
+      "evidence": ["cable_phase1824", "cable_phase1825", "cable_work1826"],
+      "expected_outputs": ["Read-only phase journal, matched control, independent momentum and work decomposition"],
+      "validation_criteria": ["Exact observer purity, actual J/momentum/position/kinetic identities within1e-12"],
+      "failure_criteria": ["Missing supported phase API or unexplained impulse response"],
+      "failure_alternatives": ["No B3 expansion if observer changes state"],
+      "successors": ["b3_actual_cable_phase_prefix"],
+      "maximum_execution_cost": "Two5step60s/4GiB controls; actual~0.14s each"
+    },
+    {
+      "id": "b3_actual_cable_phase_prefix",
+      "priority": 0,
+      "status": "READY",
+      "goal": "Test actual B3 mapped cable matrix/free/accepted phase without physical modifications",
+      "scope": "Actual root-fixed1741 short prefix; no active control or new Holding result",
+      "hypothesis": "Coupon phase observation remains pure on mapped B3; actual applied child J can be compared with each same-phase geometry",
+      "prerequisites": ["native_cable_phase_coupon"],
+      "evidence": ["cable_phase1825", "cable_work1826", "cable_rate_deformed1821"],
+      "expected_outputs": ["Actual mapped row/force timing and unchanged-prefix proof"],
+      "validation_criteria": ["Actual q/v/impulse equality to1741, force units, J timing and positive saved FEM"],
+      "failure_criteria": ["Observer impurity or force/J phase mismatch"],
+      "failure_alternatives": ["Retain bounded failure; no arbitrary input law"],
+      "successors": ["supported_motor_port_observation"],
+      "maximum_execution_cost": "0.6s forecast87s,4GiB/420s Native child"
+    },
+    {
       "id": "accepted_cable_rate_observer",
       "priority": 0,
       "status": "PASS",

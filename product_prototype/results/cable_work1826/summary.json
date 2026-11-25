@@ -1,0 +1,63 @@
+{
+  "status": "PASS_EXACT_COUPON_WORK_DECOMPOSITION_NOT_ENERGY_CONSERVATION",
+  "records": [
+    {
+      "step": 0,
+      "frozen_row_accepted_work_J": 0.0001247487373415292,
+      "geometric_constant_tension_work_J": 0.00011459892383672358,
+      "convex_length_linearization_excess_J": 1.0149813504805607e-05,
+      "backward_Euler_kinetic_loss_J": 3.232233047033632e-05,
+      "kinetic_increment_J": 9.242640687119289e-05,
+      "delta_kinetic_plus_constant_tension_potential_J": -2.217251696553069e-05,
+      "energy_decomposition_residual_J": 2.0328790734103208e-20
+    },
+    {
+      "step": 1,
+      "frozen_row_accepted_work_J": 0.00015521252579127787,
+      "geometric_constant_tension_work_J": 0.00013600734711305442,
+      "convex_length_linearization_excess_J": 1.9205178678223452e-05,
+      "backward_Euler_kinetic_loss_J": 2.5583306720113065e-05,
+      "kinetic_increment_J": 0.00012962921907116477,
+      "delta_kinetic_plus_constant_tension_potential_J": -6.378128041889644e-06,
+      "energy_decomposition_residual_J": -3.049318610115481e-20
+    },
+    {
+      "step": 2,
+      "frozen_row_accepted_work_J": 0.00015302043181159727,
+      "geometric_constant_tension_work_J": 0.0001242073883980458,
+      "convex_length_linearization_excess_J": 2.8813043413551464e-05,
+      "backward_Euler_kinetic_loss_J": 1.8605296534513045e-05,
+      "kinetic_increment_J": 0.00013441513527708422,
+      "delta_kinetic_plus_constant_tension_potential_J": 1.0207746879038412e-05,
+      "energy_decomposition_residual_J": -6.776263578034403e-21
+    },
+    {
+      "step": 3,
+      "frozen_row_accepted_work_J": 0.00012360857153135725,
+      "geometric_constant_tension_work_J": 8.522770386663533e-05,
+      "convex_length_linearization_excess_J": 3.838086766472191e-05,
+      "backward_Euler_kinetic_loss_J": 1.510260752302819e-05,
+      "kinetic_increment_J": 0.00010850596400832902,
+      "delta_kinetic_plus_constant_tension_potential_J": 2.3278260141693685e-05,
+      "energy_decomposition_residual_J": -3.7269449679189215e-20
+    },
+    {
+      "step": 4,
+      "frozen_row_accepted_work_J": 7.840973712093676e-05,
+      "geometric_constant_tension_work_J": 1.7430986687528086e-05,
+      "convex_length_linearization_excess_J": 6.0978750433408676e-05,
+      "backward_Euler_kinetic_loss_J": 1.9069835870426694e-05,
+      "kinetic_increment_J": 5.933990125051008e-05,
+      "delta_kinetic_plus_constant_tension_potential_J": 4.190891456298199e-05,
+      "energy_decomposition_residual_J": 1.3552527156068805e-20
+    }
+  ],
+  "maximum_balance_residual_J": 3.7269449679189215e-20,
+  "positive_physical_energy_increment_steps": 3,
+  "input_sha256": {
+    "results/cable_phase1825/summary.json": "703fb9293478bdbdd503d14591d5d4bb1def08485369d79fb96edcbb27adeb2f",
+    "results/cable_phase1825/observed/phases.csv": "9c1bdbb0dad3f927d854b0bac1b86e7ebac7a9c015680da520a6078e3d47c0a0"
+  },
+  "source_sha256": "171bb1aedf72ed4cc1ab8df80f3ce5745e0d26e18282568e06ce81711c84c4ec",
+  "scope": "Fixed pullPoint, positive constant tension, no other external load: U=T*L. Actual previous-state cable row supplies frozen linear work, not exact geometric potential change. BE loss and convex length gap are separated; no global B3 energy/convergence claim or permission to alter Raw/SDK. This is independent analysis of a deliberately finite-motion coupon, not representative B3 error magnitude."
+}

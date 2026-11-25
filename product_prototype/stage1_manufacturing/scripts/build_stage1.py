@@ -4,7 +4,7 @@ Run with PYTHONPATH=/tmp/regrip_stage1_ocp and the robot_ws Python.
 Each output must be new; millimetres. Purchased parts are interface envelopes,
 not vendor manufacturing models. No threads or ball races are synthesized.
 """
-import argparse, csv, hashlib, json, math, subprocess
+import argparse, csv, hashlib, json, math, subprocess, shutil
 from pathlib import Path
 from OCP.BRepPrimAPI import BRepPrimAPI_MakeBox, BRepPrimAPI_MakeCylinder
 from OCP.BRepAlgoAPI import BRepAlgoAPI_Cut, BRepAlgoAPI_Fuse, BRepAlgoAPI_Common
@@ -42,7 +42,7 @@ def export(s,path):
  w=StlAPI_Writer();w.ASCIIMode=False
  if not w.Write(s,str(path.with_suffix('.stl'))):raise RuntimeError('STL write')
 
-def module():
+def module(revised=False,fastened=False):
  p=[]
  def add(id,s,material,process,role='made',note=''):
   p.append(dict(id=id,shape=s,material=material,process=process,role=role,note=note))
@@ -51,9 +51,9 @@ def module():
  add('SHAFT',cyl(2.5,(35,-12,20),35,(0,1,0)),'steel','turn/grind; h6 seats; end faces deburred')
  for label,y in [('L',-2),('R',13)]:
   add('BEARING_'+label,cut(cyl(8,(35,y,20),5,(0,1,0)),cyl(2.5,(35,y-1,20),7,(0,1,0))), 'SKF 625 candidate','purchase; boundary envelope only','purchased_envelope')
-  h=box(23,y-1,-1,24,7,33)
+  h=box(20 if fastened else 23,y if label=='R' else y-1,-7 if revised else -1,30 if fastened else 24,6 if revised else 7,39 if revised else 33)
   h=cut(h,cyl(8.025,(35,y-2,20),9,(0,1,0)))
-  for x in (26,44):h=cut(h,cyl(1.7,(x,y+2.5,-2),35))
+  for x in ((24.5,45.5) if fastened else (26,44)):h=cut(h,cyl(1.7,(x,y+2.5,-13),48))
   add('PEDESTAL_'+label,h,'6061-T6 candidate','CNC; bearing pocket final bore16.05 +0.02/-0 mm')
  # Two independent channels, integral flanges; real cross holes for wire
  # exist but final positive terminal clamp is intentionally a release gate.
@@ -68,10 +68,16 @@ def module():
  motor=box(13.85,-75, -1.15,42.3,38,42.3)
  motor=fuse(motor,cyl(11,(35,-37,20),2,(0,1,0)))
  motor=fuse(motor,cyl(2.5,(35,-37,20),24,(0,1,0)))
+ if fastened:
+  for x in (19.5,50.5):
+   for z in (4.5,35.5):motor=cut(motor,cyl(1.5,(x,-41.5,z),4.5,(0,1,0)))
  add('MOTOR',motor,'SOYO SY42STH38-1684A','purchase; nominal boundary envelope','purchased_envelope', 'Pololu2267 drawing; no stock/price/loaded-speed qualification')
- plate=cut(box(11,-37,-5,48,3,50),cyl(11.25,(35,-38,20),5,(0,1,0)))
+ plate=cut(box(11,-37,-7 if revised else -5,48,3,52 if revised else 50),cyl(11.25,(35,-38,20),5,(0,1,0)))
  for x in (19.5,50.5):
   for z in (4.5,35.5):plate=cut(plate,cyl(1.8,(x,-38,z),5,(0,1,0)))
+ if fastened:
+  plate=fuse(plate,box(11,-37,-7,48,12,4))
+  for x in (18,52):plate=cut(plate,cyl(1.7,(x,-29.5,-8),6))
  add('MOTOR_PLATE',plate,'6061-T6 candidate','CNC; 31mm square4x3.6 clearance',note='base angle/fastening not yet complete')
  # Flat, stress-free sheet reference: intentionally NOT B3 manufactured
  # distal precurve. Root overlap retained inside clamp contact planes.
@@ -79,25 +85,62 @@ def module():
  for label,y in [('L',-9),('R',6)]:
   add('RAIL_'+label,box(50.3,y,-100,.2,3,110),'spring strip candidate','cut/deburr; joining process not qualified')
  for label,x,depth in [('FRONT',47,3),('BACK',50.5,3)]:
-  h=box(x,-20,0,depth,40,10)
+  h=box(x,-20,-7 if revised else 0,depth,40,17 if revised else 10)
   for y in (-16,16):h=cut(h,cyl(1.7,(x-1,y,5),depth+2,(1,0,0)))
+  if fastened and label=='BACK':
+   h=fuse(h,box(53,-20,-7,10,40,4))
+   for hy in (-16,16):h=cut(h,cyl(1.7,(59,hy,-8),6))
   add('ROOT_'+label,h,'6061-T6 candidate','CNC; two3.4 transverse through bores',note='root-to-palm fastening still required')
  # Removable distal clamp: open slot captures flat sheet without glue.
  terminal=cut(box(47,-8,-100,7,16,5),box(50,-13,-101,.5,26,7))
  terminal=cut(terminal,cyl(.4,(47,0,-98),8,(1,0,0)))
  add('TERMINAL',terminal,'POM candidate','CNC split clamp;0.8 tendon bore',note='clamp screws/positive retention unfinished')
+ if revised and not fastened:
+  # Finite foot and M3 clearance holes complete a screw path to the Palm.
+  # Bolts/threads/engagement still must be added and inspected, not assumed.
+  for tag,x,y,dx,dy in [('MOTOR_FOOT',11,-46,48,9),('ROOT_FOOT',53.5,-20,10,40)]:
+   foot=box(x,y,-7,dx,dy,4)
+   for hx,hy in ([(18,-41.5),(52,-41.5)] if tag=='MOTOR_FOOT' else [(59,-16),(59,16)]):foot=cut(foot,cyl(1.7,(hx,hy,-8),6))
+   add(tag,foot,'6061-T6 candidate','CNC; flange bolted to Palm; joint to vertical plate requires brackets')
+ if fastened:
+  def bolt(id,p,length,d=(0,0,1)):
+   # Head bearing face p; shank goes opposite d. Nominal thread MAJOR
+   # envelope, not helical threads. Head dimensions from Bossard ISO4762.
+   start=tuple(p[k]-length*d[k] for k in range(3))
+   s=fuse(cyl(1.5,start,length,d),cyl(2.75,p,3,d))
+   add(id,s,'steel ISO4762 M3 candidate',f'purchase M3x{length}; head5.5x3;2.5AF tool','fastener_envelope','threads simplified; purchased lot/torque unqualified')
+  def nut(id,x,y):
+   s=cut(cyl(3.175,(x,y,-14.4),2.4),cyl(1.5,(x,y,-15),4))
+   add(id,s,'steel M3 nut candidate','purchase ISO4032; cylindrical AF circumscribed ENVELOPE','fastener_envelope','hex geometry/washer selection unfinished')
+  for label,y in [('L',.5),('R',15.5)]:
+   for x in (24.5,45.5):
+    bolt(f'PEDESTAL_{label}_BOLT_{x}',(x,y,32),50);nut(f'PEDESTAL_{label}_NUT_{x}',x,y)
+  for label,x,y in [('MF0',18,-29.5),('MF1',52,-29.5),('RF0',59,-16),('RF1',59,16)]:
+   bolt(label+'_BOLT',(x,y,-3),12);nut(label+'_NUT',x,y)
+  for x in (19.5,50.5):
+   for z in (4.5,35.5):bolt(f'MOTOR_BOLT_{x}_{z}',(x,-34,z),6,(0,1,0))
+  for y in (-16,16):bolt(f'ROOT_BOLT_{y}',(47,y,5),12,(-1,0,0))
  return p
 
 def main():
  a=argparse.ArgumentParser();a.add_argument('--revision',required=True);arg=a.parse_args()
  out=ROOT/'cad'/'exports'/arg.revision;out.mkdir(parents=True,exist_ok=False)
  parts=[]
- palm=cut(cyl(115,(0,0,-6),5),cyl(20,(0,0,-7),7))
+ revised=arg.revision!='revA'
+ fastened=arg.revision not in ('revA','revB')
+ palm=cut(cyl(115,(0,0,-12 if revised else -6),5),cyl(20,(0,0,-13 if revised else -7),7))
+ if revised:
+  for angle in (0,120,240):
+   # Sheet slot permits insertion along Z; tendon slots use actual declared
+   # straight REST route across Palm rather than deleting its collision.
+   for tool in [box(49.7,-13,-13,1.1,26,7),box(33,-1,-13,7,13,7)]:palm=cut(palm,rotate(tool,angle))
+   holes=([(x,y) for x in (24.5,45.5) for y in (.5,15.5)]+[(18,-29.5),(52,-29.5),(59,-16),(59,16)]) if fastened else [(26,.5),(44,.5),(26,15.5),(44,15.5),(18,-41.5),(52,-41.5),(59,-16),(59,16)]
+   for x,y in holes:palm=cut(palm,rotate(cyl(1.7,(x,y,-13),7),angle))
  # Motor envelopes extend below proposed palm. Full audit must detect this,
  # not remove motor collision geometry or white-list the contact.
  parts.append(dict(id='PALM',shape=palm,material='6061-T6 candidate',process='CNC plate',role='made',note='mount holes incomplete'))
  for i,angle in enumerate((0,120,240)):
-  for p in module():parts.append(dict(p,id=f'F{i}_{p["id"]}',shape=rotate(p['shape'],angle)))
+  for p in module(revised,fastened):parts.append(dict(p,id=f'F{i}_{p["id"]}',shape=rotate(p['shape'],angle)))
  rows=[]
  for p in parts:
   s=p['shape'];v=volume(s);valid=BRepCheck_Analyzer(s).IsValid()
@@ -117,6 +160,8 @@ def main():
    if v>1e-7:collisions.append(dict(a=p['id'],b=q['id'],volume_mm3=v))
  result=dict(revision=arg.revision,source_head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),parts=rows,collisions=collisions,roundtrip_volume_error_mm3=actual-expected,stage1_release=False,scope='nominal solid geometry only; no threads/strength/Native/grasp test')
  (out/'audit.json').write_text(json.dumps(result,indent=2))
+ shutil.copyfile(__file__,out/'producer.py')
+ (out/'source_sha256.txt').write_text(hashlib.sha256(Path(__file__).read_bytes()).hexdigest()+'\n')
  with (out/'BOM.csv').open('w') as f:
   w=csv.DictWriter(f,fieldnames=['id','material','process','role','note','volume_mm3','brep_valid']);w.writeheader();w.writerows(rows)
  print(json.dumps(dict(parts=len(parts),collisions=len(collisions),out=str(out))))

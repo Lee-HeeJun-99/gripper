@@ -1,4 +1,25 @@
-## Current1876 — loaded supported output port, not a new100gHolding
+## Current1893 /1894RUNNING — registered drive fullsinglePASS; new object prefix running
+
+Source starta9a8c2a; completed features239730f/31d69e1/182d980; next save=`git log -1`.
+Read SUPPORTED_WINCH_FINGER_20261125.md.1889fullnoobject oldlever trial clips
+1.5Ncap and fails1umtracking (75um actual).1890actual registration/packing
+audit rejects off-body virtual ports, radial6module copies and input wire
+intersection. Historical ideal-port Native tests are not physical hardware.
+1891/1892new registered integral lever/surface anchors and derived idler:
+fullsingle240steps/.6s PASS noobject, no contacts, minFEMratio0.98892458,
+inputpeak1.414436N/output1.439850N/late tracking<=2.020nm. Same1.5N cap and
+Skin/material/dt. All actual wire/initial physical geometry gates measured.
+1893parallel common-global-axis bank passes necessary initial allFEM/Guide
+and intermodule sweep clearance. No generic moving-root convective fix.
+1894ACTUALLY RUNNING new3Finger100g freeSphere contact prefix240steps/.6s,
+4GiB420s. Root codeparallel_winch_grasp.py, results/parallel_contact1894.
+No Holding result yet; do not rerun active directory or hash changing Raw.
+All original collisions retained; ideal bearing/return bond/anchor assumptions
+remain, finite-wire sliding and material/time/mesh qualification absent.
+Full2s only if prefix no internal bracing/validFEM/real3Skin contacts and cost
+forecast fits; original1.6–2s Holding gates unchanged.1741FAIL remains.
+
+## Current1876 — historical; superseded above
 
 Starta9a8c2a clean. First feature239730f; next feature/final=`git log -1`.
 Read BEARING_SEPARATED_DRIVE_20261125.md.1870actual1.5Ninput/0.9Noutput5step

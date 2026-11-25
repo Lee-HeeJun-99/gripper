@@ -1,0 +1,101 @@
+{
+  "status": "REJECT_THREE_FINGER_PACKING_OR_INPUT_WIRE",
+  "original_registration_status": "FAIL_OFF_BODY_FORCE_PORTS",
+  "records": [
+    {
+      "winch": 0,
+      "actual_local_body_bounds_mm": [
+        [
+          -0.5000000000000039,
+          -1.0000000000000009,
+          -12.0
+        ],
+        [
+          0.5000000000000039,
+          1.0000000000000009,
+          12.0
+        ]
+      ],
+      "actual_local_force_ports_mm": [
+        [
+          0.0,
+          10.000000000000002,
+          4.3368086899420177e-16
+        ],
+        [
+          -1.0000000000000009,
+          -10.000000000000002,
+          4.3368086899420177e-16
+        ]
+      ],
+      "port_to_original_body_AABB_distance_lower_bound_mm": [
+        9.0,
+        9.013878188659973
+      ],
+      "proper_registration": "Finite lever Rx90about own axle, end holes alignYplus/minus10; not applied to old Native",
+      "corrected_input_wire_intersection_mm3": 0.05852709660483979
+    },
+    {
+      "winch": 1,
+      "actual_local_body_bounds_mm": [
+        [
+          -0.500000000000004,
+          -1.0000000000000009,
+          -12.0
+        ],
+        [
+          0.500000000000004,
+          1.0000000000000009,
+          12.0
+        ]
+      ],
+      "actual_local_force_ports_mm": [
+        [
+          -1.2246467991473535e-15,
+          10.000000000000002,
+          4.3368086899420177e-16
+        ],
+        [
+          -0.9999999999999996,
+          -10.000000000000002,
+          4.3368086899420177e-16
+        ]
+      ],
+      "port_to_original_body_AABB_distance_lower_bound_mm": [
+        9.0,
+        9.013878188659973
+      ],
+      "proper_registration": "Finite lever Rx90about own axle, end holes alignYplus/minus10; not applied to old Native",
+      "corrected_input_wire_intersection_mm3": 0.05852709660484009
+    }
+  ],
+  "six_module_intersections": [
+    {
+      "pair": [
+        "finger0_winch0",
+        "finger1_winch1"
+      ],
+      "intersection_mm3": 2.309401076758524
+    },
+    {
+      "pair": [
+        "finger0_winch1",
+        "finger2_winch0"
+      ],
+      "intersection_mm3": 2.3094010767585025
+    },
+    {
+      "pair": [
+        "finger1_winch0",
+        "finger2_winch1"
+      ],
+      "intersection_mm3": 2.3094010767585096
+    }
+  ],
+  "source_sha256": "3df60f796ac1b95c419b11c17718ae0547508fd3113ed921d1b0fd4e7e4bd705",
+  "inputs_sha256": {
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/winch_outward1886/scene.scn": "793f76532df9fc49f8fa69c3250fcd6f31ece2bb6152620de7a395d51a075e52",
+    "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/results/yoke_hold_diagnostic1741/scene.scn": "551a3527e4edffe371771a97f9ead20d13fa85f05e0ce39215501c125553acd0"
+  },
+  "scope": "New read-only registration audit: actual1886finite collider long axisZ while physical end portsY, lower-bound9mm gap proves missing force-bearing arm geometry; Native scalar force-port results remain historical idealized results, not hardware qualification. Rx90solid candidate corrects registration while preserving volume/COM/axial inertia but changes full tensor/collider and was NOT run Native. Actual0.5mm input wire includes all except declared last0.7mm termination domain; any positive intersection rejects. Six registered modules copied only for initial geometry, not equilibrated motion. No part removed, no size/force/tolerance scan, no old verdict changed. Need actual registered lever/input anchor and real Palm layout before3Finger Native."
+}

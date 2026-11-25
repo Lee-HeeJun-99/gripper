@@ -1,0 +1,83 @@
+{
+  "source_sha256": "eaea43e3c9e701ce0b2b340fde246cb232de9881b632fae97c33bfe57df69a46",
+  "scene_sha256": "393d8ebcaf85daf9c3f0c20fd7fd004fa4ed45b0f270108b6dcc05c79301ee19",
+  "source_scene_sha256": "793f76532df9fc49f8fa69c3250fcd6f31ece2bb6152620de7a395d51a075e52",
+  "root_modules": [
+    {
+      "winch": 0,
+      "minimum_initial_separating_axis_gap_m": 0.0086,
+      "original_output_origin_m": [
+        0.027600000000000003,
+        0.036000000000000004,
+        -0.0024769905155437046
+      ],
+      "logical_lever_centre_m": [
+        0.028600000000000004,
+        0.046000000000000006,
+        -0.0018769905155437048
+      ],
+      "rotor_mass_kg": 5.137116076443871e-05,
+      "rotor_COM_m": [
+        0.02853437639496026,
+        0.046000000000000006,
+        -0.0018769905155437048
+      ],
+      "axial_inertia_kg_m2": 2.5453469733456507e-09
+    },
+    {
+      "winch": 1,
+      "minimum_initial_separating_axis_gap_m": 0.0086,
+      "original_output_origin_m": [
+        0.027600000000000003,
+        -0.036000000000000004,
+        -0.0024769905155437046
+      ],
+      "logical_lever_centre_m": [
+        0.026600000000000002,
+        -0.046000000000000006,
+        -0.0018769905155437048
+      ],
+      "rotor_mass_kg": 5.137116076443871e-05,
+      "rotor_COM_m": [
+        0.026665623605039747,
+        -0.046000000000000006,
+        -0.0018769905155437048
+      ],
+      "axial_inertia_kg_m2": 2.5453469733456507e-09
+    }
+  ],
+  "local_input_anchor_m": [
+    -0.001,
+    0.01,
+    -0.0006
+  ],
+  "local_output_anchor_m": [
+    -0.001,
+    -0.01,
+    -0.0006
+  ],
+  "local_derived_midstroke_tangent_pullpoint_m": [
+    -0.001,
+    0.004473363664733647,
+    -0.021916866051583214
+  ],
+  "target_output_displacement_m": 0.004,
+  "target_angle_rad": -0.40619611125428934,
+  "derived_input_stroke_m": 0.004041131942424597,
+  "wirechecks": [
+    {
+      "angle_rad": 0.0,
+      "input_wire_intersection_mm3": 0
+    },
+    {
+      "angle_rad": -0.20309805562714467,
+      "input_wire_intersection_mm3": 0
+    },
+    {
+      "angle_rad": -0.40619611125428934,
+      "input_wire_intersection_mm3": 0
+    }
+  ],
+  "source_hypothesis": "New physical candidate: registered lever+integral stand-off bosses/surface anchors+derived midpoint-tangent idler. Multiple necessary changes, not single-variable superiority claim. Same Skin/Rail/material/rootdt/inputcap. New mass/COM/tensor explicit.",
+  "scope": "Rigid integral lever and ideal coaxial bearing/return bond/terminated wire clamp research assumptions; central boss meets return shaft at its endface, actual socket/bond strength and manufacture NOT MEASURED. No finite-wire sliding or bearingcontact validation. All existing Finger/new lever collisions retained."
+}

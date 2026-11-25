@@ -1,0 +1,52 @@
+{
+  "status": "FAIL_FULL_SINGLE_FINGER_CLOSING_GATE",
+  "process": {
+    "exit_code": 0,
+    "process_status": "exited",
+    "runtime_s": 6.095947208115831,
+    "pid": 42,
+    "artifacts": {
+      "stdout.log": "1e6858651cea790f0725040848e55a4181e1f2634f9e35e4a647f0fc73f582ba",
+      "command.json": "83a22dc267cbf421c4dc797999edaeec606ad2f4c48176fbeb1ec4ba5892489b",
+      "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process.json": "a444cedf4512614cc2422680acacd955f67228393c82470c5d4d0a83af1220eb"
+    }
+  },
+  "metrics": {
+    "saved_steps": 240,
+    "minimum_saved_volume_ratio": 0.989116003726959,
+    "final_minimum_z_reference_vertex_delta_m": [
+      -0.016039200674983756,
+      -3.139849491518021e-16,
+      0.010983721802273694
+    ],
+    "maximum_skin_final_nodal_displacement_m": 0.019439601408520236,
+    "tendons": [
+      {
+        "tendon": 0,
+        "maximum_input_tension_N": 1.5,
+        "maximum_output_tension_N": 1.4244392022607053,
+        "final_output_tension_N": 1.4241938974840294,
+        "late_maximum_input_command_error_m": 7.500837944148658e-05,
+        "final_input_shortening_m": 0.0039032364647862278,
+        "final_command_m": 0.003978234423080384,
+        "force_cap_samples": 67
+      },
+      {
+        "tendon": 1,
+        "maximum_input_tension_N": 1.5,
+        "maximum_output_tension_N": 1.424439201064583,
+        "final_output_tension_N": 1.4241938974840813,
+        "late_maximum_input_command_error_m": 7.500837944217353e-05,
+        "final_input_shortening_m": 0.003903236464785409,
+        "final_command_m": 0.003978234423080384,
+        "force_cap_samples": 67
+      }
+    ],
+    "contact_pairs": []
+  },
+  "source_sha256": "70a41d8016535980ecfc4b498fc441f57ec871f7d742978998280de194e4699b",
+  "source_scene_sha256": "793f76532df9fc49f8fa69c3250fcd6f31ece2bb6152620de7a395d51a075e52",
+  "scene_sha256": "b5868b5a53b8f403471526726f32fef6980704e32aa014f8dc85fc1f930483ca",
+  "scope": "Same outward mechanism/mass/material/constraint/dt and same input command/cap; only simulation duration extended. No object, Support or otherFinger. All old hardware and new rotor collisions retained. Initial/finite FEM and actual input/output forces checked; command/saturation and hidden hardware contact gate separate from execution validity. Not100g/wrapping/time/mesh/bearing/strength qualification."
+}

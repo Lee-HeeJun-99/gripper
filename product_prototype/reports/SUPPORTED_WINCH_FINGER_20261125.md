@@ -88,3 +88,57 @@ overwritten, no SDK/FF/ODE edit or q/v correction, no force/tolerance/dt scan.
 Actual Scene/source/binary/commands in per-case preflight/summaries. Frozen
 332journal/control and1831phase binaries hash checked; Raw stays local.
 Latest full1741stillUNBRACEDFAIL;1586bracedOBJECT-ONLYPASS unchanged.
+
+##1889–1893: actual full-stroke limitation and corrected physical candidate
+
+1889extends unchanged1886fixture to0.6s/240steps. Native normal/noERROR6.09595s,
+minFEMratio0.989116, no nonzero contact response. But both inputs hit1.5N cap
+for67samples; late command error75.0084um fails unchanged1um gate. Actual
+output~1.424194N, not assumed1.5N. No tension increase or tolerance relaxation.
+
+1890registration audit identifies an additional geometry defect: old canonical
+Rx-axis conversion put finite rotor's long axisZ, but virtual force ports at
+Yplus/minus10mm. Actual local body boundsYplus/minus1mm give at least9mm
+off-body port separation. This was **not a fabricated load-bearing arm**.
+Historical Native scalar/matrix/ideal-force-port results remain actual, but
+must not be promoted to finite hardware. Proper lever axial registration
+preserves axial inertia yet changes full tensor/collider and must be tested.
+Corrected radial copies additionally have3positive intermodule overlaps
+2.309401mm3 each, and old input-wire path cuts own lever0.0585271mm3 outside
+declared last0.7mm termination domain. No3Finger launch on that geometry.
+
+1891/1892new physically registered candidate: integral central/end bosses,
+input/output points on outboard lower surfaces, unchanged0.5mm inputwire,
+and fixed idler direction derived tangent at half target stroke. New connected
+lever COM/volume/full inertia are actually integrated and used Native. Same
+Skin/Rail/material/dt/1.5Ncap; several necessary geometry changes, not a
+single-variable superiority claim. Own input wire has zero finite CSG
+intersection at0/mid/end angles outside the same declared termination domain.
+All initial lever/FEM/Guide separating gaps exceed0.2mm. Ideal bearing, wire
+termination and return-shaft central endface bond still NOT MEASURED.
+1891actual100step1.87248s valid prefix;1892actual240step4.04566s fullclosing
+PASS: no contacts, minFEMratio0.98892458, inputpeak1.414436N, outputpeak
+1.439850N, late cable tracking error<=2.020nm. No force cap activation.
+Thus physical lever registration/load-direction changes address the observed
+full-stroke limitation without increased tension or fitted material. This
+remains no-object functional actuation, not wrapped grasp/time/meshPASS.
+
+1893different Palm architecture: winch axes remain parallel GLOBALX, with
+worldYhandedness and unchanged six original tendon origins. Vertical pull
+does not require radial rotor axes. Exact sufficient convex separating planes
+give minimum8.6mm initial body-to-allFEM/Guide clearance. Full360degree rotor
+envelopes and finite inputwire envelopes also separate all root modules by
+more than inherited0.2mm contact budget. Output lateral motion differs across
+Finger yaw, so actual3Finger Native still required. Not full housing, actual
+bearing or entire moving wire qualification.
+
+Actual added commands (historical tags, NEW tag required to rerun):
+```sh
+python product_prototype/sofa/winch_full_closing.py --tag winch_closing1889
+python product_prototype/cad/winch_port_and_palm_screen.py --tag winch_palm1890
+python product_prototype/sofa/registered_winch_drive.py --tag registered_winch1891
+python product_prototype/sofa/registered_winch_drive.py --tag registered_winch_full1892 --full
+python product_prototype/cad/parallel_winch_bank.py --tag parallel_bank1893
+```
+Per-case actual producer/scenes/commands/input hashes retained. Do not apply
+1892result to old1873CAD or claim100g Holding before actual free-object test.

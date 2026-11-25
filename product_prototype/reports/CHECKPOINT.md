@@ -1,5 +1,7 @@
 ## Current1808 — connected axial guide screened, Native finite-velocity FAIL
 
+Completed feature/evidence commit c5951ee; final documentation save = git HEAD.
+
 Startc231571; feature commits843e7fa/37e6ef8/891b594; final SHA git log -1.
 Actual new Native45one-step component trials, NO new B3/full100g execution.
 1784free-root initial mass PASS;1786–88rotated body tensor FAIL diagnosed1789;

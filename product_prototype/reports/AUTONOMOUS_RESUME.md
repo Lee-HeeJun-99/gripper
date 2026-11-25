@@ -1,5 +1,9 @@
 ## Current1808 — axial mechanism advances, finite-velocity Native contract FAIL
 
+Last completed feature/evidence commit: c5951ee (full SHA from git rev-parse).
+Earlier cycle commits843e7fa/37e6ef8/891b594. Final documentation save is git HEAD.
+Worktree verified clean after feature commit; Git blob guard c231571..HEAD PASS.
+
 Startc231571 clean; commits843e7fa,37e6ef8,891b594; final SHA git log -1.
 1780–1808new evidence includes45actual one-step Native trials, not B3 grasp.
 Initial free-root7column mass PASS; rotated fixed-tensor controls FAIL;

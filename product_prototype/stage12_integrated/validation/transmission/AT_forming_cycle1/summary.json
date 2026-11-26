@@ -1,0 +1,86 @@
+{
+  "status": "ACTUAL_FORMING_ACCESS_REJECTED",
+  "starting_HEAD": "21e2a593319179fe90c258b8ab840ade3e7d4202",
+  "time_utc": "2026-11-26T23:15:07.238982+00:00",
+  "analysis": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_access1/summary.json",
+    "SHA256": "dbc67f38b9ce8c5bab0854e78daca037eb2e29b89ee560b8bfcc5d486e382c39"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_verify1/summary.json",
+    "SHA256": "2f53829c35938b8a89c3d009695380efa1d232e0926c56ebbb8ed1d7f82ed39e"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AT_forming_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "execution": [
+    {
+      "name": "access",
+      "exit_code": 2,
+      "elapsed_seconds": 7.527452704962343,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_cycle1/access.log",
+        "SHA256": "c5c4af84b0c15cded9ad0004b6e549047201aad572c837d5401d91929af3cf55"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/rivet_forming_access.py",
+        "SHA256": "4ce86334613a5749ea6e2f6726d633ff6e23681165ec8737678f2995cb16a329"
+      }
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "elapsed_seconds": 0.36546748713590205,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+      }
+    },
+    {
+      "name": "verify",
+      "exit_code": 0,
+      "elapsed_seconds": 0.9661880070343614,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_cycle1/verify.log",
+        "SHA256": "001cf210fefbec41f14a403696273cff739d4e849efee4816a4045eb211ea13f"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/verify_forming_access.py",
+        "SHA256": "901d8d1a1d900a48e2f1a9e984a0e3e26149e1722f6d66b36add8d1c407d07a3"
+      }
+    }
+  ],
+  "findings": [
+    "Actual reimported 254-part AS assembly tested against finite diameter2.4mm, length10mm opposing flat forming dies and exact5mm straight approach swept cylinders.",
+    "All three left seated dies and left sweeps intersect actual Idler bracket about0.128994108mm3; right dies and sweeps clear all retained assembly parts under declared1e-8mm3 criterion.",
+    "Independent STEP reimport verifies12tool solids, analytic cylinder volumes, local dimensions and all six collision witnesses.",
+    "This specific in-situ opposing die architecture is rejected. Not a claim that all forming methods are impossible."
+  ],
+  "limitations": [
+    "No plastic forming, preform insertion, ordered assembly or machine housing analysis",
+    "No strength, material allowables, pull-through, loaded spin or system release PASS"
+  ],
+  "whole_system_release": false,
+  "adopted": false,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "no_git_writes": true,
+  "no_owned_live_analysis_children": true,
+  "next": "Consider pre-headed pin from left with right-side forming and explicit left support/access, or separately captured pin; require ordered actual assembly and capacity. Do not repeat opposed-flat-die access."
+}

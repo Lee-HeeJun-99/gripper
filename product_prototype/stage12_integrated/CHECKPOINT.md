@@ -1,3 +1,33 @@
+# Batch5 cycle8 — actual rivet forming access rejected; pending supervisor save
+
+Started at21e2a593319179fe90c258b8ab840ade3e7d4202. No git add/commit;
+supervisor local save PENDING, no new commit claimed.
+Actual result: validation/transmission/AT_forming_cycle1/summary.json.
+
+One bounded actual assembly analysis designs finite opposing flat forming dies:
+diameter2.4mm, shank10mm, straight approach5mm at AS final head planes.
+Twelve tool/swept-envelope STEP/STL solids retained. Exact cylinder union
+represents continuous straight approach for this constant-section idealized tool.
+All three left seated dies and approach envelopes intersect actual Idler
+bracket0.128994108mm3. Right side is clear against all retained parts at the
+declared1e-8mm3 intersection limit. This specific in-situ opposing-die method
+is REJECTED; it does not exclude every forming process or assembly order.
+Independent reimport checks12single valid solids, analytical volumes/local
+bounds and all6collision witnesses; source/input hashes pass. No forming
+plasticity, preform insertion, machine housing, ordered assembly, material/
+strength, pull-through or loaded spin qualification. No CAD/BOM adoption.
+AS remains unadopted; AO current/AA adopted unchanged. Old failures preserved.
+
+Actual children exit2(access),2(release),0(independent verification), each
+4GiB/420s/one-thread; all completed. No SOFA run. Release stays
+INTEGRATED_NOT_QUALIFIED. Queue READY: consider pre-headed pin from left and
+right forming with actual support/access and ordered assembly, or separate
+captured pin; then capacity. Do not repeat this opposed-flat-die screen.
+Independent overload/base mechanisms remain available. No RUNNING tasks or
+owned live analysis children. STOP checked. No criteria/SDK/manager/Stage3
+changes; unrelated untracked files preserved. save_request8.json awaits
+supervisor validation/local save, with cycle files only.
+
 # Batch5 cycle7 — double-headed Idler rivet, pending supervisor save
 
 Started at026a9606dc0f803c43c4a23ffcbda97502123c88. No git add/commit;

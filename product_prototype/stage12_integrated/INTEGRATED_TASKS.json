@@ -614,7 +614,7 @@
         "SHA256": "a6a0b9e5c551ae242a9d0141bd4ac78824a929805cbda3f4bedd0a08976960c3"
       },
       "last_cycle_status": "FINITE_ROOT_PRESSURE_WITNESS_VERIFIED_LOADED_CONTACT_BLOCKED",
-      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y±16 to±10, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
+      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y\u00b116 to\u00b110, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
     },
     {
       "id": "idler_integral_M3_shoulder",
@@ -922,6 +922,10 @@
         {
           "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_cycle1/summary.json",
           "SHA256": "43d6f30b5e5867479766fcdb15c878a94ecc8797bffa37a6dc693fddc044ca53"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_cycle1/summary.json",
+          "SHA256": "d4b453f6dbf9a26fb39d7bb36f881857049210c1ff853cac70f76727a6aeb0eb"
         }
       ],
       "prerequisites": [],
@@ -943,11 +947,11 @@
       "cost": "One3600second session, each analysis child4GiB/420s",
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
-      "last_run_utc": "2026-11-26T23:12:47.637900+00:00",
-      "consecutive_runs": 2,
-      "result": "validation/transmission/AS_rivet_cycle1/summary.json",
-      "reason": "AS double-headed rivet blocks both sampled extraction directions; forming/assembly and capacity unqualified, not adopted.",
-      "next": "Resolve post-insertion rivet forming/access or use separately captured pin with explicit assembly; then actual strength/contact/load evidence. Do not repeat these sampled geometry checks as new progress."
+      "last_run_utc": "2026-11-26T23:15:07.238982+00:00",
+      "consecutive_runs": 3,
+      "result": "validation/transmission/AT_forming_cycle1/summary.json",
+      "reason": "AT finite opposing forming dies rejected: left die/Idler bracket overlap in all3sectors; right access clear only in explicit idealized tool scope. AS not adopted.",
+      "next": "Consider pre-headed pin from left with right-side forming and explicit left support/access, or separately captured pin; require ordered actual assembly and capacity. Do not repeat opposed-flat-die access."
     },
     {
       "id": "batch5_same_revision_system_revalidation",

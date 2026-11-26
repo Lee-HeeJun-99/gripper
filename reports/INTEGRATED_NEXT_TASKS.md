@@ -1,3 +1,38 @@
+# Bounded cycle — finite extensible free-tip reference (2026-11-26)
+
+Started from a46536d2ec628e76c1da4d859aee83787d0bf1c1. Supervisor local save
+PENDING; no git add/commit or commit SHA claimed. One actual design/analysis
+cycle: scripts/extensible_rod_reference.py and validation/finger/extensible_reference1.
+Rail and PET are separate finite planar extensible rods, root x/y/rotation fixed,
+free axial tip, prescribed spatial dead transverse force, zero terminal moment.
+These are explicit reference boundary conditions, NOT the actual assembly guide.
+Independent axial strain is eliminated by exact stationarity e=(F dot t)/EA;
+rotation remains nonlinear. Conditional typical material/projected section basis
+and candidate RevAD lengths are unchanged. No CAD/BOM adoption or material fit.
+
+Six body/load cases (0.1uN,1mN,20mN) and16/32/64 midpoint meshes give18 actual
+solutions. Independent continuous BVP comparison passes predeclared0.1% finest
+tip/rotation reference limits: largest finest tip difference0.006104%.
+Small-load linear limit, finite virtual work and rotated-load objectivity pass.
+Independent saved-state complex-step energy derivatives, axial equilibrium,
+kinematic compatibility, stored energy reconstruction and input hashes pass
+all18 states; deliberately perturbed terminal rotation is rejected.
+All discrete optimizers report success and residuals are finite; original
+individual child exit codes were not separately captured (outer log-reading
+shell exit0 is NOT used as acceptance). Full logs/metadata retained.
+PET20mN finite tip differs8.76519% from linear, Rail0.456074%; this provides an
+actual finite-rotation reference rather than reinterpreting old linear states.
+
+Read-only extensible_release1 remains INTEGRATED_NOT_QUALIFIED (24 audit errors,
+including22 unqualified Stage2 criteria). Reference PASS is not contact, actual
+BRep, strength, friction, dynamic/global assembly energy or system release PASS.
+All prior failures and pre-existing untracked CAD/BOM remain unchanged.
+READY flexible_rail_contact now requires coupled separate finite bodies, actual
+guide axial boundary conditions, and actual geometry contact re-evaluation.
+Alignment and fixture tracks remain independent READY work. No Stage3, SDK,
+criteria, manager or save-control changes. No RUNNING queue records or live
+analysis children at handoff.4GiB/420s bounds and STOP were respected.
+
 # Bounded cycle — distributed elastic Rail/PET (2026-11-26)
 
 Started from19e9ea67e34edc8bbaf43bd6738b58508043fbc6. Supervisor local save PENDING;

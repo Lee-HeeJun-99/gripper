@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "finest_tip_relative_max": 0.001,
+    "finest_rotation_relative_max": 0.001,
+    "gradient_residual_Nm_max": 1e-10,
+    "virtual_work_relative_max": 1e-07,
+    "objectivity_absolute_J_max": 1e-13,
+    "small_load_linear_relative_max": 1e-05
+  },
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/extensible_rod_reference.py",
+      "SHA256": "29e382c34b19ee646e75b4d574d48c743620701d072d3fd52102b50cc0afeeae"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/finite_kinematic_budget1/summary.json",
+      "SHA256": "f2e64793dfb8bec26c1a1bff0ff4e99ed58f4909f9315e619d23805d171b7ad9"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+      "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+    }
+  ],
+  "contract": "Each separate body: root x=y=theta=0, free axial/transverse tip with dead Fy; Mtip=0. NOT actual guide boundary conditions. Strain e independent before exact static condensation.",
+  "energy": "Integral [EA e^2/2+EI theta_prime^2/2] ds - F.r(L); r_prime=(1+e)(cos(theta),sin(theta)). Engineering strain, unshearable planar rod.",
+  "material": "Unchanged conditional typical moduli/projected sections; no certified lot or actual BRep.",
+  "acceptance": "Predeclared reference-only thresholds; old contact and release thresholds untouched."
+}

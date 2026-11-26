@@ -3325,3 +3325,11 @@ DoNOTpromotefastcompletion tocontact/graspPASS.1565singleactualfacet and
 surfacegeometry notuniquecause. NextREADY minimalmappedSkincontactcontract.
 NOchildrunning;alloldRaw/verdictsintact. Latestgitlogauthoritative.
 SeeAUTONOMOUS_RESUMEtop/GUIDE_BRACING_QUALIFICATION_20261124.md.
+# Latest integrated product candidate — AK235
+
+Actual235-part assembly,STEP/STL,BOM and same-case geometry/wire/drive screens
+completed; official AA304 and old PASS/FAIL preserved. AK1 missing support
+corrected in a new AK2 blank, not by relaxing checks. See
+../stage12_integrated/reports/INTEGRAL_DRIVE_PRODUCT_20261126.md.
+All22 Stage2 system criteria remain unqualified. Automatic budget6used/0left;
+no external launch, no Native grasp/hardware test. Actual HEAD via git log -1.

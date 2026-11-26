@@ -6,9 +6,9 @@ from baseline_registry import ROOT,S1,S2,REPO,ref,dump,sha
 from integrated_release_gate import FROZEN_CRITERIA
 spec=importlib.util.spec_from_file_location('existing_s2_gate',S2/'scripts/stage2_release_gate.py');s2=importlib.util.module_from_spec(spec);spec.loader.exec_module(s2)
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'validation/integrated'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--bom',default='revAJ_identity1');a=p.parse_args();out=ROOT/'validation/integrated'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
     current=json.loads((ROOT/'CURRENT_CANDIDATE.json').read_text());source=REPO/current['definition']['path'];assert sha(source)==current['definition']['SHA256'];d=json.loads(source.read_text())
-    bom=ROOT/'bom/revAJ_identity1/CANDIDATE_BOM.csv';rows=list(csv.DictReader(bom.open()));errors=[]
+    bom=ROOT/'bom'/a.bom/'CANDIDATE_BOM.csv';rows=list(csv.DictReader(bom.open()));errors=[]
     if set(r['part_ID'] for r in rows)!=set(d['part_references']):errors.append('candidate BOM inventory mismatch')
     for r in rows:
         if d['part_references'][r['part_ID']]['SHA256']!=r['STEP_SHA256'] or sha(REPO/r['STEP'])!=r['STEP_SHA256']:errors.append('stale candidate STEP/BOM '+r['part_ID'])

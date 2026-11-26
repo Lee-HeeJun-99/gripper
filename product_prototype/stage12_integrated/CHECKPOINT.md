@@ -1,4 +1,18 @@
-# Latest product-system state — RevAJ250-part candidate (2026-11-26)
+# Latest product-system state — RevAK235-part candidate (2026-11-26)
+
+Previous save d4e6521; actual HEAD via git log -1. Official AA304 unchanged.
+Latest candidate revAK_integral2 has actual full STEP/STL and235-ID BOM.
+One-piece grounded motor support removes15 AJ parts and increases supplier
+minimum shaft grip4.2→9.7mm. AK1 foot support FAIL preserved; AK2 corrected
+obsolete aperture on a new blank, full519.4513mm2 support PASS. Geometry,
+48 drive/slip poses,5 wire poses and311-file scope/hash audit PASS only.
+See reports/INTEGRAL_DRIVE_PRODUCT_20261126.md for commands/results/limits.
+Existing system gate remains INTEGRATED_NOT_QUALIFIED, all22 Stage2 criteria
+missing. No maximum force cap, collet capacity or system strength approval.
+Automatic budget6used/0remaining unchanged; no external relaunch. No Native
+grasp/hardware or SDK/manager policy modification. READY tasks target AK235.
+
+# Earlier product-system state — RevAJ250-part candidate (2026-11-26)
 
 Actual HEAD is `git log -1`; preceding work save e195f9a. Official RevAA304
 remains unchanged; latest unadopted candidate is CURRENT_CANDIDATE.json.

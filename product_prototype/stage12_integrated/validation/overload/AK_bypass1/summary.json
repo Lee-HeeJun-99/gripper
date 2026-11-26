@@ -1,0 +1,68 @@
+{
+  "status": "BOUNDED_TOPOLOGY_SCREEN_PASS",
+  "scope": "Actual support topology plus explicit bearing-seizure counterfactual; no actual hardware fault was induced",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+    "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AK_bypass1/producer.py",
+    "SHA256": "8d139ef0745c01777e08f475ff48209904471802e421f458e52984682551fe2e"
+  },
+  "part_sources": {
+    "F0_CLUTCH_INPUT_HUB": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/F0_CLUTCH_INPUT_HUB.step",
+      "SHA256": "427cb8d175a7e5ab02695ab5a75822b3cda70becb61fe8ce2a045eab1f1339e9"
+    },
+    "F0_CLUTCH_BEARING": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_CLUTCH_BEARING.step",
+      "SHA256": "7c37099202855771998e9c40fe616484194d048aa995b7110a49f71f12b563f4"
+    },
+    "F0_DRUM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_DRUM.step",
+      "SHA256": "c5e713886911a9fdc1e6d0dd6e452e8b3d3985592f0fb1946a83b50a08eb6718"
+    },
+    "F0_CLUTCH_INNER_CLIP": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/F0_CLUTCH_INNER_CLIP.step",
+      "SHA256": "36df5251052c84fe27707359066636ce7a94d772da6d6f70b51c0d17b26d4ab7"
+    },
+    "F0_MOTOR_PLATE": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/F0_MOTOR_PLATE.step",
+      "SHA256": "832dfefae171ca95f2261c7b498f0728315ced023f824b7432b856f63e279424"
+    }
+  },
+  "edges": [
+    {
+      "id": "friction_faces",
+      "from": "INPUT_HUB",
+      "to": "DRUM",
+      "guaranteed_limit": true,
+      "basis": "COUNTERFACTUAL ideal calibrated friction cap; actual cap unqualified"
+    },
+    {
+      "id": "support_bearing",
+      "from": "GROUND",
+      "to": "DRUM",
+      "guaranteed_limit": false,
+      "basis": "Actual 688A inner ring on ground spindle"
+    }
+  ],
+  "bypasses": [],
+  "motor_reference_holding_torque_Nm": 0.45,
+  "nominal_drum_radius_m": 0.01125,
+  "illustrative_seizure_reference_tension_N": 40.0,
+  "warning": "Ground support removes this specific bearing bypass in the declared graph only; actual friction, other faults, structural capacity and protected maximum are still unqualified.",
+  "digital_alternatives": [
+    "Support drum on a genuinely fixed-ground bearing/spindle; verify input shaft clearance and actual retention",
+    "Place a separately qualified overload disconnect upstream of every input/output path",
+    "Choose an actuator with a verified complete output torque/energy envelope and qualify the structure at that envelope"
+  ],
+  "controls": [
+    "ideal friction-only route is protected",
+    "adding actual input/output bearing exposes bypass",
+    "ground-supported bearing removes this input/output bypass in graph only"
+  ],
+  "product_force_cap_qualified": false,
+  "ground_supported_CAD_created": true,
+  "whole_system_release": false
+}

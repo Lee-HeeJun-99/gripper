@@ -1,0 +1,71 @@
+{
+  "status": "COLLET_REQUIREMENT_GEOMETRY_PASS_CAPACITY_UNQUALIFIED",
+  "scope": "Actual CAD bore/grip and normalized torque+axial reaction requirements only",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+    "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+  },
+  "input_hub": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAH_pilot2/F0_CLUTCH_INPUT_HUB.step",
+    "SHA256": "ef06f69d729e3a37e4b8bf2def4f07060c09eef69923d5605a645af8d41ee1a2"
+  },
+  "drive_definition": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAH_pilot2/summary.json",
+    "SHA256": "fb5b9d8f8efa82aea8cca9b8e1ba0d9c90fb071a68bf121bddf403140260704e"
+  },
+  "motor_specification": {
+    "path": "product_prototype/stage1_manufacturing/scripts/sourced_motor_stage1.py",
+    "SHA256": "67f9aadfc3eeb5a43b7460db42f407a173fb2e23bc625537476979a0473df100"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AJ_collet_requirements1/producer.py",
+    "SHA256": "c1961b7740df730d6747eab0dc81d14f33d1bd1ea221ffcc0fada999e7dc005b"
+  },
+  "actual_bore_Y_mm": [
+    4.8,
+    16.0
+  ],
+  "shaft_tip_Y_mm": [
+    9,
+    11
+  ],
+  "actual_engagement_mm": [
+    4.2,
+    6.2
+  ],
+  "clamp_bolt_Y_mm": 12.9,
+  "clamp_bolt_ahead_of_shaft_tip_mm": [
+    3.9000000000000004,
+    1.9000000000000004
+  ],
+  "minimum_contact_radius_bound_m": 0.0019000000000000004,
+  "maximum_contact_radius_bound_m": 0.0025,
+  "unit_tendon_requirements": {
+    "pure_torque_muNs_per_N_tendon": [
+      4.5,
+      5.921052631578946
+    ],
+    "face_muN_per_N_tendon": [
+      1.171875,
+      1.355421686746988
+    ]
+  },
+  "diametral_gap_mm": [
+    0.040000000000000036,
+    0.0519999999999996
+  ],
+  "uniform_bore_perimeter_contraction_mm": [
+    0.12566370614359185,
+    0.163362817986668
+  ],
+  "coupled_law": "mu_shaft*N_shaft must cover sqrt((tau/r_eff)^2 + N_spring^2). One-face clutch N_spring=tau/(mu_face*r_face) is conditional on friction/contact assumptions.",
+  "remaining": [
+    "Actual collet pressure/contact and minimum grip under bolt preload",
+    "Collet bolt lies ahead of actual shaft tip; do not equate bolt preload to shaft normal force",
+    "Real D-flat contact/load distribution and torsional/axial slip",
+    "Actual material, bolt proof, motor axial bearing limit",
+    "Rated/calibrated spring/friction and protected transient maximum"
+  ],
+  "actual_capacity_qualified": false,
+  "whole_system_release": false
+}

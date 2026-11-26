@@ -150,3 +150,17 @@ All paths relative to product_prototype/stage12_integrated; Python robot_ws.
 
 READY tasks remain in INTEGRATED_TASKS.json. Inspect actual outputs before
 running anything; never reuse result directories. Hardware remains unmeasured.
+# Actual current resume — AK235 (2026-11-26)
+
+Read CURRENT_CANDIDATE.json and reports/INTEGRAL_DRIVE_PRODUCT_20261126.md.
+Latest unadopted case revAK_integral2; official AA remains unchanged.
+Previous save d4e6521; get actual HEAD with git log -1. AK_geometry2,
+AK_support2,AK_wire_motion2,AK_drive_motion2,AK_files1 already completed:
+do not regenerate them. AK1 missing-foot FAIL is preserved. Readiness1 still
+NOT QUALIFIED;22 system criteria missing. No Native/hardware test this cycle.
+Next actual work: current AK collet preload/contact and axial reaction path,
+or whole-Palm actual mounting/contact (not old clamped local-tab stress).
+Use `python3 product_prototype/stage12_integrated/scripts/integrated_status.py --next`.
+No RUNNING entries; automatic6-call budget exhausted. Do not reset/relaunch
+session_manager. A new automatic budget requires authorization. Interactive
+future continuation must inspect actual processes, queue and file hashes first.

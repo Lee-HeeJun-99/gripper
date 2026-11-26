@@ -1335,3 +1335,9 @@ Resume only after inspecting actual results/processes: wire_long/short,
 Ypacket1/Yfaces1 generated. Next controlled Ypackage and complete fail-closed
 release audit incl combined manufacturing tolerance limitations. Do not
 recreate H or rerun existing output tags. Stage1 only, NO SOFA physics work.
+# Resume latest actual AK235 product work
+
+Use stage12_integrated/AUTONOMOUS_RESUME.md and CURRENT_CANDIDATE.json.
+AK2 geometry/support/wire/drive/BOM/scope tests are completed, not rerun targets.
+Maximum protection, collet capacity and system release remain unqualified.
+External automatic budget is6used/0remaining; no relaunch/reset authorized.

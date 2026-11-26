@@ -3,31 +3,24 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "AI_whole_palm_support",
-    "track": "C",
-    "priority": 1,
-    "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
-    "criteria": "Same current250-part RevAJ geometry, actual full-Palm mounting/load ports, static equilibrium and1% response convergence; local tab clamp-edge stress FAIL is not deleted or promoted",
-    "fallback": "reinforced_local_tabs",
+    "id": "AH_collet_and_axial_capacity",
+    "track": "A",
+    "priority": 0,
+    "hypothesis": "AK actual9.7..11.2mm shaft grip and clamp-zone coverage remove old short-grip geometry concern; combined torque and spring axial load still require actual contact/preload/material and motor bearing evidence",
+    "criteria": "Actual collet load model, finite engagement, torque/axial capacity and material bounds; no force cap from guessed friction",
+    "fallback": "rated_stock_clutch_and_actuator",
     "status": "READY",
-    "prerequisites": [
-      "local_palm_tabs",
-      "idler_integral_M3_shoulder"
-    ],
+    "prerequisites": [],
     "system_gate_contribution": 4,
     "cost": "bounded actual product validation, no random parameter sweep",
     "last_run_utc": null,
     "consecutive_runs": 0,
     "target_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
-      "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+      "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
     },
-    "target_revision": "revAJ_idler1",
-    "target_parts": 250,
-    "evidence": {
-      "path": "product_prototype/stage12_integrated/validation/convergence/AI_tab_convergence2/summary.json",
-      "SHA256": "919e42be9f3806ea1efe7b745e840b01ad4567cb1947731391d4ffd8d31c2c7c"
-    }
+    "target_revision": "revAK_integral2",
+    "target_parts": 235
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

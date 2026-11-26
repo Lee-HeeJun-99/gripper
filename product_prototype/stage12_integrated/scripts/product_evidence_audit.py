@@ -4,7 +4,7 @@ from pathlib import Path
 from baseline_registry import ROOT,REPO,ref,dump,sha
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--profile',choices=['AJ','AK'],default='AJ');a=p.parse_args()
     out=ROOT/'validation/provenance'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
     paths={
         'candidate':'cad/exports/revAJ_idler1/summary.json',
@@ -18,6 +18,8 @@ def main():
         'readiness':'validation/integrated/AJ_readiness2/summary.json',
         'FEM_convergence':'validation/convergence/AI_tab_convergence2/summary.json',
         'tolerance':'validation/alignment/AH_pilot_bounds2/summary.json'}
+    if a.profile=='AK':
+        paths=dict(candidate='cad/exports/revAK_integral2/summary.json',geometry='validation/stage1/AK_geometry2/summary.json',wire='validation/stage1/AK_wire_motion2/summary.json',drive='validation/stage1/AK_drive_motion2/summary.json',footprint='validation/transmission/AK_support2/summary.json',BOM='bom/revAK_identity1/summary.json',binding='models/geometry/AK_binding1/summary.json',readiness='validation/integrated/AK_readiness1/summary.json',collet='validation/transmission/AK_collet_requirements1/summary.json',bypass='validation/overload/AK_bypass1/summary.json',FEM_convergence='validation/convergence/AI_tab_convergence2/summary.json')
     docs={k:json.loads((ROOT/v).read_text()) for k,v in paths.items()};errors=[];checked={}
     def walk(value):
         if isinstance(value,dict):
@@ -37,9 +39,10 @@ def main():
             for child in value:walk(child)
     for d in docs.values():walk(d)
     expected=ref(ROOT/paths['candidate'])
-    for key in ('geometry','wire','drive','stack','footprint','BOM','binding','readiness'):
+    for key in (('geometry','wire','drive','stack','footprint','BOM','binding','readiness') if a.profile=='AJ' else ('geometry','wire','drive','footprint','BOM','binding','readiness','collet','bypass')):
         if docs[key].get('candidate')!=expected:errors.append(key+' wrong candidate')
-    if docs['candidate']['parts']!=250 or len(docs['candidate']['part_references'])!=250:errors.append('wrong final inventory')
+    inventory=250 if a.profile=='AJ' else 235
+    if docs['candidate']['parts']!=inventory or len(docs['candidate']['part_references'])!=inventory:errors.append('wrong final inventory')
     if docs['readiness']['status']!='INTEGRATED_NOT_QUALIFIED':errors.append('unexpected release promotion')
     if docs['FEM_convergence']['stress_converged'] is not False:errors.append('lost stress FAIL')
     count=len(errors)

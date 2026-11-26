@@ -25,9 +25,10 @@ def main():
     assert all(n in d['part_references'] for n in required)
     # Grant the friction route a PERFECT torque bound as a negative control:
     # even this generous counterfactual cannot protect a parallel bearing path.
-    fixed_support='F0_CLUTCH_GROUND_SPINDLE' in d['part_references']
+    fixed_support='F0_CLUTCH_GROUND_SPINDLE' in d['part_references'] or d.get('integrated_motor_support',False)
     if fixed_support:
-        required+=['F0_CLUTCH_GROUND_SPINDLE','F0_CLUTCH_INNER_CLIP','F0_MOTOR_PLATE']
+        required+=['F0_CLUTCH_INNER_CLIP','F0_MOTOR_PLATE']
+        if 'F0_CLUTCH_GROUND_SPINDLE' in d['part_references']:required.append('F0_CLUTCH_GROUND_SPINDLE')
         required.extend(n for n in d['part_references'] if n.startswith(('F0_CLUTCH_GROUND_BOLT_','F0_CLUTCH_GROUND_SPACER_')))
         assert d['torque_model']['faces']==1
     edges=[dict(id='friction_faces',**{'from':'INPUT_HUB','to':'DRUM'},guaranteed_limit=True,basis='COUNTERFACTUAL ideal calibrated friction cap; actual cap unqualified'),

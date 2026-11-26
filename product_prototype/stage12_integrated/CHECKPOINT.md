@@ -1,3 +1,46 @@
+RECOVERY2026-11-26: saved9cases and every input hash independently inspected;
+recovery_audit1 passes111 result/failure records. Historical Git-write failure
+below is preserved. Explicit cycle files are now being saved by the authorized
+supervisor, not by widening/bypassing the child sandbox. Manager save protocol
+and isolated two-cycle Git controls implemented before relaunch. Remaining
+original budget5x1800s, no6run budget reset. Live status will be in
+runtime/authorized_20261126_2/status.json under service regrip-stage12-20261126-2.
+
+HISTORICAL SAVE BLOCKER for this cycle: git add and git commit both failed because
+.git/index.lock cannot be created: Read-only file system. HEAD remains999fb6a.
+The filesystem permission profile makes.git read-only; no bypass or manager
+control change attempted. Research outputs and queue/checkpoint changes remain
+in working tree. commit_guard.py executed PASS on EMPTY staging only and is
+NOT evidence that these changes were staged/guarded/committed. A writable-Git
+manager/session must stage only this cycle's explicit paths, run guard and
+commit before starting the next research cycle. Unrelated untracked CAD kept.
+
+# Latest bounded cycle — flexible terminal reference (2026-11-26)
+
+Completed one new independent elastic-Rail/PET reference mechanism in
+scripts/flexible_rail_reference.py, actual output validation/finger/flexible_reference2.
+Green-function compliance includes Rail tip rotation in the finite-clearance
+terminal guide; separate PET and Rail deflections are solved, not equal curvature.
+RevAD PET free length86.2mm, Rail88mm; existing projected sections and conditional
+193GPa/Mylar typical moduli only. Nine actual8/16/32-element cases at -1mN,
++10uN,+1mN pass predeclared reference, force/moment, gap, complementarity and
+static energy checks. Worst relative Green/FEM comparison9.722e-7.
+Terminal reactions at32: -1mN back52.931uN, +1mN front115.044uN;
++10uN stays open. Omitting clearance contact work causes3.94/4.60% static
+energy identity errors. This is not a global trajectory energy certificate.
+Import failure(exit1, missing osqp path) and serialization failure(exit1 after
+solves) are preserved separately; successful retry used existing dependency
+path, no install. No old failure or artifact overwritten.
+
+IMPORTANT: terminal-only model can cross actual Rail surface. No distributed
+interface or actual deformed BRep qualification, friction, finite rotation,
+strength or system PASS. Adopted RevAA unchanged; RevAD remains candidate.
+Read-only integrated release audit remains INTEGRATED_NOT_QUALIFIED.
+Next READY flexible_rail_contact: separate-DOF distributed unilateral contact,
+continuous gap and independent small-load checks, then actual geometry; do not
+rerun this terminal reference as new research. All analysis children finished;
+no RUNNING queue records. This worker did not modify/launch any manager controls.
+
 # Integrated checkpoint — 2026-11-26
 
 AUTOMATION AUTHORIZATION: user approved actual session_manager execution.

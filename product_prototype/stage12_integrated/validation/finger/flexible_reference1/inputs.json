@@ -1,0 +1,44 @@
+{
+  "criteria": {
+    "reference_relative_max": 1e-05,
+    "force_N_max": 1e-08,
+    "moment_Nm_max": 1e-09,
+    "gap_m_min": -1e-12,
+    "complementarity_J_max": 1e-12,
+    "energy_relative_max": 1e-08
+  },
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/flexible_rail_reference.py",
+      "SHA256": "066e2f01126dddaef1d28e9ab90080d5ded346dd4f910acd6b35b807abd4700a"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/sliding_pet_contact.py",
+      "SHA256": "ef0734e720fbb444567b3c0881ae9efe470e7b34ca57545bcbf5d8c904506171"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/models/materials/evidence.json",
+      "SHA256": "14b727a364ccf9b56ffa741e3a3765b859c3df85ad4bbe11e3244a87dfaed01f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+      "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/owner_states2/summary.json",
+      "SHA256": "468c4dd536fb026e845fab1de3bfb5a8b8a731cf3b7636f5171a37623bb655e9"
+    }
+  ],
+  "conditional_material": {
+    "rail_E_Pa": 193000000000.0,
+    "PET_E_Pa": 3495641947.6361756
+  },
+  "lengths_m": {
+    "rail": 0.088,
+    "PET": 0.0862
+  }
+}

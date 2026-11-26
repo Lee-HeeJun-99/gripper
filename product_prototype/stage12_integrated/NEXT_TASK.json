@@ -16,8 +16,17 @@
       "validation/finger/owner_states2/summary.json"
     ],
     "criteria": "Actual geometry and explicit conditional material basis; independent small-load beam reference, full force/moment/gap/complementarity and energy; no rigid-fixture PASS promotion. Define acceptance before solve.",
-    "cost": "Small reference first,4GiB/420s per child",
-    "fallback": "alignment_alternative"
+    "cost": "One bounded distributed small-load model;4GiB/420s",
+    "fallback": "alignment_alternative",
+    "results": [
+      "validation/finger/flexible_reference2/summary.json"
+    ],
+    "preserved_failures": [
+      "validation/finger/flexible_reference_import_failure1/summary.json",
+      "validation/finger/flexible_reference1/failure.json"
+    ],
+    "reason": "Independent terminal-only Green-function vs FEM reference executed:9cases PASS; both walls and open gap, force/moment/KKT/complementarity and clearance-work identity checked. NOT distributed surface contact or finite-rotation qualification.",
+    "next": "Implement RevAD distributed Rail/PET unilateral surface contact with separate DOFs and independently certify continuous gap; compare small-load limit against terminal reference without promoting terminal-only geometry."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

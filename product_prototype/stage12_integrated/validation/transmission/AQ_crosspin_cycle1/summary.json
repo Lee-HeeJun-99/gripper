@@ -1,0 +1,83 @@
+{
+  "status": "ACTUAL_CROSSPIN_DESIGN_REJECTED_NOT_QUALIFIED",
+  "starting_HEAD": "1a132e0e1c92e400301866b93c1d2f643bb5131e",
+  "time_utc": "2026-11-26T23:07:00.825695+00:00",
+  "candidate_retained": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "rejected_design": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAQ_crosspin1/summary.json",
+    "SHA256": "0961cd384087d421345f1bd420e9916849b6c7c93fea3fc8e64bfb920e2cc55a"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_verify1/summary.json",
+    "SHA256": "1e462b0ddfa2823c0c060764888b32b166f9c0c311cd6c773599c0ba8930d13b"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AQ_crosspin_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "execution": [
+    {
+      "name": "build",
+      "exit_code": 0,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_cycle1/build.log",
+        "SHA256": "7feff64dd4b569351a07ff63a1048e1895b8dd067fe2a7dc687823903a471d8b"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAQ_crosspin1/producer.py",
+        "SHA256": "be5672b62c5de32f817f1c76405b830e38daf290bc46bf60bba0b2af52923810"
+      }
+    },
+    {
+      "name": "verify",
+      "exit_code": 2,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_cycle1/verify.log",
+        "SHA256": "a69ac2f36f536c9cfcff50e806ac2f4f593861049726202996c4c55111acbe91"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_verify1/producer.py",
+        "SHA256": "b3cdee5876ba5a4cc46f09359a7c82f574fd64e361ca8dc8f072ea4852d24a83"
+      }
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+      }
+    }
+  ],
+  "findings": [
+    "Actual 254part AO descendant replaces three smooth nut envelopes with transverse diameter1mm pins and diameter1.1mm axle holes. Six changed STEP/STL plus full assembly/BOM. Nominal changed/retained intersections pass1e-8mm3.",
+    "Reimported three sectors: +.09mm pin/washer clear, +.11mm positive stop (~.00319112mm3); opposite -.01mm axle/bracket positive stop (~.105558mm3). Geometry stops are not contact force or strength.",
+    "All21 pin-axis extraction samples0..7mm clear against all retained assembly parts. Smooth pin lacks finite end retention: reject captive-retention candidate. Discrete samples are not continuous path certification.",
+    "No nut/thread preload assigned to this alternative. Axle cross-hole notch/net-section, pin shear/bending/material, retained shoulder/bracket load path, loaded free spin and assembly/tool access remain unqualified."
+  ],
+  "capacity_N": null,
+  "whole_system_release": false,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "no_git_writes": true,
+  "no_owned_live_analysis_children": true,
+  "next": "Finite end-retained crosspin or supported captive axle, with ordered assembly and load path; do not repeat smooth pin escape samples as progress."
+}

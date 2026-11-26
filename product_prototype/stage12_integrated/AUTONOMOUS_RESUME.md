@@ -1,3 +1,32 @@
+# Batch5 cycle5 — actual Idler crosspin rejection; pending supervisor save
+
+Started at1a132e0e1c92e400301866b93c1d2f643bb5131e. No git add/commit;
+supervisor local save PENDING, no new commit claimed.
+Actual result: validation/transmission/AQ_crosspin_cycle1/summary.json.
+
+One bounded actual design: revAQ_crosspin1 is an unadopted254part AO descendant.
+Three smooth nut envelopes replaced by diameter1mm transverse pins through
+new diameter1.1mm axle holes at local y=-6.1. Six STEP/STL, full assembly/BOM,
+producer and pre-analysis input hashes preserved. Nominal exact changed/retained
+interference checks pass1e-8mm3. Independent reimport finds positive pin/washer
+stop at+.11mm (~.00319112mm3), clear at+.09mm, and opposite axle/bracket stop
+at-.01mm (~.105558mm3), all three sectors. These are geometry, not capacity.
+All21 sampled pin-axis positions0..7mm are clear against actual assembly:
+CROSSPIN_RETENTION_REJECTED (exit2). Pin end capture is absent. No adoption.
+Samples are not a continuous path/assembly certificate. All failures preserved.
+
+Axle cross-hole notch/net section, pin shear/bending/contact, materials,
+end capture/ordered assembly/tools, loaded free spin and protected maximum
+remain unresolved. No preload/friction fit or thread capacity invented.
+AO remains CURRENT_CANDIDATE; AA adopted baseline unchanged. Existing release
+audit remains INTEGRATED_NOT_QUALIFIED (24errors,22 Stage2 unqualified).
+Three bounded children exit0/2/2;4GiB/420s/one-thread. No SOFA run.
+Input/source identity independently checked. No RUNNING task or owned live
+analysis child. Queue remains READY for finite end capture/supported captive
+axle and actual load path. Old data and unrelated untracked files preserved.
+No criteria/SDK/manager/Stage3 change. Exact save_request5.json awaits supervisor
+validation/local save; research rejection is not a system release PASS.
+
 # Batch5 cycle4 — actual grooved-nipple fuse rejection; pending supervisor save
 
 Started at 79abf2a3c9144bd8f8d7dc66ace95c8afd86395e. No git add/commit.

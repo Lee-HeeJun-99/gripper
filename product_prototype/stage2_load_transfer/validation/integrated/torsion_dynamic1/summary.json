@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "scope": "CONDITIONAL FIXED-AXIS TWO-INERTIA TORSION COUPON ONLY; NOT FULL REV AA DYNAMICS",
+  "case": "revAA_heel_relief2",
+  "J_motor_kg_m2": 5.4e-06,
+  "J_provisional_load_kg_m2": 3.1039859688819885e-06,
+  "inventory": [
+    {
+      "part": "F0_SHAFT",
+      "assumed_nominal_density_kg_m3": 7830,
+      "CAD_envelope_mass_kg": 0.00821849605555887,
+      "axis_inertia_kg_m2": 4.874735645747175e-08
+    },
+    {
+      "part": "F0_DRUM",
+      "assumed_nominal_density_kg_m3": 2700,
+      "CAD_envelope_mass_kg": 0.011987801589890287,
+      "axis_inertia_kg_m2": 1.651047550113142e-06
+    },
+    {
+      "part": "F0_COUPLING_LOWER",
+      "assumed_nominal_density_kg_m3": 2700,
+      "CAD_envelope_mass_kg": 0.00464483400059356,
+      "axis_inertia_kg_m2": 1.9469869770153564e-07
+    },
+    {
+      "part": "F0_COUPLING_UPPER",
+      "assumed_nominal_density_kg_m3": 2700,
+      "CAD_envelope_mass_kg": 0.004517803073327123,
+      "axis_inertia_kg_m2": 1.8839891644087443e-07
+    },
+    {
+      "part": "F0_DRUM_NIPPLE_CAP",
+      "assumed_nominal_density_kg_m3": 2700,
+      "CAD_envelope_mass_kg": 0.006702395503883788,
+      "axis_inertia_kg_m2": 1.0210934481689644e-06
+    }
+  ],
+  "spring_Nm_rad": 209.73778835734186,
+  "applied_motor_torque_Nm": 0.01,
+  "opposing_drum_torque_Nm": -0.01,
+  "omega_rad_s": 10315.561079908332,
+  "duration_s": 0.012181955510723264,
+  "records": [
+    {
+      "steps": 40666,
+      "dt_s": 2.9956119388981616e-07,
+      "max_displacement_reference_relative": 9.874974976074119e-05,
+      "max_velocity_reference_relative": 9.999650259363301e-05,
+      "max_angular_momentum_residual_Nms": 1.0587911840678754e-20,
+      "max_energy_work_relative": 1.998616691507827e-14,
+      "status": "PASS"
+    },
+    {
+      "steps": 81332,
+      "dt_s": 1.4978059694490808e-07,
+      "max_displacement_reference_relative": 2.4687461762373333e-05,
+      "max_velocity_reference_relative": 2.4999152574949114e-05,
+      "max_angular_momentum_residual_Nms": 3.621065849512134e-20,
+      "max_energy_work_relative": 2.1984783606586097e-14,
+      "status": "PASS"
+    }
+  ],
+  "time_refinement_relative": 7.406229229434558e-05,
+  "physical_mass_qualified": false,
+  "omitted": [
+    "pin/fastener/inner-race inertia",
+    "actual coupling contact/compliance",
+    "bearing friction",
+    "wire compliance",
+    "real motor torque curve",
+    "material density/lot tolerance"
+  ],
+  "density_basis": {
+    "6061": "Nominal2.70 g/cm3 Aluminum Association Teal Sheets; not lot certificate",
+    "303": "Carpenter typical7.83 g/cm3"
+  },
+  "sources": [
+    "https://www.aluminum.org/sites/default/files/2026-01/Teal%20Sheets%20December%202025.pdf",
+    "https://www.carpentertechnology.com/hubfs/7407324/Material%20Saftey%20Data%20Sheets/303.pdf",
+    "https://files.omc-stepperonline.com/17HS15-1504S1_Full_Datasheet.pdf"
+  ],
+  "source_SHA256": "1fdc8eeb88af47194bd046dbf48be352c5d51bc2f16de1200d12c5c04577ed06",
+  "geometry_SHA256": "27291527e693458879a2e9688fcd00dd04236513697b31e4b97456924b146192",
+  "compliance_SHA256": "3b8657872854ea2d56d91a6850a43262f89daa77d1ffd0857c33b0c2f7d02411",
+  "trajectory_SHA256": "ddf430e5e6e340a54dc3fbec59daf1ca80d9196f8c6963161965419d4f534632",
+  "command": "python scripts/torsion_dynamics.py --tag torsion_dynamic1"
+}

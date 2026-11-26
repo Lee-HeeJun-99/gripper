@@ -1,5 +1,5 @@
 """Manufacture-candidate split nipple test grips, NOT certified test hardware."""
-import argparse,csv,json,sys,hashlib
+import argparse,csv,json,sys,hashlib,shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT.parent/'stage1_manufacturing/scripts'))
@@ -10,6 +10,7 @@ from OCP.gp import gp_Trsf,gp_Ax1,gp_Pnt,gp_Dir,gp_Vec
 def main():
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);args=p.parse_args()
     out=ROOT/'hardware_test/fixtures'/args.tag;out.mkdir(parents=True,exist_ok=False)
+    shutil.copyfile(__file__,out/'producer.py')
     # Axis Z. Clearance pockets enclose UNION of manufacturer maximum end
     # envelopes, not nominal-only dimensions. Wire exits at bottom z=-3.
     whole=box(-10,-8,-3,20,16,9)
@@ -19,7 +20,7 @@ def main():
     parts={}
     # Actual kerf .20, clear external loading/removal direction; halves
     # clamped with purchased M3 through-bolts/nuts, NOT threaded polymer.
-    for label,x in [('L',.1),('R',-20.1)]:
+    for label,x in [('L',-.1),('R',-19.9)]:
         half=cut(whole,box(x,-10,-4,20,20,12));parts['GRIP_'+label]=half
     # Opposed second grip, wire outlet towards first grip; specimen free span
     # 60 mm. No tensile machine or actual finished wire is fabricated here.

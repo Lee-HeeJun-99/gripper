@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "STATIC LOCAL COUPON COMPLIANCE ONLY, NOT SHAFT CAPACITY OR SYSTEM CONVERGENCE",
+  "checks": {
+    "same_weak_form_compliance": true,
+    "shaft_compliance_refinement": true,
+    "cylinder_reference": true,
+    "cylinder_refinement": true,
+    "all_hashes_current": true
+  },
+  "assembly_method_relative_error": 1.3100631690576847e-14,
+  "shaft_compliance_refinement_relative": 0.003469249222479709,
+  "cylinder_refinement_relative": 0.0066237701004001615,
+  "cylinder_reference_relative": 0.006246612858357592,
+  "shaft_torsional_compliance_rad_Nm": 0.004767858037561857,
+  "stress_warning": "Different quadrature sample positions change reported peaks. No stress singularity/contact/fatigue approval from this compliance test.",
+  "source_SHA256": "f2d0bcf7f6ce0baec7ff66e2f3e51f84e544ec99ae42f1bc91b53ac41a0ce610",
+  "input_SHA256": {
+    "shaft08amg": "8c7b968fdb81b9fa107ab06b1cd25c2ef3ead21c73d0ec7bd9b47b2f4636ae16",
+    "shaft08block": "4cc2a01ed126e64b9d7b1868fda59994517c736afb4e2f7995cfccfa65e2228e",
+    "shaft06block": "ac721765097c792d19301b70c36efbe07d064151f65982dd8001c5905c66f0a0",
+    "cylinder05p2": "b4107290023d4cbebaad0ba5d6f92935fe1430121061316918c98f3d72ac777c",
+    "cylinder035amg": "a82244d152db95c6388e7b7544e5f8e2c2698dd7d73e0c35c1a8064a692fca51"
+  },
+  "command": "python scripts/convergence_audit.py --tag torsion1"
+}

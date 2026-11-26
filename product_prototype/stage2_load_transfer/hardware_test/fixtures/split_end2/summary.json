@@ -1,0 +1,55 @@
+{
+  "status": "GEOMETRY_PASS",
+  "scope": "TEST FIXTURE CANDIDATE GEOMETRY ONLY; NOT SAFE LOAD CERTIFICATION",
+  "parts": [
+    {
+      "ID": "GRIP_L",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "GRIP_L.step",
+      "STL": "GRIP_L.stl",
+      "STEP_SHA256": "246fc3d1f0065eff7b5af641512246d5eac8642587ea0d6034836a2a8ee5e940",
+      "volume_mm3": 1072.9508096093361
+    },
+    {
+      "ID": "GRIP_R",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "GRIP_R.step",
+      "STL": "GRIP_R.stl",
+      "STEP_SHA256": "62fcea0374e1f39a4f6c8036f4f1629afaeefe3e592e59a29912652788a8ca60",
+      "volume_mm3": 1072.9508096093355
+    },
+    {
+      "ID": "OPPOSED_GRIP_L",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "OPPOSED_GRIP_L.step",
+      "STL": "OPPOSED_GRIP_L.stl",
+      "STEP_SHA256": "01eb6a8fbeaf32c0721fae66cdf09cd8dd2cdca255d00754721a01fc70168bd2",
+      "volume_mm3": 1072.9508096093357
+    },
+    {
+      "ID": "OPPOSED_GRIP_R",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "OPPOSED_GRIP_R.step",
+      "STL": "OPPOSED_GRIP_R.stl",
+      "STEP_SHA256": "72893facb9f1bfe5fd6be69ac40889f587cb42d5350b13b9888011040d2f561d",
+      "volume_mm3": 1072.9508096093352
+    }
+  ],
+  "collisions": [],
+  "finished_wire_free_span_mm": 60,
+  "axial_path": "wire -> factory nipple -> internal finite shoulder -> grip halves -> test-machine adapter bolts",
+  "unresolved": [
+    "actual nipple fit",
+    "bolt preload",
+    "fixture proof load",
+    "machine adapter",
+    "calibration",
+    "guarding"
+  ],
+  "source_SHA256": "f48bc7507c101380c3768442f8aa437563561c0839bc92bfa1315c037dd8a9ab",
+  "command": "PYTHONPATH=/tmp/regrip_stage1_ocp python scripts/hardware_fixture.py --tag split_end2"
+}

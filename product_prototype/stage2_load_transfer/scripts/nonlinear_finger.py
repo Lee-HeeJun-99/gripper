@@ -20,8 +20,8 @@ def cable(p,r=.01118):
     end=math.atan2((q-c)[1],(q-c)[0])
     while end<phi:end+=2*math.pi
     return np.linalg.norm(cd)+r*(end-phi)+np.linalg.norm(p-q)-.020,(p-q)/np.linalg.norm(p-q)
-def model(n,locked):
-    EI,kr,k,d,neutral=definition(.00030,.00020)
+def model(n,locked,tp=.00030,tr=.00020,radius=.01118):
+    EI,kr,k,d,neutral=definition(tp,tr)
     if not locked:kr=0.
     h=L/n;H=np.zeros((n,n))
     for i in range(n):
@@ -42,7 +42,7 @@ def model(n,locked):
             dp[:,i]+=ds
             if i:dp[:,i-1]+=ds
         dp[:,-1]+=np.array([-st*offset[0]+ct*offset[1],-ct*offset[0]-st*offset[1]])
-        length,g=cable(p)
+        length,g=cable(p,radius)
         energy=.5*q@H@q+tension*length
         grad=H@q+tension*dp.T@g
         return float(energy),grad,p,length,end

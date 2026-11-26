@@ -14,7 +14,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--mode',choices=['reference','shaft'],required=True)
-    ap.add_argument('--h-mm',type=float,required=True);ap.add_argument('--order',type=int,choices=[1,2],default=1);ap.add_argument('--tag',required=True);a=ap.parse_args()
+    ap.add_argument('--h-mm',type=float,required=True);ap.add_argument('--order',type=int,choices=[1,2],default=1);ap.add_argument('--solver',choices=['direct','amg'],default='direct');ap.add_argument('--tag',required=True);a=ap.parse_args()
     out=ROOT/'validation/shaft'/a.tag;out.mkdir(parents=True,exist_ok=False)
     shutil.copyfile(__file__,out/'producer.py');start=time.monotonic()
     step=ROOT.parent/'stage1_manufacturing/cad/parts/revAA_mbd1/F0_SHAFT.step'
@@ -47,7 +47,9 @@ def main():
         for es1 in es:
             ids=np.searchsorted(tags,es1);fnodes.extend(ids.tolist());fixed_tris.extend(ids.reshape(-1,3).tolist())
     gmsh.finalize()
-    m=MeshTet(coords.T,tetra.T);element=ElementVector(ElementTetP1() if a.order==1 else ElementTetP2());basis=Basis(m,element)
+    # Affine tetrahedron + constant elastic moduli: P2 gradient product has
+    # degree 2. Degree-2 quadrature is exact, not reduced/under-integration.
+    m=MeshTet(coords.T,tetra.T);element=ElementVector(ElementTetP1() if a.order==1 else ElementTetP2());basis=Basis(m,element,intorder=2)
     keys={tuple(sorted(t)) for t in fixed_tris}
     fixed_facets=np.array([i for i,t in enumerate(m.facets.T) if tuple(sorted(t)) in keys])
     fixed=basis.get_dofs(facets=fixed_facets).all()
@@ -62,8 +64,34 @@ def main():
     input_torque=float(np.sum((dofcoords[:,2]-.020)*nodalf[0]-(dofcoords[:,0]-.080)*nodalf[2]))
     target=.001;f*=target/input_torque
     E=193e9;nu=.3;lam,mu=lame_parameters(E,nu)
-    K=asm(linear_elasticity(lam,mu),basis)
-    u=solve(*condense(K,f,D=fixed));reaction=K@u-f
+    # Bound COO assembly peak independently of mesh size. This changes no
+    # physical stiffness and no convergence threshold.
+    from scipy.sparse import csr_matrix
+    K=csr_matrix((basis.N,basis.N))
+    for start_element in range(0,len(tetra),8000):
+        subset=Basis(m,element,intorder=2,elements=np.arange(start_element,min(start_element+8000,len(tetra))))
+        K=K+asm(linear_elasticity(lam,mu),subset)
+    del subset
+    A,rhs,initial,free=condense(K,f,D=fixed);iterations=[]
+    if a.solver=='direct':u=solve(A,rhs,initial,free)
+    else:
+        import pyamg
+        from scipy.sparse.linalg import cg
+        B=np.zeros((basis.N,6))
+        for j in range(3):B[split[j],j]=1
+        x,y,z=(dofcoords-np.array([.080,0,.020])).T
+        B[split[1],3]=-z;B[split[2],3]=y
+        B[split[0],4]=z;B[split[2],4]=-x
+        B[split[0],5]=-y;B[split[1],5]=x
+        B=B[free];B/=np.linalg.norm(B,axis=0)
+        mg=pyamg.smoothed_aggregation_solver(A,B=B,symmetry='symmetric',max_coarse=200)
+        def callback(v):
+            iterations.append(float(np.linalg.norm(A@v-rhs)/np.linalg.norm(rhs)))
+        solution,info=cg(A,rhs,M=mg.aspreconditioner(),rtol=1e-10,atol=0,maxiter=3000,callback=callback)
+        assert info==0,('CG failure',info,iterations[-1])
+        u=initial;u[free]=solution
+    linear_relative_residual=float(np.linalg.norm((K@u-f)[free])/np.linalg.norm(f[free]))
+    reaction=K@u-f
     rf=reaction[split];forces=f[split]
     balance=np.sum(rf+forces,axis=1)
     torque_balance=float(np.sum((dofcoords[:,2]-.020)*(rf[0]+forces[0])-(dofcoords[:,0]-.080)*(rf[2]+forces[2])))
@@ -79,7 +107,7 @@ def main():
     energy=.5*float(u@K@u);work=.5*float(f@u);twist=float(f@u/target)
     analytic=(target*.020/(mu*np.pi*.0022**4/2)) if a.mode=='reference' else None
     err=abs(twist/analytic-1) if analytic else None
-    checks=dict(force_balance=bool(np.linalg.norm(balance)<1e-8),torque_balance=abs(torque_balance)<1e-10,
+    checks=dict(linear_residual=linear_relative_residual<1e-8,force_balance=bool(np.linalg.norm(balance)<1e-8),torque_balance=abs(torque_balance)<1e-10,
         energy=abs(energy-work)/energy<1e-8,quality=bool(quality.min()>.01),reference=(err<.01 if err is not None else True))
     np.savez_compressed(out/'field.npz',points_m=coords,tetra=tetra,displacement_m=u[basis.nodal_dofs].T,vm_Pa=vm,volume_m3=volumes)
     result=dict(status='PASS' if all(checks.values()) else 'FAIL',checks=checks,
@@ -91,9 +119,11 @@ def main():
         energy_relative_error=abs(energy-work)/energy,mesh_volume_m3=vol,min_quality=float(quality.min()),
         peak_unsmoothed_vm_Pa=float(vm.max()),p95_vm_Pa=float(np.quantile(vm,.95)),
         nodes=len(coords),elements=len(tetra),elapsed_s=time.monotonic()-start,
+        volume_quadrature_degree=2,assembly_element_block=8000,
+        linear_relative_residual=linear_relative_residual,solver=a.solver,iteration_relative_residuals=iterations,
         fixed_surface_tags=fixed_surfaces,loaded_surface_tags=loaded_surfaces,face_inventory=faces,
         source_SHA256=sha(Path(__file__)),STEP_SHA256=sha(step) if a.mode=='shaft' else None,
         binary_SHA256=sha(Path(gmsh.libpath)),gmsh_build=build,scikit_fem=skfem.__version__,scipy=scipy.__version__,numpy=np.__version__,
-        field_SHA256=sha(out/'field.npz'),command='PYTHONPATH=/tmp/regrip_stage2_fem OPENBLAS_NUM_THREADS=1 python scripts/shaft_fem.py --mode '+a.mode+' --h-mm '+str(a.h_mm)+' --order '+str(a.order)+' --tag '+a.tag)
+        field_SHA256=sha(out/'field.npz'),command='PYTHONPATH=/tmp/regrip_stage2_fem OPENBLAS_NUM_THREADS=1 python scripts/shaft_fem.py --mode '+a.mode+' --h-mm '+str(a.h_mm)+' --order '+str(a.order)+' --solver '+a.solver+' --tag '+a.tag)
     (out/'summary.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='face_inventory'},indent=2))
 if __name__=='__main__':main()

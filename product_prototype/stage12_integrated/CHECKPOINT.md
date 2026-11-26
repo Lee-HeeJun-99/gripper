@@ -1,3 +1,32 @@
+# Latest bounded cycle — axial kinematic budget (2026-11-26)
+
+Started at1c1d135761401fa430182dcbe5250b694d364482; supervisor local save PENDING.
+No git add/commit attempted. One actual saved-state analysis cycle, not new
+linear equilibrium trials: finite_kinematic_budget1 evaluates12 body states
+from the existing16/32 distributed Rail/PET solutions. Producer/input hashes
+were recorded before analysis.16point element quadrature, independent adaptive
+quadrature, exact constant-slope control, and separate CubicHermiteSpline
+shortening verifier all pass; input hashes and producer copy match.
+
+Projected-to-finite coordinate reuse FAIL: Rail inextensible-lift x shortening
+at32 is0.405602um(-1mN),0.466152um(+1mN), exceeding existing1nm contact budget.
+Corresponding y changes1.450/1.781nm also exceed1nm. This is a coordinate
+reuse rejection, NOT an independently solved finite-contact penetration.
+Keeping material x fixed instead introduces engineering axial energy: Rail
+3.09274/3.51997 times linear bending energy; PET0.976024/0.440899.
+These alternatives quantify missing kinematics, not actual assembly energy
+or a selection of axial boundary conditions. Conditional typical materials
+and projected sections unchanged. No deformed actual-BRep certificate.
+
+Read-only kinematic_release1 audit remains INTEGRATED_NOT_QUALIFIED.
+All old failures remain immutable, including distributed8element Green FAIL.
+RevAA remains adopted; no CAD/BOM, criteria, SDK or manager controls changed.
+Next READY flexible_rail_contact: explicit separate axial/rotation DOFs,
+variational/virtual-work and small-load checks, then actual finite geometry
+contact. Alignment and fixture mechanisms remain READY independently.
+No RUNNING queue records or live analysis children at handoff. No Stage3.
+Results are pending supervisor validation/local save; no new commit claimed.
+
 # Automation recovery after distributed-contact cycle — 2026-11-26
 
 Actual distributed-contact results saved in1afffcb, original FAILs preserved.

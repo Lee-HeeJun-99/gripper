@@ -16,19 +16,20 @@
       "validation/finger/owner_states2/summary.json"
     ],
     "criteria": "Actual geometry and explicit conditional material basis; independent small-load beam reference, full force/moment/gap/complementarity and energy; no rigid-fixture PASS promotion. Define acceptance before solve.",
-    "cost": "One bounded distributed small-load model;4GiB/420s",
+    "cost": "First finite-rotation axial/rotation contract and independent reference, then actual finite contact; each child4GiB/420s",
     "fallback": "alignment_alternative",
     "results": [
       "validation/finger/flexible_reference2/summary.json",
-      "validation/finger/flexible_distributed2/summary.json"
+      "validation/finger/flexible_distributed2/summary.json",
+      "validation/finger/finite_kinematic_budget1/summary.json"
     ],
     "preserved_failures": [
       "validation/finger/flexible_reference_import_failure1/summary.json",
       "validation/finger/flexible_reference1/failure.json",
       "validation/finger/flexible_distributed1/summary.json"
     ],
-    "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification.",
-    "next": "Advance projected contact to independently checked finite-rotation Rail/PET actual geometry with separate DOFs; preserve8element Green FAIL and establish reference discretization error before any full model acceptance. Do not repeat linear9cases as research progress."
+    "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification. New finite_kinematic_budget1 analyzes12 actual saved body states (16/32), not a repeated equilibrium solve. Both independent quadratures and analytic control pass. Inextensible lift moves Rail x by0.406/0.466um at-/+1mN, so projected coordinate reuse FAILS existing1nm budget. Fixed-x conditional axial energy is3.09/3.52 times Rail bending energy; not actual assembly energy. Neither lift is a solved finite state.",
+    "next": "Implement a separate-DOF extensible finite-rotation Rail/PET variational model with explicit axial boundary conditions and actual geometry contact re-evaluation. Verify virtual work/objectivity and small-load limits before nonlinear contact; do not prescribe linear q as a finite equilibrium or infer gap failure from axial shift alone."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

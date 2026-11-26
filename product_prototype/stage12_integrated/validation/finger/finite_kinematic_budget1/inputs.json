@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "quadrature_relative_max": 1e-09,
+    "quadrature_absolute_max": 1e-18,
+    "existing_contact_gap_budget_m": 1e-09
+  },
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/flexible_distributed2/summary.json",
+      "SHA256": "12e9023348f768238aaba5773e68689f304f1ca9b498247c5389cb921145a181"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/finite_kinematic_budget.py",
+      "SHA256": "e6d220202514beeb7f1643e2b32da51dcbeaea04a10342fccad7fe3941cd13a2"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+      "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+    }
+  ],
+  "hypothesis": "Keeping material x fixed introduces axial stretch; inextensible tangent integration instead moves x and y, invalidating reuse of projected contact coordinates.",
+  "definitions": [
+    "graph x=s,y=y_h(s); engineering axial energy integral EA*(sqrt(1+y_prime^2)-1)^2/2 ds",
+    "inextensible lift integrates (cos(atan(y_prime)),sin(atan(y_prime))) in material s; NOT a solved state",
+    "graph geometric bending comparator integral EI*y_second^2/(1+y_prime^2)^(5/2)/2 dx; NOT total rod energy"
+  ],
+  "material_basis": "unchanged conditional supplier typical moduli and projected sections; no actual lot certification"
+}

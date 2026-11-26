@@ -1,0 +1,148 @@
+{
+  "status": "PARTIAL_PRODUCT_IMPLEMENTATION_NOT_QUALIFIED",
+  "starting_HEAD": "bc8d375ace3b9bc11ef9a5deff464eb3f435885f",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AO_root_verify2/summary.json",
+    "SHA256": "66f651837826a727541acc7a97462e80b5c59ea242f276d26c79263810e89f25"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AO_root_release1/summary.json",
+    "SHA256": "abbe8b6e5b0a75141afd5b5341031c6da6f5187a7dc050fdda71248b67a5edb4"
+  },
+  "candidate_readiness": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AO_candidate_readiness1/summary.json",
+    "SHA256": "f8255905549e600e1f7ad4121a790e5fbccd16a79a753d291afbf8007c4c7051"
+  },
+  "execution": [
+    {
+      "name": "build",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/build.log",
+        "SHA256": "bc2a142fe7775142d803895b32c031747ed14d6019ac0b21ca60dc64b16e5fce"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root1/producer.py",
+        "SHA256": "5fc273188154630860acd53da352d70355b27af1cb9c2ec4d7e809173651cc59"
+      }
+    },
+    {
+      "name": "verify",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/verify.log",
+        "SHA256": "10394e82b8c0d1ec4da739a4fdd51dcd9d0d1615ebb78b394210d64334a6865b"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_verify1/producer.py",
+        "SHA256": "2c59aeb0957a18197fa4a9143483e8122640f863528d1f028497f432d1e64d68"
+      }
+    },
+    {
+      "name": "rail_location",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/rail_location.log",
+        "SHA256": "0799b4283506601da2de9eb86bdba331476efb3caf0a335858db6f1b09f90aa2"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build2",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/build2.log",
+        "SHA256": "78b0e025f605035324d9fd2716f9ff928e3f40dc19ebd702748e539991318f26"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/producer.py",
+        "SHA256": "1fe046558fdce461d7df99ce6db215ce54709b9b443c14895e6128fd7d1f6a02"
+      }
+    },
+    {
+      "name": "verify2",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/verify2.log",
+        "SHA256": "50f94f0e2adee9b3fc7f9ee85557d379773e97ce5079fee7b0a5a48611cdc002"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_verify2/producer.py",
+        "SHA256": "61909a7994e1b4d5f1619de07115b1b2427cbf136913d3f5bf6321dcd12c92ab"
+      }
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/release.log",
+        "SHA256": "abbe8b6e5b0a75141afd5b5341031c6da6f5187a7dc050fdda71248b67a5edb4"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+      }
+    }
+  ],
+  "failure_preservation": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root1/summary.json",
+      "SHA256": "b52368b247ee994cd0e1228426edb473f67c43ccf7b658bede6587e000d9044f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/AO_root_verify1/summary.json",
+      "SHA256": "0153f65319c1331a63ecef639f659bdecf9cfc747227f8000b12c9930205c2f3"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/environment_failures.json",
+      "SHA256": "e111370627c76f4f9954bb65a0c024eff675cbed41f5171daf833d62c7b77b5a"
+    }
+  ],
+  "new_evidence": "AN-compatible254part descendant; two integral back-clamp pins per Finger capture PET and each Rail locally. Actual STEP/BOM; independent reimport, closed STL,18signed root stops, distal shape equality and sampled root subassembly pass.",
+  "failure_detail": "AO1 y=+/-7 pins pass through existing Rail empty region;12Rail stop checks fail. AO1 full installed-assembly lateral insertion also fails against terminal/cassette/bolts/nuts; preserved, NOT solved by root subassembly samples. AO1 nominal Rail area assumptions invalidated by zero removed material; corrected AO2 y=+/-10 verifies actual removed volumes and finite slice areas.",
+  "scope": "Root-only rigid geometry and unit-resultant section inventory; no loaded elastic contact, local strain/strength, rated capacity or actual free sliding proof",
+  "unmet": [
+    "Rail finite slice net area0.180000016mm2 and outer ligament0.45mm require bearing/notch/strain/creep and mesh1% checks",
+    "Pin bending/shear, front socket support and back-clamp/Palm load transfer",
+    "Existing normal retaining bolts/threads and separation; no guessed preload/friction",
+    "Full ordered assembly/tool paths; AO1 installed-assembly insertion remains FAIL",
+    "Loaded distal PET sliding with actual finite geometry; no two-ended axial lock added",
+    "Same-revision Stage1/Stage2, physical mass/inertia, limiter and global energy"
+  ],
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "whole_system_release": false,
+  "SOFA_executed": false,
+  "known_owned_analysis_children_running": 0,
+  "completion_recorder": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/recorder.py",
+    "SHA256": "ad71f16003dbb54b260a5b93d2e883426a644e0cf611eda88c9279ab7885f804"
+  },
+  "completion_recorder_invocation": "Executed identical bytes at /tmp/regrip_cycle3_finalize.py under4GiB/420s; archived here for review. Existing Stage2 validator used without mutation."
+}

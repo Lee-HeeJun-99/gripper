@@ -753,7 +753,7 @@
     {
       "id": "batch5_positive_drive_retention",
       "track": "A",
-      "priority": -10,
+      "priority": -2,
       "status": "READY",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "hypothesis": "Continue implemented AM positive axial capture: actual standard thread/elastic plate/shoulder load capacity, torque backlash and axial friction/impact; do not repeat geometry scans",
@@ -767,10 +767,10 @@
       ],
       "prerequisites": [],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
-        "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
-      "target_revision": "revAN_palm2",
+      "target_revision": "revAO_root2",
       "target_parts": 254,
       "product_brief": {
         "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
@@ -787,7 +787,8 @@
       "last_run_utc": "2026-11-26T22:48:08.828140+00:00",
       "consecutive_runs": 2,
       "result": "validation/transmission/AM_axial_cycle1/summary.json",
-      "scope": "PARTIAL: actual positive axial shoulder and finite stop/bolt/nut path implemented; thread/elastic/load gates remain unqualified"
+      "scope": "PARTIAL: actual positive axial shoulder and finite stop/bolt/nut path implemented; thread/elastic/load gates remain unqualified",
+      "selection_note": "Two actual drive cycles complete; prioritize independent physical limiter/Idler implementation before loaded drive follow-up. Geometry scans are not new progress."
     },
     {
       "id": "batch5_grounded_palm_attachment",
@@ -804,10 +805,10 @@
       ],
       "prerequisites": [],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
-        "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
-      "target_revision": "revAN_palm2",
+      "target_revision": "revAO_root2",
       "target_parts": 254,
       "product_brief": {
         "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
@@ -829,19 +830,22 @@
     {
       "id": "batch5_positive_root_retention",
       "track": "B",
-      "priority": -11,
+      "priority": -3,
       "status": "READY",
       "execution_class": "PRODUCT_IMPLEMENTATION",
-      "hypothesis": "Implement PET/Rail positive root axial retention without locking distal PET sliding",
+      "hypothesis": "Continue AO actual root pin bearing/notch/strain and normal retaining fasteners plus full ordered assembly; do not repeat rigid stop scans",
       "criteria": "Actual interlock/shoulder/capture hardware, root load/strain and distal sliding compatibility; not another pressure witness",
       "previous_diagnostic_task": "actual_finger_load_ports",
-      "existing_evidence": [],
+      "existing_evidence": [
+        "validation/finger/AO_root_cycle1/summary.json",
+        "validation/finger/AO_root_verify2/summary.json"
+      ],
       "prerequisites": [],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
-        "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
-      "target_revision": "revAN_palm2",
+      "target_revision": "revAO_root2",
       "target_parts": 254,
       "product_brief": {
         "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
@@ -855,8 +859,11 @@
       "cost": "One3600second session, each analysis child4GiB/420s",
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-26T22:58:13.465561+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/finger/AO_root_cycle1/summary.json",
+      "scope": "PARTIAL: positive root geometry implemented, loaded strain/strength and complete assembly gates remain unqualified",
+      "next": "Inspect small Rail net ligament, source-backed material/loaded contact mesh1%, actual clamp bolt path and full root-before-distal assembly order; preserve distal sliding"
     },
     {
       "id": "batch5_physical_load_limiter",
@@ -870,10 +877,10 @@
       "existing_evidence": [],
       "prerequisites": [],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
-        "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
-      "target_revision": "revAN_palm2",
+      "target_revision": "revAO_root2",
       "target_parts": 254,
       "product_brief": {
         "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
@@ -902,10 +909,10 @@
       "existing_evidence": [],
       "prerequisites": [],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
-        "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
-      "target_revision": "revAN_palm2",
+      "target_revision": "revAO_root2",
       "target_parts": 254,
       "product_brief": {
         "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
@@ -940,10 +947,10 @@
         "batch5_idler_mechanical_retention"
       ],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
-        "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
-      "target_revision": "revAN_palm2",
+      "target_revision": "revAO_root2",
       "target_parts": 254,
       "product_brief": {
         "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",

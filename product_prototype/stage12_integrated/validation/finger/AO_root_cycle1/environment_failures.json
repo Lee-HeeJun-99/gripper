@@ -1,0 +1,16 @@
+{
+  "status": "ENVIRONMENT_PROBE_FAILURES_PRESERVED",
+  "attempts": [
+    {
+      "command": "python import OCP",
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: OCP"
+    },
+    {
+      "command": "/usr/bin/python3 import OCP",
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: OCP"
+    }
+  ],
+  "resolution": "Existing /tmp/regrip_stage1_ocp via PYTHONPATH; no dependency installed"
+}

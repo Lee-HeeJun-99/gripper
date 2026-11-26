@@ -1,0 +1,110 @@
+{
+  "status": "FAIL",
+  "scope": "Actual whole AK Palm conditional central clamp and unit outer-mount loading; NOT assembled system or strength qualification",
+  "starting_HEAD": "c1cd83ef0cabad1703a1c56f02c932f5287db3d2",
+  "rows": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_h8_3/summary.json",
+        "SHA256": "dd14f36273c21a161767c7947e4226b855fc6e5e1205822da4aecd6e161589eb"
+      },
+      "h_mm": 8.0,
+      "compliance_m_N": 1.4064643638020782e-06,
+      "peak_unsmoothed_vm_Pa": 142556.33748782583,
+      "minimum_quality": 0.001473331213149916,
+      "checks": {
+        "force": true,
+        "moment": true,
+        "energy": true,
+        "residual": true,
+        "quality": false,
+        "volume": true,
+        "positive_signed_volume_ratio": true
+      },
+      "elapsed_s": 8.07924281200394,
+      "elements": 57306
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_h6_1/summary.json",
+        "SHA256": "647d0ef6ebff6ec6b2d0bf98721773288cfea63b706affc7e5d8f012e520c282"
+      },
+      "h_mm": 6.0,
+      "compliance_m_N": 1.6004790894542799e-06,
+      "peak_unsmoothed_vm_Pa": 174939.3965248952,
+      "minimum_quality": 0.001798613459860611,
+      "checks": {
+        "force": true,
+        "moment": true,
+        "energy": true,
+        "residual": true,
+        "quality": false,
+        "volume": true,
+        "positive_signed_volume_ratio": true
+      },
+      "elapsed_s": 9.318913233932108,
+      "elements": 68367
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_h4_1/summary.json",
+        "SHA256": "eabf4d1d80b5471046c9f1853f8edc191195de7cce8548d607a5b5d43a7a9104"
+      },
+      "h_mm": 4.0,
+      "compliance_m_N": 2.0235761019198477e-06,
+      "peak_unsmoothed_vm_Pa": 248909.49164492125,
+      "minimum_quality": 0.0023376069928809596,
+      "checks": {
+        "force": true,
+        "moment": true,
+        "energy": true,
+        "residual": true,
+        "quality": false,
+        "volume": true,
+        "positive_signed_volume_ratio": true
+      },
+      "elapsed_s": 19.823374175000936,
+      "elements": 117281
+    }
+  ],
+  "convergence": [
+    {
+      "pair": [
+        8.0,
+        6.0
+      ],
+      "compliance_fraction": 0.12122290564780547,
+      "peak_stress_fraction": 0.18511015631896843
+    },
+    {
+      "pair": [
+        6.0,
+        4.0
+      ],
+      "compliance_fraction": 0.2090838155600665,
+      "peak_stress_fraction": 0.2971766750684911
+    }
+  ],
+  "response_limit_fraction": 0.01,
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_verify1/summary.json",
+    "SHA256": "c0f6c621e3921e9a661128a2ea79918eab333c36f236964a080d1c6d73dcb84d"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/producer.py",
+    "SHA256": "5491b12bff1fda5fc1e3c613d8c174778c1b6617dcf1b86e4df5b7a9912315a1"
+  },
+  "failures": [
+    "First face-selection assertion exit1 retained in h8.log and AK_whole_palm_h8_1",
+    "Second single-face assertion exit1 retained in h8_2.log and AK_whole_palm_h8_2; actual washer spans six STEP fragments",
+    "Mesh-quality threshold .01 is unchanged; failed states retained"
+  ],
+  "physical_assumptions": [
+    "Actual entire AK Palm STEP and actual x127/y-1mm hole",
+    "Hypothetical fully fixed underside central annulus r20..30mm, NOT identified assembly support",
+    "Uniform 1N downward traction at r1.7..4mm outer mounting washer; not solved bolt preload",
+    "E70GPa nu.33 assumed linear isotropic material"
+  ],
+  "whole_system_release": false,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE"
+}

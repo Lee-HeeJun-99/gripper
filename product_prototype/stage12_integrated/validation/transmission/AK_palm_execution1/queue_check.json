@@ -1,0 +1,29 @@
+{
+  "status": "SOURCE_INTEGRITY_PASS",
+  "errors": [],
+  "revision": "revAA_heel_relief2",
+  "next": {
+    "id": "actual_finger_load_ports",
+    "track": "B",
+    "priority": -1,
+    "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
+    "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
+    "fallback": "simpler_replaceable_finger_cartridge",
+    "status": "READY",
+    "prerequisites": [],
+    "system_gate_contribution": 4,
+    "cost": "bounded actual product validation, no random parameter sweep",
+    "last_run_utc": null,
+    "consecutive_runs": 0,
+    "target_candidate": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+      "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+    },
+    "target_revision": "revAK_integral2",
+    "target_parts": 235,
+    "selection_note": "Execute B after actual allocation4 A collet and C whole-Palm cycle; use actual AK finite ports, distinguish geometry from loaded Finger qualification."
+  },
+  "running_task_records": [],
+  "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",
+  "resume_command": "python product_prototype/stage12_integrated/scripts/integrated_status.py --next"
+}

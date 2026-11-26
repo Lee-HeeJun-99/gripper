@@ -564,7 +564,7 @@
       ],
       "system_gate_contribution": 4,
       "cost": "bounded actual product validation, no random parameter sweep",
-      "last_run_utc": null,
+      "last_run_utc": "2026-11-26T13:14:03.053987+00:00",
       "consecutive_runs": 0,
       "target_candidate": {
         "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
@@ -573,15 +573,16 @@
       "target_revision": "revAK_integral2",
       "target_parts": 235,
       "evidence": {
-        "path": "product_prototype/stage12_integrated/validation/convergence/AI_tab_convergence2/summary.json",
-        "SHA256": "919e42be9f3806ea1efe7b745e840b01ad4567cb1947731391d4ffd8d31c2c7c"
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/summary.json",
+        "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
       },
-      "selection_note": "Next C product cycle after allocation4 collet A: actual whole-Palm support/load model; then prioritize executable actual Finger B. Preserve local tab stress FAIL."
+      "selection_note": "C bounded cycle complete with retained FAIL; next executable actual_finger_load_ports B. Before further Palm solve identify actual base attachment and investigate thin-plate P1 locking/fragment mesh quality; no blind refinement or strength claim.",
+      "reason": "Actual entire AK Palm conditional central-annulus support/unit outer-hole washer load: 3 P1 mesh solutions; mesh quality and 1% response convergence FAIL. Support interface remains hypothetical. Independent energy/balance reconstruction PASS does not cure FAIL."
     },
     {
       "id": "actual_finger_load_ports",
       "track": "B",
-      "priority": 2,
+      "priority": -1,
       "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
       "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
       "fallback": "simpler_replaceable_finger_cartridge",
@@ -596,7 +597,8 @@
         "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
       },
       "target_revision": "revAK_integral2",
-      "target_parts": 235
+      "target_parts": 235,
+      "selection_note": "Execute B after actual allocation4 A collet and C whole-Palm cycle; use actual AK finite ports, distinguish geometry from loaded Finger qualification."
     },
     {
       "id": "idler_integral_M3_shoulder",

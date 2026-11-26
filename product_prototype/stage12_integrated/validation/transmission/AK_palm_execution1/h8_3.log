@@ -1,0 +1,77 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{
+  "status": "CONDITIONAL_WHOLE_PALM_FAIL",
+  "scope": "Actual entire AK Palm; hypothetical underside r20..30mm fixed annulus; actual outer mounting-hole r1.7..4mm unit pressure footprint; no assembly support or strength qualification",
+  "checks": {
+    "force": true,
+    "moment": true,
+    "energy": true,
+    "residual": true,
+    "quality": false,
+    "volume": true,
+    "positive_signed_volume_ratio": true
+  },
+  "h_mm": 8.0,
+  "element": "P1 tetrahedron, degree2 quadrature",
+  "assembly_element_block": 8000,
+  "source": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+    "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/PALM.step",
+    "SHA256": "ddd3e9a3ffb462aa5371464303791b8e7d3fc15dd52327ba57f21208c2f2d971"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_h8_3/producer.py",
+    "SHA256": "60a18c382ee647a31b34d57b96a797ae5f37b18ea1d741fe7aa9028ccf304b73"
+  },
+  "gmsh_binary": {
+    "SHA256": "9db3090d3b720c57b76bcbfa01d13854823ae2698c91343c20bdd4c2b81f6317",
+    "path": "/tmp/regrip_stage2_fem/libgmsh.so.4.15"
+  },
+  "software": {
+    "gmsh": "4.15.2",
+    "skfem": "12.0.2",
+    "scipy": "1.15.3",
+    "numpy": "2.2.6"
+  },
+  "material": {
+    "E_Pa": 70000000000.0,
+    "nu": 0.33,
+    "basis": "ASSUMED sensitivity, not certified grade"
+  },
+  "input_force_N": [
+    0,
+    0,
+    -1
+  ],
+  "compliance_m_N": 1.4064643638020782e-06,
+  "energy_J": 7.032321819118752e-07,
+  "force_balance_N": [
+    -3.0384583737941284e-12,
+    4.572217604525974e-12,
+    9.71356328705042e-12
+  ],
+  "moment_balance_Nm": [
+    8.165481940633432e-14,
+    -1.2451925572634446e-12,
+    4.257323290048266e-13
+  ],
+  "linear_residual": 1.2533395882226883e-10,
+  "mesh_volume_m3": 0.00020198220457211854,
+  "min_quality": 0.001473331213149916,
+  "minimum_signed_volume_ratio": 0.9999988258249389,
+  "peak_unsmoothed_vm_Pa": 142556.33748782583,
+  "nodes": 15901,
+  "elements": 57306,
+  "DOF": 47703,
+  "elapsed_s": 8.07924281200394,
+  "whole_system_release": false,
+  "loaded_area_mm2": 41.186279688562436,
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_h8_3/verification.npz",
+    "SHA256": "39d9e2c673134a91d83c7dd04c340bb10dbf0958c1277b927f5dec2c3434d25c"
+  }
+}

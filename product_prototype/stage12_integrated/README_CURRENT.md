@@ -10,7 +10,9 @@ New jam-energy control shows why a steady clutch torque alone does not limit
 transient tension. See `validation/overload/jam_energy2/summary.json`.
 The initial implementation failure is preserved under jam_energy1.
 
-No Stage3, Native grasp, purchase, hardware operation, push or background runner.
+No Stage3, Native grasp, purchase, hardware operation or push. Bounded external
+runner authorized; check service regrip-stage12-20261126-2 and its runtime
+status for actual activity. Do not start an overlapping worker.
 Use fresh result tags. All existing Stage1/Stage2 evidence remains unchanged.
 
 Current integrated audit: validation/integrated/release3/summary.json,

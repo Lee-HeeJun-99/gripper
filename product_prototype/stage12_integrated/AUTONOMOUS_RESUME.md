@@ -1,5 +1,13 @@
 # Resume
 
+LATEST RECOVERY: reference work saved f5225df. Check service
+regrip-stage12-20261126-2.service and runtime/authorized_20261126_2/status.json
+BEFORE starting manual work; service1 is historical/stopped. Remaining budget
+5x1800s, not a new6run allocation. Child Git is intentionally read-only; submit
+the exact manifest path supplied in its prompt for verified supervisor local
+save. Do not attempt permission bypass or git add/commit in the child.
+manager_flow1 actually verified two full isolated save/continue cycles.
+
 AUTOMATION: actual manager execution approved2026-11-26, bounded6x1800s.
 Before any manual research, check transient user service
 regrip-stage12-20261126-1.service and runtime/authorized_20261126_1/status.json.

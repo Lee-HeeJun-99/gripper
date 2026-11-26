@@ -1,3 +1,10 @@
+LATEST:9case flexible terminal reference saved in f5225df. Actual two-cycle
+manager/save controls pass in isolated Git repositories; child sandbox remains
+unchanged. Remaining5x1800s service relaunch is regrip-stage12-20261126-2;
+check its live status before overlapping work. Explicit file/hash manifest,
+staged guard and parent local save resolve the observed read-only-Git blocker.
+No full system release is implied. Next distributed contact remains READY.
+
 RECOVERY2026-11-26: saved9cases and every input hash independently inspected;
 recovery_audit1 passes111 result/failure records. Historical Git-write failure
 below is preserved. Explicit cycle files are now being saved by the authorized

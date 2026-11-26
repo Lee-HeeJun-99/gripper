@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "test_only": true,
+  "scope": "ISOLATED GIT SUPERVISOR TESTS ONLY; NO RESEARCH PASS",
+  "controls": [
+    {
+      "name": "wrong HEAD",
+      "rejected": true
+    },
+    {
+      "name": "stale hash",
+      "rejected": true
+    },
+    {
+      "name": "duplicate paths",
+      "rejected": true
+    },
+    {
+      "name": "empty save",
+      "rejected": true
+    },
+    {
+      "name": "no results",
+      "rejected": true
+    },
+    {
+      "name": "path traversal",
+      "rejected": true
+    },
+    {
+      "name": "old user data",
+      "rejected": true
+    },
+    {
+      "name": "exact indexed-hash guarded local commit",
+      "passed": true
+    },
+    {
+      "name": "preexisting untracked data preserved",
+      "passed": true
+    },
+    {
+      "name": "second sequential local save",
+      "passed": true
+    }
+  ],
+  "producer": {
+    "path": "product_prototype/stage12_integrated/scripts/supervised_save_controls.py",
+    "SHA256": "ccbd0cfddda63c38018444416d6fe912f91b3d69c05546c8abeec19cf1b71dd3"
+  },
+  "helper": {
+    "path": "product_prototype/stage12_integrated/scripts/supervised_save.py",
+    "SHA256": "836e65e9aad038206c099c9f9501b7c1da5dc9289285d4f14e65ee8e249c105e"
+  },
+  "external_Codex_sessions_launched": 0
+}

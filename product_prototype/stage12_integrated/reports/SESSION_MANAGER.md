@@ -1,5 +1,42 @@
 # External manager — execution authorized2026-11-26
 
+## Recovery / remaining budget
+
+First actual service stopped after1cycle, not because research was complete:
+child .git is protected read-only. Its9case elastic terminal reference and
+failures were inspected and saved in f5225df. The empty staging guard was
+never represented as guarding those uncommitted files.
+
+Relaunch service: `regrip-stage12-20261126-2.service`, runtime
+`runtime/authorized_20261126_2/`. Remaining original budget is5sessions at
+1800s each (2h30min child time), RuntimeMaxSec9180 with cleanup allowance.
+This does not renew the original6session budget. Memory8GiB total/CPU200%/
+Tasks256 and analysis-child4GiB/420s are unchanged. Actual live state is in
+the new service and status.json; old service1 logs remain preserved.
+
+The child retains workspace-write sandbox and submits an explicit per-cycle
+save_request JSON. Only the separately authorized supervisor can save it.
+It requires exact current HEAD, complete file list, SHA256, new result summaries,
+no pre-existing untracked user work, no symlink/deletion/raw/oversize files,
+no mutation of existing CAD/BOM/evidence, no manager/guard/criteria modification,
+exact indexed bytes, unchanged trusted size guard and a normal local commit.
+No arbitrary commands in manifests are executed. Missing/bad request stops
+without cleanup. Never use this protocol to bypass another approval boundary.
+
+Actual isolated tests: supervised_save_controls1 covers10 cases including two
+real local saves. manager_flow1 runs the actual manager loop for two cycles
+with a fake worker in a separate temporary Git repository: both saves commit
+and continue, original untracked work remains, the launch budget stops at2,
+and the actual gate call is read-only so it introduces no tracked dirt. No
+Codex/account calls were made by these controls. These are software tests,
+not Stage1/2 physics PASS. Research results remain subject to actual release.
+
+New stop command:
+`systemctl --user stop regrip-stage12-20261126-2.service`
+The existing shared `runtime/STOP` file is still authoritative and persistent.
+
+## Initial activation (historical)
+
 User explicitly authorized actual automatic follow-up execution, dependencies
 within permissions, design/analysis and local commits. No push, SDK mutation,
 criteria relaxation, old data deletion, purchase or hardware operation.

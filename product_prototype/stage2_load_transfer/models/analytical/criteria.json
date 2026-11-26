@@ -1,0 +1,17 @@
+{
+  "scope":"Frozen method-validation thresholds, NOT physical allowables",
+  "cad_volume_relative_max":1e-8,
+  "cad_inertia_relative_max":1e-8,
+  "cad_centroid_m_max":1e-9,
+  "wrench_residual_max":1e-10,
+  "virtual_work_derivative_relative_max":1e-6,
+  "beam_reference_displacement_relative_max":0.01,
+  "beam_refinement_displacement_relative_max":0.01,
+  "beam_energy_relative_max":1e-8,
+  "static_force_balance_N_max":1e-8,
+  "numerical_time_convergence_relative_max":0.001,
+  "numerical_mesh_convergence_relative_max":0.01,
+  "physical_strength_acceptance":"Demand/certified allowable <=0.5 for a static preliminary design factor 2; material and stress concentration qualification mandatory. No fatigue waiver.",
+  "required_complete_path":["motor","coupling","shaft","pin","drum","bearings","tendon","terminals","idler","finger","root","palm"],
+  "stage2_release_requires":"ALL path elements qualified, source/model hashes current, convergence and integrated checks complete; no unknown element passes"
+}

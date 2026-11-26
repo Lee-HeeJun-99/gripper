@@ -1,3 +1,19 @@
+## Current Stage2 continuation — 2026-11-26
+
+Baseline c0e5dfd, first Stage2 save29b287b; obtain latest local SHA with git log.
+Stage1 RevAA/release_revAA2 unchanged. New work only under stage2_load_transfer.
+304 actual STEP/BOM hash audit and adaptive unit-density integrals PASS
+(NOT physical mass/inertia). Initial default-integration FAIL preserved.
+Conditional contact wrench / cable virtual-work checks PASS42 geometry poses;
+actual loaded centre radius scenario11.165..11.190mm, not prescribed11.25mm.
+Projected small-deflection beam FEM vs independent compliance PASS; both-end
+axial capture reduces nominal compliance to0.600961 of free-slip control.
+Neither required tension nor actual Finger strength is qualified by these tests.
+Next actual implementation: nonlinear tendon/Finger equilibrium with endpoint
+compatibility, then transmission capacity and hardware-preparation work.
+No Native/full grasp run. Stage2 digital/analytical/hardware NOT QUALIFIED.
+Queue and commands: product_prototype/stage2_load_transfer/STAGE2_TASKS.json.
+
 ## Current Stage1 engineering release — 2026-11-26 / Rev AA
 
 Actual implementation save d8fee05 after e6c5ef9/cd54f03/fff8cba; obtain latest

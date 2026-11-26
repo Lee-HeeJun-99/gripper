@@ -1,0 +1,443 @@
+{
+  "status": "PASS",
+  "scope": "SMALL-DEFLECTION PROJECTED BEAM / BOUNDARY SENSITIVITY ONLY",
+  "case": "revAA_heel_relief2",
+  "source_SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444",
+  "material_evidence_SHA256": "14b727a364ccf9b56ffa741e3a3765b859c3df85ad4bbe11e3244a87dfaed01f",
+  "CAD_integrals_SHA256": "27291527e693458879a2e9688fcd00dd04236513697b31e4b97456924b146192",
+  "assumed_PET_E_Pa": 3495641947.6361756,
+  "assumed_rail_E_Pa": 193000000000.0,
+  "cases": [
+    {
+      "PET_thickness_m": 0.0003,
+      "rail_thickness_m": 0.0002,
+      "EI_root_Nm2": 0.0009541579018913211,
+      "EI_tip_Nm2": 0.0008711014492154857,
+      "axial_stiffness_N_m": [
+        206730.64158290805,
+        1315909.090909091,
+        1315909.090909091
+      ],
+      "layer_centroids_m": [
+        0.00015,
+        0.00039999999999999996,
+        0.00039999999999999996
+      ],
+      "end_neutral_m": 0.00038179257655543793,
+      "clamped_tip_compliance_ratio": 0.600961416737566,
+      "cases": [
+        {
+          "boundary": "terminal_free_slip_control",
+          "status": "PASS",
+          "force_N": 0.001,
+          "independent_tip_m": 0.00024344049587478594,
+          "independent_rotation_rad": 0.004181183701179948,
+          "reference_error_relative": 3.1715952530930736e-08,
+          "refinement_error_relative": 5.395630608973079e-10,
+          "rotational_axial_coupling_Nm_rad": 0.0,
+          "refinements": [
+            {
+              "n": 8,
+              "tip_m": 0.00024344048815383874,
+              "rotation_rad": 0.00418118370954585,
+              "energy_J": 1.2172024407693867e-07,
+              "external_work_J": 1.2172024407691937e-07,
+              "root_force_N": -0.0010000000000002576,
+              "root_moment_Nm": -8.800000000001154e-05,
+              "balance_force_error_N": 2.5760643618255585e-16,
+              "balance_moment_error_Nm": 1.1546753136970622e-17,
+              "energy_relative_error": 1.585313065708268e-13
+            },
+            {
+              "n": 16,
+              "tip_m": 0.0002434404953929124,
+              "rotation_rad": 0.004181183701714527,
+              "energy_J": 1.2172024769576875e-07,
+              "external_work_J": 1.217202476964562e-07,
+              "root_force_N": -0.0010000000000035952,
+              "root_moment_Nm": -8.80000000002824e-05,
+              "balance_force_error_N": 3.595214403961933e-15,
+              "balance_moment_error_Nm": 2.8240756087816177e-16,
+              "energy_relative_error": 5.6477591776997916e-12
+            },
+            {
+              "n": 32,
+              "tip_m": 0.0002434404958420176,
+              "rotation_rad": 0.004181183701158293,
+              "energy_J": 1.2172024792190037e-07,
+              "external_work_J": 1.217202479210088e-07,
+              "root_force_N": -0.0010000000000096598,
+              "root_moment_Nm": -8.799999999961237e-05,
+              "balance_force_error_N": 9.65980767597685e-15,
+              "balance_moment_error_Nm": 3.8762938171787997e-16,
+              "energy_relative_error": 7.324624553150803e-12
+            },
+            {
+              "n": 64,
+              "tip_m": 0.0002434404959733691,
+              "rotation_rad": 0.00418118370278602,
+              "energy_J": 1.2172024806534825e-07,
+              "external_work_J": 1.2172024798668454e-07,
+              "root_force_N": -0.0010000000005666587,
+              "root_moment_Nm": -8.800000004018679e-05,
+              "balance_force_error_N": 5.666586991304179e-13,
+              "balance_moment_error_Nm": 4.01867937798589e-14,
+              "energy_relative_error": 6.462664415640862e-10
+            }
+          ]
+        },
+        {
+          "boundary": "both_clamps_axially_locked",
+          "status": "PASS",
+          "force_N": 0.001,
+          "independent_tip_m": 0.00014629834529220694,
+          "independent_rotation_rad": 0.001939385217261135,
+          "reference_error_relative": 5.546590187144318e-08,
+          "refinement_error_relative": 4.793014873882839e-10,
+          "rotational_axial_coupling_Nm_rad": 0.01197965701636525,
+          "refinements": [
+            {
+              "n": 8,
+              "tip_m": 0.00014629833717763727,
+              "rotation_rad": 0.0019393852212391586,
+              "energy_J": 7.314916858883323e-08,
+              "external_work_J": 7.314916858881864e-08,
+              "root_force_N": -0.0010000000000001535,
+              "root_moment_Nm": -6.476683022695466e-05,
+              "balance_force_error_N": 1.5352302762394743e-16,
+              "balance_moment_error_Nm": 7.420008617947671e-18,
+              "energy_relative_error": 1.9956595176618779e-13
+            },
+            {
+              "n": 16,
+              "tip_m": 0.0001462983447852879,
+              "rotation_rad": 0.0019393852175131916,
+              "energy_J": 7.31491723925614e-08,
+              "external_work_J": 7.314917239264395e-08,
+              "root_force_N": -0.0010000000000022768,
+              "root_moment_Nm": -6.476683027176061e-05,
+              "balance_force_error_N": 2.2768245622195593e-15,
+              "balance_moment_error_Nm": 1.775685989306025e-16,
+              "energy_relative_error": 1.1286421961773023e-12
+            },
+            {
+              "n": 32,
+              "tip_m": 0.00014629834525985426,
+              "rotation_rad": 0.001939385217262876,
+              "energy_J": 7.314917262916448e-08,
+              "external_work_J": 7.314917262992713e-08,
+              "root_force_N": -0.0010000000000082443,
+              "root_moment_Nm": -6.476683027447196e-05,
+              "balance_force_error_N": 8.244273319579776e-15,
+              "balance_moment_error_Nm": 1.0977885809594634e-16,
+              "energy_relative_error": 1.0425918195280095e-11
+            },
+            {
+              "n": 64,
+              "tip_m": 0.00014629834532997528,
+              "rotation_rad": 0.0019393852177303427,
+              "energy_J": 7.31491726728437e-08,
+              "external_work_J": 7.314917266498764e-08,
+              "root_force_N": -0.0010000000003604348,
+              "root_moment_Nm": -6.476683029432172e-05,
+              "balance_force_error_N": 3.6043477230629506e-13,
+              "balance_moment_error_Nm": 2.534007481928488e-14,
+              "energy_relative_error": 1.0739777696942773e-10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "PET_thickness_m": 0.00028,
+      "rail_thickness_m": 0.00019,
+      "EI_root_Nm2": 0.000809994620826603,
+      "EI_tip_Nm2": 0.0007424666486362348,
+      "axial_stiffness_N_m": [
+        192948.59881071417,
+        1250113.6363636365,
+        1250113.6363636365
+      ],
+      "layer_centroids_m": [
+        0.00014,
+        0.000375,
+        0.000375
+      ],
+      "end_neutral_m": 0.0003581637728528201,
+      "clamped_tip_compliance_ratio": 0.6063180816414174,
+      "cases": [
+        {
+          "boundary": "terminal_free_slip_control",
+          "status": "PASS",
+          "force_N": 0.001,
+          "independent_tip_m": 0.00028649148694450283,
+          "independent_rotation_rad": 0.004918950835079201,
+          "reference_error_relative": 2.9049332272990114e-08,
+          "refinement_error_relative": 6.465086244134e-10,
+          "rotational_axial_coupling_Nm_rad": 0.0,
+          "refinements": [
+            {
+              "n": 8,
+              "tip_m": 0.00028649147862211643,
+              "rotation_rad": 0.004918950843679536,
+              "energy_J": 1.4324573931105458e-07,
+              "external_work_J": 1.4324573931105823e-07,
+              "root_force_N": -0.000999999999999758,
+              "root_moment_Nm": -8.799999999997937e-05,
+              "balance_force_error_N": 2.419939248987646e-16,
+              "balance_moment_error_Nm": 2.0626946331536722e-17,
+              "energy_relative_error": 2.5500441427455942e-14
+            },
+            {
+              "n": 16,
+              "tip_m": 0.00028649148642459634,
+              "rotation_rad": 0.0049189508356218044,
+              "energy_J": 1.4324574321150233e-07,
+              "external_work_J": 1.4324574321229817e-07,
+              "root_force_N": -0.0010000000000001535,
+              "root_moment_Nm": -8.800000000007364e-05,
+              "balance_force_error_N": 1.5352302762394743e-16,
+              "balance_moment_error_Nm": 7.364443256607789e-17,
+              "energy_relative_error": 5.5557699353729505e-12
+            },
+            {
+              "n": 32,
+              "tip_m": 0.00028649148689397164,
+              "rotation_rad": 0.004918950834819149,
+              "energy_J": 1.4324574344239245e-07,
+              "external_work_J": 1.4324574344698583e-07,
+              "root_force_N": -0.0009999999999310283,
+              "root_moment_Nm": -8.799999999420315e-05,
+              "balance_force_error_N": 6.897173804309986e-14,
+              "balance_moment_error_Nm": 5.796849545519622e-15,
+              "energy_relative_error": 3.206643459858571e-11
+            },
+            {
+              "n": 64,
+              "tip_m": 0.0002864914870791909,
+              "rotation_rad": 0.004918950837576321,
+              "energy_J": 1.4324574357438676e-07,
+              "external_work_J": 1.4324574353959544e-07,
+              "root_force_N": -0.0010000000001884057,
+              "root_moment_Nm": -8.800000003506456e-05,
+              "balance_force_error_N": 1.8840571464062705e-13,
+              "balance_moment_error_Nm": 3.506456193111407e-14,
+              "energy_relative_error": 2.42878577575548e-10
+            }
+          ]
+        },
+        {
+          "boundary": "both_clamps_axially_locked",
+          "status": "PASS",
+          "force_N": 0.001,
+          "independent_tip_m": 0.00017370496877078815,
+          "independent_rotation_rad": 0.0023178887151161383,
+          "reference_error_relative": 5.0208483370894896e-08,
+          "refinement_error_relative": 4.889009197484029e-10,
+          "rotational_axial_coupling_Nm_rad": 0.009892182656554484,
+          "refinements": [
+            {
+              "n": 8,
+              "tip_m": 0.00017370496004932512,
+              "rotation_rad": 0.0023178887192649867,
+              "energy_J": 8.685248002464975e-08,
+              "external_work_J": 8.685248002466257e-08,
+              "root_force_N": -0.0009999999999998552,
+              "root_moment_Nm": -6.507102141145066e-05,
+              "balance_force_error_N": 1.448494102440634e-16,
+              "balance_moment_error_Nm": 1.2956215961201778e-17,
+              "energy_relative_error": 1.475072827348773e-13
+            },
+            {
+              "n": 16,
+              "tip_m": 0.00017370496822575294,
+              "rotation_rad": 0.0023178887153768846,
+              "energy_J": 8.685248411261684e-08,
+              "external_work_J": 8.685248411287647e-08,
+              "root_force_N": -0.000999999999999987,
+              "root_moment_Nm": -6.507102144996815e-05,
+              "balance_force_error_N": 1.3010426069826053e-17,
+              "balance_moment_error_Nm": 4.2717565595928875e-17,
+              "energy_relative_error": 2.9893080880288637e-12
+            },
+            {
+              "n": 32,
+              "tip_m": 0.0001737049687296472,
+              "rotation_rad": 0.0023178887150456825,
+              "energy_J": 8.685248435978506e-08,
+              "external_work_J": 8.68524843648236e-08,
+              "root_force_N": -0.000999999999957396,
+              "root_moment_Nm": -6.507102144958133e-05,
+              "balance_force_error_N": 4.2603941208252394e-14,
+              "balance_moment_error_Nm": 3.620408551945065e-15,
+              "energy_relative_error": 5.801256946434309e-11
+            },
+            {
+              "n": 64,
+              "tip_m": 0.00017370496881457173,
+              "rotation_rad": 0.002317888715807626,
+              "energy_J": 8.685248442636613e-08,
+              "external_work_J": 8.685248440728586e-08,
+              "root_force_N": -0.001000000000080381,
+              "root_moment_Nm": -6.507102146537731e-05,
+              "balance_force_error_N": 8.038101434459932e-14,
+              "balance_moment_error_Nm": 1.9712858868045982e-14,
+              "energy_relative_error": 2.196858765281112e-10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "PET_thickness_m": 0.00032,
+      "rail_thickness_m": 0.00021,
+      "EI_root_Nm2": 0.0011147587270064745,
+      "EI_tip_Nm2": 0.0010139589551071493,
+      "axial_stiffness_N_m": [
+        220512.68435510196,
+        1381704.5454545454,
+        1381704.5454545454
+      ],
+      "layer_centroids_m": [
+        0.00016,
+        0.00042500000000000003,
+        0.00042500000000000003
+      ],
+      "end_neutral_m": 0.0004054164231654738,
+      "clamped_tip_compliance_ratio": 0.5962489084580689,
+      "cases": [
+        {
+          "boundary": "terminal_free_slip_control",
+          "status": "PASS",
+          "force_N": 0.001,
+          "independent_tip_m": 0.00020855363114351033,
+          "independent_rotation_rad": 0.003583095565671866,
+          "reference_error_relative": 3.427197792227332e-08,
+          "refinement_error_relative": 1.1428946677938256e-10,
+          "rotational_axial_coupling_Nm_rad": 0.0,
+          "refinements": [
+            {
+              "n": 8,
+              "tip_m": 0.0002085536239959649,
+              "rotation_rad": 0.003583095573744015,
+              "energy_J": 1.0427681199790806e-07,
+              "external_work_J": 1.0427681199798245e-07,
+              "root_force_N": -0.0009999999999991058,
+              "root_moment_Nm": -8.7999999999937e-05,
+              "balance_force_error_N": 8.94249951866044e-16,
+              "balance_moment_error_Nm": 6.299214622140781e-17,
+              "energy_relative_error": 7.134214610632854e-13
+            },
+            {
+              "n": 16,
+              "tip_m": 0.0002085536306956154,
+              "rotation_rad": 0.003583095566159542,
+              "energy_J": 1.0427681534720238e-07,
+              "external_work_J": 1.0427681534780771e-07,
+              "root_force_N": -0.000999999999991688,
+              "root_moment_Nm": -8.799999999943123e-05,
+              "balance_force_error_N": 8.311927535142871e-15,
+              "balance_moment_error_Nm": 5.687724596858956e-16,
+              "energy_relative_error": 5.804973548587043e-12
+            },
+            {
+              "n": 32,
+              "tip_m": 0.00020855363112445664,
+              "rotation_rad": 0.0035830955658348773,
+              "energy_J": 1.0427681556359487e-07,
+              "external_work_J": 1.0427681556222833e-07,
+              "root_force_N": -0.0010000000000845166,
+              "root_moment_Nm": -8.800000000477154e-05,
+              "balance_force_error_N": 8.451659511132803e-14,
+              "balance_moment_error_Nm": 4.771546656054393e-15,
+              "energy_relative_error": 1.3104946379702178e-11
+            },
+            {
+              "n": 64,
+              "tip_m": 0.00020855363110062116,
+              "rotation_rad": 0.0035830955648159467,
+              "energy_J": 1.0427681548183291e-07,
+              "external_work_J": 1.0427681555031059e-07,
+              "root_force_N": -0.0010000000000812137,
+              "root_moment_Nm": -8.799999999061967e-05,
+              "balance_force_error_N": 8.121368161306819e-14,
+              "balance_moment_error_Nm": 9.3803274609644e-15,
+              "energy_relative_error": 6.56691296672218e-10
+            }
+          ]
+        },
+        {
+          "boundary": "both_clamps_axially_locked",
+          "status": "PASS",
+          "force_N": 0.001,
+          "independent_tip_m": 0.00012434987492428477,
+          "independent_rotation_rad": 0.0016386643351450117,
+          "reference_error_relative": 6.057101087364458e-08,
+          "refinement_error_relative": 1.1004730460228984e-10,
+          "rotational_axial_coupling_Nm_rad": 0.014341120078117265,
+          "refinements": [
+            {
+              "n": 8,
+              "tip_m": 0.00012434986739228714,
+              "rotation_rad": 0.0016386643389350688,
+              "energy_J": 6.217493369613359e-08,
+              "external_work_J": 6.217493369614358e-08,
+              "root_force_N": -0.0009999999999994388,
+              "root_moment_Nm": -6.449971794756436e-05,
+              "balance_force_error_N": 5.611830444784971e-16,
+              "balance_moment_error_Nm": 3.916680348103885e-17,
+              "energy_relative_error": 1.607133487021629e-13
+            },
+            {
+              "n": 16,
+              "tip_m": 0.0001243498744530139,
+              "rotation_rad": 0.0016386643353768927,
+              "energy_J": 6.217493722625727e-08,
+              "external_work_J": 6.217493722650696e-08,
+              "root_force_N": -0.000999999999994658,
+              "root_moment_Nm": -6.449971799826496e-05,
+              "balance_force_error_N": 5.3420809442705774e-15,
+              "balance_moment_error_Nm": 3.667957593472132e-16,
+              "energy_relative_error": 4.0159177012785094e-12
+            },
+            {
+              "n": 32,
+              "tip_m": 0.00012434987489862392,
+              "rotation_rad": 0.0016386643351990538,
+              "energy_J": 6.217493745051932e-08,
+              "external_work_J": 6.217493744931196e-08,
+              "root_force_N": -0.001000000000055623,
+              "root_moment_Nm": -6.44997180042983e-05,
+              "balance_force_error_N": 5.562304089545833e-14,
+              "balance_moment_error_Nm": 3.1161359571266894e-15,
+              "energy_relative_error": 1.941885438860406e-11
+            },
+            {
+              "n": 64,
+              "tip_m": 0.0001243498749123083,
+              "rotation_rad": 0.0016386643349348804,
+              "energy_J": 6.217493740752952e-08,
+              "external_work_J": 6.217493745615414e-08,
+              "root_force_N": -0.0010000000000822684,
+              "root_moment_Nm": -6.449971800138413e-05,
+              "balance_force_error_N": 8.226839348646209e-14,
+              "balance_moment_error_Nm": 3.586578056031728e-15,
+              "energy_relative_error": 7.820615478481207e-10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    "large bending",
+    "tendon compression and postbuckling",
+    "torsion",
+    "3D oblique rail effect",
+    "local clamp/contact/slip/pullout",
+    "fatigue",
+    "actual material certification"
+  ],
+  "actual_Finger_strength_status": "NOT QUALIFIED",
+  "command": "python scripts/finger_structure.py --tag endpoint1"
+}

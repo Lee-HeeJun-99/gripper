@@ -1,4 +1,20 @@
-## Current Stage1 resume — 2026-11-26 / actual Rev U and machining trial
+## Current Stage2 resume — 2026-11-26 / actual Rev AA
+
+This prefix supersedes the HISTORICAL RevU resume below. Stage1 actual current
+release is RevAA `release_revAA2`, not RevU. Baseline c0e5dfd / extraction29b287b;
+latest SHA via git log. See stage2_load_transfer/README_CURRENT.md and queue.
+Read actual Git and existing result tags before execution; never overwrite.
+Finished geometric integrals, conditional wrench/work-conjugacy and projected
+beam endpoint-control studies. No physical mass, strength or digital release.
+Next READY nonlinear_finger_equilibrium; then actual transmission capacity.
+Existing commands use robot_ws Python; OCP via PYTHONPATH=/tmp/regrip_stage1_ocp.
+Results: models/geometry/revAA_extract2, validation/integrated/envelope1,
+validation/finger/endpoint1. All under stage2_load_transfer. No Native running.
+New tests require NEW tags. No Stage3/full100g trial. All51 first-article physical
+records remain blank. Supplier .50mm6x7 wire rating/EA/NI000032pullout still
+unconfirmed; catalog .45/.54mm must not be interpolated into certified ratings.
+
+## Historical Stage1 resume — 2026-11-26 / actual Rev U and machining trial
 
 Read CHECKPOINT top and Stage1 STAGE1_TASKS.json; actual save via git log.
 Do NOT regenerate RevH or rerun Native. RevU_maxwire actual292parts0bulk,

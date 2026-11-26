@@ -1,0 +1,50 @@
+{
+  "status": "SAVED_TRACTION_VERIFICATION_PASS",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_contact_wrench1/summary.json",
+    "SHA256": "921555c5fced2d3c74e879bb803e4819809e51caf34778e8d94fe7598ba89c80"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_contact_wrench_verify2/producer.py",
+    "SHA256": "b97e3b4d10e4d9dfdbb132e8b6a9d99f92f57b3f69104e7182a67270b9ef0882"
+  },
+  "input_hashes_pass": true,
+  "cases": [
+    {
+      "angles": 48,
+      "passed": true,
+      "eligible_actual_BRep": true,
+      "coulomb_disk": true,
+      "residual": 1.4016565685892601e-15,
+      "negative_axial_traction_control_residual": 0.0028353515307900645,
+      "T_lower": 0.2091859351604867,
+      "T_upper": 0.21231126306543344,
+      "relative_bound_width": 0.01472049979742962
+    },
+    {
+      "angles": 96,
+      "passed": true,
+      "eligible_actual_BRep": true,
+      "coulomb_disk": true,
+      "residual": 5.56776846849516e-14,
+      "negative_axial_traction_control_residual": 0.0028638657990248673,
+      "T_lower": 0.21128965450570314,
+      "T_upper": 0.21231126306543344,
+      "relative_bound_width": 0.004811843446173845
+    },
+    {
+      "angles": 192,
+      "passed": true,
+      "eligible_actual_BRep": true,
+      "coulomb_disk": true,
+      "residual": 7.709882115452476e-17,
+      "negative_axial_traction_control_residual": 0.002877351700461217,
+      "T_lower": 0.21228461434513565,
+      "T_upper": 0.21231126306543344,
+      "relative_bound_width": 0.000125517223688556
+    }
+  ],
+  "scope": "Independent six-component force/moment, unit-normal budget, circular contact eligibility, Coulomb disks and analytic upper bound; NOT elastic closure, actual capacity or system release",
+  "acceptance_artifact_note": "Predeclared criteria output renamed acceptance.json after execution; contents preserved. Archived producer.py is exact executed source, current script uses acceptance.json.",
+  "whole_system_release": false
+}

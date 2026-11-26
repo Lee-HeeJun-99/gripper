@@ -1,0 +1,101 @@
+{
+  "status": "CONDITIONAL_CONTACT_WRENCH_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+    "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_contact_wrench1/producer.py",
+    "SHA256": "fa366fa5707f9d7002a347dc31086996ab725f19749e2e2ee57feaca66579d50"
+  },
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+      "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/F0_CLUTCH_INPUT_HUB.step",
+      "SHA256": "427cb8d175a7e5ab02695ab5a75822b3cda70becb61fe8ce2a045eab1f1339e9"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/sourced_motor_stage1.py",
+      "SHA256": "67f9aadfc3eeb5a43b7460db42f407a173fb2e23bc625537476979a0473df100"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_contact_wrench1/producer.py",
+      "SHA256": "fa366fa5707f9d7002a347dc31086996ab725f19749e2e2ee57feaca66579d50"
+    }
+  ],
+  "criteria": {
+    "equilibrium_absolute": 1e-08,
+    "finest_relative_change": 0.01,
+    "analytic_upper_slack": 1e-08,
+    "normalization": 1.0,
+    "shaft_mu_control": 1.0,
+    "face_mu_control": 1.0
+  },
+  "scope": "Actual AK finite bore, minimum supplier D-shaft; prescribed circular first-touch closure and unit normal budget, dimensionless unit friction controls ONLY",
+  "geometry": {
+    "bore_Y_mm": [
+      4.8,
+      16.0
+    ],
+    "minimum_engagement_Y_mm": [
+      4.8,
+      14.5
+    ],
+    "bore_radius_mm": 2.52,
+    "shaft_radius_mm": 2.494,
+    "D_flat_X_from_axis_mm": 1.9060000000000001,
+    "latest_flat_start_Y_mm": 1.75,
+    "radial_first_touch_closure_mm": 0.0259999999999998,
+    "flat_center_gap_at_first_touch_mm": 0.5880000000000001,
+    "nominal_unclosed_radial_gap_mm": 0.0259999999999998
+  },
+  "axial_force_per_unit_tendon": 1.355421686746988,
+  "analytic_coulomb_upper_T_per_unit_normal": 0.21231126306543344,
+  "finest_relative_change": 0.004708985121681275,
+  "cases": [
+    {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "T_per_unit_normal": 0.2091859351604867,
+      "max_equilibrium_residual": 1.4016565685892601e-15,
+      "minimum_weight": 0.0,
+      "points": 114,
+      "rays": 16,
+      "angles": 48
+    },
+    {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "T_per_unit_normal": 0.21128965450570314,
+      "max_equilibrium_residual": 5.5011550870176507e-14,
+      "minimum_weight": -4.070410476555307e-15,
+      "points": 222,
+      "rays": 32,
+      "angles": 96
+    },
+    {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "T_per_unit_normal": 0.21228461434513565,
+      "max_equilibrium_residual": 8.326672684688674e-17,
+      "minimum_weight": 0.0,
+      "points": 450,
+      "rays": 64,
+      "angles": 192
+    }
+  ],
+  "frictionless_circular_normal_torque_capacity": 0,
+  "nominal_unclosed_contact_capacity": 0,
+  "limits": [
+    "First-touch radial closure is prescribed, NOT a solved deformation or bolt-preload/contact law",
+    "D-flat is not a mating torque key in circular bore; flat contact after deformation is unmodeled",
+    "No pressure distribution, elastic hub strain, bolt proof or available normal force qualified",
+    "Unit friction is a dimensionless control, not a material estimate; no N or Nm safe capacity assigned",
+    "Motor axial bearing rating, spring/friction bounds and transient maximum remain missing"
+  ],
+  "actual_capacity_qualified": false,
+  "whole_system_release": false
+}

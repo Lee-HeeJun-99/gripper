@@ -523,7 +523,7 @@
     {
       "id": "AH_collet_and_axial_capacity",
       "track": "A",
-      "priority": 0,
+      "priority": 3,
       "hypothesis": "AK actual9.7..11.2mm shaft grip and clamp-zone coverage remove old short-grip geometry concern; combined torque and spring axial load still require actual contact/preload/material and motor bearing evidence",
       "criteria": "Actual collet load model, finite engagement, torque/axial capacity and material bounds; no force cap from guessed friction",
       "fallback": "rated_stock_clutch_and_actuator",
@@ -531,19 +531,29 @@
       "prerequisites": [],
       "system_gate_contribution": 4,
       "cost": "bounded actual product validation, no random parameter sweep",
-      "last_run_utc": null,
-      "consecutive_runs": 0,
+      "last_run_utc": "2026-11-26T13:09:20.717951+00:00",
+      "consecutive_runs": 1,
       "target_candidate": {
         "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
         "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
       },
       "target_revision": "revAK_integral2",
-      "target_parts": 235
+      "target_parts": 235,
+      "results": [
+        "validation/transmission/AK_contact_wrench1/summary.json",
+        "validation/transmission/AK_contact_wrench_verify2/summary.json"
+      ],
+      "preserved_failures": [
+        "validation/transmission/AK_contact_wrench_verify1_failure/summary.json"
+      ],
+      "reason": "Actual AK minimum D-shaft/circular-bore sampled contact wrench analysis completed. Conditional prescribed26um closure, unit friction and unit normal budget only; no elastic closure, available preload, material or actual capacity qualification.",
+      "next": "Actual finite hub elasticity/contact under bolt preload, D-flat orientation and pressure/strain; establish material/bolt and motor axial evidence. Do not repeat normalized wrench LP as a new cycle.",
+      "selection_note": "One A cycle completed in allocation4; prioritize executable whole-Palm C and actual Finger B within next two cycles. Collet capacity remains unmet."
     },
     {
       "id": "AI_whole_palm_support",
       "track": "C",
-      "priority": 1,
+      "priority": 0,
       "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
       "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
       "fallback": "reinforced_local_tabs",
@@ -565,7 +575,8 @@
       "evidence": {
         "path": "product_prototype/stage12_integrated/validation/convergence/AI_tab_convergence2/summary.json",
         "SHA256": "919e42be9f3806ea1efe7b745e840b01ad4567cb1947731391d4ffd8d31c2c7c"
-      }
+      },
+      "selection_note": "Next C product cycle after allocation4 collet A: actual whole-Palm support/load model; then prioritize executable actual Finger B. Preserve local tab stress FAIL."
     },
     {
       "id": "actual_finger_load_ports",
@@ -694,6 +705,17 @@
       },
       "last_run_utc": null,
       "consecutive_runs": 0
+    },
+    {
+      "id": "AK_conditional_collet_contact_wrench",
+      "track": "A",
+      "status": "PASS",
+      "scope": "Prescribed-closure sampled six-component wrench balance only, not physical capacity, 6DOF closure or release",
+      "result": "validation/transmission/AK_contact_wrench1/summary.json",
+      "verification": "validation/transmission/AK_contact_wrench_verify2/summary.json",
+      "target_revision": "revAK_integral2",
+      "last_run_utc": "2026-11-26T13:09:20.717951+00:00",
+      "consecutive_runs": 1
     }
   ],
   "policy": {

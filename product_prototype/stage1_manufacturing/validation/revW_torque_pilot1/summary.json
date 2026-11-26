@@ -1,0 +1,110 @@
+{
+  "status": "TORQUE_MOTION_SCREEN_PASS",
+  "case": "revW_preload_bypass",
+  "jobs": [
+    {
+      "fastener": "F0_ROOT_BOLT_-16",
+      "pitch_mm": 0.5,
+      "socket_point_mm": [
+        44.0,
+        -16.0,
+        5.0
+      ],
+      "insertion_axis": [
+        1,
+        0,
+        0
+      ],
+      "actual_thread_motion_note": "RH advance=pitch*angle/360; extraction grid is a superset of these coupled paths, not forced SOFA q/v",
+      "declared_cutset": [],
+      "countertool": "validation/revW_nuts1/F0_ROOT_NUT_-16.step",
+      "selected": {
+        "method": "actual_L_key_60deg_swing_and_extraction_grid",
+        "clock_delta_deg": 0,
+        "poses": 42,
+        "hits": []
+      },
+      "attempts": [
+        {
+          "method": "actual_L_key_60deg_swing_and_extraction_grid",
+          "clock_delta_deg": 0,
+          "poses": 42,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "fastener": "F0_IDLER_AXLE",
+      "pitch_mm": 0.4,
+      "socket_point_mm": [
+        44.0,
+        6.0,
+        25.0
+      ],
+      "insertion_axis": [
+        0,
+        -1,
+        0
+      ],
+      "actual_thread_motion_note": "RH advance=pitch*angle/360; extraction grid is a superset of these coupled paths, not forced SOFA q/v",
+      "declared_cutset": [],
+      "countertool": "validation/revW_nuts1/F0_IDLER_NUT.step",
+      "selected": {
+        "method": "actual_L_key_60deg_swing_and_extraction_grid",
+        "clock_delta_deg": 0,
+        "poses": 42,
+        "hits": []
+      },
+      "attempts": [
+        {
+          "method": "actual_L_key_60deg_swing_and_extraction_grid",
+          "clock_delta_deg": 0,
+          "poses": 42,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "fastener": "F0_SWIVEL_AXLE",
+      "pitch_mm": 0.4,
+      "socket_point_mm": [
+        43.0,
+        -7.5,
+        -92.0
+      ],
+      "insertion_axis": [
+        0,
+        1,
+        0
+      ],
+      "actual_thread_motion_note": "RH advance=pitch*angle/360; extraction grid is a superset of these coupled paths, not forced SOFA q/v",
+      "declared_cutset": [],
+      "countertool": "validation/revW_nuts1/F0_SWIVEL_AXLE_NUT.step",
+      "selected": {
+        "method": "actual_L_key_60deg_swing_and_extraction_grid",
+        "clock_delta_deg": 0,
+        "poses": 42,
+        "hits": []
+      },
+      "attempts": [
+        {
+          "method": "actual_L_key_60deg_swing_and_extraction_grid",
+          "clock_delta_deg": 0,
+          "poses": 42,
+          "hits": []
+        }
+      ]
+    }
+  ],
+  "pilot": true,
+  "start": 0,
+  "count": 3,
+  "runtime_s": 5.046579336980358,
+  "input_sha256": {
+    "cad/exports/revW_preload_bypass/summary.json": "7ce3dc163443784ae0c411e61c4dccd358e5d633e2697c8e3ab26ce38148d798",
+    "validation/revW_keys1/summary.json": "3873bcac37a10e1f920b4dce00ea939f258fa02b08b21a7e973748845f04693d",
+    "validation/revW_nuts1/summary.json": "e2d41065de3d36cee5229b00a616fa2da16c860381676afdf70b44a8a26f8b3c"
+  },
+  "scope": "Finite key/countertool and active-fastener geometry. L-key60deg swing x6axial extraction levels sampled, NOT CCD or measured tightening torque; six hex clockings/reindexing admissible. Inline fallback is an explicit conservative full-turn tool exterior requirement, not a bought-tool claim; actual fastener contact/helical forces/operator hands/fixture strength NOT MEASURED.",
+  "stage1_release": false
+}

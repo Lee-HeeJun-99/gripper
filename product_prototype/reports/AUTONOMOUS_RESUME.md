@@ -1200,3 +1200,17 @@ grasp or increaseforce/damping. Currentqueue/checkpoint/report authoritative.
 Reproduction of newanalysis(useNEWtag):
 `python product_prototype/sofa/proximal_reinforcement_compare.py --tag NEW_COMPARE`
 `python -m unittest discover -s product_prototype/sofa -p test_contact_layer.py`
+# Stage1 actual continuation — 2026-11-26 Rev Y
+
+Latest saved parent fff8cba; obtain actual HEAD with git log. Current actual
+case cad/exports/revY_nut_passage:304parts,0bulk common. Current validations
+revY_nut_passage1, fastener_joints1, torque_protocol1, shaft_service1,
+stock_max1, stock_motion1, stock_wire1, preload_path1, space1 PASS in bounded
+geometry/design scopes. No Stage1 overall release or hardware qualification.
+Wtorque_all1 five failures and Xnut_passage_fail1 preserved; Yimplements
+specific physical shaft/coupling fixes and staged assembly procedure.
+
+Resume only after inspecting actual results/processes: wire_long/short,
+Ypacket1/Yfaces1 generated. Next controlled Ypackage and complete fail-closed
+release audit incl combined manufacturing tolerance limitations. Do not
+recreate H or rerun existing output tags. Stage1 only, NO SOFA physics work.

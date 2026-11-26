@@ -57,27 +57,36 @@ def laminate_ends(meshes):
    target['F0_'+suffix+'_'+label]=q
  return roots,ends
 def main():
- p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);p.add_argument('--retainer-stack-envelope',action='store_true');args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);p.add_argument('--retainer-stack-envelope',action='store_true');p.add_argument('--envelope-tag');args=p.parse_args()
  src=ROOT/'cad/exports'/args.case;index=json.loads((src/'summary.json').read_text());out=ROOT/'validation'/args.tag;out.mkdir(exist_ok=False)
  configure(index)
+ from envelope_inputs_stage1 import load
+ overrides=load(args.case,args.envelope_tag)
  shutil.copyfile(__file__,out/'producer.py')
  meshes={};quality=[];hashes={}
  for n,v in index['parts'].items():
-  f=ROOT/Path(v['path']).with_suffix('.stl');m=trimesh.load(f,force='mesh');meshes[n]=m
+  f=overrides.get(n,ROOT/Path(v['path']).with_suffix('.stl'));m=trimesh.load(f,force='mesh');meshes[n]=m
   quality.append(dict(part=n,watertight=bool(m.is_watertight),volume=bool(m.is_volume),faces=len(m.faces)))
   hashes[str(f.relative_to(ROOT))]=hashlib.sha256(f.read_bytes()).hexdigest()
  if not all(q['volume'] for q in quality):
   (out/'summary.json').write_text(json.dumps(dict(status='MESH_FAIL',quality=quality,stage1_release=False),indent=2));raise RuntimeError('invalid STL')
  fixed={n:m for n,m in meshes.items() if not any(n.endswith(s) for s in ('SKIN','RAIL_L','RAIL_R','TENDON_WIRE')) and not any(k in n for k in ('TERMINAL','SWIVEL','TIP_FACTORY_NIPPLE'))}
- rigid={n:m for n,m in meshes.items() if n.startswith('F0_') and ('TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SPACER_L','F0_SWIVEL_SPACER_R'))}
+ rigid={n:m for n,m in meshes.items() if n.startswith('F0_') and ('TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SLEEVE') or n.startswith('F0_SWIVEL_SPACER_'))}
  swivel={n:m for n,m in meshes.items() if n.startswith('F0_') and (n.startswith(('F0_SWIVEL_LOWER','F0_SWIVEL_UPPER','F0_SWIVEL_BOLT','F0_SWIVEL_NUT','F0_TIP_FACTORY_NIPPLE')))}
  if args.retainer_stack_envelope:
   # Convex hull contains the WHOLE axial translation interval, including
   # actual head/nut voids. Conservative external-clearance envelope only;
   # no fictional filling of operating CAD or removal of its collisions.
   for n,m in list(swivel.items()):
-   ys=(-.02,.10) if n.startswith('F0_SWIVEL_NUT_') else (-.03,.10) if n.startswith('F0_SWIVEL_BOLT_') else None
-   if ys:swivel[n]=trimesh.convex.convex_hull(np.vstack([m.vertices+[x,y,z] for x in (-.05,.05) for y in ys for z in (-.05,.05)]))
+   if n.startswith('F0_SWIVEL_NUT_'):
+    # Any nut orientation retained by a0.6deep hex pocket has projected
+    # profile inside that pocket. MaxAF4.12 contains all accepted nut
+    # AF3.82..4.00/rotation, not merely the nominal nut clocking.
+    x,z=map(float,n.split('_')[-2:]);r=4.12/math.sqrt(3);lo,hi=m.bounds[:,1];v=np.array([[x+r*math.cos(t)+dx,y,z-r*math.sin(t)+dz] for t in np.arange(6)*math.pi/3 for y in (lo-.05,hi+.10) for dx in (-.05,.05) for dz in (-.05,.05)])
+    swivel[n]=move(trimesh.convex.convex_hull(v),rot(beta([43,0,-92]),point=[43,0,-92]))
+   elif n.startswith('F0_SWIVEL_BOLT_'):
+    b=beta([43,0,-92]);assert .05*(abs(math.cos(b))+abs(math.sin(b)))<=.06
+    swivel[n]=trimesh.convex.convex_hull(np.vstack([m.vertices+[x,y,z] for x in (-.06,.06) for y in (-.05,.10) for z in (-.06,.06)]))
  roots,ends=laminate_ends(meshes);rigid.update(ends)
  for i in range(3):
   R=rot(i*2*math.pi/3,(0,0,1));fixed.update({n.replace('F0_',f'F{i}_',1):move(m,R) for n,m in roots.items()})
@@ -117,6 +126,8 @@ def main():
   poses.append(dict(angle_deg=deg,pivot_mm=pivot.tolist(),swivel_deg=math.degrees(b)))
  result=dict(status='SAMPLED_MOTION_PASS' if not hits else 'SAMPLED_MOTION_FAIL',case=args.case,quality=quality,hits=hits,poses=poses,static_bulk_collision_count=len(index['collisions']),scope='31prescribed0..60deg; actual clipped root17/distal5mm, tapered88mm flexible envelope AND separate skin/rail solids against own actual hardware, rigid tip/swivel, fixed/interFinger. Shared material split boundaries excluded analytically, not physical hardware collision removal. No CCD/force/FEM/hardware qualification.',stage1_release=False)
  result['own_flexible_material_checked']=True
- result['retainer_stack_envelope']=dict(enabled=args.retainer_stack_envelope,nut_axial_interval_mm=[-.02,.10],bolt_axial_interval_mm=[-.03,.10],lateral_hole_position_mm=[-.05,.05],scope='Convex superset of whole axial/lateral translation box, including exposed screw tip; voids conservatively filled for external clearance only. Requires matched-trim/declared stack limits; not all tolerances/CCD/strength.')
+ result['retainer_stack_envelope']=dict(enabled=args.retainer_stack_envelope,nut_axial_interval_mm=[-.05,.10],bolt_axial_interval_mm=[-.05,.10],local_hole_position_mm=[-.05,.05],bolt_REST_world_box_mm=[-.06,.06],nut_profile='maxAF4.12 captive-pocket prism contains accepted nut rotation/AF, with0.6embedding requirement',scope='Conservative external fastener envelope includes matched exposed tip and stated axial float, voids filled only for clearance. Other parts/relative motion nominal; NOT all-combined tolerances/CCD/strength.')
+ result['stock_envelope_tag']=args.envelope_tag
+ if args.envelope_tag:result['scope']+=' Offline maximum-stock exterior witnesses substituted for clearance ONLY, NOT actual manufacturing/physics parts.'
  (out/'summary.json').write_text(json.dumps(result,indent=2));(out/'input_sha256.json').write_text(json.dumps(hashes,indent=2));print(json.dumps(dict(status=result['status'],parts=len(quality),hits=len(hits),first_hits=hits[:5])))
 if __name__=='__main__':main()

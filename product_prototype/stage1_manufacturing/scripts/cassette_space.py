@@ -26,7 +26,7 @@ def main():
  # Gauge terminates18mm belowRoot, well above the actual rigid distal5mm.
  # Moving tip cannot be omitted: transform its real meshes independently.
  from mechanism_motion import tip,beta
- rigid={n:m for n,m in meshes.items() if n.startswith('F0_') and ('TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SPACER_L','F0_SWIVEL_SPACER_R'))}
+ rigid={n:m for n,m in meshes.items() if n.startswith('F0_') and ('TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SLEEVE') or n.startswith('F0_SWIVEL_SPACER_'))}
  swivel={n:m for n,m in meshes.items() if n.startswith(('F0_SWIVEL_LOWER','F0_SWIVEL_UPPER','F0_SWIVEL_BOLT','F0_SWIVEL_NUT','F0_TIP_FACTORY_NIPPLE'))}
  fixed={n:m for n,m in meshes.items() if not ('TERMINAL' in n or 'SWIVEL' in n or 'TIP_FACTORY_NIPPLE' in n or n.endswith(('SKIN','RAIL_L','RAIL_R','TENDON_WIRE')))}
  roots,ends=laminate_ends(meshes);rigid.update(ends)

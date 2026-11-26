@@ -33,12 +33,14 @@ def path(deg):
 def rotor_name(n):
  return n.startswith(('F0_DRUM','F0_SHAFT','F0_INNER_WASHER','F0_COUPLING'))
 def main():
- p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);p.add_argument('--diameter',type=float,default=.5);p.add_argument('--length-offset',type=float,default=0.);args=p.parse_args();assert .48<=args.diameter<=.52 and abs(args.length_offset)<=.25
+ p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);p.add_argument('--diameter',type=float,default=.5);p.add_argument('--length-offset',type=float,default=0.);p.add_argument('--envelope-tag');args=p.parse_args();assert .48<=args.diameter<=.52 and abs(args.length_offset)<=.25
  index=json.loads((ROOT/'cad/exports'/args.case/'summary.json').read_text());out=ROOT/'validation'/args.tag;out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
  setup(index)
- allmeshes={n:trimesh.load(ROOT/(__import__('pathlib').Path(v['path']).with_suffix('.stl')),force='mesh') for n,v in index['parts'].items()}
+ from envelope_inputs_stage1 import load
+ overrides=load(args.case,args.envelope_tag)
+ allmeshes={n:trimesh.load(overrides.get(n,ROOT/(__import__('pathlib').Path(v['path']).with_suffix('.stl'))),force='mesh') for n,v in index['parts'].items()}
  meshes={n:m for n,m in allmeshes.items() if (n.startswith('F0_') or n=='PALM') and not n.endswith('TENDON_WIRE')}
- rigid={n:m for n,m in meshes.items() if 'TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SPACER_L','F0_SWIVEL_SPACER_R')}
+ rigid={n:m for n,m in meshes.items() if 'TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SLEEVE') or n.startswith('F0_SWIVEL_SPACER_')}
  swivel={n:m for n,m in meshes.items() if n.startswith(('F0_SWIVEL_LOWER','F0_SWIVEL_UPPER','F0_SWIVEL_BOLT','F0_SWIVEL_NUT','F0_TIP_FACTORY_NIPPLE'))}
  rotors={n:m for n,m in meshes.items() if rotor_name(n)}
  fixed={n:m for n,m in meshes.items() if n not in rigid and n not in swivel and n not in rotors and not n.endswith(('SKIN','RAIL_L','RAIL_R'))}
@@ -80,6 +82,8 @@ def main():
   rows.append(dict(angle_deg=deg,free_wire_mm=g['free'],takeup_mm=free0-g['free'],rotor_deg=math.degrees(eta),wrap_deg=math.degrees(winding),total_external_mm=g['free']+DRUM_R*winding,length_error_mm=g['free']+DRUM_R*winding-(free0+DRUM_R*(path(0)['phi']-START_PHI)),single_layer=winding<2*math.pi,swivel_deg=math.degrees(g['beta'])))
  result=dict(status='WIRE_ROTOR_SCREEN_PASS' if not hits and not rotorhits and all(r['single_layer'] for r in rows) else 'WIRE_ROTOR_SCREEN_FAIL',rows=rows,wire_hits=hits,rotor_hits=rotorhits,wire_diameter_mm=.5,analytic_contact_pending='Own drum/idler contact and factory wire-metal outlet joins require independent analytic/actual CAD certificates. Only first tangent-nipple arc capsule has artificial backward extension at bonded factory join; remaining arc checked against actual nipple.',scope='F0 wire against actual full3Finger hardware,31poses, flexible envelopes and internal tip exit included;120deg symmetry covers other wires against hardware. Wire-wire sector certificate still required. Prescribed NOT dynamic sliding/fatigue. Circumscribed extended capsules include .003mm chord allowance; no uncovered vertex wedges.',stage1_release=False)
  result['wire_diameter_mm']=args.diameter
+ result['stock_envelope_tag']=args.envelope_tag
+ if args.envelope_tag:result['scope']+=' Offline maximum-stock exterior witnesses, NOT manufacturing/physical-model parts.'
  result['finished_length_offset_mm']=args.length_offset
  result['assembly_indexing_phase_deg']=math.degrees(args.length_offset/DRUM_R)
  # The physical factory outlet rotates with the drum. Length is adjusted

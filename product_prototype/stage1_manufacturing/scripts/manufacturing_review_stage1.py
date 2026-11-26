@@ -7,7 +7,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--packet',required=True);p.add_argument('--faces',required=True);p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'validation'/a.tag;out.mkdir(exist_ok=False)
  src=ROOT/'cad/exports'/a.case/'summary.json';idx=json.loads(src.read_text());bp=ROOT/'bom'/a.packet/'STAGE1_BOM.csv';rows=list(csv.DictReader(bp.open()));fp=ROOT/'validation'/a.faces/'FACE_FEATURES.csv';faces=list(csv.DictReader(fp.open()));dp=ROOT/'cad/drawings'/a.packet/'summary.json';draw=json.loads(dp.read_text());checks=[]
  def check(name,ok,detail):checks.append(dict(check=name,passed=bool(ok),detail=detail))
- check('BOM_292_unique_actual_IDs',len(rows)==292 and {r['part_ID'] for r in rows}==set(idx['parts']),len(rows))
+ check('BOM_unique_actual_IDs',len(rows)==len(idx['parts']) and {r['part_ID'] for r in rows}==set(idx['parts']),len(rows))
  errors=[]
  for r in rows:
   n=r['part_ID'];v=idx['parts'][n];f=ROOT/r['STEP'];stl=ROOT/r['STL']
@@ -15,7 +15,7 @@ def main():
  check('actual_part_STEP_STL_and_SHA_links',not errors,errors)
  made=[r for r in rows if not r['part_ID'].startswith(('F1_','F2_')) and r['make_or_buy'] in ('MAKE','FINISH PURCHASED')]
  missing=[r['part_ID'] for r in made if not r['material'] or not r['method'] or not r['interface_notes'] or not (ROOT/'cad/drawings'/a.packet/(r['part_ID']+'.svg')).is_file()]
- check('37_made_trimmed_material_process_interface_drawings',len(made)==37 and not missing,missing)
+ check('all_made_trimmed_material_process_interface_drawings',len(made)>0 and not missing and {r['part_ID'] for r in made}==set(draw['drawings']),missing)
  declared=json.loads((ROOT/'validation'/a.faces/'summary.json').read_text())
  check('actual_faces_complete',len(faces)==declared['face_count'] and {r['part_ID'] for r in faces}=={r['part_ID'] for r in made},len(faces))
  check('actual_face_catalogue_matches_current_part_SHA',all(r['STEP_SHA256']==idx['parts'][r['part_ID']]['sha256'] for r in faces),'Every recorded face linked to actual part source')

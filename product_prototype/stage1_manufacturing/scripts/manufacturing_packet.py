@@ -26,14 +26,16 @@ FEATURES={
  'MOTOR_PLATE':['SOYO SY42STH38-1684A /Pololu2267 manufacturer interface','31+-0.2 square hole pitch;3.6clearance;22.5pilot','motor5mm shaft4.988..5.000; actual shaft24+-1 length','4M3x6 through3mm plate ->3mm nominal engagement vs4.5available; do not bottom','unpowered mechanical interface; no driver/current/torque-speed certification']}
 def metadata(n):
  s=n[3:] if n.startswith('F') else n
- if s=='TENDON_WIRE':return ('0.50+-0.02mm7x7 stainless finished cable','PURCHASE','Custom completed tendon with TWO NI000032 ends; CAD outer-envelope installation curve only, not preformed wire; length requirement in wire_CAD_metadata')
+ if s=='TENDON_WIRE':return ('AISI316/1.4401 stainless6x7-WSC(7x7),0.50+-0.02; procurement requirement/certificate','PURCHASE','Custom completed tendon with TWO NI000032 ends; finished supplier must accept material/construction/end compatibility; CAD outer-envelope installation curve only, not preformed wire; length requirement in wire_CAD_metadata')
  if 'FACTORY_NIPPLE' in s:return ('manufacturer brass finished end','BUNDLED PURCHASE','NI000032 supplied only factory-swaged, part of completed tendon')
  if s=='MOTOR':return ('SOYO SY42STH38-1684A','PURCHASE','Pololu2267; manufacturer drawing; electrical performance not certified')
  if 'BEARING' in s:return ('SKF625-Z P6','PURCHASE','5x16x5; manufacturer lot/mean and single-plane limits inspection')
- if 'NUT' in s or 'BOLT' in s or 'PLUG' in s:return ('steel specified standard fastener','PURCHASE','6g/6H nominal thread interfaces; select actual listed length/pitch; locking per HenkelTDS')
+ if s.startswith('SHAFT_NUT'):return ('BossardBN1207 zinc-blue steel propertyclass04','PURCHASE','M5x0.5 fine/AF8/t2.7; manufacturer source confirmed; reduced-height nut, not full-height bolt-strength claim; locking/preload Stage2')
+ if 'PLUG' in s:return ('BossardBN24 steel45H black','PURCHASE','ISO4026M2x4/1025007;0.9AF; maker listed tmin1.7 forL4. CAD1mm recess is conservative external-tool access envelope, NOT actual internal/mass model; plugs retain pin, not tensile fasteners')
+ if 'NUT' in s or 'BOLT' in s:return ('A2 stainless propertyclass70 procurement requirement; supplier certificate','PURCHASE','6g/6H nominal thread interfaces; actual listed standard/head/length/pitch; countersunk heads have reduced loadability, NOT full nominal tensile rating; locking/preload per qualified Stage2 procedure')
  if s=='SKIN':return ('PET sheet0.30','MAKE','knife/die cut, drilled index; material certificate and coupon Stage2')
  if s.startswith('RAIL'):return ('301spring strip0.20','MAKE','laser/photochemical cut with deburred edges; root/tip mechanical clamping')
- if s=='IDLER':return ('POM','MAKE','turn/ream on common setup;3.040+-0.010 running bore')
+ if s=='IDLER':return ('POM-C acetal copolymer procurement requirement','MAKE','turn/ream on common setup;3.040+-0.010 running bore; actual creep/friction NOT MEASURED')
  if any(k in s for k in ('SHAFT','PIN','AXLE','SPACER','WASHER','CAP_','SWIVEL')):return ('303stainless prototype stock','MAKE','turn/mill/ream; thickness, interface and design intent in actual STEP/drawing; allowables not certified')
  return ('6061-T6 aluminium','MAKE','CNC mill/turn; finished-interface drawings plus actual STEP; no blanket printed replacement')
 def main():
@@ -67,6 +69,23 @@ def main():
  if idx.get('design_geometry',{}).get('receiver_pocket_blend_mm'):
   FEATURES['SWIVEL'][3]='ACTUAL R0.350+-0.005 concave end blends; split-face ball contour with NS MRB230R0.35x4/08-00520-40352 or verified equivalent'
   FEATURES['SWIVEL']+=['NI envelope is stepped head3.8x3 then stem2.8x3 to fixed outlet; real manufacturer Bmin3/Dmax6, NOT full3.8x6 cylinder','Finish body halves3.000+-0.010/recess0.600+-0.010; pocketAF4.10+-0.02; nutAF3.82..4.00/t1.35..1.60 acceptance','MATCHED trim fromM2x8: L=actual grip+actual nut height+0.55; final exposed tip0.50..0.65; inspect6g and label matching location']
+ if idx.get('design_geometry',{}).get('receiver_preload_sleeve'):
+  FEATURES['IDLER'][2]='Rotates freely on stationary3mm shoulder axle; matched thrust shims set total endgap0.025..0.035 and groove midplaneY0+-0.005; preload bypasses POM'
+  FEATURES['IDLER_AXLE']=['INVERTED custom303 axle: smooth3.000/-0.006 atY-2.5..3, head5.5x3 Y3..6/socket2.5AF from+Y','M2x0.4-6g fully formedY-7.6..-3; actualroot1.55 runoutY-3..-2.5 under shoulder washer','Head and3mm shoulder clamp metal bracket through actualID2.1 washers, NOT POM; journal Ra<=0.8, gauge actual thread before use']
+  FEATURES['SWIVEL_AXLE']=['Smooth2.000/-0.005 atY-5.5..5.0; actualroot1.55 runoutY5..5.5 under external washer','Fully formedM2x0.4-6g Y5.5..8.5; original3.8x2 head/socket1.5AF and nut external positions retained','Fork right counterbore4.20+-0.02/Y5..5.5, journal land1.5; bearing strength NOT MEASURED']
+  FEATURES['SWIVEL'][4]='Actual pivot bore3.040+-0.010 over stationary3.000/-0.005 compression sleeve; do NOT clamp rotating body with nut preload'
+  FEATURES['TERMINAL']+=['Right fork actual4.20+-0.02counterboreY5..5.5 forOD4x0.5 washer; nominal0.90radial web, right journal land1.50','Fork eyes2.200+-0.010, common-axis0.010DIAMETER; do not confuse with receiver3.04/sleeve3.00 journal']
+  FEATURES.update({'IDLER_SHOULDER_WASHER':['OD5/ID2.10+0.02/-0/t0.500+-0.010 atY-3..-2.5','Positive3mm shaft shoulder stop; steel clamp path on bracket, no POM preload'],
+   'IDLER_CLAMP_WASHER':['OD5/ID2.10+0.02/-0/t0.500+-0.010 atY-5.5..-5','M2nut now on-Y side;5mm head supports bracket, actual thread runout covered'],
+   'IDLER_SPACER_L':['OD5/ID3.1/nominalt0.485 atY-2.5..-2.015; MATCH actual journal and hub','Paired shims establish total running gap0.025..0.035 and groove midplaneY0+-0.005; lap and inspect, NOT measured'],
+   'IDLER_SPACER_R':['OD5/ID3.1/nominalt0.985 atY2.015..3; MATCH paired left shim','Actual shaft shoulder-to-head length5.5; no nut force through rotating POM'],
+   'SWIVEL_SLEEVE':['Stationary303 compression sleeve OD3.000/-0.005, ID2.020+0.010/-0, nominalL7','Finish sleeve to actual fork gap; paired thrust shims then match body width for0.025..0.035 running gap','Inspect coaxiality0.010DIAMETER, Ra<=0.8 journal; no invented preload or bearing rating'],
+   'SWIVEL_SPACER_L':['OD4/ID3.1/nominalt0.485 atY-3.5..-3.015; MATCH sleeve and receiver width','Receiver rotates around sleeve; no positive nut preload through this rotating stack'],
+   'SWIVEL_SPACER_R':['OD4/ID3.1/nominalt0.485 atY3.015..3.5; MATCH paired shim','Total running gap0.025..0.035, axial centre+-0.005; actual readings NOT MEASURED'],
+   'SWIVEL_SPACER_OUT':['OD4/ID2.10+0.02/-0/t0.500+-0.010 atY5..5.5','Fits actual4.20counterbore, covers runout; original external nut positionY5.5 unchanged']})
+ if idx.get('design_geometry',{}).get('shaft_plain_passage_D_mm'):
+  FEATURES['SHAFT']=['DatumA common journal axis X80/Z20; datumB shoulderY-3.5','ONLY bearing seatsY-8.5..-3.5 and9..14 are5f6=4.982..4.990; coax0.005DIAMETER/Ra<=0.8um','Outboard plain passage/grip4.400/-0.010 Y-18..-12.4; AF4flatsY-18..-12.5; do NOT machine entire end5f6','M5x0.5-6g FULLY FORMED Y-12.1..-9 and14.5..18.2; root4.30 runoutsY-9..-8.5/14..14.5','Entry cones0.30 atY-12.4..-12.1 and18.2..18.5; actual6g gauge required','OD8 shoulders/crosspin retained; incoming nut additional plainGO4.42/NO_GO4.70 and6H thread gauge are DESIGN acceptance, NOT manufacturer measured limits']
+  FEATURES['COUPLING']=['NEW6061 billet stepped split jaws, NOT glued repair liner; common axisX80/Z20','Inputbore5.050+0.020/-0 Y-32..-18.5; output4.450+0.020/-0 Y-18.5..-12.5','Bore step transition<=0.20axial, contained in real motor/output shaft gap; output grip5.5 nominal','0.30split gap;4M3x10/3.4upper clearance/M3x0.5-6H lower; gauge actual threads','Pilot small bore, counterbore input, machine paired jaws in datum fixture; preload/torque capacity Stage2']
  rows=[];draw=[]
  for n,v in idx['parts'].items():
   f=ROOT/v['path'];m=trimesh.load(f.with_suffix('.stl'),force='mesh');mat,kind,method=metadata(n);s=n[3:] if n.startswith('F') else n

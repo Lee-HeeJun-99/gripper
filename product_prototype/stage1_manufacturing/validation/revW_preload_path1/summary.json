@@ -1,0 +1,70 @@
+{
+  "status": "METAL_PRELOAD_BYPASS_DESIGN_PASS",
+  "case": "revW_preload_bypass",
+  "actual_native_nominal_idler_running_gap_mm": 0.03000000000000025,
+  "actual_native_nominal_receiver_running_gap_mm": 0.02999999999999936,
+  "actual_reliefs": [
+    {
+      "part": "IDLER_AXLE",
+      "actual_relief_intervals_mm": [
+        [
+          -3.0,
+          -2.5
+        ]
+      ],
+      "expected_mm": [
+        -3,
+        -2.5
+      ],
+      "verified": true
+    },
+    {
+      "part": "SWIVEL_AXLE",
+      "actual_relief_intervals_mm": [
+        [
+          5.0,
+          5.5
+        ]
+      ],
+      "expected_mm": [
+        5,
+        5.5
+      ],
+      "verified": true
+    }
+  ],
+  "metal_contact_planes": {
+    "idler_shoulder_Y_mm": -2.5,
+    "idler_shoulder_washer_Y_mm": [
+      -3.0,
+      -2.5
+    ],
+    "idler_outer_washer_Y_mm": [
+      -5.5,
+      -5.0
+    ],
+    "receiver_sleeve_Y_mm": [
+      -3.5,
+      3.5
+    ],
+    "receiver_outer_washer_Y_mm": [
+      5.0,
+      5.5
+    ]
+  },
+  "conditional_matched_gap_acceptance_mm": [
+    0.025,
+    0.035
+  ],
+  "conditional_groove_midplane_acceptance_mm": [
+    -0.005,
+    0.005
+  ],
+  "conditional_max_axial_offset_mm": 0.022500000000000003,
+  "conditional_maxwire_axial_groove_margin_mm": 0.0025000000000000022,
+  "conditional_wire_port_margin_mm": 0.1075,
+  "scope": "Actual native nominal dimensions and specified metal path, NOT measured preload/friction/free-spin. Old0gap is geometric risk, NOT a fabricated seized-hardware result. New shim/sleeve lengths must be MATCHED to actual fork/body/journal dimensions and inspected after locking. Axial-groove bound assumes nominal radial geometry, not all combined manufacturing/FEM tolerances.",
+  "input_sha256": "7ce3dc163443784ae0c411e61c4dccd358e5d633e2697c8e3ab26ce38148d798",
+  "hardware": "NOT MEASURED",
+  "stage1_release": false
+}

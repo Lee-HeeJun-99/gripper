@@ -23,6 +23,7 @@ def main():
   elif short.startswith(('CAP_R_BOLT','MOTOR_BOLT')):c[1]=b[4];axis=(0,-1,0);cutset=drive+dock if short.startswith('MOTOR') else []
   elif short in ('IDLER_AXLE','SWIVEL_AXLE'):
    c[1]=b[1];axis=(0,1,0)
+   if short=='IDLER_AXLE' and idx.get('design_geometry',{}).get('idler_shoulder_variant'):c[1]=b[4];axis=(0,-1,0)
    if short=='SWIVEL_AXLE':af=1.5;depth=.8
   elif short.startswith(('ROOT_BOLT','TERMINAL_FLUSH_BOLT')):c[0]=b[0];axis=(1,0,0);af=2 if 'FLUSH' in short else 2.5;depth=1 if 'FLUSH' in short else 1.25
   elif short.startswith('CASSETTE_ADAPTER_BOLT'):c[0]=b[3];axis=(-1,0,0);af=1.5;depth=.8

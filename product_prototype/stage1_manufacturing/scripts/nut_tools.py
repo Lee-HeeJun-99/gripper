@@ -14,6 +14,7 @@ def main():
   if idx.get('design_geometry',{}).get('captive_swivel_nuts') and n.startswith('F0_SWIVEL_NUT_'):
    jobs.append(dict(nut=n,method='seated0.6mm captive hex pocket; independent actual30deg rotation stop in bend_contract, NO fictitious spanner clearance PASS',hits=[]));continue
   b=bb[n];c=[(b[i]+b[i+3])/2 for i in range(3)];af=8 if 'SHAFT' in n else 4 if 'SWIVEL' in n else 5.5;t=1.2 if af==4 else 1.5;cutset=[];swivel=False
+  if n=='F0_IDLER_NUT' and idx.get('design_geometry',{}).get('idler_shoulder_variant'):af=4;t=1.2
   if 'SHAFT' in n:
    axis=(0,1,0);cutset=[k for k in s if k.startswith(('F0_CAP_','F0_COUPLING'))]
   elif n.startswith('F0_ROOT_NUT'):
@@ -61,7 +62,7 @@ def main():
    # A real axial nutdriver is preferable to forcing a long side-entry
    # spanner between neighbouring Palm nuts. Deep hex accommodates the
    # protruding screw; hollow extension avoids contacting its thread tip.
-   sign=-1 if axis==(0,0,1) or n=='F0_SHAFT_NUT_L' else 1
+   sign=-1 if axis==(0,0,1) or n=='F0_SHAFT_NUT_L' or (n=='F0_IDLER_NUT' and idx.get('design_geometry',{}).get('idler_shoulder_variant')) else 1
    direction=tuple(sign*v for v in axis);front=c[:];front[j]=(b[j+3]-.1 if sign<0 else b[j]+.1)
    radius=af/math.sqrt(3)+.9;L=20 if af==8 else 40
    socket=cyl(radius,front,10,direction);stemstart=[front[i]+10*direction[i] for i in range(3)]

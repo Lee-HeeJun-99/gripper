@@ -123,7 +123,7 @@ def drive_delta(old):
  return new,notes,['F0_COUPLING']
 
 def main():
- a=argparse.ArgumentParser();a.add_argument('--tag',required=True);a.add_argument('--base',default='revH');a.add_argument('--phase',choices=['drive','mechanisms','bend','wire','fit','motor','relief','tolerance','fillet'],default='drive');args=a.parse_args();start=time.monotonic()
+ a=argparse.ArgumentParser();a.add_argument('--tag',required=True);a.add_argument('--base',default='revH');a.add_argument('--phase',choices=['drive','mechanisms','bend','wire','fit','motor','relief','tolerance','fillet','preload','counterhold','nutpass'],default='drive');args=a.parse_args();start=time.monotonic()
  out=ROOT/'cad/exports'/args.tag;out.mkdir(exist_ok=False)
  shutil.copyfile(__file__,out/'producer.py')
  if args.phase=='mechanisms':shutil.copyfile(ROOT/'scripts/mechanisms_stage1.py',out/'mechanisms_producer.py')
@@ -134,6 +134,9 @@ def main():
  if args.phase=='relief':shutil.copyfile(ROOT/'scripts/terminal_relief_stage1.py',out/'relief_producer.py')
  if args.phase=='tolerance':shutil.copyfile(ROOT/'scripts/groove_tolerance_stage1.py',out/'tolerance_producer.py')
  if args.phase=='fillet':shutil.copyfile(ROOT/'scripts/receiver_fillet_stage1.py',out/'fillet_producer.py')
+ if args.phase=='preload':shutil.copyfile(ROOT/'scripts/pivot_preload_stage1.py',out/'preload_producer.py')
+ if args.phase=='counterhold':shutil.copyfile(ROOT/'scripts/shaft_counterhold_stage1.py',out/'counterhold_producer.py')
+ if args.phase=='nutpass':shutil.copyfile(ROOT/'scripts/nut_passage_stage1.py',out/'nutpass_producer.py')
  src=ROOT/'cad/exports'/args.base
  deps=[Path(__file__),ROOT/'scripts/build_stage1.py',src/('audit.json' if (src/'audit.json').exists() else 'summary.json')]
  if args.phase=='mechanisms':deps.append(ROOT/'scripts/mechanisms_stage1.py')
@@ -144,6 +147,9 @@ def main():
  if args.phase=='relief':deps.append(ROOT/'scripts/terminal_relief_stage1.py')
  if args.phase=='tolerance':deps.append(ROOT/'scripts/groove_tolerance_stage1.py')
  if args.phase=='fillet':deps.extend([ROOT/'scripts/receiver_fillet_stage1.py',ROOT/'scripts/mechanisms_stage1.py'])
+ if args.phase=='preload':deps.extend([ROOT/'scripts/pivot_preload_stage1.py',ROOT/'scripts/mechanisms_stage1.py'])
+ if args.phase=='counterhold':deps.append(ROOT/'scripts/shaft_counterhold_stage1.py')
+ if args.phase=='nutpass':deps.append(ROOT/'scripts/nut_passage_stage1.py')
  initial_hashes={str(p.relative_to(ROOT)):sha(p) for p in deps}
  if (src/'audit.json').exists():
   audit=json.loads((src/'audit.json').read_text());provenance={p['id']:dict(path=str((src/(p['id']+'.step')).relative_to(ROOT)),sha256=sha(src/(p['id']+'.step'))) for p in audit['parts']}
@@ -171,9 +177,18 @@ def main():
  elif args.phase=='tolerance':
   from groove_tolerance_stage1 import tolerance_delta
   changed,notes,removed=tolerance_delta(allparts)
- else:
+ elif args.phase=='fillet':
   from receiver_fillet_stage1 import fillet_delta
   changed,notes,removed=fillet_delta(allparts)
+ elif args.phase=='preload':
+  from pivot_preload_stage1 import preload_delta,CONFIG as PRELOAD_CONFIG
+  changed,notes,removed=preload_delta(allparts)
+ elif args.phase=='counterhold':
+  from shaft_counterhold_stage1 import counterhold_delta,CONFIG as COUNTER_CONFIG
+  changed,notes,removed=counterhold_delta(allparts)
+ else:
+  from nut_passage_stage1 import passage_delta,CONFIG as PASSAGE_CONFIG
+  changed,notes,removed=passage_delta(allparts)
  for i in range(3):
   for n in removed:
    name=n.replace('F0_',f'F{i}_',1);del allparts[name];provenance.pop(name)
@@ -207,6 +222,12 @@ def main():
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],groove_root_radius_mm=10.98,groove_profile_radius_mm=.30,groove_profile_limits_mm=[.30,.31],groove_major_radius_mm=11.28);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  if args.phase=='fillet':
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],receiver_pocket_blend_mm=.35,NI_envelope='Amax2.8/Bmin3/Cmax3.8/Dmax6; fixed-outlet union head3+stem3');result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='preload':
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],**PRELOAD_CONFIG);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='counterhold':
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],**COUNTER_CONFIG);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='nutpass':
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],**PASSAGE_CONFIG);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  final_hashes={str(p.relative_to(ROOT)):sha(p) for p in deps}
  assert initial_hashes==final_hashes,'Producer changed during CAD job; original snapshots retained, output not qualified'
  (out/'summary.json').write_text(json.dumps(result,indent=2))

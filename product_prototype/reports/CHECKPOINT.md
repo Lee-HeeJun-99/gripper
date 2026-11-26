@@ -1,4 +1,27 @@
-## Current Stage1 continuation — 2026-11-26 / Rev U then V machining trial
+## Current Stage1 continuation — 2026-11-26 / Rev Y assembly fixes
+
+Continue after local fff8cba; read actual git log for newer saves. Rev W304part
+preload bypass solved actual zero-gap rotating-stack risk with stationary
+compression sleeve and shoulder/metal washer paths. W40tool full test found
+five procedure failures; raw preserved. Rev X plain nut passage certificate
+also FAIL despite nominal major-hole clearance. Rev Y physically changes
+shaft plain grip4.4/AF4, real M5runouts/leads, NEW4.45/5.05stepped coupling.
+Actual304valid BRep parts/0bulk common; nut passage design-gauge bound PASS,
+42thread-envelope paths/fullnuts PASS;40finite tool/fastener swing/extraction
+jobs PASS using explicit prefit-MF/off-Palm-motor/terminal-before-pivot order.
+AF4counterhold and actual fine-nut swing PASS; coupling halves and complete
+motor-module extraction sampled PASS. Current source-linked Ystock max108
+variants clear, whole304part motion31poses clear, maximum wire/rotor clear.
+Ycassette space/wholewire sector clear. Follow source-linked JSON for limits.
+
+No physical preload/free-spin/torque/strength/dynamics/continuousCCD claim.
+Actual wire length extrema, manufacturing packet and683face catalogue are
+being reconciled. Final Stage1 release not yet granted; manufacture only from
+current datums/BOM/STEP, not historical Hprose. Remaining: current controlled
+package, combined tolerance disposition, fail-closed final checklist. No
+Native/SDK/push/history rewrite. Preserve all old FAIL/PASS and RevA-H.
+
+## Previous Stage1 continuation — 2026-11-26 / Rev U then V machining trial
 
 Actual local save before this continuation:8a0c59f. Rev U292parts,0BRep bulk
 intersections, full assembly STEP/STL. Rev S own-material extension found66

@@ -1,0 +1,101 @@
+{
+  "status": "INDEPENDENT_FINITE_PRESSURE_VERIFICATION_PASS",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure1/summary.json",
+    "SHA256": "8c26c434a3b705b104872b7aa7719f0bbcba5b779ff5199422ad0aa3dc358c45"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure_verify2/producer.py",
+    "SHA256": "dbf68a3a61c4aa9ad02ebff3b0b47d68669402c3819d3a153c1785f95306ad6d"
+  },
+  "checks": {
+    "eight_actual_slices": true,
+    "cross_product_equilibrium": true,
+    "volume_derived_extent": true,
+    "outside_40mm_rejected": true,
+    "centroid_only_negative": true,
+    "corrupted_patch_rejected": true,
+    "virtual_work": true,
+    "finite_pressure_reconstructed": true
+  },
+  "rows": [
+    {
+      "pad_index": 0,
+      "side": "pad",
+      "width_mm": 0.001,
+      "area_mm2": 3.1415926535892127,
+      "centroid_error_mm": 4.796163466380676e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 0,
+      "side": "palm",
+      "width_mm": 0.001,
+      "area_mm2": 3.1415926535892122,
+      "centroid_error_mm": 4.440892098500626e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 0,
+      "side": "pad",
+      "width_mm": 0.002,
+      "area_mm2": 3.141592653590142,
+      "centroid_error_mm": 2.6645352591003757e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 0,
+      "side": "palm",
+      "width_mm": 0.002,
+      "area_mm2": 3.141592653590142,
+      "centroid_error_mm": 2.6645352591003757e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 2,
+      "side": "pad",
+      "width_mm": 0.001,
+      "area_mm2": 3.1415926535892127,
+      "centroid_error_mm": 4.796163466380676e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 2,
+      "side": "palm",
+      "width_mm": 0.001,
+      "area_mm2": 3.1415926535892122,
+      "centroid_error_mm": 4.440892098500626e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 2,
+      "side": "pad",
+      "width_mm": 0.002,
+      "area_mm2": 3.141592653590142,
+      "centroid_error_mm": 2.6645352591003757e-14,
+      "matches": true
+    },
+    {
+      "pad_index": 2,
+      "side": "palm",
+      "width_mm": 0.002,
+      "area_mm2": 3.141592653590142,
+      "centroid_error_mm": 2.6645352591003757e-14,
+      "matches": true
+    }
+  ],
+  "equilibrium_residual_N_Nmm": 3.552713678800501e-15,
+  "x_extent_mm": [
+    -28.000000000000004,
+    15.500000000000002
+  ],
+  "centroid_basis_N": [
+    0.52,
+    -0.039999999999999855,
+    0.52
+  ],
+  "corrupt_patch_area_mm2": 0.5498301022176099,
+  "virtual_work_error_Nmm": 1.734723475976807e-18,
+  "whole_system_release": false,
+  "scope": "Conditional rigid finite-pressure witness and footprint exclusion; no six-DOF support or elastic qualification"
+}

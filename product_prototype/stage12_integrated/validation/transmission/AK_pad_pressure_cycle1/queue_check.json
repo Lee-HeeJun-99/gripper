@@ -1,0 +1,43 @@
+{
+  "status": "SOURCE_INTEGRITY_PASS",
+  "errors": [],
+  "revision": "revAA_heel_relief2",
+  "next": {
+    "id": "AI_whole_palm_support",
+    "track": "C",
+    "priority": 2,
+    "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
+    "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
+    "fallback": "reinforced_local_tabs",
+    "status": "READY",
+    "prerequisites": [
+      "local_palm_tabs",
+      "idler_integral_M3_shoulder"
+    ],
+    "system_gate_contribution": 4,
+    "cost": "bounded actual product validation, no random parameter sweep",
+    "last_run_utc": "2026-11-26T13:50:03.085664+00:00",
+    "consecutive_runs": 3,
+    "target_candidate": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+      "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+    },
+    "target_revision": "revAK_integral2",
+    "target_parts": 235,
+    "evidence": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/summary.json",
+      "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
+    },
+    "selection_note": "C distributed-pressure uncertainty resolved in one bounded analysis. C remains READY only for a distinct retention mechanism; independent A/B work remains.",
+    "reason": "Actual finite pressure patches support1N/My14Nmm beyond centroid basis; universal footprint excludes old40Nmm. Full six-DOF retention and ground attachment still absent.",
+    "last_diagnostic": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure_cycle1/summary.json",
+      "SHA256": "5096bfca8228d5455a7c4eef546c33140b31c49820e4b9f3adfc91c4dfc75590"
+    },
+    "last_cycle_status": "FINITE_PRESSURE_ENVELOPE_VERIFIED_FULL_ATTACHMENT_BLOCKED",
+    "followup_hypothesis": "Require finite positive side/torsion/lift-off retention and connected ground path; no more pad/pressure scans. Actual elastic/preload/load evidence required before strength."
+  },
+  "running_task_records": [],
+  "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",
+  "resume_command": "python product_prototype/stage12_integrated/scripts/integrated_status.py --next"
+}

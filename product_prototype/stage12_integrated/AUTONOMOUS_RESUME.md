@@ -1,3 +1,27 @@
+# Bounded C cycle — actual finite-pressure envelope (2026-11-26)
+
+Started at02b9ca781bc3adb95848d97f0fd3f942472dc570. Supervisor local save PENDING;
+no Git add/commit attempted or new commit claimed. Actual result:
+product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure_cycle1/summary.json.
+
+Actual common Palm/pad faces contain two finite pi mm² patches balancing
+1N compression/My14Nmm with positive pressure and3.56e-15 residual. Centroid
+basis needs-0.04N and rejects that case; this is a new pressure-redistribution
+analysis, not a repeated geometry scan. Exact x support[-28,15.5]mm excludes
+old40Nmm even for arbitrary pressure. All235AK source hashes verified.
+Independent eight solid slices/cross products/virtual work and corrupted patch
+rejection pass. Initial JSON serialization exit1 preserved with producer/log;
+corrected verification uses new tag. Three4GiB/420s children exit0/1/0; no SOFA.
+
+No elastic pressure/preload/strength/full Palm/6DOF/energy PASS. Pads remain
+unconnected external candidates. Read-only release INTEGRATED_NOT_QUALIFIED.
+Next C requires distinct finite positive side/torsion/lift-off retention and
+connected ground path; no repeated patch scans. Independent A/B READY work
+remains. Historical failures, CAD/BOM and unrelated untracked work preserved.
+No RUNNING queue records or owned live analysis children at handoff.
+Exact save manifest: product_prototype/stage12_integrated/runtime/authorized_20261126_4/save_request9.json.
+No SDK,criteria,manager,Stage3,hardware changes, external launch or Git write.
+
 # Bounded B cycle — finite actual-root pressure witness (2026-11-26)
 
 Started at4c68ae3e7f9d0f7eb5ab6fc2c3e7d347708e8293. Supervisor local save PENDING;

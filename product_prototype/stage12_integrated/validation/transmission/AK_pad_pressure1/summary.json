@@ -1,0 +1,91 @@
+{
+  "status": "FINITE_PRESSURE_WITNESS_AND_TIPPING_BOUND",
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure1/inputs.json",
+    "SHA256": "6a05fdfb695b2775b1ea1e00b1d335d35618bed62b2e6366ee6f7b551ec85a70"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure1/producer.py",
+    "SHA256": "32f4e3ed77291a88017e5627d3abf62dc61472e5e55d769a2e4adf030973d007"
+  },
+  "patches": [
+    {
+      "pad_index": 0,
+      "center_mm": [
+        14.000000000000004,
+        21.650635094610966,
+        -12
+      ],
+      "radius_mm": 1,
+      "area_mm2": 3.141592653589792,
+      "centroid_mm": [
+        14.000000000000004,
+        21.650635094610966,
+        -12
+      ],
+      "force_N": 0.5,
+      "pressure_N_mm2": 0.1591549430918954
+    },
+    {
+      "pad_index": 2,
+      "center_mm": [
+        14.000000000000004,
+        -21.650635094610966,
+        -12
+      ],
+      "radius_mm": 1,
+      "area_mm2": 3.141592653589792,
+      "centroid_mm": [
+        14.000000000000004,
+        -21.650635094610966,
+        -12
+      ],
+      "force_N": 0.5,
+      "pressure_N_mm2": 0.1591549430918954
+    }
+  ],
+  "checks": {
+    "actual_patches_full": true,
+    "finite_positive_pressure": true,
+    "equilibrium": true,
+    "centroid_basis_rejects": true,
+    "old_40mm_excluded": true,
+    "shift_within_pad": true
+  },
+  "applied_wrench_N_Nmm": [
+    0,
+    0,
+    -1,
+    0,
+    14,
+    0
+  ],
+  "reaction_wrench_N_Nmm": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    -14.000000000000004,
+    0.0
+  ],
+  "residual_N_Nmm": 3.552713678800501e-15,
+  "centroid_basis_reactions_N": [
+    0.52,
+    -0.040000000000000036,
+    0.52
+  ],
+  "x_support_bounds_mm": [
+    -28.0,
+    15.5
+  ],
+  "old_40mm_separation_mm": 24.5,
+  "whole_system_release": false,
+  "adopted": false,
+  "physical_pressure_solution": null,
+  "ground_attachment": null,
+  "limitations": [
+    "Constructive rigid pressure witness, not an elastic/preload solution or allowable pressure",
+    "Normal-only pressure always has Fx=Fy=Mz=0 and Fz>=0; six-DOF attachment remains impossible",
+    "Pads remain separate unconnected candidates; no material/strength/energy/full Palm certification"
+  ]
+}

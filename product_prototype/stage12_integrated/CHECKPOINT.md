@@ -1,5 +1,15 @@
 # Integrated checkpoint — 2026-11-26
 
+AUTOMATION AUTHORIZATION: user approved actual session_manager execution.
+Activation configured for6x1800s, transient user systemd service
+regrip-stage12-20261126-1, no auto-restart/budget renewal. Existing paragraphs
+stating 'manager not activated' below are historical; actual service/live
+status must be checked in runtime/authorized_20261126_1/status.json and systemd.
+Control tests and launch preparation are committed BEFORE starting the worker
+so that a clean tracked tree is handed over. Worker owns research edits after
+launch; do not concurrently modify shared research files in another session.
+STOP file and systemctl stop remain authoritative. See reports/SESSION_MANAGER.md.
+
 LATEST completed follow-up, after3ef32a7 (supersedes READY/RUNNING and64
 inspection-only statements below): actual owner64_working1 exit0, optimizer
 300iteration-limit FAIL retained. Static constraint generation used220of3752

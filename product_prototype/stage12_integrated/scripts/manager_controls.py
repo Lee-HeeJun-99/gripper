@@ -1,8 +1,8 @@
 """Offline manager controls. No Codex session, authentication or network call."""
-import argparse,fcntl,tempfile,json
+import argparse,fcntl,tempfile,json,subprocess,sys
 from pathlib import Path
 from baseline_registry import ROOT,ref,dump
-from session_manager import has_progress,command,active_tasks
+from session_manager import has_progress,command,active_tasks,signalled_child_stop
 def main():
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'validation/integrated'/a.tag;out.mkdir(parents=True,exist_ok=False)
     original=dict(HEAD='a',actual_result_artifacts={'x':'1'})
@@ -19,6 +19,9 @@ def main():
             try:fcntl.flock(second,fcntl.LOCK_EX|fcntl.LOCK_NB)
             except BlockingIOError:rejected=True
             assert rejected
-    dump(out/'summary.json',dict(status='PASS',scope='OFFLINE MANAGER CONTROLS ONLY',controls=['metadata-only commit is not progress','new actual result is progress candidate, not product PASS','workspace sandbox retained','concurrent lock rejected'],external_Codex_sessions_launched=0,producer=ref(Path(__file__))))
+    child=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)'],start_new_session=True)
+    signalled_child_stop(child);assert child.poll() is not None
+    signalled_child_stop(child) # already-exited child stop is idempotent
+    dump(out/'summary.json',dict(status='PASS',scope='OFFLINE MANAGER CONTROLS ONLY',controls=['metadata-only commit is not progress','new actual result is progress candidate, not product PASS','workspace sandbox retained','concurrent lock rejected','own process group terminated and idempotent repeated stop'],external_Codex_sessions_launched=0,producer=ref(Path(__file__))))
     print(json.dumps(dict(status='PASS',external_sessions_launched=0)))
 if __name__=='__main__':main()

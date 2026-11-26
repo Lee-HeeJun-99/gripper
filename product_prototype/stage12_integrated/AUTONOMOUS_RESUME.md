@@ -1,5 +1,12 @@
 # Resume
 
+AUTOMATION: actual manager execution approved2026-11-26, bounded6x1800s.
+Before any manual research, check transient user service
+regrip-stage12-20261126-1.service and runtime/authorized_20261126_1/status.json.
+Do not overlap its research worker. These live records override historical
+statements below about no external worker. STOP file persists and must not
+be cleared against a user stop. No reboot persistence or unlimited budget.
+
 LATEST: owner64_working1 completed, original optimizer iteration-limit FAIL
 preserved. Independent force/actual-geometry certificates pass; owner_states2
 certifies bounded saved states without changing optimizer history.32/64 local

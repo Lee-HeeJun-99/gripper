@@ -1,3 +1,13 @@
+## Latest actual product-system continuation — 2026-11-26
+
+Latest unadopted candidate RevAJ,250 finite parts; actual STEP/STL/BOM generated.
+Fixed-ground bearing/shared pilot, actual compression stack, lightened Palm and
+M3 integral-shoulder Idler implemented. See stage12_integrated/CHECKPOINT.md
+and reports/PRODUCT_SYSTEM_PROGRESS_20261126.md for actual evidence and scope.
+Local tab response convergence0.128% passes1%; peak stress8.833% FAIL preserved.
+No full Stage1/Stage2/force-cap/hardware PASS. RevAA and old results unchanged.
+Prior automatic6-call budget exhausted; no new service/worker started.
+
 ## Product-priority reset — 2026-11-26
 
 See stage12_integrated/CHECKPOINT.md and reports/PRODUCT_TRACK_RESET_20261126.md.

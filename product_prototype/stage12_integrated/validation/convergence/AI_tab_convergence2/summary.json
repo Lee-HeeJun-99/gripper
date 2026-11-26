@@ -1,0 +1,107 @@
+{
+  "status": "LOCAL_STRESS_CONVERGENCE_FAIL",
+  "scope": "Actual local tab, same geometry/material and finite load; not whole-Palm strength",
+  "rows": [
+    {
+      "h_mm": 3.0,
+      "compliance_m_N": 2.1965071109631606e-07,
+      "energy_J": 1.0982535554799507e-07,
+      "peak_vm_Pa": 225241.56622091646,
+      "peak_element_centroid_m": [
+        0.10503670761277863,
+        0.00032628555458106976,
+        -0.007260617579723395
+      ],
+      "distance_from_clamped_cut_mm": 0.03670761277863033,
+      "source": {
+        "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/summary.json",
+        "SHA256": "a20e8f62d4573737ac6542c7759e373899552da01d0d65fd96ee02eefedecb13"
+      },
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/TAB.step",
+        "SHA256": "c447e88f4bf9d042c3c22270085ab5169f10225dd1e7dd72e698e57f4ed468a7"
+      },
+      "material": {
+        "E_Pa": 70000000000.0,
+        "nu": 0.33,
+        "basis": "ASSUMED sensitivity, not certified grade"
+      }
+    },
+    {
+      "h_mm": 2.0,
+      "compliance_m_N": 2.200483620355457e-07,
+      "energy_J": 1.1002418101686734e-07,
+      "peak_vm_Pa": 246160.69197263676,
+      "peak_element_centroid_m": [
+        0.1050255556302832,
+        0.0014768885787281839,
+        -0.011807755656991678
+      ],
+      "distance_from_clamped_cut_mm": 0.025555630283197184,
+      "source": {
+        "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/summary.json",
+        "SHA256": "a20e8f62d4573737ac6542c7759e373899552da01d0d65fd96ee02eefedecb13"
+      },
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/TAB.step",
+        "SHA256": "c447e88f4bf9d042c3c22270085ab5169f10225dd1e7dd72e698e57f4ed468a7"
+      },
+      "material": {
+        "E_Pa": 70000000000.0,
+        "nu": 0.33,
+        "basis": "ASSUMED sensitivity, not certified grade"
+      }
+    },
+    {
+      "h_mm": 1.5,
+      "compliance_m_N": 2.2033120551452748e-07,
+      "energy_J": 1.1016560275568053e-07,
+      "peak_vm_Pa": 270012.069537721,
+      "peak_element_centroid_m": [
+        0.1050255556302832,
+        0.0004847890828200067,
+        -0.011836105453489022
+      ],
+      "distance_from_clamped_cut_mm": 0.025555630283197184,
+      "source": {
+        "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/summary.json",
+        "SHA256": "a20e8f62d4573737ac6542c7759e373899552da01d0d65fd96ee02eefedecb13"
+      },
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/TAB.step",
+        "SHA256": "c447e88f4bf9d042c3c22270085ab5169f10225dd1e7dd72e698e57f4ed468a7"
+      },
+      "material": {
+        "E_Pa": 70000000000.0,
+        "nu": 0.33,
+        "basis": "ASSUMED sensitivity, not certified grade"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h3b/summary.json",
+      "SHA256": "069b82adef110768f58c86d8346743b2ba86b49c2f0d2bf692d6d6493bdd4b0b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h2/summary.json",
+      "SHA256": "abded23a656d5f3ef4e3132940ff3f1a9fc07acbc7e143ed419a24800a171cc4"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h1p5/summary.json",
+      "SHA256": "5cc1644797fd4814148f579fa29c517f5ea2e1d10b42c8bc6f98727d1df1f9dc"
+    }
+  ],
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/convergence/AI_tab_convergence2/producer.py",
+    "SHA256": "95db38f6b45261a0ebe36aaeacffde3b8305c0b1cffbd1b32c00d8c03ea18890"
+  },
+  "criterion_relative_max": 0.01,
+  "response_relative": 0.001283719563560215,
+  "response_converged": true,
+  "unsmoothed_peak_stress_relative": 0.0883344866987591,
+  "stress_converged": false,
+  "interpretation": "Response convergence does NOT certify stress/strength. Peak location relative to artificial clamped cut is reported, not deleted. Whole-Palm support/contact analysis is the physical followup, not a blind finer-mesh sweep.",
+  "assembly_note": "Finest level uses the same P2 law/degree2 quadrature summed in8000-element blocks, a memory strategy already used by Stage2 shaft FEM.",
+  "whole_system_release": false
+}

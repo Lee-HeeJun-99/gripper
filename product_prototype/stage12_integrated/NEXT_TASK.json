@@ -3,18 +3,31 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "AG_ground_support",
+    "id": "AI_whole_palm_support",
     "track": "C",
-    "priority": 0,
-    "hypothesis": "Ground-supported hollow spindle removes the input/output bearing bypass, with actual finite axial retention and input shaft clearance",
-    "criteria": "Actual three-sector finite CAD, shaft passage, independent geometry audit and full-turn geometric check; no certified friction/strength promotion",
-    "cost": "4GiB/420s",
-    "fallback": "separate_rated_upstream_disconnect",
+    "priority": 1,
+    "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
+    "criteria": "Same current250-part RevAJ geometry, actual full-Palm mounting/load ports, static equilibrium and1% response convergence; local tab clamp-edge stress FAIL is not deleted or promoted",
+    "fallback": "reinforced_local_tabs",
     "status": "READY",
-    "system_gate_contribution": 3,
+    "prerequisites": [
+      "local_palm_tabs",
+      "idler_integral_M3_shoulder"
+    ],
+    "system_gate_contribution": 4,
+    "cost": "bounded actual product validation, no random parameter sweep",
     "last_run_utc": null,
     "consecutive_runs": 0,
-    "prerequisites": []
+    "target_candidate": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+      "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+    },
+    "target_revision": "revAJ_idler1",
+    "target_parts": 250,
+    "evidence": {
+      "path": "product_prototype/stage12_integrated/validation/convergence/AI_tab_convergence2/summary.json",
+      "SHA256": "919e42be9f3806ea1efe7b745e840b01ad4567cb1947731391d4ffd8d31c2c7c"
+    }
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

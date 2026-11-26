@@ -27,7 +27,8 @@ def main():
     # even this generous counterfactual cannot protect a parallel bearing path.
     fixed_support='F0_CLUTCH_GROUND_SPINDLE' in d['part_references']
     if fixed_support:
-        required+=['F0_CLUTCH_GROUND_SPINDLE','F0_CLUTCH_INNER_CLIP','F0_CLUTCH_GROUND_BOLT_88','F0_CLUTCH_GROUND_BOLT_132','F0_MOTOR_PLATE']
+        required+=['F0_CLUTCH_GROUND_SPINDLE','F0_CLUTCH_INNER_CLIP','F0_MOTOR_PLATE']
+        required.extend(n for n in d['part_references'] if n.startswith(('F0_CLUTCH_GROUND_BOLT_','F0_CLUTCH_GROUND_SPACER_')))
         assert d['torque_model']['faces']==1
     edges=[dict(id='friction_faces',**{'from':'INPUT_HUB','to':'DRUM'},guaranteed_limit=True,basis='COUNTERFACTUAL ideal calibrated friction cap; actual cap unqualified'),
            dict(id='support_bearing',**{'from':'GROUND' if fixed_support else 'INPUT_HUB','to':'DRUM'},guaranteed_limit=False,basis='Actual 688A inner ring on ground spindle' if fixed_support else 'Actual 8mm hub journal -> 688A inner ring -> rolling elements -> outer ring in drum. Drag/seizure bound unavailable.')]

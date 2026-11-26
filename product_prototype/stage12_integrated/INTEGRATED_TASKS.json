@@ -244,11 +244,17 @@
       "system_gate_contribution": 1,
       "last_run_utc": "2026-11-26T07:37:14Z",
       "consecutive_runs": 6,
-      "selection_note": "Stop generic rod refinement. Next B task is actual CAD boundary/load-port identification."
+      "selection_note": "Stop generic rod refinement. Next B task is actual CAD boundary/load-port identification.",
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250
     },
     {
       "id": "alignment_alternative",
-      "priority": 3,
+      "priority": 8,
       "status": "READY",
       "hypothesis": "Rated compliant coupling can reduce large rigid-coupling restoring reactions without a 5um assembly demand",
       "prerequisites": [],
@@ -258,7 +264,14 @@
       "track": "A",
       "system_gate_contribution": 1,
       "last_run_utc": null,
-      "consecutive_runs": 0
+      "consecutive_runs": 0,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250,
+      "selection_note": "Fallback only if direct shared-pilot topology is rejected. Do not repeat disc-only Oldham kinematics; actual full rated interfaces/restoring reactions needed."
     },
     {
       "id": "protected_system_loads",
@@ -282,7 +295,14 @@
       "track": "C",
       "system_gate_contribution": 1,
       "last_run_utc": null,
-      "consecutive_runs": 0
+      "consecutive_runs": 0,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250,
+      "selection_note": "AF stand was a different preliminary cartridge. Latest RevAJ bench mounting, input reaction, guards/sensor adapters and blank physical records still required."
     },
     {
       "id": "flexible_terminal_reference",
@@ -394,11 +414,13 @@
       "criteria": "Actual three-sector finite CAD, shaft passage, independent geometry audit and full-turn geometric check; no certified friction/strength promotion",
       "cost": "4GiB/420s",
       "fallback": "separate_rated_upstream_disconnect",
-      "status": "READY",
+      "status": "PASS",
       "system_gate_contribution": 3,
-      "last_run_utc": null,
-      "consecutive_runs": 0,
-      "prerequisites": []
+      "last_run_utc": "2026-11-26T09:06:34.277603+00:00",
+      "consecutive_runs": 1,
+      "prerequisites": [],
+      "result": "cad/exports/revAG_ground6/summary.json",
+      "reason": "Bounded ground-supported transmission CAD: 253 finite parts, nominal clearance, actual compression stack and full annular seating, independent BRep/STL/integrals and 48 drive poses pass. Counterfactual bearing bypass removed; no certified friction cap, shaft/clamp strength or whole-system approval."
     },
     {
       "id": "AF_full_wire_motion",
@@ -410,11 +432,13 @@
       "prerequisites": [
         "candidate_system_integration"
       ],
-      "status": "READY",
+      "status": "PASS",
       "system_gate_contribution": 3,
-      "last_run_utc": null,
-      "consecutive_runs": 0,
-      "fallback": "review_independent_product_track"
+      "last_run_utc": "2026-11-26T09:06:34.344472+00:00",
+      "consecutive_runs": 2,
+      "fallback": "review_independent_product_track",
+      "result": "validation/stage1/AG_wire_motion2/summary.json",
+      "reason": "Bounded nominal wire vs rigid-hardware/other-wire screen: five prescribed Finger poses, 643 exact common checks, no intersections and constant finite wire length. Elastic PET/Rail, maximum-stock, tolerances and actual dynamic sliding expressly excluded; not full Finger/Stage1 PASS."
     },
     {
       "id": "root_retention_load_contract",
@@ -423,12 +447,184 @@
       "hypothesis": "Actual root positive capture/clamp contact determines preload and axial load capability, not an assumed fixed rod boundary",
       "criteria": "Actual finite root geometry/load ports, preload/retention model with conditional or certified properties, force/moment equilibrium",
       "cost": "bounded read-only CAD and independent structural calculation",
-      "status": "READY",
+      "status": "PASS",
       "system_gate_contribution": 3,
+      "last_run_utc": "2026-11-26T08:58:21.960117+00:00",
+      "consecutive_runs": 1,
+      "prerequisites": [],
+      "fallback": "review_independent_product_track",
+      "result": "validation/finger/actual_root_retention1/summary.json",
+      "reason": "Actual root projected areas and axial-only mu*N capacity: LP equilibrium agrees with independent seven-cut bounds and dual work. No friction, actual preload, bending/creep or assembled strength is certified."
+    },
+    {
+      "id": "shared_pilot_alignment",
+      "track": "A",
+      "priority": 0,
+      "status": "PASS",
+      "hypothesis": "Actual common pilot register removes motor/bridge bolt-float centering dependency",
+      "criteria": "Finite CAD, interference, independent geometric audit and declared tolerance intervals; no total motor reaction/strength approval",
+      "prerequisites": [],
+      "system_gate_contribution": 3,
+      "cost": "4GiB/420s per child",
+      "last_run_utc": "2026-11-26T09:26:12.887175+00:00",
+      "consecutive_runs": 1,
+      "registration_note": "Retrospective task index of actual current-session implementation. Source snapshots establish methods; no preregistration timestamp claimed.",
+      "result": "validation/alignment/AH_pilot_bounds2/summary.json",
+      "reason": "Actual253-part shared-register CAD and machining-interval model pass only bounded interface geometry. Minimum axial clearance0.15mm, interface centre float0.07mm, unallocated runout/deflection budget0.075mm. Complete motor reaction/collet strength not qualified."
+    },
+    {
+      "id": "local_palm_tabs",
+      "track": "C",
+      "priority": 1,
+      "status": "PASS",
+      "hypothesis": "Local drive tabs preserve mount locations without a full heavy Palm annulus",
+      "criteria": "Actual Palm subset, same non-Palm hashes and bolt support footprints, geometry audit; no strength promotion",
+      "prerequisites": [],
+      "system_gate_contribution": 3,
+      "cost": "4GiB/420s per child",
+      "last_run_utc": "2026-11-26T09:26:12.955990+00:00",
+      "consecutive_runs": 1,
+      "registration_note": "Retrospective task index of actual current-session implementation. Source snapshots establish methods; no preregistration timestamp claimed.",
+      "result": "cad/exports/revAI_tabs1/summary.json",
+      "reason": "Actual253-part new candidate: one Palm changed, strict subset and all six motor mount footprints preserved, 36.433% Palm volume removed and independent geometry audit passes. 0.312kg reduction is only density2700 scenario. Strength/load result not inherited."
+    },
+    {
+      "id": "actual_palm_tab_unit_load",
+      "track": "C",
+      "priority": 2,
+      "status": "FAIL",
+      "hypothesis": "Actual lightened-tab material needs a local load/compliance screen",
+      "criteria": "Actual STEP submodel, finite1N washer load, force<1e-8N, moment<1e-10Nm, energy/residual<1e-8, mesh response1%; no full-Palm or material strength release",
+      "prerequisites": [],
+      "system_gate_contribution": 3,
+      "cost": "4GiB/420s per child",
+      "last_run_utc": "2026-11-26T09:29:42.709804+00:00",
+      "consecutive_runs": 2,
+      "registration_note": "Retrospective task index of actual current-session implementation. Source snapshots establish methods; no preregistration timestamp claimed.",
+      "result": "validation/convergence/AI_tab_convergence2/summary.json",
+      "reason": "Actual local STEP1N P2 FEM: all three meshes pass equilibrium, energy, residual and element checks; response refinement0.128% passes1%, but unsmoothed peak stress does not converge. Original serialization failure preserved. No strength/whole-Palm PASS; next use actual full support boundary rather than blind mesh refinement."
+    },
+    {
+      "id": "catalog_fixed_clutch_interval",
+      "track": "A",
+      "priority": 1,
+      "status": "PASS",
+      "hypothesis": "A complete published nominal+tolerance clutch offers a different rated-load window from minimum-only HPMC",
+      "criteria": "Primary manufacturer torque tolerance, actual conversion/dynamic demand and preserved geometry mismatch; no temperature/fault or installed-CAD claim",
+      "prerequisites": [],
+      "system_gate_contribution": 3,
+      "cost": "4GiB/420s per child",
+      "last_run_utc": "2026-11-26T09:34:06.017186+00:00",
+      "consecutive_runs": 1,
+      "registration_note": "Retrospective task index of actual current-session implementation. Source snapshots establish methods; no preregistration timestamp claimed.",
+      "result": "validation/overload/JH1M_interval1/summary.json",
+      "reason": "Bounded new primary catalog interval6.4+/-0.7Ncm and conditional jam/Idler requirements computed. Not min-only HPMC reuse. 3mm bore vs5mm motor mismatch, thermal/energy/inertia and drawing ambiguities remain; not installed CAD or force-cap qualification."
+    },
+    {
+      "id": "AH_collet_and_axial_capacity",
+      "track": "A",
+      "priority": 0,
+      "hypothesis": "Actual minimum4.2mm shaft grip and spring axial load require a validated clamp/motor bearing path",
+      "criteria": "Actual collet load model, finite engagement, torque/axial capacity and material bounds; no force cap from guessed friction",
+      "fallback": "rated_stock_clutch_and_actuator",
+      "status": "READY",
+      "prerequisites": [],
+      "system_gate_contribution": 4,
+      "cost": "bounded actual product validation, no random parameter sweep",
       "last_run_utc": null,
       "consecutive_runs": 0,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250
+    },
+    {
+      "id": "AI_whole_palm_support",
+      "track": "C",
+      "priority": 1,
+      "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
+      "criteria": "Same current250-part RevAJ geometry, actual full-Palm mounting/load ports, static equilibrium and1% response convergence; local tab clamp-edge stress FAIL is not deleted or promoted",
+      "fallback": "reinforced_local_tabs",
+      "status": "READY",
+      "prerequisites": [
+        "local_palm_tabs",
+        "idler_integral_M3_shoulder"
+      ],
+      "system_gate_contribution": 4,
+      "cost": "bounded actual product validation, no random parameter sweep",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250,
+      "evidence": {
+        "path": "product_prototype/stage12_integrated/validation/convergence/AI_tab_convergence2/summary.json",
+        "SHA256": "919e42be9f3806ea1efe7b745e840b01ad4567cb1947731391d4ffd8d31c2c7c"
+      }
+    },
+    {
+      "id": "actual_finger_load_ports",
+      "track": "B",
+      "priority": 2,
+      "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
+      "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
+      "fallback": "simpler_replaceable_finger_cartridge",
+      "status": "READY",
       "prerequisites": [],
-      "fallback": "review_independent_product_track"
+      "system_gate_contribution": 4,
+      "cost": "bounded actual product validation, no random parameter sweep",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250
+    },
+    {
+      "id": "idler_integral_M3_shoulder",
+      "track": "A",
+      "priority": 0,
+      "status": "PASS",
+      "hypothesis": "Larger finite runout and integral metal shoulder improve Idler section modulus while preserving positive preload bypass and3mm pulley journal",
+      "difference": "Actual load-carrying mechanism/shaft and nut change, not a tension or dt retry",
+      "criteria": "Finite actual CAD, metal preload path, nominal interference and independent geometry/motion checks; no material/thread strength certification from a nominal diameter",
+      "prerequisites": [],
+      "system_gate_contribution": 4,
+      "cost": "4GiB/420s per child",
+      "fallback": "double_supported_idler",
+      "last_run_utc": "2026-11-26T09:37:48.041368+00:00",
+      "consecutive_runs": 2,
+      "result": "validation/transmission/AJ_idler_stack1/summary.json",
+      "reason": "Actual250-part candidate: M3 axle with2.38mm neck and0.1mm finite fillets, integral shoulder removes3 loose washers; nominal geometry, independent BRep/STL, actual metal stack and0.03mm nominal running gap pass. Five wire/hardware poses pass. No actual thread/material/load strength or loaded free-spin certification."
+    },
+    {
+      "id": "AJ_idler_thread_and_load_proof",
+      "track": "A",
+      "priority": 1,
+      "status": "READY",
+      "target_revision": "revAJ_idler1",
+      "target_parts": 250,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAJ_idler1/summary.json",
+        "SHA256": "8ef60788ecb0e69103166e1750bc03a76d64a2148ae767bc8455984f548c0c73"
+      },
+      "hypothesis": "Actual larger neck and fillets need finite thread/core/preload/load proof, not a major-diameter nominal strength calculation",
+      "criteria": "Actual minimum thread core, material evidence, bracket/washer/nut load path, mesh1% where needed, complete reaction/energy; no protected force assumption from catalog-only data",
+      "prerequisites": [
+        "idler_integral_M3_shoulder"
+      ],
+      "system_gate_contribution": 4,
+      "cost": "4GiB/420s per bounded child",
+      "fallback": "standard_rated_shoulder_or_double_supported_idler",
+      "last_run_utc": null,
+      "consecutive_runs": 0
     }
   ],
   "policy": {

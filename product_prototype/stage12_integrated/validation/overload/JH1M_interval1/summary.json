@@ -1,0 +1,71 @@
+{
+  "status": "CATALOG_INTERVAL_REQUIREMENTS_COMPUTED",
+  "scope": "New manufacturer complete-clutch torque interval and conditional structural demand only",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/overload/JH1M_interval1/producer.py",
+    "SHA256": "67a6249bd5e67d0a30744ea0a378b975d650c4301ce2bf0c1e65d50d3f9fc9c3"
+  },
+  "manufacturer": {
+    "model": "WM Berg JH-1M",
+    "source": "https://www.wmberg.com/documentation/metric-catalog/section-g_metric.aspx?ext=.pdf",
+    "catalog_page": "MG37 / PDF page37, index36",
+    "retrieved": "2026-11-26",
+    "published_torque_Nm": 0.064,
+    "published_tolerance_Nm": 0.007,
+    "published_bore_mm": [
+      3,
+      3.02
+    ],
+    "OD_mm": 16,
+    "length_mm": 26.7,
+    "availability_and_price": "NOT CONFIRMED",
+    "mounting_thread": "NOT USED: parsed pitch text ambiguous; screenshot/cache miss and direct PDF403 preserved in report"
+  },
+  "torque_interval_Nm": [
+    0.057,
+    0.07100000000000001
+  ],
+  "minimum_static_reference_force_at_nominal_radius_N": 5.066666666666667,
+  "maximum_catalog_static_reference_force_N": 6.359158083296015,
+  "rows": [
+    {
+      "scenario_rpm": 0.0,
+      "conditional_partial_J_kg_m2": 2.62764517790992e-06,
+      "assumed_k_N_m": 10000,
+      "initial_scenario_tension_N": 0.968626,
+      "constant_catalog_force_N": 6.359158083296015,
+      "conditional_peak_N": 11.749690166592032,
+      "idler_nominal_bending_reference_Pa": 176764119.89489383,
+      "required_minimum_yield_for_SF2_without_notch_Pa": 353528239.78978765
+    },
+    {
+      "scenario_rpm": 60.0,
+      "conditional_partial_J_kg_m2": 2.62764517790992e-06,
+      "assumed_k_N_m": 10000,
+      "initial_scenario_tension_N": 0.968626,
+      "constant_catalog_force_N": 6.359158083296015,
+      "conditional_peak_N": 11.845066292292929,
+      "idler_nominal_bending_reference_Pa": 178198972.7871377,
+      "required_minimum_yield_for_SF2_without_notch_Pa": 356397945.5742754
+    }
+  ],
+  "partial_inertia_source": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AH_load_window1/summary.json",
+    "SHA256": "d7957c1aad38cdb75349025b32fdc83d826e9238b40d18daed14386bb83f2469"
+  },
+  "idler_reference": {
+    "path": "product_prototype/stage2_load_transfer/validation/worst_case/jam_reference1/summary.json",
+    "SHA256": "5b79d6ca019222bf9ebce44925a103cab972bcf352ef0c656a3e52dc07da9946"
+  },
+  "compatibility": "Existing5mm motor shaft is NOT compatible with3mm clutch bore; no implicit adapter, drilling-out, supplier special bore or installed CAD is claimed.",
+  "difference": "Published complete-unit nominal torque WITH tolerance; not a minimum-only hysteresis rating or uncalibrated adjustable-friction setting",
+  "unresolved": [
+    "Manufacturer temperature/rate/slip-energy/response bounds",
+    "Actual output inertia and wire EA",
+    "Actual complete mounting drawing and input/output coupling interfaces",
+    "Bearing seizure/fault envelope vs normal catalog slip condition",
+    "Candidate-matched reinforced Idler and material/notch/fatigue proof"
+  ],
+  "product_force_cap_qualified": false,
+  "whole_system_release": false
+}

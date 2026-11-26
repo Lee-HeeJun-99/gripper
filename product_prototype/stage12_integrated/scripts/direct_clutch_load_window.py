@@ -14,9 +14,11 @@ def allowed_force(Tmax,T0,k,J,omega):
     return (Tmax*Tmax-T0*T0-k*J*omega*omega)/(2*(Tmax-T0))
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--candidate',default='revAF_layout6');p.add_argument('--geometry',default='AF_geometry1');a=p.parse_args()
     out=ROOT/'validation/overload'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
-    source=ROOT/'validation/stage1/AF_geometry1/parts.json';parts=json.loads(source.read_text())
+    candidate=ROOT/'cad/exports'/a.candidate/'summary.json';cd=json.loads(candidate.read_text())
+    audit=json.loads((ROOT/'validation/stage1'/a.geometry/'summary.json').read_text());assert audit['candidate']==ref(candidate)
+    source=ROOT/'validation/stage1'/a.geometry/'parts.json';parts=json.loads(source.read_text())
     coefficients=[]
     for row in parts:
         n=row['part_ID']
@@ -30,7 +32,8 @@ def main():
         rho=7830 if 'BOLT' in r['part'] or r['part'].endswith('FACTORY_NIPPLE') or 'CLIP' in r['part'] else 2700
         J+=rho*r['axis_inertia_per_density_m5']
         r['illustrative_density_kg_m3']=rho
-    ri=.0083;ro=.0096;radius=.01125
+    model=cd.get('torque_model',dict(faces=2,annulus_inner_mm=8.3,annulus_outer_mm=9.6,nominal_drum_wire_radius_mm=11.25))
+    ri=model['annulus_inner_mm']/1000;ro=model['annulus_outer_mm']/1000;radius=model['nominal_drum_wire_radius_mm']/1000;faces=model['faces']
     reff_pressure=(2/3)*(ro**3-ri**3)/(ro**2-ri**2);reff_wear=(ri+ro)/2
     T0=.968626 # inherited CONDITIONAL no-object rod corner, not grasp demand
     rows=[]
@@ -56,9 +59,9 @@ def main():
     # Independent energy inversion control, rejects an unattainable request.
     assert allowed_force(2,T0,10000,J,1e6)<0
     result=dict(status='CONDITIONAL_DESIGN_REQUIREMENTS_VERIFIED',scope='Actual CAD inertia coefficients and algebraic protection-window requirements only',
-        source=ref(source),candidate=ref(ROOT/'cad/exports/revAF_layout6/summary.json'),producer=ref(out/'producer.py'),
+        source=ref(source),candidate=ref(candidate),producer=ref(out/'producer.py'),
         coefficients=coefficients,conditional_partial_loadside_J_kg_m2=J,
-        friction_annulus=dict(inner_m=ri,outer_m=ro,faces=2,uniform_pressure_reff_m=reff_pressure,uniform_wear_reff_m=reff_wear,torque_law='2*mu*N*reff plus parasitic bearing torque; mu and N NOT qualified'),
+        friction_annulus=dict(inner_m=ri,outer_m=ro,faces=faces,uniform_pressure_reff_m=reff_pressure,uniform_wear_reff_m=reff_wear,minimum_mu_times_normal_load_N=T0*radius/(faces*reff_pressure),torque_law=f'{faces}*mu*N*reff; bearing drag is a parallel torque path ONLY if input-supported. mu and N NOT qualified'),
         scenario_initial_tension_N=T0,nominal_drum_radius_m=radius,requirements=rows,
         required_product_inputs=['actual normal operating load and preload','guaranteed/calibrated min/max slip torque vs temperature/rate','maximum bearing drag including jam/seizure failure analysis','complete rotating inertia including bearing outer race and entrained cable','actual cable EA and initial tension','bounded speed and detection/delay energy','qualified structural peak allowable'],
         product_force_cap_status='NOT QUALIFIED',motor_alignment_status='Separate rigid shaft-coupling path removed in CAD candidate; motor shaft/bearing overhang reactions NOT qualified',whole_system_release=False)

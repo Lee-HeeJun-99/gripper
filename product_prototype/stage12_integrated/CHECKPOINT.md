@@ -1,3 +1,35 @@
+# Latest product-system state — RevAJ250-part candidate (2026-11-26)
+
+Actual HEAD is `git log -1`; preceding work save e195f9a. Official RevAA304
+remains unchanged; latest unadopted candidate is CURRENT_CANDIDATE.json.
+RevAJ full assembly STEP, changed STL and250-part identity BOM actually exist.
+This is NOT an adopted manufacturing or integrated digital release.
+
+Actual changes since that save: ground-supported spindle removes the declared
+AF bearing bypass; shared pilot register avoids bolt-float centering; finite
+compression spacers/complete seating; lighter local Palm tabs; M3 Idler axle
+with2.38neck,0.1fillets and integral metal shoulder,3 loose washers removed.
+Final geometry/BRep/STL/integrals, actual metal stack,48 sampled drive poses
+and5 nominal finite-wire/rigid-hardware poses pass within their limited scope.
+The entire motor-foot supported area is unchanged by Palm material removal.
+
+Palm volume reduction36.433%;0.311908kg reduction only at illustrative2700kg/m³.
+Actual tab1N FEM h3/2/1.5 passes equilibrium/energy/element checks; response
+refinement0.128372% passes1%, unsmoothed stress8.833449% FAIL. No trimmed peaks,
+strength or whole-Palm PASS. Follow actual support geometry, not blind refinement.
+Root and PET boundary maps are geometry/conditional force contracts, not actual
+assembled Finger load results. No new rod/BVP or Native grasp rerun occurred.
+
+Latest candidate audit: validation/integrated/AJ_readiness2, NOT QUALIFIED;
+22 Stage2 system criteria and same-revision full Stage1 release remain missing.
+Protected maximum, collet/motor axial capacity, actual material and full loaded
+Finger/Palm models remain unresolved. No Stage3/purchase/hardware/push.
+
+Automatic6-call budget unchanged/exhausted; service3 rechecked inactive/dead,
+MainPID0. No external worker or Native/FEM child left active after these tests.
+READY tasks remain and are not a completion claim. See next selection CLI and
+AUTONOMOUS_RESUME.md; do not reset old runtime or regenerate completed cases.
+
 # Actual complete-system drive layout and fault correction (2026-11-26)
 
 Previous local save ea2cce6; latest actual HEAD from `git log -1`.

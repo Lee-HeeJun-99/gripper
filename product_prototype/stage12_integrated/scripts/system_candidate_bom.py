@@ -18,6 +18,14 @@ def main():
         if 'CLUTCH_LINER' in n:material='FRICTION LINER NOT SELECTED; no coefficient/rating invented'
         if 'CLUTCH_INPUT_HUB' in n or 'CLUTCH_GROUND_SPINDLE' in n:material='Machined metal candidate; grade/certificate/strength pending'
         is_changed=not previous or previous.get('STEP_SHA256')!=r['SHA256']
+        if is_changed:process='REDEFINE from actual STEP and candidate definition; prior-revision process is NOT released for this changed shape'
+        if d.get('geometry',{}).get('thread','').startswith('M3'):
+            if n.endswith('IDLER_AXLE'):
+                process='Custom turn integral shoulder and0.1mm runout fillets; M3x0.5-6g actual thread/core/gauge qualification pending; '+json.dumps(d['geometry'])
+            elif n.endswith('IDLER_NUT'):
+                material='M3 nut grade/supplier NOT QUALIFIED';process='M3x0.5-6H; AF5.5xheight2.4 nominal envelope, not old M2 nut'
+            elif n.endswith('IDLER_CLAMP_WASHER'):
+                material='Custom metal washer grade NOT QUALIFIED';process='Turn OD5.5/ID3.1/thickness0.5mm; nominal actual STEP, not old M2 clearance washer'
         rows.append(dict(part_ID=n,quantity=1,revision=a.candidate,STEP=r['path'],STEP_SHA256=r['SHA256'],STL=str((REPO/r['path']).with_suffix('.stl').relative_to(REPO)),volume_m3=geom[n]['volume_m3'],material_requirement=material,material_certificate='',process_requirement=process,changed_from_AA=is_changed,
             interface_qualification='Changed part/interface NOT QUALIFIED' if is_changed else 'Geometry identity only; changed system loads/contacts invalidate old physical conclusions',physical_mass_kg='',release='CANDIDATE_ONLY_NOT_MANUFACTURING_RELEASE'))
     assert len(rows)==len(set(r['part_ID'] for r in rows))==len(d['part_references'])

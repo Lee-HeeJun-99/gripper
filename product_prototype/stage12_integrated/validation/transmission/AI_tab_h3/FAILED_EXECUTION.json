@@ -1,0 +1,17 @@
+{
+  "status": "EXECUTION_FAIL",
+  "exit_code": 1,
+  "actually_executed": true,
+  "command": "PYTHONPATH=/tmp/regrip_stage2_fem robot_ws/bin/python palm_tab_fem.py --h-mm3 --tag AI_tab_h3",
+  "error": "Result serialization TypeError: numpy int32 DOF not JSON serializable",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h3/producer.py",
+    "SHA256": "98d7ad87efa8b071810f27cb229fabc330543fd83d4c3d4c219e2b550c9bcc68"
+  },
+  "saved_field": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h3/field.npz",
+    "SHA256": "69e39d34e3705424aee753b0f791ab2ce333c8090971d08795c0cc6db422f6d3"
+  },
+  "reason_for_corrected_run": "Original saved field lacks P2 edge DOFs, so full equilibrium cannot be recovered from vertex displacements alone. New tag h3b casts JSON int and preserves complete state; no equation/criterion change.",
+  "whole_system_release": false
+}

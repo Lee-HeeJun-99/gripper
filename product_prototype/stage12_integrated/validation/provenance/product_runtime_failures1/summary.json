@@ -1,0 +1,10 @@
+{
+  "scope": "Actual current-session environment/document/serialization failures, not physical test results",
+  "failures": [
+    {"command": "python3 shared_pilot_tolerance.py --candidate revAH_pilot2 --tag AH_pilot_bounds1", "exit_code": 1, "error": "Legacy MOTOR_SPEC import requires OCP; system Python lacks OCP", "corrected_result": "validation/alignment/AH_pilot_bounds2/summary.json"},
+    {"command": "palm_tab_fem.py --h-mm 3 --tag AI_tab_h3", "exit_code": 1, "error": "numpy int32 DOF result serialization failed after vertex field save", "preserved_failure": "validation/transmission/AI_tab_h3/FAILED_EXECUTION.json", "corrected_result": "validation/transmission/AI_tab_h3b/summary.json"},
+    {"command": "python3 palm_tab_convergence.py --tag AI_tab_convergence1", "exit_code": 1, "error": "System Python has no NumPy; following record request correctly rejected missing result", "corrected_result": "validation/convergence/AI_tab_convergence2/summary.json"},
+    {"command": "curl official WM Berg metric catalog to /tmp/regrip_berg_metric_20261126.pdf", "sandbox_exit_code": 6, "approved_network_exit_code": 22, "error": "Default DNS denied; approved retry returned HTTP403. Web PDF screenshot also returned cache miss", "document_downloaded": false, "evidence_used": "Official cached PDF text numeric table only; no ambiguous mounting thread or supplier CAD used"}
+  ],
+  "whole_system_release": false
+}

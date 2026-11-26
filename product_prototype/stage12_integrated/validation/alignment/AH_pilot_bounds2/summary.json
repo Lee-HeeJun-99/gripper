@@ -1,0 +1,86 @@
+{
+  "status": "SHARED_REGISTER_INTERFACE_BOUNDS_PASS",
+  "scope": "Nominal CAD and declared interface tolerance requirements only; total alignment/reaction NOT qualified",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAH_pilot2/summary.json",
+    "SHA256": "fb5b9d8f8efa82aea8cca9b8e1ba0d9c90fb071a68bf121bddf403140260704e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/alignment/AH_pilot_bounds2/producer.py",
+    "SHA256": "44078e1712201c483eb0dbc3bbda1dbbbe869861b3bf3b69a9167d740be85aa2"
+  },
+  "motor_drawing_model": {
+    "path": "product_prototype/stage1_manufacturing/scripts/sourced_motor_stage1.py",
+    "SHA256": "67f9aadfc3eeb5a43b7460db42f407a173fb2e23bc625537476979a0473df100"
+  },
+  "intervals": {
+    "common_bore_mm": [
+      22.01,
+      22.03
+    ],
+    "spindle_pilot_mm": [
+      21.97,
+      21.99
+    ],
+    "motor_pilot_mm": [
+      21.95,
+      22.0
+    ],
+    "plate_thickness_mm": [
+      4.98,
+      5.02
+    ],
+    "spacer_length_mm": [
+      2.99,
+      3.01
+    ],
+    "spindle_boss_length_mm": [
+      5.28,
+      5.32
+    ],
+    "nominal_pilot_engagement_mm": 2.3,
+    "motor_shaft_engagement_mm": [
+      4.2,
+      6.2
+    ],
+    "note": "New design tolerances, not measured manufacturing capability; motor pilot-to-shaft runout is not specified by this interface drawing."
+  },
+  "derived": {
+    "min_motor_pilot_diametral_clearance_mm": 0.010000000000001563,
+    "min_spindle_pilot_diametral_clearance_mm": 0.020000000000003126,
+    "minimum_pilot_tip_to_boss_axial_gap_mm": 0.15000000000000036,
+    "pilot_engagement_mm": [
+      2.2700000000000005,
+      2.33
+    ],
+    "interface_center_float_bound_mm": 0.07000000000000206,
+    "minimum_spindle_shaft_radial_clearance_mm": 0.14500000000000002,
+    "remaining_unallocated_coaxiality_deflection_budget_mm": 0.07499999999999796
+  },
+  "actual_motor_shaft_engagement_mm": [
+    4.2,
+    6.2
+  ],
+  "drawing_nominal_engagement_mm": 5.2,
+  "warning": "Older candidate field motor_shaft_available_nominal_engagement_mm=6.2 describes maximum-length CAD envelope, NOT the drawing nominal or minimum. This supplier-range calculation supersedes that label.",
+  "additional_design_requirement": {
+    "spindle_shaft_bore_mm": [
+      5.29,
+      5.31
+    ],
+    "qualification": "Proposed machining interval, not measured process capability"
+  },
+  "unresolved": [
+    "Actual manufacturer pilot-to-shaft runout",
+    "Spindle journal-to-pilot machining coaxiality and loaded deformation",
+    "Front collet has only4.2mm minimum shaft engagement; clamp bolt is ahead of shaft tip, actual closure/torque/axial holding needs validation",
+    "Actual motor axial bearing limit and friction/spring calibration",
+    "Assembly/inspection process capability and qualified materials"
+  ],
+  "controls": [
+    "oversized motor pilot rejected",
+    "long boss colliding with maximum motor pilot rejected"
+  ],
+  "whole_motor_alignment_qualified": false,
+  "whole_system_release": false
+}

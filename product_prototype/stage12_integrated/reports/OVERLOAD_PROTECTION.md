@@ -1,5 +1,12 @@
 # Protection window — not yet qualified
 
+2026-11-26 product update: actual AF input-supported bearing bypass FAIL led
+to actual ground-supported AG/AH/AJ CAD. Particular graph bypass removed,
+not a calibrated cap. One-face conditional model: overload/AH_load_window1.
+New complete JH-1M catalog interval: overload/JH1M_interval1;3mm bore does not
+match5mm motor. No thermal/transient/fault maximum or installed supplier CAD.
+See PRODUCT_SYSTEM_PROGRESS_20261126.md. Earlier results below are unchanged.
+
 Actual new control: `validation/overload/jam_energy2/summary.json`.
 The original NameError is preserved under jam_energy1, not relabelled PASS.
 

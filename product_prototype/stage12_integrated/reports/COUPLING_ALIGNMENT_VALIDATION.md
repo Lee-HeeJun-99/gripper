@@ -1,5 +1,11 @@
 # Alignment alternative — not selected
 
+2026-11-26: actual AH shared-pilot direct-drive design replaces the separate
+rigid coupling in the unadopted product candidate. Actual bounds in
+validation/alignment/AH_pilot_bounds2 concern interface play only, not total
+motor restoring reactions. Unallocated runout/deformation0.075mm and minimum
+shaft engagement4.2mm remain real checks. See PRODUCT_SYSTEM_PROGRESS_20261126.md.
+
 Existing rigid-coupling conditional reaction risk remains unchanged. A new
 [Huco238.19 disc](https://www.huco.com/shop/couplings/oldham-couplings/oldham-disc/238-19)
 screen and ideal Oldham reference are stored in validation/alignment/oldham1.

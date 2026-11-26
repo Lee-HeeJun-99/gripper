@@ -1,0 +1,88 @@
+{
+  "status": "BOUNDED_TOPOLOGY_SCREEN_PASS",
+  "scope": "Actual support topology plus explicit bearing-seizure counterfactual; no actual hardware fault was induced",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/summary.json",
+    "SHA256": "cccbaf8c5bcd9929bad1d02eca441a6142cd9daf235b099c78df01fba8fbbf6d"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AG_bypass3/producer.py",
+    "SHA256": "2415d56d4e88e3d9914aafbc14be78c94decc6ab6cbcac5dca33582dae14f771"
+  },
+  "part_sources": {
+    "F0_CLUTCH_INPUT_HUB": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_INPUT_HUB.step",
+      "SHA256": "717304edc7d11df667a340e2f8de35d5f393dfb2efdaa216e600724c91cf9d1a"
+    },
+    "F0_CLUTCH_BEARING": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_CLUTCH_BEARING.step",
+      "SHA256": "7c37099202855771998e9c40fe616484194d048aa995b7110a49f71f12b563f4"
+    },
+    "F0_DRUM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_DRUM.step",
+      "SHA256": "c5e713886911a9fdc1e6d0dd6e452e8b3d3985592f0fb1946a83b50a08eb6718"
+    },
+    "F0_CLUTCH_GROUND_SPINDLE": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_GROUND_SPINDLE.step",
+      "SHA256": "18fe529c6a08eb18959d55d1277ffad5d1397ca530cada06a5714049720b3070"
+    },
+    "F0_CLUTCH_INNER_CLIP": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_INNER_CLIP.step",
+      "SHA256": "9c77f786d08aaa886ec48cb67f6beadd1a6ebe11966dfb87162353d46cca74c5"
+    },
+    "F0_MOTOR_PLATE": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_MOTOR_PLATE.step",
+      "SHA256": "e825e335c353613438a5708ccf7099dd23120927eabbc5fdf35b0558c896ff87"
+    },
+    "F0_CLUTCH_GROUND_BOLT_89": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_GROUND_BOLT_89.step",
+      "SHA256": "c99031b70861ff191610f79ae6c139b46c21b9e6ef04fc065e44766dc57cb391"
+    },
+    "F0_CLUTCH_GROUND_SPACER_89": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_GROUND_SPACER_89.step",
+      "SHA256": "3fbe86e0dad6675b98f8ab4081fbb54eb83a7965b42dec2934831066de6f6a47"
+    },
+    "F0_CLUTCH_GROUND_BOLT_131": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_GROUND_BOLT_131.step",
+      "SHA256": "b391bbead5769e77081430b0ce909bfc40a469054bd5fbbbf10bfa7428513fc4"
+    },
+    "F0_CLUTCH_GROUND_SPACER_131": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAG_ground6/F0_CLUTCH_GROUND_SPACER_131.step",
+      "SHA256": "332889f30795ac3a6fa23393547dc7468684c555941e5244ce7c6085dc1e6dea"
+    }
+  },
+  "edges": [
+    {
+      "id": "friction_faces",
+      "from": "INPUT_HUB",
+      "to": "DRUM",
+      "guaranteed_limit": true,
+      "basis": "COUNTERFACTUAL ideal calibrated friction cap; actual cap unqualified"
+    },
+    {
+      "id": "support_bearing",
+      "from": "GROUND",
+      "to": "DRUM",
+      "guaranteed_limit": false,
+      "basis": "Actual 688A inner ring on ground spindle"
+    }
+  ],
+  "bypasses": [],
+  "motor_reference_holding_torque_Nm": 0.45,
+  "nominal_drum_radius_m": 0.01125,
+  "illustrative_seizure_reference_tension_N": 40.0,
+  "warning": "Ground support removes this specific bearing bypass in the declared graph only; actual friction, other faults, structural capacity and protected maximum are still unqualified.",
+  "digital_alternatives": [
+    "Support drum on a genuinely fixed-ground bearing/spindle; verify input shaft clearance and actual retention",
+    "Place a separately qualified overload disconnect upstream of every input/output path",
+    "Choose an actuator with a verified complete output torque/energy envelope and qualify the structure at that envelope"
+  ],
+  "controls": [
+    "ideal friction-only route is protected",
+    "adding actual input/output bearing exposes bypass",
+    "ground-supported bearing removes this input/output bypass in graph only"
+  ],
+  "product_force_cap_qualified": false,
+  "ground_supported_CAD_created": true,
+  "whole_system_release": false
+}

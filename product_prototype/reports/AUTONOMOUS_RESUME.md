@@ -1,3 +1,13 @@
+## Latest product-system resume — 2026-11-26
+
+Read actual Git HEAD and stage12_integrated/CHECKPOINT.md,
+AUTONOMOUS_RESUME.md, CURRENT_CANDIDATE.json and NEXT_TASK.json. Latest actual
+candidate RevAJ250, not adopted; no completed RevAE–AJ or rod/grasp rerun.
+Protected maximum, front-collet axial/torque path and actual full-Palm support
+remain priorities. Existing automatic budget0/service inactive; no continuation
+beyond this session is claimed. Next selection CLI is documented in the
+integrated resume file, with no automatic budget reset.
+
 ## Product-priority continuation — 2026-11-26
 
 Use latest stage12_integrated/CHECKPOINT.md, NEXT_TASK.json and actual Git HEAD.

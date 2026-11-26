@@ -1,5 +1,11 @@
 # Separate PET finite-rotation work — bounded, not a release
 
+2026-11-26 product boundary update: actual_boundary_AD1 maps actual STEP root,
+finite PET distal stop and independent Rail capture; actual_root_retention1
+derives axial-only normalized clamp requirements. No new generic rod solve,
+certified friction/preload or whole Finger load result. Independent rod/BVP
+results below remain references, not assembled-Finger approval.
+
 Latest material-owned follow-up: actual RevAD curved terminal entry, not merely
 PET trimming, clears exact circular-sector PET envelopes against retained
 front/back at saved16/32 and inspected64 states. See owner_analytic_geometry1

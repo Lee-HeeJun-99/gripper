@@ -1,0 +1,492 @@
+{
+  "status": "CONDITIONAL_ROOT_RETENTION_CONTRACT_PASS",
+  "scope": "Actual root area inventory and axial-only normalized contact-capacity equilibrium, not assembled strength or measured preload",
+  "source": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+    "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/actual_root_retention1/producer.py",
+    "SHA256": "235d00390b1be53da3e7e8a630c18a775914e07fd49df077a58676c8104dd10c"
+  },
+  "areas": [
+    {
+      "part": "F0_SKIN",
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAC_pet_travel1/F0_SKIN.step",
+        "SHA256": "98800c07b3c853500fb207835e06f3f090c63d4f86c655f9ea050cc22905d321"
+      },
+      "root_Z_mm": [
+        -7,
+        10
+      ],
+      "thickness_mm": 0.3,
+      "projected_root_area_mm2": 405.0599999999664
+    },
+    {
+      "part": "F0_RAIL_L",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_RAIL_L.step",
+        "SHA256": "f27832c5ce479faf5b64dab80fdc5562a28fbfd93546c7e561b9621cc1e605bd"
+      },
+      "root_Z_mm": [
+        -7,
+        10
+      ],
+      "thickness_mm": 0.2,
+      "projected_root_area_mm2": 51.00000000000577
+    },
+    {
+      "part": "F0_RAIL_R",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_RAIL_R.step",
+        "SHA256": "eeed399210fb10d647d5fcd41e356220f5532b7a2161da52a7b23b480ca8d76f"
+      },
+      "root_Z_mm": [
+        -7,
+        10
+      ],
+      "thickness_mm": 0.2,
+      "projected_root_area_mm2": 51.00000000001142
+    }
+  ],
+  "edges": [
+    [
+      "G",
+      "P",
+      1.0
+    ],
+    [
+      "P",
+      "L",
+      0.5
+    ],
+    [
+      "P",
+      "R",
+      0.5
+    ],
+    [
+      "G",
+      "L",
+      0.5
+    ],
+    [
+      "G",
+      "R",
+      0.5
+    ]
+  ],
+  "rows": [
+    {
+      "layer_axial_forces_N": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "minimum_mu_times_normal_preload_N": 0.5,
+      "flows_N": [
+        -0.5,
+        0.25,
+        0.25,
+        -0.25,
+        -0.25
+      ],
+      "cut_bound_N": 0.5,
+      "cuts": [
+        {
+          "subset": [
+            "P"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "L"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "R"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "P",
+            "L"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "P",
+            "R"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "L",
+            "R"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "P",
+            "L",
+            "R"
+          ],
+          "bound": 0.5
+        }
+      ],
+      "force_residual_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_min_slack_N": 0.0,
+      "dual_gap_N": 0.0,
+      "status": "PASS",
+      "normal_preload_requirement": "N >= 0.5 / measured_lower_bound_mu",
+      "conditional_mu_times_mean_contact_pressure_Pa": [
+        1234.385029378466,
+        4901.960784313172,
+        4901.960784312628
+      ]
+    },
+    {
+      "layer_axial_forces_N": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "minimum_mu_times_normal_preload_N": 1.0,
+      "flows_N": [
+        -0.5,
+        -0.5,
+        0.0,
+        -0.5,
+        -0.0
+      ],
+      "cut_bound_N": 1.0,
+      "cuts": [
+        {
+          "subset": [
+            "P"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "L"
+          ],
+          "bound": 1.0
+        },
+        {
+          "subset": [
+            "R"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "P",
+            "L"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "P",
+            "R"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "L",
+            "R"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "P",
+            "L",
+            "R"
+          ],
+          "bound": 0.5
+        }
+      ],
+      "force_residual_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_min_slack_N": 0.0,
+      "dual_gap_N": 0.0,
+      "status": "PASS",
+      "normal_preload_requirement": "N >= 1.0 / measured_lower_bound_mu",
+      "conditional_mu_times_mean_contact_pressure_Pa": [
+        2468.770058756932,
+        9803.921568626343,
+        9803.921568625256
+      ]
+    },
+    {
+      "layer_axial_forces_N": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "minimum_mu_times_normal_preload_N": 1.0,
+      "flows_N": [
+        -0.5,
+        0.0,
+        -0.5,
+        -0.0,
+        -0.5
+      ],
+      "cut_bound_N": 1.0,
+      "cuts": [
+        {
+          "subset": [
+            "P"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "L"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "R"
+          ],
+          "bound": 1.0
+        },
+        {
+          "subset": [
+            "P",
+            "L"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "P",
+            "R"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "L",
+            "R"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "P",
+            "L",
+            "R"
+          ],
+          "bound": 0.5
+        }
+      ],
+      "force_residual_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_min_slack_N": 0.0,
+      "dual_gap_N": 0.0,
+      "status": "PASS",
+      "normal_preload_requirement": "N >= 1.0 / measured_lower_bound_mu",
+      "conditional_mu_times_mean_contact_pressure_Pa": [
+        2468.770058756932,
+        9803.921568626343,
+        9803.921568625256
+      ]
+    },
+    {
+      "layer_axial_forces_N": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "minimum_mu_times_normal_preload_N": 1.0,
+      "flows_N": [
+        -1.0,
+        -0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "cut_bound_N": 1.0,
+      "cuts": [
+        {
+          "subset": [
+            "P"
+          ],
+          "bound": 0.0
+        },
+        {
+          "subset": [
+            "L"
+          ],
+          "bound": 1.0
+        },
+        {
+          "subset": [
+            "R"
+          ],
+          "bound": 1.0
+        },
+        {
+          "subset": [
+            "P",
+            "L"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "P",
+            "R"
+          ],
+          "bound": 0.5
+        },
+        {
+          "subset": [
+            "L",
+            "R"
+          ],
+          "bound": 1.0
+        },
+        {
+          "subset": [
+            "P",
+            "L",
+            "R"
+          ],
+          "bound": 1.0
+        }
+      ],
+      "force_residual_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_min_slack_N": 0.0,
+      "dual_gap_N": 0.0,
+      "status": "PASS",
+      "normal_preload_requirement": "N >= 1.0 / measured_lower_bound_mu",
+      "conditional_mu_times_mean_contact_pressure_Pa": [
+        2468.770058756932,
+        9803.921568626343,
+        9803.921568625256
+      ]
+    },
+    {
+      "layer_axial_forces_N": [
+        -39.1408,
+        19.5704,
+        19.5704
+      ],
+      "minimum_mu_times_normal_preload_N": 19.5704,
+      "flows_N": [
+        19.5704,
+        -9.7852,
+        -9.7852,
+        -9.7852,
+        -9.7852
+      ],
+      "cut_bound_N": 19.5704,
+      "cuts": [
+        {
+          "subset": [
+            "P"
+          ],
+          "bound": 19.5704
+        },
+        {
+          "subset": [
+            "L"
+          ],
+          "bound": 19.5704
+        },
+        {
+          "subset": [
+            "R"
+          ],
+          "bound": 19.5704
+        },
+        {
+          "subset": [
+            "P",
+            "L"
+          ],
+          "bound": 9.7852
+        },
+        {
+          "subset": [
+            "P",
+            "R"
+          ],
+          "bound": 9.7852
+        },
+        {
+          "subset": [
+            "L",
+            "R"
+          ],
+          "bound": 19.5704
+        },
+        {
+          "subset": [
+            "P",
+            "L",
+            "R"
+          ],
+          "bound": 0.0
+        }
+      ],
+      "force_residual_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_min_slack_N": 0.0,
+      "dual_gap_N": 0.0,
+      "status": "PASS",
+      "normal_preload_requirement": "N >= 19.5704 / measured_lower_bound_mu",
+      "conditional_mu_times_mean_contact_pressure_Pa": [
+        48314.81755789666,
+        191866.66666664497,
+        191866.6666666237
+      ]
+    }
+  ],
+  "assumptions": [
+    "One common friction coefficient, NOT an actual material value",
+    "Equal normal load on each Rail, total normal clamp load N",
+    "Finite uniform contact area approximation, no pressure redistribution or root compliance",
+    "Unit-force influence cases and prior conditional self-stress reference only, not RevAD/AG actual forces"
+  ],
+  "design_conclusion": "Net axial load near zero does not remove separate layer retention demand. Need actual preload/friction or positive mechanical root capture.",
+  "excluded": [
+    "actual friction and bolt preload",
+    "large-deformation actual Finger loads",
+    "root bending/contact separation",
+    "PET compression/creep and Rail local bearing",
+    "manufacturing strength, hardware or powered operation"
+  ],
+  "whole_system_release": false
+}

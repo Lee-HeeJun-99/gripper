@@ -22,17 +22,22 @@ from OCP.IFSelect import IFSelect_RetDone
 from OCP.BRepPrimAPI import BRepPrimAPI_MakeTorus
 from OCP.BRepAlgoAPI import BRepAlgoAPI_Fuse
 
-def wire():
+def wire(deg=0):
     # Configure BOTH wire_motion and its imported mechanism beta model.
     # Setting only wm.IDLER_R leaves beta's default 4.75mm radius active.
     wm.setup(dict(design_geometry=dict(wire_model='planar_tangent_nipple',drum_wire_radius_mm=11.25,idler_wire_radius_mm=11.25,drum_start_phi=-math.pi/2)))
-    g=wm.path(0);u=np.array([-66.,5.]);u=u/np.linalg.norm(u);n=np.array([-u[1],u[0]])
+    g=wm.path(deg);g0=wm.path(0);u=np.array([-66.,5.]);u=u/np.linalg.norm(u);n=np.array([-u[1],u[0]])
     if n[1]<0:n=-n
     phi=math.atan2(n[1],n[0]);A=np.array([110+11.25*n[0],0,20+11.25*n[1]])
     B=np.array([44+11.25*n[0],0,25+11.25*n[1]])
     end=g['end']
     while end<phi:end+=2*math.pi
     t=np.array([math.sin(g['beta']),0,math.cos(g['beta'])]);tip=g['P']+16*t
+    t0=np.array([math.sin(g0['beta']),0,math.cos(g0['beta'])]);tip0=g0['P']+16*t0
+    free=np.linalg.norm(A-B)+11.25*(end-phi)+np.linalg.norm(g['Q']-tip)
+    free0=np.linalg.norm(A-B)+11.25*(g0['end']-phi)+np.linalg.norm(g0['Q']-tip0)
+    eta=(free0-free)/11.25;start_angle=-math.pi/2-eta
+    assert 0<phi-start_angle<2*math.pi,'Single-layer winding exhausted'
     w=BRepBuilderAPI_MakeWire();w.Add(curved((110,20),11.25,-math.pi/2,phi))
     w.Add(BRepBuilderAPI_MakeEdge(gp_Pnt(*A),gp_Pnt(*B)).Edge());w.Add(curved((44,25),11.25,phi,end))
     w.Add(BRepBuilderAPI_MakeEdge(gp_Pnt(*g['Q']),gp_Pnt(*tip)).Edge())
@@ -42,7 +47,7 @@ def wire():
     def arc_pipe(center,lo,hi,start,tangent):
         axes=gp_Ax2(gp_Pnt(center[0],0,center[1]),gp_Dir(0,-1,0),gp_Dir(math.cos(lo),0,math.sin(lo)))
         return BRepPrimAPI_MakeTorus(axes,11.25,.25,hi-lo).Shape()
-    first=arc_pipe((110,20),-math.pi/2,phi,[110,0,8.75],[1,0,0])
+    first=arc_pipe((110,20),start_angle,phi,[110,0,8.75],[1,0,0])
     direction=(B-A)/np.linalg.norm(B-A)
     lead=cyl(.25,tuple(A),float(np.linalg.norm(B-A)),tuple(direction))
     second=arc_pipe((44,25),phi,end,B,[-math.sin(phi),0,math.cos(phi)])
@@ -56,12 +61,13 @@ def wire():
         # this is not an allowed mechanical clearance/interference threshold.
         join.SetFuzzyValue(1e-7);join.Build();assert join.IsDone()
         s=join.Shape()
-    L=11.25*(phi+math.pi/2)+np.linalg.norm(A-B)+11.25*(end-phi)+np.linalg.norm(g['Q']-tip)
+    L=11.25*(phi-start_angle)+free
+    assert abs(L-(11.25*(phi+math.pi/2)+free0))<1e-9
     sys.path.insert(0,str(ROOT.parent/'stage2_load_transfer/scripts'))
     from extract_geometry import properties
     actual=properties(s)[0]*1e9;expected=math.pi*.25**2*L
     assert abs(actual/expected-1)<1e-6,(actual,expected,L)
-    return s,dict(free_length_mm=float(L),diameter_mm=.5,drum_center_mm=[110,0,20],idler_center_mm=[44,0,25],upper_tangent_A_mm=A.tolist(),upper_tangent_B_mm=B.tolist(),scope='Finite nominal installed wire, no stress-free shape, friction or fatigue claim')
+    return s,dict(free_length_mm=float(L),diameter_mm=.5,drum_center_mm=[110,0,20],idler_center_mm=[44,0,25],upper_tangent_A_mm=A.tolist(),upper_tangent_B_mm=B.tolist(),rotor_angle_rad=float(eta),finger_angle_deg=deg,scope='Finite nominal installed wire, no stress-free shape, friction or fatigue claim')
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args()

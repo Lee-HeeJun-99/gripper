@@ -1,0 +1,80 @@
+{
+  "status": "LOCAL_UNIT_LOAD_PASS",
+  "scope": "Actual truncated RevAI tab, clamped cut and unit annular load ONLY; NOT whole-Palm or strength release",
+  "checks": {
+    "force": true,
+    "moment": true,
+    "energy": true,
+    "residual": true,
+    "quality": true,
+    "volume": true,
+    "positive_signed_volume_ratio": true
+  },
+  "h_mm": 2.0,
+  "element": "P2 tetrahedron, exact degree2 stiffness quadrature",
+  "source": {
+    "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/summary.json",
+    "SHA256": "a20e8f62d4573737ac6542c7759e373899552da01d0d65fd96ee02eefedecb13"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/models/fem/AI_tab1/TAB.step",
+    "SHA256": "c447e88f4bf9d042c3c22270085ab5169f10225dd1e7dd72e698e57f4ed468a7"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h2/producer.py",
+    "SHA256": "95dfb0fb5f33f1310ba87110009db3102741393d0c111d629206e3832eede934"
+  },
+  "gmsh_binary": {
+    "SHA256": "9db3090d3b720c57b76bcbfa01d13854823ae2698c91343c20bdd4c2b81f6317",
+    "path": "/tmp/regrip_stage2_fem/libgmsh.so.4.15"
+  },
+  "software": {
+    "gmsh": "4.15.2",
+    "skfem": "12.0.2",
+    "scipy": "1.15.3",
+    "numpy": "2.2.6"
+  },
+  "material": {
+    "E_Pa": 70000000000.0,
+    "nu": 0.33,
+    "basis": "ASSUMED sensitivity, not certified grade"
+  },
+  "input_force_N": [
+    0,
+    0,
+    -1
+  ],
+  "compliance_m_N": 2.200483620355457e-07,
+  "energy_J": 1.1002418101686734e-07,
+  "force_balance_N": [
+    -2.56341006644684e-13,
+    -2.4018995929628843e-13,
+    -2.951656117872875e-13
+  ],
+  "moment_balance_Nm": [
+    5.008106577989257e-15,
+    8.239687220491264e-15,
+    -3.614794944056085e-15
+  ],
+  "linear_residual": 5.7362978429436944e-11,
+  "mesh_volume_m3": 3.3455649808338724e-06,
+  "min_quality": 0.2748814975479299,
+  "minimum_signed_volume_ratio": 0.9999959267506358,
+  "peak_unsmoothed_vm_Pa": 246160.69197263676,
+  "nodes": 2768,
+  "elements": 10909,
+  "DOF": 55008,
+  "elapsed_s": 41.81271495204419,
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AI_tab_h2/field.npz",
+    "SHA256": "fb46b59fda3a509a5c9a7bd229c8f19eb3a220e4b980c5f0285a6e6045320389"
+  },
+  "limitations": [
+    "Root cut is NOT the actual complete Palm support",
+    "Finite washer pressure load, not actual bolt/contact/preload",
+    "Sharp clamp-edge stress cannot certify strength",
+    "No material/yield/fatigue or motor/limiter cap",
+    "Static linear test, no time convergence or powered operation"
+  ],
+  "whole_system_release": false
+}

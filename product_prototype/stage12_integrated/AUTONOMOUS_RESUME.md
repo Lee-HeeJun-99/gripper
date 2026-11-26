@@ -1,3 +1,35 @@
+# Latest product-system resume — 2026-11-26
+
+Read actual `git status --short` / `git log -3` before any action. Preceding
+work save e195f9a; following local save contains completed RevAJ work. Canonical
+latest HEAD is Git, not a self-referential commit hash in this document.
+
+Latest candidate revAJ_idler1,250 parts; official RevAA304 release preserved.
+Read CURRENT_CANDIDATE.json, CANDIDATE_RELEASE_STATUS.json and
+reports/PRODUCT_SYSTEM_PROGRESS_20261126.md. Do not regenerate AE–AJ or repeat
+rod/BVP/grasp tests. All actual results/fields and failures are saved separately.
+
+Actual commands already completed include ground_supported_clutch.py with
+--shared-register/--base-head-relief, lighten_palm_candidate.py, actual tab P2
+FEM h3/2/1.5, and idler_root_candidate.py. Response convergence passed locally,
+peak stress convergence failed. Original serialization/import failures remain.
+
+Resume selection (NOT execution):
+`python3 product_prototype/stage12_integrated/scripts/integrated_status.py --next`
+
+Prioritize actual whole-Palm/bench support and front-collet axial/torque path.
+Use actual minimum4.2mm shaft engagement and unallocated0.075mm runout/deflection
+budget. No assumed spring/friction torque may establish a protected cap. New
+stock JH-1M interval is a separate possible route;3mm bore does not match5mm
+motor and mounting drawing/thermal/transient bounds are incomplete.
+
+No process remains RUNNING. Automatic6-call budget is exhausted, service3 dead.
+No automatic restart was configured or launched in this turn. A NEW explicit
+budget would be needed for additional external calls; suggested bounded review
+budget2 calls×1800s, NOT granted or consumed here. Never reset old used counters.
+Existing STOP and Supervisor controls are unchanged. Current independent READY
+work remains; this is not a project-completion or all-digital-work-exhausted claim.
+
 # Actual product layout continuation (2026-11-26)
 
 Prior saved commit ea2cce6. AF actual assembly/drive geometry is saved; protection

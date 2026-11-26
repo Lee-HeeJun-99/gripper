@@ -3,17 +3,20 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "actual_finger_load_ports",
-    "track": "B",
-    "priority": -1,
-    "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
-    "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
-    "fallback": "simpler_replaceable_finger_cartridge",
+    "id": "AI_whole_palm_support",
+    "track": "C",
+    "priority": 0,
+    "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
+    "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
+    "fallback": "reinforced_local_tabs",
     "status": "READY",
-    "prerequisites": [],
+    "prerequisites": [
+      "local_palm_tabs",
+      "idler_integral_M3_shoulder"
+    ],
     "system_gate_contribution": 4,
     "cost": "bounded actual product validation, no random parameter sweep",
-    "last_run_utc": null,
+    "last_run_utc": "2026-11-26T13:14:03.053987+00:00",
     "consecutive_runs": 0,
     "target_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
@@ -21,7 +24,12 @@
     },
     "target_revision": "revAK_integral2",
     "target_parts": 235,
-    "selection_note": "Execute B after actual allocation4 A collet and C whole-Palm cycle; use actual AK finite ports, distinguish geometry from loaded Finger qualification."
+    "evidence": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/summary.json",
+      "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
+    },
+    "selection_note": "C bounded cycle complete with retained FAIL; next executable actual_finger_load_ports B. Before further Palm solve identify actual base attachment and investigate thin-plate P1 locking/fragment mesh quality; no blind refinement or strength claim.",
+    "reason": "Actual entire AK Palm conditional central-annulus support/unit outer-hole washer load: 3 P1 mesh solutions; mesh quality and 1% response convergence FAIL. Support interface remains hypothetical. Independent energy/balance reconstruction PASS does not cure FAIL."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

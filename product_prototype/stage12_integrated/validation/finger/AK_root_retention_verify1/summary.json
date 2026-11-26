@@ -1,0 +1,76 @@
+{
+  "status": "CONTINUOUS_LOCAL_ESCAPE_VERIFIED",
+  "rows": [
+    {
+      "part": "F0_SKIN",
+      "swept_envelope_overlap_mm3": {
+        "F0_ROOT_FRONT": 0.0,
+        "F0_ROOT_BACK": 0.0,
+        "F0_ROOT_BOLT_-16": 0.0,
+        "F0_ROOT_BOLT_16": 0.0,
+        "F0_ROOT_NUT_-16": 0.0,
+        "F0_ROOT_NUT_16": 0.0
+      },
+      "continuous_axial_clear": true,
+      "transverse_negative_control_overlap_mm3": 40.80000000000058,
+      "negative_control_rejected": true
+    },
+    {
+      "part": "F0_RAIL_L",
+      "swept_envelope_overlap_mm3": {
+        "F0_ROOT_FRONT": 0.0,
+        "F0_ROOT_BACK": 0.0,
+        "F0_ROOT_BOLT_-16": 0.0,
+        "F0_ROOT_BOLT_16": 0.0,
+        "F0_ROOT_NUT_-16": 0.0,
+        "F0_ROOT_NUT_16": 0.0
+      },
+      "continuous_axial_clear": true,
+      "transverse_negative_control_overlap_mm3": 5.8140000000016725,
+      "negative_control_rejected": true
+    },
+    {
+      "part": "F0_RAIL_R",
+      "swept_envelope_overlap_mm3": {
+        "F0_ROOT_FRONT": 0.0,
+        "F0_ROOT_BACK": 0.0,
+        "F0_ROOT_BOLT_-16": 0.0,
+        "F0_ROOT_BOLT_16": 0.0,
+        "F0_ROOT_NUT_-16": 0.0,
+        "F0_ROOT_NUT_16": 0.0
+      },
+      "continuous_axial_clear": true,
+      "transverse_negative_control_overlap_mm3": 5.814000000001679,
+      "negative_control_rejected": true
+    }
+  ],
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention1/summary.json",
+    "SHA256": "650ac3d30fcb844dec67ca885ed6ff58b79b2046bbcc39f7cb263fb3567a0ff1"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/scripts/verify_ak_root_retention.py",
+    "SHA256": "034a2c04ac67649c60de7f90d7b9826a99ce5e0702890b616d14af60c7dc3acb"
+  },
+  "scope": "Conservative solid AABB enclosing every root-fragment translation in [-0.5,+0.5]mm; only listed root clamps/fasteners",
+  "whole_system_release": false,
+  "limitations": [
+    "No full-Finger escape claim",
+    "No friction/preload/elastic or strength solution",
+    "No release or global energy certification"
+  ],
+  "execution": {
+    "actually_executed": true,
+    "exit_code": 0,
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=/tmp/regrip_stage1_ocp timeout 420 /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/stage12_integrated/scripts/verify_ak_root_retention.py",
+    "virtual_memory_limit_KiB": 4194304,
+    "timeout_s": 420,
+    "threads": 1,
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention_verify1/execution.txt",
+      "SHA256": "4798fecfdcccadab946ff77eb0acbefa18eb13fbd4d90ae29efc680bcc45049b"
+    },
+    "SOFA_executed": false,
+    "elapsed_s": null
+  }
+}

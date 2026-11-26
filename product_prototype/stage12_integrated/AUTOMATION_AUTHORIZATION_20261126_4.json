@@ -1,0 +1,32 @@
+{
+  "authorization": "User explicitly approved a NEW bounded automatic allocation in the current conversation",
+  "allocation_ID": "authorized_20261126_4",
+  "previous_allocation": "Original six sessions consumed; old runtime and usage records MUST NOT be reset",
+  "max_sessions": 10,
+  "seconds_per_session": 3600,
+  "maximum_research_child_seconds": 36000,
+  "automatic_renewal": false,
+  "primary_candidate": "revAK_integral2",
+  "candidate_parts": 235,
+  "official_released_baseline": "revAA_heel_relief2 remains unchanged until same-revision gates pass",
+  "goal": "STAGE1_STAGE2_INTEGRATED_DIGITAL_RELEASE_PASS",
+  "service": "regrip-stage12-20261126-4.service",
+  "runtime": "product_prototype/stage12_integrated/runtime/authorized_20261126_4",
+  "actual_usage_authority": "New runtime status.json/summary.json and real service state; this file authorizes bounds, does not assert execution",
+  "stop_file": "product_prototype/stage12_integrated/runtime/STOP",
+  "manager_source_SHA256": "73961e600ebe9f0a102430d1315c7a07945d45b40080952ca3f5c2b08a8613cc",
+  "supervised_save_SHA256": "12a4d14a6825d7b771754979a8c6bfb994979b983cc61caf012e57cc333608f8",
+  "commit_guard_SHA256": "e8412c0f605fb6c36e8517d5d99b493d42b1a03e16e8d38357faef41a5515216",
+  "policy": {
+    "sandbox": "workspace-write; worker Git writes remain restricted; explicit supervisor manifest required",
+    "analysis_child": "4GiB/420seconds; preserve failures and original data",
+    "service_memory_max": "8GiB",
+    "service_CPU_quota": "200%",
+    "service_tasks_max": 256,
+    "service_runtime_max_seconds": 36900,
+    "runtime_overhead_note": "36000 research seconds plus at most900 supervisor/cleanup seconds; no additional research launches",
+    "restart": "no",
+    "early_stop": "STOP, signals, timeout, two failed/no-progress cycles, protected-source change, save rejection, dirty state or actual release",
+    "prohibited": ["remote push", "history rewrite", "data deletion", "SDK modification", "criteria relaxation", "fake PASS", "purchase", "hardware operation", "recursive manager launch", "credential inspection", "new tracked files >=50MB"]
+  }
+}

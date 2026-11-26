@@ -672,6 +672,28 @@
       "last_run_utc": "2026-11-26T12:55:55.843929+00:00",
       "consecutive_runs": 1,
       "registration_note": "Post-execution result indexing, no fabricated prior registration"
+    },
+    {
+      "id": "AK_protected_maximum_load",
+      "track": "A",
+      "priority": 1,
+      "status": "READY",
+      "hypothesis": "Actual one-face grounded support removes the known bearing bypass but force cap needs rated/calibrated friction/spring and bounded transient energy. Simpler rated mechanisms may reduce missing bounds.",
+      "difference": "Use actual AK inertia/topology and coupled axial clamp reaction, not old minimum-only HPMC or assumed static tension as peak protection",
+      "prerequisites": [],
+      "criteria": "Real source-backed normal/trigger/maximum load separation; bound torque/radius/inertia/tendon stiffness/initial energy/delay and failure paths; actual CAD interfaces and unchanged convergence/material criteria. No guessed friction/preload certification",
+      "implementation": "Reuse jam_energy2 and actual AK CAD; independently verify energy bound; investigate rated simpler actuator/limiter if current architecture cannot be qualified",
+      "fallback": "rated_low_torque_actuator_or_independent_disconnect",
+      "system_gate_contribution": 5,
+      "cost": "4GiB/420seconds per analysis child, one3600second session maximum",
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "last_run_utc": null,
+      "consecutive_runs": 0
     }
   ],
   "policy": {
@@ -680,5 +702,9 @@
     "automatic_budget_remaining_runs": 0,
     "automatic_budget_renewal": false,
     "current_session_work_authorized": true
+  },
+  "active_authorization": {
+    "path": "product_prototype/stage12_integrated/AUTOMATION_AUTHORIZATION_20261126_4.json",
+    "SHA256": "f59d33e308741aa725b08e7d37ec7fd54c4c56df9df49ad17745f23a326b3e31"
   }
 }

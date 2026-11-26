@@ -152,6 +152,14 @@ READY tasks remain in INTEGRATED_TASKS.json. Inspect actual outputs before
 running anything; never reuse result directories. Hardware remains unmeasured.
 # Actual current resume — AK235 (2026-11-26)
 
+NEW AUTHORIZATION: see AUTOMATION_AUTHORIZATION_20261126_4.json. User approved
+10 new sessions x3600seconds; original6 consumed records remain immutable.
+Actual new usage/state is runtime/authorized_20261126_4/status.json, service
+regrip-stage12-20261126-4.service. Older 'new budget needed' paragraphs are
+historical and superseded by this explicit authorization, not reset.
+First inspect actual service/lock/STOP; never start another manager if active.
+Use current AK235 product and balanced A/B/C cycles per latest CHECKPOINT.
+
 Completed work saves: f8c07c5 (AK235 product), d8abaa7 (reaction fixture).
 History guard product_history2 inspected d8abaa7:1289 new reachable blobs,
 no disallowed large/raw blobs; largest12,957,309bytes. Protected Stage1/Stage2

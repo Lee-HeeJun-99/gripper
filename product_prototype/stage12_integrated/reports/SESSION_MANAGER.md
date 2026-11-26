@@ -1,5 +1,29 @@
 # External manager — execution authorized2026-11-26
 
+## NEW allocation4 — user-approved10 x3600seconds
+
+The latest explicit user instruction authorizes a **separate** allocation:
+`authorized_20261126_4`, service `regrip-stage12-20261126-4.service`.
+Maximum10 launches,3600seconds per worker,36000 total research-child seconds.
+RuntimeMaxSec36900 includes up to900seconds supervisor/audit/cleanup overhead;
+it does not authorize more research. Restart=no, no automatic budget renewal.
+Old six-session allocation and all prior runtime logs remain preserved.
+See AUTOMATION_AUTHORIZATION_20261126_4.json for source pins and policy.
+
+Primary candidate RevAK235; Collet capacity, protected peak, actual whole Palm,
+Idler and Finger load response, same-revision Stage1/2 revalidation. Maintain
+track balance rather than generic rod refinement. No security/source changes
+to manager or supervisor are needed. Worker still submits complete exact
+SHA256 save manifest; supervisor performs the guarded local commit.
+
+Actual activity must be read from new runtime status.json and systemd, not
+from this authorization. Stop via shared runtime/STOP or:
+`systemctl --user stop regrip-stage12-20261126-4.service`.
+Do not delete STOP or clear it automatically. Check no existing manager,
+available flock, clean tracked state and no RUNNING tasks before first launch.
+Official [non-interactive documentation](https://learn.chatgpt.com/docs/non-interactive-mode)
+was rechecked; installed codex-cli0.160.1 still supports workspace-write exec.
+
 ## Recovery / remaining budget
 
 LATEST: service2 completed actual distributed-contact research, then rejected

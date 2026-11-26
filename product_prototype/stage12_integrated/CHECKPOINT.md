@@ -1,5 +1,32 @@
 # Latest product-system state — RevAK235-part candidate (2026-11-26)
 
+## NEW user authorization — supersedes exhausted-budget instructions below
+
+User approved a new allocation authorized_20261126_4: at most10 external
+sessions,3600seconds each. Do NOT reuse/reset old runtime3 or its six-session
+history. Read AUTOMATION_AUTHORIZATION_20261126_4.json; actual live state is
+runtime/authorized_20261126_4/status.json and service4. Authorization is not
+proof of launch. Shared STOP remains authoritative. Security/manager/save
+source hashes unchanged. No recursive launch or budget renewal by workers.
+
+Primary product candidate is actual RevAK235, not a frozen release. First
+actual task: AH_collet_and_axial_capacity, then full Palm support and actual
+Finger load/deflection across tracks. Also execute AK protected maximum and
+Idler load proof, followed by same-revision integration. Within each group
+of three completed research cycles, cover executable A/B/C when possible;
+after two consecutive same-track cycles switch. If a prerequisite prevents
+a track, record physical reason and choose another actual product task.
+Do not let repeated collet sub-coupons starve whole Palm/Finger development.
+Use actual CAD boundaries and conditional load bounds without inventing a
+safe maximum or measured material. Predefine criteria and retain old FAILs.
+
+Before ending each bounded worker cycle, complete actual validation, update
+READY/followups and track history, stop all owned analysis children, leave no
+RUNNING entry, and submit the exact new runtime save_request manifest. Worker
+must NOT git add/commit or modify protected manager/save/security criteria.
+Finish research by3300seconds to reserve300seconds for result/manifest/save.
+Source/result-only provenance is not an actual physical development cycle.
+
 AK product/save commit f8c07c5. Afterwards actually generated and independently
 inspected AK_collet_stand1:6 new finite reaction-fixture parts, actual AK hub
 and clamp bolt, no nominal collisions, closed STL PASS. It is NOT a proof-rated

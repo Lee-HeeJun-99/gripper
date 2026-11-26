@@ -553,7 +553,7 @@
     {
       "id": "AI_whole_palm_support",
       "track": "C",
-      "priority": 3,
+      "priority": 2,
       "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
       "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
       "fallback": "reinforced_local_tabs",
@@ -576,7 +576,7 @@
         "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/summary.json",
         "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
       },
-      "selection_note": "One bounded C diagnosis completed; original quality/convergence FAIL preserved. Remains READY for new finite mounting design, not another unsupported annulus or blind P1 refinement. Prefer independent A Idler/load or overload work next.",
+      "selection_note": "Next independent C after A/A/B. Identify actual mounting or a separately tagged finite support candidate; no hypothetical annular fixation or blind mesh refinement. Root normal path does not qualify Palm.",
       "reason": "Actual235-part geometry/234distance queries plus independent conservative exclusions establish no modeled annular support. Actual saved meshes show197..335% pure-bending interpolation energy excess;24..26poor tetrahedra carry<1e-8of solved strain energy. Independent quadrature/planar-area verification passes, without system qualification.",
       "last_diagnostic": {
         "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/summary.json",
@@ -588,7 +588,7 @@
     {
       "id": "actual_finger_load_ports",
       "track": "B",
-      "priority": 2,
+      "priority": 3,
       "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
       "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
       "fallback": "simpler_replaceable_finger_cartridge",
@@ -596,7 +596,7 @@
       "prerequisites": [],
       "system_gate_contribution": 4,
       "cost": "bounded actual product validation, no random parameter sweep",
-      "last_run_utc": "2026-11-26T13:17:14.509491+00:00",
+      "last_run_utc": "2026-11-26T13:38:20.604347+00:00",
       "consecutive_runs": 1,
       "target_candidate": {
         "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
@@ -604,17 +604,17 @@
       },
       "target_revision": "revAK_integral2",
       "target_parts": 235,
-      "selection_note": "B cycle completed after A/C. Do not repeat sampled translations. Next B requires actual root clamp preload/friction mechanics or a separately tagged positive-retention design, before imposing fixed PET/Rail roots.",
+      "selection_note": "Bounded B cycle6 complete after two A cycles. Prioritize independent C base attachment next; physical preload/retention remains unqualified.",
       "last_result": {
-        "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention1/summary.json",
-        "SHA256": "650ac3d30fcb844dec67ca885ed6ff58b79b2046bbcc39f7cb263fb3567a0ff1"
+        "path": "product_prototype/stage12_integrated/validation/finger/AK_root_clamp_cycle1/summary.json",
+        "SHA256": "d61cfb9fb9cd0a0215966b8575a951c60207f6a68dd53535a41f3561893b97c1"
       },
       "last_verification": {
-        "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention_verify1/summary.json",
-        "SHA256": "b9ccf710b7299950e4a89a32257bf48917ba7d983ca26ac5f95f1b980a1bfd36"
+        "path": "product_prototype/stage12_integrated/validation/finger/AK_root_clamp_verify1/summary.json",
+        "SHA256": "2a2c77053c59eca52524cf006dccbb758517a1c2bd877e647af632f205925fb0"
       },
-      "last_cycle_status": "LOCAL_ROOT_AXIAL_ESCAPE_VERIFIED_FULL_FINGER_UNQUALIFIED",
-      "followup_hypothesis": "Actual root-fragment +/-0.5mm continuous axial clearance excludes geometric axial retention by the listed root clamps/bolts. Quantify clamp normal force from actual bolt/plate contact or design positive retention; do not invent friction/preload."
+      "last_cycle_status": "ACTUAL_ROOT_NORMAL_PATH_VERIFIED_PRELOAD_AND_FINGER_UNQUALIFIED",
+      "followup_hypothesis": "Actual FRONT/PET/Rail/BACK contacts transfer normal preload in principle, but uniform front pressure leaves3.45524Nmm/N moment residual. Solve supported bolt/plate/contact equilibrium with actual preload/friction/material basis, or separately evaluate positive retention. No repeated closure scan or fixed PET/Rail roots."
     },
     {
       "id": "idler_integral_M3_shoulder",

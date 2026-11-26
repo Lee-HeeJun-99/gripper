@@ -1,3 +1,14 @@
+# Bounded B cycle — actual AK root normal-contact and preload basis (2026-11-26)
+
+Starting HEAD df6c51b3cc01da5165b0364478e9f28b442ffac5. Supervisor local save PENDING; no git add/commit or new commit claimed.
+Canonical result: product_prototype/stage12_integrated/validation/finger/AK_root_clamp_cycle1/summary.json.
+
+All235AK STEP hashes checked. Root-local actual FRONT→PET→two RAILS→BACK normal-contact graph identified: front405.06mm², each rail interface51mm². Independent thin-overlap volume/first-moment verification passes all5interfaces at two widths;1% area corruption rejected. Uniform front pressure leaves3.455241199Nmm/N y-moment relative to actual Z5mm bolt axes; nonuniform pressure/plate equilibrium must be solved. Normal preload/friction/capacity remain null; no fixed-root/full Finger/strength PASS.
+
+Initial full-solid analysis wrongly included distal PET/Rail area309.6mm² as root area. Original producer/results and explicit scope FAIL retained; corrected root-local51mm² analysis independently verified. Three bounded4GiB/420s one-thread children exit0,<1s/tool call. Nonexistent release CLI lookup exit2 retained. Existing read-only release audit remains INTEGRATED_NOT_QUALIFIED,24errors/22Stage2criteria. No SOFA executed or system evidence changed.
+
+Next C: AI_whole_palm_support, actual attachment or separately evaluated finite positive support; no hypothetical annular fixation/blind mesh refinement. Next B needs actual bolt/plate/preload/friction/material equilibrium or positive retention, not another closure/escape scan. All historical failures, CAD/BOM and unrelated untracked files preserved. No SDK/criteria/manager/Stage3/hardware changes. Queue has no RUNNING records and no owned analysis children remain. Exact save manifest runtime/authorized_20261126_4/save_request6.json pending supervisor validation.
+
 # Bounded A cycle — AK ideal delayed disconnect (2026-11-26)
 
 Starting HEAD c80c7a95b139cd91d82b58b0a7a9b01c5fd5c427. Supervisor local save

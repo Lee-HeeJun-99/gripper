@@ -3,17 +3,20 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "actual_finger_load_ports",
-    "track": "B",
+    "id": "AI_whole_palm_support",
+    "track": "C",
     "priority": 2,
-    "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
-    "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
-    "fallback": "simpler_replaceable_finger_cartridge",
+    "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
+    "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
+    "fallback": "reinforced_local_tabs",
     "status": "READY",
-    "prerequisites": [],
+    "prerequisites": [
+      "local_palm_tabs",
+      "idler_integral_M3_shoulder"
+    ],
     "system_gate_contribution": 4,
     "cost": "bounded actual product validation, no random parameter sweep",
-    "last_run_utc": "2026-11-26T13:17:14.509491+00:00",
+    "last_run_utc": "2026-11-26T13:23:36.073725+00:00",
     "consecutive_runs": 1,
     "target_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
@@ -21,17 +24,18 @@
     },
     "target_revision": "revAK_integral2",
     "target_parts": 235,
-    "selection_note": "B cycle completed after A/C. Do not repeat sampled translations. Next B requires actual root clamp preload/friction mechanics or a separately tagged positive-retention design, before imposing fixed PET/Rail roots.",
-    "last_result": {
-      "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention1/summary.json",
-      "SHA256": "650ac3d30fcb844dec67ca885ed6ff58b79b2046bbcc39f7cb263fb3567a0ff1"
+    "evidence": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/summary.json",
+      "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
     },
-    "last_verification": {
-      "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention_verify1/summary.json",
-      "SHA256": "b9ccf710b7299950e4a89a32257bf48917ba7d983ca26ac5f95f1b980a1bfd36"
+    "selection_note": "Next independent C after A/A/B. Identify actual mounting or a separately tagged finite support candidate; no hypothetical annular fixation or blind mesh refinement. Root normal path does not qualify Palm.",
+    "reason": "Actual235-part geometry/234distance queries plus independent conservative exclusions establish no modeled annular support. Actual saved meshes show197..335% pure-bending interpolation energy excess;24..26poor tetrahedra carry<1e-8of solved strain energy. Independent quadrature/planar-area verification passes, without system qualification.",
+    "last_diagnostic": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/summary.json",
+      "SHA256": "c7039fea2a544fa01b96cdcf9519b992d68a60f73c4666a19bebbb08fe1cd3f6"
     },
-    "last_cycle_status": "LOCAL_ROOT_AXIAL_ESCAPE_VERIFIED_FULL_FINGER_UNQUALIFIED",
-    "followup_hypothesis": "Actual root-fragment +/-0.5mm continuous axial clearance excludes geometric axial retention by the listed root clamps/bolts. Quantify clamp normal force from actual bolt/plate contact or design positive retention; do not invent friction/preload."
+    "last_cycle_status": "DIAGNOSTIC_VERIFIED_SUPPORT_AND_FEM_QUALIFICATION_BLOCKED",
+    "followup_hypothesis": "No modeled constituent contacts the prior underside annular support. Define a separate finite external base attachment with explicit6DOF wrench path. Actual P1 meshes strongly misrepresent pure bending; inspect inherited small boundary features and qualify higher-order/thickness-aware representation before another full-Palm solve."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

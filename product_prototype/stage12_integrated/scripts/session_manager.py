@@ -10,8 +10,9 @@ from baseline_registry import ROOT,REPO,sha,dump
 def git(*args):return subprocess.check_output(['git',*args],cwd=REPO,text=True).strip()
 def fingerprint():
     paths=[ROOT/'RELEASE_STATUS.json',ROOT/'INTEGRATED_TASKS.json',ROOT/'CURRENT_BASELINE.json']
-    return dict(HEAD=git('rev-parse','HEAD'),evidence={str(p.relative_to(REPO)):sha(p) for p in paths})
-def has_progress(before,after):return before!=after
+    results={str(p.relative_to(REPO)):sha(p) for base in (ROOT/'validation',ROOT/'cad/exports',ROOT/'hardware_test/fixtures') for p in base.rglob('summary.json')}
+    return dict(HEAD=git('rev-parse','HEAD'),branch=git('branch','--show-current'),evidence={str(p.relative_to(REPO)):sha(p) for p in paths},actual_result_artifacts=results)
+def has_progress(before,after):return before.get('actual_result_artifacts')!=after.get('actual_result_artifacts')
 def command(prompt):return ['codex','exec','--sandbox','workspace-write','--json','-C',str(REPO),prompt]
 def main():
     p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true');p.add_argument('--max-runs',type=int,default=1);p.add_argument('--per-run-seconds',type=int,default=1800);p.add_argument('--tag',required=True);a=p.parse_args()
@@ -23,6 +24,7 @@ def main():
     with (runtime/'manager.lock').open('a+') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         if git('status','--porcelain','--untracked-files=no'):raise RuntimeError('Tracked worktree dirty; preserve it and stop, never clean automatically')
+        if git('branch','--show-current')!='development/regrip-autonomous-research':raise RuntimeError('Wrong branch; never switch it automatically')
         halted=False;child=None
         def stop(sig,frame):
             nonlocal halted
@@ -45,6 +47,8 @@ def main():
                         halted=True;break
                     time.sleep(.5)
             after=fingerprint();progress=has_progress(before,after)
+            if after['branch']!=before['branch'] or subprocess.run(['git','merge-base','--is-ancestor',before['HEAD'],after['HEAD']],cwd=REPO).returncode:
+                halted=True # preserve unexpected state, never try to repair by reset
             dirty=bool(git('status','--porcelain','--untracked-files=no'))
             # No automatic cleanup of failed/uncommitted work.
             failures=failures+1 if child.returncode!=0 or not progress else 0

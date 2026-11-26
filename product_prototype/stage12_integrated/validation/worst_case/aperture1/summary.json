@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "CONTINUOUS CONFORMING-CIRCULAR-RAIL / CORRELATED STOCK APERTURE ONLY, NOT FREE PET OR 3D CCD",
+  "ranges": {
+    "angle_deg": [
+      0,
+      60
+    ],
+    "channel_axial_u_mm": [
+      0,
+      5
+    ],
+    "PET_mm": [
+      0.28,
+      0.32
+    ],
+    "rail_mm": [
+      0.19,
+      0.21
+    ],
+    "frontfloat_mm": "0.20 - actual rail thickness"
+  },
+  "analytical_nominal_profile_lower_mm": 0.10999999999998522,
+  "proposed_normal_profile_error_budget_mm": 0.01,
+  "conditional_manufactured_lower_mm": 0.09999999999998523,
+  "required_lower_mm": 0.1,
+  "proof": [
+    "R-d >= rf on the entire domain; sqrt(a*a-u*u)-a=-u*u/(sqrt(a*a-u*u)+a)",
+    "For a>=rf, aperture(u)-aperture(0)>=0, so no axial grid is required",
+    "At u=0, rail thickness cancels with the actual correlated front float; maximum PET thickness is worst"
+  ],
+  "source": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+    "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/worst_case/aperture1/producer.py",
+    "SHA256": "56d8fc790fdd7a2fd2001a0eda8fc1257d6f281743c6ecb59578a81e497844d8"
+  },
+  "manufacturing_profile_tolerance_is_requirement_not_measurement": true,
+  "does_not_qualify": [
+    "Actual independent PET equilibrium/friction",
+    "Whole terminal toolpaths/strength",
+    "Full assembly motion, tolerances or hardware"
+  ]
+}

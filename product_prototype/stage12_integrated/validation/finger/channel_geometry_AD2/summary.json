@@ -1,0 +1,114 @@
+{
+  "status": "FAIL",
+  "scope": "ACTUAL FRONT/BACK vs RECONSTRUCTED PET GEOMETRY ON PRESCRIBED CIRCULAR FIXTURE ONLY",
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/finite_pet_AD4/summary.json",
+        "SHA256": "56b6b068060e4567484e40c8060eb64bd297559aab816b64b919a7c7046d5853"
+      },
+      "angle_deg": 14.999999999999998,
+      "PET_length_m": 0.0862,
+      "subdivisions_per_segment": 2,
+      "PET_volume_mm3": 465.1686201870335,
+      "terminal_common_mm3": {
+        "front": 0.0,
+        "back": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/finite_pet_AD4/summary.json",
+        "SHA256": "56b6b068060e4567484e40c8060eb64bd297559aab816b64b919a7c7046d5853"
+      },
+      "angle_deg": 14.999999999999998,
+      "PET_length_m": 0.0862,
+      "subdivisions_per_segment": 4,
+      "PET_volume_mm3": 465.1694150465673,
+      "terminal_common_mm3": {
+        "front": 0.0,
+        "back": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/finite_pet_AD4/summary.json",
+        "SHA256": "56b6b068060e4567484e40c8060eb64bd297559aab816b64b919a7c7046d5853"
+      },
+      "angle_deg": 29.999999999999996,
+      "PET_length_m": 0.0862,
+      "subdivisions_per_segment": 2,
+      "PET_volume_mm3": 465.16530289656754,
+      "terminal_common_mm3": {
+        "front": 0.00010655603945956477,
+        "back": 0.0
+      },
+      "status": "FAIL"
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/finite_pet_AD4/summary.json",
+        "SHA256": "56b6b068060e4567484e40c8060eb64bd297559aab816b64b919a7c7046d5853"
+      },
+      "angle_deg": 29.999999999999996,
+      "PET_length_m": 0.0862,
+      "subdivisions_per_segment": 4,
+      "PET_volume_mm3": 465.168585721449,
+      "terminal_common_mm3": {
+        "front": 3.875261639426872e-06,
+        "back": 0.0
+      },
+      "status": "FAIL"
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/finite_pet_AD4/summary.json",
+        "SHA256": "56b6b068060e4567484e40c8060eb64bd297559aab816b64b919a7c7046d5853"
+      },
+      "angle_deg": 59.99999999999999,
+      "PET_length_m": 0.0862,
+      "subdivisions_per_segment": 2,
+      "PET_volume_mm3": 465.1506994532389,
+      "terminal_common_mm3": {
+        "front": 0.0009080621806063162,
+        "back": 0.0
+      },
+      "status": "FAIL"
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/finite_pet_AD4/summary.json",
+        "SHA256": "56b6b068060e4567484e40c8060eb64bd297559aab816b64b919a7c7046d5853"
+      },
+      "angle_deg": 59.99999999999999,
+      "PET_length_m": 0.0862,
+      "subdivisions_per_segment": 4,
+      "PET_volume_mm3": 465.1649348182421,
+      "terminal_common_mm3": {
+        "front": 4.847875144449929e-05,
+        "back": 0.0
+      },
+      "status": "FAIL"
+    }
+  ],
+  "front": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/F0_TERMINAL_FRONT.step",
+    "SHA256": "264e8b302c49bff8afa273acb2147e74e732004433009043f8a935c687eaf85e"
+  },
+  "back": {
+    "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_TERMINAL_BACK.step",
+    "SHA256": "6fafeee947ac578c960bef0a7efd6ac4aa06dd3eaa4afc06c8c6a75cec7fc2f6"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/channel_geometry_AD2/producer.py",
+    "SHA256": "945659c61099f3f02ef64ae542ffec9b5a9ebbc991a35732710049a6b3170d93"
+  },
+  "limitations": [
+    "Ruled loft interpolation, not continuous curved-solid collision proof",
+    "No actual flexible-rail dynamics, friction or finite shell",
+    "No whole assembly Stage1 revalidation or release",
+    "Projected endpoint-channel constraints do not replace finite 3D channel verification"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "status": "LIMITER_NOT_QUALIFIED",
+  "scope": "CONSERVATIVE ENVELOPE / INTERFACE SCREEN, NOT SELECTED PART OR PRODUCT REVISION",
+  "source_drawing": "https://www.magtrol.com/wp-content/uploads/hpmc-25.pdf",
+  "drawing_revision": "B",
+  "gauge_STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/hpmc_interface1/HPMC_CLEARANCE_GAUGE.step",
+    "SHA256": "9a1cfbf002b7c032807c1df50a0468cbe170a18280bd5370bdcbbcb2711acfd6"
+  },
+  "gauge_STL": {
+    "path": "product_prototype/stage12_integrated/cad/exports/hpmc_interface1/HPMC_CLEARANCE_GAUGE.stl",
+    "SHA256": "569b7ae055b1699093b497f1cd05f7850316ef6ea2e6f93a9f4b6bdc1ce6b0ce"
+  },
+  "dimensions": {
+    "OD_mm": 31.75,
+    "overall_length_mm": 45.7962,
+    "input_nominal_diameter_mm": 3.175,
+    "output_diameter_interval_mm": [
+      3.16484,
+      3.16992
+    ]
+  },
+  "current_coupling_length_mm": 19.5,
+  "extra_axial_space_mm": 26.2962,
+  "current_interfaces_mm": [
+    5.0,
+    4.4
+  ],
+  "declared_service_cutset": [
+    "F0_COUPLING_LOWER",
+    "F0_COUPLING_UPPER",
+    "F0_COUPLING_BOLT_74_-21",
+    "F0_COUPLING_BOLT_74_-9.8",
+    "F0_COUPLING_BOLT_86_-21",
+    "F0_COUPLING_BOLT_86_-9.8"
+  ],
+  "retained_parts_with_gauge_overlap": [
+    {
+      "part": "F0_SHAFT",
+      "gauge_common_mm3": 80.91531927045679
+    },
+    {
+      "part": "F0_MOTOR",
+      "gauge_common_mm3": 12700.044109201292
+    },
+    {
+      "part": "F0_MOTOR_PLATE",
+      "gauge_common_mm3": 1182.367847609657
+    }
+  ],
+  "published_minimum_torque_Nm": 0.017653879583325,
+  "published_maximum_torque_Nm": null,
+  "nominal_external_inertia_kg_m2": 4.2934235030488e-07,
+  "published_acceleration_consistency_relative": 0.0004482035006643237,
+  "product_force_cap_certified": false,
+  "hardware_measured": false,
+  "missing": [
+    "Guaranteed maximum torque vs temperature/speed and uncertainty",
+    "Mounting adaptation from3.175mm to5/4.4mm and actual mechanical support",
+    "Complete driven inertia / cable EA / transient allowance",
+    "Maximum normal grasp demand and certified structural upper load"
+  ],
+  "next": "Manufacturer certified maximum/drawing confirmation or independently calibrated limiter design; do not turn minimum rating into maximum",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/cad/exports/hpmc_interface1/producer.py",
+    "SHA256": "708313890ce8cb06f7aedaea061604bf8f3fa9f3f03d58f35cd07ef671ed5a8e"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "scope": "INDEPENDENT MINIMUM-OWNER DIFFERENTIATION COUNTEREXAMPLE ONLY",
+  "exact_solution": [
+    0.3333333333333335,
+    -0.33333333333333326,
+    -0.33333333333333337
+  ],
+  "explicit_result": [
+    0.33333333333333415,
+    -0.3333333333333327,
+    -0.33333333333333315
+  ],
+  "explicit_solver_success": true,
+  "aggregated_result": [
+    0.9999999999999991,
+    -1.0,
+    -1.0
+  ],
+  "aggregated_solver_success": true,
+  "aggregated_message": "Optimization terminated successfully",
+  "aggregated_solution_error": 1.154700538379251,
+  "central_difference_of_minimum": [
+    0.4999999999311111,
+    0.49999999987559995,
+    0.4999999999311111
+  ],
+  "distance_to_physical_normal_cone": 0.28867513452299043,
+  "true_contact_rows": [
+    [
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "true_multipliers": [
+    0.6666666666666667,
+    0.6666666666666666
+  ],
+  "criterion": "Explicit force/KKT error<1e-10 and solution<1e-8; min-Jacobian outside physical normal cone by>0.01",
+  "significance": "Finite differences of a minimum over changing owners can produce a vector outside the admissible contact normal cone; preserve material feature Jacobians explicitly.",
+  "actual_PET_cause_confirmed": false,
+  "actual_PET_state_changed": false,
+  "next": "Feature-owned material contact rows / witness exchange, analytic point Jacobians; independently recertify real PET force, gap and1% migration convergence",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/contact/owner_contract1/producer.py",
+    "SHA256": "bffad1b9f6ce5fa20976b24509a4b1e8e73b6e5e7ada8c405e7662623ad6b946"
+  }
+}

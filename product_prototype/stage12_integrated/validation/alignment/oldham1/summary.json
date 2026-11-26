@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "scope": "IDEAL ZERO-FRICTION SLIDING KINEMATICS / TRANSLATIONAL INERTIA REFERENCE ONLY",
+  "rows": [
+    {
+      "angular_FD_step_rad": 0.001,
+      "max_loop_position_error_m": 5.587850095852341e-20,
+      "velocity_relative": 6.666667601361347e-07,
+      "acceleration_relative": 3.335127451965865e-07,
+      "translation_energy_relative": 1.3333330756148953e-06
+    },
+    {
+      "angular_FD_step_rad": 0.0005,
+      "max_loop_position_error_m": 5.587850095852341e-20,
+      "velocity_relative": 1.6666752031720862e-07,
+      "acceleration_relative": 8.395244214188853e-08,
+      "translation_energy_relative": 3.3333501281429534e-07
+    }
+  ],
+  "nominal_disc_mass_kg": 0.00115,
+  "offset_m": 0.0002,
+  "scenario_rpm": 300,
+  "translation_inertia_kg_m2": 4.6e-11,
+  "nominal_disc_translation_force_magnitude_N": 0.0004540018024501105,
+  "manufacturer_source": "https://www.huco.com/shop/couplings/oldham-couplings/oldham-disc/238-19",
+  "published_disc": {
+    "OD_mm": 19.1,
+    "parallel_compensation_mm": 0.2,
+    "angular_compensation_deg": 0.5,
+    "axial_compensation_mm": 0.1,
+    "peak_torque_Nm": 0.43,
+    "static_break_torque_Nm": 2.0,
+    "torsional_stiffness_Nm_rad": 115.0
+  },
+  "product_alignment_reaction_qualified": false,
+  "force_cap_qualified": false,
+  "missing": [
+    "Actual two hubs, bores and shaft4.4mm adaptation",
+    "Contact/friction/preload and actual restoring force",
+    "Combined offset/angular/axial derating and motor bearing load envelope",
+    "Actual rotor inertia and thermal/life"
+  ],
+  "warning": "Disc-only data; peak/static break are not guaranteed torque-limiter release. Nominal mass is not an inertia upper bound. Translation force is NOT total motor reaction.",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/alignment/oldham1/producer.py",
+    "SHA256": "6193ba5ed252f7c082605053210279dc67f9fff8d3c7362421abcc53f9cfd191"
+  }
+}

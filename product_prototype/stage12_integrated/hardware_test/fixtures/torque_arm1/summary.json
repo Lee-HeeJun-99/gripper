@@ -1,0 +1,93 @@
+{
+  "status": "FIXTURE_GEOMETRY_PASS",
+  "scope": "FOUR FINITE BENCH FIXTURE PARTS / NOMINAL COMMON ONLY, NOT PROOF LOAD OR PURCHASED SENSOR ADAPTER",
+  "parts": [
+    {
+      "part": "TORQUE_ARM",
+      "valid_single_positive": true,
+      "volume_mm3": 8375.35031582712,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/TORQUE_ARM.step",
+        "SHA256": "6366c3531d6df3c238fbf0e551f9298213cf6f3645e911571fbf1c55c33bd9c5"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/TORQUE_ARM.stl",
+        "SHA256": "c692bf31c231ce1b3c188070e18ed658a0ea36d6a9c3dd56b2ec99244e43bd80"
+      }
+    },
+    {
+      "part": "TORQUE_PIN",
+      "valid_single_positive": true,
+      "volume_mm3": 24.411274475821447,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/TORQUE_PIN.step",
+        "SHA256": "71c17aaa62ef2072f0fa094cd8660d7dc9ba7038524d0156673f6635c7adf2cc"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/TORQUE_PIN.stl",
+        "SHA256": "aabff10df4896231df4e55906677a43f042c9aaceae52a0350d3ad6a5fb910c0"
+      }
+    },
+    {
+      "part": "PLUG_L",
+      "valid_single_positive": true,
+      "volume_mm3": 12.566370614359174,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/PLUG_L.step",
+        "SHA256": "c1547fa18f7b552b8fe49eff67201173b394601eff36cf001709dccc3642949b"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/PLUG_L.stl",
+        "SHA256": "557307772bbe3ab809b55b2fe8295dc65fea38f555b8b6111e4c396b6e4ab707"
+      }
+    },
+    {
+      "part": "PLUG_R",
+      "valid_single_positive": true,
+      "volume_mm3": 12.566370614359174,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/PLUG_R.step",
+        "SHA256": "dd67ee8fd613e54f82a7054663274b508bbb5663a40994b4702e868b98a1d674"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/PLUG_R.stl",
+        "SHA256": "5aad120b377876458cc8da6dcff85656e0cf3a25e748af40bcc27c864c3f5dd5"
+      }
+    }
+  ],
+  "hits": [],
+  "assembly": {
+    "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/ASSEMBLY.step",
+    "SHA256": "a68ac35f9f1b66c736f2e057fa8f0eb51b195feee31c0c873cad7af2af266f24"
+  },
+  "nominal_force_arm_m": 0.1,
+  "reference_torque_Nm": 0.45,
+  "reference_force_N": 4.5,
+  "gross_arm_bending_reference_Pa": 12500000.0,
+  "load_cell_requirement": {
+    "range_N": [
+      -20,
+      20
+    ],
+    "resolution_N": 0.001,
+    "lever_measurement_resolution_mm": 0.01
+  },
+  "required_test_cutset": [
+    "Drum",
+    "Drum nipple cap and3bolts",
+    "Production crosspin and plugs",
+    "Idler/other obstructing production hardware; use separate supported bench shaft module"
+  ],
+  "interfaces": [
+    "8.10mm bore on existing8mm shaft shoulder",
+    "1.49mmx14custom pin in1.51bore across shaft/pin axisY2.5",
+    "M2x0.4-6H threaded4mm ends; nominal major CAD is NOT tap-drill"
+  ],
+  "warning": "Simple plug cylinders are thread envelopes, not socket/tool models. Sensor end link and bench support must be selected/modelled. No powered calibration, proof capacity, fatigue or exact clamp clearance certification.",
+  "physical_records_measured": false,
+  "powered_authorization": false,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm1/producer.py",
+    "SHA256": "8411281043fb8a626520814d2e278d35ac2a8e4bcbf6ab445063ad0289b5b173"
+  }
+}

@@ -1,5 +1,22 @@
 # Integrated checkpoint — 2026-11-26
 
+Cycle3-7 mid-session: actual RevAD funnel3fronts +304part STEP; adaptive
+integral/face-model/BOM/local continuous-aperture audits pass bounded scopes.
+Actual exact circular-arc PET envelopes clear AD at stored32segment states;
+ruled-loft earlier FAIL preserved. Force and migration still FAIL, including
+analytic-gradient AD6 and independent normal-cone recovery. owner_contract1
+proves a numerical minimum-Jacobian can leave the physical normal cone and
+SLSQP can report success at a wrong equilibrium. Does NOT by itself establish
+the actual PET failure's only cause. Material-owned exchange is now actually
+running material_owner2 under420s/4GiB; do not duplicate its output directory.
+
+Actual HPMC clearance-gauge CAD and screening do not qualify a force cap.
+Ideal Oldham reference,4part counterbalanced torque fixture,11sampled support
+poses and strict blank recording/software controls executed. No hardware data.
+Evidence audit2 passes44result/failure hashes with archival source resolution.
+AA/oldStage2 directories remain unchanged. Manager is prepared/offline-tested,
+not activated. This is a mid-session local commit, not an execution stop.
+
 Cycle2: finite_pet1 inter-node gap FAIL preserved; exact circular-arc feature
 constraints in finite_pet2 pass the bounded endpoint model. No end stop control
 reveals1.40643mm migration. Actual RevAC three shortened PETs +304part STEP/BOM

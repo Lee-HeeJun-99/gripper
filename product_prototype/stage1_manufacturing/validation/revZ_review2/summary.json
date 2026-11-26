@@ -1,0 +1,107 @@
+{
+  "status": "MANUFACTURING_FILE_AND_FEATURE_AUDIT_PASS",
+  "case": "revZ_play_groove",
+  "checks": [
+    {
+      "check": "BOM_unique_actual_IDs",
+      "passed": true,
+      "detail": 304
+    },
+    {
+      "check": "actual_part_STEP_STL_and_SHA_links",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "all_made_trimmed_material_process_interface_drawings",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "actual_faces_complete",
+      "passed": true,
+      "detail": 683
+    },
+    {
+      "check": "actual_face_catalogue_matches_current_part_SHA",
+      "passed": true,
+      "detail": "Every recorded face linked to actual part source"
+    },
+    {
+      "check": "F0_SHAFT_actual_cylinder",
+      "passed": true,
+      "detail": 4.986
+    },
+    {
+      "check": "F0_PEDESTAL_L_actual_cylinder",
+      "passed": true,
+      "detail": 16.03
+    },
+    {
+      "check": "F0_PEDESTAL_R_actual_cylinder",
+      "passed": true,
+      "detail": 16.03
+    },
+    {
+      "check": "F0_DRUM_actual_cylinder",
+      "passed": true,
+      "detail": 8.1
+    },
+    {
+      "check": "F0_IDLER_actual_cylinder",
+      "passed": true,
+      "detail": 3.04
+    },
+    {
+      "check": "F0_DRUM_actual_broad_floor",
+      "passed": true,
+      "detail": "ACTIVE broad floor21.86, actual0.10corner; old circular0.30profile is superseded"
+    },
+    {
+      "check": "F0_IDLER_actual_broad_floor",
+      "passed": true,
+      "detail": "ACTIVE broad floor21.86, actual0.10corner; old circular0.30profile is superseded"
+    },
+    {
+      "check": "DIN7991_actual90deg_countersink",
+      "passed": true,
+      "detail": "Actual front bearing cone retained"
+    },
+    {
+      "check": "two_end_tendons_purchased_as_whole",
+      "passed": true,
+      "detail": "Three whole cables, no loose swage-end purchases"
+    },
+    {
+      "check": "current_review_packet_identifies_itself",
+      "passed": true,
+      "detail": "No self-promotion of review drawings to shop approval"
+    }
+  ],
+  "open_issues": [
+    {
+      "id": "shop_process_acceptance",
+      "state": "NOT MEASURED",
+      "reason": "Review drawings/MBD do not by themselves verify actual micro-machining reach, thin0.45mm rim process capability or complete shop dimensional acceptance."
+    },
+    {
+      "id": "full_tolerance_clearance",
+      "state": "OPEN",
+      "reason": "Nominal and wire-size/length extrema tested; finish retainer stack-envelope disposition and coupled fit/geometry tolerance review before shop release."
+    },
+    {
+      "id": "physical_strength",
+      "state": "NOT MEASURED_STAGE2",
+      "reason": "No clamp preload/pin shear/swage pullout/fatigue/drive performance measurement; not a Stage1 manufacturing geometry PASS."
+    }
+  ],
+  "shop_release": false,
+  "stage1_release": false,
+  "input_sha256": {
+    "cad/exports/revZ_play_groove/summary.json": "f04024395c3b8e1d0216fee03589ad63b174d27e0d30d26ea7ea1e55bf1c41e6",
+    "bom/revZ_packet2/STAGE1_BOM.csv": "ef064f963fecba8c0376f0f97fffecc36b837dc55bfe95f460d58435f4336840",
+    "validation/revZ_faces2/FACE_FEATURES.csv": "327d1027e30f84b873b931808cce9fff0c556c6b769e958d6f0d2b1e81bb1db0",
+    "cad/drawings/revZ_packet2/summary.json": "9da090aab976b573359891ce6d04cb878b0adce953dd5760d0d11d659b4ad4ca"
+  },
+  "scope": "Actual source/part/BOM/drawing/hidden-face dimensions and declared requirements checked. This bounded automatic audit is NOT a process-capability or physical certification."
+}

@@ -1,0 +1,81 @@
+{
+  "status": "SHAFT_HOLD_AND_SERVICE_PASS",
+  "case": "revY_nut_passage",
+  "counterhold_hits": [],
+  "rotation_stop_common_mm3": 0.3065489966023871,
+  "nut_swing_hits": [],
+  "paths": [
+    {
+      "name": "F0_COUPLING_UPPER",
+      "members": [
+        "F0_COUPLING_UPPER"
+      ],
+      "cutset": [
+        "F0_COUPLING_BOLT_74_-21",
+        "F0_COUPLING_BOLT_74_-9.8",
+        "F0_COUPLING_BOLT_86_-21",
+        "F0_COUPLING_BOLT_86_-9.8",
+        "F0_COUPLING_LOWER"
+      ],
+      "samples": 33,
+      "hits": []
+    },
+    {
+      "name": "F0_COUPLING_LOWER",
+      "members": [
+        "F0_COUPLING_LOWER"
+      ],
+      "cutset": [
+        "F0_COUPLING_BOLT_74_-21",
+        "F0_COUPLING_BOLT_74_-9.8",
+        "F0_COUPLING_BOLT_86_-21",
+        "F0_COUPLING_BOLT_86_-9.8",
+        "F0_COUPLING_UPPER"
+      ],
+      "samples": 33,
+      "hits": []
+    },
+    {
+      "name": "motor_module_lift",
+      "members": [
+        "F0_MF0_BOLT",
+        "F0_MF1_BOLT",
+        "F0_MOTOR",
+        "F0_MOTOR_BOLT_19.5_35.5",
+        "F0_MOTOR_BOLT_19.5_4.5",
+        "F0_MOTOR_BOLT_50.5_35.5",
+        "F0_MOTOR_BOLT_50.5_4.5",
+        "F0_MOTOR_PLATE"
+      ],
+      "cutset": [
+        "F0_COUPLING_BOLT_74_-21",
+        "F0_COUPLING_BOLT_74_-9.8",
+        "F0_COUPLING_BOLT_86_-21",
+        "F0_COUPLING_BOLT_86_-9.8",
+        "F0_COUPLING_LOWER",
+        "F0_COUPLING_UPPER",
+        "F0_MF0_NUT",
+        "F0_MF1_NUT"
+      ],
+      "samples": 31,
+      "hits": []
+    },
+    {
+      "name": "idler_base_screw_clear_then_side",
+      "members": [
+        "F0_IDLER_BASE_BOLT"
+      ],
+      "cutset": [
+        "F0_DRUM_FACTORY_NIPPLE",
+        "F0_IDLER_BASE_NUT",
+        "F0_TENDON_WIRE",
+        "F0_TIP_FACTORY_NIPPLE"
+      ],
+      "samples": 25,
+      "hits": []
+    }
+  ],
+  "scope": "Finite AF4 tool and actual shafts/nut tools; sampled60deg nut swing and staged module paths, NOT CCD/torque/preload/strength. Slide nut over plain grip BEFORE installing counterhold, hand-thread then counterhold for final adjustment. Remove counterhold before withdrawing nut. Coupling removed only for service, full operating CAD retained.",
+  "input_sha256": "78d646e33cea506e7d509403753611c5035bb749a0b7dc36608494c3b4041abb",
+  "stage1_release": false
+}

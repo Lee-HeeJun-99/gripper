@@ -123,7 +123,7 @@ def drive_delta(old):
  return new,notes,['F0_COUPLING']
 
 def main():
- a=argparse.ArgumentParser();a.add_argument('--tag',required=True);a.add_argument('--base',default='revH');a.add_argument('--phase',choices=['drive','mechanisms','bend','wire','fit','motor','relief','tolerance','fillet','preload','counterhold','nutpass'],default='drive');args=a.parse_args();start=time.monotonic()
+ a=argparse.ArgumentParser();a.add_argument('--tag',required=True);a.add_argument('--base',default='revH');a.add_argument('--phase',choices=['drive','mechanisms','bend','wire','fit','motor','relief','tolerance','fillet','preload','counterhold','nutpass','playgroove','heel'],default='drive');args=a.parse_args();start=time.monotonic()
  out=ROOT/'cad/exports'/args.tag;out.mkdir(exist_ok=False)
  shutil.copyfile(__file__,out/'producer.py')
  if args.phase=='mechanisms':shutil.copyfile(ROOT/'scripts/mechanisms_stage1.py',out/'mechanisms_producer.py')
@@ -133,6 +133,8 @@ def main():
  if args.phase=='motor':shutil.copyfile(ROOT/'scripts/sourced_motor_stage1.py',out/'motor_producer.py')
  if args.phase=='relief':shutil.copyfile(ROOT/'scripts/terminal_relief_stage1.py',out/'relief_producer.py')
  if args.phase=='tolerance':shutil.copyfile(ROOT/'scripts/groove_tolerance_stage1.py',out/'tolerance_producer.py')
+ if args.phase=='playgroove':shutil.copyfile(ROOT/'scripts/play_groove_stage1.py',out/'playgroove_producer.py')
+ if args.phase=='heel':shutil.copyfile(ROOT/'scripts/heel_relief_stage1.py',out/'heel_producer.py')
  if args.phase=='fillet':shutil.copyfile(ROOT/'scripts/receiver_fillet_stage1.py',out/'fillet_producer.py')
  if args.phase=='preload':shutil.copyfile(ROOT/'scripts/pivot_preload_stage1.py',out/'preload_producer.py')
  if args.phase=='counterhold':shutil.copyfile(ROOT/'scripts/shaft_counterhold_stage1.py',out/'counterhold_producer.py')
@@ -146,6 +148,8 @@ def main():
  if args.phase=='motor':deps.append(ROOT/'scripts/sourced_motor_stage1.py')
  if args.phase=='relief':deps.append(ROOT/'scripts/terminal_relief_stage1.py')
  if args.phase=='tolerance':deps.append(ROOT/'scripts/groove_tolerance_stage1.py')
+ if args.phase=='playgroove':deps.append(ROOT/'scripts/play_groove_stage1.py')
+ if args.phase=='heel':deps.extend([ROOT/'scripts/heel_relief_stage1.py',ROOT/'scripts/receiver_fillet_stage1.py'])
  if args.phase=='fillet':deps.extend([ROOT/'scripts/receiver_fillet_stage1.py',ROOT/'scripts/mechanisms_stage1.py'])
  if args.phase=='preload':deps.extend([ROOT/'scripts/pivot_preload_stage1.py',ROOT/'scripts/mechanisms_stage1.py'])
  if args.phase=='counterhold':deps.append(ROOT/'scripts/shaft_counterhold_stage1.py')
@@ -177,6 +181,12 @@ def main():
  elif args.phase=='tolerance':
   from groove_tolerance_stage1 import tolerance_delta
   changed,notes,removed=tolerance_delta(allparts)
+ elif args.phase=='playgroove':
+  from play_groove_stage1 import play_delta
+  changed,notes,removed=play_delta(allparts)
+ elif args.phase=='heel':
+  from heel_relief_stage1 import heel_delta
+  changed,notes,removed=heel_delta(allparts)
  elif args.phase=='fillet':
   from receiver_fillet_stage1 import fillet_delta
   changed,notes,removed=fillet_delta(allparts)
@@ -220,6 +230,12 @@ def main():
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],terminal_inner_relief=RELIEF);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  if args.phase=='tolerance':
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],groove_root_radius_mm=10.98,groove_profile_radius_mm=.30,groove_profile_limits_mm=[.30,.31],groove_major_radius_mm=11.28);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='playgroove':
+  from play_groove_stage1 import CONFIG
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],**CONFIG);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='heel':
+  from heel_relief_stage1 import CONFIG
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],**CONFIG);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  if args.phase=='fillet':
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],receiver_pocket_blend_mm=.35,NI_envelope='Amax2.8/Bmin3/Cmax3.8/Dmax6; fixed-outlet union head3+stem3');result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  if args.phase=='preload':

@@ -21,7 +21,9 @@ def main():
  check('actual_face_catalogue_matches_current_part_SHA',all(r['STEP_SHA256']==idx['parts'][r['part_ID']]['sha256'] for r in faces),'Every recorded face linked to actual part source')
  def surf(n,kind,key,value):return any(r['part_ID']==n and kind in r['surface'] and abs(ast.literal_eval(r['parameters']).get(key,-999)-value)<1e-6 for r in faces)
  for n,d in [('F0_SHAFT',4.986),('F0_PEDESTAL_L',16.03),('F0_PEDESTAL_R',16.03),('F0_DRUM',8.10),('F0_IDLER',3.040)]:check(n+'_actual_cylinder',surf(n,'Cylinder','diameter_mm',d),d)
- for n in ('F0_DRUM','F0_IDLER'):check(n+'_actual_groove_profile',surf(n,'Torus','minor_radius_mm',.30) and surf(n,'Torus','major_radius_mm',11.28),'Actual0.30minor/11.28major, not superseded0.28')
+ for n in ('F0_DRUM','F0_IDLER'):
+  if idx['design_geometry'].get('broad_groove_floor_radius_mm'):check(n+'_actual_broad_floor',surf(n,'Cylinder','diameter_mm',21.86) and surf(n,'Torus','minor_radius_mm',.10),'ACTIVE broad floor21.86, actual0.10corner; old circular0.30profile is superseded')
+  else:check(n+'_actual_groove_profile',surf(n,'Torus','minor_radius_mm',.30) and surf(n,'Torus','major_radius_mm',11.28),'Actual0.30minor/11.28major, not superseded0.28')
  check('DIN7991_actual90deg_countersink',surf('F0_TERMINAL_FRONT','Cone','included_angle_deg',90),'Actual front bearing cone retained')
  check('two_end_tendons_purchased_as_whole',sum(r['part_ID'].endswith('TENDON_WIRE') and r['purchase_quantity']=='1' for r in rows)==3 and all(r['purchase_quantity']=='0' for r in rows if 'FACTORY_NIPPLE' in r['part_ID']),'Three whole cables, no loose swage-end purchases')
  check('current_review_packet_identifies_itself',draw['case']==a.case and draw['shop_release'] is False,'No self-promotion of review drawings to shop approval')

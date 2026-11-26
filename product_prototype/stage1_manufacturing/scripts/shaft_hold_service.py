@@ -43,6 +43,7 @@ def main():
   path(name,{name},coupling-{name},offsets)
  module={n for n in s if n in ('F0_MOTOR','F0_MOTOR_PLATE','F0_MF0_BOLT','F0_MF1_BOLT') or n.startswith('F0_MOTOR_BOLT')}
  path('motor_module_lift',module,coupling|{'F0_MF0_NUT','F0_MF1_NUT'},[(0,0,z) for z in np.linspace(0,60,31)])
+ path('idler_base_screw_clear_then_side',{'F0_IDLER_BASE_BOLT'},{'F0_IDLER_BASE_NUT','F0_TENDON_WIRE','F0_DRUM_FACTORY_NIPPLE','F0_TIP_FACTORY_NIPPLE'},[(0,0,z) for z in np.linspace(0,12.1,14)]+[(0,-y,12.1) for y in np.linspace(0,20,11)])
  result=dict(status='SHAFT_HOLD_AND_SERVICE_PASS' if not hits and stop>1e-7 and not counterhits and not any(r['hits'] for r in paths) else 'SHAFT_HOLD_AND_SERVICE_FAIL',case=a.case,counterhold_hits=hits,rotation_stop_common_mm3=stop,nut_swing_hits=counterhits,paths=paths,scope='Finite AF4 tool and actual shafts/nut tools; sampled60deg nut swing and staged module paths, NOT CCD/torque/preload/strength. Slide nut over plain grip BEFORE installing counterhold, hand-thread then counterhold for final adjustment. Remove counterhold before withdrawing nut. Coupling removed only for service, full operating CAD retained.',input_sha256=sha(src),stage1_release=False)
  (out/'summary.json').write_text(json.dumps(result,indent=2));shutil.copyfile(__file__,out/'producer.py');print(json.dumps(dict(status=result['status'],counterhold_hits=hits,stop=stop,nut_hits=len(counterhits),paths=[(r['name'],len(r['hits'])) for r in paths])))
 if __name__=='__main__':main()

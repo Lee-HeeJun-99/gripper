@@ -22,7 +22,9 @@ def main():
    if typ==GeomAbs_Cylinder:
     c=ad.Cylinder();r=c.Radius();axis=xyz(c.Axis().Direction());point=xyz(c.Axis().Location())
     if 'PEDESTAL' in n and abs(r-8.015)<1e-6:note='CUSTOM16.030+-0.005 bore envelope; paired coax0.010DIAMETER, NOT16H6'
-    elif n=='F0_SHAFT' and abs(r-2.493)<1e-6:note='5f6 journal envelope4.982..4.990; common coax0.005DIAMETER; M5x0.5 thread-zone overrides explicitly required'
+    elif n=='F0_SHAFT' and abs(r-2.493)<1e-6:
+     band=bounds(face);journal=(-8.5-1e-5<=band[1] and band[4]<=-3.5+1e-5) or (9-1e-5<=band[1] and band[4]<=14+1e-5)
+     note='5f6 BEARING journal4.982..4.990; common coax0.005DIAMETER' if journal else 'M5x0.5-6g nominal MAJOR cylinder, NOT5f6 journal. Fully formed zones/runouts/entry lead controlled by current datum sheet; gauge actual6g/6H'
     elif abs(r-1)<1e-6:
      yaxis=abs(axis[1])>.999;xaxis=abs(axis[0])>.999;zaxis=abs(axis[2])>.999
      if n=='F0_DRUM' and ((yaxis and any(abs(point[0]-x)<1e-5 and abs(point[2]-z)<1e-5 for x,z in ((69,26),(91,26),(80,33)))) or (xaxis and abs(point[1]-2.5)<1e-5 and abs(point[2]-20)<1e-5)):note='M2x0.4-6H TAP; nominal major envelope, CUT drill1.6, gauge6H; NOT drill2.0'

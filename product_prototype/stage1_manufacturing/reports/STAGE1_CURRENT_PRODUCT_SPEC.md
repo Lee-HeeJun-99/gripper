@@ -1,4 +1,4 @@
-# Current Stage1 prototype design — Rev Y
+# Current Stage1 prototype design — Rev Z
 
 This document supersedes old RevH dimensional prose for CURRENT manufacture;
 old RevA–H CAD, reports and results remain preserved. No B3 Holding or Native
@@ -26,7 +26,8 @@ Parallel-axis winch: independently625-Z P6 supported shaft; locating L and
 captured-floating R; actual outer caps/inner stops,8mm shoulders/fine nuts;
 positive transverse1.49..1.50x26pin, retained by real ISO4026M2x4 plugs.
 Actual split coupling/bolts, not fictional torque. Drum6061-T6, POM-C Idler;
-U majorR11.28/profileR0.300+0.010/-0, actualrootD21.960+0/-0.020. Reference
+ACTIVE broad U floorR10.930/rootD21.860+0/-0.010, flatY±0.450MIN and0.10corners.
+This supersedes oldR0.30circular profile in inherited metadata. Reference
 wire centreR11.25; its prescribed takeup16.935839mm corresponds86.25352°.
 Finished-length indexing±1.27324° gives expected rotor interval approximately
 -1.27324..87.52676°. Single-layer maximum wrap259.62°; no multi-coil operation
@@ -52,6 +53,14 @@ and NEW4.45/5.05 stepped coupling jaws. Explicit6g/6H and extra plain gauge
 acceptance are mandatory. Actual nut passage,40finite tool/extraction jobs,
 shaft counterhold plus coupling/motor-module service paths passed their
 geometric tests. No torque capacity is inferred from noninterference.
+
+Rev Ycombined-play test FAILED (maxnative common15.011668mm³). Rev Zchanges
+only6Drum/Idler bodies by actual subtraction;298parts exactly unchanged.
+Native full-torus±0.045radial/±0.155axial uncertainty common0; conservative
+flat-floor margins0.015radial/0.035axial. Newminimum root21.85 retains42d
+recommendation with0.01margin; no fatigue certification. Removal-only proof
+transfers foreign-clearance evidence, NOT strength/stiffness/mass/inertia or
+working radius. Loaded wire tracking and end travel need Stage2 measurement.
 Replaceable sheet/rail cartridge and de-tensioned two-ended Tendon service
 are defined in current assembly guide; twelve rigid paths sampled, manual
 flexible wire peeling is NOT continuous wire-service simulation.

@@ -1,0 +1,123 @@
+{
+  "status": "BEND_OUTLET_LOCAL_FIT_DESIGN_PASS",
+  "support_profile": [
+    {
+      "part": "F0_DRUM",
+      "actual_material_outside_ideal_U_floor_mm3": 0.0,
+      "full_nominal_wire_torus_intersection_mm3": 0.0
+    },
+    {
+      "part": "F0_IDLER",
+      "actual_material_outside_ideal_U_floor_mm3": 0.0,
+      "full_nominal_wire_torus_intersection_mm3": 0.0
+    }
+  ],
+  "maximum_tangent_float_error_mm": 3.552713678800501e-15,
+  "nominal_wire_profile_containment": ".25+abs(11.25-11.28)=.28; outward-open U floor bounds every planar tangent capsule by radial-distance inequality",
+  "factory_join": {
+    "outlet_plane_X_mm": 80.0,
+    "expected_X_mm": 80,
+    "max_wrap_deg": 258.3463577843486,
+    "wire_after_halfturn_Z_lower_mm": 22.221944382200363,
+    "nipple_Zmax_mm": 10.65,
+    "after_halfturn_clearance_mm": 11.571944382200362,
+    "tip_outlet_clearance_radius_mm": 0.15000000000000002,
+    "minimum_terminal_diameter_mm": 2.2,
+    "wire_exit_diameter_mm": 0.8
+  },
+  "captive_nuts": [
+    {
+      "nut": "F0_SWIVEL_NUT_39_-86.5",
+      "nominal_body_intersection_mm3": 0.0,
+      "attempted30deg_rotation_block_mm3": 0.419572173027809
+    },
+    {
+      "nut": "F0_SWIVEL_NUT_39_-74.5",
+      "nominal_body_intersection_mm3": 0.0,
+      "attempted30deg_rotation_block_mm3": 0.41957217303315997
+    },
+    {
+      "nut": "F0_SWIVEL_NUT_47_-86.5",
+      "nominal_body_intersection_mm3": 0.0,
+      "attempted30deg_rotation_block_mm3": 0.4195721730329902
+    },
+    {
+      "nut": "F0_SWIVEL_NUT_47_-74.5",
+      "nominal_body_intersection_mm3": 0.0,
+      "attempted30deg_rotation_block_mm3": 0.4195721730346579
+    }
+  ],
+  "fit": {
+    "SKF_P6_diameter_series": 2,
+    "inner_mean_mm": [
+      4.993,
+      5.0
+    ],
+    "inner_single_plane_variation_mm": 0.005,
+    "inner_local_diameter_bound_mm": [
+      4.9905,
+      5.0025
+    ],
+    "shaft_f6_mm": [
+      4.982,
+      4.99
+    ],
+    "local_diametral_clearance_mm": [
+      0.0005,
+      0.0205
+    ],
+    "outer_sealed_single_plane_variation_mm": 0.009,
+    "outer_local_diameter_bound_mm": [
+      15.9885,
+      16.0045
+    ],
+    "housing_custom_limits_mm": [
+      16.025,
+      16.035
+    ],
+    "housing_local_diametral_clearance_mm": [
+      0.02049999999999841,
+      0.046499999999999986
+    ],
+    "scope": "Bounds of single diameters, NOT a guarantee of inscribed/circumscribed envelope or creep/life. Require incoming GO plug4.990, outer ring gauge16.006 and paired seat/journal max-material envelope inspection before hardware use; NOT MEASURED.",
+    "source": "https://cdn.skfmediahub.skf.com/api/public/0901d1968094ddb3/pdf_preview_medium/0901d1968094ddb3_pdf_preview_medium.pdf",
+    "source_table": "SKF radial P6 table3 p39; diameter series2; sealed outer ring variation9um, inner variation5um",
+    "actual_CAD_cylinder_radii_mm": {
+      "F0_PEDESTAL_L": [
+        1.5,
+        1.7,
+        6.5,
+        8.015
+      ],
+      "F0_PEDESTAL_R": [
+        1.5,
+        1.7,
+        6.5,
+        8.015
+      ]
+    },
+    "housing_coax_diameter_mm": 0.01,
+    "shaft_coax_diameter_mm": 0.005,
+    "combined_axis_offset_limit_mm": 0.0075,
+    "local_diameter_radial_margin_mm": 0.0029999999999992047,
+    "incoming_envelope_checks": {
+      "inner_GO_plug_mm": 4.991,
+      "outer_max_ring_mm": 16.006,
+      "journal_max_material_envelope_mm": 4.99,
+      "housing_min_material_bore_envelope_mm": 16.025,
+      "scope": "Design acceptance limits, not measured lots; reject/select any supplier part not meeting these envelopes."
+    },
+    "inspected_envelope_radial_margin_design_mm": 0.002499999999998899
+  },
+  "recommended_pulley_condition": {
+    "root_D_mm": 22,
+    "maximum_wire_D_mm": 0.52,
+    "recommendation_ratio": 42,
+    "required_D_mm": 21.84,
+    "margin_mm": 0.16,
+    "source": "https://www.carlstahl-technocables.com/gb/en/products/pulleys/",
+    "fatigue_test": "NOT MEASURED"
+  },
+  "source_sha256": "78d646e33cea506e7d509403753611c5035bb749a0b7dc36608494c3b4041abb",
+  "stage1_release": false
+}

@@ -1,4 +1,4 @@
-# Manufacturing definition and acceptance — Rev Y candidate
+# Manufacturing definition and acceptance — Rev Z candidate
 
 Authority order: controlled interface limits below and per-part BOM notes;
 actual native STEP; case-linked face catalogue; dimensioned three-view SVG. The STEP
@@ -25,13 +25,14 @@ and gauges must be accepted by selected shop before fabrication authorization.
 | Bearing housings |16.030±0.005 MIN-bore-envelope, NOT16H6; pair coax0.010DIAMETER to commonA; line-bore mounted fixture |
 | Bearing stops | ID13, corner<=0.20; L cavity5.010..5.030, R5.580..5.620, deliberate endplay, no outer-race preload |
 | Incoming SKF625-Z | requireP6; inner GO4.991, outer max-ring16.006; select/reject lots, NOT assumed guaranteed envelope from mean diameter |
-| Groove geometry | majorR11.28, profileR0.300+0.010/-0, actual root21.960+0/-0.020; nominal cable centre11.25 is prescribed assembly path, not measured seating law |
+| ACTIVE groove geometry | broad U floorR10.930, rootD21.860+0/-0.010; flat spanY±0.450MIN, cornerR0.10MAX to sidesY±0.550. PreviousR0.30torus metadata is superseded provenance ONLY. Inspect flat span/root/profile at20±1°C. Custom form tool1.10overall/0.90flat/0.10corners; no unverified bought-tool claim |
+| Combined pulley-play envelope |radial0.045/axial0.155mm vs fixed nominal wire path; incoming SKF local diameter, carrier/journal errors and maximum left endplay included. Maxwire0.52 analytic radial margin0.015/axial0.035. Rootmin21.85 vs42d21.84 margin0.01 is recommendation NOT fatigue test. This does not certify all other possible assembled deviations or driven tracking |
 | Cable | finished7x7 stainless0.48..0.52;190.809325±0.25 free outlet length at0.1N reference; factory NI000032 both ends; pullout/fatigue NOT MEASURED |
 | NI pocket |4.20±0.02 x6.2; ACTUAL end blendsR0.350±0.005; manufacturer envelope stepped head3.8x3/stem2.8x3 to fixed outlet; no hand-swaging of loose fittings |
 | Drum cap |3M2x0.4-6H,6H gauge; prescribed3mm body engagement; M2 plugs ISO4026M2x4,0.9AF tool |
 | Swivel pivots |smooth axle1.995..2.000, fork eyes2.200±0.010; receiver3.040±0.010 on stationary sleeve3.000/-0.005 ID2.020+0.010/-0; pair fork common-axis0.010DIAMETER; sleeve matched to actual fork gap, not rotating-body width |
 | Idler axle |custom journal2.994..3.000 Y-2.5..3; head+Y; M2x0.4-6g fully formedY-7.6..-3, root1.55runoutY-3..-2.5 under metal shoulder washer; no M3 thread on this new axle |
-| Rotating-stack preload bypass |stationary sleeve/shaft shoulder and real washers carry clamp force; match thrust shims to actual spans for running gap0.025..0.035 and groove midplane±0.005; nominalgap0.030 is not measured free-spin |
+| Rotating-stack preload bypass |stationary sleeve/shaft shoulder and real washers carry clamp force; finish sleeveL=actual unstrained fork gap minus0.005..0.010, inspect insertion before nut draws ears onto sleeve. Re-match thrust shims to ACTUAL finished span for running gap0.025..0.035 and groove midplane±0.005; nominalgap0.030 is not measured free-spin. Fork deflection/strength/preload Stage2 |
 | Swivel nuts |4.10±0.02AF pocket,0.600±0.010deep; body halves3.000±0.010; incoming nutAF3.82..4.00/t1.35..1.60; MATCHED trim stockM2x8 to actual closed grip+actual nut+0.55, inspect final exposed tip0.50..0.65 and6g, label matching location |
 | Terminal relief |front inner X49..51/Y±7.3/Z-95..-83;1mm deep; retain actual DIN7991 cones toX48.7 and distal clamp belowZ-95; lateral bore web0.5 |
 | Skin/Rails |PET0.300±0.020;301spring strip0.200±0.010 x3.000±0.050; actual tapered width and index cut from STEP; no bond stiffness assumed |

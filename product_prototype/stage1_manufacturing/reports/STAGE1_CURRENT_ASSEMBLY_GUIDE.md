@@ -1,6 +1,6 @@
-# Current unpowered assembly — Rev Y manufacturing candidate
+# Current unpowered assembly — Rev Z manufacturing candidate
 
-Actual304part index: `cad/exports/revY_nut_passage/summary.json`. Inherited
+Actual304part index: `cad/exports/revZ_play_groove/summary.json`. Inherited
 STEP/STL paths in that index are part of this assembly, not missing exports.
 Manufacture NEW Palm from its actual STEP, not shifted-hole rework. All
 dimensions mm. No motor power or suspended object before Stage2 load tests.
@@ -59,6 +59,11 @@ M3:2.5mm; inspect specified6H. M5x0.5 fine nuts are not M5 coarse.
    and metal washers similarly bypass POM. Match running gaps0.025..0.035,
    groove midplane±0.005; inspect1µm-resolution gauges at20±1°C. No measured
    preload, free-spin or joint strength is claimed.
+   Finish sleeve0.005..0.010 shorter than actual unstrained fork opening,
+   then re-match shims to finished sleeve. Insert complete receiver/sleeve/
+   inner-shim group through OPEN fork from+Z, then slide2mm axle through eyes.
+   NEVER attempt to push3mm sleeve through2.2mm fork eyes. Reverse group
+   extraction after removing nut/axle; do not leave sleeve as a fixed obstacle.
 10. Refit right carrier/bearing and caps. Set L axial stop cavity5.010..5.030;
     R intentionally captured-floating5.580..5.620. Use actual key/nut pairs
     from `revR_two_tools1`, never an invisible counter-hold. Coupling is not
@@ -78,6 +83,13 @@ M3:2.5mm; inspect specified6H. M5x0.5 fine nuts are not M5 coarse.
     through the wire sweep envelope.
 
 ## Tendon length/indexing and service
+
+Use ACTIVE broad U pulleys, not previousR0.30circular-profile wheels. Combined
+bearing/journal/endplay uncertainty now has separate geometric disposition.
+Do not infer effective winding radius/actual cable tracking from prescribed
+centreline. Free length190.809325 includes186.809325external path PLUS4mm
+inside receiver from metal outlet to tangent exit; do not order186.809325 as
+the finished outlet-to-outlet length. Actual loaded stroke is a Stage2 test.
 
 Finished free wire between metal outlets190.809325±0.25 at design reference
 inspection tension0.1N. This is a procurement requirement, NOT a measured

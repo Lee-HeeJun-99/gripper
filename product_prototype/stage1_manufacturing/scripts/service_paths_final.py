@@ -8,6 +8,9 @@ def main():
  def starts(*p):return [n for n in names if n.startswith(tuple('F0_'+x for x in p))]
  coupling=starts('COUPLING');caps=starts('CAP_');nuts=starts('SHAFT_NUT','INNER_WASHER');right=starts('CAP_R','SHAFT_NUT_R','INNER_WASHER_R','BEARING_R','PEDESTAL_R')
  tipbody=starts('SWIVEL_LOWER','SWIVEL_UPPER','SWIVEL_BOLT','SWIVEL_NUT','TIP_FACTORY_NIPPLE')
+ # Compression sleeve cannot pass through2.2mm fork eyes: withdraw it
+ # WITH receiver/inner shims through the open fork, after removing axle.
+ if idx['design_geometry'].get('receiver_preload_sleeve'):tipbody+=starts('SWIVEL_SLEEVE')+[n for n in starts('SWIVEL_SPACER') if n.endswith(('_L','_R'))]
  idler=starts('IDLER');rootfast=starts('ROOT_BOLT','ROOT_NUT');finger=starts('SKIN','RAIL','TERMINAL','SWIVEL','TIP_FACTORY_NIPPLE')
  specs=[]
  for label,d in [('L',-1),('R',1)]:

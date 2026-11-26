@@ -1,4 +1,4 @@
-# Current manufacturing route — Rev Y mechanical prototype
+# Current manufacturing route — Rev Z mechanical prototype
 
 Controlled package and release decision must accompany the complete STEP,
 face catalogue, interface limits, BOM and current assembly guide. Do not
@@ -22,7 +22,11 @@ requirements are not actual material certificates or stock confirmations.
 3.6061Drum: turn U groove and flanges, machine accessible2mm-endmill rounded
    terminal pocket from+Y and all declared cap/pin holes. Machine annular cap
    separately; assemble positive pin/plugs before Idler access is obstructed.
-   POM-C Idler turned/reamed on common axis; certify0.30profile/root limits.
+   POM-C Idler turned/reamed on common axis. ACTIVE broad U floor/root:
+   ground custom form tool1.10overall/0.90flat/0.10corners (not0.90total),
+   actual floorD21.850..21.860, flatwidth>=0.900; inspect20±1°C. Finite tool
+   and eight radial approach positions checked; actual machining capability,
+   feed/runout/chatter/tool wear require shop acceptance, not fabricated data.
 4.303 split receiver halves: rough from billet, machine split/datum faces,
    pocket/exit and axle/hole axes; machine actual0.6deep head/nut recesses.
    Final3D ball finish actualR0.35ends using documented NS MRB230R0.35x4 or

@@ -1,0 +1,71 @@
+{
+  "status": "REMOVAL_ONLY_CLEARANCE_TRANSFER_PASS",
+  "case": "revZ_play_groove",
+  "base": "revY_nut_passage",
+  "changed": [
+    {
+      "part": "F0_DRUM",
+      "added_mm3": 0.0,
+      "removed_mm3": 23.973622729173258
+    },
+    {
+      "part": "F0_IDLER",
+      "added_mm3": 0.0,
+      "removed_mm3": 26.706960240387843
+    },
+    {
+      "part": "F1_DRUM",
+      "added_mm3": 0.0,
+      "removed_mm3": 23.973622725467067
+    },
+    {
+      "part": "F1_IDLER",
+      "added_mm3": 0.0,
+      "removed_mm3": 26.706960241494926
+    },
+    {
+      "part": "F2_DRUM",
+      "added_mm3": 0.0,
+      "removed_mm3": 23.973622726965914
+    },
+    {
+      "part": "F2_IDLER",
+      "added_mm3": 0.0,
+      "removed_mm3": 26.7069602414947
+    }
+  ],
+  "unchanged": 298,
+  "evidence": {
+    "revY_torque_protocol1": {
+      "path": "validation/revY_torque_protocol1/summary.json",
+      "sha256": "6f8402d6a839bc73c5a0d496a6bddd6215a4d7665cfc8da88d3836b1dc1dd8ae",
+      "status": "TORQUE_MOTION_SCREEN_PASS"
+    },
+    "revY_shaft_service1": {
+      "path": "validation/revY_shaft_service1/summary.json",
+      "sha256": "29d1df398c62d0891cba02a997ccbcb8bf286c88f91940d046a589ab38a599a0",
+      "status": "SHAFT_HOLD_AND_SERVICE_PASS"
+    },
+    "revY_fastener_joints1": {
+      "path": "validation/revY_fastener_joints1/summary.json",
+      "sha256": "06edb1d3781581bbe008f0abe9d8e6ca73b5a9eb121b7e03655f81febdb7fafd",
+      "status": "FASTENER_AXIAL_ENGAGEMENT_PASS"
+    },
+    "revY_preload_path1": {
+      "path": "validation/revY_preload_path1/summary.json",
+      "sha256": "48e797cc6510d93518922f4a3279071e4ceba91cb93716375709aa4850efed7d",
+      "status": "METAL_PRELOAD_BYPASS_DESIGN_PASS"
+    },
+    "revY_space1": {
+      "path": "validation/revY_space1/summary.json",
+      "sha256": "d953f53117506a639def65635a2e6d031276b51d1fd1ca1576416d68ce1d803b",
+      "status": "CASSETTE_SPACE_AND_WIRE_SECTOR_PASS"
+    }
+  },
+  "input_sha256": [
+    "78d646e33cea506e7d509403753611c5035bb749a0b7dc36608494c3b4041abb",
+    "f04024395c3b8e1d0216fee03589ad63b174d27e0d30d26ea7ea1e55bf1c41e6"
+  ],
+  "scope": "Only6Drum/Idler bodies lose material; unchanged fastener/shaft/coupling/sleeve/tool/fixture geometry and poses retain their proven nonintersection. Rotating parts with same prescribed transform also remain subsets. Does NOT transfer pulley seating/profile, strength/stiffness/mass/inertia/friction/dynamics or machining/retention capacity. Those require separate current-case checks.",
+  "stage1_release": false
+}

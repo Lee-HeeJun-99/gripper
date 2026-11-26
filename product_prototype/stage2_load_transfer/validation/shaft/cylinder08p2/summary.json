@@ -1,0 +1,92 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "force_balance": true,
+    "torque_balance": true,
+    "energy": true,
+    "quality": true,
+    "reference": false
+  },
+  "case": "analytic-cylinder-control",
+  "mode": "reference",
+  "h_mm": 0.8,
+  "order": 2,
+  "scope": "STATIC LOCAL TORSION COUPON; NOT ACTUAL PIN CONTACT OR SHAFT STRENGTH RELEASE",
+  "material": {
+    "E_Pa": 193000000000.0,
+    "nu": 0.3,
+    "basis": "assumed linear elasticity, not certified lot properties"
+  },
+  "input_torque_Nm": 0.001,
+  "twist_rad": 7.5060265976151285e-06,
+  "analytic_twist_rad": 7.322096264534435e-06,
+  "reference_relative_error": 0.025119900973111342,
+  "force_balance_N": [
+    1.1695505675035633e-14,
+    1.2035973956316288e-15,
+    -5.180925133352332e-14
+  ],
+  "torque_balance_Nm": -7.314976532488138e-18,
+  "energy_J": 3.753013298807719e-09,
+  "energy_relative_error": 4.121562121737132e-14,
+  "mesh_volume_m3": 3.0035404861951543e-07,
+  "min_quality": 0.40173283318511444,
+  "peak_unsmoothed_vm_Pa": 105453.7604431568,
+  "p95_vm_Pa": 103669.50244887125,
+  "nodes": 1175,
+  "elements": 4655,
+  "elapsed_s": 9.970858722925186,
+  "fixed_surface_tags": [
+    2
+  ],
+  "loaded_surface_tags": [
+    3
+  ],
+  "face_inventory": [
+    {
+      "tag": 1,
+      "type": "Cylinder",
+      "bounds_mm": [
+        77.7999999,
+        -18.0000001,
+        17.7999999,
+        82.2000001,
+        2.0000001,
+        22.2000001
+      ]
+    },
+    {
+      "tag": 2,
+      "type": "Plane",
+      "bounds_mm": [
+        77.7999999,
+        1.9999999,
+        17.7999999,
+        82.2000001,
+        2.0000001,
+        22.2000001
+      ]
+    },
+    {
+      "tag": 3,
+      "type": "Plane",
+      "bounds_mm": [
+        77.7999999,
+        -18.0000001,
+        17.7999999,
+        82.2000001,
+        -17.9999999,
+        22.2000001
+      ]
+    }
+  ],
+  "source_SHA256": "d2aae08a1087e6aacdbac3fb21a9433011ee89bbfcc03ac3e423d32ab05ac5b9",
+  "STEP_SHA256": null,
+  "binary_SHA256": "9db3090d3b720c57b76bcbfa01d13854823ae2698c91343c20bdd4c2b81f6317",
+  "gmsh_build": "Version: 4.15.2; License: GNU General Public License; Build OS: Linux64-sdk; Build date: 20260324; Build host: gmsh.info; Build options: 64Bit ALGLIB[contrib] ANN[contrib] Bamg Blas[petsc] Blossom Cgns DIntegration Dlopen DomHex Eigen[contrib] Fltk Gmm[contrib] Hxt Jpeg Kbipack Lapack[petsc] LinuxJoystick MathEx[contrib] Med Mesh Metis[contrib] Mmg Mpeg Netgen Nii2mesh ONELAB ONELABMetamodel OpenCASCADE OpenCASCADE-CAF OpenGL OpenMP OptHom PETSc Parser Plugins Png Post QuadMeshingTools QuadTri Solver TetGen/BR TinyXML2[contrib] Untangle Voro++[contrib] WinslowUntangler Zlib tinyobjloader; FLTK version: 1.3.11; PETSc version: 3.14.4 (real arithmtic); OCC version: 7.8.1; MED version: 4.1.0; Packaged by: geuzaine; Web site: https://gmsh.info; Issue tracker: https://gitlab.onelab.info/gmsh/gmsh/issues",
+  "scikit_fem": "12.0.2",
+  "scipy": "1.15.3",
+  "numpy": "2.2.6",
+  "field_SHA256": "db45f648d1907a7e91d8a01e5dfe5edbf08f59bfdc3c32e6094baba3bfd69083",
+  "command": "PYTHONPATH=/tmp/regrip_stage2_fem OPENBLAS_NUM_THREADS=1 python scripts/shaft_fem.py --mode reference --h-mm 0.8 --order 2 --tag cylinder08p2"
+}

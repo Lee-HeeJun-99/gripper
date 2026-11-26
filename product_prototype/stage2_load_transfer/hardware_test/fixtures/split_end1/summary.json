@@ -1,0 +1,66 @@
+{
+  "status": "FAIL",
+  "scope": "TEST FIXTURE CANDIDATE GEOMETRY ONLY; NOT SAFE LOAD CERTIFICATION",
+  "parts": [
+    {
+      "ID": "GRIP_L",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "GRIP_L.step",
+      "STL": "GRIP_L.stl",
+      "STEP_SHA256": "f96b640d4271695d6addc48a2f1c15381826cf6d84355e55fc847f045381f49b",
+      "volume_mm3": 1093.326463384867
+    },
+    {
+      "ID": "GRIP_R",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "GRIP_R.step",
+      "STL": "GRIP_R.stl",
+      "STEP_SHA256": "89e69f254fcfd945a0adc531b75eb53f4107275fd807a19e1a39530b527586fb",
+      "volume_mm3": 1093.3264633848678
+    },
+    {
+      "ID": "OPPOSED_GRIP_L",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "OPPOSED_GRIP_L.step",
+      "STL": "OPPOSED_GRIP_L.stl",
+      "STEP_SHA256": "c1631d785b91a5dde00af1414b93b6355d8395cb73853d926b83d0c8161d561e",
+      "volume_mm3": 1093.3264633848669
+    },
+    {
+      "ID": "OPPOSED_GRIP_R",
+      "material": "303 stainless candidate; actual allowable not yet qualified",
+      "quantity": 1,
+      "STEP": "OPPOSED_GRIP_R.step",
+      "STL": "OPPOSED_GRIP_R.stl",
+      "STEP_SHA256": "f5fdad78f535fa0b803ba2979d9fd2ec5556a0bc84ff5a5911999f69c22f07ff",
+      "volume_mm3": 1093.3264633848676
+    }
+  ],
+  "collisions": [
+    {
+      "a": "GRIP_L",
+      "b": "GRIP_R",
+      "volume_mm3": 20.375653775531802
+    },
+    {
+      "a": "OPPOSED_GRIP_L",
+      "b": "OPPOSED_GRIP_R",
+      "volume_mm3": 20.3756537755318
+    }
+  ],
+  "finished_wire_free_span_mm": 60,
+  "axial_path": "wire -> factory nipple -> internal finite shoulder -> grip halves -> test-machine adapter bolts",
+  "unresolved": [
+    "actual nipple fit",
+    "bolt preload",
+    "fixture proof load",
+    "machine adapter",
+    "calibration",
+    "guarding"
+  ],
+  "source_SHA256": "b56fff97702a1ff9d269385c365ae7f1df0b8e70cd255edab2b3739ff1702350",
+  "command": "PYTHONPATH=/tmp/regrip_stage1_ocp python scripts/hardware_fixture.py --tag split_end1"
+}

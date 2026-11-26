@@ -614,7 +614,7 @@
         "SHA256": "a6a0b9e5c551ae242a9d0141bd4ac78824a929805cbda3f4bedd0a08976960c3"
       },
       "last_cycle_status": "FINITE_ROOT_PRESSURE_WITNESS_VERIFIED_LOADED_CONTACT_BLOCKED",
-      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y\u00b116 to\u00b110, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
+      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y±16 to±10, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
     },
     {
       "id": "idler_integral_M3_shoulder",
@@ -868,13 +868,17 @@
     {
       "id": "batch5_physical_load_limiter",
       "track": "A",
-      "priority": -7,
+      "priority": -5,
       "status": "READY",
       "execution_class": "PRODUCT_IMPLEMENTATION",
-      "hypothesis": "Implement a real source-backed overload mechanism or simpler lower-load drive, not another ideal delay scan",
+      "hypothesis": "Replace rejected grooved-nipple fuse with actual isolated inline breakaway load path or source-backed lower-load drive; resolve intact bearing and post-break escape together",
       "criteria": "Finite actual limiter/disconnect CAD, jam energy/input/residual-inertia paths and protected bound evidence; unknown ratings never fabricated",
       "previous_diagnostic_task": "AK_protected_maximum_load",
-      "existing_evidence": [],
+      "existing_evidence": [
+        "validation/overload/AP_fuse_cycle1/summary.json",
+        "validation/overload/AP_fuse_verify1/summary.json",
+        "validation/overload/AP_fuse_verify2/summary.json"
+      ],
       "prerequisites": [],
       "target_candidate": {
         "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
@@ -894,8 +898,11 @@
       "cost": "One3600second session, each analysis child4GiB/420s",
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-26T23:03:42.198176+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/overload/AP_fuse_cycle1/summary.json",
+      "scope": "FAILED actual AP2/AP3 implementation; AO retained, no overload cap",
+      "next": "Verify actual cable anchorage and normal load-bearing shoulder; AP2 recontacts, AP3 lacks immediate intact stop. Do not reuse ideal disconnect evidence."
     },
     {
       "id": "batch5_idler_mechanical_retention",

@@ -1,3 +1,40 @@
+# Batch5 cycle4 — actual grooved-nipple fuse rejection; pending supervisor save
+
+Started at 79abf2a3c9144bd8f8d7dc66ace95c8afd86395e. No git add/commit.
+Supervisor local save PENDING; no new commit claimed.
+Actual result: validation/overload/AP_fuse_cycle1/summary.json.
+
+One bounded design cycle implemented AP2 then AP3 as AO254 descendants.
+Three custom nipples get a1mm-long annular neck OD1mm/ID.5mm; supplier nipple
+rating is invalidated. AP2 exact nominal interference/single solids/closed STL,
+neck area and removed-volume checks pass, but complete neck removal leaves
+cable-side fragments positively blocked by the drum: +.01mm produces about
+.033741mm3 intersection on all three Fingers. Actual disconnect FAIL preserved.
+AP3 enlarges three actual drum outlets to radius1.45mm over x110..120.
+All21 sampled detached-fragment poses are clear, but intact +.01mm positive
+stop tests FAIL3/3. This does not prove absence of a later shoulder; it means
+normal bearing/contact gap remains unresolved. AP3 is NOT adopted or certified.
+Changed six STEP/STL, full assembly/BOM and source/input hashes preserved.
+
+Neck area.589048623mm2 and1.697652726MPa/N are geometry inventories, NOT fracture
+load, notch stress or capacity. Actual swage/cable anchorage is unknown and
+could bypass the neck. Post-break recontact, continuing motor work, drag,
+residual cable/fragment inertia and released strain energy block a protected
+maximum. Earlier ideal zero-drive disconnect peaks do not apply to this device.
+No material, tolerance or criteria relaxed; no complete assembly/tool/strength,
+continuous escape, full same-revision Stage1 or energy certificate claimed.
+
+Initial input-path TypeError(exit1) preserved in AP1 producer/failure/log.
+Six4GiB/420s one-thread children exit1/0/2/0/2/2, all completed; no SOFA run.
+Adopted-baseline audit remains INTEGRATED_NOT_QUALIFIED with24errors and22
+unqualified Stage2 criteria. AO remains CURRENT_CANDIDATE, AA remains adopted.
+Physical limiter task remains READY with actual failure evidence; next independent
+READY is Idler mechanical retention. Fuse follow-up must establish intact load
+bearing and real anchorage plus post-break escape together or use another
+finite architecture. No RUNNING queue records or owned live analysis children.
+No SDK/manager/criteria/Stage3 change. All old failures/unrelated untracked data
+preserved. Exact save_request4.json awaits supervisor validation/local save.
+
 # Batch5 cycle3 — root-only positive capture, pending supervisor save
 
 Started at bc8d375ace3b9bc11ef9a5deff464eb3f435885f. No git add/commit

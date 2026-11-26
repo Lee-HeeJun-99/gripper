@@ -1,0 +1,145 @@
+{
+  "status": "ACTUAL_FUSE_DESIGN_CYCLE_REJECTED_NOT_QUALIFIED",
+  "starting_HEAD": "79abf2a3c9144bd8f8d7dc66ace95c8afd86395e",
+  "time_utc": "2026-11-26T23:03:42.198176+00:00",
+  "candidate_retained": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "rejected_designs": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAP_tendon_fuse2/summary.json",
+      "SHA256": "f6e26e0eb7e9a6d9eaa8d535786036abb5af7fa1b1a761c914cab07d9cd82d3b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAP_tendon_fuse3/summary.json",
+      "SHA256": "e4ab3c462bde976ebf180864f2a69f957516981ab59779e52cb4fd92ef9e9174"
+    }
+  ],
+  "verifications": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_verify1/summary.json",
+      "SHA256": "f55080df40f5b4aeeed4aae8729cac9812c33a2b18c8ca245e2e179f92017ab0"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_verify2/summary.json",
+      "SHA256": "5e88414a61364ea4ce19c9824b7a365c7aa22ada58ca3ba662e3cd358bc9cc25"
+    }
+  ],
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AP_fuse_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "execution": [
+    {
+      "name": "build",
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_cycle1/build.log",
+        "SHA256": "63d3c99e4d0e5879a3541ca16c9609855d220ef769b5a2170730f66ca8d30d62"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAP_tendon_fuse1/producer.py",
+        "SHA256": "2caa7d6e221b2b1ad12141e52baea524e2d5fa42c2a49f5b7a055e8e76ddb26a"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build2",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_cycle1/build2.log",
+        "SHA256": "4c5990a2428ce318d032baece2cf1f098cd7faed6f90074cd046aca0fdbf5f5a"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAP_tendon_fuse2/producer.py",
+        "SHA256": "ae899b15e2854413f50aadfa5e766fafe38ce8869d9c8418e271041e4288158c"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "verify",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_cycle1/verify.log",
+        "SHA256": "6b7f5f41f0dc8c53eb9a88122bb3abec32f79c5e7c269b4ce840a2f5280a8c40"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_verify1/producer.py",
+        "SHA256": "ab0cc534c325ff6077f8a838fc627fad99e9d876b1983a64bfafea4181c2d140"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build3",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_cycle1/build3.log",
+        "SHA256": "02e95c4e3b7620458a58ac87235577f4f51bcc545cf46e5407f1f1e7e6df3f64"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAP_tendon_fuse3/producer.py",
+        "SHA256": "63158c51857aa147aeb2d6c382232dcc31b91b206de378fb7c4ec942d69a56ad"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "verify2",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_cycle1/verify2.log",
+        "SHA256": "ae38bf3c7758e6790442570570992275044cf966730bdd4a98c8bde31d1a7e95"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_verify2/producer.py",
+        "SHA256": "86a077fcabc7a7da16baa001839ee81892679b11bf96cfed28b2efc1ab4dde4e"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AP_fuse_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    }
+  ],
+  "findings": [
+    "AP2 custom grooved nipples: valid solids/closed STL and nominal clearance; optimistic complete neck removal still leaves actual drum stop in all three fingers. At +.01mm, intersection ~.033741mm3. Reject ideal disconnect assumption.",
+    "AP3 enlarged actual drum outlet radius1.45mm removes sampled fragment collision, but intact +.01mm positive-stop test FAILS in all three fingers. Retention gap/contact path not established. Do not adopt or assign load capacity.",
+    "AP3 all other reimport/hash/neck-area/removed-volume/severed-topology checks pass; no full strength or continuous path certificate.",
+    "Neck .589048623mm2; mean1.697652726MPa per N is geometry inventory only, not notch stress/fracture threshold.",
+    "Existing unmodeled swage/cable bond can bypass fuse neck; no source-backed material/anchorage/fracture scatter.",
+    "Continuing input work may reenter through post-fracture stops; residual cable/fragment inertia, drag and released strain energy unresolved. No old ideal zero-drive peak is assigned to these parts."
+  ],
+  "next": "Independent Idler actual mechanical retention first. Fuse follow-up must locate intact load-bearing shoulder/contact gap and isolate cable anchorage, or implement an external inline separable link/source-backed lower-load actuator. No repeat ideal delay sweep.",
+  "whole_system_release": false,
+  "protected_maximum_N": null,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "no_git_writes": true,
+  "no_owned_live_analysis_children": true
+}

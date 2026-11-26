@@ -1,0 +1,40 @@
+{
+  "status": "SOURCE_INTEGRITY_PASS",
+  "errors": [],
+  "revision": "revAA_heel_relief2",
+  "next": {
+    "id": "batch5_idler_mechanical_retention",
+    "track": "A",
+    "priority": -6,
+    "status": "READY",
+    "execution_class": "PRODUCT_IMPLEMENTATION",
+    "hypothesis": "Implement actual thread load-bearing geometry/model or simpler supported axle/captive retention",
+    "criteria": "Actual flank/core/engagement or positive retention CAD, assembly, axial/radial load path and capacity evidence",
+    "previous_diagnostic_task": "AJ_idler_thread_and_load_proof",
+    "existing_evidence": [],
+    "prerequisites": [],
+    "target_candidate": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+      "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+    },
+    "target_revision": "revAO_root2",
+    "target_parts": 254,
+    "product_brief": {
+      "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+      "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+    },
+    "expected_outputs": [
+      "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+      "Independent verification summary, source/model/result hashes",
+      "BOM/interface invalidation and affected system gates"
+    ],
+    "cost": "One3600second session, each analysis child4GiB/420s",
+    "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+    "system_gate_contribution": 5,
+    "last_run_utc": null,
+    "consecutive_runs": 0
+  },
+  "running_task_records": [],
+  "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",
+  "resume_command": "python product_prototype/stage12_integrated/scripts/integrated_status.py --next"
+}

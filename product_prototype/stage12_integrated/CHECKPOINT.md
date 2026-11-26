@@ -1,3 +1,33 @@
+# Batch5 cycle7 — double-headed Idler rivet, pending supervisor save
+
+Started at026a9606dc0f803c43c4a23ffcbda97502123c88. No git add/commit;
+supervisor local save PENDING, no new commit claimed.
+Actual result: validation/transmission/AS_rivet_cycle1/summary.json.
+
+One bounded actual design cycle implements revAS_riveted1, unadopted254part
+AO descendant. Three diameter1mm crosspins now have diameter1.8mm integral
+post-form heads. Six changed STEP/STL, complete assembly/BOM, sources and
+pre-execution hashes retained. Nominal exact changed-part interference checks
+pass1e-8mm3. Independent STEP reimport finds all six changed solids valid.
+All three sectors: +/-1mm pin-axis moves overlap washer ~.120641mm3;
++/-2mm also overlap axle ~.17055mm3. AQ smooth-pin escape is obstructed at
+these samples. Clear +/-7mm detached poses do not certify a path through
+obstructed intermediate poses. Axle-direction prior signed stops remain.
+
+This is final post-formed geometry only. Reverse straight insertion is likewise
+obstructed in the final assembly; post-insertion forming/access or another
+assembly order must be established. No strength, pull-through, notch/material,
+loaded spin, ordered assembly, continuous escape or complete load-path PASS.
+Candidate is not adopted. AO current and AA adopted baseline unchanged.
+Source/input identity and independent saved motion checks pass. Actual children
+exit0/2/2 under4GiB/420s, one thread; all completed. No SOFA execution.
+Release audit remains INTEGRATED_NOT_QUALIFIED. No old FAIL changed.
+Queue remains READY for forming/access or separately captured pin architecture
+plus actual capacity. Independent overload/base tasks remain available.
+No RUNNING tasks or owned live analysis children. No criteria/SDK/manager/
+Stage3 changes; unrelated untracked files preserved. Exact save_request7.json
+awaits supervisor validation/local save. No commit SHA invented.
+
 # Batch5 cycle6 — external Palm base rejected; pending supervisor save
 
 Started at f6a43f57c7eedac65e7f4883e96ecf4429dfccbc. No git add/commit;

@@ -1,0 +1,97 @@
+{
+  "status": "ACTUAL_RIVET_DESIGN_GEOMETRY_ONLY_NOT_QUALIFIED",
+  "starting_HEAD": "026a9606dc0f803c43c4a23ffcbda97502123c88",
+  "time_utc": "2026-11-26T23:12:47.637900+00:00",
+  "candidate_retained": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "new_unadopted_candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAS_riveted1/summary.json",
+    "SHA256": "a9176c873d36d52a8ed16fc3f154106427be81f898f040116ea11c552fe6c9e3"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_verify1/summary.json",
+    "SHA256": "738de4d79989d010f40bbbd85e6d0958ebbe4cf37ae8e24f3fafde261023de6b"
+  },
+  "identity_verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_cycle1/identity_verification.json",
+    "SHA256": "2546dba01f6a1694664fe941210cbeadb1a2d9b5484e3a0c3620bc2596f5bfb4"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AS_rivet_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "execution": [
+    {
+      "name": "build",
+      "exit_code": 0,
+      "elapsed_seconds": 6.126147642033175,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_cycle1/build.log",
+        "SHA256": "b0f1e7bb6a8dfebc0a1abf1d59d79328a1e26cc2f89a842b0bf8dc071d64c3c0"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/riveted_idler.py",
+        "SHA256": "32e4063998ee9a446e395d30fd6221b84cc45626e8cbd07786c18a3c57720151"
+      }
+    },
+    {
+      "name": "verify",
+      "exit_code": 2,
+      "elapsed_seconds": 13.038851585937664,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_cycle1/verify.log",
+        "SHA256": "79314277ed49f364c3c7d6913ffc6612e272fe9383f1f72818f5533e9529a9db"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/verify_riveted_idler.py",
+        "SHA256": "f308d895dc8e371e4acbd15e295076513df27d3b50d196464b11bff9b17212ad"
+      }
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "elapsed_seconds": 0.36547567904926836,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+      }
+    }
+  ],
+  "findings": [
+    "Actual 254-part AO descendant with three post-formed double-headed diameter1mm crosspins, diameter1.8mm heads and new crossdrilled axles; six STEP/STL plus complete assembly/BOM retained. Nominal exact changed-part interference checks pass1e-8mm3.",
+    "Three reimported sectors: +/-1mm pin-axis movement obstructed by actual washer ~0.120641mm3; +/-2mm also by axle ~0.17055mm3. This improves on AQ smooth-pin sampled escape. Far +/-7mm poses are clear; they do not imply continuous escape across obstructed intermediate poses.",
+    "Axle direction +.11mm pin/washer stop ~.00319112mm3; -.01mm axle/bracket stop ~.105558mm3. No force capacity inferred.",
+    "Final double-headed part also cannot be inserted by reversing this sampled straight extraction path through the final assembly. A post-insertion forming operation is necessary for this architecture but is not designed/certified here. Alternative assembly order is not excluded."
+  ],
+  "limitations": [
+    "No forming process, deformation, tolerance, tool access or ordered assembly certificate",
+    "No head pull-through, shear/bending, crosshole notch, material allowables, fatigue or loaded free-spin certificate",
+    "No continuous escape or complete load-path/force certificate",
+    "No same-revision Stage1/Stage2 system PASS; no SOFA execution"
+  ],
+  "capacity_N": null,
+  "whole_system_release": false,
+  "adopted": false,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "no_git_writes": true,
+  "no_owned_live_analysis_children": true,
+  "next": "Resolve post-insertion rivet forming/access or use separately captured pin with explicit assembly; then actual strength/contact/load evidence. Do not repeat these sampled geometry checks as new progress."
+}

@@ -14,7 +14,7 @@ NOT actual mass/inertia of motors, bearings, threads or stranded rope.
 Queue: `STAGE2_TASKS.json`. No full grasp or Stage3 actuation authorized.
 Actual independent gate: `validation/integrated/release_audit2/summary.json`
 => STAGE2_NOT_QUALIFIED. Selected17bounded-study evidence hashes PASS in
-`validation/integrated/evidence_audit2`; this is NOT system approval.
+`validation/integrated/evidence_audit3`; this is NOT system approval.
 
 Major new findings: layer-end loads39.14N PET /19.57N per rail despite0.818N
 Tendon in the reduced closing model; rigid coupling alignment is load-critical;

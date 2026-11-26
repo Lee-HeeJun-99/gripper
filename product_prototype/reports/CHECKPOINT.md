@@ -1,6 +1,7 @@
 ## Current Stage2 continuation — 2026-11-26 / bounded load and contact studies
 
-Actual implementation saves29b287b/8994261/597b5d5/08a2d8e/3a9e4b5/bd7ac2c;
+Actual implementation saves29b287b/8994261/597b5d5/08a2d8e/3a9e4b5/bd7ac2c/
+d51b6f2, provenance/save474aba8;
 latest contact/audit/checkpoint save via git log. Baseline c0e5dfd RevAA unchanged.
 Stage2 DIGITAL RELEASE NOT QUALIFIED: independent release_audit2 rejects22
 system criteria; no Native/full100g trial, no actual hardware measurements.
@@ -26,9 +27,13 @@ holding reference maps to40.3045N ideal jam tension, NOT a safety upper bound;
 overload protection is unqualified. Public limiter screen found no verified
 drop-in. Current protected maximum design load is NOT established.
 
-Evidence audit2 validates17selected bounded-study hashes, actual304part hashes,
+Evidence audit3 validates17selected bounded-study hashes, actual304part hashes,
 unchanged historical protected paths, and blank physical measurement records.
-All launched analysis children completed; no RUNNING task/process remains.
+Physics/geometry children completed; one combined environment fingerprint child
+was explicitly stopped at74s without a result. Its cause is UNKNOWN and failure
+record is preserved; isolated Gmsh/OSQP fingerprints then completed normally.
+No RUNNING task/process remains. Current recreation environment hashes are
+under models/analytical/environment_{cad1,analytical1,fem2,contact1}.
 Next READY: drive_force_cap, sliding_pet_finite_rotation_contact,
 coupling_preload_influence, hardware_preparation. Digital work remains READY,
 not all BLOCKED; preserve this finite-session continuation point, not a release.

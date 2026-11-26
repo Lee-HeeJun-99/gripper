@@ -9,6 +9,12 @@ in `models/analytical/FEM_REQUIREMENTS_LOCK.txt`. Gmsh4.15.2 bundles OCC7.8.1;
 do not import OCP7.9.3 in the SAME process. libgmsh SHA256
 9db3090d3b720c57b76bcbfa01d13854823ae2698c91343c20bdd4c2b81f6317.
 OSQP1.1.3 actual binary hash is in sliding_contact4 summary.
+Current separate environment fingerprints are in models/analytical/environment_
+cad1, analytical1, fem2 and contact1. They are recreation fingerprints, NOT
+retroactive evidence of an unrecorded historical process. One initial combined
+Gmsh/OSQP provenance capture was explicitly stopped after74s with no output;
+cause UNKNOWN. No scientific trial was stopped or reclassified by that event.
+Keep library-owner processes isolated and set thread limits for metadata too.
 
 Recovery if /tmp disappears (network installation may require approval):
 

@@ -1,6 +1,7 @@
 ## Current Stage2 resume — 2026-11-26 / actual Rev AA, RevAB candidate unadopted
 
-Last implementation save bd7ac2c plus latest contact/checkpoint save via git log.
+Last contact implementation d51b6f2, provenance save474aba8; latest QC/checkpoint
+save via git log.
 Read actual HEAD/status first. Stage2 still NOT QUALIFIED; Stage1 RevAA preserved.
 Current authoritative task queue: stage2_load_transfer/STAGE2_TASKS.json.
 No analysis child is running; no external/background scheduler is configured.
@@ -10,9 +11,13 @@ sliding_contact1/2 FAIL preserved; sliding_contact4 PASS with stored primal/dual
 contact_independent1 PASS alternate quadrature/Bernstein bounds and3negative
 controls. Actual6part candidate +304part STEP in revised_cad/revAB_sliding_pet1
 is NOT product release. Finite rotation/friction/shell/strength still unqualified.
-Evidence audit2 PASS17bounded studies, no missing referenced hashes,304original
+Evidence audit3 PASS17bounded studies, no missing referenced hashes,304original
 STEP hashes unchanged and all physical records blank. release_audit2 remains
 STAGE2_NOT_QUALIFIED, not analytical/numerical/hardware release.
+One environment-only combined import/fingerprint was stopped at74s without an
+output; cause UNKNOWN, no physics verdict. Separate bounded Gmsh and OSQP
+fingerprints succeeded; no process remains running. No such combined process
+needs to be repeated to resume physics work.
 
 Next READY (not completed, not all BLOCKED):
 1.drive_force_cap:40.3N ideal jam reference cannot be replaced by0.8N normal

@@ -4816,3 +4816,13 @@ orstaticmeshshapeproof. Isolateactualdeformable/multimapping/motionpath
 beforeanotherlargeNative. Queue mapped_skin_contact_contract READY.
 Nochildrunning. Originalobject-only100gfunctionalPASSandGuidebracingFAIL
 separate;notunbraced/physicalPASS. AUTONOMOUS_RESUMEtopauthoritative.
+# Current user scope — Stage1 engineering design, 2026-11-26
+
+Stage1 actual Rev AA definition passed bounded release_revAA2; current CAD
+feature commitd8fee05 (latest QC/checkpoint save via git log). See
+product_prototype/stage1_manufacturing/README_CURRENT.md. This does NOT close
+the historical physics/grasp gates below and authorizes no production/power.
+No current Stage1 READY/RUNNING work remains. Next real prerequisite is
+qualified shop/first-article inspection and specimens for separately scoped
+Stage2load tests.51inspection records remain blank NOT MEASURED. Do not
+silently switch back to Native/100g experiments. All old plans below preserved.

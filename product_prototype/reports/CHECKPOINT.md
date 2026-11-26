@@ -1,4 +1,34 @@
-## Current Stage1 continuation — 2026-11-26 / Rev Y assembly fixes
+## Current Stage1 engineering release — 2026-11-26 / Rev AA
+
+Actual implementation save d8fee05 after e6c5ef9/cd54f03/fff8cba; obtain latest
+checkpoint/QC save with git log. Started from98d1dd6, RevA-H not regenerated.
+Actual current CAD revAA_heel_relief2:304single-valid BRep solids,304closed
+positive STLs, nominal bulk common0; actual wholeassemblySTEP and608part
+STEP/STL files in self-contained revAA_mbd1,304BOM/41views/691face records.
+Actual release_revAA2 passed24engineering-definition criteria. Release scope
+is UNPOWERED FIRST-ARTICLE DESIGN ONLY, NOT fabrication/process capability,
+power/load/hardware/100g qualification. No actual load or Native run here.
+
+Independent failures led to actual fixes: zero-gap pivot preload risk→metal
+sleeve/shoulder path; Xnut passageFAIL→Y4.4shaft/steppedcoupler; Wfive tool
+procedure failures→actual40job staged protocolPASS; YcombinedplayFAIL15.011668
+mm3→ZbroadfloorPASS0common/margins0.015radial/0.035axial; Z60deg tolerance
+gap0.079809→AAheel reliefactual0.515955.12currentservice paths clear. Former
+failures/source snapshots/raw remain unchanged, not reclassified as PASS.
+31prescribed poses and selected conditional tolerance bounds are NOTCCD,
+force/FEM/time/mesh validation or all-as-built tolerance qualification.
+
+Stage1 READY/RUNNING0 because actual scoped design tasks completed, NOT because
+the ReGrip product or physical research is complete.51blank first-article
+inspection entries all NOT MEASURED; canonical-limit/missing-record checker
+fails closed,13software tests PASS. Shop/gauge/lot/matched-part acceptance,
+free-spin/preload/strength and guardedStage2load tests need real specimens
+and separate authorization. Do not switch to old100g/SOFA work for this task.
+See stage1_manufacturing/README_CURRENT.md and reports/STAGE1_CURRENT_VALIDATION_REPORT.md.
+No SDK changes/push/history rewrite/purchase/hardware operation. Old local
+untracked intermediate packages/large aggregateSTLs are preserved, not deleted.
+
+## Previous Stage1 continuation — 2026-11-26 / Rev Y assembly fixes
 
 Continue after local fff8cba; read actual git log for newer saves. Rev W304part
 preload bypass solved actual zero-gap rotating-stack risk with stationary

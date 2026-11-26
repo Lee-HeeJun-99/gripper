@@ -1200,7 +1200,37 @@ grasp or increaseforce/damping. Currentqueue/checkpoint/report authoritative.
 Reproduction of newanalysis(useNEWtag):
 `python product_prototype/sofa/proximal_reinforcement_compare.py --tag NEW_COMPARE`
 `python -m unittest discover -s product_prototype/sofa -p test_contact_layer.py`
-# Stage1 actual continuation — 2026-11-26 Rev Y
+# Current Stage1 resume — 2026-11-26 Rev AA
+
+Actual CAD/release feature save d8fee05; use git log for final QC/checkpoint
+commit. Current Stage1 engineering definition passed release_revAA2 in
+UNPOWERED FIRST-ARTICLE DESIGN scope only. No fabrication/power/load/hardware
+authorization.24actual audit criteria passed, current304part case
+revAA_heel_relief2. Self-contained608CAD files/fullassemblySTEP/304BOM/
+41views/691face catalogue in revAA_mbd1. Old A-H and all failures preserved.
+
+No actual child still RUNNING after final results reconciliation. No Stage1
+READY task remains; physical shop/first-article acceptance needs specimens,
+qualified process/gauges/fixture and separate approval. Template2 has51blank
+NOT MEASURED entries; checker never substitutes zeros or loosens limits.
+Do not repeat finished tests or create a new SOFA/100g campaign. Stage2load
+and the whole ReGrip product are NOT complete.
+
+Reaudit without overwriting old output (fresh TAG mandatory):
+
+```sh
+PYTHONPATH=/tmp/regrip_stage1_ocp /home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/stage1_manufacturing/scripts/release_gate_current.py --case revAA_heel_relief2 --package revAA_mbd1 --review revAA_review1 --tag NEW_UNIQUE_TAG
+PYTHONPATH=product_prototype/stage1_manufacturing/scripts /home/ubuntu/miniconda3/envs/robot_ws/bin/python -m unittest test_release_evidence test_current_release test_first_article_inspection
+```
+
+Actual CAD environment /tmp/regrip_stage1_ocp:cadquery-ocp7.9.3.1.1/vtk9.6.2;
+binary SHA/source/command/producer snapshots in validation/revAA_archive1.
+If temporary environment is missing, inspect frozen versions/cache and obtain
+any required network approval; do not pretend an absent kernel ran. Large
+aggregateSTLs/local intermediate original packages remain local, hash-indexed.
+No background autonomous execution is scheduled or claimed.
+
+# Historical Stage1 continuation — 2026-11-26 Rev Y
 
 Latest saved parent fff8cba; obtain actual HEAD with git log. Current actual
 case cad/exports/revY_nut_passage:304parts,0bulk common. Current validations

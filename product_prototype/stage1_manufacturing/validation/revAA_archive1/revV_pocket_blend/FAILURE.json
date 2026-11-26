@@ -1,0 +1,12 @@
+{
+  "status": "PRODUCER_ASSERTION_FAIL",
+  "actual_exit_code": 1,
+  "stage": "receiver_fillet_stage1.fillet_delta before CAD export",
+  "observed_exception": "AssertionError: ('SWIVEL_LOWER', 4)",
+  "cause": "TopExp_Explorer enumerated shared edges once per owning face; producer expected two unique circular blend edges, observed four occurrences.",
+  "raw_producer": "producer.py and fillet_producer.py in this directory are preserved original snapshots",
+  "next_hypothesis": "Use indexed unique TopoDS edge map rather than relaxing the two-unique-edge assertion; fresh output revV_pocket_blend2",
+  "STEP_generated": false,
+  "stage1_release": false,
+  "runtime": "NOT RECORDED"
+}

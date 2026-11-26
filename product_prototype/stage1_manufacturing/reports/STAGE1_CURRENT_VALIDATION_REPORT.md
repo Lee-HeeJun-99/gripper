@@ -65,6 +65,13 @@ R0.35receiver tool and dimensioned custom broad-groove tool are specified.
 
 ## Mandatory subsequent holds (outside this Stage1 design release)
 
+Actual blank inspection schema:
+`validation/revAA_first_article_template2/INSPECTION_RECORDS.csv`,51entries.
+Executed checker result FIRST_ARTICLE_NOT_MEASURED (all51missing), not a
+fabricated zero/PASS. Canonical case/limits/full IDs and operator/specimen/
+gauge/calibration/time are required; software negative controls reject empty
+or incomplete inputs.13software tests passed; none is a physical measurement.
+
 Qualified shop must accept actual micro-machining, grinding, thin rim/burr
 control, profiles/gauges and fixtures BEFORE fabrication authorization. Inspect
 actual parts/matched fasteners/shims, then perform unpowered/free-spin and

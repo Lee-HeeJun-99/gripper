@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "scope": "TRACK SELECTION CONTROLS ONLY, NOT RELEASE",
+  "next": {
+    "id": "batch6_operating_load_and_architecture",
+    "track": "C",
+    "priority": -200,
+    "status": "READY",
+    "execution_class": "PRODUCT_IMPLEMENTATION",
+    "selection_policy": "coverage_before_repetition",
+    "research_batch": "authorized_20261127_6",
+    "recommended_session": 1,
+    "goal": "Separate real normal demand/protected maximum/allowable; select source-backed standard simpler drive and implement actual finite interface CAD",
+    "hypothesis": "Separate real normal demand/protected maximum/allowable; select source-backed standard simpler drive and implement actual finite interface CAD",
+    "criteria": "Actual source-backed component and finite same-candidate CAD/BOM/load evidence meeting the linked unchanged system gates; bounded geometry/conditional results never qualify whole capacity",
+    "system_gate_ids": [
+      "tendon_force_stroke",
+      "motor_running_torque_speed",
+      "overload_protection",
+      "motor_alignment_reactions"
+    ],
+    "prerequisites": [],
+    "target_revision": "revAO_root2",
+    "target_parts": 254,
+    "target_candidate": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+      "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+    },
+    "product_brief": {
+      "path": "product_prototype/stage12_integrated/reports/STANDARD_COMPONENT_BRIEF_20261127_6.md",
+      "SHA256": "60216046eb9da588ea7737e1854a1e26f6cc30761fe5472e516d1a95a754f9aa"
+    },
+    "expected_outputs": [
+      "Actual implementation or direct validation of selected final-product parts",
+      "Manufacturer/model/dimensions/ratings and unknowns clearly separated",
+      "Changed/custom/standard part counts,assembly tools,source/model/result hashes",
+      "New system evidence,remaining gate IDs and concrete followup"
+    ],
+    "cost": "One3600second session; each analysis child4GiB/420seconds",
+    "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
+    "fallback": "Independent standard-component product task from another track",
+    "system_gate_contribution": 5,
+    "last_run_utc": null,
+    "consecutive_runs": 0
+  },
+  "controls": [
+    "two B cycles force executable A alternative",
+    "no fake work when no alternative",
+    "unmet prerequisite blocked",
+    "empty queue is not release",
+    "actual executable design outranks generic diagnostic refinement",
+    "unmet design prerequisite does not block independently executable work",
+    "unattempted standard-product work before repeated small-part cycle",
+    "coverage does not waive real prerequisites"
+  ],
+  "queue": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_product_selection1/queue_snapshot.json",
+    "SHA256": "119dc4658bb45031354e4c85cfcb9dff88c42cdd1316bfcddaa77650abfcd43c"
+  },
+  "history": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_product_selection1/history_snapshot.json",
+    "SHA256": "042d43dcc45e1e0edd07358f76170004c34da35b5f0b4c27b4fa6e68b8dbac1c"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_product_selection1/producer.py",
+    "SHA256": "bbbc373698da39c5f44c2757c43bf118fbef97844c1aaa4fdb9b4e4181e58dd8"
+  },
+  "automatic_sessions_launched": 0,
+  "budget_renewed": false
+}

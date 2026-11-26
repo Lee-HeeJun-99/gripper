@@ -1,5 +1,23 @@
 # External manager — execution authorized2026-11-26
 
+## Latest allocation6 — standard components / coverage first
+
+User explicitly authorized a NEW10x3600second allocation on2026-11-27.
+Service regrip-stage12-20261127-6.service, runtime authorized_20261127_6.
+Batch5 completed10, current prior HEAD d39469c; no original usage is reset.
+Read authorization6 and STANDARD_COMPONENT_BRIEF_20261127_6.md. Actual running
+state is runtime/status and systemd; approval text alone is not a launch.
+
+Research selector now prefers unattempted executable batch6 product tasks
+before another cycle on one small part. This is a research-choice change only;
+manager,Supervisor,guards,physics criteria and permissions remain unchanged.
+Every cycle maps actual CAD/component/load evidence to existing22system gates.
+No automatic renewal. Maximum36000research seconds; RuntimeMaxSec36900 has
+at most900additional supervisor/audit/cleanup seconds, not more research.
+8GiB/CPU200%/Tasks256,Restart=no; children4GiB/420s and persistent STOP kept.
+Stop: `systemctl --user stop regrip-stage12-20261127-6.service` or shared
+runtime/STOP. Worker must not restart managers, clear STOP or bypass Git/save.
+
 ## Latest allocation5: actual design implementation,10 x3600seconds
 
 Explicit new user approval after allocation4 consumed10 sessions. Separate

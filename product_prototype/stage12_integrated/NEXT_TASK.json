@@ -3,42 +3,46 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "batch5_grounded_palm_attachment",
+    "id": "batch6_operating_load_and_architecture",
     "track": "C",
-    "priority": -4,
+    "priority": -200,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
-    "hypothesis": "Implement external base tendon service passages and actual retained fastener engagement or captive shoulder architecture before loaded Palm/base analysis; preserve AR failures",
-    "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
-    "previous_diagnostic_task": "AI_whole_palm_support",
-    "existing_evidence": [
-      "validation/transmission/AN_palm_cycle1/summary.json",
-      "validation/transmission/AN_palm_verify1/summary.json",
-      "validation/transmission/AR_base_cycle1/summary.json"
+    "selection_policy": "coverage_before_repetition",
+    "research_batch": "authorized_20261127_6",
+    "recommended_session": 1,
+    "goal": "Separate real normal demand/protected maximum/allowable; select source-backed standard simpler drive and implement actual finite interface CAD",
+    "hypothesis": "Separate real normal demand/protected maximum/allowable; select source-backed standard simpler drive and implement actual finite interface CAD",
+    "criteria": "Actual source-backed component and finite same-candidate CAD/BOM/load evidence meeting the linked unchanged system gates; bounded geometry/conditional results never qualify whole capacity",
+    "system_gate_ids": [
+      "tendon_force_stroke",
+      "motor_running_torque_speed",
+      "overload_protection",
+      "motor_alignment_reactions"
     ],
     "prerequisites": [],
+    "target_revision": "revAO_root2",
+    "target_parts": 254,
     "target_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
       "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
     },
-    "target_revision": "revAO_root2",
-    "target_parts": 254,
     "product_brief": {
-      "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
-      "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      "path": "product_prototype/stage12_integrated/reports/STANDARD_COMPONENT_BRIEF_20261127_6.md",
+      "SHA256": "60216046eb9da588ea7737e1854a1e26f6cc30761fe5472e516d1a95a754f9aa"
     },
     "expected_outputs": [
-      "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
-      "Independent verification summary, source/model/result hashes",
-      "BOM/interface invalidation and affected system gates"
+      "Actual implementation or direct validation of selected final-product parts",
+      "Manufacturer/model/dimensions/ratings and unknowns clearly separated",
+      "Changed/custom/standard part counts,assembly tools,source/model/result hashes",
+      "New system evidence,remaining gate IDs and concrete followup"
     ],
-    "cost": "One3600second session, each analysis child4GiB/420s",
-    "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+    "cost": "One3600second session; each analysis child4GiB/420seconds",
+    "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
+    "fallback": "Independent standard-component product task from another track",
     "system_gate_contribution": 5,
-    "last_run_utc": "2026-11-26T23:10:15.571055+00:00",
-    "consecutive_runs": 2,
-    "result": "validation/transmission/AR_base_cycle1/summary.json",
-    "scope": "AR1/AR2 unadopted external base rejected: residual tendon intersection and smooth nut uplift failure. AO remains current."
+    "last_run_utc": null,
+    "consecutive_runs": 0
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

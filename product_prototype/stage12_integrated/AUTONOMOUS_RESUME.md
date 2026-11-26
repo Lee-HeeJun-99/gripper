@@ -1,4 +1,18 @@
-# Batch5 cycle9 — preheaded insertion clear, material stock rejected; pending supervisor save
+# Latest allocation6 — standard-component simplification
+
+Actual previous HEAD d39469c; AO254 candidate source/assembly/BOM/verification
+hashes checked. Service5 fully stopped,10 sessions consumed/saved, no RUNNING
+records and shared STOP absent at operator preflight. Old records unchanged.
+New10×3600second authorization is AUTOMATION_AUTHORIZATION_20261127_6.json.
+Actual execution/usage must be checked in service regrip-stage12-20261127-6
+and runtime/authorized_20261127_6/status.json, never inferred from this file.
+FIRST read reports/STANDARD_COMPONENT_BRIEF_20261127_6.md and selected batch6
+task. Standard components/required loads/finite simpler CAD before revisiting
+known special-rivet or pressure diagnostics. NEXT_TASK reflects selection,
+not execution. Official AA release and22system criteria unchanged.
+Supervisor save remains mandatory; child Git writes/security edits prohibited.
+
+# Historical Batch5 cycle9 — preheaded insertion and stock failure
 
 Started at ab1acb7045d00da4c101d4a64f4428ae377aaf79. No git add/commit;
 supervisor local save PENDING, no new commit claimed.

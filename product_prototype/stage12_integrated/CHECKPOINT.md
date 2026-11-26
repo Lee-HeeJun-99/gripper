@@ -1,4 +1,39 @@
-# Batch5 cycle9 — preheaded insertion clear, material stock rejected; pending supervisor save
+# LATEST BATCH6 — STANDARD COMPONENTS / SIMPLER ACTUAL PRODUCT (2026-11-27)
+
+Latest user approval: a separate10sessions×3600seconds,36000research seconds
+total. Batch5 actually completed10 and saved through d39469c; its old pending
+save text below is historical. Do NOT reset old budgets or keep optimizing AU.
+Read reports/STANDARD_COMPONENT_BRIEF_20261127_6.md and authorization6 JSON.
+Actual usage/state is runtime/authorized_20261127_6/status.json, service6.
+Shared STOP, sandbox, Supervisor/manifest/hash/size/failure controls unchanged.
+
+First select batch6_operating_load_and_architecture. Quantify normal demand
+separately from holding/stall/protection, compare actual manufacturer standard
+drive components, select a simpler architecture and implement finite CAD.
+Starting candidate AO254, not adopted AA304 nor rejected AP..AU. New revision
+allowed, including motor/Drum/routing/Idler/Palm/Root replacement/removal.
+The aim is a manufacturable100mm-class3-Finger tendon gripper, not a special
+rivet or universal solver. Real minimum material/rating/load evidence required.
+
+New coverage-before-repetition research selection prioritizes unattempted
+batch6 product tasks. Record exact selected task ID in TRACK_HISTORY. After
+two same-mechanism failures review standard/different architecture, not another
+tiny parameter revision. Execute standard Idler/direct route, wider Root,
+Palm mounting, actual protected drive, real-component Stage2 Finger specimen,
+load/energy chain, one3-Finger revision, worst-case/convergence and independent
+existing22gate audit. Sequence may follow real prerequisites, not fake PASS.
+No unsupported smooth-thread failure reason for rejecting all standard bolts;
+use justified real thread/core/flank/engagement/material load connectors.
+
+Each cycle must change finite CAD/BOM/load path or directly validate actual
+chosen product parts/gates. Record custom parts/processes removed, actual
+structural issue solved and remaining gate IDs. Catalog-only proposals,
+pressure-only diagnoses and coupon/commit counts are not product completion.
+Finish physical work by3300seconds, complete exact save_requestN manifest,
+leave no RUNNING records/owned child processes; Supervisor alone commits.
+No worker manager/security/criteria/SDK changes or recursive launch.
+
+# Historical Batch5 cycle9 — preheaded insertion clear, stock rejected
 
 Started at ab1acb7045d00da4c101d4a64f4428ae377aaf79. No git add/commit;
 supervisor local save PENDING, no new commit claimed.

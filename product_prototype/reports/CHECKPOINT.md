@@ -1,4 +1,15 @@
-# Batch5 cycle8 — actual rivet forming access rejected; pending supervisor save
+# Latest operator update — allocation6, standard-component product work
+
+Batch5 actually completed10 sessions, all saved through d39469c. Current
+unadopted candidate AO254; official AA304 and system release unchanged.
+New user-approved10x3600second allocation6 is separate, not a reset. Use latest
+stage12_integrated/CHECKPOINT.md and STANDARD_COMPONENT_BRIEF_20261127_6.md.
+Research priority is real load requirements, standard simpler drive/Idler,
+wider Root and direct mounting, then same-revision load verification.
+Prior pending-save paragraphs are historical. Service/runtime6 actual state
+is authoritative; do not claim activity from this document or launch duplicates.
+
+# Historical Batch5 cycle8 — actual rivet forming access rejected
 
 Started at21e2a593319179fe90c258b8ab840ade3e7d4202. No git add/commit;
 supervisor local save PENDING, no new commit claimed.

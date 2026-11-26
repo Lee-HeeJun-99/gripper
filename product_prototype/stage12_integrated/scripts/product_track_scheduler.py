@@ -10,6 +10,12 @@ def select(tasks,history):
     # Known diagnostic work cannot starve executable mechanical implementation.
     implementations=[t for t in ready if t.get('execution_class')=='PRODUCT_IMPLEMENTATION']
     if implementations:ready=implementations
+    coverage=[t for t in ready if t.get('selection_policy')=='coverage_before_repetition']
+    if coverage:
+        # Research allocation policy only: no launch count, permission or gate changes.
+        # Unattempted independent product tasks precede repeating one small part.
+        counts={t['id']:sum(r.get('task')==t['id'] for r in history) for t in coverage}
+        least=min(counts.values());ready=[t for t in coverage if counts[t['id']]==least]
     if any(t.get('track') not in TRACKS for t in ready):raise ValueError('READY task lacks explicit A/B/C track')
     recent=[r['track'] for r in history]
     restricted=recent[-1] if len(recent)>=2 and recent[-2]==recent[-1] else None
@@ -29,6 +35,10 @@ def main():
     actual=dict(id='actual_CAD',track='C',priority=100,status='READY',execution_class='PRODUCT_IMPLEMENTATION')
     assert select([toy[0],actual],[])['id']=='actual_CAD';controls.append('actual executable design outranks generic diagnostic refinement')
     assert select([toy[0],dict(actual,prerequisites=['missing'])],[])['id']=='finger';controls.append('unmet design prerequisite does not block independently executable work')
+    covered=dict(actual,id='repeated_part',priority=-100,selection_policy='coverage_before_repetition')
+    independent=dict(actual,id='new_system',track='B',priority=50,selection_policy='coverage_before_repetition')
+    assert select([covered,independent],[dict(task='repeated_part',track='C')])['id']=='new_system';controls.append('unattempted standard-product work before repeated small-part cycle')
+    assert select([covered,dict(independent,prerequisites=['missing'])],[dict(task='repeated_part',track='C')])['id']=='repeated_part';controls.append('coverage does not waive real prerequisites')
     result=dict(status='PASS',scope='TRACK SELECTION CONTROLS ONLY, NOT RELEASE',next=choice,controls=controls,queue=ref(out/'queue_snapshot.json'),history=ref(out/'history_snapshot.json'),producer=ref(out/'producer.py'),automatic_sessions_launched=0,budget_renewed=False)
     dump(out/'summary.json',result);print(json.dumps(dict(status=result['status'],next_task=choice['id'] if choice else None,track=choice['track'] if choice else None,automatic_sessions_launched=0),indent=2))
 if __name__=='__main__':main()

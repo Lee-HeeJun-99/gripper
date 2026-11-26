@@ -1,5 +1,27 @@
 # Integrated checkpoint — 2026-11-26
 
+LATEST completed follow-up, after3ef32a7 (supersedes READY/RUNNING and64
+inspection-only statements below): actual owner64_working1 exit0, optimizer
+300iteration-limit FAIL retained. Static constraint generation used220of3752
+rows, then checked ALL original rows. working_controls1 executes the actual
+archived branch on an independent QP and rejects disabled violation insertion.
+No physical contacts removed or state corrected.
+
+Stored final64 state independently passes owner64_working_force1:
+1.345481e-9N force-equivalent residual and9.72769e-9 complementarity;
+owner64_working_geometry1 actual annular-sector/front/back intersection PASS.
+owner_states2 independently certifies16/32/64 states with exact source identity,
+retaining original optimizer FAILs. It does NOT change their execution results.
+Finest32/64 migration0.0209323% passes1% locally;16/64 is3.99215%, FAIL.
+No full mesh, flexible Rail/friction, material strength or system approval.
+
+Next READY: flexible_rail_contact; actual independent elastic-Rail/PET reference
+model required before finite loading. Do not continue mesh-only optimization
+of the same rigid fixture without a new hypothesis. Alignment and incomplete
+hardware-fixture preparation remain independent READY tracks.
+All known analysis children have completed. External manager is not activated.
+Actual final local save via git log; release3 remains NOT QUALIFIED.
+
 Current continuation (supersedes mid-session RUNNING statements below):
 last committed implementation save is413eb44; final save is identified
 by `git log -1`, not a self-referential hash. Adopted RevAA unchanged. AC/AD

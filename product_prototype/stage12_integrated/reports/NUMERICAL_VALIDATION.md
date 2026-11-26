@@ -1,5 +1,19 @@
 # Numerical status — no system pass
 
+Latest completed follow-up: owner64_working1 uses static constraint generation,
+220near-active of3752original rows, and full nonlinear post-checks. Actual
+archived-code QP control working_controls1 verifies insertion of an initially
+inactive violated constraint; disabling insertion is rejected by full guard.
+Its actual optimizer reached300iterations (FAIL), not silently promoted.
+However independent final-state force certificate1.34548e-9N and relative
+complementarity9.72769e-9 meet unchanged thresholds; exact actual geometry also
+passes. owner_states2 pins original states and certificate identities, records
+original FAIL status separately, and certifies local KKT only. Finest32/64
+axial migration refinement0.02093% PASS;16/64 remains3.99215% FAIL. Do not
+hide this coarse-to-fine failure behind the adjacent pair or call it full
+Finger convergence. Next is a separate elastic-Rail/PET model, not blind mesh
+scanning. Friction, shell, material strength and system gates remain absent.
+
 Latest actual material-owner follow-up supersedes only the unresolved method
 status, not the historical failures below. owner_analytic_reaction2 independently
 certifies unchanged16/32 saved states below1e-8N force-equivalent residual;

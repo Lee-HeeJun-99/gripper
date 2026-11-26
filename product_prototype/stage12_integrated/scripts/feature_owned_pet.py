@@ -9,7 +9,7 @@ from scipy.optimize import minimize,brentq
 from baseline_registry import ROOT,ref,dump
 import finite_pet_coupon as geometric
 import rod_point_jacobian as rod
-def solve(old,L,profile,exchanges=4,checkpoint=None):
+def solve(old,L,profile,exchanges=4,checkpoint=None,working_set=False):
     q=np.array(old['state_angles_rad']);n=len(q);h=L/n;theta=math.radians(old['fixture_angle_deg']);R=.088/theta
     c,s=math.cos(theta),math.sin(theta);M=np.array([[c,s],[-s,c]]);shift=np.array([.0504-R*(1-c),-.007-R*s])-M@np.array([.0504,-.095])
     fc=np.array([profile['center_X_mm'],profile['center_Z_mm']])*.001;fr=profile['radius_mm']*.001
@@ -57,7 +57,24 @@ def solve(old,L,profile,exchanges=4,checkpoint=None):
     for exchange in range(exchanges):
         identity=float(np.max(abs(constraint_derivatives(q,True)-constraints(q))))
         if identity>1e-9:raise ValueError('Analytic Jacobian module changed physical constraint values')
-        solution=minimize(energy,q,jac=gradient,method='SLSQP',constraints=[dict(type='ineq',fun=constraints,jac=constraint_derivatives)],callback=save_guess,options=dict(ftol=1e-12,maxiter=300));q=solution.x;a,u=geometry(q);added=0
+        working_history=[]
+        if working_set:
+            # Static constraint generation only. Retain ALL near-active rows,
+            # not a signed QR basis. Far rows can be temporarily inactive in
+            # the NLP subproblem, but every full nonlinear row is checked and
+            # every omitted violated row is added before accepting its result.
+            selected=set(np.flatnonzero(constraints(q)<=1e-3).tolist())
+            for cut in range(4):
+                ids=np.array(sorted(selected),dtype=int)
+                if not len(ids):raise ValueError('No working contact rows')
+                solution=minimize(energy,q,jac=gradient,method='SLSQP',constraints=[dict(type='ineq',fun=lambda v:constraints(v)[ids],jac=lambda v:constraint_derivatives(v)[ids])],callback=save_guess,options=dict(ftol=1e-12,maxiter=300));q=solution.x
+                full=constraints(q);missing=set(np.flatnonzero(full < -1e-5).tolist())-selected
+                working_history.append(dict(cut=cut,selected_rows=len(ids),full_rows=len(full),full_minimum=float(full.min()),new_violated_rows=len(missing),solver_success=bool(solution.success),iterations=int(solution.nit)))
+                if not missing:break
+                selected.update(missing)
+        else:
+            solution=minimize(energy,q,jac=gradient,method='SLSQP',constraints=[dict(type='ineq',fun=constraints,jac=constraint_derivatives)],callback=save_guess,options=dict(ftol=1e-12,maxiter=300));q=solution.x
+        a,u=geometry(q);added=0
         minimum_witness=math.inf
         for (i,side),ts in points.items():
             splits=[0.,1.];delta=a[i+1]-a[i]
@@ -99,7 +116,7 @@ def solve(old,L,profile,exchanges=4,checkpoint=None):
                 wall=float(distances(point(a,u,i,t,side)).min());rad=R-.00025-np.linalg.norm(point(a,u,i,t,0,False)-[.0504-R,-.007]);minimum_witness=min(minimum_witness,wall,rad)
                 if min(wall,rad)<=1e-9 and min(abs(t-oldt) for oldt in ts)>1e-7:ts.append(t);added+=1
             ts.sort()
-        history.append(dict(exchange=exchange,solver_success=bool(solution.success),message=solution.message,energy_J=energy(q)*scale,added_material_features=added,minimum_feature_interval_witness_m=minimum_witness,minimum_fixed_point_constraint=float(constraints(q).min()),jacobian_model_value_identity_max=identity,optimizer_iterations=int(solution.nit),points=sum(len(v) for v in points.values())))
+        history.append(dict(exchange=exchange,solver_success=bool(solution.success),message=solution.message,energy_J=energy(q)*scale,added_material_features=added,minimum_feature_interval_witness_m=minimum_witness,minimum_fixed_point_constraint=float(constraints(q).min()),jacobian_model_value_identity_max=identity,optimizer_iterations=int(solution.nit),points=sum(len(v) for v in points.values()),working_set_history=working_history))
         save_guess(q,True)
         if not added:break
     p=point(*geometry(q),n-1,1.,0,False);arc=R*math.atan2(-p[1]-.007,p[0]-(.0504-R))
@@ -109,7 +126,7 @@ def solve(old,L,profile,exchanges=4,checkpoint=None):
         material_contact_points={str(k):v for k,v in points.items()},history=history,
         old_state_difference_rad=float(np.linalg.norm(q-np.array(old['state_angles_rad']))),warning='Sample/material-owner solve only; exact BRep, physical force certificate and1% migration audit REQUIRED')
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--seed',default='finite_pet_AD6');p.add_argument('--seed-file');p.add_argument('--meshes',nargs='+',type=int,default=[16,32]);p.add_argument('--exchanges',type=int,default=4);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--seed',default='finite_pet_AD6');p.add_argument('--seed-file');p.add_argument('--meshes',nargs='+',type=int,default=[16,32]);p.add_argument('--exchanges',type=int,default=4);p.add_argument('--working-set',action='store_true');a=p.parse_args()
     if not 1<=a.exchanges<=12:p.error('1..12exchanges per bounded child; no indefinite optimizer loop')
     out=ROOT/'validation/finger'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
     source=ROOT/a.seed_file if a.seed_file else ROOT/'validation/finger'/a.seed/'summary.json'
@@ -127,7 +144,7 @@ def main():
         checkpoints.append(ref(path))
     for old in d['rows']:
         if old['n'] not in a.meshes:continue
-        rows.append(solve(old,L,profile,a.exchanges,checkpoint));dump(out/'partial_states.json',dict(rows=rows,complete=False))
+        rows.append(solve(old,L,profile,a.exchanges,checkpoint,a.working_set));dump(out/'partial_states.json',dict(rows=rows,complete=False))
     result=dict(status='PASS' if rows and all(r['status']=='PASS' for r in rows) else 'FAIL',scope='MATERIAL-OWNED CONSTRAINT EXCHANGE / FRICTIONLESS RIGID-RAIL COUPON ONLY',rows=rows,PET_free_length_m=L,source=ref(source),candidate=ref(candidate),producer=ref(out/'producer.py'),geometry_implementation=ref(Path(geometric.__file__)),analytical_Jacobian=ref(Path(rod.__file__)),whole_system_release=False,seed_scope='STATIC OPTIMIZER INITIAL GUESS AND FIXED MATERIAL WITNESSES ONLY; NOT NATIVE STATE RESTORE OR DYNAMIC CHUNK EQUIVALENCE')
     dump(out/'summary.json',result);print(json.dumps(dict(status=result['status'],rows=[{k:r[k] for k in ('n','status','axial_migration_m','continuous_min_gap_m','old_state_difference_rad')} for r in rows]),indent=2))
     dump(out/'LOCAL_OPTIMIZER_CHECKPOINTS.json',dict(scope='LOCAL ONLY STATIC INITIAL GUESSES; NO PHYSICAL VERDICT',checkpoints=checkpoints))

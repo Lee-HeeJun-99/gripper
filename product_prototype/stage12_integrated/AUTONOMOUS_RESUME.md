@@ -1,5 +1,13 @@
 # Resume
 
+LATEST: owner64_working1 completed, original optimizer iteration-limit FAIL
+preserved. Independent force/actual-geometry certificates pass; owner_states2
+certifies bounded saved states without changing optimizer history.32/64 local
+migration0.02093% PASS;16/64 remains3.992% FAIL. No overall release.
+No child is running. Read latest CHECKPOINT and INTEGRATED_TASKS; next task is
+flexible_rail_contact, NOT a rerun of rigid-rail optimization or old64 guesses.
+Last completed save before this update3ef32a7; final actual HEAD via git log.
+
 Latest actual work: read CHECKPOINT.md current continuation before historical
 notes. No child or external worker is running. Current release3 NOT QUALIFIED.
 Last completed implementation commit413eb44; later cone-diagnostic save via

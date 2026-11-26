@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC ACTUAL-CODE CONSTRAINT-GENERATION CONTROL ONLY",
+  "actual": [
+    0.5,
+    -1.0
+  ],
+  "expected": [
+    0.5,
+    -1.0
+  ],
+  "error": 0.0,
+  "working_history": [
+    {
+      "cut": 0,
+      "selected_rows": 1,
+      "full_rows": 2,
+      "full_minimum": -1.0,
+      "new_violated_rows": 1,
+      "solver_success": true,
+      "iterations": 2
+    },
+    {
+      "cut": 1,
+      "selected_rows": 2,
+      "full_rows": 2,
+      "full_minimum": 0.0,
+      "new_violated_rows": 0,
+      "solver_success": true,
+      "iterations": 3
+    }
+  ],
+  "negative_disabled_cut_rejected_by_full_guard": true,
+  "mutant": [
+    0.5,
+    -2.0
+  ],
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/owner64_working1/producer.py",
+    "SHA256": "dbd71e647fd4035c731ba9fcd9e68dc571cf36b242be90c87f3c45b910cc69a3"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/scripts/working_set_controls.py",
+    "SHA256": "570b85f290c29b6250c4d0b54e57ad7845c105043daba2546529c00e36977d76"
+  },
+  "hardware_measured": false,
+  "product_release": false
+}

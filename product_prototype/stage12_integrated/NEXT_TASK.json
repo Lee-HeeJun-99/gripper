@@ -3,21 +3,20 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "contact_constraint_conditioning",
+    "id": "flexible_rail_contact",
     "priority": 2,
     "status": "READY",
-    "hypothesis": "Near-dependent material constraints degrade64-element static KKT accuracy; rank-aware linearized working sets may improve numerical solve without deleting physical contact inequalities",
-    "difference": "Actual rank observation is complete; every omitted working-set row must still pass full nonlinear feasibility and independent force certification. Signed QR basis alone cannot preserve nonnegative force cones.",
+    "hypothesis": "Separate elastic Rail and PET DOFs may change contact and internal forces relative to the prescribed rigid-rail fixture; must not enforce equal curvature",
+    "difference": "New coupled elastic boundary-value mechanism, not further mesh/force/damping scan",
     "prerequisites": [
-      "analytic_material_point_jacobian",
-      "contact_rank_observation"
+      "bounded_static_state_certification"
     ],
     "inputs": [
-      "validation/finger/owner64_inspection1/summary.json",
-      "validation/contact/owner_rank1/summary.json"
+      "cad/exports/revAD_funnel1/summary.json",
+      "validation/finger/owner_states2/summary.json"
     ],
-    "criteria": "Unchanged full contact checks,1e-8N certificate and1% migration; no solver success promotion",
-    "cost": "4GiB/420s",
+    "criteria": "Actual geometry and explicit conditional material basis; independent small-load beam reference, full force/moment/gap/complementarity and energy; no rigid-fixture PASS promotion. Define acceptance before solve.",
+    "cost": "Small reference first,4GiB/420s per child",
     "fallback": "alignment_alternative"
   },
   "running_task_records": [],

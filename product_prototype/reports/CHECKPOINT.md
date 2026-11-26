@@ -1,5 +1,12 @@
 ## Current integrated Stage1/Stage2 continuation — 2026-11-26
 
+Latest follow-up after3ef32a7: owner64_working1 completed with optimizer
+iteration-limit FAIL, but unchanged final state passes independent force
+1.34548e-9N and actual CAD geometry. owner_states2 pins all source/certificate
+identities and preserves original FAILs;32/64 migration refinement0.02093%
+passes locally,16/64 remains3.992% FAIL. No full convergence or release.
+Next READY flexible_rail_contact; no active child. See integrated checkpoint.
+
 Current authority: stage12_integrated/CHECKPOINT.md, CURRENT_BASELINE.json,
 INTEGRATED_TASKS.json and RELEASE_STATUS.json; previous Stage2 history below
 is preserved. Adopted RevAA unchanged. AC/AD actual candidate assemblies are

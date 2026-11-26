@@ -1,5 +1,11 @@
 ## Current integrated resume — 2026-11-26
 
+Latest completed64 working-set study and independent saved-state certificates
+are in stage12_integrated/CHECKPOINT.md. Original optimizer FAIL preserved;
+fine32/64 migration PASS is not whole-mesh/Finger/system PASS. Next READY is
+flexible_rail_contact. No child/external manager is running. Actual final HEAD
+from git log; previous implementation save3ef32a7.
+
 First verify actual HEAD/status. Current authority is stage12_integrated,
 not the historical Stage2-only queue below. AdoptedAA unchanged; AB/AC/AD are
 unadopted. release3 INTEGRATED_NOT_QUALIFIED. No Native/hardware execution.

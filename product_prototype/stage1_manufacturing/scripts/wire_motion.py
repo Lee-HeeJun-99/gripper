@@ -33,7 +33,7 @@ def path(deg):
 def rotor_name(n):
  return n.startswith(('F0_DRUM','F0_SHAFT','F0_INNER_WASHER','F0_COUPLING'))
 def main():
- p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);p.add_argument('--diameter',type=float,default=.5);p.add_argument('--length-offset',type=float,default=0.);args=p.parse_args();assert .48<=args.diameter<=.52 and abs(args.length_offset)<=.25
  index=json.loads((ROOT/'cad/exports'/args.case/'summary.json').read_text());out=ROOT/'validation'/args.tag;out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
  setup(index)
  allmeshes={n:trimesh.load(ROOT/(__import__('pathlib').Path(v['path']).with_suffix('.stl')),force='mesh') for n,v in index['parts'].items()}
@@ -45,7 +45,7 @@ def main():
  roots,ends=laminate_ends(meshes);fixed.update(roots);rigid.update(ends)
  b0=beta([43,0,-92]);free0=path(0)['free'];rows=[];hits=[];rotorhits=[]
  for deg in range(0,61,2):
-  g=path(deg);eta=(free0-g['free'])/DRUM_R;T=tip(math.radians(deg));S=rot(g['beta']-math.radians(deg)-b0,point=g['P'])@T;R=rot(eta,point=[80,0,20])
+  g=path(deg);eta=(free0-g['free']+args.length_offset)/DRUM_R;T=tip(math.radians(deg));S=rot(g['beta']-math.radians(deg)-b0,point=g['P'])@T;R=rot(eta,point=[80,0,20])
   moving={n:move(m,T) for n,m in rigid.items()};moving.update({n:move(m,S) for n,m in swivel.items()});moving.update({n:move(m,R) for n,m in rotors.items()})
   for n in rotors:
    for k,f in fixed.items():
@@ -71,7 +71,7 @@ def main():
    for segid,(u,v) in enumerate(zip(points,points[1:])):
     sag=.003 if label in ('drum_arc','idler_arc','internal_lead') else 0
     # Circumscribed polygon, not an inscribed thinner wire.
-    m=segment(u,v,(.25+sag)/math.cos(math.pi/20))
+    m=segment(u,v,(args.diameter/2+sag)/math.cos(math.pi/20))
     for n,f in targets.items():
      if n in analytic or (MODEL=='planar_tangent_nipple' and label=='drum_arc' and segid==0 and n=='F0_DRUM_FACTORY_NIPPLE'):continue
      vol=intersection(m,f)
@@ -79,5 +79,11 @@ def main():
   winding=g['phi']-START_PHI+eta
   rows.append(dict(angle_deg=deg,free_wire_mm=g['free'],takeup_mm=free0-g['free'],rotor_deg=math.degrees(eta),wrap_deg=math.degrees(winding),total_external_mm=g['free']+DRUM_R*winding,length_error_mm=g['free']+DRUM_R*winding-(free0+DRUM_R*(path(0)['phi']-START_PHI)),single_layer=winding<2*math.pi,swivel_deg=math.degrees(g['beta'])))
  result=dict(status='WIRE_ROTOR_SCREEN_PASS' if not hits and not rotorhits and all(r['single_layer'] for r in rows) else 'WIRE_ROTOR_SCREEN_FAIL',rows=rows,wire_hits=hits,rotor_hits=rotorhits,wire_diameter_mm=.5,analytic_contact_pending='Own drum/idler contact and factory wire-metal outlet joins require independent analytic/actual CAD certificates. Only first tangent-nipple arc capsule has artificial backward extension at bonded factory join; remaining arc checked against actual nipple.',scope='F0 wire against actual full3Finger hardware,31poses, flexible envelopes and internal tip exit included;120deg symmetry covers other wires against hardware. Wire-wire sector certificate still required. Prescribed NOT dynamic sliding/fatigue. Circumscribed extended capsules include .003mm chord allowance; no uncovered vertex wedges.',stage1_release=False)
+ result['wire_diameter_mm']=args.diameter
+ result['finished_length_offset_mm']=args.length_offset
+ result['assembly_indexing_phase_deg']=math.degrees(args.length_offset/DRUM_R)
+ # The physical factory outlet rotates with the drum. Length is adjusted
+ # by assembly indexing, not by scaling/stretching/teleporting the cable.
+ for row in rows:row['length_error_mm']-=args.length_offset
  (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(status=result['status'],wire_hits=len(hits),rotor_hits=len(rotorhits),first_wire=hits[:8],first_rotor=rotorhits[:5],takeup=rows[-1]['takeup_mm'])))
 if __name__=='__main__':main()

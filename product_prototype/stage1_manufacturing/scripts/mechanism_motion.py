@@ -24,14 +24,17 @@ def beta(p):
  return -(math.atan2(vz,vx)-math.acos(IDLER_R/math.hypot(vx,vz)))
 def move(m,T):
  q=m.copy();q.apply_transform(T);return q
-def flexible(a):
+def flexible(a,component='envelope'):
  # Conservative union envelope for actual tapered skin AND rails. No
  # terminal indexing-hole claim: own pin/tongue checked separately at REST.
  s=np.linspace(0,88,89);vertices=[]
  for t in s:
   b=a*t/88;x=50 if not a else 50-88/a*(1-math.cos(b));z=-7-t if not a else -7-88/a*math.sin(b)
-  w=12-.06*(7+t)
-  for d,y in [(0,-w),(.5,-w),(.5,w),(0,w)]:vertices.append([x+d*math.cos(b),y,z-d*math.sin(b)])
+  w=12-.06*(7+t);low,high=0,.5;yl,yh=-w,w
+  if component=='skin':high=.3
+  elif component=='railR':low,high=.3,.5;yl,yh=8.5-.06*(7+t),11.5-.06*(7+t)
+  elif component=='railL':low,high=.3,.5;yl,yh=-11.5+.06*(7+t),-8.5+.06*(7+t)
+  for d,y in [(low,yl),(high,yl),(high,yh),(low,yh)]:vertices.append([x+d*math.cos(b),y,z-d*math.sin(b)])
  faces=[[0,2,1],[0,3,2]]
  for j in range(len(s)-1):
   for k in range(4):
@@ -54,7 +57,7 @@ def laminate_ends(meshes):
    target['F0_'+suffix+'_'+label]=q
  return roots,ends
 def main():
- p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--case',required=True);p.add_argument('--tag',required=True);p.add_argument('--retainer-stack-envelope',action='store_true');args=p.parse_args()
  src=ROOT/'cad/exports'/args.case;index=json.loads((src/'summary.json').read_text());out=ROOT/'validation'/args.tag;out.mkdir(exist_ok=False)
  configure(index)
  shutil.copyfile(__file__,out/'producer.py')
@@ -68,6 +71,13 @@ def main():
  fixed={n:m for n,m in meshes.items() if not any(n.endswith(s) for s in ('SKIN','RAIL_L','RAIL_R','TENDON_WIRE')) and not any(k in n for k in ('TERMINAL','SWIVEL','TIP_FACTORY_NIPPLE'))}
  rigid={n:m for n,m in meshes.items() if n.startswith('F0_') and ('TERMINAL' in n or n in ('F0_SWIVEL_AXLE','F0_SWIVEL_AXLE_NUT','F0_SWIVEL_SPACER_L','F0_SWIVEL_SPACER_R'))}
  swivel={n:m for n,m in meshes.items() if n.startswith('F0_') and (n.startswith(('F0_SWIVEL_LOWER','F0_SWIVEL_UPPER','F0_SWIVEL_BOLT','F0_SWIVEL_NUT','F0_TIP_FACTORY_NIPPLE')))}
+ if args.retainer_stack_envelope:
+  # Convex hull contains the WHOLE axial translation interval, including
+  # actual head/nut voids. Conservative external-clearance envelope only;
+  # no fictional filling of operating CAD or removal of its collisions.
+  for n,m in list(swivel.items()):
+   ys=(-.02,.10) if n.startswith('F0_SWIVEL_NUT_') else (-.03,.10) if n.startswith('F0_SWIVEL_BOLT_') else None
+   if ys:swivel[n]=trimesh.convex.convex_hull(np.vstack([m.vertices+[x,y,z] for x in (-.05,.05) for y in ys for z in (-.05,.05)]))
  roots,ends=laminate_ends(meshes);rigid.update(ends)
  for i in range(3):
   R=rot(i*2*math.pi/3,(0,0,1));fixed.update({n.replace('F0_',f'F{i}_',1):move(m,R) for n,m in roots.items()})
@@ -93,7 +103,20 @@ def main():
    for k in rigid:
     v=intersection(local[n],local[k])
     if v>1e-6:hits.append(dict(angle_deg=deg,a=n,b=k,volume_mm3=v))
+  # Important independent extension: the nominal pose and interFinger
+  # tests do not prove own flexible sheet clears the extended rigid ears.
+  # Continuous-material split interfaces are not separate hardware pairs;
+  # positive outward-normal offset has Jacobian 1+kappa*d; the split
+  # shares a tangent plane, not a separate hardware contact interface.
+  for material in ('skin','railL','railR'):
+   fm=flexible(a,material)
+   for name,m in local.items():
+    if name=='F0_FLEX_ENVELOPE' or name.endswith('DISTAL_RIGID'):continue
+    v=intersection(fm,m)
+    if v>1e-6:hits.append(dict(angle_deg=deg,a='F0_FLEX_'+material,b=name,volume_mm3=v,kind='own flexible material vs actual hardware'))
   poses.append(dict(angle_deg=deg,pivot_mm=pivot.tolist(),swivel_deg=math.degrees(b)))
- result=dict(status='SAMPLED_MOTION_PASS' if not hits else 'SAMPLED_MOTION_FAIL',case=args.case,quality=quality,hits=hits,poses=poses,static_bulk_collision_count=len(index['collisions']),scope='31prescribed0..60deg poses; actual exported laminate root/top17mm and distal5mm clipped meshes, conservative tapered88mm flexible span, actual rigid tip/articulated swivel; fixed hardware/interFinger. Same-rigid pairs invariant from actual REST. No continuous CCD/rotor/wire/FEM/hardware qualification.',stage1_release=False)
+ result=dict(status='SAMPLED_MOTION_PASS' if not hits else 'SAMPLED_MOTION_FAIL',case=args.case,quality=quality,hits=hits,poses=poses,static_bulk_collision_count=len(index['collisions']),scope='31prescribed0..60deg; actual clipped root17/distal5mm, tapered88mm flexible envelope AND separate skin/rail solids against own actual hardware, rigid tip/swivel, fixed/interFinger. Shared material split boundaries excluded analytically, not physical hardware collision removal. No CCD/force/FEM/hardware qualification.',stage1_release=False)
+ result['own_flexible_material_checked']=True
+ result['retainer_stack_envelope']=dict(enabled=args.retainer_stack_envelope,nut_axial_interval_mm=[-.02,.10],bolt_axial_interval_mm=[-.03,.10],lateral_hole_position_mm=[-.05,.05],scope='Convex superset of whole axial/lateral translation box, including exposed screw tip; voids conservatively filled for external clearance only. Requires matched-trim/declared stack limits; not all tolerances/CCD/strength.')
  (out/'summary.json').write_text(json.dumps(result,indent=2));(out/'input_sha256.json').write_text(json.dumps(hashes,indent=2));print(json.dumps(dict(status=result['status'],parts=len(quality),hits=len(hits),first_hits=hits[:5])))
 if __name__=='__main__':main()

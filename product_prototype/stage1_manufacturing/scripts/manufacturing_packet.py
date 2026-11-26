@@ -54,15 +54,34 @@ def main():
    'IDLER_SPACER':['steelOD5/ID3.1/t1; axialY; actual two positions in STEP'],
    'INNER_WASHER':['steelOD8/ID5.1/t0.5; SKF abutment7.4..8.3','inner races clamped only, bearing outer faces deliberately retain endplay'],
    'SWIVEL_SPACER':['steelOD4/ID2.1/t0.5; free axle clearance, nut not crushing rotating receiver']})
+ if idx.get('design_geometry',{}).get('motor_spec'):
+  spec=idx['design_geometry']['motor_spec'];FEATURES['MOTOR_PLATE']=['Selected17HS15-1504S1/A0648; same31+-0.2 pitch,4M3 depth4.5MIN','actual plate22.5+-0.05 pilot hole,3.6+-0.05 bolt clearances;3.0+-0.1 thickness','manufacturer pilot2 integer+-0.5 ->max2.5; min plate2.9 leaves0.4 axial margin','shaft24+-1,5.000/-0.012; motor flangeY-44, output shaft endY-18 ->gap1..3','clock Dflat+X so split jaws contact round+/-Z sides; align shafts before tightening','CAD motor is MAX external envelope body40/shaft25/pilot2.5, NOT vendor internal model; no thermal/torque qualification']
+ if idx.get('design_geometry',{}).get('terminal_inner_relief'):
+  FEATURES['TERMINAL'] += ['FRONT ONLY: actual inner-face relief X49..51/Y+-7.3/Z-95..-83,1.00depth; preserve clamp belowZ-95','M3 cone stopsX48.7; relief starts49.0, lateral hole web0.50; inspect before assembly','Own flexible-material sampled motion is required independently; no strength certification from clearance']
+ if idx.get('design_geometry',{}).get('groove_profile_radius_mm')==.30:
+  FEATURES['DRUM'][0]='axisX80/Z20; bore8.10 +0.02/-0; flangeOD34; actual groove rootD21.960+0/-0.020'
+  FEATURES['DRUM'][1]='U-groove majorR11.28/profileR0.300+0.010/-0; outward-open; accepted cableD0.48..0.52'
+  FEATURES['IDLER'][0]='axisX44/Z25/Y; POM actual groove rootD21.960+0/-0.020/flangesD25'
+  FEATURES['IDLER'][1]='U majorR11.28/profileR0.300+0.010/-0; bore3.040+-0.010 over custom smooth3h6 journal'
+  FEATURES['IDLER'][3]='minimum root21.94>=42xmax wire0.52=21.84; recommendation, NOT fatigue test'
+ if idx.get('design_geometry',{}).get('receiver_pocket_blend_mm'):
+  FEATURES['SWIVEL'][3]='ACTUAL R0.350+-0.005 concave end blends; split-face ball contour with NS MRB230R0.35x4/08-00520-40352 or verified equivalent'
+  FEATURES['SWIVEL']+=['NI envelope is stepped head3.8x3 then stem2.8x3 to fixed outlet; real manufacturer Bmin3/Dmax6, NOT full3.8x6 cylinder','Finish body halves3.000+-0.010/recess0.600+-0.010; pocketAF4.10+-0.02; nutAF3.82..4.00/t1.35..1.60 acceptance','MATCHED trim fromM2x8: L=actual grip+actual nut height+0.55; final exposed tip0.50..0.65; inspect6g and label matching location']
  rows=[];draw=[]
  for n,v in idx['parts'].items():
   f=ROOT/v['path'];m=trimesh.load(f.with_suffix('.stl'),force='mesh');mat,kind,method=metadata(n);s=n[3:] if n.startswith('F') else n
+  if s=='MOTOR' and idx.get('design_geometry',{}).get('motor_spec'):
+   mat='STEPPERONLINE17HS15-1504S1';method='Purchase to A0648/2025-07-30; conservative maximum envelope, actual hardware/driver thermal/torque Stage2 NOT MEASURED'
   if idx.get('design_geometry',{}).get('captive_swivel_nuts') and s.startswith('SWIVEL_BOLT'):
    kind='FINISH PURCHASED';mat='A2-70 procurement requirement, certificate REQUIRED';method='Trim purchased ISO4762M2x8 to7 under-head, guard nut during cut, rechamfer/deburr/gauge6g; no invented measured strength'
   keys={**{k:k for k in ('SHAFT','SKIN','PALM','IDLER','MOTOR_PLATE','JAMMING_DOCK')},**{s:k for k,ss in {'PEDESTAL':['PEDESTAL_L','PEDESTAL_R'],'CAP_':['CAP_L','CAP_R'],'DRUM':['DRUM','DRUM_NIPPLE_CAP'],'COUPLING':['COUPLING_LOWER','COUPLING_UPPER'],'ROOT':['ROOT_FRONT','ROOT_BACK'],'RAIL_':['RAIL_L','RAIL_R'],'TERMINAL':['TERMINAL_FRONT','TERMINAL_BACK'],'SWIVEL':['SWIVEL_LOWER','SWIVEL_UPPER'],'CASSETTE_BLANK':['CASSETTE_BLANK_ADAPTER']}.items() for s in ss}}
   key=keys.get(s,s if s in FEATURES else next((k for k in ('IDLER_SPACER','INNER_WASHER','SWIVEL_SPACER') if s.startswith(k)),''));features=FEATURES.get(key,[])
+  if kind=='FINISH PURCHASED':features=['Under-head length7.000+-0.050; stock ISO4762M2x8 head preserved','trim/rechamfer<=0.10x45deg, deburr and inspect M2x0.4-6g','captive nut engagement1.6 with nominal tip protrusion0.6; strength NOT MEASURED']
+  if kind=='FINISH PURCHASED' and idx.get('design_geometry',{}).get('receiver_pocket_blend_mm'):
+   features=['NOMINAL7mm CAD envelope; actual MATCHED length=measured closed-half grip+actual nut height+0.55','Trim stockISO4762M2x8, final exposed tip0.50..0.65, rechamfer<=0.10, deburr/gauge6g','Nominal tolerance stack permits6.61..7.09 length; LABEL matching receiver position; do NOT blind-cut all screws7mm']
+   method='Matched trim stockISO4762M2x8 to measured grip+nut+0.55; final tip0.50..0.65; actual template/6g inspection REQUIRED, no fabricated measurement'
   rows.append(dict(part_ID=n,quantity=1,purchase_quantity=0 if kind=='BUNDLED PURCHASE' else 1,material=mat,make_or_buy=kind,method=method,actual_producer_detail=v.get('process','See preserved RevH source/audit for inherited part'),dimensions_XYZ_mm=np.round(m.extents,6).tolist(),datum_bounds_mm=np.round(m.bounds,6).tolist(),STEP=str(f.relative_to(ROOT)),STL=str(f.with_suffix('.stl').relative_to(ROOT)),STEP_SHA256=hashlib.sha256(f.read_bytes()).hexdigest(),interface_notes='; '.join(features),physical_qualification='NOT MEASURED; Stage1 geometry only'))
-  if n.startswith(('F1_','F2_')) or kind!='MAKE':continue
+  if n.startswith(('F1_','F2_')) or kind not in ('MAKE','FINISH PURCHASED'):continue
   lo,hi=m.bounds;parts=['<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">','<rect width="1400" height="1000" fill="white"/>',f'<text x="20" y="25">{n} / {a.case} / mm / THREE-VIEW REVIEW — NOT SHOP RELEASED</text>']
   # Real exported edges, not a decorative schematic. All-edge projection
   # intentionally exposes hidden features; dimension tables are authoritative.

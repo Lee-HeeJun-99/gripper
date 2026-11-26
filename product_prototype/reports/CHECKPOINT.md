@@ -1,4 +1,28 @@
-## Latest active Stage1 continuation — 2026-11-26
+## Current Stage1 continuation — 2026-11-26 / Rev U then V machining trial
+
+Actual local save before this continuation:8a0c59f. Rev U292parts,0BRep bulk
+intersections, full assembly STEP/STL. Rev S own-material extension found66
+Skin/Rail–terminal front intersections; Rev T actual1mm inner relief solved
+them,31sampled0..60deg/292closed parts/0hits. Old narrower motion PASS and
+actual FAIL both preserved. Rev T independent subtraction changed only3parts.
+Manufacturing max-wire test then found0.52mm actual groove interference;
+Rev U physically enlarges profilesR0.30, minimum root21.94. Independent
+max-wire BRep test PASS; full wire/rotor maxD0.52 and finished-length±0.25
+endpoint tests PASS0hits, length error2.84e-14mm. Retainer-stack conservative
+external envelope also PASS31poses/0hits. These are NOT driven dynamics/CCD.
+
+Current packet revU_packet1:292BOM rows/37REVIEW drawings; actual634face
+catalogue revU_faces1. Automated file/feature audit15checks PASS but shop
+release NOT granted. Full actual assembly/exploded review views generated.
+Detailed current assembly order and datum/fit acceptance in Stage1 reports.
+Actual machining trial revV_pocket_blend first failed duplicated edge
+enumeration; original source/FAILURE.json retained. Indexed unique-edge fix
+is being tested separately in revV_pocket_blend2. No Native/SDK/push/history
+rewrite. Stage1 final release remains incomplete; continue actual machining
+access, updated final CAD/evidence and checklist. Check actual PID/result
+before resuming; do not blindly repeat existing output tags.
+
+## Previous active Stage1 continuation — 2026-11-26
 
 Current actual CAD revS_documented_motor:292single valid BRep parts,0nominal
 bulk intersections, real full STEP/STL including three finite0.5mm Tendons.

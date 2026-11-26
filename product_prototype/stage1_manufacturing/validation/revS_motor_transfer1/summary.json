@@ -1,0 +1,127 @@
+{
+  "status": "MOTOR_REPLACEMENT_GEOMETRY_TRANSFER_PASS",
+  "changed_parts": [
+    "F0_MOTOR",
+    "F1_MOTOR",
+    "F2_MOTOR"
+  ],
+  "unchanged_parts": 289,
+  "mesh_checks": [
+    {
+      "part": "F0_MOTOR",
+      "closed_positive_mesh": true
+    },
+    {
+      "part": "F1_MOTOR",
+      "closed_positive_mesh": true
+    },
+    {
+      "part": "F2_MOTOR",
+      "closed_positive_mesh": true
+    }
+  ],
+  "motor_bounds_mm": {
+    "F0_MOTOR": [
+      58.85,
+      -84.0,
+      -1.15,
+      101.15,
+      -19.0,
+      41.15
+    ],
+    "F1_MOTOR": [
+      -24.600517328090433,
+      72.96559501270622,
+      -1.15,
+      43.321133917893,
+      129.59846959279,
+      41.15
+    ],
+    "F2_MOTOR": [
+      -123.32113391780555,
+      -65.59846959279,
+      -1.15,
+      -55.20448267189953,
+      -8.965595012714,
+      41.15
+    ]
+  },
+  "motor_radial_lower_bound_mm": 61.8411068788391,
+  "prescribed_moving_Finger_radial_bound_mm": 57,
+  "planar_wire_separation": true,
+  "coupling_containment": [
+    {
+      "part": "F0_COUPLING_LOWER",
+      "excess_mm3": 0.0
+    },
+    {
+      "part": "F0_COUPLING_UPPER",
+      "excess_mm3": 0.0
+    },
+    {
+      "part": "F0_COUPLING_BOLT_74_-21",
+      "excess_mm3": 0.0
+    },
+    {
+      "part": "F0_COUPLING_BOLT_74_-9.8",
+      "excess_mm3": 0.0
+    },
+    {
+      "part": "F0_COUPLING_BOLT_86_-21",
+      "excess_mm3": 0.0
+    },
+    {
+      "part": "F0_COUPLING_BOLT_86_-9.8",
+      "excess_mm3": 0.0
+    }
+  ],
+  "new_motor_coupling_full_turn": [
+    {
+      "motor": "F0_MOTOR",
+      "full_turn_coupling_envelope_mm3": 0.0
+    },
+    {
+      "motor": "F1_MOTOR",
+      "full_turn_coupling_envelope_mm3": 0.0
+    },
+    {
+      "motor": "F2_MOTOR",
+      "full_turn_coupling_envelope_mm3": 0.0
+    }
+  ],
+  "interface_fit": {
+    "motor": "STEPPERONLINE17HS15-1504S1",
+    "model_is_maximum_envelope": true,
+    "maximum_pilot_height_mm": 2.5,
+    "minimum_plate_mm": 2.9,
+    "pilot_axial_margin_mm": 0.4,
+    "minimum_pilot_hole_mm": 22.45,
+    "maximum_pilot_D_mm": 22,
+    "pilot_radial_margin_mm": 0.225,
+    "minimum_screw_hole_mm": 3.55,
+    "screw_major_max_mm": 3,
+    "corner_pitch_error_mm": 0.14142135623730953,
+    "machining_position_error_bound_mm": 0.07071067811865477,
+    "corner_pitch_radial_margin_mm": 0.0628679656440356,
+    "mount_screw_engagement_mm": [
+      2.8,
+      3.2
+    ],
+    "mount_thread_depth_min_mm": 4.5,
+    "screw_bottom_margin_mm": 1.3,
+    "actual_CAD_maxshaft_gap_mm": 1.0,
+    "physical_spec_gap_mm": [
+      1,
+      3
+    ],
+    "minimum_input_grip_mm": 11,
+    "output_grip_mm": 5.8,
+    "actual_hardware": "NOT MEASURED; shaft/pilot incoming inspection and alignment mandatory"
+  },
+  "input_sha256": {
+    "cad/exports/revS_documented_motor/summary.json": "3bbe238191f292fd7ce9d32e926f686bafda80b449819d398cf053a2b134be4d",
+    "cad/exports/revR_fit_clearance/summary.json": "1ffb11b5f2cdd01251f3a0fe4298f63c58af7e19c2a5c043c8cc3f50e54021ec"
+  },
+  "scope": "Only unchanged nominal geometry evidence transfers from base. Explicit bounds for prescribed0..60deg family, not arbitrary physical FEM motion. Manufacturer dimensions, not actual hardware/temperature/torque/driver qualification.",
+  "stage1_release": false
+}

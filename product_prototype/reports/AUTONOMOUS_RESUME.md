@@ -1,4 +1,21 @@
-## Latest active Stage1 continuation — 2026-11-26
+## Current Stage1 resume — 2026-11-26 / actual Rev U and machining trial
+
+Read CHECKPOINT top and Stage1 STAGE1_TASKS.json; actual save via git log.
+Do NOT regenerate RevH or rerun Native. RevU_maxwire actual292parts0bulk,
+0.52wire and±0.25finished-length phase endpoints PASS. RevT own-material
+motion and RevU retainer-stack motion PASS31prescribed0..60deg, notCCD.
+Latest U packet37review drawings/292BOM rows, actual634BRep face catalogue,
+15file/feature checks PASS; NOT shop-release approval.
+Active next work: revV_pocket_blend2 actual R0.35 receiver machining blends
+and source-based stepped NI envelope. First V trial unique-edge assertion
+failed; immutable failure preserved. Check actual summary/process first.
+If completed, run receiver_tool_contract.py with --case revV_pocket_blend2
+and fresh --tag, then new own-material/moving-wire checks and manufacturing
+packet/feature review. Actual child bounds4GiB/420s, PYTHONPATH=/tmp/regrip_stage1_ocp.
+Continue final evidence/checklist, not physics/holding. STAGE1_RELEASE_PASS
+has NOT been granted. No background continuation is implied by this file.
+
+## Previous active Stage1 continuation — 2026-11-26
 
 Actual revS_documented_motor292parts0bulk collisions, whole STEP/STL incl3
 finite Tendons. All inherited paths refer to versioned RevH/I/M/P/Q/R sources.

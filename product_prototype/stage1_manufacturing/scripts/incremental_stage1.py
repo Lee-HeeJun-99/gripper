@@ -123,7 +123,7 @@ def drive_delta(old):
  return new,notes,['F0_COUPLING']
 
 def main():
- a=argparse.ArgumentParser();a.add_argument('--tag',required=True);a.add_argument('--base',default='revH');a.add_argument('--phase',choices=['drive','mechanisms','bend','wire','fit','motor'],default='drive');args=a.parse_args();start=time.monotonic()
+ a=argparse.ArgumentParser();a.add_argument('--tag',required=True);a.add_argument('--base',default='revH');a.add_argument('--phase',choices=['drive','mechanisms','bend','wire','fit','motor','relief','tolerance','fillet'],default='drive');args=a.parse_args();start=time.monotonic()
  out=ROOT/'cad/exports'/args.tag;out.mkdir(exist_ok=False)
  shutil.copyfile(__file__,out/'producer.py')
  if args.phase=='mechanisms':shutil.copyfile(ROOT/'scripts/mechanisms_stage1.py',out/'mechanisms_producer.py')
@@ -131,6 +131,9 @@ def main():
  if args.phase=='wire':shutil.copyfile(ROOT/'scripts/wire_cad_stage1.py',out/'wire_producer.py')
  if args.phase=='fit':shutil.copyfile(ROOT/'scripts/final_fit_stage1.py',out/'fit_producer.py')
  if args.phase=='motor':shutil.copyfile(ROOT/'scripts/sourced_motor_stage1.py',out/'motor_producer.py')
+ if args.phase=='relief':shutil.copyfile(ROOT/'scripts/terminal_relief_stage1.py',out/'relief_producer.py')
+ if args.phase=='tolerance':shutil.copyfile(ROOT/'scripts/groove_tolerance_stage1.py',out/'tolerance_producer.py')
+ if args.phase=='fillet':shutil.copyfile(ROOT/'scripts/receiver_fillet_stage1.py',out/'fillet_producer.py')
  src=ROOT/'cad/exports'/args.base
  deps=[Path(__file__),ROOT/'scripts/build_stage1.py',src/('audit.json' if (src/'audit.json').exists() else 'summary.json')]
  if args.phase=='mechanisms':deps.append(ROOT/'scripts/mechanisms_stage1.py')
@@ -138,6 +141,9 @@ def main():
  if args.phase=='wire':deps.extend([ROOT/'scripts/wire_cad_stage1.py',ROOT/'scripts/wire_motion.py',ROOT/'scripts/mechanism_motion.py'])
  if args.phase=='fit':deps.append(ROOT/'scripts/final_fit_stage1.py')
  if args.phase=='motor':deps.append(ROOT/'scripts/sourced_motor_stage1.py')
+ if args.phase=='relief':deps.append(ROOT/'scripts/terminal_relief_stage1.py')
+ if args.phase=='tolerance':deps.append(ROOT/'scripts/groove_tolerance_stage1.py')
+ if args.phase=='fillet':deps.extend([ROOT/'scripts/receiver_fillet_stage1.py',ROOT/'scripts/mechanisms_stage1.py'])
  initial_hashes={str(p.relative_to(ROOT)):sha(p) for p in deps}
  if (src/'audit.json').exists():
   audit=json.loads((src/'audit.json').read_text());provenance={p['id']:dict(path=str((src/(p['id']+'.step')).relative_to(ROOT)),sha256=sha(src/(p['id']+'.step'))) for p in audit['parts']}
@@ -156,9 +162,18 @@ def main():
  elif args.phase=='fit':
   from final_fit_stage1 import fit_delta
   changed,notes,removed=fit_delta(allparts)
- else:
+ elif args.phase=='motor':
   from sourced_motor_stage1 import motor_delta,MOTOR_SPEC
   changed,notes,removed=motor_delta(allparts)
+ elif args.phase=='relief':
+  from terminal_relief_stage1 import relief_delta,RELIEF
+  changed,notes,removed=relief_delta(allparts)
+ elif args.phase=='tolerance':
+  from groove_tolerance_stage1 import tolerance_delta
+  changed,notes,removed=tolerance_delta(allparts)
+ else:
+  from receiver_fillet_stage1 import fillet_delta
+  changed,notes,removed=fillet_delta(allparts)
  for i in range(3):
   for n in removed:
    name=n.replace('F0_',f'F{i}_',1);del allparts[name];provenance.pop(name)
@@ -186,6 +201,12 @@ def main():
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],housing_seat_mm=[16.025,16.035],housing_nominal_mm=16.030,housing_coax_diameter_mm=.010,shaft_coax_diameter_mm=.005);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  if args.phase=='motor':
   base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],motor_spec=MOTOR_SPEC);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='relief':
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],terminal_inner_relief=RELIEF);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='tolerance':
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],groove_root_radius_mm=10.98,groove_profile_radius_mm=.30,groove_profile_limits_mm=[.30,.31],groove_major_radius_mm=11.28);result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
+ if args.phase=='fillet':
+  base_index=json.loads((src/'summary.json').read_text());result['design_geometry']=dict(base_index['design_geometry'],receiver_pocket_blend_mm=.35,NI_envelope='Amax2.8/Bmin3/Cmax3.8/Dmax6; fixed-outlet union head3+stem3');result['wire_CAD_metadata']=base_index['wire_CAD_metadata']
  final_hashes={str(p.relative_to(ROOT)):sha(p) for p in deps}
  assert initial_hashes==final_hashes,'Producer changed during CAD job; original snapshots retained, output not qualified'
  (out/'summary.json').write_text(json.dumps(result,indent=2))

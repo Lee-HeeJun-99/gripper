@@ -1,0 +1,55 @@
+{
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AK_root_clamp_contact2/summary.json",
+    "SHA256": "5c4b82ac7ff544d1d811c33fed4864a6479749f1f76de43cd2f680f6267c699c"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AK_root_pressure1/producer.py",
+    "SHA256": "30c4e49e836fd4c88961d96474fb8f3d77856ea2cad30aa0ccf976870e81e369"
+  },
+  "parts": {
+    "F0_ROOT_FRONT": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_ROOT_FRONT.step",
+      "SHA256": "dfb856ae9602cbd5fbf4bdd079d3c6315cb7b192c60e459c3605b42b86861089"
+    },
+    "F0_SKIN": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAC_pet_travel1/F0_SKIN.step",
+      "SHA256": "98800c07b3c853500fb207835e06f3f090c63d4f86c655f9ea050cc22905d321"
+    },
+    "F0_RAIL_L": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_RAIL_L.step",
+      "SHA256": "f27832c5ce479faf5b64dab80fdc5562a28fbfd93546c7e561b9621cc1e605bd"
+    },
+    "F0_RAIL_R": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_RAIL_R.step",
+      "SHA256": "eeed399210fb10d647d5fcd41e356220f5532b7a2161da52a7b23b480ca8d76f"
+    },
+    "F0_ROOT_BACK": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_ROOT_BACK.step",
+      "SHA256": "0104b5fe3de08261a0cc30717859a8881127f3b20401a0c8b0f8fc051897ec53"
+    },
+    "F0_ROOT_BOLT_-16": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_ROOT_BOLT_-16.step",
+      "SHA256": "29a5093767987a345bb6ca4d367a34f9f8cc5fe4c4b85de698b7a47666870f54"
+    },
+    "F0_ROOT_BOLT_16": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_ROOT_BOLT_16.step",
+      "SHA256": "faab322787f912d91dfe4719115a8cb6b303000e717985bbf1e6a91db9df7ad4"
+    }
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/ak_root_clamp_contact.py",
+      "SHA256": "1daf50c26cc141398d84101d2ba051ac532c819ed27ee64e4424a26c33bc43c8"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/build_stage1.py",
+      "SHA256": "551c0cb2d9f0e5293333f9c6cedcabb3977a6510a0dc821d72b2aafe2ab2cdad"
+    }
+  ],
+  "plan": "Fixed z4..6mm band, common projected actual contacts on each rail; unit compression only. Area>1e-6, centroid z5 within1e-6mm, wrench residual<1e-6Nmm. No material or preload inference."
+}

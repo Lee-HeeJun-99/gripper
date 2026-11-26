@@ -1,0 +1,76 @@
+{
+  "status": "FINITE_PRESSURE_WITNESS_PASS",
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AK_root_pressure1/inputs.json",
+    "SHA256": "41d1375dd2eb6c75a0a0dfa0ae993413f25482152e482b9e04a9f91554e4958f"
+  },
+  "patches": [
+    {
+      "side": "L",
+      "area_mm2": 6.0,
+      "centroid_mm": [
+        0.0,
+        -10.0,
+        5.0
+      ],
+      "bounds_mm": [
+        0.0,
+        -11.5,
+        4.0,
+        0.0,
+        -8.5,
+        6.0
+      ],
+      "shape": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AK_root_pressure1/COMMON_L.step",
+        "SHA256": "321c952e6bec65e8c8595e461f372d6dc45dd15dca07fafd5c2bf6d543c83304"
+      },
+      "normal_force_N": 0.5,
+      "pressure_MPa_per_unit_total_N": 0.08333333333333333
+    },
+    {
+      "side": "R",
+      "area_mm2": 6.0,
+      "centroid_mm": [
+        0.0,
+        10.0,
+        5.0
+      ],
+      "bounds_mm": [
+        0.0,
+        8.5,
+        4.0,
+        0.0,
+        11.5,
+        6.0
+      ],
+      "shape": {
+        "path": "product_prototype/stage12_integrated/validation/finger/AK_root_pressure1/COMMON_R.step",
+        "SHA256": "872f307b6b0978eb88d2c56cffb979ecf813037d95a02695658332ff9dbe4f09"
+      },
+      "normal_force_N": 0.5,
+      "pressure_MPa_per_unit_total_N": 0.08333333333333333
+    }
+  ],
+  "checks": {
+    "positive_finite_patches": true,
+    "unit_force": true,
+    "normal_moment_balance": true
+  },
+  "unit_resultant_yz_mm": [
+    0.0,
+    5.0
+  ],
+  "bolt_resultant_yz_mm": [
+    0.0,
+    5.0
+  ],
+  "old_uniform_residual_Nmm_per_N": 3.4552411988347567,
+  "whole_system_release": false,
+  "physical_preload_N": null,
+  "limitations": [
+    "Necessary rigid-body normal equilibrium witness only; pressure not solved from bolt/plate deformation",
+    "In-plane bolt-to-patch load spreading, local bending/stress, tolerances, friction and full Finger remain unqualified",
+    "Equal hypothetical bolt forces; actual preload and capacities unknown; candidate/adopted CAD unchanged"
+  ]
+}

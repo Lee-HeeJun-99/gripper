@@ -1,3 +1,24 @@
+# Bounded B cycle — finite actual-root pressure witness (2026-11-26)
+
+Started at4c68ae3e7f9d0f7eb5ab6fc2c3e7d347708e8293. Supervisor local save PENDING;
+no git add/commit attempted. Actual result: product_prototype/stage12_integrated/validation/finger/AK_root_pressure_cycle1/summary.json.
+
+Two actual common6mm² pressure patches across FRONT/PET/RAIL/BACK at y±10,z5mm
+provide a positive unit-normal rigid-body equilibrium witness against equal
+bolt loads. Independent24solid slices, moment and virtual-work checks pass;
+0.1mm height corruption rejected. All235AK source hashes verified. Old uniform
+pressure3.455241199Nmm/N residual remains valid and unchanged. This is no
+elastic-pressure/preload/strength/full Finger PASS; plate load spreading from
+bolt y±16mm is unresolved. All historical failures and CAD/BOM preserved.
+
+Read-only release remains INTEGRATED_NOT_QUALIFIED. Next B needs supported
+bolt/plate/contact elasticity, actual preload/material/friction or positive
+retention; no repeated patch scans. Independent C six-DOF grounding and A
+protection remain READY. Two analysis children exit0 within4GiB/420s; no SOFA.
+No RUNNING queue record or owned live analysis child. No Stage3, SDK, criteria,
+manager or save-control change, external manager launch or Git write.
+Manifest runtime/authorized_20261126_4/save_request8.json awaits supervisor save.
+
 # Bounded C cycle — separate finite three-pad support (2026-11-26)
 
 Started at593a8706f47d613f09d57d2a3628fb4bd5e9a3ab. Supervisor local save PENDING;

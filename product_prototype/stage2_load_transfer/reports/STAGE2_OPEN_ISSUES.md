@@ -4,8 +4,9 @@ READY digital work (NOT all BLOCKED):
 
 1. Overload limiter / tension-cap architecture and actual interface screening;
    current open-loop holding torque cannot define a safe low-N envelope.
-2. RevAB candidate-matched separate PET/Rail unilateral sliding/contact model;
-   do not assume the old reduced free-slip control is this CAD's response.
+2. RevAB finite-rotation/axial-friction separate PET/Rail sliding/contact model;
+   the small-deflection frictionless normal-contact Coupon is now independently
+   verified, but is NOT finite-rotation behavior or full physical approval.
 3. Actual split-jaw clamp/preload and finite pin-bearing stress models; use the
    verified bounded3D FEM assembly, not round-shaft stress alone.
 4. Rotor weight/bearing/housing/Root reaction model and complete inertia bounds;

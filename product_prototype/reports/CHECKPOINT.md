@@ -1,4 +1,41 @@
-## Current Stage2 continuation — 2026-11-26
+## Current Stage2 continuation — 2026-11-26 / bounded load and contact studies
+
+Actual implementation saves29b287b/8994261/597b5d5/08a2d8e/3a9e4b5/bd7ac2c;
+latest contact/audit/checkpoint save via git log. Baseline c0e5dfd RevAA unchanged.
+Stage2 DIGITAL RELEASE NOT QUALIFIED: independent release_audit2 rejects22
+system criteria; no Native/full100g trial, no actual hardware measurements.
+
+Executed actual304STEP integrals, conditional contact wrench/work conjugacy,
+linear beam vs reference, finite-rotation/stroke/energy, actual shaft3D tetra FEA,
+two-inertia time reference, dimension corners and real candidate/fixture CAD.
+Shaft compliance mesh0.8→0.6mm error0.346925%; cylinder reference0.624661%.
+Memory failures preserved, bounded element-block/AMG fixed numerical workflow.
+NOT shaft/pin/contact/fatigue or whole-system strength approval.
+
+Important physical-model findings: closed16.91mm reduced model T0.817899N
+but PET−39.1408N/rails+19.5704N internal end forces; actual clamp friction
+unqualified. Separate sliding-PET RevAB candidate:6changed STEP/STL and actual
+304part STEP, NOT adopted. Initial mixed-tolerance checkerFAIL preserved;
+correlated local geometry passes. Separate-layer frictionless small-load
+channel contact passes after two preserved numerical failures; actual saved
+primal/dual independent Bernstein/force/moment checks and3negative controls pass.
+Neither common PET curvature nor distal axial bond is imposed in that Coupon.
+
+Rigid-coupling alignment conditional frame is load-critical. Motor0.45Nm
+holding reference maps to40.3045N ideal jam tension, NOT a safety upper bound;
+overload protection is unqualified. Public limiter screen found no verified
+drop-in. Current protected maximum design load is NOT established.
+
+Evidence audit2 validates17selected bounded-study hashes, actual304part hashes,
+unchanged historical protected paths, and blank physical measurement records.
+All launched analysis children completed; no RUNNING task/process remains.
+Next READY: drive_force_cap, sliding_pet_finite_rotation_contact,
+coupling_preload_influence, hardware_preparation. Digital work remains READY,
+not all BLOCKED; preserve this finite-session continuation point, not a release.
+Resume: python product_prototype/stage2_load_transfer/scripts/stage2_status.py --next
+Then implement the selected NEW task; never rerun existing result tags.
+
+## Earlier Stage2 save — 2026-11-26
 
 Baseline c0e5dfd, first Stage2 save29b287b; obtain latest local SHA with git log.
 Stage1 RevAA/release_revAA2 unchanged. New work only under stage2_load_transfer.

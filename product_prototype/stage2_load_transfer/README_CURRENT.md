@@ -13,8 +13,8 @@ NOT actual mass/inertia of motors, bearings, threads or stranded rope.
 
 Queue: `STAGE2_TASKS.json`. No full grasp or Stage3 actuation authorized.
 Actual independent gate: `validation/integrated/release_audit2/summary.json`
-=> STAGE2_NOT_QUALIFIED. Selected15bounded-study evidence hashes PASS in
-`validation/integrated/evidence_audit1`; this is NOT system approval.
+=> STAGE2_NOT_QUALIFIED. Selected17bounded-study evidence hashes PASS in
+`validation/integrated/evidence_audit2`; this is NOT system approval.
 
 Major new findings: layer-end loads39.14N PET /19.57N per rail despite0.818N
 Tendon in the reduced closing model; rigid coupling alignment is load-critical;
@@ -25,7 +25,7 @@ RevAB geometry and real304part STEP are CANDIDATE ONLY, not adopted/released.
 
 Resume selection:
 `python product_prototype/stage2_load_transfer/scripts/stage2_status.py --next`
-Next READY: drive_force_cap; separate-layer candidate model; coupling preload.
+Next READY: drive_force_cap; finite-rotation separate-layer candidate; coupling preload.
 There is no session-external runner. All launched analysis children completed.
 Physical first-article records remain blank. Do not edit Stage1 evidence.
 

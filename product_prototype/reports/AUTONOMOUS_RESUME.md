@@ -1,4 +1,36 @@
-## Current Stage2 resume — 2026-11-26 / actual Rev AA
+## Current Stage2 resume — 2026-11-26 / actual Rev AA, RevAB candidate unadopted
+
+Last implementation save bd7ac2c plus latest contact/checkpoint save via git log.
+Read actual HEAD/status first. Stage2 still NOT QUALIFIED; Stage1 RevAA preserved.
+Current authoritative task queue: stage2_load_transfer/STAGE2_TASKS.json.
+No analysis child is running; no external/background scheduler is configured.
+
+Last actual work: separate PET/Rail unilateral small-load channel Coupon,
+sliding_contact1/2 FAIL preserved; sliding_contact4 PASS with stored primal/dual,
+contact_independent1 PASS alternate quadrature/Bernstein bounds and3negative
+controls. Actual6part candidate +304part STEP in revised_cad/revAB_sliding_pet1
+is NOT product release. Finite rotation/friction/shell/strength still unqualified.
+Evidence audit2 PASS17bounded studies, no missing referenced hashes,304original
+STEP hashes unchanged and all physical records blank. release_audit2 remains
+STAGE2_NOT_QUALIFIED, not analytical/numerical/hardware release.
+
+Next READY (not completed, not all BLOCKED):
+1.drive_force_cap:40.3N ideal jam reference cannot be replaced by0.8N normal
+closing model. OEM limiter drawing/calibration and protected torque window unknown.
+2.sliding_pet_finite_rotation_contact: actual channel, independent layer geometry,
+unilateral contact/axial slip, no inherited common curvature or q/v correction.
+3.coupling_preload_influence;4.hardware_preparation.
+
+Exact resume entry (selection only, not a completed experiment):
+`python product_prototype/stage2_load_transfer/scripts/stage2_status.py --next`
+Each new implementation uses NEW tags; do not overwrite or regenerate existing
+results. OCP and Gmsh use different OCC versions in SEPARATE processes.
+See stage2_load_transfer/models/analytical/FEM_REQUIREMENTS_LOCK.txt and
+reports/STAGE2_ENVIRONMENT.md for actual versions/recovery commands.
+This is a finite-session handoff with executable work remaining, NOT a claim
+that the project or Stage2 is complete. No Stage3/full100g trial authorized.
+
+## Earlier Stage2 resume — 2026-11-26 / actual Rev AA
 
 This prefix supersedes the HISTORICAL RevU resume below. Stage1 actual current
 release is RevAA `release_revAA2`, not RevU. Baseline c0e5dfd / extraction29b287b;

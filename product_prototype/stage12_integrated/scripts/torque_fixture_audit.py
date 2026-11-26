@@ -1,5 +1,5 @@
 """Independent actual fixture mesh/integral/shaft-interface check."""
-import argparse,json,sys,shutil
+import argparse,json,sys,shutil,math
 from pathlib import Path
 import numpy as np
 import trimesh
@@ -10,8 +10,8 @@ from incremental_stage1 import common
 from OCP.BRepBuilderAPI import BRepBuilderAPI_Transform
 from OCP.gp import gp_Trsf,gp_Ax1,gp_Pnt,gp_Dir
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'hardware_test/inspection'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
-    source=ROOT/'hardware_test/fixtures/torque_arm1/summary.json';d=json.loads(source.read_text());shapes={};checks=[]
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--fixture',default='torque_arm1');a=p.parse_args();out=ROOT/'hardware_test/inspection'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
+    source=ROOT/'hardware_test/fixtures'/a.fixture/'summary.json';d=json.loads(source.read_text());shapes={};checks=[]
     for r in d['parts']:
         s=load(REPO/r['STEP']['path']);v,c,j=properties(s);mesh=trimesh.load(REPO/r['STL']['path'],force='mesh');err=abs(mesh.volume*1e-9/v-1)
         shapes[r['part']]=s;checks.append(dict(part=r['part'],watertight=bool(mesh.is_watertight),positive=bool(mesh.is_volume),volume_relative=err,centroid_m=c.tolist()))
@@ -20,6 +20,8 @@ def main():
     # Palm only. Not the complete gripper with its Idler/Drum still installed.
     names=['PALM','F0_SHAFT','F0_BEARING_L','F0_BEARING_R','F0_PEDESTAL_L','F0_PEDESTAL_R']
     supports={n:load(S1/'cad/parts/revAA_mbd1'/(n+'.step')) for n in names};hits=[]
+    setup=gp_Trsf();setup.SetRotation(gp_Ax1(gp_Pnt(80,0,20),gp_Dir(0,1,0)),math.radians(d.get('shaft_install_rotation_deg',0)))
+    supports['F0_SHAFT']=BRepBuilderAPI_Transform(supports['F0_SHAFT'],setup,True).Shape()
     for angle in np.linspace(-5,5,11):
         T=gp_Trsf();T.SetRotation(gp_Ax1(gp_Pnt(80,0,20),gp_Dir(0,1,0)),float(np.radians(angle)))
         for name,s in shapes.items():

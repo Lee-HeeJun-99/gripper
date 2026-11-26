@@ -2,13 +2,15 @@
 import argparse,fcntl,tempfile,json
 from pathlib import Path
 from baseline_registry import ROOT,ref,dump
-from session_manager import has_progress,command
+from session_manager import has_progress,command,active_tasks
 def main():
     p=argparse.ArgumentParser();p.add_argument('--tag',required=True);a=p.parse_args();out=ROOT/'validation/integrated'/a.tag;out.mkdir(parents=True,exist_ok=False)
     original=dict(HEAD='a',actual_result_artifacts={'x':'1'})
     assert not has_progress(original,dict(HEAD='b',actual_result_artifacts={'x':'1'}))
     assert has_progress(original,dict(HEAD='b',actual_result_artifacts={'x':'1','y':'2'}))
     cmd=command('TEST_ONLY_NOT_EXECUTED');assert '--sandbox' in cmd and 'workspace-write' in cmd and not any('bypass' in s for s in cmd)
+    assert active_tasks({'tasks':[{'id':'physics','status':'RUNNING'}]})==['physics']
+    assert not active_tasks({'tasks':[{'id':'physics','status':'READY'}]})
     with tempfile.TemporaryDirectory(prefix='regrip-manager-lock-') as tmp:
         p=Path(tmp)/'lock'
         with p.open('a+') as first,p.open('a+') as second:

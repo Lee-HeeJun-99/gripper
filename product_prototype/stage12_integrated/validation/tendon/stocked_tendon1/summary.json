@@ -1,0 +1,95 @@
+{
+  "status": "SCREEN_COMPLETE_NOT_A_RELEASE",
+  "scope": "DISCRETE SUPPLIER STOCK / NOMINAL SEATED GEOMETRY ONLY",
+  "supplier_source": "https://www.carlstahl-technocables.com/gb/en/products/wire-ropes-and-strands/stainless-steel-wire-rope/",
+  "source_read_date": "2026-11-26",
+  "rows": [
+    {
+      "item": "SE000005",
+      "construction": "AISI3166x7-WSC",
+      "nominal_diameter_mm": 0.45,
+      "manufacturer_minimum_breaking_N": 151.0,
+      "catalog_nominal_linear_mass_kg_m": 0.0008,
+      "design_length_bare_rope_nominal_mass_kg": 0.00015264746,
+      "bare_rope_arithmetic_half_minimum_N": 75.5,
+      "minimum_floor_42d_margin_mm": 2.9499999999999993,
+      "zero_stiffness_seated_radius_interval_mm": [
+        11.15,
+        11.155
+      ],
+      "compatible_with_CURRENT_incoming_diameter_acceptance": false,
+      "unknown": [
+        "actual supplied diameter tolerance",
+        "finished NI000032 compatibility/pullout",
+        "EA, fatigue, friction and bending loss"
+      ],
+      "disposition": "INVESTIGATE_SMALLER_STOCK_VARIANT_NOT_ADOPTED"
+    },
+    {
+      "item": "SE000006",
+      "construction": "AISI3166x7-WSC",
+      "nominal_diameter_mm": 0.54,
+      "manufacturer_minimum_breaking_N": 235.0,
+      "catalog_nominal_linear_mass_kg_m": 0.0012,
+      "design_length_bare_rope_nominal_mass_kg": 0.00022897119,
+      "bare_rope_arithmetic_half_minimum_N": 117.5,
+      "minimum_floor_42d_margin_mm": -0.8299999999999983,
+      "zero_stiffness_seated_radius_interval_mm": [
+        11.195,
+        11.2
+      ],
+      "compatible_with_CURRENT_incoming_diameter_acceptance": false,
+      "unknown": [
+        "actual supplied diameter tolerance",
+        "finished NI000032 compatibility/pullout",
+        "EA, fatigue, friction and bending loss"
+      ],
+      "disposition": "REQUIRES_LARGER_PULLEYS_TO_MEET42d_RECOMMENDATION"
+    }
+  ],
+  "geometry_checks": [
+    {
+      "item": "SE000005",
+      "part": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_DRUM.step",
+        "SHA256": "e604f7350515962e20ada6fb6477ae0a1c71453fd372f923737c4681a45cf74a"
+      },
+      "nominal_full_seated_torus_common_mm3": 0.0,
+      "status": "PASS"
+    },
+    {
+      "item": "SE000005",
+      "part": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_IDLER.step",
+        "SHA256": "e89cc9bf6f6f749547f445d784fbc3dbc8c15db64c3cf22a6366df0a1ead3ea0"
+      },
+      "nominal_full_seated_torus_common_mm3": 0.0,
+      "status": "PASS"
+    },
+    {
+      "item": "SE000006",
+      "part": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_DRUM.step",
+        "SHA256": "e604f7350515962e20ada6fb6477ae0a1c71453fd372f923737c4681a45cf74a"
+      },
+      "nominal_full_seated_torus_common_mm3": 0.0,
+      "status": "PASS"
+    },
+    {
+      "item": "SE000006",
+      "part": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_IDLER.step",
+        "SHA256": "e89cc9bf6f6f749547f445d784fbc3dbc8c15db64c3cf22a6366df0a1ead3ea0"
+      },
+      "nominal_full_seated_torus_common_mm3": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/tendon/stocked_tendon1/producer.py",
+    "SHA256": "29367f7b83d3f5ea63c934c47dd90db1598642ca760e80703d5c6f9b0dba6992"
+  },
+  "adopted": false,
+  "criteria_changed": false,
+  "warning": "Half minimum breaking force is NOT a certified working load. Published bare rope rating excludes finished ends/bending/fatigue. No diameter tolerance or EA invented. Current0.50custom rope design unchanged."
+}

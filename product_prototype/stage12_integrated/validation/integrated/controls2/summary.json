@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "scope": "SOFTWARE NEGATIVE CONTROLS ONLY",
+  "controls": [
+    {
+      "name": "different_revision_PASS",
+      "rejected": true,
+      "expected_error": "different revision"
+    },
+    {
+      "name": "changed_STEP",
+      "rejected": true,
+      "expected_error": "geometry invalidated"
+    },
+    {
+      "name": "missing_FEM",
+      "rejected": true,
+      "expected_error": "missing/stale"
+    },
+    {
+      "name": "NaN_or_Inf_nan",
+      "rejected": true,
+      "expected_error": "nonfinite"
+    },
+    {
+      "name": "NaN_or_Inf_inf",
+      "rejected": true,
+      "expected_error": "nonfinite"
+    },
+    {
+      "name": "unsupported_material",
+      "rejected": true,
+      "expected_error": "unsupported material"
+    },
+    {
+      "name": "unrun_test",
+      "rejected": true,
+      "expected_error": "unrun test"
+    },
+    {
+      "name": "coupon_promotion",
+      "rejected": true,
+      "expected_error": "coupon promotion"
+    },
+    {
+      "name": "fake_hardware",
+      "rejected": true,
+      "expected_error": "hardware claim"
+    },
+    {
+      "name": "duplicate_evidence",
+      "rejected": true,
+      "expected_error": "duplicate"
+    },
+    {
+      "name": "stale_stage1",
+      "rejected": true,
+      "expected_error": "different revision"
+    },
+    {
+      "name": "relaxed_convergence",
+      "rejected": true,
+      "errors": [
+        "numerical_convergence: absent/relaxed time_relative"
+      ]
+    },
+    {
+      "name": "actual_mixed_assembly_with_AA_release",
+      "rejected": true,
+      "expected_error": "stage1 assembly differs"
+    },
+    {
+      "name": "actual_changed_force_criterion",
+      "rejected": true,
+      "expected_error": "inherited criteria changed"
+    }
+  ],
+  "part_material_change_invalidated": true,
+  "product_release": false,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/scripts/gate_controls.py",
+    "SHA256": "e2b17f25ea9cb41ff2d00b0e00f0a13886adb539764423f1a5d97e579bebe906"
+  }
+}

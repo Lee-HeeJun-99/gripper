@@ -39,6 +39,21 @@ def main():
     x=copy.deepcopy(b);x['parts'][0]['material_requirement']='changed material'
     assert 'material_requirement' in invalidated(b,x)['PALM']
     assert audit(b,c)['status']=='INTEGRATED_NOT_QUALIFIED'
+    actual=ROOT/'cad/exports/revAD_funnel1/ASSEMBLY.step'
+    if actual.exists():
+        x=copy.deepcopy(b);x['assembly']=ref(actual);test('actual_mixed_assembly_with_AA_release',x,'stage1 assembly differs',True)
+    frozen=copy.deepcopy(json.loads((S2/'models/analytical/criteria.json').read_text()));frozen['static_force_balance_N_max']=1e-6
+    changed=out/'test_only_relaxed_criteria.json';dump(changed,frozen)
+    x=copy.deepcopy(b);x['criteria']=ref(changed);test('actual_changed_force_criterion',x,'inherited criteria changed',True)
+    x=copy.deepcopy(fixture);x['system_evidence'][0]['criterion']='shaft_strength'
+    errors=audit(b,x)['errors'];assert 'coupon/stale/synthetic actual system result' in errors
+    rows.append(dict(name='actual_coupon_cannot_be_relabelled_system',rejected=True))
+    unrun=out/'test_only_unrun_result.json';dump(unrun,dict(test_only=True,scope='SYSTEM_LOAD_TRANSFER',status='PASS',revision=b['revision'],execution=dict(exit_code=0,command='NOT_EXECUTED_TEST_FIXTURE',actually_executed=False)))
+    x['system_evidence'][0].update(ref(unrun));errors=audit(b,x)['errors'];assert 'unrun actual system result' in errors
+    rows.append(dict(name='actual_unrun_test_metadata_rejected',rejected=True))
+    nonfinite=ROOT/'validation/integrated/negative_nonfinite_actual.json'
+    x['system_evidence'][0].update(ref(nonfinite));errors=audit(b,x)['errors'];assert 'nonfinite actual result' in errors
+    rows.append(dict(name='actual_NaN_result_rejected',rejected=True))
     dump(out/'summary.json',dict(status='PASS',scope='SOFTWARE NEGATIVE CONTROLS ONLY',controls=rows,part_material_change_invalidated=True,product_release=False,producer=ref(Path(__file__))))
     print(json.dumps(dict(controls=len(rows),status='PASS',product_release=False)))
 if __name__=='__main__':main()

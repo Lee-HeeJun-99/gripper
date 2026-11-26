@@ -1,4 +1,18 @@
-## Current Stage2 resume — 2026-11-26 / actual Rev AA, RevAB candidate unadopted
+## Current integrated resume — 2026-11-26
+
+First verify actual HEAD/status. Current authority is stage12_integrated,
+not the historical Stage2-only queue below. AdoptedAA unchanged; AB/AC/AD are
+unadopted. release3 INTEGRATED_NOT_QUALIFIED. No Native/hardware execution.
+No active child or external scheduler. READY tasks are not exhausted.
+Read stage12_integrated/CHECKPOINT.md and AUTONOMOUS_RESUME.md, then run:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/stage12_integrated/scripts/integrated_status.py --next`
+Interrupted64 static guess and its independent failed force certificate are
+preserved; do not treat close migration as converged or rerun old outputs.
+Exact next implementation: cone-preserving contact conditioning investigation;
+other tracks include actual overload maximum, coupling selection and flexible
+Rail/friction model. No Stage3 or100g trial until integrated gates qualify.
+
+## Prior Stage2 resume — 2026-11-26 / actual Rev AA, RevAB candidate unadopted
 
 Last contact implementation d51b6f2, provenance save474aba8; latest QC/checkpoint
 save via git log.

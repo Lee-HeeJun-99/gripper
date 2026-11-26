@@ -1,0 +1,109 @@
+{
+  "status": "FIXTURE_GEOMETRY_PASS",
+  "scope": "FOUR FINITE BENCH FIXTURE PARTS / NOMINAL COMMON ONLY, NOT PROOF LOAD OR PURCHASED SENSOR ADAPTER",
+  "parts": [
+    {
+      "part": "TORQUE_ARM",
+      "valid_single_positive": true,
+      "volume_mm3": 8379.007239035982,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/TORQUE_ARM.step",
+        "SHA256": "2e51ae98a92ff68681fb6ed650f3c4653d12b2c830fec090c48108bf0a6a89e7"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/TORQUE_ARM.stl",
+        "SHA256": "19ae1cf14916b6c723e476531a45b753a969f7aae4ebbfd0687e3d1164b78ae9"
+      }
+    },
+    {
+      "part": "TORQUE_PIN",
+      "valid_single_positive": true,
+      "volume_mm3": 24.41127447582144,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/TORQUE_PIN.step",
+        "SHA256": "025764a5bf1bc83571cb68f3bb29fe413d4672c15a56453b22090286c0135df6"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/TORQUE_PIN.stl",
+        "SHA256": "854f787a0e943cc22a9bb8612d08b85e8546be085716f857d8e24277efa78320"
+      }
+    },
+    {
+      "part": "PLUG_L",
+      "valid_single_positive": true,
+      "volume_mm3": 11.864890037294366,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/PLUG_L.step",
+        "SHA256": "92939e9f16df4636d81a44b8780cd1e85a01c11699168ee4789cf92bdf1500d2"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/PLUG_L.stl",
+        "SHA256": "899ecbbe0d2ec87ea4e78ecd19d9b963fd37131e450a796da11f44ad25b433b1"
+      }
+    },
+    {
+      "part": "PLUG_R",
+      "valid_single_positive": true,
+      "volume_mm3": 11.864890037294375,
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/PLUG_R.step",
+        "SHA256": "765e98d9215899b9994fb53ea8a15f426fb482cff40c9f9bebd9725bce616370"
+      },
+      "STL": {
+        "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/PLUG_R.stl",
+        "SHA256": "52abd80a2a10348369620bdf9eb6a8f1d642322c10e44bb44ef76b33ff2539de"
+      }
+    }
+  ],
+  "hits": [],
+  "assembly": {
+    "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/ASSEMBLY.step",
+    "SHA256": "91ce460a212771518f84c3725a4c90333db0de84adcd4240d07950e5f616db4c"
+  },
+  "nominal_force_arm_m": 0.1,
+  "reference_torque_Nm": 0.45,
+  "reference_force_N": 4.5,
+  "gross_arm_bending_reference_Pa": 12500000.0,
+  "pin_axis": [
+    0,
+    0,
+    1
+  ],
+  "shaft_install_rotation_deg": 90,
+  "actual_stock_plug_sources": {
+    "L": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_DRUM_PIN_PLUG_L.step",
+      "SHA256": "3b961c1250c34e8529bfed08692eea1707f29464aa9d3bc25180cb3c46562fd1"
+    },
+    "R": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_DRUM_PIN_PLUG_R.step",
+      "SHA256": "d7ad097d79417889bd98bf9edf40b628b82ce7c3d6e915bf9d0d00198c3ca58f"
+    }
+  },
+  "load_cell_requirement": {
+    "range_N": [
+      -20,
+      20
+    ],
+    "resolution_N": 0.001,
+    "lever_measurement_resolution_mm": 0.01
+  },
+  "required_test_cutset": [
+    "Drum",
+    "Drum nipple cap and3bolts",
+    "Production crosspin and plugs",
+    "Idler/other obstructing production hardware; use separate supported bench shaft module"
+  ],
+  "interfaces": [
+    "8.10mm bore on existing8mm shaft shoulder",
+    "1.49mmx14custom pin in1.51bore across shaft/pin axisY2.5",
+    "M2x0.4-6H threaded4mm ends; nominal major CAD is NOT tap-drill"
+  ],
+  "warning": "Simple plug cylinders are thread envelopes, not socket/tool models. Sensor end link and bench support must be selected/modelled. No powered calibration, proof capacity, fatigue or exact clamp clearance certification.",
+  "physical_records_measured": false,
+  "powered_authorization": false,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/hardware_test/fixtures/torque_arm2/producer.py",
+    "SHA256": "7fbb061b5eafce13fa7816866d4e54e4f70106f20456d69f03ea0173fa437bf1"
+  }
+}

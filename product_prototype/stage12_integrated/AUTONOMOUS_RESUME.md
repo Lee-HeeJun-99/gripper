@@ -1,5 +1,28 @@
 # Resume
 
+Latest actual work: read CHECKPOINT.md current continuation before historical
+notes. No child or external worker is running. Current release3 NOT QUALIFIED.
+Do not rerun completed16/32 states or owner64_1 into its old directory.
+
+Read-only next task selection from repository root:
+`/home/ubuntu/miniconda3/envs/robot_ws/bin/python product_prototype/stage12_integrated/scripts/integrated_status.py --next`
+
+64-element initial guess (not Native state):
+`validation/finger/owner64_1/optimizer_checkpoints/n64_00000590.json`.
+Tracked full-state copy: `validation/finger/owner64_inspection1/summary.json`.
+Source/geometry/force diagnostics are recorded under owner64_inspection1,
+owner64_geometry1, owner64_reaction1 and validation/contact/owner_rank1.
+No completed64 equilibrium: force residual fails unchanged1e-8N criterion.
+Use a NEW result tag for any resumed static solve; an initial guess is not a
+physical checkpoint and callback history is not a successful solver verdict.
+
+Environment: robot_ws Python3.10.20, NumPy1.26.4, SciPy1.15.3;
+OCP7.9.3.1.1 via PYTHONPATH=/tmp/regrip_stage1_ocp. Set BLAS/OMP threads1,
+ulimit -v4194304 and timeout420 for bounded children. Do not install/modify SDK.
+Unfinished gates include protected maximum load, actual coupling/rated reaction,
+coupled flexible Rail/contact/friction, mass/material allowables and all22
+system gates. AA Stage1 engineering definition cannot qualify AD or Stage2.
+
 Confirm actual Git HEAD/status first. Read CURRENT_BASELINE and RELEASE_STATUS.
 Current integrated result is NOT QUALIFIED; no Stage3 handoff authorization.
 No background runner exists. Do not regenerate RevAA/AB or old analyses.

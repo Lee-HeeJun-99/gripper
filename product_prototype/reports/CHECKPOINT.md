@@ -1,4 +1,22 @@
-## Current Stage2 continuation — 2026-11-26 / bounded load and contact studies
+## Current integrated Stage1/Stage2 continuation — 2026-11-26
+
+Current authority: stage12_integrated/CHECKPOINT.md, CURRENT_BASELINE.json,
+INTEGRATED_TASKS.json and RELEASE_STATUS.json; previous Stage2 history below
+is preserved. Adopted RevAA unchanged. AC/AD actual candidate assemblies are
+NOT adopted. Latest save identified by git log; prior save f8bbd43.
+Integrated release3 rejects missing system evidence and22 Stage2 criteria.
+No digital release, powered authorization, hardware or Stage3 operation.
+
+Actual new work includes transient jam-energy reference, HPMC interface gauge,
+RevAD curved entry actual CAD/BOM/local aperture, finite PET contact mechanics,
+independent material Jacobians/normal-cone/actual BRep certificates and modified
+torque fixture with real pin/tool insertion path checks.16/32 normal-force
+certificates pass bounded static scope, but migration refinement remains~4%.
+Interrupted64 guess passes geometry but fails force residual1.00166e-6N vs1e-8N.
+No current child running; no external manager activated. READY tasks remain.
+Use stage12_integrated/AUTONOMOUS_RESUME.md for exact state/commands.
+
+## Prior Stage2 continuation — 2026-11-26 / bounded load and contact studies
 
 Actual implementation saves29b287b/8994261/597b5d5/08a2d8e/3a9e4b5/bd7ac2c/
 d51b6f2, provenance/save474aba8;

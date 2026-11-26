@@ -38,18 +38,24 @@ def certify(row,L,profile,order):
                 def distance(t):
                     p=material(q,i,t,side);return float(np.sum((p-project(p))**2))
                 solution=minimize_scalar(distance,bounds=(0,1),method='bounded',options={'xatol':1e-13})
-                t=min((0.,float(solution.x),1.),key=distance);p=material(q,i,t,side);gap=math.sqrt(distance(t))
-                if gap<=1e-9:
-                    normal=(project(p)-fc)/fr if normal is None else normal
-                    if inside_union(project(p)+1e-8*normal):continue # hidden component face is not a physical external contact
-                    contacts.append((i,t,side,normal,name,gap,True))
+                t=min((0.,float(solution.x),1.),key=distance)
+                # Actual saved material-row locations must not be replaced by
+                # an arbitrarily smaller force basis in the independent audit.
+                recorded=row.get('material_contact_points',{}).get(str((i,side)),[])
+                for t in sorted(set([t,0.,1.,*recorded])):
+                    p=material(q,i,t,side);gap=math.sqrt(distance(t))
+                    if gap<=1e-9:
+                        unit=(project(p)-fc)/fr if normal is None else normal
+                        if inside_union(project(p)+1e-8*unit):continue
+                        contacts.append((i,t,side,unit,name,gap,True))
         # Independent rail contact at centreline, radial normal toward rail centre.
         def gap(t):return R-.00025-np.linalg.norm(material(q,i,t,0,False)-np.array([.0504-R,-.007]))
         sol=minimize_scalar(gap,bounds=(0,1),method='bounded',options={'xatol':1e-13});t=min((0.,float(sol.x),1.),key=gap)
         # A segment conforming to a circular rail has a distributed active
         # contact set, not just one arbitrarily selected minimum. Additional
         # material points are eligible ONLY when they satisfy the same1nm gap.
-        for t in sorted(set([t,0.,1.,*((np.polynomial.legendre.leggauss(order)[0]+1)/2).tolist()])):
+        recorded=row.get('material_contact_points',{}).get(str((i,-1)),[])
+        for t in sorted(set([t,0.,1.,*recorded,*((np.polynomial.legendre.leggauss(order)[0]+1)/2).tolist()])):
             if abs(gap(t))<=1e-9:
                 p=material(q,i,t,0,False);normal=(np.array([.0504-R,-.007])-p);normal/=np.linalg.norm(normal)
                 contacts.append((i,t,0,normal,'rail',abs(gap(t)),False))
@@ -69,7 +75,7 @@ def certify(row,L,profile,order):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--input',required=True);p.add_argument('--candidate',required=True);p.add_argument('--tag',required=True);p.add_argument('--contact-order',type=int,default=3);a=p.parse_args();out=ROOT/'validation/finger'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
     source=ROOT/'validation/finger'/a.input/'summary.json';d=json.loads(source.read_text());candidate=ROOT/'cad/exports'/a.candidate/'summary.json';profile=json.loads(candidate.read_text())['funnel_profile']
-    rows=[certify(r,d['PET_free_length_m'],profile,a.contact_order) for r in d['rows'] if r['n'] in (16,32)]
-    result=dict(status='PASS' if all(r['status']=='PASS' for r in rows) else 'FAIL',scope='INDEPENDENT STORED-STATE FRICTIONLESS NORMAL-CONE CERTIFICATE ONLY',contact_order=a.contact_order,rows=rows,source=ref(source),candidate=ref(candidate),producer=ref(out/'producer.py'),product_release=False)
-    dump(out/'summary.json',result);print(json.dumps(dict(status=result['status'],rows=[{k:r[k] for k in ('n','angle_deg','status','force_equivalent_N','complementarity_relative')} for r in rows]),indent=2))
+    rows=[certify(r,d['PET_free_length_m'],profile,a.contact_order) for r in d['rows']]
+    result=dict(status='PASS' if rows and all(r['status']=='PASS' for r in rows) else 'FAIL',scope='INDEPENDENT STORED-STATE FRICTIONLESS NORMAL-CONE CERTIFICATE ONLY',contact_order=a.contact_order,rows=rows,source=ref(source),candidate=ref(candidate),producer=ref(out/'producer.py'),product_release=False)
+    dump(out/'summary.json',result);print(json.dumps(dict(status=result['status'],rows=[{k:r[k] for k in ('n','angle_deg','status','force_equivalent_N','complementarity_relative')} for r in rows]),indent=2));raise SystemExit(0 if result['status']=='PASS' else 2)
 if __name__=='__main__':main()

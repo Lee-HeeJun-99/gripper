@@ -1,5 +1,41 @@
 # Integrated checkpoint — 2026-11-26
 
+Current continuation (supersedes mid-session RUNNING statements below):
+last committed save before this checkpoint is f8bbd43; final save is identified
+by `git log -1`, not a self-referential hash. Adopted RevAA unchanged. AC/AD
+remain unadopted candidates. release3 is INTEGRATED_NOT_QUALIFIED, all22 Stage2
+system criteria still unqualified. No Stage3, Native or physical measurements.
+
+Material-owned static constraints plus independently tested analytic point
+Jacobians: owner_analytic_reaction2 certifies unchanged16/32 saved states at
+1.301e-9/6.326e-9N force-equivalent residual, exact actual-channel geometry
+owner_analytic_geometry1 passes. This is rigid prescribed Rail, frictionless,
+inextensible PET only;16-to32 axial migration differs about4%, not1% PASS.
+
+owner64_1 has no final summary and its exec process is no longer available;
+exact termination cause/exit code was not captured, so NOT labelled timeout.
+Latest local initial guess n64_00000590.json is retained with SHA through
+owner64_inspection1. Full saved state/material coordinates are also in that
+tracked inspection result. It is NOT a completed solve. Independent exact
+actual geometry owner64_geometry1 PASS, but owner64_reaction1 FAIL:
+1.001656e-6N vs1e-8N; complementarity2.16556e-7 vs1e-7. No mesh PASS.
+owner_rank1 actual diagnostic: active rows/rank16:27/7,32:112/10,64:196/15;
+large row dependence supports a numerical working-set investigation but is
+not a proven sole cause. No inequalities or physical state were removed.
+
+Fixture v1 pin path FAIL preserved. V2 actual Z-pin and stock socket plugs,
+90deg shaft assembly setup, pass finite pin/tool/RH-thread extraction samples
+off-bench and11 sampled retained-support poses. No strength or hardware PASS.
+Source closure, gate negative controls, empty-input rejection and offline
+manager controls strengthened. Manager remains NOT activated.
+No analysis child remains running after explicit polling of known sessions.
+READY work remains; no claim that independent digital work is exhausted.
+
+Next: diagnose cone-preserving contact working-set formulation using owner_rank1
+and the stored64 guess, then independent force/geometry/migration certification.
+Actual coupling selection, guaranteed overload cap, coupled flexible-Rail and
+friction, full AD Stage1 revalidation, and system strength remain unfinished.
+
 Cycle3-7 mid-session: actual RevAD funnel3fronts +304part STEP; adaptive
 integral/face-model/BOM/local continuous-aperture audits pass bounded scopes.
 Actual exact circular-arc PET envelopes clear AD at stored32segment states;

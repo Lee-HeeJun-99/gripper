@@ -14,6 +14,7 @@ def fingerprint():
     return dict(HEAD=git('rev-parse','HEAD'),branch=git('branch','--show-current'),evidence={str(p.relative_to(REPO)):sha(p) for p in paths},actual_result_artifacts=results)
 def has_progress(before,after):return before.get('actual_result_artifacts')!=after.get('actual_result_artifacts')
 def command(prompt):return ['codex','exec','--sandbox','workspace-write','--json','-C',str(REPO),prompt]
+def active_tasks(queue):return [r['id'] for r in queue['tasks'] if r['status']=='RUNNING']
 def main():
     p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true');p.add_argument('--max-runs',type=int,default=1);p.add_argument('--per-run-seconds',type=int,default=1800);p.add_argument('--tag',required=True);a=p.parse_args()
     if not 1<=a.max_runs<=10 or not 1<=a.per_run_seconds<=7200:p.error('Explicit bounds:1..10 runs,1..7200seconds each')
@@ -34,6 +35,7 @@ def main():
         failures=0;log=[]
         for i in range(a.max_runs):
             if halted or (runtime/'STOP').exists():break
+            if active_tasks(json.loads((ROOT/'INTEGRATED_TASKS.json').read_text())):raise RuntimeError('RUNNING research task exists; verify its process before launching any new session')
             before=fingerprint()
             # Always use a new bounded session, not --last in an unrelated repo.
             with (run/f'run{i}.jsonl').open('x') as output,(run/f'run{i}.stderr').open('x') as err:
@@ -50,6 +52,7 @@ def main():
             if after['branch']!=before['branch'] or subprocess.run(['git','merge-base','--is-ancestor',before['HEAD'],after['HEAD']],cwd=REPO).returncode:
                 halted=True # preserve unexpected state, never try to repair by reset
             dirty=bool(git('status','--porcelain','--untracked-files=no'))
+            if active_tasks(json.loads((ROOT/'INTEGRATED_TASKS.json').read_text())):halted=True
             # No automatic cleanup of failed/uncommitted work.
             failures=failures+1 if child.returncode!=0 or not progress else 0
             log.append(dict(run=i,exit_code=child.returncode,before=before,after=after,progress=progress,dirty=dirty))

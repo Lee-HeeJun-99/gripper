@@ -1,5 +1,30 @@
 # Separate PET finite-rotation work — bounded, not a release
 
+Latest material-owned follow-up: actual RevAD curved terminal entry, not merely
+PET trimming, clears exact circular-sector PET envelopes against retained
+front/back at saved16/32 and inspected64 states. See owner_analytic_geometry1
+and owner64_geometry1. This resolves the finite lip representation issue only
+within these stored states; not a continuous Finger trajectory certificate.
+
+Analytic material point Jacobians were independently checked against finite
+differences and virtual work (rod_jacobian1). Independent normal-cone recovery
+from actual recorded material coordinates certifies16/32 unchanged states
+with residual1.301e-9/6.326e-9N, below1e-8N (owner_analytic_reaction2).
+These force-equivalent KKT residuals are not measured6DOF reactions or unique
+contact-pressure predictions. The original optimizer line-search failure is
+preserved; an independent state certificate does not rewrite that execution.
+
+Relevant migration16/32 is0.357057/0.371982mm, about4% refinement error, not
+the required1%. Interrupted64 guess migration0.371904mm is NOT valid evidence
+of convergence: its force certificate fails1.001656e-6N vs1e-8N and relative
+complementarity2.16556e-7 vs1e-7. Actual rank diagnostic finds196 nonzero
+active rows with rank15 at64. Dependent constraints motivate a cone-preserving
+numerical method, not deletion of physical collisions or tolerances.
+
+All these coupons retain rigid prescribed circular Rail, inextensible PET,
+friction0 and typical modulus. Flexible Rail, axial elasticity, friction,
+shell buckling, real material strength and system load transfer are unresolved.
+
 `finite_pet1` FAIL: node contacts missed a3.33nm inter-node radial violation
 at60deg/n32 against the unchanged1nm geometric criterion. `finite_pet2` uses
 exact circular-arc distance extrema instead; stored independent PET angles,

@@ -27,7 +27,7 @@ def pet(q,L,sub):
         d=q[i+1]-q[i];a=(q[i+1]+q[i])/2;p+=h*np.sinc(d/(2*np.pi))*np.array([math.cos(a),math.sin(a)])
     loft.Build();assert loft.IsDone();return loft.Shape()
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--input');p.add_argument('--candidate');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--input');p.add_argument('--candidate');p.add_argument('--meshes',nargs='+',type=int,default=[32]);a=p.parse_args()
     out=ROOT/'validation/finger'/a.tag;out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/'producer.py')
     paths=[ROOT/'validation/finger/finite_pet2/summary.json',ROOT/'validation/finger/finite_pet_AC1/summary.json']
     if a.input:paths=[ROOT/'validation/finger'/a.input/'summary.json']
@@ -36,7 +36,7 @@ def main():
     for source in paths:
         data=json.loads(source.read_text());L=data.get('PET_free_length_m',.0874)
         for row in data['rows']:
-            if row['n']!=32:continue
+            if row['n'] not in a.meshes:continue
             theta=math.radians(row['fixture_angle_deg']);R=.088/theta;c,s=math.cos(theta),math.sin(theta)
             M=np.array([[c,0,s],[0,1,0],[-s,0,c]])
             end=np.array([50.4-R*(1-c)*1000,0,-7-R*s*1000]);shift=end-M@np.array([50.4,0,-95.])
@@ -47,7 +47,7 @@ def main():
                 hits={name:common(shape,body) for name,body in fixtures.items()}
                 records.append(dict(source=ref(source),angle_deg=row['fixture_angle_deg'],PET_length_m=L,subdivisions_per_segment=sub,
                     PET_volume_mm3=volume(shape),terminal_common_mm3=hits,status='PASS' if all(abs(v)<1e-8 for v in hits.values()) else 'FAIL'))
-    result=dict(status='PASS' if all(r['status']=='PASS' for r in records) else 'FAIL',scope='ACTUAL FRONT/BACK vs RECONSTRUCTED PET GEOMETRY ON PRESCRIBED CIRCULAR FIXTURE ONLY',
+    result=dict(status='PASS' if records and all(r['status']=='PASS' for r in records) else 'FAIL',scope='ACTUAL FRONT/BACK vs RECONSTRUCTED PET GEOMETRY ON PRESCRIBED CIRCULAR FIXTURE ONLY',
         rows=records,front=ref(frontpath),back=ref(S1/'cad/parts/revAA_mbd1/F0_TERMINAL_BACK.step'),producer=ref(out/'producer.py'),
         limitations=['Ruled loft interpolation, not continuous curved-solid collision proof','No actual flexible-rail dynamics, friction or finite shell','No whole assembly Stage1 revalidation or release','Projected endpoint-channel constraints do not replace finite 3D channel verification'])
     dump(out/'summary.json',result);print(json.dumps(result,indent=2))

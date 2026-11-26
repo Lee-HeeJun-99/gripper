@@ -152,6 +152,15 @@ READY tasks remain in INTEGRATED_TASKS.json. Inspect actual outputs before
 running anything; never reuse result directories. Hardware remains unmeasured.
 # Actual current resume — AK235 (2026-11-26)
 
+Completed work saves: f8c07c5 (AK235 product), d8abaa7 (reaction fixture).
+History guard product_history2 inspected d8abaa7:1289 new reachable blobs,
+no disallowed large/raw blobs; largest12,957,309bytes. Protected Stage1/Stage2
+unchanged. Final evidence-only save may follow; actual HEAD via git log -1.
+No real research child is left running; automatic service inactive. READY
+tasks remain explicitly: this is not project completion or digital approval.
+Resume in an interactive session, or obtain a new bounded external-run budget;
+do not renew/reset the consumed6-call authorization automatically.
+
 Latest product work commit f8c07c5; following fixture work is saved separately
 (obtain actual HEAD with git log -1). AK_collet_stand1 fixture CAD and independent
 geometry inspection already completed; do not rerun. Scope is reaction geometry,

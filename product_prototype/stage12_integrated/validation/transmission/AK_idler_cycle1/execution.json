@@ -1,0 +1,31 @@
+{
+  "children": [
+    {
+      "script": "ak_idler_thread_probe.py",
+      "exit_code": 0,
+      "observed_tool_session": 18451,
+      "checks": "15 axial non-overlap states, 3 radial controls accepted"
+    },
+    {
+      "script": "verify_ak_idler_thread.py",
+      "exit_code": 0,
+      "checks": "3 continuous cylinder-exclusion proofs"
+    }
+  ],
+  "bounds": {
+    "virtual_memory_KiB": 4194304,
+    "timeout_seconds": 420,
+    "threads": 1
+  },
+  "actually_executed": true,
+  "SOFA_executed": false,
+  "dependency_probe": {
+    "command": "python -c 'import OCP; print(OCP.__file__)'",
+    "outcome": "ModuleNotFoundError: No module named OCP; existing dependency path used; no install"
+  },
+  "log_capture": "Tool stdout and exit codes observed; no separate raw child log file captured. No timing/peak RSS measurement claimed.",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=/tmp/regrip_stage1_ocp timeout 420 bash -c 'ulimit -v 4194304; exec python product_prototype/stage12_integrated/scripts/ak_idler_thread_probe.py'",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=/tmp/regrip_stage1_ocp timeout 420 bash -c 'ulimit -v 4194304; exec python product_prototype/stage12_integrated/scripts/verify_ak_idler_thread.py'"
+  ]
+}

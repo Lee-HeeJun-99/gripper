@@ -1,3 +1,29 @@
+# Bounded A cycle — actual AK idler thread load-path diagnosis (2026-11-26)
+
+Started at3c5e29cba13eeebb3b3496257f40bdd5e1280e63. Supervisor local save
+PENDING; no git add/commit attempted and no new commit SHA claimed.
+Canonical result: validation/transmission/AK_idler_cycle1/summary.json.
+
+All235AK STEP hashes verified. Actual three axle/nut stacks:15 axial
+translations have zero interference; three .05mm radial controls reject
+penetration(.35998333mm3 each). Independent continuous cylinder exclusion
+proves every nut translation[-1,0]mm against its nominal axle is clear.
+Smooth cylindrical normal contact cannot transmit axial thread preload.
+This identifies missing model transmission, NOT physical M3 thread failure.
+Actual neck area4.44880936mm2; actual thread core/material capacity unknown.
+No assumed thread connector, force cap, strength or preload PASS introduced.
+Old stack geometry PASS and every historical FAIL retain original scope.
+
+Two bounded children exit0 and all geometry checks pass; no SOFA executed.
+Default OCP dependency probe failed; existing dependency path used, no install.
+Read-only AK_idler_release1 remains INTEGRATED_NOT_QUALIFIED with24errors,
+including22unqualified Stage2criteria. No CAD/BOM/SDK/criteria/control changes.
+AJ_idler_thread_and_load_proof remains READY(priority5) for actual thread,
+material/preload/load evidence or a separately evaluated support alternative.
+Independent root restraint and actual base attachment remain open; use NEXT_TASK.
+No repeated envelope scan is new research. No RUNNING task or owned live child.
+Unrelated untracked work preserved. Exact manifest is runtime/authorized_20261126_4/save_request5.json.
+
 # Bounded A cycle — AK ideal delayed disconnect (2026-11-26)
 
 Starting HEAD c80c7a95b139cd91d82b58b0a7a9b01c5fd5c427. Supervisor local save

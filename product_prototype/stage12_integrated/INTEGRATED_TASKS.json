@@ -636,7 +636,7 @@
     {
       "id": "AJ_idler_thread_and_load_proof",
       "track": "A",
-      "priority": 1,
+      "priority": 5,
       "status": "READY",
       "target_revision": "revAK_integral2",
       "target_parts": 235,
@@ -652,8 +652,15 @@
       "system_gate_contribution": 4,
       "cost": "4GiB/420s per bounded child",
       "fallback": "standard_rated_shoulder_or_double_supported_idler",
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-26T13:33:51.248893+00:00",
+      "consecutive_runs": 1,
+      "last_result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_idler_cycle1/summary.json",
+        "SHA256": "4690238348c9dea300bb56d2d70f65a609ef8e98aed04c151a088c456bfa1360"
+      },
+      "last_cycle_status": "ACTUAL_NOMINAL_THREAD_LOAD_TRANSFER_UNMODELED",
+      "reason": "Actual three AK idlers and independent continuous envelope proof show smooth nominal thread has no modeled axial normal transfer. Physical thread capacity remains unknown; stack geometry PASS unchanged.",
+      "next": "Specify actual core/flank/material/preload and supported strip/combined-load limits, or evaluate rated shoulder/double-support; establish maximum load first. No repeated envelope scans as research progress."
     },
     {
       "id": "AJ_collet_actual_coverage",

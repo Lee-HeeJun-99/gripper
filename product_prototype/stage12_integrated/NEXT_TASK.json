@@ -3,26 +3,35 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "AJ_idler_thread_and_load_proof",
-    "track": "A",
-    "priority": 1,
+    "id": "actual_finger_load_ports",
+    "track": "B",
+    "priority": 2,
+    "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
+    "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
+    "fallback": "simpler_replaceable_finger_cartridge",
     "status": "READY",
-    "target_revision": "revAK_integral2",
-    "target_parts": 235,
+    "prerequisites": [],
+    "system_gate_contribution": 4,
+    "cost": "bounded actual product validation, no random parameter sweep",
+    "last_run_utc": "2026-11-26T13:17:14.509491+00:00",
+    "consecutive_runs": 1,
     "target_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
       "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
     },
-    "hypothesis": "Actual larger neck and fillets need finite thread/core/preload/load proof, not a major-diameter nominal strength calculation",
-    "criteria": "Actual minimum thread core, material evidence, bracket/washer/nut load path, mesh1% where needed, complete reaction/energy; no protected force assumption from catalog-only data",
-    "prerequisites": [
-      "idler_integral_M3_shoulder"
-    ],
-    "system_gate_contribution": 4,
-    "cost": "4GiB/420s per bounded child",
-    "fallback": "standard_rated_shoulder_or_double_supported_idler",
-    "last_run_utc": null,
-    "consecutive_runs": 0
+    "target_revision": "revAK_integral2",
+    "target_parts": 235,
+    "selection_note": "B cycle completed after A/C. Do not repeat sampled translations. Next B requires actual root clamp preload/friction mechanics or a separately tagged positive-retention design, before imposing fixed PET/Rail roots.",
+    "last_result": {
+      "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention1/summary.json",
+      "SHA256": "650ac3d30fcb844dec67ca885ed6ff58b79b2046bbcc39f7cb263fb3567a0ff1"
+    },
+    "last_verification": {
+      "path": "product_prototype/stage12_integrated/validation/finger/AK_root_retention_verify1/summary.json",
+      "SHA256": "b9ccf710b7299950e4a89a32257bf48917ba7d983ca26ac5f95f1b980a1bfd36"
+    },
+    "last_cycle_status": "LOCAL_ROOT_AXIAL_ESCAPE_VERIFIED_FULL_FINGER_UNQUALIFIED",
+    "followup_hypothesis": "Actual root-fragment +/-0.5mm continuous axial clearance excludes geometric axial retention by the listed root clamps/bolts. Quantify clamp normal force from actual bolt/plate contact or design positive retention; do not invent friction/preload."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

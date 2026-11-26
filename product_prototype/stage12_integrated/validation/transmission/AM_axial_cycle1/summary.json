@@ -1,0 +1,106 @@
+{
+  "status": "PARTIAL_PRODUCT_IMPLEMENTATION_NOT_QUALIFIED",
+  "starting_HEAD": "99a9b5b35b9c65e5a5088ddcff71967a498896cb",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial3/summary.json",
+    "SHA256": "add061a74737544c44dc48788e3865373cf8b3600662125ad5aeebdf59015c02"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AM_axial_verify1/summary.json",
+    "SHA256": "17b4dc35b7ac63478dc70c2b296abf7384fe358f00082a0ef498d7c46de9774b"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AM_axial_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "execution": [
+    {
+      "name": "build1",
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AM_axial_cycle1/build.log",
+        "SHA256": "da491e6b21f364d060b1d375f46b8cdb33f59ef6361084eb45f797fcee825a43"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial1/producer.py",
+        "SHA256": "0570ce0f804bc7d5164da83b3b22ffede137beb3297603d383271cd3246557b3"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build2",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AM_axial_cycle1/build2.log",
+        "SHA256": "ffb27df3f9a2d1d46230fa911d1f7a8a2c37b4b3052dfd85e0d3e2d122e8f0c3"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial2/producer.py",
+        "SHA256": "4575638b1e3ecb6a701690c1294df7f73de6df06fab118c6370ce354029149c8"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build3",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AM_axial_cycle1/build3.log",
+        "SHA256": "7f651c49188cfaaa9bb681fad9a8c5677c62a8e8cd2e674298dcdf72f09447b5"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial3/producer.py",
+        "SHA256": "aff59af5b72d10e81c24a04e8a09e579b1ba03a66b93db28721d38905d0c4560"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "verify1",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AM_axial_cycle1/verify.log",
+        "SHA256": "17b4dc35b7ac63478dc70c2b296abf7384fe358f00082a0ef498d7c46de9774b"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AM_axial_verify1/producer.py",
+        "SHA256": "fee7912e1fc3bc4cc0932b7b95fbc781e4f8af9ecbc629e3cf60ee9cd080d9ef"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    }
+  ],
+  "new_evidence": "Actual247part AL descendant with hub shoulder, integral rear stop/side arms and removable front stop with6through bolts/6nuts. No motor shaft change. Both signed0.1mm axial stops have independently reconstructed151.2991021966mm2 shoulder areas; all changed-part STL/manifold and sampled F0 assembly checks pass.",
+  "failure_preservation": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial1/FAILED_EXECUTION.json",
+      "SHA256": "32cb709e07a02cbc96d5d2edced48c127c8bca1d7d618980198133ca587a2b20"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial2/summary.json",
+      "SHA256": "19e936e2cbd65942c2b35de2cf7eda48fd68f46909c5714ef0ec8cf45381a808"
+    }
+  ],
+  "environment_probe_failure": "Initial read-only bounds probe referenced nonexistent robot_ws/bin/python (exit127); corrected to installed python3 with existing /tmp/regrip_stage1_ocp. No experiment output or dependency install from failed probe.",
+  "scope": "Actual finite mechanical implementation and bounded kinematic/contact/conditional rigid unit-load validation, not elastic or rated capacity.",
+  "unmet": [
+    "Actual bolt/nut standard thread flank/engagement and material/preload/strength",
+    "Actual plate/stop/hub elastic contact and finite-load mesh1%",
+    "Axial sliding friction/impact and torque-backlash coupled loads",
+    "Continuous full assembly/tool access and manufacturing tolerances",
+    "Palm6DOF external attachment and all same-revision Stage1/Stage2 system gates",
+    "Overload and whole-system energy"
+  ],
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "whole_system_release": false,
+  "known_owned_analysis_children_running": 0
+}

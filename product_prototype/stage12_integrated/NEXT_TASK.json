@@ -3,25 +3,22 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "batch5_positive_drive_retention",
-    "track": "A",
-    "priority": -10,
+    "id": "batch5_grounded_palm_attachment",
+    "track": "C",
+    "priority": -9,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
-    "hypothesis": "Continue RevAL with finite independent axial/thrust capture into grounded support; evaluate actual D-drive backlash/loaded contact, not repeat circular-bore diagnosis",
-    "criteria": "Actual torque-bearing faces and axial capture, supplier shaft compatibility, finite parts and independent loaded reaction/capacity evidence",
-    "previous_diagnostic_task": "AH_collet_and_axial_capacity",
-    "existing_evidence": [
-      "validation/transmission/AL_Ddrive_cycle1/summary.json",
-      "validation/transmission/AL_Ddrive_verify1/summary.json"
-    ],
+    "hypothesis": "Replace compression-only support with finite side/torsion/uplift and grounded mounting interface",
+    "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
+    "previous_diagnostic_task": "AI_whole_palm_support",
+    "existing_evidence": [],
     "prerequisites": [],
     "target_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/revAL_Ddrive1/summary.json",
-      "SHA256": "30bc99d000062812c73a8ac19b14fc7295e5be3316ce337776916ec5bb395019"
+      "path": "product_prototype/stage12_integrated/cad/exports/revAM_axial3/summary.json",
+      "SHA256": "add061a74737544c44dc48788e3865373cf8b3600662125ad5aeebdf59015c02"
     },
-    "target_revision": "revAL_Ddrive1",
-    "target_parts": 232,
+    "target_revision": "revAM_axial3",
+    "target_parts": 247,
     "product_brief": {
       "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
       "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
@@ -34,10 +31,8 @@
     "cost": "One3600second session, each analysis child4GiB/420s",
     "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
     "system_gate_contribution": 5,
-    "last_run_utc": "2026-11-26T22:43:01.906841+00:00",
-    "consecutive_runs": 1,
-    "result": "validation/transmission/AL_Ddrive_cycle1/summary.json",
-    "scope": "PARTIAL: actual D-bore rotational stop implemented; axial/load gates remain open"
+    "last_run_utc": null,
+    "consecutive_runs": 0
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

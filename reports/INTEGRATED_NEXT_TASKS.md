@@ -1,3 +1,43 @@
+# Batch5 cycle1 — finite independent axial capture
+
+Started at99a9b5b35b9c65e5a5088ddcff71967a498896cb. Supervisor local save
+PENDING; no git add/commit attempted and no new commit claimed.
+Actual result: validation/transmission/AM_axial_cycle1/summary.json.
+
+RevAM_axial3 is the compatible247part RevAL descendant. Three new annular hub
+shoulders are captured between integral motor-plate rear stops and removable
+front stops, with two through M3 bolts/nuts per sector. Shaft and existing
+D-flat bore remain unchanged. The local axial path terminates in the motor
+plate/Palm mounting, NOT a newly qualified external6DOF ground. Added support
+arms extend laterally outside the motor; this increases envelope and mass.
+Actual assembly STEP, JSON BOM, part/source/dependency hashes recorded.
+
+Original API failure(exit1, AM1) and motor-pilot collision479.188mm3/sector
+(exit2, AM2) are immutable new failures. AM3 moves the connecting material
+outside the pilot: all changed/retained interference tests pass1e-8mm3.
+Independent STEP reimport, valid single solids and closed changed STLs pass.
+Two signed stop tests recover151.2991021966mm2 annular area at0.1mm clearance;
+0.09mm remains clear. F0 ordered hub/cap/bolt/nut assembly samples against all
+already installed parts pass; this is not continuous full assembly proof.
+Front-stop-removal negative control loses outward capture. Conditional rigid
++/-1N reaction/moment balances are exact, but do NOT solve thread flanks,
+plate/contact elasticity, strength, friction, impact or rated capacity.
+Bolts/nuts are explicitly nominal thread envelopes, not certified threads.
+
+Four sequential4GiB/420s/one-thread CAD children exit1/2/0/0. No SOFA run.
+A prior read-only environment probe exit127 (missing robot_ws Python) is
+recorded; existing system Python/OCP worked without installing dependencies.
+Release audit remains INTEGRATED_NOT_QUALIFIED with24errors, including22
+unqualified Stage2 criteria. New candidate has no full Stage1/Stage2 release.
+No tolerances, criteria, managers, SDK, Stage3 or historical artifacts changed.
+
+Two consecutive A cycles are complete: next select independent C actual Palm
+six-DOF attachment on the SAME AM candidate; then B positive root retention.
+A remains READY for actual thread/elastic/load qualification, not another
+geometry scan. RevAA remains adopted; AM is candidate only. No RUNNING queue
+records or owned live analysis children at handoff. Unrelated untracked files
+preserved. Exact save_request1.json awaits supervisor validation/local save.
+
 # Bounded C cycle — actual finite-pressure envelope (2026-11-26)
 
 Started at02b9ca781bc3adb95848d97f0fd3f942472dc570. Supervisor local save PENDING;

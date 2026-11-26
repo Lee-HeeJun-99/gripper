@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL AK GEOMETRY / CONDITIONAL DISCONNECT MODEL ONLY",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect1/summary.json",
+    "SHA256": "ef3e1239f05bf3c19d15cd496c4c86def68f4789074774fe682b2bc6b9de4f14"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect_verify1/producer.py",
+    "SHA256": "94023df66c4a02d62bf31ce95d52f325d1563a30db052403daedea8a82f2d4fc"
+  },
+  "geometry": [
+    {
+      "part": "F0_DRUM",
+      "STL_axis_inertia_per_density_m5": 5.688526969751952e-10,
+      "relative_error": 0.0019269284013913035
+    },
+    {
+      "part": "F0_DRUM_NIPPLE_CAP",
+      "STL_axis_inertia_per_density_m5": 3.297845614455338e-10,
+      "relative_error": 0.0019028261319282702
+    },
+    {
+      "part": "F0_DRUM_FACTORY_NIPPLE",
+      "STL_axis_inertia_per_density_m5": 7.2836025471821e-12,
+      "relative_error": 0.0009373173393645295
+    },
+    {
+      "part": "F0_DRUM_CAP_BOLT_69_26",
+      "STL_axis_inertia_per_density_m5": 5.269486396822995e-12,
+      "relative_error": 0.000994754171139145
+    },
+    {
+      "part": "F0_DRUM_CAP_BOLT_91_26",
+      "STL_axis_inertia_per_density_m5": 5.269486396826906e-12,
+      "relative_error": 0.0009947541701766927
+    },
+    {
+      "part": "F0_DRUM_CAP_BOLT_80_33",
+      "STL_axis_inertia_per_density_m5": 5.6686934225416694e-12,
+      "relative_error": 0.0009941934267490016
+    }
+  ],
+  "trials": [
+    {
+      "delay_s": 0.0,
+      "refinements": [
+        {
+          "peak_N": 1.4037935711407852,
+          "relative_error": 1.4382939284018903e-12,
+          "energy_residual_J": 0.0,
+          "steps": 245
+        },
+        {
+          "peak_N": 1.4037935711407865,
+          "relative_error": 1.4372947276797277e-12,
+          "energy_residual_J": 0.0,
+          "steps": 252
+        }
+      ]
+    },
+    {
+      "delay_s": 0.001,
+      "refinements": [
+        {
+          "peak_N": 1.916226340503143,
+          "relative_error": 8.691714015185426e-12,
+          "energy_residual_J": -2.0818850116066656e-15,
+          "steps": 248
+        },
+        {
+          "peak_N": 1.9162263405139028,
+          "relative_error": 3.076650045841234e-12,
+          "energy_residual_J": -6.364266752489911e-16,
+          "steps": 255
+        }
+      ]
+    },
+    {
+      "delay_s": 0.01,
+      "refinements": [
+        {
+          "peak_N": 2.255311021845722,
+          "relative_error": 1.0380807324850139e-11,
+          "energy_residual_J": -7.859761019107792e-15,
+          "steps": 248
+        },
+        {
+          "peak_N": 2.2553110218596597,
+          "relative_error": 4.200861880576667e-12,
+          "energy_residual_J": -3.5225457533510918e-15,
+          "steps": 255
+        }
+      ]
+    },
+    {
+      "delay_s": 0.05,
+      "refinements": [
+        {
+          "peak_N": 2.255311021845722,
+          "relative_error": 1.0380807324850139e-11,
+          "energy_residual_J": -3.260515772304795e-14,
+          "steps": 248
+        },
+        {
+          "peak_N": 2.2553110218596597,
+          "relative_error": 4.200861880576667e-12,
+          "energy_residual_J": -1.6197980456933436e-14,
+          "steps": 254
+        }
+      ]
+    }
+  ],
+  "zero_kinetic_energy_negative_control_rejected": true,
+  "product_force_cap_qualified": false,
+  "whole_system_release": false
+}

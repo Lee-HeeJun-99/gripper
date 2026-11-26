@@ -705,7 +705,7 @@
     {
       "id": "AK_protected_maximum_load",
       "track": "A",
-      "priority": 1,
+      "priority": 5,
       "status": "READY",
       "hypothesis": "Actual one-face grounded support removes the known bearing bypass but force cap needs rated/calibrated friction/spring and bounded transient energy. Simpler rated mechanisms may reduce missing bounds.",
       "difference": "Use actual AK inertia/topology and coupled axial clamp reaction, not old minimum-only HPMC or assumed static tension as peak protection",
@@ -721,8 +721,16 @@
         "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
         "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
       },
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-26T13:28:58.567444+00:00",
+      "consecutive_runs": 1,
+      "last_result": {
+        "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect_cycle1/summary.json",
+        "SHA256": "c3570403503558b538f01e0fabd4b51c279345f07bbe12647795d35e2d437da8"
+      },
+      "last_cycle_status": "CONDITIONAL_DISCONNECT_VERIFIED_PRODUCT_PROTECTION_BLOCKED",
+      "reason": "Actual AK six-drum-solid geometry verified independently by STL. New ideal delayed disconnect energy/ODE mechanism verified; instant cut still leaves1.404N vs0.969N initial tension in explicit scenario. Existing AF drum geometry reused honestly, not a new design. No actual disconnect, complete inertia, energy/EA/delay bounds or force cap. First negative-velocity compression-rebound formulation FAIL preserved; corrected first tensile excursion terminates at slack.",
+      "next": "Identify physically realizable disconnect and bound residual energy/drag/delay, complete inertia and cable EA; do not repeat conditional delay scan. Independent actual Idler thread/load proof remains READY.",
+      "selection_note": "One bounded A cycle completed; prioritize independent Idler proof next. Do not treat more delay/density sweeps as new research without actual mechanism evidence."
     },
     {
       "id": "AK_conditional_collet_contact_wrench",

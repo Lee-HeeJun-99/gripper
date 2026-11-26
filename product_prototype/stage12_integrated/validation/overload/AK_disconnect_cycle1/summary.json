@@ -1,0 +1,65 @@
+{
+  "status": "CONDITIONAL_DISCONNECT_VERIFIED_PRODUCT_PROTECTION_BLOCKED",
+  "task": "AK_protected_maximum_load",
+  "track": "A",
+  "starting_HEAD": "c80c7a95b139cd91d82b58b0a7a9b01c5fd5c427",
+  "time_utc": "2026-11-26T13:28:58.567444+00:00",
+  "evidence": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect1/summary.json",
+      "SHA256": "ef3e1239f05bf3c19d15cd496c4c86def68f4789074774fe682b2bc6b9de4f14"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect_verify1/summary.json",
+      "SHA256": "4d23c1fc128321d8b79a260fc00700ac29355262b9ec2ce9964a633181ee6e3b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect2/summary.json",
+      "SHA256": "a1375cd5e9f1d620358743341174e3df8163fa87bb704bc4ea23d5e2a818e44c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect_verify2/summary.json",
+      "SHA256": "e5a1757ea75d80c6f5fa745d3ed88a665b3965218891689fe2bf6ef3b2e59a87"
+    }
+  ],
+  "preserved_formulation_failure": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect1/formulation_failure.json",
+    "SHA256": "402719fd048a8d7ab3c737d921e9f920dc39dc5f175010a30b4dc4016fcef2e2"
+  },
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect_execution1/executions.json",
+      "SHA256": "1544bed95bf5452f7573a7855848947bc81912191c91bf7feb5c43510a593dc2"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/AK_disconnect_execution2/executions.json",
+      "SHA256": "664aa58d63a380cfb36b78935aab7db7ddcd6f34fe2f738a87bdefe74413e140"
+    }
+  ],
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AK_disconnect_release1/summary.json",
+    "SHA256": "0664f7b419b8334c331384dfddaaf81adea5bc8ebcacbe0c4961c796771109a6"
+  },
+  "scope": "One finite-delay independent-disconnect mechanism cycle, actual candidate drum BRep/STL coefficients plus conditional initial-value/energy analysis; no new actual assembly equilibrium solve",
+  "findings": {
+    "six_actual_AK_drum_parts": true,
+    "geometry_reused_from_AF_not_new_design": true,
+    "conditional_partial_J_kg_m2": 2.6150999081379493e-06,
+    "STL_moment_max_relative_error": 0.0019269284013913035,
+    "peak_max_relative_error": 1.0380807324850139e-11,
+    "instantaneous_disconnect_peak_N": 1.4037935711428042,
+    "sustained_peak_N": 2.255311021869134,
+    "first_peak_s": 0.0026139931705168925
+  },
+  "limitations": [
+    "Six drum solids only; bearing race, entrained cable and reflected upstream inertia unresolved",
+    "Densities, EA, initial tension, radius and speed are scenarios, not bounds; purchased-envelope hardware is not physical mass",
+    "Ideal disconnect removes drive torque after prescribed delay; no actual CAD, trigger, residual drag, stored spring release or fault bound",
+    "Post-disconnect first tensile excursion terminates at zero extension; negative initial velocity peaks at disconnect, no later fictitious compression rebound",
+    "No new material/source rating, structural allowable, actual load capacity, hardware or global assembly energy certification"
+  ],
+  "next": "Identify physically realizable disconnect and bound residual energy/drag/delay, complete inertia and cable EA; do not repeat conditional delay scan. Independent actual Idler thread/load proof remains READY.",
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "product_force_cap_qualified": false,
+  "whole_system_release": false
+}

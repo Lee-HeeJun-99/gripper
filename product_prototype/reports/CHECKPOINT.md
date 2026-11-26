@@ -1,3 +1,11 @@
+## Product-priority reset — 2026-11-26
+
+See stage12_integrated/CHECKPOINT.md and reports/PRODUCT_TRACK_RESET_20261126.md.
+Actual direct-clutch candidate CAD generated and rejected by interference;
+actual RevAD axial boundary map executed. RevAA preserved, no integrated PASS.
+Six automatic calls exhausted; no new background session started. Current
+interactive work has moved to whole-product drive placement, not generic rods.
+
 ## Current integrated Stage1/Stage2 continuation — 2026-11-26
 
 Latest follow-up after3ef32a7: owner64_working1 completed with optimizer

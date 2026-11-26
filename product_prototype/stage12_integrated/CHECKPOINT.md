@@ -1,3 +1,19 @@
+# Product-priority reset and actual CAD cycles (2026-11-26)
+
+Started from d01db2b. Current actual commit: use `git log -1`; this entry is
+saved with the cycle, not a claim of a future commit. RevAA official baseline
+unchanged; INTEGRATED_NOT_QUALIFIED, all22 Stage2 system gates unqualified.
+
+Actual new evidence: revAE_direct_clutch1/2 assemblies FAIL interference;
+direct_clutch_geometry2 passes geometric integrals/BRep/STL ONLY.
+actual_boundary_AD1 establishes finite nominal PET end travel/stop from STEP;
+no new general rod solve or Native trial. See PRODUCT_TRACK_RESET_20261126.md.
+
+Track selector now balances A/B/C; existing external6-call budget exhausted,
+service inactive, zero new launches. Current interactive work continues on
+candidate_system_integration; RevAF wire/whole-assembly generation is being
+debugged in unique directories, no release or successful whole assembly claimed.
+
 # Bounded cycle — BVP-seeded axial initialization (2026-11-26)
 
 Started from0e109553941e8784ce298969865fce42ac8c40d5. Supervisor local save

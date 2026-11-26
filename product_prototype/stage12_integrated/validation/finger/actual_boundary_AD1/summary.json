@@ -1,0 +1,392 @@
+{
+  "status": "BOUNDARY_GEOMETRY_INVENTORY_PASS",
+  "scope": "Actual nominal RevAD STEP inventory and local distal fragment probes only",
+  "revision": "revAD_funnel1",
+  "adopted": false,
+  "source": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+    "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/actual_boundary_AD1/producer.py",
+    "SHA256": "a1f8d7c8fa179494d437205095198c9ada39c33396da3f11c6d68f820757c88b"
+  },
+  "inventory": [
+    {
+      "part": "F0_SKIN",
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAC_pet_travel1/F0_SKIN.step",
+        "SHA256": "98800c07b3c853500fb207835e06f3f090c63d4f86c655f9ea050cc22905d321"
+      },
+      "bounds_mm": [
+        50.0,
+        -12.0,
+        -93.20000000000009,
+        50.3,
+        12.0,
+        10.0
+      ],
+      "volume_mm3": 586.6876799999843
+    },
+    {
+      "part": "F0_RAIL_L",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_RAIL_L.step",
+        "SHA256": "f27832c5ce479faf5b64dab80fdc5562a28fbfd93546c7e561b9621cc1e605bd"
+      },
+      "bounds_mm": [
+        50.3,
+        -11.5,
+        -100.00000000000006,
+        50.5,
+        -2.5,
+        10.0
+      ],
+      "volume_mm3": 66.00000000000766
+    },
+    {
+      "part": "F0_RAIL_R",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_RAIL_R.step",
+        "SHA256": "eeed399210fb10d647d5fcd41e356220f5532b7a2161da52a7b23b480ca8d76f"
+      },
+      "bounds_mm": [
+        50.3,
+        2.5,
+        -100.00000000000006,
+        50.5,
+        11.5,
+        10.0
+      ],
+      "volume_mm3": 66.00000000000766
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_ROOT_FRONT.step",
+        "SHA256": "dfb856ae9602cbd5fbf4bdd079d3c6315cb7b192c60e459c3605b42b86861089"
+      },
+      "bounds_mm": [
+        47.0,
+        -20.0,
+        -7.0,
+        50.0,
+        20.0,
+        10.0
+      ],
+      "volume_mm3": 1985.524783386748
+    },
+    {
+      "part": "F0_ROOT_BACK",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_ROOT_BACK.step",
+        "SHA256": "0104b5fe3de08261a0cc30717859a8881127f3b20401a0c8b0f8fc051897ec53"
+      },
+      "bounds_mm": [
+        50.5,
+        -20.0,
+        -7.0,
+        63.0,
+        20.0,
+        10.0
+      ],
+      "volume_mm3": 3608.7385969149454
+    },
+    {
+      "part": "F0_TERMINAL_FRONT",
+      "STEP": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/F0_TERMINAL_FRONT.step",
+        "SHA256": "264e8b302c49bff8afa273acb2147e74e732004433009043f8a935c687eaf85e"
+      },
+      "bounds_mm": [
+        40.0,
+        -13.5,
+        -100.00000000000001,
+        50.3,
+        13.5,
+        -84.0
+      ],
+      "volume_mm3": 656.8224381730978
+    },
+    {
+      "part": "F0_TERMINAL_BACK",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_TERMINAL_BACK.step",
+        "SHA256": "6fafeee947ac578c960bef0a7efd6ac4aa06dd3eaa4afc06c8c6a75cec7fc2f6"
+      },
+      "bounds_mm": [
+        49.0,
+        -13.5,
+        -101.0,
+        54.0,
+        13.5,
+        -84.0
+      ],
+      "volume_mm3": 909.096299419334
+    },
+    {
+      "part": "F0_TENDON_WIRE",
+      "STEP": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_TENDON_WIRE.step",
+        "SHA256": "a937bc3dec0a4ce95eec2641f38fb5e97a42e8f58ca1358603b0aac37569ded1"
+      },
+      "bounds_mm": [
+        32.4999999,
+        -0.2500001,
+        -76.08347414381815,
+        91.5000001,
+        0.2500001,
+        36.5000001
+      ],
+      "volume_mm3": 37.46532337394984
+    }
+  ],
+  "load_ports": [
+    {
+      "part": "PET",
+      "root": "F0_ROOT_FRONT/F0_ROOT_BACK clamp contact; axial hold depends on actual preload/friction or positive retention, not certified",
+      "terminal": "finite lip/back unilateral transverse contact; axial end free until actual stop contact",
+      "axial_terminal_DOF": "FREE_WITH_FINITE_STOPS; do not tie to Rail"
+    },
+    {
+      "part": "RAIL_L/RAIL_R",
+      "root": "same finite root clamp, separate elastic constituents",
+      "terminal": "RevAB integral front pads capture Rail; preload/strength not certified",
+      "axial_terminal_DOF": "FINITE_CAPTURE_CONTACT, not a PET tie"
+    },
+    {
+      "part": "TENDON",
+      "terminal": "factory nipple / blind receiver loads terminal body, then Rail pads and PET through unilateral contact",
+      "root": "drum/idler route; no direct external force on PET assumed"
+    }
+  ],
+  "probes": [
+    {
+      "distal_translation_Z_mm": 0,
+      "fragment_bounds_mm": [
+        50.0,
+        -6.599999999999699,
+        -93.20000000000009,
+        50.3,
+        6.60000000000271,
+        -90.0
+      ],
+      "pairs": [
+        {
+          "other": "F0_TERMINAL_FRONT",
+          "common_mm3": 0.0,
+          "distance_mm": 0.14936675647593145
+        },
+        {
+          "other": "F0_TERMINAL_BACK",
+          "common_mm3": 0.0,
+          "distance_mm": 0.44721359549754053
+        },
+        {
+          "other": "F0_RAIL_L",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        },
+        {
+          "other": "F0_RAIL_R",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        }
+      ]
+    },
+    {
+      "distal_translation_Z_mm": -0.5,
+      "fragment_bounds_mm": [
+        50.0,
+        -6.599999999999699,
+        -93.70000000000009,
+        50.3,
+        6.60000000000271,
+        -90.5
+      ],
+      "pairs": [
+        {
+          "other": "F0_TERMINAL_FRONT",
+          "common_mm3": 0.0,
+          "distance_mm": 0.14010235525355336
+        },
+        {
+          "other": "F0_TERMINAL_BACK",
+          "common_mm3": 0.0,
+          "distance_mm": 0.44721359549754053
+        },
+        {
+          "other": "F0_RAIL_L",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        },
+        {
+          "other": "F0_RAIL_R",
+          "common_mm3": 0.0,
+          "distance_mm": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "distal_translation_Z_mm": -1.5,
+      "fragment_bounds_mm": [
+        50.0,
+        -6.599999999999699,
+        -94.70000000000009,
+        50.3,
+        6.60000000000271,
+        -91.5
+      ],
+      "pairs": [
+        {
+          "other": "F0_TERMINAL_FRONT",
+          "common_mm3": 0.0,
+          "distance_mm": 0.1305380260097622
+        },
+        {
+          "other": "F0_TERMINAL_BACK",
+          "common_mm3": 0.0,
+          "distance_mm": 0.3605551275463981
+        },
+        {
+          "other": "F0_RAIL_L",
+          "common_mm3": 0.0,
+          "distance_mm": 4.440892098500626e-16
+        },
+        {
+          "other": "F0_RAIL_R",
+          "common_mm3": 0.0,
+          "distance_mm": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "distal_translation_Z_mm": -1.8,
+      "fragment_bounds_mm": [
+        50.0,
+        -6.599999999999699,
+        -95.00000000000009,
+        50.3,
+        6.60000000000271,
+        -91.8
+      ],
+      "pairs": [
+        {
+          "other": "F0_TERMINAL_FRONT",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        },
+        {
+          "other": "F0_TERMINAL_BACK",
+          "common_mm3": 0.0,
+          "distance_mm": 0.20000000000000284
+        },
+        {
+          "other": "F0_RAIL_L",
+          "common_mm3": 0.0,
+          "distance_mm": 4.440892098500626e-16
+        },
+        {
+          "other": "F0_RAIL_R",
+          "common_mm3": 0.0,
+          "distance_mm": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "distal_translation_Z_mm": -2.0,
+      "fragment_bounds_mm": [
+        50.0,
+        -6.599999999999699,
+        -95.20000000000009,
+        50.3,
+        6.60000000000271,
+        -92.0
+      ],
+      "pairs": [
+        {
+          "other": "F0_TERMINAL_FRONT",
+          "common_mm3": 0.3600000000000128,
+          "distance_mm": 0.0
+        },
+        {
+          "other": "F0_TERMINAL_BACK",
+          "common_mm3": 0.0,
+          "distance_mm": 0.20000000000000284
+        },
+        {
+          "other": "F0_RAIL_L",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        },
+        {
+          "other": "F0_RAIL_R",
+          "common_mm3": 0.0,
+          "distance_mm": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "distal_translation_Z_mm": 1.0,
+      "fragment_bounds_mm": [
+        50.0,
+        -6.599999999999699,
+        -92.20000000000009,
+        50.3,
+        6.60000000000271,
+        -89.0
+      ],
+      "pairs": [
+        {
+          "other": "F0_TERMINAL_FRONT",
+          "common_mm3": 0.0,
+          "distance_mm": 0.17685507007266693
+        },
+        {
+          "other": "F0_TERMINAL_BACK",
+          "common_mm3": 0.0,
+          "distance_mm": 0.44721359549754053
+        },
+        {
+          "other": "F0_RAIL_L",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        },
+        {
+          "other": "F0_RAIL_R",
+          "common_mm3": 0.0,
+          "distance_mm": 0.0
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "actual_nominal_end_matches_1p8": true,
+    "nominal_fragment_no_positive_overlap": true,
+    "all_sources_hash_checked": true
+  },
+  "nominal_end_gap_mm": 1.799999999999912,
+  "coordinate_system": "F0: X radial outward, Y circumferential, Z upward; SI m = CAD mm / 1000",
+  "rod_reference_mapping": {
+    "root_station_Z_mm": -7,
+    "rail_station_Z_mm": -95,
+    "rail_length_m": 0.088,
+    "PET_station_Z_mm": -93.20000000000009,
+    "PET_length_m": 0.08620000000000008,
+    "note": "Mapping datums only. Actual root compliance and channel friction are NOT validated by the independent rod reference."
+  },
+  "required_physics": [
+    "separate PET/Rail axial fields",
+    "finite terminal lips/stops and Rail pads",
+    "finite root clamp preload and retention",
+    "independent transverse contact and friction",
+    "actual tendon nipple and terminal contact"
+  ],
+  "excluded": [
+    "No deformed motion or force solution",
+    "No root clamp strength or friction certification",
+    "No implicit fixed PET distal displacement",
+    "No adoption of rod/BVP PASS as assembled Finger PASS"
+  ],
+  "whole_system_release": false
+}

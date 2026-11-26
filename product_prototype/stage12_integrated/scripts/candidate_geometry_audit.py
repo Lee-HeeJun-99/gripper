@@ -22,7 +22,10 @@ def main():
         d=np.array(r['centroid_m'])-centre;inertia+=np.array(r['central_geometric_inertia_m5'])+r['volume_m3']*(d@d*np.eye(3)-np.outer(d,d))
     av,ac,ai=properties(load(REPO/case['assembly']['path']))
     errors=dict(volume_relative=abs(av-total)/total,centroid_m=float(np.linalg.norm(ac-centre)),inertia_relative=float(np.linalg.norm(ai-inertia)/np.linalg.norm(ai)))
-    for row in case['changed']:
+    changed=case.get('changed')
+    if changed is None:
+        changed=[dict(part_ID=n,STEP=case['part_references'][n],STL=ref((REPO/case['part_references'][n]['path']).with_suffix('.stl'))) for n in case['changed_parts']]
+    for row in changed:
         s=load(REPO/row['STEP']['path']);v,c,j=properties(s);e=TopExp_Explorer(s,TopAbs_SOLID);n=0
         while e.More():n+=1;e.Next()
         mesh=trimesh.load(REPO/row['STL']['path'],force='mesh');err=abs(mesh.volume*1e-9/v-1)

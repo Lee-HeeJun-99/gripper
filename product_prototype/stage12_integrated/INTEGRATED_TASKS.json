@@ -5,13 +5,21 @@
       "id": "source_reconciliation",
       "status": "PASS",
       "scope": "304 existing STEP/geometry identities, not mass qualification",
-      "result": "validation/integrated/registry1/summary.json"
+      "result": "validation/integrated/registry1/summary.json",
+      "track": "C",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "jam_energy_contract",
       "status": "PASS",
       "scope": "Conditional single-inertia energy control only",
-      "result": "validation/overload/jam_energy2/summary.json"
+      "result": "validation/overload/jam_energy2/summary.json",
+      "track": "A",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "limiter_geometry_and_rating",
@@ -23,27 +31,43 @@
       "reason": "Actual clearance gauge requires26.2962mm extra length;3.175mm interfaces differ. Published torque is MINIMUM, guaranteed maximum/thermal uncertainty unavailable. Gauge is not manufacturer solid CAD.",
       "criteria": "Actual interface and guaranteed maximum plus complete inertia/EA; no safety promotion",
       "fallback": "finite_rotation_contact",
-      "next": "protected_system_loads"
+      "next": "protected_system_loads",
+      "track": "A",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "integrated_gate_controls",
       "priority": 1,
       "status": "PASS",
       "scope": "17 software controls only; actual release3 NOT QUALIFIED",
-      "result": "validation/integrated/controls3/summary.json"
+      "result": "validation/integrated/controls3/summary.json",
+      "track": "C",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "finite_pet_endpoint_coupon",
       "status": "PASS",
       "scope": "Finite inextensible PET on rigid circular fixture; endpoint guide only, not finite lip or flexible Rail",
-      "result": "validation/finger/finite_pet2/summary.json"
+      "result": "validation/finger/finite_pet2/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "revAC_travel_candidate",
       "status": "FAIL",
       "scope": "Shorter PET CAD valid after adaptive integral audit; deformed actual front overlap persists, NOT adopted",
       "result": "validation/finger/channel_diagnostic1/summary.json",
-      "next": "finite_rotation_contact"
+      "next": "finite_rotation_contact",
+      "track": "C",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "finite_rotation_contact",
@@ -65,20 +89,32 @@
       "criteria": "Independent1e-8N force,1nm gap,1% axial migration; exact actual-CAD envelope; no flexible-Rail/friction promotion",
       "cost": "4GiB/420s",
       "fallback": "alignment_alternative",
-      "next": "contact_constraint_conditioning"
+      "next": "contact_constraint_conditioning",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "contact_owner_counterexample",
       "status": "PASS",
       "scope": "Same feasible contact intersection, explicit rows vs aggregated minimum; independent mathematical mechanism only",
-      "result": "validation/contact/owner_contract1/summary.json"
+      "result": "validation/contact/owner_contract1/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "revAD_local_geometry",
       "status": "PASS",
       "scope": "Unadopted candidate geometry/face identity/BOM and continuous local circular-rail aperture only",
       "result": "validation/stage1/funnel_face1/summary.json",
-      "next": "candidate_stage1_revalidation"
+      "next": "candidate_stage1_revalidation",
+      "track": "C",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "torque_fixture_candidate",
@@ -88,31 +124,51 @@
         "hardware_test/inspection/torque_arm1_access1/summary.json",
         "hardware_test/inspection/torque_fixture3/summary.json",
         "hardware_test/inspection/torque_arm2_access3/summary.json"
-      ]
+      ],
+      "track": "A",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "analytic_material_point_jacobian",
       "status": "PASS",
       "scope": "Independent FD and virtual-work component verification ONLY",
-      "result": "validation/contact/rod_jacobian1/summary.json"
+      "result": "validation/contact/rod_jacobian1/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "contact_rank_observation",
       "status": "PASS",
       "scope": "Read-only numerical spectrum, not causal or physical approval.16:27rows/rank7;32:112/rank10;64:196/rank15",
-      "result": "validation/contact/owner_rank1/summary.json"
+      "result": "validation/contact/owner_rank1/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "signed_QR_contact_reduction",
       "status": "REJECTED",
       "scope": "Local signed linear basis fails nonnegative contact normal-cone preservation; no physical row removed",
-      "result": "validation/contact/owner64_cone1/summary.json"
+      "result": "validation/contact/owner64_cone1/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "enriched_local_contact_cone",
       "status": "PASS",
       "scope": "170actual rows reconstruct196local directions within7.41822e-9; NOT nonlinear feasible-set equivalence or a solved equilibrium",
-      "result": "validation/contact/owner64_cone2/summary.json"
+      "result": "validation/contact/owner64_cone2/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "contact_constraint_conditioning",
@@ -134,17 +190,25 @@
       "criteria": "Unchanged full contact checks,1e-8N certificate and1% migration; no solver success promotion",
       "cost": "4GiB/420s",
       "fallback": "alignment_alternative",
-      "next": "flexible_rail_contact"
+      "next": "flexible_rail_contact",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "bounded_static_state_certification",
       "status": "PASS",
       "scope": "Independent unchanged16/32/64 local KKT and actual geometry ONLY; original optimizer failures preserved,16-to64 refinement FAIL",
-      "result": "validation/finger/owner_states2/summary.json"
+      "result": "validation/finger/owner_states2/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "flexible_rail_contact",
-      "priority": 2,
+      "priority": 6,
       "status": "READY",
       "hypothesis": "Separate elastic Rail and PET DOFs may change contact and internal forces relative to the prescribed rigid-rail fixture; must not enforce equal curvature",
       "difference": "New coupled elastic boundary-value mechanism, not further mesh/force/damping scan",
@@ -175,7 +239,12 @@
         "validation/finger/axial_boundary1_verification/summary.json"
       ],
       "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification. New finite_kinematic_budget1 analyzes12 actual saved body states (16/32), not a repeated equilibrium solve. Both independent quadratures and analytic control pass. Inextensible lift moves Rail x by0.406/0.466um at-/+1mN, so projected coordinate reuse FAILS existing1nm budget. Fixed-x conditional axial energy is3.09/3.52 times Rail bending energy; not actual assembly energy. Neither lift is a solved finite state. New extensible_reference1 implements finite engineering strain and rotation with axial strain exactly condensed from the independent variational DOF. Six separate free-tip body/load references,18 midpoint solutions, independent continuous BVP, complex-step saved-state virtual work, objectivity and small-load checks pass bounded scope. PET20mN differs8.765% from linear reference. This is NOT coupled contact or actual assembly boundary conditions. New axial_boundary1 actual counterfactual x_tip=L finite rod contrast FAIL: all4 continuous BVP cases converge, but only5/12 midpoint states satisfy independently verified equilibrium. Free-vs-constrained BVP tip changes55-96%; actual guide axial condition cannot be inferred from free-tip reference. Independent complex-step saved-state reproduction passes12/12, without promoting7 failed equilibria. Original verifier TypeError retained. New axial_seed1 isolates initialization with unchanged equations/tolerances: independent BVP-seeded12/12 midpoint solves succeed; full independent complex-step strain/rotation equilibrium and perturbed-state rejection pass12/12. Finest tip/reaction relative errors max4.605e-6/2.202e-5. This supports initialization sensitivity, not branch uniqueness/stability or actual guide identification. Original7 failed equilibria remain immutable.",
-      "next": "Identify actual assembly axial guide freedom/contact from geometry and load ports before selecting an axial constraint; then coupled finite separate-body contact. BVP seeding resolves the tested counterfactual initialization failure but does not establish branch uniqueness/stability. Alignment and fixture remain independently READY."
+      "next": "Identify actual assembly axial guide freedom/contact from geometry and load ports before selecting an axial constraint; then coupled finite separate-body contact. BVP seeding resolves the tested counterfactual initialization failure but does not establish branch uniqueness/stability. Alignment and fixture remain independently READY.",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": "2026-11-26T07:37:14Z",
+      "consecutive_runs": 6,
+      "selection_note": "Stop generic rod refinement. Next B task is actual CAD boundary/load-port identification."
     },
     {
       "id": "alignment_alternative",
@@ -185,7 +254,11 @@
       "prerequisites": [],
       "criteria": "Rated offset and restoring force/torque; actual mounting; current manufacturing impacts",
       "cost": "small screen then actual geometry",
-      "fallback": "fixture_preparation"
+      "fallback": "fixture_preparation",
+      "track": "A",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "protected_system_loads",
@@ -193,7 +266,11 @@
       "prerequisites": [
         "limiter_geometry_and_rating"
       ],
-      "reason": "No guaranteed cap/EA/actual inertia/allowables; nominal torque is not maximum"
+      "reason": "No guaranteed cap/EA/actual inertia/allowables; nominal torque is not maximum",
+      "track": "A",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "fixture_preparation",
@@ -201,20 +278,84 @@
       "status": "READY",
       "hypothesis": "Guarded torque/jam fixtures enable calibration of missing physical bounds",
       "criteria": "Actual CAD, interfaces, geometry checks, blank physical records, no proof claim",
-      "cost": "4GiB/420s"
+      "cost": "4GiB/420s",
+      "track": "C",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "flexible_terminal_reference",
       "status": "PASS",
       "scope": "Conditional small-deflection terminal-only moving elastic guide, independent Green-function/FEM9cases; no distributed surface/finite rotation/system qualification",
-      "result": "validation/finger/flexible_reference2/summary.json"
+      "result": "validation/finger/flexible_reference2/summary.json",
+      "track": "B",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     },
     {
       "id": "flexible_distributed_linear",
       "status": "FAIL",
       "scope": "Conditional projected static separate-DOF contact;7/9cases pass,2coarse Green reference failures retained",
       "result": "validation/finger/flexible_distributed2/summary.json",
-      "preserved_failure": "validation/finger/flexible_distributed1/summary.json"
+      "preserved_failure": "validation/finger/flexible_distributed1/summary.json",
+      "track": "C",
+      "system_gate_contribution": 1,
+      "last_run_utc": null,
+      "consecutive_runs": 0
+    },
+    {
+      "id": "direct_clutch_cartridge",
+      "track": "A",
+      "priority": 0,
+      "status": "FAIL",
+      "system_gate_contribution": 4,
+      "hypothesis": "Direct motor-supported friction drum removes rigid two-shaft coupling and reduces downstream inertia; actual slip/bearing drag and speed bound still require qualification",
+      "difference": "New physical transmission topology, not HPMC dimensional retry",
+      "criteria": "Finite CAD/shaft connection/retention, actual retained-hardware collisions, explicit force window and dynamic assumptions. No certified cap from assumed friction.",
+      "prerequisites": [],
+      "cost": "4GiB/420s CAD and independent bounded analysis",
+      "fallback": "manufacturer_complete_clutch",
+      "result": "cad/exports/revAE_direct_clutch2/summary.json",
+      "reason": "Finite direct-drive candidate generated and geometry audited; actual mounting and nipple-cap interference reject whole assembly. No rated force cap.",
+      "last_run_utc": "2026-11-26T08:34:47.851564+00:00",
+      "consecutive_runs": 1
+    },
+    {
+      "id": "actual_finger_boundary_map",
+      "track": "B",
+      "priority": 1,
+      "status": "PASS",
+      "system_gate_contribution": 3,
+      "hypothesis": "Actual terminal and root surfaces determine axial travel and load ports; independent rods are references only",
+      "criteria": "Actual STEP identity, finite terminal stops, clamp/capture graph, load input/output coordinates; no manufactured friction/strength values",
+      "prerequisites": [],
+      "cost": "Actual CAD section/translation checks, no new generic rod solve",
+      "fallback": "simpler_free_sliding_terminal",
+      "result": "validation/finger/actual_boundary_AD1/summary.json",
+      "reason": "Actual STEP boundary inventory only: local PET axial stop contact at 1.8mm and penetration at 2.0mm; no assembled physical or strength PASS.",
+      "last_run_utc": "2026-11-26T08:35:21.791844+00:00",
+      "consecutive_runs": 1
+    },
+    {
+      "id": "candidate_system_integration",
+      "track": "C",
+      "priority": 2,
+      "status": "READY",
+      "system_gate_contribution": 5,
+      "hypothesis": "New drive candidate must be checked against all retained three-finger hardware and wiring, not a stand-alone coupon",
+      "criteria": "Actual assembly STEP, explicit replacement cut-set, dimensional BOM, exact nominal interference and sampled motion; no adoption with failed mounting",
+      "prerequisites": [],
+      "cost": "4GiB/420s",
+      "fallback": "motor_plate_revision"
     }
-  ]
+  ],
+  "policy": {
+    "max_consecutive_same_track": 2,
+    "goal": "Actual same-revision product release; no coupon promotion",
+    "automatic_budget_remaining_runs": 0,
+    "automatic_budget_renewal": false,
+    "current_session_work_authorized": true
+  }
 }

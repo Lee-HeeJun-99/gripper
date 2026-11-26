@@ -4,6 +4,10 @@ from pathlib import Path
 from baseline_registry import ROOT,integrity,dump
 def next_task():
     queue=json.loads((ROOT/'INTEGRATED_TASKS.json').read_text())['tasks'];states={x['id']:x['status'] for x in queue}
+    history=ROOT/'TRACK_HISTORY.json'
+    if history.is_file():
+        from product_track_scheduler import select
+        return select(queue,json.loads(history.read_text())['cycles'])
     ready=[x for x in queue if x['status']=='READY' and all(states.get(p)=='PASS' for p in x.get('prerequisites',[]))]
     return min(ready,key=lambda x:x.get('priority',999)) if ready else None
 def main():

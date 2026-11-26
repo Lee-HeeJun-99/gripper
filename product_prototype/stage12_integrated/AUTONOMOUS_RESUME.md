@@ -1,3 +1,15 @@
+# Current product-directed continuation (2026-11-26)
+
+Actual HEAD: `git log -1`. RevAA remains official, RevAE rejected by actual
+interference, RevAF integration under development. Do NOT rerun AE or existing
+rod experiments. Inspect new summary/producer files and NEXT_TASK.json first.
+
+`python3 product_prototype/stage12_integrated/scripts/integrated_status.py --next`
+selects candidate_system_integration after actual A and B cycles. Resume
+drive_system_layout.py using a NEW tag only after correcting the recorded
+wire geometry failure. Existing failed folders must not be overwritten.
+No automatic budget remains; do not start another manager or renew used runs.
+
 # Latest bounded cycle — axial kinematic budget (2026-11-26)
 
 Started at1c1d135761401fa430182dcbe5250b694d364482; supervisor local save PENDING.

@@ -1,3 +1,11 @@
+## Product-priority continuation — 2026-11-26
+
+Use latest stage12_integrated/CHECKPOINT.md, NEXT_TASK.json and actual Git HEAD.
+Product tracks A/B/C supersede the old flexible_rail_contact-only direction.
+RevAE actual assembly interference FAIL and RevAD nominal boundary inventory
+are saved; new RevAF layout under development. Prior automatic6-call budget
+is exhausted and not renewed. No background continuation is claimed.
+
 ## Current integrated resume — 2026-11-26
 
 Latest completed64 working-set study and independent saved-state certificates

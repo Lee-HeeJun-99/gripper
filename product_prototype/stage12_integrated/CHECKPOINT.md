@@ -1,5 +1,13 @@
 # Latest product-system state — RevAK235-part candidate (2026-11-26)
 
+AK product/save commit f8c07c5. Afterwards actually generated and independently
+inspected AK_collet_stand1:6 new finite reaction-fixture parts, actual AK hub
+and clamp bolt, no nominal collisions, closed STL PASS. It is NOT a proof-rated
+fixture or complete calibrated rig; materials/adapters/guard/bench/safe limit
+remain needed. Protocol hardware_test/protocols/AK_COLLET_REACTION.md.
+Service3 latest actual check inactive/dead/MainPID0; budget6used/0remaining.
+No worker/Native/FEM/CAD child is intentionally left running. READY work remains.
+
 Previous save d4e6521; actual HEAD via git log -1. Official AA304 unchanged.
 Latest candidate revAK_integral2 has actual full STEP/STL and235-ID BOM.
 One-piece grounded motor support removes15 AJ parts and increases supplier

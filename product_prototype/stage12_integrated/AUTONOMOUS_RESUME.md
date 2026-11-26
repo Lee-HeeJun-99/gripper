@@ -152,6 +152,13 @@ READY tasks remain in INTEGRATED_TASKS.json. Inspect actual outputs before
 running anything; never reuse result directories. Hardware remains unmeasured.
 # Actual current resume — AK235 (2026-11-26)
 
+Latest product work commit f8c07c5; following fixture work is saved separately
+(obtain actual HEAD with git log -1). AK_collet_stand1 fixture CAD and independent
+geometry inspection already completed; do not rerun. Scope is reaction geometry,
+not proof-rated loading or completed material/capacity validation. Read
+hardware_test/protocols/AK_COLLET_REACTION.md before further fixture design.
+Latest actual service check: inactive/dead/MainPID0. Automatic budget remains0.
+
 Read CURRENT_CANDIDATE.json and reports/INTEGRAL_DRIVE_PRODUCT_20261126.md.
 Latest unadopted case revAK_integral2; official AA remains unchanged.
 Previous save d4e6521; get actual HEAD with git log -1. AK_geometry2,

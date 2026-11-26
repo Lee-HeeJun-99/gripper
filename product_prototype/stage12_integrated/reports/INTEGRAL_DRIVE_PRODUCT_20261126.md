@@ -82,6 +82,20 @@ AK1 stays local with its original summaries/producer and STEP/STL; no deletion.
 
 ## Remaining system work
 
+After product save f8c07c5 a further actual fixture cycle generated
+hardware_test/fixtures/AK_collet_stand1:6 new finite parts plus actual AK hub
+and bolt, nominal common-volume0. Independent inspection AK_collet_stand1
+passed valid/closed/positive meshes and1% volume checks. Integral machined
+D-shaft/flange reacts into a finite plate through two M4 envelopes, not an
+assumed motor bearing. This replaces neither the complete force-cap calibration
+rig nor actual clamp capacity testing. See AK_COLLET_REACTION.md for remaining
+adapter/guard/material/measurement/authorized-load prerequisites. No safe test
+load was invented and no device was operated. Commands actually executed:
+`collet_reaction_fixture.py --tag AK_collet_stand1`, then
+`fixture_geometry_audit.py --fixture AK_collet_stand1 --tag AK_collet_stand1`
+under the same bounded OCP environment. Independent fixture raw/producer
+hashes are stored. Service3 actually rechecked inactive/dead/MainPID0.
+
 Maximum transient force cap still NOT QUALIFIED: actual friction/spring/rate,
 load-side inertia and tendon stiffness bounds are missing. Shaft clamp requires
 actual pressure/contact and combined torque+axial load analysis; bolt preload

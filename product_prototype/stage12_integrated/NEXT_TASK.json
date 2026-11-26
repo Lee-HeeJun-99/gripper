@@ -3,17 +3,19 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "batch5_grounded_palm_attachment",
-    "track": "C",
-    "priority": -4,
+    "id": "batch5_idler_mechanical_retention",
+    "track": "A",
+    "priority": -6,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
-    "hypothesis": "Continue AN actual external base fasteners/machine interface and loaded Palm/adapter/bolt path, not another geometry-only stop scan",
-    "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
-    "previous_diagnostic_task": "AI_whole_palm_support",
+    "hypothesis": "Implement actual thread load-bearing geometry/model or simpler supported axle/captive retention",
+    "criteria": "Actual flank/core/engagement or positive retention CAD, assembly, axial/radial load path and capacity evidence",
+    "previous_diagnostic_task": "AJ_idler_thread_and_load_proof",
     "existing_evidence": [
-      "validation/transmission/AN_palm_cycle1/summary.json",
-      "validation/transmission/AN_palm_verify1/summary.json"
+      {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_cycle1/summary.json",
+        "SHA256": "3e84a194e7cf5d2fca1627ea477cfa889d8ae763ded13012980647f9e58dc40f"
+      }
     ],
     "prerequisites": [],
     "target_candidate": {
@@ -34,10 +36,11 @@
     "cost": "One3600second session, each analysis child4GiB/420s",
     "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
     "system_gate_contribution": 5,
-    "last_run_utc": "2026-11-26T22:53:08.484315+00:00",
+    "last_run_utc": "2026-11-26T23:07:00.825695+00:00",
     "consecutive_runs": 1,
-    "result": "validation/transmission/AN_palm_cycle1/summary.json",
-    "scope": "PARTIAL: finite internal attachment implemented; external machine/fasteners, actual threads and elastic load capacity unqualified"
+    "result": "validation/transmission/AQ_crosspin_cycle1/summary.json",
+    "reason": "AQ finite transverse pin establishes sampled axial stops but21 pin-axis escape samples clear; end retention absent. Rejected, not adopted.",
+    "next": "Implement finite pin end capture or supported captive axle plus assembly and actual load/capacity. No repeated smooth-pin study."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

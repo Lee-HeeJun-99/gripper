@@ -1,0 +1,86 @@
+{
+  "status": "EXTERNAL_BASE_DESIGN_REJECTED",
+  "starting_HEAD": "f6a43f57c7eedac65e7f4883e96ecf4429dfccbc",
+  "candidates": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAR_base1/summary.json",
+      "SHA256": "37783855e18a5d050c3120ebf49d689fdf4576ef027f0b56cd96d677c5c63842"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAR_base2/summary.json",
+      "SHA256": "48122150702b1ebe42176205e38c6527063feb92b408847da2a4f7f715661b44"
+    }
+  ],
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AR_base_verify1/summary.json",
+    "SHA256": "f19c962aba146cfb398994d853b72194c22b8170f8d7483db83d2981cb2cb430"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AR_base_release1/summary.json",
+    "SHA256": "0d1357527937fbabed30636ebaed8b60d21b903ba1eec7fb946601ad7e22a89d"
+  },
+  "execution": [
+    {
+      "name": "build",
+      "exit_code": 2,
+      "actually_executed": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AR_base_cycle1/build.log",
+        "SHA256": "1d8a58f27fc4ab4d6742931f6ca5d3c61fb618d6f733fa98802646ab53395db4"
+      },
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build2",
+      "exit_code": 2,
+      "actually_executed": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AR_base_cycle1/build2.log",
+        "SHA256": "7a5a64b733b363c388904f190cf750ec23392994b1d24231581a7088d2da0949"
+      },
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "verify",
+      "exit_code": 2,
+      "actually_executed": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AR_base_cycle1/verify.log",
+        "SHA256": "04d76c353422e89446bb893ed09ac5b58e986576d207ea34da29ddd844bb461e"
+      },
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "actually_executed": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AR_base_cycle1/release.log",
+        "SHA256": "a453ddbe31d14c6442e9ffa9eb8a7efac1222701158cfeefa030d1de39777aa8"
+      },
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    }
+  ],
+  "identity_verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AR_base_cycle1/identity_verification.json",
+    "SHA256": "566113d6c0a9f8d2d6b64aaea86c7af2472efacb7d91d3d265380e08ab683a3d"
+  },
+  "research_progress": "Implemented actual 263-part AO descendant with external annular base, four finite through bolts/nuts; corrected internal-nut interference with service counterbores; rejected remaining actual tendon intersections and absent bolt/nut uplift retention.",
+  "whole_system_release": false,
+  "adopted": false,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "limitations": [
+    "No rated threads, preload, strength, machine stiffness or actual loaded wrench equilibrium",
+    "Stop tests hold bolts fixed and do not establish complete load path",
+    "No full assembly/tool path or same-revision release",
+    "No SOFA execution; exact CAD analysis only"
+  ]
+}

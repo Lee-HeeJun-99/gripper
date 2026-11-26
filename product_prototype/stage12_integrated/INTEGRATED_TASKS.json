@@ -614,7 +614,7 @@
         "SHA256": "a6a0b9e5c551ae242a9d0141bd4ac78824a929805cbda3f4bedd0a08976960c3"
       },
       "last_cycle_status": "FINITE_ROOT_PRESSURE_WITNESS_VERIFIED_LOADED_CONTACT_BLOCKED",
-      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y±16 to±10, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
+      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y\u00b116 to\u00b110, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
     },
     {
       "id": "idler_integral_M3_shoulder",
@@ -796,12 +796,13 @@
       "priority": -4,
       "status": "READY",
       "execution_class": "PRODUCT_IMPLEMENTATION",
-      "hypothesis": "Continue AN actual external base fasteners/machine interface and loaded Palm/adapter/bolt path, not another geometry-only stop scan",
+      "hypothesis": "Implement external base tendon service passages and actual retained fastener engagement or captive shoulder architecture before loaded Palm/base analysis; preserve AR failures",
       "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
       "previous_diagnostic_task": "AI_whole_palm_support",
       "existing_evidence": [
         "validation/transmission/AN_palm_cycle1/summary.json",
-        "validation/transmission/AN_palm_verify1/summary.json"
+        "validation/transmission/AN_palm_verify1/summary.json",
+        "validation/transmission/AR_base_cycle1/summary.json"
       ],
       "prerequisites": [],
       "target_candidate": {
@@ -822,10 +823,10 @@
       "cost": "One3600second session, each analysis child4GiB/420s",
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
-      "last_run_utc": "2026-11-26T22:53:08.484315+00:00",
-      "consecutive_runs": 1,
-      "result": "validation/transmission/AN_palm_cycle1/summary.json",
-      "scope": "PARTIAL: finite internal attachment implemented; external machine/fasteners, actual threads and elastic load capacity unqualified"
+      "last_run_utc": "2026-11-26T23:10:15.571055+00:00",
+      "consecutive_runs": 2,
+      "result": "validation/transmission/AR_base_cycle1/summary.json",
+      "scope": "AR1/AR2 unadopted external base rejected: residual tendon intersection and smooth nut uplift failure. AO remains current."
     },
     {
       "id": "batch5_positive_root_retention",

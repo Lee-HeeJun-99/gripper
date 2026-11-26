@@ -1,3 +1,35 @@
+# Batch5 cycle6 — external Palm base rejected; pending supervisor save
+
+Started at f6a43f57c7eedac65e7f4883e96ecf4429dfccbc. No git add/commit;
+supervisor local save PENDING, no new commit claimed.
+Actual result: validation/transmission/AR_base_cycle1/summary.json.
+
+One bounded actual design cycle implements revAR_base1/2, unadopted263part
+AO descendants: finite annular external base z=-36..-28, four nominal M5
+through bolt/nut envelopes at radius38. AR1 exact interference FAIL: internal
+M4 bolts/nuts and three tendons. AR2 adds explicit service counterbores;
+internal-fastener interference disappears but all three actual tendons still
+intersect base1.576863725mm3 each. Both failed candidates, changed STEP/STL,
+assemblies/BOM, producers, inputs and original logs preserved. No adoption.
+
+Independent actual STEP reimport validates9new single solids/closed STLs.
+Six signed adapter translation stops pass with external bolts HELD FIXED.
+Distinct actual bolt/nut uplift test FAIL4/4: moving each bolt+1mm through
+its smooth nut bore gives0intersection. Stops therefore do NOT prove a
+complete retained load path. Actual thread flank/captive retention, tendon
+service paths, tooling, machine/base support stiffness, strength/material,
+loaded6DOF equilibrium and same-revision Stage1/Stage2 remain unqualified.
+No friction/preload or rated thread capacity invented. The next design must
+resolve both cable clearance and retained fasteners before loaded analysis.
+
+Four bounded children exit2/2/2/2;4GiB/420s/one-thread. All completed.
+Independent source/input hashes pass. No SOFA run. Read-only release audit
+remains INTEGRATED_NOT_QUALIFIED. AA adopted/AO current unchanged; historical
+failures and unrelated untracked files preserved. Queue task remains READY
+with rejection evidence; independent overload/Idler tracks remain available.
+No RUNNING queue task or owned live analysis child. No criteria, SDK, manager,
+Stage3 or old artifact changes. Exact save_request6.json awaits supervisor.
+
 # Batch5 cycle4 — actual grooved-nipple fuse rejection; pending supervisor save
 
 Started at 79abf2a3c9144bd8f8d7dc66ace95c8afd86395e. No git add/commit.

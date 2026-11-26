@@ -3,33 +3,26 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "AI_whole_palm_support",
-    "track": "C",
-    "priority": 0,
-    "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
-    "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
-    "fallback": "reinforced_local_tabs",
+    "id": "AK_protected_maximum_load",
+    "track": "A",
+    "priority": 1,
     "status": "READY",
-    "prerequisites": [
-      "local_palm_tabs",
-      "idler_integral_M3_shoulder"
-    ],
-    "system_gate_contribution": 4,
-    "cost": "bounded actual product validation, no random parameter sweep",
-    "last_run_utc": "2026-11-26T13:14:03.053987+00:00",
-    "consecutive_runs": 0,
+    "hypothesis": "Actual one-face grounded support removes the known bearing bypass but force cap needs rated/calibrated friction/spring and bounded transient energy. Simpler rated mechanisms may reduce missing bounds.",
+    "difference": "Use actual AK inertia/topology and coupled axial clamp reaction, not old minimum-only HPMC or assumed static tension as peak protection",
+    "prerequisites": [],
+    "criteria": "Real source-backed normal/trigger/maximum load separation; bound torque/radius/inertia/tendon stiffness/initial energy/delay and failure paths; actual CAD interfaces and unchanged convergence/material criteria. No guessed friction/preload certification",
+    "implementation": "Reuse jam_energy2 and actual AK CAD; independently verify energy bound; investigate rated simpler actuator/limiter if current architecture cannot be qualified",
+    "fallback": "rated_low_torque_actuator_or_independent_disconnect",
+    "system_gate_contribution": 5,
+    "cost": "4GiB/420seconds per analysis child, one3600second session maximum",
+    "target_revision": "revAK_integral2",
+    "target_parts": 235,
     "target_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
       "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
     },
-    "target_revision": "revAK_integral2",
-    "target_parts": 235,
-    "evidence": {
-      "path": "product_prototype/stage12_integrated/validation/transmission/AK_whole_palm_cycle1/summary.json",
-      "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
-    },
-    "selection_note": "C bounded cycle complete with retained FAIL; next executable actual_finger_load_ports B. Before further Palm solve identify actual base attachment and investigate thin-plate P1 locking/fragment mesh quality; no blind refinement or strength claim.",
-    "reason": "Actual entire AK Palm conditional central-annulus support/unit outer-hole washer load: 3 P1 mesh solutions; mesh quality and 1% response convergence FAIL. Support interface remains hypothetical. Independent energy/balance reconstruction PASS does not cure FAIL."
+    "last_run_utc": null,
+    "consecutive_runs": 0
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

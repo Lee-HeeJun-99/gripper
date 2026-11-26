@@ -1,0 +1,172 @@
+{
+  "status": "DIAGNOSTIC_VERIFIED_SUPPORT_AND_FEM_QUALIFICATION_BLOCKED",
+  "starting_HEAD": "6df5025ac5efcbf8a4920c9ee76a431445a0afdb",
+  "task": "AI_whole_palm_support",
+  "track": "C",
+  "time_utc": "2026-11-26T13:23:21.785642+00:00",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/producer.py",
+    "SHA256": "80a87d8776fedfd2af0e37110c09d05e18ed9e16d1a54fd07d9a475dd4effa2c"
+  },
+  "plan": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/plan.json",
+    "SHA256": "2214378edcd419299c373576c5192ed44fd2c45ef1e1c251286581a6bf5ab296"
+  },
+  "evidence": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_bending1/summary.json",
+      "SHA256": "4787c32a757672827559fc68016f4eab9456766e5975e8d2e12b8f3a94613a45"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_bending_verify1/summary.json",
+      "SHA256": "fac3d18de90ae481c3f4d8d4f435f8f3ee9b56fa61bd21601d1823ca8131db19"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_mount1/summary.json",
+      "SHA256": "44e195180068fcd64275d016462df3bdf7da2ef5975937f0bcc46a23672b6696"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_mount2/summary.json",
+      "SHA256": "c24125c86f115d7abcdc236a373353dc59ec6e87831929bfe81e2dbf291d80da"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_mount_verify1/summary.json",
+      "SHA256": "8555090b8961470ae30bcb305dd2ae05aea19f226fef286a7ce794089414622e"
+    }
+  ],
+  "executions": [
+    {
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/bending.log",
+        "SHA256": "ed4ae6ee7f07c3fa3af2fb44bab254faf1ef88e45f829a40022ec41ad8e859fb"
+      },
+      "exit_code": 0,
+      "virtual_memory_limit_KiB": 4194304,
+      "timeout_s": 420,
+      "BLAS_OMP_threads": 1
+    },
+    {
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/mount.log",
+        "SHA256": "37580956c63b7f394fca9a6cfef27b50746554960f307c800195be37a9ab06d8"
+      },
+      "exit_code": 1,
+      "virtual_memory_limit_KiB": 4194304,
+      "timeout_s": 420,
+      "BLAS_OMP_threads": 1
+    },
+    {
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/mount2.log",
+        "SHA256": "f8f16be918451c4f89f462a456213c25c032a7702fe2d43f830f89c4c193915a"
+      },
+      "exit_code": 0,
+      "virtual_memory_limit_KiB": 4194304,
+      "timeout_s": 420,
+      "BLAS_OMP_threads": 1
+    },
+    {
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/verify_bending.log",
+        "SHA256": "fac3d18de90ae481c3f4d8d4f435f8f3ee9b56fa61bd21601d1823ca8131db19"
+      },
+      "exit_code": 0,
+      "virtual_memory_limit_KiB": 4194304,
+      "timeout_s": 420,
+      "BLAS_OMP_threads": 1
+    },
+    {
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/verify_mount.log",
+        "SHA256": "c98d97c10cf7357eea470fff4441791480ffe7b662b9586ca2aab8855fc757e9"
+      },
+      "exit_code": 0,
+      "virtual_memory_limit_KiB": 4194304,
+      "timeout_s": 420,
+      "BLAS_OMP_threads": 1
+    }
+  ],
+  "transitive_sources": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/baseline_registry.py",
+      "SHA256": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/build_stage1.py",
+      "SHA256": "551c0cb2d9f0e5293333f9c6cedcabb3977a6510a0dc821d72b2aafe2ab2cdad"
+    }
+  ],
+  "geometry": {
+    "other_parts": 234,
+    "minimum_modeled_part_distance_mm": 1.578931365318119,
+    "support_material_area_mm2": 1532.560390612784,
+    "no_modeled_support_contact": true
+  },
+  "mesh_diagnosis": [
+    {
+      "h_mm": 8.0,
+      "quality_failure_count": 26,
+      "poor_volume_fraction": 3.3825701099712395e-09,
+      "poor_saved_solution_energy_fraction": 5.161213174877333e-09,
+      "P1_bending_energy_errors": [
+        3.3524318476431105,
+        3.3474782419401814
+      ],
+      "parasitic_shear_energy_fractions": [
+        0.26987574534471725,
+        0.27085604055282725
+      ]
+    },
+    {
+      "h_mm": 6.0,
+      "quality_failure_count": 26,
+      "poor_volume_fraction": 3.3148614071884947e-09,
+      "poor_saved_solution_energy_fraction": 4.007253475116164e-09,
+      "P1_bending_energy_errors": [
+        2.8653423005354064,
+        2.995283837779401
+      ],
+      "parasitic_shear_energy_fractions": [
+        0.23106151185062287,
+        0.2557420045584263
+      ]
+    },
+    {
+      "h_mm": 4.0,
+      "quality_failure_count": 24,
+      "poor_volume_fraction": 2.790846918172884e-09,
+      "poor_saved_solution_energy_fraction": 6.290091743049406e-09,
+      "P1_bending_energy_errors": [
+        1.9796033915304059,
+        1.9685916314138856
+      ],
+      "parasitic_shear_energy_fractions": [
+        0.17495475288183196,
+        0.17249267597366089
+      ]
+    }
+  ],
+  "verification_pass": true,
+  "whole_system_release": false,
+  "release_audit": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_diagnostic_cycle1/release_summary.json",
+    "SHA256": "0664f7b419b8334c331384dfddaaf81adea5bc8ebcacbe0c4961c796771109a6"
+  },
+  "release_status": "INTEGRATED_NOT_QUALIFIED",
+  "release_error_count": 24,
+  "preserved_failure": "Initial uninterrupted-annulus assumption exit1; original producer/inputs/log/FAIL summary retained. Corrected audit uses actual perforated footprint, not relaxed physical tolerance.",
+  "next_action": "Define a separate finite external base-attachment design and its full force/moment load path before an assembly support solve. For FEM, investigate small boundary features and higher-order or thickness-aware discretization with an independently supported benchmark; do not blindly refine these P1 meshes.",
+  "limitations": [
+    "No new equilibrium or strength solve",
+    "Manufactured pure-bending probe is a representation diagnostic on actual meshes, not measured response",
+    "No unique-cause or compliance-bound claim",
+    "P2 exact polynomial reproduction does not qualify a P2 equilibrium solution",
+    "No fixed annulus support, material, friction/preload, overload cap or same-revision release qualified"
+  ],
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "owned_live_analysis_children": 0
+}

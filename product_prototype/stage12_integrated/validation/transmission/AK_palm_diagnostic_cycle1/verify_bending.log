@@ -1,0 +1,94 @@
+{
+  "status": "INDEPENDENT_REPRESENTATION_VERIFICATION_PASS",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_bending1/summary.json",
+    "SHA256": "4787c32a757672827559fc68016f4eab9456766e5975e8d2e12b8f3a94613a45"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_palm_bending_verify1/producer.py",
+    "SHA256": "f1ab3b8df8e61ae177512710e88114ef4c72254771466fba6eb18972fe7dee69"
+  },
+  "rows": [
+    {
+      "h_mm": 8.0,
+      "actual_energy_J": 7.032321819187892e-07,
+      "independent_energies_J": [
+        [
+          64.09545901477203,
+          14.726355577395276,
+          14.726355577395283
+        ],
+        [
+          64.02251045580046,
+          14.726355577395276,
+          14.72635557739529
+        ]
+      ],
+      "max_P1_continuum_relative_difference": 6.661338147750939e-16,
+      "P2_relative_error": 8.881784197001252e-16,
+      "affine_gradient_error": 1.0000409788463172e-16,
+      "checks": {
+        "P1_continuum_independent_agreement": true,
+        "P2_polynomial_representation": true,
+        "actual_solution_energy": true,
+        "affine_gradient": true,
+        "corrupted_1percent_displacement_rejected": true
+      }
+    },
+    {
+      "h_mm": 6.0,
+      "actual_energy_J": 8.002395447164845e-07,
+      "independent_energies_J": [
+        [
+          56.932163337769616,
+          14.728880112347014,
+          14.728880112347017
+        ],
+        [
+          58.84605666145049,
+          14.728880112347014,
+          14.72888011234702
+        ]
+      ],
+      "max_P1_continuum_relative_difference": 5.551115123125783e-16,
+      "P2_relative_error": 4.440892098500626e-16,
+      "affine_gradient_error": 6.166399856011306e-17,
+      "checks": {
+        "P1_continuum_independent_agreement": true,
+        "P2_polynomial_representation": true,
+        "actual_solution_energy": true,
+        "affine_gradient": true,
+        "corrupted_1percent_displacement_rejected": true
+      }
+    },
+    {
+      "h_mm": 4.0,
+      "actual_energy_J": 1.0117880509658364e-06,
+      "independent_energies_J": [
+        [
+          43.878531341210014,
+          14.726299300751169,
+          14.72629930075117
+        ],
+        [
+          43.71636886590608,
+          14.726299300751169,
+          14.726299300751172
+        ]
+      ],
+      "max_P1_continuum_relative_difference": 7.771561172376096e-16,
+      "P2_relative_error": 2.220446049250313e-16,
+      "affine_gradient_error": 6.123031769111886e-17,
+      "checks": {
+        "P1_continuum_independent_agreement": true,
+        "P2_polynomial_representation": true,
+        "actual_solution_energy": true,
+        "affine_gradient": true,
+        "corrupted_1percent_displacement_rejected": true
+      }
+    }
+  ],
+  "elapsed_s": 2.505970846163109,
+  "whole_system_release": false,
+  "scope": "Actual mesh/solution independent energy reconstruction plus polynomial representation controls, not product solve or strength"
+}

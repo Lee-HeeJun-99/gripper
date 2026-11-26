@@ -1,0 +1,18 @@
+{
+  "status": "OVERLOAD_PROTECTION_NOT_QUALIFIED",
+  "scope": "STATIC JAM/OBSTRUCTION HAZARD REFERENCE; NOT MEASURED CAPACITY OR MOTOR SAFETY MAXIMUM",
+  "motor_nominal_holding_torque_Nm": 0.45,
+  "minimum_seated_radius_m": 0.011165,
+  "ideal_reference_tension_N": 40.304523063143755,
+  "idler_radial_triangle_upper_reference_N": 80.60904612628751,
+  "idler_runout_bending_reference_Pa": 606347354.3580655,
+  "required_yield_for_factor2_without_notch_Pa": 1212694708.716131,
+  "shaft_pin_nominal_shear_reference_Pa": 31861416.270917792,
+  "nominal_303_yield_typical_Pa": 241000000.0,
+  "warning": "Typical yield is NOT certified allowable; notch/preload/fatigue unresolved. Holding torque is NOT a rated upper torque bound. Frictional slip is NOT a qualified safety torque limiter.",
+  "required_correction": "A validated independent torque/tension limiter or certified drive force cap is required before adopting a low-N load envelope; a stroke stop alone cannot protect an earlier jam.",
+  "source_SHA256": "45e52a0c000faf3be5b7f534582205bbbea7150422b76f355df5082e54b081d9",
+  "material_evidence_SHA256": "14b727a364ccf9b56ffa741e3a3765b859c3df85ad4bbe11e3244a87dfaed01f",
+  "motor_source": "https://files.omc-stepperonline.com/17HS15-1504S1_Full_Datasheet.pdf",
+  "command": "python scripts/overload_screen.py --tag jam_reference1"
+}

@@ -14,7 +14,8 @@ REQUIRED={
  'finger_structure':'ANALYTICAL','root_palm_strength':'ANALYTICAL',
  'continuous_load_path':'NUMERICAL','static_dynamic_consistency':'NUMERICAL',
  'numerical_convergence':'NUMERICAL','qualified_worst_case':'ANALYTICAL',
- 'changed_stage1_revalidation':'ANALYTICAL','stage3_handoff':'ANALYTICAL'}
+ 'changed_stage1_revalidation':'ANALYTICAL','stage3_handoff':'ANALYTICAL',
+ 'overload_protection':'ANALYTICAL','motor_alignment_reactions':'ANALYTICAL'}
 CASE='revAA_heel_relief2'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def validate(doc,root,expected,allow_test=False):

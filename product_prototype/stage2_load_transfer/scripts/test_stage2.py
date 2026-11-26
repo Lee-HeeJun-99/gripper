@@ -3,6 +3,7 @@ import copy,json,tempfile,unittest
 from pathlib import Path
 from stage2_release_gate import REQUIRED,validate,sha
 from hardware_records import evaluate
+from alignment_records import evaluate as alignment
 class GateTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name)
@@ -48,4 +49,17 @@ class GateTests(unittest.TestCase):
         result=evaluate(rows);self.assertAlmostEqual(result['linear_stiffness_N_m'],1000);self.assertFalse(result['hardware_pass'])
     def test_hardware_nan(self):
         self.assertEqual(evaluate([dict(specimen_ID='x',calibration_ID='x',timestamp='x',time_s=0,force_N='nan',extension_m=0,temperature_C=20)])['status'],'INVALID')
+    def alignment_rows(self):
+        return [dict(y_m=y,r0_m=0,r90_m=0,r180_m=0,r270_m=0,uncertainty_m=1e-7,calibration_ID='SYNTHETIC',specimen_ID='SYNTHETIC',timestamp='SYNTHETIC') for y in (-.022,-.030)]
+    def test_alignment_zero_is_not_hardware_pass(self):
+        r=alignment(self.alignment_rows());self.assertEqual(r['status'],'WITHIN PROVISIONAL ALIGNMENT BUDGET');self.assertFalse(r['hardware_pass']);self.assertFalse(r['power_authorized'])
+    def test_alignment_excess_offset(self):
+        rows=self.alignment_rows()
+        for r in rows:r['r0_m']=20e-6
+        self.assertEqual(alignment(rows)['status'],'FAIL')
+    def test_alignment_uncertainty(self):
+        rows=self.alignment_rows()
+        for r in rows:r['uncertainty_m']=5e-6
+        self.assertEqual(alignment(rows)['status'],'FAIL')
+    def test_alignment_blank(self):self.assertEqual(alignment([])['status'],'NOT MEASURED')
 if __name__=='__main__':unittest.main()

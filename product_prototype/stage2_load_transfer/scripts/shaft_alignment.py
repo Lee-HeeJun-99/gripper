@@ -2,7 +2,7 @@
 Actual output-shaft BRep sections, manufacturer motor shaft dimensions.
 Rigid coupling links finite shaft contact centroids; bearing translations fixed.
 """
-import argparse,json,math,sys
+import argparse,json,math,sys,shutil
 from pathlib import Path
 import numpy as np
 from scipy.integrate import quad
@@ -15,6 +15,7 @@ from OCP.gp import gp_Pnt
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--tag',required=True);args=ap.parse_args()
     out=ROOT/'validation/coupling'/args.tag;out.mkdir(parents=True,exist_ok=False)
+    shutil.copyfile(__file__,out/'producer.py')
     path=S1/'cad/parts/revAA_mbd1/F0_SHAFT.step';shaft=load(path)
     ys=np.array([-44.,-35.,-26.,-15.25,-12.5,-12.4,-12.1,-9.,-8.5,-6.,-3.5,1.75,3.25,9.,11.5])*.001
     inlet=2;outlet=3;supports=[int(np.flatnonzero(abs(ys-y)<1e-12)[0]) for y in (-.006,.0115)]
@@ -26,6 +27,7 @@ def main():
             slab=BRepPrimAPI_MakeBox(gp_Pnt(60,y-h/2,0),40,h,40).Shape()
             v,c,j=properties(BRepAlgoAPI_Common(shaft,slab).Shape())
             sections.append(dict(element=i,xi=float(xi),weight=float(w),Ixx_m4=float(j[0,0]/(h*.001)),Izz_m4=float(j[2,2]/(h*.001))))
+    (out/'model_sections.json').write_text(json.dumps(sections,indent=2)+'\n')
     # D section x<=2 mm from nominal5 mm shaft, last15 mm of24 mm shaft.
     r=.0025;flat=.002
     area=quad(lambda x:2*math.sqrt(max(0,r*r-x*x)),-r,flat,epsabs=1e-14)[0]
@@ -64,7 +66,7 @@ def main():
             rows.append(dict(direction=direction,assumed_motor_E_Pa=motor_E,assumed_shaft_E_Pa=193e9,
                 misalignment_radial_stiffness_N_m=float(stiffness),motor_radial_N_at_0_25mm=float(stiffness*.00025),
                 conditional_offset_limit_m_at_10_5N=float(10.5/stiffness),unit_offset_motor_moment_Nm=float(reaction[1]),
-                equilibrium_free_force_residual=res,force_balance_N=balance_force,
+                equilibrium_free_force_residual=residual,force_balance_N=balance_force,
                 energy_relative_error=abs(energy-work)/max(abs(energy),1e-30),element_patch_error=max(patch_errors),
                 status='PASS' if residual<1e-8 and balance_force<1e-8 and abs(energy-work)/abs(energy)<1e-8 and max(patch_errors)<1e-10 else 'FAIL'))
     result=dict(status='PASS' if all(r['status']=='PASS' for r in rows) else 'FAIL',

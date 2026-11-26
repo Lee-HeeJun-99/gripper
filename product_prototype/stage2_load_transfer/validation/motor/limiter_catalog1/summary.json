@@ -1,0 +1,46 @@
+{
+  "status": "NO_VERIFIED_DROP_IN_LIMITER",
+  "scope": "PRIMARY MANUFACTURER DATA / INTERFACE SCREEN ONLY",
+  "rows": [
+    {
+      "candidate": "HPI friction family",
+      "published_range_Nm": [
+        0.00112984829,
+        4.51939316
+      ],
+      "published_unit": "in-lb",
+      "envelope_mm": null,
+      "bores_mm": null,
+      "low_torque_accuracy": null,
+      "status": "DRAWING_AND_CALIBRATION_REQUIRED",
+      "source": "https://highprecisioninc.com/torque-limiters/"
+    },
+    {
+      "candidate": "Huco401.25",
+      "outer_diameter_mm": 26,
+      "minimum_bore_mm": 6,
+      "current_input_mm": 5,
+      "current_output_mm": 4.4,
+      "bore_drop_in": false,
+      "status": "NOT_A_DROP_IN",
+      "low_torque_accuracy": null,
+      "source": "https://www.huco.com/shop/couplings/miniature-friction-clutches/401-25"
+    },
+    {
+      "candidate": "Dynatect EAS12 adjustable",
+      "outer_diameter_mm": 19.05,
+      "length_mm": 31.75,
+      "current_coupling_length_mm": 19.5,
+      "extra_length_mm": 12.25,
+      "published_capacity_Nm": 0.96,
+      "minimum_calibrated_setting_Nm": null,
+      "status": "NOT_A_DROP_IN_AND_LOW_SETTING_UNVERIFIED",
+      "source": "https://dynatect.com/product/slip-ease-slip-clutches/"
+    }
+  ],
+  "operating_torque_lower_required_Nm": null,
+  "safe_torque_upper_bound_Nm": null,
+  "required_next": "Derive protected load window from real structure/grasp needs; obtain actual drawing/accuracy or design independently qualified force-cap mechanism; no purchase/contact made",
+  "source_SHA256": "70d30ade56c02b7bac0a44f8c2e256d9a7a7914378de447d2b9a2eb9d1758779",
+  "command": "python scripts/limiter_screen.py --tag limiter_catalog1"
+}

@@ -2,6 +2,10 @@
 
 Latest actual work: read CHECKPOINT.md current continuation before historical
 notes. No child or external worker is running. Current release3 NOT QUALIFIED.
+Last completed implementation commit413eb44; later cone-diagnostic save via
+git log. owner64_cone1 rejects signed QR reduction; owner64_cone2 certifies
+only local cone reconstruction with170 actual rows. A nonlinear working-set
+solver is not yet implemented; do not treat the local certificate as one.
 Do not rerun completed16/32 states or owner64_1 into its old directory.
 
 Read-only next task selection from repository root:

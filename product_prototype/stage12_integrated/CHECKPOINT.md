@@ -1,7 +1,7 @@
 # Integrated checkpoint — 2026-11-26
 
 Current continuation (supersedes mid-session RUNNING statements below):
-last committed save before this checkpoint is f8bbd43; final save is identified
+last committed implementation save is413eb44; final save is identified
 by `git log -1`, not a self-referential hash. Adopted RevAA unchanged. AC/AD
 remain unadopted candidates. release3 is INTEGRATED_NOT_QUALIFIED, all22 Stage2
 system criteria still unqualified. No Stage3, Native or physical measurements.
@@ -22,6 +22,14 @@ actual geometry owner64_geometry1 PASS, but owner64_reaction1 FAIL:
 owner_rank1 actual diagnostic: active rows/rank16:27/7,32:112/10,64:196/15;
 large row dependence supports a numerical working-set investigation but is
 not a proven sole cause. No inequalities or physical state were removed.
+
+Actual next cycle completed after413eb44: owner64_cone1 REJECTS signed QR
+reduction (15rows, maximum nonnegative reconstruction residual0.0816634).
+owner64_cone2 adds only existing physical rows,170total, to recover the local
+cone within7.41822e-9 against1e-8 numerical criterion. This is NOT nonlinear
+feasible-set equivalence or permission to drop collisions. No new equilibrium
+has been solved; contact_constraint_conditioning remains READY for a verified
+working-set method with ALL original nonlinear checks retained.
 
 Fixture v1 pin path FAIL preserved. V2 actual Z-pin and stock socket plugs,
 90deg shaft assembly setup, pass finite pin/tool/RH-thread extraction samples

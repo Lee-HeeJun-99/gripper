@@ -5,7 +5,7 @@ import numpy as np
 from baseline_registry import ROOT,ref,dump
 import rod_point_jacobian as rod
 
-def inspect(row,L,profile):
+def inspect(row,L,profile,return_matrix=False):
     q=np.array(row['state_angles_rad']);n=len(q);theta=math.radians(row['fixture_angle_deg']);R=.088/theta
     c,s=math.cos(theta),math.sin(theta);M=np.array([[c,s],[-s,c]])
     shift=np.array([.0504-R*(1-c),-.007-R*s])-M@np.array([.0504,-.095])
@@ -22,6 +22,7 @@ def inspect(row,L,profile):
     gaps=np.array(gaps);jac=np.array(jac);active=jac[np.abs(gaps)<=1e-9]
     norms=np.linalg.norm(active,axis=1);active=active[norms>1e-14];norms=norms[norms>1e-14]
     if not active.size:raise ValueError('No nonzero active contact rows')
+    if return_matrix:return active/norms[:,None]
     spectrum=np.linalg.svd(active/norms[:,None],compute_uv=False)
     threshold=np.finfo(float).eps*max(active.shape)*spectrum[0];rank=int(np.count_nonzero(spectrum>threshold))
     return dict(n=n,input_status=row['status'],all_constraint_rows=len(gaps),nonzero_active_rows=len(active),degrees_of_freedom=n,

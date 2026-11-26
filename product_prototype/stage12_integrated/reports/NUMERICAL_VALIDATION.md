@@ -1,5 +1,28 @@
 # Numerical status — no system pass
 
+Latest actual material-owner follow-up supersedes only the unresolved method
+status, not the historical failures below. owner_analytic_reaction2 independently
+certifies unchanged16/32 saved states below1e-8N force-equivalent residual;
+exact actual-channel envelope audits pass. Relevant migration refinement~4%
+still FAILS1%. Interrupted64 guess is NOT an equilibrium: force residual
+1.001656e-6N and complementarity2.16556e-7 fail unchanged thresholds even
+though its exact geometric envelope passes and migration is near the32 result.
+
+owner_rank1 measures actual active Jacobian row dependence. owner64_cone1
+shows that replacing196 active rows by15 signed QR rows changes the normal
+cone (nonnegative reconstruction residual0.0816634). owner64_cone2 enriches
+to170 actual rows; all original local row directions have nonnegative
+reconstruction residual<=7.41822e-9. This local algebraic certificate is not
+a nonlinear feasible-set proof, new equilibrium, pressure uniqueness, or
+permission to discard physical contacts. Future reduced working sets must
+still check EVERY original nonlinear inequality and independent force balance.
+
+Software validation:17 actual negative release controls; empty/failed states
+cannot pass all([]) or close-output comparisons. audit3 resolves88 result and
+failure records with immutable source archives, no protected Stage1/2 change.
+This provenance PASS does not promote any physical result. All old failures
+remain preserved. Offline manager guards do not start external Codex sessions.
+
 Inherited1%mesh,0.1%time and physical force/gap thresholds are unchanged.
 No new Native/SOFA or Gmsh FE was run in this integrated session. New analyses
 are independent SciPy static/ODE controls and actual OCP geometry checks.

@@ -1,5 +1,12 @@
 # Resume
 
+LATEST service3: check regrip-stage12-20261126-3.service and
+runtime/authorized_20261126_3/status.json before manual research. Remaining
+original budget4x1800s. Distributed result/FAIL saved1afffcb. Manifest recovery
+now includes the two AGENTS root handoff reports and verified string result
+references; actual isolated two-cycle manager_flow2 tests this shape. Never
+widen sandbox or remove STOP to bypass a user stop.
+
 LATEST RECOVERY: reference work saved f5225df. Check service
 regrip-stage12-20261126-2.service and runtime/authorized_20261126_2/status.json
 BEFORE starting manual work; service1 is historical/stopped. Remaining budget

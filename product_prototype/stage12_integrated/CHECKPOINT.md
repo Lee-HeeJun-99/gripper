@@ -1,3 +1,14 @@
+# Automation recovery after distributed-contact cycle — 2026-11-26
+
+Actual distributed-contact results saved in1afffcb, original FAILs preserved.
+Supervisor's first manifest rejection was scope-only: AGENTS common root
+handoff paths omitted. Added only those two explicit paths, not arbitrary
+root files; string result paths must resolve to already hash-verified records.
+manager_flow2 tests this exact production manifest shape through two real
+isolated supervisor commits and continuations. Child permissions unchanged.
+Remaining original4x1800s service3 launch uses runtime/authorized_20261126_3;
+consult live status before overlapping work. No integrated release PASS.
+
 # Bounded cycle — distributed elastic Rail/PET (2026-11-26)
 
 Started from19e9ea67e34edc8bbaf43bd6738b58508043fbc6. Supervisor local save PENDING;

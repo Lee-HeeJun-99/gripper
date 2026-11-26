@@ -2,6 +2,22 @@
 
 ## Recovery / remaining budget
 
+LATEST: service2 completed actual distributed-contact research, then rejected
+its save because the two AGENTS-referenced root handoff reports were missing
+from the exact allowlist. No permission or physics check was weakened. Only
+reports/INTEGRATED_CURRENT_STATUS.md and reports/INTEGRATED_NEXT_TASKS.md were
+added. Result paths may be strings only if they uniquely resolve to an already
+SHA256-verified file record. manager_flow2 executes TWO actual isolated loops
+with precisely these common-report edits and string result paths; both commit
+and continue. Research outputs, including coarse mesh FAIL, saved in1afffcb.
+
+Current relaunch: service regrip-stage12-20261126-3.service, runtime
+authorized_20261126_3. Remaining ORIGINAL allocation4x1800s (2hours total child
+time), RuntimeMaxSec7380. The two earlier actual cycles count against the
+original6; software-only isolated tests do not consume Codex launches.
+Stop: `systemctl --user stop regrip-stage12-20261126-3.service` or persistent
+runtime/STOP. Check actual status, not the historical service names below.
+
 First actual service stopped after1cycle, not because research was complete:
 child .git is protected read-only. Its9case elastic terminal reference and
 failures were inspected and saved in f5225df. The empty staging guard was

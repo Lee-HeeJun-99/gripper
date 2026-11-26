@@ -15,6 +15,7 @@ def main():
         for name in ('CURRENT_BASELINE.json','RELEASE_STATUS.json'):(root/name).write_text('{}')
         (root/'INTEGRATED_TASKS.json').write_text('{"tasks":[]}')
         (repo/'.gitignore').write_text('product_prototype/stage12_integrated/runtime/\n')
+        (repo/'reports').mkdir();(repo/'reports/INTEGRATED_CURRENT_STATUS.md').write_text('baseline')
         shutil.copyfile(ROOT/'scripts/supervised_save.py',scripts/'supervised_save.py')
         guard=repo/'product_prototype/stage2_load_transfer/scripts/commit_guard.py';guard.parent.mkdir(parents=True);shutil.copyfile(ROOT.parent/'stage2_load_transfer/scripts/commit_guard.py',guard)
         (scripts/'baseline_registry.py').write_text("from pathlib import Path\nROOT=Path(__file__).resolve().parents[1]\n")
@@ -24,7 +25,7 @@ def main():
 from pathlib import Path
 prompt=sys.argv[1];request=Path(re.search(r" Write (.*?) with JSON keys",prompt).group(1));head=re.search(r'expected_HEAD="([a-f0-9]+)"',prompt).group(1)
 i=len(list(request.parent.glob('save_result*.json')));f=Path('product_prototype/stage12_integrated/validation/cycle'+str(i)+'/summary.json');f.parent.mkdir(parents=True);f.write_text(json.dumps(dict(status='FAIL',scope='ISOLATED SYNTHETIC TEST FIXTURE')))
-r=dict(path=str(f),SHA256=hashlib.sha256(f.read_bytes()).hexdigest());request.write_text(json.dumps(dict(expected_HEAD=head,message='Isolated manager cycle '+str(i),files=[r],results=[r])))
+r=dict(path=str(f),SHA256=hashlib.sha256(f.read_bytes()).hexdigest());report=Path('reports/INTEGRATED_CURRENT_STATUS.md');report.write_text('Isolated cycle '+str(i));rr=dict(path=str(report),SHA256=hashlib.sha256(report.read_bytes()).hexdigest());request.write_text(json.dumps(dict(expected_HEAD=head,message='Isolated manager cycle '+str(i),files=[r,rr],results=[str(f)])))
 ''')
         subprocess.run(['git','init','-q',str(repo)],check=True)
         for key,value in [('user.name','Isolated manager test'),('user.email','test@example.invalid'),('commit.gpgsign','false')]:subprocess.run(['git','config',key,value],cwd=repo,check=True)

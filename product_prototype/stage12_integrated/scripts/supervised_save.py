@@ -8,7 +8,7 @@ from pathlib import Path
 
 BASE='product_prototype/'
 ROOTS=tuple(BASE+s+'/' for s in ('stage12_integrated','stage1_manufacturing','stage2_load_transfer'))
-COMMON={BASE+'reports/CHECKPOINT.md',BASE+'reports/AUTONOMOUS_RESUME.md'}
+COMMON={BASE+'reports/CHECKPOINT.md',BASE+'reports/AUTONOMOUS_RESUME.md','reports/INTEGRATED_CURRENT_STATUS.md','reports/INTEGRATED_NEXT_TASKS.md'}
 PROTECTED={'session_manager.py','manager_controls.py','supervised_save.py','supervised_save_controls.py','commit_guard.py','criteria.json'}
 RAW={'surface.csv','detector.csv','response_rows.csv','layer_pairs.csv'}
 def git(repo,*args):return subprocess.check_output(['git',*args],cwd=repo,text=True).strip()
@@ -42,6 +42,10 @@ def validate(repo,request,head,old_untracked):
     results=request.get('results',[])
     if not results:raise ValueError('No actual new result references')
     for r in results:
+        if isinstance(r,str):
+            matches=[record for record in records if record['path']==r]
+            if len(matches)!=1:raise ValueError('Result path not uniquely listed')
+            r=matches[0] # digest already verified above; never infer a hash
         if r not in records or Path(r['path']).name!='summary.json':raise ValueError('Result not in save list')
         doc=json.loads(safe_path(repo,r['path']).read_text())
         if not isinstance(doc.get('status'),str) or doc.get('test_only') is True:raise ValueError('Not a research result')

@@ -1,3 +1,27 @@
+# Current Rev AA disposition — 2026-11-26
+
+Stage1 bounded engineering definition: PASS, actual release_revAA2. Historical
+RevH design blockers below are preserved, not silently deleted/reclassified.
+The actual successors I..AA implement bearing capture, positive pin/coupling,
+finished-end retention, full sampled nominal motion, actual tool/assembly
+paths, source-based interface requirements and jamming mounting space.
+
+Remaining external/Stage2 qualifications are NOT MEASURED:
+
+1. Shop acceptance of actual thin-rim/tool/profile/grinding/gauge capability,
+   first-article material certificates, matching and dimensional inspection.
+2. Clamp/jaw/swage/thread/retention preload/torque, free-spin, friction,
+   fatigue and strength under actual load. No powered or suspended-object use.
+3. Loaded cable seating/working radius, actuation/return and as-built motion;
+   prescribed31pose geometry is NOT actual dynamics/continuousCCD.
+4. Real vacuum chamber/pressure/friction/materials, driver/thermal behavior,
+   harness/limit control and all later physical/100g grasp qualification.
+
+No purchase/hardware/external shop contact is authorized by the design save.
+Do not rerun historical SOFA trials to fill these absent physical readings.
+
+## Historical original open issues — preserved
+
 # Release blockers and next actual implementation
 
 1. **Bearing/shaft axial capture**: current closed bearing envelopes and

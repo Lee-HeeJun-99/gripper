@@ -1,3 +1,13 @@
+# Current selection — 2026-11-26
+
+Retain supported direct winch as minimum engineering architecture; actual
+Rev AA has304parts and bounded design-release evidence. Current documents:
+`STAGE1_CURRENT_PRODUCT_SPEC.md`, `STAGE1_CURRENT_MANUFACTURING_DATUMS.md`,
+`STAGE1_CURRENT_ASSEMBLY_GUIDE.md`, `STAGE1_CURRENT_VALIDATION_REPORT.md`.
+Selected sourced motor17HS15-1504S1/A0648 supersedes earlier incomplete pilot
+projection source. Not production/powered/hardware approval. Historical
+comparisons and failures below remain unchanged.
+
 # Stage 1 — design selection, 2026-11-25
 
 Baseline Git c4dd6b3; existing 300-part CAD and all Native evidence retained.

@@ -79,7 +79,7 @@ def main():
    'IDLER_CLAMP_WASHER':['OD5/ID2.10+0.02/-0/t0.500+-0.010 atY-5.5..-5','M2nut now on-Y side;5mm head supports bracket, actual thread runout covered'],
    'IDLER_SPACER_L':['OD5/ID3.1/nominalt0.485 atY-2.5..-2.015; MATCH actual journal and hub','Paired shims establish total running gap0.025..0.035 and groove midplaneY0+-0.005; lap and inspect, NOT measured'],
    'IDLER_SPACER_R':['OD5/ID3.1/nominalt0.985 atY2.015..3; MATCH paired left shim','Actual shaft shoulder-to-head length5.5; no nut force through rotating POM'],
-   'SWIVEL_SLEEVE':['Stationary303 compression sleeve OD3.000/-0.005, ID2.020+0.010/-0, nominalL7','Finish sleeve to actual fork gap; paired thrust shims then match body width for0.025..0.035 running gap','Inspect coaxiality0.010DIAMETER, Ra<=0.8 journal; no invented preload or bearing rating'],
+   'SWIVEL_SLEEVE':['Stationary303 compression sleeve OD3.000/-0.005, ID2.020+0.010/-0, nominalMAX-envelopeL7','FinishL=actual unstrained fork gap minus0.005..0.010 for insertion; re-match thrust shims for0.025..0.035 running gap after clamping','Inspect coaxiality0.010DIAMETER, Ra<=0.8 journal; sleeve/receiver/shims insert asgroup through openfork, NEVER3mm sleeve through2.2eyes; no invented preload/bearing rating'],
    'SWIVEL_SPACER_L':['OD4/ID3.1/nominalt0.485 atY-3.5..-3.015; MATCH sleeve and receiver width','Receiver rotates around sleeve; no positive nut preload through this rotating stack'],
    'SWIVEL_SPACER_R':['OD4/ID3.1/nominalt0.485 atY3.015..3.5; MATCH paired shim','Total running gap0.025..0.035, axial centre+-0.005; actual readings NOT MEASURED'],
    'SWIVEL_SPACER_OUT':['OD4/ID2.10+0.02/-0/t0.500+-0.010 atY5..5.5','Fits actual4.20counterbore, covers runout; original external nut positionY5.5 unchanged']})
@@ -90,6 +90,8 @@ def main():
   for key in ('DRUM','IDLER'):
    FEATURES[key]=[v for v in FEATURES[key] if not any(t in v for t in ('U-groove','U major','profileR','groove root','minimum root'))]
    FEATURES[key]=['ACTIVE broad U floorR10.930/rootD21.860+0/-0.010; flat regionY+-0.450MIN, cornerR0.10 to sideY+-0.550','Turn with ground/inspected1.10mm overall/0.90mm flat form tool and R0.10corners; actual STEP/face table governs; old R0.30torus config is SUPERSEDED provenance only','20+-1C inspection; minroot21.85>=42x0.52=21.84 (recommendation NOT fatigue cert)','Declared combined axis envelope radial0.045/axial0.155; actual full-torus/common and analytic flat-floor bounds required','Wire may seek another actual seating radius; prescribedR11.25 remains kinematic reference, NOT effective loaded drum radius']+FEATURES[key]
+ if idx.get('design_geometry',{}).get('heel_relief_depth_mm'):
+  FEATURES['SWIVEL']+=['ACTIVE heel side pockets depth0.500 at canonicalX<=39/Z<=-89, Youter faces to+-2.5; R0.5inner corner, use1mm endmill','Nominal pivot/bolt webs2.48/1.40; with pocket-position+-0.10, bore-position+-0.05 and diameter tolerances, conditional minima2.325/1.225 (not measured strength)','Current31pose rigid-pair0.4uncertainty-budget transfer is geometric only, not continuousCCD or strength; bores/seats unchanged']
  rows=[];draw=[]
  for n,v in idx['parts'].items():
   f=ROOT/v['path'];m=trimesh.load(f.with_suffix('.stl'),force='mesh');mat,kind,method=metadata(n);s=n[3:] if n.startswith('F') else n

@@ -1,4 +1,4 @@
-# Manufacturing definition and acceptance — Rev Z candidate
+# Manufacturing definition and acceptance — Rev AA candidate
 
 Authority order: controlled interface limits below and per-part BOM notes;
 actual native STEP; case-linked face catalogue; dimensioned three-view SVG. The STEP
@@ -35,6 +35,7 @@ and gauges must be accepted by selected shop before fabrication authorization.
 | Rotating-stack preload bypass |stationary sleeve/shaft shoulder and real washers carry clamp force; finish sleeveL=actual unstrained fork gap minus0.005..0.010, inspect insertion before nut draws ears onto sleeve. Re-match thrust shims to ACTUAL finished span for running gap0.025..0.035 and groove midplane±0.005; nominalgap0.030 is not measured free-spin. Fork deflection/strength/preload Stage2 |
 | Swivel nuts |4.10±0.02AF pocket,0.600±0.010deep; body halves3.000±0.010; incoming nutAF3.82..4.00/t1.35..1.60; MATCHED trim stockM2x8 to actual closed grip+actual nut+0.55, inspect final exposed tip0.50..0.65 and6g, label matching location |
 | Terminal relief |front inner X49..51/Y±7.3/Z-95..-83;1mm deep; retain actual DIN7991 cones toX48.7 and distal clamp belowZ-95; lateral bore web0.5 |
+| Receiver heel relief |canonical(unpitched)X<=39/Z<=-89, outsideY±3 faces relieved to±2.5, nominaldepth0.500; inner cornerR0.5 (1mm endmill). NOMINAL webs2.48/1.40; conditional minima2.325/1.225 with pocket±0.10, boreposition±0.05/bore3.05 and bolt-bore2.25. Remaining half thickness>=2.39. Old config labels min_web are nominal CAD references, NOT tolerance minima. Actual60deg neighbor gap0.515955 before allowed part-envelope error, not strength/CCD |
 | Skin/Rails |PET0.300±0.020;301spring strip0.200±0.010 x3.000±0.050; actual tapered width and index cut from STEP; no bond stiffness assumed |
 | Motor pilot/mount |22.5±0.05, plate3.0±0.1,4holes3.6±0.05;31±0.2square vendor pitch; shaft24±1/5.000-0.012; selectedA0648 pilot2±0.5 |
 

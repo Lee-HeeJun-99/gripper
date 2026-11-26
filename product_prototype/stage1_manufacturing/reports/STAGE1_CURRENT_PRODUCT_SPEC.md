@@ -1,4 +1,4 @@
-# Current Stage1 prototype design — Rev Z
+# Current Stage1 prototype design — Rev AA
 
 This document supersedes old RevH dimensional prose for CURRENT manufacture;
 old RevA–H CAD, reports and results remain preserved. No B3 Holding or Native
@@ -61,6 +61,12 @@ flat-floor margins0.015radial/0.035axial. Newminimum root21.85 retains42d
 recommendation with0.01margin; no fatigue certification. Removal-only proof
 transfers foreign-clearance evidence, NOT strength/stiffness/mass/inertia or
 working radius. Loaded wire tracking and end travel need Stage2 measurement.
+
+Currentcase revAA_heel_relief2 retains304parts;6receiver halves receive
+0.5deep/R0.5external heel pockets. Independent BRep subset proof and all3
+former60deg near pairs raise actual gap0.079809→0.515955; all other recorded
+31pose rigid interFinger pairs retain>=0.4mm geometric uncertainty budget.
+Only prescribed sampled geometry is certified, not actual flexural dynamics.
 Replaceable sheet/rail cartridge and de-tensioned two-ended Tendon service
 are defined in current assembly guide; twelve rigid paths sampled, manual
 flexible wire peeling is NOT continuous wire-service simulation.

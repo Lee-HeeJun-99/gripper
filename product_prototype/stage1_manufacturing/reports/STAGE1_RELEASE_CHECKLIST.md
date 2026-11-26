@@ -1,3 +1,38 @@
+# Current: STAGE1_DESIGN_RELEASE_PASS — Rev AA, 2026-11-26
+
+**UNPOWERED FIRST-ARTICLE ENGINEERING DESIGN ONLY.** This is not production,
+powered operation, actual load, hardware or100g Holding authorization.
+Actual gate `validation/release_revAA2/summary.json`:24criteria,0failed.
+See `STAGE1_CURRENT_VALIDATION_REPORT.md` for exact limits and proof chain.
+
+- [x] Supported direct winch minimum architecture selected
+- [x] Actual3Finger assembly304parts, native valid STEP and closed STL
+- [x] Actual drum/shaft/bearings/housings/caps/standard-fastener interfaces
+- [x] Bilateral axial capture, shaft shoulders and positive torque-pin path
+- [x] Two factory finished Tendon ends/positive drum and blind receiver
+- [x] Actual Root/flexible laminate/distal clamp and replacement interfaces
+- [x] Nominal bulk common0; full prescribed0..60° range31sampled poses clear
+- [x] Maximum-stock, wire diameter/length endpoints and selected combined
+      pulley-play bounds; AAheel rigid-pair0.4uncertainty budget proof
+- [x] Staged actual key/countertool/active-fastener motion and service paths
+- [x] Current assembly/disassembly order and insertion cutsets documented
+- [x] Actual source-based fit/thread/process requirements and selected
+      conditional tolerance stacks; physical measurements NOT MEASURED
+- [x] Actual304-row BOM;41supporting views;691native face-feature records
+- [x] CNC/turn/grind/ream/sheet-cut routes and actual finite cutter reach
+- [x]608self-contained part STEP/STL files plus real fullassemblySTEP;
+      large aggregate STL remains local/hash-indexed, not lost or Git-added
+- [x] Jamming cartridge mounting/gauge space, not a fictional vacuum chamber
+- [x] Separately identifiable Stage2load-reference assembly retained
+
+Still mandatory before fabrication/power: qualified shop accepts process,
+fixtures/gauges and first-article inspection; actual matched shims/screws,
+free-spin/preload/strength/material/friction/fatigue tests. No continuousCCD,
+actual dynamic actuation/Recovery or blanket all-as-built tolerance claim.
+These real external/hardware qualifications are not silently marked PASS.
+
+## Historical original result — preserved
+
 # STAGE1_DESIGN_RELEASE_FAIL — revH, 2026-11-25
 
 Actual gate: scripts/release_gate.py → validation/release_revH/summary.json.

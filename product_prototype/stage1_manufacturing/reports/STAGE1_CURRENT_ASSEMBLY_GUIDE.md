@@ -1,6 +1,6 @@
-# Current unpowered assembly — Rev Z manufacturing candidate
+# Current unpowered assembly — Rev AA manufacturing candidate
 
-Actual304part index: `cad/exports/revZ_play_groove/summary.json`. Inherited
+Actual304part index: `cad/exports/revAA_heel_relief2/summary.json`. Inherited
 STEP/STL paths in that index are part of this assembly, not missing exports.
 Manufacture NEW Palm from its actual STEP, not shifted-hole rework. All
 dimensions mm. No motor power or suspended object before Stage2 load tests.
@@ -90,6 +90,11 @@ Do not infer effective winding radius/actual cable tracking from prescribed
 centreline. Free length190.809325 includes186.809325external path PLUS4mm
 inside receiver from metal outlet to tangent exit; do not order186.809325 as
 the finished outlet-to-outlet length. Actual loaded stroke is a Stage2 test.
+
+Use actual receiver heel side pockets0.5depth/R0.5 as drawn. At60deg the
+former0.079809mm body gap is insufficient for the explicit0.4pair tolerance
+budget; newactual gap0.515955. No axle/bolt/end-pocket relocation. Do not
+substitute earlier visually similar unrelieved receiver halves.
 
 Finished free wire between metal outlets190.809325±0.25 at design reference
 inspection tension0.1N. This is a procurement requirement, NOT a measured

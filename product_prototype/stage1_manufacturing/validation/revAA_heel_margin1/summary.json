@@ -1,0 +1,111 @@
+{
+  "status": "HEEL_SAMPLED_TOLERANCE_TRANSFER_PASS",
+  "case": "revAA_heel_relief2",
+  "base": "revZ_play_groove",
+  "changes": [
+    {
+      "part": "F0_SWIVEL_LOWER",
+      "added_mm3": 0.0,
+      "removed_mm3": 0.97317477041247
+    },
+    {
+      "part": "F0_SWIVEL_UPPER",
+      "added_mm3": 0.0,
+      "removed_mm3": 0.9731747704100826
+    },
+    {
+      "part": "F1_SWIVEL_LOWER",
+      "added_mm3": 0.0,
+      "removed_mm3": 0.9731747703416431
+    },
+    {
+      "part": "F1_SWIVEL_UPPER",
+      "added_mm3": 0.0,
+      "removed_mm3": 0.9731747703915516
+    },
+    {
+      "part": "F2_SWIVEL_LOWER",
+      "added_mm3": 0.0,
+      "removed_mm3": 0.9731747703818883
+    },
+    {
+      "part": "F2_SWIVEL_UPPER",
+      "added_mm3": 0.0,
+      "removed_mm3": 0.9731747703292513
+    }
+  ],
+  "exceptions_rechecked": [
+    {
+      "angle_deg": 60,
+      "a": "F0_SWIVEL_UPPER",
+      "b": "F1_SWIVEL_LOWER",
+      "prior_distance_mm": 0.07980858853834252,
+      "actual_new_distance_mm": 0.5159549548209389,
+      "world_closest_point_pairs_mm": [
+        [
+          [
+            2.0299375396248216,
+            3.0,
+            -67.7990503565913
+          ],
+          [
+            1.5831074415415725,
+            3.2579774774107055,
+            -67.79905035659112
+          ]
+        ]
+      ]
+    },
+    {
+      "angle_deg": 60,
+      "a": "F0_SWIVEL_LOWER",
+      "b": "F2_SWIVEL_UPPER",
+      "prior_distance_mm": 0.07980858853834759,
+      "actual_new_distance_mm": 0.5159549548181853,
+      "world_closest_point_pairs_mm": [
+        [
+          [
+            2.0299375396248216,
+            -3.0,
+            -67.7990503565913
+          ],
+          [
+            1.5831074415414446,
+            -3.257977477404977,
+            -67.79905035658942
+          ]
+        ]
+      ]
+    },
+    {
+      "angle_deg": 60,
+      "a": "F1_SWIVEL_UPPER",
+      "b": "F2_SWIVEL_LOWER",
+      "prior_distance_mm": 0.07980858853834505,
+      "actual_new_distance_mm": 0.5159549548160132,
+      "world_closest_point_pairs_mm": [
+        [
+          [
+            -3.613044981158522,
+            0.2579774774108694,
+            -67.79905035659002
+          ],
+          [
+            -3.6130449811586507,
+            -0.25797747740514376,
+            -67.79905035658828
+          ]
+        ]
+      ]
+    }
+  ],
+  "unchanged_count": 298,
+  "other_pairs_clearance_lower_mm": 0.4,
+  "scope": "All prior31sampled poses/pairs outside explicit near list had >=0.4 clearance. Actual6changed halves are strict subsets, others298identical, same prescribed transforms; separation cannot decrease. Every former <0.4 exception rechecked natively using actual sector STEP and conjugated transform. Retains sampled-only scope and0.2per-rigid-part uncertainty budget; NOT CCD/strength/full all-part tolerance qualification. New notch does not change axle/bolt/wire pocket interfaces.",
+  "input_sha256": [
+    "f04024395c3b8e1d0216fee03589ad63b174d27e0d30d26ea7ea1e55bf1c41e6",
+    "86fd0a2b305c3771cbc2fb7a948f7314e0213a98db41376b8c5c23a3684f1398",
+    "abd7702e44093ea2a90979128a174ede1ef1ba961d11218a7f571a30507f465e"
+  ],
+  "stage1_release": false
+}

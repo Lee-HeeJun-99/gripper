@@ -1,3 +1,11 @@
+# Current revision
+
+Rev AA bounded Stage1 engineering-definition audit passed24criteria:
+`validation/release_revAA2/summary.json`. See
+`STAGE1_CURRENT_VALIDATION_REPORT.md`, `STAGE1_RELEASE_CHECKLIST.md` and
+`cad/assembly/CURRENT_INDEX.json`. No fabrication/powered/load/hardware
+authorization. All historical execution records below remain unchanged.
+
 # Actual Stage1 CAD execution journal
 
 No Native/hardware execution in this Stage1 branch of work.

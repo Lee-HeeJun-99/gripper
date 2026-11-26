@@ -1,4 +1,4 @@
-# Current manufacturing route — Rev Z mechanical prototype
+# Current manufacturing route — Rev AA mechanical prototype
 
 Controlled package and release decision must accompany the complete STEP,
 face catalogue, interface limits, BOM and current assembly guide. Do not
@@ -35,6 +35,10 @@ requirements are not actual material certificates or stock confirmations.
    feeds, burr control and0.45rim inspection remain shop setup obligations.
    Hex-pocket cornerR<=0.15 and AF4.10±0.02; do not round antirotation faces
    or leave a nominal sharp-corner assumption in the machining program.
+   Mill actual outer heel pockets0.5depth, internalR0.5 with1mm endmill,
+   preserving bores/seats. Conditional pivot/bolt web floors2.325/1.225;
+   half remaining thickness2.39. Actual finite40cutter poses clear. These
+   are selected geometry bounds, not measured clamp/hinge strength.
 5.6061-T6 terminal parts: machine actual front1mm inner relief and lower leading
    fork relief, then true90°DIN7991 countersinks after connecting bridges.
    Inspect retained bearing cone/index surfaces and0.50lateral web. Paired

@@ -1,0 +1,232 @@
+{
+  "status": "STAGE1_DESIGN_RELEASE_PASS",
+  "engineering_definition_status": "STAGE1_ENGINEERING_DEFINITION_PASS",
+  "release_scope": "UNPOWERED FIRST-ARTICLE ENGINEERING DESIGN ONLY",
+  "production_authorization": false,
+  "powered_or_load_authorization": false,
+  "case": "revAA_heel_relief2",
+  "criteria": [
+    {
+      "id": "architecture_and_full_assembly",
+      "passed": true,
+      "scope": "Actual current single-valid BRep/nominal bulk common0; not physical dynamics"
+    },
+    {
+      "id": "revAA_geometry1",
+      "passed": true,
+      "scope": "Actual304native BRep valid/single solids and closed positive STLs; finite1mm cutter at20positions per half. Selected protected-interface web intervals only, NOT exhaustive minimum-wall/offset/FEM/physical process capability or cutting forces. Actual dimensions remain NOT MEASURED."
+    },
+    {
+      "id": "revAA_heel_margin1",
+      "passed": true,
+      "scope": "All prior31sampled poses/pairs outside explicit near list had >=0.4 clearance. Actual6changed halves are strict subsets, others298identical, same prescribed transforms; separation cannot decrease. Every former <0.4 exception rechecked natively using actual sector STEP and conjugated transform. Retains sampled-only scope and0.2per-rigid-part uncertainty budget; NOT CCD/strength/full all-part tolerance qualification. New notch does not change axle/bolt/wire pocket interfaces."
+    },
+    {
+      "id": "revAA_service1",
+      "passed": true,
+      "scope": "Unpowered/rest/unloaded. De-tension then withdraw tip receiver toward idler (increases slack), open its split body and release finished tip. Flexible wire is NOT treated as a fixed REST rigid obstacle; manual peeling/unwinding from open rollers is not a simulated flexible service path. Actual rigid groups/nominal interfaces only, not insertion force/friction/continuous CCD. Reverse rigid sequences give nominal reassembly paths."
+    },
+    {
+      "id": "revZ_subset1",
+      "passed": true,
+      "scope": "Only6Drum/Idler bodies lose material; unchanged fastener/shaft/coupling/sleeve/tool/fixture geometry and poses retain their proven nonintersection. Rotating parts with same prescribed transform also remain subsets. Does NOT transfer pulley seating/profile, strength/stiffness/mass/inertia/friction/dynamics or machining/retention capacity. Those require separate current-case checks."
+    },
+    {
+      "id": "revZ_combined_play1",
+      "passed": true,
+      "scope": "Full torus uncertainty bound, actual native intersections; broad flat floor contains entire maximum wire tube for every axis shift within declared radial/axial bounds by triangle inequality. Side corner lies outside certified flat width. This is NOT driven wire tracking, bearing load/life, force/friction or fatigue qualification; wire may seek another seating radius under load."
+    },
+    {
+      "id": "revZ_form_tool1",
+      "passed": true,
+      "scope": "Finite custom ground HSS/carbide form-tool envelope and eight radial approach samples on UNASSEMBLED turning stock/part. Shape provided for manufacture/profile inspection, NOT an asserted purchased SKU, measured tool stiffness/feeds/chatter/finish or actual machining. Ground flat>=0.900, cornerR<=0.100, inspect finished root21.850..21.860 at20+-1C; actual shop capability must be accepted before cutting."
+    },
+    {
+      "id": "revY_torque_protocol1",
+      "passed": true,
+      "scope": "Finite key/countertool and active-fastener geometry. L-key60deg swing x6axial extraction levels sampled, NOT CCD or measured tightening torque; six hex clockings/reindexing admissible. Inline fallback is an explicit conservative full-turn tool exterior requirement, not a bought-tool claim; actual fastener contact/helical forces/operator hands/fixture strength NOT MEASURED."
+    },
+    {
+      "id": "revY_shaft_service2",
+      "passed": true,
+      "scope": "Finite AF4 tool and actual shafts/nut tools; sampled60deg nut swing and staged module paths, NOT CCD/torque/preload/strength. Slide nut over plain grip BEFORE installing counterhold, hand-thread then counterhold for final adjustment. Remove counterhold before withdrawing nut. Coupling removed only for service, full operating CAD retained."
+    },
+    {
+      "id": "revY_drive1",
+      "passed": true,
+      "scope": "Design geometry and specified tolerance ranges only. No force, locknut cure, fit inspection, material allowable or powered hardware test."
+    },
+    {
+      "id": "revY_fastener_joints1",
+      "passed": true,
+      "scope": "Actual native nominal cylindrical envelopes, full nut overlap and positive declared tapped-body overlap only. Nominal CAD does not model helices, partial-thread runout, actual6g/6H/preload/strength or prove all blind-hole bottom margins. M5 and custom axle thread zones require drawing overrides. No missing partner is silently accepted."
+    },
+    {
+      "id": "revY_nut_passage1",
+      "passed": true,
+      "scope": "A4.42GO-passing nut necessarily admits a shaft contained in4.40 cylinder before thread entry. Old5mm-major-hole collision-free CAD is NOT such a certificate; an overlapping minor-bore witness alone is not a physical force/seizure experiment. Threading on6g/6H boss requires standard mating/gauge, not modeled helical force. Acceptance limits are design requirements, not asserted supplier minor diameter."
+    },
+    {
+      "id": "revY_stock_threads1",
+      "passed": true,
+      "scope": "Conditional manufactured stack/length bounds and full-nut geometry. CSK procurement acceptance explicit. Custom axles, matched screws/fine nuts use drawing-specific runout/gap contracts. Does NOT check all tail-to-foreign collisions, certify strength/preload or replace actual inspection."
+    },
+    {
+      "id": "revY_stock_motion1",
+      "passed": true,
+      "scope": "31prescribed0..60deg; actual clipped root17/distal5mm, tapered88mm flexible envelope AND separate skin/rail solids against own actual hardware, rigid tip/swivel, fixed/interFinger. Shared material split boundaries excluded analytically, not physical hardware collision removal. No CCD/force/FEM/hardware qualification. Offline maximum-stock exterior witnesses substituted for clearance ONLY, NOT actual manufacturing/physics parts."
+    },
+    {
+      "id": "revY_stock_wire1",
+      "passed": true,
+      "scope": "F0 wire against actual full3Finger hardware,31poses, flexible envelopes and internal tip exit included;120deg symmetry covers other wires against hardware. Wire-wire sector certificate still required. Prescribed NOT dynamic sliding/fatigue. Circumscribed extended capsules include .003mm chord allowance; no uncovered vertex wedges. Offline maximum-stock exterior witnesses, NOT manufacturing/physical-model parts."
+    },
+    {
+      "id": "revY_stock_wire_long1",
+      "passed": true,
+      "scope": "F0 wire against actual full3Finger hardware,31poses, flexible envelopes and internal tip exit included;120deg symmetry covers other wires against hardware. Wire-wire sector certificate still required. Prescribed NOT dynamic sliding/fatigue. Circumscribed extended capsules include .003mm chord allowance; no uncovered vertex wedges. Offline maximum-stock exterior witnesses, NOT manufacturing/physical-model parts."
+    },
+    {
+      "id": "revY_stock_wire_short1",
+      "passed": true,
+      "scope": "F0 wire against actual full3Finger hardware,31poses, flexible envelopes and internal tip exit included;120deg symmetry covers other wires against hardware. Wire-wire sector certificate still required. Prescribed NOT dynamic sliding/fatigue. Circumscribed extended capsules include .003mm chord allowance; no uncovered vertex wedges. Offline maximum-stock exterior witnesses, NOT manufacturing/physical-model parts."
+    },
+    {
+      "id": "revY_space1",
+      "passed": true,
+      "scope": "31prescribed sampled space reservations and exact planar/polar wire separation lower bounds per pose. No chamber material, seal, hose, pressure or flexible attachment fatigue qualification."
+    },
+    {
+      "id": "current_BOM_face_drawing_audit",
+      "passed": true,
+      "scope": "Case-linked actual face/dimension/material/process requirements, NOT shop process approval"
+    },
+    {
+      "id": "selfcontained_actual_parts_STEP_STL",
+      "passed": true,
+      "scope": []
+    },
+    {
+      "id": "actual_full_assembly_STEP",
+      "passed": true,
+      "scope": "Actual kernel-written/reread assembly, not export recipe"
+    },
+    {
+      "id": "STAGE1_CURRENT_ASSEMBLY_GUIDE.md",
+      "passed": true,
+      "scope": "Controlled package copy equals current authority"
+    },
+    {
+      "id": "STAGE1_CURRENT_MANUFACTURING_DATUMS.md",
+      "passed": true,
+      "scope": "Controlled package copy equals current authority"
+    },
+    {
+      "id": "current_BOM_unique_all_part_IDs",
+      "passed": true,
+      "scope": "Actual materials/methods/tolerances and part links; physical lots NOT MEASURED"
+    }
+  ],
+  "manufacturing_acceptance": {
+    "state": "NOT MEASURED",
+    "reason": "Actual shop capability and first-article inspections NOT MEASURED; required before fabrication/powered approval, not fabricated by this Stage1 design audit."
+  },
+  "evidence": [
+    {
+      "path": "validation/revAA_geometry1/summary.json",
+      "sha256": "0004541d3588caa228227a2c95477e4c75a4dce7eead8b200a8dd6a389db0e28",
+      "status": "CURRENT_GEOMETRY_AND_HEEL_TOOL_PASS"
+    },
+    {
+      "path": "validation/revAA_heel_margin1/summary.json",
+      "sha256": "89ca45de881cc72139ca0c64cda6ad289b4d822913ca81dbc2e49865ce7254b7",
+      "status": "HEEL_SAMPLED_TOLERANCE_TRANSFER_PASS"
+    },
+    {
+      "path": "validation/revAA_service1/summary.json",
+      "sha256": "e8032326805759657aa0989b1494a8eddcee298ccbf96d35627d6397e3bf3ecf",
+      "status": "SAMPLED_SERVICE_PATH_PASS"
+    },
+    {
+      "path": "validation/revZ_subset1/summary.json",
+      "sha256": "f20916c71dc4546cdfb6bee0f031342989dd68f145c36197d2a50af0fca657f0",
+      "status": "REMOVAL_ONLY_CLEARANCE_TRANSFER_PASS"
+    },
+    {
+      "path": "validation/revZ_combined_play1/summary.json",
+      "sha256": "3e98e19c60693999d46cc9f8dea434c65f8b70b0333f7eb5dbe6c12762ef7a85",
+      "status": "COMBINED_PULLEY_PLAY_CLEARANCE_PASS"
+    },
+    {
+      "path": "validation/revZ_form_tool1/summary.json",
+      "sha256": "edbd732c0444e55823ec2cacef4f9fbc9f6aa14483fe458702c16c9163d9fcf2",
+      "status": "BROAD_GROOVE_TOOL_GEOMETRY_PASS"
+    },
+    {
+      "path": "validation/revY_torque_protocol1/summary.json",
+      "sha256": "6f8402d6a839bc73c5a0d496a6bddd6215a4d7665cfc8da88d3836b1dc1dd8ae",
+      "status": "TORQUE_MOTION_SCREEN_PASS"
+    },
+    {
+      "path": "validation/revY_shaft_service2/summary.json",
+      "sha256": "4207edac19f9ffc716063fff69af623ae7d71f04f4f3d0b23ae4fca83099330a",
+      "status": "SHAFT_HOLD_AND_SERVICE_PASS"
+    },
+    {
+      "path": "validation/revY_drive1/summary.json",
+      "sha256": "54a386ad9c546614a5da267b7e49ba329d6f1d2f3a9b37532822f303389d16b2",
+      "status": "AXIAL_AND_POSITIVE_TORQUE_GEOMETRY_CONTRACT_PASS"
+    },
+    {
+      "path": "validation/revY_fastener_joints1/summary.json",
+      "sha256": "06edb1d3781581bbe008f0abe9d8e6ca73b5a9eb121b7e03655f81febdb7fafd",
+      "status": "FASTENER_AXIAL_ENGAGEMENT_PASS"
+    },
+    {
+      "path": "validation/revY_nut_passage1/summary.json",
+      "sha256": "8a9abfc7075d23a2f1aca522b3b9c9c390440431e069bafb3fae490dc2e55595",
+      "status": "NUT_PLAIN_PASSAGE_DESIGN_PASS"
+    },
+    {
+      "path": "validation/revY_stock_threads1/summary.json",
+      "sha256": "48595518a4f20111856b639e750cc069e2be736dfd2d104a69326507772083e6",
+      "status": "STOCK_LENGTH_ENGAGEMENT_DESIGN_PASS"
+    },
+    {
+      "path": "validation/revY_stock_motion1/summary.json",
+      "sha256": "648afeba0e22c72b50d3a92c4241ad980dfdbce8b460b4e0eb17a33b06ec8776",
+      "status": "SAMPLED_MOTION_PASS"
+    },
+    {
+      "path": "validation/revY_stock_wire1/summary.json",
+      "sha256": "b7123f2790976f6d52b83ba6ebe4f21eb72520d840b304d0e4b9f43ea76bcd86",
+      "status": "WIRE_ROTOR_SCREEN_PASS"
+    },
+    {
+      "path": "validation/revY_stock_wire_long1/summary.json",
+      "sha256": "81686bb9492b0b80e4efa06d6358fbe12d27800c044d9aaafb7ddf00fc939918",
+      "status": "WIRE_ROTOR_SCREEN_PASS"
+    },
+    {
+      "path": "validation/revY_stock_wire_short1/summary.json",
+      "sha256": "ce558223d388fa8f4c8db5451269c8ecc9cb304d9ec8d0d08d24f628dba1ed64",
+      "status": "WIRE_ROTOR_SCREEN_PASS"
+    },
+    {
+      "path": "validation/revY_space1/summary.json",
+      "sha256": "d953f53117506a639def65635a2e6d031276b51d1fd1ca1576416d68ce1d803b",
+      "status": "CASSETTE_SPACE_AND_WIRE_SECTOR_PASS"
+    },
+    {
+      "path": "validation/revAA_review1/summary.json",
+      "sha256": "b28864bd08e69e58fee480999117c565be3a21738e77cd94e18fbd7df963be75",
+      "status": "MANUFACTURING_FILE_AND_FEATURE_AUDIT_PASS"
+    }
+  ],
+  "source_head": "e6c5ef964171c513c00fdf32a6abed612e8db5da",
+  "source_case_SHA256": "86fd0a2b305c3771cbc2fb7a948f7314e0213a98db41376b8c5c23a3684f1398",
+  "package_SHA256": "ad18726e9b5b035aa4125cf6483de33582d55509c212745415ad25814f7a2065",
+  "hardware": "NOT MEASURED",
+  "Native_run": false,
+  "scope": "Stage1 bounded engineering definition audit only. Sampled motion/clearance and conditional procurement requirements are not continuousCCD, actual load, free-spin, fatigue, shop capability or100g Holding certification. Historical results remain unchanged."
+}

@@ -1,0 +1,28 @@
+{
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/axial_seed_diagnostic.py",
+      "SHA256": "0fe56660355aa300a6eba4373e313d0e4f993bf16d1b861dfec5b8e954d5e65f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/extensible_rod_reference.py",
+      "SHA256": "29e382c34b19ee646e75b4d574d48c743620701d072d3fd52102b50cc0afeeae"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/axial_boundary1/summary.json",
+      "SHA256": "cbadcb2495564bf4c419552618e73fa5b01995f7039ea82f291f8063d71b2cdd"
+    }
+  ],
+  "criteria": {
+    "tip_relative_max": 0.001,
+    "reaction_relative_max": 0.001,
+    "residual_Nm_max": 1e-10,
+    "axial_gap_m_max": 1e-10
+  },
+  "contract": "Same x_tip=L counterfactual, root fixed, dead Fy, zero tip moment. Only initializer changes from zero to independent continuous BVP.",
+  "predeclared": "One BVP and one root solve per body/load/mesh; no retry, no tolerance change. Finest comparison and ALL equilibrium checks required."
+}

@@ -1,3 +1,29 @@
+# Bounded cycle — BVP-seeded axial initialization (2026-11-26)
+
+Started from0e109553941e8784ce298969865fce42ac8c40d5. Supervisor local save
+PENDING; no git add/commit attempted or new commit claimed. One actual
+initialization diagnostic: axial_seed1 solves the SAME counterfactual finite
+extensible rods with independent continuous BVP initial states, rather than
+zero states. No equation, material, geometry or tolerance change; no retry sweep.
+Four BVP references and12 midpoint root solves (16/32/64) complete successfully.
+All12 independently pass full strain/rotation complex-step stationarity, axial
+constraint, coordinates and stored-energy reconstruction. All12 deliberately
+perturbed terminal rotations are rejected. Finest tip/reaction relative errors
+max4.605e-6/2.202e-5 satisfy original0.001 criteria. Producer/input hashes verified;
+run/verify exit0 logs retained. Original axial_boundary1 FAIL and7 independently
+failed equilibria are unchanged. Initialization sensitivity is supported; branch
+uniqueness, minimum stability and actual guide boundary conditions are NOT proved.
+
+Read-only axial_seed_release1 remains INTEGRATED_NOT_QUALIFIED(exit2),24 errors
+including22 unqualified Stage2 criteria. No actual contact/BRep/strength/friction/
+global assembly energy certificate, no CAD/BOM adoption; RevAA unchanged.
+Next READY flexible_rail_contact: identify actual axial guide freedom/load ports
+before selecting constraints, then coupled finite separate-body contact.
+Alignment and fixture mechanisms remain independently READY. No RUNNING queue
+tasks or live analysis children at handoff; children bounded4GiB/420s, STOP absent.
+No SDK, criteria, manager controls or Stage3 changes. Existing artifacts and
+unrelated untracked CAD/BOM preserved. Save awaits supervisor validation.
+
 # Bounded cycle — axial boundary contrast (2026-11-26)
 
 Started from0570ac49c556763500a7329366eb6b6c210e345a. Supervisor local save

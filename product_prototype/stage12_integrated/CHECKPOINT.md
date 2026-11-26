@@ -1,3 +1,21 @@
+# Actual complete-system drive layout and fault correction (2026-11-26)
+
+Previous local save ea2cce6; latest actual HEAD from `git log -1`.
+RevAF_layout6 generated238-part full assembly;82 changed solids, full candidate
+identity BOM, nominal intersections0, independent BRep/STL/integrals PASS,
+48 sampled drive full-turn/slip poses PASS. No full Finger/wire-motion release.
+
+AF force-cap topology FAIL: actual bearing creates a parallel input/output
+torque route. Actual conditional inertia/window analysis saved; no force cap
+certified. A keyed ten-part manual calibration stand was generated, interference
+fixed, independent mesh audit PASS; strength/sensor/hardware NOT qualified.
+
+Current actual next implementation: ground_supported_clutch.py, RevAG candidate.
+Ground1 clamp-head collision preserved; ground2 nominal clear but input-collet
+STL not closed. Ground3 removes the unnecessary coplanar spotface and is under
+actual generation/revalidation. These failures are not hidden or relabelled.
+Official AA and22 Stage2 gates unchanged, automatic budget0/no new launches.
+
 # Product-priority reset and actual CAD cycles (2026-11-26)
 
 Started from d01db2b. Current actual commit: use `git log -1`; this entry is

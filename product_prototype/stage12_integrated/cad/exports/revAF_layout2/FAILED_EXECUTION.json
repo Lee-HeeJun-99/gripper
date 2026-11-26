@@ -1,0 +1,19 @@
+{
+  "status": "EXECUTION_FAIL",
+  "actually_executed": true,
+  "exit_code": 1,
+  "command": "drive_system_layout.py --tag revAF_layout2",
+  "error": "adaptive wire volume failed: 43.28959115483572 versus 43.33063975819987 mm3",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout2/producer.py",
+    "SHA256": "cb811d79001500bd9a6027f1cc7a3403fda003fd04400a3c3c5474b62522367a"
+  },
+  "preserved_files": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout2/producer.py",
+      "SHA256": "cb811d79001500bd9a6027f1cc7a3403fda003fd04400a3c3c5474b62522367a"
+    }
+  ],
+  "diagnosis": "Wire radius was updated in wire_motion but its imported mechanism beta still used 4.75mm instead of actual 11.25mm idler radius. RevAF6 explicitly configures both. Previous failures retained.",
+  "whole_system_release": false
+}

@@ -1,0 +1,19 @@
+{
+  "status": "EXECUTION_FAIL",
+  "actually_executed": true,
+  "exit_code": 1,
+  "command": "drive_system_layout.py --tag revAF_layout3",
+  "error": "separate pipe spans volume failed: 43.32996945857044 versus 43.33063975819987 mm3",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout3/producer.py",
+    "SHA256": "31034c7f116f0f344d3bc5ffba641b4c6ff58b9d1f3b69e4a08496d75dc39290"
+  },
+  "preserved_files": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout3/producer.py",
+      "SHA256": "31034c7f116f0f344d3bc5ffba641b4c6ff58b9d1f3b69e4a08496d75dc39290"
+    }
+  ],
+  "diagnosis": "Wire radius was updated in wire_motion but its imported mechanism beta still used 4.75mm instead of actual 11.25mm idler radius. RevAF6 explicitly configures both. Previous failures retained.",
+  "whole_system_release": false
+}

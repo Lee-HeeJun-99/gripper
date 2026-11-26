@@ -1,0 +1,64 @@
+{
+  "status": "FORCE_CAP_TOPOLOGY_FAIL",
+  "scope": "Actual support topology plus explicit bearing-seizure counterfactual; no actual hardware fault was induced",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/summary.json",
+    "SHA256": "47006fff637ed86cdc618c85872fc540731173930f9eb51cbe81f8916751282d"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/overload/AF_bypass1/producer.py",
+    "SHA256": "002ae42b505ac908a17758c1ec15360ff68a7b6fffdfb71cc7c8933313a5c6dc"
+  },
+  "part_sources": {
+    "F0_CLUTCH_INPUT_HUB": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_CLUTCH_INPUT_HUB.step",
+      "SHA256": "f856e01f36b4a857fd8c980d8161b9e96b66f516b0a4ec72079d4f52987901db"
+    },
+    "F0_CLUTCH_BEARING": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_CLUTCH_BEARING.step",
+      "SHA256": "7c37099202855771998e9c40fe616484194d048aa995b7110a49f71f12b563f4"
+    },
+    "F0_DRUM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_DRUM.step",
+      "SHA256": "c5e713886911a9fdc1e6d0dd6e452e8b3d3985592f0fb1946a83b50a08eb6718"
+    }
+  },
+  "edges": [
+    {
+      "id": "friction_faces",
+      "from": "INPUT_HUB",
+      "to": "DRUM",
+      "guaranteed_limit": true,
+      "basis": "COUNTERFACTUAL ideal calibrated friction cap; actual cap unqualified"
+    },
+    {
+      "id": "support_bearing",
+      "from": "INPUT_HUB",
+      "to": "DRUM",
+      "guaranteed_limit": false,
+      "basis": "Actual 8mm hub journal -> 688A inner ring -> rolling elements -> outer ring in drum. Drag/seizure bound unavailable."
+    }
+  ],
+  "bypasses": [
+    [
+      "support_bearing"
+    ]
+  ],
+  "motor_reference_holding_torque_Nm": 0.45,
+  "nominal_drum_radius_m": 0.01125,
+  "illustrative_seizure_reference_tension_N": 40.0,
+  "warning": "40N is a holding-torque reference, not measured jam load or certified motor maximum. Even an ideal friction cap does not eliminate this parallel path.",
+  "digital_alternatives": [
+    "Support drum on a genuinely fixed-ground bearing/spindle; verify input shaft clearance and actual retention",
+    "Place a separately qualified overload disconnect upstream of every input/output path",
+    "Choose an actuator with a verified complete output torque/energy envelope and qualify the structure at that envelope"
+  ],
+  "controls": [
+    "ideal friction-only route is protected",
+    "adding actual input/output bearing exposes bypass",
+    "ground-supported bearing removes this input/output bypass in graph only"
+  ],
+  "product_force_cap_qualified": false,
+  "ground_supported_CAD_created": false,
+  "whole_system_release": false
+}

@@ -1,0 +1,19 @@
+{
+  "status": "EXECUTION_FAIL",
+  "actually_executed": true,
+  "exit_code": 1,
+  "command": "drive_system_layout.py --tag revAF_layout1",
+  "error": "wire pipe volume assertion failed before any exported parts",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout1/producer.py",
+    "SHA256": "3817006bd9dd939fdaa8459d97ba924596b0e902540a1ab015d5759f3b687c29"
+  },
+  "preserved_files": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout1/producer.py",
+      "SHA256": "3817006bd9dd939fdaa8459d97ba924596b0e902540a1ab015d5759f3b687c29"
+    }
+  ],
+  "diagnosis": "Wire radius was updated in wire_motion but its imported mechanism beta still used 4.75mm instead of actual 11.25mm idler radius. RevAF6 explicitly configures both. Previous failures retained.",
+  "whole_system_release": false
+}

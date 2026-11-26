@@ -1,3 +1,11 @@
+# Actual product layout continuation (2026-11-26)
+
+Prior saved commit ea2cce6. AF actual assembly/drive geometry is saved; protection
+topology remains FAIL. Ground-supported AG corrective CAD is being verified;
+do not regenerate AF or rod coupons. Inspect revAG_ground* and AG_geometry*
+before any rerun. Use NEXT_TASK.json and actual file hashes, not this history
+alone. Budget0 remains unchanged; no automatic sessions are running.
+
 # Current product-directed continuation (2026-11-26)
 
 Actual HEAD: `git log -1`. RevAA remains official, RevAE rejected by actual

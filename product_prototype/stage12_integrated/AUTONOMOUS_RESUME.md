@@ -1,4 +1,16 @@
-# Bounded C cycle — actual finite-pressure envelope (2026-11-26)
+# Latest authorization5 — implement new mechanical revision
+
+Batch4 actually completed10 sessions and saved through f5aad07. Its budget
+is exhausted; none of its records is reset. New user approval:10x3600seconds.
+Read DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md in reports and allocation5 JSON.
+New runtime authorized_20261126_5, service regrip-stage12-20261126-5.service.
+Check actual process/lock/STOP before any launch; authorization is not activity.
+NEXT is batch5_positive_drive_retention: implement real CAD, not another
+normalized wrench or pressure analysis. Continue Palm/root/limiter/Idler actual
+mechanisms and same-revision load verification. Official AA remains unchanged.
+No fake PASS, protected-code/criteria changes or worker Git writes.
+
+# Previous Bounded C cycle — actual finite-pressure envelope (2026-11-26)
 
 Started at02b9ca781bc3adb95848d97f0fd3f942472dc570. Supervisor local save PENDING;
 no Git add/commit attempted or new commit claimed. Actual result:

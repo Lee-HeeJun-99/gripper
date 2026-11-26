@@ -1,4 +1,29 @@
-# Bounded C cycle — actual finite-pressure envelope (2026-11-26)
+# NEW BATCH5 — ACTUAL MECHANICAL IMPLEMENTATION FIRST
+
+Latest user explicitly approved a separate10x3600second allocation5 after
+batch4 finished all10 sessions at f5aad07. Old budgets/results are preserved.
+FIRST read reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md and
+AUTOMATION_AUTHORIZATION_20261126_5.json. They supersede all older proposed
+pressure/coupon/diagnostic continuation text below. RevAK235 is the parent,
+not an approved product; implement a new finite revision for real changes.
+
+Select batch5 PRODUCT_IMPLEMENTATION tasks. First implement positive drive
+torque/axial retention, then actual6DOF Palm attachment, positive root
+retention, actual overload hardware and actual Idler retention/load path.
+Use existing physics tools to validate these parts; do not spend another cycle
+only diagnosing a known failure, pressure distribution or ideal coupon.
+If a design fails, modify actual CAD or implement a simpler mechanism.
+Maintain one compatible descendant assembly/BOM and revalidate affected gates.
+Track balance and unchanged physics criteria remain required. Component-only
+geometry PASS never equals physical capacity or integrated release.
+
+Existing manager/Supervisor/security source hashes stay unchanged. Service5,
+runtime/authorized_20261126_5/status.json are the actual new execution records.
+Shared STOP persists; no nested launches or renewal. Worker Git writes remain
+restricted: exact per-cycle save_request manifest, Supervisor guarded commit.
+Finish work by3300seconds; exit no RUNNING records or owned child processes.
+
+# Previous Bounded C cycle — actual finite-pressure envelope (2026-11-26)
 
 Started at02b9ca781bc3adb95848d97f0fd3f942472dc570. Supervisor local save PENDING;
 no Git add/commit attempted or new commit claimed. Actual result:

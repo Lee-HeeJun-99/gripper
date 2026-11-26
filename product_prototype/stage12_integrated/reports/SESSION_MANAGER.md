@@ -1,5 +1,23 @@
 # External manager — execution authorized2026-11-26
 
+## Latest allocation5: actual design implementation,10 x3600seconds
+
+Explicit new user approval after allocation4 consumed10 sessions. Separate
+runtime authorized_20261126_5 and service regrip-stage12-20261126-5.service.
+Maximum10 launches/3600seconds each; no resetting old usage or auto renewal.
+RuntimeMaxSec36900 covers36000research seconds plus900supervisor/cleanup.
+Same workspace-write,4GiB/420s analysis children,8GiB/CPU200%/Tasks256 service,
+Restart=no, STOP/flock/failure controls and exact Supervisor saves. Manager,
+Supervisor and commit guard sources remain pinned unchanged. The pure
+research selector prioritizes executable PRODUCT_IMPLEMENTATION tasks; this
+changes research choice only, no permissions, approval or security controls.
+
+See DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md and authorization5 JSON. Batch4
+pressure/conditional diagnoses are reusable evidence, not tasks to repeat.
+Actual activity/usage comes from runtime status.json and systemd, never docs.
+Stop via shared runtime/STOP or
+`systemctl --user stop regrip-stage12-20261126-5.service`.
+
 ## NEW allocation4 — user-approved10 x3600seconds
 
 The latest explicit user instruction authorizes a **separate** allocation:

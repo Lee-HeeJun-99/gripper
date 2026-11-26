@@ -6,6 +6,10 @@ TRACKS={'A','B','C'}
 def select(tasks,history):
     states={t['id']:t['status'] for t in tasks}
     ready=[t for t in tasks if t['status']=='READY' and all(states.get(p)=='PASS' for p in t.get('prerequisites',[]))]
+    # Authorized product-policy only, not a launch/approval/security override.
+    # Known diagnostic work cannot starve executable mechanical implementation.
+    implementations=[t for t in ready if t.get('execution_class')=='PRODUCT_IMPLEMENTATION']
+    if implementations:ready=implementations
     if any(t.get('track') not in TRACKS for t in ready):raise ValueError('READY task lacks explicit A/B/C track')
     recent=[r['track'] for r in history]
     restricted=recent[-1] if len(recent)>=2 and recent[-2]==recent[-1] else None
@@ -22,6 +26,9 @@ def main():
     assert select([toy[0]],history)['id']=='finger';controls.append('no fake work when no alternative')
     assert select([dict(toy[1],prerequisites=['missing'])],[]) is None;controls.append('unmet prerequisite blocked')
     assert select([],[]) is None;controls.append('empty queue is not release')
+    actual=dict(id='actual_CAD',track='C',priority=100,status='READY',execution_class='PRODUCT_IMPLEMENTATION')
+    assert select([toy[0],actual],[])['id']=='actual_CAD';controls.append('actual executable design outranks generic diagnostic refinement')
+    assert select([toy[0],dict(actual,prerequisites=['missing'])],[])['id']=='finger';controls.append('unmet design prerequisite does not block independently executable work')
     result=dict(status='PASS',scope='TRACK SELECTION CONTROLS ONLY, NOT RELEASE',next=choice,controls=controls,queue=ref(out/'queue_snapshot.json'),history=ref(out/'history_snapshot.json'),producer=ref(out/'producer.py'),automatic_sessions_launched=0,budget_renewed=False)
     dump(out/'summary.json',result);print(json.dumps(dict(status=result['status'],next_task=choice['id'] if choice else None,track=choice['track'] if choice else None,automatic_sessions_launched=0),indent=2))
 if __name__=='__main__':main()

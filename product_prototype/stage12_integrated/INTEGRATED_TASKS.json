@@ -749,6 +749,207 @@
       "target_revision": "revAK_integral2",
       "last_run_utc": "2026-11-26T13:09:20.717951+00:00",
       "consecutive_runs": 1
+    },
+    {
+      "id": "batch5_positive_drive_retention",
+      "track": "A",
+      "priority": -10,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "hypothesis": "Implement positive torque and axial/thrust capture in finite new drive CAD; do not rely on guessed collet friction/motor axial bearing capacity",
+      "criteria": "Actual torque-bearing faces and axial capture, supplier shaft compatibility, finite parts and independent loaded reaction/capacity evidence",
+      "previous_diagnostic_task": "AH_collet_and_axial_capacity",
+      "existing_evidence": [
+        "validation/transmission/AK_contact_wrench1/summary.json",
+        "validation/transmission/AK_contact_wrench_verify2/summary.json"
+      ],
+      "prerequisites": [],
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      },
+      "expected_outputs": [
+        "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+        "Independent verification summary, source/model/result hashes",
+        "BOM/interface invalidation and affected system gates"
+      ],
+      "cost": "One3600second session, each analysis child4GiB/420s",
+      "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+      "system_gate_contribution": 5,
+      "last_run_utc": null,
+      "consecutive_runs": 0
+    },
+    {
+      "id": "batch5_grounded_palm_attachment",
+      "track": "C",
+      "priority": -9,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "hypothesis": "Replace compression-only support with finite side/torsion/uplift and grounded mounting interface",
+      "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
+      "previous_diagnostic_task": "AI_whole_palm_support",
+      "existing_evidence": [],
+      "prerequisites": [],
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      },
+      "expected_outputs": [
+        "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+        "Independent verification summary, source/model/result hashes",
+        "BOM/interface invalidation and affected system gates"
+      ],
+      "cost": "One3600second session, each analysis child4GiB/420s",
+      "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+      "system_gate_contribution": 5,
+      "last_run_utc": null,
+      "consecutive_runs": 0
+    },
+    {
+      "id": "batch5_positive_root_retention",
+      "track": "B",
+      "priority": -8,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "hypothesis": "Implement PET/Rail positive root axial retention without locking distal PET sliding",
+      "criteria": "Actual interlock/shoulder/capture hardware, root load/strain and distal sliding compatibility; not another pressure witness",
+      "previous_diagnostic_task": "actual_finger_load_ports",
+      "existing_evidence": [],
+      "prerequisites": [],
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      },
+      "expected_outputs": [
+        "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+        "Independent verification summary, source/model/result hashes",
+        "BOM/interface invalidation and affected system gates"
+      ],
+      "cost": "One3600second session, each analysis child4GiB/420s",
+      "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+      "system_gate_contribution": 5,
+      "last_run_utc": null,
+      "consecutive_runs": 0
+    },
+    {
+      "id": "batch5_physical_load_limiter",
+      "track": "A",
+      "priority": -7,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "hypothesis": "Implement a real source-backed overload mechanism or simpler lower-load drive, not another ideal delay scan",
+      "criteria": "Finite actual limiter/disconnect CAD, jam energy/input/residual-inertia paths and protected bound evidence; unknown ratings never fabricated",
+      "previous_diagnostic_task": "AK_protected_maximum_load",
+      "existing_evidence": [],
+      "prerequisites": [],
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      },
+      "expected_outputs": [
+        "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+        "Independent verification summary, source/model/result hashes",
+        "BOM/interface invalidation and affected system gates"
+      ],
+      "cost": "One3600second session, each analysis child4GiB/420s",
+      "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+      "system_gate_contribution": 5,
+      "last_run_utc": null,
+      "consecutive_runs": 0
+    },
+    {
+      "id": "batch5_idler_mechanical_retention",
+      "track": "A",
+      "priority": -6,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "hypothesis": "Implement actual thread load-bearing geometry/model or simpler supported axle/captive retention",
+      "criteria": "Actual flank/core/engagement or positive retention CAD, assembly, axial/radial load path and capacity evidence",
+      "previous_diagnostic_task": "AJ_idler_thread_and_load_proof",
+      "existing_evidence": [],
+      "prerequisites": [],
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      },
+      "expected_outputs": [
+        "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+        "Independent verification summary, source/model/result hashes",
+        "BOM/interface invalidation and affected system gates"
+      ],
+      "cost": "One3600second session, each analysis child4GiB/420s",
+      "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+      "system_gate_contribution": 5,
+      "last_run_utc": null,
+      "consecutive_runs": 0
+    },
+    {
+      "id": "batch5_same_revision_system_revalidation",
+      "track": "C",
+      "priority": -5,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "hypothesis": "Accumulate compatible new hardware in one actual descendant assembly and rerun affected system gates",
+      "criteria": "Single candidate assembly/BOM/hash, affected Stage1/Stage2 evidence and existing independent release audit; no mixed-revision PASS",
+      "previous_diagnostic_task": "source_reconciliation",
+      "existing_evidence": "validation/integrated/registry1/summary.json",
+      "prerequisites": [
+        "batch5_positive_drive_retention",
+        "batch5_grounded_palm_attachment",
+        "batch5_positive_root_retention",
+        "batch5_physical_load_limiter",
+        "batch5_idler_mechanical_retention"
+      ],
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAK_integral2/summary.json",
+        "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
+      },
+      "target_revision": "revAK_integral2",
+      "target_parts": 235,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+      },
+      "expected_outputs": [
+        "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+        "Independent verification summary, source/model/result hashes",
+        "BOM/interface invalidation and affected system gates"
+      ],
+      "cost": "One3600second session, each analysis child4GiB/420s",
+      "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+      "system_gate_contribution": 5,
+      "last_run_utc": null,
+      "consecutive_runs": 0
     }
   ],
   "policy": {
@@ -759,7 +960,11 @@
     "current_session_work_authorized": true
   },
   "active_authorization": {
-    "path": "product_prototype/stage12_integrated/AUTOMATION_AUTHORIZATION_20261126_4.json",
-    "SHA256": "f59d33e308741aa725b08e7d37ec7fd54c4c56df9df49ad17745f23a326b3e31"
+    "path": "product_prototype/stage12_integrated/AUTOMATION_AUTHORIZATION_20261126_5.json",
+    "SHA256": "a1143cad6bf1040ed222ec3d9d0580d067af4b5b38079099f2c50dd45f4799f7"
+  },
+  "execution_brief": {
+    "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+    "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
   }
 }

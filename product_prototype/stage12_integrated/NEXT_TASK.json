@@ -19,14 +19,16 @@
     "cost": "One bounded distributed small-load model;4GiB/420s",
     "fallback": "alignment_alternative",
     "results": [
-      "validation/finger/flexible_reference2/summary.json"
+      "validation/finger/flexible_reference2/summary.json",
+      "validation/finger/flexible_distributed2/summary.json"
     ],
     "preserved_failures": [
       "validation/finger/flexible_reference_import_failure1/summary.json",
-      "validation/finger/flexible_reference1/failure.json"
+      "validation/finger/flexible_reference1/failure.json",
+      "validation/finger/flexible_distributed1/summary.json"
     ],
-    "reason": "Independent terminal-only Green-function vs FEM reference executed:9cases PASS; both walls and open gap, force/moment/KKT/complementarity and clearance-work identity checked. NOT distributed surface contact or finite-rotation qualification.",
-    "next": "Implement RevAD distributed Rail/PET unilateral surface contact with separate DOFs and independently certify continuous gap; compare small-load limit against terminal reference without promoting terminal-only geometry."
+    "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification.",
+    "next": "Advance projected contact to independently checked finite-rotation Rail/PET actual geometry with separate DOFs; preserve8element Green FAIL and establish reference discretization error before any full model acceptance. Do not repeat linear9cases as research progress."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

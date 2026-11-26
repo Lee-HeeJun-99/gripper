@@ -1,26 +1,213 @@
 {
- "goal":"Same-revision Stage1 and Stage2 digital release; no powered authorization",
- "tasks":[
-  {"id":"source_reconciliation","status":"PASS","scope":"304 existing STEP/geometry identities, not mass qualification","result":"validation/integrated/registry1/summary.json"},
-  {"id":"jam_energy_contract","status":"PASS","scope":"Conditional single-inertia energy control only","result":"validation/overload/jam_energy2/summary.json"},
-  {"id":"limiter_geometry_and_rating","priority":0,"status":"BLOCKED","hypothesis":"Permanent-magnet clutch avoids friction wear but must have a maximum rating and mountable geometry","difference":"New hysteresis mechanism; previous screens covered friction clutches only","result":"cad/exports/hpmc_interface1/summary.json","reason":"Actual clearance gauge requires26.2962mm extra length;3.175mm interfaces differ. Published torque is MINIMUM, guaranteed maximum/thermal uncertainty unavailable. Gauge is not manufacturer solid CAD.","criteria":"Actual interface and guaranteed maximum plus complete inertia/EA; no safety promotion","fallback":"finite_rotation_contact","next":"protected_system_loads"},
-  {"id":"integrated_gate_controls","priority":1,"status":"PASS","scope":"17 software controls only; actual release3 NOT QUALIFIED","result":"validation/integrated/controls3/summary.json"},
-  {"id":"finite_pet_endpoint_coupon","status":"PASS","scope":"Finite inextensible PET on rigid circular fixture; endpoint guide only, not finite lip or flexible Rail","result":"validation/finger/finite_pet2/summary.json"},
-  {"id":"revAC_travel_candidate","status":"FAIL","scope":"Shorter PET CAD valid after adaptive integral audit; deformed actual front overlap persists, NOT adopted","result":"validation/finger/channel_diagnostic1/summary.json","next":"finite_rotation_contact"},
-  {"id":"finite_rotation_contact","priority":2,"status":"FAIL","hypothesis":"Material-owned feature constraints avoid nonphysical moving-minimum Jacobians","existing_failures":["validation/finger/finite_pet_AD6/summary.json","validation/finger/reaction_AD3/summary.json"],"results":["validation/finger/owner_analytic_reaction2/summary.json","validation/finger/owner_analytic_geometry1/summary.json","validation/finger/owner64_inspection1/summary.json","validation/finger/owner64_reaction1/summary.json","validation/finger/owner64_geometry1/summary.json"],"reason":"16/32 actual stored states pass independent normal-cone certificate and exact geometry, but axial migration refinement remains about4%. 64 solve interrupted without completed summary; saved guess passes geometry but force-equivalent residual1.00166e-6N fails1e-8N. No mesh PASS or flexible-Rail/friction qualification.","criteria":"Independent1e-8N force,1nm gap,1% axial migration; exact actual-CAD envelope; no flexible-Rail/friction promotion","cost":"4GiB/420s","fallback":"alignment_alternative","next":"contact_constraint_conditioning"},
-  {"id":"contact_owner_counterexample","status":"PASS","scope":"Same feasible contact intersection, explicit rows vs aggregated minimum; independent mathematical mechanism only","result":"validation/contact/owner_contract1/summary.json"},
-  {"id":"revAD_local_geometry","status":"PASS","scope":"Unadopted candidate geometry/face identity/BOM and continuous local circular-rail aperture only","result":"validation/stage1/funnel_face1/summary.json","next":"candidate_stage1_revalidation"},
-  {"id":"torque_fixture_candidate","status":"PASS","scope":"V1 actual pin insertion FAIL preserved. V2 Z-pin with actual stock socket plugs passes4part geometry,11sampled bench poses and off-bench pin/tool/RH-thread extraction samples ONLY; no strength or hardware","results":["hardware_test/inspection/torque_arm1_access1/summary.json","hardware_test/inspection/torque_fixture3/summary.json","hardware_test/inspection/torque_arm2_access3/summary.json"]},
-  {"id":"analytic_material_point_jacobian","status":"PASS","scope":"Independent FD and virtual-work component verification ONLY","result":"validation/contact/rod_jacobian1/summary.json"},
-  {"id":"contact_rank_observation","status":"PASS","scope":"Read-only numerical spectrum, not causal or physical approval.16:27rows/rank7;32:112/rank10;64:196/rank15","result":"validation/contact/owner_rank1/summary.json"},
-  {"id":"signed_QR_contact_reduction","status":"REJECTED","scope":"Local signed linear basis fails nonnegative contact normal-cone preservation; no physical row removed","result":"validation/contact/owner64_cone1/summary.json"},
-  {"id":"enriched_local_contact_cone","status":"PASS","scope":"170actual rows reconstruct196local directions within7.41822e-9; NOT nonlinear feasible-set equivalence or a solved equilibrium","result":"validation/contact/owner64_cone2/summary.json"},
-  {"id":"contact_constraint_conditioning","priority":2,"status":"FAIL","hypothesis":"Inactive constraint generation reduces static NLP cost without deleting any physical contact inequalities","difference":"No QR removal: ALL near-active rows retained; every omitted violated full nonlinear row is added, all final rows and exact geometry checked. Local cone alone is not used as nonlinear equivalence.","prerequisites":["analytic_material_point_jacobian","contact_rank_observation"],"inputs":["validation/finger/owner64_inspection1/summary.json","validation/contact/owner_rank1/summary.json"],"executed_command":"python scripts/feature_owned_pet.py --seed owner64_inspection1 --meshes 64 --exchanges 1 --working-set --tag owner64_working1","result":"validation/finger/owner64_working1/summary.json","reason":"Completed exit0, optimizer iteration-limit FAIL preserved.220/3752rows in static working set, all original rows checked. Independent final-state force1.34548e-9N and actual geometry PASS; finest32/64 migration0.02093% PASS but16/64 remains3.992% FAIL. No whole mesh/Finger qualification.","criteria":"Unchanged full contact checks,1e-8N certificate and1% migration; no solver success promotion","cost":"4GiB/420s","fallback":"alignment_alternative","next":"flexible_rail_contact"},
-  {"id":"bounded_static_state_certification","status":"PASS","scope":"Independent unchanged16/32/64 local KKT and actual geometry ONLY; original optimizer failures preserved,16-to64 refinement FAIL","result":"validation/finger/owner_states2/summary.json"},
-  {"id":"flexible_rail_contact","priority":2,"status":"READY","hypothesis":"Separate elastic Rail and PET DOFs may change contact and internal forces relative to the prescribed rigid-rail fixture; must not enforce equal curvature","difference":"New coupled elastic boundary-value mechanism, not further mesh/force/damping scan","prerequisites":["bounded_static_state_certification"],"inputs":["cad/exports/revAD_funnel1/summary.json","validation/finger/owner_states2/summary.json"],"criteria":"Actual geometry and explicit conditional material basis; independent small-load beam reference, full force/moment/gap/complementarity and energy; no rigid-fixture PASS promotion. Define acceptance before solve.","cost":"One bounded distributed small-load model;4GiB/420s","fallback":"alignment_alternative","results":["validation/finger/flexible_reference2/summary.json"],"preserved_failures":["validation/finger/flexible_reference_import_failure1/summary.json","validation/finger/flexible_reference1/failure.json"],"reason":"Independent terminal-only Green-function vs FEM reference executed:9cases PASS; both walls and open gap, force/moment/KKT/complementarity and clearance-work identity checked. NOT distributed surface contact or finite-rotation qualification.","next":"Implement RevAD distributed Rail/PET unilateral surface contact with separate DOFs and independently certify continuous gap; compare small-load limit against terminal reference without promoting terminal-only geometry."},
-  {"id":"alignment_alternative","priority":3,"status":"READY","hypothesis":"Rated compliant coupling can reduce large rigid-coupling restoring reactions without a 5um assembly demand","prerequisites":[],"criteria":"Rated offset and restoring force/torque; actual mounting; current manufacturing impacts","cost":"small screen then actual geometry","fallback":"fixture_preparation"},
-  {"id":"protected_system_loads","status":"BLOCKED","prerequisites":["limiter_geometry_and_rating"],"reason":"No guaranteed cap/EA/actual inertia/allowables; nominal torque is not maximum"},
-  {"id":"fixture_preparation","priority":4,"status":"READY","hypothesis":"Guarded torque/jam fixtures enable calibration of missing physical bounds","criteria":"Actual CAD, interfaces, geometry checks, blank physical records, no proof claim","cost":"4GiB/420s"},
-  {"id":"flexible_terminal_reference","status":"PASS","scope":"Conditional small-deflection terminal-only moving elastic guide, independent Green-function/FEM9cases; no distributed surface/finite rotation/system qualification","result":"validation/finger/flexible_reference2/summary.json"}
- ]
+  "goal": "Same-revision Stage1 and Stage2 digital release; no powered authorization",
+  "tasks": [
+    {
+      "id": "source_reconciliation",
+      "status": "PASS",
+      "scope": "304 existing STEP/geometry identities, not mass qualification",
+      "result": "validation/integrated/registry1/summary.json"
+    },
+    {
+      "id": "jam_energy_contract",
+      "status": "PASS",
+      "scope": "Conditional single-inertia energy control only",
+      "result": "validation/overload/jam_energy2/summary.json"
+    },
+    {
+      "id": "limiter_geometry_and_rating",
+      "priority": 0,
+      "status": "BLOCKED",
+      "hypothesis": "Permanent-magnet clutch avoids friction wear but must have a maximum rating and mountable geometry",
+      "difference": "New hysteresis mechanism; previous screens covered friction clutches only",
+      "result": "cad/exports/hpmc_interface1/summary.json",
+      "reason": "Actual clearance gauge requires26.2962mm extra length;3.175mm interfaces differ. Published torque is MINIMUM, guaranteed maximum/thermal uncertainty unavailable. Gauge is not manufacturer solid CAD.",
+      "criteria": "Actual interface and guaranteed maximum plus complete inertia/EA; no safety promotion",
+      "fallback": "finite_rotation_contact",
+      "next": "protected_system_loads"
+    },
+    {
+      "id": "integrated_gate_controls",
+      "priority": 1,
+      "status": "PASS",
+      "scope": "17 software controls only; actual release3 NOT QUALIFIED",
+      "result": "validation/integrated/controls3/summary.json"
+    },
+    {
+      "id": "finite_pet_endpoint_coupon",
+      "status": "PASS",
+      "scope": "Finite inextensible PET on rigid circular fixture; endpoint guide only, not finite lip or flexible Rail",
+      "result": "validation/finger/finite_pet2/summary.json"
+    },
+    {
+      "id": "revAC_travel_candidate",
+      "status": "FAIL",
+      "scope": "Shorter PET CAD valid after adaptive integral audit; deformed actual front overlap persists, NOT adopted",
+      "result": "validation/finger/channel_diagnostic1/summary.json",
+      "next": "finite_rotation_contact"
+    },
+    {
+      "id": "finite_rotation_contact",
+      "priority": 2,
+      "status": "FAIL",
+      "hypothesis": "Material-owned feature constraints avoid nonphysical moving-minimum Jacobians",
+      "existing_failures": [
+        "validation/finger/finite_pet_AD6/summary.json",
+        "validation/finger/reaction_AD3/summary.json"
+      ],
+      "results": [
+        "validation/finger/owner_analytic_reaction2/summary.json",
+        "validation/finger/owner_analytic_geometry1/summary.json",
+        "validation/finger/owner64_inspection1/summary.json",
+        "validation/finger/owner64_reaction1/summary.json",
+        "validation/finger/owner64_geometry1/summary.json"
+      ],
+      "reason": "16/32 actual stored states pass independent normal-cone certificate and exact geometry, but axial migration refinement remains about4%. 64 solve interrupted without completed summary; saved guess passes geometry but force-equivalent residual1.00166e-6N fails1e-8N. No mesh PASS or flexible-Rail/friction qualification.",
+      "criteria": "Independent1e-8N force,1nm gap,1% axial migration; exact actual-CAD envelope; no flexible-Rail/friction promotion",
+      "cost": "4GiB/420s",
+      "fallback": "alignment_alternative",
+      "next": "contact_constraint_conditioning"
+    },
+    {
+      "id": "contact_owner_counterexample",
+      "status": "PASS",
+      "scope": "Same feasible contact intersection, explicit rows vs aggregated minimum; independent mathematical mechanism only",
+      "result": "validation/contact/owner_contract1/summary.json"
+    },
+    {
+      "id": "revAD_local_geometry",
+      "status": "PASS",
+      "scope": "Unadopted candidate geometry/face identity/BOM and continuous local circular-rail aperture only",
+      "result": "validation/stage1/funnel_face1/summary.json",
+      "next": "candidate_stage1_revalidation"
+    },
+    {
+      "id": "torque_fixture_candidate",
+      "status": "PASS",
+      "scope": "V1 actual pin insertion FAIL preserved. V2 Z-pin with actual stock socket plugs passes4part geometry,11sampled bench poses and off-bench pin/tool/RH-thread extraction samples ONLY; no strength or hardware",
+      "results": [
+        "hardware_test/inspection/torque_arm1_access1/summary.json",
+        "hardware_test/inspection/torque_fixture3/summary.json",
+        "hardware_test/inspection/torque_arm2_access3/summary.json"
+      ]
+    },
+    {
+      "id": "analytic_material_point_jacobian",
+      "status": "PASS",
+      "scope": "Independent FD and virtual-work component verification ONLY",
+      "result": "validation/contact/rod_jacobian1/summary.json"
+    },
+    {
+      "id": "contact_rank_observation",
+      "status": "PASS",
+      "scope": "Read-only numerical spectrum, not causal or physical approval.16:27rows/rank7;32:112/rank10;64:196/rank15",
+      "result": "validation/contact/owner_rank1/summary.json"
+    },
+    {
+      "id": "signed_QR_contact_reduction",
+      "status": "REJECTED",
+      "scope": "Local signed linear basis fails nonnegative contact normal-cone preservation; no physical row removed",
+      "result": "validation/contact/owner64_cone1/summary.json"
+    },
+    {
+      "id": "enriched_local_contact_cone",
+      "status": "PASS",
+      "scope": "170actual rows reconstruct196local directions within7.41822e-9; NOT nonlinear feasible-set equivalence or a solved equilibrium",
+      "result": "validation/contact/owner64_cone2/summary.json"
+    },
+    {
+      "id": "contact_constraint_conditioning",
+      "priority": 2,
+      "status": "FAIL",
+      "hypothesis": "Inactive constraint generation reduces static NLP cost without deleting any physical contact inequalities",
+      "difference": "No QR removal: ALL near-active rows retained; every omitted violated full nonlinear row is added, all final rows and exact geometry checked. Local cone alone is not used as nonlinear equivalence.",
+      "prerequisites": [
+        "analytic_material_point_jacobian",
+        "contact_rank_observation"
+      ],
+      "inputs": [
+        "validation/finger/owner64_inspection1/summary.json",
+        "validation/contact/owner_rank1/summary.json"
+      ],
+      "executed_command": "python scripts/feature_owned_pet.py --seed owner64_inspection1 --meshes 64 --exchanges 1 --working-set --tag owner64_working1",
+      "result": "validation/finger/owner64_working1/summary.json",
+      "reason": "Completed exit0, optimizer iteration-limit FAIL preserved.220/3752rows in static working set, all original rows checked. Independent final-state force1.34548e-9N and actual geometry PASS; finest32/64 migration0.02093% PASS but16/64 remains3.992% FAIL. No whole mesh/Finger qualification.",
+      "criteria": "Unchanged full contact checks,1e-8N certificate and1% migration; no solver success promotion",
+      "cost": "4GiB/420s",
+      "fallback": "alignment_alternative",
+      "next": "flexible_rail_contact"
+    },
+    {
+      "id": "bounded_static_state_certification",
+      "status": "PASS",
+      "scope": "Independent unchanged16/32/64 local KKT and actual geometry ONLY; original optimizer failures preserved,16-to64 refinement FAIL",
+      "result": "validation/finger/owner_states2/summary.json"
+    },
+    {
+      "id": "flexible_rail_contact",
+      "priority": 2,
+      "status": "READY",
+      "hypothesis": "Separate elastic Rail and PET DOFs may change contact and internal forces relative to the prescribed rigid-rail fixture; must not enforce equal curvature",
+      "difference": "New coupled elastic boundary-value mechanism, not further mesh/force/damping scan",
+      "prerequisites": [
+        "bounded_static_state_certification"
+      ],
+      "inputs": [
+        "cad/exports/revAD_funnel1/summary.json",
+        "validation/finger/owner_states2/summary.json"
+      ],
+      "criteria": "Actual geometry and explicit conditional material basis; independent small-load beam reference, full force/moment/gap/complementarity and energy; no rigid-fixture PASS promotion. Define acceptance before solve.",
+      "cost": "One bounded distributed small-load model;4GiB/420s",
+      "fallback": "alignment_alternative",
+      "results": [
+        "validation/finger/flexible_reference2/summary.json",
+        "validation/finger/flexible_distributed2/summary.json"
+      ],
+      "preserved_failures": [
+        "validation/finger/flexible_reference_import_failure1/summary.json",
+        "validation/finger/flexible_reference1/failure.json",
+        "validation/finger/flexible_distributed1/summary.json"
+      ],
+      "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification.",
+      "next": "Advance projected contact to independently checked finite-rotation Rail/PET actual geometry with separate DOFs; preserve8element Green FAIL and establish reference discretization error before any full model acceptance. Do not repeat linear9cases as research progress."
+    },
+    {
+      "id": "alignment_alternative",
+      "priority": 3,
+      "status": "READY",
+      "hypothesis": "Rated compliant coupling can reduce large rigid-coupling restoring reactions without a 5um assembly demand",
+      "prerequisites": [],
+      "criteria": "Rated offset and restoring force/torque; actual mounting; current manufacturing impacts",
+      "cost": "small screen then actual geometry",
+      "fallback": "fixture_preparation"
+    },
+    {
+      "id": "protected_system_loads",
+      "status": "BLOCKED",
+      "prerequisites": [
+        "limiter_geometry_and_rating"
+      ],
+      "reason": "No guaranteed cap/EA/actual inertia/allowables; nominal torque is not maximum"
+    },
+    {
+      "id": "fixture_preparation",
+      "priority": 4,
+      "status": "READY",
+      "hypothesis": "Guarded torque/jam fixtures enable calibration of missing physical bounds",
+      "criteria": "Actual CAD, interfaces, geometry checks, blank physical records, no proof claim",
+      "cost": "4GiB/420s"
+    },
+    {
+      "id": "flexible_terminal_reference",
+      "status": "PASS",
+      "scope": "Conditional small-deflection terminal-only moving elastic guide, independent Green-function/FEM9cases; no distributed surface/finite rotation/system qualification",
+      "result": "validation/finger/flexible_reference2/summary.json"
+    },
+    {
+      "id": "flexible_distributed_linear",
+      "status": "FAIL",
+      "scope": "Conditional projected static separate-DOF contact;7/9cases pass,2coarse Green reference failures retained",
+      "result": "validation/finger/flexible_distributed2/summary.json",
+      "preserved_failure": "validation/finger/flexible_distributed1/summary.json"
+    }
+  ]
 }

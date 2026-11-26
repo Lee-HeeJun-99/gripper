@@ -1,0 +1,76 @@
+Polishing not needed - no active set detected at optimal point
+Polishing not needed - no active set detected at optimal point
+Polishing not needed - no active set detected at optimal point
+{
+  "status": "FAIL",
+  "scope": "CONDITIONAL PROJECTED LINEAR DISTRIBUTED FRICTIONLESS CONTACT ONLY",
+  "criteria": {
+    "gap_m_min": -1e-09,
+    "force_N_max": 1e-08,
+    "moment_Nm_max": 1e-09,
+    "complementarity_relative_max": 1e-07,
+    "energy_relative_max": 1e-07,
+    "green_displacement_m_max": 1e-10,
+    "green_rotation_rad_max": 1e-08,
+    "finest_motion_relative_max": 0.01
+  },
+  "refinement": [
+    {
+      "force_N": -0.001,
+      "motion_relative": 3.4825046491124964e-07,
+      "status": "PASS"
+    },
+    {
+      "force_N": 1e-05,
+      "motion_relative": 1.5288723702395576e-11,
+      "status": "PASS"
+    },
+    {
+      "force_N": 0.001,
+      "motion_relative": 1.1879253972432502e-08,
+      "status": "PASS"
+    }
+  ],
+  "terminal_contrasts": [
+    {
+      "force_N": -0.001,
+      "terminal_only_interface_min_gap_m": -0.0002000013923550674,
+      "at_material_s_m": 0.0862,
+      "terminal_tip_m": -0.00027914837864697077,
+      "distributed_tip_m": -0.00024344211876900986,
+      "terminal_only_surface_valid": false
+    },
+    {
+      "force_N": 1e-05,
+      "terminal_only_interface_min_gap_m": -3.052589408781429e-25,
+      "at_material_s_m": 3.2398595492917445e-19,
+      "terminal_tip_m": 2.9424525040982324e-06,
+      "distributed_tip_m": 2.942452504266308e-06,
+      "terminal_only_surface_valid": true
+    },
+    {
+      "force_N": 0.001,
+      "terminal_only_interface_min_gap_m": -1.500651962399185e-23,
+      "at_material_s_m": 0.0,
+      "terminal_tip_m": 0.00026143263680069987,
+      "distributed_tip_m": 0.00026143263681576605,
+      "terminal_only_surface_valid": true
+    }
+  ],
+  "controls": {
+    "terminal_surface_counterexample": true,
+    "distributed_interface_loaded": true,
+    "open_small_positive_reference": true
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/finger/flexible_distributed2/inputs.json",
+    "SHA256": "d7603a96a8cef8d792202140b5c4170830213342e581521a4c9c99d20ee2a066"
+  },
+  "whole_system_release": false,
+  "limitations": [
+    "No finite rotation or actual deformed BRep qualification",
+    "No axial strain/friction/strength/dynamic energy certificate",
+    "Terminal walls are linearized tip-tangent surfaces, not actual finite CAD",
+    "RevAD remains unadopted; RevAA unchanged"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "criteria": {
+    "gap_m_min": -1e-09,
+    "force_N_max": 1e-08,
+    "moment_Nm_max": 1e-09,
+    "complementarity_relative_max": 1e-07,
+    "energy_relative_max": 1e-07,
+    "green_displacement_m_max": 1e-10,
+    "green_rotation_rad_max": 1e-08,
+    "finest_motion_relative_max": 0.01
+  },
+  "inputs": [
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/flexible_rail_distributed.py",
+      "SHA256": "17024fc9c6ff64499f5ace470416e176d73c38526689ddbd775b19f8245e92a6"
+    },
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage2_load_transfer/scripts/sliding_pet_contact.py",
+      "SHA256": "ef0734e720fbb444567b3c0881ae9efe470e7b34ca57545bcbf5d8c904506171"
+    },
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/flexible_rail_reference.py",
+      "SHA256": "fc6b942c3f8b06f3702eee2235abda6017433f3dd53ecd08c149e9e572feee4f"
+    },
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage2_load_transfer/models/materials/evidence.json",
+      "SHA256": "14b727a364ccf9b56ffa741e3a3765b859c3df85ad4bbe11e3244a87dfaed01f"
+    },
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/cad/exports/revAD_funnel1/summary.json",
+      "SHA256": "c7708955233b81ff79d70c6683c5ed428a8939b39b6846cfe25e427e83cb319e"
+    },
+    {
+      "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/finger/flexible_reference2/summary.json",
+      "SHA256": "7a2406915e3841dc9bd768a29add4e6d0ce6df10a624bc831c6bc6a13d886210"
+    },
+    {
+      "path": "/tmp/regrip_stage2_fem/osqp/ext_builtin.cpython-310-x86_64-linux-gnu.so",
+      "SHA256": "f9bb7173862a34edad1a18cecdbb2b09a2fabb13cffa724335456de36b3dccff"
+    }
+  ],
+  "lengths_m": {
+    "rail": 0.088,
+    "PET": 0.0862
+  },
+  "material_basis": "Conditional supplier typical E, unchanged projected sections; no certified lot",
+  "normal_interface": "rail_y-PET_y >=0 on [0,LP]",
+  "terminal_walls": "moving Rail tip tangent on [0.083,LP], -0.1/+0.2mm; linear projected geometry only"
+}

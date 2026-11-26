@@ -1,3 +1,30 @@
+# Bounded cycle — distributed elastic Rail/PET (2026-11-26)
+
+Started from19e9ea67e34edc8bbaf43bd6738b58508043fbc6. Supervisor local save PENDING;
+worker did not stage/commit or change manager controls. RevAA remains adopted.
+New actual output: validation/finger/flexible_distributed2/summary.json.
+Nine RevAD-length small-load separate-DOF linear cases use the existing beam/QP
+kernel with distributed unilateral interface, continuous cubic extrema and moving
+tip-tangent terminal walls. Overall FAIL(exit2):8element +/-1mN PET Green tip
+errors0.272/0.180nm exceed declared0.1nm. All16/32cases pass; finest motion
+relative error max3.483e-7. All9force/moment/gap/complementarity/static-energy
+checks pass. This is conditional typical-material projected geometry only.
+Independent saved-state verifier passes, input hashes checked, release audit
+remains INTEGRATED_NOT_QUALIFIED with22unqualified Stage2 criteria.
+
+New mechanism evidence: terminal-only -1mN interface gap -0.200001mm;
+distributed contact changes Rail tip from -0.279148 to -0.243442mm. Small
++10uN open-contact case matches independent terminal Green reference.
+This excludes terminal-only reference as a distributed-surface certificate.
+First attempt serialization failure(exit1) preserved in flexible_distributed1
+with original producer/input hashes/log; first state was not serialized.
+No old failures, CAD/BOM, criteria or SDK changed. No full finite deformed BRep,
+finite rotation, friction, strength or global dynamic energy PASS.
+Next READY: independently validated finite-rotation actual Rail/PET geometry;
+preserve coarse Green failures and quantify discretization separately. Do not
+repeat this9case linear experiment as new progress. No RUNNING queue records
+or live analysis children at handoff. Save manifest contains cycle files only.
+
 # ReGrip 통합 개발 최종 실행 보고
 
 기준 commit `ba8e0e515bd9c06c75e764dfe1dc09670e614c77`.

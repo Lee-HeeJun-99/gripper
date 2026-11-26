@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "scope": "Independent reread of actual saved states, not reversal of research FAIL",
+  "summary": {
+    "path": "product_prototype/stage12_integrated/validation/finger/flexible_distributed2/summary.json",
+    "SHA256": "12e9023348f768238aaba5773e68689f304f1ca9b498247c5389cb921145a181"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/scripts/verify_flexible_distributed.py",
+    "SHA256": "d7b5f9aba750efc8a5f332a7b3b93da0dd0fdef9e7cdd5f8622c953e78e84c28"
+  },
+  "certificates": [
+    {
+      "n": 8,
+      "force_N": -0.001,
+      "continuous_gaps_m": {
+        "interface": -3.3733352756274463e-11,
+        "front": 9.9957778814049e-05,
+        "back": 0.00020000147549793847
+      },
+      "status": "FAIL"
+    },
+    {
+      "n": 16,
+      "force_N": -0.001,
+      "continuous_gaps_m": {
+        "interface": -7.571427739251461e-12,
+        "front": 9.995837704660877e-05,
+        "back": 0.00020000137169036758
+      },
+      "status": "PASS"
+    },
+    {
+      "n": 32,
+      "force_N": -0.001,
+      "continuous_gaps_m": {
+        "interface": -8.8416710262407e-14,
+        "front": 9.995851999602872e-05,
+        "back": 0.00020000127431816662
+      },
+      "status": "PASS"
+    },
+    {
+      "n": 8,
+      "force_N": 1e-05,
+      "continuous_gaps_m": {
+        "interface": -5.13593753125397e-24,
+        "front": 9.714782728842891e-05,
+        "back": 0.00020269167530224486
+      },
+      "status": "PASS"
+    },
+    {
+      "n": 16,
+      "force_N": 1e-05,
+      "continuous_gaps_m": {
+        "interface": -2.9081269171161956e-24,
+        "front": 9.714782728843472e-05,
+        "back": 0.00020269167530223938
+      },
+      "status": "PASS"
+    },
+    {
+      "n": 32,
+      "force_N": 1e-05,
+      "continuous_gaps_m": {
+        "interface": -3.5577292813369183e-25,
+        "front": 9.714782728847852e-05,
+        "back": 0.0002026916753021975
+      },
+      "status": "PASS"
+    },
+    {
+      "n": 8,
+      "force_N": 0.001,
+      "continuous_gaps_m": {
+        "interface": 2.5840281540179087e-22,
+        "front": 1.6940658945086007e-21,
+        "back": 0.00029468695694229906
+      },
+      "status": "FAIL"
+    },
+    {
+      "n": 16,
+      "force_N": 0.001,
+      "continuous_gaps_m": {
+        "interface": -7.310563096464255e-23,
+        "front": 5.590417451878382e-20,
+        "back": 0.0002946873722466483
+      },
+      "status": "PASS"
+    },
+    {
+      "n": 32,
+      "force_N": 0.001,
+      "continuous_gaps_m": {
+        "interface": -4.167914131692497e-25,
+        "front": -5.293955920339377e-20,
+        "back": 0.00029468741213258437
+      },
+      "status": "PASS"
+    }
+  ],
+  "analysis_execution": {
+    "actually_executed": true,
+    "exit_code": 2,
+    "timeout_s": 420,
+    "memory_limit_KiB": 4194304,
+    "command": "PYTHONPATH=/tmp/regrip_stage2_fem OPENBLAS_NUM_THREADS=1 timeout 420s bash -c 'ulimit -v 4194304; exec python product_prototype/stage12_integrated/scripts/flexible_rail_distributed.py flexible_distributed2'",
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/finger/flexible_distributed2/execution.log",
+      "SHA256": "96b30f33fd601b4014c9e68ea569475d13077f42bb3ffacf5221c8c3e1069667"
+    }
+  },
+  "release_audit": {
+    "status": "INTEGRATED_NOT_QUALIFIED",
+    "revision": "revAA_heel_relief2",
+    "errors": [
+      "missing system evidence",
+      "stage2: cad_model_match: not qualified",
+      "stage2: physical_mass_inertia: not qualified",
+      "stage2: tendon_force_stroke: not qualified",
+      "stage2: motor_running_torque_speed: not qualified",
+      "stage2: shaft_strength: not qualified",
+      "stage2: coupling_capacity: not qualified",
+      "stage2: pin_drum_strength: not qualified",
+      "stage2: bearing_ratings_reactions: not qualified",
+      "stage2: housing_shoulder_retention: not qualified",
+      "stage2: tendon_stiffness_strength: not qualified",
+      "stage2: terminal_retention: not qualified",
+      "stage2: idler_load_drag: not qualified",
+      "stage2: finger_structure: not qualified",
+      "stage2: root_palm_strength: not qualified",
+      "stage2: continuous_load_path: not qualified",
+      "stage2: static_dynamic_consistency: not qualified",
+      "stage2: numerical_convergence: not qualified",
+      "stage2: qualified_worst_case: not qualified",
+      "stage2: changed_stage1_revalidation: not qualified",
+      "stage2: stage3_handoff: not qualified",
+      "stage2: overload_protection: not qualified",
+      "stage2: motor_alignment_reactions: not qualified",
+      "missing full system evidence coverage"
+    ],
+    "stage2": {
+      "status": "STAGE2_NOT_QUALIFIED",
+      "analytical_pass": false,
+      "numerical_pass": false,
+      "hardware_status": "NOT MEASURED; never inferred by digital validator",
+      "errors": [
+        "cad_model_match: not qualified",
+        "physical_mass_inertia: not qualified",
+        "tendon_force_stroke: not qualified",
+        "motor_running_torque_speed: not qualified",
+        "shaft_strength: not qualified",
+        "coupling_capacity: not qualified",
+        "pin_drum_strength: not qualified",
+        "bearing_ratings_reactions: not qualified",
+        "housing_shoulder_retention: not qualified",
+        "tendon_stiffness_strength: not qualified",
+        "terminal_retention: not qualified",
+        "idler_load_drag: not qualified",
+        "finger_structure: not qualified",
+        "root_palm_strength: not qualified",
+        "continuous_load_path: not qualified",
+        "static_dynamic_consistency: not qualified",
+        "numerical_convergence: not qualified",
+        "qualified_worst_case: not qualified",
+        "changed_stage1_revalidation: not qualified",
+        "stage3_handoff: not qualified",
+        "overload_protection: not qualified",
+        "motor_alignment_reactions: not qualified"
+      ]
+    },
+    "hardware_status": "HARDWARE_NOT_MEASURED",
+    "manufacturing_status": "MANUFACTURING_PROCESS_NOT_QUALIFIED",
+    "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED",
+    "scope": "Consistency audit only. Unreviewed evidence cannot establish physical truth."
+  },
+  "known_analysis_children_running": 0
+}

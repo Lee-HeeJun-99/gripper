@@ -1,0 +1,29 @@
+{
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/axial_boundary_contrast.py",
+      "SHA256": "7d9818071987b1004c405495ca405e766ce24e7bc80b966808c13f029f4bcbde"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/extensible_rod_reference.py",
+      "SHA256": "29e382c34b19ee646e75b4d574d48c743620701d072d3fd52102b50cc0afeeae"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/extensible_reference1/summary.json",
+      "SHA256": "c7a909c4a9a4bd9485c528acaa9152cf4c26c8d19f3edfd15b51063150316f22"
+    }
+  ],
+  "criteria": {
+    "tip_relative_max": 0.001,
+    "reaction_relative_max": 0.001,
+    "residual_Nm_max": 1e-10,
+    "axial_gap_m_max": 1e-10
+  },
+  "contract": "Root fixed; zero tip moment; spatial dead Fy; tip x=L enforced with unknown axial reaction. Free transverse tip. Counterfactual boundary contrast, NOT actual guide.",
+  "material": "Unchanged conditional typical moduli and projected sections",
+  "predeclared": "Compare 64-element midpoint with independent continuous BVP; retain all failures. No contact/system PASS."
+}

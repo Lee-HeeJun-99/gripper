@@ -22,15 +22,18 @@
       "validation/finger/flexible_reference2/summary.json",
       "validation/finger/flexible_distributed2/summary.json",
       "validation/finger/finite_kinematic_budget1/summary.json",
-      "validation/finger/extensible_reference1/summary.json"
+      "validation/finger/extensible_reference1/summary.json",
+      "validation/finger/axial_boundary1/summary.json",
+      "validation/finger/axial_boundary1_verification2/summary.json"
     ],
     "preserved_failures": [
       "validation/finger/flexible_reference_import_failure1/summary.json",
       "validation/finger/flexible_reference1/failure.json",
-      "validation/finger/flexible_distributed1/summary.json"
+      "validation/finger/flexible_distributed1/summary.json",
+      "validation/finger/axial_boundary1_verification/summary.json"
     ],
-    "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification. New finite_kinematic_budget1 analyzes12 actual saved body states (16/32), not a repeated equilibrium solve. Both independent quadratures and analytic control pass. Inextensible lift moves Rail x by0.406/0.466um at-/+1mN, so projected coordinate reuse FAILS existing1nm budget. Fixed-x conditional axial energy is3.09/3.52 times Rail bending energy; not actual assembly energy. Neither lift is a solved finite state. New extensible_reference1 implements finite engineering strain and rotation with axial strain exactly condensed from the independent variational DOF. Six separate free-tip body/load references,18 midpoint solutions, independent continuous BVP, complex-step saved-state virtual work, objectivity and small-load checks pass bounded scope. PET20mN differs8.765% from linear reference. This is NOT coupled contact or actual assembly boundary conditions.",
-    "next": "Extend validated finite extensible rod to separate Rail/PET coupled contact with actual guide axial boundary conditions and actual finite geometry re-evaluation. Retain virtual work/objectivity/reference checks; do not promote separate free-tip reference to assembly energy, strength, contact or release PASS."
+    "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification. New finite_kinematic_budget1 analyzes12 actual saved body states (16/32), not a repeated equilibrium solve. Both independent quadratures and analytic control pass. Inextensible lift moves Rail x by0.406/0.466um at-/+1mN, so projected coordinate reuse FAILS existing1nm budget. Fixed-x conditional axial energy is3.09/3.52 times Rail bending energy; not actual assembly energy. Neither lift is a solved finite state. New extensible_reference1 implements finite engineering strain and rotation with axial strain exactly condensed from the independent variational DOF. Six separate free-tip body/load references,18 midpoint solutions, independent continuous BVP, complex-step saved-state virtual work, objectivity and small-load checks pass bounded scope. PET20mN differs8.765% from linear reference. This is NOT coupled contact or actual assembly boundary conditions. New axial_boundary1 actual counterfactual x_tip=L finite rod contrast FAIL: all4 continuous BVP cases converge, but only5/12 midpoint states satisfy independently verified equilibrium. Free-vs-constrained BVP tip changes55-96%; actual guide axial condition cannot be inferred from free-tip reference. Independent complex-step saved-state reproduction passes12/12, without promoting7 failed equilibria. Original verifier TypeError retained.",
+    "next": "Establish actual assembly axial guide boundary conditions before coupled contact. Diagnose finite constrained-rod initialization/branch failures with independent BVP states and retain full stationarity checks; no blind repeated load/mesh scan. Then separate-body finite contact and actual deformed geometry. Alignment/fixture remain independent READY."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

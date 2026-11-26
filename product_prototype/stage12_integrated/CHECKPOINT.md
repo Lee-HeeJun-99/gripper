@@ -1,3 +1,31 @@
+# Bounded cycle — axial boundary contrast (2026-11-26)
+
+Started from0570ac49c556763500a7329366eb6b6c210e345a. Supervisor local save
+PENDING; no git add/commit attempted or new commit claimed. One actual
+finite-rod boundary analysis: axial_boundary1, not a repetition of free-tip tests.
+Root fixed, zero terminal moment, dead transverse load, unknown axial reaction
+with x_tip=L; this is an explicit counterfactual, NOT identified assembly guide.
+Conditional typical materials/projected sections and RevAA adoption unchanged.
+
+Four continuous BVP solutions converge at1/20mN for separate Rail/PET.
+Their tip deflections decrease54.94/92.36% (Rail),74.78/95.70% (PET) versus
+free-tip references. This quantifies boundary sensitivity, not actual contact.
+12 midpoint solves at16/32/64: overall FAIL(exit2); only5/12 independently
+satisfy equilibrium and axial constraint. Failed states and solver messages
+are retained; no retry sweep. Independent complex-step strain/rotation energy
+derivatives and coordinate/energy reconstruction reproduce12/12 saved states;
+reproduction PASS is NOT equilibrium PASS. First verifier TypeError(exit1)
+retained separately; corrected verifier exit0 with5/12 equilibrium acceptance.
+Input hashes verified. No physical energy/contact/strength certificate.
+
+axial_boundary_release1 remains INTEGRATED_NOT_QUALIFIED(exit2). Existing
+release gates unchanged; no candidate CAD/BOM adoption, Stage3 or SDK changes.
+Next: identify actual guide axial conditions and diagnose constrained-rod branch/
+initialization using independent BVP evidence before coupled finite contact.
+Alignment and fixture remain READY. All analysis children completed within
+4GiB/420s. No RUNNING queue tasks. Historical failures/unrelated untracked
+CAD/BOM preserved. Exact save request is pending supervisor validation/save.
+
 # Bounded cycle — finite extensible free-tip reference (2026-11-26)
 
 Started from a46536d2ec628e76c1da4d859aee83787d0bf1c1. Supervisor local save

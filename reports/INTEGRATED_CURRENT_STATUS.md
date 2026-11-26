@@ -1,3 +1,35 @@
+# Batch5 cycle9 — preheaded insertion clear, material stock rejected; pending supervisor save
+
+Started at ab1acb7045d00da4c101d4a64f4428ae377aaf79. No git add/commit;
+supervisor local save PENDING, no new commit claimed.
+Actual result: validation/transmission/AU_prehead_cycle1/summary.json.
+
+One bounded assembly/process analysis tests a left-preheaded pin and right-only
+forming with head-sized left support (diameter1.8mm versus prior2.4mm die).
+18 finite STEP/STL solids retained: seated preform, exact8mm straight insertion
+sweep,10mm supports/dies and5mm approach envelopes across three sectors.
+All clear actual254part AS retained assembly at unchanged1e-8mm3 criterion.
+Independent reimport verifies all18valid single solids, dimensions, analytical
+volumes and repeats all retained-part intersection checks. This establishes
+only the declared insertion/support/tool geometric access, not full assembly.
+
+Necessary material-volume check FAIL: actual preform7.121990546mm3 versus AS
+final8.746193948mm3. Missing1.624203402mm3 (18.5704023%) per pin; independent
+analytic cylinder-union volumes agree. No-added-stock forming of this preform
+is REJECTED. Access clearance cannot supply missing material. Preserve this
+failure; next design sufficient protruding stock and recheck actual insertion,
+support/tool/process envelope before strength, pull-through and loaded spin.
+No plastic process, full ordered assembly, machine housing, tolerance or
+capacity qualification. No candidate BOM/CAD adoption; AO current/AA adopted
+unchanged. AT opposed-die failure and all historical data remain immutable.
+
+Actual children access0/release2/verification0/volume2, each4GiB/420s/one-thread,
+all completed. No SOFA run. Release remains INTEGRATED_NOT_QUALIFIED.
+Queue READY with the stock deficit; independent overload/base work remains.
+No RUNNING task or owned live analysis child. STOP respected. No SDK/criteria/
+manager/Stage3 changes. Unrelated untracked preserved. Exact save_request9.json
+awaits supervisor validation/local save; no commit claimed.
+
 # Batch5 cycle8 — actual rivet forming access rejected; pending supervisor save
 
 Started at21e2a593319179fe90c258b8ab840ade3e7d4202. No git add/commit;

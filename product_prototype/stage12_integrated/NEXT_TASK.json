@@ -3,23 +3,18 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "batch5_idler_mechanical_retention",
-    "track": "A",
-    "priority": -6,
+    "id": "batch5_grounded_palm_attachment",
+    "track": "C",
+    "priority": -4,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
-    "hypothesis": "Implement actual thread load-bearing geometry/model or simpler supported axle/captive retention",
-    "criteria": "Actual flank/core/engagement or positive retention CAD, assembly, axial/radial load path and capacity evidence",
-    "previous_diagnostic_task": "AJ_idler_thread_and_load_proof",
+    "hypothesis": "Implement external base tendon service passages and actual retained fastener engagement or captive shoulder architecture before loaded Palm/base analysis; preserve AR failures",
+    "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
+    "previous_diagnostic_task": "AI_whole_palm_support",
     "existing_evidence": [
-      {
-        "path": "product_prototype/stage12_integrated/validation/transmission/AQ_crosspin_cycle1/summary.json",
-        "SHA256": "3e84a194e7cf5d2fca1627ea477cfa889d8ae763ded13012980647f9e58dc40f"
-      },
-      {
-        "path": "product_prototype/stage12_integrated/validation/transmission/AS_rivet_cycle1/summary.json",
-        "SHA256": "43d6f30b5e5867479766fcdb15c878a94ecc8797bffa37a6dc693fddc044ca53"
-      }
+      "validation/transmission/AN_palm_cycle1/summary.json",
+      "validation/transmission/AN_palm_verify1/summary.json",
+      "validation/transmission/AR_base_cycle1/summary.json"
     ],
     "prerequisites": [],
     "target_candidate": {
@@ -40,11 +35,10 @@
     "cost": "One3600second session, each analysis child4GiB/420s",
     "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
     "system_gate_contribution": 5,
-    "last_run_utc": "2026-11-26T23:12:47.637900+00:00",
+    "last_run_utc": "2026-11-26T23:10:15.571055+00:00",
     "consecutive_runs": 2,
-    "result": "validation/transmission/AS_rivet_cycle1/summary.json",
-    "reason": "AS double-headed rivet blocks both sampled extraction directions; forming/assembly and capacity unqualified, not adopted.",
-    "next": "Resolve post-insertion rivet forming/access or use separately captured pin with explicit assembly; then actual strength/contact/load evidence. Do not repeat these sampled geometry checks as new progress."
+    "result": "validation/transmission/AR_base_cycle1/summary.json",
+    "scope": "AR1/AR2 unadopted external base rejected: residual tendon intersection and smooth nut uplift failure. AO remains current."
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "access",
+    "exit_code": 0,
+    "elapsed_seconds": 10.083241026848555,
+    "actually_executed": true,
+    "limit_seconds": 420,
+    "virtual_memory_KiB": 4194304,
+    "threads": 1,
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AU_prehead_cycle1/access.log",
+      "SHA256": "bde9f494713b8e833529ffcbb08a08184e80c9131d0c51fbd7c2c755d5d8161b"
+    },
+    "producer": {
+      "path": "product_prototype/stage12_integrated/scripts/preheaded_idler_access.py",
+      "SHA256": "9e0bb5771343165af5b94e27805b0e4991ac296e8153cd9c5e3d8412cf3ce4cc"
+    }
+  },
+  {
+    "name": "release",
+    "exit_code": 2,
+    "elapsed_seconds": 0.3655220568180084,
+    "actually_executed": true,
+    "limit_seconds": 420,
+    "virtual_memory_KiB": 4194304,
+    "threads": 1,
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AU_prehead_cycle1/release.log",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    },
+    "producer": {
+      "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+      "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+    }
+  },
+  {
+    "name": "verify",
+    "exit_code": 0,
+    "elapsed_seconds": 9.98200325993821,
+    "actually_executed": true,
+    "limit_seconds": 420,
+    "virtual_memory_KiB": 4194304,
+    "threads": 1,
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AU_prehead_cycle1/verify.log",
+      "SHA256": "a8530a45e16e3a61c3f3d40c0ee062ee1171844c18744e9182ed30c64652c09a"
+    },
+    "producer": {
+      "path": "product_prototype/stage12_integrated/scripts/verify_preheaded_access.py",
+      "SHA256": "e95b04f99703f0f64883c094ede3c45a7d1e26a2e261ca3eb4417447f388c728"
+    }
+  },
+  {
+    "name": "volume",
+    "exit_code": 2,
+    "elapsed_seconds": 0.7661905728746206,
+    "actually_executed": true,
+    "limit_seconds": 420,
+    "virtual_memory_KiB": 4194304,
+    "threads": 1,
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AU_prehead_cycle1/volume.log",
+      "SHA256": "86d3769a5eafde3a12b1cf40299e6f71bdd2b6ff5923975e415eef7019b7b463"
+    },
+    "producer": {
+      "path": "product_prototype/stage12_integrated/scripts/prehead_volume_budget.py",
+      "SHA256": "c2e4585bb3dae18478669ee29f804b19bdbf41451d1dd60965be9843b13e8e6d"
+    }
+  }
+]

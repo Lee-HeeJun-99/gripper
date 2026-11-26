@@ -926,6 +926,14 @@
         {
           "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_cycle1/summary.json",
           "SHA256": "d4b453f6dbf9a26fb39d7bb36f881857049210c1ff853cac70f76727a6aeb0eb"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/transmission/AT_forming_cycle1/summary.json",
+          "SHA256": "d4b453f6dbf9a26fb39d7bb36f881857049210c1ff853cac70f76727a6aeb0eb"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/transmission/AU_prehead_cycle1/summary.json",
+          "SHA256": "7a2726edfaff552b1f40b8de7c10d1d0b7f414a14fcd815b92c3b136f868692e"
         }
       ],
       "prerequisites": [],
@@ -947,11 +955,11 @@
       "cost": "One3600second session, each analysis child4GiB/420s",
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
-      "last_run_utc": "2026-11-26T23:15:07.238982+00:00",
-      "consecutive_runs": 3,
-      "result": "validation/transmission/AT_forming_cycle1/summary.json",
-      "reason": "AT finite opposing forming dies rejected: left die/Idler bracket overlap in all3sectors; right access clear only in explicit idealized tool scope. AS not adopted.",
-      "next": "Consider pre-headed pin from left with right-side forming and explicit left support/access, or separately captured pin; require ordered actual assembly and capacity. Do not repeat opposed-flat-die access."
+      "last_run_utc": "2026-11-26T23:18:02.888791+00:00",
+      "consecutive_runs": 4,
+      "result": "validation/transmission/AU_prehead_cycle1/summary.json",
+      "reason": "AU one-sided preheaded insertion/support access clear; actual stock volume deficit18.5704% rejects forming feasibility. Not adopted.",
+      "next": "Design sufficient protruding stock for right head, then actual insertion, support/tool clearance and process feasibility; capacity remains required. Do not repeat the same access screen."
     },
     {
       "id": "batch5_same_revision_system_revalidation",

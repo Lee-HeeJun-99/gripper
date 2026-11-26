@@ -1,0 +1,52 @@
+{
+  "status": "PARTIAL_PRODUCT_IMPLEMENTATION_NOT_QUALIFIED",
+  "starting_HEAD": "ddcce68d050829f3136d0b606c665e4b2f7ed72a",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAL_Ddrive1/summary.json",
+    "SHA256": "30bc99d000062812c73a8ac19b14fc7295e5be3316ce337776916ec5bb395019"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AL_Ddrive_verify1/summary.json",
+    "SHA256": "4098a4262c268ccfd995f0be4f50f694e1fa171b62fb90347ad23d41138fda12"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AL_Ddrive_release1/summary.json",
+    "SHA256": "65b7add70e677756f52946328b3b44be6a5950af0ebabd363f20b538054ae699"
+  },
+  "execution": [
+    {
+      "command": "positive_d_drive.py",
+      "exit_code": 0,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AL_Ddrive_cycle1/build.log",
+        "SHA256": "dd33893ff831f9a47641421d3f374ca2526f230d1645d3baf44fe38de61bd1e0"
+      }
+    },
+    {
+      "command": "verify_positive_d_drive.py",
+      "exit_code": 0,
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AL_Ddrive_cycle1/verify.log",
+        "SHA256": "4098a4262c268ccfd995f0be4f50f694e1fa171b62fb90347ad23d41138fda12"
+      }
+    }
+  ],
+  "scope": "Actual three D-bore hubs, removed clamp screws, full232part descendant assembly and JSON BOM. Finite geometry stop only; no load capacity or axial capture.",
+  "new_evidence": "Friction-independent finite rotational obstruction at all4supplier dimension corners, both signs; nonzero normal torque arm1.297..1.309mm. One-sided backlash1.044..8.966deg.",
+  "failure_preservation": "All historical failures unchanged; read-only system audit retains24errors. No new analysis execution failures.",
+  "unmet": [
+    "Positive axial/thrust capture to ground",
+    "Backlash impact and loaded contact/strength",
+    "Actual material/allowables/safety2; mesh1%",
+    "Full assembly/disassembly and process tolerances",
+    "Overload and whole-system energy"
+  ],
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "whole_system_release": false
+}

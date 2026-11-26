@@ -1,0 +1,125 @@
+{
+  "status": "FINITE_D_DRIVE_VERIFICATION_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAL_Ddrive1/summary.json",
+    "SHA256": "30bc99d000062812c73a8ac19b14fc7295e5be3316ce337776916ec5bb395019"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AL_Ddrive_verify1/producer.py",
+    "SHA256": "6e12de79438e40a7953436221223402697530cc69772e306b253bd9fcc8d72a0"
+  },
+  "checks": {
+    "single_valid_solid": true,
+    "source_hashes": true,
+    "nominal_motor_clear": true,
+    "F0_closed_STL": true,
+    "F1_closed_STL": true,
+    "F2_closed_STL": true,
+    "both_signs_all_dimension_corners": true,
+    "motor_only_insertion_samples": true,
+    "circular_negative_control": true
+  },
+  "cases": [
+    {
+      "radius_mm": 2.494,
+      "across_mm": 4.4,
+      "backlash_one_side_deg": 8.81600219174479,
+      "normal_torque_arm_mm": 1.2973573139270462,
+      "finite_BRep": [
+        {
+          "sign": -1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.014190432516860814
+        },
+        {
+          "sign": 1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.014190432516834398
+        }
+      ],
+      "passed": true
+    },
+    {
+      "radius_mm": 2.494,
+      "across_mm": 4.6,
+      "backlash_one_side_deg": 1.0443545888373789,
+      "normal_torque_arm_mm": 1.297357313927046,
+      "finite_BRep": [
+        {
+          "sign": -1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.0013929645716059184
+        },
+        {
+          "sign": 1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.0013929645715748211
+        }
+      ],
+      "passed": true
+    },
+    {
+      "radius_mm": 2.5,
+      "across_mm": 4.4,
+      "backlash_one_side_deg": 8.965673437720845,
+      "normal_torque_arm_mm": 1.3088544609695918,
+      "finite_BRep": [
+        {
+          "sign": -1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.014708755768752066
+        },
+        {
+          "sign": 1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.01470875576875593
+        }
+      ],
+      "passed": true
+    },
+    {
+      "radius_mm": 2.5,
+      "across_mm": 4.6,
+      "backlash_one_side_deg": 1.2897517052934135,
+      "normal_torque_arm_mm": 1.308854460969592,
+      "finite_BRep": [
+        {
+          "sign": -1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.0017621810674539624
+        },
+        {
+          "sign": 1,
+          "before_mm3": 0.0,
+          "after_mm3": 0.0017621810674354078
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "motor_only_insertion": [
+    {
+      "shift_Y_mm": 0,
+      "common_mm3": 0.0
+    },
+    {
+      "shift_Y_mm": 2,
+      "common_mm3": 0.0
+    },
+    {
+      "shift_Y_mm": 5,
+      "common_mm3": 0.0
+    },
+    {
+      "shift_Y_mm": 12,
+      "common_mm3": 0.0
+    },
+    {
+      "shift_Y_mm": 20,
+      "common_mm3": 0.0
+    }
+  ],
+  "scope": "Finite changed STEP and closed STL; dimension-corner angular stop with nonzero torque arm, motor-only sampled insertion. No loaded capacity or full assembly-path certificate.",
+  "axial_capture": false,
+  "whole_system_release": false
+}

@@ -1,3 +1,38 @@
+# Batch5 cycle0 — finite D-drive implementation
+
+Started at ddcce68d050829f3136d0b606c665e4b2f7ed72a. Supervisor local save
+PENDING; no git add/commit attempted and no new commit claimed.
+Actual result: validation/transmission/AL_Ddrive_cycle1/summary.json.
+
+RevAL_Ddrive1 is the compatible232part AK descendant: three fresh D-bore
+hubs replace circular split collets; three clamp bolts removed from NEW design.
+Original AK235 and adopted AA remain unchanged. Actual assembly STEP, JSON BOM
+and all part hashes are recorded. New bore flat2.13mm accommodates supplier
+maximum2.106mm coordinate; existing nominal motor+X clocking is retained.
+No shaft drilling/modification. Proposed machining clearance is not measured.
+
+All changed/retained pair interference tests pass1e-8mm3. Independent STEP
+reimport, valid single solids, closed STL and motor-only sampled insertion pass.
+Four supplier dimensional corners show both signed finite rotational stops;
+analytic first contact is bracketed with actual BRep intersection at90/110%.
+Normal torque arms1.297..1.309mm are nonzero; one-sided backlash1.044..8.966deg
+is a real unresolved impact risk, not zero-backlash torque transmission.
+Circular-bore control does not create the same rotational stop. These are
+kinematic geometry checks, NOT equilibrium/strength or full assembly-path PASS.
+
+Drive objective remains PARTIAL/READY: implement independent positive axial/
+thrust capture into ground, then loaded contact/backlash/allowables and actual
+assembly sequence. No rated torque, motor-bearing reaction or preload is assumed.
+No changes to physics criteria, SDK, managers or save controls. Existing system
+release audit remains INTEGRATED_NOT_QUALIFIED with24errors; whole-system energy,
+protected loads and22Stage2 criteria are not qualified. No Stage3/hardware.
+
+Two owned analysis children completed exit0 under4GiB/420s, one thread. No
+RUNNING queue tasks/live analysis children at handoff. All old failures and
+unrelated pre-existing untracked CAD are preserved. Only this cycle's explicit
+files enter runtime/authorized_20261126_5/save_request0.json. Continue compatible
+AL candidate across tracks; do not restart AK or repeat D-bore geometry scans.
+
 # NEW BATCH5 — ACTUAL MECHANICAL IMPLEMENTATION FIRST
 
 Latest user explicitly approved a separate10x3600second allocation5 after

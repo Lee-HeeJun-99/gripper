@@ -1,0 +1,20 @@
+{
+  "status": "SOURCE_INTEGRITY_PASS",
+  "errors": [],
+  "revision": "revAA_heel_relief2",
+  "next": {
+    "id": "limiter_geometry_and_rating",
+    "priority": 0,
+    "status": "READY",
+    "hypothesis": "Permanent-magnet clutch avoids friction wear but must have a maximum rating and mountable geometry",
+    "difference": "New hysteresis mechanism; previous screens covered friction clutches only",
+    "prerequisites": [],
+    "criteria": "Actual manufacturer dimensions; torque maximum vs thermal/rate; actual interface clearance; bounded inertia/EA impact",
+    "cost": "4GiB/120s",
+    "fallback": "finite_rotation_contact",
+    "next": "protected_system_loads"
+  },
+  "running_task_records": [],
+  "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",
+  "resume_command": "python product_prototype/stage12_integrated/scripts/integrated_status.py --next"
+}

@@ -1,0 +1,104 @@
+{
+  "status": "PARTIAL_PRODUCT_IMPLEMENTATION_NOT_QUALIFIED",
+  "starting_HEAD": "f72067f574421263f5e64a97aa22a14fdcd8b300",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
+    "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_verify1/summary.json",
+    "SHA256": "485c9e099a223e92583e460375ce0cdf156e7ec3cfc532c9da8e14979b35a6ff"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AN_palm_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "execution": [
+    {
+      "name": "build",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_cycle1/build.log",
+        "SHA256": "e1bda1fcdd4170487abf88d7628ec55518852e33bc57628f3cf1a67d304a3cc8"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm1/producer.py",
+        "SHA256": "90a4487fe36ddff0bdded17c38b5687ded99f9483044350fc68dac5e6d42fe6c"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "build2",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_cycle1/build2.log",
+        "SHA256": "cc8dddf2a306dc6f34a0040353a5d2ee5c47f364ec4c837b412f777b8b46d66a"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/producer.py",
+        "SHA256": "fb485bc128b9e6b7cda4daa5dbbb02ef0de365e11f6c2936851c763d68e67f22"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "verify",
+      "exit_code": 0,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_cycle1/verify.log",
+        "SHA256": "46deafbc5de4ca1e7ec0ecdc884e745e5ea5ae60529bd3ec00be7eeb6f7ca894"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_verify1/producer.py",
+        "SHA256": "78e98559c10d69bf80d257a2a01e86fef65a1f4f349ec0851ec5993410cfc90b"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    },
+    {
+      "name": "release",
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413"
+      },
+      "actually_executed": true,
+      "limit_seconds": 420,
+      "virtual_memory_KiB": 4194304,
+      "threads": 1
+    }
+  ],
+  "new_evidence": "Compatible254part AM descendant with central annular adapter,3through bolts/nut envelopes, four external flange holes, and three finite tendon slots. Actual changed CAD/assembly/BOM; independent reimport/solid/closedSTL and ordered assembly samples pass. Finite +/-XYZ and +/-Rz local stops pass.",
+  "failure_preservation": [
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm1/summary.json",
+      "SHA256": "f39903a04daa8d12a8f49c927b89cfce42970c0c38e23efc5ae37cfdc02c9ec9"
+    }
+  ],
+  "failure_detail": "First design interferes with3Idler nuts(.773438mm3each) and3tendons(1.182648mm3each). Preserved untouched; second design reduces neck radius32to30mm and adds three2mmwide radial slots.",
+  "scope": "Actual attachment geometry implementation and bounded kinematic verification. Ideal bilateral rank6 and12wrench algebra are not simultaneous actual clearance contact equilibrium; Rx/Ry do not have independent finite-motion stop tests.",
+  "unmet": [
+    "Actual external machine/fasteners and ground connection; four flange holes are interface only",
+    "Standard nut/tool geometry and thread flank/core/engagement/preload/material basis",
+    "Actual Palm/adapter/bolt/nut loaded contact, strength and mesh1%",
+    "Radial.21mm and axial.1mm play, impact and rotation interaction",
+    "Continuous assembly/tool access and manufacturing tolerances",
+    "All affected same-revision Stage1/Stage2 gates; adopted RevAA unchanged",
+    "Whole-system energy, overload protection and physical mass/inertia"
+  ],
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "whole_system_release": false,
+  "SOFA_executed": false,
+  "known_owned_analysis_children_running": 0
+}

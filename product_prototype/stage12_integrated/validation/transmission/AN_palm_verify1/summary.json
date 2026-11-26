@@ -1,0 +1,810 @@
+{
+  "status": "BOUNDED_ATTACHMENT_VERIFICATION_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/summary.json",
+    "SHA256": "a942d295b3bd45d29d7beffb190d28f76cf51cad7210b6a2ec5e509d3a00c883"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_verify1/inputs.json",
+    "SHA256": "f25eec2f147afa2872dbf33f26dbda6771f8c5f9344ae0cf1669fcf9292c6560"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AN_palm_verify1/producer.py",
+    "SHA256": "78e98559c10d69bf80d257a2a01e86fef65a1f4f349ec0851ec5993410cfc90b"
+  },
+  "checks": {
+    "input_hashes": true,
+    "nominal_interference": true,
+    "part_count": true,
+    "PALM_BOLT_0_solid": true,
+    "PALM_BOLT_0_closed_STL": true,
+    "PALM_NUT_0_solid": true,
+    "PALM_NUT_0_closed_STL": true,
+    "PALM_BOLT_1_solid": true,
+    "PALM_BOLT_1_closed_STL": true,
+    "PALM_NUT_1_solid": true,
+    "PALM_NUT_1_closed_STL": true,
+    "PALM_BOLT_2_solid": true,
+    "PALM_BOLT_2_closed_STL": true,
+    "PALM_NUT_2_solid": true,
+    "PALM_NUT_2_closed_STL": true,
+    "PALM_solid": true,
+    "PALM_closed_STL": true,
+    "PALM_BASE_ADAPTER_solid": true,
+    "PALM_BASE_ADAPTER_closed_STL": true,
+    "stop_axis0_-1": true,
+    "stop_axis0_1": true,
+    "stop_axis1_-1": true,
+    "stop_axis1_1": true,
+    "stop_axis2_-1": true,
+    "stop_axis2_1": true,
+    "torsion_stop_-1": true,
+    "torsion_stop_1": true,
+    "removed_bolts_lose_uplift": true,
+    "conditional_rank6": true,
+    "conditional_12_wrench_balance": true,
+    "ordered_assembly_samples": true
+  },
+  "meshes": [
+    {
+      "part": "PALM_BOLT_0",
+      "triangles": 668,
+      "closed": true
+    },
+    {
+      "part": "PALM_NUT_0",
+      "triangles": 672,
+      "closed": true
+    },
+    {
+      "part": "PALM_BOLT_1",
+      "triangles": 668,
+      "closed": true
+    },
+    {
+      "part": "PALM_NUT_1",
+      "triangles": 672,
+      "closed": true
+    },
+    {
+      "part": "PALM_BOLT_2",
+      "triangles": 668,
+      "closed": true
+    },
+    {
+      "part": "PALM_NUT_2",
+      "triangles": 672,
+      "closed": true
+    },
+    {
+      "part": "PALM",
+      "triangles": 29124,
+      "closed": true
+    },
+    {
+      "part": "PALM_BASE_ADAPTER",
+      "triangles": 3592,
+      "closed": true
+    }
+  ],
+  "stops": [
+    {
+      "axis": 0,
+      "sign": -1,
+      "samples": [
+        {
+          "displacement_mm": [
+            -0.2,
+            0,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "displacement_mm": [
+            -0.211,
+            0,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0013583767530582953,
+            0.001358376753055263,
+            0.0013583767530582962
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": 0,
+      "sign": 1,
+      "samples": [
+        {
+          "displacement_mm": [
+            0.2,
+            0,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "displacement_mm": [
+            0.211,
+            0,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0013583767530569925,
+            0.0013583767530543401,
+            0.0013583767530569943
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": 1,
+      "sign": -1,
+      "samples": [
+        {
+          "displacement_mm": [
+            0,
+            -0.2,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "displacement_mm": [
+            0,
+            -0.211,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0013583767530508362,
+            0.0013583767530540788,
+            0.001358376753050838
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": 1,
+      "sign": 1,
+      "samples": [
+        {
+          "displacement_mm": [
+            0,
+            0.2,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "displacement_mm": [
+            0,
+            0.211,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0013583767530504585,
+            0.0013583767530537427,
+            0.0013583767530504567
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": 2,
+      "sign": -1,
+      "samples": [
+        {
+          "displacement_mm": [
+            0,
+            0,
+            0
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "displacement_mm": [
+            0,
+            0,
+            -0.001
+          ],
+          "base_mm3": 1.48694446528263,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": 2,
+      "sign": 1,
+      "samples": [
+        {
+          "displacement_mm": [
+            0,
+            0,
+            0.09
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "displacement_mm": [
+            0,
+            0,
+            0.101
+          ],
+          "base_mm3": 0.0,
+          "bolt_mm3": [
+            0.023279201563135666,
+            0.02327920156313567,
+            0.023279201563135666
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": "Rz",
+      "sign": -1,
+      "samples": [
+        {
+          "angle_deg": -0.45,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "angle_deg": -0.5,
+          "bolt_mm3": [
+            0.031219867065804707,
+            0.03121986706578589,
+            0.03121986706575902
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "axis": "Rz",
+      "sign": 1,
+      "samples": [
+        {
+          "angle_deg": 0.45,
+          "bolt_mm3": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "angle_deg": 0.5,
+          "bolt_mm3": [
+            0.031219867065801793,
+            0.031219867065786486,
+            0.031219867065801155
+          ]
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "conditional_wrench_rank": 6,
+  "conditional_wrench_tests": [
+    {
+      "axis": 0,
+      "sign": -1,
+      "solver_success": true,
+      "residual": 5.551115123125783e-17,
+      "coefficients": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.12666666666666668,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.25333333333333335,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.12666666666666668
+      ]
+    },
+    {
+      "axis": 0,
+      "sign": 1,
+      "solver_success": true,
+      "residual": 5.551115123125783e-17,
+      "coefficients": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.12666666666666668,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.25333333333333335,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.12666666666666668,
+        0.0
+      ]
+    },
+    {
+      "axis": 1,
+      "sign": -1,
+      "solver_success": true,
+      "residual": 2.7755575615628914e-17,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.0,
+        0.0,
+        0.2193931022920578,
+        0.0,
+        0.0,
+        0.33333333333333337,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2193931022920578,
+        0.0
+      ]
+    },
+    {
+      "axis": 1,
+      "sign": 1,
+      "solver_success": true,
+      "residual": 2.7755575615628914e-17,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.2193931022920578,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.33333333333333337,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2193931022920578
+      ]
+    },
+    {
+      "axis": 2,
+      "sign": -1,
+      "solver_success": true,
+      "residual": 5.551115123125783e-17,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333334,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0
+      ]
+    },
+    {
+      "axis": 2,
+      "sign": 1,
+      "solver_success": true,
+      "residual": 5.551115123125783e-17,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333334,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333
+      ]
+    },
+    {
+      "axis": 3,
+      "sign": -1,
+      "solver_success": true,
+      "residual": 0.0,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5773502691896258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5773502691896258
+      ]
+    },
+    {
+      "axis": 3,
+      "sign": 1,
+      "solver_success": true,
+      "residual": 0.0,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5773502691896258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5773502691896258,
+        0.0
+      ]
+    },
+    {
+      "axis": 4,
+      "sign": -1,
+      "solver_success": true,
+      "residual": 5.551115123125783e-17,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333
+      ]
+    },
+    {
+      "axis": 4,
+      "sign": 1,
+      "solver_success": true,
+      "residual": 5.551115123125783e-17,
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0
+      ]
+    },
+    {
+      "axis": 5,
+      "sign": -1,
+      "solver_success": true,
+      "residual": 0.0,
+      "coefficients": [
+        0.0,
+        0.5773502691896258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.5773502691896258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": 5,
+      "sign": 1,
+      "solver_success": true,
+      "residual": 0.0,
+      "coefficients": [
+        0.5773502691896258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5773502691896258,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "ordered_assembly_samples": [
+    {
+      "part": "PALM_BASE_ADAPTER",
+      "samples": [
+        {
+          "shift_Z_mm": -40,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -20,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -5,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "part": "PALM_BOLT_0",
+      "samples": [
+        {
+          "shift_Z_mm": 32,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 16,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 4,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "part": "PALM_BOLT_1",
+      "samples": [
+        {
+          "shift_Z_mm": 32,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 16,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 4,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "part": "PALM_BOLT_2",
+      "samples": [
+        {
+          "shift_Z_mm": 32,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 16,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 4,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "part": "PALM_NUT_0",
+      "samples": [
+        {
+          "shift_Z_mm": -12,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -6,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -2,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "part": "PALM_NUT_1",
+      "samples": [
+        {
+          "shift_Z_mm": -12,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -6,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -2,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "part": "PALM_NUT_2",
+      "samples": [
+        {
+          "shift_Z_mm": -12,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -6,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": -2,
+          "hits": []
+        },
+        {
+          "shift_Z_mm": 0,
+          "hits": []
+        }
+      ]
+    }
+  ],
+  "actual_capacity_qualified": false,
+  "whole_system_release": false,
+  "limitations": [
+    "Rigid clearance stop tests and ideal bilateral wrench algebra are different conditions; not actual12direction elastic equilibrium",
+    "No rated threads/preload/material/strength; round nut envelopes not final tool-compatible hardware",
+    "External flange holes define interface only; machine/ground fasteners not yet implemented",
+    "Sampled insertion is not continuous assembly/tool path proof",
+    "Axial/radial play, bolt bending, Palm hole bearing and flange flexibility require loaded contact/mesh1%",
+    "No dynamic/global energy or system release"
+  ]
+}

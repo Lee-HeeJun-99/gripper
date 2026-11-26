@@ -1,3 +1,29 @@
+# Bounded C cycle — separate finite three-pad support (2026-11-26)
+
+Started at593a8706f47d613f09d57d2a3628fb4bd5e9a3ab. Supervisor local save PENDING;
+no git add/commit attempted. Actual result: product_prototype/stage12_integrated/validation/transmission/AK_three_pad_cycle1/summary.json.
+
+One separately tagged external candidate: three radius3mm/height6mm pads at
+radius25mm,60/180/300deg, top z=-12mm. All235AK source hashes verified.
+Actual underside contact28.2743338823mm² each;705intersection checks below
+1e-7mm³. Independent two-width volume/centroid reconstruction and virtual work
+pass;1% area corruption rejected. This is finite compression support geometry,
+not AK/RevAA adoption or installed grounding. Wrench basis rank3; centered
+-1N requires1/3N per pad, while uplift/Fx/Mz and eccentric case are rejected.
+No full support, strength, preload/friction, FEM convergence or energy PASS.
+
+Export extension error(exit1) and NumPy JSON serialization error(exit1) retained
+with original producers/logs/partial artifacts. Corrected analysis and verifier
+exit0 with checks inspected; four children4GiB/420s, one thread, no SOFA.
+Read-only release audit remains INTEGRATED_NOT_QUALIFIED. Historical failures
+and unrelated untracked files unchanged; adopted CAD/BOM unchanged.
+
+Next C requires new side/torsion/lift-off retention and connected ground path;
+do not rerun pad scans or fix unsupported nodes. Independent A/B READY work
+remains. No RUNNING task records or owned live analysis children at handoff.
+Exact save request: product_prototype/stage12_integrated/runtime/authorized_20261126_4/save_request7.json.
+No SDK/criteria/manager/Stage3/hardware changes, Git writes or external launch.
+
 # Bounded B cycle — actual AK root normal-contact and preload basis (2026-11-26)
 
 Starting HEAD df6c51b3cc01da5165b0364478e9f28b442ffac5. Supervisor local save PENDING; no git add/commit or new commit claimed.

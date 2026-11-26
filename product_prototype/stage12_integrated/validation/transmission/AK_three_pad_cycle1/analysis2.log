@@ -1,0 +1,171 @@
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 2                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_0.step(118 ents)  Write  Done[0m
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 2                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_1.step(118 ents)  Write  Done[0m
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 2                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_2.step(118 ents)  Write  Done[0m
+{
+  "status": "FINITE_PAD_GEOMETRY_PASS_SUPPORT_INCOMPLETE",
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/inputs.json",
+    "SHA256": "d732a63f1b8bb68c9f914729273309bd7ebd9975e82be31e5c157ffc2c80e6d5"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/producer.py",
+    "SHA256": "17e4201c071b876d36b994feb57774c9357861cea180f0b6ff57933960786c79"
+  },
+  "geometry_pass": true,
+  "normal_wrench_matrix": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      21.650635094610966,
+      2.89504723028882e-15,
+      -21.650635094610966
+    ],
+    [
+      -12.500000000000004,
+      25.0,
+      -12.500000000000004
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "rank": 3,
+  "cases": [
+    {
+      "label": "center_compression",
+      "applied_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "normal_reactions_N": [
+        0.3333333333333333,
+        0.3333333333333334,
+        0.3333333333333333
+      ],
+      "residual": 8.881784197001252e-16,
+      "feasible": true
+    },
+    {
+      "label": "uplift",
+      "applied_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "normal_reactions_N": [
+        -0.3333333333333333,
+        -0.3333333333333334,
+        -0.3333333333333333
+      ],
+      "residual": 8.881784197001252e-16,
+      "feasible": false
+    },
+    {
+      "label": "lateral",
+      "applied_wrench_N_Nmm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "normal_reactions_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residual": 1.0,
+      "feasible": false
+    },
+    {
+      "label": "torsion",
+      "applied_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "normal_reactions_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residual": 1.0,
+      "feasible": false
+    },
+    {
+      "label": "eccentric_compression",
+      "applied_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        40.0,
+        0.0
+      ],
+      "normal_reactions_N": [
+        0.8666666666666667,
+        -0.7333333333333332,
+        0.8666666666666666
+      ],
+      "residual": 0.0,
+      "feasible": false
+    }
+  ],
+  "whole_system_release": false,
+  "limitations": [
+    "Separate external candidate only, not AK/RevAA adoption or an installed fixture",
+    "Normal-only rigid pad contact; uniform pressure basis is a subset of possible distributed pressure",
+    "No tensile, lateral or torsional retention; unconnected pad bottoms have no qualified ground attachment",
+    "No preload/friction/material/strength/compliance/global energy qualification; no full-Palm equilibrium solved"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "checks": {
+    "six_slices": true,
+    "matrix_matches": true,
+    "rank_three": true,
+    "virtual_work": true,
+    "cases_match": true,
+    "center_supported": true,
+    "four_load_cases_rejected": true,
+    "corrupt_area_rejected": true
+  },
+  "rows": [
+    {
+      "pad": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_0.step",
+      "slice_mm": 0.001,
+      "area_mm2": 28.274333882302916,
+      "area_error_mm2": 5.229594535194337e-12,
+      "centroid_error_mm": 1.3855583347321954e-13,
+      "pass_check": true
+    },
+    {
+      "pad": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_0.step",
+      "slice_mm": 0.002,
+      "area_mm2": 28.274333882311293,
+      "area_error_mm2": 3.147704319417244e-12,
+      "centroid_error_mm": 8.171241461241152e-14,
+      "pass_check": true
+    },
+    {
+      "pad": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_1.step",
+      "slice_mm": 0.001,
+      "area_mm2": 28.274333882302923,
+      "area_error_mm2": 5.222489107836736e-12,
+      "centroid_error_mm": 1.3855583347321954e-13,
+      "pass_check": true
+    },
+    {
+      "pad": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_1.step",
+      "slice_mm": 0.002,
+      "area_mm2": 28.274333882311293,
+      "area_error_mm2": 3.147704319417244e-12,
+      "centroid_error_mm": 7.815970093361102e-14,
+      "pass_check": true
+    },
+    {
+      "pad": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_2.step",
+      "slice_mm": 0.001,
+      "area_mm2": 28.274333882302916,
+      "area_error_mm2": 5.229594535194337e-12,
+      "centroid_error_mm": 1.4033219031261979e-13,
+      "pass_check": true
+    },
+    {
+      "pad": "product_prototype/stage12_integrated/validation/transmission/AK_three_pad2/PAD_2.step",
+      "slice_mm": 0.002,
+      "area_mm2": 28.274333882311286,
+      "area_error_mm2": 3.140598892059643e-12,
+      "centroid_error_mm": 8.348877145181177e-14,
+      "pass_check": true
+    }
+  ],
+  "cases": [
+    {
+      "label": "center_compression",
+      "feasible": true,
+      "matches": true,
+      "residual": 8.881784197001252e-16
+    },
+    {
+      "label": "uplift",
+      "feasible": false,
+      "matches": true,
+      "residual": 8.881784197001252e-16
+    },
+    {
+      "label": "lateral",
+      "feasible": false,
+      "matches": true,
+      "residual": 1.0
+    },
+    {
+      "label": "torsion",
+      "feasible": false,
+      "matches": true,
+      "residual": 1.0
+    },
+    {
+      "label": "eccentric_compression",
+      "feasible": false,
+      "matches": true,
+      "residual": 0.0
+    }
+  ]
+}

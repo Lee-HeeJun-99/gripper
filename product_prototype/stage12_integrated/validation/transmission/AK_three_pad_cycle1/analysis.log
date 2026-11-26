@@ -1,0 +1,23 @@
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 2                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/transmission/AK_three_pad1/PAD_0.step.step(118 ents)  Write  Done[0m
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/ak_three_pad_support.py", line 67, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/ak_three_pad_support.py", line 43, in main
+    rows.append(dict(pad=ref(p),center_mm=[x,y,-12],area_mm2=area,
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 10, in ref
+    def ref(p):return dict(path=str(p.relative_to(REPO)),SHA256=sha(p))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 9, in sha
+    def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+  File "/usr/lib/python3.10/pathlib.py", line 1126, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/transmission/AK_three_pad1/PAD_0.step'

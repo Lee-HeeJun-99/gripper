@@ -1,0 +1,91 @@
+{
+  "status": "ACTUAL_P1_OFFAXIS_SEARCH_ASSEMBLY_AND_FULL_SPATIAL_LOAD_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide53/summary.json",
+    "SHA256": "784f0207e1560b3def452c15b60f38a3314de611d1aa10d38338832fb7021575"
+  },
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_assembly_execution/execution.json",
+        "SHA256": "214e59b51f770216ec08c8448b09d64949a5cdef35548cac4c97af649c5d24c2"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_assembly_execution/analysis.log",
+        "SHA256": "1e01a41d7f7f6df20402fe1697ffe72cc4cc29c19f40819f5b3efe23b6193626"
+      },
+      "log_tail": "{\"checks\": {\"all128partidentity\": true, \"finite_nonthread_endpoint_clear\": false}, \"queries\": 142, \"hits\": [{\"state\": \"COMPLETE\", \"pair\": [\"BENCH_SUPPORT\", \"BENCH_THROUGH_SOCKET_KEY_1\"], \"intersection_mm3\": 3.2478654474445765, \"distance_mm\": null, \"elapsed_s\": 0.0313401420135051}, {\"state\": \"COMPLETE\", \"pair\": [\"BENCH_SUPPORT\", \"BENCH_THROUGH_SOCKET_KEY_3\"], \"intersection_mm3\": 3.246359377299735, \"distance_mm\": null, \"elapsed_s\": 0.03457662812434137}, {\"state\": \"COMPLETE\", \"pair\": [\"BENCH_THROUGH_NUT_0\", \"EXTERNAL_BENCH_PLATE\"], \"intersection_mm3\": 1.3353248243498888, \"distance_mm\": null, \"elapsed_s\": 0.23555739200673997}, {\"state\": \"COMPLETE\", \"pair\": [\"BENCH_THROUGH_NUT_1\", \"EXTERNAL_BENCH_PLATE\"], \"intersection_mm3\": 3.238550990300574, \"distance_mm\": null, \"elapsed_s\": 0.2468082921113819}, {\"state\": \"COMPLETE\", \"pair\": [\"BENCH_THROUGH_NUT_2\", \"EXTERNAL_BENCH_PLATE\"], \"intersection_mm3\": 1.3353248243498888, \"distance_mm\": null, \"elapsed_s\": 0.23986053420230746}, {\"state\": \"COMPLETE\", \"pair\": [\"BENCH_THROUGH_NUT_3\", \"EXTERNAL_BENCH_PLATE\"], \"intersection_mm3\": 3.2215711116873043, \"distance_mm\": null, \"elapsed_s\": 0.24815351096913218}]}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_contact_execution/execution.json",
+        "SHA256": "ff76ed8f15ca7ae295884d6a59b9336be323f235e1dcf61e7826e0fe1964076a"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_contact_execution/analysis.log",
+        "SHA256": "2fa0a3962d83bddfdb1d5966297fa0a004dcaeb9e883c008f67f3ed75ee311ca"
+      },
+      "log_tail": "{\"mount\": 2, \"bindings\": 238, \"failed\": 0}\n{\"mount\": 3, \"bindings\": 244, \"failed\": 0}\n{\"checks\": {\"actual_edge_normal_cones\": true, \"all_actual_bindings\": true, \"finite108DOFs\": true, \"no_external_torque_or_declared_rotation_fixation\": true, \"unit_separation_equilibrium\": false, \"virtualwork\": true}, \"contacts\": 122, \"failed_bindings\": 0, \"residual\": null}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_contactb_execution/execution.json",
+        "SHA256": "1482d54713c12086aef3949d7e5a885aee51b513b7f718bf5fe4e25017063d8b"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_contactb_execution/analysis.log",
+        "SHA256": "606199f83ca07547c95d479e8c1f2c388da450d03018acc2cefd0c142190a290"
+      },
+      "log_tail": "{\"mount\": 0, \"bindings\": 286, \"failed\": 0}\n{\"mount\": 1, \"bindings\": 292, \"failed\": 0}\n{\"mount\": 2, \"bindings\": 298, \"failed\": 0}\n{\"mount\": 3, \"bindings\": 304, \"failed\": 0}\n{\"checks\": {\"actual_edge_normal_cones\": true, \"all_actual_bindings\": true, \"finite108DOFs\": true, \"no_external_torque_or_declared_rotation_fixation\": true, \"unit_separation_equilibrium\": false, \"virtualwork\": true}, \"contacts\": 152, \"failed_bindings\": 0, \"residual\": null}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_independent_execution/execution.json",
+        "SHA256": "73a78499391e594271f0f4ba564fe60841e28c5f1fa269af309ac2ad281aa12d"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_independent_execution/analysis.log",
+        "SHA256": "7b5ab1a2e0bf12c2963f0111a4ee6430c1fc40103185007d3990bb9a991a4a9f"
+      },
+      "log_tail": "{\"checks\": {\"optimizer_success\": false, \"all_finite_gaps\": false, \"independent_nut_axes\": true, \"no_search_domain_boundary\": true}, \"opening\": 0.056271976648542825, \"minimum_gap\": -0.0001313699053380954, \"iterations\": 150, \"message\": \"Iteration limit reached\"}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_independentc_execution/execution.json",
+        "SHA256": "b183e9dc3ebff2f84a97c7fad7329e902524454b398b209a90c0f2b896afd9d5"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_independentc_execution/analysis.log",
+        "SHA256": "21dc97a1111b24cf0c745fbfa3869cd1d97ae3e1f7ccf7f65cb06444546147e6"
+      },
+      "log_tail": "{\"checks\": {\"exact_continuous_loaded_flank\": false, \"optimizer_success\": true, \"all_finite_gaps\": true, \"independent_nut_axes\": true, \"no_search_domain_boundary\": true}, \"opening\": 0.042181940890474355, \"minimum_gap\": -8.43769498715119e-15, \"iterations\": 6, \"message\": \"Optimization terminated successfully\"}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_independente_execution/execution.json",
+        "SHA256": "32b525cb04794b234a214f04d6157a8313f0f3a3fbe3b079d4699d212b476059"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary54_independente_execution/analysis.log",
+        "SHA256": "d905a815ce7b99ca6b14c6aeab3c596272ba9222fdcde31e055761875a793f38"
+      },
+      "log_tail": "{\"checks\": {\"exact_continuous_loaded_flank\": true, \"optimizer_success\": false, \"all_finite_gaps\": true, \"independent_nut_axes\": true, \"no_search_domain_boundary\": true}, \"opening\": 0.04211111293743773, \"minimum_gap\": -1.1029344548774134e-08, \"iterations\": 187, \"message\": \"Positive directional derivative for linesearch\"}\n"
+    }
+  ],
+  "causes": [
+    "Direct minimum-over-angle SLSQP reached150iterations;gap-0.000131369905mm;notaccepted",
+    "Unrestricted independentaxes smooth angle constraints return essentiallycoaxialmaximumopening;not proofthat offaxisphysicalstatescannotoccur",
+    "64angle finiteoffaxis sample passedsampledconstraints butfailed exactcontinuousloadedgap;added derivedactualcriticalangle,NOTtolerancerelaxation",
+    "Firstassemblyproducer incorrectlycarried stationaryBENCH_THROUGHhardware withreceiver;false3.24mm3intersectiondiagnostics preserved;correctedstaticgroups give122actualnonthreadqueriesclear in eachnewendpoint",
+    "Redundant4flank+offsetequalities searchlinesearchfailed187iterations;analyticallyeliminatedsearchvariablesonly yields6iterationcandidate;noDOFsremovedfrom108DOFstatics",
+    "Fresh2loaded and4loaded actualoffaxiscrestcontactsets fail108DOFunitaxialstatics;independentFarkas validated;NOTwholeproductimpossibility"
+  ],
+  "all_previous_failures_preserved": true,
+  "whole_system_release": false
+}

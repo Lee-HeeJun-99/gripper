@@ -1,0 +1,96 @@
+{
+  "status": "ACTUAL_P1_FINITE_INACTIVE_NUTCAGE_TAKEUP_LOCAL_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide53/summary.json",
+    "SHA256": "784f0207e1560b3def452c15b60f38a3314de611d1aa10d38338832fb7021575"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cageevent54/producer.py",
+    "SHA256": "3b5e01a10aefb50c9c99254ac0f859039f9170013c6e6e7961a06571222da285"
+  },
+  "journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cageevent54/journal.jsonl",
+    "SHA256": "bce173860967b0576cd96edc8758673b62aafa7536fb7b54030dcb9d8618c04c"
+  },
+  "pose_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_independent54f/summary.json",
+    "SHA256": "966a2bf4ecba85490f76bb68ce9079ba273ec41f01817a7839bb244fedebde7b"
+  },
+  "witness_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_audit54b/summary.json",
+    "SHA256": "3ffcc9628f57a479922d490c3f32bd317b7263fa5a54724af310a5c71b9a75de"
+  },
+  "checks": {
+    "actual_nut_boundary": true,
+    "actual_cage_wall": true,
+    "before_clear_after_intersection": true,
+    "nominal_initial_reaction_zero": true,
+    "finite_translation": true
+  },
+  "body": "BENCH_MOUNT_NUT_1",
+  "initial_cage_gap_mm": 0.0192823809435545,
+  "separating_twist": [
+    4.690513638619294,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0
+  ],
+  "local_event_scale": 0.004746894982552543,
+  "finite_nut_translation_mm": [
+    0.0222653756567562,
+    -0.0,
+    -0.0
+  ],
+  "contact_point_mm": [
+    103.4732373358525,
+    -54.08377272487282,
+    57.4
+  ],
+  "cage_inward_normal": [
+    -0.8660254037844387,
+    -0.49999999999999994,
+    0.0
+  ],
+  "nut_binding": {
+    "score": 8.5043743672181e-12,
+    "face_index": 0,
+    "distance_mm": 8.5043743672181e-12,
+    "normal_error": null
+  },
+  "support_binding": {
+    "score": 5.455054835764313e-12,
+    "face_index": 185,
+    "distance_mm": 5.265040165099717e-12,
+    "normal_error": 1.9001467066459554e-13
+  },
+  "probes": [
+    {
+      "state": "COMPLETE",
+      "scale": 0.004736894982552544,
+      "intersection_mm3": 0.0,
+      "elapsed_s": 0.2522814320400357
+    },
+    {
+      "state": "COMPLETE",
+      "scale": 0.004746894982552543,
+      "intersection_mm3": 0.0,
+      "elapsed_s": 0.25473449914716184
+    },
+    {
+      "state": "COMPLETE",
+      "scale": 0.004756894982552543,
+      "intersection_mm3": 1.0280933691207381e-07,
+      "elapsed_s": 0.2708425761666149
+    }
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Onlynut1translationcomponentof108DOFwitness isadvanced;NOT wholeproduct path/firstevent ornew_equilibrium",
+    "Other body contacts and threads mayclose earlier;do NOT mix thisnewcontact withold endpointtractions",
+    "Finite edge/flat contact is not elasticpressure/bearing/notch/materialcapacity;all22gatesremainunqualified"
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "status": "ACTUAL_P1_OFFAXIS_LOCAL_GAP_AND_12DOF_WORK_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide53/summary.json",
+    "SHA256": "784f0207e1560b3def452c15b60f38a3314de611d1aa10d38338832fb7021575"
+  },
+  "actual_parts": 128,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_offaxis54/producer.py",
+    "SHA256": "0839e83f7ea1505684b2a4b1287d0d435e95a9572e1dd213cf9ea295bfb74202"
+  },
+  "journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_offaxis54/journal.jsonl",
+    "SHA256": "69ae977771702107a2035228077aff947a7a464b29f90572b5d4ce780e4e6d8d"
+  },
+  "checks": {
+    "all128_CAD_hashes": true,
+    "independent_axes": true,
+    "actual_nut_boundary": true,
+    "actual_bolt_normal": true,
+    "positive_gaps": true,
+    "twelve_DOF_FD": true,
+    "action_reaction_moments": true,
+    "virtualwork": true
+  },
+  "rows": [
+    {
+      "mount": 0,
+      "bolt": "BENCH_MOUNT_BOLT_0",
+      "nut": "BENCH_MOUNT_NUT_0",
+      "bolt_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_BOLT_0.step",
+        "SHA256": "b73e4255e1e0e72c69029dc50f0db63d8c4314576f580f281f71c8408b54f1ab"
+      },
+      "nut_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_NUT_0.step",
+        "SHA256": "c63577ab52c5ed28e5a27e0b411e5d239eb659c09d0e40bd366bdc58167d8518"
+      },
+      "relative_transverse_offset_mm": [
+        0.02,
+        -0.012
+      ],
+      "bolt_yaw_rad": 0.011,
+      "nut_yaw_rad": -0.007,
+      "opening_mm": 0.015,
+      "nut_material_point_mm": [
+        -60.576272022427055,
+        -56.29771726457861,
+        56.48589637028918
+      ],
+      "bolt_nearest_point_mm": [
+        -60.564921632136944,
+        -56.31246646738366,
+        56.4538053021558
+      ],
+      "bolt_face_index": 96,
+      "local_candidate_faces": 6,
+      "gap_mm": 0.03709726401048668,
+      "axial_same_xy_gap_mm": 0.04288404364814369,
+      "nut_boundary_distance_mm": 7.951695597203189e-11,
+      "normal_on_nut": [
+        -0.3059630027406603,
+        0.39758195647204625,
+        0.8650521538276053
+      ],
+      "bolt_outward_normal": [
+        -0.30596300274050914,
+        0.39758195647214006,
+        0.8650521538276156
+      ],
+      "normal_error": 1.5115686480271506e-13,
+      "gap_Jacobian_12DOF": [
+        0.3059630027406603,
+        -0.39758195647204625,
+        -0.8650521538276053,
+        -0.48421580421349075,
+        -0.6029651900629326,
+        0.10586177736558378,
+        -0.3059630027406603,
+        0.39758195647204625,
+        0.8650521538276053,
+        0.48421580421349064,
+        0.6029651900629327,
+        -0.10586177736558389
+      ],
+      "finite_difference": [
+        {
+          "h": 1e-05,
+          "derivative": [
+            0.30596300320123726,
+            -0.39758195655228973,
+            -0.8650521540438243,
+            -0.48421580418588067,
+            -0.6029651899018551,
+            0.10586177749752344,
+            -0.30596300320123726,
+            0.39758195655228973,
+            0.8650521540438243,
+            0.48421580418588067,
+            0.6029651899018551,
+            -0.10586177749752344
+          ],
+          "error": 4.605769654553171e-10
+        },
+        {
+          "h": 2e-06,
+          "derivative": [
+            0.30596300344166993,
+            -0.39758195800009,
+            -0.8650521561189006,
+            -0.48421580571382516,
+            -0.6029651898296906,
+            0.1058617780016341,
+            -0.30596300344166993,
+            0.39758195800009,
+            0.8650521561189006,
+            0.48421580571382516,
+            0.6029651898296906,
+            -0.1058617780016341
+          ],
+          "error": 2.2912953756559773e-09
+        }
+      ],
+      "unit_normal_forces_N": {
+        "nut": [
+          -0.3059630027406603,
+          0.39758195647204625,
+          0.8650521538276053
+        ],
+        "bolt": [
+          0.3059630027406603,
+          -0.39758195647204625,
+          -0.8650521538276053
+        ]
+      },
+      "unit_pair_net_moment_Nmm": [
+        -1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        -1.1102230246251565e-16
+      ],
+      "unit_virtual_work": 0.968648806722581,
+      "direct_virtual_work": 0.9686488067225815,
+      "virtual_work_error": 4.440892098500626e-16,
+      "status": "POSITIVE_GAP_NO_REACTION_NOT_EQUILIBRIUM"
+    },
+    {
+      "mount": 1,
+      "bolt": "BENCH_MOUNT_BOLT_1",
+      "nut": "BENCH_MOUNT_NUT_1",
+      "bolt_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_BOLT_1.step",
+        "SHA256": "ed6c3f16f4498617f0e670285ae9cd46edf38d35a176bb70c6ad36927071279b"
+      },
+      "nut_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_NUT_1.step",
+        "SHA256": "aaac35db0be0b7496eb2a20b60a19de3232c2c22483282aa8d1f512425423add"
+      },
+      "relative_transverse_offset_mm": [
+        0.02,
+        -0.012
+      ],
+      "bolt_yaw_rad": 0.011,
+      "nut_yaw_rad": -0.007,
+      "opening_mm": 0.015,
+      "nut_material_point_mm": [
+        99.42372797757295,
+        -56.29771726457861,
+        56.48589637028918
+      ],
+      "bolt_nearest_point_mm": [
+        99.43507836786259,
+        -56.312466467383075,
+        56.45380530215705
+      ],
+      "bolt_face_index": 96,
+      "local_candidate_faces": 6,
+      "gap_mm": 0.03709726400902758,
+      "axial_same_xy_gap_mm": 0.04288404364814369,
+      "nut_boundary_distance_mm": 7.806655173254469e-11,
+      "normal_on_nut": [
+        -0.3059630027398615,
+        0.3975819564719779,
+        0.865052153827919
+      ],
+      "bolt_outward_normal": [
+        -0.3059630027396124,
+        0.3975819564721283,
+        0.8650521538279382
+      ],
+      "normal_error": 2.4907853557465387e-13,
+      "gap_Jacobian_12DOF": [
+        0.3059630027398615,
+        -0.3975819564719779,
+        -0.865052153827919,
+        -0.48421580421419463,
+        -0.6029651900654069,
+        0.10586177736683311,
+        -0.3059630027398615,
+        0.3975819564719779,
+        0.865052153827919,
+        0.48421580421419474,
+        0.6029651900654067,
+        -0.10586177736683311
+      ],
+      "finite_difference": [
+        {
+          "h": 1e-05,
+          "derivative": [
+            0.30596300275263777,
+            -0.3975819565335547,
+            -0.8650521540431304,
+            -0.48421580446829365,
+            -0.6029651901329203,
+            0.105861777657118,
+            -0.30596300275263777,
+            0.3975819565335547,
+            0.8650521540431304,
+            0.48421580446829365,
+            0.6029651901329203,
+            -0.105861777657118
+          ],
+          "error": 2.902848933450386e-10
+        },
+        {
+          "h": 2e-06,
+          "derivative": [
+            0.30596300286747646,
+            -0.3975819541281872,
+            -0.8650521554128682,
+            -0.48421580337888737,
+            -0.6029651890004928,
+            0.10586177717243628,
+            -0.30596300286747646,
+            0.3975819541281872,
+            0.8650521554128682,
+            0.48421580337888737,
+            0.6029651890004928,
+            -0.10586177717243628
+          ],
+          "error": 2.3437907170631433e-09
+        }
+      ],
+      "unit_normal_forces_N": {
+        "nut": [
+          -0.3059630027398615,
+          0.3975819564719779,
+          0.865052153827919
+        ],
+        "bolt": [
+          0.3059630027398615,
+          -0.3975819564719779,
+          -0.865052153827919
+        ]
+      },
+      "unit_pair_net_moment_Nmm": [
+        1.1102230246251565e-16,
+        -2.220446049250313e-16,
+        0.0
+      ],
+      "unit_virtual_work": 2.5528367363684867,
+      "direct_virtual_work": 2.5528367363684863,
+      "virtual_work_error": 4.440892098500626e-16,
+      "status": "POSITIVE_GAP_NO_REACTION_NOT_EQUILIBRIUM"
+    },
+    {
+      "mount": 2,
+      "bolt": "BENCH_MOUNT_BOLT_2",
+      "nut": "BENCH_MOUNT_NUT_2",
+      "bolt_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_BOLT_2.step",
+        "SHA256": "abdd9dec4d8c2b26c93ebadb77d918fd5ba5ae21535cadd388e6eaa7328d47f6"
+      },
+      "nut_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_NUT_2.step",
+        "SHA256": "12fd0e1ad207e059109554b60951deee59027a9f9a5f0070478d48d09dfff34e"
+      },
+      "relative_transverse_offset_mm": [
+        0.02,
+        -0.012
+      ],
+      "bolt_yaw_rad": 0.011,
+      "nut_yaw_rad": -0.007,
+      "opening_mm": 0.015,
+      "nut_material_point_mm": [
+        -60.576272022427055,
+        40.70228273542139,
+        56.48589637028918
+      ],
+      "bolt_nearest_point_mm": [
+        -60.5649216321364,
+        40.68753353261558,
+        56.45380530215413
+      ],
+      "bolt_face_index": 96,
+      "local_candidate_faces": 6,
+      "gap_mm": 0.037097264012400794,
+      "axial_same_xy_gap_mm": 0.04288404364814369,
+      "nut_boundary_distance_mm": 8.092994860277261e-11,
+      "normal_on_nut": [
+        -0.3059630027396217,
+        0.3975819564720264,
+        0.8650521538279817
+      ],
+      "bolt_outward_normal": [
+        -0.3059630027395344,
+        0.3975819564720731,
+        0.865052153827991
+      ],
+      "normal_error": 8.72635297355373e-14,
+      "gap_Jacobian_12DOF": [
+        0.3059630027396217,
+        -0.3975819564720264,
+        -0.8650521538279817,
+        -0.484215804214181,
+        -0.6029651900661079,
+        0.1058617773673205,
+        -0.3059630027396217,
+        0.3975819564720264,
+        0.8650521538279817,
+        0.4842158042141811,
+        0.6029651900661079,
+        -0.1058617773673205
+      ],
+      "finite_difference": [
+        {
+          "h": 1e-05,
+          "derivative": [
+            0.30596300302741797,
+            -0.3975819566855165,
+            -0.8650521540108645,
+            -0.4842158043267402,
+            -0.6029651899018551,
+            0.10586177729872413,
+            -0.30596300302741797,
+            0.3975819566855165,
+            0.8650521540108645,
+            0.4842158043267402,
+            0.6029651899018551,
+            -0.10586177729872413
+          ],
+          "error": 2.877962868019779e-10
+        },
+        {
+          "h": 2e-06,
+          "derivative": [
+            0.3059630041477024,
+            -0.3975819565880251,
+            -0.8650521551283735,
+            -0.48421580446308954,
+            -0.6029651899944893,
+            0.10586177700937227,
+            -0.3059630041477024,
+            0.3975819565880251,
+            0.8650521551283735,
+            0.48421580446308954,
+            0.6029651899944893,
+            -0.10586177700937227
+          ],
+          "error": 1.4080807075878e-09
+        }
+      ],
+      "unit_normal_forces_N": {
+        "nut": [
+          -0.3059630027396217,
+          0.3975819564720264,
+          0.8650521538279817
+        ],
+        "bolt": [
+          0.3059630027396217,
+          -0.3975819564720264,
+          -0.8650521538279817
+        ]
+      },
+      "unit_pair_net_moment_Nmm": [
+        1.1102230246251565e-16,
+        0.0,
+        0.0
+      ],
+      "unit_virtual_work": -2.5201293772474362,
+      "direct_virtual_work": -2.520129377247436,
+      "virtual_work_error": 4.440892098500626e-16,
+      "status": "POSITIVE_GAP_NO_REACTION_NOT_EQUILIBRIUM"
+    },
+    {
+      "mount": 3,
+      "bolt": "BENCH_MOUNT_BOLT_3",
+      "nut": "BENCH_MOUNT_NUT_3",
+      "bolt_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_BOLT_3.step",
+        "SHA256": "146249e0b3b83ecbb10a5324fc53b8938fc25d7a5c144f69bed39b5fbddc4afe"
+      },
+      "nut_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/BENCH_MOUNT_NUT_3.step",
+        "SHA256": "734d1ff5aa40afb64a7622a64c7535b6ebf90373902b840b6cf933538cae822a"
+      },
+      "relative_transverse_offset_mm": [
+        0.02,
+        -0.012
+      ],
+      "bolt_yaw_rad": 0.011,
+      "nut_yaw_rad": -0.007,
+      "opening_mm": 0.015,
+      "nut_material_point_mm": [
+        99.42372797757295,
+        40.70228273542139,
+        56.48589637028918
+      ],
+      "bolt_nearest_point_mm": [
+        99.43507836786313,
+        40.68753353261617,
+        56.45380530215539
+      ],
+      "bolt_face_index": 96,
+      "local_candidate_faces": 6,
+      "gap_mm": 0.037097264010930546,
+      "axial_same_xy_gap_mm": 0.04288404364814369,
+      "nut_boundary_distance_mm": 7.947556063648916e-11,
+      "normal_on_nut": [
+        -0.3059630027387233,
+        0.39758195647188604,
+        0.865052153828364
+      ],
+      "bolt_outward_normal": [
+        -0.30596300273863153,
+        0.3975819564720615,
+        0.8650521538283157
+      ],
+      "normal_error": 1.75470749042006e-13,
+      "gap_Jacobian_12DOF": [
+        0.3059630027387233,
+        -0.39758195647188604,
+        -0.865052153828364,
+        -0.4842158042151805,
+        -0.6029651900689378,
+        0.10586177736862579,
+        -0.3059630027387233,
+        0.39758195647188604,
+        0.865052153828364,
+        0.4842158042151805,
+        0.6029651900689377,
+        -0.1058617773686259
+      ],
+      "finite_difference": [
+        {
+          "h": 1e-05,
+          "derivative": [
+            0.30596300275263777,
+            -0.3975819565845556,
+            -0.8650521536462257,
+            -0.4842158041092059,
+            -0.6029651904264355,
+            0.10586177753013624,
+            -0.30596300275263777,
+            0.3975819565845556,
+            0.8650521536462257,
+            0.4842158041092059,
+            0.6029651904264355,
+            -0.10586177753013624
+          ],
+          "error": 3.574978091336334e-10
+        },
+        {
+          "h": 2e-06,
+          "derivative": [
+            0.3059630026107374,
+            -0.3975819556634175,
+            -0.8650521547085704,
+            -0.4842158056201501,
+            -0.6029651894497862,
+            0.10586177870940128,
+            -0.3059630026107374,
+            0.3975819556634175,
+            0.8650521547085704,
+            0.4842158056201501,
+            0.6029651894497862,
+            -0.10586177870940128
+          ],
+          "error": 1.404969585117044e-09
+        }
+      ],
+      "unit_normal_forces_N": {
+        "nut": [
+          -0.3059630027387233,
+          0.39758195647188604,
+          0.865052153828364
+        ],
+        "bolt": [
+          0.3059630027387233,
+          -0.39758195647188604,
+          -0.865052153828364
+        ]
+      },
+      "unit_pair_net_moment_Nmm": [
+        0.0,
+        -1.1102230246251565e-16,
+        -1.1102230246251565e-16
+      ],
+      "unit_virtual_work": -1.6703259396777415,
+      "direct_virtual_work": -1.670325939677741,
+      "virtual_work_error": 4.440892098500626e-16,
+      "status": "POSITIVE_GAP_NO_REACTION_NOT_EQUILIBRIUM"
+    }
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Positive gap forces are zero;1N pair is normalized Jacobian/work verification only,not operating tension or installed equilibrium",
+    "Nut material point to bolt trimmed face;NOT whole-surface closest pair or common-normal contact",
+    "Independent transverse offset is local mechanism test,not full128part admissibleassembly pose",
+    "No wholethread Boolean root,wholeassemblyCCD,elasticpressure,strength,100gfield,convergence/globalenergy orhostqualification"
+  ]
+}

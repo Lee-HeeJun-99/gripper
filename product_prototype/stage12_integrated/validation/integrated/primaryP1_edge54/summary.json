@@ -1,0 +1,135 @@
+{
+  "status": "ACTUAL_P1_OFFAXIS_CREST_EDGE_NORMAL_CONE_LOCAL_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide53/summary.json",
+    "SHA256": "784f0207e1560b3def452c15b60f38a3314de611d1aa10d38338832fb7021575"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_offaxis54/summary.json",
+    "SHA256": "8a0f146da19d0833225a9c521dec54fb4ae2f213b203568fc47357976960d42d"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_edge54/producer.py",
+    "SHA256": "05d768513f7766c4cb42257ecc56d85c6e618f6b76778a6cbb53b56a56b87df8"
+  },
+  "journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_edge54/journal.jsonl",
+    "SHA256": "5a4feee75105e594817861d6f9afe08bff6d1088f740fe6573075d09bca11647"
+  },
+  "checks": {
+    "actual_single_bolt_flank": true,
+    "actual_nut_crest_edge": true,
+    "bound_to_actual_BRep": true,
+    "stationary_angle": true,
+    "nut_normal_cone": true,
+    "local_bracket_agreement": true,
+    "before_open_after_material_overlap": true
+  },
+  "opening_mm": 0.03176811638110259,
+  "relative_transverse_offset_mm": [
+    0.02,
+    -0.012
+  ],
+  "angle_rad": 24.693729344241234,
+  "contact_point_mm": [
+    -57.03849206176707,
+    -58.92107307432646,
+    57.02322549996401
+  ],
+  "bolt_incident_faces": [
+    {
+      "face_index": 96,
+      "distance_mm": 4.907279646394733e-11,
+      "normal": [
+        0.43044002375680723,
+        -0.2582640207956752,
+        0.8648821200086692
+      ],
+      "kind": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+      "elapsed_s": 0.0019607371650636196
+    }
+  ],
+  "nut_incident_faces": [
+    {
+      "face_index": 26,
+      "distance_mm": 1.0227833223330947e-09,
+      "normal": [
+        -0.905172098861528,
+        0.42504525811096433,
+        -0.0
+      ],
+      "kind": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+      "elapsed_s": 0.0012052380479872227
+    },
+    {
+      "face_index": 28,
+      "distance_mm": 1.0227833223330947e-09,
+      "normal": [
+        -0.43040118245195247,
+        0.25824735950445726,
+        -0.8649064246801133
+      ],
+      "kind": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+      "elapsed_s": 0.0033050079364329576
+    }
+  ],
+  "nut_outward_cone_coefficients": [
+    5.6272174656989764e-05,
+    0.9999718990784207
+  ],
+  "normal_cone_error": 6.530873858747767e-11,
+  "angular_gap_derivative_mm_per_rad": -1.5057399771478686e-10,
+  "actual_material_probes": [
+    {
+      "opening_offset_mm": -0.0001,
+      "point_mm": [
+        -57.038483452966595,
+        -58.92107823960687,
+        57.023242797606414
+      ],
+      "nut": "IN",
+      "bolt": "OUT"
+    },
+    {
+      "opening_offset_mm": 0.0001,
+      "point_mm": [
+        -57.038483452966595,
+        -58.92107823960687,
+        57.023242797606414
+      ],
+      "nut": "IN",
+      "bolt": "IN"
+    }
+  ],
+  "unit_contact_normal_on_nut": [
+    0.43044002375680723,
+    -0.2582640207956752,
+    0.8648821200086692
+  ],
+  "unit_contact_wrench_about_bolt_nominal_tip": [
+    0.43044002375680723,
+    -0.2582640207956752,
+    0.8648821200086692,
+    -0.0158292598136478,
+    -0.3951558880060324,
+    -0.11012021095583474
+  ],
+  "conditional_one_N_axial_wrench": [
+    0.4976863479990692,
+    -0.298611816363005,
+    1.0,
+    -0.01830221650724972,
+    -0.4568898799781773,
+    -0.1273239536443775
+  ],
+  "screw_work_about_nominal_axis": 7.171072902156794e-10,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Finite exact singlelocal nutcrest/boltflank event;not completeallthread/bore/cage/pin/guidecontactsequence",
+    "1Naxial wrench is conditional pairtransfer,not installed equilibrium/preload/operating tension/capacity",
+    "Edge normalcone admits kinematic contact but finite elasticpressure/notch/root/materialminima unqualified",
+    "Offaxis relativepose is not full128partassembly orcontinuousCCD qualification;all22gatesunchanged"
+  ]
+}

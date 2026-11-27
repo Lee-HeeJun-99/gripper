@@ -9,7 +9,7 @@
   },
   "primary_state": {
     "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-    "SHA256": "c17bdb658a15b9b7f1bce580fdd9aa03239cb726468f4d9bd2c4d632863def8c"
+    "SHA256": "ada00124646f5e1cdf04169937133f66eb62a1b78ffdee0186bfcbea169701fa"
   },
   "historical_previous_state": {
     "path": "product_prototype/stage12_integrated/models/current_candidate_before30.json",
@@ -20,23 +20,39 @@
   "hardware": "HARDWARE_NOT_MEASURED",
   "powered_operation": "NOT_AUTHORIZED",
   "current_physics_sourcefield": null,
-  "model_binding_status": "Same actual78part primaryP1_ycapture24 unchanged. New arc-area Galerkin normal-contact enrichment with exact seated radial cylinder gap, load-selected nonnegative cell forces, exact closest-cylinder vector12DOF gap pullback and physical pair force/torque.30conditional local solves: target12/24/48quadrature; independent asinh64 reconstruction and finite-difference gap derivative. Integration and transverse response contrasts pass1percent locally, but ALL4axial peak-pressure contrasts FAIL1percent (2.19..5.25percent); within-cell point contact FAIL up to16.210415percent. ActualBRep freeRootpin tip has nonzero halfspace traction at6interior points, independent24/48quadrature changes<=1.97e-12; local halfspace cannot be the actual finite-body solution. No productpressure,4port split,clamp/thread/bore/Baseanchor/fullsupport equilibrium or system gate qualified.",
+  "model_binding_status": "Same78part primaryP1_ycapture24. Implemented finite-body Kelvin/Ritz Neumann operators on actual RootBack,Front,bothRails, retaining allFE elasticDOFs and6rigid gauges; exterior analytic modes share ONE variational energy with FE. Positive Schur work and independent directelement/complex-step/load/energy reconstruction verified. Positive adaptive integration has0unresolved estimatorcells; independent Duffy7 re-solves differ <= 0.00021714987percent in response. ALL4unit-port independent force residuals 3.033448e-07..2.78515785e-06N FAIL retained1e-8N check. Root/Front mixedmesh changes6.83051/8.43315percent FAIL1percent; unloadedend traction remains nonzero; facet radial error up to0.00797085448mm. Prescribed.3rad patch and sixresultantsource are conditional operator sensitivities,NOT contactpressure/clamp/support equilibrium; NO productsourcefield/gate qualified.",
   "latest_actual_validation": {
-    "primaryP1_variational_contact33": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_variational_contact33/summary.json",
-      "SHA256": "fead305e50277f9704933c22dd455bef7be8b6d376534d68bd2b432049ebb1dd"
+    "primaryP1_finite_body34h2q5": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q5/summary.json",
+      "SHA256": "454c1fa5be154be56ad3ab7253685dd8d87089c5bc4e07d72a50b17952d466ce"
     },
-    "primaryP1_variational_contact33audit": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_variational_contact33audit/summary.json",
-      "SHA256": "342e2c278648db9ddfb19565bb7cbef79a9349909fab974e4927a741fa8c924c"
+    "primaryP1_finite_body34h2q6": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/summary.json",
+      "SHA256": "10fc4aa8fcb352cea0771f68d4de49c15851e2d3668dce268e158d1f4fc56ec9"
     },
-    "primaryP1_variational_contact33auditb": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_variational_contact33auditb/summary.json",
-      "SHA256": "c3b9d1ec0cdec9caaaea0dceb4c99848751e746e447b2e04313f0cf2fe5cd27f"
+    "primaryP1_finite_body34h15q6": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/summary.json",
+      "SHA256": "a20ee8bddd6f2a3eca1e97074a62c796ee6bda6f561ccd8c6532ed58e434dbc3"
     },
-    "primaryP1_finite_tip33": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_tip33/summary.json",
-      "SHA256": "5242d30b62fd310e79668a6f65a644c4b4d9e8dee7000e796fbf0ea0bb3d6549"
+    "primaryP1_finite_body34audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34audit/summary.json",
+      "SHA256": "62cf5627a5e0db81dd541269b22e754fea1968bf8db44caf3f3d5c11499a7faa"
+    },
+    "primaryP1_finite_end34audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_end34audit/summary.json",
+      "SHA256": "2ea3fb7bb61896ebdb9fb2398be05e59d8da859ee1d8dac228258a40bbf5116d"
+    },
+    "primaryP1_finite_body34adaptive": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/summary.json",
+      "SHA256": "5055fe81319c9c971da247f625a422b5396d2dd0ec42e63aa87de41ef3892748"
+    },
+    "primaryP1_finite_body34adaptive_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive_audit/summary.json",
+      "SHA256": "b03fdc1beaf0efb533bfd4e7d3ca65b34d4a94af36d890722e64b4ea30449dd5"
+    },
+    "primaryP1_finite_end34adaptive_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_end34adaptive_audit/summary.json",
+      "SHA256": "e42bc0c21c038bb9e10fcebdf2633c9f6e233989414bbfed47d3d4f084d848fa"
     }
   }
 }

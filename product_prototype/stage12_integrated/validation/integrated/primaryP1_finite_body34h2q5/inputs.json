@@ -1,0 +1,25 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "geometry": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_gamma_attachment29/pin_hole_geometry.json",
+    "SHA256": "63ddbd9c1c1c3497b710fadfc1377a0127b0308415649840460870ebf4ae51a8"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q5/producer.py",
+    "SHA256": "f5e2b0b08ab40ee03b1181fe19ee07a181b2c5efa225b55640af63986abc39ec"
+  },
+  "dependency": {
+    "path": "product_prototype/stage12_integrated/scripts/primary_pin_compliance31.py",
+    "SHA256": "41cdb49ee5cdab3cfee51bd58bcc533116a6aa1cab9b870eb62156b203669dfc"
+  },
+  "h_mm": 2.0,
+  "curvature_elements": 16,
+  "quadrature_order": 5,
+  "source_offset_mm": 0.15,
+  "conditional_material": "All4bodies E200000MPa nu.3, contrast ONLY; Front/Rail minimum source not qualified.",
+  "pressure": "Prescribed .3rad radial patch, NOT solved pressure; source interface six-resultant Neumann sensitivity, NOT counterload/actual clamp/support.",
+  "derivation": "a(v+Ha,w+Hb)=ell(w+Hb). Eliminate FE gauges: S=H-G^T K^+G, d=L-G^T K^+F, a=S^-1 d; C=F^T K^+F+d^T S^-1 d. H here is analytic-mode energy matrix, not displacement. This is one shared variational decomposition; no guessed diagonal subtraction, no existing halfspace compliance added. Finite free surfaces enter natural weak boundary conditions; pointwise traction and quadrature remain independent checks."
+}

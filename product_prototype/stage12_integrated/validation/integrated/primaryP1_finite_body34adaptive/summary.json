@@ -1,0 +1,403 @@
+{
+  "status": "ACTUAL_P1_ADAPTIVE_FINITE_BODY_OPERATOR_CONDITIONAL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/inputs.json",
+    "SHA256": "c2f678aec8c72902771b6be1b1767935e909c3d5f9e7a8550d39afef021ce435"
+  },
+  "checks": {
+    "all4bodies": true,
+    "local_variational_and_estimator_checks": true
+  },
+  "results": [
+    {
+      "part": "F0_ROOT_BACK",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/F0_ROOT_BACK.step",
+        "SHA256": "4c19a537bd22804b14fc24d97d23e837b33d569ac7a3115cdc7ac4f128293092"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/F0_ROOT_BACK/fields.npz",
+        "SHA256": "8f9f25fa0dc094a045ea15bd123713a593e02ec49c82e549700a085db15cff80"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/F0_ROOT_BACK/traction_quadrature.json",
+        "SHA256": "30c53ab0703a029a39ad07aad4e9ad873eb62a422733fc5dc4d0dba824d2abba"
+      },
+      "nodes": 9783,
+      "tetra": 38640,
+      "DOF": 29349,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.5,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 249.72679489743896,
+        "global_ports": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": "adaptive_positive_5_6",
+      "source_offset_mm": 0.15,
+      "checks": {
+        "positive_regular_mode_work": true,
+        "positive_elastic_work": true,
+        "stationarity": true,
+        "elastic_work": true,
+        "no_unresolved_integration_cells": true
+      },
+      "mesh_volume_mm3": 4358.153326145672,
+      "CAD_volume_mm3": 4356.566786508501,
+      "regular_mode_work_eigenvalues": [
+        6.707906764393358e-07,
+        6.898979719961212e-07,
+        1.3575048756466444e-06,
+        1.439414858128392e-06
+      ],
+      "compliance_FE_mm_N": [
+        [
+          1.9891871168280353e-05,
+          4.804874076981436e-07,
+          5.5236974134861435e-06,
+          4.096630039216223e-07
+        ],
+        [
+          4.804874076981383e-07,
+          1.976777505393981e-05,
+          4.277608841069388e-07,
+          5.658790063965595e-06
+        ],
+        [
+          5.52369741348614e-06,
+          4.277608841069423e-07,
+          7.429504820513942e-06,
+          3.694850222905563e-07
+        ],
+        [
+          4.096630039216211e-07,
+          5.658790063965597e-06,
+          3.694850222905563e-07,
+          7.345712750812048e-06
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          1.992235157226416e-05,
+          4.802092817482175e-07,
+          5.59074671592357e-06,
+          4.0994751183273467e-07
+        ],
+        [
+          4.802092817482175e-07,
+          1.9803735601116556e-05,
+          4.2665909603124507e-07,
+          5.679382860487741e-06
+        ],
+        [
+          5.59074671592357e-06,
+          4.2665909603124507e-07,
+          8.50176290037599e-06,
+          3.6929302744188276e-07
+        ],
+        [
+          4.0994751183273467e-07,
+          5.679382860487741e-06,
+          3.6929302744188276e-07,
+          8.490047810339772e-06
+        ]
+      ],
+      "enrichment_compliance_relative": 0.048241404161093994,
+      "unit_stationarity_N": 7.543956610098063e-15,
+      "gauge_duals_max_N": 1.5567465041169915e-13,
+      "energy_identity_relative": 1.43687996029733e-14,
+      "free_end_raw_stress_trace_samples": 0,
+      "free_end_raw_traction_max_MPa_per_unit_N": null,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 6.651487570954487,
+      "adaptive_integration": {
+        "local_relative_quadrature_estimator": 0.0001,
+        "max_depth": 6,
+        "accepted_subtetra_by_depth": {
+          "0": 37868,
+          "1": 5443,
+          "2": 5288,
+          "3": 4206,
+          "4": 3164,
+          "5": 416
+        },
+        "subdivided_cells": 2535,
+        "unresolved_cells": 0,
+        "maximum_unresolved_estimator": 0.0,
+        "maximum_accepted_estimator": 9.99951151657072e-05,
+        "estimator_is_rigorous_bound": false
+      },
+      "compliance_change_from_unadapted_relative": 0.001326962907772221
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_ROOT_FRONT.step",
+        "SHA256": "35ed1a5c77dbc64239e2326cbce8707cc6aaf14e275cdbda373d4729cf0c45e8"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/F0_ROOT_FRONT/fields.npz",
+        "SHA256": "6272e16127c1f11842aa003d7a95044052644ee433046a1ed6d6bdbb84043956"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/F0_ROOT_FRONT/traction_quadrature.json",
+        "SHA256": "c9ccf834a01cbff2c51cfb4da98e65d36327f86bd140a836c1a74e64d19f2ae7"
+      },
+      "nodes": 4309,
+      "tetra": 16856,
+      "DOF": 12927,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.0,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 247.2564990437692,
+        "global_ports": [
+          0,
+          1
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": "adaptive_positive_5_6",
+      "source_offset_mm": 0.15,
+      "checks": {
+        "positive_regular_mode_work": true,
+        "positive_elastic_work": true,
+        "stationarity": true,
+        "elastic_work": true,
+        "no_unresolved_integration_cells": true
+      },
+      "mesh_volume_mm3": 1974.9900667908869,
+      "CAD_volume_mm3": 1974.4412445048838,
+      "regular_mode_work_eigenvalues": [
+        9.239418036924971e-07,
+        1.026491200684053e-06
+      ],
+      "compliance_FE_mm_N": [
+        [
+          4.842233001838038e-06,
+          2.2164126624782517e-07
+        ],
+        [
+          2.2164126624782456e-07,
+          5.420578659133294e-06
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          4.925857077141087e-06,
+          2.2139183319552245e-07
+        ],
+        [
+          2.2139183319552245e-07,
+          5.508917257333424e-06
+        ]
+      ],
+      "enrichment_compliance_relative": 0.016445601325356166,
+      "unit_stationarity_N": 4.8698282601804125e-15,
+      "gauge_duals_max_N": 4.567960908874636e-14,
+      "energy_identity_relative": 1.6726401712266686e-14,
+      "free_end_raw_stress_trace_samples": 0,
+      "free_end_raw_traction_max_MPa_per_unit_N": null,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 2.0556124770082533,
+      "adaptive_integration": {
+        "local_relative_quadrature_estimator": 0.0001,
+        "max_depth": 6,
+        "accepted_subtetra_by_depth": {
+          "0": 16107,
+          "1": 5658,
+          "2": 2550,
+          "3": 976
+        },
+        "subdivided_cells": 1205,
+        "unresolved_cells": 0,
+        "maximum_unresolved_estimator": 0.0,
+        "maximum_accepted_estimator": 9.97296809848474e-05,
+        "estimator_is_rigorous_bound": false
+      },
+      "compliance_change_from_unadapted_relative": 0.00011185976414905857
+    },
+    {
+      "part": "F0_RAIL_L",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_L.step",
+        "SHA256": "3cb1e86454718006124f5bd4c165012630d34ff67f1bc3e24bf51beb0f7ae70d"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/F0_RAIL_L/fields.npz",
+        "SHA256": "a499c80e9d262c2fb09661e14907d6529de478d2a8c2092125407db20d54a893"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/F0_RAIL_L/traction_quadrature.json",
+        "SHA256": "1deb2ec3a958675dcbbae1963fcb2907b71f283a3eaea4da64f2ca43a6365c7c"
+      },
+      "nodes": 837,
+      "tetra": 2005,
+      "DOF": 2511,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.5,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 38.824965741395886,
+        "global_ports": [
+          2
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": "adaptive_positive_5_6",
+      "source_offset_mm": 0.15,
+      "checks": {
+        "positive_regular_mode_work": true,
+        "positive_elastic_work": true,
+        "stationarity": true,
+        "elastic_work": true,
+        "no_unresolved_integration_cells": true
+      },
+      "mesh_volume_mm3": 74.35177692026194,
+      "CAD_volume_mm3": 74.34783054407349,
+      "regular_mode_work_eigenvalues": [
+        3.7812521818189877e-07
+      ],
+      "compliance_FE_mm_N": [
+        [
+          0.00012118899954801426
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          0.00012209464915486612
+        ]
+      ],
+      "enrichment_compliance_relative": 0.00741760276245299,
+      "unit_stationarity_N": 1.4085954624931674e-14,
+      "gauge_duals_max_N": 5.348620687376735e-12,
+      "energy_identity_relative": 1.5984024885468355e-14,
+      "free_end_raw_stress_trace_samples": 0,
+      "free_end_raw_traction_max_MPa_per_unit_N": null,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 0.17468857998028398,
+      "adaptive_integration": {
+        "local_relative_quadrature_estimator": 0.0001,
+        "max_depth": 6,
+        "accepted_subtetra_by_depth": {
+          "0": 1896,
+          "1": 828,
+          "2": 345,
+          "3": 56
+        },
+        "subdivided_cells": 160,
+        "unresolved_cells": 0,
+        "maximum_unresolved_estimator": 0.0,
+        "maximum_accepted_estimator": 9.987299060297306e-05,
+        "estimator_is_rigorous_bound": false
+      },
+      "compliance_change_from_unadapted_relative": 6.548054880001867e-05
+    },
+    {
+      "part": "F0_RAIL_R",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_R.step",
+        "SHA256": "54c0b3a3f7746005d086cc2673a1ae0bd9b2c6a3b4a968befc13bf67d761ad83"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/F0_RAIL_R/fields.npz",
+        "SHA256": "eb5ddf41740a7cee1e192de5b9b8b218018abf0640033c6edce6593270923901"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/F0_RAIL_R/traction_quadrature.json",
+        "SHA256": "0e61eb264ef1ffd6ad68737fba2b14509c013eb3e03af1ce030189c1469df3b6"
+      },
+      "nodes": 830,
+      "tetra": 1969,
+      "DOF": 2490,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.5,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 38.82496574139594,
+        "global_ports": [
+          3
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": "adaptive_positive_5_6",
+      "source_offset_mm": 0.15,
+      "checks": {
+        "positive_regular_mode_work": true,
+        "positive_elastic_work": true,
+        "stationarity": true,
+        "elastic_work": true,
+        "no_unresolved_integration_cells": true
+      },
+      "mesh_volume_mm3": 74.35177692026215,
+      "CAD_volume_mm3": 74.34783054404069,
+      "regular_mode_work_eigenvalues": [
+        3.7293905274223915e-07
+      ],
+      "compliance_FE_mm_N": [
+        [
+          0.00012123455814974974
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          0.00012210693078993533
+        ]
+      ],
+      "enrichment_compliance_relative": 0.007144333532437795,
+      "unit_stationarity_N": 3.3313385687169794e-14,
+      "gauge_duals_max_N": 3.736936091460518e-12,
+      "energy_identity_relative": 6.659340498558763e-15,
+      "free_end_raw_stress_trace_samples": 0,
+      "free_end_raw_traction_max_MPa_per_unit_N": null,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 0.14838403300382197,
+      "adaptive_integration": {
+        "local_relative_quadrature_estimator": 0.0001,
+        "max_depth": 6,
+        "accepted_subtetra_by_depth": {
+          "0": 1871,
+          "1": 732,
+          "2": 408,
+          "3": 64
+        },
+        "subdivided_cells": 158,
+        "unresolved_cells": 0,
+        "maximum_unresolved_estimator": 0.0,
+        "maximum_accepted_estimator": 9.910018087529347e-05,
+        "estimator_is_rigorous_bound": false
+      },
+      "compliance_change_from_unadapted_relative": 5.937088416717124e-05
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "accepted_product_equilibria": 0,
+  "whole_system_release": false,
+  "elapsed_s": 9.032020670827478,
+  "limitations": [
+    "Integration estimator is not independent quadrature certification. Finitebody mesh/endtraction,exact curvedcontact geometry,real clamp/source coupling and physical material minima remain unqualified.",
+    "Same prescribed .3rad open-gap load sensitivity; not accepted contact,4port load split,100g demand,physical support/globalenergy or release. No CAD change."
+  ]
+}

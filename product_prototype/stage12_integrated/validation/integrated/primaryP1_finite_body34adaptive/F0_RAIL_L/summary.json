@@ -1,0 +1,79 @@
+{
+  "part": "F0_RAIL_L",
+  "part_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_L.step",
+    "SHA256": "3cb1e86454718006124f5bd4c165012630d34ff67f1bc3e24bf51beb0f7ae70d"
+  },
+  "fields": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/F0_RAIL_L/fields.npz",
+    "SHA256": "a499c80e9d262c2fb09661e14907d6529de478d2a8c2092125407db20d54a893"
+  },
+  "quadrature": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/F0_RAIL_L/traction_quadrature.json",
+    "SHA256": "1deb2ec3a958675dcbbae1963fcb2907b71f283a3eaea4da64f2ca43a6365c7c"
+  },
+  "nodes": 837,
+  "tetra": 2005,
+  "DOF": 2511,
+  "conditional_E_MPa": 200000.0,
+  "conditional_nu": 0.3,
+  "material_source_minimum_qualified": false,
+  "source": {
+    "source_x_mm": 50.5,
+    "source_z_min_mm": 3.0,
+    "source_area_mm2": 38.824965741395886,
+    "global_ports": [
+      2
+    ],
+    "pressure_angle_rad": 0.3,
+    "source_is_actual_clamp_solution": false
+  },
+  "quadrature_order": "adaptive_positive_5_6",
+  "source_offset_mm": 0.15,
+  "checks": {
+    "positive_regular_mode_work": true,
+    "positive_elastic_work": true,
+    "stationarity": true,
+    "elastic_work": true,
+    "no_unresolved_integration_cells": true
+  },
+  "mesh_volume_mm3": 74.35177692026194,
+  "CAD_volume_mm3": 74.34783054407349,
+  "regular_mode_work_eigenvalues": [
+    3.7812521818189877e-07
+  ],
+  "compliance_FE_mm_N": [
+    [
+      0.00012118899954801426
+    ]
+  ],
+  "compliance_enriched_mm_N": [
+    [
+      0.00012209464915486612
+    ]
+  ],
+  "enrichment_compliance_relative": 0.00741760276245299,
+  "unit_stationarity_N": 1.4085954624931674e-14,
+  "gauge_duals_max_N": 5.348620687376735e-12,
+  "energy_identity_relative": 1.5984024885468355e-14,
+  "free_end_raw_stress_trace_samples": 0,
+  "free_end_raw_traction_max_MPa_per_unit_N": null,
+  "free_surface_pointwise_qualified": false,
+  "elapsed_s": 0.17468857998028398,
+  "adaptive_integration": {
+    "local_relative_quadrature_estimator": 0.0001,
+    "max_depth": 6,
+    "accepted_subtetra_by_depth": {
+      "0": 1896,
+      "1": 828,
+      "2": 345,
+      "3": 56
+    },
+    "subdivided_cells": 160,
+    "unresolved_cells": 0,
+    "maximum_unresolved_estimator": 0.0,
+    "maximum_accepted_estimator": 9.987299060297306e-05,
+    "estimator_is_rigorous_bound": false
+  },
+  "compliance_change_from_unadapted_relative": 6.548054880001867e-05
+}

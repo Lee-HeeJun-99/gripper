@@ -1,0 +1,354 @@
+{
+  "status": "ACTUAL_P1_FINITE_BODY_VARIATIONAL_OPERATOR_CONDITIONAL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/inputs.json",
+    "SHA256": "164c5cf2f7b50535b41c76ffd7046b8928f3dc1adbe35babe5dbf47fd63d7399"
+  },
+  "checks": {
+    "all_four_actual_finite_bodies": true,
+    "all_local_variational_checks": true
+  },
+  "results": [
+    {
+      "part": "F0_ROOT_BACK",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/F0_ROOT_BACK.step",
+        "SHA256": "4c19a537bd22804b14fc24d97d23e837b33d569ac7a3115cdc7ac4f128293092"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_ROOT_BACK/fields.npz",
+        "SHA256": "f58bbd16753e7d0679c6bcd1045bcdc87a0868f2b1f80a1f946308ce35bb6fba"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_ROOT_BACK/traction_quadrature.json",
+        "SHA256": "78d180b982838ac209411c87439377567a3cd55f48cb08bb27969a66dbc7ecb0"
+      },
+      "nodes": 4432,
+      "tetra": 16017,
+      "DOF": 13296,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.5,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 245.54505524383947,
+        "global_ports": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": 6,
+      "source_offset_mm": 0.15,
+      "checks": {
+        "nonzero_body_volume": true,
+        "volume_original1percent": true,
+        "six_gauges_only": true,
+        "gauge_force_negligible": true,
+        "positive_regular_mode_work": true,
+        "positive_total_elastic_work": true,
+        "variational_stationarity": true,
+        "work_identity": true,
+        "gauge_motion": true
+      },
+      "mesh_volume_mm3": 4359.971139856834,
+      "CAD_volume_mm3": 4356.566786508501,
+      "regular_mode_work_eigenvalues": [
+        7.562173742171884e-07,
+        7.878231614845589e-07,
+        1.786380916728466e-06,
+        1.8217862383332127e-06
+      ],
+      "compliance_FE_mm_N": [
+        [
+          1.8266357599025323e-05,
+          4.1624078337043213e-07,
+          5.2118278295704655e-06,
+          3.620334293180272e-07
+        ],
+        [
+          4.162407833704347e-07,
+          1.8327215858499646e-05,
+          3.822452538880979e-07,
+          5.287569679021882e-06
+        ],
+        [
+          5.211827829570462e-06,
+          3.822452538880948e-07,
+          6.113290415058906e-06,
+          3.3588169525377416e-07
+        ],
+        [
+          3.620334293180236e-07,
+          5.287569679021879e-06,
+          3.358816952537732e-07,
+          5.736597318985861e-06
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          1.83594334374688e-05,
+          4.1569387706030204e-07,
+          5.326157722845844e-06,
+          3.633736632189682e-07
+        ],
+        [
+          4.1569387706030204e-07,
+          1.8414543968147477e-05,
+          3.792502192660569e-07,
+          5.404422013855368e-06
+        ],
+        [
+          5.326157722845844e-06,
+          3.792502192660569e-07,
+          8.121076721601993e-06,
+          3.3538192273556824e-07
+        ],
+        [
+          3.633736632189682e-07,
+          5.404422013855368e-06,
+          3.3538192273556824e-07,
+          8.17742590320761e-06
+        ]
+      ],
+      "enrichment_compliance_relative": 0.10426465855212877,
+      "unit_stationarity_N": 6.495882119966073e-15,
+      "gauge_duals_max_N": 1.562795885380425e-14,
+      "energy_identity_relative": 1.6375302573016504e-14,
+      "free_end_raw_stress_trace_samples": 128,
+      "free_end_raw_traction_max_MPa_per_unit_N": 0.18301589600952073,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 2.923607593169436
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_ROOT_FRONT.step",
+        "SHA256": "35ed1a5c77dbc64239e2326cbce8707cc6aaf14e275cdbda373d4729cf0c45e8"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_ROOT_FRONT/fields.npz",
+        "SHA256": "689a356c74c8f7935e85bc511eda33a2d0209ddfd8b2ea44644f2c8e3a1c77c0"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_ROOT_FRONT/traction_quadrature.json",
+        "SHA256": "d646e6b8c6c45c44eedbeeec6c4497cad69c183c10d98c908704325ef723aa51"
+      },
+      "nodes": 1979,
+      "tetra": 6988,
+      "DOF": 5937,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.0,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 244.8795458160559,
+        "global_ports": [
+          0,
+          1
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": 6,
+      "source_offset_mm": 0.15,
+      "checks": {
+        "nonzero_body_volume": true,
+        "volume_original1percent": true,
+        "six_gauges_only": true,
+        "gauge_force_negligible": true,
+        "positive_regular_mode_work": true,
+        "positive_total_elastic_work": true,
+        "variational_stationarity": true,
+        "work_identity": true,
+        "gauge_motion": true
+      },
+      "mesh_volume_mm3": 1975.609407538455,
+      "CAD_volume_mm3": 1974.4412445048838,
+      "regular_mode_work_eigenvalues": [
+        1.1525764043411048e-06,
+        1.4278250117399954e-06
+      ],
+      "compliance_FE_mm_N": [
+        [
+          4.311522552149296e-06,
+          2.0278498115680532e-07
+        ],
+        [
+          2.0278498115680378e-07,
+          4.879568408734984e-06
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          4.4968265317201945e-06,
+          2.0270297423714524e-07
+        ],
+        [
+          2.0270297423714524e-07,
+          5.056629468442296e-06
+        ]
+      ],
+      "enrichment_compliance_relative": 0.03784116484510893,
+      "unit_stationarity_N": 4.850910255080332e-15,
+      "gauge_duals_max_N": 3.2807386536298773e-14,
+      "energy_identity_relative": 9.066446049934097e-15,
+      "free_end_raw_stress_trace_samples": 1376,
+      "free_end_raw_traction_max_MPa_per_unit_N": 0.2713723644882111,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 1.1565605360083282
+    },
+    {
+      "part": "F0_RAIL_L",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_L.step",
+        "SHA256": "3cb1e86454718006124f5bd4c165012630d34ff67f1bc3e24bf51beb0f7ae70d"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_RAIL_L/fields.npz",
+        "SHA256": "239d9b7cc3b9a53b4a166fcdd387d9e00285601360cff1f1532cd51d56ab225f"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_RAIL_L/traction_quadrature.json",
+        "SHA256": "d3241e25d3779855d78f1996b687cf541329ac3ed050ebcdbbfb4752e8ba56cc"
+      },
+      "nodes": 535,
+      "tetra": 1225,
+      "DOF": 1605,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.5,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 37.14624409318347,
+        "global_ports": [
+          2
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": 6,
+      "source_offset_mm": 0.15,
+      "checks": {
+        "nonzero_body_volume": true,
+        "volume_original1percent": true,
+        "six_gauges_only": true,
+        "gauge_force_negligible": true,
+        "positive_regular_mode_work": true,
+        "positive_total_elastic_work": true,
+        "variational_stationarity": true,
+        "work_identity": true,
+        "gauge_motion": true
+      },
+      "mesh_volume_mm3": 74.3566814285818,
+      "CAD_volume_mm3": 74.34783054407349,
+      "regular_mode_work_eigenvalues": [
+        5.395462823705241e-07
+      ],
+      "compliance_FE_mm_N": [
+        [
+          0.00012150417498403897
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          0.00012326829998265167
+        ]
+      ],
+      "enrichment_compliance_relative": 0.014311262497016503,
+      "unit_stationarity_N": 4.2364549368567594e-14,
+      "gauge_duals_max_N": 3.208397252883255e-12,
+      "energy_identity_relative": 4.397733126189341e-16,
+      "free_end_raw_stress_trace_samples": 368,
+      "free_end_raw_traction_max_MPa_per_unit_N": 0.9737072735578851,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 0.21606541611254215
+    },
+    {
+      "part": "F0_RAIL_R",
+      "part_reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_R.step",
+        "SHA256": "54c0b3a3f7746005d086cc2673a1ae0bd9b2c6a3b4a968befc13bf67d761ad83"
+      },
+      "fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_RAIL_R/fields.npz",
+        "SHA256": "00afdf5931f9c05b67c0cac4f6bfc05208aadff0dc2f49e9b6ceca8d10fc9d12"
+      },
+      "quadrature": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/F0_RAIL_R/traction_quadrature.json",
+        "SHA256": "23185aed4ed673925ab188c85beb23a3a3799498691dc4213de646ad8e703e48"
+      },
+      "nodes": 528,
+      "tetra": 1190,
+      "DOF": 1584,
+      "conditional_E_MPa": 200000.0,
+      "conditional_nu": 0.3,
+      "material_source_minimum_qualified": false,
+      "source": {
+        "source_x_mm": 50.5,
+        "source_z_min_mm": 3.0,
+        "source_area_mm2": 36.9907492891294,
+        "global_ports": [
+          3
+        ],
+        "pressure_angle_rad": 0.3,
+        "source_is_actual_clamp_solution": false
+      },
+      "quadrature_order": 6,
+      "source_offset_mm": 0.15,
+      "checks": {
+        "nonzero_body_volume": true,
+        "volume_original1percent": true,
+        "six_gauges_only": true,
+        "gauge_force_negligible": true,
+        "positive_regular_mode_work": true,
+        "positive_total_elastic_work": true,
+        "variational_stationarity": true,
+        "work_identity": true,
+        "gauge_motion": true
+      },
+      "mesh_volume_mm3": 74.3566814285818,
+      "CAD_volume_mm3": 74.34783054404069,
+      "regular_mode_work_eigenvalues": [
+        5.420537855936292e-07
+      ],
+      "compliance_FE_mm_N": [
+        [
+          0.00012117475564402388
+        ]
+      ],
+      "compliance_enriched_mm_N": [
+        [
+          0.00012299228182005806
+        ]
+      ],
+      "enrichment_compliance_relative": 0.01477756286116623,
+      "unit_stationarity_N": 2.5884242665918933e-14,
+      "gauge_duals_max_N": 1.7627178256260907e-11,
+      "energy_identity_relative": 6.611403718436553e-15,
+      "free_end_raw_stress_trace_samples": 368,
+      "free_end_raw_traction_max_MPa_per_unit_N": 1.2909352521244861,
+      "free_surface_pointwise_qualified": false,
+      "elapsed_s": 0.20674795703962445
+    }
+  ],
+  "actual_CAD_change_files": [],
+  "accepted_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Conditional finite-body Neumann sensitivity, NOT pressure/contact equilibrium or full source/clamp solution. Actual open-gap patch traction never fed to product sourcefield.",
+    "All4actual solid domains retain FE DOFs and6gauges. No fixedRoot, equalquarter load split, material minimum, actual clamp/sourceQ, 100g operating load, strength or globalenergy qualification.",
+    "Finite free boundary is variational only; raw pointwise traction and independent quadrature/mesh contrasts MUST be checked. Original1percent remains. Kelvin sources outside circular boundary are analytic enrichments, not physical applied pointforces."
+  ]
+}

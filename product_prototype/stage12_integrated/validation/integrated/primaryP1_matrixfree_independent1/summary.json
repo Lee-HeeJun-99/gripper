@@ -1,0 +1,54 @@
+{
+  "status": "ACTUAL_P1_MATRIXFREE_INDEPENDENT_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_matrixfree1/summary.json",
+    "SHA256": "a78d8e847d63715c82227021e981c58c1fdcb9fb9cbd89379b16cee28b6661de"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_matrixfree_independent1/producer.py",
+    "SHA256": "e1fa04bd814ae3ef0f0eaf75903f95a2e15ecd3f081efba76a82b657091cad75"
+  },
+  "checks": {
+    "all_original_rows": true,
+    "all_original_DOF": true,
+    "positive_scale": true,
+    "exact_P_symmetry": true,
+    "all_active_rows_reconstructed": true,
+    "all_active_RHS_reconstructed": true,
+    "full_physical_conic_rows_retained": true,
+    "slack_archive": true,
+    "stationarity_archive": true,
+    "producer_metrics": true,
+    "conic_recovery_reproduced": true,
+    "scaled_saddle_residual_reproduced": true,
+    "wrong_dual_sign_rejected": true,
+    "missing_support_rejected": true,
+    "qualification_matches": true
+  },
+  "metrics": {
+    "physical_primal_mm": 1.1719554692679378e-06,
+    "physical_dual_N": 2.942228363559227,
+    "physical_sign_defect_N": 0.0,
+    "physical_complementarity_Nmm": 2.7332194699754706e-10
+  },
+  "maximum_scaled_row_error": 5.551115123125783e-16,
+  "maximum_physical_RHS_error_mm": 2.4078226836391952e-21,
+  "conic_basis_residual": 1.0134985195897461,
+  "scaled_saddle_residual": 3.0918303146976103e-07,
+  "wrong_dual_sign_defect_N": 27.305346183987687,
+  "all2169contact_rows_checked": true,
+  "all14branches_checked": true,
+  "physical_KKT_qualified": false,
+  "actual_support_updates": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.31738359085284173,
+  "limitations": [
+    "Independent assembly-unit/algebra/cone audit only. Producer matrix origin must separately agree with original product FE reconstruction.",
+    "Audit PASS confirms measured rejection when physical KKT fails; it never qualifies an equilibrium, stress, mesh, whole-system gate or release."
+  ]
+}

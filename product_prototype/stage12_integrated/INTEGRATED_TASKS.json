@@ -2507,10 +2507,72 @@
       "id": "goal_primary_full_cone_matrixfree_freeY_kkt",
       "track": "C",
       "priority": -1015,
-      "status": "READY",
+      "status": "PARTIAL_VALIDATED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME78part P1_seated22 from ORIGINAL savedsourcefield, never conditioned/direct/rejectedincrement as acceptedstate. Attachedendpoint modules now enforce auxiliarystringdy=0 and transmit physicalRootFy; independentlyverified4states. primary_rootY_coordinate augments ORIGINALRoot_free_Y row2175 with unpenalizedgamma, zero gamma metric/force; -Rootgaugemultiplier=0 must hold. MotorYrow2176 and allother originalgauges unchanged. First replace sparse-direct fill with a bounded matrix-free/block-preconditioned saddle solve on the ACTUAL currentmetric and activeequalitybasis. primaryP1_full_cone_working_set1 gives161physicalactiverows/rank153, rowerror5.55e-16/RHS2.41e-21mm; directSuperLU memory expansion thenSIGSEGV under4GiB, so NOlargermemory/directretry. SignedQR basis is ONLY equalitycoordinates: recover ALLoriginalphysical multipliers using fullT.Ty=ybasis, compression/tension signs, all2169inequalities/14branches and independentoriginal-unitKKT/corruptionchecks; do not replacecone by signedbasis or drop near-dependent normals. ConditionedQP120sFAIL remainsphysicalprimal5.02168e-6/dual.00680278; do not merely extendOSQPiterations. Qualify boundedlinear solver first, then ONE corrected attachedload+gamma contactupdate only if prerequisiteKKT/cone/gauge checks pass, allcurrentgravity/sourceBaseports and fullnonlineargap/pressure/complementarity/stationarity/wrench/RootY checks. No Base residualcancellation, no addedfixation, no remesh/blanketfine/gap/timeoutretry. PreserveR11floor/.50wire/sourceparts/3Finger-cartridge-jamming and all22unqualifiedgates/oldmeshFAILs.",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "motor_alignment_reactions",
+        "physical_mass_inertia",
+        "numerical_convergence",
+        "root_palm_strength",
+        "qualified_worst_case"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+        "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": "2026-11-27T06:14:37.257090+00:00",
+      "consecutive_runs": 1,
+      "system_gate_contribution": 8,
+      "historical_parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+        "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+      },
+      "target_revision": "primaryP1_seated22",
+      "target_parts": 78,
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "d2c018cb1db7cf8f9841379d38c9d223e412b197d74a5a3e5d39de3ec6141868"
+      },
+      "concrete_first_step": "Implement boundedmatrixfree/blockKKT onactual161active/rank153equalitybasis; recoverALLphysicalconemultipliers andcheckALL2169rows/14branches. DirectLU under4GiB failed; no largermemory/directretry. Then incorporateattachedloads+unpenalizedoriginalRootYgamma onlyafterlinearprerequisites.",
+      "known_blockers": [
+        "Positivecone diagonal scaling passes exactequivalence but120sADMM physicalKKT fails5.02168e-6mm/.00680278N.",
+        "161selectedphysicalrows yield exactsingularity; rank153equalitybasis reconstructsall161, but4GiB sparseLU memoryexpansion/SIGSEGV. No conicdualrecovery or solution obtained.",
+        "RootY fixedtargetgauge conflictswithphysicalfreeY; implementedunpenalizedgamma(originalrow2175) notyetsolved. MotorY2176 preserved; allgaugesmustcarrynegligibleforces.",
+        "All22source/material/mesh/anchor/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger remainunqualified."
+      ],
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle16_record1/summary.json",
+        "SHA256": "dc4420d439b18bdb4b2e02c48476a5f77cb37975ab7ec3866eaf6a936c1c7c58"
+      },
+      "result": "validation/integrated/primary_cycle17_record1/summary.json",
+      "reason": "ActualmatrixfreeAMG/blockSchurequalitysolveimplemented/independentlyverified, fullphysicalconeandboundedworking-setpivotsreject. No attachedgamma nonlinearupdate/wholegatePASS.",
+      "next": "goal_primary_feasible_cone_globalized_freeY"
+    },
+    {
+      "id": "goal_primary_feasible_cone_globalized_freeY",
+      "track": "C",
+      "priority": -1016,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME78part P1_seated22 from ORIGINAL sourcefield, not any rejected matrixfree/pivot predictor. Matrixfree AMG/block-Schur equality solve now avoids4GiBdirectfill and passes original-unit stationarity on recorded active sets, but fullcone/primal feasibility remains rejected. Use NEW globally feasible cone mechanism: derive an original-row primal-dual feasible phase-I or fraction-to-boundary/merit-controlled step, with explicit contact and tension active-set logic; do not merely repeat the four-transition separator release/add scan or extend MINRES/OSQP budgets. Retain ALL2169contact inequalities/14branches, unpenalized originalRootYgamma and unchanged MotorY/othergauges; use equality QR only as coordinates and recover all physical cone multipliers. First independently verify actual-matrix residual, fullcone/branch signs and step acceptance with deliberate sign/row corruption controls. Then at most ONE attachedload+gamma nonlinear supportupdate only after linear/fullcone/gauge prerequisites pass: recompute actualstring/Finger/currentgravity/sourceBasewrench and all nonlinear finite gaps/pressure/complementarity/stationarity/wrench/RootY. No force/torque cancellation atBase, no addedfixation, physicalregularization, newmesh/blanketfine/gap/timeoutretry. Preserve R11floor/.50wire/sourceparts/3Finger-cartridge-jamming and all22unqualified/sourceallowable/mesh/physicalanchor/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger blockers.",
       "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
       "system_gate_ids": [
         "cad_model_match",
@@ -2548,18 +2610,18 @@
       "target_parts": 78,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "d2c018cb1db7cf8f9841379d38c9d223e412b197d74a5a3e5d39de3ec6141868"
+        "SHA256": "70fe08b3110550f072be0e1eb599b499014a4d44e4db2d337142fabfe963bd35"
       },
-      "concrete_first_step": "Implement boundedmatrixfree/blockKKT onactual161active/rank153equalitybasis; recoverALLphysicalconemultipliers andcheckALL2169rows/14branches. DirectLU under4GiB failed; no largermemory/directretry. Then incorporateattachedloads+unpenalizedoriginalRootYgamma onlyafterlinearprerequisites.",
+      "concrete_first_step": "Derive/test globallyfeasibleoriginalrowprimal-dualphaseI orfractiontoboundary/merit-controlledconestep on SAMEactualarchivedP/A. Finite4separatorrelease/addpivots reject; no repeating scan/budgetextension. Fullcone,allrow/gauge/corruptionchecks before ONE attachedload+gamma nonlinearupdate.",
       "known_blockers": [
-        "Positivecone diagonal scaling passes exactequivalence but120sADMM physicalKKT fails5.02168e-6mm/.00680278N.",
-        "161selectedphysicalrows yield exactsingularity; rank153equalitybasis reconstructsall161, but4GiB sparseLU memoryexpansion/SIGSEGV. No conicdualrecovery or solution obtained.",
-        "RootY fixedtargetgauge conflictswithphysicalfreeY; implementedunpenalizedgamma(originalrow2175) notyetsolved. MotorY2176 preserved; allgaugesmustcarrynegligibleforces.",
+        "Matrixfreeequalitysolver no longer directmemoryblocked, but initialfullcone residual1.01349851959; inactivecontactviolations remain.",
+        "Boundedworking-set4pivots end:bounded working-set transition limit; finalphysicalprimal8.87443760006e-08mm/dual0.0449807683454N.",
+        "OriginalRootYgamma/attachedloads not yet solved; alloriginalgauges must carrynegligiblereaction andBaseport mustcomeonlyfromphysicalsourcepoints.",
         "All22source/material/mesh/anchor/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger remainunqualified."
       ],
       "parent_result": {
-        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle16_record1/summary.json",
-        "SHA256": "dc4420d439b18bdb4b2e02c48476a5f77cb37975ab7ec3866eaf6a936c1c7c58"
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle17_record1/summary.json",
+        "SHA256": "d04e55052a21982786942ad3fef8a8925f83707038ae7edc3f127c2562271662"
       },
       "result": null,
       "reason": null,

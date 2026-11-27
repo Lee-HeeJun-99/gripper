@@ -1,0 +1,82 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "implementations": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_matrixfree_kkt.py",
+      "SHA256": "dfb97930e61d98d8274ca0efbc6e9d0bea109aa3b104a0d175c9c20c07660acb"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/verify_primary_matrixfree.py",
+      "SHA256": "e1fa04bd814ae3ef0f0eaf75903f95a2e15ecd3f081efba76a82b657091cad75"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/verify_primary_matrixfree_origin.py",
+      "SHA256": "16d1a8a07f921fe2979d2d8c35815b9822838019cd81b71d761f5b57f88604fe"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_matrixfree_pivot.py",
+      "SHA256": "26c5edea0e684b42931c0765c8e07a5fc7805382c972a1f3a5fc3090df27043c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/verify_primary_matrixfree_pivot.py",
+      "SHA256": "18c9f0e6c6576641e0a0195c9fdb15f6f8e02c10223ffb2edda4a7905baeb85b"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_corotated_support.py",
+      "SHA256": "972aafb36383a27724b264323cc3d6b3d8d7fc7a06dca5af159b9103e03b440c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_surface_geometry.py",
+      "SHA256": "bb4b4dca21caad8ada9c17a799130057054a56eb3d7ac47b98069c4bd4729f84"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_finite_contact_support.py",
+      "SHA256": "edc813f42e2749835734b604a9a383e8ba7af43da936d3d224c912d263c1870b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_rootY_coordinate.py",
+      "SHA256": "0f06c7ffbbc952708d4a1e4d34251e05a3dd49807e97e1d4cf50205ca19cd2e0"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_attached_current_loads.py",
+      "SHA256": "7214a02ef9efa81c5eacbea4b1c53b058b6522a8b0fa1e1e754d78807d53fe47"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_attached_string.py",
+      "SHA256": "57e2d10ac81984bc725be3a4096a91c0391a8e4ca960f972dfb92e082eda2dcb"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_attached_finger.py",
+      "SHA256": "fd227e860c0f136cb5f065bd3a0b2d19b60b8c60452a37e5f842baad776734a4"
+    }
+  ],
+  "execution_runner": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle17_record1/execution_runner.py",
+    "SHA256": "97eeca82feb7303ae5b65b23d851650e759205e010a1439204f38679c60124ae"
+  },
+  "source_pins": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "compiled_code_created": false,
+  "existing_CAD_parts_verified": 78,
+  "original_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "origin_audit_scope_erratum": "origin1 source_field_matches is a construction tautology and is NOT counted as an independent source-field identity proof. Actual matrix reassembly/differences and all78part hashchecks are nonvacuous; record verifies original savedfield SHA directly.",
+  "original_field_SHA_verified": true
+}

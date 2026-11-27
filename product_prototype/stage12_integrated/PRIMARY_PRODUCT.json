@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state7.json",
-    "SHA256": "0ce2cd97095d257ea9b32e081888ff1d8f5935df2f283b53a5bde861e81726e7"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state8.json",
+    "SHA256": "47a4b7bcb9ac82c2f1ad0f273daa53810e754a6842716c66f706f04f329fb539"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,10 +384,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_keyed_joint_compliance",
-  "next_task_id": "goal_primary_gravity_loaded_chain",
+  "selected_task_id": "goal_primary_gravity_loaded_chain",
+  "next_task_id": "goal_primary_gravity_port_interfaces",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
-  "load_BC": "FrozenrestCAD78partconditionalgravityplusoldpairedRoot/Motorforce/couplethroughseparateGround/Baseelasticunilateralcontact. Fourtension-onlyaxialcoreboltmeans,notmajor-cylinder ties. ExternalBasetopdistributedwrench;negligiblerigidgauges. Noactualupstreamgravity-loadedassembly,localbearing/thread/preloadorphysicalanchorqualification. MeshFAIL1%;all22gatesUNQUALIFIED.",
+  "load_BC": "ConditionalgravityloadedfiniteRail/PET/freeSwivel/massivestring. FullpairedRoot/Motorwrenches+selfweight derived; summednewGroundport applied tofiniteGround/Baseelasticunilateraljoint h5. Frame/upstreaminterfacecompliance and physicalBaseanchor NOTresolved; actualsource-minima/friction/strength/wholemesh/time/globalenergy unqualified. Originalprimary78CADunchanged.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "ActualGroundR0.5keyroot/Base0.6mm45degentrancerelief. Same78parts,allother76STEPbytesunchanged.",
+  "CAD_this_cycle": "No designCAD/BOM changed; ONE actual78partP1fixture15 preserved. New actualloadedcatenarysingle-solidSTEP/STL generated in validation; no coupon or AO replacement.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -468,8 +468,8 @@
     "SHA256": "2767b2c554220e3633af5d2c2874bb883965eb2405a3a89e1c2f6a5e8279920c"
   },
   "latest_loaded_cable_assembly": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture15_loaded1/summary.json",
-    "SHA256": "0dbfa3c3023f979d4cc8a35f89205b3412f7c75f7c72fb4e44792548877c9409"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_gravity_cat_demand_loaded1/summary.json",
+    "SHA256": "d431160eb308272582a9435220592c1d9c6b56448f40f963f297737723fff48e"
   },
   "prior_primary_revision": {
     "revision": "primaryP1_fixture13",
@@ -511,8 +511,8 @@
     "SHA256": "603492f65e2892eaff95415e42e5f570299fbd251c4c97747227dca3034dc0a5"
   },
   "fixture_gravity": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_full_mass2/summary.json",
-    "SHA256": "24271b1d2f809e36b21e205ce4bf00630e9644d8da7c38de9e515cab291f27be"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_gravity_cat_massload1/summary.json",
+    "SHA256": "74577c4732a0b19a2994c2e088f26d823ebd15ace62816bf52d48b7f5f8ee9bb"
   },
   "fixture_material_scope": {
     "path": "product_prototype/stage12_integrated/models/materials/primary_fixture15_material_intent1.json",
@@ -534,5 +534,21 @@
     "original_module_including_ground_count": 69,
     "original_module_including_ground_mass_kg": 0.6725756943965662,
     "total78_conditional_mass_kg": 0.9898950917863771
+  },
+  "latest_gravity_cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/summary.json",
+    "SHA256": "4b8e8bf051709d9b1ac519fb6db9d9bf60919963adaab1573c11c4af65ebd84b"
+  },
+  "gravity_loaded_finger": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_verify1/summary.json",
+    "SHA256": "1df6514b308ede4ddff836ec8ef8c66fb70f6857caee37e1e6853650b491b2bf"
+  },
+  "gravity_loaded_demand": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand_verify1/summary.json",
+    "SHA256": "a897f8857a3d5763164b2d3a28e829f539237baeaf5c29fa5d72f1311c8952bc"
+  },
+  "latest_gravity_ports": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_gravity_cat_demand_ports2/summary.json",
+    "SHA256": "38f9c261a2e0b2d1eeb86953d015731db2a42644411f0d7b49e560afb4dcab78"
   }
 }

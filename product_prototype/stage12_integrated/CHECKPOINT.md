@@ -1,3 +1,86 @@
+# Latest actual P1 gravity-loaded continuation — 2026-11-27, Supervisor save pending
+
+Actual starting HEAD ee1619871d20dd9199b234dedf755df334f1828d.
+Selected exact queue ID goal_primary_gravity_loaded_chain. SAME ONE primary
+P1fixture15,78parts, continues Motor→Drum→Tendon→Finger→Root→Frame→Ground→Base.
+Design CAD/BOM bytes unchanged; failed AO, adopted AA,3Finger/cartridge/jamming
+extension and all earlier failures remain immutable. ACTUAL_PRODUCT_VALIDATION.
+Actual new CAD: two loaded catenary WIRE STEP/STL solid pairs at matched/demand
+32element states. Single valid solids, constant volume, stored-pose cable/rotor
+clear; independent reimport matches tube-centroid correction within2.11e-11m.
+No continuousCCD/tolerance/process/threadtightening/full3FingerStage1 claim.
+
+Actual32/64/128material slices conserve original Rail/PET volumes/centroids.
+Conditional total mass.989895091786kg. Derived conservative gravity pullbacks,
+independent freeSwivel DOF and massive drum-tangent inextensible string now
+re-solve actual finiteRail/PET equilibrium. Original direction-constrained
+swivel hid-.000166828660Nm gravity moment; original taut string had transverse
+weight residual. Both limitations/results preserved; final string balances
+local free-span tension/gravity and drum/rotor/wrap/tail torque explicitly.
+Independent sinc/complex virtualwork, closed-form string/adaptive-centroid,
+contact cone/gap/free-material-station and actual deformed PET/terminal/Rail
+BRep tests pass. Zero-g matches old P1state8.92e-14/normal3.33e-15N.
+
+PURE matched motor-equivalent1.013271783025N at8/16/32: finest normal
+.322157029913N vs old gravity-free.408610416667N. Base→fine normal.104756%,
+angle.259307%,energy.988367%,typical Railstress.907553%/PET.949866% within1%
+for THIS reduced branch only. Mass64→128normal1.84111e-7relative;Gauss8→16
+negligible. Does NOT cure old Rail1.30247%,Frame52.7693%,Ground/Base meshFAILs
+or time/globalenergy/strength. New actual wire solid COM differs from string
+by up to.2175um; exact3Dmass/bending/friction not silently claimed.
+
+Conditional100g/(3*.8)normal-target requires motor-equivalent1.185442703380N,
+torque.013336230413Nm,16.9916%higher than gravity-free command. Not payload,
+freegrasp,measuredfriction,protectedpeak or capacity. Demand Root XYZforce
+[.234685173,0,.892077401],couple[-.000005597,-.000771609,0]; Motorforce
+[.173925244,0,-1.493241940],couple[.001773277,.013336000,0]. Reference points
+Root[.0504,0,-.007]m/Motor[0,0,.020]m. RequiredBaseexternal wrench
+[-.408610417,0,9.707554702,-.076586225,-.219987695,0]N/Nm. String sag2.03948um.
+Motor torque action-reaction2.87e-15Nm,swivel torque1.49e-13Nm residual.
+
+New deformedFinger/swivel/rotor/stringmass+fullwrench transported into actual
+finiteGround/Basekey/seat/fourminor-coreaxialbolts at h5. Independent tetra
+force/energy/bolt-law/contact/perturbation pass. Boltforces4.486864/4.901734/
+4.390683/4.561211N; conditionalGround/Basepeaks.320612/.519141MPa. ONEnewload
+case,NO meshPASS. UpstreamFrame/Root/Motorinterface compliance/friction/thread/
+preload/physicalBaseanchor still unresolved; not full coupled equilibrium.
+
+Failures preserved: initialOCP andgmsh missingdependency paths(no installs),
+free8 numpybool JSONserialization,wireverifierPath typo. First normal-target
+result incorrectly serialized seedT: strict motor action-reaction rejected
+by.001936922854Nm. That first demand is INVALID for torque/load use despite
+its archived candidate label; corrected demand32_2/demand_ports2 independently
+pass. All original bytes remain. New cycle timeouts0; prior gap420s timeout
+unchanged. Main pre-handoff42children/406.693536childseconds reaped; final
+closeout includes the subsequent final release audit:43children reaped,
+407.094633childseconds total,0timeouts,0ownedchildren/0RUNNINGtasks.
+
+All22systemgates remain UNQUALIFIED in models/primary_system_gate_state8.json;
+newlyqualifiedwhole-systemgates NONE. Read-only actual release remains
+INTEGRATED_NOT_QUALIFIED,24errors(exit2). SOFAruns0; no dt/globalenergy/strength/
+physicalassembly/full3Finger/protector/Stage3 release. Sourcepins unchanged.
+
+Concrete NEXT exact ID goal_primary_gravity_port_interfaces: sameP1, use new
+pairedRoot/Motorfull3Dforcecouple+selfweight. Map actual finite seats/lateral
+gaps/bearing/slip at Root→Frame and motorcase→Frame; implement positive
+cartridge/key or lateralbearing only where physicalpath requires,then actual
+CADassembly/tools/loadedstring recheck and compliantFrame→Ground/key/Base.
+Justified minorcore/flank/engagement/preload and physicalBaseanchor required.
+No arbitrarytraction-as-capacity,major-cylinder ties,sharedM5fixation or blanket
+mesh retries. Oldfailedgates and source/cablebending/friction/protector blockers
+remain. This is continuous same-product work,not a new architecture or coupon.
+
+Main: validation/integrated/primary_cycle7/summary.json.
+Final authoritative audit/count: validation/integrated/primaryP1_cycle7_closeout/summary.json.
+Details: reports/primaryP1_gravity_engineering.md.
+STOP absent; no RUNNINGqueue tasks or ownedanalysis children at handoff.
+No Gitadd/commit/push/historyrewrite,SDK,manager/security/save/guard/gate source
+changes,purchase/hardware/credentials/providerselection/subagents/recursive
+launches. Originaluseruntracked data preserved. ExactSupervisor save request:
+runtime/goal_authorized_20261127_7/save_request6.json. SavePENDING,no newcommit.
+
+---
+
 # Latest actual P1 compliant keyed-joint continuation — 2026-11-27, Supervisor save pending
 
 Actual starting HEAD b84a412dee9c195c81640f1eec7c76d0926c6f13.

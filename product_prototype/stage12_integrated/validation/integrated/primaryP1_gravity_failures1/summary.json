@@ -1,0 +1,80 @@
+{
+  "status": "ACTUAL_P1_CYCLE7_FAILURES_PRESERVED_NO_RELEASE",
+  "failures": [
+    {
+      "name": "mass32",
+      "status": "IMPORT_FAILURE",
+      "reason": "Initial child lacked existing OCP dependency path. No output directory or numerical result. Correct existing PYTHONPATH used in mass32b.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/mass32_execution.json",
+        "SHA256": "2379ddd81bb2bf3b5c5c389f5bdb061dbe8fefafd48dfbd725bcd5c068eda61e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/mass32.log",
+        "SHA256": "5683afbab4eb2ab1cb6cad6e4aa858a0cd079b8c5300699ed9beb636e87a7552"
+      }
+    },
+    {
+      "name": "free8",
+      "status": "RESULT_SERIALIZATION_FAILURE",
+      "reason": "numpy.bool_ checks failed JSON serialization after solve; original producer/log retained. New free8_2 converts booleans and is independently verified.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/free8_execution.json",
+        "SHA256": "4f2e82a4a15cb66f5be32afcf8b68ea99301955a5ab95521992b93165eaf377d"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/free8.log",
+        "SHA256": "5077c084f88ebcd2150094e300fc7ff1a2a6e679740d0d08355ca005e3a2a101"
+      }
+    },
+    {
+      "name": "gravity_joint5",
+      "status": "IMPORT_FAILURE",
+      "reason": "Initial child lacked existing gmsh dependency path. No FEM output. Added existing /tmp/regrip_stage2_fem path; no installation or SDK changes.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/gravity_joint5_execution.json",
+        "SHA256": "3c3f883d52880ce8a6901ced1b15a34f7cfd3abcde63e76e163cbc274f7273ab"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/gravity_joint5.log",
+        "SHA256": "42547a15f15ff474559b32d6ff03ce02aedf9d858075fce715937d0e9dc0ed7c"
+      }
+    },
+    {
+      "name": "wire_verify",
+      "status": "VERIFIER_EXECUTION_FAILURE",
+      "reason": "New verifier used PosixPath subscript typo before any geometric verification. Original verifier/log retained. New wire_verify2 fixes path construction.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/wire_verify_execution.json",
+        "SHA256": "8c666fc9c7c82348dab52d67bf8ef8576e999ef5ae377200f355ec19a69b0a9f"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/wire_verify.log",
+        "SHA256": "44d16d0cc3d29fa95913b72d7b23fe799e489a60fb34000a3fe36e741ac08dc4"
+      }
+    },
+    {
+      "name": "cat_demand_ports",
+      "status": "DEMAND_METADATA_REJECTED",
+      "reason": "First normal-target solve serialized seed motor T instead of solved T. Strict motor torque action-reaction independently FAILED by0.001936922854Nm. Demand32_1 is invalid for torque/load use despite its original candidate label; original bytes preserved. New demand32_2 records solved1.185442703380N and its port/independent string checks pass.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/cat_demand_ports_execution.json",
+        "SHA256": "d426ad60366f18c81118477c02e07d7cf2ede34c2b155a057b7a049283313c49"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/cat_demand_ports.log",
+        "SHA256": "f16bd931421e9ad6743c1459b62bbf2d4dbe026c2a606197bb8a0eb68f5072bb"
+      }
+    }
+  ],
+  "invalid_first_demand": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand32_1/summary.json",
+    "SHA256": "a14760eb3b7f2619f4001640b33439ec68b49895998270cfe29127bcce1ba0e4"
+  },
+  "corrected_demand": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand32_2/summary.json",
+    "SHA256": "0f10636a27ecf73f3fdc72cd5708bc1a7bbd3600495f21ac7248a4b3923491d2"
+  },
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": []
+}

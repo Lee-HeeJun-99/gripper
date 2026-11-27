@@ -1,0 +1,198 @@
+{
+  "status": "ACTUAL_P1_CATENARY_GRAVITY_STATIC_BREP_PARTIAL_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+    "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand32_2/summary.json",
+    "SHA256": "0f10636a27ecf73f3fdc72cd5708bc1a7bbd3600495f21ac7248a4b3923491d2"
+  },
+  "cases": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand32_2/cases.json",
+    "SHA256": "6264026664105e9072420a79422d19bca0cabfe58fd16d0c32fdd519f6bdefaa"
+  },
+  "actual_STEP_corner": {
+    "point_m": [
+      0.049720180802444,
+      -0.09
+    ],
+    "circle_center_m": [
+      -0.03363880995252,
+      -0.095
+    ],
+    "radius_m": 0.08350880995252101
+  },
+  "audits": [
+    {
+      "n": 32,
+      "T_N": 1.1854427033803843,
+      "normal_N": 0.4086104166666667,
+      "independent_force_equivalent_N": 9.289334890529084e-12,
+      "corner_error_m": 9.992007221626409e-16,
+      "kinematic_error_m": 4.163336342344337e-17,
+      "energy_error_J": 0.0,
+      "point_Jacobian_error_m": 1.8388068845354155e-16,
+      "free_station_tangent_force_N": 6.723788192886104e-14,
+      "independent_cone_coefficients_N": [
+        0.1054730137701593,
+        0.0016336394032582593
+      ],
+      "interface_gap_m": -4.069552854424341e-16,
+      "object_gap_m": -1.1449174941446927e-16,
+      "passed": true
+    }
+  ],
+  "actual_deformed_BRep": [
+    {
+      "n": 32,
+      "T_N": 1.1854427033803843,
+      "hits": [],
+      "comparisons": 71,
+      "passed": true
+    }
+  ],
+  "full_inequalities": [
+    {
+      "n": 32,
+      "minimum_gap_m": -4.00829543167891e-16,
+      "worst": [
+        "interface",
+        0.0862
+      ],
+      "rows": 3270,
+      "passed": true
+    }
+  ],
+  "mesh": [],
+  "negative_controls": [
+    {
+      "perturbation": "corner_material_station_m",
+      "rejected": true
+    },
+    {
+      "perturbation": "normal_N",
+      "rejected": true
+    },
+    {
+      "perturbation": "corner_contact_force_local_N",
+      "rejected": true
+    },
+    {
+      "perturbation": "swivel_beta_rad",
+      "rejected": true
+    },
+    {
+      "perturbation": "cable_exit_force_XZ_N",
+      "rejected": true
+    }
+  ],
+  "input_hashes": [
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_mass64_1/mass_points.json",
+        "SHA256": "5fef35c2c7cb9ca56e935368aeda611cb77ed3a2687ed61c300a55b72cecb0ac"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_free32_1/cases.json",
+        "SHA256": "5fb3d81772fcb530e8ec56805d436cfc21e42d505a8ca7975f0a69d413955bfe"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+        "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_gravity_catenary.py",
+        "SHA256": "4ee88ec69e0e304c0097a9fadf8746744ee2f9726bf60d2d79a41f3ad9da8626"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_gravity_swivel.py",
+        "SHA256": "90e8d1f004e4047abc5c8f62cb957145d971509c53a1ccf542444260cc9c0f65"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_gravity_pullback.py",
+        "SHA256": "6dcb251a045844a4e7987c566359e3ef9ccfb58902453f23baca7673f38263d2"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_terminal_corner_v2.py",
+        "SHA256": "0c1499ba2e15c1fc31f8ef2ab9f4eac20609996e230c255c4256974336c30fc1"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v5.py",
+        "SHA256": "a1d78ebe62d78650dd03dcb5747595123502d48573e27a94ddab6626f00df1a2"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_finger_tangent_v5.py",
+        "SHA256": "c3a25682e947af9d7b53830aa25bcf2009b20dbfcb341fc56494da99625ca372"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/rod_point_jacobian.py",
+        "SHA256": "83b81236cac1bc55daedf047e7ab85ab91f0c23c6c652f10a5f24f48244777ac"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+        "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+      },
+      "matched": true
+    }
+  ],
+  "gravity_checks": [
+    {
+      "n": 32,
+      "position_error_m": 1.3877787807814457e-17,
+      "potential_error_J": 0.0,
+      "gradient_error_J": 5.5166408821725327e-17,
+      "passed": true
+    }
+  ],
+  "string_audits": [
+    {
+      "n": 32,
+      "endpoint_error_m": 5.551115123125783e-15,
+      "centroid_error_m": 3.642919299551295e-15,
+      "endpoint_force_error_N": 0.0,
+      "drum_torque_balance_error_Nm": 1.0376153603865179e-20,
+      "length_error_m": 0.0,
+      "closed_form_tangent_error": 1.1989387260769035e-09,
+      "passed": true
+    }
+  ],
+  "criteria_unchanged": true,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Gravity-loaded conditional planar finite-rod equilibrium at fixed spatial stop,typical moduli and rigid Root/Terminal grips only",
+    "Same-material normal interface remains a reduced contact model,not closest-point whole-surface friction",
+    "No finite friction,minimal strength,hardware,dt,full global energy or100g system approval"
+  ]
+}

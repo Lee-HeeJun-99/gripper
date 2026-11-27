@@ -1,0 +1,12 @@
+"""Actual78part deformed-centroid ledger from a completed P1 gravity string state."""
+import json,sys,shutil
+import numpy as np
+from baseline_registry import ROOT,REPO,ref,sha,dump
+
+def main():
+ source=ROOT/'validation/finger'/sys.argv[1];out=ROOT/'validation/integrated'/sys.argv[2];assert not(ROOT/'runtime/STOP').exists();out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py');row=json.loads((source/'cases.json').read_text())[0];original=ROOT/'validation/integrated/primaryP1_full_mass2/summary.json';old=json.loads(original.read_text());pp=row['deformed_mass_points'];parts=[]
+ for part in old['parts']:
+  group=[p for p in pp if p['part_ID']==part['part_ID']];mass=sum(p['mass_kg'] for p in group);assert abs(mass-part['mass_kg'])<1e-12;c=sum(p['mass_kg']*np.array(p['position_m']) for p in group)/mass;F=np.array([0,0,-mass*9.80665]);W=np.r_[F,np.cross(c,F)];parts.append(dict(part,rest_centroid_mm=part['centroid_mm'],centroid_mm=(c*1000).tolist(),gravity_wrench_N_Nm=W.tolist()))
+ total=sum((np.array(p['gravity_wrench_N_Nm']) for p in parts),np.zeros(6));nonBase=sum((np.array(p['gravity_wrench_N_Nm']) for p in parts if p['part_ID']!='TEST_BASE'),np.zeros(6));tip=np.array([row['terminal_tip_m'][0],0,row['terminal_tip_m'][1]]);F=np.array([row['normal_N'],0,0]);operating=np.r_[F,np.cross(tip,F)];result=dict(status='ACTUAL78PART_GRAVITY_LOADED_FINGER_DEFORMED_MASS_PORT_LEDGER_CONDITIONAL',candidate=old['candidate'],source=ref(source/'summary.json'),cases=ref(source/'cases.json'),original_mass=ref(original),producer=ref(out/'producer.py'),parts=parts,part_count=78,total_conditional_mass_kg=sum(p['mass_kg'] for p in parts),nonBase_gravity_wrench_N_Nm=nonBase.tolist(),total_gravity_wrench_N_Nm=total.tolist(),operating_external_port_N_Nm=operating.tolist(),required_external_base_grip_full_wrench_N_Nm=(-(total+operating)).tolist(),whole_system_release=False,newly_qualified_system_gate_ids=[],limitations=['Gravity-loaded finiteRail/PET,free swivel,rotor and catenary masscentroids; Frame/Root/Ground/Base still undeformed reference,not fully coupled equilibrium','Typical densities/nominal masses/COM proxies unchanged; no physicalmass/source minima','Connectorweights remain transportedtoGround aspriorjoint sensitivity; actual localbearing/thread/selfweightdistribution unresolved','Fullforcecouples balance doesnotqualify contacts,friction,physicalanchor,strength orglobalenergy'])
+ dump(out/'summary.json',result);print(json.dumps({k:v for k,v in result.items() if k!='parts'}))
+if __name__=='__main__':main()

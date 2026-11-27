@@ -4,23 +4,23 @@
   "revision": "primaryP1_fixture15",
   "adopted_reference": "revAA_heel_relief2 unchanged",
   "next": {
-    "id": "goal_primary_gravity_loaded_chain",
+    "id": "goal_primary_gravity_port_interfaces",
     "track": "C",
-    "priority": -1005,
+    "priority": -1006,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
     "selection_policy": "goal_product_continuation",
-    "hypothesis": "Continue SAME78partP1fixture15. First add conservative distributed gravity and actual terminal/swivel/rotor masses to existing finiteRail/PET equilibrium,with manufacturer motor/hubCOM uncertainty separate; recompute deformedhardware/strip mass centroids and pairedRoot/Motor forcesANDcouples. CurrentfrozenrestCADgravity+oldoperatingwrench is not that equilibrium. Then transport these loads through actualFrame/Ground/key/Base and finitehead/nut bearing connectors,with justified threadengagement and physicalBaseanchor. Retain h5/3.5/2.5FAILs; localize loadedcontact/keyroof stress and verify discretization without blanket LP/globalmesh retries. Contactgap420sTIMEOUTmust remain; no automaticretry or criteria/source relaxation.",
+    "hypothesis": "Continue SAME78partP1fixture15 with new gravity-loaded demand. Resolve actualRoot->Frame and Motorcase->Frame lateralforce/couple paths before claiming transport throughFrame: map actualfinitebearing/seat/shank gaps and full3Dpairedwrenches+selfweight; quantify frictionless failure and implement positive Root/cartridge shoulder/key and motor lateralbearing only where physically required,using source-backedcase envelope/standardparts. Revalidate changedactualCAD assembly/tools/loadedcatenary and finite compliantFrame->Ground/key/Base. Use justified minorcore/flank/engagement connectors,fit/preload contrasts and physicalBaseanchor definition; no major-cylinder ties/sharedM5fixation or arbitrarytraction-as-capacity. Retain old1%Frame/Ground/RailFAILs/gapTIMEOUT; no blanketmesh retries. Materialsource minima/cableelastic-bending/friction/protector/full3Finger/globalenergy remain blocked.",
     "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
     "system_gate_ids": [
       "physical_mass_inertia",
       "continuous_load_path",
-      "root_palm_strength",
-      "numerical_convergence",
+      "motor_alignment_reactions",
       "cad_model_match",
+      "numerical_convergence",
       "changed_stage1_revalidation",
-      "qualified_worst_case",
-      "motor_alignment_reactions"
+      "root_palm_strength",
+      "qualified_worst_case"
     ],
     "prerequisites": [],
     "parent_candidate": {
@@ -48,25 +48,24 @@
     "target_parts": 78,
     "primary_state": {
       "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-      "SHA256": "b9a838a3b2ee070dbbcd5fa0d86b838b36afbac0c6d6db6d8bf2c1217f657bc4"
+      "SHA256": "719916067e882c3ca498def7829cde7fcab1ed7a85b36521fbd5699d1c4bdba3"
     },
-    "concrete_first_step": "UseexistingfiniteRail/PETkernelandactual78partmassledger;derivegravityenergy/materialmidpointweightsandrigidterminal/swivelmasspullbacks. Independentgravityforce/virtualworkandzero-gcontrolbeforeequilibrium. DoNOTreuseoldgravity-freestateasloadedmasscertificate. QuantifyactualdeformedmasscentroidsandpairedRoot/Motorloads;retaincontactgapTIMEOUTand1%meshFAILs.",
+    "concrete_first_step": "Usecorrectedgravitycatdemandports2fullRoot/MotorforcesANDcouples+selfweight. DerivefiniteRootcartridge/FrameandMotorcaseFrame lateralcontact/seats/gap/slipfunction;implementpositivebearing/keyonlywhereactualpathrequires,notgenericcoupon. Actualsourcecase/toleranceuncertaintiesremainexplicit. Then newCADassembly/tool/loadedstring and finitecompliantwholeFrame/Groundjoint.",
     "known_blockers": [
-      "FrozenundeformedCADgravityplusoldoperatingportisnotgravity-loadedFinger/Frameequilibrium",
-      "Averagedhead/nutminor-coreboltsaredeclaredcompliancesensitivity;notlocalbearing/threadengagement/preloadguarantee",
-      "FinitetopBasetractionisexplicitboundaryportwithnegligiblegaugereactions,notphysicalsource-backedbenchanchor",
-      "Typicaldensities/EandnominalmanufacturermassesareNOTguaranteedmass/strengthorworst-casebounds",
-      "Stress,motionandenergymeshFAIL;staticidentityisNOTglobaltrajectoryenergy"
+      "Gravity-loaded finiteRod+massiveinextensiblestring reduction,not fullycoupled3Dphysicalproduct. Root/Frame/Motorcase/anchorpath remain unqualified",
+      "Actualfinite-radius tubeCOM correction measured; string doesnotresolvebending/elasticity/friction/sectiongravitymoments",
+      "PurematchedloadmeshlocalPASSdoesnoterasehistoricalmeshFAILs. h5jointonecasehasNOconvergenceclaim; no time/globalenergy orstrength",
+      "Conditional100g/3equalFinger/mu.8normaldemand isnotrealpayload,freegrasp,source-minimumsafetyorprotecteddevice"
     ],
     "parent_result": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle6/summary.json",
-      "SHA256": "c4b4d89a2c5409de8263240fe50eedbd2c0a38149299334ae56676fe5028e7f2"
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/summary.json",
+      "SHA256": "4b8e8bf051709d9b1ac519fb6db9d9bf60919963adaab1573c11c4af65ebd84b"
     },
     "result": null,
     "reason": null,
     "next": null
   },
   "running_task_records": [],
-  "warning": "ActualP1partialcompliantjointnot22gateorStage3release",
-  "resume_command": "Continue SAME78partP1fixture15. First add conservative distributed gravity and actual terminal/swivel/rotor masses to existing finiteRail/PET equilibrium,with manufacturer motor/hubCOM uncertainty separate; recompute deformedhardware/strip mass centroids and pairedRoot/Motor forcesANDcouples. CurrentfrozenrestCADgravity+oldoperatingwrench is not that equilibrium. Then transport these loads through actualFrame/Ground/key/Base and finitehead/nut bearing connectors,with justified threadengagement and physicalBaseanchor. Retain h5/3.5/2.5FAILs; localize loadedcontact/keyroof stress and verify discretization without blanket LP/globalmesh retries. Contactgap420sTIMEOUTmust remain; no automaticretry or criteria/source relaxation."
+  "warning": "ActualP1gravityloadedpartialvalidationnot22gateorStage3release",
+  "resume_command": "Continue SAME78partP1fixture15 with new gravity-loaded demand. Resolve actualRoot->Frame and Motorcase->Frame lateralforce/couple paths before claiming transport throughFrame: map actualfinitebearing/seat/shank gaps and full3Dpairedwrenches+selfweight; quantify frictionless failure and implement positive Root/cartridge shoulder/key and motor lateralbearing only where physically required,using source-backedcase envelope/standardparts. Revalidate changedactualCAD assembly/tools/loadedcatenary and finite compliantFrame->Ground/key/Base. Use justified minorcore/flank/engagement connectors,fit/preload contrasts and physicalBaseanchor definition; no major-cylinder ties/sharedM5fixation or arbitrarytraction-as-capacity. Retain old1%Frame/Ground/RailFAILs/gapTIMEOUT; no blanketmesh retries. Materialsource minima/cableelastic-bending/friction/protector/full3Finger/globalenergy remain blocked."
 }

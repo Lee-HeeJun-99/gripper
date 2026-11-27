@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_primary_gravity_wire.py", line 17, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_primary_gravity_wire.py", line 12, in main
+    out=ROOT/'validation/integrated'/sys.argv[1];out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'verifier.py');assert not(ROOT/'runtime/STOP').exists();candidate=ROOT/'cad/exports/primaryP1_fixture15/summary.json';cad=json.loads(candidate.read_text());assert all(sha(REPO[p['path']])==p['SHA256'] for p in cad['part_references'].values());rows=[]
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_primary_gravity_wire.py", line 12, in <genexpr>
+    out=ROOT/'validation/integrated'/sys.argv[1];out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'verifier.py');assert not(ROOT/'runtime/STOP').exists();candidate=ROOT/'cad/exports/primaryP1_fixture15/summary.json';cad=json.loads(candidate.read_text());assert all(sha(REPO[p['path']])==p['SHA256'] for p in cad['part_references'].values());rows=[]
+TypeError: 'PosixPath' object is not subscriptable

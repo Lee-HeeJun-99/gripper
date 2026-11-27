@@ -1,0 +1,49 @@
+{
+  "status": "ACTUAL_P1_CAD_MASS_SLICE_IDENTITY_PASS_CONDITIONAL_DENSITIES",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+    "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+  },
+  "points": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_mass64_1/mass_points.json",
+    "SHA256": "5fef35c2c7cb9ca56e935368aeda611cb77ed3a2687ed61c300a55b72cecb0ac"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_mass64_1/inputs.json",
+    "SHA256": "53d13fc43c84046d9df3c4e322a126905fe7075ed97735d9bd6d05219d7a3996"
+  },
+  "slice_checks": [
+    {
+      "part_ID": "F0_SKIN",
+      "relative_volume_error": 4.574118861455645e-14,
+      "centroid_error_mm": 1.1652900866465643e-12
+    },
+    {
+      "part_ID": "F0_RAIL_L",
+      "relative_volume_error": 3.197442310920451e-14,
+      "centroid_error_mm": 7.219114195322618e-12
+    },
+    {
+      "part_ID": "F0_RAIL_R",
+      "relative_volume_error": 4.0456527017340704e-13,
+      "centroid_error_mm": 5.6488147492927965e-12
+    }
+  ],
+  "total_mass_kg": 0.9898950917863774,
+  "by_mode_kg": {
+    "fixed": 0.938093369050472,
+    "pet": 0.0006512375520000041,
+    "rail": 0.0007299600000007234,
+    "rotor": 0.023582501606963156,
+    "swivel": 0.01112645516333748,
+    "terminal": 0.01551915277875548,
+    "wire": 0.00019241563484865298
+  },
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Exact rest slice volumes/first moments; deformed slices use section-rigid centroid quadrature,not exact deformed volume",
+    "Typical density and CAD motor/hub centroid proxies unchanged; no source-minimum mass/inertia certification",
+    "Fixed Root above-7mm; freeRail77mm and distal rigid cuff follow existing physical reduction"
+  ]
+}

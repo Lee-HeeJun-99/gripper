@@ -1,0 +1,67 @@
+{
+  "status": "ACTUAL_P1_COMPLIANT_STATES_INDEPENDENTLY_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+    "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_gravity_joint_verify1/verifier.py",
+    "SHA256": "f333c1f0b7c7ba159367be5f30cef2bd62c4b9efc2b8d6e65062911926ce67a3"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_gravity_joint5_1/summary.json",
+        "SHA256": "94b292f679d99a2b19a69d3a13ce4e06900a1260ce7d4fe8d4b1c02d009ed855"
+      },
+      "reconstruction": {
+        "relative_force_residual": 1.8025875488265796e-10,
+        "max_bolt_law_error_N": 2.2371704488932664e-10,
+        "energy_Nmm": 0.0005184766222960082,
+        "relative_energy_error": 4.614086890342151e-13,
+        "static_identity_relative": 1.775154600056653e-10,
+        "min_gap_mm": -5.99970377199166e-17,
+        "max_complementarity_Nmm": 3.9290989672709006e-17,
+        "external_wrench_N_Nm": [
+          -4.440892098500626e-16,
+          1.7355366276061712e-16,
+          2.6645352591003757e-15,
+          -6.938893903907228e-17,
+          1.1102230246251565e-16,
+          -6.752546655511282e-18
+        ],
+        "saved_gap_error_mm": 0.0,
+        "rows": [
+          {
+            "body": "G",
+            "energy_Nmm": 0.0002884047294710486,
+            "mesh_volume_mm3": 47740.11439721858
+          },
+          {
+            "body": "B",
+            "energy_Nmm": 0.0002300718928249596,
+            "mesh_volume_mm3": 104749.14415097615
+          }
+        ]
+      },
+      "checks": {
+        "hashes": true,
+        "independent_force": true,
+        "independent_energy": true,
+        "independent_static_identity": true,
+        "bolt_law": true,
+        "normal_gap": true,
+        "complementarity": true,
+        "external_force": true,
+        "external_moment": true,
+        "perturbed_force_rejected": true,
+        "perturbed_energy_rejected": true
+      }
+    }
+  ],
+  "mesh": [],
+  "mesh_1pct_pass": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "scope": "Independent saved-state direct tetra forces/energy/bolt law/contact gaps and perturbation controls. Does not qualify source minimum,physical anchor,averaged connector or sharp stress singularity."
+}

@@ -1,0 +1,108 @@
+{
+  "status": "ACTUAL_P1_GRAVITY_MODEL_CONTROLS_AND_CONVERGENCE_EVIDENCE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+    "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_controls1/producer.py",
+    "SHA256": "6eb2b9563827c56c10c97d4f4cc598610b29e5c6327d22a9d321b8ff9f13cebc"
+  },
+  "checks": {
+    "zero_g_reproduces_old_state": true,
+    "zero_g_force_zero": true,
+    "string_corruption_rejected": true,
+    "matched_motor_command": true,
+    "mass64_to128_1pct": true,
+    "gauss8_to16_1pct": true
+  },
+  "controls": {
+    "zero_g_state_error": 8.915177623913806e-14,
+    "zero_g_normal_error_N": 3.3306690738754696e-15,
+    "zero_g_status": "CONDITIONAL_CATENARY_CORNER_EQUILIBRIUM",
+    "reference_status": "CONDITIONAL_CORNER_EQUILIBRIUM",
+    "nonzero_string_tension_perturbation_rejected": true,
+    "zero_gravity_generalized_force": 0.0
+  },
+  "mass64_to128": {
+    "normal_relative": 1.8411094759862578e-07,
+    "rail_angle_relative": 1.1777351116570856e-07,
+    "stored_energy_relative": 3.4215051170072286e-07,
+    "motor_T_relative": 0.0,
+    "wire_centroid_m": 4.038883949508687e-10
+  },
+  "gauss8_to16": {
+    "normal_relative": 0.0,
+    "rail_angle_relative": 0.0,
+    "stored_energy_relative": 4.440892098500626e-16,
+    "motor_T_relative": 0.0,
+    "wire_centroid_m": 2.0816681711721685e-17
+  },
+  "matched_motor_load_mesh": [
+    {
+      "normal_relative": 0.001047560582078444,
+      "rail_angle_relative": 0.002593066300807245,
+      "stored_energy_relative": 0.009883673855327846,
+      "motor_T_relative": 0.0,
+      "wire_centroid_m": 1.7135502513494077e-05,
+      "n": 8,
+      "fine_n": 32,
+      "rail_stress_relative": 0.009075532494035254,
+      "PET_stress_relative": 0.009498662283496495,
+      "all_response_1pct_pass": true
+    },
+    {
+      "normal_relative": 0.0002345669183432264,
+      "rail_angle_relative": 0.0007011416629689737,
+      "stored_energy_relative": 0.0024580502125974846,
+      "motor_T_relative": 0.0,
+      "wire_centroid_m": 4.08724578723936e-06,
+      "n": 16,
+      "fine_n": 32,
+      "rail_stress_relative": 0.0018138117730419623,
+      "PET_stress_relative": 0.005370906160608757,
+      "all_response_1pct_pass": true
+    }
+  ],
+  "typical_nominal_stress": [
+    {
+      "n": 8,
+      "rail_typical_stress_MPa": 149.2268884568499,
+      "PET_typical_stress_MPa": 2.8240098631122694,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 16,
+      "rail_typical_stress_MPa": 150.32045716321545,
+      "PET_typical_stress_MPa": 2.8357784731682947,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 32,
+      "rail_typical_stress_MPa": 150.59360561803027,
+      "PET_typical_stress_MPa": 2.85109141762769,
+      "allowable": null,
+      "capacity_qualified": false
+    }
+  ],
+  "projected_swivel_unbalanced_gravity_Y_moment_Nm": -0.00016682866016129487,
+  "old_projection_to_free_swivel_normal_N": -7.602466500455929e-05,
+  "taut_to_catenary_normal_N": -1.7793002848875972e-08,
+  "conditional_target": {
+    "target_normal_N": 0.4086104166666666,
+    "required_motor_equivalent_T_N": 1.1854427033803843,
+    "required_motor_torque_Nm": 0.013336230413029322,
+    "torque_increase_fraction": 0.1699158342701379,
+    "basis": "Conditional100g/3equalFingers/mu.8 only; not payload/friction/capacity/protection or3Finger certification"
+  },
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Only massive inextensible planar string/rigid terminal/root reduction; no cable elastic/bending/friction certificate",
+    "Pure matched motor torque cases separated from demand-controlled normal result; old unequal-command mesh tables are not whole mesh evidence",
+    "Nominal typical strip stress has no supported minimum allowable,notch/contact or fatigue certificate",
+    "AllhistoricalFrame/Root/Rail/Groundmesh failures and gapTIMEOUT preserved; no full coupled mesh,time/globalenergy orStage3"
+  ]
+}

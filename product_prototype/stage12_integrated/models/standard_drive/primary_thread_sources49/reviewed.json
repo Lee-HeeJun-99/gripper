@@ -1,0 +1,84 @@
+{
+  "status": "PUBLIC_PRIMARY_SOURCE_DIMENSIONS_NOT_SUPPLIER_CAD_OR_CAPACITY",
+  "date": "2026-11-27",
+  "sources": [
+    {
+      "author": "Elesa+Ganter",
+      "url": "https://www.elesa-ganter.com/siteassets/technical/Technical_Data_General_EN.pdf",
+      "section": "10.5 DIN13 ISO metric threads, A19",
+      "retrieval": "Opened with web tool,55pagePDF;source limits read from indexed M5row",
+      "M5_mm": {
+        "pitch": 0.8,
+        "external_major": [
+          4.826,
+          4.976
+        ],
+        "external_pitch": [
+          4.361,
+          4.456
+        ],
+        "external_minor": [
+          3.842,
+          4.11
+        ],
+        "internal_major_min": 5,
+        "internal_pitch": [
+          4.48,
+          4.605
+        ],
+        "internal_minor": [
+          4.134,
+          4.334
+        ]
+      },
+      "scope": "Dimensional design bounds only;not purchased bolt/nut certificate or guarantee of actual root/chamfer/runout"
+    },
+    {
+      "author": "Ganter",
+      "url": "https://live-katalog.ganternorm.com/pdf/ganter/en/1024.pdf?dispositiontype=attachment",
+      "item": "GN1024-ST-1.5-E",
+      "facts": {
+        "wire_mm": 1.5,
+        "length_mm": 45,
+        "height_mm": 9,
+        "holding_hole_mm": 2,
+        "bolt_range_mm": [
+          7,
+          12
+        ],
+        "approx_mount_N": 9,
+        "approx_dismount_N": 8
+      },
+      "scope": "No exact supplierCAD or guaranteed retainingload;not adopted"
+    }
+  ],
+  "retrieval_failures": [
+    {
+      "url": "https://www.bossard.com/-/media/bossard-group/website/documents/technical-resources/en/f-079-en.pdf",
+      "error": "web404;not relied upon"
+    },
+    {
+      "action": "Anonymous direct manufacturerpage download via Python urllib",
+      "error": "SandboxDNS unavailable;no escalation or credentials attempted"
+    }
+  ],
+  "pin_alternatives": [
+    {
+      "option": "A custom constant-section pin48b",
+      "decision": "Preserved installed geometry;not qualified",
+      "blocker": "Exactsupplierhead,minimumstrength,ductility,springback and removal mechanics unknown"
+    },
+    {
+      "option": "B GN1024 springpin",
+      "decision": "Not adopted;avoid guessing proprietary profile",
+      "blocker": "45mm vs existing20mm,needs actualcage redesign;approxdismountforce not retainingcapacity;exactCAD unavailable"
+    },
+    {
+      "option": "C headed pin + separate retaining ring",
+      "decision": "Not adopted without part/installation data",
+      "blocker": "Groove strength,tiny ringtoolaccess,newadditionalretainer would need actual qualification"
+    }
+  ],
+  "engineering_decision": "Continue SAME P1;pinqualification remainsblocked but meaningful actual threadCAD/loadgeometry work available. Do not claim allwork externallyblocked. No materialallowable or hostfixation invented.",
+  "hardware_status": "NOT_MEASURED"
+}

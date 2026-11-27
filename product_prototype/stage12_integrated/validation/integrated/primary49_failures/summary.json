@@ -1,0 +1,118 @@
+{
+  "status": "ACTUAL_P1_THREAD_FAILED_TRIALS_AND_TIMEOUT_PRESERVED",
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadboolean_execution/execution.json",
+        "SHA256": "0a087bfc715407a4212e054d9165d600e8a7bd85525d65503719f39ad100e955"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadboolean_execution/analysis.log",
+        "SHA256": "d93961eeb1c3b5f7cf252163009b2cfeed08bbc62449ac3fe58964b488863fd9"
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/probe_boolean49.py\", line 18, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/probe_boolean49.py\", line 14, in main\n    op=BRepAlgoAPI_Common(a,c);buf=io.BytesIO();op.DumpErrors(buf);extras.append(dict(label=label,done=op.IsDone(),errors=op.HasErrors(),error_text=buf.getvalue().decode(),volume_mm3=volume(op.Shape()),solids=solid_count(op.Shape()),valid=bool(BRepCheck_Analyzer(op.Shape()).IsValid())))\nAttributeError: 'OCP.OCP.BRepAlgoAPI.BRepAlgoAPI_Common' object has no attribute 'DumpErrors'\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadcad4_execution/execution.json",
+        "SHA256": "9a4095dd5699912a127c6d9ad88a84ba63f28f2df2a4bec5af19a546d4404347"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadcad4_execution/analysis.log",
+        "SHA256": "1c006407602e8088d07164dd7338d55c09b31ff2534df839fc06a3652f73801a"
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49d.py\", line 103, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49d.py\", line 83, in main\n    pre,i,x,y,zlo,zhi,parent=STATIONS[0];b,n=local_pair(parts[f'{pre}_BOLT_{i}'],parts[f'{pre}_NUT_{i}'],x,y,zhi+14,zlo)\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49d.py\", line 75, in local_pair\n    assert BRepClass3d_SolidClassifier(n,gp_Pnt(2.3,0,2.0),1e-7).State()==TopAbs_OUT,'missing internal groove'\nAssertionError: missing internal groove\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadcad5_execution/execution.json",
+        "SHA256": "3d72427210f9e71f2236c4991f247a14a57bd3828ef8722efc0079704e93680f"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadcad5_execution/analysis.log",
+        "SHA256": "9516b9536ea3bbe5498e0ff20750d23be37075d3389ed598122072ee56a3538d"
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49e.py\", line 105, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49e.py\", line 85, in main\n    pre,i,x,y,zlo,zhi,parent=STATIONS[0];b,n=local_pair(parts[f'{pre}_BOLT_{i}'],parts[f'{pre}_NUT_{i}'],x,y,zhi+14,zlo)\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49e.py\", line 78, in local_pair\n    assert common(b,n)<1e-8,'installed threadpair interpenetration'\nAssertionError: installed threadpair interpenetration\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadcad_execution/execution.json",
+        "SHA256": "3d98e71ce529ff609f5dc32add1d2d161d233388c353420a2376c57fb24cb96e"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadcad_execution/analysis.log",
+        "SHA256": "7f78da7ad7c04ee950d5df805eae5baf9ee7a1334ba0c1cfdfc99a7f02ee3b53"
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49.py\", line 80, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49.py\", line 65, in main\n    s=translate(s,x,y,zhi-6);export(s,out/name);parts[name]=read(out/(name+'.step'));refs[name]=ref(out/(name+'.step'));changed.append(dict(part_ID=name,STEP=refs[name],STL=ref(out/(name+'.stl')),valid=bool(BRepCheck_Analyzer(parts[name]).IsValid()),solids=solid_count(parts[name]),volume_mm3=volume(parts[name]),parent=old['part_references'][name]))\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/build_stage1.py\", line 37, in translate\n    t=gp_Trsf();t.SetTranslation(gp_Vec(x,y,z));return BRepBuilderAPI_Transform(s,t,True).Shape()\nOCP.OCP.Standard.Standard_NullObject\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation2_execution/execution.json",
+        "SHA256": "29044715e8134d69bafd76dd676223a0395d60bdd32dff890a6f8afc6563818f"
+      },
+      "exit_code": 2,
+      "timeout": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation2_execution/analysis.log",
+        "SHA256": "a890ed335b5ac70cf24e3adb9184f9e49d4524de7a0cafb7832933eca0488537"
+      },
+      "tail": "UGH_BOLT_3\", \"nut\": \"BENCH_THROUGH_NUT_3\", \"theta_rad\": 23.755676448894818, \"radius_mm\": 2.22, \"side\": 1, \"bolt_across_groove\": [\"OUT\", \"IN\"], \"actual_bolt\": [\"OUT\", \"IN\"], \"nut_across_ridge\": [\"IN\", \"OUT\"], \"actual_nut\": [\"OUT\", \"OUT\"]}, {\"bolt\": \"BENCH_THROUGH_BOLT_3\", \"nut\": \"BENCH_THROUGH_NUT_3\", \"theta_rad\": 24.27927522449312, \"radius_mm\": 2.3200000000000003, \"side\": -1, \"bolt_across_groove\": [\"OUT\", \"IN\"], \"actual_bolt\": [\"OUT\", \"IN\"], \"nut_across_ridge\": [\"IN\", \"OUT\"], \"actual_nut\": [\"OUT\", \"OUT\"]}, {\"bolt\": \"BENCH_THROUGH_BOLT_3\", \"nut\": \"BENCH_THROUGH_NUT_3\", \"theta_rad\": 24.27927522449312, \"radius_mm\": 2.3200000000000003, \"side\": 1, \"bolt_across_groove\": [\"OUT\", \"IN\"], \"actual_bolt\": [\"OUT\", \"IN\"], \"nut_across_ridge\": [\"IN\", \"OUT\"], \"actual_nut\": [\"OUT\", \"OUT\"]}, {\"bolt\": \"BENCH_THROUGH_BOLT_3\", \"nut\": \"BENCH_THROUGH_NUT_3\", \"theta_rad\": 24.802874000091414, \"radius_mm\": 2.4200000000000004, \"side\": -1, \"bolt_across_groove\": [\"OUT\", \"IN\"], \"actual_bolt\": [\"OUT\", \"IN\"], \"nut_across_ridge\": [\"IN\", \"OUT\"], \"actual_nut\": [\"OUT\", \"OUT\"]}, {\"bolt\": \"BENCH_THROUGH_BOLT_3\", \"nut\": \"BENCH_THROUGH_NUT_3\", \"theta_rad\": 24.802874000091414, \"radius_mm\": 2.4200000000000004, \"side\": 1, \"bolt_across_groove\": [\"OUT\", \"IN\"], \"actual_bolt\": [\"OUT\", \"IN\"], \"nut_across_ridge\": [\"IN\", \"OUT\"], \"actual_nut\": [\"OUT\", \"OUT\"]}], \"clearance_mm\": 0.04301259505462713, \"pressure\": 2.523333502771195}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation6_execution/execution.json",
+        "SHA256": "4aca91b3df02c71ad6b6c3d0ce1e4a512fd4d2193999e80ca885b766cf9928c9"
+      },
+      "exit_code": -15,
+      "timeout": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation6_execution/analysis.log",
+        "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tail": ""
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation_execution/execution.json",
+        "SHA256": "408adca23200b6d52ca771fe6e2626833e6f81a737fbcbad31a7af481429f843"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation_execution/analysis.log",
+        "SHA256": "b85d9b4447ee40c8e168c33784d1453b153c334fe6e6133a84bd71103be9fa35"
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_thread49.py\", line 74, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_thread49.py\", line 36, in main\n    dd=brentq(f,0,.08,xtol=1e-11);levels.append(dict(volume_threshold_mm3=tol,axial_stop_mm=dd))\n  File \"/tmp/regrip_stage2_fem/scipy/optimize/_zeros_py.py\", line 798, in brentq\n    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)\nValueError: f(a) and f(b) must have different signs\n"
+    }
+  ],
+  "failed_49b_validation": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_thread49b_validation2/summary.json",
+    "SHA256": "74f99bdf7bb822d550787fa090f946d3c74c5598ac6f54291238f6dba6b16f66"
+  },
+  "failed_49c_occupancy": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_thread49c_occupancy/summary.json",
+    "SHA256": "5ce6eee1c7bbf5f33b044d43afde5bff58f909205cd0d6697ec329cb9a04b348"
+  },
+  "first_49b_CAD": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49b/summary.json",
+    "SHA256": "c6beb5e5c2af829b9835acdcbd1aadda11bb374d9f6b703c1c30db0c0f9a5e2a"
+  },
+  "second_49c_CAD": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49c/summary.json",
+    "SHA256": "e51887e20a7196933640c5aa08236fa4061182c5970a5454abf8c8fb2a8ae7ca"
+  },
+  "explanation": "Widefirstsweep selfoverlap returnednull.49b validBRep lost internalridge afterunion;49c subtractive multiturn leftsmoothcore andcontradictorycommon0 despiteoverlapclassification.49d precision-only didnotrepairgroove.49e singleturnnut/multiturnbolt interpenetrated.49f BOTHsingleturnsubtraction passes completed actualintegerpitchvolume/externalenvelope/radialcaptureaudit. DumpErrors probe failed unavailablebinding. Finalmonolithic screwfeed/axialroot/unittraction verifier TIMEOUT420s,emptylog,no summary;completedposecount/axialroot/unitload result UNKNOWN. No restart/retry;single save-only recovery. No failedresultreward or whole-systemPASS.",
+  "final_candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/summary.json",
+    "SHA256": "a215c5d13cdd0936c45ed6073098fdc34ffbe56663790bedcf8b7c926e39627d"
+  },
+  "whole_system_release": false
+}

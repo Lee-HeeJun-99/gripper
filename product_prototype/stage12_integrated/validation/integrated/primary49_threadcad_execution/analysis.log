@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49.py", line 80, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thread49.py", line 65, in main
+    s=translate(s,x,y,zhi-6);export(s,out/name);parts[name]=read(out/(name+'.step'));refs[name]=ref(out/(name+'.step'));changed.append(dict(part_ID=name,STEP=refs[name],STL=ref(out/(name+'.stl')),valid=bool(BRepCheck_Analyzer(parts[name]).IsValid()),solids=solid_count(parts[name]),volume_mm3=volume(parts[name]),parent=old['part_references'][name]))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/build_stage1.py", line 37, in translate
+    t=gp_Trsf();t.SetTranslation(gp_Vec(x,y,z));return BRepBuilderAPI_Transform(s,t,True).Shape()
+OCP.OCP.Standard.Standard_NullObject

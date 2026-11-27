@@ -1,0 +1,588 @@
+{
+  "status": "ACTUAL_P1_FINITE_ANCHOR_INDEPENDENT_AUDIT_PASS_LOCAL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor37_affine_h3_n2_audit/inputs.json",
+    "SHA256": "d9b90476234e673693a4b353f14403dce94228ba84b7d7e767e0696380b3a612"
+  },
+  "checks": {
+    "actual85part_hashes": true,
+    "independent_boundary_reconstruction": true,
+    "independent_basis_energy": true,
+    "balanced_state_original_force": true,
+    "balanced_state_original_moment": true,
+    "balanced_state_work_identity": true,
+    "independent_dual_gradient": true,
+    "QP_nonnegative_complementarity": true
+  },
+  "bodies": [
+    {
+      "part": "TEST_BASE",
+      "load_reconstruction_max_N": 8.656270145124267e-16,
+      "barycentric_position_max_mm": 2.842170943040401e-14,
+      "minimum_barycentric": 0.00043466494366785005,
+      "independent_basis_strain_work_relative": 7.049280225472206e-13,
+      "basis_columns_unbalanced": true,
+      "patch_wrench_max_difference": 4.263256414560601e-14
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "load_reconstruction_max_N": 6.487865800153259e-16,
+      "barycentric_position_max_mm": 2.842170943040401e-14,
+      "minimum_barycentric": 0.00020531882077571884,
+      "independent_basis_strain_work_relative": 3.1740626659624272e-12,
+      "basis_columns_unbalanced": true,
+      "patch_wrench_max_difference": 7.105427357601002e-14
+    }
+  ],
+  "balanced_state_rows": [
+    {
+      "part": "TEST_BASE",
+      "case": "conditional_frozen_contact_plus_nominal_gravity",
+      "independent_nodal_force_max_N": 1.2331530517854447e-12,
+      "world_force_max_N": 2.8331503809653213e-14,
+      "world_moment_max_Nm": 9.593659200390903e-15,
+      "independent_strain_work_Nmm": 0.009159246093212985,
+      "load_work_Nmm": 0.009159246093205835,
+      "work_identity_relative": 7.806898182679614e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "nominal_upstream_gravity_only",
+      "independent_nodal_force_max_N": 1.2256686280059242e-12,
+      "world_force_max_N": 2.5243009748062e-14,
+      "world_moment_max_Nm": 7.506661958700534e-15,
+      "independent_strain_work_Nmm": 0.008785655295039045,
+      "load_work_Nmm": 0.008785655295031641,
+      "work_identity_relative": 8.427145781209879e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_0_-1",
+      "independent_nodal_force_max_N": 3.539148208980998e-13,
+      "world_force_max_N": 6.396792817664476e-15,
+      "world_moment_max_Nm": 7.260650414231407e-16,
+      "independent_strain_work_Nmm": 0.00015101369831225185,
+      "load_work_Nmm": 0.00015101369831225424,
+      "work_identity_relative": 1.5794890173049654e-14,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_0_1",
+      "independent_nodal_force_max_N": 5.924208724901762e-13,
+      "world_force_max_N": 5.730659002889382e-15,
+      "world_moment_max_Nm": 1.3051226765981027e-15,
+      "independent_strain_work_Nmm": 0.0001581804692204546,
+      "load_work_Nmm": 0.00015818046922045774,
+      "work_identity_relative": 1.987720934008533e-14,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_1_-1",
+      "independent_nodal_force_max_N": 2.2489619216393975e-13,
+      "world_force_max_N": 5.256472340731122e-14,
+      "world_moment_max_Nm": 1.7490731085700873e-15,
+      "independent_strain_work_Nmm": 0.00023772604944581447,
+      "load_work_Nmm": 0.00023772604944564355,
+      "work_identity_relative": 7.189976567183982e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_1_1",
+      "independent_nodal_force_max_N": 2.096463397305813e-13,
+      "world_force_max_N": 5.278676801223625e-14,
+      "world_moment_max_Nm": 1.6455170559481758e-15,
+      "independent_strain_work_Nmm": 0.00023887441555295888,
+      "load_work_Nmm": 0.00023887441555278698,
+      "work_identity_relative": 7.196260597844973e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_2_-1",
+      "independent_nodal_force_max_N": 2.108414202099283e-13,
+      "world_force_max_N": 9.724986064545844e-15,
+      "world_moment_max_Nm": 1.63996594082505e-15,
+      "independent_strain_work_Nmm": 8.438769050573529e-05,
+      "load_work_Nmm": 8.438769050569044e-05,
+      "work_identity_relative": 5.314200695705455e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_2_1",
+      "independent_nodal_force_max_N": 1.5990465516372426e-13,
+      "world_force_max_N": 1.0155197486588088e-14,
+      "world_moment_max_Nm": 3.51616305516167e-16,
+      "independent_strain_work_Nmm": 8.124940443240612e-05,
+      "load_work_Nmm": 8.124940443236937e-05,
+      "work_identity_relative": 4.523658222978408e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_3_-1",
+      "independent_nodal_force_max_N": 3.567830146414556e-15,
+      "world_force_max_N": 1.046240342482566e-15,
+      "world_moment_max_Nm": 3.2202105565426464e-17,
+      "independent_strain_work_Nmm": 5.1831167286786324e-08,
+      "load_work_Nmm": 5.18311672867475e-08,
+      "work_identity_relative": 7.490579754069285e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_3_1",
+      "independent_nodal_force_max_N": 3.0215149653800956e-15,
+      "world_force_max_N": 1.0519866139967393e-15,
+      "world_moment_max_Nm": 3.01874410885139e-17,
+      "independent_strain_work_Nmm": 5.155577899151067e-08,
+      "load_work_Nmm": 5.155577899147145e-08,
+      "work_identity_relative": 7.607604170097505e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_4_-1",
+      "independent_nodal_force_max_N": 8.772946816026179e-15,
+      "world_force_max_N": 9.002646351084639e-17,
+      "world_moment_max_Nm": 2.420980083073232e-17,
+      "independent_strain_work_Nmm": 2.569533816645692e-08,
+      "load_work_Nmm": 2.569533816645151e-08,
+      "work_identity_relative": 2.105347347854687e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_4_1",
+      "independent_nodal_force_max_N": 5.169521962887833e-15,
+      "world_force_max_N": 8.019900616652159e-17,
+      "world_moment_max_Nm": 8.560643513511046e-18,
+      "independent_strain_work_Nmm": 2.4940613254600353e-08,
+      "load_work_Nmm": 2.4940613254594305e-08,
+      "work_identity_relative": 2.4250986041305837e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_5_-1",
+      "independent_nodal_force_max_N": 1.1968799346689796e-15,
+      "world_force_max_N": 6.174531372304948e-17,
+      "world_moment_max_Nm": 1.5639848338967357e-18,
+      "independent_strain_work_Nmm": 5.756111457401585e-09,
+      "load_work_Nmm": 5.7561114573983865e-09,
+      "work_identity_relative": 5.557063049276483e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "TEST_BASE",
+      "case": "sensitivity_5_1",
+      "independent_nodal_force_max_N": 1.331737426629876e-15,
+      "world_force_max_N": 6.001059024707267e-17,
+      "world_moment_max_Nm": 1.8372076863309996e-18,
+      "independent_strain_work_Nmm": 5.782752717673364e-09,
+      "load_work_Nmm": 5.78275271767009e-09,
+      "work_identity_relative": 5.661630410860785e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "conditional_frozen_contact_plus_nominal_gravity",
+      "independent_nodal_force_max_N": 2.3872674670410987e-12,
+      "world_force_max_N": 8.954811599418495e-15,
+      "world_moment_max_Nm": 1.1873266768501429e-14,
+      "independent_strain_work_Nmm": 0.030273259113857677,
+      "load_work_Nmm": 0.030273259113927174,
+      "work_identity_relative": 2.2956395818846964e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "nominal_upstream_gravity_only",
+      "independent_nodal_force_max_N": 2.3256327419396428e-12,
+      "world_force_max_N": 6.6935300931924015e-15,
+      "world_moment_max_Nm": 9.766655705963353e-15,
+      "independent_strain_work_Nmm": 0.030594547745285892,
+      "load_work_Nmm": 0.03059454774535281,
+      "work_identity_relative": 2.18727511078983e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_0_-1",
+      "independent_nodal_force_max_N": 5.393146731069373e-13,
+      "world_force_max_N": 9.825040087063641e-16,
+      "world_moment_max_Nm": 9.30158727818764e-16,
+      "independent_strain_work_Nmm": 0.00034911578901150673,
+      "load_work_Nmm": 0.00034911578901233886,
+      "work_identity_relative": 2.3835220106679697e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_0_1",
+      "independent_nodal_force_max_N": 4.939450134718373e-13,
+      "world_force_max_N": 4.753467584828197e-15,
+      "world_moment_max_Nm": 1.2231882173807662e-15,
+      "independent_strain_work_Nmm": 0.0003680694483338375,
+      "load_work_Nmm": 0.0003680694483347421,
+      "work_identity_relative": 2.457699455105508e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_1_-1",
+      "independent_nodal_force_max_N": 2.685998938458528e-13,
+      "world_force_max_N": 9.934110825615683e-15,
+      "world_moment_max_Nm": 1.6864345227158787e-15,
+      "independent_strain_work_Nmm": 0.0005036583914644402,
+      "load_work_Nmm": 0.0005036583914653104,
+      "work_identity_relative": 1.7277199752499305e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_1_1",
+      "independent_nodal_force_max_N": 3.2741763131022977e-13,
+      "world_force_max_N": 9.712066220690652e-15,
+      "world_moment_max_Nm": 1.6346104157738407e-15,
+      "independent_strain_work_Nmm": 0.0005210010052008836,
+      "load_work_Nmm": 0.0005210010052018211,
+      "work_identity_relative": 1.7994391741817291e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_2_-1",
+      "independent_nodal_force_max_N": 3.0752508287275326e-13,
+      "world_force_max_N": 1.3495104163691125e-15,
+      "world_moment_max_Nm": 1.8114839054161033e-15,
+      "independent_strain_work_Nmm": 0.000265501057309568,
+      "load_work_Nmm": 0.0002655010573102485,
+      "work_identity_relative": 2.5630763977159467e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_2_1",
+      "independent_nodal_force_max_N": 2.523429598957905e-13,
+      "world_force_max_N": 1.7187857040412702e-15,
+      "world_moment_max_Nm": 1.989250777989504e-16,
+      "independent_strain_work_Nmm": 0.000221497670593732,
+      "load_work_Nmm": 0.00022149767059423942,
+      "work_identity_relative": 2.2909212562650094e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_3_-1",
+      "independent_nodal_force_max_N": 4.5349150849864584e-15,
+      "world_force_max_N": 1.616240891226313e-16,
+      "world_moment_max_Nm": 2.3894997967556233e-17,
+      "independent_strain_work_Nmm": 1.0593080508171243e-07,
+      "load_work_Nmm": 1.0593080508190978e-07,
+      "work_identity_relative": 1.86309050098927e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_3_1",
+      "independent_nodal_force_max_N": 4.569352294718046e-15,
+      "world_force_max_N": 1.5761254108443493e-16,
+      "world_moment_max_Nm": 2.1723488079997826e-17,
+      "independent_strain_work_Nmm": 1.0931143289295136e-07,
+      "load_work_Nmm": 1.0931143289315971e-07,
+      "work_identity_relative": 1.9060848862753788e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_4_-1",
+      "independent_nodal_force_max_N": 6.953667429056764e-15,
+      "world_force_max_N": 8.90062203867369e-17,
+      "world_moment_max_Nm": 2.1428497061365455e-17,
+      "independent_strain_work_Nmm": 4.140119397410796e-08,
+      "load_work_Nmm": 4.140119397422717e-08,
+      "work_identity_relative": 2.8794645380361323e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_4_1",
+      "independent_nodal_force_max_N": 6.180877554904014e-15,
+      "world_force_max_N": 2.3986104293641118e-17,
+      "world_moment_max_Nm": 1.1484899403030325e-17,
+      "independent_strain_work_Nmm": 3.9863774470301134e-08,
+      "load_work_Nmm": 3.98637744704125e-08,
+      "work_identity_relative": 2.7936386282712895e-12,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_5_-1",
+      "independent_nodal_force_max_N": 1.04600268063023e-15,
+      "world_force_max_N": 2.0430434687773724e-18,
+      "world_moment_max_Nm": 6.320129983190858e-19,
+      "independent_strain_work_Nmm": 5.1577147481691604e-09,
+      "load_work_Nmm": 5.1577147481712474e-09,
+      "work_identity_relative": 4.0463204875982345e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "case": "sensitivity_5_1",
+      "independent_nodal_force_max_N": 1.094378002797344e-15,
+      "world_force_max_N": 4.645128682742583e-18,
+      "world_moment_max_Nm": 1.2414589839679179e-18,
+      "independent_strain_work_Nmm": 5.147434010472397e-09,
+      "load_work_Nmm": 5.147434010474834e-09,
+      "work_identity_relative": 4.734153132652644e-13,
+      "original_force_pass": true,
+      "original_world_moment_pass": true
+    }
+  ],
+  "independent_dual_checks": [
+    {
+      "case": "conditional_frozen_contact_plus_nominal_gravity",
+      "minimum_generalized_gap_mm": -2.1671727292501414e-11,
+      "maximum_force_gap_product_Nmm": 6.803227374747203e-11,
+      "gap_witness_difference_mm": 4.336808689942018e-19,
+      "active_gap_max_mm": 2.1671727292501414e-11
+    },
+    {
+      "case": "nominal_upstream_gravity_only",
+      "minimum_generalized_gap_mm": -1.386105214303988e-10,
+      "maximum_force_gap_product_Nmm": 5.630552537264968e-10,
+      "gap_witness_difference_mm": 1.3010426069826053e-18,
+      "active_gap_max_mm": 1.7269190908547095e-10
+    },
+    {
+      "case": "sensitivity_0_-1",
+      "minimum_generalized_gap_mm": -2.976838020470095e-11,
+      "maximum_force_gap_product_Nmm": 6.68605670384037e-11,
+      "gap_witness_difference_mm": 2.710505431213761e-20,
+      "active_gap_max_mm": 2.976838020470095e-11
+    },
+    {
+      "case": "sensitivity_0_1",
+      "minimum_generalized_gap_mm": -5.423859988527499e-11,
+      "maximum_force_gap_product_Nmm": 1.0223872769609282e-10,
+      "gap_witness_difference_mm": 5.421010862427522e-20,
+      "active_gap_max_mm": 5.423859988527499e-11
+    },
+    {
+      "case": "sensitivity_1_-1",
+      "minimum_generalized_gap_mm": -2.6162858652537674e-10,
+      "maximum_force_gap_product_Nmm": 1.9878035665597892e-10,
+      "gap_witness_difference_mm": 5.421010862427522e-20,
+      "active_gap_max_mm": 2.6162858652537674e-10
+    },
+    {
+      "case": "sensitivity_1_1",
+      "minimum_generalized_gap_mm": -1.2635279893766574e-10,
+      "maximum_force_gap_product_Nmm": 9.54239419563645e-11,
+      "gap_witness_difference_mm": 1.0842021724855044e-19,
+      "active_gap_max_mm": 1.2635279893766574e-10
+    },
+    {
+      "case": "sensitivity_2_-1",
+      "minimum_generalized_gap_mm": -7.448090054591999e-11,
+      "maximum_force_gap_product_Nmm": 5.399980517481888e-11,
+      "gap_witness_difference_mm": 5.421010862427522e-20,
+      "active_gap_max_mm": 7.448090055947251e-11
+    },
+    {
+      "case": "sensitivity_2_1",
+      "minimum_generalized_gap_mm": -9.878267837622987e-11,
+      "maximum_force_gap_product_Nmm": 5.5886123879630964e-11,
+      "gap_witness_difference_mm": 2.710505431213761e-20,
+      "active_gap_max_mm": 9.878267837622987e-11
+    },
+    {
+      "case": "sensitivity_3_-1",
+      "minimum_generalized_gap_mm": -2.1500984669936036e-10,
+      "maximum_force_gap_product_Nmm": 2.726969859878936e-12,
+      "gap_witness_difference_mm": 1.6940658945086007e-21,
+      "active_gap_max_mm": 2.1500984669936036e-10
+    },
+    {
+      "case": "sensitivity_3_1",
+      "minimum_generalized_gap_mm": -1.6602685732974907e-10,
+      "maximum_force_gap_product_Nmm": 1.8519723510221084e-12,
+      "gap_witness_difference_mm": 1.6940658945086007e-21,
+      "active_gap_max_mm": 1.6602685733039758e-10
+    },
+    {
+      "case": "sensitivity_4_-1",
+      "minimum_generalized_gap_mm": -1.652943527772677e-10,
+      "maximum_force_gap_product_Nmm": 5.927046885911571e-12,
+      "gap_witness_difference_mm": 4.235164736271502e-22,
+      "active_gap_max_mm": 1.652943527772677e-10
+    },
+    {
+      "case": "sensitivity_4_1",
+      "minimum_generalized_gap_mm": -2.5537940006752753e-10,
+      "maximum_force_gap_product_Nmm": 9.04283442174877e-12,
+      "gap_witness_difference_mm": 4.235164736271502e-22,
+      "active_gap_max_mm": 2.553794000683216e-10
+    },
+    {
+      "case": "sensitivity_5_-1",
+      "minimum_generalized_gap_mm": -1.4048260679989935e-10,
+      "maximum_force_gap_product_Nmm": 8.495543643292007e-13,
+      "gap_witness_difference_mm": 2.117582368135751e-22,
+      "active_gap_max_mm": 1.4048260679989935e-10
+    },
+    {
+      "case": "sensitivity_5_1",
+      "minimum_generalized_gap_mm": -1.1867735068158838e-10,
+      "maximum_force_gap_product_Nmm": 7.617924159600071e-13,
+      "gap_witness_difference_mm": 3.1763735522036263e-22,
+      "active_gap_max_mm": 1.1867735068158838e-10
+    }
+  ],
+  "world_force_max_N": 5.278676801223625e-14,
+  "world_moment_max_Nm": 1.1873266768501429e-14,
+  "no_external_support_negative_control": [
+    {
+      "case": "conditional_frozen_contact_plus_nominal_gravity",
+      "missing_external_force_N": 10.122832929958957,
+      "missing_external_moment_Nm": 0.24388930272768974,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "nominal_upstream_gravity_only",
+      "missing_external_force_N": 10.114582742518497,
+      "missing_external_moment_Nm": 0.28155829210366656,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_0_-1",
+      "missing_external_force_N": 1.0,
+      "missing_external_moment_Nm": 0.0,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_0_1",
+      "missing_external_force_N": 1.0,
+      "missing_external_moment_Nm": 0.0,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_1_-1",
+      "missing_external_force_N": 1.0,
+      "missing_external_moment_Nm": 0.0,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_1_1",
+      "missing_external_force_N": 1.0,
+      "missing_external_moment_Nm": 0.0,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_2_-1",
+      "missing_external_force_N": 1.0,
+      "missing_external_moment_Nm": 0.0,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_2_1",
+      "missing_external_force_N": 1.0,
+      "missing_external_moment_Nm": 0.0,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_3_-1",
+      "missing_external_force_N": 0.0,
+      "missing_external_moment_Nm": 0.001,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_3_1",
+      "missing_external_force_N": 0.0,
+      "missing_external_moment_Nm": 0.001,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_4_-1",
+      "missing_external_force_N": 0.0,
+      "missing_external_moment_Nm": 0.001,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_4_1",
+      "missing_external_force_N": 0.0,
+      "missing_external_moment_Nm": 0.001,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_5_-1",
+      "missing_external_force_N": 0.0,
+      "missing_external_moment_Nm": 0.001,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    },
+    {
+      "case": "sensitivity_5_1",
+      "missing_external_force_N": 0.0,
+      "missing_external_moment_Nm": 0.001,
+      "actual_external_attachment_present": false,
+      "accepted": false
+    }
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Local numerical audit cannot qualify conditional material,major-shank spring,source trace,pressure regularity,mesh/time/globalenergy or hardware.",
+    "No bench attachment exists;source trace explicitly supplies missing resultant as a conditional Neumann sensitivity. Negative control rejects every nonzero unsupported mode."
+  ]
+}

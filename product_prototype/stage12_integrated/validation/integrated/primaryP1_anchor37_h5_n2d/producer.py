@@ -1,0 +1,174 @@
+"""Actual P1 two finite bodies + conditional axial connectors, no fixed nodes.
+A variational contact sensitivity, NOT a certified support or installed bolt law.
+Every source is an explicit actual-surface six-resultant Neumann functional.
+"""
+import sys,json,shutil,time,gc
+import numpy as np
+from scipy import sparse
+from scipy.sparse.linalg import splu
+from scipy.optimize import minimize,linprog
+from skfem import MeshTet,Basis,ElementVector,ElementTetP1,asm
+from skfem.models.elasticity import linear_elasticity,lame_parameters
+from baseline_registry import ROOT,REPO,S1,ref,sha,dump
+from primary_finite_body34 import meshpart
+sys.path.insert(0,str(S1/'scripts'))
+from incremental_stage1 import read,box,bounds
+from primary_motor_bearing_wrenches import faces
+from validate_base_anchor36 import props
+from OCP.BRepAlgoAPI import BRepAlgoAPI_Common
+from OCP.BRepBuilderAPI import BRepBuilderAPI_MakePolygon,BRepBuilderAPI_MakeFace
+from OCP.gp import gp_Pnt
+
+ST=[(-44,34),(86,34),(21,-53)]
+I=np.eye(3)
+def H(p):
+ p=np.asarray(p);return np.r_[I,np.array([[0,-p[2],p[1]],[p[2],0,-p[0]],[-p[1],p[0],0]])]
+def clip(poly,k,v,above):
+ out=[]
+ for a,b in zip(poly,poly[1:]+poly[:1]):
+  da=(a[k]-v)*(1 if above else -1);db=(b[k]-v)*(1 if above else -1)
+  if da>=-1e-12:out.append(a)
+  if (da>0 and db<0) or (da<0 and db>0):out.append(a+(b-a)*da/(da-db))
+ return out
+
+def tri_shape(p):
+ w=BRepBuilderAPI_MakePolygon()
+ for q in p:w.Add(gp_Pnt(*map(float,q)))
+ w.Close();return BRepBuilderAPI_MakeFace(w.Wire()).Face()
+def planar_triangles(body,axis,value):
+ p,tri=body['p'],body['tri'];ix=np.where(np.all(abs(p[tri,axis]-value)<1e-7,axis=1))[0]
+ return [(tri[i],p[tri[i]]) for i in ix]
+def bary(points,q):
+ z=np.linalg.lstsq((points[1:]-points[0]).T,q-points[0],rcond=None)[0];return np.r_[1-z.sum(),z]
+def add(F,nodes,bc,force,col):
+ for j,node in enumerate(nodes):F[3*node:3*node+3,col]+=bc[j]*force
+
+def common_faces(a,b,axis,v):
+ result=[]
+ for f in faces(a,axis,v):
+  for g in faces(b,axis,v):
+   c=BRepAlgoAPI_Common(f,g).Shape();ar,_=props(c,True)
+   if ar>1e-8:result.append(c)
+ return result
+
+def patches(base,rail,shapes,n):
+ defs=[(2,66,[0,0,-1],'topseat'),(0,-50,[1,0,0],'key0_xmin'),(0,-38,[-1,0,0],'key0_xmax'),(1,28,[0,1,0],'key_ymin'),(1,40,[0,-1,0],'key_ymax')]
+ out=[]
+ for ax,v,d,label in defs:
+  other=[k for k in range(3) if k!=ax]
+  for f in common_faces(shapes['TEST_BASE'],shapes['BENCH_ANCHOR_RAIL'],ax,v):
+   bb=np.array(bounds(f));gr=[np.linspace(bb[k],bb[k+3],n+1) for k in other]
+   for lo,hi in zip(gr[0][:-1],gr[0][1:]):
+    for l2,h2 in zip(gr[1][:-1],gr[1][1:]):
+     low=bb[:3].copy();size=bb[3:]-low;low[ax]-=.01;size[ax]=.02;low[other]=[lo,l2];size[other]=[hi-lo,h2-l2]
+     patch=BRepAlgoAPI_Common(f,box(*map(float,low),*map(float,size))).Shape();ar,c=props(patch,True)
+     if ar>1e-8:out.append(dict(label=label,axis=ax,value=v,d=np.array(d,float),face=patch,area=ar,centroid=c,body_faces=[(base,ax,v),(rail,ax,v)]))
+ for i,(x,y) in enumerate(ST):
+  fs=common_faces(shapes['TEST_BASE'],shapes[f'ANCHOR_BOLT_{i}'],2,60);gs=common_faces(shapes['BENCH_ANCHOR_RAIL'],shapes[f'ANCHOR_NUT_{i}'],2,74)
+  assert len(fs)==len(gs)==1
+  ah,ch=props(fs[0],True);an,cn=props(gs[0],True)
+  out.append(dict(label=f'bolt{i}',axis=2,value=60,d=np.array([0,0,1.]),face=fs[0],area=ah,centroid=ch,rail_face=gs[0],rail_area=an,rail_centroid=cn,body_faces=[(base,2,60),(rail,2,74)]))
+ return out
+
+def map_patch(body,face,axis,value,d,col,F):
+ """Exact BRep intersection with every planar FE boundary triangle.
+ Constant traction is integrated at intersection centroid (P1 is affine).
+ Finite chord-hole domain differences are measured, never called exact CAD.
+ """
+ total=0.;cent=np.zeros(3);journal=[];fb=np.array(bounds(face));other=[k for k in range(3) if k!=axis]
+ for nodes,pts in planar_triangles(body,axis,value):
+  if any(pts[:,k].max()<fb[k]-1e-8 or pts[:,k].min()>fb[k+3]+1e-8 for k in other):continue
+  shape=BRepAlgoAPI_Common(face,tri_shape(pts)).Shape();area,q=props(shape,True)
+  if area<1e-11:continue
+  bc=bary(pts,q);assert bc.min()>-1e-7 and bc.max()<1+1e-7
+  total+=area;cent+=area*q;journal.append(dict(nodes=nodes.tolist(),barycentric=bc.tolist(),point_mm=q.tolist(),area_mm2=area))
+ assert total>1e-8
+ for row in journal:add(F,row['nodes'],row['barycentric'],d*row['area_mm2']/total,col)
+ return dict(integrated_area_mm2=total,centroid_mm=(cent/total).tolist(),normalized_direction=d.tolist(),quadrature=journal)
+
+def body_mesh(part,path,h):
+ start=time.monotonic();p,t,tri,V=meshpart(path,h,24);N=len(p)*3;m=MeshTet(p.T,t.T);la,mu=lame_parameters(69000.,.33);K=sparse.csr_matrix((N,N))
+ for first in range(0,len(t),8000):
+  assert not(ROOT/'runtime/STOP').exists();K+=asm(linear_elasticity(la,mu),Basis(m,ElementVector(ElementTetP1()),intorder=2,elements=np.arange(first,min(first+8000,len(t)))))
+ R=np.zeros((N,6));origin=p.mean(0);scale=100.
+ for j,e in enumerate(I):R[:,j]=np.broadcast_to(e,p.shape).ravel();R[:,j+3]=(np.cross(e,p-origin)/scale).ravel()
+ Q=R.T/len(p);A=sparse.bmat([[K/69000.,sparse.csr_matrix(Q.T)],[sparse.csr_matrix(Q),None]],format='csc');factor=splu(A)
+ return dict(name=part,p=p,t=t,tri=tri,K=K,R=R,Q=Q,factor=factor,CADV=V,start=start)
+
+def source(body,shapes,profile):
+ """Actual upper Ground/Base face; actual exposed receiver underside rim.
+ Signed six-resultant trace is a declared sensitivity, NOT bench attachment.
+ """
+ N=3*len(body['p']);F=np.zeros((N,6));qs=[];part=body['name'];z=46 if part=='TEST_BASE' else 66
+ actual=common_faces(shapes['TEST_BASE'],shapes['GROUND_PLATE'],2,z) if part=='TEST_BASE' else faces(shapes['BENCH_ANCHOR_RAIL'],2,z)
+ for face in actual:
+  for nodes,pts in planar_triangles(body,2,z):
+   if part!='TEST_BASE' and not(np.max(pts[:,0])<=-54+1e-7 or np.min(pts[:,0])>=96-1e-7):continue
+   c=BRepAlgoAPI_Common(face,tri_shape(pts)).Shape();ar,q=props(c,True)
+   if ar<1e-10:continue
+   # affine traction needs degree2 exact integration on polygon; use local
+   # triangulation from FE triangle only where BRep intersection equals triangle.
+   # Instead constant cell force with six-resultant coefficients is an explicit
+   # lumped surface trace, preserving exact force/moment and P1 nodal work.
+   weight=ar*(1 if profile=='uniform' or part=='TEST_BASE' else (1+((q[1]+9.5)/54)**2))
+   qs.append(dict(nodes=nodes.tolist(),barycentric=bary(pts,q).tolist(),point_mm=q.tolist(),area_mm2=ar,weight=weight))
+ assert len(qs)>6,(part,len(qs));M=sum((q['weight']*H(q['point_mm'])@H(q['point_mm']).T for q in qs),np.zeros((6,6)));inv=np.linalg.inv(M)
+ for q in qs:
+  f=q['weight']*H(q['point_mm']).T@inv
+  for col in range(6):add(F,q['nodes'],q['barycentric'],f[:,col],col)
+ return F,qs
+
+def solve_body(body,F,out,journal):
+ N=F.shape[0];sol=body['factor'].solve(np.vstack([F/69000.,np.zeros((6,F.shape[1]))]));U=sol[:N];projected_res=body['K']@U+body['Q'].T@(sol[N:]*69000.)-F
+ np.savez_compressed(out/(body['name']+'.npz'),points_mm=body['p'],tetra=body['t'],boundary_triangles=body['tri'],F=F,U=U,Q=body['Q'],R=body['R'],dual=sol[N:]*69000.)
+ result=dict(part=body['name'],nodes=N//3,tetra=len(body['t']),DOF=N,conditional_E_MPa=69000.,conditional_nu=.33,all_elastic_DOF_retained=True,rigid_gauges=6,fixed_DOF=0,projected_stationarity_N=float(abs(projected_res).max()),unbalanced_columns_NOT_physical_equilibria=True,fields=ref(out/(body['name']+'.npz')),boundary_journal=journal)
+ return U,F.T@U,result
+
+def main():
+ tag,h,n,profile=sys.argv[1:];h=float(h);n=int(n);out=ROOT/'validation/integrated'/tag;out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py');assert not(ROOT/'runtime/STOP').exists();cp=ROOT/'cad/exports/primaryP1_anchor36b/summary.json';cad=json.loads(cp.read_text());assert len(cad['part_references'])==85 and all(sha(REPO/r['path'])==r['SHA256'] for r in cad['part_references'].values());shapes={name:read(REPO/r['path']) for name,r in cad['part_references'].items() if name in ['TEST_BASE','BENCH_ANCHOR_RAIL','GROUND_PLATE'] or name.startswith('ANCHOR_')}
+ bodies=[body_mesh(name,REPO/cad['part_references'][name]['path'],h) for name in ['TEST_BASE','BENCH_ANCHOR_RAIL']];patch=patches(*bodies,shapes,n);nc=len(patch);F=[np.zeros((3*len(b['p']),nc+6)) for b in bodies];journals=[[],[]];meta=[]
+ for j,pat in enumerate(patch):
+  assert not(ROOT/'runtime/STOP').exists();row=dict(label=pat['label'],exact_CAD_area_mm2=pat['area'],exact_CAD_centroid_mm=pat['centroid'].tolist(),direction=pat['d'].tolist(),bodies=[])
+  for k,b in enumerate(bodies):
+   ax,v=pat['body_faces'][k][1:];face=pat.get('rail_face',pat['face']) if k else pat['face'];d=pat['d']*(-1 if k else 1)
+   m=map_patch(b,face,ax,v,d,j,F[k]);journals[k].append(m);row['bodies'].append({key:value for key,value in m.items() if key!='quadrature'})
+  meta.append(row)
+ source_journal=[]
+ for k,b in enumerate(bodies):
+  S,qs=source(b,shapes,profile);F[k][:,nc:]=S;source_journal.append(qs)
+ Us=[];Cs=[];bodyrows=[]
+ for k,b in enumerate(bodies):
+  U,C,row=solve_body(b,F[k],out,journals[k]);Us.append(U);Cs.append(C);bodyrows.append(row);del b['factor'];gc.collect()
+ # World wrenches in N/Nmm; all relative rigid translations AND rotations
+ # remain unknown and are enforced by equilibrium (six equality rows).
+ Aw=[]
+ for k,b in enumerate(bodies):
+  W=np.column_stack([sum((H(q)@f for q,f in zip(b['p'],F[k][:,j].reshape(-1,3))),np.zeros(6)) for j in range(nc+6)]);Aw.append(W)
+ A=Aw[0][:,:nc];source_error=max(abs(Aw[k][:,nc:]-np.eye(6)).max() for k in range(2));pair_error=float(abs(Aw[0][:,:nc]+Aw[1][:,:nc]).max())
+ # Nonmatching linear FE rims have slightly different centroids. Preserve
+ # actual mapped moments; use full two-body equality, not silently match them.
+ eq=np.vstack([Aw[0][:,:nc],Aw[1][:,:nc]])
+ loads=json.loads((ROOT/'validation/integrated/primaryP1_anchor36b_witness/tractions.json').read_text())['8'];rows=[];C=Cs[0][:nc,:nc]+Cs[1][:nc,:nc];C=(C+C.T)/2;spring=np.zeros(nc);spring[-3:]=14/(200000.*np.pi*2.5**2);C+=np.diag(spring)
+ for name,l in loads.items():
+  assert not(ROOT/'runtime/STOP').exists();w=np.array(l['external_wrench_N_Nm'])*[1,1,1,1000,1000,1000];f0=F[0][:,nc:]@w;f1=F[1][:,nc:]@(-w);d=Cs[0][:nc,nc:]@w-Cs[1][:nc,nc:]@w;rhs=np.r_[-w,w];scale=np.tile([1,1,1,.01,.01,.01],2);eqs=eq*scale[:,None];rs=rhs*scale
+  # Remove ONLY algebraically redundant force equilibrium rows using SVD.
+  uu,ss,vv=np.linalg.svd(eqs,full_matrices=False);rank=int(sum(ss>ss[0]*1e-10));ae=uu[:,:rank].T@eqs;be=uu[:,:rank].T@rs;compat=float(np.max(abs(rs-uu[:,:rank]@be)));feas=linprog(np.zeros(nc),A_eq=ae,b_eq=be,bounds=(0,None),method='highs')
+  rr=dict(case=name,external_wrench_N_Nmm=w.tolist(),algebraic_equality_rank=rank,discarded_row_compatibility=compat,LP_feasible=bool(feas.success),status='NO_CONDITIONAL_SOLUTION')
+  if feas.success and compat<1e-8:
+   cscale=max(abs(C).max(),1e-12);opt=minimize(lambda p: .5*p@C@p/cscale+d@p/cscale,feas.x,jac=lambda p:(C@p+d)/cscale,method='SLSQP',bounds=[(0,None)]*nc,constraints=[dict(type='eq',fun=lambda p:ae@p-be,jac=lambda p:ae)],options=dict(ftol=1e-11,maxiter=1500));p=opt.x;g=C@p+d;active=p>max(p.max()*1e-8,1e-10);lm=np.linalg.lstsq(ae[:,active].T,-g[active],rcond=None)[0];# Active reactions may not span all six rigid modes. A minimum-norm
+   # equality multiplier need not satisfy inactive inequalities. Select a
+   # true dual witness by a separate scaled minimax LP; retain its residual.
+   gs=max(abs(g).max(),1e-15);at=ae.T;ga=g/gs
+   amat=np.vstack([np.c_[-at,-np.ones(nc)],np.c_[at[active],-np.ones(active.sum())]])
+   bmat=np.r_[ga,-ga[active]];dual=linprog(np.r_[np.zeros(rank),1.],A_ub=amat,b_ub=bmat,bounds=[(None,None)]*rank+[(0,None)],method='highs')
+   if dual.success:lm=dual.x[:rank]*gs
+   gap=g+ae.T@lm;balanced=[];energy=[]
+   for k,b in enumerate(bodies):
+    coeff=np.r_[p,w if k==0 else -w];force=F[k]@coeff;u=Us[k]@coeff;balanced.append(dict(force_residual_N=float(abs((b['K']@u-force).reshape(-1,3)).max()),world_wrench_N_Nmm=(Aw[k]@coeff).tolist(),maximum_elastic_displacement_mm=float(np.linalg.norm(u.reshape(-1,3),axis=1).max())));energy.append(float(u@force))
+   rr.update(status='CONDITIONAL_VARIATIONAL_SENSITIVITY_ONLY' if opt.success else 'QP_NUMERICAL_FAIL',optimizer_success=bool(opt.success),optimizer_message=str(opt.message),iterations=int(opt.nit),dual_feasible=bool(dual.success),dual_residual_mm=float(dual.x[-1]*gs) if dual.success else None,equality_multiplier=lm.tolist(),reduced_equality_matrix=ae.tolist(),contact_gap_mm=gap.tolist(),contact_forces_N=p.tolist(),pressures_MPa=[float(x/m['bodies'][0]['integrated_area_mm2']) for x,m in zip(p,meta)],bolt_tension_N=p[-3:].tolist(),nominal_major_shank_extension_mm=(p[-3:]*spring[-3:]).tolist(),maximum_negative_gap_mm=float(max(0,-gap.min())),active_stationarity_mm=float(abs(gap[active]).max()) if active.any() else 0.,maximum_complementarity_Nmm=float(abs(p*gap).max()),full_body_equilibrium=balanced,body_strain_work_Nmm=energy,bolt_strain_work_Nmm=float(np.dot(p*p,spring)),total_strain_work_Nmm=float(sum(energy)+np.dot(p*p,spring)),full_equality_residual_N_Nmm=(eq@p-rhs).tolist())
+  rows.append(rr)
+ dump(out/'geometry_journal.json',dict(patches=meta,body_quadrature=journals,source_quadrature=source_journal));np.savez_compressed(out/'operators.npz',C=C,body_compliance=np.array(Cs),body_wrench=np.array(Aw),spring_mm_N=spring,equality=eq)
+ dump(out/'inputs.json',dict(candidate=ref(cp),producer=ref(out/'producer.py'),mesh_dependency=ref(ROOT/'scripts/primary_finite_body34.py'),h_mm=h,curvature=24,patch_divisions=n,source_profile=profile,standard_dimensional_source=ref(ROOT/'models/standard_drive/primary_retention_sources2/reviewed.json'),conditional_body_material='E69000MPa nu.33 NOT source-backed minimum',conditional_bolt='E200000MPa nominal major diameter5mm L14mm axial spring only;unknown threadcore/flank,head/nut elasticity,rest/preload;NOT installed physical law',source_trace='Actual GroundPlate/Base common z46 face + actual exposed receiver underside outer x rims z66,explicit six-resultant signed Neumann traces. No physical bench is present. No fixed nodes. Conditional loads re-express historical resultant ONLY;not solved gravity/contact field.',current_criteria=dict(force_N=1e-8,moment_Nm=1e-10,mesh_relative=.01,time_relative=.001)))
+ dump(out/'summary.json',dict(status='ACTUAL_P1_FINITE_ANCHOR_VARIATIONAL_CONDITIONAL_NOT_RELEASE',candidate=ref(cp),inputs=ref(out/'inputs.json'),actual_parts=85,actual_CAD_change_files=[],body_results=bodyrows,source_wrench_identity_max=source_error,opposite_pair_wrench_discrepancy_N_Nmm=pair_error,contact_variables=nc,rows=rows,fields=[ref(out/(b['name']+'.npz')) for b in bodies],operators=ref(out/'operators.npz'),geometry=ref(out/'geometry_journal.json'),accepted_physical_product_equilibria=0,newly_qualified_system_gate_ids=[],whole_system_release=False,hardware='NOT_MEASURED',limitations=['Finite actual full Base/receiver elasticity,not coupons. No elastic node fixed. Six gauges only;only balanced combined states may be physical sensitivities.','Signed source trace is an explicit conditional boundary functional,not actual positive bench contact,bolt clamp,external fixture or strength. No external receiver attachment exists.','Major-envelope axial springs are conditional upper-stiffness dimensions,not finite threadcore/flank/head/nut/preload/rest law.','Exact BRep common integrated over planar P1 mesh faces;facet-hole chord geometry/finite coverage and nonmatching centroid differences remain independent errors.','Frictionless nominal zero-gap planar contact sensitivity;no installed tolerance,source-backed material minima or operating Finger/root contact state.','All earlier LP/root/Beam/dt/globalenergy failures preserved. All22systemgates and fullsame-revision3Finger release blocked.']))
+ print(json.dumps(dict(tag=tag,rows=len(rows),solved=sum(r.get('optimizer_success',False) for r in rows),pair_error=pair_error,source_error=source_error)),flush=True)
+if __name__=='__main__':main()

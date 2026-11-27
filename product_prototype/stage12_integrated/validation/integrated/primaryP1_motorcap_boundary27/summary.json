@@ -1,0 +1,91 @@
+{
+  "status": "ACTUAL_P1_ADJACENT_FINITE_BOUNDARY_BLOCK_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motorcap_boundary27/inputs.json",
+    "SHA256": "fedd549fdfcc7b9ae68350198fc913e69259db69337f405cb46f8641c7dbd536"
+  },
+  "material_ledger": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motorcap_boundary27/material_gap_ledger.npz",
+    "SHA256": "5adc732263e34eb1f6ac92ace766e00d38be4b1e878a014b1deaac008464abbf"
+  },
+  "checks": {
+    "full_rows": true,
+    "rigid_and_virtualwork": true,
+    "nominal_nonpenetration": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "source": "Motor",
+      "owner": "MOTOR_CAP",
+      "material_samples": 3048,
+      "source_boundary_triangles": 1016,
+      "owner_boundary_triangles": 3710,
+      "material_area_mm2": 1449.875985905361,
+      "all_samples_retained": true,
+      "accepted_oriented_charts": 2914,
+      "unavailable_charts": 134,
+      "chart_reasons": {
+        "UNIQUE_SIGNED_DISTANCE_CHART": 2642,
+        "ORIENTED_COPLANAR_ZERO_GAP_CHART": 272,
+        "MIXED_OR_TANGENT_ORIENTED_SIGNS": 131,
+        "DISTINCT_FACE_TIE": 3
+      },
+      "negative_gap_samples": 0,
+      "maximum_penetration_mm": 3.552713678800501e-15,
+      "nominal_active_rows": 272,
+      "max_common_rigid_mode_error": 1.4210854715202004e-14,
+      "max_virtualwork_error": 3.50583008804084e-11,
+      "offcontact_virtualwork_probes": 52,
+      "max_unit_action_reaction_moment_error_Nmm": 7.16093850883226e-15,
+      "full_row_J": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motorcap_boundary27/h2_gap_J.npz",
+        "SHA256": "e03fe84e79e3458e8915217121da618f20053dfe8f9bf7387acd07d63052ddef"
+      },
+      "physical_model_ready": false
+    },
+    {
+      "mesh_level": 3,
+      "source": "Motor",
+      "owner": "MOTOR_CAP",
+      "material_samples": 3048,
+      "source_boundary_triangles": 1016,
+      "owner_boundary_triangles": 3710,
+      "material_area_mm2": 1449.875985905361,
+      "all_samples_retained": true,
+      "accepted_oriented_charts": 2914,
+      "unavailable_charts": 134,
+      "chart_reasons": {
+        "UNIQUE_SIGNED_DISTANCE_CHART": 2642,
+        "ORIENTED_COPLANAR_ZERO_GAP_CHART": 272,
+        "MIXED_OR_TANGENT_ORIENTED_SIGNS": 131,
+        "DISTINCT_FACE_TIE": 3
+      },
+      "negative_gap_samples": 0,
+      "maximum_penetration_mm": 3.552713678800501e-15,
+      "nominal_active_rows": 272,
+      "max_common_rigid_mode_error": 1.4210854715202004e-14,
+      "max_virtualwork_error": 3.50583008804084e-11,
+      "offcontact_virtualwork_probes": 52,
+      "max_unit_action_reaction_moment_error_Nmm": 7.16093850883226e-15,
+      "full_row_J": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motorcap_boundary27/h3_gap_J.npz",
+        "SHA256": "72c6eebb8079bd62540a4ac0f4c15dbe7f0d852c2c1ee096836100fd7528b0cd"
+      },
+      "physical_model_ready": false
+    }
+  ],
+  "elapsed_s": 5.665744287893176,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Every material row retained; unavailable charts remain NaN and block solve pending per-step finite-domain resolution. Not pressure or equilibrium.",
+    "Polyhedral source degree2 quadrature is not moving overlap/contact integration convergence or exact curved CAD. Actual Motor has rigid proxy kinematics, no source case stiffness/bearing rating qualification.",
+    "No contact/friction/material/physical Baseanchor/globalenergy/full3Finger gate qualified."
+  ]
+}

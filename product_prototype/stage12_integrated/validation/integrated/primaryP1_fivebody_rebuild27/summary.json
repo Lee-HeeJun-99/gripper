@@ -1,0 +1,369 @@
+{
+  "status": "ACTUAL_P1_FIVEBODY_GEOMETRY_ELASTICITY_PORT_REBUILD_VERIFIED_NOT_EQUILIBRIUM",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fivebody_rebuild27/inputs.json",
+    "SHA256": "724be85f1e0f7fa7366115c21fb9d9b99521c61ced8aca630ae43cf7e4462cb2"
+  },
+  "checks": {
+    "source_and_same_revision_geometry": true,
+    "new_root_port_load_resultants": true,
+    "proven_elastic_operator": true,
+    "unfixed_geometry_no_old_solution": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "physical_coordinates": 117676,
+      "independent_body_rigid_modes": 36,
+      "upstream_freeY_scalar_present": true,
+      "body_geometry": [
+        {
+          "part": "OPEN_FRAME",
+          "nodes": 18788,
+          "tetra": 73191,
+          "conditional_E_MPa": 68900.0,
+          "conditional_nu": 0.33,
+          "conditional_density_kg_m3": 2700.0,
+          "tetra_volume_mm3": 51026.360398871555,
+          "conditional_tetra_mass_kg": 0.13777117307695325,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -1.3510736744551077
+          ],
+          "gravity_moment_Nm": [
+            0.009450237641675652,
+            0.05161804995817807,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "F0_ROOT_BACK",
+          "nodes": 5808,
+          "tetra": 21085,
+          "conditional_E_MPa": 200000.0,
+          "conditional_nu": 0.3,
+          "conditional_density_kg_m3": 7900.0,
+          "tetra_volume_mm3": 4358.158391971423,
+          "conditional_tetra_mass_kg": 0.034429451296574244,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -0.33763757855754933
+          ],
+          "gravity_moment_Nm": [
+            -2.0151483404446067e-09,
+            0.019062417270579404,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "MOTOR_CAP",
+          "nodes": 2072,
+          "tetra": 6465,
+          "conditional_E_MPa": 68900.0,
+          "conditional_nu": 0.33,
+          "conditional_density_kg_m3": 2700.0,
+          "tetra_volume_mm3": 2755.7232999523476,
+          "conditional_tetra_mass_kg": 0.00744045290987134,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -0.07296591752858969
+          ],
+          "gravity_moment_Nm": [
+            0.001592724217319886,
+            -6.6969397153292906e-09,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "GROUND_PLATE",
+          "nodes": 5870,
+          "tetra": 20858,
+          "conditional_E_MPa": 200000.0,
+          "conditional_nu": 0.3,
+          "conditional_density_kg_m3": 7900.0,
+          "tetra_volume_mm3": 47496.49404556115,
+          "conditional_tetra_mass_kg": 0.37522230295993314,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -3.679673797322031
+          ],
+          "gravity_moment_Nm": [
+            0.03154784720740774,
+            0.08999429758726915,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "TEST_BASE",
+          "nodes": 6685,
+          "tetra": 26101,
+          "conditional_E_MPa": 68900.0,
+          "conditional_nu": 0.33,
+          "conditional_density_kg_m3": 2700.0,
+          "tetra_volume_mm3": 104644.35697565954,
+          "conditional_tetra_mass_kg": 0.2825397638342808,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -2.7707685750054467
+          ],
+          "gravity_moment_Nm": [
+            0.02445687446139269,
+            0.06709063800604514,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        }
+      ],
+      "new_root_port_nodes": 720,
+      "new_root_port_area_mm2": 655.8584523690602,
+      "root_force_error_N": 1.2412670768502163e-15,
+      "root_moment_error_Nm": 8.326977648532831e-17,
+      "root_port_work_error_Nmm": 2.2944528221824356e-12,
+      "zero_reference_elastic_energy_Nmm": 0.0,
+      "max_zero_reference_force_N": 0.0,
+      "common_finite_rigid_rotation_elastic_energy_Nmm": 1.6522389354066133e-19,
+      "affine_elastic_energy_Nmm": 0.048554529503303585,
+      "energy_directional_derivative_error_Nmm": 3.717426019789194e-10,
+      "conditional_original_Root_wrench_N_Nm": [
+        0.23468517299536926,
+        0.0,
+        0.8920774007900092,
+        -5.597159153978071e-06,
+        -0.04737510604480468,
+        0.0
+      ],
+      "conditional_original_Motor_wrench_N_Nm": [
+        0.17392524367129744,
+        0.0,
+        -1.4932419400580768,
+        0.0017732770635769677,
+        0.01681450533804751,
+        0.0
+      ],
+      "fivebody_gravity_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -8.212119542868724,
+        0.06704768151264763,
+        0.22776539612513208,
+        0.0
+      ],
+      "partial_external_wrench_N_Nm": [
+        0.4086104166666669,
+        2.371692252312041e-20,
+        -8.813284082136791,
+        0.06881536141707062,
+        0.19720479541837477,
+        1.3552527156068805e-19
+      ],
+      "applied_Base_counterload": false,
+      "all_physical_nodes_unfixed": true,
+      "old_sourcefield_transferred": false,
+      "full_coupled_model_ready": false,
+      "missing": [
+        "Remaining finite support/motorfront contact blocks",
+        "14 physical axial branches with new-mesh area owners",
+        "Fresh coupled Finger/string source and freeY equation",
+        "Exact remaining hardware gravity/physical Base anchor",
+        "Finite step transaction/contact pressure and all physical acceptance checks"
+      ],
+      "reference_model": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fivebody_rebuild27/h2_fivebody_reference.npz",
+        "SHA256": "ec7a1463c7157e784cb91147c7c393cecc9e142e476375a836d32bc154762e9c"
+      }
+    },
+    {
+      "mesh_level": 3,
+      "physical_coordinates": 162061,
+      "independent_body_rigid_modes": 36,
+      "upstream_freeY_scalar_present": true,
+      "body_geometry": [
+        {
+          "part": "OPEN_FRAME",
+          "nodes": 31643,
+          "tetra": 132359,
+          "conditional_E_MPa": 68900.0,
+          "conditional_nu": 0.33,
+          "conditional_density_kg_m3": 2700.0,
+          "tetra_volume_mm3": 51026.12427902351,
+          "conditional_tetra_mass_kg": 0.13777053555336347,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -1.3510674224843957
+          ],
+          "gravity_moment_Nm": [
+            0.009450267159468187,
+            0.051617665869266895,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "F0_ROOT_BACK",
+          "nodes": 7748,
+          "tetra": 29489,
+          "conditional_E_MPa": 200000.0,
+          "conditional_nu": 0.3,
+          "conditional_density_kg_m3": 7900.0,
+          "tetra_volume_mm3": 4358.1533261456725,
+          "conditional_tetra_mass_kg": 0.03442941127655081,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -0.33763718609518756
+          ],
+          "gravity_moment_Nm": [
+            -5.430313320649021e-09,
+            0.019062388815495854,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "MOTOR_CAP",
+          "nodes": 2072,
+          "tetra": 6465,
+          "conditional_E_MPa": 68900.0,
+          "conditional_nu": 0.33,
+          "conditional_density_kg_m3": 2700.0,
+          "tetra_volume_mm3": 2755.7232999523476,
+          "conditional_tetra_mass_kg": 0.00744045290987134,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -0.07296591752858969
+          ],
+          "gravity_moment_Nm": [
+            0.001592724217319886,
+            -6.6969397153292906e-09,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "GROUND_PLATE",
+          "nodes": 5870,
+          "tetra": 20858,
+          "conditional_E_MPa": 200000.0,
+          "conditional_nu": 0.3,
+          "conditional_density_kg_m3": 7900.0,
+          "tetra_volume_mm3": 47496.49404556115,
+          "conditional_tetra_mass_kg": 0.37522230295993314,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -3.679673797322031
+          ],
+          "gravity_moment_Nm": [
+            0.03154784720740774,
+            0.08999429758726915,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        },
+        {
+          "part": "TEST_BASE",
+          "nodes": 6685,
+          "tetra": 26101,
+          "conditional_E_MPa": 68900.0,
+          "conditional_nu": 0.33,
+          "conditional_density_kg_m3": 2700.0,
+          "tetra_volume_mm3": 104644.35697565954,
+          "conditional_tetra_mass_kg": 0.2825397638342808,
+          "gravity_force_N": [
+            0.0,
+            0.0,
+            -2.7707685750054467
+          ],
+          "gravity_moment_Nm": [
+            0.02445687446139269,
+            0.06709063800604514,
+            0.0
+          ],
+          "material_minimum_qualified": false
+        }
+      ],
+      "new_root_port_nodes": 1055,
+      "new_root_port_area_mm2": 655.8366539492288,
+      "root_force_error_N": 4.965068311542806e-16,
+      "root_moment_error_Nm": 2.775667495709202e-17,
+      "root_port_work_error_Nmm": 2.6440655220838494e-12,
+      "zero_reference_elastic_energy_Nmm": 0.0,
+      "max_zero_reference_force_N": 0.0,
+      "common_finite_rigid_rotation_elastic_energy_Nmm": 2.013583801729615e-19,
+      "affine_elastic_energy_Nmm": 0.0485544904690163,
+      "energy_directional_derivative_error_Nmm": 3.763403061407544e-10,
+      "conditional_original_Root_wrench_N_Nm": [
+        0.23468517299536926,
+        0.0,
+        0.8920774007900092,
+        -5.597159153978071e-06,
+        -0.04737510604480468,
+        0.0
+      ],
+      "conditional_original_Motor_wrench_N_Nm": [
+        0.17392524367129744,
+        0.0,
+        -1.4932419400580768,
+        0.0017732770635769677,
+        0.01681450533804751,
+        0.0
+      ],
+      "fivebody_gravity_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -8.21211289843565,
+        0.06704770761527518,
+        0.22776498358113734,
+        0.0
+      ],
+      "partial_external_wrench_N_Nm": [
+        0.40861041666666714,
+        -2.2389711230279077e-20,
+        -8.813277437703718,
+        0.06881538751969818,
+        0.19720438287438022,
+        3.321957340012959e-20
+      ],
+      "applied_Base_counterload": false,
+      "all_physical_nodes_unfixed": true,
+      "old_sourcefield_transferred": false,
+      "full_coupled_model_ready": false,
+      "missing": [
+        "Remaining finite support/motorfront contact blocks",
+        "14 physical axial branches with new-mesh area owners",
+        "Fresh coupled Finger/string source and freeY equation",
+        "Exact remaining hardware gravity/physical Base anchor",
+        "Finite step transaction/contact pressure and all physical acceptance checks"
+      ],
+      "reference_model": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fivebody_rebuild27/h3_fivebody_reference.npz",
+        "SHA256": "abdde03815cebd9225884f531d5b59652ac0d77cc5694912cde3a6802e0ce728"
+      }
+    }
+  ],
+  "elapsed_s": 7.452256103977561,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Reference model blocks only; partial physical external sources explicitly not balanced and never solved.",
+    "Inherited isotropic constants/densities are conditional, not source-backed minima/allowables. Three unchanged meshes reused only after exact CAD identity; changed Root/Frame meshes are new.",
+    "Conditional original operating ports independently pulled back to new Root face. Not current coupled Finger/string loads or newly certified operating demand.",
+    "No material/strength, mesh1%/time.1%, complete energy, physical Base anchor or full3Finger qualification."
+  ]
+}

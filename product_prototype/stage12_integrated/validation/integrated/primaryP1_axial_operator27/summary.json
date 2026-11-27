@@ -1,0 +1,65 @@
+{
+  "status": "ACTUAL_P1_NEW_MESH_14AXIAL_OPERATOR_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_axial_operator27/inputs.json",
+    "SHA256": "3588f832bcf9d0fa685f03e8777ad011d9a907a8f226aea33b11e96ad02dafe8"
+  },
+  "checks": {
+    "all14": true,
+    "reference_and_rigid_modes": true,
+    "original_virtualwork": true,
+    "objectivity_action_reaction": true,
+    "free_RootY_no_axial_tie": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "branches": 14,
+      "all_14_footprints_available": true,
+      "original_unfixed_coordinates": 117676,
+      "zero_reference_max_extension_mm": 1.7763568394002505e-14,
+      "zero_reference_max_connector_force_N": 0.0,
+      "common_finite_rigid_max_extension_mm": 5.3290705182007514e-14,
+      "virtual_force_directional_work_error_Nmm": 6.718487604358975e-11,
+      "conditional_unilateral_energy_Nmm": 0.0005273128046873135,
+      "conditional_energy_gradient_error_Nmm": 1.1928635461127754e-10,
+      "finite_objectivity_extension_error_mm": 5.3290705182007514e-14,
+      "internal_force_error_N": 1.776356839412165e-15,
+      "internal_moment_error_Nm": 7.473417450352417e-16,
+      "RootY_translation_axial_extension_mm": 1.7763568394002505e-14,
+      "no_lateral_tie": true,
+      "accepted_equilibrium": false
+    },
+    {
+      "mesh_level": 3,
+      "branches": 14,
+      "all_14_footprints_available": true,
+      "original_unfixed_coordinates": 162061,
+      "zero_reference_max_extension_mm": 1.0658141036401503e-14,
+      "zero_reference_max_connector_force_N": 2.7934611416034473e-11,
+      "common_finite_rigid_max_extension_mm": 5.3290705182007514e-14,
+      "virtual_force_directional_work_error_Nmm": 1.5696893437833204e-10,
+      "conditional_unilateral_energy_Nmm": 0.0003460536879115412,
+      "conditional_energy_gradient_error_Nmm": 1.9761404318474618e-10,
+      "finite_objectivity_extension_error_mm": 2.1316282072803006e-14,
+      "internal_force_error_N": 4.440892098502234e-15,
+      "internal_moment_error_Nm": 1.2947500036081417e-15,
+      "RootY_translation_axial_extension_mm": 1.0658141036401503e-14,
+      "no_lateral_tie": true,
+      "accepted_equilibrium": false
+    }
+  ],
+  "elapsed_s": 0.8058440501336008,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Conditional minor-core axial compliance and area-mean finite objective pullback. No thread/flank/core/engagement/material/bearing/preload capacity qualification.",
+    "Virtual forces and small perturbations are derivative controls on actual assembly geometry, not measured/solved operating loads or strength.",
+    "Remaining finite support/motorfront blocks, fresh coupled loads, physical Base anchor and full nonlinear contact/energy/convergence gates still required."
+  ]
+}

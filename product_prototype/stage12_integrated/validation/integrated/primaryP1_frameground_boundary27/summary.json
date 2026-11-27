@@ -1,0 +1,91 @@
+{
+  "status": "ACTUAL_P1_ADJACENT_FINITE_BOUNDARY_BLOCK_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_frameground_boundary27/inputs.json",
+    "SHA256": "21917a0f49aba62da9ba4e5da7249d4cfc6aa863f925e00a9c945831d086991a"
+  },
+  "material_ledger": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_frameground_boundary27/material_gap_ledger.npz",
+    "SHA256": "baa3c4c68d60a4f10fe6ad08f7e342b871b7b74ba3c2576719eb4e50f040ba64"
+  },
+  "checks": {
+    "full_rows": true,
+    "rigid_and_virtualwork": true,
+    "nominal_nonpenetration": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "source": "OPEN_FRAME",
+      "owner": "GROUND_PLATE",
+      "material_samples": 78222,
+      "source_boundary_triangles": 26074,
+      "owner_boundary_triangles": 9350,
+      "material_area_mm2": 23682.883816139805,
+      "all_samples_retained": true,
+      "accepted_oriented_charts": 69336,
+      "unavailable_charts": 8886,
+      "chart_reasons": {
+        "UNIQUE_SIGNED_DISTANCE_CHART": 54554,
+        "MIXED_OR_TANGENT_ORIENTED_SIGNS": 8869,
+        "ORIENTED_COPLANAR_ZERO_GAP_CHART": 14782,
+        "DISTINCT_FACE_TIE": 17
+      },
+      "negative_gap_samples": 0,
+      "maximum_penetration_mm": 2.1316282072803006e-14,
+      "nominal_active_rows": 14782,
+      "max_common_rigid_mode_error": 3.730349362740526e-14,
+      "max_virtualwork_error": 5.936817617374635e-11,
+      "offcontact_virtualwork_probes": 40,
+      "max_unit_action_reaction_moment_error_Nmm": 2.847716647714797e-14,
+      "full_row_J": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_frameground_boundary27/h2_gap_J.npz",
+        "SHA256": "24254bcf790a311b36d2c6277e425d99464c2ecc22ecf4394f4d1be84eb546c4"
+      },
+      "physical_model_ready": false
+    },
+    {
+      "mesh_level": 3,
+      "source": "OPEN_FRAME",
+      "owner": "GROUND_PLATE",
+      "material_samples": 118182,
+      "source_boundary_triangles": 39394,
+      "owner_boundary_triangles": 9350,
+      "material_area_mm2": 23683.11426232605,
+      "all_samples_retained": true,
+      "accepted_oriented_charts": 105080,
+      "unavailable_charts": 13102,
+      "chart_reasons": {
+        "UNIQUE_SIGNED_DISTANCE_CHART": 78870,
+        "DISTINCT_FACE_TIE": 31,
+        "MIXED_OR_TANGENT_ORIENTED_SIGNS": 13071,
+        "ORIENTED_COPLANAR_ZERO_GAP_CHART": 26210
+      },
+      "negative_gap_samples": 0,
+      "maximum_penetration_mm": 2.1316282072803006e-14,
+      "nominal_active_rows": 26210,
+      "max_common_rigid_mode_error": 3.574918139293004e-14,
+      "max_virtualwork_error": 7.507022477606928e-11,
+      "offcontact_virtualwork_probes": 39,
+      "max_unit_action_reaction_moment_error_Nmm": 2.929642751054232e-14,
+      "full_row_J": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_frameground_boundary27/h3_gap_J.npz",
+        "SHA256": "d251c16ba0b12b349db646e1a1ee9575254035b6b634b3c7fd3323f485929703"
+      },
+      "physical_model_ready": false
+    }
+  ],
+  "elapsed_s": 184.92275228607468,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Every material row retained; unavailable charts remain NaN and block solve pending per-step finite-domain resolution. Not pressure or equilibrium.",
+    "Polyhedral source degree2 quadrature is not moving overlap/contact integration convergence or exact curved CAD. Actual Motor has rigid proxy kinematics, no source case stiffness/bearing rating qualification.",
+    "No contact/friction/material/physical Baseanchor/globalenergy/full3Finger gate qualified."
+  ]
+}

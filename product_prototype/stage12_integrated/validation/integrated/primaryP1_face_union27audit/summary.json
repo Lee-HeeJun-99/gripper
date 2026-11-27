@@ -1,0 +1,174 @@
+{
+  "status": "ACTUAL_P1_FINITE_UNION_INDEPENDENT_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_face_union27/summary.json",
+    "SHA256": "776c85665730f2f6cb726025eb4621ea1621761d733c7ec9b83861d73354a974"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_face_union27audit/verifier.py",
+    "SHA256": "74a23d92c8cd81396d18893795a3b31c1e1d01011fbcae6a515948b00f9d7c20"
+  },
+  "operator": {
+    "path": "product_prototype/stage12_integrated/scripts/finite_face_union27.py",
+    "SHA256": "e22c1d57ae476350a0edefa7df19a99698210c2992722fb1896f785d236903e1"
+  },
+  "probes": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_face_union27audit/edge_probes.json",
+    "SHA256": "93aa5555bca652acce066cf306de74a8b91eab6e4dc20c03c7d5c9074d2cd189"
+  },
+  "checks": {
+    "independent_finite_distance": true,
+    "concave_alternatives": true,
+    "grazing_rejected": true,
+    "global_virtualwork": true,
+    "objectivity": true,
+    "full_inventory_retained": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "concave_edges": 58,
+      "convex_edges": 10,
+      "concave_ties_rejected": 58,
+      "concave_two_branch_switches": 58,
+      "zero_distance_rejections": 68,
+      "max_independent_edge_distance_error_mm": 3.566591466608315e-15,
+      "max_exhaustive_global_distance_error_mm": 8.881784197001252e-16,
+      "max_global_envelope_virtualwork_error": 6.333647105047358e-11,
+      "max_translation_objectivity_error_mm": 1.7763568394002505e-15,
+      "min_perturbed_branch_point_separation_mm": 0.02011272343138401,
+      "exhaustive_probes": 40,
+      "transitions": [
+        {
+          "shift_mm": [
+            0.0,
+            0.05,
+            0.0
+          ],
+          "retained_samples": 26604,
+          "feature_counts": {
+            "EDGE": 11400,
+            "VERTEX": 2273,
+            "FACE": 10308,
+            "ZERO": 2623
+          },
+          "nonsmooth_rejections": 2625,
+          "uncertified_segment_samples": 2639,
+          "physical_update_accepted": false
+        },
+        {
+          "shift_mm": [
+            0.05,
+            0.0,
+            0.05
+          ],
+          "retained_samples": 26604,
+          "feature_counts": {
+            "EDGE": 11303,
+            "VERTEX": 2355,
+            "FACE": 12946
+          },
+          "nonsmooth_rejections": 6,
+          "uncertified_segment_samples": 2780,
+          "physical_update_accepted": false
+        },
+        {
+          "shift_mm": [
+            0.0,
+            0.0,
+            4.0
+          ],
+          "retained_samples": 26604,
+          "feature_counts": {
+            "EDGE": 8569,
+            "FACE": 12329,
+            "VERTEX": 5517,
+            "ZERO": 189
+          },
+          "nonsmooth_rejections": 191,
+          "uncertified_segment_samples": 11228,
+          "physical_update_accepted": false
+        }
+      ]
+    },
+    {
+      "mesh_level": 3,
+      "concave_edges": 86,
+      "convex_edges": 14,
+      "concave_ties_rejected": 86,
+      "concave_two_branch_switches": 86,
+      "zero_distance_rejections": 100,
+      "max_independent_edge_distance_error_mm": 4.5102810375396984e-15,
+      "max_exhaustive_global_distance_error_mm": 1.7763568394002505e-15,
+      "max_global_envelope_virtualwork_error": 5.31860805397244e-11,
+      "max_translation_objectivity_error_mm": 1.7763568394002505e-15,
+      "min_perturbed_branch_point_separation_mm": 0.012877013661055002,
+      "exhaustive_probes": 40,
+      "transitions": [
+        {
+          "shift_mm": [
+            0.0,
+            0.05,
+            0.0
+          ],
+          "retained_samples": 33744,
+          "feature_counts": {
+            "EDGE": 15153,
+            "VERTEX": 2702,
+            "FACE": 12290,
+            "ZERO": 3599
+          },
+          "nonsmooth_rejections": 3602,
+          "uncertified_segment_samples": 3640,
+          "physical_update_accepted": false
+        },
+        {
+          "shift_mm": [
+            0.05,
+            0.0,
+            0.05
+          ],
+          "retained_samples": 33744,
+          "feature_counts": {
+            "EDGE": 14983,
+            "VERTEX": 2798,
+            "FACE": 15963
+          },
+          "nonsmooth_rejections": 3,
+          "uncertified_segment_samples": 3787,
+          "physical_update_accepted": false
+        },
+        {
+          "shift_mm": [
+            0.0,
+            0.0,
+            4.0
+          ],
+          "retained_samples": 33744,
+          "feature_counts": {
+            "EDGE": 11513,
+            "FACE": 15745,
+            "VERTEX": 6210,
+            "ZERO": 276
+          },
+          "nonsmooth_rejections": 279,
+          "uncertified_segment_samples": 13688,
+          "physical_update_accepted": false
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 283.6131424771156,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Material-point finite-union envelope and rejected ambiguity, not signed penetration/complete swept surface CCD or equilibrium.",
+    "Positive endpoints cannot accept an uncertified path. No attached load update or fictitious force at tie/zero distance.",
+    "Mesh approximation of CAD fillet remains distinct."
+  ]
+}

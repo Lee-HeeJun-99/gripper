@@ -1,0 +1,101 @@
+{
+  "status": "ACTUAL_P1_FULL_ROW_GAP_JACOBIAN_VERIFIED_SOLVE_BLOCKED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boundary_jacobian27/inputs.json",
+    "SHA256": "2f47ea971e1539e00467e6a101f7e9c44f1c3e4aef5dbfb5974638acb189a7c4"
+  },
+  "checks": {
+    "full_rows_and_DOFs": true,
+    "rigid_invariance": true,
+    "independent_row_and_duality": true,
+    "force_moment": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "rows": 26604,
+      "columns": 73788,
+      "nonzero_entries": 236459,
+      "root_nodes": 5808,
+      "frame_nodes": 18788,
+      "independent_physical_DOFs": 73788,
+      "unresolved_rows": 1317,
+      "all_rows_retained": true,
+      "unresolved_gap_is_NaN": true,
+      "accepted_chart_rows": 25287,
+      "negative_gap_rows": 0,
+      "maximum_penetration_mm": 1.4210854715202004e-14,
+      "active_nominal_rows": 2623,
+      "max_active_RootY_gap_derivative": 0.0,
+      "rigid_translation_errors": [
+        3.3306690738754696e-16,
+        2.42861286636753e-16,
+        3.3306690738754696e-16
+      ],
+      "rigid_rotation_errors_mm": [
+        1.1546319456101628e-14,
+        2.853273173286652e-14,
+        2.1316282072803006e-14
+      ],
+      "max_independent_row_error": 6.938893903907228e-18,
+      "dual_virtualwork_error": 1.3431096512750429e-15,
+      "random_dual_net_force_error": 2.794036946495237e-13,
+      "random_dual_net_moment_error": 8.206997039217203e-12,
+      "mandatory_solve_readiness": false,
+      "matrix": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boundary_jacobian27/h2_gap_J.npz",
+        "SHA256": "6ff7f19b2b1b163fc7ad1020c655e03d5ba50a87574705999173678b7dbea3ef"
+      }
+    },
+    {
+      "mesh_level": 3,
+      "rows": 33744,
+      "columns": 118173,
+      "nonzero_entries": 296471,
+      "root_nodes": 7748,
+      "frame_nodes": 31643,
+      "independent_physical_DOFs": 118173,
+      "unresolved_rows": 1692,
+      "all_rows_retained": true,
+      "unresolved_gap_is_NaN": true,
+      "accepted_chart_rows": 32052,
+      "negative_gap_rows": 0,
+      "maximum_penetration_mm": 1.4210854715202004e-14,
+      "active_nominal_rows": 3599,
+      "max_active_RootY_gap_derivative": 0.0,
+      "rigid_translation_errors": [
+        2.7755575615628914e-16,
+        3.3306690738754696e-16,
+        3.3306690738754696e-16
+      ],
+      "rigid_rotation_errors_mm": [
+        1.0436096431476471e-14,
+        2.842170943040401e-14,
+        2.1316282072803006e-14
+      ],
+      "max_independent_row_error": 5.204170427930421e-18,
+      "dual_virtualwork_error": 2.220446049250313e-16,
+      "random_dual_net_force_error": 7.101345727677067e-14,
+      "random_dual_net_moment_error": 1.5306698782081424e-11,
+      "mandatory_solve_readiness": false,
+      "matrix": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boundary_jacobian27/h3_gap_J.npz",
+        "SHA256": "8d379cb2fba09b1254b74530cbb75d929ac8604590bf370c22c0e5d51e8dd194"
+      }
+    }
+  ],
+  "elapsed_s": 0.2616997479926795,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Actual Root/Frame two-body contact blocks only. Not complete fivebody stiffness, motorfront, 14 axial branches, loads or new equilibrium.",
+    "Random signed dual tests are algebraic virtual-work controls, NOT physical nonnegative pressure or operating forces.",
+    "Unresolved chart rows retain NaN gaps. Zero sparse storage in those rows is unavailable derivative, never a valid zero force/energy or permission to solve.",
+    "Mandatory readiness must pass before any physical solve, alongside original finite-domain/cone/gap/fullforce/gauge/complementarity/localbound gates."
+  ]
+}

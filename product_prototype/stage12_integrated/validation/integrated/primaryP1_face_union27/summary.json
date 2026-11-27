@@ -1,0 +1,78 @@
+{
+  "status": "ACTUAL_P1_FULL_BOUNDARY_FINITE_UNION_OPERATOR_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_face_union27/inputs.json",
+    "SHA256": "ec33d4ec050399469f6bd3e9bb69a7441a7b67f5e6240c64d74e9638d875196b"
+  },
+  "operator_data": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_face_union27/full_boundary_operator.npz",
+    "SHA256": "26077472075c994cd080a17e1e1290db2c129b39f2871e7523ced54ad926c8f7"
+  },
+  "checks": {
+    "full_material_inventory": true,
+    "area_accounting": true,
+    "virtualwork": true,
+    "action_reaction": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "root_boundary_triangles": 8868,
+      "frame_boundary_triangles": 26074,
+      "material_samples": 26604,
+      "root_complete_boundary_area_mm2": 3267.7888944344186,
+      "integrated_area_mm2": 3267.7888944344186,
+      "minimum_distance_mm": 0.0,
+      "maximum_distance_mm": 17.32517542113624,
+      "zero_or_nonsmooth_samples": 2630,
+      "feature_counts": {
+        "EDGE": 10860,
+        "FACE": 10845,
+        "VERTEX": 2276,
+        "ZERO": 2623
+      },
+      "virtualwork_probes": 160,
+      "max_virtualwork_error": 1.5574302663495798e-09,
+      "max_force_error": 3.3335590258932494e-16,
+      "max_moment_error": 2.6660151477057026e-14,
+      "every_material_sample_retained": true,
+      "physical_reaction_claimed": false
+    },
+    {
+      "mesh_level": 3,
+      "root_boundary_triangles": 11248,
+      "frame_boundary_triangles": 39394,
+      "material_samples": 33744,
+      "root_complete_boundary_area_mm2": 3267.8201047404464,
+      "integrated_area_mm2": 3267.8201047404464,
+      "minimum_distance_mm": 0.0,
+      "maximum_distance_mm": 17.337238741529927,
+      "zero_or_nonsmooth_samples": 3603,
+      "feature_counts": {
+        "EDGE": 14614,
+        "FACE": 12824,
+        "VERTEX": 2707,
+        "ZERO": 3599
+      },
+      "virtualwork_probes": 160,
+      "max_virtualwork_error": 2.7854029716403716e-09,
+      "max_force_error": 3.3306690738754696e-16,
+      "max_moment_error": 1.464821375527116e-14,
+      "every_material_sample_retained": true,
+      "physical_reaction_claimed": false
+    }
+  ],
+  "elapsed_s": 30.19929317594506,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Unsigned distance envelope only: no signed solid nonpenetration/CCD/contact pressure or equilibrium. Zero-distance and distinct-nearest-face ties refuse a single Jacobian.",
+    "Complete fixed Root material quadrature is not moving-overlap quadrature or exact curved CAD integration. Polygonal boundary, not smooth BRep fillet.",
+    "No old sourcefield transferred; full same-revision fivebody assembly/axial connectors/loads/rigid modes still required. No mesh/time convergence or energy qualification."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "status": "ACTUAL_P1_ALLROW_SPARSE_PULLBACK_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_geometry3/summary.json",
+    "SHA256": "78eebf65dfea93eff96e458a4c38a5a391e943e51257110e9b120b64867a2ec8"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_pullback4/verifier.py",
+    "SHA256": "ed042d35945feb6d27172dd663f4f56d44bbc7d7ee8f13fb00bdb6d34ca3b5b6"
+  },
+  "checks": {
+    "all2169_sparse_rows": true,
+    "independent_allrow_coordinates": true,
+    "independent_pressure_pullback": true,
+    "allrow_current_force": true,
+    "allrow_current_moment": true,
+    "current_total_force": true,
+    "current_total_moment": true,
+    "wrong_owner_sign_rejected": true
+  },
+  "contact_rows": 2169,
+  "worst_coordinate_rows": [
+    {
+      "row": 251,
+      "error": 2.6975443709864307e-10
+    },
+    {
+      "row": 258,
+      "error": 2.689635181241101e-10
+    },
+    {
+      "row": 231,
+      "error": 2.517293040682489e-10
+    },
+    {
+      "row": 247,
+      "error": 2.470050931098391e-10
+    },
+    {
+      "row": 232,
+      "error": 2.364693996170786e-10
+    },
+    {
+      "row": 256,
+      "error": 2.3004576021889989e-10
+    },
+    {
+      "row": 235,
+      "error": 2.2690926915203136e-10
+    },
+    {
+      "row": 244,
+      "error": 2.018820849966456e-10
+    },
+    {
+      "row": 260,
+      "error": 1.9758861213858836e-10
+    },
+    {
+      "row": 262,
+      "error": 1.9468869524275306e-10
+    }
+  ],
+  "maximum_coordinate_error": 2.6975443709864307e-10,
+  "maximum_pressure_pullback_error_N": 5.71731106902007e-10,
+  "minimum_wrong_owner_sign_force_defect": 1.9999999999999993,
+  "maximum_row_force_defect_N": 1.5700924586837752e-16,
+  "maximum_row_moment_defect_Nm": 4.1633363423444554e-17,
+  "current_total_contact_wrench_N_Nm": [
+    1.2212453270876722e-15,
+    0.0,
+    1.7763568394002505e-15,
+    6.938893903907228e-17,
+    -4.544975507059235e-16,
+    -2.480654570646834e-16
+  ],
+  "contact_update_attempted": false,
+  "new_equilibrium_solved": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 4.633054487872869,
+  "limitations": [
+    "Independent actualMotorSO3 scalar5pointderivatives and direct allrow nodal coefficient/pairedwrench checks, including wrongowner-sign control. No producerassembly/leftJacobian imported.",
+    "Nearrow face normals here are independently tetra-oriented; signed fullmovinggeometry must pass separate branch/topology audit. Static pressurepullback correctness does not validate oldpressure or nonlinearstationarity. All22systemgates remainunqualified."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "status": "ACTUAL_P1_ONE_INCREMENT_REJECTED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_local_surface2/summary.json",
+    "SHA256": "513210308586b6adae1eb05ae592c271bd48b45b02bd5b7e030ff30a244dfbdb"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/producer.py",
+    "SHA256": "9a4252f710a8d444cbfb05bbb1c287a92be081773332b698fe39ac732981dda9"
+  },
+  "loads": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/loads.py",
+    "SHA256": "02757108e0d3aaba7d03e0b4ac46b023c11c4b181f756d6c7b3dcfb39a4aecbd"
+  },
+  "support": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/support.py",
+    "SHA256": "edc813f42e2749835734b604a9a383e8ba7af43da936d3d224c912d263c1870b"
+  },
+  "initial_loads": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/initial_loads.json",
+    "SHA256": "07dddcfea9e6ef5af8f71c9f4c0d64c1a109448f4651f49d4752412882bc5621"
+  },
+  "prerequisites": {
+    "primaryP1_near_signed1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_near_signed1/summary.json",
+      "SHA256": "a025899fe0fd154520788d3ddcc4020870d38399089a6f03ec7b39301af20f50"
+    },
+    "primaryP1_failed_surface_rows1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_failed_surface_rows1/summary.json",
+      "SHA256": "d6b464d5a2fc41d9c0e8905783ca422b049b9ec29535c1195dce1a155bd67192"
+    },
+    "primaryP1_surface_pullback4": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_pullback4/summary.json",
+      "SHA256": "194fc2c1dfa2cb8397fe43936a9ca9838dec9251465b40b29923faf14b4a4216"
+    },
+    "primaryP1_finite_support1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_support1/summary.json",
+      "SHA256": "09ae0bfecfb4ad610e1773258e1698df51261762298842e9134268bf0bfe58bc"
+    }
+  },
+  "allrow_prerequisite": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_branches1/summary.json",
+    "SHA256": "460110d385a5ea7196529346af1e35c50b95d0b1ef1fb8e6e11b6e29e4ddf464"
+  },
+  "corrected39_prerequisite": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_failed_surface_rows1/summary.json",
+    "SHA256": "d6b464d5a2fc41d9c0e8905783ca422b049b9ec29535c1195dce1a155bd67192"
+  },
+  "QP_execution": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/QP_execution.json",
+    "SHA256": "169db72cc464a0510f729d8aa57a8614f595a2233f81afe2652a9c4c6059c988"
+  },
+  "checks": {
+    "original2169constraints": true,
+    "original14branches": true,
+    "allfivebody_current_gravity": true,
+    "source_external_force": true,
+    "source_external_moment": true,
+    "QP_solved": false,
+    "actual_nonlinear_equilibrium": false
+  },
+  "QP": {
+    "status": "maximum iterations reached",
+    "status_val": 7,
+    "iter": 2400,
+    "prim_res": 4.9366894247371155e-06,
+    "dual_res": 0.011710698159618164,
+    "run_time": 111.06051015499999,
+    "solve_time": 107.332836835
+  },
+  "trial": {
+    "evaluated": true,
+    "maximum_increment_mm": 0.00015468570271998672,
+    "actual_minimum_gap_mm": -4.936426172879891e-06,
+    "minimum_pressure_N": -6.673771218039761e-16,
+    "actual_maximum_complementarity_Nmm": 5.859171542962718e-06,
+    "actual_stationarity_max_N": 0.011713598423063755,
+    "actual_stationarity_relative": 0.0023700443388685634,
+    "current_residual_wrench_N_Nm": [
+      -3.8441472227646045e-15,
+      4.31046257715062e-15,
+      4.111294638065033e-15,
+      1.13117671609176e-07,
+      -3.605637673773489e-16,
+      -3.767912390803822e-08
+    ],
+    "current_external_wrench_N_Nm": [
+      -1.942890293094024e-16,
+      -3.5118511252852263e-17,
+      -1.7541523789077473e-14,
+      -1.1311767192725974e-07,
+      4.40619762898109e-16,
+      3.767912387647565e-08
+    ],
+    "root_freeY_increment_mm": 0.00016055476979023178,
+    "normal_N": 0.4086105928622855,
+    "elastic_energy_Nmm": 0.005102270876174547,
+    "load_change_norm_N": 0.00022714487950308178,
+    "minimum_detF": 0.9999841451997362,
+    "new_equilibrium_criteria_pass": false
+  },
+  "DOF": 72216,
+  "contact_rows": 2169,
+  "connectors": 14,
+  "source_elastic_energy_Nmm": 0.004895707660995932,
+  "source_stationarity_relative": 2.1036481467197317,
+  "contact_update_attempted": true,
+  "number_of_increments_attempted": 1,
+  "metric": "SPD isotropic currentgeometry quasiNewton metric; NOT exactBiot/contact/load Hessian, no nonsymmetricspatialJacobian handedto symmetricsolver.",
+  "actual_numerical_contact_update_accepted": false,
+  "new_equilibrium_solved": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 173.6629745629616,
+  "limitations": [
+    "ONE bounded sourceposedQP predictor withall2169contactconstraints/14tensionbranches andoriginalgauge/freeYcoordinates.2400iterations/120s solverbudget inside4GiB/420schild. No activeconstraintdeletion, solverpolish/retry or extra physicalfixation.",
+    "Physicalcurrentloads use allfivebody selfweights, independentlyobjective Rootport+newspatialstring/planarFinger, MotorSO3, originalhardwarecurrentBaseport andphysicalsource-derivedBasewrench. This is NOT arbitrarycancellation of generalized/contact/reference residual.",
+    "ReturnfreeY is an explicitunsolvedincrement; anyremainingincrement/load/gap/stationarity defect rejectsupdatedequilibrium. No stress/strength/globalenergy/physicalanchor/full3D Finger/finitewire/material/sourcecase/bearing/friction/protector/full3Finger/meshcertification."
+  ],
+  "predictor_npz": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/predictor.npz",
+    "SHA256": "c65029af5818b8f580f7b22e02903afc0d3eff93cf5bacd7de7a3e1606e75200"
+  },
+  "trial_field_npz": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/trial_field.npz",
+    "SHA256": "ce59041e43566ac23c1466bf922748ba12fa7ff90fcad25b8bcb3877d773cadf"
+  },
+  "trial_loads_json": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/trial_loads.json",
+    "SHA256": "4e8e4ffc7783cd8644b2f0cfc00b11203559c93ca7876596ea3c74611a3b8885"
+  }
+}

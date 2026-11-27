@@ -1,0 +1,88 @@
+{
+  "status": "ACTUAL_P1_ONE_INCREMENT_FAILURE_INDEPENDENTLY_CONFIRMED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/summary.json",
+    "SHA256": "453e898e92f2deeaf0b71f96dab52490df27f7c6219670b46de5328997e71d07"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment_kkt1/verifier.py",
+    "SHA256": "cebd225e715f0fdc136200ae00f7c6446526401e2df157c6cefc51a45b86497b"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment_kkt1/residuals.npz",
+    "SHA256": "1c130cc81f64783ff35380ba833fc9ff028b1d55e1d7ff037b5986aeb3d640f9"
+  },
+  "checks": {
+    "primal_report_reproduced": true,
+    "dual_report_reproduced": true,
+    "actual_residual_reproduced": true,
+    "freeY_physical_moment_defect": true,
+    "QP_rejection_confirmed": true,
+    "nonlinear_rejection_confirmed": true
+  },
+  "QP_primal_residual": 4.936689424737109e-06,
+  "QP_dual_residual": 0.011710698159642345,
+  "QP_linear_complementarity_Nmm": 5.859274327866459e-06,
+  "QP_residual_by_body": {
+    "OPEN_FRAME": {
+      "max_N": 0.0007215359942024359,
+      "norm_N": 0.004442871950322384
+    },
+    "F0_ROOT_BACK": {
+      "max_N": 0.0003101386160030105,
+      "norm_N": 0.0007408440990062088
+    },
+    "MOTOR_CAP": {
+      "max_N": 4.053765476115372e-05,
+      "norm_N": 0.00014970644708321644
+    },
+    "GROUND_PLATE": {
+      "max_N": 0.011710698159642345,
+      "norm_N": 0.021483945466927928
+    },
+    "TEST_BASE": {
+      "max_N": 0.011710585757400149,
+      "norm_N": 0.0210330376321189
+    },
+    "Motor": {
+      "max_N": 0.006179989535355405,
+      "norm_N": 0.0061972922382931735
+    }
+  },
+  "maximum_gauge_residual_mm": 1.1606729466429044e-11,
+  "maximum_branch_violation_mm": 1.1300130502275765e-11,
+  "actual_residual_reconstruction_error_N": 0.0,
+  "physical_missing_freeY_moment_Nm": [
+    1.1311767177426005e-07,
+    0.0,
+    -3.767912387731004e-08
+  ],
+  "observed_current_residual_moment_Nm": [
+    1.13117671609176e-07,
+    -3.605637673773489e-16,
+    -3.767912390803822e-08
+  ],
+  "missing_freeY_moment_error_Nm": [
+    -1.6508404797212336e-16,
+    -3.605637673773489e-16,
+    -3.0728178187013777e-17
+  ],
+  "root_freeY_remaining_increment_mm": 0.00016055476979023178,
+  "no_new_solver_run": true,
+  "no_new_contact_update": true,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 3.772940007969737,
+  "limitations": [
+    "Independent currentmetric chunkassembly andexactsavedQPcoefficients/dualorientation reproduceactual2400iterationFAIL; no extraphysicsupdate/polish/retry. CurrentisotropicSPDmetric is not constitutiveJacobian.",
+    "Currentmomentdefect is the explicitreturnedRootfreeYoffset forcecouple, not reason to subtract torque atBase. Fullcoupledclosure mustresolve freeY andall2169contacts/14branches; all22gatesremainunqualified."
+  ]
+}

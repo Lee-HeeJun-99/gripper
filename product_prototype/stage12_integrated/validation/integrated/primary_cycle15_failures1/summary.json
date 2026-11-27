@@ -1,0 +1,71 @@
+{
+  "status": "ACTUAL_P1_FINITE_CONTACT_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "numerical_failure_results": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_geometry2/summary.json",
+      "SHA256": "6e660096408145c9f35f7efd071da1b283d4a352b04a7639a8cb758c1601a34a"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_branches1/summary.json",
+      "SHA256": "460110d385a5ea7196529346af1e35c50b95d0b1ef1fb8e6e11b6e29e4ddf464"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_pullback1/summary.json",
+      "SHA256": "0a12e8c9c95cab949545285a83b45c077dffde77c632847a3a613d77ee1f7620"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_pullback2/summary.json",
+      "SHA256": "337f1a9757ef4bbb7a4ae35c734e4849f3114ca8ab7acba86df98f4a1c514125"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_surface_pullback3/summary.json",
+      "SHA256": "91a81ad815ece1e934651d4dde1ea3ca79ba9206b65de22b14057fb3d1f575e2"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/summary.json",
+      "SHA256": "453e898e92f2deeaf0b71f96dab52490df27f7c6219670b46de5328997e71d07"
+    }
+  ],
+  "execution_failures": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle15/fullquery1_execution.json",
+        "SHA256": "fe8352cd67543a35b749883386a4dfab202767f13ea85ff1c1e367549455b074"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle15/fullquery1.log",
+        "SHA256": "b876d34d23b3ec5aaecb21834fe7c4a0a8a36d44e6c23861dab62b63be334190"
+      },
+      "reason": "Missing verifier file: erroneous launch before source existed. Exit2, no analysis/result; no output overwritten."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle15/increment1_execution.json",
+        "SHA256": "0c5d76d212290e329c5595550dd93e047c7a744ab24fc17a2551460d714d73fd"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment1/producer.py",
+        "SHA256": "95743c178e36bfbd5a34cb817f461c42d95e0c23d967fb6f944dd76666db90bb"
+      },
+      "loads": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment1/initial_loads.json",
+        "SHA256": "07dddcfea9e6ef5af8f71c9f4c0d64c1a109448f4651f49d4752412882bc5621"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle15/increment1.log",
+        "SHA256": "c94aa2cdacee997799fdbad79081c6f9fc03b57e13200135ba226ed249fb964f"
+      },
+      "reason": "PosixPath subscript typo in prerequisite read after source loads. Exit1 BEFORE QP setup or contact increment. Corrected unique increment2 is the ONE actual QP trial."
+    }
+  ],
+  "numerical_failures": 6,
+  "execution_failures_count": 2,
+  "old_evidence_mutated": false,
+  "actual_QP_trials": 1,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

@@ -1,0 +1,269 @@
+{
+  "status": "ACTUAL_P1_FINITE_CONTACT_SUPPORT_PARTIAL_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_local_surface2/summary.json",
+    "SHA256": "513210308586b6adae1eb05ae592c271bd48b45b02bd5b7e030ff30a244dfbdb"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "independent_topology": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_surface_independent2/summary.json",
+    "SHA256": "aebea5e9b39b4ff637ed01ae243b9a967bb19453bc78920c894c421d3b81201d"
+  },
+  "near_signed_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_near_signed1/summary.json",
+    "SHA256": "a025899fe0fd154520788d3ddcc4020870d38399089a6f03ec7b39301af20f50"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_support1/producer.py",
+    "SHA256": "8bf1ea39558414374efd565ea28b8f84e9cc9deb12cd50d157df896395aa4c65"
+  },
+  "implementation": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_support1/implementation.py",
+    "SHA256": "edc813f42e2749835734b604a9a383e8ba7af43da936d3d224c912d263c1870b"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_support1/field.npz",
+    "SHA256": "100241e8d32eb921d64856f762116de67973998c9420295cb8eb5f9e97c36f46"
+  },
+  "checks": {
+    "all2169_rows": true,
+    "all14branches": true,
+    "independent_allrow_signed_geometry": true,
+    "current_contact_force": true,
+    "current_contact_moment": true,
+    "finiteobjective_gaps": true,
+    "finiteobjective_force": true,
+    "finiteobjective_moment": true
+  },
+  "contact_rows": 2169,
+  "connectors": 14,
+  "independent_signed_gap_error_mm": 1.0467245398095452e-14,
+  "current_contact_wrench_N_Nm": [
+    6.661338147750939e-16,
+    1.3322676295501878e-15,
+    8.881784197001252e-16,
+    9.020562075079397e-17,
+    -9.71445146547012e-17,
+    -6.245004513516506e-17
+  ],
+  "finiteobjective_tests": [
+    {
+      "rotation_rad": [
+        0.0003,
+        -0.0002,
+        0.0004
+      ],
+      "translation_mm": [
+        0,
+        0,
+        0
+      ],
+      "maximum_gap_error_mm": 2.104078630077444e-14,
+      "current_wrench_N_Nm": [
+        -1.1102230246251565e-16,
+        1.3322676295501878e-15,
+        4.884981308350689e-15,
+        -6.245004513516506e-17,
+        1.3704315460216776e-16,
+        -4.683753385137379e-17
+      ]
+    },
+    {
+      "rotation_rad": [
+        0.3,
+        -0.2,
+        0.4
+      ],
+      "translation_mm": [
+        1.2,
+        -0.4,
+        3.1
+      ],
+      "maximum_gap_error_mm": 1.7899847313128012e-14,
+      "current_wrench_N_Nm": [
+        0.0,
+        -1.7763568394002505e-15,
+        -6.661338147750939e-16,
+        9.020562075079397e-17,
+        -6.938893903907228e-18,
+        -4.5102810375396984e-17
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "label": "frame_key_xmax",
+      "owner": "GROUND_PLATE",
+      "rows": 27,
+      "interior_faces": 21,
+      "separated_edges_vertices": 6,
+      "maximum_winding_integer_error": 6.25515989599894e-20
+    },
+    {
+      "label": "frame_key_xmin",
+      "owner": "GROUND_PLATE",
+      "rows": 27,
+      "interior_faces": 21,
+      "separated_edges_vertices": 6,
+      "maximum_winding_integer_error": 3.666817870068345e-20
+    },
+    {
+      "label": "frame_key_ymax",
+      "owner": "GROUND_PLATE",
+      "rows": 25,
+      "interior_faces": 19,
+      "separated_edges_vertices": 6,
+      "maximum_winding_integer_error": 6.363007480412715e-20
+    },
+    {
+      "label": "frame_key_ymin",
+      "owner": "GROUND_PLATE",
+      "rows": 23,
+      "interior_faces": 17,
+      "separated_edges_vertices": 6,
+      "maximum_winding_integer_error": 4.853141298619868e-20
+    },
+    {
+      "label": "frame_seat",
+      "owner": "GROUND_PLATE",
+      "rows": 1115,
+      "interior_faces": 1019,
+      "separated_edges_vertices": 96,
+      "maximum_winding_integer_error": 3.5374007687718147e-19
+    },
+    {
+      "label": "ground_key_xmax",
+      "owner": "TEST_BASE",
+      "rows": 35,
+      "interior_faces": 33,
+      "separated_edges_vertices": 2,
+      "maximum_winding_integer_error": 4.141347241488954e-19
+    },
+    {
+      "label": "ground_key_xmin",
+      "owner": "TEST_BASE",
+      "rows": 37,
+      "interior_faces": 32,
+      "separated_edges_vertices": 5,
+      "maximum_winding_integer_error": 3.9687911064269143e-19
+    },
+    {
+      "label": "ground_key_ymax",
+      "owner": "TEST_BASE",
+      "rows": 25,
+      "interior_faces": 23,
+      "separated_edges_vertices": 2,
+      "maximum_winding_integer_error": 1.8636062586700292e-18
+    },
+    {
+      "label": "ground_key_ymin",
+      "owner": "TEST_BASE",
+      "rows": 23,
+      "interior_faces": 19,
+      "separated_edges_vertices": 4,
+      "maximum_winding_integer_error": 4.469203898106829e-18
+    },
+    {
+      "label": "ground_seat",
+      "owner": "TEST_BASE",
+      "rows": 495,
+      "interior_faces": 436,
+      "separated_edges_vertices": 59,
+      "maximum_winding_integer_error": 6.239993829440754e-20
+    },
+    {
+      "label": "motor_bottom",
+      "owner": "OPEN_FRAME",
+      "rows": 11,
+      "interior_faces": 7,
+      "separated_edges_vertices": 4,
+      "maximum_winding_integer_error": 3.623678836302835e-17
+    },
+    {
+      "label": "motor_front_cap",
+      "owner": "MOTOR_CAP",
+      "rows": 35,
+      "interior_faces": 26,
+      "separated_edges_vertices": 9,
+      "maximum_winding_integer_error": 4.3139033765509935e-20
+    },
+    {
+      "label": "motor_front_frame",
+      "owner": "OPEN_FRAME",
+      "rows": 33,
+      "interior_faces": 33,
+      "separated_edges_vertices": 0,
+      "maximum_winding_integer_error": 0.0
+    },
+    {
+      "label": "motor_top",
+      "owner": "MOTOR_CAP",
+      "rows": 11,
+      "interior_faces": 6,
+      "separated_edges_vertices": 5,
+      "maximum_winding_integer_error": 6.384576997295471e-19
+    },
+    {
+      "label": "motor_xmax",
+      "owner": "OPEN_FRAME",
+      "rows": 8,
+      "interior_faces": 5,
+      "separated_edges_vertices": 3,
+      "maximum_winding_integer_error": 2.8225007012097843e-15
+    },
+    {
+      "label": "motor_xmin",
+      "owner": "OPEN_FRAME",
+      "rows": 8,
+      "interior_faces": 3,
+      "separated_edges_vertices": 5,
+      "maximum_winding_integer_error": 3.3678125992328424e-15
+    },
+    {
+      "label": "root_seat",
+      "owner": "OPEN_FRAME",
+      "rows": 205,
+      "interior_faces": 182,
+      "separated_edges_vertices": 23,
+      "maximum_winding_integer_error": 4.208212743825494e-18
+    },
+    {
+      "label": "root_wall",
+      "owner": "OPEN_FRAME",
+      "rows": 26,
+      "interior_faces": 26,
+      "separated_edges_vertices": 0,
+      "maximum_winding_integer_error": 0.0
+    }
+  ],
+  "positive_gap_with_old_pressure": 64,
+  "old_pressure_on_positive_gap_N": 18.270961082621838,
+  "penetrations": 5,
+  "maximum_complementarity_Nmm": 0.01432493364072231,
+  "unsolved_relative_residual": 2.1036481467197317,
+  "unsolved_residual_current_wrench_N_Nm": [
+    0.0,
+    -6.217248937900877e-15,
+    -6.905587213168474e-14,
+    -6.938893903907228e-17,
+    -2.4667767828390197e-15,
+    3.0878077872387166e-16
+  ],
+  "contact_update_attempted": false,
+  "new_equilibrium_solved": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 59.308636764995754,
+  "limitations": [
+    "Finitecontact query/force installed in SAMEoriginalfivebody Biotsupport withall2169rows/14branches. Currentstate andoldpressure remain nonequilibrium; no supportupdate/stress reported. Lagrange pressure-times-gap is NOT storedcontactenergy.",
+    "Facetinteriors use exactoutwardplane normal; separatededges/vertices use completewinding sign+closestpointcotangent. Exactzero edge/vertex explicitly rejects; does not select a representative cone.",
+    "Previousallrowindependent directional andcoordinatechecks required before a boundedupdate. No material/sourcecase/bearing/physicalBaseanchor/finitewire/friction/protector/globalenergy/full3Finger/meshqualification. All22UNQUALIFIED."
+  ]
+}

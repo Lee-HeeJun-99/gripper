@@ -1,0 +1,97 @@
+{
+  "status": "ACTUAL_P1_FOURMOUNT_FAIL_AND_GUIDE_INITIAL_AUDIT_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide52/summary_corrected.json",
+    "SHA256": "d3723517707d157e34b7df930aaa15366cfc25c1f29d4727ea4385df587c814b"
+  },
+  "original_fourmount_endpoint": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fourmount52b/summary.json",
+    "SHA256": "37a889a922175e8cee3fe0a8a71e2de5d2c07a0ff7989f4006ad31e1f8735c48"
+  },
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_fourmount_execution/execution.json",
+        "SHA256": "3e3ce0e97eb133ef1b1f84672234f785f532f16e5a29cfe3f2db69869fe5aa63"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_fourmount_execution/analysis.log",
+        "SHA256": "04552ebe9e08aaa40039cdefb1a3e73eda1a545565d953773cb66dc77c9898ab"
+      },
+      "log_tail": "bset_controls=controls,old_mode_max_contact_normal_velocity=float(max(abs(vv))),old_mode_largest_work_rows=[dict(mount=rows[j]['mount'],label=rows[j]['label'],work=float(vv[j])) for j in top],checks=checks,preload=0,friction=0,external_torque_port=None,host_fixed=False,accepted_physical_product_equilibria=0,normalized_conditional_fourmount_equilibria=int(s['feasible']),installed_capacity_N=None,actual_100g_operating_field=None,whole_system_release=False,newly_qualified_system_gate_ids=[],limitations=['Conditional simultaneous finite-clearance endpoint with all4local contact sets;whole assembly nonpenetration and takeup must be checked independently','Reactions are nonnegative rigid finite-flank/corner wrenches,not elastic pressures or capacity','No bolt-shank/bore contact assumed;these may activate earlier and invalidate endpoint path','Not actual100g operating equilibrium,host closure,mass,mesh,time,energy or release']))\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py\", line 11, in dump\n    def dump(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,allow_nan=False)+'\\n')\n  File \"/usr/lib/python3.10/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 201, in encode\n    chunks = list(chunks)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.10/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type bool is not JSON serializable\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_fourmountb_execution/execution.json",
+        "SHA256": "aa47c59089f66ed31c66f768b836eb473e51c4deff5081120c36dbb3ee57362e"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_fourmountb_execution/analysis.log",
+        "SHA256": "9c1b71d4c7169da4dbae8dd7ef3b905bfb2d31edac1b987e1010bf134cb593ac"
+      },
+      "log_tail": "{\"checks\": {\"all108DOFs_retained\": true, \"all_four_mounts_coupled\": true, \"no_external_torque_or_rotation_restraint\": true, \"unilateral_unit_balance\": false, \"old_onejoint_failure_preserved\": true, \"old_free_screw_not_common_fourmount_mechanism\": true}, \"feasible\": false, \"residual\": null, \"contacts\": 312, \"controls\": [{\"mounts\": [0], \"feasible\": false}, {\"mounts\": [0, 1], \"feasible\": false}, {\"mounts\": [0, 2], \"feasible\": false}, {\"mounts\": [0, 3], \"feasible\": false}, {\"mounts\": [0, 1, 2, 3], \"feasible\": false}], \"oldmode\": 48.5}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_guide_validation_execution/execution.json",
+        "SHA256": "befcfc3b0f1e8caf1d2175d2a8113bba0aa841a834fe30f0c33a27853625dbe8"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_guide_validation_execution/analysis.log",
+        "SHA256": "eea15e8f439adc7f5e3f504d3290309f683b4e5fb0f0dbf74e5b2f7cf716ef4b"
+      },
+      "log_tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_guide52.py\", line 63, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_guide52.py\", line 52, in main\n    p=C+np.array([-sign*sy*2.1,sy*lever,0.]);normal=np.array([sign*sy,0.,0.]);bind(f'stand_wall_{sign}_{sy}',stand,p,normal);bind(f'receiver_corner_{sign}_{sy}',posed,p)\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_guide52.py\", line 44, in bind\n    f=TopoDS.Face_s(q.SupportOnShape2(1));u,v=q.ParOnFaceS2(1);p1=BRepLProp_SLProps(BRepAdaptor_Surface(f),u,v,1,1e-9);assert p1.IsNormalDefined();n=p1.Normal();nn=np.array([n.X(),n.Y(),n.Z()])*(-1 if f.Orientation()==TopAbs_REVERSED else 1);err=float(max(abs(nn-expected)))\nOCP.OCP.Standard.Standard_TypeMismatch: TopoDS::Face\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_ports_execution/execution.json",
+        "SHA256": "61dfcf16b294261b62ee03f22b6eb77e763e818bb3d5966b135a93718c051f98"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_ports_execution/analysis.log",
+        "SHA256": "d089d069cd418aba0b314231402943637d005a119d62b3ed7e0dd6eaa90f9e2b"
+      },
+      "log_tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_guide52_ports.py\", line 48, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_guide52_ports.py\", line 43, in main\n    dump(out/'summary.json',result)\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py\", line 11, in dump\n    def dump(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,allow_nan=False)+'\\n')\n  File \"/usr/lib/python3.10/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 201, in encode\n    chunks = list(chunks)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.10/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type bool is not JSON serializable\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_portsb_execution/execution.json",
+        "SHA256": "e607ee031951d51e94de781649fcc8486aa2faad6df5db77f6125c9490aac4b4"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary52_portsb_execution/analysis.log",
+        "SHA256": "a96c5bf031e5d0848f9d7527e0764a6e7a723b1efa619dae3c4050eb6bca39de"
+      },
+      "log_tail": "{\"status\": \"ACTUAL_P1_GUIDE_INDEPENDENT_AUDIT_FAIL\", \"checks\": {\"actual_vertical_overlap_6mm\": false, \"original16mm_claim_explicitly_rejected\": true, \"all32_mount_tool_envelopes_clear\": true, \"independent108DOFcolumns\": true, \"independent108DOFvirtualwork\": true, \"saved_fourmount_failure_retained\": true, \"actual_fourmount_failure_certificate\": true, \"guide_saved_wrench_reconstructs\": true, \"guide_missing_or_reverse_controls_reject\": true}, \"sections\": [{\"y_mm\": -58.0, \"support_local_bounds_mm\": [-79.2, -60.0, 44.99999999999999, -78.4, -56.0, 66.0], \"tongue_local_bounds_mm\": [-77.5, -60.0, 50.0, -74.5, -56.0, 67.0], \"actual_vertical_overlap_mm\": 16.0}, {\"y_mm\": 39.0, \"support_local_bounds_mm\": [-79.2, 37.0, 44.99999999999999, -78.4, 41.0, 66.0], \"tongue_local_bounds_mm\": [-77.5, 37.0, 50.0, -74.5, 41.0, 67.0], \"actual_vertical_overlap_mm\": 16.0}], \"certificate\": {\"minimum_contact_normal_work\": -2.937572799620882e-11, \"external_positive_work\": 1.0, \"meaning\": \"Farkas separation certificate:nonnegativecontactreactions cannotbalance selectedendpointunitload;NOT wholeproductfailure or missingboreproof\"}}\n"
+    }
+  ],
+  "failure_causes": [
+    "Initialfourmount serializationfailed onnumpybool;archivedproducerandlogpreserved;newbresultretainsphysicalLPinfeasibility",
+    "Old312contact/108DOFselectedendpoint lacksnonnegativeunitaxialbalance;Farkascertificatepositiveexternalwork1,mincontactwork-2.94e-11;NOTwhole128partfailure",
+    "Firstguideverifierqueriedz58belowactualarmz60..66;TopoDSFacecastfailed;initialjournal/producerimmutable",
+    "InitialCADinputsclaimed16mmengagementbyusingtonguespan;actualsidewallarmoverlap6mm;originalinputsandgeometryrecordimmutable,canonicalcorrectedinputsnewfile",
+    "Firstindependentserializerfailedonnumpybool;secondsectiongaugecrossedverticalpostandfalselyreturned16mmBBoxoverlap;preservedFAIL;finalgaugeisolatesactualmortisewallx-78.8..-78.3"
+  ],
+  "initial_wrong_metadata": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide52/inputs.json",
+    "SHA256": "c0502b8f3c91303cddea404fb28eb6bdf16a852389e556fef391e48e799995d6"
+  },
+  "corrected_metadata": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide52/inputs_corrected.json",
+    "SHA256": "9c497075d3f139ff23a113c32e7b3ed080294fab01956e83328315caf8b0dfa3"
+  },
+  "rejected_section_audit": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_guide52_portsb/summary.json",
+    "SHA256": "f46b97ccc4d9bd68ce27f5fb50f953dc28a1e4d945566dd4dbcbc55225d4f709"
+  },
+  "all_prior_failures": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle51_record/summary.json",
+    "SHA256": "075b93465a8e1b17cb611e9d4752c1fefb3ec1d01ad63a7f4bcab2b33a165ddd"
+  },
+  "whole_system_release": false
+}

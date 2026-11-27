@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_guide52.py", line 63, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_guide52.py", line 52, in main
+    p=C+np.array([-sign*sy*2.1,sy*lever,0.]);normal=np.array([sign*sy,0.,0.]);bind(f'stand_wall_{sign}_{sy}',stand,p,normal);bind(f'receiver_corner_{sign}_{sy}',posed,p)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/validate_guide52.py", line 44, in bind
+    f=TopoDS.Face_s(q.SupportOnShape2(1));u,v=q.ParOnFaceS2(1);p1=BRepLProp_SLProps(BRepAdaptor_Surface(f),u,v,1,1e-9);assert p1.IsNormalDefined();n=p1.Normal();nn=np.array([n.X(),n.Y(),n.Z()])*(-1 if f.Orientation()==TopAbs_REVERSED else 1);err=float(max(abs(nn-expected)))
+OCP.OCP.Standard.Standard_TypeMismatch: TopoDS::Face

@@ -1,0 +1,1077 @@
+{
+  "status": "ACTUAL_P1_ANCHOR_CONDITIONAL_WITNESS_LP_MESH_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor40_assembly/inputs.json",
+    "SHA256": "186586fdc669dffedc62f22449bd113cf7f79ceb10fb7017af6d8494a165f04b"
+  },
+  "checks": {
+    "all_actual_STEP_hashes": true,
+    "all_actual_valid_single": true,
+    "aggregate_actual_solids": true,
+    "unchanged77_original_refs": true,
+    "actual_BOM_matches": true,
+    "assembly_sample_poses_clear": true,
+    "tool_enclosures_clear": true,
+    "all14cases_all3patchlevels_feasible": true,
+    "force_original1e_minus8": true,
+    "moment_original1e_minus10": true,
+    "key_omission_rejected": true,
+    "bolt_omission_rejected": true,
+    "open_gap_key_pressure_rejected": true,
+    "roof_gap_counterexample_detected": true
+  },
+  "actual_parts": 85,
+  "actual_changed_parts": 8,
+  "conditional_mass_kg": 1.2034316986902025,
+  "bearings": [
+    {
+      "station": 0,
+      "head_area_mm2": 32.98672286269283,
+      "nut_area_mm2": 31.667331399389198
+    },
+    {
+      "station": 1,
+      "head_area_mm2": 32.98672286269283,
+      "nut_area_mm2": 31.667331399424945
+    },
+    {
+      "station": 2,
+      "head_area_mm2": 32.98672286269283,
+      "nut_area_mm2": 31.66733139942514
+    }
+  ],
+  "levels": [
+    {
+      "divisions": 2,
+      "cells": 28,
+      "areas_mm2": {
+        "topseat": 865.9121496356229,
+        "key0_xmin": 30.0,
+        "key0_xmax": 30.0,
+        "key_ymin": 61.20000000000002,
+        "key_ymax": 61.20000000000002
+      },
+      "solutions": {
+        "conditional_frozen_contact_plus_nominal_gravity": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.4086104166666667,
+            0.0,
+            -10.114582742518493,
+            0.07416447192484611,
+            0.2323394565912286,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.14927092854777488,
+          "force_residual_N": 2.831068712794149e-15,
+          "moment_residual_Nm": 1.8735013540549517e-15
+        },
+        "nominal_upstream_gravity_only": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            -10.114582742518497,
+            0.0741644719248461,
+            0.2716149903014234,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.14925618673426383,
+          "force_residual_N": 3.7804071679990685e-15,
+          "moment_residual_Nm": 3.191891195797325e-16
+        },
+        "sensitivity_0_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.03333333333333333,
+          "force_residual_N": 1.1102230246251565e-16,
+          "moment_residual_Nm": 6.938893903907228e-18
+        },
+        "sensitivity_0_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.03333333333333333,
+          "force_residual_N": 1.240327285323417e-16,
+          "moment_residual_Nm": 1.0706496453294356e-17
+        },
+        "sensitivity_1_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.02143140499066307,
+          "force_residual_N": 0.0,
+          "moment_residual_Nm": 5.325601071248798e-16
+        },
+        "sensitivity_1_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.02437676519828432,
+          "force_residual_N": 4.440892098500626e-16,
+          "moment_residual_Nm": 4.5102810375396984e-17
+        },
+        "sensitivity_2_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.01444131800757665,
+          "force_residual_N": 3.3306690738754696e-16,
+          "moment_residual_Nm": 2.2551405187698492e-17
+        },
+        "sensitivity_2_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.001834528719303176,
+          "force_residual_N": 3.0531133177191805e-16,
+          "moment_residual_Nm": 2.0816681711721685e-17
+        },
+        "sensitivity_3_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            -0.001,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00018008156779544463,
+          "force_residual_N": 1.0408340855860843e-17,
+          "moment_residual_Nm": 2.168404344971009e-19
+        },
+        "sensitivity_3_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00035716872085398267,
+          "force_residual_N": 5.4643789493269423e-17,
+          "moment_residual_Nm": 5.4752209710517974e-18
+        },
+        "sensitivity_4_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.001,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00023030708362452326,
+          "force_residual_N": 3.469446951953614e-18,
+          "moment_residual_Nm": 1.0842021724855044e-19
+        },
+        "sensitivity_4_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00023030966752841375,
+          "force_residual_N": 6.938893903907228e-18,
+          "moment_residual_Nm": 2.630545520992955e-17
+        },
+        "sensitivity_5_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.001
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00025137502136687693,
+          "force_residual_N": 3.903127820947816e-18,
+          "moment_residual_Nm": 8.269159147570107e-20
+        },
+        "sensitivity_5_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0002513750213668769,
+          "force_residual_N": 2.6020852139652106e-18,
+          "moment_residual_Nm": 8.322760451263543e-20
+        }
+      }
+    },
+    {
+      "divisions": 4,
+      "cells": 106,
+      "areas_mm2": {
+        "topseat": 865.912149635623,
+        "key0_xmin": 30.0,
+        "key0_xmax": 30.0,
+        "key_ymin": 61.20000000000002,
+        "key_ymax": 61.20000000000002
+      },
+      "solutions": {
+        "conditional_frozen_contact_plus_nominal_gravity": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.4086104166666667,
+            0.0,
+            -10.114582742518493,
+            0.07416447192484611,
+            0.2323394565912286,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.1492624287644875,
+          "force_residual_N": 1.326716514427062e-14,
+          "moment_residual_Nm": 4.9404924595819466e-15
+        },
+        "nominal_upstream_gravity_only": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            -10.114582742518497,
+            0.0741644719248461,
+            0.2716149903014234,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.14925618673426336,
+          "force_residual_N": 3.2800461601930136e-14,
+          "moment_residual_Nm": 1.5470263958761166e-14
+        },
+        "sensitivity_0_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.03333333333333333,
+          "force_residual_N": 5.551115123125783e-16,
+          "moment_residual_Nm": 6.938893903907228e-18
+        },
+        "sensitivity_0_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.03333333333333333,
+          "force_residual_N": 1.249000902703301e-16,
+          "moment_residual_Nm": 6.938893903907228e-18
+        },
+        "sensitivity_1_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.021335269882857746,
+          "force_residual_N": 4.440892098500626e-16,
+          "moment_residual_Nm": 5.898059818321144e-17
+        },
+        "sensitivity_1_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.024308699146780594,
+          "force_residual_N": 1.0130785099704553e-14,
+          "moment_residual_Nm": 7.008282842946301e-16
+        },
+        "sensitivity_2_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.01436285128492942,
+          "force_residual_N": 1.3877787807814457e-17,
+          "moment_residual_Nm": 2.7755575615628914e-17
+        },
+        "sensitivity_2_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0018342559788592692,
+          "force_residual_N": 1.734723475976807e-18,
+          "moment_residual_Nm": 4.2392304944183223e-17
+        },
+        "sensitivity_3_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            -0.001,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0001799850937372298,
+          "force_residual_N": 4.2490099980141416e-14,
+          "moment_residual_Nm": 3.4878648363587117e-15
+        },
+        "sensitivity_3_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0003570356487556476,
+          "force_residual_N": 8.673617379884035e-19,
+          "moment_residual_Nm": 1.0842021724855044e-19
+        },
+        "sensitivity_4_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.001,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00022925697092815165,
+          "force_residual_N": 6.65158032819857e-16,
+          "moment_residual_Nm": 4.423544863740858e-17
+        },
+        "sensitivity_4_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00022925731916679287,
+          "force_residual_N": 3.189722791452354e-16,
+          "moment_residual_Nm": 2.1250362580715887e-17
+        },
+        "sensitivity_5_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.001
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0002512764845414708,
+          "force_residual_N": 9.75781955236954e-19,
+          "moment_residual_Nm": 1.428309307307564e-19
+        },
+        "sensitivity_5_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00025127648454147073,
+          "force_residual_N": 1.0842021724855044e-18,
+          "moment_residual_Nm": 2.168404344971009e-19
+        }
+      }
+    },
+    {
+      "divisions": 8,
+      "cells": 406,
+      "areas_mm2": {
+        "topseat": 865.9121496356283,
+        "key0_xmin": 30.0,
+        "key0_xmax": 30.0,
+        "key_ymin": 61.199999999999974,
+        "key_ymax": 61.199999999999974
+      },
+      "solutions": {
+        "conditional_frozen_contact_plus_nominal_gravity": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.4086104166666667,
+            0.0,
+            -10.114582742518493,
+            0.07416447192484611,
+            0.2323394565912286,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.14310694345782699,
+          "force_residual_N": 4.440892098500626e-16,
+          "moment_residual_Nm": 1.3877787807814457e-16
+        },
+        "nominal_upstream_gravity_only": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            -10.114582742518497,
+            0.0741644719248461,
+            0.2716149903014234,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.1431194329898682,
+          "force_residual_N": 4.718447854656915e-15,
+          "moment_residual_Nm": 6.38378239159465e-16
+        },
+        "sensitivity_0_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.03333333333333333,
+          "force_residual_N": 2.7755575615628914e-17,
+          "moment_residual_Nm": 2.7755575615628914e-17
+        },
+        "sensitivity_0_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.03333333333333333,
+          "force_residual_N": 1.3877787807814457e-17,
+          "moment_residual_Nm": 2.42861286636753e-17
+        },
+        "sensitivity_1_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.021331058020477852,
+          "force_residual_N": 1.1102230246251565e-15,
+          "moment_residual_Nm": 1.1449174941446927e-16
+        },
+        "sensitivity_1_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.02133105802047785,
+          "force_residual_N": 8.881784197001252e-16,
+          "moment_residual_Nm": 1.0408340855860843e-16
+        },
+        "sensitivity_2_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.013936184322810404,
+          "force_residual_N": 5.689893001203927e-16,
+          "moment_residual_Nm": 2.0816681711721685e-17
+        },
+        "sensitivity_2_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0018019449083765803,
+          "force_residual_N": 6.852157730108388e-17,
+          "moment_residual_Nm": 2.883977778811442e-17
+        },
+        "sensitivity_3_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            -0.001,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00016945177536151164,
+          "force_residual_N": 9.053088140253962e-18,
+          "moment_residual_Nm": 4.336808689942018e-19
+        },
+        "sensitivity_3_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00030570398821908143,
+          "force_residual_N": 7.806255641895632e-18,
+          "moment_residual_Nm": 1.3010426069826053e-18
+        },
+        "sensitivity_4_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.001,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00020618102196229241,
+          "force_residual_N": 3.323079658668071e-17,
+          "moment_residual_Nm": 2.710505431213761e-18
+        },
+        "sensitivity_4_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00020628576346855228,
+          "force_residual_N": 3.791292366855936e-15,
+          "moment_residual_Nm": 2.5457067009959644e-16
+        },
+        "sensitivity_5_-1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.001
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.00025122724509227555,
+          "force_residual_N": 1.1953328951652686e-17,
+          "moment_residual_Nm": 6.505213034913027e-19
+        },
+        "sensitivity_5_1": {
+          "success": true,
+          "solver_status": 0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "external_wrench_N_Nm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001
+          ],
+          "minimax_uniform_patch_pressure_MPa": 0.0002512272450922756,
+          "force_residual_N": 9.540979117872439e-18,
+          "moment_residual_Nm": 4.336808689942018e-19
+        }
+      }
+    }
+  ],
+  "mesh_contrasts": [
+    {
+      "divisions": [
+        2,
+        4
+      ],
+      "relative_pressure_bound_changes": {
+        "conditional_frozen_contact_plus_nominal_gravity": 5.694198709738085e-05,
+        "nominal_upstream_gravity_only": 3.1086244689504383e-15,
+        "sensitivity_0_-1": 0.0,
+        "sensitivity_0_1": 0.0,
+        "sensitivity_1_-1": 0.004485711872236453,
+        "sensitivity_1_1": 0.0027922511846861786,
+        "sensitivity_2_-1": 0.005433487622532929,
+        "sensitivity_2_1": 0.00014867057737344425,
+        "sensitivity_3_-1": 0.0005357242242827187,
+        "sensitivity_3_1": 0.00037257489406383737,
+        "sensitivity_4_-1": 0.004559619616753219,
+        "sensitivity_4_1": 0.004569275675286422,
+        "sensitivity_5_-1": 0.00039199131588474323,
+        "sensitivity_5_1": 0.00039199131588474323
+      },
+      "original1percent": true
+    },
+    {
+      "divisions": [
+        4,
+        8
+      ],
+      "relative_pressure_bound_changes": {
+        "conditional_frozen_contact_plus_nominal_gravity": 0.04123934842553645,
+        "nominal_upstream_gravity_only": 0.04111557369022878,
+        "sensitivity_0_-1": 0.0,
+        "sensitivity_0_1": 0.0,
+        "sensitivity_1_-1": 0.00019741312873089445,
+        "sensitivity_1_1": 0.12249282071093881,
+        "sensitivity_2_-1": 0.02970628558736843,
+        "sensitivity_2_1": 0.01761535513859047,
+        "sensitivity_3_-1": 0.058523281884089506,
+        "sensitivity_3_1": 0.14377180742446571,
+        "sensitivity_4_-1": 0.1006553862787063,
+        "sensitivity_4_1": 0.10019987925239571,
+        "sensitivity_5_-1": 0.00019595725117327323,
+        "sensitivity_5_1": 0.00019595725117282914
+      },
+      "original1percent": false
+    }
+  ],
+  "assembly": [
+    {
+      "stage": "rail_lowering",
+      "dz_mm": 25,
+      "interferences": []
+    },
+    {
+      "stage": "rail_lowering",
+      "dz_mm": 10,
+      "interferences": []
+    },
+    {
+      "stage": "rail_lowering",
+      "dz_mm": 3.2,
+      "interferences": []
+    },
+    {
+      "stage": "rail_lowering",
+      "dz_mm": 1,
+      "interferences": []
+    },
+    {
+      "stage": "rail_lowering",
+      "dz_mm": 0.2,
+      "interferences": []
+    },
+    {
+      "stage": "rail_lowering",
+      "dz_mm": 0,
+      "interferences": []
+    },
+    {
+      "stage": "bolt0_up",
+      "dz_mm": -25,
+      "interferences": []
+    },
+    {
+      "stage": "bolt0_up",
+      "dz_mm": -10,
+      "interferences": []
+    },
+    {
+      "stage": "bolt0_up",
+      "dz_mm": -2,
+      "interferences": []
+    },
+    {
+      "stage": "bolt0_up",
+      "dz_mm": 0,
+      "interferences": []
+    },
+    {
+      "stage": "nut0_down",
+      "dz_mm": 25,
+      "interferences": []
+    },
+    {
+      "stage": "nut0_down",
+      "dz_mm": 10,
+      "interferences": []
+    },
+    {
+      "stage": "nut0_down",
+      "dz_mm": 2,
+      "interferences": []
+    },
+    {
+      "stage": "nut0_down",
+      "dz_mm": 0,
+      "interferences": []
+    },
+    {
+      "stage": "bolt1_up",
+      "dz_mm": -25,
+      "interferences": []
+    },
+    {
+      "stage": "bolt1_up",
+      "dz_mm": -10,
+      "interferences": []
+    },
+    {
+      "stage": "bolt1_up",
+      "dz_mm": -2,
+      "interferences": []
+    },
+    {
+      "stage": "bolt1_up",
+      "dz_mm": 0,
+      "interferences": []
+    },
+    {
+      "stage": "nut1_down",
+      "dz_mm": 25,
+      "interferences": []
+    },
+    {
+      "stage": "nut1_down",
+      "dz_mm": 10,
+      "interferences": []
+    },
+    {
+      "stage": "nut1_down",
+      "dz_mm": 2,
+      "interferences": []
+    },
+    {
+      "stage": "nut1_down",
+      "dz_mm": 0,
+      "interferences": []
+    },
+    {
+      "stage": "bolt2_up",
+      "dz_mm": -25,
+      "interferences": []
+    },
+    {
+      "stage": "bolt2_up",
+      "dz_mm": -10,
+      "interferences": []
+    },
+    {
+      "stage": "bolt2_up",
+      "dz_mm": -2,
+      "interferences": []
+    },
+    {
+      "stage": "bolt2_up",
+      "dz_mm": 0,
+      "interferences": []
+    },
+    {
+      "stage": "nut2_down",
+      "dz_mm": 25,
+      "interferences": []
+    },
+    {
+      "stage": "nut2_down",
+      "dz_mm": 10,
+      "interferences": []
+    },
+    {
+      "stage": "nut2_down",
+      "dz_mm": 2,
+      "interferences": []
+    },
+    {
+      "stage": "nut2_down",
+      "dz_mm": 0,
+      "interferences": []
+    }
+  ],
+  "tool_access": [
+    {
+      "station": 0,
+      "tool": "4AF_driver_enclosure",
+      "interferences": [],
+      "scope": "Conservative axisymmetric bounding corridor,not exact jaw/handle/torque or swept threaded engagement. Existing reviewed Bahco19mm width/4.2mm thickness;4.7mm thickness encloses it."
+    },
+    {
+      "station": 0,
+      "tool": "8AF_openhead_enclosure",
+      "interferences": [],
+      "scope": "Conservative axisymmetric bounding corridor,not exact jaw/handle/torque or swept threaded engagement. Existing reviewed Bahco19mm width/4.2mm thickness;4.7mm thickness encloses it."
+    },
+    {
+      "station": 1,
+      "tool": "4AF_driver_enclosure",
+      "interferences": [],
+      "scope": "Conservative axisymmetric bounding corridor,not exact jaw/handle/torque or swept threaded engagement. Existing reviewed Bahco19mm width/4.2mm thickness;4.7mm thickness encloses it."
+    },
+    {
+      "station": 1,
+      "tool": "8AF_openhead_enclosure",
+      "interferences": [],
+      "scope": "Conservative axisymmetric bounding corridor,not exact jaw/handle/torque or swept threaded engagement. Existing reviewed Bahco19mm width/4.2mm thickness;4.7mm thickness encloses it."
+    },
+    {
+      "station": 2,
+      "tool": "4AF_driver_enclosure",
+      "interferences": [],
+      "scope": "Conservative axisymmetric bounding corridor,not exact jaw/handle/torque or swept threaded engagement. Existing reviewed Bahco19mm width/4.2mm thickness;4.7mm thickness encloses it."
+    },
+    {
+      "station": 2,
+      "tool": "8AF_openhead_enclosure",
+      "interferences": [],
+      "scope": "Conservative axisymmetric bounding corridor,not exact jaw/handle/torque or swept threaded engagement. Existing reviewed Bahco19mm width/4.2mm thickness;4.7mm thickness encloses it."
+    }
+  ],
+  "roof_clearance_controls": [
+    {
+      "dz_mm": 0,
+      "common_mm3": 0.0
+    },
+    {
+      "dz_mm": 0.19,
+      "common_mm3": 0.0
+    },
+    {
+      "dz_mm": 0.21,
+      "common_mm3": 2.404834111142067
+    }
+  ],
+  "negative_controls": {
+    "without_keys": {
+      "success": false,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "external_wrench_N_Nm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "without_axial_connectors": {
+      "success": false,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "external_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -10.114582742518497,
+        0.0741644719248461,
+        0.2716149903014234,
+        0.0
+      ]
+    },
+    "actual_02mm_gap": {
+      "success": false,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "external_wrench_N_Nm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "patches": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor40_assembly/patches.json",
+    "SHA256": "a35bb697b147686ef8f2987d0e6b413c5b5957cd705465b9570db844307ff1f9"
+  },
+  "tractions": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor40_assembly/tractions.json",
+    "SHA256": "785c4c8f62f3405f8b79937be7284c73d4a682d2c183e76854236fd618932e12"
+  },
+  "mass": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor40_assembly/mass.json",
+    "SHA256": "9446e1aebfdbec213a299c91aab578a70c7253f2f2ddfaa27eab1b568ec62902"
+  },
+  "accepted_elastic_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "hardware": "NOT_MEASURED",
+  "limitations": [
+    "Actual whole assembly and actual newfinite faces,not a coupon. Necessary positive uniform patch pressure witness plus axial connector;NOT real elastic distribution/preload/threadflank/installed anchorage or strength.",
+    "Historical100g contact-only resultant is frozen;new nominal CAD gravity recomputed. No new coupled100g Finger/support/sourcefield equilibrium. Unit1N and1Nmm sixmode sensitivities are NOT sixDOF grasp closure or product rated loads.",
+    "Minimax uniform-patch pressure mesh convergence is ONLY LP discretization,not elastic/contact/Beam mesh1percent qualification.",
+    "Nominal exact key fit is not toleranced. Explicit0.02mm gap removes shear at unchangedpose. Roof clearance0.2mm and reliefs are nominal.",
+    "Finite83part primary now ends at BENCH_ANCHOR_RAIL;external rail-to-bench attachment/material/preload/finite support remain UNQUALIFIED. No hidden fixedDOFs.",
+    "All prior78part/sourcefield and mesh/time/globalenergy failures preserved. No fullsame-revision3Finger release. Assembly checks sampled finite poses and enclosing local tool corridors,not complete continuous threaded/process certification."
+  ]
+}

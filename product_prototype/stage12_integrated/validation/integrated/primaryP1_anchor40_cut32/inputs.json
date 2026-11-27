@@ -1,0 +1,31 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor40_cut32/producer.py",
+    "SHA256": "b9aa2a699c85ab807adc931cb0ad4b2cc4c37c451bda2d2d6fe733b7f6d2be05"
+  },
+  "mesh_dependency": {
+    "path": "product_prototype/stage12_integrated/scripts/primary_finite_body34.py",
+    "SHA256": "f5e2b0b08ab40ee03b1181fe19ee07a181b2c5efa225b55640af63986abc39ec"
+  },
+  "h_mm": 5.0,
+  "curvature": 24,
+  "patch_divisions": 2,
+  "source_profile": "affine",
+  "standard_dimensional_source": {
+    "path": "product_prototype/stage12_integrated/models/standard_drive/primary_retention_sources2/reviewed.json",
+    "SHA256": "828df2b576c39a8b88a55b79c56b0e9e243321a0eabff6f8d314e3a7f599fe8d"
+  },
+  "conditional_body_material": "E69000MPa nu.33 NOT source-backed minimum",
+  "conditional_bolt": "E200000MPa nominal major diameter5mm L14mm axial spring only;unknown threadcore/flank,head/nut elasticity,rest/preload;NOT installed physical law",
+  "source_trace": "Actual GroundPlate/Base common z46 face + actual exposed receiver underside outer x rims z66,exact affine six-resultant signed Neumann traces from surface second moments. No physical bench is present. No fixed nodes. Conditional loads re-express historical resultant ONLY;not solved gravity/contact field.",
+  "current_criteria": {
+    "force_N": 1e-08,
+    "moment_Nm": 1e-10,
+    "mesh_relative": 0.01,
+    "time_relative": 0.001
+  }
+}

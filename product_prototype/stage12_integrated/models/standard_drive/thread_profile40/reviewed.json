@@ -1,0 +1,10 @@
+{
+  "status": "REVIEWED_BASIC_THREAD_AREA_FORMULA_NOT_INSTALLED_JOINT_QUALIFICATION",
+  "retrieved_date": "2026-11-27",
+  "sources": [
+    {"url":"https://help.solidworks.com/2024/english/SolidWorks/cworks/r_Tensile_Stress_Area_Bolt.htm", "publisher":"Dassault Systemes SOLIDWORKS official documentation", "scope":"Software's nominal ISO bolt tensile-area calculation: At=pi/4*(d-.9382P)^2; d3 approximately d-1.2268P; d2 approximately d-.6495P. M5 coarse pitch .8mm. Not actual tolerances or supplier bolt certification."},
+    {"url":"https://ntrs.nasa.gov/api/citations/20110016427/downloads/20110016427.pdf", "publisher":"NASA Technical Reports Server, Lewis Research Center fastener design material", "scope":"Metric nominal tensile stress area formula pi/4*(D-.9382P)^2. Not an installed ReGrip connector compliance law."}
+  ],
+  "calculation": {"d_mm":5,"P_mm":0.8,"core_sensitivity_deduction":1.226869,"stress_area_deduction":0.9382,"grip_mm":14,"conditional_E_MPa":200000},
+  "limitations": ["Nominal basic-profile axial sensitivities only; rounded root coefficient is ideal geometry, not minimum tolerance diameter.","Tensile stress area is not finite head/nut/flank/contact/preload compliance.","E is conditional, not source-backed minimum for a certified purchased part.","No source licenses replacing smooth-envelope CAD with fictitious tied threads or assigning physical stack PASS."]
+}

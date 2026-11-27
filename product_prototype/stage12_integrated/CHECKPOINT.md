@@ -1,3 +1,76 @@
+# Latest actual P1 clamp and paired-load continuation — 2026-11-27, pending Supervisor save
+
+Started at actual HEAD6be7bb3b4011819546dbab566ad3ccbaf5de5cfd.
+Selected exact queue ID goal_primary_root_ground_load_path. SAME ONE primary P1
+continues as primaryP1_clamp10,69parts; failed AO and original3Finger/cartridge/
+jamming extension remain immutable. Actual changed CAD: OPEN_FRAME and MOTOR_CAP
+STEP/STL, full69part ASSEMBLY.step and updated BOM in cad/exports/primaryP1_clamp10.
+New identity BOM: bom/primaryP1_identity2. No new purchased/special component.
+This is DESIGN_CHANGE plus actual product validation,not a coupon or old retag.
+
+Previous nominal motor pocket had0.05mm top/bottom gaps; cap split could bottom
+before clamping. Integral8x10mm lands now contact nominal motor z14/26 faces;
+cap bottom relief leaves0.2mm split clearance. Independent reimported volumetric
+contact derivatives at0.001/0.002mm confirm80mm2 at both lands; old gaps and
+split bottoming reproduced. These are source simplified motor-envelope contacts,
+NOT verified real gearbox case location/tolerance/pressure/allowable/preload.
+Source-backed1101 motor/1996hub and existing standard hardware reused unchanged.
+
+Actual69single valid solids;165final Boolean pairs/no volume interference.
+81assembly samples/278comparisons and RFtool approach pass; independent aggregate
+69part identity and changed STL checks pass bounded scopes. Finite sampling is
+NOT CCD,manufacturing tolerance,thread tightening or full3Finger Stage1 release.
+
+New actual paired demand traction model uses full Root and Motor forces AND
+couples from prior32element conditional demand. Actual contact areas:
+Root/Frame526.377949mm2,Frame/Ground5129.218154mm2,motor lands80mm2 each;
+20actual head/nut bearing footprints mapped. Uniform tractions on exact finite
+clipped subfaces,not applied point moments. Motor and Cap both equilibrated;
+open split has no hidden lateral constraint,top motor land carries no shear;
+four cap bolts and RF/M5 bolts transmit equal/opposite axial bearing resultants.
+No smooth envelope is promoted to thread strength or actual elastic stiffness.
+Independent saved-field integration reconstructs Root,Motor,Cap,Frame balance
+and action/reaction to finite Ground for assumed mu.1/.2/.4/.8.24successful
+coarse/fine conditional fields; all6frictionless interface cases FAIL.
+Fine mu.1 Root bolt axial total4.442066N,Ground4.086104N,motor compression
+9.665907N/cap axial4.332015N. These are necessary load-induced reaction bounds,
+NOT selected preload or guaranteed material/friction/contact distributions.
+
+FAIL preserved:8x8->16x16Root reaction bound10.842397%,Motor7.34693..8.54175%,
+Groundmu.8 2.59598% exceed unchanged1%criterion. Groundmu.1/.2/.4 pass locally,
+not whole numerical qualification. No further mesh-only retries or FEM claim.
+Free finite Ground receives FX=.408610416667N,MY=-.039234099172Nm; its required
+external opposite wrench is explicit and NOT applied as a hidden support.
+Normal-only plane without a clamp/attachment is infeasible. Ground-to-bench
+physical attachment remains absent from69part product. Rigid wrench feasibility
+is not compliant joints,pressure uniqueness,thread/core/flank/engagement strength.
+Historical Frame52.7693%meshFAIL,Rail1.30247%stressFAIL/current/source/protector/
+friction/full3Finger/global-energy failures remain; no physical criteria relaxed.
+
+All22system gates remain UNQUALIFIED in models/primary_system_gate_state4.json.
+Unchanged read-only actual release5: INTEGRATED_NOT_QUALIFIED,24errors(exit2).
+SOFA/FEM runs0this cycle,no dt/global-energy/strength/payload/Stage3 approval.
+Main result: validation/integrated/primary_cycle4/summary.json; final execution
+accounting: validation/integrated/primaryP1_cycle4_closeout/summary.json.
+Initial point-witness model and coarse finite fields retained as superseded.
+Network verifier TypeError(exit1,variable shadowing) and first release-audit
+serialization ValueError(exit1,relative ref) preserved with exact source/log;
+corrected unique outputs verify network and retain physical mesh/release FAILs.
+
+Concrete NEXT exact ID goal_primary_positive_ground_fixture: continue THIS P1
+clamp10 with finite positive Ground-to-bench attachment outside service/RFtool
+windows,actual separate standard through-bolt/nut/bearing surfaces and defined
+finite test base. Verify its real assembly and required paired force/couple
+reaction BEFORE elastic/contact/thread qualification. Do not fix existing shared
+fourM5 nodes to ground. Then compliant paired joint/Frame/Ground response and
+1%stress/motion checks; real case/source minima/friction/protection still required.
+
+12analysis children reaped,36.941024child-seconds,0timeouts;each4GiB/420s.
+STOP absent,no RUNNING queue tasks or owned children. Pins unchanged,no Git
+add/commit/push,SDK,manager/security/gate edits,hardware,purchase,credentials,
+provider selection,subagents or recursive launches. Supervisor exact save pending:
+runtime/goal_authorized_20261127_7/save_request3.json. No new commit claimed.
+
 # Latest actual P1 corner/load continuation — 2026-11-27, pending Supervisor save
 
 Started at actual HEAD dd8a2405a47b4b1a7eeb4d7ddce5503e91139495.

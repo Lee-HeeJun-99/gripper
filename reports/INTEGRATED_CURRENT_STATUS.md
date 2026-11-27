@@ -1,3 +1,16 @@
+# Latest P1 actual clamp/load-path cycle — 2026-11-27
+
+Primary P1 now primaryP1_clamp10,69parts. Actual Frame/Cap8x10mm lands and0.2mm
+split relief; final assembly and finite sampled insertion pass bounded checks.
+Actual finite paired Root/Motor/Cap/bolt/Ground traction fields reconstructed;
+frictionless and1%traction-mesh failures preserved. Free Ground has no external
+physical attachment. All22gates UNQUALIFIED; release5 has24errors,no Stage3.
+Selected goal_primary_root_ground_load_path; next goal_primary_positive_ground_fixture:
+real finite positive Ground-to-bench bolted fixture and assembly,then compliant
+paired-load contact/thread/FEM; no arbitrary fixedM5nodes. See
+product_prototype/stage12_integrated/CHECKPOINT.md and primary_cycle4/summary.json.
+Supervisor save pending; worker did not git add/commit. Earlier records below preserved.
+
 # Batch6 cycle9 — Idler-after sequence rejected; release blocked (2026-11-27)
 
 Started at1f00595abcf73b690dbdd192e520799a49339002. Selected READY

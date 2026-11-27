@@ -1,0 +1,318 @@
+{
+  "status": "ACTUAL_P1_CYCLE4_SAVED_BYTE_HANDOFF_READY_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
+    "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
+  },
+  "engineering": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/summary.json",
+    "SHA256": "54d79c353a927d0569f571746f769ba85e438deaeeefe897c24ad063c32a8e77"
+  },
+  "actual_integrated_release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release5/summary.json",
+    "SHA256": "584c3b98dc603073dc44ab9b12dfa70bd4ccdab31c0948ed93d21e7c85f2248b"
+  },
+  "additional_audit_serialization_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release4/summary.json",
+    "SHA256": "578608c2920cf1c2e52197e1f741567e683441f1f8eb5a4219e6ab70d35a5ca4"
+  },
+  "checks": {
+    "source_pins_unchanged": true,
+    "no_running_queue": true,
+    "STOP_absent": true,
+    "all_children_reaped": true,
+    "all_analysis_limits": true,
+    "HEAD_unchanged": true,
+    "index_empty": true
+  },
+  "source_pins": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "executions": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_module_validation.py",
+        "--candidate",
+        "primaryP1_clamp10",
+        "--tag",
+        "primaryP1_clamp_validation1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.923179829027504,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/assembly10_execution.json",
+        "SHA256": "edbab59f20d0244af09d3e06d2f7c0584393f9465f5e123021f4e7ef7e0c609c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/assembly10.log",
+        "SHA256": "514a61d7bd5cb50119a0f13ebfa13f761efe252e9c1ea4ea262c662426dbdc7c"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_clamp_loadpath_design.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 2.8698062859475613,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/cad10_execution.json",
+        "SHA256": "c2d49c73e383ff4ae2c11fe4fb668da035618f6b286b58c60ea1838fe3bb52b2"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/cad10.log",
+        "SHA256": "0465c14a5fd98e5ecdb4e58e388c6f4fad17d8fb5e26b1df250726f46ab342de"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_contact_transfer.py",
+        "primaryP1_contact_transfer1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.4671887189615518,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/contact_transfer_execution.json",
+        "SHA256": "184cceeba90164e0e0de36ea6925afb91faf157c76c877b638d1c107100f29c4"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/contact_transfer.log",
+        "SHA256": "449c9e6b345d9455a48a12d77fe1f6ed301af3f0bf4d06dffaccae42b3264703"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_clamp_lands.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.0666904977988452,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/lands_verify_execution.json",
+        "SHA256": "8e2e2f7280c3b530ceafd67eb7b24a85b113e72771e1d58b14343c0bf5127562"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/lands_verify.log",
+        "SHA256": "f6bc46e7850f5df2370a3a626a722a7e256d402554aa4befd23871e419adca53"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_contact_transfer_v3.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.8662936510518193,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify3_execution.json",
+        "SHA256": "e23d775d10dc73dd2370f2fc302193e0cf3ea51f8d2c8313f58eb1d91fb11365"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify3.log",
+        "SHA256": "f768cc092ce0ab320ec45f6793627f14113eba1782d95722b116ce5a0b65bbd1"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_contact_transfer_v2.py"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.9162258389405906,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify_execution.json",
+        "SHA256": "525672fe5f6b2e44e5f4473676a20d7c9f30a54a05dc2fce293c14247360d94e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify.log",
+        "SHA256": "d1e9bb0ba1aec55ed88897f1d7702365f203c91348e5cb29f39c2e21616325df"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release_audit.py"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.41516212397255003,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release4_execution.json",
+        "SHA256": "f7640088a8d8f18f26c42c8cd7846c6e82937264f296c60b7b1ef3a003d56277"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release4.log",
+        "SHA256": "04e95fd20a78cbfbc5a4df8ace21b56f4bbe6219a162913c05017b5aee2790d2"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release_audit_v2.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.36504164314828813,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release5_execution.json",
+        "SHA256": "965b8fe5a66d76244c32c0525e3047b18ea135e8698b4638ec0296c85230ba4f"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release5.log",
+        "SHA256": "87a226755899b8e887f735f5f0fce152e0a97628417d259e8d53be75c155adc8"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_contact_transfer_v2.py",
+        "primaryP1_contact_transfer2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.823248867876828,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer2_execution.json",
+        "SHA256": "367bc26291e939a437979bc8010b6907cf3e1f1ef20871a002b8cec3038c7eb5"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer2.log",
+        "SHA256": "4078e39459b96ed118751c98c16f849ab87e06b5ed0ef44f995ada35eab837dc"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_contact_transfer_v3.py",
+        "primaryP1_contact_transfer3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 14.590392987011,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer3_execution.json",
+        "SHA256": "a21d2462d3aebc9920133a30026b81dff21decf92cbc6ae578fdafaa40428949"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer3.log",
+        "SHA256": "15b7849bbe7310b7210560c75e2fa716e104cfe4097939c4122b94d103a78206"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_contact_transfer.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.9162035419140011,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer_verify_execution.json",
+        "SHA256": "5efcd769bb2a17f9767deba1da00a5c535dd275aafc8fc0275b5cb6c3d8fe61b"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer_verify.log",
+        "SHA256": "d6920d2baba0d5075a53ff92bb86d7e4dd94004b212dfae186eb71c0064bb3bc"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_module_verify.py",
+        "--candidate",
+        "primaryP1_clamp10",
+        "--validation",
+        "primaryP1_clamp_validation1",
+        "--tag",
+        "primaryP1_clamp_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.7215896260458976,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/verify_assembly10_execution.json",
+        "SHA256": "ee7067558b27dd250e5d6002aacc8510dbbccddaf4f4eb55cce2e4d42808747c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/verify_assembly10.log",
+        "SHA256": "e94f24c08e50a05473d36bf812f28e53d6d04e0a3d8f9a474b5d5433ca964429"
+      }
+    }
+  ],
+  "recorded_children_reaped": 12,
+  "recorded_child_seconds": 36.94102361169644,
+  "owned_analysis_children_running": 0,
+  "timeouts": 0,
+  "all22system_gates_unqualified": true,
+  "stage3_authorized": false,
+  "whole_system_release": false,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cycle4_closeout/producer.py",
+    "SHA256": "2730224dacdb6963ef887759c2c9328d50c3bcbebe5616370c4cd3065938b957"
+  }
+}

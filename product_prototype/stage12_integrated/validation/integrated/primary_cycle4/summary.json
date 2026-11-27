@@ -1,0 +1,959 @@
+{
+  "status": "ACTUAL_P1_CLAMP_REDESIGN_AND_FINITE_LOAD_TRANSFER_PARTIAL_VALIDATION_RELEASE_BLOCKED",
+  "task_id": "goal_primary_root_ground_load_path",
+  "starting_HEAD": "6be7bb3b4011819546dbab566ad3ccbaf5de5cfd",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
+    "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
+  },
+  "parts": 69,
+  "actual_changed_CAD_files": [
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/OPEN_FRAME.step",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/OPEN_FRAME.stl",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/MOTOR_CAP.step",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/MOTOR_CAP.stl"
+  ],
+  "assembly": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/ASSEMBLY.step",
+    "SHA256": "f1b1ead352f87a38f9d33422ce4c84d9bf6ff7c9a1fc1b23d03a3a5686be8604"
+  },
+  "BOM": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/BOM.json",
+    "SHA256": "7c83f373347beecce1d5b7d34cf7943b9c80ef9fb3f5a6a14ed43e96444fa544"
+  },
+  "identity_BOM": {
+    "path": "product_prototype/stage12_integrated/bom/primaryP1_identity2/CANDIDATE_BOM.csv",
+    "SHA256": "60d4a83828164f515a54944147501dfa541afa82fdd9780f0b8500a53e93a42a"
+  },
+  "CAD_disposition": "Same ONE primary P1,revision clamp10 replaces open9 for continued engineering only; original/AO/3Finger/cartridge/jamming untouched. No release adoption.",
+  "mechanism": "Replace motor pocket free gap and closed split with integral8x10mm lands and0.2mm relief. Transfer actual paired Root/Motor forces AND couples through actual finite uniform-traction surface partitions,axial head/nut bearing resultants and Motor+Cap force/moment equilibrium. No hidden fixed DOFs; retain free finite Ground residual.",
+  "nominal_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clamp_validation1/summary.json",
+    "SHA256": "53f85e23efba3bf4432d47fc60d9f010a146ba868874d285f31c64b3d77c2dc5"
+  },
+  "independent_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clamp_verify1/summary.json",
+    "SHA256": "379bbc6f1ec24f720465cffa9adf5818f175479aec09e5d26c61f949c22dc28e"
+  },
+  "independent_land_geometry": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_lands_verify1/summary.json",
+    "SHA256": "b95e3f17ed53c66447316b724eadbbd06cd06e1dc4f3d2219a9fb04f93d276ee"
+  },
+  "finite_contact_transfer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer3/summary.json",
+    "SHA256": "f1a75415dd3e02d3a878247db50a5c92bcfc5b5a3da741434d49992e81a46ab7"
+  },
+  "independent_traction_network": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_transfer_verify3/summary.json",
+    "SHA256": "4fc4a744a5830d71e2f38cd10e63d8828f4da6619335dbac33af2788ba38b96e"
+  },
+  "actual_numerical_results": {
+    "changed_solids": 2,
+    "actual_parts": 69,
+    "final_exact_pairs": 165,
+    "final_volume_interferences": 0,
+    "assembly_samples": 81,
+    "assembly_boolean_comparisons": 278,
+    "motor_contact_area_each_mm2": 80,
+    "split_gap_mm": 0.2,
+    "finite_interface_areas_mm2": {
+      "root_frame": 526.3779492070531,
+      "motor_bottom": 80.0,
+      "motor_top": 80.0,
+      "frame_ground": 5129.218154464291
+    },
+    "actual_head_nut_bearing_patches": 20,
+    "frictionless_failed_interfaces": 3,
+    "conditional_finite_patch_states": 24,
+    "paired_external_wrench_N_Nm": [
+      0.40861041666666353,
+      0.0,
+      0.0,
+      0.0,
+      -0.0392340991716313,
+      0.0
+    ],
+    "finite_ground_required_external_wrench_N_Nm": [
+      -0.40861041666666353,
+      -0.0,
+      -0.0,
+      -0.0,
+      0.0392340991716313,
+      -0.0
+    ],
+    "free_ground_normal_only_failure": true,
+    "mesh": [
+      {
+        "interface": "root_frame",
+        "mu": 0.1,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 4.923692815601561,
+        "fine": 4.4420663445647115,
+        "relative_error": 0.1084239706654011,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "frame_ground",
+        "mu": 0.1,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 4.086104166666635,
+        "fine": 4.086104166666633,
+        "relative_error": 4.440892098500626e-16,
+        "criterion": 0.01,
+        "passed": true
+      },
+      {
+        "interface": "motor_lands_and_cap_bolts",
+        "mu": 0.1,
+        "metric": "total_compression_N",
+        "coarse": 10.427891265842312,
+        "fine": 9.665906697070831,
+        "relative_error": 0.07883218746590992,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "root_frame",
+        "mu": 0.2,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 4.923692815601726,
+        "fine": 4.442066344565248,
+        "relative_error": 0.10842397066530429,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "frame_ground",
+        "mu": 0.2,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 2.0430520833333174,
+        "fine": 2.043052083333317,
+        "relative_error": 2.220446049250313e-16,
+        "criterion": 0.01,
+        "passed": true
+      },
+      {
+        "interface": "motor_lands_and_cap_bolts",
+        "mu": 0.2,
+        "metric": "total_compression_N",
+        "coarse": 5.101436522349921,
+        "fine": 4.699976095472053,
+        "relative_error": 0.08541754654127587,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "root_frame",
+        "mu": 0.4,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 4.923692815601729,
+        "fine": 4.44206634456485,
+        "relative_error": 0.10842397066540443,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "frame_ground",
+        "mu": 0.4,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 1.021526041666668,
+        "fine": 1.0215260416666638,
+        "relative_error": 4.218847493575595e-15,
+        "criterion": 0.01,
+        "passed": true
+      },
+      {
+        "interface": "motor_lands_and_cap_bolts",
+        "mu": 0.4,
+        "metric": "total_compression_N",
+        "coarse": 4.245428912657168,
+        "fine": 3.9483696682764235,
+        "relative_error": 0.07523592503698362,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "root_frame",
+        "mu": 0.8,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 4.923692815601724,
+        "fine": 4.442066344564853,
+        "relative_error": 0.10842397066540244,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "frame_ground",
+        "mu": 0.8,
+        "metric": "minimum_total_bolt_axial_N",
+        "coarse": 0.5959119336552025,
+        "fine": 0.5808336077157189,
+        "relative_error": 0.025959802840581192,
+        "criterion": 0.01,
+        "passed": false
+      },
+      {
+        "interface": "motor_lands_and_cap_bolts",
+        "mu": 0.8,
+        "metric": "total_compression_N",
+        "coarse": 3.953791826282349,
+        "fine": 3.683190379428392,
+        "relative_error": 0.07346930757783765,
+        "criterion": 0.01,
+        "passed": false
+      }
+    ],
+    "independent_network": [
+      {
+        "mu_assumed": 0.1,
+        "checks": {
+          "root": true,
+          "motor": true,
+          "cap": true,
+          "frame": true,
+          "ground_port_action_reaction": true,
+          "free_ground_is_NOT_in_equilibrium": true
+        },
+        "root_residual_N_Nm": [
+          5.551115123125783e-16,
+          0.0,
+          3.552713678800501e-15,
+          6.938893903907228e-18,
+          2.7755575615628914e-16,
+          -8.944667923005412e-19
+        ],
+        "motor_residual_N_Nm": [
+          0.0,
+          0.0,
+          -2.220446049250313e-16,
+          -3.469446951953614e-18,
+          1.6805133673525319e-18,
+          -2.168404344971009e-19
+        ],
+        "cap_residual_N_Nm": [
+          0.0,
+          0.0,
+          -8.881784197001252e-16,
+          -6.938893903907228e-18,
+          -5.204170427930421e-18,
+          0.0
+        ],
+        "frame_residual_N_Nm": [
+          -4.440892098500626e-16,
+          0.0,
+          -3.9968028886505635e-15,
+          -8.673617379884035e-18,
+          -3.0531133177191805e-16,
+          1.0299920638612292e-18
+        ],
+        "actual_free_ground_residual_N_Nm": [
+          0.4086104166666635,
+          0.0,
+          1.3322676295501878e-15,
+          1.734723475976807e-18,
+          -0.03923409917163129,
+          5.421010862427522e-20
+        ],
+        "required_external_ground_wrench_NOT_applied": [
+          -0.4086104166666635,
+          -0.0,
+          -1.3322676295501878e-15,
+          -1.734723475976807e-18,
+          0.03923409917163129,
+          -5.421010862427522e-20
+        ],
+        "bearing_pressure": [
+          {
+            "interface": "RF",
+            "axial_N": 2.254993919710359,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.1536194452494694
+          },
+          {
+            "interface": "RF",
+            "axial_N": 2.1870724248543527,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.14899235412115516
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 2.930514567796471,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.22101204478466235
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 1.4015001478739642,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.10569761940495634
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.37717898016809714,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.011434266499830972
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.7543579603361942,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.02286853299966194
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 2.954567226162342,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.08956837690305648
+          }
+        ],
+        "scope": "Finite bearing axial resultants with equal/opposite bolt tension only; nominal smooth envelopes do not certify thread flank/core strength or elastic distribution"
+      },
+      {
+        "mu_assumed": 0.2,
+        "checks": {
+          "root": true,
+          "motor": true,
+          "cap": true,
+          "frame": true,
+          "ground_port_action_reaction": true,
+          "free_ground_is_NOT_in_equilibrium": true
+        },
+        "root_residual_N_Nm": [
+          -4.468647674116255e-15,
+          0.0,
+          -2.220446049250313e-15,
+          5.551115123125783e-17,
+          -1.27675647831893e-15,
+          2.168404344971009e-19
+        ],
+        "motor_residual_N_Nm": [
+          0.0,
+          0.0,
+          0.0,
+          -1.3877787807814457e-17,
+          8.673617379884035e-19,
+          -7.047314121155779e-19
+        ],
+        "cap_residual_N_Nm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -3.0357660829594124e-18,
+          0.0
+        ],
+        "frame_residual_N_Nm": [
+          4.496403249731884e-15,
+          0.0,
+          1.7763568394002505e-15,
+          1.214306433183765e-17,
+          1.3183898417423734e-15,
+          -2.0111950299606107e-17
+        ],
+        "actual_free_ground_residual_N_Nm": [
+          0.40861041666666353,
+          0.0,
+          4.440892098500626e-16,
+          -5.377642775528102e-17,
+          -0.039234099171631356,
+          2.0383000842727483e-17
+        ],
+        "required_external_ground_wrench_NOT_applied": [
+          -0.40861041666666353,
+          -0.0,
+          -4.440892098500626e-16,
+          5.377642775528102e-17,
+          0.039234099171631356,
+          -2.0383000842727483e-17
+        ],
+        "bearing_pressure": [
+          {
+            "interface": "RF",
+            "axial_N": 2.3052047389426384,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.1570400124308545
+          },
+          {
+            "interface": "RF",
+            "axial_N": 2.13686160562261,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.14557178693980666
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.4591668468848302,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.034629209778557345
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.9606389538197222,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.0724489759636783
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.42924361416649237,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.03237247475928053
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.2932797983477751,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.008890843736389082
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.5865595966955468,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.01778168747277806
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 1.1632126882899951,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.035263056992107564
+          }
+        ],
+        "scope": "Finite bearing axial resultants with equal/opposite bolt tension only; nominal smooth envelopes do not certify thread flank/core strength or elastic distribution"
+      },
+      {
+        "mu_assumed": 0.4,
+        "checks": {
+          "root": true,
+          "motor": true,
+          "cap": true,
+          "frame": true,
+          "ground_port_action_reaction": true,
+          "free_ground_is_NOT_in_equilibrium": true
+        },
+        "root_residual_N_Nm": [
+          1.2212453270876722e-15,
+          0.0,
+          8.881784197001252e-16,
+          -6.938893903907228e-18,
+          0.0,
+          2.520770051028798e-18
+        ],
+        "motor_residual_N_Nm": [
+          0.0,
+          0.0,
+          0.0,
+          -3.469446951953614e-18,
+          -8.673617379884035e-19,
+          0.0
+        ],
+        "cap_residual_N_Nm": [
+          0.0,
+          0.0,
+          -5.551115123125783e-17,
+          3.469446951953614e-18,
+          -8.673617379884035e-19,
+          0.0
+        ],
+        "frame_residual_N_Nm": [
+          -2.2065682614424986e-15,
+          0.0,
+          2.1094237467877974e-15,
+          1.0408340855860843e-17,
+          -1.8735013540549517e-16,
+          -3.9979955110402976e-19
+        ],
+        "actual_free_ground_residual_N_Nm": [
+          0.40861041666666453,
+          0.0,
+          -2.55351295663786e-15,
+          0.0,
+          -0.039234099171631086,
+          -2.202285662861181e-18
+        ],
+        "required_external_ground_wrench_NOT_applied": [
+          -0.40861041666666453,
+          -0.0,
+          2.55351295663786e-15,
+          -0.0,
+          0.039234099171631086,
+          2.202285662861181e-18
+        ],
+        "bearing_pressure": [
+          {
+            "interface": "RF",
+            "axial_N": 2.3303101485584174,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.15875029602152246
+          },
+          {
+            "interface": "RF",
+            "axial_N": 2.1117561960064326,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.14386150334911155
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.36584517832956903,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.02759112403867876
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.7653974405052324,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.057724351640471676
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.34200358243842827,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.025793050786719895
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.34050868055555444,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.010322598033545833
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.6810173611111093,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.02064519606709168
+          }
+        ],
+        "scope": "Finite bearing axial resultants with equal/opposite bolt tension only; nominal smooth envelopes do not certify thread flank/core strength or elastic distribution"
+      },
+      {
+        "mu_assumed": 0.8,
+        "checks": {
+          "root": true,
+          "motor": true,
+          "cap": true,
+          "frame": true,
+          "ground_port_action_reaction": true,
+          "free_ground_is_NOT_in_equilibrium": true
+        },
+        "root_residual_N_Nm": [
+          4.718447854656915e-16,
+          0.0,
+          0.0,
+          -6.938893903907228e-18,
+          0.0,
+          -5.908901840045999e-18
+        ],
+        "motor_residual_N_Nm": [
+          0.0,
+          0.0,
+          2.220446049250313e-16,
+          -1.3877787807814457e-17,
+          -8.673617379884035e-19,
+          -4.336808689942018e-19
+        ],
+        "cap_residual_N_Nm": [
+          0.0,
+          0.0,
+          5.551115123125783e-17,
+          3.469446951953614e-18,
+          -4.336808689942018e-19,
+          0.0
+        ],
+        "frame_residual_N_Nm": [
+          -6.730727086790012e-16,
+          0.0,
+          -3.885780586188048e-16,
+          1.734723475976807e-17,
+          1.9081958235744878e-17,
+          6.342582709040201e-18
+        ],
+        "actual_free_ground_residual_N_Nm": [
+          0.40861041666666365,
+          0.0,
+          -1.6653345369377348e-16,
+          0.0,
+          -0.039234099171631294,
+          -2.710505431213761e-19
+        ],
+        "required_external_ground_wrench_NOT_applied": [
+          -0.40861041666666365,
+          -0.0,
+          1.6653345369377348e-16,
+          -0.0,
+          0.039234099171631294,
+          2.710505431213761e-19
+        ],
+        "bearing_pressure": [
+          {
+            "interface": "RF",
+            "axial_N": 2.342862853366417,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.15960543781686393
+          },
+          {
+            "interface": "RF",
+            "axial_N": 2.099203491198436,
+            "minimum_head_nut_area_mm2": 14.679091673898279,
+            "uniform_bearing_pressure_MPa": 0.14300636155377025
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.3329197364943642,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.025107969951883417
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.696512976800568,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.052529258483603236
+          },
+          {
+            "interface": "MOTOR_CAP",
+            "axial_N": 0.31122384355428173,
+            "minimum_head_nut_area_mm2": 13.259524251955343,
+            "uniform_bearing_pressure_MPa": 0.023471720224682004
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.17655500525082743,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.005352305107292327
+          },
+          {
+            "interface": "GROUND",
+            "axial_N": 0.4042786024648915,
+            "minimum_head_nut_area_mm2": 32.98672286269284,
+            "uniform_bearing_pressure_MPa": 0.012255797708299194
+          }
+        ],
+        "scope": "Finite bearing axial resultants with equal/opposite bolt tension only; nominal smooth envelopes do not certify thread flank/core strength or elastic distribution"
+      }
+    ],
+    "all_saved_traction_reconstruction_checks": true,
+    "traction_mesh_status": "FAIL",
+    "elastic_FEM_runs": 0,
+    "SOFA_runs": 0
+  },
+  "failures": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_transfer_verify2/summary.json",
+        "SHA256": "ad9d6200a2d501b9ca944d208d3d8c99e0172658ccf86ed21442d7eb570db9ec"
+      },
+      "type": "preserved verifier implementation error"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_transfer_verify3/summary.json",
+        "SHA256": "4fc4a744a5830d71e2f38cd10e63d8828f4da6619335dbac33af2788ba38b96e"
+      },
+      "type": "actual1%traction discretization FAIL"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer3/summary.json",
+        "SHA256": "f1a75415dd3e02d3a878247db50a5c92bcfc5b5a3da741434d49992e81a46ab7"
+      },
+      "type": "actual frictionless load transfer and free Ground equilibrium FAIL"
+    }
+  ],
+  "superseded_reduced_models": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer1/summary.json",
+        "SHA256": "a31b2ea4939820fc724f0ebbb0467ea511b70b9db4dd3613483726171eca1366"
+      },
+      "reason": "Initial point witnesses and independently unconstrained cap; not final finite-patch/load-path evidence"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer2/summary.json",
+        "SHA256": "fc88a9ea194acebf1e7ca4165f8abff66cbb4b0a9cfb838d772066fec238a7a1"
+      },
+      "reason": "Final8x8coarse finite subface model,retained with16x16comparison"
+    }
+  ],
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state4.json",
+    "SHA256": "f22ce1499e147812140188597e1cc2a96d389a5eac0f16c7199943b29b89d0d9"
+  },
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "executions": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_module_validation.py",
+        "--candidate",
+        "primaryP1_clamp10",
+        "--tag",
+        "primaryP1_clamp_validation1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.923179829027504,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/assembly10_execution.json",
+        "SHA256": "edbab59f20d0244af09d3e06d2f7c0584393f9465f5e123021f4e7ef7e0c609c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/assembly10.log",
+        "SHA256": "514a61d7bd5cb50119a0f13ebfa13f761efe252e9c1ea4ea262c662426dbdc7c"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_clamp_loadpath_design.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 2.8698062859475613,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/cad10_execution.json",
+        "SHA256": "c2d49c73e383ff4ae2c11fe4fb668da035618f6b286b58c60ea1838fe3bb52b2"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/cad10.log",
+        "SHA256": "0465c14a5fd98e5ecdb4e58e388c6f4fad17d8fb5e26b1df250726f46ab342de"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_contact_transfer.py",
+        "primaryP1_contact_transfer1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.4671887189615518,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/contact_transfer_execution.json",
+        "SHA256": "184cceeba90164e0e0de36ea6925afb91faf157c76c877b638d1c107100f29c4"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/contact_transfer.log",
+        "SHA256": "449c9e6b345d9455a48a12d77fe1f6ed301af3f0bf4d06dffaccae42b3264703"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_clamp_lands.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.0666904977988452,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/lands_verify_execution.json",
+        "SHA256": "8e2e2f7280c3b530ceafd67eb7b24a85b113e72771e1d58b14343c0bf5127562"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/lands_verify.log",
+        "SHA256": "f6bc46e7850f5df2370a3a626a722a7e256d402554aa4befd23871e419adca53"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_contact_transfer_v3.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.8662936510518193,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify3_execution.json",
+        "SHA256": "e23d775d10dc73dd2370f2fc302193e0cf3ea51f8d2c8313f58eb1d91fb11365"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify3.log",
+        "SHA256": "f768cc092ce0ab320ec45f6793627f14113eba1782d95722b116ce5a0b65bbd1"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_contact_transfer_v2.py"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.9162258389405906,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify_execution.json",
+        "SHA256": "525672fe5f6b2e44e5f4473676a20d7c9f30a54a05dc2fce293c14247360d94e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/network_verify.log",
+        "SHA256": "d1e9bb0ba1aec55ed88897f1d7702365f203c91348e5cb29f39c2e21616325df"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_contact_transfer_v2.py",
+        "primaryP1_contact_transfer2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.823248867876828,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer2_execution.json",
+        "SHA256": "367bc26291e939a437979bc8010b6907cf3e1f1ef20871a002b8cec3038c7eb5"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer2.log",
+        "SHA256": "4078e39459b96ed118751c98c16f849ab87e06b5ed0ef44f995ada35eab837dc"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_contact_transfer_v3.py",
+        "primaryP1_contact_transfer3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 14.590392987011,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer3_execution.json",
+        "SHA256": "a21d2462d3aebc9920133a30026b81dff21decf92cbc6ae578fdafaa40428949"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer3.log",
+        "SHA256": "15b7849bbe7310b7210560c75e2fa716e104cfe4097939c4122b94d103a78206"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_contact_transfer.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.9162035419140011,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer_verify_execution.json",
+        "SHA256": "5efcd769bb2a17f9767deba1da00a5c535dd275aafc8fc0275b5cb6c3d8fe61b"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/transfer_verify.log",
+        "SHA256": "d6920d2baba0d5075a53ff92bb86d7e4dd94004b212dfae186eb71c0064bb3bc"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_module_verify.py",
+        "--candidate",
+        "primaryP1_clamp10",
+        "--validation",
+        "primaryP1_clamp_validation1",
+        "--tag",
+        "primaryP1_clamp_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.7215896260458976,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/verify_assembly10_execution.json",
+        "SHA256": "ee7067558b27dd250e5d6002aacc8510dbbccddaf4f4eb55cce2e4d42808747c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/verify_assembly10.log",
+        "SHA256": "e94f24c08e50a05473d36bf812f28e53d6d04e0a3d8f9a474b5d5433ca964429"
+      }
+    }
+  ],
+  "recorded_child_seconds": 36.1608198445756,
+  "recorded_children_reaped": 10,
+  "owned_analysis_children_running": 0,
+  "timeouts": 0,
+  "limits": {
+    "memory_bytes": 4294967296,
+    "timeout_s": 420,
+    "max_concurrent_long_children": 4
+  },
+  "next_task_id": "goal_primary_positive_ground_fixture",
+  "next_mechanism": "Continue same P1 clamp10. Implement finite positive Ground-to-bench attachment with actual separate fastening/bearing surfaces and assembly/tool access; define finite test-base material/geometry and how it receives FX=-.4086104167N,MY=.0392340992Nm. Do not fix the existing four shared M5 holes to ground or infer support from a free plate. Reuse sourced standard through-bolt/nut architecture,record minima/unknowns. Then apply paired Root/Motor tractions through actual compliant bolt/contact/thread models and finite Ground; preserve frictionless/traction-mesh and historical frame/Rail failures. Real motor-case land/source tolerances and friction/preload remain required.",
+  "whole_system_release": false,
+  "global_energy_qualified": false,
+  "time_convergence_tested": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED",
+  "git_add_commit_attempted": false,
+  "save_status": "PENDING_SUPERVISOR_EXACT_SAVE"
+}

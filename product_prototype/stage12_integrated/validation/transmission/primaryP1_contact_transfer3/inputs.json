@@ -1,0 +1,51 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
+    "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
+  },
+  "parts": {
+    "OPEN_FRAME": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/OPEN_FRAME.step",
+      "SHA256": "4cf07408a41922c84b9e65a1b9b84ef5526fec3ec9d2bccb372f12780adef1d8"
+    },
+    "GROUND_PLATE": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/GROUND_PLATE.step",
+      "SHA256": "2baf5aea334eb00f11b33d83653324b40db6f42438b0744355c0c04c40149e45"
+    },
+    "MOTOR_CAP": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/MOTOR_CAP.step",
+      "SHA256": "001bc7a74b8835e7ee22d591d5f6334b5658f938f204fe93167dcf425ef24ba2"
+    },
+    "F0_MICRO_MOTOR": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/F0_MICRO_MOTOR.step",
+      "SHA256": "877335f98244adeb9b6e31a60fa29e7ee7f121369da66af2edcf2f0be94480cf"
+    },
+    "F0_ROOT_BACK": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/F0_ROOT_BACK.step",
+      "SHA256": "b38d1fdfc20b0f04f353d086b17771450546f0badcd251213b9147b71cd057af"
+    }
+  },
+  "loads": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_corner_demand_loads1/summary.json",
+    "SHA256": "2767b2c554220e3633af5d2c2874bb883965eb2405a3a89e1c2f6a5e8279920c"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer3/producer.py",
+    "SHA256": "64526a8ba9febe207fc1b33d85a79641d4db8c9bfb0b2e1a6e4bf483bb3b8583"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/baseline_registry.py",
+      "SHA256": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8"
+    }
+  ],
+  "criteria": {
+    "force_N": 1e-08,
+    "moment_Nm": 1e-10
+  },
+  "scope": "Actual finite nominal interface necessary wrench feasibility. No finite-element/contact stiffness,selected preload or source allowables. No tied bodies or fixed DOFs."
+}

@@ -1,28 +1,28 @@
 {
   "status": "SOURCE_INTEGRITY_PASS",
   "errors": [],
-  "revision": "primaryP1_open9",
+  "revision": "primaryP1_clamp10",
   "adopted_reference": "revAA_heel_relief2 unchanged",
   "next": {
-    "id": "goal_primary_root_ground_load_path",
+    "id": "goal_primary_positive_ground_fixture",
     "track": "C",
-    "priority": -1002,
+    "priority": -1003,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
     "selection_policy": "goal_product_continuation",
-    "hypothesis": "Same P1 actual Root/RF -> OPEN_FRAME plus motor cradle -> fourM5 -> finite GROUND_PLATE: implement paired demand port forces AND couples,realistic bearing/clamp/thread contact connector physics and finite support. Reuse actual STEP/FEM kernels. Compare required resultants and finite reaction distributions,then1%response/nominal-stress refinement before strength; retain old unit+Z frame mesh FAIL. Do not substitute arbitrary fixed DOFs,point moments or source-minimum claims.",
+    "hypothesis": "Continue same P1 clamp10. Implement finite positive Ground-to-bench attachment with actual separate fastening/bearing surfaces and assembly/tool access; define finite test-base material/geometry and how it receives FX=-.4086104167N,MY=.0392340992Nm. Do not fix the existing four shared M5 holes to ground or infer support from a free plate. Reuse sourced standard through-bolt/nut architecture,record minima/unknowns. Then apply paired Root/Motor tractions through actual compliant bolt/contact/thread models and finite Ground; preserve frictionless/traction-mesh and historical frame/Rail failures. Real motor-case land/source tolerances and friction/preload remain required.",
     "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
     "system_gate_ids": [
+      "continuous_load_path",
       "root_palm_strength",
       "motor_alignment_reactions",
-      "continuous_load_path",
-      "finger_structure",
-      "numerical_convergence"
+      "numerical_convergence",
+      "changed_stage1_revalidation"
     ],
     "prerequisites": [],
     "parent_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
-      "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
+      "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
     },
     "product_brief": {
       "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
@@ -38,31 +38,31 @@
       "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
     },
     "target_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
-      "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
+      "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
     },
-    "target_revision": "primaryP1_open9",
+    "target_revision": "primaryP1_clamp10",
     "target_parts": 69,
     "primary_state": {
       "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-      "SHA256": "00631d038d3e6c79be36566efd80b40e4538531d20b1b1a84efbe714fce7dd96"
+      "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
     },
-    "concrete_first_step": "Read32element demand state and primaryP1_corner_demand_loads1 row: Root forceXZ[.2570793945,1.0018772657]N,MY=-.00136985722Nm; motor forceXZ[.1515310222,-1.0018772657]N,MY=.01139930756Nm. Independently map actual RF/cradle/M5 bearing and engagement surfaces from69part STEP; formulate paired load transfer through finite Ground and justify contact/thread support before reusing frame tetra mesh. Keep demand/source assumptions explicit; preserve former unit+Z mesh FAIL.",
+    "concrete_first_step": "Map shared fourM5 stack and free finite Ground. Select explicit finite through-bolted test-base attachment outside service/root-tool windows; create real Ground mounting CAD and standard bolt/nut/bearing surfaces with defined finite base. Verify assembly and required paired force/couple reaction before FEM. A bench-fixed node set on existing fourM5 is not a fixture.",
     "known_blockers": [
-      "Rail nominal stress8->32 1.30247% FAILS1%,no minimum allowables/notch/fatigue",
-      "Frame legacy unit+Z4/2/1.5mm response convergence FAIL,not actual paired demand",
-      "Actual clamp/bolt/thread/preload/motor internal bearing source minima and physical protector absent",
-      "Fixed-stop/mu.8 reduced result is not actual3Finger100mm free grasp or whole-system energy"
+      "Free Ground residualFX=.4086104167N,MY=-.0392340992Nm; no actual external fixture",
+      "No guaranteed friction/preload,actual motor-case land/minimum allowable or bolt thread/engagement source minima",
+      "Finite traction meshRoot10.84%,Motor7.35..8.54%,Groundmu.8 2.60%FAIL1%",
+      "Historical Rail stress and Frame FEM mesh FAIL; no frictional/full3Finger/global-energy/protection release"
     ],
     "parent_result": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
-      "SHA256": "8eb2e55d9aebadcee240e66116a79f0d0b8ae2a13a9b359610e626faeef66cb0"
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/summary.json",
+      "SHA256": "54d79c353a927d0569f571746f769ba85e438deaeeefe897c24ad063c32a8e77"
     },
     "result": null,
     "reason": null,
     "next": null
   },
   "running_task_records": [],
-  "warning": "Reduced finite-corner validation is not system release; continue ONE actual P1",
-  "resume_command": "Continue SAME P1 Root/Motor/Frame/Ground load-transfer model from actual conditional demand wrenches and STEP surfaces. No AO scan,coupon substitution,physical criterion change or Stage3."
+  "warning": "Same P1 actual clamp redesign is partial engineering,not22gate release",
+  "resume_command": "Continue same P1 clamp10. Implement finite positive Ground-to-bench attachment with actual separate fastening/bearing surfaces and assembly/tool access; define finite test-base material/geometry and how it receives FX=-.4086104167N,MY=.0392340992Nm. Do not fix the existing four shared M5 holes to ground or infer support from a free plate. Reuse sourced standard through-bolt/nut architecture,record minima/unknowns. Then apply paired Root/Motor tractions through actual compliant bolt/contact/thread models and finite Ground; preserve frictionless/traction-mesh and historical frame/Rail failures. Real motor-case land/source tolerances and friction/preload remain required."
 }

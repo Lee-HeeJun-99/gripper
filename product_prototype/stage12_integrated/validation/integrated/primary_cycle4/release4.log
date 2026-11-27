@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/integrated/primary_cycle4/release_audit.py", line 7, in <module>
+    r=gate.audit(json.loads((b/'CURRENT_BASELINE.json').read_text()),json.loads((b/'models/integrated_contract.json').read_text()));r.update(producer=ref(out/'producer.py'),actual_gate_source=ref(b/'scripts/integrated_release_gate.py'),scope_note='Read-only unchanged actual integrated audit. No registry/criteria/control source modified. New P1 clamp/traction work does not satisfy full system gates.');dump(out/'summary.json',r);print(json.dumps(r));raise SystemExit(0 if not r['errors'] else 2)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 10, in ref
+    def ref(p):return dict(path=str(p.relative_to(REPO)),SHA256=sha(p))
+  File "/usr/lib/python3.10/pathlib.py", line 818, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: 'product_prototype/stage12_integrated/validation/integrated/primaryP1_release4/producer.py' is not in the subpath of '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip' OR one path is relative and the other is absolute.

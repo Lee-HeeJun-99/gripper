@@ -1,0 +1,1378 @@
+{
+  "status": "ACTUAL_P1_FINITE_INTERFACE_TRACTION_BOUNDS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
+    "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer1/producer.py",
+    "SHA256": "c842614c279acf31685565f7a7d7009148b67fa36c04516d009ce296c2884a17"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer1/inputs.json",
+    "SHA256": "b17388b7b80afb2f2a04a57b5468579bd20b99bdce402542f7c1daf962adcefc"
+  },
+  "patches": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer1/patches.json",
+    "SHA256": "8ae202e66049434181f136e3d9cf3fa8d98d996ffd1d6b764b0fed0fe812a571"
+  },
+  "rows": [
+    {
+      "interface": "root_frame",
+      "mu_assumed": 0.0,
+      "success": false,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "solver_status": 2,
+      "external_wrench_N_Nm": [
+        0.2570793944677886,
+        0.0,
+        1.001877265729964,
+        0.0,
+        -0.05366402717464295,
+        0.0
+      ],
+      "normal_sign": 1,
+      "variables": 302,
+      "points": 75
+    },
+    {
+      "interface": "frame_ground",
+      "mu_assumed": 0.0,
+      "success": false,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "solver_status": 2,
+      "external_wrench_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        0.0,
+        -0.0392340991716313,
+        0.0
+      ],
+      "normal_sign": -1,
+      "variables": 272,
+      "points": 67
+    },
+    {
+      "interface": "motor_lands",
+      "mu_assumed": 0.0,
+      "success": false,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "external_wrench_N_Nm": [
+        0.15153102219887496,
+        0.0,
+        -1.001877265729964,
+        -0.0,
+        0.014429928003011645,
+        0.0
+      ]
+    },
+    {
+      "interface": "root_frame",
+      "mu_assumed": 0.1,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.2570793944677886,
+        0.0,
+        1.001877265729964,
+        0.0,
+        -0.05366402717464295,
+        0.0
+      ],
+      "normal_sign": 1,
+      "variables": 302,
+      "points": 75,
+      "minimum_total_bolt_axial_N": 4.08119223893331,
+      "contact_compression_N": 3.0793149732033456,
+      "force_error_N": 6.753226826447802e-16,
+      "moment_error_Nm": 5.157806248955503e-17,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.1,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 1.2853969723389422
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            0.0,
+            -7.0
+          ],
+          "direction": [
+            0.0,
+            0.1,
+            1.0
+          ],
+          "point_id": 70,
+          "coefficient_N": 0.2542605142627301
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            0.0,
+            -7.0
+          ],
+          "direction": [
+            0.0,
+            -0.1,
+            1.0
+          ],
+          "point_id": 70,
+          "coefficient_N": 0.2542605142627301
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.1,
+            0.0,
+            1.0
+          ],
+          "point_id": 71,
+          "coefficient_N": 1.285396972338943
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            -16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 2.0405961194666555
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 2.0405961194666546
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.2570793944677885,
+        -7.17539995546857e-19,
+        -1.0018772657299646,
+        1.734723475976807e-17,
+        0.053664027174643,
+        3.2526065174565133e-19
+      ]
+    },
+    {
+      "interface": "frame_ground",
+      "mu_assumed": 0.1,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        0.0,
+        -0.0392340991716313,
+        0.0
+      ],
+      "normal_sign": -1,
+      "variables": 272,
+      "points": 67,
+      "minimum_total_bolt_axial_N": 4.086104166666636,
+      "contact_compression_N": 4.086104166666635,
+      "force_error_N": 8.881784197001252e-16,
+      "moment_error_Nm": 1.3896013518039856e-17,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            60.735,
+            22.98,
+            40.0
+          ],
+          "direction": [
+            -0.1,
+            0.0,
+            -1.0
+          ],
+          "point_id": 57,
+          "coefficient_N": 0.23147880747126262
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            73.98,
+            -1.38,
+            40.0
+          ],
+          "direction": [
+            -0.1,
+            0.0,
+            -1.0
+          ],
+          "point_id": 63,
+          "coefficient_N": 3.8546253591953725
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            -28,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.005963593699039973
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            14,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.01192718739807996
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            60,
+            0,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 4.068213385569516
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.40861041666666353,
+        0.0,
+        8.881784197001252e-16,
+        -6.776263578034403e-19,
+        0.039234099171631315,
+        2.168404344971009e-19
+      ]
+    },
+    {
+      "interface": "motor_lands",
+      "mu_assumed": 0.1,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.15153102219887496,
+        0.0,
+        -1.001877265729964,
+        -0.0,
+        0.014429928003011645,
+        0.0
+      ],
+      "total_compression_N": 5.020606157191665,
+      "force_error_N": 1.8526868271724743e-15,
+      "moment_error_Nm": 7.079109598931976e-17,
+      "rays": [
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            0.995,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            -0.1,
+            0,
+            1
+          ],
+          "coefficient_N": 1.3403091077430982
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            1.99,
+            -21.48,
+            14.0
+          ],
+          "direction": [
+            0.1,
+            0,
+            1
+          ],
+          "coefficient_N": 0.2969250831376118
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            -0.1,
+            0,
+            1
+          ],
+          "coefficient_N": 1.3740075205800955
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -2.985,
+            -21.48,
+            26.0
+          ],
+          "direction": [
+            0.1,
+            0,
+            -1
+          ],
+          "coefficient_N": 1.455722884463839
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -2.985,
+            -11.52,
+            26.0
+          ],
+          "direction": [
+            -0.1,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.5536415612670124
+        }
+      ],
+      "bottom_compression_N": 3.011241711460814,
+      "top_compression_N": 2.0093644457308515
+    },
+    {
+      "interface": "root_frame",
+      "mu_assumed": 0.2,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.2570793944677886,
+        0.0,
+        1.001877265729964,
+        0.0,
+        -0.05366402717464295,
+        0.0
+      ],
+      "normal_sign": 1,
+      "variables": 302,
+      "points": 75,
+      "minimum_total_bolt_axial_N": 4.0811922389333,
+      "contact_compression_N": 3.079314973203336,
+      "force_error_N": 7.021666937153402e-16,
+      "moment_error_Nm": 4.857419336407446e-17,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            0.2,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 0.8969590004321969
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.2,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 1.5396574866016677
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.2,
+            0.0,
+            1.0
+          ],
+          "point_id": 71,
+          "coefficient_N": 0.6426984861694712
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            -16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 2.3206155074140766
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 1.7605767315192238
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.2570793944677884,
+        0.0,
+        -1.0018772657299646,
+        0.0,
+        0.053664027174643,
+        4.336808689942018e-19
+      ]
+    },
+    {
+      "interface": "frame_ground",
+      "mu_assumed": 0.2,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        0.0,
+        -0.0392340991716313,
+        0.0
+      ],
+      "normal_sign": -1,
+      "variables": 272,
+      "points": 67,
+      "minimum_total_bolt_axial_N": 2.0430520833333174,
+      "contact_compression_N": 2.0430520833333157,
+      "force_error_N": 1.807312143953211e-15,
+      "moment_error_Nm": 1.9002943576525368e-17,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            7.755,
+            -41.98,
+            40.0
+          ],
+          "direction": [
+            -0.2,
+            0.0,
+            -1.0
+          ],
+          "point_id": 21,
+          "coefficient_N": 0.5341265650656772
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            7.755,
+            14.86,
+            40.0
+          ],
+          "direction": [
+            -0.2,
+            0.0,
+            -1.0
+          ],
+          "point_id": 22,
+          "coefficient_N": 1.5089255182676387
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            -28,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.6365402820864597
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            14,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 1.2730805641729168
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            60,
+            0,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.13343123707394075
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.4086104166666632,
+        0.0,
+        1.7763568394002505e-15,
+        -1.734723475976807e-17,
+        0.03923409917163131,
+        -3.469446951953614e-18
+      ]
+    },
+    {
+      "interface": "motor_lands",
+      "mu_assumed": 0.2,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.15153102219887496,
+        0.0,
+        -1.001877265729964,
+        -0.0,
+        0.014429928003011645,
+        0.0
+      ],
+      "total_compression_N": 3.0704283417567444,
+      "force_error_N": 1.2490009027033011e-15,
+      "moment_error_Nm": 1.925504598075797e-17,
+      "rays": [
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -16.5,
+            14.0
+          ],
+          "direction": [
+            0.2,
+            0,
+            1
+          ],
+          "coefficient_N": 0.1588564490492732
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            0,
+            0.2,
+            1
+          ],
+          "coefficient_N": 0.9975301663319097
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            -0.2,
+            0,
+            1
+          ],
+          "coefficient_N": 0.8797661883621718
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -21.48,
+            26.0
+          ],
+          "direction": [
+            0,
+            -0.2,
+            -1
+          ],
+          "coefficient_N": 0.9975301663319115
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -14.01,
+            26.0
+          ],
+          "direction": [
+            -0.2,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.0013085789607073122
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -11.52,
+            26.0
+          ],
+          "direction": [
+            -0.2,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.0354367927207711
+        }
+      ],
+      "bottom_compression_N": 2.0361528037433545,
+      "top_compression_N": 1.03427553801339
+    },
+    {
+      "interface": "root_frame",
+      "mu_assumed": 0.4,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.2570793944677886,
+        0.0,
+        1.001877265729964,
+        0.0,
+        -0.05366402717464295,
+        0.0
+      ],
+      "normal_sign": 1,
+      "variables": 302,
+      "points": 75,
+      "minimum_total_bolt_axial_N": 4.0811922389333,
+      "contact_compression_N": 3.0793149732033367,
+      "force_error_N": 1.2412670766236366e-15,
+      "moment_error_Nm": 8.679713874558332e-18,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            0.4,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 1.2183082435169341
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.4,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 1.5396574866016683
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.4,
+            0.0,
+            1.0
+          ],
+          "point_id": 71,
+          "coefficient_N": 0.3213492430847341
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            -16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 2.420936724239593
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 1.6602555146937075
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.2570793944677874,
+        0.0,
+        -1.0018772657299637,
+        -5.204170427930421e-18,
+        0.05366402717464294,
+        -3.2526065174565133e-19
+      ]
+    },
+    {
+      "interface": "frame_ground",
+      "mu_assumed": 0.4,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        0.0,
+        -0.0392340991716313,
+        0.0
+      ],
+      "normal_sign": -1,
+      "variables": 272,
+      "points": 67,
+      "minimum_total_bolt_axial_N": 1.0215260416666623,
+      "contact_compression_N": 1.0215260416666623,
+      "force_error_N": 1.3322676295501878e-15,
+      "moment_error_Nm": 2.8272533642373752e-18,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            73.98,
+            -1.38,
+            40.0
+          ],
+          "direction": [
+            -0.4,
+            0.0,
+            -1.0
+          ],
+          "point_id": 63,
+          "coefficient_N": 0.8479169360632139
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            73.98,
+            6.74,
+            40.0
+          ],
+          "direction": [
+            -0.4,
+            0.0,
+            -1.0
+          ],
+          "point_id": 64,
+          "coefficient_N": 0.17360910560344822
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            -28,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.16195130108156053
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            14,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.32390260216312133
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            60,
+            0,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.5356721384219804
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.40861041666666487,
+        0.0,
+        0.0,
+        -1.5178830414797062e-18,
+        0.0392340991716313,
+        2.3852447794681098e-18
+      ]
+    },
+    {
+      "interface": "motor_lands",
+      "mu_assumed": 0.4,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.15153102219887496,
+        0.0,
+        -1.001877265729964,
+        -0.0,
+        0.014429928003011645,
+        0.0
+      ],
+      "total_compression_N": 2.8328154252650943,
+      "force_error_N": 1.1119563949618733e-15,
+      "moment_error_Nm": 5.774839801486124e-18,
+      "rays": [
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            0,
+            0.4,
+            1
+          ],
+          "coefficient_N": 1.2269939348839534
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            -0.4,
+            0,
+            1
+          ],
+          "coefficient_N": 0.16343415973212072
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            0,
+            -0.4,
+            1
+          ],
+          "coefficient_N": 0.5269182508814544
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -21.48,
+            26.0
+          ],
+          "direction": [
+            -0.4,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.08998386209869708
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -21.48,
+            26.0
+          ],
+          "direction": [
+            0,
+            -0.4,
+            -1
+          ],
+          "coefficient_N": 0.7000756840024991
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -14.01,
+            26.0
+          ],
+          "direction": [
+            -0.4,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.12540953366636953
+        }
+      ],
+      "bottom_compression_N": 1.9173463454975286,
+      "top_compression_N": 0.9154690797675656
+    },
+    {
+      "interface": "root_frame",
+      "mu_assumed": 0.8,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.2570793944677886,
+        0.0,
+        1.001877265729964,
+        0.0,
+        -0.05366402717464295,
+        0.0
+      ],
+      "normal_sign": 1,
+      "variables": 302,
+      "points": 75,
+      "minimum_total_bolt_axial_N": 4.081192238933299,
+      "contact_compression_N": 3.079314973203335,
+      "force_error_N": 2.2315206618374916e-15,
+      "moment_error_Nm": 6.309059918818259e-17,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            0.8,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 1.378982865059301
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            -4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.8,
+            0.0,
+            1.0
+          ],
+          "point_id": 69,
+          "coefficient_N": 1.5396574866016672
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            67.98,
+            4.995,
+            -7.0
+          ],
+          "direction": [
+            -0.8,
+            0.0,
+            1.0
+          ],
+          "point_id": 71,
+          "coefficient_N": 0.16067462154236672
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            -16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 2.4710973326523495
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            64,
+            16,
+            -3
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "coefficient_N": 1.6100949062809489
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.2570793944677864,
+        0.0,
+        -1.0018772657299637,
+        -8.673617379884035e-18,
+        0.053664027174642887,
+        2.2768245622195593e-18
+      ]
+    },
+    {
+      "interface": "frame_ground",
+      "mu_assumed": 0.8,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0,
+      "external_wrench_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        0.0,
+        -0.0392340991716313,
+        0.0
+      ],
+      "normal_sign": -1,
+      "variables": 272,
+      "points": 67,
+      "minimum_total_bolt_axial_N": 0.5615125867680121,
+      "contact_compression_N": 0.5615125867680122,
+      "force_error_N": 1.5700924586837752e-16,
+      "moment_error_Nm": 1.3010426069826053e-18,
+      "rays": [
+        {
+          "kind": "contact",
+          "point_mm": [
+            73.98,
+            -33.86,
+            40.0
+          ],
+          "direction": [
+            0.8,
+            0.0,
+            -1.0
+          ],
+          "point_id": 59,
+          "coefficient_N": 0.02170113820043087
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            73.98,
+            -1.38,
+            40.0
+          ],
+          "direction": [
+            0.8,
+            0.0,
+            -1.0
+          ],
+          "point_id": 63,
+          "coefficient_N": 0.003673644766910455
+        },
+        {
+          "kind": "contact",
+          "point_mm": [
+            73.98,
+            -1.38,
+            40.0
+          ],
+          "direction": [
+            -0.8,
+            0.0,
+            -1.0
+          ],
+          "point_id": 63,
+          "coefficient_N": 0.5361378038006709
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            -28,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.22240277507719095
+        },
+        {
+          "kind": "bolt_axial",
+          "point_mm": [
+            -25,
+            14,
+            34
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "coefficient_N": 0.33910981169082116
+        }
+      ],
+      "balance_wrench_N_Nm": [
+        -0.40861041666666365,
+        0.0,
+        -1.1102230246251565e-16,
+        1.3010426069826053e-18,
+        0.0392340991716313,
+        0.0
+      ]
+    },
+    {
+      "interface": "motor_lands",
+      "mu_assumed": 0.8,
+      "success": true,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.15153102219887496,
+        0.0,
+        -1.001877265729964,
+        -0.0,
+        0.014429928003011645,
+        0.0
+      ],
+      "total_compression_N": 2.4948556145720664,
+      "force_error_N": 4.718447854656915e-16,
+      "moment_error_Nm": 2.5445511261839958e-17,
+      "rays": [
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -16.5,
+            14.0
+          ],
+          "direction": [
+            0.8,
+            0,
+            1
+          ],
+          "coefficient_N": 0.0583954249837585
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            0,
+            0.8,
+            1
+          ],
+          "coefficient_N": 1.0943254934279776
+        },
+        {
+          "side": "motor_bottom",
+          "point_mm": [
+            3.98,
+            -11.52,
+            14.0
+          ],
+          "direction": [
+            0,
+            -0.8,
+            1
+          ],
+          "coefficient_N": 0.595645521739279
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -21.48,
+            26.0
+          ],
+          "direction": [
+            -0.8,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.19561046273009414
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -21.48,
+            26.0
+          ],
+          "direction": [
+            0,
+            -0.8,
+            -1
+          ],
+          "coefficient_N": 0.49867997168869865
+        },
+        {
+          "side": "motor_top",
+          "point_mm": [
+            -3.98,
+            -14.01,
+            26.0
+          ],
+          "direction": [
+            -0.8,
+            0,
+            -1
+          ],
+          "coefficient_N": 0.05219874000225862
+        }
+      ],
+      "bottom_compression_N": 1.748366440151015,
+      "top_compression_N": 0.7464891744210514
+    }
+  ],
+  "paired_external_wrench_N_Nm": [
+    0.40861041666666353,
+    0.0,
+    0.0,
+    0.0,
+    -0.0392340991716313,
+    0.0
+  ],
+  "finite_ground_required_external_wrench_N_Nm": [
+    -0.40861041666666353,
+    -0.0,
+    -0.0,
+    -0.0,
+    0.0392340991716313,
+    -0.0
+  ],
+  "free_ground_or_single_normal_plane": {
+    "mu_assumed": 0.0,
+    "success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "solver_status": 2,
+    "external_wrench_N_Nm": [
+      0.40861041666666353,
+      0.0,
+      0.0,
+      0.0,
+      -0.0392340991716313,
+      0.0
+    ],
+    "normal_sign": -1,
+    "variables": 268,
+    "points": 67
+  },
+  "actual_product_parts": 69,
+  "actual_changed_CAD": [
+    "OPEN_FRAME",
+    "MOTOR_CAP"
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Rigid equilibrium is a necessary condition,not elastic bolt/contact/load distribution or uniqueness",
+    "Minimum axial reactions are load-induced tension bounds,NOT prescribed torque/preload or strength approval; thread core,flank,engagement and bearing pressure need actual geometry/source minima",
+    "Coulomb mu is a sensitivity variable,not measured or source-guaranteed friction; frictionless cases remain failures",
+    "Motor model is source simplified body envelope,not certified gearbox contact land or case capacity",
+    "Finite Ground is not hidden-fixed. Its external wrench needs a real positive attachment or specified clamp/preload/friction. No physical bench attachment exists in69part CAD.",
+    "Finite point traction rays are not bounded pressure fields; no peak-contact-stress/mesh PASS",
+    "Frame/Rail historical mesh failures,global energy,time/full3Finger/Stage1 gates unchanged"
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "status": "ACTUAL_P1_NUT_CAPTURE_DESIGN_IMPLEMENTED_PARTIAL_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/summary.json",
+    "SHA256": "ac6a26d7cf5226c8d350a5b12710e6d5971c7906e48b657e465adfa086c7150f"
+  },
+  "selected_task_id": "goal_primary_anchor42_positive_thread_rotation_and_receiver_attachment",
+  "next_task_id": "goal_primary_anchor43_retained_bolt_socket_keeper_and_external_fixture",
+  "strategy_change": true,
+  "actual_parts": 85,
+  "actual_CAD_changed_files": [
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/BENCH_ANCHOR_RAIL.step",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/BENCH_ANCHOR_RAIL.stl",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/ASSEMBLY.step"
+  ],
+  "unchanged_part_STEP_count": 84,
+  "actual_assembly": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/ASSEMBLY.step",
+    "SHA256": "88eb7a392e21a8cb652d51900181b09867ba03aba3af3011487c034c5df73fe2"
+  },
+  "actual_BOM": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/BOM.json",
+    "SHA256": "c4cfd3a0095f03d793e5a6e6428e949a556ddf5902ee3a839fa49891ecf30aa6"
+  },
+  "evidence": {
+    "actual_changed_CAD": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43b/summary.json",
+      "SHA256": "ac6a26d7cf5226c8d350a5b12710e6d5971c7906e48b657e465adfa086c7150f"
+    },
+    "assembly_and_rotational_work": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nutcapture43b_validation/summary.json",
+      "SHA256": "0a41bf86694e9c9e6e8c2172b0b5b38fcd2c588130e1ff96f8a6bbcd0f6bf55e"
+    },
+    "independent_cage_and_ports": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nutcapture43b_independent_split/summary.json",
+      "SHA256": "a3a6404f6d9abada2a00e48253a96be5121331f8fa50e74cbf83b7ef8bd4ef41"
+    },
+    "failed_first_CAD": {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43/summary.json",
+      "SHA256": "3ad51de204cdb01704d09b9da2dc6c0168e2558f0f06e38cfc087c0225abbbb8"
+    },
+    "failed_unsplit_independent_quadrature": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nutcapture43b_independent/summary.json",
+      "SHA256": "f9464221480c7fc4103d4f7d477c8a70cd7f5a9845f9effcd179106456916fab"
+    }
+  },
+  "nominal_nut_rotation_stop_intervals_rad": {
+    "max8AF": [
+      0.053320135921239846,
+      0.05332013703882693
+    ],
+    "min7_78AF": [
+      0.10601394474506379,
+      0.10601394586265088
+    ]
+  },
+  "receiver_volume_mm3": 64377.47855257506,
+  "delta_receiver_volume_mm3": 662.183113717314,
+  "conditional_delta_mass_kg_2700kg_m3": 0.0017878944070367478,
+  "physical_density_kg_m3": null,
+  "final_interference_count": 0,
+  "assembly_pose_count": 39,
+  "checks": {
+    "actual_85part_hashes": true,
+    "final_no_interferences": true,
+    "all_recorded_assembly_tool_poses_clear": true,
+    "both_rotation_stops_each_nut": true,
+    "nut_seats_preserved": true,
+    "explicit_free_bolt_spin_rejected": true,
+    "bolt_lock_mathematical_control": true,
+    "spin_virtual_work": true
+  },
+  "independent_checks": {
+    "independent_cage_section_BRep_volume": true,
+    "independent_stop_angle": true,
+    "source_min_nut_backlash_larger": true,
+    "four_actual_through_mount_ports": true
+  },
+  "mount_head_sweeps_clear": true,
+  "nut_cage_only_equilibrium": {
+    "feasible": false,
+    "status": 2,
+    "residual": null,
+    "reactions": null
+  },
+  "hypothetical_bolt_lock_control": {
+    "feasible": true,
+    "status": 0,
+    "residual": 0.0,
+    "reactions": [
+      1.0,
+      -0.12732395447351627,
+      0.12732395447351627
+    ]
+  },
+  "failures": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nutcapture43b_independent/summary.json",
+        "SHA256": "f9464221480c7fc4103d4f7d477c8a70cd7f5a9845f9effcd179106456916fab"
+      },
+      "reason": "Adaptivequadrature missednarrowcontactslivers;exactboundaryeventsplit independentretry retained unchanged1e-7volume/3e-7anglechecks"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_nutcapture43/summary.json",
+        "SHA256": "3ad51de204cdb01704d09b9da2dc6c0168e2558f0f06e38cfc087c0225abbbb8"
+      },
+      "reason": "Three1.76714586764mm3 shankcollisions from blind pocket bottom;corrected through cut in same receiver design"
+    },
+    {
+      "reason": "Nut capture leaves bolt spin mechanism",
+      "numerical": {
+        "feasible": false,
+        "status": 2,
+        "residual": null,
+        "reactions": null
+      }
+    }
+  ],
+  "historical_failures": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle42_record/summary.json",
+    "SHA256": "9b33f2f5f463ac86398ea55761bcdcc977b1931ae06b65e7492cda0e9b8eb6f6"
+  },
+  "physical_operating_sourcefield": null,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_unqualified_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "system_gates": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state47.json",
+    "SHA256": "dd5d792e29e8641d13e0c0b77764cb85e9fdc0b22103957f5d412db6b2c7eb24"
+  },
+  "whole_system_release": false,
+  "stage3_authorized": false,
+  "hardware_status": "NOT_MEASURED",
+  "execution_count": 5,
+  "physics_child_seconds": 21.4360219638329,
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary43_audit_execution/execution.json",
+      "SHA256": "a65894d7fe4d545f1128dce1124f751769637e33f5d25410928147033de8afb6"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary43_auditb_execution/execution.json",
+      "SHA256": "ca710ddc71edb7c89cac18a840b0a97b38fff297fe821ed610dd8305063ec333"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary43_cad_execution/execution.json",
+      "SHA256": "52481b3fd9e092d0951248db443c63e5953789c908ac722275404a3037dd6486"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary43_cadb_execution/execution.json",
+      "SHA256": "d1800ce181c2641ab9101ceb8fc9cd7d342efae349d068a58b183d20bb3dfc11"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary43_validation_execution/execution.json",
+      "SHA256": "31fcde94d776bfec7aac45eb023572d6c721b43447cc3af9b3ec5c22e48f8d4c"
+    }
+  ],
+  "analysis_children_reaped": true,
+  "queue_RUNNING": 0,
+  "source_pins_unchanged": true,
+  "original_untracked_files_unchanged": 8595,
+  "release_audit": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle43_record/release_audit.json",
+    "SHA256": "3927b36d31dd7e697cc443c7be377d7066ee2a2af2f28e2169fc3d3ef866b4be"
+  },
+  "next_mechanism": "Continue SAME85part P1_nutcapture43b;implement removable positively retained bolt-socket keeper using actual4AFsocket/2.5mmdepth and physical base key/retainer,with real underside tool insertion/removal and toleranced contactbacklash. Do not hold boltrotation by a gauge/tie or pretend nutcages complete the threadpath. Verify keeper torque reaction with explicit bolt/nut/head/seat DOFs and source-backedcore/flank/engagement law before updating coupled equilibrium. Actual externalbench/support body and mountingfasteners must engage newfour receiverports with force/moment transfer and supportedmaterialminimum;holes/corridors alone are not attachment. Rebuild changedreceiver FE/mass/contact after geometry stabilizes;do not reuse36b receiverfields. Retain41all52triangles/528cuts/554probes as historical conditional evidence and boundedstreamedsolver. Preserve all22criteria,1percentmesh/.1percenttime,3Finger/cartridge/jamming anddistalPETslide;NoStage3.",
+  "note": "SAME ONE P1 continued as primaryP1_nutcapture43b,85parts. Actual receiver changed:three integral open-top8.2AF nut cages with0.6mm cornerreliefs andfour dia5.5 through mountingports;all84otherpartSTEP unchanged. First cage modelinterfered eachboltshank1.76714586764mm3,exit2 retained;corrected pocketthroughdepth givesvalidsingle receiver andzero final85partinterferences. All39recorded nut/bolt/tool posesclear;finite samples/smooththreadenvelopes only,not continuoushelical assembly. Initialunsplitanalyticquadrature missednarrowcontactslivers despite smallerrorestimates;exit2preserved. Exactline/circleboundaryeventsplit corrects independentintegration. Independent analytic2D section reproduces all6 BRep rotatednutintersectionvolumes within1e-7mm3. Max8AF nut stop~0.05332013648rad;source-min7.78AF~0.106013945304rad,not zero-backlash lock. Original nutseat31.6673313994mm2 retained. Explicit screwrotationalDOFs prove nutcapture alone still leaves freebolt spin:unitaxial transfer requires0.127323954474Nmm bolt reaction,absent. Mathematical addedboltlock control isfeasible but NOT implementedhardware. Mountports verified actual8mmthroughcylinders;headcorridors checked,not an externalfixture. No physicalthread/preload/materialminimum/support/100gsourcefield or acceptedphysicalequilibrium. Changedreceiver INVALIDATES historicalreceiverFE/contact/mass applicability. All22UNQUALIFIED;NoStage3. Preserve41whole-domainnegativegap/contactcontrast5.242percent/15.107percent/boltbase-quarter1.975percent andallpriorstrength/mesh/time/globalenergy failures."
+}

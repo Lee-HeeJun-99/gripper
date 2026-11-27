@@ -1,0 +1,131 @@
+{
+  "status": "ACTUAL_P1_FINITE_ROW_COTANGENT_CHECK_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_surface1/summary.json",
+    "SHA256": "aef0ec98c0b5ff06c107ca72e3a83c2fb1581968918c463b6f4b77d7575d914b"
+  },
+  "topological_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_surface_independent2/summary.json",
+    "SHA256": "aebea5e9b39b4ff637ed01ae243b9a967bb19453bc78920c894c421d3b81201d"
+  },
+  "local_support_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_local_surface2/summary.json",
+    "SHA256": "513210308586b6adae1eb05ae592c271bd48b45b02bd5b7e030ff30a244dfbdb"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_cotangent2/producer.py",
+    "SHA256": "f1baf1e8e260c425f2449d8e22c5f0515e2e29cad82871b2a73f0ad1ea1c453e"
+  },
+  "distance_implementation": {
+    "path": "product_prototype/stage12_integrated/scripts/primary_finite_surface_query.py",
+    "SHA256": "346ab388fcb3cc236c23f9c805143054a9c10deb09f6f353a41f5afc54fe9914"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_cotangent2/cotangent.npz",
+    "SHA256": "4d60e878d622ed98534ed2c8fcbd7e5ce85a0a57fbc6bdc8e104e0315b39ba80"
+  },
+  "checks": {
+    "all2169rows": true,
+    "finite_weights": true,
+    "allrow_rigid_work": true,
+    "current_force": true,
+    "current_moment": true,
+    "separated_fullmoving_work": false
+  },
+  "contact_rows": 2169,
+  "Jacobian_nonzeros": 26346,
+  "separated_fullmoving_point_work": [
+    {
+      "row": 244,
+      "first": "Motor",
+      "owner": "OPEN_FRAME",
+      "signed_gap_mm": 0.008907523340311335,
+      "source_triangle": 1107,
+      "queried_triangles": [
+        1102,
+        1107,
+        1107,
+        1107
+      ],
+      "analytic_N_per_N": 1.3163705799987775,
+      "Richardson": 1.3163695378514673,
+      "error": 1.0421473102262269e-06
+    },
+    {
+      "row": 258,
+      "first": "Motor",
+      "owner": "MOTOR_CAP",
+      "signed_gap_mm": 0.00889062938149751,
+      "source_triangle": 29,
+      "queried_triangles": [
+        29,
+        29,
+        29,
+        29
+      ],
+      "analytic_N_per_N": -0.5221986264298651,
+      "Richardson": -0.5221986264294468,
+      "error": 4.18332035678759e-13
+    },
+    {
+      "row": 263,
+      "first": "Motor",
+      "owner": "MOTOR_CAP",
+      "signed_gap_mm": 0.009177653578352471,
+      "source_triangle": 50,
+      "queried_triangles": [
+        50,
+        50,
+        50,
+        50
+      ],
+      "analytic_N_per_N": -0.3496281713667381,
+      "Richardson": -0.34962817138401575,
+      "error": 1.7277623776124074e-11
+    }
+  ],
+  "rigid_motion_errors": [
+    {
+      "translation": 1.1102230246251565e-16,
+      "rotation_mm": 1.4210854715202004e-14
+    },
+    {
+      "translation": 1.1102230246251565e-16,
+      "rotation_mm": 4.263256414560601e-14
+    },
+    {
+      "translation": 1.4496206562604821e-16,
+      "rotation_mm": 1.4210854715202004e-14
+    }
+  ],
+  "current_contact_wrench_N_Nm": [
+    -1.2212453270876722e-15,
+    0.0,
+    8.881784197001252e-16,
+    3.469446951953614e-17,
+    -1.3010426069826053e-16,
+    -2.0816681711721685e-17
+  ],
+  "unsolved_stationarity_relative": 2.1036481983732376,
+  "uncertified_near_surface_rows": 65,
+  "uncertified_near_surface_active_rows": 64,
+  "contact_update_eligible": false,
+  "contact_update_attempted": false,
+  "new_equilibrium_solved": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 5.408043510047719,
+  "limitations": [
+    "All2169rows retained, actual closestowner fullfiniteboundary and point/trianglebarycentric work pullback. Only separatededge witnesses test movingowner derivatives; query-centered displacements avoid largeglobal-coordinate cancellation. cotangent1 globalquery FDFAIL retained.",
+    "Nearsurface/nonsmooth tie rows use explicit representative ownerfacet direction for diagnostic residual only. Their normalcone/signedlinearization is UNQUALIFIED, not a contactsolve input or new equilibrium.",
+    "Oldpressure/boltforces/displacements reused only to measure unsolved residual, NOT transfer a solution or stress. All prior mesh/physicalBaseanchor/material/sourcecase/bearing/finitewire/friction/protector/globalenergy/full3Finger blocks preserved."
+  ]
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_primary_finite_surface.py", line 32, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_primary_finite_surface.py", line 18, in main
+    e=v[:,1]-v[:,0];f=v[:,2]-v[:,0];d=q-v[:,0];G=np.empty((len(tri),2,2));G[:,0,0]=np.sum(e*e,1);G[:,0,1]=G[:,1,0]=np.sum(e*f,1);G[:,1,1]=np.sum(f*f,1);rhs=np.c_[np.sum(d*e,1),np.sum(d*f,1)];st=np.linalg.solve(G,rhs);plane=v[:,0]+st[:,0,None]*e+st[:,1,None]*f;valid=(st[:,0]>=0)&(st[:,1]>=0)&(st.sum(1)<=1);dist=np.linalg.norm(q-plane,axis=1);dist[~valid]=np.inf;best=float(dist.min())
+  File "/tmp/regrip_stage2_fem/numpy/linalg/_linalg.py", line 410, in solve
+    r = gufunc(a, b, signature=signature)
+ValueError: solve: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (m,m),(m,n)->(m,n) (size 11640 is different from 2)

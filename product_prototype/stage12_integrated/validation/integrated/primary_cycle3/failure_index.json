@@ -1,0 +1,88 @@
+{
+  "status": "ALL_THIS_CYCLE_FAILURES_AND_METADATA_ISSUES_PRESERVED",
+  "results": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact1/summary.json",
+        "SHA256": "81e0f1d234c76175c301284b03fbf118eb99d0f0541401d5de0ebd6ee94d852c"
+      },
+      "status": "ACTUAL_P1_FINITE_TERMINAL_CONTACT_RESULTS_NOT_RELEASE",
+      "saved_states": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact1/cases.json",
+        "SHA256": "eb4223b549d376123d897aa555fbd9fc5766932144ba17088b345e7db428176f"
+      }
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact2/summary.json",
+        "SHA256": "9d1aea860d3b3fa9c0a56775210ab9453a1395b578ab956653f48c9b0f05955b"
+      },
+      "status": "FINAL_CONTACT_ARRAY_INDEX_ERROR_NO_ACCEPTED_STATE",
+      "saved_states": null
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact3/summary.json",
+        "SHA256": "cb258594a14569daa2fcb34d5eadb08e233a6de46e997177d19283180bd373c8"
+      },
+      "status": "ACTUAL_P1_FINITE_TERMINAL_CONTACT_RESULTS_NOT_RELEASE",
+      "saved_states": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact3/cases.json",
+        "SHA256": "1c5161b50296dd638a21f33711f1b5f64d3176255b79a75efd01019b320e67e4"
+      }
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact4/summary.json",
+        "SHA256": "71520301b5fd540707bbbf9571457a9bc5ec177ed416d003b911f1537aa8354a"
+      },
+      "status": "ACTUAL_P1_FINITE_TERMINAL_CONTACT_RESULTS_NOT_RELEASE",
+      "saved_states": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_contact4/cases.json",
+        "SHA256": "b9f357f31b3ff11c9ae4f72bac7f904948ce54b7fefc7e7f53fd4cc3a242c565"
+      }
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_terminal_verify1/summary.json",
+        "SHA256": "ec128f441d055b3f13a3f7437068718cc72848f732e8c3188dd3108edfe2c804"
+      },
+      "status": "ACTUAL_P1_SAVED_STATE_PARTIAL_AUDIT_NOT_RELEASE",
+      "saved_states": null
+    }
+  ],
+  "pre_analysis_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/orchestration_failure.json",
+    "SHA256": "3889fba57507dac36dab719839c6f1d3c27a4f489a6a5e1aa7be52947932be85"
+  },
+  "metadata_issues": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner1/cases.json",
+        "SHA256": "3babc796eb3f2f0b0ade23cd9f36f6b8b7da7b769e482aca2ff58d7c3dad1747"
+      },
+      "issue": "First root_equation_residual was computed after feature-array mutation,using stale row IDs. It is INVALID metadata,not a force acceptance metric. Independent complex-step equilibrium passed; corrected v2 records residual before mutation.",
+      "corrected": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner2/cases.json",
+        "SHA256": "c2e9981114edea1b1ebc22ad9e75bcbc78e38384284e70d5997011cf673d2cb5"
+      },
+      "state_reproduction_max": 0.0
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_corner_loaded1/summary.json",
+        "SHA256": "f4cbb50bd50871b7aafd9c7ad103f69cf50795853739f097b455d75edaa79ae7"
+      },
+      "issue": "Inherited limitation says Four actual saved poses. This output has exactly ONE actual32element conditional-demand pose and26Boolean comparisons; count fields and this correction are authoritative. No four-pose or CCD claim."
+    }
+  ],
+  "known_physical_failures": [
+    "Frozen-witness32element1N FAIL:8.67282e-7N residual and-161.868nm gap",
+    "Frozen-witness8element late exchange FAIL:-187.056nm despite tiny force residual",
+    "Frozen-witness16element FAIL:5.36084e-8N residual and-4.92178nm gap",
+    "Legacy v5 1N overlap1.2524165e-5mm3 and2N/4.5N failures immutable",
+    "Nominal Rail stress8->32at conditional demand1.30246668% FAILS1%; no strength promotion",
+    "Historical frame mesh52.7693% FAIL and45/183 motor-current screen FAIL remain"
+  ],
+  "whole_system_release": false
+}

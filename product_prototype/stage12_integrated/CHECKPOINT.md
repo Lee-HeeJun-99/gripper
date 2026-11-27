@@ -1,3 +1,75 @@
+# Latest actual P1 corner/load continuation — 2026-11-27, pending Supervisor save
+
+Started at actual HEAD dd8a2405a47b4b1a7eeb4d7ddce5503e91139495.
+Selected exact queue ID goal_primary_terminal_feature_contact. SAME ONE primary
+primaryP1_open9,69actual parts, Motor -> stock1996 hub/fourM3 -> Drum -> whole
+factory cable -> Terminal/AX Rail/PET -> Root/RF -> OPEN_FRAME -> fourM5 ->
+finite GROUND_PLATE. Failed AO and3Finger/cartridge/jamming originals preserved.
+Actual changed CAD this cycle: NONE. All STEP/BOM/assembly hashes unchanged.
+This is ACTUAL_PRODUCT_VALIDATION with new actual finite-contact/load equations,
+not DESIGN_CHANGE or an ideal coupon. Result: validation/integrated/primary_cycle3/summary.json.
+
+Actual residual intersection was at lip Z=-90mm. Existing1N state had a true
+-165.693nm max-SDF seam gap,not merely a harmless Boolean tolerance. Frozen
+material witness exchange retained32/8/16 physical FAILs and one array IndexError.
+A free material contact station now contacts the ACTUAL cylinder/plane corner
+(X,Z)=(49.720180802444,-90)mm. Two corner-coordinate equations plus station
+variation enforce zero tangential contact work. Force lies in the nonnegative
+cone of actual circular face and upper planar face normals; no inequality,
+physical force,material or acceptance tolerance was removed or relaxed.
+
+Final corrected1N8/16/32states independently pass complex-step energy/force/
+point-Jacobian,free-station virtual work,nonnegative cone,full inherited gaps
+plus current kink roots,actual deformed PET/Rail/Terminal BRep and negative
+controls. Finest normal 0.401753752310N;8->32normal
+0.20451001% and Rail-tip-angle
+0.50313997% pass1% locally.
+Six final1N/demand reduced states total,264actual Boolean comparisons,
+no final modeled BRep overlap above1e-8mm3. These remain typical-modulus,
+rigid-grip,planar frictionless reductions with same-material interface and a
+fixed spatial X stop20mm inward,NOT full frictional/free-grasp mechanics.
+
+Conditional100g/3/assumedmu.8 target normal .4086104166667N is solved on all
+three meshes. Required tensions8/16/32=[1.01494614091225, 1.0136497053999525, 1.0132717830252576]N.
+Finest torque 0.011399307559Nm and cable stroke
+9.440273759mm. ONE actual demand loaded wire/rotor pose,
+26Boolean comparisons: valid single cable solid,constant volume,single layer,
+wire/rotor clear. An inherited sentence saying Four poses is explicitly corrected
+in failure_index.json; no four-pose/CCD claim. Old root-residual metadata issue
+also preserved; final v2 resamples exact states and records correct row identity.
+
+Actual demand applied Root force(X,Z)=[0.2570793944677886, 1.001877265729964]N,
+Y couple -0.001369857221Nm; motor cradle force
+[0.15153102219887496, -1.001877265729964]N,Y couple 0.011399307559Nm.
+Required Ground FX=-.408610416667N,MY=.039234099172Nm balances independently.
+These are demanded port resultants,NOT solved bolt/clamp/bearing/finite Ground
+reaction distributions. Free-station restricted Hessian has no negative mode
+in six reduced states; this is not global stability or dynamics/energy closure.
+
+Nominal Rail stress 187.967425067MPa is typical E*strain,
+NOT material allowable/notch/contact/fatigue/creep strength.8->32nominal stress
+1.30246668% FAILS existing1% criterion.
+Earlier frame mesh52.7693%FAIL,45/183current-screen FAIL,1N legacy penetration,
+2N/4.5N branch/geometry failures and all historical immutable evidence remain.
+No payload,100mm grasp,continuous motor,protector,source-minimum material or
+full3Finger/Stage1 approval. ALL22system gates stay UNQUALIFIED,updated in
+models/primary_system_gate_state3.json. Unchanged read-only integrated release
+exits2with24errors. SOFA runs0; no dt/global-energy qualification or Stage3.
+
+Concrete next exact ID: goal_primary_root_ground_load_path. Continue THIS P1:
+map actual Root/RF,motor cradle and fourM5 bearing/thread/finite Ground surfaces;
+apply BOTH required port forces AND couples and solve physical transfer before
+mesh/stress qualification. Reuse actual STEP/local FEM; preserve former unit+Z
+frame FAIL. Do not replace real interfaces by arbitrary fixed DOFs or silently
+balance external loads. Source minima/protection and3Finger/friction remain.
+
+16analysis children reaped;450.642843child-seconds,
+new timeouts0; each4GiB/420s,<=4concurrent long children. STOP absent.
+No RUNNING queue records or owned analysis children. Source pins unchanged,
+pre-existing user untracked hashes preserved. No manager launch/Git write,
+purchase/hardware/SDK/provider/credentials/subagents. Supervisor save request:
+runtime/goal_authorized_20261127_7/save_request2.json; exact local save PENDING.
+
 # Latest P1 actual finite-load continuation — 2026-11-27, pending Supervisor save
 
 Actual starting HEAD cfcf3fd71a91585b230a9e72d6e1aaef1c34889c.

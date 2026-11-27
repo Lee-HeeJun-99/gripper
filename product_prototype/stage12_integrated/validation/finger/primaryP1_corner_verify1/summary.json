@@ -1,0 +1,226 @@
+{
+  "status": "ACTUAL_P1_CORNER_STATIC_AND_BREP_PARTIAL_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner1/summary.json",
+    "SHA256": "15d56bee837f1bc99aa26f2d99910bbbe095c18bb4bdd652a73764750e2d5114"
+  },
+  "cases": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner1/cases.json",
+    "SHA256": "3babc796eb3f2f0b0ade23cd9f36f6b8b7da7b769e482aca2ff58d7c3dad1747"
+  },
+  "actual_STEP_corner": {
+    "point_m": [
+      0.049720180802444,
+      -0.09
+    ],
+    "circle_center_m": [
+      -0.03363880995252,
+      -0.095
+    ],
+    "radius_m": 0.08350880995252101
+  },
+  "audits": [
+    {
+      "n": 8,
+      "T_N": 1.0,
+      "normal_N": 0.4009321256699216,
+      "independent_force_equivalent_N": 1.1256206929678265e-15,
+      "corner_error_m": 4.0245584642661925e-16,
+      "kinematic_error_m": 6.938893903907228e-18,
+      "energy_error_J": 0.0,
+      "point_Jacobian_error_m": 1.3270634591222574e-16,
+      "free_station_tangent_force_N": -1.1449174941446927e-16,
+      "independent_cone_coefficients_N": [
+        0.11393627645443385,
+        0.0019672013139180027
+      ],
+      "interface_gap_m": 8.673617379884035e-18,
+      "object_gap_m": -6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "T_N": 1.0,
+      "normal_N": 0.40156757504483076,
+      "independent_force_equivalent_N": 2.6880974645983992e-14,
+      "corner_error_m": 1.1587952819525071e-15,
+      "kinematic_error_m": 1.3877787807814457e-17,
+      "energy_error_J": 0.0,
+      "point_Jacobian_error_m": 1.1102230246251565e-16,
+      "free_station_tangent_force_N": -5.875334940785848e-14,
+      "independent_cone_coefficients_N": [
+        0.11490273647281245,
+        0.0017372089749100534
+      ],
+      "interface_gap_m": 2.721347452938616e-17,
+      "object_gap_m": -3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "n": 32,
+      "T_N": 1.0,
+      "normal_N": 0.40175375231036364,
+      "independent_force_equivalent_N": 1.84601013777657e-14,
+      "corner_error_m": 3.677613769070831e-16,
+      "kinematic_error_m": 1.3877787807814457e-17,
+      "energy_error_J": 0.0,
+      "point_Jacobian_error_m": 2.3397082882237186e-16,
+      "free_station_tangent_force_N": -7.331635298868378e-14,
+      "independent_cone_coefficients_N": [
+        0.11298683243769124,
+        0.0017157306926371676
+      ],
+      "interface_gap_m": 6.808789643208968e-17,
+      "object_gap_m": 6.938893903907228e-18,
+      "passed": true
+    }
+  ],
+  "actual_deformed_BRep": [
+    {
+      "n": 8,
+      "T_N": 1.0,
+      "hits": [],
+      "comparisons": 23,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "T_N": 1.0,
+      "hits": [],
+      "comparisons": 38,
+      "passed": true
+    },
+    {
+      "n": 32,
+      "T_N": 1.0,
+      "hits": [],
+      "comparisons": 71,
+      "passed": true
+    }
+  ],
+  "full_inequalities": [
+    {
+      "n": 8,
+      "minimum_gap_m": -3.469446951953614e-18,
+      "worst": [
+        "object",
+        0.0
+      ],
+      "rows": 827,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "minimum_gap_m": -6.938893903907228e-16,
+      "worst": [
+        "terminal_1_2",
+        0.08212814884820469
+      ],
+      "rows": 1457,
+      "passed": true
+    },
+    {
+      "n": 32,
+      "minimum_gap_m": 3.469446951953614e-18,
+      "worst": [
+        "object",
+        0.0
+      ],
+      "rows": 2717,
+      "passed": true
+    }
+  ],
+  "mesh": [
+    {
+      "n": 8,
+      "fine_n": 32,
+      "normal_relative": 0.0020451001035264316,
+      "rail_tip_angle_relative": 0.005031399719288454,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "fine_n": 32,
+      "normal_relative": 0.00046341139183447844,
+      "rail_tip_angle_relative": 0.001378106653988076,
+      "passed": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "perturbation": "corner_material_station_m",
+      "rejected": true
+    },
+    {
+      "perturbation": "normal_N",
+      "rejected": true
+    },
+    {
+      "perturbation": "corner_contact_force_local_N",
+      "rejected": true
+    }
+  ],
+  "input_hashes": [
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_terminal_corner.py",
+        "SHA256": "25c23cabcaab5877e45caec95e4936696c64a658699f5a10e4eb6cfbdd5020e5"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v5.py",
+        "SHA256": "a1d78ebe62d78650dd03dcb5747595123502d48573e27a94ddab6626f00df1a2"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_finger_tangent_v5.py",
+        "SHA256": "c3a25682e947af9d7b53830aa25bcf2009b20dbfcb341fc56494da99625ca372"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/scripts/rod_point_jacobian.py",
+        "SHA256": "83b81236cac1bc55daedf047e7ab85ab91f0c23c6c652f10a5f24f48244777ac"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+        "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating4/cases.json",
+        "SHA256": "31932c7c0f82e745573ec49468caeb787ea4b37bd790f4609176e6d53cd06334"
+      },
+      "matched": true
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+        "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+      },
+      "matched": true
+    }
+  ],
+  "criteria_unchanged": true,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Conditional planar finite-rod equilibrium at fixed spatial stop,typical moduli and rigid Root/Terminal grips only",
+    "Same-material normal interface remains a reduced contact model,not closest-point whole-surface friction",
+    "No finite friction,minimal strength,hardware,dt,full global energy or100g system approval"
+  ]
+}

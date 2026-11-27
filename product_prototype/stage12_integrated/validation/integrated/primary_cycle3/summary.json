@@ -1,0 +1,580 @@
+{
+  "status": "ACTUAL_P1_FINITE_CORNER_RESOLVED_CONDITIONAL_DEMAND_VALIDATED_RELEASE_BLOCKED",
+  "task_id": "goal_primary_terminal_feature_contact",
+  "starting_HEAD": "dd8a2405a47b4b1a7eeb4d7ddce5503e91139495",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "parts": 69,
+  "actual_changed_CAD_files": [],
+  "CAD_disposition": "Same ONE primary P1 open-frame module; no new design-solid claim. Actual part/assembly/BOM bytes unchanged. AO,3Finger/cartridge/jamming extensions preserved.",
+  "mechanism": "Replace frozen max-SDF corner witness with free material station and two physical corner-coordinate equations. Station variation enforces tangential-force stationarity; actual cylinder/plane normals recover a nonnegative contact cone. Retain all original inequalities and independently test deformed actual BReps. Specialized actual-product equilibrium,not a new general simulator.",
+  "actual_corner_states": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner2/summary.json",
+    "SHA256": "3980c340ee16abf5741562e4e072e83a60c0f40f07077e7d3e6d166029bcc757"
+  },
+  "independent_corner_audit": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner_verify2/summary.json",
+    "SHA256": "0efe9923e872c7e07ee04831c8de3e1a0ab3c97e05a63ee522c8bc7f753920fe"
+  },
+  "conditional_demand": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner_demand1/summary.json",
+    "SHA256": "dd2d38e03df370cd9cdfec2e83a5d7a5fccb1b66a06ad32327cf093c9db435f9"
+  },
+  "independent_demand_audit": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner_demand_verify1/summary.json",
+    "SHA256": "ffb778f7b0c56355e31fdb6a511a636bea6d324a3184fa64a8ed01350a6e9e57"
+  },
+  "actual_required_port_wrenches": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_corner_demand_loads1/summary.json",
+    "SHA256": "2767b2c554220e3633af5d2c2874bb883965eb2405a3a89e1c2f6a5e8279920c"
+  },
+  "actual_loaded_cable_rotor_pose": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_corner_loaded1/summary.json",
+    "SHA256": "f4cbb50bd50871b7aafd9c7ad103f69cf50795853739f097b455d75edaa79ae7"
+  },
+  "local1N_stability": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_corner_loads1/summary.json",
+    "SHA256": "43c0ff657805ecc1db626531704cd1ad10fcacae157172ecffdb8462855eb478"
+  },
+  "failure_index": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/failure_index.json",
+    "SHA256": "fa7c52b077eca9baf87aaf1c8fd7656bcbf71f361307792497956ae8e37e7a8b"
+  },
+  "source_resolution": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/source_resolution.json",
+    "SHA256": "af8a4b47c9847c9c232a522c32eac5aeb7bed33d30f50ab1258b6ceb09ea5fc1"
+  },
+  "actual_numerical_results": {
+    "meshes": [
+      8,
+      16,
+      32
+    ],
+    "accepted_reduced_1N_states": 3,
+    "accepted_conditional_demand_states": 3,
+    "normal_at1N_finest_N": 0.40175375231036364,
+    "normal_at1N_base_to_finest_relative": 0.0020451001035264316,
+    "tip_angle_at1N_base_to_finest_relative": 0.005031399719288454,
+    "actual_STEP_corner": {
+      "point_m": [
+        0.049720180802444,
+        -0.09
+      ],
+      "circle_center_m": [
+        -0.03363880995252,
+        -0.095
+      ],
+      "radius_m": 0.08350880995252101
+    },
+    "conditional100g_shared3_mu08_target_normal_N": 0.4086104166666666,
+    "conditional_target_tendon_N": [
+      1.01494614091225,
+      1.0136497053999525,
+      1.0132717830252576
+    ],
+    "conditional_target_finest_torque_Nm": 0.011399307559034146,
+    "conditional_target_finest_stroke_mm": 9.44027375925792,
+    "conditional_target_finest_rail_nominal_stress_MPa": 187.96742506736163,
+    "nominal_stress_base_to_finest_relative": 0.013024666803372886,
+    "nominal_stress_mesh_status": "FAIL",
+    "independent_force_equivalent_N_max": 5.81930938315351e-14,
+    "deformed_BRep_comparisons": 264,
+    "deformed_BRep_failed_states": 0,
+    "actual_loaded_wire_rotor_poses": 1,
+    "actual_loaded_wire_rotor_comparisons": 26,
+    "actual_loaded_wire_rotor_checks": {
+      "full_wire_single_valid": true,
+      "constant_actual_cable_volume": true,
+      "single_layer": true,
+      "full_wire_clear": true,
+      "rotor_clear": true
+    },
+    "frame_required_port_wrenches": {
+      "n": 32,
+      "T_N": 1.0132717830252576,
+      "object_normal_N": 0.40861041666666353,
+      "stored_status": "CONDITIONAL_CORNER_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.2570793944677886,
+        1.001877265729964
+      ],
+      "frame_root_couple_about_Y_Nm": -0.0013698572205782522,
+      "motor_cradle_force_XZ_N": [
+        0.15153102219887496,
+        -1.001877265729964
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.011399307559034146,
+      "frame_total_external_force_XZ_N": [
+        0.40861041666666353,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.0392340991716313,
+      "required_external_ground_force_XZ_N": [
+        -0.40861041666666353,
+        -0.0
+      ],
+      "required_external_ground_couple_about_Y_Nm": 0.0392340991716313,
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 6.938893903907228e-18,
+      "tendon_torque_Nm": 0.011399307559034146,
+      "cable_stroke_m": 0.00944027375925792,
+      "rail_peak_nominal_face_strain": 0.000973924482214309,
+      "PET_peak_nominal_face_strain": 0.0007408015884334337,
+      "rail_typical_stress_MPa": 187.96742506736163,
+      "PET_typical_stress_MPa": 2.589577107403421,
+      "lagrangian_Hessian_relative_skew": 3.839779836720007e-13,
+      "critical_dimension": 125,
+      "restricted_min_eigenvalue_J": 3.666067690767929e-07,
+      "restricted_negative_curvature": false,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    "max_force_loop_error_N": 0.0,
+    "max_moment_loop_error_Nm": 6.938893903907228e-18,
+    "negative_local_restricted_curvature_states": 0
+  },
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state3.json",
+    "SHA256": "cb6161bc87ec6129522d737d559dd41ff6625b43242d6f25e2d969f61f6d3a3d"
+  },
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "integrated_release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release3/summary.json",
+    "SHA256": "bd6beb75a0a7821316050a88f92d7a23dbc32a87e8ebacecd75575c887455547"
+  },
+  "next_task_id": "goal_primary_root_ground_load_path",
+  "next_mechanism": "Same P1 actual Root/RF -> OPEN_FRAME plus motor cradle -> fourM5 -> finite GROUND_PLATE: implement paired demand port forces AND couples,realistic bearing/clamp/thread contact connector physics and finite support. Reuse actual STEP/FEM kernels. Compare required resultants and finite reaction distributions,then1%response/nominal-stress refinement before strength; retain old unit+Z frame mesh FAIL. Do not substitute arbitrary fixed DOFs,point moments or source-minimum claims.",
+  "executions": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_continuation.py",
+        "primaryP1_terminal_contact1",
+        "32",
+        "1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 256.76184708601795,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact1_execution.json",
+        "SHA256": "9692fd2beace66369ccf84fffeccbb1c2268a12b07184be6ca0f943527f1c658"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact1.log",
+        "SHA256": "ddd698b4a85b2468f5cff303413b597d0a3269d59168f200d7d9636743c85d55"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_continuation.py",
+        "primaryP1_terminal_contact2",
+        "8",
+        "1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 25.157356125069782,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact2_execution.json",
+        "SHA256": "35f79c6259d4473446af6534a1778fba040499e59c216b0d83b74cc0f4661cd5"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact2.log",
+        "SHA256": "74258ecda96d48a3e5390cd5d8d64b7c2bda8967de300688031d8b9416beb885"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_continuation_v2.py",
+        "primaryP1_terminal_contact3",
+        "8",
+        "1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 24.55710799386725,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact3_execution.json",
+        "SHA256": "c5f66e8cb148e1aee45b7063d8247178001b236985fabbedd1bd6d3df9ee1594"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact3.log",
+        "SHA256": "3743ab55191963f126ca0f3f17319aea391b945289cff97183016b07ff123f21"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_continuation_v2.py",
+        "primaryP1_terminal_contact4",
+        "16",
+        "1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 72.52882114402018,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact4_execution.json",
+        "SHA256": "02127356caf5ceb39cc2ba98818640571f8af790e313bce7e656cdfb247c8ce1"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/contact4.log",
+        "SHA256": "70dbe12d611e1d8127e377f2b53b016cbc080470ab6ce4b27ac2d3bd973a9de4"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_corner.py",
+        "primaryP1_corner1",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.823258941061795,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner1_execution.json",
+        "SHA256": "1518115c7bf17d808b063907c235d51c969a5b0ac6d7fdb63b072e3205fa0d79"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner1.log",
+        "SHA256": "294aaa2210dfd4b2c268abea7aeb6de3d2d4243878ea53818ae48f7341467b22"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_corner_v2.py",
+        "primaryP1_corner2",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.3724413509480655,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner2_execution.json",
+        "SHA256": "865a7bccfa35215790c8f511cc44778e487b69ca03cec8fec8c46a51bbf58c23"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner2.log",
+        "SHA256": "294aaa2210dfd4b2c268abea7aeb6de3d2d4243878ea53818ae48f7341467b22"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_terminal_corner.py",
+        "primaryP1_corner1",
+        "primaryP1_corner_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.120225625112653,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner_verify1_execution.json",
+        "SHA256": "dc2ff2cff4718fe09a5eeaf8e2d16a777495eb688c9207ec1bcb7c62605ee133"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner_verify1.log",
+        "SHA256": "1b5be3aff6eb17911574abe76bbd8086e42e89b25a41622219f075e61361f6e6"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_terminal_corner_v2.py",
+        "primaryP1_corner2",
+        "primaryP1_corner_verify2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 2.9701179310213774,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner_verify2_execution.json",
+        "SHA256": "6d53588791adb6d559a2ea33b2339ef2898deb67eaf213df492a0318247718ea"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/corner_verify2.log",
+        "SHA256": "e1950e27de358cb6eb2899cdc61ca2a16804fcf2169f4e6642b789e2f9f11d14"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_corner_demand.py",
+        "primaryP1_corner_demand1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 33.25916176196188,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/demand1_execution.json",
+        "SHA256": "f0dbf293c2fc71de8672d837461c13d3ea63f9eda0813806ccac250b4b1c6cb3"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/demand1.log",
+        "SHA256": "7e90f9dfc29ca913a9300e5f1dfe1da67a36b96d5d7d18b374fabd37ca0697be"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_terminal_corner_v2.py",
+        "primaryP1_corner_demand1",
+        "primaryP1_corner_demand_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.17053225194104,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/demand_verify1_execution.json",
+        "SHA256": "4b48e8f9ca01b7e2da42b8164aaa000340806749b588b9cdfdcca790fd4b5e30"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/demand_verify1.log",
+        "SHA256": "3e82834bd6edebe0ab423aa0530aa520f0d5f64742a4ed0ff4e7c2d41165ac66"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_loaded_assembly.py",
+        "--candidate",
+        "primaryP1_open9",
+        "--tag",
+        "primaryP1_corner_loaded1",
+        "--states",
+        "primaryP1_corner_demand1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.272229248890653,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/loaded_assembly2_execution.json",
+        "SHA256": "9e05cff736e5e2408106c8db134fd71dc2ed809bbf9c25d5d79781d6f7af057b"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/loaded_assembly2.log",
+        "SHA256": "c3a059ce7dff16bdceaf094dfa34691a33d3453606064efe04892835ff92f10f"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_corner_loads.py",
+        "primaryP1_corner1",
+        "primaryP1_corner_loads1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.823498179903254,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/loads1_execution.json",
+        "SHA256": "3dfe8978f44feb61f4e8c1be0a4447a40eb42804eb1afb57349da32e2b54f55b"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/loads1.log",
+        "SHA256": "b6cdf480f5e4ffc6193ae713bc0f3c0c7247fc610c22d76dfca3dcb11f657024"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_corner_loads.py",
+        "primaryP1_corner_demand1",
+        "primaryP1_corner_demand_loads1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.7734108520671725,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/loads2_execution.json",
+        "SHA256": "c6ebf58dfeb23f67f9a90f7a507b7c53163433bbb17be45fe99cbede075b14de"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/loads2.log",
+        "SHA256": "f7da25bdaa9f85c2beebed2815f1807836503580758b87063bf1e078e88b3d72"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/release_readonly.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3650319471489638,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/release3_execution.json",
+        "SHA256": "3363ab4a7aa4afaedac0b37ffb955af92307f00c0d2938aa7a119161281bd11a"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/release3.log",
+        "SHA256": "cdaff7a199186c09301f64727e714c9c68dfcd24d22395759fa3cb1af5747995"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_finger_v7.py",
+        "primaryP1_terminal_contact3",
+        "primaryP1_terminal_verify1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 3.0700019008945674,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/verify1_execution.json",
+        "SHA256": "e84d90ea92a55d1932be05ea65c7a9b450d5cf0e0cce876ec827b80ca1a0171e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/verify1.log",
+        "SHA256": "7844900f7a908798af21134a3935fff543fbcc6e2e3cf3546b34f11c4ac34abe"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_terminal_witness.py",
+        "primaryP1_terminal_witness2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.6178010418079793,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/witness1_execution.json",
+        "SHA256": "60e496daff69b00b66aed6e7d2b019da80f81820614ef39acdc26a5397f4eef7"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/witness1.log",
+        "SHA256": "27b62e7aea8a3b4c1b662765b91241da5db51b3e4c94fe2440e68898d4605477"
+      }
+    }
+  ],
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "owned_analysis_children_running": 0,
+  "recorded_children_reaped": 16,
+  "recorded_child_seconds": 450.64284338173456,
+  "timeouts": 0,
+  "limits": {
+    "memory_bytes": 4294967296,
+    "timeout_seconds": 420,
+    "max_concurrent_long_children": 4
+  },
+  "SOFA_runs": 0,
+  "time_convergence_tested": false,
+  "global_energy_qualified": false,
+  "whole_system_release": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED",
+  "save_status": "PENDING_SUPERVISOR_EXACT_LOCAL_SAVE",
+  "git_add_commit_attempted": false
+}

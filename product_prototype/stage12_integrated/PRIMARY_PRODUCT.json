@@ -318,8 +318,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state2.json",
-    "SHA256": "35497e7526e51ab3332a706c0b79fb26029c893a6d2efad3cc92fdbb79913753"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state3.json",
+    "SHA256": "cb6161bc87ec6129522d737d559dd41ff6625b43242d6f25e2d969f61f6d3a3d"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -348,10 +348,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_operating_window",
-  "next_task_id": "goal_primary_terminal_feature_contact",
+  "selected_task_id": "goal_primary_terminal_feature_contact",
+  "next_task_id": "goal_primary_root_ground_load_path",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
-  "load_BC": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
+  "load_BC": "Same actual69part P1,77mm free Rail/86.2mm separate sliding PET; finite circle/plane lip corner with free material contact station. Independently accepted1N and conditional100g/3/assumedmu.8 demand at fixed20mm spatial X stop on8/16/32meshes. Typical moduli/rigid grips/planar frictionless reduction only. Force/motion convergence bounded PASS; nominal Rail stress mesh FAIL1.30247%. Required Root/Motor/Ground resultants available; connector/fixture force distributions,source minima,friction,time/global-energy/full3Finger release remain absent.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -405,5 +405,34 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "UNCHANGED: same69part P1 actual STEP/BOM/assembly hashes; no CAD repair is justified by unresolved numerical corner contact."
+  "CAD_this_cycle": "UNCHANGED: actual69part P1 source/assembly/BOM hashes preserved; validated physical finite-corner mechanism,not a CAD redesign.",
+  "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
+  "latest_corner_cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
+    "SHA256": "8eb2e55d9aebadcee240e66116a79f0d0b8ae2a13a9b359610e626faeef66cb0"
+  },
+  "latest_corner_equilibrium": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner2/summary.json",
+    "SHA256": "3980c340ee16abf5741562e4e072e83a60c0f40f07077e7d3e6d166029bcc757"
+  },
+  "latest_corner_verification": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner_verify2/summary.json",
+    "SHA256": "0efe9923e872c7e07ee04831c8de3e1a0ab3c97e05a63ee522c8bc7f753920fe"
+  },
+  "latest_conditional_demand": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner_demand1/summary.json",
+    "SHA256": "dd2d38e03df370cd9cdfec2e83a5d7a5fccb1b66a06ad32327cf093c9db435f9"
+  },
+  "latest_conditional_demand_verification": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_corner_demand_verify1/summary.json",
+    "SHA256": "ffb778f7b0c56355e31fdb6a511a636bea6d324a3184fa64a8ed01350a6e9e57"
+  },
+  "latest_required_port_loads": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_corner_demand_loads1/summary.json",
+    "SHA256": "2767b2c554220e3633af5d2c2874bb883965eb2405a3a89e1c2f6a5e8279920c"
+  },
+  "latest_loaded_cable_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_corner_loaded1/summary.json",
+    "SHA256": "f4cbb50bd50871b7aafd9c7ad103f69cf50795853739f097b455d75edaa79ae7"
+  }
 }

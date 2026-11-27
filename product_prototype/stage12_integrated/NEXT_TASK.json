@@ -4,20 +4,20 @@
   "revision": "primaryP1_open9",
   "adopted_reference": "revAA_heel_relief2 unchanged",
   "next": {
-    "id": "goal_primary_terminal_feature_contact",
-    "track": "B",
-    "priority": -1001,
+    "id": "goal_primary_root_ground_load_path",
+    "track": "C",
+    "priority": -1002,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
     "selection_policy": "goal_product_continuation",
-    "hypothesis": "Same P1 actual finite Terminal seam/corner normal-cone contact: fix the remaining1N post-Newton material feature gap/Boolean conflict while retaining77mm Rail and86.2mm free sliding PET, then recover admissible reactions before demand inversion.",
+    "hypothesis": "Same P1 actual Root/RF -> OPEN_FRAME plus motor cradle -> fourM5 -> finite GROUND_PLATE: implement paired demand port forces AND couples,realistic bearing/clamp/thread contact connector physics and finite support. Reuse actual STEP/FEM kernels. Compare required resultants and finite reaction distributions,then1%response/nominal-stress refinement before strength; retain old unit+Z frame mesh FAIL. Do not substitute arbitrary fixed DOFs,point moments or source-minimum claims.",
     "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
     "system_gate_ids": [
-      "tendon_force_stroke",
+      "root_palm_strength",
+      "motor_alignment_reactions",
+      "continuous_load_path",
       "finger_structure",
-      "terminal_retention",
-      "numerical_convergence",
-      "static_dynamic_consistency"
+      "numerical_convergence"
     ],
     "prerequisites": [],
     "parent_candidate": {
@@ -32,7 +32,7 @@
     "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
     "last_run_utc": null,
     "consecutive_runs": 0,
-    "system_gate_contribution": 6,
+    "system_gate_contribution": 5,
     "historical_parent_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
       "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
@@ -45,20 +45,24 @@
     "target_parts": 69,
     "primary_state": {
       "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-      "SHA256": "4009e5b9595c015aad89b1e514aae71e42760c6bda0852ce9ca1a33b4e04efd4"
+      "SHA256": "00631d038d3e6c79be36566efd80b40e4538531d20b1b1a84efbe714fce7dd96"
     },
-    "concrete_first_step": "Load32element1N state from validation/finger/primaryP1_operating4/cases.json with its frozen material coordinates. Independently locate the remaining actual Terminal/sector intersection and signed feature gap AFTER Newton. Represent the lip seam/corner admissible face-normal cone without deleting physical constraints; require original1e-8N/1nm/1e-8mm3 checks before solving payload demand. Preserve8mesh5.137nm and2N/4.5N failures.",
+    "concrete_first_step": "Read32element demand state and primaryP1_corner_demand_loads1 row: Root forceXZ[.2570793945,1.0018772657]N,MY=-.00136985722Nm; motor forceXZ[.1515310222,-1.0018772657]N,MY=.01139930756Nm. Independently map actual RF/cradle/M5 bearing and engagement surfaces from69part STEP; formulate paired load transfer through finite Ground and justify contact/thread support before reusing frame tetra mesh. Keep demand/source assumptions explicit; preserve former unit+Z mesh FAIL.",
     "known_blockers": [
-      "1N32actual Terminal overlap1.2524165234e-5mm3 still FAILS1e-8 despite material gap within1nm; do not promote producer conditional label",
-      "Only0.5N reduced state supported at all meshes,normal .1562615N below conditional100g/3/mu.8 .4086104N",
-      "2N16branch failure and existing frame mesh/current/material/protection/full3Finger/global-energy barriers remain"
+      "Rail nominal stress8->32 1.30247% FAILS1%,no minimum allowables/notch/fatigue",
+      "Frame legacy unit+Z4/2/1.5mm response convergence FAIL,not actual paired demand",
+      "Actual clamp/bolt/thread/preload/motor internal bearing source minima and physical protector absent",
+      "Fixed-stop/mu.8 reduced result is not actual3Finger100mm free grasp or whole-system energy"
     ],
     "parent_result": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/summary.json",
-      "SHA256": "d4218b0528175772a5af2b3e18a653a0c940f53c3bb3a74b5f72982802864c84"
-    }
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
+      "SHA256": "8eb2e55d9aebadcee240e66116a79f0d0b8ae2a13a9b359610e626faeef66cb0"
+    },
+    "result": null,
+    "reason": null,
+    "next": null
   },
   "running_task_records": [],
-  "warning": "READY follow-up is not execution or release; continue ONE P1 actual model",
-  "resume_command": "Continue SAME P1 from PRIMARY_PRODUCT.json and1N stored state; exact finite Terminal normal-cone/post-Newton/BRep checks first, no motor upsizing or AO assembly scans."
+  "warning": "Reduced finite-corner validation is not system release; continue ONE actual P1",
+  "resume_command": "Continue SAME P1 Root/Motor/Frame/Ground load-transfer model from actual conditional demand wrenches and STEP surfaces. No AO scan,coupon substitution,physical criterion change or Stage3."
 }

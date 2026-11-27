@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_terminal_continuation.py", line 12, in <module>
+    assert not(ROOT/'runtime/STOP').exists();r=m.solve(n,T,.020,np.array(seed['state']));rows.append(r);dump(out/'cases.json',rows);seed=r
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v6.py", line 122, in solve
+    lam=np.zeros(len(g));weights=1/np.r_[np.full(n,L),np.full(n,ES*L),np.full(n,LP),np.full(n,ES*LP)];lam[active]=nnls((J[active]*weights).T,grad*weights,maxiter=10000)[0] if len(active) else []
+IndexError: index 700 is out of bounds for axis 0 with size 645

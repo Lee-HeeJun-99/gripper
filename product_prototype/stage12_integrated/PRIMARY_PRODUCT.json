@@ -318,8 +318,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state1.json",
-    "SHA256": "af7e44c6a23998bd0f9de7727d117cdd25fe53df23f1c2fb1707a2ca48befbef"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state2.json",
+    "SHA256": "35497e7526e51ab3332a706c0b79fb26029c893a6d2efad3cc92fdbb79913753"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -348,10 +348,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_module",
-  "next_task_id": "goal_primary_operating_window",
+  "selected_task_id": "goal_primary_operating_window",
+  "next_task_id": "goal_primary_terminal_feature_contact",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
-  "load_BC": "Prescribed0..60degree kinematics with conditional100g shared3Finger mu scenarios, not actual equilibrium. Separate frame unit+Z RF nut subset load with rigid/stuck fourM5 patch upper-bound supports; full joint compliance and motor counterpart unsolved.",
+  "load_BC": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -383,5 +383,27 @@
   ],
   "hardware_status": "HARDWARE_NOT_MEASURED",
   "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED",
-  "whole_system_release": false
+  "whole_system_release": false,
+  "historical_prescribed_load_BC": "Prescribed0..60degree kinematics with conditional100g shared3Finger mu scenarios, not actual equilibrium. Separate frame unit+Z RF nut subset load with rigid/stuck fourM5 patch upper-bound supports; full joint compliance and motor counterpart unsolved.",
+  "finite_operating_continuation": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/summary.json",
+    "SHA256": "d4218b0528175772a5af2b3e18a653a0c940f53c3bb3a74b5f72982802864c84"
+  },
+  "finite_boundary_ports": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_ports1/summary.json",
+    "SHA256": "308ee7c6b8adf7543a77a3f7ae921aaa7643ac622076a694d93dc383e6b3a61e"
+  },
+  "finite_state_verification": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating_verify4/summary.json",
+    "SHA256": "080881cb0dd777657ac82878a777530554a76dfc79e65b3d5cb102f3a4288698"
+  },
+  "finite_loaded_cable_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_loaded_assembly1/summary.json",
+    "SHA256": "61fbbaf7e010ca2f0677873458c286d65ddb3178d25fb5c638922c3473a1494f"
+  },
+  "finite_required_port_loads": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
+    "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
+  },
+  "CAD_this_cycle": "UNCHANGED: same69part P1 actual STEP/BOM/assembly hashes; no CAD repair is justified by unresolved numerical corner contact."
 }

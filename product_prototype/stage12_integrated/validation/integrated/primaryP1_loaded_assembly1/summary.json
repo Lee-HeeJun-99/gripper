@@ -1,0 +1,91 @@
+{
+  "status": "PRIMARY_LOADED_CABLE_ROTOR_POSE_SCREEN_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_loaded_assembly1/producer.py",
+    "SHA256": "9993a199dbe7281a8c0b1c2b4eef60149b714acbbb3bb5d83eef849ca4f38b92"
+  },
+  "source_states": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating4/cases.json",
+    "SHA256": "31932c7c0f82e745573ec49468caeb787ea4b37bd790f4609176e6d53cd06334"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_loaded_assembly1/inputs.json",
+    "SHA256": "0b2c7729b39375abf6ccb1d3364eb4d7b68d8e703171f43ed2d600f31e56f09d"
+  },
+  "checks": {
+    "full_wire_single_valid": true,
+    "constant_actual_cable_volume": true,
+    "single_layer": true,
+    "full_wire_clear": true,
+    "rotor_clear": true
+  },
+  "rows": [
+    {
+      "tendon_N": 0.2,
+      "static_state_status": "CONDITIONAL_EQUILIBRIUM",
+      "rotor_angle_rad": -0.7204173442853568,
+      "wrap_span_rad": 2.1548401370259684,
+      "wire_valid": true,
+      "wire_solids": 1,
+      "wire_volume_mm3": 24.35640947449312,
+      "expected_volume_mm3": 24.35640947449311,
+      "relative_volume_error": 4.440892098500626e-16,
+      "wire_hits": [],
+      "rotor_hits": []
+    },
+    {
+      "tendon_N": 0.5,
+      "static_state_status": "CONDITIONAL_EQUILIBRIUM",
+      "rotor_angle_rad": -0.7518345621721323,
+      "wrap_span_rad": 2.182186085474255,
+      "wire_valid": true,
+      "wire_solids": 1,
+      "wire_volume_mm3": 24.356409474493113,
+      "expected_volume_mm3": 24.35640947449311,
+      "relative_volume_error": 2.220446049250313e-16,
+      "wire_hits": [],
+      "rotor_hits": []
+    },
+    {
+      "tendon_N": 1.0,
+      "static_state_status": "CONDITIONAL_EQUILIBRIUM",
+      "rotor_angle_rad": -0.8330222324947159,
+      "wrap_span_rad": 2.25429779308816,
+      "wire_valid": true,
+      "wire_solids": 1,
+      "wire_volume_mm3": 24.356409474493113,
+      "expected_volume_mm3": 24.35640947449311,
+      "relative_volume_error": 2.220446049250313e-16,
+      "wire_hits": [],
+      "rotor_hits": []
+    },
+    {
+      "tendon_N": 2.0,
+      "static_state_status": "CONDITIONAL_EQUILIBRIUM",
+      "rotor_angle_rad": -1.8158883419493792,
+      "wrap_span_rad": 3.1585282197853592,
+      "wire_valid": true,
+      "wire_solids": 1,
+      "wire_volume_mm3": 24.356409474493105,
+      "expected_volume_mm3": 24.35640947449311,
+      "relative_volume_error": 1.1102230246251565e-16,
+      "wire_hits": [],
+      "rotor_hits": []
+    }
+  ],
+  "exact_comparisons": 104,
+  "wire_hits": [],
+  "rotor_hits": [],
+  "split_actual_motor": "Only output-shaft solid region at y>=-8.8 rotates with rotor; housing/pilot stationary. No artificial torque capacity or bearing reaction supplied.",
+  "limitations": [
+    "Four actual saved32element finite-state hardware poses; failed static states remain failed, no continuous CCD or acceptance by pose clearance",
+    "Actual loaded flexible Rail/PET swept geometry remains unqualified",
+    "Factory-end pullout, pocket/cap strength, full cable threading and real supplier terminal assembly remain unqualified",
+    "No physical protection, strength, friction, global energy or release"
+  ],
+  "whole_system_release": false
+}

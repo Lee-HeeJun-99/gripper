@@ -1,0 +1,464 @@
+{
+  "status": "ACTUAL_P1_CONDITIONAL_PORT_WRENCH_AND_STABILITY_RESULTS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating4/summary.json",
+    "SHA256": "328d43b348a110b167ed5e68cb9817c6ec2705b006ee9a4dbed76969cd219eef"
+  },
+  "cases": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating4/cases.json",
+    "SHA256": "31932c7c0f82e745573ec49468caeb787ea4b37bd790f4609176e6d53cd06334"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/producer.py",
+    "SHA256": "80271076587936c7aac3cf45a82984341b38a724f2d91534845b9a9a6ca8792f"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v5.py",
+      "SHA256": "a1d78ebe62d78650dd03dcb5747595123502d48573e27a94ddab6626f00df1a2"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_finger_tangent_v5.py",
+      "SHA256": "c3a25682e947af9d7b53830aa25bcf2009b20dbfcb341fc56494da99625ca372"
+    }
+  ],
+  "rows": [
+    {
+      "n": 8,
+      "T_N": 0.2,
+      "object_normal_N": 0.016955610642514562,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        -0.010242179515340902,
+        0.19814207077379925
+      ],
+      "frame_root_couple_about_Y_Nm": 0.005473758071890742,
+      "motor_cradle_force_XZ_N": [
+        0.027197790157855464,
+        -0.19814207077379925
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.00225,
+      "frame_total_external_force_XZ_N": [
+        0.016955610642514562,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.0016469512353442448,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 8.673617379884035e-19,
+      "full_constraint_positive_multiplier_rows": 2,
+      "critical_subspace_dimension": 30,
+      "lagrangian_Hessian_relative_skew": 5.351399645260255e-13,
+      "restricted_min_eigenvalue_J": 1.5212170411599575e-06,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0005592282907957456,
+      "PET_peak_nominal_elastic_face_strain": 0.0009217889608567833,
+      "rail_typical_E_times_face_strain_MPa": 107.9310601235789,
+      "PET_typical_E_times_face_strain_MPa": 3.2222441584389325,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 8,
+      "T_N": 0.5,
+      "object_normal_N": 0.1561263465161919,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.08614873611810829,
+        0.49507891698493284
+      ],
+      "frame_root_couple_about_Y_Nm": 0.0034055474475138073,
+      "motor_cradle_force_XZ_N": [
+        0.0699776103980836,
+        -0.49507891698493284
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.005624999999999999,
+      "frame_total_external_force_XZ_N": [
+        0.1561263465161919,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.015124918913391894,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 0.0,
+      "full_constraint_positive_multiplier_rows": 2,
+      "critical_subspace_dimension": 30,
+      "lagrangian_Hessian_relative_skew": 1.0440310608435417e-12,
+      "restricted_min_eigenvalue_J": 1.5212170196449613e-06,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0005825783879590887,
+      "PET_peak_nominal_elastic_face_strain": 0.0009120419090143456,
+      "rail_typical_E_times_face_strain_MPa": 112.43762887610413,
+      "PET_typical_E_times_face_strain_MPa": 3.1881719551527232,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 8,
+      "T_N": 1.0,
+      "object_normal_N": 0.4006924300352206,
+      "stored_status": "FAIL",
+      "frame_root_force_XZ_N": [
+        0.2517977638728618,
+        0.9888530620817229
+      ],
+      "frame_root_couple_about_Y_Nm": -0.0011337196711644348,
+      "motor_cradle_force_XZ_N": [
+        0.14889466616235877,
+        -0.9888530620817229
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.01125,
+      "frame_total_external_force_XZ_N": [
+        0.4006924300352206,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.03850660502394612,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 0.0,
+      "full_constraint_positive_multiplier_rows": 4,
+      "critical_subspace_dimension": 28,
+      "lagrangian_Hessian_relative_skew": 4.5772454328574305e-12,
+      "restricted_min_eigenvalue_J": 1.5214696309902583e-06,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0009436669201452755,
+      "PET_peak_nominal_elastic_face_strain": 0.0007379643876952178,
+      "rail_typical_E_times_face_strain_MPa": 182.12771558803817,
+      "PET_typical_E_times_face_strain_MPa": 2.579659269489049,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 8,
+      "T_N": 2.0,
+      "object_normal_N": 1.130807411145737,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.679046796707776,
+        1.9483101260432427
+      ],
+      "frame_root_couple_about_Y_Nm": -0.023298534215171765,
+      "motor_cradle_force_XZ_N": [
+        0.45176061443796095,
+        -1.9483101260432427
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.0225,
+      "frame_total_external_force_XZ_N": [
+        1.130807411145737,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.09471147985594641,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 0.0,
+      "full_constraint_positive_multiplier_rows": 3,
+      "critical_subspace_dimension": 29,
+      "lagrangian_Hessian_relative_skew": 6.414315471899919e-12,
+      "restricted_min_eigenvalue_J": 1.5212198585113495e-06,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.003694379319159542,
+      "PET_peak_nominal_elastic_face_strain": 0.0015368726268272892,
+      "rail_typical_E_times_face_strain_MPa": 713.0152085977916,
+      "PET_typical_E_times_face_strain_MPa": 5.37235642251127,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 16,
+      "T_N": 0.2,
+      "object_normal_N": 0.01704307934303449,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        -0.010148669770494171,
+        0.19814289989839887
+      ],
+      "frame_root_couple_about_Y_Nm": 0.00546607085237836,
+      "motor_cradle_force_XZ_N": [
+        0.02719174911352866,
+        -0.19814289989839887
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.0022500000000000003,
+      "frame_total_external_force_XZ_N": [
+        0.01704307934303449,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.0016554556318369093,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 1.5178830414797062e-18,
+      "full_constraint_positive_multiplier_rows": 2,
+      "critical_subspace_dimension": 62,
+      "lagrangian_Hessian_relative_skew": 1.848469314948056e-13,
+      "restricted_min_eigenvalue_J": 7.423454484639874e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0005593454566400229,
+      "PET_peak_nominal_elastic_face_strain": 0.0009362068638401251,
+      "rail_typical_E_times_face_strain_MPa": 107.95367313152443,
+      "PET_typical_E_times_face_strain_MPa": 3.272643984904451,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 16,
+      "T_N": 0.5,
+      "object_normal_N": 0.15623420322153644,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.0862452968871737,
+        0.4950773202138428
+      ],
+      "frame_root_couple_about_Y_Nm": 0.0033962975399552398,
+      "motor_cradle_force_XZ_N": [
+        0.06998890633436275,
+        -0.4950773202138428
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.0056250000000000015,
+      "frame_total_external_force_XZ_N": [
+        0.15623420322153644,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.015134538350345398,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 1.734723475976807e-18,
+      "full_constraint_positive_multiplier_rows": 2,
+      "critical_subspace_dimension": 62,
+      "lagrangian_Hessian_relative_skew": 3.9695968547781647e-13,
+      "restricted_min_eigenvalue_J": 7.423454429782367e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0005851101281077212,
+      "PET_peak_nominal_elastic_face_strain": 0.0009260206347793271,
+      "rail_typical_E_times_face_strain_MPa": 112.92625472479018,
+      "PET_typical_E_times_face_strain_MPa": 3.237036575311295,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 16,
+      "T_N": 1.0,
+      "object_normal_N": 0.40164812763477326,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.2524732542115428,
+        0.9888108298047524
+      ],
+      "frame_root_couple_about_Y_Nm": -0.0012120904652013556,
+      "motor_cradle_force_XZ_N": [
+        0.14917487342323044,
+        -0.9888108298047524
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.01125,
+      "frame_total_external_force_XZ_N": [
+        0.40164812763477326,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.03858197159837706,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 6.938893903907228e-18,
+      "full_constraint_positive_multiplier_rows": 3,
+      "critical_subspace_dimension": 61,
+      "lagrangian_Hessian_relative_skew": 7.917280639892906e-13,
+      "restricted_min_eigenvalue_J": 7.423449309218596e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0009577227230905079,
+      "PET_peak_nominal_elastic_face_strain": 0.0007317495477197235,
+      "rail_typical_E_times_face_strain_MPa": 184.840485556468,
+      "PET_typical_E_times_face_strain_MPa": 2.557934414172865,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 16,
+      "T_N": 2.0,
+      "object_normal_N": 0.0,
+      "stored_status": "FAIL",
+      "frame_root_force_XZ_N": [
+        -0.4628294829471778,
+        1.9457103766272226
+      ],
+      "frame_root_couple_about_Y_Nm": 0.06306740694243822,
+      "motor_cradle_force_XZ_N": [
+        0.4628294829471778,
+        -1.9457103766272226
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.022499999999999996,
+      "frame_total_external_force_XZ_N": [
+        0.0,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -3.469446951953614e-18,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 3.469446951953614e-18,
+      "full_constraint_positive_multiplier_rows": 10,
+      "critical_subspace_dimension": 54,
+      "lagrangian_Hessian_relative_skew": 1.432265860936538e-10,
+      "restricted_min_eigenvalue_J": 7.423335451963337e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0457356676271547,
+      "PET_peak_nominal_elastic_face_strain": 0.051275697170246146,
+      "rail_typical_E_times_face_strain_MPa": 8826.983852040858,
+      "PET_typical_E_times_face_strain_MPa": 179.24147792260197,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 32,
+      "T_N": 0.2,
+      "object_normal_N": 0.01706494444534354,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        -0.010125299623356877,
+        0.1981431064344266
+      ],
+      "frame_root_couple_about_Y_Nm": 0.005464149122968671,
+      "motor_cradle_force_XZ_N": [
+        0.027190244068700416,
+        -0.1981431064344266
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.0022500000000000003,
+      "frame_total_external_force_XZ_N": [
+        0.01706494444534354,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.0016575814625889229,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 4.336808689942018e-19,
+      "full_constraint_positive_multiplier_rows": 2,
+      "critical_subspace_dimension": 126,
+      "lagrangian_Hessian_relative_skew": 8.556440035042202e-14,
+      "restricted_min_eigenvalue_J": 3.6660695667897864e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.000559183402099924,
+      "PET_peak_nominal_elastic_face_strain": 0.0009435856275754218,
+      "rail_typical_E_times_face_strain_MPa": 107.92239660528533,
+      "PET_typical_E_times_face_strain_MPa": 3.2984375009392504,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 32,
+      "T_N": 0.5,
+      "object_normal_N": 0.1562614853844619,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.08626970920490384,
+        0.49507691449635444
+      ],
+      "frame_root_couple_about_Y_Nm": 0.0033939586613020087,
+      "motor_cradle_force_XZ_N": [
+        0.06999177617955807,
+        -0.49507691449635444
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.005625,
+      "frame_total_external_force_XZ_N": [
+        0.1562614853844619,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.015136970270157422,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 1.734723475976807e-18,
+      "full_constraint_positive_multiplier_rows": 2,
+      "critical_subspace_dimension": 126,
+      "lagrangian_Hessian_relative_skew": 1.6670148221864524e-13,
+      "restricted_min_eigenvalue_J": 3.666069553028489e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0005854331046396313,
+      "PET_peak_nominal_elastic_face_strain": 0.000933186808126373,
+      "rail_typical_E_times_face_strain_MPa": 112.98858919544882,
+      "PET_typical_E_times_face_strain_MPa": 3.2620869514672606,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 32,
+      "T_N": 1.0,
+      "object_normal_N": 0.4005953854352594,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.25163112262345244,
+        0.988842580194105
+      ],
+      "frame_root_couple_about_Y_Nm": -0.00112029411840385,
+      "motor_cradle_force_XZ_N": [
+        0.148964262811807,
+        -0.988842580194105
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.01125,
+      "frame_total_external_force_XZ_N": [
+        0.4005953854352594,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.03849009276231477,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 6.938893903907228e-18,
+      "full_constraint_positive_multiplier_rows": 4,
+      "critical_subspace_dimension": 124,
+      "lagrangian_Hessian_relative_skew": 3.5952221729830144e-13,
+      "restricted_min_eigenvalue_J": 3.6660690433490933e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.0009461280865775098,
+      "PET_peak_nominal_elastic_face_strain": 0.0007647223507358715,
+      "rail_typical_E_times_face_strain_MPa": 182.6027207094594,
+      "PET_typical_E_times_face_strain_MPa": 2.6731955275272563,
+      "allowable": null,
+      "capacity_qualified": false
+    },
+    {
+      "n": 32,
+      "T_N": 2.0,
+      "object_normal_N": 1.1336189199191464,
+      "stored_status": "CONDITIONAL_EQUILIBRIUM",
+      "frame_root_force_XZ_N": [
+        0.6812546530301129,
+        1.9481700567563263
+      ],
+      "frame_root_couple_about_Y_Nm": -0.023292675034306043,
+      "motor_cradle_force_XZ_N": [
+        0.4523642668890335,
+        -1.9481700567563263
+      ],
+      "motor_cradle_couple_about_Y_Nm": 0.0225,
+      "frame_total_external_force_XZ_N": [
+        1.1336189199191464,
+        0.0
+      ],
+      "frame_total_external_couple_about_Y_Nm": -0.094701943128255,
+      "required_external_Ground_wrench": "Negative of reported frame total; NOT measured/distributed support reaction",
+      "force_loop_error_N": 0.0,
+      "moment_loop_error_Nm": 1.3877787807814457e-17,
+      "full_constraint_positive_multiplier_rows": 3,
+      "critical_subspace_dimension": 125,
+      "lagrangian_Hessian_relative_skew": 1.1126055873352375e-12,
+      "restricted_min_eigenvalue_J": 3.666070040606249e-07,
+      "restricted_negative_curvature": false,
+      "rail_peak_nominal_elastic_face_strain": 0.003706733748485278,
+      "PET_peak_nominal_elastic_face_strain": 0.0014557286880952673,
+      "rail_typical_E_times_face_strain_MPa": 715.3996134576587,
+      "PET_typical_E_times_face_strain_MPa": 5.088706266483195,
+      "allowable": null,
+      "capacity_qualified": false
+    }
+  ],
+  "max_force_loop_error_N": 0.0,
+  "max_moment_loop_error_Nm": 1.3877787807814457e-17,
+  "negative_restricted_curvature_rows": 0,
+  "scope": "Conditional solved/rejected P1 finite-strip states; true terminal/cable offsets and separate PET. Wrench accounting and local critical-subspace screen only.",
+  "limitations": [
+    "Root and motor port wrenches are externally demanded resultants from stated equilibrium, NOT resolved bolt/clamp/bearing reactions",
+    "Restricted nonnegative Hessian is not full unilateral cone/global stability or dynamic consistency proof",
+    "Material/section/torsion/contact assumptions and failed rows remain; no allowable or safety claim",
+    "External Ground fixture not measured; frame mesh FAIL retained",
+    "No friction/time/global-energy/threeFinger100mm grasp qualification"
+  ],
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": []
+}

@@ -1,0 +1,155 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "inputs": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium.py",
+      "SHA256": "5fe591cdef454dbb16be7f909bc7cc0d32ec948a36a5c2905a2721bbf1006614"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/rod_point_jacobian.py",
+      "SHA256": "83b81236cac1bc55daedf047e7ab85ab91f0c23c6c652f10a5f24f48244777ac"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+      "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/models/materials/primary_material_contract1.json",
+      "SHA256": "7adc7b1271033477b0c6e4b6a812c122271fc36ce6721888f42886459d5dcdd3"
+    }
+  ],
+  "inventory": [
+    {
+      "part": "F0_SKIN",
+      "source": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_SKIN.step",
+        "SHA256": "7df0c82035daa7ba5a8130b05ce3dd2fcb582c4b10c01eacccf28a308448d39e"
+      },
+      "bounds_mm": [
+        50.0,
+        -12.0,
+        -93.20000000000014,
+        50.3,
+        12.0,
+        10.0
+      ],
+      "volume_mm3": 584.6095164596143
+    },
+    {
+      "part": "F0_RAIL_L",
+      "source": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_L.step",
+        "SHA256": "3cb1e86454718006124f5bd4c165012630d34ff67f1bc3e24bf51beb0f7ae70d"
+      },
+      "bounds_mm": [
+        50.3,
+        -13.0,
+        -100.0000000000002,
+        50.5,
+        -2.5,
+        10.0
+      ],
+      "volume_mm3": 74.34783054407349
+    },
+    {
+      "part": "F0_RAIL_R",
+      "source": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/F0_RAIL_R.step",
+        "SHA256": "54c0b3a3f7746005d086cc2673a1ae0bd9b2c6a3b4a968befc13bf67d761ad83"
+      },
+      "bounds_mm": [
+        50.3,
+        2.5,
+        -100.0000000000002,
+        50.5,
+        13.0,
+        10.0
+      ],
+      "volume_mm3": 74.34783054404069
+    },
+    {
+      "part": "F0_TERMINAL_FRONT",
+      "source": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/F0_TERMINAL_FRONT.step",
+        "SHA256": "264e8b302c49bff8afa273acb2147e74e732004433009043f8a935c687eaf85e"
+      },
+      "bounds_mm": [
+        40.0,
+        -13.5,
+        -100.00000000000001,
+        50.3,
+        13.5,
+        -84.0
+      ],
+      "volume_mm3": 656.8224381730978
+    },
+    {
+      "part": "F0_TERMINAL_BACK",
+      "source": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_TERMINAL_BACK.step",
+        "SHA256": "6fafeee947ac578c960bef0a7efd6ac4aa06dd3eaa4afc06c8c6a75cec7fc2f6"
+      },
+      "bounds_mm": [
+        49.0,
+        -13.5,
+        -101.0,
+        54.0,
+        13.5,
+        -84.0
+      ],
+      "volume_mm3": 909.096299419334
+    },
+    {
+      "part": "F0_ROOT_BACK",
+      "source": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/F0_ROOT_BACK.step",
+        "SHA256": "b38d1fdfc20b0f04f353d086b17771450546f0badcd251213b9147b71cd057af"
+      },
+      "bounds_mm": [
+        48.5,
+        -20.0,
+        -7.0,
+        68.0,
+        20.0,
+        10.0
+      ],
+      "volume_mm3": 4359.450386508507
+    },
+    {
+      "part": "F0_SWIVEL_AXLE",
+      "source": {
+        "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_SWIVEL_AXLE.step",
+        "SHA256": "344aac03b56568cc1b8417dffc6553eb58541931292545b9dcec47b8fe71c44a"
+      },
+      "bounds_mm": [
+        41.1,
+        -7.5,
+        -93.9,
+        44.9,
+        8.5,
+        -90.1
+      ],
+      "volume_mm3": 64.08870216764892
+    }
+  ],
+  "criteria": {
+    "force_equivalent_N_max": 1e-08,
+    "gap_m_min": -1e-09,
+    "mesh_relative_max": 0.01
+  },
+  "assumptions": [
+    "P1 actual rest datum and cable circle/terminal port; two .2x3mm Rail free spans and original tapered PET",
+    "Root clamped, Rail terminal rigid capture, PET free axial tip, frictionless sampled unilateral surfaces",
+    "Separate finite circular-arc rotations and engineering strain; conditional typical moduli",
+    "No closest-point surface guarantee: dense witness rejection required; no contact/friction/mesh/strength release"
+  ],
+  "object": "Optional unilateral fixed spatial X stop at actual terminal bottom; no100g weight mislabeled tendon force",
+  "terminal_funnel": "Historical wall model with candidate geometry checked below; applicability requires independent actual BRep audit"
+}

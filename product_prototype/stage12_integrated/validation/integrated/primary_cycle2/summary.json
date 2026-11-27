@@ -1,0 +1,693 @@
+{
+  "status": "ACTUAL_PRIMARY_FINITE_LOAD_PARTIAL_VALIDATION_RELEASE_BLOCKED",
+  "task_id": "goal_primary_operating_window",
+  "starting_HEAD": "cfcf3fd71a91585b230a9e72d6e1aaef1c34889c",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "parts": 69,
+  "actual_changed_CAD_files": [],
+  "CAD_disposition": "Same coherent P1 actual69part specimen, all part/assembly/BOM hashes preserved; this cycle changes finite boundary/contact/load implementation and validates actual product, not new geometry.",
+  "boundary_ports": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_ports1/summary.json",
+    "SHA256": "308ee7c6b8adf7543a77a3f7ae921aaa7643ac622076a694d93dc383e6b3a61e"
+  },
+  "finite_cases": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating4/cases.json",
+    "SHA256": "31932c7c0f82e745573ec49468caeb787ea4b37bd790f4609176e6d53cd06334"
+  },
+  "finite_result": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating4/summary.json",
+    "SHA256": "328d43b348a110b167ed5e68cb9817c6ec2705b006ee9a4dbed76969cd219eef"
+  },
+  "independent_verification": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_operating_verify4/summary.json",
+    "SHA256": "080881cb0dd777657ac82878a777530554a76dfc79e65b3d5cb102f3a4288698"
+  },
+  "loaded_actual_wire_rotor_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_loaded_assembly1/summary.json",
+    "SHA256": "61fbbaf7e010ca2f0677873458c286d65ddb3178d25fb5c638922c3473a1494f"
+  },
+  "actual_port_wrenches": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
+    "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
+  },
+  "failure_index": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/failure_index.json",
+    "SHA256": "f8aac085db366139680be295861aeb150423241cf35a89f7ec255448129e4851"
+  },
+  "source_resolution": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/source_resolution.json",
+    "SHA256": "25d311f476b7ead5cfaa7fbf1f6c938c3bd971180e6e242783054b403ac67506"
+  },
+  "executions": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v2.py",
+        "primaryP1_capture1",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 80.0574314352125,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/capture1_execution.json",
+        "SHA256": "116b2731c4f121bc56c0f257a70f4dde0e49a44b9963f8794e9b9838122f1f95"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/capture1.log",
+        "SHA256": "ba4adf90e8c696a9f61a56d0d9ac9e09d1f1eecbfe5bb214c3249970f0e0fe8a"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium.py",
+        "primaryP1_equilibrium1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.314926111837849,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium1_execution.json",
+        "SHA256": "987400eb84f4550582958a6721464fe9d17240575b8071b5902e95d52e58ccb4"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium1.log",
+        "SHA256": "0a32f8df8c7ea9242f73959ac2a7951d70f9efe10f2bd99e8acd7195afd1d94a"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium.py",
+        "primaryP1_equilibrium2"
+      ],
+      "exit_code": -9,
+      "timeout": true,
+      "elapsed_s": 420.0124526049476,
+      "PID": 6,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium2_execution.json",
+        "SHA256": "2aca7729d3f84c0e774edf1977379a9e195abb0a4f639597c737f16447120e4a"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium2.log",
+        "SHA256": "11fddb383249e912509dca06bd9ceafda715a6e11fac91702741f4647532c6b1"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium.py",
+        "primaryP1_equilibrium3",
+        "8",
+        "16"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.574578230967745,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium3_execution.json",
+        "SHA256": "59270efaa739b9764c66fceabe6419b581a473fa0f82d15b702c092aa0c006c0"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium3.log",
+        "SHA256": "3831fd82f7b11b612f60d1e113b3adefbe3b8c37470c7c3df744bf92cee28ea0"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium.py",
+        "primaryP1_equilibrium4",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 39.58296668692492,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium4_execution.json",
+        "SHA256": "d73421cae68107dd38618941e46481631ea4592bd7dc2dc78932ea0c16db02da"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium4.log",
+        "SHA256": "83c06f35d1a0d96cd67db7716d9294ecd5f0c625403314c6060fd57ef663e116"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium.py",
+        "primaryP1_equilibrium5",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 35.21100836689584,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium5_execution.json",
+        "SHA256": "2aad3201c3533df81d68de95b91c057fd2ae58a6c9a9a5d0da3610993944254f"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/equilibrium5.log",
+        "SHA256": "fcc2ecb2ad500d70c4c3049335ec1c56db4578653c5f84befb7f9c1e64166068"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_loaded_assembly.py",
+        "--candidate",
+        "primaryP1_open9",
+        "--states",
+        "primaryP1_operating4",
+        "--tag",
+        "primaryP1_loaded_assembly1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 16.49164254590869,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/loaded_assembly1_execution.json",
+        "SHA256": "2fc981e498969850374db307bb70503faa63a7555dda9565a223591dd8e43e1c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/loaded_assembly1.log",
+        "SHA256": "e112c927d7b695420695e98d01e23a09f30b02ed2c0987b7f16fa4324b7c03cb"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v2.py",
+        "primaryP1_operating1",
+        "operating",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 120.4158612540923,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating1_execution.json",
+        "SHA256": "f0d2f61e1ce76d523aad43a70f666a008fcca7e61da41e8292eea0a74c96bcc7"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating1.log",
+        "SHA256": "5a9d5309e17ad9af270195838cbbd85376acaff126f5203f1dfaf9a3bfbc6167"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v3.py",
+        "primaryP1_operating2",
+        "operating",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 214.0404177128803,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating2_execution.json",
+        "SHA256": "4af69be5ffc7d7d2d6868aa41c06aaf46a005dbf1bc6dcbcd401255909874c5f"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating2.log",
+        "SHA256": "0af9f752a1bce6a627d90004921d7e3be4b2c0ca6c51fdd48b18816b1a498d97"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v4.py",
+        "primaryP1_operating3",
+        "operating",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 106.74816601304337,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating3_execution.json",
+        "SHA256": "ec5afbef22d2e12bb124fbe1e1c863f7c5d80d2ce552c47e8c5d90c94f90a376"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating3.log",
+        "SHA256": "32bb0c8de6ae40dd337529b327c2e381c6506c5a9e0ca6ce66cc1e8262e18252"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_finger_equilibrium_v5.py",
+        "primaryP1_operating4",
+        "operating",
+        "8",
+        "16",
+        "32"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 126.33865652722307,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating4_execution.json",
+        "SHA256": "029d41ea127d7ccd1869a4324a93a4db1d4ce2b830f3b70f56f7bf17be525b50"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/operating4.log",
+        "SHA256": "fb9986544c6f8c19955930440945aeaa1a25344b98f6efcaa576ee99dd05f92a"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/tmp/p1_overlap_witness.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.2168475817888975,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/overlap1_execution.json",
+        "SHA256": "7872d4a4aa8672372f00664576f845649d623306cb30a1c6138983010f58f9fa"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/overlap1.log",
+        "SHA256": "790b923613065f1c18c5e747c8a0a0248d9068f88cf187bb867f641a06cb3d92"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_port_loads.py",
+        "primaryP1_operating2",
+        "primaryP1_portloads1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 15.69131753896363,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/portloads1_execution.json",
+        "SHA256": "ea0e8ebd66aec1c23012a169dfb97246743a37915b154a8171427c61eb53a404"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/portloads1.log",
+        "SHA256": "0beb5b1de130ff5ca64d496007d1b494a81340043f12d33309ac757690135ce1"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_port_loads_v4.py",
+        "primaryP1_operating3",
+        "primaryP1_portloads2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 13.93550981185399,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/portloads2_execution.json",
+        "SHA256": "929fd94579ac452ec84b9e3226498ea644d3faea80d2d7c599d4fc4e498a38a3"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/portloads2.log",
+        "SHA256": "aa4fbb5abb246a7ccf2063b42c8b19e934ddbca0205b2bdd7263bdf0cc57c1ea"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_port_loads_v5.py",
+        "primaryP1_operating4",
+        "primaryP1_portloads3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 13.988311201101169,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/portloads3_execution.json",
+        "SHA256": "3859f33e4ed4eb8bd4d5111855eece8b98a9f5b92e3f19a9f4c66339ad9efcc5"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/portloads3.log",
+        "SHA256": "3ebcd045748b4396d88f3b91424b162b1c609fa614ead5bfc0078d807b75d12e"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_boundary_ports.py",
+        "primaryP1_ports1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.0164551478810608,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/ports1_execution.json",
+        "SHA256": "ea124a9037fcdb1b76bdcd20d7e0104780a648166c02515f430f65a58ef1d03c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/ports1.log",
+        "SHA256": "d78d719a4e37e329e08339cdbac6f04140ad5fc323eb45b931c36d7daa1102c1"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/tmp/p1_release_readonly.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.36491040396504104,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/release2_execution.json",
+        "SHA256": "c93371eb6d8cbe81d25e9c845ca073939c8360ef3cf03593bb1f23b51599bc6d"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/release2.log",
+        "SHA256": "cdaff7a199186c09301f64727e714c9c68dfcd24d22395759fa3cb1af5747995"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_finger.py",
+        "primaryP1_equilibrium5",
+        "primaryP1_equilibrium_verify1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 9.380367080913857,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify5_execution.json",
+        "SHA256": "eecfd4b2764fe11e5b260dbf362aa6a2211e2efbc15df2d2a54b8af1b1f1cbcc"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify5.log",
+        "SHA256": "756f935fcb10130ab7030db6554ae52a9d59e498f2a873c0f4448d147bf87516"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_finger_v2.py",
+        "primaryP1_operating1",
+        "primaryP1_operating_verify1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 11.33442725497298,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating1_execution.json",
+        "SHA256": "dd8876eac00a53c1052304f435fe2dfbb4ef1fb81bdee3e93090afd808dbc7df"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating1.log",
+        "SHA256": "92ff213a6864034384da965bb6b83e0fe9a1d85d58ba370c1844c8fac808f925"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_finger_v3.py",
+        "primaryP1_operating2",
+        "primaryP1_operating_verify2"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 12.736689722165465,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating2_execution.json",
+        "SHA256": "f62d7bb65f8b2cfe84816e5bc607bc2766a60ec0edebc174f08045c524b6b79c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating2.log",
+        "SHA256": "3cebefb9cd4b873d1a4471e563b1a729f20b584ac9d74dc1e0fb5a5ee7415372"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_finger_v4.py",
+        "primaryP1_operating3",
+        "primaryP1_operating_verify3"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 11.18529298203066,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating3_execution.json",
+        "SHA256": "c6c170dc67c4b9b4b3aaa021cfff9be118aa7be3d707a575e3fe9eb97a32c1c6"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating3.log",
+        "SHA256": "c5e68a41eb590e1c0c247d3d4f84ee98df1455057d603791393603722b6f1a60"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_finger_v5.py",
+        "primaryP1_operating4",
+        "primaryP1_operating_verify4"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 11.685785928973928,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating4_execution.json",
+        "SHA256": "9eabdc93f804b7dc5707bcfa6eb23beaba6ca17e6b8b2a79ddb8c2e043a7677d"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle2/verify_operating4.log",
+        "SHA256": "53f00308ae403ca41db46aa2b704701c761cb82399f6c8cfd03a858a4f8d130a"
+      }
+    }
+  ],
+  "actual_numerical_results": {
+    "rail_free_length_mm": 77,
+    "PET_free_length_mm": 86.2,
+    "meshes": [
+      8,
+      16,
+      32
+    ],
+    "final_tensions_N": [
+      0.2,
+      0.5,
+      1,
+      2
+    ],
+    "final_solved_or_rejected_states": 12,
+    "independent_state_checks_pass": 8,
+    "independent_state_checks_fail": 4,
+    "supported_reduced_static_states": [
+      {
+        "n": 8,
+        "T_N": 0.5,
+        "normal_N": 0.1561263465161919,
+        "free_cable_m": 0.10959507112889343,
+        "rail_tip_angle_rad": 0.3798126861817635,
+        "force_equivalent_N": 1.835679709474783e-14
+      },
+      {
+        "n": 16,
+        "T_N": 0.5,
+        "normal_N": 0.15623420322153644,
+        "free_cable_m": 0.10958946217172817,
+        "rail_tip_angle_rad": 0.3799811341722779,
+        "force_equivalent_N": 1.2450364421132698e-14
+      },
+      {
+        "n": 32,
+        "T_N": 0.5,
+        "normal_N": 0.1562614853844619,
+        "free_cable_m": 0.10958803601831076,
+        "rail_tip_angle_rad": 0.3800239085909777,
+        "force_equivalent_N": 1.938085701001958e-15
+      }
+    ],
+    "final32_normal_N": [
+      0.01706494444534354,
+      0.1562614853844619,
+      0.4005953854352594,
+      1.1336189199191464
+    ],
+    "final32_1N_rejected_overlap_mm3": 1.2524165234086376e-05,
+    "final8_1N_gap_m": -5.137253802911523e-09,
+    "required100g_shared3_mu08_normal_N": 0.4086104166666666,
+    "max_load_loop_force_error_N": 0.0,
+    "max_load_loop_moment_error_Nm": 1.3877787807814457e-17,
+    "actual_cable_rotor_poses": 4,
+    "actual_wire_rotor_comparisons": 104,
+    "actual_cable_pose_checks": {
+      "full_wire_single_valid": true,
+      "constant_actual_cable_volume": true,
+      "single_layer": true,
+      "full_wire_clear": true,
+      "rotor_clear": true
+    }
+  },
+  "interpretation": "Only0.5N cases pass this reduced static/geometry cross-check at all meshes; even these assume rigid Root/Terminal grips, planar symmetric strips, typical moduli, frictionless material-pair contact and fixed X object stop20mm inward. Their32element normal .1562614854N is below conditional100g/3/mu.8 requirement .4086104167N. No payload/capacity/protected limit/100mm free grasp is qualified. Root/motor/Ground values are required external port resultants, not solved connector/fixture reactions. Cable pose clearance never accepts rejected equilibrium states.",
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state2.json",
+    "SHA256": "35497e7526e51ab3332a706c0b79fb26029c893a6d2efad3cc92fdbb79913753"
+  },
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "next_task_id": "goal_primary_terminal_feature_contact",
+  "next_mechanism": "Continue SAME P1: explicit finite Terminal seam/corner face-normal cone and fixed-material witness exchange, followed by post-Newton feature-gap and inscribed/outer actual-BRep checks at1N. Certify1N before object-normal demand roots or motor upsizing. Preserve2N branch/mesh and4.5N failures.",
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "owned_analysis_children_running": 0,
+  "recorded_children_reaped": 22,
+  "recorded_child_seconds": 1267.3240221445449,
+  "timeouts": 1,
+  "limits": {
+    "memory_bytes": 4294967296,
+    "timeout_seconds": 420,
+    "max_concurrent_long_children": 4
+  },
+  "SOFA_runs": 0,
+  "time_convergence_tested": false,
+  "global_energy_qualified": false,
+  "whole_system_release": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED",
+  "save_status": "PENDING_SUPERVISOR_EXACT_LOCAL_SAVE",
+  "git_add_commit_attempted": false
+}

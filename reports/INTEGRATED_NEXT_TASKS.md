@@ -1,3 +1,46 @@
+# Batch6 cycle1 — actual direct Idler removal rejected (2026-11-27)
+
+Started at c3e3d56ff626d7b3a39507f180007bd7f5e6fda0. Exact selected task:
+batch6_standard_idler_or_direct_route. One actual bounded design/analysis cycle.
+No git add/commit; supervisor validation/local save PENDING, no new SHA claimed.
+Result: product_prototype/stage12_integrated/validation/transmission/batch6_route_cycle1/summary.json.
+
+revAW_direct_route2 contains15 actual finite0.5mm cable STEP/STL specimens:
+three sectors at five prescribed0/15/30/45/60deg poses, actual AO Finger and AV
+drum axes, direct tangent and redirected swivel. Proposed removal27 Idler
+instances would remove axle/rivet manufacture/assembly, but is NOT adopted.
+No stock component is newly claimed qualified; no custom process actually removed.
+
+Actual route FAIL(exit2): all15 wires intersect the retained Palm by
+0.700775..1.197828mm3 against unchanged1e-8mm3 criterion;378 exact context pairs.
+At REST the straight line crosses Palm midheight at local x83.1372,z-9.5mm.
+Independent STEP reimport repeats all15 Palm intersections; valid single solids,
+closed oriented positive STL meshes, tangent and constant total wire length
+checks pass. Disjoint translation and corrupt tangent controls pass. Mesh
+numerical key rounds9 decimals in mm (1e-9mm); archived comment1nm is a unit typo,
+not a tolerance change. No deformed flexible geometry/CCD/strength claim.
+
+Independent virtual work FAIL(exit2): REST closing torque per unit tension
+-0.01164224Nm/N; wrong pull direction initially, zero at46.16044deg then sign
+reversal.0to60 signed take-up -4.261803mm. Derivatives match refined independent
+finite differences. These are prescribed-path kinematics, not loaded equilibrium
+or powered Stage3. A Palm cable port alone cannot fix the pull-direction defect.
+
+Initial path-join TypeError(exit1) before geometry preserved in revAW_direct_route1
+with pre-run source hash/copy and log. All physical FAILs remain immutable.
+Five bounded executions completed/reaped: initial1,route2,verify0,release2,work2;
+each4GiB/420s and one thread. No timeout or SOFA run. No live owned analysis child.
+Read-only release audit remains INTEGRATED_NOT_QUALIFIED,22 Stage2 gates missing.
+RevAA adopted and AO current unchanged; AV motor still unaccepted for operation.
+
+Next coverage task: wider Root cartridge, then simpler Palm. Idler fallback:
+standard double-supported shoulder/clevis axle and preload-bypass spacer with
+real installation, free-spin, reaction/rating evidence. Direct AO/AV route is
+rejected; different architecture required before another direct-route trial.
+No full product assembly/BOM, hardware, SDK,criteria,manager or Stage3 changes.
+No RUNNING queue records. All pre-existing untracked CAD/BOM preserved.
+Exact save_request1.json awaits supervisor validation/local save.
+
 # Batch6 cycle0 — standard micro-drive interface; operating selection FAIL (2026-11-27)
 
 Started at67a9094d314e328245491c50f5d0952e61b8cd08. Exact selected task:

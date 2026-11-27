@@ -1052,7 +1052,7 @@
       "id": "batch6_standard_idler_or_direct_route",
       "track": "A",
       "priority": -199,
-      "status": "READY",
+      "status": "FAIL",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1086,8 +1086,11 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:08:40.267918+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/transmission/batch6_route_cycle1/summary.json",
+      "reason": "Actual direct-route removal branch rejected:15/15 Palm intersections and adverse initial tension torque. Standard double-supported Idler alternative remains untested/unqualified.",
+      "followup": "Coverage before repetition: wide Root cartridge then simpler Palm mounting. For Idler use stock shoulder/clevis axle with double support and preload-bypass spacer; current AO/AV direct route is rejected. A Palm port alone cannot repair adverse pull direction. Revisit routing only with a materially different drive/attachment architecture, not small parameter scans."
     },
     {
       "id": "batch6_wide_root_cartridge",

@@ -1,0 +1,229 @@
+{
+  "status": "ACTUAL_DIRECT_ROUTE_REJECTED",
+  "task_id": "batch6_standard_idler_or_direct_route",
+  "starting_HEAD": "c3e3d56ff626d7b3a39507f180007bd7f5e6fda0",
+  "save_status": "PENDING_SUPERVISOR_VALIDATION_AND_LOCAL_SAVE",
+  "new_commit_SHA": null,
+  "actual_research_cycles": 1,
+  "scope": "Actual finite nominal0.5mm direct route specimen at AO Finger/AV drive positions, proposed removal of27 Idler instances; NOT whole candidate assembly or powered operation",
+  "actual_results": {
+    "route_geometry": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAW_direct_route2/summary.json",
+      "SHA256": "c4c83e31317d819075efa8f916ee163cb668145f1c7cfcad69ff38cdf5a43833"
+    },
+    "independent_verification": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_verify1/summary.json",
+      "SHA256": "e0acab558d0458d706fed9f33bc1fbd0ac593427d02287c870ee17df93e684a4"
+    },
+    "virtual_work": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_work1/summary.json",
+      "SHA256": "12a3a61c0af20ce64f7dbd5e70aea063789ab72d7d2374e5afce8cb22335dd45"
+    },
+    "release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_route_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    },
+    "initial_execution_failure": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAW_direct_route1/summary.json",
+      "SHA256": "314b1358dcb121b1b7c1352c1b25a2b6eeac37c0d48ddaf40438a557518fcc4a"
+    }
+  },
+  "structural_problem_addressed": "Tested whether direct drum-to-terminal routing can remove all Idler bracket/pulley/spacer/axle/nut/base/clamp-washer instances and special axle forming. Exact actual Palm interference and adverse initial pull direction reject this route. No Idler hardware is qualified by this result.",
+  "changed_part_IDs": [
+    "F0_TENDON_WIRE",
+    "F1_TENDON_WIRE",
+    "F2_TENDON_WIRE"
+  ],
+  "new_route_specimens": 15,
+  "proposed_removed_parts": 27,
+  "realized_product_reduction": 0,
+  "custom_processes_removed": 0,
+  "adoption": false,
+  "proposed_process_removal_if_feasible": [
+    "Special Idler crosspin/rivet forming and opposing tool access",
+    "Idler axle retention assembly and replacement"
+  ],
+  "geometry": {
+    "exact_context_pairs": 378,
+    "intersections": 15,
+    "min_palm_intersection_mm3": 0.7007753079143851,
+    "max_palm_intersection_mm3": 1.1978280415685278,
+    "unchanged_intersection_limit_mm3": 1e-08,
+    "valid_single_solids": 15,
+    "closed_oriented_positive_meshes": 15,
+    "independent_constant_length_range_mm": 0.0,
+    "rest_palm_midheight_crossing_F0_mm": [
+      83.13716776669303,
+      0.0,
+      -9.5
+    ]
+  },
+  "actuation": {
+    "rest_closing_torque_Nm_per_N": -0.011642244378408986,
+    "dead_point_deg": 46.160438657403965,
+    "stroke_0_to_60_mm": -4.261802845790669,
+    "meaning": "Prescribed virtual-work sign, not actual loaded equilibrium. Direct length increases initially; reversal of motor winding cannot make a tension-only tendon push."
+  },
+  "verification": {
+    "input_hashes": true,
+    "exact_STEP_intersections": true,
+    "analytic_tangency_and_constant_wire_length": true,
+    "finite_difference_work_derivative": true,
+    "disjoint_and_corrupt_tangent_controls": true,
+    "mesh_vertex_key_rounding_mm": 1e-09,
+    "mesh_comment_erratum": "Archived verifier parenthetical1nm is a unit typo: rounding to9 decimal places in mm is1e-9mm. This is numerical vertex identity only, never collision/physical tolerance."
+  },
+  "limitations": [
+    "No flexible PET/Rail deformed geometry; no actual load equilibrium",
+    "No CCD or continuous clearance, tolerances, termination fatigue or maximum cable stock",
+    "Redirected swivel seating/rotation limits/full assembly and installation path unqualified",
+    "AV1101 remains rejected as operating motor; ground support, anchor, thread capacity and physical protection unresolved",
+    "No physical material/rating/strength/energy or same-revision full product certificate"
+  ],
+  "execution": [
+    {
+      "command": [
+        "python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_direct_route.py"
+      ],
+      "producer_SHA256": "de2060e89c6ce1652d527aaeb934c9b66e9a7e96c2363d079040301ab2b8cbff",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.866235438035801,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_direct_route.py"
+      ],
+      "producer_SHA256": "cb6494afdf78c8d3deec04c05546cac20b13065ed53aa713435c7be70175aed4",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 11.284511052072048,
+      "PID": 4,
+      "reaped": true
+    },
+    {
+      "command": [
+        "python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_direct_route.py"
+      ],
+      "producer_SHA256": "e91d7c147067f47e9b76e51267da14e4f4212180322e4d8758d59ac36bdceb5a",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.923437664983794,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "batch6_route_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.36532773822546005,
+      "PID": 6,
+      "reaped": true
+    },
+    {
+      "command": [
+        "python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_direct_work.py"
+      ],
+      "producer_SHA256": "73f164e90848439453a9db8bab695433d003762e235e6152ec6250df0f773a4d",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.11453426210209727,
+      "PID": 5,
+      "reaped": true
+    }
+  ],
+  "SOFA_runs": 0,
+  "failures_preserved": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAW_direct_route1/summary.json",
+        "SHA256": "314b1358dcb121b1b7c1352c1b25a2b6eeac37c0d48ddaf40438a557518fcc4a"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_cycle1/route.log",
+        "SHA256": "95c5efe643e54440f6e1f049dedc630fb09e6a8ffd39a09beec967fa9cfafa04"
+      },
+      "reason": "Path-join TypeError before CAD; archived producer and pre-run SHA preserved"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAW_direct_route2/summary.json",
+        "SHA256": "c4c83e31317d819075efa8f916ee163cb668145f1c7cfcad69ff38cdf5a43833"
+      },
+      "exit_code": 2
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_work1/summary.json",
+        "SHA256": "12a3a61c0af20ce64f7dbd5e70aea063789ab72d7d2374e5afce8cb22335dd45"
+      },
+      "exit_code": 2
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/batch6_route_release1/summary.json",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "exit_code": 2
+    }
+  ],
+  "remaining_gate_ids": [
+    "cad_model_match",
+    "physical_mass_inertia",
+    "tendon_force_stroke",
+    "motor_running_torque_speed",
+    "shaft_strength",
+    "coupling_capacity",
+    "pin_drum_strength",
+    "bearing_ratings_reactions",
+    "housing_shoulder_retention",
+    "tendon_stiffness_strength",
+    "terminal_retention",
+    "idler_load_drag",
+    "finger_structure",
+    "root_palm_strength",
+    "continuous_load_path",
+    "static_dynamic_consistency",
+    "numerical_convergence",
+    "qualified_worst_case",
+    "changed_stage1_revalidation",
+    "stage3_handoff",
+    "overload_protection",
+    "motor_alignment_reactions"
+  ],
+  "directly_informed_gates": [
+    "idler_load_drag",
+    "continuous_load_path",
+    "changed_stage1_revalidation",
+    "tendon_force_stroke"
+  ],
+  "next": "Coverage before repetition: wide Root cartridge then simpler Palm mounting. For Idler use stock shoulder/clevis axle with double support and preload-bypass spacer; current AO/AV direct route is rejected. A Palm port alone cannot repair adverse pull direction. Revisit routing only with a materially different drive/attachment architecture, not small parameter scans.",
+  "whole_system_release": false,
+  "criteria_relaxed": false,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_cycle1/finalize.py",
+    "SHA256": "b30f4aa235dfaff8ef231f4190dd11679890edbf7c817132f6b386a861a92922"
+  }
+}

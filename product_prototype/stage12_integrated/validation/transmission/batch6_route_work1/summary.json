@@ -1,0 +1,76 @@
+{
+  "status": "DIRECT_ROUTE_CLOSING_ACTUATION_FAIL",
+  "scope": "Virtual work of the actual saved route on prescribed poses; not equilibrium, motor rating or Stage3 operation",
+  "source": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAW_direct_route2/summary.json",
+    "SHA256": "c4c83e31317d819075efa8f916ee163cb668145f1c7cfcad69ff38cdf5a43833"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_work1/producer.py",
+    "SHA256": "73f164e90848439453a9db8bab695433d003762e235e6152ec6250df0f773a4d"
+  },
+  "rows": [
+    {
+      "pose_deg": 0,
+      "length_mm": 161.9451513495498,
+      "dlength_dangle_mm_per_rad": 11.642244378408986,
+      "closing_torque_Nm_per_N": -0.011642244378408986,
+      "finite_difference_errors_mm_per_rad": [
+        2.7254843715240895e-07,
+        5.5477631377698344e-08,
+        9.465974670774813e-09
+      ]
+    },
+    {
+      "pose_deg": 15,
+      "length_mm": 164.49507523093885,
+      "dlength_dangle_mm_per_rad": 7.83330680127523,
+      "closing_torque_Nm_per_N": -0.00783330680127523,
+      "finite_difference_errors_mm_per_rad": [
+        8.042034593813696e-09,
+        1.9882104851376425e-09,
+        5.102815947566341e-10
+      ]
+    },
+    {
+      "pose_deg": 30,
+      "length_mm": 166.04695054157193,
+      "dlength_dangle_mm_per_rad": 4.027689537851247,
+      "closing_torque_Nm_per_N": -0.004027689537851247,
+      "finite_difference_errors_mm_per_rad": [
+        1.5357517035852197e-07,
+        3.839619289180973e-08,
+        9.548157819949665e-09
+      ]
+    },
+    {
+      "pose_deg": 45,
+      "length_mm": 166.60947763060977,
+      "dlength_dangle_mm_per_rad": 0.2851836715592846,
+      "closing_torque_Nm_per_N": -0.0002851836715592846,
+      "finite_difference_errors_mm_per_rad": [
+        2.9779411292452096e-07,
+        7.441368765626066e-08,
+        1.8536606916086384e-08
+      ]
+    },
+    {
+      "pose_deg": 60,
+      "length_mm": 166.20695419534047,
+      "dlength_dangle_mm_per_rad": -3.334956475628548,
+      "closing_torque_Nm_per_N": 0.0033349564756285483,
+      "finite_difference_errors_mm_per_rad": [
+        4.3916016423395376e-07,
+        1.0978097364500172e-07,
+        2.741485971569091e-08
+      ]
+    }
+  ],
+  "dead_point_deg": 46.160438657403965,
+  "dead_point_length_mm": 166.61236435081815,
+  "pull_direction": "Positive cable tension gives negative closing torque at REST and through initial path; sign reverses at dead point. Winding reversal cannot make a tension-only cable push.",
+  "fixed_drum_torque_Nm_per_N": 0.01125,
+  "stroke_0_to_60_mm": -4.261802845790669,
+  "finite_difference_verification": true,
+  "whole_system_release": false
+}

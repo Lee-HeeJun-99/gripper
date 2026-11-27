@@ -1,0 +1,25 @@
+{
+  "status": "SECTION_DEMAND_VERIFIER_FAIL",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_demand1/summary.json",
+    "SHA256": "d9949c0b8abaf5429ac6b62f9586c6ae8632d1a3ef2f68213ddddf77dbc3045b"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_verify1/producer.py",
+    "SHA256": "fd9b9a06ea107ac7effccaa328812e591bc81a5f766406ac750d6e42d1b6077e"
+  },
+  "checks": {
+    "hashes": true,
+    "independent_circle_chord_and_inertia": true,
+    "declared_base_to_finest_limit": false,
+    "integrated_stress_resultants": true,
+    "perturbed_stress_rejected": true,
+    "unqualified_capacity_not_promoted": true
+  },
+  "max_chord_relative_error": 3.792515190781387e-10,
+  "max_resultant_error": 3.686287386450715e-17,
+  "base_to_finest_area_relative_error": 0.0005556735458851492,
+  "declared_limit": 0.0001,
+  "whole_system_release": false,
+  "interpretation": "Producer all_base_to_finest check used .001 whereas inputs declared .0001; strict declared limit governs. No threshold changed. Finest section values may reproduce while full refinement gate fails."
+}

@@ -1395,7 +1395,7 @@
       "id": "batch6_strength_worst_case_convergence",
       "track": "B",
       "priority": -192,
-      "status": "READY",
+      "status": "BLOCKED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1433,8 +1433,11 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:36:53.513508+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/finger/batch6_section_cycle1/summary.json",
+      "reason": "Actual AO sections/stress resultants reproduced, declared coarse-to-fine section convergence FAIL; no certified material/demand or actual clamp/pin sharing; nominal section arithmetic cannot qualify strength.",
+      "next": "Independent remaining product energy/handoff coverage; for strength first identify actual clamp/pin/PET load sharing and justified demand/material before notch/contact solution. No repeat of uniform linear beam or thickness sweep as system progress."
     },
     {
       "id": "batch6_independent_integrated_release_and_repairs",

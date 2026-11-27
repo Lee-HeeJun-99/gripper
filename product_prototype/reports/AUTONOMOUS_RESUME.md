@@ -1,3 +1,37 @@
+# Batch6 cycle8 — actual AO section demand; refinement FAIL (2026-11-27)
+
+Started at b36b26e7e006783bc1a42478d799570618ce7af1. Selected READY
+batch6_strength_worst_case_convergence. One bounded actual analysis cycle:
+validation/finger/batch6_section_cycle1/summary.json. No CAD/BOM adoption,
+parts/process removal or material change. AO254 current/AA304 adopted preserved.
+
+16 original AO Rail STEP slabs at two stations/four thicknesses extract area
+and x-bending inertia by tensor identity (no constant-width z-variance guess).
+Independent adaptive circle-chord integration agrees within3.80e-10 relative.
+Six-point stress integration reproduces section force/moment within3.69e-17.
+Perturbed stress control rejected. Actual1mN REST reference gives free-span
+root maximum nominal stress0.371353MPa. Root-hole1.296269MPa is explicitly
+counterfactual zero-clamp-transfer continuation,NOT actual clamped joint stress.
+No notch peak/contact/allowable/demand/strength qualification or material fit.
+
+Independent verifier exits2: base-to-finest area difference0.0555674% exceeds
+predeclared0.01%. Producer incorrectly checked0.1% and emitted VERIFIED;
+that full-refinement label is invalid. Original producer/result/log retained.
+Current script corrected to declared0.01%; no rerun or tolerance relaxation.
+Finest section reproduction does NOT override full convergence FAIL.
+Release exits2, remains INTEGRATED_NOT_QUALIFIED;22Stage2 and full same-revision
+Stage1 unqualified. No system strength, global energy or protection PASS.
+
+Strength task BLOCKED on actual clamp/pin/PET sharing, justified demand,
+certified minimum material and finite notch/contact solution. Do not repeat
+uniform beam/slab scans as system progress. Independent remaining product
+coverage selected by regenerated NEXT_TASK. Three children completed/reaped
+under4GiB/420s, no timeout/live owned child or RUNNING queue task. STOP absent.
+No subagents, SDK, criteria, manager/save controls, Stage3, hardware or purchase.
+Unrelated untracked work and all old failures unchanged. Supervisor local save
+PENDING; no git add/commit/new SHA. Exact runtime/authorized_20261127_6/
+save_request8.json awaits supervisor validation/local save.
+
 # Batch6 cycle7 — actual AO three-module top-entry rejected (2026-11-27)
 
 Started at249f05d51236ed1d7a38bdde303cead0efc49f03. Selected READY

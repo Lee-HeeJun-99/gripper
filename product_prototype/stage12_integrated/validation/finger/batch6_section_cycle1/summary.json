@@ -1,0 +1,135 @@
+{
+  "status": "ACTUAL_AO_SECTION_DEMAND_REPRODUCED_REFINEMENT_FAIL_STRENGTH_BLOCKED",
+  "task_id": "batch6_strength_worst_case_convergence",
+  "starting_HEAD": "b36b26e7e006783bc1a42478d799570618ce7af1",
+  "actual_research_cycles": 1,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_cycle1/finalize.py",
+    "SHA256": "ede1c036f384589c589507f8ffa0eae5618ed9d8d557d581e8d57304c504d2a9"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_cycle1/runner.py",
+    "SHA256": "ca2fff57856855f9a96e4a316fac59a76a4ddb37b3c1cd405778435c91b77412"
+  },
+  "actual_results": {
+    "analysis": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_demand1/summary.json",
+      "SHA256": "d9949c0b8abaf5429ac6b62f9586c6ae8632d1a3ef2f68213ddddf77dbc3045b"
+    },
+    "independent_verification": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_verify1/summary.json",
+      "SHA256": "fb0dd4e48902858f32204163851fbfb593b4d11cd02f18a10b6b9e8a3fb24633"
+    },
+    "release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_section_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "execution": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_section_demand.py"
+      ],
+      "producer_SHA256": "8ea1e7655f3d7016616c8aac4635fb368352c9999da2232063d2c79ea0686cdf",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.9663751360494643,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_section_demand.py"
+      ],
+      "producer_SHA256": "fd9b9a06ea107ac7effccaa328812e591bc81a5f766406ac750d6e42d1b6077e",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.21478050015866756,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "batch6_section_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3651935630477965,
+      "PID": 6,
+      "reaped": true
+    }
+  ],
+  "actual_product_evidence": "16 actual AO Rail STEP slab sections at free-span/root-hole stations and four thicknesses; inertia extracted by tensor identity; conditional REST1mN stress section resultants independently integrated",
+  "quantitative": {
+    "free_span_root_nominal_max_MPa": 0.3713527051588028,
+    "no_clamp_transfer_root_hole_counterfactual_MPa": 1.296268833511075,
+    "base_to_finest_area_relative_error": 0.0005556735458851492,
+    "declared_limit": 0.0001,
+    "independent_chord_relative_error": 3.792515190781387e-10,
+    "resultant_error": 3.686287386450715e-17
+  },
+  "failures_preserved": [
+    "Producer original VERIFIED label invalid for full refinement: used .001 instead of declared .0001. Archived producer/result immutable; current producer corrected to .0001 without a rerun or limit change.",
+    "Independent verifier exits2 on coarse-to-fine .055567% vs declared .01%; no adjacent-only pass.",
+    "Integrated release exits2; all22 Stage2 system criteria and same-revision full Stage1 unqualified."
+  ],
+  "limitations": [
+    "Root-hole moment continuation assumes zero clamp transfer and is NOT actual joint stress",
+    "Nominal section stress excludes notch peak,pin contact,clamp/PET sharing,finite deformation,buckling and certified allowable",
+    "No actual demand/tolerances/rated connector chain; cannot certify qualified worst case or system convergence"
+  ],
+  "actual_capacity_qualified": false,
+  "whole_system_release": false,
+  "CAD_BOM_modified": false,
+  "changed_part_IDs": [],
+  "parts_added": 0,
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "new_standard_components": 0,
+  "SOFA_runs": 0,
+  "remaining_system_gate_ids": [
+    "cad_model_match",
+    "physical_mass_inertia",
+    "tendon_force_stroke",
+    "motor_running_torque_speed",
+    "shaft_strength",
+    "coupling_capacity",
+    "pin_drum_strength",
+    "bearing_ratings_reactions",
+    "housing_shoulder_retention",
+    "tendon_stiffness_strength",
+    "terminal_retention",
+    "idler_load_drag",
+    "finger_structure",
+    "root_palm_strength",
+    "continuous_load_path",
+    "static_dynamic_consistency",
+    "numerical_convergence",
+    "qualified_worst_case",
+    "changed_stage1_revalidation",
+    "stage3_handoff",
+    "overload_protection",
+    "motor_alignment_reactions"
+  ],
+  "blockers": [
+    "Certified lot/minimum material and actual demand absent",
+    "Actual Root clamp/pin load split and notch/contact stress absent",
+    "Full same-revision assembly and dynamic/global energy unresolved"
+  ],
+  "next": "Independent remaining product energy/handoff coverage; for strength first identify actual clamp/pin/PET load sharing and justified demand/material before notch/contact solution. No repeat of uniform linear beam or thickness sweep as system progress.",
+  "known_owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_VALIDATION_AND_LOCAL_SAVE",
+  "new_commit_SHA": null
+}

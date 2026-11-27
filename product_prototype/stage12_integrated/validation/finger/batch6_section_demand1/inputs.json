@@ -1,0 +1,44 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "load": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen3/summary.json",
+    "SHA256": "29b922edf7b86179ea2a45053769aa52f8b722cbdaeb7294d2ccb137382d1ed2"
+  },
+  "parts": {
+    "F0_RAIL_L": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_RAIL_L.step",
+      "SHA256": "037173ea5708d22a36bdd409f8ae2f62b886356bc6cf89a837a5219819e37cdb"
+    },
+    "F0_RAIL_R": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_RAIL_R.step",
+      "SHA256": "6e78740bb12968a60b6b9cd89bc46699b3372b62b872dea5d80fbec3b6e109e7"
+    }
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/baseline_registry.py",
+      "SHA256": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/build_stage1.py",
+      "SHA256": "551c0cb2d9f0e5293333f9c6cedcabb3977a6510a0dc821d72b2aafe2ab2cdad"
+    }
+  ],
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_section_demand1/producer.py",
+    "SHA256": "8ea1e7655f3d7016616c8aac4635fb368352c9999da2232063d2c79ea0686cdf"
+  },
+  "limits": {
+    "section_relative": 0.0001,
+    "refinement_relative": 0.0001,
+    "balance_absolute": 1e-10
+  },
+  "contract": "AO original only. Diagnostic1mN REST wrench. Equal symmetric Rail sharing,plane sections,linear stress. Root-hole section is explicit no-clamp-transfer counterfactual,NOT actual internal force in clamped zone. No notch stress,allowable,material rating or demand bound."
+}

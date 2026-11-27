@@ -1,0 +1,55 @@
+{
+  "status": "ACTUAL_P1_SADDLE_STAGNATION_AND_ORTHOGONAL_FORCE_MEASURED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_augmented_saddle1/summary.json",
+    "SHA256": "9ce482e51c7988d57dd3c46d4ad70b1a8819d2d4f1b873daab74fec62c7e64b0"
+  },
+  "scaling_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_corrected1/summary.json",
+    "SHA256": "853b3fa2c6d0eb33519837f74967feece27f0c7e001acfe3f8305f14f54e5902"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_saddle_partition1/producer.py",
+    "SHA256": "d231a63c2959f967fe0f73e1609433e352d8571050c2e779cb5e1a108754faf6"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_saddle_partition1/partition.npz",
+    "SHA256": "90c4ced420bba5b6d1d9d175b3566a04d3a52b71f20313638616c0f0443371be"
+  },
+  "metrics": {
+    "full_stationarity_N": 8.352152368601542,
+    "scaled_force_l2": 0.11406228755863483,
+    "scaled_parallel_l2": 0.10076631214300008,
+    "scaled_orthogonal_l2": 0.053444885444803567,
+    "orthogonal_fraction": 0.4685587724806037,
+    "orthogonality": 5.994367464423958e-17,
+    "retained37rigid_orthogonality": 3.7155100231309884e-18,
+    "probe_physical_curvature_Nmm": 1.0990161130442495,
+    "probe_residual_work_Nmm": 0.05344488544480364,
+    "minimum_slack": 1.5141228627195412e-25,
+    "maximum_slack": 2559.909142591161,
+    "minimum_dual": 6.894644180553396e-29,
+    "maximum_dual": 1.858099433521316,
+    "complementarity_mean": 2.3406799324747277e-21,
+    "reduced_dual_residual": 0.01790457376823673,
+    "max_corrector_augmented_residual": 1666048.0,
+    "minimum_primal_alpha": 3.554729158799339e-32,
+    "minimum_dual_alpha": 9.977655601075002e-26,
+    "orthogonal_probe_max_original_row_motion": 0.0042031934421233675,
+    "maximum_proposal_change_mm_rad": 1.8960616188223867e-08
+  },
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.6770725380629301,
+  "conclusions": [
+    "Unsquared equations alone do not repair a noncentral near-boundary starting point: complementarity is tiny while reduced force is not. Corrector directions are not independently certified; endpoint audit is only a finitegap/energy guard.",
+    "Measured orthogonal force justifies investigating one residual-informed elastic search vector. Probe is not feasible displacement or an equilibrium, and does not permit dropping finite gap blockers.",
+    "Next requires residual-certified predictor AND corrector with centrality restoration in algorithmic slack/dual variables, preserving original P/q, all finite gaps, tiny rigid mode and all37rigid search modes. No repeated 60iteration budget."
+  ]
+}

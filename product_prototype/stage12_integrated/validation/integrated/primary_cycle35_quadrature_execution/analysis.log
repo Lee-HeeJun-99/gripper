@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/tmp/regrip_stage2_fem/skfem/quadrature.py", line 86, in get_quadrature_tet
+    return {
+KeyError: 10
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 61, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 59, in main
+    results=[solve(out,part,cad,geo,float(h),int(curv),int(order)) for part in (parts or ['F0_ROOT_BACK','F0_ROOT_FRONT','F0_RAIL_L','F0_RAIL_R'])]
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 59, in <listcomp>
+    results=[solve(out,part,cad,geo,float(h),int(curv),int(order)) for part in (parts or ['F0_ROOT_BACK','F0_ROOT_FRONT','F0_RAIL_L','F0_RAIL_R'])]
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 31, in solve
+    assert not(ROOT/'runtime/STOP').exists();b=Basis(m,el,intorder=order,elements=np.arange(first,min(first+400,m.nelements)));K+=asm(linear_elasticity(la,mu),b);meshvol+=b.dx.sum();mindet=min(mindet,float(np.min(abs(b.mapping.detDF(b.X,tind=b.tind)))))
+  File "/tmp/regrip_stage2_fem/skfem/assembly/basis/cell_basis.py", line 83, in __init__
+    super(CellBasis, self).__init__(
+  File "/tmp/regrip_stage2_fem/skfem/assembly/basis/abstract_basis.py", line 85, in __init__
+    self.X, self.W = get_quadrature(
+  File "/tmp/regrip_stage2_fem/skfem/quadrature.py", line 39, in get_quadrature
+    return get_quadrature_tet(norder)
+  File "/tmp/regrip_stage2_fem/skfem/quadrature.py", line 842, in get_quadrature_tet
+    raise NotImplementedError(
+NotImplementedError: The requested order of quadrature is not available.

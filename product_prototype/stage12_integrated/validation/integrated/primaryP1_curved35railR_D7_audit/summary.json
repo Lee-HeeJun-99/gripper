@@ -1,0 +1,55 @@
+{
+  "status": "ACTUAL_P1_CURVED_BODY_INDEPENDENT_FORCE_WORK_AUDIT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railR_D7s7/summary.json",
+      "SHA256": "e6abdca03949c2fa5fb681aa123a6d393b8cb5b9ca400305a855bd3322c0b05d"
+    }
+  ],
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railR_D7_audit/verifier.py",
+    "SHA256": "68bb6f3cfb4216a021f7cc9ea97324ff39dfe6459f1d21a19b0cd828fc0ae46b"
+  },
+  "results": [
+    {
+      "part": "F0_RAIL_R",
+      "source_fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railR_D7s7/F0_RAIL_R/fields.npz",
+        "SHA256": "e1ce4481fd4ec467f393eaa6e8292ef3f2ba916154e38123d5f6acf80b5d1f6f"
+      },
+      "positive_Duffy_points_per_tetra": 512,
+      "independent_force_max_N": 5.482942943826077e-10,
+      "independent_force_original1e_minus8_pass": true,
+      "independent_energy_relative": 2.0650796524455705e-12,
+      "independent_volume_mm3": 74.34784122902968,
+      "checks": {
+        "shape_partition": true,
+        "shape_gradient_partition": true,
+        "no_sampled_mapping_fold": true,
+        "independent_work1percent": true,
+        "independent_force1e_minus8": true,
+        "independent_load_shape_work": true,
+        "independent_arbitrary_virtual_work": true,
+        "independent_geometry_mapping": true
+      },
+      "independent_boundary_force_error_N": 1.1102230246251565e-16,
+      "arbitrary_nodal_virtual_work_error_Nmm": 4.440892098500626e-16,
+      "independent_geometry_interpolation_error_mm": 8.668621376273222e-13,
+      "run": "primaryP1_curved35railR_D7s7"
+    }
+  ],
+  "independent_force_all_original_tolerance": true,
+  "accepted_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 1.2793476330116391,
+  "limitations": [
+    "Independent positive Duffy force integration of conditional finite-body test loads, not actual clamp/contact equilibrium.",
+    "Original1e-8N force and1percent response criteria retained. Small energy error never supersedes force failure.",
+    "Independent boundary virtual work reuses saved surface quadrature; this verifies trace action, NOT independent surface integration convergence or exact rational CAD."
+  ]
+}

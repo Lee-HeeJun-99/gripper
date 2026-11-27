@@ -9,7 +9,7 @@
   },
   "primary_state": {
     "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-    "SHA256": "ada00124646f5e1cdf04169937133f66eb62a1b78ffdee0186bfcbea169701fa"
+    "SHA256": "8893d63636776339c643c76cfc8c8a4a9f3f6528fd018d31142bd67b6638c978"
   },
   "historical_previous_state": {
     "path": "product_prototype/stage12_integrated/models/current_candidate_before30.json",
@@ -20,39 +20,67 @@
   "hardware": "HARDWARE_NOT_MEASURED",
   "powered_operation": "NOT_AUTHORIZED",
   "current_physics_sourcefield": null,
-  "model_binding_status": "Same78part primaryP1_ycapture24. Implemented finite-body Kelvin/Ritz Neumann operators on actual RootBack,Front,bothRails, retaining allFE elasticDOFs and6rigid gauges; exterior analytic modes share ONE variational energy with FE. Positive Schur work and independent directelement/complex-step/load/energy reconstruction verified. Positive adaptive integration has0unresolved estimatorcells; independent Duffy7 re-solves differ <= 0.00021714987percent in response. ALL4unit-port independent force residuals 3.033448e-07..2.78515785e-06N FAIL retained1e-8N check. Root/Front mixedmesh changes6.83051/8.43315percent FAIL1percent; unloadedend traction remains nonzero; facet radial error up to0.00797085448mm. Prescribed.3rad patch and sixresultantsource are conditional operator sensitivities,NOT contactpressure/clamp/support equilibrium; NO productsourcefield/gate qualified.",
+  "model_binding_status": "Same78actualpart primaryP1_ycapture24. Implemented CAD-projected quadratic isoparametric full RootBack/Front/Rails with independent polynomial shape/Jacobian/force/virtual-work reconstruction. Separate positive bulk/surface integration and higher-reference correction: selected Root/Front Duffy5,L Duffy6,R Duffy7 satisfy independently sampled original1e-8N force check; RailR Duffy6 appearsPASS at reference7 but FAILS1.0436247187451208e-8N at reference8, preserved. Continuous floating-point Bernstein radial enclosures 0.000103112216->4.08439591e-05mm remain nonzero,NOT exact cylinders. ALL4mixedmesh response FAIL1percent (Root9.42987/Front2.17304/L8.34251/R1.11627percent; Root maxdiagonal24.0484percent). Free-end traction remains nonzero. Smooth prescribed1Ny patch and sixresultant actual-face source are sensitivities ONLY,not actualpressure/clamp/100g/fullsupport. No system gate qualified.",
   "latest_actual_validation": {
-    "primaryP1_finite_body34h2q5": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q5/summary.json",
-      "SHA256": "454c1fa5be154be56ad3ab7253685dd8d87089c5bc4e07d72a50b17952d466ce"
+    "primaryP1_curved35h3q6b": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35h3q6b/summary.json",
+      "SHA256": "44b678f936a6caa1de9cf40963ab58fe6541738b3e8504e6348c0f4c8ff12b2e"
     },
-    "primaryP1_finite_body34h2q6": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h2q6/summary.json",
-      "SHA256": "10fc4aa8fcb352cea0771f68d4de49c15851e2d3668dce268e158d1f4fc56ec9"
+    "primaryP1_curved35h3D5": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35h3D5/summary.json",
+      "SHA256": "24cf14be6db86630b5d72accdeb5a2038d44bb08c0a3f05457355411228d0c25"
     },
-    "primaryP1_finite_body34h15q6": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34h15q6/summary.json",
-      "SHA256": "a20ee8bddd6f2a3eca1e97074a62c796ee6bda6f561ccd8c6532ed58e434dbc3"
+    "primaryP1_curved35h25D5": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35h25D5/summary.json",
+      "SHA256": "1e10dd59a2ec63c662cecd7cbcdcc60546d0a75152d1f18f865f64f1f02b0d68"
     },
-    "primaryP1_finite_body34audit": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34audit/summary.json",
-      "SHA256": "62cf5627a5e0db81dd541269b22e754fea1968bf8db44caf3f3d5c11499a7faa"
+    "primaryP1_curved35railD6s7": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6s7/summary.json",
+      "SHA256": "6868e260a32f0803619bdb3695da480ead8a83035f1456ffa371d9567cf29501"
     },
-    "primaryP1_finite_end34audit": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_end34audit/summary.json",
-      "SHA256": "2ea3fb7bb61896ebdb9fb2398be05e59d8da859ee1d8dac228258a40bbf5116d"
+    "primaryP1_curved35h3D5s10": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35h3D5s10/summary.json",
+      "SHA256": "36e8a3834bca405b4b5e88a23e02715ec12797b1c11e3769569fe2ea95805e30"
     },
-    "primaryP1_finite_body34adaptive": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive/summary.json",
-      "SHA256": "5055fe81319c9c971da247f625a422b5396d2dd0ec42e63aa87de41ef3892748"
+    "primaryP1_curved35railR_D7s7": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railR_D7s7/summary.json",
+      "SHA256": "e6abdca03949c2fa5fb681aa123a6d393b8cb5b9ca400305a855bd3322c0b05d"
     },
-    "primaryP1_finite_body34adaptive_audit": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_body34adaptive_audit/summary.json",
-      "SHA256": "b03fdc1beaf0efb533bfd4e7d3ca65b34d4a94af36d890722e64b4ea30449dd5"
+    "primaryP1_curved35coarse_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35coarse_audit/summary.json",
+      "SHA256": "49676feacf2c6e278c6b109f38522f291699a268a7770625fcb047cc78d97aaa"
     },
-    "primaryP1_finite_end34adaptive_audit": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_end34adaptive_audit/summary.json",
-      "SHA256": "e42bc0c21c038bb9e10fcebdf2633c9f6e233989414bbfed47d3d4f084d848fa"
+    "primaryP1_curved35D5_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35D5_audit/summary.json",
+      "SHA256": "4f742edd1200793945909f03009dc32cd62a8a5d7c865cd0cbc17f8da62d5308"
+    },
+    "primaryP1_curved35railD6_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6_audit/summary.json",
+      "SHA256": "0106e0900a457bc34b8356c65d86148a99e0b0b332375272bff4345f461290e3"
+    },
+    "primaryP1_curved35railD6_reference8": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6_reference8/summary.json",
+      "SHA256": "5bf89f58e5d29c5abbfb8e2267084d442857716c9c4664256f0fdfb98edbe2f1"
+    },
+    "primaryP1_curved35railR_D7_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railR_D7_audit/summary.json",
+      "SHA256": "e6486040fc579330a388397920397fc9e22a835375671e157f4b3d68493df9fd"
+    },
+    "primaryP1_curved35fine_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35fine_audit/summary.json",
+      "SHA256": "167bb713f467790f089ae90448c8768983160a12a6174246b3925a25d7c3bcdc"
+    },
+    "primaryP1_curved35geometry": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35geometry/summary.json",
+      "SHA256": "ae802a05a31f488bc3fc85ae99b4418811a8826f4def38066c7190e7af2ff30e"
+    },
+    "primaryP1_curved35fine_geometry": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35fine_geometry/summary.json",
+      "SHA256": "224e3a3fe98f099cb8ebeac1a5afdd1af14ef8c30f3f213ae5795b9f0c52a5dd"
+    },
+    "primaryP1_curved35comparisons": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35comparisons/summary.json",
+      "SHA256": "5011d149a7ff3d33e292f87f8f375ed4c91e33147812fe90b1415adef66ed348"
     }
   }
 }

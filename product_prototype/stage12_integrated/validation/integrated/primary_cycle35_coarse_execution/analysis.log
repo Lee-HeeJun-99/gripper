@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 58, in main
+    results=[solve(out,part,cad,geo,float(h),int(curv),int(order)) for part in (parts or ['F0_ROOT_BACK','F0_ROOT_FRONT','F0_RAIL_L','F0_RAIL_R'])]
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 58, in <listcomp>
+    results=[solve(out,part,cad,geo,float(h),int(curv),int(order)) for part in (parts or ['F0_ROOT_BACK','F0_ROOT_FRONT','F0_RAIL_L','F0_RAIL_R'])]
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_curved_body35.py", line 34, in solve
+    fb=FacetBasis(m,el,intorder=order);x=np.array(fb.global_coordinates());normal=np.array(fb.normals);root=part=='F0_ROOT_BACK';ports=list(range(4)) if root else [i for i,g in enumerate(geo) if g['part']==part];F=[];journals=[];geometry=[];sourcex=50.5 if root or 'RAIL' in part else 50.
+  File "/tmp/regrip_stage2_fem/skfem/assembly/basis/facet_basis.py", line 111, in __init__
+    self.basis = [self.elem.gbasis(self.mapping, Y, j, tind=self.tind)
+  File "/tmp/regrip_stage2_fem/skfem/assembly/basis/facet_basis.py", line 111, in <listcomp>
+    self.basis = [self.elem.gbasis(self.mapping, Y, j, tind=self.tind)
+  File "/tmp/regrip_stage2_fem/skfem/element/element_vector.py", line 41, in gbasis
+    for field in self.elem.gbasis(mapping, X, ind, tind)[0].astuple:
+  File "/tmp/regrip_stage2_fem/skfem/element/element_h1.py", line 13, in gbasis
+    invDF = mapping.invDF(X, tind)
+  File "/tmp/regrip_stage2_fem/skfem/mapping/mapping_isoparametric.py", line 226, in invDF
+    return invDF / detDF
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 4.61 MiB for an array with shape (3, 3, 5590, 12) and data type float64

@@ -1,0 +1,81 @@
+{
+  "status": "ACTUAL_P1_CURVED_BODY_INDEPENDENT_FORCE_WORK_AUDIT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6s7/summary.json",
+      "SHA256": "6868e260a32f0803619bdb3695da480ead8a83035f1456ffa371d9567cf29501"
+    }
+  ],
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6_reference8/verifier.py",
+    "SHA256": "68bb6f3cfb4216a021f7cc9ea97324ff39dfe6459f1d21a19b0cd828fc0ae46b"
+  },
+  "results": [
+    {
+      "part": "F0_RAIL_L",
+      "source_fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6s7/F0_RAIL_L/fields.npz",
+        "SHA256": "fe9992ad31e731dc9607def4fa848ee9fc983f6f26851841164205f99d56165d"
+      },
+      "positive_Duffy_points_per_tetra": 512,
+      "independent_force_max_N": 7.50648177644253e-09,
+      "independent_force_original1e_minus8_pass": true,
+      "independent_energy_relative": 4.9309230570469514e-11,
+      "independent_volume_mm3": 74.34784122902985,
+      "checks": {
+        "shape_partition": true,
+        "shape_gradient_partition": true,
+        "no_sampled_mapping_fold": true,
+        "independent_work1percent": true,
+        "independent_force1e_minus8": true,
+        "independent_load_shape_work": true,
+        "independent_arbitrary_virtual_work": true,
+        "independent_geometry_mapping": true
+      },
+      "independent_boundary_force_error_N": 1.1102230246251565e-16,
+      "arbitrary_nodal_virtual_work_error_Nmm": 6.661338147750939e-16,
+      "independent_geometry_interpolation_error_mm": 6.679101716144942e-13,
+      "run": "primaryP1_curved35railD6s7"
+    },
+    {
+      "part": "F0_RAIL_R",
+      "source_fields": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_curved35railD6s7/F0_RAIL_R/fields.npz",
+        "SHA256": "1ce40d54962023211a037980be056674a77e1ee1ecaf06626fbec34f16486290"
+      },
+      "positive_Duffy_points_per_tetra": 512,
+      "independent_force_max_N": 1.0436247187451208e-08,
+      "independent_force_original1e_minus8_pass": false,
+      "independent_energy_relative": 4.4705315700361317e-11,
+      "independent_volume_mm3": 74.34784122902968,
+      "checks": {
+        "shape_partition": true,
+        "shape_gradient_partition": true,
+        "no_sampled_mapping_fold": true,
+        "independent_work1percent": true,
+        "independent_force1e_minus8": false,
+        "independent_load_shape_work": true,
+        "independent_arbitrary_virtual_work": true,
+        "independent_geometry_mapping": true
+      },
+      "independent_boundary_force_error_N": 1.1102230246251565e-16,
+      "arbitrary_nodal_virtual_work_error_Nmm": 4.440892098500626e-16,
+      "independent_geometry_interpolation_error_mm": 8.668621376273222e-13,
+      "run": "primaryP1_curved35railD6s7"
+    }
+  ],
+  "independent_force_all_original_tolerance": false,
+  "accepted_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 3.7288908450864255,
+  "limitations": [
+    "Independent positive Duffy force integration of conditional finite-body test loads, not actual clamp/contact equilibrium.",
+    "Original1e-8N force and1percent response criteria retained. Small energy error never supersedes force failure.",
+    "Independent boundary virtual work reuses saved surface quadrature; this verifies trace action, NOT independent surface integration convergence or exact rational CAD."
+  ]
+}

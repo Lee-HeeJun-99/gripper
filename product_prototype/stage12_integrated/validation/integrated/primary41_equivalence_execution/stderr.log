@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/compare_anchor_blocks41.py", line 16, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/compare_anchor_blocks41.py", line 14, in main
+    a,b=arrays(old,k),arrays(new,k);assert np.array_equal(a['points_mm'],b['points_mm']) and np.array_equal(a['tetra'],b['tetra']);f=float(abs(a['F']-b['F'][:,pick]).max());e=float(abs(a['U']-b['U'][:,pick]).max()/max(abs(a['U']).max(),1e-30));rows.append(dict(part=old['body_results'][k]['part'],force_columns_max_difference_N=f,all_shared_displacements_relative=e,pass_original_numerical_equivalence=f<1e-12 and e<1e-7))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/compare_anchor_blocks41.py", line 8, in arrays
+    if 'U' not in a:a['U']=np.column_stack([np.load(REPO[r['reference']['path']])['U'] for r in doc['body_results'][k]['displacement_chunks']])
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/compare_anchor_blocks41.py", line 8, in <listcomp>
+    if 'U' not in a:a['U']=np.column_stack([np.load(REPO[r['reference']['path']])['U'] for r in doc['body_results'][k]['displacement_chunks']])
+TypeError: 'PosixPath' object is not subscriptable

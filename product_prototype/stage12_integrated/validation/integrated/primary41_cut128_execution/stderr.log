@@ -1,0 +1,14 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_anchor_pointfine39.py", line 314, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_anchor_pointfine39.py", line 281, in main
+    U,C,row=solve_body(b,F[k],out,journals[k]);Us.append(U);Cs.append(C);bodyrows.append(row);del b['factor'];gc.collect()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_anchor_pointfine39.py", line 154, in solve_body
+    R,Q=body['R'],body['Q'];dual=np.linalg.solve(R.T@Q.T,R.T@F);balanced=F-Q.T@dual;U=np.zeros_like(F);U[body['free']]=body['factor'].solve(balanced[body['free']]/69000.);U-=R@np.linalg.solve(Q@R,Q@U);sol=np.vstack([U,dual/69000.])
+RuntimeError: SUPERLU_MALLOC failed for buf in doubleCalloc()
+ at line 705 in file ../scipy/sparse/linalg/_dsolve/SuperLU/SRC/dmemory.c
+

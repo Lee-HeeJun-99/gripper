@@ -1,0 +1,126 @@
+{
+  "status": "ACTUAL_P1_IDENTICAL_MATERIAL_PROBE_CONTACT_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256probes/verifier.py",
+    "SHA256": "7adccb6c7feade0478cc9d58a66c37f2cbea242192a4e4e7c96b9b2baf628c01"
+  },
+  "interpolation_helper": {
+    "path": "product_prototype/stage12_integrated/scripts/anchor_gap_trace37.py",
+    "SHA256": "d017f9b04a23143f047203fe10342c68989944e324fbb25288d858381987f213"
+  },
+  "fixed_material_probe_geometry": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor37_fixed_h5_n2/geometry_journal.json",
+    "SHA256": "a2713e005b483956e56e997e00a76e99fd43d437debba5efc85cb56e0a535712"
+  },
+  "reports": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256/summary.json",
+        "SHA256": "2048a305e18152572fbfb074a76efbfcc8ed58c60c1ef2b693190a10c99624a0"
+      },
+      "probe_count": 554,
+      "unmapped": 0,
+      "rows": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "minimum_fixed_probe_gap_mm": -5.311974642147781e-07,
+          "negative1e_minus8_count": 5,
+          "original_patch_at_minimum": 1
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "minimum_fixed_probe_gap_mm": -4.89069006121294e-07,
+          "negative1e_minus8_count": 6,
+          "original_patch_at_minimum": 1
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "minimum_fixed_probe_gap_mm": -7.783714083827933e-07,
+          "negative1e_minus8_count": 74,
+          "original_patch_at_minimum": 18
+        },
+        {
+          "case": "sensitivity_0_1",
+          "minimum_fixed_probe_gap_mm": -6.908598306060561e-07,
+          "negative1e_minus8_count": 33,
+          "original_patch_at_minimum": 12
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "minimum_fixed_probe_gap_mm": -4.77305127175769e-07,
+          "negative1e_minus8_count": 40,
+          "original_patch_at_minimum": 15
+        },
+        {
+          "case": "sensitivity_1_1",
+          "minimum_fixed_probe_gap_mm": -2.9533113855834933e-07,
+          "negative1e_minus8_count": 17,
+          "original_patch_at_minimum": 24
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "minimum_fixed_probe_gap_mm": -3.6153880494376876e-07,
+          "negative1e_minus8_count": 44,
+          "original_patch_at_minimum": 2
+        },
+        {
+          "case": "sensitivity_2_1",
+          "minimum_fixed_probe_gap_mm": -8.541310216853221e-07,
+          "negative1e_minus8_count": 48,
+          "original_patch_at_minimum": 1
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "minimum_fixed_probe_gap_mm": -9.703353058171497e-09,
+          "negative1e_minus8_count": 0,
+          "original_patch_at_minimum": 1
+        },
+        {
+          "case": "sensitivity_3_1",
+          "minimum_fixed_probe_gap_mm": -1.7312508980427381e-09,
+          "negative1e_minus8_count": 0,
+          "original_patch_at_minimum": 10
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "minimum_fixed_probe_gap_mm": -6.595956385055263e-09,
+          "negative1e_minus8_count": 0,
+          "original_patch_at_minimum": 2
+        },
+        {
+          "case": "sensitivity_4_1",
+          "minimum_fixed_probe_gap_mm": -6.421822409805782e-09,
+          "negative1e_minus8_count": 0,
+          "original_patch_at_minimum": 0
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "minimum_fixed_probe_gap_mm": -1.2656745350797431e-08,
+          "negative1e_minus8_count": 1,
+          "original_patch_at_minimum": 3
+        },
+        {
+          "case": "sensitivity_5_1",
+          "minimum_fixed_probe_gap_mm": -5.1084320056912784e-08,
+          "negative1e_minus8_count": 20,
+          "original_patch_at_minimum": 1
+        }
+      ],
+      "minimum_fixed_probe_gap_mm": -8.541310216853221e-07,
+      "negative1e_minus8_count": 288
+    }
+  ],
+  "identical_probe_counts": true,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Same material points of immutable37actualBRep/FEintersectioncentroids;sampled minima only,not global continuous bounds.",
+    "Sample counts on changed integration partitions are not directly comparable;this report fixes probe positions.",
+    "Zero cellresultant does not allow pointwise penetration;all sampled negative gaps retained.",
+    "Six-rigid recovery uses original1e-10equilibriumrankcutoff;no near-null roundoff inversion."
+  ]
+}

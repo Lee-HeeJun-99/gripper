@@ -1,0 +1,90 @@
+{
+  "status": "ACTUAL_P1_BOLT_CAD_TRACTION_COVERAGE_REVIEW_NOT_QUALIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_geometry/verifier.py",
+    "SHA256": "04dcec75d73674a45ec7a3bc0ed2a047c752eb79cf17dbf1efdda90b83e991ce"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h1/summary.json",
+        "SHA256": "6d84737df2ed993bf8dda8bae10ff2583c2563ed1bda571019a0ee07ee4262f3"
+      },
+      "h_mm": 1.0,
+      "actual_face_areas_mm2": [
+        32.98672286269284,
+        19.634954084936208
+      ],
+      "mapped_chord_face_areas_mm2": [
+        32.47594428857916,
+        19.411428382689053
+      ],
+      "missing_or_extra_area_mm2": [
+        0.5107785741136794,
+        0.22352570224715507
+      ],
+      "original_exact_area1e_minus7_mm2_pass": false,
+      "CAD_volume_mm3": 641.7831520747419,
+      "mesh_volume_mm3": 636.5847739023812,
+      "relative_volume_discrepancy": 0.008099898159612736
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05/summary.json",
+        "SHA256": "486cf96b59e6435e225cd0e3f06ed0396f4fb9b66a100108993e27df7e40fdb8"
+      },
+      "h_mm": 0.5,
+      "actual_face_areas_mm2": [
+        32.98672286269284,
+        19.634954084936208
+      ],
+      "mapped_chord_face_areas_mm2": [
+        32.858768614675505,
+        19.509032201612825
+      ],
+      "missing_or_extra_area_mm2": [
+        0.1279542480173319,
+        0.1259218833233824
+      ],
+      "original_exact_area1e_minus7_mm2_pass": false,
+      "CAD_volume_mm3": 641.7831520747419,
+      "mesh_volume_mm3": 639.4021371350829,
+      "relative_volume_discrepancy": 0.00370999913594142
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h025amg/summary.json",
+        "SHA256": "a322d27add5745c9806d098ea340f0665392bc75dd3bc6220d1906ce33dc8320"
+      },
+      "h_mm": 0.25,
+      "actual_face_areas_mm2": [
+        32.98672286269284,
+        19.634954084936208
+      ],
+      "mapped_chord_face_areas_mm2": [
+        32.95411714329058,
+        19.602419798551406
+      ],
+      "missing_or_extra_area_mm2": [
+        0.03260571940225532,
+        0.03253428638480216
+      ],
+      "original_exact_area1e_minus7_mm2_pass": false,
+      "CAD_volume_mm3": 641.7831520747419,
+      "mesh_volume_mm3": 641.1757791078362,
+      "relative_volume_discrepancy": 0.0009463834707131198
+    }
+  ],
+  "exact_area_coverage_pass": false,
+  "normalization_is_not_exact_geometry": true,
+  "physical_stack_qualified": false,
+  "whole_system_release": false,
+  "limitations": [
+    "Unit wrench and weak force/work can pass on normalized chord-limited surface despite missing actual CAD area.",
+    "This independent geometry review does not overwrite prior local force/work PASS or qualify physical pressure."
+  ]
+}

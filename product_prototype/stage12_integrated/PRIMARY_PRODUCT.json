@@ -382,8 +382,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state44.json",
-    "SHA256": "ba6646405ec9babcbde00e5cd3359cb6c5396b5e2674d8a74178057037471673"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state45.json",
+    "SHA256": "431fd4c01652ed879f4485b4acd1aba8bfe5fc8555b4b1f9d1144d6f67351287"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -412,10 +412,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_anchor39_continuous_separation_and_finite_physical_stack",
-  "next_task_id": "goal_primary_anchor40_retained_separation_and_finite_connector_support",
+  "selected_task_id": "goal_primary_anchor40_retained_separation_and_finite_connector_support",
+  "next_task_id": "goal_primary_anchor41_block_contact_and_installed_stack",
   "physical_model": "Motor -> stock1996 -> Drum -> Tendon -> replaceable Finger/Rail/PET/Root -> OPEN_FRAME -> GROUND_PLATE -> TEST_BASE -> three axial M5stations + one squarekey/oneXslot -> finite BENCH_ANCHOR_RAIL -> actual externalbench attachment UNQUALIFIED",
-  "load_BC": "SAME85part primaryP1_anchor36b;actualCAD/BOM unchanged. New actualCAD-head/nut-seat to FEforcecolumn binding passes;all3actualgrips14mm. Basic-profile core-only conditional compliance is1.54814283times nominalmajor-shank;maxworkcontrast3.58496704percent,boltvector15.2567059percent FAILoriginal1percent. Core-only sensitivity is NOT finitehead/nut/flank/preload/material qualification. IndependentHookeforce/work audit preserved. Retained all52materialtriangles and prior48pointcuts;preferredprimaryP1_anchor40_cut64has144exactpointcuts/417variables. Fullactualdomainminimum-7.31477685546e-06mm;fixed554probe minimum-4.65167518481e-06mm/679negative. Alloriginalgap1e-8/force1e-8/moment1e-10Nm/mesh1percent/time.1percent unchanged. Fullphysicalsupport/material/operatingsourcefield remainsunqualified;currentphysics sourcefield=null. NewlyqualifiedsystemgatesNONE;all22UNQUALIFIED;noStage3.",
+  "load_BC": "SAME85part primaryP1_anchor36b CAD/BOM unchanged. Dense128cut solve failed SuperLU workspace and block256 fullresidual allocation failed under4GiB;new8column blockRHS solve retains ALL52materialtriangles and528exactpointcuts/801variables. Independent originalforce/work and actualbolt-column binding checks retained. Fullactualdomain minimum-1.24996117366e-06mm;fixed554probe minimum-8.54131021685e-07mm/288negative. Same-source contactspace contrast maxwork5.24225513percent/boltvector15.1069293percent,original1percent checkFalse;NOT bulkmesh or physicalpressure convergence. Fullactual sockethead/shank bolt finite3D sensitivity solved on1/.5/.25mm meshes;finest compliance5.76190651792e-06mm/N,uniform20mmratio1.1313477. Adjacent mesh differences below1percent do NOT override base-to-quarter1.97544064percent FAIL. Independent Hooke force/work and perturbedstate rejection pass locally. .25mm bordered and sparsequotient LU MemoryErrors preserved;AMG quotient restores allDOFs,verified same-mesh response. Independent actualCAD coverage at.25mm still misses.032606/.032534mm2 onhead/tip:original exactarea1e-7FAIL;normalization is NOT exactgeometry. Bolt terminal-end traction is counterfactual,NOT installed nut/thread transfer;source minimum/preload/contact/fixture unresolved. Operating sourcefield remainsnull;physical equilibria0;newlyqualifiedsystemgatesNONE;all22UNQUALIFIED. NoStage3.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -1759,8 +1759,8 @@
     }
   },
   "latest_conditional_contact_trial": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor40_cut64/summary.json",
-    "SHA256": "961f0cff735f7a93a50a5f465310b1e348ab68f452ca760617c0ac151e09e5b8"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256/summary.json",
+    "SHA256": "2048a305e18152572fbfb074a76efbfcc8ed58c60c1ef2b693190a10c99624a0"
   },
   "latest_actual_anchor_continuous_separation_evidence": {
     "primaryP1_anchor39_canonical16": {
@@ -2038,5 +2038,100 @@
       "SHA256": "17eab0ef27e56ded1e641370f18ab967463835383c5bb77d4b4dfaae9031aa3e"
     }
   },
-  "release": false
+  "release": false,
+  "latest_cycle41_evidence": {
+    "primaryP1_anchor41_assembly": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_assembly/summary.json",
+      "SHA256": "a55ab43c467c35168c78ba0e9acfd8f6d9dcf8ebcd72f253f3572c7f4ecf1bfd"
+    },
+    "primaryP1_anchor41_bindingstart": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_bindingstart/summary.json",
+      "SHA256": "f1467a611b2da765ce91f0ac7a43aa8b75bae0fb28f4d5668ba23862b58c1e1f"
+    },
+    "primaryP1_anchor41_block128": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_block128/summary.json",
+      "SHA256": "efe0e6b44a35e4f20e487cef921fa0b2f27578344a2c8bcdf79b4868ac2f4e68"
+    },
+    "primaryP1_anchor41_block128audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_block128audit/summary.json",
+      "SHA256": "f1dcfe7c7d6758bd623f8f368529fbfece060661a0c227877a45fea689c1334f"
+    },
+    "primaryP1_anchor41_block128binding": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_block128binding/summary.json",
+      "SHA256": "d982029286909720785df46f3f54712bf923f25e6e831a1dbddc10b2eeed3774"
+    },
+    "primaryP1_anchor41_block128equivalence2": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_block128equivalence2/summary.json",
+      "SHA256": "0e04ffc1683020b6232fd686ec5b549d8126fc89b0cdfb1ee73b0b744be030be"
+    },
+    "primaryP1_anchor41_block128oracle": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_block128oracle/summary.json",
+      "SHA256": "d71261c1569c73239a53072f147875ccf484b51fb0d4133fc05b11063e577ff9"
+    },
+    "primaryP1_anchor41_block128probes": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_block128probes/summary.json",
+      "SHA256": "35dcb212c32e53e912d6eb0a799828b0eedabff8affb0f9eaf0c8058a7394172"
+    },
+    "primaryP1_anchor41_contactcontrast": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_contactcontrast/summary.json",
+      "SHA256": "2f8e38171945d9674f0f8d3e9880089768125fa3f9bf5a27324e96a23c94af4f"
+    },
+    "primaryP1_anchor41_contactcontrast256": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_contactcontrast256/summary.json",
+      "SHA256": "473fee30766077d3e488c5191e3d3bb2cc41652d928ba43a10d362f691c2b42d"
+    },
+    "primaryP1_anchor41_stream256": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256/summary.json",
+      "SHA256": "2048a305e18152572fbfb074a76efbfcc8ed58c60c1ef2b693190a10c99624a0"
+    },
+    "primaryP1_anchor41_stream256audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256audit/summary.json",
+      "SHA256": "85df14c4c8e669d110d7edbf1e7a68b20634615bebd492ada2d9f29b2966cafa"
+    },
+    "primaryP1_anchor41_stream256binding": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256binding/summary.json",
+      "SHA256": "0bff5ba4994d124cbac8493c73ac5fb02d20399c754520f2fdd210ee258c363a"
+    },
+    "primaryP1_anchor41_stream256equivalence": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256equivalence/summary.json",
+      "SHA256": "3b219c0b83aef5fe5f2470126e2d2110f653a922de27d155e84da4ac8bb9485a"
+    },
+    "primaryP1_anchor41_stream256oracle": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256oracle/summary.json",
+      "SHA256": "8aa55ae5982b72a677b9be3e0d1ee1fc9a940f5a19e7dd7c6ede1615a243bdae"
+    },
+    "primaryP1_anchor41_stream256probes": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor41_stream256probes/summary.json",
+      "SHA256": "9975ca705cfd709dbce20e46cfbc4791ba2f4cbd9f67b5b7f053e2b241acbf2b"
+    },
+    "primaryP1_bolt41_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_audit/summary.json",
+      "SHA256": "0ed83ed8335cd5ba2c87f39633f48e6e80509696dc0d0d150b0ebd3ae7ceeed3"
+    },
+    "primaryP1_bolt41_geometry": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_geometry/summary.json",
+      "SHA256": "3a2fe2b0276aa98c3e2edb3dbe8abd634a541214a2d89a5a6bb2ee703a9cc402"
+    },
+    "primaryP1_bolt41_h025amg": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h025amg/summary.json",
+      "SHA256": "a322d27add5745c9806d098ea340f0665392bc75dd3bc6220d1906ce33dc8320"
+    },
+    "primaryP1_bolt41_h05": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05/summary.json",
+      "SHA256": "486cf96b59e6435e225cd0e3f06ed0396f4fb9b66a100108993e27df7e40fdb8"
+    },
+    "primaryP1_bolt41_h05amg": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05amg/summary.json",
+      "SHA256": "0236b292b932a84d3fdfe59d307f6b14724c22eddd51b19288c8917f010b1939"
+    },
+    "primaryP1_bolt41_h05quotient": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05quotient/summary.json",
+      "SHA256": "64320660e5d68a3c636506902679eb9aedda7656455028e3cf40ea338e0421cd"
+    },
+    "primaryP1_bolt41_h1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h1/summary.json",
+      "SHA256": "6d84737df2ed993bf8dda8bae10ff2583c2563ed1bda571019a0ee07ee4262f3"
+    }
+  },
+  "model_binding_status": "SAME85part primaryP1_anchor36b CAD/BOM unchanged. Dense128cut solve failed SuperLU workspace and block256 fullresidual allocation failed under4GiB;new8column blockRHS solve retains ALL52materialtriangles and528exactpointcuts/801variables. Independent originalforce/work and actualbolt-column binding checks retained. Fullactualdomain minimum-1.24996117366e-06mm;fixed554probe minimum-8.54131021685e-07mm/288negative. Same-source contactspace contrast maxwork5.24225513percent/boltvector15.1069293percent,original1percent checkFalse;NOT bulkmesh or physicalpressure convergence. Fullactual sockethead/shank bolt finite3D sensitivity solved on1/.5/.25mm meshes;finest compliance5.76190651792e-06mm/N,uniform20mmratio1.1313477. Adjacent mesh differences below1percent do NOT override base-to-quarter1.97544064percent FAIL. Independent Hooke force/work and perturbedstate rejection pass locally. .25mm bordered and sparsequotient LU MemoryErrors preserved;AMG quotient restores allDOFs,verified same-mesh response. Independent actualCAD coverage at.25mm still misses.032606/.032534mm2 onhead/tip:original exactarea1e-7FAIL;normalization is NOT exactgeometry. Bolt terminal-end traction is counterfactual,NOT installed nut/thread transfer;source minimum/preload/contact/fixture unresolved. Operating sourcefield remainsnull;physical equilibria0;newlyqualifiedsystemgatesNONE;all22UNQUALIFIED. NoStage3."
 }

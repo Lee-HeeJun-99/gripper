@@ -1,0 +1,118 @@
+{
+  "status": "ACTUAL_P1_BOLT_INDEPENDENT_LOCAL_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_audit/verifier.py",
+    "SHA256": "9cb8e84add50487c431c81bafd9a4c0112bd7238097b52593440ab43ae7bc0de"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h1/summary.json",
+        "SHA256": "6d84737df2ed993bf8dda8bae10ff2583c2563ed1bda571019a0ee07ee4262f3"
+      },
+      "checks": {
+        "boundary_reconstruction": true,
+        "actual_material_positions": true,
+        "original_force": true,
+        "original_moment": true,
+        "independent_work": true,
+        "perturbed_state_rejected": true,
+        "compliance_reproduced": true
+      },
+      "nodes": 2181,
+      "h_mm": 1.0,
+      "unit_compliance_mm_N": 5.64808347517326e-06,
+      "force_residual_N": 2.7574073395691262e-15,
+      "work_relative": 1.1697520083803065e-14,
+      "perturbed_force_residual_N": 2.1086015891681806,
+      "full_to_uniform20mm_ratio": 1.108998597029139
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05/summary.json",
+        "SHA256": "486cf96b59e6435e225cd0e3f06ed0396f4fb9b66a100108993e27df7e40fdb8"
+      },
+      "checks": {
+        "boundary_reconstruction": true,
+        "actual_material_positions": true,
+        "original_force": true,
+        "original_moment": true,
+        "independent_work": true,
+        "perturbed_state_rejected": true,
+        "compliance_reproduced": true
+      },
+      "nodes": 5614,
+      "h_mm": 0.5,
+      "unit_compliance_mm_N": 5.704894035511386e-06,
+      "force_residual_N": 2.7610292524515856e-15,
+      "work_relative": 2.67254623059983e-15,
+      "perturbed_force_residual_N": 0.7895667345359314,
+      "full_to_uniform20mm_ratio": 1.1201533244669248
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h025amg/summary.json",
+        "SHA256": "a322d27add5745c9806d098ea340f0665392bc75dd3bc6220d1906ce33dc8320"
+      },
+      "checks": {
+        "boundary_reconstruction": true,
+        "actual_material_positions": true,
+        "original_force": true,
+        "original_moment": true,
+        "independent_work": true,
+        "perturbed_state_rejected": true,
+        "compliance_reproduced": true
+      },
+      "nodes": 37245,
+      "h_mm": 0.25,
+      "unit_compliance_mm_N": 5.761906517915875e-06,
+      "force_residual_N": 4.753481707507788e-12,
+      "work_relative": 4.013254881546833e-14,
+      "perturbed_force_residual_N": 0.41044258824547164,
+      "full_to_uniform20mm_ratio": 1.1313476992097287
+    }
+  ],
+  "mesh_contrasts": [
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h1/summary.json",
+        "SHA256": "6d84737df2ed993bf8dda8bae10ff2583c2563ed1bda571019a0ee07ee4262f3"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05/summary.json",
+        "SHA256": "486cf96b59e6435e225cd0e3f06ed0396f4fb9b66a100108993e27df7e40fdb8"
+      },
+      "relative_compliance_change": 0.009958214821256205,
+      "original_one_percent_pass": true
+    },
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h05/summary.json",
+        "SHA256": "486cf96b59e6435e225cd0e3f06ed0396f4fb9b66a100108993e27df7e40fdb8"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bolt41_h025amg/summary.json",
+        "SHA256": "a322d27add5745c9806d098ea340f0665392bc75dd3bc6220d1906ce33dc8320"
+      },
+      "relative_compliance_change": 0.00989472533565352,
+      "original_one_percent_pass": true
+    }
+  ],
+  "same_mesh_solver_displacement_relative": 3.3729370740545956e-14,
+  "same_mesh_AMG_displacement_relative": 1.2311962979293215e-10,
+  "same_mesh_solver_original_1e_minus7_pass": true,
+  "base_to_finest_relative": 0.01975440635641996,
+  "all_mesh_contrasts_pass": true,
+  "local_checks_pass": true,
+  "physical_stack_qualified": false,
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": [],
+  "limitations": [
+    "Fullactual bolt geometry with declared terminal-end traction;NOT installed thread transfer or physical pressure.",
+    "No source material minimum,thread tolerance/flank,head-seat unilateral contact/preload,nut or external fixture qualification."
+  ]
+}

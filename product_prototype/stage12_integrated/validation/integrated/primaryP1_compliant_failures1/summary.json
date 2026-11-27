@@ -1,0 +1,343 @@
+{
+  "status": "ACTUAL_P1_COMPLIANT_FAILURES_AND_LIMIT_RACE_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_framekey19/summary.json",
+    "SHA256": "01e7f6779539452e5cf41ca9d2fb9533689084be3f2e6dae32c0c3fc4d32f10c"
+  },
+  "executions": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_chain0_h5_1",
+        "--candidate",
+        "primaryP1_framekey19",
+        "--chain",
+        "--h",
+        "5"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 28.869198757922277,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/chain0_execution.json",
+        "SHA256": "ef571e4ae9c6273c9d4e43b39f853a56724a3059457d1115aa74ff2788a3b3c4"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/chain0.log",
+        "SHA256": "5deca9ba47c5a50b92ec4229257886032d58f120e5f0823ea74f28da47766fdd"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_chain0_h5_2",
+        "--candidate",
+        "primaryP1_framekey19",
+        "--chain",
+        "--h",
+        "5"
+      ],
+      "exit_code": null,
+      "wrapper_exit_code": 1,
+      "timeout": true,
+      "elapsed_s": null,
+      "elapsed_lower_bound_s": 420.0,
+      "exact_child_time_unknown": true,
+      "wrapper_reaped": true,
+      "reaped": true,
+      "analysis_process_group_absent_at_kill": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "classification": "420S_LIMIT_BRANCH_ENTERED_THEN_PROCESS_GROUP_ALREADY_ABSENT_EXIT_STATUS_UNKNOWN_NO_RESULT",
+      "traceback": "execute_primary_compliant.py line14 os.killpg(p.pid,signal.SIGKILL): ProcessLookupError: [Errno 3] No such process",
+      "scope": "Wrapper tool session completed exit1. Analysis group absent at kill. No savedfield/summary; actualchildexitcode and exactelapsed were lost in race. Do not call this successful solve or invent SIGKILLexitcode. No retry of this fine analysis.",
+      "save_only_recovery": true,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/chain1_execution.json",
+        "SHA256": "20fbb7780f33461d2f22e101fabf161426656a93cd864ed0285ff7d4c7b2413d"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/chain1.log",
+        "SHA256": "dfd9fd320ef249701b38d5bc71fef1a15ce71a230702028d73a65bb77663c0b6"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_chain02_h5_point1",
+        "--candidate",
+        "primaryP1_framekey19",
+        "--chain",
+        "--h",
+        "5",
+        "--point-gauge",
+        "--gap",
+        "0.02"
+      ],
+      "exit_code": null,
+      "wrapper_exit_code": 1,
+      "timeout": true,
+      "elapsed_s": null,
+      "elapsed_lower_bound_s": 420.0,
+      "exact_child_time_unknown": true,
+      "wrapper_reaped": true,
+      "reaped": true,
+      "analysis_process_group_absent_at_kill": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "classification": "GAP_0_02MM_420S_LIMIT_BRANCH_PROCESS_GROUP_ALREADY_ABSENT_EXIT_STATUS_UNKNOWN_NO_RESULT",
+      "traceback": "execute_primary_compliant.py line14 os.killpg(p.pid,signal.SIGKILL): ProcessLookupError: [Errno 3] No such process",
+      "scope": "Already-started74040DOFgapcontrast reached420slimit branch; wrapperexit1 known; exactanalysisexitcode/time lost. Toolnamespace closed; noownedlivechild. No field/summary. No retry.",
+      "save_only_recovery": true,
+      "reaped_scope": "Completed tool wrapper and closed PID namespace; analysis wait status lost",
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/chaingap_execution.json",
+        "SHA256": "7261c29d012723f2d909a6d2c87a75429c8c19aa532f464b4fd4fb1f356763a1"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/chaingap.log",
+        "SHA256": "d5e7fae9de079f39df44b691ac81d7efbbd9c56a002d7b2fb717e0f06929cc23"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_framekey_witness.py",
+        "primaryP1_framekey_witness1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 4.509869295172393,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/keywitness_execution.json",
+        "SHA256": "572b5f93137618197bfae4190726c2a5c76fe52c8335c978d1e43c249c3ce452"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/keywitness.log",
+        "SHA256": "73d76e7197faf98cafcda2e8d46fed31b72701c6bdcea95fc91db2dd2ce0d904"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_upper.py",
+        "primaryP1_upper_rejected_verify1",
+        "primaryP1_upper0_h5_3",
+        "primaryP1_upper0_h5_4"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.6018735528923571,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/rejectedverify_execution.json",
+        "SHA256": "603da865fbd71a72502f645016c3fcfada7fe5754a3bbfdf52d7f96223030247"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/rejectedverify.log",
+        "SHA256": "76daadde91a843c7ed5934d4f69675d6dce88f3aa164ca24520835ba20eda812"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release13"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.5015373800415546,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/release13_execution.json",
+        "SHA256": "c2cb137da530b6a674cc40098a0350ec4765c50b763d004446c82d5520bea562"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/release13.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_upper0_h5_1",
+        "--h",
+        "5"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.8020802501123399,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper0_execution.json",
+        "SHA256": "9cd26957b80a2a80b0ddd90e33987920f9f4efd405d5a0ea5ef220f9b8c2bb6b"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper0.log",
+        "SHA256": "af933c49f2e4d84bd05958dd7dfabae832ffc064c0d4213505c5d0ac43c27301"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_upper0_h5_2",
+        "--h",
+        "5"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 28.258138766046613,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper1_execution.json",
+        "SHA256": "cf5261a03428921fb956d289cbbc45f60b62313b278d46aeab722ebe3506b732"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper1.log",
+        "SHA256": "3ddff985bd673e9ced614405674ef9e30b18001dc3a07adf78001e6b52daf9c7"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_upper0_h5_3",
+        "--h",
+        "5"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 28.258381481980905,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper2_execution.json",
+        "SHA256": "f89b825f415b516cc27aca612173db0221004c2f54fc6a8fd932c8bfaff35783"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper2.log",
+        "SHA256": "6fc83b8982602fc74007019a9934a7b57ccfcaffc081938dcb3a9741c45b29c3"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_upper0_h5_4",
+        "--h",
+        "5"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 189.9971280579921,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper3_execution.json",
+        "SHA256": "84d9b3dd8904c933fdc74195476aeb5a97b25bdc353f52790e71bd55c79ae6b1"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper3.log",
+        "SHA256": "307c334690959f4349a83c93423bd5711cc49e78adb249793cf48062efffa195"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_upper0_h5_5",
+        "--h",
+        "5"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.1006174951326102,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper4_execution.json",
+        "SHA256": "285c5fa491ff0251eefbe292780f03e1ef9e2e6052b0382461b13f043b732d1b"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper4.log",
+        "SHA256": "c26fd0256bf839ced9f06c719f2a20855228cd95e68a59b5b9c3b52e20257db1"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+        "--tag",
+        "primaryP1_upper0_h5_6",
+        "--h",
+        "5"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 214.41559556289576,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper5_execution.json",
+        "SHA256": "3ec6c12cbe0bfddaf097cb1a0d4dc4e2f4191a6507319b0c4e1ce598ceb6c046"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/upper5.log",
+        "SHA256": "d06a1137d64e20546307583004897a60e1abb88fa3cede4dcb0eef9bd9df6af5"
+      }
+    }
+  ],
+  "explanations": [
+    "RootFront/Back do not directly touch; initialassertionFAIL retained. AggregateRootBack x50.5port is not localRail/pintraction.",
+    "Initial int32serialization failure retained with fieldbut no summary. Later indentation and fixedmass positionfield errors retained with planhash/log; syntaxfailed before producer snapshot.",
+    "Uncentered triangulated head/nut patches manufactureinternalmoment. Independent rejectedverify1 rejects firstfield; positive commonaxis centroid correction closesrigidwork.",
+    "OriginalcoarseCap volume exceeds1%; old100000OSQPmaxiteration remainsFAIL. Angular/minsize refinement changesgeometryquadrature,not stressconvergence.",
+    "Early KKT postprocessor assigned +boltforce to negativeauxdual; originalFAILsummary/diagnosticresidual immutable. Savedphysicalupperfield independentlypasses withoutusingthatdiagnostic.",
+    "Fine237165DOF analysis entered420slimit branch; killgroupalreadyabsent ProcessLookupError loses exactchildexitcode/time. No field/summary. Lowerbound420s only; no invented exitcode or exactduration. No retry.",
+    "Firstkeyfiniteoverlapquotient containsO(h)chamferterm; firstareaFAIL immutable. Richardsonzero-step area passes unchanged1e-6criterion."
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

@@ -1,0 +1,103 @@
+{
+  "status": "ACTUAL_P1_CYCLE9_SAVE_ONLY_EXACT_BYTE_HANDOFF_NOT_RELEASE",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cycle9_closeout/producer.py",
+    "SHA256": "1e48d479e1a392a5b3ac2147eaeb9e7109011c38f8c875348d3fb66e58b16ee9"
+  },
+  "main": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle9/summary.json",
+    "SHA256": "5e1b023e56de2d0d60d99e5830501086f43e7a34779a1b286d4cc041c7c22b24"
+  },
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_framekey19/summary.json",
+    "SHA256": "01e7f6779539452e5cf41ca9d2fb9533689084be3f2e6dae32c0c3fc4d32f10c"
+  },
+  "report": {
+    "path": "product_prototype/stage12_integrated/reports/primaryP1_framekey_engineering.md",
+    "SHA256": "0ce3e6305f31d95179600181aa5aa460aaf9eb5d551cbbb366a5d87d8629c58e"
+  },
+  "final_trusted_release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release13/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "final_trusted_release_exit_code": 2,
+  "release_error_count": 24,
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state10.json",
+    "SHA256": "70e587e7f3db795905552dcd7d1fb058f2304a290653e427f9fd2ebedf564267"
+  },
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "analysis_wrapper_count": 24,
+  "known_child_seconds": 999.8452503737062,
+  "exact_child_time_unknown_count": 2,
+  "additional_child_seconds_lower_bound": 840.0,
+  "timeouts": 2,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "STOP_present": false,
+  "limits": {
+    "memory_bytes": 4294967296,
+    "timeout_s": 420,
+    "peak_concurrent_long_analysis_children": 4
+  },
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "actual_changed_parts": [
+    "OPEN_FRAME",
+    "GROUND_PLATE"
+  ],
+  "unchanged_part_refs": 76,
+  "next_task_id": "goal_primary_framekey_fit_feedback",
+  "whole_system_release": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "SOFA_runs": 0,
+  "git_add_commit_attempted": false,
+  "save_status": "PENDING_SUPERVISOR_EXACT_SAVE",
+  "limitations": [
+    "Actual separate elastic bodies with rigid motor proxy. Source motorcase stiffness/contactland validity unknown; no case strength.",
+    "Frozen upstream gravity Finger/string/rotor resultant applied on actual RootBack x50.5 face,not solved local Rail/pin/clamp traction or re-solved Finger against deformed supports.",
+    "Separate elastic Frame/Ground/key/Base and axial M5; finite externalBase traction not physicalbenchanchor. No hidden M5fixation.",
+    "Root/Motor freeY and Cap freeXY/yaw gauges must carry negligible loads. They identify unrestrained frictionless modes,not physical retention or reverse/Yload qualification.",
+    "Lateral gap is a contact-law offset at same nominalCAD; not a new machined part/finitegap CCD. Small displacement/rotation contact only.",
+    "Conditional minorcore axial compliance and mean realhead/nut footprints,not threadflank/bearing/engagement/preload or capacity. Hardwaregravity transported through Frameport; local bearing weight unresolved.",
+    "Typical conditional elastic constants/densities only; no source materialminima,1%mesh/time/globalenergy/strength/full3Finger/Stage1/Stage3 certificate.",
+    "Historicalfieldexternal_FrameGround_port meansactualTEST_BASEexternaltraction inchain=true; partTEST_BASE/code/sourceauthoritative. Genericinputs.boundaryFramewording isstale; correctedhere,notrewritten.",
+    "Hardwareweights aretransportedtoBaseexternalport; fixedRail/PET/clampweights toRoot aggregateport. Globalwrenchaccountingdoesnotcertifytheirownlocalstress.",
+    "Pointgaugedisplacementsaredifferentglobalcoordinates; comparestrains/relativeposes/forces,notabsolutemotionastiffnessimprovement.",
+    "Fine237165DOFand.02gap74040DOFlimitbranchraces have noresult/knownanalysisexitcode/exactduration. Two420slowerbounds only. Save-onlyrecovery; noautomaticretry. PreloadcontrastNOTRUN."
+  ]
+}

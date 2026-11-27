@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python",
+    "product_prototype/stage12_integrated/scripts/primary_upper_compliance.py",
+    "--tag",
+    "primaryP1_chain02_h5_point1",
+    "--candidate",
+    "primaryP1_framekey19",
+    "--chain",
+    "--h",
+    "5",
+    "--point-gauge",
+    "--gap",
+    "0.02"
+  ],
+  "exit_code": null,
+  "wrapper_exit_code": 1,
+  "timeout": true,
+  "elapsed_s": null,
+  "elapsed_lower_bound_s": 420.0,
+  "exact_child_time_unknown": true,
+  "wrapper_reaped": true,
+  "reaped": true,
+  "analysis_process_group_absent_at_kill": true,
+  "memory_limit_bytes": 4294967296,
+  "timeout_s": 420,
+  "classification": "GAP_0_02MM_420S_LIMIT_BRANCH_PROCESS_GROUP_ALREADY_ABSENT_EXIT_STATUS_UNKNOWN_NO_RESULT",
+  "traceback": "execute_primary_compliant.py line14 os.killpg(p.pid,signal.SIGKILL): ProcessLookupError: [Errno 3] No such process",
+  "scope": "Already-started74040DOFgapcontrast reached420slimit branch; wrapperexit1 known; exactanalysisexitcode/time lost. Toolnamespace closed; noownedlivechild. No field/summary. No retry.",
+  "save_only_recovery": true,
+  "reaped_scope": "Completed tool wrapper and closed PID namespace; analysis wait status lost"
+}

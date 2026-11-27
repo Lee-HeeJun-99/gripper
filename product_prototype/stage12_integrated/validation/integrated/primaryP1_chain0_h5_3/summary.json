@@ -1,0 +1,541 @@
+{
+  "status": "ACTUAL_P1_UPPER_COMPLIANT_CONTACT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_framekey19/summary.json",
+    "SHA256": "01e7f6779539452e5cf41ca9d2fb9533689084be3f2e6dae32c0c3fc4d32f10c"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_chain0_h5_3/inputs.json",
+    "SHA256": "9265dd22813fca14c8edf118c1ca01123ff5db2558192c87d787284b69c5aed2"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_chain0_h5_3/producer.py",
+    "SHA256": "0e8b3b17a95efaa019fd15859fbc592485447de81a2375a46c761a9157cbf5e2"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_chain0_h5_3/field.npz",
+    "SHA256": "1f4519a698ed7119a79b4a324b9895a177828a5d4cd1aa37ae51f7146771fea3"
+  },
+  "checks": {
+    "active_KKT_closed": true,
+    "stationarity": true,
+    "body_forces": true,
+    "body_moments": true,
+    "gauge_negligible": true,
+    "gaps": true,
+    "compression_only": true,
+    "complementarity": true,
+    "bolt_law": true,
+    "energy": true,
+    "mesh_volume": true,
+    "no_inversion": true
+  },
+  "h_mm": 5.0,
+  "gap_mm": 0,
+  "preload_each_N": 0,
+  "DOF": 74040,
+  "meshes": [
+    {
+      "part": "OPEN_FRAME",
+      "nodes": 7106,
+      "tetra": 24476,
+      "volume_mm3": 50853.283832239875,
+      "CAD_volume_mm3": 50828.56662754993
+    },
+    {
+      "part": "F0_ROOT_BACK",
+      "nodes": 2322,
+      "tetra": 7552,
+      "volume_mm3": 4362.9063528186125,
+      "CAD_volume_mm3": 4359.450386508484
+    },
+    {
+      "part": "MOTOR_CAP",
+      "nodes": 2074,
+      "tetra": 6475,
+      "volume_mm3": 2755.7232999523476,
+      "CAD_volume_mm3": 2750.0334260697305
+    },
+    {
+      "part": "GROUND_PLATE",
+      "nodes": 6509,
+      "tetra": 23736,
+      "volume_mm3": 47496.493803460944,
+      "CAD_volume_mm3": 47467.899595214985
+    },
+    {
+      "part": "TEST_BASE",
+      "nodes": 6667,
+      "tetra": 25962,
+      "volume_mm3": 104644.35697565954,
+      "CAD_volume_mm3": 104598.68554229444
+    }
+  ],
+  "elastic_bodies": [
+    "OPEN_FRAME",
+    "F0_ROOT_BACK",
+    "MOTOR_CAP",
+    "GROUND_PLATE",
+    "TEST_BASE"
+  ],
+  "chain": true,
+  "extra_fixed_root_wrench_N_Nm": [
+    0.0,
+    0.0,
+    -0.1875206394338683,
+    9.36005288033892e-17,
+    0.009177148312603687,
+    0.0
+  ],
+  "polish_history": [
+    {
+      "iteration": 0,
+      "active_contacts": 140,
+      "active_bolts": 13,
+      "min_gap_mm": -1.7317370403229122e-08,
+      "min_active_force_N": -4.071280405382183e-05,
+      "branch_changes": 0
+    },
+    {
+      "iteration": 1,
+      "active_contacts": 139,
+      "active_bolts": 13,
+      "min_gap_mm": -1.7318407965111237e-08,
+      "min_active_force_N": 0.0005558070962771605,
+      "branch_changes": 0
+    },
+    {
+      "iteration": 2,
+      "active_contacts": 140,
+      "active_bolts": 13,
+      "min_gap_mm": -2.280727690040507e-15,
+      "min_active_force_N": 0.0005558025930822602,
+      "branch_changes": 0
+    }
+  ],
+  "solver": {
+    "status": "maximum iterations reached",
+    "iterations": 4000,
+    "primal": 6.9029126109188285e-06,
+    "dual": 0.001129047044052406
+  },
+  "stresses": [
+    {
+      "part": "OPEN_FRAME",
+      "peak_unsmoothed_vm_MPa": 3.1825905096424694,
+      "max_motion_mm": 0.005470046184882907,
+      "minimum_signed_volume_ratio": 0.9999806438672371
+    },
+    {
+      "part": "F0_ROOT_BACK",
+      "peak_unsmoothed_vm_MPa": 0.10852756201452055,
+      "max_motion_mm": 0.00038141720565766077,
+      "minimum_signed_volume_ratio": 0.999999551155585
+    },
+    {
+      "part": "MOTOR_CAP",
+      "peak_unsmoothed_vm_MPa": 0.4363927246619693,
+      "max_motion_mm": 0.004922107161184764,
+      "minimum_signed_volume_ratio": 0.9999957170342194
+    },
+    {
+      "part": "GROUND_PLATE",
+      "peak_unsmoothed_vm_MPa": 0.4528177331709423,
+      "max_motion_mm": 0.00029167813509957353,
+      "minimum_signed_volume_ratio": 0.9999987873893968
+    },
+    {
+      "part": "TEST_BASE",
+      "peak_unsmoothed_vm_MPa": 0.49342109199465467,
+      "max_motion_mm": 0.00013494061209389156,
+      "minimum_signed_volume_ratio": 0.9999967692473688
+    }
+  ],
+  "contact_groups": {
+    "root_wall": {
+      "nodes": 26,
+      "active": 5,
+      "force_N": 0.23468517299308722,
+      "min_gap_mm": -4.933119884809045e-17,
+      "max_gap_mm": 1.6156532482736695e-05
+    },
+    "frame_seat": {
+      "nodes": 1114,
+      "active": 26,
+      "force_N": 3.3722662901753804,
+      "min_gap_mm": -3.067750047047735e-16,
+      "max_gap_mm": 0.0002499368235232899
+    },
+    "frame_key_ymin": {
+      "nodes": 23,
+      "active": 8,
+      "force_N": 0.42742133584325664,
+      "min_gap_mm": -5.206880933361635e-17,
+      "max_gap_mm": 4.76598531946716e-06
+    },
+    "frame_key_xmax": {
+      "nodes": 27,
+      "active": 12,
+      "force_N": 0.4964965660821895,
+      "min_gap_mm": -4.712891318522927e-17,
+      "max_gap_mm": 2.8783582642097606e-06
+    },
+    "ground_key_xmin": {
+      "nodes": 37,
+      "active": 8,
+      "force_N": 1.19247311143469,
+      "min_gap_mm": -7.245858643992187e-17,
+      "max_gap_mm": 8.541728216516085e-06
+    },
+    "ground_key_ymin": {
+      "nodes": 23,
+      "active": 3,
+      "force_N": 0.03232617540993443,
+      "min_gap_mm": -2.820755239628381e-16,
+      "max_gap_mm": 1.5804598251810692e-06
+    },
+    "frame_key_ymax": {
+      "nodes": 24,
+      "active": 11,
+      "force_N": 0.42742133589538095,
+      "min_gap_mm": -3.813681141717762e-17,
+      "max_gap_mm": 5.309821276651801e-06
+    },
+    "ground_key_ymax": {
+      "nodes": 24,
+      "active": 7,
+      "force_N": 0.03232617546277118,
+      "min_gap_mm": -1.0536158127601516e-16,
+      "max_gap_mm": 2.209074216400558e-07
+    },
+    "motor_top": {
+      "nodes": 11,
+      "active": 3,
+      "force_N": 1.8679998786828027,
+      "min_gap_mm": -2.280727690040507e-15,
+      "max_gap_mm": 2.46015444924242e-05
+    },
+    "motor_bottom": {
+      "nodes": 11,
+      "active": 4,
+      "force_N": 3.3612418187629363,
+      "min_gap_mm": -9.020562075079397e-17,
+      "max_gap_mm": 1.7704753021777642e-05
+    },
+    "root_seat": {
+      "nodes": 205,
+      "active": 8,
+      "force_N": 1.2626553020278726,
+      "min_gap_mm": -8.977193988179977e-17,
+      "max_gap_mm": 5.1166501365977954e-05
+    },
+    "ground_seat": {
+      "nodes": 495,
+      "active": 28,
+      "force_N": 10.250532012649973,
+      "min_gap_mm": -3.0565014495081977e-16,
+      "max_gap_mm": 0.00011904821032870414
+    },
+    "motor_xmin": {
+      "nodes": 8,
+      "active": 2,
+      "force_N": 0.837354658115366,
+      "min_gap_mm": -3.3881317890172014e-20,
+      "max_gap_mm": 5.827057684642379e-06
+    },
+    "ground_key_xmax": {
+      "nodes": 35,
+      "active": 7,
+      "force_N": 1.6010835280401894,
+      "min_gap_mm": -1.3919123015640467e-16,
+      "max_gap_mm": 1.1127073249196222e-05
+    },
+    "motor_xmax": {
+      "nodes": 8,
+      "active": 4,
+      "force_N": 1.0112799017947722,
+      "min_gap_mm": 6.975214676685493e-16,
+      "max_gap_mm": 6.037910649022461e-06
+    },
+    "frame_key_xmin": {
+      "nodes": 27,
+      "active": 4,
+      "force_N": 0.08788614947568216,
+      "min_gap_mm": -2.422514229147299e-18,
+      "max_gap_mm": 7.974645344566863e-06
+    }
+  },
+  "bolt_names": [
+    "RF0",
+    "RF1",
+    "CAP-7_-29.5",
+    "CAP-7_-13.5",
+    "CAP7_-29.5",
+    "CAP7_-13.5",
+    "GROUND0",
+    "GROUND1",
+    "GROUND2",
+    "GROUND3",
+    "FIXTURE0",
+    "FIXTURE1",
+    "FIXTURE2",
+    "FIXTURE3"
+  ],
+  "bolt_force_N": [
+    0.8170608060061539,
+    0.812145842256098,
+    0.8960196687396389,
+    0.40994118226286896,
+    0.0,
+    0.48907311036006085,
+    2.823000524421813,
+    1.0786652093485989,
+    1.0157034513088292,
+    1.0010445771018561,
+    4.068064798282124,
+    4.352263475895917,
+    3.952808120405535,
+    4.103216868639082
+  ],
+  "bearing_areas_head_nut_mm2": [
+    [
+      14.304706701807056,
+      17.34962750819612
+    ],
+    [
+      14.304706701807055,
+      17.349627508196125
+    ],
+    [
+      13.130659696515503,
+      18.771561913123527
+    ],
+    [
+      13.130659696515504,
+      18.771561913123527
+    ],
+    [
+      13.075594137650919,
+      18.77156191312359
+    ],
+    [
+      13.075594137650915,
+      18.77156191312359
+    ],
+    [
+      42.19283837209945,
+      32.145408318667535
+    ],
+    [
+      42.192838372099466,
+      32.145408318667535
+    ],
+    [
+      42.19283837209944,
+      32.14540831866755
+    ],
+    [
+      42.192838372099445,
+      32.14540831866755
+    ],
+    [
+      32.27327818407207,
+      32.14540831866755
+    ],
+    [
+      32.273278184072076,
+      32.145408318667556
+    ],
+    [
+      32.273278184120045,
+      32.14540831866754
+    ],
+    [
+      32.273278184120045,
+      32.14540831866755
+    ]
+  ],
+  "root_port": {
+    "part": "F0_ROOT_BACK",
+    "wrench_N_Nm": [
+      0.23468517299536926,
+      0.0,
+      0.8920774007900092,
+      -5.597159153978071e-06,
+      -0.04737510604480468,
+      0.0
+    ],
+    "actual_N_Nm": [
+      0.23468517299536942,
+      -1.8634724839594607e-20,
+      0.8920774007900087,
+      -5.597159153978524e-06,
+      -0.04737510604480456,
+      -7.962109704190423e-20
+    ],
+    "area_mm2": 656.2633168508693,
+    "max_reference_traction_MPa": 0.00216326534380876
+  },
+  "hardware_gravity_port": {
+    "part": "TEST_BASE",
+    "wrench_N_Nm": [
+      0.0,
+      0.0,
+      -0.7049563457009558,
+      0.007889779333835343,
+      0.0133816177124945,
+      0.0
+    ],
+    "actual_N_Nm": [
+      2.7477748808929503e-17,
+      -3.4458019354568744e-18,
+      -0.7049563457009561,
+      0.007889779333835344,
+      0.013381617712494494,
+      -2.5206229180081327e-18
+    ],
+    "area_mm2": 7863.9910823706905,
+    "max_reference_traction_MPa": 0.00013204608179266187
+  },
+  "external_FrameGround_port": {
+    "part": "TEST_BASE",
+    "wrench_N_Nm": [
+      -0.408610416666667,
+      3.440071228173105e-18,
+      9.701546171535597,
+      -0.07670847805742019,
+      -0.21948036372497748,
+      2.4074910799904776e-18
+    ],
+    "actual_N_Nm": [
+      -0.40861041666666703,
+      -1.0310762660337147e-16,
+      9.7015461715356,
+      -0.07670847805742018,
+      -0.21948036372497756,
+      -7.860465750519907e-19
+    ],
+    "area_mm2": 7863.9910823706905,
+    "max_reference_traction_MPa": 0.0015350312369416896
+  },
+  "motor_external_wrench_N_Nm": [
+    0.17392524367129744,
+    0.0,
+    -1.4932419400580768,
+    0.0017732770635769677,
+    0.01681450533804751,
+    0.0
+  ],
+  "body_residual_N_Nm": {
+    "OPEN_FRAME": [
+      -2.5418171567447757e-11,
+      4.7641492929072176e-11,
+      7.316307143570059e-11,
+      -1.0326603115054599e-12,
+      -8.068142487563523e-13,
+      -3.5784167735667944e-13
+    ],
+    "F0_ROOT_BACK": [
+      -2.6719362678888877e-12,
+      7.774242860373715e-12,
+      -9.872809873847093e-13,
+      -1.5854724998106312e-14,
+      5.295873464582412e-14,
+      4.1193787008733324e-13
+    ],
+    "MOTOR_CAP": [
+      -4.444585964571699e-11,
+      1.3919236017292798e-11,
+      2.0252364314291402e-10,
+      -3.897913997774282e-12,
+      -3.366967370582245e-13,
+      -7.669833471206996e-13
+    ],
+    "GROUND_PLATE": [
+      -1.7087696025628747e-13,
+      -7.431913374174491e-14,
+      2.292693498434451e-12,
+      -5.270784126935188e-14,
+      -2.3567909416060607e-14,
+      2.6310364780859945e-14
+    ],
+    "TEST_BASE": [
+      1.1751034362959688e-12,
+      -2.148592066549979e-13,
+      8.882736301785655e-13,
+      -2.0931543285895226e-14,
+      4.9530987189816996e-14,
+      -2.6248807039664064e-14
+    ],
+    "F0_MICRO_MOTOR": [
+      8.10870814937914e-12,
+      0.0,
+      -2.2056800830227985e-11,
+      3.7747582837255325e-18,
+      1.621723866307434e-13,
+      4.440892098500626e-19
+    ]
+  },
+  "relative_stationarity": 1.5214720591573646e-11,
+  "elastic_energy_Nmm": 0.004713980479445217,
+  "bolt_energy_Nmm": 0.00036743724716626117,
+  "static_energy_relative": 1.9387329476406748e-10,
+  "static_energy_identity_Nmm": -9.851511967307047e-13,
+  "complementarity_Nmm": 9.516813510652784e-16,
+  "gauge_labels": [
+    "Frame_global_translation0",
+    "Frame_global_translation1",
+    "Frame_global_translation2",
+    "Frame_global_rotation[1. 0. 0.]",
+    "Frame_global_rotation[0. 1. 0.]",
+    "Frame_global_rotation[0. 0. 1.]",
+    "Root_free_Y",
+    "Motor_free_Y",
+    "Cap_free_translation0",
+    "Cap_free_translation1",
+    "Cap_free_yaw"
+  ],
+  "gauge_dual": [
+    -6.011590449244902e-11,
+    5.263448083828429e-11,
+    2.566841439917868e-10,
+    6.189432706059828e-11,
+    3.4523531996448244e-10,
+    4.395657076425918e-11,
+    6.51029438423077e-12,
+    0.0,
+    -4.398188773928104e-11,
+    7.602782297307425e-12,
+    1.4905474172763662e-10
+  ],
+  "gauge_wrench_N_Nm": [
+    -6.011590449244981e-11,
+    5.26344808382846e-11,
+    2.566841439917871e-10,
+    -5.179643320024884e-12,
+    -6.314580682897659e-13,
+    -7.748410621551123e-13
+  ],
+  "motor_rigid_translation_mm": [
+    0.0003060513654751659,
+    -0.0001819733027369273,
+    -0.005758591152794811
+  ],
+  "motor_rigid_rotation_rad": [
+    -0.00014511639421835984,
+    1.7348976025467588e-05,
+    -7.507837284500391e-06
+  ],
+  "elapsed_s": 222.6197228289675,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Actual separate elastic bodies with rigid motor proxy. Source motorcase stiffness/contactland validity unknown; no case strength.",
+    "Frozen upstream gravity Finger/string/rotor resultant applied on actual RootBack x50.5 face,not solved local Rail/pin/clamp traction or re-solved Finger against deformed supports.",
+    "Separate elastic Frame/Ground/key/Base and axial M5; finite externalBase traction not physicalbenchanchor. No hidden M5fixation.",
+    "Root/Motor freeY and Cap freeXY/yaw gauges must carry negligible loads. They identify unrestrained frictionless modes,not physical retention or reverse/Yload qualification.",
+    "Lateral gap is a contact-law offset at same nominalCAD; not a new machined part/finitegap CCD. Small displacement/rotation contact only.",
+    "Conditional minorcore axial compliance and mean realhead/nut footprints,not threadflank/bearing/engagement/preload or capacity. Hardwaregravity transported through Frameport; local bearing weight unresolved.",
+    "Typical conditional elastic constants/densities only; no source materialminima,1%mesh/time/globalenergy/strength/full3Finger/Stage1/Stage3 certificate."
+  ]
+}

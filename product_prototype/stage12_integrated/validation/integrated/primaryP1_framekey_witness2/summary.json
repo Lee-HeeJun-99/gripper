@@ -1,0 +1,245 @@
+{
+  "status": "ACTUAL_P1_FRAMEKEY_WITNESS_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_framekey19/summary.json",
+    "SHA256": "01e7f6779539452e5cf41ca9d2fb9533689084be3f2e6dae32c0c3fc4d32f10c"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_framekey_witness2/inputs.json",
+    "SHA256": "af17bb522ab91f46feb5a2c6281be22383727658a6480821dfd8ba0fde4e23bd"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_framekey_witness2/producer.py",
+    "SHA256": "27b83a0e13c82a2cee366686c61e66e24cc67943d171074fd578da8d617fe385"
+  },
+  "checks": {
+    "valid_changed_solids": true,
+    "new_key_equilibrium": true,
+    "omitted_key_rejected": true,
+    "frame_to_ground_insertion_clear": true,
+    "key_overlap_derivatives": true
+  },
+  "rows": {
+    "new_key": {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "forces_N": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.40861041666666365,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5902150462962972,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5902150462962973,
+        0.9465036071898361,
+        0.6593142174442715,
+        0.0,
+        1.301932154177579
+      ],
+      "force_error_N": 3.055131238175915e-15,
+      "moment_error_Nm": 4.443059973708341e-17
+    },
+    "without_key": {
+      "success": false,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    }
+  },
+  "derivatives": [
+    {
+      "label": "key_xmax",
+      "exact_area_mm2": 9.599999999999994,
+      "overlap_derivatives_mm2": [
+        9.602000749280132,
+        9.60400315159416
+      ],
+      "zero_step_Richardson_mm2": 9.599998346966103,
+      "relative_error": 1.7219103032317662e-07,
+      "reason": "Chamferentry createsO(h)offset inV(h)/h; extrapolateh->0instead ofmisinterpretingfinitequotientasplanearea."
+    },
+    {
+      "label": "key_xmin",
+      "exact_area_mm2": 9.599999999999994,
+      "overlap_derivatives_mm2": [
+        9.602000750709154,
+        9.604003152339956
+      ],
+      "zero_step_Richardson_mm2": 9.599998349078351,
+      "relative_error": 1.7197100443677726e-07,
+      "reason": "Chamferentry createsO(h)offset inV(h)/h; extrapolateh->0instead ofmisinterpretingfinitequotientasplanearea."
+    },
+    {
+      "label": "key_ymax",
+      "exact_area_mm2": 14.399999999999991,
+      "overlap_derivatives_mm2": [
+        14.403000725394469,
+        14.406003127279364
+      ],
+      "zero_step_Richardson_mm2": 14.399998323509573,
+      "relative_error": 1.1642294572844492e-07,
+      "reason": "Chamferentry createsO(h)offset inV(h)/h; extrapolateh->0instead ofmisinterpretingfinitequotientasplanearea."
+    },
+    {
+      "label": "key_ymin",
+      "exact_area_mm2": 14.399999999999991,
+      "overlap_derivatives_mm2": [
+        14.403000725573548,
+        14.406003127361178
+      ],
+      "zero_step_Richardson_mm2": 14.399998323785919,
+      "relative_error": 1.1640375507937506e-07,
+      "reason": "Chamferentry createsO(h)offset inV(h)/h; extrapolateh->0instead ofmisinterpretingfinitequotientasplanearea."
+    }
+  ],
+  "assembly_stages": [
+    {
+      "shift_mm": [
+        0,
+        0,
+        -80
+      ],
+      "hits": []
+    },
+    {
+      "shift_mm": [
+        0,
+        0,
+        -20
+      ],
+      "hits": []
+    },
+    {
+      "shift_mm": [
+        0,
+        0,
+        -6
+      ],
+      "hits": []
+    },
+    {
+      "shift_mm": [
+        0,
+        0,
+        -3
+      ],
+      "hits": []
+    },
+    {
+      "shift_mm": [
+        0,
+        0,
+        -1
+      ],
+      "hits": []
+    },
+    {
+      "shift_mm": [
+        0,
+        0,
+        0
+      ],
+      "hits": []
+    }
+  ],
+  "assembly_comparisons": 3,
+  "patches": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_framekey_witness2/patches.json",
+    "SHA256": "8a3ecd119d64c3fc8fd26f17643e6aba286fa14c3368b900ce8908300580d5cd"
+  },
+  "areas_mm2": {
+    "key_ymax": 14.399999999999991,
+    "key_xmin": 9.599999999999994,
+    "seat": 5059.487380938695,
+    "key_xmax": 9.599999999999994,
+    "key_ymin": 14.399999999999991
+  },
+  "updated_required_Base_wrench_N_Nm": [
+    -0.4086104166666667,
+    -0.0,
+    9.69704876004044,
+    -0.07667416501898712,
+    -0.21934780598198717,
+    -0.0
+  ],
+  "conditional_mass_change_from15_kg": -0.0010713079213019447,
+  "conditional_mass_kg": 0.9888237838650752,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Actual finite nominalkey equilibrium,not elastic distribution/capacity or guaranteedfit. Oldplanarfrictionless shear failure retained.",
+    "Finite insertion samples,not CCD/tolerance/tool/thread/process or actual hardware certification.",
+    "Nominal conditionaldensity/COM; baseline15mass updated for actual18motorlands+19key/pocket. Upstream gravityfrozen not fullycoupled."
+  ]
+}

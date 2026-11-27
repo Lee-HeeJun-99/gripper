@@ -1,3 +1,77 @@
+# Latest actual P1 finite compliant load path — 2026-11-27, Supervisor save pending
+
+Starting actual HEAD 581f6de37e7937be60fc490c02f2e438b77f8188.
+Selected exact queue ID goal_primary_compliant_wall_cradle_frame.
+SAME ONE primaryP1_framekey19,78parts; failedAO/adoptedAA and original
+3Finger/cartridge/jamming extensions preserved. ONLY OPEN_FRAME/GROUND_PLATE
+STEP/STL changed: integral8x6x3Framekey,R0.5root; Ground blindpocket,
+R1corner toolreliefs,.6mm45degentry,.2mmroofclearance. Full78STEP/BOM and
+identity6 bind76unchangedpartrefs. Source1101/1996/standardfixtureparts reused.
+
+Newactualkey fixes missingfrictionlessFrameGroundFxpath without sharedM5fixation.
+Finitekeyareas9.6mm2eachX/14.4mm2eachY; seat5059.487380938695mm2.
+Necessaryfullwrenchequilibrium passes; keyomissionfails. Exactindependent
+Boolean/Richardsonarea,78validsolids/191pairs/nointerference, sixFramefixture
+insertionposes,81moduleposes/RFtools/independentaggregateSTL and one stored
+loadedcatenary/rotor pose pass boundednominalchecks. NotCCD/tolerance/process/
+actualthreadtightening/full3FingerStage1 orphysicalassembly.
+
+New actualfiveelasticbodyRootBack/Frame/Cap/Ground/Base plus6DOFrigidmotor
+conditionalcontact solution:74040DOF,14tensiononlyminorcoreaxialsprings,
+finiteactualseats/walls/motorlands/newFramekey/existingGroundBasekey.
+OSQP4000iterationlimit preserved; separate3iterationactiveKKT closesALL
+originalconstraints. Independentdirecttetraforce/energy/stress/bolt/contact/
+rigidwork andcorruptdisplacement rejection pass. NominalFramepeak3.182591MPa,
+Root.108528,Cap.436393,Ground.452818,Base.493421MPa areconditionalunconverged
+peaks,NOTstrengthapproval. Point/volume rigidgauge nominalstates agreephysical
+strain/forces; absolute displacementgaugechanges areNOTstiffnessimprovement.
+
+GravityfullRoot/MotorforceANDcouple includepriorloadedFinger/string/rotor;
+fixedRailPET/clampmass goesRootport,hardwareweight toBaseport; finitebodies
+ownweight integratedfromtetra. ExactCADconditionalmass.988823783865kg and
+Basewrench[-.408610416667,0,9.697048760040,-.076674165019,-.219347805982,0]
+N/Nm; nominalmeshgravityrequiresFZ9.701546171536N. Thisdifferenceisgeometric
+massquadrature,notunknownforcecancellation. InchainJSONlegacyfield
+external_FrameGround_port actuallyidentifiesTEST_BASE. No hiddenFramefixation.
+FiniteBaseexternaltraction isNOTphysicalbenchanchor. Root/MotorfreeY and
+CapfreeXY/yaw gauges carrynegligibleload,NOTpositivephysicalretention.
+FrozenFingerboundaryfeedback/localhardwarebearing/thread/sourcecase/material
+minima andfriction/protection/globalenergy remainunresolved.
+
+All22systemgates UNQUALIFIED in models/primary_system_gate_state10.json;
+newwhole-systemgates NONE. OldFrame52.7693%,Rail1.30247%,Ground/BasemeshFAILs
+andold420sgaptimeout retained. Fine237165DOFnewtrial entered420slimitbranch,
+then killgroupalreadyabsent raisedProcessLookupError. Wrapperexit1 known;
+exactanalysisexitcode/timeUNKNOWN,420slowerboundonly,no field/summary,no retry.
+Originalassertion/serialization/syntax/fixedmasskey errors,uncenteredfootprint
+spuriousmoment,OSQPmaxiteration/CapvolumeFAILs andwrongauxdualdiagnostic are
+preserved. Independentupperfieldverify correctsinterpretation withoutrewriting
+originalFAIL. The already-started74040DOF .02gapcontrast alsohit420slimitbranch with
+killgroupabsent/exactexitunknown/no field orsummary; NOgap/preloadPASS.
+Both420slowerbounds andall executioncounts arein
+primary_cycle9/summary.json and primaryP1_cycle9_closeout/summary.json.
+Afterfine limit onlyexistingtasktermination/savedfieldinspection/releaseaudit/
+exactbytehandoff; no newphysics/preloadcontrast/restart.
+
+NEXT exact ID goal_primary_framekey_fit_feedback: SAMEP1 actualinternalGround
+socketM5/hexnutretention,adequateprojection/tool/assemblyaccess fromexisting
+ISO4762/4032sources; smoothinternalM5envelopes doNOTcertifytightening/engagement.
+UpdateactualsameP1CAD/mass/footprints then existinggravityFinger/string Root/
+Motorposefeedback andpairedwrenches. No automaticfine/gap timeoutretry,
+blanketmeshrefinement,newarchitecture orsharedM5fixation. Physicalanchor,
+case/bearings/materialminima,full3Finger/friction/protector/globalenergy blocked.
+
+Trustedunchangedrelease13 remainsINTEGRATED_NOT_QUALIFIED,24errors,exit2.
+NoP1same-revisionrelease/Stage3/SOFA/hardware claim. Sourcepins unchanged.
+0RUNNINGqueue tasks/0ownedanalysischildren at finalhandoff. No Gitadd/commit/
+push/historyrewrite/SDK/securitymanagerguardgatechanges/purchase/hardware/
+credentials/providerselection/subagents/recursivelaunches. Originaluserfiles
+preserved. ExactSupervisor save request runtime/goal_authorized_20261127_7/
+save_request8.json. SavePENDING; Supervisor alone savesverifiedbytes.
+Detailed CAD/numerics/failures: reports/primaryP1_framekey_engineering.md.
+
+---
+
 # Latest actual P1 motor-bearing continuation — 2026-11-27, Supervisor save pending
 
 Actual starting HEAD1ed7a296c698b03e757b86779bef9af03f051b5c.

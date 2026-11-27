@@ -1,0 +1,63 @@
+{
+  "status": "ACTUAL_P1_SAVED_CHAIN_GAUGE_AND_GAP_REVIEW_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_framekey19/summary.json",
+    "SHA256": "01e7f6779539452e5cf41ca9d2fb9533689084be3f2e6dae32c0c3fc4d32f10c"
+  },
+  "reviewer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_chain_contrast1/reviewer.py",
+    "SHA256": "e91822617fa0461cf43143f46530d1d123b3525fc071431de5b0a93b9fc9f7ca"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_chain0_h5_3/summary.json",
+      "SHA256": "051a634c8b109d4b1eacd9a8e3c5ca3db84c1318dfba352c6f776b3ac66da5d2"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_chain0_h5_point1/summary.json",
+      "SHA256": "f3e9f3ad2886faf79ffe2a09bd0283e12140a81dd68637ea7ce463db077a25e4"
+    }
+  ],
+  "gauge_equivalence_checks": {
+    "strain_force_energy_unchanged": true
+  },
+  "gauge_rows": [
+    {
+      "part": "OPEN_FRAME",
+      "relative_strain_error": 2.3789192269683493e-11,
+      "relative_vm_error": 1.5057177567539423e-11
+    },
+    {
+      "part": "F0_ROOT_BACK",
+      "relative_strain_error": 9.019035560833205e-12,
+      "relative_vm_error": 5.601637903588062e-12
+    },
+    {
+      "part": "MOTOR_CAP",
+      "relative_strain_error": 2.8635068937914335e-11,
+      "relative_vm_error": 2.376304028751344e-11
+    },
+    {
+      "part": "GROUND_PLATE",
+      "relative_strain_error": 5.905682986796551e-11,
+      "relative_vm_error": 4.194938807817241e-11
+    },
+    {
+      "part": "TEST_BASE",
+      "relative_strain_error": 6.599816703414206e-11,
+      "relative_vm_error": 4.482980403672499e-11
+    }
+  ],
+  "max_bolt_difference_N": 9.71454028331209e-11,
+  "relative_elastic_energy_difference": 1.3034684442914113e-11,
+  "gap": null,
+  "preload_contrast_status": "NOT_RUN_AFTER_FINE_LIMIT_EVENT",
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": [],
+  "limitations": [
+    "Savedfield reviewonly; no newsolve,geometry,physics or timeoutretry.",
+    "Point/volume gauges select different globalcoordinates,not differentstiffness. Actual sourcefixturesandcasecapacityremainunknown.",
+    "Gap islinearizedcontactlawoffsetonactualnominalCAD,notmachinedgap/finiteCCD/preloadfitcertificate.",
+    "FrozenupstreamFinger/string notrecoupled; displacementchanges cannot bepromotedto unchangednormalforce/grasp or globalenergy."
+  ]
+}

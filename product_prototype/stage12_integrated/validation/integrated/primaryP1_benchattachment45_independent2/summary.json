@@ -1,0 +1,168 @@
+{
+  "status": "ACTUAL_BENCH_CONTINUOUS_ENVELOPE_AND_LOCAL_YAW_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_benchattachment45/summary.json",
+    "SHA256": "8dce28219b536fb44da78cd360c1cb5bcd51b30d24f87748e91f7c3d0f97eb07"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_benchattachment45_independent2/verifier.py",
+    "SHA256": "1656bc0fdac665e1ef897e40215b0997337cef408999a2d2b6bc22f22b5cccbd"
+  },
+  "checks": {
+    "continuous_envelopes_clear": true,
+    "actual_yaw_contact_on_walls": true,
+    "yaw_positive_contact_reactions": true,
+    "yaw_force_and_work": true
+  },
+  "continuous_translation_sweeps": [
+    {
+      "operation": "continuous30mm_bolt_translation_superset",
+      "station": 0,
+      "hits": []
+    },
+    {
+      "operation": "continuous20mm_nominal_nut_translation",
+      "station": 0,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_outboard_wrench_envelope",
+      "station": 0,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_bolt_translation_superset",
+      "station": 1,
+      "hits": []
+    },
+    {
+      "operation": "continuous20mm_nominal_nut_translation",
+      "station": 1,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_outboard_wrench_envelope",
+      "station": 1,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_bolt_translation_superset",
+      "station": 2,
+      "hits": []
+    },
+    {
+      "operation": "continuous20mm_nominal_nut_translation",
+      "station": 2,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_outboard_wrench_envelope",
+      "station": 2,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_bolt_translation_superset",
+      "station": 3,
+      "hits": []
+    },
+    {
+      "operation": "continuous20mm_nominal_nut_translation",
+      "station": 3,
+      "hits": []
+    },
+    {
+      "operation": "continuous30mm_outboard_wrench_envelope",
+      "station": 3,
+      "hits": []
+    }
+  ],
+  "yaw_contact_unit_work": [
+    {
+      "angle_rad": -0.001961087206957025,
+      "contact_points_mm": [
+        [
+          -30.984213242924522,
+          3.0999999999999988,
+          -132
+        ],
+        [
+          70.98421324292453,
+          -13.099999999999998,
+          -132
+        ]
+      ],
+      "normal_vectors": [
+        [
+          0,
+          -1.0,
+          0
+        ],
+        [
+          0,
+          1.0,
+          0
+        ]
+      ],
+      "wall_gap_residual_mm": 1.7763568394002505e-15,
+      "normal_per_unit_Nmm": 0.009806957255918602,
+      "net_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reaction_moment_Nmm": 0.9999999999999999,
+      "contact_work_Nmm": 0.9999999999999999,
+      "work_error_Nmm": 0.0,
+      "reaction_opposes_yaw": true,
+      "corner_pressure_strength_qualified": false
+    },
+    {
+      "angle_rad": 0.001961087206957025,
+      "contact_points_mm": [
+        [
+          -30.984213242924522,
+          -13.099999999999998,
+          -132
+        ],
+        [
+          70.98421324292453,
+          3.0999999999999988,
+          -132
+        ]
+      ],
+      "normal_vectors": [
+        [
+          0,
+          1.0,
+          0
+        ],
+        [
+          0,
+          -1.0,
+          0
+        ]
+      ],
+      "wall_gap_residual_mm": 1.7763568394002505e-15,
+      "normal_per_unit_Nmm": 0.009806957255918602,
+      "net_force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reaction_moment_Nmm": -0.9999999999999999,
+      "contact_work_Nmm": -0.9999999999999999,
+      "work_error_Nmm": 0.0,
+      "reaction_opposes_yaw": true,
+      "corner_pressure_strength_qualified": false
+    }
+  ],
+  "physical_operating_sourcefield": null,
+  "accepted_physical_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Continuous bounds cover only specified addedfastener/toolstraighttranslations;notwholeassembly/helicalthreads or realjawprofile",
+    "Yaw zeroarea corner contact does not certify finitepressure,elasticity or strength",
+    "Throughbolt uplift/core/flank/preload/locking and externalbench-to-ground attachment unresolved",
+    "OldchangedstandFE/mass/contact invalid;all22systemgates remain unqualified"
+  ]
+}

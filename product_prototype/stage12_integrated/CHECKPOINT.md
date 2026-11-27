@@ -1,3 +1,25 @@
+# Cycle45 final record correction
+
+Measured finite assembly/tool poses: **70**, all clear. The first cycle45 record prose incorrectly said88; its numerical field was70. Original record/report remain preserved. Authoritative final record: `validation/integrated/primary_cycle45_final/summary.json`;all22UNQUALIFIED state: `models/primary_system_gate_state50.json`. CAD/loadpath/results are unchanged by this count correction.
+
+---
+
+# Actual P1 keyed external bench interface — cycle45
+
+Starting HEAD `f23c2933659943dc33308e97a3245cd02252292b`; selected `goal_primary_anchor44_positive_ground_attachment_and_thread_contact`. SAME ONE primary P1,112parts;separate failedAO.
+
+SAME ONE P1 continued as112part primaryP1_benchattachment45,separate failedAO. Actual BENCH_SUPPORT gains two integral12x16x4mm undersidekeys andfour counterbores leaving6mmweb;new292x190x8mm finite EXTERNAL_BENCH_PLATE has matching12.2x16.2x4.1mmpockets andfour5.5mmports. Four reviewedISO4762M5x20/ISO4032stacks have14mmgrip,4.7mmnominaloverlap,1.3mmtipprojection;effectiveengagementnull. All102otheroldpartSTEP unchanged;112partfinalinterferencecount0,all10changed/newsolidsvalidsingle. Actualkeytranslationbacklash0.1mm,independentanalytic/BRep yawstops +/-0.001961087206957rad. Bothyawdirections have actualopposingwallcorner forcecouple0.0098069572559186N per1Nmm,netforce0/workerror0;cornerpressure/strengthNOTqualified. Unilateral localunit horizontalwallresultants feasible afterslip;forceonbenchplate,notphysicaloperatingequilibrium. All103movingoldparts reachnearstopsagainst9newfixedinterfacepartswithoutcollision. Fourbolt/nut/enclosingwrenchcontinuousstraightapproachsweeps clear;70finiteposesclear. Firstwrong-axis/neighborwrenchcorridorFAIL andfirstauditnumpyboolserializationexit1 retained;correctedoutboardcorridor passes. Finitebenchplate is NOT assumedfixed:completefreeproducthorizontalforcebalanceFAIL. Newinterface resolves localgeometric shear/yawmechanism,NOTultimatefloorattachment/uplift/threadcapacity. Nooperating100gsourcefield,equilibria0,materialminimum/preload/core/flank/locking/strength/globalenergy qualified. Changedstandandnewplateinvalidate oldFE/mass/contactapplicability. All22UNQUALIFIED;NoStage3. Preserve41contactwork5.242percent/bolt15.107percent/base-quarterboltmesh1.975percent andallpriorRoot/Finger/wire/protector/friction/time/globalenergy failures. ThreeFinger/cartridge/jamming/distalPETslide preserved.
+
+Actual changed CAD: `cad/exports/primaryP1_benchattachment45/BENCH_SUPPORT.step`, `EXTERNAL_BENCH_PLATE.step`,four `BENCH_THROUGH_BOLT_*.step`/`BENCH_THROUGH_NUT_*.step`,matchingSTLs andfull112part ASSEMBLY.step/BOM. All102otheroldpartSTEP unchanged. Sources: existing reviewedISO4762/4032 dimensions andBahco111M8 boundingdimensions;no newmaterialminimum orhardwareclaim.
+
+Solved locally: positivefinitebacklash shear/yawgeometry atstand-to-bench interface;actualhead/nutseats;outboardtool andcontinuousaddedfastener translationenvelopes;actual103moving/9fixedpartnearstop tests. Firstwrong-axis/neighborwrenchFAIL andnumpyboolserializationexit1preserved. No newqualifiedsystemgates;all22UNQUALIFIED in models/primary_system_gate_state49.json. Freewholeproducthorizontalbalance remainsFAIL;ultimatefloorattachment/uplift/threadstrength unresolved. Historical failures unchanged.
+
+Actualcommands/results in validation/integrated/primary_cycle45_record/summary.json: 6 bounded4GiB/420s analyses,18.634362s childtime,allreaped,noRUNNINGtasks. Sourcepins and8595originaluntrackedhashes unchanged. No gitadd/commit;Supervisor exactbytesave_request45.json. HardwareNOT_MEASURED;NoStage3.
+
+Concrete next `goal_primary_anchor45_installed_thread_and_external_support_boundary`: Continue SAME112part primaryP1_benchattachment45. FIRST resolve installed threaded axial transfer on actual14mmgrip/4.7mmnominaloverlap M5x20 stacks:source-backed core/flank/effectiveengagement/materialminimum,explicit bolt/nut rotationalDOFs,head/nut/socket/key contact andfinitebacklash. Anchor44keepers exist butnewfourreceiver andfourbenchthroughbolts remain rotationunqualified;do not apply lockedconnector ornominalmajorshankspring ascapacity. Evaluate source-backedremovable positivekeepers/retainingnutlocking whilepreserving actualoutboard8AFwrench/4AFsocket corridors andkeeper-last order. In SAMEspecimen define actualexternalbenchplate-to-support reaction boundary with finite geometry/source-backedattachment;thefreeplatecannotbe fixed bydeclaration. Preserve two0.1mmkeys and +/-0.001961rad stops orrevalidatechangedgeometry. Then rebuild changedstand/bench/base/receiver physicalFE,mass/contact;all22criteria/1percentmesh/.1percenttime remain. Actual100gcontact/friction/Fingerdeflectionoperating demand andfinalsame-revision3Finger stillrequired;NoStage3.
+
+---
+
 # Actual P1 socket keepers and finite bench stand — cycle44
 
 Starting HEAD `3fecdbf15cff3eee6f4c30128f4b6678115e2c33`; selected `goal_primary_anchor43_retained_bolt_socket_keeper_and_external_fixture`. SAME primary `primaryP1_benchstand44d`,103parts. Motor→Drum→Tendon→Finger→Root→Ground specimen remains separate from failedAO;3Finger/cartridge/jamming/distalPETslide preserved.

@@ -1,3 +1,37 @@
+# Batch6 cycle7 — actual AO three-module top-entry rejected (2026-11-27)
+
+Started at249f05d51236ed1d7a38bdde303cead0efc49f03. Selected READY
+batch6_same_revision_three_finger_stage1. One bounded actual assembly analysis:
+validation/stage1/batch6_stage1_cycle1/summary.json. No CAD/BOM adoption or
+parts/process removal. AO254 current and AA304 adopted remain unchanged.
+
+Alternative sequence preassembles38parts per Finger (root pins/layers/clamps,
+Terminal/swivel/cassette), then inserts F0,F1,F2 from +Z. RF Palm mounting
+fasteners and tendon wires explicitly deferred; all254parts partitioned.
+18finite poses,595actual Boolean comparisons:12poses collide with existing
+Idler/bracket/Palm. Final nominal poses clear. Thus collision-free final CAD
+and prior root-only subassembly samples cannot certify this assembly sequence.
+Independent reimport/reversed-common/volume-subtraction verifies one actual
+witness for each rejected row (12/12); input/dependency hashes pass. First
+largest F0 Terminal-back/Idler witness162.4476525mm3. Original failure exit2
+retained; verifier exit0 certifies rejection only. No continuous path PASS.
+Later sectors are counterfactual nominal installations after earlier rejection.
+
+Same-AO readiness and unchanged baseline release both exit2, remain
+INTEGRATED_NOT_QUALIFIED. All22Stage2 criteria and full same-revision Stage1
+still unqualified. No load/strength/global energy/physical protection claim.
+Task BLOCKED: evaluate manufacturable Idler-after-Finger with actual bracket/
+axle/tool access or a distinct lateral module path before another assembly
+trial. Do not repeat top-entry height scans or merge incompatible candidate
+partial PASS. Independent READY coverage work remains; consult NEXT_TASK.
+
+Four children completed/reaped under4GiB/420s, no timeout/live owned children
+or RUNNING queue records. No subagents, SDK, criteria, manager/save controls,
+Stage3, purchase, hardware or power actions. Old failures and unrelated
+untracked work preserved. Supervisor local save PENDING; no git add/commit
+or new commit SHA. runtime/authorized_20261127_6/save_request7.json is the
+exact pending save request; this checkpoint does not claim supervisor save.
+
 # Batch6 cycle6 — AO initial-stress/modal reference; system chain BLOCKED (2026-11-27)
 
 Started at ca76b4047b2002afbe2128b00d9b87c1756b6f85. One bounded actual

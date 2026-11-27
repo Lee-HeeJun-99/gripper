@@ -1347,7 +1347,7 @@
       "id": "batch6_same_revision_three_finger_stage1",
       "track": "C",
       "priority": -193,
-      "status": "READY",
+      "status": "BLOCKED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1381,8 +1381,15 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:33:44.967791+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/stage1/batch6_stage1_cycle1/summary.json",
+      "last_cycle_result": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/summary.json",
+        "SHA256": "251dd7e701246754c95ace7dacff22b16c4c1ba2291006ef2fe7999bff47bdee"
+      },
+      "reason": "Preassembled38part top-entry modules collide with installed Idler/Palm at12/18poses; independently verified. Final nominal clear is not assembly certification. Full same-revision Stage1 and22Stage2 gates absent.",
+      "unblock": "Implement a justified distinct assembly architecture/sequence: evaluate Idler-after-Finger with actual fastener/tool/service access, or lateral complete module approach. No repeated top-entry height scan. Compatible final CAD/BOM/wire/tolerance/tools and load evidence still required."
     },
     {
       "id": "batch6_strength_worst_case_convergence",

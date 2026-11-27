@@ -1,0 +1,199 @@
+{
+  "status": "ACTUAL_AO_TOP_ENTRY_ASSEMBLY_REJECTED_STAGE1_BLOCKED",
+  "task_id": "batch6_same_revision_three_finger_stage1",
+  "starting_HEAD": "249f05d51236ed1d7a38bdde303cead0efc49f03",
+  "actual_research_cycles": 1,
+  "actual_results": {
+    "analysis": {
+      "path": "product_prototype/stage12_integrated/validation/stage1/batch6_module_entry1/summary.json",
+      "SHA256": "a1f0ba5f2b5c7191a973b8a1cf6fc948f4e2d7aa6a3cfce6012f51d9115dba23"
+    },
+    "verification": {
+      "path": "product_prototype/stage12_integrated/validation/stage1/batch6_module_entry_verify1/summary.json",
+      "SHA256": "6cc372e90c7ce414a88418f8262d2022fe5b6590f6d6d068c23a4771ce2173fb"
+    },
+    "same_revision_readiness": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_stage1_readiness1/summary.json",
+      "SHA256": "646c4e7aac80712b4b0854293be43dea300511fddecaca70577764cf5482e2d6"
+    },
+    "baseline_release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_stage1_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/finalize.py",
+    "SHA256": "f93df48ab26206192452f31a539b3bc211e366de6e5693180c9b5d7248b65685"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/runner.py",
+    "SHA256": "951bf9c89c29dffbd39a01a41e0e99aba80ea8d642c8b0626ab6375b548775fb"
+  },
+  "executions": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_module_assembly.py"
+      ],
+      "producer_SHA256": "22e1df34ccd9315663dbf01a5dc6ead72d82308f7831e2e45483ccb7de48498e",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 17.79683237383142,
+      "PID": 6,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/entry.log",
+        "SHA256": "78e07a8df220e604bc9b03eebe2cca30b41cbdf8ea1fa311b096fcd76cb1b9da"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/entry_plan.json",
+        "SHA256": "f618135159e0af441a8c0e2e41175a96f287e3f7b4292b66a54d8071ba44737c"
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_module_assembly.py"
+      ],
+      "producer_SHA256": "99cedaba2cbe56585fecc5943444d4c5a9b11e47ea4a6df144068ffe8ee94d05",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.97054410004057,
+      "PID": 5,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/verify.log",
+        "SHA256": "3fa8ce7e91b4c8da72051838d8565d8874fe60f24f2821c866182169f989e4f6"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/verify_plan.json",
+        "SHA256": "7ae2f8e94b0df111e633e478856b6c6fae224f848a403d9f63632a2bcb190562"
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "batch6_stage1_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.31492287502624094,
+      "PID": 4,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/release_plan.json",
+        "SHA256": "78912a599609ded44ff849c8c92e047cfb213fb4177d602918e39e6240139ee0"
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_stage1_readiness.py"
+      ],
+      "producer_SHA256": "4db2c0efc7e1f3874586854d07b80d418697b2525d716ad33a675480b8cc40a7",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.11433444311842322,
+      "PID": 4,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/readiness.log",
+        "SHA256": "ede4309e40e3d08e11870566ac1ac772c010c366ad00d79f687a2e9dcd63bbbe"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_stage1_cycle1/readiness_plan.json",
+        "SHA256": "c9044218bcf1902c8174854b68db2a7848900356b812b8e57c8faa15758e38cb"
+      }
+    }
+  ],
+  "actual_evidence": "New ordered preassembled38part Finger modules F0/F1/F2 top-entry alternative against full actual AO hardware. This moves pins,layers,clamp,Terminal,cassette together, unlike prior root-layer lateral insertion. RF mount fasteners and wires explicitly deferred. All254 STEP inputs hashed; inventory partition exact.",
+  "quantitative": {
+    "total_parts": 254,
+    "module_parts": {
+      "0": 38,
+      "1": 38,
+      "2": 38
+    },
+    "finite_poses": 18,
+    "exact_boolean_comparisons": 595,
+    "collision_rows": 12,
+    "independent_witnesses": 12,
+    "largest_verified_witness_mm3": 213.08269300613375,
+    "nominal_samples_clear": true
+  },
+  "failures_preserved": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/stage1/batch6_module_entry1/summary.json",
+      "SHA256": "a1f0ba5f2b5c7191a973b8a1cf6fc948f4e2d7aa6a3cfce6012f51d9115dba23"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_stage1_readiness1/summary.json",
+      "SHA256": "646c4e7aac80712b4b0854293be43dea300511fddecaca70577764cf5482e2d6"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_stage1_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  ],
+  "historical_failure_preserved": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AO_root_verify1/summary.json",
+    "SHA256": "0153f65319c1331a63ecef639f659bdecf9cfc747227f8000b12c9930205c2f3"
+  },
+  "structural_problem_solved": "No capacity solved. Actual installed Idler/Palm hardware obstructs proposed rigid top-entry module mounting; final collision-free placement does not establish assembly feasibility.",
+  "changed_part_IDs": [],
+  "CAD_BOM_modified": false,
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "whole_system_release": false,
+  "actual_capacity_qualified": false,
+  "SOFA_runs": 0,
+  "known_owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_VALIDATION_AND_LOCAL_SAVE",
+  "new_commit_SHA": null,
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "limitations": [
+    "Rigid nominal reference only; no finite loaded PET/Rail trajectory",
+    "Later sectors evaluated counterfactually after earlier nominal installation even if earlier entry fails",
+    "No internal preassembly, RF fastener installation, cable routing, tool or tolerance certificate",
+    "A sampled collision rejects this entry direction, not all assembly sequences"
+  ],
+  "followup": "Before another same-mechanism trial evaluate manufacturable Idler-after-Finger assembly with actual bracket/axle/tool access, or a distinct lateral module entry. Do not scan top-entry heights or combine AV/AX/AY with AO partial PASS. Independent coverage work remains READY; no exhaustion claim."
+}

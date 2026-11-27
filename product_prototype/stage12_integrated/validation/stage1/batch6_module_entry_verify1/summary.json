@@ -1,0 +1,148 @@
+{
+  "status": "REJECTION_WITNESSES_VERIFIED",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_module_entry1/summary.json",
+    "SHA256": "a1f0ba5f2b5c7191a973b8a1cf6fc948f4e2d7aa6a3cfce6012f51d9115dba23"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_module_entry_verify1/inputs.json",
+    "SHA256": "fd8d4d5b0eec0b55d236c30781f3c1a57c3cc724fa9af38fec8eb6bddde06d7e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_module_entry_verify1/producer.py",
+    "SHA256": "99cedaba2cbe56585fecc5943444d4c5a9b11e47ea4a6df144068ffe8ee94d05"
+  },
+  "checks": {
+    "input_hashes": true,
+    "partition_exact": true,
+    "three_equal_modules": true,
+    "all_rejected_rows_witnessed": true,
+    "nonempty_actual_collision": true,
+    "independent_booleans": true,
+    "unchanged_final_nominal": true
+  },
+  "witnesses": [
+    {
+      "sector": 0,
+      "dz_mm": 120,
+      "moving": "F0_TERMINAL_BACK",
+      "fixed": "F0_IDLER",
+      "reported_mm3": 162.44765250917638,
+      "reversed_common_mm3": 162.44765250917638,
+      "subtracted_volume_mm3": 162.44764592794377,
+      "passed": true
+    },
+    {
+      "sector": 0,
+      "dz_mm": 80,
+      "moving": "F0_TERMINAL_FRONT",
+      "fixed": "PALM",
+      "reported_mm3": 213.08269300611505,
+      "reversed_common_mm3": 213.08269300611502,
+      "subtracted_volume_mm3": 213.0826929456925,
+      "passed": true
+    },
+    {
+      "sector": 0,
+      "dz_mm": 40,
+      "moving": "F0_ROOT_FRONT",
+      "fixed": "F0_IDLER",
+      "reported_mm3": 32.064809385908944,
+      "reversed_common_mm3": 32.06480938590895,
+      "subtracted_volume_mm3": 32.064807711859885,
+      "passed": true
+    },
+    {
+      "sector": 0,
+      "dz_mm": 10,
+      "moving": "F0_ROOT_FRONT",
+      "fixed": "F0_IDLER",
+      "reported_mm3": 68.06480751170746,
+      "reversed_common_mm3": 68.06480751170746,
+      "subtracted_volume_mm3": 68.06480075161153,
+      "passed": true
+    },
+    {
+      "sector": 1,
+      "dz_mm": 120,
+      "moving": "F1_TERMINAL_BACK",
+      "fixed": "F1_IDLER",
+      "reported_mm3": 162.44765250906931,
+      "reversed_common_mm3": 162.4476525090694,
+      "subtracted_volume_mm3": 162.44764592787828,
+      "passed": true
+    },
+    {
+      "sector": 1,
+      "dz_mm": 80,
+      "moving": "F1_TERMINAL_FRONT",
+      "fixed": "PALM",
+      "reported_mm3": 213.08269300606915,
+      "reversed_common_mm3": 213.08269300604715,
+      "subtracted_volume_mm3": 213.08269294560165,
+      "passed": true
+    },
+    {
+      "sector": 1,
+      "dz_mm": 40,
+      "moving": "F1_ROOT_FRONT",
+      "fixed": "F1_IDLER",
+      "reported_mm3": 32.064809385834145,
+      "reversed_common_mm3": 32.06480938583415,
+      "subtracted_volume_mm3": 32.06480771179213,
+      "passed": true
+    },
+    {
+      "sector": 1,
+      "dz_mm": 10,
+      "moving": "F1_ROOT_FRONT",
+      "fixed": "F1_IDLER",
+      "reported_mm3": 68.06480751162019,
+      "reversed_common_mm3": 68.06480751162019,
+      "subtracted_volume_mm3": 68.06480075155469,
+      "passed": true
+    },
+    {
+      "sector": 2,
+      "dz_mm": 120,
+      "moving": "F2_TERMINAL_BACK",
+      "fixed": "F2_IDLER",
+      "reported_mm3": 162.44765250909606,
+      "reversed_common_mm3": 162.447652509096,
+      "subtracted_volume_mm3": 162.4476459279108,
+      "passed": true
+    },
+    {
+      "sector": 2,
+      "dz_mm": 80,
+      "moving": "F2_TERMINAL_FRONT",
+      "fixed": "PALM",
+      "reported_mm3": 213.08269300612793,
+      "reversed_common_mm3": 213.08269300613375,
+      "subtracted_volume_mm3": 213.08269294575206,
+      "passed": true
+    },
+    {
+      "sector": 2,
+      "dz_mm": 40,
+      "moving": "F2_ROOT_FRONT",
+      "fixed": "F2_IDLER",
+      "reported_mm3": 32.06480938587399,
+      "reversed_common_mm3": 32.064809385874,
+      "subtracted_volume_mm3": 32.064807711833055,
+      "passed": true
+    },
+    {
+      "sector": 2,
+      "dz_mm": 10,
+      "moving": "F2_ROOT_FRONT",
+      "fixed": "F2_IDLER",
+      "reported_mm3": 68.06480751173267,
+      "reversed_common_mm3": 68.06480751173268,
+      "subtracted_volume_mm3": 68.0648007516661,
+      "passed": true
+    }
+  ],
+  "whole_system_release": false,
+  "scope": "Every rejected row independently reimported with reversed boolean common and volume subtraction; not independent exhaustive collision-free proof or continuous path certification."
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "Interactive setup probes, NOT physical experiments or research progress",
+  "failures": [
+    {
+      "probe": "python -c import OCP",
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: No module named 'OCP'",
+      "resolution": "Existing /tmp/regrip_stage1_ocp used via PYTHONPATH; no install or permission change"
+    },
+    {
+      "probe": "/usr/bin/python3 -c import OCP",
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: No module named 'OCP'",
+      "resolution": "Same existing dependency tree"
+    },
+    {
+      "probe": "Initial inline bounds query with wildcard incremental_stage1 import",
+      "exit_code": 1,
+      "error": "FileNotFoundError: stage1_manufacturing/cad/exports/revAO_root2/summary.json",
+      "cause": "Wildcard import replaced baseline_registry ROOT with Stage1 ROOT",
+      "resolution": "Explicit imports and qualified baseline_registry paths in corrected read-only query; no output experiment directory or geometry was created"
+    }
+  ],
+  "missing_path_discovery": [
+    "NEXT_TASK.md does not exist; authoritative NEXT_TASK.json read",
+    "stage12_integrated/tools and queue* absent; actual scripts and INTEGRATED_TASKS.json read"
+  ]
+}

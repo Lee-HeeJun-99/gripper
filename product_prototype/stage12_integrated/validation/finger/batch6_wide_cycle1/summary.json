@@ -1,0 +1,222 @@
+{
+  "status": "PARTIAL_ACTUAL_ROOT_DESIGN_GEOMETRY_VERIFIED_CAPACITY_UNQUALIFIED",
+  "task": "batch6_wide_root_cartridge",
+  "track": "B",
+  "starting_HEAD": "4448d6598f91c4a1e6ab6f6d0aa7eec86dbfd70e",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/summary.json",
+    "SHA256": "d7bfc04dfbc3f23a34acdb1ac86ecadcbd52c21042608cd79d8c03b90206ebeb"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/finger/AX_wide_verify1/summary.json",
+    "SHA256": "89b669098bf3efa56b280a44ab490d342b29141d4a8a58039b828f23d75cce3b"
+  },
+  "candidate_readiness": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AX_wide_readiness1/summary.json",
+    "SHA256": "b24ed5c3ba08816393b7f0941e73c714ef3dc0ad8b3fb60508a08664878cc46c"
+  },
+  "baseline_release_audit": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AX_wide_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "recorder": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/recorder.py",
+    "SHA256": "f6b68662f835066a6bcc91516f88ecb80c428b801fca39a209635db4976fdd7e"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/runner.py",
+    "SHA256": "c70f9c2a71df2d76bbbc9425e896142f3923f25e671254db962168e0042f283e"
+  },
+  "environment_probes": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/environment_probes.json",
+    "SHA256": "305955de20cb16cd69cb6a13d1d7ae5373c686f1bb4fe288ce8da34ae268d212"
+  },
+  "execution": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_wide_root.py"
+      ],
+      "producer_SHA256": "744964a0be422e35f80c7677f1dd5e6c47a69c06012512f5e9dbbab0f7df0937",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.374418440042064,
+      "PID": 5,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/build.log",
+        "SHA256": "0dbda1d9a3443dc8ef1ae0e0aef0bca9a06aa4fe1dd8995362391ec70475437a"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/build_plan.json",
+        "SHA256": "f427fe5069ec67d9b411c93e3de92ae3f0cb211b900af7512a56c34bd070d331"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_wide_root.py"
+      ],
+      "producer_SHA256": "75d2014f69f9c81da2fba487d2b5f4ec3acf638f7ff5ea72da9b2c10032a637a",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.7230119169689715,
+      "PID": 4,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/verify.log",
+        "SHA256": "1ca16cd830dd5d8b0c891b459c3d11aa143f31d4d490e800bc7f40c39970e8b9"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/verify_plan.json",
+        "SHA256": "34a71dbf8bd5e3e19727dda66bede3ba5feb425d3d51318794495f86ecb97991"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "AX_wide_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3650831528939307,
+      "PID": 3,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/release_plan.json",
+        "SHA256": "7aaaed7fa402cd6fd5627fddf64ad01d76566530f2ee123ebf459f562591e573"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_wide_readiness.py"
+      ],
+      "producer_SHA256": "f5f734c249d544f98cf8c895b4f632819209d89ba2393d2a7f29b7adfdc3c507",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.11453530611470342,
+      "PID": 4,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/readiness.log",
+        "SHA256": "40dc80ba157ee3c0e45df517c0124c73205b5a25b3235fadcc8364f65a8bc89c"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/readiness_plan.json",
+        "SHA256": "f3f03622f00e68a327c65851b82d823c58aade20bd6d25c4d6c84c79f9e9e194"
+      }
+    }
+  ],
+  "new_product_evidence": "Six actual replacement Rail STEP/STL blanks, complete254part STEP and JSON BOM. Root-only width6mm tabs and linear shoulders enlarge nominal pin net area .18 to .78mm2 and outer ligament .45 to1.95mm. No extra connector or distal restraint.",
+  "changed_part_IDs": [
+    "F0_RAIL_L",
+    "F1_RAIL_L",
+    "F2_RAIL_L",
+    "F0_RAIL_R",
+    "F1_RAIL_R",
+    "F2_RAIL_R"
+  ],
+  "part_count_before": 254,
+  "part_count_after": 254,
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "additional_parts": 0,
+  "new_standard_components": 0,
+  "new_special_tools": 0,
+  "process": "Changed one-piece .2mm strip blank profile; cutting/deburring/shoulder notch and material minima unqualified",
+  "structural_issue_addressed": "Nominal narrow root-hole net section enlarged outside free span. This is geometric removal of the narrow-section defect, not a stress/strength qualification.",
+  "quantitative_evidence": {
+    "nominal_net_area_ratio": 4.333333333333333,
+    "nominal_mean_net_stress_MPa_per_N_before": 5.555555555555555,
+    "nominal_mean_net_stress_MPa_per_N_after": 1.282051282051282,
+    "bearing_area_mm2_unchanged": 0.4,
+    "bearing_MPa_per_N_unchanged": 2.5,
+    "checks_passed": 42,
+    "independent_exact_context_pairs": 74,
+    "added_geometric_volume_all_rails_mm3": 54.24331034474993,
+    "physical_mass_change_kg": null
+  },
+  "failure_preservation": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/AO_root_verify1/summary.json",
+      "SHA256": "0153f65319c1331a63ecef639f659bdecf9cfc747227f8000b12c9930205c2f3"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/finger/AO_root_cycle1/summary.json",
+      "SHA256": "fa03e5b619f747b111c438e389d8fa2f5bb1bbbf73cc8f53a5b2c2b5609d28cc"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/batch6_route_cycle1/summary.json",
+      "SHA256": "8a13adeb46a1b6eea3d8798b329aa8ef37b92a65634d9e8ab56a1d25ba8f2459"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/AX_wide_readiness1/summary.json",
+      "SHA256": "b24ed5c3ba08816393b7f0941e73c714ef3dc0ad8b3fb60508a08664878cc46c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/AX_wide_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  ],
+  "remaining_task_gate_ids": [
+    "finger_structure",
+    "root_palm_strength",
+    "terminal_retention"
+  ],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "unmet": [
+    "Actual Finger demand/material minimum and pin bearing/notch/strain/creep/fatigue, clamp compliance and mesh1%",
+    "Existing root clamp bolt/thread separation and Palm/ground strength",
+    "Full ordered assembly/tool paths; historical installed-assembly insertion FAIL persists",
+    "Loaded distal PET sliding, swept flexible geometry and Stage1 motion/tolerance gates",
+    "Same-revision full Stage1 and22Stage2 requirements, overload bound and energy closure"
+  ],
+  "adopted": false,
+  "whole_system_release": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "SOFA_executed": false,
+  "known_owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "new_commit_SHA": null,
+  "next_product_task": "batch6_simple_palm_mount",
+  "followup": "Use finite simpler through-bolt/flange external mating plate; preserve tendon service paths. AX is an unadopted root branch for later same-revision integration, not current AO or adopted AA."
+}

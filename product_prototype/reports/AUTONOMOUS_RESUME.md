@@ -1,3 +1,45 @@
+# Batch6 cycle2 — actual wider Root tabs; strength remains unqualified (2026-11-27)
+
+Started at4448d6598f91c4a1e6ab6f6d0aa7eec86dbfd70e. Exact selected task:
+batch6_wide_root_cartridge. One bounded actual design/analysis cycle.
+No git add/commit; supervisor validation/local save PENDING, no new SHA claimed.
+Result: product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/summary.json.
+
+revAX_wide_root1 replaces six actual Rail blanks in the AO254part assembly.
+Each .2mm one-piece blank gets a6mm-wide root tab around existing2.1mm hole,
+with linear shoulder z=-7..-3mm inside the Root clamp. Exact distal geometry
+z<=-7mm is unchanged, with no distal lock. Actual STEP/STL, full254part STEP
+and JSON BOM retained. Six custom blanks changed; zero parts/processes removed,
+zero parts added. Cutting/deburring/material/shoulder notch remain unqualified.
+No new stock component or manufacturability/strength approval is claimed.
+
+Independent STEP reimport passes42checks, six valid single solids and closed
+oriented positive meshes;74exact changed/context pairs clear at unchanged
+1e-8mm3. Net slice .180000016→.780000016mm2 agrees with independent integrated
+circle chord. Nominal outer ligament .45→1.95mm. Mean net stress per unit
+resultant5.55556→1.28205MPa/N is conditional section arithmetic, NOT actual
+stress/allowable/capacity. Pin bearing area stays .4mm2 and2.5MPa/N; it is NOT
+solved by widening. Measured added geometric volume54.243310mm3 is not mass.
+Twelve signed rigid pin-stop tests and sampled pre-mount Root subassembly pass.
+Misplaced Rail control detects penetration. No full installed insertion, loaded
+sliding, CCD, elastic strain, notch concentration, convergence or strength PASS.
+Historical AO full installed-assembly insertion FAIL stays immutable.
+
+Four actual bounded executions completed/reaped: build0,verify0,baseline
+release2,actual AX readiness2. Each4GiB/420s/one thread; no timeout or SOFA.
+Setup import/path probe failures are recorded separately, not research trials.
+Unchanged release gate rejects AX and baseline:22Stage2 requirements missing,
+plus no AX full Stage1/system evidence. AA adopted/AO current remain unchanged;
+AX is an unadopted root branch. No coupling of unrelated revision PASS results.
+No RUNNING queue record or owned live analysis child; STOP respected.
+
+Next coverage task: batch6_simple_palm_mount, finite simpler external mating
+plate/flange with real bolt/contact load path and tendon service separation.
+Root task stays READY for actual load/material/bearing/notch/clamp/mesh work.
+Keep previous direct-route pull-direction/Palm FAILs and all unrelated untracked
+CAD/BOM. No criteria/SDK/manager/Stage3/power/hardware changes. Exact
+runtime/authorized_20261127_6/save_request2.json awaits supervisor local save.
+
 # Batch6 cycle1 — actual direct Idler removal rejected (2026-11-27)
 
 Started at c3e3d56ff626d7b3a39507f180007bd7f5e6fda0. Exact selected task:

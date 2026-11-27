@@ -1,0 +1,46 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/BENCH_SUPPORT.step",
+    "SHA256": "23b2e09eed2a8ae5c062db555d52698cbf6e96b642d5e3777135e5e36250d565"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h5/producer.py",
+    "SHA256": "2addc3879f5d3888924c0ece048ee600c9595526f1d2d34a9e888625b17af3c2"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_finite_body34.py",
+      "SHA256": "f5e2b0b08ab40ee03b1181fe19ee07a181b2c5efa225b55640af63986abc39ec"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_anchor_contact38.py",
+      "SHA256": "8cce9f6c81ec176758eeedfb9182ee3c3489893696a8b0f3f37e78072c9668ef"
+    }
+  ],
+  "h_mm": 5.0,
+  "curvature_points": 12,
+  "conditional_material": {
+    "E_MPa": 68900,
+    "nu": 0.33,
+    "rho_kg_m3": 2700,
+    "source": {
+      "path": "product_prototype/stage12_integrated/models/materials/primary_joint_sources1/reviewed.json",
+      "SHA256": "f77dffc80ab1fbde646f8b026c6c9d9d56e93cc62d8e61e1c5f2ada8bd514813"
+    },
+    "strength_minimum_MPa": null
+  },
+  "load": "Prescribed physical downward100g vertical test on actual RootBack/frame seat footprint plus distributedsupportownweight;NOT actual100ggrasp/tendon demand",
+  "BC": "Bottom actual foot normal-affine pressure balances specified Neumann test;positivepressure verified,NOT solved platecontact/hostreaction. Nophysicalfixation; all displacement DOFs retained.",
+  "criteria": {
+    "force_N": 1e-08,
+    "moment_Nm": 1e-10,
+    "free_residual_N": 1e-08,
+    "energy_relative": 1e-08,
+    "volume_fraction": 0.01,
+    "response_mesh_fraction": 0.01
+  }
+}

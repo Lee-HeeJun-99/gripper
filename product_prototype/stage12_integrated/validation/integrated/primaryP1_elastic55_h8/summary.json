@@ -1,0 +1,100 @@
+{
+  "status": "ACTUAL_P1_FULL_INTEGRAL_SUPPORT_NORMAL_NEUMANN_REFERENCE_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55b/summary.json",
+    "SHA256": "21ab7a0f681b68d85f5e253a91315fbf5b9a5d51d50c8233ea9cafb10565dcd0"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55b/BENCH_SUPPORT.step",
+    "SHA256": "6cb32110b6ed0dab9cc4ec3cca5cb256365c73805fc503983a787f9a24b9c821"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_elastic55_h8/inputs.json",
+    "SHA256": "0b66168dbb1eff937625b3700ae1654ebaa462dae7f610168ca856bb1d5007be"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_elastic55_h8/producer.py",
+    "SHA256": "4191a0de812c6e1daa421cdffa551729d6cb0e1b2b3d96041fe57e581c13df69"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_elastic55_h8/field.npz",
+    "SHA256": "5695cff73ef06dc86c165a06b4396a8afba43aee17947938a7ba6d1ba7dcde4c"
+  },
+  "port_journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_elastic55_h8/port_journal.json",
+    "SHA256": "b84876ce3f7452ead3f2689ffddf8087e05d124dfc42536f737f695bfa012820"
+  },
+  "checks": {
+    "alloriginalDOFs_restored": true,
+    "one_actual_CAD_solid": true,
+    "no_physical_fixed_nodes": true,
+    "positive_bottom_pressure": true,
+    "force": true,
+    "moment": true,
+    "original_all_DOF_residual": true,
+    "static_energy": true,
+    "independent_element_energy": true,
+    "volume": true,
+    "finite_positive_tetra": true,
+    "actual_trace_area": true,
+    "quality": true
+  },
+  "nodes": 19060,
+  "tetra": 64733,
+  "DOF": 57180,
+  "physical_fixed_DOF": 0,
+  "algebraic_gauge_DOF": 6,
+  "all_displacement_DOF_restored": true,
+  "h_mm": 8.0,
+  "material_E_MPa": 68900,
+  "material_density_kg_m3": 2700,
+  "material_minimum_MPa": null,
+  "mesh_volume_mm3": 863217.3224787021,
+  "CAD_volume_mm3": 863264.5688689761,
+  "volume_relative_error": 5.472990781485443e-05,
+  "conditional_CAD_mass_kg": 2.3308143359462354,
+  "conditional_mesh_mass_kg": 2.3306867706924956,
+  "conditional_mesh_COM_mm": [
+    20.824598586142937,
+    -6.1287118773173725,
+    -86.10256925608995
+  ],
+  "test_payload_downward_N": 0.980665,
+  "total_downward_including_ownweight_N": 23.836894419811557,
+  "bottom_affine_pressure_coefficients_MPa": [
+    0.0007442322829974048,
+    -2.984957036614932e-08,
+    -3.0852198479643486e-07
+  ],
+  "minimum_bottom_pressure_bound_MPa": 0.000720088962845474,
+  "force_balance_N": [
+    0.0,
+    0.0,
+    -3.799478093258202e-14
+  ],
+  "moment_balance_Nm": [
+    -2.382469221906547e-17,
+    -1.7576495814353166e-15,
+    0.0
+  ],
+  "original_all_DOF_residual_N": 6.5421001949061974e-12,
+  "static_strain_energy_Nmm": 0.0006210040644588892,
+  "independent_element_energy_Nmm": 0.0006210040644597288,
+  "external_halfwork_Nmm": 0.0006210040644602328,
+  "normal_load_compliance_mm_N": 2.1858738398960865e-06,
+  "maximum_displacement_mm": 0.0005181024190018907,
+  "maximum_raw_vm_MPa": 0.13140920680726959,
+  "min_quality": 0.014397536787987667,
+  "minimum_signed_volume_ratio": 0.9999989913650073,
+  "elapsed_s": 22.412135004997253,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "actual_100g_grasp_operating_field": null,
+  "whole_system_release": false,
+  "limitations": [
+    "Prescribed vertical100g testpayload is NOT100ggrasp/tendontension/normalforce;other retained111part selfweights not applied",
+    "Actualfullsupportcontinuum and positivegivenbottomnormalpressure;NOT coupledplatecontact/complementarity/benchmarkhostfixation. No physicalrotation/translationfixed",
+    "69000historicalvs68900here source typical elasticreference;not materialstrength/processcertificate",
+    "Sharpnotches/rawstress andmesh convergence notstrengthcertification;time/globalenergy/final3Finger/all22stillunqualified"
+  ]
+}

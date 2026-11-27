@@ -209,7 +209,7 @@
     {
       "id": "flexible_rail_contact",
       "priority": 6,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "hypothesis": "Separate elastic Rail and PET DOFs may change contact and internal forces relative to the prescribed rigid-rail fixture; must not enforce equal curvature",
       "difference": "New coupled elastic boundary-value mechanism, not further mesh/force/damping scan",
       "prerequisites": [
@@ -238,7 +238,7 @@
         "validation/finger/flexible_distributed1/summary.json",
         "validation/finger/axial_boundary1_verification/summary.json"
       ],
-      "reason": "Distributed RevAD-length separate-DOF linear model executed9cases. Overall FAIL:8element +/-1mN Green tip discrepancy exceeds predeclared1e-10m. All16/32cases and finest motion refinement pass bounded checks. Terminal-only -1mN crosses Rail by0.200mm; distributed contact changes tip by35.706um. No finite actual-CAD or system qualification. New finite_kinematic_budget1 analyzes12 actual saved body states (16/32), not a repeated equilibrium solve. Both independent quadratures and analytic control pass. Inextensible lift moves Rail x by0.406/0.466um at-/+1mN, so projected coordinate reuse FAILS existing1nm budget. Fixed-x conditional axial energy is3.09/3.52 times Rail bending energy; not actual assembly energy. Neither lift is a solved finite state. New extensible_reference1 implements finite engineering strain and rotation with axial strain exactly condensed from the independent variational DOF. Six separate free-tip body/load references,18 midpoint solutions, independent continuous BVP, complex-step saved-state virtual work, objectivity and small-load checks pass bounded scope. PET20mN differs8.765% from linear reference. This is NOT coupled contact or actual assembly boundary conditions. New axial_boundary1 actual counterfactual x_tip=L finite rod contrast FAIL: all4 continuous BVP cases converge, but only5/12 midpoint states satisfy independently verified equilibrium. Free-vs-constrained BVP tip changes55-96%; actual guide axial condition cannot be inferred from free-tip reference. Independent complex-step saved-state reproduction passes12/12, without promoting7 failed equilibria. Original verifier TypeError retained. New axial_seed1 isolates initialization with unchanged equations/tolerances: independent BVP-seeded12/12 midpoint solves succeed; full independent complex-step strain/rotation equilibrium and perturbed-state rejection pass12/12. Finest tip/reaction relative errors max4.605e-6/2.202e-5. This supports initialization sensitivity, not branch uniqueness/stability or actual guide identification. Original7 failed equilibria remain immutable.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
       "next": "Identify actual assembly axial guide freedom/contact from geometry and load ports before selecting an axial constraint; then coupled finite separate-body contact. BVP seeding resolves the tested counterfactual initialization failure but does not establish branch uniqueness/stability. Alignment and fixture remain independently READY.",
       "track": "B",
       "system_gate_contribution": 1,
@@ -250,12 +250,13 @@
         "SHA256": "b30b5559d9fc807680fc6a6297f2adbc4e2e36f0c96497f3f0e6a2da6f020ed5"
       },
       "target_revision": "revAK_integral2",
-      "target_parts": 235
+      "target_parts": 235,
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "alignment_alternative",
       "priority": 8,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "hypothesis": "Rated compliant coupling can reduce large rigid-coupling restoring reactions without a 5um assembly demand",
       "prerequisites": [],
       "criteria": "Rated offset and restoring force/torque; actual mounting; current manufacturing impacts",
@@ -271,7 +272,9 @@
       },
       "target_revision": "revAK_integral2",
       "target_parts": 235,
-      "selection_note": "Fallback only if direct shared-pilot topology is rejected. Do not repeat disc-only Oldham kinematics; actual full rated interfaces/restoring reactions needed."
+      "selection_note": "Fallback only if direct shared-pilot topology is rejected. Do not repeat disc-only Oldham kinematics; actual full rated interfaces/restoring reactions needed.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "protected_system_loads",
@@ -288,7 +291,7 @@
     {
       "id": "fixture_preparation",
       "priority": 4,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "hypothesis": "Guarded torque/jam fixtures enable calibration of missing physical bounds",
       "criteria": "Actual CAD, interfaces, geometry checks, blank physical records, no proof claim",
       "cost": "4GiB/420s",
@@ -302,7 +305,9 @@
       },
       "target_revision": "revAK_integral2",
       "target_parts": 235,
-      "selection_note": "AF preliminary input-supported fixture is NOT compatible with AK one-piece grounded support/front collet; actual reaction stand, calibrated sensor and guarded unpowered protocol required."
+      "selection_note": "AF preliminary input-supported fixture is NOT compatible with AK one-piece grounded support/front collet; actual reaction stand, calibrated sensor and guarded unpowered protocol required.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "flexible_terminal_reference",
@@ -527,7 +532,7 @@
       "hypothesis": "AK actual9.7..11.2mm shaft grip and clamp-zone coverage remove old short-grip geometry concern; combined torque and spring axial load still require actual contact/preload/material and motor bearing evidence",
       "criteria": "Actual collet load model, finite engagement, torque/axial capacity and material bounds; no force cap from guessed friction",
       "fallback": "rated_stock_clutch_and_actuator",
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "prerequisites": [],
       "system_gate_contribution": 4,
       "cost": "bounded actual product validation, no random parameter sweep",
@@ -546,9 +551,10 @@
       "preserved_failures": [
         "validation/transmission/AK_contact_wrench_verify1_failure/summary.json"
       ],
-      "reason": "Actual AK minimum D-shaft/circular-bore sampled contact wrench analysis completed. Conditional prescribed26um closure, unit friction and unit normal budget only; no elastic closure, available preload, material or actual capacity qualification.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
       "next": "Actual finite hub elasticity/contact under bolt preload, D-flat orientation and pressure/strain; establish material/bolt and motor axial evidence. Do not repeat normalized wrench LP as a new cycle.",
-      "selection_note": "One A cycle completed in allocation4; prioritize executable whole-Palm C and actual Finger B within next two cycles. Collet capacity remains unmet."
+      "selection_note": "One A cycle completed in allocation4; prioritize executable whole-Palm C and actual Finger B within next two cycles. Collet capacity remains unmet.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "AI_whole_palm_support",
@@ -557,7 +563,7 @@
       "hypothesis": "Local tab compliance alone does not bound the full Palm and Root reactions",
       "criteria": "Current235-part AK actual whole-Palm mounting/contact geometry and real Root/drive load ports; equilibrium, energy,1% convergence. Preserve old cut-edge stress FAIL; do not transfer old clamp or AH mount results.",
       "fallback": "reinforced_local_tabs",
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "prerequisites": [
         "local_palm_tabs",
         "idler_integral_M3_shoulder"
@@ -577,13 +583,14 @@
         "SHA256": "68afc33dd8cca1275b7d6ee8692093110f658c7b403a8e57ffc52aa640e6fce7"
       },
       "selection_note": "C distributed-pressure uncertainty resolved in one bounded analysis. C remains READY only for a distinct retention mechanism; independent A/B work remains.",
-      "reason": "Actual finite pressure patches support1N/My14Nmm beyond centroid basis; universal footprint excludes old40Nmm. Full six-DOF retention and ground attachment still absent.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
       "last_diagnostic": {
         "path": "product_prototype/stage12_integrated/validation/transmission/AK_pad_pressure_cycle1/summary.json",
         "SHA256": "5096bfca8228d5455a7c4eef546c33140b31c49820e4b9f3adfc91c4dfc75590"
       },
       "last_cycle_status": "FINITE_PRESSURE_ENVELOPE_VERIFIED_FULL_ATTACHMENT_BLOCKED",
-      "followup_hypothesis": "Require finite positive side/torsion/lift-off retention and connected ground path; no more pad/pressure scans. Actual elastic/preload/load evidence required before strength."
+      "followup_hypothesis": "Require finite positive side/torsion/lift-off retention and connected ground path; no more pad/pressure scans. Actual elastic/preload/load evidence required before strength.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "actual_finger_load_ports",
@@ -592,7 +599,7 @@
       "hypothesis": "Actual free PET end/root clamp/terminal contact must connect tendon load to assembled Finger behavior",
       "criteria": "Use actual-boundary map and independent reference only within proven scope; full deformation, friction, gap and load equilibrium",
       "fallback": "simpler_replaceable_finger_cartridge",
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "prerequisites": [],
       "system_gate_contribution": 4,
       "cost": "bounded actual product validation, no random parameter sweep",
@@ -614,7 +621,9 @@
         "SHA256": "a6a0b9e5c551ae242a9d0141bd4ac78824a929805cbda3f4bedd0a08976960c3"
       },
       "last_cycle_status": "FINITE_ROOT_PRESSURE_WITNESS_VERIFIED_LOADED_CONTACT_BLOCKED",
-      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y\u00b116 to\u00b110, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans."
+      "followup_hypothesis": "Finite common pressure patches can match bolt normal resultant, but actual plate spreading from y\u00b116 to\u00b110, preload, elastic pressure and friction require evidence. Solve loaded bolt/plate/contact with material/preload basis or positive retention, not more patch scans.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "idler_integral_M3_shoulder",
@@ -637,7 +646,7 @@
       "id": "AJ_idler_thread_and_load_proof",
       "track": "A",
       "priority": 5,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "target_revision": "revAK_integral2",
       "target_parts": 235,
       "target_candidate": {
@@ -659,8 +668,9 @@
         "SHA256": "4690238348c9dea300bb56d2d70f65a609ef8e98aed04c151a088c456bfa1360"
       },
       "last_cycle_status": "ACTUAL_NOMINAL_THREAD_LOAD_TRANSFER_UNMODELED",
-      "reason": "Actual three AK idlers and independent continuous envelope proof show smooth nominal thread has no modeled axial normal transfer. Physical thread capacity remains unknown; stack geometry PASS unchanged.",
-      "next": "Specify actual core/flank/material/preload and supported strip/combined-load limits, or evaluate rated shoulder/double-support; establish maximum load first. No repeated envelope scans as research progress."
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "next": "Specify actual core/flank/material/preload and supported strip/combined-load limits, or evaluate rated shoulder/double-support; establish maximum load first. No repeated envelope scans as research progress.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "AJ_collet_actual_coverage",
@@ -713,7 +723,7 @@
       "id": "AK_protected_maximum_load",
       "track": "A",
       "priority": 5,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "hypothesis": "Actual one-face grounded support removes the known bearing bypass but force cap needs rated/calibrated friction/spring and bounded transient energy. Simpler rated mechanisms may reduce missing bounds.",
       "difference": "Use actual AK inertia/topology and coupled axial clamp reaction, not old minimum-only HPMC or assumed static tension as peak protection",
       "prerequisites": [],
@@ -735,9 +745,10 @@
         "SHA256": "c3570403503558b538f01e0fabd4b51c279345f07bbe12647795d35e2d437da8"
       },
       "last_cycle_status": "CONDITIONAL_DISCONNECT_VERIFIED_PRODUCT_PROTECTION_BLOCKED",
-      "reason": "Actual AK six-drum-solid geometry verified independently by STL. New ideal delayed disconnect energy/ODE mechanism verified; instant cut still leaves1.404N vs0.969N initial tension in explicit scenario. Existing AF drum geometry reused honestly, not a new design. No actual disconnect, complete inertia, energy/EA/delay bounds or force cap. First negative-velocity compression-rebound formulation FAIL preserved; corrected first tensile excursion terminates at slack.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
       "next": "Identify physically realizable disconnect and bound residual energy/drag/delay, complete inertia and cable EA; do not repeat conditional delay scan. Independent actual Idler thread/load proof remains READY.",
-      "selection_note": "One bounded A cycle completed; prioritize independent Idler proof next. Do not treat more delay/density sweeps as new research without actual mechanism evidence."
+      "selection_note": "One bounded A cycle completed; prioritize independent Idler proof next. Do not treat more delay/density sweeps as new research without actual mechanism evidence.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "AK_conditional_collet_contact_wrench",
@@ -754,7 +765,7 @@
       "id": "batch5_positive_drive_retention",
       "track": "A",
       "priority": -2,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "hypothesis": "Continue implemented AM positive axial capture: actual standard thread/elastic plate/shoulder load capacity, torque backlash and axial friction/impact; do not repeat geometry scans",
       "criteria": "Actual torque-bearing faces and axial capture, supplier shaft compatibility, finite parts and independent loaded reaction/capacity evidence",
@@ -788,7 +799,9 @@
       "consecutive_runs": 2,
       "result": "validation/transmission/AM_axial_cycle1/summary.json",
       "scope": "PARTIAL: actual positive axial shoulder and finite stop/bolt/nut path implemented; thread/elastic/load gates remain unqualified",
-      "selection_note": "Two actual drive cycles complete; prioritize independent physical limiter/Idler implementation before loaded drive follow-up. Geometry scans are not new progress."
+      "selection_note": "Two actual drive cycles complete; prioritize independent physical limiter/Idler implementation before loaded drive follow-up. Geometry scans are not new progress.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "batch5_grounded_palm_attachment",
@@ -879,7 +892,7 @@
       "id": "batch5_positive_root_retention",
       "track": "B",
       "priority": -3,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "hypothesis": "Continue AO actual root pin bearing/notch/strain and normal retaining fasteners plus full ordered assembly; do not repeat rigid stop scans",
       "criteria": "Actual interlock/shoulder/capture hardware, root load/strain and distal sliding compatibility; not another pressure witness",
@@ -911,13 +924,15 @@
       "consecutive_runs": 1,
       "result": "validation/finger/AO_root_cycle1/summary.json",
       "scope": "PARTIAL: positive root geometry implemented, loaded strain/strength and complete assembly gates remain unqualified",
-      "next": "Inspect small Rail net ligament, source-backed material/loaded contact mesh1%, actual clamp bolt path and full root-before-distal assembly order; preserve distal sliding"
+      "next": "Inspect small Rail net ligament, source-backed material/loaded contact mesh1%, actual clamp bolt path and full root-before-distal assembly order; preserve distal sliding",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "batch5_physical_load_limiter",
       "track": "A",
       "priority": -5,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "hypothesis": "Replace rejected grooved-nipple fuse with actual isolated inline breakaway load path or source-backed lower-load drive; resolve intact bearing and post-break escape together",
       "criteria": "Finite actual limiter/disconnect CAD, jam energy/input/residual-inertia paths and protected bound evidence; unknown ratings never fabricated",
@@ -950,13 +965,15 @@
       "consecutive_runs": 1,
       "result": "validation/overload/AP_fuse_cycle1/summary.json",
       "scope": "FAILED actual AP2/AP3 implementation; AO retained, no overload cap",
-      "next": "Verify actual cable anchorage and normal load-bearing shoulder; AP2 recontacts, AP3 lacks immediate intact stop. Do not reuse ideal disconnect evidence."
+      "next": "Verify actual cable anchorage and normal load-bearing shoulder; AP2 recontacts, AP3 lacks immediate intact stop. Do not reuse ideal disconnect evidence.",
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "batch5_idler_mechanical_retention",
       "track": "A",
       "priority": -6,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "hypothesis": "Implement actual thread load-bearing geometry/model or simpler supported axle/captive retention",
       "criteria": "Actual flank/core/engagement or positive retention CAD, assembly, axial/radial load path and capacity evidence",
@@ -1005,14 +1022,15 @@
       "last_run_utc": "2026-11-26T23:18:02.888791+00:00",
       "consecutive_runs": 4,
       "result": "validation/transmission/AU_prehead_cycle1/summary.json",
-      "reason": "AU one-sided preheaded insertion/support access clear; actual stock volume deficit18.5704% rejects forming feasibility. Not adopted.",
-      "next": "Design sufficient protruding stock for right head, then actual insertion, support/tool clearance and process feasibility; capacity remains required. Do not repeat the same access screen."
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "next": "Design sufficient protruding stock for right head, then actual insertion, support/tool clearance and process feasibility; capacity remains required. Do not repeat the same access screen.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "batch5_same_revision_system_revalidation",
       "track": "C",
       "priority": -5,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "hypothesis": "Accumulate compatible new hardware in one actual descendant assembly and rerun affected system gates",
       "criteria": "Single candidate assembly/BOM/hash, affected Stage1/Stage2 evidence and existing independent release audit; no mixed-revision PASS",
@@ -1044,7 +1062,9 @@
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
       "last_run_utc": null,
-      "consecutive_runs": 0
+      "consecutive_runs": 0,
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "batch6_operating_load_and_architecture",
@@ -1143,7 +1163,7 @@
       "id": "batch6_wide_root_cartridge",
       "track": "B",
       "priority": -198,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1188,8 +1208,9 @@
         "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/summary.json",
         "SHA256": "d7bfc04dfbc3f23a34acdb1ac86ecadcbd52c21042608cd79d8c03b90206ebeb"
       },
-      "reason": "Actual widened Rail root geometry verified; actual loaded strength/retention/sliding and full assembly remain unqualified. Coverage-before-repetition selects independent Palm next.",
-      "next": "batch6_simple_palm_mount"
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
+      "next": "batch6_simple_palm_mount",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "batch6_simple_palm_mount",
@@ -1638,7 +1659,7 @@
       "id": "goal_primary_protected_drive",
       "track": "A",
       "priority": -998,
-      "status": "READY",
+      "status": "BLOCKED_BY_CURRENT_PRIMARY_OPERATING_FIELD",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Complete actual minimal drive,standard connection and bounded maximum torque/energy/strain/retention through the primary product, not ideal-delay/coupon results",
@@ -1650,7 +1671,9 @@
         "coupling_capacity",
         "housing_shoulder_retention"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
+      ],
       "parent_candidate": {
         "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
         "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
@@ -1681,7 +1704,8 @@
       "known_blockers": [
         "Rated actual motor/hub/finished cable and physical overload bound absent",
         "Do not increase motor size before actual normal demand/finite Finger response; preserve45/183 current-screen failures"
-      ]
+      ],
+      "reason": "FunctionstillUNQUALIFIED;fresh77partRoot/Motoroperatingfield/protectedpeakneeded,not obsoleteopen9field."
     },
     {
       "id": "goal_primary_terminal_feature_contact",
@@ -3730,7 +3754,7 @@
       "id": "goal_primary_local_axial_pin_mesh_and_physical_clamp_trace_coupling",
       "track": "C",
       "priority": -1160,
-      "status": "READY",
+      "status": "ARCHIVED_NONPRIMARY_SCOPE_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME78part primaryP1_ycapture24 Motor->stock1996hub->Drum->Tendon->Finger->Root->Frame->Ground->Base separateAO,sidecartridge,distalPETslide,3Finger,jamming. Use35CAD-projectedP2 actual-body operators and independent force/work audits as conditional reference,not physicalpressure. FIRST localize axial mesh at actual Root pin Front1.5mm/Rail.2mm bands and free tips; globalh3->2.5/curvature16->20 FAILS all4response1percent,Root narrowportdiagonal24percent. Preserve actual curvedgeometry separately: exact rational cylinder map or conservative continuousgap enclosure,not nodalprojectioncalledexact; existing radial errors exceed contactclosure. Separate axial/transverse/bulk/curvature and surface/bulk integration; keep higher-reference RailR D6FAIL,selected D5/D6/D7 force checks only local. Develop independently verified equilibrated free-end residual/error bound. THEN retain full elastic trace modes at actual Root/Front/Rail clamp/bolt/nut bearing footprints with physical finite stack/source-backed material minima; replace sixresultant sensitivity sources with actual coupling. Solve positivepressure/actualgap and exact33curved12DOF work,all4ports/sixRootMotor modes/freshgamma/sourceQ. No fixedRoot,equalquarter split,open-gap pressure,oldsourcefield or balancingcounterload. Thread/flank/core/shear/tilt/restsetting,finitebores,physicalBaseanchor/fullsupport,full3DFinger/finitewire/protector/friction,time.1percent/globalenergy/fullsame-revision3Finger/all22gates stay blocked. NoStage3.",
@@ -3783,10 +3807,11 @@
         "SHA256": "2d13d41f2e5dcdc661d3e4b6927a0ea3a16d2b261ac3947b2f1042d7c5fec79b"
       },
       "result": null,
-      "reason": null,
+      "reason": "Historicaltargetgeometrynotcurrent77partP1. Originalwork/results preserved;unmetphysicalfunctions carried inunchanged22systemgates,not markedsolved.",
       "next": null,
       "deferred_by_strategy": "goal_primary_anchor36b_elastic_stack_and_external_receiver_support",
-      "scope": "Rootgeometryunchanged,conditionalcomponentfailurespreserved. Fullproduct now85parts;old78partsourcefieldnottransferred."
+      "scope": "Rootgeometryunchanged,conditionalcomponentfailurespreserved. Fullproduct now85parts;old78partsourcefieldnottransferred.",
+      "primary_continuation": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
     },
     {
       "id": "goal_primary_anchor36b_elastic_stack_and_external_receiver_support",
@@ -4786,7 +4811,7 @@
       "id": "goal_primary_guide53_spatial_cage_bore_retainer_takeup_after_offaxis_edge",
       "track": "C",
       "priority": -1260,
-      "status": "READY",
+      "status": "ACTUAL_DESIGN_IMPLEMENTED_SYSTEM_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME128partprimaryP1_guide53 with unchanged actualCAD;use newfourloadedoffaxispose primaryP1_independent54f and actual152columnFAIL/independentFarkas. FIRST advance coupledspatial18body poses toward inactivecontacts;nut1translationcomponentalone reaches actualcagewall after.0222653756568mm,localgap.0192823809436mm. This is NOTglobalfirstevent:order actualnutcage,bolt/keytilt,shank/bore,pin/retainer,head/nutseats andguide contact using localtrimmedfeaturequerieswithdurableSTART/COMPLETE. Keepall108DOFs,freepins,nominalgapszero reaction;doNOTimposefixedrelativeoffsets/fourflankcontacts orfixedreceiverguidepose asphysicalties. Offaxiscontactstarts atactualnutcrestedge againstboltflank;bind incidentnormalcones and update ALLcontactgeometry/forcesafter finiteposechange. No oldtractiontransfer,wholethreadBooleanroot orresolution-only retry. Ifcoupledspatialcontacts cannotclose,redesign SAMEsupportinterface with simpler source-backedpositivecapture ratherthannewrecursivehardware. Fresh100goperating/protectedpeakports precede FE/mass/capacity;ultimatehost/material/processminima independent. Preserve6mmguideengagement andall22criteria;mesh1percent/time.1percent/globalenergy/finalsame-revision3Finger/NoStage3.",
@@ -4828,6 +4853,61 @@
         "SAME ONE128partprimaryP1_guide53 continues separatefailedAO. CAD/ASSEMBLY/BOM unchanged and allhashesverified;MotorDrumTendonFingerRootGround,replaceablecartridge,3Finger/jamming/distalPETslide retained. Newactual4mountoffaxisgap and12DOFworkverified;firstlocalcontact is nutcrestedge/boltflank,not fullsmoothflank. Actualfirstopening.0317681163811mm at relativeoffset[.02,-.012]mm;nutnormalconeerror6.53e-11. Finitefourmount4loadedposeopening.0421672671912mm,explicitpins;all18bodies108DOFs retained in statics. Fresh304actualboundarybindings/152unilateralcolumnsFAILunitaxial;independentFarkaswork1 and mincontactwork-2.22e-16. Correctedfull128partfiniteassembly122nonthreadqueriesclear;notcontinuousCCD/toolpath. Localinactive nut1cagegap.0192823809436mm closes after.0222653756568mmXtranslation alongonewitnesscomponent;notglobalfirstevent/new_equilibrium. Operatingequilibria0,all22UNQUALIFIED,hardwareNOT_MEASURED,NoStage3. Spatialcontacttakeup,bore/retainer/guide,nutspinandbolt/keytilt,100gcontact/friction/Fingerdeflectionoperating/protectedpeak,FE/mass/source/material/notch/pressure/host/mesh1percent/time.1percent/globalenergy/final3Fingerremain."
       ],
       "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
+      "last_run_utc": "2026-11-27T14:38:49.268109+00:00",
+      "consecutive_runs": 1,
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle55_record/summary.json",
+        "SHA256": "6e52c859e7b2c21d482443a447ce29970fb1571d1a4424aed475c4e9041f0739"
+      },
+      "reason": "P1sameprimary now77parts: ONEactualcontinuousRoot/Motorframe-roof-arms-columns-base replaces5fixedgroundstackbodies and47unnecessaryinterfacefasteners;76retainedpartSTEPsidentical,source-backedmotor/hubandreviewedlowerthroughparts retained. MotorDrumTendonFingerRootGround/cartridge/PETslide/3Finger-jammingextensionintent preserved,separatefailedAO. Final55eSTEP/STL/ASSEMBLY/BOM valid;207nominalnonthreadqueriesclear,88assemblyposes657queriesclear;newroofcontinuousMotor/capprismszero blockedvolume,RFtoolclearance.5mm,capaccess.6mm,driveaccess~1mm,Finger/newroofseparation26mm. Fullactualpiece h8/5/3 Neumanngravity+100gverticaltest,no physicalfixedDOFs,independentforce/energy/rigidmode/negativecontrolsPASS locally;allpairmesh1percentFAIL. Not real100ggrasp/contact/hostequilibrium. MaterialnowONEbillet6061typicalreferenceexplicitlyreplaceshistoricalmixedsteelGroundPlate;minimum/process/strengthunknown. Conditionalsupportmass2.473487kg,moduleexhost2.648783kg,totalincludingreferenceplate6.153906kg;motorhubinertiaunknown. All22UNQUALIFIED,operatingequilibria0,hardwareNOT_MEASURED,NoStage3.",
+      "next": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports"
+    },
+    {
+      "id": "goal_primary_integral55e_convergent_continuum_and_fresh_root_motor_operating_ports",
+      "track": "C",
+      "priority": -1270,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME ONE77partprimaryP1_integral55e,canonicalSTEP/BOM/hashes;no return to AO or removed47groundstackfasteners. FIRST establish a convergent fullactualintegralpiece bending response using existingtetrahedralelasticity: predeclare a P2/order contrast or justifiedlocalrefinement with EXACTsame Rootuniform100gverticaltest/ownweight/affinefootNeumannfunctional and original1percentallpairs,not a changedpressure/source/coupon or tolerance. h8/5/3P1energy differences34.5245/57.3373/16.9581percent andobjectiveRootmotion33.6442/58.8946/19.4211percent are FAIL;do notinfer solecause ortransferstiffness. KeepallphysicalDOFs/freebodyforce/moment andindependentvirtualwork;algebraicgaugesarenot hostfixation. Inparallelplanning derivefresh77part100gcontact/friction/finiteFingerdeflectionRoot/Motorports andprotectedpeak separately;current24.067mmstroke/.9285..4.5037Ntensionareconditionalprescribedcurvaturebounds,45currentscreenFAIL. RecomputeactualRoot/Motorcontactforcesonpreservedfaces,notoldtractions;fourretainedBENCH_THROUGH/plate/ultimatehostcontacts,pin/thread/source/materialminima andONEbillettoolsetup/ligament/notchstrength remain independent. No uniform-rootload claim asrealgrasp. Finishactualsame-revision3Finger before release;mesh1percent/time.1percent/globalenergy/all22unchanged;NoStage3.",
+      "criteria": "Alloriginal22systemphysicalcriteria unchanged;actual77partCAD/BOM/load/BC,source-backedstrength/support,mesh1percent/time.1percent;no implicitfixation orcriterionrelaxation.",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "physical_mass_inertia",
+        "numerical_convergence",
+        "root_palm_strength",
+        "qualified_worst_case"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+        "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+        "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+      },
+      "target_revision": "primaryP1_integral55e",
+      "target_parts": 77,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "49351205dccaee491e5b1d927eebc29b07d3f6e201d2451acbe9d8bf140db691"
+      },
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle55_record/summary.json",
+        "SHA256": "6e52c859e7b2c21d482443a447ce29970fb1571d1a4424aed475c4e9041f0739"
+      },
+      "concrete_first_step": "Sameactual77partintegral55e fullbodybendingdiscretizationcontrastwithUNCHANGEDRootuniform100gverticaltest/ownweight/affinefootloadfunctional;independentallDOFwork and1percentall-pairresponse;thenfreshfinitecontact/FingerRootMotoroperatingports.",
+      "known_blockers": [
+        "P1sameprimary now77parts: ONEactualcontinuousRoot/Motorframe-roof-arms-columns-base replaces5fixedgroundstackbodies and47unnecessaryinterfacefasteners;76retainedpartSTEPsidentical,source-backedmotor/hubandreviewedlowerthroughparts retained. MotorDrumTendonFingerRootGround/cartridge/PETslide/3Finger-jammingextensionintent preserved,separatefailedAO. Final55eSTEP/STL/ASSEMBLY/BOM valid;207nominalnonthreadqueriesclear,88assemblyposes657queriesclear;newroofcontinuousMotor/capprismszero blockedvolume,RFtoolclearance.5mm,capaccess.6mm,driveaccess~1mm,Finger/newroofseparation26mm. Fullactualpiece h8/5/3 Neumanngravity+100gverticaltest,no physicalfixedDOFs,independentforce/energy/rigidmode/negativecontrolsPASS locally;allpairmesh1percentFAIL. Not real100ggrasp/contact/hostequilibrium. MaterialnowONEbillet6061typicalreferenceexplicitlyreplaceshistoricalmixedsteelGroundPlate;minimum/process/strengthunknown. Conditionalsupportmass2.473487kg,moduleexhost2.648783kg,totalincludingreferenceplate6.153906kg;motorhubinertiaunknown. All22UNQUALIFIED,operatingequilibria0,hardwareNOT_MEASURED,NoStage3."
+      ],
+      "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
       "last_run_utc": null,
       "consecutive_runs": 0,
       "result": null,
@@ -4849,5 +4929,14 @@
   "execution_brief": {
     "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
     "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
-  }
+  },
+  "current_primary": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "latest_cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle55_record/summary.json",
+    "SHA256": "6e52c859e7b2c21d482443a447ce29970fb1571d1a4424aed475c4e9041f0739"
+  },
+  "active_primary_policy": "ONE77partprimaryP1_integral55e;historicalunadoptedtargetsnotREADY;all22functionsremainUNQUALIFIED"
 }

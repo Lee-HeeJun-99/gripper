@@ -1,0 +1,105 @@
+{
+  "status": "ACTUAL_P1_FULL_INTEGRAL_SUPPORT_NORMAL_NEUMANN_REFERENCE_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/BENCH_SUPPORT.step",
+    "SHA256": "23b2e09eed2a8ae5c062db555d52698cbf6e96b642d5e3777135e5e36250d565"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h3/inputs.json",
+    "SHA256": "182c4c60412e7cbe568457381e50f0271e7b8d8d2e151488090b3d5342d6c8af"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h3/producer.py",
+    "SHA256": "2addc3879f5d3888924c0ece048ee600c9595526f1d2d34a9e888625b17af3c2"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h3/field.npz",
+    "SHA256": "ec1764f99a3432c359a0c764138abd8f6ac3782ccdb3b77f5be03aa9281120d6"
+  },
+  "linear_solver": "existing_pyamg_CG_sixmode_sparse_quotient_restored",
+  "iteration": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h3/iteration_final.json",
+    "SHA256": "ea594a31d30d025f257f5ff5c4aa2cdfec62a951a8d0b2891ef9cc359e2d1bf0"
+  },
+  "port_journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h3/port_journal.json",
+    "SHA256": "dab0b0f9aecae0e3514791a486ea09548179a21a35336b9c18d12c993eb62e69"
+  },
+  "checks": {
+    "alloriginalDOFs_restored": true,
+    "one_actual_CAD_solid": true,
+    "no_physical_fixed_nodes": true,
+    "positive_bottom_pressure": true,
+    "force": true,
+    "moment": true,
+    "original_all_DOF_residual": true,
+    "static_energy": true,
+    "independent_element_energy": true,
+    "volume": true,
+    "finite_positive_tetra": true,
+    "actual_trace_area": true,
+    "quality": true
+  },
+  "nodes": 62086,
+  "tetra": 276516,
+  "DOF": 186258,
+  "physical_fixed_DOF": 0,
+  "algebraic_gauge_DOF": 6,
+  "all_displacement_DOF_restored": true,
+  "h_mm": 3.0,
+  "material_E_MPa": 68900,
+  "material_density_kg_m3": 2700,
+  "material_minimum_MPa": null,
+  "mesh_volume_mm3": 916239.4406322844,
+  "CAD_volume_mm3": 916106.3251792861,
+  "volume_relative_error": 0.00014530568050852288,
+  "conditional_CAD_mass_kg": 2.4734870779840725,
+  "conditional_mesh_mass_kg": 2.4738464897071677,
+  "conditional_mesh_COM_mm": [
+    22.28729376852924,
+    -6.086778722681811,
+    -81.97948113934955
+  ],
+  "test_payload_downward_N": 0.980665,
+  "total_downward_including_ownweight_N": 25.240811678286793,
+  "bottom_affine_pressure_coefficients_MPa": [
+    0.0007767653935494349,
+    4.858816145593979e-07,
+    -4.1217397380624617e-07
+  ],
+  "minimum_bottom_pressure_bound_MPa": 0.0007038153318688861,
+  "force_balance_N": [
+    0.0,
+    0.0,
+    -1.9156811553733277e-13
+  ],
+  "moment_balance_Nm": [
+    -1.6605536390379428e-15,
+    -3.4845563934293722e-15,
+    0.0
+  ],
+  "original_all_DOF_residual_N": 1.4627456364213476e-11,
+  "static_strain_energy_Nmm": 0.0020223543601883614,
+  "independent_element_energy_Nmm": 0.0020223543601941437,
+  "external_halfwork_Nmm": 0.002022354360193498,
+  "normal_load_compliance_mm_N": 6.348638788904661e-06,
+  "maximum_displacement_mm": 0.0009521084940430724,
+  "maximum_raw_vm_MPa": 0.3615779462881046,
+  "min_quality": 0.05220021873579532,
+  "minimum_signed_volume_ratio": 0.999997041392842,
+  "elapsed_s": 71.59398416406475,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "actual_100g_grasp_operating_field": null,
+  "whole_system_release": false,
+  "limitations": [
+    "Prescribed vertical100g testpayload is NOT100ggrasp/tendontension/normalforce;other retained111part selfweights not applied",
+    "Actualfullsupportcontinuum and positivegivenbottomnormalpressure;NOT coupledplatecontact/complementarity/benchmarkhostfixation. No physicalrotation/translationfixed",
+    "68900MPa source typical elasticreference;not materialstrength/processcertificate",
+    "Sharpnotches/rawstress andmesh convergence notstrengthcertification;time/globalenergy/final3Finger/all22stillunqualified"
+  ]
+}

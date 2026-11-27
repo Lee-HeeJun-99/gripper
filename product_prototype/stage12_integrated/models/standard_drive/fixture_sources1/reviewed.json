@@ -1,0 +1,52 @@
+{
+  "status": "PRIMARY_SUPPLIER_DIMENSIONS_REVIEWED_NOT_DOWNLOADED_OR_QUALIFIED",
+  "date_KST": "2026-11-27",
+  "retrieval": "web primary supplier pages; no vendor CAD/PDF downloaded; hashes identify this local review only",
+  "bolt": {
+    "source": "https://www.accu.co.uk/metric-cap-head-screws/15810-SSC-M5-35-A2",
+    "item": "SSC-M5-35-A2",
+    "standard": "DIN912/ISO4762",
+    "dimensions_mm": {
+      "d": 5,
+      "L": 35,
+      "dk": 8.5,
+      "k": 5,
+      "s": 4,
+      "drive_depth": 2.5,
+      "b_min": 22,
+      "pitch": 0.8
+    },
+    "source_material": "A2 stainless,property class minimum unassigned",
+    "limitations": "Nominal recreated envelope with socket. No thread/core/flank strength,material certificate,preload,locking or fatigue qualification."
+  },
+  "nut": {
+    "source": "https://www.pts-uk.com/products/nuts/hexagon-full-nuts-iso4032/metric-a4/a403205a4",
+    "item": "A403205A4",
+    "standard": "ISO4032",
+    "dimensions_mm": {
+      "d": 5,
+      "pitch": 0.8,
+      "s_min": 7.78,
+      "s_max": 8,
+      "m_min": 4.4,
+      "m_max": 4.7
+    },
+    "source_material": "A4-70 source product; no certificate received",
+    "limitations": "CAD uses maximum8AF/4.7height and nominal major-bore envelope; not effective engagement or source-minimum strength"
+  },
+  "selection": "Dimensional standard architecture only; procurement/hardware not authorized or performed. Bolt/nut strength pairing and material remain to be selected with source minima.",
+  "rejected_options": [
+    {
+      "option": "Four clearance M5 bolts without key",
+      "reason": "Nominal0.25mm radial gaps cannot supply initial shear without friction or actual slip"
+    },
+    {
+      "option": "Fix existing four shared M5 nodes",
+      "reason": "No physical external fixture; would hide missing load path"
+    },
+    {
+      "option": "Two additional precision dowels",
+      "reason": "Separate standard possible but introduces fit/removal/two-pin tolerance stack; use one integral machined key first"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture11/summary.json",
+    "SHA256": "d0590929da71ddcddcfbcf39c2f6a06de5e27c8e6e7ea5707a1f75c39b533a2a"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_verify1/producer.py",
+    "SHA256": "c5def06532e04ef2248c18b04381b7fc4e81c38d13d416f938e605fb9a89d0c3"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/mechanisms_stage1.py",
+      "SHA256": "97096628a01f7eaf24e86920fccba965fba26ad0ac8e9ecbeb60d06001b60dbb"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/baseline_registry.py",
+      "SHA256": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8"
+    }
+  ],
+  "load_source": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_contact_transfer3/summary.json",
+    "SHA256": "f1a75415dd3e02d3a878247db50a5c92bcfc5b5a3da741434d49992e81a46ab7"
+  },
+  "criteria": {
+    "intersection_mm3_max": 1e-08,
+    "force_residual_N_max": 1e-08,
+    "moment_residual_Nm_max": 1e-10,
+    "mesh_relative_max": 0.01
+  },
+  "scope": "Actual nominal fixture; finite assembly samples and rigid necessary frictionless traction equilibrium. No FEM/contact uniqueness/preload/threads/source allowables or laboratory anchorage certificate."
+}

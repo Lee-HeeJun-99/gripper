@@ -1,0 +1,488 @@
+{
+  "status": "ACTUAL_P1_CYCLE5_EXACT_BYTE_HANDOFF_READY_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+    "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
+  },
+  "engineering": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/summary.json",
+    "SHA256": "9e357d250b63989fc408a100df2b9f45897ad9e73cf168c0357f5a1c6e39b21f"
+  },
+  "actual_weight_sensitivity": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_gravity1/summary.json",
+    "SHA256": "4803f65e7a99b9fe6e776184c990cf5ef64971e3a8175f1554763b20b98b32d2"
+  },
+  "actual_integrated_release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release7/summary.json",
+    "SHA256": "106d98ea8fe418556d97540f9488ba2a13d80c7520085fb35dd5d492f357f09f"
+  },
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state6.json",
+    "SHA256": "21fab6f1e6265e201f61c153d0dc76ca4735dd968d4cb67e75d988feaeddc787"
+  },
+  "material_scope": {
+    "path": "product_prototype/stage12_integrated/models/materials/primary_fixture13_material_scope.json",
+    "SHA256": "a0ca30a51b2b79027e8108dce8b742119c19ed8f63ef3bcb33f76a23f90ce61d"
+  },
+  "primary_state": {
+    "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+    "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
+  },
+  "next_task": {
+    "path": "product_prototype/stage12_integrated/NEXT_TASK.json",
+    "SHA256": "d40a4ad988acc6da8768ee73d1e0dbee026f2327ea3856e7c94c720c29a7b277"
+  },
+  "checks": {
+    "source_pins_unchanged": true,
+    "all_children_reaped": true,
+    "all_analysis_limits": true,
+    "no_timeouts": true,
+    "no_running_queue": true,
+    "STOP_absent": true,
+    "HEAD_unchanged": true,
+    "index_empty": true
+  },
+  "source_pins": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "executions": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_positive_fixture.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.2205832530744374,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture11_execution.json",
+        "SHA256": "8aea66631ee74afbf0bb4fb573504c3eb040d26295c43fb34ef88c946154725c"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture11.log",
+        "SHA256": "d8678860facc5a2ae7c071b16183e122717628acde5a9e584bd86e30c5dc5959"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_centered_fixture.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.020192774012685,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture12_execution.json",
+        "SHA256": "75b5452df3643a8ce8b4561857421842b75f04f68e54af2debb6b767694b7512"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture12.log",
+        "SHA256": "2f301a0ac69f6313cf9f1335fe94cbd17c185c1536e20a7f98501a968c2c8b1e"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_mill_relief.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 2.919568169862032,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture13_execution.json",
+        "SHA256": "27f915b6192e73e753475a495c9f6f56b4e03da968f743df4a4f0ef75532994e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture13.log",
+        "SHA256": "f60fc066c499de000ff07db42192ba193f241e446a090aba43ebe82c9ff555bb"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_fixture.py",
+        "primaryP1_fixture_verify1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 4.5230979330372065,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_verify1_execution.json",
+        "SHA256": "7350ea2cd8574c451abc37f5269ddb7e0cc8b48a1fb5c859340dedcd6734005f"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_verify1.log",
+        "SHA256": "091cae953420477135edba3ef699bbe919e220041c9dc6dd42ea44b6e4110733"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_fixture_v2.py",
+        "primaryP1_fixture_verify2"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 4.522960926871747,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_verify2_execution.json",
+        "SHA256": "5e583a8a81dc63ba3e2c441d18090841a1aa5daf88c3c925c04d0c9c28c9f67e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_verify2.log",
+        "SHA256": "f56cd3454863e4367d22d1a7616bc4ec75e70eee3e3123d3a5d088d185822a6b"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_fixture_v3.py",
+        "primaryP1_fixture_verify3"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 4.622903499053791,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_verify3_execution.json",
+        "SHA256": "368060c3d6fb215dc64878dfa3bbba6e6e0d6bea3f21904250ad81409158f4c9"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_verify3.log",
+        "SHA256": "e562fdcb9a6a90b6969a42546156fe87e77d2a00817b6f81eaed6fba34822dfe"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_witness.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.7677624141797423,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_witness1_execution.json",
+        "SHA256": "447b4a1f32c7bb145a8b77e4430f19ba143eb8c590e58dd13d6f78a606205456"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_witness1.log",
+        "SHA256": "aa5bf0dd6319df877677e71a56950755401f1be1e626fd4e4e4f31fc41b84bb5"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_witness_v2.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.9181542750447989,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_witness2_execution.json",
+        "SHA256": "24184989ac90078854af63e23cf2d39a4dc3a4df564474d029a3b98ecf00d479"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/fixture_witness2.log",
+        "SHA256": "cb9400b31231c69356e3aaced224146842e9f9beab250f2c56ff3e28459403d0"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_gravity.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.1669775650370866,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/gravity_fixture13_execution.json",
+        "SHA256": "f6b418da31088a25c51b4daad4b018535852580d4d7d20b57daa517246fe5b06"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/gravity_fixture13.log",
+        "SHA256": "40a95d044e0c6b2e9063033cda7526e66e2db0687849f494119e2a208e6be825"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_loaded.py",
+        "--candidate",
+        "primaryP1_fixture13",
+        "--tag",
+        "primaryP1_fixture_loaded1",
+        "--states",
+        "primaryP1_corner_demand1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.8721982419956475,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/loaded_fixture13_execution.json",
+        "SHA256": "a32dfd3a874bf39a7f58e5edd6348b2cf797895094f109edffed46146f1ba647"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/loaded_fixture13.log",
+        "SHA256": "333cd442fac118b1ed83b2ec40a52600d1cdbc8cd90c70c1d5f0adfc9498c847"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_validation.py",
+        "--candidate",
+        "primaryP1_fixture12",
+        "--tag",
+        "primaryP1_fixture_module1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.374261287972331,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_assembly12_execution.json",
+        "SHA256": "9f70cc99d43ab4f860f20b6e110b5a87677545ee769587cfdb89af218de61da1"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_assembly12.log",
+        "SHA256": "514a61d7bd5cb50119a0f13ebfa13f761efe252e9c1ea4ea262c662426dbdc7c"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_validation.py",
+        "--candidate",
+        "primaryP1_fixture13",
+        "--tag",
+        "primaryP1_fixture_module2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.424209821037948,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_assembly13_execution.json",
+        "SHA256": "6534be2046ecfcd2608d4acb0cf81c4fda0c3290d3471285edc4cb5ee3734ab1"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_assembly13.log",
+        "SHA256": "514a61d7bd5cb50119a0f13ebfa13f761efe252e9c1ea4ea262c662426dbdc7c"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_verify.py",
+        "--candidate",
+        "primaryP1_fixture12",
+        "--validation",
+        "primaryP1_fixture_module1",
+        "--tag",
+        "primaryP1_fixture_module_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 4.171844492200762,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_verify12_execution.json",
+        "SHA256": "205625d68c1be1ea9fc439dd2d18525a66f2cccc6aa8785b2ad494f3dff018b3"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_verify12.log",
+        "SHA256": "47985b736cba5d355d80a5f343b58ab3dce3bdc2baa2f40b95681290865fc2dd"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_verify.py",
+        "--candidate",
+        "primaryP1_fixture13",
+        "--validation",
+        "primaryP1_fixture_module2",
+        "--tag",
+        "primaryP1_fixture_module_verify2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 5.981931359972805,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_verify13_execution.json",
+        "SHA256": "e5fcdeaefb5956b72576621510e4884c0132c8d0329d48e0eb2f94e9b9c05d00"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/module_verify13.log",
+        "SHA256": "47985b736cba5d355d80a5f343b58ab3dce3bdc2baa2f40b95681290865fc2dd"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/record_primary_fixture_cycle.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.06442957906983793,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/record_cycle5_execution.json",
+        "SHA256": "6b61db7e524557144704c0641da8d777f291d05fed7699539455c027cf9261aa"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/record_cycle5.log",
+        "SHA256": "086cbb9b6b6d5b4fba4ed9faa41cc481f8a98f1e29aaaf6bb97aa2c22b0baa72"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/release_audit.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.36502328398637474,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/release6_execution.json",
+        "SHA256": "f7aa002a8dd84798b7ee3b44363dfa2cfe4a8978727903ccf38824dca8aaecf4"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/release6.log",
+        "SHA256": "65d8525713da900f6a33c28c62e9deb56bf682062a7d8e29eb0257cbd95dabf8"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/release_final_audit.py"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3651428420562297,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/release7_execution.json",
+        "SHA256": "1913f352225684f83de2c5c2e4573804fe73205c9d0ed3cd806d02310708c79a"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/release7.log",
+        "SHA256": "6f228c298f40c5c419a5a1d8c55dd85a276d2ac0fadda1a285f070eb8eb769ce"
+      }
+    }
+  ],
+  "recorded_children_reaped": 17,
+  "recorded_child_seconds": 55.30124171846546,
+  "owned_analysis_children_running": 0,
+  "timeouts": 0,
+  "all22system_gates_unqualified": true,
+  "actual_numerical_results": {
+    "final_parts": 78,
+    "new_solid_revisions": 3,
+    "key_x_area_mm2": 30,
+    "key_y_area_mm2": 18,
+    "weighted_ground_rho_kg_m3": [
+      2700,
+      7850
+    ],
+    "weighted_coarse_bolt_N": [
+      1.2617568984873384,
+      3.6684413530094844
+    ],
+    "weighted_external_Base_wrench_N_Nm": [
+      [
+        -0.40861041666666353,
+        -0.0,
+        4.031469890147357,
+        -0.035184752934230915,
+        -0.058850820760907474,
+        1.2793585635328952e-17
+      ],
+      [
+        -0.4086104166666635,
+        -0.0,
+        6.438154344669503,
+        -0.05566466968912994,
+        -0.11804991221267463,
+        -7.968885967768458e-18
+      ]
+    ]
+  },
+  "stage3_authorized": false,
+  "whole_system_release": false,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cycle5_closeout/producer.py",
+    "SHA256": "0918dffc55a9caa866029db117a194b023badd65f7156b35d9c701fa648a14fd"
+  }
+}

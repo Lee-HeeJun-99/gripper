@@ -1,0 +1,372 @@
+{
+  "levels": [
+    {
+      "divisions": 1,
+      "result": {
+        "mode": "full",
+        "success": false,
+        "solver_status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    },
+    {
+      "divisions": 2,
+      "result": {
+        "mode": "full",
+        "success": true,
+        "solver_status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "applied_wrench_N_Nm": [
+          0.40861041666666353,
+          0.0,
+          0.0,
+          0.0,
+          -0.0392340991716313,
+          0.0
+        ],
+        "reaction_wrench_N_Nm": [
+          -0.40861041666666864,
+          0.0,
+          0.0,
+          0.0,
+          0.03923409917163125,
+          -8.933825901280557e-17
+        ],
+        "force_residual_N": 5.10702591327572e-15,
+        "moment_residual_Nm": 1.0168868523741222e-16,
+        "minimum_weighted_objective": 0.07819079195106375,
+        "bolt_axial_total_N": 0.0,
+        "key_total_compression_N": 78.19079195106374,
+        "active_uniform_tractions": [
+          {
+            "patch": "key_x_minus",
+            "centroid_mm": [
+              -48.0,
+              -13.0,
+              48.25
+            ],
+            "area_mm2": 9.0,
+            "normal_on_ground": [
+              1,
+              0,
+              0
+            ],
+            "normal_force_N": 38.89109076719854,
+            "pressure_MPa": 4.321232307466505
+          },
+          {
+            "patch": "key_x_plus",
+            "centroid_mm": [
+              -40.0,
+              -13.0,
+              46.75
+            ],
+            "area_mm2": 9.0,
+            "normal_on_ground": [
+              -1,
+              0,
+              0
+            ],
+            "normal_force_N": 38.41437861442078,
+            "pressure_MPa": 4.268264290491198
+          },
+          {
+            "patch": "key_x_plus",
+            "centroid_mm": [
+              -40.0,
+              -7.0,
+              46.75
+            ],
+            "area_mm2": 9.0,
+            "normal_on_ground": [
+              -1,
+              0,
+              0
+            ],
+            "normal_force_N": 0.8853225694444309,
+            "pressure_MPa": 0.09836917438271454
+          }
+        ]
+      }
+    },
+    {
+      "divisions": 4,
+      "result": {
+        "mode": "full",
+        "success": true,
+        "solver_status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "applied_wrench_N_Nm": [
+          0.40861041666666353,
+          0.0,
+          0.0,
+          0.0,
+          -0.0392340991716313,
+          0.0
+        ],
+        "reaction_wrench_N_Nm": [
+          -0.40861041666666154,
+          0.0,
+          0.0,
+          0.0,
+          0.03923409917163134,
+          2.7755575615628914e-17
+        ],
+        "force_residual_N": 1.9984014443252818e-15,
+        "moment_residual_Nm": 5.003707553108401e-17,
+        "minimum_weighted_objective": 0.052127194634042494,
+        "bolt_axial_total_N": 0.0,
+        "key_total_compression_N": 52.127194634042496,
+        "active_uniform_tractions": [
+          {
+            "patch": "key_x_minus",
+            "centroid_mm": [
+              -48.0,
+              -14.5,
+              48.625
+            ],
+            "area_mm2": 2.25,
+            "normal_on_ground": [
+              1,
+              0,
+              0
+            ],
+            "normal_force_N": 0.24970636574073915,
+            "pressure_MPa": 0.11098060699588407
+          },
+          {
+            "patch": "key_x_minus",
+            "centroid_mm": [
+              -48.0,
+              -5.5,
+              48.625
+            ],
+            "area_mm2": 2.25,
+            "normal_on_ground": [
+              1,
+              0,
+              0
+            ],
+            "normal_force_N": 25.60958574294718,
+            "pressure_MPa": 11.382038107976523
+          },
+          {
+            "patch": "key_x_plus",
+            "centroid_mm": [
+              -40.0,
+              -5.5,
+              46.375
+            ],
+            "area_mm2": 2.25,
+            "normal_on_ground": [
+              -1,
+              0,
+              0
+            ],
+            "normal_force_N": 26.26790252535458,
+            "pressure_MPa": 11.674623344602034
+          }
+        ]
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "mode": "no_key",
+      "success": false,
+      "solver_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "mode": "no_bolts",
+      "success": true,
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "applied_wrench_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        0.0,
+        -0.0392340991716313,
+        0.0
+      ],
+      "reaction_wrench_N_Nm": [
+        -0.4086104166666651,
+        0.0,
+        0.0,
+        0.0,
+        0.03923409917163134,
+        -1.3877787807814457e-17
+      ],
+      "force_residual_N": 1.5543122344752192e-15,
+      "moment_residual_Nm": 4.3885418357208765e-17,
+      "minimum_weighted_objective": 0.0521271946340426,
+      "bolt_axial_total_N": 0.0,
+      "key_total_compression_N": 52.12719463404259,
+      "active_uniform_tractions": [
+        {
+          "patch": "key_x_minus",
+          "centroid_mm": [
+            -48.0,
+            -8.5,
+            48.625
+          ],
+          "area_mm2": 2.25,
+          "normal_on_ground": [
+            1,
+            0,
+            0
+          ],
+          "normal_force_N": 25.859292108687963,
+          "pressure_MPa": 11.493018714972429
+        },
+        {
+          "patch": "key_x_plus",
+          "centroid_mm": [
+            -40.0,
+            -14.5,
+            46.375
+          ],
+          "area_mm2": 2.25,
+          "normal_on_ground": [
+            -1,
+            0,
+            0
+          ],
+          "normal_force_N": 8.370057670488585,
+          "pressure_MPa": 3.72002563132826
+        },
+        {
+          "patch": "key_x_plus",
+          "centroid_mm": [
+            -40.0,
+            -5.5,
+            46.375
+          ],
+          "area_mm2": 2.25,
+          "normal_on_ground": [
+            -1,
+            0,
+            0
+          ],
+          "normal_force_N": 17.897844854866044,
+          "pressure_MPa": 7.954597713273797
+        }
+      ]
+    }
+  ],
+  "network": [
+    {
+      "divisions": 2,
+      "base_receives_N_Nm": [
+        0.4086104166666662,
+        0.0,
+        0.0,
+        0.0,
+        -0.03923409917163125,
+        8.933825901280557e-17
+      ],
+      "required_external_base_grip_wrench_N_Nm": [
+        -0.4086104166666662,
+        -0.0,
+        -0.0,
+        -0.0,
+        0.03923409917163125,
+        -8.933825901280557e-17
+      ],
+      "base_vs_original_external_error": 2.6645352591003757e-15,
+      "bolt_balances": []
+    },
+    {
+      "divisions": 4,
+      "base_receives_N_Nm": [
+        0.40861041666666154,
+        0.0,
+        0.0,
+        0.0,
+        -0.03923409917163134,
+        -2.7755575615628914e-17
+      ],
+      "required_external_base_grip_wrench_N_Nm": [
+        -0.40861041666666154,
+        -0.0,
+        -0.0,
+        -0.0,
+        0.03923409917163134,
+        2.7755575615628914e-17
+      ],
+      "base_vs_original_external_error": 1.9984014443252818e-15,
+      "bolt_balances": []
+    }
+  ],
+  "nut_bearing": [
+    {
+      "station": 0,
+      "axis": 2,
+      "value_mm": 66,
+      "area_mm2": 31.667331399389198,
+      "cells": [
+        {
+          "area_mm2": 31.667331399389198,
+          "centroid_mm": [
+            -43.99999999999125,
+            -29.999999999999833,
+            66.0
+          ]
+        }
+      ],
+      "cell_area_sum_mm2": 31.667331399389198
+    },
+    {
+      "station": 1,
+      "axis": 2,
+      "value_mm": 66,
+      "area_mm2": 31.667331399389184,
+      "cells": [
+        {
+          "area_mm2": 31.667331399389184,
+          "centroid_mm": [
+            -43.99999999999125,
+            10.000000000000169,
+            66.0
+          ]
+        }
+      ],
+      "cell_area_sum_mm2": 31.667331399389184
+    },
+    {
+      "station": 2,
+      "axis": 2,
+      "value_mm": 66,
+      "area_mm2": 31.667331399424945,
+      "cells": [
+        {
+          "area_mm2": 31.667331399424945,
+          "centroid_mm": [
+            86.0,
+            -30.000000000000846,
+            66.0
+          ]
+        }
+      ],
+      "cell_area_sum_mm2": 31.667331399424945
+    },
+    {
+      "station": 3,
+      "axis": 2,
+      "value_mm": 66,
+      "area_mm2": 31.66733139942494,
+      "cells": [
+        {
+          "area_mm2": 31.66733139942494,
+          "centroid_mm": [
+            86.0,
+            9.999999999999154,
+            66.0
+          ]
+        }
+      ],
+      "cell_area_sum_mm2": 31.66733139942494
+    }
+  ]
+}

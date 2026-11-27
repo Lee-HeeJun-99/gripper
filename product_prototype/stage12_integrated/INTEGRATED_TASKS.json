@@ -1523,7 +1523,7 @@
       "target_parts": 69,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
       },
       "result": "validation/integrated/primary_cycle1/summary.json",
       "reason": "ONE primary CAD implemented and corrected through actual design failures; no system gate promotion",
@@ -1571,7 +1571,7 @@
       "target_parts": 69,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
       },
       "concrete_first_step": "Extract actual P1 Root/Terminal boundary ports and pin/slide contact from recorded STEP, reproduce corrected C1 cable virtual work, then solve a small finite-load continuation with separate Rail/PET DOFs and explicit normal contact. Retain mesh1%/time.1%; do not apply100g by calling its weight cable tension.",
       "known_blockers": [
@@ -1629,7 +1629,7 @@
       "target_parts": 69,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
       },
       "known_blockers": [
         "Rated actual motor/hub/finished cable and physical overload bound absent",
@@ -1678,7 +1678,7 @@
       "target_parts": 69,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
       },
       "concrete_first_step": "Load32element1N state from validation/finger/primaryP1_operating4/cases.json with its frozen material coordinates. Independently locate the remaining actual Terminal/sector intersection and signed feature gap AFTER Newton. Represent the lip seam/corner admissible face-normal cone without deleting physical constraints; require original1e-8N/1nm/1e-8mm3 checks before solving payload demand. Preserve8mesh5.137nm and2N/4.5N failures.",
       "known_blockers": [
@@ -1736,7 +1736,7 @@
       "target_parts": 69,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
       },
       "concrete_first_step": "Read32element demand state and primaryP1_corner_demand_loads1 row: Root forceXZ[.2570793945,1.0018772657]N,MY=-.00136985722Nm; motor forceXZ[.1515310222,-1.0018772657]N,MY=.01139930756Nm. Independently map actual RF/cradle/M5 bearing and engagement surfaces from69part STEP; formulate paired load transfer through finite Ground and justify contact/thread support before reusing frame tetra mesh. Keep demand/source assumptions explicit; preserve former unit+Z mesh FAIL.",
       "known_blockers": [
@@ -1757,7 +1757,7 @@
       "id": "goal_primary_positive_ground_fixture",
       "track": "C",
       "priority": -1003,
-      "status": "READY",
+      "status": "PARTIAL_VALIDATED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue same P1 clamp10. Implement finite positive Ground-to-bench attachment with actual separate fastening/bearing surfaces and assembly/tool access; define finite test-base material/geometry and how it receives FX=-.4086104167N,MY=.0392340992Nm. Do not fix the existing four shared M5 holes to ground or infer support from a free plate. Reuse sourced standard through-bolt/nut architecture,record minima/unknowns. Then apply paired Root/Motor tractions through actual compliant bolt/contact/thread models and finite Ground; preserve frictionless/traction-mesh and historical frame/Rail failures. Real motor-case land/source tolerances and friction/preload remain required.",
@@ -1781,7 +1781,7 @@
       "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
       "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
       "last_run_utc": null,
-      "consecutive_runs": 0,
+      "consecutive_runs": 1,
       "system_gate_contribution": 5,
       "historical_parent_candidate": {
         "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
@@ -1795,7 +1795,7 @@
       "target_parts": 69,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
       },
       "concrete_first_step": "Map shared fourM5 stack and free finite Ground. Select explicit finite through-bolted test-base attachment outside service/root-tool windows; create real Ground mounting CAD and standard bolt/nut/bearing surfaces with defined finite base. Verify assembly and required paired force/couple reaction before FEM. A bench-fixed node set on existing fourM5 is not a fixture.",
       "known_blockers": [
@@ -1807,6 +1807,67 @@
       "parent_result": {
         "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/summary.json",
         "SHA256": "54d79c353a927d0569f571746f769ba85e438deaeeefe897c24ad063c32a8e77"
+      },
+      "result": "validation/integrated/primary_cycle5/summary.json",
+      "reason": "Actual positive keyed finite fixture implemented/assembled; full frictionless outer wrench verified. Fit/contact/elastic/thread/anchor and1%reaction-mesh FAIL remain; all22gates unqualified.",
+      "next": "goal_primary_keyed_joint_compliance"
+    },
+    {
+      "id": "goal_primary_keyed_joint_compliance",
+      "track": "C",
+      "priority": -1004,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "FIRST reconcile Ground steel-vs-proposedAl material intent and include actual-volume gravity/full module hardware masses in all boundary wrenches. Continue THIS P1fixture13. Build compliant Ground-key-Base and four separate bolt/nut interfaces using actual finite BRep,nominal0gap plus explicit source-supported fit/tolerance contrasts and declared preload sensitivity. Map both paired Root/Motor forces AND couples through the upstream Frame/Ground; use actual head/nut bearing and justified thread core/flank/engagement connectors,never nominal major-cylinder ties. Represent finite Base external grip as explicit force/moment ports with identified physical grip/anchor architecture,not old shared-M5 fixation. Compare full-face reaction witness and mesh stress/motion at unchanged1%; do not repeat LP-only mesh refinement. Solve gap closure/active normals/bolt axial elongation and key-root/plate deformation first. Source minima/real motor case/friction/protection,full3Finger and global energy remain blocked.",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "continuous_load_path",
+        "root_palm_strength",
+        "motor_alignment_reactions",
+        "numerical_convergence",
+        "changed_stage1_revalidation",
+        "cad_model_match"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+        "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
+      "system_gate_contribution": 6,
+      "historical_parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+        "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
+      },
+      "target_revision": "primaryP1_fixture13",
+      "target_parts": 78,
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
+      },
+      "concrete_first_step": "Reconcile material assignment and actual full product gravity without treating sensitivity density as a certified bound. Extract actual centered key30/18mm2 faces,2399.542mm2 seat and four separate32.9867mm2 head/31.6673mm2 nut footprints. Form compliant finite Ground/Base and axial bolts with nonpenetration/open contacts and justified threaded connector; derive actual source/tolerance/preload hypotheses before mesh. Preserve current full-face witness and its1%FAIL. Do not fix original sharedM5nodes or assume zero-gap is guaranteed.",
+      "known_blockers": [
+        "Ground material intent unresolved; fixture-only gravity changes requiredBaseFZ4.03147/6.43815N plusMX/MY. Originalmodule/hardware masses not known.",
+        "Nominal zero keyfit loses initial shear with0.02mm gap; actual contact/fit/preload/compliance missing",
+        "Reaction LP1->2:4.5041%,2->4:2.0102%FAIL1%;no further LP-only mesh retry",
+        "Upstream Root/Motor traction/Frame/Rail failures remain",
+        "Thread/core/flank/engagement/source minimum/case lands/protector/friction/laboratory base grip/full3Finger/global energy unqualified"
+      ],
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/summary.json",
+        "SHA256": "9e357d250b63989fc408a100df2b9f45897ad9e73cf168c0357f5a1c6e39b21f"
       },
       "result": null,
       "reason": null,

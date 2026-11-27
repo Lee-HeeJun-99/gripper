@@ -1,28 +1,29 @@
 {
   "status": "SOURCE_INTEGRITY_PASS",
   "errors": [],
-  "revision": "primaryP1_clamp10",
+  "revision": "primaryP1_fixture13",
   "adopted_reference": "revAA_heel_relief2 unchanged",
   "next": {
-    "id": "goal_primary_positive_ground_fixture",
+    "id": "goal_primary_keyed_joint_compliance",
     "track": "C",
-    "priority": -1003,
+    "priority": -1004,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
     "selection_policy": "goal_product_continuation",
-    "hypothesis": "Continue same P1 clamp10. Implement finite positive Ground-to-bench attachment with actual separate fastening/bearing surfaces and assembly/tool access; define finite test-base material/geometry and how it receives FX=-.4086104167N,MY=.0392340992Nm. Do not fix the existing four shared M5 holes to ground or infer support from a free plate. Reuse sourced standard through-bolt/nut architecture,record minima/unknowns. Then apply paired Root/Motor tractions through actual compliant bolt/contact/thread models and finite Ground; preserve frictionless/traction-mesh and historical frame/Rail failures. Real motor-case land/source tolerances and friction/preload remain required.",
+    "hypothesis": "FIRST reconcile Ground steel-vs-proposedAl material intent and include actual-volume gravity/full module hardware masses in all boundary wrenches. Continue THIS P1fixture13. Build compliant Ground-key-Base and four separate bolt/nut interfaces using actual finite BRep,nominal0gap plus explicit source-supported fit/tolerance contrasts and declared preload sensitivity. Map both paired Root/Motor forces AND couples through the upstream Frame/Ground; use actual head/nut bearing and justified thread core/flank/engagement connectors,never nominal major-cylinder ties. Represent finite Base external grip as explicit force/moment ports with identified physical grip/anchor architecture,not old shared-M5 fixation. Compare full-face reaction witness and mesh stress/motion at unchanged1%; do not repeat LP-only mesh refinement. Solve gap closure/active normals/bolt axial elongation and key-root/plate deformation first. Source minima/real motor case/friction/protection,full3Finger and global energy remain blocked.",
     "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
     "system_gate_ids": [
       "continuous_load_path",
       "root_palm_strength",
       "motor_alignment_reactions",
       "numerical_convergence",
-      "changed_stage1_revalidation"
+      "changed_stage1_revalidation",
+      "cad_model_match"
     ],
     "prerequisites": [],
     "parent_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
-      "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+      "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
     },
     "product_brief": {
       "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
@@ -32,37 +33,38 @@
     "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
     "last_run_utc": null,
     "consecutive_runs": 0,
-    "system_gate_contribution": 5,
+    "system_gate_contribution": 6,
     "historical_parent_candidate": {
       "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
       "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
     },
     "target_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clamp10/summary.json",
-      "SHA256": "5d68f18ee57d9f25ab24cb4be9aa8aa1a48dc11e3753e8647e8a0f8f664902b5"
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+      "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
     },
-    "target_revision": "primaryP1_clamp10",
-    "target_parts": 69,
+    "target_revision": "primaryP1_fixture13",
+    "target_parts": 78,
     "primary_state": {
       "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-      "SHA256": "8e92f3ec4003b3f5fef71d51209985d31d7abf0bed96c40adf434b6a1e9bc73f"
+      "SHA256": "f846780bb0fcb5083d3427fff224ca66f908d76cbbb0f8ec53a182e7d533cc88"
     },
-    "concrete_first_step": "Map shared fourM5 stack and free finite Ground. Select explicit finite through-bolted test-base attachment outside service/root-tool windows; create real Ground mounting CAD and standard bolt/nut/bearing surfaces with defined finite base. Verify assembly and required paired force/couple reaction before FEM. A bench-fixed node set on existing fourM5 is not a fixture.",
+    "concrete_first_step": "Reconcile material assignment and actual full product gravity without treating sensitivity density as a certified bound. Extract actual centered key30/18mm2 faces,2399.542mm2 seat and four separate32.9867mm2 head/31.6673mm2 nut footprints. Form compliant finite Ground/Base and axial bolts with nonpenetration/open contacts and justified threaded connector; derive actual source/tolerance/preload hypotheses before mesh. Preserve current full-face witness and its1%FAIL. Do not fix original sharedM5nodes or assume zero-gap is guaranteed.",
     "known_blockers": [
-      "Free Ground residualFX=.4086104167N,MY=-.0392340992Nm; no actual external fixture",
-      "No guaranteed friction/preload,actual motor-case land/minimum allowable or bolt thread/engagement source minima",
-      "Finite traction meshRoot10.84%,Motor7.35..8.54%,Groundmu.8 2.60%FAIL1%",
-      "Historical Rail stress and Frame FEM mesh FAIL; no frictional/full3Finger/global-energy/protection release"
+      "Ground material intent unresolved; fixture-only gravity changes requiredBaseFZ4.03147/6.43815N plusMX/MY. Originalmodule/hardware masses not known.",
+      "Nominal zero keyfit loses initial shear with0.02mm gap; actual contact/fit/preload/compliance missing",
+      "Reaction LP1->2:4.5041%,2->4:2.0102%FAIL1%;no further LP-only mesh retry",
+      "Upstream Root/Motor traction/Frame/Rail failures remain",
+      "Thread/core/flank/engagement/source minimum/case lands/protector/friction/laboratory base grip/full3Finger/global energy unqualified"
     ],
     "parent_result": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle4/summary.json",
-      "SHA256": "54d79c353a927d0569f571746f769ba85e438deaeeefe897c24ad063c32a8e77"
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle5/summary.json",
+      "SHA256": "9e357d250b63989fc408a100df2b9f45897ad9e73cf168c0357f5a1c6e39b21f"
     },
     "result": null,
     "reason": null,
     "next": null
   },
   "running_task_records": [],
-  "warning": "Same P1 actual clamp redesign is partial engineering,not22gate release",
-  "resume_command": "Continue same P1 clamp10. Implement finite positive Ground-to-bench attachment with actual separate fastening/bearing surfaces and assembly/tool access; define finite test-base material/geometry and how it receives FX=-.4086104167N,MY=.0392340992Nm. Do not fix the existing four shared M5 holes to ground or infer support from a free plate. Reuse sourced standard through-bolt/nut architecture,record minima/unknowns. Then apply paired Root/Motor tractions through actual compliant bolt/contact/thread models and finite Ground; preserve frictionless/traction-mesh and historical frame/Rail failures. Real motor-case land/source tolerances and friction/preload remain required."
+  "warning": "Actual P1 keyed fixture engineering,not22gate release",
+  "resume_command": "FIRST reconcile Ground steel-vs-proposedAl material intent and include actual-volume gravity/full module hardware masses in all boundary wrenches. Continue THIS P1fixture13. Build compliant Ground-key-Base and four separate bolt/nut interfaces using actual finite BRep,nominal0gap plus explicit source-supported fit/tolerance contrasts and declared preload sensitivity. Map both paired Root/Motor forces AND couples through the upstream Frame/Ground; use actual head/nut bearing and justified thread core/flank/engagement connectors,never nominal major-cylinder ties. Represent finite Base external grip as explicit force/moment ports with identified physical grip/anchor architecture,not old shared-M5 fixation. Compare full-face reaction witness and mesh stress/motion at unchanged1%; do not repeat LP-only mesh refinement. Solve gap closure/active normals/bolt axial elongation and key-root/plate deformation first. Source minima/real motor case/friction/protection,full3Finger and global energy remain blocked."
 }

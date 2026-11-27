@@ -1,0 +1,45 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+    "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_gravity1/producer.py",
+    "SHA256": "042700266560b1e2ff7c96f2c891b9cbaccf62f245a14acb09a20928c1eff6c8"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/verify_primary_fixture_v3.py",
+      "SHA256": "b540b0cc9f68257e96580a50a3bfafdcbc08a706703b93af95f75413f41f695f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_verify3/patches.json",
+      "SHA256": "f84f407586110fe972512d95c04c96d7bcc637e4de929d2394ae81fa64a66fc3"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_verify3/tractions.json",
+      "SHA256": "29cf27805f56d84bbca470f0dfa44a59433a96b0e6d918173f26010528bd25df"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    }
+  ],
+  "gravity_m_s2": [
+    0,
+    0,
+    -9.80665
+  ],
+  "density_scenarios_kg_m3": [
+    {
+      "GROUND_PLATE": 2700,
+      "TEST_BASE": 2700
+    },
+    {
+      "GROUND_PLATE": 7850,
+      "TEST_BASE": 2700
+    }
+  ],
+  "density_basis": "Explicit engineering sensitivity constants only; neither guaranteed mass bounds nor material/source minima. Prior ground steel candidate versus producer11 proposedAl conflict is not silently resolved.",
+  "excluded_masses": "Original motor/drive/finger/frame,all bolts/nuts/wire have no verified masses; omitted explicitly. This is not full product gravity or shock/handling certification."
+}

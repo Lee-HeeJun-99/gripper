@@ -1,0 +1,262 @@
+{
+  "status": "PRIMARY_FIXTURE_INDEPENDENT_WRENCH_WITNESS_PASS_MESH_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture13/summary.json",
+    "SHA256": "a2bea17c1fa777fa3fc66cad9916ccb510791d7d6bba206fdf52c658b90a8634"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_witness2/producer.py",
+    "SHA256": "5c49100f1335115199a939a57c4bd82a0a1b81f1143f54a7f7a63586a620be7c"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixture_witness2/inputs.json",
+    "SHA256": "5d97e479cbcc8c917f866f23d228e72fe152c3e132bac21b653ad865bc9a6dff"
+  },
+  "checks": {
+    "all_contact_derivatives": true,
+    "nominal_gap_rejects_initial_key_shear": true,
+    "all_pressure_integrations_balance": true,
+    "base_full_wrench": true,
+    "six_virtual_work_checks": true,
+    "nonnegative_pressures": true,
+    "key_traction_centroids_on_both_solids": true,
+    "corrupt_tractions_rejected": true,
+    "source_hashes": true
+  },
+  "contact_derivatives": [
+    {
+      "h_mm": 0.001,
+      "axis": 0,
+      "sign": -1,
+      "overlap_mm3": 0.030000001000963405,
+      "area_from_volume_mm2": 30.000001000963405,
+      "expected_area_mm2": 30.0,
+      "relative_error": 3.336544684984233e-08
+    },
+    {
+      "h_mm": 0.001,
+      "axis": 0,
+      "sign": 1,
+      "overlap_mm3": 0.03000000099596424,
+      "area_from_volume_mm2": 30.00000099596424,
+      "expected_area_mm2": 30.0,
+      "relative_error": 3.3198807924961216e-08
+    },
+    {
+      "h_mm": 0.001,
+      "axis": 1,
+      "sign": -1,
+      "overlap_mm3": 0.018000000999976177,
+      "area_from_volume_mm2": 18.000000999976177,
+      "expected_area_mm2": 18.0,
+      "relative_error": 5.5554232103460777e-08
+    },
+    {
+      "h_mm": 0.001,
+      "axis": 1,
+      "sign": 1,
+      "overlap_mm3": 0.018000000999728562,
+      "area_from_volume_mm2": 18.000000999728563,
+      "expected_area_mm2": 18.0,
+      "relative_error": 5.5540475774051856e-08
+    },
+    {
+      "h_mm": 0.002,
+      "axis": 0,
+      "sign": -1,
+      "overlap_mm3": 0.06000000800111373,
+      "area_from_volume_mm2": 30.000004000556864,
+      "expected_area_mm2": 30.0,
+      "relative_error": 1.3335189552599047e-07
+    },
+    {
+      "h_mm": 0.002,
+      "axis": 0,
+      "sign": 1,
+      "overlap_mm3": 0.060000007996107246,
+      "area_from_volume_mm2": 30.00000399805362,
+      "expected_area_mm2": 30.0,
+      "relative_error": 1.332684540500395e-07
+    },
+    {
+      "h_mm": 0.002,
+      "axis": 1,
+      "sign": -1,
+      "overlap_mm3": 0.03600000799997579,
+      "area_from_volume_mm2": 18.000003999987896,
+      "expected_area_mm2": 18.0,
+      "relative_error": 2.222215498282054e-07
+    },
+    {
+      "h_mm": 0.002,
+      "axis": 1,
+      "sign": 1,
+      "overlap_mm3": 0.03600000799978814,
+      "area_from_volume_mm2": 18.00000399989407,
+      "expected_area_mm2": 18.0,
+      "relative_error": 2.222163371090602e-07
+    }
+  ],
+  "gapped_key_overlaps_mm3": [
+    0.0,
+    0.0
+  ],
+  "rows": [
+    {
+      "divisions": 1,
+      "ground_residual_N_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        8.673617379884035e-19,
+        0.0,
+        7.560811544750145e-20
+      ],
+      "base_receives_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        -8.673617379884035e-19,
+        -0.0392340991716313,
+        -7.560811544750145e-20
+      ],
+      "base_difference_N_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        -8.673617379884035e-19,
+        0.0,
+        -7.560811544750145e-20
+      ],
+      "virtual_work_error": 0.0,
+      "nonnegative_pressures": true
+    },
+    {
+      "divisions": 2,
+      "ground_residual_N_Nm": [
+        0.0,
+        0.0,
+        -5.551115123125783e-17,
+        -8.673617379884035e-19,
+        1.3877787807814457e-17,
+        0.0
+      ],
+      "base_receives_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        5.551115123125783e-17,
+        8.673617379884035e-19,
+        -0.039234099171631315,
+        0.0
+      ],
+      "base_difference_N_Nm": [
+        0.0,
+        0.0,
+        5.551115123125783e-17,
+        8.673617379884035e-19,
+        -1.3877787807814457e-17,
+        0.0
+      ],
+      "virtual_work_error": 0.0,
+      "nonnegative_pressures": true
+    },
+    {
+      "divisions": 4,
+      "ground_residual_N_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        2.6020852139652106e-18,
+        0.0,
+        -5.421010862427522e-20
+      ],
+      "base_receives_N_Nm": [
+        0.40861041666666353,
+        0.0,
+        0.0,
+        -2.6020852139652106e-18,
+        -0.0392340991716313,
+        5.421010862427522e-20
+      ],
+      "base_difference_N_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        -2.6020852139652106e-18,
+        0.0,
+        5.421010862427522e-20
+      ],
+      "virtual_work_error": 0.0,
+      "nonnegative_pressures": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "divisions": 1,
+      "omitted_key_force_residual_N": 0.40861041666666353,
+      "reversed_key_force_residual_N": 0.8172208333333271
+    },
+    {
+      "divisions": 2,
+      "omitted_key_force_residual_N": 0.20430520833333177,
+      "reversed_key_force_residual_N": 0.40861041666666353
+    },
+    {
+      "divisions": 4,
+      "omitted_key_force_residual_N": 0.30645781249999765,
+      "reversed_key_force_residual_N": 0.6129156249999953
+    }
+  ],
+  "actual_bolt_demand": [
+    {
+      "station": "head0",
+      "axial_N": 0.21969767969280496,
+      "head_bearing_MPa": 0.006660185087415204,
+      "nut_bearing_MPa": 0.006937675831347207,
+      "source_minimum_allowable": null,
+      "effective_thread_engagement_mm": null,
+      "qualified": false
+    },
+    {
+      "station": "head1",
+      "axial_N": 0.23140304310179366,
+      "head_bearing_MPa": 0.007015035839268071,
+      "nut_bearing_MPa": 0.007307311127146542,
+      "source_minimum_allowable": null,
+      "effective_thread_engagement_mm": null,
+      "qualified": false
+    }
+  ],
+  "key_peak_pressure_not_qualified": true,
+  "conditional_full_face_key_pressure_MPa": 0.013620347222222117,
+  "mesh_fail_preserved": [
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "reaction_objective_or_axial_relative": 0.04504127278318722,
+      "pass_1pct": false
+    },
+    {
+      "pair": [
+        2,
+        4
+      ],
+      "reaction_objective_or_axial_relative": 0.020102068564470985,
+      "pass_1pct": false
+    }
+  ],
+  "actual_source_load": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_corner_demand_loads1/summary.json",
+    "SHA256": "2767b2c554220e3633af5d2c2874bb883965eb2405a3a89e1c2f6a5e8279920c"
+  },
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": [],
+  "limitations": [
+    "No nominal major-shank stress is substituted for certified thread core/flank/engagement strength",
+    "Uniform finite-face tractions give a feasible reference,not a compliant physical distribution or installed preload",
+    "Key nominal0gap is critical; shown0.02mm gap eliminates initial shear contact. Fit/tolerance and elastic contact must be solved",
+    "Finite Base requires explicit opposite external grip wrench,not hidden support or verified laboratory anchorage"
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "status": "FAIL_ACTUAL_DIRECT_PLATE_IDLER_INTERFERENCE",
+  "task": "batch6_simple_palm_mount",
+  "track": "C",
+  "starting_HEAD": "af41aca0c845e5f199d39594a7e6c9d1a78154dd",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAY_direct_plate1/summary.json",
+    "SHA256": "a1a12b7df414e2cdd2a7678eee29b51f39c6efd07f674e5158a22d0ea5f387fc"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AY_plate_verify2/summary.json",
+    "SHA256": "574c5f8da055a38560df472601d3f316e3c99f914539148f2f35e7e91621c3b2"
+  },
+  "candidate_readiness": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AY_plate_readiness2/summary.json",
+    "SHA256": "f87fdf7c57426a83a3beb416fd89ab8f4a3bd6b8ea0669772b0cb64de0f31828"
+  },
+  "baseline_release_audit": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AY_plate_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/recorder.py",
+    "SHA256": "6b2073d0dd4d404d71932d61dd4f57623dfa189986bf50f41fd8e6315e307785"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/runner.py",
+    "SHA256": "741c5aeae6ad2b591aa4a917917951fc31c73b9dd6e2531ef9c2f00369f38b13"
+  },
+  "execution": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_simple_palm.py"
+      ],
+      "producer_SHA256": "ca168699727c9bfb3a6859716e63751040f2b4f7c9d9627559bf52af77f5c9c6",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 5.274176972918212,
+      "PID": 5,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/build.log",
+        "SHA256": "2ed6f0c3e0fdd0106708fe70b84c291b3310d7fd3b0ef07cfd74ad3e5bff1771"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/build_plan.json",
+        "SHA256": "ae8ea7a47cbc4ea5e7999eaefcf1cf40583c8d69dfca8bf6b35f0a3f50f892a9"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_simple_palm.py"
+      ],
+      "producer_SHA256": "eb592b8fb0542a1e47d895902179cedd614c8ddde09f8ef654063a3b9c8763eb",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 4.372370494995266,
+      "PID": 5,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/verify.log",
+        "SHA256": "7b439168b3f13ed9c307252632b86be30a0ee620c14fb7ac65ae6cd75b728c06"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/verify_plan.json",
+        "SHA256": "2fa52b080ca71d813116b64c80ef8a375782a505784336e38f0a9f5fa0aabbdb"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "AY_plate_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3649482030887157,
+      "PID": 5,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/release_plan.json",
+        "SHA256": "3b6855804d650b09223b0970b2468be09f06ac86df13cd53349136889f3f8025"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_palm_readiness.py"
+      ],
+      "producer_SHA256": "19db7ed0d81546b519df84c910f6262790e3a20f5618eb31ec07f6f76f228738",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.06434599799104035,
+      "PID": 6,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/readiness.log",
+        "SHA256": "5f290dc37d755be73347746d2eb3197fb34a4cd55af72d64e8e081ba0a35980c"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/readiness_plan.json",
+        "SHA256": "f86ef267ab3293dedeab70a3a63295a4422d964b5e1a4071d03b84e15e59ed7d"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_simple_palm.py"
+      ],
+      "producer_SHA256": "e917ab169d53398f02a92bc4a33f4c6df5527eb29b6c8c482ae7512a8fcab3b4",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 4.372412000084296,
+      "PID": 5,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/verify2.log",
+        "SHA256": "927e7ef37cf4c2cbb11a3a822d5305d818cf7b4a19f71c6e5754736dbce1f064"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/verify2_plan.json",
+        "SHA256": "343781d8a5d21490b2ae6b9812bd59120092a93824a14569725367d5c03153a4"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_palm_readiness.py"
+      ],
+      "producer_SHA256": "5aaeb7059019b7ab7d6ccd5fe7ea923b26bf23f45e9b928a2d663ce99aa39811",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.11468490702100098,
+      "PID": 6,
+      "reaped": true,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/readiness2.log",
+        "SHA256": "408d90d0f462d76fa6546ba477bfdc9e571b6c56d3701462abb29a1d69586b9b"
+      },
+      "plan": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/readiness2_plan.json",
+        "SHA256": "0055b428e9369f00628383b39bd17b9b7af4a9c2428890e834dc4d3a517063dd"
+      }
+    }
+  ],
+  "new_product_evidence": "Actual single8mm flat annular external plate replacing16mm stepped adapter, six shortened bolt/nut envelopes, full254part STEP/BOM. Six actual retained Idler fastener collisions independently reproduced. This rejects simple uniform plate without retained Idler service clearances.",
+  "structural_problem_addressed": "Adapter stack simplified into declared finite direct external mating plate; actual interference prevents adoption. No structural capacity solved.",
+  "changed_part_IDs": [
+    "PALM_BOLT_0",
+    "PALM_NUT_0",
+    "PALM_BOLT_1",
+    "PALM_NUT_1",
+    "PALM_BOLT_2",
+    "PALM_NUT_2",
+    "PALM_BASE_ADAPTER"
+  ],
+  "part_count_before": 254,
+  "part_count_after": 254,
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "new_standard_components": 0,
+  "custom_part_profile_changes": 1,
+  "fastener_envelope_changes": 6,
+  "new_special_tools": 0,
+  "manufacturing": "Flat plate machining versus stepped adapter turning/milling; holes/slots remain. Process/tool/cost savings unqualified.",
+  "quantitative": {
+    "exact_intersection_pairs": 32,
+    "collisions": [
+      {
+        "a": "F0_IDLER_BASE_BOLT",
+        "b": "PALM_BASE_ADAPTER",
+        "common_mm3": 21.2057504117311
+      },
+      {
+        "a": "F0_IDLER_BASE_NUT",
+        "b": "PALM_BASE_ADAPTER",
+        "common_mm3": 45.9088439853584
+      },
+      {
+        "a": "F1_IDLER_BASE_BOLT",
+        "b": "PALM_BASE_ADAPTER",
+        "common_mm3": 21.205750411731117
+      },
+      {
+        "a": "F1_IDLER_BASE_NUT",
+        "b": "PALM_BASE_ADAPTER",
+        "common_mm3": 45.90884398535325
+      },
+      {
+        "a": "F2_IDLER_BASE_BOLT",
+        "b": "PALM_BASE_ADAPTER",
+        "common_mm3": 21.205750411731106
+      },
+      {
+        "a": "F2_IDLER_BASE_NUT",
+        "b": "PALM_BASE_ADAPTER",
+        "common_mm3": 45.90884398538275
+      }
+    ],
+    "palm_contact_area_mm2": 4341.251588659402,
+    "geometric_volume_change_mm3": -6032.084130954157,
+    "mass_change_kg": null
+  },
+  "failures_preserved": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AY_plate_verify1/summary.json",
+      "SHA256": "723d1f8ba45e4c3e131059c381510beb72b85cd7372051a3e65e286e5813ebba"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/AY_plate_readiness1/producer.py",
+      "SHA256": "19db7ed0d81546b519df84c910f6262790e3a20f5618eb31ec07f6f76f228738"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/readiness.log",
+      "SHA256": "5f290dc37d755be73347746d2eb3197fb34a4cd55af72d64e8e081ba0a35980c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAY_direct_plate1/summary.json",
+      "SHA256": "a1a12b7df414e2cdd2a7678eee29b51f39c6efd07f674e5158a22d0ea5f387fc"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/transmission/AY_plate_verify2/summary.json",
+      "SHA256": "574c5f8da055a38560df472601d3f316e3c99f914539148f2f35e7e91621c3b2"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/AY_plate_readiness2/summary.json",
+      "SHA256": "f87fdf7c57426a83a3beb416fd89ab8f4a3bd6b8ea0669772b0cb64de0f31828"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/AY_plate_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  ],
+  "verification_corrections": [
+    "Initial readiness source path typo caused FileNotFoundError exit1; archived original producer and log preserved; new readiness2 uses actual AY candidate",
+    "First verifier used filled cylinder as socket envelope, intersecting bolt tail. Original verify1 FAIL preserved; independent hollow socket workspace verify2 clears. No actual tool/hex qualification."
+  ],
+  "six_DOF_capacity_qualified": false,
+  "whole_system_release": false,
+  "adopted": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "SOFA_executed": false,
+  "remaining_task_gate_ids": [
+    "root_palm_strength",
+    "continuous_load_path",
+    "changed_stage1_revalidation"
+  ],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "unmet": [
+    "Six Idler bolt/nut plate collisions: no installation possible as drawn",
+    "Actual bolt thread/material/grade/engagement/preload; smooth nut escape is not retention",
+    "Actual operating wrench and Palm/plate/fastener/machine stiffness, bearing, lift/horizontal/torsion/bending",
+    "Plate lower annular machine face and four5.5mm holes declared; actual machine fasteners/support absent",
+    "Swept tendon service, installed assembly, tolerances, loaded flexible surfaces",
+    "Same revision full Stage1 and22Stage2 criteria"
+  ],
+  "followup": "Coverage next: batch6_protected_standard_drive. Future Palm architecture must reserve explicit retained Idler fastener/service corridors, evaluate nonuniform three-pad or relocated mount instead of repeating uniform plate thickness scans. Real thread connectors and machine bolts remain required.",
+  "known_owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "new_commit_SHA": null
+}

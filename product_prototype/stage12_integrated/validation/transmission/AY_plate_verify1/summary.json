@@ -1,0 +1,202 @@
+{
+  "status": "DIRECT_PLATE_CAPACITY_NOT_QUALIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAY_direct_plate1/summary.json",
+    "SHA256": "a1a12b7df414e2cdd2a7678eee29b51f39c6efd07f674e5158a22d0ea5f387fc"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AY_plate_verify1/producer.py",
+    "SHA256": "eb592b8fb0542a1e47d895902179cedd614c8ddde09f8ef654063a3b9c8763eb"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/AY_plate_verify1/inputs.json",
+    "SHA256": "7357d586f57160a3c83fe70b7a72a54bababb411eec5a5cc5d7f8ce1c6d00106"
+  },
+  "checks": {
+    "input_hashes": true,
+    "same_count": true,
+    "PALM_BOLT_0_solid": true,
+    "PALM_BOLT_0_mesh": true,
+    "PALM_NUT_0_solid": true,
+    "PALM_NUT_0_mesh": true,
+    "PALM_BOLT_1_solid": true,
+    "PALM_BOLT_1_mesh": true,
+    "PALM_NUT_1_solid": true,
+    "PALM_NUT_1_mesh": true,
+    "PALM_BOLT_2_solid": true,
+    "PALM_BOLT_2_mesh": true,
+    "PALM_NUT_2_solid": true,
+    "PALM_NUT_2_mesh": true,
+    "PALM_BASE_ADAPTER_solid": true,
+    "PALM_BASE_ADAPTER_mesh": true,
+    "nominal_context_clear": false,
+    "finite_palm_bearing_footprint": true,
+    "misplaced_plate_rejected": true,
+    "conditional_head_and_nut_stops": true,
+    "sampled_socket_workspace": false
+  },
+  "meshes": [
+    {
+      "part": "PALM_BOLT_0",
+      "closed_oriented_positive": true,
+      "volume_mm3": 366.33766645671204
+    },
+    {
+      "part": "PALM_NUT_0",
+      "closed_oriented_positive": true,
+      "volume_mm3": 120.52469493622395
+    },
+    {
+      "part": "PALM_BOLT_1",
+      "closed_oriented_positive": true,
+      "volume_mm3": 366.3376664522372
+    },
+    {
+      "part": "PALM_NUT_1",
+      "closed_oriented_positive": true,
+      "volume_mm3": 120.52469493477808
+    },
+    {
+      "part": "PALM_BOLT_2",
+      "closed_oriented_positive": true,
+      "volume_mm3": 366.3376664567154
+    },
+    {
+      "part": "PALM_NUT_2",
+      "closed_oriented_positive": true,
+      "volume_mm3": 120.52469493622893
+    },
+    {
+      "part": "PALM_BASE_ADAPTER",
+      "closed_oriented_positive": true,
+      "volume_mm3": 36846.82978011852
+    }
+  ],
+  "interferences": [
+    {
+      "a": "F0_IDLER_BASE_BOLT",
+      "b": "PALM_BASE_ADAPTER",
+      "common_mm3": 21.2057504117311
+    },
+    {
+      "a": "F0_IDLER_BASE_NUT",
+      "b": "PALM_BASE_ADAPTER",
+      "common_mm3": 45.9088439853584
+    },
+    {
+      "a": "F1_IDLER_BASE_BOLT",
+      "b": "PALM_BASE_ADAPTER",
+      "common_mm3": 21.205750411731117
+    },
+    {
+      "a": "F1_IDLER_BASE_NUT",
+      "b": "PALM_BASE_ADAPTER",
+      "common_mm3": 45.90884398535325
+    },
+    {
+      "a": "F2_IDLER_BASE_BOLT",
+      "b": "PALM_BASE_ADAPTER",
+      "common_mm3": 21.205750411731106
+    },
+    {
+      "a": "F2_IDLER_BASE_NUT",
+      "b": "PALM_BASE_ADAPTER",
+      "common_mm3": 45.90884398538275
+    }
+  ],
+  "exact_intersection_pairs": 32,
+  "palm_contact_area_mm2": 4341.251588659402,
+  "plate_volume_mm3": 36878.87953476861,
+  "old_adapter_volume_mm3": 42910.96366572277,
+  "geometric_volume_change_mm3": -6032.084130954157,
+  "old_adapter_bounds_mm": [
+    -44.0,
+    -44.0,
+    -28.0,
+    43.988634895846,
+    44.0,
+    -12.0
+  ],
+  "plate_bounds_mm": [
+    -44.0,
+    -44.0,
+    -20.0,
+    43.988634895846,
+    44.0,
+    -12.0
+  ],
+  "stops": [
+    {
+      "bolt": 0,
+      "head_down_into_palm_mm3": 2.3279201563100917,
+      "nut_up_into_plate_mm3": 7.012034802812548
+    },
+    {
+      "bolt": 1,
+      "head_down_into_palm_mm3": 2.3279201563100917,
+      "nut_up_into_plate_mm3": 7.012034802812547
+    },
+    {
+      "bolt": 2,
+      "head_down_into_palm_mm3": 2.3279201563100917,
+      "nut_up_into_plate_mm3": 7.012034802812547
+    }
+  ],
+  "bolt_nut_uplift": [
+    {
+      "bolt": 0,
+      "upward_shift_mm": 1,
+      "bolt_nut_intersection_mm3": 0.0
+    },
+    {
+      "bolt": 1,
+      "upward_shift_mm": 1,
+      "bolt_nut_intersection_mm3": 0.0
+    },
+    {
+      "bolt": 2,
+      "upward_shift_mm": 1,
+      "bolt_nut_intersection_mm3": 0.0
+    }
+  ],
+  "socket_workspaces": [
+    {
+      "bolt": 0,
+      "hits": [
+        {
+          "part": "PALM_BOLT_0",
+          "common_mm3": 8.708714747236648
+        }
+      ]
+    },
+    {
+      "bolt": 1,
+      "hits": [
+        {
+          "part": "PALM_BOLT_1",
+          "common_mm3": 8.708714747236646
+        }
+      ]
+    },
+    {
+      "bolt": 2,
+      "hits": [
+        {
+          "part": "PALM_BOLT_2",
+          "common_mm3": 8.70871474723665
+        }
+      ]
+    }
+  ],
+  "actual_thread_retention_demonstrated": false,
+  "six_DOF_capacity_qualified": false,
+  "whole_system_release": false,
+  "limitations": [
+    "Smooth bolt/nut bores allow axial escape: actual thread connector/rating still required",
+    "Axial three-point bearing alone lacks x,y,rz restraint; shank clearance .21mm precludes zero-motion claim",
+    "Finite external plate lower face and four machine holes declared; machine fasteners/compliance absent",
+    "No loaded equilibrium, actual demands/material, strength/preload/friction/convergence",
+    "Static retained cable context only; no swept service/CCD/full installed assembly",
+    "Round socket envelope is a workspace contrast, not actual hex/thread/tool qualification"
+  ]
+}

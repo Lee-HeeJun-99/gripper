@@ -1,0 +1,114 @@
+{
+  "status": "INTEGRATED_NOT_QUALIFIED",
+  "revision": "revAY_direct_plate1",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAY_direct_plate1/summary.json",
+    "SHA256": "a1a12b7df414e2cdd2a7678eee29b51f39c6efd07f674e5158a22d0ea5f387fc"
+  },
+  "BOM": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAY_direct_plate1/BOM.json",
+    "SHA256": "c044364ba8f47cf8aac91a8228882f14eefa951a183be22abe7d31cdb754997c"
+  },
+  "existing_stage2_gate": {
+    "path": "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py",
+    "SHA256": "814cd89e6056124ed270c467c390d64b7afe9d4cd58f2a036582e113f80e4bfb"
+  },
+  "criteria": {
+    "path": "product_prototype/stage2_load_transfer/models/analytical/criteria.json",
+    "SHA256": "f7d850c52e0ec9082f01fb3f81bee979ece9ade4f4b5ce2c274e9c0aa4ed3baa"
+  },
+  "registry": {
+    "path": "product_prototype/stage2_load_transfer/models/analytical/release_registry.json",
+    "SHA256": "a03907c8dc94d27d2c6244ad503a23d62d6f09545212f4c7e9ffc3ad5dfe2ba3"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/AY_plate_readiness2/producer.py",
+    "SHA256": "5aaeb7059019b7ab7d6ccd5fe7ea923b26bf23f45e9b928a2d663ce99aa39811"
+  },
+  "stage2": {
+    "status": "STAGE2_NOT_QUALIFIED",
+    "analytical_pass": false,
+    "numerical_pass": false,
+    "hardware_status": "NOT MEASURED; never inferred by digital validator",
+    "errors": [
+      "baseline CAD/model hash mismatch",
+      "cad_model_match: not qualified",
+      "physical_mass_inertia: not qualified",
+      "tendon_force_stroke: not qualified",
+      "motor_running_torque_speed: not qualified",
+      "shaft_strength: not qualified",
+      "coupling_capacity: not qualified",
+      "pin_drum_strength: not qualified",
+      "bearing_ratings_reactions: not qualified",
+      "housing_shoulder_retention: not qualified",
+      "tendon_stiffness_strength: not qualified",
+      "terminal_retention: not qualified",
+      "idler_load_drag: not qualified",
+      "finger_structure: not qualified",
+      "root_palm_strength: not qualified",
+      "continuous_load_path: not qualified",
+      "static_dynamic_consistency: not qualified",
+      "numerical_convergence: not qualified",
+      "qualified_worst_case: not qualified",
+      "changed_stage1_revalidation: not qualified",
+      "stage3_handoff: not qualified",
+      "overload_protection: not qualified",
+      "motor_alignment_reactions: not qualified"
+    ]
+  },
+  "errors": [
+    "No complete same-revision Stage1 release for AY",
+    "No AY SYSTEM_LOAD_TRANSFER evidence",
+    "stage2: baseline CAD/model hash mismatch",
+    "stage2: cad_model_match: not qualified",
+    "stage2: physical_mass_inertia: not qualified",
+    "stage2: tendon_force_stroke: not qualified",
+    "stage2: motor_running_torque_speed: not qualified",
+    "stage2: shaft_strength: not qualified",
+    "stage2: coupling_capacity: not qualified",
+    "stage2: pin_drum_strength: not qualified",
+    "stage2: bearing_ratings_reactions: not qualified",
+    "stage2: housing_shoulder_retention: not qualified",
+    "stage2: tendon_stiffness_strength: not qualified",
+    "stage2: terminal_retention: not qualified",
+    "stage2: idler_load_drag: not qualified",
+    "stage2: finger_structure: not qualified",
+    "stage2: root_palm_strength: not qualified",
+    "stage2: continuous_load_path: not qualified",
+    "stage2: static_dynamic_consistency: not qualified",
+    "stage2: numerical_convergence: not qualified",
+    "stage2: qualified_worst_case: not qualified",
+    "stage2: changed_stage1_revalidation: not qualified",
+    "stage2: stage3_handoff: not qualified",
+    "stage2: overload_protection: not qualified",
+    "stage2: motor_alignment_reactions: not qualified"
+  ],
+  "required_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "whole_system_release": false,
+  "adopted": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "scope": "Actual AY geometry/BOM identity exercised against unchanged existing release registry; bounded geometry is not same-revision system evidence"
+}

@@ -1,3 +1,42 @@
+# Batch6 cycle3 — direct Palm plate rejected by retained Idler fasteners (2026-11-27)
+
+Started at af41aca0c845e5f199d39594a7e6c9d1a78154dd. Selected exact task
+batch6_simple_palm_mount. One actual bounded design/analysis cycle.
+Supervisor local save PENDING; no git add/commit or invented commit SHA.
+Result: product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/summary.json.
+
+revAY_direct_plate1 replaces AO stepped16mm adapter with one flat8mm external
+mating plate (z=-20..-12, radii20/44), three shorter nominal M4 bolt/nut
+pairs. Four5.5mm machine holes at radius38 and lower machine face declared.
+Actual7part STEP/STL changes, full254part STEP/BOM retained. Zero parts/custom
+processes actually removed; process/tool/cost advantage remains unqualified.
+
+Actual geometry FAIL(exit2), independently reproduced on imported STEP:
+six retained Idler base bolt/nut intersections,21.205750/45.908844mm3 each,
+against unchanged1e-8mm3 criterion. This uniform flat-plate topology cannot be
+installed as drawn. Seven valid single solids and closed oriented positive
+meshes pass; finite Palm bearing footprint4341.251589mm2 and geometric volume
+change -6032.084131mm3 are geometric quantities, not stiffness or mass.
+Conditional head/nut stops and hollow socket workspace samples pass; actual
+smooth nut/bolt axial escape remains, so no thread retention/6DOF closure.
+Shank clearance means no zero-motion transverse restraint assertion. No loaded
+wrench/material/strength/preload/mesh or full assembly/tendon motion PASS.
+
+Initial readiness path typo(exit1) and filled-cylinder socket verifier FAIL
+are preserved with original producer/log/results. New readiness2 and hollow
+socket verify2 are separate outputs; original failures unchanged. Six bounded
+executions completed/reaped under4GiB/420s/one thread; no timeout or SOFA.
+Existing release and actual AY readiness remain INTEGRATED_NOT_QUALIFIED,
+22Stage2 requirements missing plus same-revision Stage1/system evidence.
+AA adopted/AO current unchanged; AX branch and old failures preserved.
+
+Task marked FAIL with concrete redesign prerequisite: explicit retained Idler
+fastener/service corridors and alternative nonuniform support topology; no
+uniform thickness parameter sweep. Coverage next: batch6_protected_standard_drive.
+No RUNNING records or owned live analysis children. No criteria/SDK/manager/
+Stage3/hardware/power changes. Pre-existing untracked files preserved.
+Exact runtime/authorized_20261127_6/save_request3.json pending supervisor save.
+
 # Batch6 cycle2 — actual wider Root tabs; strength remains unqualified (2026-11-27)
 
 Started at4448d6598f91c4a1e6ab6f6d0aa7eec86dbfd70e. Exact selected task:

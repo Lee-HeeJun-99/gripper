@@ -1148,7 +1148,7 @@
       "id": "batch6_simple_palm_mount",
       "track": "C",
       "priority": -197,
-      "status": "READY",
+      "status": "FAIL",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1182,8 +1182,19 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:18:19.074718+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/transmission/batch6_palm_cycle1/summary.json",
+      "last_cycle_result": {
+        "path": "product_prototype/stage12_integrated/validation/transmission/batch6_palm_cycle1/summary.json",
+        "SHA256": "8285b0b557405087b1a004c74ab2d4ddec490f26863dba354acf7a00748a74f2"
+      },
+      "last_cycle_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAY_direct_plate1/summary.json",
+        "SHA256": "a1a12b7df414e2cdd2a7678eee29b51f39c6efd07f674e5158a22d0ea5f387fc"
+      },
+      "reason": "Uniform direct plate collides with six retained Idler fasteners; no full6DOF strength/thread/machine qualification. Do not adopt. Different support topology and explicit service corridors required.",
+      "next": "batch6_protected_standard_drive"
     },
     {
       "id": "batch6_protected_standard_drive",

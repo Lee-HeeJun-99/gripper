@@ -1,0 +1,464 @@
+{
+  "status": "ACTUAL_P1_ROOT_FINITE_PIN_PORT_COMPLIANCE_CONDITIONAL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h2b/inputs.json",
+    "SHA256": "a9ac2a2a178df1c5a178c395e9cc3d3e0bcf4f2e18c71b2670ee15c5cbb23e23"
+  },
+  "fields": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h2b/root_compliance_fields.npz",
+    "SHA256": "bee81037d49fd6d18040fa4198c073b57ce869a98017d44aa05a25688ad2cb05"
+  },
+  "finite_quadrature": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h2b/finite_pin_quadrature.json",
+    "SHA256": "e850ae959c0cd59e61f9afd30d1856007240613ab9392464f551ff27fdb1463d"
+  },
+  "checks": {
+    "all_numeric_checks": true,
+    "CAD_volume_1percent": true,
+    "all_four_actual_ports": true
+  },
+  "results": [
+    {
+      "angle_rad": 0.6,
+      "checks": {
+        "force_residual": true,
+        "gauge_load_negligible": true,
+        "gauge_kinematics": true,
+        "reciprocity": true,
+        "positive_compliance": true,
+        "self_equilibrated": true,
+        "finite_port_inside": true,
+        "split_KKT": true,
+        "elastic_energy": true
+      },
+      "compliance_mm_N": [
+        [
+          1.7971284647986677e-05,
+          -7.837409184171342e-07,
+          4.465424712499904e-06,
+          -6.553910618596067e-07
+        ],
+        [
+          -7.837409184171328e-07,
+          1.8125662554705734e-05,
+          -6.247734802823506e-07,
+          4.5674696109702826e-06
+        ],
+        [
+          4.465424712499902e-06,
+          -6.247734802823498e-07,
+          5.8098597437426576e-06,
+          -5.415264717567721e-07
+        ],
+        [
+          -6.553910618596066e-07,
+          4.567469610970281e-06,
+          -5.415264717567725e-07,
+          5.79552110118317e-06
+        ]
+      ],
+      "compliance_eigenvalues_mm_N": [
+        4.115696931949117e-06,
+        4.492654912692209e-06,
+        1.8403483368712735e-05,
+        2.0690492834264172e-05
+      ],
+      "unit_load_max_stationarity_N": 8.365388513412262e-15,
+      "gauge_load_max_N": 1.9296630265899826e-14,
+      "reciprocity_relative": 9.34622880347506e-17,
+      "conditional_total_source_reaction_N": 0.000889710062791321,
+      "conditional_Root_side_reaction_N": [
+        4.381961736000378e-05,
+        3.9571356347120754e-05,
+        0.0004012121925509629,
+        0.00040510689653323363
+      ],
+      "conditional_equal_split_energy_Nmm": 1.4980047553665772e-12,
+      "conditional_minimum_energy_Nmm": 1.0154085344845878e-12,
+      "conditional_common_port_motion_mm": 2.2825605260637565e-09,
+      "split_is_actual_product_solution": false,
+      "port_geometry": [
+        {
+          "part": "F0_ROOT_FRONT",
+          "axis_y_mm": -10.0,
+          "axial_interval_mm": [
+            48.5,
+            50.0
+          ],
+          "faceted_band_area_mm2": 1.787425004505457,
+          "quadrature_samples": 169,
+          "min_barycentric": 0.00042753519256243295,
+          "reconstruction_error_mm": 1.432144669219779e-14,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -0.9999999999999993,
+            -6.113492927746229e-06,
+            1.0001143148780782,
+            0.0002739026008568325,
+            -49.24989674362454
+          ],
+          "return_wrench_N_Nmm": [
+            4.675621868843738e-19,
+            0.9999999999999998,
+            6.113492927745832e-06,
+            -1.0001143148780764,
+            -0.00027390260085688987,
+            49.24989674362446
+          ],
+          "total_wrench_N_Nmm": [
+            4.675621868843738e-19,
+            -1.1171619185290638e-15,
+            3.0357660829594124e-18,
+            1.3183898417423734e-15,
+            -3.0184188481996443e-16,
+            -9.692247004977617e-14
+          ],
+          "pressure_shape_is_prescribed": true
+        },
+        {
+          "part": "F0_ROOT_FRONT",
+          "axis_y_mm": 10.0,
+          "axial_interval_mm": [
+            48.5,
+            50.0
+          ],
+          "faceted_band_area_mm2": 1.7873557248257215,
+          "quadrature_samples": 157,
+          "min_barycentric": 0.00032284221065246395,
+          "reconstruction_error_mm": 7.407775423123775e-15,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -0.9999999999999999,
+            7.848142699366074e-06,
+            1.0001300310459464,
+            -0.0004104121888689853,
+            -49.2500460633595
+          ],
+          "return_wrench_N_Nmm": [
+            2.0057740190981832e-18,
+            0.9999999999999988,
+            -7.848142699365826e-06,
+            -1.0001300310459456,
+            0.0004104121888689201,
+            49.25004606335955
+          ],
+          "total_wrench_N_Nmm": [
+            2.0057740190981832e-18,
+            5.288738197384291e-16,
+            -1.3925221652860698e-18,
+            -8.764690362372818e-16,
+            2.1581044243323966e-16,
+            2.7158830739892892e-14
+          ],
+          "pressure_shape_is_prescribed": true
+        },
+        {
+          "part": "F0_RAIL_L",
+          "axis_y_mm": -10.0,
+          "axial_interval_mm": [
+            50.3,
+            50.5
+          ],
+          "faceted_band_area_mm2": 0.23810112165321548,
+          "quadrature_samples": 37,
+          "min_barycentric": 0.016441132605892646,
+          "reconstruction_error_mm": 7.327471962526033e-15,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -1.0,
+            -5.2024830921697674e-05,
+            1.0004335842984815,
+            0.002621212051108962,
+            -50.40025589420097
+          ],
+          "return_wrench_N_Nmm": [
+            7.085430603782222e-19,
+            1.000000000000001,
+            5.202483092169655e-05,
+            -1.0004335842984815,
+            -0.002621212051108935,
+            50.40025589420091
+          ],
+          "total_wrench_N_Nmm": [
+            7.085430603782222e-19,
+            1.0106932651909872e-15,
+            -7.37257477290143e-18,
+            3.2959746043559335e-17,
+            -5.828670879282072e-16,
+            -5.599687380453133e-15
+          ],
+          "pressure_shape_is_prescribed": true
+        },
+        {
+          "part": "F0_RAIL_R",
+          "axis_y_mm": 10.0,
+          "axial_interval_mm": [
+            50.3,
+            50.5
+          ],
+          "faceted_band_area_mm2": 0.23812941423617032,
+          "quadrature_samples": 37,
+          "min_barycentric": 0.016441132605890862,
+          "reconstruction_error_mm": 7.345113365097286e-15,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -1.0,
+            -0.0005094208846595678,
+            0.994456125452582,
+            0.025700146120615837,
+            -50.40024838228402
+          ],
+          "return_wrench_N_Nmm": [
+            -1.0443916239645523e-18,
+            1.0000000000000002,
+            0.0005094208846595659,
+            -0.9944561254525813,
+            -0.025700146120615875,
+            50.40024838228399
+          ],
+          "total_wrench_N_Nmm": [
+            -1.0443916239645523e-18,
+            4.145989107584569e-16,
+            -2.9341221292888964e-18,
+            8.977193988179977e-16,
+            4.2609145378680324e-17,
+            7.518291544883482e-15
+          ],
+          "pressure_shape_is_prescribed": true
+        }
+      ]
+    },
+    {
+      "angle_rad": 0.3,
+      "checks": {
+        "force_residual": true,
+        "gauge_load_negligible": true,
+        "gauge_kinematics": true,
+        "reciprocity": true,
+        "positive_compliance": true,
+        "self_equilibrated": true,
+        "finite_port_inside": true,
+        "split_KKT": true,
+        "elastic_energy": true
+      },
+      "compliance_mm_N": [
+        [
+          1.8850449224004808e-05,
+          -7.837100465653223e-07,
+          4.551365712022824e-06,
+          -6.566978682382176e-07
+        ],
+        [
+          -7.837100465653211e-07,
+          1.902317811067577e-05,
+          -6.238362156303057e-07,
+          4.622138240892902e-06
+        ],
+        [
+          4.551365712022824e-06,
+          -6.238362156303058e-07,
+          7.613828532938627e-06,
+          -5.418818925050731e-07
+        ],
+        [
+          -6.566978682382174e-07,
+          4.6221382408929015e-06,
+          -5.41881892505073e-07,
+          7.4335908428221995e-06
+        ]
+      ],
+      "compliance_eigenvalues_mm_N": [
+        5.7038722500166455e-06,
+        6.089117990185209e-06,
+        1.940340903175617e-05,
+        2.1724647438483374e-05
+      ],
+      "unit_load_max_stationarity_N": 8.090873574409733e-15,
+      "gauge_load_max_N": 1.8972670656760977e-14,
+      "reciprocity_relative": 6.122375008522116e-17,
+      "conditional_total_source_reaction_N": 0.000889710062791321,
+      "conditional_Root_side_reaction_N": [
+        8.111213873958389e-05,
+        7.54545755322417e-05,
+        0.00036082662563412504,
+        0.0003723167228853704
+      ],
+      "conditional_equal_split_energy_Nmm": 1.634022379580375e-12,
+      "conditional_minimum_energy_Nmm": 1.2756752196181256e-12,
+      "conditional_common_port_motion_mm": 2.8676200775248105e-09,
+      "split_is_actual_product_solution": false,
+      "port_geometry": [
+        {
+          "part": "F0_ROOT_FRONT",
+          "axis_y_mm": -10.0,
+          "axial_interval_mm": [
+            48.5,
+            50.0
+          ],
+          "faceted_band_area_mm2": 0.8754949544156155,
+          "quadrature_samples": 103,
+          "min_barycentric": 0.0027871633201977295,
+          "reconstruction_error_mm": 1.432144669219779e-14,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -0.9999999999999998,
+            -6.237750169728784e-05,
+            1.0009695324269443,
+            0.0030125234127578726,
+            -49.2502437297403
+          ],
+          "return_wrench_N_Nmm": [
+            3.8624702394796095e-19,
+            1.0000000000000016,
+            6.23775016972893e-05,
+            -1.0009695324269434,
+            -0.003012523412757932,
+            49.25024372974018
+          ],
+          "total_wrench_N_Nmm": [
+            3.8624702394796095e-19,
+            2.1718737919229625e-15,
+            -1.0842021724855044e-18,
+            1.7486012637846216e-15,
+            -1.6653345369377348e-16,
+            -8.282263763703668e-14
+          ],
+          "pressure_shape_is_prescribed": true
+        },
+        {
+          "part": "F0_ROOT_FRONT",
+          "axis_y_mm": 10.0,
+          "axial_interval_mm": [
+            48.5,
+            50.0
+          ],
+          "faceted_band_area_mm2": 0.8753356122774771,
+          "quadrature_samples": 95,
+          "min_barycentric": 0.0017734698702975293,
+          "reconstruction_error_mm": 7.337557957613285e-15,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -1.0,
+            -1.4599477710158446e-06,
+            1.000222382943873,
+            4.569628085149269e-05,
+            -49.250009908675565
+          ],
+          "return_wrench_N_Nmm": [
+            -5.082197683525802e-19,
+            0.9999999999999997,
+            1.459947771015477e-06,
+            -1.0002223829438714,
+            -4.569628085151334e-05,
+            49.25000990867556
+          ],
+          "total_wrench_N_Nmm": [
+            -5.082197683525802e-19,
+            7.104776836297511e-16,
+            1.3671111768684407e-18,
+            6.331740687315346e-17,
+            1.0467971975347545e-16,
+            -3.319219898934023e-14
+          ],
+          "pressure_shape_is_prescribed": true
+        },
+        {
+          "part": "F0_RAIL_L",
+          "axis_y_mm": -10.0,
+          "axial_interval_mm": [
+            50.3,
+            50.5
+          ],
+          "faceted_band_area_mm2": 0.11707080007282929,
+          "quadrature_samples": 25,
+          "min_barycentric": 0.006576308092699037,
+          "reconstruction_error_mm": 7.327471962526033e-15,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -0.9999999999999999,
+            -4.053559863864683e-05,
+            1.0003849234808313,
+            0.002042876903687664,
+            -50.39902518801903
+          ],
+          "return_wrench_N_Nmm": [
+            4.3113977015243887e-19,
+            1.000000000000001,
+            4.053559863864654e-05,
+            -1.0003849234808306,
+            -0.002042876903687691,
+            50.399025188019046
+          ],
+          "total_wrench_N_Nmm": [
+            4.3113977015243887e-19,
+            8.755732988955604e-16,
+            3.503116511606973e-18,
+            7.095764405738725e-17,
+            -9.84658860524179e-17,
+            2.1875106977556347e-14
+          ],
+          "pressure_shape_is_prescribed": true
+        },
+        {
+          "part": "F0_RAIL_R",
+          "axis_y_mm": 10.0,
+          "axial_interval_mm": [
+            50.3,
+            50.5
+          ],
+          "faceted_band_area_mm2": 0.1170637013503833,
+          "quadrature_samples": 23,
+          "min_barycentric": 0.0022900541311597225,
+          "reconstruction_error_mm": 7.327471962526033e-15,
+          "unit_pin_wrench_N_Nmm": [
+            0.0,
+            -1.0000000000000002,
+            -0.0004930093684600607,
+            0.9946872953735804,
+            0.02487628925594431,
+            -50.39904396161616
+          ],
+          "return_wrench_N_Nmm": [
+            1.4645199658026853e-18,
+            0.999999999999999,
+            0.00049300936846006,
+            -0.994687295373579,
+            -0.024876289255944293,
+            50.399043961616165
+          ],
+          "total_wrench_N_Nmm": [
+            1.4645199658026853e-18,
+            7.583994196536104e-16,
+            3.4220131069073734e-18,
+            1.6080886622305002e-15,
+            1.360673726469308e-16,
+            2.8286400999277816e-14
+          ],
+          "pressure_shape_is_prescribed": true
+        }
+      ]
+    }
+  ],
+  "nodes": 12089,
+  "tetra": 47474,
+  "DOF": 36267,
+  "h_mm": 2.0,
+  "curvature_elements": 32,
+  "CAD_volume_mm3": 4356.566786508501,
+  "mesh_volume_mm3": 4357.472810093467,
+  "elapsed_s": 6.524132922058925,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "actual_CAD_change_files": [],
+  "limitations": [
+    "Actual full RootBack conditional E200000MPa/nu.3 only. Finite facets approximate cylindrical CAD; finite axial bands clipped to actual1.5/.2mm Front/Rail intervals. No ideal coupon.",
+    "Normal dead-pressure band shapes are prescribed sensitivity ports, NOT unilateral compliant pressure/contact law or solved physical area. Exact CAD gap at the undeformed seated pose is zero only on a line; finite bands require compliant deformation not solved here.",
+    "Four-port elastic cross-compliance retains all Root elastic DOF; six gauges remove only rigid modes and carry negligible load. Return traction is an explicit conditional SIX-resultant source interface, NOT a fixation, physical clamp solution or whole-system counterload.",
+    "Conditional minimum-energy split assumes common rigid upstream port motion and those pressure shapes. Front/Rail and clamp compliance, real contact pressure, full source modes, thread shear/tilt/rest setting, finite bore and Base anchor still required. No load split/strength/gate/global energy/product release certification."
+  ]
+}

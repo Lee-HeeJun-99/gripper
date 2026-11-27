@@ -1,0 +1,409 @@
+{
+  "status": "ACTUAL_P1_ROOT_FINITE_PIN_COMPLIANCE_PARTIAL_VALIDATION_CONTACT_AND_MESH_FAIL_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "selected_task_id": "goal_primary_finite_bore_compliance_thread_shear_and_pin_split",
+  "next_task_id": "goal_primary_pin_gap_resolved_compliance_and_thread_bore_closure",
+  "evidence": {
+    "primaryP1_pin_compliance31h2b": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h2b/summary.json",
+      "SHA256": "5be900fe202553cf09ed3902c989b3d907a8c1ca268c1de425093c6aa6c0efcc"
+    },
+    "primaryP1_pin_compliance31h15": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h15/summary.json",
+      "SHA256": "b8ed899942154417c8f095763d74222b50be66c21c18cf5bb6dd654bf30f52a7"
+    },
+    "primaryP1_pin_compliance31audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31audit/summary.json",
+      "SHA256": "a8f5efc976766f98c73d2f9c4b526dd2edc217e19cec06b22d9386cc3b5ca89e"
+    }
+  },
+  "actual_CAD_change_files": [],
+  "actual_part_count": 78,
+  "results": [
+    {
+      "angle_rad": 0.6,
+      "Root_side_reaction_N": [
+        6.0166793404427504e-05,
+        6.161754639703605e-05,
+        0.00038855631076663934,
+        0.00037936941222321813
+      ],
+      "common_port_motion_mm": 2.7934831107715632e-09
+    },
+    {
+      "angle_rad": 0.3,
+      "Root_side_reaction_N": [
+        0.00010223434892863698,
+        0.0001041397918274801,
+        0.0003471037305165635,
+        0.00033623219151864036
+      ],
+      "common_port_motion_mm": 3.5272464888928403e-09
+    }
+  ],
+  "mesh_comparisons": [
+    {
+      "coarse_h_mm": 2.0,
+      "fine_h_mm": 1.5,
+      "angle_rad": 0.6,
+      "relative_compliance_matrix_change": 0.09701755457036283,
+      "relative_conditional_common_motion_change": 0.18289803963292595,
+      "max_reaction_change_fraction_total": 0.028927945615528184,
+      "original_1percent_response_limit": 0.01,
+      "response_mesh_1percent_pass": false,
+      "whole_system_convergence": false
+    },
+    {
+      "coarse_h_mm": 2.0,
+      "fine_h_mm": 1.5,
+      "angle_rad": 0.3,
+      "relative_compliance_matrix_change": 0.11318396881488854,
+      "relative_conditional_common_motion_change": 0.18700887886490702,
+      "max_reaction_change_fraction_total": 0.0405576298120319,
+      "original_1percent_response_limit": 0.01,
+      "response_mesh_1percent_pass": false,
+      "whole_system_convergence": false
+    }
+  ],
+  "pressure_shape_sensitivities": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h2b/summary.json",
+        "SHA256": "5be900fe202553cf09ed3902c989b3d907a8c1ca268c1de425093c6aa6c0efcc"
+      },
+      "angles_rad": [
+        0.6,
+        0.3
+      ],
+      "relative_compliance_matrix_change": 0.09060597609541413,
+      "maximum_reaction_fraction_total_change": 0.0453918288730316,
+      "physical_split_qualified": false
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_compliance31h15/summary.json",
+        "SHA256": "b8ed899942154417c8f095763d74222b50be66c21c18cf5bb6dd654bf30f52a7"
+      },
+      "angles_rad": [
+        0.6,
+        0.3
+      ],
+      "relative_compliance_matrix_change": 0.10973057219426981,
+      "maximum_reaction_fraction_total_change": 0.048484582234848216,
+      "physical_split_qualified": false
+    }
+  ],
+  "pressure_contact_rejection_area_fraction_range": [
+    0.857377211852202,
+    1.0000000000000002
+  ],
+  "full_Root_fine_nodes": 48518,
+  "full_Root_fine_tetra": 214708,
+  "independent_element_force_error_N": 8.76113282399435e-15,
+  "independent_element_energy_relative_error": 5.490572412067297e-14,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_unqualified_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "stage3_authorized": false,
+  "physics_child_seconds": 66.911486356752,
+  "execution_count": 4,
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle31_pin_audit_execution/execution.json",
+      "SHA256": "5b4d5224282b227a41710efd5cbb11e4ebf75c3387ab31ca6338755145d312af"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle31_pin_execution2/execution.json",
+      "SHA256": "1102f462819f94e32330cbbf3ddd698d482fd3bd1f178c042acd8b3b98c4a10a"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle31_pin_execution3/execution.json",
+      "SHA256": "e1b6130c068305b479e12cfa411492b082a6a5ea2f25d91014e1fb7c9183bdee"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle31_pin_execution4/execution.json",
+      "SHA256": "5f2d2852eaa69d488e2ee5333e3177f1e5bae4b87f18ccd720e695ee743b948e"
+    }
+  ],
+  "children_reaped": true,
+  "queue_RUNNING": 0,
+  "original_untracked_files_unchanged": 8595,
+  "protected_source_pins_unchanged": true,
+  "hardware_status": "NOT_MEASURED",
+  "failures": [
+    {
+      "kind": "Runner setup before child",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle31_pin_execution/setup_failure.json",
+        "SHA256": "0a9df3bffd383a8ce9332685a516895bb665a14310378576b0a7309537da6796"
+      }
+    },
+    {
+      "kind": "Actual producer pin-facet selection assertion failed",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle31_pin_execution2/execution.json",
+        "SHA256": "1102f462819f94e32330cbbf3ddd698d482fd3bd1f178c042acd8b3b98c4a10a"
+      },
+      "reason": "Axis-parallel facet-normal assumption falsely excluded cylindrical tetra surface facets; failed producer/traceback preserved. Corrected only in next unique tag using CAD radial normal at facet centroid."
+    },
+    {
+      "kind": "Both mixed-refinement1percent response tests FAIL",
+      "results": [
+        {
+          "coarse_h_mm": 2.0,
+          "fine_h_mm": 1.5,
+          "angle_rad": 0.6,
+          "relative_compliance_matrix_change": 0.09701755457036283,
+          "relative_conditional_common_motion_change": 0.18289803963292595,
+          "max_reaction_change_fraction_total": 0.028927945615528184,
+          "original_1percent_response_limit": 0.01,
+          "response_mesh_1percent_pass": false,
+          "whole_system_convergence": false
+        },
+        {
+          "coarse_h_mm": 2.0,
+          "fine_h_mm": 1.5,
+          "angle_rad": 0.3,
+          "relative_compliance_matrix_change": 0.11318396881488854,
+          "relative_conditional_common_motion_change": 0.18700887886490702,
+          "max_reaction_change_fraction_total": 0.0405576298120319,
+          "original_1percent_response_limit": 0.01,
+          "response_mesh_1percent_pass": false,
+          "whole_system_convergence": false
+        }
+      ]
+    },
+    {
+      "kind": "All prescribed pressure bands reject true-CAD gap compatibility",
+      "rejections": [
+        {
+          "port": 0,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            9.887117444762339e-07,
+            0.00834751661288391
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 5.239318671123619e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9999999999999997,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 1,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.3264658260681017e-09,
+            0.008348261783960975
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 5.239318671123619e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9813535676156016,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 2,
+          "part": "F0_RAIL_L",
+          "actual_nominal_CAD_gap_range_mm": [
+            5.574190220514197e-09,
+            0.008234059239405456
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 5.239318671123619e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 1.0000000000000002,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 3,
+          "part": "F0_RAIL_R",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.0315677592132033e-06,
+            0.008234560756825937
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 5.239318671123619e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 1.0000000000000002,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 0,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            9.887117444762339e-07,
+            0.0021135299194336987
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.761815515843581e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 1.0000000000000002,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 1,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.3264658260681017e-09,
+            0.002096721717944172
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.761815515843581e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9619256806162421,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 2,
+          "part": "F0_RAIL_L",
+          "actual_nominal_CAD_gap_range_mm": [
+            5.574190220514197e-09,
+            0.0020963888926195384
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.761815515843581e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.857377211852202,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 3,
+          "part": "F0_RAIL_R",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.0315677592132033e-06,
+            0.0020493076801659793
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.761815515843581e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 1.0000000000000002,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 0,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.8891481934346643e-07,
+            0.008347035638877509
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.556483593029497e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9999999999999989,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 1,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            4.125374031271889e-07,
+            0.008346740891505666
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.556483593029497e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9999999999999992,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 2,
+          "part": "F0_RAIL_L",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.496953672130985e-10,
+            0.008266608011799903
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.556483593029497e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9653141993529034,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 3,
+          "part": "F0_RAIL_R",
+          "actual_nominal_CAD_gap_range_mm": [
+            2.2541357669325635e-09,
+            0.008266634485944557
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 6.556483593029497e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9822654767738097,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 0,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.8891481934346643e-07,
+            0.002112353713166648
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 8.488665360254613e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 1.0000000000000002,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 1,
+          "part": "F0_ROOT_FRONT",
+          "actual_nominal_CAD_gap_range_mm": [
+            4.125374031271889e-07,
+            0.002111342409996775
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 8.488665360254613e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9999999999999999,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 2,
+          "part": "F0_RAIL_L",
+          "actual_nominal_CAD_gap_range_mm": [
+            1.496953672130985e-10,
+            0.0020984666659442652
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 8.488665360254613e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.9303117931892705,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        },
+        {
+          "port": 3,
+          "part": "F0_RAIL_R",
+          "actual_nominal_CAD_gap_range_mm": [
+            2.2541357669325635e-09,
+            0.0021057784925393452
+          ],
+          "conditional_Root_motion_plus_port_closure_bound_mm": 8.488665360254613e-09,
+          "positive_pressure_area_fraction_exceeding_that_bound": 0.964367272040844,
+          "pressure_band_contact_equilibrium_rejected": true,
+          "reason": "Most prescribed pressure support remains at positive actual CAD gap even under this conditional displacement bound. True pressure width must be solved with compliant pin+hole geometry; pressure-shape witness cannot close contact."
+        }
+      ]
+    }
+  ],
+  "next_mechanism": "Continue SAME78part primaryP1_ycapture24 actual Motor->1996hub->Drum->Tendon->Finger->Root->Frame->Ground->Base, separateAO; preserve sidecartridge,distalPETslide,3Finger,jamming. Use new actual RootBack4x4 cross-compliance only as prescribed-port sensitivity, never physical load split. Resolve actual .05mm pin/hole gaps with exact curved geometry and a justified compliant pressure law, including actual Front/Rail and clamp compliance and common Root-localgamma/sourceQ, before strength. Root-only finite .6/.3rad bands are rejected by true-CADgap, not acceptable physical contact patches; nanoscale conditional closure vs micron/mm faceting demands geometry-aware local refinement/enrichment with verified torque/work pullback. Keep both Front1.5mm and Rail.2mm axial intervals and all six Root/Motor modes. Separate bulkmesh,curvedsurface/contactquadrature and pressurewidth convergence; mixed refinement already fails1%, so do not issue meshPASS. In parallel joint completion requires physically justified finite engagement core/flank/shear/tilt/rest-setting law for actual bolt/nut own6DOF, actual finite .15/.2/.25mm bores,shifted bearing areas and material/source minima; unrestricted thread wrench and open-gap pressure remain rejected. Recompute actual sources/owners/guards during accepted coupled trials; add real finite Baseanchor without counterload/fixation. Full3DFinger/finitewire/protector/friction/mesh1%/time.1%/globalenergy/fullsame-revision3Finger/all22gates remain. NoStage3.",
+  "limitations": [
+    "Same actual78part P1_ycapture24 CAD unchanged. Implemented full actual RootBack freebody tetra elasticity with four finite normal-pressure ports clipped to actual Front1.5mm/Rail.2mm pin overlaps, six unloaded volume gauges and a six-resultant finite clamp-interface return. New4x4 elastic cross-compliance and conditional minimum-energy reaction allocation are independently reconstructed from element forces/energy and finite pressure quadrature. No fixed Root or arbitrary equal split. All pressure widths remain prescribed shape sensitivities, NOT solved contact. Mixed bulk/surface refinement12,089->48,518nodes fails original1% response criterion: common-motion changes18.29/18.70%, compliance9.70/11.32%. Pressure-width sensitivity changes fine compliance10.97%. True-CAD-gap audit rejects all16finite pressure bands as contact equilibria:85.7%-100%of positive-pressure area remains beyond conditional closure bounds. No finite compliant contact law, actual pin/clamp split, thread shear/tilt/rest setting, bore pressure, whole support equilibrium or release. All22gates remainUNQUALIFIED.",
+    "Full actual RootBack only. Source total .000889710062791321N is earlier conditional gamma/selfweight sensitivity, not100g operating demand or pin capacity.",
+    "CAD cylindrical traction normals evaluated at facet centroid; curved pressure shape is prescribed and normal variation within facet approximated. Exact gap comparison is a conditional scale audit, not full curved-contact virtualwork/coupled pressure solve.",
+    "Bulkmesh and surface discretization changed together in this contrast. Both response checks fail1%, and no isolated physical convergence is claimed.",
+    "No new standard part/material/rating claims. Conditional inherited RootE200000MPa/nu.3 is not a source minimum. No hardware measurements, real anchor, preload/friction invention, hidden fixedRoot or Base counterload."
+  ]
+}

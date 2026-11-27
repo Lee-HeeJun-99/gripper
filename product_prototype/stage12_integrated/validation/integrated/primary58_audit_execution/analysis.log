@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_contact_audit58.py", line 17, in <module>
+    assert not(ROOT/'runtime/STOP').exists();src=ROOT/'validation/integrated'/tag;d=json.loads((src/'summary.json').read_text());cad=json.loads((REPO/d['candidate']['path']).read_text());L=json.loads((src/'load_ledger.json').read_text());patches=json.loads((src/'patches.json').read_text());rows=json.loads((src/'rows.json').read_text());names=L['body_names'];ext=np.array(L['external_wrench_N_Nm']);mass=json.loads((REPO/L['rest_mass_source']['path']).read_text());fresh=json.loads((REPO/d['source']['path']).read_text());state=json.loads((REPO/fresh['state']['path']).read_text());dy=fresh['root_translation_mm'][1];my=fresh.get('motor_translation_mm',[0,0,0])[1];normals=[]
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/integrated/primaryP1_contactports58_RM/summary.json'

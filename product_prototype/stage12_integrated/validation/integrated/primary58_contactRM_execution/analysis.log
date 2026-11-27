@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_contact_ports58c.py", line 14, in <module>
+    start=time.monotonic();src=ROOT/'validation/integrated'/sys.argv[1];out=ROOT/'validation/integrated'/sys.argv[2];out.mkdir();shutil.copyfile(__file__,out/'producer.py');sd=json.loads((src/'summary.json').read_text());assert all(sd['checks'].values());r=json.loads((src/'state.json').read_text());cp=REPO/sd['candidate']['path'];cad=json.loads(cp.read_text());refs=cad['part_references'];assert sha(cp)==sd['candidate']['SHA256'];assert all(sha(REPO/q['path'])==q['SHA256'] for q in [*refs.values(),cad['assembly'],cad['BOM']]);dy=sd['root_translation_mm'][1];my=sd.get('motor_translation_mm',[0,0,0])[1]
+AssertionError

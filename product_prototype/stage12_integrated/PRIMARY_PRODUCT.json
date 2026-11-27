@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state31.json",
-    "SHA256": "274fcf021f8659fc90040dbed8e0294e9835c8f22ccd4f11dc7383b4d679ebb9"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state32.json",
+    "SHA256": "57b5250d20b51cad264d3b68e3b9e61e40c6d311f8f9a8bf50d9937b1d6e9cb2"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,8 +384,8 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_finite_concave_face_union_fullmodel",
-  "next_task_id": "goal_primary_fivebody_finite_support_transaction_coupled_loads",
+  "selected_task_id": "goal_primary_fivebody_finite_support_transaction_coupled_loads",
+  "next_task_id": "goal_primary_hardware_ports_gamma_compatibility_surface_transaction",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
   "load_BC": "Original sourcefield and physical P/q/all2169contacts/14branches/11gauges preserved. OriginalRootY2175 has one unpenalizedgamma; originalMotorY2176 unchanged. New feasible LINEAR trajectory is a numerical seed only, not sourcefield replacement. Physical force/gauge KKT remains rejected, so no attachedload nonlinear update, Base residual cancellation, new stress or physical anchor/retention claim.",
   "extension": {
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "NONE: actual product validation of unchanged78part primaryP1_ycapture24; actual new finite blocks/meshes/physical conditional load pullback, no unrelated coupon.",
+  "CAD_this_cycle": "NONE: actual product validation of unchanged78part primaryP1_ycapture24; new pair guards, independent audit, source/gamma block,28hardware CAD gravity and lateraltrial requery.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -1224,7 +1224,7 @@
   },
   "historical_evidence_applicability": "Earlier seated22 equilibrium/mesh/currentload evidence remains historical,NOT a ycapture24sourcefield. Unchanged76STEP andsourceparts preserved; newRoot/Frame require same-revision completecoupledmodel.",
   "current_physics_sourcefield": null,
-  "current_physics_status": "SAME_REVISION_FINITE_BLOCKS_ASSEMBLED_NO_EQUILIBRIUM_TRANSACTION_AND_FRESH_LOADS_REQUIRED",
+  "current_physics_status": "SIXPAIR_SAMPLE_GUARDS_AND_FRESH_CONDITIONAL_SOURCES_NO_SUPPORT_EQUILIBRIUM",
   "preserved_extensions": [
     "3Finger",
     "replaceable side-insertion cartridge with removable existingRFbolts",
@@ -1317,6 +1317,48 @@
     "primaryP1_integrated_blocks27": {
       "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integrated_blocks27/summary.json",
       "SHA256": "45c3716ac3735c2f86a4ef67c341483aa4ada0f4138498f4594f1585a57d33b0"
+    }
+  },
+  "latest_same_revision_transaction_and_sources": {
+    "primaryP1_frameground_transaction28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_frameground_transaction28/summary.json",
+      "SHA256": "fcfc3547d09d0e52d1e6259ed8898550db0e89eed656f74bc6a7e041d3d8edcd"
+    },
+    "primaryP1_groundbase_transaction28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_groundbase_transaction28/summary.json",
+      "SHA256": "a20d3bf7baffa6bb9590e7b3a7263a7e16cc3bbbf41cbdd42947b42dcb667db7"
+    },
+    "primaryP1_motorframe_transaction28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motorframe_transaction28/summary.json",
+      "SHA256": "64e5673671569582f3ce3548002e0637787290056e4552c6db0f3e26039b4722"
+    },
+    "primaryP1_motorcap_transaction28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motorcap_transaction28/summary.json",
+      "SHA256": "91831e2207094028980f9d25e69597919ec4e4073bce053c8c83a5882158252c"
+    },
+    "primaryP1_capframe_transaction28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_capframe_transaction28/summary.json",
+      "SHA256": "b469c2ac1621c652ea0b95e10e7da61ec61b9745fa9dbcdbeba357a9630e61be"
+    },
+    "primaryP1_omitted_separation28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_omitted_separation28/summary.json",
+      "SHA256": "5b7dfbbf306caf44f67f6930b8cbc30e51b7d448988da58dcb1caf82b6fbe081"
+    },
+    "primaryP1_transaction_audit28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_transaction_audit28/summary.json",
+      "SHA256": "7339540a669b3006564d48db840dad06baebb2e1c29a2a2e08ab05f567d363e7"
+    },
+    "primaryP1_fresh_sources28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/summary.json",
+      "SHA256": "b05ab342b9c290eb88667adf925f12ff8e24aa0adc589fa0281be7ea2c3a29b1"
+    },
+    "primaryP1_hardware_gravity28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_hardware_gravity28/summary.json",
+      "SHA256": "b7ee791ee6e81781b44522860ad74f95ba0a125ea049b5fc0abc0c6a5692a14c"
+    },
+    "primaryP1_root_trial28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_root_trial28/summary.json",
+      "SHA256": "1e4637a53b31b53669cd71616dea55f214144c15614b86b91b7fead20b8d36c9"
     }
   }
 }

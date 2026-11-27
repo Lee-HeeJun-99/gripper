@@ -1,0 +1,208 @@
+{
+  "status": "ACTUAL_P1_78PART_CONDITIONAL_GRAVITY_ACCOUNTING_VERIFIED_LOAD_TRANSFER_BLOCKED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_hardware_gravity28/inputs.json",
+    "SHA256": "95953a8f6b39cd046c3ce3f290f93d984627a8a30a35e498b2873e537c03eebb"
+  },
+  "checks": {
+    "exact_disjoint_78part_inventory": true,
+    "fresh28hardware_CAD_inertia": true,
+    "all_actual_hardware_bearing_owners_present": true,
+    "independent_hardware_force_moment_sum": true,
+    "no_invented_transfer_or_Base_load": true
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "upstream_parts": 45,
+      "elastic_parts": 5,
+      "explicit_hardware_parts": 28,
+      "total_disjoint_parts": 78,
+      "conditional_hardware_total_mass_kg": 0.07259442851322843,
+      "hardware_gravity_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -0.7119081523792515,
+        0.007962773303957553,
+        0.013503274329365805,
+        0.0
+      ],
+      "fivebody_gravity_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -8.212119542868724,
+        0.06704768151264763,
+        0.22776539612513208,
+        0.0
+      ],
+      "conditional_complete_external_resultant_N_Nm": [
+        0.4086040021380202,
+        0.0,
+        -9.712838661531437,
+        0.07677813468797376,
+        0.2198859584610224,
+        0.0
+      ],
+      "necessary_external_anchor_resultant_N_Nm": [
+        -0.4086040021380202,
+        -0.0,
+        9.712838661531437,
+        -0.07677813468797376,
+        -0.2198859584610224,
+        -0.0
+      ],
+      "anchor_resultant_is_requirement_only": true,
+      "anchor_resultant_applied": false,
+      "actual_hardware_to_support_load_transfer_implemented": false,
+      "actual_equilibrium": false,
+      "physics_sourcefield_created": false
+    },
+    {
+      "mesh_level": 3,
+      "upstream_parts": 45,
+      "elastic_parts": 5,
+      "explicit_hardware_parts": 28,
+      "total_disjoint_parts": 78,
+      "conditional_hardware_total_mass_kg": 0.07259442851322843,
+      "hardware_gravity_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -0.7119081523792515,
+        0.007962773303957553,
+        0.013503274329365805,
+        0.0
+      ],
+      "fivebody_gravity_wrench_N_Nm": [
+        0.0,
+        0.0,
+        -8.21211289843565,
+        0.06704770761527518,
+        0.22776498358113734,
+        0.0
+      ],
+      "conditional_complete_external_resultant_N_Nm": [
+        0.4086040021380202,
+        0.0,
+        -9.712832017098364,
+        0.07677816079060129,
+        0.21988554591702766,
+        0.0
+      ],
+      "necessary_external_anchor_resultant_N_Nm": [
+        -0.4086040021380202,
+        -0.0,
+        9.712832017098364,
+        -0.07677816079060129,
+        -0.21988554591702766,
+        -0.0
+      ],
+      "anchor_resultant_is_requirement_only": true,
+      "anchor_resultant_applied": false,
+      "actual_hardware_to_support_load_transfer_implemented": false,
+      "actual_equilibrium": false,
+      "physics_sourcefield_created": false
+    }
+  ],
+  "hardware": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_hardware_gravity28/hardware_rigid_mass_loads.json",
+    "SHA256": "796c4b320776b29f95d2546fec2cccc51794de28601b356767a71d95d453af0e"
+  },
+  "upstream_part_IDs": [
+    "F0_DRUM_CAP_BOLT_69_26",
+    "F0_DRUM_CAP_BOLT_80_33",
+    "F0_DRUM_CAP_BOLT_91_26",
+    "F0_DRUM_FACTORY_NIPPLE",
+    "F0_DRUM_NIPPLE_CAP",
+    "F0_MICRO_MOTOR",
+    "F0_RAIL_L",
+    "F0_RAIL_R",
+    "F0_ROOT_BOLT_-16",
+    "F0_ROOT_BOLT_16",
+    "F0_ROOT_FRONT",
+    "F0_ROOT_NUT_-16",
+    "F0_ROOT_NUT_16",
+    "F0_SET_SCREW",
+    "F0_SKIN",
+    "F0_SPOOL",
+    "F0_SPOOL_BOLT_0",
+    "F0_SPOOL_BOLT_1",
+    "F0_SPOOL_BOLT_2",
+    "F0_SPOOL_BOLT_3",
+    "F0_STOCK_HUB",
+    "F0_SWIVEL_AXLE",
+    "F0_SWIVEL_AXLE_NUT",
+    "F0_SWIVEL_BOLT_39_-74.5",
+    "F0_SWIVEL_BOLT_39_-86.5",
+    "F0_SWIVEL_BOLT_47_-74.5",
+    "F0_SWIVEL_BOLT_47_-86.5",
+    "F0_SWIVEL_LOWER",
+    "F0_SWIVEL_NUT_39_-74.5",
+    "F0_SWIVEL_NUT_39_-86.5",
+    "F0_SWIVEL_NUT_47_-74.5",
+    "F0_SWIVEL_NUT_47_-86.5",
+    "F0_SWIVEL_SLEEVE",
+    "F0_SWIVEL_SPACER_L",
+    "F0_SWIVEL_SPACER_OUT",
+    "F0_SWIVEL_SPACER_R",
+    "F0_SWIVEL_UPPER",
+    "F0_TENDON_WIRE",
+    "F0_TERMINAL_BACK",
+    "F0_TERMINAL_FLUSH_BOLT_-9.5",
+    "F0_TERMINAL_FLUSH_BOLT_9.5",
+    "F0_TERMINAL_FLUSH_NUT_-9.5",
+    "F0_TERMINAL_FLUSH_NUT_9.5",
+    "F0_TERMINAL_FRONT",
+    "F0_TIP_FACTORY_NIPPLE"
+  ],
+  "elastic_part_IDs": [
+    "F0_ROOT_BACK",
+    "GROUND_PLATE",
+    "MOTOR_CAP",
+    "OPEN_FRAME",
+    "TEST_BASE"
+  ],
+  "hardware_part_IDs": [
+    "F0_RF0_BOLT",
+    "F0_RF0_NUT",
+    "F0_RF1_BOLT",
+    "F0_RF1_NUT",
+    "FIXTURE_BOLT_0",
+    "FIXTURE_BOLT_1",
+    "FIXTURE_BOLT_2",
+    "FIXTURE_BOLT_3",
+    "FIXTURE_NUT_0",
+    "FIXTURE_NUT_1",
+    "FIXTURE_NUT_2",
+    "FIXTURE_NUT_3",
+    "GROUND_BOLT_0",
+    "GROUND_BOLT_1",
+    "GROUND_BOLT_2",
+    "GROUND_BOLT_3",
+    "GROUND_NUT_0",
+    "GROUND_NUT_1",
+    "GROUND_NUT_2",
+    "GROUND_NUT_3",
+    "MOTOR_CAP_BOLT_-7_-13.5",
+    "MOTOR_CAP_BOLT_-7_-29.5",
+    "MOTOR_CAP_BOLT_7_-13.5",
+    "MOTOR_CAP_BOLT_7_-29.5",
+    "MOTOR_CAP_NUT_-7_-13.5",
+    "MOTOR_CAP_NUT_-7_-29.5",
+    "MOTOR_CAP_NUT_7_-13.5",
+    "MOTOR_CAP_NUT_7_-29.5"
+  ],
+  "elapsed_s": 0.2580241800751537,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "CAD smooth fastener envelopes are not actual helical threads. Density7900kg/m3 remains conditional inherited assumption, not measured mass/material minimum.",
+    "All78parts counted once in conditional external resultant. Hardware wrench remains attached to own free body; bearing/thread shear/tilt/preload and finite load transfer still missing.",
+    "Necessary anchor resultant derived from physical gravity/object sources is a boundary design demand ONLY, never an applied balancing force or support equilibrium. Actual bench attachment remains unqualified.",
+    "No source-backed real performance, full3DFinger, force closure, material strength, mesh/time/globalenergy/full3Finger release."
+  ]
+}

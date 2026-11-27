@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "source_summary": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_capframe_boundary27/summary.json",
+    "SHA256": "9c4e2c9e1e0f7e122e69abc7bf7fcfcf0eab5f1b591f7292c5afece33cc2e10d"
+  },
+  "source_ledger": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_capframe_boundary27/material_gap_ledger.npz",
+    "SHA256": "5453ceb785a626e7c4a2eb6da58a95878b7187c49e591d2631d10e53d27009dd"
+  },
+  "fivebody": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fivebody_rebuild27/summary.json",
+    "SHA256": "bb82ba1ddba0db7d86842f1fa39ca28b9f1e557c51edc9c80efb4a4fd077a50e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_capframe_transaction28/producer.py",
+    "SHA256": "52e4eb868afadf0bea4948f98b9bfe00acbbc7bb37371a44d0b5dc82301026b7"
+  },
+  "operators": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/finite_face_union27.py",
+      "SHA256": "e22c1d57ae476350a0edefa7df19a99698210c2992722fb1896f785d236903e1"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/signed_boundary27.py",
+      "SHA256": "5a9175ee8fc7133a9945b09eeaddc5da190e8410f11daaaea93242fca79f57e6"
+    }
+  ],
+  "original_local_limit_mm": 0.05,
+  "gap_limit_mm": 1e-10,
+  "policy": "Check exterior by whole closed owner solid angle, retain all rows. b=min(.05,(minimum unavailable distance-1e-10)/4). Evaluate actual nodal motion, including rigid Motor rotation. Recompute after each geometry change."
+}

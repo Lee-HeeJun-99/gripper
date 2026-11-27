@@ -1,0 +1,302 @@
+{
+  "status": "ACTUAL_P1_FRESH_CONDITIONAL_COUPLED_SOURCE_BLOCK_VERIFIED_NOT_SUPPORT_EQUILIBRIUM",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/inputs.json",
+    "SHA256": "2a4acf133b9e5ea291426de04be11e4c1e08f98e9b26ac4cb69df4615b4ffbaa"
+  },
+  "checks": {
+    "all_conditional_source_stationarity": true,
+    "all_fresh_port_resultants": true,
+    "gamma_not_eliminated": true,
+    "source_symmetry": true,
+    "quadrature_force": true,
+    "no_Base_counterload": true
+  },
+  "results": [
+    {
+      "case": "reference",
+      "upstream_gamma_mm": 0.0,
+      "quadrature_order": 16,
+      "status": "CONDITIONAL_PRESCRIBED_GAMMA_PLANAR_FINGER_STRING",
+      "checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "normal_N": 0.4086040021380202,
+      "T_N": 1.1854427033803843,
+      "force_equivalent_N": 1.4693830388489094e-15,
+      "Root_wrench_N_Nm": [
+        0.23468094303505127,
+        -8.57040247147923e-51,
+        0.7045444083995963,
+        -5.597159153884471e-06,
+        -0.03819717364015353,
+        -2.124233295000175e-52
+      ],
+      "Motor_wrench_N_Nm": [
+        0.1739230591029689,
+        8.57040247147923e-51,
+        -1.4933553746830586,
+        0.001773277030522459,
+        0.016814461646678068,
+        2.124233295000175e-52
+      ],
+      "gamma_generalized_force_N": -8.57040247147923e-51,
+      "source_pair_wrench_error_N_Nm": 1.1102230246251565e-16,
+      "gamma_is_not_eliminated": true,
+      "full_system_equilibrium": false,
+      "maps": [
+        {
+          "mesh_level": 2,
+          "root_port_nodes": 720,
+          "root_force_error_N": 2.1096063416098283e-15,
+          "root_moment_error_Nm": 1.7347235276755946e-16,
+          "upstream_gamma_force_stored_N": -8.57040247147923e-51,
+          "no_Base_counterload": true
+        },
+        {
+          "mesh_level": 3,
+          "root_port_nodes": 1055,
+          "root_force_error_N": 3.3306690853742597e-16,
+          "root_moment_error_Nm": 9.714513156437571e-17,
+          "upstream_gamma_force_stored_N": -8.57040247147923e-51,
+          "no_Base_counterload": true
+        }
+      ],
+      "state": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/reference_source_state.json",
+        "SHA256": "2940858c3ac6f74419f832ab048c69399e781a03d7c4cf6626124a2ac0e43282"
+      }
+    },
+    {
+      "case": "plus",
+      "upstream_gamma_mm": 1e-05,
+      "quadrature_order": 16,
+      "status": "CONDITIONAL_PRESCRIBED_GAMMA_PLANAR_FINGER_STRING",
+      "checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "normal_N": 0.4086040021380202,
+      "T_N": 1.1854427033803843,
+      "force_equivalent_N": 6.0265986815566655e-15,
+      "Root_wrench_N_Nm": [
+        0.23468094303505158,
+        -1.0001796374407031e-07,
+        0.7045444083995954,
+        -5.597118720972672e-06,
+        -0.038197173640153535,
+        -4.825823565221178e-09
+      ],
+      "Motor_wrench_N_Nm": [
+        0.1739230591029686,
+        1.0001796374407031e-07,
+        -1.4933553746830577,
+        0.001773272357416145,
+        0.016814461646678082,
+        7.397835438409761e-10
+      ],
+      "gamma_generalized_force_N": -1.0001796374407031e-07,
+      "source_pair_wrench_error_N_Nm": 1.1102230246251565e-16,
+      "gamma_is_not_eliminated": true,
+      "full_system_equilibrium": false,
+      "maps": [
+        {
+          "mesh_level": 2,
+          "root_port_nodes": 720,
+          "root_force_error_N": 2.0413089008954374e-15,
+          "root_moment_error_Nm": 5.551316275554116e-17,
+          "upstream_gamma_force_stored_N": -1.0001796374407031e-07,
+          "no_Base_counterload": true
+        },
+        {
+          "mesh_level": 3,
+          "root_port_nodes": 1055,
+          "root_force_error_N": 9.036560723424977e-16,
+          "root_moment_error_Nm": 2.775646218554411e-17,
+          "upstream_gamma_force_stored_N": -1.0001796374407031e-07,
+          "no_Base_counterload": true
+        }
+      ],
+      "state": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/plus_source_state.json",
+        "SHA256": "470ace4ee51bc2bd400f2296c28201a26d52a7d20fdd0d01a9685446ee760016"
+      }
+    },
+    {
+      "case": "minus",
+      "upstream_gamma_mm": -1e-05,
+      "quadrature_order": 16,
+      "status": "CONDITIONAL_PRESCRIBED_GAMMA_PLANAR_FINGER_STRING",
+      "checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "normal_N": 0.40860400213802,
+      "T_N": 1.1854427033803843,
+      "force_equivalent_N": 1.4866550230955358e-15,
+      "Root_wrench_N_Nm": [
+        0.23468094303505124,
+        1.0001796374407027e-07,
+        0.7045444083995954,
+        -5.597199586796277e-06,
+        -0.0381971736401535,
+        4.825823565221173e-09
+      ],
+      "Motor_wrench_N_Nm": [
+        0.17392305910296876,
+        -1.0001796374407027e-07,
+        -1.4933553746830577,
+        0.0017732817036287731,
+        0.01681446164667806,
+        -7.397835438409724e-10
+      ],
+      "gamma_generalized_force_N": 1.0001796374407027e-07,
+      "source_pair_wrench_error_N_Nm": 1.1102230246251565e-16,
+      "gamma_is_not_eliminated": true,
+      "full_system_equilibrium": false,
+      "maps": [
+        {
+          "mesh_level": 2,
+          "root_port_nodes": 720,
+          "root_force_error_N": 1.0087920417091123e-15,
+          "root_moment_error_Nm": 9.020596534735008e-17,
+          "upstream_gamma_force_stored_N": 1.0001796374407027e-07,
+          "no_Base_counterload": true
+        },
+        {
+          "mesh_level": 3,
+          "root_port_nodes": 1055,
+          "root_force_error_N": 9.238896857936431e-16,
+          "root_moment_error_Nm": 5.551192762498157e-17,
+          "upstream_gamma_force_stored_N": 1.0001796374407027e-07,
+          "no_Base_counterload": true
+        }
+      ],
+      "state": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/minus_source_state.json",
+        "SHA256": "db27e485ec839347613ae2e35475ac4e97f06e139dac36bdb7fa051af261f289"
+      }
+    },
+    {
+      "case": "order32",
+      "upstream_gamma_mm": 0.0,
+      "quadrature_order": 32,
+      "status": "CONDITIONAL_PRESCRIBED_GAMMA_PLANAR_FINGER_STRING",
+      "checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "normal_N": 0.40860400213801984,
+      "T_N": 1.1854427033803843,
+      "force_equivalent_N": 1.4866030529402871e-15,
+      "Root_wrench_N_Nm": [
+        0.23468094303505108,
+        7.508501658663121e-51,
+        0.7045444083995959,
+        -5.597159153884471e-06,
+        -0.0381971736401535,
+        1.8610338629923587e-52
+      ],
+      "Motor_wrench_N_Nm": [
+        0.17392305910296876,
+        -7.508501658663121e-51,
+        -1.4933553746830581,
+        0.001773277030522459,
+        0.01681446164667808,
+        -1.8610338629923587e-52
+      ],
+      "gamma_generalized_force_N": 7.508501658663121e-51,
+      "source_pair_wrench_error_N_Nm": 1.1102230246251565e-16,
+      "gamma_is_not_eliminated": true,
+      "full_system_equilibrium": false,
+      "maps": [
+        {
+          "mesh_level": 2,
+          "root_port_nodes": 720,
+          "root_force_error_N": 2.1123433660810752e-15,
+          "root_moment_error_Nm": 1.457169191511948e-16,
+          "upstream_gamma_force_stored_N": 7.508501658663121e-51,
+          "no_Base_counterload": true
+        },
+        {
+          "mesh_level": 3,
+          "root_port_nodes": 1055,
+          "root_force_error_N": 8.326673144640267e-17,
+          "root_moment_error_Nm": 9.714452286188709e-17,
+          "upstream_gamma_force_stored_N": 7.508501658663121e-51,
+          "no_Base_counterload": true
+        }
+      ],
+      "state": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/order32_source_state.json",
+        "SHA256": "9b21a271685cb495c1273176422e10ce7ab3c10f04506d57589fe7dbba44ecf6"
+      }
+    }
+  ],
+  "source_pullbacks": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fresh_sources28/fresh_source_pullbacks.npz",
+    "SHA256": "9b9cfc4e09dd25d342382399ecad8a85ccab8012c629e4f6409d84964317bc2f"
+  },
+  "gamma_force_derivative_N_per_mm": -0.010001796374407028,
+  "odd_symmetry_error_N": 3.970466940254533e-23,
+  "order16_32_normal_force_difference_N": 3.3306690738754696e-16,
+  "elapsed_s": 41.30326120182872,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Source solver remains conditional planar rail/PET and rigid ideal cuts/world-X stop; full3DFinger/finitewire/protector/materialminimum/mesh1%/time.1% not certified.",
+    "Explicit upstream gamma retained and conjugate force returned; physical compatibility of this coordinate with deforming Root port remains to be reviewed before coupled support solve. No artificial gamma spring or fixation.",
+    "Fresh states at reference support coordinates, not full same-revision load equilibrium. Remaining hardware gravity and physical Base anchor still required; no inherited old sourcefield, pressure or Base cancellation.",
+    "Conditional historical upstream mass distribution reused only after exact CAD identity of all upstream parts; changed Root and Frame excluded from upstream masses and represented by new fivebody block."
+  ]
+}

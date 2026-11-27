@@ -1,0 +1,88 @@
+{
+  "status": "ACTUAL_P1_SAVED_PAIR_AND_TRACTION_RECONSTRUCTION_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/summary.json",
+    "SHA256": "a215c5d13cdd0936c45ed6073098fdc34ffbe56663790bedcf8b7c926e39627d"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_saved/verifier.py",
+    "SHA256": "1384ee832a53a47afbe571e51a5551c7447964cff1a6bf1c3b2481bffc841b6c"
+  },
+  "traction": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_actualface50/summary.json",
+    "SHA256": "24af811b9f907d76b2db87ddd23e811816806f7eef4706631e9b8bc38bce2f13"
+  },
+  "pair_sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_1/summary.json",
+      "SHA256": "18b6b03f1f10069165b82ae953c74702e14a9b3aacfbb31b46a8dcf25ad256e3"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_2/summary.json",
+      "SHA256": "5563335652250fc46e51c425cc442bfafcc07737e0cb1a86f8dbdcacbf65eb7c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_3/summary.json",
+      "SHA256": "39dd58871b166650c70cb281f0bc37b780654c41e5801820404efedb758b6196"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_4/summary.json",
+      "SHA256": "1682b62c4d31965ebe12b9cfe5b82c02aab9e0f9449fd88fc2e04be4edcbeeac"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_5/summary.json",
+      "SHA256": "d3892e466ee6f97e94155d801f2e0233a041992056d2b18dfd714dd9b35b58d9"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_6/summary.json",
+      "SHA256": "8c0cef13004915e4e74872d0afdce79804da549079aea43d539c99ab1e37ff60"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_combined_7/summary.json",
+      "SHA256": "4e2a31b49dec16d680c756841eb490536a2d6506ab9163704e8d3cc0d3382286"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_feed_0/summary.json",
+      "SHA256": "80d4f012d6d1ed0be76c9a22e66f0e4798a78d1716b08bc9eae9fd6f57881dba"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pair50_axial_0/summary.json",
+      "SHA256": "54a9564580750792f723000a2c378016a3fdee4db1b21dfc8a83c430a847489f"
+    }
+  ],
+  "checks": {
+    "all_face_map_checks": true,
+    "saved_integrals_reconstructed": true,
+    "saved_unit_balance": true,
+    "perturbed_pressure_rejected": true,
+    "all8_pair_checks": true,
+    "completed_pose_count": true,
+    "failed_signed_volume_rejected": true
+  },
+  "reconstructed_patch_count": 96,
+  "actual_normal_point_count": 1536,
+  "maximum_integral_reconstruction_error": 7.216449660063518e-16,
+  "maximum_unit_wrench_residual": 1.4029477579668992e-10,
+  "negative_controls": 5,
+  "RH_feed_pose_count": 56,
+  "axial_probe_count": 32,
+  "root_failed_negative_volumes": [
+    {
+      "event": "COMPLETE",
+      "sign": -1,
+      "threshold_mm3": 1e-08,
+      "z_mm": 0.04301471997070322,
+      "common_mm3": -1.3926099164063288e-05,
+      "elapsed_s": 6.151309076929465
+    }
+  ],
+  "root_attempts_completed": 22,
+  "accepted_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Independent local saved-data reconstruction,NOTinstalledjointloadsplit or source-backedcapacity",
+    "Oppositeflanks not assumed simultaneouslyactive;nut/head/key/pin/host equilibrium unqualified",
+    "Failedanalyticmap/classifier anomaly/Booleanroot preserved;no exactaxialstop certified"
+  ]
+}

@@ -1,0 +1,30 @@
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04, "common_mm3": 0.0, "elapsed_s": 5.672728714067489}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.05, "common_mm3": 0.17069582739919187, "elapsed_s": 6.134268280817196}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.040001000000000016, "common_mm3": 0.0, "elapsed_s": 5.7772935561370105}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04500050000000001, "common_mm3": 0.04856933382888314, "elapsed_s": 6.148336529033259}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04000200000000003, "common_mm3": 0.0, "elapsed_s": 5.788323641056195}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04250125000000002, "common_mm3": 0.0, "elapsed_s": 5.942551790038124}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.043750875000000015, "common_mm3": 0.018050443876942726, "elapsed_s": 6.406851690029725}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04250225000000004, "common_mm3": 0.0, "elapsed_s": 5.942857213085517}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04312656250000003, "common_mm3": 0.0028058690694708135, "elapsed_s": 6.758440425852314}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04250325000000006, "common_mm3": 0.0, "elapsed_s": 5.943416767986491}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04281490625000005, "common_mm3": 0.0, "elapsed_s": 5.66880359291099}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04297073437500004, "common_mm3": 0.0, "elapsed_s": 5.444128080969676}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04304864843750003, "common_mm3": 0.0009019528469058954, "elapsed_s": 6.109551407862455}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04297173437500006, "common_mm3": 0.0, "elapsed_s": 5.812608866021037}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04301019140625005, "common_mm3": 0.0, "elapsed_s": 6.245085346046835}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04302941992187504, "common_mm3": 0.000432195337569604, "elapsed_s": 6.283757835859433}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04301119140625007, "common_mm3": 0.0, "elapsed_s": 6.383278456050903}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04302030566406256, "common_mm3": 0.0002190709885459816, "elapsed_s": 6.275676470948383}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.043012191406250094, "common_mm3": 0.0, "elapsed_s": 5.930248127086088}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04301624853515633, "common_mm3": 5.786050030409662e-05, "elapsed_s": 6.860415975097567}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.043013191406250116, "common_mm3": 0.0, "elapsed_s": 6.6382408840581775}
+{"sign": -1, "threshold_mm3": 1e-08, "z_mm": 0.04301471997070322, "common_mm3": -1.3926099164063288e-05, "elapsed_s": 6.151309076929465}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_axialroot50.py", line 23, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_axialroot50.py", line 19, in main
+    z=brentq(f,.04,.05,xtol=2e-6,maxiter=20);roots.append(dict(sign=sign,threshold_mm3=tol,root_mm=z))
+  File "/tmp/regrip_stage2_fem/scipy/optimize/_zeros_py.py", line 798, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+RuntimeError: Failed to converge after 20 iterations.

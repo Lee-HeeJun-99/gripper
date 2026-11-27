@@ -1,0 +1,75 @@
+{
+  "status": "ACTUAL_P1_PAIR_AND_TRACTION_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/summary.json",
+    "SHA256": "a215c5d13cdd0936c45ed6073098fdc34ffbe56663790bedcf8b7c926e39627d"
+  },
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary50_feed0_execution/execution.json",
+        "SHA256": "db66256595f8c3e5926edc2f2c06d632141e7764343c7a284105619038286888"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary50_feed0_execution/analysis.log",
+        "SHA256": "59032fee956d8f1c609853b4c221d6c5af30f5bf8918724691fc554bd9c8735e"
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_pair50.py\", line 5, in <module>\n    from incremental_stage1 import read,translate,common\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/incremental_stage1.py\", line 8, in <module>\n    from build_stage1 import box,cyl,cut,fuse,volume,rotate,translate,compound,export as export_native,solid_count\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage1_manufacturing/scripts/build_stage1.py\", line 9, in <module>\n    from OCP.BRepPrimAPI import BRepPrimAPI_MakeBox, BRepPrimAPI_MakeCylinder\nModuleNotFoundError: No module named 'OCP'\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary50_flank_execution/execution.json",
+        "SHA256": "016c05e483d6adda9c96af4bb5b898802f57127a5296fed1459d61afc9e6dcdb"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary50_flank_execution/analysis.log",
+        "SHA256": "234695686beb382d45a16720880621ce29b4459661e3ce8bf13283d2bac1f8f9"
+      },
+      "tail": "{\"checks\": {\"actual_BRep_both_flanks\": false, \"quadrature_4_8_16\": true, \"screw_virtual_work\": true, \"rank5\": true, \"unit_transverse_and_bending_feasible\": true, \"axial_without_torque_rejected\": true, \"torque_without_axial_rejected\": true, \"unit_axial_with_torque_feasible\": true}, \"rank\": 5, \"work\": 2.0816681711721685e-17, \"err48\": 1.8318679906315083e-13, \"err816\": 6.661338147750939e-16}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary50_root_execution/execution.json",
+        "SHA256": "9488449e981740b77ede6ec504069dfd8db877b691a3df9b44fb79f016e54a51"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary50_root_execution/analysis.log",
+        "SHA256": "9594ae91bd84680f29c1fc488c598ab88b78efb6d82a42c69cb2fa28083c4803"
+      },
+      "tail": "7173437500006, \"common_mm3\": 0.0, \"elapsed_s\": 5.812608866021037}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.04301019140625005, \"common_mm3\": 0.0, \"elapsed_s\": 6.245085346046835}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.04302941992187504, \"common_mm3\": 0.000432195337569604, \"elapsed_s\": 6.283757835859433}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.04301119140625007, \"common_mm3\": 0.0, \"elapsed_s\": 6.383278456050903}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.04302030566406256, \"common_mm3\": 0.0002190709885459816, \"elapsed_s\": 6.275676470948383}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.043012191406250094, \"common_mm3\": 0.0, \"elapsed_s\": 5.930248127086088}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.04301624853515633, \"common_mm3\": 5.786050030409662e-05, \"elapsed_s\": 6.860415975097567}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.043013191406250116, \"common_mm3\": 0.0, \"elapsed_s\": 6.6382408840581775}\n{\"sign\": -1, \"threshold_mm3\": 1e-08, \"z_mm\": 0.04301471997070322, \"common_mm3\": -1.3926099164063288e-05, \"elapsed_s\": 6.151309076929465}\nTraceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_axialroot50.py\", line 23, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_axialroot50.py\", line 19, in main\n    z=brentq(f,.04,.05,xtol=2e-6,maxiter=20);roots.append(dict(sign=sign,threshold_mm3=tol,root_mm=z))\n  File \"/tmp/regrip_stage2_fem/scipy/optimize/_zeros_py.py\", line 798, in brentq\n    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)\nRuntimeError: Failed to converge after 20 iterations.\n"
+    }
+  ],
+  "failed_analytic_map": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_flank50/summary.json",
+    "SHA256": "af1956a0e53ca4654a9bc258b4f5ee89cd2753f68523989d98dbbc122cc17188"
+  },
+  "independent_surface_probe": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_flank_probe50/summary.json",
+    "SHA256": "2387257afbfa4186b1ed5bc5d0df69fbc9354a976b249617e6a6291a43262b31"
+  },
+  "failed_axial_root_journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_axialroot50/journal.jsonl",
+    "SHA256": "7084b41437057aa327960560713550e08920f18dda9c3d7992c0dc101ccf3180"
+  },
+  "negative_intersection_volumes": [
+    {
+      "event": "COMPLETE",
+      "sign": -1,
+      "threshold_mm3": 1e-08,
+      "z_mm": 0.04301471997070322,
+      "common_mm3": -1.3926099164063288e-05,
+      "elapsed_s": 6.151309076929465
+    }
+  ],
+  "root_summary_exists": false,
+  "root_not_retried": true,
+  "prior_timeout_preserved": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary49_threadvalidation6_execution/execution.json",
+    "SHA256": "4aca91b3df02c71ad6b6c3d0ce1e4a512fd4d2193999e80ca885b766cf9928c9"
+  },
+  "explanation": "First import failed without existing OCP PYTHONPATH;correct existing environment supplied,noinstall. Initial analytic map used inward nut normals and one96point classifier mismatch;original FAIL retained. Closest actual face distance at mismatch2.44e-11mm,occupancy at-0.0001mm disagrees while-0.001mm is IN;no missingface asserted. Independent oriented actualface quadrature replaces inward normals without changing CAD/criteria. Boolean volume root failed20iterations and returned negative signedvolume;NO exactaxialstop claim,not retried. Coarse .04clear/.05contact brackets remain finite geometry only.",
+  "whole_system_release": false
+}

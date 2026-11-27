@@ -1,0 +1,34 @@
+{
+  "status": "ACTUAL_P1_SAME_CONTACT_SOLVER_EQUIVALENCE_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_allgap8/summary.json",
+      "SHA256": "e0e73dad739d1a1bddf5d3e0b11e0174bc4eedb23c4ba58f0a60b46dfcc0c048"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor39_pointbaseb/summary.json",
+      "SHA256": "82def8ffd29442e5bb22d03263c15af76e035d35ef6437ec17d5448d9fb6c0b4"
+    }
+  ],
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor39_solver_equivalence/verifier.py",
+    "SHA256": "4226af876bf43c70e636d499c989461ae9bb3f7d99b53f39b5eef8ac6a435ec5"
+  },
+  "checks": {
+    "identical_material_points": false,
+    "compliance_relative_1e_minus12": false,
+    "all14_numerical1e_minus7": false
+  },
+  "rows": [],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Numerical solver contrast on exactly same physical contact basis;not mesh/contact-domain/physicalsupport convergence.",
+    "Original local force/gap criteria independently audited;solver success flags alone are insufficient.",
+    "No claim that close objective certifies unique pressure or that a mismatch relaxes original1e-7numerical contrast."
+  ]
+}

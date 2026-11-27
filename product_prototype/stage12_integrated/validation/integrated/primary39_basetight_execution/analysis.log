@@ -1,0 +1,28 @@
+{"case": "conditional_frozen_contact_plus_nominal_gravity", "status": "solved", "iterations": 8650, "minimum_force": -5.945934240842783e-13}
+{"case": "nominal_upstream_gravity_only", "status": "solved", "iterations": 5950, "minimum_force": -8.869525512356709e-13}
+{"case": "sensitivity_0_-1", "status": "solved inaccurate", "iterations": 200000, "minimum_force": -7.738223266826998e-13}
+{"case": "sensitivity_0_1", "status": "solved inaccurate", "iterations": 200000, "minimum_force": -1.2685928908159138e-12}
+{"case": "sensitivity_1_-1", "status": "solved", "iterations": 9250, "minimum_force": -1.9320478041871235e-13}
+{"case": "sensitivity_1_1", "status": "solved", "iterations": 20400, "minimum_force": -6.1509148749473054e-18}
+{"case": "sensitivity_2_-1", "status": "solved", "iterations": 3425, "minimum_force": -5.1377025100157836e-14}
+{"case": "sensitivity_2_1", "status": "solved", "iterations": 3050, "minimum_force": -1.9424181818913434e-19}
+{"case": "sensitivity_3_-1", "status": "solved", "iterations": 1100, "minimum_force": -1.209432771239794e-19}
+{"case": "sensitivity_3_1", "status": "solved", "iterations": 5000, "minimum_force": -1.0612662582982521e-21}
+{"case": "sensitivity_4_-1", "status": "solved", "iterations": 39250, "minimum_force": -2.1365950377033188e-19}
+{"case": "sensitivity_4_1", "status": "solved", "iterations": 5875, "minimum_force": -1.500749625142365e-14}
+{"case": "sensitivity_5_-1", "status": "solved", "iterations": 875, "minimum_force": -3.21119382755069e-22}
+{"case": "sensitivity_5_1", "status": "solved", "iterations": 1500, "minimum_force": -3.722147298458966e-23}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_anchor_resolve39.py", line 23, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_anchor_resolve39.py", line 20, in main
+    doc.update(rows=rows,inputs=ref(out/'inputs.json'),producer=ref(out/'producer.py'),parent_conditional_trial=ref(src/'summary.json'),fresh_QP_only=True,all_physical_operators_unchanged=True,force_clipping=False)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 10, in ref
+    def ref(p):return dict(path=str(p.relative_to(REPO)),SHA256=sha(p))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 9, in sha
+    def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+  File "/usr/lib/python3.10/pathlib.py", line 1126, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor39_basetight/inputs.json'

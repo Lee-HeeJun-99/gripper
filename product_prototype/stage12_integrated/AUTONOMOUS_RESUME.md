@@ -1,4 +1,21 @@
-# Batch6 cycle9 — Idler-after sequence rejected; release blocked (2026-11-27)
+# Latest GOAL-BASED continuation, not another bounded batch
+
+User explicitly authorized goal-driven continuation until real integrated
+release/safe pause, with no fixed total session/time completion limit.
+Read GOAL_AUTHORIZATION_20261127.json and reports/GOAL_ENGINEERING_BRIEF.md.
+Actual old HEAD ec115fa, AO254 unadopted, AA304 official,22system gates missing.
+First actual next task: separate minimum Stage2 primary module, not AO top-entry
+or rivet diagnostics. Follow dynamic unmet-gate tasks within the same primary.
+
+Actual new service regrip-stage12-goal-20261127-7; runtime goal_authorized_20261127_7.
+Use live state/ledger/resume.json, not historical paragraphs or file existence.
+Manager supports --until-release --resume only after actual paused-state/source/
+dirty/STOP review. Timeouts get bounded save-only recovery; failed exact save
+pauses without deleting state. No RUNNING record may be blindly reset.
+Individual time/resource/sandbox/STOP/Supervisor policies remain. Worker must
+not start managers, edit trusted gate/security sources or git add/commit.
+
+# Historical Batch6 cycle9 — Idler-after sequence rejected; release blocked
 
 Started at1f00595abcf73b690dbdd192e520799a49339002. Selected READY
 batch6_independent_integrated_release_and_repairs. One actual analysis cycle:

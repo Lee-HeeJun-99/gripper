@@ -1,0 +1,30 @@
+{
+  "authorization": "Latest user explicitly approves goal-based continuation without a fixed total session or cumulative research-time completion limit",
+  "mode": "GOAL_BASED",
+  "goal": "STAGE1_STAGE2_INTEGRATED_DIGITAL_RELEASE_PASS",
+  "total_session_limit": null,
+  "total_research_time_limit": null,
+  "per_worker_seconds": 3600,
+  "save_only_timeout_recovery_seconds_max": 300,
+  "analysis_child_limit": "4GiB/420seconds",
+  "historical_allocation_policy": "All original/batch4/batch5/batch6 usage and results stay consumed/preserved; no budget reset",
+  "primary_research_objective": "One actual minimum Motor->Drum->Tendon->Finger->Root->Ground Stage2 product separate from failed AO assembly; then same-revision3-Finger/Stage1/Stage2 qualification",
+  "runtime": "product_prototype/stage12_integrated/runtime/goal_authorized_20261127_7",
+  "service": "regrip-stage12-goal-20261127-7.service",
+  "actual_activity_authority": "Live systemd state and new runtime/status.json; authorization and logs are not a release",
+  "individual_safety": {
+    "sandbox": "workspace-write; no worker Git permission bypass",
+    "Supervisor": "Existing exact allowlist/SHA256/old-untracked/immutable-evidence/50MB/indexed-hash/guarded-local-commit checks unchanged",
+    "STOP": "Persistent shared runtime/STOP or systemctl stop; never cleared automatically",
+    "exclusive_lock": "Existing runtime/manager.lock flock",
+    "trusted_source_pins": "Goal manager,entry,policy,controls,Supervisor,independent gates,baseline helper and frozen criteria; workers may not modify them",
+    "service_memory": "8GiB",
+    "CPUQuota": "200%",
+    "TasksMax": 256,
+    "Restart": "no; do not auto-restart system/integrity/account failures",
+    "RuntimeMaxSec": "infinity; individual Worker and analysis limits remain finite"
+  },
+  "billing": "Existing ChatGPT login only; no API-key environment fallback, provider/model change, credit purchase or billing enablement. Actual CLI account/service limits pause; unlimited paid spending not authorized. No monetary usage cap is claimed from token counts.",
+  "pause_conditions": ["user STOP/signal", "account/service limit", "resource/system failure", "trusted-source/data/Git integrity failure", "unrecoverable interrupted state or rejected save", "meaningless/repeated output after strategy review", "all valid work externally blocked"],
+  "forbidden": ["remote push", "history rewrite", "old data deletion/overwrite", "SDK change", "criteria relaxation", "fake PASS", "purchase", "hardware operation", "credential inspection", "permission/account-limit bypass", "recursive worker manager launch"]
+}

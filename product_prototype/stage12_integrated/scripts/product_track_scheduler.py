@@ -10,7 +10,13 @@ def select(tasks,history):
     # Known diagnostic work cannot starve executable mechanical implementation.
     implementations=[t for t in ready if t.get('execution_class')=='PRODUCT_IMPLEMENTATION']
     if implementations:ready=implementations
-    coverage=[t for t in ready if t.get('selection_policy')=='coverage_before_repetition']
+    goal=[t for t in ready if t.get('selection_policy')=='goal_product_continuation']
+    if goal:
+        # Latest authorized continuous primary product, not old finite campaign.
+        recent_ids=[r.get('task') for r in history][-2:]
+        alternatives=[t for t in goal if t['id'] not in recent_ids]
+        ready=alternatives or goal
+    coverage=[] if goal else [t for t in ready if t.get('selection_policy')=='coverage_before_repetition']
     if coverage:
         # Research allocation policy only: no launch count, permission or gate changes.
         # Unattempted independent product tasks precede repeating one small part.
@@ -39,6 +45,10 @@ def main():
     independent=dict(actual,id='new_system',track='B',priority=50,selection_policy='coverage_before_repetition')
     assert select([covered,independent],[dict(task='repeated_part',track='C')])['id']=='new_system';controls.append('unattempted standard-product work before repeated small-part cycle')
     assert select([covered,dict(independent,prerequisites=['missing'])],[dict(task='repeated_part',track='C')])['id']=='repeated_part';controls.append('coverage does not waive real prerequisites')
+    primary=dict(actual,id='primary',priority=-1000,selection_policy='goal_product_continuation')
+    assert select([covered,primary],[])['id']=='primary';controls.append('authorized continuous primary outranks old one-pass campaign')
+    second=dict(primary,id='primary_load',track='B',priority=-999)
+    assert select([primary,second],[dict(task='primary',track='C')])['id']=='primary_load';controls.append('primary product load work not starved by repeated CAD edits')
     result=dict(status='PASS',scope='TRACK SELECTION CONTROLS ONLY, NOT RELEASE',next=choice,controls=controls,queue=ref(out/'queue_snapshot.json'),history=ref(out/'history_snapshot.json'),producer=ref(out/'producer.py'),automatic_sessions_launched=0,budget_renewed=False)
     dump(out/'summary.json',result);print(json.dumps(dict(status=result['status'],next_task=choice['id'] if choice else None,track=choice['track'] if choice else None,automatic_sessions_launched=0),indent=2))
 if __name__=='__main__':main()

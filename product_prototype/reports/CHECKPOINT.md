@@ -1,4 +1,18 @@
-# Batch6 cycle9 — Idler-after sequence rejected; release blocked (2026-11-27)
+# Latest operator state — goal-based product continuation
+
+User approved replacing fixed total session/time completion limits with actual
+integrated goal/safe-pause policy. Prior batch6 saved10 through ec115fa; all old
+data/criteria remain. See stage12_integrated/CHECKPOINT.md, GOAL_AUTHORIZATION_
+20261127.json and reports/GOAL_ENGINEERING_BRIEF.md for actual new primary task.
+New --until-release mode tested independently with isolated fake workers/gates;
+12 software control groups PASS, not physical approval. Existing Supervisor
+and physics gates unchanged. Actual new execution authority is service
+regrip-stage12-goal-20261127-7 and runtime/goal_authorized_20261127_7/status.json.
+No activity is implied by this checkpoint. Current physical release still
+INTEGRATED_NOT_QUALIFIED; first task is one real minimum Stage2 load module,
+not the failed AO vertical assembly or another generic coupon.
+
+# Historical Batch6 cycle9 — Idler-after sequence rejected; release blocked
 
 Started at1f00595abcf73b690dbdd192e520799a49339002. Selected READY
 batch6_independent_integrated_release_and_repairs. One actual analysis cycle:

@@ -1482,6 +1482,97 @@
       "result": "validation/stage1/batch6_repair_cycle1/summary.json",
       "reason": "Existing unchanged release gates reject full qualification. Actual Idler-after assembly order still collides with Palm at six Finger poses; no direct safe same-revision release repair demonstrated.",
       "next": "Reject further vertical height scans. Distinct lateral Finger insertion or independently validated split assembly/Palm architecture is needed; preserve actual Idler-after witnesses. System demand/material/load-chain/energy gates remain blocked; Stage3 not authorized."
+    },
+    {
+      "id": "goal_primary_module",
+      "track": "C",
+      "priority": -1000,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Implement one separate minimal manufacturable Motor/Drum/Tendon/Finger/Root/Ground Stage2 product with feasible operating-load contract and actual side/split assembly; then improve this primary rather than another AO micro-fix",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "cad_model_match",
+        "continuous_load_path",
+        "changed_stage1_revalidation"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
+      "system_gate_contribution": 6
+    },
+    {
+      "id": "goal_primary_operating_window",
+      "track": "B",
+      "priority": -999,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Verify actual selected primary Finger geometry/contact/friction/deflection,normal force-stroke/torque/speed and structural response; carry evidence into the same actual module",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "tendon_force_stroke",
+        "finger_structure",
+        "root_palm_strength",
+        "static_dynamic_consistency",
+        "numerical_convergence"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
+      "system_gate_contribution": 6
+    },
+    {
+      "id": "goal_primary_protected_drive",
+      "track": "A",
+      "priority": -998,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Complete actual minimal drive,standard connection and bounded maximum torque/energy/strain/retention through the primary product, not ideal-delay/coupon results",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "motor_running_torque_speed",
+        "overload_protection",
+        "motor_alignment_reactions",
+        "coupling_capacity",
+        "housing_shoulder_retention"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
+      "system_gate_contribution": 6
     }
   ],
   "policy": {
@@ -1492,11 +1583,11 @@
     "current_session_work_authorized": true
   },
   "active_authorization": {
-    "path": "product_prototype/stage12_integrated/AUTOMATION_AUTHORIZATION_20261127_6.json",
-    "SHA256": "9444b62ae2dc634a44a080c527f782e78e03d58661a943d796457f8a3276a9ab"
+    "path": "product_prototype/stage12_integrated/GOAL_AUTHORIZATION_20261127.json",
+    "SHA256": "c3c4b169dba8feec6b5500b94b87e90bb21993aa50e3624b733ab3b674d4e122"
   },
   "execution_brief": {
-    "path": "product_prototype/stage12_integrated/reports/STANDARD_COMPONENT_BRIEF_20261127_6.md",
-    "SHA256": "60216046eb9da588ea7737e1854a1e26f6cc30761fe5472e516d1a95a754f9aa"
+    "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+    "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
   }
 }

@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "test_only": true,
+  "scope": "ISOLATED MANAGER SOFTWARE ONLY: fake workers/fake release gates; no ReGrip physics PASS",
+  "controls": [
+    {
+      "case": "normal",
+      "expected_reason": "INTEGRATED_RELEASE_GATE_PASS",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "timeout",
+      "expected_reason": "INTEGRATED_RELEASE_GATE_PASS",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "quota",
+      "expected_reason": "EXTERNAL_ACCOUNT_OR_SERVICE_LIMIT",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "bad_hash",
+      "expected_reason": "SUPERVISED_SAVE_OR_PROGRESS_REJECTED",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "mutate",
+      "expected_reason": "TRUSTED_SOURCE_CHANGED",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "stagnate",
+      "expected_reason": "STAGNATION_AFTER_STRATEGY_REVIEW",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "stop",
+      "expected_reason": "USER_STOP",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "resume",
+      "expected_reason": "EXTERNAL_ACCOUNT_OR_SERVICE_LIMIT",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "real_error_events_nonfinite_and_prose_controls",
+      "passed": true
+    }
+  ],
+  "actual_external_Codex_sessions": 0,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/goal_manager_controls1/producer.py",
+    "SHA256": "e4581171d7a03dedd3c31c8db3bea35f3fa95215dbe0dbb861295ccd876f0e36"
+  },
+  "goal_manager": {
+    "path": "product_prototype/stage12_integrated/scripts/goal_session_manager.py",
+    "SHA256": "ca4043ea890e8c6ff4dd5766d7c11403c5e4a3df32d22d20a15f20810c5a9947"
+  },
+  "policy": {
+    "path": "product_prototype/stage12_integrated/scripts/goal_manager_policy.py",
+    "SHA256": "2d908179c635a23b422a581a434e5a08b74ea5f75b04bff53c9a38ff6f7e695e"
+  },
+  "unchanged_supervisor": {
+    "path": "product_prototype/stage12_integrated/scripts/supervised_save.py",
+    "SHA256": "12a4d14a6825d7b771754979a8c6bfb994979b983cc61caf012e57cc333608f8"
+  }
+}

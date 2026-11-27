@@ -1,4 +1,32 @@
-# Batch6 cycle9 — Idler-after sequence rejected; release blocked (2026-11-27)
+# LATEST: GOAL-BASED PRIMARY MINIMUM PRODUCT (2026-11-27)
+
+User explicitly removed fixed total sessions/cumulative research completion
+limits. New operator-owned --until-release mode, GOAL_AUTHORIZATION_20261127.json.
+Read reports/GOAL_ENGINEERING_BRIEF.md FIRST. This supersedes old batch6 one-pass
+selection and old budget-exhaustion advice. Prior runtime/results remain
+immutable; batch6 completed10 and saved through ec115fa, not a product release.
+
+First implement ONE separate minimal manufacturable Motor→Drum→Tendon→Finger→
+Root→Ground Stage2 primary, with actual feasible load/routing/assembly. AO254
+failed top-entry is historical input; do not repeat height/order scans or
+keep adding special Idler hardware. AX root and source-backed standard parts
+may be reused only within their proven scope. Choose and finish one coherent
+primary CAD/revision through failures, not a new isolated coupon every cycle.
+
+Manager pre-audits actual independent release every cycle and repeats final
+audit. Individual Worker3600seconds/analysis4GiB420s remain. Trusted operator
+sources are pinned; workers must not edit manager/policy/controls/gates/security.
+Supervisor is unchanged. Exact manifest now ALSO requires engineering_progress
+fields per manager prompt. No Git writes by worker. Real failed design evidence
+can continue; account/system/integrity/save/stagnation issues safely pause.
+No total-count success/fixed budget renewal. No paid/API-provider fallback,
+credit purchase, permission bypass, hardware, SDK/push/criteria changes.
+
+Actual state: runtime/goal_authorized_20261127_7/status.json and ledger.json,
+service regrip-stage12-goal-20261127-7.service. These docs are not proof of launch.
+STOP via shared runtime/STOP or systemctl stop. Do not launch another manager.
+
+# Historical Batch6 cycle9 — Idler-after sequence rejected; release blocked
 
 Started at1f00595abcf73b690dbdd192e520799a49339002. Selected READY
 batch6_independent_integrated_release_and_repairs. One actual analysis cycle:

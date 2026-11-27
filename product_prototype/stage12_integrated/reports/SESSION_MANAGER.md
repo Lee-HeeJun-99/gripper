@@ -1,5 +1,65 @@
 # External manager — execution authorized2026-11-26
 
+## LATEST: authorized goal-based policy,2026-11-27
+
+The latest user explicitly removed fixed total sessions/cumulative research
+completion time. `session_manager.py --until-release` selects a new operator-
+owned goal loop; old bounded mode and all consumed batch records are retained.
+No `--max-runs` limit applies in goal mode. No cumulative RuntimeMaxSec is
+used for the goal service. Worker3600seconds, analysis4GiB/420seconds, service
+8GiB/CPU200%/Tasks256, Restart=no and all existing STOP/permission/data controls
+remain. This is NOT unlimited paid spending or guaranteed account availability.
+
+Actual service: regrip-stage12-goal-20261127-7.service. Runtime:
+`runtime/goal_authorized_20261127_7/`. Current state/cumulative sessions/time/
+account usage are in status.json and ledger.json; per-cycle results and exact
+resume state remain separate immutable local runtime records. Old timing that
+was not recorded remains unknown rather than being invented. CLI token counts
+are recorded where available, not treated as a monetary cap. Current ChatGPT
+login only; API-key environment, auth/provider or service-limit issues pause,
+never switch to a paid provider or purchase/enable credits. Existing settings
+are not changed, credentials are not opened. No promise beyond actual host,
+account and service limits is made.
+
+The goal loop runs the existing independent integrated gate before EACH worker,
+repeats a PASS before successful completion, and never trusts final prose or
+cookie-cutter coupon metadata. `engineering_progress` supplements—not replaces—
+the unchanged Supervisor exact-files/hash/allowlist/old-untracked/immutable
+data/size/index guard. Real numerical product output or changed CAD is required.
+NaN/prose-only/stale-candidate/repeated numerical churn is rejected or counted
+as stagnation. Validated failed physical designs may continue; CLI/save/source/
+Git failures are distinct. Two no-progress cycles request a strategy change;
+four without unique engineering evidence pause for stagnation review.
+
+On timeout all owned process-group descendants are reaped. One bounded300s
+save-only recovery may complete the exact original manifest/state. Only a
+valid Supervisor save permits the next research worker; otherwise pause with
+all partial data and exact dirty/RUNNING/resume information, no reset/stash.
+Clean worker execution failures may receive one strategy/recovery opportunity;
+repeated execution failures pause. STOP and actual quota limits pause immediately.
+
+Trusted entry/goal/policy/control/gate/helper/criteria sources are pinned and
+excluded from worker saves; a research worker cannot change its own authority.
+Existing supervised_save.py and physical release criteria are unchanged.
+Software tests goal_manager_controls2 use real isolated Git/Supervisor with
+fake workers/fake gates:11 cycles beyond old10, failed designs saved/continue,
+timeout recovery, resume counters, STOP before/during worker, quota pause,
+wrong hash/source mutation/prose/NaN rejection, repeated output and execution
+failure pause, unknown gate rejection.12 software control groups PASS; no
+account calls or ReGrip physics release. Tested sources are frozen alongside
+results; goal_manager_controls1 historical source archive is retained.
+
+Launch (operator only):
+`python3 product_prototype/stage12_integrated/scripts/session_manager.py --execute --until-release --per-run-seconds 3600 --tag goal_authorized_20261127_7`
+
+Stop: `systemctl --user stop regrip-stage12-goal-20261127-7.service` or persistent
+shared runtime/STOP. Do not clear STOP automatically. After a documented safe
+pause, inspect runtime/resume.json and actual Git/process/lock/source state;
+`--resume` retains cumulative accounting and rejects source mismatch/dirty
+state. No auto restart on security/system failures or after host reboot is
+claimed. Goal-engineering brief now prioritizes one actual minimum primary
+Stage2 product separate from failed AO, not another finite one-pass campaign.
+
 ## Latest allocation6 — standard components / coverage first
 
 User explicitly authorized a NEW10x3600second allocation on2026-11-27.

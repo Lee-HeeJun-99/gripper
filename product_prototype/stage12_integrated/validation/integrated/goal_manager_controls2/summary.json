@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "test_only": true,
+  "scope": "ISOLATED MANAGER SOFTWARE ONLY: fake workers/fake release gates; no ReGrip physics PASS",
+  "controls": [
+    {
+      "case": "normal",
+      "expected_reason": "INTEGRATED_RELEASE_GATE_PASS",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "timeout",
+      "expected_reason": "INTEGRATED_RELEASE_GATE_PASS",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "quota",
+      "expected_reason": "EXTERNAL_ACCOUNT_OR_SERVICE_LIMIT",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "bad_hash",
+      "expected_reason": "SUPERVISED_SAVE_OR_PROGRESS_REJECTED",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "mutate",
+      "expected_reason": "TRUSTED_SOURCE_CHANGED",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "stagnate",
+      "expected_reason": "STAGNATION_AFTER_STRATEGY_REVIEW",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "stop",
+      "expected_reason": "USER_STOP",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "resume",
+      "expected_reason": "EXTERNAL_ACCOUNT_OR_SERVICE_LIMIT",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "live_stop",
+      "expected_reason": "USER_STOP",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "clean_failure",
+      "expected_reason": "REPEATED_WORKER_EXECUTION_FAILURE",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "bad_gate",
+      "expected_reason": "EXECUTION_OR_AUDIT_FAILURE",
+      "passed": true,
+      "real_Codex_calls": 0
+    },
+    {
+      "case": "real_error_events_nonfinite_and_prose_controls",
+      "passed": true
+    }
+  ],
+  "actual_external_Codex_sessions": 0,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/goal_manager_controls2/producer.py",
+    "SHA256": "ee9261294671ac3e9ca922121ac9260485caeed590d29199a568c7cdf5d6bcfa"
+  },
+  "goal_manager": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/goal_manager_controls2/tested_goal_session_manager.py",
+    "SHA256": "1448432c5557579b44b4e53d78a71135b7737d76c4c9cc351604d2ede956a088"
+  },
+  "policy": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/goal_manager_controls2/tested_goal_manager_policy.py",
+    "SHA256": "2d908179c635a23b422a581a434e5a08b74ea5f75b04bff53c9a38ff6f7e695e"
+  },
+  "unchanged_supervisor": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/goal_manager_controls2/tested_supervised_save.py",
+    "SHA256": "12a4d14a6825d7b771754979a8c6bfb994979b983cc61caf012e57cc333608f8"
+  },
+  "entry_point": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/goal_manager_controls2/tested_session_manager.py",
+    "SHA256": "f9df7eef738ff189543d21a03605b3f3e5894b11a3353f98b264c02ea68b1398"
+  }
+}

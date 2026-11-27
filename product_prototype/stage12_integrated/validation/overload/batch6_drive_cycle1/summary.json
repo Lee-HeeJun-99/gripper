@@ -1,0 +1,99 @@
+{
+  "status": "ACTUAL_DRIVE_ENERGY_ANALYSIS_MESH_FAIL_PROTECTION_BLOCKED",
+  "task": "batch6_protected_standard_drive",
+  "starting_HEAD": "bb2633c799abc1abfadf1605ee63f8d2120946cb",
+  "analysis": {
+    "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_inertia3/summary.json",
+    "SHA256": "c7dbc6cec7a236d348b9ce093743582f85469efbed4a9504cce01b65ad470e81"
+  },
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_verify1/summary.json",
+    "SHA256": "ef52dd89c032e819618305b6c70e8d450f8377aa3ddc798352f342a9b08793bb"
+  },
+  "release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_drive_release1/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/runner.py",
+    "SHA256": "b7c9d4a0479d9255e1e8de3c65155aa4a57d3ade685ce0ec1ace05660d69bb0a"
+  },
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/analysis_execution.json",
+      "SHA256": "2dbf25dfc279399ddd7f135c9658917edc0ab7aff43e6aa490a85d2d67cd1dd0"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/analysis2_execution.json",
+      "SHA256": "c09bbbe91001df3ee64cb4c9ae7b0d7ddaa0307a965d0d2d995ec503d3e788e9"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/analysis3_execution.json",
+      "SHA256": "a560f5a85e673c49a7cb1a086d394e41d561e4599ad3886629699abf708a53da"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/release_execution.json",
+      "SHA256": "62fd9d9002840c088c56c059b756e71b0b0b7fca94ee39c5f348130479cefdb7"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/verify_execution.json",
+      "SHA256": "e0b7918ff041ddf2c40ed2fca7128fa84dac4b3b04fb380907e5f4a184a909a7"
+    }
+  ],
+  "failures": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_inertia1/summary.json",
+      "SHA256": "113f10b05bc2801b058f22ddce0a946303ffa1b9be4029e8164d0b80a3af562d"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_inertia2/summary.json",
+      "SHA256": "cf2d1a3bac6382505a4970cf996379cdad3027312a344a5e8e7257946754b3f3"
+    }
+  ],
+  "new_evidence": "Seven actual AV STEP/STL downstream rotating parts integrated about installed F0 shaft; exact closed-form spool cross-check, independent mesh inertia and four conditional blocked-tendon ODE/analytic energy comparisons",
+  "conditional_axis_inertia_kg_m2": 4.047937815897307e-07,
+  "mesh_verification": "FAIL",
+  "mesh_failures": [
+    {
+      "part_ID": "F0_STOCK_HUB",
+      "relative_error": 0.001949278004934163
+    },
+    {
+      "part_ID": "F0_SPOOL",
+      "relative_error": 0.0019121940391696457
+    }
+  ],
+  "conditional_peak_N": [
+    22.058336440374774,
+    22.087740066611335,
+    22.058336440374774,
+    22.347206514839403
+  ],
+  "changed_part_IDs": [],
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "CAD_BOM_changed": false,
+  "structural_issue_solved": false,
+  "reporting_correction": "Archived analysis3 top-level VERIFIED is overbroad; explicit mesh FAIL governs. Current script label corrected without rerunning or changing archived evidence.",
+  "remaining_task_gate_ids": [
+    "overload_protection",
+    "motor_running_torque_speed",
+    "housing_shoulder_retention",
+    "motor_alignment_reactions"
+  ],
+  "blockers": [
+    "No qualified actual demand/allowable or motor maximum torque curve",
+    "Actual co-rotation/density assumptions and incomplete rotating chain prevent inertia bound",
+    "Mesh inertia .1949/.1912 percent exceeds declared .1 percent; analytic spool alone not assembly certification",
+    "No installed rated limiter, delay/continued work/drag/fault bounds or full ground support"
+  ],
+  "decision": "Do not fabricate limiter selection or guaranteed force bound. Proceed independent actual Stage2 Finger specimen coverage next; carry this energy counterexample into protection sizing.",
+  "whole_system_release": false,
+  "actual_capacity_qualified": false,
+  "adopted": false,
+  "hardware_status": "NOT_MEASURED",
+  "SOFA_executed": false,
+  "owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "new_commit_SHA": null
+}

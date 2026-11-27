@@ -1200,7 +1200,7 @@
       "id": "batch6_protected_standard_drive",
       "track": "A",
       "priority": -196,
-      "status": "READY",
+      "status": "BLOCKED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1235,8 +1235,15 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:21:57.100110+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/overload/batch6_drive_cycle1/summary.json",
+      "last_cycle_result": {
+        "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/summary.json",
+        "SHA256": "06417e73d74a40c43c30a3cf1ca092350da34d58b8a912966501dfe0c18505ac"
+      },
+      "reason": "Actual installed-axis inertia/conditional energy analyzed; independent mesh FAIL and missing demand/material/rated protection prevent safe protected-drive qualification.",
+      "unblock": "Qualified demand/allowable, complete inertia/material bounds and source-backed installed protection transient/fault envelope; preserve existing .1% mesh test FAIL"
     },
     {
       "id": "batch6_actual_stage2_finger_load_specimen",

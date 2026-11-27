@@ -1,0 +1,35 @@
+{
+  "status": "ANALYTIC_SPOOL_AND_SCENARIO_ENERGY_PASS_MESH_FAIL_RETAINED",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_inertia3/summary.json",
+    "SHA256": "c7dbc6cec7a236d348b9ce093743582f85469efbed4a9504cce01b65ad470e81"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/overload/batch6_drive_verify1/producer.py",
+    "SHA256": "6e546e24b5de056ff5eb216e461f0cd4feae467e10e7063915bac982b20d2bab"
+  },
+  "spool_closed_form_mm5": 52697.30867018917,
+  "spool_relative_error": 3.419486915845482e-14,
+  "energy_residuals_J": [
+    0.0,
+    1.4446993948369347e-17,
+    0.0,
+    5.692061405548898e-19
+  ],
+  "input_hashes_match": true,
+  "perturbed_inertia_rejected": true,
+  "mesh_status": "FAIL",
+  "mesh_failures": [
+    {
+      "part_ID": "F0_STOCK_HUB",
+      "relative_error": 0.001949278004934163
+    },
+    {
+      "part_ID": "F0_SPOOL",
+      "relative_error": 0.0019121940391696457
+    }
+  ],
+  "source_status_correction": "Source top-level VERIFIED label is overbroad: its explicit mesh_inertia_verification is FAIL; no overall inertia certification",
+  "actual_capacity_qualified": false,
+  "whole_system_release": false
+}

@@ -1,3 +1,35 @@
+# Batch6 cycle4 — actual AV drive inertia/energy; protection BLOCKED (2026-11-27)
+
+Started at bb2633c799abc1abfadf1605ee63f8d2120946cb; selected
+batch6_protected_standard_drive. One actual analysis cycle, no CAD/BOM adoption.
+Result: product_prototype/stage12_integrated/validation/overload/batch6_drive_cycle1/summary.json.
+Seven actual F0 AV spool/hub/screw STEP/STL bodies evaluated about installed
+shaft axis. Conditional typical densities give J=4.047937816e-7 kg m2;
+this omits motor rotor/gears/wire/Finger and is NOT a complete inertia bound.
+Independent analytic spool integral agrees within1e-8. Independent tetrahedral
+STL inertia FAIL: hub .194928%, spool .191219% against declared .1%.
+No tolerance relaxed. Archived analysis3 top-level VERIFIED label is overbroad;
+its explicit mesh FAIL governs; verifier and cycle summary correct that claim.
+Current script reporting label corrected; archived producer/results preserved.
+
+Four conditional blocked-tendon cases: stiffness1000/10000N/m, speed0/310rpm,
+constant extrapolated stall torque scenario. First peaks22.0583..22.3472N
+versus14.81894N static torque equivalent. ODE refinements, analytic turning
+energy and residual checks pass; these deliberately independent stall/no-load
+scenarios are NOT simultaneous motor operating points or guaranteed maxima.
+No physical protection, actual structural allowable or system energy certificate.
+No stock limiter invented, no custom parts/processes removed. AO current/AA
+adopted and all prior CAD/BOM/failures remain unchanged.
+
+First TypeError(exit1) and mesh assertion(exit1) preserved with producers/logs;
+analysis3/independent verifier exit0 do NOT override mesh FAIL. Release exit2
+remains INTEGRATED_NOT_QUALIFIED. Five children completed/reaped,4GiB/420s;
+no timeout/SOFA/subagents/Stage3/SDK/criteria/manager changes. No RUNNING tasks.
+Protected-drive task BLOCKED on actual demand/allowable, complete inertia and
+rated installed transient/fault bounds. Independent product coverage continues
+from regenerated NEXT_TASK. Supervisor local save PENDING; no git add/commit
+or new SHA claimed. Exact save_request4.json awaits supervisor validation.
+
 # Batch6 cycle3 — direct Palm plate rejected by retained Idler fasteners (2026-11-27)
 
 Started at af41aca0c845e5f199d39594a7e6c9d1a78154dd. Selected exact task

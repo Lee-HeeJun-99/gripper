@@ -1,0 +1,106 @@
+{
+  "status": "ALL_PRIOR_TRIALS_PRESERVED",
+  "designs": [
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open1/summary.json",
+        "SHA256": "54f0d9787716103d72fc754a0897eafe4c3f9080434a66affd0cf198fc82d89e"
+      },
+      "status": "PRIMARY_NOMINAL_INTERFERENCE_FAIL",
+      "disposition": "Actual spool/finite cable overlap .5430624812mm3 and cap/back-wall overlap16.2mm3"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open2/summary.json",
+        "SHA256": "e3803b8e10131768de31cd3acce75e331db35a9be8d0d5ce04daba67566ec005"
+      },
+      "status": "PRIMARY_NOMINAL_INTERFERENCE_FAIL",
+      "disposition": "No nominal overlap, but spool BRep invalid after groove/tail Boolean"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open3/summary.json",
+        "SHA256": "ab74b7f9d5434a2b702d4296d4f9d3cccbf13bf4dd56e990764bccabf4520ba6"
+      },
+      "status": "PRIMARY_NOMINAL_GEOMETRY_SCREEN_PASS",
+      "disposition": "Nominal65part pass only, then service aperture added"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open4/summary.json",
+        "SHA256": "f7fa512a234d2d745f54eb7e2bb6d3f6ed6ddfd85ab32bbb484f839aa3ba1703"
+      },
+      "status": "PRIMARY_NOMINAL_GEOMETRY_SCREEN_PASS",
+      "disposition": "Nominal65part pass; independent ordered assembly later rejects RF bolt/head/tool against transverse root clamp screws"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open5/summary.json",
+        "SHA256": "834e351c73ad8a715a13f9675331788b9c53cfa7a889b4b74016807ac264387d"
+      },
+      "status": "PRIMARY_NOMINAL_GEOMETRY_SCREEN_PASS",
+      "disposition": "Relocated RF mount/root tabs clear; rejected sharp factory-tail anchor strategy superseded by source tangent nipple"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open6/summary.json",
+        "SHA256": "0fff5c17f111454ee3858daf0f1b328e4f5de9920bf6cea155fad60759f1af6e"
+      },
+      "status": "PRIMARY_NOMINAL_INTERFERENCE_FAIL",
+      "disposition": "Reused tangent-nipple drum center adapter disconnected into2solids; no nominal collision"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open7/summary.json",
+        "SHA256": "3c5b1dc70cb736ef41d44d1c94593637994f7e1e6dd2b4662b39a01972815f94"
+      },
+      "status": "PRIMARY_NOMINAL_GEOMETRY_SCREEN_PASS",
+      "disposition": "69part nominal/assembly pass BUT counterclockwise path has a reversal/cusp: independent virtual-work derivative FAIL .284850relative and full cable volume FAIL1.57821%; old31.221mm stroke/load contract INVALID"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open8/summary.json",
+        "SHA256": "e1331e2f8b4cbddddeb0e33d80bc91171604251cbe51ca87f5ae2eb2f1120b3d"
+      },
+      "status": "PRIMARY_NOMINAL_INTERFERENCE_FAIL",
+      "disposition": "Correct clockwise path but half-turn nipple puts it on outgoing arc; actual nipple/cable overlap .8359195986mm3"
+    },
+    {
+      "design": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+        "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+      },
+      "status": "PRIMARY_NOMINAL_GEOMETRY_SCREEN_PASS",
+      "disposition": "Current corrected C1 tangent factory termination and clockwise wrap; independent actual CAD/loads pass bounded scopes"
+    }
+  ],
+  "validation4": {
+    "status": "SERIALIZATION_FAILURE_EXIT1",
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle1/validate4.log",
+      "SHA256": "d76dfa89880ff588895a2a7bcd2904591b65176fb302d9756658abacc850cba9"
+    },
+    "partial_directory": "validation/integrated/primaryP1_validation4",
+    "note": "numpy bool serialization failed after assembly computation; original zero-byte loads.json preserved exactly, not a valid load result"
+  },
+  "validation5": {
+    "status": "ACTUAL_RF_ASSEMBLY_AND_TOOL_FAIL",
+    "summary": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_validation5/summary.json",
+      "SHA256": "3d00cd007ef21455e471341d2954bcba3a31b361a27befdb003b5524916dcf54"
+    }
+  },
+  "verify7": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_verify7/summary.json",
+    "SHA256": "37f440ed5f466113d2db5b0c08f65604c5b58676fbb19b7b0bf944a8afc7607e"
+  },
+  "motion7": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_motion7/summary.json",
+    "SHA256": "889dc8ba01f6b7ebf07f5e90bf544e19fa43e5566ac3e9b40198f64b93a5adde"
+  },
+  "frame_failure": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_frame_verify1/summary.json",
+    "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
+  },
+  "no_old_evidence_modified": true
+}

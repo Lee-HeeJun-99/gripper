@@ -1,0 +1,90 @@
+{
+  "status": "PRIMARY_PRODUCT_VALIDATION_FAIL",
+  "task_id": "goal_primary_module",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open4/summary.json",
+    "SHA256": "f7fa512a234d2d745f54eb7e2bb6d3f6ed6ddfd85ab32bbb484f839aa3ba1703"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_validation5/producer.py",
+    "SHA256": "76fdee42df6deea811979ae2a33d949b9e7665d86429735e5f75a3d14135053a"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_validation5/inputs.json",
+    "SHA256": "52e9e1cdcb6c3ae6518e2423c923ca58bc3e79b3763e3877ad266bfdf6351feb"
+  },
+  "parts": 65,
+  "checks": {
+    "all_reimported_single_valid_solids": true,
+    "nominal_final_no_volume_interference": true,
+    "sampled_ordered_assembly_clear": false,
+    "RF_tool_approach_clear": false,
+    "five_pose_straight_route_clear": true,
+    "positive_inward_stroke_all61": true,
+    "derivative_refinement": true,
+    "tendon_loop_moment_balance": true,
+    "finite_positive_conditional_demand": true
+  },
+  "invalid_solids": [],
+  "final_interferences": [],
+  "final_exact_pairs": 154,
+  "assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_validation5/assembly.json",
+    "SHA256": "b608faf4412248a621ad98bd412f0195f19d25321198d79570eebbff7efdac67"
+  },
+  "loads": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_validation5/loads.json",
+    "SHA256": "94415cbd5a834cc24fca4ec46e5efcedcfd4afcf1c3fe0088b21942bec081da2"
+  },
+  "route_motion": [
+    {
+      "angle_deg": 0,
+      "straight_tendon_hits": []
+    },
+    {
+      "angle_deg": 15,
+      "straight_tendon_hits": []
+    },
+    {
+      "angle_deg": 30,
+      "straight_tendon_hits": []
+    },
+    {
+      "angle_deg": 45,
+      "straight_tendon_hits": []
+    },
+    {
+      "angle_deg": 60,
+      "straight_tendon_hits": []
+    }
+  ],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "capacity_qualified": false,
+  "SOFA_runs": 0,
+  "next_mechanism": "Complete same-primary cable anchor threading/bend/retention and motor axial-support interfaces; actual coupled finite Finger demand and connector reactions before strength/protection closure. Preserve conditional motor current failures."
+}

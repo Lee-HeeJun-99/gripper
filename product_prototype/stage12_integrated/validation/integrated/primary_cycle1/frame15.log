@@ -1,0 +1,83 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{
+  "status": "CONDITIONAL_PRIMARY_FRAME_REFERENCE_PASS",
+  "scope": "Actual entire primary frame. Two actual RF nut inscribed annuli on underside z=-12 carry total+1N. Four actual M5 contact annuli on frame z40 constrained in all translations under assumed rigid preloaded/no-slip Ground connection. Conditional interface reference, not solved connectors or complete product.",
+  "checks": {
+    "force": true,
+    "moment": true,
+    "energy": true,
+    "residual": true,
+    "quality": true,
+    "volume": true,
+    "positive_signed_volume_ratio": true
+  },
+  "h_mm": 1.5,
+  "element": "P1 tetrahedron, degree2 quadrature",
+  "assembly_element_block": 8000,
+  "source": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/OPEN_FRAME.step",
+    "SHA256": "0950f9760d73bb8ab39e16fe37ab891a9815a85ea332e1c8a772a8bd7d6f6e37"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_frame15/producer.py",
+    "SHA256": "3f860f909c58c0710f4cbcad80b57d303e23c77b1a6964e4166d155f734ece8c"
+  },
+  "gmsh_binary": {
+    "SHA256": "9db3090d3b720c57b76bcbfa01d13854823ae2698c91343c20bdd4c2b81f6317",
+    "path": "/tmp/regrip_stage2_fem/libgmsh.so.4.15"
+  },
+  "software": {
+    "gmsh": "4.15.2",
+    "skfem": "12.0.2",
+    "scipy": "1.15.3",
+    "numpy": "2.2.6"
+  },
+  "material": {
+    "E_Pa": 70000000000.0,
+    "nu": 0.33,
+    "basis": "ASSUMED sensitivity, not certified grade"
+  },
+  "input_force_N": [
+    0,
+    0,
+    1
+  ],
+  "compliance_m_N": 3.957357268209654e-08,
+  "energy_J": 1.9786786341063052e-08,
+  "force_balance_N": [
+    8.35336786875736e-13,
+    3.015476172030205e-14,
+    -2.4064477876131182e-14
+  ],
+  "moment_balance_Nm": [
+    -4.811803668251705e-16,
+    -4.3805143742604735e-15,
+    7.029770304078565e-15
+  ],
+  "linear_residual": 1.1010527485765099e-11,
+  "mesh_volume_m3": 5.0685189132567125e-05,
+  "min_quality": 0.2107968728516047,
+  "minimum_signed_volume_ratio": 0.9999991497796783,
+  "peak_unsmoothed_vm_Pa": 65675.51527306496,
+  "nodes": 30310,
+  "elements": 124820,
+  "DOF": 90930,
+  "elapsed_s": 19.638894768897444,
+  "whole_system_release": false,
+  "loaded_area_mm2": 29.358183347796558,
+  "support_area_mm2": 131.94689145077137,
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "selected_task_id": "goal_primary_module",
+  "verification": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_frame15/verification.npz",
+    "SHA256": "6f8c21367a8bcd54b4a69b4325c40baf7d2f6139b3abdb82b1ec31d9f8281f55"
+  }
+}

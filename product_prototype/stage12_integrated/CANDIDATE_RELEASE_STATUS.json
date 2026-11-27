@@ -1,18 +1,34 @@
 {
   "status": "INTEGRATED_NOT_QUALIFIED",
-  "revision": "revAO_root2",
-  "candidate": {
-    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
-    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
-  },
-  "assembly": {
-    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/ASSEMBLY.step",
-    "SHA256": "fcbf9090d0c3b0052d4ade2b4730ec13c3f0ad5d37edd2ba5e9d12faf86d0e39"
-  },
-  "BOM": {
-    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/BOM.json",
-    "SHA256": "57addf45d13bf21872bfe5f60eff05fbf7c09da44e5ef46ec69dcf94075050df"
-  },
+  "revision": "primaryP1_open9",
+  "scope": "Actual latest candidate source/BOM readiness and existing Stage2 gate, NOT a release",
+  "errors": [
+    "stage2: baseline CAD/model hash mismatch",
+    "stage2: cad_model_match: not qualified",
+    "stage2: physical_mass_inertia: not qualified",
+    "stage2: tendon_force_stroke: not qualified",
+    "stage2: motor_running_torque_speed: not qualified",
+    "stage2: shaft_strength: not qualified",
+    "stage2: coupling_capacity: not qualified",
+    "stage2: pin_drum_strength: not qualified",
+    "stage2: bearing_ratings_reactions: not qualified",
+    "stage2: housing_shoulder_retention: not qualified",
+    "stage2: tendon_stiffness_strength: not qualified",
+    "stage2: terminal_retention: not qualified",
+    "stage2: idler_load_drag: not qualified",
+    "stage2: finger_structure: not qualified",
+    "stage2: root_palm_strength: not qualified",
+    "stage2: continuous_load_path: not qualified",
+    "stage2: static_dynamic_consistency: not qualified",
+    "stage2: numerical_convergence: not qualified",
+    "stage2: qualified_worst_case: not qualified",
+    "stage2: changed_stage1_revalidation: not qualified",
+    "stage2: stage3_handoff: not qualified",
+    "stage2: overload_protection: not qualified",
+    "stage2: motor_alignment_reactions: not qualified",
+    "No same-revision full Stage1 release reference; do not reuse RevAA24/24",
+    "No complete candidate-matched SYSTEM_LOAD_TRANSFER evidence references"
+  ],
   "stage2": {
     "status": "STAGE2_NOT_QUALIFIED",
     "analytical_pass": false,
@@ -44,45 +60,28 @@
       "motor_alignment_reactions: not qualified"
     ]
   },
-  "errors": [
-    "stage2: baseline CAD/model hash mismatch",
-    "stage2: cad_model_match: not qualified",
-    "stage2: physical_mass_inertia: not qualified",
-    "stage2: tendon_force_stroke: not qualified",
-    "stage2: motor_running_torque_speed: not qualified",
-    "stage2: shaft_strength: not qualified",
-    "stage2: coupling_capacity: not qualified",
-    "stage2: pin_drum_strength: not qualified",
-    "stage2: bearing_ratings_reactions: not qualified",
-    "stage2: housing_shoulder_retention: not qualified",
-    "stage2: tendon_stiffness_strength: not qualified",
-    "stage2: terminal_retention: not qualified",
-    "stage2: idler_load_drag: not qualified",
-    "stage2: finger_structure: not qualified",
-    "stage2: root_palm_strength: not qualified",
-    "stage2: continuous_load_path: not qualified",
-    "stage2: static_dynamic_consistency: not qualified",
-    "stage2: numerical_convergence: not qualified",
-    "stage2: qualified_worst_case: not qualified",
-    "stage2: changed_stage1_revalidation: not qualified",
-    "stage2: stage3_handoff: not qualified",
-    "stage2: overload_protection: not qualified",
-    "stage2: motor_alignment_reactions: not qualified",
-    "No same-revision full Stage1 release",
-    "No candidate-matched full SYSTEM_LOAD_TRANSFER evidence"
-  ],
-  "scope": "Existing Stage2 gate on actual AO candidate identity; not full integrated release audit",
-  "producer": {
-    "path": "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py",
-    "SHA256": "814cd89e6056124ed270c467c390d64b7afe9d4cd58f2a036582e113f80e4bfb"
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_open9/summary.json",
+    "SHA256": "41bf0e1c8d9049e76e207fc7b21683488172c015704db9bd7bc51a3e41e8c0f0"
+  },
+  "BOM": {
+    "path": "product_prototype/stage12_integrated/bom/primaryP1_identity1/CANDIDATE_BOM.csv",
+    "SHA256": "0d5b0f318b8e1386cad1b665fba5641a9b7895c16765ee1a021955e8fe83445b"
   },
   "criteria": {
     "path": "product_prototype/stage2_load_transfer/models/analytical/criteria.json",
     "SHA256": "f7d850c52e0ec9082f01fb3f81bee979ece9ade4f4b5ce2c274e9c0aa4ed3baa"
   },
-  "current_candidate": {
-    "path": "product_prototype/stage12_integrated/CURRENT_CANDIDATE.json",
-    "SHA256": "8b360f946742f064ed716d5af764ce92efc41a72b25a3ca988f16afb12c478ea"
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_readiness1/producer.py",
+    "SHA256": "cef208da20b6376d9e0f5b1cbc56efdc2fbe456d26ed832019e6dd7cb432beb7"
   },
-  "whole_system_release": false
+  "existing_stage2_gate": {
+    "path": "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py",
+    "SHA256": "814cd89e6056124ed270c467c390d64b7afe9d4cd58f2a036582e113f80e4bfb"
+  },
+  "official_baseline_preserved": true,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "manufacturing_status": "MANUFACTURING_PROCESS_NOT_QUALIFIED",
+  "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED"
 }

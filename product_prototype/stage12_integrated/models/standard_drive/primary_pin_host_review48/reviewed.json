@@ -1,0 +1,112 @@
+{
+  "status": "PUBLIC_SOURCE_REVIEW_NOT_PART_OR_HOST_QUALIFICATION",
+  "date": "2026-11-27",
+  "method": "Read-only web tool;no account/purchase/provider selection",
+  "sources": [
+    {
+      "url": "https://xonstorage.z8.web.core.windows.net/pdf/34376_M1X6BN687_link.pdf",
+      "author": "Bossard via distributor mirror",
+      "reopened": true,
+      "article": "1258346",
+      "facts": {
+        "nominal_d_mm": 2,
+        "L_mm": 20,
+        "shaft_d_minmax_mm": [
+          1.7,
+          1.8
+        ],
+        "eye_width_minmax_mm": [
+          3.2,
+          3.6
+        ],
+        "material": "A2"
+      },
+      "scope": "Envelope/source identity only;no fullprofile/tailforming/strength certificate"
+    },
+    {
+      "url": "https://live-katalog.ganternorm.com/pdf/ganter/en/1024.pdf?dispositiontype=attachment",
+      "author": "Ganter",
+      "opened": true,
+      "item": "GN1024-ST-1.5-E",
+      "facts": {
+        "wire_mm": 1.5,
+        "holding_hole_mm": 2,
+        "bolt_range_mm": [
+          7,
+          12
+        ],
+        "length_mm": 45,
+        "height_mm": 9,
+        "approx_mount_N": 9,
+        "approx_dismount_N": 8
+      },
+      "scope": "Approx installation forces are not retaining load/guaranteed minimum;45mm length materially changes eight installed cages;source exact CAD required"
+    },
+    {
+      "url": "https://bessey.de/en-gb/bessey-tool/products/clamping-tools/machine-table-clamps",
+      "author": "BESSEY",
+      "search_index_read": true,
+      "facts": {
+        "BSG_clamping_force_up_to_N": 12000
+      },
+      "scope": "Up-to clamp force is not guaranteed installed lateral/overturning strength or machine-table anchorage;no exact clamp CAD/host installed"
+    }
+  ],
+  "pin_alternatives": [
+    {
+      "option": "A same eight splitpins with full-section swept legs",
+      "decision": "Implemented custom nominal only;retain source envelope and original2.1mm holes/keys/supports",
+      "blockers": [
+        "Custom head not supplier fullprofile",
+        "Material minimum/forming/springback/removal unqualified"
+      ]
+    },
+    {
+      "option": "B GN1024-1.5-E spring cotter",
+      "decision": "Not adopted this cycle",
+      "blockers": [
+        "45mm length and9mm height require redesigned actual cages and fullassembly",
+        "Catalog mounting/dismounting forces do not certify retainingload",
+        "Supplier fullprofile and minimum retention not obtained"
+      ]
+    },
+    {
+      "option": "C existing reduced0.8mm circular splayed tips",
+      "decision": "Superseded in current P1,history preserved",
+      "blockers": [
+        "Tail section reduction is not a physical continuation of originalhalfround",
+        "No forming or strength evidence"
+      ]
+    }
+  ],
+  "host_alternatives": [
+    {
+      "option": "A edgecapturing hostframe",
+      "decision": "Preferred geometric direction for a finite referencehost;no parts added yet",
+      "blockers": [
+        "Actual host edge thickness/material/support-to-floor boundary unspecified",
+        "Rigidframe grip does not close wholehost freebody;need explicit external support reactions"
+      ]
+    },
+    {
+      "option": "B source-backed machine-table clamp/benchvise",
+      "decision": "Conditional reference option",
+      "blockers": [
+        "Up-to clamping force cannot be installed guaranteed lateral or momentcapacity",
+        "Exact table slots/anchor/floor boundary and clampCAD absent",
+        "Needs positive shear feature or documented friction minimum"
+      ]
+    },
+    {
+      "option": "C structural anchor",
+      "decision": "Not selected",
+      "blockers": [
+        "Host substrate/thickness/edge distances/approved anchor installation absent",
+        "No hardware or purchase authorized",
+        "Do not ground externalbenchplate by declaration"
+      ]
+    }
+  ],
+  "conclusion": "Meaningful digital work continues;not claiming all work externally blocked. Fullprofile/material/load/thread and ultimatehost remain open. No system gate qualification.",
+  "hardware_status": "NOT_MEASURED"
+}

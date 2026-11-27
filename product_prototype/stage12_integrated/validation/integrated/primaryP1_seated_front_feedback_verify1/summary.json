@@ -1,0 +1,89 @@
+{
+  "status": "ACTUAL_P1_SPATIAL_STRING_INDEPENDENT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_front_feedback1/summary.json",
+    "SHA256": "fb01f811bd5a6956717b33d2a52f325b264a39601c525d343322eb98e225cba3"
+  },
+  "state": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_front_feedback1/state.json",
+    "SHA256": "9919bde9b47342eae134b76a0fdd1bc8dbeb18bbb508c0c3b212bf955c350d8c"
+  },
+  "curves": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_front_feedback1/curves.json",
+    "SHA256": "160f341b852dff6c8a7424488fefec0843a6b19669df1e2656cb3260f008617e"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_front_feedback_verify1/verifier.py",
+    "SHA256": "d42d8528905f42ec6ee9fca082e789476241d87ef580dc280b675f06f8c9959a"
+  },
+  "reaction": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_front_feedback_verify1/normal_reaction.json",
+    "SHA256": "fe27dc63b051677ce1c29cb7678770e0b725c55030f6cce2b1ea66f810424e3c"
+  },
+  "checks": {
+    "closed_form_free": true,
+    "independent_wrap_endpoint": true,
+    "independent_wrap_force": true,
+    "wire_force": true,
+    "wire_moment": true,
+    "sampled_offset_clearance": true
+  },
+  "closed_form_error_m": [
+    0.0,
+    1.899869150889799e-14
+  ],
+  "wrap_endpoint_error_m": 2.6229018956769323e-15,
+  "wrap_force_error_N": 6.603606550470431e-13,
+  "wire_equilibrium_N_Nm": [
+    2.799982468104645e-13,
+    -1.0137290312739466e-16,
+    -6.621370118864434e-13,
+    7.084583570834968e-18,
+    5.620504062164855e-15,
+    2.0205970956751335e-18
+  ],
+  "BRep_checks": [
+    {
+      "part": "F0_SPOOL",
+      "samples": 259,
+      "minimum_center_distance_mm": 0.24999999999999162,
+      "nominal_wire_radius_mm": 0.25,
+      "minimum_offset_margin_mm": -8.382183835919932e-15,
+      "inside_centers": 0,
+      "worst_index": 105
+    },
+    {
+      "part": "F0_DRUM_NIPPLE_CAP",
+      "samples": 259,
+      "minimum_center_distance_mm": 4.4944450088664984,
+      "nominal_wire_radius_mm": 0.25,
+      "minimum_offset_margin_mm": 4.2444450088664984,
+      "inside_centers": 0,
+      "worst_index": 202
+    },
+    {
+      "part": "F0_DRUM_FACTORY_NIPPLE",
+      "samples": 259,
+      "minimum_center_distance_mm": 0.25,
+      "nominal_wire_radius_mm": 0.25,
+      "minimum_offset_margin_mm": 0.0,
+      "inside_centers": 0,
+      "worst_index": 0
+    }
+  ],
+  "exit_tangent_change_rad": 0.00015043427278784967,
+  "exit_tangent_change_deg": 0.008619248924863515,
+  "finite_bending_exit_qualified": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Independentarc-lengthODEandclosedformfree-spanverifyfrictionlessinextensiblestringonly.",
+    "BRepdistancesarenecessaryfinitepointsamplesofradiusoffset,notcontinuousswepttubeCCD/tolerances.",
+    "NominalR11.25seatmatchesnippleXZtangent; lateralhelixexitangle/finitewirebend/sourceplayanddiametertolerancesremainunqualified.",
+    "Nofull3Drod/new20elastic/globalenergy/strength/hardware/full3Finger/Stage3certificate."
+  ]
+}

@@ -1,3 +1,90 @@
+# Authoritative cycle11 closeout — same P1 seated22
+
+Corrected actual22 coarse solve:72,216DOF/2,169contactrows/14axialconnectors,
+380.546917999s/4GiB/no timeout. OSQP4000iterationlimit is preserved; separate
+32stepactiveKKT closes all original constraints. Independent tetra force,
+stress/energy/bolt/contact/rigidwork and corrupt-field rejection pass ONLY this
+coarse static model. Framepeak4.202924943MPa is conditional/unconverged,NOTstrength.
+MotorfrontFrame/Capgaps arepositive(.00888802/.00881932mm); zeroYcontactforces
+andnegligiblegauges are a feasiblecoordinatewitness,NOTpositivephysicalretention.
+
+ActualNEW22supportfeedbacknormal0.408610395334N; its localspatialstring/
+planarFinger passesindependentstring/BRepsamples, currenthelixexit0.00861924892486deg.
+OUTERfixedpointFAIL:force8.39065101812e-07N andmoment
+1.4812419877e-05Nm exceed unchanged1e-8N/1e-10Nm.
+ExactsamepartCADbearingareasvscoarse16edgecircles FAIL1% bymax
+2.55046415956%; no automaticfine/gapretry orcriteriarelaxation.
+All22UNQUALIFIED, trustedrelease16NOTQUALIFIED/24errors/exit2, noStage3.
+Nextexactgoal_primary_seated_spatial_support_reclosure usescurrent22field/feedback
+andpose-dependentfullweight/couples; no wrongload1 orunrelatedarchitecture.
+
+22boundedchildrenreaped/848.066491317knownchildseconds/0newtimeouts,
+0RUNNINGqueue/0ownedanalysischildren. Original8,595useruntrackedfiles unchanged;
+sourcepins unchanged; noGitadd/commit. Supervisor exactsave_request10.json pending.
+Detailed authoritative evidence: validation/integrated/primary_cycle11_record2/summary.json,
+models/primary_system_gate_state14.json,reports/primaryP1_seated_spatial_engineering2.md.
+Recorder1 failed before summary creation by expecting absent serialization-failure
+summaries; its identity8/gate13/report are preserved, superseded byidentity9/gate14/report2.
+
+---
+
+# Latest actual P1 seated spool and spatial load continuation — 2026-11-27, Supervisor save pending
+
+Starting HEAD 8e2ae708ee966c991bc6afa523be230fca3e0b79. Selected exact task goal_primary_spatial_front_contact_feedback.
+SAME ONE primaryP1_seated22,78parts; ONLYcustomspoolSTEP/STLchanged,
+77STEPrefsunchanged. R10.93->11.00floor/.90flat/R.10corners restores
+nominal.50wireseatedR11.25/nippleXZtangency. Actual+4.74997425504mm3,
+0originalmaterialremoved. Full78assembly/BOM/identity9;191Booleanpairs clear,
+81moduleposes/303comparisons,aggregate/STL and8source-profileformtoolposes/
+.02deepercutcontrol verified. Newturnedreplacementfromstock,notadditiverepair.
+Unadopted21removed2.683594mm3byreapplyingpocket; preserved,22restoresoriginal.
+FailedAO/adoptedAA andoriginal3Finger/cartridge/jammingextension preserved.
+
+NewactualoldfloorFAIL:11.18seatedcenter creates1.418147833umfinitewire/nipple
+interference and6.395277degexitkink. Preservedspatial_verify1. New22spatial
+massivestring/angularcontactODE +existingplanarRail/PET coupled; fullXYZ
+forces/singlepairedwrenches/fixedglobalXstop/RootfreeY. Independentarc-length
+ODE/closedformfreespan/fullwireforce-moment/259BRepoffsetpoints perpart pass
+boundednominalscope. Exitlateralhelix.00829680779degNOTfinitebendqualification.
+Old.045radial/.155axialplaybounds NOTtransferred; .48...52/sourceplay blocked.
+
+CorrectedFinger normal0.408609912779N,forceequivalent1.65122892712e-15N,
+RootadditionalfreeY0.00388210126465mm. SourceposesSAVED19,notnewfully
+iterated22elastic/full3Drod. FixedANDmovingRootweightsandfullcouples included.
+Initialfinger1doublecounts.0095kgMotor/.093163175NinRootandMotor; independent
+78partcoverage rejects it. Correctedfinger2mass0.989545497627kg,
+allpartmasses/Zgravityagree. OldsolverPASSflags doNOTcertifywrongload.
+GeometryverifierbindscorrectedcurvesbyidenticalSHA,notnewretaggedexperiment.
+
+ActualfrontFrame/CapY=-9.5contacts/newM5footprints14.35core/currenthardware
+massimplemented. Motor-.01mm/Root-.01+slip areexplicitfreeYcoordinatewitnesses,
+NOTphysicalretention. Originalfront_h5_1launchedbeforeloaderrorfoundisINVALID
+forstrength/loadvalidation; actualexecution retained in primary_cycle11.
+Correctedfront2 present/pass=True; actualevidence primary_cycle11_record2/summary.json and report. No fine/gapretry/newarchitecture.
+New22feedbackstatus ACTUAL_P1_NEW22_SUPPORT_FIXED_POINT_FAIL,forceportdifference
+8.390651018124675e-07N,moment1.481241987702435e-05Nm.
+Exactbearingfacevscoarse16edgecirclemaxrelative0.025504641595567312;
+thisFAIL1%isNOTcoveredbyglobaltetvolumePASS. Current32KKTstepscloseonlycoarsediscretization.
+
+All22systemgatesUNQUALIFIED in primary_system_gate_state14; newlysolvedNONE.
+OldFrame52.7693%,Rail1.30247%,Ground/BaseFAILs,oldgapTIMEOUT/twolimitraces
+preserved. Physicalanchor,case/bearings/thread/minima/preload/localtraction,
+finitebend/friction/protector/globalenergy/full3Finger/Stage3 remainblocked.
+
+NEXTexactID goal_primary_seated_spatial_support_reclosure: Continue SAME78partP1_seated22. FIRST closecurrent22support/Fingerportfixedpointusingfront_h5_2andnew22feedback; originalfront1invalidloadispreservedhistoricalfailure,notcurrentinput. ActualMotorfrontFrame/CapY=-9.5 unilateralcontacts, freeYcoordinate witness -.01mm/Rootrelative slip and14.35mmM5core/currentfootprints/weights are implemented. Correctedcoarsefieldnowneedsone-wayfeedbackclosure/fullXYZRootfit/spatialstring/exitloadgeometryandworkbalance; do not promoteone-wayposesorfreeYgaugestopositivephysicalretention. CoarsebearingpatchareascurrentsixteenedgecirclesdifferfromexactCADupto2.55046416%; globaltetvolumePASSisnotfaceconvergence. Noautomaticblanketmesh/fine/gapretry. KeepR11.00floorandmatchednominal.50wire/nipple; independentlyresolve.00862degcurrent22helixexitfinitebending/shaftplay/diametertolerances. Full3DFinger,sourcecase/bearings/thread/minima/physicalBaseanchor/friction/protector/globalenergy/full3Fingerremainblocked.
+
+22boundedanalysischildrenreaped,848.066491knownchildseconds,
+0newtimeouts,0RUNNINGqueue/0ownedanalysischildren atrecording.
+STOPabsent/sourcepinsunchanged. Trustedunchangedrelease16INTEGRATED_NOT_QUALIFIED/24errors/exit2; noP1same-revisionrelease.
+NoGitadd/commit/push/historyrewrite/deletion/
+SDK/manager/security/save/guard/gatesourcechanges/purchase/hardware/credentials/
+paidprovider/subagents/recursivelaunches. Supervisoralone savesverifiedbytes:
+runtime/goal_authorized_20261127_7/save_request10.json. SavePENDING.
+Detailedreports/primaryP1_seated_spatial_engineering2.md andprimary_cycle11_record2/summary.json.
+Earliercheckpoint followsunchanged.
+
+---
+
 # Latest actual P1 internal retention and support feedback — 2026-11-27, Supervisor save pending
 
 Actual starting HEAD a6bcbfbfa2241f9ae3f892ab98da54c43cc6e3e3.

@@ -1,0 +1,74 @@
+{
+  "status": "ACTUAL_PRODUCT_P2_LOCAL_AUDITS_PASS_MESH_FAIL_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fieldaudit57/producer.py",
+    "SHA256": "7b72f138220b5746495c56e02e20a4949c4ddf77ce9807cc0b5c8c730be55ebf"
+  },
+  "moment_adapter": {
+    "path": "product_prototype/stage12_integrated/scripts/primary_quadratic56.py",
+    "SHA256": "f882815767ae5f17e4c17b775dc5fd90d83461ef4faf37efac1fe41e4fd11c78"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_auxiliary57_h8/summary.json",
+        "SHA256": "6827ab9fb3bbee6dfd838663ab1ec4556a9b49fcc5cdce24e093813c0d12f937"
+      },
+      "checks": {
+        "same_actual77parts": true,
+        "allDOF_force": true,
+        "independent_energy": true,
+        "producer_energy": true,
+        "force": true,
+        "moment": true,
+        "perturbed_edge_DOF_rejected": true,
+        "wrong_sign_rejected": true,
+        "rigid_force": true,
+        "rigid_energy": true,
+        "CAD_trace": true,
+        "Green_area": true,
+        "producer_local_checks": true
+      },
+      "h_mm": 8.0,
+      "static_strain_energy_Nmm": 0.002420775494319825,
+      "compliance_mm_N": 7.599375018035036e-06,
+      "root_relative_to_best_fit_actual_foot_mm": [
+        0.00016000175595877084,
+        -5.1786101070938784e-05,
+        -0.0011057763702805952
+      ],
+      "independent_residual_N": 5.005386915764385e-11,
+      "force_balance_N": [
+        0.0,
+        0.0,
+        -5.631281031759361e-14
+      ],
+      "moment_balance_Nm": [
+        4.964292865672349e-16,
+        -5.153558135795322e-15,
+        0.0
+      ],
+      "perturbed_edge_residual_N": 23.937337813436606,
+      "rigid_force_error_N": 1.842495477884362e-11,
+      "rigid_energy_error": 1.1657341758564144e-14,
+      "halfwork_Nmm": 0.0024207754943166675,
+      "raw_peak_VM_MPa": 0.38746758372413825
+    }
+  ],
+  "mesh_contrasts": [],
+  "all_fields_local_checks": true,
+  "original1percent_allpairs": false,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_physical_product_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "P2sameactualsupport/same100gverticaltest/ownweight/affinefootNeumannreference,notgrasp/hostclosure",
+    "OriginalP1meshFAILpreserved;ordercontrastdoesnotretroactivelyqualifyit",
+    "Exactdegree3bestfitfootmetric replaces historicalcentroid-onlyintegration approximation withoutchanging physical criterion",
+    "mesh1percent,dt.1percent/globalenergy/full3Finger/source-minimum/strength/100goperating remain independentlyrequired"
+  ]
+}

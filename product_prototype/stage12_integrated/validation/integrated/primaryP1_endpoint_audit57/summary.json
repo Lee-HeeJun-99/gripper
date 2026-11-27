@@ -1,0 +1,98 @@
+{
+  "status": "ACTUAL_PRODUCT_LOWER_CORNER_INDEPENDENT_AUDIT_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_endpoint57_mu2/summary.json",
+    "SHA256": "85e6ecc1c84115ff84f4de094757d4857e1e75a49370d80fd53bee057b152da1"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_endpoint_audit57/producer.py",
+    "SHA256": "369300228a130594d55b146aebf95a18d8f2898bb6b7c0a6c7f692ac10dd0cc7"
+  },
+  "checks": {
+    "actual_STEP_incident_normals": true,
+    "actual_material_probes": true,
+    "actual_normal_cone": true,
+    "independent_virtualwork": false,
+    "FD_refinement": false,
+    "omitted_new_contact_rejected": true,
+    "all_finite_feature_intervals_gap": false,
+    "material_endpoint_KKT": false,
+    "upper_inactive_exact_zero": true,
+    "producer_checks": false,
+    "endpoint_derivative_FD": false,
+    "one_sided_feasible_variation": false,
+    "endpoint_is_physical_LP": false
+  },
+  "actual_incident_outward_normals": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "actual_material_probes": [
+    {
+      "point_mm": [
+        49.999,
+        0.0,
+        -95.001
+      ],
+      "expected_matches": true
+    },
+    {
+      "point_mm": [
+        50.001,
+        0.0,
+        -94.999
+      ],
+      "expected_matches": true
+    }
+  ],
+  "lower_contact_force_local_N": [
+    3217.7384509185586,
+    1.6987777878302932
+  ],
+  "actual_incident_normal_cone_coefficients_N": [
+    1.6987777878302932,
+    3217.7384509185586
+  ],
+  "normal_cone_residual_N": 0.0,
+  "independent_virtualwork_J": [
+    8.486248740761462e-07,
+    -5.450810173594315e-06,
+    -2.5397165851851846e-06,
+    3.1169141342009726e-07
+  ],
+  "omitted_lower_contact_residual_J": [
+    -1.4071735841947317,
+    -2.427174766498711,
+    -1.3265895198945794,
+    1.0677475266488803
+  ],
+  "FD_refinement_error_J": 5.447494307494666e-09,
+  "finite_feature_interval_count": 696,
+  "extrema": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_endpoint_audit57/extrema.json",
+    "SHA256": "ec0682d9a465d1761c789784cdfada55a93b226ceef1529643dd6d808fa74295"
+  },
+  "minimum_requeried_gap_m": -0.0006902252843823918,
+  "endpoint_dPhi_ds_N": 6.238931889676281,
+  "endpoint_one_sided_FD_dPhi_ds_N": 6.238663701196856,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "ActualSTEPedgeconeandlocalPETstation validated,notfullwidthcontactpressure/surfaceCCD",
+    "Bounded scalar searchesoneachfeatureinterval plusdensechecksarefiniteaudits,notproofallnonconvexsurfaceevents",
+    "ReferenceRoot/Motorcuts,typicalmaterial/PETmesh/time/host/frictionlowerbound/protection/all22stillunqualified"
+  ]
+}

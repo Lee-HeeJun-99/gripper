@@ -1,0 +1,249 @@
+{
+  "status": "ACTUAL_AO_RAIL_LOAD_REFERENCE_VERIFIED_FULL_SPECIMEN_BLOCKED",
+  "task_id": "batch6_actual_stage2_finger_load_specimen",
+  "starting_HEAD": "2cd6eb07a8a0fbba59bb63aba11a63e5c1d031b5",
+  "actual_research_cycles": 1,
+  "scope": "Direct conditional load analysis of selected AO imported STEP parts; not complete Motor-to-Ground verification",
+  "actual_results": {
+    "final_analysis": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen3/summary.json",
+      "SHA256": "29b922edf7b86179ea2a45053769aa52f8b722cbdaeb7294d2ccb137382d1ed2"
+    },
+    "independent_verification": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen_verify3/summary.json",
+      "SHA256": "c593f02a9b87cbb4cf9e5097a7a6c559bb643a01ed6858acf5da92ad8a9f3c7a"
+    },
+    "release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_specimen_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_specimen_cycle1/finalize.py",
+    "SHA256": "6da75800c050b40470e94763f768a30e28ef70b2ca0df63250cb6c13d3ee0578"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_specimen_cycle1/runner.py",
+    "SHA256": "31ab406ef72cb7aabf821e424abf437e3b4ad20de9b18d81598a23fbc5ac1bf5"
+  },
+  "execution": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_actual_finger_specimen.py"
+      ],
+      "producer_SHA256": "9af43e29f899fe240cfb0470c8cfca741a61cdae006a38415bf462eb3af14b89",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 1.717536459909752,
+      "PID": 4,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_actual_finger_specimen.py"
+      ],
+      "producer_SHA256": "8c8760a9e067ee3dc61e69eabcb6e8f5d5615b7ea5a49555bfa89eacd0c95878",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.6677029090933502,
+      "PID": 4,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_actual_finger.py"
+      ],
+      "producer_SHA256": "cbc487c4f93e87bf4d14a79404a47e212e1a3b5a8d2ce3ed2b28af64057ce421",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 1,
+      "timeout": false,
+      "elapsed_s": 0.11446770909242332,
+      "PID": 4,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_actual_finger.py"
+      ],
+      "producer_SHA256": "bab47fc599b43fe9a9a9c972912ee74851b343ce2c29dabb69bd35ff95dcc269",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.11442360491491854,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "batch6_specimen_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3649844569154084,
+      "PID": 6,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_actual_finger_specimen.py"
+      ],
+      "producer_SHA256": "c2089e41660805e2a7efb97e2dfe0597d19c16beebae49aee59bb9e55c8f948f",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 1.7178404449950904,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_actual_finger.py"
+      ],
+      "producer_SHA256": "3f515e2bfb9798aa7a4c05e00c2ff0063896d398311910e24ad4ed32ec7a141d",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.11483340989798307,
+      "PID": 6,
+      "reaped": true
+    }
+  ],
+  "actual_product_evidence": "Imported11 actual AO component STEPs and20 finite Rail sections. Actual Root/Terminal envelope cuts at z=-7/-84 give77mm projected reference span. Actual REST swivel/Idler tangent produces eccentric compressive Rail wrench.8/16/32/64-element axial/bending FEM checked against independent Castigliano, spatial reactions and line-length virtual work.",
+  "structural_problem_addressed": "Established actual reference load direction, eccentric moment and compliance instead of treating cable tension as transverse tip force or a generic coupon. Result exposes failure of1N small-deflection extrapolation; terminal connector/contact/PET sharing and finite deformation are necessary before actual loading.",
+  "quantitative": {
+    "combined_rail_area_mm2": 1.2000000000010196,
+    "combined_rail_Iyy_mm4": 0.003999999999998594,
+    "span_mm": 77.0,
+    "diagnostic_tension_N": 0.001,
+    "diagnostic_tip_x_mm": -0.04827482246819343,
+    "diagnostic_rotation_rad": -0.001141711888535656,
+    "extrapolated_1N_rotation_rad": -1.1417118885356559,
+    "FEM_reference_relative_error": 1.17084120176969e-10,
+    "force_error_N": 5.005070396048388e-15,
+    "moment_error_Nmm": 8.494628611632749e-13,
+    "energy_relative_error": 3.218536548388329e-12
+  },
+  "load_boundary": "193GPa conditional typical Rail E; idealized grip cuts and rigid Terminal, zero PET load sharing. The .004379N small-angle reference domain is NOT allowable, demand, protection or physical capacity. Compressive stability/geometric stiffness not modeled.",
+  "superseded_reference": {
+    "result": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen2/summary.json",
+      "SHA256": "882cebd02477cafe46104b90e03d716a20047b4f64d1d62733df347ca2552294"
+    },
+    "verification": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen_verify2/summary.json",
+      "SHA256": "994b41d1c605e7d8455eec020130c10b09a879a88f82816389f7c35c2e6c2549"
+    },
+    "reason": "Initial88mm reference end cut z=-95 lies inside actual Terminal envelope. Final77mm reference uses imported Terminal upper envelope z=-84. Earlier mathematics is preserved but is not actual free-span or joint evidence. Envelope cut still does not prove actual grip stiffness."
+  },
+  "failures_preserved": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen1/summary.json",
+        "SHA256": "5456bf9e0f74bdf6cdc141d0894f52c488cd9b2932e904296295e5dc696ea1c2"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen1/producer.py",
+        "SHA256": "9af43e29f899fe240cfb0470c8cfca741a61cdae006a38415bf462eb3af14b89"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_specimen_cycle1/analysis.log",
+        "SHA256": "46ad78c6d19ea1545fd75e48a50e85b9bcf1420ed65699d9cd25a54014397e95"
+      },
+      "reason": "Numpy bool JSON serialization exception, exit1"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen_verify1/summary.json",
+        "SHA256": "e0370ee4229a4e136ab3d410168ee879a678c5a0c179aeeb2f16e520562a680d"
+      },
+      "producer": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen_verify1/producer.py",
+        "SHA256": "cbc487c4f93e87bf4d14a79404a47e212e1a3b5a8d2ce3ed2b28af64057ce421"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_specimen_cycle1/verify.log",
+        "SHA256": "52b1411bbc6c4006ae71d0c56187de7e8dc4362566ee4aa2cadef215be258294"
+      },
+      "reason": "Verifier Path-indexing TypeError before checks, exit1"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/batch6_specimen_release1/summary.json",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "reason": "Unchanged integrated release rejects missing same-revision full system evidence, exit2"
+    }
+  ],
+  "changed_part_IDs": [],
+  "parts_added": 0,
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "new_standard_components": 0,
+  "new_special_tools": 0,
+  "CAD_BOM_modified": false,
+  "adopted": false,
+  "whole_system_release": false,
+  "SOFA_runs": 0,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "criteria_relaxed": false,
+  "remaining_task_gate_ids": [
+    "tendon_force_stroke",
+    "terminal_retention",
+    "finger_structure",
+    "continuous_load_path"
+  ],
+  "remaining_system_gate_ids": [
+    "cad_model_match",
+    "physical_mass_inertia",
+    "tendon_force_stroke",
+    "motor_running_torque_speed",
+    "shaft_strength",
+    "coupling_capacity",
+    "pin_drum_strength",
+    "bearing_ratings_reactions",
+    "housing_shoulder_retention",
+    "tendon_stiffness_strength",
+    "terminal_retention",
+    "idler_load_drag",
+    "finger_structure",
+    "root_palm_strength",
+    "continuous_load_path",
+    "static_dynamic_consistency",
+    "numerical_convergence",
+    "qualified_worst_case",
+    "changed_stage1_revalidation",
+    "stage3_handoff",
+    "overload_protection",
+    "motor_alignment_reactions"
+  ],
+  "blockers": [
+    "No same-revision rated Motor/protection/Drum anchor/Idler/Terminal connector chain",
+    "No certified material/demand/allowable; PET/Rail contact, finite deformation and actual clamp sharing absent",
+    "Root/Palm/Ground and actual full assembly unqualified; historical failures unchanged",
+    "Uniform linear reference FEM convergence is not whole product mesh,contact,history,time or energy qualification"
+  ],
+  "next": "Coverage selects independent batch6_system_static_dynamic_load_chain. It must first define actual compatible revision and justified load/connector bounds; do not substitute this local reference for complete system transfer. For this blocked task implement rated terminal/Root connectors plus coupled finite-deformation PET/Rail load sharing before nontrivial load extrapolation.",
+  "known_owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_VALIDATION_AND_LOCAL_SAVE",
+  "new_commit_SHA": null
+}

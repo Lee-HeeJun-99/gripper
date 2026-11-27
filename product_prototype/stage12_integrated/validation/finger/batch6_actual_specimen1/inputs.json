@@ -1,0 +1,86 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "parts": {
+    "F0_RAIL_L": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_RAIL_L.step",
+      "SHA256": "037173ea5708d22a36bdd409f8ae2f62b886356bc6cf89a837a5219819e37cdb"
+    },
+    "F0_RAIL_R": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_RAIL_R.step",
+      "SHA256": "6e78740bb12968a60b6b9cd89bc46699b3372b62b872dea5d80fbec3b6e109e7"
+    },
+    "F0_SKIN": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_SKIN.step",
+      "SHA256": "7df0c82035daa7ba5a8130b05ce3dd2fcb582c4b10c01eacccf28a308448d39e"
+    },
+    "F0_TERMINAL_FRONT": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/F0_TERMINAL_FRONT.step",
+      "SHA256": "264e8b302c49bff8afa273acb2147e74e732004433009043f8a935c687eaf85e"
+    },
+    "F0_TERMINAL_BACK": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_TERMINAL_BACK.step",
+      "SHA256": "6fafeee947ac578c960bef0a7efd6ac4aa06dd3eaa4afc06c8c6a75cec7fc2f6"
+    },
+    "F0_ROOT_FRONT": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_ROOT_FRONT.step",
+      "SHA256": "35ed1a5c77dbc64239e2326cbce8707cc6aaf14e275cdbda373d4729cf0c45e8"
+    },
+    "F0_ROOT_BACK": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_ROOT_BACK.step",
+      "SHA256": "1d2691108a114d7c1e59fb482e7c4fb4c18e44a1b72e615230a516b6d7d2cf95"
+    },
+    "PALM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/PALM.step",
+      "SHA256": "73154c87f66f6e4718dc1df3d24fd97c3206b48ef6551e71c276aee80a4b615f"
+    },
+    "F0_IDLER": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_IDLER.step",
+      "SHA256": "e89cc9bf6f6f749547f445d784fbc3dbc8c15db64c3cf22a6366df0a1ead3ea0"
+    },
+    "F0_DRUM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_DRUM.step",
+      "SHA256": "c5e713886911a9fdc1e6d0dd6e452e8b3d3985592f0fb1946a83b50a08eb6718"
+    },
+    "F0_TENDON_WIRE": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_TENDON_WIRE.step",
+      "SHA256": "780c437932c9915833a74d6475fd5f7570b570ffa5705338639efa7a0ff67f51"
+    }
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen1/producer.py",
+    "SHA256": "9af43e29f899fe240cfb0470c8cfca741a61cdae006a38415bf462eb3af14b89"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/baseline_registry.py",
+      "SHA256": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/build_stage1.py",
+      "SHA256": "551c0cb2d9f0e5293333f9c6cedcabb3977a6510a0dc821d72b2aafe2ab2cdad"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/models/materials/evidence.json",
+      "SHA256": "14b727a364ccf9b56ffa741e3a3765b859c3df85ad4bbe11e3244a87dfaed01f"
+    }
+  ],
+  "checks": {
+    "section_relative_max": 1e-06,
+    "mesh_relative_max": 0.01,
+    "balance_absolute_max": 1e-08,
+    "energy_relative_max": 1e-08
+  },
+  "contract": "AO only, not AV/AX/AY. REST prescribed tangent to AO Idler radius11.25mm. Two projected Rail beams z=-7..-95; rigid terminal offsets to swivel43,0,-92; ideal clamped Rail cut at z=-7. PET freely slips and carries no load in this deliberate reference. No actual joint/load-sharing or Ground certification. E=193000N/mm2 typical conditional, not minimum.",
+  "loading": "0.001N diagnostic tension;1N extrapolation reported with linear-domain rejection, neither actual demand nor allowable. No powered motion."
+}

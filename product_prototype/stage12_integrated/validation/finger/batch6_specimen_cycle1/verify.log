@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_actual_finger.py", line 49, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_actual_finger.py", line 14, in main
+    checks={'source_hashes':all(sha(REPO[r['path']])==r['SHA256'] for r in refs),'producer_checks':all(d['checks'].values())}
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_actual_finger.py", line 14, in <genexpr>
+    checks={'source_hashes':all(sha(REPO[r['path']])==r['SHA256'] for r in refs),'producer_checks':all(d['checks'].values())}
+TypeError: 'PosixPath' object is not subscriptable

@@ -1,0 +1,41 @@
+{
+  "status": "BOUNDED_ACTUAL_AO_REFERENCE_AUDIT_PASS",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen2/summary.json",
+    "SHA256": "882cebd02477cafe46104b90e03d716a20047b4f64d1d62733df347ca2552294"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen_verify2/producer.py",
+    "SHA256": "bab47fc599b43fe9a9a9c972912ee74851b343ce2c29dabb69bd35ff95dcc269"
+  },
+  "checks": {
+    "source_hashes": true,
+    "producer_checks": true,
+    "spatial_root_balance": true,
+    "line_length_virtual_work": true,
+    "internal_energy_vs_FEM": true,
+    "all_mesh_pairs": true,
+    "wrong_eccentricity_control": true,
+    "wrong_tangent_control": true,
+    "one_N_linear_domain_rejected": true
+  },
+  "force_error_N": 9.373540372319476e-14,
+  "moment_error_Nmm": 5.915924000676753e-12,
+  "numeric_tip_wrench": [
+    -8.763972445535727e-05,
+    -0.007108607378114584,
+    -0.0009961522366097597
+  ],
+  "virtual_work_absolute_error": 9.624050688328278e-14,
+  "integrated_energy_Nmm": 7.134941456404762e-06,
+  "energy_relative_error": 8.180729427209599e-10,
+  "base_to_finest_rotation_relative_errors": [
+    2.0637958009217527e-10,
+    2.0579826731648154e-10,
+    2.017412903398963e-10,
+    0.0
+  ],
+  "actual_loaded_connection_qualified": false,
+  "whole_system_release": false,
+  "scope": "Independent actual AO reference verification only; no full specimen, strength, buckling or global energy certificate"
+}

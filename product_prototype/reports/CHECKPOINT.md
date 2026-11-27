@@ -1,3 +1,37 @@
+# Batch6 cycle5 — actual AO Rail load reference; full specimen BLOCKED (2026-11-27)
+
+Started at2cd6eb07a8a0fbba59bb63aba11a63e5c1d031b5; selected exact READY task
+batch6_actual_stage2_finger_load_specimen. One bounded actual analysis cycle.
+Result: product_prototype/stage12_integrated/validation/finger/batch6_specimen_cycle1/summary.json.
+No CAD/BOM adoption, part or custom-process removal; AO current/AA adopted unchanged.
+
+Eleven actual AO STEP parts hash-checked/imported;20Rail slices yield pair
+A=1.2mm2 and Iyy=.004mm4. Actual Root/Terminal envelope cuts give77mm
+projected linear span. REST Idler tangent gives compressive/eccentric Terminal
+loading;1mN reference yields -.0482748mm lateral motion and -.00114171rad.
+Independent spatial reactions, tangent line-length virtual work, Castigliano
+energy and8/16/32/64FEM checks pass bounded reference thresholds.
+1N extrapolation is -1.14171rad and explicitly rejected by small-angle domain.
+The .004379N reference-domain value is NOT demand, allowable or protection.
+
+Typical193GPa, idealized grip-envelope cuts, rigid Terminal, projected rails
+and zero PET sharing are declared assumptions. No connector strength, coupled
+PET/contact, buckling, actual demand, certified materials, Root/Palm/Ground or
+complete Motor-to-Ground specimen. Full selected task remains BLOCKED.
+Initial88mm cut overlapped actual Terminal envelope; original result/verification
+preserved as superseded reference, final77mm uses actual upper envelope.
+Two execution errors(exit1, serialization and verifier Path indexing) preserved
+with archived producers/logs. Seven children completed/reaped,4GiB/420s; no
+timeouts, SOFA, subagents, SDK/criteria/manager edits or Stage3.
+
+Release audit exit2 remains INTEGRATED_NOT_QUALIFIED;22Stage2 system criteria
+and same-revision full Stage1 remain unqualified. No global energy promotion.
+Next coverage: batch6_system_static_dynamic_load_chain; prerequisite actual
+compatible revision/connectors/demand bounds, not reuse of this local PASS.
+No RUNNING tasks or owned analysis children. Pre-existing untracked work retained.
+Supervisor local save PENDING; no git add/commit or new commit SHA claimed.
+Exact runtime/authorized_20261127_6/save_request5.json awaits validation.
+
 # Batch6 cycle4 — actual AV drive inertia/energy; protection BLOCKED (2026-11-27)
 
 Started at bb2633c799abc1abfadf1605ee63f8d2120946cb; selected

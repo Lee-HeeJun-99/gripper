@@ -1249,7 +1249,7 @@
       "id": "batch6_actual_stage2_finger_load_specimen",
       "track": "B",
       "priority": -195,
-      "status": "READY",
+      "status": "BLOCKED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1284,8 +1284,16 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:27:12.965453+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/finger/batch6_specimen_cycle1/summary.json",
+      "last_cycle_result": {
+        "path": "product_prototype/stage12_integrated/validation/finger/batch6_specimen_cycle1/summary.json",
+        "SHA256": "12b7d58f466d0bf7d4b317f903c2ea623d0e2af84f1f2d674e455863fd179388"
+      },
+      "reason": "Actual AO rail reference verified only; complete selected Motor-to-Ground specimen lacks compatible rated connectors, coupled finite deformation/contact and actual demand/material/protection bounds.",
+      "unblock": "Implement actual Terminal/Root connectors and compatible drive chain; establish coupled PET/Rail load sharing, justified material/load bounds and finite deformation.1N linear extrapolation rejected.",
+      "next": "batch6_system_static_dynamic_load_chain"
     },
     {
       "id": "batch6_system_static_dynamic_load_chain",

@@ -1,0 +1,255 @@
+{
+  "status": "ACTUAL_P1_CENTRALITY_ENRICHMENT_VALIDATED_PHYSICAL_ENDPOINT_REJECTED",
+  "category": "ACTUAL_PRODUCT_VALIDATION",
+  "task_id": "goal_primary_residual_certified_centrality_enrichment",
+  "starting_HEAD": "78e82a8e9f2fba38f3331f4e1c1323ad5867fc63",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "actual_changed_CAD": [],
+  "unchanged_actual_STEP_parts": 78,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle22_record1/producer.py",
+    "SHA256": "ce3aa7982f16ae9dd7e404612a10f509663912ff3b666f4dd82d5e7f22231d25"
+  },
+  "evidence": {
+    "primaryP1_certified_centrality1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_certified_centrality1/summary.json",
+      "SHA256": "e072a2a603c428fbd3ecb06f1d47d3e9006ceecb47e9eda6ce748396df79c4a0"
+    },
+    "primaryP1_certified_centrality_audit2": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_certified_centrality_audit2/summary.json",
+      "SHA256": "e29c4ec7dae4fd3dfeb0230a3d414675c786d57708eb2c878418410b03ec350f"
+    },
+    "primaryP1_uneliminated_direction1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_uneliminated_direction1/summary.json",
+      "SHA256": "1827c9bb62ba124e488c53d505cb25ddfa97f277b8e8675fab4b77f7fe0976c4"
+    },
+    "primaryP1_extended_direction1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_direction1/summary.json",
+      "SHA256": "d5459266c21cb1b73ae93c5503078af44584e6ebeea84424d4fa1910b84aacc2"
+    },
+    "primaryP1_extended_direction_audit1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_direction_audit1/summary.json",
+      "SHA256": "016016c7a4526fbb1a8127dc0a6a4de159ca7015ba44e3cd6cbf182e5b25db52"
+    },
+    "primaryP1_release27": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release27/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state26.json",
+    "SHA256": "eb7afa26d8d95d82e06dffffc4861e64e775e80e748505222c6f762c8c6ef67a"
+  },
+  "physical_metrics": {
+    "primal_mm": 8.077515774137355e-08,
+    "stationarity_N": 14.714592295036091,
+    "gauge_N": 0.005295685896229315,
+    "RootY_gamma_stationarity_N": 7.721979673586173e-05,
+    "sign_N": 0.0,
+    "complementarity_Nmm": 6.451048211043676e-06,
+    "objective_before_Nmm": 0.0002336967688395079,
+    "objective_proposal_Nmm": 0.00021274738586813454,
+    "reduced_stationarity": 3.7985018216966925e-07
+  },
+  "archived_first_corrector": [
+    4.596510041258952,
+    78.29687500000136,
+    0.0017495030449715483
+  ],
+  "probe_metrics": {
+    "rigid37_orthogonality": 3.694757715923258e-18,
+    "all130_orthogonality": 6.165129306590425e-17,
+    "curvature_Nmm": 1.0990161130442495,
+    "work_Nmm": 0.05344488544480364,
+    "maximum_original_row_motion": 0.0042031934421233675
+  },
+  "certified_algorithmic_steps": 19,
+  "independent_audit_timing": "Producer checks directions before each update; independent verifier retrospectively reconstructs all19updates and terminal rejection. No independent process was interleaved before each update.",
+  "terminal_extended_first_order_errors": [
+    1.2878212598555375e-12,
+    5.820766091346741e-11,
+    1.9999131732234474e-12
+  ],
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "accepted_physical_linear_proposals": 0,
+  "new_physical_equilibrium_progress": false,
+  "executions": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_certified_centrality.py",
+        "primaryP1_certified_centrality1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 6.411066245986149,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_certified_centrality.py",
+        "primaryP1_certified_centrality_audit1",
+        "primaryP1_certified_centrality1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.2028469829820096,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_certified_centrality.py",
+        "primaryP1_certified_centrality_audit2",
+        "primaryP1_certified_centrality1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.4034007750451565,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_extended_direction.py",
+        "primaryP1_extended_direction_audit1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.2013924610801041,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_uneliminated_extended_direction.py",
+        "primaryP1_extended_direction1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.6020199081394821,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release27"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.40165754896588624,
+      "PID": 6,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_uneliminated_direction.py",
+        "primaryP1_uneliminated_direction1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.6020124161150306,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    }
+  ],
+  "recorded_child_seconds_known": 10.824396338313818,
+  "analysis_memory_limit_bytes": 4294967296,
+  "analysis_timeout_s": 420,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "original_user_untracked_files_preserved": 8595,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "whole_system_release": false,
+  "stage3_authorized": false,
+  "hardware": "HARDWARE_NOT_MEASURED",
+  "next_task_id": "goal_primary_extended_first_order_fullforce_globalization",
+  "failures": [
+    "First independent verifier crashed from Path subscript typo; original verifier/log retained; corrected source and new audit tag passes.",
+    "Archived first corrector failed1e-8 numerical first-order test; no archive or tolerance changed.",
+    "Centrality restored,19 numerical steps certified,iteration19 corrector errors1.58476e-7/1.62559e-7/4.18293e-8 reject BEFORE update.",
+    "Fullphysical force14.71459N is worse than prior8.35215N despite small reduced stationarity3.7985e-7. Original finitegap1e-10mm and complementarity fail; no physical proposal accepted.",
+    "Uneliminated4514dimensional3block with double accumulation still fails primal residual1.161242835e-8; preserved. Extended accumulator solves SAME equation at5.82076609e-11max only; no extra continuation."
+  ],
+  "alternatives_review": {
+    "A": "Repeat eliminated/double near-boundary warmstart or increase budget: rejected; terminal original-equation defect measured.",
+    "B": "Centrality restoration and ONE measured elastic enrichment implemented.19 certified numerical steps; actual endpoint rejects. Not product equilibrium.",
+    "C": "Uneliminated3block with extended accumulator implemented and independently tested on SAME terminal equation, no new iterate. Next integrate both directions and audit pair before one bounded continuation; fullphysical force complement remains separate blocker."
+  },
+  "limitations": [
+    "Actual78part product numerical validation, no new CAD or DESIGN_CHANGE. Source-backed architecture/assembly/load/extension references preserved.",
+    "Algorithmic infeasible interior slacks do not loosen original1e-10mm physical finitegap criteria; final guard rejects endpoint.",
+    "Direction certification1e-8 applies scaled numerical equations only; physicalforce/gap/gauge criteria unchanged.",
+    "All22gates and prior physical/source/material/mesh/time/hardware failures remain."
+  ]
+}

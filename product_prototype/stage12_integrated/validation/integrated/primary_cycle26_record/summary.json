@@ -1,0 +1,161 @@
+{
+  "status": "ACTUAL_P1_INITIAL_MATERIAL_OVERLAP_VALIDATED_CONCAVE_EDGE_MODEL_REJECTED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "selected_task_id": "goal_primary_ycapture_closed_boundary_fullmodel_rebuild",
+  "next_task_id": "goal_primary_finite_concave_face_union_fullmodel",
+  "evidence": {
+    "primaryP1_clipped_shoulder26vector": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26vector/summary.json",
+      "SHA256": "bf22110f15062662065654592d22682b0da3417b5ae5e48cee1110a3163da6ba"
+    },
+    "primaryP1_clipped_shoulder26correct": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26correct/summary.json",
+      "SHA256": "f759e1b77167f831a98dcbec0dea7db4131d592995f8d2b0812432442abc15a5"
+    },
+    "primaryP1_clipped_shoulder26audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26audit/summary.json",
+      "SHA256": "40938284db63cc6c0df557991476ee1f46cc747cfefefb3977685bbb6e282628"
+    },
+    "primaryP1_shoulder_edges26": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_edges26/summary.json",
+      "SHA256": "562a4b74e4d182e0fdb65ca06928a25100e79d245fccabd967a3875d1bf97669"
+    },
+    "primaryP1_shoulder_concavity26": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_concavity26/summary.json",
+      "SHA256": "b88507dba9d53f015071a7b62d5bd17534656ccc4299ea111fa0816561083b60"
+    },
+    "slow_original": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26b/summary.json",
+      "SHA256": "4711a9988c9f592f2e55490ee002f5795220c36093998b73e0299973d8e36c92"
+    }
+  },
+  "actual_CAD_change_files": [],
+  "actual_part_count": 78,
+  "initial_overlap_area_mm2_per_side": 27.2,
+  "quadrature_points_all_four_groups": 4830,
+  "full_root_side_area_mm2": 104.194,
+  "root_side_area_outside_initial_overlap_mm2": 76.994,
+  "concave_edge_probes_rejecting_hull": 144,
+  "convex_edge_probes_verified": 24,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_unqualified_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "stage3_authorized": false,
+  "physics_child_seconds": 343.0467124294955,
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26/execution.json",
+      "SHA256": "70468f05d2768a4075edcee3430ea4d73df9cdf4319a2e257c7c602da16f6a80"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26audit/execution.json",
+      "SHA256": "6e9357da904107147ed6e77c806dcb21a5d1f87a9a42783b207d6865faada13b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26b/execution.json",
+      "SHA256": "a9894a6793a113f9a78e20fa5d71b4eb81c291bd5299aa374bab2369d990dd72"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26concavity/execution.json",
+      "SHA256": "5be7ea3d080f18b025c939c7ce3f54144f71dbc9627a948ae91de9476df21946"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26correct/execution.json",
+      "SHA256": "0660ea0a18cf9d4e91a5b74391281fa822ce700220a4fe28327518dcdf6c179f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26edges/execution.json",
+      "SHA256": "3a40e403a659ae2578f46a08ecae713544b576a92987c0fbca5972c34818dc60"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26vector/execution.json",
+      "SHA256": "f448bafdf66104f440880260496ec4f2d4d7db19c6c313f22a4eca8f218d8306"
+    }
+  ],
+  "children_reaped": true,
+  "slow_scalar_execution": {
+    "command": [
+      "python",
+      "product_prototype/stage12_integrated/scripts/primary_clipped_shoulder26.py",
+      "primaryP1_clipped_shoulder26b"
+    ],
+    "exit_code": 2,
+    "elapsed_s": 327.61904127313755,
+    "timeout": false,
+    "STOP": false,
+    "reaped": true,
+    "PID": 5,
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26b/analysis.log",
+      "SHA256": "44b9cd43c43322408bcf5f06dbfc45b5262da0dbd7cab96a970512bcc73d2392"
+    }
+  },
+  "failures_preserved": [
+    {
+      "reason": "Missing skfem import; direct tetra boundary reconstruction replaces dependency without installation.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26/execution.json",
+        "SHA256": "70468f05d2768a4075edcee3430ea4d73df9cdf4319a2e257c7c602da16f6a80"
+      },
+      "original_source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26/failed_producer.py",
+        "SHA256": "7541bacc93728874dcc640bf4250698cd8fc4d224cb7abc6d3fcabd75fad52ee"
+      }
+    },
+    {
+      "reason": "Initial virtualwork analytic probe used defaultpressure0 while finite differences measured unitgap. Failed vector result preserved; corrected newproducer uses explicitpressure1 and passes unchanged1e-8 tolerance.",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26vector/summary.json",
+        "SHA256": "bf22110f15062662065654592d22682b0da3417b5ae5e48cee1110a3163da6ba"
+      }
+    },
+    {
+      "reason": "Universal convex edge hull invalid on actual concave shoulder junctions. No reaction transfer. Independent nearest-face tests reject all144concave candidates.",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_edges26/summary.json",
+        "SHA256": "562a4b74e4d182e0fdb65ca06928a25100e79d245fccabd967a3875d1bf97669"
+      }
+    },
+    {
+      "reason": "Slow scalar finite-feature enumeration retained with bounded420s execution, superseded by same finite-segment calculations vectorized under newtag.",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle26b/execution.json",
+        "SHA256": "a9894a6793a113f9a78e20fa5d71b4eb81c291bd5299aa374bab2369d990dd72"
+      }
+    }
+  ],
+  "protected_source_pins_unchanged": true,
+  "original_untracked_files_unchanged": 8595,
+  "hardware_status": "NOT_MEASURED",
+  "limitations": [
+    "Same78part P1_ycapture24 actual CAD unchanged. Complete initial shoulder overlap common refinement:27.2mm2 per side,795/1620material samples each side at h3/h2; full104.194mm2Rootside ledger retained with76.994mm2outside initial overlap, no attached pressure there. Independent degree2 area moments, reconstruction, gap/closure, rigidobjectivity pass. Finite transitions retain all4830samples. Physical system not qualified. Concave boundary positive-hull edge model FAIL:144concave/24convex boundary probes; all144concave candidates have nearer incident face, so artificialedgeforce rejected. Fullboundary contact/fivebody model still absent.",
+    "Continue SAME78part primaryP1_ycapture24 actual Motor->stock1996hub->Drum->Tendon->Finger->Root->Frame->Ground->Base; preserve3Finger/replaceable side cartridge/distalPETsliding/jamming. Use verified27.2mm2initial material-overlap integration and fullRootside ledger, not old32point selection. FIRST implement finite adjacent-face alternatives at actual concave shoulder/fillet junctions; independent168edge probes found144concave cases whose positive-hull candidate has nearer incident face, so no convex-hull reaction there. Keep physical convex edge/vertex normal cones separate from smooth BRep fillet; piecewise-linear mesh cones are not exactCAD smoothphysics. Integrate remainingRoot/wall/top/fillet boundary without dropping outside-overlap material or extending infiniteplanes; add feature-transition/grazing rejection and independentvirtualwork. Then rebuild same-revision fivebody support/motorfront/14axialbranches/Rootport/Motor/string/newexactmass with allphysicalrigidmodes and freeRootYgamma; freeze source/generated identities before solve. Oldseated22sourcefield/Pq/2208rows/37modes remain historical, notnewCAD equilibrium. Fullforce1e-8N/gap1e-10mm/local.05mm/rad/conesign/gauge/complementarity/Armijo unchanged. No tie/artificialspring/fixation/Basecancellation/physicalreaction from virtualpressure. Mesh1%/time.1%/material/thread/anchor/finitewire/protector/energy/full3Finger/22gates remain required. Establish actual lateral duty before shoulder span changes;0.48892744Nnecessaryconebound is notcapacity."
+  ]
+}

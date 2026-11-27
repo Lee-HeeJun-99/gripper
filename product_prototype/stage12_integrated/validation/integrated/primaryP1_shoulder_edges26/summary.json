@@ -1,0 +1,77 @@
+{
+  "status": "ACTUAL_P1_MESH_FINITE_EDGE_CONE_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_edges26/producer.py",
+    "SHA256": "05e5dfdc23b643561a4317d4e64571f60ec98cabe308cfe317d64ddee63cb2bd"
+  },
+  "edges": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_edges26/edges.json",
+    "SHA256": "30247a6ce3f304aa7233037393604beacdd0f82bf98dd23bd2111409270933e5"
+  },
+  "checks": {
+    "all_edges_have_two_owners": true,
+    "all_sides_present": true,
+    "virtualwork": true,
+    "moment": true,
+    "convex_cones": false
+  },
+  "results": [
+    {
+      "mesh_level": 2,
+      "sign": -1,
+      "boundary_edges": 34,
+      "convex_edges": 5,
+      "nonconvex_edges": 29,
+      "min_dihedral_rad": 0.18311054307504973,
+      "max_dihedral_rad": 1.5707963267948966,
+      "max_virtualwork_error": 7.169304473003679e-11,
+      "max_moment_error": 7.105427357601002e-15
+    },
+    {
+      "mesh_level": 2,
+      "sign": 1,
+      "boundary_edges": 34,
+      "convex_edges": 5,
+      "nonconvex_edges": 29,
+      "min_dihedral_rad": 0.18230102147246321,
+      "max_dihedral_rad": 1.5707963267948966,
+      "max_virtualwork_error": 5.418712787502722e-11,
+      "max_moment_error": 7.105427357601002e-15
+    },
+    {
+      "mesh_level": 3,
+      "sign": -1,
+      "boundary_edges": 50,
+      "convex_edges": 7,
+      "nonconvex_edges": 43,
+      "min_dihedral_rad": 0.11124986803514575,
+      "max_dihedral_rad": 1.5707963267948966,
+      "max_virtualwork_error": 7.176243366907586e-11,
+      "max_moment_error": 7.105427357601002e-15
+    },
+    {
+      "mesh_level": 3,
+      "sign": 1,
+      "boundary_edges": 50,
+      "convex_edges": 7,
+      "nonconvex_edges": 43,
+      "min_dihedral_rad": 0.10904551253531132,
+      "max_dihedral_rad": 1.5707963267948966,
+      "max_virtualwork_error": 5.425651681406629e-11,
+      "max_moment_error": 7.105427357601002e-15
+    }
+  ],
+  "elapsed_s": 0.8416422649752349,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "accepted_equilibria": 0,
+  "limitations": [
+    "Piecewise linear tetra boundary normal-cone tests only. Fillet is smooth BRep, mesh crease angles are not exact CAD edge physics.",
+    "Mid-edge unit virtual-force/distance derivative probes do not implement corner/grazing/feature-transition coupled contact.",
+    "Concave edges, if any, reject convex-hull edge model. No reaction transfer or solver update."
+  ]
+}

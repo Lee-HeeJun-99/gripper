@@ -1,0 +1,40 @@
+{
+  "status": "ACTUAL_P1_CONCAVE_EDGE_HULL_REJECTION_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_edges26/summary.json",
+    "SHA256": "562a4b74e4d182e0fdb65ca06928a25100e79d245fccabd967a3875d1bf97669"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_concavity26/verifier.py",
+    "SHA256": "bb60afcdee1cc7c19d412016c4f57c09149b47fb39f7664013b61396370c05ab"
+  },
+  "probes": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_concavity26/edge_probes.json",
+    "SHA256": "9d96423958d4cdd5fcde03210c630556e0337a072ef2dad20512489c433ef9f4"
+  },
+  "checks": {
+    "every_concave_hull_falsified": true,
+    "convex_edge_nearest_verified": true,
+    "both_controls_nonempty": true
+  },
+  "concave_probes": 144,
+  "convex_probes": 24,
+  "concave_face_distance_range_mm": [
+    0.07071067811865461,
+    0.09985140027016931
+  ],
+  "max_convex_distance_error_mm": 2.3175905639050143e-15,
+  "elapsed_s": 0.5990599549841136,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "accepted_equilibria": 0,
+  "required_next_mechanism": "At concave shoulder/fillet junctions use finite adjacent-face alternatives, not positive-hull edge forces. At convex boundary retain finite edge/vertex ownership and cone checks. Rebuild full material-boundary contact before fivebody equilibrium.",
+  "limitations": [
+    "Actual linear tetra boundary geometric probe; not exact smooth CAD fillet collision or force law.",
+    "No attached load, pressure solution, implicit update or new equilibrium accepted."
+  ]
+}

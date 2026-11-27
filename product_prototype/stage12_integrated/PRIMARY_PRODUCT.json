@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state29.json",
-    "SHA256": "30e0d5dcf2d2bdc38f3d66ba6dd49c33bbf07690cb454b8731c13d0b4fbc188d"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state30.json",
+    "SHA256": "4bd0250828ae88c26ec562eed9472e7b063ad4c3687ebe944aabb745f1634018"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,8 +384,8 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_rootY_finite_capture_geometry_globalization",
-  "next_task_id": "goal_primary_ycapture_closed_boundary_fullmodel_rebuild",
+  "selected_task_id": "goal_primary_ycapture_closed_boundary_fullmodel_rebuild",
+  "next_task_id": "goal_primary_finite_concave_face_union_fullmodel",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
   "load_BC": "Original sourcefield and physical P/q/all2169contacts/14branches/11gauges preserved. OriginalRootY2175 has one unpenalizedgamma; originalMotorY2176 unchanged. New feasible LINEAR trajectory is a numerical seed only, not sourcefield replacement. Physical force/gauge KKT remains rejected, so no attachedload nonlinear update, Base residual cancellation, new stress or physical anchor/retention claim.",
   "extension": {
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "DESIGN_CHANGE: OPEN_FRAME integralYshoulders/R0.5; F0_ROOT_BACK0.6loweredgechamfers. NewSTEP/STL/78assembly/BOM;76refs unchanged.",
+  "CAD_this_cycle": "NONE: ACTUAL_PRODUCT_VALIDATION of unchanged78part primaryP1_ycapture24; no unrelated candidate.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -1224,11 +1224,37 @@
   },
   "historical_evidence_applicability": "Earlier seated22 equilibrium/mesh/currentload evidence remains historical,NOT a ycapture24sourcefield. Unchanged76STEP andsourceparts preserved; newRoot/Frame require same-revision completecoupledmodel.",
   "current_physics_sourcefield": null,
-  "current_physics_status": "NEW_CAD_FULLMODEL_REBUILD_REQUIRED_NO_ACCEPTED_EQUILIBRIUM",
+  "current_physics_status": "INITIAL_MATERIAL_OVERLAP_VERIFIED_CONCAVE_EDGE_HULL_REJECTED_FULLMODEL_REQUIRED",
   "preserved_extensions": [
     "3Finger",
     "replaceable side-insertion cartridge with removable existingRFbolts",
     "distalPET axialsliding",
     "future layerjamming"
-  ]
+  ],
+  "latest_finite_material_evidence": {
+    "primaryP1_clipped_shoulder26vector": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26vector/summary.json",
+      "SHA256": "bf22110f15062662065654592d22682b0da3417b5ae5e48cee1110a3163da6ba"
+    },
+    "primaryP1_clipped_shoulder26correct": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26correct/summary.json",
+      "SHA256": "f759e1b77167f831a98dcbec0dea7db4131d592995f8d2b0812432442abc15a5"
+    },
+    "primaryP1_clipped_shoulder26audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26audit/summary.json",
+      "SHA256": "40938284db63cc6c0df557991476ee1f46cc747cfefefb3977685bbb6e282628"
+    },
+    "primaryP1_shoulder_edges26": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_edges26/summary.json",
+      "SHA256": "562a4b74e4d182e0fdb65ca06928a25100e79d245fccabd967a3875d1bf97669"
+    },
+    "primaryP1_shoulder_concavity26": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulder_concavity26/summary.json",
+      "SHA256": "b88507dba9d53f015071a7b62d5bd17534656ccc4299ea111fa0816561083b60"
+    },
+    "slow_original": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clipped_shoulder26b/summary.json",
+      "SHA256": "4711a9988c9f592f2e55490ee002f5795220c36093998b73e0299973d8e36c92"
+    }
+  }
 }

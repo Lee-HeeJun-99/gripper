@@ -1,0 +1,20 @@
+"""Fresh mixed-rotation source tests: local gamma changes the fixed world-X stop.
+Full Q includes its object contribution; no source equilibrium certification.
+"""
+import sys,json,time,shutil
+import numpy as np
+from scipy.spatial.transform import Rotation
+from baseline_registry import ROOT,REPO,ref,sha,dump
+from primary_local_gamma29 import LocalGammaString
+from primary_local_finger29 import solve
+
+def main():
+ start=time.monotonic();assert not(ROOT/'runtime/STOP').exists();out=ROOT/'validation/integrated'/sys.argv[1];out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py');cp=ROOT/'cad/exports/primaryP1_ycapture24/summary.json';cad=json.loads(cp.read_text());assert all(sha(REPO/r['path'])==r['SHA256'] for r in cad['part_references'].values());mp=ROOT/'validation/integrated/primaryP1_seated_string1/mass_points.json';points=json.loads(mp.read_text());sp=ROOT/'validation/finger/primaryP1_gravity_cat_demand32_2/cases.json';seed=json.loads(sp.read_text())[0];dump(out/'inputs.json',dict(candidate=ref(cp),mass=ref(mp),seed=ref(sp),producer=ref(out/'producer.py'),dependencies=[ref(ROOT/f'scripts/{n}.py') for n in ['primary_local_gamma29','primary_local_finger29']],scope='Fresh conditional fixed world-X-stop source with mixed finite Root/Motor rotation, not accepted support state.'))
+ rows=[]
+ for i,gamma in enumerate([-.025,0.,.025]):
+  assert not(ROOT/'runtime/STOP').exists();theta=np.array([.001,-.001,.002]);R=Rotation.from_rotvec(theta).as_matrix();C=R@np.array([0,0,.020]);E=R@np.array([seed['cable_end_m'][0],0,seed['cable_end_m'][1]]);initial=LocalGammaString(points,R,C,E,.01125,gamma,16,axis=R[:,1]).solve(seed);parent=dict(root_R=R.tolist(),root_translation_m=[0,0,0],motor_R=R.tolist(),motor_C_m=C.tolist(),actual_wire_center_radius_m=.01125,actual=initial);r=solve(parent,seed,points,gamma);axis=R[:,1];q=r['upstream_gamma_generalized_force_N'];F=np.array(r['string']['Fe_N']);mg=sum(p['mass_kg'] for p in r['moving_mass_points']+r['fixed_mass_points']);Qg=float(-mg*9.80665*axis[2]);Qo=float(r['normal_N']*axis[0]);Qs=float(axis@F);xerr=abs(r['tip_world_m'][0]-(.05-seed['object_inward_stop_m']));tip=np.array(r['tip_world_m']);eps=.00001;finite=((tip+axis*eps*.001)[0]-(tip-axis*eps*.001)[0])/(2*eps*.001);expected=float(axis[0]);err=abs(q-Qg-Qo-Qs)
+  curves={k:r['string'].pop(k) for k in ('curve_m','wrap_curve_m','lead_curve_m','free_curve_m')};dump(out/f'case{i}_curves.json',curves);dump(out/f'case{i}_source.json',r);rows.append(dict(gamma_mm=gamma,Root_rotation_rad=theta.tolist(),axis=axis.tolist(),normal_N=r['normal_N'],Qgamma_N=q,string_Q_N=Qs,gravity_Q_N=Qg,object_Q_N=Qo,independent_Q_error_N=err,fixed_worldX_stop_error_m=xerr,stop_gamma_derivative_error=abs(finite-expected),source_checks=r['checks'],source=ref(out/f'case{i}_source.json')))
+ checks=dict(all_fresh_conditional_sources=all(all(r['source_checks'].values()) for r in rows),worldX_stop_retained=all(r['fixed_worldX_stop_error_m']<1e-12 for r in rows),object_generalized_force_nonzero=all(abs(r['object_Q_N'])>1e-5 for r in rows),all_local_Q_parts=all(r['independent_Q_error_N']<1e-12 for r in rows),worldX_stop_gamma_derivative=all(r['stop_gamma_derivative_error']<1e-6 for r in rows))
+ dump(out/'summary.json',dict(status='ACTUAL_P1_MIXED_ROTATION_LOCAL_GAMMA_AND_OBJECT_STOP_VERIFIED' if all(checks.values()) else 'ACTUAL_P1_MIXED_GAMMA_FAIL',candidate=ref(cp),inputs=ref(out/'inputs.json'),checks=checks,results=rows,elapsed_s=time.monotonic()-start,newly_qualified_system_gate_ids=[],accepted_equilibria=0,whole_system_release=False,limitations=['Mixed rotations are fresh source sensitivities, not support/object holding equilibrium or certified operating duty. Full3DFinger and physical clamp remain conditional.','Local gamma changes world-X stop under yaw, so object reaction contributes to Q. No additional grounded Root constraint or artificial spring.','No convergence/globalenergy/strength/physicalanchor/thread/all22system gates release.']))
+ print(json.dumps(dict(checks=checks,results=rows)));return 0 if all(checks.values()) else 2
+if __name__=='__main__':sys.exit(main())

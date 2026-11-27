@@ -1,0 +1,394 @@
+{
+  "status": "ACTUAL_P1_FINITE_LOCAL_PIN_MODE_SCALAR_KKT_VERIFIED_NOT_SUPPORT_EQUILIBRIUM",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_mode29/inputs.json",
+    "SHA256": "ef82d9e1f9238f8961f90491305d3d30830cda89a425bf036650beefddd66feb"
+  },
+  "checks": {
+    "all_objective_finite_charts": true,
+    "all_coaxial_derivatives_unassigned": true,
+    "all_overclearance_rejected": true,
+    "reference_open_equilibrium": true,
+    "tilted_lower_stop_scalar_equilibrium": true,
+    "tilted_free_and_wrong_stop_rejected": true,
+    "individual_pin_reaction_not_faked": true,
+    "paired_pin_virtual_work": true
+  },
+  "results": [
+    {
+      "case": "reference",
+      "gamma_mm": 0,
+      "Qgamma_N": -8.57040247147923e-51,
+      "pin_gaps_mm": [
+        0.050000000000000044,
+        0.050000000000000044,
+        0.050000000000000044,
+        0.050000000000000044
+      ],
+      "active_pin_hole_pairs": 0,
+      "conditional_scalar_KKT_feasible": true,
+      "scalar_force_residual_N": 8.57040247147923e-51,
+      "total_necessary_pin_reaction_N": 0.0,
+      "pressure_is_applied_to_support": false,
+      "active_constraint_rank": 0,
+      "individual_reaction_nullity": 0,
+      "reaction_allocation_ranges": [],
+      "open_gap_has_assigned_pressure": false,
+      "whole_support_equilibrium": false
+    },
+    {
+      "case": "tilt_minus",
+      "gamma_mm": -0.05,
+      "Qgamma_N": -0.0008897100627913209,
+      "pin_gaps_mm": [
+        1.8041124150158794e-16,
+        1.8041124150158794e-16,
+        1.8041124150158794e-16,
+        1.8041124150158794e-16
+      ],
+      "active_pin_hole_pairs": 4,
+      "conditional_scalar_KKT_feasible": true,
+      "scalar_force_residual_N": 0.0,
+      "total_necessary_pin_reaction_N": 0.000889710062791321,
+      "pressure_is_applied_to_support": false,
+      "active_constraint_rank": 1,
+      "individual_reaction_nullity": 3,
+      "reaction_allocation_ranges": [
+        {
+          "part": "F0_ROOT_FRONT",
+          "reaction_range_N": [
+            0.0,
+            0.000889710062791321
+          ],
+          "unique": false
+        },
+        {
+          "part": "F0_ROOT_FRONT",
+          "reaction_range_N": [
+            0.0,
+            0.000889710062791321
+          ],
+          "unique": false
+        },
+        {
+          "part": "F0_RAIL_L",
+          "reaction_range_N": [
+            0.0,
+            0.000889710062791321
+          ],
+          "unique": false
+        },
+        {
+          "part": "F0_RAIL_R",
+          "reaction_range_N": [
+            0.0,
+            0.000889710062791321
+          ],
+          "unique": false
+        }
+      ],
+      "open_gap_has_assigned_pressure": false,
+      "whole_support_equilibrium": false
+    },
+    {
+      "case": "tilt_zero",
+      "gamma_mm": 0,
+      "Qgamma_N": -0.0013897999359681504,
+      "pin_gaps_mm": [
+        0.050000000000000044,
+        0.050000000000000044,
+        0.050000000000000044,
+        0.050000000000000044
+      ],
+      "active_pin_hole_pairs": 0,
+      "conditional_scalar_KKT_feasible": false,
+      "scalar_force_residual_N": 0.0013897999359681504,
+      "total_necessary_pin_reaction_N": 0.0,
+      "pressure_is_applied_to_support": false,
+      "active_constraint_rank": 0,
+      "individual_reaction_nullity": 0,
+      "reaction_allocation_ranges": [],
+      "open_gap_has_assigned_pressure": false,
+      "whole_support_equilibrium": false
+    },
+    {
+      "case": "tilt_plus",
+      "gamma_mm": 0.05,
+      "Qgamma_N": -0.0018898898091453988,
+      "pin_gaps_mm": [
+        1.8041124150158794e-16,
+        1.8041124150158794e-16,
+        1.8041124150158794e-16,
+        1.8041124150158794e-16
+      ],
+      "active_pin_hole_pairs": 4,
+      "conditional_scalar_KKT_feasible": false,
+      "scalar_force_residual_N": 0.0018898898091453988,
+      "total_necessary_pin_reaction_N": 0.0,
+      "pressure_is_applied_to_support": false,
+      "active_constraint_rank": 1,
+      "individual_reaction_nullity": 3,
+      "reaction_allocation_ranges": [],
+      "open_gap_has_assigned_pressure": false,
+      "whole_support_equilibrium": false
+    }
+  ],
+  "finite_charts": [
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.0,
+      "gap_mm": 0.049999999999999586,
+      "objective_error_mm": 4.579669976578771e-16,
+      "derivative_error": null,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": -0.05,
+      "gap_mm": -5.273559366969494e-16,
+      "objective_error_mm": 1.3877787807814457e-16,
+      "derivative_error": 1.338797961381033e-10,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": -0.025,
+      "gap_mm": 0.024999999999999977,
+      "objective_error_mm": 2.8796409701215e-16,
+      "derivative_error": 4.4276249333563555e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.025,
+      "gap_mm": 0.024999999999999113,
+      "objective_error_mm": 5.759281940243e-16,
+      "derivative_error": 4.4102832497117106e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.05,
+      "gap_mm": -1.3808398868775384e-15,
+      "objective_error_mm": 7.147060721024445e-16,
+      "derivative_error": 4.4368064777700056e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.051,
+      "gap_mm": -0.0009999999999999107,
+      "objective_error_mm": 2.0122792321330962e-16,
+      "derivative_error": 4.3755887801921745e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": true
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.0,
+      "gap_mm": 0.049999999999999586,
+      "objective_error_mm": 4.579669976578771e-16,
+      "derivative_error": null,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": -0.05,
+      "gap_mm": -5.273559366969494e-16,
+      "objective_error_mm": 1.3877787807814457e-16,
+      "derivative_error": 4.471512049519788e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": -0.025,
+      "gap_mm": 0.024999999999999967,
+      "objective_error_mm": 2.7755575615628914e-16,
+      "derivative_error": 4.3929304638368194e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.025,
+      "gap_mm": 0.024999999999999124,
+      "objective_error_mm": 5.655198531684391e-16,
+      "derivative_error": 4.3929304638368194e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.05,
+      "gap_mm": -1.3808398868775384e-15,
+      "objective_error_mm": 7.147060721024445e-16,
+      "derivative_error": 1.335329624652104e-10,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "gamma_mm": 0.051,
+      "gap_mm": -0.0009999999999999107,
+      "objective_error_mm": 2.0122792321330962e-16,
+      "derivative_error": 4.4102832497117106e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": true
+    },
+    {
+      "part": "F0_RAIL_L",
+      "gamma_mm": 0.0,
+      "gap_mm": 0.049999999999999586,
+      "objective_error_mm": 4.579669976578771e-16,
+      "derivative_error": null,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_L",
+      "gamma_mm": -0.05,
+      "gap_mm": -5.273559366969494e-16,
+      "objective_error_mm": 1.3877787807814457e-16,
+      "derivative_error": 1.338797961381033e-10,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_L",
+      "gamma_mm": -0.025,
+      "gap_mm": 0.024999999999999977,
+      "objective_error_mm": 2.8796409701215e-16,
+      "derivative_error": 4.4276249333563555e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_L",
+      "gamma_mm": 0.025,
+      "gap_mm": 0.024999999999999113,
+      "objective_error_mm": 5.759281940243e-16,
+      "derivative_error": 4.4102832497117106e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_L",
+      "gamma_mm": 0.05,
+      "gap_mm": -1.3808398868775384e-15,
+      "objective_error_mm": 7.147060721024445e-16,
+      "derivative_error": 4.4368064777700056e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_L",
+      "gamma_mm": 0.051,
+      "gap_mm": -0.0009999999999999107,
+      "objective_error_mm": 2.0122792321330962e-16,
+      "derivative_error": 4.3755887801921745e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": true
+    },
+    {
+      "part": "F0_RAIL_R",
+      "gamma_mm": 0.0,
+      "gap_mm": 0.049999999999999586,
+      "objective_error_mm": 4.579669976578771e-16,
+      "derivative_error": null,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_R",
+      "gamma_mm": -0.05,
+      "gap_mm": -5.273559366969494e-16,
+      "objective_error_mm": 1.3877787807814457e-16,
+      "derivative_error": 4.471512049519788e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_R",
+      "gamma_mm": -0.025,
+      "gap_mm": 0.024999999999999967,
+      "objective_error_mm": 2.7755575615628914e-16,
+      "derivative_error": 4.3929304638368194e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_R",
+      "gamma_mm": 0.025,
+      "gap_mm": 0.024999999999999124,
+      "objective_error_mm": 5.655198531684391e-16,
+      "derivative_error": 4.3929304638368194e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_R",
+      "gamma_mm": 0.05,
+      "gap_mm": -1.3808398868775384e-15,
+      "objective_error_mm": 7.147060721024445e-16,
+      "derivative_error": 1.335329624652104e-10,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": false
+    },
+    {
+      "part": "F0_RAIL_R",
+      "gamma_mm": 0.051,
+      "gap_mm": -0.0009999999999999107,
+      "objective_error_mm": 2.0122792321330962e-16,
+      "derivative_error": 4.4102832497117106e-11,
+      "coaxial_derivative_not_invented": true,
+      "penetration_rejected": true
+    }
+  ],
+  "pair_virtual_work": [
+    {
+      "part": "F0_ROOT_FRONT",
+      "pair_work_error_Nmm": 8.470329472543003e-22,
+      "common_Root_force_sum_N": 0.0,
+      "common_Root_moment_sum_Nmm": 0.0
+    },
+    {
+      "part": "F0_ROOT_FRONT",
+      "pair_work_error_Nmm": 8.470329472543003e-22,
+      "common_Root_force_sum_N": 0.0,
+      "common_Root_moment_sum_Nmm": 0.0
+    },
+    {
+      "part": "F0_RAIL_L",
+      "pair_work_error_Nmm": 8.470329472543003e-22,
+      "common_Root_force_sum_N": 0.0,
+      "common_Root_moment_sum_Nmm": 0.0
+    },
+    {
+      "part": "F0_RAIL_R",
+      "pair_work_error_Nmm": 8.470329472543003e-22,
+      "common_Root_force_sum_N": 0.0,
+      "common_Root_moment_sum_Nmm": 0.0
+    }
+  ],
+  "elapsed_s": 0.021428757114335895,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Conditional scalar gamma stationarity only, neither full upstream attachment nor whole product equilibrium. Tilt is explicit sensitivity, not new operating criterion.",
+    "Four identical radial constraints have rank1/nullity3: only total reaction determined, not each pin/rail/front load or finite line pressure. Do not feed arbitrary equal split into Root strength.",
+    "Nominal tangent cylinders contact on finite axial lines with zero ideal area. Compliance/contact pressure and complete3Dclamp/axialfriction/rotational restraint need physical model; no finite strength can be inferred from this necessary reaction.",
+    "Finite action/reaction uses same world contact and preserves force/moment; Root body is never grounded and gamma is never silently eliminated."
+  ]
+}

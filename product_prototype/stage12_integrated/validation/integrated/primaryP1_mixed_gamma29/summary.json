@@ -1,0 +1,149 @@
+{
+  "status": "ACTUAL_P1_MIXED_ROTATION_LOCAL_GAMMA_AND_OBJECT_STOP_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixed_gamma29/inputs.json",
+    "SHA256": "fff324acf98aad28d7a9c09ca7ca7f74d79e0e4b732e2a33ab2c9686dab8a9fb"
+  },
+  "checks": {
+    "all_fresh_conditional_sources": true,
+    "worldX_stop_retained": true,
+    "object_generalized_force_nonzero": true,
+    "all_local_Q_parts": true,
+    "worldX_stop_gamma_derivative": true
+  },
+  "results": [
+    {
+      "gamma_mm": -0.025,
+      "Root_rotation_rad": [
+        0.001,
+        -0.001,
+        0.002
+      ],
+      "axis": [
+        -0.0020004979997506,
+        0.99999750000125,
+        0.0009989990005002999
+      ],
+      "normal_N": 0.4087545646670396,
+      "Qgamma_N": -0.0010304731301887314,
+      "string_Q_N": 0.00024914643849920993,
+      "gravity_Q_N": -0.00046190687968260155,
+      "object_Q_N": -0.0008177126890053399,
+      "independent_Q_error_N": 1.0842021724855044e-19,
+      "fixed_worldX_stop_error_m": 6.938893903907228e-18,
+      "stop_gamma_derivative_error": 3.136774737524939e-11,
+      "source_checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixed_gamma29/case0_source.json",
+        "SHA256": "bf34401ae2bf8549f55399708b469653d5654be1c784696a80e9974211a96557"
+      }
+    },
+    {
+      "gamma_mm": 0.0,
+      "Root_rotation_rad": [
+        0.001,
+        -0.001,
+        0.002
+      ],
+      "axis": [
+        -0.0020004979997506,
+        0.99999750000125,
+        0.0009989990005002999
+      ],
+      "normal_N": 0.40875452328642403,
+      "Qgamma_N": -0.0012805162161754796,
+      "string_Q_N": -8.967302693766669e-07,
+      "gravity_Q_N": -0.00046190687968260155,
+      "object_Q_N": -0.0008177126062235014,
+      "independent_Q_error_N": 1.0842021724855044e-19,
+      "fixed_worldX_stop_error_m": 3.469446951953614e-18,
+      "stop_gamma_derivative_error": 3.136774737524939e-11,
+      "source_checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixed_gamma29/case1_source.json",
+        "SHA256": "9ca55eb0ef07c1465399a7b75909e6283b6fb150715433b0ea2e2ab750257543"
+      }
+    },
+    {
+      "gamma_mm": 0.025,
+      "Root_rotation_rad": [
+        0.001,
+        -0.001,
+        0.002
+      ],
+      "axis": [
+        -0.0020004979997506,
+        0.99999750000125,
+        0.0009989990005002999
+      ],
+      "normal_N": 0.4087544822864866,
+      "Qgamma_N": -0.0015305593044460286,
+      "string_Q_N": -0.00025093990056021835,
+      "gravity_Q_N": -0.00046190687968260155,
+      "object_Q_N": -0.0008177125242032085,
+      "independent_Q_error_N": 3.2526065174565133e-19,
+      "fixed_worldX_stop_error_m": 1.734723475976807e-17,
+      "stop_gamma_derivative_error": 3.136774737524939e-11,
+      "source_checks": {
+        "root_success": true,
+        "force": true,
+        "swivel": true,
+        "gaps": true,
+        "cone": true,
+        "positive_contacts": true,
+        "corner": true,
+        "station": true,
+        "string_residual": true,
+        "flat_floor": true,
+        "string_compression": true,
+        "no_artificial_bound": true,
+        "paired_wrench": true
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixed_gamma29/case2_source.json",
+        "SHA256": "e3addad1ed3492e71d46b12b8ee8552d1967e8e5f09244bd1b9239d36dc9c3c2"
+      }
+    }
+  ],
+  "elapsed_s": 32.35994948609732,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Mixed rotations are fresh source sensitivities, not support/object holding equilibrium or certified operating duty. Full3DFinger and physical clamp remain conditional.",
+    "Local gamma changes world-X stop under yaw, so object reaction contributes to Q. No additional grounded Root constraint or artificial spring.",
+    "No convergence/globalenergy/strength/physicalanchor/thread/all22system gates release."
+  ]
+}

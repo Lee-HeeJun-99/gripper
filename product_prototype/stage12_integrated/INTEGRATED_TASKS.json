@@ -1299,7 +1299,7 @@
       "id": "batch6_system_static_dynamic_load_chain",
       "track": "A",
       "priority": -194,
-      "status": "READY",
+      "status": "BLOCKED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1333,8 +1333,15 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:30:32.450543+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/integrated/batch6_chain_cycle1/summary.json",
+      "last_cycle_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_cycle1/summary.json",
+        "SHA256": "bde028221bf67d4b6e9011ba7980ee32752d4a9bea5e131eef110625cd9ab768"
+      },
+      "reason": "Actual AO conditional compression/modal reference verified; complete same-revision chain lacks justified demand,rated connectors,whole mass and finite coupled contact.",
+      "unblock": "Define rated same-revision Motor-to-Ground connectors and bounded demand/material/mass; integrate finite PET/Rail/contact dynamics. Euler reference is not installed capacity."
     },
     {
       "id": "batch6_same_revision_three_finger_stage1",

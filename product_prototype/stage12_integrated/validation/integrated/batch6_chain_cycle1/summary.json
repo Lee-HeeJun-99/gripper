@@ -1,0 +1,160 @@
+{
+  "status": "CONDITIONAL_AO_GEOMETRIC_STIFFNESS_REFERENCE_VERIFIED_SYSTEM_CHAIN_BLOCKED",
+  "task_id": "batch6_system_static_dynamic_load_chain",
+  "starting_HEAD": "ca76b4047b2002afbe2128b00d9b87c1756b6f85",
+  "actual_research_cycles": 1,
+  "actual_results": {
+    "analysis": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_stability2/summary.json",
+      "SHA256": "5e236d0fc7d548a3c6ce7aa2737791b139df0756864241a563d00ac97a37b79f"
+    },
+    "verification": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_verify2/summary.json",
+      "SHA256": "d9258d5f79b28654b4136aca389cd851d7630b21fceded73d0fefbfeb702d550"
+    },
+    "release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_cycle1/finalize.py",
+    "SHA256": "350a686be87a918e52853dceca5ec8a082c6d0d5f503c14225721b751e67aae6"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_cycle1/runner.py",
+    "SHA256": "ff4dbf730c53842039e78ad230201790422425825f63bc9eb09ff4ad13e9161d"
+  },
+  "executions": [
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_chain_stability.py"
+      ],
+      "producer_SHA256": "44a33ef413115eb27b6b7c76e24d52b92bf35157e072bddc0b63d0612dfd6bea",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.16466211806982756,
+      "PID": 4,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_chain_stability.py"
+      ],
+      "producer_SHA256": "bbe2e27de4cdf55e4605928a037c0fb8fb5f647ba628d26bc49b57b530545b6d",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.16464510094374418,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "batch6_chain_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.3649350060150027,
+      "PID": 6,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_chain_stability.py"
+      ],
+      "producer_SHA256": "22874fe63730ed8c8bcea41145b629968e7f7a85f684b213f60c392ca707b0fd",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.16474458505399525,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_chain_stability.py"
+      ],
+      "producer_SHA256": "0805aa7ff127ba7e46f4a9e60a29f77a859ab2aed5315ce57a1373658d41ca6d",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 0.16470129182562232,
+      "PID": 6,
+      "reaped": true
+    }
+  ],
+  "actual_evidence": "Same AO actual STEP-derived rail sections, envelope span and REST tendon wrench from hash-verified prior specimen; new initial-stress stiffness, consistent mass and dynamic eigenproblem at8/16/32/64elements. Not a repeat of linear force-only equilibrium.",
+  "quantitative": {
+    "euler_compression_N": 0.32127401744131834,
+    "conditional_euler_tension_N": 0.3225149787382726,
+    "unloaded_omega_rad_s": 168.90820065448554,
+    "loaded_omega_rad_s": 168.66504886371564,
+    "tip_mm": -0.04842697836015644,
+    "geometric_tip_change_percent": 0.3151868493421528,
+    "independent_residual_N": 1.141448047192739e-13
+  },
+  "failures_preserved": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_stability1/summary.json",
+        "SHA256": "e91849baaa28de08786c11f94410ef720cd37edef49b93b2d8166691dda1d96f"
+      },
+      "reason": "Original producer density used7.93e-9kg/mm3 rather than7.93e-6kg/mm3 before kg-to-Ns2/mm conversion. Frequency overestimated sqrt1000; original VERIFIED label is invalid for dynamics. Static/buckling unchanged; original files immutable."
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_verify1/summary.json",
+        "SHA256": "fc07effa21e416698ce9f931b64dde7af038df79a52f1e4e6f86937d53ef2860"
+      },
+      "reason": "Independent physical density catches modal mismatch .968377; exit2 retained"
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_release1/summary.json",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "reason": "Release exit2 remains INTEGRATED_NOT_QUALIFIED"
+    }
+  ],
+  "limitations": [
+    "Typical E193GPa/density7930kg/m3 conditional; no certified lower/upper material bounds",
+    "Ideal clamped uniform projected Rail pair; fixed spatial DEAD force, not finite follower tendon or coupled PET/contact",
+    "Mass includes only Rail free span, excludes Terminal,Root,PET,drive and payload; not product resonance",
+    "Euler reference bifurcation is not installed capacity or force cap; lateral eccentric equilibrium departs linear domain earlier",
+    "Geometric potential is dead-load potential, not material stored energy or full trajectory energy closure",
+    "No justified demand, rated compatible full AO drive/connector/Palm/Ground chain, damping or full system transient"
+  ],
+  "remaining_system_gate_ids": [
+    "static_dynamic_consistency",
+    "continuous_load_path",
+    "physical_mass_inertia"
+  ],
+  "changed_part_IDs": [],
+  "CAD_BOM_modified": false,
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "whole_system_release": false,
+  "actual_capacity_qualified": false,
+  "SOFA_runs": 0,
+  "criteria_relaxed": false,
+  "known_owned_analysis_children_running": 0,
+  "save_status": "PENDING_SUPERVISOR_VALIDATION_AND_LOCAL_SAVE",
+  "new_commit_SHA": null,
+  "next": "Coverage scheduler selects independent remaining READY mechanisms. This chain task requires compatible rated connectors, justified demand and actual whole-assembly mass before system static/dynamic qualification; no parameter sweep of this reference."
+}

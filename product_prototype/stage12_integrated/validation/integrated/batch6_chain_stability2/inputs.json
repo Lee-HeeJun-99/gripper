@@ -1,0 +1,72 @@
+{
+  "reference": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen3/summary.json",
+    "SHA256": "29b922edf7b86179ea2a45053769aa52f8b722cbdaeb7294d2ccb137382d1ed2"
+  },
+  "reference_inputs": {
+    "path": "product_prototype/stage12_integrated/validation/finger/batch6_actual_specimen3/inputs.json",
+    "SHA256": "181c6ee7d7ef18dc1b0b8f14d2a0eb8fd2021d25cac7f1d4ea22bcfebba4533d"
+  },
+  "parts": {
+    "F0_RAIL_L": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_RAIL_L.step",
+      "SHA256": "037173ea5708d22a36bdd409f8ae2f62b886356bc6cf89a837a5219819e37cdb"
+    },
+    "F0_RAIL_R": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_RAIL_R.step",
+      "SHA256": "6e78740bb12968a60b6b9cd89bc46699b3372b62b872dea5d80fbec3b6e109e7"
+    },
+    "F0_SKIN": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_SKIN.step",
+      "SHA256": "7df0c82035daa7ba5a8130b05ce3dd2fcb582c4b10c01eacccf28a308448d39e"
+    },
+    "F0_TERMINAL_FRONT": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAD_funnel1/F0_TERMINAL_FRONT.step",
+      "SHA256": "264e8b302c49bff8afa273acb2147e74e732004433009043f8a935c687eaf85e"
+    },
+    "F0_TERMINAL_BACK": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_TERMINAL_BACK.step",
+      "SHA256": "6fafeee947ac578c960bef0a7efd6ac4aa06dd3eaa4afc06c8c6a75cec7fc2f6"
+    },
+    "F0_ROOT_FRONT": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_ROOT_FRONT.step",
+      "SHA256": "35ed1a5c77dbc64239e2326cbce8707cc6aaf14e275cdbda373d4729cf0c45e8"
+    },
+    "F0_ROOT_BACK": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/F0_ROOT_BACK.step",
+      "SHA256": "1d2691108a114d7c1e59fb482e7c4fb4c18e44a1b72e615230a516b6d7d2cf95"
+    },
+    "PALM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAN_palm2/PALM.step",
+      "SHA256": "73154c87f66f6e4718dc1df3d24fd97c3206b48ef6551e71c276aee80a4b615f"
+    },
+    "F0_IDLER": {
+      "path": "product_prototype/stage1_manufacturing/cad/parts/revAA_mbd1/F0_IDLER.step",
+      "SHA256": "e89cc9bf6f6f749547f445d784fbc3dbc8c15db64c3cf22a6366df0a1ead3ea0"
+    },
+    "F0_DRUM": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_DRUM.step",
+      "SHA256": "c5e713886911a9fdc1e6d0dd6e452e8b3d3985592f0fb1946a83b50a08eb6718"
+    },
+    "F0_TENDON_WIRE": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAF_layout6/F0_TENDON_WIRE.step",
+      "SHA256": "780c437932c9915833a74d6475fd5f7570b570ffa5705338639efa7a0ff67f51"
+    }
+  },
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+    "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/batch6_chain_stability2/producer.py",
+    "SHA256": "22874fe63730ed8c8bcea41145b629968e7f7a85f684b213f60c392ca707b0fd"
+  },
+  "numpy": "1.26.4",
+  "thresholds": {
+    "buckling_relative": 1e-05,
+    "frequency_relative": 1e-05,
+    "beamcolumn_relative": 0.0001,
+    "residual_N": 1e-08
+  },
+  "contract": "Fixed-root, free-tip straight projected AO rail pair, uniform section from archived actual STEP cuts. Prescribed spatial DEAD compressive force; Euler Bernoulli initial-stress tangent. Typical E193GPa and density7930kg/m3 conditional. No terminal eccentric-force variation/follower, PET, connector, motor, damping or full-system certification."
+}

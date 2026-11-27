@@ -794,9 +794,9 @@
       "id": "batch5_grounded_palm_attachment",
       "track": "C",
       "priority": -4,
-      "status": "READY",
+      "status": "PARTIAL_IMPLEMENTED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
-      "hypothesis": "Implement external base tendon service passages and actual retained fastener engagement or captive shoulder architecture before loaded Palm/base analysis; preserve AR failures",
+      "hypothesis": "IndependentcurrentP1groundpathmechanism: keyedfiniteBaseattachmentwithactualstandardretention;do not rerunoldAOassembly.",
       "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
       "previous_diagnostic_task": "AI_whole_palm_support",
       "existing_evidence": [
@@ -806,14 +806,14 @@
       ],
       "prerequisites": [],
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
-        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+        "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
       },
-      "target_revision": "revAO_root2",
-      "target_parts": 254,
+      "target_revision": "primaryP1_anchor36b",
+      "target_parts": 85,
       "product_brief": {
-        "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
-        "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
       },
       "expected_outputs": [
         "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
@@ -823,10 +823,57 @@
       "cost": "One3600second session, each analysis child4GiB/420s",
       "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
       "system_gate_contribution": 5,
-      "last_run_utc": "2026-11-26T23:10:15.571055+00:00",
-      "consecutive_runs": 2,
-      "result": "validation/transmission/AR_base_cycle1/summary.json",
-      "scope": "AR1/AR2 unadopted external base rejected: residual tendon intersection and smooth nut uplift failure. AO remains current."
+      "last_run_utc": "2026-11-27T09:57:13.322096+00:00",
+      "consecutive_runs": 3,
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle36_record/summary.json",
+        "SHA256": "43df1786e607bb52e9087e6efe35c051b5868b6f694a9aeffaec358488922f74"
+      },
+      "scope": "CurrentuserdirectedP1externalBaseattachmentcontinuation. HistoricalAO/ARclaims/evidence remainunqualifiedandpreserved.",
+      "historical_task_before_primary_rebinding": {
+        "id": "batch5_grounded_palm_attachment",
+        "track": "C",
+        "priority": -4,
+        "status": "READY",
+        "execution_class": "PRODUCT_IMPLEMENTATION",
+        "hypothesis": "Implement external base tendon service passages and actual retained fastener engagement or captive shoulder architecture before loaded Palm/base analysis; preserve AR failures",
+        "criteria": "Actual base adapter/fasteners/pins/shoulders and ground path,6DOF support and component load evidence; no unsupported FE node fixation",
+        "previous_diagnostic_task": "AI_whole_palm_support",
+        "existing_evidence": [
+          "validation/transmission/AN_palm_cycle1/summary.json",
+          "validation/transmission/AN_palm_verify1/summary.json",
+          "validation/transmission/AR_base_cycle1/summary.json"
+        ],
+        "prerequisites": [],
+        "target_candidate": {
+          "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+          "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+        },
+        "target_revision": "revAO_root2",
+        "target_parts": 254,
+        "product_brief": {
+          "path": "product_prototype/stage12_integrated/reports/DESIGN_IMPLEMENTATION_BRIEF_20261126_5.md",
+          "SHA256": "61c190c305dfa58fe48d0d8b96732991f04fcc435b16672767b271b06a94721b"
+        },
+        "expected_outputs": [
+          "Actual changed finite CAD/assembly or direct load evidence for implemented candidate",
+          "Independent verification summary, source/model/result hashes",
+          "BOM/interface invalidation and affected system gates"
+        ],
+        "cost": "One3600second session, each analysis child4GiB/420s",
+        "fallback": "Implement a simpler manufacturable positive mechanical alternative; preserve rejected candidate",
+        "system_gate_contribution": 5,
+        "last_run_utc": "2026-11-26T23:10:15.571055+00:00",
+        "consecutive_runs": 2,
+        "result": "validation/transmission/AR_base_cycle1/summary.json",
+        "scope": "AR1/AR2 unadopted external base rejected: residual tendon intersection and smooth nut uplift failure. AO remains current."
+      },
+      "reason": "SAME ONE P1 now85actualparts primaryP1_anchor36b,not AO. Actual TEST_BASE3ears/2keys,one receiverframe and3existing-source M5x20pairs implemented.77originalparts unchanged. Whole85part nominal gravity/frozen historical contact-resultant sensitivity,14cases x3finitepatchlevels,ordered assembly/tool enclosures,independent inward-normal/force/6motionwork verified. Singleline83partprying52.1622N->three-station13.5954N retention witness;uniformpatchpressure.823597->.143107MPa. These are necessary rigid witnesses,NOT physical elastic pressure/preload/thread/minimumstrength or operating equilibrium. LP4->8somepressureboundsFAIL14.3772percent;all priorRoot/Beam/dt/globalenergyFAIL retained. Externalreceiver-to-bench absent. No system gate qualified.",
+      "next": "goal_primary_anchor36b_elastic_stack_and_external_receiver_support",
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "ceb5b8e6953737aa80db8922f3128d89fa38822c4e47a4863a93f2674112fd77"
+      }
     },
     {
       "id": "batch5_positive_root_retention",
@@ -3717,14 +3764,14 @@
         "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
       },
       "target_candidate": {
-        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
-        "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+        "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
       },
-      "target_revision": "primaryP1_ycapture24",
-      "target_parts": 78,
+      "target_revision": "primaryP1_anchor36b",
+      "target_parts": 85,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "8893d63636776339c643c76cfc8c8a4a9f3f6528fd018d31142bd67b6638c978"
+        "SHA256": "ceb5b8e6953737aa80db8922f3128d89fa38822c4e47a4863a93f2674112fd77"
       },
       "concrete_first_step": "Target actual Root pin finite .2mm axial Rail bands/free tips, separate curvedgeometry and elasticmesh convergence; retain35independent force audit and replace conditional sources with physical clamp-stack elastic traces.",
       "known_blockers": [
@@ -3735,6 +3782,61 @@
         "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle35_record/summary.json",
         "SHA256": "2d13d41f2e5dcdc661d3e4b6927a0ea3a16d2b261ac3947b2f1042d7c5fec79b"
       },
+      "result": null,
+      "reason": null,
+      "next": null,
+      "deferred_by_strategy": "goal_primary_anchor36b_elastic_stack_and_external_receiver_support",
+      "scope": "Rootgeometryunchanged,conditionalcomponentfailurespreserved. Fullproduct now85parts;old78partsourcefieldnottransferred."
+    },
+    {
+      "id": "goal_primary_anchor36b_elastic_stack_and_external_receiver_support",
+      "track": "C",
+      "priority": -1170,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME85part primaryP1_anchor36b,one P1 separate failedAO,Motor-stock1996-Drum-Tendon-Finger-Root-Frame-Ground-TEST_BASE-3station keyedreceiver; preserve cartridge/distalPETslide/3Finger/jamming. FIRST bind actual3head/3nut bearing footprints and finite one-square-key/one-Xslot faces to elastic TEST_BASE/receiverframe and finiteboltstack; retain allbody elastic/source traces,nonnegativepressure/actualgap. Resolve physical receiver-to-external-support geometry and source-backedmaterial/threadcore/flank/engagement/rest/preload bounds before claiming fullsupport. Use36inward-normal/force/work audit as negativecontrol;do not use initial504outwardnormals or rigidLP as physicalpressure,fixRoot/rail,or add balancingcounterloads. Evaluate all14conditionalmodes,actualsourceQ/freshgravity,independent force1e-8N/moment1e-10Nm and mesh1percent;LP4->8FAIL14.3772percent is not an elasticconvergence certificate. Original Root pin finiteends/localaxialmesh/cylindergeometry/materialclamptrace and prior35all4meshFAIL remain prerequisites for wholeproduct,not replaced. Full3DFinger,finitewire,source-backedphysicalprotector,friction,time.1percent/globalenergy,fullsame-revision3Finger/all22gates remainBLOCKED. NoStage3.",
+      "criteria": "Alloriginal22systemcriteria;actual85partCAD/BOM/load/BC,source-backedstrength/support,mesh1percent,time.1percent;no implicitfixation orcriterionrelaxation.",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "physical_mass_inertia",
+        "numerical_convergence",
+        "root_palm_strength",
+        "qualified_worst_case"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+        "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+        "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+      },
+      "target_revision": "primaryP1_anchor36b",
+      "target_parts": 85,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "ceb5b8e6953737aa80db8922f3128d89fa38822c4e47a4863a93f2674112fd77"
+      },
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle36_record/summary.json",
+        "SHA256": "43df1786e607bb52e9087e6efe35c051b5868b6f694a9aeffaec358488922f74"
+      },
+      "concrete_first_step": "Use actual85part3head/3nut and2keyfinitefaces;replace36rigidLPpressure with finiteelasticstack/contactand source-backedconnectorproperties. Define actual receiver-to-supportinterface before anyfixed-DOFsupportclaim.",
+      "known_blockers": [
+        "SAME ONE P1 now85actualparts primaryP1_anchor36b,not AO. Actual TEST_BASE3ears/2keys,one receiverframe and3existing-source M5x20pairs implemented.77originalparts unchanged. Whole85part nominal gravity/frozen historical contact-resultant sensitivity,14cases x3finitepatchlevels,ordered assembly/tool enclosures,independent inward-normal/force/6motionwork verified. Singleline83partprying52.1622N->three-station13.5954N retention witness;uniformpatchpressure.823597->.143107MPa. These are necessary rigid witnesses,NOT physical elastic pressure/preload/thread/minimumstrength or operating equilibrium. LP4->8somepressureboundsFAIL14.3772percent;all priorRoot/Beam/dt/globalenergyFAIL retained. Externalreceiver-to-bench absent. No system gate qualified.",
+        "Root narrowport/freeend/curvedgeometry/physicalclamptrace remainsunqualified;historical35meshFAILnotrerunorhidden."
+      ],
+      "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
+      "last_run_utc": null,
+      "consecutive_runs": 0,
       "result": null,
       "reason": null,
       "next": null

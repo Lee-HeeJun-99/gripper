@@ -1,0 +1,34 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "load_source": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_gravity_cat_demand_ports2/summary.json",
+    "SHA256": "38f9c261a2e0b2d1eeb86953d015731db2a42644411f0d7b49e560afb4dcab78"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor36b_witness/producer.py",
+    "SHA256": "e1dee10e9c64a995b1063c4ae537b6b31989439966b5caaf19eb340c51f2bb03"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_motor_bearing_wrenches.py",
+      "SHA256": "d9f02c222bc6fce361b5efa00ea5f23d22e7d849a53ba342bc3c94a58af9bbf0"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    }
+  ],
+  "criteria": {
+    "force_N": 1e-08,
+    "moment_Nm": 1e-10,
+    "mesh_relative": 0.01
+  },
+  "conditional_density_scope": "Reuses primary_full_mass_v2 densities and manufacturer nominal motor/hub masses;not material or mass minimum. Nominal CAD centroids,no deformed-body update.",
+  "standard_sources": {
+    "path": "product_prototype/stage12_integrated/models/standard_drive/primary_retention_sources2/reviewed.json",
+    "SHA256": "828df2b576c39a8b88a55b79c56b0e9e243321a0eabff6f8d314e3a7f599fe8d"
+  }
+}

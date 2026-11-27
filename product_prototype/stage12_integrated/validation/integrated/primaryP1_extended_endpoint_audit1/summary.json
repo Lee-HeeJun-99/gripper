@@ -1,0 +1,66 @@
+{
+  "status": "ACTUAL_P1_ENDPOINT_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_continuation1/summary.json",
+    "SHA256": "f73146ba13c348689a3b0706f54d67de2bb9c19f422dd634e32afe4dbcaff5ea"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_endpoint_audit1/verifier.py",
+    "SHA256": "b169c8fecb7b0a73e16552d1f8f3b35d11db4093e9c31e6e418e7e5ef2c6c7db"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_endpoint_audit1/missing_mode.npz",
+    "SHA256": "11537075bf8a6aa234374fb696caedfc5842d687c855797cbdd12aba1b56ceb6"
+  },
+  "checks": {
+    "all2208rows": true,
+    "all131columns": true,
+    "original_reduced_H": true,
+    "original_F": true,
+    "original_b": true,
+    "endpoint": true,
+    "force": true,
+    "physical_dual": true,
+    "metrics": true,
+    "orthogonal_mode": true,
+    "positive_curvature": true,
+    "work_identity": true,
+    "physical_rejection": true,
+    "actual78STEP": true,
+    "source_hashes": true,
+    "negative_controls": true
+  },
+  "metrics": {
+    "primal_mm": 2.2560370499803676e-09,
+    "stationarity_N": 3.0763200421656562,
+    "gauge_N": 0.0004456330164952519,
+    "RootY_gamma_stationarity_N": 8.627617365011109e-07,
+    "sign_N": 0.0,
+    "complementarity_Nmm": 1.5230584883875685e-06,
+    "reduced_stationarity": 2.3692973339159424e-08
+  },
+  "partition": {
+    "scaled_residual_norm": 0.016166262684704825,
+    "parallel_norm": 4.168978599168702e-08,
+    "orthogonal_norm": 0.016166262684651066,
+    "orthogonal_fraction": 0.9999999999966747,
+    "all131_orthogonality": 1.2544219135657286e-16,
+    "work_Nmm": 0.01616626268465107,
+    "curvature_Nmm": 1.0436814232971208,
+    "maximum_original_row_motion_mm": 0.0019401131142800093
+  },
+  "negative_controls": {
+    "reversed_work": -0.01616626268465107,
+    "omitted_contact_force": 13.33599485299768,
+    "wrong_scaling_norm": 9.323105391344102
+  },
+  "physical_KKT_qualified": false,
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

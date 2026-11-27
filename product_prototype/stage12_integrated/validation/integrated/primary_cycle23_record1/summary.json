@@ -1,0 +1,231 @@
+{
+  "status": "ACTUAL_P1_EXTENDED_CONTINUATION_VALIDATED_PHYSICAL_ENDPOINT_REJECTED",
+  "category": "ACTUAL_PRODUCT_VALIDATION",
+  "task_id": "goal_primary_extended_first_order_fullforce_globalization",
+  "starting_HEAD": "941af324671b7ec8a60add285da4c1312a0f595d",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "actual_changed_CAD": [],
+  "unchanged_actual_STEP_parts": 78,
+  "evidence": {
+    "primaryP1_extended_pair1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_pair1/summary.json",
+      "SHA256": "4612122126d7dba47e190e0c2a0c409d60998fee57eb3a9eec02b4ce37db8c1c"
+    },
+    "primaryP1_extended_pair_audit1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_pair_audit1/summary.json",
+      "SHA256": "aa8abc564c2cdf287c73dc34c0205a5fa872f0559287ca4ee65247eae399a930"
+    },
+    "primaryP1_extended_continuation1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_continuation1/summary.json",
+      "SHA256": "f73146ba13c348689a3b0706f54d67de2bb9c19f422dd634e32afe4dbcaff5ea"
+    },
+    "primaryP1_extended_trajectory_audit1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_trajectory_audit1/summary.json",
+      "SHA256": "14fa309388b9c1c2b655a36b0608120c5219fab42b732898bd39882e1d54a49b"
+    },
+    "primaryP1_extended_trajectory_audit2": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_trajectory_audit2/summary.json",
+      "SHA256": "fecf96fc51c06064c4e33f5f5d2511919844992c730eead63f46b8e169c75cdc"
+    },
+    "primaryP1_extended_endpoint_audit1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_endpoint_audit1/summary.json",
+      "SHA256": "962848573c019d7d66f9f70b141de7369308bcdddbcec20cb891a9b3239f9705"
+    },
+    "primaryP1_release28": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release28/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "metrics": {
+    "primal_mm": 2.2560370499803676e-09,
+    "stationarity_N": 3.0763200421656562,
+    "gauge_N": 0.0004456330164952519,
+    "RootY_gamma_stationarity_N": 8.627617365011109e-07,
+    "sign_N": 0.0,
+    "complementarity_Nmm": 1.5230584883875685e-06,
+    "reduced_stationarity": 2.3692973339159424e-08
+  },
+  "scaled_residual_partition": {
+    "scaled_residual_norm": 0.016166262684704825,
+    "parallel_norm": 4.168978599168702e-08,
+    "orthogonal_norm": 0.016166262684651066,
+    "orthogonal_fraction": 0.9999999999966747,
+    "all131_orthogonality": 1.2544219135657286e-16,
+    "work_Nmm": 0.01616626268465107,
+    "curvature_Nmm": 1.0436814232971208,
+    "maximum_original_row_motion_mm": 0.0019401131142800093
+  },
+  "certified_algorithmic_steps": 5,
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "physical_KKT_qualified": false,
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state27.json",
+    "SHA256": "1d9ff5ce065144da068498e84b85e8bbf3b8f8087dfc2ae17291d7d1980d235e"
+  },
+  "executions": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_extended_continuation.py",
+        "primaryP1_extended_continuation1",
+        "continue"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 5.2091345698572695,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_extended_endpoint.py",
+        "primaryP1_extended_endpoint_audit1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.804044882999733,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_extended_pair.py",
+        "primaryP1_extended_pair_audit1",
+        "primaryP1_extended_pair1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.20159882679581642,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_extended_continuation.py",
+        "primaryP1_extended_pair1",
+        "prepare"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.4046775510068983,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release28"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4016473500523716,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_extended_pair.py",
+        "primaryP1_extended_trajectory_audit1",
+        "primaryP1_extended_continuation1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.2013865360058844,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_extended_pair.py",
+        "primaryP1_extended_trajectory_audit2",
+        "primaryP1_extended_continuation1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.20131445000879467,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    }
+  ],
+  "recorded_child_seconds_known": 9.423804166726768,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "source_pins_unchanged": true,
+  "original_untracked_preserved": 8595,
+  "next_task_id": "goal_primary_measured_complement_enrichment_physical_globalization",
+  "hardware": "HARDWARE_NOT_MEASURED",
+  "alternatives_review": {
+    "A": "Repeat previous centrality/double/eliminated budgets: rejected; prior failures preserved.",
+    "B": "Extended accumulator integrated for BOTH predictors/correctors; pre-audited pair, one continuation,5verified steps and terminal merit rejection. Physical endpoint still fails.",
+    "C": "Measured correctly D-scaled complement outside131columns supplies actual new elastic direction; next derive gap-feasible enrichment/globalization, not more reduced iterations."
+  },
+  "limitations": [
+    "Actual product numerical validation only; no new CAD, strength, nonlinear update, global energy or system release.",
+    "Raw mixed-coordinate Euclidean norms in producer are coordinate diagnostics, not a physical force norm. Independent endpoint audit uses archived D scaling and reports work/curvature explicitly.",
+    "Scaled first-order equation threshold remains1e-8; original physical tolerances unchanged.",
+    "Independent trajectory reconstruction is retrospective; initial pair was independently verified before continuation."
+  ],
+  "failures": [
+    "Terminal extended pair was certified but30backtracking attempts fail algorithmic merit; no terminal update.",
+    "Primal2.25603705e-9mm,force3.07632004N,gauge4.45633016e-4N,gamma8.627617e-7N,complementarity1.52305849e-6Nmm reject physical KKT.",
+    "All historical mesh/time/material/source/anchor/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger failures remain."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "status": "ACTUAL_P1_PAIR_AUDIT_PASS",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_pair1/summary.json",
+    "SHA256": "4612122126d7dba47e190e0c2a0c409d60998fee57eb3a9eec02b4ce37db8c1c"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_pair_audit1/verifier.py",
+    "SHA256": "45e2f9b34d3df6b633026ac4d7226f5ab2803574da9e92ccd1e46ed0e21702fc"
+  },
+  "checks": {
+    "pair.npz_equations": true,
+    "pair.npz_controls": true,
+    "prepared_pair_certified": true,
+    "source_hashes": true
+  },
+  "directions": [
+    {
+      "path": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_extended_pair1/pair.npz",
+        "SHA256": "e28c966bbdf41dcc72accd883c78b7c0034a403e84e68b3f4c68e1bffc4a1d1e"
+      },
+      "errors": [
+        [
+          9.623969619334292e-16,
+          5.684341886080801e-13,
+          2.176731695751222e-15
+        ],
+        [
+          3.5367371262845187e-13,
+          7.275957614183426e-12,
+          7.577502135045048e-13
+        ]
+      ],
+      "certified": true,
+      "controls": [
+        0.0007797803409660604,
+        0.16779472232782325,
+        452.5595589157993
+      ]
+    }
+  ],
+  "actual_support_updates": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

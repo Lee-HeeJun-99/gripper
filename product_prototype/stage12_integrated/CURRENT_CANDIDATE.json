@@ -9,7 +9,7 @@
   },
   "primary_state": {
     "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-    "SHA256": "40d55aacf13975257ef8623cb54317345a5bc097121064129dbedb21c8189792"
+    "SHA256": "a5955362d6d2d5d49502903600244f16e10c1569bda0aaa7bc76b8e6f77d57c7"
   },
   "historical_previous_state": {
     "path": "product_prototype/stage12_integrated/models/current_candidate_before30.json",
@@ -20,7 +20,7 @@
   "hardware": "HARDWARE_NOT_MEASURED",
   "powered_operation": "NOT_AUTHORIZED",
   "current_physics_sourcefield": null,
-  "model_binding_status": "Same85part primaryP1_anchor36b unchanged actual CAD. Actual full TEST_BASE/receiver P1 elasticity with allDOF and six unloaded rigid gauges,3actualhead/nutfootprints+finitekey/seatpressurecells,conditional14mm/5mmmajor-shank axialbranches.14conditionalresultantcases at h5/n2,h3/n2,h5/n4. Independent tetra force/work/sourcegeometry/duals pass locally;maxforce1.33851263e-13N,moment1.28543842e-14Nm. FixedactualCADsignedsourcefield now independent of mesh after earlier rimtriangleselectionFAIL preserved. Actualphysicalexternalfixture/materialminima/threadcore/flank/preload/rest remainunknown. Bulkworkchange40.957186percent and cellworkchange91.764772percent FAIL1percent. Actual same-point traces have minimumgap-0.000956316524/-0.000856621094mm despite averageKKTpass. h2SuperLU memoryFAIL under4GiB preserved,no retry. No accepted productequilibria/systemgate/Stage3.",
+  "model_binding_status": "SAME85part primaryP1_anchor36b unchanged CAD. Actual full Base/receiver h5 finite elasticity,allDOF retained,0physicalfixedDOF. Implemented exact local nonmatching common-polygon P0 refinement then vertex-unilateral FE constraints;14conditional cases per trial,previous triangles retained in adaptive continuation. Selected polygons pass independent area/centroid,affine vertexgap/complementarity;minimum-1.4135112335e-09mm,witnesserror1.89667617549e-16mm. Independent Hooke nodalforce/work/source/dual audits maxworldforce2.86923262927e-13N,moment4.50603998559e-14Nm. Same immutable material probes still have minimum-7.45610296685e-05mm and1768negative1e-8samples;full pointwisecontactFAIL. Final localcontactspacecontrast work35.6320757percent/bolt68.4740547percent FAIL1percent,not pure bulkmesh. Nodalforce/tributaryarea is NOT physical pressure. Algebraic sparsequotient restores original6gauges;h5equivalencepasses1e-7,but h2LU still memoryFAIL4GiB;no retry/limitincrease. Corrected rigid recovery uses originalequilibriumrank1e-10;oldnear-nullinversionFAIL preserved. Conditional signed source,major-shank bolt law,materials/external support unresolved;no actual operating sourcefield/physicalequilibrium/systemgate/Stage3.",
   "latest_actual_validation": {
     "primaryP1_anchor36_witness": {
       "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor36_witness/summary.json",
@@ -100,5 +100,107 @@
       "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor37_comparison/summary.json",
       "SHA256": "a9384bc526616875dd5abe2c19b9fa09bd0af76cf32041418fdc6ea43362212a"
     }
+  },
+  "latest_actual_anchor_common_contact_evidence": {
+    "primaryP1_anchor38_common4": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_common4/summary.json",
+      "SHA256": "d29fa6a712de7e7bf20a16f34875616d764e3a699be816b6c1f3d0c1e7ed5af2"
+    },
+    "primaryP1_anchor38_common4_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_common4_audit/summary.json",
+      "SHA256": "526736b4e458a8ec4438d38e2898230ce0448bc12b7a506f3d0f6a47eb4c5fb1"
+    },
+    "primaryP1_anchor38_common4_polygon": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_common4_polygon/summary.json",
+      "SHA256": "5d2feb6cce5bb985748852915e26bee0799e99858d610b3327b8e0f12da03344"
+    },
+    "primaryP1_anchor38_gauge5": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_gauge5/summary.json",
+      "SHA256": "3cfd990e52600a92eb0c1c84c69243456e9de53507ce02f083a5b4ade431e0fc"
+    },
+    "primaryP1_anchor38_gauge5_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_gauge5_audit/summary.json",
+      "SHA256": "66981639cd222ae72f23b27e4998eb914aebe34f69cbf5e9b2eb82c9ac907f00"
+    },
+    "primaryP1_anchor38_gauge_equivalence": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_gauge_equivalence/summary.json",
+      "SHA256": "61d3dc321a9cb8dc01c1b6bdd2bdf5571a4cb23890152800a965a8cdf856a7c0"
+    },
+    "primaryP1_anchor38_geometry": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_geometry/summary.json",
+      "SHA256": "31241cd47d99b1674b7aeac71d2f931c0d0708db7160f928436c5d8f75513ef3"
+    },
+    "primaryP1_anchor38_vertex4": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex4/summary.json",
+      "SHA256": "a8432cbaf5913bb7041e5b2e0415c55007c464751fc38155040f5ad0fc3e6749"
+    },
+    "primaryP1_anchor38_vertex4_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex4_audit/summary.json",
+      "SHA256": "239669292808a3e60a1619fc9c8365965e7b1d91bd729179fd17e7429cb86c56"
+    },
+    "primaryP1_anchor38_vertex4_polygon": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex4_polygon/summary.json",
+      "SHA256": "f537e886c026035c5edc838bd449145fb0fb1f2eb9d920dee7fa49eee81ae575"
+    },
+    "primaryP1_anchor38_vertex4_polygon_corrected": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex4_polygon_corrected/summary.json",
+      "SHA256": "f5525158ae02531d42927dddcb4442bb1075c802fd4ea236c9b77c7da7c96574"
+    },
+    "primaryP1_anchor38_vertex16": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex16/summary.json",
+      "SHA256": "91be0a6a8909fedfb3dac88190b4bc7298051d3dcdd5a146a8880323d0d9bbf0"
+    },
+    "primaryP1_anchor38_vertex16_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex16_audit/summary.json",
+      "SHA256": "d117db65448496670179b61dcdb6996ebe449f5572b151e90aaf927d58a68914"
+    },
+    "primaryP1_anchor38_vertex16_polygon": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex16_polygon/summary.json",
+      "SHA256": "b7410c370393225a9497e8f0cf8e4529d7e987050e8c6af8ac69283eb61a28f8"
+    },
+    "primaryP1_anchor38_adaptive8": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_adaptive8/summary.json",
+      "SHA256": "2871d7524ef2e61faaf3b7ca4347b63481e868cbb8f22a376230a40d7d4012f9"
+    },
+    "primaryP1_anchor38_adaptive8_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_adaptive8_audit/summary.json",
+      "SHA256": "ee1ca2c7ab67843dfb727fe820ca1d616ef7a42c29f1d67aefa9641d5d522fed"
+    },
+    "primaryP1_anchor38_adaptive8_polygon": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_adaptive8_polygon/summary.json",
+      "SHA256": "45e034f80f8f889465155f9ba737e9531e1a98b3d4301194bedb31fd7aa6a6bf"
+    },
+    "primaryP1_anchor38_allgap8": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_allgap8/summary.json",
+      "SHA256": "e0e73dad739d1a1bddf5d3e0b11e0174bc4eedb23c4ba58f0a60b46dfcc0c048"
+    },
+    "primaryP1_anchor38_allgap8_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_allgap8_audit/summary.json",
+      "SHA256": "7a783b3d04f7194f05e30dab09e3777aa87cbb48facd5abb083df21f3d2d51e0"
+    },
+    "primaryP1_anchor38_allgap8_exact": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_allgap8_exact/summary.json",
+      "SHA256": "a215f393e5c0188df9312157755f1232b87b408431da4f412870f3fea7ff8030"
+    },
+    "primaryP1_anchor38_allgap8_trace": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_allgap8_trace/summary.json",
+      "SHA256": "e33b0d9e93d706f16f8199f72e635296aae17582d001ad43134b7b0215dce28e"
+    },
+    "primaryP1_anchor38_fixedprobes_partial": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_fixedprobes_partial/summary.json",
+      "SHA256": "e4c16e8b7a60a7697afa26763178a9f3bb72b912a33a30a8a38d89a86b9c7d70"
+    },
+    "primaryP1_anchor38_fixedprobes_final": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_fixedprobes_final/summary.json",
+      "SHA256": "5b88885300a40d3e06dcb2f97ac9a02effabc6665cdf0cd22c172ec85b1e2a42"
+    },
+    "primaryP1_anchor38_contact_comparison": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_contact_comparison/summary.json",
+      "SHA256": "2349d962a11c10848cf3f5a5d88ab4303831f4311af9c6c175939f33960ccece"
+    }
+  },
+  "latest_conditional_contact_trial": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_allgap8/summary.json",
+    "SHA256": "e0e73dad739d1a1bddf5d3e0b11e0174bc4eedb23c4ba58f0a60b46dfcc0c048"
   }
 }

@@ -1,0 +1,57 @@
+{
+  "status": "ACTUAL_P1_SPARSE_QUOTIENT_GAUGE_EQUIVALENCE_PASS_LOCAL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor37_fixed_h5_n2/summary.json",
+      "SHA256": "b047d8bec1f40902ef9a864d6a6e3004022da8523e727755751cbb6de15d7671"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_gauge5/summary.json",
+      "SHA256": "3cfd990e52600a92eb0c1c84c69243456e9de53507ce02f083a5b4ade431e0fc"
+    }
+  ],
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_gauge_equivalence/verifier.py",
+    "SHA256": "04cab119ae127c75f0542258a2a22e9dbca9ae240e788e722f6e8b1687b4ca9e"
+  },
+  "checks": {
+    "identical_actual_candidate": true,
+    "all_original_gauges_and_solutions_equivalent": true
+  },
+  "rows": [
+    {
+      "part": "TEST_BASE",
+      "identical_mesh_loads": true,
+      "maximum_displacement_difference_mm": 3.0087965539188355e-16,
+      "displacement_relative": 2.1783042364471672e-12,
+      "compliance_relative": 1.9778475349834976e-12,
+      "restored_original_gauge_mm": 7.150149214908371e-20,
+      "all_DOF_restored": true,
+      "physical_fixed_DOF": 0,
+      "pass_original1percent": true,
+      "pass_numerical1e_minus7": true
+    },
+    {
+      "part": "BENCH_ANCHOR_RAIL",
+      "identical_mesh_loads": true,
+      "maximum_displacement_difference_mm": 6.6928884309702674e-15,
+      "displacement_relative": 7.424645512611234e-12,
+      "compliance_relative": 5.117532159944528e-12,
+      "restored_original_gauge_mm": 1.1231127484999989e-19,
+      "all_DOF_restored": true,
+      "physical_fixed_DOF": 0,
+      "pass_original1percent": true,
+      "pass_numerical1e_minus7": true
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Same actual FE mesh,all boundary load columns,original six mean-rigid gauges. No physical fixture added.",
+    "Algebraic anchors eliminated for factorization only;restored before physical force/work audits. No response or material criterion changed."
+  ]
+}

@@ -1,0 +1,2701 @@
+{
+  "status": "ACTUAL_P1_SELECTED_COMMON_POLYGON_VERTEX_CONTACT_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_anchor36b/summary.json",
+    "SHA256": "b5774461526339cd0bf718346b5e124cb4969c88a856392add2bb50a2d18bed8"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex4/summary.json",
+    "SHA256": "a8432cbaf5913bb7041e5b2e0415c55007c464751fc38155040f5ad0fc3e6749"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_anchor38_vertex4_polygon/verifier.py",
+    "SHA256": "1027e494a988be2fd2e963928f465320868508395c8f5505e0d346afdc676f8a"
+  },
+  "mathematical_helper": {
+    "path": "product_prototype/stage12_integrated/scripts/audit_anchor_common38.py",
+    "SHA256": "65a2e1fbd6c20caf42f3e4636db46806b8d5e23ac404ee2074eb57ecf77511f9"
+  },
+  "checks": {
+    "local_partition_area": true,
+    "independent_polygon_identity": true,
+    "all14_selected_polygon_impenetrability": false,
+    "independent_gap_witness": false,
+    "local_complementarity": false
+  },
+  "cells": [
+    {
+      "base_nodes": [
+        159,
+        2737,
+        11
+      ],
+      "receiver_nodes": [
+        1062,
+        52,
+        5630
+      ],
+      "polygon_area_mm2": 4.70260987708477e-05,
+      "reference_area_mm2": 4.702609877081631e-05,
+      "area_relative_error": 6.676881270095691e-13,
+      "centroid_error_mm": 7.105427357601002e-15,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            1.3436519782598812e-15
+          ],
+          "gaps_mm": [
+            0.00460115820047426,
+            0.004602221621345007,
+            0.0046014713696761805
+          ],
+          "minimum_polygon_gap_mm": 0.00460115820047426,
+          "gap_QP_witness_error_mm": 1.851064284566148e-06,
+          "force_gap_product_Nmm": 6.182776108771605e-18
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            5.0880503323630165e-15,
+            1.8545252494077822e-15,
+            3.1993950866771072e-15
+          ],
+          "gaps_mm": [
+            0.00389702152678576,
+            0.0038979392733233574,
+            0.003897274977014939
+          ],
+          "minimum_polygon_gap_mm": 0.00389702152678576,
+          "gap_QP_witness_error_mm": 1.794176045235088e-06,
+          "force_gap_product_Nmm": 1.9828241674588117e-17
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0,
+            0.07588829000711089,
+            0.021151280741284303
+          ],
+          "gaps_mm": [
+            -9.825556483737395e-08,
+            -1.0142156109471201e-07,
+            -9.926372612264271e-08
+          ],
+          "minimum_polygon_gap_mm": -1.0142156109471201e-07,
+          "gap_QP_witness_error_mm": 1.003519061702559e-07,
+          "force_gap_product_Nmm": 7.69670884132942e-09
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            8.107547169278112e-17,
+            1.7012118368962303e-19,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0005594242514312052,
+            0.0005595519675516999,
+            0.000559469241614244
+          ],
+          "minimum_polygon_gap_mm": 0.0005594242514312052,
+          "gap_QP_witness_error_mm": 5.0407178146263075e-08,
+          "force_gap_product_Nmm": 4.5355585061165945e-20
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            1.0911432898508982e-15,
+            0.06907543196189457,
+            0.31933997649142126
+          ],
+          "gaps_mm": [
+            1.287863676862277e-07,
+            1.1471876926932232e-07,
+            1.149355994880532e-07
+          ],
+          "minimum_polygon_gap_mm": 1.1471876926932232e-07,
+          "gap_QP_witness_error_mm": 1.1483385763246472e-07,
+          "force_gap_product_Nmm": 3.670353163854232e-08
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            4.7919129785638445e-17,
+            8.02442811447921e-17,
+            1.5163558483515286e-16
+          ],
+          "gaps_mm": [
+            0.000653757291603291,
+            0.0006539345250619077,
+            0.0006538341747603382
+          ],
+          "minimum_polygon_gap_mm": 0.000653757291603291,
+          "gap_QP_witness_error_mm": 2.865225394357157e-07,
+          "force_gap_product_Nmm": 9.914452747499342e-20
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0,
+            1.2820930125930407e-16,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0005572512387094217,
+            0.0005573723956191475,
+            0.0005572882700154495
+          ],
+          "minimum_polygon_gap_mm": 0.0005572512387094217,
+          "gap_QP_witness_error_mm": 1.7541125330098988e-07,
+          "force_gap_product_Nmm": 7.146032538355528e-20
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            1.4069503182429882e-06,
+            1.403288580286942e-06,
+            1.4092712586126978e-06
+          ],
+          "minimum_polygon_gap_mm": 1.403288580286942e-06,
+          "gap_QP_witness_error_mm": 3.508062350989817e-08,
+          "force_gap_product_Nmm": 0.0
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0017438727443120337,
+            0.0017910366006554086,
+            0.0019868897051704324
+          ],
+          "gaps_mm": [
+            1.7969986660947376e-09,
+            1.6014186357618303e-09,
+            1.6235764143718917e-09
+          ],
+          "minimum_polygon_gap_mm": 1.6014186357618303e-09,
+          "gap_QP_witness_error_mm": 1.3080280479262854e-09,
+          "force_gap_product_Nmm": 3.2258672632730357e-12
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            8.0185323965250635e-19
+          ],
+          "gaps_mm": [
+            9.16868521818677e-06,
+            9.171180164893103e-06,
+            9.169743411987219e-06
+          ],
+          "minimum_polygon_gap_mm": 9.16868521818677e-06,
+          "gap_QP_witness_error_mm": 3.804242553482459e-09,
+          "force_gap_product_Nmm": 7.352788461684179e-24
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            2.5678269819024425e-18,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            7.446979522054948e-06,
+            7.448530483214619e-06,
+            7.447570097495929e-06
+          ],
+          "minimum_polygon_gap_mm": 7.446979522054948e-06,
+          "gap_QP_witness_error_mm": 9.96214301480731e-10,
+          "force_gap_product_Nmm": 1.912255495040765e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0003816578678935692,
+            0.00034009652738522383,
+            0.00038744840728795833
+          ],
+          "gaps_mm": [
+            -1.9915415626331763e-09,
+            -1.9173929141261317e-09,
+            -2.0006397709678864e-09
+          ],
+          "minimum_polygon_gap_mm": -2.0006397709678864e-09,
+          "gap_QP_witness_error_mm": 1.0969217694515364e-09,
+          "force_gap_product_Nmm": 7.751446928184533e-13
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            7.068488424259922e-20,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            1.1126382093099066e-06,
+            1.1128599934540562e-06,
+            1.112772525902051e-06
+          ],
+          "minimum_polygon_gap_mm": 1.1126382093099066e-06,
+          "gap_QP_witness_error_mm": 4.383416931870808e-10,
+          "force_gap_product_Nmm": 7.864670302896364e-26
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            2,
+            0,
+            1
+          ],
+          "forces_N": [
+            0.0002234217940439704,
+            0.00018745574421507365,
+            0.00023982510906887528
+          ],
+          "gaps_mm": [
+            -6.707888716243967e-10,
+            -6.14245160612849e-10,
+            -6.945072371571871e-10
+          ],
+          "minimum_polygon_gap_mm": -6.945072371571871e-10,
+          "gap_QP_witness_error_mm": 9.62143838677465e-11,
+          "force_gap_product_Nmm": 1.6656027390034563e-13
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        11,
+        2737,
+        158
+      ],
+      "receiver_nodes": [
+        1062,
+        52,
+        5630
+      ],
+      "polygon_area_mm2": 0.037769842303069,
+      "reference_area_mm2": 0.03776984230304207,
+      "area_relative_error": 7.129852264142755e-13,
+      "centroid_error_mm": 7.105427357601002e-15,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            4.382222007950468e-16,
+            1.0423116904246535e-16
+          ],
+          "gaps_mm": [
+            0.004602221621345007,
+            0.00460115820047426,
+            0.004475059239193086,
+            0.004476077569727512
+          ],
+          "minimum_polygon_gap_mm": 0.004475059239193086,
+          "gap_QP_witness_error_mm": 1.8512439197808372e-06,
+          "force_gap_product_Nmm": 1.9610703084874022e-18
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            1.8545252494077822e-15,
+            5.0880503323630165e-15,
+            4.854249561394093e-15,
+            1.9709023135217884e-15
+          ],
+          "gaps_mm": [
+            0.0038979392733233574,
+            0.0038970215267857605,
+            0.003794950741729207,
+            0.0037958319899009186
+          ],
+          "minimum_polygon_gap_mm": 0.003794950741729207,
+          "gap_QP_witness_error_mm": 1.7943430137327097e-06,
+          "force_gap_product_Nmm": 1.9828241674588117e-17
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.07588829000711089,
+            0.0,
+            9.601965490074749e-18,
+            9.181837148236616e-18
+          ],
+          "gaps_mm": [
+            -1.0142156109471201e-07,
+            -9.825556483737395e-08,
+            5.0038239044507195e-09,
+            1.8747510326856567e-09
+          ],
+          "minimum_polygon_gap_mm": -1.0142156109471201e-07,
+          "gap_QP_witness_error_mm": 1.0036612637952843e-07,
+          "force_gap_product_Nmm": 7.69670884132942e-09
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            1.7012118368962303e-19,
+            8.107547169278112e-17,
+            0.0,
+            5.971980592992818e-16
+          ],
+          "gaps_mm": [
+            0.0005595519675516999,
+            0.0005594242514312052,
+            0.0005413172191366643,
+            0.000541438460563255
+          ],
+          "minimum_polygon_gap_mm": 0.0005413172191366643,
+          "gap_QP_witness_error_mm": 5.041068899596865e-08,
+          "force_gap_product_Nmm": 3.2334599787836656e-19
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.06907543196189457,
+            1.0911432898508982e-15,
+            3.612172003565964e-18,
+            4.179048803515904e-18
+          ],
+          "gaps_mm": [
+            1.1471876926932232e-07,
+            1.287863676862277e-07,
+            3.2176244562767605e-06,
+            3.204661361392963e-06
+          ],
+          "minimum_polygon_gap_mm": 1.1471876926932232e-07,
+          "gap_QP_witness_error_mm": 1.1484170558233444e-07,
+          "force_gap_product_Nmm": 7.924248541415355e-09
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            8.02442811447921e-17,
+            4.7919129785638445e-17,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0006539345250619077,
+            0.000653757291603291,
+            0.0006228097054297782,
+            0.0006229758726824981
+          ],
+          "minimum_polygon_gap_mm": 0.0006228097054297782,
+          "gap_QP_witness_error_mm": 2.8655062846009473e-07,
+          "force_gap_product_Nmm": 5.247450587935382e-20
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            1.2820930125930407e-16,
+            0.0,
+            0.0,
+            1.8084900150478336e-16
+          ],
+          "gaps_mm": [
+            0.0005573723956191475,
+            0.0005572512387094217,
+            0.0005423402669758608,
+            0.0005424560920357164
+          ],
+          "minimum_polygon_gap_mm": 0.0005423402669758608,
+          "gap_QP_witness_error_mm": 1.75431091596818e-07,
+          "force_gap_product_Nmm": 9.810264260484618e-20
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0,
+            1.3679333470046422e-18
+          ],
+          "gaps_mm": [
+            1.403288580286942e-06,
+            1.4069503182429882e-06,
+            5.945055694267167e-07,
+            5.905533183166067e-07
+          ],
+          "minimum_polygon_gap_mm": 5.905533183166067e-07,
+          "gap_QP_witness_error_mm": 3.5083155650804084e-08,
+          "force_gap_product_Nmm": 8.078375773095336e-25
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.0017910366006554086,
+            0.0017438727443120337,
+            4.5263323118901674e-21,
+            0.0
+          ],
+          "gaps_mm": [
+            1.6014186357618303e-09,
+            1.7969986660947376e-09,
+            3.622024994376172e-08,
+            3.603697894406321e-08
+          ],
+          "minimum_polygon_gap_mm": 1.6014186357618303e-09,
+          "gap_QP_witness_error_mm": 1.308102966979695e-09,
+          "force_gap_product_Nmm": 3.133736995367694e-12
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            7.872319366807156e-19,
+            0.0
+          ],
+          "gaps_mm": [
+            9.171180164893103e-06,
+            9.168685218186771e-06,
+            8.74272619837835e-06,
+            8.745068831098375e-06
+          ],
+          "minimum_polygon_gap_mm": 8.74272619837835e-06,
+          "gap_QP_witness_error_mm": 3.804609192454314e-09,
+          "force_gap_product_Nmm": 6.882553277018619e-24
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            2.5678269819024425e-18,
+            2.3155055630189443e-18,
+            0.0
+          ],
+          "gaps_mm": [
+            7.448530483214619e-06,
+            7.446979522054948e-06,
+            7.209152501970016e-06,
+            7.210618421189509e-06
+          ],
+          "minimum_polygon_gap_mm": 7.209152501970016e-06,
+          "gap_QP_witness_error_mm": 9.964114747088948e-10,
+          "force_gap_product_Nmm": 1.912255495040765e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.00034009652738522383,
+            0.0003816578678935692,
+            1.3446648037662018e-19,
+            4.4310411053240586e-20
+          ],
+          "gaps_mm": [
+            -1.9173929141261317e-09,
+            -1.9915415626331763e-09,
+            -1.005738088618683e-09,
+            -9.312369375238388e-10
+          ],
+          "minimum_polygon_gap_mm": -1.9915415626331763e-09,
+          "gap_QP_witness_error_mm": 1.0969691297946105e-09,
+          "force_gap_product_Nmm": 7.600875066160052e-13
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            7.068488424259922e-20,
+            3.523563739615474e-19,
+            1.7074339971807414e-19
+          ],
+          "gaps_mm": [
+            1.1128599934540562e-06,
+            1.1126382093099064e-06,
+            1.058381575547869e-06,
+            1.0585839586609624e-06
+          ],
+          "minimum_polygon_gap_mm": 1.058381575547869e-06,
+          "gap_QP_witness_error_mm": 4.384648661670073e-10,
+          "force_gap_product_Nmm": 3.7292749422775667e-25
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "forces_N": [
+            0.00018745574421507365,
+            0.0002234217940439704,
+            0.0,
+            5.0434856308583203e-20
+          ],
+          "gaps_mm": [
+            -6.14245160612849e-10,
+            -6.707888716243967e-10,
+            4.9062798472451925e-09,
+            4.964817800728743e-09
+          ],
+          "minimum_polygon_gap_mm": -6.707888716243967e-10,
+          "gap_QP_witness_error_mm": 9.630244347091549e-11,
+          "force_gap_product_Nmm": 1.4986885312305326e-13
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        11,
+        2737,
+        158
+      ],
+      "receiver_nodes": [
+        1063,
+        1062,
+        5171
+      ],
+      "polygon_area_mm2": 0.010430452866827145,
+      "reference_area_mm2": 0.01043045286681973,
+      "area_relative_error": 7.107647803650252e-13,
+      "centroid_error_mm": 0.0,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            4.382222007950468e-16,
+            1.4563273410351664e-16,
+            1.0961410764715264e-15,
+            4.392379583428546e-15
+          ],
+          "gaps_mm": [
+            0.004475059239193086,
+            0.004438080597304507,
+            0.004438704230166307,
+            0.004475600572432695
+          ],
+          "minimum_polygon_gap_mm": 0.004438080597304507,
+          "gap_QP_witness_error_mm": 1.851294119174958e-06,
+          "force_gap_product_Nmm": 1.9658536577934483e-17
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            4.854249561394093e-15,
+            0.0,
+            2.1542081080032403e-15,
+            1.6713347943750654e-15
+          ],
+          "gaps_mm": [
+            0.003794950741729207,
+            0.003765141132606615,
+            0.0037657028494200422,
+            0.0037954461143113916
+          ],
+          "minimum_polygon_gap_mm": 0.003765141132606615,
+          "gap_QP_witness_error_mm": 1.7943896733949548e-06,
+          "force_gap_product_Nmm": 1.8421637973551192e-17
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            9.601965490074749e-18,
+            0.0,
+            0.0692664441526008,
+            0.0
+          ],
+          "gaps_mm": [
+            5.0038239044507195e-09,
+            -9.560853414222723e-08,
+            -1.0017715268878817e-07,
+            2.1128261133381877e-10
+          ],
+          "minimum_polygon_gap_mm": -1.0017715268878817e-07,
+          "gap_QP_witness_error_mm": 1.0037010023655204e-07,
+          "force_gap_product_Nmm": 6.938915152084509e-09
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            0.0,
+            4.868805948363939e-16,
+            1.5733179107454802e-16,
+            2.0008704119812737e-16
+          ],
+          "gaps_mm": [
+            0.0005413172191366643,
+            0.0005359482635060267,
+            0.0005360132689540525,
+            0.0005413702754433101
+          ],
+          "minimum_polygon_gap_mm": 0.0005359482635060267,
+          "gap_QP_witness_error_mm": 5.041167011013859e-08,
+          "force_gap_product_Nmm": 2.609428093373467e-19
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            3.612172003565964e-18,
+            2.310885874611023e-17,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            3.2176244562767605e-06,
+            3.761292212528907e-06,
+            3.7603720020057424e-06,
+            3.21791423207687e-06
+          ],
+          "minimum_polygon_gap_mm": 3.2176244562767605e-06,
+          "gap_QP_witness_error_mm": 1.1484389871520322e-07,
+          "force_gap_product_Nmm": 8.691917044217492e-23
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0,
+            1.7823000885585388e-16
+          ],
+          "gaps_mm": [
+            0.0006228097054297782,
+            0.0006140225131403495,
+            0.0006140905514927738,
+            0.0006228581870173072
+          ],
+          "minimum_polygon_gap_mm": 0.0006140225131403495,
+          "gap_QP_witness_error_mm": 2.86558477990799e-07,
+          "force_gap_product_Nmm": 1.1101202018803577e-19
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            0.0,
+            2.9401328067912165e-16,
+            2.1610252278696737e-16,
+            6.462356087551402e-17
+          ],
+          "gaps_mm": [
+            0.0005423402669758608,
+            0.0005379068774127871,
+            0.000537976130249463,
+            0.0005423996528659036
+          ],
+          "minimum_polygon_gap_mm": 0.0005379068774127871,
+          "gap_QP_witness_error_mm": 1.7543663544485923e-07,
+          "force_gap_product_Nmm": 1.5815176572799563e-19
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0,
+            1.6633985575298647e-19
+          ],
+          "gaps_mm": [
+            5.945055694267167e-07,
+            4.505186638438267e-07,
+            4.4159119060805504e-07,
+            5.852576391020703e-07
+          ],
+          "minimum_polygon_gap_mm": 4.4159119060805504e-07,
+          "gap_QP_witness_error_mm": 3.508386326933393e-08,
+          "force_gap_product_Nmm": 9.735167126657179e-26
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            4.5263323118901674e-21,
+            6.596269076742864e-20,
+            1.163611511290595e-19,
+            1.8637371817554777e-19
+          ],
+          "gaps_mm": [
+            3.622024994376172e-08,
+            4.1810029566578196e-08,
+            4.1771837000869085e-08,
+            3.619449798505158e-08
+          ],
+          "minimum_polygon_gap_mm": 3.619449798505158e-08,
+          "gap_QP_witness_error_mm": 1.3081239033527738e-09,
+          "force_gap_product_Nmm": 6.745703166971435e-27
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            7.872319366807156e-19,
+            2.0823295323857804e-18,
+            0.0,
+            2.6789796481494382e-18
+          ],
+          "gaps_mm": [
+            8.74272619837835e-06,
+            8.621318186341002e-06,
+            8.622306100430145e-06,
+            8.743443906937719e-06
+          ],
+          "minimum_polygon_gap_mm": 8.621318186341002e-06,
+          "gap_QP_witness_error_mm": 3.8047116503998706e-09,
+          "force_gap_product_Nmm": 2.342350828142236e-23
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            2.3155055630189443e-18,
+            1.140133459330806e-19,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            7.209152501970016e-06,
+            7.137950412491261e-06,
+            7.138670011821136e-06,
+            7.209713634012718e-06
+          ],
+          "minimum_polygon_gap_mm": 7.137950412491261e-06,
+          "gap_QP_witness_error_mm": 9.964665751533317e-10,
+          "force_gap_product_Nmm": 1.6692832722963515e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            1.3446648037662018e-19,
+            0.0003142050110412023,
+            0.00028705102895547303,
+            1.7708282553535216e-19
+          ],
+          "gaps_mm": [
+            -1.005738088618683e-09,
+            -1.8197049566629764e-09,
+            -1.764742462291187e-09,
+            -9.52587157957701e-10
+          ],
+          "minimum_polygon_gap_mm": -1.8197049566629764e-09,
+          "gap_QP_witness_error_mm": 1.0969823646316835e-09,
+          "force_gap_product_Nmm": 5.717604160000211e-13
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            3.523563739615474e-19,
+            0.0,
+            2.312593193097002e-19,
+            7.615959254661213e-20
+          ],
+          "gaps_mm": [
+            1.058381575547869e-06,
+            1.0435235632115476e-06,
+            1.0435617372405875e-06,
+            1.0583866816020085e-06
+          ],
+          "minimum_polygon_gap_mm": 1.0435235632115476e-06,
+          "gap_QP_witness_error_mm": 4.384992870832131e-10,
+          "force_gap_product_Nmm": 3.7292749422775667e-25
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            4,
+            7,
+            5,
+            6
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            5.33564582321205e-20,
+            0.0
+          ],
+          "gaps_mm": [
+            4.9062798472451925e-09,
+            5.431703292698058e-09,
+            5.504954925363656e-09,
+            4.980700861717356e-09
+          ],
+          "minimum_polygon_gap_mm": 4.9062798472451925e-09,
+          "gap_QP_witness_error_mm": 9.632705189820963e-11,
+          "force_gap_product_Nmm": 2.9372489754487193e-28
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        11,
+        2737,
+        158
+      ],
+      "receiver_nodes": [
+        5171,
+        1062,
+        5630
+      ],
+      "polygon_area_mm2": 6.895322623228189e-05,
+      "reference_area_mm2": 6.895322623221668e-05,
+      "area_relative_error": 9.456879723757083e-13,
+      "centroid_error_mm": 1.4210854715202004e-14,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            4.382222007950468e-16,
+            4.392379583428546e-15,
+            1.0423116904246535e-16
+          ],
+          "gaps_mm": [
+            0.004475059239193086,
+            0.004475600572432695,
+            0.004476077569727512
+          ],
+          "minimum_polygon_gap_mm": 0.004475059239193086,
+          "gap_QP_witness_error_mm": 1.8512445755548834e-06,
+          "force_gap_product_Nmm": 1.9658536577934483e-17
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            4.854249561394093e-15,
+            1.6713347943750654e-15,
+            1.9709023135217884e-15
+          ],
+          "gaps_mm": [
+            0.003794950741729207,
+            0.0037954461143113916,
+            0.0037958319899009186
+          ],
+          "minimum_polygon_gap_mm": 0.003794950741729207,
+          "gap_QP_witness_error_mm": 1.794343623268569e-06,
+          "force_gap_product_Nmm": 1.8421637973551192e-17
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            9.601965490074749e-18,
+            0.0,
+            9.181837148236616e-18
+          ],
+          "gaps_mm": [
+            5.0038239044507195e-09,
+            2.1128261133381877e-10,
+            1.874751032692433e-09
+          ],
+          "minimum_polygon_gap_mm": 2.1128261133381877e-10,
+          "gap_QP_witness_error_mm": 1.0036617829265311e-07,
+          "force_gap_product_Nmm": 4.8046544448946895e-26
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            2.0008704119812737e-16,
+            5.971980592992818e-16
+          ],
+          "gaps_mm": [
+            0.0005413172191366643,
+            0.0005413702754433101,
+            0.0005414384605632548
+          ],
+          "minimum_polygon_gap_mm": 0.0005413172191366643,
+          "gap_QP_witness_error_mm": 5.041070181232253e-08,
+          "force_gap_product_Nmm": 3.2334599787836647e-19
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            3.612172003565964e-18,
+            0.0,
+            4.179048803515904e-18
+          ],
+          "gaps_mm": [
+            3.2176244562767605e-06,
+            3.21791423207687e-06,
+            3.2046613613929495e-06
+          ],
+          "minimum_polygon_gap_mm": 3.2046613613929495e-06,
+          "gap_QP_witness_error_mm": 1.148417342320787e-07,
+          "force_gap_product_Nmm": 1.3392436228002853e-23
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            1.7823000885585388e-16,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0006228097054297782,
+            0.0006228581870173072,
+            0.0006229758726824981
+          ],
+          "minimum_polygon_gap_mm": 0.0006228097054297782,
+          "gap_QP_witness_error_mm": 2.865507310016594e-07,
+          "force_gap_product_Nmm": 1.1101202018803577e-19
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            6.462356087551402e-17,
+            1.8084900150478336e-16
+          ],
+          "gaps_mm": [
+            0.0005423402669758608,
+            0.0005423996528659036,
+            0.0005424560920357164
+          ],
+          "minimum_polygon_gap_mm": 0.0005423402669758608,
+          "gap_QP_witness_error_mm": 1.7543116401805368e-07,
+          "force_gap_product_Nmm": 9.810264260484618e-20
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            1.6633985575298647e-19,
+            1.3679333470046422e-18
+          ],
+          "gaps_mm": [
+            5.945055694267167e-07,
+            5.852576391020703e-07,
+            5.905533183166059e-07
+          ],
+          "minimum_polygon_gap_mm": 5.852576391020703e-07,
+          "gap_QP_witness_error_mm": 3.5083164894158694e-08,
+          "force_gap_product_Nmm": 8.078375773095325e-25
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            4.5263323118901674e-21,
+            1.8637371817554777e-19,
+            0.0
+          ],
+          "gaps_mm": [
+            3.622024994376172e-08,
+            3.6194497985051794e-08,
+            3.603697894406321e-08
+          ],
+          "minimum_polygon_gap_mm": 3.603697894406321e-08,
+          "gap_QP_witness_error_mm": 1.3081032404772634e-09,
+          "force_gap_product_Nmm": 6.745703166971475e-27
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            7.872319366807156e-19,
+            2.6789796481494382e-18,
+            0.0
+          ],
+          "gaps_mm": [
+            8.74272619837835e-06,
+            8.743443906937719e-06,
+            8.745068831098375e-06
+          ],
+          "minimum_polygon_gap_mm": 8.74272619837835e-06,
+          "gap_QP_witness_error_mm": 3.804610530901896e-09,
+          "force_gap_product_Nmm": 2.342350828142236e-23
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            2.3155055630189443e-18,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            7.209152501970016e-06,
+            7.209713634012719e-06,
+            7.210618421189509e-06
+          ],
+          "minimum_polygon_gap_mm": 7.209152501970016e-06,
+          "gap_QP_witness_error_mm": 9.964121944954705e-10,
+          "force_gap_product_Nmm": 1.6692832722963515e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            1.3446648037662018e-19,
+            1.7708282553535216e-19,
+            4.4310411053240586e-20
+          ],
+          "gaps_mm": [
+            -1.005738088618683e-09,
+            -9.52587157957701e-10,
+            -9.312369375237329e-10
+          ],
+          "minimum_polygon_gap_mm": -1.005738088618683e-09,
+          "gap_QP_witness_error_mm": 1.0969693027036282e-09,
+          "force_gap_product_Nmm": 1.6868682549984054e-28
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            3.523563739615474e-19,
+            7.615959254661213e-20,
+            1.7074339971807414e-19
+          ],
+          "gaps_mm": [
+            1.058381575547869e-06,
+            1.0583866816020085e-06,
+            1.0585839586609624e-06
+          ],
+          "minimum_polygon_gap_mm": 1.058381575547869e-06,
+          "gap_QP_witness_error_mm": 4.3846531580936516e-10,
+          "force_gap_product_Nmm": 3.7292749422775667e-25
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            4,
+            6,
+            3
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            5.0434856308583203e-20
+          ],
+          "gaps_mm": [
+            4.9062798472451925e-09,
+            4.980700861717356e-09,
+            4.964817800728743e-09
+          ],
+          "minimum_polygon_gap_mm": 4.9062798472451925e-09,
+          "gap_QP_witness_error_mm": 9.630276492288359e-11,
+          "force_gap_product_Nmm": 2.503998723780502e-28
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        158,
+        2737,
+        2243
+      ],
+      "receiver_nodes": [
+        1063,
+        1062,
+        5171
+      ],
+      "polygon_area_mm2": 4.812621392313796e-05,
+      "reference_area_mm2": 4.812621392310501e-05,
+      "area_relative_error": 6.845635169838715e-13,
+      "centroid_error_mm": 0.0,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            1.0961410764715264e-15,
+            1.4563273410351664e-16,
+            7.0854035810942294e-15
+          ],
+          "gaps_mm": [
+            0.004438704230166307,
+            0.004438080597304507,
+            0.004437739948093352
+          ],
+          "minimum_polygon_gap_mm": 0.004437739948093352,
+          "gap_QP_witness_error_mm": 1.851294119174958e-06,
+          "force_gap_product_Nmm": 3.144317852018555e-17
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            2.1542081080032403e-15,
+            0.0,
+            5.025149129616237e-15
+          ],
+          "gaps_mm": [
+            0.0037657028494200422,
+            0.003765141132606615,
+            0.003764866549188671
+          ],
+          "minimum_polygon_gap_mm": 0.003764866549188671,
+          "gap_QP_witness_error_mm": 1.7943896733949548e-06,
+          "force_gap_product_Nmm": 1.8919015862776734e-17
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.0692664441526008,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            -1.0017715268878817e-07,
+            -9.560853414222723e-08,
+            -9.525723403419498e-08
+          ],
+          "minimum_polygon_gap_mm": -1.0017715268878817e-07,
+          "gap_QP_witness_error_mm": 1.0037010023655204e-07,
+          "force_gap_product_Nmm": 6.938915152084509e-09
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            1.5733179107454802e-16,
+            4.868805948363939e-16,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0005360132689540525,
+            0.0005359482635060267,
+            0.000535898792300793
+          ],
+          "minimum_polygon_gap_mm": 0.000535898792300793,
+          "gap_QP_witness_error_mm": 5.041167011013859e-08,
+          "force_gap_product_Nmm": 2.609428093373467e-19
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.0,
+            2.310885874611023e-17,
+            0.0
+          ],
+          "gaps_mm": [
+            3.7603720020057424e-06,
+            3.761292212528907e-06,
+            3.775642472824152e-06
+          ],
+          "minimum_polygon_gap_mm": 3.7603720020057424e-06,
+          "gap_QP_witness_error_mm": 1.1484389871520322e-07,
+          "force_gap_product_Nmm": 8.691917044217492e-23
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0006140905514927738,
+            0.0006140225131403495,
+            0.0006139415435657744
+          ],
+          "minimum_polygon_gap_mm": 0.0006139415435657744,
+          "gap_QP_witness_error_mm": 2.86558477990799e-07,
+          "force_gap_product_Nmm": 0.0
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            2.1610252278696737e-16,
+            2.9401328067912165e-16,
+            0.0
+          ],
+          "gaps_mm": [
+            0.000537976130249463,
+            0.0005379068774127871,
+            0.0005378660380237085
+          ],
+          "minimum_polygon_gap_mm": 0.0005378660380237085,
+          "gap_QP_witness_error_mm": 1.7543663544485923e-07,
+          "force_gap_product_Nmm": 1.5815176572799563e-19
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            5.577454654829877e-18
+          ],
+          "gaps_mm": [
+            4.4159119060805504e-07,
+            4.505186638438284e-07,
+            4.4905980603332456e-07
+          ],
+          "minimum_polygon_gap_mm": 4.4159119060805504e-07,
+          "gap_QP_witness_error_mm": 3.508386326933393e-08,
+          "force_gap_product_Nmm": 2.5046107054575675e-24
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            1.163611511290595e-19,
+            6.596269076742864e-20,
+            0.0
+          ],
+          "gaps_mm": [
+            4.1771837000869085e-08,
+            4.1810029566578196e-08,
+            4.199465140316598e-08
+          ],
+          "minimum_polygon_gap_mm": 4.1771837000869085e-08,
+          "gap_QP_witness_error_mm": 1.3081239033527738e-09,
+          "force_gap_product_Nmm": 4.8606190381965676e-27
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.0,
+            2.0823295323857804e-18,
+            0.0
+          ],
+          "gaps_mm": [
+            8.622306100430145e-06,
+            8.621318186341002e-06,
+            8.620199135961558e-06
+          ],
+          "minimum_polygon_gap_mm": 8.620199135961558e-06,
+          "gap_QP_witness_error_mm": 3.8047116503998706e-09,
+          "force_gap_product_Nmm": 1.7952425467512483e-23
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.0,
+            1.140133459330806e-19,
+            1.2168795419113884e-18
+          ],
+          "gaps_mm": [
+            7.138670011821136e-06,
+            7.137950412491261e-06,
+            7.1372944032479185e-06
+          ],
+          "minimum_polygon_gap_mm": 7.1372944032479185e-06,
+          "gap_QP_witness_error_mm": 9.964665751533317e-10,
+          "force_gap_product_Nmm": 8.685227543911044e-24
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            0.00028705102895547303,
+            0.0003142050110412023,
+            0.0003128368395478388
+          ],
+          "gaps_mm": [
+            -1.764742462291187e-09,
+            -1.8197049566629764e-09,
+            -1.814618560551698e-09
+          ],
+          "minimum_polygon_gap_mm": -1.8197049566629764e-09,
+          "gap_QP_witness_error_mm": 1.0969823646316835e-09,
+          "force_gap_product_Nmm": 5.717604160000211e-13
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            2.312593193097002e-19,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            1.0435617372405875e-06,
+            1.0435235632115476e-06,
+            1.043386879928293e-06
+          ],
+          "minimum_polygon_gap_mm": 1.043386879928293e-06,
+          "gap_QP_witness_error_mm": 4.384992870832131e-10,
+          "force_gap_product_Nmm": 2.4133337701190647e-25
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            5,
+            7,
+            8
+          ],
+          "forces_N": [
+            5.33564582321205e-20,
+            0.0,
+            2.2529091163494262e-20
+          ],
+          "gaps_mm": [
+            5.504954925363656e-09,
+            5.431703292698164e-09,
+            5.4519552556789965e-09
+          ],
+          "minimum_polygon_gap_mm": 5.431703292698164e-09,
+          "gap_QP_witness_error_mm": 9.632705189820963e-11,
+          "force_gap_product_Nmm": 2.9372489754487193e-28
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        158,
+        2243,
+        157
+      ],
+      "receiver_nodes": [
+        1063,
+        1062,
+        5171
+      ],
+      "polygon_area_mm2": 0.03732003680632513,
+      "reference_area_mm2": 0.0373200368062986,
+      "area_relative_error": 7.109868249699502e-13,
+      "centroid_error_mm": 1.0048591735576161e-14,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            1.0961410764715264e-15,
+            7.0854035810942294e-15,
+            0.0,
+            9.93276570098209e-16
+          ],
+          "gaps_mm": [
+            0.004438704230166307,
+            0.004437739948093352,
+            0.004305148766049879,
+            0.004306104384823872
+          ],
+          "minimum_polygon_gap_mm": 0.004305148766049879,
+          "gap_QP_witness_error_mm": 1.8514715891693873e-06,
+          "force_gap_product_Nmm": 3.144317852018555e-17
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            2.1542081080032403e-15,
+            5.025149129616237e-15,
+            0.0,
+            1.4428364666357593e-15
+          ],
+          "gaps_mm": [
+            0.0037657028494200422,
+            0.003764866549188671,
+            0.003657964811077147,
+            0.003658794126517354
+          ],
+          "minimum_polygon_gap_mm": 0.003657964811077147,
+          "gap_QP_witness_error_mm": 1.794554629344896e-06,
+          "force_gap_product_Nmm": 1.8919015862776734e-17
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.0692664441526008,
+            0.0,
+            6.396792817664476e-18,
+            1.71168417981149e-17
+          ],
+          "gaps_mm": [
+            -1.0017715268878817e-07,
+            -9.525723403419498e-08,
+            1.4180531872967492e-07,
+            1.3690088936883505e-07
+          ],
+          "minimum_polygon_gap_mm": -1.0017715268878817e-07,
+          "gap_QP_witness_error_mm": 1.0038414905448107e-07,
+          "force_gap_product_Nmm": 6.938915152084509e-09
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            1.5733179107454802e-16,
+            0.0,
+            1.4721731025826073e-17,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0005360132689540525,
+            0.000535898792300793,
+            0.0005166500033625316,
+            0.0005167632223302447
+          ],
+          "minimum_polygon_gap_mm": 0.0005166500033625316,
+          "gap_QP_witness_error_mm": 5.0415138638229204e-08,
+          "force_gap_product_Nmm": 8.433192764426451e-20
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            1.328835875564387e-17,
+            3.744944418048075e-18
+          ],
+          "gaps_mm": [
+            3.7603720020057424e-06,
+            3.775642472824152e-06,
+            9.26318259299418e-06,
+            9.248270669402639e-06
+          ],
+          "minimum_polygon_gap_mm": 3.7603720020057424e-06,
+          "gap_QP_witness_error_mm": 1.1485165206017312e-07,
+          "force_gap_product_Nmm": 1.230924935147421e-22
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            4.08414335744016e-16,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0006140905514927738,
+            0.0006139415435657744,
+            0.0005824423193739466,
+            0.0005825892691912584
+          ],
+          "minimum_polygon_gap_mm": 0.0005824423193739466,
+          "gap_QP_witness_error_mm": 2.865862284450772e-07,
+          "force_gap_product_Nmm": 2.3787779297631443e-19
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            2.1610252278696737e-16,
+            0.0,
+            2.5177415350347932e-17,
+            0.0
+          ],
+          "gaps_mm": [
+            0.000537976130249463,
+            0.0005378660380237085,
+            0.000521970899644837,
+            0.0005220799533072895
+          ],
+          "minimum_polygon_gap_mm": 0.000521970899644837,
+          "gap_QP_witness_error_mm": 1.7545623462163294e-07,
+          "force_gap_product_Nmm": 1.1625799894607911e-19
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.0,
+            5.577454654829877e-18,
+            3.2736947246091267e-18,
+            4.14334042695243e-18
+          ],
+          "gaps_mm": [
+            4.4159119060805504e-07,
+            4.4905980603332456e-07,
+            7.492896317410801e-07,
+            7.418406328596675e-07
+          ],
+          "minimum_polygon_gap_mm": 4.4159119060805504e-07,
+          "gap_QP_witness_error_mm": 3.508636488069401e-08,
+          "force_gap_product_Nmm": 3.0736982844834355e-24
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            1.163611511290595e-19,
+            0.0,
+            3.639594695233322e-20,
+            9.322656375717643e-20
+          ],
+          "gaps_mm": [
+            4.1771837000869085e-08,
+            4.199465140316598e-08,
+            1.1254747192295343e-07,
+            1.1232926733080675e-07
+          ],
+          "minimum_polygon_gap_mm": 4.1771837000869085e-08,
+          "gap_QP_witness_error_mm": 1.3081979192442803e-09,
+          "force_gap_product_Nmm": 1.0472071602612371e-26
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            3.89282632194405e-18,
+            5.8638952332979955e-18
+          ],
+          "gaps_mm": [
+            8.622306100430145e-06,
+            8.620199135961558e-06,
+            8.184779740191587e-06,
+            8.186858255042777e-06
+          ],
+          "minimum_polygon_gap_mm": 8.184779740191587e-06,
+          "gap_QP_witness_error_mm": 3.805073870099296e-09,
+          "force_gap_product_Nmm": 4.8006879097431686e-23
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.0,
+            1.2168795419113884e-18,
+            0.0,
+            4.790106756713256e-18
+          ],
+          "gaps_mm": [
+            7.138670011821136e-06,
+            7.1372944032479185e-06,
+            6.881934732247102e-06,
+            6.883293656021686e-06
+          ],
+          "minimum_polygon_gap_mm": 6.881934732247102e-06,
+          "gap_QP_witness_error_mm": 9.966613717129246e-10,
+          "force_gap_product_Nmm": 3.297171145015097e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            0.00028705102895547303,
+            0.0003128368395478388,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            -1.764742462291187e-09,
+            -1.8146185605517509e-09,
+            2.2629488939258246e-09,
+            2.313091414020402e-09
+          ],
+          "minimum_polygon_gap_mm": -1.8146185605517509e-09,
+          "gap_QP_witness_error_mm": 1.0970291542657688e-09,
+          "force_gap_product_Nmm": 5.676795354678583e-13
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            2.312593193097002e-19,
+            0.0,
+            4.418697361127377e-19,
+            1.013738116768474e-18
+          ],
+          "gaps_mm": [
+            1.0435617372405875e-06,
+            1.043386879928293e-06,
+            9.900118386579902e-07,
+            9.901832085291702e-07
+          ],
+          "minimum_polygon_gap_mm": 9.900118386579902e-07,
+          "gap_QP_witness_error_mm": 4.3862097540708306e-10,
+          "force_gap_product_Nmm": 1.0037864610701262e-24
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            5,
+            8,
+            10,
+            9
+          ],
+          "forces_N": [
+            5.33564582321205e-20,
+            2.2529091163494262e-20,
+            0.0,
+            6.792807190285463e-21
+          ],
+          "gaps_mm": [
+            5.504954925363656e-09,
+            5.4519552556789965e-09,
+            1.3386258858344828e-08,
+            1.3439776942928116e-08
+          ],
+          "minimum_polygon_gap_mm": 5.4519552556789965e-09,
+          "gap_QP_witness_error_mm": 9.64140500644342e-11,
+          "force_gap_product_Nmm": 2.9372489754487193e-28
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        158,
+        2243,
+        157
+      ],
+      "receiver_nodes": [
+        1064,
+        1063,
+        5359
+      ],
+      "polygon_area_mm2": 0.010878770920577917,
+      "reference_area_mm2": 0.010878770920570189,
+      "area_relative_error": 7.103206911551752e-13,
+      "centroid_error_mm": 1.0048591735576161e-14,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            0.004305148766049879,
+            0.004264796233647375,
+            0.004265302660060578,
+            0.004305570151843824
+          ],
+          "minimum_polygon_gap_mm": 0.004264796233647375,
+          "gap_QP_witness_error_mm": 1.851523953783768e-06,
+          "force_gap_product_Nmm": 0.0
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            0.0,
+            1.088160231638567e-15,
+            2.0116554442230336e-15,
+            1.303806633579178e-15
+          ],
+          "gaps_mm": [
+            0.003657964811077147,
+            0.0036254878227571976,
+            0.003625955436351546,
+            0.0036583639813041547
+          ],
+          "minimum_polygon_gap_mm": 0.0036254878227571976,
+          "gap_QP_witness_error_mm": 1.79460330154875e-06,
+          "force_gap_product_Nmm": 7.294172994046693e-18
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            6.396792817664476e-18,
+            0.0,
+            0.16753057737122617,
+            2.1277467635028025e-18
+          ],
+          "gaps_mm": [
+            1.4180531872967492e-07,
+            -9.348657440237266e-08,
+            -9.949959934355104e-08,
+            1.352964297842575e-07
+          ],
+          "minimum_polygon_gap_mm": -9.949959934355104e-08,
+          "gap_QP_witness_error_mm": 1.0038829432123218e-07,
+          "force_gap_product_Nmm": 1.6669225326230783e-08
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            1.4721731025826073e-17,
+            2.141447550696784e-17,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0005166500033625316,
+            0.0005107443008649589,
+            0.0005107921680538569,
+            0.0005166854246262884
+          ],
+          "minimum_polygon_gap_mm": 0.0005107443008649589,
+          "gap_QP_witness_error_mm": 5.04161620696773e-08,
+          "force_gap_product_Nmm": 1.0937321321196074e-20
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            1.328835875564387e-17,
+            1.5362001289640805e-18,
+            0.0,
+            1.0850703812564401e-17
+          ],
+          "gaps_mm": [
+            9.26318259299418e-06,
+            1.0732504897628628e-05,
+            1.0737863206311154e-05,
+            9.271637413128078e-06
+          ],
+          "minimum_polygon_gap_mm": 9.26318259299418e-06,
+          "gap_QP_witness_error_mm": 1.1485393978040475e-07,
+          "force_gap_product_Nmm": 1.230924935147421e-22
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            4.08414335744016e-16,
+            0.0,
+            0.0,
+            1.1173469176153184e-16
+          ],
+          "gaps_mm": [
+            0.0005824423193739466,
+            0.0005731803135368815,
+            0.0005732196518521045,
+            0.0005824621385495998
+          ],
+          "minimum_polygon_gap_mm": 0.0005731803135368815,
+          "gap_QP_witness_error_mm": 2.865944165446896e-07,
+          "force_gap_product_Nmm": 2.3787779297631443e-19
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            2.5177415350347932e-17,
+            0.0,
+            0.0,
+            3.0759899927111865e-16
+          ],
+          "gaps_mm": [
+            0.000521970899644837,
+            0.0005170880273719768,
+            0.0005171432464687112,
+            0.0005220158283717451
+          ],
+          "minimum_polygon_gap_mm": 0.0005170880273719768,
+          "gap_QP_witness_error_mm": 1.754620175893791e-07,
+          "force_gap_product_Nmm": 1.6057154641083284e-19
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            3.2736947246091267e-18,
+            1.5718990311327012e-16,
+            0.3431397880196555,
+            0.0
+          ],
+          "gaps_mm": [
+            7.492896317410801e-07,
+            4.782938994435574e-08,
+            3.5136739380494676e-08,
+            7.351186944428816e-07
+          ],
+          "minimum_polygon_gap_mm": 3.5136739380494676e-08,
+          "gap_QP_witness_error_mm": 3.508710301353284e-08,
+          "force_gap_product_Nmm": 1.2056813302724824e-08
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            3.639594695233322e-20,
+            7.57035696608531e-21,
+            1.0667321179483845e-19,
+            6.133047933713168e-20
+          ],
+          "gaps_mm": [
+            1.1254747192295343e-07,
+            1.3170502995996084e-07,
+            1.3175571916718894e-07,
+            1.1263853457149849e-07
+          ],
+          "minimum_polygon_gap_mm": 1.1254747192295343e-07,
+          "gap_QP_witness_error_mm": 1.3082197585530514e-09,
+          "force_gap_product_Nmm": 1.40548057359028e-26
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            3.89282632194405e-18,
+            2.395488009550824e-19,
+            6.326491842348918e-19,
+            3.270225729807196e-18
+          ],
+          "gaps_mm": [
+            8.184779740191587e-06,
+            8.056371275913778e-06,
+            8.056956229592663e-06,
+            8.185094080487121e-06
+          ],
+          "minimum_polygon_gap_mm": 8.056371275913778e-06,
+          "gap_QP_witness_error_mm": 3.805180747300341e-09,
+          "force_gap_product_Nmm": 3.186192601193219e-23
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            2.680599809681622e-18,
+            1.3406570856873102e-18
+          ],
+          "gaps_mm": [
+            6.881934732247102e-06,
+            6.8035075293961334e-06,
+            6.803996271577784e-06,
+            6.882258193652056e-06
+          ],
+          "minimum_polygon_gap_mm": 6.8035075293961334e-06,
+          "gap_QP_witness_error_mm": 9.967188487530876e-10,
+          "force_gap_product_Nmm": 1.8238791110665872e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            0.0,
+            0.0012413219781850328,
+            0.0012215679605775765,
+            0.0
+          ],
+          "gaps_mm": [
+            2.2629488939258246e-09,
+            -1.106170918814931e-09,
+            -1.0747855806241867e-09,
+            2.2872340077149095e-09
+          ],
+          "minimum_polygon_gap_mm": -1.106170918814931e-09,
+          "gap_QP_witness_error_mm": 1.0970429600559878e-09,
+          "force_gap_product_Nmm": 1.3731142731541057e-12
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            4.418697361127377e-19,
+            1.4142201317426167e-19,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            9.900118386579902e-07,
+            9.746775188368873e-07,
+            9.746781344366902e-07,
+            9.899801380690472e-07
+          ],
+          "minimum_polygon_gap_mm": 9.746775188368873e-07,
+          "gap_QP_witness_error_mm": 4.3865688097320443e-10,
+          "force_gap_product_Nmm": 4.374562698962924e-25
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            10,
+            13,
+            11,
+            12
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0,
+            1.2897400110926808e-20
+          ],
+          "gaps_mm": [
+            1.3386258858344828e-08,
+            1.513375221018033e-08,
+            1.520661699392958e-08,
+            1.3462806382877451e-08
+          ],
+          "minimum_polygon_gap_mm": 1.3386258858344828e-08,
+          "gap_QP_witness_error_mm": 9.643971989574435e-11,
+          "force_gap_product_Nmm": 1.7363520053590978e-28
+        }
+      ]
+    },
+    {
+      "base_nodes": [
+        158,
+        2243,
+        157
+      ],
+      "receiver_nodes": [
+        1063,
+        5171,
+        5359
+      ],
+      "polygon_area_mm2": 7.239085542286697e-05,
+      "reference_area_mm2": 7.239085542296161e-05,
+      "area_relative_error": 1.3072876114961218e-12,
+      "centroid_error_mm": 1.0048591735576161e-14,
+      "states": [
+        {
+          "case": "conditional_frozen_contact_plus_nominal_gravity",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            0.0,
+            9.93276570098209e-16,
+            0.0
+          ],
+          "gaps_mm": [
+            0.004305570151843824,
+            0.004306104384823872,
+            0.004305148766049879
+          ],
+          "minimum_polygon_gap_mm": 0.004305148766049879,
+          "gap_QP_witness_error_mm": 1.851472277636032e-06,
+          "force_gap_product_Nmm": 4.277152593842714e-18
+        },
+        {
+          "case": "nominal_upstream_gravity_only",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            1.303806633579178e-15,
+            1.4428364666357593e-15,
+            0.0
+          ],
+          "gaps_mm": [
+            0.0036583639813041547,
+            0.003658794126517354,
+            0.003657964811077147
+          ],
+          "minimum_polygon_gap_mm": 0.003657964811077147,
+          "gap_QP_witness_error_mm": 1.794555269269641e-06,
+          "force_gap_product_Nmm": 5.279041589651968e-18
+        },
+        {
+          "case": "sensitivity_0_-1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            2.1277467635028025e-18,
+            1.71168417981149e-17,
+            6.396792817664476e-18
+          ],
+          "gaps_mm": [
+            1.3529642978425072e-07,
+            1.3690088936883505e-07,
+            1.4180531872967492e-07
+          ],
+          "minimum_polygon_gap_mm": 1.3529642978425072e-07,
+          "gap_QP_witness_error_mm": 1.0038420355448842e-07,
+          "force_gap_product_Nmm": 2.34331086534758e-24
+        },
+        {
+          "case": "sensitivity_0_1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            1.4721731025826073e-17
+          ],
+          "gaps_mm": [
+            0.0005166854246262884,
+            0.0005167632223302449,
+            0.0005166500033625316
+          ],
+          "minimum_polygon_gap_mm": 0.0005166500033625316,
+          "gap_QP_witness_error_mm": 5.0415152093720265e-08,
+          "force_gap_product_Nmm": 7.605982383995326e-21
+        },
+        {
+          "case": "sensitivity_1_-1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            1.0850703812564401e-17,
+            3.744944418048075e-18,
+            1.328835875564387e-17
+          ],
+          "gaps_mm": [
+            9.271637413128078e-06,
+            9.248270669402653e-06,
+            9.26318259299418e-06
+          ],
+          "minimum_polygon_gap_mm": 9.248270669402653e-06,
+          "gap_QP_witness_error_mm": 1.1485168213955991e-07,
+          "force_gap_product_Nmm": 1.230924935147421e-22
+        },
+        {
+          "case": "sensitivity_1_1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            1.1173469176153184e-16,
+            0.0,
+            4.08414335744016e-16
+          ],
+          "gaps_mm": [
+            0.0005824621385495999,
+            0.0005825892691912584,
+            0.0005824423193739466
+          ],
+          "minimum_polygon_gap_mm": 0.0005824423193739466,
+          "gap_QP_witness_error_mm": 2.865863360986551e-07,
+          "force_gap_product_Nmm": 2.3787779297631443e-19
+        },
+        {
+          "case": "sensitivity_2_-1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            3.0759899927111865e-16,
+            0.0,
+            2.5177415350347932e-17
+          ],
+          "gaps_mm": [
+            0.0005220158283717451,
+            0.0005220799533072895,
+            0.000521970899644837
+          ],
+          "minimum_polygon_gap_mm": 0.000521970899644837,
+          "gap_QP_witness_error_mm": 1.7545631065293658e-07,
+          "force_gap_product_Nmm": 1.6057154641083284e-19
+        },
+        {
+          "case": "sensitivity_2_1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            0.0,
+            4.14334042695243e-18,
+            3.2736947246091267e-18
+          ],
+          "gaps_mm": [
+            7.351186944428816e-07,
+            7.418406328596667e-07,
+            7.492896317410801e-07
+          ],
+          "minimum_polygon_gap_mm": 7.351186944428816e-07,
+          "gap_QP_witness_error_mm": 3.5086374586292285e-08,
+          "force_gap_product_Nmm": 3.0736982844834322e-24
+        },
+        {
+          "case": "sensitivity_3_-1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            6.133047933713168e-20,
+            9.322656375717643e-20,
+            3.639594695233322e-20
+          ],
+          "gaps_mm": [
+            1.1263853457149849e-07,
+            1.1232926733080675e-07,
+            1.1254747192295343e-07
+          ],
+          "minimum_polygon_gap_mm": 1.1232926733080675e-07,
+          "gap_QP_witness_error_mm": 1.3081982063899846e-09,
+          "force_gap_product_Nmm": 1.0472071602612371e-26
+        },
+        {
+          "case": "sensitivity_3_1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            3.270225729807196e-18,
+            5.8638952332979955e-18,
+            3.89282632194405e-18
+          ],
+          "gaps_mm": [
+            8.185094080487123e-06,
+            8.186858255042777e-06,
+            8.184779740191587e-06
+          ],
+          "minimum_polygon_gap_mm": 8.184779740191587e-06,
+          "gap_QP_witness_error_mm": 3.805075275271051e-09,
+          "force_gap_product_Nmm": 4.8006879097431686e-23
+        },
+        {
+          "case": "sensitivity_4_-1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            1.3406570856873102e-18,
+            4.790106756713256e-18,
+            0.0
+          ],
+          "gaps_mm": [
+            6.882258193652056e-06,
+            6.883293656021686e-06,
+            6.881934732247102e-06
+          ],
+          "minimum_polygon_gap_mm": 6.881934732247102e-06,
+          "gap_QP_witness_error_mm": 9.966621273874393e-10,
+          "force_gap_product_Nmm": 3.297171145015097e-23
+        },
+        {
+          "case": "sensitivity_4_1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "gaps_mm": [
+            2.2872340077148036e-09,
+            2.313091414020402e-09,
+            2.2629488939258246e-09
+          ],
+          "minimum_polygon_gap_mm": 2.2629488939258246e-09,
+          "gap_QP_witness_error_mm": 1.0970293357766179e-09,
+          "force_gap_product_Nmm": 0.0
+        },
+        {
+          "case": "sensitivity_5_-1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            0.0,
+            1.013738116768474e-18,
+            4.418697361127377e-19
+          ],
+          "gaps_mm": [
+            9.899801380690472e-07,
+            9.901832085291702e-07,
+            9.900118386579902e-07
+          ],
+          "minimum_polygon_gap_mm": 9.899801380690472e-07,
+          "gap_QP_witness_error_mm": 4.386214474608739e-10,
+          "force_gap_product_Nmm": 1.0037864610701262e-24
+        },
+        {
+          "case": "sensitivity_5_1",
+          "vertex_columns": [
+            12,
+            9,
+            10
+          ],
+          "forces_N": [
+            1.2897400110926808e-20,
+            6.792807190285463e-21,
+            0.0
+          ],
+          "gaps_mm": [
+            1.3462806382877451e-08,
+            1.3439776942928116e-08,
+            1.3386258858344828e-08
+          ],
+          "minimum_polygon_gap_mm": 1.3386258858344828e-08,
+          "gap_QP_witness_error_mm": 9.641438754189508e-11,
+          "force_gap_product_Nmm": 1.7363520053590978e-28
+        }
+      ]
+    }
+  ],
+  "minimum_selected_polygon_gap_mm": -1.0142156109471201e-07,
+  "maximum_gap_witness_error_mm": 1.851523953783768e-06,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Affine gap extrema occur at vertices only for these independently verified planar common polygons. Unchanged remainder cells still average-only.",
+    "Discrete FE nodal forces,not source-backed physical contact pressure or head/nut/thread law. No physical external fixture.",
+    "No bulk/pressure convergence,globalenergy,operating load or system release certification."
+  ]
+}

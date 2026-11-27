@@ -1,0 +1,149 @@
+{
+  "status": "ACTUAL_P1_ATTACHED_ENDPOINT_GEOMETRY_INDEPENDENT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_attached_loads1/summary.json",
+    "SHA256": "79aa21a4ee147f2469229933c538c30c2ee82c13c4662a2a02e3e207e14b8673"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_attached_geometry1/verifier.py",
+    "SHA256": "3ad77da9bb3ba22e5a9d617911e499e2cd4a5f91c2dbb6e744d6b5cb9c976f76"
+  },
+  "checks": {
+    "initial": true,
+    "trial": true,
+    "rootY_minus": true,
+    "rootY_plus": true,
+    "old_load_vs_residual_sign": true
+  },
+  "states": [
+    {
+      "state": "initial",
+      "checks": {
+        "ODE": true,
+        "closed_free": true,
+        "wrap_endpoint": true,
+        "wrap_force": true,
+        "wire_force": true,
+        "wire_moment": true,
+        "actual_Root_attachment": true,
+        "no_auxiliary_slip": true,
+        "Y_force_transmission": true
+      },
+      "free_endpoint_error_m": 1.1213252548714081e-14,
+      "wrap_endpoint_error_m": 2.6229018956769323e-15,
+      "wrap_force_error_N": 6.625811010962934e-13,
+      "wire_balance_N_Nm": [
+        2.7911006839076435e-13,
+        -1.0180658399638887e-16,
+        -6.639133687258436e-13,
+        7.104912361569071e-18,
+        5.566727634409574e-15,
+        2.016361930938862e-18
+      ],
+      "actual_Root_attachment_error_m": 4.5102810375396984e-17,
+      "actual_root_forceY_N": -2.35422494216167e-13
+    },
+    {
+      "state": "trial",
+      "checks": {
+        "ODE": true,
+        "closed_free": true,
+        "wrap_endpoint": true,
+        "wrap_force": true,
+        "wire_force": true,
+        "wire_moment": true,
+        "actual_Root_attachment": true,
+        "no_auxiliary_slip": true,
+        "Y_force_transmission": true
+      },
+      "free_endpoint_error_m": 3.649858193455202e-15,
+      "wrap_endpoint_error_m": 2.6055546609171643e-15,
+      "wrap_force_error_N": 6.59916565837193e-13,
+      "wire_balance_N_Nm": [
+        2.794431352981519e-13,
+        -1.0690233420707074e-16,
+        -6.59916565837193e-13,
+        7.145569943037278e-18,
+        5.5979526569771565e-15,
+        2.002385887309166e-18
+      ],
+      "actual_Root_attachment_error_m": 5.898059818321144e-17,
+      "actual_root_forceY_N": 1.6058349801573721e-06
+    },
+    {
+      "state": "rootY_minus",
+      "checks": {
+        "ODE": true,
+        "closed_free": true,
+        "wrap_endpoint": true,
+        "wrap_force": true,
+        "wire_force": true,
+        "wire_moment": true,
+        "actual_Root_attachment": true,
+        "no_auxiliary_slip": true,
+        "Y_force_transmission": true
+      },
+      "free_endpoint_error_m": 1.3114509478384662e-14,
+      "wrap_endpoint_error_m": 2.6055546609171643e-15,
+      "wrap_force_error_N": 6.603606550470431e-13,
+      "wire_balance_N_Nm": [
+        2.7966517990307693e-13,
+        -1.0137290312739466e-16,
+        -6.603606550470431e-13,
+        7.111688625147106e-18,
+        5.566727634409574e-15,
+        2.0214441286223878e-18
+      ],
+      "actual_Root_attachment_error_m": 1.7769904200447967e-17,
+      "actual_root_forceY_N": 1.0001787126073184e-06
+    },
+    {
+      "state": "rootY_plus",
+      "checks": {
+        "ODE": true,
+        "closed_free": true,
+        "wrap_endpoint": true,
+        "wrap_force": true,
+        "wire_force": true,
+        "wire_moment": true,
+        "actual_Root_attachment": true,
+        "no_auxiliary_slip": true,
+        "Y_force_transmission": true
+      },
+      "free_endpoint_error_m": 5.245803791353865e-15,
+      "wrap_endpoint_error_m": 2.5951463200613034e-15,
+      "wrap_force_error_N": 6.619149672815183e-13,
+      "wire_balance_N_Nm": [
+        2.7844393457598926e-13,
+        -1.0207763453951024e-16,
+        -6.616929226765933e-13,
+        7.087971702623985e-18,
+        5.566727634409574e-15,
+        2.0040799532036746e-18
+      ],
+      "actual_Root_attachment_error_m": 1.3877787807814457e-17,
+      "actual_root_forceY_N": -1.0001791834146308e-06
+    }
+  ],
+  "old_external_load_plus_missing_couple_error_Nm": 4.40619762898109e-16,
+  "all_actual_upstream_states_verified": 4,
+  "SOFA_runs": 0,
+  "new_equilibrium_solved": false,
+  "actual_support_updates": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.36417086189612746,
+  "limitations": [
+    "Independent Root proper rotation and string closed-form/arc-length force ODE, four actual source/trial/RootY contrasts. Existing planar body kinematics reused only to reconstruct cable endpoint; no new full3D Finger qualification.",
+    "Corrects attached1 diagnostic wrong comparison sign between external load and internal-minus-external residual. Original attached1 FAIL retained, original RootY fixed-target gauge conflict remains real.",
+    "No finite-bending/continuous wire sweep/BRep/tolerance/friction/source capacity/global energy/physical anchor/mesh/full3Finger certificate. Attached endpoint loads must be coupled to augmented RootY equality with zero gauge reaction before an accepted update."
+  ]
+}

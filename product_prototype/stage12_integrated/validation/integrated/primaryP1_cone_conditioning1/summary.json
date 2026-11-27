@@ -1,0 +1,68 @@
+{
+  "status": "ACTUAL_P1_CONE_CONDITIONING_LINEAR_KKT_REJECTED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_increment2/summary.json",
+    "SHA256": "453e898e92f2deeaf0b71f96dab52490df27f7c6219670b46de5328997e71d07"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/producer.py",
+    "SHA256": "e82544296b6415c023abe186e28d129d974077b6f5bea3dcc0249dab805a7c98"
+  },
+  "conditioning": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/conditioning_certificate.json",
+    "SHA256": "007a23355725c9828797484ad922ba748c3213a545ebbff646aff8ab831908d7"
+  },
+  "scales": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/scaled_problem.npz",
+    "SHA256": "59144418f1fc80525e09a19831c13c63eea4270c954842e28eb13958d7afce94"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/linear_candidate.npz",
+    "SHA256": "8cc2b1ce860b67678a2f9eac5cd60a7239bd8174c0b723be175478a022fc5c82"
+  },
+  "checks": {
+    "all_original_rows": true,
+    "positive_cone_scales": true,
+    "slack_bijection": true,
+    "dual_cotangent": true,
+    "quadratic_energy": true,
+    "negative_pressure_control": true
+  },
+  "QP": {
+    "status": "run time limit reached",
+    "iter": 2325,
+    "prim_res": 1.227429496623377e-06,
+    "dual_res": 2.15887151556376e-05,
+    "run_time": 120.051736155
+  },
+  "physical_primal_mm": 5.021679763189641e-06,
+  "physical_dual_N": 0.006802779954231506,
+  "physical_dual_sign_N": 4.8900041681433226e-17,
+  "physical_complementarity_Nmm": 5.557819152415814e-06,
+  "physical_KKT_qualified": false,
+  "all_original_contact_rows": 2169,
+  "all_original_branches": 14,
+  "original_gauge_rows": 11,
+  "maximum_increment_mm": 0.0001452021736903004,
+  "original_RootY_gauge_response": 0.9999999999999998,
+  "original_RootY_contact_response_max": 0.9807837073317256,
+  "original_RootY_connector_response_max": 1.197496840751304e-06,
+  "actual_physics_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 124.88903963309713,
+  "limitations": [
+    "Positive diagonal congruence preserves the original linear feasible cone and dual orientation; does not certify nonlinear contact equivalence or Biot Hessian.",
+    "All original rows retained. One conditioned solve with same2400/120s limits; original predictor warm start remains rejected. No iteration extension, active row deletion, polish, physical update or Base residual cancellation.",
+    "RootY coordinate response is a diagnostic, not permission to impose translation or add fixation. Full upstream/freeY coupling and nonlinear current-load checks remain prerequisite to one corrected physical update."
+  ]
+}

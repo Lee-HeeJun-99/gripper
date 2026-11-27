@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state19.json",
-    "SHA256": "ce47c3e008815693c4d32742ba7ef319b15ce8cbf0071900e547c751409d2cfd"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state20.json",
+    "SHA256": "2d7a0164d827bbe3f424877e87e2b0d1bc216592c708b7b449877ee8b374f99e"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,10 +384,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_finite_surface_contact_branch_closure",
-  "next_task_id": "goal_primary_finite_contact_kkt_freeY_reclosure",
+  "selected_task_id": "goal_primary_finite_contact_kkt_freeY_reclosure",
+  "next_task_id": "goal_primary_full_cone_matrixfree_freeY_kkt",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
-  "load_BC": "Original72,216DOF/2169rows/14branches plusactualMotorSO3; finiteclosedboundary signedcontact now implemented. Physicalcurrentgravity/object/cable/Base port evaluated atsource+trial, no residualcancellation. OneQP2400iterationFAIL and unappliedfreeY forcecouple block closure. Preserve original freeY/MotorY coordinate semantics; no positivephysicalretention/anchor/globalenergy claim.",
+  "load_BC": "Newattachedendpointloadmoduleevaluated atsource/trial/RootYcontrasts: auxiliarystringdy=0,physicalRootFytransmitted,noBasecancellation. OriginalRoot_free_Y equalitymusthaveunpenalizedgamma/zerogaugereaction; implemented/testednotyetcoupledsolved. MotorY/originalothergauges remainunchanged. All2169contactrows/14branches/sourcefield retained; no acceptedstate/stress/globalenergy/anchorclaim.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "NONE. SAME78actualSTEP/assembly/BOM/sourceparts unchanged; real product contact/currentload implementation and one actual numericalincrement, allfailures preserved.",
+  "CAD_this_cycle": "NONE. Same78actualSTEP/assembly/BOM/sourceparts verified unchanged. Actualattachedendpoint/currentload/originalRootY coordinateimplementation andactualconditioned/directKKT diagnostics; no newsolidclaim.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -802,5 +802,43 @@
       "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
     }
   },
-  "finite_contact_trial_disposition": "primaryP1_finite_increment2 REJECTED. It does NOT replace originalsupportfield or qualify an updatedequilibrium/stress."
+  "finite_contact_trial_disposition": "primaryP1_finite_increment2 REJECTED. It does NOT replace originalsupportfield or qualify an updatedequilibrium/stress.",
+  "latest_KKT_freeY_cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle16_record1/summary.json",
+    "SHA256": "dc4420d439b18bdb4b2e02c48476a5f77cb37975ab7ec3866eaf6a936c1c7c58"
+  },
+  "latest_KKT_freeY_evidence": {
+    "conditioning": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/summary.json",
+      "SHA256": "f114f0fa357d00ef4c7bf1e21e73a7129725751d76bf813d6f5f67a9acbc3993"
+    },
+    "attachment_initial_fail": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_attached_loads1/summary.json",
+      "SHA256": "79aa21a4ee147f2469229933c538c30c2ee82c13c4662a2a02e3e207e14b8673"
+    },
+    "independent": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_rootY_independent1/summary.json",
+      "SHA256": "041652bffaa68f4b014e92cdc161198a2eea9a0f753c267e39ab4161812ff8da"
+    },
+    "physical_sources": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_attached_sources1/summary.json",
+      "SHA256": "e52d6d84751c5aa504c443d48da6b01713593c38b78d50baa65ea7a180dc4bcc"
+    },
+    "attached_geometry": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_attached_geometry1/summary.json",
+      "SHA256": "fbb8679ae12cf1d89d840b85ca1006e00633b0bb051bded2454395e11417f51d"
+    },
+    "coordinate_implementation": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_rootY_implementation1/summary.json",
+      "SHA256": "09367d3223cf105392075c9f54acb2ee0d8d88277c54ce8e55039dcf3c21f21e"
+    },
+    "direct": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_direct_working_set1/summary.json",
+      "SHA256": "aafbb4c235f9e3ef3bc08a2660141d304abd46309f53c7be563225c40684dc47"
+    },
+    "release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release21/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  }
 }

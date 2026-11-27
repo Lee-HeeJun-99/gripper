@@ -1,0 +1,73 @@
+{
+  "status": "ACTUAL_P1_CONDITIONING_AND_ROOTY_COORDINATE_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/summary.json",
+    "SHA256": "f114f0fa357d00ef4c7bf1e21e73a7129725751d76bf813d6f5f67a9acbc3993"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_rootY_independent1/verifier.py",
+    "SHA256": "41903d350f96f51332ae8bbf266d324ea9375e0cb4fb7cd0376f30e617be2a54"
+  },
+  "checks": {
+    "primal_reproduced": true,
+    "dual_reproduced": true,
+    "all_slacks_reproduced": true,
+    "stationarity_reproduced": true,
+    "complementarity_reproduced": true,
+    "positive_scaling": true,
+    "original_labels_confirmed": true,
+    "Root_coordinate_not_free_at_fixed_target": true,
+    "augmented_Root_coordinate_identity": true,
+    "all_other_rows_unchanged": true,
+    "MotorY_semantics_unchanged": true,
+    "nonzero_Root_gauge_force_rejected": true,
+    "wrong_Motor_coordinate_control": true
+  },
+  "physical_primal_mm": 5.021679763189641e-06,
+  "physical_dual_N": 0.006802779954231506,
+  "physical_complementarity_Nmm": 5.557819152415814e-06,
+  "physical_dual_sign_N": 4.8900041681433226e-17,
+  "linear_KKT_qualified": false,
+  "original_gauge_labels": [
+    "TEST_BASE_rigid_coordinate_38",
+    "TEST_BASE_rigid_coordinate_37",
+    "TEST_BASE_rigid_coordinate_86",
+    "TEST_BASE_rigid_coordinate_115",
+    "TEST_BASE_rigid_coordinate_114",
+    "TEST_BASE_rigid_coordinate_41",
+    "Root_free_Y",
+    "Motor_free_Y",
+    "Cap_free_translation0",
+    "Cap_free_translation1",
+    "Cap_free_yaw"
+  ],
+  "original_RootY_gauge_index": 6,
+  "original_MotorY_gauge_index": 7,
+  "original_RootY_target_mm": -0.006001041424286886,
+  "RootY_augmented_gamma_mm": 0.00016055476978999993,
+  "RootY_augmented_equality_error_mm": 0.0,
+  "other_rows_change_error_mm": 0.0,
+  "MotorY_coordinate_response_mm": 0.0,
+  "conditioned_candidate_gamma_stationarity_N": -0.0011566363601565207,
+  "zeroGammaHessian": true,
+  "all2169contact_inequalities_preserved": true,
+  "all14branches_preserved": true,
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 3.974169227061793,
+  "limitations": [
+    "Independent chunkassembly audits actual original P1 problem. Exact RootY coordinate identity is NOT a solved augmented KKT or nonlinear equilibrium.",
+    "Gamma has zero objective; its stationarity MUST require negligible Root gauge reaction. Fixing gamma or retaining Root gauge support under attachedY loads would hide a physical reaction. MotorY/original other gauge semantics preserved.",
+    "Cone scaling is exact but does not remove linear KKT convergence failure. No extra QP, physical update or Base cancellation in this verifier."
+  ]
+}

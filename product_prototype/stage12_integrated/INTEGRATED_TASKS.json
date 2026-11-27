@@ -2445,10 +2445,72 @@
       "id": "goal_primary_finite_contact_kkt_freeY_reclosure",
       "track": "C",
       "priority": -1014,
-      "status": "READY",
+      "status": "PARTIAL_VALIDATED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME78part P1_seated22 from verified finitecontact implementation and primaryP1_finite_increment2 REJECTED predictor, not as acceptedstate. First reconstruct originaloneincrementQP/all2169rows/14branches using independent increment_kkt1: Ground/Base maxdualresidual.0117106982N and Motor.00617999N, primal4.9366894e-6. Derive/test a cone-preserving physical-row working-set/KKT conditioning mechanism with ALL original inequalities checked, correct dual/branch signs and corruption controls; do not merely extendOSQPiterations or drop near-dependent normals. Keep positiveSEMIDEFINITE currentgeometry metric distinct from an exactBiot/contact/load tangent; independently verify any new tangent/work before using it. Then couple returned RootfreeY INCREMENT through the ORIGINAL free coordinate (trial.00016055477mm), preserving MotorY/originalgauge semantics and requiring negligiblegauge force. Recompute actualspatialstring/planarFinger and allfivebody/Motor/hardware currentgravity and physicalsource-derivedBase port at every acceptedstate. Independent trialmoment[1.13117672e-7,0,-3.76791239e-8]Nm equals unappliedfreeYforcecouple; NEVER subtract it atBase. Only ONE bounded correctedcontact update after justified KKT/freeY checks; fullnonlineargap/pressure/complementarity/stationarity/currentwrench/load/freeY checks decide acceptance. Original.000154686mm/rad predictor staysREJECTED. No newarchitecture/remesh/blanketfine/gap/timeoutretry/extrafixation; preserve R11floor/.50wire/sourceparts/3Finger-cartridge-jamming extension. Bearingface2.55046416%/Frame52.7693%/Rail1.30247%/GroundBase/sourceallowables/physicalanchor/finitewire/friction/protector/globalenergy/full3Finger remainblocked.",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "motor_alignment_reactions",
+        "physical_mass_inertia",
+        "numerical_convergence",
+        "root_palm_strength",
+        "qualified_worst_case"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+        "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": "2026-11-27T06:02:52.380278+00:00",
+      "consecutive_runs": 1,
+      "system_gate_contribution": 8,
+      "historical_parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+        "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+      },
+      "target_revision": "primaryP1_seated22",
+      "target_parts": 78,
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "c4b44f2f06dd3ea6f7ceb22e5d720c7746db56cea03f07239e3d050ee589e0fb"
+      },
+      "concrete_first_step": "Independently rebuild savedoneincrementQP KKT and allphysicalrows; derive cone-preserving working-set conditioning with negativecontrols beforeONEcorrectedfullcurrentload/freeYupdate. Do not accept failedpredictor, extenditerations alone, deleteconstraints or cancelmissingfreeYmoment atBase.",
+      "known_blockers": [
+        "One actualQP2400iterationlimit:primal4.9366894e-6/dual.0117106982; independentlyconfirmed. No timeout or extra QP trial.",
+        "Trial nonlinear min gap-4.936426e-6mm/maxstationarity.011713598N/complementarity5.85917e-6Nmm; freeY.00016055477mm. Updatedconfiguration NOT equilibrium.",
+        "Trialmomentdefect matches unappliedfreeYcouple to<4e-16Nm; Base source loads independentlycorrect, no permission to cancelresidual atBase.",
+        "All22source/material/mesh/physicalanchor/finitewire/friction/protector/globalenergy/full3Finger gates remainunqualified."
+      ],
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle15_record1/summary.json",
+        "SHA256": "dfb74f77e52a01a344b67a37565622c7f4063a7644054ac0c9598449478ad723"
+      },
+      "result": "validation/integrated/primary_cycle16_record1/summary.json",
+      "reason": "Actualattachedendpointloads+originalRootYgamma implemented andindependentlyverified. Coneconditioning120sKKTFAIL/directsingular/basisdirectmemorySIGSEGV preserved. No correctednonlinearupdate because linearprerequisitesfail; all22unqualified.",
+      "next": "goal_primary_full_cone_matrixfree_freeY_kkt"
+    },
+    {
+      "id": "goal_primary_full_cone_matrixfree_freeY_kkt",
+      "track": "C",
+      "priority": -1015,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME78part P1_seated22 from ORIGINAL savedsourcefield, never conditioned/direct/rejectedincrement as acceptedstate. Attachedendpoint modules now enforce auxiliarystringdy=0 and transmit physicalRootFy; independentlyverified4states. primary_rootY_coordinate augments ORIGINALRoot_free_Y row2175 with unpenalizedgamma, zero gamma metric/force; -Rootgaugemultiplier=0 must hold. MotorYrow2176 and allother originalgauges unchanged. First replace sparse-direct fill with a bounded matrix-free/block-preconditioned saddle solve on the ACTUAL currentmetric and activeequalitybasis. primaryP1_full_cone_working_set1 gives161physicalactiverows/rank153, rowerror5.55e-16/RHS2.41e-21mm; directSuperLU memory expansion thenSIGSEGV under4GiB, so NOlargermemory/directretry. SignedQR basis is ONLY equalitycoordinates: recover ALLoriginalphysical multipliers using fullT.Ty=ybasis, compression/tension signs, all2169inequalities/14branches and independentoriginal-unitKKT/corruptionchecks; do not replacecone by signedbasis or drop near-dependent normals. ConditionedQP120sFAIL remainsphysicalprimal5.02168e-6/dual.00680278; do not merely extendOSQPiterations. Qualify boundedlinear solver first, then ONE corrected attachedload+gamma contactupdate only if prerequisiteKKT/cone/gauge checks pass, allcurrentgravity/sourceBaseports and fullnonlineargap/pressure/complementarity/stationarity/wrench/RootY checks. No Base residualcancellation, no addedfixation, no remesh/blanketfine/gap/timeoutretry. PreserveR11floor/.50wire/sourceparts/3Finger-cartridge-jamming and all22unqualifiedgates/oldmeshFAILs.",
       "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
       "system_gate_ids": [
         "cad_model_match",
@@ -2486,18 +2548,18 @@
       "target_parts": 78,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "c4b44f2f06dd3ea6f7ceb22e5d720c7746db56cea03f07239e3d050ee589e0fb"
+        "SHA256": "d2c018cb1db7cf8f9841379d38c9d223e412b197d74a5a3e5d39de3ec6141868"
       },
-      "concrete_first_step": "Independently rebuild savedoneincrementQP KKT and allphysicalrows; derive cone-preserving working-set conditioning with negativecontrols beforeONEcorrectedfullcurrentload/freeYupdate. Do not accept failedpredictor, extenditerations alone, deleteconstraints or cancelmissingfreeYmoment atBase.",
+      "concrete_first_step": "Implement boundedmatrixfree/blockKKT onactual161active/rank153equalitybasis; recoverALLphysicalconemultipliers andcheckALL2169rows/14branches. DirectLU under4GiB failed; no largermemory/directretry. Then incorporateattachedloads+unpenalizedoriginalRootYgamma onlyafterlinearprerequisites.",
       "known_blockers": [
-        "One actualQP2400iterationlimit:primal4.9366894e-6/dual.0117106982; independentlyconfirmed. No timeout or extra QP trial.",
-        "Trial nonlinear min gap-4.936426e-6mm/maxstationarity.011713598N/complementarity5.85917e-6Nmm; freeY.00016055477mm. Updatedconfiguration NOT equilibrium.",
-        "Trialmomentdefect matches unappliedfreeYcouple to<4e-16Nm; Base source loads independentlycorrect, no permission to cancelresidual atBase.",
-        "All22source/material/mesh/physicalanchor/finitewire/friction/protector/globalenergy/full3Finger gates remainunqualified."
+        "Positivecone diagonal scaling passes exactequivalence but120sADMM physicalKKT fails5.02168e-6mm/.00680278N.",
+        "161selectedphysicalrows yield exactsingularity; rank153equalitybasis reconstructsall161, but4GiB sparseLU memoryexpansion/SIGSEGV. No conicdualrecovery or solution obtained.",
+        "RootY fixedtargetgauge conflictswithphysicalfreeY; implementedunpenalizedgamma(originalrow2175) notyetsolved. MotorY2176 preserved; allgaugesmustcarrynegligibleforces.",
+        "All22source/material/mesh/anchor/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger remainunqualified."
       ],
       "parent_result": {
-        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle15_record1/summary.json",
-        "SHA256": "dfb74f77e52a01a344b67a37565622c7f4063a7644054ac0c9598449478ad723"
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle16_record1/summary.json",
+        "SHA256": "dc4420d439b18bdb4b2e02c48476a5f77cb37975ab7ec3866eaf6a936c1c7c58"
       },
       "result": null,
       "reason": null,

@@ -1,0 +1,58 @@
+{
+  "status": "ACTUAL_P1_KKT_AND_ATTACHMENT_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "conditioned_QP_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/summary.json",
+    "SHA256": "f114f0fa357d00ef4c7bf1e21e73a7129725751d76bf813d6f5f67a9acbc3993"
+  },
+  "conditioned_solver_time_limit_s": 120,
+  "analysis_child_timeout": false,
+  "original_attachment_diagnostic_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_attached_loads1/summary.json",
+    "SHA256": "79aa21a4ee147f2469229933c538c30c2ee82c13c4662a2a02e3e207e14b8673"
+  },
+  "attachment_errata": [
+    "Original RootY-only translation changes existing Root_free_Y gauge by1: true blocker, not a free coordinate at fixed target. Augmented original equality is separately implemented/tested; no physical solve yet.",
+    "attached1 compared external load wrench to internal-minus-external residual with wrong sign. Independent attached_geometry1 checks external_load+missing_couple to4.4062e-16Nm. Original FAIL/source remain immutable."
+  ],
+  "direct_singular_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_direct_working_set1/summary.json",
+    "SHA256": "aafbb4c235f9e3ef3bc08a2660141d304abd46309f53c7be563225c40684dc47"
+  },
+  "full_cone_factorization": {
+    "execution": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle16/full_cone_working_set1_execution.json",
+      "SHA256": "b11a3c5624f5d38130213f4363caa48b93c51ca63d74deca3d689024e399b8da"
+    },
+    "log": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle16/full_cone_working_set1.log",
+      "SHA256": "bb016ef106bcde2eb677d7491a6319a625ed16080ebdc53d3a6a6a34a4aa24de"
+    },
+    "producer": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_full_cone_working_set1/producer.py",
+      "SHA256": "d3d55bf90f95b3a426b07b09fc6017d994fe6318e82763584fc82f3dfaf352a9"
+    },
+    "basis_certificate": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_full_cone_working_set1/row_basis_certificate.json",
+      "SHA256": "4f4cdbea99a9a6d2e672b9a6ad3e8eddf6d09665a55b05a51f8557e6ce01b17f"
+    },
+    "exit_code": -11,
+    "stderr_tail": "Cannot expand MemType1:jcol61717",
+    "diagnosis": "SuperLU reports memory expansion failure inside4GiBAS limit, then child exitsSIGSEGV. No finite result/summary was produced. No factorization retry or larger memory launch.",
+    "all_original_nonlinear_rows_checked": false,
+    "actual_physical_update": false
+  },
+  "direct_scope_erratum": "direct1 limitation text says inactive rows all checked; actual finite_solution=false/all_original_rows_checked=false are authoritative. No solution existed to evaluate. Working source clarified; original snapshot retained.",
+  "basis_rank": 153,
+  "basis_rows": 161,
+  "basis_max_scaled_row_error": 5.551115123125783e-16,
+  "basis_max_physical_rhs_error_mm": 2.4078226836391952e-21,
+  "failures_overwritten": false,
+  "old_evidence_mutated": false,
+  "actual_physical_updates": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

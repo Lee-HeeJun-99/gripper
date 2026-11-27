@@ -1,0 +1,48 @@
+{
+  "status": "ACTUAL_P1_DIRECT_PHYSICAL_WORKING_SET_REJECTED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cone_conditioning1/summary.json",
+    "SHA256": "f114f0fa357d00ef4c7bf1e21e73a7129725751d76bf813d6f5f67a9acbc3993"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_direct_working_set1/producer.py",
+    "SHA256": "0a5b1eae86f1b26ea618cc16210d6165196cbfa55dfa8274d620b227a5ccd55e"
+  },
+  "working_set": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_direct_working_set1/working_set.json",
+    "SHA256": "1a52a7bac19b480b735d9737a3275c1370f1b66e72679d86c4254cfc1c12b269"
+  },
+  "finite_solution": false,
+  "warnings": [
+    "Matrix is exactly singular"
+  ],
+  "error": null,
+  "physical_KKT_qualified": false,
+  "selected_original_contact_rows": 136,
+  "selected_original_rows": 161,
+  "all_original_rows_checked": false,
+  "original_contacts": 2169,
+  "original_branches": 14,
+  "rank_filter_applied": false,
+  "allphysicalinequalities_retained": true,
+  "factorizations_attempted": 1,
+  "physical_metrics": {},
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 29.820925137028098,
+  "limitations": [
+    "One actual physical-row active-set KKT factorization, not OSQP iteration extension or timeout retry. Inactive original rows all checked; negative multipliers invalidate this guessed working set. No equality-cone equivalence assumption from rankQR.",
+    "This is the original source-load linear diagnostic. No augmentedRootY/attached-load or nonlinear contact update executed. KKT/gauge/sourceposed load prerequisites still apply.",
+    "PositiveSEMIDEFINITE currentmetric is not exactBiot/contact/load tangent. No stress/strength/mesh/global energy/physical anchor/full3Finger certification."
+  ]
+}

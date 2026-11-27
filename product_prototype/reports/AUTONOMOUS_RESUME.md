@@ -1,3 +1,56 @@
+# Batch6 cycle0 — standard micro-drive interface; operating selection FAIL (2026-11-27)
+
+Started at67a9094d314e328245491c50f5d0952e61b8cd08. Exact selected task:
+batch6_operating_load_and_architecture. One actual finite design/analysis cycle.
+No git add/commit; supervisor validation/local save PENDING, no new SHA claimed.
+Result: validation/transmission/batch6_cycle1/summary.json.
+
+Pololu1101 (100:1 HP6V) +1996 stock hub + turned spool interface implemented
+at all3 actual AO axes, cable center radius11.25mm retained.24finite instances
+(3custom spools,21standard component/fastener interfaces), STEP/STL/JSON BOM.
+Nominal envelope models from manufacturer primary facts, NOT vendor STEP or
+guaranteed maximum-stock/tolerance models. Direct PDF downloads failed DNS;
+receipt preserved. Hub alloy, thread/axial/set-screw capacity are unqualified.
+
+Independent reimport:24valid single solids, closed oriented positive meshes;
+75exact changed/retained AO context pairs and15finite straight driver envelopes
+clear at unchanged1e-8mm3. Misplaced hub control produces2.997776mm3 collision.
+Analytic spool/motor volumes agree; independent route/tendon-work reconstruction
+passes. Two failed bounding-box dimension verifiers preserved. SetGap did NOT
+fix numerical1e-7mm expansion; final imported cylinder/plane measurements pass
+the SAME1e-8 dimension limit. No geometry/physical tolerance relaxation.
+Initial missing-trimesh import failure(exit1, initial source hash not recorded)
+also preserved. It was repaired by extracting actual route algebra, not fake
+imports. No failed artifact overwritten; no repeated equilibrium experiments.
+
+Operating selection FAIL:100g static weight0.980665N is not tendon demand.
+Three equal contact/friction0.2/0.4/0.8 scenarios and prescribed tip motion give
+16.935839mm stroke, max7.579539N conditional tension.7/15cases exceed general
+25%-stall-current recommendation. Ideal linear motor current model only;
+2.963788N at0.4A is NOT continuous rated force.14.818938N extrapolated stall
+is NOT a physical maximum/protection. Common-curvature separate-layer elastic
+energy is a reference, not actual coupled equilibrium or object grasp proof.
+Actual friction/contact locations/duty/demand and material minima remain unknown.
+
+Finite stock bolt-circle/shaft/driver mating is solved in the bounded nominal
+interface. Custom D-hub/friction stack manufacture/calibration is proposed for
+removal;90old drive/support context parts are replacement candidates, NOT an
+achieved product part reduction. Ground mount, rated shaft support, cable anchor
+and physical protection are missing. revAV_micro_interface1 is a24part interface,
+NOT a full3-Finger candidate. AO254 current and AA304 adopted remain unchanged.
+
+Common contract: models/standard_drive/batch6_contract1.json.1101 is NOT adopted
+as operating actuator. Next coverage task: standard Idler/direct route; wide
+Root and simpler Palm are independent READY. Establish actual demand/duty before
+final higher-reduction/different rated drive. Do not repeat this100:1 interface.
+
+batch6_release1 remains INTEGRATED_NOT_QUALIFIED:22Stage2 gates unqualified plus
+missing system evidence/coverage. No same-revision release, capacity, hardware,
+Stage3, power, SDK or manager/control changes. Six bounded analysis executions
+completed/reaped (operating0,CAD0,verify2/2/0,release2), each4GiB/420s;
+no timeout or SOFA run. No RUNNING queue or live owned analysis children.
+Historical failures and all pre-existing untracked CAD/BOM preserved.
+
 # Batch5 cycle8 — actual rivet forming access rejected; pending supervisor save
 
 Started at21e2a593319179fe90c258b8ab840ade3e7d4202. No git add/commit;

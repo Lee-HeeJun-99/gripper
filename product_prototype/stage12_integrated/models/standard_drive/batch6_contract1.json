@@ -1,0 +1,70 @@
+{
+  "status": "PROVISIONAL_ARCHITECTURE_ONLY_MOTOR_OPERATING_SCREEN_FAIL",
+  "starting_product": "revAO_root2",
+  "interface_revision": "revAV_micro_interface1",
+  "whole_product_revision": null,
+  "architecture": "Per-Finger standard micro metal gearmotor + stock flange hub + bolted turned spool; retained AO route reference. Optional standard protection/support still required.",
+  "selected_interface_components": [
+    "Pololu1101",
+    "Pololu1996",
+    "M3x5 face screws (vendor/grade unselected)",
+    "M3x8 set screw requirement (supplied hub screw length unconfirmed)"
+  ],
+  "normal_demand": {
+    "payload_kg": 0.1,
+    "gravity_N": 0.980665,
+    "contact_count_scenario": 3,
+    "friction_scenarios": [
+      0.2,
+      0.4,
+      0.8
+    ],
+    "friction_certified_lower_bound": null,
+    "actual_contact_locations": null,
+    "actual_Finger_equilibrium": null,
+    "reference_peak_tension_N": 7.5795391151807845,
+    "reference_stroke_m": 0.016935839144323783,
+    "scope": "Prescribed geometry and common-curvature elastic contrast only; NOT actual grasp demand or Stage3 execution"
+  },
+  "maximum_protected_load_N": null,
+  "allowable_installed_tension_N": null,
+  "loadside_inertia_kg_m2": null,
+  "wire_EA_N": null,
+  "motor_general_current_screen_failures": 7,
+  "motor_operating_selection_accepted": false,
+  "finite_geometry": {
+    "axis_F0_mm": [
+      110,
+      0,
+      20
+    ],
+    "wire_center_radius_mm": 11.25,
+    "spool_core_radius_mm": 11,
+    "wire_nominal_diameter_mm": 0.5,
+    "nominal_interface": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAV_micro_interface1/summary.json",
+      "SHA256": "307a0cf06b70bb562c76639c2606149c1b0add2aa387f9474767d44d47f54373"
+    },
+    "verification": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/batch6_micro_verify3/summary.json",
+      "SHA256": "7254b6c25a6bb68deb5decfdcbdb937dd118a11a1f8d928edd6e11bdd00c955b"
+    }
+  },
+  "unchanged_AO": [
+    "Finger/PET distal axial sliding",
+    "Root/Palm/Idler/Terminal/jamming interfaces remain current AO, not requalified"
+  ],
+  "unfinished": [
+    "Motor grounded bracket and reaction/support ratings",
+    "Spool cable anchor, actual hub thread/set-screw torque and axial retention",
+    "Duty/speed/reversing/thermal operation;1101 is rejected for conservative current scenarios",
+    "Physical maximum protection and residual energy/fault path",
+    "Actual object geometry/friction and coupled separate PET/Rail equilibrium",
+    "Full same-revision3-Finger assembly/BOM and22gate qualification"
+  ],
+  "manufacturing": "Conventional turned spool and standard bolting are geometrically feasible; alloy, tool/process qualification and full ordered assembly unqualified. No special rivet forming.",
+  "adoption": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "powered_status": "POWERED_OPERATION_NOT_AUTHORIZED",
+  "whole_system_release": false
+}

@@ -1003,7 +1003,7 @@
       "id": "batch6_operating_load_and_architecture",
       "track": "C",
       "priority": -200,
-      "status": "READY",
+      "status": "FAIL",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1038,8 +1038,15 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:02:41.375046+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/transmission/batch6_cycle1/summary.json",
+      "reason": "Finite1101/1996/spool interface verified, but7/15 conditional current scenarios fail. Actual normal demand, guaranteed maximum, motor support/anchor and full product remain unqualified.",
+      "common_product_contract": {
+        "path": "product_prototype/stage12_integrated/models/standard_drive/batch6_contract1.json",
+        "SHA256": "c41e44c7e8a51a815ce70af15c587145668afef62ae0be6d91462e12793a289e"
+      },
+      "followup": "Independent standard Idler/direct route next; select final rated actuator after actual demand/duty. Do not repeat100:1 interface as new research."
     },
     {
       "id": "batch6_standard_idler_or_direct_route",

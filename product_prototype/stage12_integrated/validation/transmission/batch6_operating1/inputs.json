@@ -1,0 +1,46 @@
+{
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/batch6_operating1/producer.py",
+    "SHA256": "9edf5a46e7cc3a55f1c4491b0b4a61186fdd3c91d151dec4a05f788b47fd9bc3"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/models/standard_drive/batch6_sources1/reviewed.json",
+      "SHA256": "467e1bdc306f5e8c99ea30742785367564f8c6ec1a7bdf727e08289a15d63a2d"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+      "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/drive_system_layout.py",
+      "SHA256": "8b1da061a4f29f5d0c2629946371ea083c21dc744a6bbebd4d9cd20965811f68"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/wire_motion.py",
+      "SHA256": "62c1a6fe1e2e54e388389299c87ae5d23902c83f5b9f195d532d5c2d902556d1"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/mechanism_motion.py",
+      "SHA256": "e6a0e3c4cd6ed97dab1260b8f2da7f1c88f86b1e2dcfa736d768b562bd3e589b"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/scripts/finger_structure.py",
+      "SHA256": "4f51859b56314389fd6b6bf3c1165b3323d63feaca7909222dc04410dd7dd444"
+    },
+    {
+      "path": "product_prototype/stage2_load_transfer/models/materials/evidence.json",
+      "SHA256": "14b727a364ccf9b56ffa741e3a3765b859c3df85ad4bbe11e3244a87dfaed01f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/overload/JH1M_interval1/summary.json",
+      "SHA256": "0bf6d1e5c0a05e0220e8e5f5f7dd0c39f5c78c1d42dfe5130df9aad959242644"
+    }
+  ],
+  "predeclared_checks": {
+    "derivative_relative_max": 1e-06,
+    "work_relative_max": 1e-06
+  },
+  "assumptions": "100g vertical static load; three equal horizontal normal forces; friction0.2/0.4/0.8 scenarios, no measured lower bound; prescribed tip trajectory0..60deg. No force closure or Stage3 operation.",
+  "elastic_reference": "Unbonded separate-layer prescribed common curvature, Rail88mm and PET86.2mm. Energy reference only, NOT actual coupled equilibrium, contact, strength or grasp demand."
+}

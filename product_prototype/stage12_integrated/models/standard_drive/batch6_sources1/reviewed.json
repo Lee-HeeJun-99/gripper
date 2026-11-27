@@ -1,0 +1,52 @@
+{
+  "status": "PRIMARY_MANUFACTURER_FACTS_REVIEWED_NOT_ORIGINAL_DOWNLOADS",
+  "review_date_KST": "2026-11-27",
+  "retrieval": "web tool primary pages/PDF text; direct filesystem downloads failed DNS and are preserved in receipt.json. No vendor STEP or downloaded PDF claimed.",
+  "motor": {
+    "manufacturer": "Pololu",
+    "item": 1101,
+    "model": "100:1 Micro Metal Gearmotor HP 6V",
+    "source": "https://www.pololu.com/product/1101",
+    "dimensions_source": "https://www.pololu.com/file/0J949/micro-metal-gearmotors-dimensions.pdf",
+    "drawing": "03 April 2024, page 4, precious metal brushes, no encoder",
+    "voltage_V": 6,
+    "no_load_rpm": 310,
+    "no_load_current_A": 0.1,
+    "extrapolated_stall_torque_kgcm": 1.7,
+    "extrapolated_stall_current_A": 1.6,
+    "gearbox_cross_section_mm": [10, 12],
+    "body_and_terminals_max_length_mm": 25.6,
+    "output_D_shaft_diameter_mm": 3,
+    "output_shaft_length_mm": 9,
+    "shaft_flat_across_mm": 2.5,
+    "pilot_diameter_mm": 4,
+    "pilot_projection_mm": 0.7,
+    "general_brushed_motor_current_recommendation_fraction_stall": 0.25,
+    "gearbox_recommended_instantaneous_torque_limit_kgcm": 2,
+    "limitations": "Stall values theoretical; neither gearbox recommended limit nor current recommendation is a guaranteed delivered maximum, continuous rating, radial/axial bearing rating or physical force limiter.",
+    "price_and_local_stock": "NOT CONFIRMED; no purchasing action"
+  },
+  "hub": {
+    "manufacturer": "Pololu",
+    "item": 1996,
+    "source": "https://www.pololu.com/product/1996/specs",
+    "drawing_source": "https://www.pololu.com/file/0J661/1996-3mm-m3-hub-dimensions.pdf",
+    "drawing_date": "2013-08-05",
+    "OD_mm": 17.5,
+    "thickness_mm": 5,
+    "bore_mm": 3,
+    "face_mounts": 4,
+    "face_mount_thread": "M3",
+    "face_mount_radius_mm": 6.35,
+    "radial_set_screw": "M3, supplied with 1.5mm Allen wrench",
+    "material": "aluminum, alloy/temper and strength unknown",
+    "limits": "No published torque/axial retention rating or guaranteed thread engagement strength. Radial-hole axial position not dimensioned; centered location in CAD is an explicit interface assumption."
+  },
+  "alternate_protection": {
+    "manufacturer": "WM Berg",
+    "model": "JH-1M",
+    "source": "https://www.wmberg.com/documentation/metric-catalog/section-g_metric.aspx?ext=.pdf",
+    "basis": "Reuse immutable catalog_interval1 local evidence only; not newly retrieved",
+    "selection": "Not installed: published ambient torque interval is not an installed transient/fault/temperature bound. Adds another coupling and alignment path."
+  }
+}

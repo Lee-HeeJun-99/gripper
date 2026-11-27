@@ -1,0 +1,98 @@
+{
+  "status": "ACTUAL_P1_CYCLE8_EXACT_BYTE_HANDOFF_READY_NOT_RELEASE",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cycle8_closeout/producer.py",
+    "SHA256": "109a2934d6261d30e09dfebb2bd9fbdf52b688c6df29299e1f3c2cbd8f690ea1"
+  },
+  "main": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle8/summary.json",
+    "SHA256": "43d8b710560e92215c51ebc2cc05cf96d5daed7ed29b442acc9dddb02d7c9647"
+  },
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_interfaces18/summary.json",
+    "SHA256": "807d74c9692e96f6cbe960de86d5f124e7158c5ae64818c6e42f5c64223ff8d4"
+  },
+  "report": {
+    "path": "product_prototype/stage12_integrated/reports/primaryP1_motor_bearing_engineering.md",
+    "SHA256": "189041ff6f8c153d2a6f82222c12f31fedfec17985239ece589b098dbfcc3c7c"
+  },
+  "final_trusted_release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release12/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "final_trusted_release_exit_code": 2,
+  "release_error_count": 24,
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state9.json",
+    "SHA256": "f75d557cfae07dd58caa1d0a71313b21b73ed3202217f77582a608825ccf7d59"
+  },
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "recorded_analysis_children_reaped": 16,
+  "recorded_analysis_child_seconds": 62.019706127466634,
+  "timeouts": 0,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "STOP_present": false,
+  "limits": {
+    "memory_bytes": 4294967296,
+    "timeout_s": 420,
+    "peak_concurrent_analysis_children": 3
+  },
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "final_actual_changed_parts": [
+    "OPEN_FRAME"
+  ],
+  "final_unchanged_part_refs": 77,
+  "withdrawn_iterations": [
+    "primaryP1_interfaces16",
+    "primaryP1_interfaces17"
+  ],
+  "next_task_id": "goal_primary_compliant_wall_cradle_frame",
+  "whole_system_release": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "SOFA_runs": 0,
+  "FEM_runs": 0,
+  "git_add_commit_attempted": false,
+  "save_status": "PENDING_SUPERVISOR_EXACT_SAVE",
+  "limitations": [
+    "Main15childcountprecededfinalrelease; thisfinal16countisauthoritative",
+    "Initialwhole-repositoryread-onlyinventorySIGINTexit130notanalysisPASS; nofilescreatedbeforeinterruption",
+    "Final18actualFramechangeandnecessaryrigidfrictionlesswrenchvalidationonly; noelasticcompliance/thread/preload/fit/casecapacity/physicalanchor/strength/time/globalenergy/full3Fingerrelease",
+    "FinalunchangedtrustedgateauditsAAregistry/contract; candidateP1isnotpromotedintoacompletesame-revisionrelease"
+  ]
+}

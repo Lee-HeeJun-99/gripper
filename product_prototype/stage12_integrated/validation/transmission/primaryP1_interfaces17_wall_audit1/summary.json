@@ -1,0 +1,134 @@
+{
+  "status": "ACTUAL_P1_POSITIVE_INTERFACES_NECESSARY_WRENCH_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_interfaces17/summary.json",
+    "SHA256": "4d15119d51cec54dc0706d951aa13519161a196b96516c19d426c406463c27a5"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_interfaces17_wall_audit1/producer.py",
+    "SHA256": "3d36c5fb4767dfce983ab542d4a2ec710edff4dac59accf17819ce0342106fa5"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_interfaces17_wall_audit1/inputs.json",
+    "SHA256": "309de881d2204a9b87939baf4f956028c07b9ff78925c44e597ab790e03f412a"
+  },
+  "patches": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_interfaces17_wall_audit1/patches.json",
+    "SHA256": "f7f7d144c82e6967cc5c4beb932455abf0edc68c465b8ee8fd5df491b0ea5dd2"
+  },
+  "tractions": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_interfaces17_wall_audit1/tractions.json",
+    "SHA256": "6ec6f838d1d6cc0973106948570656457810411696e42f4ce218c3f16168c362"
+  },
+  "areas_mm2": {
+    "motor_top": 80.0,
+    "existing_wall": 160.0,
+    "key_ymax": 8.0,
+    "motor_xmin": 60.0,
+    "key_xmin": 20.0,
+    "root_seat": 444.95317124627707,
+    "key_floor": 72.0,
+    "motor_bottom": 80.0,
+    "motor_xmax": 60.0,
+    "key_xmax": 20.0,
+    "key_ymin": 8.0
+  },
+  "checks": {
+    "root_frictionless_equilibrium": true,
+    "motor_and_cap_frictionless_equilibrium": true,
+    "existing_wall_without_key_test": true,
+    "motor_side_omission_rejected": true,
+    "finite_positive_patches": true
+  },
+  "rows": {
+    "root": {
+      "success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.23468517299536926,
+        0.0,
+        0.5431836831004662,
+        -5.5971591539379305e-06,
+        -0.0276027884898859,
+        0.0
+      ],
+      "variables": 114,
+      "force_error_N": 8.326672684688674e-17,
+      "moment_error_Nm": 3.577393890324895e-18,
+      "total_axial_bolt_N": 0.5431836831004662,
+      "total_contact_N": 3.2755862526249793
+    },
+    "motor_and_cap": {
+      "success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.17392524367129744,
+        0.0,
+        -1.4932419400580768,
+        0.0017732770635769677,
+        0.01681450533804751,
+        0.0,
+        0.0,
+        0.0,
+        -0.07281526130397008,
+        0.0015895590001012616,
+        8.108336434915487e-18,
+        0.0
+      ],
+      "variables": 68,
+      "force_error_N": 4.449557262054371e-16,
+      "moment_error_Nm": 1.263342383680532e-17,
+      "total_axial_bolt_N": 2.229259094984499,
+      "total_contact_N": 6.8626617247887225
+    },
+    "root_without_key": {
+      "success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "external_wrench_N_Nm": [
+        0.23468517299536926,
+        0.0,
+        0.5431836831004662,
+        -5.5971591539379305e-06,
+        -0.0276027884898859,
+        0.0
+      ],
+      "variables": 34,
+      "force_error_N": 2.220446049250313e-16,
+      "moment_error_Nm": 2.3520868921812403e-17,
+      "total_axial_bolt_N": 3.565130304819811,
+      "total_contact_N": 3.256631794714714
+    },
+    "motor_without_side_lands": {
+      "success": false,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "external_wrench_N_Nm": [
+        0.17392524367129744,
+        0.0,
+        -1.4932419400580768,
+        0.0017732770635769677,
+        0.01681450533804751,
+        0.0,
+        0.0,
+        0.0,
+        -0.07281526130397008,
+        0.0015895590001012616,
+        8.108336434915487e-18,
+        0.0
+      ],
+      "variables": 36
+    }
+  },
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Necessary rigid equilibrium on finite actual subfaces with nonnegative uniform pressures,not unique elastic load or capacity",
+    "Nominal zero-gap only;0.02mm clearance removes side/key contact at unchanged pose and demands compliant displacement/contact solution",
+    "No physical gearbox land location/case allowable or guaranteed material/friction/preload/thread engagement",
+    "Lift-slide-lower assembly/process/tolerance and finite coupledFrame/Ground/Base/benchanchor remain independent gates",
+    "No historical mesh/time/energy failure cured; no physical assembly/full3Finger/Stage3"
+  ]
+}

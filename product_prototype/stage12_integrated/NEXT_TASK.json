@@ -1,31 +1,31 @@
 {
   "status": "SOURCE_INTEGRITY_PASS",
   "errors": [],
-  "revision": "primaryP1_fixture15",
+  "revision": "primaryP1_interfaces18",
   "adopted_reference": "revAA_heel_relief2 unchanged",
   "next": {
-    "id": "goal_primary_gravity_port_interfaces",
+    "id": "goal_primary_compliant_wall_cradle_frame",
     "track": "C",
-    "priority": -1006,
+    "priority": -1007,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
     "selection_policy": "goal_product_continuation",
-    "hypothesis": "Continue SAME78partP1fixture15 with new gravity-loaded demand. Resolve actualRoot->Frame and Motorcase->Frame lateralforce/couple paths before claiming transport throughFrame: map actualfinitebearing/seat/shank gaps and full3Dpairedwrenches+selfweight; quantify frictionless failure and implement positive Root/cartridge shoulder/key and motor lateralbearing only where physically required,using source-backedcase envelope/standardparts. Revalidate changedactualCAD assembly/tools/loadedcatenary and finite compliantFrame->Ground/key/Base. Use justified minorcore/flank/engagement connectors,fit/preload contrasts and physicalBaseanchor definition; no major-cylinder ties/sharedM5fixation or arbitrarytraction-as-capacity. Retain old1%Frame/Ground/RailFAILs/gapTIMEOUT; no blanketmesh retries. Materialsource minima/cableelastic-bending/friction/protector/full3Finger/globalenergy remain blocked.",
+    "hypothesis": "Continue SAME78partP1interfaces18. Build separateDOF actualRootBack/Frame/MotorCap contact response using the160mm2existingRootwall/seat andtwo60mm2motorlands; rigidmotorproxy explicitlyconditional untilsourcecasegeometry/stiffness. Carry correctedfullRoot/MotorforcesANDcouples+allselfweights through finiteFrame/Ground/key/Base with tension-only justifiedminorcore/headnutfootprints,notsharedM5fixation. First compare zero-gap and0.02mmmanufacturingclearance/preload atthissamegeometry,verifyactivecontacts/actionreaction/rigidworkandfiniteassemblythenstresses. Useexistingtetra/contactkernels; no mesh-onlyretry,LPpressureascapacity,newarchitecture or genericcoupon. PhysicalBaseanchor/materialminima/realcase/threadengagement remain explicit blockers. Preserveold1%Frame/Rail/Groundfailures and420sgaptimeout; noautomaticretry. Full3Finger/friction/protection/globalenergy/Stage3stayblocked.",
     "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
     "system_gate_ids": [
-      "physical_mass_inertia",
+      "cad_model_match",
+      "changed_stage1_revalidation",
       "continuous_load_path",
       "motor_alignment_reactions",
-      "cad_model_match",
+      "physical_mass_inertia",
       "numerical_convergence",
-      "changed_stage1_revalidation",
       "root_palm_strength",
       "qualified_worst_case"
     ],
     "prerequisites": [],
     "parent_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
-      "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_interfaces18/summary.json",
+      "SHA256": "807d74c9692e96f6cbe960de86d5f124e7158c5ae64818c6e42f5c64223ff8d4"
     },
     "product_brief": {
       "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
@@ -41,31 +41,36 @@
       "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
     },
     "target_candidate": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
-      "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_interfaces18/summary.json",
+      "SHA256": "807d74c9692e96f6cbe960de86d5f124e7158c5ae64818c6e42f5c64223ff8d4"
     },
-    "target_revision": "primaryP1_fixture15",
+    "target_revision": "primaryP1_interfaces18",
     "target_parts": 78,
     "primary_state": {
       "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-      "SHA256": "719916067e882c3ca498def7829cde7fcab1ed7a85b36521fbd5699d1c4bdba3"
+      "SHA256": "ef643a16e67b13f8bba7c14a83500e557e3b356ef85d8bf0bf75cd2375a7943c"
     },
-    "concrete_first_step": "Usecorrectedgravitycatdemandports2fullRoot/MotorforcesANDcouples+selfweight. DerivefiniteRootcartridge/FrameandMotorcaseFrame lateralcontact/seats/gap/slipfunction;implementpositivebearing/keyonlywhereactualpathrequires,notgenericcoupon. Actualsourcecase/toleranceuncertaintiesremainexplicit. Then newCADassembly/tool/loadedstring and finitecompliantwholeFrame/Groundjoint.",
+    "concrete_first_step": "SeparateactualRoot/Frame/CapDOFs,finitewall/seat/landsandaxialminorcoreconnectors; rigidmotorproxyconditional. Resolvegap0/.02mm activecontactandcoupledfullFrameGroundloadwithoutsharedM5fixation; actualcase/source/physicalanchorunknownsremainexplicit.",
     "known_blockers": [
-      "Gravity-loaded finiteRod+massiveinextensiblestring reduction,not fullycoupled3Dphysicalproduct. Root/Frame/Motorcase/anchorpath remain unqualified",
-      "Actualfinite-radius tubeCOM correction measured; string doesnotresolvebending/elasticity/friction/sectiongravitymoments",
-      "PurematchedloadmeshlocalPASSdoesnoterasehistoricalmeshFAILs. h5jointonecasehasNOconvergenceclaim; no time/globalenergy orstrength",
-      "Conditional100g/3equalFinger/mu.8normaldemand isnotrealpayload,freegrasp,source-minimumsafetyorprotecteddevice"
+      "Exact nominal finite-face necessary equilibrium,not elastic pressure distribution,capacity or manufacturing fit",
+      "Final18onlyFramechanged: previousgravity-loadedFinger/freeSwivel/stringstate remains conditionalsameundeformedboundary; upstreamcoupledFramecompliance unresolved",
+      "RequiredBasewrench updated for exact changedFramevolume/centroid at rho2700 only; not physicalbenchanchor or completeequilibrium",
+      "KeylessRoot wall handles thispositiveFx; reverse/shearYloadcases and offnominalgap require separatephysicalcontactvalidation",
+      "Initial17wrench omitted160mm2existingwall: itsrootkeynecessityclaim invalidated by wallaudit. Allbytespreserved",
+      "17keyproposalwithdrawn; only18Frameiscurrentprimary. ExistingAA/AO/3Finger/cartridge/jammingremainimmutable.",
+      "LocalfrictionlessLP pressure/axial reactions are admissibleloadfields forchosenobjective,notminimumpreload,uniqueelasticresponse orcapacity.",
+      "SomecopiedproducerlabelsretainCLAMP/genericoldnotqualifiedtext; authoritativefinal18design_change/inputs/actualpartrefs andthishandoffidentifyonlyFramechange.",
+      "Final18wrench genericlimitationtextmentionsside/keygap; actualfinal18hasNOnewRootkey. ExistingRootwallgap andmotorsidegap aretheunqualifiedfits."
     ],
     "parent_result": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle7/summary.json",
-      "SHA256": "4b8e8bf051709d9b1ac519fb6db9d9bf60919963adaab1573c11c4af65ebd84b"
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle8/summary.json",
+      "SHA256": "43d8b710560e92215c51ebc2cc05cf96d5daed7ed29b442acc9dddb02d7c9647"
     },
     "result": null,
     "reason": null,
     "next": null
   },
   "running_task_records": [],
-  "warning": "ActualP1gravityloadedpartialvalidationnot22gateorStage3release",
-  "resume_command": "Continue SAME78partP1fixture15 with new gravity-loaded demand. Resolve actualRoot->Frame and Motorcase->Frame lateralforce/couple paths before claiming transport throughFrame: map actualfinitebearing/seat/shank gaps and full3Dpairedwrenches+selfweight; quantify frictionless failure and implement positive Root/cartridge shoulder/key and motor lateralbearing only where physically required,using source-backedcase envelope/standardparts. Revalidate changedactualCAD assembly/tools/loadedcatenary and finite compliantFrame->Ground/key/Base. Use justified minorcore/flank/engagement connectors,fit/preload contrasts and physicalBaseanchor definition; no major-cylinder ties/sharedM5fixation or arbitrarytraction-as-capacity. Retain old1%Frame/Ground/RailFAILs/gapTIMEOUT; no blanketmesh retries. Materialsource minima/cableelastic-bending/friction/protector/full3Finger/globalenergy remain blocked."
+  "warning": "SameP1actualFramechangeandnecessarywrenchvalidationnot22gaterelease",
+  "resume_command": "Continue SAME78partP1interfaces18. Build separateDOF actualRootBack/Frame/MotorCap contact response using the160mm2existingRootwall/seat andtwo60mm2motorlands; rigidmotorproxy explicitlyconditional untilsourcecasegeometry/stiffness. Carry correctedfullRoot/MotorforcesANDcouples+allselfweights through finiteFrame/Ground/key/Base with tension-only justifiedminorcore/headnutfootprints,notsharedM5fixation. First compare zero-gap and0.02mmmanufacturingclearance/preload atthissamegeometry,verifyactivecontacts/actionreaction/rigidworkandfiniteassemblythenstresses. Useexistingtetra/contactkernels; no mesh-onlyretry,LPpressureascapacity,newarchitecture or genericcoupon. PhysicalBaseanchor/materialminima/realcase/threadengagement remain explicit blockers. Preserveold1%Frame/Rail/Groundfailures and420sgaptimeout; noautomaticretry. Full3Finger/friction/protection/globalenergy/Stage3stayblocked."
 }

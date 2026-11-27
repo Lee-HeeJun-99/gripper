@@ -1,0 +1,42 @@
+{
+  "status": "ACTUAL_P1_WITHDRAWN_KEY_AND_OMITTED_CONTACT_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_interfaces18/summary.json",
+    "SHA256": "807d74c9692e96f6cbe960de86d5f124e7158c5ae64818c6e42f5c64223ff8d4"
+  },
+  "evidence": {
+    "withdrawn_wall": {
+      "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_interfaces17_wall_audit1/summary.json",
+      "SHA256": "93346106eba50fbebc2ae315ff5b982b072ca08ca72d17a6d95502aae7572526"
+    },
+    "withdrawn_assembly": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_interfaces17_assembly1/summary.json",
+      "SHA256": "27dee6f08a7014a62d28376f06c9d5f32df5babe4bfea43e02a74ad00c4bc82a"
+    },
+    "withdrawn_repaired_path": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_interfaces17_assembly2/summary.json",
+      "SHA256": "938379de7151b60eddd635facb738d3570e5d7c8a1eed4a779fb062016d559e8"
+    }
+  },
+  "failures": [
+    {
+      "name": "17lift_from_start",
+      "actual_common_mm3": 41.44701400060141,
+      "reason": "F0_ROOT_FRONT hitsmotorcradle atshift[-40,0,3]mm. Originalresult/logimmutable. Laterliftatx=-14theninsert/lowerpassesfinitechecks,butwithdrawnwithkey."
+    },
+    {
+      "name": "17root_key_necessity_INVALIDATED",
+      "reason": "First17wrench omittedexisting160mm2RootFramewall andwronglyinterpretedkeyomissionFAILasnecessity. Independentwall audit findsfrictionlesskeylesssolution.16/17CADandallresultsretained;final18reusesoriginalRootandshelf,onlymotorlandsadded."
+    },
+    {
+      "name": "16pocket_process_UNQUALIFIED",
+      "reason": "16blindrectangularpocket lackedcuttercornerrelief.17hasfourR1reliefs,butwholekeywithdrawn afterwall audit. Notadopted ormanufacturingPASS."
+    },
+    {
+      "name": "initial_inventory_interrupted",
+      "reason": "Overbroadread-onlywhole-repositoryhashinventoryinterruptedwithSIGINTexit130beforeCAD/sourcecreation; noanalysisresult claimed. ReplacedbyinitialuntrackedpathinventoryandGittracked-diffexactbytehandoff. Nochildleft. Nooriginaluserfileedited."
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

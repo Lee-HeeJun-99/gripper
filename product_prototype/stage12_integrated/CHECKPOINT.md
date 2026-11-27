@@ -1,3 +1,68 @@
+# Latest actual P1 motor-bearing continuation — 2026-11-27, Supervisor save pending
+
+Actual starting HEAD1ed7a296c698b03e757b86779bef9af03f051b5c.
+Selected exact queue ID goal_primary_gravity_port_interfaces. SAME ONE P1 now
+primaryP1_interfaces18,78parts. Final actual CAD change ONLY OPEN_FRAME STEP/STL:
+two10x6mm lower-cradle lateral motor bearing lands close0.05mm nominal xgaps.
+Full78part ASSEMBLY.step/BOM and identity5CSV bind allpart hashes;77STEPrefs
+unchanged. Motor1101/stock1996/standardhardware reused. FailedAO/adoptedAA and
+original3Finger/cartridge/jamming extensions remain immutable.
+
+Important preserved failure/correction: proposed16/17Rootkey was unnecessary.
+Initial17lift-from-start collides41.447014mm3 at[-40,0,3]mm; corrected late-lift
+path passes finite samples. Independent full-contact audit then finds existing
+160mm2Root/Framewall omitted by firstwrenchmodel. Its key-omissionFAILcannot
+prove physicalkeynecessity. Final18withdrawskey/pocket andusesoriginalRootwall
+and lateralassembly;16/17CAD/results/logs and wrongnecessityclaim remainarchived.
+Onlyactualmissingmotorlateralbearing isimplemented in final18.
+
+Final18 reimport78singlevalidsolids/190Booleanpairs/nointerference. Assembly
+81poses/296comparisons,RFtools and independent78solidaggregate/STLchecks pass
+boundednominalscope. Onecorrectedgravitydemand32 catenary/freeSwivel/rotorpose
+26comparisons clear;singlevalidWIREsolid,volumeerror1.692e-9. NotCCD/tolerance/
+process/threadtightening/physicalassembly/full3FingerStage1 ornewfullycoupledsolve.
+
+FiniteactualRootseat526.377949mm2/wall160mm2 andmotorbottom/top80mm2/side60mm2
+admitsfrictionlessnonnegativepressure+axialbolt equilibrium forcorrectedfull3D
+Root/Motorgravitywrenches plusRootBack/Capownweight. SeparateMotorandCapbalance.
+Independent .001/.002mm overlap derivatives agreeareas within3.60e-12relative;
+savedforce/moment,12rigidvirtualmotions/model,pressureintegration andcorrupt10mN
+negativecontrolpass. OmittingactualRootwall ormotorsidelands failsfrozenpose
+mu0equilibrium. Rootaxialsum3.939175N/Cap2.229259N forchosenLPobjective are
+representativeadmissibleloadfields,NOTminimumpreload/uniqueelasticload/capacity.
+
+ActualFrame+6mm3 givesconditional+16.2mg,total.989911291786kg. Updatedrequired
+Baseexternalwrench[-.408610416667,0,9.707713569597,-.076588846545,-.219987694554,0]
+N/Nm. PhysicalBaseanchor,actualgearboxland/casecapacity,bearing/thread/flank/
+engagement/preload/materialminima andcoupledFrame/Root/Groundresponse unresolved.
+NoFEM/SOFA/dt/strength/globalenergyclaim. PriorFrame52.7693%,Rail1.30247%,
+Ground/BasemeshFAILs and420sgaptimeout stayblocked;noautomaticretry.
+
+All22systemgates UNQUALIFIED in models/primary_system_gate_state9.json;
+newwhole-systemgates NONE. Finalunchangedtrustedrelease12 returns
+INTEGRATED_NOT_QUALIFIED,24errors,exit2. NoP1same-revisionrelease/Stage3.
+
+Concrete NEXT exact ID goal_primary_compliant_wall_cradle_frame: continue18;
+separateactualRootBack/Frame/CapDOFs,finiteexistingwall/seat andmotorsidelands,
+rigidmotorproxyexplicitlyconditional. Resolvezero/.02mmgap/preloadactivecontact
+usingexistingtetra/contactkernels,fullpairedforcesANDcouples/allweights,then
+finiteFrame/Ground/key/Base andphysicalanchor. Justifiedminorcore/headnut
+connectors; nosharedM5fixation/tractionascapacity/blanketLPmesh ornewarchitecture.
+Full3Finger/friction/protection/globalenergystayblocked.
+
+Main validation/integrated/primary_cycle8/summary.json; authoritativefinal
+validation/integrated/primaryP1_cycle8_closeout/summary.json. Detailed actual
+CAD/numerics/failures: reports/primaryP1_motor_bearing_engineering.md.
+16analysischildrenreaped,62.0197061275childseconds,0timeouts,4GiB/420seach;
+0ownedchildren/0RUNNINGtasks. Initialread-onlyinventoryinterruptedexit130before
+CADcreation,preservedasexecutionlimitation,notphysicsPASS. STOPabsent,pinsunchanged.
+NoGitadd/commit/push/historyrewrite,SDK,manager/security/save/guard/gatesource
+changes,purchase/hardware/credentials/providerchoice/subagents/recursivelaunches.
+Originaluserfilespreserved. ExactSupervisorrequest:
+runtime/goal_authorized_20261127_7/save_request7.json. SavePENDING,nonewcommit.
+
+---
+
 # Latest actual P1 gravity-loaded continuation — 2026-11-27, Supervisor save pending
 
 Actual starting HEAD ee1619871d20dd9199b234dedf755df334f1828d.

@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state21.json",
-    "SHA256": "319cf14d04c0f6ac5f94411a92847bfc738416c88d5990c8dee53af19ea46dca"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state22.json",
+    "SHA256": "ade8ed5e2555c126a176ccf90fcf6d97cd3392843545851624e18f6d32fa8987"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,10 +384,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_full_cone_matrixfree_freeY_kkt",
-  "next_task_id": "goal_primary_feasible_cone_globalized_freeY",
+  "selected_task_id": "goal_primary_feasible_cone_globalized_freeY",
+  "next_task_id": "goal_primary_finite_gap_primal_dual_force_closure",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
-  "load_BC": "Originalattachedendpointload/originalRootYunpenalizedgamma semantics preserved, not yet coupledsolved. Newmatrixfreecurrentmetricandfinitecone-awarelinearworking-set results are REJECTED physicalpredictors, never sourcefieldreplacement or Basecancellation. All2169contacts/14branches/originalgauges retained. No newstress/equilibrium/globalenergy/anchorclaim.",
+  "load_BC": "Original sourcefield and physical P/q/all2169contacts/14branches/11gauges preserved. OriginalRootY2175 has one unpenalizedgamma; originalMotorY2176 unchanged. New feasible LINEAR trajectory is a numerical seed only, not sourcefield replacement. Physical force/gauge KKT remains rejected, so no attachedload nonlinear update, Base residual cancellation, new stress or physical anchor/retention claim.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "NONE. Same78actualSTEP/assembly/BOM verifiedunchanged. NewactualproductmatrixfreeAMG/blockSchur/coneawarelinearworking-set implementation andindependentnumericalaudits. No newsolid/acceptedphysicalstate.",
+  "CAD_this_cycle": "NONE. Same78actualSTEP/assembly/BOM unchanged. New actual-product original-row freeY phaseI/feasible-ray/finite-gap numerical implementation and independent audits; no new solids or nonlinear physical state.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -563,14 +563,14 @@
     "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_assembly_verify1/summary.json",
     "SHA256": "589521991badfd521ea53a8585379f59b5eade97317274f160d412a2bd224365"
   },
-  "latest_closeout_child_count": 6,
+  "latest_closeout_child_count": 13,
   "latest_closeout_child_seconds": 92.46770423813723,
   "prior_outer_joint_scope": "NewfiveelasticbodyRootFrameCapGroundBase/sixDOFmotor solution replacesoldouterjointonlyscope atconditionalnominaldemand. ActualphysicalBaseanchor/Fingerfeedback/threadcase/sourceallowables unresolved. No meshPASS.",
   "latest_compliant_chain_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle11_record2/summary.json",
     "SHA256": "ce77b8d4a6d6d32d815a6ffb5b154f3800b34ffc415375028f57f656472c9f1a"
   },
-  "latest_closeout_child_seconds_known": 392.6555898867082,
+  "latest_closeout_child_seconds_known": 428.48358450783417,
   "latest_closeout_child_time_unknown": 0,
   "latest_closeout_child_seconds_lower_bound": 0,
   "candidate": {
@@ -868,6 +868,64 @@
     },
     "release": {
       "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release22/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "latest_feasible_cone_cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle18_record1/summary.json",
+    "SHA256": "bfa2afbd89d397416dd1b081254d16b641800cc977bdfda9b14faeb5412bf898"
+  },
+  "latest_feasible_cone_evidence": {
+    "phase1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/summary.json",
+      "SHA256": "62e52f48fccc901c4538db659fa28f5154a0adb734f1a42df4376bc01587a79c"
+    },
+    "seed": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_seed1/summary.json",
+      "SHA256": "0e1cdb2660757fdd5f9c8ac07aae2f35043b5edddfd41df2c15a5ae1afdc3379"
+    },
+    "raw_descent": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_descent1/summary.json",
+      "SHA256": "d7c6c845466e90729faa17c55dc439d4884b0d4620be8018fde210af964104f1"
+    },
+    "normalized_descent": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_descent2/summary.json",
+      "SHA256": "5bf03b5b727a14dfc4601b4f843bdf67733b43ceaa76d90364e38c272f28847d"
+    },
+    "bvls_descent": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_descent_bvls1/summary.json",
+      "SHA256": "d271edf03d1e485439aa3db5dd941f027062a21530584e79182edb23e67011aa"
+    },
+    "corrected_descent": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_corrected1/summary.json",
+      "SHA256": "853b3fa2c6d0eb33519837f74967feece27f0c7e001acfe3f8305f14f54e5902"
+    },
+    "raw_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_audit1/summary.json",
+      "SHA256": "3c6724265b078b536679dc2ab0c36151059a75c3468fc599158cc955a551d64b"
+    },
+    "normalized_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_audit2/summary.json",
+      "SHA256": "5099c84bddd9e62a01311592a7d63959a6c284612129bfb61522a621d2a80b30"
+    },
+    "bvls_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_audit_bvls1/summary.json",
+      "SHA256": "4f01af866b660af0a86d25533912f6c8682be392eec648784df6785b2903a491"
+    },
+    "corrected_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_audit_corrected1/summary.json",
+      "SHA256": "69e8856fd66345db1fcdd0a754b45ead703dc4db637c4a5d4daf4e4fb8aeee5c"
+    },
+    "finite_projection": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_gap_projection1/summary.json",
+      "SHA256": "4094b311ef4a71fed796cec82f2e81fe8c5e8cbfe80e2a3290e1b514557c5da5"
+    },
+    "finite_audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_gap_projection_audit1/summary.json",
+      "SHA256": "5daef7b842acedbdf8047afe5472fdc1cb398d55fcfe716fd474c16222a8b7e2"
+    },
+    "release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release23/summary.json",
       "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
     }
   }

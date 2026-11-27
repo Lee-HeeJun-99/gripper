@@ -1,0 +1,115 @@
+{
+  "status": "ACTUAL_P1_FINITE_GAP_PROJECTION_INDEPENDENT_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_gap_projection1/summary.json",
+    "SHA256": "4094b311ef4a71fed796cec82f2e81fe8c5e8cbfe80e2a3290e1b514557c5da5"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_gap_projection_audit1/verifier.py",
+    "SHA256": "53ff78b2cb03e422abad01dd79297a7ec0bcb1ac8d37c6a6359d09b6c3a4dafa"
+  },
+  "checks": {
+    "all_original_rows": true,
+    "no_physical_springs": true,
+    "no_physical_update": true,
+    "source_field_unchanged": true,
+    "batch0": true,
+    "batch1": true,
+    "78actualCADhashes": true
+  },
+  "batches": [
+    {
+      "small_eigenvalue_min": -1.9738000443298933e-15,
+      "small_eigenvalue_max": 31.875105216933598,
+      "small_numerical_rank_1e12": 134,
+      "small_nullspace_rhs_component": 3.017129642033777e-07,
+      "batch": 0,
+      "checks": {
+        "hash": true,
+        "same_audited_ray": true,
+        "same_audited_source_x": true,
+        "all_endpoint_slacks_reproduced": true,
+        "all_after_slacks_reproduced": true,
+        "primal_reproduced": true,
+        "sign_reproduced": true,
+        "complementarity_reproduced": true,
+        "objective_direction_reproduced": true,
+        "curvature_reproduced": true,
+        "alpha_reproduced": true,
+        "acceptance_reproduced": true,
+        "all_violated_original_rows_reproduced": true,
+        "all_batch_add_rows_reproduced": true,
+        "rejected_not_applied": true,
+        "omitting_finite_gap_projection_rejected": true
+      },
+      "finite_primal_mm": 2.1040553618194e-05,
+      "projection_complementarity_Nmm": 1.0232649300173349e-13,
+      "objective_change_Nmm": 0.0,
+      "small_dual_KKT": 9.684580591658236e-08,
+      "unprojected_worst_original_row": 0,
+      "unprojected_slack_mm": -2.7675864650687988e-05,
+      "accepted_linear_step": false
+    },
+    {
+      "small_eigenvalue_min": -7.195571189205442e-14,
+      "small_eigenvalue_max": 358.5553572458134,
+      "small_numerical_rank_1e12": 635,
+      "small_nullspace_rhs_component": 3.4439363211236085e-07,
+      "batch": 1,
+      "checks": {
+        "hash": true,
+        "same_audited_ray": true,
+        "same_audited_source_x": true,
+        "all_endpoint_slacks_reproduced": true,
+        "all_after_slacks_reproduced": true,
+        "primal_reproduced": true,
+        "sign_reproduced": true,
+        "complementarity_reproduced": true,
+        "objective_direction_reproduced": true,
+        "curvature_reproduced": true,
+        "alpha_reproduced": true,
+        "acceptance_reproduced": true,
+        "all_violated_original_rows_reproduced": true,
+        "all_batch_add_rows_reproduced": true,
+        "rejected_not_applied": true,
+        "batch_transition_reproduced": true,
+        "omitting_finite_gap_projection_rejected": true
+      },
+      "finite_primal_mm": 4.701402010165838e-06,
+      "projection_complementarity_Nmm": 5.226818209538171e-13,
+      "objective_change_Nmm": 0.0,
+      "small_dual_KKT": 1.4011776195373347e-06,
+      "unprojected_worst_original_row": 0,
+      "unprojected_slack_mm": -2.7675864650687988e-05,
+      "accepted_linear_step": false
+    }
+  ],
+  "independent_physical_KKT": {
+    "primal_mm": 2.3419453883675985e-16,
+    "stationarity_N": 1.952487291373347,
+    "complementarity_Nmm": 2.2800497999376556e-11,
+    "sign_N": 0.0,
+    "gauge_N": 0.4411682009451741,
+    "RootY_gamma_stationarity_N": 9.996187178497318e-05,
+    "qualified": false,
+    "output": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_gap_projection_audit1/physical_cone_recovery.npz",
+      "SHA256": "f997f5830d3319310e7e1cf9ca9d8c163bcfe2becabb859a779051b079981295"
+    },
+    "solver_status": 3,
+    "scope": "Best computed local physical cone recovery at the original-source LINEAR trial; not nonlinear equilibrium or an impossibility proof."
+  },
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.5868326050695032,
+  "limitations": [
+    "Audit verifies actual all-row finite-step acceptance/rejection, not product release. Search projection duals and independently recovered physical multipliers are different quantities.",
+    "No changed product solids or nonlinear support state. Material/source/mesh/physicalanchor/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger remain unqualified."
+  ]
+}

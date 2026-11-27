@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_bore_seating30.py", line 84, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_bore_seating30.py", line 82, in main
+    dump(out/'summary.json',dict(status='ACTUAL_P1_FINITE_BORE_SEATING_AND_SHIFTED_BEARING_NECESSARY_LOAD_AUDIT' if all(checks.values()) else 'ACTUAL_P1_BORE_SEATING_AUDIT_FAIL',candidate=ref(cp),inputs=ref(out/'inputs.json'),geometry=ref(out/'finite_seating_and_shifted_footprints.json'),numerical_cases=ref(out/'own_body_12row_cases.json'),virtual_work=ref(out/'bore_generator_virtual_work.json'),checks=checks,case_counts={kind:dict(feasible=sum(c['LP_success'] for c in cases if c['model']==kind),infeasible=sum(not c['LP_success'] for c in cases if c['model']==kind)) for kind in sorted(set(c['model'] for c in cases))},max_work_error_mm=max(w['error_mm'] for w in work),max_shifted_center_error_mm=max(f['old_center_error_mm'] for r in rows for f in r['bearing_footprints']),elapsed_s=time.monotonic()-start,accepted_equilibria=0,newly_qualified_system_gate_ids=[],whole_system_release=False,limitations=['No changed product CAD. Same actual78part product, not an ideal coupon. Shifted finite BRep bearing intersections are geometry; centroid force columns are a necessary relaxed positive pressure distribution, not solved pressure or elastic work.','Co-translated parallel bolt/nut family retains physical clearance; no full6DOF nonlinear equilibrium or actual preload/thread shear/tilt constitutive law. Free internal wrench LP is ONLY necessary feasibility, no glue/support constraint or stiffness is implemented.','Finite line-contact endpoints bound nonnegative normal line reaction resultant; ideal line has zero area. Finite compliant pressure, edge contact, tilted envelope ownership, thread rest setting, material minima, pin load split and global support/anchor/source/strength/mesh/time/energy/3Finger remain blocked.','Sensitivity tilt is not certified operating duty. No Base counterload, no hardware measurement, no gate criteria change.']))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 11, in dump
+    def dump(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,allow_nan=False)+'\n')
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

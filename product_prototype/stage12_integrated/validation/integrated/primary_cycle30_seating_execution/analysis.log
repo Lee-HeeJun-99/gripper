@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_bore_seating30.py", line 84, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_bore_seating30.py", line 36, in main
+    cp=ROOT/'cad/exports/primaryP1_ycapture24/summary.json';cad=json.loads(cp.read_text());assert len(cad['part_references'])==78 and all(sha(REPO[r['path'] if False else cad['part_references'][n]['path']])==cad['part_references'][n]['SHA256'] for n in cad['part_references'])
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_bore_seating30.py", line 36, in <genexpr>
+    cp=ROOT/'cad/exports/primaryP1_ycapture24/summary.json';cad=json.loads(cp.read_text());assert len(cad['part_references'])==78 and all(sha(REPO[r['path'] if False else cad['part_references'][n]['path']])==cad['part_references'][n]['SHA256'] for n in cad['part_references'])
+TypeError: 'PosixPath' object is not subscriptable

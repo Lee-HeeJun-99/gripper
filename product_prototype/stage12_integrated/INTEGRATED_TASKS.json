@@ -3305,10 +3305,73 @@
       "id": "goal_primary_finite_bore_thread_ports_and_root_pin_load_split",
       "track": "C",
       "priority": -1100,
-      "status": "READY",
+      "status": "PARTIAL_VALIDATED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME78part primaryP1_ycapture24 Motor->stock1996hub->Drum->Tendon->Finger->Root->Frame->Ground->Base, separate from failed AO; preserve sidecartridge/distalPET axial slide/3Finger/jamming. Use verified Root-LOCAL gamma and full Q=axis dot(string+object+upstream gravity), never old world-Y FeY or arbitrary gamma fixation. FIRST implement physical finite bore seating for actual14bolt/nut pairs: actual28bores have .15/.2/.25mm radial gaps and finite overlap; tilted own-gravity axial-only LP FAILS28cases. Retain each hardware own translations/rotations/gravity/inertia; radial reaction only after actual cylindrical gap closure. Recompute actual finite annular head/nut bearing overlap after lateral seating, not old centered weights. Define standard thread core/engagement/flank/shear/tilt/rest-setting and required friction/material assumptions explicitly; no unverified rigid glue or assigned preload. Split Root upstream attachment load through actual pins and clamp with compliance: four same gamma-stop constraints rank1/nullity3, so total .000889710062791N in .003rad sensitivity is necessary reaction only, not unique per-pin pressure or strength. Preserve exact pair action/reaction, source cotangent work and all Root/Motor modes. Then recompute sixpair finite owners/guards for every accepted trial and adjacent continuous-surface coverage, with physical finite Base anchor before full support solve. Do not transfer historical reference loadfields/pressures or cancel external resultant at Base. Original force1e-8N/gap1e-10mm/local.05mm/rad/cone/gauge/complementarity/Armijo/mesh1%/time.1% unchanged. Full3DFinger/source minima/thread/finitewire/protector/friction/globalenergy/fullsame-revision3Finger/all22gates remain; no Stage3.",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "motor_alignment_reactions",
+        "physical_mass_inertia",
+        "numerical_convergence",
+        "root_palm_strength",
+        "qualified_worst_case"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+        "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": "2026-11-27T08:47:59.886553+00:00",
+      "consecutive_runs": 1,
+      "system_gate_contribution": 8,
+      "historical_parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+        "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+      },
+      "target_revision": "primaryP1_ycapture24",
+      "target_parts": 78,
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "1a8224850117ff99e3f1d5be6cf8ee7a261af4e5eff173d5e5b08b5f7118afd0"
+      },
+      "concrete_first_step": "Use actual28finite bore geometries to seat hardware under own tilted gravity with independent rigid modes; recompute shifted bearing overlap and physically justified thread/pin load transfer, preserving all failures.",
+      "known_blockers": [
+        "Same primary78part primaryP1_ycapture24 CAD unchanged. Actual four Root pin/hole pairs give nominal .05mm radial clearance, verified with finite CAD distance/overlap. Implemented Root-local upstream gamma, its gravity/object/string generalized force, world-X stop and finite Root cotangent work without fixing Root or eliminating gamma. Original world-Y source error exposed at rotated poses. Conditional local gamma lower-stop KKT determines total reaction only; four active constraints rank1/nullity3, individual pin pressure/load split remains unavailable. Implemented own28hardware conditional axial gravity transfer through actual28bearing footprints and finite nominal thread engagement; no mass relocation to Base. Independent12row LP verifies vertical own-hardware equilibrium but rejects28tilted axial-only cases with exact transverse null witnesses. Actual28shank/bore clearances .15/.2/.25mm and finite lengths verified; no pressure at open gap. No whole support equilibrium, physical thread shear/tilt/preload/friction, full3Dclamp/pin elasticity, continuous adjacent-surface transaction, actual anchor, strength, energy or release.",
+        "All22system gates UNQUALIFIED. Four pin reactions nonunique and actual finite thread shear/tilt/friction/preload/anchor remain unavailable."
+      ],
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_hardware_audit29/summary.json",
+        "SHA256": "bd384786658ca2d21faa2a06a0e353f1a7b602b865927f003b3d607ce75b6418"
+      },
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bore_seating30e/summary.json",
+        "SHA256": "c84eafb8f9c689728f07704305abf89fef43179dfa1bb3b0a9afb33f574f44d8"
+      },
+      "reason": "Same actual78part primaryP1_ycapture24. Implemented parallel bolt/nut seating at first actual finite bore closure,56 shifted BRep bearing intersections and exact gap-generator work. Shifted footprint centroid changes up to .567083051143mm, so old centered weights rejected. Restricted uniform-bearing model fails all112 cases; interior finite-site positive bearing resultants plus unrestricted equal/opposite internal thread wrench admit28downhill poses. Independent reconstruction verifies own-body force/moment and all actual finite-site membership. All56axial-only thread cases FAIL from nut transverse selfweight; all28wrong-side free-wrench cases FAIL by pair transverse sign witness.84positive finite-area bearing discs reproduce feasible bearing resultants with exact CAD containment. This is static conditional bearing traction feasibility, not physical elastic pressure, finite bore pressure, thread law/preload, full6DOF seated equilibrium, pin load split or product release. No actualCAD changed. All22 gates remain UNQUALIFIED.",
+      "next": "goal_primary_finite_bore_compliance_thread_shear_and_pin_split"
+    },
+    {
+      "id": "goal_primary_finite_bore_compliance_thread_shear_and_pin_split",
+      "track": "C",
+      "priority": -1110,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME78part primaryP1_ycapture24 Motor->stock1996hub->Drum->Tendon->Finger->Root->Frame->Ground->Base, separate from failed AO; preserve sidecartridge/distalPET slide/3Finger/jamming. Implement finite compliant bore seating with each bolt/nut own6DOF and actual .15/.2/.25mm gaps/finite axial intervals; current ideal generator endpoint resultants have zero-area contact and no physical pressure law. Use actual shifted bearing face intersection and positive finite area traction support; old centered weights differ up to .567mm and uniform bearing resultants falsely reject downhill load balance. Free internal6component thread wrench is ONLY a static relaxation: replace it with explicitly justified finite-engagement core/flank/shear/tilt/rest-setting law or demonstrate missing source/geometry blockers, without rigid glue, invented preload/friction or material allowables. New ownbody necessary thread force/moment ranges in seating_audit30 are conditional selfweight sensitivities, not operating load or capacity. Preserve independent nut-transverse and wrong-side sign failures. Derive actual Root4pin/clamp compliance and unique load split with verified Root-localgamma/Q, retain all upstream/Motor modes; no arbitrary fix/equal split. Then recompute every finite source/owner/guard during accepted fullsupport trials, add physical finite Baseanchor, and solve actual coupled sources; no old field reuse or Basecounterload. Original force1e-8N/gap1e-10mm/local.05mm/rad/cone/gauge/complementarity/Armijo/mesh1%/time.1% unchanged. Full3DFinger/source minima/finitewire/protector/friction/globalenergy/fullsame-revision3Finger/all22gates remain. NoStage3.",
       "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
       "system_gate_ids": [
         "cad_model_match",
@@ -3346,16 +3409,16 @@
       "target_parts": 78,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "1a8224850117ff99e3f1d5be6cf8ee7a261af4e5eff173d5e5b08b5f7118afd0"
+        "SHA256": "ea4873668fffdae8049d053b01684279afdaaee05e8919a17a0ccd42dc7fa554"
       },
-      "concrete_first_step": "Use actual28finite bore geometries to seat hardware under own tilted gravity with independent rigid modes; recompute shifted bearing overlap and physically justified thread/pin load transfer, preserving all failures.",
+      "concrete_first_step": "Replace actual finite bore ideal-line reactions with finite compliant pressure and physically justified thread shear/tilt law; preserve shifted bearing surfaces and independent failure witnesses. Then resolve actual Root pin/clamp split.",
       "known_blockers": [
-        "Same primary78part primaryP1_ycapture24 CAD unchanged. Actual four Root pin/hole pairs give nominal .05mm radial clearance, verified with finite CAD distance/overlap. Implemented Root-local upstream gamma, its gravity/object/string generalized force, world-X stop and finite Root cotangent work without fixing Root or eliminating gamma. Original world-Y source error exposed at rotated poses. Conditional local gamma lower-stop KKT determines total reaction only; four active constraints rank1/nullity3, individual pin pressure/load split remains unavailable. Implemented own28hardware conditional axial gravity transfer through actual28bearing footprints and finite nominal thread engagement; no mass relocation to Base. Independent12row LP verifies vertical own-hardware equilibrium but rejects28tilted axial-only cases with exact transverse null witnesses. Actual28shank/bore clearances .15/.2/.25mm and finite lengths verified; no pressure at open gap. No whole support equilibrium, physical thread shear/tilt/preload/friction, full3Dclamp/pin elasticity, continuous adjacent-surface transaction, actual anchor, strength, energy or release.",
-        "All22system gates UNQUALIFIED. Four pin reactions nonunique and actual finite thread shear/tilt/friction/preload/anchor remain unavailable."
+        "Same actual78part primaryP1_ycapture24. Implemented parallel bolt/nut seating at first actual finite bore closure,56 shifted BRep bearing intersections and exact gap-generator work. Shifted footprint centroid changes up to .567083051143mm, so old centered weights rejected. Restricted uniform-bearing model fails all112 cases; interior finite-site positive bearing resultants plus unrestricted equal/opposite internal thread wrench admit28downhill poses. Independent reconstruction verifies own-body force/moment and all actual finite-site membership. All56axial-only thread cases FAIL from nut transverse selfweight; all28wrong-side free-wrench cases FAIL by pair transverse sign witness.84positive finite-area bearing discs reproduce feasible bearing resultants with exact CAD containment. This is static conditional bearing traction feasibility, not physical elastic pressure, finite bore pressure, thread law/preload, full6DOF seated equilibrium, pin load split or product release. No actualCAD changed. All22 gates remain UNQUALIFIED.",
+        "No finite bore pressure/standard thread shear-tilt/preload-rest setting/pin compliance/anchor/source-minimum/whole support equilibrium."
       ],
       "parent_result": {
-        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_hardware_audit29/summary.json",
-        "SHA256": "bd384786658ca2d21faa2a06a0e353f1a7b602b865927f003b3d607ce75b6418"
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seating_audit30/summary.json",
+        "SHA256": "ddf0417bdd690b3d4d4102033c281f8c9ed5d1d3bf687784ecf6b06678530dc0"
       },
       "result": null,
       "reason": null,

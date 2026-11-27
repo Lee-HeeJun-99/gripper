@@ -1,0 +1,53 @@
+{
+  "status": "ACTUAL_P1_FINITE_BORE_SEATING_AND_SHIFTED_BEARING_NECESSARY_LOAD_AUDIT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bore_seating30d/inputs.json",
+    "SHA256": "2ed6a5fae62a061903a132c30425b9eefed4ce9c22dd8b3ab3e5b82268a41b6b"
+  },
+  "geometry": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bore_seating30d/finite_seating_and_shifted_footprints.json",
+    "SHA256": "512c6d60d0074540c97d29b65aa428ca226d5b6635d1dd56a4601c276f533df9"
+  },
+  "numerical_cases": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bore_seating30d/own_body_12row_cases.json",
+    "SHA256": "b9d9023686f5e46b84486f4b83dff1781c48ea57cf554482bcfaeed55c072dd9"
+  },
+  "virtual_work": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bore_seating30d/bore_generator_virtual_work.json",
+    "SHA256": "31d30500524a5c8b566bf5b8b65f28661d9ea3583b5eb68dc545e5d49f930a5a"
+  },
+  "checks": {
+    "all28_shifted_states": true,
+    "all56_positive_shifted_bearing_areas": true,
+    "all_finite_bore_distances": true,
+    "no_open_gap_reactions": true,
+    "finite_generator_work": true,
+    "all_feasible_LP_residuals": true
+  },
+  "case_counts": {
+    "AXIAL_THREAD_ONLY": {
+      "feasible": 0,
+      "infeasible": 56
+    },
+    "FREE_THREAD_WRENCH_NECESSARY_RELAXATION": {
+      "feasible": 0,
+      "infeasible": 56
+    }
+  },
+  "max_work_error_mm": 5.414085846311423e-12,
+  "max_shifted_center_error_mm": 0.5670830511426048,
+  "elapsed_s": 1.1335021189879626,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "No changed product CAD. Same actual78part product, not an ideal coupon. Shifted finite BRep bearing intersections are geometry; centroid force columns are a necessary relaxed positive pressure distribution, not solved pressure or elastic work.",
+    "Co-translated parallel bolt/nut family retains physical clearance; no full6DOF nonlinear equilibrium or actual preload/thread shear/tilt constitutive law. Free internal wrench LP is ONLY necessary feasibility, no glue/support constraint or stiffness is implemented.",
+    "Finite line-contact endpoints bound nonnegative normal line reaction resultant; ideal line has zero area. Finite compliant pressure, edge contact, tilted envelope ownership, thread rest setting, material minima, pin load split and global support/anchor/source/strength/mesh/time/energy/3Finger remain blocked.",
+    "Sensitivity tilt is not certified operating duty. No Base counterload, no hardware measurement, no gate criteria change."
+  ]
+}

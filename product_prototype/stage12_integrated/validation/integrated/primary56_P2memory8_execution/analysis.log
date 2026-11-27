@@ -1,0 +1,24 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"stage": "mesh", "h": "8", "vertices": 14853, "scalar_nodes": 94727, "tetra": 53452, "DOF": 284181}
+{"stage": "assembly", "first": 0}
+{"stage": "assembly", "first": 12000}
+{"stage": "assembly", "first": 24000}
+{"stage": "assembly", "first": 36000}
+{"stage": "assembly", "first": 48000}
+{"stage": "basis_released"}
+{"stage": "restricted_operator_full_matrix_released", "nnz": 20759482}
+{"stage": "CG", "iteration": 50, "residual": 4.069463807578067e-06}
+{"stage": "CG", "iteration": 100, "residual": 1.415743036125455e-06}
+{"stage": "CG", "iteration": 150, "residual": 1.3274938531810713e-07}
+{"stage": "CG", "iteration": 200, "residual": 2.1822516100353925e-09}
+{"stage": "CG", "iteration": 250, "residual": 1.5440058856192908e-10}
+{"stage": "CG", "iteration": 300, "residual": 7.011606533863282e-12}
+{"stage": "CG", "iteration": 350, "residual": 3.822428542993898e-14}
+{"stage": "CG", "iteration": 400, "residual": 4.424001703400892e-15}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_quadratic56b.py", line 110, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_quadratic56b.py", line 82, in main
+    sol,info=cg(kf,F[free]/68900,M=ml.aspreconditioner(),rtol=1e-11,atol=1e-15,maxiter=3000,callback=cb);dump(out/'iterations.json',dict(info=int(info),history=hist));assert info==0;u=np.zeros(N);u[free]=sol;u-=R@np.linalg.solve(Q@R,Q@u);u3=u.reshape(-1,3);work=.5*float(F@u);independent=0.;internal=np.zeros(N);peak=0.
+UnboundLocalError: local variable 'K' referenced before assignment

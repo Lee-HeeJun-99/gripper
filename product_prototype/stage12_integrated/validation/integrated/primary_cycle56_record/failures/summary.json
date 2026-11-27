@@ -1,0 +1,100 @@
+{
+  "status": "ACTUAL_PRODUCT_FAILURES_PRESERVED_NO_PERFORMANCE_CREDIT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "failures": [
+    {
+      "kind": "producer_serialization_before_numerics",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary56_P2h8_execution/execution.json",
+        "SHA256": "1b3b750e005cfb8b0b4d3e9d0e1473c41997f8789976f788bfebb4397f17e053"
+      },
+      "reason": "np.int32 stdout JSON serialization;no physical field accepted"
+    },
+    {
+      "kind": "P2_3mm_4GiB_allocation",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary56_P2h3_execution/execution.json",
+        "SHA256": "a21a20d221361c4e9a4fe3fc05f53cdf62f16740d44971470af354a3f2ab2452"
+      },
+      "reason": "779MiB float allocation during full/restricted sparse matrix copy;no numerical field"
+    },
+    {
+      "kind": "memory_release_implementation_error",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary56_P2memory8_execution/execution.json",
+        "SHA256": "0b55c99fab3e38be5fa6cee3f0790ec982f02e63dce94cedaa13def7dcf702b0"
+      },
+      "reason": "Archived producer accesses K after deletion;UnboundLocalError,no field. Traceback source line can reflect later corrected working file;archived producer is exact executed source."
+    },
+    {
+      "kind": "P2_3mm_memory_revision_4GiB_allocation",
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary56_P2memory3_execution/execution.json",
+        "SHA256": "ebbe59b235ed657f9ba7f64e66847ae26f8bdce428ab8c326d34bc5ce0c47226"
+      },
+      "reason": "389MiB int allocation during exact column restriction,after Basis release. No more3mm retries thiscycle."
+    },
+    {
+      "kind": "duplicate_spatial_level_metadata_error",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_memoryaudit56/summary.json",
+        "SHA256": "02788c22c578967c5587eefa1369fb697bf267d070e9e8416edd00af611c3ea6"
+      },
+      "reason": "Generic auditor falsely labels two identical h8 spatial levels MESH_PASS. INVALID convergence label explicitly excluded;correct equivalence-only result is primaryP1_memory_equivalence56. Distinct-level requirement fixed in current primary_audit56 source without overwriting historical output."
+    },
+    {
+      "kind": "P2_mesh_original1percent_FAIL",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_audit56_h85/summary.json",
+        "SHA256": "007df880a2cd1f5b798d364fddb4c92a9788d71b9b23d51f170638b45c88c3bb"
+      },
+      "relative_changes": {
+        "energy": 0.01173267862846461,
+        "compliance": 0.011732678628462834,
+        "root_objective_relative_displacement": 0.01611051512013417
+      }
+    },
+    {
+      "kind": "mu0p4_original_corner_stationary_penetration",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_friction_failure56/summary.json",
+        "SHA256": "07f93317d578c4bf6eb6672ddedd06304ca859647a8c7dd29cbecca4c7dbae35"
+      },
+      "minimum_gap_m": -1.5207296838421619e-05,
+      "reason": "Stationary branch rejected;actual additional lower corner subsequently solved,original failure preserved."
+    },
+    {
+      "kind": "mu0p3_two_corner_negative_normal_cone_and_gap",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_lower_mu3_56/summary.json",
+        "SHA256": "ae492757407cad272e9414a2cfed233c1bfcd61e3b8dbff84e72cbfc961bd858"
+      },
+      "reason": "Negative upper circle multiplier -0.107383873N,nonpenetration fails;not admissible operating tractions."
+    },
+    {
+      "kind": "mu0p3_upper_plane_wrong_owner",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upper_plane56/summary.json",
+        "SHA256": "a8463c3dfb81d5ebd02a5944cea01f786796b10ef3d5b9992427a93fbc872bab"
+      },
+      "reason": "Stationary top-plane algebraic branch fails physical owner/complementarity (and cone check). Detached branch separately solves with exact zero upper reaction."
+    },
+    {
+      "kind": "mu0p2_detached_lower_branch_NONCONVERGED",
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_detached_mu2_56/summary.json",
+        "SHA256": "1aa5e6d358fcfaa936a194c10f7e1fbba41f13d61eb28da102bbe52bf9d0352f"
+      },
+      "lower_station_m": 0.08622580506310477,
+      "PET_length_m": 0.0862,
+      "force_equivalent_N": 4.50635041250605,
+      "minimum_gap_m": -0.0010604865176981472,
+      "reason": "Nonconverged and stationoutsidePET;T=3.045534N is FAILED iterate,not requirement/capacity/equilibrium."
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

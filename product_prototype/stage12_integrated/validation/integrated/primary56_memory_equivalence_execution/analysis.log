@@ -1,0 +1,48 @@
+{
+  "status": "ACTUAL_PRODUCT_SAME_MESH_MEMORY_IMPLEMENTATION_EQUIVALENCE_PASS_NOT_CONVERGENCE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_memory_equivalence56/producer.py",
+    "SHA256": "64c003c8652dbf5f00f40547a10ee497c7c5787600b904ce2df858b085d2a720"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2_56_h8b/summary.json",
+      "SHA256": "c95b32b5995341f9bdf90842c9b55e771e399f1848852f759e151790c072f59e"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2memory56_h8b/summary.json",
+      "SHA256": "6e6dbd0272402a46488349eedc8924cdb342e2b922f3649ba8440e7c566f829c"
+    }
+  ],
+  "checks": {
+    "same_candidate": true,
+    "same_mesh": true,
+    "load_equivalent": true,
+    "displacement_equivalent": true,
+    "energy_equivalent": true,
+    "all_actual_local_checks": true,
+    "duplicate_levels_rejected_as_convergence": true
+  },
+  "maximum_absolute_errors": {
+    "P2_points_mm": 0.0,
+    "P2_element_nodes": 0.0,
+    "displacement_mm": 1.5160398977864809e-13,
+    "load_N": 1.0842021724855044e-17
+  },
+  "energy_relative_error": 5.561329174952334e-12,
+  "distinct_spatial_levels": 1,
+  "numerical_convergence_demonstrated": false,
+  "excluded_scope_error": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_memoryaudit56/summary.json",
+    "SHA256": "02788c22c578967c5587eefa1369fb697bf267d070e9e8416edd00af611c3ea6"
+  },
+  "excluded_scope_error_reason": "Earlier generic auditor incorrectly labels duplicate h8levels MESH_PASS. Its actual fields/local audits remain inspectable but its convergence label is INVALID and not used. Distinct-level requirement fixed in new auditor source;no historical result overwritten.",
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}
+

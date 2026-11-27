@@ -1,0 +1,16 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_quadratic56.py", line 95, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_quadratic56.py", line 48, in main
+    m=MeshTet(p.T,t.T);sb=Basis(m,ElementTetP2(),intorder=4);el=ElementVector(ElementTetP2());pos=sb.doflocs.T;N=3*sb.N;la,mu=lame_parameters(68900,.33);K=sparse.csr_matrix((N,N));print(json.dumps(dict(stage='mesh',h=h,vertices=len(p),scalar_nodes=sb.N,tetra=len(t),DOF=N)),flush=True)
+  File "/usr/lib/python3.10/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int32 is not JSON serializable

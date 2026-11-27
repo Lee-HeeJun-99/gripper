@@ -1,0 +1,141 @@
+{
+  "status": "ACTUAL_PRODUCT_P2_BENDING_ENERGY_DISTRIBUTION_MEASURED_NOT_ERROR_CERTIFICATE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bending_regions56/producer.py",
+    "SHA256": "53958a38f24c7aae5dfb807d54a1bd899d234c8382f039a84cb78c38c2757c65"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2_56_h8b/summary.json",
+        "SHA256": "c95b32b5995341f9bdf90842c9b55e771e399f1848852f759e151790c072f59e"
+      },
+      "h_mm": 8.0,
+      "total_energy_Nmm": 0.002420775494345943,
+      "producer_energy_relative_error": 7.445821736951075e-12,
+      "regions": [
+        {
+          "name": "z_below_minus120",
+          "energy_Nmm": 0.00020548042071113216,
+          "fraction": 0.08488206411171138,
+          "mesh_volume_mm3": 323939.9986545541,
+          "tetra": 12554
+        },
+        {
+          "name": "z_minus120_to0",
+          "energy_Nmm": 0.000524448764214944,
+          "fraction": 0.21664494102814028,
+          "mesh_volume_mm3": 410748.66233787814,
+          "tetra": 16511
+        },
+        {
+          "name": "z_0_to39",
+          "energy_Nmm": 0.000780850207252981,
+          "fraction": 0.32256200918952005,
+          "mesh_volume_mm3": 70009.02201760992,
+          "tetra": 10778
+        },
+        {
+          "name": "z_39_to49_roof_arm_height",
+          "energy_Nmm": 0.0009099961021668808,
+          "fraction": 0.3759109856706262,
+          "mesh_volume_mm3": 111541.7576222402,
+          "tetra": 13609
+        },
+        {
+          "name": "z_above49",
+          "energy_Nmm": 0.0,
+          "fraction": 0.0,
+          "mesh_volume_mm3": 0.0,
+          "tetra": 0
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2_56_h5/summary.json",
+        "SHA256": "92844d4614d0e6e0a8cfe876077ee102ad078d093bf7e588754d5ad37470f664"
+      },
+      "h_mm": 5.0,
+      "total_energy_Nmm": 0.0024491776752527663,
+      "producer_energy_relative_error": 3.3637537200092993e-12,
+      "regions": [
+        {
+          "name": "z_below_minus120",
+          "energy_Nmm": 0.0002053440188318593,
+          "fraction": 0.08384202620606807,
+          "mesh_volume_mm3": 324073.2270446239,
+          "tetra": 30619
+        },
+        {
+          "name": "z_minus120_to0",
+          "energy_Nmm": 0.0005288226082930415,
+          "fraction": 0.2159184340264185,
+          "mesh_volume_mm3": 410987.32870155707,
+          "tetra": 37171
+        },
+        {
+          "name": "z_0_to39",
+          "energy_Nmm": 0.0007944150314261635,
+          "fraction": 0.32435990228605044,
+          "mesh_volume_mm3": 69604.53110739852,
+          "tetra": 14550
+        },
+        {
+          "name": "z_39_to49_roof_arm_height",
+          "energy_Nmm": 0.0009205960167017038,
+          "fraction": 0.3758796374814637,
+          "mesh_volume_mm3": 111574.35377870376,
+          "tetra": 21049
+        },
+        {
+          "name": "z_above49",
+          "energy_Nmm": 0.0,
+          "fraction": 0.0,
+          "mesh_volume_mm3": 0.0,
+          "tetra": 0
+        }
+      ]
+    }
+  ],
+  "observed_region_changes": [
+    {
+      "region": "z_below_minus120",
+      "observed_energy_difference_Nmm": -1.364018792728613e-07
+    },
+    {
+      "region": "z_minus120_to0",
+      "observed_energy_difference_Nmm": 4.373844078097463e-06
+    },
+    {
+      "region": "z_0_to39",
+      "observed_energy_difference_Nmm": 1.3564824173182481e-05
+    },
+    {
+      "region": "z_39_to49_roof_arm_height",
+      "observed_energy_difference_Nmm": 1.0599914534823005e-05
+    },
+    {
+      "region": "z_above49",
+      "observed_energy_difference_Nmm": 0.0
+    }
+  ],
+  "largest_observed_change_region": {
+    "region": "z_0_to39",
+    "observed_energy_difference_Nmm": 1.3564824173182481e-05
+  },
+  "independent_total_energy_agreement": true,
+  "mesh_convergence": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Centroidzbandpartitionofactualsinglepiece,notindependentcomponentsorcutboundaryconditions",
+    "Energychangeallocation guidesrefinement butisnotrigorouserrorindicator orstrengthmargin",
+    "Allobserved8to5responseerrorsremainFAIL;no removalofcoarselevel or1percentrelaxation"
+  ]
+}
+

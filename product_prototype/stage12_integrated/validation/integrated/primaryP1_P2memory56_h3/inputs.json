@@ -1,0 +1,32 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/BENCH_SUPPORT.step",
+    "SHA256": "23b2e09eed2a8ae5c062db555d52698cbf6e96b642d5e3777135e5e36250d565"
+  },
+  "mesh_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_integral55e_h3/summary.json",
+    "SHA256": "ccda0ac0536faf22708b7761dfb69bfcdb6b6eda5ac52c5f10e69ffede2a9ab2"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2memory56_h3/producer.py",
+    "SHA256": "2a561510ec969ac6e0fa017b1e2075e342180d745358f7d3daacf0cceeab6426"
+  },
+  "h_mm": 3.0,
+  "element": "affine_geometry_TetP2_memory_release_exact_same_operator",
+  "memory_strategy": "Release scalar Basis after traces/topology extracted;release full K immediately after exact restriction. AllDOFresidual/energy independently element-reconstructed;NO operator/load/criterion change.",
+  "predeclared_contrast": "Same h8/5/3 meshes,P2 versus historical P1. Original1percent all-pair energy/compliance/objectiveRootmotion;never transfer P1 stiffness.",
+  "load": "EXACT SAME Rootuniform .980665N downward vertical test + distributed ownweight + given positive affine foot traction;not actual grasp",
+  "physical_fixed_DOF": 0,
+  "original_criteria": {
+    "mesh_fraction": 0.01,
+    "force_N": 1e-08,
+    "moment_Nm": 1e-10,
+    "residual_N": 1e-08,
+    "energy_fraction": 1e-08
+  },
+  "boundary_method": "CAD oriented edge Green moments degree3,16vs32Gauss;exact CAD moments and inheritedP1 restriction independent checks"
+}

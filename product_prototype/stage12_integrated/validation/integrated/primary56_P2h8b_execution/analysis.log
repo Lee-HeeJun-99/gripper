@@ -1,0 +1,96 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"stage": "mesh", "h": "8", "vertices": 14853, "scalar_nodes": 94727, "tetra": 53452, "DOF": 284181}
+{"stage": "CG", "iteration": 50, "residual": 4.100138433799879e-06}
+{"stage": "CG", "iteration": 100, "residual": 1.44141012715785e-06}
+{"stage": "CG", "iteration": 150, "residual": 1.4014467640109028e-07}
+{"stage": "CG", "iteration": 200, "residual": 2.2736718475608415e-09}
+{"stage": "CG", "iteration": 250, "residual": 6.399818657968764e-11}
+{"stage": "CG", "iteration": 300, "residual": 7.254064285431927e-12}
+{"stage": "CG", "iteration": 350, "residual": 4.421978281568518e-14}
+{"stage": "CG", "iteration": 400, "residual": 3.626370174204177e-15}
+{
+  "status": "ACTUAL_PRODUCT_P2_NEUMANN_LOCAL_CHECKS_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2_56_h8b/inputs.json",
+    "SHA256": "92e9611b29d70e4a776e54b73dd9b42f8fe3c88a4f5ea69f412803640481c308"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2_56_h8b/producer.py",
+    "SHA256": "deeac1f48b58fc856c9f4ada61cdac1c4a3c112e2d7d827a3fb49d39c9ed12ef"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2_56_h8b/field.npz",
+    "SHA256": "34233a65e2c7e5dcdbf09544c57d6e686393eeb992324af507e1c23869f79981"
+  },
+  "checks": {
+    "same_actual_CAD": true,
+    "CAD_moments": true,
+    "Green16vs32": true,
+    "P1_load_restriction": true,
+    "force": true,
+    "moment": true,
+    "original_all_DOF_residual": true,
+    "independent_internal_force": true,
+    "independent_energy": true,
+    "halfwork": true,
+    "actual_trace_area": true,
+    "finite": true
+  },
+  "h_mm": 8.0,
+  "order": 2,
+  "nodes": 94727,
+  "tetra": 53452,
+  "physical_fixed_DOF": 0,
+  "static_strain_energy_Nmm": 0.0024207754943279185,
+  "independent_energy_Nmm": 0.0024207754943459422,
+  "root_objective_relative_displacement_mm": -0.0009660436998620689,
+  "maximum_displacement_mm": 0.0012911366444679875,
+  "raw_peak_VM_MPa": 0.38746758373275625,
+  "CAD_moment_error": 2.844971926158788e-11,
+  "Green_quadrature_error": 2.001891406238454e-13,
+  "P1_load_restriction_error_N": 4.371503159461554e-15,
+  "force_balance_N": [
+    0.0,
+    0.0,
+    -4.0393686659423444e-14
+  ],
+  "moment_balance_Nm": [
+    5.724587470723463e-17,
+    -3.5095398809303903e-15,
+    0.0
+  ],
+  "residual_N": 6.661054435886377e-11,
+  "independent_internal_force_error_N": 6.653950245493341e-11,
+  "ports": [
+    {
+      "label": "Root0",
+      "area_mm2": 516.7659492070372,
+      "CAD_area_mm2": 516.765949207053,
+      "relative_area_error": 3.0531133177191805e-14,
+      "clipped_triangles": 529
+    },
+    {
+      "label": "foot",
+      "area_mm2": 31989.686822228934,
+      "CAD_area_mm2": 31989.686822228905,
+      "relative_area_error": 8.881784197001252e-16,
+      "clipped_triangles": 3136
+    }
+  ],
+  "elapsed_s": 162.15262318216264,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "actual_100g_operating_field": null,
+  "limitations": [
+    "Same prescribed normal100g/ownweight/positiveaffinefoot reference,NOT grasp/hostcontact",
+    "P2 changes displacement order only;CAD,typicalmaterial,allphysicalcriteria unchanged",
+    "Raw stress at sharp geometry notstrengthcertificate;all22unqualified"
+  ]
+}
+

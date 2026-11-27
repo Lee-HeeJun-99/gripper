@@ -1,0 +1,5 @@
+"""Invoke unchanged independent gate, preserve rejected release as actual evidence."""
+import sys,json,shutil
+from baseline_registry import ROOT,ref,dump
+from integrated_release_gate import audit
+out=ROOT/'validation/integrated'/sys.argv[1];out.mkdir();shutil.copyfile(__file__,out/'producer.py');bp=ROOT/'CURRENT_BASELINE.json';cp=ROOT/'models/integrated_contract.json';r=audit(json.loads(bp.read_text()),json.loads(cp.read_text()));r.update(producer=ref(out/'producer.py'),unchanged_gate=ref(ROOT/'scripts/integrated_release_gate.py'),baseline=ref(bp),contract=ref(cp),actual_primary=ref(ROOT/'cad/exports/primaryP1_integral55e/summary.json'),primary_whole_system_release=False,primary_scope='Independent frozen gate rejects release;the actual77partcandidate has no fullsystemcontract or22qualifiedrecords. No transfer of RevAAbaseline toprimary.',stage3_authorized=False);dump(out/'summary.json',r);print(json.dumps(r));raise SystemExit(0 if r['status']=='STAGE1_STAGE2_INTEGRATED_DIGITAL_RELEASE_PASS' else 2)

@@ -1,0 +1,109 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"stage": "mesh", "h": "8", "vertices": 14853, "scalar_nodes": 94727, "tetra": 53452, "DOF": 284181}
+{"stage": "assembly", "first": 0}
+{"stage": "assembly", "first": 12000}
+{"stage": "assembly", "first": 24000}
+{"stage": "assembly", "first": 36000}
+{"stage": "assembly", "first": 48000}
+{"stage": "basis_released"}
+{"stage": "restricted_operator_full_matrix_released", "nnz": 20759482}
+{"stage": "CG", "iteration": 50, "residual": 4.111602448305031e-06}
+{"stage": "CG", "iteration": 100, "residual": 1.4442874991176984e-06}
+{"stage": "CG", "iteration": 150, "residual": 1.4301961780370706e-07}
+{"stage": "CG", "iteration": 200, "residual": 2.390300719587275e-09}
+{"stage": "CG", "iteration": 250, "residual": 1.8770084998548709e-10}
+{"stage": "CG", "iteration": 300, "residual": 8.240784429247658e-12}
+{"stage": "CG", "iteration": 350, "residual": 4.6285363976423e-14}
+{"stage": "CG", "iteration": 400, "residual": 4.464074169500665e-15}
+{
+  "status": "ACTUAL_PRODUCT_P2_NEUMANN_LOCAL_CHECKS_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_integral55e/summary.json",
+    "SHA256": "2d4c590d31c9f19c9c1492922570c80a5a815dbf9bd0cfeb1e116f0b3734e1ff"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2memory56_h8b/inputs.json",
+    "SHA256": "8b3c6b29fbc40c555df327dc44d2830b5c76365c6516c8ac0afcd113685ba32a"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2memory56_h8b/producer.py",
+    "SHA256": "2a561510ec969ac6e0fa017b1e2075e342180d745358f7d3daacf0cceeab6426"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_P2memory56_h8b/field.npz",
+    "SHA256": "a900ff8d687e05c52854b1f04d321f2c3342afcdf0e5eb918be23b3f15ceb629"
+  },
+  "checks": {
+    "same_actual_CAD": true,
+    "CAD_moments": true,
+    "Green16vs32": true,
+    "P1_load_restriction": true,
+    "force": true,
+    "moment": true,
+    "original_all_DOF_residual": true,
+    "independent_internal_force": true,
+    "independent_energy": true,
+    "halfwork": true,
+    "actual_trace_area": true,
+    "finite": true
+  },
+  "h_mm": 8.0,
+  "order": 2,
+  "nodes": 94727,
+  "tetra": 53452,
+  "physical_fixed_DOF": 0,
+  "static_strain_energy_Nmm": 0.0024207754943144557,
+  "independent_energy_Nmm": 0.0024207754943144557,
+  "root_gauge_average_vertical_mm": -0.0009660436998614679,
+  "root_relative_to_best_fit_actual_foot_mm": [
+    0.00016000175592458847,
+    -5.1786101075295095e-05,
+    -0.0011057763702828592
+  ],
+  "normal_load_compliance_mm_N": 7.5993750180167e-06,
+  "maximum_displacement_mm": 0.0012911366443125124,
+  "raw_peak_VM_MPa": 0.38746758372455825,
+  "CAD_moment_error": 2.844971926158788e-11,
+  "Green_quadrature_error": 2.001891406238454e-13,
+  "P1_load_restriction_error_N": 4.371503159461554e-15,
+  "force_balance_N": [
+    0.0,
+    0.0,
+    -5.631281031759361e-14
+  ],
+  "moment_balance_Nm": [
+    5.696138005717444e-17,
+    -3.4664909831505498e-15,
+    0.0
+  ],
+  "residual_N": 1.1314069181333981e-10,
+  "independent_internal_force_error_N": 1.1314069181333981e-10,
+  "ports": [
+    {
+      "label": "Root0",
+      "area_mm2": 516.7659492070372,
+      "CAD_area_mm2": 516.765949207053,
+      "relative_area_error": 3.0531133177191805e-14,
+      "clipped_triangles": 529
+    },
+    {
+      "label": "foot",
+      "area_mm2": 31989.686822228934,
+      "CAD_area_mm2": 31989.686822228905,
+      "relative_area_error": 8.881784197001252e-16,
+      "clipped_triangles": 3136
+    }
+  ],
+  "elapsed_s": 193.31058271997608,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "actual_100g_operating_field": null,
+  "limitations": [
+    "Same prescribed normal100g/ownweight/positiveaffinefoot reference,NOT grasp/hostcontact",
+    "P2 changes displacement order only;CAD,typicalmaterial,allphysicalcriteria unchanged",
+    "Raw stress at sharp geometry notstrengthcertificate;all22unqualified"
+  ]
+}
+

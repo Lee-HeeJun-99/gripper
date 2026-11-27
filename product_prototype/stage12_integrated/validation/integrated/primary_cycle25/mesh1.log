@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_ycapture_mesh.py", line 46, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_ycapture_mesh.py", line 21, in main
+    faces[sign]={n:[t for t in surfaces[n] if plane(t,1,sign*(20 if n=='F0_ROOT_BACK' else 20.1)) and gmsh.model.getBoundingBox(2,t)[2]>-7.01 and gmsh.model.getBoundingBox(2,t)[5]<-2.99] for n in names};assert all(faces[sign].values()),faces
+AssertionError: {-1: {'F0_ROOT_BACK': [], 'OPEN_FRAME': [99]}}

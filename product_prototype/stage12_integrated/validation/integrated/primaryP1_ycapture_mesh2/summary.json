@@ -1,0 +1,76 @@
+{
+  "status": "ACTUAL_P1_NEW_MESH_FINITE_SHOULDER_OPERATOR_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ycapture_mesh2/inputs.json",
+    "SHA256": "0facb2fc6f6f8250e7e435135b4783b66331b26fb06e6bdd78a8297be3142168"
+  },
+  "mesh": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ycapture_mesh2/new_mesh.npz",
+    "SHA256": "0f33d7300dcdb02bed5c858e2cf17e9e06833e7715c1df55c5904bc4638a2a5f"
+  },
+  "contact_rows": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ycapture_mesh2/rows.json",
+    "SHA256": "34396de89fc14c109df23ea3fcaa9e6d4876447917853081fb3aacb46e28923a"
+  },
+  "checks": {
+    "both_actual_surfaces": true,
+    "all_root_rows_inside_actual_finite_owners": true,
+    "original_point1gap": true,
+    "virtual_work_1e_8": true,
+    "action_reaction": true,
+    "outside_controls_rejected": true
+  },
+  "meshes": {
+    "F0_ROOT_BACK": {
+      "nodes": 5808,
+      "tetra": 21085,
+      "linear_tetra_volume_mm3": 4358.158391971423,
+      "CAD_volume_mm3": 4356.566786508501
+    },
+    "OPEN_FRAME": {
+      "nodes": 18788,
+      "tetra": 73191,
+      "linear_tetra_volume_mm3": 51026.36039887156,
+      "CAD_volume_mm3": 51015.02503489689
+    }
+  },
+  "contacts": [
+    {
+      "sign": -1,
+      "root_face_nodes": 37,
+      "excluded_outside_shoulder_footprint_nodes": 27,
+      "root_nodes": 10,
+      "owner_triangles": 104,
+      "mapped_rows": 10,
+      "missing_nodes": [],
+      "actual_root_surface_area_mm2": 104.194,
+      "actual_owner_surface_area_mm2": 27.999999999999993
+    },
+    {
+      "sign": 1,
+      "root_face_nodes": 37,
+      "excluded_outside_shoulder_footprint_nodes": 27,
+      "root_nodes": 10,
+      "owner_triangles": 104,
+      "mapped_rows": 10,
+      "missing_nodes": [],
+      "actual_root_surface_area_mm2": 104.194,
+      "actual_owner_surface_area_mm2": 27.999999999999993
+    }
+  ],
+  "h_mm": 3.0,
+  "elapsed_s": 2.8364800030831248,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "accepted_elastic_equilibria": 0,
+  "limitations": [
+    "Actual newRoot/Frame tetra mesh and all finite shoulder node projections only. Not a coupled physical solve or stiffness/strength/energy result.",
+    "Finite plane gap and exact virtualwork use owner triangle area derivative and independent owner vertices. Owner-domain gate rejects outside projections before evaluating physical reactions.",
+    "Other original support/motor/connector/contact constraints must be rebuilt, not silently discarded. All historical2208rows/37rigid/freegamma source matrices preserved. No sourcefield transfer.",
+    "No mesh1% or time0.1% certification from an operator identity. Full3Finger remains required."
+  ]
+}

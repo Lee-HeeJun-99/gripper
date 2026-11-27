@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_ycapture_globalization.py", line 26, in <module>
+    if __name__=='__main__':main()
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_ycapture_globalization.py", line 25, in main
+    dump(out/'summary.json',dict(status='ACTUAL_P1_GEOMETRY_LOCAL_SEARCH_CONTRACT_VERIFIED' if all(checks.values()) else 'ACTUAL_P1_GEOMETRY_LOCAL_SEARCH_CONTRACT_FAIL',candidate=cs['candidate'],historical_rejected_path=ref(src),historical_source_field=s['source_field'],new_contact_source=ref(contact),checks=checks,local_alpha=float(alpha),first_nominal_shoulder_touch_alpha=float(first_touch),historical_full_RootY_gamma_mm=float(dx[-1]),historical_relative_Root_translation_mm=relative.tolist(),new_nominal_geometry_direction_samples=samples,historical_allrow_audit=hist,original_unit_acceptance=dict(fullforce_N=1e-8,finitegap_mm=1e-10,localmodel_translation_mm=.05,localmodel_rotation_rad=.05,finiteowner_required=True,cone_sign_required=True,complementarity_required=True,Armijo_required=True),all2208_original_rows_preserved=True,old_sourcefield_applied_to_new_CAD=False,solver_launches=0,accepted_equilibria=0,actual_support_updates=0,newly_qualified_system_gate_ids=[],whole_system_release=False,limitations=['Algorithmic localmodel bound is not a physical spring/fixation or reaction. Keep RootY/gamma free and original physical rows/37rigid modes; new contact comes from actual shoulder faces with0.1mmgap.','Historical path and new nominal rigid-direction geometry tests are distinct. NO interpolation/reuse of old sourcefield as a newCAD equilibrium, no newmodel P/q or force solution.','A positive gap after truncation does not clear original allrow/fullforce/gauge/conesign/complementarity/Armijo prerequisites or certify physical step.','Newmesh must rebuild all original physical interfaces plus shoulder rows and finiteowner validity; no row deletion/pressure transfer onto unsupported infinite planes. Search boundary multipliers not physical reactions.']));print(json.dumps(dict(checks=checks,alpha=alpha,first_touch=first_touch,samples=samples,historical=hist)));raise SystemExit(0 if all(checks.values()) else 2)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py", line 11, in dump
+    def dump(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,allow_nan=False)+'\n')
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

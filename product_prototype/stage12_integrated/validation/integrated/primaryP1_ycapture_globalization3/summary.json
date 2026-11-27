@@ -1,0 +1,140 @@
+{
+  "status": "ACTUAL_P1_GEOMETRY_LOCAL_SEARCH_CONTRACT_VERIFIED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "historical_rejected_path": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_measured_enrichment_continuation1/summary.json",
+    "SHA256": "b4f9f07dc3221ab55e1bc6e13b20d1b8b6fba77536d7a95b6c0d8c157242fb8c"
+  },
+  "historical_source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "new_contact_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ycapture_mesh3/summary.json",
+    "SHA256": "76e5f0fdc764e57db2bd03fa99febf66b1d543059d72f5ee2ad89b38388e6f25"
+  },
+  "checks": {
+    "original2208rows_retained": true,
+    "all_original_sourcehashes": true,
+    "free_RootY_gamma_nonzero": true,
+    "original_local_translation_limit": true,
+    "local_limit_precedes_real_contact": true,
+    "full_archived_escape_rejected": true,
+    "local_new_geometry_gap_positive": true,
+    "local_model_operator_hash": true,
+    "all_triangle_false_failures_distinguished": true,
+    "no_physical_acceptance_from_gap_only": true
+  },
+  "clipped_new_geometry_direction_qualified": false,
+  "clipped_finite_owner_valid": false,
+  "clipped_rejection_reasons": [
+    "No newCAD fullforce/gauge/conesign/complementarity/Armijo solve exists.",
+    "Some Rootpoints project outside ENTIRE finite shoulder face, not merely the originallyselected triangle. Must transition finite features or reject; no plane extension."
+  ],
+  "local_alpha": 0.0005023257476185162,
+  "first_nominal_shoulder_touch_alpha": 0.00100465160661579,
+  "historical_full_RootY_gamma_mm": -99.53699939891514,
+  "historical_relative_Root_translation_mm": [
+    0.0003622496804877538,
+    -99.53699306454511,
+    0.000502763756176984
+  ],
+  "new_nominal_geometry_direction_samples": [
+    {
+      "alpha": 0.0,
+      "nominal_new_product_rigid_root_translation_mm": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "finite_shoulder_gap_min_mm": 0.10000000000000142,
+      "outside_selected_original_triangles": 0,
+      "outside_projected_finite_owner_rows": 0
+    },
+    {
+      "alpha": 0.0005023257476185162,
+      "nominal_new_product_rigid_root_translation_mm": [
+        1.8196734157557956e-07,
+        -0.04999999445684669,
+        2.525511796970969e-07
+      ],
+      "finite_shoulder_gap_min_mm": 0.0500000055431542,
+      "outside_selected_original_triangles": 14,
+      "outside_projected_finite_owner_rows": 14
+    },
+    {
+      "alpha": 0.00100465160661579,
+      "nominal_new_product_rigid_root_translation_mm": [
+        3.6393472349807844e-07,
+        -0.09999999999999999,
+        5.051024153913964e-07
+      ],
+      "finite_shoulder_gap_min_mm": 0.0,
+      "outside_selected_original_triangles": 14,
+      "outside_projected_finite_owner_rows": 14
+    },
+    {
+      "alpha": 1.0,
+      "nominal_new_product_rigid_root_translation_mm": [
+        0.0003622496804877538,
+        -99.53699306454511,
+        0.000502763756176984
+      ],
+      "finite_shoulder_gap_min_mm": -99.4369930645451,
+      "outside_selected_original_triangles": 14,
+      "outside_projected_finite_owner_rows": 14
+    }
+  ],
+  "historical_allrow_audit": [
+    {
+      "alpha": 0.0,
+      "historical_original_equality_max_mm": 1.30987398714143e-17,
+      "historical_original_inequality_min_mm": -2.597401167261828e-16,
+      "historical_original_row_count": 2208
+    },
+    {
+      "alpha": 0.0005023257476185162,
+      "historical_original_equality_max_mm": 8.640250241997127e-13,
+      "historical_original_inequality_min_mm": 7.466443434891108e-12,
+      "historical_original_row_count": 2208
+    },
+    {
+      "alpha": 0.00100465160661579,
+      "historical_original_equality_max_mm": 1.7280516332388084e-12,
+      "historical_original_inequality_min_mm": 1.4932888469384085e-11,
+      "historical_original_row_count": 2208
+    },
+    {
+      "alpha": 1.0,
+      "historical_original_equality_max_mm": 1.720052019751223e-09,
+      "historical_original_inequality_min_mm": 1.4452815371729375e-08,
+      "historical_original_row_count": 2208
+    }
+  ],
+  "original_unit_acceptance": {
+    "fullforce_N": 1e-08,
+    "finitegap_mm": 1e-10,
+    "localmodel_translation_mm": 0.05,
+    "localmodel_rotation_rad": 0.05,
+    "finiteowner_required": true,
+    "cone_sign_required": true,
+    "complementarity_required": true,
+    "Armijo_required": true
+  },
+  "all2208_original_rows_preserved": true,
+  "old_sourcefield_applied_to_new_CAD": false,
+  "solver_launches": 0,
+  "accepted_equilibria": 0,
+  "actual_support_updates": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Algorithmic localmodel bound is not a physical spring/fixation or reaction. Keep RootY/gamma free and original physical rows/37rigid modes; new contact comes from actual shoulder faces with0.1mmgap.",
+    "Historical path and new nominal rigid-direction geometry tests are distinct. NO interpolation/reuse of old sourcefield as a newCAD equilibrium, no newmodel P/q or force solution.",
+    "A positive gap after truncation does not clear original allrow/fullforce/gauge/conesign/complementarity/Armijo prerequisites or certify physical step.",
+    "Newmesh must rebuild all original physical interfaces plus shoulder rows and finiteowner validity; no row deletion/pressure transfer onto unsupported infinite planes. Search boundary multipliers not physical reactions."
+  ]
+}

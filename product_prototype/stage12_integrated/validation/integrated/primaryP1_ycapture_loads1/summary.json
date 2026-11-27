@@ -1,0 +1,764 @@
+{
+  "status": "ACTUAL_P1_YCAPTURE_LOAD_SCREEN_FAIL",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "loads": {
+    "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_gravity_cat_demand_ports2/summary.json",
+    "SHA256": "38f9c261a2e0b2d1eeb86953d015731db2a42644411f0d7b49e560afb4dcab78"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ycapture_loads1/producer.py",
+    "SHA256": "6d1e578592e611f20330782fbebb72aebce16a64a7c8e310957e0c7050fce206"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_motor_bearing_wrenches.py",
+      "SHA256": "d9f02c222bc6fce361b5efa00ea5f23d22e7d849a53ba342bc3c94a58af9bbf0"
+    }
+  ],
+  "checks": {
+    "all78STEP_hashes": true,
+    "all78_single_valid": true,
+    "aggregate78solids": true,
+    "aggregate_volume": false,
+    "exactBOMreferences": true,
+    "nominal_no_root_frame_interference": true,
+    "both_01mm_closed_no_interference": true,
+    "both_011mm_penetration_detected": true,
+    "both_finite_positive_Yareas": true,
+    "all_original_port_cases_rigid_feasible": true
+  },
+  "conditional_load_cases": [
+    {
+      "case": "Y0_lateral0",
+      "shift_mm": 0,
+      "added_lateral_N": 0,
+      "kind": "original_conditional_gravity_port",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "root_seat": 516.7659492070463
+      },
+      "solution": {
+        "success": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          0.0,
+          0.5545631279423919,
+          -5.597159153936284e-06,
+          -0.02831991579773015,
+          0.0
+        ],
+        "variables": 34,
+        "rays": [
+          {
+            "label": "root_seat",
+            "point_mm": [
+              66.36936941597016,
+              14.57602124737607,
+              -7.0
+            ],
+            "area_mm2": 30.035560517450612,
+            "direction": [
+              0,
+              0,
+              1
+            ],
+            "force_N": 3.3736919376895584,
+            "pressure_MPa": 0.11232325548675706
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              -5.0,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.11734258649768463,
+            "pressure_MPa": 0.011734258649768462
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              5.0,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.11734258649768463,
+            "pressure_MPa": 0.011734258649768462
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              -16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 0.42758352635627495,
+            "pressure_MPa": null
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 3.5006715392756758,
+            "pressure_MPa": null
+          }
+        ],
+        "force_error_N": 2.220446049250313e-16,
+        "moment_error_Nm": 3.875787619010326e-17,
+        "total_axial_bolt_N": 3.9282550656319506,
+        "total_contact_N": 3.6083771106849274
+      }
+    },
+    {
+      "case": "Y-0.1_lateral0",
+      "shift_mm": -0.1,
+      "added_lateral_N": 0,
+      "kind": "original_conditional_gravity_port",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "Yshoulder": 27.199999999999996,
+        "root_seat": 516.0860472589874
+      },
+      "solution": {
+        "success": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          0.0,
+          0.5545631279423919,
+          -6.10534719481751e-05,
+          -0.02831991579773015,
+          2.3468517299536926e-05
+        ],
+        "variables": 50,
+        "rays": [
+          {
+            "label": "root_seat",
+            "point_mm": [
+              66.37446067245438,
+              14.465322366090701,
+              -7.0
+            ],
+            "area_mm2": 29.915585030435853,
+            "direction": [
+              0,
+              0,
+              1
+            ],
+            "force_N": 3.366458155655265,
+            "pressure_MPa": 0.11253191780238495
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              -5.100000000000001,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.11734258649768461,
+            "pressure_MPa": 0.011734258649768462
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              4.899999999999999,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.11734258649768467,
+            "pressure_MPa": 0.011734258649768467
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              -16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 0.4406403611250665,
+            "pressure_MPa": null
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 3.4803809224725906,
+            "pressure_MPa": null
+          }
+        ],
+        "force_error_N": 2.237726045655905e-16,
+        "moment_error_Nm": 1.0547595461309959e-17,
+        "total_axial_bolt_N": 3.921021283597657,
+        "total_contact_N": 3.601143328650634
+      }
+    },
+    {
+      "case": "Y-0.1_lateral-0.1",
+      "shift_mm": -0.1,
+      "added_lateral_N": -0.1,
+      "kind": "explicit_lateral_sensitivity_not_operating_requirement",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "Yshoulder": 27.199999999999996,
+        "root_seat": 516.0860472589874
+      },
+      "solution": {
+        "success": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          -0.1,
+          0.5545631279423919,
+          -0.0007610534719481752,
+          -0.02831991579773015,
+          -0.005016531482700463
+        ],
+        "variables": 50,
+        "rays": [
+          {
+            "label": "root_seat",
+            "point_mm": [
+              66.37446067245438,
+              -14.675298487121019,
+              -7.0
+            ],
+            "area_mm2": 29.915585030435853,
+            "direction": [
+              0,
+              0,
+              1
+            ],
+            "force_N": 3.3664581556552595,
+            "pressure_MPa": 0.11253191780238476
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              -15.1,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.008657413502315142,
+            "pressure_MPa": 0.0008657413502315142
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              -5.100000000000001,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.22602775949305431,
+            "pressure_MPa": 0.02260277594930543
+          },
+          {
+            "label": "Yshoulder",
+            "point_mm": [
+              63.0,
+              -20.1,
+              -3.425
+            ],
+            "area_mm2": 1.7000000000000002,
+            "direction": [
+              0,
+              1.0,
+              0
+            ],
+            "force_N": 0.09999999999999998,
+            "pressure_MPa": 0.058823529411764684
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              -16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 3.517458509004826,
+            "pressure_MPa": null
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 0.40356277459282514,
+            "pressure_MPa": null
+          }
+        ],
+        "force_error_N": 6.944442800358888e-16,
+        "moment_error_Nm": 9.580323528576904e-18,
+        "total_axial_bolt_N": 3.921021283597651,
+        "total_contact_N": 3.701143328650629
+      }
+    },
+    {
+      "case": "Y-0.1_lateral-1.0",
+      "shift_mm": -0.1,
+      "added_lateral_N": -1.0,
+      "kind": "explicit_lateral_sensitivity_not_operating_requirement",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "Yshoulder": 27.199999999999996,
+        "root_seat": 516.0860472589874
+      },
+      "solution": {
+        "success": false,
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is Infeasible)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          -1.0,
+          0.5545631279423919,
+          -0.007061053471948175,
+          -0.02831991579773015,
+          -0.050376531482700465
+        ],
+        "variables": 50
+      }
+    },
+    {
+      "case": "Y0.1_lateral0",
+      "shift_mm": 0.1,
+      "added_lateral_N": 0,
+      "kind": "original_conditional_gravity_port",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "Yshoulder": 27.199999999999996,
+        "root_seat": 516.0860472589874
+      },
+      "solution": {
+        "success": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          0.0,
+          0.5545631279423919,
+          4.985915364030264e-05,
+          -0.02831991579773015,
+          -2.3468517299536926e-05
+        ],
+        "variables": 50,
+        "rays": [
+          {
+            "label": "root_seat",
+            "point_mm": [
+              66.37446067245438,
+              14.675298487121022,
+              -6.999999999999999
+            ],
+            "area_mm2": 29.91558503043585,
+            "direction": [
+              0,
+              0,
+              1
+            ],
+            "force_N": 3.366458155655265,
+            "pressure_MPa": 0.11253191780238496
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              -4.899999999999999,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.11734258649768466,
+            "pressure_MPa": 0.011734258649768466
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              5.100000000000001,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.1173425864976846,
+            "pressure_MPa": 0.01173425864976846
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              -16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 0.41508447203994603,
+            "pressure_MPa": null
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 3.505936811557711,
+            "pressure_MPa": null
+          }
+        ],
+        "force_error_N": 2.220446049250313e-16,
+        "moment_error_Nm": 3.8191505455683035e-17,
+        "total_axial_bolt_N": 3.921021283597657,
+        "total_contact_N": 3.601143328650634
+      }
+    },
+    {
+      "case": "Y0.1_lateral0.1",
+      "shift_mm": 0.1,
+      "added_lateral_N": 0.1,
+      "kind": "explicit_lateral_sensitivity_not_operating_requirement",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "Yshoulder": 27.199999999999996,
+        "root_seat": 516.0860472589874
+      },
+      "solution": {
+        "success": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          0.1,
+          0.5545631279423919,
+          0.0007498591536403027,
+          -0.02831991579773015,
+          0.005016531482700463
+        ],
+        "variables": 50,
+        "rays": [
+          {
+            "label": "root_seat",
+            "point_mm": [
+              66.37446067245438,
+              -14.465322366090698,
+              -7.0
+            ],
+            "area_mm2": 29.915585030435857,
+            "direction": [
+              0,
+              0,
+              1
+            ],
+            "force_N": 3.36645815565527,
+            "pressure_MPa": 0.11253191780238511
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              5.100000000000001,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.18602775949305428,
+            "pressure_MPa": 0.018602775949305428
+          },
+          {
+            "label": "root_wall",
+            "point_mm": [
+              68.0,
+              15.1,
+              -3.5
+            ],
+            "area_mm2": 10.0,
+            "direction": [
+              -1,
+              0,
+              0
+            ],
+            "force_N": 0.048657413502315165,
+            "pressure_MPa": 0.004865741350231516
+          },
+          {
+            "label": "Yshoulder",
+            "point_mm": [
+              67.0,
+              20.099999999999998,
+              -5.9750000000000005
+            ],
+            "area_mm2": 1.699999999999999,
+            "direction": [
+              0,
+              -1.0,
+              0
+            ],
+            "force_N": 0.09999999999999999,
+            "pressure_MPa": 0.05882352941176473
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              -16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 3.477527619919716,
+            "pressure_MPa": null
+          },
+          {
+            "label": "bolt_axial",
+            "point_mm": [
+              64,
+              16,
+              -3
+            ],
+            "direction": [
+              0,
+              0,
+              -1
+            ],
+            "area_mm2": null,
+            "force_N": 0.4434936636779463,
+            "pressure_MPa": null
+          }
+        ],
+        "force_error_N": 2.9537201370600734e-16,
+        "moment_error_Nm": 4.7420677906616184e-18,
+        "total_axial_bolt_N": 3.9210212835976623,
+        "total_contact_N": 3.7011433286506397
+      }
+    },
+    {
+      "case": "Y0.1_lateral1.0",
+      "shift_mm": 0.1,
+      "added_lateral_N": 1.0,
+      "kind": "explicit_lateral_sensitivity_not_operating_requirement",
+      "areas_mm2": {
+        "root_wall": 159.64,
+        "Yshoulder": 27.199999999999996,
+        "root_seat": 516.0860472589874
+      },
+      "solution": {
+        "success": false,
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is Infeasible)",
+        "external_wrench_N_Nm": [
+          0.23468517299536926,
+          1.0,
+          0.5545631279423919,
+          0.007049859153640303,
+          -0.02831991579773015,
+          0.050376531482700465
+        ],
+        "variables": 50
+      }
+    }
+  ],
+  "translation_samples": [
+    {
+      "root_shift_Y_mm": 0,
+      "root_frame_common_mm3": 0.0,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": 0.05,
+      "root_frame_common_mm3": 0.0,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": 0.099,
+      "root_frame_common_mm3": 0.0,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": 0.1,
+      "root_frame_common_mm3": 0.0,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": 0.101,
+      "root_frame_common_mm3": 0.02720399999993861,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": 0.11,
+      "root_frame_common_mm3": 0.27239999999994974,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": -0.1,
+      "root_frame_common_mm3": 0.0,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": -0.101,
+      "root_frame_common_mm3": 0.027203999999938607,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": -0.11,
+      "root_frame_common_mm3": 0.2723999999999498,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_shift_Y_mm": -99.536999856,
+      "root_frame_common_mm3": 0.0,
+      "root_fixed_RFbolt_common_mm3": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "accepted_elastic_equilibria": 0,
+  "hardware": "HARDWARE_NOT_MEASURED",
+  "limitations": [
+    "Actual reimported product faces and original gravity Root port, frozen from prior model. New geometry needs remesh/coupled updated Finger loads; no transfer of old sourcefield equilibrium.",
+    "Rigid nonnegative pressure LP is necessary equilibrium only. Yfaces contribute ONLY at explicitly closed0.1mm gap; no force at nominal open gap. No fictitious tie or preload/friction.",
+    "UnitY sensitivity not an operating-load requirement. Infeasibility retained; no strength/capacity or sixDOF closure claim.",
+    "Existing RFbolt/nut axial retention conditional connector only; thread flank/core/engagement/material and elastic lateral shaft motion unqualified.",
+    "No material minimum/safety/tolerance/process/globalenergy/mesh/time/full3Finger/physicalBaseanchor qualification."
+  ]
+}

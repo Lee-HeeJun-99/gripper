@@ -1,0 +1,69 @@
+{
+  "status": "ACTUAL_P1_YCAPTURE_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "failures": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/cad1_execution.json",
+        "SHA256": "c4141fd2b6e17e0b080f3644ec84b083de0fcd46f70d77791a0473d4993ffcd9"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/cad1.log",
+        "SHA256": "b005f740c2ebdce712e0aa94a7b1ce79188749958ba00d99175509ddf7d69d35"
+      },
+      "reason": "API TypeError: fuse accepts two operands. Failed23producer/inputs retained; corrected24CAD created under a new tag."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/mesh1_execution.json",
+        "SHA256": "809ee506f0d68fcd9f116440f1ca277b18fe662b49ed091b67d5a24342ed75d6"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/mesh1.log",
+        "SHA256": "804cafbbff50aabc2130b64ae3ee639772680016beea4739cd805fba05993eac"
+      },
+      "reason": "Root Yface extends beyond shoulder footprint: initial zbounded face selector was invalid. Failedproducer retained; mesh2/3 select material nodes in actual intended overlap, not complete clipped-face quadrature."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/loads1_execution.json",
+        "SHA256": "2a1553d4ff238883aa8d0dfcbda2764708d5faa6ee2f3be704d8375e01504f55"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/loads1.log",
+        "SHA256": "6640ae9a3c526d11c0709d24da6f43eadc37813380c878d786a93e628801336a"
+      },
+      "reason": "Default nonadaptive compound volume sum differs0.099420873mm3, fails1e-5. ActualLP/finitegeometry checks retained. Independent adaptive identity at threeeps levels passes original threshold; no change to failed result."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/local_guard1_execution.json",
+        "SHA256": "01c2e77ca413b4f365b7c702c9eb5e2e818070b532cb3a240a6eed4248e6784e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25/local_guard1.log",
+        "SHA256": "9fb8bc6caac0de83c7ec5beef3fb2d3c2b333af241e0bf120f6b31e6204676f6"
+      },
+      "reason": "NumPy bool JSON serialization TypeError; producer/log retained. Corrected newguard2 then guard3 distinguishes originaltriangle from ENTIRE finiteowner."
+    }
+  ],
+  "physical_failures": [
+    {
+      "case": "Y-0.1_lateral-1.0",
+      "success": false,
+      "solver_status": 2
+    },
+    {
+      "case": "Y0.1_lateral1.0",
+      "success": false,
+      "solver_status": 2
+    }
+  ],
+  "clipped_path_finite_owner_outside_rows": 14,
+  "local_path_accepted": false,
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": []
+}

@@ -1,0 +1,293 @@
+{
+  "status": "ACTUAL_P1_CAD_AND_EXECUTION_CLOSEOUT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/summary.json",
+    "SHA256": "42bf51b9b5fd44c2cfcff030e5f66d1e66320c533cb58b8edc76f699c767ee6e"
+  },
+  "engineering_summary": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle25_record1/summary.json",
+    "SHA256": "207bf0188299c3565ebfac3aaf01793f0fcae13afc51107aae7814b7feaa3e39"
+  },
+  "exact_new_CAD_SHA256": {
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/ASSEMBLY.step": "62db749c2f68253208e2807dff7ba718fda7038aa7587f5d7967bb1f56ce5612",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/F0_ROOT_BACK.step": "4c19a537bd22804b14fc24d97d23e837b33d569ac7a3115cdc7ac4f128293092",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/F0_ROOT_BACK.stl": "34cffee66541c564af15cca8ef52fc95454f9aeb5c523756bc08571c8a3bd6f8",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/OPEN_FRAME.step": "ee641fc76a4f99f93a2f06df54c99215dddaf71df0544ceec5fc931ea69b415a",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_ycapture24/OPEN_FRAME.stl": "aa25b3f04331d0ad481c7015baf91b21c33278a338d763db9fd85f1da3133330"
+  },
+  "all_bounded_children": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_validation.py",
+        "--tag",
+        "primaryP1_ycapture_assembly1",
+        "--candidate",
+        "primaryP1_ycapture24"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 6.4099744679406285,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_root_yshoulder.py"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.6035649559926242,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_root_yshoulder.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.805934222182259,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_cone_bound.py",
+        "primaryP1_ycapture_cone1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.4034995019901544,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ycapture_identity.py",
+        "primaryP1_ycapture_identity1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 6.009274287847802,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_root_capture_inventory.py",
+        "primaryP1_capture_inventory1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.2028394811786711,
+      "PID": 7,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_loads.py",
+        "primaryP1_ycapture_loads1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.6063956960570067,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_globalization.py",
+        "primaryP1_ycapture_globalization1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.6018237171228975,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_globalization.py",
+        "primaryP1_ycapture_globalization2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.6019417401403189,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_globalization.py",
+        "primaryP1_ycapture_globalization3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.2056635059416294,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_mesh.py",
+        "primaryP1_ycapture_mesh1",
+        "3"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.20120995701290667,
+      "PID": 6,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_mesh.py",
+        "primaryP1_ycapture_mesh2",
+        "3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.0053641588892788,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ycapture_mesh.py",
+        "primaryP1_ycapture_mesh3",
+        "2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 4.808163376990706,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ycapture_operator.py",
+        "primaryP1_ycapture_operator_audit1",
+        "primaryP1_ycapture_mesh2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4017692650668323,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ycapture_operator.py",
+        "primaryP1_ycapture_operator_audit2",
+        "primaryP1_ycapture_mesh3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.40173072507604957,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/record_primary_ycapture_cycle.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 4.006995419040322,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release30"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4016719728242606,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    }
+  ],
+  "recorded_child_seconds_known": 41.67781645129435,
+  "administrative_record_child_seconds": 4.006995419040322,
+  "administrative_preflight_failures": [
+    "First final inline preflight assumed15executions; assertion rejected before writing. Actual immutable execution journal contains17(16engineering+1administrative); corrected count, no physics evidence changed."
+  ],
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "original_user_untracked_hashes_preserved": 8595,
+  "protected_source_pins_verified": 10,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "git_add_commit_attempted": false
+}

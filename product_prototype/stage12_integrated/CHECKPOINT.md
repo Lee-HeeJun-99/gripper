@@ -1,3 +1,76 @@
+# Latest actual P1 compliant keyed-joint continuation — 2026-11-27, Supervisor save pending
+
+Actual starting HEAD b84a412dee9c195c81640f1eec7c76d0926c6f13.
+Selected exact queue ID goal_primary_keyed_joint_compliance. Same ONE P1 is now
+primaryP1_fixture15,78parts. Motor→Drum→Tendon→Finger→Root→Frame→Ground→Base.
+Failed AO/adopted AA/original3Finger/cartridge/jamming remain immutable.
+Only actual Ground/Base STEP/STL changed: fourR0.5concave key-root fillets and
+0.6mm45degree pocket-entry relief; priorR1corner reliefs remain. New full78part
+ASSEMBLY.step/BOM/identity4 bind all parts. Fixture14 failed before solid output;
+its source/assertion log remain. This is a same-P1 iteration,not a new architecture.
+
+Reimported78singlevalidsolids/190finalBooleanpairs/nointerference; independent
+aggregate identity;81moduleposes/296comparisons plus52fixtureposes/79comparisons,
+10fixturetools and1savedloadedcable/rotorpose pass boundednominalchecks.
+Key areas24mm2eachx/14.4mm2eachy,seat2380.036048703312mm2. NoCCD/tolerance/thread
+rotation/process/full3FingerStage1 or physical assembly qualification.
+
+Ground material DESIGN INTENT is304steel,explicitly superseding accidental
+producer11Al text only for new models; Base6061-T6. Neither actual material nor
+minimum allowable is certified. Actual all78volumes/centroids and nominal
+manufacturer1101mass9.5g/1996hub2.8g produce conditional total.989895091786kg.
+Original69partmodule INCLUDING Ground is.672575694397kg;68upstream parts WITHOUT
+Ground are.296098794268kg. Historical massproducer field namedmodule69 actually
+means this68partsubset; naming correction is explicit in closeout,not hidden.
+Wholeproductmass/wrenchunchanged. RequiredBaseexternal[N,Nm] is
+[-.408610416667,0,9.707554701867,-.076586225227,-.224076809482,0] for g=-Z.
+Rest-CAD mass coordinates plus oldgravity-freeoperatingwrench are a frozen-state
+reference,NOT gravity-loaded integratedequilibrium. Density/COM/inertia/pose and
+thread-envelope bounds remain unknown; local connector selfweight split approximate.
+
+Actual finite Ground/Base are separately deformable P1tetra bodies,with
+unilateral frictionless key/seat contacts and fourtension-only axialminor-core
+connectors on actual averagedhead/nutfootprints. No major-cylinder ties or
+originalsharedM5fixation. Explicit finiteBaseexternaltraction plus six negligible
+rigid-motion gauges,NOT physicalbenchanchorage. Threadengagement/flanks/local
+bearing/preload/locking/source-minima remain unqualified.
+Seven successfulelastic states: old13h5/3.5/2.5 plus10Npreload contrast,new15h5/3.5/2.5.
+Independent directtetra force/energy/bolt-law/contact and corruptfield rejection
+pass. NewDOFs18696/42066/76473;fineboltforces4.554147/5.049198/4.579678/4.879687N.
+FineconditionalGround/Basepeak.731691712/.626477441MPa,not strength approval.
+R0.5fillet stress benefit NOT proven: newfinepeak exceeds old.436605MPa.
+New3.5→2.5Groundstress46.53155%,Basestress19.27347%,Groundmotion13.25255%,
+Basemotion3.44205%,elasticenergy11.88496% FAIL unchanged1%. Prior mesh/LP/Frame/
+Rail/friction/source/protector failures remain. Hotspots localized in new report.
+
+Failures preserved: initialJSONint32serialization,verifierPosixPathtypo,CADedge
+double enumeration. Old13.02mmgapcontrast TIMEOUT420s,-9,killed/reaped,no result.
+No timeout retry; only save-onlyrecovery/finalreleaseauditandhandoff followed.
+24analysischildren reaped,838.418654child-seconds,1timeout;each4GiB/420s.
+All22systemgates remain UNQUALIFIED in models/primary_system_gate_state7.json;
+newlyqualifiedwhole-systemgates NONE. Unchangedread-onlyrelease8 returns
+INTEGRATED_NOT_QUALIFIED,24errors,exit2. SOFAruns0;no globalenergy/Stage3/hardware.
+
+Concrete NEXT exact ID goal_primary_gravity_loaded_chain: continue THISP1fixture15.
+Derive conservative distributedgravity and actualrigidterminal/swivel mass
+pullbacks in existingfiniteRail/PETmodel; independentvirtualwork/zero-gcontrol,
+then actualgravity-loadedequilibrium/deformedmasscentroids and pairedRoot/Motor
+forcesANDcouples. Carry through finiteFrame/currentkey/Base with justified
+bearing/thread/physicalanchor. Retain meshFAILs and gapTIMEOUT;no blanketLP
+refinement or automaticretry. Full3Finger/friction/protection/globalenergyblocked.
+
+Main result validation/integrated/primary_cycle6/summary.json.
+Authoritative scope correction/final handoff:
+validation/integrated/primaryP1_cycle6_closeout/summary.json.
+Detailed actual CAD/numerics: reports/primaryP1_fixture15_engineering.md.
+STOP absent;no RUNNINGtasks or ownedanalysischildren. Sourcepinsunchanged.
+No Gitadd/commit/push/historyrewrite,SDK,manager/security/save/guard/gate source
+edits,purchase/hardware/credentials/providerselection/subagents/recursivelaunches.
+Olduseruntrackedfilesandevidencepreserved. Supervisor exactsave request:
+runtime/goal_authorized_20261127_7/save_request5.json. SavePENDING;no newcommitclaimed.
+
+---
+
 # Latest actual P1 positive fixture continuation — 2026-11-27, Supervisor save pending
 
 Actual starting HEAD ca4f0b206f1e43477e17033fb1830fe7814d6119.

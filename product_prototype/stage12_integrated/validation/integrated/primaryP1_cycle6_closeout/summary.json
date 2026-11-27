@@ -1,0 +1,97 @@
+{
+  "status": "ACTUAL_P1_CYCLE6_EXACT_BYTE_HANDOFF_READY_NOT_RELEASE",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cycle6_closeout/producer.py",
+    "SHA256": "1c2439cf78a942a9eeba72915f437ba9e88a5003032d4de48298e8a9cabb03e0"
+  },
+  "cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle6/summary.json",
+    "SHA256": "c4b4d89a2c5409de8263240fe50eedbd2c0a38149299334ae56676fe5028e7f2"
+  },
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+    "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+  },
+  "assembly": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/ASSEMBLY.step",
+    "SHA256": "75849fe93ea474a217e22cdc5065275d3faf60af99f56090966138de254f812f"
+  },
+  "actual_changed_CAD_files": [
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/GROUND_PLATE.step",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/GROUND_PLATE.stl",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/TEST_BASE.step",
+    "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/TEST_BASE.stl"
+  ],
+  "corrected_mass_scope": {
+    "status": "AUTHORITATIVE_SUBSET_LABEL_CORRECTION_NOT_MASS_CHANGE",
+    "scope": "The original mass producer field module69_conditional_mass_kg excludedGround,so it enumerates68upstreamparts. Preserve that original field; this explicitcorrection supersedesitslabel in cycle6/mass summaries. Full78total and all numericalwrenches are unchanged.",
+    "upstream_excluding_ground_count": 68,
+    "upstream_excluding_ground_mass_kg": 0.29609879426836144,
+    "original_module_including_ground_count": 69,
+    "original_module_including_ground_mass_kg": 0.6725756943965662,
+    "total78_conditional_mass_kg": 0.9898950917863771
+  },
+  "report": {
+    "path": "product_prototype/stage12_integrated/reports/primaryP1_fixture15_engineering.md",
+    "SHA256": "ab22aeedd628c876e394ea58c906c500cd5cc018aefa11b12252f65da7451b24"
+  },
+  "checks": {
+    "all_source_pins_unchanged": true,
+    "all24execution_records_reaped": true,
+    "no_running_queue_tasks": true,
+    "one420secondtimeout_preserved": true,
+    "all22systemgatesunqualified": true,
+    "primary78parts": true,
+    "no_source_criteria_relaxation": true
+  },
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "recorded_child_seconds": 838.4186542297248,
+  "recorded_children_reaped": 24,
+  "timeouts": 1,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "next_task_id": "goal_primary_gravity_loaded_chain",
+  "next_mechanism": "Continue SAME78partP1fixture15. First add conservative distributed gravity and actual terminal/swivel/rotor masses to existing finiteRail/PET equilibrium,with manufacturer motor/hubCOM uncertainty separate; recompute deformedhardware/strip mass centroids and pairedRoot/Motor forcesANDcouples. CurrentfrozenrestCADgravity+oldoperatingwrench is not that equilibrium. Then transport these loads through actualFrame/Ground/key/Base and finitehead/nut bearing connectors,with justified threadengagement and physicalBaseanchor. Retain h5/3.5/2.5FAILs; localize loadedcontact/keyroof stress and verify discretization without blanket LP/globalmesh retries. Contactgap420sTIMEOUTmust remain; no automaticretry or criteria/source relaxation.",
+  "whole_system_release": false,
+  "stage3_authorized": false,
+  "global_energy_qualified": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "save_status": "PENDING_SUPERVISOR_EXACT_SAVE",
+  "git_add_commit_attempted": false
+}

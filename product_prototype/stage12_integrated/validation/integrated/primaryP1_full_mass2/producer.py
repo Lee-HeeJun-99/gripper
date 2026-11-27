@@ -1,0 +1,28 @@
+"""Actual P1 78-part mass/port ledger; explicit conditional densities, no certificate."""
+import json,sys,shutil,argparse
+import numpy as np
+from baseline_registry import ROOT,REPO,S1,ref,sha,dump
+sys.path.insert(0,str(S1/'scripts'))
+from incremental_stage1 import read
+from OCP.BRepGProp import BRepGProp
+from OCP.GProp import GProp_GProps
+
+def wrench(p,f):return np.r_[f,np.cross(np.array(p)*.001,f)]
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--candidate',required=True);ap.add_argument('--tag',required=True);ap.add_argument('--intent',required=True);a=ap.parse_args()
+ out=ROOT/'validation/integrated'/a.tag;out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py');assert not(ROOT/'runtime/STOP').exists()
+ src=ROOT/'cad/exports'/a.candidate/'summary.json';cad=json.loads(src.read_text());rows=[]
+ sources=dict(motor=dict(url='https://www.pololu.com/product/1101/specs',mass_kg=.0095,scope='Nominal manufacturer mass; not a guaranteed upper bound; actual COM unknown'),hub=dict(url='https://www.pololu.com/product/1996/specs',mass_kg=.0028,scope='Single hub without set screw; set screw counted separately'),stainless=dict(url='https://bssa.org.uk/bssa_articles/ambient-temperature-physical-properties-of-stainless-steels-to-bs-en-10088-1/',density_kg_m3=7900,E_MPa=200000,scope='304 room-temperature reference,not guaranteed material/minimum'),aluminum=dict(url='https://materialsdata.nist.gov/bitstream/handle/11115/179/Properties%20of%20Wrought%20Aluminum.pdf?isAllowed=y&sequence=3',density_kg_m3=2700,E_MPa=68900,scope='6061 typical reference,not stock minimum'))
+ intent=dict(status='DESIGN_INTENT_RECONCILED_NOT_PURCHASED_OR_MATERIAL_QUALIFIED',GROUND_PLATE='Machined304stainless design intent,continuing original steel fixture function. Supersedes accidental fixture11Al text for future models only; earlierAl/7850contrasts preserved.',TEST_BASE='Machined6061-T6 design intent; actual stock/minimum unknown',density_scenarios='3047900/Al2700nominal sensitivity only; other unknown metal parts assigned below individually,not guaranteed bounds',sources=sources,historical=[ref(ROOT/'models/materials/primary_material_contract1.json'),ref(ROOT/'models/materials/primary_fixture13_material_scope.json')])
+ dump(ROOT/'models/materials'/a.intent,intent)
+ for n,r in cad['part_references'].items():
+  assert sha(REPO/r['path'])==r['SHA256'];g=GProp_GProps();BRepGProp.VolumeProperties_s(read(REPO/r['path']),g);p=g.CentreOfMass();c=[p.X(),p.Y(),p.Z()];V=g.Mass()
+  if n=='F0_MICRO_MOTOR':m=.0095;basis='manufacturer nominal whole motor; CAD centroid proxy only';rho=None
+  elif n=='F0_STOCK_HUB':m=.0028;basis='manufacturer nominal hub,excludes separate set screw';rho=None
+  else:
+   rho=1400 if n=='F0_SKIN' else 2700 if n in ('OPEN_FRAME','MOTOR_CAP','TEST_BASE','F0_SPOOL','F0_DRUM_NIPPLE_CAP') else 7900
+   basis=('PET1400density engineering sensitivity; not source minimum' if n=='F0_SKIN' else 'Al2700design sensitivity' if rho==2700 else '3047900metal sensitivity; actual grade/void/thread volume unknown');m=V*1e-9*rho
+  rows.append(dict(part_ID=n,STEP=r,volume_mm3=V,centroid_mm=c,density_assumed_kg_m3=rho,mass_kg=m,basis=basis,gravity_wrench_N_Nm=wrench(c,[0,0,-m*9.80665]).tolist()))
+ total=sum((np.array(r['gravity_wrench_N_Nm']) for r in rows),np.zeros(6));up=[r for r in rows if not r['part_ID'].startswith('FIXTURE_') and r['part_ID'] not in ('GROUND_PLATE','TEST_BASE')];gw=sum((np.array(r['gravity_wrench_N_Nm']) for r in rows if r['part_ID']!='TEST_BASE'),np.zeros(6));loads=ROOT/'validation/transmission/primaryP1_corner_demand_loads1/summary.json';l=json.loads(loads.read_text())['rows'][-1];port=np.array([l['frame_total_external_force_XZ_N'][0],0,l['frame_total_external_force_XZ_N'][1],0,l['frame_total_external_couple_about_Y_Nm'],0]);summary=dict(status='ACTUAL78_PART_CONDITIONAL_MASS_AND_FULL_WRENCH_LEDGER_NOT_MASS_QUALIFIED',candidate=ref(src),producer=ref(out/'producer.py'),material_intent=ref(ROOT/'models/materials'/a.intent),load_source=ref(loads),sources=sources,parts=rows,part_count=len(rows),total_conditional_mass_kg=sum(r['mass_kg'] for r in rows),module69_conditional_mass_kg=sum(r['mass_kg'] for r in up),total_gravity_wrench_N_Nm=total.tolist(),upstream_module_gravity_wrench_N_Nm=sum((np.array(r['gravity_wrench_N_Nm']) for r in up),np.zeros(6)).tolist(),nonBase_gravity_wrench_N_Nm=gw.tolist(),operating_external_port_N_Nm=port.tolist(),required_external_base_grip_full_wrench_N_Nm=(-(port+total)).tolist(),checks=dict(all78actualpart_hashes=True,unique78parts=len(rows)==78 and len(set(r['part_ID'] for r in rows))==78,positive_finite_mass=all(r['mass_kg']>0 and np.isfinite(r['mass_kg']) for r in rows),motor_hub_not_solid_metal=True),newly_qualified_system_gate_ids=[],whole_system_release=False,limitations=['Nominal manufacturer masses are not tolerance bounds; actual motor COM and inertia unknown','CAD is nominal envelopes including smooth fastener threads; not true metal volume; all other assigned densities are conditional','Installed orientation g=-Z is explicit sensitivity,not confirmed laboratory orientation','Operating port came from gravity-free conditional Finger solution; gravity is transported as frozen-state static wrench,not a re-solved gravity-loaded Finger/path','NonGround/nonBaseweights inclbolt/nut are transported toGroundport; connectorbody selfweight stress/bearing split remains approximate. No guaranteed physical mass/inertia,preload,thread strength or system release'])
+ dump(out/'summary.json',summary);print(json.dumps({k:summary[k] for k in ('status','part_count','total_conditional_mass_kg','module69_conditional_mass_kg','required_external_base_grip_full_wrench_N_Nm','checks')}))
+if __name__=='__main__':main()

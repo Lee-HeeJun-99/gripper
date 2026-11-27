@@ -1,0 +1,40 @@
+{
+  "status": "DESIGN_INTENT_RECONCILED_NOT_PURCHASED_OR_MATERIAL_QUALIFIED",
+  "GROUND_PLATE": "Machined304stainless design intent,continuing original steel fixture function. Supersedes accidental fixture11Al text for future models only; earlierAl/7850contrasts preserved.",
+  "TEST_BASE": "Machined6061-T6 design intent; actual stock/minimum unknown",
+  "density_scenarios": "3047900/Al2700nominal sensitivity only; other unknown metal parts assigned below individually,not guaranteed bounds",
+  "sources": {
+    "motor": {
+      "url": "https://www.pololu.com/product/1101/specs",
+      "mass_kg": 0.0095,
+      "scope": "Nominal manufacturer mass; not a guaranteed upper bound; actual COM unknown"
+    },
+    "hub": {
+      "url": "https://www.pololu.com/product/1996/specs",
+      "mass_kg": 0.0028,
+      "scope": "Single hub without set screw; set screw counted separately"
+    },
+    "stainless": {
+      "url": "https://bssa.org.uk/bssa_articles/ambient-temperature-physical-properties-of-stainless-steels-to-bs-en-10088-1/",
+      "density_kg_m3": 7900,
+      "E_MPa": 200000,
+      "scope": "304 room-temperature reference,not guaranteed material/minimum"
+    },
+    "aluminum": {
+      "url": "https://materialsdata.nist.gov/bitstream/handle/11115/179/Properties%20of%20Wrought%20Aluminum.pdf?isAllowed=y&sequence=3",
+      "density_kg_m3": 2700,
+      "E_MPa": 68900,
+      "scope": "6061 typical reference,not stock minimum"
+    }
+  },
+  "historical": [
+    {
+      "path": "product_prototype/stage12_integrated/models/materials/primary_material_contract1.json",
+      "SHA256": "7adc7b1271033477b0c6e4b6a812c122271fc36ce6721888f42886459d5dcdd3"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/models/materials/primary_fixture13_material_scope.json",
+      "SHA256": "a0ca30a51b2b79027e8108dce8b742119c19ed8f63ef3bcb33f76a23f90ce61d"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "status": "ACTUAL_P1_CONDITIONAL_COMPLIANT_JOINT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_fixture15/summary.json",
+    "SHA256": "c21efce38b95d587008258f58acbb5bff0d76aed498a9a245e8ef731d9ac5358"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_joint15_5_1/producer.py",
+    "SHA256": "2e5272976c833b6d84132ce2cea34a21d7c507f93ff8bd907dc7fd9b4cf3d14b"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_joint15_5_1/inputs.json",
+    "SHA256": "5ca5b695f9e7e3a4b5370113f414127921a4e334292f9ec1c7bf8c704e278e9a"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_joint15_5_1/field.npz",
+    "SHA256": "bbe18fcc3cd967d2176968e10540c31a0859da1140119777c7d0c09efe11c20f"
+  },
+  "checks": {
+    "solver_solved": true,
+    "normal_gaps": true,
+    "compression_only": true,
+    "stationarity": true,
+    "global_force": true,
+    "global_moment": true,
+    "gauge_force_negligible": true,
+    "static_energy": true,
+    "positive_bolt_force": true,
+    "mesh_volume": true
+  },
+  "h_mm": 5.0,
+  "preload_each_N": 0,
+  "key_lateral_gap_mm": 0,
+  "meshes": [
+    {
+      "part": "GROUND_PLATE",
+      "nodes": 2788,
+      "elements": 8817,
+      "volume_mm3": 47740.11439721858,
+      "CAD_volume_mm3": 47655.30381369643
+    },
+    {
+      "part": "TEST_BASE",
+      "nodes": 3444,
+      "elements": 12628,
+      "volume_mm3": 104749.14415097615,
+      "CAD_volume_mm3": 104598.68554229444
+    }
+  ],
+  "DOF": 18696,
+  "solver": {
+    "status": "solved",
+    "iterations": 450,
+    "primal_residual": 2.0781388783040445e-12,
+    "dual_residual": 2.2139266194972044e-11
+  },
+  "bolt_force_N": [
+    4.460473126084428,
+    4.87562645511225,
+    4.413441437831409,
+    4.585203800037479
+  ],
+  "bolt_k_N_mm": 107495.22147995776,
+  "bearing_areas_head_nut_mm2": [
+    [
+      32.98430942253122,
+      33.550760000014975
+    ],
+    [
+      32.98430942253122,
+      33.55076000001497
+    ],
+    [
+      32.9843094225312,
+      33.55076000006294
+    ],
+    [
+      32.9843094225312,
+      33.55076000006294
+    ]
+  ],
+  "contact_nodes": 396,
+  "active_contact_nodes": 50,
+  "min_gap_mm": -5.969888212248309e-17,
+  "max_key_gap_mm": 1.2260942805982584e-05,
+  "relative_stationarity": 1.7980791802846799e-10,
+  "global_residual_N_Nm": [
+    4.977802324292748e-12,
+    1.0182319461732711e-12,
+    -2.2206830349991296e-11,
+    -1.605525862605543e-14,
+    1.019327197939441e-12,
+    1.2027934866751058e-13
+  ],
+  "gauge_dual_N": [
+    4.0689466611131364e-12,
+    7.933813737547417e-13,
+    -1.9930047399869985e-11,
+    -3.4712567695546694e-11,
+    1.210939212804172e-11,
+    7.625743853746912e-13
+  ],
+  "elastic_energy_Nmm": 0.0005188041001081576,
+  "bolt_energy_Nmm": 0.0003915063008965969,
+  "static_energy_identity_Nmm": -1.6103242871101653e-13,
+  "static_energy_relative": 1.7689837283335125e-10,
+  "stresses": [
+    {
+      "part": "GROUND_PLATE",
+      "peak_unsmoothed_vm_MPa": 0.31913135875355914,
+      "max_motion_mm": 0.0003537359436641921
+    },
+    {
+      "part": "TEST_BASE",
+      "peak_unsmoothed_vm_MPa": 0.5167706432854151,
+      "max_motion_mm": 0.00014147525875254593
+    }
+  ],
+  "upstream_port": {
+    "resultant": [
+      0.40861041666666376,
+      -1.309445173819368e-16,
+      -3.246018220235286,
+      0.020722721395943444,
+      0.06621876545671157,
+      -1.9587636905255695e-18
+    ],
+    "max_traction_MPa": 0.0011319137422356003,
+    "area_mm2": 5140.399863925097,
+    "nodes": 626
+  },
+  "external_grip_port": {
+    "resultant": [
+      -0.4086104166666636,
+      1.2400562347802957e-16,
+      9.718109028895869,
+      -0.07667032541850068,
+      -0.2243566552027607,
+      -8.712580895457733e-18
+    ],
+    "max_traction_MPa": 0.0015177604855189028,
+    "area_mm2": 7866.196823924942,
+    "nodes": 718
+  },
+  "elapsed_s": 6.623915208037943,
+  "software": {
+    "gmsh": "4.15.2",
+    "skfem": "12.0.2",
+    "scipy": "1.15.3",
+    "osqp": "1.1.3"
+  },
+  "limitations": [
+    "Linear small-displacement actual full Ground/Base only; upstream module gravity transported frozen,not re-solved Finger",
+    "Uniform mean axial head/nut connector is a compliance sensitivity,not local solved bearing/thread flank/core/engagement or capacity",
+    "Frictionless linearized key/seat contacts. Gap offset is a contact-law contrast,not new machined pocket CAD; no large-slip/finite CCD",
+    "Finite Base top distributed external traction is explicit mathematical grip port,not source-qualified physical laboratory anchor; six volume gauges must carry negligible load",
+    "304/6061design intent with typical elastic constants,nominal conditional full mass; no source minima/physical mass/preload guarantee",
+    "Mass coordinates are undeformedCAD plus nominalmotorCOM; applying the oldoperatingport is a frozen-state reference,not gravity-loaded integratedequilibrium. Connectorweights transportedtoGround; distribution/selfweightstress unqualified. No full assembly strength,1%mesh convergence,time/global-energy,protector or Stage3 qualification"
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

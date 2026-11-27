@@ -1,0 +1,111 @@
+{
+  "status": "ACTUAL_P1_PHYSICAL_RIGID_NULL_AFFINE_WORK_DIAGNOSTIC",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_affine_finite_projection1/summary.json",
+    "SHA256": "d35e7abfb63239e73faae67172397af15953e32c61122da562439a1abb671d2d"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "physical_P": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/physical_P.npz",
+    "SHA256": "401b37376afa566a04d836eb54b909a35b11e08ff4e2670faf2e0e4b98204825"
+  },
+  "physical_A": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/physical_A.npz",
+    "SHA256": "20d772375e9b9c3a39b991faca74a1ad0e8c19921c8b0316fe570f75b9e155f9"
+  },
+  "problem": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/problem.npz",
+    "SHA256": "85f2d177966828d1e7d294df9cef409ccef026d9abd3899c5f712d3832f57e41"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_physical_null_work1/producer.py",
+    "SHA256": "4eb94367ba36d513c83165f6c18f3810efd09ff135c49e9e7b2355cafb24031c"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_physical_null_work1/rigid_analysis.npz",
+    "SHA256": "aa65376aaa3448381e99aef254b8b7335c880b754f31946d403fcea152ed2f54"
+  },
+  "mode_labels": [
+    "OPEN_FRAME_0",
+    "OPEN_FRAME_1",
+    "OPEN_FRAME_2",
+    "OPEN_FRAME_3",
+    "OPEN_FRAME_4",
+    "OPEN_FRAME_5",
+    "F0_ROOT_BACK_0",
+    "F0_ROOT_BACK_1",
+    "F0_ROOT_BACK_2",
+    "F0_ROOT_BACK_3",
+    "F0_ROOT_BACK_4",
+    "F0_ROOT_BACK_5",
+    "MOTOR_CAP_0",
+    "MOTOR_CAP_1",
+    "MOTOR_CAP_2",
+    "MOTOR_CAP_3",
+    "MOTOR_CAP_4",
+    "MOTOR_CAP_5",
+    "GROUND_PLATE_0",
+    "GROUND_PLATE_1",
+    "GROUND_PLATE_2",
+    "GROUND_PLATE_3",
+    "GROUND_PLATE_4",
+    "GROUND_PLATE_5",
+    "TEST_BASE_0",
+    "TEST_BASE_1",
+    "TEST_BASE_2",
+    "TEST_BASE_3",
+    "TEST_BASE_4",
+    "TEST_BASE_5",
+    "rigid_or_gamma_72210",
+    "rigid_or_gamma_72211",
+    "rigid_or_gamma_72212",
+    "rigid_or_gamma_72213",
+    "rigid_or_gamma_72214",
+    "rigid_or_gamma_72215",
+    "rigid_or_gamma_72230"
+  ],
+  "rigid_modes": 37,
+  "active_rows": 98,
+  "active_rigid_rank": 35,
+  "unconstrained_rigid_modes": 2,
+  "rank_cut": 2.9161437740573057e-10,
+  "maximum_P_rigid_action_N": 1.6298145055770874e-09,
+  "null_modes": [
+    {
+      "mode": 0,
+      "physical_P_null_residual_N": 2.2846506908535957e-09,
+      "active_row_motion_mm": 5.817828857557217e-16,
+      "external_affine_work_Nmm": -0.017955705631641138,
+      "normalized_force_projection_N": 1.541195864457178e-05,
+      "minimum_all_inequality_direction_mm": -0.28647740405292393,
+      "global_feasible_recession": false,
+      "physical_tension_mode_max": 0.0
+    },
+    {
+      "mode": 1,
+      "physical_P_null_residual_N": 5.471520125865936e-09,
+      "active_row_motion_mm": 1.895812275558944e-16,
+      "external_affine_work_Nmm": -0.022234266479322,
+      "normalized_force_projection_N": 1.9790204341190763e-05,
+      "minimum_all_inequality_direction_mm": -0.7912707966900224,
+      "global_feasible_recession": false,
+      "physical_tension_mode_max": 0.0
+    }
+  ],
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.8651117871049792,
+  "limitations": [
+    "Diagnostic numeric null candidates require measured original P/A residuals; singular values alone are not a physical equivalence proof. Active equality-null is not full inequality-cone recession.",
+    "Nonzero affine work on a retained physical null direction can obstruct equality Newton. This does not prove no coupled nonlinear equilibrium, no full-system impossible design, and does not authorize springs/fixation/row deletion/Base cancellation."
+  ]
+}

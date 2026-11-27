@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state14.json",
-    "SHA256": "2348156ebe59f0950432e6fd8a00e120fea2cfa42dda8de6f3643b0cf29b647d"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state15.json",
+    "SHA256": "c379628170af6d8efa61925afd0fd923a3859de878d18686b1d0aee7938281b5"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,10 +384,10 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_spatial_front_contact_feedback",
-  "next_task_id": "goal_primary_seated_spatial_support_reclosure",
+  "selected_task_id": "goal_primary_seated_spatial_support_reclosure",
+  "next_task_id": "goal_primary_seated_finite_pose_port_pullback",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
-  "load_BC": "Correctedfront2nominalcoarsecontactchecked; new22outerfeedbackmustclose. CorrectedfullXYZmassivespatialstring+existingplanarFinger/fixedglobalX/RootfreeY; actualfrontYcontacts/currentM5footprints14.35coreimplemented. Originalfront1INVALIDduplicatedMotorload; nofullyiterated22elastic/full3Drod/strength/globalenergy/physicalretention.",
+  "load_BC": "Coarseoriginalallcontacts/connectors/referenceelasticbodyloads; upstreamspatialstring/planarFingerfullworldweightsandcouplesiterated. RootfreeYincrementaccumulated; matchingarea-weightedpose/tractionlinearworkdual. Fullfiniteposepullback/currentconfiguration/globalenergy/full3Drod/physicalretention/anchor/strengthnotqualified.",
   "extension": {
     "three_finger": "Preserve AX/AO full3Finger originals and module ground bolt interface; current F0 motor axis atorigin cannot simply be120degree-duplicated without interference. Future common-ground layout and target100mm geometry remain UNQUALIFIED, no target relaxed.",
     "cartridge": "Current Root/Front two clamp bolts, root-only pins and original distal PET sliding retained; replaceable lateral module",
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "Same78P1 ONLY F0_SPOOL STEP/STL floorR11.00;77refsunchanged; originalmaterialpreserved,actual0.50wireseatedR11.25.",
+  "CAD_this_cycle": "NONE. Actual validation of SAME78partP1_seated22; everySTEP/assembly/BOM unchanged.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -625,5 +625,35 @@
   "authoritative_seated_report": {
     "path": "product_prototype/stage12_integrated/reports/primaryP1_seated_spatial_engineering2.md",
     "SHA256": "9c9a33ee64e1001246f6f8712b724433684b87ab6ede12215a48f4501fb81150"
+  },
+  "latest_seated_support_closure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/summary.json",
+    "SHA256": "7c5302a21e867d0abb9d8aed429ff006e39c6f40b8c19b94bb6fabcaa0d7cd3c"
+  },
+  "latest_seated_support_independent_verification": {
+    "elastic": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_elastic_verify3/summary.json",
+      "SHA256": "c7f5bb0da97d56c4d8b3d080e7db8f3c9f6b26a1cfb27f3210d088eede683413"
+    },
+    "ports": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_ports3/summary.json",
+      "SHA256": "87bf0e3e0002ea28b97762024f5072f6645f7f07ac0ca5d6da18e9a0a38c568a"
+    },
+    "geometry": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_geometry3/summary.json",
+      "SHA256": "bc4c9b5209833f1c6a4e742bae2a9f3eb3d1d843337c4068d25b269dc962029e"
+    },
+    "coverage": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_coverage3/summary.json",
+      "SHA256": "b752009fae95048cef777b72885ad71cb24e014d2da985b7f062d74ed8782d89"
+    },
+    "work": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_work_duality3/summary.json",
+      "SHA256": "e47b589b3f7a25ec1aadedc0d4f3f99bfa485123c529b0d3126ade9ff19528fc"
+    }
+  },
+  "latest_seated_reclosure_cycle": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle12_record1/summary.json",
+    "SHA256": "f21d0fa3374b6f353e38a24a8bbffd5093c0e53c207ed9667a460c1b8e8ff52a"
   }
 }

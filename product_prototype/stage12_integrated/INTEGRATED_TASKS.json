@@ -2201,10 +2201,71 @@
       "id": "goal_primary_seated_spatial_support_reclosure",
       "track": "C",
       "priority": -1010,
-      "status": "READY",
+      "status": "PARTIAL_VALIDATED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME78partP1_seated22. FIRST closecurrent22support/Fingerportfixedpointusingfront_h5_2andnew22feedback; originalfront1invalidloadispreservedhistoricalfailure,notcurrentinput. ActualMotorfrontFrame/CapY=-9.5 unilateralcontacts, freeYcoordinate witness -.01mm/Rootrelative slip and14.35mmM5core/currentfootprints/weights are implemented. Correctedcoarsefieldnowneedsone-wayfeedbackclosure/fullXYZRootfit/spatialstring/exitloadgeometryandworkbalance; do not promoteone-wayposesorfreeYgaugestopositivephysicalretention. CoarsebearingpatchareascurrentsixteenedgecirclesdifferfromexactCADupto2.55046416%; globaltetvolumePASSisnotfaceconvergence. Noautomaticblanketmesh/fine/gapretry. KeepR11.00floorandmatchednominal.50wire/nipple; independentlyresolve.00862degcurrent22helixexitfinitebending/shaftplay/diametertolerances. Full3DFinger,sourcecase/bearings/thread/minima/physicalBaseanchor/friction/protector/globalenergy/full3Fingerremainblocked.",
+      "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "motor_alignment_reactions",
+        "physical_mass_inertia",
+        "numerical_convergence",
+        "root_palm_strength",
+        "qualified_worst_case"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+        "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+      },
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "followup_rule": "Continue the same primary from actual failed/missing gates; create meaningful next tasks dynamically, not one-pass completion",
+      "cost": "3600seconds Worker;4GiB/420seconds each analysis child",
+      "last_run_utc": "2026-11-27T04:55:40.597793+00:00",
+      "consecutive_runs": 1,
+      "system_gate_contribution": 8,
+      "historical_parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/revAO_root2/summary.json",
+        "SHA256": "723e9e0fe4c58c0b399daf3f9767f66aa39c71e48f04a81be47c26e3166d4e2c"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+        "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+      },
+      "target_revision": "primaryP1_seated22",
+      "target_parts": 78,
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "5b0014cf0cf46dce680262956f5f733272af9220541524ad3fbffe6e0e83c50c"
+      },
+      "concrete_first_step": "Closecurrent22support/FingerfullXYZportfixedpointfromfront2/new22feedback,includingpose-dependentfixed/movingweightsandcouples; sameCAD/nofine/gap/timeoutretry.",
+      "known_blockers": [
+        "Correctedfront2localcoarsecontactclosed,butouternew22support/Fingerportfixedpointunclosed; inspectactualfeedbackdifferences.",
+        "Existingrodconstitutiveresponseplanar,source19supportposesone-way; new22fullyiteratedcontact/Fingerclosureabsent.",
+        "Finitewireexit/sourceplay/diametertolerances,thread/case/bearing/materialminima,physicalanchor/friction/protector/globalenergy/full3Fingerblocked."
+      ],
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle11_record2/summary.json",
+        "SHA256": "ce77b8d4a6d6d32d815a6ffb5b154f3800b34ffc415375028f57f656472c9f1a"
+      },
+      "result": "validation/integrated/primary_cycle12_record1/summary.json",
+      "reason": "Actualnewconditionalfixedpointandreferenceportworkdualitywithindependenttetra/ODE/BRep/mass/forcechecks; firstfreeYabsolute-targetFAILpreserved. All22unqualified; fullfiniteposepullbackand3Drod/physicalgatesremain.",
+      "next": "goal_primary_seated_finite_pose_port_pullback"
+    },
+    {
+      "id": "goal_primary_seated_finite_pose_port_pullback",
+      "track": "C",
+      "priority": -1011,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME78partP1_seated22 from primaryP1_reclosure3. FIRST derive/test finite SO3 pose-to-FE force/moment pullback as the transpose derivative of actual area-weighted Root fit + anchor transport and Motor rotation; include freeY increment and all fixed/moving weight positions/couples. Reference-linear work duality now passes, but it does NOT prove finite-pose/global work balance: current-position applied moment increment is recorded explicitly. Independently finite-difference virtual work and reject transpose/sign/anchor/double-weight corruptions before one bounded same-operator coupling update if justified. Keep original allcontactrows/boltbranches,nominalR11.00floor/0.50wire/sourceparts. No blanketfine/gap/timeoutretry or scalar energy identity promotion. Full3D lateral Finger/finite-wire exit bending/sourceplay/diametertolerance,2.55046416%bearingfaceconvergence,case/bearings/thread/minima/preload/physicalBaseanchor/friction/protector/globalenergy/full3Fingerremainunqualified.",
       "criteria": "Actual coherent primary CAD/BOM/material/load/BC and independent engineering evidence; retain all22system criteria and full same-revision final gates",
       "system_gate_ids": [
         "cad_model_match",
@@ -2242,17 +2303,16 @@
       "target_parts": 78,
       "primary_state": {
         "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-        "SHA256": "5b0014cf0cf46dce680262956f5f733272af9220541524ad3fbffe6e0e83c50c"
+        "SHA256": "bc7e17adcc5f2fdb6d77e03f4e8c29e7929da45f940d1f69e332d34fdbdf9de4"
       },
-      "concrete_first_step": "Closecurrent22support/FingerfullXYZportfixedpointfromfront2/new22feedback,includingpose-dependentfixed/movingweightsandcouples; sameCAD/nofine/gap/timeoutretry.",
+      "concrete_first_step": "Derive finite-pose Jacobian transpose for actual weightedRootfit/anchor and MotorSO3; independent finite-difference virtualwork before recoupling,notnewmesh.",
       "known_blockers": [
-        "Correctedfront2localcoarsecontactclosed,butouternew22support/Fingerportfixedpointunclosed; inspectactualfeedbackdifferences.",
-        "Existingrodconstitutiveresponseplanar,source19supportposesone-way; new22fullyiteratedcontact/Fingerclosureabsent.",
-        "Finitewireexit/sourceplay/diametertolerances,thread/case/bearing/materialminima,physicalanchor/friction/protector/globalenergy/full3Fingerblocked."
+        "Reference-linear work duality and conditional outer closure only; small-displacement elastic contact, planar rod, freeYcoordinate witness, mathematicalBaseport. No finiteSO3 tangent pullback or current-configuration global moment/work closure.",
+        "No mesh/face/time/strength/case/bearing/thread/minima/preload/physicalanchor/finitebend/friction/protector/globalenergy/full3Finger qualification. No new CAD this validation cycle."
       ],
       "parent_result": {
-        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle11_record2/summary.json",
-        "SHA256": "ce77b8d4a6d6d32d815a6ffb5b154f3800b34ffc415375028f57f656472c9f1a"
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle12_record1/summary.json",
+        "SHA256": "f21d0fa3374b6f353e38a24a8bbffd5093c0e53c207ed9667a460c1b8e8ff52a"
       },
       "result": null,
       "reason": null,

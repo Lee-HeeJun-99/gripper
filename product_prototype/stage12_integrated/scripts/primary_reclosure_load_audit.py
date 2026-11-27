@@ -1,0 +1,23 @@
+"""Actual closed P1 loads and port work: quantify reference/current limits.
+No stress allowables, finite bending properties or physical support invented.
+"""
+import sys,json,shutil
+import numpy as np
+from baseline_registry import ROOT,REPO,ref,dump
+from primary_support_feedback import fit
+def main():
+ out=ROOT/'validation/integrated'/sys.argv[1];out.mkdir(exist_ok=False);shutil.copyfile(__file__,out/'producer.py');assert not(ROOT/'runtime/STOP').exists();src=ROOT/'validation/integrated/primaryP1_reclosure2/summary.json';s=json.loads(src.read_text());a=np.load(REPO/s['field']['path']);state=json.loads((REPO/s['state']['path']).read_text());old=json.loads((REPO/s['source']['path']).read_text());n='F0_ROOT_BACK';p=a[n+'_points_mm'];t=a[n+'_tetra'];off=int(a[n+'_offset']);u=a['u_mm'][off:off+3*len(p)].reshape(-1,3);f=a['applied_force_N'][off:off+3*len(p)].reshape(-1,3).copy();vol=abs(np.linalg.det(p[t[:,1:]]-p[t[:,0,None]]))/6;lump=np.zeros(len(p))
+ for j in range(4):np.add.at(lump,t[:,j],vol/4)
+ f[:,2]+=lump*float(a[n+'_rho_kg_m3'])*1e-9*9.80665;sel=abs(p[:,0]-50.5)<1e-5;row,z,center=fit(p[sel],u[sel]);rigid=z[:3]+np.cross(z[3:],p-center);actualwork=float(np.sum(f*u));rigidwork=float(np.sum(f*rigid));nonrigidwork=float(np.sum(f*(u-rigid)));active=np.linalg.norm(f,axis=1)>1e-12;refw=np.r_[f.sum(0),np.cross(p*.001,f).sum(0)];rootdiff=refw-np.array(state['Root_origin_wrench_N_Nm'])
+ # Applied reference loads at deformed positions: NOT the nonlinear solution.
+ dM=np.zeros(3)
+ for n in s['elastic_bodies']:
+  pp=a[n+'_points_mm'];o=int(a[n+'_offset']);uu=a['u_mm'][o:o+3*len(pp)].reshape(-1,3);ff=a['applied_force_N'][o:o+3*len(pp)].reshape(-1,3);dM+=np.cross(uu*.001,ff).sum(0)
+ mo=int(a['motor_offset']);dM+=np.cross(a['u_mm'][mo:mo+3]*.001,a['applied_force_N'][mo:mo+3])
+ c=state['string'];C=np.array(s['pose']['motor_C_m']);R=np.array(s['pose']['motor_R']);mw=np.array(c['motor_origin_wrench_N_Nm']);localforce=R.T@mw[:3];localmoment=R.T@(mw[3:]-np.cross(C,mw[:3]));contact=[];labels=a['contact_label'];g=a['contact_gaps_mm'];pressure=a['contact_force_N']
+ for label in sorted(set(labels.tolist())):
+  q=labels==label;contact.append(dict(label=label,nodes=int(q.sum()),active=int(np.sum(pressure[q]>1e-8)),reaction_sum_N=float(pressure[q].sum()),minimum_gap_mm=float(g[q].min())))
+ checks=dict(root_traction_only_on_original_face=bool(np.all(sel[active])),root_force=np.linalg.norm(rootdiff[:3])<1e-8,root_moment=np.linalg.norm(rootdiff[3:])<1e-10,work_decomposition=abs(actualwork-rigidwork-nonrigidwork)<1e-16,shaft_command_axis_torque=abs(localmoment[1]-state['T_N']*.01125)<1e-10,front_gaps_open=all(r['minimum_gap_mm']>0 and r['reaction_sum_N']==0 for r in contact if r['label'].startswith('motor_front')))
+ result=dict(status='ACTUAL_P1_CLOSED_LOAD_AND_PORT_WORK_AUDIT_PASS' if all(checks.values()) else 'ACTUAL_P1_CLOSED_LOAD_AND_PORT_WORK_AUDIT_FAIL',candidate=s['candidate'],source=ref(src),producer=ref(out/'producer.py'),field=s['field'],checks={k:bool(v) for k,v in checks.items()},Root_traction_wrench_error_N_Nm=rootdiff.tolist(),root_port_fit=row,root_nodal_external_work_Nmm=actualwork,root_rigid_fit_external_work_Nmm=rigidwork,root_nonrigid_port_work_Nmm=nonrigidwork,reference_applied_deformed_position_moment_increment_Nm=dM.tolist(),downstream_rotor_wire_shaft_local_force_N=localforce.tolist(),downstream_rotor_wire_shaft_local_moment_Nm=localmoment.tolist(),shaft_local_axial_N=float(localforce[1]),shaft_local_radial_N=float(np.linalg.norm(localforce[[0,2]])),shaft_local_bending_Nm=float(np.linalg.norm(localmoment[[0,2]])),motor_command_torque_Nm=float(localmoment[1]),contact_groups=contact,bolt_loads_N=dict(zip(old['bolt_names'],a['bolt_force_N'].tolist())),newly_qualified_system_gate_ids=[],whole_system_release=False,limitations=['Port work decomposition is a local measured discrepancy, NOT global stored-energy closure. Reference-coordinate elastic/hardware loads remain original; current-position moment increment is a diagnostic of the linearization, NOT a newly balanced nonlinear equilibrium.','Rotor+wire downstream shaft wrench excludes own Motor housing gravity; actual bearing locations/ratings/case lands unknown. Axial/bending values are conditional demands, NOT capacities.','Root fitted rigid face has nonzero elastic distortion. Planar Finger constraints cannot certify full3D lateral response. No manufactured hardware, positive free-Y retention, physical Base anchor, thread/preload/source minima, finite-wire bending, mesh/time or full3Finger approval.'])
+ dump(out/'summary.json',result);print(json.dumps(result));raise SystemExit(0 if all(checks.values()) else 2)
+if __name__=='__main__':main()

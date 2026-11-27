@@ -1,0 +1,68 @@
+{
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "field_source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_front_h5_2/summary.json",
+    "SHA256": "99147ea70d18c38fe252c5ef133ecdb8f185b4a844bd474cdde91462a123c59f"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_front_h5_2/field.npz",
+    "SHA256": "92de7b67587b35b09654f72ab3d550b7f93f9dfebd92dbc9ce502040a006c4f3"
+  },
+  "loads": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_finger2/summary.json",
+    "SHA256": "b689bdcc7f894f4c6119478361271a27c9277d0b76e6371a5479a7888e57dafb"
+  },
+  "mass": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_seated_string1/mass_points.json",
+    "SHA256": "eaae4d77114cbd58cad7d6c98b6d0e31909a7f859bea3c579d6fdf4800bf7aef"
+  },
+  "seed": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand32_2/cases.json",
+    "SHA256": "6264026664105e9072420a79422d19bca0cabfe58fd16d0c32fdd519f6bdefaa"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/producer.py",
+    "SHA256": "f919aef820cfe87dcdf87e8cce0665e409c7f0b2e61d858b1c4d5c95ff78c7fd"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_seated_finger_v2.py",
+      "SHA256": "d6cf6f05903de72a435fe4feeb0dc6dd31168e88413fac947a30c2f5d8537632"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_seated_string.py",
+      "SHA256": "5bbd1922bd560e6b231e0915cf4216aef365f45f275ff8e79ecea53043222bbc"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_spatial_string.py",
+      "SHA256": "70fe1be5043af9e5b07d0462cf41c3ea2299c766ae065d3679d30ad4efc57d60"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_support_feedback.py",
+      "SHA256": "16e209c5a50af5f0c4041c1385607a5ad276ddb92d13f99573947781a2a3437b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_contact_polish_spatial.py",
+      "SHA256": "eb6784becd7e6d0b61c81a8847c4b7be8043f7d38df557b643836ba3a438e531"
+    }
+  ],
+  "criteria": {
+    "force_N": 1e-08,
+    "moment_Nm": 1e-10
+  },
+  "operator_checks": {
+    "original_stationarity": true,
+    "root_port_area": true,
+    "base_port_area": true,
+    "root_unit_wrenches": true,
+    "base_unit_wrenches": true
+  },
+  "port_area_mm2": {
+    "Root": 656.2633168508692,
+    "Base": 7863.991082370691
+  },
+  "boundary": "Original small-displacement reference geometry/gauges and linear selfweights; updated upstream pose-dependent fixed/moving weights and couples; finite Base traction is mathematical, NOT physical anchorage."
+}

@@ -1,0 +1,228 @@
+{
+  "status": "ACTUAL_P1_CLOSED_LOAD_AND_PORT_WORK_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure2/summary.json",
+    "SHA256": "51b0675b3a23e1acfa01c7375c93315fa99e1f177930ccc4a2b082fa3e55e0c0"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_load_work1/producer.py",
+    "SHA256": "4d7f62593a9c3c3170a43c4cb8da6f31abde437d517f33ea4b0a086b384cedaf"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure2/field.npz",
+    "SHA256": "25957180b93fff0a07d36daebf3f4a9f98f4ef793c3e09f8a1f29b02cb043487"
+  },
+  "checks": {
+    "root_traction_only_on_original_face": true,
+    "root_force": true,
+    "root_moment": true,
+    "work_decomposition": true,
+    "shaft_command_axis_torque": true,
+    "front_gaps_open": true
+  },
+  "Root_traction_wrench_error_N_Nm": [
+    -4.3298697960381105e-14,
+    2.7008274180468907e-19,
+    -3.1530333899354446e-14,
+    6.393361656601738e-14,
+    4.315992008230296e-15,
+    -2.0469973973993318e-14
+  ],
+  "root_port_fit": {
+    "center_mm": [
+      50.5,
+      -0.09144896033839031,
+      2.191969062088588
+    ],
+    "translation_mm": [
+      0.00022266558995875436,
+      -0.006176974505232062,
+      -8.854582326084278e-05
+    ],
+    "rotation_rad": [
+      7.254252260072147e-07,
+      7.412795353951146e-07,
+      1.8432411238002502e-06
+    ],
+    "max_fit_error_mm": 6.54461211793674e-07,
+    "rms_fit_error_mm": 1.4932078450228292e-07,
+    "nodes": 328
+  },
+  "root_nodal_external_work_Nmm": -1.2412111718592726e-05,
+  "root_rigid_fit_external_work_Nmm": -1.2448184993153974e-05,
+  "root_nonrigid_port_work_Nmm": 3.607327456125073e-08,
+  "reference_applied_deformed_position_moment_increment_Nm": [
+    1.3126370358349807e-05,
+    -5.425356921121998e-07,
+    3.216040819052527e-06
+  ],
+  "downstream_rotor_wire_shaft_local_force_N": [
+    0.1739541300951269,
+    0.00021262375580784077,
+    -1.400187352120641
+  ],
+  "downstream_rotor_wire_shaft_local_moment_Nm": [
+    -0.00027814871679046344,
+    0.013336230413029334,
+    1.3156759872570103e-06
+  ],
+  "shaft_local_axial_N": 0.00021262375580784077,
+  "shaft_local_radial_N": 1.410951686067161,
+  "shaft_local_bending_Nm": 0.00027815182842376733,
+  "motor_command_torque_Nm": 0.013336230413029334,
+  "contact_groups": [
+    {
+      "label": "frame_key_xmax",
+      "nodes": 27,
+      "active": 12,
+      "reaction_sum_N": 0.5037080634135016,
+      "minimum_gap_mm": -5.431852884152377e-17
+    },
+    {
+      "label": "frame_key_xmin",
+      "nodes": 27,
+      "active": 4,
+      "reaction_sum_N": 0.09509766937228784,
+      "minimum_gap_mm": -3.6120873002712384e-17
+    },
+    {
+      "label": "frame_key_ymax",
+      "nodes": 25,
+      "active": 12,
+      "reaction_sum_N": 0.428200136410072,
+      "minimum_gap_mm": -2.7722541330685996e-17
+    },
+    {
+      "label": "frame_key_ymin",
+      "nodes": 23,
+      "active": 9,
+      "reaction_sum_N": 0.428200136265136,
+      "minimum_gap_mm": -7.96688882289751e-17
+    },
+    {
+      "label": "frame_seat",
+      "nodes": 1115,
+      "active": 25,
+      "reaction_sum_N": 3.378118465202824,
+      "minimum_gap_mm": -1.3052438904009867e-16
+    },
+    {
+      "label": "ground_key_xmax",
+      "nodes": 35,
+      "active": 7,
+      "reaction_sum_N": 1.6223229466075524,
+      "minimum_gap_mm": -3.60260053126199e-17
+    },
+    {
+      "label": "ground_key_xmin",
+      "nodes": 37,
+      "active": 8,
+      "reaction_sum_N": 1.213712552564799,
+      "minimum_gap_mm": -4.111159112793472e-17
+    },
+    {
+      "label": "ground_key_ymax",
+      "nodes": 25,
+      "active": 8,
+      "reaction_sum_N": 0.034229666784128907,
+      "minimum_gap_mm": -2.3540316153617888e-17
+    },
+    {
+      "label": "ground_key_ymin",
+      "nodes": 23,
+      "active": 2,
+      "reaction_sum_N": 0.03422966663954714,
+      "minimum_gap_mm": 1.545835128739098e-19
+    },
+    {
+      "label": "ground_seat",
+      "nodes": 495,
+      "active": 28,
+      "reaction_sum_N": 10.236134693333083,
+      "minimum_gap_mm": -1.317153173639382e-16
+    },
+    {
+      "label": "motor_bottom",
+      "nodes": 11,
+      "active": 4,
+      "reaction_sum_N": 3.4298592472530878,
+      "minimum_gap_mm": -8.673617379884035e-19
+    },
+    {
+      "label": "motor_front_cap",
+      "nodes": 35,
+      "active": 0,
+      "reaction_sum_N": 0.0,
+      "minimum_gap_mm": 0.008819427163144744
+    },
+    {
+      "label": "motor_front_frame",
+      "nodes": 33,
+      "active": 0,
+      "reaction_sum_N": 0.0,
+      "minimum_gap_mm": 0.00888814963273814
+    },
+    {
+      "label": "motor_top",
+      "nodes": 11,
+      "active": 3,
+      "reaction_sum_N": 1.9365056676177366,
+      "minimum_gap_mm": -1.2576745200831851e-15
+    },
+    {
+      "label": "motor_xmax",
+      "nodes": 8,
+      "active": 4,
+      "reaction_sum_N": 1.017605378404014,
+      "minimum_gap_mm": -1.6890514594608552e-15
+    },
+    {
+      "label": "motor_xmin",
+      "nodes": 8,
+      "active": 2,
+      "reaction_sum_N": 0.8436756906059462,
+      "minimum_gap_mm": 0.0
+    },
+    {
+      "label": "root_seat",
+      "nodes": 205,
+      "active": 8,
+      "reaction_sum_N": 1.2626269818379166,
+      "minimum_gap_mm": -1.1122152461170987e-15
+    },
+    {
+      "label": "root_wall",
+      "nodes": 26,
+      "active": 5,
+      "reaction_sum_N": 0.23468070626292414,
+      "minimum_gap_mm": -1.3331078862338641e-15
+    }
+  ],
+  "bolt_loads_N": {
+    "RF0": 0.8169472361602879,
+    "RF1": 0.812216943936738,
+    "CAP-7_-29.5": 0.9302725631587645,
+    "CAP-7_-13.5": 0.4215740015187448,
+    "CAP7_-29.5": 0.0,
+    "CAP7_-13.5": 0.5116931856580632,
+    "GROUND0": 2.816796514262587,
+    "GROUND1": 1.059460143018073,
+    "GROUND2": 1.0398292949180028,
+    "GROUND3": 1.008305772625266,
+    "FIXTURE0": 4.080291734513167,
+    "FIXTURE1": 4.36317792880044,
+    "FIXTURE2": 3.9286597123502776,
+    "FIXTURE3": 4.0899523746092905
+  },
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Port work decomposition is a local measured discrepancy, NOT global stored-energy closure. Reference-coordinate elastic/hardware loads remain original; current-position moment increment is a diagnostic of the linearization, NOT a newly balanced nonlinear equilibrium.",
+    "Rotor+wire downstream shaft wrench excludes own Motor housing gravity; actual bearing locations/ratings/case lands unknown. Axial/bending values are conditional demands, NOT capacities.",
+    "Root fitted rigid face has nonzero elastic distortion. Planar Finger constraints cannot certify full3D lateral response. No manufactured hardware, positive free-Y retention, physical Base anchor, thread/preload/source minima, finite-wire bending, mesh/time or full3Finger approval."
+  ]
+}

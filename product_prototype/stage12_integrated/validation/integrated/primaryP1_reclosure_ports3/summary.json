@@ -1,0 +1,59 @@
+{
+  "status": "ACTUAL_P1_RECLOSURE_PORT_VERIFY_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure_ports3/verifier.py",
+    "SHA256": "5adceb1e7482c89daaf7c268fb30ada9b23f6431a76cebdf614cf6d66b4ef7da"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/summary.json",
+        "SHA256": "7c5302a21e867d0abb9d8aed429ff006e39c6f40b8c19b94bb6fabcaa0d7cd3c"
+      },
+      "checks": {
+        "hashes": true,
+        "root_world_wrench": true,
+        "port_force": true,
+        "port_moment": true,
+        "absolute_freeY": true,
+        "balanced_reference_force": true,
+        "balanced_reference_moment": true,
+        "unchanged_other_body_loads": true,
+        "motor_coordinate_retained": true,
+        "incompatible_shift_control_rejected": true
+      },
+      "port_force_difference_N": 1.1649568927720198e-13,
+      "port_moment_difference_Nm": 1.006056953555143e-13,
+      "absolute_freeY_additional_mm": 6.83839464953086e-11,
+      "Root_reconstructed_error": [
+        0.0,
+        0.0,
+        4.551914400963142e-15,
+        -8.470329472543003e-21,
+        -2.7755575615628914e-17,
+        0.0
+      ],
+      "reference_applied_balance_N_Nm": [
+        4.163336342344337e-16,
+        1.9353065027147908e-18,
+        1.0880185641326534e-14,
+        -8.630249292984615e-17,
+        1.942890293094024e-16,
+        -9.253834948753231e-20
+      ],
+      "other_body_delta_wrench_max": 0.0,
+      "root_coordinate_mm": -0.006001041424286886,
+      "negative_control_shift_mm": 0.0037634601333160537
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Unchanged reference-geometry elastic/hardware selfweights. Finite mathematical Base port balances actual reference loads; this is NOT physical anchorage or geometrically nonlinear global work closure.",
+    "Planar Finger constitutive law with spatial string; no lateral Finger equilibrium, stress convergence, source minima, physical retention or full3Finger release."
+  ]
+}

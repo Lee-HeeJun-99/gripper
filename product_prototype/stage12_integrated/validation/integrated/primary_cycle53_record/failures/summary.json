@@ -1,0 +1,137 @@
+{
+  "status": "ACTUAL_P1_NEW_FINITE_GUIDE_THREAD_BORE_STATICS_AND_PIN_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_guide53/summary.json",
+    "SHA256": "784f0207e1560b3def452c15b60f38a3314de611d1aa10d38338832fb7021575"
+  },
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_audit_execution/execution.json",
+        "SHA256": "694899660b2e0d2648129d65d0bf693e793950fd8997af2f6c6e601790a493de"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_audit_execution/analysis.log",
+        "SHA256": "a4cd81328089e2ea7a5eb21d4f49c10321e58d395f1e169fe078b7fa0f248940"
+      },
+      "log_tail": "newly_qualified_system_gate_ids=[],accepted_physical_product_equilibria=0,limitations=['Gaugefixedsupport only for constructing relativeworkwitness;actualstatics has no declaredsupportfixation','Certificate rejects this finite310contactset/pose only;not productfailure orcompletecontactsequence','Conditionalplanarports are unimplemented and NEVER physicalreactions','Sourcepose also has pininterference independentlyrecorded;no physicalendpointqualification']));print(json.dumps(dict(checks=checks,certificate=cert,planar=s.success)))\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/baseline_registry.py\", line 11, in dump\n    def dump(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,allow_nan=False)+'\\n')\n  File \"/usr/lib/python3.10/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 201, in encode\n    chunks = list(chunks)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.10/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/usr/lib/python3.10/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type bool is not JSON serializable\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_bore_execution/execution.json",
+        "SHA256": "a988e48d477bf7398cc423270045889103396808c01f293f28be4f846f802675"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_bore_execution/analysis.log",
+        "SHA256": "1506a982a1795d17835581ca0df2b6b509b6da86b53515da3baa0300915c1b64"
+      },
+      "log_tail": "{\"checks\": {\"two_actual_borepaths\": true, \"fresh_parent_all1740bindings\": true, \"all108DOFs_retained\": true, \"unit_separation_equilibrium\": false, \"no_bore_envelope_force\": true, \"no_declared_fixation\": true}, \"residual\": null, \"contacts\": 310, \"borepoints\": [8, 8], \"Farkas\": true}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_contact_execution/execution.json",
+        "SHA256": "b9ef533c11ab7c8b40ce68540f6b7de2aefd77d6c8e67dd1448bac503d60b128"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_contact_execution/analysis.log",
+        "SHA256": "7f8a2bc1382808ccbe499516054430e23d4a5fe05ebd336934a2a38eb81e0eb5"
+      },
+      "log_tail": "Traceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_contact53.py\", line 103, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_contact53.py\", line 24, in main\n    out=ROOT/'validation/integrated/primaryP1_contact53';out.mkdir();shutil.copyfile(__file__,out/'producer.py');sp=ROOT/'validation/integrated/primaryP1_takeup53c/summary.json';state=json.loads(sp.read_text());cp=REPO/state['candidate']['path'];assert sha(cp)==state['candidate']['SHA256'];cad=json.loads(cp.read_text());assert all(sha(REPO/r['path'])==r['SHA256'] for r in [*cad['part_references'].values(),cad['assembly'],cad['BOM']]);names=state['body_names'];posed={};faces={};bindings=[];contacts=[];op=state['opening_mm']\n  File \"/usr/lib/python3.10/pathlib.py\", line 1134, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n  File \"/usr/lib/python3.10/pathlib.py\", line 1119, in open\n    return self._accessor.open(self, mode, buffering, encoding, errors,\nFileNotFoundError: [Errno 2] No such file or directory: '/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/validation/integrated/primaryP1_takeup53c/summary.json'\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_contactb_execution/execution.json",
+        "SHA256": "20f48f0e3d85452762e86a96ed4387d134fc0a1c62a409f8e35a8aa8516e9c63"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_contactb_execution/analysis.log",
+        "SHA256": "8c262c4c5676011cd42d357ec62a56b0bf55b84ae4fb126d9344cbd039930f82"
+      },
+      "log_tail": "{\"mount\": 0, \"bindings\": 588, \"failed\": 0}\n{\"mount\": 1, \"bindings\": 972, \"failed\": 0}\n{\"mount\": 2, \"bindings\": 1356, \"failed\": 0}\n{\"mount\": 3, \"bindings\": 1740, \"failed\": 0}\n{\"checks\": {\"all_actual_bindings\": true, \"finite108DOFs\": true, \"no_external_torque_or_declared_rotation_fixation\": true, \"unit_separation_equilibrium\": false, \"virtualwork\": true}, \"contacts\": 294, \"failed_bindings\": 0, \"residual\": null}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_contactc_execution/execution.json",
+        "SHA256": "54f25140e09dc0851da45a13eceec454c4930ed3bd5c116f0f412b8f18bf5f28"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_contactc_execution/analysis.log",
+        "SHA256": "ed5888dcf0103d00f048f42ce137f44fdc360c839430d30b9d2d14487e1e80e0"
+      },
+      "log_tail": "{\"mount\": 0, \"bindings\": 672, \"failed\": 0}\n{\"mount\": 1, \"bindings\": 1056, \"failed\": 0}\n{\"mount\": 2, \"bindings\": 1440, \"failed\": 0}\n{\"mount\": 3, \"bindings\": 1824, \"failed\": 0}\n{\"checks\": {\"all_actual_bindings\": true, \"finite108DOFs\": true, \"no_external_torque_or_declared_rotation_fixation\": true, \"unit_separation_equilibrium\": false, \"virtualwork\": true}, \"contacts\": 336, \"failed_bindings\": 0, \"residual\": null}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_pinpose_execution/execution.json",
+        "SHA256": "3527349f4e61bab9d0f909bec3a7ff2f99827dca126a51da34d491a397d8a81a"
+      },
+      "exit_code": 2,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_pinpose_execution/analysis.log",
+        "SHA256": "fb0a9031f1ed1c255b23c751933794573e7305cbcbf91628318e7794841ad1da"
+      },
+      "log_tail": "[{\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_0\", \"b\": \"BENCH_MOUNT_SOCKET_KEY_0\", \"intersection_mm3\": 0.0, \"distance_mm\": 0.14261101003677268, \"elapsed_s\": 0.03922794992104173}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_0\", \"b\": \"BENCH_ANCHOR_RAIL\", \"intersection_mm3\": 0.0, \"distance_mm\": 0.1499999999995775, \"elapsed_s\": 0.24005678901448846}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_1\", \"b\": \"BENCH_MOUNT_SOCKET_KEY_1\", \"intersection_mm3\": 1.1921789277732686, \"distance_mm\": 0.0, \"elapsed_s\": 0.03962501208297908}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_1\", \"b\": \"BENCH_ANCHOR_RAIL\", \"intersection_mm3\": 0.0, \"distance_mm\": 0.1499999999995771, \"elapsed_s\": 0.23431760491803288}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_2\", \"b\": \"BENCH_MOUNT_SOCKET_KEY_2\", \"intersection_mm3\": 0.0, \"distance_mm\": 0.14267157654252138, \"elapsed_s\": 0.03346206806600094}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_2\", \"b\": \"BENCH_ANCHOR_RAIL\", \"intersection_mm3\": 0.0, \"distance_mm\": 0.1499999999995771, \"elapsed_s\": 0.2378574749454856}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_3\", \"b\": \"BENCH_MOUNT_SOCKET_KEY_3\", \"intersection_mm3\": 1.1921809351155397, \"distance_mm\": 0.0, \"elapsed_s\": 0.03965494595468044}, {\"state\": \"COMPLETE\", \"a\": \"BENCH_MOUNT_SPLIT_PIN_3\", \"b\": \"BENCH_ANCHOR_RAIL\", \"intersection_mm3\": 0.0, \"distance_mm\": 0.1499999999995775, \"elapsed_s\": 0.252434795955196}]\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_takeupc_execution/execution.json",
+        "SHA256": "b0e4a890253fda78a187cbc9b8c9d8829f790bced9c3d6087af3414a3d654a6d"
+      },
+      "exit_code": 1,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary53_takeupc_execution/analysis.log",
+        "SHA256": "b97c9cfb845ac50ac08b1f7445361c8f68b4ce42d16d515ae8fa2c99a4a4bb1a"
+      },
+      "log_tail": "69666143, -0.03375088304817599, 0.08142732562632582, -0.005878456439040166], \"minimum_gap_mm\": -0.0008895305496547934, \"phase_residual_mm\": 0.00017170773463555476}\n{\"start\": 1, \"success\": false, \"message\": \"Iteration limit reached\", \"iterations\": 200, \"q\": [-0.0001828775693939428, 0.18835661660463682, 0.0019418220100675086, 0.046952097782473466, 0.06541862648314907, 0.0035357084378350783, 0.027521847113086195, -0.0034180869733706825, 0.07703217536348418, 0.0066971907679082105, 0.007071836736644699, 0.05089848153431979, 0.085340502578582, 0.029494321247909346, -0.0014442867910964725, 0.05122806833832019, 0.08529731062336368, 0.012509072937806003, -0.003925662741496234, 0.020670313184832433, 0.014458133306982241, -0.01648267563220259, -0.0011810591388883547, 0.026244571813582952, 0.0011687774309963555, -0.033589675950291026, 0.08803553691110569, 0.028394075426118475, -0.0025470191232168414, -0.03518484308698991, 0.08771548440267128, 0.010796672520422797], \"minimum_gap_mm\": -0.0007361170046926158, \"phase_residual_mm\": 2.76806413995051e-07}\nTraceback (most recent call last):\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_takeup53c.py\", line 69, in <module>\n    if __name__=='__main__':main()\n  File \"/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_takeup53c.py\", line 56, in main\n    feasible=[s for s in solutions if s['success'] and s['minimum_gap_mm']>-1e-8 and s['phase_residual_mm']<1e-8];assert feasible\nAssertionError\n"
+    }
+  ],
+  "failure_causes": [
+    "FirstplanarsearchassumedclosedYkeycage;actualsurfaceextractionshowsopenY;rejectedsource/snapshotpreserved",
+    "FixedguideposeunreducedSLSQP3startsreachiterationlimit200;assertnoacceptedpose;logpreserved;dependentcontactlaunchhadmissingposeandexit1;noresultfabricated",
+    "Reducedfeasibleinitializationeliminatesfixedvariablesandthreadphasealgebra;validnewfinitecandidatewithoutcriteriarelaxation",
+    "Oldguide52newpose1740bindings/294contactLPFAIL;actual16crest/borepointsadded310contactLPstillFAIL,independentFarkasvalidated;NOTwholeproductfailure",
+    "Oldguide52pinsfollowreceivercausesactual1.19217892777/1.19218093512mm3pin/keyintersections;notacceptableassemblypose",
+    "Firstindependentnumpyboolserializationexit1;originalsource/logpreserved;newbresultwrapsbool",
+    "Newguide53fresh1824boundarybindings/336uniformpatchcontactLPFAIL;expanded912independentboundpointforcesalsoFAIL;nofalseuniformpatchorplanarPASS"
+  ],
+  "old_guide_pin_collision": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinpose53/summary.json",
+    "SHA256": "78bd8bbef4e35e33822675de3ca24260936aa9ae05723b9fc34d11f992fff37f"
+  },
+  "new_guide_clear_pin_endpoint": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinpose53b/summary.json",
+    "SHA256": "182fb8db3068e8615885666a3a0343ee5f72878b9e23237156221440db57718a"
+  },
+  "old_guide_bore_FAIL": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bore53/summary.json",
+    "SHA256": "8b74a31074d93c0be1462dab21e531307291a36cc19ac6946f16871cea0aabbc"
+  },
+  "old_guide_independent_audit": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_audit53b/summary.json",
+    "SHA256": "d977b36058eb4712a144a601ffff9cf927b461005ba5bbeefbd24abb1d5b785a"
+  },
+  "new_guide_unit_FAIL": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contact53c/summary.json",
+    "SHA256": "2ee5428005f5c267fd73db89bec015dcc2506a62dec10c7318752afc4148ecd7"
+  },
+  "expanded_point_force_FAIL": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pointtraction53/summary.json",
+    "SHA256": "0997a715598532446f7a9acd0bcc35ec4918037887996ac9965084fc93839f38"
+  },
+  "metadata_scope_corrections": [
+    "Reusedguideverifierchecknamechanged_two_single_validandChanged2limitationarehistoricalwording;canonicalCADhasONEchangedreceiverand127unchangedparts",
+    "GuideslotYgapremains.1mm;newXgap.05mmisnominalCAD,NOTqualifiedmachiningcapability",
+    "Pinmidpointposesareexplicitkinematiccandidateplacements;noimpliedpinfixationorcapacity",
+    "Sampledpathandfiniteboundariescannotcertifycontinuouscontact/CCD/globalenergy"
+  ],
+  "whole_system_release": false,
+  "predecessor": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle52_record/summary.json",
+    "SHA256": "d9757978f2946004f3be47db840eccaef1d27d29b2484b410230a2eb0f1b16dd"
+  }
+}

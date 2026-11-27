@@ -1,0 +1,169 @@
+{
+  "status": "ACTUAL_P1_SAVED_CONDITIONAL_JOINT_AND_FREE_SCREW_RECONSTRUCTION_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/summary.json",
+    "SHA256": "a215c5d13cdd0936c45ed6073098fdc34ffbe56663790bedcf8b7c926e39627d"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_installed51_saved/verifier.py",
+    "SHA256": "561581099625fb982271f113fde43e5798f5f9f9384503a01ded9836fe5cccb3"
+  },
+  "endpoint": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_installed51/summary.json",
+    "SHA256": "a0072966efca4f3e17645760e5e22655f4b18018249ad2518d781e3e7242b503"
+  },
+  "conditional_port_solution": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_port51/summary.json",
+    "SHA256": "da78182b28e0ac788e9eba8b2c45638198ecf58be5ad9bf38a7b39e9056ee299"
+  },
+  "checks": {
+    "actual128CAD_assembly_BOM_hashes": true,
+    "independent_wrenches": true,
+    "all36DOF_conditional_balance": true,
+    "reactions_nonnegative": true,
+    "independent_spatial_virtualwork": true,
+    "free_screw_zero_contact_work": true,
+    "positive_unbalanced_axial_work": true,
+    "required_port_work_cancels": true,
+    "all7_saved_state_negative_controls_reject": true,
+    "finite_actual_face_binding": true,
+    "one_physical_loaded_flank": true,
+    "original_pure_axial_FAIL_preserved": true
+  },
+  "independent_balance_residual": 1.0200174038743626e-15,
+  "independent_column_error": 4.440892098500626e-16,
+  "independent_virtual_work_error": 3.552713678800501e-15,
+  "free_screw_contact_work": 1.013847651665234e-10,
+  "free_screw_unbalanced_axial_work_Nmm": 0.12732395447351627,
+  "negative_controls": [
+    {
+      "removed_family": "thread",
+      "force_moment_error": 1.0,
+      "rejected": true
+    },
+    {
+      "removed_family": "headseat",
+      "force_moment_error": 1.0,
+      "rejected": true
+    },
+    {
+      "removed_family": "nutseat",
+      "force_moment_error": 1.0,
+      "rejected": true
+    },
+    {
+      "removed_family": "nutcage",
+      "force_moment_error": 0.12732395461379972,
+      "rejected": true
+    },
+    {
+      "removed_family": "socket",
+      "force_moment_error": 0.12732395461379972,
+      "rejected": true
+    },
+    {
+      "removed_family": "keycage",
+      "force_moment_error": 0.12732395461379972,
+      "rejected": true
+    },
+    {
+      "control": "reversed_required_port_torque",
+      "force_moment_error": 0.25464790922759944,
+      "rejected": true
+    }
+  ],
+  "normal_bindings": 444,
+  "finite_thread_patches": 48,
+  "singular_values": [
+    41.949158467960814,
+    41.93873834061808,
+    21.3001582661213,
+    15.7440994718846,
+    15.690019002825132,
+    9.00017873719554,
+    7.368441335207031,
+    7.2612645384419015,
+    7.153622153261627,
+    6.73586448630084,
+    4.213803086019071,
+    4.000000000000002,
+    3.0352997055808593,
+    1.3936652779822791,
+    1.205173130773641,
+    0.5551624443737628,
+    0.5551470010592253,
+    0.019749340134014148,
+    0.015886092434836352,
+    4.215828130748882e-10,
+    2.9502866567763466e-15,
+    2.797471059288815e-15,
+    8.93139610272301e-16,
+    3.871366446058472e-16,
+    3.7784812862375273e-16,
+    3.0448877376353677e-16,
+    2.200152208265773e-16,
+    1.1461796082322928e-16,
+    7.691941990306346e-17,
+    1.042456541274365e-26,
+    3.601710185745187e-27,
+    1.4201144434652204e-31,
+    8.600586893782356e-32,
+    4.077273349147548e-32,
+    1.3583813223383e-32,
+    9.931706348447908e-34
+  ],
+  "body_balances": [
+    [
+      4.163336342344337e-17,
+      -2.0816681711721685e-17,
+      1.1102230246251565e-16,
+      6.106226635438361e-16,
+      -1.0200174038743626e-15,
+      0.0
+    ],
+    [
+      -4.163336342344337e-17,
+      2.0816681711721685e-17,
+      -1.1102230246251565e-16,
+      -6.661338147750939e-16,
+      8.881784197001252e-16,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      5.551115123125783e-17,
+      2.0816681711721685e-17,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "required_port_torque_implemented": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

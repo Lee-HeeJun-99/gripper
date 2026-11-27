@@ -1,0 +1,56 @@
+{
+  "status": "ACTUAL_P1_INSTALLED_PURE_AXIAL_AND_INCOMPLETE_SEQUENCE_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_thread49f/summary.json",
+    "SHA256": "a215c5d13cdd0936c45ed6073098fdc34ffbe56663790bedcf8b7c926e39627d"
+  },
+  "pure_axial_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_installed51/summary.json",
+    "SHA256": "a0072966efca4f3e17645760e5e22655f4b18018249ad2518d781e3e7242b503"
+  },
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary51_installed_execution/execution.json",
+        "SHA256": "39c5c64169ba783093509da688b47457feb79398c01e5508b785d0d90ba84a2d"
+      },
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary51_installed_execution/analysis.log",
+        "SHA256": "aef201f70b44e5424591c7e89fcbac16347de0c1285ca2dca8583afdc51afb31"
+      },
+      "log_tail": "{\"completed_thread_patch\": 0}\n{\"completed_thread_patch\": 8}\n{\"completed_thread_patch\": 16}\n{\"completed_thread_patch\": 24}\n{\"completed_thread_patch\": 32}\n{\"completed_thread_patch\": 40}\n{\"checks\": {\"all128part_assembly_BOM_hashes_unchanged\": true, \"actual_face_distances\": true, \"actual_oriented_normals\": true, \"one_loaded_thread_side_only\": true, \"normalized_36DOF_unilateral_balance\": false, \"all_six_missing_path_controls_rejected\": true, \"explicit_pin_remains_unloaded_clear\": true, \"spatial_virtual_work\": true}, \"binding_count\": 444, \"maxdistance\": 1.405871541668302e-10, \"maxnormal\": 1.1161318397290287e-09, \"balance\": null, \"opening\": 0.05750657156371778, \"pin_gaps\": [{\"a\": \"BENCH_MOUNT_SOCKET_KEY_0\", \"b\": \"BENCH_MOUNT_SPLIT_PIN_0\", \"minimum_gap_mm\": 0.04859812269984187, \"normal_reaction_N\": 0.0, \"active\": false}, {\"a\": \"BENCH_MOUNT_SPLIT_PIN_0\", \"b\": \"BENCH_ANCHOR_RAIL\", \"minimum_gap_mm\": 0.14999999999957744, \"normal_reaction_N\": 0.0, \"active\": false}], \"controls\": [{\"removed\": \"thread\", \"feasible\": false}, {\"removed\": \"headseat\", \"feasible\": false}, {\"removed\": \"nutseat\", \"feasible\": false}, {\"removed\": \"nutcage\", \"feasible\": false}, {\"removed\": \"socket\", \"feasible\": false}, {\"removed\": \"keycage\", \"feasible\": false}]}\n"
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary51_sequence_execution/execution.json",
+        "SHA256": "4703c0e97933cd14635ddf4a17edba6c1d795f0e5faaf842e873aa8d5ca316ba"
+      },
+      "exit_code": -15,
+      "timeout": true,
+      "STOP": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary51_sequence_execution/analysis.log",
+        "SHA256": "81223a4d16c40ade06c802490a55029cc5f69c47045b42aaa97b5efbc7e1c4a3"
+      },
+      "log_tail": "{\"stage\": \"axial_slack\", \"u\": 0.0, \"max_intersection\": 0.0}\n{\"stage\": \"axial_slack\", \"u\": 0.5, \"max_intersection\": 0.0}\n"
+    }
+  ],
+  "sequence": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle51_record/incomplete_sequence/summary.json",
+    "SHA256": "d339f223aa97024c3c4b7dede7c69866d934bea73f4c1edec9bb74069e141721"
+  },
+  "required_wrench_ports": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_port51/summary.json",
+    "SHA256": "da78182b28e0ac788e9eba8b2c45638198ecf58be5ad9bf38a7b39e9056ee299"
+  },
+  "standalone_free_screw_unbalanced_work_Nmm_per_rad": 0.12732395447351627,
+  "prior_all_failures": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle50_record/summary.json",
+    "SHA256": "3e12ebfe2053cacb79a4ee40d40f93eeaa24008dc14ae76d51423631de2f108d"
+  },
+  "no_false_system_PASS": true,
+  "whole_system_release": false
+}

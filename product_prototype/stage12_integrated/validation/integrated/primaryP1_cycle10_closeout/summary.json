@@ -1,0 +1,417 @@
+{
+  "status": "ACTUAL_P1_CYCLE10_EXACT_BYTE_HANDOFF_NOT_RELEASE",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cycle10_closeout/producer.py",
+    "SHA256": "befff6badb1b95d77f782cad24dd4b76063add507133d85c50c5fd86ec96f095"
+  },
+  "main": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/summary.json",
+    "SHA256": "d2d29c3aef93107833c13bfbaaf143b8bda71bf9805eb5bb1595d6755db09aa3"
+  },
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_retention20/summary.json",
+    "SHA256": "e8adee1e5db7fd85668a028130397089c10a890a1e1af6693f88526ee627dabf"
+  },
+  "corrected_report": {
+    "path": "product_prototype/stage12_integrated/reports/primaryP1_retention_feedback_closeout.md",
+    "SHA256": "dc8a1221671a5a706fe0bb5e8490fcf6fd027ec3e29fc40892e219ccb693f88b"
+  },
+  "initial_report": {
+    "path": "product_prototype/stage12_integrated/reports/primaryP1_retention_feedback_engineering.md",
+    "SHA256": "b797328111bcabd28550e7ad76557ab385e1cd0e28dc67e4071618c462be7894"
+  },
+  "authoritative_system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state12.json",
+    "SHA256": "e97f713778cf886c01504a366996cc47ed5d302ce147d780264710380906c6ac"
+  },
+  "actual_retention_pose_counts": {
+    "hardware_poses": 56,
+    "tool_poses": 124,
+    "bolt_indexing_poses": 52,
+    "exact_comparisons": 360
+  },
+  "final_trusted_release": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release15/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "final_trusted_release_exit_code": 2,
+  "release_error_count": 24,
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "received_checkpoint": {
+    "path": "product_prototype/stage12_integrated/CHECKPOINT.md",
+    "SHA256": "8ac54262f8a0986b60f79c4c672322b8490b6a52655c4eb22e92be02c4a6b494"
+  },
+  "received_manager_checkpoint": {
+    "path": "product_prototype/stage12_integrated/runtime/goal_authorized_20261127_7/checkpoint_before9.json",
+    "SHA256": "456b6026c2b38d8d8710f131848bf87bc135b33bbe18853d2104d49c88a47dcc"
+  },
+  "executions": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_axial_surface_audit.py",
+        "primaryP1_axial_audit1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.2028657130431384,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/axialaudit_execution.json",
+        "SHA256": "57b9c6bbea8f07d7bd59b623a2f96308fca34df2946dcf46c841f530acc4ac0e"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_axial_gap_audit.py",
+        "primaryP1_axial_gap1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.102500120177865,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/axialgap_execution.json",
+        "SHA256": "626c36476017edd2f6d0939da3380c2ae66461a8f31b67d40f024905a3ead5ff"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ground_retention.py"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.4064836748875678,
+      "PID": 6,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/cad20_execution.json",
+        "SHA256": "f6b15c22e99581609a500f261d6e57a442e1f88c3c2c1598aea0d3755a564ce1"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_support_feedback.py",
+        "primaryP1_support_feedback1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 31.047875253017992,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/feedback_execution.json",
+        "SHA256": "d363c2ded46808c2ac7541f5138ea1c1697794e930336537ac27ed0caee10298"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_support_feedback.py",
+        "primaryP1_support_feedback_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 14.825123799033463,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/feedbackverify_execution.json",
+        "SHA256": "0f62d494ea5f46b0be8b59f0cd4da74b91d6fcb133c082073e04043b3b5283a4"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release15"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.40104897506535053,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/finalrelease15_execution.json",
+        "SHA256": "84c387b5d12250e8b6f43f794c215c8704ccdc0660400aa268ec9916c79f08f7"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_loaded_catenary.py",
+        "--candidate",
+        "primaryP1_retention20",
+        "--tag",
+        "primaryP1_retention_loaded1",
+        "--states",
+        "primaryP1_gravity_cat_demand32_2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 10.117284319829196,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/loaded20_execution.json",
+        "SHA256": "eec71c89891a3f32d9305b165ac94fbbc1602f30fbe9b7f4d83e3ba2e9e46aef"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_validation.py",
+        "--candidate",
+        "primaryP1_retention20",
+        "--tag",
+        "primaryP1_retention_assembly1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 6.009782081935555,
+      "PID": 3,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/module20_execution.json",
+        "SHA256": "217d7a238e3510e800aa82647bdc8fd2ada17af3b60bd8274d3daa9980244c8d"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_fixture_module_verify.py",
+        "--candidate",
+        "primaryP1_retention20",
+        "--validation",
+        "primaryP1_retention_assembly1",
+        "--tag",
+        "primaryP1_retention_verify1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 4.508804467041045,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/moduleverify20_execution.json",
+        "SHA256": "acb752ed178a7475b45b1803acb23ec19795ed144d715a2ab6977d1c4f2c8f94"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_retention_order.py",
+        "primaryP1_retention_order1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 2.304803972830996,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/order20_execution.json",
+        "SHA256": "f45fccda64b677c7fc2c96c350d129ee80a274f1278c4e2036da2f9b2108d64f"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release14"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4010851851198822,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/release14_execution.json",
+        "SHA256": "6921616315184a5b2b4faaeeeeea31563e12a4c7b5f3535c4317fa6474c57d7f"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_retention_witness_v2.py",
+        "primaryP1_retention_witness2"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 5.41722649615258,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/retentionwitness2_execution.json",
+        "SHA256": "951c8550f4648cfb7e2a063a6e01679a525fcf63a031c179af1dd79ea0f54069"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_retention_witness_v3.py",
+        "primaryP1_retention_witness3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.5068702390417457,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/retentionwitness3_execution.json",
+        "SHA256": "a368e0c679f14a6ede1138752776bb3c5191a3c192d4a9fad655a2d7c1f8cf12"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_retention_witness_v4.py",
+        "primaryP1_retention_witness4"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 4.709161222912371,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/retentionwitness4_execution.json",
+        "SHA256": "6a13ebf4cd624cbdf50c1430d4d77f81118c65c07eef10318e41b7b2bf64016c"
+      }
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_retention_witness.py",
+        "primaryP1_retention_witness1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 3.506788718048483,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "record": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle10/retentionwitness_execution.json",
+        "SHA256": "d788e66c1dad0d1822854c4712751fdd953c6924ac4ddf7a8c496bafcaae48ea"
+      }
+    }
+  ],
+  "analysis_children_reaped": 15,
+  "recorded_child_seconds": 92.46770423813723,
+  "new_timeouts": 0,
+  "new_unknown_child_times": 0,
+  "historical_two420s_limit_races_preserved": true,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "actual_changed_parts": [
+    "GROUND_BOLT_0",
+    "GROUND_NUT_0",
+    "GROUND_BOLT_1",
+    "GROUND_NUT_1",
+    "GROUND_BOLT_2",
+    "GROUND_NUT_2",
+    "GROUND_BOLT_3",
+    "GROUND_NUT_3"
+  ],
+  "unchanged_STEP_refs": 70,
+  "next_task_id": "goal_primary_spatial_front_contact_feedback",
+  "whole_system_release": false,
+  "hardware_status": "HARDWARE_NOT_MEASURED",
+  "SOFA_runs": 0,
+  "new_FEM_solves": 0,
+  "git_add_commit_attempted": false,
+  "save_status": "PENDING_SUPERVISOR_EXACT_SAVE",
+  "limitations": [
+    "Parent19fieldbelongsoldhardware/incompleteYcontactmodel; new20notfullycoupled.",
+    "One-wayplanarfeedback excludesactual3Dtilt/freeY/spatialgroovecontact. RootreportedwrenchmovingFingersubsetonly;fixedweights/localtractionmustbeadded.",
+    "Smooththreadenvelopes/projection/source-dimensiontoolpaths not engagement/preload/materialminimum/strength orphysicalassembly.",
+    "Oldmesh/time/gap/energyFAILsandtwo420slimitracespreserved; no newFEM/SOFA orfine/gapretry.",
+    "PhysicalBaseanchor/case/bearing/minima/friction/protector/globalenergy/full3Finger/Stage3remainblocked."
+  ]
+}

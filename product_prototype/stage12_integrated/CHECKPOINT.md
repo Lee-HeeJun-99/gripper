@@ -1,3 +1,78 @@
+# Latest actual P1 internal retention and support feedback — 2026-11-27, Supervisor save pending
+
+Actual starting HEAD a6bcbfbfa2241f9ae3f892ab98da54c43cc6e3e3.
+Selected exact task goal_primary_framekey_fit_feedback.
+SAME ONE primaryP1_retention20,78parts; failedAO/adoptedAA and original
+3Finger/cartridge/jamming extension preserved. Actual CAD changes ONLY8internal
+GroundM5bolt/nut STEP/STL: source-dimensional ISO4762M5x20fullthread/4AFsocket
+2.5deep and ISO4032M5 8AF/4.7hexnuts.70STEPrefsunchanged. Full78assembly/BOM
+and identity7 bindactualrefs. Frame/Groundkey and proven1101motor/1996hub/Finger reused.
+
+12mmgrip/3.3mmprojection(4.125pitches),not effectiveengagement/preload/threadcapacity.
+Exacthead32.986722863/nut31.667331399mm2areas matchindependentanalytic/overlap
+checks within6e-12relative. Nutfootprintchangedfromold43.297115793mm2; new
+conditionalminorcorelength14.35mm/k176765.277266N/mm replaces14mm. Old19field
+cannotbe transferred asnew20stress/reactions. ConditionalCADmass.989532670863kg,
++.708886998gfrom19; requiredBasewrench[-.408610416667,0,9.704000566719,
+-.076747158989,-.219469462599,0]N/Nm. Not measuredmass/sourcebound/physicalanchor.
+
+78validsolids/191Booleanpairs/nointerference. 56internalhardware+124toolposes
+including52Lkeyindexposes/360comparisons;63Basefixtureposes/91comparisons;
+81moduleposes/303comparisons; independentaggregate/STL and one stored32element
+loadedcatenary/rotorpose26comparisons clear. OrderedFrame/Ground->internalretention
+beforeFinger/Base->withdrawtools->Basefixture->Finger/Drive/Cap. Source-dimensional
+29/74Lkey andgeneric19wide130long5.8thickholdingcorridor only,notexacttoolCAD/
+CCD/threadtightening/preload/tolerance/process/physicalassembly/full3FingerStage1.
+Initial108toolcounttypo inrecorderreport/gate11 ispreserved; authoritativegate12/
+closeout correctsto124actualenumeratedposes. No criteria/resultrelaxation.
+
+PreservednewFAILs: longverticaldriverRoot-shelfcollision68.590944mm3 and Groundkey
+holdingtoolcollision33.060090mm3(witness1); own-nutcollisionfromwrongrotatedhexopening
+(witness2). Final lateralLkey/heldnutpath correctsgeometry; nofailuredeleted.
+
+Actualparent19savedRootx50.5facefit328nodes/maxerror6.571e-7mm andMotor6DOF applied.
+Relativeaxistilt.000145529071rad; separatelymovingoldwire splitsendpoint by
+[.001454230,.013208505,.006041874]mm. Separateopposedforcerotationscreateartificial
+netYforce-.000171093N. FreeYgaugeoffsets areNOTuniquephysicalretention/measurement.
+ExplicitONE-WAY PLANARfeedbackkeepsglobalXobjectstop andmovedRoot/Motor/localgravity:
+normal.408610416667->.408616322310N(+.001445299%); force5.77e-16N,cone/gaps/station
+passreducedbranch. Zero reproducesparent;16/32Gaussnormal4.44e-16relative;
+independentclosedformstringendpoint9.81e-15m andgravityvirtualwork3.43e-10relative.
+ReportedRootwrench ismovingFinger subset; fixedRoot/clampweights/localtraction not
+newlyrecoupled. Not3D/new20elastic/strength/mesh/time/globalenergy/graspapproval.
+
+Crucialactualcontactcorrection: MotorfrontY=-9.5 hasFrame53.072788199/Cap51.911516624
+mm2faces omittedfrom19solver. Savedselectedgauge33Frame/35Capnodespenetrateup to
+.001075917/.001132415mm. FreeMotorYbackshiftcanopenthesecontacts; noautomaticnewstop
+necessity/capacityfailureclaim. RootcoincidentplanarYcontactarea0. Parent19fieldis
+verifiedonlyforitsrecordedincompletecontactmodel. Originalevidencenotrewritten.
+
+All22systemgates UNQUALIFIED in models/primary_system_gate_state12.json; newlysolved
+whole-systemgatesNONE. OldFrame52.7693%,Rail1.30247%,Ground/BasemeshFAILs,oldgap
+TIMEOUTandtwo420slimitraces preserved. No fine/gapretry/newFEM/SOFA. Trustedunchanged
+finalrelease15 INTEGRATED_NOT_QUALIFIED/24errors/exit2; noStage3/hardwareclaim.
+
+NEXT exactID goal_primary_spatial_front_contact_feedback: SAME20,firstcomplete
+actualMotorfrontunilateralcontacts/freeY/spatialstring/rotor/exitloads. Do notturn
+MotorYgaugeintoaphysicalsupport orrotateopposedforcesindependently. CarryactualRoot
+fit/globalXstop/movingANDfixedweights/fullcouples; update20nutfootprint14.35mmcore
+andmassbeforeONEjustifiedcoarsecontactsolve. AddsameP1positiveretentiononlyifactual
+existingpathrequiresit; nofine/gapretry/newarchitecture/blanketmeshstrategy.
+Thread/class/minima/preload,physicalanchor/case/bearings,friction/protector/full3Finger/
+globalenergy remainblocked.
+
+15boundedanalysischildrenreaped,92.4677042381childseconds,0newtimeouts/unknowns;
+4GiB/420seach,peakconcurrency2.0RUNNINGqueue tasks/0ownedanalysischildren.
+STOPabsent/pinsunchanged. NoGitadd/commit/push/historyrewrite/SDK/securitymanager/
+save/guard/gatesourcechanges,purchase/hardware/credentials/providerselection/
+subagents/recursivelaunches. Originaluserfilespreserved. Supervisoralone savesexactbytes:
+runtime/goal_authorized_20261127_7/save_request9.json. SavePENDING.
+Authoritativecloseout validation/integrated/primaryP1_cycle10_closeout/summary.json;
+detailed reports/primaryP1_retention_feedback_engineering.md with corrections in
+reports/primaryP1_retention_feedback_closeout.md. Earliercheckpoint followsunchanged.
+
+---
+
 # Latest actual P1 finite compliant load path — 2026-11-27, Supervisor save pending
 
 Starting actual HEAD 581f6de37e7937be60fc490c02f2e438b77f8188.

@@ -1,0 +1,52 @@
+{
+  "status": "PRIMARY_LOADED_CABLE_ROTOR_POSE_SCREEN_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_retention20/summary.json",
+    "SHA256": "e8adee1e5db7fd85668a028130397089c10a890a1e1af6693f88526ee627dabf"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_retention_loaded1/producer.py",
+    "SHA256": "5e09c069615c0012bd039cd82ed82ae4aba003854bb28481ee3ec7597f5713fc"
+  },
+  "source_states": {
+    "path": "product_prototype/stage12_integrated/validation/finger/primaryP1_gravity_cat_demand32_2/cases.json",
+    "SHA256": "6264026664105e9072420a79422d19bca0cabfe58fd16d0c32fdd519f6bdefaa"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_retention_loaded1/inputs.json",
+    "SHA256": "07a34d847d12521bb4179b66ff714ad6be8fd4651eda7d317390839189d53dff"
+  },
+  "checks": {
+    "full_wire_single_valid": true,
+    "constant_actual_cable_volume": true,
+    "single_layer": true,
+    "full_wire_clear": true,
+    "rotor_clear": true
+  },
+  "rows": [
+    {
+      "tendon_N": 1.1854427033803843,
+      "static_state_status": "CONDITIONAL_CATENARY_CORNER_EQUILIBRIUM",
+      "rotor_angle_rad": -0.829475767258225,
+      "wrap_span_rad": 2.2524916825939316,
+      "wire_valid": true,
+      "wire_solids": 1,
+      "wire_volume_mm3": 24.35640943329316,
+      "expected_volume_mm3": 24.35640947449311,
+      "relative_volume_error": 1.6915444600584806e-09,
+      "wire_hits": [],
+      "rotor_hits": []
+    }
+  ],
+  "exact_comparisons": 26,
+  "wire_hits": [],
+  "rotor_hits": [],
+  "split_actual_motor": "Only output-shaft solid region at y>=-8.8 rotates with rotor; housing/pilot stationary. No artificial torque capacity or bearing reaction supplied.",
+  "limitations": [
+    "Four actual saved32element finite-state hardware poses; failed static states remain failed, no continuous CCD or acceptance by pose clearance",
+    "Actual loaded flexible Rail/PET swept geometry remains unqualified",
+    "Factory-end pullout, pocket/cap strength, full cable threading and real supplier terminal assembly remain unqualified",
+    "No physical protection, strength, friction, global energy or release"
+  ],
+  "whole_system_release": false
+}

@@ -1,0 +1,7 @@
+import sys,json,shutil,numpy as np
+sys.path.insert(0,'product_prototype/stage12_integrated/scripts')
+from baseline_registry import ROOT,REPO,ref,dump,sha
+out=ROOT/'validation/integrated/primaryP1_conic_ritz_newton1';s=json.loads((out/'summary.json').read_text());p=REPO/s['output']['path'];original=ROOT/'build/raw/primary_cycle20/ritz_original.npz';a=dict(np.load(original));v=a.pop('V');basis=[ref(out/f'basis_columns{j}.npz') for j in range(2)];assert all(np.array_equal(a[k],np.load(p)[k]) for k in a);assert np.array_equal(v,np.column_stack([np.load(REPO/r['path'])['V'] for r in basis]));old=s['output'];s['output']=ref(p);s['basis_columns']=basis;s['original_serialization_snapshot']=ref(out/'initial_serialization_summary.json');s['lossless_storage_manifest']=dict(original_output=old,preserved_original_raw=ref(original),array_values_changed=False,reason='Dense float64 Ritz basis split by columns for existing per-file50MB save rule. Original oversized bytes preserved in ignored build/raw; numerical entries bitwise unchanged.');dump(out/'summary.json',s)
+for name in ['primaryP1_ritz_feasible1','primaryP1_ritz_feasible2','primaryP1_conic_ritz_audit1']:
+ d=ROOT/'validation/integrated'/name;doc=json.loads((d/'summary.json').read_text());shutil.copyfile(d/'summary.json',d/'initial_serialization_summary.json');doc['execution_source_snapshot']=ref(out/'initial_serialization_summary.json');doc['source']=ref(out/'summary.json');doc['lossless_source_repack']=s['lossless_storage_manifest'];dump(d/'summary.json',doc)
+print('Lossless basis bitwise check PASS')

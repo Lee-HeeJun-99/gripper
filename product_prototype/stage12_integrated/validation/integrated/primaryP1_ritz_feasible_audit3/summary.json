@@ -1,0 +1,131 @@
+{
+  "status": "ACTUAL_P1_FEASIBLE_RITZ_INDEPENDENT_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/verifier.py",
+    "SHA256": "9a7a455b92866f919ccaa4eb834e1e017e1750b95b6d3cb5f9226e23dfb41d68"
+  },
+  "checks": {
+    "primaryP1_ritz_feasible1": true,
+    "primaryP1_ritz_feasible2": true
+  },
+  "records": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/summary.json",
+        "SHA256": "e69c6a2ec681b8e1fe1fb53b2188fcd43626a964744d014cff4c771afccb7460"
+      },
+      "checks": {
+        "candidate_hash": true,
+        "source_hash": true,
+        "output_hash": true,
+        "state_reproduced": true,
+        "original_force_reproduced": true,
+        "allrow_feasible": true,
+        "actual_objective_decreased": true,
+        "working_event_count": true,
+        "no_nonlinear_update": true,
+        "physical_KKT_rejected": true,
+        "independent_physical_recovery_rejected": true
+      },
+      "original_unit_metrics": {
+        "primal_mm": 9.072010144920296e-17,
+        "stationarity_N": 7.055628347017011,
+        "gauge_N": 10.950276786307256,
+        "sign_N": 2.5720785277305453,
+        "complementarity_Nmm": 1.1598084084885243e-16,
+        "RootY_gamma_stationarity_N": 2.936971609961919,
+        "objective_before_Nmm": 0.0002336967688395079,
+        "objective_after_Nmm": 0.00023306134875630363,
+        "maximum_increment_mm_rad": 3.654499645549207e-06,
+        "working_acceptance_events": 42,
+        "positive_alpha_events": 12,
+        "zero_length_events": 30
+      },
+      "terminal_rejected_proposal": null,
+      "independent_physical_cone_recovery": {
+        "stationarity_N": 2.093226475389545,
+        "gauge_N": 0.3529721425065924,
+        "sign_N": 0.0,
+        "complementarity_Nmm": 5.1606063068592016e-17,
+        "RootY_gamma_stationarity_N": 7.665155506425547e-05,
+        "qualified": false
+      },
+      "recovery_output": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/primaryP1_ritz_feasible1_physical.npz",
+        "SHA256": "1f91e278ef0710ff61e34cfce7fe67892b5d7b12bdce61b537be716650ea43f2"
+      }
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible2/summary.json",
+        "SHA256": "49f9b9e385b81b83bc6ce80c624d2d4463bbc496095d2156382657bce725d56c"
+      },
+      "checks": {
+        "candidate_hash": true,
+        "source_hash": true,
+        "output_hash": true,
+        "state_reproduced": true,
+        "original_force_reproduced": true,
+        "allrow_feasible": true,
+        "actual_objective_decreased": true,
+        "working_event_count": true,
+        "no_nonlinear_update": true,
+        "physical_KKT_rejected": true,
+        "terminal_direction_reproduced": true,
+        "terminal_primal_reproduced": true,
+        "terminal_rejection_reproduced": true,
+        "independent_physical_recovery_rejected": true
+      },
+      "original_unit_metrics": {
+        "primal_mm": 1.279372327818288e-16,
+        "stationarity_N": 7.043506509614904,
+        "gauge_N": 7.810726445520037,
+        "sign_N": 0.9709966192942555,
+        "complementarity_Nmm": 1.2084083592842933e-15,
+        "RootY_gamma_stationarity_N": 2.42433093880748,
+        "objective_before_Nmm": 0.0002336967688395079,
+        "objective_after_Nmm": 0.00023306133882695424,
+        "maximum_increment_mm_rad": 3.65449964823335e-06,
+        "working_acceptance_events": 65,
+        "positive_alpha_events": 25,
+        "zero_length_events": 40
+      },
+      "terminal_rejected_proposal": {
+        "alpha": 136085.22962280968,
+        "allrow_primal_mm": 6.56451916942015e-10,
+        "maximum_increment_mm_rad": 13.608522962280968,
+        "objective_Nmm": 0.0001880272975725654,
+        "violating_original_rows": [
+          250,
+          254,
+          257
+        ]
+      },
+      "independent_physical_cone_recovery": {
+        "stationarity_N": 2.093226475637834,
+        "gauge_N": 0.3529721425035393,
+        "sign_N": 0.0,
+        "complementarity_Nmm": 1.993317009747024e-15,
+        "RootY_gamma_stationarity_N": 7.665156195219014e-05,
+        "qualified": false
+      },
+      "recovery_output": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/primaryP1_ritz_feasible2_physical.npz",
+        "SHA256": "53603b253d1e4ef3904d16ebeb1b19b4b55bbd545b4afd1f5792df6bc88b3389"
+      }
+    }
+  ],
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 2.5210645280312747,
+  "limitations": [
+    "Endpoint/objective/force/terminal rejection independently verified. Intermediate trajectories are producer records; zero-length working events explicitly separated from positive alpha events.",
+    "Signed working duals are not pressures; full-space conic recovery is independently checked and rejected. No nonlinear update/full system or mesh/time certification."
+  ]
+}

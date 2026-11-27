@@ -1,0 +1,63 @@
+{
+  "status": "ACTUAL_P1_FEASIBLE_RITZ_LINEAR_SEARCH_NOT_EQUILIBRIUM",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_conic_ritz_newton1/summary.json",
+    "SHA256": "2932b60730902bf2d9dd38c5b1e6439fff83b694bbfcf4366526c6de29075fde"
+  },
+  "source_field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_reclosure3/field.npz",
+    "SHA256": "7ad72854afa2a1c9cc5d458d229c227fa9dda183c585d0e5d8a4e9045eb9fb94"
+  },
+  "physical_P": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/physical_P.npz",
+    "SHA256": "401b37376afa566a04d836eb54b909a35b11e08ff4e2670faf2e0e4b98204825"
+  },
+  "physical_A": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/physical_A.npz",
+    "SHA256": "20d772375e9b9c3a39b991faca74a1ad0e8c19921c8b0316fe570f75b9e155f9"
+  },
+  "problem": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_freeY_phase1/problem.npz",
+    "SHA256": "85f2d177966828d1e7d294df9cef409ccef026d9abd3899c5f712d3832f57e41"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/producer.py",
+    "SHA256": "377796cecc49a4f27df89fdbcfb61dcb36e871a7ea8cd0f4eab3225d19188ec9"
+  },
+  "output": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/feasible.npz",
+    "SHA256": "d1a34619a31f94fa5450495d50485f40e689d46bb05484143482d2dbdf487434"
+  },
+  "history": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/history.json",
+    "SHA256": "7432276736edc8f1e9941f2e432bebc4f16f0896f256fbde10d5bd426f786924"
+  },
+  "reason": "unblocked reduced affine descent",
+  "metrics": {
+    "primal_mm": 9.072010144920296e-17,
+    "stationarity_N": 7.055628347017011,
+    "gauge_N": 10.950276786307256,
+    "sign_N": 2.5720785277305453,
+    "complementarity_Nmm": 1.1598084084885243e-16,
+    "RootY_gamma_stationarity_N": 2.936971609961919,
+    "reduced_stationarity": 0.0015092934619229527,
+    "objective_before_Nmm": 0.0002336967688395079,
+    "objective_after_Nmm": 0.00023306134875630363
+  },
+  "accepted_linear_steps": 42,
+  "physical_KKT_qualified": false,
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "physical_regularization": 0.0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.8273017599713057,
+  "limitations": [
+    "Ritz search restriction, not full physical equivalence. Full2208row feasibility/objective guard retained. Equality nullspace/range splits only generate search directions; actual P/q and residuals unchanged.",
+    "Working search duals may have wrong signs or large full residual; do not interpret as physical pressures or accept nonlinear update. Original full physical KKT remains mandatory."
+  ]
+}

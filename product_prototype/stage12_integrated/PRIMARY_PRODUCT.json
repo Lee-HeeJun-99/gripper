@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state23.json",
-    "SHA256": "260d35fcbf5a8d05bae36960b511ab3e2f091cd21f8a8d62dc679c04361737d3"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state24.json",
+    "SHA256": "31875027fe6de80a2799a21717bb4c7993e0dcac2a9f07607fd57862cc2ead6a"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,8 +384,8 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_finite_gap_primal_dual_force_closure",
-  "next_task_id": "goal_primary_physical_newton_cone_globalization",
+  "selected_task_id": "goal_primary_physical_newton_cone_globalization",
+  "next_task_id": "goal_primary_rigid_elastic_primal_dual_saddle",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
   "load_BC": "Original sourcefield and physical P/q/all2169contacts/14branches/11gauges preserved. OriginalRootY2175 has one unpenalizedgamma; originalMotorY2176 unchanged. New feasible LINEAR trajectory is a numerical seed only, not sourcefield replacement. Physical force/gauge KKT remains rejected, so no attachedload nonlinear update, Base residual cancellation, new stress or physical anchor/retention claim.",
   "extension": {
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "NONE. Same78actualSTEP/assembly/BOM unchanged. Actual P1 finite-gap primal-dual numerical implementation and physical KKT validation.",
+  "CAD_this_cycle": "NONE. SAME78actualSTEP/assembly/BOM unchanged. Actual physical-P allfinitegap conic Ritz/Newton validation; no new solids claimed.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -978,5 +978,35 @@
   "latest_affine_cone_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle19_record1/summary.json",
     "SHA256": "437f06caf824ea1add02034fc7d1a520cc95f774bbc0df82e13c211537ab27be"
+  },
+  "latest_conic_Newton_validation": {
+    "primaryP1_conic_ritz_newton1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_conic_ritz_newton1/summary.json",
+      "SHA256": "a140f49ccb706af8961a12493cf4ddf55bf1ca277b1443bc3b503a3f3a86ff02"
+    },
+    "primaryP1_conic_ritz_portable_audit3": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_conic_ritz_portable_audit3/summary.json",
+      "SHA256": "29f821be50e4600eaee3b3c3816629b7eba8bc708256ea672e627d11365589fa"
+    },
+    "primaryP1_ritz_feasible1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/summary.json",
+      "SHA256": "e69c6a2ec681b8e1fe1fb53b2188fcd43626a964744d014cff4c771afccb7460"
+    },
+    "primaryP1_ritz_feasible2": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible2/summary.json",
+      "SHA256": "49f9b9e385b81b83bc6ce80c624d2d4463bbc496095d2156382657bce725d56c"
+    },
+    "primaryP1_ritz_feasible_audit3": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/summary.json",
+      "SHA256": "420e3722985be930b80945c825ba379670bd952a0a8124ba46219bb98ea2c4ac"
+    },
+    "primaryP1_ritz_primaldual1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_primaldual1/summary.json",
+      "SHA256": "d639e95f335012562d9ab058a0aed136b3b7f1c4632285f20ae1d529bc0ef7df"
+    },
+    "primaryP1_ritz_primaldual_audit1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_primaldual_audit1/summary.json",
+      "SHA256": "d6300d9113b08776fe403a85be755ed2ca31e753f48b54ca6b8f2b592c210dad"
+    }
   }
 }

@@ -1,0 +1,59 @@
+{
+  "status": "ACTUAL_P1_PRIMAL_DUAL_ORIGINAL_UNIT_AUDIT_PASS",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_primaldual1/summary.json",
+    "SHA256": "d639e95f335012562d9ab058a0aed136b3b7f1c4632285f20ae1d529bc0ef7df"
+  },
+  "verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_primaldual_audit1/verifier.py",
+    "SHA256": "1696639caabf1bc836acb8470b6935dc2d338cb2a55b9434b9e790910b74d62c"
+  },
+  "checks": {
+    "source_hash": true,
+    "output_hash": true,
+    "all_original2208rows": true,
+    "physical_H_unchanged": true,
+    "physical_g_unchanged": true,
+    "equality_particular_all_original": true,
+    "equality_nullspace_all_original": true,
+    "original_cone_dual_mapping": true,
+    "proposal_reproduced": true,
+    "full_residual_reproduced": true,
+    "acceptance_reproduced": true,
+    "saved_state_reproduced": true,
+    "physical_qualification_reproduced": true,
+    "no_nonlinear_update": true,
+    "zero_physical_regularization": true,
+    "negative_sign_control": true,
+    "negative_affine_control": true
+  },
+  "metrics": {
+    "primal_mm": 2.403474105868819e-13,
+    "stationarity_N": 8.352152368460498,
+    "gauge_N": 0.7718852769572522,
+    "RootY_gamma_stationarity_N": 0.277284978794584,
+    "sign_N": 0.0,
+    "complementarity_Nmm": 1.9469706665804368e-16,
+    "reduced_stationarity": 0.09146879195237066,
+    "objective_before_Nmm": 0.0002336967688395079,
+    "objective_proposal_Nmm": 0.00018888150231241718
+  },
+  "negative_controls": {
+    "wrong_dual_sign_N": 26.574077842169192,
+    "wrong_affine_N": 26.67198971004412
+  },
+  "physical_KKT_qualified": false,
+  "accepted_linear_steps": 1,
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.7130953369196504,
+  "limitations": [
+    "Original-unit proposal/equality/dual/acceptance audit, not every interior iteration or nonlinear equilibrium. Full gauge/force rejection remains mandatory even when reduced residuals decrease."
+  ]
+}

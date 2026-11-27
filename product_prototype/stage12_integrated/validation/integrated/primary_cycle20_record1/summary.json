@@ -1,0 +1,454 @@
+{
+  "status": "ACTUAL_P1_PHYSICAL_CONIC_NEWTON_IMPLEMENTED_FULL_FORCE_GAUGE_REJECTED",
+  "category": "ACTUAL_PRODUCT_VALIDATION",
+  "task_id": "goal_primary_physical_newton_cone_globalization",
+  "starting_HEAD": "b18462be4d85b2bb0636f1ef6dacae439307ed12",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_seated22/summary.json",
+    "SHA256": "f2fc36c3dfdee1177b231c79bfd9da8e53c380bce663d4b424ea3f7b2bf76d17"
+  },
+  "actual_changed_CAD": [],
+  "unchanged_actual_STEP_parts": 78,
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle20_record1/producer.py",
+    "SHA256": "5678e098aef4a4c5897293eaea83d1f379604efd96d65c4092ab7d86de797daf"
+  },
+  "evidence": {
+    "primaryP1_conic_ritz_newton1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_conic_ritz_newton1/summary.json",
+      "SHA256": "a140f49ccb706af8961a12493cf4ddf55bf1ca277b1443bc3b503a3f3a86ff02"
+    },
+    "primaryP1_conic_ritz_portable_audit3": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_conic_ritz_portable_audit3/summary.json",
+      "SHA256": "29f821be50e4600eaee3b3c3816629b7eba8bc708256ea672e627d11365589fa"
+    },
+    "primaryP1_ritz_feasible1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/summary.json",
+      "SHA256": "e69c6a2ec681b8e1fe1fb53b2188fcd43626a964744d014cff4c771afccb7460"
+    },
+    "primaryP1_ritz_feasible2": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible2/summary.json",
+      "SHA256": "49f9b9e385b81b83bc6ce80c624d2d4463bbc496095d2156382657bce725d56c"
+    },
+    "primaryP1_ritz_feasible_audit3": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/summary.json",
+      "SHA256": "420e3722985be930b80945c825ba379670bd952a0a8124ba46219bb98ea2c4ac"
+    },
+    "primaryP1_ritz_primaldual1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_primaldual1/summary.json",
+      "SHA256": "d639e95f335012562d9ab058a0aed136b3b7f1c4632285f20ae1d529bc0ef7df"
+    },
+    "primaryP1_ritz_primaldual_audit1": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_primaldual_audit1/summary.json",
+      "SHA256": "d6300d9113b08776fe403a85be755ed2ca31e753f48b54ca6b8f2b592c210dad"
+    },
+    "primaryP1_release25": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release25/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "system_gate_state": {
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state24.json",
+    "SHA256": "31875027fe6de80a2799a21717bb4c7993e0dcac2a9f07607fd57862cc2ead6a"
+  },
+  "physical_primaldual_metrics": {
+    "primal_mm": 2.403474105868819e-13,
+    "stationarity_N": 8.352152368460498,
+    "gauge_N": 0.7718852769572522,
+    "RootY_gamma_stationarity_N": 0.277284978794584,
+    "sign_N": 0.0,
+    "complementarity_Nmm": 1.9469706665804368e-16,
+    "reduced_stationarity": 0.09146879195237066,
+    "objective_before_Nmm": 0.0002336967688395079,
+    "objective_proposal_Nmm": 0.00018888150231241718
+  },
+  "physical_KKT_qualified": false,
+  "physical_Newton_factorization_warning_count": 144,
+  "finite_conic_proposal_accepted_linear_only": 1,
+  "feasible_endpoint_independent_records": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible1/summary.json",
+        "SHA256": "e69c6a2ec681b8e1fe1fb53b2188fcd43626a964744d014cff4c771afccb7460"
+      },
+      "checks": {
+        "candidate_hash": true,
+        "source_hash": true,
+        "output_hash": true,
+        "state_reproduced": true,
+        "original_force_reproduced": true,
+        "allrow_feasible": true,
+        "actual_objective_decreased": true,
+        "working_event_count": true,
+        "no_nonlinear_update": true,
+        "physical_KKT_rejected": true,
+        "independent_physical_recovery_rejected": true
+      },
+      "original_unit_metrics": {
+        "primal_mm": 9.072010144920296e-17,
+        "stationarity_N": 7.055628347017011,
+        "gauge_N": 10.950276786307256,
+        "sign_N": 2.5720785277305453,
+        "complementarity_Nmm": 1.1598084084885243e-16,
+        "RootY_gamma_stationarity_N": 2.936971609961919,
+        "objective_before_Nmm": 0.0002336967688395079,
+        "objective_after_Nmm": 0.00023306134875630363,
+        "maximum_increment_mm_rad": 3.654499645549207e-06,
+        "working_acceptance_events": 42,
+        "positive_alpha_events": 12,
+        "zero_length_events": 30
+      },
+      "terminal_rejected_proposal": null,
+      "independent_physical_cone_recovery": {
+        "stationarity_N": 2.093226475389545,
+        "gauge_N": 0.3529721425065924,
+        "sign_N": 0.0,
+        "complementarity_Nmm": 5.1606063068592016e-17,
+        "RootY_gamma_stationarity_N": 7.665155506425547e-05,
+        "qualified": false
+      },
+      "recovery_output": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/primaryP1_ritz_feasible1_physical.npz",
+        "SHA256": "1f91e278ef0710ff61e34cfce7fe67892b5d7b12bdce61b537be716650ea43f2"
+      }
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible2/summary.json",
+        "SHA256": "49f9b9e385b81b83bc6ce80c624d2d4463bbc496095d2156382657bce725d56c"
+      },
+      "checks": {
+        "candidate_hash": true,
+        "source_hash": true,
+        "output_hash": true,
+        "state_reproduced": true,
+        "original_force_reproduced": true,
+        "allrow_feasible": true,
+        "actual_objective_decreased": true,
+        "working_event_count": true,
+        "no_nonlinear_update": true,
+        "physical_KKT_rejected": true,
+        "terminal_direction_reproduced": true,
+        "terminal_primal_reproduced": true,
+        "terminal_rejection_reproduced": true,
+        "independent_physical_recovery_rejected": true
+      },
+      "original_unit_metrics": {
+        "primal_mm": 1.279372327818288e-16,
+        "stationarity_N": 7.043506509614904,
+        "gauge_N": 7.810726445520037,
+        "sign_N": 0.9709966192942555,
+        "complementarity_Nmm": 1.2084083592842933e-15,
+        "RootY_gamma_stationarity_N": 2.42433093880748,
+        "objective_before_Nmm": 0.0002336967688395079,
+        "objective_after_Nmm": 0.00023306133882695424,
+        "maximum_increment_mm_rad": 3.65449964823335e-06,
+        "working_acceptance_events": 65,
+        "positive_alpha_events": 25,
+        "zero_length_events": 40
+      },
+      "terminal_rejected_proposal": {
+        "alpha": 136085.22962280968,
+        "allrow_primal_mm": 6.56451916942015e-10,
+        "maximum_increment_mm_rad": 13.608522962280968,
+        "objective_Nmm": 0.0001880272975725654,
+        "violating_original_rows": [
+          250,
+          254,
+          257
+        ]
+      },
+      "independent_physical_cone_recovery": {
+        "stationarity_N": 2.093226475637834,
+        "gauge_N": 0.3529721425035393,
+        "sign_N": 0.0,
+        "complementarity_Nmm": 1.993317009747024e-15,
+        "RootY_gamma_stationarity_N": 7.665156195219014e-05,
+        "qualified": false
+      },
+      "recovery_output": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_ritz_feasible_audit3/primaryP1_ritz_feasible2_physical.npz",
+        "SHA256": "53603b253d1e4ef3904d16ebeb1b19b4b55bbd545b4afd1f5792df6bc88b3389"
+      }
+    }
+  ],
+  "actual_support_updates": 0,
+  "accepted_equilibria": 0,
+  "executions": [
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_conic_ritz.py",
+        "primaryP1_conic_ritz_audit1",
+        "primaryP1_conic_ritz_newton1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.2029867959208786,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ritz_feasible_newton.py",
+        "primaryP1_ritz_feasible1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.2030907860025764,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ritz_feasible_newton_v2.py",
+        "primaryP1_ritz_feasible2"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.603529212065041,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ritz_feasible.py",
+        "primaryP1_ritz_feasible_audit1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4018923968542367,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ritz_feasible.py",
+        "primaryP1_ritz_feasible_audit2"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.40172834298573434,
+      "PID": 26,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ritz_feasible.py",
+        "primaryP1_ritz_feasible_audit3"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 2.8056344951037318,
+      "PID": 6,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_conic_ritz.py",
+        "primaryP1_conic_ritz_portable_audit1",
+        "primaryP1_conic_ritz_newton1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.40174919087439775,
+      "PID": 26,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_conic_ritz.py",
+        "primaryP1_conic_ritz_portable_audit2",
+        "primaryP1_conic_ritz_newton1"
+      ],
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4017671209294349,
+      "PID": 25,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_conic_ritz.py",
+        "primaryP1_conic_ritz_portable_audit3",
+        "primaryP1_conic_ritz_newton1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.0024689340498298,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_ritz_primal_dual.py",
+        "primaryP1_ritz_primaldual1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.4062151690013707,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/verify_primary_ritz_primal_dual.py",
+        "primaryP1_ritz_primaldual_audit1"
+      ],
+      "exit_code": 0,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 1.0025147858541459,
+      "PID": 4,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release25"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 0.4015994758810848,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    },
+    {
+      "command": [
+        "python",
+        "product_prototype/stage12_integrated/scripts/primary_conic_ritz_newton.py",
+        "primaryP1_conic_ritz_newton1"
+      ],
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "elapsed_s": 50.878834208939224,
+      "PID": 5,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420
+    }
+  ],
+  "recorded_child_seconds_known": 63.11401091446169,
+  "analysis_memory_limit_bytes": 4294967296,
+  "analysis_timeout_s": 420,
+  "owned_analysis_children_running": 0,
+  "running_queue_tasks": 0,
+  "source_pins_unchanged": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": true,
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": true,
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": true,
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": true,
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": true,
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": true,
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": true
+  },
+  "original_user_untracked_files_preserved": 8595,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "whole_system_release": false,
+  "stage3_authorized": false,
+  "hardware": "HARDWARE_NOT_MEASURED",
+  "next_task_id": "goal_primary_rigid_elastic_primal_dual_saddle",
+  "lossless_archive": {
+    "original_output": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_conic_ritz_newton1/ritz.npz",
+      "SHA256": "5913ee58727c242d3d73fd474dfd2f5bb50338084a9b82b95d6f86e54c803070"
+    },
+    "preserved_original_raw": {
+      "path": "product_prototype/stage12_integrated/build/raw/primary_cycle20/ritz_original.npz",
+      "SHA256": "5913ee58727c242d3d73fd474dfd2f5bb50338084a9b82b95d6f86e54c803070"
+    },
+    "array_values_changed": false,
+    "reason": "Dense float64 Ritz basis split by columns for existing per-file50MB save rule. Original oversized bytes preserved in ignored build/raw; numerical entries bitwise unchanged."
+  },
+  "failures": [
+    "One capped actual130coordinate OSQP physical energy proposal fails original gaps/force; no acceptance.",
+    "Primal working-set v1 falsely reaches unblocked classification after tiny unnormalized direction. v2 normalization exposes a finite blocking proposal rejected at6.56451916941e-10mm. Zero-length working events independently distinguished; neither endpoint is equilibrium.",
+    "Primal-dual normal equations severe conditioning warnings;80iteration stop. Original-unit finitegap/energy guard accepts one LINEAR seed only; full force/gauge KKT rejects. No budget retry.",
+    "Lossless basis packing initial path-index typo caused first portable audit and feasible audit process errors, then helper typo caused second pair. Logs/producer snapshots preserved. Corrected split loads pass fresh independent audits. Original oversized NPZ bytes preserved in ignored build/raw with digest; basis columns/data bitwise equal, no precision reduction."
+  ],
+  "alternatives_review": {
+    "A": "Repeat98row equality MINRES or increase OSQP/normal-equation budget: rejected; prior divergence/finitegap defects and squared conditioning preserved.",
+    "B": "Rigid-enriched actual physical conic Ritz/predictor-corrector: implemented here with every finitegap and all37rigid modes; accepted linear proposal but full physical force/gauge fail.",
+    "C": "Next equilibrated augmented rigid/elastic/primaldual saddle with original-unit refinement and measured orthogonal-residual enrichment if needed; no physical spring/eigen clipping/row removal."
+  },
+  "limitations": [
+    "No new CAD solids or design-change claim. Same78actualpart assembly/BOM and3Finger/cartridge/jamming preserved, separate from failedAO. Actual numerical support operators, not an ideal coupon.",
+    "Ritz is SEARCH restriction only. Accepted linear seed never replaces ORIGINAL nonlinear sourcefield. No attachedload/nonlinear update because full force/gauge/conesign/complementarity prerequisites fail.",
+    "All22source/material/physicalanchor/mesh/time/full3DFinger/finitewire/friction/protector/globalenergy/full3Finger remain unqualified; trusted release rejects."
+  ]
+}

@@ -354,8 +354,8 @@
     "SHA256": "dc1669600d616408c60a4f6f56e35526fbe85e1184bdaa7fdcf9154833954e3f"
   },
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state36.json",
-    "SHA256": "bfda0c05ce865bedaddb88f1b6cdf189f64748e1bc54ffabfd00bd6474c9e674"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state37.json",
+    "SHA256": "787024426caa82c761b5bc0d651860e94ce82f29f48396a1a559d1fe933ebff4"
   },
   "previous_AO_preserved": {
     "revision": "revAO_root2",
@@ -384,8 +384,8 @@
     "model_binding_status": "AL D-drive, AM axial and AN Palm adapter retained. AO root pins implemented; local strain/strength, normal clamp retention and full assembly path unqualified."
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
-  "selected_task_id": "goal_primary_pin_gap_resolved_compliance_and_thread_bore_closure",
-  "next_task_id": "goal_primary_finite_end_curved_contact_enrichment_and_joint_closure",
+  "selected_task_id": "goal_primary_finite_end_curved_contact_enrichment_and_joint_closure",
+  "next_task_id": "goal_primary_finite_body_contact_correction_and_four_port_joint_coupling",
   "physical_model": "Motor -> stock1996 hub -> fourM3 -> finite tangent-nipple Drum -> whole factory cable -> receiver/terminal -> AX Rail/PET/root pins -> relocatedRF bolts -> finite OPEN_FRAME -> fourM5 -> finite GROUND_PLATE",
   "load_BC": "Current own28hardware conditional CAD7900kg/m3 gravity, +/- .003rad sensitivity, actual finite clearances and shifted faces. No fullsupport sourcefield. Earlier seated22 fields remain historical, not current ycapture24 loads/pressure/stress.",
   "extension": {
@@ -441,7 +441,7 @@
     "path": "product_prototype/stage12_integrated/validation/transmission/primaryP1_portloads3/summary.json",
     "SHA256": "abff6af1f314803f620b854b0f530e123cb738bc5c52f15db5bbf417e260067c"
   },
-  "CAD_this_cycle": "NONE: ACTUAL_PRODUCT_VALIDATION; unchanged78actualSTEP inventory,assembly,BOM. Local physical normal-contact contrast tied to actual pin/hole geometry; no new primary.",
+  "CAD_this_cycle": "NONE: ACTUAL_PRODUCT_VALIDATION. All78actualSTEP,aggregateassembly,BOM unchanged. New actual-interface numerical Galerkin/vectorwork/free-tip boundary evidence; no new assembly qualification.",
   "historical_finite_load_BC_cycle2": "Conditional finite77mm free Rail plus rigid Terminal cuff; separate86.2mm extensible/sliding PET, ideal Root/terminal Rail grips, typical moduli, frictionless material witnesses and actual finite Terminal walls; fixed X object stop20mm inward. Only0.5N states pass all present reduced static/geometry checks.1N actual BRep and2N branch/convergence remain FAIL. Required root/motor port resultants recorded; actual joints/Ground/whole system NOT qualified.",
   "latest_corner_cycle": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle3/summary.json",
@@ -1224,7 +1224,7 @@
   },
   "historical_evidence_applicability": "Earlier seated22 equilibrium/mesh/currentload evidence remains historical,NOT a ycapture24sourcefield. Unchanged76STEP andsourceparts preserved; newRoot/Frame require same-revision completecoupledmodel.",
   "current_physics_sourcefield": null,
-  "current_physics_status": "LOCAL_UNILATERAL_PIN_CONTACT_CONDITIONAL_FINITE_BODY_AND_CONVERGENCE_UNQUALIFIED",
+  "current_physics_status": "VARIATIONAL_LOCAL_CURVED_CONTACT_PARTIAL_FINITE_BODY_BOUNDARY_REJECTED",
   "preserved_extensions": [
     "3Finger",
     "replaceable side-insertion cartridge with removable existingRFbolts",
@@ -1432,6 +1432,24 @@
     "primaryP1_pin_local_contact32baudit": {
       "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pin_local_contact32baudit/summary.json",
       "SHA256": "aa131865c7b65694620ec4e8255a4efc368e2731fed0b54b470789a3c412a045"
+    }
+  },
+  "latest_variational_curved_interface_evidence": {
+    "primaryP1_variational_contact33": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_variational_contact33/summary.json",
+      "SHA256": "fead305e50277f9704933c22dd455bef7be8b6d376534d68bd2b432049ebb1dd"
+    },
+    "primaryP1_variational_contact33audit": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_variational_contact33audit/summary.json",
+      "SHA256": "342e2c278648db9ddfb19565bb7cbef79a9349909fab974e4927a741fa8c924c"
+    },
+    "primaryP1_variational_contact33auditb": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_variational_contact33auditb/summary.json",
+      "SHA256": "c3b9d1ec0cdec9caaaea0dceb4c99848751e746e447b2e04313f0cf2fe5cd27f"
+    },
+    "primaryP1_finite_tip33": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_finite_tip33/summary.json",
+      "SHA256": "5242d30b62fd310e79668a6f65a644c4b4d9e8dee7000e796fbf0ea0bb3d6549"
     }
   }
 }

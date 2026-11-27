@@ -1,0 +1,88 @@
+{
+  "status": "REJECTION_WITNESSES_VERIFIED",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_idler_after1/summary.json",
+    "SHA256": "56bd466a028b22a71d1312754fa84799c5dd1016defb2cc823ec461d5e2c92f9"
+  },
+  "inputs": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_idler_after_verify1/inputs.json",
+    "SHA256": "4533fded3ce57e0f1442a712aea442086dfce948f9d45401888a479375defdc2"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_idler_after_verify1/producer.py",
+    "SHA256": "b47630c1b6a05a80252b8e83ec0f625085828629828256ddbd08907f0a4d03e4"
+  },
+  "checks": {
+    "input_hashes": true,
+    "partition_exact": true,
+    "six_groups_partition": true,
+    "all_rejected_rows_witnessed": true,
+    "nonempty_actual_collision": true,
+    "independent_booleans": true,
+    "unchanged_final_nominal": true
+  },
+  "witnesses": [
+    {
+      "sector": 0,
+      "dz_mm": 80,
+      "moving": "F0_TERMINAL_FRONT",
+      "fixed": "PALM",
+      "reported_mm3": 213.08269300611505,
+      "reversed_common_mm3": 213.08269300611502,
+      "subtracted_volume_mm3": 213.0826929456925,
+      "passed": true
+    },
+    {
+      "sector": 0,
+      "dz_mm": 10,
+      "moving": "F0_JAMMING_DOCK",
+      "fixed": "PALM",
+      "reported_mm3": 34.8,
+      "reversed_common_mm3": 34.8,
+      "subtracted_volume_mm3": 34.800000000004275,
+      "passed": true
+    },
+    {
+      "sector": 1,
+      "dz_mm": 80,
+      "moving": "F1_TERMINAL_FRONT",
+      "fixed": "PALM",
+      "reported_mm3": 213.08269300606915,
+      "reversed_common_mm3": 213.08269300604715,
+      "subtracted_volume_mm3": 213.08269294560165,
+      "passed": true
+    },
+    {
+      "sector": 1,
+      "dz_mm": 10,
+      "moving": "F1_JAMMING_DOCK",
+      "fixed": "PALM",
+      "reported_mm3": 34.799999999979704,
+      "reversed_common_mm3": 34.799999999979704,
+      "subtracted_volume_mm3": 34.799999998733256,
+      "passed": true
+    },
+    {
+      "sector": 2,
+      "dz_mm": 80,
+      "moving": "F2_TERMINAL_FRONT",
+      "fixed": "PALM",
+      "reported_mm3": 213.08269300612793,
+      "reversed_common_mm3": 213.08269300613375,
+      "subtracted_volume_mm3": 213.08269294575206,
+      "passed": true
+    },
+    {
+      "sector": 2,
+      "dz_mm": 10,
+      "moving": "F2_JAMMING_DOCK",
+      "fixed": "PALM",
+      "reported_mm3": 34.80000000004266,
+      "reversed_common_mm3": 34.800000000042644,
+      "subtracted_volume_mm3": 34.80000000124846,
+      "passed": true
+    }
+  ],
+  "whole_system_release": false,
+  "scope": "Every rejected row independently reimported with reversed boolean common and volume subtraction; not independent exhaustive collision-free proof or continuous path certification."
+}

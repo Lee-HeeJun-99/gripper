@@ -1,3 +1,35 @@
+# Batch6 cycle9 — Idler-after sequence rejected; release blocked (2026-11-27)
+
+Started at1f00595abcf73b690dbdd192e520799a49339002. Selected READY
+batch6_independent_integrated_release_and_repairs. One actual analysis cycle:
+validation/stage1/batch6_repair_cycle1/summary.json. Actual AO254 STEP/BOM
+identity unchanged; AA304 remains adopted. No CAD/BOM or material change.
+
+Distinct assembly order: three38-part Finger modules followed by three7-part
+Idler bracket/wheel/axle/spacer/nut/washer modules; mounting fasteners/tendons
+explicitly deferred. Exact254-part partition checked.36 finite poses,248 actual
+Boolean comparisons reject six Finger poses against Palm even with Idlers
+absent. First largest Terminal-front/Palm witness213.08269300611505mm3.
+Independent reimport/reversed-common/volume-subtraction validates6/6 rejected
+rows and all input/dependency hashes. Producer exit2 preserved; verifier exit0
+certifies rejection only.18 Idler samples clear under counterfactual prior
+Finger installation, NOT continuous path/preassembly/tool/base-fastener PASS.
+
+Same-AO readiness and unchanged adopted-baseline integrated release exit2.
+22Stage2 criteria, full same-revision Stage1 and SYSTEM_LOAD_TRANSFER evidence
+remain unqualified;24baseline audit errors retained. No release, strength,
+energy or physical protection PASS. After two distinct top-entry order failures,
+stop vertical height scans; investigate lateral insertion or split assembly/
+Palm architecture before another actual assembly cycle. Other system gates
+need justified demand/material and coupled load/energy evidence, not coupons.
+
+All four analysis children reaped within4GiB/420s; no timeout/live owned child
+or RUNNING queue task. STOP absent. Old failures and unrelated untracked work
+preserved. No subagents, SDK, criteria, manager/save controls, Stage3, purchase,
+hardware or power actions. Supervisor local save PENDING; no git add/commit
+attempted or new SHA claimed. runtime/authorized_20261127_6/save_request9.json
+contains exact cycle paths/hashes and actual result references.
+
 # Batch6 cycle8 — actual AO section demand; refinement FAIL (2026-11-27)
 
 Started at b36b26e7e006783bc1a42478d799570618ce7af1. Selected READY

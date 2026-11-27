@@ -3,21 +3,21 @@
   "errors": [],
   "revision": "revAA_heel_relief2",
   "next": {
-    "id": "batch6_independent_integrated_release_and_repairs",
-    "track": "C",
-    "priority": -191,
+    "id": "batch6_wide_root_cartridge",
+    "track": "B",
+    "priority": -198,
     "status": "READY",
     "execution_class": "PRODUCT_IMPLEMENTATION",
     "selection_policy": "coverage_before_repetition",
     "research_batch": "authorized_20261127_6",
-    "recommended_session": 10,
-    "goal": "Execute existing same-revision Stage1/Stage2/integrated gates and fix directly actionable remaining product issues",
-    "hypothesis": "Execute existing same-revision Stage1/Stage2/integrated gates and fix directly actionable remaining product issues",
+    "recommended_session": 3,
+    "goal": "Move root capture stress out of flexible narrow span with wider tab/shoulder/cartridge and preserve distal PET sliding",
+    "hypothesis": "Move root capture stress out of flexible narrow span with wider tab/shoulder/cartridge and preserve distal PET sliding",
     "criteria": "Actual source-backed component and finite same-candidate CAD/BOM/load evidence meeting the linked unchanged system gates; bounded geometry/conditional results never qualify whole capacity",
     "system_gate_ids": [
-      "cad_model_match",
-      "changed_stage1_revalidation",
-      "stage3_handoff"
+      "finger_structure",
+      "root_palm_strength",
+      "terminal_retention"
     ],
     "prerequisites": [],
     "target_revision": "revAO_root2",
@@ -40,8 +40,19 @@
     "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
     "fallback": "Independent standard-component product task from another track",
     "system_gate_contribution": 5,
-    "last_run_utc": null,
-    "consecutive_runs": 0
+    "last_run_utc": "2026-11-27T00:14:23.182241+00:00",
+    "consecutive_runs": 1,
+    "result": "validation/finger/batch6_wide_cycle1/summary.json",
+    "last_cycle_result": {
+      "path": "product_prototype/stage12_integrated/validation/finger/batch6_wide_cycle1/summary.json",
+      "SHA256": "0f5f47c00fef87bc4313f68d2f0db0594e722946e7010218b65cdec8d5a3cf32"
+    },
+    "last_cycle_candidate": {
+      "path": "product_prototype/stage12_integrated/cad/exports/revAX_wide_root1/summary.json",
+      "SHA256": "d7bfc04dfbc3f23a34acdb1ac86ecadcbd52c21042608cd79d8c03b90206ebeb"
+    },
+    "reason": "Actual widened Rail root geometry verified; actual loaded strength/retention/sliding and full assembly remain unqualified. Coverage-before-repetition selects independent Palm next.",
+    "next": "batch6_simple_palm_mount"
   },
   "running_task_records": [],
   "warning": "Selection is not execution. Manager lock file existence alone does not establish a live process.",

@@ -1,0 +1,139 @@
+{
+  "status": "ACTUAL_AO_IDLER_AFTER_SEQUENCE_REJECTED_RELEASE_BLOCKED",
+  "task_id": "batch6_independent_integrated_release_and_repairs",
+  "starting_HEAD": "1f00595abcf73b690dbdd192e520799a49339002",
+  "actual_research_cycles": 1,
+  "actual_results": {
+    "analysis": {
+      "path": "product_prototype/stage12_integrated/validation/stage1/batch6_idler_after1/summary.json",
+      "SHA256": "56bd466a028b22a71d1312754fa84799c5dd1016defb2cc823ec461d5e2c92f9"
+    },
+    "verification": {
+      "path": "product_prototype/stage12_integrated/validation/stage1/batch6_idler_after_verify1/summary.json",
+      "SHA256": "48a5c26fbd17ea22455d9d786e332469a5c0b1949784af064573cc39aa4d55bb"
+    },
+    "same_revision_readiness": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_repair_readiness1/summary.json",
+      "SHA256": "2f05723483e3d747b51f84bba34244a4b229af7c9ddbea9d156edd15946b2911"
+    },
+    "baseline_release": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/batch6_repair_release1/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    }
+  },
+  "executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/analysis_execution.json",
+        "SHA256": "60515ba4955fd8270e7714f58424b873f80a41e38c7460bf49f361c8ee31309e"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/analysis.log",
+        "SHA256": "de9d3c3383e8648b6920e379331b1554206d7fb40cb4dc3cfb5baab590c6ce76"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_idler_after.py"
+      ],
+      "producer_SHA256": "21c212b38d055cca13976773eaa54f0ea8b4a0147b9e71849f494328bbe6f374",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 11.94107560813427,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/verify_execution.json",
+        "SHA256": "3d4c20b146bc9479a0920b800316241b04efc0096b7b7694028ea0e43eba65aa"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/verify.log",
+        "SHA256": "17ef9896e467436218d0af6870c14e96e6b067d03d8c292ffd7a0b0298fa9e7b"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/verify_batch6_idler_after.py"
+      ],
+      "producer_SHA256": "b47630c1b6a05a80252b8e83ec0f625085828629828256ddbd08907f0a4d03e4",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_s": 3.170468063093722,
+      "PID": 4,
+      "reaped": true
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/readiness_execution.json",
+        "SHA256": "3000d241f4320f56c96d606aee16fd000380fa4e0f403432ceb84410107ae0ff"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/readiness.log",
+        "SHA256": "ede4309e40e3d08e11870566ac1ac772c010c366ad00d79f687a2e9dcd63bbbe"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/batch6_repair_readiness.py"
+      ],
+      "producer_SHA256": "e4bf793657b1adcbb40934844b0cadf71e7efb0fd2267f15963ca49e91ed4744",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.114778698887676,
+      "PID": 5,
+      "reaped": true
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/release_execution.json",
+        "SHA256": "bf5b9995361315cd7cc0b54f9dedc49aca5fee91ff3cb1cb328a7ed4599d3dcc"
+      },
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/release.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "batch6_repair_release1"
+      ],
+      "producer_SHA256": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "exit_code": 2,
+      "timeout": false,
+      "elapsed_s": 0.36502261087298393,
+      "PID": 6,
+      "reaped": true
+    }
+  ],
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/finalize.py",
+    "SHA256": "f072bd954b5956947fdb2c68aec2f33bf8a1bc387fb91db651e31dbdfe334408"
+  },
+  "runner": {
+    "path": "product_prototype/stage12_integrated/validation/stage1/batch6_repair_cycle1/runner.py",
+    "SHA256": "ed02e8dba9e145a1e8d3bdf1724679f2e0a9e26a5a0b2bc5457621321b72fca4"
+  },
+  "findings": [
+    "254-part partition preserved: three38-part Finger modules, three7-part Idler modules and119 fixed/deferred parts",
+    "36 finite poses and248 actual Boolean comparisons: six Finger poses still intersect Palm despite deferring Idler assemblies",
+    "Largest first rejected-row Terminal-front/Palm witness213.08269300611505mm3; six rejection witnesses independently reimported and verified",
+    "18 Idler poses clear only under counterfactual prior nominal Finger installation; no continuous insertion, preassembly, tool or base-fastener access qualification",
+    "Actual AO unchanged Stage2 readiness has baseline identity mismatch and22 unqualified criteria; adopted-baseline integrated audit remains24 errors"
+  ],
+  "whole_system_release": false,
+  "adopted": false,
+  "changed_part_IDs": [],
+  "custom_parts_removed": 0,
+  "custom_processes_removed": 0,
+  "save": "PENDING_SUPERVISOR_LOCAL_SAVE",
+  "new_commit_SHA": null,
+  "next": "Reject further vertical height scans. Distinct lateral Finger insertion or independently validated split assembly/Palm architecture is needed; preserve actual Idler-after witnesses. System demand/material/load-chain/energy gates remain blocked; Stage3 not authorized."
+}

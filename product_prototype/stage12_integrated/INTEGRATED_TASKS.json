@@ -1443,7 +1443,7 @@
       "id": "batch6_independent_integrated_release_and_repairs",
       "track": "C",
       "priority": -191,
-      "status": "READY",
+      "status": "BLOCKED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "coverage_before_repetition",
       "research_batch": "authorized_20261127_6",
@@ -1477,8 +1477,11 @@
       "failure_policy": "After two same-mechanism failures evaluate standard component/different architecture; do not repeat rivet or parameter scans",
       "fallback": "Independent standard-component product task from another track",
       "system_gate_contribution": 5,
-      "last_run_utc": null,
-      "consecutive_runs": 0
+      "last_run_utc": "2026-11-27T00:39:32.349237+00:00",
+      "consecutive_runs": 1,
+      "result": "validation/stage1/batch6_repair_cycle1/summary.json",
+      "reason": "Existing unchanged release gates reject full qualification. Actual Idler-after assembly order still collides with Palm at six Finger poses; no direct safe same-revision release repair demonstrated.",
+      "next": "Reject further vertical height scans. Distinct lateral Finger insertion or independently validated split assembly/Palm architecture is needed; preserve actual Idler-after witnesses. System demand/material/load-chain/energy gates remain blocked; Stage3 not authorized."
     }
   ],
   "policy": {

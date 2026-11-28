@@ -1,0 +1,56 @@
+{
+  "status": "ACTUAL_P1_EXACT_NESTED_POLYHEDRAL_FULLVOLUME_VECTOR_CONTRAST",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixedvectors70/producer.py",
+    "SHA256": "6170b93e296d9e2b5e6bb670a10e625d7c4f1eec18143056739b5a1764673944"
+  },
+  "hierarchy": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixed70l1b/summary.json",
+        "SHA256": "2be0b669276b41c91ed528eb6afc7aa7ce5e1a330b6f27ac1b52cead4bcda2d1"
+      },
+      "reconstructed_connectivity_and_points_exact": true,
+      "depth": 1,
+      "edges": 27188,
+      "nodes": 49921,
+      "tetra": 222268
+    }
+  ],
+  "rows": [
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_inplane70l2/summary.json",
+        "SHA256": "ddea9c36a80369ea195983f53ab98727ec97376e96c94dab33f48c88d0c2d207"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixed70l1b/summary.json",
+        "SHA256": "2be0b669276b41c91ed528eb6afc7aa7ce5e1a330b6f27ac1b52cead4bcda2d1"
+      },
+      "parent_map": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_mixedvectors70/parent_0_1.npz",
+        "SHA256": "087d75d8b5522cbd86200e3121d4c861e5633674020f6754d0b45b3edf17e17c"
+      },
+      "all_points_covered": true,
+      "minimum_barycentric": -2.3092638912203256e-14,
+      "maximum_parent_volume_partition_error_mm3": 1.9895196601282805e-13,
+      "exact_fullvolume_vector_difference_RMS_mm": 0.0003285725293590405,
+      "coarse_volume_RMS_mm": 0.0011542617867740612,
+      "fine_volume_RMS_mm": 0.0014783999933672433,
+      "relative_with_fine_denominator": 0.22224873568260436,
+      "relative_with_coarse_denominator": 0.28466031980261364,
+      "original1percent_both_directions": false,
+      "both_full_load_local": true,
+      "wrong_parent_minimum_barycentric": -199.16268729284394,
+      "wrong_parent_rejected": true,
+      "no_alignment": true
+    }
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "scope": "Exact quadratic integral of P1 field difference over every verified fine tetra; original domain and volume preserved; BOTH denominators, no alignment or hidden gauge. This is NOT exact curved CAD domain, source-minimum strength, dt, globalenergy, or83body certificate."
+}

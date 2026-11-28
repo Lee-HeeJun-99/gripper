@@ -1,3 +1,41 @@
+# Same actual P1: in-plane and mixed fullplate validation — cycle70
+
+Actual HEAD `2935fa1721f73537c822211b8356273585049f09`. Selected exact `goal_primary_ground65a_nested_volume_curved_boundary_and_keeper_contact69`. Continue ONE83part `primaryP1_ground65a`, separate from failed AO, Motor→Drum→Tendon→Finger→Root→Ground. DistalPET axialslide, replaceable cartridge,3Finger/jamming extension retained. **Changed actual CAD: NONE**; actual83STEP/assembly/BOM hashes verified. Category ACTUAL_PRODUCT_VALIDATION. Proven source-reviewed Pololu1101/1996hub and existing tendon/standard-fastener interfaces retained; no new rating/material minimum or purchase.
+
+Implemented actual wholeplate conforming in-plane bisection, then mixed in-plane/thickness bisection. Same original polyhedral geometry, allfloor nodes,286physicalfloor points and42535physicalupper points retained. AlloriginalDOFs restored and original circularfriction/work/nonpenetration criteria unchanged. New numerical fields are not old-output retags or ideal coupons.
+
+| Reference | Nodes | Tetra | Local checks | Energy Nmm | Exact volume RMS mm | Increment loss Nmm |
+|---|---|---|---|---|---|---|
+| primaryP1_bothfast68h5 | 10080 | 34358 | True | 0.0255835533702 | 0.00112834821166 | 0.00744109932905 |
+| primaryP1_inplane70l1 | 11246 | 40334 | True | 0.0256965895746 | 0.00113386649819 | 0.00746517782486 |
+| primaryP1_inplane70l2 | 22733 | 78471 | True | 0.0261059322179 | 0.00115426178677 | 0.00760669843429 |
+| primaryP1_mixed70l1b | 49921 | 222268 | True | 0.0323531715267 | 0.00147839999337 | 0.00996674329418 |
+| primaryP1_nested69l1 | 18610 | 82176 | True | 0.0316589306576 | 0.0014428820162 | 0.00973232990554 |
+| primaryP1_nested69l2 | 36265 | 191018 | True | 0.0325814640383 | 0.00148952057488 | 0.010061377066 |
+
+- primaryP1_bothfast68h5 → primaryP1_inplane70l1: fullvolume vector error 0.51662074% (fine denominator), 0.519147319% (coarse); original1percent both True.
+- primaryP1_bothfast68h5 → primaryP1_inplane70l2: fullvolume vector error 2.29003728% (fine denominator), 2.34263013% (coarse); original1percent both False.
+- primaryP1_bothfast68h5 → primaryP1_mixed70l1b: fullvolume vector error 24.0117978% (fine denominator), 31.4610696% (coarse); original1percent both False.
+- primaryP1_inplane70l1 → primaryP1_inplane70l2: fullvolume vector error 1.78987668% (fine denominator), 1.82207187% (coarse); original1percent both False.
+- primaryP1_inplane70l1 → primaryP1_mixed70l1b: fullvolume vector error 23.6215889% (fine denominator), 30.7991787% (coarse); original1percent both False.
+- primaryP1_inplane70l2 → primaryP1_mixed70l1b: fullvolume vector error 22.2248736% (fine denominator), 28.466032% (coarse); original1percent both False.
+
+First in-plane pair below1percent does NOT certify convergence: finer/base and adjacent failures retained. Exact parenttetra integration covers FULL originalpolyhedral volume with both denominators/noalignment, strict parentbarycentrics/volume partition/wrongparent negativecontrol. Independent strainenergy and finefield differencevirtualwork include every originaltetra and nodalforce, continuity and.01N alteredload rejection. Energy norm is diagnostic, not a replacement criterion or continuum bound. Fixedfacet domain and exact curvedSTEP accuracy remain separate; original volume discrepancy alone proves neither boundary nor motion accuracy.
+
+Mixed generator repeated full-array allocation failed under4GiB; original failure/source/log retained. Implemented stable creation IDs and selectededge incidence; same selectedoriginaledges and splitorder. Independent original repeated-mask hierarchy verification is separately recorded. No resource/physical-criteria relaxation. Allfailed nonlinear iterates retained. Independent tetra/contactBtranspose reconstruction and physical6resultant/perfootnormal/tangent/wrench ledgers executed. The fields are local actualplate references with prescribed affineupperloads, NOT actual hex/keeper/tongue/pin/bore/nut/cage elasticity/contact/preload or83body equilibrium. E200GPa/nu.3/rho7900/floormu.3 assumed. No strength/time/globalenergy claim.
+
+Fresh actual83STEP import, finite orderedassembly/tools/tendonroute and conditional physical loads executed: 183conditional scenarios, 45motorcurrent recommendation-screen failures retained. Reused checker historical taskmetadata is not currentselection; thiscycle execution/result binds exact selectedtask and actualcandidate. Finiteposes are not continuousCCD/threadtightening/pinforming. Conditional100g/3 and local tendonloop balance are not actual operatingequilibrium/capacity.
+
+New systemgates satisfied0; **all22UNQUALIFIED**: bearing_ratings_reactions, cad_model_match, changed_stage1_revalidation, continuous_load_path, coupling_capacity, finger_structure, housing_shoulder_retention, idler_load_drag, motor_alignment_reactions, motor_running_torque_speed, numerical_convergence, overload_protection, physical_mass_inertia, pin_drum_strength, qualified_worst_case, root_palm_strength, shaft_strength, stage3_handoff, static_dynamic_consistency, tendon_force_stroke, tendon_stiffness_strength, terminal_retention. Accepted83body operatingequilibria0. Hardware NOT_MEASURED. Unchanged independent integrated gate INTEGRATED_NOT_QUALIFIED; NoStage3. Original mesh1percent/time.1percent/globalenergy/source-minimum/process/floor/setting/preload/fullstroke/speed/protectedpeak/mass/final3Finger criteria unchanged.
+
+Executed 17 bounded4GiB/420s children, actualsum 542.034136s, exits [0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]; timeouts0,STOP0. Nonzero outcomes preserved with originals in primary70_failures/summary.json. Allreaped,RUNNING0. Manager checkpoint_before70.json is ONLY olduntracked baseline. Sourcepins unchanged. No Gitadd/commit/push/historyrewrite/deletion/SDK/manager/security/save/guard/gate-source edits,subagents,recursive launches,purchase/hardware/credentials/providerselection. Olduntracked fullcontenthash audit not claimed.
+
+Concrete next `goal_primary_ground65a_finite_keeper_contact_and_mixed_enrichment70`: Continue SAME ONE83part primaryP1_ground65a Motor->Drum->Tendon->Finger->Root->Ground; distalPETslide/cartridge/3Finger/jamming retained. FIRST replace prescribed plug-end/tongue returntorque with actual finite18line hex/roundedkeeper/tongue/installedsplitpin/bore/nut/cage freeDOF contact and actual host wrench balance; retain setting/preload uncertainty and geometric clearance, never fix spin. Use existing realbody meshes and compliance; begin one finite Root keeper/host/pin subassembly with explicit real interface loads and no hidden physicalfixation. Keep ground plate mixed-enrichment fields as local reference only; use stable incident-edge generation for any further fixed-domain refinement, original allcoarse/finest/adjacent1percent vector/scalar checks and separate exactSTEP boundary accuracy. Consider quadratic/adaptive enrichment within4GiB420s instead of another blind uniform refinement. Source-minimum/process/floormu/flatness, time.1percent/globalenergy, fullstroke/speed/protectedpeak/physicalmass/final3Finger and all22systemgates remain; NoStage3.
+
+Canonical new actual result validation/integrated/primary_cycle70_record/summary.json; exact runtime/goal_authorized_20261127_7/save_request70.json. Supervisor alone saves verified bytes; no newcommit claimed. Final seal/verify follow allwrites.
+
+---
+
 # Same actual P1: thickness and conforming volume refinement — cycle69
 
 Start actual Git HEAD `63a3b301d188444765798b751e7a5deb0014796e`; selected exact `goal_primary_ground65a_fixed_integration_mesh_and_actual_keeper_contact68`. ONE primary83part `primaryP1_ground65a`, separate from failed AO; Motor→Drum→Tendon→Finger→Root→Ground. Distal PET axialslide, replaceable cartridge,3Finger/jamming extension retained. **Changed actual CAD: NONE**. All83STEP/assembly/BOM hashes verified. Reused source-reviewed Pololu1101 motor/1996hub and existing tendon/standard-fastener interfaces; no new rating/material minimum/purchase claimed. This is ACTUAL_PRODUCT_VALIDATION, not DESIGN_CHANGE.

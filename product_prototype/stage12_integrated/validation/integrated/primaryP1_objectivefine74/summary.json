@@ -1,0 +1,70 @@
+{
+  "status": "ACTUAL_P1_OBJECTIVE_MOVING_LAND_REFERENCE",
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+    "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefine74/producer.py",
+    "SHA256": "7d3f73908fe5cf8f33548f7c10eebe7f5593ea553135560a0588accb0a6ea3bb"
+  },
+  "initial": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingfine74/summary.json",
+    "SHA256": "f0ba92e65e53f1656e6009749dc2bf0255626dbded702550c47b6ac59be8c73f"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefine74/field.npz",
+    "SHA256": "687d58a3432213f7f0fe126c978d98ccb91e707f0373f9bcb3037708d307a10b"
+  },
+  "contact_features": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefine74/contact_features.json",
+    "SHA256": "294930d0f94d4ce39a0d9f2e52a0d66fcaf361e769816a83ad67fe723fac7c40"
+  },
+  "checks": {
+    "elastic_force": true,
+    "complete_moving_gap": true,
+    "nonnegative": true,
+    "complementarity": true,
+    "deformed_wrench": true,
+    "neutral_gauge_reactions_zero": true
+  },
+  "nodes": 4517,
+  "tetra": 16186,
+  "h_mm": 0.55,
+  "static_energy_Nmm": 1.5386151386346762e-07,
+  "elastic_law": "SaintVenantKirchhoff_totalLagrangian_assumed",
+  "journal": [
+    {
+      "iteration": 0,
+      "active": 32,
+      "gap_mm": 0.0,
+      "force_residual_N": 1.826400393295795e-11,
+      "minimum_lambda_N": 0.0,
+      "gauge_reaction_N": 4.649787907319337e-16,
+      "energy_Nmm": 1.5386151386346762e-07,
+      "delta_mm": 2.3722027176917916e-11
+    }
+  ],
+  "deformed_wrench_N_Nmm": [
+    0.0,
+    0.0,
+    5.2200162120878864e-14,
+    2.0696987689233087e-12,
+    -1.0719420820816741e-13,
+    0.0
+  ],
+  "physical_fixed_keeper_DOF": 0,
+  "numerical_neutral_gauges": [
+    "meanX",
+    "meanY",
+    "yaw"
+  ],
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 1.4247476689051837,
+  "limitations": [
+    "Explicit neutral pose gauges require independent zeroreaction check; actual slot/pin/bolts/preload UNSOLVED.",
+    "Objective elasticity with movingfinite Root lands, typical200GPa/.3 only; no sourceallowable strength or wholeproduct certification."
+  ]
+}

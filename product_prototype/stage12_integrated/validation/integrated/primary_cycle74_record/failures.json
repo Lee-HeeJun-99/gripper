@@ -1,0 +1,190 @@
+{
+  "status": "ACTUAL_P1_PHYSICAL_AND_EXECUTION_FAILURES_PRESERVED",
+  "failed_executions": [
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_boltverify_execution/execution.json",
+        "SHA256": "5f00e0155849ecbec530a107cd866380915bd858acf507016ec3df26a8229cc6"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_boltseat_verify74.py",
+        "primaryP1_boltverify74"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 4.8081582088489085,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_boltverify_execution/analysis.log",
+        "SHA256": "aefd54910e4cc7e6914be267b8f91ea050aa0c89ec74e7d1a36d2a09531f3538"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_boltverifyb_execution/execution.json",
+        "SHA256": "1cf27ffc506907f5fb54a7f295ae038722e846d29b588e4fd55714b1cdf90f7d"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_boltseat_verify74b.py",
+        "primaryP1_boltverify74b"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 4.808260963996872,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_boltverifyb_execution/analysis.log",
+        "SHA256": "3e9ea0361c0d13f126747735c8890d7480294bb45a774ae27b27f1a8dfef21bb"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_movingcoarse_execution/execution.json",
+        "SHA256": "4a01bc0743a3f8947e4913e51335bda6402c6481a5031b979f5394dd98dda2b2"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_moving_land74.py",
+        ".8",
+        "primaryP1_movingcoarse74"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.20148721220903099,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_movingcoarse_execution/analysis.log",
+        "SHA256": "ea20cdd460f0436d0c685e51bf3e3e89f7490a90812f7e8f7c7d0a1d66185273"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_movingcoarseb_execution/execution.json",
+        "SHA256": "215d6a97a52c53eaf90d02a82eab466c7ccb46e8305177039036cf1205125bb6"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_moving_land74.py",
+        ".8",
+        "primaryP1_movingcoarse74"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.401845816988498,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_movingcoarseb_execution/analysis.log",
+        "SHA256": "6e2519cc799cb141241526be3d53ae4e0a6264a405e870b72ed2cc9954fce375"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_objectiveaudit_execution/execution.json",
+        "SHA256": "10f8839417ee4192e8d0e70792d0f4200d59982d7571c0d13268d74567a5d6b0"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_objective_audit74.py",
+        "primaryP1_objectiveaudit74",
+        "primaryP1_objectivecoarse74",
+        "primaryP1_objectivefine74",
+        "primaryP1_objectivefinest74"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 28.449880610918626,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_objectiveaudit_execution/analysis.log",
+        "SHA256": "87181985e62341a9b8d8e8385a3111672e1696788aee544513f9270caf2c8439"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_release_execution/execution.json",
+        "SHA256": "5780697fec684c569b15ca61796dd257b4d17af62d19ac0f305e6f6d330ec8f4"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_release_read73.py",
+        "primaryP1_release74"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 0.4017243341077119,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary74_release_execution/analysis.log",
+        "SHA256": "4643f355ff982376c0853540d266581d2d0865236dfd803b6b4711810e5f61eb"
+      }
+    }
+  ],
+  "initial_dependency_errors": "First attempt omitted external skfem/osqp/gmsh path; second omitted OCP path. Original logs preserved; corrected explicitPYTHONPATH uses existing environments, noinstall.",
+  "original_rigid_transform_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectiveaudit74/summary.json",
+    "SHA256": "ef8a8e49e2c350e547d1ffddc850ff015d0114aff54e7afb7564b76e163c1ade"
+  },
+  "rigid_transform_correction": "Originalfloat64 p+u preaddition lost tiny elasticdisplacement before rotation. Separate74b forms p.longdouble+u.longdouble BEFORE rigidrotation; original1e-8force criterion unchanged. Not a tightenedsolve or changedelasticfield.",
+  "print_serialization_failure": "Firstboltverify wrote actualvalidFAILsummary, then numpybool commentary serialization raised TypeError. Preserved producer/log/summary; separate74b fixes printbool only; physicalinterference remainsFAIL.",
+  "spatial": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "energy_relative": 0.1255118994214831,
+      "volume_centroid_quadrature_vector_relative_L2": 0.12615866509079254,
+      "unmapped_points": 0,
+      "unmapped_volume_mm3": 0.0,
+      "whole_domain_complete": true,
+      "quadrature_converged": false,
+      "physical_spatial_gate_pass": false
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "energy_relative": 0.28312816318329703,
+      "volume_centroid_quadrature_vector_relative_L2": 0.28358747194124817,
+      "unmapped_points": 0,
+      "unmapped_volume_mm3": 0.0,
+      "whole_domain_complete": true,
+      "quadrature_converged": false,
+      "physical_spatial_gate_pass": false
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "energy_relative": 0.1802383173167742,
+      "volume_centroid_quadrature_vector_relative_L2": 0.1807290321096737,
+      "unmapped_points": 0,
+      "unmapped_volume_mm3": 0.0,
+      "whole_domain_complete": true,
+      "quadrature_converged": false,
+      "physical_spatial_gate_pass": false
+    }
+  ],
+  "incompatible_actual_pose": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltverify74b/summary.json",
+    "SHA256": "54a556d38eef6ac2bb38bfc8741594ec47fca683e0da3d3f35a1e25999b2db34"
+  },
+  "all22_unqualified": true,
+  "whole_system_release": false
+}

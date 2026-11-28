@@ -1,5 +1,5 @@
 {
-  "status": "PRIMARY_P1_POSITIVE_SHOULDER_ACTUAL_CAD_CONTACT_SPATIAL_FAIL_ALL22_UNQUALIFIED",
+  "status": "PRIMARY_P1_MOVING_CONTACT_OBJECTIVE_ADVANCED_SPATIAL_JOINT_FAIL_ALL22_UNQUALIFIED",
   "primary_id": "P1",
   "revision": "primaryP1_shoulder73a",
   "primary_product": true,
@@ -362,11 +362,11 @@
     "path": "product_prototype/stage12_integrated/bom/primary_identity73_shoulder.json",
     "SHA256": "e90303cabc77854627d8ed9f292e56ac329c13e5c3e4b36116873567d96f7707"
   },
-  "selected_task_id": "goal_primary_ground65a_free_axial_pin_host_contact_and_tilt72",
-  "next_task_id": "goal_primary_shoulder73a_moving_land_contact_and_bolt_seat73",
+  "selected_task_id": "goal_primary_shoulder73a_moving_land_contact_and_bolt_seat73",
+  "next_task_id": "goal_primary_shoulder73a_thread_compatible_headseat_and_compliant_joint74",
   "system_gate_state": {
-    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state73_shoulder.json",
-    "SHA256": "d8af8ce769657dd06eb343cc60bf889b6eb94dc0b97aff78b5c3714c1cb25074"
+    "path": "product_prototype/stage12_integrated/models/primary_system_gate_state74_moving.json",
+    "SHA256": "0a3241fadd06bb284ca8f8423eec828586e58d20e1996bcf8cb9336ad80fb7ac"
   },
   "latest_cycle55_summary": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle55_record/summary.json",
@@ -467,7 +467,7 @@
   },
   "adopted_reference": "revAA_heel_relief2 unchanged",
   "official_baseline_unchanged": "revAA_heel_relief2",
-  "CAD_this_cycle": "ActualnewRootkeeper5.7x3.7positiveflangeSTEP/STL, installed-.025mm;new83partASSEMBLY/BOM;82otherSTEPs unchanged.",
+  "CAD_this_cycle": "NONE; actualsame83STEP/newnumericalfields only, no newsolid/designcredit.",
   "physical_model": "ONE P1 Motor->Drum->Tendon->Finger->Root->Ground,distalPETslide/cartridge/3Finger/jammingretained. Finitefloorcompressive/frictionalboundary; allupperrelativephysicalDOFs unresolved,notfixed.",
   "material_contract": {
     "source_typical_reference": {
@@ -477,24 +477,42 @@
     "new_integral_piece": "ONEbillet6061-T6designintent,68900MPa/2700kgm3typicalreference;explicitlyreplacespriorsteelGroundPlate;minimum/processnotqualified"
   },
   "current_physics_sourcefield": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderverify73/summary.json",
-    "SHA256": "16e1e9e30d3ea1aa7bcb849a7cbb821fd87ebfbd1d08b259c9678ca80e1a0fe6"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectiveaudit74b/summary.json",
+    "SHA256": "061a24d9d0eee540e48a765f8d0cb14dc9373584af802269be0dfba711af01ea"
   },
-  "current_physics_status": "Changedactualkeeper freefullDOF gravityreference, finiteRootlands; independentmovingtraction and three-meshFAIL. RigidRoot/slot/pin/boltseat/nut/preload not coupled; actual83equilibria0.",
+  "current_physics_status": "Actualkeeper movingfiniteRootlands/materialtrim/bothnormalcones/objectiveStVK localgravitychecks pass; meshFAIL. Finiteheadseat necessary24cone pass; actual83posedRFsmoothbolt/nutenvelopeFAIL; actualjoint/preload unsolved.",
   "conditional_normal_reference_fields": "Historical55eP2only;notstrength/meshqualificationofchangedhosts/keepers.",
   "load_BC": {
     "conditional_operating_load": {
-      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderproduct73/loads.json",
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product74/loads.json",
       "SHA256": "dc86cd7971b45ca5938f6e29ea69cb2704485292eba33f5aa324dab154864fac"
     },
-    "new_keeper_gravity": {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/shoulder_gravity_reference.json",
-      "SHA256": "77f40d2419e1235ab28714a467789334b2ada3545614600de652a7c4bcae8bae"
-    },
+    "gravity_fields": [
+      {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivecoarse74/summary.json",
+        "SHA256": "d978f76021bb539f1e96c840258b85562964d201a7ce29baa3519af18d134266"
+      },
+      {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefine74/summary.json",
+        "SHA256": "d27545a2c9f2f29637922195fe8c41d063be9767c782e9a93851f41b07ead199"
+      },
+      {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefinest74/summary.json",
+        "SHA256": "f869e061fb98724a0f944cbda45bf6c81e7c77a388cf60c940cdb9d094937b04"
+      }
+    ],
     "rigid_Root_cut": true,
+    "headseat_necessary_cone": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltseat74/summary.json",
+      "SHA256": "d1187ace3411e999c6ab031738da45fc87e7e72aebe7287797bcf6ec625b3b02"
+    },
+    "incompatible_pose_rejected": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltverify74b/summary.json",
+      "SHA256": "54a556d38eef6ac2bb38bfc8741594ec47fca683e0da3d3f35a1e25999b2db34"
+    },
     "actual83body_coupling": "UNSOLVED"
   },
-  "model_binding_status": "Actual83STEP/newASSEMBLY/newBOM verified; old82STEP retained. Nominalassembly/necessaryloadbounds only; changedStage1/source-minimum/material/process/physicaloperatingconvergence remainunqualified.",
+  "model_binding_status": "Actualsame83STEP/ASSEMBLY/BOM hashes verified. Freshnominalassembly partialscreens pass; nonnominalseatedsocketpose rejectsRFbolt/nut smoothenvelopes. Originalcriteria/source-minimum/fullphysics unqualified.",
   "extension": {
     "replaceable_Root_Finger": "Originalretainedpartgeometry/actualsideinsertionlocalchecks",
     "distal_PET_slide": "Originalpartgeometryretained;load/energyqualificationincomplete",
@@ -821,16 +839,7 @@
       "SHA256": "a7e63571a1e9231b1a1175704a59c8deb1c8f9835691520ffcf94ecdf4e2822e"
     }
   },
-  "actual_physical_solid_changes": [
-    {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/ROOT_SOCKET_KEEPER.step",
-      "SHA256": "3eff7daa87b79288887ff1d16d9a4dfd52b9ad78ec683e5121fa478ab6eccb13"
-    },
-    {
-      "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/ROOT_SOCKET_KEEPER.stl",
-      "SHA256": "ccd1542a9d7fa0e8f3e5b213d5266d7ccec9892b8806889f8e15a74b4f1db7d8"
-    }
-  ],
+  "actual_physical_solid_changes": [],
   "STEP_reexports_no_geometry_credit": [
     {
       "bolt": "F0_RF0_BOLT",
@@ -1040,8 +1049,8 @@
     }
   ],
   "latest_cycle": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle73_record/summary.json",
-    "SHA256": "2c8be84d5dbdef22958d972a76936b63adc83df8bc3ad5a079da991b09d302ca"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle74_record/summary.json",
+    "SHA256": "a2a10462a4adb078dbdc9562beb59339f119e06ece221463d230b6b6b38ceedb"
   },
   "cycle63_actual_validation": [
     {
@@ -1057,7 +1066,7 @@
       "SHA256": "a69e4fe757429cec76e8951740d2155b0d62cf51e9fa98472ff0af604b93b953"
     }
   ],
-  "next_mechanism": "Continue SAME ONE83part P1 now primaryP1_shoulder73a, actual positive Root keeper flange on existing boss;82otherSTEPs retained. FIRST replace reference-advected shoulder tractions with complete deformed triangle/finite Root land clipping, materialtrim/corner IFT pullback and bothphysical normalcones. Independent activepoints leave actual Root by7.4601e-7/1.10578e-6mm in coarse/finest despite sourceexit0. Restore all keeper translations/tilts/yaw with actual finite tongue/slot/pin contacts, no hidden fixation or bottomface ties. Reuse objective SaintVenantKirchhoff force/tangent and independent element/wrench checks; linear localbodymoment near1e-8 is not globalobjective certification. Then couple freely axial/lateral/tilting bolts to actual headseat/nut/thread/preload; planar full24FarkasFAIL remains even with new shoulder and assumedgravity. Splitpin .9mm/.04mmsplit/eye/splayedlegs and Root compliance retained, not solidshaft. No retry of failed pin-only Newton as an operatingstate. Fullspatial1percent/basefinest/full-domainvectors, curvedSTEP/time.1percent/globalenergy/source-minimum/process/tolerances/floor/fullstroke/current/speed/protection/mass/final3Finger and all22remain;NoStage3.",
+  "next_mechanism": "Continue SAME ONE83part primaryP1_shoulder73a. Moving finiteRootland/materialtrim and bothnormalcones now independently pass gravityreference on three meshes; objectiveStVK/zero-neutral-gauge-reactions pass localchecks. Do not repeat old reference-advected traction. NEXT close actualRootjoint: keep headseat axialmotion independent of rigid screwlead, add justified finite M3thread/core/engagement and actualnut/cage lateral/axial/tilt elasticity/contact, and solve bolt bending rather than moving an entire rigidbolt .2mm through a fixednut. The +,+ necessary24row headseat cone has residual6.66e-16 but full83posed CAD has1.438932621mm3 bolt/nut envelope overlap perpair. These RFsolids are smoothnominal envelopes, NOT implemented helicalthreads; do not describe this as quantified realthread penetration. Retain both actualheadseat patches atz=-3, all6keeper/bolt modes, actualsplitpin/slot support and compliantRoot; no hidden fixation or axisreaction. Then recompute physically compatible socket/seat/thread/nut/preload/full3Dwrenches on sameassembly. Spatialenergy12.5512/18.0238/28.3128percent and wholevolume centroidvector12.6159/18.0729/28.3587percent FAIL1percent; centroidquadrature not a convergedwhole-domainnorm. Carry all originalsource-minimum/process/tolerance/time.1percent/globalenergy/floor/fullstroke/current/speed/protection/mass/final3Finger gates; all22UNQUALIFIED,NoStage3.",
   "historical_cycle64_state": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle64_record/prior_PRIMARY_PRODUCT.json",
     "SHA256": "ad9af3be4251b75ab02b0a7fe33e95f3d4d06f825b3cae8cd8476d07b99dac9c"
@@ -1124,7 +1133,7 @@
       "SHA256": "8ea26455fd1961316ec774dc105f38a9e5b440d13be683223867dd41ee8797f6"
     }
   ],
-  "task_id": "goal_primary_ground65a_free_axial_pin_host_contact_and_tilt72",
+  "task_id": "goal_primary_shoulder73a_moving_land_contact_and_bolt_seat73",
   "historical_cycle65_state": {
     "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle65_record/prior_PRIMARY_PRODUCT.json",
     "SHA256": "405f31681862c5b1f339c8bef75a44845424351857fee77cef7964324acfcb61"
@@ -1669,6 +1678,72 @@
     {
       "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release73/summary.json",
       "SHA256": "0dec72340dc3125e3b37c6765c9f43a8d795e7224ca4b53c9c3803be8e455b7c"
+    }
+  ],
+  "historical_cycle73_state": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle74_record/prior_PRIMARY_PRODUCT.json",
+    "SHA256": "1d08ee170c4e43e01cbbfb21621cd2b5e6ac81d15314d0c9bcde188c4879765b"
+  },
+  "latest_cycle74_summary": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle74_record/summary.json",
+    "SHA256": "a2a10462a4adb078dbdc9562beb59339f119e06ece221463d230b6b6b38ceedb"
+  },
+  "latest_cycle74_evidence": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingcoarse74/summary.json",
+      "SHA256": "d3435d1901b3bc11c4a305ae8a276c704d9e82476ace4afb95b8d5c719dd7e22"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingfine74/summary.json",
+      "SHA256": "f0ba92e65e53f1656e6009749dc2bf0255626dbded702550c47b6ac59be8c73f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingfinest74/summary.json",
+      "SHA256": "9c957139b36ade135b63a000b72081e7fead688426356526962bb338cec73699"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingaudit74/summary.json",
+      "SHA256": "f66259be5b190564c71b78e583546023c354530e114e951dd1c98995cbefd575"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivecoarse74/summary.json",
+      "SHA256": "d978f76021bb539f1e96c840258b85562964d201a7ce29baa3519af18d134266"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefine74/summary.json",
+      "SHA256": "d27545a2c9f2f29637922195fe8c41d063be9767c782e9a93851f41b07ead199"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectivefinest74/summary.json",
+      "SHA256": "f869e061fb98724a0f944cbda45bf6c81e7c77a388cf60c940cdb9d094937b04"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectiveaudit74/summary.json",
+      "SHA256": "ef8a8e49e2c350e547d1ffddc850ff015d0114aff54e7afb7564b76e163c1ade"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_objectiveaudit74b/summary.json",
+      "SHA256": "061a24d9d0eee540e48a765f8d0cb14dc9373584af802269be0dfba711af01ea"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltseat74/summary.json",
+      "SHA256": "d1187ace3411e999c6ab031738da45fc87e7e72aebe7287797bcf6ec625b3b02"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltverify74/summary.json",
+      "SHA256": "9b8f9df953846f8cb9f2da4b79989d152ab2ae8f36b4d8725b54eb4737d8227e"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltverify74b/summary.json",
+      "SHA256": "54a556d38eef6ac2bb38bfc8741594ec47fca683e0da3d3f35a1e25999b2db34"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product74/summary.json",
+      "SHA256": "cf0c09e0c8b5beb17135b4dbfbd15bd2b1dd9e92d857f700b689032c6e51a708"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release74/summary.json",
+      "SHA256": "28f8d52f16fcd8ee9e6a815ed79d7162baa15b42863ad69edc914c9ce159784d"
     }
   ]
 }

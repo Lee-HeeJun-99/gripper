@@ -1,0 +1,164 @@
+{
+  "status": "ACTUAL_P1_HEADSEAT_FULL83_POSE_FAIL",
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+    "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltverify74/producer.py",
+    "SHA256": "588df3b0c1aae4a03f436c61bcd26d58704119d3f76b70abbf6dbbdd044a3cd1"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_boltseat74/summary.json",
+    "SHA256": "d1187ace3411e999c6ab031738da45fc87e7e72aebe7287797bcf6ec625b3b02"
+  },
+  "checks": {
+    "all83_actual_hashes": true,
+    "all24_original_body_wrenches": true,
+    "nonnegative_normal_forces": true,
+    "all_actual_witnesses": true,
+    "internal_common_twist_work": true,
+    "without_headseats_rejected": true,
+    "free_host_rejected": true,
+    "altered_load_rejected": true,
+    "full83_changed_pose_no_interference": false
+  },
+  "actual_parts": 83,
+  "pose_changed_part_IDs": [
+    "ROOT_SOCKET_KEEPER",
+    "F0_RF0_BOLT",
+    "F0_RF1_BOLT"
+  ],
+  "all_changed_pair_queries": [
+    {
+      "a": "F0_ROOT_BOLT_-16",
+      "b": "ROOT_SOCKET_KEEPER",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_ROOT_BOLT_16",
+      "b": "ROOT_SOCKET_KEEPER",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_ROOT_BACK",
+      "b": "F0_RF0_BOLT",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_ROOT_BACK",
+      "b": "F0_RF1_BOLT",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_ROOT_BACK",
+      "b": "ROOT_SOCKET_KEEPER",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_RF0_BOLT",
+      "b": "F0_RF0_NUT",
+      "intersection_mm3": 1.4389326210910958
+    },
+    {
+      "a": "F0_RF0_BOLT",
+      "b": "BENCH_SUPPORT",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_RF0_BOLT",
+      "b": "ROOT_SOCKET_KEEPER",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_RF1_BOLT",
+      "b": "F0_RF1_NUT",
+      "intersection_mm3": 1.4389326210918223
+    },
+    {
+      "a": "F0_RF1_BOLT",
+      "b": "BENCH_SUPPORT",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "F0_RF1_BOLT",
+      "b": "ROOT_SOCKET_KEEPER",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "BENCH_SUPPORT",
+      "b": "ROOT_SOCKET_KEEPER",
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "ROOT_SOCKET_KEEPER",
+      "b": "ROOT_SOCKET_KEEPER_INSTALLED_SPLIT_PIN",
+      "intersection_mm3": 0.0
+    }
+  ],
+  "interferences": [
+    {
+      "a": "F0_RF0_BOLT",
+      "b": "F0_RF0_NUT",
+      "intersection_mm3": 1.4389326210910958
+    },
+    {
+      "a": "F0_RF1_BOLT",
+      "b": "F0_RF1_NUT",
+      "intersection_mm3": 1.4389326210918223
+    }
+  ],
+  "independent_all24_residual_N_Nmm": [
+    [
+      6.938893903907228e-18,
+      6.938893903907228e-18,
+      0.0,
+      2.6020852139652106e-17,
+      0.0,
+      6.661338147750939e-16
+    ],
+    [
+      6.938893903907228e-18,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.7755575615628914e-17
+    ],
+    [
+      1.734723475976807e-18,
+      3.469446951953614e-18,
+      0.0,
+      -2.7755575615628914e-17,
+      0.0,
+      9.71445146547012e-17
+    ],
+    [
+      -1.0408340855860843e-17,
+      -7.643625316022806e-18,
+      3.469446951953614e-18,
+      2.7755575615628914e-17,
+      2.220446049250313e-16,
+      0.0
+    ]
+  ],
+  "maximum_residual": 6.661338147750939e-16,
+  "maximum_witness_distance_mm": 4.773769882104577e-12,
+  "internal_common_twist_work_error": 7.105427357601002e-15,
+  "without_headseat_LP_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "free_host_LP_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "altered_load_residual_N": 0.01,
+  "headseat_resultant_forces_N": [
+    0.011464300262743086,
+    0.011464300262743608
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "accepted83body_physical_equilibria": 0,
+  "whole_system_release": false,
+  "elapsed_s": 3.6537940949201584,
+  "limitations": [
+    "All83 imported; only pairs touching3posedparts rechecked. Unchangedpairs retain originalnominal evidence, not independent newfullpaircertification.",
+    "Necessary24resultants and exactposedCAD checks do not solve elasticity, thread/nut flanks, freebolt/keeper tilt or preload.",
+    "Headseatpatch necessarycontrast remains conditional gravity/leadtorque, no100g operation/sourceallowable/mesh/time/globalenergy/hardwarePASS."
+  ]
+}

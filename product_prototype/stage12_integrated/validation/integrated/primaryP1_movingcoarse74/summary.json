@@ -1,0 +1,87 @@
+{
+  "status": "ACTUAL_P1_MOVING_LAND_CONDITIONAL_REFERENCE",
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+    "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingcoarse74/producer.py",
+    "SHA256": "485482c66a5cc4aafd98c8f71ec91e09fbb5de76e0e17df2028aeaceaa9acba0"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/ROOT_SOCKET_KEEPER.step",
+    "SHA256": "3eff7daa87b79288887ff1d16d9a4dfd52b9ad78ec683e5121fa478ab6eccb13"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingcoarse74/field.npz",
+    "SHA256": "e39f90fc05f10dbde0e7b436131c1e8ed50a05ec414dbdcd7e5354844783dab0"
+  },
+  "contact_features": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_movingcoarse74/contact_features.json",
+    "SHA256": "a470972aa01354b5a500cfc25cf26022527aeedf30f2d0125e48d03c4460fa00"
+  },
+  "checks": {
+    "all83hashes": true,
+    "moving_clipped_gaps": true,
+    "nonnegative": true,
+    "complementarity": true,
+    "elastic_force": true,
+    "deformed_wrench": true,
+    "directional_derivative": true
+  },
+  "nodes": 2064,
+  "tetra": 6564,
+  "h_mm": 0.8,
+  "static_energy_Nmm": 1.3455007456398964e-07,
+  "maximum_displacement_mm": 2.4727474574306064e-05,
+  "directional_derivative_error": 1.4686614147052524e-09,
+  "deformed_wrench_residual_N_Nmm": [
+    -2.195108952310374e-19,
+    1.6622793307305034e-20,
+    9.075449810061476e-17,
+    2.0208198310794727e-09,
+    6.879800620147002e-09,
+    2.5720290256075728e-21
+  ],
+  "maximum_force_residual_N": 1.9365216217702083e-14,
+  "minimum_gap_mm": -4.440892098500626e-16,
+  "complementarity_Nmm": 7.313936899082251e-20,
+  "journal": [
+    {
+      "iteration": 0,
+      "rows": 334,
+      "solver_status": "solved",
+      "minimum_reclipped_gap_mm": -4.440892098500626e-16,
+      "max_force_residual_N": 1.814397089061441e-14,
+      "energy_Nmm": 1.3455007456350794e-07,
+      "delta_mm": 2.4538705840293523e-05,
+      "same_topology": true
+    },
+    {
+      "iteration": 1,
+      "rows": 334,
+      "solver_status": "solved",
+      "minimum_reclipped_gap_mm": -4.440892098500626e-16,
+      "max_force_residual_N": 1.9365216217702083e-14,
+      "energy_Nmm": 1.3455007456398964e-07,
+      "delta_mm": 1.5130718943393018e-16,
+      "same_topology": true
+    }
+  ],
+  "physical_fixed_keeper_DOF": 0,
+  "free_rigid_modes": 6,
+  "conditional_weight_N": 0.03629616529613834,
+  "source_CAD_volume_mm3": 468.5036483721405,
+  "assumed_E_MPa": 200000,
+  "assumed_nu": 0.3,
+  "assumed_density_kg_mm3": 7.9e-06,
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 1.4986560880206525,
+  "limitations": [
+    "Actual full keeper with moving clipped finite Root lands and complexstep materialtrim force pullback; rigid Root cut, gravity only.",
+    "Linear constitutive contrast; objectivity, both normalcones, curvedSTEP, spatial/time/globalenergy and real pin/slot/bolt/preload remain independently required.",
+    "All83body operating equilibrium and source-backed strength unqualified."
+  ]
+}

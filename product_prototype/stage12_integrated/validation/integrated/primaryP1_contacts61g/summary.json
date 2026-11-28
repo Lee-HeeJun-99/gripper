@@ -1,0 +1,125 @@
+{
+  "status": "ACTUAL83_FRESH_CUT_FINITE_CONTACT_AND_REQUIRED_CONNECTOR_HOST_PORT_BOUNDS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_splitpin61g/summary.json",
+    "SHA256": "18585c96a40229ab29342a739b882d10f98db86bd27510d61cf41c5ce76bb886"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_moving61g/summary.json",
+    "SHA256": "a657929649bd3ebc790244a2248e930348911218a2d4ebd676aee5ef5589cb81"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts61g/producer.py",
+    "SHA256": "457662f47171ce9c286f00181ec579ace903c525706af0ad2fa877f5f46bb5e7"
+  },
+  "patches": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts61g/patches.json",
+    "SHA256": "a7b6b1ca11a64f673b4202dc87e23c2a8f6db5aaffad31904973cf8fe3afa538"
+  },
+  "connector_ports": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts61g/connector_ports.json",
+    "SHA256": "f620145394de4ea0a6c0d11c902e828c49b9aa4b05002a7dd3619a6085204e53"
+  },
+  "load_ledger": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts61g/load_ledger.json",
+    "SHA256": "c53df950340ae3bfd428ca8c4b12b74195540402e758ce182e8f83fb98704244"
+  },
+  "rows": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts61g/rows.json",
+    "SHA256": "65e07c13c152dbc244c8e6c0d531b679f5e9e5ce9e6ba05d037d1fe63ab66c72"
+  },
+  "negative_controls": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts61g/controls.json",
+    "SHA256": "3d02ea60d49f7f1daa5f235ae7ae8a8528b2732fd2210d0c7f206f7d97043430"
+  },
+  "checks": {
+    "candidate83_hashes": true,
+    "fresh_upstream_admitted": true,
+    "all_actual_patch_areas_positive": true,
+    "all20actual_port_seats_nonzero": true,
+    "exact_cell_area_sums": true,
+    "all83_gravity_once": true,
+    "free_host_all_reject": true,
+    "free_host_work_certificate": true,
+    "feasible_rows_original_balance": true
+  },
+  "patch_count": 10,
+  "actual_finite_contact_cells": 160,
+  "root_translation_mm": [
+    0.1,
+    0.0,
+    0
+  ],
+  "motor_translation_mm": [
+    0.1,
+    0.0,
+    0
+  ],
+  "support_translation_mm": [
+    0.1,
+    0,
+    0
+  ],
+  "free_host_certificate": {
+    "all5body_translation_twist": [
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0
+    ],
+    "maximum_internal_virtualwork": 0.0,
+    "external_downward_translation_work_N": 60.7670792136818,
+    "meaning": "All internal contacts and connector ports dozero work under commontranslation; positivegravity work proves floating77partassembly cannot staticallyequilibrate. No hiddenhostfixation."
+  },
+  "free_host_solved_equilibria": 0,
+  "conditional_host_port_feasible_mu": [
+    0,
+    0.1,
+    0.3,
+    0.8
+  ],
+  "required_total_host_wrench_N_Nm": [
+    -1.0896277777777779,
+    -0.0,
+    60.7670792136818,
+    -0.3303096221915388,
+    -1.2268470313974231,
+    -0.0
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 3.0014028209261596,
+  "limitations": [
+    "Keepers/installed nominal split pins grouped only for necessary union cut bounds: relative DOFs, contact and axial retention NOT solved. No physical tie is implemented. Fivecutbody equilibrium retains30resultants,not full83independentrigidbody or elasticcontact solve. Connectorports are explicitUNKNOWN constitutivelaws,not ties/capacity/preload.",
+    "Conditional mu usesinscribeddiamond,notmeasuredfriction. Nonuniquepatchreactions areadmissiblenecessarybounds,not actualpressuredistribution.",
+    "Unknown ultimatehost6resultantport doesnotinstantiate hostgeometry/contact/fixation. All freehostcasesmustreject.",
+    "Sourceconditionalmass/density and oldmesh/time/globalenergyFAILs,3Finger/protection/materialminima/process/all22remain."
+  ]
+}

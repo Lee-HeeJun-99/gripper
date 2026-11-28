@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_splitpin61.py", line 54, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_splitpin61.py", line 40, in main
+    assert not(ROOT/'runtime/STOP').exists();oldn=g['pin'];n=g['name']+'_INSTALLED_SPLIT_PIN';parts.pop(oldn);refs.pop(oldn);s=world(pin_local(45),g);export(s,out/n);parts[n]=read(out/(n+'.step'));refs[n]=ref(out/(n+'.step'));g.update(pin=n,old_shaft_proxy=oldn,axial_retention='Actual nominal eye and two45degree splayed half-round legs; strength/forming/tolerance NOT qualified',installed_bend_deg=45)
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_splitpin61.py", line 28, in pin_local
+    return canonical(fuse(eye,*halves))
+TypeError: fuse() takes 2 positional arguments but 3 were given

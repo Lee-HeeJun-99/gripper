@@ -1,0 +1,62 @@
+{
+  "status": "CYCLE61_DESIGN_AND_AUDIT_FAILURES_PRESERVED_NO_REWARD",
+  "task_id": "goal_primary_keeper60c_installed_pin_and_index_setting_compliant_load_path60",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_splitpin61g/summary.json",
+    "SHA256": "18585c96a40229ab29342a739b882d10f98db86bd27510d61cf41c5ce76bb886"
+  },
+  "failures": [
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_splitpin61b/summary.json",
+        "SHA256": "acf1b7a4f401514312806fb1bdab99c3fa33ca2fda5cce2de2297239a995db6b"
+      },
+      "cause": "Vertical splayed legs collide with actual RootBack .391873519mm3 / MotorCap .59985mm3. Preserved; rotate forming plane horizontal and move bend beyond6mmCapboss."
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinaudit61c/summary.json",
+        "SHA256": "600f80017d0be6fa472be5ccd27f23dd436a41e5283ca7e0cef61ad4e4e21189"
+      },
+      "cause": "Independent section detects full .636172512mm2 circle rather than split .600184368mm2; two halves wrongly meet at +.02mm. Earlier61c geometric-clear is NOT an installed split-pin qualification. Coincident Boolean shape comparison also inconclusive/failed; initial top/tool coordinate corridors collide."
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinaudit61d/summary.json",
+        "SHA256": "771e1553a2cebfe918ad6631540bb827d29c8386048cac92ecaaac894481a69f"
+      },
+      "cause": "Corrected lateral jaw directions still intersect Root PET/front/back and Cap support. Not tool-access PASS. Final real Root keeper window plus top Cap access changes mechanism; no threshold relaxed."
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_splitpin61e/summary.json",
+        "SHA256": "1db582abb17c558c41897fb21c0abdce6fc25c59ec2e0c59cf7dd0cd1c3aeeaf"
+      },
+      "cause": "Separated half-first construction produced INVALID BReps despite single-solid count and no pair interference. Generator exit2 is authoritative; inherited CLEAR status describes no hits ONLY and is explicitly rejected as valid CAD. Final61f/g cuts .04mm slit after union and passes validity/independent material probes."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary61_pinA_execution/execution.json",
+        "SHA256": "ab0f09820bf874937673e91960e58dce1c7388b9c458f6935ac5625b22ec3413"
+      },
+      "cause": "TypeError: fuse API takes two arguments. Exact initial source archived61a/producer.py; nested fusion correction retained as new execution."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary61_contact_execution/execution.json",
+        "SHA256": "625012d2eef42d798d8600d33ffd21855daf3721073c297e4ac895009507385d"
+      },
+      "cause": "Existing skfem import path missing. No numerical output or PASS. Retry uses existing /tmp/regrip_stage2_fem; no installation/SDK change."
+    }
+  ],
+  "early_variants_not_adopted": [
+    "61a",
+    "61b",
+    "61c",
+    "61e",
+    "61f"
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

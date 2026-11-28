@@ -1,0 +1,141 @@
+{
+  "status": "ACTUAL_P1_KEEPER_ELASTIC_FREE_SPIN_CONDITIONAL_CONTACT_REFERENCE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_round64c/ROOT_SOCKET_KEEPER.step",
+    "SHA256": "2712913fc402a356fc71643e16830618c76276ee0b57ac2630a3bb1739a55682"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfineKKT71/producer.py",
+    "SHA256": "11cbe84aea3cc2c3726f031ceafe4610dcf4587834111dd2f3513511a926a230"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keepercoupled71/summary.json",
+    "SHA256": "bc787df543c70d69004c1b63bc52ba59c2da9ab002ee9d2f410d194e2069c1ed"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfineKKT71/field.npz",
+    "SHA256": "2a45a9dcea42230adb05aa61615efe6764d642c547750edd9a49c3fc470c4c84"
+  },
+  "checks": {
+    "actual83hashes": true,
+    "gauge_reaction_zero": true,
+    "all_original_elastic_DOF_residual": true,
+    "free_bolt_spin_torque": true,
+    "nonnegative_normals": true,
+    "all_contact_node_gaps": true,
+    "complementarity": true,
+    "keeper_force": true,
+    "keeper_moment": true,
+    "independent_energy": true,
+    "positive_deformed_elements": true,
+    "finite_original_socket_axial_overlap": true
+  },
+  "h_mm": 0.35,
+  "nodes": 12037,
+  "tetra": 50053,
+  "contact_rows": 2520,
+  "positive_contact_rows": 48,
+  "journal": [
+    {
+      "iteration": 0,
+      "status": "SPARSE_ACTIVE_KKT_ORIGINAL_DOF_CHECK",
+      "active_rows": 48,
+      "minimum_gap_mm": 2.134001308995437e-12,
+      "minimum_lambda_N": 0.0,
+      "original_force_residual_N": 2.6451872539145355e-08,
+      "bolt_torque_residual_Nmm": 3.6859083478446575e-07,
+      "complementarity_Nmm": 3.0994688523300244e-14,
+      "gauge_reaction_N": 1.4988010832439614e-16,
+      "delta_scaled": 0.001850798810319132,
+      "energy_Nmm": 8.010676851794803e-08,
+      "negative_active_rows": 0,
+      "violating_rows": 0
+    },
+    {
+      "iteration": 1,
+      "status": "SPARSE_ACTIVE_KKT_ORIGINAL_DOF_CHECK",
+      "active_rows": 48,
+      "minimum_gap_mm": -6.716849298982197e-15,
+      "minimum_lambda_N": 0.0,
+      "original_force_residual_N": 8.296575232380476e-14,
+      "bolt_torque_residual_Nmm": 1.2316259123679174e-12,
+      "complementarity_Nmm": 8.11634467916146e-17,
+      "gauge_reaction_N": 9.131584377541912e-16,
+      "delta_scaled": 5.93157079009643e-09,
+      "energy_Nmm": 8.010700667778528e-08,
+      "negative_active_rows": 0,
+      "violating_rows": 0
+    }
+  ],
+  "E_ASSUMED_MPa": 200000.0,
+  "nu_ASSUMED": 0.3,
+  "material_minimum_MPa": null,
+  "static_energy_Nmm": 8.010700667778528e-08,
+  "independent_element_energy_Nmm": 8.010700667778614e-08,
+  "volume_RMS_displacement_mm": 5.178517504997835e-07,
+  "CAD_volume_mm3": 416.29189836516144,
+  "mesh_volume_mm3": 416.3720790038063,
+  "bolt_reference_spin_rad": [
+    0.08953625838422113,
+    0.0895362583833709
+  ],
+  "bolt_spin_increment_rad": [
+    0.0012130295259822905,
+    0.0012131538075974852
+  ],
+  "conditional_bolt_torque_Nmm": [
+    0.07530338089198232,
+    0.0788536229975494
+  ],
+  "explicit_host_force_on_each_bolt_N": [
+    [
+      -0.004817397748063613,
+      -3.383372472837501e-05,
+      -0.0
+    ],
+    [
+      0.004817397748064149,
+      3.38337247256567e-05,
+      -0.0
+    ]
+  ],
+  "explicit_host_moment_on_each_bolt_Nmm": [
+    [
+      0.00010085057992502595,
+      -0.00749482148212168,
+      -1.1529388554976094e-12
+    ],
+    [
+      -0.00010085005543643668,
+      0.007494822942483065,
+      -1.2316259123679174e-12
+    ]
+  ],
+  "keeper_load_force_N": [
+    5.455705331947058e-16,
+    -2.725250580759564e-15,
+    0.0
+  ],
+  "keeper_load_moment_Nmm": [
+    -1.5961190702462602e-14,
+    -4.728422514643782e-15,
+    -2.4649171592727726e-12
+  ],
+  "physical_fixed_keeper_DOF": 0,
+  "free_bolt_spin_DOF": 2,
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 7.678189937956631,
+  "peak_RSS_KiB": 767052,
+  "limitations": [
+    "Actual entire3D keeper elasticity with alloriginalDOFs and two free bolt spins. Rigid socket lateral/tiltBC exposed as unknown hostreaction, not constitutivehost/nut/thread/cage equilibrium.",
+    "Normal constraints only at finite plug mesh boundarynodes within socket axialoverlap. Linear tetra boundary approximation and wholeface/curvedCAD/nonlinear largegeometry accuracy NOT certified.",
+    "No pin/keeper/host gravity, friction, preload or materialminima in pure torque contrast. No invented pin reaction or bottomface returntorque.",
+    "Full3D contact quadrature/mesh1percent/time.1percent/globalenergy and all22systemgates unqualified. Rigid clearancemodes and sourceconditionaltorque do not certify actual100g operation."
+  ]
+}

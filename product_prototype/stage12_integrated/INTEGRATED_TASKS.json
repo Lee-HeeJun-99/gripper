@@ -5756,7 +5756,7 @@
       "id": "goal_primary_ground65a_finite_keeper_contact_and_mixed_enrichment70",
       "track": "C",
       "priority": -1340,
-      "status": "READY",
+      "status": "ACTUAL_PRODUCT_VALIDATION_FINITE_ROOT_ADVANCED_SYSTEM_UNQUALIFIED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME ONE83part primaryP1_ground65a Motor->Drum->Tendon->Finger->Root->Ground; distalPETslide/cartridge/3Finger/jamming retained. FIRST replace prescribed plug-end/tongue returntorque with actual finite18line hex/roundedkeeper/tongue/installedsplitpin/bore/nut/cage freeDOF contact and actual host wrench balance; retain setting/preload uncertainty and geometric clearance, never fix spin. Use existing realbody meshes and compliance; begin one finite Root keeper/host/pin subassembly with explicit real interface loads and no hidden physicalfixation. Keep ground plate mixed-enrichment fields as local reference only; use stable incident-edge generation for any further fixed-domain refinement, original allcoarse/finest/adjacent1percent vector/scalar checks and separate exactSTEP boundary accuracy. Consider quadratic/adaptive enrichment within4GiB420s instead of another blind uniform refinement. Source-minimum/process/floormu/flatness, time.1percent/globalenergy, fullstroke/speed/protectedpeak/physicalmass/final3Finger and all22systemgates remain; NoStage3.",
@@ -5807,6 +5807,70 @@
         "Source-minimum/material/process/floor measurements, time.1percent/globalenergy, current/speed/protectedpeak/fullstroke/physicalmass/final3Finger remain."
       ],
       "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
+      "last_run_utc": "2026-11-28T08:32:46.394348+00:00",
+      "consecutive_runs": 1,
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle71_record/summary.json",
+        "SHA256": "a627870de028af1318843ee88f118a9b566a7d31f687f18a071d8a930fa347eb"
+      },
+      "reason": "New actual coupled two-socket/finitebore/tongue and entire3D keeper fields. Independent full24/wholefacet/spatial failures preserved. All22systemgates UNQUALIFIED.",
+      "next": "goal_primary_ground65a_finite_socket_edge_pullback_and_host_tilt71"
+    },
+    {
+      "id": "goal_primary_ground65a_finite_socket_edge_pullback_and_host_tilt71",
+      "track": "C",
+      "priority": -1350,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME ONE83part primaryP1_ground65a Motor->Drum->Tendon->Finger->Root->Ground, distalPET axialslide/cartridge/3Finger/jamming retained. FIRST replace node-only socket-side constraints by complete finite clipped plug facets at moving screw-lead socket ends: derive and implement material-edge interpolation, its axial trim/barycentric derivative, exact force/torque virtual-work pullback and sharp-edge normal-cone checks. Reconstruct ALL original3D keeper DOFs and free helical bolt spins, independently audit every clipped triangle at original1e-9mm nonpenetration and allforce/torque/complementarity tolerances. Preserve local fields as invalid whole-interface references; never extend finite walls to infinite planes or drop edge terms. Then restore actual bolt lateral/tilt/axial, Root/installedpin/nut/support/cage compliance/contact and setting/preload: declared bore/tongue planarbranch fails full24 even in collisionfree +,+ pose, independently Farkas-certified. No arbitrary radialport or returntorque may certify that actual path. Original spatial1percent/time.1percent/globalenergy/source-minimum/process/floor/fullstroke/current/speed/protectedpeak/mass/final3Finger and all22remain. NoStage3.",
+      "criteria": "Alloriginal22systemphysicalcriteria unchanged;actual83partCAD/BOM/load/BC,source-backedstrength/support,mesh1percent/time.1percent;no implicitfixation orcriterionrelaxation.",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "finger_structure",
+        "motor_running_torque_speed",
+        "numerical_convergence",
+        "physical_mass_inertia",
+        "qualified_worst_case",
+        "root_palm_strength",
+        "static_dynamic_consistency",
+        "tendon_force_stroke",
+        "terminal_retention"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "target_revision": "primaryP1_ground65a",
+      "target_parts": 83,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "c5bd07c0b830052a73aa7de31782d60afcbb2cf2bb834771cd05f77fbe6946d2"
+      },
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle71_record/summary.json",
+        "SHA256": "a627870de028af1318843ee88f118a9b566a7d31f687f18a071d8a930fa347eb"
+      },
+      "concrete_first_step": "Derive moving finite socket-end edge barycentric derivatives and exact nodal/spin virtual-work pullback; implement in SAME actual3D keeper, certify ALL clippedtriangles and sharpedge normalcones. Preserve full24 host/bore/tongue Farkas failure; restore real tilt/preload/contact instead of arbitrary moments.",
+      "known_blockers": [
+        "All22UNQUALIFIED, accepted83bodyoperatingequilibria0.",
+        "Actualkeeper nodecontact is not wholeinterface: fullclippedtriangle minimum gap about-2.69e-7mm exceeds original-1e-9mm.",
+        "Actualfinitebore/tongue planarbranch has full24moment failure even in collisionfree +,+ pose; Farkas certificate covers declared lines only.",
+        "h.5 to.35 energy4.79percent fine-denominator FAIL; no crossmesh fullvectorPASS or exact curvedSTEP accuracy.",
+        "Source minima/process/floor/preload/time.1percent/globalenergy/fullstroke/current/speed/protectedpeak/mass/final3Finger remain."
+      ],
+      "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
       "last_run_utc": null,
       "consecutive_runs": 0,
       "result": null,
@@ -5831,11 +5895,11 @@
   },
   "current_primary": {
     "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
-    "SHA256": "5d21166c829bb644160b94740d1cb18d7da92194545d1e8497f80be238d32318"
+    "SHA256": "c5bd07c0b830052a73aa7de31782d60afcbb2cf2bb834771cd05f77fbe6946d2"
   },
   "latest_cycle": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle70_record/summary.json",
-    "SHA256": "528be56a781198f62fdd01c24e994d1def4ecd155861bd389e64d7dd254d592a"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle71_record/summary.json",
+    "SHA256": "a627870de028af1318843ee88f118a9b566a7d31f687f18a071d8a930fa347eb"
   },
   "active_primary_policy": "ONE83shape primaryP1_clocked62a; actual validation continues; all22UNQUALIFIED"
 }

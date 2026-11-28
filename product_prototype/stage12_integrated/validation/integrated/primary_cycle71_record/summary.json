@@ -1,0 +1,728 @@
+{
+  "status": "SAME_ACTUAL_P1_COUPLED_ROOT_AND_3D_KEEPER_CONTACT_VALIDATION_ALL22_UNQUALIFIED",
+  "category": "ACTUAL_PRODUCT_VALIDATION",
+  "task_id": "goal_primary_ground65a_finite_keeper_contact_and_mixed_enrichment70",
+  "start_HEAD": "5c912a05cf868583b6c6d25ab5395026087ac6f9",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "actual_product_parts": 83,
+  "actual_changed_CAD": [],
+  "actual83_STEP_assembly_BOM_hashes_verified": true,
+  "retained_extensions": [
+    "distalPET axialslide",
+    "replaceablecartridge",
+    "3Finger",
+    "futurelayerjamming"
+  ],
+  "standard_part_sources": {
+    "path": "product_prototype/stage12_integrated/models/standard_drive/batch6_sources1/reviewed.json",
+    "SHA256": "467e1bdc306f5e8c99ea30742785367564f8c6ec1a7bdf727e08289a15d63a2d"
+  },
+  "actual_coupled18row_result": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keepercoupled71/summary.json",
+    "SHA256": "bc787df543c70d69004c1b63bc52ba59c2da9ab002ee9d2f410d194e2069c1ed"
+  },
+  "actual_independent_host_force_bound": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperindependent71/summary.json",
+    "SHA256": "4d34ed72802d77453190fc3ab71d9b52b361dd4677811b53990f028dd81ff0ae"
+  },
+  "actual_bore_and_bolt_geometry": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperinventory71/summary.json",
+    "SHA256": "8dc56809258fdf2d8efd5255f53b93a9c9f95571692ae9a2f7a1243ce6fb481d"
+  },
+  "actual_finite_host24row_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperhost71d/summary.json",
+    "SHA256": "703595efab0dd28537cfa5fdb5b73c917782c37ba1ad15e1fdcc0ff556a926ac"
+  },
+  "independent24row_certificate": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keepercertificate71/summary.json",
+    "SHA256": "98b1d8382e9b9257262e2eaa664eb183465a96cad936e3246d315bb600de322b"
+  },
+  "actual_3D_keeper_numerical_fields": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71b/summary.json",
+      "SHA256": "6c306931741a24f0abb683d028a5bb6b8004bc1a86773384af5bdc0c6f652d96"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71c/summary.json",
+      "SHA256": "7ea425ae4293d5744e848eff5c7cfb2d5538f6f196f511760a21026d54667670"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfineKKT71/summary.json",
+      "SHA256": "1acdce5c822f11adc3a5bc9390c60fa993001f2c51084b611492e483a0f03eb4"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfine71/summary.json",
+      "SHA256": "40929b711380634f9be9eb9a3c979fca56b45df31cebf25b879fe1c6ff247f4d"
+    }
+  ],
+  "actual_independent_tetra_and_whole_facet_audit": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinalverify71/summary.json",
+    "SHA256": "49284c50c8a8e69bee61d020e737ba10ae741813e68aaf414d624954d7dac52e"
+  },
+  "actual_whole_facet_rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71b/summary.json",
+        "SHA256": "6c306931741a24f0abb683d028a5bb6b8004bc1a86773384af5bdc0c6f652d96"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71b/field.npz",
+        "SHA256": "a522f35435f91befef4b88ff4b3ff85254b3e35a925a509be254321b390364dd"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "physical_contact_Btranspose": true,
+        "independent_element_energy": true,
+        "local_elastic_halfwork": true,
+        "bolt_free_spin_balance": true,
+        "nonnegative_normals": true,
+        "contact_node_gap": true,
+        "complementarity": true,
+        "altered_original_zload_rejected": true
+      },
+      "original_force_residual_N": 9.643908469112589e-11,
+      "pullback_force_error_N": 0.0,
+      "independent_energy_Nmm": 7.627093944369599e-08,
+      "volume_RMS_mm": 5.587270927692197e-07,
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.2927784040850323,
+            0.007221595914967806
+          ],
+          "eligible_original_triangles": 248,
+          "clipped_triangle_count": 248,
+          "tested_exact_clipped_polygon_vertices": 768,
+          "minimum_full_faceted_surface_gap_mm": -2.6939605447806603e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -2.6939605447806603e-07,
+            "original_triangle_nodes": [
+              758,
+              744,
+              759
+            ],
+            "point_mm": [
+              65.30561330726127,
+              -15.679260096141197,
+              0.007221595914967807
+            ],
+            "wall_index": 4
+          }
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.292778396147923,
+            0.007221603852077076
+          ],
+          "eligible_original_triangles": 248,
+          "clipped_triangle_count": 248,
+          "tested_exact_clipped_polygon_vertices": 768,
+          "minimum_full_faceted_surface_gap_mm": -2.3213753835849005e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -2.3213753835849005e-07,
+            "original_triangle_nodes": [
+              372,
+              373,
+              1868
+            ],
+            "point_mm": [
+              62.96712575950811,
+              15.139377632017657,
+              0.007221603852077096
+            ],
+            "wall_index": 1
+          }
+        }
+      ],
+      "whole_faceted_interface_pass": false,
+      "node_pass_is_not_whole_surface_pass": true
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71c/summary.json",
+        "SHA256": "7ea425ae4293d5744e848eff5c7cfb2d5538f6f196f511760a21026d54667670"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71c/field.npz",
+        "SHA256": "0e91765517d285628de3b5deace90c9b6c171795ab419029b18d1cb2eb22ae5c"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "physical_contact_Btranspose": true,
+        "independent_element_energy": true,
+        "local_elastic_halfwork": true,
+        "bolt_free_spin_balance": true,
+        "nonnegative_normals": true,
+        "contact_node_gap": true,
+        "complementarity": true,
+        "altered_original_zload_rejected": true
+      },
+      "original_force_residual_N": 9.838917874871456e-14,
+      "pullback_force_error_N": 0.0,
+      "independent_energy_Nmm": 7.627093941908578e-08,
+      "volume_RMS_mm": 5.695739803255633e-07,
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.292778404085037,
+            0.007221595914963031
+          ],
+          "eligible_original_triangles": 248,
+          "clipped_triangle_count": 248,
+          "tested_exact_clipped_polygon_vertices": 768,
+          "minimum_full_faceted_surface_gap_mm": -2.693958992272538e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -2.693958992272538e-07,
+            "original_triangle_nodes": [
+              758,
+              744,
+              759
+            ],
+            "point_mm": [
+              65.30561330726115,
+              -15.679260096141174,
+              0.007221595914963033
+            ],
+            "wall_index": 4
+          }
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.2927783961479344,
+            0.007221603852065626
+          ],
+          "eligible_original_triangles": 248,
+          "clipped_triangle_count": 248,
+          "tested_exact_clipped_polygon_vertices": 768,
+          "minimum_full_faceted_surface_gap_mm": -2.3213737262994805e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -2.3213737262994805e-07,
+            "original_triangle_nodes": [
+              372,
+              373,
+              1868
+            ],
+            "point_mm": [
+              62.96712575950823,
+              15.139377632017588,
+              0.007221603852065606
+            ],
+            "wall_index": 1
+          }
+        }
+      ],
+      "whole_faceted_interface_pass": false,
+      "node_pass_is_not_whole_surface_pass": true
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfineKKT71/summary.json",
+        "SHA256": "1acdce5c822f11adc3a5bc9390c60fa993001f2c51084b611492e483a0f03eb4"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfineKKT71/field.npz",
+        "SHA256": "2a45a9dcea42230adb05aa61615efe6764d642c547750edd9a49c3fc470c4c84"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "physical_contact_Btranspose": true,
+        "independent_element_energy": true,
+        "local_elastic_halfwork": true,
+        "bolt_free_spin_balance": true,
+        "nonnegative_normals": true,
+        "contact_node_gap": true,
+        "complementarity": true,
+        "altered_original_zload_rejected": true
+      },
+      "original_force_residual_N": 8.292845576907126e-14,
+      "pullback_force_error_N": 0.0,
+      "independent_energy_Nmm": 8.010700667778612e-08,
+      "volume_RMS_mm": 5.178517504997835e-07,
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.2927784011235108,
+            0.007221598876489226
+          ],
+          "eligible_original_triangles": 448,
+          "clipped_triangle_count": 448,
+          "tested_exact_clipped_polygon_vertices": 1380,
+          "minimum_full_faceted_surface_gap_mm": -1.7792844034247857e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -1.7792844034247857e-07,
+            "original_triangle_nodes": [
+              1039,
+              7400,
+              1040
+            ],
+            "point_mm": [
+              65.30561320658141,
+              -15.67926002142946,
+              0.007221598876489238
+            ],
+            "wall_index": 4
+          }
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.2927783912335618,
+            0.007221608766438263
+          ],
+          "eligible_original_triangles": 448,
+          "clipped_triangle_count": 448,
+          "tested_exact_clipped_polygon_vertices": 1380,
+          "minimum_full_faceted_surface_gap_mm": -1.8516905284093887e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -1.8516905284093887e-07,
+            "original_triangle_nodes": [
+              485,
+              486,
+              3298
+            ],
+            "point_mm": [
+              62.967125847866946,
+              15.13937761151776,
+              0.0072216087664382644
+            ],
+            "wall_index": 1
+          }
+        }
+      ],
+      "whole_faceted_interface_pass": false,
+      "node_pass_is_not_whole_surface_pass": true
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfine71/summary.json",
+        "SHA256": "40929b711380634f9be9eb9a3c979fca56b45df31cebf25b879fe1c6ff247f4d"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfine71/field.npz",
+        "SHA256": "20d28a9a2af930c24cbd11e5a7b88db109b3ea0f6d541a1de993678a18486ffc"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "physical_contact_Btranspose": true,
+        "independent_element_energy": true,
+        "local_elastic_halfwork": true,
+        "bolt_free_spin_balance": true,
+        "nonnegative_normals": true,
+        "contact_node_gap": true,
+        "complementarity": true,
+        "altered_original_zload_rejected": true
+      },
+      "original_force_residual_N": 2.3944005578171307e-11,
+      "pullback_force_error_N": 0.0,
+      "independent_energy_Nmm": 8.010700668528465e-08,
+      "volume_RMS_mm": 5.15894239227022e-07,
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.292778401123507,
+            0.007221598876492904
+          ],
+          "eligible_original_triangles": 448,
+          "clipped_triangle_count": 448,
+          "tested_exact_clipped_polygon_vertices": 1380,
+          "minimum_full_faceted_surface_gap_mm": -1.7792873806612985e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -1.7792873806612985e-07,
+            "original_triangle_nodes": [
+              1039,
+              7400,
+              1040
+            ],
+            "point_mm": [
+              65.3056132065817,
+              -15.67926002142949,
+              0.007221598876492902
+            ],
+            "wall_index": 4
+          }
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "finite_axial_socket_interval_mm": [
+            -1.292778391233555,
+            0.007221608766445049
+          ],
+          "eligible_original_triangles": 448,
+          "clipped_triangle_count": 448,
+          "tested_exact_clipped_polygon_vertices": 1380,
+          "minimum_full_faceted_surface_gap_mm": -1.8516920438638174e-07,
+          "violating_clipped_triangles": 12,
+          "original_nonpenetration_1e9_pass": false,
+          "worst": {
+            "gap_mm": -1.8516920438638174e-07,
+            "original_triangle_nodes": [
+              485,
+              486,
+              3298
+            ],
+            "point_mm": [
+              62.967125847866825,
+              15.13937761151778,
+              0.007221608766445037
+            ],
+            "wall_index": 1
+          }
+        }
+      ],
+      "whole_faceted_interface_pass": false,
+      "node_pass_is_not_whole_surface_pass": true
+    }
+  ],
+  "actual_allpair_scalar_and_gauge_contrasts": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinalcontrasts71/summary.json",
+    "SHA256": "e7427573050d4b803febeb3b93d3268d8281850ad668625ff5e2185f35f2d479"
+  },
+  "actual_numerical_product_rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71b/summary.json",
+        "SHA256": "6c306931741a24f0abb683d028a5bb6b8004bc1a86773384af5bdc0c6f652d96"
+      },
+      "nodes": 5232,
+      "tetra": 19550,
+      "h_mm": 0.5,
+      "energy_Nmm": 7.627093944369531e-08,
+      "raw_volume_RMS_mm": 5.587270927692197e-07,
+      "Neumann_quotient_RMS_mm": 3.649346545886341e-07,
+      "removed_rigid_coefficients": [
+        2.3838145251333703e-07,
+        -1.174302409304707e-07,
+        4.380966029157357e-09,
+        -3.2317066464637557e-09,
+        2.9550945991175714e-08,
+        2.9049666360282127e-08
+      ],
+      "physical_host_force_N": [
+        [
+          -0.004817398219952751,
+          0.0002712654011985359,
+          -0.0
+        ],
+        [
+          0.004817398170161609,
+          -0.00027126532381794785,
+          -0.0
+        ]
+      ],
+      "all_node_local_checks": true,
+      "whole_surface_accepted": false
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71c/summary.json",
+        "SHA256": "7ea425ae4293d5744e848eff5c7cfb2d5538f6f196f511760a21026d54667670"
+      },
+      "nodes": 5232,
+      "tetra": 19550,
+      "h_mm": 0.5,
+      "energy_Nmm": 7.62709394190862e-08,
+      "raw_volume_RMS_mm": 5.695739803255633e-07,
+      "Neumann_quotient_RMS_mm": 3.64934574145462e-07,
+      "removed_rigid_coefficients": [
+        2.3838149897379344e-07,
+        -1.1743039766667492e-07,
+        1.1071531531795715e-07,
+        -3.2316503868067404e-09,
+        2.955096272475828e-08,
+        2.9049652977484118e-08
+      ],
+      "physical_host_force_N": [
+        [
+          -0.004817398299345256,
+          0.0002712679894738383,
+          -0.0
+        ],
+        [
+          0.004817398299340764,
+          -0.00027126798947809186,
+          -0.0
+        ]
+      ],
+      "all_node_local_checks": true,
+      "whole_surface_accepted": false
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfineKKT71/summary.json",
+        "SHA256": "1acdce5c822f11adc3a5bc9390c60fa993001f2c51084b611492e483a0f03eb4"
+      },
+      "nodes": 12037,
+      "tetra": 50053,
+      "h_mm": 0.35,
+      "energy_Nmm": 8.010700667778528e-08,
+      "raw_volume_RMS_mm": 5.178517504997835e-07,
+      "Neumann_quotient_RMS_mm": 3.5968146430562264e-07,
+      "removed_rigid_coefficients": [
+        2.052022631945547e-07,
+        -1.1621206223384775e-07,
+        4.4987265443605805e-08,
+        2.86178437411814e-10,
+        1.604585032689987e-08,
+        2.5627873185757613e-08
+      ],
+      "physical_host_force_N": [
+        [
+          -0.004817397748063613,
+          -3.383372472837501e-05,
+          -0.0
+        ],
+        [
+          0.004817397748064149,
+          3.38337247256567e-05,
+          -0.0
+        ]
+      ],
+      "all_node_local_checks": true,
+      "whole_surface_accepted": false
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticfine71/summary.json",
+        "SHA256": "40929b711380634f9be9eb9a3c979fca56b45df31cebf25b879fe1c6ff247f4d"
+      },
+      "nodes": 12037,
+      "tetra": 50053,
+      "h_mm": 0.35,
+      "energy_Nmm": 8.010700668528352e-08,
+      "raw_volume_RMS_mm": 5.15894239227022e-07,
+      "Neumann_quotient_RMS_mm": 3.5968146015651327e-07,
+      "removed_rigid_coefficients": [
+        2.052023812111533e-07,
+        -1.162119344990898e-07,
+        5.239799844414898e-10,
+        2.861444096930617e-10,
+        1.6045884452054873e-08,
+        2.5627871664408592e-08
+      ],
+      "physical_host_force_N": [
+        [
+          -0.004817397816743998,
+          -3.3835383774700675e-05,
+          -0.0
+        ],
+        [
+          0.00481739777145917,
+          3.3835268908002925e-05,
+          -0.0
+        ]
+      ],
+      "all_node_local_checks": true,
+      "whole_surface_accepted": false
+    }
+  ],
+  "actual18row_maximum_residual": 8.881784197001252e-16,
+  "actual_required_minmax_host_component_N": [
+    0.004817406371547858,
+    0.004817406371547886,
+    0.0001109450657989508,
+    0.00011094506579897357
+  ],
+  "full24_accepted_states": 0,
+  "actual_new_assembly_and_load_screen": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product71/summary.json",
+    "SHA256": "1adccec4e83673548f88c7a804d9f8dde29583c6251510aaa6844ea7e9a3de89"
+  },
+  "fresh_assembly_checks": {
+    "all_reimported_single_valid_solids": true,
+    "nominal_final_no_volume_interference": true,
+    "sampled_ordered_assembly_clear": true,
+    "RF_tool_approach_clear": true,
+    "five_pose_straight_route_clear": true,
+    "positive_inward_stroke_all61": true,
+    "derivative_refinement": true,
+    "tendon_loop_moment_balance": true,
+    "finite_positive_conditional_demand": true
+  },
+  "conditional_operating_scenarios": 183,
+  "conditional_motor_current_screen_failures": 45,
+  "independent_release_gate": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release71/summary.json",
+    "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+  },
+  "failure_evidence": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary71_failures/summary.json",
+    "SHA256": "d825dc0d13163e89ead1fa1a7610f46eee622fa40483bbf2bbde08905f7f2327"
+  },
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "whole_system_release": false,
+  "hardware": "NOT_MEASURED",
+  "Stage3": false,
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_certificate_execution/execution.json",
+      "SHA256": "bedce465fc6506a501bd1ab4b3d6e3c5f3b0786f8d95e3081c7b07b7d20e2b4f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_contrasts_execution/execution.json",
+      "SHA256": "3ae4eb065b5b785bf87ba2e35b5b30da72c51c0e17d372e0d434e567f4a64203"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_coupled_execution/execution.json",
+      "SHA256": "0eb50dcbe87ef19c9fdb65e6380f4d155bfb985004189e9fa45aa37da38ccea0"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_elastic_execution/execution.json",
+      "SHA256": "b14503ba07245bdbf15b081ebfc5f915a1cca8a1aedbe6376d59915f2590935f"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_elasticb_execution/execution.json",
+      "SHA256": "07c0b5ed44d222ae15a61fb54c06fdd98c0c333227c5be6526c321f705047919"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_elasticc_execution/execution.json",
+      "SHA256": "6e45ba3e0179374797ff635f8f7dd4a6bf678bbc9ab22cfb86ed1e3cbd4bd18a"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_elasticfine_execution/execution.json",
+      "SHA256": "9889c9e33c44bfa4dff1f8601cd5a12428ef303e7014d55f2e5a7706145c0047"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_elasticfinekkt_execution/execution.json",
+      "SHA256": "baa751399b35c302f6718e3a06d33dd29c92b4fec13749153d976afb69f1d28a"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_elasticverify_execution/execution.json",
+      "SHA256": "0ba54a2a2db90d61917725feee44accd1278145d9657a70a5c63846ef173906d"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_finalcontrasts_execution/execution.json",
+      "SHA256": "9890ecd61eb43892d8d84520c538d6ecc2d59ab713dcc5a6d882b94ec5884758"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_finalverify_execution/execution.json",
+      "SHA256": "4680c21241751bae4bf63bb4b508a28b2fea1e50fcf6c1e15333c9b1c8642540"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_fineverify_execution/execution.json",
+      "SHA256": "6810ffdabd719fd2375be0695990f437d6fa0577c3e359456d50dfc797755f50"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_host_execution/execution.json",
+      "SHA256": "939a1b76ec1fde9c6fdc0b8ae25d2e47e0311d8e2fd5933a16e824eb101bdd11"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_hostb_execution/execution.json",
+      "SHA256": "104dc91fe2eddb0300b3cc31c5c41b0e82d1fd902d401e31061df3290a5106ec"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_hostc_execution/execution.json",
+      "SHA256": "703a8c4261fbfff23be7e16336b62eda203d4511f4c9c674b4d1ac2f4ec3b1c0"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_hostd_execution/execution.json",
+      "SHA256": "bb1fe7ebfcc268ed010ada540ff71d58fb71f8bbd53f9fbe2180cabe2aa04c83"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_independent_execution/execution.json",
+      "SHA256": "928013208c1ba1762ebe6be0cca0a74ffd98d5d1e4e4f6ff7098f1fe16f36140"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_inventory_execution/execution.json",
+      "SHA256": "3c00fe0b5396b8c5065f7feb272674132c1d3323fd9ac360d9bae2c0caa9f209"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_product_execution/execution.json",
+      "SHA256": "222f847de4ef7a419a6275f45563b10d533050d8b7b98bb9bf5ad6d5320f5de4"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary71_release_execution/execution.json",
+      "SHA256": "4994e9e1b1f2f7c031d8ad9b72991f01aea233794e6b773956c22cfab06cc47e"
+    }
+  ],
+  "analysis_children": 20,
+  "bounded_analysis_child_seconds": 1007.6891561211087,
+  "execution_exit_codes": [
+    0,
+    0,
+    0,
+    -15,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    2
+  ],
+  "timeout_count": 1,
+  "STOP_count": 0,
+  "RUNNING": 0,
+  "owned_children_reaped": true,
+  "source_pins_unchanged": true,
+  "next_task_id": "goal_primary_ground65a_finite_socket_edge_pullback_and_host_tilt71",
+  "next_mechanism": "Continue SAME ONE83part primaryP1_ground65a Motor->Drum->Tendon->Finger->Root->Ground, distalPET axialslide/cartridge/3Finger/jamming retained. FIRST replace node-only socket-side constraints by complete finite clipped plug facets at moving screw-lead socket ends: derive and implement material-edge interpolation, its axial trim/barycentric derivative, exact force/torque virtual-work pullback and sharp-edge normal-cone checks. Reconstruct ALL original3D keeper DOFs and free helical bolt spins, independently audit every clipped triangle at original1e-9mm nonpenetration and allforce/torque/complementarity tolerances. Preserve local fields as invalid whole-interface references; never extend finite walls to infinite planes or drop edge terms. Then restore actual bolt lateral/tilt/axial, Root/installedpin/nut/support/cage compliance/contact and setting/preload: declared bore/tongue planarbranch fails full24 even in collisionfree +,+ pose, independently Farkas-certified. No arbitrary radialport or returntorque may certify that actual path. Original spatial1percent/time.1percent/globalenergy/source-minimum/process/floor/fullstroke/current/speed/protectedpeak/mass/final3Finger and all22remain. NoStage3.",
+  "limitations": [
+    "Actual changed CAD NONE. Same primary83part candidate STEP/assembly/BOM identities verified. This is actual numerical product validation, not DESIGN_CHANGE. Existing Pololu1101/1996hub/tendon/standardfastener source reviews retained; no new source-minimum/rating/process or purchase.",
+    "Two real sockets coupled with five free planar unknowns, all72 inequalities and all18body resultants. Required host radial ports are explicit conditional BC, not actual shank/bore/nut/cage constitutive laws. Pure frictionless screw-lead torque bounds from earlier conditionalcut are NOT applied preload or actual operatingdemand.",
+    "Nine-free-planar-DOF finite Root1.7mm bore/1.5mm shank/tongue-slot replacement has90 inequalities and full24 resultants. Planar12 equilibrium is insufficient: originaloutofplane rows fail. +,+ pose has zero subassemblyvolumeinterference yet full24infeasible. Other helical directionstates also have actualhead/hostinterference; these failures remain.",
+    "Wholedeclared finitecontactline Farkas certificate has exact axial endpoints from geometricvertices, nonnegativecontactwork and negative requiredwork, externalhostport zerowork. It proves THIS cone infeasible, not every real3D tilted/deformed/preloaded/othercontact configuration impossible.",
+    "Actual entire3D keeper elasticity and two free spinning rigid sockets use alloriginalDOFs, no physicalkeeperfixation; KKT numericalZgauge has vanishing restoredreaction. Explicit socketlateral/tiltBC and unknownhostwrenches remain. No pinreaction or bottomface/tonguereturntorque is invented.",
+    "Node complementarity/force/torque pass is NOT wholeinterfacepass. Independent COMPLETE finiteaxialclipped boundarytriangles fail original1e-9mm nonpenetration at sockettop. Movingtrim/materialinterpolation derivatives and physicalsharpedge forcecone remain to be implemented. Original saved node fields stay partial references, not contact-certified equilibria.",
+    "Coarse/fine elasticenergy differs about4.79percent with fine denominator, FAIL original1percent. Same-mesh OSQP/KKT energy agreement is solver contrast only. RawNeumann gauges and explicit consistent-volume rigid quotient are reported separately; no rigidalignment operatingmotion certificate or crossmeshvectorPASS. CurvedSTEP/faceted boundaryaccuracy separate.",
+    "First48k-node fullQP420s timeout preserved, then explicitlycoarseactualgeometry OSQP and sparseactiveKKT strategies. Allpartial iterations, maxiteration status, firstJSONserialization failure and tolerance-inflated axial endpoint failure retained under unique tags. No memory/time/physicalcriterion relaxation or unboundedretry.",
+    "Fresh83STEP orderedassembly/tools/route and183conditional100g/3 scenarios retain current-screen failures. Finiteposes are not continuousCCD/threadtightening/pinforming; localconditionalforcebalance is not actual83bodyequilibrium/capacity.",
+    "All22systemgatesUNQUALIFIED. Localstrain/halfwork identities are not globalcoupledenergy. No dt/time.1percent, source-minimumstrength/process/floor measurement, preload/fullstroke/current/speed/protectedpeak/physicalmass/final3Finger qualification. HardwareNOT_MEASURED; NoStage3."
+  ]
+}

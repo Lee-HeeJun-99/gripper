@@ -1,0 +1,116 @@
+{
+  "status": "ACTUAL_P1_FIXED_UPPER_SOURCE_LOAD_AND_WORK_AUDIT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_bothfast68h5/summary.json",
+    "SHA256": "d2d5342e737d7ce7a83907138ab0bdb55f3781e7a2c0f047e034ca5dfafc058d"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperverify68h5/producer.py",
+    "SHA256": "dfa8abdb19ef5eec8c93cb0f2821633d0e2c106a542d7a199f3556dbda33d226"
+  },
+  "checks": {
+    "actual_original_source_points_forces": true,
+    "all_original_boundary_triangles": true,
+    "all_positive_shape_weights": true,
+    "all_partition_geometry": true,
+    "all_wrenches": true,
+    "all_virtual_work": true,
+    "actual_full_load_reconstruction": true,
+    "perturbed_load_rejected": true
+  },
+  "ports": [
+    {
+      "label": "support_plate",
+      "points": 41975,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.05971587178976069,
+      "partition_error": 2.220446049250313e-16,
+      "point_geometry_error_mm": 1.7053025658242404e-13,
+      "wrench_error_N_Nmm": 3.979039320256561e-12,
+      "quadrature_virtual_work_Nmm": 0.03129189889342934,
+      "nodal_virtual_work_Nmm": 0.03129189889342936,
+      "work_adjoint_error_Nmm": 1.3877787807814457e-17
+    },
+    {
+      "label": "actual_key_xwall_-18.9",
+      "points": 112,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.05971587178976234,
+      "partition_error": 1.1102230246251565e-16,
+      "point_geometry_error_mm": 2.842170943040401e-14,
+      "wrench_error_N_Nmm": 0.0,
+      "quadrature_virtual_work_Nmm": 0.0,
+      "nodal_virtual_work_Nmm": 0.0,
+      "work_adjoint_error_Nmm": 0.0
+    },
+    {
+      "label": "actual_key_xwall_71.1",
+      "points": 112,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.059715871789762454,
+      "partition_error": 1.1102230246251565e-16,
+      "point_geometry_error_mm": 7.105427357601002e-14,
+      "wrench_error_N_Nmm": 3.254285729781259e-12,
+      "quadrature_virtual_work_Nmm": 0.0008456134736419127,
+      "nodal_virtual_work_Nmm": 0.0008456134736419129,
+      "work_adjoint_error_Nmm": 1.0842021724855044e-19
+    },
+    {
+      "label": "through_connector_0",
+      "points": 84,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.05971587178976567,
+      "partition_error": 0.0,
+      "point_geometry_error_mm": 1.4210854715202004e-13,
+      "wrench_error_N_Nmm": 0.0,
+      "quadrature_virtual_work_Nmm": 0.0,
+      "nodal_virtual_work_Nmm": 0.0,
+      "work_adjoint_error_Nmm": 0.0
+    },
+    {
+      "label": "through_connector_1",
+      "points": 84,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.05971587178976412,
+      "partition_error": 1.1102230246251565e-16,
+      "point_geometry_error_mm": 1.4210854715202004e-13,
+      "wrench_error_N_Nmm": 0.0,
+      "quadrature_virtual_work_Nmm": 0.0,
+      "nodal_virtual_work_Nmm": 0.0,
+      "work_adjoint_error_Nmm": 0.0
+    },
+    {
+      "label": "through_connector_2",
+      "points": 84,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.05971587178976612,
+      "partition_error": 1.1102230246251565e-16,
+      "point_geometry_error_mm": 1.4210854715202004e-13,
+      "wrench_error_N_Nmm": 0.0,
+      "quadrature_virtual_work_Nmm": 0.0,
+      "nodal_virtual_work_Nmm": 0.0,
+      "work_adjoint_error_Nmm": 0.0
+    },
+    {
+      "label": "through_connector_3",
+      "points": 84,
+      "all_real_boundary_triangles": true,
+      "minimum_shape_weight": 0.05971587178976531,
+      "partition_error": 1.1102230246251565e-16,
+      "point_geometry_error_mm": 1.4210854715202004e-13,
+      "wrench_error_N_Nmm": 0.0,
+      "quadrature_virtual_work_Nmm": 0.0,
+      "nodal_virtual_work_Nmm": 0.0,
+      "work_adjoint_error_Nmm": 0.0
+    }
+  ],
+  "max_nodal_load_error_N": 8.673617379884035e-18,
+  "gravity_force_N": -38.33618663070334,
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": [],
+  "scope": "Actualfullplate finiteCADface prescribedupperload interpolation,sourceforce/moment/work identity. NOT actual uppercontact/83body equilibrium."
+}

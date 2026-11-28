@@ -1,0 +1,67 @@
+{
+  "status": "ACTUAL_P1_FIXED_FLOOR_INDEPENDENT_RECONSTRUCTION",
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixed68h5q8/iteration_journal.json",
+    "SHA256": "f64774a3f36b7fe7ba91cb2eaeb8be7d1cc4358e7e43b9af20ad73cd172ed5a1"
+  },
+  "partial_timeout_fields": true,
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixedverify68partial5/producer.py",
+    "SHA256": "011ba99a61db3ecfbbd1b005a9933e3eab734f6b12af99877f53663b835f038d"
+  },
+  "checks": {
+    "actual83part_hashes": true,
+    "nonempty_actual_fields": true,
+    "all_original_nodal_forces": true,
+    "all_work_adjoint": true,
+    "all_local_elastic_halfwork": true,
+    "perturbed_load_rejected": true,
+    "physical_quadrature_affine_geometry": true,
+    "physical_1600mm2_area": true
+  },
+  "fields": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixedverify68partial5/fields.json",
+    "SHA256": "b40a30d2ec77fb19715af70214cfb336a3571cd4bfd7ae70d6a8bd20ae8f47a8"
+  },
+  "undersampling_negative_control": null,
+  "last_field": {
+    "field": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_fixed68h5q8/trial_0.25_12.npz",
+      "SHA256": "d6740cef2c7d2210d58472c2639437e401793dd03e18db1f00a78743bfd1e868"
+    },
+    "reaction_reconstruction_N": 2.0094204078446865e-12,
+    "adjoint_pullback_error_N": 1.0181050447144457e-11,
+    "off_floor_residual_N": 1.5731179379974147e-12,
+    "force_moment_N_Nmm": [
+      6.60967232335441e-10,
+      -5.138885114417462e-12,
+      3.609163445536523e-11,
+      -5.085093734980006e-10,
+      -1.1448305590328056e-07,
+      3.559437022904177e-09
+    ],
+    "min_quadrature_gap_mm": -1.5815981676334236e-16,
+    "min_whole_triangle_gap_mm": -1.5815981676334236e-16,
+    "min_normal_N": -3.469446951953614e-18,
+    "min_cone_slack_N": -4.545991907461966e-05,
+    "normal_fixedpoint_N": 0.0005301120746885046,
+    "complementarity_Nmm": 9.739554198082568e-17,
+    "max_dissipation_error_Nmm": 2.1844076676765512e-08,
+    "min_dissipation_Nmm": -1.663179737278466e-21,
+    "elastic_energy_Nmm": 0.0015990762579831633,
+    "external_work_Nmm": 0.003198152515966326,
+    "quadrature_contact_work_Nmm": -0.0006915366280023308,
+    "nodal_contact_work_Nmm": -0.0006915366280023309,
+    "perturbed_load_error_N": 0.010000000000013776,
+    "increment_loss_Nmm": 0.00041495730359293354,
+    "quadrature_law": false,
+    "whole_triangle_nonpenetration": true
+  },
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": [],
+  "scope": "Independent actual tetra forces and Btranspose integrated contact reactions; all trial fields including failure. Reconstruction PASS is not contact/system qualification."
+}

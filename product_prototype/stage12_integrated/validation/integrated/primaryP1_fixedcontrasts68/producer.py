@@ -1,0 +1,18 @@
+"""Fixed material-floor/mesh contrasts for the SAME full actual P1 footed plate."""
+import sys,json,shutil,itertools,numpy as np
+from skfem import MeshTet
+from baseline_registry import ROOT,REPO,ref,dump
+V=ROOT/'validation/integrated';out=V/sys.argv[1];out.mkdir();shutil.copyfile(__file__,out/'producer.py');tags=sys.argv[2:];sources=[json.loads((V/n/'summary.json').read_text()) for n in tags];fields=[np.load(V/n/'field.npz') for n in tags];rows=[]
+for n,s,a in zip(tags,sources,fields):
+ p=a['points_mm'];t=a['tetra'];u=a['displacement_mm'];vol=abs(np.linalg.det(p[t[:,1:]]-p[t[:,0,None]]))/6
+ # Exact P1 squared displacement volume integration, no nodal lump approximation.
+ rms=np.sqrt(np.sum(vol*(np.sum(u[t].sum(1)**2,axis=1)+np.sum(u[t]**2,axis=(1,2))))/(20*vol.sum()))
+ rows.append(dict(source=ref(V/n/'summary.json'),h_mm=s['h_mm'],grid_subdivisions=s['grid_subdivisions'],full_load_local=all(s['checks'].values()) and s['accepted_load_fraction']==1.,elastic_energy_Nmm=s['static_energy_Nmm'],exact_P1_volume_RMS_mm=float(rms),discrete_increment_loss_Nmm=sum(q['step_friction_dissipation_Nmm'] for q in s['accepted_steps']),minimum_whole_triangle_gap_mm=s['minimum_whole_triangle_gap_mm']))
+pairs=[]
+for i,j in itertools.combinations(range(len(tags)),2):
+ a,b=fields[i],fields[j];sa,sb=sources[i],sources[j];ra,rb=rows[i],rows[j];qa=np.load(V/tags[i]/'quadrature.npz');qb=np.load(V/tags[j]/'quadrature.npz');samefloor=bool(qa['points_mm'].shape==qb['points_mm'].shape and np.array_equal(qa['points_mm'],qb['points_mm']) and np.array_equal(qa['weights_mm2'],qb['weights_mm2']));samemesh=bool(a['points_mm'].shape==b['points_mm'].shape and np.array_equal(a['points_mm'],b['points_mm']) and np.array_equal(a['tetra'],b['tetra']));sameupper=bool(sa.get('frozen_upper_points') and sa.get('frozen_upper_points')==sb.get('frozen_upper_points'));err={k:abs(ra[k]/rb[k]-1) if rb[k] else None for k in ['elastic_energy_Nmm','exact_P1_volume_RMS_mm','discrete_increment_loss_Nmm']};v=None
+ if samemesh:
+  p=a['points_mm'];t=a['tetra'];vol=abs(np.linalg.det(p[t[:,1:]]-p[t[:,0,None]]))/6;d=a['displacement_mm']-b['displacement_mm'];dr=np.sqrt(np.sum(vol*(np.sum(d[t].sum(1)**2,axis=1)+np.sum(d[t]**2,axis=(1,2))))/(20*vol.sum()));v=float(dr/rb['exact_P1_volume_RMS_mm'])
+ pairs.append(dict(a=ra['source'],b=rb['source'],same_physical_floor_points_weights=samefloor,same_tetra_mesh=samemesh,same_physical_upper_points_forces=sameupper,scope='isolated floorquadrature' if samemesh and not samefloor else 'tetra/gravity discretization with identical physical upper/floor points and forces' if samefloor and sameupper and not samemesh else 'tetra+meshdependent upperaffine integration; floor quadrature fixed' if samefloor and not samemesh else 'mixed or solver warmstart contrast',relative_errors=err,exact_same_mesh_full_vector_relative_RMS=v,all_scalars_within_original_1percent=all(x is not None and x<.01 for x in err.values()),both_full_load_local=ra['full_load_local'] and rb['full_load_local']))
+dump(out/'summary.json',dict(status='ACTUAL_P1_FIXED_MATERIAL_FLOOR_CONTRASTS_NOT_SYSTEM_RELEASE',candidate=sources[0]['candidate'],producer=ref(out/'producer.py'),rows=rows,all_pairs=pairs,newly_qualified_system_gate_ids=[],whole_system_release=False,limitations=['Fixed physical floor integration separated from tetra. Upper7point quadrature type is fixed. Only pairs flagged same_physical_upper_points_forces freeze actual upperpoints/forces; other meshpairs retain meshdependent upperaffine integration.','No motion alignment, no adjacentonly hiding; everypair retained. Energy/discreteincrementloss are not globalenergy or continuouspath loss. Mesh1percent/time.1percent/full83body criteria unchanged.']))
+print(json.dumps(dict(rows=rows,pairs=pairs)))

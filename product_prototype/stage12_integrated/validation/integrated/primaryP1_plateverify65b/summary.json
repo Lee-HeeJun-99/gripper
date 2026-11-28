@@ -1,0 +1,55 @@
+{
+  "status": "ACTUAL_PLATE_NUMERICAL_FIELD_VERIFIED_CONTACT_RESULT_SEPARATE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_plate65b/summary.json",
+    "SHA256": "dfa31c77290ded31604877735817df2d57dec7b1b7a41933c0c17999b03af4ae"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_plateverify65b/producer.py",
+    "SHA256": "8535d54a486286b5f4d462b6e65c02f4d4196ff82e562749a92be8b08bcebcb9"
+  },
+  "checks": {
+    "candidate_STEP_hash": true,
+    "all_tetra_original_DOF_reconstructed": true,
+    "element_energy": true,
+    "stored_vm": true,
+    "local_static_total_external_halfwork": true,
+    "all6resultants": true,
+    "original_offfloor_equilibrium": true,
+    "perturbed_load_rejected": true
+  },
+  "nodes": 10080,
+  "tetra": 34358,
+  "maximum_original_DOF_reaction_error_N": 5.281886039654182e-12,
+  "independent_static_energy_Nmm": 0.017114512413118694,
+  "all6resultants_N_Nmm": [
+    2.9236478968383125e-13,
+    -2.359117241834685e-12,
+    -1.1202705429980142e-11,
+    2.312074864896374e-09,
+    -6.784684342120428e-10,
+    -2.9385678187202086e-10
+  ],
+  "full_DOF_work_residual_Nmm": -1.036899213846686e-14,
+  "contact": {
+    "minimum_gap_mm": -5.9259428907066334e-08,
+    "minimum_normal_N": -1.6716977194880522e-13,
+    "minimum_friction_diamond_slack_N": -1.91483755451317,
+    "friction_violating_nodes": 100,
+    "penetrating_nodes": 2,
+    "normal_complementarity_Nmm": 5.159661771910829e-20,
+    "physical_contact_pass": false
+  },
+  "perturbed_load_original_DOF_error_N": 0.009999999999972475,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Numericalfieldverification doesNOTpromote failedcontact/partialload tooperatingequilibrium.",
+    "Reconstructs finalnormal/cone/complementarity only; incrementalmaximumdissipationhistory notindependentlyreconstructed without savedincrementfields.",
+    "Staticlocalenergyidentity isNOTglobalenergy,source-minimumstrength/mesh/time/83body certificate."
+  ]
+}

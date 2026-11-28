@@ -5381,7 +5381,7 @@
       "id": "goal_primary_round64c_finite_flank_pin_contact_and_source_process64",
       "track": "C",
       "priority": -1306,
-      "status": "READY",
+      "status": "DESIGN_CHANGE_ADVANCED_FOOTEDPLATE_FINITEFLANK_CONTACT_FAIL_PRESERVED",
       "execution_class": "PRODUCT_IMPLEMENTATION",
       "selection_policy": "goal_product_continuation",
       "hypothesis": "Continue SAME83shapeP1 primaryP1_round64c,3actualroundedkeepers/80retainedSTEPs. ExternalhexR.15/rootR.10 are nominal CAD,not sourced cutter/process minima. FIRST solve finite actual roundedhex flank/head and tongue/splitpin/bore contact with original physical bolt/nut/cage/keeper/pin DOFs, measured-or-explicitly-unknown setting/preload; no fixedspin or scalaraxialtie. Newhelicalclearance5.13021469deg/.0071253mm and Root+.25/Cap+.05mm heightbounds are geometric contrasts,not process tolerances. Use instrumented six-rigid-mode AMG on fullactualRootkeeper; preserve all adjacent/coarsefinest1percent comparisons, old55e/mu.2/time/globalenergyFAIL. Bind source-minimum material and actualexternalmachiningtool/radii/angular-height measurement, or change SAMEP1 positive lock if unqualifiable. Implement realultimatehost/lowerM5toolattachment with six physical resultants,then fullstroke/speed/protectedpeak/physicalmass/finalsame-revision3Finger. All22UNQUALIFIED,NoStage3.",
@@ -5427,6 +5427,69 @@
         "Localreference1percent comparisons explicit; time.1percent/globalenergy/full3Finger not certified."
       ],
       "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
+      "last_run_utc": "2026-11-28T06:43:12.030504+00:00",
+      "consecutive_runs": 1,
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle65_record/summary.json",
+        "SHA256": "e6ef2204d21998198d631965c244cdd3505b11d8364c1d1f9b36f6ca107beab2"
+      },
+      "reason": "ONEactualP1footedplate+finitefloor/finitehexcontact;actualelasticgroundstickFAIL andCoulombunqualified preserved;all22UNQUALIFIED.",
+      "next": "goal_primary_ground65a_compliant_floor_slip_and_keeper_pin_contact65"
+    },
+    {
+      "id": "goal_primary_ground65a_compliant_floor_slip_and_keeper_pin_contact65",
+      "track": "C",
+      "priority": -1307,
+      "status": "READY",
+      "execution_class": "PRODUCT_IMPLEMENTATION",
+      "selection_policy": "goal_product_continuation",
+      "hypothesis": "Continue SAME ONE83part P1 primaryP1_ground65a,82retainedSTEPs/oneactualfourfootplate;Motor->Drum->Tendon->Finger->Root->Ground,distalPETslide/cartridge/3Finger/jamming intact. FIRST instrument each Coulomb normalfixedpoint error/physicalcone/maxdissipation and save each actual trialfield before solve can timeout; full30kDOF OSQP profile at10percent load slows, prior420s original remains immutable. Use existing elasticcontact/contactDOF Schur reduction or verified continuation with ALLoriginal equilibrium/gap/cone/workchecks, no stickingclamp or tolerance relaxation. Actualfinitehex flank linewitnesses now18/pair,rank5,first5.1300497deg/.007125069mm; axial .01N rejects. Couple these real contactforces to full roundedRootkeeper/tongue/installedsplitpin/bore/nut/cage with actualfreeDOFs and measured-or-explicitly-unknown setting/preload,NOT affineplugendtorque or fixedspin. Bind source-minimum material/machining/setting and floorfriction/flatness. Then mesh1percent/allcoarsefinest/time.1percent/globalenergy/fullstroke/speed/protectedpeak/physicalmass/finalsame-revision3Finger. All22UNQUALIFIED,NoStage3.",
+      "criteria": "Alloriginal22systemphysicalcriteria unchanged;actual77partCAD/BOM/load/BC,source-backedstrength/support,mesh1percent/time.1percent;no implicitfixation orcriterionrelaxation.",
+      "system_gate_ids": [
+        "cad_model_match",
+        "changed_stage1_revalidation",
+        "continuous_load_path",
+        "finger_structure",
+        "motor_running_torque_speed",
+        "numerical_convergence",
+        "physical_mass_inertia",
+        "qualified_worst_case",
+        "root_palm_strength",
+        "static_dynamic_consistency",
+        "tendon_force_stroke",
+        "terminal_retention"
+      ],
+      "prerequisites": [],
+      "parent_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "target_candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "target_revision": "primaryP1_ground65a",
+      "target_parts": 83,
+      "product_brief": {
+        "path": "product_prototype/stage12_integrated/reports/GOAL_ENGINEERING_BRIEF.md",
+        "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
+      },
+      "primary_state": {
+        "path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json",
+        "SHA256": "b17b612d937d7e684137c5bb6d0ff59c5c0296d67fa9465620fbbf016345842f"
+      },
+      "parent_result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle65_record/summary.json",
+        "SHA256": "e6ef2204d21998198d631965c244cdd3505b11d8364c1d1f9b36f6ca107beab2"
+      },
+      "concrete_first_step": "Instrumentnormalfixedpoint/periteratefieldbeforeboundedCoulombsolve;preserve420sprofile,thenverifiedcontactDOFreduction and fullactualRootkeeper/tongue/pin/nut/cage coupledcontact using18linewitnessforces,unknownactualsetting/preloadexplicit.",
+      "known_blockers": [
+        "All22UNQUALIFIED;zero83bodyphysicaloperatingequilibria.",
+        "Fullactualplate normalactive-setcycle/frictionFAIL; Coulombtrial doesnotcertifyfloor. Source-minimum/floormu/flatnessunknown.",
+        "Actualhexrank5linecone isnotkeeper/pin/nut/cageconstitutiveequilibrium orpreload; setting/processunmeasured.",
+        "Alloriginalmesh1percent/time.1percent/globalenergy/fullstroke/speed/protectedpeak/physicalmass/final3Fingerrequirementsretained."
+      ],
+      "cost": "4GiB/420seconds each analysis child;STOPauthoritative;no recursive launches",
       "last_run_utc": null,
       "consecutive_runs": 0,
       "result": null,
@@ -5450,12 +5513,12 @@
     "SHA256": "3d05b27ea3172c9a56317833867c32973970a296c0f4ec5eb519716c540dc26a"
   },
   "current_primary": {
-    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_round64c/summary.json",
-    "SHA256": "081e03db968128e20dec1b5b32a922a1f5c9f2e739de2cda182b8b9623f55d34"
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
   },
   "latest_cycle": {
-    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle64_record/summary.json",
-    "SHA256": "f5d44d4e0b9850f93d59ea38eb37427bd81775633e38ffe1d438dc11cf0bb60f"
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle65_record/summary.json",
+    "SHA256": "e6ef2204d21998198d631965c244cdd3505b11d8364c1d1f9b36f6ca107beab2"
   },
   "active_primary_policy": "ONE83shape primaryP1_clocked62a; actual validation continues; all22UNQUALIFIED"
 }

@@ -1,0 +1,1696 @@
+[
+  {
+    "mu_ASSUMED": 0.3,
+    "explicit_unknown_host_resultant_port": true,
+    "omitted": "root_connector",
+    "feasible": false,
+    "solver_status": 2,
+    "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "all_cut_DOF_equilibrium_rows": 30,
+    "physical_fixed_DOF": 0,
+    "connector_law_solved": false
+  },
+  {
+    "mu_ASSUMED": 0.3,
+    "explicit_unknown_host_resultant_port": true,
+    "omitted": "cap_connector",
+    "feasible": false,
+    "solver_status": 2,
+    "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "all_cut_DOF_equilibrium_rows": 30,
+    "physical_fixed_DOF": 0,
+    "connector_law_solved": false
+  },
+  {
+    "mu_ASSUMED": 0.3,
+    "explicit_unknown_host_resultant_port": true,
+    "omitted": "through_connector",
+    "feasible": true,
+    "solver_status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "all_cut_DOF_equilibrium_rows": 30,
+    "physical_fixed_DOF": 0,
+    "connector_law_solved": false,
+    "required_host_wrench_N_Nm": [
+      -1.0896277777777779,
+      -0.0,
+      60.755227913236794,
+      -0.3303024196756755,
+      -1.2261456591139235,
+      -0.0
+    ],
+    "max_force_residual_N": 7.16416517438997e-15,
+    "max_moment_residual_Nm": 3.4021815010030383e-16,
+    "minimum_ray_N": 0.0,
+    "reactions": [
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_seat",
+        "patch": 0,
+        "cell": 12,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          66.46936941597015,
+          -14.576021247376065,
+          -7.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 30.035560517450612,
+        "coefficient_N": 0.3325414652892725,
+        "uniform_normal_pressure_MPa": 0.01107159179187172
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_wall",
+        "patch": 1,
+        "cell": 3,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          68.1,
+          -15.0,
+          -3.5
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.3
+        ],
+        "area_mm2": 10.0,
+        "coefficient_N": 0.40488677100188725,
+        "uniform_normal_pressure_MPa": 0.040488677100188726
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_wall",
+        "patch": 1,
+        "cell": 15,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          68.1,
+          15.0,
+          -3.5
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.3
+        ],
+        "area_mm2": 10.0,
+        "coefficient_N": 0.3079441417280871,
+        "uniform_normal_pressure_MPa": 0.03079441417280871
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_axial_shoulder",
+        "patch": 2,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -3.6500000000000004,
+          -9.5,
+          19.25
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 1.6771603942940918,
+        "uniform_normal_pressure_MPa": 0.4472427718117578
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_bottom",
+        "patch": 3,
+        "cell": 11,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          1.1,
+          -12.75,
+          14.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 2.7841779043912793,
+        "uniform_normal_pressure_MPa": 0.5568355808782559
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_bottom",
+        "patch": 3,
+        "cell": 15,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          3.1,
+          -12.75,
+          14.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 2.806356743255693,
+        "uniform_normal_pressure_MPa": 0.5612713486511386
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_left",
+        "patch": 4,
+        "cell": 0,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -4.9,
+          -20.25,
+          14.75
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 3.891543652089248,
+        "uniform_normal_pressure_MPa": 1.037744973890466
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_left",
+        "patch": 4,
+        "cell": 1,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -4.9,
+          -20.25,
+          16.25
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 1.0518490126583544,
+        "uniform_normal_pressure_MPa": 0.28049307004222784
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_right",
+        "patch": 5,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          5.1,
+          -20.25,
+          19.25
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 5.419951969382187,
+        "uniform_normal_pressure_MPa": 1.4453205251685832
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 0,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          -2.9,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 0.06230953403289287,
+        "uniform_normal_pressure_MPa": 0.012461906806578573
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 4,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          -0.9,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 0.03933228187615499,
+        "uniform_normal_pressure_MPa": 0.007866456375230998
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 12,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          3.1,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 0.022977252156737883,
+        "uniform_normal_pressure_MPa": 0.004595450431347577
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 1,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -65.91151365911244,
+          -22.348504485362785,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 2005.6917358617604,
+        "coefficient_N": 1.8014365928007907,
+        "uniform_normal_pressure_MPa": 0.0008981622452698545
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 4,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -7.900000000000006,
+          -57.5,
+          -130.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 3.9203451791085624,
+        "uniform_normal_pressure_MPa": 0.0019312045217283558
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 7,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -7.900000000000006,
+          47.5,
+          -130.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 3.966278229923428,
+        "uniform_normal_pressure_MPa": 0.0019538316403563682
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 8,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          50.099999999999994,
+          -57.5,
+          -130.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 4.254530816439397,
+        "uniform_normal_pressure_MPa": 0.0020958279883937915
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 10,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          49.33755527708447,
+          13.188247082094883,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 1931.18,
+        "coefficient_N": 5.318838678351655,
+        "uniform_normal_pressure_MPa": 0.002754191053320589
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 10,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          49.33755527708447,
+          13.188247082094883,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          -0.3,
+          1.0
+        ],
+        "area_mm2": 1931.18,
+        "coefficient_N": 7.120275271152444,
+        "uniform_normal_pressure_MPa": 0.003687007565919512
+      },
+      {
+        "label": "root_connector_0",
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          64.1,
+          -16,
+          -3
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "F0_RF0_BOLT",
+          "F0_RF0_NUT"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 1.129918290080256,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "root_connector_1",
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          64.1,
+          16,
+          -3
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "F0_RF1_BOLT",
+          "F0_RF1_NUT"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 0.7993576366692584,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "cap_connector_-7_-13.5",
+        "body_i": "MOTOR_CAP",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -6.9,
+          -13.5,
+          29
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "MOTOR_CAP_BOLT_-7_-13.5",
+          "MOTOR_CAP_NUT_-7_-13.5"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 0.02247558964351721,
+        "uniform_normal_pressure_MPa": null
+      }
+    ],
+    "body_internal_wrench_N_Nm": [
+      [
+        -0.6130684731431926,
+        0.0,
+        -1.3828851876412496,
+        5.597159153856307e-06,
+        0.08879620097257726,
+        -6.505213034913027e-19
+      ],
+      [
+        -0.47655930463458507,
+        -1.6438358167176418e-16,
+        2.860060307630478,
+        -0.0017732770305224216,
+        -0.03888619897848572,
+        8.673617379884035e-18
+      ],
+      [
+        0.0,
+        0.0,
+        0.10214347842226854,
+        -0.0022201156681446793,
+        -1.0214347842227333e-05,
+        0.0
+      ],
+      [
+        -2.220446049250313e-16,
+        8.881784197001252e-16,
+        24.80238616936478,
+        -0.15387866380904347,
+        -0.5540759049965959,
+        -4.163336342344337e-17
+      ],
+      [
+        1.0896277777777779,
+        -8.881784197001252e-16,
+        -26.381704767776277,
+        0.1578664593485567,
+        0.5041761173503466,
+        4.163336342344337e-17
+      ]
+    ],
+    "balance_N_Nm": [
+      [
+        0.0,
+        1.0901339466091428e-44,
+        2.220446049250313e-16,
+        3.8014838672773e-18,
+        0.0,
+        -6.505213034913027e-19
+      ],
+      [
+        2.7755575615628914e-16,
+        -1.6438358167176418e-16,
+        -4.440892098500626e-16,
+        3.7513395167998453e-17,
+        1.3877787807814457e-17,
+        8.673617379884035e-18
+      ],
+      [
+        0.0,
+        0.0,
+        -1.3877787807814457e-17,
+        -4.336808689942018e-19,
+        -6.606856988583543e-20,
+        0.0
+      ],
+      [
+        -2.220446049250313e-16,
+        8.881784197001252e-16,
+        -7.105427357601002e-15,
+        5.551115123125783e-17,
+        3.3306690738754696e-16,
+        -4.163336342344337e-17
+      ],
+      [
+        0.0,
+        -8.881784197001252e-16,
+        0.0,
+        -2.7755575615628914e-17,
+        0.0,
+        4.163336342344337e-17
+      ]
+    ],
+    "objective": 1.9522033437519313
+  },
+  {
+    "mu_ASSUMED": 0.3,
+    "explicit_unknown_host_resultant_port": true,
+    "omitted": "motor_left",
+    "feasible": true,
+    "solver_status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "all_cut_DOF_equilibrium_rows": 30,
+    "physical_fixed_DOF": 0,
+    "connector_law_solved": false,
+    "required_host_wrench_N_Nm": [
+      -1.0896277777777814,
+      -0.0,
+      60.75522791323681,
+      -0.33030241967567536,
+      -1.2261456591139241,
+      -0.0
+    ],
+    "max_force_residual_N": 7.119291619286993e-15,
+    "max_moment_residual_Nm": 2.2898349882893854e-16,
+    "minimum_ray_N": 0.0,
+    "reactions": [
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_seat",
+        "patch": 0,
+        "cell": 12,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          66.46936941597015,
+          -14.576021247376065,
+          -7.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 30.035560517450612,
+        "coefficient_N": 0.33254146528927164,
+        "uniform_normal_pressure_MPa": 0.011071591791871692
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_wall",
+        "patch": 1,
+        "cell": 7,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          68.1,
+          -5.0,
+          -3.5
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.3
+        ],
+        "area_mm2": 10.0,
+        "coefficient_N": 0.6073301565028305,
+        "uniform_normal_pressure_MPa": 0.06073301565028305
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_wall",
+        "patch": 1,
+        "cell": 15,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          68.1,
+          15.0,
+          -3.5
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.3
+        ],
+        "area_mm2": 10.0,
+        "coefficient_N": 0.10550075622714362,
+        "uniform_normal_pressure_MPa": 0.010550075622714362
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_axial_shoulder",
+        "patch": 2,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -3.6500000000000004,
+          -9.5,
+          19.25
+        ],
+        "direction": [
+          0.3,
+          -1.0,
+          0.0
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 0.7289366610051085,
+        "uniform_normal_pressure_MPa": 0.19438310960136226
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_axial_shoulder",
+        "patch": 2,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -3.6500000000000004,
+          -9.5,
+          19.25
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 1.1222712782389739,
+        "uniform_normal_pressure_MPa": 0.2992723408637264
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_axial_shoulder",
+        "patch": 2,
+        "cell": 15,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          3.8499999999999996,
+          -9.5,
+          19.25
+        ],
+        "direction": [
+          0.3,
+          -1.0,
+          0.0
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 0.124404261460561,
+        "uniform_normal_pressure_MPa": 0.03317446972281626
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_bottom",
+        "patch": 3,
+        "cell": 15,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          3.1,
+          -12.75,
+          14.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 6.585374002348812,
+        "uniform_normal_pressure_MPa": 1.3170748004697623
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_right",
+        "patch": 5,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          5.1,
+          -20.25,
+          19.25
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 0.7325615813742862,
+        "uniform_normal_pressure_MPa": 0.19534975503314297
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 0,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          -2.9,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 1.584431918417177,
+        "uniform_normal_pressure_MPa": 0.31688638368343536
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 0,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          -2.9,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 1.584431918417177,
+        "uniform_normal_pressure_MPa": 0.31688638368343536
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 1,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -65.91151365911244,
+          -22.348504485362785,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 2005.6917358617604,
+        "coefficient_N": 2.956772073846249,
+        "uniform_normal_pressure_MPa": 0.0014741906849288831
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 3,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -65.9,
+          47.5,
+          -130.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 2.876590566824721,
+        "uniform_normal_pressure_MPa": 0.0014170396880909956
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 8,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          50.099999999999994,
+          -57.5,
+          -130.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 5.541443446920871,
+        "uniform_normal_pressure_MPa": 0.0027297750970053554
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 9,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          49.33755527708447,
+          -23.188247082094883,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          -0.3,
+          1.0
+        ],
+        "area_mm2": 1931.18,
+        "coefficient_N": 2.9567720738462504,
+        "uniform_normal_pressure_MPa": 0.0015310701611689487
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 10,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          49.33755527708447,
+          13.188247082094883,
+          -130.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 1931.18,
+        "coefficient_N": 11.841699139206767,
+        "uniform_normal_pressure_MPa": 0.006131846404378032
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 14,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          108.11272562322952,
+          12.469700897072556,
+          -130.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2005.69173586176,
+        "coefficient_N": 0.2084274671314292,
+        "uniform_normal_pressure_MPa": 0.00010391799667154575
+      },
+      {
+        "label": "root_connector_0",
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          64.1,
+          -16,
+          -3
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "F0_RF0_BOLT",
+          "F0_RF0_NUT"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 1.1299182900802551,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "root_connector_1",
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          64.1,
+          16,
+          -3
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "F0_RF1_BOLT",
+          "F0_RF1_NUT"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 0.7993576366692584,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "cap_connector_-7_-29.5",
+        "body_i": "MOTOR_CAP",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -6.9,
+          -29.5,
+          29
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "MOTOR_CAP_BOLT_-7_-29.5",
+          "MOTOR_CAP_NUT_-7_-29.5"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 0.4299728333684163,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "cap_connector_-7_-13.5",
+        "body_i": "MOTOR_CAP",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -6.9,
+          -13.5,
+          29
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "MOTOR_CAP_BOLT_-7_-13.5",
+          "MOTOR_CAP_NUT_-7_-13.5"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 1.7824295965878452,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "cap_connector_7_-29.5",
+        "body_i": "MOTOR_CAP",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          7.1,
+          -29.5,
+          29
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "MOTOR_CAP_BOLT_7_-29.5",
+          "MOTOR_CAP_NUT_7_-29.5"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 0.8543179284558242,
+        "uniform_normal_pressure_MPa": null
+      }
+    ],
+    "body_internal_wrench_N_Nm": [
+      [
+        -0.6130684731431926,
+        0.0,
+        -1.3828851876412496,
+        5.5971591538528376e-06,
+        0.08879620097257726,
+        -2.168404344971009e-19
+      ],
+      [
+        -0.4765593046345854,
+        2.220446049250313e-16,
+        2.8600603076304805,
+        -0.0017732770305224424,
+        -0.038886198978485734,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.10214347842226812,
+        -0.002220115668144661,
+        -1.0214347842226953e-05,
+        0.0
+      ],
+      [
+        -3.552713678800501e-15,
+        -5.551115123125783e-16,
+        24.802386169364787,
+        -0.15387866380904347,
+        -0.5540759049965964,
+        -6.938893903907228e-18
+      ],
+      [
+        1.0896277777777814,
+        4.440892098500626e-16,
+        -26.381704767776288,
+        0.1578664593485567,
+        0.5041761173503472,
+        -8.239936510889834e-18
+      ]
+    ],
+    "balance_N_Nm": [
+      [
+        0.0,
+        1.0901339466091428e-44,
+        2.220446049250313e-16,
+        3.3203691532368573e-19,
+        0.0,
+        -2.168404344971009e-19
+      ],
+      [
+        -5.551115123125783e-17,
+        2.220446049250313e-16,
+        2.220446049250313e-15,
+        1.6696713456276768e-17,
+        0.0,
+        -2.9913784621458227e-46
+      ],
+      [
+        0.0,
+        0.0,
+        -4.3021142204224816e-16,
+        1.7780915628762273e-17,
+        3.1340219048409113e-19,
+        0.0
+      ],
+      [
+        -3.552713678800501e-15,
+        -5.551115123125783e-16,
+        0.0,
+        5.551115123125783e-17,
+        -2.220446049250313e-16,
+        -6.938893903907228e-18
+      ],
+      [
+        0.0,
+        4.440892098500626e-16,
+        7.105427357601002e-15,
+        5.551115123125783e-17,
+        -1.1102230246251565e-16,
+        -8.239936510889834e-18
+      ]
+    ],
+    "objective": 4.996395180049269
+  },
+  {
+    "mu_ASSUMED": 0.3,
+    "explicit_unknown_host_resultant_port": true,
+    "omitted": "root_wall",
+    "feasible": true,
+    "solver_status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "all_cut_DOF_equilibrium_rows": 30,
+    "physical_fixed_DOF": 0,
+    "connector_law_solved": false,
+    "required_host_wrench_N_Nm": [
+      -1.0896277777777776,
+      -0.0,
+      60.755227913236816,
+      -0.3303024196756757,
+      -1.2261456591139237,
+      -0.0
+    ],
+    "max_force_residual_N": 7.122753468078643e-15,
+    "max_moment_residual_Nm": 1.8837531479823681e-16,
+    "minimum_ray_N": 0.0,
+    "reactions": [
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_seat",
+        "patch": 0,
+        "cell": 8,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          62.66604837753007,
+          -14.397241124037604,
+          -7.000000000000001
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 26.685236713674854,
+        "coefficient_N": 0.14396211916315668,
+        "uniform_normal_pressure_MPa": 0.005394822639492767
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_seat",
+        "patch": 0,
+        "cell": 13,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          66.35,
+          -5.0,
+          -7.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 34.99999999999999,
+        "coefficient_N": 1.3085368265089405,
+        "uniform_normal_pressure_MPa": 0.03738676647168402
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "root_seat",
+        "patch": 0,
+        "cell": 15,
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          66.46936941597015,
+          14.57602124737607,
+          -7.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 30.035560517450612,
+        "coefficient_N": 0.5910626314718779,
+        "uniform_normal_pressure_MPa": 0.019678761484356898
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_axial_shoulder",
+        "patch": 2,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -3.6500000000000004,
+          -9.5,
+          19.25
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 1.4544261619427812,
+        "uniform_normal_pressure_MPa": 0.387846976518075
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_axial_shoulder",
+        "patch": 2,
+        "cell": 15,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          3.8499999999999996,
+          -9.5,
+          19.25
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 0.22273423235131104,
+        "uniform_normal_pressure_MPa": 0.05939579529368295
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_bottom",
+        "patch": 3,
+        "cell": 15,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          3.1,
+          -12.75,
+          14.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 5.590534647646974,
+        "uniform_normal_pressure_MPa": 1.1181069295293948
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_left",
+        "patch": 4,
+        "cell": 0,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -4.9,
+          -20.25,
+          14.75
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 4.943392664747605,
+        "uniform_normal_pressure_MPa": 1.3182380439326946
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_right",
+        "patch": 5,
+        "cell": 2,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          5.1,
+          -20.25,
+          17.75
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 5.098187567040371,
+        "uniform_normal_pressure_MPa": 1.3595166845440991
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_right",
+        "patch": 5,
+        "cell": 3,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          5.1,
+          -20.25,
+          19.25
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          -0.3
+        ],
+        "area_mm2": 3.75,
+        "coefficient_N": 0.3217644023418187,
+        "uniform_normal_pressure_MPa": 0.08580384062448498
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 0,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          -2.9,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 0.06230953403289287,
+        "uniform_normal_pressure_MPa": 0.012461906806578573
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 4,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          -0.9,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 0.016355029719417134,
+        "uniform_normal_pressure_MPa": 0.0032710059438834267
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "motor_top",
+        "patch": 6,
+        "cell": 8,
+        "body_i": "F0_MICRO_MOTOR",
+        "body_j": "MOTOR_CAP",
+        "point_mm": [
+          1.1,
+          -20.25,
+          26.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          -1.0
+        ],
+        "area_mm2": 5.0,
+        "coefficient_N": 0.04595450431347574,
+        "uniform_normal_pressure_MPa": 0.009190900862695148
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 1,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -65.91151365911244,
+          -22.348504485362785,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          0.3,
+          1.0
+        ],
+        "area_mm2": 2005.6917358617604,
+        "coefficient_N": 2.95677207384625,
+        "uniform_normal_pressure_MPa": 0.0014741906849288836
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 3,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          -65.9,
+          47.5,
+          -130.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 2.876590566824723,
+        "uniform_normal_pressure_MPa": 0.0014170396880909964
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 8,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          50.099999999999994,
+          -57.5,
+          -130.0
+        ],
+        "direction": [
+          0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2030.0,
+        "coefficient_N": 5.5414434469208755,
+        "uniform_normal_pressure_MPa": 0.0027297750970053576
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 9,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          49.33755527708447,
+          -23.188247082094883,
+          -130.0
+        ],
+        "direction": [
+          0.0,
+          -0.3,
+          1.0
+        ],
+        "area_mm2": 1931.18,
+        "coefficient_N": 2.956772073846251,
+        "uniform_normal_pressure_MPa": 0.0015310701611689489
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 10,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          49.33755527708447,
+          13.188247082094883,
+          -130.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 1931.18,
+        "coefficient_N": 11.84169913920677,
+        "uniform_normal_pressure_MPa": 0.0061318464043780335
+      },
+      {
+        "kind": "finite_patch_inscribed_Coulomb_ray",
+        "label": "support_plate",
+        "patch": 7,
+        "cell": 14,
+        "body_i": "BENCH_SUPPORT",
+        "body_j": "EXTERNAL_BENCH_PLATE",
+        "point_mm": [
+          108.11272562322952,
+          12.469700897072556,
+          -130.0
+        ],
+        "direction": [
+          -0.3,
+          0.0,
+          1.0
+        ],
+        "area_mm2": 2005.69173586176,
+        "coefficient_N": 0.20842746713141955,
+        "uniform_normal_pressure_MPa": 0.00010391799667154094
+      },
+      {
+        "label": "root_connector_0",
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          64.1,
+          -16,
+          -3
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "F0_RF0_BOLT",
+          "F0_RF0_NUT"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 1.713398293616171,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "root_connector_1",
+        "body_i": "F0_ROOT_BACK",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          64.1,
+          16,
+          -3
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "F0_RF1_BOLT",
+          "F0_RF1_NUT"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 1.7130484711690546,
+        "uniform_normal_pressure_MPa": null
+      },
+      {
+        "label": "cap_connector_-7_-13.5",
+        "body_i": "MOTOR_CAP",
+        "body_j": "BENCH_SUPPORT",
+        "point_mm": [
+          -6.9,
+          -13.5,
+          29
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "part_IDs": [
+          "MOTOR_CAP_BOLT_-7_-13.5",
+          "MOTOR_CAP_NUT_-7_-13.5"
+        ],
+        "kind": "EXPLICIT_REQUIRED_AXIAL_CONNECTOR_PORT_NOT_BOLT_LAW",
+        "area_mm2": null,
+        "coefficient_N": 0.02247558964351721,
+        "uniform_normal_pressure_MPa": null
+      }
+    ],
+    "body_internal_wrench_N_Nm": [
+      [
+        -0.6130684731431925,
+        0.0,
+        -1.3828851876412507,
+        5.5971591538597765e-06,
+        0.08879620097257727,
+        2.772269476737902e-20
+      ],
+      [
+        -0.4765593046345853,
+        -6.206740285782357e-17,
+        2.860060307630478,
+        -0.0017732770305224216,
+        -0.03888619897848575,
+        -5.551115123125783e-17
+      ],
+      [
+        0.0,
+        0.0,
+        0.10214347842226854,
+        -0.0022201156681446793,
+        -1.0214347842227333e-05,
+        0.0
+      ],
+      [
+        -4.440892098500626e-16,
+        -2.220446049250313e-16,
+        24.802386169364794,
+        -0.15387866380904366,
+        -0.5540759049965961,
+        6.245004513516506e-17
+      ],
+      [
+        1.0896277777777779,
+        2.220446049250313e-16,
+        -26.38170476777629,
+        0.15786645934855692,
+        0.5041761173503467,
+        6.938893903907228e-18
+      ]
+    ],
+    "balance_N_Nm": [
+      [
+        1.1102230246251565e-16,
+        1.0901339466091428e-44,
+        -8.881784197001252e-16,
+        7.270930819230914e-18,
+        1.3877787807814457e-17,
+        2.772269476737902e-20
+      ],
+      [
+        5.551115123125783e-17,
+        -6.206740285782357e-17,
+        -4.440892098500626e-16,
+        3.7513395167998453e-17,
+        -1.3877787807814457e-17,
+        -5.551115123125783e-17
+      ],
+      [
+        0.0,
+        0.0,
+        -1.3877787807814457e-17,
+        -4.336808689942018e-19,
+        -6.606856988583543e-20,
+        0.0
+      ],
+      [
+        -4.440892098500626e-16,
+        -2.220446049250313e-16,
+        7.105427357601002e-15,
+        -1.3877787807814457e-16,
+        1.1102230246251565e-16,
+        6.245004513516506e-17
+      ],
+      [
+        0.0,
+        2.220446049250313e-16,
+        7.105427357601002e-15,
+        -8.326672684688674e-17,
+        -1.1102230246251565e-16,
+        6.938893903907228e-18
+      ]
+    ],
+    "objective": 3.4493841636796336
+  }
+]

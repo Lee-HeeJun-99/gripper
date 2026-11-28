@@ -1,0 +1,83 @@
+{
+  "status": "CYCLE60_ACTUAL_DESIGN_ASSEMBLY_AND_EXECUTION_FAILURES_PRESERVED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_keeper60c/summary.json",
+    "SHA256": "70d1ab92d26ab3cd5d44e6d9f83df77763de8760e66013789ecb40393aadd2a6"
+  },
+  "failed_executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_keeperA_execution/execution.json",
+        "SHA256": "d1e0ab99848f408ff08efbe68c375c79bf0d0775d05530ec71d8c2658e997bae"
+      },
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_keeperA_execution/analysis.log",
+        "SHA256": "2f9118b6ce59a10ed8e1c97d5a088f643fe940ae4edb4cde761448a3ad80cf89"
+      },
+      "no_performance_credit": true
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_keeperAuditC_execution/execution.json",
+        "SHA256": "ac1cab2beae4bd17595333f8918d2e7e2aea6c7235517a3d97fbf3095a5f73a9"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_keeperAuditC_execution/analysis.log",
+        "SHA256": "48a16e0b153a3cd255b17d091cc09e91cc000cda2bed3556776817c4f6a9599f"
+      },
+      "no_performance_credit": true
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_productB_execution/execution.json",
+        "SHA256": "42c1033779bbf622566d0b0be74bf572a0e29fab81f8e77bfc1dd477788eb2a1"
+      },
+      "exit_code": 2,
+      "timeout": false,
+      "STOP": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_productB_execution/analysis.log",
+        "SHA256": "f3247df824f6bea4c9050632be1905fa312006c605ef0717709c2fae12f1a448"
+      },
+      "no_performance_credit": true
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_renderC_execution/execution.json",
+        "SHA256": "6a8f0da105ae73132eca8a468a725a0ba87c98ef61f1ef117fe360731dd4f6ae"
+      },
+      "exit_code": 1,
+      "timeout": false,
+      "STOP": false,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary60_renderC_execution/analysis.log",
+        "SHA256": "5e8357f5e20d69d526d11db98819d66e891220e1e465f734ddf9a9e409bdb346"
+      },
+      "no_performance_credit": true
+    }
+  ],
+  "failed_root_anchor_CAD": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_keeper60a/summary.json",
+    "SHA256": "4ad0b5b67ab12e7e58fd6a0ae989724bd680d145a7419ee0b01d543cf39a8246"
+  },
+  "failed_X_pin_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product60b/summary.json",
+    "SHA256": "2e690c5dc7d580d935b9b4bdf217354f287910ec567ec3f3c24b49264a556908"
+  },
+  "causes": [
+    "60a wrongRootlocaltop10mm left detachedboss (2solids) and0.636172512mm3 pin/supportcollision; freshactualBRepinventory identifiedRootmountseat top-3mm.",
+    "60b finalnominalclear but -Xinsertion hitsPET/Rootfront/Rootback. 60c movesRootanchorX60 and rotatespinaxisY; nocriterionrelaxation.",
+    "Firstaudit called legacyrotate withwrongargumentcount; preservedsource/log. Newaudit translatesaboutcorrectaxis.",
+    "FirstSTEPvisualization importedNumPy2withsystemMatplotlibNumPy1ABI; no numericalmechanicsoutput. SameunchangedrenderwithOCP-onlyPYTHONPATH succeeded, no package/SDKchange.",
+    "Preliminarysetting60c usedlooser1.2mmnormalmomentarmbound; final60d usesactualregularhexhalfside2.4/(2sqrt3). Bothretained;final60d isauthoritative.",
+    "Inheritedproduct60c tasklabel was oldguide53; finalfresh60d usesexactselectedqueueID, sameactualgeometryandchecks."
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

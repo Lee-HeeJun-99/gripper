@@ -1,0 +1,141 @@
+{
+  "status": "ACTUAL83_INDEPENDENT_FINITE_CONTACT_WORK_AND_MASS_PORT_AUDIT_LOCAL_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_keeper60c/summary.json",
+    "SHA256": "70d1ab92d26ab3cd5d44e6d9f83df77763de8760e66013789ecb40393aadd2a6"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_loadaudit60c/producer.py",
+    "SHA256": "95cd3e39ecf01ead2745c806365d90efe46c7ce09ecb16de874b311b183388f7"
+  },
+  "reports": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts60c/summary.json",
+        "SHA256": "583c40b2106c22ce0d9a2b5eb95b6b90d32678fe2e7a8a6463c9f1356f11975c"
+      },
+      "candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_keeper60c/summary.json",
+        "SHA256": "70d1ab92d26ab3cd5d44e6d9f83df77763de8760e66013789ecb40393aadd2a6"
+      },
+      "checks": {
+        "producer_local_checks": true,
+        "all83identities": true,
+        "actual_both_oriented_normals": true,
+        "cell_centroid_integral": true,
+        "independent_all30force": true,
+        "independent_all30moment": true,
+        "physical_SE3_virtualwork": true,
+        "physical_Coulomb_cone": true,
+        "all83mass_and_carriedobject_force": true,
+        "all83deformed_centroid_moments": true,
+        "wrong_host_sign_rejected": true,
+        "missing_required_Root_reaction_rejected": true,
+        "all_floatinghost_cases_rejected": true
+      },
+      "actual_normal_bindings": [
+        {
+          "label": "root_seat",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "root_wall",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "motor_axial_shoulder",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "motor_bottom",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "motor_left",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "motor_right",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "motor_top",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "support_plate",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "actual_key_xwall_-18.9",
+          "both_actual_oriented_normals": true
+        },
+        {
+          "label": "actual_key_xwall_71.1",
+          "both_actual_oriented_normals": true
+        }
+      ],
+      "independent_mass_object_force_error_N": 2.1316282072803006e-14,
+      "independent_deformed_mass_object_moment_error_Nm": 5.551115123125783e-17,
+      "maximum_cell_centroid_error_mm": 8.275159187984525e-13,
+      "reaction_summaries": [
+        {
+          "mu_ASSUMED": 0,
+          "required_connector_axial_ports_N": {
+            "root_connector_0": 0.7217272753279671,
+            "root_connector_1": 1.466872292010157,
+            "cap_connector_-7_-29.5": 0.6283320000487773,
+            "cap_connector_-7_-13.5": 2.62464310757496,
+            "cap_connector_7_-29.5": 1.2705469995228147
+          },
+          "missing_Root_connector_residual_N": 2.188599567338124,
+          "maximum_balance_force_N": 7.105427357601002e-15,
+          "maximum_balance_moment_Nm": 2.482535100258717e-16,
+          "finite_SE3_work_error_Nm": 3.389288849575678e-11
+        },
+        {
+          "mu_ASSUMED": 0.1,
+          "required_connector_axial_ports_N": {
+            "root_connector_0": 1.3083117381932856,
+            "root_connector_1": 0.7432025590414195,
+            "cap_connector_-7_-13.5": 0.022475589643517146
+          },
+          "missing_Root_connector_residual_N": 2.0515142972347107,
+          "maximum_balance_force_N": 7.119291619286993e-15,
+          "maximum_balance_moment_Nm": 4.49812158261681e-16,
+          "finite_SE3_work_error_Nm": 4.411759846334462e-11
+        },
+        {
+          "mu_ASSUMED": 0.3,
+          "required_connector_axial_ports_N": {
+            "root_connector_0": 1.1088518120718143,
+            "root_connector_1": 0.7923650419285088,
+            "cap_connector_-7_-13.5": 0.02247558964351721
+          },
+          "missing_Root_connector_residual_N": 1.9012168540003231,
+          "maximum_balance_force_N": 7.119291619286993e-15,
+          "maximum_balance_moment_Nm": 3.5652682413747997e-16,
+          "finite_SE3_work_error_Nm": 3.184652541676769e-11
+        },
+        {
+          "mu_ASSUMED": 0.8,
+          "required_connector_axial_ports_N": {
+            "root_connector_0": 0.9542992178783958,
+            "root_connector_1": 0.4636830159487056,
+            "cap_connector_-7_-13.5": 0.022475589643516983
+          },
+          "missing_Root_connector_residual_N": 1.4179822338271073,
+          "maximum_balance_force_N": 1.464821375527116e-14,
+          "maximum_balance_moment_Nm": 4.484050470211362e-16,
+          "finite_SE3_work_error_Nm": 2.6396662633487722e-11
+        }
+      ],
+      "physical_equilibria_accepted": 0
+    }
+  ],
+  "all_checks": true,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "scope": "Independentnecessarycutloadreactionbounds,NOTactualcompliant83part equilibrium/sourcecapacity/hostcertification"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PUBLIC_PRIMARY_THREAD_DIMENSIONS_ONLY_NOT_FRICTION_OR_STRENGTH",
+  "sources": [
+    {
+      "author": "Accu official product technical datasheet",
+      "url": "https://www.accu.co.uk/api/product-datasheet?id=268686",
+      "item": "HPN-M3-AL DIN934",
+      "M3_pitch_mm": 0.5,
+      "scope": "Pitch/dimensions used only; aluminium material NOT adopted for thisP1 stainless-assigned nut."
+    },
+    {
+      "author": "Bossard",
+      "url": "https://media.bossard.com/dk-da/-/media/bossard-group/website/documents/technical-resources/dk/f-079-dk.pdf",
+      "scope": "M3 internal thread DIN13 dimensional reference. No actualsupplier friction/preload/flankstiffness/grade qualification."
+    }
+  ],
+  "basic_profile_formulae": {
+    "minor_d_mm": "3 - 1.226869*0.5",
+    "pitch_d_mm": "3 - 0.6495190528*0.5",
+    "scope": "Basic profile derivation, NOT6g/6H minimum actualtolerance or capacity."
+  },
+  "conditional_material_source": "product_prototype/stage12_integrated/models/materials/primary_joint_sources1/reviewed.json",
+  "friction_minimum": null,
+  "preload_guarantee_N": null,
+  "rod_engagement_distribution": "Uniform axial+torsion load along actual nut overlap. Engineeringcontrast only, not solvedflank pressure."
+}

@@ -1,0 +1,77 @@
+{
+  "status": "ACTUAL77_CAPTIVE_NUT_BACKLASH_AND_NEW_CAGE_PATH_LOCAL_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_captive59b/summary.json",
+    "SHA256": "ea288dc8300eae970fc5ed711621f21fdc607cbf57d97b34d26c78b5556dd094"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cageaudit59/producer.py",
+    "SHA256": "fcd9d47b8c25a272ada81c288c94349c63e37e820bffb6761c091e92eb3d8001"
+  },
+  "sources": [
+    {
+      "path": "product_prototype/stage12_integrated/models/standard_drive/primary_captive_sources59/reviewed.json",
+      "SHA256": "80d235e6094b12179d02dccf5fc161e8a01214c7ed6e0a6e4c7a1ed5c12ff1b4"
+    }
+  ],
+  "checks": {
+    "actual77": true,
+    "exactly5changed": true,
+    "six_positive_actual_axial_seats": true,
+    "all_cages_have_clearance_and_limit_rotation": true,
+    "first_contact_brackets_refined": true,
+    "all_new_cage_continuous_finger_path_bounds": true,
+    "fresh_full_product_checks": true
+  },
+  "seats": [
+    {
+      "nut": "F0_RF0_NUT",
+      "area_mm2": 17.11806569560131
+    },
+    {
+      "nut": "F0_RF1_NUT",
+      "area_mm2": 17.11806569560131
+    },
+    {
+      "nut": "MOTOR_CAP_NUT_-7_-29.5",
+      "area_mm2": 17.11806569559517
+    },
+    {
+      "nut": "MOTOR_CAP_NUT_-7_-13.5",
+      "area_mm2": 17.11806569559517
+    },
+    {
+      "nut": "MOTOR_CAP_NUT_7_-29.5",
+      "area_mm2": 17.118065695601384
+    },
+    {
+      "nut": "MOTOR_CAP_NUT_7_-13.5",
+      "area_mm2": 17.118065695601384
+    }
+  ],
+  "backlash": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cageaudit59/backlash.json",
+    "SHA256": "635da6e8e7264f58f01de92cc675f660699a63dffdb915d67d20947a2283a9c5"
+  },
+  "continuous_added_cage_separation": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_cageaudit59/continuous_added_cage_separation.json",
+    "SHA256": "151fc07ab47bf8a39fc5c88a2de47a8c001c14455a84db1ce34a783c266aba38"
+  },
+  "minimum_continuous_new_cage_gap_mm": 0.5,
+  "measured_added_support_volume_mm3": 1212.724613941973,
+  "measured_removed_parent_material_mm3": 0.6321688676252961,
+  "wholeassembly_finite_samples": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product59side/summary.json",
+    "SHA256": "c6f2e627ec130ee17d3c362ed72494440738bfb692c1b1b64655305f563c43e6"
+  },
+  "bolt_head_rotation_fixed": false,
+  "thread_preload_or_friction_qualified": false,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Only added-cage envelopes versus actual piecewise-linear Finger assembly path have continuous separation proof. Original solids/wholeassembly remain finite samples, not fullCCD.",
+    "Nominal major-diameter thread envelopes do not model actual helical flanks; no supplier tolerance, friction/preload/strength or actualclamp certificate.",
+    "Cage rotational clearance and contact onset are not finite-area pressure/capacity. All original22system criteria unchanged."
+  ]
+}

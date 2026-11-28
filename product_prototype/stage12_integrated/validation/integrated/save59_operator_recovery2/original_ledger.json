@@ -1,0 +1,573 @@
+{
+  "mode": "GOAL_BASED",
+  "source_pins": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": "f9df7eef738ff189543d21a03605b3f3e5894b11a3353f98b264c02ea68b1398",
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": "1448432c5557579b44b4e53d78a71135b7737d76c4c9cc351604d2ede956a088",
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": "2d908179c635a23b422a581a434e5a08b74ea5f75b04bff53c9a38ff6f7e695e",
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": "ee9261294671ac3e9ca922121ac9260485caeed590d29199a568c7cdf5d6bcfa",
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": "12a4d14a6825d7b771754979a8c6bfb994979b983cc61caf012e57cc333608f8",
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8",
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": "e8412c0f605fb6c36e8517d5d99b493d42b1a03e16e8d38357faef41a5515216",
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": "814cd89e6056124ed270c467c390d64b7afe9d4cd58f2a036582e113f80e4bfb",
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": "f7d850c52e0ec9082f01fb3f81bee979ece9ade4f4b5ce2c274e9c0aa4ed3baa"
+  },
+  "started_unix": 1795741463.9561763,
+  "sessions_started": 60,
+  "completed_cycles": 58,
+  "recovery_workers": 0,
+  "recorded_child_seconds": 53595.50003412552,
+  "historical_usage": [
+    {
+      "tag": "authorized_20261126_1",
+      "completed_sessions": 1,
+      "manager_wall_seconds": 166.29027104377747,
+      "child_seconds": null
+    },
+    {
+      "tag": "authorized_20261126_2",
+      "completed_sessions": 1,
+      "manager_wall_seconds": 179.47869110107422,
+      "child_seconds": null
+    },
+    {
+      "tag": "authorized_20261126_3",
+      "completed_sessions": 4,
+      "manager_wall_seconds": 619.013703584671,
+      "child_seconds": null
+    },
+    {
+      "tag": "authorized_20261126_4",
+      "completed_sessions": 10,
+      "manager_wall_seconds": 2693.4106209278107,
+      "child_seconds": null
+    },
+    {
+      "tag": "authorized_20261126_5",
+      "completed_sessions": 10,
+      "manager_wall_seconds": 2283.0825304985046,
+      "child_seconds": null
+    },
+    {
+      "tag": "authorized_20261127_6",
+      "completed_sessions": 10,
+      "manager_wall_seconds": 2838.1690242290497,
+      "child_seconds": null
+    }
+  ],
+  "seen_engineering_signatures": [
+    "2829504dd64b9aed4322dd386b1b07f8e67a55e3c7b799ad86e9e5ad057e5fec",
+    "42ffe9a8b6d133a8d98ca499a3473dacb7b9509efdfee3f1c17baad9593c997f",
+    "7cbd20e8c2de928277c431a087ef4b0297b24440f4e7a6ddc2c3b71de659e9c6",
+    "78f46e1c15383fdb5bc93305f58650fb00c347b472d7df65d0d142509a9f7a77",
+    "db418a8f00d674037416e6938e7175e7d2cbe5ad70c974c895c8a64b8ecb7449",
+    "c2f98f62e8d5e2b18295533ab30e8e5ed2a4a0fe733ee20d104c93aa1ea410e9",
+    "6b8f579564e05205a87798e86d303a6111164329cfdbc2ccd70ce30d84fcf6af",
+    "88b0d13cea4f28ca6cbee1081a28534ffbe3538f1632e5c1c282f32bd801b1d9",
+    "9d602492c4c3a9afe073fe1fb402bc197ca3b46045dfafc845b1977b8fff0a0e",
+    "e609de18eccea19b2f685d4f414afb28ec6bd1daf32a105f3c86573b1664b9f0",
+    "73950f354a93d1c17d0b7806a57cfefbee2ae3e38cb595c3581b481dde79fcf5",
+    "bd56eb789d11618be58f26adefdf6c2e1e410e23893456b2c61429adecd35a4e",
+    "fb4ca3c8214532242e52fa1006cc2d4ff292a05b1fba3e8f38ee6c3bd081d3d0",
+    "ed7c544aec7b2811dcdc13d6dbbd996b41ff8abd3b208752f60623f6daa2d813",
+    "87aebaefcaf9f11738550f7015208bd190a9ef53863540e69af71df0119f9f53",
+    "a36a2afad72582f7396bdb042b7d10a0e50ddd3d86ad56f494c5a1320b416327",
+    "2dac21224b3729d39da56b59e8d5e9b7b72a567e785227d5e724acbd197b200b",
+    "9eb1a32914fec715caa5b6b15baf24770640de64e0f3ca838e352e9fa7bf877e",
+    "84cba7eca0c53ab1481d790c681d20da0bf7a5b94de9ac388d58f1613b811cf8",
+    "bdd50fcbb77cc1d629a26d8b4d3bcc4fc421e5bcd4920c510ca19491ae110fad",
+    "7d087c8adbddf88d6a5c4f170def1764308c4e5af5b6101265bc0a2634818c4d",
+    "16f2e514ab9a6b50bde63d9006d37d6485080f7e945d890d3e94781c4ae380d6",
+    "8eda97ba6755c9af058dc5b53e6c36ce8c7349f167334d843064e9052f7f8ddc",
+    "9e13a8b0b8779ed5fdb17d078f4e3274acd950370b4b66c616747ac778c2ffb5",
+    "ccdd29649820b3c1ff7705c55aa5c6aaef1ac351ff87694ff3a676a617687227",
+    "c695c31544f3e319c5866e0233399080cae26b79c2245db7ccbc5f337f2d21c9",
+    "cbca4d925e9466cbf2c48ab3c7507acc1feb422e2e19150cb04f72d4176b702d",
+    "b13e0bdb0bf44ea2502af91b41cf852f184aee4dcee2a86483766b095a59bfa2",
+    "423a759074e023e3c8eee54fac38e25018fdc26d167b17c9369a921cf0ef0b3a",
+    "fe027f294d6f378fa9fa2865a3a26444bf53bd12cb2134b6c82f2980258ea888",
+    "69e43be8fa22a15f043dcf2423f62047ff8f07f39140dbed91a2b564f5bf07ef",
+    "513992dfb27065eeb5d71591d80563da61a164989f964575055730e3cb28a2b3",
+    "659e5e2a747dcc77e92187bcaa5a38884d5d11474652139acdf238029c8455ae",
+    "f89ad6eab38701a830cbd4bee8f460f96ef1601af3612aa43f66a32650a9c28f",
+    "6bd0e54c8ace1aa6393787ea60cbb617781e52a799e0b45e82c86503e1292e80",
+    "2637d57eb35305816eef360212d8cd4c2e48e8aac66578ac1beae2fa1f72673c",
+    "82c94180f96d12bda507204041d3e0efb19b5a13a3e8b1fecd21b1ed1e27fd5f",
+    "3fbdb333237bff8ded105df09b7ef1c4d0dc69b940c88bb5020fca2db8997cad",
+    "6b2719c5d8129084ab546ec039066d37d6d7f6382c9ca669281cd48967eecbc7",
+    "cc3093d690ebcd4ba2374d4ccbf092ba7a4f6d6d9da84a06b1bbbf41856616f6",
+    "33578cbb54fe7ae6cae7ae7d7ecadae83a79ac78554582b0a37110cfd7ba520d",
+    "1d18e063fa2a0b9e2a546e2481816c1bd72ed9ad39deb8a493524d02b4bb3796",
+    "3d48ce972e0793b0d721a0f6a42052f025f74e510b80506bd050c2d1e0c44886",
+    "312b94ba627ab4fb24ef497872285c65a8e5f4c87cc3ed2998392b1f378afad0",
+    "be45708a2ca297bdf26ebae808277421625eb96c3847e7c047dc39ebb3001ddc",
+    "c261efb9729f3b8819ba8804cbdfd1d6700e60ebae90ae0716c7aea8e39d6fcf",
+    "8a6768ec2b3ff9f9324548db2308f0f65dd5e4fa2dcbfb11e0d20f8552882d29",
+    "b76f376405b226781865f93c904ced50d4563e9474b647fae572e72a24a98545",
+    "d4b73fad86a5513fd61e1b9502cc59df7659472cbe208f29d5031c550a076913",
+    "51b15d6c6a6f6cc1ed94a4046dff5acedac691de0c72614d96857ab13ac25c6e",
+    "772f908b78b0492a128f1daf4997842bfea1272a945615653bfdf2bf0bf1b56b",
+    "38294518dba07907579e71a055ef9c280454d6781cd7e6e3d532b3529e925bb4",
+    "1470e18806bfa85702f2726b94e27569761cf411a9d05952e060d2f5157525f1",
+    "ac1f410a5a5fe2eb33b8c46af72e9c3eb5f59e70b03ca5cf5a78cf3bf078b59c",
+    "7f081079674e6ba44e062361ad550b92ce0749e48ea27e3dd952269cbf43bc65",
+    "50648411ed515a148f2a8d8d6c420b3367d86aae297cde60c09afaee2af2a092",
+    "d14cbb89f778ecc4ea0bc7b63c26d5b6c824891dd2747288085731a152c9b9b1",
+    "0d8bf4644faee258116a205418271c67333b74596ccbca4a7d1ebfd974d0367f"
+  ],
+  "no_progress": 0,
+  "strategy_reviews": 0,
+  "account_usage": [
+    {
+      "input_tokens": 8219180,
+      "cached_input_tokens": 7956352,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 60563,
+      "reasoning_output_tokens": 27572
+    },
+    {
+      "input_tokens": 11473338,
+      "cached_input_tokens": 11344256,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 62472,
+      "reasoning_output_tokens": 27151
+    },
+    {
+      "input_tokens": 5262467,
+      "cached_input_tokens": 5156352,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 35373,
+      "reasoning_output_tokens": 9839
+    },
+    {
+      "input_tokens": 2928410,
+      "cached_input_tokens": 2841856,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 29423,
+      "reasoning_output_tokens": 8033
+    },
+    {
+      "input_tokens": 5624820,
+      "cached_input_tokens": 5516928,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 44354,
+      "reasoning_output_tokens": 12719
+    },
+    {
+      "input_tokens": 5556012,
+      "cached_input_tokens": 5424000,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 41432,
+      "reasoning_output_tokens": 10622
+    },
+    {
+      "input_tokens": 9122011,
+      "cached_input_tokens": 8985728,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 62894,
+      "reasoning_output_tokens": 18582
+    },
+    {
+      "input_tokens": 4751367,
+      "cached_input_tokens": 4636800,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 28993,
+      "reasoning_output_tokens": 6443
+    },
+    {
+      "input_tokens": 12009648,
+      "cached_input_tokens": 11862784,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 61559,
+      "reasoning_output_tokens": 22552
+    },
+    {
+      "input_tokens": 5618881,
+      "cached_input_tokens": 5471232,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 46498,
+      "reasoning_output_tokens": 14095
+    },
+    {
+      "input_tokens": 12274649,
+      "cached_input_tokens": 11928192,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 78808,
+      "reasoning_output_tokens": 36737
+    },
+    {
+      "input_tokens": 5199636,
+      "cached_input_tokens": 5084800,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26026,
+      "reasoning_output_tokens": 7182
+    },
+    {
+      "input_tokens": 2991014,
+      "cached_input_tokens": 2903936,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 23305,
+      "reasoning_output_tokens": 5601
+    },
+    {
+      "input_tokens": 7890649,
+      "cached_input_tokens": 7767168,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 56964,
+      "reasoning_output_tokens": 21014
+    },
+    {
+      "input_tokens": 7953877,
+      "cached_input_tokens": 7831168,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 56801,
+      "reasoning_output_tokens": 22142
+    },
+    {
+      "input_tokens": 4541557,
+      "cached_input_tokens": 4432896,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 29530,
+      "reasoning_output_tokens": 7349
+    },
+    {
+      "input_tokens": 3479786,
+      "cached_input_tokens": 3390720,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 28092,
+      "reasoning_output_tokens": 7627
+    },
+    {
+      "input_tokens": 5709912,
+      "cached_input_tokens": 5578624,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 48895,
+      "reasoning_output_tokens": 19781
+    },
+    {
+      "input_tokens": 4732201,
+      "cached_input_tokens": 4644096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 37699,
+      "reasoning_output_tokens": 12492
+    },
+    {
+      "input_tokens": 2640804,
+      "cached_input_tokens": 2563968,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26147,
+      "reasoning_output_tokens": 5757
+    },
+    {
+      "input_tokens": 2137827,
+      "cached_input_tokens": 2055936,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 16658,
+      "reasoning_output_tokens": 2032
+    },
+    {
+      "input_tokens": 1549641,
+      "cached_input_tokens": 1481856,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 16913,
+      "reasoning_output_tokens": 2287
+    },
+    {
+      "input_tokens": 1212385,
+      "cached_input_tokens": 1148544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10858,
+      "reasoning_output_tokens": 375
+    },
+    {
+      "input_tokens": 3474578,
+      "cached_input_tokens": 3380352,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 22894,
+      "reasoning_output_tokens": 3855
+    },
+    {
+      "input_tokens": 5661047,
+      "cached_input_tokens": 5535616,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 42791,
+      "reasoning_output_tokens": 16332
+    },
+    {
+      "input_tokens": 2603012,
+      "cached_input_tokens": 2527744,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 21195,
+      "reasoning_output_tokens": 4473
+    },
+    {
+      "input_tokens": 7375674,
+      "cached_input_tokens": 7261184,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 52810,
+      "reasoning_output_tokens": 13983
+    },
+    {
+      "input_tokens": 2524453,
+      "cached_input_tokens": 2431104,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26129,
+      "reasoning_output_tokens": 4997
+    },
+    {
+      "input_tokens": 3477321,
+      "cached_input_tokens": 3377664,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 30476,
+      "reasoning_output_tokens": 8869
+    },
+    {
+      "input_tokens": 1964916,
+      "cached_input_tokens": 1873920,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19127,
+      "reasoning_output_tokens": 3298
+    },
+    {
+      "input_tokens": 2740014,
+      "cached_input_tokens": 2644608,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 23265,
+      "reasoning_output_tokens": 7859
+    },
+    {
+      "input_tokens": 1244833,
+      "cached_input_tokens": 1184256,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 13148,
+      "reasoning_output_tokens": 2440
+    },
+    {
+      "input_tokens": 1923722,
+      "cached_input_tokens": 1837952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 21045,
+      "reasoning_output_tokens": 6860
+    },
+    {
+      "input_tokens": 3556231,
+      "cached_input_tokens": 3452672,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 40544,
+      "reasoning_output_tokens": 15384
+    },
+    {
+      "input_tokens": 6464717,
+      "cached_input_tokens": 6355456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 36616,
+      "reasoning_output_tokens": 14114
+    },
+    {
+      "input_tokens": 4315137,
+      "cached_input_tokens": 4212480,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 36890,
+      "reasoning_output_tokens": 12446
+    },
+    {
+      "input_tokens": 5834747,
+      "cached_input_tokens": 5723392,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 43570,
+      "reasoning_output_tokens": 14618
+    },
+    {
+      "input_tokens": 7680757,
+      "cached_input_tokens": 7563264,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 44441,
+      "reasoning_output_tokens": 15586
+    },
+    {
+      "input_tokens": 10730458,
+      "cached_input_tokens": 10610816,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 52194,
+      "reasoning_output_tokens": 24217
+    },
+    {
+      "input_tokens": 6426683,
+      "cached_input_tokens": 6321408,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 25779,
+      "reasoning_output_tokens": 8333
+    },
+    {
+      "input_tokens": 10415111,
+      "cached_input_tokens": 10298496,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 39383,
+      "reasoning_output_tokens": 16344
+    },
+    {
+      "input_tokens": 992358,
+      "cached_input_tokens": 922112,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10937,
+      "reasoning_output_tokens": 2258
+    },
+    {
+      "input_tokens": 1347942,
+      "cached_input_tokens": 1260288,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 15727,
+      "reasoning_output_tokens": 3723
+    },
+    {
+      "input_tokens": 4076530,
+      "cached_input_tokens": 3989760,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 25662,
+      "reasoning_output_tokens": 6209
+    },
+    {
+      "input_tokens": 1814011,
+      "cached_input_tokens": 1713152,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19427,
+      "reasoning_output_tokens": 4561
+    },
+    {
+      "input_tokens": 3402833,
+      "cached_input_tokens": 3290752,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 27567,
+      "reasoning_output_tokens": 8748
+    },
+    {
+      "input_tokens": 2714900,
+      "cached_input_tokens": 2633216,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26829,
+      "reasoning_output_tokens": 7457
+    },
+    {
+      "input_tokens": 3336537,
+      "cached_input_tokens": 3248768,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26079,
+      "reasoning_output_tokens": 8591
+    },
+    {
+      "input_tokens": 12116685,
+      "cached_input_tokens": 11975936,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 58839,
+      "reasoning_output_tokens": 26348
+    },
+    {
+      "input_tokens": 3107961,
+      "cached_input_tokens": 3012736,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 23246,
+      "reasoning_output_tokens": 5971
+    },
+    {
+      "input_tokens": 4401533,
+      "cached_input_tokens": 4296832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 29525,
+      "reasoning_output_tokens": 10026
+    },
+    {
+      "input_tokens": 2598221,
+      "cached_input_tokens": 2512000,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 25856,
+      "reasoning_output_tokens": 6780
+    },
+    {
+      "input_tokens": 5857826,
+      "cached_input_tokens": 5742720,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 43669,
+      "reasoning_output_tokens": 15031
+    },
+    {
+      "input_tokens": 5098354,
+      "cached_input_tokens": 5009792,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 37138,
+      "reasoning_output_tokens": 11355
+    },
+    {
+      "input_tokens": 11255630,
+      "cached_input_tokens": 11079168,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 78140,
+      "reasoning_output_tokens": 37411
+    },
+    {
+      "input_tokens": 15934783,
+      "cached_input_tokens": 15710848,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 75823,
+      "reasoning_output_tokens": 31455
+    },
+    {
+      "input_tokens": 5852375,
+      "cached_input_tokens": 5759872,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 26866,
+      "reasoning_output_tokens": 9635
+    },
+    {
+      "input_tokens": 6534666,
+      "cached_input_tokens": 6388736,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 42997,
+      "reasoning_output_tokens": 14703
+    },
+    {
+      "input_tokens": 8470915,
+      "cached_input_tokens": 8312704,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 48184,
+      "reasoning_output_tokens": 17941
+    }
+  ],
+  "last_engineering": {
+    "task_id": "goal_primary_integral55e_fresh_admissible_root_motor_host_ports57",
+    "category": "ACTUAL_PRODUCT_VALIDATION",
+    "mechanism": "Fresh finite77part Root/Motor/keytakeup carried-object cuts,actual53mm2Motoraxialshoulder and128mm2keywalls;independent30DOFfrictionlesspath/virtualwork/mass validation and omittedpath rejection;connector/hostports remainunknown.",
+    "system_gate_ids": [
+      "cad_model_match",
+      "continuous_load_path",
+      "tendon_force_stroke",
+      "finger_structure",
+      "terminal_retention",
+      "motor_running_torque_speed",
+      "numerical_convergence",
+      "root_palm_strength",
+      "qualified_worst_case"
+    ],
+    "signature": "0d8bf4644faee258116a205418271c67333b74596ccbca4a7d1ebfd974d0367f",
+    "summary_statuses": [
+      "ACTUAL_PRIMARY77_FRESH_MOVING_CUTS_AND_POSITIVE_KEY_LOAD_PATH_VALIDATED_REQUIRED_CONNECTOR_HOST_PORTS_UNRESOLVED_NOT_RELEASE",
+      "ACTUAL77_FRESH_MOVING_CUT_CONDITIONAL_UPSTREAM_ADMITTED_NOT_SUPPORT_EQUILIBRIUM",
+      "ACTUAL77_FRESH_MOVING_CUT_CONDITIONAL_UPSTREAM_ADMITTED_NOT_SUPPORT_EQUILIBRIUM",
+      "ACTUAL77_FRESH_MOVING_CUT_REJECTED",
+      "ACTUAL77_FRESH_MOVING_CUT_CONDITIONAL_UPSTREAM_ADMITTED_NOT_SUPPORT_EQUILIBRIUM",
+      "ACTUAL77_FRESH_MOVING_CUT_CONDITIONAL_UPSTREAM_ADMITTED_NOT_SUPPORT_EQUILIBRIUM",
+      "ACTUAL77_FRESH_CUT_FINITE_CONTACT_AND_REQUIRED_CONNECTOR_HOST_PORT_BOUNDS_NOT_RELEASE",
+      "ACTUAL77_FRESH_CUT_FINITE_CONTACT_AND_REQUIRED_CONNECTOR_HOST_PORT_BOUNDS_NOT_RELEASE",
+      "ACTUAL77_FRESH_CUT_FINITE_CONTACT_AND_REQUIRED_CONNECTOR_HOST_PORT_BOUNDS_NOT_RELEASE",
+      "ACTUAL77_FINITE_KEY_TAKEUP_FRICTIONLESS_REQUIRED_PORT_PATH_LOCAL_PASS_NOT_RELEASE",
+      "ACTUAL77_INDEPENDENT_FINITE_CONTACT_WORK_AND_MASS_PORT_AUDIT_LOCAL_PASS_NOT_RELEASE",
+      "ACTUAL77_SOURCE_CAD_EXECUTION_IDENTITY_PASS_RELEASE_UNQUALIFIED",
+      "ACTUAL_CYCLE58_FAILURES_AND_SUPERSEDED_PRELIMINARY_BOUNDS_PRESERVED"
+    ],
+    "next_task_id": "goal_primary_integral55e_key_engaged_compliant_connectors_and_finite_host58",
+    "strategy_change": true
+  },
+  "last_state": "PAUSED",
+  "last_reason": "SUPERVISED_SAVE_OR_PROGRESS_REJECTED",
+  "last_HEAD": "5d64db8bd9b37e1034aa599575b7b622b02090c6",
+  "manager_elapsed_seconds": 53911.27868699306
+}

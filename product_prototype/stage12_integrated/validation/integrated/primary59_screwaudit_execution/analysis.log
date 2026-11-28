@@ -1,0 +1,59 @@
+{
+  "status": "ACTUAL77_SCREW_TORQUE_FORCE_VIRTUALWORK_INDEPENDENT_LOCAL_PASS_NOT_RELEASE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_captive59c/summary.json",
+    "SHA256": "e7bf724ac929ba094caac28d25f0230ce02c7456d385225f280a3dc0ed967637"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_screw59full/summary.json",
+    "SHA256": "f4f3c58f2c36f3ae49881ce0831bf4c844070191f20fd2baa558cbaf73a45046"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_screwaudit59/producer.py",
+    "SHA256": "5f2f24a274ad7b330e64fe960d50ebba97a959694392661a4046989876c17783"
+  },
+  "checks": {
+    "producer_local_checks": true,
+    "two_explicit_assumed_friction_cases": true,
+    "all30_original_force": true,
+    "all30_original_moment": true,
+    "independent_physical_SE3_work": true,
+    "physical_helix_torque": true,
+    "head_necessary_friction_bound": true,
+    "wrong_helix_sign_rejected": true,
+    "actual_free_screw_spin_mode": true,
+    "conditional_rod_integral": true,
+    "zero_head_friction_rejects": true,
+    "unqualified_full_product": true
+  },
+  "reports": [
+    {
+      "contact_mu_ASSUMED": 0.1,
+      "head_mu_ASSUMED": 0.03,
+      "all30_force_residual_N": 7.147801729532276e-15,
+      "all30_moment_residual_Nm": 5.702594396804684e-17,
+      "SE3_virtualwork_error_Nm": 1.3216094885137863e-11,
+      "helix_torque_error_Nm": 0.0,
+      "head_friction_bound_violation_Nm": -9.57368172590357e-07,
+      "wrong_helix_sign_moment_residual_Nm": 0.0009764146746848422
+    },
+    {
+      "contact_mu_ASSUMED": 0.1,
+      "head_mu_ASSUMED": 0.05,
+      "all30_force_residual_N": 7.147801729532276e-15,
+      "all30_moment_residual_Nm": 5.702594396804684e-17,
+      "SE3_virtualwork_error_Nm": 1.3216094885137863e-11,
+      "helix_torque_error_Nm": 0.0,
+      "head_friction_bound_violation_Nm": -1.8974386764645106e-05,
+      "wrong_helix_sign_moment_residual_Nm": 0.0009764146746848277
+    }
+  ],
+  "free_screw_mode_energy_Nmm": 0.0,
+  "free_screw_lead_error_mm": 0.0,
+  "maximum_conditional_rod_integral_error_mm_N": 0.0,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "scope": "Independent necessary screw-aware cut statics/conditionalrod work, NOT friction/preload/actualthread elastic/cage capacity/ultimatehost/globalenergy certificate."
+}
+

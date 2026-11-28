@@ -83,6 +83,25 @@ analysis child. A timeout triggers one bounded save-only recovery, not project
 completion. If no valid state/manifest can be recovered, manager pauses without
 cleanup; never conceal a partial trial or weaken checks to keep running.
 
+### Mandatory original-checkpoint preflight (operator recovery 2026-11-28)
+
+Use the manager's `runtime/<tag>/checkpoint_beforeN.json` as the ONLY original
+preexisting-untracked baseline. A worker-created `start_untracked.json` taken
+after copying prior state is NOT equivalent: cycle59 omitted four new prior
+state copies this way. Include such new archival files in the exact manifest.
+Do not replace, extend or regenerate the manager checkpoint to hide omissions.
+After ALL research/checkpoint writes, generate the complete request, then run:
+
+`python3 product_prototype/stage12_integrated/scripts/save_preflight.py --checkpoint <manager-checkpoint> --request <request> --ledger <runtime-ledger> --seal <new-runtime-seal.json>`
+
+Run the same command with `--verify-seal <runtime-seal.json>` immediately before
+handoff. No further research/state/file changes after this check. If any files
+change, regenerate exact hashes/request and a NEW seal, preserving old reports.
+The checker reports missing/extra/preexisting/protected/stale files, checks
+trusted source pins and calls the UNCHANGED Supervisor validation read-only.
+It does not stage, commit, modify policy or grant a physical/system PASS.
+Final Supervisor validation and indexed-byte/staged-guard checks stay mandatory.
+
 Manager records cumulative actual new child time and historical completed
 sessions; missing historical child timing stays unknown, not made up. It
 audits the true independent integrated gate before each new session, repeats

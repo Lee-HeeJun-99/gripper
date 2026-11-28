@@ -1,0 +1,76 @@
+{
+  "status": "ACTUAL77_SCREW_SPIN_AND_GEOMETRIC_COMPLIANCE_BOUNDS_VERIFIED_NOT_CONNECTOR_CERTIFICATION",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_captive59b/summary.json",
+    "SHA256": "ea288dc8300eae970fc5ed711621f21fdc607cbf57d97b34d26c78b5556dd094"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_screw59/producer.py",
+    "SHA256": "c7a95f17d2111495517897e39a001c269508c37b4f23fd335715703e7370010f"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts59nominal/summary.json",
+    "SHA256": "f7f8311db244ff997f1b18b8282acda9b6f87ba8b71afd512ff4090848eea244"
+  },
+  "checks": {
+    "canonical77": true,
+    "actual_six_positive_engagements": true,
+    "all_rod_integrals_verified": true,
+    "free_screw_mode_retained": true,
+    "frictionless_free_head_rejected": true,
+    "insufficient_head_friction_rejected": true,
+    "all_admitted_cut_balance": true
+  },
+  "actual_connector_geometry": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_screw59/actual_connectors.json",
+    "SHA256": "02ae719cab3d304881a03cc3963971548ad6f127b9580470f9780b873fc94469"
+  },
+  "necessary_torque_cases": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_screw59/torque_cases.json",
+    "SHA256": "3cb77cac5827a8101aecab3e354395066871df3b8a8942dfa7a91193e9466070"
+  },
+  "screw_lead_mm_rad": 0.07957747154594767,
+  "source_backed_pitch_mm": 0.5,
+  "thread_source": {
+    "path": "product_prototype/stage12_integrated/models/standard_drive/primary_captive_sources59/thread_reviewed.json",
+    "SHA256": "c06eff78c5b45373f27175863c5c9a23174113376866c04c075082312296e7f2"
+  },
+  "head_friction_absolute_necessary_min": 0.02893726238034461,
+  "uniform_annular_pressure_mu_head_contrast": 0.03639866411518683,
+  "thread_friction_selflock_threshold_basic_profile": 0.05152143338724644,
+  "screw_free_mode": {
+    "coordinates": [
+      "relative_axial_mm",
+      "relative_head_rotation_rad"
+    ],
+    "tangent_N_mm_mixed": [
+      [
+        91293.63882799799,
+        -7264.916946161034
+      ],
+      [
+        -7264.916946161034,
+        578.1237215668027
+      ]
+    ],
+    "null_mode": [
+      0.07957747154594767,
+      1.0
+    ],
+    "residual": 1.0331701929985072e-13,
+    "meaning": "Free head can advance screw bypitch/(2pi) with zero conditionalaxialstrain. Captive nut DOESNOT eliminate boltspin; scalar axial spring alone invents rotationalrestraint."
+  },
+  "nut_backlash_induced_lead_mm": 0.0036813815434773764,
+  "physical_coefficients_measured": false,
+  "preload_implemented": false,
+  "full77compliant_contact_solved": false,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Conditional1D rod with basiccore and uniformengagement load;NOT actual3D threadedbolt/head/nut/flank/cage elastic response or source-minimum strength. Localquadrature identity NOTglobalstoredenergyclosure.",
+    "TwistDOF retained and torque-aware necessarycuts only. Head/threadfriction/preload/locking coefficients not known or qualified; assumedmu cases never actual capacities or accepted equilibria.",
+    "Cage firstcontact has no finitearea capacity; assumingbacklashlimit for necessarybounds not an implemented coupled pose. Requiredhost6resultant not realhost attachment.",
+    "All22originalgates,mesh1percent/time.1percent/globalenergy/final3Finger unchanged."
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "status": "OPERATOR_SAVE59_CONTENT_AND_LOCAL_PHYSICS_AUDITS_VERIFIED_NOT_RELEASE",
+  "original_manager_checkpoint": {
+    "path": "product_prototype/stage12_integrated/runtime/goal_authorized_20261127_7/checkpoint_before59.json",
+    "SHA256": "c4ecb448e8518026d360cb919a6a9f3fa125cb01e1463efbbc9ed8efa25e03eb"
+  },
+  "original_manifest": {
+    "path": "product_prototype/stage12_integrated/runtime/goal_authorized_20261127_7/save_request59.json",
+    "SHA256": "41a8f2518372996d61c40e15b395176fa7818ad177504bfd337f18a4cdbdfce7"
+  },
+  "cause": "Worker took start_untracked after creating four prior-state copies; used later inventory instead of original manager checkpoint.",
+  "omitted_new_prior_copies": [
+    {
+      "file": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle59_record/prior_CHECKPOINT.md",
+        "SHA256": "7a41ca1528836ac7d1f3ce5e8650b1ca20536213ed434193ef14198b6dc40068"
+      },
+      "matches_HEAD_path": "product_prototype/stage12_integrated/CHECKPOINT.md"
+    },
+    {
+      "file": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle59_record/prior_CURRENT_CANDIDATE.json",
+        "SHA256": "3a6b3206aec581d70c184b73988ce13b700a0fb7a5f6e9a7b55c5c0297a7658e"
+      },
+      "matches_HEAD_path": "product_prototype/stage12_integrated/CURRENT_CANDIDATE.json"
+    },
+    {
+      "file": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle59_record/prior_NEXT_TASK.json",
+        "SHA256": "d98b26147a4fbf7363cccbac280bdb3ddc864cb4d0e47b1e255ff5924b860a84"
+      },
+      "matches_HEAD_path": "product_prototype/stage12_integrated/NEXT_TASK.json"
+    },
+    {
+      "file": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary_cycle59_record/prior_PRIMARY_PRODUCT.json",
+        "SHA256": "f2c41fa420feb52c1b043d2bfc3dd54da18ae7dc303e3a871711bb4faecdf3a4"
+      },
+      "matches_HEAD_path": "product_prototype/stage12_integrated/PRIMARY_PRODUCT.json"
+    }
+  ],
+  "original_manifest_files": 289,
+  "original_new_and_modified_files": 293,
+  "stale_original_manifest_hashes": [],
+  "additional_original_manifest_files": [],
+  "protected_sources_unchanged": true,
+  "actual_original_user_files_verified": 8595,
+  "canonical_candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_captive59c/summary.json",
+    "SHA256": "e7bf724ac929ba094caac28d25f0230ce02c7456d385225f280a3dc0ed967637"
+  },
+  "actual_parts": 77,
+  "independent_recovery_audits": [
+    {
+      "command": [
+        "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_screw_audit59.py",
+        "save59_recovery_screw2"
+      ],
+      "source": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_screw_audit59.py",
+        "SHA256": "5f2f24a274ad7b330e64fe960d50ebba97a959694392661a4046989876c17783"
+      },
+      "exit_code": 0,
+      "elapsed_s": 0.3662559990771115,
+      "timeout": false,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/save59_operator_recovery2/save59_recovery_screw2.log",
+        "SHA256": "550f95e295394e63e431ead916660aa3c54250d8cb660b74e340b924b4c4b8a0"
+      },
+      "summary": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/save59_recovery_screw2/summary.json",
+        "SHA256": "2b3245194fa92c1ffaacfeed70586454ee71a3d854a53d2be5a87ef1d9a3a6da"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_cage_audit59c.py",
+        "save59_recovery_cage2"
+      ],
+      "source": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_cage_audit59c.py",
+        "SHA256": "5d3e1cac7f85f798eb426b4f92931d27588b3c961c3b1ea0eacc69a1a7e2b674"
+      },
+      "exit_code": 0,
+      "elapsed_s": 18.91187417693436,
+      "timeout": false,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/save59_operator_recovery2/save59_recovery_cage2.log",
+        "SHA256": "51e60f276d63ca1ba9de958443ba8899aece5c3ece8968b35a66e34148c47821"
+      },
+      "summary": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/save59_recovery_cage2/summary.json",
+        "SHA256": "4aa5716004580f8797b82ef02d380c440c0c7cafec7115c9233907fd0850c795"
+      }
+    },
+    {
+      "command": [
+        "/home/ubuntu/miniconda3/envs/robot_ws/bin/python",
+        "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_socket_audit59b.py",
+        "save59_recovery_socket2"
+      ],
+      "source": {
+        "path": "product_prototype/stage12_integrated/scripts/primary_socket_audit59b.py",
+        "SHA256": "6f97789412a66e61615c299185113152f0fc0c1d9a7bc34ff2bb281d08803d8f"
+      },
+      "exit_code": 0,
+      "elapsed_s": 7.237599679036066,
+      "timeout": false,
+      "reaped": true,
+      "memory_limit_bytes": 4294967296,
+      "timeout_s": 420,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/save59_operator_recovery2/save59_recovery_socket2.log",
+        "SHA256": "acfff68ffa7c260301abf926fea9146d918a48a43d284d072cab11a55f37c004"
+      },
+      "summary": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/save59_recovery_socket2/summary.json",
+        "SHA256": "8a659b6468f0bae0433e112b3974f4aad142236837ef3033a667e35085be10b4"
+      }
+    }
+  ],
+  "controls": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/save59_operator_recovery2/preflight_controls.json",
+    "SHA256": "26ce31fccf7cf616cea1ac113356ae35bb561ad09d7a209ec232a09668bc2513"
+  },
+  "original_26_executions_checked": true,
+  "physics_scope": "Necessary conditional cut statics, screw torque/virtual work, finite cage/socket geometry only.",
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_unqualified_system_gate_count": 22,
+  "protected_peak_N": null,
+  "global_energy_closure": null,
+  "hardware_status": "NOT_MEASURED",
+  "whole_system_release": false,
+  "safeguard": "Unchanged Supervisor exact set/hash/index/guard remains final authority; original failure evidence preserved.",
+  "recovery_environment_failure_preserved": "save59_operator_recovery1/save59_recovery_cage1_execution.json: missing skfem import; restored original recorded OCP+FEM PYTHONPATH, no model or criterion change.",
+  "source": {
+    "path": "product_prototype/stage12_integrated/scripts/recover_save59_operator.py",
+    "SHA256": "a580f68c52e7e9b5e4536cb34d03745b56d2bd3657cdce2989c4d5343c957427"
+  }
+}

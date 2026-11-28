@@ -1,0 +1,407 @@
+{
+  "status": "ACTUAL_P1_PROPORTIONAL_FLOOR_WORK_DERIVATION_REJECTED",
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proportional67/producer.py",
+    "SHA256": "bc4f3ae8286fb2e148fcf0b36ae065458cee5073bb96bdb373d4a7cda476254b"
+  },
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/summary.json",
+        "SHA256": "982d3347dac550763567f5042682431761bf5fa3ad55cf1bc5aa7f3016f49aea"
+      },
+      "independent_verifier": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_circularverify67a/summary.json",
+        "SHA256": "4c684a01d74f236d7d65775cb184624bc94df621c0f8621cc139206ead767cc8"
+      },
+      "candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "h_mm": 5.0,
+      "upper_quadrature_points": 3,
+      "fractions": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "checks": {
+        "independent_tetra_reactions": true,
+        "off_floor_equilibrium": true,
+        "nonpenetration": true,
+        "normal_nonnegative": true,
+        "normal_complementarity": true,
+        "circular_cone": true,
+        "circular_velocity_maximum_dissipation": true,
+        "nonnegative_dissipation": true,
+        "actual_accepted_fields_match_proportional_forces": false,
+        "actual_accepted_fields_match_proportional_motion": true,
+        "continuous_local_balance": true
+      },
+      "original_tetra_stored_energy_Nmm": 0.025613470198396344,
+      "derived_continuous_friction_work_Nmm": 0.005536848045535298,
+      "integrated_prescribed_external_work_Nmm": 0.03115031824429563,
+      "normal_contact_work_Nmm": -3.9781315897036924e-13,
+      "local_energy_residual_Nmm": -3.382654034701167e-14,
+      "velocity_maximum_dissipation_residual_Nmm": 1.4484392634947496e-11,
+      "original_discrete_endpoint_sum_Nmm": 0.007447060667255029,
+      "accepted_path_samples": [
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/trial_0.1_24.npz",
+            "SHA256": "ca2b3ea277284bdda58b5006f4bb1cafc771218e88c4cf1337086ffce0d68f67"
+          },
+          "fraction": 0.1,
+          "max_displacement_deviation_mm": 2.5019691437459628e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.6300846689132342e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/trial_0.25_26.npz",
+            "SHA256": "08416800862f791aff206a6240c057970fecf4d245f6dca8c7689b506d6c451b"
+          },
+          "fraction": 0.25,
+          "max_displacement_deviation_mm": 2.3714042909255342e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.516180354599328e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/trial_0.5_27.npz",
+            "SHA256": "014fc22774ea0cefbcaf25fe9355952bc2c88918b9b8066a1a3dc54c7f2ced9d"
+          },
+          "fraction": 0.5,
+          "max_displacement_deviation_mm": 1.8581112776888675e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 8.988324928793645e-08
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/trial_1_28.npz",
+            "SHA256": "01196c8ac47cea109c5b5fed45dee9734fda8a381de05a2c545bd1bb820226cd"
+          },
+          "fraction": 1.0,
+          "max_displacement_deviation_mm": 0.0,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 7.9205669800686e-12
+        }
+      ],
+      "analytic_all_lambda_proof": "For0<=lambda<=1,linear elasticity and prescribedload yield nodalforces lambda*R1. Gap scaleslambda,normal scaleslambda,complementarity scaleslambda^2. Circular forcecone and dissipativity scalelambda; maximumdissipation rate scaleslambda with fixedvelocityu1. Thus all contactbounds are bounded by their verifiedlambda1 extrema. These laws and originalpath samples must pass; no quadrature-only claim."
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/summary.json",
+        "SHA256": "fbbc6609e470eb1583d60d07224ead5f4f3b3747c4d6077c8024d67e902922e5"
+      },
+      "independent_verifier": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_circularverify67path/summary.json",
+        "SHA256": "057e9dec7e388bec53a175ad33fb2a8d0addbf3e2c5041cb63ea2f999667de24"
+      },
+      "candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "h_mm": 5.0,
+      "upper_quadrature_points": 3,
+      "fractions": [
+        0.05,
+        0.1,
+        0.175,
+        0.25,
+        0.375,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "checks": {
+        "independent_tetra_reactions": true,
+        "off_floor_equilibrium": true,
+        "nonpenetration": true,
+        "normal_nonnegative": true,
+        "normal_complementarity": true,
+        "circular_cone": true,
+        "circular_velocity_maximum_dissipation": true,
+        "nonnegative_dissipation": true,
+        "actual_accepted_fields_match_proportional_forces": false,
+        "actual_accepted_fields_match_proportional_motion": true,
+        "continuous_local_balance": true
+      },
+      "original_tetra_stored_energy_Nmm": 0.0256134701974286,
+      "derived_continuous_friction_work_Nmm": 0.005536848040585559,
+      "integrated_prescribed_external_work_Nmm": 0.03115031823847569,
+      "normal_contact_work_Nmm": -4.954524012449452e-13,
+      "local_energy_residual_Nmm": -3.3921414205673816e-14,
+      "velocity_maximum_dissipation_residual_Nmm": 1.714874509756159e-11,
+      "original_discrete_endpoint_sum_Nmm": 0.006491954374485612,
+      "accepted_path_samples": [
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.05_24.npz",
+            "SHA256": "8d66340de400db7076e502950b1686c5495672b06223f6fa011b38b8abf51931"
+          },
+          "fraction": 0.05,
+          "max_displacement_deviation_mm": 2.995115925565582e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.8524398320840518e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.1_24.npz",
+            "SHA256": "06c1596b0304c13750d6ef921b101543896bd73b1c1129beda4b93e803a98dd8"
+          },
+          "fraction": 0.1,
+          "max_displacement_deviation_mm": 2.9085567938499923e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.626716618075008e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.175_25.npz",
+            "SHA256": "462b2bbb00a0fab479c23b13c11e33e462a173fe578e97491159de63563259e4"
+          },
+          "fraction": 0.175,
+          "max_displacement_deviation_mm": 3.101059724763475e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.4861174890690165e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.25_25.npz",
+            "SHA256": "ba6d22ad2bf2f209a2a45a3383442cee28e507862a025f5f63886e54cfa718a0"
+          },
+          "fraction": 0.25,
+          "max_displacement_deviation_mm": 3.0425074081224385e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.3375106144852822e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.375_26.npz",
+            "SHA256": "09fad6177e713dbe48c52eba21df33e5649f12e19e353bba1c80e2cb8668c17a"
+          },
+          "fraction": 0.375,
+          "max_displacement_deviation_mm": 2.548291476922246e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.1561280666150253e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.5_26.npz",
+            "SHA256": "cbca5f20ed316c447582cb9cc51d6b47b8ff7c4bac1adf2bf434d8876cc49f46"
+          },
+          "fraction": 0.5,
+          "max_displacement_deviation_mm": 2.290122697598887e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 8.847141796941571e-08
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_0.75_27.npz",
+            "SHA256": "2c7a4d0a28570eb040379d9acb1992ab76a03f1132df34e0cb843eee7912465d"
+          },
+          "fraction": 0.75,
+          "max_displacement_deviation_mm": 1.0139971219451371e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 4.9026964266118966e-08
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_path8_67/trial_1_27.npz",
+            "SHA256": "b1698145236ca1aa9209d2e594082cc66f802c719f344d7baf2ddd6414a6924d"
+          },
+          "fraction": 1.0,
+          "max_displacement_deviation_mm": 0.0,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 8.246889282581549e-12
+        }
+      ],
+      "analytic_all_lambda_proof": "For0<=lambda<=1,linear elasticity and prescribedload yield nodalforces lambda*R1. Gap scaleslambda,normal scaleslambda,complementarity scaleslambda^2. Circular forcecone and dissipativity scalelambda; maximumdissipation rate scaleslambda with fixedvelocityu1. Thus all contactbounds are bounded by their verifiedlambda1 extrema. These laws and originalpath samples must pass; no quadrature-only claim."
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67h4/summary.json",
+        "SHA256": "1bcda9851f6a6ad391bf2a16c7a1726864ddf532de4775d97000af86ca98e343"
+      },
+      "independent_verifier": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_circularverify67h4/summary.json",
+        "SHA256": "f95db394e542da1e7e5ff6004e7a81b46518eee6401044a4461fed6370212b30"
+      },
+      "candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "h_mm": 4.0,
+      "upper_quadrature_points": 3,
+      "fractions": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "checks": {
+        "independent_tetra_reactions": true,
+        "off_floor_equilibrium": true,
+        "nonpenetration": true,
+        "normal_nonnegative": true,
+        "normal_complementarity": true,
+        "circular_cone": true,
+        "circular_velocity_maximum_dissipation": true,
+        "nonnegative_dissipation": true,
+        "actual_accepted_fields_match_proportional_forces": false,
+        "actual_accepted_fields_match_proportional_motion": true,
+        "continuous_local_balance": true
+      },
+      "original_tetra_stored_energy_Nmm": 0.032498844634933584,
+      "derived_continuous_friction_work_Nmm": 0.007299636664303032,
+      "integrated_prescribed_external_work_Nmm": 0.039798481300133554,
+      "normal_contact_work_Nmm": -7.410885366341073e-13,
+      "local_energy_residual_Nmm": 1.5584936925796284e-13,
+      "velocity_maximum_dissipation_residual_Nmm": 3.3782093875750485e-11,
+      "original_discrete_endpoint_sum_Nmm": 0.009818011404076725,
+      "accepted_path_samples": [
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67h4/trial_0.1_23.npz",
+            "SHA256": "a82150dbb5f1f7188f676fa13dbf860d6ca402520e7b6b5fd7ac944a03b48250"
+          },
+          "fraction": 0.1,
+          "max_displacement_deviation_mm": 4.235467239519647e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 2.3101212004439375e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67h4/trial_0.25_26.npz",
+            "SHA256": "63ae21e00b14ecf7d8eb3f191d0e67bd4d6b7a3999e52f0911380ba4d05f5515"
+          },
+          "fraction": 0.25,
+          "max_displacement_deviation_mm": 4.2319447100293284e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.930447262044055e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67h4/trial_0.5_26.npz",
+            "SHA256": "3c4bcefed4a40437904ac24fd1ce20fbf465b5b46c0a111e3672750de925e4cc"
+          },
+          "fraction": 0.5,
+          "max_displacement_deviation_mm": 3.094599099542905e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.2862659071188887e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67h4/trial_1_27.npz",
+            "SHA256": "72614d812f4e9ce8d294c278e25b82d1870b5598710be9a04c3eb8a16af55a9c"
+          },
+          "fraction": 1.0,
+          "max_displacement_deviation_mm": 0.0,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 6.455974643770901e-12
+        }
+      ],
+      "analytic_all_lambda_proof": "For0<=lambda<=1,linear elasticity and prescribedload yield nodalforces lambda*R1. Gap scaleslambda,normal scaleslambda,complementarity scaleslambda^2. Circular forcecone and dissipativity scalelambda; maximumdissipation rate scaleslambda with fixedvelocityu1. Thus all contactbounds are bounded by their verifiedlambda1 extrema. These laws and originalpath samples must pass; no quadrature-only claim."
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperquad67/summary.json",
+        "SHA256": "d582ab6d0fab88bb31c7487fb3bc87243dea8744777a30c25a4f27dbb8da8373"
+      },
+      "independent_verifier": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_circularverify67q/summary.json",
+        "SHA256": "66e645d8067b8de1073797cb8b8ea7f22ab809efad3414d5811ebb5a9d9fdb04"
+      },
+      "candidate": {
+        "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+        "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+      },
+      "h_mm": 5.0,
+      "upper_quadrature_points": 7,
+      "fractions": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "checks": {
+        "independent_tetra_reactions": true,
+        "off_floor_equilibrium": true,
+        "nonpenetration": true,
+        "normal_nonnegative": true,
+        "normal_complementarity": true,
+        "circular_cone": true,
+        "circular_velocity_maximum_dissipation": true,
+        "nonnegative_dissipation": true,
+        "actual_accepted_fields_match_proportional_forces": false,
+        "actual_accepted_fields_match_proportional_motion": true,
+        "continuous_local_balance": true
+      },
+      "original_tetra_stored_energy_Nmm": 0.025583540863347996,
+      "derived_continuous_friction_work_Nmm": 0.0055324157150867465,
+      "integrated_prescribed_external_work_Nmm": 0.031115956578798502,
+      "normal_contact_work_Nmm": -3.976618891711257e-13,
+      "local_energy_residual_Nmm": -3.390165196138309e-14,
+      "velocity_maximum_dissipation_residual_Nmm": 1.4490457878740814e-11,
+      "original_discrete_endpoint_sum_Nmm": 0.00744109918283375,
+      "accepted_path_samples": [
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperquad67/trial_0.1_24.npz",
+            "SHA256": "86cde8ecba285b51c4067084a81fc52ae61cbca432911b9f222d977bb6675bd5"
+          },
+          "fraction": 0.1,
+          "max_displacement_deviation_mm": 2.498806600547722e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.6291702475967895e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperquad67/trial_0.25_26.npz",
+            "SHA256": "ec1c5c3aa1985105621522cf6117a58d8b19d94ee7266a4ada8169a21993cec6"
+          },
+          "fraction": 0.25,
+          "max_displacement_deviation_mm": 2.3734969366437028e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 1.5205557213349152e-07
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperquad67/trial_0.5_27.npz",
+            "SHA256": "620e820c884fbb35b7ecafb9dd3a9bfe3586bb4a31b7464fa3e9a146e4cc149d"
+          },
+          "fraction": 0.5,
+          "max_displacement_deviation_mm": 1.8570393486849746e-11,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 8.989868138797874e-08
+        },
+        {
+          "field": {
+            "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperquad67/trial_1_28.npz",
+            "SHA256": "af003e0c1d3d66875591c042d5958dc728004b7ff62fa654922e75085d0b963d"
+          },
+          "fraction": 1.0,
+          "max_displacement_deviation_mm": 0.0,
+          "max_load_deviation_N": 0.0,
+          "max_reaction_deviation_N": 5.987793594286472e-12
+        }
+      ],
+      "analytic_all_lambda_proof": "For0<=lambda<=1,linear elasticity and prescribedload yield nodalforces lambda*R1. Gap scaleslambda,normal scaleslambda,complementarity scaleslambda^2. Circular forcecone and dissipativity scalelambda; maximumdissipation rate scaleslambda with fixedvelocityu1. Thus all contactbounds are bounded by their verifiedlambda1 extrema. These laws and originalpath samples must pass; no quadrature-only claim."
+    }
+  ],
+  "all_local_checks": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "global_energy_qualified": false,
+  "spatial_time_qualified": false,
+  "limitations": [
+    "Derived only for actual independently verified linear elastic wholeplate with prescribed proportional affine upper wrenches,constant assumedmu and rest initialstate. Not arbitrarytime trajectories,changingpreload/contactmaterials or global83bodyenergy.",
+    "Original discrete endpoint-sum4to8FAIL is retained; that estimator is not continuousloss. No original1percent/.1percentcriterion relaxed.",
+    "Actual upperthread/keeper/pin and full MotorDrumTendonFingerRootGround contacts remain unsolved. No systemgate/strength/hardware qualification."
+  ]
+}

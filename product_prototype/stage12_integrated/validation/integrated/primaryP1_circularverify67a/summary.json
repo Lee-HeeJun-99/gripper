@@ -1,0 +1,71 @@
+{
+  "status": "ACTUAL_P1_SCHUR_FIELDS_INDEPENDENTLY_RECONSTRUCTED",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/summary.json",
+    "SHA256": "982d3347dac550763567f5042682431761bf5fa3ad55cf1bc5aa7f3016f49aea"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_circularverify67a/producer.py",
+    "SHA256": "67f4e927bf492bd438447ceaae35549535b8796551a49b3a219e19996e53ff27"
+  },
+  "fields": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_circularverify67a/fields.json",
+    "SHA256": "b8576dd43072a366da41af76bd5fa93937fc62e2e5249134dc10faeace7e9030"
+  },
+  "checks": {
+    "all83_STEP_hashes": true,
+    "nonempty_actual_fields": true,
+    "all_original_nodal_forces": true,
+    "all_interior_equilibrium": true,
+    "all_six_resultants": true,
+    "local_elastic_halfwork": true,
+    "perturbed_load_rejected": true
+  },
+  "circular_Coulomb_audit": true,
+  "initial_support_directions": 4,
+  "trial_count": 109,
+  "locally_admissible_trial_count": 4,
+  "accepted_load_fraction": 1.0,
+  "last_field": {
+    "field": {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_proximal67a/trial_1_28.npz",
+      "SHA256": "01196c8ac47cea109c5b5fed45dee9734fda8a381de05a2c545bd1bb820226cd"
+    },
+    "reaction_reconstruction_N": 7.9205669800686e-12,
+    "off_floor_residual_N": 9.397004008260268e-12,
+    "force_moment_N_Nmm": [
+      1.5833664810055784e-14,
+      2.1001253579060186e-14,
+      8.545247842661752e-15,
+      2.0832224834066437e-12,
+      -1.7954249198481875e-12,
+      3.0415893881394448e-12
+    ],
+    "min_gap_mm": -2.1102736579745535e-14,
+    "min_normal_N": -1.098459337812302e-10,
+    "min_cone_slack_N": -9.880841922438321e-09,
+    "normal_fixedpoint_N": 5.529170854501331e-08,
+    "complementarity_Nmm": 8.754355483420251e-14,
+    "maximum_dissipation_error_Nmm": 7.242196588524291e-12,
+    "minimum_dissipation_Nmm": -8.869758987644726e-14,
+    "elastic_energy_Nmm": 0.025613470198396344,
+    "external_work_Nmm": 0.05122694039679271,
+    "increment_friction_loss_Nmm": 0.0055368480786767635,
+    "maximum_displacement_mm": 0.0018789338885050533,
+    "perturbed_load_error_N": 0.010000000000046416,
+    "minimum_circular_cone_slack_N": -9.880841922438321e-09,
+    "circular_maximum_dissipation_error_Nmm": 7.242196588524291e-12,
+    "physical_contact_and_equilibrium": true
+  },
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Actual full plate with explicit affine upper wrench boundary only; NOT solved83body contact/strength.",
+    "Every original tetra/node force reconstructed independently; direct circular cone and circular maximum dissipation, physical FAILs retained separately.",
+    "Halfwork is local elastic identity, NOT global coupled energy or time/mesh convergence."
+  ]
+}

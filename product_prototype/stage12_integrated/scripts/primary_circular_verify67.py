@@ -1,0 +1,24 @@
+"""Independent original tetra/contact reconstruction of actual P1 trial fields.
+No assembled stiffness/Schur matrix is used to reconstruct nodal forces.
+"""
+import sys,json,shutil,numpy as np
+from baseline_registry import ROOT,REPO,ref,sha,dump
+src=ROOT/'validation/integrated'/sys.argv[1];out=ROOT/'validation/integrated'/sys.argv[2];out.mkdir();shutil.copyfile(__file__,out/'producer.py')
+s=json.loads((src/'summary.json').read_text());assert sha(REPO/s['STEP']['path'])==s['STEP']['SHA256'];c=json.loads((REPO/s['candidate']['path']).read_text());assert len(c['part_references'])==83
+assert all(sha(REPO/r['path'])==r['SHA256'] for r in c['part_references'].values())
+nd=s.get('friction_polygon_vertices',4);angles=np.arange(nd)*2*np.pi/nd;dirs=np.c_[np.cos(angles),np.sin(angles)];facets=np.c_[np.cos(angles+np.pi/nd),np.sin(angles+np.pi/nd)]/np.cos(np.pi/nd)
+rows=[];E=s['E_ASSUMED_MPa'];nu=s['nu_ASSUMED'];mu=E/(2*(1+nu));la=E*nu/((1+nu)*(1-2*nu))
+for fp in sorted(src.glob('trial_*.npz')):
+ assert not(ROOT/'runtime/STOP').exists()
+ a=np.load(fp);p=a['points_mm'];t=a['tetra'];u=a['displacement_mm'];F=a['load_N'];r=a['reaction_N'];floor=a['floor_nodes'];previous=a['previous_displacement_mm'];frozen=a['frozen_normal_N'];off=np.setdiff1d(np.arange(len(p)),floor)
+ X=p[t[:,1:]]-p[t[:,0,None]];iv=np.linalg.inv(X);vol=abs(np.linalg.det(X))/6;grad=np.zeros((len(t),4,3));grad[:,1:]=iv.transpose(0,2,1);grad[:,0]=-grad[:,1:].sum(1);G=np.einsum('tai,taj->tij',u[t],grad);eps=(G+G.transpose(0,2,1))/2;sig=2*mu*eps+la*np.trace(eps,axis1=1,axis2=2)[:,None,None]*np.eye(3);internal=np.zeros_like(F);ef=np.einsum('tij,taj,t->tai',sig,grad,vol)
+ for j in range(4):np.add.at(internal,t[:,j],ef[:,j])
+ calc=internal-F;normal=calc[floor,2];T=calc[floor,:2];delta=(u-previous)[floor,:2];gap=u[floor,2];diss=-np.einsum('ij,ij->i',T,delta);support=.3*np.maximum(normal,0)*np.linalg.norm(delta,axis=1);en=float(np.sum(.5*np.einsum('tij,tij->t',eps,sig)*vol));W=np.r_[(F+calc).sum(0),np.cross(p,F+calc).sum(0)];cone=.3*np.maximum(normal,0)-np.linalg.norm(T,axis=1);wrong=F.copy();wrong[0,0]+=.01
+ row=dict(field=ref(fp),reaction_reconstruction_N=float(abs(calc-r).max()),off_floor_residual_N=float(abs(calc[off]).max()),force_moment_N_Nmm=W.tolist(),min_gap_mm=float(gap.min()),min_normal_N=float(normal.min()),min_cone_slack_N=float(cone.min()),normal_fixedpoint_N=float(abs(np.maximum(normal,0)-frozen).max()),complementarity_Nmm=float(abs(gap*normal).max()),maximum_dissipation_error_Nmm=float(abs(diss-support).max()),minimum_dissipation_Nmm=float(diss.min()),elastic_energy_Nmm=en,external_work_Nmm=float(np.sum(u*(F+calc))),increment_friction_loss_Nmm=float(diss.sum()),maximum_displacement_mm=float(np.linalg.norm(u,axis=1).max()),perturbed_load_error_N=float(abs(internal-wrong-r).max()))
+ row['minimum_circular_cone_slack_N']=float((.3*np.maximum(normal,0)-np.linalg.norm(T,axis=1)).min())
+ row['circular_maximum_dissipation_error_Nmm']=float(abs(diss-.3*np.maximum(normal,0)*np.linalg.norm(delta,axis=1)).max())
+ row['physical_contact_and_equilibrium']=bool(row['off_floor_residual_N']<1e-7 and row['min_gap_mm']>=-1e-9 and row['min_normal_N']>=-1e-7 and row['min_cone_slack_N']>=-1e-7 and row['normal_fixedpoint_N']<1e-7 and row['complementarity_Nmm']<1e-8 and row['maximum_dissipation_error_Nmm']<1e-9 and row['minimum_dissipation_Nmm']>=-1e-9)
+ rows.append(row)
+checks=dict(all83_STEP_hashes=True,nonempty_actual_fields=bool(rows),all_original_nodal_forces=all(r['reaction_reconstruction_N']<1e-8 for r in rows),all_interior_equilibrium=all(r['off_floor_residual_N']<1e-7 for r in rows),all_six_resultants=all(max(abs(x) for x in r['force_moment_N_Nmm'])<1e-6 for r in rows),local_elastic_halfwork=all(abs(r['external_work_Nmm']/2/r['elastic_energy_Nmm']-1)<1e-8 for r in rows),perturbed_load_rejected=all(r['perturbed_load_error_N']>.009 for r in rows))
+dump(out/'fields.json',rows);dump(out/'summary.json',dict(status='ACTUAL_P1_SCHUR_FIELDS_INDEPENDENTLY_RECONSTRUCTED' if all(checks.values()) else 'ACTUAL_P1_SCHUR_FIELD_RECONSTRUCTION_FAIL',candidate=s['candidate'],source=ref(src/'summary.json'),producer=ref(out/'producer.py'),fields=ref(out/'fields.json'),checks=checks,circular_Coulomb_audit=True,initial_support_directions=nd,trial_count=len(rows),locally_admissible_trial_count=sum(r['physical_contact_and_equilibrium'] for r in rows),accepted_load_fraction=s['accepted_load_fraction'],last_field=rows[-1] if rows else None,newly_qualified_system_gate_ids=[],whole_system_release=False,limitations=['Actual full plate with explicit affine upper wrench boundary only; NOT solved83body contact/strength.','Every original tetra/node force reconstructed independently; direct circular cone and circular maximum dissipation, physical FAILs retained separately.','Halfwork is local elastic identity, NOT global coupled energy or time/mesh convergence.']))
+print(json.dumps(checks));raise SystemExit(0 if all(checks.values()) else 2)

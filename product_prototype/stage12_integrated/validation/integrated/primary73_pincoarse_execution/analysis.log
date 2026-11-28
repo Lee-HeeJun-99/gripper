@@ -1,0 +1,12 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "mesh", "nodes": 646, "tetra": 1519, "clearance_each_mm": 0.05004450401209137, "keeper_settled_z_mm": -0.10008900802418275, "conditional_keeper_weight_N": 0.03225118866631141, "conditional_pin_weight_N": 0.0005007126566907501}
+{"iteration": 0, "OSQP_status": "dual infeasible", "OSQP_iterations": 100, "rows": 365, "minimum_linearized_gap_mm": -6785538.724891348, "minimum_next_curved_gap_mm": -8878984.663244084, "force_torque_residual": 3098486346.824371, "min_multiplier_N": -214328934.4, "complementarity_Nmm": 1454337284235897.2, "delta_scaled": 2143289344.0, "contact_topology_same": false, "energy_Nmm": 966.15421525}
+{"iteration": 1, "OSQP_status": "maximum iterations reached", "OSQP_iterations": 100000, "rows": 726, "minimum_linearized_gap_mm": -8.33, "minimum_next_curved_gap_mm": -3649987.8983337115, "force_torque_residual": 0.013875167358804674, "min_multiplier_N": -6.570951159149467e-19, "complementarity_Nmm": 0.012771728338721302, "delta_scaled": 24158.073105335236, "contact_topology_same": false, "energy_Nmm": 58124.236671203675}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_pin_contact73.py", line 95, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_pin_contact73.py", line 77, in main
+    entry=dict(iteration=iteration,OSQP_status=r.info.status,OSQP_iterations=int(r.info.iter),rows=len(keys),minimum_linearized_gap_mm=float((A@xn-lower).min()*L),minimum_next_curved_gap_mm=float(gapn.min()),force_torque_residual=float(abs(res).max()),min_multiplier_N=float(lam.min()),complementarity_Nmm=float(abs(lam*(A@xn-lower)*L).max()),delta_scaled=float(abs(xn-x).max()),contact_topology_same=same,energy_Nmm=float(xn[:N]@K@xn[:N]*L*L/2));journal.append(entry);print(json.dumps(entry),flush=True)
+  File "/tmp/regrip_stage2_fem/numpy/_core/_methods.py", line 48, in _amin
+    return umr_minimum(a, axis, None, out, keepdims, initial, where)
+ValueError: zero-size array to reduction operation minimum which has no identity

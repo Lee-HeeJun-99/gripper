@@ -1,0 +1,94 @@
+{
+  "status": "ACTUAL_P1_POSITIVE_SHOULDER_ELASTIC_GRAVITY_REFERENCE",
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+    "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderelastic73/producer.py",
+    "SHA256": "0e1436e1e7282d6dc2823228a1724076cb885405c0ac2e081d09e040bc6642f3"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/ROOT_SOCKET_KEEPER.step",
+    "SHA256": "3eff7daa87b79288887ff1d16d9a4dfd52b9ad78ec683e5121fa478ab6eccb13"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderelastic73/field.npz",
+    "SHA256": "8c8d3d28f69177c58749d11479ff6f02f134c73dda7190fe80435c4c3efe973a"
+  },
+  "contact_features": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderelastic73/contact_features.json",
+    "SHA256": "4ecfbbda19e5ce6c31e2e9b426bb22d6eb5469d7fb3db5a087d30f63abfb1ac9"
+  },
+  "checks": {
+    "all83source_hashes": true,
+    "all_original6_rigid_balance": true,
+    "original_all_elastic_force": true,
+    "independent_element_force": true,
+    "independent_element_energy": true,
+    "all_deformed_body_wrenches": true,
+    "all_complete_clipped_facet_gaps": true,
+    "nonnegative_normal_force": true,
+    "complementarity": true,
+    "decomposition_gauge_reactions_zero": true
+  },
+  "h_mm": 0.8,
+  "nodes": 2064,
+  "tetra": 6564,
+  "original_elastic_DOF": 6192,
+  "physical_fixed_keeper_DOF": 0,
+  "free_rigid_body_DOF": 6,
+  "rigid_reaction_rank": 3,
+  "neutral_inplane_modes": "x/ytranslation and yaw carry zero imposedload; no fixation or stabilitycertification",
+  "contact_rows": 100,
+  "active_normal_rows": 26,
+  "source_CAD_volume_mm3": 468.5036483721405,
+  "mesh_volume_mm3": 468.824902272917,
+  "E_ASSUMED_MPa": 200000,
+  "nu_ASSUMED": 0.3,
+  "density_ASSUMED_kg_mm3": 7.9e-06,
+  "conditional_gravity_force_N": 0.03632105365021014,
+  "maximum_displacement_mm": 2.4744430250033055e-05,
+  "volume_mean_displacement_mm": [
+    2.1271938798947667e-06,
+    6.859554805366279e-07,
+    -7.419094261231306e-06
+  ],
+  "static_energy_Nmm": 1.3473466034954062e-07,
+  "independent_element_energy_Nmm": 1.3473466034924842e-07,
+  "max_element_vonMises_MPa": 0.08267614150649741,
+  "minimum_complete_facet_gap_mm": -6.802947094541878e-15,
+  "maximum_original_force_residual_N": 1.3762428696661999e-14,
+  "maximum_independent_force_residual_N": 1.3626578164449565e-14,
+  "deformed_keeper_wrench_residual_N_Nmm": [
+    0.0,
+    0.0,
+    -5.805089482030512e-16,
+    2.0235921408592178e-09,
+    6.889237530804753e-09,
+    0.0
+  ],
+  "Root_equal_opposite_contact_wrench_N_Nmm": [
+    -0.0,
+    -0.0,
+    -0.03632105365020953,
+    0.004000113991422477,
+    0.08256725803649215,
+    -0.0
+  ],
+  "minimum_multiplier_N": 1.9483043929074558e-14,
+  "complementarity_Nmm": 2.2423183281110858e-17,
+  "decomposition_gauge_reaction_N": 7.216265708898937e-16,
+  "solver_status": "solved",
+  "solver_iterations": 400,
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "elapsed_s": 0.9794509860221297,
+  "limitations": [
+    "Entire changedactualkeeper, finite Root boss lands and fullfacet barycentricforce pullbacks. Root is an explicit rigidcut support; actualhost/pin/boltnutthreads/preload/operatingcoupling UNSOLVED.",
+    "Typicaldensity/modulus, no materialminimum or strengthPASS. Elementstress is meshdependent and not a sourcedallowable/capacity.",
+    "Planar linearized undersidecontact; postdeformation finitepatchmovement/curvedSTEP/mesh1percent/basefinest/fullvector/time.1percent/globalenergy unqualified.",
+    "This is actualchangedproduct gravitysupport reference, NOT actual100g grasp/whole83body/release. Inplane neutral modes are free; lateral/yaw loads require actualslot/socket/pin contact."
+  ]
+}

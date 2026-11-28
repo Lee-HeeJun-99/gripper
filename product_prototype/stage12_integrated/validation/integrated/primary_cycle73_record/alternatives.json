@@ -1,0 +1,60 @@
+{
+  "status": "ACTUAL_P1_DESIGN_MECHANISM_REVIEW_NOT_EXTERNAL_BLOCKER",
+  "task_id": "goal_primary_ground65a_free_axial_pin_host_contact_and_tilt72",
+  "parent_candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "selected_candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+    "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+  },
+  "alternatives": [
+    {
+      "id": "A",
+      "mechanism": "Retain original pin-only keeper gravity path, complete finite splitpin/keeper/Root elasticity/contact",
+      "actual_evidence": [
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pincoarse_execution/execution.json",
+          "SHA256": "cda14d2747e6fb3dbad95f0daecdbfcde8546cfe2a9cc4212bdc6d5c9b52a517"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinslot73b/summary.json",
+          "SHA256": "86aee9dc295f3765bcde5ff4d604100d4a99fd108d6ca4fca4f646ecc48099ad"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pincondensed73/summary.json",
+          "SHA256": "605ac02c3eef988266bd1f963381ce504916f857be70c113c246cd561d4847eb"
+        }
+      ],
+      "decision": "Preserved but not accepted: dualinfeasible then emptycontact crash; fullQP maximumiterations; condensed localresult has negativegap/largefreepose. These are failed models/iterations, NOT physical impossibility or escape proof."
+    },
+    {
+      "id": "B",
+      "mechanism": "Fuse broad finite positive shoulder into SAME actual keeper, seat on existing Root boss; retain83parts and originalpin capture",
+      "actual_evidence": [
+        {
+          "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+          "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderproduct73/summary.json",
+          "SHA256": "e0ecebd928b80a3cda99747df76c5fc02cd827eb3afbf8109e45ebcc4343dd03"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderverify73/summary.json",
+          "SHA256": "16e1e9e30d3ea1aa7bcb849a7cbb821fd87ebfbd1d08b259c9678ca80e1a0fe6"
+        }
+      ],
+      "decision": "Selected primaryengineeringcontinuation. ActualnewSTEP/STL/assembly/BOM, nominalassembly and necessarygravitycone pass. Independent movingtraction and meshFAIL prevent physical/systemPASS."
+    },
+    {
+      "id": "C",
+      "mechanism": "Replace pin/keeper stop by stock bolted clevis or shoulder screw",
+      "decision": "Not implemented/selected. Requires new actual source-sized part, thread/seat/engagement/process, tool and loadpath evidence. No claimed externalblock or purchase need; avoid unrelatedcandidate while B has executable fixes."
+    }
+  ],
+  "external_blocked": false,
+  "criteria_relaxed": false,
+  "newly_qualified_system_gate_ids": []
+}

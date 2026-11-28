@@ -1,0 +1,242 @@
+{
+  "status": "ACTUAL_P1_FAILURES_PRESERVED_NOT_RELEASE",
+  "source_guard": {
+    "product_prototype/stage12_integrated/scripts/session_manager.py": "f9df7eef738ff189543d21a03605b3f3e5894b11a3353f98b264c02ea68b1398",
+    "product_prototype/stage12_integrated/scripts/goal_session_manager.py": "1448432c5557579b44b4e53d78a71135b7737d76c4c9cc351604d2ede956a088",
+    "product_prototype/stage12_integrated/scripts/goal_manager_policy.py": "2d908179c635a23b422a581a434e5a08b74ea5f75b04bff53c9a38ff6f7e695e",
+    "product_prototype/stage12_integrated/scripts/goal_manager_controls.py": "ee9261294671ac3e9ca922121ac9260485caeed590d29199a568c7cdf5d6bcfa",
+    "product_prototype/stage12_integrated/scripts/supervised_save.py": "12a4d14a6825d7b771754979a8c6bfb994979b983cc61caf012e57cc333608f8",
+    "product_prototype/stage12_integrated/scripts/baseline_registry.py": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8",
+    "product_prototype/stage12_integrated/scripts/integrated_release_gate.py": "73603df9cc40dcea4d8a8c273e8ab125b8f6a2fd7ef47250fa6db0078654f413",
+    "product_prototype/stage2_load_transfer/scripts/commit_guard.py": "e8412c0f605fb6c36e8517d5d99b493d42b1a03e16e8d38357faef41a5515216",
+    "product_prototype/stage2_load_transfer/scripts/stage2_release_gate.py": "814cd89e6056124ed270c467c390d64b7afe9d4cd58f2a036582e113f80e4bfb",
+    "product_prototype/stage2_load_transfer/models/analytical/criteria.json": "f7d850c52e0ec9082f01fb3f81bee979ece9ade4f4b5ce2c274e9c0aa4ed3baa"
+  },
+  "failed_executions": [
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_condensed_execution/execution.json",
+        "SHA256": "77219d1bf73c2986f9f80b355c3cc3c6a53a494c8a6f7f05452dcdffdc6f4d9e"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_pin_condensed73.py",
+        ".35",
+        "primaryP1_pincondensed73"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 3.0056509748101234,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_condensed_execution/analysis.log",
+        "SHA256": "f3ac3f180c223873c431d66f8822a1452fdd087c1fc9b1c03bbfb83903b29614"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pincoarse_execution/execution.json",
+        "SHA256": "cda14d2747e6fb3dbad95f0daecdbfcde8546cfe2a9cc4212bdc6d5c9b52a517"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_pin_contact73.py",
+        ".35",
+        "primaryP1_pincoarse73"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 24.834550491068512,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pincoarse_execution/analysis.log",
+        "SHA256": "b5803f148a95982c07162a23016912bba5d40bc5483545cf77fb7ccaea1c313b"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pinslot_execution/execution.json",
+        "SHA256": "43ba574c46aa88ebb0b056da349a5a1394b07920fc28b049f00cd485ed5b6a4e"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_pin_slot73.py",
+        ".35",
+        "primaryP1_pinslot73"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.20161027112044394,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pinslot_execution/analysis.log",
+        "SHA256": "aae1ab7c627e20e7c4a13378b9359c7761a5eb8a2a348b7e57708f660cf5594d"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pinslotb_execution/execution.json",
+        "SHA256": "7203e00c795f8ca323497fcc18e9a486c1d2140080b64e9f491b9b72360e29ce"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_pin_slot73b.py",
+        ".35",
+        "primaryP1_pinslot73b"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 13.019443630008027,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_pinslotb_execution/analysis.log",
+        "SHA256": "aafb64c3113624162704734e99eee47c5ecb10a9c928050e0afa891db6784bae"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_release_execution/execution.json",
+        "SHA256": "cd6ffad90c191c0f35130279caf6381d85982b1a26e729532d8b376621a257e1"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_release_read73.py",
+        "primaryP1_release73"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 0.40188196999952197,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_release_execution/analysis.log",
+        "SHA256": "4643f355ff982376c0853540d266581d2d0865236dfd803b6b4711810e5f61eb"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_shoulder_execution/execution.json",
+        "SHA256": "2409602cc4119f64a0d29aaa15f09c7c7288fa76d1ac894ff83b33ef56ab11c3"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_shoulder73.py",
+        "primaryP1_shoulder73a"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.20154292695224285,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_shoulder_execution/analysis.log",
+        "SHA256": "3a7fd4a1d07f7fd8a12c1c2b13a50676c7c38be5a04ce92843ae5468debbdb9c"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_shouldercoupled_execution/execution.json",
+        "SHA256": "cf40fec905e11b70d3d9e99432dbe17758faa67c1160970ad8f6b27feac6e50b"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_shoulder_coupled73.py",
+        "primaryP1_shouldercoupled73"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 4.207217923132703,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_shouldercoupled_execution/analysis.log",
+        "SHA256": "50ae1d4d354edd1b2814665008fe20d5aac4660bc19528e4aaa1e32f319751de"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_shoulderverify_execution/execution.json",
+        "SHA256": "452cba45b609ee5ed7414be587639e4d239643ca0e1c2725fc880b506b905c13"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_shoulder_verify73.py",
+        "primaryP1_shoulderverify73"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 3.4064530169125646,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary73_shoulderverify_execution/analysis.log",
+        "SHA256": "d59131a43d4aded3f78576559b8a8f114a4d7388a2d6f049789077dd15ed80ad"
+      }
+    }
+  ],
+  "original_zero_exit_is_not_success": true,
+  "independent_active_traction_failure": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderverify73/summary.json",
+    "SHA256": "16e1e9e30d3ea1aa7bcb849a7cbb821fd87ebfbd1d08b259c9678ca80e1a0fe6"
+  },
+  "spatial_comparisons": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "energy_relative_finest_denominator": 0.125511908793454,
+      "original_energy_1percent_pass": false,
+      "raw98probe_vector_relative_L2": 0.12748556660289395,
+      "raw98probe_max_vector_difference_mm": 3.5889000159813514e-06,
+      "raw98probe_vector_1percent_pass": false,
+      "whole_domain_vector_computed": false,
+      "physical_spatial_gate_pass": false
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "energy_relative_finest_denominator": 0.18023833369050746,
+      "original_energy_1percent_pass": false,
+      "raw98probe_vector_relative_L2": 0.1809502896978557,
+      "raw98probe_max_vector_difference_mm": 5.885585065765097e-06,
+      "raw98probe_vector_1percent_pass": false,
+      "whole_domain_vector_computed": false,
+      "physical_spatial_gate_pass": false
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "energy_relative_finest_denominator": 0.28312818518471433,
+      "original_energy_1percent_pass": false,
+      "raw98probe_vector_relative_L2": 0.284973845820306,
+      "raw98probe_max_vector_difference_mm": 9.471510026402525e-06,
+      "raw98probe_vector_1percent_pass": false,
+      "whole_domain_vector_computed": false,
+      "physical_spatial_gate_pass": false
+    }
+  ],
+  "coupled_full24": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shouldercoupled73/summary.json",
+    "SHA256": "a87594c6113b7d10f0c3dfab96edd894c3819302e5638df21b90f1dd207467b2"
+  },
+  "warning": "Original source/log/partialfields/iterates preserved. Initial pin Newton dualinfeasible sentinel is NOT a physicalstate. Condensed energynegative/largepose rejected. Syntax/indentation failures retained as executionfailures. All sourceexit0 shoulder fields remain localunqualified references; independentaudit overrides local sourcechecks.",
+  "whole_system_release": false,
+  "newly_qualified_system_gate_ids": []
+}

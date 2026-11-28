@@ -1,0 +1,67 @@
+{
+  "status": "ACTUAL_P1_PIN_SLOT_REACTION_CONE_REJECTED",
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pincondensed73/producer.py",
+    "SHA256": "704003b7f966be728a1f5acb1ae536b16bd63e4561833d2628aa3740cf9fdad3"
+  },
+  "condensation": {
+    "status": "reaction_cone_infeasible",
+    "message": "(HiGHS Status 0: Not Set)",
+    "rank": 15
+  },
+  "journal": [
+    {
+      "iteration": 0,
+      "solver_status": "Optimization terminated successfully",
+      "solver_iterations": 5,
+      "condensation": {
+        "status": "Optimization terminated successfully",
+        "iterations": 5,
+        "rank": 12,
+        "full18_reaction_residual": 1.1535911115245767e-15,
+        "decomposition_gauge_residual": 4.406169634542183e-14,
+        "minimum_linear_gap": -0.3121520267956972,
+        "active": 10
+      },
+      "rows": 401,
+      "minimum_linearized_gap_mm": -0.00031215202679569723,
+      "minimum_next_curved_gap_mm": -0.0012969406901390812,
+      "force_torque_residual": 1.2695021429927182e-12,
+      "min_multiplier_N": 0.0,
+      "complementarity_Nmm": 8.705013316445269e-19,
+      "delta_scaled": 26.780161933645672,
+      "contact_topology_same": true,
+      "energy_Nmm": 1.1769637608551257e-06
+    },
+    {
+      "iteration": 1,
+      "solver_status": "Optimization terminated successfully",
+      "solver_iterations": 5,
+      "condensation": {
+        "status": "Optimization terminated successfully",
+        "iterations": 5,
+        "rank": 15,
+        "full18_reaction_residual": 1.1368683772161603e-13,
+        "decomposition_gauge_residual": 3.6561338266800913e-13,
+        "minimum_linear_gap": -6.459064820774074e-07,
+        "active": 15
+      },
+      "rows": 401,
+      "minimum_linearized_gap_mm": -6.459064820774075e-10,
+      "minimum_next_curved_gap_mm": -299075.70801899175,
+      "force_torque_residual": 0.0005446479834197528,
+      "min_multiplier_N": 0.0,
+      "complementarity_Nmm": 8.74786519018236e-09,
+      "delta_scaled": 3624347179.209387,
+      "contact_topology_same": false,
+      "energy_Nmm": -1314.4784822157344
+    }
+  ],
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

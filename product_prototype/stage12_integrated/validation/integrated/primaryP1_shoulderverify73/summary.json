@@ -1,0 +1,1081 @@
+{
+  "status": "ACTUAL_P1_SHOULDER_INDEPENDENT_LOCAL_AUDIT_SPATIAL_FAIL",
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_shoulder73a/summary.json",
+    "SHA256": "2c1ecaa59f94e3ee0c9b4a818fc07fea27d97c26a1956acbc12743277a9e2205"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderverify73/producer.py",
+    "SHA256": "f8421f810e97e0a676a9e69c83fc6f6c4e03a8ff22673c04ccb051f8c75177d4"
+  },
+  "dependencies": [
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_shoulder_elastic73b.py",
+      "SHA256": "5d602e42103334d81a0dc54445a4ce60b6b8ff9337c647808f4af0cf92071704"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_keeper_finite72.py",
+      "SHA256": "1da3b31ed038600fc075760c1243eb59a11ab373a53d82cf6593f7deac03c1df"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/primary_keeper_coupled71.py",
+      "SHA256": "9f109d94e84548dceb5dc65b088ae124890414205ae83c0ac74e8630abbaf6b3"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/incremental_stage1.py",
+      "SHA256": "bcfef4cdd359bfd0399ee6f5e4b49f566cb94958039172adac4f4c49808cd1f4"
+    },
+    {
+      "path": "product_prototype/stage1_manufacturing/scripts/build_stage1.py",
+      "SHA256": "551c0cb2d9f0e5293333f9c6cedcabb3977a6510a0dc821d72b2aafe2ab2cdad"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/scripts/baseline_registry.py",
+      "SHA256": "3c84dbe32bf45a7c8a87af394f976c2983aee7020e98a197f369c1b0986833c8"
+    }
+  ],
+  "rows": [
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shouldercoarse73/summary.json",
+        "SHA256": "31ad2445a5b845c6c9249c313ba33797aa497e46b5ceec6e5e3fbfb8a67faae4"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shouldercoarse73/field.npz",
+        "SHA256": "57b1e83d9917e57fa5a834dd0f9066bfb9b70a31572b13589779560d349281f6"
+      },
+      "checks": {
+        "independent_element_residual": true,
+        "independent_energy": true,
+        "all6_deformed_body_wrench": true,
+        "linear_internal_force_moment": true,
+        "altered_gravity_rejected": true,
+        "complete_postdeformation_finite_land_gap": true,
+        "reference_active_traction_on_both_actual_solids": true,
+        "deformed_active_traction_on_actual_Root": false,
+        "original_multipliers_nonnegative": true,
+        "source_checks": true
+      },
+      "nodes": 2064,
+      "tetra": 6564,
+      "energy_Nmm": 1.3455007456811447e-07,
+      "conditional_weight_N": 0.03629616529613834,
+      "original_residual_N": 1.261463806676022e-14,
+      "deformed_wrench_residual_N_Nmm": [
+        0.0,
+        0.0,
+        -5.186755430534873e-16,
+        2.020819816659584e-09,
+        6.879799372094776e-09,
+        0.0
+      ],
+      "postdeformation_finite_land_min_gap_mm": -6.8833827526759706e-15,
+      "altered_gravity_control_residual_N": 9.253115946550349e-07,
+      "active_contact": [
+        {
+          "row": 0,
+          "normal_force_N": 0.001184201016870317,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 1,
+          "normal_force_N": 0.0011324391312301661,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 2,
+          "normal_force_N": 0.0021579992327308193,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 8.881784197001252e-16
+        },
+        {
+          "row": 3,
+          "normal_force_N": 0.0021608112106064996,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 8,
+          "normal_force_N": 0.001023832663051344,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 4.440892098500626e-16
+        },
+        {
+          "row": 9,
+          "normal_force_N": 0.002123701190725328,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 1.2212453270876722e-15
+        },
+        {
+          "row": 10,
+          "normal_force_N": 0.0023566956432062923,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 6.217248937900877e-15
+        },
+        {
+          "row": 11,
+          "normal_force_N": 0.0008511060828102343,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 1.1102230246251565e-16
+        },
+        {
+          "row": 43,
+          "normal_force_N": 7.531887826318422e-05,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 6.661338147750939e-16
+        },
+        {
+          "row": 44,
+          "normal_force_N": 0.0009909110151274671,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 4.6629367034256575e-15
+        },
+        {
+          "row": 53,
+          "normal_force_N": 0.0009753787229545901,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.4424906541753444e-15
+        },
+        {
+          "row": 55,
+          "normal_force_N": 0.0009629375401254334,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 56,
+          "normal_force_N": 4.121541625582178e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 57,
+          "normal_force_N": 1.8749702025911972e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 58,
+          "normal_force_N": 0.002148117440471753,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 59,
+          "normal_force_N": 3.034261491347482e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 7.460106068446493e-07
+        },
+        {
+          "row": 60,
+          "normal_force_N": 2.7685572682232657e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 64,
+          "normal_force_N": 2.9281695317278468e-05,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 1.1102230246251565e-16,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 65,
+          "normal_force_N": 0.002072972029922274,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 1.9984014443252818e-15
+        },
+        {
+          "row": 66,
+          "normal_force_N": 3.286524923108754e-05,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 74,
+          "normal_force_N": 0.002293042036694574,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 75,
+          "normal_force_N": 0.002839807148178257,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 4.440892098500626e-15
+        },
+        {
+          "row": 76,
+          "normal_force_N": 0.0023338544280944833,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 1.2212453270876722e-15
+        },
+        {
+          "row": 77,
+          "normal_force_N": 0.0032938398437253134,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 6.8833827526759706e-15
+        },
+        {
+          "row": 78,
+          "normal_force_N": 0.003450404026791739,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 4.107825191113079e-15
+        },
+        {
+          "row": 96,
+          "normal_force_N": 0.001794849700549203,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.9976021664879227e-15
+        }
+      ],
+      "maximum_active_deformed_Root_distance_mm": 7.460106068446493e-07,
+      "max_stress_MPa": 0.08261948915541345
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderfine73/summary.json",
+        "SHA256": "ffce4d45ff412585a10369b21b9759e7c6ad1384495298989a72ff292c6ee1e8"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderfine73/field.npz",
+        "SHA256": "5e8174efe5ef1732fbda6d8e0074a74922adde1f8e7e3796986313dadc9e41e4"
+      },
+      "checks": {
+        "independent_element_residual": true,
+        "independent_energy": true,
+        "all6_deformed_body_wrench": true,
+        "linear_internal_force_moment": true,
+        "altered_gravity_rejected": true,
+        "complete_postdeformation_finite_land_gap": true,
+        "reference_active_traction_on_both_actual_solids": true,
+        "deformed_active_traction_on_actual_Root": true,
+        "original_multipliers_nonnegative": true,
+        "source_checks": true
+      },
+      "nodes": 4517,
+      "tetra": 16186,
+      "energy_Nmm": 1.5386152872873713e-07,
+      "conditional_weight_N": 0.03629616529613835,
+      "original_residual_N": 1.1224209766919763e-14,
+      "deformed_wrench_residual_N_Nmm": [
+        0.0,
+        0.0,
+        2.3284935720020716e-17,
+        2.484198851889028e-09,
+        8.210018950009182e-09,
+        0.0
+      ],
+      "postdeformation_finite_land_min_gap_mm": 0.0,
+      "altered_gravity_control_residual_N": 3.5361175089723484e-07,
+      "active_contact": [
+        {
+          "row": 0,
+          "normal_force_N": 0.0006558449638571038,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 1,
+          "normal_force_N": 0.0005953147576961835,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 2,
+          "normal_force_N": 0.001250799074978431,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 3,
+          "normal_force_N": 0.0011598165898271224,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 8,
+          "normal_force_N": 0.0005424943755680679,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 9,
+          "normal_force_N": 0.0010749503456456394,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 10,
+          "normal_force_N": 0.001075149141188633,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 11,
+          "normal_force_N": 0.0004213663079934906,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 46,
+          "normal_force_N": 0.0005624074459467395,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 49,
+          "normal_force_N": 0.0003680193492262335,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 56,
+          "normal_force_N": 0.0010834543827309886,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 61,
+          "normal_force_N": 0.0010458391535048037,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 79,
+          "normal_force_N": 0.0003709970579145899,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 82,
+          "normal_force_N": 0.0005481617677709785,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 83,
+          "normal_force_N": 0.0014150837776429435,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 84,
+          "normal_force_N": 0.0012815572756954986,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 85,
+          "normal_force_N": 0.0016507954590276334,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 86,
+          "normal_force_N": 0.001327295040734254,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 87,
+          "normal_force_N": 0.0023409482959395977,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 88,
+          "normal_force_N": 0.0013525756983472832,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 89,
+          "normal_force_N": 0.001955881164064306,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 90,
+          "normal_force_N": 0.001329278182218483,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 91,
+          "normal_force_N": 0.0018585002765740964,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 92,
+          "normal_force_N": 0.001667671212415855,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 107,
+          "normal_force_N": 0.0002611042723514678,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 108,
+          "normal_force_N": 0.0013461801678471275,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 129,
+          "normal_force_N": 0.0004681676149648929,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 132,
+          "normal_force_N": 0.000403353015420706,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 140,
+          "normal_force_N": 0.0016075149533723015,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 141,
+          "normal_force_N": 0.0015823473060183513,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 144,
+          "normal_force_N": 0.0018334542427765044,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 145,
+          "normal_force_N": 0.0018598426268780705,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        }
+      ],
+      "maximum_active_deformed_Root_distance_mm": 0.0,
+      "max_stress_MPa": 0.08449512962767129
+    },
+    {
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderfinest73/summary.json",
+        "SHA256": "40e473cce688e26906b1be644f04d8a145bf115d491fa7528ef61ca1a02ad54c"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderfinest73/field.npz",
+        "SHA256": "bfddae93a0a71c379bdadc036e3d3cd0c8cd3861e4b362deb6d7e0b63950e9ad"
+      },
+      "checks": {
+        "independent_element_residual": true,
+        "independent_energy": true,
+        "all6_deformed_body_wrench": true,
+        "linear_internal_force_moment": true,
+        "altered_gravity_rejected": true,
+        "complete_postdeformation_finite_land_gap": true,
+        "reference_active_traction_on_both_actual_solids": true,
+        "deformed_active_traction_on_actual_Root": false,
+        "original_multipliers_nonnegative": true,
+        "source_checks": true
+      },
+      "nodes": 9499,
+      "tetra": 38522,
+      "energy_Nmm": 1.8769056306500712e-07,
+      "conditional_weight_N": 0.03629616529613834,
+      "original_residual_N": 1.1705250789093794e-14,
+      "deformed_wrench_residual_N_Nmm": [
+        0.0,
+        0.0,
+        -9.167014071659665e-17,
+        2.926642546187473e-09,
+        9.297715252850697e-09,
+        0.0
+      ],
+      "postdeformation_finite_land_min_gap_mm": -6.8833827526759706e-15,
+      "altered_gravity_control_residual_N": 1.2818750697938618e-07,
+      "active_contact": [
+        {
+          "row": 0,
+          "normal_force_N": 0.0003394894245018772,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 1,
+          "normal_force_N": 0.0003409046881769703,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 2,
+          "normal_force_N": 0.0007315212316970921,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 3,
+          "normal_force_N": 0.0005818512633716385,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 8,
+          "normal_force_N": 0.0002877574230195864,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 9,
+          "normal_force_N": 0.0005255247787284566,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 10,
+          "normal_force_N": 0.0005969904956098759,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 11,
+          "normal_force_N": 0.000261296742682749,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 56,
+          "normal_force_N": 0.0003518164360152809,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 57,
+          "normal_force_N": 2.478022990530418e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 7.771561172376096e-16
+        },
+        {
+          "row": 61,
+          "normal_force_N": 0.0004264914480619517,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 62,
+          "normal_force_N": 3.7929089908454858e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 7.771561172376096e-16
+        },
+        {
+          "row": 63,
+          "normal_force_N": 7.803408884055661e-05,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 6.8833827526759706e-15
+        },
+        {
+          "row": 64,
+          "normal_force_N": 8.914419890023089e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.886579864025407e-15
+        },
+        {
+          "row": 65,
+          "normal_force_N": 4.470482311984499e-06,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 3.3306690738754696e-16
+        },
+        {
+          "row": 66,
+          "normal_force_N": 1.1392393878322808e-07,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 1.1057815023640671e-06
+        },
+        {
+          "row": 88,
+          "normal_force_N": 0.00017292289701476338,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 6.661338147750939e-16
+        },
+        {
+          "row": 90,
+          "normal_force_N": 1.1484874552099703e-05,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 8.215650382226158e-15
+        },
+        {
+          "row": 92,
+          "normal_force_N": 0.00023723739293183023,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 93,
+          "normal_force_N": 0.0005147272012688846,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 5.551115123125783e-16
+        },
+        {
+          "row": 94,
+          "normal_force_N": 0.0003061923693037254,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 95,
+          "normal_force_N": 0.0006003287425815519,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 96,
+          "normal_force_N": 0.000808845353214703,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 97,
+          "normal_force_N": 0.0007879564978704323,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 98,
+          "normal_force_N": 0.0010600415613453917,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 99,
+          "normal_force_N": 0.0007697219896790867,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 100,
+          "normal_force_N": 0.001276653757977119,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 101,
+          "normal_force_N": 0.0005202847897826024,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 102,
+          "normal_force_N": 0.0009943508664906257,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 103,
+          "normal_force_N": 0.0005982550365201397,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 104,
+          "normal_force_N": 0.000888582899838631,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 105,
+          "normal_force_N": 0.000782672955188034,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 106,
+          "normal_force_N": 0.0013756102063322232,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 107,
+          "normal_force_N": 0.0006947825945749862,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 108,
+          "normal_force_N": 0.0011265688157841795,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 109,
+          "normal_force_N": 0.0006696657130429187,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 110,
+          "normal_force_N": 0.0012211303059187952,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 111,
+          "normal_force_N": 0.000868584617106153,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 136,
+          "normal_force_N": 0.0001317786663982305,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 137,
+          "normal_force_N": 2.4157071806471928e-05,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 138,
+          "normal_force_N": 0.00020509246940800079,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 139,
+          "normal_force_N": 0.000470805780325625,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 140,
+          "normal_force_N": 0.000787377569723121,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 175,
+          "normal_force_N": 0.00017555491209732127,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 178,
+          "normal_force_N": 0.00016433245134768218,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 181,
+          "normal_force_N": 0.00037614158293082094,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 2.220446049250313e-16
+        },
+        {
+          "row": 195,
+          "normal_force_N": 0.0010401358012245238,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 196,
+          "normal_force_N": 0.0007777717488197633,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 199,
+          "normal_force_N": 0.0007514228045798667,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 200,
+          "normal_force_N": 0.001186362059793182,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 201,
+          "normal_force_N": 0.0006612961266369704,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 202,
+          "normal_force_N": 0.0009817825068408241,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 203,
+          "normal_force_N": 0.0008821606929842844,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 204,
+          "normal_force_N": 0.0008972179357875304,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 210,
+          "normal_force_N": 0.0008909576357162548,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 211,
+          "normal_force_N": 0.0007384634353432042,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 214,
+          "normal_force_N": 0.0008933909085789472,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 215,
+          "normal_force_N": 0.0003302906607402564,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 218,
+          "normal_force_N": 0.0003510720959526833,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 219,
+          "normal_force_N": 0.00030208014507714353,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 225,
+          "normal_force_N": 0.0006507003561842995,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 226,
+          "normal_force_N": 0.0006194628049410096,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 227,
+          "normal_force_N": 0.0004613170673284679,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 228,
+          "normal_force_N": 0.00012080176352915324,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        },
+        {
+          "row": 229,
+          "normal_force_N": 0.0005961889966853528,
+          "reference_keeper_distance_mm": 0.0,
+          "reference_Root_distance_mm": 0.0,
+          "deformed_Root_distance_mm": 0.0
+        }
+      ],
+      "maximum_active_deformed_Root_distance_mm": 1.1057815023640671e-06,
+      "max_stress_MPa": 0.11148071509695344
+    }
+  ],
+  "comparisons": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "energy_relative_finest_denominator": 0.125511908793454,
+      "original_energy_1percent_pass": false,
+      "raw98probe_vector_relative_L2": 0.12748556660289395,
+      "raw98probe_max_vector_difference_mm": 3.5889000159813514e-06,
+      "raw98probe_vector_1percent_pass": false,
+      "whole_domain_vector_computed": false,
+      "physical_spatial_gate_pass": false
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "energy_relative_finest_denominator": 0.18023833369050746,
+      "original_energy_1percent_pass": false,
+      "raw98probe_vector_relative_L2": 0.1809502896978557,
+      "raw98probe_max_vector_difference_mm": 5.885585065765097e-06,
+      "raw98probe_vector_1percent_pass": false,
+      "whole_domain_vector_computed": false,
+      "physical_spatial_gate_pass": false
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "energy_relative_finest_denominator": 0.28312818518471433,
+      "original_energy_1percent_pass": false,
+      "raw98probe_vector_relative_L2": 0.284973845820306,
+      "raw98probe_max_vector_difference_mm": 9.471510026402525e-06,
+      "raw98probe_vector_1percent_pass": false,
+      "whole_domain_vector_computed": false,
+      "physical_spatial_gate_pass": false
+    }
+  ],
+  "all_local_checks_pass": false,
+  "probe_vectors": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_shoulderverify73/probe_vectors.npz",
+    "SHA256": "634503f7ce612bb9d911324f47484b3c6bcebe3a245d38d2012feb7ebe1f50ef"
+  },
+  "physical_spatial_gate_pass": false,
+  "time_gate_pass": false,
+  "global_energy_gate_pass": false,
+  "newly_qualified_system_gate_ids": [],
+  "accepted83body_physical_equilibria": 0,
+  "whole_system_release": false,
+  "elapsed_s": 2.278091280022636,
+  "limitations": [
+    "Raw98fixedmaterial3vectorprobes; not whole-domain integration or certified motion. All pair/basefinest comparisons retained, no adjacent-onlyPASS.",
+    "Same exactCADtotalmass at allmeshes through derivedtributaries; no fittedmaterialdensity. MeshCG/curveddomain still approximate.",
+    "Independent localgravity checks do not certify rigidRoot compliance, sourceallowables, all83equilibria, bolt/nut/thread/preload, dynamicenergy or actual100g grasp."
+  ]
+}

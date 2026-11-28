@@ -1,0 +1,110 @@
+{
+  "status": "ACTUAL_ROOT_KEEPER_LOCAL_EDGE_REFINEMENT_ENERGY_FAIL_1PERCENT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clocked62a/summary.json",
+    "SHA256": "d6ac0ee4757b054bb8f06dc351b81ab1f48424ee44a903760475d63458af8596"
+  },
+  "independent_verifier": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperverify63b/summary.json",
+    "SHA256": "a69e4fe757429cec76e8951740d2155b0d62cf51e9fa98472ff0af604b93b953"
+  },
+  "pairs": [
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63a/summary.json",
+        "SHA256": "3608d5abee7164afa81103951ef027dd67f1bd8852b8a84eb2f117b3bd34b9e6"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63b/summary.json",
+        "SHA256": "c2b4ae2ce8e6bbd60de820fbe74e511bf4f291ffd2630611f14d1bdc848a582f"
+      },
+      "energy_relative_change": 0.07096695641978101,
+      "exact_continuum_RMS_relative_change": 0.029941089978178015,
+      "energy_1percent_pass": false,
+      "motion_1percent_pass": false,
+      "both_pass": false
+    },
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63b/summary.json",
+        "SHA256": "c2b4ae2ce8e6bbd60de820fbe74e511bf4f291ffd2630611f14d1bdc848a582f"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63c/summary.json",
+        "SHA256": "fb5978fa8d77a199fdd4b1c584c969edb09b6183d67e2a177d58a7e9ce61f909"
+      },
+      "energy_relative_change": 0.047541263343749085,
+      "exact_continuum_RMS_relative_change": 0.01659591928880899,
+      "energy_1percent_pass": false,
+      "motion_1percent_pass": false,
+      "both_pass": false
+    },
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63c/summary.json",
+        "SHA256": "fb5978fa8d77a199fdd4b1c584c969edb09b6183d67e2a177d58a7e9ce61f909"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63d/summary.json",
+        "SHA256": "a13396a3da921073fb2a5a561674a4bc7f227951e9876c5189816cdacdadbeb0"
+      },
+      "energy_relative_change": 0.01623806497667646,
+      "exact_continuum_RMS_relative_change": 0.005422696560612117,
+      "energy_1percent_pass": false,
+      "motion_1percent_pass": true,
+      "both_pass": false
+    },
+    {
+      "coarse": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63a/summary.json",
+        "SHA256": "3608d5abee7164afa81103951ef027dd67f1bd8852b8a84eb2f117b3bd34b9e6"
+      },
+      "fine": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperlocal63d/summary.json",
+        "SHA256": "a13396a3da921073fb2a5a561674a4bc7f227951e9876c5189816cdacdadbeb0"
+      },
+      "energy_relative_change": 0.1400992726146839,
+      "exact_continuum_RMS_relative_change": 0.05271165635783692,
+      "energy_1percent_pass": false,
+      "motion_1percent_pass": false,
+      "both_pass": false
+    }
+  ],
+  "mesh_edge_sizes_mm": [
+    0.24,
+    0.16,
+    0.1,
+    0.075
+  ],
+  "nodes": [
+    11038,
+    20720,
+    49950,
+    89424
+  ],
+  "tetra": [
+    40516,
+    79554,
+    207974,
+    393298
+  ],
+  "identical_continuum_loads": false,
+  "identical_target_wrenches": true,
+  "zero_physical_fixed_DOF": true,
+  "finest_failed_execution": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primary63_localE_execution/execution.json",
+    "SHA256": "981f40ac30aea6b298fcae6495ea4589e51cbc07758e104337841067831cd6f5"
+  },
+  "finest_failed_output_has_no_field": true,
+  "nominal_material_E_MPa": 200000.0,
+  "material_minimum_MPa": null,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_physical_product_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Entire actual product Root keeper, prescribed affine plug-end/tongue torque contrast; not an ideal coupon, unilateral contact or coupled83body equilibrium",
+    "Exact continuum tetra mass projection removes rigid motion before comparing volume RMS. Nodal maxima and lumped-gauge norms are not the mesh motion metric",
+    "0.06mm execution signal11, no final summary or field; cause unproven, no retry or reward",
+    "Original62 energy/motion FAIL and all earlier physical criteria remain unchanged"
+  ]
+}

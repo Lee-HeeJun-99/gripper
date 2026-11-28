@@ -1,0 +1,45 @@
+{
+  "status": "CYCLE63_FAILURES_PRESERVED_NO_REWARD",
+  "executions": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_heightB_execution/execution.json",
+      "SHA256": "704131c1d584a5cc20af964b99470eab853a10455577d3adf71d0e12fbb2a06b"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_heightC_execution/execution.json",
+      "SHA256": "e131a6232e2c182a3776567134581f2d4f926f9a88b6e55089a2bae966cccf49"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_heightD_execution/execution.json",
+      "SHA256": "4041d6e48f5016c6a34b91d88f484718e4ad7ac325ecbbcce28c29046d335ee3"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_heightE_execution/execution.json",
+      "SHA256": "eb3403dfc290dedc2119a9ff72c89ad34e89ebae10abe19edcdb92ed400a5694"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_height_execution/execution.json",
+      "SHA256": "4897f72b94628b9f6c8b2f697febd55b573e9ec57fe89f535b8712607d18ac3e"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_localE_execution/execution.json",
+      "SHA256": "981f40ac30aea6b298fcae6495ea4589e51cbc07758e104337841067831cd6f5"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary63_release_execution/execution.json",
+      "SHA256": "8990b23e51378b492e25c5d64f6bcb047c392a9159b06d895c55122d4bb5cb1b"
+    }
+  ],
+  "failures": [
+    "heightA missing existing OCP dependency path; no install; exact log retained",
+    "heightB/C incorrectly assumed collision at large axial endpoint; assertions retained",
+    "heightD first-contact scan disproved negative-direction collision assumption: withdrawal has no collision in sampled4mm",
+    "heightE actual numerical result FAIL: Root +.06mm control remains clear; actual Root margin .25mm differs from Cap .05mm",
+    "heightF uses predeclared +.26mm rejection control above both independently located brackets; no physical criterion relaxed",
+    "localE .06mm real finite-element execution exited -11; no field/summary, no timeout attribution or memory-cause assertion; no repeated finer retry",
+    "all four completed local meshes are equilibrium checks only; original reference mesh1percent energy still FAIL",
+    "read-only integrated gate exit2 INTEGRATED_NOT_QUALIFIED, no system promotion"
+  ],
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

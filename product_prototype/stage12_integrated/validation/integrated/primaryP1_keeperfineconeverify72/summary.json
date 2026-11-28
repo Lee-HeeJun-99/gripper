@@ -1,0 +1,549 @@
+{
+  "status": "FINITE_SOCKET_INDEPENDENT_AUDIT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfineconeverify72/producer.py",
+    "SHA256": "767cdac7d0af2930cc5ade84b1acfa0fe85c05ebd9c54838142e80c53c6e0c31"
+  },
+  "rows": [
+    {
+      "objective_independent": {
+        "energy_gradient_virtualwork_error_N": 3.157196726277789e-16,
+        "rigid_rotated_force_error_N": 5.08624685264255e-09,
+        "rigid_rotated_energy_relative_error": 7.760493956439005e-10
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72/summary.json",
+        "SHA256": "f4f053af3335be6ff3f78991911ebf4c29881879063e2963d00b2d8e5329a35e"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72/field.npz",
+        "SHA256": "0b249a3a4fd0aa6a491a57b1b978395d6d23c718b5e3afdd6b054cba9495c5b8"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "independent_edge_pullback": true,
+        "independent_torque": true,
+        "independent_gaps": true,
+        "independent_edge_direction": true,
+        "nonnegative_multipliers": true,
+        "complementarity": true,
+        "complete_clipped_facets": true,
+        "independent_energy": true,
+        "zero_force": true,
+        "zero_deformed_moment": false,
+        "altered_load_rejected": true,
+        "socket_rim_normal_cones": true,
+        "energy_gradient": true,
+        "rigid_objective_force": true,
+        "rigid_objective_energy": true,
+        "deformed_keeper_polyhedral_normal_cone": true
+      },
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "clipped_triangles": 448,
+          "minimum_gap_mm": -4.191091917959966e-15,
+          "violating_triangles": 0
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "clipped_triangles": 448,
+          "minimum_gap_mm": -5.676015213396113e-15,
+          "violating_triangles": 0
+        }
+      ],
+      "force_residual_N": 1.522866014959075e-09,
+      "pullback_error_N": 1.734723475976807e-18,
+      "energy_Nmm": 6.930597495964106e-08,
+      "independent_free_spin_residual_Nmm": [
+        -1.775187635777442e-12,
+        4.399171998903384e-14
+      ],
+      "keeper_force_N": [
+        -2.5804011705155006e-15,
+        5.915407053080912e-15,
+        1.5360411543516946e-09
+      ],
+      "keeper_deformed_moment_Nmm": [
+        2.4980042069577824e-08,
+        -9.628468540827037e-08,
+        3.5282887722587475e-13
+      ],
+      "active_rim_rows": [
+        {
+          "row": 210,
+          "lambda_N": 0.011345395266549223,
+          "end": 1,
+          "axial_gradient": -1.2304572837832765e-14,
+          "cone_relative_residual": 1.2306576149689572e-14,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            0.0
+          ]
+        },
+        {
+          "row": 501,
+          "lambda_N": 0.008500287996025554,
+          "end": 1,
+          "axial_gradient": 1.0005829068046256e-14,
+          "cone_relative_residual": 2.775557561562892e-17,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            1.0005829068046256e-14
+          ]
+        },
+        {
+          "row": 789,
+          "lambda_N": 0.010210090199476343,
+          "end": 1,
+          "axial_gradient": -1.6426046611480262e-14,
+          "cone_relative_residual": 1.64264218025158e-14,
+          "nonnegative_coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "row": 1068,
+          "lambda_N": 0.01611429631292288,
+          "end": 1,
+          "axial_gradient": 2.32104858978039e-08,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            2.32104858978039e-08
+          ]
+        },
+        {
+          "row": 1332,
+          "lambda_N": 0.01841577855473177,
+          "end": 1,
+          "axial_gradient": 1.6773745478882896e-14,
+          "cone_relative_residual": 5.551115123125784e-17,
+          "nonnegative_coefficients": [
+            1.0000000000000004,
+            1.6773745478882896e-14
+          ]
+        },
+        {
+          "row": 1596,
+          "lambda_N": 0.017215129542900418,
+          "end": 1,
+          "axial_gradient": 7.878793136905088e-10,
+          "cone_relative_residual": 1.1102230246251568e-16,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            7.878793136905088e-10
+          ]
+        },
+        {
+          "row": 1866,
+          "lambda_N": 0.01861745883275741,
+          "end": 1,
+          "axial_gradient": 3.0951336395396275e-08,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            3.0951336395396275e-08
+          ]
+        },
+        {
+          "row": 2154,
+          "lambda_N": 0.019029151920653492,
+          "end": 1,
+          "axial_gradient": 1.3865526292177607e-08,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0,
+            1.3865526292177607e-08
+          ]
+        },
+        {
+          "row": 2442,
+          "lambda_N": 0.01621172007881215,
+          "end": 1,
+          "axial_gradient": 1.902156322362588e-08,
+          "cone_relative_residual": 2.2204460492503126e-16,
+          "nonnegative_coefficients": [
+            0.9999999999999999,
+            1.902156322362588e-08
+          ]
+        },
+        {
+          "row": 2727,
+          "lambda_N": 0.011205440817883305,
+          "end": 1,
+          "axial_gradient": 2.920838744561893e-14,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            2.920838744561893e-14
+          ]
+        },
+        {
+          "row": 2991,
+          "lambda_N": 0.009047284651598122,
+          "end": 1,
+          "axial_gradient": 6.593287522151384e-15,
+          "cone_relative_residual": 5.551115123125783e-17,
+          "nonnegative_coefficients": [
+            1.0,
+            6.593287522151384e-15
+          ]
+        },
+        {
+          "row": 3255,
+          "lambda_N": 0.014072975987123544,
+          "end": 1,
+          "axial_gradient": -7.595051363762248e-15,
+          "cone_relative_residual": 7.595051363762248e-15,
+          "nonnegative_coefficients": [
+            0.9999999999999999,
+            0.0
+          ]
+        }
+      ],
+      "active_keeper_cones": [
+        {
+          "row": 0,
+          "lambda_N": 0.002355182686344752,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 12,
+          "lambda_N": 0.0043187459189163915,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 13,
+          "lambda_N": 0.005639233788992828,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 14,
+          "lambda_N": 0.001044754285401665,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 210,
+          "lambda_N": 0.011345395266549223,
+          "relative_residual": 1.6543612251060556e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 281,
+          "lambda_N": 0.002981183599232715,
+          "relative_residual": 1.4696577288475513e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 309,
+          "lambda_N": 0.0054546694031549015,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 310,
+          "lambda_N": 0.00559475848194056,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 311,
+          "lambda_N": 0.0013569057744519243,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 501,
+          "lambda_N": 0.008500287996025554,
+          "relative_residual": 8.271806125530278e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 561,
+          "lambda_N": 0.0025677533493294615,
+          "relative_residual": 3.320260733019609e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 603,
+          "lambda_N": 0.005202029584786413,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 604,
+          "lambda_N": 0.0053357636005766955,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 605,
+          "lambda_N": 0.0009336197667253155,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 789,
+          "lambda_N": 0.010210090199476343,
+          "relative_residual": 8.271806125530278e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 838,
+          "lambda_N": 0.0013284117177554942,
+          "relative_residual": 2.420633138378037e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 885,
+          "lambda_N": 0.0036853482888056935,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 886,
+          "lambda_N": 0.004878976144409066,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1068,
+          "lambda_N": 0.01611429631292288,
+          "relative_residual": 4.963083675318166e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1110,
+          "lambda_N": 0.0004957922749041278,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1143,
+          "lambda_N": 0.002741599957587586,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1144,
+          "lambda_N": 0.005199116215045648,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1145,
+          "lambda_N": 0.0001253310574221285,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1332,
+          "lambda_N": 0.01841577855473177,
+          "relative_residual": 4.963083675318167e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1382,
+          "lambda_N": 0.0010183837895847113,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1401,
+          "lambda_N": 0.003796677749703626,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1402,
+          "lambda_N": 0.004280686654251476,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1596,
+          "lambda_N": 0.017215129542900418,
+          "relative_residual": 6.617444900424223e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1656,
+          "lambda_N": 0.0008903872686668688,
+          "relative_residual": 8.392592176775793e-15,
+          "incident_facets": 7
+        },
+        {
+          "row": 1668,
+          "lambda_N": 0.00391155615249364,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1669,
+          "lambda_N": 0.0043208707100482165,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1866,
+          "lambda_N": 0.01861745883275741,
+          "relative_residual": 6.2038545941477046e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1936,
+          "lambda_N": 0.0007749081159037767,
+          "relative_residual": 8.042178034628478e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 1959,
+          "lambda_N": 0.002980195469321907,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1960,
+          "lambda_N": 0.005004068117653188,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2154,
+          "lambda_N": 0.019029151920653492,
+          "relative_residual": 1.9852334701272664e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2216,
+          "lambda_N": 0.001799261639313559,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2253,
+          "lambda_N": 0.004090407963737511,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2254,
+          "lambda_N": 0.004991518992823023,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2442,
+          "lambda_N": 0.01621172007881215,
+          "relative_residual": 1.985233470127266e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2495,
+          "lambda_N": 0.0026650673316185934,
+          "relative_residual": 2.4310414792338975e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 2544,
+          "lambda_N": 0.005921222392702774,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2545,
+          "lambda_N": 0.005518043063594751,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2546,
+          "lambda_N": 0.00020589598147095214,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2727,
+          "lambda_N": 0.011205440817883305,
+          "relative_residual": 4.963083675318166e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2767,
+          "lambda_N": 0.0036971977894554578,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2802,
+          "lambda_N": 0.004704251932947198,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2803,
+          "lambda_N": 0.005537218841870002,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2804,
+          "lambda_N": 0.0015824766729758968,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2991,
+          "lambda_N": 0.009047284651598122,
+          "relative_residual": 6.617444900424222e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 3039,
+          "lambda_N": 0.0022296350481727373,
+          "relative_residual": 2.2794266474335245e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 3060,
+          "lambda_N": 0.005199028375493793,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3061,
+          "lambda_N": 0.004492969235718163,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3062,
+          "lambda_N": 0.0006082716695585451,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3255,
+          "lambda_N": 0.014072975987123544,
+          "relative_residual": 1.3234889800848443e-23,
+          "incident_facets": 2
+        }
+      ],
+      "sharp_edge_cone_scope": "Both socketrim and deformedkeeper polyhedral normalcones; curvedSTEPdomain and pressureconvergence remain separate.",
+      "accepted83body_physical_equilibria": 0
+    }
+  ],
+  "all_checks_pass": false,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

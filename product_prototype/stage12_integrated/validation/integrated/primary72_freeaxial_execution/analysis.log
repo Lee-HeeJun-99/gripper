@@ -1,0 +1,18 @@
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "mesh", "nodes": 12037, "tetra": 50053}
+{"phase": "finite_features", "rows": 3312, "active": 48, "fd_error": 1.0026182722944199e-07, "edges": 792}
+{"iteration": 0, "rows": 3312, "active": 48, "minimum_gap_mm": -1.851695845961343e-07, "minimum_lambda_N": 0.0, "force_residual_N": 9.861039457425235e-12, "torque_residual_Nmm": 1.9655110872207615e-13, "complementarity_Nmm": 1.109619068005838e-16, "gauge_reaction_N": 0.0, "energy_Nmm": 8.010722957030023e-08, "delta_scaled": 0.00010450386619036405, "negative_rows": 0, "violating_rows": 12}
+{"iteration": 1, "rows": 3096, "active": 56, "minimum_gap_mm": -4.611065348991694e-09, "minimum_lambda_N": 0.0, "force_residual_N": 0.0002436993512857109, "torque_residual_Nmm": 4.4197059900774605e-10, "complementarity_Nmm": 1.9020669111830154e-12, "gauge_reaction_N": 0.0, "energy_Nmm": 7.965093588193938e-08, "delta_scaled": 201.9260646483033, "negative_rows": 0, "violating_rows": 12}
+{"iteration": 2, "rows": 2904, "active": 57, "minimum_gap_mm": -2.157177214634487e-12, "minimum_lambda_N": 0.0, "force_residual_N": 0.014281793551454898, "torque_residual_Nmm": 0.03041174053532556, "complementarity_Nmm": 1.4637789879129326e-14, "gauge_reaction_N": 0.0, "energy_Nmm": 8.010450101403308e-08, "delta_scaled": 5.425440008018796, "negative_rows": 0, "violating_rows": 0}
+{"iteration": 3, "rows": 2880, "active": 36, "minimum_gap_mm": -2.934415080785291e-07, "minimum_lambda_N": 0.0, "force_residual_N": 1.6234013548374615e-08, "torque_residual_Nmm": 3.1001415476406e-08, "complementarity_Nmm": 3.959291913871069e-14, "gauge_reaction_N": 0.0, "energy_Nmm": 9.658960987194845e-08, "delta_scaled": 101.02447602673485, "negative_rows": 0, "violating_rows": 12}
+{"iteration": 4, "rows": 2520, "active": 44, "minimum_gap_mm": -3.7071179459502446e-12, "minimum_lambda_N": 0.0, "force_residual_N": 0.019403250274504343, "torque_residual_Nmm": 0.038457131245189714, "complementarity_Nmm": 3.199542003143551e-14, "gauge_reaction_N": 0.0, "energy_Nmm": 9.669753807187702e-08, "delta_scaled": 249.7871270476042, "negative_rows": 0, "violating_rows": 0}
+{"iteration": 5, "rows": 3168, "active": 24, "minimum_gap_mm": -1.7075787924238084e-06, "minimum_lambda_N": 0.0, "force_residual_N": 0.022356765575629767, "torque_residual_Nmm": 0.0788536229975494, "complementarity_Nmm": 0.0, "gauge_reaction_N": 0.0, "energy_Nmm": 1.2702238969621123e-07, "delta_scaled": 1848.351351064778, "negative_rows": 0, "violating_rows": 57}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_keeper_freeaxial72.py", line 118, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_keeper_freeaxial72.py", line 106, in main
+    entry=dict(iteration=iteration,rows=len(kn),active=len(act),minimum_gap_mm=float(gn.min()),minimum_lambda_N=float(lam.min()),force_residual_N=float(abs(res).max()),torque_residual_Nmm=float(abs(tor).max()),complementarity_Nmm=float(abs(lam*gn).max()),gauge_reaction_N=0.,energy_Nmm=en,delta_scaled=float(abs(xn-x).max()),negative_rows=len(neg),violating_rows=len(viol));journal.append(entry);print(json.dumps(entry),flush=True)
+  File "/tmp/regrip_stage2_fem/numpy/_core/_methods.py", line 48, in _amin
+    return umr_minimum(a, axis, None, out, keepdims, initial, where)
+ValueError: zero-size array to reduction operation minimum which has no identity

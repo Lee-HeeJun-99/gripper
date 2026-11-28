@@ -1,0 +1,127 @@
+{
+  "status": "FINITE_SOCKET_EDGE_CONDITIONAL_REFERENCE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_round64c/ROOT_SOCKET_KEEPER.step",
+    "SHA256": "2712913fc402a356fc71643e16830618c76276ee0b57ac2630a3bb1739a55682"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinite72b/producer.py",
+    "SHA256": "1da3b31ed038600fc075760c1243eb59a11ab373a53d82cf6593f7deac03c1df"
+  },
+  "initial": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelasticcontact71c/field.npz",
+    "SHA256": "0e91765517d285628de3b5deace90c9b6c171795ab419029b18d1cb2eb22ae5c"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinite72b/field.npz",
+    "SHA256": "723045ba99698bb433e2e7ca3c8d5a83bd6608bcfa43138bf023c83a9fd305a1"
+  },
+  "contact_keys": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinite72b/contact_keys.json",
+    "SHA256": "29d968fca1fe095b1b83e0a6e8112d65de90b3ac8be86d8d019d9a293203c5ff"
+  },
+  "checks": {
+    "all83_source_hashes": true,
+    "finite_edge_derivative": true,
+    "original_elastic_force": true,
+    "free_spin_torque": true,
+    "nonnegative_multipliers": true,
+    "all_finite_clipped_vertices": true,
+    "complementarity": true,
+    "gauge_reaction_zero": true
+  },
+  "nodes": 5232,
+  "tetra": 19550,
+  "h_mm": 0.5,
+  "E_ASSUMED_MPa": 200000.0,
+  "nu_ASSUMED": 0.3,
+  "bolt_reference_spin_rad": [
+    0.08953625838422113,
+    0.0895362583833709
+  ],
+  "conditional_bolt_torque_Nmm": [
+    0.07530338089198232,
+    0.0788536229975494
+  ],
+  "static_energy_Nmm": 6.179272667541523e-08,
+  "finite_directional_derivative_error": 9.349608653778929e-08,
+  "finite_edge_rows": 576,
+  "journal": [
+    {
+      "iteration": 0,
+      "rows": 1932,
+      "active": 36,
+      "minimum_gap_mm": -2.693959131709611e-07,
+      "minimum_lambda_N": 0.0,
+      "force_residual_N": 1.4021986696755029e-15,
+      "torque_residual_Nmm": 5.967448757360216e-16,
+      "complementarity_Nmm": 1.9836894372632244e-16,
+      "gauge_reaction_N": -1.3945442023377554e-15,
+      "energy_Nmm": 7.627093941991566e-08,
+      "delta_scaled": 9.063268798653601e-12,
+      "negative_rows": 0,
+      "violating_rows": 12
+    },
+    {
+      "iteration": 1,
+      "rows": 1932,
+      "active": 44,
+      "minimum_gap_mm": -1.2241330696327601e-07,
+      "minimum_lambda_N": 0.0,
+      "force_residual_N": 6.862498995903059e-08,
+      "torque_residual_Nmm": 1.810331748397509e-08,
+      "complementarity_Nmm": 3.891276674037456e-15,
+      "gauge_reaction_N": -6.862498995818898e-08,
+      "energy_Nmm": 6.40137136340289e-08,
+      "delta_scaled": 0.0011396133374995826,
+      "negative_rows": 0,
+      "violating_rows": 4
+    },
+    {
+      "iteration": 2,
+      "rows": 1932,
+      "active": 48,
+      "minimum_gap_mm": -2.6258162311165734e-13,
+      "minimum_lambda_N": 0.0,
+      "force_residual_N": 2.9003988284009852e-08,
+      "torque_residual_Nmm": 6.266969720947202e-09,
+      "complementarity_Nmm": 2.6173783853275207e-15,
+      "gauge_reaction_N": -1.2435063295214433e-08,
+      "energy_Nmm": 6.179273231541443e-08,
+      "delta_scaled": 0.000989773871123402,
+      "negative_rows": 0,
+      "violating_rows": 0
+    },
+    {
+      "iteration": 3,
+      "rows": 1932,
+      "active": 48,
+      "minimum_gap_mm": -1.1837753000065732e-14,
+      "minimum_lambda_N": 0.0,
+      "force_residual_N": 3.4924589262241845e-12,
+      "torque_residual_Nmm": 1.441902153231922e-14,
+      "complementarity_Nmm": 1.579390430116089e-16,
+      "gauge_reaction_N": -1.4462172778784144e-14,
+      "energy_Nmm": 6.179272667541529e-08,
+      "delta_scaled": 8.106405876744384e-08,
+      "negative_rows": 0,
+      "violating_rows": 0
+    }
+  ],
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "physical_fixed_keeper_DOF": 0,
+  "numerical_z_gauge": true,
+  "sharp_edge_normal_cone_certified": false,
+  "limitations": [
+    "Clippedfacetgap constrained; exactmaterialedge derivative includes axialcomponent. Sharpedge normalcone NOT YET independently certified; do not treat generalizededge reactions as validatedphysicalcontact.",
+    "Rigid socket lateral/tilt BC, unknownhost reactions; no actualhost/pin/nut/cage/preload operatingequilibrium.",
+    "Linear elastic assumed200GPa/.3, no source minima, curvedSTEP spatial/time/globalenergy certificate."
+  ],
+  "elapsed_s": 2.7267233938910067
+}

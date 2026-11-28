@@ -1,0 +1,2126 @@
+{
+  "status": "ACTUAL_P1_FINITE_SOCKET_EDGE_OBJECTIVE_VALIDATION_COARSE_ONLY_FINE_AND_AXIAL_FAIL",
+  "task_id": "goal_primary_ground65a_finite_socket_edge_pullback_and_host_tilt71",
+  "category": "ACTUAL_PRODUCT_VALIDATION",
+  "producer": {
+    "path": "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/record_primary72.py",
+    "SHA256": "974b254cc824c88589a77a32ccfb9dc6fbc164527e9f269377dd6dacb38c631d"
+  },
+  "candidate_reference": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "primary_id": "P1",
+  "actual_parts": 83,
+  "load_path": "Motor->Drum->Tendon->Finger->Root->Ground",
+  "preserved_extensions": [
+    "distalPET axialslide",
+    "replaceablecartridge",
+    "3Finger",
+    "futurejamming"
+  ],
+  "actual_changed_CAD_files": [],
+  "actual_change": "New finite clippedtriangle materialedge/helicallead contactpullback and objective actualkeeper fields; no new CADsolids thiscycle.",
+  "conditional_bolt_torque_Nmm": [
+    0.07530338089198232,
+    0.0788536229975494
+  ],
+  "coarse_full_independent_checks_pass": true,
+  "fine_full_independent_checks_pass": false,
+  "independent_fields": [
+    {
+      "objective_independent": {
+        "energy_gradient_virtualwork_error_N": 3.469446951953614e-18,
+        "rigid_rotated_force_error_N": 5.690491402094297e-09,
+        "rigid_rotated_energy_relative_error": 2.015296982353816e-09
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjective72/summary.json",
+        "SHA256": "081a2c5f3d7e509630dce2d1778ccb196eddd8f18bbcc9fcf54e81a80e23827a"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjective72/field.npz",
+        "SHA256": "c9985a3aae873adc219bdb0fae90a5edab64098b6131a748bae9d61b4d8ffa55"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "independent_edge_pullback": true,
+        "independent_torque": true,
+        "independent_gaps": true,
+        "independent_edge_direction": true,
+        "nonnegative_multipliers": true,
+        "complementarity": true,
+        "complete_clipped_facets": true,
+        "independent_energy": true,
+        "zero_force": true,
+        "zero_deformed_moment": true,
+        "altered_load_rejected": true,
+        "socket_rim_normal_cones": true,
+        "energy_gradient": true,
+        "rigid_objective_force": true,
+        "rigid_objective_energy": true,
+        "deformed_keeper_polyhedral_normal_cone": true
+      },
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "clipped_triangles": 248,
+          "minimum_gap_mm": -7.317063621670172e-15,
+          "violating_triangles": 0
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "clipped_triangles": 248,
+          "minimum_gap_mm": -7.951972413877684e-15,
+          "violating_triangles": 0
+        }
+      ],
+      "force_residual_N": 1.7486697069266717e-11,
+      "pullback_error_N": 3.469446951953614e-18,
+      "energy_Nmm": 6.179286432870078e-08,
+      "independent_free_spin_residual_Nmm": [
+        -9.233933062624544e-15,
+        -1.1809997424450103e-14
+      ],
+      "keeper_force_N": [
+        -9.896597430447684e-16,
+        1.9116652705264414e-15,
+        3.4293927801383534e-16
+      ],
+      "keeper_deformed_moment_Nmm": [
+        4.934427432629063e-13,
+        -1.2020471423790369e-12,
+        1.283417816466681e-13
+      ],
+      "active_rim_rows": [
+        {
+          "row": 113,
+          "lambda_N": 0.014948200488647149,
+          "end": 1,
+          "axial_gradient": 5.696079230431082e-15,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            5.696079230431082e-15
+          ]
+        },
+        {
+          "row": 287,
+          "lambda_N": 0.009487914802976309,
+          "end": 1,
+          "axial_gradient": 2.1016828335365857e-14,
+          "cone_relative_residual": 2.7755575615628914e-17,
+          "nonnegative_coefficients": [
+            1.0,
+            2.1016828335365857e-14
+          ]
+        },
+        {
+          "row": 458,
+          "lambda_N": 0.009967937877709684,
+          "end": 1,
+          "axial_gradient": 5.397737765460937e-15,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            5.397737765460937e-15
+          ]
+        },
+        {
+          "row": 622,
+          "lambda_N": 0.017406520349851545,
+          "end": 1,
+          "axial_gradient": -2.1780228782571224e-15,
+          "cone_relative_residual": 2.1780228782571224e-15,
+          "nonnegative_coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "row": 773,
+          "lambda_N": 0.020313783883080656,
+          "end": 1,
+          "axial_gradient": -2.8867149401525213e-15,
+          "cone_relative_residual": 2.8867149401525213e-15,
+          "nonnegative_coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "row": 924,
+          "lambda_N": 0.01671176847555698,
+          "end": 1,
+          "axial_gradient": 2.0118006069276947e-14,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0,
+            2.0118006069276947e-14
+          ]
+        },
+        {
+          "row": 1079,
+          "lambda_N": 0.016330730833371693,
+          "end": 1,
+          "axial_gradient": -1.0197300491124105e-15,
+          "cone_relative_residual": 1.0197300491124105e-15,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            0.0
+          ]
+        },
+        {
+          "row": 1250,
+          "lambda_N": 0.018359075870636347,
+          "end": 1,
+          "axial_gradient": -3.665931286858902e-15,
+          "cone_relative_residual": 3.6663515499583495e-15,
+          "nonnegative_coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "row": 1421,
+          "lambda_N": 0.017196292389469372,
+          "end": 1,
+          "axial_gradient": -1.9867170533945984e-15,
+          "cone_relative_residual": 1.989816725704404e-15,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            0.0
+          ]
+        },
+        {
+          "row": 1590,
+          "lambda_N": 0.009130119672094929,
+          "end": 1,
+          "axial_gradient": -1.6338398408624002e-14,
+          "cone_relative_residual": 1.6338775612345357e-14,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            0.0
+          ]
+        },
+        {
+          "row": 1741,
+          "lambda_N": 0.008638574832805649,
+          "end": 1,
+          "axial_gradient": -4.094616465678354e-15,
+          "cone_relative_residual": 4.094616465678355e-15,
+          "nonnegative_coefficients": [
+            0.9999999999999999,
+            0.0
+          ]
+        },
+        {
+          "row": 1892,
+          "lambda_N": 0.01207991129689624,
+          "end": 1,
+          "axial_gradient": 5.595305493475229e-15,
+          "cone_relative_residual": 2.2204460492503136e-16,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            5.595305493475229e-15
+          ]
+        }
+      ],
+      "active_keeper_cones": [
+        {
+          "row": 0,
+          "lambda_N": 0.002975006283058409,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 12,
+          "lambda_N": 0.00485230000944888,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 13,
+          "lambda_N": 0.004174473833946434,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 113,
+          "lambda_N": 0.014948200488647149,
+          "relative_residual": 3.3087224502121107e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 166,
+          "lambda_N": 0.0037874521035440646,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 187,
+          "lambda_N": 0.005933337502589308,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 188,
+          "lambda_N": 0.003909239823924641,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 287,
+          "lambda_N": 0.009487914802976309,
+          "relative_residual": 1.5716431638507526e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 331,
+          "lambda_N": 0.0031027367352140607,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 360,
+          "lambda_N": 0.005798330066548589,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 361,
+          "lambda_N": 0.0041545630833094436,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 458,
+          "lambda_N": 0.009967937877709684,
+          "relative_residual": 2.150669592637872e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 493,
+          "lambda_N": 0.0016615262791687228,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 525,
+          "lambda_N": 0.004411491888238712,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 526,
+          "lambda_N": 0.004178682084035878,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 622,
+          "lambda_N": 0.017406520349851545,
+          "relative_residual": 9.926167350636332e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 650,
+          "lambda_N": 0.00043740204347102185,
+          "relative_residual": 4.028715789424987e-14,
+          "incident_facets": 5
+        },
+        {
+          "row": 674,
+          "lambda_N": 0.004686202277198456,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 675,
+          "lambda_N": 0.0012146134785436767,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 773,
+          "lambda_N": 0.020313783883080656,
+          "relative_residual": 3.308722450212111e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 807,
+          "lambda_N": 0.000970487837873805,
+          "relative_residual": 1.3246966139828988e-14,
+          "incident_facets": 5
+        },
+        {
+          "row": 823,
+          "lambda_N": 0.0048788760956879895,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 824,
+          "lambda_N": 0.0021730420093879887,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 924,
+          "lambda_N": 0.01671176847555698,
+          "relative_residual": 1.9852334701272664e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 966,
+          "lambda_N": 0.0011557280805066816,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 978,
+          "lambda_N": 0.004008281421398067,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 979,
+          "lambda_N": 0.005763221975751815,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1079,
+          "lambda_N": 0.016330730833371693,
+          "relative_residual": 9.098986738083304e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1131,
+          "lambda_N": 0.0010052050941327675,
+          "relative_residual": 1.249103632662398e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 1149,
+          "lambda_N": 0.005157729984345114,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 1150,
+          "lambda_N": 0.003081553112957201,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1250,
+          "lambda_N": 0.018359075870636347,
+          "relative_residual": 3.308722450212111e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 1296,
+          "lambda_N": 0.0021613360719147344,
+          "relative_residual": 6.6835025184387474e-15,
+          "incident_facets": 5
+        },
+        {
+          "row": 1322,
+          "lambda_N": 0.005473214097902472,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1323,
+          "lambda_N": 0.003267163916585987,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1421,
+          "lambda_N": 0.017196292389469372,
+          "relative_residual": 6.617444900424223e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1460,
+          "lambda_N": 0.0033569429436562407,
+          "relative_residual": 4.5089829032997496e-15,
+          "incident_facets": 5
+        },
+        {
+          "row": 1493,
+          "lambda_N": 0.006677175340260045,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1494,
+          "lambda_N": 0.005377000879221111,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 1590,
+          "lambda_N": 0.009130119672094929,
+          "relative_residual": 1.9852334701272664e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 1617,
+          "lambda_N": 0.0037629627748306904,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 1642,
+          "lambda_N": 0.006766770910202672,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1643,
+          "lambda_N": 0.0057579430248445905,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1741,
+          "lambda_N": 0.008638574832805649,
+          "relative_residual": 3.3087224502121114e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1774,
+          "lambda_N": 0.002752368039340151,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1791,
+          "lambda_N": 0.005666474522979383,
+          "relative_residual": 0.0,
+          "incident_facets": 5
+        },
+        {
+          "row": 1792,
+          "lambda_N": 0.00638269886713121,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1892,
+          "lambda_N": 0.01207991129689624,
+          "relative_residual": 4.963083675318167e-24,
+          "incident_facets": 2
+        }
+      ],
+      "sharp_edge_cone_scope": "Both socketrim and deformedkeeper polyhedral normalcones; curvedSTEPdomain and pressureconvergence remain separate.",
+      "accepted83body_physical_equilibria": 0
+    },
+    {
+      "objective_independent": {
+        "energy_gradient_virtualwork_error_N": 3.157196726277789e-16,
+        "rigid_rotated_force_error_N": 5.08624685264255e-09,
+        "rigid_rotated_energy_relative_error": 7.760493956439005e-10
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72/summary.json",
+        "SHA256": "f4f053af3335be6ff3f78991911ebf4c29881879063e2963d00b2d8e5329a35e"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72/field.npz",
+        "SHA256": "0b249a3a4fd0aa6a491a57b1b978395d6d23c718b5e3afdd6b054cba9495c5b8"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "independent_edge_pullback": true,
+        "independent_torque": true,
+        "independent_gaps": true,
+        "independent_edge_direction": true,
+        "nonnegative_multipliers": true,
+        "complementarity": true,
+        "complete_clipped_facets": true,
+        "independent_energy": true,
+        "zero_force": true,
+        "zero_deformed_moment": false,
+        "altered_load_rejected": true,
+        "socket_rim_normal_cones": true,
+        "energy_gradient": true,
+        "rigid_objective_force": true,
+        "rigid_objective_energy": true,
+        "deformed_keeper_polyhedral_normal_cone": true
+      },
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "clipped_triangles": 448,
+          "minimum_gap_mm": -4.191091917959966e-15,
+          "violating_triangles": 0
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "clipped_triangles": 448,
+          "minimum_gap_mm": -5.676015213396113e-15,
+          "violating_triangles": 0
+        }
+      ],
+      "force_residual_N": 1.522866014959075e-09,
+      "pullback_error_N": 1.734723475976807e-18,
+      "energy_Nmm": 6.930597495964106e-08,
+      "independent_free_spin_residual_Nmm": [
+        -1.775187635777442e-12,
+        4.399171998903384e-14
+      ],
+      "keeper_force_N": [
+        -2.5804011705155006e-15,
+        5.915407053080912e-15,
+        1.5360411543516946e-09
+      ],
+      "keeper_deformed_moment_Nmm": [
+        2.4980042069577824e-08,
+        -9.628468540827037e-08,
+        3.5282887722587475e-13
+      ],
+      "active_rim_rows": [
+        {
+          "row": 210,
+          "lambda_N": 0.011345395266549223,
+          "end": 1,
+          "axial_gradient": -1.2304572837832765e-14,
+          "cone_relative_residual": 1.2306576149689572e-14,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            0.0
+          ]
+        },
+        {
+          "row": 501,
+          "lambda_N": 0.008500287996025554,
+          "end": 1,
+          "axial_gradient": 1.0005829068046256e-14,
+          "cone_relative_residual": 2.775557561562892e-17,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            1.0005829068046256e-14
+          ]
+        },
+        {
+          "row": 789,
+          "lambda_N": 0.010210090199476343,
+          "end": 1,
+          "axial_gradient": -1.6426046611480262e-14,
+          "cone_relative_residual": 1.64264218025158e-14,
+          "nonnegative_coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "row": 1068,
+          "lambda_N": 0.01611429631292288,
+          "end": 1,
+          "axial_gradient": 2.32104858978039e-08,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            2.32104858978039e-08
+          ]
+        },
+        {
+          "row": 1332,
+          "lambda_N": 0.01841577855473177,
+          "end": 1,
+          "axial_gradient": 1.6773745478882896e-14,
+          "cone_relative_residual": 5.551115123125784e-17,
+          "nonnegative_coefficients": [
+            1.0000000000000004,
+            1.6773745478882896e-14
+          ]
+        },
+        {
+          "row": 1596,
+          "lambda_N": 0.017215129542900418,
+          "end": 1,
+          "axial_gradient": 7.878793136905088e-10,
+          "cone_relative_residual": 1.1102230246251568e-16,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            7.878793136905088e-10
+          ]
+        },
+        {
+          "row": 1866,
+          "lambda_N": 0.01861745883275741,
+          "end": 1,
+          "axial_gradient": 3.0951336395396275e-08,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            3.0951336395396275e-08
+          ]
+        },
+        {
+          "row": 2154,
+          "lambda_N": 0.019029151920653492,
+          "end": 1,
+          "axial_gradient": 1.3865526292177607e-08,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0,
+            1.3865526292177607e-08
+          ]
+        },
+        {
+          "row": 2442,
+          "lambda_N": 0.01621172007881215,
+          "end": 1,
+          "axial_gradient": 1.902156322362588e-08,
+          "cone_relative_residual": 2.2204460492503126e-16,
+          "nonnegative_coefficients": [
+            0.9999999999999999,
+            1.902156322362588e-08
+          ]
+        },
+        {
+          "row": 2727,
+          "lambda_N": 0.011205440817883305,
+          "end": 1,
+          "axial_gradient": 2.920838744561893e-14,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            2.920838744561893e-14
+          ]
+        },
+        {
+          "row": 2991,
+          "lambda_N": 0.009047284651598122,
+          "end": 1,
+          "axial_gradient": 6.593287522151384e-15,
+          "cone_relative_residual": 5.551115123125783e-17,
+          "nonnegative_coefficients": [
+            1.0,
+            6.593287522151384e-15
+          ]
+        },
+        {
+          "row": 3255,
+          "lambda_N": 0.014072975987123544,
+          "end": 1,
+          "axial_gradient": -7.595051363762248e-15,
+          "cone_relative_residual": 7.595051363762248e-15,
+          "nonnegative_coefficients": [
+            0.9999999999999999,
+            0.0
+          ]
+        }
+      ],
+      "active_keeper_cones": [
+        {
+          "row": 0,
+          "lambda_N": 0.002355182686344752,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 12,
+          "lambda_N": 0.0043187459189163915,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 13,
+          "lambda_N": 0.005639233788992828,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 14,
+          "lambda_N": 0.001044754285401665,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 210,
+          "lambda_N": 0.011345395266549223,
+          "relative_residual": 1.6543612251060556e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 281,
+          "lambda_N": 0.002981183599232715,
+          "relative_residual": 1.4696577288475513e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 309,
+          "lambda_N": 0.0054546694031549015,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 310,
+          "lambda_N": 0.00559475848194056,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 311,
+          "lambda_N": 0.0013569057744519243,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 501,
+          "lambda_N": 0.008500287996025554,
+          "relative_residual": 8.271806125530278e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 561,
+          "lambda_N": 0.0025677533493294615,
+          "relative_residual": 3.320260733019609e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 603,
+          "lambda_N": 0.005202029584786413,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 604,
+          "lambda_N": 0.0053357636005766955,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 605,
+          "lambda_N": 0.0009336197667253155,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 789,
+          "lambda_N": 0.010210090199476343,
+          "relative_residual": 8.271806125530278e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 838,
+          "lambda_N": 0.0013284117177554942,
+          "relative_residual": 2.420633138378037e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 885,
+          "lambda_N": 0.0036853482888056935,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 886,
+          "lambda_N": 0.004878976144409066,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1068,
+          "lambda_N": 0.01611429631292288,
+          "relative_residual": 4.963083675318166e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1110,
+          "lambda_N": 0.0004957922749041278,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1143,
+          "lambda_N": 0.002741599957587586,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1144,
+          "lambda_N": 0.005199116215045648,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1145,
+          "lambda_N": 0.0001253310574221285,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1332,
+          "lambda_N": 0.01841577855473177,
+          "relative_residual": 4.963083675318167e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1382,
+          "lambda_N": 0.0010183837895847113,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1401,
+          "lambda_N": 0.003796677749703626,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1402,
+          "lambda_N": 0.004280686654251476,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1596,
+          "lambda_N": 0.017215129542900418,
+          "relative_residual": 6.617444900424223e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1656,
+          "lambda_N": 0.0008903872686668688,
+          "relative_residual": 8.392592176775793e-15,
+          "incident_facets": 7
+        },
+        {
+          "row": 1668,
+          "lambda_N": 0.00391155615249364,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1669,
+          "lambda_N": 0.0043208707100482165,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1866,
+          "lambda_N": 0.01861745883275741,
+          "relative_residual": 6.2038545941477046e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1936,
+          "lambda_N": 0.0007749081159037767,
+          "relative_residual": 8.042178034628478e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 1959,
+          "lambda_N": 0.002980195469321907,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1960,
+          "lambda_N": 0.005004068117653188,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2154,
+          "lambda_N": 0.019029151920653492,
+          "relative_residual": 1.9852334701272664e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2216,
+          "lambda_N": 0.001799261639313559,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2253,
+          "lambda_N": 0.004090407963737511,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2254,
+          "lambda_N": 0.004991518992823023,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2442,
+          "lambda_N": 0.01621172007881215,
+          "relative_residual": 1.985233470127266e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2495,
+          "lambda_N": 0.0026650673316185934,
+          "relative_residual": 2.4310414792338975e-14,
+          "incident_facets": 6
+        },
+        {
+          "row": 2544,
+          "lambda_N": 0.005921222392702774,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2545,
+          "lambda_N": 0.005518043063594751,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2546,
+          "lambda_N": 0.00020589598147095214,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2727,
+          "lambda_N": 0.011205440817883305,
+          "relative_residual": 4.963083675318166e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2767,
+          "lambda_N": 0.0036971977894554578,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2802,
+          "lambda_N": 0.004704251932947198,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2803,
+          "lambda_N": 0.005537218841870002,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2804,
+          "lambda_N": 0.0015824766729758968,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2991,
+          "lambda_N": 0.009047284651598122,
+          "relative_residual": 6.617444900424222e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 3039,
+          "lambda_N": 0.0022296350481727373,
+          "relative_residual": 2.2794266474335245e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 3060,
+          "lambda_N": 0.005199028375493793,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3061,
+          "lambda_N": 0.004492969235718163,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3062,
+          "lambda_N": 0.0006082716695585451,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3255,
+          "lambda_N": 0.014072975987123544,
+          "relative_residual": 1.3234889800848443e-23,
+          "incident_facets": 2
+        }
+      ],
+      "sharp_edge_cone_scope": "Both socketrim and deformedkeeper polyhedral normalcones; curvedSTEPdomain and pressureconvergence remain separate.",
+      "accepted83body_physical_equilibria": 0
+    },
+    {
+      "objective_independent": {
+        "energy_gradient_virtualwork_error_N": 2.1337098754514727e-16,
+        "rigid_rotated_force_error_N": 5.642681687466439e-09,
+        "rigid_rotated_energy_relative_error": 3.428836779393804e-10
+      },
+      "source": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72b/summary.json",
+        "SHA256": "521152b66ebfb7c2c4b5c51854ced4e51f7cdc12799818b42936755f445f6aca"
+      },
+      "field": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72b/field.npz",
+        "SHA256": "0548a437938397ecb33876646cfffe5b8e89d5c63556dfe8cee32c3cae54835d"
+      },
+      "checks": {
+        "all_original_tetra_force": true,
+        "independent_edge_pullback": true,
+        "independent_torque": true,
+        "independent_gaps": true,
+        "independent_edge_direction": true,
+        "nonnegative_multipliers": true,
+        "complementarity": true,
+        "complete_clipped_facets": true,
+        "independent_energy": true,
+        "zero_force": true,
+        "zero_deformed_moment": false,
+        "altered_load_rejected": true,
+        "socket_rim_normal_cones": true,
+        "energy_gradient": true,
+        "rigid_objective_force": true,
+        "rigid_objective_energy": true,
+        "deformed_keeper_polyhedral_normal_cone": true
+      },
+      "all_clipped_facets": [
+        {
+          "bolt": "F0_RF0_BOLT",
+          "clipped_triangles": 448,
+          "minimum_gap_mm": -1.0259154636926837e-14,
+          "violating_triangles": 0
+        },
+        {
+          "bolt": "F0_RF1_BOLT",
+          "clipped_triangles": 448,
+          "minimum_gap_mm": -6.744604874597826e-15,
+          "violating_triangles": 0
+        }
+      ],
+      "force_residual_N": 1.5355199030824907e-09,
+      "pullback_error_N": 1.734723475976807e-18,
+      "energy_Nmm": 6.930597495792205e-08,
+      "independent_free_spin_residual_Nmm": [
+        -1.1796119636642288e-16,
+        -4.36282954208167e-16
+      ],
+      "keeper_force_N": [
+        -5.110495360227674e-15,
+        -2.2898349882893854e-15,
+        1.5360424134728136e-09
+      ],
+      "keeper_deformed_moment_Nmm": [
+        2.540193039094786e-08,
+        -9.626386121271233e-08,
+        -1.66644475996236e-13
+      ],
+      "active_rim_rows": [
+        {
+          "row": 210,
+          "lambda_N": 0.011345395610752616,
+          "end": 1,
+          "axial_gradient": -7.60548456715939e-15,
+          "cone_relative_residual": 7.60629485708671e-15,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            0.0
+          ]
+        },
+        {
+          "row": 501,
+          "lambda_N": 0.008500287364093254,
+          "end": 1,
+          "axial_gradient": -1.0107541493753733e-14,
+          "cone_relative_residual": 1.010757960245336e-14,
+          "nonnegative_coefficients": [
+            0.9999999999999999,
+            0.0
+          ]
+        },
+        {
+          "row": 789,
+          "lambda_N": 0.010210090096179012,
+          "end": 1,
+          "axial_gradient": 4.037347355651071e-15,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0,
+            4.037347355651071e-15
+          ]
+        },
+        {
+          "row": 1068,
+          "lambda_N": 0.016114296402026548,
+          "end": 1,
+          "axial_gradient": 2.3210510636944574e-08,
+          "cone_relative_residual": 2.2204460492503126e-16,
+          "nonnegative_coefficients": [
+            1.0000000000000002,
+            2.3210510636944574e-08
+          ]
+        },
+        {
+          "row": 1332,
+          "lambda_N": 0.01841577821087038,
+          "end": 1,
+          "axial_gradient": 5.631164496584602e-14,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            0.9999999999999997,
+            5.631164496584602e-14
+          ]
+        },
+        {
+          "row": 1596,
+          "lambda_N": 0.017215129072976936,
+          "end": 1,
+          "axial_gradient": 7.878833239410583e-10,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            7.878833239410583e-10
+          ]
+        },
+        {
+          "row": 1866,
+          "lambda_N": 0.018617458573814995,
+          "end": 1,
+          "axial_gradient": 3.09513431611672e-08,
+          "cone_relative_residual": 3.330669073875468e-16,
+          "nonnegative_coefficients": [
+            1.0,
+            3.09513431611672e-08
+          ]
+        },
+        {
+          "row": 2154,
+          "lambda_N": 0.019029152170818853,
+          "end": 1,
+          "axial_gradient": 1.386550700653491e-08,
+          "cone_relative_residual": 5.5511151231257815e-17,
+          "nonnegative_coefficients": [
+            0.9999999999999998,
+            1.386550700653491e-08
+          ]
+        },
+        {
+          "row": 2442,
+          "lambda_N": 0.0162117200927304,
+          "end": 1,
+          "axial_gradient": 1.902156322362554e-08,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            1.902156322362554e-08
+          ]
+        },
+        {
+          "row": 2727,
+          "lambda_N": 0.011205440267781105,
+          "end": 1,
+          "axial_gradient": 3.597415776673501e-14,
+          "cone_relative_residual": 1.1102230246251565e-16,
+          "nonnegative_coefficients": [
+            1.0,
+            3.597415776673501e-14
+          ]
+        },
+        {
+          "row": 2991,
+          "lambda_N": 0.009047285082345709,
+          "end": 1,
+          "axial_gradient": 6.593287333081548e-15,
+          "cone_relative_residual": 5.551115123125783e-17,
+          "nonnegative_coefficients": [
+            0.9999999999999997,
+            6.593287333081548e-15
+          ]
+        },
+        {
+          "row": 3255,
+          "lambda_N": 0.014072975997716366,
+          "end": 1,
+          "axial_gradient": 2.3410338244272395e-15,
+          "cone_relative_residual": 0.0,
+          "nonnegative_coefficients": [
+            1.0,
+            2.3410338244272395e-15
+          ]
+        }
+      ],
+      "active_keeper_cones": [
+        {
+          "row": 0,
+          "lambda_N": 0.0023551828038318383,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 12,
+          "lambda_N": 0.0043187460899591626,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 13,
+          "lambda_N": 0.0056392338993614954,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 14,
+          "lambda_N": 0.0010447546020191018,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 210,
+          "lambda_N": 0.011345395610752616,
+          "relative_residual": 5.293955920339377e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 281,
+          "lambda_N": 0.0029811834344758386,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 309,
+          "lambda_N": 0.005454669469709405,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 310,
+          "lambda_N": 0.005594758325982369,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 311,
+          "lambda_N": 0.0013569057101755716,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 501,
+          "lambda_N": 0.008500287364093254,
+          "relative_residual": 1.6543612251060557e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 561,
+          "lambda_N": 0.0025677533146264905,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 603,
+          "lambda_N": 0.005202029718990249,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 604,
+          "lambda_N": 0.005335763457502759,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 605,
+          "lambda_N": 0.0009336199956152822,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 789,
+          "lambda_N": 0.010210090096179012,
+          "relative_residual": 2.6469779601696886e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 838,
+          "lambda_N": 0.0013284117828815532,
+          "relative_residual": 5.4088677980956845e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 885,
+          "lambda_N": 0.0036853488431338346,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 886,
+          "lambda_N": 0.004878976118625234,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1068,
+          "lambda_N": 0.016114296402026548,
+          "relative_residual": 1.654361225106055e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 1110,
+          "lambda_N": 0.0004957923820197613,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1143,
+          "lambda_N": 0.002741599491740063,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1144,
+          "lambda_N": 0.00519911621806141,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1145,
+          "lambda_N": 0.0001253311986468439,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1332,
+          "lambda_N": 0.01841577821087038,
+          "relative_residual": 4.963083675318167e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1382,
+          "lambda_N": 0.0010183838279018403,
+          "relative_residual": 4.746203430272544e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 1401,
+          "lambda_N": 0.0037966774482511103,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1402,
+          "lambda_N": 0.004280687067936455,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1596,
+          "lambda_N": 0.017215129072976936,
+          "relative_residual": 1.6543612251060553e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 1656,
+          "lambda_N": 0.0008903872469066502,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1668,
+          "lambda_N": 0.0039115561593821065,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1669,
+          "lambda_N": 0.00432087089784766,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1866,
+          "lambda_N": 0.018617458573814995,
+          "relative_residual": 4.963083675318164e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 1936,
+          "lambda_N": 0.0007749079536603758,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 1959,
+          "lambda_N": 0.0029801953496287653,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 1960,
+          "lambda_N": 0.005004068004148296,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2154,
+          "lambda_N": 0.019029152170818853,
+          "relative_residual": 1.323488980084844e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2216,
+          "lambda_N": 0.0017992616962135353,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2253,
+          "lambda_N": 0.0040904080488774,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2254,
+          "lambda_N": 0.004991519067162466,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2442,
+          "lambda_N": 0.0162117200927304,
+          "relative_residual": 2.3161057151484775e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2495,
+          "lambda_N": 0.0026650673631631715,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2544,
+          "lambda_N": 0.005921222624118147,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2545,
+          "lambda_N": 0.005518042819095608,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2546,
+          "lambda_N": 0.0002058964107355719,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2727,
+          "lambda_N": 0.011205440267781105,
+          "relative_residual": 3.3087224502121107e-23,
+          "incident_facets": 2
+        },
+        {
+          "row": 2767,
+          "lambda_N": 0.003697197754788216,
+          "relative_residual": 0.0,
+          "incident_facets": 6
+        },
+        {
+          "row": 2802,
+          "lambda_N": 0.0047042517103208685,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2803,
+          "lambda_N": 0.005537218497211346,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2804,
+          "lambda_N": 0.001582476710282568,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 2991,
+          "lambda_N": 0.009047285082345709,
+          "relative_residual": 4.963083675318166e-24,
+          "incident_facets": 2
+        },
+        {
+          "row": 3039,
+          "lambda_N": 0.002229635034358553,
+          "relative_residual": 6.421946308066141e-15,
+          "incident_facets": 6
+        },
+        {
+          "row": 3060,
+          "lambda_N": 0.005199028277741802,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3061,
+          "lambda_N": 0.004492969399925035,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3062,
+          "lambda_N": 0.0006082718436835188,
+          "relative_residual": 0.0,
+          "incident_facets": 7
+        },
+        {
+          "row": 3255,
+          "lambda_N": 0.014072975997716366,
+          "relative_residual": 6.617444900424223e-24,
+          "incident_facets": 2
+        }
+      ],
+      "sharp_edge_cone_scope": "Both socketrim and deformedkeeper polyhedral normalcones; curvedSTEPdomain and pressureconvergence remain separate.",
+      "accepted83body_physical_equilibria": 0
+    }
+  ],
+  "energy_comparison": {
+    "coarse_Nmm": 6.179286432870078e-08,
+    "fine_Nmm": 6.930597495792205e-08,
+    "fine_denominator_fraction": 0.10840494825709798,
+    "coarse_denominator_fraction": 0.12158540813476536,
+    "original1percent_pass": false,
+    "physical_spatial_gate_pass": false,
+    "full_crossmesh_vector_computed": false,
+    "warning": "Differentfacetedmeshdomains and invalidfinegauge; scalarcomparison is not an acceptedconvergencestudy."
+  },
+  "edge_virtualwork": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_edgework72/summary.json",
+    "SHA256": "871204e93a2342fbe91299c02017ee2d8220f9fceb239bf140e7562d014d7e97"
+  },
+  "actual_assembly": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product72/summary.json",
+    "SHA256": "fb57694bb4c17f2897f3f21d1c424811301fa2e749c523b25e2f9b336bcc2dcb"
+  },
+  "conditional_demand_rows": 183,
+  "current_screen_failures": 45,
+  "accepted83body_physical_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "remaining_system_gate_ids": [
+    "bearing_ratings_reactions",
+    "cad_model_match",
+    "changed_stage1_revalidation",
+    "continuous_load_path",
+    "coupling_capacity",
+    "finger_structure",
+    "housing_shoulder_retention",
+    "idler_load_drag",
+    "motor_alignment_reactions",
+    "motor_running_torque_speed",
+    "numerical_convergence",
+    "overload_protection",
+    "physical_mass_inertia",
+    "pin_drum_strength",
+    "qualified_worst_case",
+    "root_palm_strength",
+    "shaft_strength",
+    "stage3_handoff",
+    "static_dynamic_consistency",
+    "tendon_force_stroke",
+    "tendon_stiffness_strength",
+    "terminal_retention"
+  ],
+  "whole_system_release": false,
+  "hardware": "NOT_MEASURED",
+  "Stage3": "BLOCKED",
+  "next_task_id": "goal_primary_ground65a_free_axial_pin_host_contact_and_tilt72",
+  "next_mechanism": "Continue SAME ONE83part primaryP1_ground65a. Retain complete finite socketedge materialtrim/helicallead derivatives and objectivekeeperelasticity; coarse fullfacet/force/torque/normalcones are boundedlocal evidence only. FIRST connect actual ROOT_SOCKET_KEEPER radius.5mm transversebore to installed splitpin radius.45mm with real .04mm split, finite shaft/eye/splayedlegs and Root support. Derive complete curved finitefacet gap and equal-opposite force/torque pullbacks; do not replace splitpin by solidcylinder or hiddenZgauge. Restore actual pin/host compliance and allfree axial/lateral/tiltDOFs, bolt nut/thread/seat and setting/preload. Verify alloriginalDOFs, full3D bodywrenches, allsurface gaps/normalcones, then finite sockettop contact at actual retained position. Freeaxial rawtrial loses socketoverlap and crashes; not a physicalescape certificate. Fine nonzeroZgauge gives deformedmomentFAIL after90iterations, so no numerical tightening rerun or accepting gaugedstate. Actual bore/tongue planar full24 FarkasFAIL remains. Fullspatial1percent/base-finest/fullvector, curvedSTEPaccuracy, time.1percent/globalenergy/source-minimum/process/floor/fullstroke/current/speed/protectedpeak/mass/final3Finger and all22 remain; NoStage3.",
+  "executions": [
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_coneverify_execution/execution.json",
+        "SHA256": "c099bb3b43bf0f1c67ab82633e5410c69af7b220bc3798efddaaf1121bc191b6"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective_verify72c.py",
+        "primaryP1_keeperconeverify72",
+        "primaryP1_keeperobjective72"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 2.8056089759338647,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_coneverify_execution/analysis.log",
+        "SHA256": "ba4a2d02424764da12b0fb2a92d678037e1e64a201af4db39bc56b6bfa405d89"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_edgework_execution/execution.json",
+        "SHA256": "a6b7bc1ae7f76fa6692d6a81f8f31a06cd418460e6daad5646672ca8cf509e9c"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_edge_virtualwork72.py",
+        "primaryP1_edgework72",
+        "primaryP1_keeperobjective72"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.4034251200500876,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_edgework_execution/analysis.log",
+        "SHA256": "58a52bfef18ca41d999b4bd7175c37e7c15d9152222a337bb326c3f3ed00cda0"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_finalverify_execution/execution.json",
+        "SHA256": "4fdb045e7ef4417c12056898b741e180bc53b5ec5c2670dd45d5bf263b28d3fb"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective_verify72c.py",
+        "primaryP1_keeperfinalverify72",
+        "primaryP1_keeperobjective72",
+        "primaryP1_keeperobjectivefine72",
+        "primaryP1_keeperobjectivefine72b"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 8.613856138894334,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_finalverify_execution/analysis.log",
+        "SHA256": "fc013035fe7d00358cd82ebbd2d55dc09b0e2c5e316da2cde0bd2a244af3e7d9"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_fine_execution/execution.json",
+        "SHA256": "bacd8801d7d821faa9a52aa13d00a95984d4e73cfacf1b6619e93853dfd5a0e0"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_finite72.py",
+        ".35",
+        "primaryP1_keeperfinitefine72",
+        "primaryP1_keeperelasticfine71"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 15.225469365017489,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_fine_execution/analysis.log",
+        "SHA256": "815deb5ba7cf797c9c2c2344922699daac2d2a7a34b80f7d7fdb6ba78b093976"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_fineconeverify_execution/execution.json",
+        "SHA256": "f36a706b35bac6c873318d9f1093d47d3330c401ab29f88fe7426e17a0f68187"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective_verify72c.py",
+        "primaryP1_keeperfineconeverify72",
+        "primaryP1_keeperobjectivefine72"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 4.207837891066447,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_fineconeverify_execution/analysis.log",
+        "SHA256": "2354f1767d7767a027b5a60008d5a8011a45da38aee76ba97425504af5348ff8"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_finite_execution/execution.json",
+        "SHA256": "ec2081d537d4f77172455f2442658d52656a7d1a658932bafd7d244d64fa8d4c"
+      },
+      "command": [
+        "/home/ubuntu/.local/bin/python",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_finite72.py",
+        ".5",
+        "primaryP1_keeperfinite72",
+        "primaryP1_keeperelasticcontact71c"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.20151269505731761,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_finite_execution/analysis.log",
+        "SHA256": "ead29ebf7f0a00e4fded750a48095f34e9601be4c6464b2019ca4d465dc81a77"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_finiteb_execution/execution.json",
+        "SHA256": "1bc4464baa5b918edb42b9534c1077de1357d1bfe5ed39b94be25f8b3b7dbef8"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_finite72.py",
+        ".5",
+        "primaryP1_keeperfinite72b",
+        "primaryP1_keeperelasticcontact71c"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 3.807052649091929,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_finiteb_execution/analysis.log",
+        "SHA256": "6a37e76effb6646b2347560b65bb8e196f400c697c7c302fd006a859efd49d41"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_freeaxial_execution/execution.json",
+        "SHA256": "a15f6a6488a3233f21e453ce523ba49daab888901d678e8da0dbf1489616d5ff"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_freeaxial72.py",
+        ".35",
+        "primaryP1_keeperfreeaxial72",
+        "primaryP1_keeperelasticfine71"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 27.04463221714832,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_freeaxial_execution/analysis.log",
+        "SHA256": "cecad407df8ec64c59c2b5050a6ead7f044fba2d73787acb23c00cc4ba62e7e9"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objective_execution/execution.json",
+        "SHA256": "dfb488fdcfba85b44193ab876df8f82e6c2c35c4a31e1596fd01126c7d91996c"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective72.py",
+        ".5",
+        "primaryP1_keeperobjective72",
+        "primaryP1_keeperelasticcontact71c"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 6.010846265824512,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objective_execution/analysis.log",
+        "SHA256": "88013168821f55d42135c4e91345223abd06908b4b9f70f1e8cbb942ccd1a2ee"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectivefine_execution/execution.json",
+        "SHA256": "702770822d125d6eef687550a0d85b9f1c98a14c8864045aa9222169e4e74ad0"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective72.py",
+        ".35",
+        "primaryP1_keeperobjectivefine72",
+        "primaryP1_keeperelasticfine71"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 27.843534289160743,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectivefine_execution/analysis.log",
+        "SHA256": "7c14a9506cd8002d09dc05b4abd25d359cf517a25b048649408af771847a3e73"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectivefineb_execution/execution.json",
+        "SHA256": "212cbc9e574fb45bd0ae84c1e5e9de1cea5a00598acbac085851a79db74d2595"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective72b.py",
+        ".35",
+        "primaryP1_keeperobjectivefine72b",
+        "primaryP1_keeperelasticfine71"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 272.23632241995074,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectivefineb_execution/analysis.log",
+        "SHA256": "0b21a076eda5a5821c4f930064113608b1ed3e5c4051e5719e14d9f76529959b"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectiveverify_execution/execution.json",
+        "SHA256": "4dbf77d598d079acc4f54c37ed99c1514283304aea1e19c763fe6a56e4b43c99"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective_verify72.py",
+        "primaryP1_keeperobjectiveverify72",
+        "primaryP1_keeperobjective72",
+        "primaryP1_keeperfinitefine72"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 4.00680885091424,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectiveverify_execution/analysis.log",
+        "SHA256": "66ea724ac06fc45dc31ec25a0a53bd53c54a1fcad5701db6b32510b172496aba"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectiveverifyb_execution/execution.json",
+        "SHA256": "66f154626a6c6c0405f3bde83f2d7ee14bf1b81e5356b6fb6ad5f6143121ad85"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_objective_verify72b.py",
+        "primaryP1_keeperobjectiveverify72b",
+        "primaryP1_keeperobjective72"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 2.004385919077322,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_objectiveverifyb_execution/analysis.log",
+        "SHA256": "e3ca67b8be473a274be7f5a83de02e2ac082ce50157f2f2dab6a463ec971d47f"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_pininventory_execution/execution.json",
+        "SHA256": "5c48ca4bd71d2d87185ec618fec29e39732d7c42b739ba4bd12402052c4c0a29"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_pin_inventory72.py",
+        "primaryP1_pininventory72"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.4034672640264034,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_pininventory_execution/analysis.log",
+        "SHA256": "14d0cf7a6b772fcde07ae719fc8c38541ff25c141669c20fd6b7ef921012bc96"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_product_execution/execution.json",
+        "SHA256": "7c52c718eecd878ee5447743667220ea8f93e9c3a125f4e7bca8b17bfc2ef2ab"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_product64.py",
+        "--tag",
+        "primaryP1_product72",
+        "--candidate",
+        "primaryP1_ground65a"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 104.55265660001896,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_product_execution/analysis.log",
+        "SHA256": "514a61d7bd5cb50119a0f13ebfa13f761efe252e9c1ea4ea262c662426dbdc7c"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_release_execution/execution.json",
+        "SHA256": "b3cadb6e58ca0318de15918530b397c37aa44daeaceb1e4aadd665226b112fcc"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+        "--tag",
+        "primaryP1_release72"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 0.40201905299909413,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 3,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_release_execution/analysis.log",
+        "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_verify_execution/execution.json",
+        "SHA256": "968b6d2d74749f290bfecb46a01e611effdd377fda8bf0fba14341b66fb90198"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_finite_verify72.py",
+        "primaryP1_keeperfiniteverify72",
+        "primaryP1_keeperfinite72b"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 1.2032849160023034,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 4,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_verify_execution/analysis.log",
+        "SHA256": "70d92e8efba51c991d6ae0547ba044e87dfc3ef8d57fc6a0a3f01b9d57074515"
+      }
+    },
+    {
+      "reference": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_verifyb_execution/execution.json",
+        "SHA256": "47656e457ef27bbe0c924143c33524f6d7067345d61fc77615b478a5e9769b66"
+      },
+      "command": [
+        "/usr/bin/python3",
+        "product_prototype/stage12_integrated/scripts/primary_keeper_finite_verify72b.py",
+        "primaryP1_keeperfiniteverify72b",
+        "primaryP1_keeperfinite72b"
+      ],
+      "exit_code": 2,
+      "elapsed_s": 2.0045409039594233,
+      "timeout": false,
+      "STOP": false,
+      "reaped": true,
+      "PID": 5,
+      "log": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary72_verifyb_execution/analysis.log",
+        "SHA256": "d96fb278a3d8e90df7ed3c16612aa18f2a91ddb09787442006eb9f32e370015c"
+      }
+    }
+  ],
+  "execution_count": 18,
+  "child_seconds": 484.97726153419353,
+  "all_owned_children_reaped": true,
+  "RUNNING_tasks": 0,
+  "results": [
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinite72b/summary.json",
+      "SHA256": "2c528a0aef49e7b59bd4185dffc60f325cd71ece8195123813ce7db1ff1ac908"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinitefine72/summary.json",
+      "SHA256": "983d50ffd70974495e9e4a3b9feff8eeae716ab0852f87f663456fa76c12a474"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfiniteverify72b/summary.json",
+      "SHA256": "0a6767abea8975a990103b9920fc06f6ab89b9fca68b9aaa115dba7e46ddab61"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjective72/summary.json",
+      "SHA256": "081a2c5f3d7e509630dce2d1778ccb196eddd8f18bbcc9fcf54e81a80e23827a"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72/summary.json",
+      "SHA256": "f4f053af3335be6ff3f78991911ebf4c29881879063e2963d00b2d8e5329a35e"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectivefine72b/summary.json",
+      "SHA256": "521152b66ebfb7c2c4b5c51854ced4e51f7cdc12799818b42936755f445f6aca"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectiveverify72/summary.json",
+      "SHA256": "35ec274d08787267c3e5126ae04c1d692310c7c3b47a98f847f552ea8fa22454"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperobjectiveverify72b/summary.json",
+      "SHA256": "f9d63fac8dd3ae3ac2fb7924cfc83e7e4b79b1c340132788f91222447dc73940"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperconeverify72/summary.json",
+      "SHA256": "d0f67082141bd2bd72bbd9be8cfe60ba66dc4f64c884540f0edb2bfd24fc7fee"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfineconeverify72/summary.json",
+      "SHA256": "6ddfb4408eae385e03a6a71477f6b8020d27b23551e40e00afbb12b834ee88c4"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperfinalverify72/summary.json",
+      "SHA256": "f061f07bf5dba21e1ab24e07e7b04fcc6336eb13b214502f1e66fb6187dbd708"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_edgework72/summary.json",
+      "SHA256": "871204e93a2342fbe91299c02017ee2d8220f9fceb239bf140e7562d014d7e97"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pininventory72/summary.json",
+      "SHA256": "5a64ed257ee8b21336fb7163ff1aefa7b9a6060cd12fbd7e3362d695fb58aac2"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_product72/summary.json",
+      "SHA256": "fb57694bb4c17f2897f3f21d1c424811301fa2e749c523b25e2f9b336bcc2dcb"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_release72/summary.json",
+      "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+    },
+    {
+      "path": "product_prototype/stage12_integrated/validation/integrated/primary72_failures/summary.json",
+      "SHA256": "220fdbad36d63e5ce28639696732a871432dc8593e13fabbafb8d8f8acdc704d"
+    }
+  ],
+  "limitations": [
+    "Pure frictionless torque localreference with socket lateral/tiltBC, not actual100g bodyequilibrium.",
+    "Objective SaintVenantKirchhoff assumed200GPa/.3 is not sourced minimum or realprocess/material strength.",
+    "Completefacets refer to original tetra polyhedralboundary; curvedSTEPdomain/spatial1percent/time.1percent/globalenergy unqualified.",
+    "Coarse numericalZgauge has negligible reaction; finegauge invalid under deformedmoment. Need physicalfinitepin/hostpath, not an arbitraryreturntorque.",
+    "Allprior raw/source/manifest/failures preserved. No new CADsolids; ACTUAL_PRODUCT_VALIDATION only."
+  ]
+}

@@ -1,0 +1,15 @@
+{"phase": "before_mesh", "elapsed_s": 0.016019528964534402, "RSS_KiB": 385456}
+{"phase": "after_mesh", "elapsed_s": 1.0676097781397402, "RSS_KiB": 445676, "nodes": 10080, "tetra": 34358}
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "after_assembly", "elapsed_s": 2.6173058960121125, "RSS_KiB": 530668, "nnz": 1044630}
+{"phase": "after_loads", "elapsed_s": 9.995674828998744, "RSS_KiB": 530668, "floor_nodes": 124}
+{"phase": "before_interior_factor", "elapsed_s": 9.997928980970755, "RSS_KiB": 530668, "interior": 29868, "contact_DOF": 372}
+{"phase": "after_condensation", "elapsed_s": 41.61869893805124, "RSS_KiB": 1135848, "max_asymmetry_N_mm": 4.656612873077393e-10, "rigid_mode_error": 7.059425115585327e-07}
+{"phase": "before_OSQP_setup", "elapsed_s": 41.680653813062236, "RSS_KiB": 1135848, "variables": 496, "constraints": 1116}
+{"phase": "after_OSQP_setup", "elapsed_s": 41.69342233007774, "RSS_KiB": 1135848}
+{"phase": "Coulomb_fixedpoint", "elapsed_s": 43.701154810143635, "RSS_KiB": 1135848, "fraction": 0.1, "outer": 0, "status": "solved", "iterations": 16600, "prim_res": 2.704664991970418e-09, "dual_res": 1.1589746898251128e-10}
+{"phase": "physical_law", "elapsed_s": 43.79465715494007, "RSS_KiB": 1135848, "fraction": 0.1, "outer": 0, "status": "solved", "OSQP_iterations": 16600, "primal_residual": 2.704664991970418e-09, "dual_residual": 1.1589746898251128e-10, "normal_fixedpoint_error_N": 0.7998602027132447, "min_gap_mm": -5.1881093694757095e-18, "minimum_cone_slack_N": -0.03177650440356677, "max_dissipation_error_Nmm": 2.0237706156543517e-05, "off_floor_equilibrium_error_N": 1.0933463336082472e-12}
+{"phase": "Coulomb_fixedpoint", "elapsed_s": 48.80498077603988, "RSS_KiB": 1135848, "fraction": 0.1, "outer": 1, "status": "maximum iterations reached", "iterations": 40000, "prim_res": 1.9228711603647142e-05, "dual_res": 2.047158956965501e-07}
+{"phase": "after_incremental_contact", "elapsed_s": 48.805054154014215, "RSS_KiB": 1135848, "all_steps": false, "accepted_fraction": 0.0}
+{"checks": {"actual_plate_hash": true, "all_four_increments_converged": false, "all_local_Coulomb_laws": false, "off_floor_equilibrium": true, "all6physical_force_moment_balance": true, "actual_source_wrenches": true, "volume1percent": true, "finite": true, "element_energy": true}, "accepted_fraction": 0.0, "current_fraction": 0.1}

@@ -1,0 +1,17 @@
+{"phase": "before_mesh", "elapsed_s": 0.01421096408739686, "RSS_KiB": 385084}
+{"phase": "after_mesh", "elapsed_s": 1.476613769074902, "RSS_KiB": 466108, "nodes": 15737, "tetra": 57492}
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "after_assembly", "elapsed_s": 3.8193806940689683, "RSS_KiB": 550476, "nnz": 1682120}
+{"phase": "after_loads", "elapsed_s": 13.684706503059715, "RSS_KiB": 550476, "floor_nodes": 178}
+{"phase": "before_interior_factor", "elapsed_s": 13.687467966927215, "RSS_KiB": 550476, "interior": 46677, "contact_DOF": 534}
+{"phase": "before_interior_AMG", "elapsed_s": 13.724633232923225, "RSS_KiB": 550476}
+/tmp/regrip_stage2_fem/pyamg/aggregation/aggregation.py:207: SparseEfficiencyWarning: Implicit conversion of A to CSR
+  warn('Implicit conversion of A to CSR', SparseEfficiencyWarning)
+{"phase": "after_interior_AMG_setup", "elapsed_s": 16.278697144938633, "RSS_KiB": 606764}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_plate_amgschur66.py", line 92, in <module>
+    X[:,col]=solve_interior(Kib[:,col].toarray().ravel(),str(col))
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_plate_amgschur66.py", line 88, in solve_interior
+    x,info=cg(Kii,rhs,M=pre,rtol=1e-12,atol=1e-12,maxiter=1500,callback=tick);res=float(abs(Kii@x-rhs).max());assert info==0 and res<1e-8,(label,info,res)
+AssertionError: ('0', 0, 2.523096054307672e-08)

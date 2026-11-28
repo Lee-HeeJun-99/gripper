@@ -1,0 +1,15 @@
+{"phase": "before_mesh", "elapsed_s": 0.01845458592288196, "RSS_KiB": 385420}
+{"phase": "after_mesh", "elapsed_s": 1.2648204679135233, "RSS_KiB": 445636, "nodes": 10080, "tetra": 34358}
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "after_assembly", "elapsed_s": 3.0915740819182247, "RSS_KiB": 527468, "nnz": 1044630}
+{"phase": "after_loads", "elapsed_s": 10.65392974507995, "RSS_KiB": 527468, "floor_nodes": 124}
+{"phase": "before_interior_factor", "elapsed_s": 10.655718609923497, "RSS_KiB": 527468, "interior": 29868, "contact_DOF": 372}
+{"phase": "after_condensation", "elapsed_s": 38.652483779005706, "RSS_KiB": 1133068, "max_asymmetry_N_mm": 4.656612873077393e-10, "rigid_mode_error": 7.059425115585327e-07}
+{"phase": "before_OSQP_setup", "elapsed_s": 38.705033037113026, "RSS_KiB": 1133068, "variables": 496, "constraints": 2108}
+{"phase": "after_OSQP_setup", "elapsed_s": 38.716194556094706, "RSS_KiB": 1133228}
+{"phase": "Coulomb_fixedpoint", "elapsed_s": 43.824574179016054, "RSS_KiB": 1133228, "fraction": 0.1, "outer": 0, "status": "solved inaccurate", "iterations": 40000, "prim_res": 1.7959311260362654e-08, "dual_res": 1.883639475142854e-10}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_plate_polygon66.py", line 106, in <module>
+    u[bd]=sol.x[:nb]*scaleu;u[inside]=fraction*base-X@u[bd];reaction=(K@u-fraction*F.ravel()).reshape(-1,3);normal=np.maximum(reaction[floornodes,2],0);delta=u.reshape(-1,3)[floornodes,:2]-previous.reshape(-1,3)[floornodes,:2];gap=u.reshape(-1,3)[floornodes,2];T=reaction[floornodes,:2];slack=.3*normal-np.max(T@facets.T,axis=1);diss=-np.einsum('ij,ij->i',T,delta);support=.3*normal*np.max(delta@directions.T,axis=1);normalerr=float(abs(normal-normalguess).max());lawerr=float(abs(diss-support).max());off=np.setdiff1d(np.arange(len(p)),floornodes);freeerr=float(abs(reaction[off]).max());row.update(normal_fixedpoint_error_N=normalerr,min_gap_mm=float(gap.min()),minimum_cone_slack_N=float(slack.min()),max_dissipation_error_Nmm=lawerr,off_floor_equilibrium_error_N=freeerr);hist.append(row)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 3 is different from 2)

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_round64b.py", line 51, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_round64b.py", line 40, in main
+    assert cnt>=12,(n,cnt);fil.Build();assert fil.IsDone(),n;s=canonical(fil.Shape());export(s,out/n);s=read(out/(n+'.step'));parts[n]=s;parent=refs[n];refs[n]=ref(out/(n+'.step'));rows.append(dict(part_ID=n,STEP=refs[n],STL=ref(out/(n+'.stl')),parent=parent,geometry_credit=True,valid=bool(BRepCheck_Analyzer(s).IsValid()),solids=solid_count(s),volume_mm3=volume(s),volume_change_mm3=volume(s)-before,external_corner_radius_mm=.15,root_radius_mm=.10,root_edges=cnt))
+AssertionError: ('ROOT_SOCKET_KEEPER', 0)

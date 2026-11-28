@@ -1,0 +1,133 @@
+{
+  "status": "PRESERVED_ACTUAL_EXECUTION_AND_DESIGN_FAILURES_NOT_RELEASE",
+  "executions": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary64_height_execution/execution.json",
+        "SHA256": "68558ebd56d053339e4dc81857ca8f9d7aa754ff12d3c5f56454d91cfc79b468"
+      },
+      "result": {
+        "command": [
+          "python",
+          "product_prototype/stage12_integrated/scripts/primary_setting_height64.py",
+          "primaryP1_height64"
+        ],
+        "exit_code": 2,
+        "elapsed_s": 9.815907227108255,
+        "timeout": false,
+        "STOP": false,
+        "reaped": true,
+        "PID": 3,
+        "log": {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primary64_height_execution/analysis.log",
+          "SHA256": "77375c442882eeb6d62af342cad27e9c8dcbd0ff2a55289919e4519224ff10da"
+        }
+      }
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary64_localA_execution/execution.json",
+        "SHA256": "a390173964bec72e2ab34947fe7759883500739b874db24c0f3d519aaab83a60"
+      },
+      "result": {
+        "command": [
+          "python",
+          "product_prototype/stage12_integrated/scripts/primary_keeper_local64.py",
+          ".10",
+          "primaryP1_keeperlocal64a"
+        ],
+        "exit_code": 1,
+        "elapsed_s": 57.68736929795705,
+        "timeout": false,
+        "STOP": false,
+        "reaped": true,
+        "PID": 3,
+        "log": {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primary64_localA_execution/analysis.log",
+          "SHA256": "cf6d9178a57e934dcb70873c94d783a65d9112ccabf49a35722697e64683b844"
+        }
+      }
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary64_release_execution/execution.json",
+        "SHA256": "1d1550f97477e1456de60a60061fbcec15d7bff1e58577213029dc4b7d4134de"
+      },
+      "result": {
+        "command": [
+          "python",
+          "product_prototype/stage12_integrated/scripts/integrated_release_gate.py",
+          "--tag",
+          "primaryP1_release64"
+        ],
+        "exit_code": 2,
+        "elapsed_s": 0.4023577661719173,
+        "timeout": false,
+        "STOP": false,
+        "reaped": true,
+        "PID": 3,
+        "log": {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primary64_release_execution/analysis.log",
+          "SHA256": "8d431453722c815281baceac0e61d00b4a022127bc81a30b5b9054ecaab9ac6c"
+        }
+      }
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary64_roundA_execution/execution.json",
+        "SHA256": "944630f4da8d8e07aa6dfacec825c6eb4ce98705a1e22cca653155e4d34bbfa0"
+      },
+      "result": {
+        "command": [
+          "python",
+          "product_prototype/stage12_integrated/scripts/primary_round64.py",
+          "primaryP1_round64a"
+        ],
+        "exit_code": 1,
+        "elapsed_s": 3.0059076931793243,
+        "timeout": false,
+        "STOP": false,
+        "reaped": true,
+        "PID": 4,
+        "log": {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primary64_roundA_execution/analysis.log",
+          "SHA256": "640d4bd5add2f73107795a02649766cf1f4be28dbc074376a74a20c929405e48"
+        }
+      }
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary64_roundB_execution/execution.json",
+        "SHA256": "868740238c2af36d8c6496a7211e8a24ef97991f3059d875f9c9687e154e63d1"
+      },
+      "result": {
+        "command": [
+          "python",
+          "product_prototype/stage12_integrated/scripts/primary_round64b.py",
+          "primaryP1_round64b"
+        ],
+        "exit_code": 1,
+        "elapsed_s": 3.205853431019932,
+        "timeout": false,
+        "STOP": false,
+        "reaped": true,
+        "PID": 4,
+        "log": {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primary64_roundB_execution/analysis.log",
+          "SHA256": "6aa403639d6971fa009e83d5d25ff7f2e4e741353f90c43096fd2e34d5e9c906"
+        }
+      }
+    }
+  ],
+  "explanations": [
+    "roundA duplicate topological edge enumeration failed count; original source archived",
+    "roundB root fillet loop indentation/count failed; original source archived",
+    "height64 5degree rejection assumption FAILS rounded geometry; measured new freehelicalangle5.13021469degree,not a tolerance relaxation",
+    "localA MMD_AT_PLUS_A direct factorization failed memory expansion and gstrf SystemError under4GiB; stage/RSS logged; not the historical63 signal11 whose cause remains unknown",
+    "Unchanged independent integrated gate exits2 INTEGRATED_NOT_QUALIFIED",
+    "Every local mesh comparison including coarse-to-finest remains explicit; no transfer of oldsharp geometry strength/convergence"
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

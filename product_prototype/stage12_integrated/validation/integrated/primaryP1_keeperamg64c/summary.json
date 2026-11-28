@@ -1,0 +1,147 @@
+{
+  "status": "ACTUAL_KEEPER_FULL_SOLID_CONDITIONAL_NEUMANN_TORQUE_REFERENCE_NOT_CONTACT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_round64c/summary.json",
+    "SHA256": "081e03db968128e20dec1b5b32a922a1f5c9f2e739de2cda182b8b9623f55d34"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_round64c/ROOT_SOCKET_KEEPER.step",
+    "SHA256": "2712913fc402a356fc71643e16830618c76276ee0b57ac2630a3bb1739a55682"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperamg64c/producer.py",
+    "SHA256": "12bf9fbe89950e38544f9c8f172f27628a4ee6e19e1c5ed4906d240fa29f61a0"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperamg64c/field.npz",
+    "SHA256": "bfe1e13766f7312404b249197c1c778012b63412a13a7341672f4616d416565d"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts62/summary.json",
+    "SHA256": "3586b1ab2c4a5b7d6f8e0f36ad618259819da395829b3c94fffa70fa6e367042"
+  },
+  "checks": {
+    "actual_CAD_hash": true,
+    "force_balance": true,
+    "moment_balance": true,
+    "all_original_DOF_residual": true,
+    "volume": true,
+    "positive_deformed_elements": true,
+    "finite": true,
+    "energy_work": true,
+    "independent_element_energy": true
+  },
+  "solver": "CG smoothed aggregation six rigid near-null candidates",
+  "peak_RSS_KiB": 1793176,
+  "h_mm": 0.06,
+  "nodes": 154275,
+  "tetra": 717591,
+  "E_ASSUMED_MPa": 200000.0,
+  "nu_ASSUMED": 0.3,
+  "material_minimum_MPa": null,
+  "root_cut_envelope_N": [
+    1.3096747713401797,
+    1.468685679898104
+  ],
+  "torque_Nmm": [
+    0.10422060685076867,
+    0.11687429290203219
+  ],
+  "ports": [
+    {
+      "label": "actual_plug_bottom_-16",
+      "triangles": 1774,
+      "area_mm2": 4.979623118476936,
+      "target_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.10422060685076867
+      ],
+      "actual_wrench_N_Nmm": [
+        1.2158080531926574e-14,
+        -7.227671152548742e-15,
+        -2.0506439231220202e-27,
+        3.747848385804442e-14,
+        -2.0783234074700507e-14,
+        0.10422060685167642
+      ],
+      "traction": "Exact triangle quadrature of affine continuum wrench distribution; not unilateral flank/pin pressure"
+    },
+    {
+      "label": "actual_plug_bottom_16",
+      "triangles": 1790,
+      "area_mm2": 4.979623118482976,
+      "target_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11687429290203219
+      ],
+      "actual_wrench_N_Nmm": [
+        9.194468103546072e-15,
+        5.464118740805546e-14,
+        8.590695257856819e-28,
+        -4.466912950640278e-16,
+        -2.6098914696071063e-15,
+        0.11687429289705503
+      ],
+      "traction": "Exact triangle quadrature of affine continuum wrench distribution; not unilateral flank/pin pressure"
+    },
+    {
+      "label": "actual_tongue_bottom_RETURN_REFERENCE_NOT_PIN_CONTACT",
+      "triangles": 1594,
+      "area_mm2": 4.000000000000018,
+      "target_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.22109489975280086
+      ],
+      "actual_wrench_N_Nmm": [
+        1.0408340855860843e-17,
+        -8.062474299297406e-14,
+        0.0,
+        8.488175440302115e-14,
+        -1.3877787807814457e-17,
+        -0.221094899752546
+      ],
+      "traction": "Exact triangle quadrature of affine continuum wrench distribution; not unilateral flank/pin pressure"
+    }
+  ],
+  "CAD_volume_mm3": 416.29189836516144,
+  "mesh_volume_mm3": 416.312381526366,
+  "volume_error": 4.920384298845448e-05,
+  "physical_fixed_DOF": 0,
+  "all_original_DOF_restored": true,
+  "original_residual_N": 5.874315790743712e-14,
+  "static_energy_Nmm": 1.0549194799128149e-06,
+  "independent_element_energy_Nmm": 1.0549194799127954e-06,
+  "halfwork_Nmm": 1.0549194799126245e-06,
+  "mesh_policy": {
+    "edge_size_mm": 0.06,
+    "bulk_size_mm": 0.55,
+    "edge_inner_distance_mm": 0.25,
+    "edge_outer_distance_mm": 1.25
+  },
+  "volume_RMS_displacement_mm": 1.3917739880589199e-06,
+  "maximum_displacement_mm": 1.2762092947719275e-05,
+  "raw_maximum_vm_MPa": 0.5803362038836299,
+  "minimum_deformed_volume_ratio": 0.9999983407737804,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Real entire clocked Root keeper, not ideal coupon; explicitly prescribed end/tongue wrench distribution is not actual unilateral hex/tongue/pin contact",
+    "Envelope maxima may come from different necessary cut cases; not an accepted83body equilibrium",
+    "Finite elastic typical/reference material only; no source-minimum strength/process or sharp-notch stress certification",
+    "Six rigid gauges removed algebraically and restored; no physical host/bolt spin fixed",
+    "Static energy/halfwork identity is not global coupled stored-energy closure"
+  ]
+}

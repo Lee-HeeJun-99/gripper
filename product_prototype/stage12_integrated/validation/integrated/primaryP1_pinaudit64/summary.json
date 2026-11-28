@@ -1,0 +1,241 @@
+{
+  "status": "ACTUAL_P1_INSTALLED_PIN_GEOMETRY_LOCAL_PASS_NOT_STRENGTH",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_round64c/summary.json",
+    "SHA256": "081e03db968128e20dec1b5b32a922a1f5c9f2e739de2cda182b8b9623f55d34"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinaudit64/producer.py",
+    "SHA256": "a72839aeece4eef722127f305e5d5d49f7128ce062f7b850ff339b82497eac35"
+  },
+  "geometry_model": {
+    "path": "product_prototype/stage12_integrated/scripts/primary_splitpin61g.py",
+    "SHA256": "fa36bc45c9fbad1be35603ef8b3d96b2901cc206203faea7b42a33560c640b23"
+  },
+  "checks": {
+    "source_and83part_hashes": true,
+    "three_installed_single_valid_solids": true,
+    "reimport_adaptive_integrals_bounds_and_split_probes_match": true,
+    "actual_split_section_integral": true,
+    "all_six_axial_stops_bracketed": true,
+    "sampled_straight_insert_bend_reverse_clear": true,
+    "proposed_access_gauges_clear": true
+  },
+  "pin_results": [
+    {
+      "pin": "ROOT_SOCKET_KEEPER_INSTALLED_SPLIT_PIN",
+      "actual_volume_mm3": 7.146198958190184,
+      "reimport_adaptive_volume_COM_max_abs_error": 1.5220771309998327e-08,
+      "reimport_bounds_max_abs_error_mm": 4.760636329592671e-13,
+      "adaptive_integration_errors": [
+        3.1473303588237294e-11,
+        6.7540275022504776e-12
+      ],
+      "material_probes": [
+        {
+          "offset_mm": -0.1,
+          "expected": "IN",
+          "matches": true
+        },
+        {
+          "offset_mm": -0.01,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0.01,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0.1,
+          "expected": "IN",
+          "matches": true
+        }
+      ],
+      "actual_split_section_mm2": 0.6001843677180043,
+      "analytic_split_section_mm2": 0.6001843677179246,
+      "split_section_relative_error": 1.328158770132286e-13,
+      "solid_cylinder_overestimate_fraction": 0.05996181601790373,
+      "axial_stops": [
+        {
+          "stop": "splayed_legs",
+          "bracketed": true,
+          "free_translation_bracket_mm": [
+            1.2641525268554688,
+            1.2641563415527344
+          ],
+          "intersection_at_upper_mm3": 1.0116404779511629e-08,
+          "contact_capacity_N": null
+        },
+        {
+          "stop": "eye",
+          "bracketed": true,
+          "free_translation_bracket_mm": [
+            2.9891128540039062,
+            2.989116668701172
+          ],
+          "intersection_at_upper_mm3": 1.0068393023580687e-08,
+          "contact_capacity_N": null
+        }
+      ],
+      "initial_contact_stiffness": "zero inside finite clearance; no preload/tie or capacity inferred",
+      "actual_strength_MPa": null
+    },
+    {
+      "pin": "CAP_SOCKET_KEEPER_-7_INSTALLED_SPLIT_PIN",
+      "actual_volume_mm3": 7.14619895817857,
+      "reimport_adaptive_volume_COM_max_abs_error": 1.5208966530622092e-08,
+      "reimport_bounds_max_abs_error_mm": 8.476774837617995e-12,
+      "adaptive_integration_errors": [
+        3.147317552330163e-11,
+        6.754186756704326e-12
+      ],
+      "material_probes": [
+        {
+          "offset_mm": -0.1,
+          "expected": "IN",
+          "matches": true
+        },
+        {
+          "offset_mm": -0.01,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0.01,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0.1,
+          "expected": "IN",
+          "matches": true
+        }
+      ],
+      "actual_split_section_mm2": 0.6001843677180078,
+      "analytic_split_section_mm2": 0.6001843677179246,
+      "split_section_relative_error": 1.3855026724639027e-13,
+      "solid_cylinder_overestimate_fraction": 0.05996181601789765,
+      "axial_stops": [
+        {
+          "stop": "splayed_legs",
+          "bracketed": true,
+          "free_translation_bracket_mm": [
+            0.26415252685546875,
+            0.2641563415527344
+          ],
+          "intersection_at_upper_mm3": 1.0116404038374317e-08,
+          "contact_capacity_N": null
+        },
+        {
+          "stop": "eye",
+          "bracketed": true,
+          "free_translation_bracket_mm": [
+            1.9891128540039062,
+            1.9891166687011719
+          ],
+          "intersection_at_upper_mm3": 1.0068393242023284e-08,
+          "contact_capacity_N": null
+        }
+      ],
+      "initial_contact_stiffness": "zero inside finite clearance; no preload/tie or capacity inferred",
+      "actual_strength_MPa": null
+    },
+    {
+      "pin": "CAP_SOCKET_KEEPER_7_INSTALLED_SPLIT_PIN",
+      "actual_volume_mm3": 7.14619895818155,
+      "reimport_adaptive_volume_COM_max_abs_error": 1.5212068049663685e-08,
+      "reimport_bounds_max_abs_error_mm": 8.476774837617995e-12,
+      "adaptive_integration_errors": [
+        3.14732357891549e-11,
+        6.7540161269138545e-12
+      ],
+      "material_probes": [
+        {
+          "offset_mm": -0.1,
+          "expected": "IN",
+          "matches": true
+        },
+        {
+          "offset_mm": -0.01,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0.01,
+          "expected": "OUT",
+          "matches": true
+        },
+        {
+          "offset_mm": 0.1,
+          "expected": "IN",
+          "matches": true
+        }
+      ],
+      "actual_split_section_mm2": 0.6001843677180082,
+      "analytic_split_section_mm2": 0.6001843677179246,
+      "split_section_relative_error": 1.3929018856679822e-13,
+      "solid_cylinder_overestimate_fraction": 0.059961816017896866,
+      "axial_stops": [
+        {
+          "stop": "splayed_legs",
+          "bracketed": true,
+          "free_translation_bracket_mm": [
+            0.26415252685546875,
+            0.2641563415527344
+          ],
+          "intersection_at_upper_mm3": 1.011640560169469e-08,
+          "contact_capacity_N": null
+        },
+        {
+          "stop": "eye",
+          "bracketed": true,
+          "free_translation_bracket_mm": [
+            1.9891166687011719,
+            1.9891204833984375
+          ],
+          "intersection_at_upper_mm3": 1.0079171046962106e-08,
+          "contact_capacity_N": null
+        }
+      ],
+      "initial_contact_stiffness": "zero inside finite clearance; no preload/tie or capacity inferred",
+      "actual_strength_MPa": null
+    }
+  ],
+  "sequence": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinaudit64/sequence.json",
+    "SHA256": "fee6f1a589af426e3046777f01e5a296dd4661511f6af8e4aa5aaa5f6e5f1996"
+  },
+  "tools": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_pinaudit64/tools.json",
+    "SHA256": "cb6a51f21e6491ae8e15e3a380adb6bafa793e71bf6d08e88ca0d212f470b232"
+  },
+  "finite_sequence_poses": 48,
+  "newly_qualified_system_gate_ids": [],
+  "accepted_physical_product_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Nominal proposed formed split pin, source-size only; eye circular-wire and angular leg transitions are not exact supplier CAD/forming/radius tolerances",
+    "Sampled angles/positions are not full surface CCD or a material forming/plastic-damage solution",
+    "Jaw boxes are explicit product access gauges, not source-backed plier geometry/handle/strength/usable tool certification",
+    "Adaptive mass/COM/bounds and sampled material probes are reimport checks; failed coincident whole-shape Boolean comparison61c/d is retained and NOT a shape-equivalence certificate",
+    "Finite interference brackets establish geometric retention only; no allowable force, elastic finite contact or detachment certificate",
+    "Actual preload,60degreeindex/helicallead/nutbacklash,finitehostattachment/source-minimumstrength/mesh1percent/time.1percent/globalenergy and final3Finger remain"
+  ]
+}

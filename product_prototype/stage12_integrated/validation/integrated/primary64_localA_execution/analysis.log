@@ -1,0 +1,13 @@
+{"phase": "before_mesh", "elapsed_s": 0.0017143520526587963, "peak_RSS_KiB": 76236, "h_mm": 0.1}
+{"phase": "after_mesh", "elapsed_s": 5.868467895081267, "peak_RSS_KiB": 243196, "nodes": 52123, "tetra": 219098}
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "after_assembly", "elapsed_s": 15.488460598047823, "peak_RSS_KiB": 503336, "nnz": 5912533}
+{"phase": "before_factorization", "elapsed_s": 15.984416767023504, "peak_RSS_KiB": 503336, "free_DOF": 156363}
+Can't expand MemType 0: jcol 124199
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_keeper_local64.py", line 57, in <module>
+    _,_,pv=qr(R.T,mode='economic',pivoting=True);gauge=np.sort(pv[:6]);free=np.setdiff1d(np.arange(N),gauge);u=np.zeros(N);phase("before_factorization",free_DOF=len(free));factor=splu(K[free][:,free].tocsc(),permc_spec="MMD_AT_PLUS_A");phase("after_factorization",factor_nnz=factor.L.nnz+factor.U.nnz);u[free]=factor.solve(F.ravel()[free]);del factor;phase("after_solve");weights=np.repeat(lump,3);u-=R@np.linalg.solve(R.T@(weights[:,None]*R),R.T@(weights*u));res=K@u-F.ravel();u3=u.reshape(-1,3);det=np.linalg.det(np.transpose(p[t[:,1:]]-p[t[:,0,None]],(0,2,1)));vol=abs(det)/6;iv=np.linalg.inv(p[t[:,1:]]-p[t[:,0,None]]);grad=np.concatenate([-iv.sum(2)[:,None,:],iv.transpose(0,2,1)],axis=1);G=np.einsum('tai,taj->tij',u3[t],grad);eps=(G+G.transpose(0,2,1))/2;sig=2*mu*eps+la*np.trace(eps,axis1=1,axis2=2)[:,None,None]*np.eye(3);dev=sig-np.trace(sig,axis1=1,axis2=2)[:,None,None]*np.eye(3)/3;vm=np.sqrt(1.5*np.sum(dev*dev,axis=(1,2)));energy=.5*float(u@K@u);ee=float(np.sum(.5*np.einsum('tij,tij->t',eps,sig)*vol));halfwork=.5*float(F.ravel()@u);w=(wrenchmat(p).transpose(1,0,2).reshape(6,-1)@F.ravel());ratio=np.linalg.det(np.transpose((p+u3)[t[:,1:]]-(p+u3)[t[:,0,None]],(0,2,1)))/det
+  File "/tmp/regrip_stage2_fem/scipy/sparse/linalg/_dsolve/linsolve.py", line 428, in splu
+    return _superlu.gstrf(N, A.nnz, A.data, indices, indptr,
+SystemError: gstrf was called with invalid arguments

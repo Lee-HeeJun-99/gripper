@@ -1,0 +1,135 @@
+{
+  "status": "ACTUAL_KEEPER_FULL_SOLID_CONDITIONAL_NEUMANN_TORQUE_REFERENCE_NOT_CONTACT",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clocked62a/summary.json",
+    "SHA256": "d6ac0ee4757b054bb8f06dc351b81ab1f48424ee44a903760475d63458af8596"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clocked62a/ROOT_SOCKET_KEEPER.step",
+    "SHA256": "2b89e908da9d37501fdbeb78af25d8a583d1f79f2cc2dabc7562da215048508e"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelastic62b_h07/producer.py",
+    "SHA256": "bf8e058ec72fa3b6a8a7cde32487e953dc15e296797cd10aab54d0c455a52b4d"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelastic62b_h07/field.npz",
+    "SHA256": "a76cf5ece93cff29ff67ffa896d44208be9303945bdf84741eb4b7ec4e97048b"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_contacts62/summary.json",
+    "SHA256": "3586b1ab2c4a5b7d6f8e0f36ad618259819da395829b3c94fffa70fa6e367042"
+  },
+  "checks": {
+    "actual_CAD_hash": true,
+    "force_balance": true,
+    "moment_balance": true,
+    "all_original_DOF_residual": true,
+    "volume": true,
+    "positive_deformed_elements": true,
+    "finite": true,
+    "energy_work": true,
+    "independent_element_energy": true
+  },
+  "h_mm": 0.7,
+  "nodes": 2469,
+  "tetra": 8049,
+  "E_ASSUMED_MPa": 200000.0,
+  "nu_ASSUMED": 0.3,
+  "material_minimum_MPa": null,
+  "root_cut_envelope_N": [
+    1.3096747713401797,
+    1.468685679898104
+  ],
+  "torque_Nmm": [
+    0.10422060685076867,
+    0.11687429290203219
+  ],
+  "ports": [
+    {
+      "label": "actual_plug_bottom_-16",
+      "nodes": 19,
+      "target_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.10422060685076867
+      ],
+      "actual_wrench_N_Nmm": [
+        5.051514762044462e-15,
+        4.996003610813204e-16,
+        -1.0412963948917356e-28,
+        -5.582042690035831e-17,
+        -2.456779676158156e-15,
+        0.10422060685077128
+      ],
+      "traction": "Minimum nodal norm wrench distribution; not unilateral flank/pin pressure"
+    },
+    {
+      "label": "actual_plug_bottom_16",
+      "nodes": 19,
+      "target_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11687429290203219
+      ],
+      "actual_wrench_N_Nmm": [
+        -1.3877787807814457e-15,
+        4.996003610813204e-16,
+        1.0477058897466563e-30,
+        -9.917755086905528e-16,
+        1.7329456742352227e-15,
+        0.11687429290208345
+      ],
+      "traction": "Minimum nodal norm wrench distribution; not unilateral flank/pin pressure"
+    },
+    {
+      "label": "actual_tongue_bottom_RETURN_REFERENCE_NOT_PIN_CONTACT",
+      "nodes": 20,
+      "target_wrench_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.22109489975280086
+      ],
+      "actual_wrench_N_Nmm": [
+        3.469446951953614e-18,
+        5.551115123125783e-16,
+        0.0,
+        1.4994082364605532e-14,
+        -3.122502256758253e-17,
+        -0.2210948997530556
+      ],
+      "traction": "Minimum nodal norm wrench distribution; not unilateral flank/pin pressure"
+    }
+  ],
+  "CAD_volume_mm3": 416.3031947907236,
+  "mesh_volume_mm3": 416.40859551420317,
+  "volume_error": 0.00025318259575835,
+  "physical_fixed_DOF": 0,
+  "all_original_DOF_restored": true,
+  "original_residual_N": 9.043384530810217e-15,
+  "static_energy_Nmm": 7.234375423323531e-07,
+  "independent_element_energy_Nmm": 7.234375423323545e-07,
+  "halfwork_Nmm": 7.234375423323457e-07,
+  "maximum_displacement_mm": 8.851050312944343e-06,
+  "raw_maximum_vm_MPa": 0.29343862444816826,
+  "minimum_deformed_volume_ratio": 0.999999285806678,
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false,
+  "limitations": [
+    "Real entire clocked Root keeper, not ideal coupon; explicitly prescribed end/tongue wrench distribution is not actual unilateral hex/tongue/pin contact",
+    "Envelope maxima may come from different necessary cut cases; not an accepted83body equilibrium",
+    "Finite elastic typical/reference material only; no source-minimum strength/process or sharp-notch stress certification",
+    "Six rigid gauges removed algebraically and restored; no physical host/bolt spin fixed",
+    "Static energy/halfwork identity is not global coupled stored-energy closure"
+  ]
+}

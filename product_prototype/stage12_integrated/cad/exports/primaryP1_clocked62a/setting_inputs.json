@@ -1,0 +1,86 @@
+{
+  "settings": [
+    {
+      "bolt": "F0_RF0_BOLT",
+      "keeper": "ROOT_SOCKET_KEEPER",
+      "x": 64,
+      "y": -16,
+      "clock_angle_deg": 17.0,
+      "axial_pose_change_mm": 0,
+      "old_nearest_index_shift_mm": 0.02361111111111111,
+      "old_backoff_to_next_index_mm": 0.059722222222222225,
+      "installed_preload_N": null,
+      "angle_input_is_measured": false
+    },
+    {
+      "bolt": "F0_RF1_BOLT",
+      "keeper": "ROOT_SOCKET_KEEPER",
+      "x": 64,
+      "y": 16,
+      "clock_angle_deg": 43.0,
+      "axial_pose_change_mm": 0,
+      "old_nearest_index_shift_mm": 0.02361111111111111,
+      "old_backoff_to_next_index_mm": 0.02361111111111111,
+      "installed_preload_N": null,
+      "angle_input_is_measured": false
+    },
+    {
+      "bolt": "MOTOR_CAP_BOLT_-7_-29.5",
+      "keeper": "CAP_SOCKET_KEEPER_-7",
+      "x": -7,
+      "y": -29.5,
+      "clock_angle_deg": 11.0,
+      "axial_pose_change_mm": 0,
+      "old_nearest_index_shift_mm": 0.015277777777777777,
+      "old_backoff_to_next_index_mm": 0.06805555555555555,
+      "installed_preload_N": null,
+      "angle_input_is_measured": false
+    },
+    {
+      "bolt": "MOTOR_CAP_BOLT_-7_-13.5",
+      "keeper": "CAP_SOCKET_KEEPER_-7",
+      "x": -7,
+      "y": -13.5,
+      "clock_angle_deg": 29.0,
+      "axial_pose_change_mm": 0,
+      "old_nearest_index_shift_mm": 0.04027777777777778,
+      "old_backoff_to_next_index_mm": 0.043055555555555555,
+      "installed_preload_N": null,
+      "angle_input_is_measured": false
+    },
+    {
+      "bolt": "MOTOR_CAP_BOLT_7_-29.5",
+      "keeper": "CAP_SOCKET_KEEPER_7",
+      "x": 7,
+      "y": -29.5,
+      "clock_angle_deg": 37.0,
+      "axial_pose_change_mm": 0,
+      "old_nearest_index_shift_mm": 0.03194444444444444,
+      "old_backoff_to_next_index_mm": 0.03194444444444444,
+      "installed_preload_N": null,
+      "angle_input_is_measured": false
+    },
+    {
+      "bolt": "MOTOR_CAP_BOLT_7_-13.5",
+      "keeper": "CAP_SOCKET_KEEPER_7",
+      "x": 7,
+      "y": -13.5,
+      "clock_angle_deg": 53.0,
+      "axial_pose_change_mm": 0,
+      "old_nearest_index_shift_mm": 0.009722222222222222,
+      "old_backoff_to_next_index_mm": 0.009722222222222222,
+      "installed_preload_N": null,
+      "angle_input_is_measured": false
+    }
+  ],
+  "source": "Explicit synthetic design contrast, not hardware measurement",
+  "process": "Set/preload six existing M3 fasteners; measure each angle and head height WITHOUT backing off; machine uniquely keyed keeper plugs at those angles; insert keeper then split pins. No automatic preload claim. Re-tightening requires remeasurement/replacement.",
+  "standard_parts": "Same reviewed M3 fasteners and source-size proposed pins; custom keeper process not source-certified",
+  "failure_modes": [
+    "Measurement angular error exceeding hex clearance prevents insertion",
+    "Unknown actual installed head height may prevent1.25mm engagement",
+    "Manufacturing cutter radius/undercut/tool access and minimum ligament unresolved",
+    "No preload is measured or enforced by keeper; contact clearance retains free screw motion",
+    "Unique custom keeper not interchangeable after arbitrary bolt resetting"
+  ]
+}

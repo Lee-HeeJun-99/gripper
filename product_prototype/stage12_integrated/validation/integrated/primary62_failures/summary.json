@@ -1,0 +1,65 @@
+{
+  "status": "CYCLE62_FAILURES_AND_NEGATIVE_CONTROLS_PRESERVED_NO_REWARD",
+  "task_id": "goal_primary_splitpin61g_installed_setting_and_finite_keeper_host_contact61",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_clocked62a/summary.json",
+    "SHA256": "d6ac0ee4757b054bb8f06dc351b81ab1f48424ee44a903760475d63458af8596"
+  },
+  "failures": [
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary62_clock_execution/execution.json",
+        "SHA256": "c0fe38ecb7ff8a4610198269131e32fdfe90badb888ed239c6f4c756771244d7"
+      },
+      "cause": "OCP not on default Python path; no CAD generated. Existing /tmp/regrip_stage1_ocp used in next bounded execution, no installation."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary62_review_execution/execution.json",
+        "SHA256": "b181d58f4e8cd4ee12b82a92b85ae745ff546a12cbcf148793056296694129d6"
+      },
+      "cause": "Existing NumPy2 FEM path incompatible with existing matplotlib1 ABI. No render result. Next execution uses existing OCP/default numpy environment."
+    },
+    {
+      "execution": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primary62_elasticA_execution/execution.json",
+        "SHA256": "0f843bf55615537eca36675521e5bdcf3095056ad58a48303fe41b8d72d52f73"
+      },
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelastic62_h07/summary.json",
+        "SHA256": "53736490d52996ae559072e31b9a4298becc5f20a91ae941d11600059a4c7857"
+      },
+      "cause": "Elastic field and summary written, then final stdout json failed on NumPy bool. Exit1 retained as failed process; exact original producer retained. New62b source converts only stdout booleans."
+    },
+    {
+      "results": [
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelastic62b_h07/summary.json",
+          "SHA256": "78d5436163d12ddad1ef343f22e9b969d527fc09c275363b9e8d7295fad5fb60"
+        },
+        {
+          "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperelastic62c_h045/summary.json",
+          "SHA256": "de27215bb0a7f461eb304ae0ad3c37b17b4963af87388b8749e0e55cc8db6ae1"
+        }
+      ],
+      "cause": "Node-minimum-norm wrench traction changes with mesh-node distribution. Not a matched-continuum convergence test. New62c uses exact triangle quadrature of fixed affine continuum traction."
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_keeperconvergence62/summary.json",
+        "SHA256": "4a84005472958ea9e064d389d8d29906d8442a80b41a20aa89826a989565a42f"
+      },
+      "cause": "Final same-continuum three meshes fail1percent energy/motion. No refinement reward/strength/global-energy pass."
+    },
+    {
+      "result": {
+        "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_clockaudit62/summary.json",
+        "SHA256": "7f2d3d70e02e2ab8cd3680f31344cc75013deda2b68ed5748ba25a5bb921fd7d"
+      },
+      "cause": "Old shared-index keeper physically intersects all six explicit nonindexed bolt poses,0.021678..0.238550mm3. New custom clocking changes actual plugs; no axial reset or invented preload."
+    }
+  ],
+  "accepted_physical_product_equilibria": 0,
+  "newly_qualified_system_gate_ids": [],
+  "whole_system_release": false
+}

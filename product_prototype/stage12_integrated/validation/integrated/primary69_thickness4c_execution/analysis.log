@@ -1,0 +1,11 @@
+{"phase": "before_mesh", "elapsed_s": 0.018861000193282962, "RSS_KiB": 385556}
+{"phase": "after_mesh", "elapsed_s": 22.769622727064416, "RSS_KiB": 478264, "nodes": 24204, "tetra": 111761}
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "after_assembly", "elapsed_s": 29.22775156213902, "RSS_KiB": 612020, "nnz": 2882949}
+{"phase": "after_loads", "elapsed_s": 30.170009387191385, "RSS_KiB": 652660, "floor_nodes": 124}
+{"phase": "before_interior_factor", "elapsed_s": 30.174289943184704, "RSS_KiB": 652660, "interior": 72240, "contact_DOF": 372}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thickness_contact69c.py", line 90, in <module>
+    Kii=K[inside][:,inside].tocsc();Kib=K[inside][:,bd].tocsc();Kbi=K[bd][:,inside].tocsr();lu=splu(Kii,permc_spec='MMD_AT_PLUS_A',diag_pivot_thresh=0.,options={'SymmetricMode':True});phase('after_SPD_no_pivot_factor',factor_nnz=int(lu.L.nnz+lu.U.nnz))
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 256. MiB for an array with shape (67142911,) and data type int32

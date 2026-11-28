@@ -1,0 +1,14 @@
+{"phase": "before_mesh", "elapsed_s": 0.014327279990538955, "RSS_KiB": 385544}
+{"phase": "after_mesh", "elapsed_s": 18.036750898929313, "RSS_KiB": 465128, "nodes": 19581, "tetra": 86471}
+Transforming over 1000 vertices to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{"phase": "after_assembly", "elapsed_s": 22.80227042781189, "RSS_KiB": 587688, "nnz": 2283518}
+{"phase": "after_loads", "elapsed_s": 23.863747221883386, "RSS_KiB": 625092, "floor_nodes": 124}
+{"phase": "before_interior_factor", "elapsed_s": 23.86775328288786, "RSS_KiB": 625092, "interior": 58371, "contact_DOF": 372}
+Can't expand MemType 0: jcol 45079
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thickness_contact69b.py", line 90, in <module>
+    Kii=K[inside][:,inside].tocsc();Kib=K[inside][:,bd].tocsc();Kbi=K[bd][:,inside].tocsr();lu=splu(Kii,permc_spec='MMD_AT_PLUS_A')
+  File "/tmp/regrip_stage2_fem/scipy/sparse/linalg/_dsolve/linsolve.py", line 428, in splu
+    return _superlu.gstrf(N, A.nnz, A.data, indices, indptr,
+MemoryError

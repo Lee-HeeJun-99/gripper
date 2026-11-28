@@ -1,0 +1,560 @@
+{
+  "status": "ACTUAL_FIXED_FLOOR_LOCAL_REFERENCE",
+  "candidate": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/summary.json",
+    "SHA256": "af82155b827d04f48e2b40e9716e23c3af457b82bfc2dda73b866eea57dc6cdc"
+  },
+  "STEP": {
+    "path": "product_prototype/stage12_integrated/cad/exports/primaryP1_ground65a/EXTERNAL_BENCH_PLATE.step",
+    "SHA256": "42636d12f4b25101010ece0a261f9b34d9536e358fcd5731545905a003623c62"
+  },
+  "source": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_floor65c/summary.json",
+    "SHA256": "989dacb97060b68dd79a238f3c125fd3b89c85d61d590148329fd98affa6a706"
+  },
+  "producer": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nested69l2/producer.py",
+    "SHA256": "02383805125577d334cffc1fc101d332aa4a609c8cf361a81e189455002afa37"
+  },
+  "field": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nested69l2/field.npz",
+    "SHA256": "94a68fa3100f06de5938599832b973f97503c22d81ed8fd9e59996e43d98e5f3"
+  },
+  "quadrature": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nested69l2/quadrature.npz",
+    "SHA256": "b97b064228bc718d0ec2ae5a991361dc8dd76bcf4b837b4f8b083fd340f19795"
+  },
+  "checks": {
+    "actual_plate_hash": true,
+    "full_load_quadrature_law": true,
+    "whole_surface_nonpenetration": true,
+    "adjoint_virtual_work": true,
+    "adjoint_force_pullback": true,
+    "all6physical_force_moment_balance": true,
+    "volume1percent": true,
+    "finite": true,
+    "element_energy": true
+  },
+  "h_mm": 5.0,
+  "nested_thickness_levels": 2,
+  "mesh_geometry_journal": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nested69l2/mesh_geometry.json",
+    "SHA256": "1ffc81455e420587f291f1370c624876c6db7ef813d1dfed6ff24c0e66765c3c"
+  },
+  "grid_subdivisions": 0,
+  "quadrature_points": 286,
+  "quadrature_area_mm2": 1599.999999999999,
+  "frozen_upper_points": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_upperpoints68/upper_points.json",
+    "SHA256": "935534002ca3a58256aa67034f53327f7ca7467f12eed52dadf510d923d21fc8"
+  },
+  "upper_pullback": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_nested69l2/upper_pullback.json",
+    "SHA256": "d75e6926ac2fedf102c7434ee09fbc48c46e7b2ee5e4196215fe4dadee99083a"
+  },
+  "frozen_physical_quadrature": {
+    "path": "product_prototype/stage12_integrated/validation/integrated/primaryP1_unionquad68/material_quadrature.npz",
+    "SHA256": "037a2fbc0e51895308ce08856025a0754b04f7334aa539086161971c24e8d4ab"
+  },
+  "warm_start_only": true,
+  "condensation_solver": "SuperLU symmetric ordering zero diagonal pivot threshold for SPD interior block, all original residuals checked",
+  "normal_fixedpoint_update": "direct Picard without relaxation; no physical criterion change",
+  "upper_quadrature": "7point affine prescribed CADface wrench reference, not solved uppercontact",
+  "E_ASSUMED_MPa": 200000.0,
+  "nu_ASSUMED": 0.3,
+  "mu_ASSUMED": 0.3,
+  "rho_ASSUMED_kg_m3": 7900,
+  "physical_fixed_DOF": 0,
+  "accepted_load_fraction": 1.0,
+  "current_attempt_fraction": 1.0,
+  "accepted_steps": [
+    {
+      "fraction": 0.1,
+      "outer_iterations": 8,
+      "elastic_energy_Nmm": 0.0003258146404056045,
+      "step_friction_dissipation_Nmm": 0.00014961155486999467,
+      "maximum_slip_mm": 0.00013002492700337287,
+      "law": {
+        "fraction": 0.1,
+        "outer": 7,
+        "inner_iterations": 262,
+        "inner_converged": true,
+        "primal_residual": 9.791749697759164e-12,
+        "dual_residual": 4.001593189167028e-12,
+        "rho": 1.0,
+        "normal_fixedpoint_error_N": 3.2492143434148524e-08,
+        "min_quadrature_gap_mm": -8.204508118215594e-16,
+        "min_whole_triangle_gap_mm": -8.204508118215594e-16,
+        "minimum_cone_slack_N": -8.853374894313149e-09,
+        "max_dissipation_error_Nmm": 1.2479654280069305e-12,
+        "off_floor_equilibrium_error_N": 4.7355953793765115e-12,
+        "adjoint_pullback_error_N": 3.985253865785793e-12,
+        "normal_complementarity_Nmm": 5.038311391458172e-16,
+        "min_normal_reaction_N": -8.673617379884035e-19,
+        "min_dissipation_Nmm": -7.148293065320453e-21
+      }
+    },
+    {
+      "fraction": 0.25,
+      "outer_iterations": 1,
+      "elastic_energy_Nmm": 0.0020363415024005705,
+      "step_friction_dissipation_Nmm": 0.0005610433308732381,
+      "maximum_slip_mm": 0.00019503739049090985,
+      "law": {
+        "fraction": 0.25,
+        "outer": 0,
+        "inner_iterations": 125,
+        "inner_converged": true,
+        "primal_residual": 6.5377881909839005e-12,
+        "dual_residual": 9.900759672883401e-12,
+        "rho": 1.0,
+        "normal_fixedpoint_error_N": 6.844612918111004e-09,
+        "min_quadrature_gap_mm": -5.277836785019981e-16,
+        "min_whole_triangle_gap_mm": -5.277836785019981e-16,
+        "minimum_cone_slack_N": -2.0533835951019874e-09,
+        "max_dissipation_error_Nmm": 3.9433405576527834e-13,
+        "off_floor_equilibrium_error_N": 1.48236186780365e-11,
+        "adjoint_pullback_error_N": 9.983124650306407e-12,
+        "normal_complementarity_Nmm": 1.2093066826170501e-15,
+        "min_normal_reaction_N": -2.168404344971009e-18,
+        "min_dissipation_Nmm": -2.6806098994649937e-20
+      }
+    },
+    {
+      "fraction": 0.5,
+      "outer_iterations": 1,
+      "elastic_energy_Nmm": 0.008145366009614262,
+      "step_friction_dissipation_Nmm": 0.001870144436102654,
+      "maximum_slip_mm": 0.00032506231747720315,
+      "law": {
+        "fraction": 0.5,
+        "outer": 0,
+        "inner_iterations": 161,
+        "inner_converged": true,
+        "primal_residual": 1.8889501954215016e-12,
+        "dual_residual": 9.99039877713415e-12,
+        "rho": 1.0,
+        "normal_fixedpoint_error_N": 1.4976811457678707e-09,
+        "min_quadrature_gap_mm": -1.618566146465168e-16,
+        "min_whole_triangle_gap_mm": -1.618566146465168e-16,
+        "minimum_cone_slack_N": -2.8808372354305334e-10,
+        "max_dissipation_error_Nmm": 1.4380828816727524e-13,
+        "off_floor_equilibrium_error_N": 2.1286944429377286e-11,
+        "adjoint_pullback_error_N": 1.0188906516819813e-11,
+        "normal_complementarity_Nmm": 4.2157189842192716e-16,
+        "min_normal_reaction_N": -4.336808689942018e-18,
+        "min_dissipation_Nmm": -8.935366331278146e-20
+      }
+    },
+    {
+      "fraction": 1.0,
+      "outer_iterations": 1,
+      "elastic_energy_Nmm": 0.03258146403814093,
+      "step_friction_dissipation_Nmm": 0.007480577744190887,
+      "maximum_slip_mm": 0.0006501246348606628,
+      "law": {
+        "fraction": 1.0,
+        "outer": 0,
+        "inner_iterations": 359,
+        "inner_converged": true,
+        "primal_residual": 1.841508167128071e-12,
+        "dual_residual": 9.989041613214209e-12,
+        "rho": 1.0,
+        "normal_fixedpoint_error_N": 7.713372163209442e-10,
+        "min_quadrature_gap_mm": -1.7122290645846423e-16,
+        "min_whole_triangle_gap_mm": -1.7122290645846423e-16,
+        "minimum_cone_slack_N": -2.3140123150966474e-10,
+        "max_dissipation_error_Nmm": 4.3175641013804e-14,
+        "off_floor_equilibrium_error_N": 4.311567769477165e-11,
+        "adjoint_pullback_error_N": 1.0700220972587062e-11,
+        "normal_complementarity_Nmm": 8.919347027793826e-16,
+        "min_normal_reaction_N": -8.673617379884035e-18,
+        "min_dissipation_Nmm": -3.574146532021248e-19
+      }
+    }
+  ],
+  "fixedpoint_history": [
+    {
+      "fraction": 0.1,
+      "outer": 0,
+      "inner_iterations": 6036,
+      "inner_converged": true,
+      "primal_residual": 8.404815469656433e-12,
+      "dual_residual": 9.981925072451881e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 0.7328300825118229,
+      "min_quadrature_gap_mm": -8.404815469656433e-16,
+      "min_whole_triangle_gap_mm": -8.404815469656433e-16,
+      "minimum_cone_slack_N": -0.013177421112964282,
+      "max_dissipation_error_Nmm": 3.025200396728439e-05,
+      "off_floor_equilibrium_error_N": 6.801779950903197e-12,
+      "adjoint_pullback_error_N": 1.0048423898512127e-11,
+      "normal_complementarity_Nmm": 3.144655529829649e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": 5.961862680973056e-08
+    },
+    {
+      "fraction": 0.1,
+      "outer": 1,
+      "inner_iterations": 7223,
+      "inner_converged": true,
+      "primal_residual": 6.319336577835927e-12,
+      "dual_residual": 9.999610070335793e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 0.04744004142708767,
+      "min_quadrature_gap_mm": -5.534069908456854e-16,
+      "min_whole_triangle_gap_mm": -5.534069908456854e-16,
+      "minimum_cone_slack_N": -0.009225216536994152,
+      "max_dissipation_error_Nmm": 1.8244022007501506e-06,
+      "off_floor_equilibrium_error_N": 5.889401488191892e-12,
+      "adjoint_pullback_error_N": 9.949319394684797e-12,
+      "normal_complementarity_Nmm": 2.891425896451934e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -7.062845513653817e-21
+    },
+    {
+      "fraction": 0.1,
+      "outer": 2,
+      "inner_iterations": 5570,
+      "inner_converged": true,
+      "primal_residual": 6.284616413885246e-12,
+      "dual_residual": 9.990243183609233e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 0.004079195326992094,
+      "min_quadrature_gap_mm": -5.5278602143252e-16,
+      "min_whole_triangle_gap_mm": -5.5278602143252e-16,
+      "minimum_cone_slack_N": -0.0012237585980975092,
+      "max_dissipation_error_Nmm": 1.5666241208398346e-07,
+      "off_floor_equilibrium_error_N": 4.684685148484413e-12,
+      "adjoint_pullback_error_N": 1.0047019020851811e-11,
+      "normal_complementarity_Nmm": 2.8790542501777517e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -7.147817849708241e-21
+    },
+    {
+      "fraction": 0.1,
+      "outer": 3,
+      "inner_iterations": 4409,
+      "inner_converged": true,
+      "primal_residual": 6.288572870559895e-12,
+      "dual_residual": 9.993343769639868e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 0.00037976603853002305,
+      "min_quadrature_gap_mm": -6.288572870559896e-16,
+      "min_whole_triangle_gap_mm": -6.288572870559896e-16,
+      "minimum_cone_slack_N": -9.822094410381899e-05,
+      "max_dissipation_error_Nmm": 1.4586228884890081e-08,
+      "off_floor_equilibrium_error_N": 3.945720703293909e-12,
+      "adjoint_pullback_error_N": 9.96541713183141e-12,
+      "normal_complementarity_Nmm": 2.8806682714490446e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -6.99130697036352e-21
+    },
+    {
+      "fraction": 0.1,
+      "outer": 4,
+      "inner_iterations": 3253,
+      "inner_converged": true,
+      "primal_residual": 6.279875968230975e-12,
+      "dual_residual": 9.979796163732635e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 3.50798530042995e-05,
+      "min_quadrature_gap_mm": -5.521976081652085e-16,
+      "min_whole_triangle_gap_mm": -5.521976081652085e-16,
+      "minimum_cone_slack_N": -1.0523955901241971e-05,
+      "max_dissipation_error_Nmm": 1.3473543003393864e-09,
+      "off_floor_equilibrium_error_N": 4.259813313721439e-12,
+      "adjoint_pullback_error_N": 9.89247597582399e-12,
+      "normal_complementarity_Nmm": 2.876507198651021e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -7.148290673749005e-21
+    },
+    {
+      "fraction": 0.1,
+      "outer": 5,
+      "inner_iterations": 2094,
+      "inner_converged": true,
+      "primal_residual": 6.283317203169987e-12,
+      "dual_residual": 9.98621401916514e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 3.453682006833436e-06,
+      "min_quadrature_gap_mm": -6.283317203169987e-16,
+      "min_whole_triangle_gap_mm": -6.283317203169987e-16,
+      "minimum_cone_slack_N": -9.443658687824374e-07,
+      "max_dissipation_error_Nmm": 1.3264978715149235e-10,
+      "off_floor_equilibrium_error_N": 9.709047801842452e-12,
+      "adjoint_pullback_error_N": 1.0023148729111919e-11,
+      "normal_complementarity_Nmm": 2.878113128624815e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -6.991281679448038e-21
+    },
+    {
+      "fraction": 0.1,
+      "outer": 6,
+      "inner_iterations": 918,
+      "inner_converged": true,
+      "primal_residual": 6.2436380300137944e-12,
+      "dual_residual": 9.988476358990533e-12,
+      "rho": 0.5,
+      "normal_fixedpoint_error_N": 3.2226459222711723e-07,
+      "min_quadrature_gap_mm": -5.51588170043216e-16,
+      "min_whole_triangle_gap_mm": -5.51588170043216e-16,
+      "minimum_cone_slack_N": -9.667937756786815e-08,
+      "max_dissipation_error_Nmm": 1.2377609718142979e-11,
+      "off_floor_equilibrium_error_N": 3.5986718162697717e-12,
+      "adjoint_pullback_error_N": 1.003369634455631e-11,
+      "normal_complementarity_Nmm": 2.873334175406353e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -7.057992243550904e-21
+    },
+    {
+      "fraction": 0.1,
+      "outer": 7,
+      "inner_iterations": 262,
+      "inner_converged": true,
+      "primal_residual": 9.791749697759164e-12,
+      "dual_residual": 4.001593189167028e-12,
+      "rho": 1.0,
+      "normal_fixedpoint_error_N": 3.2492143434148524e-08,
+      "min_quadrature_gap_mm": -8.204508118215594e-16,
+      "min_whole_triangle_gap_mm": -8.204508118215594e-16,
+      "minimum_cone_slack_N": -8.853374894313149e-09,
+      "max_dissipation_error_Nmm": 1.2479654280069305e-12,
+      "off_floor_equilibrium_error_N": 4.7355953793765115e-12,
+      "adjoint_pullback_error_N": 3.985253865785793e-12,
+      "normal_complementarity_Nmm": 5.038311391458172e-16,
+      "min_normal_reaction_N": -8.673617379884035e-19,
+      "min_dissipation_Nmm": -7.148293065320453e-21
+    },
+    {
+      "fraction": 0.25,
+      "outer": 0,
+      "inner_iterations": 125,
+      "inner_converged": true,
+      "primal_residual": 6.5377881909839005e-12,
+      "dual_residual": 9.900759672883401e-12,
+      "rho": 1.0,
+      "normal_fixedpoint_error_N": 6.844612918111004e-09,
+      "min_quadrature_gap_mm": -5.277836785019981e-16,
+      "min_whole_triangle_gap_mm": -5.277836785019981e-16,
+      "minimum_cone_slack_N": -2.0533835951019874e-09,
+      "max_dissipation_error_Nmm": 3.9433405576527834e-13,
+      "off_floor_equilibrium_error_N": 1.48236186780365e-11,
+      "adjoint_pullback_error_N": 9.983124650306407e-12,
+      "normal_complementarity_Nmm": 1.2093066826170501e-15,
+      "min_normal_reaction_N": -2.168404344971009e-18,
+      "min_dissipation_Nmm": -2.6806098994649937e-20
+    },
+    {
+      "fraction": 0.5,
+      "outer": 0,
+      "inner_iterations": 161,
+      "inner_converged": true,
+      "primal_residual": 1.8889501954215016e-12,
+      "dual_residual": 9.99039877713415e-12,
+      "rho": 1.0,
+      "normal_fixedpoint_error_N": 1.4976811457678707e-09,
+      "min_quadrature_gap_mm": -1.618566146465168e-16,
+      "min_whole_triangle_gap_mm": -1.618566146465168e-16,
+      "minimum_cone_slack_N": -2.8808372354305334e-10,
+      "max_dissipation_error_Nmm": 1.4380828816727524e-13,
+      "off_floor_equilibrium_error_N": 2.1286944429377286e-11,
+      "adjoint_pullback_error_N": 1.0188906516819813e-11,
+      "normal_complementarity_Nmm": 4.2157189842192716e-16,
+      "min_normal_reaction_N": -4.336808689942018e-18,
+      "min_dissipation_Nmm": -8.935366331278146e-20
+    },
+    {
+      "fraction": 1.0,
+      "outer": 0,
+      "inner_iterations": 359,
+      "inner_converged": true,
+      "primal_residual": 1.841508167128071e-12,
+      "dual_residual": 9.989041613214209e-12,
+      "rho": 1.0,
+      "normal_fixedpoint_error_N": 7.713372163209442e-10,
+      "min_quadrature_gap_mm": -1.7122290645846423e-16,
+      "min_whole_triangle_gap_mm": -1.7122290645846423e-16,
+      "minimum_cone_slack_N": -2.3140123150966474e-10,
+      "max_dissipation_error_Nmm": 4.3175641013804e-14,
+      "off_floor_equilibrium_error_N": 4.311567769477165e-11,
+      "adjoint_pullback_error_N": 1.0700220972587062e-11,
+      "normal_complementarity_Nmm": 8.919347027793826e-16,
+      "min_normal_reaction_N": -8.673617379884035e-18,
+      "min_dissipation_Nmm": -3.574146532021248e-19
+    }
+  ],
+  "static_energy_Nmm": 0.03258146403814093,
+  "volume_RMS_mm": 0.0014901992228634976,
+  "maximum_displacement_mm": 0.0024234052439386614,
+  "minimum_whole_triangle_gap_mm": -1.7122290645846423e-16,
+  "total_force_moment_residual_N_Nmm": [
+    8.853462476459828e-11,
+    -5.6299383209300426e-11,
+    2.581743152596516e-10,
+    1.950224541753809e-09,
+    -3.014697690572818e-08,
+    -6.156424606029027e-09
+  ],
+  "source_ports": [
+    {
+      "label": "support_plate",
+      "target_N_Nmm": [
+        0.0,
+        2.220446049250313e-16,
+        -26.06666510940119,
+        158.2005125657859,
+        624.9217256386605,
+        1.0896277777777925
+      ],
+      "applied_N_Nmm": [
+        2.4495274650879542e-14,
+        -2.362506518812247e-14,
+        -26.066665109401743,
+        158.20051256578301,
+        624.9217256386653,
+        1.0896277777773848
+      ],
+      "minimum_interpolation_weight": 0.05971587178976079,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    },
+    {
+      "label": "actual_key_xwall_-18.9",
+      "target_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "applied_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum_interpolation_weight": -1.5543122344752192e-15,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    },
+    {
+      "label": "actual_key_xwall_71.1",
+      "target_N_Nmm": [
+        1.0896277777777783,
+        0.0,
+        -0.3268883333333335,
+        -0.3268883333333335,
+        -120.04429227777784,
+        -1.0896277777777783
+      ],
+      "applied_N_Nmm": [
+        1.0896277777778625,
+        4.324201608625686e-14,
+        -0.3268883333332892,
+        -0.3268883333362791,
+        -120.04429227777462,
+        -1.089627777779076
+      ],
+      "minimum_interpolation_weight": -1.6558313720898476e-15,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    },
+    {
+      "label": "through_connector_0",
+      "target_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "applied_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum_interpolation_weight": 0.05971587178976573,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    },
+    {
+      "label": "through_connector_1",
+      "target_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "applied_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum_interpolation_weight": 0.05971587178976412,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    },
+    {
+      "label": "through_connector_2",
+      "target_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "applied_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum_interpolation_weight": 0.059715871789765895,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    },
+    {
+      "label": "through_connector_3",
+      "target_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "applied_N_Nmm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum_interpolation_weight": 0.05971587178976533,
+      "reference": "Identical frozen physical7point affine load reference, exact triangle coverage and workadjoint pullback; NOT solveduppercontact"
+    }
+  ],
+  "mesh_volume_mm3": 494835.8360895682,
+  "CAD_volume_mm3": 494886.5677037739,
+  "peak_RSS_KiB": 3349808,
+  "elapsed_s": 197.76316996803507,
+  "newly_qualified_system_gate_ids": [],
+  "accepted83body_physical_equilibria": 0,
+  "whole_system_release": false,
+  "limitations": [
+    "Frozen common physical Voronoi quadrature is identical on both declared meshes; constructed from their geometric vertex union, not universal futuremesh independence. Integrated forces use Btranspose; whole linear floor triangle minimum is exactly a vertex minimum. Quadrature contact alone cannot certify this inequality.",
+    "All failed fields preserved. A wholetriangle penetration rejects physical contact even when quadrature law converges.",
+    "Material/floor friction assumptions, affine upper references, no strength/time/globalenergy/full83body certification. Four quasistatic subdivisions are notdt. All22UNQUALIFIED NoStage3."
+  ]
+}

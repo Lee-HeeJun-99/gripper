@@ -1,0 +1,7 @@
+{"phase": "before_mesh", "elapsed_s": 0.014567135134711862, "RSS_KiB": 385416}
+Traceback (most recent call last):
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thickness_contact69.py", line 38, in <module>
+    phase('before_mesh');p,t,tri,V=meshpart(step,h,8,float(sys.argv[4]),out);phase('after_mesh',nodes=len(p),tetra=len(t));N=3*len(p);m=MeshTet(p.T,t.T);E=200000.;nu=.3;la,mu=lame_parameters(E,nu);K=sparse.csr_matrix((N,N));el=ElementVector(ElementTetP1())
+  File "/media/ubuntu/99419895-2058-45b4-b746-b36ea7112e4e/research/LHJ/ReGrip/product_prototype/stage12_integrated/scripts/primary_thickness_mesh69.py", line 12, in meshpart
+    assert abs(scaledV/(V*scale)-1)<1e-10
+AssertionError
